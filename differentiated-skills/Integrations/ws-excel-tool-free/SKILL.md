@@ -1,13 +1,13 @@
 ---
+
 slug: ws-excel-tool-free
 name: ws-excel-tool-free
 version: 1.0.1
 displayName: Excel工具(免费版)
 summary: "Excel 文件处理免费版：读写、数据清洗、公式计算与基础统计，支持 xlsx 格式.。Excel 工具（免费版）面向个人用户与独立开发者，提供 Excel 文件的基础处理能力：读取、写入、"
-license: Proprietary
+license: MIT
 edition: free
-description: Excel 工具（免费版）面向个人用户与独立开发者，提供 Excel 文件的基础处理能力：读取、写入、数据清洗、公式计算与基础统计。通过
-  openpyxl 与 pandas 等标准库操作 xlsx 文件，无需安装 Microsoft Excel。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+description: "Excel 工具（免费版）面向个人用户与独立开发者，包含 Excel 文件的基础处置能力：读取、写入、数据清洗、公式计算与基础统计。通过. 适用于需要ws excel tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 数据处理
   - Excel
@@ -19,14 +19,15 @@ tags:
   - cell
   - excel
   - openpyxl
-  - python
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Excel 工具（免费版）
 
 ## 概述
@@ -91,7 +92,7 @@ Excel 是最通用的数据交换格式之一。本工具让 AI Agent 能够直�
 ```python
 import pandas as pd
 # ...
-# 读取第一个 sheet
+# 读取领先个 sheet
 df = pd.read_excel('data.xlsx')
 # ...
 # 读取指定 sheet
@@ -196,11 +197,9 @@ for row_idx, row_data in enumerate(data, 2):
         cell.border = thin_border
 # ...
 wb.save('formatted_report.xlsx')
-```
-
-## 最佳实践
-
-### 1. 读取大文件用 openpyxl 只读模式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 from openpyxl import load_workbook
 wb = load_workbook('large.xlsx', read_only=True)

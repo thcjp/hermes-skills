@@ -7,7 +7,7 @@ displayName: "Figma设计集成-专业版"
 summary: "企业级Figma集成平台，支持组件库管理、设计变量提取、批量导出与团队协作工作流,支持多种使用场景和自动化处理"
 license: "Proprietary"
 edition: "pro"
-description: "Figma设计集成工具专业版，面向设计团队的效率提升方案。支持组件库管理、设计变量提取、批量导出与团队协作工作流。减少重复劳动，提升工作效率与设计一致性。触发关键词：API设计、自动化、设计、品牌、图片。降低专业门槛，让非专业人员也能快速上手。提供结构化方法论与最佳实践。确保输出一致性与专业性。支持多种输入格式与输出模板"
+description: "Figma设计集成工具专业版，面向设计团队的效率提升方案。兼容组件库管控、设计变量提取、成批导出与团队协作工作流。减少重复劳动，提升工作效率与设计一致性。触发关键词：API设计、自发化、设计、品牌、图片。降低专业门槛，让非专业人员也能快速上手。包含结构化方法论与优秀实践。确保输出一致性与专业性。兼容多种输入格式与输出模板"
 tags:
   - Creative
   - Figma
@@ -19,16 +19,15 @@ tags:
   - self
   - file_key
   - report
-  - type
-  - mx_figma
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
+pricing_tier: L2-标准级
 ---
+
 # Figma设计集成工具（专业版）
 
 ## 概述
@@ -199,22 +198,22 @@ print(f"变量: {len(report['variables'])}个")
 
 ```text
 # 开发资产获取全流程
-1. mx_figma: get_file, file_key: "xxx", depth: 2
+1. mx_figma: get_file, file_key: "placeholder", depth: 2
    → 获取页面和 Frame 结构
 # .
-2. mx_figma: get_file_nodes, file_key: "xxx", node_ids: ["target_node"]
+2. mx_figma: get_file_nodes, file_key: "placeholder", node_ids: ["target_node"]
    → 获取指定节点详细属性
 # .
-3. mx_figma: get_file_components, file_key: "xxx"
+3. mx_figma: get_file_components, file_key: "placeholder"
    → 获取可复用组件列表
 # .
-4. mx_figma: get_file_component_sets, file_key: "xxx"
+4. mx_figma: get_file_component_sets, file_key: "placeholder"
    → 获取组件变体（Primary/Secondary 等）
 # .
-5. mx_figma: get_local_variables, file_key: "xxx"
+5. mx_figma: get_local_variables, file_key: "placeholder"
    → 获取颜色/间距/字体等设计 Token
 # .
-6. mx_figma: export_images, file_key: "xxx", node_ids: ["icon1","icon2",.], format: "svg"
+6. mx_figma: export_images, file_key: "placeholder", node_ids: ["icon1","icon2",.], format: "svg"
    → 批量导出图标资源
 ```
 
@@ -287,43 +286,43 @@ print(f"已导出 {len(icons['exports'])} 个图标")
 # 1. 查看文件结构
 mx_figma:
   action: get_file
-  file_key: "xxx"
+  file_key: "placeholder"
   depth: 2
 # .
 # 2. 查看指定页面详情
 mx_figma:
   action: get_file_nodes
-  file_key: "xxx"
+  file_key: "placeholder"
   node_ids: ["page_id"]
 # .
 # 3. 查看现有评论
 mx_figma:
   action: list_comments
-  file_key: "xxx"
+  file_key: "placeholder"
 # .
 # 4. 添加走查反馈
 mx_figma:
   action: post_comment
-  file_key: "xxx"
+  file_key: "placeholder"
   message: "这个按钮的圆角需要改为 8px，与设计系统一致"
 # .
 # 5. 回复设计师的疑问
 mx_figma:
   action: post_comment
-  file_key: "xxx"
+  file_key: "placeholder"
   message: "已确认，圆角统一为 8px，间距基准为 4px"
   comment_id: "12345"
 # .
 # 6. 删除已解决的评论
 mx_figma:
   action: delete_comment
-  file_key: "xxx"
+  file_key: "placeholder"
   comment_id: "12345"
 ```
 
 ## 快速开始
 
-### 第一步：配置（与免费版相同）
+### 领先步：配置（与免费版相同）
 
 ```bash
 # 依赖说明
@@ -340,11 +339,11 @@ export MORPHIXAI_API_KEY="mk_your_key_here"
 
 ```text
 # 一键检查设计系统
-1. mx_figma: get_file_components, file_key: "xxx"
-2. mx_figma: get_file_component_sets, file_key: "xxx"
-3. mx_figma: get_file_styles, file_key: "xxx"
-4. mx_figma: get_local_variables, file_key: "xxx"
-5. mx_figma: get_team_components, team_id: "xxx"
+1. mx_figma: get_file_components, file_key: "placeholder"
+2. mx_figma: get_file_component_sets, file_key: "placeholder"
+3. mx_figma: get_file_styles, file_key: "placeholder"
+4. mx_figma: get_local_variables, file_key: "placeholder"
+5. mx_figma: get_team_components, team_id: "placeholder"
 ```
 
 ### 第三步：批量导出资产
@@ -353,7 +352,7 @@ export MORPHIXAI_API_KEY="mk_your_key_here"
 # 批量导出图标
 mx_figma:
   action: export_images
-  file_key: "xxx"
+  file_key: "placeholder"
   node_ids: ["1:2", "3:4", "5:6", "7:8", "9:10"]
   format: "svg"
   scale: 1
@@ -390,7 +389,7 @@ mx_figma:
     team_id: "123456789"
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **设计系统先行**：先提取设计变量和组件，建立 Design Token 文件。
 2. **批量导出优化**：图标批量用 SVG，图片批量用 PNG scale: 2。

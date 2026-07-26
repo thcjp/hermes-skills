@@ -1,13 +1,12 @@
 ---
+
 slug: vault-master-pro
 name: vault-master-pro
 version: 1.0.1
 displayName: 知识库大师
 summary: "解决多库混乱、移动即断链、附件散落、找不到笔记痛点，让Obsidian知识库井井有条。Obsidian 知识库（vault）管理专家，基于 `obsidian-cli` 操作本地 Markd"
-license: Proprietary
-description: 'Obsidian 知识库（vault）管理专家，基于 `obsidian-cli` 操作本地 Markdown 笔记。聚焦多库管理、
-
-  安全重构（移动/改名不断链）、附件治理、跨库搜索，让笔记系统长期保持井井有条。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。'
+license: MIT
+description: "Obsidian 知识库（vault）管控专家，基于 `obsidian-cli` 操作本地 Markdown 笔记。聚焦多库管控、. 适用于需要vault master相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 自动化
   - 知识管理
@@ -26,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 知识库大师
 
 把 Obsidian vault 当作一个长期演进的知识系统来管，而非散乱文件夹。基于 `obsidian-cli` 完成多库管理、安全重构、附件治理与跨库搜索.

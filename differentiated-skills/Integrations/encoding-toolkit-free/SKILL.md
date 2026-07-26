@@ -1,13 +1,13 @@
 ---
+
 slug: encoding-toolkit-free
 name: encoding-toolkit-free
 version: 1.0.1
 displayName: 编解码工具箱免费版
 summary: 覆盖Base64、URL、Hex、Unicode、JWT等主流编解码场景，命令行与代码示例兼备，适合日常开发调试.
-license: Proprietary
+license: MIT
 edition: free
-description: 编解码工具箱免费版面向开发者与运维人员，提供主流数据格式的快速编码、解码与转换能力。核心覆盖 Base64、URL 编码、Hex、Unicode、JWT
-  解析与哈希校验六大场景，配套命令行与多语言代码片段，帮助用户在 60 秒内完成常见任务。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
+description: "编解码工具箱免费版面向开发者与运维人员，包含主流数据格式的快速编码、解码与变换能力。核心覆盖 Base64、URL 编码、Hex、Unicode、JWT. 适用于需要encoding toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 集成工具
   - 编解码
@@ -26,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 编解码工具箱（免费版）
 
 本 Skill 聚焦日常开发与运维场景下最高频的编解码任务，提供"诊断—选择—执行"三段式工作流，避免用户在多个工具间反复切换。免费版覆盖六大主流场景，满足绝大多数日常调试需求.
@@ -151,7 +153,7 @@ function fileSha256(path) {
 fileSha256('./package.tar.gz');
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **先诊断后解码**：暴力 Base64 解码可能产生不可见乱码，建议先检查输入是否符合 JWT、URL、Hex 模式再下结论.
 2. **URL 安全变体优先**：在 Token、文件名场景使用 Base64url（`-`、`_` 替换 `+`、`/`），避免特殊字符引发解析错误.

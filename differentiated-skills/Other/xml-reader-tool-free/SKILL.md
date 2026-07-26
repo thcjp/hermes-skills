@@ -1,50 +1,34 @@
 ---
+
 slug: xml-reader-tool-free
 name: xml-reader-tool-free
 version: 1.0.0
 displayName: XML读取器免费版
 summary: "快速读取与浏览XML文件结构，支持节点遍历与简单查询，适合个人开发者日常查阅.。XML读取器工具免费版，面向个人开发者的轻量级XML文件读取与浏览工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: XML读取器工具免费版，面向个人开发者的轻量级XML文件读取与浏览工具。核心能力:，可自动提升工作效率
-
-  - XML文件结构与节点遍历
-
-  - 简单 XPath 查询
-
-  - 格式化输出与高亮
-
-  - 节点统计与基本信息
-
-  适用场景:
-
-  - 个人开发者查阅XML配置
-
-  - 快速定位XML中的特定节点
-
-  - 了解XML文件整体结构
-
-  差异化: 免费版聚焦核心读取与浏览能力，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手'
+description: "XML读取器工具免费版，面向个人开发者的轻量级XML文件读取与浏览工具。核心能力:，可自发提升工作效率. 适用于需要xml reader tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要xml reader tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - XML读取
+  - xml
+  - reader
+  - automation
+  - productivity
   - 节点遍历
   - 配置查阅
   - 免费版
   - 工具
   - 效率
-  - 写作
-  - xml
-  - xpath
-  - xml-reader
-  - config
-  - add
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # XML读取器工具（免费版）
 
 ## 概述
@@ -179,7 +163,7 @@ xml-reader text config.xml --xpath "//description"
 --output tree     # 树形展示（默认）
 ```
 
-## 最佳实践
+## 优秀实践
 
 * 查看结构时先用 `tree` 了解整体布局，再用 `query` 精确定位.
 * XPath 查询优先使用具体路径，避免 `//` 全文遍历.

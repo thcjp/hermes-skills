@@ -1,19 +1,13 @@
 ---
+
 slug: health-toolkit-free
 name: health-toolkit-free
 version: 1.0.1
 displayName: 健康管理工具箱免费版
 summary: "个人健康数据管理,支持运动、睡眠、饮食记录与基础健康分析。面向个人用户的健康管理工具箱,帮助用户记录与分析健康数据."
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人用户的健康管理工具箱,帮助用户记录与分析健康数据.
-  核心能力: 运动记录、睡眠追踪、饮食日记、健康指标分析、目标设定
-
-  适用场景: 个人健身管理、健康习惯养成、减肥塑形、健康自检
-
-  差异化: 免费版聚焦个人健康数据管理,本地存储,隐私安全
-
-  适用关键词: 健康管理, 运动记录, 睡眠追踪, 饮食日记, 健康分析, 目标设定'
+description: "面向个人用户的健康管控工具箱,帮助用户记录与剖析健康数据. 适用于需要health toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 健康管理
   - 个人健康
@@ -25,22 +19,15 @@ tags:
   - 效率
   - 自动化
   - 生活
-  - 健康
-  - 研究
-  - 分析
-  - 写作
-  - self
-  - data_dir
-  - datetime
-  - workouts
-  - json
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 健康管理工具箱 (免费版)
 
 ## 概述
@@ -262,7 +249,7 @@ mkdir -p ~/.health/{workouts,sleep,diet,metrics,goals}
 echo '{"version":"1.0","edition":"free"}' > ~/.health/config.json
 ```
 
-### Step 2: 记录第一条数据
+### Step 2: 记录领先条数据
 
 ```python
 from health_toolkit import WorkoutTracker
@@ -347,7 +334,7 @@ class GoalTracker:
         }
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 数据记录习惯
 
@@ -433,7 +420,7 @@ export HEALTH_DATA_DIR="~/.health"
 
 ### 可用性分类
 
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+exec方法(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 通过自然语言指令驱动 Agent 管理个人健康数据,所有数据本地存储
 - **免费版限制**: 单用户、本地存储、无设备同步、基础分析、无异常预警
 

@@ -1,44 +1,13 @@
 ---
+
 slug: git-essentials-tool-free
 name: git-essentials-tool-free
 version: 1.0.0
 displayName: Git基础工具免费版
 summary: "提供Git版本控制核心命令,涵盖初始化、提交、分支、远程同步与历史管理,适合开发者入门.。面向开发者的Git版本控制基础工具,涵盖仓库初始化、暂存提交、分支管理、远程操作与历史查看。核心能力"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向开发者的Git版本控制基础工具,涵盖仓库初始化、暂存提交、分支管理、远程操作与历史查看。核心能力:
-
-  - 仓库初始化与克隆
-
-  - 暂存与提交管理
-
-  - 分支创建与合并
-
-  - 远程仓库同步
-
-  - 历史查看与搜索
-
-  - 撤销与恢复操作
-
-  适用场景:
-
-  - Git入门学习
-
-  - 日常版本控制操作
-
-  - 分支管理与协作
-
-  - 历史记录查看
-
-  差异化:
-
-  - 免费版覆盖Git核心命令,适合入门
-
-  - 提供常用别名和配置模板
-
-  - 与专业版命令兼容,可平滑升级
-
-  适用关键词: Git基础, 版本控制, git init...'
+description: "面向开发者的Git版本控制基础工具,涵盖仓库初始化、暂存提交、分支管控、远程操作与历史查看。核心能力:. 适用于需要git essentials tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - Git
@@ -54,7 +23,9 @@ tools:
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # Git基础工具 - 免费版
 
 ## 概述
@@ -416,7 +387,7 @@ git rebase --continue                    # 继续
 git rebase --abort                       # 取消
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **频繁提交**:小步提交,每次聚焦一个变更
 
@@ -517,7 +488,7 @@ ssh-keygen -t ed25519 -C "your@email.com"
 
 ### 可用性分类
 
-- **分类**:MD+EXEC(纯 Markdown 指令,需要 exec 命令行执行能力)
+- **分类**:MD+EXEC模式纯 Markdown 指令,需要 exec 命令行执行能力)
 - **说明**:基于 Markdown 的 AI Skill,通过自然语言指令驱动 Agent 执行Git操作
 - **适用规模**:个人开发者和小团队
 

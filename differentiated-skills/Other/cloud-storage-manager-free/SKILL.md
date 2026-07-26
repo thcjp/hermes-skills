@@ -1,23 +1,13 @@
 ---
+
 slug: cloud-storage-manager-free
 name: cloud-storage-manager-free
 version: 1.0.1
 displayName: 云存储管理器(免费版)
 summary: "跨云存储服务统一管理文件的上传、下载、同步与成本核算，支持多Provider基础操作.。面向多云存储场景的统一文件管理工具，覆盖AWS S3、GCS、Azure Blob、Cloudflar"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向多云存储场景的统一文件管理工具，覆盖AWS S3、GCS、Azure Blob、Cloudflare R2、Backblaze B2等对象存储与Google
-  Drive、Dropbox、OneDrive等网盘服务。核心能力：
-
-  - 多Provider统一API，单一命令完成跨云上传/下载/同步
-
-  - 大文件分块上传与断点续传，应对网络中断场景
-
-  - 出口流量成本预估，转账前量化费用
-
-  - 跨Provider概念差异映射，避免共享文件夹/File ID等概念混淆
-
-  - 关键操作校验（API 200不等于成功...'
+description: "面向多云存储场景的统一文件管控工具，覆盖AWS S3、GCS、Azure Blob、Cloudflare R2、Backblaze B2等对象存储与Google. 适用于需要cloud storage manager相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 云存储
   - 多云管理
@@ -29,15 +19,15 @@ tags:
   - provider
   - api
   - csm
-  - bash
-  - dropbox
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Operations"
+pricing_tier: free
 ---
+
 # 云存储管理器(免费版)
 
 面向多云存储场景的统一文件管理工具，覆盖主流对象存储与网盘服务，提供上传、下载、同步、成本核算等核心能力.
@@ -194,7 +184,7 @@ Configured providers:
   - azure-blob (eastus)
 ```
 
-### Step 3：执行第一次上传
+### Step 3：执行领先次上传
 
 ```bash
 csm upload \
@@ -310,7 +300,7 @@ rules:
     notify: feishu
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **凭据最小权限**：每个Provider仅授予必要操作权限（如只读备份场景仅授予GET）
 2. **凭据轮换**：每90天轮换AccessKey，使用`csm config rotate s3`

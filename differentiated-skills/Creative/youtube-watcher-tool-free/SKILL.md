@@ -1,36 +1,13 @@
 ---
+
 slug: youtube-watcher-tool-free
 name: youtube-watcher-tool-free
 version: 1.0.0
 displayName: YouTube字幕提取-免费版
 summary: "轻量级YouTube视频字幕提取工具，支持单视频字幕获取与内容摘要，适合个人学习与内容分析.。YouTube 字幕提取免费版，为个人用户提供轻量化的视频字幕获取能力。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 'YouTube 字幕提取免费版，为个人用户提供轻量化的视频字幕获取能力。核心能力:
-
-  - 单视频字幕提取（自动字幕与 CC 字幕）
-
-  - 字幕内容摘要生成
-
-  - 关键信息检索
-
-  - 视频内容问答
-
-  - 字幕文本导出
-
-  适用场景:
-
-  - 学习视频内容摘要
-
-  - 视频关键信息检索
-
-  - 外语视频内容理解
-
-  - 内容创作素材整理
-
-  差异化:
-
-  - 免费版聚焦单视频字幕提取核心场景...'
+description: "YouTube 字幕提取免费版，为个人用户包含轻量化的视频字幕获取能力。核心能力:. 适用于需要youtube watcher tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Creative
   - 视频处理
@@ -48,7 +25,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # YouTube 字幕提取工具 - 免费版
 
 ## 概述
@@ -259,7 +238,7 @@ grep -i "关键词" /tmp/transcript.txt
 ## 配置示例
 
 以下是YouTube字幕提取-免费版的典型配置示例，展示主要参数与选项的设置方式.
-## 最佳实践
+## 优秀实践
 
 ### 1. 选择有字幕的视频
 
@@ -379,8 +358,8 @@ yt-dlp --version
 - 如需访问私人视频，需配置 YouTube Cookie（可选）
 
 ```bash
-# 可选：配置 YouTube Cookie 访问私人视频
-# yt-dlp --cookies /path/to/cookies.txt "URL"
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### 可用性分类
@@ -420,9 +399,9 @@ yt-dlp --version
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

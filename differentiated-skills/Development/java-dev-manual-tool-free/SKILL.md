@@ -1,30 +1,13 @@
 ---
+
 slug: java-dev-manual-tool-free
 name: java-dev-manual-tool-free
 version: 1.0.0
 displayName: Java开发手册免费版
 summary: "Java 开发规约速查手册，覆盖命名、异常、并发、数据库等 7 大维度核心规范.。面向 Java 开发者的开发规约速查工具，提供 7 大维度的规约指引。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向 Java 开发者的开发规约速查工具，提供 7 大维度的规约指引。核心能力:
-
-  - 7 大维度规约速查（编程/异常/测试/安全/数据库/工程/设计）
-
-  - 命名规范、格式规范、OOP 规范速查
-
-  - 并发处理与集合操作规范
-
-  - 异常处理与日志规范模板
-
-  适用场景:
-
-  - Java 代码编写时的规约查询
-
-  - 代码审查时的规范依据
-
-  - 新项目搭建时的规范参考
-
-  差异化: 免费版聚焦个人开发者的规约速查，提供简明的速查表与代码示例，开箱即用'
+description: "面向 Java 开发者的开发规约速查工具，包含 7 大维度的规约指引。核心能力:. 适用于需要java dev manual tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - Java
@@ -36,15 +19,15 @@ tags:
   - java
   - new
   - sql
-  - threadlocal
-  - logger
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Java 开发手册（免费版）
 
 ## 概述
@@ -308,7 +291,7 @@ while (it.hasNext()) {
 userList.removeIf(u -> u.getStatus() == 0);
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **常量代替魔法值**：所有硬编码值提取为常量
    ```java

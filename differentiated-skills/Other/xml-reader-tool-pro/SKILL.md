@@ -1,4 +1,5 @@
 ---
+
 slug: xml-reader-tool-pro
 name: xml-reader-tool-pro
 version: 1.0.0
@@ -6,12 +7,7 @@ displayName: XML读取器专业版
 summary: "流式读取大文件、高级XPath、批量查询与结果导出，适合数据团队与企业级XML分析.。XML读取器工具专业版，面向数据团队与企业的高阶XML读取与分析平台。核心能力:"
 license: Proprietary
 edition: pro
-description: 'XML读取器工具专业版，面向数据团队与企业的高阶XML读取与分析平台。核心能力:
-
-  - 流式读取大文件（GB级）
-
-  - XPath 2。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use
-  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
+description: "XML读取器工具专业版，面向数据团队与企业的高阶XML读取与剖析平台。核心能力:. 适用于需要xml reader tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - XML读取
   - 数据分析
@@ -30,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # XML读取器工具（专业版）
 
 ## 概述
@@ -209,7 +207,7 @@ report:
 | duplicates | //item[count(//item[@id=current()/@id]) > 1] | 重复项检测 |
 | custom | 用户定义 | 专业场景 |
 
-## 最佳实践
+## 优秀实践
 
 * 大文件（>50MB）使用流式读取，避免内存溢出.
 * 批量查询时控制并发数，避免 IO 瓶颈.

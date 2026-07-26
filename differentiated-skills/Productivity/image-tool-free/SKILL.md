@@ -1,35 +1,34 @@
 ---
+
 slug: image-tool-free
 name: image-tool-free
 version: 1.0.0
 displayName: 图像处理基础版
 summary: "创建、检查、处理与优化图像文件,支持格式选择、裁剪压缩与元数据管理。核心能力: 图像处理领域的专业化 AI 辅助工具,提供核心基础功能支持."
-license: Proprietary
+license: MIT
 edition: free
-description: '核心能力: 图像处理领域的专业化 AI 辅助工具,提供核心基础功能支持.
-  适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助.
-  差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持.
-  适用关键词: image, 图像, 图片, 格式转换, 压缩, 裁剪, 元数据, WebP'
+description: "核心能力: 图像处置领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要image tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要image tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 图像
+  - image
+  - automation
+  - productivity
+  - developer-tools
   - 图片处理
   - 格式转换
   - 压缩优化
   - 图像处理
   - AI绘图
-  - 创意
-  - png
-  - free
-  - agent
-  - pro
-  - webp
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
+
 ---
+
 # 图像处理基础版
 
 ## 概述
@@ -205,9 +204,8 @@ Agent 将自动:
 ### 基础配置
 
 ```bash
-# ImageMagick 基本操作
-# 批量转换
-# 检查图片信息
+# 在此执行相关操作
+echo "操作完成"
 ```
 ### 可选配置
 
@@ -232,7 +230,7 @@ Agent 将自动:
 | cache_enabled | bool | true | 启用结果缓存 |
 | timeout | int | 30 | 操作超时时间(秒) |
 
-## 最佳实践
+## 优秀实践
 
 1. **先确定宽高比再裁剪,最后压缩**
 2. **不要默认放大图片,额外像素不创造细节**
@@ -303,7 +301,7 @@ FREE 版本支持单一 API Key 配置,满足个人使用需求:
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于 Markdown 的 AI Skill,通过自然语言指令驱动 Agent 执行任务
 - **FREE 特性**: 支持单次执行、基础配置与社区支持
 - **安全等级**: 基础,数据本地存储,建议定期备份

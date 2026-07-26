@@ -3,12 +3,14 @@
 ClawHub Batch Uploader
 ======================
 Batch upload skills to ClawHub using the clawhub CLI.
+v2.3: 增加DB跟踪(上传成功后更新clawhub_sync_status) + --from-db模式
 
 Usage:
     python clawhub_batch_uploader.py                    # Upload all remaining (up to daily limit)
     python clawhub_batch_uploader.py --limit 50         # Upload only 50
     python clawhub_batch_uploader.py --dry-run          # Dry run (no actual upload)
     python clawhub_batch_uploader.py --resume            # Resume from last checkpoint
+    python clawhub_batch_uploader.py --from-db           # 从DB查询待上传skill(替代JSON)
 """
 
 # === Phase 1: 统一配置导入 ===
@@ -19,12 +21,21 @@ from project_config import DIFFERENTIATED_DIR, DATA_DIR, REGISTRY_DIR
 # === End Phase 1 ===
 
 import json
+import os
 import subprocess
 import sys
 import time
 import re
+import sqlite3
 from pathlib import Path
 from datetime import datetime
+
+# v2.3: DB路径(复用project_config)
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))
+try:
+    from config import DB_PATH as _DB_PATH
+except ImportError:
+    _DB_PATH = Path(r"d:\skills\skill-registry.db")
 
 # ClawHub分类映射配置
 CATEGORY_MAP_FILE = Path(__file__).resolve().parent.parent / "data" / "category_mapping.json"
@@ -197,6 +208,103 @@ def get_display_name(skill_dir):
     
     return None
 
+# ============ v2.3: DB跟踪 (上传成功后更新clawhub_sync_status) ============
+
+def update_db_clawhub_status(slug, status='synced', version=None):
+    """上传成功后更新DB的clawhub_sync_status (幂等, 含重试)
+    
+    Args:
+        slug: skill slug
+        status: 'synced' (成功) 或 'failed' (失败)
+        version: 上传的版本号
+    """
+    import time as _time
+    for attempt in range(3):
+        try:
+            conn = sqlite3.connect(str(_DB_PATH), timeout=10)
+            conn.execute("PRAGMA foreign_keys = ON")
+            conn.execute("PRAGMA journal_mode = WAL")
+            
+            # 更新skills表
+            conn.execute("""
+                UPDATE skills SET 
+                    clawhub_sync_status = ?,
+                    last_sync_at = ?
+                WHERE slug = ?
+            """, (status, datetime.now().isoformat(), slug))
+            
+            # 如果有skill_id, 也更新platform_uploads表
+            row = conn.execute("SELECT id FROM skills WHERE slug = ?", (slug,)).fetchone()
+            if row:
+                skill_id = row[0]
+                # 检查是否已有记录
+                existing = conn.execute("""
+                    SELECT id FROM platform_uploads 
+                    WHERE skill_id = ? AND platform = 'clawhub'
+                """, (skill_id,)).fetchone()
+                
+                if existing:
+                    conn.execute("""
+                        UPDATE platform_uploads SET 
+                            upload_status = ?,
+                            upload_date = ?
+                        WHERE skill_id = ? AND platform = 'clawhub'
+                    """, ('success' if status == 'synced' else 'failed', 
+                          datetime.now().isoformat(), skill_id))
+                else:
+                    conn.execute("""
+                        INSERT INTO platform_uploads 
+                            (skill_id, platform, platform_slug, upload_date, upload_status, version)
+                        VALUES (?, 'clawhub', ?, ?, ?, ?)
+                    """, (skill_id, slug, datetime.now().isoformat(),
+                          'success' if status == 'synced' else 'failed',
+                          version or 'unknown'))
+            
+            conn.commit()
+            conn.close()
+            return True
+        except Exception as e:
+            if attempt < 2:
+                _time.sleep(1)
+                continue
+            print(f"\n  [DB更新失败] {slug}: {e}")
+            return False
+
+
+def get_pending_slugs_from_db(limit=0):
+    """从DB查询待上传ClawHub的skill (有本地文件的pending状态)
+    
+    Returns:
+        list of slug strings
+    """
+    conn = sqlite3.connect(str(_DB_PATH))
+    conn.row_factory = sqlite3.Row
+    
+    query = """
+        SELECT slug, local_path FROM skills 
+        WHERE clawhub_sync_status = 'pending'
+        AND local_path IS NOT NULL AND local_path != ''
+        ORDER BY slug
+    """
+    if limit > 0:
+        query += f" LIMIT {limit}"
+    
+    rows = conn.execute(query).fetchall()
+    conn.close()
+    
+    # 过滤: 只返回本地文件确实存在的
+    valid_slugs = []
+    for r in rows:
+        local_path = r["local_path"]
+        if local_path.startswith("/d/"):
+            local_path = "d:" + local_path[2:]
+        skill_md = Path(local_path) / "SKILL.md"
+        if skill_md.exists():
+            valid_slugs.append(r["slug"])
+    
+    return valid_slugs
+
+
 # REGISTRY_DIR imported from config
 BATCHES_FILE = DATA_DIR / "clawhub_upload_batches.json"
 RESULTS_FILE = DATA_DIR / "clawhub_upload_results.json"
@@ -208,7 +316,7 @@ PUBLISHED_SLUGS_FILE = DATA_DIR / "clawhub_published_slugs.json"
 REGISTRY = "https://clawhub.ai"
 DAILY_LIMIT = 200
 DELAY_BETWEEN_UPLOADS = 2  # seconds
-CHANGELOG = "L7b quality fix - VAGUE_TASK cleared, input/output sections added"
+CHANGELOG = "v2.3 quality enhancement - security audit + marketing packaging + slug-content validation"
 
 # Alternative directory locations to check
 ALT_DIRS = [
@@ -231,8 +339,25 @@ def save_json(path, data):
 
 
 def find_skill_dir(slug, dir_mapping):
-    """Find skill directory using mapping or fallback search (v2.1: 增强slug变体匹配)"""
-    # Check dir mapping first
+    """Find skill directory using mapping or fallback search 
+    (v2.1: 增强slug变体匹配; v2.3: 优先使用DB的local_path)"""
+    # v2.3: 优先从DB获取local_path (最可靠)
+    try:
+        conn = sqlite3.connect(str(_DB_PATH))
+        conn.row_factory = sqlite3.Row
+        row = conn.execute("SELECT local_path FROM skills WHERE slug = ?", (slug,)).fetchone()
+        conn.close()
+        if row and row["local_path"]:
+            local_path = row["local_path"]
+            if local_path.startswith("/d/"):
+                local_path = "d:" + local_path[2:]
+            p = Path(local_path)
+            if p.exists() and (p / "SKILL.md").exists():
+                return p
+    except Exception:
+        pass
+
+    # Check dir mapping
     d = dir_mapping.get(slug)
     if d and Path(d).exists() and (Path(d) / "SKILL.md").exists():
         return Path(d)
@@ -294,28 +419,38 @@ def upload_skill(skill_dir, slug, dry_run=False):
     topics = get_clawhub_topics(skill_dir, slug)
     display_name = get_display_name(skill_dir)
     
-    # 构建上传命令(含营销参数)
+    # 构建上传命令(含营销参数) — v2.4: 修复npx→clawhub, 正确引用含空格参数
+    def _quote_arg(arg):
+        """Windows shell引用: 含空格的参数加双引号"""
+        if ' ' in str(arg):
+            return f'"{arg}"'
+        return str(arg)
+    
     cmd_parts = [
-        'npx', 'clawhub',
-        '--registry', f'"{REGISTRY}"',
-        'publish', f'"{skill_dir}"',
-        '--changelog', f'"{CHANGELOG}"',
-        '--categories', f'"{category}"',
-        '--topics', f'"{",".join(topics)}"',
+        'clawhub',
+        '--registry', REGISTRY,
+        'publish', _quote_arg(skill_dir),
+        '--changelog', _quote_arg(CHANGELOG),
+        '--categories', category,
+        '--topics', ','.join(topics),
     ]
     if display_name:
-        cmd_parts.extend(['--name', f'"{display_name}"'])
+        cmd_parts.extend(['--name', _quote_arg(display_name)])
     
     cmd_str = ' '.join(cmd_parts)
 
     try:
+        # v2.4: 设置CLAWHUB_REGISTRY环境变量, 确保CLI内部操作也使用正确的registry
+        upload_env = os.environ.copy()
+        upload_env['CLAWHUB_REGISTRY'] = REGISTRY
         result = subprocess.run(
             cmd_str,
             capture_output=True,
             text=True,
             timeout=120,
             cwd=r"D:\skills",
-            shell=True
+            shell=True,
+            env=upload_env
         )
         output = result.stdout + result.stderr
 
@@ -351,6 +486,13 @@ def upload_skill(skill_dir, slug, dry_run=False):
                 'error': 'PATH_ERROR',
                 'message': output.strip()[:200]
             }
+        elif 'Not logged in' in output or 'Run: clawhub login' in output:
+            return {
+                'success': False,
+                'slug': slug,
+                'error': 'NOT_LOGGED_IN',
+                'message': 'ClawHub CLI not logged in. Run: npx clawhub --registry https://clawhub.ai login'
+            }
         else:
             return {
                 'success': False,
@@ -385,23 +527,29 @@ def increment_version(skill_dir):
 
 def main():
     import argparse
-    parser = argparse.ArgumentParser(description='ClawHub Batch Uploader')
+    parser = argparse.ArgumentParser(description='ClawHub Batch Uploader v2.3')
     parser.add_argument('--limit', type=int, default=DAILY_LIMIT, help='Max skills to upload')
     parser.add_argument('--dry-run', action='store_true', help='Dry run mode')
     parser.add_argument('--resume', action='store_true', help='Resume from checkpoint')
+    parser.add_argument('--from-db', action='store_true', help='从DB查询待上传skill(替代JSON)')
     args = parser.parse_args()
 
-    # Load data
+    # Load dir_mapping (optional, fallback to ALT_DIRS search)
     dir_mapping = load_json(DIR_MAPPING_FILE)
     dir_mapping = dir_mapping['found_mapping'] if dir_mapping else {}
 
-    remaining_data = load_json(REMAINING_FILE)
-    if not remaining_data:
-        print("ERROR: No remaining data found. Run calc_clawhub_remaining.py first.")
-        sys.exit(1)
+    # v2.3: 从DB获取待上传slugs, 或从JSON获取
+    if args.from_db:
+        all_slugs = get_pending_slugs_from_db(limit=0)  # 获取全部, 主循环处理limit
+        print(f"[DB模式] 从数据库查询到 {len(all_slugs)} 个待上传skill")
+    else:
+        remaining_data = load_json(REMAINING_FILE)
+        if not remaining_data:
+            print("ERROR: No remaining data found. Run with --from-db or run calc_clawhub_remaining.py first.")
+            sys.exit(1)
+        all_slugs = remaining_data['slugs']
+        print(f"[JSON模式] 从JSON加载 {len(all_slugs)} 个待上传slug")
 
-    all_slugs = remaining_data['slugs']
-    print(f"Total remaining to upload: {len(all_slugs)}")
     print(f"Daily limit: {args.limit}")
     print(f"Dry run: {args.dry_run}")
     print()
@@ -414,14 +562,17 @@ def main():
         print(f"Resuming: {len(uploaded_today)} already uploaded today")
 
     # Also load previous results to skip already uploaded
-    prev_results = load_json(RESULTS_FILE)
-    if prev_results:
-        prev_success = set(prev_results.get('success', []))
-    else:
+    # v2.4: --from-db模式跳过JSON过滤, DB是唯一数据源
+    if args.from_db:
         prev_success = set()
-
-    # Load published slugs
-    published = set(load_json(PUBLISHED_SLUGS_FILE) or [])
+        published = set()
+    else:
+        prev_results = load_json(RESULTS_FILE)
+        if prev_results:
+            prev_success = set(prev_results.get('success', []))
+        else:
+            prev_success = set()
+        published = set(load_json(PUBLISHED_SLUGS_FILE) or [])
 
     # Filter out already uploaded
     to_upload = []
@@ -468,6 +619,9 @@ def main():
             success_count += 1
             results['success'].append(slug)
             uploaded_today.add(slug)
+            # v2.3: 更新DB状态
+            if not args.dry_run:
+                update_db_clawhub_status(slug, 'synced', result.get('version'))
         elif result.get('error') == 'VERSION_EXISTS':
             # Try incrementing version and retry
             print(f" VERSION_EXISTS, incrementing...", end="", flush=True)
@@ -479,6 +633,9 @@ def main():
                     success_count += 1
                     results['success'].append(slug)
                     uploaded_today.add(slug)
+                    # v2.3: 更新DB状态
+                    if not args.dry_run:
+                        update_db_clawhub_status(slug, 'synced', new_ver)
                 else:
                     print(f" FAIL: {result2.get('error', '')}")
                     fail_count += 1

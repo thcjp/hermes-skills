@@ -1,13 +1,13 @@
 ---
+
 slug: slack-api-toolkit-free
 name: slack-api-toolkit-free
 version: 1.0.1
 displayName: Slack API工具箱
 summary: "通过托管OAuth安全调用Slack API，支持消息收发与频道管理，适合个人快速集成.。Slack API工具箱（免费版）通过托管OAuth机制安全调用Slack API，免去手动管理To"
-license: Proprietary
+license: MIT
 edition: free
-description: Slack API工具箱（免费版）通过托管OAuth机制安全调用Slack API，免去手动管理Token的繁琐，支持消息收发与频道管理核心能力。核心能力：托管OAuth连接管理、消息发送与回复、频道列表与信息查询、用户信息查询、CLI与Python调用示例。Use
-  when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
+description: "Slack API工具箱（免费版）通过托管OAuth机制安全调用Slack API，免去手动管控Token的繁琐，兼容消息收发与频道管控核心能力。核心能力：托管OAuth连接管控、消息发送与回复、频道列表与信息查询、用户信息查询、CLI与Python调用示例。Use. 适用于需要slack api toolkit相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 集成工具
   - 团队协作
@@ -25,7 +25,9 @@ tools:
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # Slack API工具箱（免费版）
 
 ## 概述
@@ -120,7 +122,7 @@ sgw connection create slack
 ```
 
 返回的`url`在浏览器中打开，完成Slack OAuth授权.
-### Step 4：发送第一条消息
+### Step 4：发送领先条消息
 
 ```bash
 sgw slack message send --channel C0123456789 --text 'Hello from Slack Gateway!'
@@ -194,7 +196,7 @@ sgw slack user lookup --email alice@example.com
 sgw slack message send --channel C0123456789 --text 'Hello!' --connection conn_xyz
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **写操作需确认**：所有创建、更新、删除操作执行前需向用户确认目标与意图
 2. **频道ID准确**：使用频道ID（C开头）而非频道名，避免歧义

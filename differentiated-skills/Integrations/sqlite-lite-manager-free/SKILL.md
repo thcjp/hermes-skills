@@ -1,13 +1,13 @@
 ---
+
 slug: sqlite-lite-manager-free
 name: sqlite-lite-manager-free
 version: 1.0.1
 displayName: 轻量SQLite管理免费版
 summary: 面向AI Agent的轻量级本地SQLite数据库管理工具，免部署、低内存，覆盖建表、查询、索引、备份等核心场景.
-license: Proprietary
+license: MIT
 edition: free
-description: 面向AI Agent场景重新设计的轻量级SQLite本地数据库管理工具。通过单一文件、零运维的方式提供结构化数据存储能力，配套Python封装API、性能调优参数与常用Schema模板，可快速接入会话记忆、缓存层、日志归档等典型工作流。Use
-  when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
+description: "面向AI Agent场景重新设计的轻量级SQLite本地数据库管控工具。通过单一文件、零运维的方式包含结构化数据存储能力，配套Python封装API、性能调优参数与常用Schema模板，可快速接入会话记忆、缓存层、日志归档等典型工作流。Use. 适用于需要sqlite lite manager相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 集成工具
   - 本地存储
@@ -19,15 +19,15 @@ tags:
   - python
   - text
   - create_index
-  - sqlite
-  - wal
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 轻量SQLite管理工具（免费版）
 
 本工具为AI Agent、独立开发者与小型团队提供轻量级本地SQLite数据库管理能力。免费版聚焦核心场景：建表、增删改查、索引、备份、查询优化，足以覆盖绝大多数本地数据存储需求.
@@ -83,7 +83,7 @@ SQLite是一种嵌入式关系型数据库，数据存储于单一文件中，�
 替代JSON/YAML配置文件，获得事务一致性、索引查询、外键约束等数据库级能力.
 ## 快速开始
 
-### 第一步：建立数据库连接
+### 领先步：建立数据库连接
 
 ```python
 from sqlite_connector import SQLiteDB
@@ -114,7 +114,7 @@ db.create_index("memos", "created_at")
 
 ```python
 # 写入
-db.insert("memos", {"title": "第一条备忘", "content": "测试内容", "tags": "demo"})
+db.insert("memos", {"title": "领先条备忘", "content": "测试内容", "tags": "demo"})
 # ...
 # 查询
 rows = db.query("SELECT * FROM memos WHERE tags = ?", ("demo",))
@@ -172,7 +172,7 @@ db.create_index("cache", "key")
 db.create_index("cache", "expires_at")
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 批量写入替代循环写入
 

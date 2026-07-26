@@ -5,15 +5,9 @@ name: email-multi-provider-free
 version: 1.0.1
 displayName: 多邮箱管理免费版
 summary: "Gmail与Outlook多账户邮件管理，支持收发搜索与安全认证。多邮箱管理免费版是一款面向个人用户的跨邮箱平台管理工具，统一管理 Gmail、Outlook"
-license: Proprietary
+license: MIT
 edition: free
-description: "多邮箱管理免费版是一款面向个人用户的跨邮箱平台管理工具，统一管理 Gmail、Outlook
-  与 Exchange 邮箱，支持邮件读取、搜索、发送、回复与转发等核心操作，通过系统密钥环
-  安全存储凭证。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。减少重复劳动，提升工作效率。触发关键词：API设计、自动化、安全、性能优化、搜索、机器学习"
-
-  与 Exchange 邮箱，支持邮件读取、搜索、发送、回复与转发等核心操作，通过系统密钥环
-
-  安全存储凭证。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。'
+description: "多邮箱管控免费版是一款面向个人用户的跨邮箱平台管控工具，统一管控 Gmail、Outlook. 适用于需要email multivider相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 沟通协作
   - 邮件管理
@@ -25,15 +19,15 @@ tags:
   - porteden
   - email
   - bash
-  - messages
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
-
+pricing_tier: free
 ---
+
 # 多邮箱管理免费版
 
 **版本**: 1.0.0
@@ -259,7 +253,7 @@ export PE_PROFILE=work
 
 ---
 
-## 最佳实践
+## 优秀实践
 
 ### 安全规范
 

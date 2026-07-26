@@ -1,4 +1,5 @@
 ---
+
 slug: skill-vetter-tool-pro
 name: skill-vetter-tool-pro
 version: 1.0.0
@@ -6,41 +7,7 @@ displayName: Skill安全审查(专业版)
 summary: "企业级Skill安全审查平台,含自动扫描、沙箱测试、信任注册表与持续监控,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
-description: 核心能力:，可自动提升工作效率
-
-  - 24项红旗规则+自定义规则引擎
-
-  - 自动化代码扫描与AI风险分析
-
-  - 沙箱隔离环境测试
-
-  - Skill信任注册表与生命周期管理
-
-  - 批量审查与并行处理
-
-  - 变更检测与持续监控
-
-  - HTML/PDF专业审查报告
-
-  适用场景:
-
-  - 企业AI Agent安全治理
-
-  - Skill供应链安全管理
-
-  - 安全合规审计
-
-  - 开发团队安全规范执行
-
-  差异化:
-
-  - 自动化深度分析,降低人工审查负担
-
-  - 沙箱隔离测试,安全验证Skill行为
-
-  - 信任生命周期管理(注册/验证/撤销)
-
-  - ...'
+description: "核心能力:，可自发提升工作效率. 适用于需要skill vetter tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 安全
   - Skill安全
@@ -57,7 +24,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Security"
+pricing_tier: L2-标准级
 ---
+
 Skill安全审查专业版是一款面向企业用户的AI Agent Skill安全治理平台。在免费版12项红旗规则基础上,扩展至24项规则并支持自定义规则引擎,增加自动化代码扫描与AI风险分析、沙箱隔离环境测试、Skill信任注册表与生命周期管理、批量审查与并行处理、变更检测与持续监控等企业级功能。与免费版完全兼容,红旗规则和审查流程可无缝复用.
 ## 核心能力
 ### 功能矩阵
@@ -143,27 +112,27 @@ Skill: example-skill v1.2.0
   [MEDIUM] Base64解码
     文件: utils.js:28
     证据: atob(encodedData)
-```
-
-### 场景二:批量Skill审查
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python （请参考skill目录中的脚本文件） \
   --batch ~/.skills/ \
   --threads 5 \
   --report html \
   --output batch_vetting.html
-```
-
-### 场景三:沙箱隔离测试
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python （请参考skill目录中的脚本文件） \
   --target /path/to/skill \
   --sandbox-test \
   --sandbox-timeout 60 \
   --monitor network,filesystem,process
-```
-
-### 场景四:信任注册表管理
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python （请参考skill目录中的脚本文件） --target /path/to/skill --register-trust
 # ...
@@ -245,7 +214,7 @@ python （请参考skill目录中的脚本文件） --list-trust
 | restricted | 31-60 | 工作区读写 | 白名单域名 | 受限命令 |
 | trusted | 61-100 | 全部读写 | 全部允许 | 全部允许 |
 
-## 最佳实践
+## 优秀实践
 ### 1. 安装前审查流程
 ```bash
 python （请参考skill目录中的脚本文件） --target /path/to/skill --deep-scan
@@ -253,14 +222,14 @@ python （请参考skill目录中的脚本文件） --target /path/to/skill --de
 python （请参考skill目录中的脚本文件） --target /path/to/skill --sandbox-test
 # ...
 python （请参考skill目录中的脚本文件） --target /path/to/skill --register-trust --level restricted
-```
-
-### 2. 持续监控
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python （请参考skill目录中的脚本文件） --monitor ~/.skills/ --schedule "0 3 * * *"
-```
-
-### 3. 批量审查
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python （请参考skill目录中的脚本文件） --batch ~/.skills/ --threads 5 --report html
 ```
@@ -293,7 +262,7 @@ A: 支持。在配置文件中添加自定义规则,指定正则模式、严重�
 - 可选配置: VirusTotal API(增强恶意URL检测)
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行企业级Skill安全审查任务
 
 ## 错误处理

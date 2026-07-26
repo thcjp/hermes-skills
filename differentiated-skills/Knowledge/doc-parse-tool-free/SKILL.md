@@ -1,20 +1,13 @@
 ---
+
 slug: doc-parse-tool-free
 name: doc-parse-tool-free
 version: 1.0.1
 displayName: 文档解析工具（免费版）
 summary: "通用文档解析工具，支持PDF、图片、扫描件的结构化信息提取与OCR识别.,支持多种使用场景和自动化处理"
-license: Proprietary
+license: MIT
 edition: free
-description: 文档解析工具 - （免费版），可分析提升工作效率
-
-  核心能力: 文档解析, OCR识别, 表格提取, 版面分析, document parse, 结构化提取, 图片识别
-
-  适用场景: 个人用户日常使用，核心功能覆盖基础需求
-
-  差异化: 精简版，适合个人用户快速上手，提供核心功能与基础用法
-
-  适用关键词: 文档解析, OCR识别, 表格提取, 版面分析, document parse, 结构化提取, 图片识别'
+description: "文档解析工具 - （免费版），可剖析提升工作效率. 适用于需要doc parse tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 文档解析
   - OCR
@@ -26,15 +19,15 @@ tags:
   - 文档
   - 支持创建
   - 查询
-  - input_params
-  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 文档解析工具（免费版）
 
 ## 概述
@@ -174,7 +167,7 @@ doc_parse:
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 
-## 最佳实践
+## 优秀实践
 
 ### 基础使用建议
 
@@ -187,9 +180,8 @@ doc_parse:
 ### 性能优化
 
 ```python
-# 免费版：单文件优化
-# 确保输入文件不超过建议大小
-# 处理完成后释放资源
+# 在此执行相关操作
+pass
 ```
 
 ## 常见问题

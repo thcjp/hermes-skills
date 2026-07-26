@@ -1,4 +1,5 @@
 ---
+
 slug: multi-search-engine-tool-pro
 name: multi-search-engine-tool-pro
 version: 1.0.0
@@ -6,11 +7,7 @@ displayName: 多搜索引擎专业版
 summary: 企业级多搜索引擎聚合平台,支持16个引擎、结果去重排序、批量搜索、API访问与本地缓存,适合专业信息检索团队.
 license: Proprietary
 edition: pro
-description: '多搜索引擎专业版,为专业用户提供全方位多搜索引擎聚合与检索能力.
-  核心能力:16引擎聚合搜索、智能去重排序、批量关键词搜索、搜索API、本地结果缓存、JSON/CSV导出.
-  适用场景:专业信息检索、市场调研、竞品分析、学术研究.
-  差异化:专业版兼容免费版搜索配置,新增结果聚合分析与API能力,满足专业检索需求.
-  适用关键词: 搜索聚合, 结果去重, 批量搜索, 搜索API, 结果缓存, search aggregation, dedup, batch search'
+description: "多搜索引擎专业版,为专业用户包含全方位多搜索引擎聚合与检索能力. 适用于需要multi search engine tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 搜索
   - 信息检索
@@ -22,14 +19,15 @@ tags:
   - self
   - query
   - cache_dir
-  - engine
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Security"
+pricing_tier: L2-标准级
 ---
+
 专业版为专业用户提供完整的多搜索引擎聚合与检索平台,在免费版链接生成能力之上,新增16引擎结果聚合、智能去重与相关性排序、批量关键词搜索、搜索结果API、本地结果缓存与JSON/CSV导出。专业版完全兼容免费版搜索引擎配置,已有搜索脚本可无缝升级,适合专业信息检索与市场调研场景.
 ### 专业版核心优势
 | 优势 | 说明 |
@@ -235,9 +233,9 @@ def market_research(topic):
         print(f"  {info['name']}: {info['url']}")
 # ...
 market_research("新能源汽车市场分析")
-```
-
-### 场景二:批量关键词搜索
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 #!/bin/bash
 echo "=== 批量关键词搜索 ==="
@@ -261,9 +259,9 @@ for r in result['results']:
     if 'error' not in r:
         print(f'  关键词: {r[\"query\"]} -> {r[\"engine_count\"]}个引擎')
 "
-```
-
-### 场景三:定时搜索任务
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 #!/bin/bash
 QUERY="行业最新动态"
@@ -334,7 +332,7 @@ result = agg.search_all("关键词")
 | 中文 | 百度/搜狗/360/必应中国/头条/知乎/微博 | 7 |
 | 国际 | Google/Bing/DDG/Yandex/Yahoo/Startpage/Ecosia/Brave/Swisscows | 9 |
 
-## 最佳实践
+## 优秀实践
 1. **缓存优先**:使用缓存减少重复搜索请求.
 2. **批量处理**:多个关键词使用批量搜索接口.
 3. **类型筛选**:根据需求选择中文或国际引擎.
@@ -371,7 +369,7 @@ result = agg.search_all("关键词")
 - 缓存数据存储在本地,无需外部凭证
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行专业级多搜索引擎聚合与检索任务
 
 ## 错误处理

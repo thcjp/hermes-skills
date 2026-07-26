@@ -7,9 +7,7 @@ displayName: WhatsApp表情专业版
 summary: 企业级 WhatsApp GIF 管理工具，支持批量发送、定时任务、GIF 库管理、多账号与营销分析，适合团队协作与营销场景.
 license: Proprietary
 edition: pro
-description: "企业级 WhatsApp GIF 管理工具，支持批量发送、定时任务、GIF 库管理、多账号与营销分析。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。Use
-  when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。减少重复劳动，提升工作效率。触发关键词：API设计、自动化、搜索、转换、项目管理、品牌"
-  when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
+description: "企业级 WhatsApp GIF 管控工具，兼容成批发送、定时任务、GIF 库管控、多账号与营销剖析。Use when 需要项目管控、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。Use. 适用于需要gif whatsapp tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - WhatsApp
   - GIF
@@ -29,8 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
-
+pricing_tier: L2-标准级
 ---
+
 # WhatsApp 表情专业版
 
 ## 概述
@@ -286,7 +285,7 @@ analytics:
 | `--account` | 字符串 | main | 账号名 | 指定发送账号 |
 | `--split` | 整数 | 100 | 1-100 | 账号分流百分比 |
 
-## 最佳实践
+## 优秀实践
 
 ### 批量发送优化
 

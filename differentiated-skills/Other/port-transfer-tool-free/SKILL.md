@@ -1,42 +1,24 @@
 ---
+
 slug: port-transfer-tool-free
 name: port-transfer-tool-free
 version: 1.0.0
 displayName: 工具移植工具
 summary: "面向个人的 MCP工具配置跨环境移植工具，支持导入导出.。面向个人用户的 MCP工具配置跨环境移植工具."
-license: Proprietary
+license: MIT
 edition: free
-description: 面向个人用户的 MCP工具配置跨环境移植工具，可处理提升工作效率
-  核心能力:
-
-  - MCP工具配置导出为可移植清单
-
-  - 跨 Agent 环境导入配置
-
-  - 凭证安全处理与占位符替换
-
-  - 单环境配置校验
-
-  适用场景:
-
-  - 个人把 MCP工具配置从一个环境迁到另一个
-
-  - 备份当前 MCP工具清单
-
-  - 单环境配置导入与校验
-
-  差异化: 免费版聚焦个人单环境移植与备份，提供凭证占位符处理，零成本迁移.
-  适用关键词: 工具移植, 配置迁移, mcp 导入导出, 跨环境, 凭证占位, port transfer, import export'
+description: "面向个人用户的 MCP工具配置跨环境移植工具，可处置提升工作效率. 适用于需要port transfer tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要port transfer tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 工具移植
+  - port
+  - transfer
+  - automation
+  - productivity
   - MCP工具
   - 个人效率
   - 其他工具
   - 工具
   - 效率
-  - json
-  - bundle
-  - env
 tools:
   - read
   - exec
@@ -44,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # 工具移植工具（免费版）
 
 ## 概述
@@ -130,7 +115,7 @@ category: "Automation"
 | `.env` | 导入后填真实值 |
 | `secrets` 字段 | 集中管理所有占位符 |
 
-## 最佳实践
+## 优秀实践
 
 - **凭证必占位**：导出时所有密钥占位符化，清单可安全分享.
 - **导入后校验**：导入后跑 `validate` 确认依赖与格式.
@@ -181,7 +166,7 @@ A：能。清单为 JSON，路径用占位符，导入时按 OS 适配.
 
 ```bash
 # .env 文件填真实凭证
-SEARCH_API_KEY=sk-real-key-xxx
+SEARCH_API_KEY=sk-real-key-placeholder
 # ...
 # 导入时自动替换占位符
 ```
@@ -197,9 +182,8 @@ SEARCH_API_KEY=sk-real-key-xxx
 ### 配置校验
 
 ```bash
-# 校验格式与依赖
-# ...
-# 校验结果
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ```text

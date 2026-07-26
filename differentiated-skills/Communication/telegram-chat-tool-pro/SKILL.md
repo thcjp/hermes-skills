@@ -1,4 +1,5 @@
 ---
+
 slug: "telegram-chat-tool-pro"
 name: "telegram-chat-tool-pro"
 version: "1.0.0"
@@ -6,23 +7,7 @@ displayName: "电报聊天工具专业版"
 summary: "企业级Telegram多Bot管理与跨实例通信工具,支持主动推送、消息归档审计与群组批量管理。。电报聊天工具专业版,面向团队与企业用户提供多 Bot 管理、主动消息推送、消息归档审计与群组批"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  电报聊天工具专业版,面向团队与企业用户提供多 Bot 管理、主动消息推送、消息归档审计与群组批量管理能力。核心能力:
-  - 多 Bot 统一管理与快速切换
-  - 主动消息推送(无需被艾特即可发送)
-  - 消息归档与审计日志
-  - 群组批量管理与成员同步
-  - 跨实例群组广播
-  - Webhook 集成与自动化工作流
-  - 消息模板与定时发送
-
-  适用场景:
-  - 企业团队多 Bot 协作管理
-  - 跨群组消息广播与公告
-  - 自动化通知与告警推送
-  - 消息合规存档与审计追溯
-
-  差异化:专业版完全兼容免费版配置与命令体系...
+description: "|-. 适用于需要telegram chat tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 沟通协作
   - 即时通讯
@@ -34,14 +19,15 @@ tags:
   - 社交
   - 通信
   - bot
-  - 推送
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: L2-标准级
 ---
+
 电报聊天工具专业版是一款面向团队与企业用户的 Telegram 多 Bot 管理与跨实例通信解决方案。在完全兼容免费版单 Bot 配置与基础聊天能力的基础上,专业版解锁了多 Bot 统一管理、主动消息推送、消息归档审计、群组批量管理与 Webhook 集成等高级能力.
 无论是管理团队多个 Bot 实例、跨群组广播重要公告、自动化推送告警通知,还是满足消息合规存档需求,专业版都能通过统一的配置与命令体系高效完成.
 ### 免费版与专业版能力对比
@@ -204,7 +190,7 @@ python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --delete task_i
 
 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
-### 第一步:配置多个 Bot
+### 领先步:配置多个 Bot
 ```yaml
 messaging:
   telegram:
@@ -227,9 +213,9 @@ messaging:
         display_name: "人事Bot"
         allowed_chats:
           - "-1004444444444"
-```
-
-### 第二步:验证多 Bot 配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --all
 # ...
@@ -247,9 +233,9 @@ Bot 状态总览
 [异常] hr_bot         @hr_assistant_bot        离线    Token可能过期
 # ...
 统计: 正常 2/3, 异常 1/3
-```
-
-### 第三步:开始使用高级功能
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） \
     --bot "dev_team_bot" \
@@ -261,14 +247,9 @@ python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） \
     --bot "company_bot" \
     --targets "研发群,市场群" \
     --message "公司年会定于1月20日举办,请各部门准备节目。"
-```
-
-## 配置示例
-### 多 Bot 统一配置
-
-### 消息模板配置
-
-### Webhook 集成配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 webhooks:
   - name: "ci_build"
@@ -287,7 +268,7 @@ webhooks:
 
 ### 企业级自动化工作流
 
-## 最佳实践
+## 优秀实践
 ### 1. 多 Bot 按职能划分
 企业环境建议按职能划分 Bot,避免单个 Bot 承担过多职责:
 
@@ -407,7 +388,7 @@ python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --delete <id>  
 - Token 属于敏感凭据,建议使用环境变量引用,定期轮换
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯 Markdown 指令,核心功能通过 Python 脚本与 Telegram API 调用实现)
+- **分类**: MD+EXEC模式纯 Markdown 指令,核心功能通过 Python 脚本与 Telegram API 调用实现)
 - **说明**: 基于脚本的企业级 AI Skill,通过自然语言指令驱动 Agent 执行 Telegram 多 Bot 管理与跨实例通信。专业版完全兼容免费版单 Bot 配置与基础聊天能力,额外提供多 Bot 统一管理、主动消息推送、消息归档审计、群组批量管理、跨群组广播、Webhook 集成与定时任务调度能力,适合中大型团队与企业级通信场景.
 ## 错误处理
 

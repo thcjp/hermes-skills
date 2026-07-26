@@ -1,13 +1,13 @@
 ---
+
 slug: api-magic-gen-free
 name: api-magic-gen-free
 version: 1.0.1
 displayName: 接口魔法生成免费版
 summary: 基于magic-api框架的接口快速生成工具，通过Web UI编写脚本自动映射HTTP接口，无需Controller/Service/Dao.
-license: Proprietary
+license: MIT
 edition: free
-description: 面向Java后端开发者的接口快速生成工具，基于magic-api框架能力封装。通过Web UI编写脚本即可自动映射为HTTP接口，免除Controller、Service、Dao、Mapper、XML、VO等Java对象的编写负担，特别适合原型验证、内部工具、数据看板接口等场景。Use
-  when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
+description: "面向Java后端开发者的接口快速产出工具，基于magic-api框架能力封装。通过Web UI编写脚本即可自发映射为HTTP接口，免除Controller、Service、Dao、Mapper、XML、VO等Java对象的编写负担，特别适合原型验证、内部工具、数据看板接口等场景。Use. 适用于需要api magic gen相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 集成工具
   - 接口开发
@@ -19,15 +19,15 @@ tags:
   - user
   - select
   - var
-  - return
-  - code
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # 接口魔法生成工具（免费版）
 
 本工具为Java后端开发者提供基于magic-api框架的接口快速生成能力。免费版覆盖核心场景：脚本编写、CRUD映射、条件查询、基础认证，可快速搭建原型与内部工具接口.
@@ -220,7 +220,7 @@ var userId = cache.get("token:" + token);
 if (!userId) return {code: 401, msg: "请先登录"};
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 使用参数化查询防SQL注入
 

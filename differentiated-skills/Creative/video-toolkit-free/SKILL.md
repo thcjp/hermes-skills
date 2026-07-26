@@ -5,15 +5,9 @@ name: video-toolkit-free
 version: 1.0.1
 displayName: 视频工具箱免费版
 summary: "基于FFmpeg的视频处理工具,支持格式转换、压缩、字幕生成、宽高比调整,适合个人内容创作者。面向个人内容创作者的视频处理工具,基于FFmpeg提供格式转换、视频压缩、"
-license: Proprietary
+license: MIT
 edition: free
-description: "面向个人内容创作者的视频处理工具,基于FFmpeg提供格式转换、视频压缩、
-  字幕生成、宽高比调整、音频清理等核心功能,覆盖主流社交平台规格。核心能力:
-  - 视频格式转换与压缩(H。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。系统性提升系统性能与响应速度。触发关键词：性能优化、转换、设计、视频、机器学习"
-
-  字幕生成、宽高比调整、音频清理等核心功能,覆盖主流社交平台规格。核心能力:
-
-  - 视频格式转换与压缩(H。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。'
+description: "面向个人内容创作者的视频处置工具,基于FFmpeg包含格式变换、视频压缩、. 适用于需要video toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 视频
   - FFmpeg
@@ -25,18 +19,15 @@ tags:
   - 媒体
   - 创意
   - mp4
-  - input
-  - ffmpeg
-  - output
-  - aac
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
+pricing_tier: free
 ---
+
 # 视频工具箱 - 免费版
 
 ## 概述
@@ -307,7 +298,7 @@ whisper --version 2>/dev/null || pip install openai-whisper
 | 自动化 | 手动执行 | 工作流自动化 |
 | 适用对象 | 个人创作者 | 内容团队/机构 |
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 质量规则
 
@@ -355,7 +346,7 @@ Whisper支持30+种语言的自动转录,包括中文、英文、日语、韩语
 始终使用H.264视频编码+AAC音频编码,添加 `-movflags +faststart` 优化Web播放,这是最大兼容性的组合.
 ### Q5: 智能重构图是什么?
 
-智能重构图是专业版功能,通过AI分析视频内容自动选择最佳裁剪区域,避免裁剪掉重要主体。免费版仅支持居中裁剪.
+智能重构图是专业版功能,通过AI分析视频内容自动选择优秀裁剪区域,避免裁剪掉重要主体。免费版仅支持居中裁剪.
 ## 依赖说明
 
 ### 运行环境
@@ -397,7 +388,7 @@ pip install openai-whisper
 本Skill基于FFmpeg本地工具运行,无需额外API Key。Whisper为本地模型运行,不依赖外部API。视频处理完全在本地执行,不上传至外部服务.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。核心视频处理功能依赖exec工具执行FFmpeg/FFprobe命令,Whisper字幕功能需要Python环境。仅处理用户明确提供的视频文件,不自动访问其他文件.
 ## 错误处理
 

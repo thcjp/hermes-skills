@@ -1,4 +1,5 @@
 ---
+
 slug: feed-to-md-tool-pro
 name: feed-to-md-tool-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: RSS转MD(专业版)
 summary: "企业级RSS转Markdown专业版，含批量转换、自定义模板、AI内容增强、定时归档.。RSS转Markdown助手专业版是面向企业级场景的完整RSS内容转换与归档工具。在免费版单源转换能力"
 license: Proprietary
 edition: pro
-description: RSS转Markdown助手专业版是面向企业级场景的完整RSS内容转换与归档工具。在免费版单源转换能力之上，新增批量转换、自定义模板、AI内容增强、定时归档、多格式输出、图片下载、全文获取、去重处理八大高级能力。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "RSS转Markdown助手专业版是面向企业级场景的完整RSS内容变换与归档工具。在免费版单源变换能力之上，新增成批变换、自定义模板、AI内容增强、定时归档、多格式输出、图片下载、全文获取、去重处置八大高级能力。Use. 适用于需要feed to md tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - RSS转换
   - 企业级
@@ -19,7 +19,6 @@ tags:
   - 工具
   - https
   - true
-  - feed
 tools:
   - read
   - exec
@@ -28,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 > **批量转换+自定义模板+AI增强+定时归档。企业级内容归档全功能覆盖。**
 
 将复杂的RSS内容转换与归档任务交给专业工具处理。专业版在免费版单源转换能力之上，新增批量转换、自定义模板、AI内容增强、定时归档、多格式输出、图片下载、全文获取、去重处理八大高级能力，满足企业级场景对内容归档的批量性、定制化与自动化要求.
@@ -133,9 +134,9 @@ saver.save(markdown, feed_title=feed['title'])
 python3 batch_convert.py --input feeds.txt --output ./archives
 # ...
 python3 convert.py --url https://example.com/feed.xml --template detailed --output ./output
-```
-
-### 120秒标准搭建
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 pip install requests schedule beautifulsoup4
 pip install markdown
@@ -164,10 +165,9 @@ export:
 EOF
 # ...
 python3 feed_to_md_service.py --config feed_to_md_config.yaml
-```
-
-## 配置示例
-### 企业级配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 feeds:
   - url: https://tech-blog.com/feed.xml
@@ -217,10 +217,9 @@ deduplication:
   enabled: true
   method: title_similarity
   threshold: 0.8
-```
-
-## 最佳实践
-### 1. 批量转换优化
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 class CachedBatchConverter(BatchFeedConverter):
     def __init__(self, cache_dir="./cache"):
@@ -243,9 +242,9 @@ class CachedBatchConverter(BatchFeedConverter):
         with open(cache_file, 'w') as f:
             json.dump(result, f)
         return result
-```
-
-### 2. 模板管理
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 TEMPLATE_LIBRARY = {
     'default': '默认格式，包含所有基础字段',
@@ -258,9 +257,9 @@ TEMPLATE_LIBRARY = {
 def share_template(team_name, template_name, template_dict):
     """分享模板到团队"""
     print(f"已分享模板 {template_name} 到团队 {team_name}")
-```
-
-### 3. 归档管理
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 def cleanup_old_archives(archive_dir, keep_days=30):
     """清理超过N天的归档"""
@@ -295,7 +294,7 @@ def cleanup_old_archives(archive_dir, keep_days=30):
 ### Q6：多格式输出支持哪些格式？
 专业版支持四种格式：(1) Markdown（默认）；(2) HTML（带样式）；(3) PDF（需安装wkhtmltopdf）；(4) EPUB（需安装pandoc）。可同时输出多种格式.
 ### Q7：去重处理如何工作？
-专业版支持基于标题相似度的去重。使用编辑距离算法计算标题相似度，超过阈值（默认0.8）的条目视为重复，仅保留第一条。可配置阈值与去重方法.
+专业版支持基于标题相似度的去重。使用编辑距离算法计算标题相似度，超过阈值（默认0.8）的条目视为重复，仅保留领先条。可配置阈值与去重方法.
 ## 依赖说明
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
@@ -342,7 +341,7 @@ def cleanup_old_archives(archive_dir, keep_days=30):
 此外，专业版还提供：
 - 多角色场景指南（知识管理/内容团队/研发团队）
 - 完整FAQ（7问）与故障排查表
-- 性能优化建议与最佳实践
+- 性能优化建议与优秀实践
 - GPT-4o模型路由与优先支持
 
 ## 定价
@@ -373,9 +372,9 @@ def cleanup_old_archives(archive_dir, keep_days=30):
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

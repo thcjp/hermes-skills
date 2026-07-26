@@ -1,13 +1,13 @@
 ---
+
 slug: bizauto-flow-free
 name: bizauto-flow-free
 version: 1.0.1
 displayName: 业务自动化师(免费版)
 summary: "识别高ROI业务流程并设计自动化工作流，含审计、流程打分、定时任务实现，快速释放团队产能.。业务自动化师免费版帮助你将重复性业务流程转化为可执行的自动化工作流。采用"审计-设计-实现-监控""
-license: Proprietary
+license: MIT
 edition: free
-description: 业务自动化师免费版帮助你将重复性业务流程转化为可执行的自动化工作流。采用"审计-设计-实现-监控"四阶段方法论，让AI Agent成为你的业务自动化架构师，从识别瓶颈到落地实现一站式解决。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "业务自发化师免费版将重复性业务流程转化为可执行的自发化工作流。采用\"审计-设计-达成-监控\"四阶段方法论，让AI Agent成为你的业务自发化架构师，从识别瓶颈到落地达成一站式解决。Use. 适用于需要bizauto flow相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 业务自动化
   - 工作流设计
@@ -19,15 +19,15 @@ tags:
   - agent
   - 分钟
   - 业务自动
-  - 业务流程
-  - cron
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 业务自动化师（免费版）
 
 > **让AI Agent成为你的业务自动化架构师。从识别瓶颈到落地实现，四步释放团队产能。**

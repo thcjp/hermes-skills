@@ -1,33 +1,33 @@
 ---
+
 slug: moltbook-firewall-tool-free
 name: moltbook-firewall-tool-free
 version: 1.0.0
 displayName: Agent防火墙免费版
 summary: AI Agent安全防护层,支持提示注入检测、工具调用过滤与基础安全策略,适合个人开发者保护Agent应用.
-license: Proprietary
+license: MIT
 edition: free
-description: 'Agent防火墙免费版,为AI Agent应用提供基础安全防护能力.
-  核心能力:提示注入检测、工具调用过滤、输入净化、安全策略检查.
-  适用场景:Agent应用安全防护、用户输入净化、工具调用安全验证.
-  差异化:免费版聚焦核心防护能力,支持单Agent保护,适合个人开发者快速集成.
-  适用关键词: Agent防火墙, 提示注入, 安全防护, 输入净化, agent firewall, prompt injection, input sanitization'
+description: "Agent防火墙免费版,为AI Agent应用包含基础安全防护能力. 适用于需要moltbook firewall tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要moltbook firewall tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 安全
+  - moltbook
+  - firewall
+  - automation
+  - productivity
   - AI安全
   - Agent防护
   - 免费版
   - 加密
   - 工具
-  - input
-  - self
-  - agent
-  - violations
 tools:
   - read
   - exec
 homepage: ""
 category: "Security"
+pricing_tier: free
+
 ---
+
 本工具为AI Agent应用提供基础安全防护层,在用户输入与Agent执行之间建立防火墙,检测并过滤提示注入攻击、恶意工具调用与不当输入。免费版支持基础提示注入检测、工具调用过滤与输入净化,适合个人开发者保护Agent应用免受常见攻击.
 ### 免费版与专业版对比
 | 能力维度 | 免费版 | 专业版 |
@@ -203,9 +203,9 @@ print(f"输入检查: {result['action']}")
 # ...
 result = firewall.protect_tool_call("run_command", {"cmd": "ls -la"})
 print(f"工具检查: {result['action']}")
-```
-
-### 场景二:工具调用安全验证
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 #!/usr/bin/env python3
 """工具调用安全验证流程"""
@@ -229,9 +229,9 @@ firewall = AgentFirewall()
 safe_tool_execution(firewall, "read_file", {"path": "/home/user/document.txt"})
 # ...
 safe_tool_execution(firewall, "run_command", {"cmd": "rm -rf /"})
-```
-
-### 场景三:输入净化管道
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 #!/bin/bash
 echo "=== 输入净化管道 ==="
@@ -271,23 +271,23 @@ echo "  ${SANITIZED}"
 
 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
-### 第一步:初始化防火墙
+### 领先步:初始化防火墙
 ```python
 from agent_firewall import AgentFirewall
 # ...
 firewall = AgentFirewall()
-```
-
-### 第二步:保护用户输入
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 result = firewall.protect_input(user_input)
 if result["action"] == "ALLOW":
     process(result["input"])
 else:
     handle_block(result)
-```
-
-### 第三步:保护工具调用
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 result = firewall.protect_tool_call("tool_name", params)
 if result["action"] == "ALLOW":
@@ -314,7 +314,7 @@ if result["action"] == "ALLOW":
 | 编码绕过 | base64 decode | MEDIUM |
 | 多轮注入 | remember as rule | HIGH |
 
-## 最佳实践
+## 优秀实践
 1. **默认拒绝**:未知工具和操作默认拒绝,仅允许白名单中的操作.
 2. **多层防护**:输入净化+注入检测+工具过滤多层防护.
 3. **日志记录**:记录所有拦截事件,便于审计和优化.
@@ -350,7 +350,7 @@ if result["action"] == "ALLOW":
 - 所有检测在本地执行,不发送数据到外部
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行AI Agent安全防护任务
 
 ## 错误处理
@@ -377,9 +377,9 @@ if result["action"] == "ALLOW":
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

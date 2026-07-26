@@ -1,30 +1,13 @@
 ---
+
 slug: git-workflow-cn-tool-free
 name: git-workflow-cn-tool-free
 version: 1.0.0
 displayName: Git工作流助手免费版
 summary: "Git 分支管理、冲突解决与提交规范助手，覆盖个人开发者日常版本控制场景.。面向独立开发者的 Git 工作流辅助工具，聚焦分支管理、冲突解决与提交规范三大核心能力。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向独立开发者的 Git 工作流辅助工具，聚焦分支管理、冲突解决与提交规范三大核心能力。核心能力:
-
-  - 分支创建、切换、合并的标准化操作指引
-
-  - 合并冲突识别与基础解决策略
-
-  - Conventional Commits 提交规范生成
-
-  - 常用 Git 命令速查与撤销回滚操作
-
-  适用场景:
-
-  - 个人项目版本管理与分支规划
-
-  - 代码提交信息规范化生成
-
-  - 日常冲突处理与误操作恢复
-
-  差异化: 免费版聚焦个人开发者高频场景，提供轻量级命令速查与规范指引，开箱即用无额外配置'
+description: "面向独立开发者的 Git 工作流辅助工具，聚焦分支管控、冲突解决与提交规范三大核心能力。核心能力:. 适用于需要git workflow cn tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - 版本控制
@@ -41,7 +24,9 @@ tools:
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # Git 工作流助手（免费版）
 
 ## 概述
@@ -248,7 +233,7 @@ git stash drop stash@{0}           # 删除指定暂存
 git stash clear                    # 清空所有暂存
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **提交前先拉取**：避免不必要的冲突
    ```bash

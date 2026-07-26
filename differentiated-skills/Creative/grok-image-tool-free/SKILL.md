@@ -1,32 +1,13 @@
 ---
+
 slug: grok-image-tool-free
 name: grok-image-tool-free
 version: 1.0.0
 displayName: Grok图片生成-免费版
 summary: "轻量级AI图片生成工具，通过浏览器自动化操作Grok Imagine生成并保存图片.。Grok图片生成工具免费版，面向个人用户的AI图片生成方案."
-license: Proprietary
+license: MIT
 edition: free
-description: 'Grok图片生成工具免费版，面向个人用户的AI图片生成方案.
-  核心能力：
-
-  - 通过浏览器自动化访问 Grok Imagine
-
-  - 自然语言描述生成 AI 图片
-
-  - 本地下载保存生成的图片
-
-  - 桌面操作自动化右键保存
-
-  适用场景：
-
-  - 个人创意图片生成
-
-  - 社交媒体配图制作
-
-  - 概念图快速验证
-
-  差异化：免费版聚焦单张图片生成与本地保存，适合个人轻度使用。专业版扩展至批量生成、多格式导出与消息平台集成.
-  适用关键词: grok, imagine, 图片生成, AI画图, 生成图片, 浏览器自动化'
+description: "Grok图片产出工具免费版，面向个人用户的AI图片产出方案. 适用于需要grok image tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Creative
   - ImageGeneration
@@ -38,14 +19,15 @@ tags:
   - uvx
   - grok
   - 图片生成
-  - imagine
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # Grok图片生成工具（免费版）
 
 ## 概述
@@ -198,7 +180,7 @@ ls -lat ~/Downloads/*.jpg | head -5
 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步：打开 Grok Imagine
+### 领先步：打开 Grok Imagine
 
 ```javascript
 // 使用浏览器工具打开页面
@@ -274,7 +256,7 @@ uvx desktop-agent keyboard press return # 按回车键
   5. 指定构图: "特写" / "全景" / "俯视"
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **提示词具体化**：明确主体、风格、氛围和细节，避免模糊描述.
 2. **等待足够时间**：图片生成约需 8-10 秒，保存操作间留 1 秒缓冲.
@@ -282,7 +264,7 @@ uvx desktop-agent keyboard press return # 按回车键
 4. **屏幕坐标适配**：不同分辨率下鼠标坐标可能不同，先获取屏幕尺寸.
 5. **页面元素变化**：如果页面 DOM 变化，需根据实际情况调整选择器.
 ```text
-免费版最佳实践:
+免费版优秀实践:
 [ ] 提示词包含主体+风格+氛围+细节
 [ ] 生成等待时间 ≥ 10秒
 [ ] 保存操作间留 1秒缓冲

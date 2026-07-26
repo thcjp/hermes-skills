@@ -1,13 +1,13 @@
 ---
+
 slug: excel-ninja-free
 name: excel-ninja-free
 version: 1.0.1
 displayName: Excel忍者(免费版)
 summary: "一键完成Excel合并、拆分、筛选、去重、聚合、校验等高频操作，告别手工处理表格的繁琐.。Excel忍者为AI Agent提供专业的Excel文件自动化处理能力。免费版开放8个核心脚本，覆盖"
-license: Proprietary
+license: MIT
 edition: free
-description: Excel忍者为AI Agent提供专业的Excel文件自动化处理能力。免费版开放8个核心脚本，覆盖合并、转换、筛选、拆分、去重、聚合、校验、列选择等高频场景，让Agent像Excel高手一样批量处理表格。Use
-  when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
+description: "Excel忍者为AI Agent包含专业的Excel文件自发化处置能力。免费版开放8个核心脚本，覆盖合并、变换、筛选、拆分、去重、聚合、校验、列选择等高频场景，让Agent像Excel高手一样成批处置表格。Use. 适用于需要excel ninja相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - Excel自动化
   - 表格处理
@@ -24,7 +24,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Excel忍者（免费版）
 
 > **让Agent像Excel高手一样批量处理表格。8个核心脚本，覆盖最高频的表格操作场景。**
@@ -185,7 +187,7 @@ python （请参考skill目录中的脚本文件） --input 本周周报.xlsx --
 
 拿到一份脏数据，需要去重、筛选、校验.
 ```bash
-# 第一步：校验数据完整性
+# 领先步：校验数据完整性
 python （请参考skill目录中的脚本文件） --input 原始数据.xlsx --require-cols "ID,姓名,手机号" --key-cols "ID"
 # ...
 # 第二步：去重
@@ -297,7 +299,7 @@ with pd.ExcelWriter("output.xlsx", engine="openpyxl") as writer:
 
 ### Q1：免费版支持哪些Excel格式？
 
-免费版支持.xlsx（读写）和.csv（读写）格式。旧格式.xls仅支持只读。建议统一使用.xlsx格式以获得最佳兼容性.
+免费版支持.xlsx（读写）和.csv（读写）格式。旧格式.xls仅支持只读。建议统一使用.xlsx格式以获得优秀兼容性.
 ### Q2：处理大文件时会内存不足吗？
 
 免费版脚本使用openpyxl的read_only模式读取大文件，内存占用较低。但对于超过100MB的文件，建议先用split_excel.py按行数拆分后再处理。专业版支持write_only流式写入，可处理更大文件.
@@ -396,9 +398,9 @@ with pd.ExcelWriter("output.xlsx", engine="openpyxl") as writer:
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

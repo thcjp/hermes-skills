@@ -1,4 +1,5 @@
 ---
+
 slug: chromecast-control-tool-pro
 name: chromecast-control-tool-pro
 version: 1.0.0
@@ -6,17 +7,7 @@ displayName: 投屏控制专业版
 summary: "企业级投屏管理系统，支持多设备管理、播放队列、自动化脚本、状态监控与定时任务.。投屏控制专业版 —— 面向专业用户与企业环境的高级Chromecast投屏管理系统。核心能力:"
 license: Proprietary
 edition: pro
-description: '投屏控制专业版 —— 面向专业用户与企业环境的高级Chromecast投屏管理系统。核心能力:
-
-  - 多设备同步管理：统一管理多台Chromecast设备
-
-  - 播放队列管理：创建与管理视频播放队列
-
-  - 自动化脚本：定时投屏、自动播放列表、场景联动
-
-  - 实时状态监控：监控所有设备的播放状态
-
-  - 设备分组：将设备分组...'
+description: "投屏控制专业版 —— 面向专业用户与企业环境的高级Chromecast投屏管控系统。核心能力:. 适用于需要chromecast control tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 投屏控制
   - Chromecast
@@ -28,13 +19,6 @@ tags:
   - 写作
   - 电商
   - 创意
-  - 图像
-  - 运维
-  - self
-  - device_name
-  - def
-  - queues
-  - url
 tools:
   - read
   - exec
@@ -42,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 投屏控制专业版
 
 ## 概述
@@ -449,7 +435,7 @@ manager.cast_to_group('living_area', 'https://example.com/video.mp4')
 | 当前内容 | 正在播放的URL | 内容不匹配 |
 | 音量水平 | 当前音量值 | 低于10或高于90 |
 
-## 最佳实践
+## 优秀实践
 
 1. **设备命名规范**：使用统一的命名规则（如"区域-功能-编号"），便于管理
 2. **分组策略**：根据使用场景合理分组，避免过度分组增加复杂度

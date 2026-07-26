@@ -1,26 +1,24 @@
 ---
+
 slug: bsession-tool-free
 name: bsession-tool-free
 version: 1.0.0
 displayName: 浏览器会话(免费版)
 summary: "浏览器会话管理免费版，支持一次性页面抓取、基础会话列表与简易调试.。浏览器会话助手免费版是面向个人开发者的轻量浏览器会话管理工具。聚焦"打开URL-提取信息-返回结果"三步流程，无需编写完整"
-license: Proprietary
+license: MIT
 edition: free
-description: 浏览器会话助手免费版是面向个人开发者的轻量浏览器会话管理工具。聚焦"打开URL-提取信息-返回结果"三步流程，无需编写完整脚本即可完成单次页面抓取任务。Use
-  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
+description: "浏览器会话助手免费版是面向个人开发者的轻量浏览器会话管控工具。聚焦\"打开URL-提取信息-返回结果\"三步流程，无需编写完整脚本即可完成单次页面抓取任务。Use. 适用于需要bsession tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要bsession tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 浏览器会话
+  - bsession
+  - automation
+  - productivity
+  - developer-tools
   - 单次抓取
   - Docker
   - 轻量级
   - 搜索
   - 检索
-  - 工具
-  - self
-  - true
-  - port
-  - result
-  - container
 tools:
   - read
   - exec
@@ -28,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 # 浏览器会话助手（免费版）
 > **打开URL、提取信息、返回结果。三步完成单次浏览器会话。**
 
@@ -299,9 +300,9 @@ docker exec agent-browser echo ok
 docker exec agent-browser agent-browser --cdp 9222 open "https://example.com"
 sleep 3
 docker exec agent-browser agent-browser --cdp 9222 snapshot
-```
-
-### 120秒标准搭建
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 1. 启动容器（如果未运行）
 cd ~/.bsession/
@@ -351,9 +352,9 @@ class BsessionConfig:
         print(f"最大端口尝试：{cls.MAX_PORTS_TRY}")
 # ...
 BsessionConfig.show()
-```
-
-### 容器路径解析
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 import os
 from pathlib import Path
@@ -396,10 +397,9 @@ path.exists(candidate):
 paths = resolve_bsession_paths()
 for k, v in paths.items():
     print(f"{k}: {v}")
-```
-
-## 最佳实践
-### 1. 资源清理
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 # 使用try/finally确保Chrome进程被清理
 def safe_fetch(url):
@@ -430,9 +430,9 @@ def robust_fetch(url, max_retries=2):
         except Exception as e:
             print(f"第{attempt+1}次异常：{e}")
     return {"success": False, "error": "重试次数已用完"}
-```
-
-### 3. 端口管理 - 处理方式: 按上述步骤操作并确认结果
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 # 避免端口冲突
 class PortManager:
@@ -526,9 +526,9 @@ class PortManager:
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

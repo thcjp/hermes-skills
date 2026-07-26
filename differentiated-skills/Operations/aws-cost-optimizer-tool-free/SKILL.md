@@ -1,15 +1,13 @@
 ---
+
 slug: aws-cost-optimizer-tool-free
 name: aws-cost-optimizer-tool-free
 version: 1.0.0
 displayName: AWS成本优化入门
 summary: "AWS成本分析工具，支持支出概览与基础优化建议.。面向个人开发者与初创团队的AWS成本分析工具。支持月度支出概览、"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人开发者与初创团队的AWS成本分析工具。支持月度支出概览、
-
-  按服务/区域分解成本、识别闲置资源与基础优化建议。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use
-  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
+description: "面向个人开发者与初创团队的AWS成本剖析工具。兼容月度支出概览、. 适用于需要aws cost optimizer tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Operations
   - AWS
@@ -25,7 +23,9 @@ tools:
   - write
 homepage: ""
 category: "Operations"
+pricing_tier: free
 ---
+
 # AWS成本优化入门（免费版）
 
 ## 概述
@@ -95,8 +95,8 @@ python3 （请参考skill目录中的脚本文件） idle-resources --scan
 # ...
 # 输出：
 # === 闲置资源 ===
-# 1. EC2实例 i-xxx (停止状态) - $0/月
-# 2. EBS卷 vol-xxx (未挂载) - $40/月
+# 1. EC2实例 i-placeholder (停止状态) - $0/月
+# 2. EBS卷 vol-placeholder (未挂载) - $40/月
 # 3. EIP 1.2.3.4 (未关联) - $7.2/月
 # 4. S3存储桶 old-backup (90天未访问) - $120/月
 # 预计可节省: $167.2/月
@@ -191,7 +191,7 @@ cost_config:
     output_dir: "./reports"
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **定期检查**：每月初查看上月成本，及时发现问题
 2. **闲置清理**：定期清理闲置资源，避免持续计费

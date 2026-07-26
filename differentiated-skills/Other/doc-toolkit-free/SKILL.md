@@ -1,41 +1,34 @@
 ---
+
 slug: doc-toolkit-free
 name: doc-toolkit-free
 version: 1.0.1
 displayName: 文档工具箱免费版
 summary: "使用python-docx读写与编辑DOCX文档，支持基础格式化与视觉校验，适合日常文档处理.。文档工具箱免费版是一款面向开发者的DOCX文档处理Skill，封装python-docx与Li"
-license: Proprietary
+license: MIT
 edition: free
-description: '文档工具箱免费版是一款面向开发者的DOCX文档处理Skill，封装python-docx与LibreOffice渲染能力，提供从读取、创建到编辑的完整基础工作流。核心能力：
-
-  - 读取与审查DOCX内容（表格、段落、样式）
-
-  - 创建结构化DOCX文档（标题、列表、表格、图片）
-
-  - 基础格式化（字体、字号、颜色、对齐）
-
-  - 视觉校验：DOCX转PDF转PNG...'
+description: "文档工具箱免费版是一款面向开发者的DOCX文档处置Skill，封装python-docx与LibreOffice渲染能力，包含从读取、创建到编辑的完整基础工作流。核心能力：. 适用于需要doc toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量."
 tags:
   - 文档处理
+  - doc
+  - toolkit
+  - automation
+  - productivity
   - DOCX
   - 办公自动化
   - 排版校验
   - 工具
   - 效率
-  - 知识
-  - 文档
-  - libreoffice
-  - docx
-  - python-docx
-  - install
-  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # 文档工具箱免费版（Doc Toolkit Free）
 
 ## 概述
@@ -198,7 +191,7 @@ output/doc/        # 最终交付文档
 - 仅用ASCII连字符：避免U+2011（非断行连字符）等Unicode特殊字符
 - 引用可读：引用内容人类可读，不留工具标记或占位符
 
-## 最佳实践
+## 优秀实践
 
 1. **先渲染后修改**：修改前先渲染当前版本，建立基线对比
 2. **小步迭代**：每次修改一个章节，渲染检查后再继续

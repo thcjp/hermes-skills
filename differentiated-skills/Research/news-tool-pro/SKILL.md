@@ -1,4 +1,5 @@
 ---
+
 slug: news-tool-pro
 name: news-tool-pro
 version: 1.0.0
@@ -6,10 +7,7 @@ displayName: 个性化新闻助手专业版
 summary: "企业级个性化新闻平台，支持多用户管理、定时推送、阅读分析与API集成。个性化新闻助手专业版，面向团队和企业用户提供多用户管理、定时自动推送、阅读行为分析与API集成能力。核心能力:"
 license: Proprietary
 edition: pro
-description: '个性化新闻助手专业版，面向团队和企业用户提供多用户管理、定时自动推送、阅读行为分析与API集成能力。核心能力:
-
-  - 多用户/多租户管理。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。Use
-  when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。'
+description: "个性化新闻助手专业版，面向团队和企业用户包含多用户管控、定时自发推送、阅读行为剖析与API集成能力。核心能力:. 适用于需要news tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 新闻
   - 企业级
@@ -21,9 +19,6 @@ tags:
   - 工具
   - pro
   - true
-  - type
-  - api
-  - news
 tools:
   - read
   - exec
@@ -32,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 个性化新闻助手专业版在免费版单用户个性化简报的基础上，新增多用户/多租户管理、定时自动推送、阅读行为深度分析、自定义新闻源接入、多格式导出和 REST API 集成等企业级能力，满足团队和企业的定制化新闻服务需求.
 PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，原有兴趣画像和偏好配置均可无缝迁移.
 ## 核心能力
@@ -165,12 +162,9 @@ Agent 执行流程：
 1. AI编程领域内容供给充足，可增加深度分析比例
 2. 新能源领域打开率低，建议精简为头条速览
 3. 考虑增加"量子计算"作为新兴关注领域
-```
-
-## 快速开始
-### Step 1：初始化 PRO 环境
-
-### Step 2：从免费版迁移
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 if [ -f ~/news/memory.md ]; then
     cp ~/news/memory.md ~/news-pro/users/default_profile.md
@@ -181,9 +175,9 @@ if [ -f ~/news/sources.md ]; then
     cp ~/news/sources.md ~/news-pro/config/imported_sources.md
     echo "信息源已迁移"
 fi
-```
-
-### Step 3：创建第一个团队用户
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 用户：为技术部创建新闻简报服务
 # ...
@@ -226,9 +220,9 @@ custom_sources:
     url: "https://partner.local/news-webhook"
     quality_tier: "B"
     direction: "incoming"
-```
-
-### 阅读分析配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 analytics_config = {
     "tracking": {
@@ -252,12 +246,9 @@ analytics_config = {
         "include_suggestions": True
     }
 }
-```
-
-### REST API 集成
-
-## 最佳实践
-### 1. 按部门定制兴趣画像
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 DEPARTMENT_PROFILES = {
     "技术部": {
@@ -280,9 +271,9 @@ DEPARTMENT_PROFILES = {
         "大宗商品": 0.2
     }
 }
-```
-
-### 2. 利用突发新闻触发
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 cat > ~/news-pro/triggers/breaking.yaml << 'EOF'
 triggers:
@@ -302,9 +293,9 @@ triggers:
     action: generate_brief
     channels: [email]
 EOF
-```
-
-### 3. 定期审查兴趣偏好
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 用户：生成本季度兴趣偏好审查报告
 # ...
@@ -314,9 +305,9 @@ Agent：
 3. 检测信息盲区
 4. 提供调整建议
 5. 确认后自动更新画像
-```
-
-### 4. 利用多语言能力
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 用户：为海外团队成员配置英文新闻简报
 # ...

@@ -1,12 +1,12 @@
 ---
+
 slug: system-controller
 name: system-controller
 version: 1.0.1
 displayName: 系统控制器
 summary: "统一管理系统进程、服务、文件与环境配置，跨平台命令映射，带操作回滚.。系统控制器为 AI Agent 提供操作系统层面的统一控制能力，覆盖进程管理、服务启停、文件事务、环境变量、计划任务与系"
-license: Proprietary
-description: 系统控制器为 AI Agent 提供操作系统层面的统一控制能力，覆盖进程管理、服务启停、文件事务、环境变量、计划任务与系统信息采集。它把
-  Linux/macOS/Windows 三套差异巨大的命令抽象为统一语义，让 Agent 用同一套指令跨平台操作。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
+license: MIT
+description: "系统控制器为 AI Agent 包含操作系统层面的统一控制能力，覆盖进程管控、服务启停、文件事务、环境变量、计划任务与系统信息采集。它把. 适用于需要system controller相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 自动化
   - 系统运维
@@ -25,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: free
 ---
+
 # 系统控制器
 
 让 AI Agent 用一套语义操控 Linux、macOS、Windows 三大系统。本技能解决五个核心痛点：**命令碎片化**（每平台命令不同）、**操作不可逆**（误删文件/杀错进程无法回滚）、**进程终止粗暴**（直接 SIGKILL 导致数据损坏）、**服务状态不同步**（systemctl 显示 active 但实际挂了）、**变更无审计**（出问题不知道谁改了什么）.

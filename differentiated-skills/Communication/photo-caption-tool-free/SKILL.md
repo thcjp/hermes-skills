@@ -1,30 +1,13 @@
 ---
+
 slug: photo-caption-tool-free
 name: photo-caption-tool-free
 version: 1.0.0
 displayName: 照片配文工具免费版
 summary: 轻量级社交媒体照片配文生成工具,支持Instagram、X(Twitter)、Facebook三大平台,一键生成平台适配文案.
-license: Proprietary
+license: MIT
 edition: free
-description: '照片配文工具免费版,为个人用户提供 Instagram、X(Twitter)、Facebook 三大主流社交平台的照片配文自动生成能力。核心能力:
-
-  - 三大主流平台配文一键生成
-
-  - 根据照片内容、地点、器材、氛围定制文案
-
-  - 平台原生风格适配(字数、标签、语气)
-
-  - 支持胶片与数码照片风格区分
-
-  适用场景:
-
-  - 个人社交媒体日常分享
-
-  - 摄影爱好者作品发布
-
-  - 旅行照片快速配文
-
-  差异化:免费版聚焦 Instagram、X、Facebook 三大高频平台,配置简单,适合个人用户快速生成平台适配的配文内容'
+description: "照片配文工具免费版,为个人用户包含 Instagram、X(Twitter)、Facebook 三大主流社交平台的照片配文自发产出能力。核心能力:. 适用于需要photo caption tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 沟通协作
   - 社交媒体
@@ -36,21 +19,15 @@ tags:
   - 自动化
   - 写作
   - 电商
-  - 通信
-  - 邮件
-  - 创意
-  - text
-  - instagram
-  - 照片内容
-  - 地点
-  - 器材
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 照片配文工具 - 免费版
 
 ## 概述
@@ -189,7 +166,7 @@ iPhone 15 Pro
 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:准备照片信息
+### 领先步:准备照片信息
 
 整理照片的背景信息,包括:
 
@@ -241,7 +218,7 @@ iPhone 15 Pro
 地点:杭州,西湖边
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 提供具体而非笼统的描述
 

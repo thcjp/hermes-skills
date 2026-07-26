@@ -1,13 +1,13 @@
 ---
+
 slug: sql-query-tool-free
 name: sql-query-tool-free
 version: 1.0.0
 displayName: SQL查询工具(免费版)
 summary: 面向命令行的SQL查询与执行工具，覆盖SQLite、`PostgreSQL`、MySQL、SQL Server四大数据库的查询、调优、迁移基础能力.
-license: Proprietary
+license: MIT
 edition: free
-description: 面向独立开发者与AI Agent的SQL查询执行工具免费版。聚焦命令行场景下的关系型数据库查询、参数化执行、执行计划分析与跨数据库可移植性，提供经过实战检验的查询模式、索引陷阱清单与EXPLAIN解读方法，帮助用户在不依赖重量级ORM的前提下高效完成数据访问任务。Use
-  when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
+description: "面向独立开发者与AI Agent的SQL查询执行工具免费版。聚焦命令行场景下的关系型数据库查询、参数化执行、执行计划剖析与跨数据库可移植性，包含经过实战检验的查询模式、索引陷阱清单与EXPLAIN解读方法，帮助用户在不依赖重量级ORM的前提下高效完成数据访问任务。Use. 适用于需要sql query tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 集成工具
   - 数据库
@@ -19,14 +19,15 @@ tags:
   - sql
   - sqlite
   - mysql
-  - postgresql
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # SQL查询工具（免费版）
 
 本工具为独立开发者、运维与AI Agent提供命令行场景下的SQL查询执行能力。免费版聚焦核心场景：数据库连接、查询编写、执行计划分析、跨数据库语法速查，足以覆盖绝大多数日常数据访问需求.
@@ -82,7 +83,7 @@ category: "Automation"
 在工作流中以参数化方式安全读写数据库，避免SQL注入风险，同时复用事务保证数据一致性.
 ## 快速开始
 
-### 第一步：连接目标数据库
+### 领先步：连接目标数据库
 
 ```bash
 # SQLite（零配置，单文件）
@@ -149,7 +150,7 @@ UPDATE accounts SET balance = balance + 100 WHERE id = 2;
 COMMIT;
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 始终使用参数化查询
 
@@ -167,7 +168,7 @@ WHERE、JOIN ON、ORDER BY中涉及的大表字段必须有索引，否则触发
 ### 3. 优先使用EXISTS替代IN
 
 ```sql
--- 更快：命中第一条即返回
+-- 更快：命中领先条即返回
 SELECT * FROM orders o WHERE EXISTS (
   SELECT 1 FROM users u WHERE u.id = o.user_id AND u.active
 );

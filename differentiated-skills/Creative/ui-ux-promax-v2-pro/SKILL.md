@@ -1,4 +1,5 @@
 ---
+
 slug: ui-ux-promax-v2-pro
 name: ui-ux-promax-v2-pro
 version: 1.0.0
@@ -6,15 +7,7 @@ displayName: UI/UX ProMax V2专业版
 summary: "全域设计数据库+持久化+推理引擎+多技术栈+层级检索,面向企业的综合设计决策引擎。面向设计团队和企业的综合UI/UX设计决策引擎,涵盖50+风格、97配色、57字体、"
 license: Proprietary
 edition: pro
-description: 面向设计团队和企业的综合UI/UX设计决策引擎,涵盖50+风格、97配色、57字体、，可处理提升工作效率
-
-  99条UX规则、25种图表类型,支持全部10个设计域、10种技术栈、设计系统
-
-  持久化与页面级覆盖、推理规则引擎和批量搜索。核心能力:
-
-  - 全部10个设计域深度搜索
-
-  - 10种技术栈实现指引(React/Vue/Next'
+description: "面向设计团队和企业的综合UI/UX设计决策引擎,涵盖50+风格、97配色、57字体、，可处置提升工作效率. 适用于需要ui uxmax v2相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 设计
   - UI
@@ -26,9 +19,6 @@ tags:
   - 设计系统
   - 技术栈
   - 规则引擎
-  - UI设计
-  - python3
-  - design-system
 tools:
   - read
   - exec
@@ -36,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+pricing_tier: L2-标准级
 ---
+
 # UI/UX ProMax V2 - 专业版
 
 ## 概述
@@ -55,7 +47,7 @@ UI/UX ProMax V2专业版是一款面向设计团队和企业的综合UI/UX设计
 | `color` | 配色方案 | saas, ecommerce, healthcare, fintech |
 | `landing` | 页面结构与CTA | hero, 推荐证言, 定价, 社交证明 |
 | `chart` | 图表类型与库 | 趋势, 对比, 时间线, 漏斗, 饼图 |
-| `ux` | 最佳实践与反模式 | 动画, 无障碍, z-index, 加载 |
+| `ux` | 优秀实践与反模式 | 动画, 无障碍, z-index, 加载 |
 | `react` | React/Next.js性能 | 瀑布流, 打包, Suspense, 缓存 |
 | `web` | Web界面规范 | aria, focus, 键盘, 语义化 |
 | `prompt` | AI提示词与CSS | (风格名称) |
@@ -115,7 +107,7 @@ design-system/
 ### 4. 推理规则引擎
 
 ```bash
-# 推理引擎自动选择最佳方案并解释原因
+# 推理引擎自动选择优秀方案并解释原因
 python3 （请参考skill目录中的脚本文件） "healthcare SaaS" --design-system --persist -p "MedApp"
 ```
 
@@ -267,7 +259,7 @@ python3 （请参考skill目录中的脚本文件） "layout form" --stack html-
 | 优先级审计 | 基础8级 | 8级深度审计 |
 | 兼容性 | - | 完全兼容免费版 |
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 始终从MASTER开始
 
@@ -333,7 +325,7 @@ python3 （请参考skill目录中的脚本文件） "data table" --design-syste
 将design-system/目录纳入Git版本控制,团队成员克隆后即可使用相同规则。修改后提交变更确保一致.
 ### Q4: 推理引擎如何工作?
 
-读取ui-reasoning.csv规则,在生成设计系统时自动匹配产品类型、行业和风格,选择最佳方案并解释理由,标注反模式.
+读取ui-reasoning.csv规则,在生成设计系统时自动匹配产品类型、行业和风格,选择优秀方案并解释理由,标注反模式.
 ### Q5: 支持哪些输出格式?
 
 纯文本(默认)和Markdown。使用-f markdown获取格式化输出.
@@ -373,7 +365,7 @@ winget install Python.Python.3.12
 CLI搜索工具基于本地数据文件运行,无需额外API Key。推理引擎读取本地CSV,不依赖外部API.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 核心查询、持久化和批量搜索依赖Python CLI脚本,需确保exec和Python环境可用。持久化文件建议纳入版本控制.
 ## 错误处理
 

@@ -1,46 +1,24 @@
 ---
+
 slug: gif-whatsapp-tool-free
 name: gif-whatsapp-tool-free
 version: 1.0.0
 displayName: WhatsApp表情搜索
 summary: WhatsApp GIF 表情搜索发送工具，支持 Tenor/Giphy 搜索并自动转换为 MP4 格式发送，适合个人日常聊天使用.
-license: Proprietary
+license: MIT
 edition: free
-description: 'WhatsApp GIF 表情搜索发送工具，支持 Tenor/Giphy 搜索并自动转换为 MP4 格式发送，适合个人日常聊天使用。核心能力:
-
-  - 搜索 Tenor 和 Giphy 平台的 GIF 表情
-
-  - 自动将 GIF 转换为 WhatsApp 兼容的 MP4 格式
-
-  - 一键发送到指定 WhatsApp 联系人
-
-  - 支持中英文关键词搜索
-
-  适用场景:
-
-  - 个人日常 WhatsApp 聊天表情发送
-
-  - 节日祝福与庆祝场景
-
-  - 情感表达与趣味互动
-
-  差异化:
-
-  - 免费版聚焦单次搜索发送...'
+description: "WhatsApp GIF 表情搜索发送工具，兼容 Tenor/Giphy 搜索并自发变换为 MP4 格式发送，适合个人日常聊天使用。核心能力:. 适用于需要gif whatsapp tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要gif whatsapp tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - WhatsApp
+  - gif
+  - whatsapp
+  - automation
+  - productivity
   - GIF
   - 多媒体
   - 聊天工具
   - 表情搜索
   - 搜索
-  - 检索
-  - 工具
-  - gif
-  - mp4
-  - tmp
-  - whatsapp
-  - message
 tools:
   - read
   - exec
@@ -48,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 # WhatsApp 表情搜索（免费版）
 
 ## 概述
@@ -249,13 +230,13 @@ message action=send to=CONTACT_NUMBER message=" " \
 - 必须设置 gifPlayback=true 才能以 GIF 形式播放
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 搜索关键词优化
 
 1. **使用英文搜索**：Tenor 和 Giphy 的英文结果更丰富
 2. **具体描述场景**：`happy birthday cake` 比 `birthday` 更精准
-3. **多结果对比**：获取 5 个结果后选择最合适的，而非直接用第一个
+3. **多结果对比**：获取 5 个结果后选择最合适的，而非直接用领先个
 4. **避免过于宽泛**：`funny cat` 比 `cat` 更有针对性
 
 ### GIF 选择建议

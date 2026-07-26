@@ -1,13 +1,13 @@
 ---
+
 slug: secure-api-toolkit-free
 name: secure-api-toolkit-free
 version: 1.0.1
 displayName: 安全API工具箱
 summary: "凭据代理让Agent调第三方API时密钥不落地,服务端注入真实令牌,免费个人开发者用。安全API工具箱（免费版）通过凭据代理机制让Agent在调用第三方API时无需接触真实密钥，从架构层杜绝"
-license: Proprietary
+license: MIT
 edition: free
-description: 安全API工具箱（免费版）通过凭据代理机制让Agent在调用第三方API时无需接触真实密钥，从架构层杜绝密钥泄露风险。核心能力：占位符模板化请求、服务端密钥注入、生物识别授权、单提供商连通验证、CLI命令行调用。Use
-  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
+description: "安全API工具箱（免费版）通过凭据代理机制让Agent在调用第三方API时无需接触真实密钥，从架构层杜绝密钥泄露风险。核心能力：占位符模板化请求、服务端密钥注入、生物识别授权、单包含商连通验证、CLI命令行调用。Use. 适用于需要secure api toolkit相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 集成工具
   - 安全合规
@@ -25,7 +25,9 @@ tools:
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # 安全API工具箱（免费版）
 
 ## 概述
@@ -155,7 +157,7 @@ secure-wait https://secure-proxy.dev/approve/abc123xyz --timeout 800
   -H "Authorization: Bearer {{OAUTH2_ACCESS_TOKEN}}"
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **始终使用占位符**：任何凭据位置都用`{{占位符}}`替代，禁止在命令中写入真实密钥
 2. **环境隔离**：开发与生产使用不同代理账户，避免凭据交叉

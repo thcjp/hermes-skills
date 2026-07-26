@@ -1,4 +1,5 @@
 ---
+
 slug: "linear-sync-tool-pro"
 name: "linear-sync-tool-pro"
 version: "1.0.0"
@@ -6,8 +7,7 @@ displayName: "Linear同步(专业版)"
 summary: "全功能Linear管理工具，支持任务全生命周期、批量操作、GraphQL API与Git集成。Linear同步工具专业版是面向研发团队的完整项目管理命令行方案，在免费版基础上解锁任务全生命周"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  Linear同步工具专业版是面向研发团队的完整项目管理命令行方案，在免费版基础上解锁任务全生命周期管理、批量操作、文档管理、里程碑管理、GraphQL API直接调用和Git集成等全部高级能力。核心能力：任务创建/更新/删除/评论全生命周期、批量任务操作、Linear文档管理、项目里程碑管理、GraphQL原始查询、Git分支创建与PR关联、任务状态自动流转、团队与项目管理全量操作
+description: "|-. 适用于需要linear sync tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 任务管理
   - 项目协作
@@ -19,13 +19,6 @@ tags:
   - 写作
   - 电商
   - 开发
-  - 代码
-  - 知识
-  - linear
-  - issue
-  - abc-123
-  - graphql
-  - api
 tools:
   - read
   - exec
@@ -33,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # Linear同步工具（专业版）
 
 全功能Linear项目管理命令行工具，覆盖任务全生命周期、批量操作、文档管理、GraphQL API和Git集成。专业版面向需要深度项目管理自动化的研发团队.
@@ -403,7 +398,7 @@ vcs = "git"
 3. 项目根目录的`.config/linear.toml`
 4. 用户目录的`~/.config/linear/linear.toml`
 
-## 最佳实践
+## 优秀实践
 
 1. **任务标题使用标准格式**：采用`[模块] 动词+对象`格式（如`[支付] 修复回调超时`），便于检索和分类.
 2. **利用start命令自动化分支创建**：`linear issue start`自动创建符合命名规范的分支，减少手动操作.

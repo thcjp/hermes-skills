@@ -1,4 +1,5 @@
 ---
+
 slug: rss-digest-tool-pro
 name: rss-digest-tool-pro
 version: 1.0.0
@@ -6,29 +7,7 @@ displayName: RSS摘要工具专业版
 summary: "企业级RSS摘要生成与分发系统,支持批量源管理、定时调度、多租户配置与团队协作摘要分发。RSS摘要工具专业版为企业团队提供高阶RSS内容消化与分发能力。核心能力:"
 license: Proprietary
 edition: pro
-description: 'RSS摘要工具专业版为企业团队提供高阶RSS内容消化与分发能力。核心能力:
-
-  - 批量订阅源管理与健康监控
-
-  - 多主题并行摘要与定时调度
-
-  - 团队协作摘要分发与权限控制
-
-  - 自定义摘要模板与品牌定制
-
-  - 历史摘要归档与趋势分析
-
-  适用场景:
-
-  - 企业竞争情报监控与团队分发
-
-  - 行业研究报告自动化生成
-
-  - 多租户内容服务运营
-
-  - 定时摘要邮件/消息推送
-
-  差异化:专业版在免费版核心流程基础上,扩展批量操作、定时调度、团队协作与企业级配置能力'
+description: "RSS摘要工具专业版为企业团队包含高阶RSS内容消化与分发能力。核心能力:. 适用于需要rss digest tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 研究工具
   - RSS
@@ -40,10 +19,6 @@ tags:
   - 检索
   - 工具
   - feed
-  - tenant
-  - rss
-  - add
-  - distribute
 tools:
   - read
   - exec
@@ -52,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 # RSS摘要工具专业版
 
 ## 概述
@@ -261,7 +238,7 @@ feed distribute add email \
 # IM Webhook分发(以企业通讯工具为例)
 feed distribute add webhook \
   --name "团队群通知" \
-  --url "https://im.example.com/webhook/xxx" \
+  --url "https://im.example.com/webhook/placeholder" \
   --format card
 # ...
 # 文件归档
@@ -336,7 +313,7 @@ config/
 0 10 1 * *      -> 月度趋势回顾
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 按业务线拆分主题树
 
@@ -422,7 +399,7 @@ A: 支持关键词搜索、时间范围过滤、主题过滤、趋势统计。�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent调用`feed` CLI专业版完成企业级RSS摘要与分发任务。专业版在免费版基础上扩展批量操作、定时调度、团队协作与多租户能力,适合企业竞争情报监控、行业研究自动化与多租户内容服务场景.
 ## 错误处理
 

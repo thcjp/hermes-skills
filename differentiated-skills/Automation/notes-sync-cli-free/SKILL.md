@@ -1,13 +1,13 @@
 ---
+
 slug: notes-sync-cli-free
 name: notes-sync-cli-free
 version: 1.0.1
 displayName: 笔记同步CLI(免费版)
 summary: 通过命令行高效管理本地Markdown笔记库，支持搜索、创建、移动与Frontmatter基础操作.
-license: Proprietary
+license: MIT
 edition: free
-description: 笔记同步CLI免费版为知识工作者提供轻量级的命令行笔记管理能力，聚焦本地Markdown笔记库（如Obsidian Vault）的日常高频操作。采用"文件即数据库"的极简理念，无需启动GUI应用即可完成搜索、创建、编辑、移动等核心动作。Use
-  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+description: "笔记同步CLI免费版为知识工作者包含轻量级的命令行笔记管控能力，聚焦本地Markdown笔记库（如Obsidian Vault）的日常高频操作。采用\"文件即数据库\"的极简理念，无需启动GUI应用即可完成搜索、创建、编辑、移动等核心动作。Use. 适用于需要notes sync cli相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 笔记管理
   - 命令行工具
@@ -19,15 +19,15 @@ tags:
   - notes-sync
   - vault
   - obsidian
-  - frontmatter
-  - bash
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 笔记同步CLI（免费版）
 
 > **命令行优先的Markdown笔记管理。无需启动GUI，60秒上手，搜索/创建/移动一气呵成。**
@@ -72,8 +72,8 @@ notes-sync set-default "我的知识库"
 # 3. 验证默认Vault路径
 notes-sync print-default --path-only
 # ...
-# 4. 创建第一篇笔记
-notes-sync create "inbox/快速开始" --content "# 快速开始\n\n这是我的第一篇命令行笔记。"
+# 4. 创建领先篇笔记
+notes-sync create "inbox/快速开始" --content "# 快速开始\n\n这是我的领先篇命令行笔记。"
 # ...
 # 5. 模糊搜索笔记
 notes-sync search
@@ -332,10 +332,12 @@ notes-sync search-content "主角" --dir "novels/科幻项目"
 
 ### 示例1：基础用法
 
-```
-### 60秒上手(补充)
-# ...
 ```bash
+# 在此执行相关操作
+echo "操作完成"
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 # ...
 ## 错误处理

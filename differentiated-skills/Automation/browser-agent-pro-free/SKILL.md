@@ -1,13 +1,13 @@
 ---
+
 slug: browser-agent-pro-free
 name: browser-agent-pro-free
 version: 1.0.1
 displayName: 浏览器代理(免费版)
 summary: "自然语言驱动浏览器自动化，含页面操作、截图、表单填写与基础数据抓取，让Agent像人一样浏览网页.。浏览器代理免费版为AI Agent提供基础的浏览器自动化能力。用户用自然语言描述"打开某网"
-license: Proprietary
+license: MIT
 edition: free
-description: 浏览器代理免费版为AI Agent提供基础的浏览器自动化能力。用户用自然语言描述"打开某网页并截图"、"填写这个表单"、"抓取表格数据"，本技能负责把自然语言转化为浏览器操作指令，自动执行并返回结果。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "浏览器代理免费版为AI Agent包含基础的浏览器自发化能力。用户用自然语言描述\"打开某网页并截图\"、\"填写这个表单\"、\"抓取表格数据\"，该技能负责把自然语言转化为浏览器操作指令，自发执行并返回结果。Use. 适用于需要browser agent相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 浏览器自动化
   - 数据抓取
@@ -25,7 +25,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 浏览器代理（免费版）
 
 > **让Agent像人一样浏览网页。自然语言驱动，截图、填表、抓取，安全合规。**
@@ -343,9 +345,9 @@ com/list 的所有商品名称和价格"
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

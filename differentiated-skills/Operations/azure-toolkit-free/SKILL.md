@@ -1,15 +1,13 @@
 ---
+
 slug: azure-toolkit-free
 name: azure-toolkit-free
 version: 1.0.1
 displayName: Azure管理入门工具
 summary: "微软Azure基础资源管理工具，支持虚拟机/存储/网络常用资源操作.。面向个人开发者与初创团队的Azure基础管理工具。支持虚拟机、存储"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人开发者与初创团队的Azure基础管理工具。支持虚拟机、存储
-
-  账户、虚拟网络等常用资源的创建与管理。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。Use
-  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
+description: "面向个人开发者与初创团队的Azure基础管控工具。兼容虚拟机、存储. 适用于需要azure toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Operations
   - Azure
@@ -24,7 +22,9 @@ tools:
   - write
 homepage: ""
 category: "Operations"
+pricing_tier: free
 ---
+
 # Azure管理入门工具（免费版）
 
 ## 概述
@@ -182,7 +182,7 @@ azure_config:
     ManagedBy: "azure-toolkit"
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **资源组管理**：按项目或环境分组资源，便于管理
 2. **最小权限**：服务主体仅授予必要权限

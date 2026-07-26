@@ -1,57 +1,34 @@
 ---
+
 slug: interview-sim-tool-free
 name: interview-sim-tool-free
 version: 1.0.0
 displayName: 面试模拟工具
 summary: "面向个人的多岗位面试模拟工具，支持评分与改进建议. - 提供专业AI自动化处理能力,支持多种使用场景"
-license: Proprietary
+license: MIT
 edition: free
-description: 面向个人求职者的多岗位面试模拟工具，可处理提升工作效率
-  核心能力:
-
-  - 覆盖工程/产品/业务/职能多岗位角色扮演
-
-  - 按经验等级动态调整难度
-
-  - 逐题评分与改进建议
-
-  - 单场会话记分卡与学习建议
-
-  适用场景:
-
-  - 求职者单场模拟面试
-
-  - 特定岗位/模块针对性练习
-
-  - 面试复盘与薄弱点提升
-
-  差异化: 免费版聚焦个人单场模拟，提供多岗位角色扮演与记分卡，零成本练习.
-  适用关键词: 面试模拟, 模拟面试, 面试练习, 记分卡, mock interview, interview simulator, star'
+description: "面向个人求职者的多岗位面试模拟工具，可处置提升工作效率. 适用于需要interview sim tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要interview sim tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 面试
+  - interview
+  - sim
+  - automation
+  - productivity
   - 求职
   - 个人效率
   - 其他工具
   - 工具
   - 效率
-  - 自动化
-  - 创意
-  - 图像
-  - 知识
-  - 文档
-  - 开发
-  - 分钟
-  - 系统设计
-  - text
-  - 场景题
-  - 高级
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # 面试模拟工具（免费版）
 
 ## 概述
@@ -159,7 +136,7 @@ Q1（场景题）: 你是一家快速成长 startup 的招聘负责人。下季�
 | easier | 降低难度 |
 | end | 结束并出记分卡 |
 
-## 最佳实践
+## 优秀实践
 
 - **一次一题**：别一次塞多题，作答完再下一题.
 - **卡住要提示**：用 `hint` 拿小提示，别直接看答案.

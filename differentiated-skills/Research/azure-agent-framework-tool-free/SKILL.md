@@ -1,52 +1,34 @@
 ---
+
 slug: azure-agent-framework-tool-free
 name: azure-agent-framework-tool-free
 version: 1.0.0
 displayName: Azure智能体框架工具-免费版
 summary: "基于Azure AI Foundry构建持久化智能体,支持函数工具、托管工具与会话线程。文档型技能,指导开发者使用 Microsoft Agent Framework Python SDK"
-license: Proprietary
+license: MIT
 edition: free
-description: 文档型技能,指导开发者使用 Microsoft Agent Framework Python SDK 在 Azure AI Foundry，可处理提升工作效率
-  上
-
-  构建持久化智能体,支持函数工具、托管工具(代码解释器/文件搜索/Web搜索)与会话线程。核心能力:
-
-  - 创建持久化 Azure AI 智能体
-
-  - 函数工具与托管工具集成
-
-  - 流式响应与会话线程管理
-
-  - 结构化输出(Pydantic 模型)
-
-  适用场景:
-
-  - 个人开发者构建 AI 助手
-
-  - 原型验证与功能演示
-
-  - 学习 Azure AI Foundry 智能体开发
-
-  差...'
+description: "文档型技能,指导开发者使用 Microsoft Agent Framework Python SDK 在 Azure AI Foundry，可处置提升工作效率. 适用于需要azure agent framework tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量."
 tags:
   - 研究工具
+  - azure
+  - agent
+  - framework
+  - automation
   - AI开发
   - 智能体
   - Azure
   - 云计算
   - DevOps
-  - import
-  - azure
-  - agent
-  - credential
-  - run
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Operations"
+pricing_tier: free
+
 ---
+
 # Azure智能体框架工具(免费版)
 
 ## 概述
@@ -178,7 +160,7 @@ async def main():
         # 创建会话线程
         thread = agent.get_new_thread()
 # ...
-        # 第一轮对话
+        # 领先轮对话
         result1 = await agent.run("北京的天气怎么样?", thread=thread)
         print(f"助手: {result1.text}")
 # ...
@@ -325,7 +307,7 @@ async def main():
 | `HostedMCPTool` | `from agent_framework import HostedMCPTool` | 服务端托管 MCP工具 |
 | `MCPStreamableHTTPTool` | `from agent_framework import MCPStreamableHTTPTool` | 客户端管理 MCP server |
 
-## 最佳实践
+## 优秀实践
 
 1. **使用异步上下文管理器**:始终用 `async with provider:` 确保资源正确释放.
 2. **函数直接传入**:将 Python 函数直接传入 `tools=` 参数(自动转换为 AIFunction).
@@ -385,7 +367,7 @@ az account show
 - 认证:通过 Azure CLI(`az login`)或 DefaultAzureCredential
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作
 - API Key通过环境变量配置: export API_KEY=your_key
 

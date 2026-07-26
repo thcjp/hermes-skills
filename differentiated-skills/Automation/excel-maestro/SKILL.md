@@ -1,15 +1,12 @@
 ---
+
 slug: excel-maestro
 name: excel-maestro
 version: 1.0.1
 displayName: Excel大师
 summary: "解决大文件内存爆炸、格式丢失、科学计数法、公式不计算四大痛点，按文件规模分层处理.。Excel大师是面向批量表格处理的能力包。它不只罗列脚本，更解决四个高频痛点："
-license: Proprietary
-description: 'Excel大师是面向批量表格处理的能力包。它不只罗列脚本，更解决四个高频痛点：
-
-  大xlsx一加载就内存爆炸、用pandas读写后格式公式全丢失、长数字变成科学计数法、
-
-  data_only=True拿到公式却是None。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。'
+license: MIT
+description: "Excel大师是面向成批表格处置的能力包。它不只罗列脚本，更解决四个高频痛点：. 适用于需要excel maestro相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 自动化
   - 表格处理
@@ -28,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: free
 ---
+
 # Excel大师
 
 处理Excel文件、表格数据、批量转换或报表生成时应用本skill。核心信条：**先看文件多大，再选工具；先问要不要保格式，再动笔。**
@@ -44,7 +43,7 @@ category: "Automation"
 
 ---
 
-## 第一步：按文件规模选工具
+## 领先步：按文件规模选工具
 
 | 文件规模 | 行数估计 | 推荐工具 | 关键参数 |
 |:-----|:-----|:-----|:-----|

@@ -1,12 +1,12 @@
 ---
+
 slug: linear-cli-pro
 name: linear-cli-pro
 version: 1.0.1
 displayName: Linear CLI专家
 summary: 解决JSON解析难、内联转义炸、批量操作慢、鉴权易失效痛点，让Linear CLI在Agent中稳跑
-license: Proprietary
-description: 面向在 Agent（Claude Code / Codex / Cursor 等）中调用 `linear` CLI 的开发者。聚焦 v3，可自动提升工作效率
-  执行模型下的稳定 JSON 契约、预演式写入、Markdown 安全传参、批量操作与鉴权自愈。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
+license: MIT
+description: "面向在 Agent（Claude Code / Codex / Cursor 等）中调用 `linear` CLI 的开发者。聚焦 v3，可自发提升工作效率. 适用于需要linear cli相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 自动化
   - 项目管理
@@ -25,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # Linear CLI 专家
 
 在 Agent 运行时中安全、稳定地操作 Linear。所有写操作遵循"预览-执行-校验"闭环，所有 Markdown 内容走文件/stdin 而非内联，批量操作有并发与限速保护.
@@ -77,7 +79,7 @@ linear capabilities       # 命令能力清单（机器可读）
 ```bash
 cat > /tmp/description.md <<'EOF'
 ## Summary
-- 第一项
+- 领先项
 - 第二项
 # ...
 ## Details

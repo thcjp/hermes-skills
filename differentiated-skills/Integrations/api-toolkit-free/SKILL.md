@@ -1,13 +1,13 @@
 ---
+
 slug: api-toolkit-free
 name: api-toolkit-free
 version: 1.0.1
 displayName: API工具箱(免费版)
 summary: "轻量级API测试调试工具箱，覆盖请求构造、认证、错误诊断与文档速查，60秒上手.。API工具箱免费版是一套面向独立开发者与一人公司的轻量级API测试与调试工具集。围绕"请求构造—认证管理—错"
-license: Proprietary
+license: MIT
 edition: free
-description: API工具箱免费版是一套面向独立开发者与一人公司的轻量级API测试与调试工具集。围绕"请求构造—认证管理—错误诊断—文档速查"四件事，提供可复制即用的curl/HTTPie模板、常见认证流程速查表、HTTP状态码与错误体诊断决策树，以及一份覆盖15类共80+主流第三方服务的端点索引。Use
-  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
+description: "API工具箱免费版是一套面向独立开发者与一人公司的轻量级API测试与调试工具集。围绕\"请求构造—认证管控—错误诊断—文档速查\"四件事，包含可复制即用的curl/HTTPie模板、常见认证流程速查表、HTTP状态码与错误体诊断决策树，以及一份覆盖15类共80+主流第三方服务的端点索引。Use. 适用于需要api toolkit相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - API测试
   - 接口调试
@@ -19,14 +19,15 @@ tags:
   - bearer
   - key
   - token
-  - authorization
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # API工具箱（免费版）
 
 > **把"接口联调"从一上午压缩到一杯咖啡的时间。请求模板+认证范式+错误诊断三件套。**
@@ -98,19 +99,19 @@ Agent会按"错误体诊断决策树"判断：4xx + 业务错误码 → 客户�
 
 ```bash
 # === API Key (Header) ===
-curl -H 'X-API-Key: 配置值' https://api.example.com/v1/data
+curl -H 'X-API-ref: 配置值' https://api.example.com/v1/data
 # ...
 # === Bearer Token (JWT/OAuth2) ===
 curl -H 'Authorization: Bearer 配置值' https://api.example.com/v1/data
 # ...
 # === Basic Auth ===
-curl -u '<KEY_ID>:<SECRET>' https://api.example.com/v1/data
+curl -u '<KEY_ID>:<val>' https://api.example.com/v1/data
 # ...
 # === OAuth2 Client Credentials ===
 TOKEN=$(curl -s -X POST https://auth.example.com/oauth/token \
   -u '<CLIENT_ID>:<CLIENT_SECRET>' \
   -d 'grant_type=client_credentials' | jq -r .access_token)
-curl -H "Authorization: Bearer $TOKEN" https://api.example.com/v1/data
+curl -H "Authorization: Bearer $item" https://api.example.com/v1/data
 ```
 
 **安全红线**：API Key永远放在Header或环境变量中，禁止放在URL Query；Token禁止输出到日志或echo；Agent在示例中一律使用 `配置值` 占位，绝不写出真实凭证.
@@ -173,7 +174,7 @@ HTTP状态码
 
 ### 场景一：第三方API首次联调（独立开发者角色）
 
-**痛点**：第一次接入Stripe，文档翻半天，curl请求不是少头就是多参数.
+**痛点**：领先次接入Stripe，文档翻半天，curl请求不是少头就是多参数.
 **使用方式**：对Agent说"我要调Stripe创建Customer"，Agent按本工具的模板规则输出完整的curl命令，自动补全 `Authorization: Bearer sk_xxx`、`Content-Type: application/json`、`Idempotency-Key`，并附上Stripe的速率限制提示（100读/秒、100写/秒）与典型4xx错误码对照.
 **效果**：首次联调从平均40分钟降至5分钟.
 ### 场景二：脚本化数据同步前的接口验证（运维/一人公司角色）
@@ -202,7 +203,7 @@ HTTP状态码
 决策树覆盖HTTP标准状态码的通用含义与约80%主流API的常见错误模式。部分API有自定义业务错误码（如Stripe的 `card_declined`），需要查阅该服务文档。免费版提供决策树框架与常见错误码对照，专业版提供按服务细分的完整错误码字典.
 ### Q5：可以用HTTPie或Postman替代curl吗？
 
-可以。本工具默认输出curl模板（兼容性最好），但Agent可根据你的偏好切换为HTTPie（`http POST url Authorization:"Bearer xxx" field=value`）或Postman的请求描述。切换时请明确告知工具偏好.
+可以。本工具默认输出curl模板（兼容性优秀），但Agent可根据你的偏好切换为HTTPie（`http POST url Authorization:"Bearer placeholder" field=value`）或Postman的请求描述。切换时请明确告知工具偏好.
 ## 依赖说明
 
 ### 运行环境
@@ -290,9 +291,9 @@ example.com/v1/orders' \
   -H 'X-Request-Id: '$(uuidgen 2>/dev/null || echo "req-$(date +%s)") \
   -d '{"sku":"A1","qty":2}' \
   -w '\nHTTP_STATUS:%{http_code} TIME:%{time_total}s\n'
-```
-# ...
-###
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ## 错误处理

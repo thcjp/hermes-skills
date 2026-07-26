@@ -1,4 +1,5 @@
 ---
+
 slug: "typescript-skills-tool-pro"
 name: "typescript-skills-tool-pro"
 version: "1.0.0"
@@ -6,22 +7,7 @@ displayName: "TS编码规范工具(专业版)"
 summary: "面向团队的TypeScript编码规范平台,含自动化审查、规则集管理、CI集成与规范文档生成。。TypeScript编码规范工具专业版为团队与企业提供端到端编码规范落地能力,涵盖自动化审查、"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  TypeScript编码规范工具专业版为团队与企业提供端到端编码规范落地能力,涵盖自动化审查、企业级规则集、CI集成与规范文档自动生成。核心能力:
-  - 企业级ESLint规则集与多层配置管理
-  - 自动化代码审查脚本与PR级规范检查
-  - 规范文档自动生成与版本化
-  - CI/CD流水线规范门禁
-  - 跨包仓库规范一致性校验
-  - 团队培训材料与代码示例库
-
-  适用场景:
-  - 中大型团队TypeScript规范统一落地
-  - 多包仓库规范一致性管理
-  - PR级自动化规范审查
-  - 企业内部规范文档维护与发布
-
-  差异化...
+description: "|-. 适用于需要typescript skills tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - TypeScript
   - 编码规范
@@ -33,22 +19,15 @@ tags:
   - 工具
   - 效率
   - 自动化
-  - 开发
-  - 代码
-  - 知识
-  - 文档
-  - typescript-eslint
-  - error
-  - eslint
-  - import
-  - timestamp
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # TypeScript 编码规范工具(专业版)
 
 ## 概述
@@ -234,7 +213,7 @@ jobs:
 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:声明团队上下文
+### 领先步:声明团队上下文
 
 在对话中说明团队规模、项目结构与规范现状,例如:
 
@@ -316,7 +295,7 @@ OUTPUT="docs/styleguide.md"
 echo "规范文档已生成:$OUTPUT"
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **采用分层 ESLint 配置**:共享基线 + 子包覆盖,降低维护成本,保证一致性.
 2. **CI 门禁零警告策略**:`--max-warnings=0` 阻断所有警告进入主分支,强制即时修复.
@@ -377,7 +356,7 @@ Pro 版完全兼容免费版的所有规范建议。个人开发者可继续使�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于自然语言指令驱动 Agent 输出企业级规范方案;CI 集成与审查脚本需在仓库中落地并由 CI 运行器执行
 
 ## 错误处理

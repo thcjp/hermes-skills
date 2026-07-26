@@ -1,4 +1,5 @@
 ---
+
 slug: dashboard-builder-pro
 name: dashboard-builder-pro
 version: 1.0.0
@@ -6,9 +7,7 @@ displayName: 仪表盘构建(专业版)
 summary: "全功能仪表盘构建平台，支持多源聚合、模板库、自动化 QA 与告警.。仪表盘构建工具专业版是一款面向团队的全功能本地仪表盘构建平台，在免费版基础上扩展多数据源聚合、高级图表库、模板管理系统、自"
 license: Proprietary
 edition: pro
-description: '仪表盘构建工具专业版是一款面向团队的全功能本地仪表盘构建平台，在免费版基础上扩展多数据源聚合、高级图表库、模板管理系统、自动化可视化 QA、团队协作分享、告警规则与阈值通知等能力，适合中大型项目的数据可视化需求。核心能力：
-
-  - 多数据源聚合看板。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
+description: "仪表盘构建工具专业版是一款面向团队的全功能本地仪表盘构建平台，在免费版基础上扩展多数据源聚合、高级图表库、模板管控系统、自发化可视化 QA、团队协作分享、告警规则与阈值通知等能力，适合中大型项目的数据可视化需求。核心能力：. 适用于需要dashboard builder相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 数据可视化
   - 仪表盘
@@ -20,8 +19,6 @@ tags:
   - dashboard
   - ops
   - bash
-  - stripe
-  - run
 tools:
   - read
   - exec
@@ -29,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+pricing_tier: L2-标准级
 ---
+
 # 仪表盘构建工具（专业版）
 
 ## 概述
@@ -143,7 +142,7 @@ py --apply ops-template --to ~/dashboard/new-product/ \
 
 ### 120 秒上手
 
-第一步，创建存储目录：
+领先步，创建存储目录：
 
 ```bash
 mkdir -p ~/dashboard
@@ -244,7 +243,7 @@ uv run dashboard_qa.py --dashboard ops --set-baseline
 uv run dashboard_qa.py --dashboard ops --auto-fix --threshold 4.5
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 多源数据对齐
 

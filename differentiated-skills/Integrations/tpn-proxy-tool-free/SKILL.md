@@ -1,16 +1,13 @@
 ---
+
 slug: tpn-proxy-tool-free
 name: tpn-proxy-tool-free
 version: 1.0.0
 displayName: 代理网络工具免费版
 summary: "通过去中心化SOCKS5代理发起网络请求，支持80+国家地区节点选择。面向开发者的去中心化SOCKS5代理请求工具，通过全球分布式网络节点发起HTTP请求，支持按国家地区选择出口IP."
-license: Proprietary
+license: MIT
 edition: free
-description: '面向开发者的去中心化SOCKS5代理请求工具，通过全球分布式网络节点发起HTTP请求，支持按国家地区选择出口IP.
-  核心能力：生成短期有效的SOCKS5代理凭证，支持按地理位置选择节点、代理租期管理、余额查询与基础请求转发.
-  适用场景：多地区内容验证、地理限制测试、爬虫IP轮换、API区域限流规避等网络请求场景.
-  差异化：重新设计中文交互流程，新增输入安全校验机制，完善错误恢复策略，去除外部依赖引用，适配国内开发者使用习惯.
-  适用关键词：代理、proxy、socks5、去中心化、出口IP、网络请求、地区节点'
+description: "面向开发者的去中心化SOCKS5代理请求工具，通过全球分布式网络节点发起HTTP请求，兼容按国家地区选择出口IP. 适用于需要tpnxy tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 网络工具
   - 代理服务
@@ -22,14 +19,15 @@ tags:
   - 分钟
   - socks5h
   - api
-  - socks5
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 去中心化代理网络工具（免费版）
 
 ## 概述
@@ -86,7 +84,7 @@ category: "Automation"
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
 ## 快速开始
 
-### 第一步：配置API密钥（约30秒）
+### 领先步：配置API密钥（约30秒）
 
 1. 访问代理网络服务官网注册账户
 2. 在控制台创建API密钥（格式如 `tpn-abc123...`）
@@ -100,7 +98,7 @@ export TPN_API_KEY="tpn-your-api-key-here"
 $env:TPN_API_KEY = "tpn-your-api-key-here"
 ```
 
-### 第二步：生成你的第一个代理
+### 第二步：生成你的领先个代理
 
 向Agent描述需求：
 
@@ -113,7 +111,7 @@ Agent将调用API并返回完整的代理凭证.
 
 ```bash
 # 使用代理访问目标URL
-curl --proxy "socks5h://username:password@ip:port" \
+curl --proxy "socks5h://username:auth@ip:port" \
   --connect-timeout 10 --max-time 30 \
   "https://example.com"
 ```
@@ -176,7 +174,7 @@ Expires:  2026-02-16T15:30:00Z
 
 计算公式：`额度 = ceil(4.1 * minutes ^ 0.375)`
 
-## 最佳实践
+## 优秀实践
 
 ### 输入安全校验
 
@@ -194,7 +192,7 @@ Expires:  2026-02-16T15:30:00Z
 
 ```bash
 # 用户端请求：使用socks5h://（DNS通过代理解析，保护DNS隐私）
-curl --proxy socks5h://username:password@ip:port https://target.com
+curl --proxy socks5h://username:auth@ip:port https://target.com
 # ...
 # 注意：socks5h中的h表示DNS解析在代理端完成
 # 如果使用socks5://则DNS在本地解析

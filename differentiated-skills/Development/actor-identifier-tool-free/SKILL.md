@@ -1,32 +1,13 @@
 ---
+
 slug: actor-identifier-tool-free
 name: actor-identifier-tool-free
 version: 1.0.0
 displayName: 仓库协作分析(免费版)
 summary: "面向个人开发者的Git仓库协作模式分析工具,只读、零依赖、隐私优先,输出仓库级聚合报告.。仓库协作分析工具免费版为个人开发者提供Git仓库级别的协作模式分析能力,基于只读git命令,零安装依"
-license: Proprietary
+license: MIT
 edition: free
-description: '仓库协作分析工具免费版为个人开发者提供Git仓库级别的协作模式分析能力,基于只读git命令,零安装依赖,隐私优先。核心能力:
-
-  - 仓库级提交节奏分析(小时/天分布)
-
-  - 仓库级代码流失率与重做信号
-
-  - 仓库级约定式提交合规率
-
-  - 文件级巴士因子风险提示
-
-  - 隐私保护(不收集邮箱、不做个人评估)
-
-  适用场景:
-
-  - 个人开源项目协作模式洞察
-
-  - 个人项目复盘与流程改进
-
-  - 学习仓库健康度分析方法
-
-  差异化:免费版聚焦个人仓库的聚合分析,严格保护隐私,不做个人评估'
+description: "仓库协作剖析工具免费版为个人开发者包含Git仓库级别的协作模式剖析能力,基于只读git命令,零安装依赖,隐私优先。核心能力:. 适用于需要actor identifier tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Git
   - 仓库分析
@@ -38,9 +19,6 @@ tags:
   - 安全
   - git
   - path
-  - sort
-  - 必需
-  - log
 tools:
   - read
   - exec
@@ -48,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 仓库协作分析工具(免费版)
 
 ## 概述
@@ -139,7 +119,7 @@ git -C /path/to/my-project log --pretty=format:"%an" --name-only \
 工具会列出"仅有单一历史作者"的文件,提示知识转移需求。报告中的贡献者姓名仅出现在此处的风险披露,不与任何评估性指标关联.
 ## 快速开始
 
-### 第一步:确认分析意图与权限
+### 领先步:确认分析意图与权限
 
 工具会确认:
 1. 你明确要分析某个具体的 Git 仓库
@@ -184,7 +164,7 @@ git -C /path/to/my-project log --pretty=format:"%an" --name-only \
 | `git -C <path> log ...` | 获取提交历史(只读 flag) | 否 |
 | `git -C <path> diff --stat ...` | 获取变更统计 | 否 |
 
-## 最佳实践
+## 优秀实践
 
 1. **首次使用先 Dry-Run**:让工具列出将执行的命令,审查后再实际运行.
 2. **只用绝对路径**:相对路径可能导致意外访问其他目录.
@@ -239,7 +219,7 @@ git -C /path/to/my-project log --pretty=format:"%an" --name-only \
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于自然语言指令驱动 Agent 执行只读 git 命令并输出仓库级聚合报告;所有命令在本地执行,无网络、无写入、无仓库外访问
 
 ## 错误处理

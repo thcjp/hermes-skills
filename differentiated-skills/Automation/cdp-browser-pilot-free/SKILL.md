@@ -1,13 +1,13 @@
 ---
+
 slug: cdp-browser-pilot-free
 name: cdp-browser-pilot-free
 version: 1.0.1
 displayName: CDP浏览器领航(免费版)
 summary: "通过已登录的Edge/Chrome浏览器执行JS渲染页面自动化，含导航、点击、截图与数据提取.。CDP浏览器领航免费版帮助你通过已登录的Edge或Chrome浏览器，利用Chrome Dev"
-license: Proprietary
+license: MIT
 edition: free
-description: CDP浏览器领航免费版帮助你通过已登录的Edge或Chrome浏览器，利用Chrome DevTools Protocol执行JS渲染页面的自动化操作。解决web_fetch无法处理登录态与JS渲染的痛点，实现导航、点击、截图与基础数据提取。Use
-  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+description: "CDP浏览器领航免费版通过已登录的Edge或Chrome浏览器，利用Chrome DevTools Protocol执行JS渲染页面的自发化操作。解决web_fetch无法处置登录态与JS渲染的痛点，达成导航、点击、截图与基础数据提取。Use. 适用于需要cdp browser pilot相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 浏览器自动化
   - CDP
@@ -19,15 +19,15 @@ tags:
   - edge
   - await
   - const
-  - wait
-  - click
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # CDP浏览器领航（免费版）
 
 > **通过已登录的Edge/Chrome浏览器执行JS渲染页面自动化。导航、点击、截图、提取，一站式解决。**
@@ -49,7 +49,7 @@ category: "Automation"
 
 ## 快速开始
 
-### 第一步：启动浏览器远程调试（<60秒）
+### 领先步：启动浏览器远程调试（<60秒）
 
 **Edge（端口9222）**：
 
@@ -145,7 +145,7 @@ const items = JSON.parse(r.result.value);
 
 ### 功能三：元素点击（click）
 
-点击匹配CSS选择器的第一个元素。通过计算元素中心坐标后模拟点击.
+点击匹配CSS选择器的领先个元素。通过计算元素中心坐标后模拟点击.
 ```javascript
 // 点击按钮
 await edge.click('.submit-button');

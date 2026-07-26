@@ -1656,12 +1656,1054 @@
     "straker-verify-tool-free",
     "vpn-toolkit-free",
     "vulnerability-scanner-tool-free",
-    "web-vuln-assess-tool-free"
+    "web-vuln-assess-tool-free",
+    "accounting-finance-free",
+    "actor-identifier-free",
+    "ai-news-free",
+    "ai-image-prompt-free",
+    "amap-jsapi-free",
+    "anygen-diagram-free",
+    "api-dev-free",
+    "apple-health-free",
+    "auto-monitor-free",
+    "auto-updater-free",
+    "aws-cost-optimizer-free",
+    "azure-agent-framework-free",
+    "azure-devops-free",
+    "azure-transcription-free",
+    "azure-voicelive-free",
+    "bailian-search-free",
+    "diagram-free",
+    "diagram-gen-free",
+    "diagram-tools-free",
+    "dingtalk-calendar-free",
+    "dlazy-audio-free",
+    "dns-config-free",
+    "dns-lookup-free",
+    "dns-networking-free",
+    "doc-parse-free",
+    "docker-ctl-free",
+    "docker-essentials-v1-free",
+    "docker-sandbox-free",
+    "document-pdf-free",
+    "doge-node-free",
+    "doubao-image-gen-free",
+    "elite-frontend-free",
+    "email-163-free",
+    "email-digest-free",
+    "encryption-free",
+    "excel-formula-free",
+    "explain-code-free",
+    "feed-digest-free",
+    "feed-to-md-free",
+    "feishu-calendar-free",
+    "feishu-doc-free",
+    "feishu-doc-write-free",
+    "figma-design-free",
+    "file-browser-free",
+    "file-sorter-free",
+    "finance-acct-free",
+    "finance-radar-free",
+    "finance-report-free",
+    "financial-literacy-free",
+    "free-google-search-free",
+    "free-weather-api-free",
+    "free-weather-skill-free",
+    "free-web-search-free",
+    "frontend-design-other-free",
+    "game-ai-free",
+    "game-asset-gen-free",
+    "game-builder-free",
+    "game-dev-free",
+    "gif-whatsapp-free",
+    "git-cli-free",
+    "git-helper-free",
+    "git-workflow-cn-free",
+    "git-workflows-free",
+    "gitcrawl-free",
+    "glitch-dashboard-free",
+    "go-linter-config-free",
+    "go-security-vuln-free",
+    "google-fonts-free",
+    "google-search-free",
+    "graph-query-free",
+    "grok-image-free",
+    "group-agent-free",
+    "heygen-tts-free",
+    "hot-news-free",
+    "html-coder-free",
+    "html-designer-free",
+    "hugo-blog-free",
+    "humanizer-free",
+    "image-free",
+    "internet-search-free",
+    "internet-search-pro-free",
+    "interview-sim-free",
+    "iris-formatter-free",
+    "java-dev-manual-free",
+    "java-reviewer-free",
+    "javascript-sdk-free",
+    "javascript-skills-free",
+    "jellyfin-control-free",
+    "jira-pat-free",
+    "job-auto-apply-free",
+    "json-lint-free",
+    "json-repair-free",
+    "juejin-free",
+    "k8s-devops-free",
+    "knowledge-agent-free",
+    "knowledge-capture-free",
+    "knowledge-graph-free",
+    "knowledge-mgmt-free",
+    "kujiale-design-free",
+    "learn-free",
+    "lh-video-gen-free",
+    "lifestyle-assistant-free",
+    "linear-sync-free",
+    "live-stream-script-free",
+    "local-rag-free",
+    "logo-design-free",
+    "mac-node-snapshot-free",
+    "mac-system-free",
+    "markdown-converter-free",
+    "markdown-format-free",
+    "market-news-free",
+    "md-converter-pdf-free",
+    "md-export-free",
+    "meeting-join-free",
+    "meeting-note-free",
+    "merge-check-free",
+    "merge-pdf-free",
+    "mermaid-diagram-free",
+    "mindmap-gen-free",
+    "minimalist-design-free",
+    "miniprogram-dev-free",
+    "model-routing-free",
+    "model-switching-free",
+    "moltbook-firewall-free",
+    "molted-work-free",
+    "monad-dev-free",
+    "multi-search-engine-free",
+    "multi-search-free",
+    "multi-source-research-free",
+    "music-gen-cellcog-free",
+    "music-gen-free",
+    "namecheap-dns-free",
+    "nano-pdf-free",
+    "news-feed-free",
+    "news-free",
+    "news-sentiment-free",
+    "node-connect-free",
+    "note-taker-free",
+    "notion-cli-free",
+    "notion-pages-free",
+    "notion-skill-free",
+    "obsidian-cli-free",
+    "ocean-chat-free",
+    "okx-dex-token-free",
+    "pandoc-convert-free",
+    "paper-parse-free",
+    "parallel-research-free",
+    "password-gen-pro-free",
+    "password-generator-free",
+    "pdf-processor-cn-free",
+    "pdf-workflow-suite",
+    "personal-health-free",
+    "personal-prod-free",
+    "photo-caption-free",
+    "photo-webcam-free",
+    "ping-monitor-free",
+    "plugin-arch-free",
+    "podcast-chaptering-free",
+    "podcast-downloader-free",
+    "popeye-prod-free",
+    "port-transfer-free",
+    "pptx-cn-free",
+    "pptx-pdf-font-fix-free",
+    "pptx-v101-free",
+    "presentation-gen-free",
+    "prod-helper-v1-free",
+    "prod-helper-v4-free",
+    "prod-improve-free",
+    "python-dataviz-free",
+    "python3-free",
+    "quant-data-quality-free",
+    "quark-scan-free",
+    "read-github-free",
+    "reddit-research-free",
+    "remix-auth-free",
+    "report-builder-free",
+    "research-agent-free",
+    "rss-aggregator-free",
+    "rss-digest-free",
+    "rss-feed-digest-free",
+    "rss-fetcher-free",
+    "rss-reader-free",
+    "safe-encryption-free",
+    "scrape-web-free",
+    "screen-monitor-free",
+    "search-assistant-free",
+    "search-v2-free",
+    "security-audit-agent-free",
+    "security-audit-free",
+    "security-auditor-free",
+    "security-scanner-free",
+    "self-integration-free",
+    "sequential-read-free",
+    "shadcn-ui-free",
+    "shopify-helper-free",
+    "short-story-free",
+    "skill-writer-free",
+    "slack-hub-free",
+    "smart-cache-free",
+    "smart-weekly-report-free",
+    "social-sentiment-free",
+    "solo-audit-free",
+    "solo-validate-free",
+    "sonos-cli-free",
+    "sql-gen-free",
+    "sql-master-free",
+    "sql-query-free",
+    "stagehand-browser-free",
+    "stock-filter-free",
+    "story-analyze-free"
   ],
   "failed": [
     {
       "slug": "css-free",
       "error": "RATE_LIMITED"
+    },
+    {
+      "slug": "azure-transcription-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "azure-voicelive-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "bailian-search-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "diagram-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "diagram-gen-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "diagram-tools-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "dingtalk-calendar-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "dlazy-audio-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "dlazy-gen-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "dns-config-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "dns-lookup-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "dns-networking-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "doc-parse-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "docker-ctl-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "docker-essentials-v1-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "docker-sandbox-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "document-pdf-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "doge-node-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "doubao-image-gen-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "elite-frontend-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "email-163-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "email-digest-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "encryption-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "excel-formula-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "explain-code-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "feed-digest-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "feed-to-md-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "feishu-calendar-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "feishu-doc-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "feishu-doc-write-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "figma-design-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "file-browser-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "file-sorter-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "finance-acct-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "finance-radar-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "finance-report-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "financial-literacy-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "free-google-search-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "free-weather-api-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "free-weather-skill-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "free-web-search-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "frontend-design-other-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "game-ai-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "game-asset-gen-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "game-builder-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "game-dev-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "gif-whatsapp-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "git-cli-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "git-helper-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "git-workflow-cn-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "git-workflows-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "gitcrawl-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "glitch-dashboard-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "go-linter-config-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "go-security-vuln-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "google-fonts-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "google-search-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "graph-query-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "grok-image-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "group-agent-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "heygen-tts-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "hot-news-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "html-coder-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "html-designer-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "hugo-blog-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "humanizer-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "image-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "internet-search-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "internet-search-pro-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "interview-sim-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "iris-formatter-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "java-dev-manual-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "java-reviewer-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "javascript-sdk-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "javascript-skills-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "jellyfin-control-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "jira-pat-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "job-auto-apply-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "json-lint-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "json-repair-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "juejin-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "k8s-devops-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "knowledge-agent-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "knowledge-capture-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "knowledge-graph-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "knowledge-mgmt-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "kujiale-design-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "learn-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "lh-video-gen-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "lifestyle-assistant-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "linear-sync-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "liquidity-mgr-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "live-stream-script-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "local-rag-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "logo-brand-identity-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "logo-design-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "mac-node-snapshot-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "mac-system-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "markdown-converter-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "markdown-format-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "market-news-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "md-converter-pdf-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "md-export-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "meeting-join-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "meeting-note-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "merge-check-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "merge-pdf-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "mermaid-diagram-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "mindmap-gen-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "minimalist-design-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "miniprogram-dev-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "model-routing-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "model-switching-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "moltbook-firewall-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "molted-work-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "monad-dev-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "multi-search-engine-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "multi-search-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "multi-source-research-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "music-gen-cellcog-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "music-gen-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "namecheap-dns-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "nano-pdf-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "news-feed-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "news-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "news-sentiment-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "node-connect-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "note-taker-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "notion-cli-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "notion-pages-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "notion-skill-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "obsidian-cli-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "ocean-chat-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "okx-dex-token-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "pandoc-convert-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "paper-parse-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "parallel-research-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "password-gen-pro-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "password-generator-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "pdf-processor-cn-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "pdf-workflow-suite",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "personal-health-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "personal-prod-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "photo-caption-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "photo-webcam-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "ping-monitor-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "plugin-arch-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "podcast-chaptering-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "podcast-downloader-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "popeye-prod-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "port-transfer-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "pptx-cn-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "pptx-pdf-font-fix-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "pptx-v101-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "presentation-gen-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "prod-helper-v1-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "prod-helper-v4-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "prod-improve-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "python-dataviz-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "python3-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "quant-data-quality-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "quark-scan-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "read-github-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "reddit-research-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "remix-auth-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "report-builder-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "research-agent-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "rss-aggregator-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "rss-digest-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "rss-feed-digest-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "rss-fetcher-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "rss-reader-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "safe-encryption-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "scrape-web-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "screen-monitor-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "search-assistant-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "search-v2-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "security-audit-agent-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "security-audit-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "security-auditor-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "security-scanner-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "self-integration-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "sequential-read-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "shadcn-ui-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "shopify-helper-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "short-story-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "skill-writer-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "slack-hub-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "smart-cache-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "smart-weekly-report-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "social-sentiment-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "solo-audit-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "solo-validate-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "sonos-cli-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "sql-gen-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "sql-master-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "sql-query-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "stagehand-browser-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "stock-filter-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "story-analyze-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "dlazy-gen-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "liquidity-mgr-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "logo-brand-identity-free",
+      "error": "UNKNOWN"
+    },
+    {
+      "slug": "story-write-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "straker-verify-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "tardis-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "tarot-reader-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "task-planner-free",
+      "error": "VERSION_EXISTS"
     }
   ]
 }

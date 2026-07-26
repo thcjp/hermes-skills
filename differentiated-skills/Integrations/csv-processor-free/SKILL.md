@@ -1,13 +1,13 @@
 ---
+
 slug: csv-processor-free
 name: csv-processor-free
 version: 1.0.1
 displayName: CSV处理器 免费版
 summary: "自动检测编码与分隔符的CSV清洗工具，支持读取、清洗、合并与类型转换.。CSV Processor 是面向数据工程师的 CSV 清洗与预处理工具，自动检测文件编码与分隔符，提供读取、清洗、合"
-license: Proprietary
+license: MIT
 edition: free
-description: CSV Processor 是面向数据工程师的 CSV 清洗与预处理工具，自动检测文件编码与分隔符，提供读取、清洗、合并、拆分与类型转换能力。核心能力：编码自动检测（chardet）、分隔符自动嗅探（逗号/分号/制表符/管道）、列名规范化、空行空列清理、智能类型转换、多文件合并、按列值拆分、导出带
-  BOM 的 UTF-8 CSV
+description: "CSV Processor 是面向数据工程师的 CSV 清洗与预处置工具，自发查验文件编码与分隔符，包含读取、清洗、合并、拆分与类型变换能力。核心能力：编码自发查验（chardet）、分隔符自发嗅探（逗号/分号/制表符/管道）、列名规范化、空行空列清理、智能类型变换、多文件合并、按列值拆分、导出带. 适用于需要csvcessor相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 集成工具
   - 数据处理
@@ -19,15 +19,15 @@ tags:
   - csv
   - handler
   - profile
-  - print
-  - python
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # CSV Processor（免费版）
 
 面向数据工程师的 CSV 清洗与预处理工具，自动检测编码与分隔符，提供读取、清洗、合并、拆分与类型转换的完整能力.
@@ -212,7 +212,7 @@ handler.export_csv(df, "cleaned.csv", encoding="utf-8-sig", delimiter=",")
 handler.export_csv(df, "european.csv", encoding="utf-8-sig", delimiter=";")
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 先画像再处理
 
@@ -311,7 +311,7 @@ chardet 基于样本检测，可能误判。可通过 `detect_encoding` 查看�
 本改进作品在原始作品基础上进行了深度差异化改造，包括但不限于：
 
 - 完全重写中文化文档与场景指南
-- 新增文件画像与最佳实践
+- 新增文件画像与优秀实践
 - 完善常见问题与故障排查
 - 增加免费版/专业版分层策略
 

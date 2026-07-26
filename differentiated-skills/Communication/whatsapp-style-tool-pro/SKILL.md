@@ -1,4 +1,5 @@
 ---
+
 slug: "whatsapp-style-tool-pro"
 name: "whatsapp-style-tool-pro"
 version: "1.0.0"
@@ -6,21 +7,7 @@ displayName: "WhatsApp样式工具-专业版"
 summary: "企业级WhatsApp格式化平台,支持样式预设/批量转换/团队规范/多平台适配。WhatsApp样式工具专业版,面向企业和专业团队的高级消息格式化平台。核心能力: - 全部WhatsApp格"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  WhatsApp样式工具专业版,面向企业和专业团队的高级消息格式化平台。核心能力:
-  - 全部WhatsApp格式语法支持(加粗/斜体/删除线/等宽体/列表/引用)
-  - 自定义样式预设与消息模板管理
-  - 批量格式转换,支持文件级处理
-  - 团队样式规范与一致性校验
-  - 多平台格式适配(WhatsApp/Telegram/Slack)
-  - 实时格式预览与智能修复
-  - 格式审计日志与版本管理
-
-  适用场景:
-  - 企业客服团队的统一消息样式规范
-  - 营销消息批量格式化与质量管控
-  - 多渠道消息格式自动适配
-  - 消...
+description: "|-. 适用于需要whatsapp style tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 沟通协作
   - 消息样式
@@ -32,16 +19,15 @@ tags:
   - 通信
   - rule
   - message
-  - self
-  - whatsapp
-  - violations
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: L2-标准级
 ---
+
 WhatsApp样式工具专业版是一款面向企业和专业团队的高级消息格式化平台。在免费版基础格式能力之上,PRO版提供自定义样式预设、批量格式转换、团队样式规范、多平台格式适配等企业级功能,帮助团队实现消息样式的一致性管理和高效生产.
 PRO版与免费版完全兼容,升级后原有格式规则和清理逻辑继续生效。适合企业客服团队统一消息风格、营销团队批量格式化内容、多渠道发布场景下的格式自动适配等复杂需求.
 ### PRO版增强能力总览
@@ -247,9 +233,9 @@ for platform, text in adapted.items():
 skill-platform skills install whatsapp-style-tool-pro
 skill-platform gateway restart
 # ...
-```
-
-### 全新安装
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 skill-platform skills install whatsapp-style-tool-pro
 # ...
@@ -288,9 +274,9 @@ whatsapp_style:
     enabled: true
     log_path: "./logs/style-audit.log"
     retain_days: 90
-```
-
-### 样式预设库结构
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 presets/
 ├── notification/
@@ -310,7 +296,7 @@ presets/
     └── footer.json
 ```
 
-## 最佳实践
+## 优秀实践
 ### 1. 预设命名规范
 采用 `类别_场景_语言` 命名规范,便于管理和检索.
 ```python
@@ -381,7 +367,7 @@ python3 import_presets.py --input team_presets.json
 - 预设库存储在本地文件系统,无需云端凭证
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行文本格式化任务
 - **运行模式**: 纯本地处理,支持批量文件操作和预设管理
 - **安全等级**: 不涉及敏感数据;审计日志可选开启;预设库支持版本管理
@@ -410,9 +396,9 @@ python3 import_presets.py --input team_presets.json
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

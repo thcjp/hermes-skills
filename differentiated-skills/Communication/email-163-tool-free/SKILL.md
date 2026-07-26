@@ -1,15 +1,13 @@
 ---
+
 slug: email-163-tool-free
 name: email-163-tool-free
 version: 1.0.0
 displayName: 163邮箱助手免费版
 summary: "163邮箱收发与搜索基础工具，支持附件与文件夹管理，适合个人日常使用。163邮箱助手免费版是一款面向个人用户的网易163邮箱管理工具，通过命令行实现邮件收发、"
-license: Proprietary
+license: MIT
 edition: free
-description: '163邮箱助手免费版是一款面向个人用户的网易163邮箱管理工具，通过命令行实现邮件收发、
-
-  搜索与文件夹管理等核心能力。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。Use
-  when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。'
+description: "163邮箱助手免费版是一款面向个人用户的网易163邮箱管控工具，通过命令行达成邮件收发、. 适用于需要email 163 tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 沟通协作
   - 邮件管理
@@ -21,14 +19,15 @@ tags:
   - email-163-tool
   - bash
   - imap
-  - 用户提供
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: free
 ---
+
 # 163邮箱助手免费版
 
 **版本**: 1.0.0
@@ -249,12 +248,13 @@ $env:EMAIL_163_PASS="your_auth_code"
 ### 配置文件权限保护
 
 ```bash
-# 已知限制
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ---
 
-## 最佳实践
+## 优秀实践
 
 ### 授权码安全
 

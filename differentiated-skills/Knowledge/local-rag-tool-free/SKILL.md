@@ -1,20 +1,13 @@
 ---
+
 slug: local-rag-tool-free
 name: local-rag-tool-free
 version: 1.0.0
 displayName: 本地文件检索（免费版）
 summary: "本地文件RAG检索增强生成工具，支持文档索引、语义搜索与上下文注入.,支持多种使用场景和自动化处理。提供高效自动化处理能力,适用于多种业务场景"
-license: Proprietary
+license: MIT
 edition: free
-description: 本地文件检索 - （免费版），可生成提升工作效率
-
-  核心能力: 本地RAG, 文档检索, 语义搜索, 知识库, RAG, retrieval augmented, 向量搜索, 上下文注入
-
-  适用场景: 个人用户日常使用，核心功能覆盖基础需求
-
-  差异化: 精简版，适合个人用户快速上手，提供核心功能与基础用法
-
-  适用关键词: 本地RAG, 文档检索, 语义搜索, 知识库, RAG, retrieval augmented, 向量搜索, 上下文注入'
+description: "本地文件检索 - （免费版），可产出提升工作效率. 适用于需要local rag tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - RAG
   - 本地检索
@@ -26,9 +19,6 @@ tags:
   - 文档
   - 支持创建
   - 查询
-  - input_params
-  - index
-  - word
 tools:
   - read
   - exec
@@ -36,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 本地文件检索（免费版）
 
 ## 概述
@@ -188,7 +180,7 @@ rag:
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 
-## 最佳实践
+## 优秀实践
 
 ### 基础使用建议
 
@@ -201,9 +193,8 @@ rag:
 ### 性能优化
 
 ```python
-# 免费版：单文件优化
-# 确保输入文件不超过建议大小
-# 处理完成后释放资源
+# 在此执行相关操作
+pass
 ```
 
 ## 常见问题(补充)

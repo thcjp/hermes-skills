@@ -1,6 +1,6 @@
 ---slug: jinn-node-tool-free
 name: jinn-node-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: 节点工作工具
 summary: "面向个人用户的闲置节点"
 license: Proprietary

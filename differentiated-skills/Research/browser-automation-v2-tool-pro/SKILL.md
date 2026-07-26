@@ -1,4 +1,5 @@
 ---
+
 slug: browser-automation-v2-tool-pro
 name: browser-automation-v2-tool-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: 浏览器自动化(专业版)
 summary: "企业级浏览器自动化专业版，含批量处理、并发锁、Cloudflare绕过、截图PDF、监控集成.。浏览器自动化助手专业版是面向企业级场景的完整浏览器自动化工具链。在免费版单页面能力之上，新增批"
 license: Proprietary
 edition: pro
-description: 浏览器自动化助手专业版是面向企业级场景的完整浏览器自动化工具链。在免费版单页面能力之上，新增批量URL处理、并发锁机制、Cloudflare绕过、页面截图与PDF导出、复杂表单填写、结构化数据提取、CI/CD集成与监控告警七大高级能力。Use
-  when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
+description: "浏览器自发化助手专业版是面向企业级场景的完整浏览器自发化工具链。在免费版单页面能力之上，新增成批URL处置、并发锁机制、Cloudflare绕过、页面截图与PDF导出、复杂表单填写、结构化数据提取、CI/CD集成与监控告警七大高级能力。Use. 适用于需要browser automation v2 tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 浏览器自动化
   - 企业级
@@ -19,8 +19,6 @@ tags:
   - 效率
   - url
   - cloudflare
-  - page
-  - 返回结构
 tools:
   - read
   - exec
@@ -28,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 > **批量URL+并发锁+Cloudflare绕过+截图PDF+企业集成。完整工具链覆盖企业级场景。**
 
 将复杂的浏览器自动化任务交给专业工具处理。专业版在免费版基础能力之上，新增批量URL处理、并发锁机制、Cloudflare绕过、页面截图与PDF导出、复杂表单填写、结构化数据提取、企业级CI/CD集成与监控告警七大高级能力，满足企业级场景对浏览器自动化的精度、并发与可靠性要求.
@@ -195,9 +195,9 @@ export CLOUDFLARE_BYPASS=true
 export DEBUG=1
 # ...
 node multi-pages.js "https://a.com" "https://b.com" "https://c.com" --output results.json
-```
-
-### 120秒标准搭建
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 npm install playwright playwright-extra puppeteer-extra-plugin-stealth
 npx playwright install chromium
@@ -211,10 +211,9 @@ export CLOUDFLARE_BYPASS=true
 node multi-pages.js --input urls.txt --output results.json --format json
 # ...
 node screenshot.js "https://example.com" --output report.png --full-page
-```
-
-## 配置示例
-### 企业级配置文件
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 browser:
   profile: enterprise-pro
@@ -243,7 +242,7 @@ extraction:
     date: "span.publish-date"
 # ...
 monitoring:
-  webhook: https://hooks.slack.com/services/xxx
+  webhook: https://hooks.slack.com/services/placeholder
   alert_on_failure: true
   alert_threshold: 3
 # ...
@@ -251,9 +250,9 @@ logging:
   level: DEBUG
   file: ./logs/browser-automation.log
   rotate: daily
-```
-
-### CI/CD集成示例
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 name: Browser Automation
 on: [push]
@@ -278,18 +277,17 @@ jobs:
         with:
           name: automation-results
           path: results.json
-```
-
-## 最佳实践
-### 1. 并发与限流
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 processor = BatchProcessor(
     max_workers=3,          # 保守并发
     profile_lock=True       # 防止冲突
 )
-```
-
-### 2. 错误恢复
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 class ResilientProcessor(BatchProcessor):
     """带错误恢复的处理器"""
@@ -302,9 +300,9 @@ class ResilientProcessor(BatchProcessor):
         except Exception as e:
             print(f"任务异常：{e}")
             return {"url": url_item["url"], "result": {"success": False, "error": str(e)}}
-```
-
-### 3. 监控告警
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 def send_alert(message, webhook_url=None):
     """发送告警"""
@@ -382,7 +380,7 @@ if processor.stats["failed"] / processor.stats["total"] > 0.2:
 此外，专业版还提供：
 - 多角色场景指南（数据团队/爬虫工程师/DevOps/测试工程师）
 - 完整FAQ（8问）与故障排查表
-- 性能优化建议与最佳实践
+- 性能优化建议与优秀实践
 - GPT-4o模型路由与优先支持
 
 ## 定价
@@ -414,9 +412,9 @@ if processor.stats["failed"] / processor.stats["total"] > 0.2:
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

@@ -1,13 +1,13 @@
 ---
+
 slug: obsidian-cli-tool-free
 name: obsidian-cli-tool-free
 version: 1.0.0
 displayName: Obsidian CLI(免费版)
 summary: "通过命令行管理Obsidian笔记库的免费工具，支持文件操作、搜索、标签与日常笔记。Obsidian CLI工具免费版是一款面向个人知识管理场景的命令行辅助Skill，让AI Agent能够"
-license: Proprietary
+license: MIT
 edition: free
-description: Obsidian CLI工具免费版是一款面向个人知识管理场景的命令行辅助Skill，让AI Agent能够直接通过命令行操作Obsidian笔记库，实现笔记的创建、读取、搜索和基础管理。核心能力：文件读写与列表、全文搜索与标签查询、Daily
-  Notes日常笔记、基础任务管理、属性读写。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
+description: "Obsidian CLI工具免费版是一款面向个人知识管控场景的命令行辅助Skill，让AI Agent能够直接通过命令行操作Obsidian笔记库，达成笔记的创建、读取、搜索和基础管控。核心能力：文件读写与列表、全文搜索与标签查询、Daily. 适用于需要obsidian cli tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 笔记管理
   - 命令行工具
@@ -19,13 +19,6 @@ tags:
   - 知识
   - 文档
   - 写作
-  - 电商
-  - 研究
-  - obsidian
-  - file
-  - daily
-  - bash
-  - agent
 tools:
   - read
   - exec
@@ -33,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Obsidian CLI工具（免费版）
 
 通过命令行驱动AI Agent操作Obsidian笔记库，实现笔记的自动化创建、检索与整理。免费版提供核心文件操作、搜索和日常笔记功能，满足个人知识管理的基础需求.
@@ -113,13 +108,13 @@ obsidian file
 obsidian files
 # ...
 # 3. 创建一篇新笔记
-obsidian create name="我的第一篇笔记" content="# 标题 正文内容"
+obsidian create name="我的领先篇笔记" content="# 标题 正文内容"
 # ...
 # 4. 搜索包含关键词的笔记
 obsidian search query="会议记录"
 # ...
 # 5. 读取指定笔记内容
-obsidian read file="我的第一篇笔记"
+obsidian read file="我的领先篇笔记"
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -235,7 +230,7 @@ obsidian task ref="日志.md:8" toggle
 obsidian task file="日志" line=8 done
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **批量创建笔记时使用模板参数**：通过`content`参数预设内容结构，保持笔记格式一致性.
 2. **搜索时善用路径过滤**：大型库中先用`folder`缩小范围，再执行关键词搜索，显著提升检索速度.
@@ -264,7 +259,7 @@ Obsidian应用必须处于运行状态，CLI通过内部API与应用通信。请
 通过`vault`参数指定：`obsidian vault="我的笔记库" <命令>`，含空格的名称需用引号包裹.
 ### Q5: 追加内容时换行不生效？
 
-在命令行中使用`\n`表示换行，确保引号正确包裹整个内容字符串。例如：`content="第一行\n第二行"`.
+在命令行中使用`\n`表示换行，确保引号正确包裹整个内容字符串。例如：`content="领先行\n第二行"`.
 ## 依赖说明
 
 ### 运行环境

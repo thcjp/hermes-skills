@@ -1,55 +1,34 @@
 ---
+
 slug: safe-encryption-tool-free
 name: safe-encryption-tool-free
 version: 1.0.0
 displayName: 安全加密工具-免费版
 summary: "基于SAFE CLI的文件加密解密工具,支持量子安全算法,适合个人数据保护。安全加密工具免费版,面向个人用户的文件加密与解密。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 安全加密工具免费版,面向个人用户的文件加密与解密。核心能力:，可自动提升工作效率
-
-  - 文件级加密与解密
-
-  - 密码保护(passphrase)
-
-  - 量子安全加密算法(ML-KEM-512)
-
-  - 加密元数据嵌入
-
-  - 跨平台兼容
-
-  适用场景:
-
-  - 个人敏感文件加密
-
-  - 文件安全传输
-
-  - 本地数据保护
-
-  差异化:免费版提供基础文件加密能力'
+description: "安全加密工具免费版,面向个人用户的文件加密与解密。核心能力:，可自发提升工作效率. 适用于需要safe encryption tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要safe encryption tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 加密
+  - safe
+  - encryption
+  - automation
+  - productivity
   - 安全
   - 量子安全
   - 文件保护
   - 工具
   - 效率
-  - 自动化
-  - 研究
-  - 分析
-  - 知识
-  - txt
-  - safe
-  - encrypted
-  - passphrase
-  - 加密文件
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # 安全加密工具 - 免费版
 
 ## 概述
@@ -194,7 +173,7 @@ done
 safe --version
 ```
 
-### 加密第一个文件
+### 加密领先个文件
 
 ```bash
 # 创建测试文件
@@ -257,7 +236,7 @@ diff secret.txt secret_decrypted.txt && echo "解密成功,内容一致"
 | RSA-2048 | 传统 | 否 | 2048 bits | 遗留兼容 |
 | AES-256-GCM | 对称 | N/A | 256 bits | 数据加密 |
 
-## 最佳实践
+## 优秀实践
 
 1. **使用强密码**:密码至少 16 字符,包含大小写字母、数字、特殊符号
 2. **安全传输密码**:密码通过独立于文件的渠道传递(如电话告知)
@@ -304,7 +283,7 @@ A: 免费版不支持目录加密。可以先将目录打包(`tar`/`zip`),再加
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **分类**: MD+EXEC模式Markdown指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 执行文件加密与解密操作
 - **限制**: 免费版不支持目录加密、密钥管理与审计日志
 

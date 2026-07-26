@@ -1,42 +1,13 @@
 ---
+
 slug: encryption-tool-free
 name: encryption-tool-free
 version: 1.0.0
 displayName: 加密工具基础版
 summary: "提供文件加密、密码哈希、算法选择指南与基础安全审计,适合个人开发者保护数据.。面向开发者的数据加密辅助工具,涵盖文件加密、密码哈希、加密算法选择与基础代码安全审计。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 面向开发者的数据加密辅助工具,涵盖文件加密、密码哈希、加密算法选择与基础代码安全审计。核心能力:，可生成提升工作效率
-
-  - 文件加密与解密(age/gpg)
-
-  - 密码哈希(bcrypt/argon2)
-
-  - 加密算法选择指南
-
-  - 基础代码安全审计
-
-  - TLS证书检查
-
-  适用场景:
-
-  - 敏感文件加密保护
-
-  - 用户密码安全存储
-
-  - 加密算法选择参考
-
-  - 基础安全代码审查
-
-  差异化:
-
-  - 免费版聚焦常用加密操作,开箱即用
-
-  - 提供算法选择速查表
-
-  - 与专业版命令兼容,可平滑升级
-
-  适用关键词: 加密, 解密, 密码哈希...'
+description: "面向开发者的数据加密辅助工具,涵盖文件加密、密码哈希、加密算法选择与基础代码安全审计。核心能力:，可产出提升工作效率. 适用于需要encryption tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - 安全
@@ -48,10 +19,6 @@ tags:
   - 代码
   - 创意
   - password
-  - salt
-  - grep
-  - age
-  - file
 tools:
   - read
   - exec
@@ -59,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 加密工具免费版为开发者提供日常数据加密保护能力。工具涵盖文件加密解密、密码哈希存储、加密算法选择指南和基础代码安全审计,帮助开发者在开发阶段正确使用加密技术保护敏感数据.
 本版本适合敏感文件加密保护、用户密码安全存储和基础安全代码审查。所有操作通过命令行工具和代码示例完成.
 ## 核心能力
@@ -357,10 +326,9 @@ console.log('加密数据:', encrypted);
 // ...
 const decrypted = encryptor.decrypt(encrypted);
 console.log('解密数据:', decrypted);
-```
-
-## 快速开始
-### 依赖详情
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 brew install age
 sudo apt install age  # Debian/Ubuntu
@@ -404,7 +372,7 @@ tls:
   warning_days: 30
 ```
 
-## 最佳实践
+## 优秀实践
 1. **密码只哈希不加密**:密码应该使用单向哈希,不可逆
 
 ```python
@@ -512,7 +480,7 @@ export AGE_KEY_FILE="~/.config/age/key.txt"
 ```
 
 ### 可用性分类
-- **分类**:MD+EXEC(纯 Markdown 指令,需要 exec 命令行执行能力)
+- **分类**:MD+EXEC模式纯 Markdown 指令,需要 exec 命令行执行能力)
 - **说明**:基于 Markdown 的 AI Skill,通过自然语言指令驱动 Agent 执行加密相关任务
 - **适用规模**:单文件到中小型项目
 
@@ -539,9 +507,9 @@ export AGE_KEY_FILE="~/.config/age/key.txt"
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

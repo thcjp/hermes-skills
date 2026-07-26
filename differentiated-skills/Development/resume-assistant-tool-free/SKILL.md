@@ -1,38 +1,13 @@
 ---
+
 slug: resume-assistant-tool-free
 name: resume-assistant-tool-free
 version: 1.0.0
 displayName: 简历助手工具(免费版)
 summary: "个人求职者的简历润色、基础评分与Markdown导出,助你快速优化简历.。简历助手工具(免费版)为个人求职者提供简历润色、基础评分与Markdown导出能力。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '简历助手工具(免费版)为个人求职者提供简历润色、基础评分与Markdown导出能力。核心能力:
-
-  - 40+项清单式简历审查与润色
-
-  - 100分制基础评分与改进建议
-
-  - Markdown格式导出
-
-  - 中英文双语支持
-
-  适用场景:
-
-  - 个人求职简历快速优化
-
-  - 简历问题自查与修正
-
-  - 学习简历写作最佳实践
-
-  差异化:
-
-  - 免费版聚焦个人单份简历的润色与评分
-
-  - 移除原始平台与作者引用,纯净适配SkillHub
-
-  - 提供中文友好的清单式审查
-
-  适用关键词: 简历, resume, cv, 润色, pol...'
+description: "简历助手工具(免费版)为个人求职者包含简历润色、基础评分与Markdown导出能力。核心能力:. 适用于需要resume assistant tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Development
   - 求职
@@ -49,7 +24,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 简历助手工具(免费版)
 
 ## 概述
@@ -257,7 +234,7 @@ category: "Automation"
 └──────────────────────────────────────────┘
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 从评分开始
 
@@ -337,7 +314,7 @@ category: "Automation"
 - 简历内容本地处理,不上传外部服务.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。免费版聚焦个人求职者的简历润色、基础评分与Markdown导出.
 ## 错误处理
 

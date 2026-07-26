@@ -1,4 +1,5 @@
 ---
+
 slug: diagram-tool-pro
 name: diagram-tool-pro
 version: 1.0.0
@@ -6,17 +7,7 @@ displayName: 图表工具专业版
 summary: "全格式图表生成引擎，支持Mermaid/PlantUML/SVG/批量处理/模板管理与多平台导出.。图表工具专业版是企业级图表生成与管理的完整解决方案，在免费版基础上扩展了PlantUML语"
 license: Proprietary
 edition: pro
-description: '图表工具专业版是企业级图表生成与管理的完整解决方案，在免费版基础上扩展了PlantUML语法、SVG矢量导出、批量图表生成、自定义模板、版本管理、HTML交互式页面等高级能力。核心能力：
-
-  - 支持Mermaid、PlantUML、ASCII、SVG四种图表语法的完整覆盖
-
-  - 批量图表生成（单次会话支持50+张图），自动建立图表间关联索引
-
-  - 自定义模板库与主题系统，支持品牌色适配与团队风格统一
-
-  - 图表版本管理与差异对比，支持回滚与分支演化
-
-  - HTML交互式页面输出...'
+description: "图表工具专业版是企业级图表产出与管控的完整解决方案，在免费版基础上扩展了PlantUML语法、SVG矢量导出、成批图表产出、自定义模板、版本管控、HTML交互式页面等高级能力。核心能力：. 适用于需要diagram tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 图表生成
   - 可视化
@@ -28,14 +19,6 @@ tags:
   - 自动化
   - 写作
   - 电商
-  - 知识
-  - 文档
-  - 开发
-  - svg
-  - mmd
-  - 批量生成
-  - 模板
-  - html
 tools:
   - read
   - exec
@@ -43,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 图表工具专业版（Diagram Tool Pro）
 
 ## 概述
@@ -208,7 +193,7 @@ versioning:
   commit_message: "chore(diagram): update {diagram_name}"
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 批量生成优化
 1. **按域分组**：将相关图表放在同一批次，便于建立关联索引

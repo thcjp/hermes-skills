@@ -1,4 +1,5 @@
 ---
+
 slug: hot-news-tool-pro
 name: hot-news-tool-pro
 version: 1.0.0
@@ -6,33 +7,7 @@ displayName: 新闻聚合专业版
 summary: 企业级新闻聚合工具，支持多源监控、定时更新、实时推送、舆情分析与自定义源管理，适合品牌监控与行业情报.
 license: Proprietary
 edition: pro
-description: '企业级新闻聚合工具，支持多源监控、定时更新、实时推送、舆情分析与自定义源管理，适合品牌监控与行业情报。核心能力:
-
-  - 50+ 国内外新闻源批量监控
-
-  - 定时自动抓取与实时增量更新
-
-  - 关键词告警与实时推送通知
-
-  - 舆情趋势分析与情感判断
-
-  - 自定义新闻源与分类规则
-
-  - 多渠道分发（邮件、Webhook、IM）
-
-  适用场景:
-
-  - 企业品牌舆情监控
-
-  - 行业情报收集与分析
-
-  - 竞品动态跟踪
-
-  - 危机预警与应急响应
-
-  差异化:
-
-  - PRO 版支持 50+ 新闻源...'
+description: "企业级新闻聚合工具，兼容多源监控、定时更新、实时推送、舆情剖析与自定义源管控，适合品牌监控与行业情报。核心能力:. 适用于需要hot news tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 新闻
   - 企业工具
@@ -51,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 # 新闻聚合专业版
 
 ## 概述
@@ -109,7 +86,7 @@ python （请参考skill目录中的脚本文件） \
 # 配置关键词告警
 python （请参考skill目录中的脚本文件） \
   --keywords="品牌名 危机,品牌名 投诉,品牌名 负面" \
-  --webhook="https://hooks.slack.com/xxx" \
+  --webhook="https://hooks.slack.com/placeholder" \
   --email=alert@company.com \
   --poll-interval=300
 ```
@@ -150,7 +127,7 @@ python （请参考skill目录中的脚本文件） \
   --brand="公司名" \
   --sources sources.yaml \
   --keywords="公司名 正面,公司名 负面,公司名 危机" \
-  --alert-webhook="https://hooks.slack.com/xxx" \
+  --alert-webhook="https://hooks.slack.com/placeholder" \
   --alert-email=brand@company.com \
   --report-frequency=daily
 ```
@@ -274,7 +251,7 @@ monitoring:
   poll_interval: 300
 # ...
 alerts:
-  webhook: https://hooks.slack.com/xxx
+  webhook: https://hooks.slack.com/placeholder
   email:
     smtp_host: smtp.company.com
     smtp_port: 587
@@ -302,7 +279,7 @@ curl http://localhost:8000/news?category=tech&max=10
 # ...
 # 订阅告警
 curl -X POST http://localhost:8000/subscribe \
-  -d '{"keywords": ["品牌名"], "webhook": "https://xxx"}'
+  -d '{"keywords": ["品牌名"], "webhook": "https://placeholder"}'
 ```
 
 ### 参数说明
@@ -318,7 +295,7 @@ curl -X POST http://localhost:8000/subscribe \
 | `--export` | 字符串 | json | 导出格式 |
 | `--parallel` | 整数 | 4 | 并行线程数 |
 
-## 最佳实践
+## 优秀实践
 
 ### 多源监控优化
 

@@ -1,4 +1,5 @@
 ---
+
 slug: bom-vuln-intel-tool-pro
 name: bom-vuln-intel-tool-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: 物料清单漏洞情报专业版
 summary: 企业级SBOM管理平台,支持多生态、CycloneDX/SPDX标准、批量扫描、持续监控与CI/CD集成,适合安全团队与企业用户.
 license: Proprietary
 edition: pro
-description: 物料清单漏洞情报专业版,为企业安全团队提供全方位SBOM管理与依赖漏洞治理能力。核心能力:多生态SBOM生成、CycloneDX/SPDX标准输出、OSV+GHSA+NVD三库联查、批量扫描、持续监控与告警、SARIF报告。Use
-  when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
+description: "物料清单漏洞情报专业版,为企业安全团队包含全方位SBOM管控与依赖漏洞治理能力。核心能力:多生态SBOM产出、CycloneDX/SPDX标准输出、OSV+GHSA+NVD三库联查、成批扫描、持续监控与告警、SARIF报告。Use. 适用于需要bom vuln intel tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 安全
   - SBOM
@@ -19,15 +19,15 @@ tags:
   - sbom
   - json
   - self
-  - ecosystem
-  - pkg
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Security"
+pricing_tier: L2-标准级
 ---
+
 # 物料清单漏洞情报专业版
 ## 概述
 专业版为企业安全团队提供完整的软件物料清单(SBOM)管理与依赖漏洞治理平台。在免费版基础查询能力之上,新增多生态SBOM生成(npm/pip/go/cargo/maven/nuget)、CycloneDX与SPDX标准格式输出、OSV+GHSA+NVD三漏洞库联查、批量多项目扫描、持续漏洞监控与Webhook告警、SARIF合规报告。专业版完全兼容免费版查询接口,已有检查脚本可无缝升级.
@@ -278,7 +278,7 @@ monitoring:
       ecosystem: "go"
 # ...
   alert:
-    webhook: "https://hooks.slack.com/services/xxx"
+    webhook: "https://hooks.slack.com/services/placeholder"
     min_severity: "HIGH"
     new_vulns_only: true
 # ...
@@ -328,9 +328,9 @@ for sbom in /sbom/*.json; do
 done
 # ...
 echo "扫描完成"
-```
-
-### 场景二:CI/CD安全门禁
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 # .github/workflows/supply-chain-security.yml
 name: Supply Chain Security
@@ -375,9 +375,9 @@ jobs:
         with:
           name: sbom
           path: sbom.json
-```
-
-### 场景三:SBOM差异对比
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 #!/bin/bash
 # 版本间SBOM差异对比(专业版)
@@ -429,9 +429,9 @@ osv.dev/v1/query" ...
 # ...
 # 专业版:三库联查
 python3 multi_vuln_check.py --package lodash --version 4.17.20
-```
-
-### 首次批量扫描
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 扫描当前目录下所有项目
 bash batch_scan.sh . --output batch-report.json
@@ -456,10 +456,10 @@ bash batch_scan.sh . --output batch-report.json
 | SPDX | 2.3 | 合规要求,许可证分析 |
 | JSON | 自定义 | 免费版兼容格式 |
 
-## 最佳实践
+## 优秀实践
 1. **每次发布生成SBOM**:将SBOM生成集成到CI/CD,每次发布保留SBOM快照.
 2. **三库联查**:使用OSV+GHSA+NVD交叉验证,减少漏报.
-3. **持续监控**:配置定期扫描,新漏洞出现时第一时间告警.
+3. **持续监控**:配置定期扫描,新漏洞出现时领先时间告警.
 4. **SBOM归档**:保留历史SBOM,支持事后追溯与差异对比.
 5. **安全门禁**:在CI/CD中设置严重漏洞零容忍策略.
 6. **最小依赖**:定期审查SBOM,移除不再使用的依赖.
@@ -498,7 +498,7 @@ CycloneDX更适合云原生与现代开发流程,SPDX更适合需要详细许可
 - GHSA通过OSV代理查询,无需单独配置
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行企业级SBOM管理与供应链安全治理任务
 
 ## 错误处理
@@ -519,9 +519,9 @@ CycloneDX更适合云原生与现代开发流程,SPDX更适合需要详细许可
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

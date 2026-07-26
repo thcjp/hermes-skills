@@ -1,4 +1,5 @@
 ---
+
 slug: archive-tool-pro
 name: archive-tool-pro
 version: 1.0.0
@@ -6,35 +7,7 @@ displayName: 内容归档工具-专业版
 summary: "企业级内容归档,支持团队共享、自动摘要、版本控制、全文检索与API访问。企业级内容归档工具,在免费版核心能力之上,提供团队共享归档库、AI 自动摘要、"
 license: Proprietary
 edition: pro
-description: '企业级内容归档工具,在免费版核心能力之上,提供团队共享归档库、AI 自动摘要、
-
-  版本控制、全文检索、API 访问、权限管理与监控统计能力。核心能力:
-
-  - 免费版全部能力(完全兼容)
-
-  - 团队共享归档库与协作
-
-  - AI 自动摘要与关键词提取
-
-  - 归档版本控制与历史追溯
-
-  - 全文检索与高级筛选
-
-  - API 访问与第三方集成
-
-  - 权限管理与操作审计
-
-  适用场景:
-
-  - 企业团队资料沉淀
-
-  - 研究机构档案管理
-
-  - 合规性内容留存
-
-  - 团队协作与知识共享
-
-  差异化:专业版面向团队与企业,提供共享、版本控制...'
+description: "企业级内容归档工具,在免费版核心能力之上,包含团队共享归档库、AI 自发摘要、. 适用于需要archive tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 研究工具
   - 内容归档
@@ -46,8 +19,6 @@ tags:
   - archive
   - pro
   - 专业版新
-  - project
-  - api
 tools:
   - read
   - exec
@@ -56,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 # 内容归档工具(专业版)
 
 ## 概述
@@ -379,7 +352,7 @@ archive pro api start --port 8080 --auth token
 archive pro api token create --name "integration" --scope "read,write"
 # ...
 # 验证 API
-curl -s -H "Authorization: Bearer <token>" http://localhost:8080/api/health
+curl -s -H "Authorization: Bearer <item>" http://localhost:8080/api/health
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -446,7 +419,7 @@ archive pro stats
 archive pro stats --export json > stats.json
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 合规留存规范
 1. **不可变标记**:合规内容归档时标记 `--immutable`,防止篡改.
@@ -497,7 +470,7 @@ archive pro immutable unlock --id <item-id> --admin
 # 创建 Token
 archive pro api token create --name "integration" --scope "read"
 # 使用 Token
-curl -H "Authorization: Bearer <token>" http://localhost:8080/api/search?q=test
+curl -H "Authorization: Bearer <item>" http://localhost:8080/api/search?q=test
 ```
 
 ### Q6: 全文检索支持哪些查询?
@@ -542,7 +515,7 @@ curl -H "Authorization: Bearer <token>" http://localhost:8080/api/search?q=test
 - 团队共享:配置共享存储路径与访问凭证
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作
 - **版本**: 专业版(兼容免费版全部能力)
 

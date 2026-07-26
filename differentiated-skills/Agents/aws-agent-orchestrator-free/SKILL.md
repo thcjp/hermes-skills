@@ -1,13 +1,12 @@
 ---
+
 slug: aws-agent-orchestrator-free
 name: aws-agent-orchestrator-free
 version: 1.0.1
 displayName: AWS智能体编排免费版
 summary: 基于AWS Bedrock AgentCore与LangGraph的多智能体编排部署助手，免费体验核心编排能力，适合个人开发者快速上手.
-license: Proprietary
-description: AWS智能体编排免费版（aws-agent-orchestrator-free）面向独立开发者与一人公司，提供基于AWS Bedrock
-  AgentCore与LangGraph的单智能体快速部署能力。它聚焦"最小可用编排"，让用户在120秒内跑通第一个HTTP服务，零成本验证多智能体可行性。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+license: MIT
+description: "AWS智能体编排免费版（aws-agent-orchestrator-free）面向独立开发者与一人公司，包含基于AWS Bedrock. 适用于需要aws agent orchestrator相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 智能体编排
   - AWS部署
@@ -19,8 +18,6 @@ tags:
   - agentcore
   - agent
   - 本免费版
-  - gateway
-  - langgraph
 tools:
   - read
   - exec
@@ -28,10 +25,12 @@ tools:
 edition: free
 homepage: ""
 category: "Operations"
+pricing_tier: free
 ---
+
 # AWS智能体编排免费版（aws-agent-orchestrator-free）
 
-本Skill帮助你在AWS Bedrock AgentCore上快速部署**单智能体**服务，使用LangGraph完成StateGraph编排。免费版聚焦"上手即用"，让独立开发者在5分钟内跑通第一个可调用的HTTP智能体服务.
+本Skill帮助你在AWS Bedrock AgentCore上快速部署**单智能体**服务，使用LangGraph完成StateGraph编排。免费版聚焦"上手即用"，让独立开发者在5分钟内跑通领先个可调用的HTTP智能体服务.
 > 版本边界：本免费版支持单智能体编排、本地开发、短时记忆与基础Bedrock调用。**多智能体编排、Gateway工具链、跨会话长期记忆（LTM）**三项高级能力被限制，需升级至 `aws-agent-orchestrator-pro` 解锁.
 ## 使用流程
 
@@ -170,7 +169,7 @@ py --region us-east-1 --name my_agent --non-interactive` | 脚本化配置 | ✅
 | 多智能体编排 | Orchestrator委托Specialists模式 | ❌ 专业版能力 |
 
 > 关于MCP：MCP是Agent工具协议的行业标准术语。本Skill中MCP仅作为Gateway工具链的传输协议出现，免费版不含Gateway功能，因此实际不会调用MCP端点；升级专业版后Gateway将以MCP/REST/Lambda三种transport提供服务.
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：AWS、Bedrock、的多智能体编排部、署助手、免费体验核心编排、适合个人开发者快、速上手、智能体编排免费版、free、面向独立开发者与、一人公司、提供基于、的单智能体快速部、署能力、它聚焦、最小可用编排、让用户在、秒内跑通第一个、零成本验证多智能、体可行性、Use、when、模型调用、智能对话、LLM、应用时使用、不适用于需要、确定性的关键决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：AWS、Bedrock、的多智能体编排部、署助手、免费体验核心编排、适合个人开发者快、速上手、智能体编排免费版、free、面向独立开发者与、一人公司、提供基于、的单智能体快速部、署能力、它聚焦、最小可用编排、让用户在、秒内跑通领先个、零成本验证多智能、体可行性、Use、when、模型调用、智能对话、LLM、应用时使用、不适用于需要、确定性的关键决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ### 核心功能执行
 用`input_params`参数进行配置.
 

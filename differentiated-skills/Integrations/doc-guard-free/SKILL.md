@@ -1,13 +1,13 @@
 ---
+
 slug: doc-guard-free
 name: doc-guard-free
 version: 1.0.1
 displayName: 文档护盾免费版
 summary: "端到端加密 Markdown 文档协作工具，支持创建、查询、同步加密笔记，适合个人隐私场景.。文档护盾免费版面向个人开发者与隐私敏感用户，提供端到端加密的 Markdown 文档管理能力。核"
-license: Proprietary
+license: MIT
 edition: free
-description: 文档护盾免费版面向个人开发者与隐私敏感用户，提供端到端加密的 Markdown 文档管理能力。核心覆盖文档创建、读取、更新、列表查询与基础搜索五大场景，所有内容在客户端加密后才同步到去中心化存储，确保即使服务端被攻破也无法读取明文。Use
-  when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
+description: "文档护盾免费版面向个人开发者与隐私敏感用户，包含端到端加密的 Markdown 文档管控能力。核心覆盖文档创建、读取、更新、列表查询与基础搜索五大场景，所有内容在客户端加密后才同步到去中心化存储，确保即使服务端被攻破也无法读取明文。Use. 适用于需要doc guard相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 集成工具
   - 安全
@@ -19,18 +19,15 @@ tags:
   - 文档
   - 加密
   - 研究
-  - mcp
-  - agent
-  - markdown
-  - docid
-  - 接入
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 文档护盾（免费版）
 
 本 Skill 提供端到端加密的 Markdown 文档管理能力，让用户与 AI Agent 在不泄露明文的前提下协作。免费版覆盖日常个人使用场景，支持创建、读取、更新、列表、搜索五大核心操作.
@@ -171,7 +168,7 @@ claude mcp add --transport http doc-guard-api <SERVER_URL>
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **始终返回分享链接**：创建或更新文档后，把 `link` 字段返回给用户，方便分享与跨设备查看.
 2. **先搜索再创建**：用户提到更新需求时，先搜索是否已有同名文档，避免重复.

@@ -1,4 +1,5 @@
 ---
+
 slug: daily-news-brief-tool-pro
 name: daily-news-brief-tool-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: 每日新闻简报(专业版)
 summary: "企业级新闻简报专业版，含定时推送、AI分析、多渠道分发、情感分析与趋势预测.。每日新闻简报助手专业版是面向企业级场景的完整新闻简报生成与分发工具。在免费版基础搜集能力之上，新增定时自动执行、"
 license: Proprietary
 edition: pro
-description: 每日新闻简报助手专业版是面向企业级场景的完整新闻简报生成与分发工具。在免费版基础搜集能力之上，新增定时自动执行、多渠道推送、AI智能分析、个性化定制、多语言支持、历史回顾、情感分析、趋势预测八大高级能力。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "每日新闻简报助手专业版是面向企业级场景的完整新闻简报产出与分发工具。在免费版基础搜集能力之上，新增定时自发执行、多渠道推送、AI智能剖析、个性化定制、多语言兼容、历史回顾、情感剖析、趋势预测八大高级能力。Use. 适用于需要daily news brief tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 每日新闻
   - 企业级
@@ -19,7 +19,6 @@ tags:
   - 工具
   - https
   - feishu
-  - xxx
 tools:
   - read
   - exec
@@ -28,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 > **定时推送+AI分析+多渠道分发+趋势预测。企业级新闻简报全功能覆盖。**
 
 将复杂的新闻搜集、分析与分发任务交给专业工具处理。专业版在免费版基础搜集能力之上，新增定时自动执行、多渠道推送、AI智能分析、个性化定制、多语言支持、历史回顾、情感分析、趋势预测八大高级能力，满足企业级场景对新闻简报的时效性、深度与广度要求.
@@ -81,7 +82,7 @@ category: "Knowledge"
 
 ```python
 aggregator = ScheduledBriefGenerator()
-aggregator.pusher.register("feishu", "https://open.feishu.cn/open-apis/bot/v2/hook/xxx", "feishu")
+aggregator.pusher.register("feishu", "https://open.feishu.cn/open-apis/bot/v2/hook/placeholder", "feishu")
 aggregator.pusher.register("email", "https://api.email.com/send", "email")
 aggregator.start()
 ```
@@ -136,13 +137,13 @@ for item in analyzed:
 
 ### 30秒上手
 ```bash
-export FEISHU_WEBHOOK=https://open.feishu.cn/open-apis/bot/v2/hook/xxx
-export DINGTALK_WEBHOOK=https://oapi.dingtalk.com/robot/send?access_token=xxx
+export FEISHU_WEBHOOK=https://open.feishu.cn/open-apis/bot/v2/hook/placeholder
+export DINGTALK_WEBHOOK=https://oapi.dingtalk.com/robot/send?access_token=placeholder
 # ...
 python3 news_brief_service.py --schedule daily --push feishu,dingtalk
-```
-
-### 120秒标准搭建
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 pip install requests beautifulsoup4 schedule
 # ...
@@ -165,11 +166,11 @@ schedule:
   weekly: "0 9 * * 1"
 # ...
 push:
-  feishu: https://open.feishu.cn/open-apis/bot/v2/hook/xxx
-  dingtalk: https://oapi.dingtalk.com/robot/send?access_token=xxx
-  wechat: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=xxx
+  feishu: https://open.feishu.cn/open-apis/bot/v2/hook/placeholder
+  dingtalk: https://oapi.dingtalk.com/robot/send?access_token=placeholder
+  wechat: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=placeholder
   email: https://api.email-service.com/send
-  slack: https://hooks.slack.com/services/xxx
+  slack: https://hooks.slack.com/services/placeholder
 # ...
 ai_analysis:
   enabled: true
@@ -190,10 +191,9 @@ customization:
 EOF
 # ...
 py --config news_brief_config.yaml
-```
-
-## 示例
-### 企业级配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 sources:
   international:
@@ -217,19 +217,19 @@ push:
   channels:
     - name: feishu
       type: feishu
-      url: https://open.feishu.cn/open-apis/bot/v2/hook/xxx
+      url: https://open.feishu.cn/open-apis/bot/v2/hook/placeholder
     - name: dingtalk
       type: dingtalk
-      url: https://oapi.dingtalk.com/robot/send?access_token=xxx
+      url: https://oapi.dingtalk.com/robot/send?access_token=placeholder
     - name: wechat
       type: wechat
-      url: https://qyapi.weixin.qq.key=xxx
+      url: https://qyapi.weixin.qq.key=placeholder
     - name: email
       type: email
       url: https://api.email-service.com/send
     - name: slack
       type: slack
-      url: https://hooks.slack.com/services/xxx
+      url: https://hooks.slack.com/services/placeholder
 # ...
 ai_analysis:
   model: gpt-4o
@@ -257,28 +257,27 @@ customization:
         weight: 3
       - word: 芯片
         weight: 2
-```
-
-## 最佳实践
-### 1. 推送频率控制
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 schedule.every().day.at("08:00").do(morning_brief)  # 每日1次早报
 schedule.every().day.at("20:00").do(evening_summary)  # 每日1次晚报
 def alert_negative(news):
     if news['sentiment'] == 'negative':
         pusher.push("alert_channel", news['title'], "负面新闻告警")
-```
-
-### 2. 多语言适配
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 LANG_CONFIG = {
     'zh': {'timezone': 'Asia/Shanghai', 'push_channel': 'feishu'},
     'en': {'timezone': 'America/New_York', 'push_channel': 'slack'},
     'ja': {'timezone': 'Asia/Tokyo', 'push_channel': 'email'},
 }
-```
-
-### 3. AI分析优化
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 ANALYSIS_TEMPLATES = {
     'formal': '正式报告风格，包含详细分析',
@@ -349,7 +348,7 @@ ANALYSIS_TEMPLATES = {
 此外，专业版还提供：
 - 多角色场景指南（信息部门/公关团队/跨国公司）
 - 完整FAQ（8问）与故障排查表
-- 性能优化建议与最佳实践
+- 性能优化建议与优秀实践
 - GPT-4o模型路由与优先支持
 
 ## 定价

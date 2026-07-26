@@ -1,13 +1,13 @@
 ---
+
 slug: obsidian-essentials-free
 name: obsidian-essentials-free
 version: 1.0.1
 displayName: Obsidian基础入门(免费版)
 summary: Obsidian新手入门与核心配置免费版，含安装、领先篇笔记、Markdown基础、核心配置与基础工作流.
-license: Proprietary
+license: MIT
 edition: free
-description: Obsidian基础入门免费版是面向AI Agent的Obsidian新手入门指南。不同于综合工具箱，本技能聚焦"新手快速上手"：安装配置、领先篇笔记、Markdown基础、核心配置项、基础工作流，帮助Agent引导用户完成Obsidian的初次配置与基础使用。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "Obsidian基础入门免费版是面向AI Agent的Obsidian新手入门指南。不同于综合工具箱，该技能聚焦\"新手快速上手\"：安装配置、领先篇笔记、Markdown基础、核心配置项、基础工作流，帮助Agent引导用户完成Obsidian的初次配置与基础使用。Use. 适用于需要obsidian essentials相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - Obsidian
   - 新手入门
@@ -19,15 +19,15 @@ tags:
   - obsidian
   - vault
   - markdown
-  - 核心插件
-  - text
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 > **不是教你成为Obsidian高手，而是带你从零开始迈出领先步。安装、配置、领先篇笔记，新手友好。**
 
 Obsidian的灵活性与强大功能对新手既是机遇也是挑战。如何下载安装？如何创建领先个vault？如何写领先篇笔记？如何配置核心选项？本技能聚焦新手入门全流程，帮助Agent引导用户顺利完成Obsidian的初次配置与基础使用.
@@ -235,8 +235,9 @@ text
 
 步骤3：创建日记模板
 路径：Templates/daily.md
-```
-# ...
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```markdown
 # {{date}}
 
@@ -253,14 +254,16 @@ text
 -
 ## 反思
 ## 明日计划
-```
-# ...
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 步骤4：快速创建日记
 - 点击左侧栏日历图标
 - 或使用快捷键（默认无，可在设置中配置）
-```
-# ...
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```markdown
 type: meeting
 date: 2026-07-18
@@ -286,8 +289,9 @@ tags: [meeting]
 ## 行动项
 - [ ] @张三 完成项目A测试报告（截止：2026-07-20）
 - [ ] @李四 协调项目B资源（截止：2026-07-22）
-```
-# ...
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```markdown
 type: project
 created: 2026-07-18

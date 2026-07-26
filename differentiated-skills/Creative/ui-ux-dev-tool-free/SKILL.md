@@ -1,38 +1,13 @@
 ---
+
 slug: ui-ux-dev-tool-free
 name: ui-ux-dev-tool-free
 version: 1.0.0
 displayName: UI/UX开发工具免费版
 summary: "自然语言生成React页面,CDN零构建,含截图审查循环,适合个人快速原型开发。面向个人开发者的自然语言驱动React页面生成工具,通过CDN方式零构建运行,"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人开发者的自然语言驱动React页面生成工具,通过CDN方式零构建运行,
-
-  内置截图视觉审查循环,支持快速原型迭代。核心能力:
-
-  - 自然语言描述生成React页面(CDN零构建)
-
-  - 项目配置与偏好管理
-
-  - 截图视觉审查与迭代修复
-
-  - 基础设计原则自动应用
-
-  - 图片转WebP格式优化
-
-  - 静态文件导出
-
-  适用场景:
-
-  - 个人开发者快速生成落地页原型
-
-  - 独立项目单页面快速开发
-
-  - 设计概念验证与视觉迭代
-
-  差异化:免费版聚焦单页面快速生成与视觉审查,使用CDN方式零构建,
-
-  适合个人快速原型'
+description: "面向个人开发者的自然语言驱动React页面产出工具,通过CDN方式零构建运行,. 适用于需要ui ux dev tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 设计
   - UI
@@ -44,16 +19,15 @@ tags:
   - UI设计
   - react
   - script
-  - classname
-  - webp
-  - bash
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # UI/UX开发工具 - 免费版
 
 ## 概述
@@ -350,7 +324,7 @@ serve/
 | 迭代流程 | 手动反馈 | 自动化审查+修复 |
 | 适用对象 | 个人开发者 | 团队/代理机构 |
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 每步操作都告知用户
 
@@ -464,7 +438,7 @@ sudo apt install webp
 本skill基于Markdown指令规范和本地脚本运行,无需额外API Key。页面生成由Agent内置LLM驱动,截图和图片转换为本地工具执行。CDN前端库通过公网加载,无需配置.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。页面生成后需要exec工具执行截图脚本和图片转换脚本。本地服务需通过Bash启动,截图功能依赖Chrome/Chromium浏览器.
 ## 输出格式
 ```json

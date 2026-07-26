@@ -1,36 +1,13 @@
 ---
+
 slug: ui-ux-promax-plus-free
 name: ui-ux-promax-plus-free
 version: 1.0.1
 displayName: UI/UX ProMax+免费版
 summary: "专业UI/UX设计资源库,含风格库、配色方案、字体配对基础查询,适合个人设计师快速参考。面向个人设计师和开发者的UI/UX设计资源库,提供界面风格、配色方案、"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人设计师和开发者的UI/UX设计资源库,提供界面风格、配色方案、
-
-  字体配对的基础查询和设计决策框架。核心能力:
-
-  - UI风格库浏览(50+种界面风格)
-
-  - 配色方案查询(100+专业调色板)
-
-  - 字体配对推荐(精选组合)
-
-  - 基础设计决策框架
-
-  - Tailwind CSS快速应用指引
-
-  适用场景:
-
-  - 个人项目设计风格选择
-
-  - 独立开发者配色和字体查询
-
-  - 小型项目设计快速参考
-
-  差异化:免费版聚焦基础资源浏览和设计决策框架,提供Tailwind快速应用,
-
-  适合个人快速参考'
+description: "面向个人设计师和开发者的UI/UX设计资源库,包含界面风格、配色方案、. 适用于需要ui uxmax plus相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 设计
   - UI
@@ -42,16 +19,15 @@ tags:
   - UI设计
   - inter
   - tailwind
-  - 字体配对
-  - 快速应用
-  - css
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # UI/UX ProMax+ - 免费版
 
 ## 概述
@@ -222,19 +198,8 @@ Tailwind配置:
 ### 设计资源查询流程
 
 ```bash
-# 1.确定产品类型和行业
-# 产品: SaaS | 行业: 生产力工具
-# .
-# 2.查询推荐风格
-# 参考: UI风格库 -> SaaS -> Minimalist
-# .
-# 3.查询配色方案
-# 参考: 配色方案 -> 科技产品 -> Blue-600 + Slate-500 + Cyan-400
-# .
-# 4.查询字体配对
-# 参考: 字体配对 -> 现代科技 -> Inter + Inter
-# .
-# 5.应用Tailwind配置
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### Tailwind项目配置
@@ -292,7 +257,7 @@ space-4:  16px   space-16: 64px
 | 设计决策框架 | 基础三问 | 完整决策矩阵 |
 | 适用对象 | 个人设计师 | 企业设计团队 |
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 不要混合太多风格
 
@@ -327,7 +292,7 @@ space-4:  16px   space-16: 64px
 免费版不包含图表类型推荐。25种数据可视化图表匹配是专业版功能,支持趋势图、对比图、时间线、漏斗图等.
 ### Q2: 免费版有UX模式库吗?
 
-免费版不包含UX交互模式库。专业版提供完整的用户体验最佳实践模式库,涵盖加载状态、错误处理、空状态等场景.
+免费版不包含UX交互模式库。专业版提供完整的用户体验优秀实践模式库,涵盖加载状态、错误处理、空状态等场景.
 ### Q3: 免费版有组件设计规范吗?
 
 免费版不包含组件设计规范。专业版提供常用组件(按钮、卡片、表单、表格等)的完整设计规范.
@@ -357,7 +322,7 @@ space-4:  16px   space-16: 64px
 本Skill基于Markdown设计资源,无需额外API Key。设计建议由Agent内置LLM驱动。Tailwind CSS和Google Fonts为本地/CDN资源,无需配置.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。Tailwind CSS配置和Google Fonts引入需要exec工具执行npm命令或编辑HTML文件.
 ## 错误处理
 

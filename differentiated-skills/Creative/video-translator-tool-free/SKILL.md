@@ -1,38 +1,13 @@
 ---
+
 slug: video-translator-tool-free
 name: video-translator-tool-free
 version: 1.0.0
 displayName: 视频翻译-免费版
 summary: "轻量级视频翻译与配音工具，支持中英互译、字幕翻译出片，适合个人创作者快速完成跨语言视频本地化.。视频翻译免费版，为个人用户提供轻量化的视频翻译与配音能力。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '视频翻译免费版，为个人用户提供轻量化的视频翻译与配音能力。核心能力:
-
-  - 中英双向视频翻译（zh ⇄ en）
-
-  - 视频字幕翻译出片
-
-  - 单视频翻译任务处理
-
-  - 翻译结果预览链接返回
-
-  - 任务状态轮询查询
-
-  适用场景:
-
-  - 个人创作者跨语言内容分发
-
-  - 学习视频字幕翻译
-
-  - 短视频出海本地化
-
-  - 个人观影辅助翻译
-
-  差异化:
-
-  - 免费版聚焦中英互译核心场景，零配置上手
-
-  - 单视频任务流程清晰...'
+description: "视频翻译免费版，为个人用户包含轻量化的视频翻译与配音能力。核心能力:. 适用于需要video translator tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Creative
   - 视频翻译
@@ -44,14 +19,15 @@ tags:
   - https
   - targetlanguage
   - luoji
-  - bash
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # 视频翻译工具 - 免费版
 
 ## 概述
@@ -135,7 +111,7 @@ category: "Creative"
 ```bash
 # 提交翻译任务
 curl -s -X POST 'https://audiox-api-global.luoji.cn/video-trans/orchestrate' \
-  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Authorization: Bearer ${PARAM}' \
   -F 'video=@/path/to/video.mp4' \
   -F 'sourceLanguage=zh' \
   -F 'targetLanguage=en'
@@ -155,7 +131,7 @@ curl -s -X POST 'https://audiox-api-global.luoji.cn/video-trans/orchestrate' \
 
 ```bash
 luoji.cn/video-trans/orchestrate' \
-  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Authorization: Bearer ${PARAM}' \
   -F 'video=@/path/to/tutorial.mp4' \
   -F 'sourceLanguage=en' \
   -F 'targetLanguage=zh' \
@@ -176,7 +152,7 @@ luoji.cn/video-trans/orchestrate' \
 
 ```bash
 luoji.cn/video-trans/orchestrate' \
-  -H 'Authorization: Bearer ${API_KEY}' \
+  -H 'Authorization: Bearer ${PARAM}' \
   -H 'Content-Type: application/json' \
   -d '{
     "video_url": "https://example.com/video.mp4",
@@ -198,7 +174,7 @@ luoji.cn/video-trans/orchestrate' \
 需要文本翻译、多语言转换、本地化处理时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步：获取 API Key
+### 领先步：获取 API Key
 
 免费版需要翻译服务 API Key。若没有 API Key 或 Key 无效：
 
@@ -285,7 +261,7 @@ show=true&bilingual=false
 5. 等待完成：直到 status 为 succeeded 或 failed
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 选择合适的源语言
 

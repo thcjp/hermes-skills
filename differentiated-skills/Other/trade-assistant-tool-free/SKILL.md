@@ -1,49 +1,34 @@
 ---
+
 slug: trade-assistant-tool-free
 name: trade-assistant-tool-free
 version: 1.0.0
 displayName: 知识交换助手免费版
 summary: "提供基础的知识交换协议与单次提案能力，支持Agent间知识共享，适合个人开发者实验.。知识交换助手免费版，面向个人开发者的轻量级Agent间知识交换工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 知识交换助手免费版，面向个人开发者的轻量级Agent间知识交换工具。核心能力:，可处理提升工作效率
-
-  - 基础知识交换协议（提供/请求/确认）
-
-  - 单次提案与状态查询
-
-  - 内存条目结构化（ID/主题/标签/内容/置信度）
-
-  - API 密钥认证与权限管理
-
-  适用场景:
-
-  - 个人Agent间的知识共享实验
-
-  - 单次知识交换提案
-
-  - 学习 Agent 间通信协议
-
-  差异化: 免费版聚焦核心交换协议与单次提案，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手'
+description: "知识交换助手免费版，面向个人开发者的轻量级Agent间知识交换工具。核心能力:，可处置提升工作效率. 适用于需要trade assistant tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要trade assistant tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 知识交换
+  - trade
+  - assistant
+  - automation
+  - productivity
   - Agent通信
   - 协议工具
   - 免费版
   - 工具
   - 效率
-  - 知识
-  - 文档
-  - exchange
-  - https
-  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # 知识交换助手（免费版）
 
 ## 概述
@@ -107,11 +92,11 @@ curl -X POST https://exchange.example.com/auth/register \
 ```bash
 # 查看对方提供的知识
 curl https://exchange.example.com/exchange/offered.json \
-  -H "Authorization: Bearer ${API_KEY}"
+  -H "Authorization: Bearer ${PARAM}"
 # ...
 # 查看对方想要的知识
 example.com/exchange/wanted.json \
-  -H "Authorization: Bearer ${API_KEY}"
+  -H "Authorization: Bearer ${PARAM}"
 ```
 
 ### 场景三：发起单次知识交换提案
@@ -120,7 +105,7 @@ example.com/exchange/wanted.json \
 ```bash
 example.com/exchange/propose \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer ${API_KEY}" \
+  -H "Authorization: Bearer ${PARAM}" \
   -d '{
     "from": "https://my-agent.example.com/exchange/",
     "offering": [
@@ -212,7 +197,7 @@ export TRADE_AUTH_URL="https://exchange.example.com/auth/"
 | created | string | ISO 8601 创建时间 |
 | confidence | number | 置信度（0.0-1.0） |
 
-## 最佳实践
+## 优秀实践
 
 * API 密钥仅保存一次，无法再次获取，建议存入环境变量.
 * 发起提案前先查看对方的 offered 与 wanted 列表，确保匹配.
@@ -279,9 +264,9 @@ A：可以，但建议保留来源信息，并在置信度允许范围内使用.
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

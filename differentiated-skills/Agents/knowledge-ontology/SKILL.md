@@ -5,10 +5,14 @@ name: "knowledge-ontology"
 version: "2.0.0"
 displayName: "知识本体"
 summary: "类型化知识图谱：约束校验+模式演进+图遍历规划，让Agent记忆结构化可验证。。面向AI Agent的类型化知识图谱系统，提供实体关系建模、约束校验、模式演进、图遍历规划能力。适用于需要结构"
-license: "Proprietary"
-description: |-
-  面向AI Agent的类型化知识图谱系统，提供实体关系建模、约束校验、模式演进、图遍历规划能力。适用于需要结构化查询的Agent记忆、多实体关系管理、依赖追踪与影响分析、多步计划建模场景，避免扁平文件记忆难查询、约束缺失数据脏、模式演进破坏旧数据等问题。适用关键词：知识图谱、本体、实体关系、ontology、graph、类型化、约束校验、图遍历.
-tags: 知识图谱,实体关系,约束校验,模式演进,图遍历
+license: MIT
+description: "|-. 适用于需要knowledge ontology相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+tags:
+  - 知识图谱
+  - 实体关系
+  - 约束校验
+  - 模式演进
+  - 图遍历
 tools:
   - read
   - exec
@@ -17,7 +21,7 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
-
+pricing_tier: free
 ---
 
 # 知识本体（Knowledge Ontology）

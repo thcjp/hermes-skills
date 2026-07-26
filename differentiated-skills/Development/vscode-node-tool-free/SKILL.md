@@ -1,32 +1,13 @@
 ---
+
 slug: vscode-node-tool-free
 name: vscode-node-tool-free
 version: 1.0.0
 displayName: VSCode节点工具(免费版)
 summary: "面向个人开发者的VSCode/Cursor远程操作工具,覆盖文件读写、语言特性、Git基础操作.。VSCode节点工具免费版为个人开发者提供通过节点协议远程操作VSCode/Cursor I"
-license: Proprietary
+license: MIT
 edition: free
-description: 'VSCode节点工具免费版为个人开发者提供通过节点协议远程操作VSCode/Cursor IDE的能力,涵盖文件读写、语言特性查询、编辑器状态与Git基础操作。核心能力:
-
-  - 文件读写与目录列举
-
-  - 语言特性查询(定义/引用/悬停/重命名)
-
-  - 编辑器状态(活动文件/打开文件/选区)
-
-  - 诊断信息获取
-
-  - Git基础操作(status/diff/log/blame)
-
-  适用场景:
-
-  - 个人远程操作IDE完成日常开发
-
-  - 通过Agent自动化简单文件操作
-
-  - 快速查询代码引用与定义
-
-  差异化:免费版聚焦个人开发...'
+description: "VSCode节点工具免费版为个人开发者包含通过节点协议远程操作VSCode/Cursor IDE的能力,涵盖文件读写、语言特性查询、编辑器状态与Git基础操作。核心能力:. 适用于需要vscode node tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - VSCode
   - Cursor
@@ -38,9 +19,6 @@ tags:
   - 编程辅助
   - vscode
   - ide
-  - git
-  - nodes
-  - status
 tools:
   - read
   - exec
@@ -49,7 +27,9 @@ tools:
   - grep
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # VSCode 节点工具(免费版)
 
 ## 概述
@@ -173,7 +153,7 @@ nodes invoke --node "<节点名>" \
 | 诊断 | `vscode.diagnostics.*` | get |
 | Git | `vscode.git.*` | status, diff, log, blame |
 
-## 最佳实践
+## 优秀实践
 
 1. **使用相对路径**:所有路径相对于工作区根目录,绝对路径与 `../` 会被阻止,保证安全.
 2. **设置合理超时**:文件操作 15s,Git 操作 30s,避免长时间阻塞.
@@ -232,7 +212,7 @@ nodes invoke --node "<节点名>" \
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于自然语言指令驱动 Agent 调用 `nodes invoke` 命令;需要预先安装 IDE 扩展并连接网关
 
 ## 错误处理

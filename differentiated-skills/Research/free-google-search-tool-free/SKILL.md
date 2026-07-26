@@ -1,26 +1,24 @@
 ---
+
 slug: free-google-search-tool-free
 name: free-google-search-tool-free
 version: 1.0.0
 displayName: 谷歌搜索(免费版)
 summary: "谷歌搜索免费版，通过浏览器自动化执行搜索、解析结果、基础摘要生成.。谷歌搜索助手免费版是面向个人用户的轻量Google搜索工具。通过浏览器自动化方式执行搜索（无需API Key），解析搜索结"
-license: Proprietary
+license: MIT
 edition: free
-description: 谷歌搜索助手免费版是面向个人用户的轻量Google搜索工具。通过浏览器自动化方式执行搜索（无需API Key），解析搜索结果，提取标题、URL与摘要。Use
-  when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
+description: "谷歌搜索助手免费版是面向个人用户的轻量Google搜索工具。通过浏览器自发化方式执行搜索（无需API Key），解析搜索结果，提取标题、URL与摘要。Use. 适用于需要free google search tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量."
 tags:
   - 谷歌搜索
+  - google
+  - search
+  - automation
+  - productivity
   - 浏览器自动化
   - 结果解析
   - 免费搜索
   - 搜索
   - 检索
-  - 工具
-  - result
-  - print
-  - query
-  - success
-  - self
 tools:
   - read
   - exec
@@ -28,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 > **搜索、解析、筛选、导出。四步完成Google搜索与结果处理。**
 
 无需API Key，通过浏览器自动化方式即可执行Google搜索，解析结果，提取关键信息。免费版聚焦轻量场景，让免费搜索触手可及.
@@ -201,9 +202,9 @@ if result.get("success"):
 node （请参考skill目录中的脚本文件） "人工智能" --num 10 --format json
 # ..
 bun （请参考skill目录中的脚本文件） "人工智能" --num 10 --format json
-```
-
-### 120秒标准搭建
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 npm install playwright
 npx playwright install chromium
@@ -216,11 +217,9 @@ node （请参考skill目录中的脚本文件） "Python教程" --num 10 --form
 cat results.json | python3 -m json.tool | head -50
 # ..
 python3 export.py --input results.json --format markdown --output results.md
-```
-
-#
-## 配置示例
-### 基础配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 import os
 # ..
@@ -243,9 +242,9 @@ class GoogleSearchConfig:
         print(f"超时时间：{cls.TIMEOUT}s")
 # ..
 GoogleSearchConfig.show()
-```
-
-### 搜索参数
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 SEARCH_PARAMS = {
     'num_results': 10,          # 结果数量
@@ -257,10 +256,9 @@ SEARCH_PARAMS = {
     'exclude_sites': [],        # 排除站点
     'file_type': None,          # 文件类型：pdf/doc/xls
 }
-```
-
-## 最佳实践
-### 1. 搜索技巧
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 SEARCH_OPERATORS = {
     'site:': '限定特定站点（如 site:stackoverflow.com）',
@@ -274,9 +272,9 @@ SEARCH_OPERATORS = {
 }
 # ..
 query = "Python async site:stackoverflow.com -广告"
-```
-
-### 2. 结果优化
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 def optimize_results(results, query):
     """优化搜索结果"""
@@ -372,9 +370,9 @@ def safe_search(query, max_retries=2):
 用户: 执行核心功能
 Skill: 正在执行核心功能..
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

@@ -1,4 +1,5 @@
 ---
+
 slug: game-theory-tool-pro
 name: game-theory-tool-pro
 version: 1.0.0
@@ -6,14 +7,7 @@ displayName: 博弈论分析专业版
 summary: "企业级博弈论平台,支持演化博弈、机制设计、n人博弈与实验数据。面向研究机构、咨询公司与企业的专业博弈论分析平台."
 license: Proprietary
 edition: pro
-description: '面向研究机构、咨询公司与企业的专业博弈论分析平台.
-  核心能力: 演化博弈、机制设计、n人博弈、贝叶斯博弈、行为实验、政策评估
-
-  适用场景: 政策制定、市场设计、拍卖设计、谈判策略、组织行为研究
-
-  差异化: 专业版支持高级博弈论与企业级应用,与免费版分析框架兼容
-
-  适用关键词: 演化博弈, 机制设计, n人博弈, 贝叶斯博弈, 拍卖设计, 政策评估'
+description: "面向研究机构、咨询公司与企业的专业博弈论剖析平台. 适用于需要game theory tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 博弈论
   - 企业级
@@ -25,10 +19,6 @@ tags:
   - 效率
   - 创意
   - 图像
-  - headers
-  - payload
-  - resp
-  - json
 tools:
   - read
   - exec
@@ -36,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 博弈论分析 (专业版)
 
 ## 概述
@@ -237,7 +229,7 @@ export GAME_THEORY_EDITION="pro"
 ### Step 3: 提交复杂博弈模型
 
 ```bash
-curl -X POST -H "X-API-Key: $GAME_THEORY_ADMIN_KEY" \
+curl -X POST -H "X-API-ref: $GAME_THEORY_ADMIN_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "type": "evolutionary",
@@ -348,7 +340,7 @@ def analyze_n_player_game(num_players, strategy_space, payoff_function):
     return resp.json()
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 模型校准
 
@@ -486,7 +478,7 @@ export PARTICIPANT_RECRUITMENT="prolific"
 
 ### 可用性分类
 
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+exec方法(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 面向研究机构、咨询与企业,通过自然语言指令驱动 Agent 调用 Pro API,完成演化博弈、机制设计、政策评估等专业分析
 - **专业版特性**: 演化博弈、机制设计、n 人博弈、贝叶斯博弈、拍卖理论、合作博弈、行为实验、政策评估
 - **兼容性**: 与免费版分析框架完全兼容,支持平滑升级

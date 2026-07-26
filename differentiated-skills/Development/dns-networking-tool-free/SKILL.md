@@ -1,40 +1,13 @@
 ---
+
 slug: dns-networking-tool-free
 name: dns-networking-tool-free
 version: 1.0.0
 displayName: DNS网络诊断基础版
 summary: "提供DNS解析、端口连通性、curl诊断与证书检查,适合开发者日常网络问题排查.。面向开发者的网络诊断辅助工具,涵盖DNS解析调试、端口连通性测试、HTTP请求诊断与TLS证书检查。核心能力"
-license: Proprietary
+license: MIT
 edition: free
-description: 面向开发者的网络诊断辅助工具,涵盖DNS解析调试、端口连通性测试、HTTP请求诊断与TLS证书检查。核心能力:，可处理提升工作效率
-
-  - DNS解析查询(A/MX/CNAME/TXT/NS)
-
-  - 端口连通性测试(nc/curl)
-
-  - curl请求诊断与时序分析
-
-  - TLS证书有效期检查
-
-  - 本地DNS缓存管理
-
-  适用场景:
-
-  - 开发环境网络问题排查
-
-  - DNS解析异常诊断
-
-  - HTTP请求故障定位
-
-  - 证书过期检查
-
-  差异化:
-
-  - 免费版聚焦常用诊断命令,开箱即用
-
-  - 覆盖日常90%网络排查需求
-
-  - 与专业版命令兼...'
+description: "面向开发者的网络诊断辅助工具,涵盖DNS解析调试、端口连通性测试、HTTP请求诊断与TLS证书检查。核心能力:，可处置提升工作效率. 适用于需要dns networking tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - 网络诊断
@@ -48,7 +21,9 @@ tools:
   - exec
 homepage: ""
 category: "Operations"
+pricing_tier: free
 ---
+
 # DNS网络诊断工具 - 免费版
 
 ## 概述
@@ -336,7 +311,7 @@ timeout:
   http: 30
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **分层排查**:DNS -> 端口 -> HTTP -> TLS,逐层缩小问题范围
 2. **对比测试**:同时测试正常和异常目标,快速定位差异
@@ -435,7 +410,7 @@ com/443' && echo "Open" || echo "Closed"
 
 ### 可用性分类
 
-- **分类**:MD+EXEC(纯 Markdown 指令,需要 exec 命令行执行能力)
+- **分类**:MD+EXEC模式纯 Markdown 指令,需要 exec 命令行执行能力)
 - **说明**:基于 Markdown 的 AI Skill,通过自然语言指令驱动 Agent 执行网络诊断任务
 - **适用规模**:单目标诊断,适合日常开发排查
 

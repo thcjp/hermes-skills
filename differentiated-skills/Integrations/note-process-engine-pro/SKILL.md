@@ -1,4 +1,5 @@
 ---
+
 slug: note-process-engine-pro
 name: note-process-engine-pro
 version: 1.0.0
@@ -6,21 +7,7 @@ displayName: 笔记处理引擎(专业版)
 summary: 企业级研究笔记分析平台,支持语义检索、自动标签、跨库联合、可视化与导出报告,适合研究团队与企业规模化使用.
 license: Proprietary
 edition: pro
-description: '笔记处理引擎(专业版)是面向研究团队与企业的全功能笔记分析Skill,在免费版基础上新增语义检索、自动标签、跨库联合检索、可视化、导出报告、定时分析等高级能力。核心能力:
-
-  - 语义检索:基于向量数据库的相似度匹配,理解自然语言意图
-
-  - 自动标签:智能推荐标签,基于内容聚类自动分类
-
-  - 跨库联合检索:多个JSON/SQLite库联合查询,统一入口
-
-  - 可视化:词云、时间线、知识图谱、趋势图
-
-  - 导出报告:Markdown/PDF/HTML三种格式,带模板系统
-
-  - 定时分析:cron调度,自动生成周期性报告
-
-  - 多语言深度...'
+description: "笔记处置引擎(专业版)是面向研究团队与企业的全功能笔记剖析Skill,在免费版基础上新增语义检索、自发标签、跨库联合检索、可视化、导出报告、定时剖析等高级能力。核心能力:. 适用于需要notecess engine相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 集成工具
   - 知识分析
@@ -32,10 +19,6 @@ tags:
   - 分析
   - 知识
   - 文档
-  - note_process_engine
-  - 检索
-  - bash
-  - dbs
 tools:
   - read
   - exec
@@ -44,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 笔记处理引擎(专业版)
 
 一个面向研究团队与企业的全功能笔记分析Skill,在免费版基础上扩展了语义检索、自动标签、跨库联合检索、可视化、导出报告、定时分析等高级能力,适合规模化使用场景.
@@ -321,7 +306,7 @@ note_process_engine.py visualize --db research-main \
 {{ trend_summary }}
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **语义检索优先**:对模糊查询用语义检索,精确查询用关键词检索
 2. **向量索引定期重建**:每新增500条笔记重建一次向量索引,保证检索质量
@@ -384,7 +369,7 @@ note_process_engine.py sync-to-warehouse \
 # 从Notion拉取笔记到本地数据库
 note_process_engine.py import-from-notion \
   --token $NOTION_TOKEN \
-  --database-id xxx \
+  --database-id placeholder \
   --target-db research_db
 ```
 
@@ -394,7 +379,7 @@ note_process_engine.py import-from-notion \
 # 定时报告推送到企业微信群
 note_process_engine.py schedule add --cron "0 9 * * 1" \
   --task smart-summary --dbs research-main \
-  --notify wecom:https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=xxx
+  --notify wecom:https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=placeholder
 ```
 
 ## 版本升级迁移指南
@@ -510,7 +495,7 @@ A: 99.9%可用性,故障4小时响应,数据可恢复性RPO<15分钟、RTO<4小�
 - **安全建议**: 所有Key遵循"最小权限 + 定期轮换"原则,建议每90天轮换一次
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作
 
 ## 已知限制

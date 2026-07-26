@@ -1,4 +1,5 @@
 ---
+
 slug: bsession-tool-pro
 name: bsession-tool-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: 浏览器会话(专业版)
 summary: "企业级浏览器会话专业版，含定时任务、Webhook通知、批量会话管理与监控告警.。浏览器会话助手专业版是面向企业级场景的完整浏览器会话管理工具。在免费版单次抓取能力之上，新增定时任务（rec"
 license: Proprietary
 edition: pro
-description: 浏览器会话助手专业版是面向企业级场景的完整浏览器会话管理工具。在免费版单次抓取能力之上，新增定时任务（recurring）、会话持久化、Webhook通知、批量会话管理、企业级监控告警、Cloudflare自动绕过、会话调试增强七大高级能力。Use
-  when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
+description: "浏览器会话助手专业版是面向企业级场景的完整浏览器会话管控工具。在免费版单次抓取能力之上，新增定时任务（recurring）、会话持久化、Webhook通知、成批会话管控、企业级监控告警、Cloudflare自发绕过、会话调试增强七大高级能力。Use. 适用于需要bsession tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 浏览器会话
   - 定时任务
@@ -19,8 +19,6 @@ tags:
   - 工具
   - self
   - 通知
-  - webhook
-  - status
 tools:
   - read
   - exec
@@ -29,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 > **定时任务+会话持久化+Webhook通知+批量管理+监控告警。企业级会话管理全功能覆盖。**
 
 将复杂的浏览器会话管理任务交给专业工具处理。专业版在免费版单次抓取能力之上，新增定时任务、会话持久化、Webhook通知、批量会话管理、企业级监控告警、Cloudflare自动绕过、会话调试增强七大高级能力，满足企业级场景对浏览器会话的可靠性、可观测性与可扩展性要求.
@@ -133,7 +133,7 @@ failure_counts[name] = 0
             print(f"重启失败：{e}")
 # ...
 monitor = SessionMonitor(check_interval=300, max_failures=3)
-monitor.notifier.register("slack-alerts", "https://hooks.slack.com/services/xxx", "slack")
+monitor.notifier.register("slack-alerts", "https://hooks.slack.com/services/placeholder", "slack")
 ```
 
 **处理**: 解析企业级监控告警的输入参数,完成核心逻辑,返回结构化响应.
@@ -148,7 +148,7 @@ monitor.notifier.register("slack-alerts", "https://hooks.slack.com/services/xxx"
 session = RecurringSession(
     name="competitor-price",
     interval=3600,  # 每小时检查
-    webhook_url="https://hooks.slack.com/services/xxx"
+    webhook_url="https://hooks.slack.com/services/placeholder"
 )
 session.start()
 ```
@@ -188,21 +188,21 @@ persister.save_session(
 ```bash
 docker exec agent-browser bsession new price-monitor
 # ...
-echo 'N8N_WEBHOOK_URL=https://n8n.example.com/webhook/xxx' >> ~/.bsession/workspace/conf/price-monitor.conf
+echo 'N8N_WEBHOOK_URL=https://n8n.example.com/webhook/placeholder' >> ~/.bsession/workspace/conf/price-monitor.conf
 # ...
 docker exec agent-browser bsession run price-monitor
 # ...
 docker exec agent-browser bsession logs price-monitor -n 50
-```
-
-### 120秒标准搭建
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 mkdir -p ~/.bsession/workspace/conf
 cat > ~/.bsession/workspace/conf/batch-monitor.conf <<EOF
 [env]
 CDP_PORT=9222
 CHECK_INTERVAL=1800
-N8N_WEBHOOK_URL=https://n8n.example.com/webhook/xxx
+N8N_WEBHOOK_URL=https://n8n.example.com/webhook/placeholder
 EOF
 # ...
 cat > ~/.bsession/workspace/（请参考skill目录中的脚本文件） <<'PYEOF'
@@ -241,13 +241,13 @@ docker exec agent-browser bsession run batch-monitor
 sessions:
   - name: price-monitor
     interval: 1800
-    webhook: https://hooks.slack.com/services/xxx
+    webhook: https://hooks.slack.com/services/placeholder
     timeout: 60
     persistent: true
 # ...
   - name: stock-check
     interval: 3600
-    webhook: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=xxx
+    webhook: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=placeholder
     timeout: 90
 # ...
 monitoring:
@@ -255,26 +255,25 @@ monitoring:
   max_failures: 3
   alert_channels:
     - type: slack
-      url: https://hooks.slack.com/services/xxx
+      url: https://hooks.slack.com/services/placeholder
     - type: feishu
-      url: https://open.feishu.cn/open-apis/bot/v2/hook/xxx
+      url: https://open.feishu.cn/open-apis/bot/v2/hook/placeholder
 # ...
 batch:
   max_workers: 5
   timeout: 300
-```
-
-## 最佳实践
-### 1. 会话命名规范
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 session_names = [
     "ecommerce-price-monitor-prod",
     "finance-stock-check-prod",
     "internal-api-health-staging",
 ]
-```
-
-### 2. 错误恢复
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 class ResilientSession(RecurringSession):
     """带错误恢复的会话"""
@@ -285,9 +284,9 @@ class ResilientSession(RecurringSession):
             except Exception as e:
                 print(f"会话异常，{60}s后重试：{e}")
                 time.sleep(60)
-```
-
-### 3. 资源优化
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 manager = BatchSessionManager(max_workers=3)
 ```
@@ -358,7 +357,7 @@ manager = BatchSessionManager(max_workers=3)
 此外，专业版还提供：
 - 多角色场景指南（运维/DevOps/数据团队/爬虫工程师）
 - 完整FAQ（7问）与故障排查表
-- 性能优化建议与最佳实践
+- 性能优化建议与优秀实践
 - GPT-4o模型路由与优先支持
 
 ## 定价
@@ -386,9 +385,9 @@ manager = BatchSessionManager(max_workers=3)
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

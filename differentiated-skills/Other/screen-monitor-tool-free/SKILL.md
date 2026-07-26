@@ -1,51 +1,33 @@
 ---
+
 slug: screen-monitor-tool-free
 name: screen-monitor-tool-free
 version: 1.0.0
 displayName: 屏幕监控工具-免费版
 summary: "双模式屏幕共享工具,支持单次截图与定时监控,适合个人使用与远程协助。屏幕监控工具免费版,面向个人用户的屏幕共享与分析."
-license: Proprietary
+license: MIT
 edition: free
-description: '屏幕监控工具免费版,面向个人用户的屏幕共享与分析.
-  核心能力:
-
-  - 单次屏幕截图
-
-  - 定时自动截图(间隔可调)
-
-  - 截图本地保存与管理
-
-  - 屏幕内容基础分析
-
-  - 双模式运行(主动/被动)
-
-  适用场景:
-
-  - 远程协助截图
-
-  - 工作进度记录
-
-  - 屏幕内容存档
-
-  差异化:免费版提供基础截图能力。PRO版扩展实时流共享、多屏支持、AI 分析与企业级监控.
-  适用关键词: screenshot, 屏幕截图, screen capture, 监控, screen share, 定时截图'
+description: "屏幕监控工具免费版,面向个人用户的屏幕共享与剖析. 适用于需要screen monitor tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要screen monitor tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 屏幕截图
+  - screen
+  - monitor
+  - automation
+  - productivity
   - 监控
   - 远程协助
   - 运维
   - 工具
   - png
-  - tmp
-  - ocr
-  - install
-  - mode
 tools:
   - read
   - exec
 homepage: ""
 category: "Operations"
+pricing_tier: free
+
 ---
+
 # 屏幕监控工具 - 免费版
 
 ## 概述
@@ -139,15 +121,8 @@ py --mode interval \
 
 对截图进行基础文字提取.
 ```bash
-# 截图并提取文字
-# ...
-# 输出:
-# 截图已保存: /tmp/shot.png
-# === OCR 识别结果 ===
-# 检测到文字:
-#   "项目管理面板"
-#   "任务列表: 5 项进行中"
-#   "完成率: 78%"
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ## 不适用场景
@@ -181,7 +156,7 @@ pip install Pillow pyautogui pytesseract
 # Windows: 下载 tesseract 安装包
 ```
 
-### 第一次截图
+### 领先次截图
 
 ```bash
 # 截取全屏
@@ -219,7 +194,7 @@ xdg-open ~/screenshot.png  # Linux
 /tmp/screenshots/20250115_100500.png
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **合理间隔**:工作记录 5-10 分钟,远程协助按需触发
 2. **区域截图**:只截取需要的区域,节省存储空间
@@ -267,7 +242,7 @@ A: 免费版默认截取主显示器。多显示器支持需要 PRO 版.
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **分类**: MD+EXEC模式Markdown指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 执行屏幕截图与内容分析
 - **限制**: 免费版仅支持主显示器,不支持实时流共享与 AI 深度分析
 

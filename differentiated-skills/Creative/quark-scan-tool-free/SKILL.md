@@ -1,36 +1,13 @@
 ---
+
 slug: quark-scan-tool-free
 name: quark-scan-tool-free
 version: 1.0.0
 displayName: 夸克扫描-免费版
 summary: "文件高清扫描增强工具,支持画质增强、去手写、去水印、去阴影等,适合个人用户单张处理.。夸克扫描免费版,面向个人用户的文件高清扫描与图像增强工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 夸克扫描免费版,面向个人用户的文件高清扫描与图像增强工具。核心能力:，可处理提升工作效率
-
-  - 画质增强(模糊/昏暗/老旧照片修复)
-
-  - 去手写笔迹(还原空白试卷/文档)
-
-  - 去水印(精准去除文字/Logo水印)
-
-  - 去阴影(消除拍摄阴影)
-
-  - 文档去底色(转为白底黑字)
-
-  - 素描速写/线稿提取
-
-  适用场景:
-
-  - 学生试卷/笔记电子化
-
-  - 个人文档扫描存档
-
-  - 老照片修复与增强
-
-  - 创意线稿提取
-
-  差异化:免费版聚焦单张图片处理,覆盖常用扫描增强场景,适合个人用户体验AI图像增强'
+description: "夸克扫描免费版,面向个人用户的文件高清扫描与图像增强工具。核心能力:，可处置提升工作效率. 适用于需要quark scan tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Creative
   - 图像处理
@@ -42,17 +19,15 @@ tags:
   - 代码
   - 知识
   - 文档
-  - 创意
-  - scene
-  - api
-  - key
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 夸克扫描工具 - 免费版
 
 ## 概述
@@ -160,7 +135,7 @@ python3 （请参考skill目录中的脚本文件） \
 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:配置 API Key
+### 领先步:配置 API Key
 
 ```bash
 # 推荐方式:CLI 配置(永久生效)
@@ -218,7 +193,7 @@ python3 （请参考skill目录中的脚本文件） --scene "${SCENE}" --path "
 python3 （请参考skill目录中的脚本文件） --scene "${SCENE}" --base64 "${IMAGE_BASE64}" --platform "${AGENT}"
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **图片清晰度**:输入图片越清晰,处理效果越好,避免严重模糊
 2. **格式与大小**:支持 jpg/jpeg/png/gif/bmp/webp/tiff/wbmp,本地文件不超过 5MB
@@ -264,7 +239,7 @@ A:检查图片格式与大小是否符合要求;确认 API Key 有效;查看返�
 - **隐私提示**: 图片会发送至夸克扫描王服务器(`scan-business.quark.cn`)处理
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过意图识别与脚本调用驱动图像扫描增强
 
 ## 错误处理

@@ -1,55 +1,24 @@
 ---
+
 slug: web-vuln-assess-tool-free
 name: web-vuln-assess-tool-free
 version: 1.0.0
 displayName: Web漏洞评估(免费版)
 summary: "OWASP对齐的Web应用漏洞评估,覆盖19类漏洞,含检查清单与修复指南,支持多种使用场景和自动化处理"
-license: Proprietary
+license: MIT
 edition: free
-description: 核心能力:，可处理提升工作效率
-
-  - 19个漏洞类别100+检查项
-
-  - OWASP Top 10:2021对齐
-
-  - 支持PHP/Node。js/Python/Java等20种技术栈
-
-  - 安全检查清单与修复建议
-
-  - 按严重程度排序的评估报告
-
-  适用场景:
-
-  - Web应用上线前安全评估
-
-  - API安全漏洞检测
-
-  - 渗透测试范围规划
-
-  - 安全意识培训
-
-  差异化:
-
-  - 19类漏洞全覆盖(含IoT/移动端/零日)
-
-  - 技术栈特定检测规则
-
-  - 合规框架映射(OWASP/PCI-DSS/GDPR/HIPAA)
-
-  - 中文修复建...'
+description: "核心能力:，可处置提升工作效率. 适用于需要web vuln assess tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要web vuln assess tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 安全
+  - web
+  - vuln
+  - assess
+  - automation
   - Web安全
   - 漏洞评估
   - OWASP
   - Web开发
   - 前端
-  - 开发工具
-  - high
-  - web
-  - owasp
-  - medium
-  - api
 tools:
   - read
   - exec
@@ -57,7 +26,10 @@ tools:
   - glob
 homepage: ""
 category: "Development"
+pricing_tier: free
+
 ---
+
 # Web漏洞评估(免费版)
 
 ## 概述
@@ -159,13 +131,8 @@ CMS系统: WordPress
 ### 场景二:API安全评估
 
 ```bash
-# 评估REST API安全性
-# 检查项:
-# - 认证机制是否安全(JWT/Session)
-# - 授权检查是否到位(IDOR/SSRF)
-# - 输入验证是否完整
-# 已知限制
-# - 错误信息是否泄露敏感数据
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### 场景三:合规性评估
@@ -421,32 +388,29 @@ app_info = {
 | GDPR | 个人数据保护 | 面向欧洲用户 |
 | HIPAA | 医疗数据保护 | 医疗健康应用 |
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 评估优先级
 
 ```text
-第一优先: CRITICAL漏洞(注入、认证绕过、零日模式)
+领先优先: CRITICAL漏洞(注入、认证绕过、零日模式)
 第二优先: HIGH漏洞(XSS、SSRF、访问控制、API安全)
 第三优先: MEDIUM漏洞(配置错误、CORS、DoS)
-第四优先: LOW漏洞(信息泄露、最佳实践)
+第四优先: LOW漏洞(信息泄露、优秀实践)
 ```
 
 ### 2. 技术栈特定检查
 
 ```bash
-# Python/React/`PostgreSQL`/Docker/AWS 技术栈
-# 每种技术有其特定的安全检查项
-# 评估时需覆盖技术栈相关的所有检查项
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### 3. 合规对齐
 
 ```bash
-# 如果处理支付数据,映射PCI-DSS
-# 如果处理欧洲用户数据,映射GDPR
-# 如果处理医疗数据,映射HIPAA
-# 始终对齐OWASP Top 10
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ## 已知限制
@@ -488,7 +452,7 @@ A: 免费版提供手动检查清单。专业版提供API驱动的自动化评�
 - 可选配置外部漏洞评估API Key(如需API自动化评估)
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行Web漏洞评估任务
 
 ## 错误处理

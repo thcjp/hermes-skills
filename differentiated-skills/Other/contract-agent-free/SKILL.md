@@ -1,13 +1,13 @@
 ---
+
 slug: contract-agent-free
 name: contract-agent-free
 version: 1.0.1
 displayName: 合约Agent免费版
 summary: "让AI Agent自主协商、签署、执行商业合约，提供身份认证与里程碑式托管支付。合约Agent是一套面向AI Agent之间商业协作的智能合约工具，让Agent能够自主完成合约协商、数字签署"
-license: Proprietary
+license: MIT
 edition: free
-description: 合约Agent是一套面向AI Agent之间商业协作的智能合约工具，让Agent能够自主完成合约协商、数字签署、里程碑执行与资金托管释放全流程，为Agent之间的商业交易提供法律与金融基础设施。核心能力：基于RSA
-  2048的Agent身份系统与数字签名；模板化合约创建（草稿-签署-生效-完成全生命周期）；里程碑式资金托管与自动释放；结构化纠纷提出与证据提交
+description: "合约Agent是一套面向AI Agent之间商业协作的智能合约工具，让Agent能够自主完成合约协商、数字签署、里程碑执行与资金托管释放全流程，为Agent之间的商业交易包含法律与金融基础设施。核心能力：基于RSA. 适用于需要contract agent相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 智能合约
   - Agent交易
@@ -19,8 +19,6 @@ tags:
   - agent
   - sdk
   - 合约
-  - const
-  - await
 tools:
   - read
   - exec
@@ -29,7 +27,9 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+pricing_tier: free
 ---
+
 # 合约Agent（免费版）
 
 ## 概述
@@ -201,12 +201,12 @@ npm install contract-agent
 # 2. 初始化SDK
 contract-agent init --storage sqlite
 # ...
-# 3. 注册第一个Agent
+# 3. 注册领先个Agent
 contract-agent agent register \
   --name "我的服务Agent" \
   --capabilities "data-processing"
 # ...
-# 4. 创建第一份合约
+# 4. 创建领先份合约
 contract-agent contract create \
   --provider agent_xxx \
   --consumer agent_yyy \
@@ -313,7 +313,7 @@ await sdk.disputes.submitEvidence({
 });
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 实践1：私钥存储安全
 

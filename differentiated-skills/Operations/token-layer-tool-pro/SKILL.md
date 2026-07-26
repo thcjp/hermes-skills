@@ -1,4 +1,5 @@
 ---
+
 slug: token-layer-tool-pro
 name: token-layer-tool-pro
 version: 1.0.0
@@ -6,10 +7,7 @@ displayName: 跨链代币专业版
 summary: "专业跨链代币基础设施，支持全链数据、批量查询、桥接监控与深度分析.。面向专业DeFi研究员与机构的跨链代币基础设施。支持20+条链全量代币"
 license: Proprietary
 edition: pro
-description: '面向专业DeFi研究员与机构的跨链代币基础设施。支持20+条链全量代币
-
-  数据、批量查询与导出、跨链桥接监控、链上行为追踪与深度分析。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use
-  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
+description: "面向专业DeFi研究员与机构的跨链代币基础设施。兼容20+条链全量代币. 适用于需要token layer tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Operations
   - 加密货币
@@ -21,8 +19,6 @@ tags:
   - 研究
   - 分析
   - 运维
-  - 监控
-  - pro
 tools:
   - read
   - exec
@@ -30,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 跨链代币专业版（PRO版）
 
 ## 概述
@@ -250,7 +248,7 @@ pro_config:
     period: "30d"
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### PRO版专业实践
 

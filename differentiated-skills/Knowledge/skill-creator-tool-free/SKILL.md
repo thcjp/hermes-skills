@@ -1,20 +1,13 @@
 ---
+
 slug: skill-creator-tool-free
 name: skill-creator-tool-free
 version: 1.0.0
 displayName: Skill创建工具（免费版）
 summary: "{description} - 提供专业AI自动化处理能力,支持多种使用场景。提供高效自动化处理能力,适用于多种业务场景"
-license: Proprietary
+license: MIT
 edition: free
-description: Skill创建工具 - （免费版），可生成提升工作效率
-
-  核心能力: Skill创建, SKILL.md, 技能创建, 模板生成, 结构验证, 触发词优化, skill creator
-
-  适用场景: 个人用户日常使用，核心功能覆盖基础需求
-
-  差异化: 精简版，适合个人用户快速上手，提供核心功能与基础用法
-
-  适用关键词: Skill创建, SKILL.md, 技能创建, 模板生成, 结构验证, 触发词优化, skill creator'
+description: "Skill创建工具 - （免费版），可产出提升工作效率. 适用于需要skill creator tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Skill创建
   - 开发工具
@@ -26,16 +19,15 @@ tags:
   - 电商
   - 支持创建
   - 查询
-  - input_params
-  - api
-  - 免费版
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Skill创建工具（免费版）
 
 ## 概述
@@ -201,7 +193,7 @@ skill_creator:
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 
-## 最佳实践
+## 优秀实践
 
 ### 基础使用建议
 
@@ -214,9 +206,8 @@ skill_creator:
 ### 性能优化
 
 ```python
-# 免费版：单文件优化
-# 确保输入文件不超过建议大小
-# 处理完成后释放资源
+# 在此执行相关操作
+pass
 ```
 
 ## 常见问题

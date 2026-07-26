@@ -1,32 +1,13 @@
 ---
+
 slug: ui-component-tool-free
 name: ui-component-tool-free
 version: 1.0.0
 displayName: UI组件生成(免费版)
 summary: "面向个人开发者的HTML/CSS UI组件生成工具,覆盖表单、表格、卡片、模态框、导航栏.。UI组件生成工具免费版为个人开发者提供常用HTML/CSS组件的快速生成能力,覆盖表单、表格、卡片"
-license: Proprietary
+license: MIT
 edition: free
-description: 'UI组件生成工具免费版为个人开发者提供常用HTML/CSS组件的快速生成能力,覆盖表单、表格、卡片、模态框、导航栏等基础组件。核心能力:
-
-  - 表单组件生成(输入框、选择器、复选框)
-
-  - 表格组件生成(基础表格、带样式表格)
-
-  - 卡片组件生成(信息卡片、产品卡片)
-
-  - 模态框组件生成(基础弹窗)
-
-  - 导航栏组件生成(顶部导航)
-
-  适用场景:
-
-  - 个人项目快速搭建页面原型
-
-  - 学习HTML/CSS组件结构
-
-  - 快速生成可运行的单文件HTML组件
-
-  差异化:免费版聚焦个人开发者的基础组件需求,输出单文件HTML'
+description: "UI组件产出工具免费版为个人开发者包含常用HTML/CSS组件的快速产出能力,覆盖表单、表格、卡片、模态框、导航栏等基础组件。核心能力:. 适用于需要ui component tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - UI组件
   - HTML
@@ -38,16 +19,15 @@ tags:
   - 设计
   - div
   - class
-  - html
-  - rem
-  - label
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # UI 组件生成工具(免费版)
 
 ## 概述
@@ -191,7 +171,7 @@ category: "Creative"
 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:描述需求
+### 领先步:描述需求
 
 直接在对话中描述你需要的组件,例如:
 
@@ -242,7 +222,7 @@ xdg-open component.html  # Linux
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **一致性优先**:同一项目使用统一的圆角、间距、配色,避免视觉混乱.
 2. **可访问性基础**:表单字段必须配 `label`,按钮要有焦点样式,文字与背景对比度 ≥ 4.5:1.
@@ -288,7 +268,7 @@ xdg-open component.html  # Linux
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于自然语言指令驱动 Agent 输出 HTML/CSS 组件代码;用户通过浏览器本地预览
 
 ## 错误处理

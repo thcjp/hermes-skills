@@ -1,4 +1,5 @@
 ---
+
 slug: "sql-master-tool-pro"
 name: "sql-master-tool-pro"
 version: "1.0.0"
@@ -6,8 +7,7 @@ displayName: "SQL大师工具(专业版)"
 summary: "面向企业的SQL全栈专业版，含自动化迁移、增量压缩备份、Schema对比同步、高可用与读写分离配置。"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  面向团队、企业与专业DBA的SQL全栈工具专业版。在免费版基础上新增自动化迁移工具、增量与压缩备份、多数据库Schema对比与同步、查询性能基准测试、高可用与读写分离配置、灾备恢复等高级能力，配套面向运维、数据工程师、DBA的多角色场景指南。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
+description: "|-. 适用于需要sql master tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 集成工具
   - 数据库
@@ -19,20 +19,15 @@ tags:
   - 研究
   - 分析
   - 运维
-  - 监控
-  - 写作
-  - pro
-  - schema
-  - python
-  - postgresql
-  - mydb
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # SQL大师工具（专业版）
 
 专业版在免费版核心能力之上，新增自动化迁移工具、增量压缩备份、多数据库Schema对比同步、性能基准测试、高可用与读写分离配置、灾备恢复等高级能力，专为团队协作、企业生产环境与高可用场景设计.
@@ -145,7 +140,7 @@ pro.pitr_recovery(
 
 ## 快速开始
 
-### 第一步：启用专业版功能
+### 领先步：启用专业版功能
 
 ```python
 from sql_master_tool import ProFeatures
@@ -218,7 +213,7 @@ pro.monitor_config(
 )
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 迁移脚本必须包含down方向
 

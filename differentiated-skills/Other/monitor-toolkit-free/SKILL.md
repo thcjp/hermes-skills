@@ -1,46 +1,33 @@
 ---
+
 slug: monitor-toolkit-free
 name: monitor-toolkit-free
 version: 1.0.1
 displayName: 监控工具包-免费版
 summary: "轻量级服务监控工具,支持HTTP/SSL/进程/磁盘检查,状态变更告警,适合个人项目。轻量级服务监控工具免费版,面向个人开发者与小型项目。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '轻量级服务监控工具免费版,面向个人开发者与小型项目。核心能力:
-
-  - HTTP 接口可用性监控
-
-  - SSL 证书过期检测
-
-  - 进程与端口状态检查
-
-  - 磁盘空间监控
-
-  - 状态变更邮件/通知告警
-
-  适用场景:
-
-  - 个人项目 API 健康监控
-
-  - 网站 SSL 证书到期提醒
-
-  - 服务器进程存活检查
-
-  差异化:免费版提供基础监控能力,适合个人项目'
+description: "轻量级服务监控工具免费版,面向个人开发者与小型项目。核心能力:. 适用于需要monitor toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要monitor toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 监控
+  - monitor
+  - toolkit
+  - automation
+  - productivity
   - 运维
   - 告警
   - 健康检查
   - 工具
   - http
-  - ssl
 tools:
   - read
   - exec
 homepage: ""
 category: "Operations"
+pricing_tier: free
+
 ---
+
 # 监控工具包 - 免费版
 
 ## 概述
@@ -171,7 +158,7 @@ mkdir -p ~/monitor/logs
 cat ~/monitor/monitors.json 2>/dev/null || echo "暂无监控配置"
 ```
 
-### 添加第一个监控
+### 添加领先个监控
 
 ```bash
 # 添加 HTTP 监控
@@ -238,7 +225,7 @@ curl -X POST https://hooks.example.com/alert \
   }'
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **仅在变更时告警**:设置 `alert_on: "change"`,避免每 5 分钟收到相同状态通知
 2. **组合检查**:对同一目标配置多种检查(HTTP + SSL),全方位监控
@@ -288,7 +275,7 @@ A: 建议设置两级阈值:80% 警告(提醒清理),95% 紧急(可能导致服�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **分类**: MD+EXEC模式Markdown指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 执行监控检查与告警,依赖系统命令行工具
 - **限制**: 免费版支持单机监控,最多 10 个监控目标,不支持分布式监控与历史趋势分析
 

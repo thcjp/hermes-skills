@@ -1,23 +1,24 @@
 ---
+
 slug: web-browsing-tool-free
 name: web-browsing-tool-free
 version: 1.0.0
 displayName: 网页浏览助手免费版
 summary: "浏览和总结网站内容,从 URL 提取信息,搜索网络获取实时资讯,适合个人日常使用。网页浏览助手免费版,面向个人用户提供基础的网页浏览和信息提取能力。支持网站访问、内容总结、URL 内容提取、"
-license: Proprietary
+license: MIT
 edition: free
-description: 网页浏览助手免费版,面向个人用户提供基础的网页浏览和信息提取能力。支持网站访问、内容总结、URL 内容提取、网络搜索等核心功能。Use when
-  需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
+description: "网页浏览助手免费版,面向个人用户包含基础的网页浏览和信息提取能力。兼容网站访问、内容总结、URL 内容提取、网络搜索等核心功能。Use when. 适用于需要web browsing tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要web browsing tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 研究工具
+  - web
+  - browsing
+  - automation
+  - productivity
   - 网页浏览
   - 信息获取
   - Web开发
   - 前端
   - 开发工具
-  - web-browsing
-  - https
-  - bash
 tools:
   - read
   - exec
@@ -25,7 +26,10 @@ tools:
   - glob
 homepage: ""
 category: "Development"
+pricing_tier: free
+
 ---
+
 # 网页浏览助手免费版
 
 ## 概述
@@ -160,7 +164,7 @@ web-browsing summarize "https://tech-news.example.com" --length short
 
 ## 快速开始
 
-### 第一步:查看可用命令
+### 领先步:查看可用命令
 
 ```bash
 # 查看所有命令
@@ -227,7 +231,7 @@ web-browsing config set-search \
   --default-limit 5
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 明确获取目标
 
@@ -335,7 +339,7 @@ SEARCH_API_KEY=your_search_api_key
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,通过 exec 执行 HTTP 请求和网页抓取)
+- **分类**: MD+EXEC模式纯 Markdown 指令,通过 exec 执行 HTTP 请求和网页抓取)
 - **说明**: 基于网页浏览的信息获取工具,通过自然语言指令驱动 Agent 访问网页和搜索信息
 - **适用规模**: 个人用户、单次查询、本地运行
 

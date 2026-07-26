@@ -1,32 +1,13 @@
 ---
+
 slug: free-resource-finder-free
 name: free-resource-finder-free
 version: 1.0.1
 displayName: 免费资源发现器(免费版)
 summary: "发现与切换免费AI模型资源,支持基础列表查看、模型切换与状态检查,帮助用户零成本体验AI能力.。免费资源发现器(免费版)是一款面向独立开发者的免费AI模型资源发现与切换工具,帮助用户在众多免"
-license: Proprietary
+license: MIT
 edition: free
-description: '免费资源发现器(免费版)是一款面向独立开发者的免费AI模型资源发现与切换工具,帮助用户在众多免费模型中快速找到合适的选项,并完成基础配置。核心能力:
-
-  - 发现可用的免费AI模型列表,按质量排序展示
-
-  - 支持一键切换主模型,保留原有配置
-
-  - 提供模型状态检查与基础故障排查
-
-  - 兼容OpenAI协议的模型代理服务
-
-  适用场景:
-
-  - 个人开发者零成本体验AI编程助手
-
-  - 学生与研究者试用不同模型能力
-
-  - 小型项目原型阶段的成本控制
-
-  - 模型选型前的对比测试
-
-  差异化: 完全中文化表达,聚焦"发现-切换-验证"三步流...'
+description: "免费资源发现器(免费版)是一款面向独立开发者的免费AI模型资源发现与切换工具,帮助用户在众多免费模型中快速找到合适的选项,并完成基础配置。核心能力:. 适用于需要free resource finder相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - AI模型
   - 资源发现
@@ -38,14 +19,15 @@ tags:
   - bash
   - 免费模型
   - qwen3-coder
-  - list
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 免费资源发现器(免费版)
 
 发现与切换免费AI模型资源,帮助用户在零成本前提下体验AI编程能力。聚焦"发现-切换-验证"三步流程,内置模型质量评估与故障排查.
@@ -250,7 +232,7 @@ free-finder compare qwen3-coder deepseek-coder llama3.3-70b
 # | llama3.3-70b | 580ms | 128K | 5/min | 7.9 |
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 模型选择策略
 

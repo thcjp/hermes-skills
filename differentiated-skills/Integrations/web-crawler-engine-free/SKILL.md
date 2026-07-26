@@ -1,13 +1,13 @@
 ---
+
 slug: web-crawler-engine-free
 name: web-crawler-engine-free
 version: 1.0.1
 displayName: 网页抓取引擎(免费版)
 summary: "轻量级网页与社区数据抓取工具，支持本地归档、搜索查询与新鲜度检查.。网页抓取引擎免费版是一套面向个人开发者与小型团队的数据抓取与归档工具，帮助用户高效采集网页内容与社区消息并建立本地可搜索的"
-license: Proprietary
+license: MIT
 edition: free
-description: 网页抓取引擎免费版是一套面向个人开发者与小型团队的数据抓取与归档工具，帮助用户高效采集网页内容与社区消息并建立本地可搜索的归档库。核心能力：提供网页内容抓取模板、社区频道消息归档、本地全文搜索、数据新鲜度检查、只读
-  SQL 查询接口。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
+description: "网页抓取引擎免费版是一套面向个人开发者与小型团队的数据抓取与归档工具，帮助用户高效采集网页内容与社区消息并建立本地可搜索的归档库。核心能力：包含网页内容抓取模板、社区频道消息归档、本地全文搜索、数据新鲜度检查、只读. 适用于需要web crawler engine相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 数据抓取
   - 集成工具
@@ -19,8 +19,6 @@ tags:
   - text
   - self
   - 网页内容
-  - 数据新鲜
-  - 社区消息
 tools:
   - read
   - exec
@@ -28,7 +26,9 @@ tools:
   - glob
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # 网页抓取引擎（免费版）
 
 ## 概述
@@ -212,7 +212,7 @@ search:
   highlight: true               # 关键词高亮
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 实践一：先检查新鲜度再查询
 
@@ -307,9 +307,9 @@ search:
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

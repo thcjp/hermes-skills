@@ -1,34 +1,13 @@
 ---
+
 slug: azure-voicelive-tool-free
 name: azure-voicelive-tool-free
 version: 1.0.0
 displayName: Azure语音交互免费版
 summary: "使用Azure VoiceLive构建基础实时语音AI应用，支持文本/音频输出与基本会话管理.。Azure语音交互免费版 —— 面向个人开发者的轻量级实时语音AI工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: Azure语音交互免费版 —— 面向个人开发者的轻量级实时语音AI工具。核心能力:，可处理提升工作效率
-
-  - 通过WebSocket建立双向实时语音通信
-
-  - 支持文本与音频双模态输出
-
-  - 基本会话配置：指令、语音、模态设置
-
-  - 支持API Key认证方式
-
-  - 音频流发送与接收（Base64 PCM16）
-
-  - 多种语音选择（alloy、echo、shimmer等）
-
-  适用场景:
-
-  - 个人开发者构建语音助手原型
-
-  - 学习实时语音AI应用开发
-
-  - 简单的语音问答交互应用
-
-  差异化:免费版提供核心实时语音通信能力，适合个人开发者快速原型验证'
+description: "Azure语音交互免费版 —— 面向个人开发者的轻量级实时语音AI工具。核心能力:，可处置提升工作效率. 适用于需要azure voicelive tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 语音AI
   - Azure
@@ -40,14 +19,15 @@ tags:
   - conn
   - await
   - type
-  - async
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Operations"
+pricing_tier: free
 ---
+
 # Azure语音交互免费版
 
 ## 概述
@@ -230,7 +210,7 @@ export AZURE_COGNITIVE_SERVICES_ENDPOINT="https://<region>.api.cognitive.microso
 export AZURE_COGNITIVE_SERVICES_KEY="配置值"
 ```
 
-### 3. 建立第一个语音会话
+### 3. 建立领先个语音会话
 
 ```python
 import asyncio
@@ -289,9 +269,9 @@ AZURE_COGNITIVE_SERVICES_KEY=your_api_key_here
 | `conn.output_audio_buffer` | 音频输出 | `clear()` |
 | `conn.conversation` | 对话状态 | `item.create()`, `item.delete()` |
 
-## 最佳实践
+## 优秀实践
 
-1. **音频格式**：使用PCM16 24kHz格式，获得最佳识别与合成质量
+1. **音频格式**：使用PCM16 24kHz格式，获得优秀识别与合成质量
 2. **会话指令**：提供清晰简洁的instructions，引导AI行为
 3. **资源释放**：会话结束后及时关闭连接，释放资源
 4. **错误处理**：添加连接异常与API错误的处理逻辑

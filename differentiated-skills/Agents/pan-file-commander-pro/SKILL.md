@@ -1,4 +1,5 @@
 ---
+
 slug: pan-file-commander-pro
 name: pan-file-commander-pro
 version: 1.0.0
@@ -6,12 +7,7 @@ displayName: 网盘指挥官专业版
 summary: "命令式网盘管理,含记忆备份恢复、大文件后台下载、批量操作、增量同步、完整性校验.。网盘指挥官专业版是一个以"命令式高效操作"为核心视角的百度网盘文件管理工具,所有操作限制在 `/apps/b"
 license: Proprietary
 edition: pro
-description: '网盘指挥官专业版是一个以"命令式高效操作"为核心视角的百度网盘文件管理工具,所有操作限制在 `/apps/bdpan/` 目录内。面向个人创作者、团队协作者、内容运营、开发者、Agent记忆管理者五类角色。针对网盘管理"命令记不住、操作不连贯、路径易出错、风险操作无确认、文件难分类、大文件下载超时中断、批量操作繁琐、记忆无法跨设备同步、下载完整性无校验、同步可靠性差"十大痛点,构建了快捷命令模板、分类视图、智能路径校验、分层确认规则、操作意图识别、记忆备份恢复、大文件后台下载、批量操作模板、增量同步与完整性校验十大核心能力.
-  核心能力包括:bdpan CLI完整的文件管理(上传/下载/转存/分享/搜索/移动/复制/重命名/创建/删除);基于文件大小的智能下载策略(小文件直接+大文件后台nohup);Agent记忆备份与恢复(支持兼容Agent、增强Agent、快速Agent、Agent平台四类环境);批量处理模板(批量上传/下载/增量同步);完整性校验(文件大小比对);严格的安全约束与路径校验;分层确认规则(高/中/低风险);操作意图识别与歧义消除.
-  适用场景:百度网盘文件日常管理、大文件可靠下载(>50MB后台模式)、批量文件上传下载、Agent记忆跨设备备份与恢复、分享链接转存、团队文件共享、增量同步工作流、下载完整性校验、文件分类浏览与查找、自动化文件同步.
-  差异化亮点:相比免费版,专业版新增Agent记忆备份与恢复(支持兼容Agent/增强Agent/快速Agent/Agent平台四类环境,含manifest生成与safety
-  net)、大文件后台下载(nohup+进度轮询,解决Bash超时)、批量操作模板(批量上传/下载)、增量同步(仅上传变化文件)、完整性校验(文件大小比对)。相比通用网盘工具,本指挥官聚焦"命令式高效操作",以快捷命令模板与分层确认规则为核心.
-  适用关键词:网盘指挥官、百度网盘、文件管理、bdpan、pan-file-commander、记忆备份、大文件下载、批量操作、增量同步'
+description: "网盘指挥官专业版是一个以\"命令式高效操作\"为核心视角的百度网盘文件管控工具,所有操作限制在 `/apps/bdpan/` 目录内。面向个人创作者、团队协作者、内容运营、开发者、Agent记忆管控者五类角色。针对网盘管控\"命令记不住、操作不连贯、路径易出错、风险操作无确认、文件难分类、大文件下载超时中断、成批操作繁琐、记忆无法跨设备同步、下载完整性无校验、同步可靠性差\"十大痛点,构建了快捷命令模板、分类视图、智能路径校验、分层确认规则、操作意图识别、记忆备份恢复、大文件后台下载、成批操作模板、增量同步与完整性校验十大核心能力."
 tags:
   - 智能代理
   - 文件管理
@@ -23,9 +19,6 @@ tags:
   - 智能
   - bdpan
   - docs
-  - txt
-  - agent
-  - bash
 tools:
   - read
   - exec
@@ -35,7 +28,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
+pricing_tier: L2-标准级
 ---
+
 # 网盘指挥官(专业版)
 
 百度网盘文件管理工具,以"命令式高效操作"为核心视角,所有操作限制在 `/apps/bdpan/` 目录内。专业版在免费版基础上解锁Agent记忆备份与恢复、大文件后台下载、批量操作模板、增量同步与完整性校验。适配所有支持SKILL.md的Agent平台.
@@ -337,17 +332,17 @@ for file in ./local-dir/*; do
   filename=$(basename "$file")
   bdpan upload "$file" "remote-dir/$filename"
 done
-```
-
-### 批量下载
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 获取文件列表并批量下载
 bdpan ls --json remote-dir/ | jq -r '.[].path' | while read path; do
   bdpan download "$path" "./local-dir/$(basename $path)"
 done
-```
-
-### 批量分享
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 批量分享目录下所有PDF文件
 bdpan ls --json docs/ | jq -r '.[] | select(.path | endswith(".pdf")) | .path' | while read file; do
@@ -393,14 +388,14 @@ done
 ### 备份记忆
 ```bash
 bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） backup
-```
-
-### 查看备份列表
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） list
-```
-
-### 恢复备份
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） restore 2026-03-16
 # ...
@@ -429,9 +424,9 @@ bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） restore 20
 ### 按类型分类
 ```bash
 bdpan ls docs/ --json | jq -r '.[] | .path' | grep -oE '\.[^.]+$' | sort | uniq -c | sort -rn
-```
-
-### 按大小分类
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 bdpan ls docs/ --json | jq -r '
   if .size > 104857600 then "大文件(>100MB)"
@@ -439,9 +434,9 @@ bdpan ls docs/ --json | jq -r '
   elif .size > 1048576 then "小文件(1-10MB)"
   else "微小文件(<1MB)"
   end' | sort | uniq -c
-```
-
-### 按时间分类
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 created_at | .[0:7]' | sort | uniq -c
 ```
@@ -455,9 +450,9 @@ created_at | .[0:7]' | sort | uniq -c
 # 列出目录以辅助路径补全
 bdpan ls docs/ --folder
 # 用户输入"docs/"后,Agent列出docs下的文件夹供选择
-```
-
-### 越界检测
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 validate_path() {
   local path="$1"
@@ -523,9 +518,9 @@ bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） [--yes]
 bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）              # 登录(内置安全免责声明)
 bdpan logout                                            # 注销
 bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） [--yes]   # 卸载
-```
-
-### 更新(必须用户明确指令触发)
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）              # 检查并更新(需用户确认)
 bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） --check       # 仅检查更新
@@ -547,9 +542,9 @@ bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） --check   
 4. Agent轮询进度,每次报告已下载大小/总大小/百分比
 5. 下载完成后,执行完整性校验(远端大小 vs 本地大小)
 6. 告知用户最终结果,清理日志文件
-```
-
-### 场景二:团队协作者 - 批量分享
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 角色: 团队协作者
 任务: "把docs目录下所有PDF分享给团队,有效期7天"
@@ -561,9 +556,9 @@ bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） --check   
 4. 收集所有分享链接+提取码
 5. 汇总输出:文件名+链接+提取码+有效期
 6. 提示用户:链接7天后过期,请及时分享给团队
-```
-
-### 场景三:内容运营 - 批量上传与增量同步
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 角色: 内容运营
 任务: "把本地素材目录同步到网盘,只上传有变化的文件"
@@ -575,9 +570,9 @@ bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） --check   
 4. 对有变化的文件执行 bdpan upload
 5. 对无变化的文件跳过(节省带宽)
 6. 输出同步报告:新增X个,更新Y个,跳过Z个
-```
-
-### 场景四:Agent记忆管理者 - 跨设备记忆同步
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 角色: Agent记忆管理者
 任务: "备份我的Agent记忆到网盘,然后在新设备恢复"
@@ -592,9 +587,9 @@ bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） --check   
 7. 恢复前列出影响预览,要求用户确认
 8. 自动创建Safety net备份到 .backup-before-restore/
 9. 执行恢复,告知用户结果
-```
-
-### 场景五:开发者 - 分享链接转存与下载
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 角色: 开发者
 任务: "朋友发来的分享链接,转存到网盘后下载到本地"
@@ -693,7 +688,7 @@ A: 专业版在免费版基础上新增:Agent记忆备份与恢复(支持四类�
 - **禁止**读取或输出 `~/.config/bdpan/config.json` 内容(含敏感凭据)
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,需要命令行执行能力运行bdpan CLI)
+- **分类**: MD+EXEC模式纯Markdown指令,需要命令行执行能力运行bdpan CLI)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent使用bdpan CLI管理百度网盘文件。需要bdpan CLI和百度网盘账户。专业版高级功能(记忆备份/大文件下载/批量操作)需要对应环境支持.
 ## 专业版特性
 

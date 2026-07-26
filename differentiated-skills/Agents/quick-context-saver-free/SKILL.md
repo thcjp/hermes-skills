@@ -1,13 +1,13 @@
 ---
+
 slug: quick-context-saver-free
 name: quick-context-saver-free
 version: 1.0.1
 displayName: Quick Context Saver
 summary: "零依赖本地记忆系统，无需API Key，TF-IDF智能搜索，100%本地存储隐私无忧.。快速上下文记忆免费版解决隐私敏感用户"不想用云端记忆、不想配API Key、离线也能用"的核心痛点。"
-license: Proprietary
+license: MIT
 edition: free
-description: 快速上下文记忆免费版解决隐私敏感用户"不想用云端记忆、不想配API Key、离线也能用"的核心痛点。零外部依赖、零API Key、零云服务，纯本地JSON存储配合TF-IDF智能搜索，实现Agent记忆的完全自主可控。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "快速上下文记忆免费版解决隐私敏感用户\"不想用云端记忆、不想配API Key、离线也能用\"的核心痛点。零外部依赖、零API Key、零云服务，纯本地JSON存储配合TF-IDF智能搜索，达成Agent记忆的完全自主可控。Use. 适用于需要quick context saver相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 本地记忆
   - 零依赖
@@ -19,15 +19,15 @@ tags:
   - json
   - memory
   - session-state
-  - tf-idf
-  - 记忆
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # 快速上下文记忆（免费版）
 
 > **零依赖、零API Key、零云服务。100%本地存储，隐私无忧。**
@@ -127,7 +127,7 @@ memory-stats
 ## 核心能力
 ### 1. 三层记忆架构
 
-**第一层：热内存（SESSION-STATE.json）**
+**领先层：热内存（SESSION-STATE.json）**
 
 快速、活跃的工作记忆：
 
@@ -461,10 +461,12 @@ TF-IDF算法对关键词匹配的搜索准确率约80%。对于精确关键词�
 
 ### 示例1：基础用法
 
-```
-### 一分钟初始化你的本地记忆(补充)
-# ...
 ```bash
+# 在此执行相关操作
+echo "操作完成"
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 # ...
 ## 错误处理

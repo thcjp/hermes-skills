@@ -1,30 +1,13 @@
 ---
+
 slug: qwen-video-analyzer-free
 name: qwen-video-analyzer-free
 version: 1.0.1
 displayName: 通义千问视频分析-免费版
 summary: "使用Qwen模型分析视频内容,支持本地文件与远程URL,可自定义提示词,适合个人创作者.。通义千问视频分析免费版,面向个人用户的AI视频内容理解工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '通义千问视频分析免费版,面向个人用户的AI视频内容理解工具。核心能力:
-
-  - 使用 Qwen 多模态模型智能分析视频内容
-
-  - 支持本地视频文件与远程 URL 输入
-
-  - 可自定义分析提示词与抽帧频率(FPS)
-
-  - 生成视频摘要、场景描述、物体识别
-
-  适用场景:
-
-  - 短视频创作者内容标签生成
-
-  - 个人视频素材整理与检索
-
-  - 视频内容快速概览
-
-  差异化:免费版聚焦单视频分析能力,提供基础提示词自定义,适合个人用户体验AI视频理解'
+description: "通义千问视频剖析免费版,面向个人用户的AI视频内容理解工具。核心能力:. 适用于需要qwen video analyzer相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Creative
   - 视频分析
@@ -36,14 +19,15 @@ tags:
   - python
   - prompt
   - api
-  - dashscope
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # 通义千问视频分析工具 - 免费版
 
 ## 概述
@@ -137,7 +121,7 @@ python （请参考skill目录中的脚本文件） /path/to/long_video.mp4 \
 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:配置 API Key
+### 领先步:配置 API Key
 
 API Key 从 `~/.skill-platform/skill-platform.json` 的 `skills.dashscope.apiKey` 字段读取.
 ```json
@@ -193,7 +177,7 @@ API Key 从 `~/.skill-platform/skill-platform.json` 的 `skills.dashscope.apiKey
 --fps 5 --prompt "请描述视频中人物的动作和行为"
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **帧率匹配内容**:静态场景多用低 FPS(1-2),动态场景用高 FPS(4-5)
 2. **提示词具体**:明确提问方向,如"识别物体"或"描述场景",避免模糊提问
@@ -239,7 +223,7 @@ A:在阿里云 DashScope 平台注册并创建 API Key,写入配置文件 `~/.js
 - **存储建议**: 配置文件设置合理权限(600),避免泄露
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过Python脚本调用Qwen多模态模型分析视频内容
 
 ## 错误处理

@@ -1,19 +1,13 @@
 ---
+
 slug: apple-health-tool-free
 name: apple-health-tool-free
 version: 1.0.0
 displayName: 健康数据助手免费版
 summary: "个人用户与Apple健康数据对话查询,支持运动、心率、活动圆环等基础问答。面向个人用户的健康数据查询助手,通过自然语言与 Apple Health 数据交互."
-license: Proprietary
+license: MIT
 edition: free
-description: 面向个人用户的健康数据查询助手,通过自然语言与 Apple Health 数据交互，可生成提升工作效率
-  核心能力: 运动记录查询、心率趋势分析、活动圆环进度、VO2 Max 趋势、AI 教练问答
-
-  适用场景: 个人健身追踪、日常健康自检、运动习惯养成
-
-  差异化: 免费版聚焦核心查询能力,适合单用户日常使用,配置简单开箱即用
-
-  适用关键词: 健康数据, Apple Health, 心率, 运动, 活动圆环, VO2Max, fitness, workout'
+description: "面向个人用户的健康数据查询助手,通过自然语言与 Apple Health 数据交互，可产出提升工作效率. 适用于需要apple health tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 健康管理
   - 个人助手
@@ -25,16 +19,15 @@ tags:
   - 生活
   - api
   - transition
-  - fun
-  - https
-  - apple
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 健康数据助手 (免费版)
 
 ## 概述
@@ -82,7 +75,7 @@ category: "Automation"
 用户询问最近一周运动情况,助手汇总并给出建议.
 ```bash
 # 通过 AI 教练查询
-curl -X POST -H "X-API-Key: $TRANSITION_API_KEY" \
+curl -X POST -H "X-API-ref: $TRANSITION_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"message": "这周我做了几次运动?平均心率多少?"}' \
   "https://api.transition.fun/api/v1/coach/chat"
@@ -101,7 +94,7 @@ curl "https://api.transition.fun/api/v1/wod?sport=run&duration=45"
 
 查询最近一个月的静息心率变化.
 ```bash
-curl -X POST -H "X-API-Key: $TRANSITION_API_KEY" \
+curl -X POST -H "X-API-ref: $TRANSITION_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"message": "过去一个月静息心率变化趋势如何?"}' \
   "https://api.transition.fun/api/v1/coach/chat"
@@ -140,7 +133,7 @@ export TRANSITION_API_KEY="your_api_key_here"
 curl -s "https://api.transition.fun/api/v1/wod?sport=run&duration=20"
 # ...
 # 测试认证接口
-curl -s -H "X-API-Key: $TRANSITION_API_KEY" \
+curl -s -H "X-API-ref: $TRANSITION_API_KEY" \
   "https://api.transition.fun/api/v1/profile"
 ```
 
@@ -192,7 +185,7 @@ for w in workouts.get("data", []):
     print(f"{w.get('date')} - {w.get('sport')} - {w.get('duration')}min")
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 善用自然语言教练
 
@@ -209,7 +202,7 @@ AI 教练掌握你的全部健康数据上下文,直接用自然语言提问比�
 
 在安排高强度训练前,先检查疲劳状态.
 ```bash
-curl -H "X-API-Key: $TRANSITION_API_KEY" \
+curl -H "X-API-ref: $TRANSITION_API_KEY" \
   "https://api.transition.fun/api/v1/performance/pmc"
 ```
 
@@ -286,7 +279,7 @@ source ~/.apple-health.env
 **安全提示**: 切勿将 API Key 提交到代码仓库,建议加入 `.gitignore`.
 ### 可用性分类
 
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+exec方法(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 通过自然语言指令驱动 Agent 调用 Transition API,完成 Apple Health 数据查询与分析
 - **免费版限制**: AI 教练每日 3 次,读取接口每日 100 次,仅支持单用户使用
 

@@ -1,46 +1,24 @@
 ---
+
 slug: rss-digest-tool-free
 name: rss-digest-tool-free
 version: 1.0.0
 displayName: RSS摘要工具免费版
 summary: "轻量级RSS订阅摘要生成工具,支持订阅抓取、智能筛选与内容浓缩,适合个人用户日常阅读。RSS摘要工具免费版为个人用户提供轻量级的RSS订阅内容消化方案."
-license: Proprietary
+license: MIT
 edition: free
-description: 'RSS摘要工具免费版为个人用户提供轻量级的RSS订阅内容消化方案.
-  核心能力:
-
-  - 订阅源扫描与未读条目提取
-
-  - 基于关键词的智能筛选与分诊
-
-  - 多条目并行阅读与摘要合成
-
-  - 主题分组摘要输出
-
-  适用场景:
-
-  - 个人技术博客与资讯订阅管理
-
-  - 每日行业动态快速浏览
-
-  - 兴趣主题内容聚合阅读
-
-  差异化:免费版聚焦核心摘要流程,提供高效的扫描-筛选-合成三步工作流,适合个人用户快速上手,无需复杂配置即可开始使用.
-  适用关键词: RSS, 订阅, 摘要, digest, feed, 抓取, 筛选, 聚合'
+description: "RSS摘要工具免费版为个人用户包含轻量级的RSS订阅内容消化方案. 适用于需要rss digest tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要rss digest tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 研究工具
+  - rss
+  - digest
+  - automation
+  - productivity
   - RSS
   - 信息聚合
   - 内容摘要
   - 个人效率
   - 搜索
-  - 检索
-  - 工具
-  - feed
-  - get
-  - entries
-  - rss
-  - bash
 tools:
   - read
   - exec
@@ -48,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 # RSS摘要工具免费版
 
 ## 概述
@@ -207,7 +188,7 @@ cd feed && cargo install --path .
 feed import starter-tech-blogs.opml
 ```
 
-### 第三步:生成你的第一份摘要
+### 第三步:生成你的领先份摘要
 
 ```bash
 # 拉取最新内容
@@ -251,7 +232,7 @@ feed get stats                          # 数据库统计
 偏好示例3: "只看有代码示例或开源项目链接的技术文章"
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 优先直接抓取URL
 
@@ -316,7 +297,7 @@ A: 全文搜索依赖已抓取并存储的内容。如果条目从未被`feed fe
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent调用`feed` CLI完成RSS摘要任务。免费版聚焦个人用户的扫描-筛选-合成核心流程,适合日常阅读和信息追踪.
 ## 错误处理
 

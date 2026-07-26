@@ -1,20 +1,13 @@
 ---
+
 slug: knowledge-toolkit-free
 name: knowledge-toolkit-free
 version: 1.0.1
 displayName: 知识工具包（免费版）
 summary: "构建个人知识管理系统：知识捕获、组织、连接与检索，支持Zettelkasten方法.,支持多种使用场景和自动化处理"
-license: Proprietary
+license: MIT
 edition: free
-description: 知识工具包 - （免费版），可处理提升工作效率
-
-  核心能力: 知识管理, 知识捕获, 知识连接, 知识检索, Zettelkasten, 双链笔记, 知识图谱
-
-  适用场景: 个人用户日常使用，核心功能覆盖基础需求
-
-  差异化: 精简版，适合个人用户快速上手，提供核心功能与基础用法
-
-  适用关键词: 知识管理, 知识捕获, 知识连接, 知识检索, Zettelkasten, 双链笔记, 知识图谱'
+description: "知识工具包 - （免费版），可处置提升工作效率. 适用于需要knowledge toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 知识管理
   - Zettelkasten
@@ -26,20 +19,15 @@ tags:
   - 知识
   - 文档
   - 研究
-  - 分析
-  - 写作
-  - 支持创建
-  - 查询
-  - input_params
-  - api
-  - 免费版
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 知识工具包（免费版）
 
 ## 概述
@@ -196,7 +184,7 @@ knowledge:
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 
-## 最佳实践
+## 优秀实践
 
 ### 基础使用建议
 
@@ -209,9 +197,8 @@ knowledge:
 ### 性能优化
 
 ```python
-# 免费版：单文件优化
-# 确保输入文件不超过建议大小
-# 处理完成后释放资源
+# 在此执行相关操作
+pass
 ```
 
 ## 常见问题

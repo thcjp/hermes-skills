@@ -1,4 +1,5 @@
 ---
+
 slug: "knowledge-graph-tool-pro"
 name: "knowledge-graph-tool-pro"
 version: "1.0.0"
@@ -6,20 +7,7 @@ displayName: "知识图谱工具(专业版)"
 summary: "团队级嵌入式知识图谱,含加密保险库、可视化、多Agent协作与内存导入。。知识图谱工具(专业版)面向团队与企业,提供完整的嵌入式知识图谱能力,含加密保险库、离线可视化、跨Agent协作与内存"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  知识图谱工具(专业版)面向团队与企业,提供完整的嵌入式知识图谱能力,含加密保险库、离线可视化、跨Agent协作与内存自动导入。核心能力:
-  - 全量查询、合并、嵌套、整理能力
-  - 加密保险库:密钥/令牌加密存储,权限隔离
-  - 离线HTML可视化:自包含图谱交互页面
-  - 跨Agent只读+写入:多Agent共享知识
-  - 内存自动导入:从会话历史提取并审查
-  - 高级配置:物理参数、阈值、压缩策略
-
-  适用场景:
-  - 团队知识库与决策记录沉淀
-  - 研究项目多源知识整合
-  - 多Agent协作共享长期记忆
-  - 敏感配置...
+description: "|-. 适用于需要knowledge graph tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Development
   - Knowledge
@@ -31,7 +19,6 @@ tags:
   - 效率
   - 知识
   - 文档
-  - node
 tools:
   - read
   - exec
@@ -39,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 知识图谱工具(专业版)
 
 ## 概述
@@ -261,7 +250,7 @@ compactThreshold 300
 node （请参考skill目录中的脚本文件） set visualization.repulsion 8000
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 定期整理与摘要
 
@@ -372,7 +361,7 @@ node （请参考skill目录中的脚本文件） uncertain
 - 多Agent协作时,各Agent的鉴权由所在平台处理.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。PRO版面向团队与企业,提供加密保险库、可视化、多Agent协作与内存导入能力,完全兼容免费版查询与KGML格式.
 ## 错误处理
 

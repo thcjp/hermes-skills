@@ -1,45 +1,24 @@
 ---
+
 slug: rss-feed-digest-tool-free
 name: rss-feed-digest-tool-free
 version: 1.0.0
 displayName: RSS聚合摘要免费版
 summary: 轻量级RSS/Atom聚合摘要工具,支持关键词过滤与Markdown输出,适合个人用户生成每日资讯摘要
-license: Proprietary
+license: MIT
 edition: free
-description: 'RSS聚合摘要免费版为个人用户提供轻量级的RSS/Atom订阅聚合与摘要生成能力。核心能力:
-
-  - 多源RSS/Atom订阅抓取
-
-  - 关键词包含/排除过滤
-
-  - 跨源自动去重
-
-  - 时间范围筛选
-
-  - Markdown/纯文本输出
-
-  适用场景:
-
-  - 个人每日资讯摘要生成
-
-  - 兴趣主题内容聚合
-
-  - 简单的订阅源监控
-
-  差异化:免费版聚焦核心聚合与过滤流程,通过Python脚本实现轻量部署,适合个人用户快速生成每日摘要,无需数据库或复杂配置'
+description: "RSS聚合摘要免费版为个人用户包含轻量级的RSS/Atom订阅聚合与摘要产出能力。核心能力:. 适用于需要rss feed digest tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要rss feed digest tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 研究工具
+  - rss
+  - feed
+  - digest
+  - automation
   - RSS
   - 信息聚合
   - 内容摘要
   - 个人效率
   - 搜索
-  - 检索
-  - 工具
-  - https
-  - rss
-  - markdown
-  - bash
 tools:
   - read
   - exec
@@ -47,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 # RSS聚合摘要免费版
 
 ## 概述
@@ -287,7 +269,7 @@ https://openai.com/blog/rss.xml
 https://www.artificialintelligence-news.com/feed/
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 合理设置时间窗口
 
@@ -320,7 +302,7 @@ A: 常见原因有三:(1)源URL已失效,需验证URL是否可访问;(2)源需�
 A: 支持。`feedparser`会正确解析中文内容,关键词匹配为子串包含。例如`--keywords "大模型"`会匹配标题或摘要中包含"大模型"的条目.
 ### Q: 去重逻辑是如何工作的?
 
-A: 去重基于URL哈希。如果多个源转载了同一篇文章(URL相同或仅参数不同),只会保留第一次出现的条目。对于URL不同但内容相同的转载,免费版不做内容级去重.
+A: 去重基于URL哈希。如果多个源转载了同一篇文章(URL相同或仅参数不同),只会保留领先次出现的条目。对于URL不同但内容相同的转载,免费版不做内容级去重.
 ### Q: 如何抓取需要认证的私有RSS源?
 
 A: 免费版不支持认证抓取。如果源需要Basic Auth,可在URL中嵌入凭证(`https://user:pass@example.com/feed`),但不推荐明文存储凭证。建议使用专业版的安全认证管理功能.
@@ -356,7 +338,7 @@ A: 确认Python版本≥3.8。网络问题可使用国内镜像源安装:`pip3 i
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行Python脚本)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行Python脚本)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent调用Python脚本完成RSS聚合摘要任务。免费版聚焦个人用户的多源抓取、关键词过滤与Markdown输出,适合每日资讯摘要与兴趣主题聚合场景.
 ## 错误处理
 

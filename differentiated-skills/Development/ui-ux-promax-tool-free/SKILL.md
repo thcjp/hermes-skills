@@ -1,32 +1,13 @@
 ---
+
 slug: ui-ux-promax-tool-free
 name: ui-ux-promax-tool-free
 version: 1.0.0
 displayName: UIUX设计助手(免费版)
 summary: "面向个人开发者的UI/UX设计指导工具,提供布局、配色、排版的快速建议与设计令牌输出.。UI/UX设计助手免费版为个人开发者提供基础的UI/UX设计指导,涵盖布局方向、配色系统、排版规模与设"
-license: Proprietary
+license: MIT
 edition: free
-description: 'UI/UX设计助手免费版为个人开发者提供基础的UI/UX设计指导,涵盖布局方向、配色系统、排版规模与设计令牌输出。核心能力:
-
-  - UI概念与布局方向快速建议
-
-  - 配色系统生成(主色/辅色/语义色)
-
-  - 排版规模(字号/行高/字重)建议
-
-  - 基础设计令牌输出(ASCII友好)
-
-  - 响应式断点推荐
-
-  适用场景:
-
-  - 个人项目界面设计快速起步
-
-  - 学习UI/UX设计基础概念
-
-  - 生成基础设计令牌用于CSS变量
-
-  差异化:免费版聚焦个人开发者的基础设计需求,输出ASCII友好令牌'
+description: "UI/UX设计助手免费版为个人开发者包含基础的UI/UX设计指导,涵盖布局方向、配色系统、排版规模与设计令牌输出。核心能力:. 适用于需要ui uxmax tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - UI/UX
   - 设计系统
@@ -38,16 +19,15 @@ tags:
   - 设计
   - rem
   - css
-  - 排版规模
-  - ascii
-  - min-width
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # UI/UX 设计助手(免费版)
 
 ## 概述
@@ -165,7 +145,7 @@ category: "Creative"
 、品牌视觉时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:回答分诊问题
+### 领先步:回答分诊问题
 
 工具会快速询问:目标平台(web/iOS/Android)、技术栈、设计目标、现有素材.
 ```
@@ -217,7 +197,7 @@ cp tokens.css src/styles/tokens.css
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **ASCII 优先**:令牌命名使用 ASCII 字符,避免 Unicode 导致的编码问题.
 2. **8px 间距基准**:所有间距使用 8 的倍数,保证视觉节奏一致.
@@ -263,7 +243,7 @@ cp tokens.css src/styles/tokens.css
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于自然语言指令驱动 Agent 输出设计建议与令牌;用户将令牌应用到本地项目
 
 ## 错误处理

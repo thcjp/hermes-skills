@@ -1,12 +1,12 @@
 ---
+
 slug: token-guard-pro
 name: token-guard-pro
 version: 1.0.1
 displayName: Token守护者
 summary: "解决压缩损质、缓存命中低、无模型路由、预算失控的Token成本守护器。面向 AI Agent 的 token 成本优化系统，直击压缩损质、缓存命中低、无模型路由、预算失控四大痛点。适用于长会"
-license: Proprietary
-description: 面向 AI Agent 的 token 成本优化系统，直击压缩损质、缓存命中低、无模型路由、预算失控四大痛点。适用于长会话治理、高频问答缓存、多模型混合调用、企业预算管控等场景。核心能力含分级上下文压缩、三层语义缓存、自适应模型路由、预算守护、Prefix
-  Cache 支持。适用关键词：token优化、成本降低、语义缓存、上下文压缩、模型路由、预算控制、token saver、semantic cache.
+license: MIT
+description: "面向 AI Agent 的 token 成本调优系统，直击压缩损质、缓存命中低、无模型路由、预算失控四大痛点。适用于长会话治理、高频问答缓存、多模型混合调用、企业预算管控等场景。核心能力含分级上下文压缩、三层语义缓存、自适应模型路由、预算守护、Prefix. 适用于需要token guard相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - Token优化
   - 成本控制
@@ -18,8 +18,6 @@ tags:
   - token
   - cache
   - prefix
-  - 缓存
-  - 适用
 tools:
   - read
   - exec
@@ -29,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
+pricing_tier: L2-标准级
 ---
+
 # Token 守护者（Token Guard Pro）
 
 面向 AI Agent 的 **token 成本优化系统**，用三层缓存 + 自适应压缩 + 模型路由 + 预算守护，在不牺牲响应质量的前提下降低 50-80% 的 token 成本。代码块、错误消息、关键决策永不压缩，质量下降 > 15% 时自动回滚.
@@ -234,7 +234,7 @@ A：不会。路由基于任务复杂度评估，复杂任务自动用大模型�
 **Q4：预算超限后会怎样？**
 A：80% 告警并切换 save 模式，95% 严重告警并强制小模型，100% 停止非必要调用仅保留缓存响应。用户可临时调高预算或切换模式.
 **Q5：Prefix Cache 怎么启用？**
-A：自动检测平台支持。Anthropic/OpenAI/Gemini 均支持。需前缀 >= 1024 token 且 5 分钟内复用。System Prompt 固定场景效果最佳，输入成本降至 1/10，首 token 延迟降低 50-85%.
+A：自动检测平台支持。Anthropic/OpenAI/Gemini 均支持。需前缀 >= 1024 token 且 5 分钟内复用。System Prompt 固定场景效果优秀，输入成本降至 1/10，首 token 延迟降低 50-85%.
 ## 已知限制
 
 1. **短会话收益有限**：压缩在 token 超过 3K 后才启动，极短会话（< 10 条消息）无优化收益。首次查询无法缓存，缓存需积累.

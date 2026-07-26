@@ -1,13 +1,13 @@
 ---
+
 slug: timer-alert-tool-free
 name: timer-alert-tool-free
 version: 1.0.0
 displayName: 定时提醒工具(免费版)
 summary: "后台定时提醒免费版：多格式定时器、完成通知、番茄钟与基础多计时器管理.。定时提醒工具（免费版）面向个人用户与独立开发者，提供后台定时器与到时提醒能力：支持多种时间格式（秒/分/时/分秒/时分"
-license: Proprietary
+license: MIT
 edition: free
-description: 定时提醒工具（免费版）面向个人用户与独立开发者，提供后台定时器与到时提醒能力：支持多种时间格式（秒/分/时/分秒/时分秒）、自定义提醒文案、番茄钟工作法、多计时器并行与后台进程管理。定时器在后台运行，完成后触发系统通知。Use
-  when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
+description: "定时提醒工具（免费版）面向个人用户与独立开发者，包含后台定时器与到时提醒能力：兼容多种时间格式（秒/分/时/分秒/时分秒）、自定义提醒文案、番茄钟工作法、多计时器并行与后台进程管控。定时器在后台运行，完成后触发系统通知。Use. 适用于需要timer alert tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 沟通协作
   - 定时提醒
@@ -19,21 +19,15 @@ tags:
   - 自动化
   - 通信
   - 邮件
-  - 写作
-  - 电商
-  - AI代理
-  - bash
-  - background
-  - true
-  - command
-  - node
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 定时提醒工具（免费版）
 
 ## 概述
@@ -106,6 +100,8 @@ js 25m '番茄钟专注时间结束！该休息了。'"
 
 用户说"帮我同时设三个定时器：茶 5 分钟、鸡蛋 10 分钟、会议 30 分钟"。Agent 并行启动三个后台定时器.
 ```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ## 快速开始
@@ -120,11 +116,8 @@ js 25m '番茄钟专注时间结束！该休息了。'"
 ### 基础定时器
 
 ```bash
-# 5 分钟定时器
-# ...
-# 30 秒定时器
-# ...
-# 1 小时定时器
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### 管理运行中的定时器
@@ -134,13 +127,13 @@ js 25m '番茄钟专注时间结束！该休息了。'"
 process action:list
 # ...
 # 查看特定定时器状态
-process action:poll sessionId:XXX
+process action:poll sessionId:placeholder
 # ...
 # 查看定时器日志
-process action:log sessionId:XXX
+process action:log sessionId:placeholder
 # ...
 # 终止定时器
-process action:kill sessionId:XXX
+process action:kill sessionId:placeholder
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -179,7 +172,7 @@ js 10m '长休息结束！继续工作。'"
 | 运动 | 热身 5m | 训练 30m | 拉伸 10m |
 | 学习 | 阅读 25m | 练习 15m | 复习 10m |
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 完成通知格式（关键）
 
@@ -221,13 +214,13 @@ A：检查 Agent 响应格式——不能以 `HEARTBEAT_OK` 开头。响应应�
 ### Q2：定时器没有在后台运行？
 A：必须使用 `bash background:true` 启动。如果省略 `background:true`，定时器会阻塞当前会话直到完成.
 ### Q3：如何取消正在运行的定时器？
-A：先用 `process action:list` 找到 sessionId，再执行 `process action:kill sessionId:XXX`。被终止的定时器退出码为 130.
+A：先用 `process action:list` 找到 sessionId，再执行 `process action:kill sessionId:placeholder`。被终止的定时器退出码为 130.
 ### Q4：多个定时器同时完成怎么处理？
 A：每个定时器完成后分别触发独立的系统通知。Agent 按通知到达顺序依次响应，每个响应独立处理.
 ### Q5：定时器精度如何？
 A：短定时器（< 1 分钟）每秒记录进度，长定时器每 10 秒记录。精度在 ±1 秒内。macOS 完成时会播放声音提示（需 `afplay` 可用）.
 ### Q6：如何查看定时器运行日志？
-A：`process action:log sessionId:XXX` 查看特定定时器的进度日志，包含每秒/每 10 秒的计时记录.
+A：`process action:log sessionId:placeholder` 查看特定定时器的进度日志，包含每秒/每 10 秒的计时记录.
 ### 已知限制
 A：免费版不支持循环定时（间隔重复提醒）、提醒模板库、多级升级提醒、指定时间点触发与实时监控面板。这些能力在专业版提供.
 ## 免费版限制

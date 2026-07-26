@@ -1,15 +1,13 @@
 ---
+
 slug: namecheap-dns-tool-free
 name: namecheap-dns-tool-free
 version: 1.0.0
 displayName: DNS管理入门工具
 summary: "Namecheap域名DNS记录管理工具，支持A/CNAME/MX等常用记录操作.。面向个人开发者与小型网站的Namecheap DNS管理工具。支持A/CNAME/"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人开发者与小型网站的Namecheap DNS管理工具。支持A/CNAME/
-
-  MX/TXT等常用DNS记录的创建、查询、更新与删除。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。Use
-  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
+description: "面向个人开发者与小型网站的Namecheap DNS管控工具。兼容A/CNAME/. 适用于需要namecheap dns tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Operations
   - DNS
@@ -21,17 +19,15 @@ tags:
   - 代码
   - 运维
   - 监控
-  - 写作
-  - api
-  - dns
-  - ttl
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # DNS管理入门工具（免费版）
 
 ## 概述
@@ -182,7 +178,7 @@ dns_config:
     ttl: 60                     # API响应缓存
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **TTL设置**：常用记录设1800秒（30分钟），需要快速切换的设300秒
 2. **记录备份**：修改前先导出当前记录，便于回滚

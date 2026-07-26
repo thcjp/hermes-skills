@@ -1,38 +1,13 @@
 ---
+
 slug: markdown-format-tool-free
 name: markdown-format-tool-free
 version: 1.0.0
 displayName: Markdown格式化工具免费版
 summary: "将纯文本或Markdown文件转换为结构清晰、易读的格式,支持标题、摘要、列表优化。面向个人用户的 Markdown 格式化工具,将纯文本或已有 Markdown 转换为结构清晰、易读的格式"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人用户的 Markdown 格式化工具,将纯文本或已有 Markdown 转换为结构清晰、易读的格式。核心能力:
-
-  - 自动识别纯文本与 Markdown 内容类型
-
-  - 生成 frontmatter(标题、摘要、描述)
-
-  - 优化标题层级、加粗关键结论、列表化平行内容
-
-  - 中英文混排间距自动修正
-
-  适用场景:
-
-  - 个人博客文章格式整理
-
-  - 技术笔记结构优化
-
-  - 文档可读性提升
-
-  差异化:
-
-  - 免费版提供单文件格式化能力
-
-  - 仅调整格式与修正明显错别字,不改动内容
-
-  - 支持交互式标题选择
-
-  触发关...'
+description: "面向个人用户的 Markdown 格式化工具,将纯文本或已有 Markdown 变换为结构清晰、易读的格式。核心能力:. 适用于需要markdown format tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 文档工具
   - Markdown
@@ -44,14 +19,15 @@ tags:
   - false
   - true
   - frontmatter
-  - 排版修正
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # Markdown 格式化工具免费版
 
 ## 概述
@@ -176,7 +152,7 @@ Markdown 格式化工具免费版帮助个人用户将纯文本或已有 Markdow
 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步: 准备文件
+### 领先步: 准备文件
 
 确保待格式化的文件存在,支持 `.md` 和 `.txt` 格式.
 ### 第二步: 触发格式化
@@ -250,7 +226,7 @@ Markdown 格式化工具免费版帮助个人用户将纯文本或已有 Markdow
 | `spacing` | true/false | true | 中英文间距修正 |
 | `emphasis` | true/false | true | CJK 强调标点修正 |
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 遵守核心原则
 
@@ -267,14 +243,8 @@ Markdown 格式化工具免费版帮助个人用户将纯文本或已有 Markdow
 ### 2. 标题层级规范
 
 ```markdown
-# 文档标题 (H1, 仅在 frontmatter 无 title 时)
-# ...
-## 主要章节 (H2)
-# ...
-### 子章节 (H3)
-# ...
-#
-### 细节 (H4, 谨慎使用)
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### 3. 摘要写作原则

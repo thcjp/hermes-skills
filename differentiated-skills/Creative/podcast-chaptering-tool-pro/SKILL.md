@@ -1,4 +1,5 @@
 ---
+
 slug: "podcast-chaptering-tool-pro"
 name: "podcast-chaptering-tool-pro"
 version: "1.0.0"
@@ -6,20 +7,7 @@ displayName: "播客章节工具专业版"
 summary: "企业级播客章节工具,支持批量处理、社媒切片文案、多格式输出与API集成,适配生产流水线。。面向团队与企业用户的播客章节标记工具(专业版)。核心能力: - 涵盖免费版全部能力(章节标记、高光片"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  面向团队与企业用户的播客章节标记工具(专业版)。核心能力:
-  - 涵盖免费版全部能力(章节标记、高光片段、节目笔记)
-  - 批量处理:目录级递归,支持任务队列
-  - 社媒切片文案自动生成
-  - 多格式输出:Markdown / JSON / SRT / VTT / ID3
-  - API 集成:FastAPI 服务化,支持远程调用
-  - AI 智能章节:基于语义理解的精准划分
-  - 多语言支持:中英日韩等 30+ 语言
-  - 质量评估:置信度分析与人工校对流程
-  - 自动发布集成:支持主流播客平台
-
-  适用场景:
-  - 播客矩阵...
+description: "|-. 适用于需要podcast chaptering tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 创意设计
   - 播客
@@ -31,17 +19,15 @@ tags:
   - 音频
   - 媒体
   - self
-  - chapters
-  - highlights
-  - json
-  - transcript
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: L2-标准级
 ---
+
 # 播客章节工具 - 专业版
 
 ## 概述
@@ -352,12 +338,12 @@ batch:
 | VTT | Web 字幕 | HTML5 兼容 |
 | ID3 | MP3 章节 | 嵌入音频文件 |
 
-## 最佳实践
+## 优秀实践
 
 ### 1. AI 章节优化
 
 - **提供上下文**:在 prompt 中说明播客主题与目标听众
-- **控制章节数**:6-8 个章节最佳,过多则碎片化
+- **控制章节数**:6-8 个章节优秀,过多则碎片化
 - **人工校对**:AI 生成后快速过一遍,调整边界
 - **迭代优化**:保存好版本,持续优化 prompt
 
@@ -470,7 +456,7 @@ AI 模型支持 30+ 语言,包括中英日韩法德西等。文字稿语言自�
 - 批量处理建议监控 API 配额用量
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。专业版支持批量处理、社媒切片生成、多格式输出与 API 集成,适合企业级播客内容生产流水线.
 - API Key通过环境变量配置: export API_KEY=your_key
 

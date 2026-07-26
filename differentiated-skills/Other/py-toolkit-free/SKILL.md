@@ -1,58 +1,34 @@
 ---
+
 slug: py-toolkit-free
 name: py-toolkit-free
 version: 1.0.1
 displayName: Python工具包-免费版
 summary: "Python开发优选实践助手,避免可变默认参数、导入陷阱与常见运行时问题。Python 开发优选实践助手免费版,面向个人开发者与学习者。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: Python 开发优选实践助手免费版,面向个人开发者与学习者。核心能力:，可生成提升工作效率
-
-  - Python 常见陷阱检测与修复建议
-
-  - 类型提示与鸭子类型指导
-
-  - 列表/字典/集合使用规范
-
-  - 装饰器、闭包、生成器优选实践
-
-  - GIL 与并发编程建议
-
-  - 循环导入预防
-
-  - pytest 测试编写指导
-
-  适用场景:
-
-  - 日常 Python 开发避坑
-
-  - 代码审查参考
-
-  - 学习 Python 高级特性
-
-  - 编写可靠的生产级代码
-
-  差异化:免费版覆盖核心陷阱与优选实践'
+description: "Python 开发优选实践助手免费版,面向个人开发者与学习者。核心能力:，可产出提升工作效率. 适用于需要py toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要py toolkit相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - Python
+  - toolkit
+  - automation
+  - productivity
+  - developer-tools
   - 编程规范
   - 优选实践
   - 代码质量
   - 工具
   - 效率
-  - 写作
-  - items
-  - python
-  - print
-  - none
-  - decimal
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # Python 工具包 - 免费版
 
 ## 概述

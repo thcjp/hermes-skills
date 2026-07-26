@@ -7,14 +7,7 @@ displayName: 游戏设计工具箱专业版
 summary: "企业级游戏设计平台,支持商业桌游发布、教育课程包与团建方案库。面向桌游发行商、教育机构、企业与团建服务商的专业游戏设计平台."
 license: Proprietary
 edition: pro
-description: 面向桌游发行商、教育机构、企业与团建服务商的专业游戏设计平台。可生成提升工作效率
-  核心能力: 商业桌游发布、教育课程包、团建方案库、自定义机制、批量生成、版权管理
-
-  适用场景: 桌游商业化、教育产品开发、企业团建、咨询培训、IP 衍生
-
-  差异化: 专业版支持商业化设计、教育系统化方案与企业级团建,与免费版设计格式兼容
-
-  适用关键词: 商业桌游, 教育游戏课程, 团建方案, 自定义机制, 游戏IP, 培训设计'
+description: "面向桌游发行商、教育机构、企业与团建服务商的专业游戏设计平台。可产出提升工作效率. 适用于需要game toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 游戏设计
   - 企业级
@@ -26,14 +19,6 @@ tags:
   - 效率
   - 自动化
   - 创意
-  - 图像
-  - 生活
-  - 健康
-  - 开发
-  - headers
-  - json
-  - payload
-  - resp
 tools:
   - read
   - exec
@@ -41,7 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
+pricing_tier: L2-标准级
 ---
 
 # 游戏设计工具箱 (专业版)
@@ -231,7 +216,7 @@ export GAME_DESIGNER_EDITION="pro"
 ### Step 3: 创建项目
 
 ```bash
-curl -X POST -H "X-API-Key: $GAME_DESIGNER_ADMIN_KEY" \
+curl -X POST -H "X-API-ref: $GAME_DESIGNER_ADMIN_KEY" \
   -H "Content-Type: application/json" \
   -d '{"name":"Q3 商业桌游项目","type":"commercial","members":["designer1","designer2"]}' \
   "https://api.game-designer-pro.local/v1/projects"
@@ -240,7 +225,7 @@ curl -X POST -H "X-API-Key: $GAME_DESIGNER_ADMIN_KEY" \
 ### Step 4: 批量生成设计方案
 
 ```bash
-curl -X POST -H "X-API-Key: $GAME_DESIGNER_ADMIN_KEY" \
+curl -X POST -H "X-API-ref: $GAME_DESIGNER_ADMIN_KEY" \
   -H "Content-Type: application/json" \
   -d '{"concepts":["中世纪策略","科幻合作","儿童色彩"],"count":3}' \
   "https://api.game-designer-pro.local/v1/games/batch"
@@ -370,7 +355,7 @@ def generate_curriculum_structure(subject, sessions):
     }
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 商业化考量
 
@@ -413,13 +398,13 @@ def localize_game(game_id, target_languages):
 
 ```bash
 # 注册游戏版权
-curl -X POST -H "X-API-Key: $GAME_DESIGNER_ADMIN_KEY" \
+curl -X POST -H "X-API-ref: $GAME_DESIGNER_ADMIN_KEY" \
   -H "Content-Type: application/json" \
   -d '{"game_id":"g001","license_type":"commercial","territory":"worldwide"}' \
   "https://api.game-designer-pro.local/v1/ip/register"
 # ...
 # 生成授权协议
-curl -X POST -H "X-API-Key: $GAME_DESIGNER_ADMIN_KEY" \
+curl -X POST -H "X-API-ref: $GAME_DESIGNER_ADMIN_KEY" \
   -H "Content-Type: application/json" \
   -d '{"game_id":"g001","licensee":"partner_co","scope":"manufacturing"}' \
   "https://api.game-designer-pro.local/v1/ip/license"
@@ -498,7 +483,7 @@ export COMMON_CORE_API_KEY="..."
 
 ### 可用性分类
 
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+exec方法(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 面向桌游发行商、教育机构与企业,通过自然语言指令驱动 Agent 调用 Pro API,完成商业桌游设计、教育课程开发、团建方案生成
 - **专业版特性**: 商业化设计、教育课程包、团建方案库、自定义机制、批量生成、版权管理、多语言输出
 - **兼容性**: 与免费版设计格式完全兼容,支持平滑升级

@@ -1,58 +1,33 @@
 ---
+
 slug: security-toolkit-free
 name: security-toolkit-free
 version: 1.0.1
 displayName: Agent安全工具箱(免费版)
 summary: "AI Agent安全扫描与风险检测,24条规则覆盖注入、密钥泄露、恶意代码等,适合个人开发者,支持多种使用场景和自动化处理"
-license: Proprietary
+license: MIT
 edition: free
-description: 核心能力:，可自动提升工作效率
-
-  - 24条安全检测规则覆盖代码与配置
-
-  - 支持JS/TS/Python/Markdown等多语言扫描
-
-  - 风险等级自动分级(CRITICAL/HIGH/MEDIUM/LOW)
-
-  - 命令行扫描与报告输出
-
-  适用场景:
-
-  - 安装新Skill前的安全检查
-
-  - 代码仓库安全自检
-
-  - 开发环境安全基线扫描
-
-  - 第三方代码风险评估
-
-  差异化:
-
-  - 专为AI Agent生态设计的安全扫描器
-
-  - 覆盖Prompt注入、密钥泄露等AI特有风险
-
-  - 纯本地执行,不依赖外部服务
-
-  - 中文报告与修复建议'
+description: "核心能力:，可自发提升工作效率. 适用于需要security toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要security toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 安全
+  - security
+  - toolkit
+  - automation
+  - productivity
   - Agent安全
   - 代码审计
   - 漏洞扫描
   - 加密
   - 工具
-  - critical
-  - high
-  - agent
-  - medium
-  - severity
 tools:
   - read
   - exec
 homepage: ""
 category: "Security"
+pricing_tier: free
+
 ---
+
 # Agent安全工具箱(免费版)
 
 ## 概述
@@ -328,7 +303,7 @@ class SecurityScanner:
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 安装前必扫
 
@@ -384,7 +359,7 @@ A: 这些是专业版功能。免费版专注于静态代码扫描,专业版增�
 - 免费版无需任何 API Key,完全本地执行
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行安全扫描任务
 
 ## 错误处理

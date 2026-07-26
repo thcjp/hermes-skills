@@ -1,13 +1,13 @@
 ---
+
 slug: json-beautifier-free
 name: json-beautifier-free
 version: 1.0.1
 displayName: JSON美化工具免费版
 summary: "轻量级JSON格式化、压缩、验证与路径提取工具，适合日常开发调试与小文件处理.。JSON美化工具免费版提供格式化、压缩、验证、路径提取四项核心能力，帮助开发者快速整理JSON数据，提升可读性"
-license: Proprietary
+license: MIT
 edition: free
-description: JSON美化工具免费版提供格式化、压缩、验证、路径提取四项核心能力，帮助开发者快速整理JSON数据，提升可读性与可维护性。核心能力：支持2/4空格缩进格式化、单行压缩、语法合法性验证、JSONPath路径提取；内置类型识别、键名排序、Unicode转义处理；提供标准化的结构化输出，便于下游消费。Use
-  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
+description: "JSON美化工具免费版包含格式化、压缩、验证、路径提取四项核心能力，帮助开发者快速整理JSON数据，提升可读性与可维护性。核心能力：兼容2/4空格缩进格式化、单行压缩、语法合法性验证、JSONPath路径提取；内置类型识别、键名排序、Unicode转义处置；包含标准化的结构化输出，便于下游消费。Use"
 tags:
   - 集成工具
   - JSON
@@ -19,15 +19,15 @@ tags:
   - json
   - api
   - false
-  - key
-  - 路径提取
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # JSON美化工具（免费版）
 
 本工具提供JSON数据的格式化、压缩、验证与路径提取能力，帮助开发者快速整理JSON，提升可读性，并为下游处理提供标准化输出.
@@ -195,7 +195,7 @@ JSON是现代API与配置文件的主流数据格式，但原始JSON往往以压
 | `$.key[*]` | 数组所有元素 |
 | `$.key[0:2]` | 数组切片 |
 
-## 最佳实践
+## 优秀实践
 
 ### 缩进风格选择
 - 团队协作推荐2空格（节省垂直空间）

@@ -1,19 +1,13 @@
 ---
+
 slug: game-dev-tool-free
 name: game-dev-tool-free
 version: 1.0.0
 displayName: 游戏开发助手免费版
 summary: "全流程游戏开发向导,涵盖设计、编码、测试、发布与运营基础。面向独立开发者与小团队的全流程游戏开发向导."
-license: Proprietary
+license: MIT
 edition: free
-description: 面向独立开发者与小团队的全流程游戏开发向导，可生成提升工作效率
-  核心能力: 游戏设计文档、编码指导、测试策略、发布流程、运营基础
-
-  适用场景: 独立游戏开发、小型团队协作、Game Jam、学习游戏开发
-
-  差异化: 免费版覆盖完整开发流程,适合个人与小型团队
-
-  适用关键词: 游戏开发, GDD, 设计文档, 编码指导, 测试策略, 发布流程'
+description: "面向独立开发者与小团队的全流程游戏开发向导，可产出提升工作效率. 适用于需要game dev tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 游戏开发
   - 全流程
@@ -25,22 +19,15 @@ tags:
   - 效率
   - 自动化
   - 开发
-  - 代码
-  - 生活
-  - 健康
-  - 创意
-  - public
-  - int
-  - private
-  - level
-  - maxhealth
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 游戏开发助手 (免费版)
 
 ## 概述
@@ -369,7 +356,7 @@ CODING_STANDARDS = {
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 最小可行产品 (MVP)
 

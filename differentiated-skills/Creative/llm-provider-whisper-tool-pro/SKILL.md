@@ -1,4 +1,5 @@
 ---
+
 slug: "llm-provider-whisper-tool-pro"
 name: "llm-provider-whisper-tool-pro"
 version: "1.0.0"
@@ -6,20 +7,7 @@ displayName: "Whisper语音转文字专业版"
 summary: "企业级Whisper语音转文字工具,支持批量处理、GPU加速、说话人分离与API服务化,适配生产环境。"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  面向团队与企业用户的 Whisper 语音转文字工具(专业版)。核心能力:
-  - 涵盖免费版全部能力(本地转录、翻译、多格式输出)
-  - 批量处理:目录级递归转录,支持任务队列
-  - GPU 加速:CUDA / Metal / MPS 全面支持
-  - 说话人分离(diarization):多人对话识别
-  - 自定义词典:专业术语与品牌名词优化
-  - API 服务化:FastAPI 封装,支持远程调用
-  - 模型管理:多版本切换与预加载
-  - 质量评估:置信度分析与人工校对流程
-
-  适用场景:
-  - 企业会议纪要自动化流水线
-  ...
+description: "|-. 适用于需要llmvider whisper tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 创意设计
   - 语音转文字
@@ -31,16 +19,15 @@ tags:
   - 工具
   - 效率
   - whisper
-  - result
-  - import
-  - segments
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # Whisper 语音转文字工具 - 专业版
 
 ## 概述
@@ -333,7 +320,7 @@ batch:
   skip_existing: true     # 跳过已处理文件
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. GPU 加速优化
 
@@ -458,7 +445,7 @@ def assess_quality(result):
 - 企业部署建议通过密钥管理服务统一托管
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。专业版支持批量处理、GPU 加速与 API 服务化,适合企业级语音转文字生产环境.
 ## 错误处理
 

@@ -1,26 +1,24 @@
 ---
+
 slug: web-learner-tool-free
 name: web-learner-tool-free
 version: 1.0.0
 displayName: 自主学习助手免费版
 summary: "让 AI 自主上网搜索和学习,主动获取最新信息,整合互联网知识,适合个人知识获取。自主学习助手免费版,面向个人用户提供 AI 自主上网搜索和学习的能力。支持 Web 搜索、网页抓取、浏览器交"
-license: Proprietary
+license: MIT
 edition: free
-description: 自主学习助手免费版,面向个人用户提供 AI 自主上网搜索和学习的能力。支持 Web 搜索、网页抓取、浏览器交互等多种信息获取方式。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "自主学习助手免费版,面向个人用户包含 AI 自主上网搜索和学习的能力。兼容 Web 搜索、网页抓取、浏览器交互等多种信息获取方式。Use. 适用于需要web learner tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要web learner tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 研究工具
+  - web
+  - learner
+  - automation
+  - productivity
   - 自主学习
   - 知识获取
   - Web开发
   - 前端
   - 开发工具
-  - web_search
-  - bash
-  - web_fetch
-  - https
-  - url
 tools:
   - read
   - exec
@@ -28,7 +26,10 @@ tools:
   - glob
 homepage: ""
 category: "Development"
+pricing_tier: free
+
 ---
+
 # 自主学习助手免费版
 
 ## 概述
@@ -177,7 +178,7 @@ if not weather:
 
 ## 快速开始
 
-### 第一步:检查工具可用性
+### 领先步:检查工具可用性
 
 ```bash
 # 检查 web_search 是否可用(需要 Brave API Key)
@@ -257,7 +258,7 @@ except:
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 明确学习目标
 
@@ -307,9 +308,8 @@ for query in ["声明1", "声明2", "声明3"]:
 ### 5. 注明信息来源
 
 ```bash
-# 向用户呈现信息时,注明来源
-# 来源:百度新闻(news.baidu.com)
-# 来源:澎湃新闻(thepaper.cn)
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ## 常见问题
@@ -384,7 +384,7 @@ SEARCH_API_KEY=your_search_api_key
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,通过 exec 执行搜索和抓取工具)
+- **分类**: MD+EXEC模式纯 Markdown 指令,通过 exec 执行搜索和抓取工具)
 - **说明**: 基于多源信息获取的自主学习工具,通过自然语言指令驱动 Agent 搜索和整合互联网知识
 - **适用规模**: 个人用户、单次查询、本地运行
 

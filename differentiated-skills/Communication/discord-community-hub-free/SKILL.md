@@ -1,30 +1,13 @@
 ---
+
 slug: discord-community-hub-free
 name: discord-community-hub-free
 version: 1.0.1
 displayName: Discord社区中心免费版
 summary: "基础 Discord 社区管理工具,支持用户信息、服务器列表与基础集成查询.。面向个人社区管理者的 Discord 社区基础管理工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人社区管理者的 Discord 社区基础管理工具。核心能力:
-
-  - 查询当前用户资料与已加入服务器列表
-
-  - 获取服务器成员信息与角色概况
-
-  - 查询服务器小组件(widget)与邀请详情
-
-  - 基础集成连接与工具发现
-
-  适用场景:
-
-  - 个人 Discord 社区的日常信息查询
-
-  - 小型服务器成员与角色概览
-
-  - 集成工具的连接与发现
-
-  差异化: 免费版聚焦只读查询与基础集成,安全低风险;Pro 版提供应用命令、权益管理与角色连接等高级能力'
+description: "面向个人社区管控者的 Discord 社区基础管控工具。核心能力:. 适用于需要discord community hub相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Discord
   - 社区管理
@@ -36,14 +19,15 @@ tags:
   - await
   - discord
   - call_tool
-  - parameters
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: free
 ---
+
 # Discord 社区中心(免费版)
 
 ## 概述
@@ -266,7 +250,7 @@ await integration.call_tool({
 });
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **优先只读操作**: 免费版聚焦只读查询,安全无风险。在进行任何管理操作前,先用只读工具确认当前状态(如先查成员信息再考虑角色调整).
 2. **Widget 需服务器开启**: 获取服务器 widget 前需在服务器设置 → Widget 中开启「启用服务器组件」。未开启时调用会返回错误.
@@ -325,7 +309,7 @@ Discord 限制用户名每小时最多修改 2 次。频繁修改会触发此限
 - **其他 API Key**: 免费版不依赖额外 API Key.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令 + 部分功能需 `exec` 执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令 + 部分功能需 `exec` 执行能力)
 - **说明**: 以自然语言指令驱动 Agent 通过集成网关调用 Discord 工具完成社区查询
 - **适用规模**: 个人/小团队,只读查询为主,无写操作风险
 - **升级建议**: 如需应用命令管理、权益管理、角色连接、用户修改等写操作,请升级至 `discord-community-hub-pro`

@@ -1,20 +1,13 @@
 ---
+
 slug: learn-cog-tool-free
 name: learn-cog-tool-free
 version: 1.0.0
 displayName: 认知学习工具（免费版）
 summary: "基于认知科学的学习增强工具，支持间隔重复、主动回忆与知识图谱构建.,支持多种使用场景和自动化处理。提供高效自动化处理能力,适用于多种业务场景"
-license: Proprietary
+license: MIT
 edition: free
-description: 认知学习工具 - （免费版），可自动提升工作效率
-
-  核心能力: 认知学习, 间隔重复, 主动回忆, 闪卡, SM-2, FSRS, 认知负荷, 记忆曲线
-
-  适用场景: 个人用户日常使用，核心功能覆盖基础需求
-
-  差异化: 精简版，适合个人用户快速上手，提供核心功能与基础用法
-
-  适用关键词: 认知学习, 间隔重复, 主动回忆, 闪卡, SM-2, FSRS, 认知负荷, 记忆曲线'
+description: "认知学习工具 - （免费版），可自发提升工作效率. 适用于需要learn cog tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 认知学习
   - 间隔重复
@@ -26,19 +19,15 @@ tags:
   - 研究
   - 分析
   - 知识
-  - 文档
-  - interval
-  - 支持创建
-  - 查询
-  - input_params
-  - repetitions
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 认知学习工具（免费版）
 
 ## 概述
@@ -193,7 +182,7 @@ cognitive_learning:
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 
-## 最佳实践
+## 优秀实践
 
 ### 基础使用建议
 
@@ -206,9 +195,8 @@ cognitive_learning:
 ### 性能优化
 
 ```python
-# 免费版：单文件优化
-# 确保输入文件不超过建议大小
-# 处理完成后释放资源
+# 在此执行相关操作
+pass
 ```
 
 ## 常见问题

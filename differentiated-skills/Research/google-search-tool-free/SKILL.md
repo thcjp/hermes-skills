@@ -1,41 +1,24 @@
 ---
+
 slug: google-search-tool-free
 name: google-search-tool-free
 version: 1.0.0
 displayName: 谷歌搜索工具
 summary: 基于 Google Custom Search Engine 的联网搜索工具，支持实时信息检索与结果结构化输出，适合个人研究与学习使用.
-license: Proprietary
+license: MIT
 edition: free
-description: '基于 Google Custom Search Engine 的联网搜索工具，支持实时信息检索与结果结构化输出，适合个人研究与学习使用。核心能力:
-
-  - 通过 Google Custom Search API 进行精准搜索
-
-  - 返回结构化的搜索结果，包含标题、链接、摘要
-
-  - 支持中英文关键词搜索
-
-  - 简单的 API Key 配置流程
-
-  适用场景:
-
-  - 个人学术研究与资料收集
-
-  - 技术文档与官方信息检索
-
-  - 实时新闻与动态获取
-
-  差异化:
-
-  - 免费版聚焦单次搜索...'
+description: "基于 Google Custom Search Engine 的联网搜索工具，兼容实时信息检索与结果结构化输出，适合个人研究与学习使用。核心能力:. 适用于需要google search tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要google search tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 搜索
+  - google
+  - search
+  - automation
+  - productivity
   - Google
   - 研究工具
   - 信息检索
   - 检索
   - 工具
-  - api
-  - google
 tools:
   - read
   - exec
@@ -43,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 # 谷歌搜索工具（免费版）
 
 ## 概述
@@ -200,7 +186,7 @@ python3 （请参考skill目录中的脚本文件） "test" --max 1
 python3 （请参考skill目录中的脚本文件） "搜索关键词"
 # ...
 # 直接传入凭证（不推荐，用于测试）
-GOOGLE_API_KEY=xxx GOOGLE_CSE_ID=yyy \
+GOOGLE_API_KEY=placeholder GOOGLE_CSE_ID=yyy \
   python3 （请参考skill目录中的脚本文件） "搜索关键词"
 ```
 
@@ -213,7 +199,7 @@ GOOGLE_API_KEY=xxx GOOGLE_CSE_ID=yyy \
 | `--safe` | 布尔 | true | 启用安全搜索 |
 | `--lang` | 字符串 | zh-CN | 搜索语言 |
 
-## 最佳实践
+## 优秀实践
 
 ### 搜索关键词优化
 

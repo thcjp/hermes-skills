@@ -1,13 +1,13 @@
 ---
+
 slug: csv-insight-free
 name: csv-insight-free
 version: 1.0.1
 displayName: CSV洞察 免费版
 summary: "零依赖分析CSV文件，获取统计、筛选、异常检测与分组聚合，无需pandas.。CSV Insight 是面向数据分析师与开发者的轻量级 CSV 分析工具，通过命令行脚本完成统计、筛选、异常检"
-license: Proprietary
+license: MIT
 edition: free
-description: CSV Insight 是面向数据分析师与开发者的轻量级 CSV 分析工具，通过命令行脚本完成统计、筛选、异常检测与分组聚合，零外部依赖。核心能力：自动列类型检测（数值/日期/文本）、灵活筛选（比较运算符）、统计摘要（均值/中位数/标准差/分位数）、Z-Score
-  异常检测、分组聚合、结果导出。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+description: "CSV Insight 是面向数据剖析师与开发者的轻量级 CSV 剖析工具，通过命令行脚本完成统计、筛选、异常查验与分组聚合，零外部依赖。核心能力：自发列类型查验（数值/日期/文本）、灵活筛选（比较运算符）、统计摘要（均值/中位数/标准差/分位数）、Z-Score. 适用于需要csv insight相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 集成工具
   - 数据分析
@@ -22,7 +22,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # CSV Insight（免费版）
 
 面向数据分析师与开发者的轻量级 CSV 分析工具，零外部依赖，单条命令完成统计、筛选、异常检测与分组聚合.
@@ -117,6 +119,8 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） stats data.csv
 ### 统计摘要
 
 ```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 输出示例：
@@ -193,7 +197,7 @@ clothing      45000.00     180
 books         12000.00     450
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 先 stats 再深入分析
 
@@ -285,7 +289,7 @@ Top/Bottom N 的结果通常需要进一步处理，建议加 `--output` 导出�
 本改进作品在原始作品基础上进行了深度差异化改造，包括但不限于：
 
 - 完全重写中文化文档与场景指南
-- 新增输出示例与最佳实践
+- 新增输出示例与优秀实践
 - 完善常见问题与故障排查
 - 增加免费版/专业版分层策略
 

@@ -1,4 +1,5 @@
 ---
+
 slug: java-toolkit-pro
 name: java-toolkit-pro
 version: 1.0.0
@@ -6,25 +7,7 @@ displayName: Java 工具箱专业版
 summary: "面向团队的全项目扫描、规则集治理与 JVM 调优工具.。面向团队的 Java 全项目扫描、规则集治理与 JVM 调优专业工具。核心能力:"
 license: Proprietary
 edition: pro
-description: '面向团队的 Java 全项目扫描、规则集治理与 JVM 调优专业工具。核心能力:
-
-  - 全项目批量规则扫描与回归
-
-  - 团队规则集与豁免治理
-
-  - JVM/GC/模块化深度主题
-
-  - 测试（JUnit/Mockito）与性能门禁
-
-  适用场景:
-
-  - 企业多模块 Java 项目统一规则
-
-  - 团队规则集与豁免版本化治理
-
-  - JVM 调优与性能门禁
-
-  差异化: 专业版在免费版单文件自检上扩展全项目扫描、规则集治理、JVM 调优与测试门禁，兼容免费版 14 条规则'
+description: "面向团队的 Java 全项目扫描、规则集治理与 JVM 调优专业工具。核心能力:. 适用于需要java toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Java
   - 企业级
@@ -36,9 +19,6 @@ tags:
   - 写作
   - json
   - java
-  - jvm
-  - api
-  - jar
 tools:
   - read
   - exec
@@ -46,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # Java 工具箱（专业版）
 
 ## 概述
@@ -169,7 +151,7 @@ java -Xlog:gc*=info:file=gc.log -jar app.jar
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 - **规则集版本化**：规则变更走版本，便于回溯与协同.
 - **豁免要限期**：所有豁免标注原因与期限，到期自动告警.

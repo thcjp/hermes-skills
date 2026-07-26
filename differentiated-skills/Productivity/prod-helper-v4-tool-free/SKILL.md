@@ -1,26 +1,24 @@
 ---
+
 slug: prod-helper-v4-tool-free
 name: prod-helper-v4-tool-free
 version: 1.0.0
 displayName: 效率助手 v4 基础版
 summary: "增强版效率助手,支持智能任务分类、进度追踪、数据分析与自动化提醒。核心能力: 效率管理领域的专业化 AI 辅助工具,提供核心基础功能支持."
-license: Proprietary
+license: MIT
 edition: free
-description: '核心能力: 效率管理领域的专业化 AI 辅助工具,提供核心基础功能支持.
-  适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助.
-  差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持.
-  适用关键词: 效率, 助手, v4, 智能分类, 数据分析, 自动化, 进度追踪'
+description: "核心能力: 效率管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要prod helper v4 tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要prod helper v4 tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 效率助手
+  - prod
+  - helper
+  - automation
+  - productivity
   - 智能分类
   - 数据分析
   - 自动化
   - 工具
   - 写作
-  - 电商
-  - free
-  - pro
-  - true
 tools:
   - read
   - exec
@@ -28,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # 效率助手 v4 基础版
 
 ## 概述
@@ -246,7 +247,7 @@ Agent 将自动:
 | cache_enabled | bool | true | 启用结果缓存 |
 | timeout | int | 30 | 操作超时时间(秒) |
 
-## 最佳实践
+## 优秀实践
 
 1. **利用 AI 分类减少手动整理时间**
 2. **关注数据分析结果找出效率瓶颈**
@@ -317,7 +318,7 @@ FREE 版本支持单一 API Key 配置,满足个人使用需求:
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于 Markdown 的 AI Skill,通过自然语言指令驱动 Agent 执行任务
 - **FREE 特性**: 支持单次执行、基础配置与社区支持
 - **安全等级**: 基础,数据本地存储,建议定期备份

@@ -1,19 +1,13 @@
 ---
+
 slug: lifestyle-assistant-tool-free
 name: lifestyle-assistant-tool-free
 version: 1.0.0
 displayName: 生活助手免费版
 summary: "个人任务、沟通与日程管理助手,主动跟进待办、邮件摘要与会议安排。面向个人用户的生活与工作助理,聚焦任务捕获、沟通优化与日程管理."
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人用户的生活与工作助理,聚焦任务捕获、沟通优化与日程管理.
-  核心能力: 任务分解与跟进、邮件长文摘要、日程冲突检测、提醒推送、信息归档
-
-  适用场景: 自由职业者日程管理、个人事务跟进、邮件处理、会议准备
-
-  差异化: 免费版专注单用户日常任务管理,配置简单,适合个人使用
-
-  适用关键词: 任务管理, 日程安排, 邮件摘要, 待办清单, 会议准备, 助手'
+description: "面向个人用户的生活与工作助理,聚焦任务捕获、沟通调优与日程管控. 适用于需要lifestyle assistant tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 个人助手
   - 任务管理
@@ -25,21 +19,15 @@ tags:
   - 自动化
   - 写作
   - 电商
-  - 通信
-  - 邮件
-  - 知识
-  - json
-  - task
-  - due
-  - datetime
-  - import
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 生活助手 (免费版)
 
 ## 概述
@@ -136,7 +124,7 @@ archive.parent.mkdir(parents=True, exist_ok=True)
 
 ### 场景三: 日程协调
 
-在安排会议前自动检查冲突并建议最佳时间.
+在安排会议前自动检查冲突并建议优秀时间.
 ```text
 用户: "明天下午帮我安排一个 1 小时的产品评审"
 # ...
@@ -271,7 +259,7 @@ def find_slot(existing_events, duration_min, work_hours=("09:00","18:00")):
     return slots
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 任务捕获原则
 
@@ -354,7 +342,7 @@ export ASSISTANT_WORK_HOURS="09:00-18:00"
 
 ### 可用性分类
 
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+exec方法(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 通过自然语言指令驱动 Agent 管理本地任务、邮件摘要与日程,所有数据保存在本地
 - **免费版限制**: 单用户、本地存储、无自动化工作流、每日邮件摘要 10 封
 

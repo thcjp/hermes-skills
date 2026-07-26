@@ -1,4 +1,5 @@
 ---
+
 slug: domain-dns-manager-pro
 name: domain-dns-manager-pro
 version: 1.0.0
@@ -6,15 +7,7 @@ displayName: 域名DNS管理专业版
 summary: "企业级域名DNS编排引擎，支持批量域名、多供应商、Worker路由、审计日志与回滚.。域名DNS管理专业版是面向运维团队与企业的域名资产编排Skill，在免费版基础上扩展了批量域名管理、多供"
 license: Proprietary
 edition: pro
-description: '域名DNS管理专业版是面向运维团队与企业的域名资产编排Skill，在免费版基础上扩展了批量域名管理、多供应商编排、Worker路由、Rulesets、审计日志、定时健康检查、变更回滚与多账号管理能力。核心能力：
-
-  - 批量域名接入与迁移（单次100+域名），并行执行并汇总报告
-
-  - 多供应商编排：Cloudflare、DNSimple、Namecheap、AWS Route53、Aliyun DNS统一管理
-
-  - Worker路由与Bulk Redirects：大规模重定向配置
-
-  - DNS变更审计日志：所有操作记录到SQLite...'
+description: "域名DNS管控专业版是面向运维团队与企业的域名资产编排Skill，在免费版基础上扩展了成批域名管控、多供应商编排、Worker路由、Rulesets、审计日志、定时健康检查、变更回滚与多账号管控能力。核心能力：. 适用于需要domain dns manager相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 域名管理
   - 企业运维
@@ -26,12 +19,6 @@ tags:
   - 自动化
   - 运维
   - 监控
-  - 写作
-  - 电商
-  - 研究
-  - dns
-  - cloudflare
-  - 域名
 tools:
   - read
   - exec
@@ -39,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 域名DNS管理专业版（Domain DNS Manager Pro）
 
 ## 概述
@@ -262,7 +251,7 @@ monitoring:
         alert_days_before: 30
   alerts:
     webhook:
-      url: https://hooks.slack.com/services/xxx
+      url: https://hooks.slack.com/services/placeholder
     email:
       - ops@company.com
 ```
@@ -281,7 +270,7 @@ worker:
   mapping_file: ./redirect-worker-mapping.md
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 批量操作策略
 1. **分批执行**：超过50个域名时分批，每批20-30个

@@ -5,10 +5,14 @@ name: localmemo-pro
 version: 2.0.1
 displayName: 本地长记忆
 summary: "零API零云依赖的本地向量记忆：离线可用、隐私不出域、embedding缓存省成本.。面向隐私敏感与离线场景的本地向量记忆系统。基于LanceDB+Ollama nomic-embed-te"
-license: Proprietary
-description: 面向隐私敏感与离线场景的本地向量记忆系统。基于LanceDB+Ollama nomic-embed-text，提供本地embedding生成、向量语义检索、embedding缓存、WAL写前日志、三层冷热分层能力。适用于隐私敏感行业（医疗/金融/法律）、离线/弱网环境、个人知识库、合规要求数据不出域场景，实现零外部API、零数据出域、完全离线可用。适用关键词：本地记忆、向量记忆、离线记忆、隐私记忆、embedding、LanceDB、Ollama、nomic、本地向量、local
-  memory.
-tags: embedding,node,请参考,目录中的,脚本文件
+license: MIT
+description: "面向隐私敏感与离线场景的本地向量记忆系统。基于LanceDB+Ollama nomic-embed-text，包含本地embedding产出、向量语义检索、embedding缓存、WAL写前日志、三层冷热分层能力。适用于隐私敏感行业（医疗/金融/法律）、离线/弱网环境、个人知识库、合规要求数据不出域场景，达成零外部API、零数据出域、完全离线可用。适用关键词：本地记忆、向量记忆、离线记忆、隐私记忆、embedding、LanceDB、Ollama、nomic、本地向量、local"
+tags:
+  - embedding
+  - node
+  - 请参考
+  - 目录中的
+  - 脚本文件
 tools:
   - read
   - exec
@@ -18,7 +22,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
-
+pricing_tier: L2-标准级
 ---
 
 # 本地长记忆（LocalMemo Pro）
@@ -82,7 +86,7 @@ L1 热内存（SESSION-STATE.md 活跃任务上下文）→ L2 温向量（Lance
 - 输出：存储确认（store）或召回的相关记忆列表（search，按相似度排序）
 
 **不适用场景：**
-- 需要极致 embedding 质量（如大规模检索）— 云端 text-embedding-3-large 更优
+- 需要优秀 embedding 质量（如大规模检索）— 云端 text-embedding-3-large 更优
 - 资源极度受限设备（< 4GB 内存）— Ollama 难以运行
 - 需要跨设备同步记忆 — 本地方案无云同步
 - 无需语义检索的简单键值存储 — 用扁平文件更轻量

@@ -1,50 +1,34 @@
 ---
+
 slug: plugin-arch-tool-free
 name: plugin-arch-tool-free
 version: 1.0.0
 displayName: 插件架构工具-免费版
 summary: "UI插件架构安装工具,支持自定义视图注册与导航集成,适合个人项目扩展。UI 插件架构安装工具免费版,面向个人开发者与小型项目."
-license: Proprietary
+license: MIT
 edition: free
-description: UI 插件架构安装工具免费版,面向个人开发者与小型项目，可自动提升工作效率
-  核心能力:
-
-  - 插件 UI 视图注册机制
-
-  - 自定义导航标签页集成
-
-  - 侧边栏菜单扩展
-
-  - 插件间通信基础支持
-
-  - 安装引导与参考代码
-
-  适用场景:
-
-  - 为个人项目添加自定义 UI 面板
-
-  - 扩展现有应用的控制台界面
-
-  - 学习插件化架构设计
-
-  差异化:免费版提供基础插件注册能力。PRO版扩展插件市场、权限管控、热更新与企业级开发框架.
-  适用关键词: plugin, architecture, UI, 插件, 架构, 视图注册, 导航, 扩展'
+description: "UI 插件架构安装工具免费版,面向个人开发者与小型项目，可自发提升工作效率. 适用于需要plugin arch tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要plugin arch tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 插件架构
+  - plugin
+  - arch
+  - automation
+  - productivity
   - UI扩展
   - 开发工具
   - 工具
   - 效率
   - api
-  - registerview
-  - typescript
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # 插件架构工具 - 免费版
 
 ## 概述
@@ -212,7 +196,7 @@ interface ViewRegistration {
          user, users, message, calendar, clock, star
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **ID 唯一性**:视图 ID 使用插件名前缀(如 `myplugin-panel`),避免与其他插件冲突
 2. **合理排序**:position 值间隔 5 或 10,便于后续插入新视图
@@ -258,7 +242,7 @@ A: 视图注册后,需要提供对应的 React 组件。当用户点击侧边栏
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **分类**: MD+EXEC模式Markdown指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 完成插件架构安装与配置
 - **限制**: 免费版不支持插件市场、权限管控与热更新
 

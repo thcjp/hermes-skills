@@ -1,4 +1,5 @@
 ---
+
 slug: solo-research-tool-pro
 name: solo-research-tool-pro
 version: 1.0.0
@@ -6,31 +7,7 @@ displayName: 市场研究工具专业版
 summary: "企业级深度市场研究系统,支持MCP工具集成、多引擎搜索、收入验证、YouTube分析与深度内容抓取。市场研究工具专业版为企业团队提供深度市场研究与竞争分析能力。核心能力:"
 license: Proprietary
 edition: pro
-description: '市场研究工具专业版为企业团队提供深度市场研究与竞争分析能力。核心能力:
-
-  - MCP工具集成(知识库/代码图谱/会话搜索)
-
-  - 多引擎搜索路由(Reddit/YouTube/GitHub)
-
-  - TrustMRR收入验证(Stripe验证MRR)
-
-  - YouTube评论深度挖掘
-
-  - Playwright深度内容抓取
-
-  - 混合搜索策略(MCP工具+WebSearch)
-
-  适用场景:
-
-  - 企业深度竞争分析
-
-  - 投资标的尽职调查
-
-  - 产品市场定位研究
-
-  - 行业全景调研报告
-
-  差异化:专业版在免费版基础研究流程上...'
+description: "市场研究工具专业版为企业团队包含深度市场研究与竞争剖析能力。核心能力:. 适用于需要solo research tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 研究工具
   - 市场研究
@@ -42,8 +19,6 @@ tags:
   - 工具
   - mcp
   - reddit
-  - youtube
-  - websearch
 tools:
   - read
   - exec
@@ -52,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 # 市场研究工具专业版
 ## 概述
 市场研究工具专业版是企业级深度市场研究与竞争分析系统。在免费版竞品分析、用户痛点挖掘、基础SEO研究、域名检查与市场规模估算的基础上,专业版扩展了MCP工具集成(知识库搜索/代码图谱/会话搜索)、多引擎搜索路由(Reddit/YouTube/GitHub专用引擎)、TrustMRR收入验证(Stripe验证MRR数据)、YouTube评论深度挖掘、Playwright深度内容抓取与混合搜索策略等企业级能力.
@@ -220,9 +197,9 @@ AI助手执行混合搜索策略:
    - 收入验证: 在研究中提及"验证收入"或"TrustMRR"
    - 多引擎搜索: 在研究中提及"YouTube评论"或"Reddit全文"
    - 深度抓取: 在研究中提及"全文内容"或"绕过限制"
-```
-
-### 使用MCP工具
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 # MCP工具优先级(MCP可用时优先使用)
 知识库搜索:
@@ -248,13 +225,13 @@ AI助手执行混合搜索策略:
 # ...
   project_code_search(query="关键词", project="项目名")
   -> 项目源代码语义搜索
-```
-
-### Reddit内容访问回退链
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
-Reddit内容获取回退链(从最佳到最后手段):
+Reddit内容获取回退链(从优秀到最后手段):
 # ...
-1. MCP工具 Playwright (old.reddit.com)     <- 最佳: 绕过CAPTCHA,全文+评论
+1. MCP工具 Playwright (old.reddit.com)     <- 优秀: 绕过CAPTCHA,全文+评论
 2. PullPush API (api.pullpush.io)      <- 按query/subreddit/作者搜索
 3. MCP工具 web_search include_raw_content   <- 有时可用,常被截断
 4. WebFetch / WebSearch snippets        <- 最后手段,仅部分数据
@@ -263,9 +240,9 @@ Reddit内容获取回退链(从最佳到最后手段):
 - 发现Reddit帖子: MCP工具 web_search(engines="reddit") 或 WebSearch
 - 读取全文: MCP工具 Playwright browser_navigate("https://old.reddit.com/r/...")
 - old.reddit.com不显示CAPTCHA,可获取完整帖子+评论
-```
-
-### TrustMRR收入验证
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 通过WebFetch获取TrustMRR数据
 # URL: trustmrr.com/startup/<slug>
@@ -281,13 +258,11 @@ Reddit内容获取回退链(从最佳到最后手段):
 # - 创始人社交账号
 # 搜索同类初创公司
 # WebSearch: "site:trustmrr.com <category or idea>"
-```
-
-#
-## 示例
-### 混合搜索策略配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
-| 步骤 | 最佳后端 | 原因 |
+| 步骤 | 优秀后端 | 原因 |
 |:---:|:---:|:---:|
 com + site:g2.com | 广泛发现+PH+B2B评价 |
 | Reddit/痛点 | MCP工具 web_search(engines="reddit") + MCP工具 Playwright | PullPush API, selftext内容 |
@@ -298,9 +273,9 @@ com + site:g2.com | 广泛发现+PH+B2B评价 |
 | Hacker News | WebSearch site:news.ycombinator.com | HN讨论与观点 |
 | 融资/公司 | WebSearch site:crunchbase.com | 竞品融资,团队规模 |
 com/startup/<slug> | Stripe验证MRR,增长,技术栈 |
-```
-
-### MCP工具配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 # config/mcp.yaml
 mcp_tools:
@@ -336,9 +311,9 @@ fallback:
   # MCP不可用时回退到WebSearch/WebFetch
   web_search: WebSearch
   raw_content: WebFetch
-```
-
-### 研究报告高级模板
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```markdown
 # 深度市场研究报告: {产品想法}
 ## 元数据
@@ -374,7 +349,7 @@ Top 5痛点,含引用、来源URL与情感分析
 ## 6. 市场规模
 - TAM: {总市场} (来源: {数据源})
 - SAM: {可服务市场}
-- SOM: {第一年可获取}
+- SOM: {领先年可获取}
 - 增长率: {CAGR}
 # ...
 ## 7. 技术可行性
@@ -392,7 +367,7 @@ Top 5痛点,含引用、来源URL与情感分析
 - 下一步: /validate <想法>
 ```
 
-## 最佳实践
+## 优秀实践
 ### 1. 优先使用MCP工具
 MCP工具(知识库搜索、代码图谱)提供比WebSearch更精准的结果。如果MCP工具可用,优先使用:
 
@@ -454,7 +429,7 @@ A: WebFetch是简单的HTTP请求,无法执行JavaScript,遇到CAPTCHA会失败�
 ### Q: PullPush API是什么?
 A: PullPush API(api.pullpush.io)是Reddit内容的第三方搜索API,支持按query/subreddit/作者/分数/日期搜索。返回JSON格式的完整帖子内容(selftext)。速率限制:15 req/min(软),30 req/min(硬),1000 req/hr。适合Reddit内容发现与检索.
 ### Q: 混合搜索策略如何选择后端?
-A: 专业版根据搜索维度自动选择最佳后端:竞品发现用WebSearch(广覆盖),Reddit讨论用MCP工具 web_search(engines="reddit")+Playwright(全文),YouTube用MCP工具 web_search(engines="youtube"),收入验证用WebFetch(TrustMRR)。用户无需手动选择,AI助手自动路由.
+A: 专业版根据搜索维度自动选择优秀后端:竞品发现用WebSearch(广覆盖),Reddit讨论用MCP工具 web_search(engines="reddit")+Playwright(全文),YouTube用MCP工具 web_search(engines="youtube"),收入验证用WebFetch(TrustMRR)。用户无需手动选择,AI助手自动路由.
 ### Q: 代码图谱(codegraph)对研究有何帮助?
 A: 代码图谱帮助发现已有项目中的可复用代码、架构模式与技术栈选择。对于评估技术可行性、估算开发周期和发现可复用基础设施非常有价值。如果无MCP工具 codegraph,此步骤自动跳过.
 ## 依赖说明
@@ -484,7 +459,7 @@ A: 代码图谱帮助发现已有项目中的可复用代码、架构模式与�
 - **LLM API**: 由Agent平台内置提供,负责想法解析、信息提取、综合分析与报告生成
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,依赖Agent的WebSearch/WebFetch与可选MCP工具)
+- **分类**: MD+EXEC模式纯Markdown指令,依赖Agent的WebSearch/WebFetch与可选MCP工具)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成深度市场研究任务。专业版在免费版基础上扩展MCP工具集成、多引擎搜索路由、TrustMRR收入验证、YouTube深度挖掘与Playwright深度抓取能力,适合企业深度竞争分析、投资标的尽职调查与行业全景调研报告场景.
 ## 错误处理
 

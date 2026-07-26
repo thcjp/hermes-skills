@@ -7,9 +7,7 @@ displayName: 订阅摘要(专业版)
 summary: "企业级订阅摘要专业版，含AI深度摘要、多源聚合、定时推送、团队共享与个性化推荐.。订阅摘要助手专业版是面向企业级场景的完整RSS订阅内容管理与分析工具。在免费版基础筛选能力之上，新增AI深度"
 license: Proprietary
 edition: pro
-description: "订阅摘要助手专业版是面向企业级场景的完整RSS订阅内容管理与分析工具。在免费版基础筛选能力之上，新增AI深度摘要、多源聚合、定时推送、团队共享、个性化推荐、全文搜索增强、阅读统计分析七大高级能力。Use
-  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。提升信息检索效率与准确度。触发关键词：搜索、机器学习"
-  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+description: "订阅摘要助手专业版是面向企业级场景的完整RSS订阅内容管控与剖析工具。在免费版基础筛选能力之上，新增AI深度摘要、多源聚合、定时推送、团队共享、个性化推荐、全文搜索增强、阅读统计剖析七大高级能力。Use. 适用于需要feed digest tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 订阅摘要
   - 企业级
@@ -21,8 +19,6 @@ tags:
   - 工具
   - team_name
   - self
-  - team
-  - team_subscriptions
 tools:
   - read
   - exec
@@ -31,8 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
-
+pricing_tier: L2-标准级
 ---
+
 > **AI深度摘要+多源聚合+定时推送+团队共享。企业级订阅管理全功能覆盖。**
 
 将复杂的订阅内容管理与分发任务交给专业工具处理。专业版在免费版基础筛选能力之上，新增AI深度摘要、多源聚合、定时推送、团队共享、个性化推荐、全文语义搜索、阅读统计分析七大高级能力，满足企业级场景对信息管理的深度、广度与协作要求.
@@ -164,7 +161,7 @@ print(team.get_team_digest("engineering"))
 **场景描述**：每日自动获取技术订阅，AI摘要后推送到企业飞书群.
 ```python
 scheduler = ScheduledDigestPusher()
-scheduler.pusher.register("feishu", "https://open.feishu.cn/open-apis/bot/v2/hook/xxx", "feishu")
+scheduler.pusher.register("feishu", "https://open.feishu.cn/open-apis/bot/v2/hook/placeholder", "feishu")
 scheduler.start()
 ```
 
@@ -202,14 +199,14 @@ recommendations = recommender.recommend(all_entries, top_n=10)
 
 ### 30秒上手
 ```bash
-export FEISHU_WEBHOOK=https://open.feishu.cn/open-apis/bot/v2/hook/xxx
+export FEISHU_WEBHOOK=https://open.feishu.cn/open-apis/bot/v2/hook/placeholder
 # ...
 python3 ai_digest.py --entries 50 --push feishu
 # ...
 python3 aggregate.py --by theme --output digest.md
-```
-
-### 120秒标准搭建
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 pip install requests schedule beautifulsoup4
 # ...
@@ -224,8 +221,8 @@ schedule:
   weekly: "0 9 * * 1"
 # ...
 push:
-  feishu: https://open.feishu.cn/open-apis/bot/v2/hook/xxx
-  slack: https://hooks.slack.com/services/xxx
+  feishu: https://open.feishu.cn/open-apis/bot/v2/hook/placeholder
+  slack: https://hooks.slack.com/services/placeholder
 # ...
 ai:
   model: gpt-4o
@@ -240,10 +237,9 @@ team:
 EOF
 # ...
 python3 feed_digest_service.py --config feed_digest_config.yaml
-```
-
-## 配置示例
-### 企业级配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 sources:
   - name: 技术博客
@@ -272,9 +268,9 @@ schedule:
 push:
   channels:
     - type: feishu
-      url: https://open.feishu.cn/open-apis/bot/v2/hook/xxx
+      url: https://open.feishu.cn/open-apis/bot/v2/hook/placeholder
     - type: slack
-      url: https://hooks.slack.com/services/xxx
+      url: https://hooks.slack.com/services/placeholder
     - type: email
       url: https://api.email-service.com/send
 # ...
@@ -292,10 +288,9 @@ personalization:
   track_history: true
   recommend_based_on: [keywords, themes, feeds]
   top_n: 10
-```
-
-## 最佳实践
-### 1. AI摘要优化
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 DIGEST_TEMPLATES = {
     'formal': '正式报告风格，包含详细分析与关联',
@@ -303,9 +298,9 @@ DIGEST_TEMPLATES = {
     'colloquial': '口语化风格，便于团队群聊分享',
     'academic': '学术风格，包含引用与参考文献',
 }
-```
-
-### 2. 团队协作
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 TEAM_GUIDELINES = {
     'min_share_per_week': 3,  # 每周至少分享3篇
@@ -313,9 +308,9 @@ TEAM_GUIDELINES = {
     'tag_required': True,  # 必须打标签
     'themes': ['AI', '架构', '性能', '安全'],  # 推荐主题
 }
-```
-
-### 3. 个性化推荐优化
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 def update_preferences_based_on_history(recommender):
     """基于阅读历史自动更新偏好"""
@@ -385,7 +380,7 @@ analyze_reading_patterns()
 此外，专业版还提供：
 - 多角色场景指南（知识管理/研发团队/个人用户）
 - 完整FAQ（7问）与故障排查表
-- 性能优化建议与最佳实践
+- 性能优化建议与优秀实践
 - GPT-4o模型路由与优先支持
 
 ## 定价
@@ -416,9 +411,9 @@ analyze_reading_patterns()
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

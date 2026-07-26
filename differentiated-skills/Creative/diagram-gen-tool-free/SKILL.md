@@ -1,30 +1,13 @@
 ---
+
 slug: diagram-gen-tool-free
 name: diagram-gen-tool-free
 version: 1.0.0
 displayName: 图表生成工具-免费版
 summary: "轻量级图表生成工具，支持Mermaid格式流程图与序列图的快速创建与编辑.。图表生成工具免费版，面向个人开发者的轻量级图表制作方案。核心能力："
-license: Proprietary
+license: MIT
 edition: free
-description: '图表生成工具免费版，面向个人开发者的轻量级图表制作方案。核心能力：
-
-  - Mermaid 格式图表生成与编辑
-
-  - 流程图与序列图两种核心图表类型
-
-  - 自然语言描述转图表结构
-
-  - Markdown 内嵌输出，适合文档集成
-
-  适用场景：
-
-  - 技术文档中的流程图与序列图
-
-  - 代码仓库 README 图表补充
-
-  - 个人项目的架构草图
-
-  差异化：免费版聚焦 Mermaid 单一格式与两种高频图表类型，零依赖、即开即用'
+description: "图表产出工具免费版，面向个人开发者的轻量级图表制作方案。核心能力：. 适用于需要diagram gen tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Creative
   - Diagram
@@ -36,14 +19,15 @@ tags:
   - markdown
   - flowchart
   - mmd
-  - mermaid-cli
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 图表生成工具（免费版）
 
 ## 概述
@@ -174,7 +158,7 @@ EOF
 
 ## 快速开始
 
-### 第一步：描述你的图表需求
+### 领先步：描述你的图表需求
 
 用自然语言告诉工具你想要什么图表：
 
@@ -250,7 +234,7 @@ flowchart TD
     style C fill:#1a1a2e,stroke:#e94560,color:#fff
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **保持简洁**：单张图表节点不超过 15 个，复杂流程拆分为多张子图.
 2. **方向选择**：线性流程用 TD，并行流程用 LR，提升可读性.
@@ -258,7 +242,7 @@ flowchart TD
 4. **分支标注**：决策分支务必标注"是/否"或具体条件.
 5. **文档集成**：Mermaid 代码直接嵌入 Markdown，无需额外图片文件.
 ```text
-免费版最佳实践检查:
+免费版优秀实践检查:
 [ ] 单图节点数 ≤ 15
 [ ] 决策分支已标注条件
 [ ] 方向选择符合阅读习惯

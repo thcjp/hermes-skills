@@ -5,18 +5,23 @@ name: tg-bot-builder-free
 version: 1.0.1
 displayName: TG机器人构建免费版
 summary: "零代码快速搭建Telegram机器人，支持键盘按钮、内联菜单、Webhook与自动回复。面向独立开发者与小团队的Telegram机器人构建助手，覆盖Bot创建、交互菜单、消息流转、群组管理等"
-license: Proprietary
+license: MIT
 edition: free
-description: 面向独立开发者与小团队的Telegram机器人构建助手，覆盖Bot创建、交互菜单、消息流转、群组管理等核心场景。核心能力：通过自然语言指令生成Bot配置代码，支持Reply键盘、Inline内联按钮、Webhook接入、自动回复规则与基础群组权限管理。Use
-  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
-tags: bot,telegram,webhook,token,python,https
+description: "面向独立开发者与小团队的Telegram机器人构建助手，覆盖Bot创建、交互菜单、消息流转、群组管控等核心场景。核心能力：通过自然语言指令产出Bot配置代码，兼容Reply键盘、Inline内联按钮、Webhook接入、自发回复规则与基础群组权限管控。Use. 适用于需要tg bot builder相关能力的开发场景,提供结构化的工作流程和配置指引."
+tags:
+  - bot
+  - telegram
+  - webhook
+  - token
+  - python
+  - https
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
+pricing_tier: free
 ---
 
 # TG机器人构建助手（免费版）
@@ -73,14 +78,14 @@ category: "Creative"
 内容创作者搭建订阅通知系统，新文章发布时通过Webhook推送到订阅者群组，支持富文本格式与图片附件.
 ## 快速开始
 
-### 第一步：创建Bot（约60秒）
+### 领先步：创建Bot（约60秒）
 
 1. 在Telegram中搜索 `@BotFather`
 2. 发送 `/newbot` 命令
 3. 按提示输入Bot名称和用户名
 4. 保存返回的API Token（格式如 `123456789:ABCdefGHIjklMNOpqrSTUvwxYZ`）
 
-### 第二步：生成你的第一个键盘菜单
+### 第二步：生成你的领先个键盘菜单
 
 向Agent描述需求：
 
@@ -104,7 +109,7 @@ reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
 
 ```bash
 # 设置Webhook（替换TOKEN和你的域名）
-curl -s "https://api.telegram.org/bot<TOKEN>/setWebhook?url=https://yourdomain.com/webhook"
+curl -s "https://api.telegram.org/bot<item>/setWebhook?url=https://yourdomain.com/webhook"
 ```
 
 ## 示例
@@ -149,7 +154,7 @@ WELCOME_TEMPLATE = """
 """
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 已知限制
 

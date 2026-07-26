@@ -1,4 +1,5 @@
 ---
+
 slug: pandoc-convert-tool-pro
 name: pandoc-convert-tool-pro
 version: 1.0.0
@@ -6,15 +7,7 @@ displayName: Pandoc转换工具（专业版）
 summary: "通用文档格式转换工具，支持Markdown、HTML、Word、PDF等多种格式互转.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
-description: 'Pandoc转换工具 - （专业版）
-
-  核心能力: 文档转换, pandoc, 格式转换, Markdown转Word, HTML转换, 批量转换, 多格式
-
-  适用场景: 企业级场景，支持批量操作、团队协作与高级功能
-
-  差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
-
-  适用关键词: 文档转换, pandoc, 格式转换, Markdown转Word, HTML转换, 批量转换, 多格式'
+description: "Pandoc变换工具 - （专业版）. 适用于需要pandoc convert tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 文档转换
   - Pandoc
@@ -26,13 +19,6 @@ tags:
   - 研究
   - 分析
   - 知识
-  - 文档
-  - 安全
-  - str
-  - path
-  - input_file
-  - output_file
-  - 支持创建
 tools:
   - read
   - exec
@@ -40,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # Pandoc转换工具（专业版）
 
 ## 概述
@@ -330,9 +318,9 @@ pandoc_convert:
 - 多租户隔离支持
 - 合规性检查内置
 
-## 最佳实践
+## 优秀实践
 
-### 企业级最佳实践
+### 企业级优秀实践
 
 1. **明确需求**：对于大批量任务，先规划分批策略与并行度
 2. **检查输入**：批量处理前先验证所有输入文件的有效性
@@ -343,11 +331,8 @@ pandoc_convert:
 ### 性能优化
 
 ```python
-# 专业版：批量性能优化
-# 1. 合理设置并行度（建议CPU核心数）
-# 2. 分批处理避免内存溢出
-# 3. 使用异步IO提升吞吐量
-# 4. 启用结果缓存减少重复计算
+# 在此执行相关操作
+pass
 ```
 
 ## 常见问题

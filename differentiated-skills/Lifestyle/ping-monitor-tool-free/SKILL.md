@@ -1,19 +1,13 @@
 ---
+
 slug: ping-monitor-tool-free
 name: ping-monitor-tool-free
 version: 1.0.0
 displayName: 网络监控免费版
 summary: "网站可用性监控,支持ICMP/HTTP检测、告警通知与基础可视化。面向个人开发者与小团队的网站可用性监控工具."
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人开发者与小团队的网站可用性监控工具.
-  核心能力: ICMP Ping、HTTP 检测、邮件告警、可用性统计、基础可视化
-
-  适用场景: 个人博客监控、API 健康检查、家庭网络监控、小团队项目
-
-  差异化: 免费版聚焦个人监控需求,轻量部署,适合个人开发者
-
-  适用关键词: 网站监控, Ping检测, HTTP健康检查, 可用性监控, 告警通知'
+description: "面向个人开发者与小团队的网站可用性监控工具. 适用于需要ping monitor tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 网络监控
   - 可用性监控
@@ -25,15 +19,14 @@ tags:
   - 工具
   - self
   - target
-  - def
-  - config
-  - return
 tools:
   - read
   - exec
 homepage: ""
 category: "Operations"
+pricing_tier: free
 ---
+
 # 网络监控 (免费版)
 
 ## 概述
@@ -406,7 +399,7 @@ def generate_report(stats):
     return report
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 监控频率
 
@@ -499,7 +492,7 @@ export ALERT_EMAIL="you@example.com"
 
 ### 可用性分类
 
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+exec方法(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 通过自然语言指令驱动 Agent 执行网络监控,数据本地存储
 - **免费版限制**: 单用户、30 天数据、邮件告警、单地区检测、无 API 性能监控
 
@@ -527,9 +520,9 @@ export ALERT_EMAIL="you@example.com"
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

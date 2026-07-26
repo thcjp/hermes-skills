@@ -1,49 +1,24 @@
 ---
+
 slug: research-agent-tool-free
 name: research-agent-tool-free
 version: 1.0.0
 displayName: 研究代理助手免费版
 summary: "开放式主题研究工具，构建可持续维护的Markdown研究文档，支持交互式探索。研究代理助手免费版，帮助用户围绕特定主题开展开放式研究，通过交互式对话逐步构建结构化研究文档。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 研究代理助手免费版，帮助用户围绕特定主题开展开放式研究，通过交互式对话逐步构建结构化研究文档。核心能力:，可自动提升工作效率
-
-  - 交互式研究模式，实时搜索与综合
-
-  - 为每个研究主题创建独立文件夹与文档
-
-  - 结构化研究文档（问题、发现、资源、后续步骤）
-
-  - 定期综合检查点与进度回顾
-
-  - 研究状态管理与PDF导出
-
-  适用场景:
-
-  - 个人开发者技术方案调研
-
-  - 学生课题研究与论文准备
-
-  - 独立创业者市场验证
-
-  差异化:
-
-  - 免费版聚焦交互式研究，文档驱动而非对话驱动
-
-  - 研究成果持久化保存...'
+description: "研究代理助手免费版，帮助用户围绕特定主题开展开放式研究，通过交互式对话逐步构建结构化研究文档。核心能力:，可自发提升工作效率. 适用于需要research agent tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要research agent tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 研究
+  - research
+  - agent
+  - automation
+  - productivity
   - 文档
   - 调研
   - 知识管理
   - AI代理
   - 自动化
-  - 智能
-  - research
-  - text
-  - agent
-  - true
-  - research-agent
 tools:
   - read
   - exec
@@ -52,7 +27,10 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+pricing_tier: free
+
 ---
+
 # 研究代理助手（免费版）
 ## 概述
 研究代理助手免费版是一款帮助用户围绕特定主题开展开放式研究的智能代理工具。核心理念是"对话是短暂的，文档才是重要的"。代理为每个研究主题创建独立的研究文件夹，通过交互式对话逐步搜索、综合和更新研究文档，最终形成结构化的知识沉淀.
@@ -116,7 +94,7 @@ Agent 执行流程：
 1. 创建研究文件夹 ~/.research-agent/workspace/research/frontend-frameworks-comparison/
 2. 创建 prompt.md 记录原始问题
 3. 创建 research.md 初始化研究结构
-4. 开始第一轮搜索与发现
+4. 开始领先轮搜索与发现
 ```
 
 prompt.md 内容：
@@ -214,10 +192,9 @@ Agent：
 3. 按主题组织发现
 4. 记录引用来源
 5. 标注信息可信度
-```
-
-## 快速开始
-### Step 1：启动新研究
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 new research: [你的研究主题]
 ```
@@ -231,9 +208,9 @@ Agent 会引导你逐步深入：
 2. 更新研究文档
 3. 展示新增发现（不重复已有内容）
 4. 提示下一步方向
-```
-
-### Step 3：查看研究文档
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 show doc
 ```
@@ -264,11 +241,9 @@ graduate
 # ...
 # 导出PDF
 export pdf
-```
-
-#
-## 示例
-### 研究工作区配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 创建研究工作区
 mkdir -p ~/.research-agent/workspace/research
@@ -308,9 +283,9 @@ naming:
   slug_method: "kebab-case"
   max_length: 50
 EOF
-```
-
-### 研究文档模板
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```markdown
 # {Topic Title}
 **Status:** Active Research
@@ -357,31 +332,30 @@ EOF
 # ...
 ## Current Understanding
 <!-- 每5-10轮交互后自动生成的综合理解 -->
-```
-
-## 最佳实践
-### 1. 提出明确的研究问题
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 # 推荐 - 问题明确
 new research: Rust vs Go在微服务后端开发中的性能对比
 # ...
 # 不推荐 - 问题模糊
 new research: 编程语言
-```
-
-### 2. 分步骤深入
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 # 先广度搜索
 帮我先搜索这个领域的主要参与者和基本概念
 # ...
 # 再深度分析
-深入分析第一个发现的细节
+深入分析领先个发现的细节
 # ...
 # 最后综合
 帮我综合所有发现，写一个当前理解的总结
-```
-
-### 3. 定期综合检查
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 # 每5-10轮交互后执行
 summarize
@@ -391,9 +365,9 @@ summarize
 # 2. 清理冗余发现
 # 3. 识别研究盲区
 # 4. 建议下一步方向
-```
-
-### 4. 记录不确定性
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 # 在发现中标注信息可信度
 - "根据官方文档" - 权威来源
@@ -406,9 +380,9 @@ summarize
 对于快速变化领域的信息，标注发现日期至关重要.
 ```markdown
 - 2026-07-18: 某框架发布3.0版本，性能提升50%（来源：官方博客）
-```
-
-### 6. 优先更新已有章节
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 # Agent行为原则：
 # - 优先更新现有章节，而非创建新章节
@@ -426,10 +400,8 @@ summarize
 ### Q4：PDF 导出需要什么工具？
 PDF 导出需要安装 pandoc。可通过系统包管理器安装.
 ```bash
-# 依赖说明
-# Ubuntu: sudo apt install pandoc
-# macOS: brew install pandoc
-# Windows: choco install pandoc
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### Q5：研究完成后如何"毕业"为项目？

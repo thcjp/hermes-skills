@@ -1,46 +1,24 @@
 ---
+
 slug: python-dataviz-tool-free
 name: python-dataviz-tool-free
 version: 1.0.0
 displayName: Python数据可视化-免费版
 summary: 使用matplotlib/seaborn/plotly创建专业图表,支持柱状图、折线图、散点图与热力图
-license: Proprietary
+license: MIT
 edition: free
-description: 'Python 数据可视化工具免费版,面向个人开发者与数据分析师。核心能力:
-
-  - matplotlib 静态图表(柱状/折线/散点/饼图)
-
-  - seaborn 统计可视化(箱线/小提琴/KDE)
-
-  - plotly 交互式图表
-
-  - 多子图布局与样式定制
-
-  - CSV/字典/NumPy 数据源支持
-
-  - PNG/SVG/PDF 导出
-
-  适用场景:
-
-  - 数据分析与报告制作
-
-  - 学术论文图表绘制
-
-  - 个人项目数据可视化
-
-  差异化:免费版提供核心图表能力'
+description: "Python 数据可视化工具免费版,面向个人开发者与数据剖析师。核心能力:. 适用于需要python dataviz tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要python dataviz tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 数据可视化
+  - python
+  - dataviz
+  - automation
+  - productivity
   - Python
   - 图表
   - matplotlib
   - 数据处理
   - 数据分析
-  - 工具
-  - plt
-  - sns
-  - python
-  - seaborn
 tools:
   - read
   - exec
@@ -48,7 +26,10 @@ tools:
   - glob
 homepage: ""
 category: "Research"
+pricing_tier: free
+
 ---
+
 # Python 数据可视化 - 免费版
 
 ## 概述
@@ -194,7 +175,7 @@ source .venv/（请参考skill目录中的脚本文件）  # Linux/macOS
 pip install matplotlib seaborn plotly pandas numpy
 ```
 
-### 创建第一个图表
+### 创建领先个图表
 
 ```python
 import matplotlib.pyplot as plt
@@ -264,7 +245,7 @@ plt.savefig('chart.pdf', bbox_inches='tight')
 plt.savefig('chart.png', dpi=300, transparent=True)
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **DPI 设置**:出版级图表用 300 DPI,网页用 72-150 DPI
 2. **figure 大小**:宽高比建议 10:6 或 12:8(英寸)
@@ -315,7 +296,7 @@ A: 使用 `plt.subplots(rows, cols)` 创建多子图。例如 `fig, axes = plt.s
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **分类**: MD+EXEC模式Markdown指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 生成 Python 可视化代码并执行
 - **限制**: 免费版不支持交互式仪表盘、大数据可视化与实时数据流图表
 
@@ -344,9 +325,9 @@ A: 使用 `plt.subplots(rows, cols)` 创建多子图。例如 `fig, axes = plt.s
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

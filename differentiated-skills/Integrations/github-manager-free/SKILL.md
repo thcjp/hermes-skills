@@ -1,31 +1,13 @@
 ---
+
 slug: github-manager-free
 name: github-manager-free
 version: 1.0.1
 displayName: GitHub管理器(免费版)
 summary: 通过gh CLI管理GitHub仓库的Issue、PR与工作流,支持基础查询、状态检查与结构化输出,适合个人开发者日常协作.
-license: Proprietary
+license: MIT
 edition: free
-description: 'GitHub管理器(免费版)是一款面向个人开发者的GitHub日常协作助手,通过gh命令行工具封装常用操作,帮助用户高效管理Issue、Pull
-  Request与CI工作流。核心能力:
-
-  - Issue与Pull Request的基础查询、状态检查与结构化输出
-
-  - 工作流运行列表查看与失败步骤定位
-
-  - 支持JSON输出与jq过滤,便于自动化处理
-
-  - 提供常用命令速查与故障排查指南
-
-  适用场景:
-
-  - 个人开发者日常GitHub仓库维护
-
-  - 开源项目Issue与PR的快速浏览
-
-  - CI/CD工作流状态检查与失败排查
-
-  -...'
+description: "GitHub管控器(免费版)是一款面向个人开发者的GitHub日常协作助手,通过gh命令行工具封装常用操作,帮助用户高效管控Issue、Pull. 适用于需要github manager相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - GitHub
   - 协作
@@ -37,14 +19,15 @@ tags:
   - owner
   - issue
   - list
-  - json
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # GitHub管理器(免费版)
 
 通过gh命令行工具管理GitHub仓库的Issue、Pull Request与工作流,聚焦"查询-检查-定位"三步流程,帮助个人开发者高效完成日常协作.
@@ -239,7 +222,7 @@ for repo in "${repos[@]}"; do
 done
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 命令选择策略
 
@@ -325,7 +308,7 @@ A: 常见原因: (1)字段名拼写错误,先用`--json`不带jq查看完整字�
 - **禁止**: 在SKILL.md或脚本中硬编码GitHub Token
 
 ### 可用性分类
-- **分类**: MD+EXEC(Markdown指令+命令行工具执行)
+- **分类**: MD+EXEC模式Markdown指令+命令行工具执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行gh命令
 
 ## 错误处理

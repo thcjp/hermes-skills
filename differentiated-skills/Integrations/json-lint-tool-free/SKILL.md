@@ -5,11 +5,9 @@ name: json-lint-tool-free
 version: 1.0.2
 displayName: JSON校验工具免费版
 summary: "轻量级JSON语法校验工具，递归扫描工作区.json文件并输出结构化错误报告.。JSON校验工具免费版提供工作区级别的JSON语法批量校验能力，帮助开发者快速发现配置文件、数据文件中的语法错"
-license: Proprietary
+license: MIT
 edition: free
-description: "JSON校验工具免费版提供工作区级别的JSON语法批量校验能力，帮助开发者快速发现配置文件、数据文件中的语法错误。核心能力：递归扫描指定目录的所有。Use
-  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。快速洞察数据价值，支持数据驱动决策。触发关键词：数据分析、自动化、部署、机器学习"
-  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+description: "JSON校验工具免费版包含工作区级别的JSON语法成批校验能力，帮助开发者快速发现配置文件、数据文件中的语法错误。核心能力：递归扫描指定目录的所有。Use. 适用于需要json lint tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 集成工具
   - JSON
@@ -27,8 +25,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
-
+pricing_tier: free
 ---
+
 # JSON校验工具（免费版）
 
 本工具递归扫描工作区中的`.json`文件，逐个校验语法合法性，输出结构化错误报告，帮助开发者快速定位与修复JSON语法问题.
@@ -180,7 +179,7 @@ node lint.js --dir path/to/config
 | `*.bak` | 排除备份文件 |
 | `.cache` | 排除缓存目录 |
 
-## 最佳实践
+## 优秀实践
 
 ### 扫描范围控制
 - 项目校验时排除`node_modules`/`.git`/`dist`等目录，避免扫描第三方文件

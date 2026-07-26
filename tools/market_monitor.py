@@ -632,6 +632,265 @@ def add_manual_entry(name: str, platform: str, price: float, downloads: int, cal
     if manual_path.exists():
         with open(manual_path, 'r', encoding='utf-8') as f:
             entries = json.load(f)
+
+
+# ============ v2.3: 平台评分同步 + 低评分触发升级 (需求7+8) ============
+
+RATING_THRESHOLD = 4.5  # 用户要求: 低于4.5分不能上传, 需触发升级
+
+
+def _ensure_rating_columns():
+    """幂等添加platform_rating等字段到skills表 (不依赖db.py, 直接ALTER)"""
+    conn = sqlite3.connect(str(DB_PATH))
+    existing = {r[1] for r in conn.execute("PRAGMA table_info(skills)").fetchall()}
+    new_cols = [
+        ('platform_rating', 'REAL DEFAULT 0'),
+        ('platform_rating_count', 'INTEGER DEFAULT 0'),
+        ('platform_downloads', 'INTEGER DEFAULT 0'),
+        ('platform_ai_review', 'TEXT'),
+        ('last_platform_sync_at', 'TEXT'),
+    ]
+    for col_name, col_def in new_cols:
+        if col_name not in existing:
+            conn.execute(f"ALTER TABLE skills ADD COLUMN {col_name} {col_def}")
+            print(f"  + 添加字段: skills.{col_name}")
+    conn.commit()
+    conn.close()
+
+
+def _scrape_ai_rating(slug: str) -> float:
+    """从SkillHub skill详情页抓取AI评分 (公开API不返回此数据)
+    
+    页面格式: "3.3/5.0AI 评分" 或 "3.3 优秀(AI 评分)"
+    """
+    try:
+        page_url = f"https://www.skillhub.cn/skills/{slug}"
+        req = Request(page_url)
+        req.add_header('User-Agent', 'Mozilla/5.0')
+        req.add_header('Accept', 'text/html')
+        with urlopen(req, timeout=10) as resp:
+            html = resp.read().decode('utf-8', errors='ignore')
+        # 提取AI评分 (多种格式)
+        for pattern in [
+            r'(\d+\.?\d*)\s*/\s*5\.0\s*AI\s*评',   # "3.3/5.0AI 评分"
+            r'(\d+\.?\d*)\s+优秀?\(AI\s*评',        # "3.3 优秀(AI 评分)"
+            r'AI\s*评[分]\s*[：:]\s*(\d+\.?\d*)',    # "AI评分: 3.3"
+        ]:
+            m = re.search(pattern, html)
+            if m:
+                return float(m.group(1))
+    except Exception:
+        pass
+    return 0.0
+
+
+def sync_platform_ratings(limit: int = 0, scrape_ai_rating: bool = True):
+    """从SkillHub公开API同步我们skill的统计数据到DB
+    
+    使用公开API GET /api/v1/skills/{slug} 获取:
+    - stats.downloads, stats.stars, stats.comments
+    - securityReports.keen.status, securityReports.sanbu.status
+    
+    可选: 从skill详情页抓取AI评分 (scrape_ai_rating=True)
+    注意: 公开API不返回AI评分(3.3/3.6等), 需要从skill详情页获取
+    """
+    _ensure_rating_columns()
+    
+    conn = sqlite3.connect(str(DB_PATH))
+    conn.row_factory = sqlite3.Row
+    
+    # 获取已上传到SkillHub的skill列表
+    query = """
+        SELECT slug FROM skills 
+        WHERE skillhub_sync_status = 'synced'
+    """
+    if limit > 0:
+        query += f" LIMIT {limit}"
+    
+    slugs = [r['slug'] for r in conn.execute(query).fetchall()]
+    print(f"需要同步 {len(slugs)} 个skill的平台数据 (AI评分抓取={'开启' if scrape_ai_rating else '关闭'})...")
+    
+    synced = 0
+    failed = 0
+    rating_found = 0
+    now = datetime.now().isoformat()
+    
+    for i, slug in enumerate(slugs):
+        if (i + 1) % 50 == 0:
+            print(f"  进度: {i+1}/{len(slugs)} (成功{synced}, 失败{failed}, 评分{rating_found})")
+        
+        url = f"{SKILLHUB_API_BASE}/skills/{slug}"
+        data = fetch_json(url)
+        
+        if not data:
+            failed += 1
+            continue
+        
+        skill_data = data.get('skill', {})
+        stats = skill_data.get('stats', {})
+        sec_reports = data.get('securityReports', {})
+        
+        downloads = safe_int(stats.get('downloads', 0))
+        stars = safe_int(stats.get('stars', 0))
+        comments = safe_int(stats.get('comments', 0))
+        
+        # 安全报告状态
+        keen_status = sec_reports.get('keen', {}).get('status', '')
+        sanbu_status = sec_reports.get('sanbu', {}).get('status', '')
+        ai_review = json.dumps({
+            'keen': keen_status,
+            'sanbu': sanbu_status,
+            'stars': stars,
+            'comments': comments,
+        }, ensure_ascii=False) if keen_status or sanbu_status else None
+        
+        # AI评分 (从网页抓取)
+        ai_rating = 0.0
+        if scrape_ai_rating:
+            ai_rating = _scrape_ai_rating(slug)
+            if ai_rating > 0:
+                rating_found += 1
+        
+        conn.execute("""
+            UPDATE skills SET 
+                platform_downloads = ?,
+                platform_rating = ?,
+                platform_rating_count = ?,
+                platform_ai_review = ?,
+                last_platform_sync_at = ?
+            WHERE slug = ?
+        """, (downloads, ai_rating, comments, ai_review, now, slug))
+        synced += 1
+    
+    conn.commit()
+    print(f"\n同步完成: {synced} 成功, {failed} 失败, AI评分获取 {rating_found} 个")
+    
+    # 输出统计
+    rows = conn.execute("""
+        SELECT 
+            COUNT(CASE WHEN platform_downloads > 0 THEN 1 END) as has_downloads,
+            COUNT(CASE WHEN platform_ai_review IS NOT NULL THEN 1 END) as has_review,
+            COUNT(CASE WHEN platform_rating > 0 THEN 1 END) as has_rating,
+            SUM(platform_downloads) as total_downloads
+        FROM skills WHERE skillhub_sync_status = 'synced'
+    """).fetchone()
+    print(f"  有下载数: {rows['has_downloads']}")
+    print(f"  有安全报告: {rows['has_review']}")
+    print(f"  有AI评分: {rows['has_rating']}")
+    print(f"  总下载量: {rows['total_downloads']}")
+    
+    # 输出低评分skill
+    if scrape_ai_rating:
+        low_rated = conn.execute("""
+            SELECT slug, current_display_name, platform_rating
+            FROM skills 
+            WHERE platform_rating > 0 AND platform_rating < ?
+            ORDER BY platform_rating ASC
+        """, (RATING_THRESHOLD,)).fetchall()
+        if low_rated:
+            print(f"\n  ⚠ 发现 {len(low_rated)} 个低评分skill (评分 < {RATING_THRESHOLD}):")
+            for r in low_rated:
+                print(f"    {r['slug']}: {r['platform_rating']} ({r['current_display_name']})")
+    
+    conn.close()
+    return {'synced': synced, 'failed': failed, 'rating_found': rating_found}
+
+
+def check_low_rating_skills():
+    """检查低评分skill并触发升级 (需求8: 评分<4.5触发升级)
+    
+    检查逻辑:
+    1. 查询DB中platform_rating < 4.5且 > 0的skill
+    2. 对每个低评分skill, 调用upgrade_single_skill触发升级
+    3. 记录升级触发原因到DB
+    
+    注意: platform_rating需要通过sync_platform_ratings或手动方式填充
+    """
+    _ensure_rating_columns()
+    
+    conn = sqlite3.connect(str(DB_PATH))
+    conn.row_factory = sqlite3.Row
+    
+    # 查询低评分skill
+    low_rated = conn.execute("""
+        SELECT slug, current_display_name, platform_rating, platform_downloads,
+               platform_ai_review, current_status, local_path
+        FROM skills 
+        WHERE platform_rating > 0 AND platform_rating < ?
+        ORDER BY platform_rating ASC
+    """, (RATING_THRESHOLD,)).fetchall()
+    
+    print(f"发现 {len(low_rated)} 个低评分skill (评分 < {RATING_THRESHOLD}):")
+    
+    if not low_rated:
+        print("  无低评分skill, 质量门控有效!")
+        conn.close()
+        return {'low_rated_count': 0, 'upgraded': 0}
+    
+    upgraded = 0
+    for skill in low_rated:
+        slug = skill['slug']
+        rating = skill['platform_rating']
+        name = skill['current_display_name'] or slug
+        ai_review = skill['platform_ai_review'] or ''
+        
+        print(f"\n  [{slug}] {name}")
+        print(f"    评分: {rating}")
+        print(f"    下载: {skill['platform_downloads']}")
+        print(f"    状态: {skill['current_status']}")
+        
+        # 分析低评分原因
+        reasons = []
+        if 'suspicious' in ai_review or 'malicious' in ai_review:
+            reasons.append('安全报告异常')
+        if skill['platform_downloads'] < 10:
+            reasons.append('下载量低')
+        
+        # 检查本地是否有SKILL.md文件
+        local_path = skill['local_path'] or ''
+        has_local = False
+        if local_path:
+            if local_path.startswith('/d/'):
+                local_path = 'd:' + local_path[2:]
+            has_local = Path(local_path).exists()
+        
+        if has_local:
+            print(f"    本地文件: 存在, 触发升级流程...")
+            try:
+                # 复用version_sync_pipeline的升级函数
+                _sys_path_tools = os.path.dirname(os.path.abspath(__file__))
+                if _sys_path_tools not in sys.path:
+                    sys.path.insert(0, _sys_path_tools)
+                from version_sync_pipeline import upgrade_single_skill
+                result = upgrade_single_skill(slug)
+                status = result.get('status', 'unknown')
+                print(f"    升级结果: {status}")
+                if status == 'completed':
+                    upgraded += 1
+            except Exception as e:
+                print(f"    升级失败: {e}")
+        else:
+            print(f"    本地文件: 不存在, 标记为需重新差异化")
+            conn.execute("""
+                UPDATE skills SET current_status = 'needs_rebuild',
+                                  workflow_state = 'low_rating_no_local'
+                WHERE slug = ?
+            """, (slug,))
+            reasons.append('本地文件缺失,需重新差异化')
+        
+        if reasons:
+            print(f"    低评分原因: {', '.join(reasons)}")
+    
+    conn.commit()
+    conn.close()
+    
+    print(f"\n升级完成: {upgraded}/{len(low_rated)} 个skill已升级")
+    print(f"需手动处理: {len(low_rated) - upgraded} 个skill")
+    
+    return {'low_rated_count': len(low_rated), 'upgraded': upgraded}
+
+
+
     
     entries.append({
         'platform': platform,
@@ -669,6 +928,18 @@ def main():
         compare_with_competitors()
     elif cmd == 'trending':
         discover_trending()
+    elif cmd == 'sync-ratings':
+        # sync-ratings [limit] [--no-rating]
+        limit = 0
+        scrape = True
+        for arg in sys.argv[2:]:
+            if arg == '--no-rating':
+                scrape = False
+            elif arg.isdigit():
+                limit = int(arg)
+        sync_platform_ratings(limit=limit, scrape_ai_rating=scrape)
+    elif cmd == 'check-low-ratings':
+        check_low_rating_skills()
     elif cmd == 'add' and len(sys.argv) > 7:
         add_manual_entry(sys.argv[2], sys.argv[3], float(sys.argv[4]), 
                         int(sys.argv[5]), int(sys.argv[6]), float(sys.argv[7]),

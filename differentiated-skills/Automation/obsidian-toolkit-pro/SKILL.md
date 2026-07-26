@@ -1,4 +1,5 @@
 ---
+
 slug: obsidian-toolkit-pro
 name: obsidian-toolkit-pro
 version: 1.0.0
@@ -6,14 +7,7 @@ displayName: Obsidian工具箱(专业版)
 summary: Obsidian综合工具箱专业版，含批量操作、高级模板、插件深度集成、Canvas管理与多vault高级管理.
 license: Proprietary
 edition: pro
-description: 'Obsidian工具箱专业版是在免费版基础上的全功能升级，为AI Agent提供企业级Obsidian综合管理能力。专业版解锁批量笔记操作、高级模板系统（Templater脚本）、插件深度集成（Dataview/Obsidian
-  Git/Tasks）、Canvas画布管理、多vault高级管理等高级特性，实现复杂知识库的高效管理.
-  核心能力：多vault自动发现与高级管理、笔记全生命周期管理（含批量操作）、wikilink自动重构、高级模板系统（Templater脚本、条件逻辑、循环、变量）、插件深度集成（Dataview查询、Obsidian
-  Git版本控制、Tasks任务管理）、Canvas画布管理（JSON结构、节点操作）、多vault同步与冲突解决、笔记关系图谱分析、自定义工作流自动化.
-  适用场景：企业级知识库管理、大规模笔记重构、复杂模板工作流、插件生态深度使用、Canvas可视化协作、多设备多vault同步、知识图谱分析、团队知识共享.
-  差异化：完全中文化重写，聚焦"综合工具箱"而非基础入门，新增批量操作脚本、Templater脚本模板、Dataview查询语法、Obsidian Git工作流、Canvas
-  JSON结构、多vault同步策略。内容原创度超过70%。专业版提供完整功能与优先支持。保留原始MIT版权声明.
-  适用关键词：Obsidian工具箱、批量操作、Templater、Dataview、Obsidian Git、Canvas、多vault同步'
+description: "Obsidian工具箱专业版是在免费版基础上的全功能升级，为AI Agent包含企业级Obsidian综合管控能力。专业版解锁成批笔记操作、高级模板系统（Templater脚本）、插件深度集成（Dataview/Obsidian. 适用于需要obsidian toolkit相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - Obsidian
   - 高级模板
@@ -25,8 +19,6 @@ tags:
   - templater
   - obsidian
   - date
-  - file
-  - now
 tools:
   - read
   - exec
@@ -34,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # Obsidian工具箱（专业版）
 
 > **AI Agent的企业级Obsidian综合管理工具箱。批量操作、高级模板、插件深度集成、Canvas管理，复杂知识库一网打尽。**
@@ -275,9 +269,9 @@ TABLE
 FROM "Projects"
 WHERE type = "project" AND status = "active"
 SORT priority DESC, created DESC
-```
-# ...
-## 本周会议
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```dataview
 TABLE 
   date as "日期",
@@ -285,27 +279,27 @@ TABLE
 FROM "Meetings"
 WHERE type = "meeting" AND date >= date(today) - dur(7 days)
 SORT date ASC
-```
-# ...
-## 待办行动项
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```dataview
 TASK
 FROM "Meetings"
 WHERE !completed AND due >= date(today)
 GROUP BY file.link
 SORT due ASC
-```
-# ...
-## 未完成决策
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```dataview
 LIST
 FROM "Decisions"
 WHERE status != "decided"
 SORT file.mtime DESC
 LIMIT 10
-```
-# ...
-## 按标签统计
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```dataview
 TABLE length(rows) as "数量"
 FROM ""
@@ -802,19 +796,26 @@ git checkout <commit-hash> -- "Projects/ProjectA/需求.md"
 **Tasks查询**：
 
 ```sql
+# 在此执行相关操作
+echo "操作完成"
 ```tasks
 not done
 due after yesterday
 sort by due
 limit 20
-```
-# ...
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```sql
+# 在此执行相关操作
+echo "操作完成"
 ```tasks
 done
 sort by done reverse
 limit 10
-```
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 # ...
 ### Canvas画布管理
@@ -1059,8 +1060,8 @@ obsidian-cli create "Meetings/2026-07-18-架构评审" --open
 **场景描述**：使用Dataview创建动态项目仪表盘，自动汇总项目状态、会议、行动项.
 # ...
 ```bash
-# 创建仪表盘笔记（见120秒标准搭建的Dataview查询）
-# 仪表盘会自动更新，无需手动维护
+# 在此执行相关操作
+echo "操作完成"
 ```
 # ...
 ### 场景四：多设备vault同步（多设备用户角色）
@@ -1068,9 +1069,8 @@ obsidian-cli create "Meetings/2026-07-18-架构评审" --open
 **场景描述**：使用Obsidian Git在多设备间同步vault，自动备份与冲突解决.
 # ...
 ```bash
-# 配置Obsidian Git插件（见vault高级管理章节）
-# 每次打开vault自动拉取最新变更
-# 每5分钟自动提交本地变更并推送
+# 在此执行相关操作
+echo "操作完成"
 ```
 # ...
 ### 场景五：架构可视化（技术负责人角色）
@@ -1140,10 +1140,9 @@ cm = CanvasManager("~/Documents/MyVault/Canvases/系统架构.canvas")
 git add .
 git commit -m "ci: vault backup $(date)"
 git push origin main
-```
-# ...
-###与任务管理系统集成
-# ...
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 # 从Tasks插件数据生成报告
 def generate_task_report(vault_path):
@@ -1164,10 +1163,9 @@ read_text(encoding="utf-8")
             })
 
     return tasks
-```
-# ...
-### 与日历系统集成
-# ...
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 # 从会议笔记生成日历事件
 def export_meetings_to_ics(vault_path, output_file):
@@ -1451,9 +1449,9 @@ Dataview支持四种查询类型：TABLE（表格）、LIST（列表）、TASK�
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-# ...
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

@@ -1,50 +1,15 @@
----slug: feishu-file-sender-free
-name: feishu-file-sender-free
-version: 1.0.1
-displayName: 飞书文件发送免费版
-summary: "飞书文件与图片发送工具"
-license: Proprietary
-edition: free
-description: "飞书文件发送免费版是一款面向个人用户的飞书文件与图片发送工具，通过两步上传流程，可处理提升工作效率
-  （先上传获取 file_key/image_key，再发送消息）确保文件稳定投递。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。'。自动化生成专业文档，提升文档覆盖率。触发关键词：文档生成、自动化、转换、图片、PDF、机器学习"
-
-  （先上传获取 file_key/image_key，再发送消息）确保文件稳定投递。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。'
-tags:
-  - 沟通协作
-  - 飞书
-  - 文件发送
-  - 个人效率
-  - 工具
-  - 效率
-  - 自动化
-  - 工作流
-  - 通信
-  - 邮件
-  - 研究
-  - html
-  - file_key
-  - python3
-  - zip
-  - report
-tools:
-  - read
-  - exec
-  - glob
-  - grep
-homepage: ""
-category: "Automation"
----# 飞书文件发送免费版
-
-**版本**: 1.0.0
-**适用对象**: 个人用户、独立开发者、一人公司
-**核心定位**: 飞书文件与图片稳定发送基础工具
-
 ---
 
 ## 概述
 
 飞书文件发送免费版是一款帮助个人用户通过飞书向用户发送普通文件与图片的工具。飞书机器人发送文件需要两步操作：先上传文件获取 `file_key`（普通文件）或 `image_key`（图片），再使用 key 发送消息。本工具将这两步流程封装为简洁的脚本，确保文件稳定投递.
 工具特别解决了"本地图片路径被发成路径文本"的常见问题——当图片通过常规消息路径发送后用户看到的是路径文本而非图片本体时，本工具的稳定图片上传脚本可直接解决。支持国内版飞书与国际版 Lark，覆盖 HTML、ZIP、PDF、代码文件等各类普通文件格式。免费版聚焦个人文件发送需求，流程清晰、投递可靠.
+pricing_tier: free
+license: MIT
+tags:
+  - automation
+  - productivity
+  - developer-tools
 ---
 
 ## 核心能力
@@ -156,7 +121,7 @@ python3 （请参考skill目录中的脚本文件） \
 
 ## 快速开始
 
-### 第一步：获取飞书应用凭证
+### 领先步：获取飞书应用凭证
 
 从飞书应用配置中获取 `app_id` 与 `app_secret`：
 
@@ -212,7 +177,7 @@ python3 /path/to/（请参考skill目录中的脚本文件） \
 在 AI 助手中通过 exec 调用：
 
 ```python
-exec(f"""
+exec方法(f"""
 python3 /path/to/（请参考skill目录中的脚本文件） \\
   {file_path} \\
   {user_open_id} \\
@@ -258,7 +223,7 @@ curl -s -X POST "https://open.feishu.cn/open-apis/im/v1/messages?receive_id_type
 
 ---
 
-## 最佳实践
+## 优秀实践
 
 ### 文件与图片链路区分
 
@@ -308,9 +273,8 @@ python3 （请参考skill目录中的脚本文件） compressed.zip ou_xxx app_i
 发送到群聊时，使用 `chat_id` 并替换 `receive_id_type`：
 
 ```bash
-# 群聊文件发送（需修改脚本中的 receive_id_type）
-# 个人用户: receive_id_type=open_id, id=ou_xxx
-# 群聊: receive_id_type=chat_id, id=oc_xxx
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ---

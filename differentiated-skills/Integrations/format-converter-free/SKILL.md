@@ -1,28 +1,13 @@
 ---
+
 slug: format-converter-free
 name: format-converter-free
 version: 1.0.1
 displayName: 数据格式转换(免费版)
 summary: "CSV、JSON、XML、YAML、TOML 等格式互转的免费核心能力,支持单文件快速转换.。数据格式转换免费版面向需要在不同数据格式间快速转换的开发者与数据工作者,提供 CSV、JSON、"
-license: Proprietary
+license: MIT
 edition: free
-description: '数据格式转换免费版面向需要在不同数据格式间快速转换的开发者与数据工作者,提供 CSV、JSON、XML、YAML、TOML 等主流格式的互转能力。核心能力:
-
-  - 主流格式互转:CSV ↔ JSON ↔ YAML ↔ XML ↔ TOML
-
-  - 单文件快速转换:输入一个文件,输出另一种格式
-
-  - 嵌套结构保留:支持多层嵌套对象与数组
-
-  - 类型智能推断:数字、布尔、null 自动识别
-
-  - 编码自动处理:UTF-8/GBK/UTF-16 自动检测与转换
-
-  适用场景:
-
-  - 配置文件迁移(如 YAML → TOML)
-
-  - API ...'
+description: "数据格式变换免费版面向需要在不同数据格式间快速变换的开发者与数据工作者,包含 CSV、JSON、XML、YAML、TOML 等主流格式的互转能力。核心能力:. 适用于需要format converter相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 格式转换
   - 数据交换
@@ -34,14 +19,15 @@ tags:
   - csv
   - yaml
   - toml
-  - data
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 数据格式转换 免费版
 
 ## 一、概述
@@ -276,7 +262,7 @@ with open('data.json', 'w', encoding='utf-8') as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
 ```
 
-## 六、最佳实践
+## 六、优秀实践
 
 - **备份原文件**:转换前保留原始文件,便于回退
 - **校验输出**:转换后用 `diff` 或工具校验数据完整性
@@ -343,7 +329,7 @@ A: YAML/TOML 中的注释在转换为 JSON 时会丢失(JSON 不支持注释)。
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
 - **说明**: 基于自然语言驱动的 AI Skill,通过类型智能与编码自动处理保障转换质量
 
 ## 错误处理

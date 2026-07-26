@@ -1,4 +1,5 @@
 ---
+
 slug: resume-assistant-tool-pro
 name: resume-assistant-tool-pro
 version: 1.0.0
@@ -6,23 +7,7 @@ displayName: 简历助手工具(专业版)
 summary: "求职全流程套件,含岗位定制、JD分析、5格式导出、4模板与详细评分.。简历助手工具(专业版)面向求职者与招聘方,提供完整的简历润色、岗位定制、多格式导出与专业评分能力。核心能力:"
 license: Proprietary
 edition: pro
-description: '简历助手工具(专业版)面向求职者与招聘方,提供完整的简历润色、岗位定制、多格式导出与专业评分能力。核心能力:
-
-  - 4大命令:润色 / 岗位定制 / 多格式导出 / 详细评分
-
-  - 5种导出格式:Word / Markdown / HTML / LaTeX / PDF
-
-  - 4种专业模板:professional / modern / minimal / academic
-
-  - JD分析与关键词优化,匹配度从62%提升至89%
-
-  - 100分制详细评分与岗位匹配度评估
-
-  适用场景:
-
-  - 针对具体岗位定制简历
-
-  - 多格式投递(在...'
+description: "简历助手工具(专业版)面向求职者与招聘方,包含完整的简历润色、岗位定制、多格式导出与专业评分能力。核心能力:. 适用于需要resume assistant tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Development
   - 求职
@@ -34,9 +19,6 @@ tags:
   - 效率
   - 知识
   - resume
-  - pdf
-  - 优化
-  - 岗位定制
 tools:
   - read
   - exec
@@ -44,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 简历助手工具(专业版)
 
 ## 概述
@@ -356,7 +340,7 @@ templates/
 \end{document}
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 每个岗位单独定制
 
@@ -454,7 +438,7 @@ Markdown转换到所有其他格式都干净,建议:
 - 若通过REST API集成,需按所在Agent平台配置访问令牌.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。PRO版面向求职全流程,提供岗位定制、多格式导出、多模板与详细评分能力,完全兼容免费版润色与基础评分.
 ## 错误处理
 

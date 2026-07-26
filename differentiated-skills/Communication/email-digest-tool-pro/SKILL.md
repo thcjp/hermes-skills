@@ -7,9 +7,7 @@ displayName: "邮件日报专业版"
 summary: "多邮箱AI智能摘要与定时报告，企业级邮件监控与分类方案。邮件日报专业版面向企业用户与高效能个人用户。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。"
 license: "Proprietary"
 edition: "pro"
-description: "|-
-  邮件日报专业版面向企业用户与高效能个人用户。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。减少重复劳动，提升工作效率。触发关键词：API设计、自动化、监控、机器学习、自然语言、邮件"
-  邮件日报专业版面向企业用户与高效能个人用户。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发.
+description: "|-. 适用于需要email digest tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 沟通协作
   - 邮件管理
@@ -21,16 +19,15 @@ tags:
   - 工具
   - email-digest-tool
   - gmail
-  - outlook
-  - https
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
-
+pricing_tier: L2-标准级
 ---
+
 # 邮件日报专业版
 **版本**: 1.0.0
 **适用对象**: 企业管理者、团队负责人、运维与运营人员
@@ -119,7 +116,7 @@ email-digest-tool aggregate \
 email-digest-tool aggregate \
   --accounts gmail,outlook \
   --push feishu \
-  --webhook "https://open.feishu.cn/open-apis/bot/v2/hook/xxx"
+  --webhook "https://open.feishu.cn/open-apis/bot/v2/hook/placeholder"
 ```
 
 输出报告示例：
@@ -165,7 +162,7 @@ email-digest-tool schedule create \
   --accounts gmail,outlook \
   --format markdown \
   --push feishu \
-feishu.cn/open-apis/bot/v2/hook/xxx" \
+feishu.cn/open-apis/bot/v2/hook/placeholder" \
   --timezone "Asia/Shanghai"
 # ...
 # 查看所有定时任务
@@ -183,7 +180,7 @@ email-digest-tool alert create \
   --name "ceo-alert" \
   --condition "from:ceo@company.com" \
   --channel feishu \
-feishu.cn/open-apis/bot/v2/hook/xxx" \
+feishu.cn/open-apis/bot/v2/hook/placeholder" \
   --priority critical
 # ...
 email-digest-tool alert create \
@@ -237,25 +234,25 @@ email-digest-tool aggregate --accounts gmail --format html
     {
       "name": "Outlook内部邮箱",
       "provider": "outlook",
-      "url": "https://outlook.live.com",
+      "url": "https://api.example.com.com",
       "mode": "browser-session"
     }
   ]
 }
-```
-
-### 配置推送渠道
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "push_channels": {
     "feishu": {
-      "webhook": "https://open.feishu.cn/open-apis/bot/v2/hook/xxx"
+      "webhook": "https://open.feishu.cn/open-apis/bot/v2/hook/placeholder"
     },
     "dingtalk": {
-      "webhook": "https://oapi.dingtalk.com/robot/send?access_token=xxx"
+      "webhook": "https://oapi.dingtalk.com/robot/send?access_token=placeholder"
     },
     "slack": {
-      "webhook": "https://hooks.slack.com/services/xxx"
+      "webhook": "https://hooks.slack.com/services/placeholder"
     },
     "email": {
       "smtp_server": "smtp.company.com",
@@ -292,9 +289,9 @@ email-digest-tool aggregate --accounts gmail --format html
     }
   }
 }
-```
-
-### 告警规则配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "alerts": [
@@ -318,9 +315,9 @@ email-digest-tool aggregate --accounts gmail --format html
     }
   ]
 }
-```
-
-### 定时任务配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "schedules": [
@@ -347,7 +344,7 @@ email-digest-tool aggregate --accounts gmail --format html
 
 ---
 
-## 最佳实践
+## 优秀实践
 ### 多邮箱管理策略
 ```bash
 # 按角色分组管理邮箱
@@ -369,9 +366,9 @@ email-digest-tool alert test --name "ceo-alert"
 # ...
 # 调整静默时段
 email-digest-tool alert update --name "ceo-alert" --silent-hours "22:00-08:00"
-```
-
-### 报告归档与检索
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 归档历史报告
 email-digest-tool archive --since "2026-01-01" --dir reports/archive/

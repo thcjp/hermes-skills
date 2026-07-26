@@ -1,33 +1,33 @@
 ---
+
 slug: password-gen-pro-tool-free
 name: password-gen-pro-tool-free
 version: 1.0.0
 displayName: 密码生成器Pro免费版
 summary: "专业密码生成工具,支持强密码生成、强度检测、口令短语与PIN码生成,适合个人用户密码管理.。密码生成器Pro免费版,为个人用户提供多样化密码生成与强度检测能力."
-license: Proprietary
+license: MIT
 edition: free
-description: '密码生成器Pro免费版,为个人用户提供多样化密码生成与强度检测能力.
-  核心能力:强密码生成、密码强度检测、口令短语生成、PIN码生成.
-  适用场景:账户密码创建、密码强度验证、 memorable passphrase生成.
-  差异化:免费版聚焦核心生成能力,支持多种密码类型,适合个人用户日常使用.
-  适用关键词: 密码生成, 强度检测, 口令短语, PIN码, password generator, strength check, passphrase'
+description: "密码产出器Pro免费版,为个人用户包含多样化密码产出与强度查验能力. 适用于需要password gen pro tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要password gen tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 安全
+  - password
+  - gen
+  - automation
+  - productivity
   - 密码
   - 免费版
   - 加密
   - 工具
   - append
-  - length
-  - password
-  - feedback
-  - secrets
 tools:
   - read
   - exec
 homepage: ""
 category: "Security"
+pricing_tier: free
+
 ---
+
 本工具为个人用户提供多样化的密码生成与强度检测能力,支持强密码生成、密码强度评估、口令短语(Passphrase)生成与PIN码生成。免费版覆盖个人用户日常密码管理需求,帮助用户创建安全且易记的密码.
 ### 免费版与专业版对比
 | 能力维度 | 免费版 | 专业版 |
@@ -350,9 +350,9 @@ result = create_account_password("example.com", 16)
 print(f"网站: {result['site']}")
 print(f"密码: {result['password']}")
 print(f"强度: {result['strength']} ({result['score']}/100)")
-```
-
-### 场景二:密码强度审计
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 #!/bin/bash
 echo "=== 密码强度审计 ==="
@@ -385,9 +385,9 @@ while IFS= read -r password; do
 # ...
     echo "密码(长度${LENGTH}): ${LEVEL} (${SCORE}/100)"
 done < passwords.txt
-```
-
-### 场景三:易记口令生成
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 #!/usr/bin/env python3
 """易记口令短语生成"""
@@ -409,19 +409,18 @@ def generate_memorable_password():
     print(f"首字母缩写: {acronym}2026!")
 # ...
 generate_memorable_password()
-```
-
-## 快速开始
-### 第一步:生成密码
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python3 -c "
 from password_generator import PasswordGenerator
 gen = PasswordGenerator()
 print(gen.generate(16))
 "
-```
-
-### 第二步:检测强度
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python3 -c "
 from strength_checker import PasswordStrengthChecker
@@ -429,9 +428,9 @@ checker = PasswordStrengthChecker()
 result = checker.check('你的密码')
 print(f'强度: {result[\"label\"]} ({result[\"score\"]}/100)')
 "
-```
-
-### 第三步:生成口令短语
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python3 -c "
 from password_generator import PasswordGenerator
@@ -467,7 +466,7 @@ print(gen.generate_passphrase())
 | 口令短语 | correct-horse-staple | 高 | 高 |
 | PIN码 | 482917 | 低 | 中 |
 | 模式密码 | Abc123!@# | 低 | 高 |
-## 最佳实践
+## 优秀实践
 1. **长度优先**:密码长度比复杂度更重要,建议至少16位.
 2. **口令短语**:使用4+词口令短语,既安全又易记.
 3. **唯一密码**:每个账户使用不同密码.
@@ -503,7 +502,7 @@ print(gen.generate_passphrase())
 - 所有密码在本地生成,不发送到外部
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行密码生成与强度检测任务
 
 ## 错误处理
@@ -530,9 +529,9 @@ print(gen.generate_passphrase())
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

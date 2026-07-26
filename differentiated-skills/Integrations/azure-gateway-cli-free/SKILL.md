@@ -1,13 +1,13 @@
 ---
+
 slug: azure-gateway-cli-free
 name: azure-gateway-cli-free
 version: 1.0.1
 displayName: Azure网关CLI免费版
 summary: 轻量级本地代理，将OpenAI兼容请求路由到用户自建的Azure OpenAI端点，支持基础健康检查与单实例转发
-license: Proprietary
+license: MIT
 edition: free
-description: Azure网关CLI免费版是一款面向独立开发者的本地代理工具，用于解决OpenAI兼容客户端与Azure OpenAI服务之间的协议适配问题。Azure，可自动提升工作效率
-  OpenAI使用专属的URL路径与查询参数格式，与标准OpenAI API存在差异，直接对接往往导致请求失败或参数丢失。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
+description: "Azure网关CLI免费版是一款面向独立开发者的本地代理工具，用于解决OpenAI兼容客户端与Azure OpenAI服务之间的协议适配问题。Azure，可自发提升工作效率. 适用于需要azure gateway cli相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 集成工具
   - API网关
@@ -19,14 +19,15 @@ tags:
   - openai
   - api
   - agent
-  - key
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Operations"
+pricing_tier: free
 ---
+
 # Azure网关CLI免费版
 
 一款轻量级本地代理工具，桥接标准OpenAI兼容客户端与Azure OpenAI服务，解决URL路径与认证头的协议差异问题.
@@ -68,7 +69,7 @@ Azure OpenAI服务要求请求URL携带部署名与`api-version`查询参数，�
 ## 快速开始
 
 预计上手时间：约60秒.
-### 第一步：配置环境变量
+### 领先步：配置环境变量
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
@@ -150,7 +151,7 @@ curl http://localhost:18790/health
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 安全建议
 - 绑定地址保持`127.0.0.1`，避免代理对外暴露

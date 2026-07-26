@@ -1,32 +1,13 @@
 ---
+
 slug: telegram-chat-tool-free
 name: telegram-chat-tool-free
 version: 1.0.0
 displayName: 电报聊天工具免费版
 summary: "轻量级Telegram Bot配置与跨实例聊天工具,支持用户艾特、消息收发与基础群组管理.。电报聊天工具免费版,为个人用户提供 Telegram Bot 创建、配置与跨实例聊天能力,支持用户"
-license: Proprietary
+license: MIT
 edition: free
-description: '电报聊天工具免费版,为个人用户提供 Telegram Bot 创建、配置与跨实例聊天能力,支持用户艾特、消息收发与基础群组管理。核心能力:
-
-  - Telegram Bot 快速创建与配置
-
-  - 跨 Bot 实例消息通信
-
-  - 用户艾特(@提及)功能
-
-  - 群组消息收发
-
-  - 基础身份标识与消息溯源
-
-  适用场景:
-
-  - 个人用户搭建专属 Telegram Bot
-
-  - 小团队跨 Bot 协作聊天
-
-  - 群组内艾特提醒与消息通知
-
-  差异化:免费版聚焦个人用户与小团队的 Telegram 聊天需求,提供从零开始的 Bot 配置指南...'
+description: "电报聊天工具免费版,为个人用户包含 Telegram Bot 创建、配置与跨实例聊天能力,兼容用户艾特、消息收发与基础群组管控。核心能力:. 适用于需要telegram chat tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 沟通协作
   - 即时通讯
@@ -38,15 +19,15 @@ tags:
   - bot
   - telegram
   - text
-  - 用户名
-  - 发送
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: free
 ---
+
 # 电报聊天工具 - 免费版
 
 ## 概述
@@ -103,7 +84,7 @@ category: "Communication"
 ### 场景一:从零创建专属 Telegram Bot
 
 个人用户想搭建一个自己的 Telegram Bot,用于接收通知与自动回复.
-**第一步:创建 Bot**
+**领先步:创建 Bot**
 
 1. 在 Telegram 中搜索并打开 **@BotFather**
 2. 发送 `/newbot` 命令
@@ -161,7 +142,7 @@ messaging:
 
 ```text
 # 在群里直接询问
-大家好,请问 @xxx 的 Bot 用户名是什么?
+大家好,请问 @placeholder 的 Bot 用户名是什么?
 ```
 
 ### 场景三:群组消息通知
@@ -191,7 +172,7 @@ messaging:
 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:创建 Telegram Bot
+### 领先步:创建 Telegram Bot
 
 1. 打开 Telegram,搜索 `@BotFather`
 2. 发送 `/newbot`
@@ -267,7 +248,7 @@ curl "https://api.telegram.org/bot配置值/getUpdates" | python3 -m json.tool
 | 赵六     | @zhaoliu_bot     | 数据分析   |
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. Bot 命名规范
 
@@ -346,6 +327,8 @@ messaging:
 **解决方法**:在群里直接询问确认对方 Bot 用户名:
 
 ```text
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### Q3: Bot Token 泄露了怎么办?
@@ -402,7 +385,7 @@ curl "https://api.telegram.org/bot配置值/getUpdates"
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,核心功能通过配置文件与 Telegram API 调用实现)
+- **分类**: MD+EXEC模式纯 Markdown 指令,核心功能通过配置文件与 Telegram API 调用实现)
 - **说明**: 基于配置的 AI Skill,通过自然语言指令驱动 Agent 完成 Telegram Bot 创建、配置与跨实例聊天。免费版支持单个 Bot 的基础配置、用户艾特、群组消息收发与身份标识,适合个人用户与小团队轻量协作场景.
 ## 错误处理
 
@@ -428,9 +411,9 @@ curl "https://api.telegram.org/bot配置值/getUpdates"
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

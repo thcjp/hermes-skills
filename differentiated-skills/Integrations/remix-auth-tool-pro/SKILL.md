@@ -1,4 +1,5 @@
 ---
+
 slug: "remix-auth-tool-pro"
 name: "remix-auth-tool-pro"
 version: "1.0.0"
@@ -6,8 +7,7 @@ displayName: "Remix认证工具Pro"
 summary: "Remix平台全功能Bearer认证方案，含密钥轮换、团队管理、审计日志与多环境配置。。Remix认证工具（专业版）为团队与企业提供Remix平台API的完整Bearer Token认证治理"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  Remix认证工具（专业版）为团队与企业提供Remix平台API的完整Bearer Token认证治理方案，覆盖密钥全生命周期管理。核心能力：密钥生成与轮换自动化、团队密钥分发与回收、认证审计日志与异常告警、多环境集中配置、权限精细化策略模板、MCP工具集成认证适配、批量密钥失效与替换。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
+description: "|-. 适用于需要remix auth tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 集成工具
   - 认证授权
@@ -19,18 +19,15 @@ tags:
   - 代码
   - 写作
   - 电商
-  - remix
-  - api
-  - agents
-  - 审计日志
-  - read
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # Remix认证工具（专业版）
 
 ## 概述
@@ -254,7 +251,7 @@ def revoke_member_key(member_name):
 3. **连接复用**：使用HTTP keep-alive复用已认证连接
 4. **异步轮换**：轮换过程异步执行，不阻塞正常请求
 
-## 最佳实践
+## 优秀实践
 
 1. **最小权限原则**：每个密钥仅授予完成其职责所需的最小权限
 2. **密钥分层**：管理密钥与业务密钥分离，管理密钥仅用于密钥管理操作

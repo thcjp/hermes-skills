@@ -1,13 +1,13 @@
 ---
+
 slug: whatsapp-master-free
 name: whatsapp-master-free
 version: 1.0.1
 displayName: WhatsApp大师(免费版)
 summary: "WhatsApp 消息自动化免费版：文本/媒体/贴纸/语音发送，含 JID 格式与速率限制指南.。WhatsApp 大师（免费版）面向个人用户与独立开发者，封装 WhatsApp 的基础消息"
-license: Proprietary
+license: MIT
 edition: free
-description: WhatsApp 大师（免费版）面向个人用户与独立开发者，封装 WhatsApp 的基础消息能力：文本发送、媒体发送、贴纸、语音笔记与 GIF。通过原生通道集成直接调用，可自动提升工作效率
-  WhatsApp Web 协议，无需外部 Docker 或 CLI 包装。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
+description: "WhatsApp 大师（免费版）面向个人用户与独立开发者，封装 WhatsApp 的基础消息能力：文本发送、媒体发送、贴纸、语音笔记与 GIF。通过原生通道集成直接调用，可自发提升工作效率. 适用于需要whatsapp master相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 即时通讯
   - WhatsApp
@@ -19,14 +19,15 @@ tags:
   - agent
   - gif
   - ffmpeg
-  - message
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: free
 ---
+
 # WhatsApp 大师（免费版）
 
 ## 概述
@@ -156,7 +157,7 @@ ffmpeg -i input.png -vf "scale=512:512:force_original_aspect_ratio=decrease,pad=
 ffmpeg -i input.gif -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" output.mp4 -y
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 已知限制
 WhatsApp 有反垃圾措施，应避免：

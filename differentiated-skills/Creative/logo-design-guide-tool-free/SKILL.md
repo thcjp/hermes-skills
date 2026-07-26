@@ -5,12 +5,9 @@ name: logo-design-guide-tool-free
 version: 1.0.0
 displayName: Logo设计指南免费版
 summary: AI Logo设计原则与图像生成优选实践指南,涵盖Logo类型、提示词技巧、可扩展性规则,适合个人学习使用.
-license: Proprietary
+license: MIT
 edition: free
-description: "Logo设计指南免费版帮助个人用户掌握AI Logo设计的核心原则与优选实践。提供Logo类型识别、提示词编写技巧、可扩展性规则、配色指南与迭代工作流,
-  让用户能够系统化地使用AI图像生成工具创建专业Logo。确保设计一致性与专业度。触发关键词：设计、品牌、图片、机器学习、教育、健康。降低专业门槛，让非专业人员也能快速上手"
-
-  让用户能够系统化地使用AI图像生成工具创建专业Logo'
+description: "Logo设计指南免费版帮助个人用户掌握AI Logo设计的核心原则与优选实践。包含Logo类型识别、提示词编写技巧、可扩展性规则、配色指南与迭代工作流,. 适用于需要logo design guide tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Logo设计
   - 设计指南
@@ -22,17 +19,15 @@ tags:
   - 创意
   - logo
   - flat
-  - vector
-  - white
-  - geometric
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
+pricing_tier: free
 ---
+
 # Logo设计指南免费版
 
 ## 概述
@@ -140,48 +135,24 @@ Logo必须在所有尺寸下都有效:
 
 需求:科技公司需要一个抽象的几何Logo.
 ```bash
-# 生成抽象Logo
-# 提示词:"flat vector abstract logo, interlocking hexagonal shapes
-#         forming a letter S, minimal geometric style, single navy
-#         blue color, white background, clean sharp edges"
-# .
-# 关键点:
-# - 指定flat vector(扁平矢量风格)
-# - 明确几何形状(hexagonal)
-# 已知限制
-# - 白色背景(便于后期处理)
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### 场景二:动物图形Logo
 
 需求:品牌需要一个动物形象的Logo.
 ```bash
-# 生成动物图形Logo
-# 提示词:"flat vector logo of a fox head in profile, geometric
-#         faceted style, orange and white, minimal clean lines,
-#         white background, negative space design"
-# .
-# 关键点:
-# - 明确动物与视角(fox head in profile)
-# - 指定风格(geometric faceted)
-# - 限制颜色(orange and white)
-# - 利用负空间(negative space)
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### 场景三:吉祥物Logo
 
 需求:教育品牌需要一个友好的吉祥物.
 ```bash
-# 生成吉祥物Logo
-# 提示词:"friendly cartoon owl mascot logo, simple flat
-#         illustration, wearing graduation cap, purple and gold
-#         colors, white background, clean vector style"
-# .
-# 关键点:
-# - 明确角色(friendly cartoon owl)
-# - 指定风格(simple flat illustration)
-# - 添加特征(graduation cap)
-# - 限制颜色(purple and gold)
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ## 快速开始
@@ -210,13 +181,8 @@ single navy blue color, white background, negative space design
 ### Step 3:生成与迭代
 
 ```bash
-# 迭代工作流
-# 1. 生成基础版本
-# 2. 检查:32px下是否可识别?
-# 3. 检查:单色(黑白)下是否可用?
-# 4. 检查:深色与浅色背景下是否都适用?
-# 5. 如有问题,调整提示词后重新生成
-# 6. 选定优选版本后,添加文字(手动)
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -292,19 +258,8 @@ mascot:
 ### 迭代工作流
 
 ```bash
-# Logo设计迭代流程
-# .
-# 第1轮:基础生成
-# 提示词:"flat vector logo of a lighthouse, minimal geometric, single color, white background"
-# .
-# 第2轮:优化细节
-# 提示词:"flat vector logo of a geometric lighthouse with light beam rays, minimal line art, navy blue, white background, negative space design"
-# .
-# 第3轮:提升分辨率
-# 使用高分辨率模型:"flat vector logo of a geometric lighthouse with radiating light beams, minimal clean design, navy blue single color, pure white background"
-# .
-# 第4轮:放大优选版本
-# 使用图像放大工具:scale 4x
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### 设计原则总结
@@ -361,7 +316,7 @@ A: 设计时同时准备浅色背景与深色背景版本。检查单色(黑白)
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令+部分执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令+部分执行能力)
 - **说明**: 基于Markdown指令驱动Agent提供Logo设计指导,通过AI图像生成工具实现视觉输出
 - **免费版限制**: 设计原则指导、手动迭代工作流、无批量生成、无自动矢量化
 

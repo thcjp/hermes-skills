@@ -7,13 +7,7 @@ displayName: AWS成本优化专业版
 summary: "企业级AWS成本管理平台，支持多账户、自动优化、RI建议与FinOps治理.。面向企业云财务团队的AWS成本管理平台。支持多账户统一分析、自动"
 license: Proprietary
 edition: pro
-description: "面向企业云财务团队的AWS成本管理平台。支持多账户统一分析、自动
-  优化执行、预留实例（RI）/Savings Plans建议、预算告警与FinOps
-  治理。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。减少重复劳动，提升工作效率。触发关键词：自动化、性能优化、设计、项目管理、PDF、机器学习"
-
-  优化执行、预留实例（RI）/Savings Plans建议、预算告警与FinOps
-
-  治理。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。'
+description: "面向企业云财务团队的AWS成本管控平台。兼容多账户统一剖析、自发. 适用于需要aws cost optimizer tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Operations
   - AWS
@@ -31,8 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Operations"
-
+pricing_tier: L2-标准级
 ---
+
 # AWS成本优化专业版（PRO版）
 
 ## 概述
@@ -245,7 +240,7 @@ pro_config:
     retention_years: 3
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### PRO版FinOps实践
 

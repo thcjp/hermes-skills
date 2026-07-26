@@ -1,16 +1,13 @@
 ---
+
 slug: piper-tts-engine-free
 name: piper-tts-engine-free
 version: 1.0.1
 displayName: 本地语音合成免费版
 summary: "基于 Piper 的本地离线文字转语音工具，零云端调用、零 API 费用，适合个人单条语音生成.,支持多种使用场景和自动化处理"
-license: Proprietary
+license: MIT
 edition: free
-description: 面向个人用户的本地离线文字转语音工具，可生成提升工作效率
-  核心能力: 本地 TTS 引擎、单条文本合成、多音色选择、离线运行、语音消息投递.
-  适用场景: 个人语音消息生成、离线朗读、无障碍辅助、内容创作配音.
-  差异化: 免费版聚焦单条文本合成与基础音色，不含批量合成与自定义音色训练.
-  适用关键词: 语音合成, TTS, piper, 文字转语音, 朗读, 离线, 本地, voice'
+description: "面向个人用户的本地离线文字转语音工具，可产出提升工作效率. 适用于需要piper tts engine相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 语音合成
   - 本地TTS
@@ -22,14 +19,15 @@ tags:
   - 通信
   - 邮件
   - mp3
-  - piper
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 本地语音合成 免费版
 
 ## 概述
@@ -129,7 +127,7 @@ category: "Automation"
 - 下载默认音色 `en_US-kusal-medium`
 - 配置输出目录 `~/.piper/output/`
 
-2. 生成第一条语音.
+2. 生成领先条语音.
 ```bash
 （请参考skill目录中的脚本文件） "Hello, this is my first voice message."
 ```
@@ -166,7 +164,7 @@ export PIPER_SPEED="1.0"                  # 语速（0.5-2.0）
 （请参考skill目录中的脚本文件） --voice en_GB-northern_english_male-medium
 ```
 
-## 最佳实践
+## 优秀实践
 
 - **按需合成**：不要设置 `messages.tts.auto: "always"`，这会使每条回复都变慢。保持按需触发.
 - **音色选择**：内容创作推荐 `en_US-ryan-high`（高质量），日常使用推荐 `en_US-kusal-medium`（速度快）.

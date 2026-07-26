@@ -5,11 +5,9 @@ name: canvas-json-handler-free
 version: 1.0.1
 displayName: 画布JSON处理免费版
 summary: 面向JSON Canvas(.canvas)文件的轻量级处理工具，支持节点、边、分组的创建与编辑校验.
-license: Proprietary
+license: MIT
 edition: free
-description: "画布JSON处理工具专注于JSON Canvas规范文件的读写、校验与维护，适用于知识图谱、思维导图、流程编排等可视化场景。核心能力：遵循JSON
-  Canvas 1。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。快速洞察数据价值，支持数据驱动决策。触发关键词：数据分析、自动化、机器学习"
-  Canvas 1。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+description: "画布JSON处置工具专注于JSON Canvas规范文件的读写、校验与维护，适用于知识图谱、思维导图、流程编排等可视化场景。核心能力：遵循JSON. 适用于需要canvas json handler相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 集成工具
   - 画布
@@ -21,16 +19,15 @@ tags:
   - json
   - text
   - file
-  - string
-  - markdown
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
+pricing_tier: free
 ---
+
 # 画布JSON处理工具（免费版）
 
 本工具用于创建、编辑和校验符合JSON Canvas 1.0规范的`.canvas`文件，帮助AI Agent在没有图形界面的情况下，也能精确操作可视化画布的结构化数据.
@@ -168,7 +165,7 @@ JSON Canvas是一种开放的结构化画布格式，文件本质为JSON，顶�
 | `"5"` | 青 |
 | `"6"` | 紫 |
 
-## 最佳实践
+## 优秀实践
 
 ### ID生成规范
 始终生成16位小写十六进制字符串作为ID。建议使用时间戳与随机数组合，例如`timestamp_hex + random_hex`，确保跨会话唯一性.

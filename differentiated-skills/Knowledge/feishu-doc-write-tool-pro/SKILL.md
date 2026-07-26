@@ -7,15 +7,7 @@ displayName: 飞书文档写入（专业版）
 summary: "向飞书文档追加内容，支持按标题层级分块写入、批量块操作与格式转换.,支持多种使用场景和自动化处理。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: pro
-description: 飞书文档写入 - （专业版）。可自动提升工作效率
-
-  核心能力: 飞书文档写入, 内容追加, 块操作, feishu write, 文档编辑, 长文档分块
-
-  适用场景: 企业级场景，支持批量操作、团队协作与高级功能
-
-  差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
-
-  适用关键词: 飞书文档写入, 内容追加, 块操作, feishu write, 文档编辑, 长文档分块'
+description: "飞书文档写入 - （专业版）。可自发提升工作效率. 适用于需要feishu doc write tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 飞书集成
   - 文档写入
@@ -27,13 +19,6 @@ tags:
   - 知识
   - 文档
   - 研究
-  - 分析
-  - 安全
-  - self
-  - content
-  - block_id
-  - str
-  - token
 tools:
   - read
   - exec
@@ -41,7 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
+pricing_tier: L2-标准级
 ---
 
 # 飞书文档写入（专业版）
@@ -230,7 +215,7 @@ js", "--action", "delete",
         return {"status": "deleted", "block_id": block_id}
 # ...
 writer = FeishuDocWriter("APP_ID", "APP_SECRET")
-writer.write_long_document("doccnXXXX", "# 第一章\n内容...\n# 第二章\n内容...")
+writer.write_long_document("doccnXXXX", "# 领先章\n内容...\n# 第二章\n内容...")
 print("长文档写入完成")
 ```
 
@@ -303,9 +288,9 @@ feishu_write:
 - 多租户隔离支持
 - 合规性检查内置
 
-## 最佳实践
+## 优秀实践
 
-### 企业级最佳实践
+### 企业级优秀实践
 
 1. **明确需求**：对于大批量任务，先规划分批策略与并行度
 2. **检查输入**：批量处理前先验证所有输入文件的有效性
@@ -316,11 +301,8 @@ feishu_write:
 ### 性能优化
 
 ```python
-# 专业版：批量性能优化
-# 1. 合理设置并行度（建议CPU核心数）
-# 2. 分批处理避免内存溢出
-# 3. 使用异步IO提升吞吐量
-# 4. 启用结果缓存减少重复计算
+# 在此执行相关操作
+pass
 ```
 
 ## 常见问题

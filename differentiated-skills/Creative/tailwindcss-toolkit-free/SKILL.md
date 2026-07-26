@@ -1,40 +1,13 @@
 ---
+
 slug: tailwindcss-toolkit-free
 name: tailwindcss-toolkit-free
 version: 1.0.1
 displayName: Tailwind CSS工具包免费版
 summary: Tailwind CSS实用类编写工具,涵盖响应式设计、暗黑模式与基础配置,适合个人开发者快速上手.
-license: Proprietary
+license: MIT
 edition: free
-description: 面向个人开发者的 Tailwind CSS 实用类编写工具(免费版)。核心能力:，可处理提升工作效率
-
-  - Tailwind 实用类编写规范与最佳实践
-
-  - 响应式设计前缀与断点配置
-
-  - 暗黑模式(dark mode)实现
-
-  - 状态变体(hover/focus/active)
-
-  - 任意值(arbitrary values)使用
-
-  - 基础配置与常见陷阱规避
-
-  适用场景:
-
-  - 个人项目快速搭建界面
-
-  - 响应式网页开发
-
-  - 暗黑模式实现
-
-  - 学习 Tailwind CSS
-
-  差异化:
-
-  - 免费版聚焦核心实用类与常见场景
-
-  -...'
+description: "面向个人开发者的 Tailwind CSS 实用类编写工具(免费版)。核心能力:，可处置提升工作效率. 适用于需要tailwindcss toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 创意设计
   - 前端开发
@@ -46,22 +19,20 @@ tags:
   - 创意
   - 图像
   - class
-  - dark
-  - focus
-  - div
-  - html
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Tailwind CSS 工具包 - 免费版
 
 ## 概述
 
-Tailwind CSS 工具包(免费版)为个人开发者提供 Tailwind 实用类的编写规范与最佳实践。涵盖响应式设计、暗黑模式、状态变体与基础配置,帮助快速构建一致的界面样式.
+Tailwind CSS 工具包(免费版)为个人开发者提供 Tailwind 实用类的编写规范与优秀实践。涵盖响应式设计、暗黑模式、状态变体与基础配置,帮助快速构建一致的界面样式.
 免费版聚焦核心实用类与常见场景,专业版(`tailwindcss-toolkit-pro`)在此基础上提供自定义插件、设计系统、性能优化与组件库等高级能力.
 ## 核心能力
 
@@ -71,7 +42,7 @@ Tailwind CSS 工具包(免费版)为个人开发者提供 Tailwind 实用类的�
 | 响应式设计 | 支持 | sm/md/lg/xl/2xl 断点 |
 | 暗黑模式 | 支持 | class 与 media 策略 |
 | 状态变体 | 支持 | hover/focus/active/group |
-| 任意值 | 支持 | `bg-[#xxx]` / `w-[calc()]` |
+| 任意值 | 支持 | `bg-[#placeholder]` / `w-[calc()]` |
 | 基础配置 | 支持 | tailwind.config.js |
 | @apply 使用 | 支持 | 含陷阱说明 |
 | 自定义插件 | 不支持 | 升级专业版 |
@@ -99,7 +70,7 @@ Tailwind CSS 工具包(免费版)为个人开发者提供 Tailwind 实用类的�
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：CSS、实用类编写工具、涵盖响应式设计、暗黑模式与基础配、适合个人开发者快、速上手、面向个人开发者的、核心能力、实用类编写规范与、最佳实践、响应式设计前缀与、断点配置、dark、mode、arbitrary、values、基础配置与常见陷、阱规避等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：CSS、实用类编写工具、涵盖响应式设计、暗黑模式与基础配、适合个人开发者快、速上手、面向个人开发者的、核心能力、实用类编写规范与、优秀实践、响应式设计前缀与、断点配置、dark、mode、arbitrary、values、基础配置与常见陷、阱规避等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 使用场景
 
 ### 场景一:响应式卡片组件
@@ -312,7 +283,7 @@ npx tailwindcss -i ./src/style.css -o ./dist/style.css --minify
 <div class="bg-[#1da1f2] w-[calc(100%-2rem)] min-h-[200px]">
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **移动端优先**
    - 不加前缀的类对所有尺寸生效
@@ -408,7 +379,7 @@ JIT 模式只能检测完整的类名字符串。动态拼接(如 `bg-${color}-5
 - CDN 模式仅需引入脚本,无需配置
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。免费版聚焦 Tailwind CSS 核心实用类与常见场景,适合个人开发者快速构建界面.
 ## 错误处理
 

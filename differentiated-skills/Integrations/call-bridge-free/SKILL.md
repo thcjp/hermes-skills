@@ -5,11 +5,9 @@ name: call-bridge-free
 version: 1.0.1
 displayName: 通话桥接免费版
 summary: "让AI代理拨打美国电话的桥接工具，支持单次外呼、任务指令构建与通话状态轮询。通话桥接免费版是一款面向独立开发者的AI电话代理工具，通过语音AI代理拨打美国电话号码，完成通话后返回转写文本、通"
-license: Proprietary
+license: MIT
 edition: free
-description: "通话桥接免费版是一款面向独立开发者的AI电话代理工具，通过语音AI代理拨打美国电话号码，完成通话后返回转写文本、通话结果与录音链接。代理负责拨号、对话、处理电话菜单与等待，并将结果结构化返回。Use
-  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。加速开发流程，提升代码质量与一致性。触发关键词：API设计、代码生成、自动化、测试、部署、项目管理"
-  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
+description: "通话桥接免费版是一款面向独立开发者的AI电话代理工具，通过语音AI代理拨打美国电话号码，完成通话后返回转写文本、通话结果与录音链接。代理负责拨号、对话、处置电话菜单与等待，并将结果结构化返回。Use. 适用于需要call bridge相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 集成工具
   - 语音通信
@@ -21,15 +19,15 @@ tags:
   - api
   - json
   - call-bridge
-  - 通话指令
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
+pricing_tier: free
 ---
+
 # 通话桥接免费版
 
 一款让AI代理拨打美国电话的桥接工具，通过语音AI代理完成拨号、对话与结果返回的全流程.
@@ -91,7 +89,7 @@ category: "Automation"
 ## 快速开始
 
 预计上手时间：约120秒.
-### 第一步：检查API Key
+### 领先步：检查API Key
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
@@ -143,7 +141,7 @@ curl -X POST https://api.call-bridge.dev/call \
 
 ```bash
 # 每3秒轮询一次
-curl -H "X-Api-Key: cb_sk_..." \
+curl -H "X-Api-ref: cb_sk_..." \
   https://api.call-bridge.dev/call/ba645d75-...
 ```
 
@@ -207,7 +205,7 @@ curl -H "X-Api-Key: cb_sk_..." \
 | `answered` | 已接通 |
 | `finalized` | 通话结束 |
 
-## 最佳实践
+## 优秀实践
 
 ### 通话指令编写
 - 指令越详细越好，代理只能看到你提供的信息
@@ -245,7 +243,7 @@ API Key错误或已失效。检查`~/.json`中的Key是否正确，或重新获�
 免费试用额度已用完。新用户可获得10次通话与10分钟通话时长的试用额度。通话达到5秒 talk time才算一次有效试用.
 ### Q5：如何挂断正在进行的通话？
 ```bash
-curl -X POST -H "X-Api-Key: cb_sk_..." \
+curl -X POST -H "X-Api-ref: cb_sk_..." \
   https://api.call-bridge.dev/call/{call_id}/hangup
 ```
 

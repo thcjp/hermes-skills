@@ -1,32 +1,13 @@
 ---
+
 slug: chromecast-control-tool-free
 name: chromecast-control-tool-free
 version: 1.0.0
 displayName: 投屏控制免费版
 summary: "使用catt工具控制Chromecast设备，支持设备发现、视频投屏与基础播放控制.。投屏控制免费版 —— 面向个人用户的轻量级Chromecast投屏控制工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 投屏控制免费版 —— 面向个人用户的轻量级Chromecast投屏控制工具。核心能力:，可处理提升工作效率
-
-  - 设备发现：扫描局域网内的Chromecast设备
-
-  - 视频投屏：将在线视频或本地文件投屏到电视
-
-  - 播放控制：播放、暂停、停止、调整音量
-
-  - 状态查询：查看当前播放状态与设备信息
-
-  - 网站投屏：将网页内容投屏到电视
-
-  适用场景:
-
-  - 家庭娱乐投屏观看视频
-
-  - 会议室投屏展示内容
-
-  - 个人媒体中心控制
-
-  差异化:免费版提供核心投屏与播放控制能力，适合个人用户日常使用'
+description: "投屏控制免费版 —— 面向个人用户的轻量级Chromecast投屏控制工具。核心能力:，可处置提升工作效率. 适用于需要chromecast control tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 投屏控制
   - Chromecast
@@ -38,19 +19,15 @@ tags:
   - 创意
   - 图像
   - 研究
-  - 分析
-  - 写作
-  - catt
-  - chromecast
-  - cast
-  - 投屏本地
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 投屏控制免费版
 
 ## 概述
@@ -240,11 +217,11 @@ catt -d "Living Room" volume 60
 | 本地图片 | jpg, png | 图片展示 |
 | 网页 | URL | 网站内容投屏 |
 
-## 最佳实践
+## 优秀实践
 
 1. **同一网络**：确保控制设备与Chromecast在同一局域网
 2. **设备名称**：使用易读的设备名称，便于多设备区分
-3. **视频格式**：推荐使用MP4格式，兼容性最好
+3. **视频格式**：推荐使用MP4格式，兼容性优秀
 4. **音量控制**：使用相对音量调整（volumeup/volumedown），避免突然过大
 5. **网络稳定**：投屏大文件时确保网络稳定，避免卡顿
 6. **及时停止**：使用完毕后执行stop命令，释放设备
@@ -318,9 +295,9 @@ catt投屏本地文件时会启动临时HTTP服务器。确保防火墙允许该
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

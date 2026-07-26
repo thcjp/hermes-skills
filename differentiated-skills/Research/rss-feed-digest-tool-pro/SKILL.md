@@ -1,4 +1,5 @@
 ---
+
 slug: rss-feed-digest-tool-pro
 name: rss-feed-digest-tool-pro
 version: 1.0.0
@@ -6,31 +7,7 @@ displayName: RSS聚合摘要专业版
 summary: "企业级RSS/Atom聚合摘要系统,支持定时调度、HTML报告、邮件分发、多模板定制与团队协作。RSS聚合摘要专业版为企业团队提供高阶RSS/Atom订阅聚合与分发能力。核心能力:"
 license: Proprietary
 edition: pro
-description: 'RSS聚合摘要专业版为企业团队提供高阶RSS/Atom订阅聚合与分发能力。核心能力:
-
-  - 大规模多源并行抓取(50+源)
-
-  - 定时调度与自动化任务管理
-
-  - 交互式HTML报告生成
-
-  - 多渠道分发(邮件/IM/Webhook)
-
-  - 自定义摘要模板与品牌定制
-
-  - 高级过滤引擎(正则/情感/语言)
-
-  适用场景:
-
-  - 企业竞争情报自动化监控
-
-  - 行业研究报告定时生成
-
-  - 团队每日资讯邮件推送
-
-  - 多语言内容聚合分发
-
-  差异化:专业版在免费版核心聚合流程基础上,扩展大规模并行抓取、定时调度、HTML报告、多渠道...'
+description: "RSS聚合摘要专业版为企业团队包含高阶RSS/Atom订阅聚合与分发能力。核心能力:. 适用于需要rss feed digest tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 研究工具
   - RSS
@@ -50,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 # RSS聚合摘要专业版
 
 ## 概述
@@ -256,7 +235,7 @@ email:
 # ...
 webhook:
   im_platform:
-    url: https://im.example.com/webhook/xxx
+    url: https://im.example.com/webhook/placeholder
     format: card
     secret: "${WEBHOOK_SECRET}"
 ```
@@ -335,7 +314,7 @@ python3 （请参考skill目录中的脚本文件） fetch \
   --output filtered-digest.md
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 按业务线拆分订阅源组
 
@@ -441,7 +420,7 @@ A: 专业版默认使用Agent内置LLM进行翻译,无需额外API。如需更�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行Python脚本)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行Python脚本)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent调用Python脚本完成企业级RSS聚合摘要与分发任务。专业版在免费版基础上扩展大规模并行抓取、定时调度、HTML报告、多渠道分发与模板定制能力,适合企业竞争情报自动化、行业研究定时生成与多角色内容分发场景.
 ## 错误处理
 

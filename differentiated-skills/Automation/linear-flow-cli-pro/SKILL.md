@@ -1,4 +1,5 @@
 ---
+
 slug: linear-flow-cli-pro
 name: linear-flow-cli-pro
 version: 1.0.0
@@ -6,14 +7,7 @@ displayName: Linear流程CLI(专业版)
 summary: Linear命令行Agent原生运行时专业版，支持批量操作、dry-run预览、自动化策略、Slack集成与Git工作流联动.
 license: Proprietary
 edition: pro
-description: 'Linear流程CLI（专业版）面向使用Linear进行复杂项目管理的工程团队与AI Agent运行时，在免费版基础上解锁全部高级能力：批量操作、dry-run预览、自动化策略、Slack/Ticket上下文集成、Git/JJ工作流联动、高级GraphQL查询模板、Webhook管理、跨团队Initiative管理。让AI
-  Agent成为真正的Linear自动化中枢.
-  核心能力：批量Issue创建/更新/删除（CSV/JSON驱动）、dry-run预览所有写入操作、自动化策略（suggest-only/preview-required/autonomous）、Slack/Ticket上下文文件解析（--context-file
-  + --apply-triage）、Git/JJ工作流联动（提交关联Issue自动更新状态）、高级GraphQL查询模板库、Webhook管理与通知配置、跨团队Initiative与里程碑管理、项目状态更新（project-update）、通知管理、超时感知写入语义、源邻近任务摄入.
-  适用场景：AI Agent深度自动化任务管理、大规模任务批量迁移与重构、跨团队协作的Initiative管理、Slack驱动的任务分流、Git提交自动关联任务状态、项目管理仪表盘、企业级Linear工作流定制.
-  差异化：在免费版基础上新增八大高级能力，针对Agent原生运行时场景设计完整工作流。提供多角色场景指南（开发者/Scrum Master/DevOps/项目经理/技术负责人）、性能优化策略、多平台集成示例、版本升级迁移指南。专业版通过SkillHub
-  SkillPay发布。保留原始MIT-0版权声明.
-  适用关键词：批量操作、dry-run预览、自动化策略、Slack集成、Git联动、Webhook、Initiative、Agent运行时'
+description: "Linear流程CLI（专业版）面向使用Linear进行复杂项目管控的工程团队与AI Agent运行时，在免费版基础上解锁全部高级能力：成批操作、dry-run预览、自发化策略、Slack/Ticket上下文集成、Git/JJ工作流联动、高级GraphQL查询模板、Webhook管控、跨团队Initiative管控。让AI"
 tags:
   - Linear
   - 任务管理
@@ -25,9 +19,6 @@ tags:
   - 效率
   - issue
   - linear
-  - dry-run
-  - eng
-  - csv
 tools:
   - read
   - exec
@@ -35,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # Linear流程CLI（专业版）
 
 > Agent原生的Linear自动化中枢。批量操作、dry-run预览、自动化策略、Slack集成、Git联动，让AI Agent接管你的任务管理工作流.
@@ -463,12 +456,8 @@ integrations:
 **场景描述**：团队要从Jira迁移至Linear，需将500+历史任务批量导入，并保留原始优先级、标签、状态与描述.
 **配置**：
 ```bash
-# 准备迁移CSV（从Jira导出转换）
-# jira_to_linear.csv:
-# title,description,team,priority,labels,state
-# "用户登录bug","登录页面无法加载",ENG,1,"bug,frontend",Done
-# "权限管理","RBAC权限模型",ENG,2,"feature,backend",In Progress
-# ... (500+行)
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 **Agent行为**：

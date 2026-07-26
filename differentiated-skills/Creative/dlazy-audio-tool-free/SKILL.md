@@ -1,30 +1,13 @@
 ---
+
 slug: dlazy-audio-tool-free
 name: dlazy-audio-tool-free
 version: 1.0.0
 displayName: 音频生成工具-免费版
 summary: "轻量级文本转语音工具，支持多语言TTS与基础音效生成，适合个人内容创作.。音频生成工具免费版，面向个人创作者的文本转语音与基础音效生成方案。核心能力："
-license: Proprietary
+license: MIT
 edition: free
-description: '音频生成工具免费版，面向个人创作者的文本转语音与基础音效生成方案。核心能力：
-
-  - 文本转语音（TTS）自动模型选择
-
-  - 支持中英双语及多语言语音合成
-
-  - 基础音效生成（环境音、提示音）
-
-  - 标准 API Key 认证与本地配置
-
-  适用场景：
-
-  - 个人视频配音与旁白
-
-  - 有声书章节朗读
-
-  - 社交媒体内容音频制作
-
-  差异化：免费版聚焦基础 TTS 与音效生成，支持 4 种核心模型，适合个人轻度使用'
+description: "音频产出工具免费版，面向个人创作者的文本转语音与基础音效产出方案。核心能力：. 适用于需要dlazy audio tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Creative
   - Audio
@@ -36,19 +19,20 @@ tags:
   - api
   - text
   - key
-  - doubao-tts
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # 音频生成工具（免费版）
 
 ## 概述
 
-音频生成工具免费版是一款面向个人创作者的文本转语音与基础音效生成工具。通过 dlazy CLI 自动选择最佳音频模型，将文本转换为自然流畅的语音输出，支持中英双语及多种语言.
+音频生成工具免费版是一款面向个人创作者的文本转语音与基础音效生成工具。通过 dlazy CLI 自动选择优秀音频模型，将文本转换为自然流畅的语音输出，支持中英双语及多种语言.
 本版本适合个人视频配音、有声书朗读、社交媒体内容制作等场景。采用 API Key 认证，配置简单，开箱即用.
 ## 核心能力
 
@@ -195,14 +179,14 @@ npm install -g @dlazy/cli@latest
 dlazy auth set YOUR_API_KEY
 ```
 
-### 第二步：生成第一段语音
+### 第二步：生成领先段语音
 
 ```bash
 # 查看模型帮助
 dlazy doubao-tts -h
 # ...
 # 生成语音
-dlazy doubao-tts --text "你好，这是第一段AI生成的语音。" --language "zh"
+dlazy doubao-tts --text "你好，这是领先段AI生成的语音。" --language "zh"
 ```
 
 ### 第三步：获取 API Key
@@ -250,7 +234,7 @@ dlazy keling-tts \
   --format "wav"           # 输出格式: wav, mp3
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **文本分段**：长文本按段落分割生成，避免单次请求过长.
 2. **音色一致**：同一项目使用同一音色，保持听觉一致性.
@@ -258,7 +242,7 @@ dlazy keling-tts \
 4. **格式选择**：WAV 质量高体积大，MP3 适合网络传输.
 5. **预览检查**：生成后先试听前 10 秒，确认效果再批量生成.
 ```text
-免费版最佳实践:
+免费版优秀实践:
 [ ] 文本已按段落分割（单段 < 500字）
 [ ] 音色已确定并保持一致
 [ ] 语速根据内容类型调整

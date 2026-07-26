@@ -1,32 +1,13 @@
 ---
+
 slug: notion-cli-tool-free
 name: notion-cli-tool-free
 version: 1.0.0
 displayName: Notion命令行(免费版)
 summary: 轻量化Notion命令行工具,支持数据库查询、页面管理、块操作与别名机制,适合个人开发者从终端高效操作Notion.
-license: Proprietary
+license: MIT
 edition: free
-description: 'Notion命令行(免费版)是面向个人开发者与知识工作者的轻量化Notion操作Skill,通过命令行工具的组合,帮助用户从终端高效完成Notion工作空间的日常操作。核心能力:
-
-  - 数据库自动发现与别名管理,告别UUID
-
-  - 页面CRUD(创建、查询、更新、归档)
-
-  - 块级内容管理(读取、追加、编辑、删除)
-
-  - 多格式输出(表格、CSV、JSON、YAML)
-
-  - 评论与用户管理
-
-  - 关系与汇总字段自动解析
-
-  适用场景:
-
-  - 个人Notion工作空间的终端化操作
-
-  - 小型团队的任务与项目管理
-
-  - 自动化脚...'
+description: "Notion命令行(免费版)是面向个人开发者与知识工作者的轻量化Notion操作Skill,通过命令行工具的组合,帮助用户从终端高效完成Notion工作空间的日常操作。核心能力:. 适用于需要notion cli tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 集成工具
   - Notion
@@ -38,15 +19,15 @@ tags:
   - notion
   - tasks
   - filter
-  - bash
-  - query
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Notion命令行(免费版)
 
 一个面向个人开发者与知识工作者的轻量化Notion操作Skill,通过命令行工具的组合,帮助你从终端高效完成Notion工作空间的日常操作。本免费版聚焦单工作空间与基础操作,适合个人与小型团队试用.
@@ -193,7 +174,7 @@ notion me
 
 ```bash
 notion query tasks
-notion add tasks --prop "Name=第一个任务" --prop "Status=Todo"
+notion add tasks --prop "Name=领先个任务" --prop "Status=Todo"
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -299,7 +280,7 @@ notion me
 | `phone_number` | `Phone=+1234567890` | 电话 |
 | `status` | `Status=In Progress` | 状态属性 |
 
-## 最佳实践
+## 优秀实践
 
 1. **优先使用别名+筛选**:避免记忆UUID,操作更自然
 2. **属性名大小写不敏感**:`Status`与`status`等价,系统自动匹配
@@ -332,7 +313,7 @@ A: 确认数据库/页面已在Notion中共享给你的Integration。打开数�
 A: 属性名大小写不敏感。先用`notion --json query <alias> --limit 1`查看可用属性名.
 ### Q5: 关系字段如何查询?
 
-A: 用`notion relations tasks --filter "Name=xxx"`,关系字段会自动解析为页面标题.
+A: 用`notion relations tasks --filter "Name=placeholder"`,关系字段会自动解析为页面标题.
 ### Q6: 免费版可以管理多个工作空间吗?
 
 A: 不可以。免费版仅支持单工作空间。多工作空间管理请使用专业版.
@@ -383,5 +364,5 @@ A: 不可以。免费版仅支持单工作空间。多工作空间管理请使�
 - **权限最小化**: Integration仅授予任务所需的权限范围,避免过度授权
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作

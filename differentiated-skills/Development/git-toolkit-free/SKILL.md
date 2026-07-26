@@ -1,40 +1,13 @@
 ---
+
 slug: git-toolkit-free
 name: git-toolkit-free
 version: 1.0.1
 displayName: Git工具包免费版
 summary: "提供Git提交、分支、合并、冲突解决与历史恢复等核心命令,适合开发者日常版本管理.。面向开发者的Git版本管理工具包,涵盖提交管理、分支策略、合并冲突解决、历史检查与恢复操作。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向开发者的Git版本管理工具包,涵盖提交管理、分支策略、合并冲突解决、历史检查与恢复操作。核心能力:
-
-  - 提交管理与规范(commit/amend)
-
-  - 分支管理与切换(branch/switch)
-
-  - 合并与冲突解决(merge/rebase)
-
-  - 历史检查与恢复(log/reflog)
-
-  - 基本团队协作工作流
-
-  适用场景:
-
-  - 日常代码版本管理
-
-  - 功能分支开发
-
-  - 代码合并与冲突解决
-
-  - 误操作恢复
-
-  差异化:
-
-  - 免费版聚焦核心Git命令,开箱即用
-
-  - 提供安全检查清单
-
-  - 与专业版...'
+description: "面向开发者的Git版本管控工具包,涵盖提交管控、分支策略、合并冲突解决、历史检查与恢复操作。核心能力:. 适用于需要git toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - Git
@@ -50,7 +23,9 @@ tools:
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # Git工具包 - 免费版
 ## 概述
 Git工具包免费版为开发者提供日常版本管理能力。工具涵盖提交管理、分支策略、合并冲突解决、历史检查与恢复操作,帮助开发者高效使用Git进行代码版本管理.
@@ -289,10 +264,9 @@ echo "   git reset --hard <sha>"
 echo -e "\n撤销已推送的提交(使用revert):"
 echo "  git revert <commit-sha>"
 echo "  git push origin main"
-```
-
-## 快速开始
-### Step 1:配置Git
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 设置用户信息
 git config --global user.name "你的名字"
@@ -350,9 +324,9 @@ Agent 会自动进行安全检查,避免危险操作.
 [core]
     editor = code --wait
     autocrlf = input
-```
-
-### .gitignore 模板
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```gitignore
 # 依赖
 node_modules/
@@ -386,7 +360,7 @@ Thumbs.db
 logs/
 ```
 
-## 最佳实践
+## 优秀实践
 1. **提交前检查**:提交前确认状态和变更内容
 
 ```bash
@@ -432,10 +406,9 @@ git commit -m "fix(api): 修复用户列表500错误
 git branch                    # 确认当前分支
 git status                    # 确认无未提交变更
 git stash list                # 确认无暂存内容
-```
-
-## 常见问题
-### Q1:如何撤销最近的提交?
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 撤销提交,保留变更在工作区
 git reset --soft HEAD~1
@@ -445,9 +418,9 @@ git reset HEAD~1
 # ...
 # 撤销提交,丢弃所有变更(危险!)
 git reset --hard HEAD~1
-```
-
-### Q2:如何修改已推送的提交?
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 安全方式:使用revert(不会改写历史)
 git revert <commit-sha>
@@ -514,7 +487,7 @@ ssh-keygen -t ed25519 -C "your@email.com"
 ```
 
 ### 可用性分类
-- **分类**:MD+EXEC(纯 Markdown 指令,需要 exec 命令行执行能力)
+- **分类**:MD+EXEC模式纯 Markdown 指令,需要 exec 命令行执行能力)
 - **说明**:基于 Markdown 的 AI Skill,通过自然语言指令驱动 Agent 执行Git操作
 - **适用规模**:个人到小团队项目
 

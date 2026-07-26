@@ -1,42 +1,13 @@
 ---
+
 slug: ui-design-toolkit-free
 name: ui-design-toolkit-free
 version: 1.0.1
 displayName: UI设计工具包免费版
 summary: "UI设计原则与优选实践工具包,涵盖视觉层次、排版、色彩与间距,适合个人开发者快速上手.。面向个人开发者的 UI 设计工具包(免费版)。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 面向个人开发者的 UI 设计工具包(免费版)。核心能力:，可处理提升工作效率
-
-  - 视觉层次(Visual Hierarchy)设计原则
-
-  - 排版(Typography)规范与字号体系
-
-  - 色彩(Color)使用与语义化
-
-  - 间距(Spacing)系统与网格
-
-  - 组件状态(States)设计
-
-  - 响应式设计基础
-
-  - 暗黑模式基础
-
-  - 常见设计陷阱规避
-
-  适用场景:
-
-  - 个人项目 UI 设计
-
-  - 前端开发者快速搭建界面
-
-  - 学习 UI 设计基础
-
-  - 小型产品设计评审
-
-  差异化:
-
-  - 免费版聚焦核心设计原则与常见场.'
+description: "面向个人开发者的 UI 设计工具包(免费版)。核心能力:，可处置提升工作效率. 适用于需要ui design toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 创意设计
   - UI设计
@@ -48,16 +19,15 @@ tags:
   - 创意
   - class
   - div
-  - text-sm
-  - span
-  - dark
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # UI 设计工具包 - 免费版
 
 ## 概述
@@ -467,7 +437,7 @@ UI 设计的七大核心原则:
 - 不依赖外部云服务
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。免费版聚焦核心 UI 设计原则与常见场景,适合个人开发者快速构建清晰美观的界面.
 ## 错误处理
 

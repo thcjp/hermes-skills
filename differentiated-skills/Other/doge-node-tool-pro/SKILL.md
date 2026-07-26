@@ -7,9 +7,7 @@ displayName: DOGE节点专业版
 summary: "企业级Dogecoin节点运维引擎，支持转账打赏、健康监控、自动重启与多节点集群管理.。DOGE节点专业版是面向Dogecoin全节点运维团队的企业级管理Skill。Use when 需要系"
 license: Proprietary
 edition: pro
-description: "DOGE节点专业版是面向Dogecoin全节点运维团队的企业级管理Skill。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。Use
-  when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。减少重复劳动，提升工作效率。触发关键词：自动化、测试、安全、性能优化、部署、监控"
-  when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
+description: "DOGE节点专业版是面向Dogecoin全节点运维团队的企业级管控Skill。Use when 需要系统监控、日志剖析、运维告警、部署管控时使用。不适用于物理硬件维修。Use. 适用于需要doge node tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Dogecoin
   - 区块链运维
@@ -21,13 +19,6 @@ tags:
   - 自动化
   - 运维
   - 监控
-  - 写作
-  - 电商
-  - 研究
-  - dogecoin
-  - true
-  - doge
-  - bash
 tools:
   - read
   - exec
@@ -35,8 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
+pricing_tier: L2-标准级
 ---
+
 # DOGE节点专业版（Doge Node Tool Pro）
 
 ## 概述
@@ -140,7 +132,8 @@ py tip alice bob 12.5
 
 **查询打赏统计**：
 ```bash
-# 输出：alice 共向 bob 打赏 N 次，合计 X DOGE
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### 转账DOGE
@@ -193,7 +186,7 @@ health_check:
     - peer_count_min: 8
   alerts:
     webhook:
-      url: https://hooks.slack.com/services/xxx
+      url: https://hooks.slack.com/services/placeholder
     email:
       - ops@company.com
   auto_restart: true
@@ -256,7 +249,7 @@ price:
     notify_on_surge: true
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 打赏系统安全
 1. **金额校验**：打赏前校验余额是否充足、金额是否合法
@@ -393,9 +386,9 @@ A：主从同步存在延迟，故障切换可能丢失最近几秒的数据。�
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

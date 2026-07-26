@@ -1,45 +1,24 @@
 ---
+
 slug: rss-aggregator-tool-free
 name: rss-aggregator-tool-free
 version: 1.0.0
 displayName: RSS聚合工具免费版
 summary: "自动读取RSS链接，抓取合并多源报道，去重历史推送，生成高密度Markdown简报。RSS聚合工具免费版，自动读取配置的RSS链接，抓取并合并多源报道，通过历史日志核对实现增量推送，生成高信"
-license: Proprietary
+license: MIT
 edition: free
-description: 'RSS聚合工具免费版，自动读取配置的RSS链接，抓取并合并多源报道，通过历史日志核对实现增量推送，生成高信息密度的纯文本简报。核心能力:
-
-  - 自动读取RSS链接列表，抓取文章正文
-
-  - 跨源事件合并，避免同一事件重复出现
-
-  - 严格历史日志核对，实现纯增量推送
-
-  - 内容质量审查，过滤垃圾广告与水文
-
-  - 高信息密度纯文本排版，无Emoji
-
-  适用场景:
-
-  - 个人用户每日资讯简报
-
-  - 独立开发者跟踪技术动态
-
-  - 研究人员收集领域资讯
-
-  差异化:
-
-  - 免费版聚焦增量推送...'
+description: "RSS聚合工具免费版，自发读取配置的RSS链接，抓取并合并多源报道，通过历史日志核对达成增量推送，产出高信息密度的纯文本简报。核心能力:. 适用于需要rss aggregator tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要rss aggregator tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - RSS
+  - rss
+  - aggregator
+  - automation
+  - productivity
   - 聚合
   - 资讯
   - 增量推送
   - 搜索
   - 检索
-  - 工具
-  - rss
-  - https
-  - feeds
 tools:
   - read
   - exec
@@ -47,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 # RSS聚合工具（免费版）
 
 ## 概述
@@ -322,7 +304,7 @@ quality_filter:
 [原文链接]
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 合理配置 RSS 源数量
 

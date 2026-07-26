@@ -1,42 +1,13 @@
 ---
+
 slug: git-cli-tool-free
 name: git-cli-tool-free
 version: 1.0.0
 displayName: Git命令行助手免费版
 summary: "提供Git CLI快速参考、状态检查、暂存提交与分支同步,适合开发者日常命令行操作.。面向开发者的Git命令行辅助工具,提供快速命令参考、仓库状态检查、暂存提交与远程同步操作指引。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向开发者的Git命令行辅助工具,提供快速命令参考、仓库状态检查、暂存提交与远程同步操作指引。核心能力:
-
-  - Git CLI快速参考表
-
-  - 仓库状态检查
-
-  - 暂存与提交操作
-
-  - 分支管理与远程同步
-
-  - 安全操作指引
-
-  适用场景:
-
-  - 日常Git命令行操作
-
-  - 快速查找Git命令
-
-  - 新手学习Git CLI
-
-  - 命令行工作流辅助
-
-  差异化:
-
-  - 免费版提供核心命令快速参考,开箱即用
-
-  - 安全优先,避免危险操作
-
-  - 与专业版命令兼容,可平滑升级
-
-  适用关键词: Git命令, git cli, ...'
+description: "面向开发者的Git命令行辅助工具,包含快速命令参考、仓库状态检查、暂存提交与远程同步操作指引。核心能力:. 适用于需要git cli tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - Git
@@ -52,7 +23,9 @@ tools:
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # Git命令行助手 - 免费版
 
 ## 概述
@@ -372,7 +345,7 @@ venv/
 .env.local
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **安全优先**:优先使用只读命令,避免破坏性操作
 
@@ -514,7 +487,7 @@ ssh-keygen -t ed25519 -C "your@email.com"
 
 ### 可用性分类
 
-- **分类**:MD+EXEC(纯 Markdown 指令,需要 exec 命令行执行能力)
+- **分类**:MD+EXEC模式纯 Markdown 指令,需要 exec 命令行执行能力)
 - **说明**:基于 Markdown 的 AI Skill,通过自然语言指令驱动 Agent 执行Git CLI操作
 - **适用规模**:个人开发者日常使用
 

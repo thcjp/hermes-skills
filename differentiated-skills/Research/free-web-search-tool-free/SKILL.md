@@ -1,44 +1,24 @@
 ---
+
 slug: free-web-search-tool-free
 name: free-web-search-tool-free
 version: 1.0.0
 displayName: 免费网页搜索工具
 summary: 轻量级联网搜索工具，支持 Bing 与 DuckDuckGo 双引擎自动路由，中文环境优化，适合个人日常信息检索.
-license: Proprietary
+license: MIT
 edition: free
-description: '轻量级联网搜索工具，支持 Bing 与 DuckDuckGo 双引擎自动路由，中文环境优化，适合个人日常信息检索。核心能力:
-
-  - 基于 Playwright 的无头浏览器搜索，稳定可靠
-
-  - 智能 IP 地理位置探测，自动选择国内/国际搜索引擎
-
-  - 可选正文抓取，按需获取目标网页全文内容
-
-  - 中文环境默认优化，结果以中文为主
-
-  适用场景:
-
-  - 个人开发者日常技术问题检索
-
-  - 学生学习资料快速查找
-
-  - 新闻资讯即时获取
-
-  差异化:
-
-  - 免费版聚焦核心搜索能力，适合个人轻量使用
-
-  - 无需注册 API Key...'
+description: "轻量级联网搜索工具，兼容 Bing 与 DuckDuckGo 双引擎自发路由，中文环境调优，适合个人日常信息检索。核心能力:. 适用于需要free web search tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要free web search tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 搜索
+  - web
+  - search
+  - automation
+  - productivity
   - 研究工具
   - 网页抓取
   - 信息检索
   - Web开发
   - 前端
-  - 开发工具
-  - python
-  - playwright
 tools:
   - read
   - exec
@@ -46,7 +26,10 @@ tools:
   - glob
 homepage: ""
 category: "Development"
+pricing_tier: free
+
 ---
+
 # 免费网页搜索工具
 
 ## 概述
@@ -111,7 +94,7 @@ category: "Development"
 
 个人开发者遇到技术问题时，快速搜索解决方案.
 ```bash
-python （请参考skill目录中的脚本文件） "Python 异步编程 最佳实践 2026" --max=10
+python （请参考skill目录中的脚本文件） "Python 异步编程 优秀实践 2026" --max=10
 ```
 
 预期输出包含相关技术博客、官方文档链接和社区讨论，帮助快速定位解决方案.
@@ -197,7 +180,7 @@ python （请参考skill目录中的脚本文件） "Python tutorial" --region=i
 | `--full` | 整数 | 0 | 0-5 | 抓取前 N 条全文 |
 | `--region` | 字符串 | auto | auto/cn/intl | 区域选择 |
 
-## 最佳实践
+## 优秀实践
 
 ### 搜索关键词优化
 

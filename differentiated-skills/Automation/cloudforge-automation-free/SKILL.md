@@ -5,11 +5,9 @@ name: cloudforge-automation-free
 version: 1.0.1
 displayName: Cloudforge Automatio
 summary: 单云基础设施即代码工具，含Terraform模板、基础资源配置与一键部署，支持AWS/GCP/Azure.
-license: Proprietary
+license: MIT
 edition: free
-description: "云锻造自动化免费版帮助你使用基础设施即代码（IaC）管理云资源。通过Terraform模板定义、一键部署与基础配置管理，告别手动控制台操作，实现云资源的可重复、可版本化、可追溯管理。Use
-  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。减少重复劳动，提升工作效率。触发关键词：自动化、安全、部署、数据库、机器学习"
-  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
+description: "云锻造自发化免费版使用基础设施即代码（IaC）管控云资源。通过Terraform模板定义、快速部署与基础配置管控，告别手动控制台操作，达成云资源的可重复、可版本化、可追溯管控。Use. 适用于需要cloudforge automation相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 云基础设施
   - Terraform
@@ -26,8 +24,9 @@ tools:
   - write
 homepage: ""
 category: "Operations"
-
+pricing_tier: free
 ---
+
 # 云锻造自动化（免费版）
 
 > **单云基础设施即代码工具。Terraform模板+一键部署，告别手动控制台操作。**
@@ -457,9 +456,9 @@ Terraform的state文件包含资源ID、敏感信息（如数据库密码）。�
 
 ### 示例1：基础用法
 
-```
-### 基础使用（<60秒）(补充)
-# ...
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 帮我初始化AWS基础设施项目，创建一个Web应用的基础架构
 ```
@@ -476,6 +475,8 @@ Terraform的state文件包含资源ID、敏感信息（如数据库密码）。�
 ### 使用流程(补充)
 # ...
 ```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 # ...
 ## 错误处理

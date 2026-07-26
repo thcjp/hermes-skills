@@ -5,28 +5,20 @@ name: web-content-fetcher-tool-free
 version: 1.0.0
 displayName: 网页内容获取免费版
 summary: "当常规爬虫被过滤时，使用替代服务获取网页Markdown内容，支持多服务降级，适合个人开发.。网页内容获取工具免费版，面向个人开发者的轻量级网页内容抓取工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: "网页内容获取工具免费版，面向个人开发者的轻量级网页内容抓取工具。核心能力:，可自动提升工作效率
-  - 三种替代服务的降级获取策略
-  - 自动按优先级尝试（jina/markdown。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。'。减少重复劳动，提升工作效率。触发关键词：API设计、自动化、性能优化、转换、写作、营销"
-
-  - 三种替代服务的降级获取策略
-
-  - 自动按优先级尝试（jina/markdown。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。'
+description: "网页内容获取工具免费版，面向个人开发者的轻量级网页内容抓取工具。核心能力:，可自发提升工作效率. 适用于需要web content fetcher tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要web content fetcher tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 网页抓取
+  - web
+  - content
+  - fetcher
+  - automation
   - 内容获取
   - Markdown转换
   - 免费版
   - Web开发
   - 前端
-  - 开发工具
-  - markdown
-  - https
-  - jina
-  - defuddle
-  - new
 tools:
   - read
   - exec
@@ -34,8 +26,10 @@ tools:
   - glob
 homepage: ""
 category: "Development"
+pricing_tier: free
 
 ---
+
 # 网页内容获取工具（免费版）
 
 ## 概述
@@ -137,10 +131,10 @@ fetch_webpage <url>
 fetch_webpage <url> --method jina|markdown|defuddle
 ```
 
-## 最佳实践
+## 优秀实践
 
 * 首先用常规 `web_fetch` 尝试获取，失败后再调用本工具.
-* 优先使用 r.jina.ai，通用性最强.
+* 优先使用 r.jina.ai，通用性强力.
 * Cloudflare 保护站点使用 markdown.new.
 * 获取后检查 Markdown 内容完整性，部分动态内容可能缺失.
 * 频繁请求建议添加间隔，避免被服务限流.

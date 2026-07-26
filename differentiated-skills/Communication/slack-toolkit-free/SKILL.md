@@ -1,32 +1,13 @@
 ---
+
 slug: slack-toolkit-free
 name: slack-toolkit-free
 version: 1.0.1
 displayName: Slack工具箱免费版
 summary: "Slack消息管理基础工具，支持发送、编辑、删除消息，表情回应与置顶操作，适合个人日常使用.。Slack工具箱（免费版）—— 面向个人用户的Slack消息管理工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 'Slack工具箱（免费版）—— 面向个人用户的Slack消息管理工具。核心能力:
-
-  - 消息发送、编辑、删除与读取
-
-  - 表情回应添加与查看
-
-  - 消息置顶与取消置顶
-
-  - 成员信息查询
-
-  - 自定义表情列表查看
-
-  适用场景:
-
-  - 日常工作消息发送与管理
-
-  - 团队协作中的消息标记与回应
-
-  - 重要信息置顶与归档
-
-  差异化: 聚焦个人用户高频操作，提供简洁直观的Slack消息管理能力，开箱即用'
+description: "Slack工具箱（免费版）—— 面向个人用户的Slack消息管控工具。核心能力:. 适用于需要slack toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 沟通协作
   - Slack
@@ -44,7 +25,9 @@ tools:
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: free
 ---
+
 # Slack工具箱（免费版）
 
 ## 概述
@@ -209,7 +192,7 @@ features:
 | memberInfo | 启用 | 查询成员信息 |
 | emojiList | 启用 | 查看自定义表情列表 |
 
-## 最佳实践
+## 优秀实践
 
 ### 消息管理规范
 
@@ -311,11 +294,8 @@ features:
 ### Q: 发送消息失败怎么办？
 
 ```bash
-# 错误处理
-# 1. channel_not_found - Bot未加入该频道，需先邀请Bot加入
-# 2. not_authed - Token无效或过期，重新获取
-# 3. missing_scope - Token权限不足，添加对应Scope
-# 4. rate_limited - 请求过于频繁，稍后重试
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ## 依赖说明

@@ -1,13 +1,13 @@
 ---
+
 slug: api-scaffold-gen-free
 name: api-scaffold-gen-free
 version: 1.0.1
 displayName: API脚手架生成器(免费版)
 summary: "从资源名一键生成REST/GraphQL脚手架代码，含CRUD、认证、测试模板，60秒出码.。API脚手架生成器免费版解决"新项目起步慢、样板代码写到吐"的痛点。从资源名出发，一键生成RES"
-license: Proprietary
+license: MIT
 edition: free
-description: API脚手架生成器免费版解决"新项目起步慢、样板代码写到吐"的痛点。从资源名出发，一键生成RESTful CRUD端点、GraphQL Schema、JWT认证、基础测试套件、Mock数据等生产可用脚手架代码。Use
-  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
+description: "API脚手架产出器免费版解决\"新项目起步慢、样板代码写到吐\"的痛点。从资源名出发，快速产出RESTful CRUD端点、GraphQL Schema、JWT认证、基础测试套件、Mock数据等生产可用脚手架代码。Use. 适用于需要api scaffold gen相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 代码生成
   - 脚手架
@@ -19,14 +19,15 @@ tags:
   - const
   - users
   - user
-  - data
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # API脚手架生成器（免费版）
 
 > **把"新项目起样板代码"从两小时压缩到一分钟。资源名→CRUD+认证+测试+Mock，全套脚手架。**
@@ -308,7 +309,7 @@ headers.authorization;
       const resp = await fetch(introspectUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `token=${token}`
+        body: `token=${PARAM}`
       });
       const result = await resp.json();
       if (!result.active) {
@@ -362,7 +363,7 @@ api-scaffold-gen mock user --port 3000
 
 ### 场景一：新API项目快速起步（独立开发者角色）
 
-**痛点**：新项目第一天都在搭脚手架，CRUD、认证、测试一套下来半天没了.
+**痛点**：新项目领先天都在搭脚手架，CRUD、认证、测试一套下来半天没了.
 **使用方式**：对Agent说"我要做一个订单管理API，用Node.js Express，先生成order资源的CRUD+JWT认证+测试套件"。Agent输出完整可运行的项目结构，npm install后即可启动.
 **效果**：项目起步从半天压缩到5分钟，直接进入业务逻辑开发.
 ### 场景二：独立开发者MVP搭建（创业者角色）
@@ -386,7 +387,7 @@ api-scaffold-gen mock user --port 3000
 - Node.js：Express、Fastify
 - Python：FastAPI、Flask
 
-每种栈的代码风格遵循该语言社区最佳实践（如Express用router组织，FastAPI用装饰器）.
+每种栈的代码风格遵循该语言社区优秀实践（如Express用router组织，FastAPI用装饰器）.
 ### Q3：支持自定义字段吗？
 
 支持。在资源名后附加字段描述，如"生成user资源，字段有name（字符串）、age（整数）、role（枚举：admin/user）"。Agent会按描述生成对应字段与校验逻辑.

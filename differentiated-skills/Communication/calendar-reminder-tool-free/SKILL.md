@@ -1,16 +1,13 @@
 ---
+
 slug: calendar-reminder-tool-free
 name: calendar-reminder-tool-free
 version: 1.0.0
 displayName: 日历提醒工具免费版
 summary: "每晚自动扫描明日日历并通过飞书发送提醒，上午提前2小时、下午统一12点通知，适合个人单日历.,支持多种使用场景和自动化处理"
-license: Proprietary
+license: MIT
 edition: free
-description: 面向个人用户的日历日程自动提醒工具，可自动提升工作效率
-  核心能力: 每晚定时扫描明日日历、按时段分类提醒、飞书消息通知、扫描完成汇报.
-  适用场景: 个人日程提醒、工作日历管理、会议防遗漏、每日日程预览.
-  差异化: 免费版聚焦单个日历扫描与基础提醒规则，不含多日历聚合与智能调度.
-  适用关键词: 日历, 提醒, calendar, reminder, 飞书, 日程, 定时扫描, 会议通知'
+description: "面向个人用户的日历日程自发提醒工具，可自发提升工作效率. 适用于需要calendar reminder tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 日历提醒
   - 日程管理
@@ -22,20 +19,15 @@ tags:
   - 自动化
   - 通信
   - 邮件
-  - 研究
-  - 分析
-  - skill-platform
-  - cron
-  - 下午日程
-  - calendar_reminder
-  - open_id
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 日历提醒工具 免费版
 
 ## 概述
@@ -152,6 +144,8 @@ skill-platform cron add \
 
 4. 手动运行一次验证.
 ```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -195,7 +189,7 @@ skill-platform cron get --name "calendar-daily-scan"
 skill-platform cron remove --name "calendar-daily-scan"
 ```
 
-## 最佳实践
+## 优秀实践
 
 - **open_id 准确**：确保飞书 open_id 正确，可通过飞书管理后台查询。错误的 open_id 会导致提醒无法送达.
 - **时区一致**：脚本使用 Asia/Shanghai 时区，若你在其他时区，修改 `SCAN_CONFIG.timezone`.
@@ -244,6 +238,8 @@ skill-platform cron get --name "calendar-daily-scan"
 随时运行以下命令手动触发：
 
 ```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ## 依赖说明

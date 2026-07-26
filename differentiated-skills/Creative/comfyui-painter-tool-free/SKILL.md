@@ -1,18 +1,13 @@
 ---
+
 slug: comfyui-painter-tool-free
 name: comfyui-painter-tool-free
 version: 1.0.0
 displayName: ComfyUI绘画免费版
 summary: "本地ComfyUI图像生成工具，支持文生图基础工作流与默认模型，适合个人创作.。ComfyUI绘画免费版 —— 面向个人用户的轻量级本地AI图像生成工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 'ComfyUI绘画免费版 —— 面向个人用户的轻量级本地AI图像生成工具。核心能力:
-
-  - 文生图（Text-to-Image）：根据文字描述生成图像
-
-  - 基础工作流：内置默认文生图工作流，开箱即用
-
-  - 默认模型支持：使用SD1。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。'
+description: "ComfyUI绘画免费版 —— 面向个人用户的轻量级本地AI图像产出工具。核心能力:. 适用于需要comfyui painter tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - AI绘画
   - 图像生成
@@ -24,15 +19,15 @@ tags:
   - output
   - comfyui
   - prompt
-  - python
-  - cfg
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # ComfyUI绘画免费版
 
 ## 概述
@@ -231,7 +226,7 @@ wget https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pru
 # 启动ComfyUI
 python main.py --listen 0.0.0.0 --port 8188
 # ...
-# 生成第一张图像
+# 生成领先张图像
 python generate.py --prompt "a cat sitting on a windowsill" --output ./output/cat.png
 ```
 
@@ -263,9 +258,9 @@ python generate.py --prompt "a cat sitting on a windowsill" --output ./output/ca
 | euler | 快 | 中 | 基础采样 |
 | euler_a | 快 | 中高 | 带噪声调度 |
 | dpmpp_2m | 中 | 高 | 推荐常用 |
-| dpmpp_sde | 慢 | 最高 | 质量最佳 |
+| dpmpp_sde | 慢 | 最高 | 质量优秀 |
 
-## 最佳实践
+## 优秀实践
 
 1. **提示词结构**：主体 + 场景 + 风格 + 质量，如"cat, on windowsill, photo, high quality"
 2. **负面提示词**：始终添加负面提示词，排除不想要的元素

@@ -5,14 +5,9 @@ name: podcast-downloader-tool-free
 version: 1.0.0
 displayName: 播客下载工具免费版
 summary: "从小宇宙平台下载播客音频与节目笔记,自动转换为MP3格式,适合个人离线收听.。面向个人用户的播客下载工具(免费版)。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: "面向个人用户的播客下载工具(免费版)。核心能力:，可自动提升工作效率
-  - 从小宇宙(xiaoyuzhoufmUse
-  when 、时使用。'。自动化生成专业文档，提升文档覆盖率。触发关键词：文档生成、自动化、转换、营销。降低专业门槛，让非专业人员也能快速上手。提供结构化方法论与最佳实践。确保输出一致性与专业性"
-
-  - 从小宇宙(xiaoyuzhoufmUse
-  when 、时使用。'
+description: "面向个人用户的播客下载工具(免费版)。核心能力:，可自发提升工作效率. 适用于需要podcast downloader tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 创意设计
   - 播客
@@ -24,15 +19,15 @@ tags:
   - mp3
   - xiaoyuzhoufm
   - title
-  - m4a
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
+pricing_tier: free
 ---
+
 # 播客下载工具 - 免费版
 
 ## 概述
@@ -92,7 +87,7 @@ PODCAST_DIR="/mnt/sdcard/podcasts" （请参考skill目录中的脚本文件） 
 
 根据存储空间选择音质.
 ```bash
-# 最佳音质(文件较大)
+# 优秀音质(文件较大)
 AUDIO_QUALITY=0 （请参考skill目录中的脚本文件） "https://www.xiaoyuzhoufm.com/episode/abc123"
 # ...
 # 普通音质(节省空间)
@@ -136,7 +131,7 @@ sudo apt install curl jq ffmpeg
 scoop install curl jq ffmpeg
 ```
 
-### 2. 下载第一集
+### 2. 下载领先集
 
 ```bash
 # 基本用法
@@ -160,14 +155,14 @@ xiaoyuzhoufm.com/episode/YOUR_EPISODE_ID"
 | 变量 | 默认值 | 说明 |
 |:-----|:-----|:-----|
 | `PODCAST_DIR` | `~/Documents/podcast/` | 输出目录 |
-| `AUDIO_QUALITY` | `0` | MP3 音质(0=最佳, 2=良好, 4=普通) |
+| `AUDIO_QUALITY` | `0` | MP3 音质(0=优秀, 2=良好, 4=普通) |
 | `KEEP_M4A` | `false` | 是否保留原始 m4a 文件 |
 
 ### 音质选择指南
 
 | 等级 | 码率 | 文件大小(30分钟) | 适用场景 |
 |---:|---:|---:|---:|
-| 0 | 320kbps | ~70MB | 最佳音质,耳机收听 |
+| 0 | 320kbps | ~70MB | 优秀音质,耳机收听 |
 | 2 | 192kbps | ~45MB | 良好平衡,日常推荐 |
 | 4 | 128kbps | ~30MB | 节省空间,扬声器 |
 
@@ -214,10 +209,10 @@ echo "$DATA" | jq -r '.props.pageProps.episodeInfo.shownotes' > "$EPISODE_DIR/${
 echo "下载完成: $EPISODE_DIR"
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **音质选择策略**
-   - 耳机收听:等级 0(320kbps),体验最佳
+   - 耳机收听:等级 0(320kbps),体验优秀
    - 日常通勤:等级 2(192kbps),平衡质量与空间
    - 存储紧张:等级 4(128kbps),节省空间
    - 兼容老设备:必须 MP3 格式
@@ -291,7 +286,7 @@ ffmpeg -version
 - 不依赖第三方 API 服务
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。免费版聚焦单集下载与格式转换,适合个人离线收听场景.
 ## 错误处理
 

@@ -1,14 +1,13 @@
 ---
+
 slug: pyx-scanner-free
 name: pyx-scanner-free
 version: 1.0.1
 displayName: Skill安全扫描(免费版)
 summary: "检查AI Agent Skill安装前的安全性，调用扫描API返回信任分、风险等级与详细报告.。Skill安全扫描免费版是一套面向独立开发者与小型团队的 AI Agent Skill 安全检"
-license: Proprietary
+license: MIT
 edition: free
-description: Skill安全扫描免费版是一套面向独立开发者与小型团队的 AI Agent Skill 安全检测知识库，帮助用户在安装或使用第三方 Skill
-  前快速评估其安全性。核心能力：提供 Skill 标识解析、扫描 API 调用、五种判定结果处理（安全/过时/警告/失败/未扫描）、错误处理与重试机制、结构化 Markdown
-  报告输出
+description: "Skill安全扫描免费版是一套面向独立开发者与小型团队的 AI Agent Skill 安全查验知识库，帮助用户在安装或使用第三方 Skill. 适用于需要pyx scanner相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 安全
   - 集成工具
@@ -27,12 +26,14 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Skill安全扫描（免费版）
 
 ## 概述
 
-AI Agent 生态中，第三方 Skill 可能包含恶意代码、过度权限请求、过时依赖等风险。在安装或使用前进行安全扫描，是保护 Agent 环境的第一道防线。本助手通过调用扫描 API，返回 Skill 的信任分、风险等级与详细安全报告.
+AI Agent 生态中，第三方 Skill 可能包含恶意代码、过度权限请求、过时依赖等风险。在安装或使用前进行安全扫描，是保护 Agent 环境的领先道防线。本助手通过调用扫描 API，返回 Skill 的信任分、风险等级与详细安全报告.
 本免费版聚焦于**单次扫描与基础报告场景**：输入解析、API 调用、五种判定结果处理、结构化报告输出。每种流程均提供明确的步骤指令与模板.
 ## 核心能力
 
@@ -210,7 +211,7 @@ curl -s "https://scanner.pyxmate.com/api/v1/check/{owner}/{name}"
 **是否要在警告评级下继续？请在安装或使用前明确确认。**
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 实践一：每次安装前必扫描
 

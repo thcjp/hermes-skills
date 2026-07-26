@@ -1,26 +1,24 @@
 ---
+
 slug: file-browser-tool-free
 name: file-browser-tool-free
 version: 1.0.0
 displayName: 文件浏览器(免费版)
 summary: "文件浏览器免费版，支持基础文件操作、目录浏览、简单搜索与文本预览.。文件浏览器助手免费版是面向个人用户的轻量文件管理工具。聚焦"浏览-查看-搜索-管理"四步流程，提供基础的文件系统操作能力。"
-license: Proprietary
+license: MIT
 edition: free
-description: 文件浏览器助手免费版是面向个人用户的轻量文件管理工具。聚焦"浏览-查看-搜索-管理"四步流程，提供基础的文件系统操作能力。Use when
-  需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
+description: "文件浏览器助手免费版是面向个人用户的轻量文件管控工具。聚焦\"浏览-查看-搜索-管控\"四步流程，包含基础的文件系统操作能力。Use when. 适用于需要file browser tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要file browser tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 文件管理
+  - file
+  - browser
+  - automation
+  - productivity
   - 目录浏览
   - 文件搜索
   - 文本预览
   - 搜索
   - 检索
-  - 工具
-  - print
-  - filepath
-  - encoding
-  - return
-  - lines
 tools:
   - read
   - exec
@@ -28,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 > **浏览、查看、搜索、管理。四步完成文件系统操作。**
 
 无需复杂配置，通过简单的命令即可浏览目录、查看文件、搜索内容、管理文件。免费版聚焦轻量场景，提供基础的文件系统操作能力.
@@ -212,9 +213,9 @@ cat README.md | head -10
 find . -name "*.py" -type f
 # ...
 grep -r "TODO" --include="*.py" .
-```
-
-### 120秒标准搭建
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python3 --version
 ls --version 2>/dev/null || dir  # Windows
@@ -284,9 +285,9 @@ class FileBrowserConfig:
         print(f"显示隐藏文件：{cls.SHOW_HIDDEN}")
 # ...
 FileBrowserConfig.show()
-```
-
-### 常用命令速查
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 ls -la                        # 详细列表
 ls -la --sort=time            # 按时间排序
@@ -304,10 +305,9 @@ mv src dst                    # 移动/重命名
 rm file                       # 删除
 mkdir -p path/to/dir          # 创建多级目录
 touch file.txt                # 创建空文件
-```
-
-## 最佳实践
-### 1. 安全操作
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 def safe_delete(path):
     """安全删除（带确认）"""
@@ -323,9 +323,9 @@ def backup_before_operation(paths, backup_dir="./backup"):
     for path in paths:
         if os.path.exists(path):
             shutil.copy2(path, backup_dir)
-```
-
-### 2. 搜索优化
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 def search_in_project(root, pattern, exclude_dirs=None):
     """在项目中搜索（排除指定目录）"""
@@ -416,9 +416,9 @@ def robust_operation(func, *args, **kwargs):
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

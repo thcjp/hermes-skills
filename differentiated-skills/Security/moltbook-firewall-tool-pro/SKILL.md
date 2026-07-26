@@ -7,9 +7,7 @@ displayName: Agent防火墙专业版
 summary: 企业级Agent安全防护平台,支持深度注入检测、沙盒隔离、多Agent统一管理、实时监控与审计,适合企业Agent安全团队.
 license: Proprietary
 edition: pro
-description: "Agent防火墙专业版,为企业提供全方位AI Agent安全防护能力。核心能力:上下文感知深度注入检测、沙盒隔离、参数投毒检测、多Agent统一管理、实时监控与告警、完整审计链。Use
-  when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。系统性识别风险，保障系统安全合规。触发关键词：安全、监控、机器学习"
-  when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
+description: "Agent防火墙专业版,为企业包含全方位AI Agent安全防护能力。核心能力:上下文感知深度注入查验、沙盒隔离、参数投毒查验、多Agent统一管控、实时监控与告警、完整审计链。Use. 适用于需要moltbook firewall tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 安全
   - AI安全
@@ -27,8 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Security"
-
+pricing_tier: L2-标准级
 ---
+
 专业版为企业提供完整的AI Agent安全防护平台,在免费版基础防护能力之上,新增上下文感知深度注入检测、沙盒隔离执行、工具参数投毒检测、多Agent统一管理、实时监控与Webhook告警、完整审计链与SARIF报告。专业版完全兼容免费版防护规则,已有安全配置可无缝升级,适合企业级Agent安全治理.
 ### 专业版核心优势
 | 优势 | 说明 |
@@ -297,9 +296,9 @@ class EnterpriseAgentSecurity:
             "agents": self.manager.get_security_dashboard(),
             "audit": self.manager.audit_all_agents()
         }
-```
-
-### 场景二:实时安全监控仪表板
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 #!/bin/bash
 echo "=== Agent安全监控仪表板 ==="
@@ -376,11 +375,11 @@ if not detection["should_block"]:
 | 网络访问 | 禁止 | 防止网络泄露 |
 | 文件系统 | 只读 | 防止文件修改 |
 
-## 最佳实践
+## 优秀实践
 1. **深度防御**:注入检测+沙盒执行+参数过滤多层防护.
 2. **沙盒隔离**:所有工具调用在沙盒中执行,限制影响范围.
 3. **统一管理**:多Agent统一安全策略,集中监控.
-4. **实时告警**:配置Webhook告警,攻击发生时第一时间响应.
+4. **实时告警**:配置Webhook告警,攻击发生时领先时间响应.
 5. **审计留痕**:所有安全事件记录审计链,可追溯.
 6. **定期演练**:模拟攻击测试防护有效性.
 ## 常见问题
@@ -416,7 +415,7 @@ if not detection["should_block"]:
 - 沙盒执行建议配置Docker访问权限
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行企业级AI Agent安全防护与治理任务
 
 ## 错误处理

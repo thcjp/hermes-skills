@@ -5,9 +5,15 @@ name: self-evolving-ai
 version: 1.0.1
 displayName: 自我进化AI
 summary: "自动捕获经验与错误,智能分层记忆,模式复发追踪,按需加载降本增效.。让智能体从每次交互中持续学习的记忆与进化系统，针对记不住、用不上、成本高三大痛点。适用于长期 AI 代理项目、多人协作仓库"
-license: Proprietary
-description: 让智能体从每次交互中持续学习的记忆与进化系统，针对记不住、用不上、成本高三大痛点。适用于长期 AI 代理项目、多人协作仓库、领域知识积累、减少重复犯错等场景。核心能力含三类结构化记忆、自动痛点检测、模式复发追踪与晋升、分层文档加载、技能提取。适用关键词：自我进化、经验捕获、错误学习、模式追踪、记忆晋升、self-evolving、learnings、pattern-detection.
-tags: 智能,learnings,recurrence-count,step,用户提供,完成核心
+license: MIT
+description: "让智能体从每次交互中持续学习的记忆与进化系统，针对记不住、用不上、成本高三大痛点。适用于长期 AI 代理项目、多人协作仓库、领域知识积累、减少重复犯错等场景。核心能力含三类结构化记忆、自发痛点查验、模式复发追踪与晋升、分层文档加载、技能提取。适用关键词：自我进化、经验捕获、错误学习、模式追踪、记忆晋升、self-evolving、learnings、pattern-detection."
+tags:
+  - 智能
+  - learnings
+  - recurrence-count
+  - step
+  - 用户提供
+  - 完成核心
 tools:
   - read
   - exec
@@ -17,7 +23,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
-
+pricing_tier: free
 ---
 
 # 自我进化 AI（Self-Evolving AI）
@@ -26,7 +32,7 @@ category: "Agents"
 ## 核心能力
 
 ### 1. 三类结构化记忆
-将学习内容分为 LEARNINGS.md（经验/纠正/知识缺口/最佳实践）、ERRORS.md（命令/操作/API 失败）、FEATURE_REQUESTS.md（用户提出的缺失功能）。每类条目含 ID（TYPE-YYYYMMDD-XXX）、优先级（critical/high/medium/low）、状态（pending→in_progress→resolved/wont_fix/promoted）、区域标签（frontend/backend/infra/tests/docs/config）等元数据.
+将学习内容分为 LEARNINGS.md（经验/纠正/知识缺口/优秀实践）、ERRORS.md（命令/操作/API 失败）、FEATURE_REQUESTS.md（用户提出的缺失功能）。每类条目含 ID（TYPE-YYYYMMDD-placeholder）、优先级（critical/high/medium/low）、状态（pending→in_progress→resolved/wont_fix/promoted）、区域标签（frontend/backend/infra/tests/docs/config）等元数据.
 
 **处理**: 解析三类结构化记忆的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回三类结构化记忆的响应数据,包含状态码、结果和日志.
@@ -70,7 +76,7 @@ category: "Agents"
 |----|---|---|----|
 | 长期 AI 代理项目 | 反复出现的错误与纠正 | 结构化学习库 + 晋升规则 | ✅ 适用 |
 | 多人协作代码仓库 | 团队共同的踩坑经验 | 共享的 .learnings/ 知识库 | ✅ 适用 |
-| 领域知识积累 | 领域特定约定与最佳实践 | 可检索的知识条目 | ✅ 适用 |
+| 领域知识积累 | 领域特定约定与优秀实践 | 可检索的知识条目 | ✅ 适用 |
 | 减少重复犯错 | 同类错误复发 | 复发检测 + 系统性修复建议 | ✅ 适用 |
 | 隐性经验显性化 | 调试中发现的非显而易见方案 | 提炼为项目规则或可复用技能 | ✅ 适用 |
 
@@ -205,7 +211,7 @@ pending → in_progress → resolved
 | 场景 | 原因 | 处理方式 |
 |:---:|:---:|:---:|
 | 钩子未触发提醒 | 脚本路径错误 | 检查 `${CLAUDE_PROJECT_DIR}/.claude/skills/self-evolving-ai/scripts/` 路径是否存在 |
-| grep 搜索无结果 | 条目 ID 格式不匹配 | 确认 ID 格式为 `TYPE-YYYYMMDD-XXX` |
+| grep 搜索无结果 | 条目 ID 格式不匹配 | 确认 ID 格式为 `TYPE-YYYYMMDD-placeholder` |
 | 晋升后 CLAUDE.md 重复 | 未更新原条目状态 | 将原条目 Status 改为 promoted 并添加 Promoted 字段 |
 | Recurrence-Count 未递增 | Pattern-Key 不一致 | 确保相同模式使用完全相同的 Pattern-Key 字符串;执行排查步骤后恢复操作 |
 | 记忆目录被 git 追踪但不想提交 | 未配置 gitignore | 添加 `.learnings/` 到 .gitignore，或用混合模式追踪模板忽略条目 |

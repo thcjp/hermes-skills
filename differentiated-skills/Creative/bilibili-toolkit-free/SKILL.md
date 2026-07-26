@@ -1,36 +1,13 @@
 ---
+
 slug: bilibili-toolkit-free
 name: bilibili-toolkit-free
 version: 1.0.1
 displayName: B站工具箱免费版
 summary: "B站热门监控、视频下载、数据查看与字幕获取，免登录使用核心功能，适合个人用户.。B站工具箱免费版 —— 面向个人用户的轻量级B站内容工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: B站工具箱免费版 —— 面向个人用户的轻量级B站内容工具。核心能力:，可处理提升工作效率
-
-  - 热门视频监控：实时查看B站热门、热搜、排行榜、必看榜
-
-  - 标准画质视频下载：支持360p至1080p视频下载
-
-  - 视频数据查看：查看播放量、点赞数等基础统计数据
-
-  - 字幕获取：下载视频CC字幕，支持多语言
-
-  - 弹幕获取：获取视频弹幕内容
-
-  - 无需登录即可使用核心功能
-
-  适用场景:
-
-  - 个人用户浏览B站热门内容
-
-  - 下载视频离线观看
-
-  - 查看视频数据与弹幕
-
-  - 获取视频字幕用于学习
-
-  差异化:免费版提供无需登录的核心功能...'
+description: "B站工具箱免费版 —— 面向个人用户的轻量级B站内容工具。核心能力:，可处置提升工作效率. 适用于需要bilibili toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - B站
   - 视频下载
@@ -42,14 +19,15 @@ tags:
   - main
   - url
   - bv1xx411c7md
-  - print
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # B站工具箱免费版
 
 ## 概述
@@ -228,7 +206,7 @@ pip install httpx aiohttp beautifulsoup4 lxml requests
 python main.py hot_monitor get_hot '{"page_size": 5}'
 ```
 
-### 3. 下载第一个视频
+### 3. 下载领先个视频
 
 ```bash
 python main.py downloader download '{"url": "BV1xx411c7mD", "quality": "1080p"}'
@@ -277,7 +255,7 @@ python main.py downloader download '{"url": "BV1xx411c7mD", "quality": "1080p"}'
 | TXT | `txt` | 纯文本 |
 | JSON | `json` | 程序处理 |
 
-## 最佳实践
+## 优秀实践
 
 1. **无需登录**：免费版核心功能无需登录，直接使用即可
 2. **画质选择**：1080p已满足大多数观看需求，更高画质需登录

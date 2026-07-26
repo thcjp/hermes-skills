@@ -1,4 +1,5 @@
 ---
+
 slug: "vue-component-gen-tool-pro"
 name: "vue-component-gen-tool-pro"
 version: "1.0.0"
@@ -6,19 +7,7 @@ displayName: "Vue组件生成(专业版)"
 summary: "面向团队的企业级Vue 3组件工程平台,含组件库结构、批量生成、可访问性、测试模板与CI集成。。Vue组件生成工具专业版为团队与企业提供端到端Vue 3组件工程能力,涵盖企业级组件库结构、批"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  Vue组件生成工具专业版为团队与企业提供端到端Vue 3组件工程能力,涵盖企业级组件库结构、批量组件生成、WCAG AA可访问性、单元测试模板与CI/CD集成。核心能力:
-  - 企业级组件库目录结构与文档
-  - 批量组件生成脚手架
-  - WCAG AA可访问性内建
-  - 单元测试模板(Vitest + Vue Test Utils)
-  - 多API类型同步输出(Composition/Options)
-  - 设计令牌驱动的样式
-  - CI/CD组件质量门禁
-
-  适用场景:
-  - 中大型团队Vue组件库从0到1搭建
-  - 企业级产...
+description: "|-. 适用于需要vue component gen tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Vue
   - 组件库
@@ -30,22 +19,15 @@ tags:
   - 工具
   - 效率
   - 自动化
-  - 开发
-  - 代码
-  - 创意
-  - 图像
-  - 知识
-  - comp
-  - vue
-  - disabled
-  - pro
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # Vue 组件生成工具(专业版)
 
 ## 概述
@@ -368,7 +350,7 @@ const handleClick = (event: MouseEvent) => {
 
 ## 快速开始
 
-### 第一步:声明团队上下文
+### 领先步:声明团队上下文
 
 在对话中说明团队规模、技术栈与组件库目标,例如:
 
@@ -448,9 +430,9 @@ jobs:
         uses: codecov/codecov-action@v4
 ```
 
-## 最佳实践
+## 优秀实践
 
-1. **`<script setup lang="ts">` 优先**:Vue 3 最佳实践,类型安全且编译期优化最好.
+1. **`<script setup lang="ts">` 优先**:Vue 3 优秀实践,类型安全且编译期优化优秀.
 2. **WCAG AA 内建**:组件默认支持键盘、屏幕阅读器与对比度,而非可选附加.
 3. **设计令牌驱动**:样式引用令牌变量,支持暗色模式与主题切换.
 4. **`aria-*` 属性显式声明**:disabled 用 `aria-disabled`,loading 用 `aria-busy`,pressed 用 `aria-pressed`.
@@ -511,7 +493,7 @@ Pro 版完全兼容免费版的所有单组件输出。个人开发者可继续�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于自然语言指令驱动 Agent 输出企业级 Vue 组件工程方案;脚手架与测试脚本需在仓库中落地并由本地或 CI 执行
 
 ## 错误处理

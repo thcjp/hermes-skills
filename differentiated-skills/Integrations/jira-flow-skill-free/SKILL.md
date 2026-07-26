@@ -1,14 +1,13 @@
 ---
+
 slug: jira-flow-skill-free
 name: jira-flow-skill-free
 version: 1.0.1
 displayName: Jira Flow 免费版
 summary: "通过Jira Cloud REST API管理任务、状态流转与工时记录，适合个人开发者日常追踪.。Jira Flow Skill 是面向个人开发者与小型团队的 Jira 任务管理辅助工具，通"
-license: Proprietary
+license: MIT
 edition: free
-description: Jira Flow Skill 是面向个人开发者与小型团队的 Jira 任务管理辅助工具，通过命令行脚本驱动 Jira Cloud REST
-  API 完成日常事务流转。核心能力：任务检索与详情查看、状态流转与分配、工时记录与统计、评论与创建任务，覆盖一名开发者日常所需的 Jira 操作。Use when
-  需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
+description: "Jira Flow Skill 是面向个人开发者与小型团队的 Jira 任务管控辅助工具，通过命令行脚本驱动 Jira Cloud REST. 适用于需要jira flow skill相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 集成工具
   - 任务管理
@@ -26,7 +25,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Jira Flow Skill（免费版）
 
 面向个人开发者与小型团队的 Jira 任务管理工具，通过命令行脚本完成日常任务流转、工时记录与检索查询.
@@ -159,7 +160,7 @@ bash {baseDir}/（请参考skill目录中的脚本文件） log ABC-123 2.5 2025
 bash {baseDir}/（请参考skill目录中的脚本文件） hours 2025-01-01 2025-01-07
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 使用 JIRA_BOARD 限定项目范围
 
@@ -247,7 +248,7 @@ Worklog 命令使用 Jira 的 worklog/updated + worklog/list 组合接口，在�
 本改进作品在原始作品基础上进行了深度差异化改造，包括但不限于：
 
 - 完全重写中文化文档与使用指南
-- 新增场景化最佳实践与故障排查
+- 新增场景化优秀实践与故障排查
 - 完善依赖说明与配置示例
 - 增加免费版/专业版分层策略
 

@@ -1,4 +1,5 @@
 ---
+
 slug: xml-toolkit-pro
 name: xml-toolkit-pro
 version: 1.0.0
@@ -6,17 +7,7 @@ displayName: XML处理工具专业版
 summary: "流式解析、XSD验证、格式互转与批量处理，适合数据团队与企业级XML数据治理.。XML处理工具专业版，面向数据团队与企业的高阶XML处理平台。核心能力:"
 license: Proprietary
 edition: pro
-description: 'XML处理工具专业版，面向数据团队与企业的高阶XML处理平台。核心能力:
-
-  - 流式解析大文件（SAX/StAX）
-
-  - XSD/RelaxNG 模式验证
-
-  - XML/JSON/YAML/CSV 互转
-
-  - 批量处理与目录递归
-
-  - XPath 2。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
+description: "XML处置工具专业版，面向数据团队与企业的高阶XML处置平台。核心能力:. 适用于需要xml toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - XML
   - 企业数据处理
@@ -28,9 +19,6 @@ tags:
   - 图像
   - xml
   - json
-  - xml-pro
-  - xsd
-  - self
 tools:
   - read
   - exec
@@ -38,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # XML处理工具（专业版）
 
 ## 概述
@@ -229,7 +219,7 @@ report:
 | YAML | XML | 保持顺序 |
 | CSV | XML | 每行一个记录元素 |
 
-## 最佳实践
+## 优秀实践
 
 * 大文件（>100MB）使用流式解析，避免内存溢出.
 * XSD 验证在生产环境前置执行，确保数据合规.

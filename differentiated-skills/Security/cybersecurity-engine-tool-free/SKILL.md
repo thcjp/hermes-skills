@@ -1,33 +1,33 @@
 ---
+
 slug: cybersecurity-engine-tool-free
 name: cybersecurity-engine-tool-free
 version: 1.0.0
 displayName: 网络安全评估引擎免费版
 summary: 轻量级安全评估与威胁建模工具,提供安全态势检查、OWASP基础审计与漏洞管理,适合个人开发者快速安全自查.
-license: Proprietary
+license: MIT
 edition: free
-description: '网络安全评估引擎免费版,为个人开发者提供基础安全评估与威胁建模能力.
-  核心能力:安全态势快速检查、OWASP Top 10基础审计、威胁登记管理、漏洞生命周期跟踪.
-  适用场景:项目上线前安全自查、代码安全审查、基础威胁建模.
-  差异化:免费版聚焦核心评估能力,无需额外工具依赖,适合个人开发者快速上手.
-  适用关键词: 安全评估, 威胁建模, OWASP, 漏洞管理, security, assessment, threat, modeling'
+description: "网络安全评估引擎免费版,为个人开发者包含基础安全评估与威胁建模能力. 适用于需要cybersecurity engine tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要cybersecurity engine tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 安全
+  - cybersecurity
+  - engine
+  - automation
+  - productivity
   - 威胁建模
   - OWASP
   - 免费版
   - 加密
   - 工具
-  - grep
-  - dev
-  - null
-  - include
 tools:
   - read
   - exec
 homepage: ""
 category: "Security"
+pricing_tier: free
+
 ---
+
 # 网络安全评估引擎免费版
 
 ## 概述
@@ -50,7 +50,7 @@ category: "Security"
 ### 1. 安全态势快速检查
 
 通过三层检查快速评估项目安全状况,5分钟内完成基础安全体检.
-**第一层 - 关键风险(立即修复):**
+**领先层 - 关键风险(立即修复):**
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
@@ -261,7 +261,7 @@ echo "========================================="
 
 ## 快速开始
 
-### 第一步:运行安全态势检查
+### 领先步:运行安全态势检查
 
 ```bash
 # 克隆或进入项目目录
@@ -330,7 +330,7 @@ password_policy:
 | 中危 | 4.0-6.9 | 30天 | 加入迭代待办 |
 | 低危 | 0.1-3.9 | 90天 | 记录跟踪 |
 
-## 最佳实践
+## 优秀实践
 
 1. **默认拒绝**:防火墙默认拒绝所有入站流量,仅开放必要端口.
 2. **最小权限**:所有服务账号使用最小必要权限.
@@ -391,7 +391,7 @@ done
 - 依赖扫描工具(npm audit, pip-audit)使用各自的默认配置
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行安全评估与威胁建模任务
 
 ## 错误处理

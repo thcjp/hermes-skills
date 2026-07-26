@@ -1,13 +1,13 @@
 ---
+
 slug: solo-dev-companion-free
 name: solo-dev-companion-free
 version: 1.0.1
 displayName: 独立开发伙伴(免费版)
 summary: "独立开发者TDD工作流引擎，自动执行实施计划任务、提交代码并更新进度.。独立开发伙伴免费版为独立开发者与一人公司提供轻量级的TDD工作流引擎，聚焦实施计划（plan。md）的自动执行。Use"
-license: Proprietary
+license: MIT
 edition: free
-description: 独立开发伙伴免费版为独立开发者与一人公司提供轻量级的TDD工作流引擎，聚焦实施计划（plan。md）的自动执行。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。Use
-  when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
+description: "独立开发伙伴免费版为独立开发者与一人公司包含轻量级的TDD工作流引擎，聚焦实施计划（plan。md）的自发执行。Use when 需要项目管控、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。Use. 适用于需要solo dev companion相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - TDD
   - 独立开发
@@ -19,15 +19,15 @@ tags:
   - tdd
   - solo-dev
   - plan
-  - bash
-  - execute
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 独立开发伙伴（免费版）
 
 > **独立开发者的TDD工作流引擎。自动执行计划、红绿重构、原子提交，让一人开发也有团队规范。**
@@ -219,7 +219,7 @@ make help    # 查看可用目标
 # 创建功能计划
 # docs/plan/auth-feature/plan.md
 # ...
-# 执行第一个任务
+# 执行领先个任务
 solo-dev execute auth-feature
 # ...
 # 引擎自动完成TDD循环与提交
@@ -340,10 +340,12 @@ solo-dev execute tdd-practice
 
 ### 示例1：基础用法
 
-```
-### 120秒上手(补充)
-# ...
 ```bash
+# 在此执行相关操作
+echo "操作完成"
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 # ...
 ## 错误处理

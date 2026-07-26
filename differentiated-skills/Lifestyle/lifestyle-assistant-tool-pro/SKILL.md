@@ -1,4 +1,5 @@
 ---
+
 slug: lifestyle-assistant-tool-pro
 name: lifestyle-assistant-tool-pro
 version: 1.0.0
@@ -6,14 +7,7 @@ displayName: 生活助手专业版
 summary: "团队协作与自动化工作流平台,支持多人任务分派、邮件批处理与跨系统集成。面向团队、中小企业与项目管理场景的协作助手平台."
 license: Proprietary
 edition: pro
-description: '面向团队、中小企业与项目管理场景的协作助手平台.
-  核心能力: 团队任务分派、邮件批量处理、自动化工作流、跨系统集成、共享知识库、优先支持
-
-  适用场景: 团队项目管理、跨部门协作、客户沟通自动化、知识沉淀与共享
-
-  差异化: 专业版支持多用户协作、自动化触发器、与外部系统集成,与免费版数据格式兼容
-
-  适用关键词: 团队协作, 任务分派, 自动化工作流, 邮件批处理, 知识库共享, 项目管理'
+description: "面向团队、中小企业与项目管控场景的协作助手平台. 适用于需要lifestyle assistant tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 团队协作
   - 项目管理
@@ -25,12 +19,6 @@ tags:
   - 效率
   - 写作
   - 电商
-  - 通信
-  - headers
-  - resp
-  - json
-  - self
-  - payload
 tools:
   - read
   - exec
@@ -39,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 生活助手 (专业版)
 
 ## 概述
@@ -237,7 +227,7 @@ export ASSISTANT_EDITION="pro"
 
 ```bash
 # CSV 批量导入成员
-curl -X POST -H "X-API-Key: $ASSISTANT_ADMIN_KEY" \
+curl -X POST -H "X-API-ref: $ASSISTANT_ADMIN_KEY" \
   -F "file=@team_members.csv" \
   "https://api.assistant-pro.local/v1/admin/members/import"
 ```
@@ -246,13 +236,13 @@ curl -X POST -H "X-API-Key: $ASSISTANT_ADMIN_KEY" \
 
 ```bash
 # 对接企业日历
-curl -X POST -H "X-API-Key: $ASSISTANT_ADMIN_KEY" \
+curl -X POST -H "X-API-ref: $ASSISTANT_ADMIN_KEY" \
   -H "Content-Type: application/json" \
   -d '{"provider":"google_calendar","credentials":"..."}' \
   "https://api.assistant-pro.local/v1/integrations/calendar"
 # ...
 # 对接即时通讯
-curl -X POST -H "X-API-Key: $ASSISTANT_ADMIN_KEY" \
+curl -X POST -H "X-API-ref: $ASSISTANT_ADMIN_KEY" \
   -H "Content-Type: application/json" \
   -d '{"provider":"slack","webhook":"..."}' \
   "https://api.assistant-pro.local/v1/integrations/im"
@@ -325,7 +315,7 @@ WORKFLOW_TEMPLATES = {
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 权限分级管理
 
@@ -404,7 +394,7 @@ def search_kb(query, limit=10):
 
 ```bash
 # 导出审计日志
-curl -H "X-API-Key: $ASSISTANT_ADMIN_KEY" \
+curl -H "X-API-ref: $ASSISTANT_ADMIN_KEY" \
   "https://api.assistant-pro.local/v1/admin/audit/export?format=csv&start=2026-07-01&end=2026-07-31" \
   -o audit-202607.csv
 ```
@@ -461,7 +451,7 @@ export ASSISTANT_ORG_ID="org_your_id"
 export ASSISTANT_EDITION="pro"
 # ...
 # 集成凭证 (按需配置)
-export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
+export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/placeholder"
 export GOOGLE_CALENDAR_CREDENTIALS="/etc/assistant/google-creds.json"
 export SALESFORCE_TOKEN="..."
 # ...
@@ -471,7 +461,7 @@ export AUDIT_DB_URL="db://user:pass@host:5432/audit"
 
 ### 可用性分类
 
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+exec方法(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 面向团队与企业用户,通过自然语言指令驱动 Agent 调用 Pro API,完成团队任务分派、邮件批处理、自动化工作流、跨系统集成
 - **专业版特性**: 多租户隔离、自动化工作流、共享知识库、跨系统集成、操作审计、优先技术支持
 - **兼容性**: 与免费版数据格式完全兼容,支持平滑升级
@@ -500,9 +490,9 @@ export AUDIT_DB_URL="db://user:pass@host:5432/audit"
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

@@ -1,4 +1,5 @@
 ---
+
 slug: "json-repair-tool-pro"
 name: "json-repair-tool-pro"
 version: "1.0.0"
@@ -6,8 +7,7 @@ displayName: "JSON修复工具专业版"
 summary: "企业级JSON修复工具，支持批量目录修复、流式处理、自定义规则、修复预览与历史回滚。。JSON修复工具专业版面向企业级场景，在免费版基础上扩展批量目录修复、流式处理、自定义修复规则、修复预览"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  JSON修复工具专业版面向企业级场景，在免费版基础上扩展批量目录修复、流式处理、自定义修复规则、修复预览、增量修复与历史回滚等高级能力。核心能力：目录级批量修复、GB级文件流式修复、自定义正则规则、修复前后差异预览、增量修复与历史回滚、修复规则市场与共享。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
+description: "|-. 适用于需要json repair tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 集成工具
   - JSON
@@ -19,15 +19,15 @@ tags:
   - json
   - string
   - 流式修复
-  - 修复预览
-  - 返回结构
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # JSON修复工具（专业版）
 
 本工具是企业级JSON修复方案，在免费版基础上扩展批量目录修复、流式处理、自定义规则、修复预览与历史回滚能力，适用于大规模数据治理与自动化流水线场景.
@@ -222,7 +222,7 @@ node repair.js --file broken.json --preview
 | `max_snapshots` | integer | 30 | 最大快照数 |
 | `retention_days` | integer | 90 | 保留天数 |
 
-## 最佳实践
+## 优秀实践
 
 ### 批量修复优化
 - 增量模式优先，避免重复修复

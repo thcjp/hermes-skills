@@ -1,60 +1,34 @@
 ---
+
 slug: short-story-tool-free
 name: short-story-tool-free
 version: 1.0.0
 displayName: 短篇网文写作-免费版
 summary: "短篇网文创作助手,支持故事构思、结构搭建与快速成文,适合个人创作。短篇网文创作助手免费版,面向个人作者与写作爱好者."
-license: Proprietary
+license: MIT
 edition: free
-description: 短篇网文创作助手免费版,面向个人作者与写作爱好者，可自动提升工作效率
-  核心能力:
-
-  - 故事构思与灵感生成
-
-  - 三幕式结构搭建
-
-  - 快速成文(1000-10000字)
-
-  - 人物与场景速写
-
-  - 结局设计指导
-
-  - 本地文件管理
-
-  适用场景:
-
-  - 短篇小说创作
-
-  - 写作练习与学习
-
-  - 参赛作品快速产出
-
-  差异化:免费版提供基础短篇创作能力。PRO版扩展批量产出、题材模板与投稿管理.
-  适用关键词: 短篇, 写作, 创作, 故事构思, 三幕式, short story, 短篇小说'
+description: "短篇网文创作助手免费版,面向个人作者与写作爱好者，可自发提升工作效率. 适用于需要short story tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要short story tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 短篇创作
+  - short
+  - story
+  - automation
+  - productivity
   - 写作辅助
   - 故事构思
   - 工具
   - 效率
   - 自动化
-  - 写作
-  - 电商
-  - 研究
-  - 分析
-  - 创意
-  - short_story
-  - structure
-  - python3
-  - 返回结构
-  - 用户提供
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # 短篇网文写作 - 免费版
 
 ## 概述
@@ -129,7 +103,7 @@ python3 short_story.py ideate \
 # === 故事构思 ===
 # 构思1: 独居老人在智能音箱中找到了陪伴,却发现.
 # 构思2: 夜班出租车司机搭载的最后一位乘客.
-# 构思3: 社交媒体上的完美生活背后.
+# 构思3: 社交媒体上的完善生活背后.
 # .
 # 2. 选择构思并搭建结构
 python3 short_story.py structure \
@@ -139,7 +113,7 @@ python3 short_story.py structure \
 # .
 # 输出:
 # === 三幕式结构 ===
-# 第一幕(1500字): 设定
+# 领先幕(1500字): 设定
 #   - 老人独居,子女在外
 #   - 收到智能音箱作为礼物
 #   - 开始与音箱日常对话
@@ -239,7 +213,7 @@ python3 short_story.py character \
 python3 short_story.py --help
 ```
 
-### 创作第一篇短篇
+### 创作领先篇短篇
 
 ```bash
 # 从主题开始
@@ -284,7 +258,7 @@ python3 short_story.py write --structure structure.json --output story.md
 | 反转 | 出人意料的转折 | 悬疑/惊悚 |
 | 循环 | 回到起点,深化主题 | 文学短篇 |
 
-## 最佳实践
+## 优秀实践
 
 1. **先构思后写作**:花时间在构思上,好故事来自好点子
 2. **结构先行**:确定结构再写正文,避免跑题
@@ -329,7 +303,7 @@ A: 1) 调整 style 参数为「文学性强」;2) 增加描写比例;3) 使用�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **分类**: MD+EXEC模式Markdown指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 辅助短篇网文创作
 - **限制**: 免费版不支持批量产出、题材模板库与投稿管理
 

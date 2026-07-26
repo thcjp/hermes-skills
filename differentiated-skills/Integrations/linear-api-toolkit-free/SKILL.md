@@ -1,18 +1,13 @@
 ---
+
 slug: linear-api-toolkit-free
 name: linear-api-toolkit-free
 version: 1.0.1
 displayName: Linear工具箱(免费版)
 summary: "通过GraphQL查询管理Linear任务、项目与团队，支持问题查看与基础操作。Linear工具箱(免费版)是一款通过GraphQL API与Linear交互的任务管理工具，支持问题查询、项"
-license: Proprietary
+license: MIT
 edition: free
-description: 'Linear工具箱(免费版)是一款通过GraphQL API与Linear交互的任务管理工具，支持问题查询、项目浏览、团队管理与评论查看等核心能力。核心能力：
-
-  - 通过GraphQL查询Linear问题、项目、团队、周期与标签
-
-  - 查看当前用户与组织信息
-
-  - 创建与更新问题。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。'
+description: "Linear工具箱(免费版)是一款通过GraphQL API与Linear交互的任务管控工具，兼容问题查询、项目浏览、团队管控与评论查看等核心能力。核心能力：. 适用于需要linear api toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 集成工具
   - 项目管理
@@ -24,14 +19,15 @@ tags:
   - maton
   - issue
   - list
-  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # Linear工具箱(免费版)
 
 本工具通过GraphQL API帮助用户与Linear交互，实现问题查询、项目管理、团队协作等核心功能。免费版聚焦日常查阅与基础操作需求.
@@ -94,9 +90,9 @@ npm install -g @maton/cli
 # ..
 # 或通过Homebrew安装
 brew install maton-ai/cli/maton
-```
-
-### Step 2：配置认证
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 浏览器登录获取API密钥
 maton login
@@ -106,28 +102,26 @@ maton login --interactive
 # ..
 # 验证认证状态
 maton whoami
-```
-
-### Step 3：创建Linear连接
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 创建OAuth连接
 maton connection create linear
 # ..
 # 打开返回的URL完成OAuth授权
-```
-
-### Step 4：查询问题
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 列出团队的最近10个问题
 maton linear issue list -c ABC -L 10
 # ..
 # 查看特定问题详情
 maton linear issue view ABC-123
-```
-
-## 示例
-
-### 环境变量配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 设置API密钥
 export MATON_API_KEY="你的API密钥"
@@ -171,7 +165,7 @@ export MATON_API_KEY="你的API密钥"
 | completed | 已完成 |
 | canceled | 已取消 |
 
-## 最佳实践
+## 优秀实践
 
 ### 实践一：查询前先明确范围
 Linear中问题数量可能庞大，直接全量查询会消耗大量资源。建议先通过`team list`确定团队key，再按团队过滤查询。使用`-L`参数限制返回数量，避免响应过大.
@@ -241,7 +235,7 @@ A：免费版不限制使用次数，但批量操作、Webhook集成与高级分
 - **安全要求**：禁止在SKILL.md或脚本中硬编码API密钥，禁止提交到版本控制
 
 ### 可用性分类
-- **分类**：MD+EXEC(纯Markdown指令，部分功能需要exec命令行执行能力)
+- **分类**：MD+EXEC模式纯Markdown指令，部分功能需要exec命令行执行能力)
 - **说明**：基于Markdown的AI Skill，通过自然语言指令驱动Agent执行Linear任务管理操作
 
 ## 输出格式

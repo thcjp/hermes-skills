@@ -1,43 +1,24 @@
 ---
+
 slug: rss-fetcher-tool-free
 name: rss-fetcher-tool-free
 version: 1.0.0
 displayName: RSS采集器免费版
 summary: "轻量级RSS采集与管理工具,支持增量抓取、自动去重与标签提取,适合个人用户构建本地订阅库。RSS采集器免费版为个人用户提供轻量级的RSS订阅采集与本地管理能力。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 'RSS采集器免费版为个人用户提供轻量级的RSS订阅采集与本地管理能力。核心能力:
-
-  - 增量抓取与URL哈希去重
-
-  - 自动标签提取(优先RSS分类)
-
-  - SQLite本地存储
-
-  - 按分类/时间查询文章
-
-  - 终端文章列表浏览
-
-  适用场景:
-
-  - 个人技术资讯本地归档
-
-  - 兴趣主题文章库构建
-
-  - 离线阅读与检索
-
-  差异化:免费版聚焦核心采集与存储流程,基于SQLite实现轻量本地部署,适合个人用户构建可持续积累的订阅文章库,无需服务器'
+description: "RSS采集器免费版为个人用户包含轻量级的RSS订阅采集与本地管控能力。核心能力:. 适用于需要rss fetcher tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要rss fetcher tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 研究工具
+  - rss
+  - fetcher
+  - automation
+  - productivity
   - RSS
   - 数据采集
   - 本地存储
   - 个人效率
   - 搜索
-  - 检索
-  - 工具
-  - python3
-  - rss
 tools:
   - read
   - exec
@@ -45,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 # RSS采集器免费版
 
 ## 概述
@@ -190,7 +174,7 @@ python3 （请参考skill目录中的脚本文件） disable broken-source-id
 需要数据库操作、SQL查询、数据存储管理时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:初始化
+### 领先步:初始化
 
 ```bash
 # 进入技能目录
@@ -326,7 +310,7 @@ GROUP BY t.id
 ORDER BY count DESC;
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 分类要规划清晰
 
@@ -401,7 +385,7 @@ A: SQLite在10万条以下文章时查询性能良好。如文章量更大,确�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行Python脚本)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行Python脚本)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent调用Python脚本完成RSS采集与本地存储任务。免费版聚焦个人用户的增量抓取、自动去重、标签提取与SQLite本地存储,适合构建可持续积累的订阅文章库.
 ## 错误处理
 

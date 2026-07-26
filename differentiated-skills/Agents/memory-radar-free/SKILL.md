@@ -1,13 +1,13 @@
 ---
+
 slug: memory-radar-free
 name: memory-radar-free
 version: 1.0.0
 displayName: 记忆雷达
 summary: "扫描Agent记忆文件检测恶意指令、凭据泄露、提示注入，五级安全评级，本地模式零数据外泄.。记忆雷达免费版解决AI Agent记忆安全的"隐形威胁"痛点：恶意指令潜入MEMORY。md绕过安"
-license: Proprietary
+license: MIT
 edition: free
-description: 记忆雷达免费版解决AI Agent记忆安全的"隐形威胁"痛点：恶意指令潜入MEMORY。md绕过安全护栏、API Key在对话日志中明文泄露、提示注入攻击操纵Agent行为、数据外泄指令窃取敏感信息。Use，可生成提升工作效率
-  when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
+description: "记忆雷达免费版解决AI Agent记忆安全的\"隐形威胁\"痛点：恶意指令潜入MEMORY。md绕过安全护栏、API Key在对话日志中明文泄露、提示注入攻击操纵Agent行为、数据外泄指令窃取敏感信息。Use，可产出提升工作效率. 适用于需要memory radar相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 记忆安全
   - 安全扫描
@@ -26,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+pricing_tier: free
 ---
+
 # 记忆雷达（免费版）
 
 > **Agent记忆的隐形威胁雷达。五级安全评级，本地模式零数据外泄。**
@@ -82,7 +84,7 @@ category: "Agents"
 4. 参考## 错误处理章节处理异常
 5. 查看## FAQ解答常见疑问
 
-### 一分钟扫描你的第一个记忆文件
+### 一分钟扫描你的领先个记忆文件
 
 ```bash
 # 扫描所有记忆文件（本地模式，默认）

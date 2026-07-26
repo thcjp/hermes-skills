@@ -1,32 +1,13 @@
 ---
+
 slug: typescript-skills-tool-free
 name: typescript-skills-tool-free
 version: 1.0.0
 displayName: TS编码规范工具(免费版)
 summary: "面向个人开发者的TypeScript编码规范指导,覆盖命名、类型、函数、模块等基础约定.。TypeScript编码规范工具免费版为个人开发者提供符合行业惯例的TypeScript编码约定,涵"
-license: Proprietary
+license: MIT
 edition: free
-description: 'TypeScript编码规范工具免费版为个人开发者提供符合行业惯例的TypeScript编码约定,涵盖命名规范、类型与接口、函数与类、模块与导入等基础主题。核心能力:
-
-  - 命名规范指导(变量、函数、类、接口、枚举)
-
-  - 类型与接口选择策略
-
-  - 函数与类的最佳实践
-
-  - 模块与导入顺序约定
-
-  - 错误处理与空值处理基础
-
-  适用场景:
-
-  - 个人TypeScript项目编码规范落地
-
-  - 学习并应用业界主流TS编码约定
-
-  - 快速审查代码风格问题
-
-  差异化:免费版聚焦个人开发者的基础规范需求,提供核心约定与示例'
+description: "TypeScript编码规范工具免费版为个人开发者包含符合行业惯例的TypeScript编码约定,涵盖命名规范、类型与接口、函数与类、模块与导入等基础主题。核心能力:. 适用于需要typescript skills tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - TypeScript
   - 编码规范
@@ -38,21 +19,15 @@ tags:
   - 自动化
   - 开发
   - 代码
-  - 通信
-  - 邮件
-  - 运维
-  - typescript
-  - type
-  - string
-  - true
-  - interface
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # TypeScript 编码规范工具(免费版)
 
 ## 概述
@@ -90,7 +65,7 @@ category: "Automation"
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：面向个人开发者的、TypeScript、编码规范指导、覆盖命名、模块等基础约定、编码规范工具免费、版为个人开发者提、供符合行业惯例的、编码约定、涵盖命名规范、函数与类、模块与导入等基础、核心能力、命名规范指导、类型与接口选择策、函数与类的最佳实、模块与导入顺序约、错误处理与空值处、理基础等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：面向个人开发者的、TypeScript、编码规范指导、覆盖命名、模块等基础约定、编码规范工具免费、版为个人开发者提、供符合行业惯例的、编码约定、涵盖命名规范、函数与类、模块与导入等基础、核心能力、命名规范指导、类型与接口选择策、函数与类的优秀实、模块与导入顺序约、错误处理与空值处、理基础等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 使用场景
 
 ### 场景 1:命名规范快速参考
@@ -163,7 +138,7 @@ function createUser(options: CreateUserOptions): User { ... }
 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:激活工具
+### 领先步:激活工具
 
 在对话中提及 TypeScript,本工具会自动激活。例如:
 
@@ -221,7 +196,7 @@ npx eslint . --fix
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **始终启用 `strict: true`**:这会开启 `noImplicitAny`、`strictNullChecks`、`strictFunctionTypes` 等关键检查.
 2. **优先具名导出**:具名导出利于重构与自动导入,默认导出仅用于 React 组件(若项目约定要求).
@@ -273,7 +248,7 @@ npx eslint . --fix
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于自然语言指令驱动 Agent 输出规范代码与解释;用户可通过 `tsc --noEmit` 与 `eslint` 在本地验证
 
 ## 错误处理

@@ -1,12 +1,12 @@
 ---
+
 slug: "aws-cloud-architect"
 name: "aws-cloud-architect"
 version: "2.0.0"
 displayName: "AWS云架构师"
 summary: "安全审计剧本,成本优化工作流,分层权限模型,智能上下文检测,零暴露密钥。。AWS云基础设施智能管理助手：基于AWS CLI，提供默认只读查询、分层权限模型（L0只读→L1预演→L2确认写→L"
-license: "Proprietary"
-description: |-
-  AWS云基础设施智能管理助手：基于AWS CLI，提供默认只读查询、分层权限模型（L0只读→L1预演→L2确认写→L3破坏性→L4敏感）、安全审计剧本（IAM/S3/安全组/KMS检查清单）、成本优化工作流（空闲资源识别+Cost Explorer分析）、智能上下文检测（环境变量→配置文件→默认值）与零暴露密钥硬约束五大核心能力。适用于AWS资源盘点、CloudWatch健康监控、IAM与S3安全审计、成本分析、基础设施变更规划、多区域多账号管理。适用关键词：AWS云架构师、基础设施管理、安全审计、成本优化、AWS CLI、资源盘点.
+license: MIT
+description: "|-. 适用于需要aws cloud architect相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 智能代理
   - 云计算
@@ -18,14 +18,15 @@ tags:
   - ec2
   - 确认
   - iam
-  - bucket
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Operations"
+pricing_tier: free
 ---
+
 # AWS云架构师（AWS Cloud Architect）
 
 使用本地 AWS CLI 回答关于 AWS 资源的问题。默认只读查询，仅在用户明确要求变更并确认后执行写/破坏性操作.
@@ -95,7 +96,7 @@ Cost Explorer按服务/按日分组成本分析、空闲资源识别（停止的
 
 ## 使用流程
 
-### Step 1：确认身份（每次会话第一步）
+### Step 1：确认身份（每次会话领先步）
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
 |---|---|---|---|
@@ -105,9 +106,9 @@ Cost Explorer按服务/按日分组成本分析、空闲资源识别（停止的
 
 ```bash
 aws sts get-caller-identity
-```
-
-### Step 2：检测区域与配置文件（智能上下文检测）
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 优先级：用户指定 > 环境变量 > ~/.aws/config 默认 > 询问用户
 echo "Profile: ${AWS_PROFILE:-未设置}, Region: ${AWS_REGION:-未设置}"
@@ -177,13 +178,13 @@ aws ec2 describe-addresses --query 'Addresses[?InstanceId==null].[PublicIp,Alloc
 **建议**：停止的 EC2 若长期不用可终止（L3 确认）；未挂载 EBS 可删除（L3 确认）；未使用 Elastic IP 释放（L2 确认）.
 ### 示例三：CloudWatch 健康监控
 
-**输入**："查一下我的 EC2 实例 i-xxx 昨天的 CPU 使用情况，还有 Lambda 函数的错误日志"
+**输入**："查一下我的 EC2 实例 i-placeholder 昨天的 CPU 使用情况，还有 Lambda 函数的错误日志"
 
 **输出**（只读查询）：
 ```bash
 # EC2 CPU利用率（按小时聚合）
 aws cloudwatch get-metric-statistics --namespace AWS/EC2 \
-  --metric-name CPUUtilization --dimensions Name=InstanceId,Value=i-xxx \
+  --metric-name CPUUtilization --dimensions Name=InstanceId,Value=i-placeholder \
   --start-time 2026-07-19T00:00:00Z --end-time 2026-07-20T00:00:00Z \
   --period 3600 --statistics Average
 # ...

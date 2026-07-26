@@ -1,32 +1,13 @@
 ---
+
 slug: rss-reader-ai-free
 name: rss-reader-ai-free
 version: 1.0.1
 displayName: RSS智能阅读器免费版
 summary: "自动抓取RSS订阅源，使用AI生成中文摘要，支持单渠道推送，适合个人用户信息聚合.。RSS智能阅读器（免费版）—— 面向个人用户的自动化信息聚合工具."
-license: Proprietary
+license: MIT
 edition: free
-description: 'RSS智能阅读器（免费版）—— 面向个人用户的自动化信息聚合工具.
-  核心能力:
-
-  - 自动抓取RSS/Atom订阅源
-
-  - AI生成中文内容摘要
-
-  - SQLite去重，避免重复推送
-
-  - 单渠道消息推送
-
-  适用场景:
-
-  - 个人技术博客监控与摘要
-
-  - 每日新闻早报自动推送
-
-  - 兴趣主题信息聚合
-
-  差异化: 聚焦个人用户核心需求，提供开箱即用的RSS抓取与AI摘要能力，轻量易用.
-  适用关键词: RSS阅读器, 订阅抓取, AI摘要, 信息聚合, 内容推送, rss, reader, feed'
+description: "RSS智能阅读器（免费版）—— 面向个人用户的自发化信息聚合工具. 适用于需要rss reader ai相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 沟通协作
   - 信息聚合
@@ -43,7 +24,9 @@ tools:
   - exec
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
 ---
+
 # RSS智能阅读器（免费版）
 
 ## 概述
@@ -272,7 +255,7 @@ fetch:
   max_items_per_feed: 10                  # 每源最大条目数
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 订阅源管理
 

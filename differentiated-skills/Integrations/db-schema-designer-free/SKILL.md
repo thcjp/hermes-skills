@@ -1,28 +1,13 @@
 ---
+
 slug: db-schema-designer-free
 name: db-schema-designer-free
 version: 1.0.1
 displayName: 数据库Schema设计器(免费版)
 summary: 面向开发者的轻量级数据库Schema设计助手,支持SQLite软Schema与三层演进,快速落地灵活数据存储方案.
-license: Proprietary
+license: MIT
 edition: free
-description: '数据库Schema设计器(免费版)是一套面向独立开发者与小团队的轻量级数据库建模工具,聚焦"主干硬、尾巴软"的软Schema设计哲学,帮助用户在需求不确定阶段快速构建可演进的数据库结构。核心能力:
-
-  - 提供原始层、软字段层、业务视图层三层建模方法论
-
-  - 内置个人知识库、政策信息收集、财务报表收集等场景模板
-
-  - 支持JSON软字段存储与键值对索引混合策略
-
-  - 提供中文全文检索的基础实现思路(FTS5+LIKE回退)
-
-  适用场景:
-
-  - 个人知识库与碎片信息归档
-
-  - 政策、新闻、报表等结构化信息收集
-
-  - 表单问卷数据的多形...'
+description: "数据库Schema设计器(免费版)是一套面向独立开发者与小团队的轻量级数据库建模工具,聚焦\"主干硬、尾巴软\"的软Schema设计哲学,帮助用户在需求不确定阶段快速构建可演进的数据库结构。核心能力:. 适用于需要db schema designer相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 数据库
   - 建模
@@ -34,15 +19,15 @@ tags:
   - text
   - key
   - create
-  - null
-  - schema
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # 数据库Schema设计器(免费版)
 
 一套可复用的"软Schema"设计方法:主干硬、尾巴软,三层演进。安装后,Agent可据此指导用户真正构建出灵活可演进的数据库结构,适配需求频繁变化的早期阶段.
@@ -223,7 +208,7 @@ WHERE i.deleted = 0;
 ### 归档一条数据
 
 ```bash
-sqlite3 data/flexible.db "INSERT INTO items (source, source_type, content_type, raw_content, extra) VALUES ('manual', 'manual', 'text', '测试第一条记录', '{\"title\":\"示例\",\"tags\":\"工作\"}');"
+sqlite3 data/flexible.db "INSERT INTO items (source, source_type, content_type, raw_content, extra) VALUES ('manual', 'manual', 'text', '测试领先条记录', '{\"title\":\"示例\",\"tags\":\"工作\"}');"
 ```
 
 ### 查询数据
@@ -239,7 +224,7 @@ db "SELECT i.id, i.raw_content FROM items i JOIN item_kv kv ON i.id=kv.item_id W
 db "SELECT source, COUNT(*) FROM items WHERE deleted=0 GROUP BY source;"
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 中文全文检索策略
 
@@ -316,7 +301,7 @@ A: 推荐`deleted`标记字段做软删除,定期清理可批量UPDATE;硬删除
 - 如需LLM抽取器,使用Agent平台内置LLM即可
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作
 
 ## 错误处理

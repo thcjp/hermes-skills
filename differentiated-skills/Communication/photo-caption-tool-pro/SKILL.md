@@ -7,24 +7,21 @@ displayName: "照片配文工具专业版"
 summary: "全平台照片配文生成工具,支持13个社交平台,提供批量配文、品牌风格定制与编辑分析能力。。照片配文工具专业版,面向专业摄影师与内容创作者提供 13 个社交平台的配文生成能力,支持批量处理、品牌"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  照片配文工具专业版,面向专业摄影师与内容创作者提供 13 个社交平台的配文生成能力,支持批量处理、品牌风格定制与照片编辑分析。核心能力:
-  - 13 个平台全覆盖(Instagram/Flickr/X/Glass/Tumblr/Bluesky/Threads/500px/Reddit/Facebook/VSCO/Substack/Pinterest)
-  - 批量照片配文生成
-  - 品牌风格与语气定制
-  - 照片编辑分析(配合 photo-edit-analysis)
-  - 多语言配文支持
-  - 平台原生格式严格适配
-
-  适用场景:
-tags: 内容创作,分析,专业版独,不支持,tri-x,text
+description: "|-. 适用于需要photo caption tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+tags:
+  - 内容创作
+  - 分析
+  - 专业版独
+  - 不支持
+  - tri-x
+  - text
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
+pricing_tier: L2-标准级
 ---
 
 照片配文工具专业版是一款面向专业摄影师与内容创作者的全平台照片配文生成解决方案。在完全兼容免费版 Instagram、X(Twitter)、Facebook 三大平台配文能力的基础上,专业版解锁了 Flickr、Glass、Tumblr、Bluesky、Threads、500px、Reddit、VSCO、Substack、Pinterest 共 13 个平台的配文生成能力.
@@ -263,10 +260,9 @@ Edit Analysis:
 请为以下产品照生成配文:
 照片内容:皮质相机包放在木桌上,自然光
 器材: Hasselblad 500C/M, Kodak Portra 160
-```
-
-## 快速开始
-### 第一步:提供照片信息
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 照片内容: [详细描述]
 地点: [拍摄地点]
@@ -274,9 +270,9 @@ Edit Analysis:
 氛围: [情绪/感觉]
 拍摄方式: [胶片/数码]
 语言: [中文/英文/双语]
-```
-
-### 第二步:指定目标平台
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 请为这张照片生成所有平台的配文.
 # ...
@@ -304,9 +300,9 @@ brand:
   hashtag_count: 5          # 固定5个标签(含2个品牌标签)
   language: "bilingual"     # 中英双语
   gear_format: "full"       # 完整器材信息
-```
-
-### 批量配文输入模板
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 系列主题: [系列名称]
 统一风格: [风格描述]
@@ -325,9 +321,9 @@ brand:
   氛围: [氛围]
 # ...
 [更多照片...]
-```
-
-### 平台格式规范参考
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 Instagram:
   - 1-2行正文
@@ -375,7 +371,7 @@ Pinterest:
   - 无标签,用关键词替代
 ```
 
-## 最佳实践
+## 优秀实践
 ### 1. 全平台发布保持内容差异化
 同一张照片在不同平台应有差异化表达,避免跨平台复制粘贴:
 

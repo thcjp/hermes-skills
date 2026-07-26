@@ -1,33 +1,33 @@
 ---
+
 slug: go-security-vuln-tool-free
 name: go-security-vuln-tool-free
 version: 1.0.0
 displayName: Go安全漏洞扫描免费版
 summary: Go模块安全漏洞检测工具,使用govulncheck扫描已知漏洞、评估影响并提供修复建议,适合个人Go开发者使用.
-license: Proprietary
+license: MIT
 edition: free
-description: 'Go安全漏洞扫描免费版,为个人Go开发者提供依赖漏洞检测与修复指导能力.
-  核心能力:govulncheck漏洞扫描、漏洞影响评估、修复版本建议、依赖更新指导.
-  适用场景:Go项目上线前安全检查、依赖更新前漏洞评估、CI安全集成.
-  差异化:免费版聚焦单项目扫描,使用官方govulncheck工具,适合个人开发者快速上手.
-  适用关键词: Go安全, govulncheck, 漏洞扫描, Go模块, 依赖漏洞, golang, vulnerability, CVE'
+description: "Go安全漏洞扫描免费版,为个人Go开发者包含依赖漏洞查验与修正指导能力. 适用于需要go security vuln tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要go security vuln tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 安全
+  - security
+  - vuln
+  - automation
+  - productivity
   - Go
   - 漏洞扫描
   - 免费版
   - 加密
   - 工具
-  - govulncheck
-  - dev
-  - null
-  - json
 tools:
   - read
   - exec
 homepage: ""
 category: "Security"
+pricing_tier: free
+
 ---
+
 # Go安全漏洞扫描免费版
 
 ## 概述
@@ -356,7 +356,7 @@ jobs:
 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:安装govulncheck
+### 领先步:安装govulncheck
 
 ```bash
 # 安装govulncheck
@@ -418,7 +418,7 @@ go mod tidy
 | go vet | 代码质量 | 支持 | 内置静态检查 |
 | staticcheck | 代码质量 | 不支持 | 高级静态分析 |
 
-## 最佳实践
+## 优秀实践
 
 1. **定期扫描**:至少每周运行一次govulncheck,及时发现新漏洞.
 2. **区分调用**:关注"called"漏洞(代码实际调用了受影响函数),优先修复.
@@ -426,7 +426,7 @@ go mod tidy
 4. **CI集成**:将govulncheck集成到CI流水线,每次提交自动扫描.
 5. **及时更新**:Go新版本通常包含安全修复,保持Go版本最新.
 ```bash
-# 最佳实践:安全更新流程
+# 优秀实践:安全更新流程
 safe_go_update() {
     local module=$1
 # ...
@@ -502,7 +502,7 @@ govulncheck需要分析调用图,大型项目可能较慢。可以使用 `-mode 
 - Go模块代理默认使用proxy.golang.org,如需私有代理配置GOPROXY环境变量
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行Go项目安全漏洞扫描与修复任务
 
 ## 错误处理

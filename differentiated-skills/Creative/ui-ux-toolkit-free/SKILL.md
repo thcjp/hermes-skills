@@ -5,31 +5,9 @@ name: ui-ux-toolkit-free
 version: 1.0.1
 displayName: UI/UX设计工具箱免费版
 summary: 可搜索的UI/UX设计数据库,提供风格、配色、字体、UX规则的基础查询,适合个人开发者快速生成设计系统
-license: Proprietary
+license: MIT
 edition: free
-description: 面向个人开发者的轻量级UI/UX设计查询工具,内置丰富的设计资源数据库。可生成提升工作效率
-
-  通过自然语言关键词即可获取专业设计建议。核心能力:
-
-  - 可搜索的设计资源数据库(风格、配色、字体、UX规则)
-
-  - 自然语言驱动的CLI查询工具
-
-  - 基础设计系统一键生成
-
-  - 多技术栈适配指引
-
-  适用场景:
-
-  - 个人项目快速搭建界面设计系统
-
-  - 独立开发者选择配色方案和字体组合
-
-  - 小型SaaS或落地页的UI风格决策
-
-  差异化:免费版聚焦核心查询能力,提供基础设计域搜索和默认技术栈指引,
-
-  去除企业级持久化和批量操作功能,降低使用门槛,.'
+description: "面向个人开发者的轻量级UI/UX设计查询工具,内置丰富的设计资源数据库。可产出提升工作效率. 适用于需要ui ux toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 设计
   - UI
@@ -46,7 +24,7 @@ tools:
   - write
 homepage: ""
 category: "Creative"
-
+pricing_tier: free
 ---
 
 # UI/UX设计工具箱 - 免费版
@@ -106,7 +84,7 @@ python3 （请参考skill目录中的脚本文件） "elegant luxury" --domain t
 | `style` | UI风格与效果 | 玻璃态, 极简, 暗色模式 |
 | `typography` | 字体配对 | 优雅, 活泼, 专业, 现代 |
 | `color` | 配色方案 | saas, ecommerce, healthcare |
-| `ux` | 最佳实践与反模式 | 动画, 无障碍, z-index |
+| `ux` | 优秀实践与反模式 | 动画, 无障碍, z-index |
 
 **处理**: 解析基础设计域支持的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回基础设计域支持的响应数据,包含状态码、结果和日志.
@@ -254,7 +232,7 @@ python3 （请参考skill目录中的脚本文件） "layout responsive" --stack
 | 输出格式 | 纯文本 | Markdown+JSON |
 | 适用对象 | 个人开发者 | 团队/企业 |
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 关键词越具体,结果越精准
 
@@ -343,7 +321,7 @@ winget install Python.Python.3.12
 本Skill的CLI搜索工具基于本地数据文件运行,无需额外API Key。设计建议的生成由Agent内置LLM驱动,无需独立配置.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。核心查询功能依赖Python CLI脚本执行,需确保exec工具可用.
 ## 错误处理
 

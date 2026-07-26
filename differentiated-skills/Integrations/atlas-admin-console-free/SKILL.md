@@ -1,13 +1,13 @@
 ---
+
 slug: atlas-admin-console-free
 name: atlas-admin-console-free
 version: 1.0.1
 displayName: Atlas管理台免费版
 summary: MongoDB Atlas Admin API浏览与查询工具，支持50+API分类检索、端点详情查看、Schema定义获取.
-license: Proprietary
+license: MIT
 edition: free
-description: 面向MongoDB Atlas运维者的Admin API浏览与查询工具。通过命令行检索50+API分类、查看端点定义、获取Schema详情，免凭证即可作为只读文档浏览器使用，配置凭证后可执行实时API调用。Use，可处理提升工作效率
-  when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
+description: "面向MongoDB Atlas运维者的Admin API浏览与查询工具。通过命令行检索50+API分类、查看端点定义、获取Schema详情，免凭证即可作为只读文档浏览器使用，配置凭证后可执行实时API调用。Use，可处置提升工作效率. 适用于需要atlas admin console相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 集成工具
   - MongoDB
@@ -24,7 +24,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Atlas管理台（免费版）
 
 本工具为MongoDB Atlas运维者提供Admin API浏览与查询能力。免费版覆盖核心场景：API目录浏览、端点详情查看、Schema定义获取、只读API调用，足以应对日常文档查阅与状态查询需求.
@@ -148,7 +150,7 @@ node （请参考skill目录中的脚本文件） GET groups/${ATLAS_GROUP_ID}/a
 ### 状态变更操作（必须dry-run + 确认）
 
 ```bash
-# 第一步：dry-run预览（不实际执行）
+# 领先步：dry-run预览（不实际执行）
 node （请参考skill目录中的脚本文件） POST groups/${ATLAS_GROUP_ID}/clusters \
   --data '{"name":"DemoCluster", "providerSettings":{...}}' \
   --dry-run
@@ -161,7 +163,7 @@ node （请参考skill目录中的脚本文件） POST groups/${ATLAS_GROUP_ID}/
 ```
 
 #
-## 最佳实践
+## 优秀实践
 
 ### 1. 状态变更操作遵循四步安全协议
 
@@ -175,10 +177,10 @@ node （请参考skill目录中的脚本文件） POST groups/${ATLAS_GROUP_ID}/
 
 ```bash
 # 正确：环境变量
-export ATLAS_CLIENT_ID="xxx"
+export ATLAS_CLIENT_ID="placeholder"
 # ...
 # 错误：硬编码在脚本中
-const clientId = "xxx"  // 禁止
+const clientId = "placeholder"  // 禁止
 ```
 
 ### 3. 使用dry-run排查参数错误

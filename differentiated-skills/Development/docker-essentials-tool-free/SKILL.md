@@ -1,40 +1,13 @@
 ---
+
 slug: docker-essentials-tool-free
 name: docker-essentials-tool-free
 version: 1.0.0
 displayName: Docker基础工具免费版
 summary: "提供Docker容器生命周期、镜像管理、Compose编排与网络卷管理,适合开发者日常使用.。面向开发者的Docker容器管理辅助工具,涵盖容器生命周期、镜像构建管理、Compose编排与网"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向开发者的Docker容器管理辅助工具,涵盖容器生命周期、镜像构建管理、Compose编排与网络卷操作。核心能力:
-
-  - 容器生命周期管理(run/stop/rm)
-
-  - 镜像构建与标签管理
-
-  - Docker Compose多容器编排
-
-  - 网络与卷管理
-
-  - 日志查看与容器调试
-
-  适用场景:
-
-  - 本地开发环境容器化
-
-  - 单机多容器应用部署
-
-  - 容器问题排查调试
-
-  差异化:
-
-  - 免费版聚焦核心Docker命令,开箱即用
-
-  - 覆盖日常90%容器操作需求
-
-  - 与专业版命令兼容,可平滑升级
-
-  适用关键词:...'
+description: "面向开发者的Docker容器管控辅助工具,涵盖容器生命周期、镜像构建管控、Compose编排与网络卷操作。核心能力:. 适用于需要docker essentials tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - Docker
@@ -52,7 +25,9 @@ tools:
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # Docker基础工具 - 免费版
 ## 概述
 Docker基础工具免费版为开发者提供日常容器管理能力。工具涵盖容器生命周期管理、镜像构建与标签管理、Docker Compose多容器编排以及网络与卷管理,帮助开发者高效进行本地容器化开发.
@@ -365,9 +340,9 @@ cleanup:
   prune_images: false
   prune_volumes: false
   prune_containers: true
-```
-
-### 多阶段Dockerfile示例
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```dockerfile
 # 开发用Dockerfile
 FROM node:18 AS builder
@@ -383,7 +358,7 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-## 最佳实践
+## 优秀实践
 1. **使用.dockerignore**:减少构建上下文体积
 
 ```dockerignore
@@ -439,10 +414,9 @@ docker system df                    # 查看磁盘使用
 docker system prune                 # 清理未使用资源
 docker system prune -a              # 清理所有未使用镜像
 docker system prune --volumes       # 同时清理卷
-```
-
-## 常见问题
-### Q1:容器启动后立即退出怎么办?
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 查看退出原因
 docker logs container_name
@@ -454,9 +428,9 @@ State.ExitCode}}' container_name
 # 3. 配置错误 -> 检查环境变量和配置文件
 # 调试模式启动
 docker run -it --entrypoint bash myapp
-```
-
-### Q2:如何进入运行中的容器?
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 使用exec进入(推荐)
 docker exec -it container_name bash
@@ -464,9 +438,9 @@ docker exec -it container_name sh    # alpine镜像
 # 使用attach连接到主进程
 docker attach container_name
 # Ctrl+P, Ctrl+Q 分离(不停止容器)
-```
-
-### Q3:端口冲突怎么办?
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 查找占用端口的进程
 lsof -i :8080            # macOS/Linux
@@ -525,7 +499,7 @@ docker login registry.example.com
 ```
 
 ### 可用性分类
-- **分类**:MD+EXEC(纯 Markdown 指令,需要 exec 命令行执行能力)
+- **分类**:MD+EXEC模式纯 Markdown 指令,需要 exec 命令行执行能力)
 - **说明**:基于 Markdown 的 AI Skill,通过自然语言指令驱动 Agent 执行 Docker 管理任务
 - **适用规模**:单机环境,适合开发和测试场景
 

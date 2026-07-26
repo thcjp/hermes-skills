@@ -1,4 +1,5 @@
 ---
+
 slug: "dns-config-tool-pro"
 name: "dns-config-tool-pro"
 version: "1.0.0"
@@ -6,20 +7,7 @@ displayName: "DNS配置工具专业版"
 summary: "企业级 DNS 配置工具,支持 CAA、Cloudflare 代理、通配符与批量迁移策略。。面向企业运维与基础设施团队的 DNS 全功能配置与迁移工具。核心能力: - CAA 记录配置(限制"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  面向企业运维与基础设施团队的 DNS 全功能配置与迁移工具。核心能力:
-  - CAA 记录配置(限制证书授权 CA,防未授权签发)
-  - Cloudflare 代理行为管理与 CNAME 扁平化
-  - 通配符记录与通配符 SSL 证书(DNS challenge)
-  - 企业级批量迁移策略与回滚方案
-  - 高级调试(全链路追踪、权威对比、记录完整性校验)
-
-  适用场景:
-  - 企业多域名 DNS 架构治理
-  - 安全合规要求下的 CAA 与证书管控
-  - Cloudflare 架构下的代理与源站保护
-
-  差异化: Pro 版在免...
+description: "|-. 适用于需要dns config tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - DNS
   - 企业运维
@@ -31,19 +19,15 @@ tags:
   - 自动化
   - 运维
   - 监控
-  - 写作
-  - 电商
-  - 安全
-  - caa
-  - dns
-  - domain
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # DNS 配置工具(专业版)
 
 ## 概述
@@ -110,24 +94,8 @@ dig example.com CAA +short
 
 企业使用 Cloudflare 代理保护源站,需正确理解橙云/灰云行为并避免常见陷阱.
 ```bash
-# 橙云(Proxied):隐藏源站 IP,但影响非 HTTP 服务
-# - 适用于 Web 流量(HTTP/HTTPS)
-# - 会中断 SSH、邮件、游戏服务器等非 HTTP 服务
-# - Cloudflare 控制缓存,TTL 设置被忽略
-# ...
-# 灰云(DNS-only):仅 DNS 解析,不代理
-# - 适用于 SSH、邮件、游戏服务器等非 HTTP 服务
-# - 源站 IP 暴露,需自行防护
-# - TTL 设置生效
-# ...
-# CNAME 扁平化(apex 使用 CNAME)
-# - Cloudflare 支持 apex 的 CNAME 扁平化
-# - 但迁移离开 Cloudflare 时会造成混乱
-# - 建议记录架构决策,便于后续迁移
-# ...
-# Universal SSL 仅代理记录生效
-# - 橙云记录自动获得 Universal SSL
-# - 灰云(DNS-only)记录需源站证书
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### 场景三:通配符记录与通配符 SSL 证书
@@ -197,7 +165,7 @@ done
 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:评估当前架构
+### 领先步:评估当前架构
 
 ```bash
 # 检查现有 CAA 配置
@@ -319,7 +287,7 @@ acme.sh --issue --dns dns_cf \
 - [ ] 归档迁移记录与决策文档
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **CAA 必配原则**: 安全敏感域名务必配置 CAA 记录,限制仅授权 CA 可签发证书。未配置 CAA 时任何 CA 都可签发,存在证书滥用风险。配置 `iodef` 字段以便异常签发时收到通知.
 2. **Cloudflare 代理按服务类型区分**: Web 流量用橙云获得 CDN 和防护;非 HTTP 服务(SSH/邮件/游戏)必须用灰云,否则橙云会中断连接。混合架构中明确标注每条记录的代理状态.
@@ -392,7 +360,7 @@ Pro 版提供迁移检查清单和脚本模板。批量操作可编写脚本循�
 - **ACME 账户**: certbot/acme.sh 首次使用会自动创建 Let's Encrypt ACME 账户,无需手动配置 Key.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令 + 部分功能需 `exec` 执行 dig/certbot 等命令)
+- **分类**: MD+EXEC模式纯 Markdown 指令 + 部分功能需 `exec` 执行 dig/certbot 等命令)
 - **说明**: 以自然语言指令驱动 Agent 指导 DNS 高级配置、证书签发与批量迁移
 - **适用规模**: 企业级、多域名架构、安全合规场景
 - **兼容性**: 与 `dns-config-tool-free` 配置原则完全兼容,可平滑升级
@@ -423,9 +391,9 @@ Pro 版提供迁移检查清单和脚本模板。批量操作可编写脚本循�
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

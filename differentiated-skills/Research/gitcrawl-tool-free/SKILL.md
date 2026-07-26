@@ -1,53 +1,34 @@
 ---
+
 slug: gitcrawl-tool-free
 name: gitcrawl-tool-free
 version: 1.0.0
 displayName: 仓库归档搜索
 summary: 轻量级代码仓库 issue/PR 归档搜索工具，支持本地缓存查询与新鲜度检测，适合个人开发者日常代码仓库管理.
-license: Proprietary
+license: MIT
 edition: free
-description: '轻量级代码仓库 issue/PR 归档搜索工具，支持本地缓存查询与新鲜度检测，适合个人开发者日常代码仓库管理。核心能力:
-
-  - 本地缓存 GitHub issue/PR 归档数据
-
-  - 检测归档数据新鲜度，提示更新需求
-
-  - 按关键词搜索 issue 和 PR
-
-  - 查看相邻 issue 关联关系
-
-  适用场景:
-
-  - 个人开发者查询项目历史 issue
-
-  - 开源项目贡献者了解 PR 状态
-
-  - 技术调研与代码考古
-
-  差异化:
-
-  - 免费版聚焦单仓库查询，操作简单
-
-  - 优先使用本地缓存...'
+description: "轻量级代码仓库 issue/PR 归档搜索工具，兼容本地缓存查询与新鲜度查验，适合个人开发者日常代码仓库管控。核心能力:. 适用于需要gitcrawl tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要gitcrawl tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 开发工具
+  - gitcrawl
+  - automation
+  - productivity
+  - developer-tools
   - 代码仓库
   - issue管理
   - PR查询
   - 版本控制
   - Git
-  - gitcrawl
-  - issue
-  - owner
-  - repo
-  - json
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
+
 ---
+
 # 仓库归档搜索（免费版）
 
 ## 概述
@@ -237,7 +218,7 @@ gitcrawl threads owner/repo \
 | `--numbers` | 字符串 | 无 | 指定 issue/PR 编号 |
 | `--limit` | 整数 | 10 | 返回条数上限 |
 
-## 最佳实践
+## 优秀实践
 
 ### 查询流程优化
 

@@ -1,4 +1,5 @@
 ---
+
 slug: "podcast-downloader-tool-pro"
 name: "podcast-downloader-tool-pro"
 version: "1.0.0"
@@ -6,24 +7,7 @@ displayName: "播客下载工具专业版"
 summary: "企业级播客下载工具,支持批量下载、播放列表订阅、定时同步与多平台扩展,适配生产环境。。面向团队与高级用户的播客下载工具(专业版)。核心能力: - 涵盖免费版全部能力(单集下载、MP3 转换、"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  面向团队与高级用户的播客下载工具(专业版)。核心能力:
-  - 涵盖免费版全部能力(单集下载、MP3 转换、节目笔记)
-  - 批量下载:URL 列表与目录级处理
-  - 播放列表订阅:自动跟踪节目更新
-  - 定时同步:cron 任务自动下载新集
-  - 多平台扩展:支持小宇宙及其他播客源
-  - 元数据管理:ID3 标签与封面嵌入
-  - 去重与断点续传
-  - 下载队列与并发控制
-  - API 服务化:远程触发下载
-
-  适用场景:
-  - 播客矩阵批量归档
-  - 自动化订阅与同步
-  - 团队共享播客库
-  - 内容分析数据采集
-  -...
+description: "|-. 适用于需要podcast downloader tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 创意设计
   - 播客
@@ -35,16 +19,15 @@ tags:
   - 音频
   - 媒体
   - self
-  - url
-  - json
-  - def
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: L2-标准级
 ---
+
 # 播客下载工具 - 专业版
 
 ## 概述
@@ -382,7 +365,7 @@ class MultiPlatformDownloader:
         return "unknown"
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 批量下载优化
 
@@ -489,7 +472,7 @@ du -sh "$PODCAST_DIR"
 - 企业部署建议通过密钥管理服务统一托管
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。专业版支持批量下载、订阅同步与多平台扩展,适合企业级播客内容归档与自动化管理.
 ## 错误处理
 

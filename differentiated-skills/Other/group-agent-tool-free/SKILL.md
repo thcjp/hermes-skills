@@ -1,25 +1,24 @@
 ---
+
 slug: group-agent-tool-free
 name: group-agent-tool-free
 version: 1.0.0
 displayName: Agent群组工具免费版
 summary: "极简多Agent群组协作，像微信群一样拉群、@提及、广播与成员管理。Agent群组工具是一套面向多Agent协作的轻量级群组通信方案，借鉴即时通讯软件"拉群-@提及-广播"的成熟交互模式，让"
-license: Proprietary
+license: MIT
 edition: free
-description: Agent群组工具是一套面向多Agent协作的轻量级群组通信方案，借鉴即时通讯软件"拉群-@提及-广播"的成熟交互模式，让多个Agent能像同事群一样协作，无需学习复杂的消息总线或事件驱动架构。核心能力：一行指令创建群组、邀请Agent加入、查看成员、退出解散；支持@特定成员定向通信、群公告广播、消息归档查询；群组数据轻量化、内存优先、按需持久化
+description: "Agent群组工具是一套面向多Agent协作的轻量级群组通信方案，借鉴即时通讯软件\"拉群-@提及-广播\"的成熟交互模式，让多个Agent能像同事群一样协作，无需学习复杂的消息总线或事件驱动架构。核心能力：一行指令创建群组、邀请Agent加入、查看成员、退出解散；兼容@特定成员定向通信、群公告广播、消息归档查询；群组数据轻量化、内存优先、按需持久化"
 tags:
   - 多Agent协作
+  - group
+  - agent
+  - automation
+  - productivity
   - 群组通信
   - 轻量级
   - 即时通信
   - AI代理
   - 自动化
-  - 智能
-  - agent
-  - group-agent
-  - group
-  - proj-q3
-  - researcher
 tools:
   - read
   - exec
@@ -28,7 +27,10 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+pricing_tier: free
+
 ---
+
 # Agent群组工具（免费版）
 
 ## 概述
@@ -202,8 +204,8 @@ Agent可订阅感兴趣频道，减少无关消息干扰.
 # 1. 初始化工具
 group-agent init --storage sqlite
 # ...
-# 2. 创建第一个群组
-group-agent create --name "我的第一个Agent群组" --id proj-demo
+# 2. 创建领先个群组
+group-agent create --name "我的领先个Agent群组" --id proj-demo
 # ...
 # 3. 邀请Agent加入
 group-agent invite --group proj-demo --agent researcher
@@ -213,7 +215,7 @@ group-agent invite --group proj-demo --agent writer
 group-agent announce --group proj-demo \
   --content "本群用于演示多Agent协作"
 # ...
-# 5. 发送第一条消息
+# 5. 发送领先条消息
 group-agent send --group proj-demo \
   --sender researcher \
   --message "@writer 你好，准备好了吗？"
@@ -308,7 +310,7 @@ def on_message(msg):
 client.subscribe(group_id=group.id, agent='agent_b', callback=on_message)
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 实践1：群组命名规范化
 

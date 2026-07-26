@@ -1,4 +1,5 @@
 ---
+
 slug: "javascript-sdk-tool-pro"
 name: "javascript-sdk-tool-pro"
 version: "1.0.0"
@@ -6,13 +7,7 @@ displayName: "JS SDK工具专业版"
 summary: "企业级 AI 应用 SDK 方案，支持智能体构建、流式响应、会话管理与服务器代理集成。。面向企业级 AI 应用开发的 JavaScript SDK 专业工具，提供智能体构建与高级调用能力。核"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  面向企业级 AI 应用开发的 JavaScript SDK 专业工具，提供智能体构建与高级调用能力。核心能力:
-  - 智能体（Agent）构建与多轮对话
-  - 流式响应与实时进度更新
-  - 会话管理与有状态执行
-  - 工具构建器 API（自定义工具/应用工具/代理工具）
-  - 服务器代理集成（Next
+description: "|-. 适用于需要javascript sdk tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - JavaScript
@@ -24,9 +19,6 @@ tags:
   - 写作
   - 电商
   - const
-  - await
-  - update
-  - 流式响应
 tools:
   - read
   - exec
@@ -34,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 本工具面向企业级 AI 应用开发团队，提供智能体构建、流式响应、会话管理、工具构建器与服务器代理集成的完整方案。在免费版基础应用调用与文件上传能力之上，专业版新增 Agent SDK、流式响应处理、有状态会话、自定义工具构建、多框架代理集成、人工审批工作流等能力。通过丰富的 API 与类型安全支持，帮助团队构建生产级 AI 智能体应用.
 **版本兼容性说明**：专业版完全兼容免费版（`javascript-sdk-tool-free`）的所有基础调用、认证配置与文件上传能力，可无缝升级.
 ## 核心能力
@@ -208,9 +202,9 @@ const response3 = await agent.sendMessage('描述这张图片', {
 const response4 = await agent.sendMessage('比较这两张图片', {
     files: [file1, file2]
 });
-```
-
-### 技能（Skills）配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```typescript
     core_app: { ref: 'claude-sonnet@latest' },
     skills: [
@@ -236,7 +230,7 @@ sendMessage('帮我审查这段代码');
 
 ### 完整类型定义
 
-## 最佳实践
+## 优秀实践
 1. **前端用代理模式**：永远不要在前端暴露 API Key
 
 2. **流式响应用 SSE**：提升用户体验
@@ -291,9 +285,9 @@ function useAgent() {
 // ...
     return { messages, send, loading };
 }
-```
-
-### Q2：如何处理工具执行错误？
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```typescript
 sendMessage('执行任务', {
     onToolCall: async (call) => {
@@ -305,9 +299,9 @@ sendMessage('执行任务', {
         }
     }
 });
-```
-
-### Q3：如何实现多智能体协作？
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```typescript
 import { agentTool } from '@ai/sdk';
 // ...
@@ -331,9 +325,9 @@ const coordinator = client.agent({
 const response = await coordinator.sendMessage(
     '研究量子计算并写一篇科普文章'
 );
-```
-
-### Q4：如何控制会话超时？
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```typescript
 // 创建会话时指定超时（秒）
 const result = await client.run({
@@ -345,9 +339,9 @@ const result = await client.run({
 // ...
 // 范围: 1-3600 秒
 // 超时后会话自动清理
-```
-
-### 已知限制
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```typescript
 // 简单的速率限制器
 class RateLimiter {

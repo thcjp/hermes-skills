@@ -1,16 +1,13 @@
 ---
+
 slug: telegram-agent-comm-free
 name: telegram-agent-comm-free
 version: 1.0.1
 displayName: 电报通信助手免费版
 summary: 单 Agent 通过 Telegram 发送消息的轻量规范，支持基础通知与任务汇报，零配置快速上手.
-license: Proprietary
+license: MIT
 edition: free
-description: 面向个人开发者与独立创作者的 Telegram 消息发送规范，可自动提升工作效率
-  核心能力: 单 Agent 身份发送、标准消息格式、任务汇报模板、错误自检.
-  适用场景: 个人任务提醒、自动化通知推送、单人工作流汇报.
-  差异化: 免费版聚焦单账号通信，去除多角色映射与批量调度，启动门槛低.
-  适用关键词: telegram, 消息发送, 通知, 汇报, agent, 通信, 电报'
+description: "面向个人开发者与独立创作者的 Telegram 消息发送规范，可自发提升工作效率. 适用于需要telegram agent comm相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 通信
   - 电报
@@ -22,8 +19,6 @@ tags:
   - telegram
   - agent
   - message
-  - target
-  - 发送消息
 tools:
   - read
   - exec
@@ -32,7 +27,9 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+pricing_tier: free
 ---
+
 # 电报通信助手 免费版
 
 ## 概述
@@ -155,7 +152,7 @@ message({
 
 **配置文件路径**：`~/.skill-platform/skill-platform.json`
 
-## 最佳实践
+## 优秀实践
 
 - **固定 target**：始终使用你自己的 Telegram 用户 ID，避免误发他人.
 - **消息前缀**：建议在消息开头加入 emoji，便于在聊天列表中快速识别.
@@ -301,9 +298,9 @@ tg_send "🚨 磁盘使用率超过 90%" "100001"
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

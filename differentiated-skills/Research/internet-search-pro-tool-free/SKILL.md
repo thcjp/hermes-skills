@@ -1,48 +1,24 @@
 ---
+
 slug: internet-search-pro-tool-free
 name: internet-search-pro-tool-free
 version: 1.0.0
 displayName: 联网搜索助手
 summary: 智能联网搜索助手，帮你检索最新信息、新闻、实时数据，自动提取关键词并生成结构化摘要，适合个人日常信息查询.
-license: Proprietary
+license: MIT
 edition: free
-description: '智能联网搜索助手，帮你检索最新信息、新闻、实时数据，自动提取关键词并生成结构化摘要，适合个人日常信息查询。核心能力:
-
-  - 从用户问题中自动提取搜索关键词
-
-  - 调用搜索引擎检索最新信息
-
-  - 筛选结果，过滤广告和无关内容
-
-  - 生成结构化摘要输出
-
-  适用场景:
-
-  - 个人查询最新新闻和实时信息
-
-  - 快速了解某个话题的核心内容
-
-  - 日常生活信息检索
-
-  差异化:
-
-  - 免费版聚焦单次智能搜索
-
-  - 自动关键词提取，无需手动优化
-
-  - 结构化输出...'
+description: "智能联网搜索助手，帮你检索最新信息、新闻、实时数据，自发提取关键词并产出结构化摘要，适合个人日常信息查询。核心能力:. 适用于需要internet search pro tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要internet search tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 搜索
+  - internet
+  - search
+  - automation
+  - productivity
   - 信息检索
   - 智能助手
   - 新闻查询
   - 检索
   - 工具
-  - 要点
-  - 来源
-  - text
-  - 链接
-  - api
 tools:
   - read
   - exec
@@ -50,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 # 联网搜索助手（免费版）
 
 ## 概述
@@ -268,7 +247,7 @@ AI 输出：
 | 写文章 | 否 | 创作类任务 |
 | 常识问题 | 否 | 训练知识可回答 |
 
-## 最佳实践
+## 优秀实践
 
 ### 提问技巧
 

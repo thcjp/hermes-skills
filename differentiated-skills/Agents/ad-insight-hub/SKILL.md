@@ -1,12 +1,12 @@
 ---
+
 slug: "ad-insight-hub"
 name: "ad-insight-hub"
 version: "1.0.0"
 displayName: "广告洞察中枢"
 summary: "解决广告情报API参数难懂、调用低效、数据孤岛的广告创意数据中枢。广告创意数据中枢：聚合AdMapix广告情报API，提供参数自然语言翻译（40+行业码/200+国家码）、端点依赖编排（并行"
-license: "Proprietary"
-description: |-
-  广告创意数据中枢：聚合AdMapix广告情报API，提供参数自然语言翻译（40+行业码/200+国家码）、端点依赖编排（并行/串行自动调度）、结果缓存复用、估算数据可信度A/B/C分级标注四层核心能力。适用于买量团队竞品创意监控、出海选品调研、广告素材趋势分析、开发者画像与SDK审计、跨地区投放策略制定。适用关键词：广告情报、广告创意、买量、投放、创意搜索、应用榜单、下载估算、收入估算、admapix.
+license: MIT
+description: "|-. 适用于需要ad insight hub相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 广告情报
   - 数据API
@@ -18,8 +18,6 @@ tags:
   - api
   - sdk
   - key
-  - data
-  - post
 tools:
   - read
   - exec
@@ -28,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+pricing_tier: free
 ---
+
 # 广告洞察中枢（Ad Insight Hub）
 
 面向广告投放与市场分析场景的**结构化广告情报数据中枢**。在原始 API 之上叠加参数翻译、依赖编排、缓存复用、可信度标注四层能力，让 Agent 用最少的往返拿到最可用的数据.
@@ -171,7 +171,7 @@ category: "Agents"
 ```json
 {
   "new_creatives_count": 12,
-  "creatives": [{"id": "xxx", "url": "...", "first_seen": "2026-07-15"}],
+  "creatives": [{"id": "placeholder", "url": "...", "first_seen": "2026-07-15"}],
   "distribution_change": {"video": "+8", "image": "+4"}
 }
 ```

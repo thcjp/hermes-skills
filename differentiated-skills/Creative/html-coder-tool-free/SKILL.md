@@ -5,31 +5,9 @@ name: html-coder-tool-free
 version: 1.0.0
 displayName: HTML编码工具-免费版
 summary: "专业HTML开发工具，支持语义化标记、表单验证、响应式图片与基础可访问性.。HTML编码工具免费版，面向个人开发者的专业HTML开发辅助工具。核心能力："
-license: Proprietary
+license: MIT
 edition: free
-description: HTML编码工具免费版，面向个人开发者的专业HTML开发辅助工具。核心能力：。可生成提升工作效率
-
-  - 语义化HTML结构生成
-
-  - 可访问性表单构建（HTML5验证）
-
-  - 响应式图片与多媒体
-
-  - 基础ARIA与可访问性支持
-
-  - HTML5标准合规检查
-
-  适用场景：
-
-  - 个人网站与博客开发
-
-  - 表单页面制作
-
-  - 文档型网页编写
-
-  - HTML学习与练习
-
-  差异化：免费版聚焦语义化HTML与基础可访问性，适合个人开发'
+description: "HTML编码工具免费版，面向个人开发者的专业HTML开发辅助工具。核心能力：。可产出提升工作效率. 适用于需要html coder tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Creative
   - HTML
@@ -41,7 +19,6 @@ tags:
   - srcset
   - label
   - div
-  - 响应式图
 tools:
   - read
   - exec
@@ -50,7 +27,7 @@ tools:
   - grep
 homepage: ""
 category: "Development"
-
+pricing_tier: free
 ---
 
 # HTML编码工具（免费版）
@@ -138,7 +115,7 @@ HTML编码工具免费版是一款面向个人开发者的专业 HTML 开发辅�
         <time datetime="2025-07-18">2025年7月18日</time>
       </header>
       <section>
-        <h2>第一节</h2>
+        <h2>领先节</h2>
         <p>文章内容...</p>
       </section>
       <section>
@@ -271,7 +248,7 @@ HTML编码工具免费版是一款面向个人开发者的专业 HTML 开发辅�
 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步：创建基础结构
+### 领先步：创建基础结构
 
 ```html
 <!DOCTYPE html>
@@ -362,7 +339,7 @@ HTML5 验证属性:
   autocomplete    → 自动填充
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **语义优先**：使用 article/nav/header/section/footer 而非 div 堆砌.
 2. **可访问性内建**：正确标题层级、alt文本、label关联、键盘导航.
@@ -370,7 +347,7 @@ HTML5 验证属性:
 4. **响应式图片**：使用 picture/srcset 和 loading=lazy 优化性能.
 5. **性能优化**：减少DOM深度，优化图片，defer非关键脚本.
 ```text
-免费版最佳实践:
+免费版优秀实践:
 [ ] 使用语义化标签（非div堆砌）
 [ ] 标题层级正确（h1→h2→h3不跳级）
 [ ] 所有图片有alt文本

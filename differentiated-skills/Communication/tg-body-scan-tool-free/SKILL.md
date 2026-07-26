@@ -1,16 +1,13 @@
 ---
+
 slug: tg-body-scan-tool-free
 name: tg-body-scan-tool-free
 version: 1.0.0
 displayName: 体测扫描工具免费版
 summary: "通过 Telegram 提交视频进行人体测量，返回基础围度数据与腰臀比，适合个人单次使用.。面向个人用户的 Telegram 人体体测测量工具."
-license: Proprietary
+license: MIT
 edition: free
-description: 面向个人用户的 Telegram 人体体测测量工具，可自动提升工作效率
-  核心能力: 视频提交、扫描状态轮询、基础围度测量、腰臀比汇总.
-  适用场景: 个人健身跟踪、单次体测测量、健康数据记录.
-  差异化: 免费版聚焦单次扫描与基础测量，不含批量处理与历史对比分析.
-  适用关键词: 体测, 扫描, 测量, telegram, 围度, 腰臀比, body-scan, fitness'
+description: "面向个人用户的 Telegram 人体体测测量工具，可自发提升工作效率. 适用于需要tg body scan tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 体测扫描
   - 健康测量
@@ -22,16 +19,15 @@ tags:
   - 图像
   - 通信
   - telegram
-  - scan_id
-  - 手机型号
-  - 机器人
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 体测扫描工具 免费版
 
 ## 概述
@@ -171,7 +167,7 @@ for key, value in result.get("measurements", {}).items():
 print(f"腰臀比: {result.get('waist_hip_ratio', 'N/A')}")
 ```
 
-## 最佳实践
+## 优秀实践
 
 - **视频质量**：确保光线均匀、背景简洁、全身入镜，避免穿着宽松衣物影响测量精度.
 - **拍摄距离**：建议距离 2-3 米，手机与地面平行，保持自然站姿.

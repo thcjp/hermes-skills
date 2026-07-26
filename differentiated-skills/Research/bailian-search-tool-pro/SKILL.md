@@ -1,4 +1,5 @@
 ---
+
 slug: bailian-search-tool-pro
 name: bailian-search-tool-pro
 version: 1.0.0
@@ -6,33 +7,7 @@ displayName: 百炼搜索工具-专业版
 summary: "企业级AI搜索,支持批量查询、结果缓存、并发搜索与搜索分析,面向团队生产场景。企业级 AI 优化网页搜索工具,在免费版核心能力之上,提供批量查询、结果缓存、"
 license: Proprietary
 edition: pro
-description: '企业级 AI 优化网页搜索工具,在免费版核心能力之上,提供批量查询、结果缓存、
-
-  并发搜索、搜索历史、结果去重与搜索分析能力。核心能力:
-
-  - 免费版全部能力(完全兼容)
-
-  - 批量查询与并发搜索
-
-  - 智能结果缓存与去重
-
-  - 搜索历史与审计
-
-  - 结果分析与聚合
-
-  - API 访问与第三方集成
-
-  适用场景:
-
-  - 企业级信息调研
-
-  - 批量知识采集
-
-  - 竞品动态监控
-
-  - 团队共享搜索
-
-  差异化:专业版面向团队与企业,提供批量、并发、缓存、分析等高阶能力,并保持与免费版完全兼容'
+description: "企业级 AI 调优网页搜索工具,在免费版核心能力之上,包含成批查询、结果缓存、. 适用于需要bailian search tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 研究工具
   - 网页搜索
@@ -44,8 +19,6 @@ tags:
   - 专业版新
   - bailian-pro
   - query
-  - api
-  - json
 tools:
   - read
   - exec
@@ -54,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 # 百炼搜索工具(专业版)
 
 ## 概述
@@ -217,7 +192,7 @@ RESEARCH_TOPICS = [
     {"query": "AI智能体市场格局", "depth": 15, "purpose": "市场分析"},
     {"query": "大模型微调技术对比", "depth": 10, "purpose": "技术选型"},
     {"query": "向量数据库性能评测", "depth": 10, "purpose": "技术选型"},
-    {"query": "RAG技术最佳实践", "depth": 15, "purpose": "方案设计"},
+    {"query": "RAG技术优秀实践", "depth": 15, "purpose": "方案设计"},
     {"query": "AI智能体安全风险", "depth": 10, "purpose": "风险评估"},
 ]
 # ...
@@ -377,7 +352,7 @@ bailian-pro api start --port 8080 --auth token
 bailian-pro api token create --name "integration" --scope "read"
 # ...
 # 验证
-curl -s -H "Authorization: Bearer <token>" "http://localhost:8080/api/health"
+curl -s -H "Authorization: Bearer <item>" "http://localhost:8080/api/health"
 ```
 
 #
@@ -440,7 +415,7 @@ bailian-pro stats
 bailian-pro stats --export json > stats.json
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 批量搜索优化
 1. **合理并发**:并发数不超过 `max_concurrency`(默认5),避免触发限流.
@@ -521,7 +496,7 @@ curl "http://localhost:8080/api/search?q=AI&count=10"
 - 告警 webhook:配置团队 IM 通知地址
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作
 - **版本**: 专业版(兼容免费版全部能力)
 

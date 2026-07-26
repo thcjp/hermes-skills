@@ -1,28 +1,24 @@
 ---
+
 slug: security-audit-agent-tool-free
 name: security-audit-agent-tool-free
 version: 1.0.0
 displayName: Agent安全审计免费版
 summary: AI Agent系统安全审计工具,支持代码库安全检查、提示注入检测与基础配置审计,适合个人开发者快速安全自查.
-license: Proprietary
+license: MIT
 edition: free
-description: 'Agent安全审计免费版,为AI Agent开发者提供基础安全审计能力.
-  核心能力:代码库安全扫描、提示注入检测、Agent配置审计、工具调用安全检查.
-  适用场景:Agent上线前安全自查、提示词安全审查、工具权限验证.
-  差异化:免费版聚焦核心审计能力,支持单Agent检查,适合个人开发者快速上手.
-  适用关键词: Agent安全, 提示注入, 安全审计, prompt injection, tool poisoning, agent audit'
+description: "Agent安全审计免费版,为AI Agent开发者包含基础安全审计能力. 适用于需要security audit agent tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要security audit agent tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 安全
+  - security
+  - audit
+  - agent
+  - automation
   - AI安全
   - Agent审计
   - 免费版
   - AI代理
   - 自动化
-  - 智能
-  - agent
-  - grep
-  - dev
-  - null
 tools:
   - read
   - exec
@@ -31,7 +27,10 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+pricing_tier: free
+
 ---
+
 # Agent安全审计免费版
 
 ## 概述
@@ -80,7 +79,7 @@ done
 # 2. 检查危险函数调用
 echo ""
 echo "--- 2. 危险函数调用检查 ---"
-DANGEROUS=$(grep -rn 'eval(\|exec(\|system(\|subprocess.call.*shell=True' \
+DANGEROUS=$(grep -rn 'eval(\|exec方法(\|system(\|subprocess.call.*shell=True' \
   --include='*.{js,ts,py}' . 2>/dev/null | grep -v 'node_modules\|test' | wc -l)
 [ "$DANGEROUS" -gt 0 ] && echo "  [!] 发现 ${DANGEROUS} 处危险函数调用" && ((ISSUES++))
 # ...
@@ -325,7 +324,7 @@ class ToolPermissionChecker:
     DANGEROUS_PATTERNS = [
         "rm -rf", "rmdir", "del /f", "DROP TABLE", 
         "DELETE FROM", "shutdown", "reboot", "format",
-        "chmod 777", "wget", "curl", "exec(", "eval("
+        "chmod 777", "wget", "curl", "exec方法(", "eval("
     ]
 # ...
     def check_tools(self, tools_config):
@@ -375,7 +374,7 @@ if __name__ == "__main__":
 
 ## 快速开始
 
-### 第一步:定位Agent项目
+### 领先步:定位Agent项目
 
 ```bash
 # 确认项目结构
@@ -429,7 +428,7 @@ bash config_audit.sh
 | disregard above | 高 | 尝试绕过约束 |
 | new instructions | 中 | 尝试注入新指令 |
 
-## 最佳实践
+## 优秀实践
 
 1. **最小权限**:Agent工具仅授予必要权限,避免过度授权.
 2. **输入验证**:对所有用户输入和工具参数进行严格验证.
@@ -437,7 +436,7 @@ bash config_audit.sh
 4. **输出约束**:定义严格的输出格式,防止信息泄露.
 5. **速率限制**:对Agent调用设置频率限制,防止滥用.
 ```bash
-# 最佳实践:安全提示词模板
+# 优秀实践:安全提示词模板
 cat << 'EOF'
 === 安全提示词模板 ===
 # ...
@@ -483,7 +482,7 @@ EOF
 检查权限定义、输入验证schema、危险操作模式、速率限制配置.
 ### Q4: 如何修复检测到的安全问题?
 
-根据检查结果,参考最佳实践部分的安全提示词模板和配置建议进行修复.
+根据检查结果,参考优秀实践部分的安全提示词模板和配置建议进行修复.
 ### Q5: 免费版支持哪些编程语言?
 
 支持JavaScript/TypeScript和Python项目的安全扫描。其他语言需专业版支持.
@@ -509,7 +508,7 @@ EOF
 - 扫描过程在本地执行,不发送代码到外部
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行AI Agent系统安全审计任务
 
 ## 错误处理

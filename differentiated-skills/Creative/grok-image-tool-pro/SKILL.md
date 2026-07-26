@@ -7,18 +7,23 @@ displayName: "Grok图片生成-专业版"
 summary: "批量AI图片生成引擎，支持多格式导出、消息平台集成与自动化工作流。。Grok图片生成工具专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判"
 license: "Proprietary"
 edition: "pro"
-description: "|-
-  Grok图片生成工具专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于需要人工创意判。。加速开发流程，提升代码质量与一致性。触发关键词：代码生成、自动化、性能优化、转换、设计、图片"
-  Grok图片生成工具专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
-tags: 创意,self,style,subject,prompt_data,图片生成
+description: "|-. 适用于需要grok image tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+tags:
+  - 创意
+  - self
+  - style
+  - subject
+  - prompt_data
+  - 图片生成
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
+pricing_tier: L2-标准级
 ---
+
 # Grok图片生成工具（专业版）
 
 ## 概述
@@ -313,7 +318,7 @@ ls -la "$OUTPUT_DIR/"
 
 ## 快速开始
 
-### 第一步：配置输出目录
+### 领先步：配置输出目录
 
 ```bash
 # 创建自定义输出目录
@@ -388,7 +393,7 @@ python3 batch_workflow.py --queue prompts.json --output ./generated-images --int
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **生成间隔控制**：批量生成间隔 15 秒以上，避免触发 Grok 限流.
 2. **失败重试机制**：单张失败自动重试 3 次，避免中断整个批次.

@@ -1,51 +1,34 @@
 ---
+
 slug: yaml-toolkit-free
 name: yaml-toolkit-free
 version: 1.0.1
 displayName: YAML处理工具免费版
 summary: "解析、生成与校验YAML，正确处理缩进与多文档，适合个人开发者配置管理.。YAML处理工具免费版，面向个人开发者的轻量级YAML解析与生成工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 'YAML处理工具免费版，面向个人开发者的轻量级YAML解析与生成工具。核心能力:
-
-  - YAML解析与多文档处理
-
-  - YAML生成与缩进规范
-
-  - 锚点/别名/合并键处理
-
-  - 格式校验与常见陷阱规避
-
-  适用场景:
-
-  - 配置文件解析与生成
-
-  - CI/CD 流水线配置管理
-
-  - 数据序列化与反序列化
-
-  差异化: 免费版聚焦核心解析与生成能力，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手'
+description: "YAML处置工具免费版，面向个人开发者的轻量级YAML解析与产出工具。核心能力:. 适用于需要yaml toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要yaml toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - YAML
+  - yaml
+  - toolkit
+  - automation
+  - productivity
   - 配置管理
   - 数据序列化
   - 免费版
   - 工具
   - 效率
-  - 知识
-  - 文档
-  - yaml
-  - config
-  - python
-  - open
-  - encoding
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # YAML处理工具（免费版）
 
 ## 概述
@@ -211,7 +194,7 @@ yaml.dump_all([doc1, doc2], open('output.yaml', 'w', encoding='utf-8'))
 - ... 结束文档（可选）
 ```
 
-## 最佳实践
+## 优秀实践
 
 * 使用 `safe_load` 而非 `load`，避免任意对象实例化的安全风险.
 * 缩进统一使用 2 空格，禁止 Tab.

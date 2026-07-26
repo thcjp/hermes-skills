@@ -1,30 +1,13 @@
 ---
+
 slug: repo-manager-free
 name: repo-manager-free
 version: 1.0.1
 displayName: 仓库管理器(免费版)
 summary: 通过MCP工具协议管理GitHub仓库、Issue与PR,支持工具发现、参数预览与安全执行,适合个人开发者日常使用.
-license: Proprietary
+license: MIT
 edition: free
-description: '仓库管理器(免费版)是一款基于MCP工具协议的GitHub仓库管理工具,通过统一的工具调用接口管理仓库、Issue、Pull Request、提交与分支,无需手动配置API认证。核心能力:
-
-  - 基于MCP工具协议的统一调用接口,自动处理OAuth认证
-
-  - 仓库、Issue、PR的基础查询与管理
-
-  - 提交与分支的查看与管理
-
-  - 工具发现与参数预览,降低使用门槛
-
-  - 安全执行机制,写操作需用户确认
-
-  适用场景:
-
-  - 个人开发者通过AI助手管理GitHub仓库
-
-  - Issue与PR的快速浏览与处理
-
-  - 代码审查前的信息...'
+description: "仓库管控器(免费版)是一款基于MCP工具协议的GitHub仓库管控工具,通过统一的工具调用接口管控仓库、Issue、Pull Request、提交与分支,无需手动配置API认证。核心能力:. 适用于需要repo manager相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - GitHub
   - 仓库管理
@@ -36,9 +19,6 @@ tags:
   - 电商
   - owner
   - repo-manager
-  - call
-  - params
-  - repo
 tools:
   - read
   - exec
@@ -46,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 仓库管理器(免费版)
 
 基于MCP工具协议管理GitHub仓库、Issue与Pull Request,通过统一的工具调用接口自动处理认证,提供"发现-预览-确认-执行"的安全流程.
@@ -345,7 +327,7 @@ for repo in "${repos[@]}"; do
 done
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 安全执行流程
 

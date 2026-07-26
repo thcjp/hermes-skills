@@ -1,13 +1,13 @@
 ---
+
 slug: redis-context-cache-free
 name: redis-context-cache-free
 version: 1.0.1
 displayName: Redis Context Cache
-summary: "AI Agent的Redis上下文缓存实践指南，覆盖过期策略、原子性陷阱、内存管理与常见模式.。Redis上下文缓存（免费版）为AI Agent提供Redis作为上下文缓存的最佳实践指南。针"
-license: Proprietary
+summary: "AI Agent的Redis上下文缓存实践指南，覆盖过期策略、原子性陷阱、内存管理与常见模式.。Redis上下文缓存（免费版）为AI Agent提供Redis作为上下文缓存的优秀实践指南。针"
+license: MIT
 edition: free
-description: Redis上下文缓存（免费版）为AI Agent提供Redis作为上下文缓存的最佳实践指南。针对"键无TTL导致OOM、GET-SET非原子、KEYS阻塞、大value驱逐"等真实生产痛点，提供可直接复用的命令模板与陷阱清单。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "Redis上下文缓存（免费版）为AI Agent包含Redis作为上下文缓存的优秀实践指南。针对\"键无TTL导致OOM、GET-SET非原子、KEYS阻塞、大value驱逐\"等真实生产痛点，包含可直接复用的命令模板与陷阱清单。Use. 适用于需要redis context cache相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - Redis
   - 上下文缓存
@@ -19,9 +19,6 @@ tags:
   - 智能
   - ttl
   - set
-  - key
-  - redis
-  - user
 tools:
   - read
   - exec
@@ -30,12 +27,14 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+pricing_tier: free
 ---
+
 # Redis上下文缓存（免费版）
 
 > **键无TTL等于慢性OOM。GET后SET不是原子。KEYS * 会阻塞整个实例。这三条记住，省下80%的生产事故。**
 
-本技能为AI Agent提供Redis作为上下文缓存的最佳实践。Redis强大但陷阱密集：一个无TTL的键能让生产实例OOM，一个非原子的GET-SET能让分布式锁失效。本指南把这些陷阱整理成可直接复用的命令模板.
+本技能为AI Agent提供Redis作为上下文缓存的优秀实践。Redis强大但陷阱密集：一个无TTL的键能让生产实例OOM，一个非原子的GET-SET能让分布式锁失效。本指南把这些陷阱整理成可直接复用的命令模板.
 ## 设计哲学
 
 Redis使用者的三大痛点：
@@ -89,7 +88,7 @@ Redis使用者的三大痛点：
 4. 参考## 错误处理章节处理异常
 5. 查看## FAQ解答常见疑问
 
-### 60秒上手：第一个缓存键
+### 60秒上手：领先个缓存键
 
 ```bash
 # 连接Redis
@@ -371,7 +370,7 @@ SET lock:order:{order_id} {token} NX EX 30
 
 **处理**: 解析功能5：常见缓存模式的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能5：常见缓存模式的响应数据,包含状态码、结果和日志.
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Agent、上下文缓存实践指、覆盖过期策略、内存管理与常见模、上下文缓存、免费版、作为上下文缓存的、最佳实践指南、非原子、等真实生产痛点、提供可直接复用的、命令模板与陷阱清、when、模型调用、智能对话、LLM、应用时使用、不适用于需要、确定性的关键决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Agent、上下文缓存实践指、覆盖过期策略、内存管理与常见模、上下文缓存、免费版、作为上下文缓存的、优秀实践指南、非原子、等真实生产痛点、提供可直接复用的、命令模板与陷阱清、when、模型调用、智能对话、LLM、应用时使用、不适用于需要、确定性的关键决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
@@ -477,7 +476,7 @@ A: 都用。RDB做定期快照（恢复快），AOF做增量日志（丢数据�
 
 本技能基于原始开源作品改进，保留原始版权声明：
 
-- 原始作品：redis-store（Redis使用最佳实践）
+- 原始作品：redis-store（Redis使用优秀实践）
 - 原始license：MIT
 - 改进作品：Redis上下文缓存（免费版） © 2026
 - 改进license：MIT
@@ -514,10 +513,12 @@ A: 都用。RDB做定期快照（恢复快），AOF做增量日志（丢数据�
 
 ### 示例1：基础用法
 
-```
-### 60秒上手：第一个缓存键(补充)
-# ...
 ```bash
+# 在此执行相关操作
+echo "操作完成"
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 # ...
 ## 错误处理

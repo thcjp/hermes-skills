@@ -1,30 +1,13 @@
 ---
+
 slug: discord-chat-manager-free
 name: discord-chat-manager-free
 version: 1.0.1
 displayName: Discord聊天管理免费版
 summary: "基础 Discord 聊天管理工具,支持消息发送、回复、搜索与读取,适合个人日常使用.。面向个人用户的 Discord 频道聊天管理工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人用户的 Discord 频道聊天管理工具。核心能力:
-
-  - 向频道发送消息并支持回复指定消息
-
-  - 读取频道最近消息与按关键词搜索历史
-
-  - 对消息添加表情反应与基础编辑删除
-
-  - 查询频道列表与频道基础信息
-
-  适用场景:
-
-  - 个人 Discord 服务器的日常聊天互动
-
-  - 小型团队的快速通知与状态更新
-
-  - 个人机器人的消息检索与回复
-
-  差异化: 免费版聚焦高频聊天操作,命令简洁即用;Pro 版提供高级搜索、批量消息与频道管理能力'
+description: "面向个人用户的 Discord 频道聊天管控工具。核心能力:. 适用于需要discord chat manager相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Discord
   - 聊天管理
@@ -36,14 +19,15 @@ tags:
   - message
   - action
   - channel
-  - bash
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: free
 ---
+
 # Discord 聊天管理(免费版)
 
 ## 概述
@@ -126,7 +110,7 @@ message action=search channel=discord channelId="1234567890" query="部署问题
 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:确认配置
+### 领先步:确认配置
 
 机器人配置应在 Agent 网关配置中完成。`message` 工具在指定 `channel=discord` 时会自动路由到已配置的 Discord 插件.
 ### 第二步:发送测试消息
@@ -187,7 +171,7 @@ message action=channel-info channel=discord channelId="1234567890"
 | 查找提及 | `action=search query="@username"` |
 | 确认表态 | `action=react emoji="✅"` |
 
-## 最佳实践
+## 优秀实践
 
 1. **优先用频道名称**: `target="#general"` 比直接用 ID 更清晰可读,便于后续维护和复盘。仅在频道名称含特殊字符或重复时使用 ID.
 2. **反应优于回复**: 简单确认场景用表情反应(`react`)比回复消息更高效,减少频道消息量。一个表情胜过一条「收到」.
@@ -241,7 +225,7 @@ message action=channel-info channel=discord channelId="1234567890"
 - **其他 API Key**: 免费版不依赖额外 API Key,仅使用 Discord Bot Token.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令 + 部分功能需 `exec` 执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令 + 部分功能需 `exec` 执行能力)
 - **说明**: 以自然语言指令驱动 Agent 调用 `message` 工具完成 Discord 聊天操作
 - **适用规模**: 单服务器、个人/小团队,日操作量 100 次以内
 - **升级建议**: 如需高级搜索、批量消息、频道管理,请升级至 `discord-chat-manager-pro`

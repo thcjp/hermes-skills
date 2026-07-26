@@ -7,17 +7,7 @@ displayName: ComfyUI绘画专业版
 summary: "专业AI绘画工具，支持自动调参、CivitAI模型管理、批量生成、图生图与ControlNet.。ComfyUI绘画专业版 —— 面向专业创作者与设计团队的高级本地AI绘画工具。核心能力:"
 license: Proprietary
 edition: pro
-description: ComfyUI绘画专业版 —— 面向专业创作者与设计团队的高级本地AI绘画工具。核心能力:。可自动提升工作效率
-
-  - 自动调参：根据提示词自动优化采样器、步数、CFG等参数
-
-  - CivitAI模型管理：搜索、下载、管理CivitAI平台模型与LoRA
-
-  - 图生图（Image-to-Image）：基于参考图生成变体
-
-  - ControlNet集成：姿态控制、边缘检测、深度图等专业控制
-
-  - 批量生成：队列管理..'
+description: "ComfyUI绘画专业版 —— 面向专业创作者与设计团队的高级本地AI绘画工具。核心能力:。可自发提升工作效率. 适用于需要comfyui painter tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - AI绘画
   - 图像生成
@@ -29,9 +19,6 @@ tags:
   - 设计
   - self
   - prompt
-  - def
-  - scheduler
-  - steps
 tools:
   - read
   - exec
@@ -39,7 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
+pricing_tier: L2-标准级
 ---
 
 # ComfyUI绘画专业版
@@ -448,7 +435,7 @@ generator.img2img(input_image_path="./input.jpg", prompt="oil painting", denoise
 | depth | 深度图 | 空间层次控制 |
 | scribble | 涂鸦 | 草图生成 |
 
-## 最佳实践
+## 优秀实践
 
 1. **风格预设选择**：写实用photorealistic，动漫用anime，创作用artistic
 2. **CivitAI模型**：根据需求选择合适模型，注意模型授权与使用范围

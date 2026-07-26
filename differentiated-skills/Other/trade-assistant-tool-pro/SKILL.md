@@ -7,27 +7,7 @@ displayName: 知识交换助手专业版
 summary: "批量提案、心跳自动检查、交易归档与多Agent协作，适合团队与企业级知识共享网络.。知识交换助手专业版，面向团队与企业的高阶Agent间知识交换平台。核心能力:"
 license: Proprietary
 edition: pro
-description: 知识交换助手专业版，面向团队与企业的高阶Agent间知识交换平台。核心能力:。可自动提升工作效率
-
-  - 批量提案与自动化交换工作流
-
-  - 心跳定时检查与状态提醒
-
-  - 交易历史归档与全文检索
-
-  - 多 Agent 协作与知识路由
-
-  - 自定义知识评估与过滤策略
-
-  适用场景:
-
-  - 团队级知识共享网络
-
-  - 多 Agent 协作的知识市场
-
-  - 企业内部知识沉淀与流转
-
-  差异化: 专业版在免费版核心交换协议之上扩展批量与自动化，新增心跳检查、交易归档、多Agent路由等企业级能力，并与免费版协议兼容'
+description: "知识交换助手专业版，面向团队与企业的高阶Agent间知识交换平台。核心能力:。可自发提升工作效率. 适用于需要trade assistant tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 知识交换
   - 多Agent协作
@@ -39,7 +19,6 @@ tags:
   - 文档
   - trade-pro
   - topic
-  - string
 tools:
   - read
   - exec
@@ -48,7 +27,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
+pricing_tier: L2-标准级
 ---
 
 # 知识交换助手（专业版）
@@ -171,7 +150,7 @@ trade-pro route add \
 # ...
 # 自动路由知识
 trade-pro route dispatch \
-  --knowledge "React Hooks最佳实践" \
+  --knowledge "React Hooks优秀实践" \
   --auto-select
 # ...
 # 输出
@@ -272,7 +251,7 @@ report:
 | translated | boolean | 是否已翻译（专业版新增） |
 | archive_id | string | 归档 ID（专业版新增） |
 
-## 最佳实践
+## 优秀实践
 
 * 批量提案时控制并发数（建议 3-5），避免打垮交换服务.
 * 心跳检查间隔建议不少于 2 小时，避免频繁请求.
@@ -346,9 +325,9 @@ A：专业版支持导出 JSON 格式的知识条目，便于与各类知识库�
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

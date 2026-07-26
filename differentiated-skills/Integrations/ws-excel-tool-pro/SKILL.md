@@ -1,4 +1,5 @@
 ---
+
 slug: "ws-excel-tool-pro"
 name: "ws-excel-tool-pro"
 version: "1.0.0"
@@ -6,8 +7,7 @@ displayName: "Excel工具(专业版)"
 summary: "Excel 全能力版：多表合并、透视表、图表、大数据处理、自动化流水线与数据库联动。。Excel 工具（专业版）面向数据分析师与团队，在免费版基础读写之上新增多表合并、数据透视表、图表生成、"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  Excel 工具（专业版）面向数据分析师与团队，在免费版基础读写之上新增多表合并、数据透视表、图表生成、大数据处理、自动化流水线与数据库联动六大模块。支持从 `PostgreSQL` 等数据库直接导入导出，处理百万行级数据不溢出。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+description: "|-. 适用于需要ws excel tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 数据分析
   - Excel
@@ -19,14 +19,15 @@ tags:
   - import
   - xlsx
   - excel
-  - pandas
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # Excel 工具（专业版）
 
 ## 概述
@@ -253,7 +254,7 @@ generate_report()
 send_email('boss@company.com', '周度销售报表', 'weekly_report.xlsx')
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 多表合并策略
 | 场景 | 方法 | 注意事项 |
@@ -308,7 +309,7 @@ A：某些分组无数据时会返回 NaN。用 `fill_value=0` 填充，或后�
 ### Q3：图表中文显示乱码？
 A：matplotlib 默认字体不支持中文。设置中文字体：`plt.rcParams['font.sans-serif'] = ['SimHei']`（Windows）或 `['Arial Unicode MS']`（macOS）.
 ### Q4：200 万行 Excel 读取太慢？
-A：① 用 `read_only=True` 模式；② 用 `chunksize` 分块；③ 考虑先转为 CSV 或 Parquet 再处理；④ 终极方案：直接从 `PostgreSQL` 读取，跳过 Excel.
+A：① 用 `read_only=True` 模式；② 用 `chunksize` 分块；③ 考虑先转为 CSV 或 Parquet 再处理；④ 完整方案：直接从 `PostgreSQL` 读取，跳过 Excel.
 ### Q5：`PostgreSQL` 导入 Excel 数据报类型错误？
 A：检查 Excel 列的数据类型是否与数据库 schema 一致。日期用 `pd.to_datetime` 转换，数字用 `astype` 转换，空值用 `fillna` 或 `None`.
 ### Q6：自动化流水线如何定时执行？

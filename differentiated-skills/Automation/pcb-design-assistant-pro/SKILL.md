@@ -7,9 +7,7 @@ displayName: PCB设计助手(专业版)
 summary: EasyEDA全流程PCB设计专业版，支持多页原理图、PCB布局、DRC检查、多层板、自定义库与BOM下单，覆盖从设计到打板.
 license: Proprietary
 edition: pro
-description: "PCB设计助手（专业版）面向硬件团队与专业电子工程师，在免费版基础上解锁全部高级能力：多页分层原理图、完整PCB布局与DRC检查、多层板设计、自定义元件库与封装、设计复用模板、扩展电气规则检查、BOM自动生成与立创下单对接。覆盖从需求到打板的全流程。
-  when 、品牌视觉时使用。保障功能正确性，降低缺陷率与回归风险。触发关键词：API设计、测试、设计、品牌、机器学习"
-  when 、品牌视觉时使用.
+description: "PCB设计助手（专业版）面向硬件团队与专业电子工程师，在免费版基础上解锁全部高级能力：多页分层原理图、完整PCB布局与DRC检查、多层板设计、自定义元件库与封装、设计复用模板、扩展电气规则检查、BOM自发产出与立创下单对接。覆盖从需求到打板的全流程。. 适用于需要pcb design assistant相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - PCB设计
   - 电路设计
@@ -21,8 +19,6 @@ tags:
   - 创意
   - bom
   - pcb
-  - drc
-  - 用户提供
 tools:
   - read
   - exec
@@ -30,8 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
+pricing_tier: L2-标准级
 ---
+
 > 从需求到打板的全流程副驾驶。多页原理图、PCB布局、DRC检查、BOM下单，让硬件团队的设计效率提升10倍.
 ## 架构总览
 
@@ -270,9 +267,9 @@ def push_bom_to_plm(bom_data):
         items=bom_data["items"],
         version=bom_data["version"]
     )
-```
-
-### 与ERP系统集成
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 def sync_to_erp(bom_data):
     erp = ERPClient()
@@ -282,9 +279,9 @@ def sync_to_erp(bom_data):
             quantity=item["quantity"] * 1000,  # 量产批量
             deadline="2026-02-15"
         )
-```
-
-### 与版本控制系统集成
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 git add schematic/ pcb/ bom/
 git commit -m "feat: 完成v1.0原理图与PCB设计
@@ -304,7 +301,7 @@ git tag v1.0-pcb
    - 多页设计：`pcbAssistant.enableFeature("multi_page")`
    - PCB布局：`pcbAssistant.enableFeature("pcb_layout")`
    - DRC检查：`pcbAssistant.enableFeature("drc")`
-3. **历史设计导入**：免费版的单页设计可直接升级为多页的第一页
+3. **历史设计导入**：免费版的单页设计可直接升级为多页的领先页
 4. **指令兼容**：免费版的所有指令在专业版中均可使用
 
 ### 版本更新历史

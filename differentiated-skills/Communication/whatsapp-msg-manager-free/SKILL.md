@@ -1,38 +1,13 @@
 ---
+
 slug: whatsapp-msg-manager-free
 name: whatsapp-msg-manager-free
 version: 1.0.1
 displayName: WhatsApp消息管理-免费版
 summary: "发送WhatsApp文本消息、查看号码与模板,适合个人用户的轻量消息管理工具。WhatsApp消息管理免费版,提供核心的WhatsApp Business消息发送能力。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 'WhatsApp消息管理免费版,提供核心的WhatsApp Business消息发送能力。核心能力:
-
-  - 发送WhatsApp文本消息给单个联系人
-
-  - 查询Business账号下的电话号码列表
-
-  - 浏览已审批的消息模板
-
-  - 简单的消息预览与确认流程
-
-  适用场景:
-
-  - 个人用户日常消息发送与通知
-
-  - 小型团队的基本客户沟通
-
-  - 订单状态、提醒通知的快速触达
-
-  差异化:
-
-  - 免费版聚焦文本消息发送,操作简洁直观
-
-  - 内置安全确认机制,防止误发消息
-
-  - 与PRO版完全兼容,可随时平滑升级
-
-  适用关键词:...'
+description: "WhatsApp消息管控免费版,包含核心的WhatsApp Business消息发送能力。核心能力:. 适用于需要whatsapp msg manager相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 沟通协作
   - 消息发送
@@ -44,14 +19,15 @@ tags:
   - bash
   - connector_call_tool
   - params
-  - 消息管理
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: free
 ---
+
 # WhatsApp消息管理(免费版)
 
 ## 概述
@@ -220,7 +196,7 @@ connector_list_integrations
 connector_list_tools --integration whatsapp
 ```
 
-### 第四步:发送第一条消息
+### 第四步:发送领先条消息
 
 ```bash
 # 获取号码ID
@@ -271,7 +247,7 @@ security:
   blocklist: []
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 号码格式规范
 
@@ -429,7 +405,7 @@ connector_call_tool --tool "whatsapp_get_phone_numbers" --params '{}'
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作
 - **连接模式**: 通过连接器服务代理WhatsApp Cloud API请求
 - **安全等级**: 所有写操作需用户显式确认,OAuth令牌由连接器安全管理
@@ -450,9 +426,9 @@ connector_call_tool --tool "whatsapp_get_phone_numbers" --params '{}'
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

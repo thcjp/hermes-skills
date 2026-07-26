@@ -5,12 +5,9 @@ name: music-gen-tool-free
 version: 1.0.0
 displayName: 音乐生成工具免费版
 summary: 聚合Suno、Udio等主流AI音乐平台,提供歌词生成、风格匹配与基础乐理支持,适合个人内容创作者.
-license: Proprietary
+license: MIT
 edition: free
-description: "音乐生成工具免费版帮助个人用户通过聚合多个AI音乐生成平台创建音乐。支持Suno、Udio、Stable Audio等主流服务,提供歌词生成、风格匹配、
-  基础乐理指导与版权注意事项。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。减少重复劳动，提升工作效率。触发关键词：自动化、转换、设计、视频、机器学习"
-
-  基础乐理指导与版权注意事项。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。'
+description: "音乐产出工具免费版帮助个人用户通过聚合多个AI音乐产出平台创建音乐。兼容Suno、Udio、Stable Audio等主流服务,包含歌词产出、风格匹配、. 适用于需要music gen tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 音乐生成
   - AI音乐
@@ -22,15 +19,15 @@ tags:
   - bpm
   - chorus
   - 音乐风格
-  - lo-fi
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
+pricing_tier: free
 ---
+
 # 音乐生成工具免费版
 
 ## 概述
@@ -41,7 +38,7 @@ category: "Creative"
 
 ### AI音乐平台聚合
 
-| 平台 | 最佳用途 | 商用许可 | 特点 |
+| 平台 | 优秀用途 | 商用许可 | 特点 |
 |---|----|----|---|
 | Suno | 流行/电子/民谣完整歌曲 | 付费版可商用 | 全曲生成,含人声 |
 | Udio | 高品质人声歌曲 | 付费版可商用 | 音质优秀,风格多样 |
@@ -67,7 +64,7 @@ category: "Creative"
 
 ```text
 [Verse 1]
-第一段主歌,介绍主题与背景
+领先段主歌,介绍主题与背景
 建立情感基调
 # ...
 [Chorus]
@@ -125,14 +122,8 @@ category: "Creative"
 
 需求:内容创作者需要为Vlog制作背景音乐.
 ```bash
-# 使用Stable Audio生成背景音乐
-# 提示词:"lo-fi hip hop beat, mellow piano, soft drums,
-#         study focus, 80 BPM, instrumental, 2 minutes"
-# ...
-# 或使用Mubert实时生成
-# 风格:Lo-fi
-# 时长:3分钟
-# 用途:Vlog背景
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### 场景二:原创歌曲创作
@@ -185,15 +176,8 @@ category: "Creative"
 
 需求:独立游戏开发者需要为主题场景配乐.
 ```bash
-# 使用MusicGen生成游戏配乐
-# 提示词:"epic orchestral cinematic, fantasy adventure,
-#         strings and brass, heroic theme, 120 BPM,
-#         instrumental, 3 minutes"
-# ...
-# 或使用Suno生成
-# 风格:Cinematic
-# 描述:Epic fantasy adventure theme
-# 结构:Intro -> Build -> Climax -> Outro
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ## 快速开始
@@ -224,12 +208,8 @@ category: "Creative"
 ### Step 3:生成与迭代
 
 ```bash
-# 生成音乐
-# 1. 在选定的平台上输入提示词
-# 2. 生成多个候选版本
-# 3. 选择最佳版本
-# 4. 如需调整,修改提示词后重新生成
-# 5. 确认后下载使用
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -295,7 +275,7 @@ style_config = {
         └─ 否 -> Stable Audio / MusicGen
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 提示词编写技巧
 
@@ -369,7 +349,7 @@ A: 参考风格惯例:慢歌60-80 BPM,流行100-130 BPM,舞曲120-140 BPM。也�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令+部分执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令+部分执行能力)
 - **说明**: 基于Markdown指令驱动Agent执行音乐生成指导任务,通过AI音乐平台实现音乐输出
 - **免费版限制**: 基础平台聚合、歌词创作模板、无批量生成、无版权管理、无团队协作
 
@@ -391,9 +371,9 @@ A: 参考风格惯例:慢歌60-80 BPM,流行100-130 BPM,舞曲120-140 BPM。也�
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

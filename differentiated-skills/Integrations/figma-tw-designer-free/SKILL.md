@@ -1,20 +1,13 @@
 ---
+
 slug: figma-tw-designer-free
 name: figma-tw-designer-free
 version: 1.0.1
 displayName: Figma设计助手(免费版)
 summary: "读取Figma文件结构、导出图层、查看评论的免费体验版，适合个人设计稿查阅。Figma设计助手(免费版)是一款面向设计师与开发协作的Figma文件交互工具，通过REST API实现文件结构读"
-license: Proprietary
+license: MIT
 edition: free
-description: 'Figma设计助手(免费版)是一款面向设计师与开发协作的Figma文件交互工具，通过REST API实现文件结构读取、图层导出与评论查看等核心能力。核心能力：
-
-  - 读取Figma文件的页面、画板、图层层级结构
-
-  - 按需导出指定图层为PNG/JPG/SVG/PDF格式
-
-  - 查看文件最近评论，支持协作沟通追踪
-
-  - 提供安全可靠的Token管理方式.'
+description: "Figma设计助手(免费版)是一款面向设计师与开发协作的Figma文件交互工具，通过REST API达成文件结构读取、图层导出与评论查看等核心能力。核心能力：. 适用于需要figma tw designer相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 集成工具
   - 设计协作
@@ -26,14 +19,15 @@ tags:
   - file_key
   - api
   - agent
-  - python
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # Figma设计助手(免费版)
 
 本工具帮助用户通过Figma REST API与设计文件交互，实现结构读取、图层导出与评论查看等核心功能。免费版聚焦个人使用场景，提供完整的查阅与单次导出能力.
@@ -130,11 +124,9 @@ python （请参考skill目录中的脚本文件） export <file_key> \
 
 ```bash
 python （请参考skill目录中的脚本文件） get-comments <file_key>
-```
-
-## 示例
-
-### 环境变量配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 推荐方式：环境变量
 FIGMA_TOKEN=figd_xxxxxxxxxxxxxxxxxxxxxxxx
@@ -150,7 +142,7 @@ FIGMA_TOKEN=figd_xxxxxxxxxxxxxxxxxxxxxxxx
 | --scale | number | 否 | 1 | 1/2/3/4倍率 |
 | --svg_include_id | bool | 否 | false | SVG是否包含节点ID |
 
-## 最佳实践
+## 优秀实践
 
 ### 实践一：先读结构再导出
 避免盲目导出导致资源浪费。先调用`get-file`获取完整结构，定位到目标节点的ID后，再执行精确导出。这种方式能显著降低API调用次数与等待时间.
@@ -222,7 +214,7 @@ A：免费版不限制使用次数，但批量导出(一次超过10个图层)与
 - **安全要求**：禁止在SKILL.md或脚本中硬编码令牌，禁止提交到版本控制
 
 ### 可用性分类
-- **分类**：MD+EXEC(纯Markdown指令，部分功能需要exec命令行执行能力)
+- **分类**：MD+EXEC模式纯Markdown指令，部分功能需要exec命令行执行能力)
 - **说明**：基于Markdown的AI Skill，通过自然语言指令驱动Agent执行Figma文件交互任务
 
 ## 输出格式

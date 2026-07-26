@@ -1,4 +1,5 @@
 ---
+
 slug: tool-call-retry-tool-pro
 name: tool-call-retry-tool-pro
 version: 1.0.0
@@ -6,27 +7,7 @@ displayName: 工具调用重试专业版
 summary: "自定义错误修复、持久化幂等、退避策略可配与全链路监控，适合企业级Agent执行链路.。工具调用重试工具专业版，面向企业级Agent执行链路的高阶工具调用增强方案。核心能力:"
 license: Proprietary
 edition: pro
-description: '工具调用重试工具专业版，面向企业级Agent执行链路的高阶工具调用增强方案。核心能力:
-
-  - 自定义错误处理函数，支持参数自动修复后重试
-
-  - 持久化幂等性键，跨进程/跨实例去重
-
-  - 可配置退避策略（指数/线性/抖动/自定义）
-
-  - 全链路监控与重试日志归档
-
-  - 批量工具调用的并发重试控制
-
-  适用场景:
-
-  - 企业级Agent的高可靠性执行链路
-
-  - 复杂场景下的错误自愈与参数修复
-
-  - 分布式系统的跨实例幂等保证
-
-  差异化: 专业版在免费版核心重试能力之上扩展错误修复与持久化...'
+description: "工具调用重试工具专业版，面向企业级Agent执行链路的高阶工具调用增强方案。核心能力:. 适用于需要tool call retry tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 工具调用
   - 错误自愈
@@ -38,8 +19,6 @@ tags:
   - args
   - true
   - toolfn
-  - sql
-  - const
 tools:
   - read
   - exec
@@ -47,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 工具调用重试工具（专业版）
 
 ## 概述
@@ -244,7 +225,7 @@ error_handler:
 | fixed | 固定间隔 | 已知恢复时间 |
 | custom | 自定义函数 | 专业场景 |
 
-## 最佳实践
+## 优秀实践
 
 * 对可修复的错误（如参数格式）启用 errorHandler，自动修复后重试.
 * 对不可恢复的错误（如权限不足）在 errorHandler 中返回 `{ abort: true }`.

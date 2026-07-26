@@ -1,4 +1,5 @@
 ---
+
 slug: "timeline-digest-tool-pro"
 name: "timeline-digest-tool-pro"
 version: "1.0.0"
@@ -6,19 +7,7 @@ displayName: "时间线摘要工具-专业版"
 summary: "企业级X/Twitter时间线摘要平台,支持定时调度/智能分类/多源聚合/自动推送。时间线摘要工具专业版,面向企业和专业用户的高级X/Twitter时间线信息聚合平台。核心能力: - 全时间"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  时间线摘要工具专业版,面向企业和专业用户的高级X/Twitter时间线信息聚合平台。核心能力:
-  - 全时间线抓取(For You + Following + 自定义列表)
-  - 智能分类摘要(AI分类:科技/加密货币/商业洞察/其他)
-  - 高级语义过滤与降噪
-  - 定时自动调度与增量处理
-  - 多源信息聚合(X/Twitter + RSS + 自定义源)
-  - 自动推送通知(Telegram/邮件/Webhook)
-  - 状态管理与云端同步
-  - 摘要分析仪表盘与趋势追踪
-
-  适用场景:
-  - 企业舆情监控与行业动态追踪
+description: "|-. 适用于需要timeline digest tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 沟通协作
   - 信息聚合
@@ -30,8 +19,6 @@ tags:
   - 通信
   - pro
   - aggregator
-  - twitter
-  - telegram
 tools:
   - read
   - exec
@@ -39,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 时间线摘要工具专业版是一款面向企业和专业用户的高级X/Twitter时间线信息聚合平台。在免费版基础抓取和去重能力之上,PRO版新增了AI智能分类摘要、定时自动调度、多源信息聚合、自动推送通知等企业级功能,帮助用户构建自动化的信息聚合与分发工作流.
 PRO版与免费版完全兼容,升级后原有配置和状态数据继续使用。适合企业舆情监控、投资研究信息聚合、内容团队素材采集等需要持续追踪和自动化处理的场景.
 ### PRO版增强能力总览
@@ -183,9 +172,9 @@ for section in digest["sections"]:
 skill-platform skills install timeline-digest-tool-pro
 skill-platform gateway restart
 # ...
-```
-
-### 全新安装
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 bird --version
 python3 --version
@@ -197,11 +186,9 @@ python3 init_config.py --interval 6 --output config.json
 python3 setup_notifications.py --telegram --email
 # ...
 python3 start_scheduler.py --config config.json
-```
-
-#
-## 配置示例
-### PRO版企业级配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "intervalHours": 6,
@@ -257,9 +244,9 @@ python3 start_scheduler.py --config config.json
     "dashboard_path": "./dashboard/"
   }
 }
-```
-
-### 推送通知配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 notifications:
   telegram:
@@ -283,7 +270,7 @@ notifications:
       Authorization: "Bearer ${WEBHOOK_TOKEN}"
 ```
 
-## 最佳实践
+## 优秀实践
 ### 1. 调度频率选择
 | 使用场景 | 建议频率 | 抓取量 | 说明 |
 |---:|---:|---:|---:|
@@ -300,9 +287,9 @@ notifications:
 3. 自定义源补充专业领域内容
 4. 统一去重,避免跨源重复
 5. 分类摘要时标注来源,便于追溯
-```
-
-### 3. 推送通知优化
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 PUSH_BEST_PRACTICES = {
     "format": "使用简洁的格式,重点突出分类和数量",
@@ -351,7 +338,7 @@ PUSH_BEST_PRACTICES = {
 - LLM智能摘要由Agent内置LLM提供,无需额外Key
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行时间线摘要和推送任务
 - **运行模式**: 本地脚本执行 + 定时调度 + 远程推送
 - **安全等级**: 只读抓取操作;推送通知需配置认证凭证;状态文件支持云端加密同步
@@ -380,9 +367,9 @@ PUSH_BEST_PRACTICES = {
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

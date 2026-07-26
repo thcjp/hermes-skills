@@ -1,4 +1,5 @@
 ---
+
 slug: knowledge-agent-tool-pro
 name: knowledge-agent-tool-pro
 version: 1.0.0
@@ -6,33 +7,7 @@ displayName: 知识管理工具-专业版
 summary: "企业级知识管理,支持团队共享、语义检索、自动摘要、知识图谱与权限管理。企业级知识管理工具,在免费版核心能力之上,提供团队共享知识库、语义检索、"
 license: Proprietary
 edition: pro
-description: '企业级知识管理工具,在免费版核心能力之上,提供团队共享知识库、语义检索、
-
-  自动摘要生成、知识图谱构建、权限管理与监控统计能力。核心能力:
-
-  - 免费版全部能力(完全兼容)
-
-  - 团队共享知识库与协作
-
-  - 语义检索与智能推荐
-
-  - 自动摘要与关键词提取
-
-  - 知识图谱与关联发现
-
-  - 权限管理与操作审计
-
-  适用场景:
-
-  - 企业团队知识库建设
-
-  - 研究机构资料管理
-
-  - 多人协作的知识沉淀
-
-  - 知识图谱与关联分析
-
-  差异化:专业版面向团队与企业,提供共享、语义检索、图谱、权限等高阶能力,并保持与免费版完全兼容'
+description: "企业级知识管控工具,在免费版核心能力之上,包含团队共享知识库、语义检索、. 适用于需要knowledge agent tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 研究工具
   - 知识管理
@@ -44,8 +19,6 @@ tags:
   - know
   - pro
   - 专业版新
-  - team
-  - bash
 tools:
   - read
   - exec
@@ -55,7 +28,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
+pricing_tier: L2-标准级
 ---
+
 # 知识管理工具(专业版)
 
 ## 概述
@@ -402,7 +377,7 @@ know pro stats --export json > stats.json
 know pro stats --export markdown > stats.md
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 团队协作规范
 1. **定期同步**:每天工作前后 `know pro sync --pull` / `--push`,保持知识库一致.
@@ -491,7 +466,7 @@ know pro graph export --format json > graph.json
 - 团队共享:配置共享存储路径与访问凭证
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作
 - **版本**: 专业版(兼容免费版全部能力)
 

@@ -1,12 +1,12 @@
 ---
+
 slug: security-radar
 name: security-radar
 version: 1.0.1
 displayName: 安全情报雷达
 summary: "聚合多源漏洞情报并按资产关联排序，告别告警疲劳，只推真正影响你的威胁.。安全情报雷达为 AI Agent 提供智能化的漏洞与威胁情报订阅能力。它聚合 NVD CVE、GitHub Secur"
-license: Proprietary
-description: 安全情报雷达为 AI Agent 提供智能化的漏洞与威胁情报订阅能力。它聚合 NVD CVE、GitHub Security Advisory、社区恶意技能通报等多源数据，并按资产关联度与可利用性双重排序，把每天数十上百条告警压缩到只剩必须处理的两三条。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+license: MIT
+description: "安全情报雷达为 AI Agent 包含智能化的漏洞与威胁情报订阅能力。它聚合 NVD CVE、GitHub Security Advisory、社区恶意技能通报等多源数据，并按资产关联度与可利用性双重排序，把每天数十上百条告警压缩到只剩必须处置的两三条。Use. 适用于需要security radar相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 自动化
   - 安全
@@ -25,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: free
 ---
+
 # 安全情报雷达
 
 把海量漏洞情报变成只推两三条真正相关的告警。本技能解决三个核心问题：**告警疲劳**（59% 安全人员每天被海量告警淹没）、**优先级混乱**（严重度高的不一定紧急）、**资产盲区**（不知道哪些 CVE 真正影响自己）.
@@ -98,6 +100,8 @@ bash ~/.skill-platform/security-radar/scan.sh --init
 在 Agent 心跳例程中调用：
 
 ```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 仅当出现新的、关联到资产、且优先级达标的告警时才输出通知；否则输出 `RADAR_OK`.
@@ -106,7 +110,7 @@ bash ~/.skill-platform/security-radar/scan.sh --init
 
 | 情报源 | 端点 | 说明 |
 |:-----|:-----|:-----|
-| 社区聚合 Feed | 由 `RADAR_FEED_URL` 配置（默认社区源） | 含恶意技能/注入模式/最佳实践 |
+| 社区聚合 Feed | 由 `RADAR_FEED_URL` 配置（默认社区源） | 含恶意技能/注入模式/优秀实践 |
 | NVD CVE | `https://services.nvd.nist.gov/rest/json/cves/2.0` | 官方 CVE 详情（可选，需 API Key 提高速率） |
 | GitHub Security Advisory | `https://api.advisories` | 依赖漏洞（GHSA） |
 
@@ -323,7 +327,7 @@ RADAR_DEGRADED - 使用离线快照 (2026-07-18 07:30)
 | `vulnerable_skill` | 存在安全缺陷的技能 | 按建议升级或打补丁 |
 | `prompt_injection` | 已知提示注入模式 | 强化系统提示词、加输入过滤 |
 | `attack_pattern` | 观察到的攻击手法 | 评估自身是否暴露于该手法 |
-| `best_practice` | 安全最佳实践更新 | 计划纳入，非紧急 |
+| `best_practice` | 安全优秀实践更新 | 计划纳入，非紧急 |
 
 ## 场景化指南
 

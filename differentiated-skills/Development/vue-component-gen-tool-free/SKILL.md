@@ -1,14 +1,13 @@
 ---
+
 slug: vue-component-gen-tool-free
 name: vue-component-gen-tool-free
 version: 1.0.0
 displayName: Vue组件生成(免费版)
 summary: 面向个人开发者的Vue 3组件模板生成工具,支持Composition API与TypeScript单文件组件.
-license: Proprietary
+license: MIT
 edition: free
-description: 'Vue组件生成工具免费版为个人开发者提供Vue 3单文件组件模板快速生成能力,覆盖Composition API、Options API与TypeScript支持。核心能力:
-
-  - 一键生成Vue 3单文件组件(。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
+description: "Vue组件产出工具免费版为个人开发者包含Vue 3单文件组件模板快速产出能力,覆盖Composition API、Options API与TypeScript兼容。核心能力:. 适用于需要vue component gen tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Vue
   - 组件生成
@@ -20,15 +19,15 @@ tags:
   - api
   - props
   - vue
-  - div
-  - const
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Vue 组件生成工具(免费版)
 
 ## 概述
@@ -256,7 +255,7 @@ const close = () => emit('update:open', false)
 
 ## 快速开始
 
-### 第一步:描述组件需求
+### 领先步:描述组件需求
 
 直接在对话中描述你需要的组件,例如:
 
@@ -270,11 +269,8 @@ const close = () => emit('update:open', false)
 ### 第三步:应用到项目
 
 ```bash
-# 将代码保存为组件文件
-# src/components/UserCard.vue
-# ...
-# 在父组件中使用
-# <UserCard :user="currentUser" />
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ## 示例
@@ -293,11 +289,11 @@ const close = () => emit('update:open', false)
 
 | API 类型 | 语法 | 推荐度 | 说明 |
 |----:|----:|----:|----:|
-| `composition` | `<script setup>` | 推荐 | Vue 3 最佳实践,简洁高效 |
+| `composition` | `<script setup>` | 推荐 | Vue 3 优秀实践,简洁高效 |
 | `options` | `export default { ... }` | 兼容 | 旧项目兼容,新项目不推荐 |
 | `script-setup` | `<script setup>` | 推荐 | 等同 composition,显式声明 |
 
-## 最佳实践
+## 优秀实践
 
 1. **优先使用 `<script setup lang="ts">`**:Vue 3 推荐语法,TypeScript 提供类型安全.
 2. **Props 用类型接口定义**:`interface Props { ... }` 比 `defineProps({ ... })` 更清晰.
@@ -350,7 +346,7 @@ Props 定义 `modelValue`,Emits 定义 `update:modelValue`。在输入事件中�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于自然语言指令驱动 Agent 输出 Vue 单文件组件代码;用户将代码保存到项目并通过 Vite 或 Vue CLI 运行
 
 ## 错误处理

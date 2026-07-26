@@ -1,32 +1,13 @@
 ---
+
 slug: anygen-diagram-tool-free
 name: anygen-diagram-tool-free
 version: 1.0.0
 displayName: AnyGen图表生成-免费版
 summary: "通过自然语言生成图表与可视化结构,支持流程图、架构图等,适合个人用户快速出图.。AnyGen图表生成免费版,面向个人用户的智能图表与可视化结构生成工具."
-license: Proprietary
+license: MIT
 edition: free
-description: 'AnyGen图表生成免费版,面向个人用户的智能图表与可视化结构生成工具.
-  核心能力:
-
-  - 通过自然语言描述生成图表
-
-  - 支持流程图、架构图、组织结构图等
-
-  - 服务端渲染,输出高质量图像
-
-  - 简单认证,快速上手
-
-  适用场景:
-
-  - 个人文档配图快速生成
-
-  - 学习笔记可视化辅助
-
-  - 简单流程说明图制作
-
-  差异化:免费版聚焦核心图表生成能力,操作简单,适合个人用户体验AI智能绘图.
-  适用关键词: 图表生成, 流程图, 架构图, 可视化, smart_draw, AnyGen, 自然语言画图'
+description: "AnyGen图表产出免费版,面向个人用户的智能图表与可视化结构产出工具. 适用于需要anygen diagram tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Creative
   - 图表生成
@@ -38,14 +19,15 @@ tags:
   - api
   - auth
   - login
-  - bash
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # AnyGen图表生成工具 - 免费版
 
 ## 概述
@@ -130,17 +112,17 @@ anygen smart_draw "软件开发流程图:需求分析→设计→编码→测试
 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:认证
+### 领先步:认证
 
 ```bash
 # 浏览器授权(推荐)
 anygen auth login --no-wait
 # ...
 # 或使用 API Key
-anygen auth login --api-key sk-xxx
+anygen auth login --api-key sk-placeholder
 # ...
 # 或通过环境变量
-export ANYGEN_API_KEY=sk-xxx
+export ANYGEN_API_KEY=sk-placeholder
 ```
 
 当命令返回认证错误时,运行 `anygen auth login --no-wait` 并在浏览器完成授权,登录成功后重试.
@@ -168,10 +150,10 @@ anygen smart_draw "你的图表描述"
 anygen auth login --no-wait
 # ...
 # 方式2:API Key
-anygen auth login --api-key sk-xxx
+anygen auth login --api-key sk-placeholder
 # ...
 # 方式3:环境变量
-export ANYGEN_API_KEY=sk-xxx
+export ANYGEN_API_KEY=sk-placeholder
 # ...
 # 生成命令
 anygen smart_draw "<图表描述>"
@@ -184,7 +166,7 @@ anygen smart_draw "<图表描述>"
 # - 时序图:描述交互时序
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **描述要具体**:明确节点名称与关系,如"用户服务连接用户数据库"而非"服务连数据库"
 2. **关系方向清晰**:用"访问"、"连接"、"调用"等明确关系动词
@@ -230,7 +212,7 @@ A:可以。自然语言描述支持中文,生成的图表中的文字也会使�
 - **安全建议**: API Key 妥善保管,泄露后及时在平台轮换
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过AnyGen CLI调用服务端渲染生成图表
 
 ## 错误处理

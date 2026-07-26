@@ -1,29 +1,13 @@
 ---
+
 slug: github-api-toolkit-free
 name: github-api-toolkit-free
 version: 1.0.1
 displayName: GitHub API工具包(免费版)
 summary: 通过GitHub REST API管理仓库、Issue、PR与分支,支持基础CRUD与结构化输出,适合个人开发者集成场景.
-license: Proprietary
+license: MIT
 edition: free
-description: 'GitHub API工具包(免费版)是一款面向开发者的GitHub REST API集成工具,封装常用API端点,帮助用户通过命令行或脚本管理仓库、Issue、Pull
-  Request与分支。核心能力:
-
-  - 仓库管理: 列表、查看、创建、更新
-
-  - Issue管理: 列表、查看、创建、更新、评论
-
-  - Pull Request管理: 列表、查看、创建、合并
-
-  - 分支与提交管理: 列表、查看、比较
-
-  - 支持CLI与Python两种调用方式
-
-  适用场景:
-
-  - 个人开发者通过API自动化GitHub操作
-
-  - 脚本化批量管理仓库..'
+description: "GitHub API工具包(免费版)是一款面向开发者的GitHub REST API集成工具,封装常用API端点,帮助用户通过命令行或脚本管控仓库、Issue、Pull. 适用于需要github api toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - GitHub
   - API
@@ -35,14 +19,15 @@ tags:
   - github_token
   - curl
   - authorization
-  - bearer
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # GitHub API工具包(免费版)
 
 通过GitHub REST API管理仓库、Issue、Pull Request与分支,封装常用端点,提供CLI与Python两种调用方式,适合个人开发者集成场景.
@@ -368,7 +353,7 @@ class GitHubAPI:
         return resp.json()
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### API调用规范
 

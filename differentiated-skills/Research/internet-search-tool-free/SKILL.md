@@ -1,48 +1,24 @@
 ---
+
 slug: internet-search-tool-free
 name: internet-search-tool-free
 version: 1.0.0
 displayName: 聚合搜索工具
 summary: 基于 SearXNG 的多引擎聚合搜索工具，支持分类路由与智能查询，聚合多个搜索引擎结果，适合个人日常信息检索.
-license: Proprietary
+license: MIT
 edition: free
-description: '基于 SearXNG 的多引擎聚合搜索工具，支持分类路由与智能查询，聚合多个搜索引擎结果，适合个人日常信息检索。核心能力:
-
-  - 聚合多个搜索引擎结果（Brave、Bing、DuckDuckGo 等）
-
-  - 按查询类型智能路由到合适引擎
-
-  - 支持通用、新闻、学术、社交四大类别
-
-  - SearXNG 查询语法支持
-
-  适用场景:
-
-  - 个人日常信息检索
-
-  - 学术论文与资料查找
-
-  - 社区观点与讨论收集
-
-  差异化:
-
-  - 免费版聚焦单次智能搜索
-
-  - 自动选择最匹配的搜索引擎
-
-  - 结果聚合...'
+description: "基于 SearXNG 的多引擎聚合搜索工具，兼容分类路由与智能查询，聚合多个搜索引擎结果，适合个人日常信息检索。核心能力:. 适用于需要internet search tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要internet search tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 搜索
+  - internet
+  - search
+  - automation
+  - productivity
   - 聚合工具
   - 多引擎
   - 信息检索
   - 检索
   - 工具
-  - internet_search
-  - searxng
-  - bash
-  - 支持创建
-  - 查询
 tools:
   - read
   - exec
@@ -50,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 # 聚合搜索工具（免费版）
 
 ## 概述
@@ -117,7 +96,7 @@ category: "Knowledge"
 用户需要查找某个技术问题的解决方案.
 ```bash
 # 通用类别搜索
-internet_search("Python 异步编程 最佳实践 2026")
+internet_search("Python 异步编程 优秀实践 2026")
 ```
 
 系统自动路由到通用类别，聚合 Brave、Bing、DuckDuckGo 等引擎结果.
@@ -218,7 +197,7 @@ internet_search("test query", count=3)
 | `count` | 整数 | 5 | 返回结果数 |
 | `lang` | 字符串 | auto | 语言过滤 |
 
-## 最佳实践
+## 优秀实践
 
 ### 查询关键词优化
 

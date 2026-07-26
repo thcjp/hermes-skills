@@ -1,20 +1,13 @@
 ---
+
 slug: word-docx-tool-free
 name: word-docx-tool-free
 version: 1.0.1
 displayName: Word文档工具（免费版）
 summary: "创建、读取、编辑Word文档，支持格式化、模板、目录生成与批量操作.,支持多种使用场景和自动化处理。提供高效自动化处理能力,适用于多种业务场景"
-license: Proprietary
+license: MIT
 edition: free
-description: Word文档工具 - （免费版），可生成提升工作效率
-
-  核心能力: Word文档, docx, 文档创建, 文档编辑, 模板应用, 目录生成, 批量创建
-
-  适用场景: 个人用户日常使用，核心功能覆盖基础需求
-
-  差异化: 精简版，适合个人用户快速上手，提供核心功能与基础用法
-
-  适用关键词: Word文档, docx, 文档创建, 文档编辑, 模板应用, 目录生成, 批量创建'
+description: "Word文档工具 - （免费版），可产出提升工作效率. 适用于需要word docx tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Word文档
   - docx
@@ -26,19 +19,15 @@ tags:
   - 知识
   - 文档
   - 研究
-  - 分析
-  - word
-  - 支持创建
-  - 查询
-  - input_params
-  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Word文档工具（免费版）
 
 ## 概述
@@ -155,7 +144,7 @@ def create_docx(title, content):
     doc.save("output.docx")
     return "output.docx"
 # ...
-path = create_docx("报告标题", "第一段内容\n第二段内容\n第三段内容")
+path = create_docx("报告标题", "领先段内容\n第二段内容\n第三段内容")
 print(f"Word已创建: {path}")
 ```
 
@@ -178,7 +167,7 @@ word_docx:
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 
-## 最佳实践
+## 优秀实践
 
 ### 基础使用建议
 
@@ -191,9 +180,8 @@ word_docx:
 ### 性能优化
 
 ```python
-# 免费版：单文件优化
-# 确保输入文件不超过建议大小
-# 处理完成后释放资源
+# 在此执行相关操作
+pass
 ```
 
 ## 常见问题

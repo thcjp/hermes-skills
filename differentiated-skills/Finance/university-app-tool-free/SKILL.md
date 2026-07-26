@@ -1,15 +1,13 @@
 ---
+
 slug: university-app-tool-free
 name: university-app-tool-free
 version: 1.0.0
 displayName: 命理咨询入门工具
 summary: "传统命理八字分析工具，提供基础命盘排盘与性格特质解读.。面向个人用户的传统命理咨询工具。基于八字命理学说，提供基础命盘"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人用户的传统命理咨询工具。基于八字命理学说，提供基础命盘
-
-  排盘、五行分析、性格特质解读与流年运势概览。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use
-  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
+description: "面向个人用户的传统命理咨询工具。基于八字命理学说，包含基础命盘. 适用于需要university app tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Finance
   - 命理文化
@@ -25,7 +23,9 @@ tools:
   - write
 homepage: ""
 category: "Finance"
+pricing_tier: free
 ---
+
 # 命理咨询入门工具（免费版）
 
 ## 概述
@@ -181,7 +181,7 @@ bazi_config:
     include_explanation: true     # 包含术语解释
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **时间准确**：出生时间尽量精确到时辰（2小时为一时辰）
 2. **农历转换**：工具自动处理公历转农历，无需手动转换

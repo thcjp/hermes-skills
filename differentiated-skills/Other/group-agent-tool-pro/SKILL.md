@@ -1,4 +1,5 @@
 ---
+
 slug: group-agent-tool-pro
 name: group-agent-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Agent群组工具专业版
 summary: "跨实例联邦、企业权限、群机器人、端到端加密与数据分析的多Agent群组治理平台。Agent群组工具专业版是面向企业级多Agent系统的群组治理平台，在免费版极简群组的基础上，新增跨实例群组联"
 license: Proprietary
 edition: pro
-description: Agent群组工具专业版是面向企业级多Agent系统的群组治理平台，在免费版极简群组的基础上，新增跨实例群组联邦、企业级权限管理、群组机器人、端到端加密、Webhook外发集成与群组数据分析能力。核心能力：多实例之间群组互通联邦；细粒度角色权限（管理员/编辑/只读/访客）；群机器人自动响应@消息与事件；消息端到端加密保障敏感协作；与企业IM（飞书/企业微信/Slack）双向同步；群组活跃度、协作效率、瓶颈分析等数据看板
+description: "Agent群组工具专业版是面向企业级多Agent系统的群组治理平台，在免费版极简群组的基础上，新增跨实例群组联邦、企业级权限管控、群组机器人、端到端加密、Webhook外发集成与群组数据剖析能力。核心能力：多实例之间群组互通联邦；细粒度角色权限（管控员/编辑/只读/访客）；群机器人自发响应@消息与事件；消息端到端加密保障敏感协作；与企业IM（飞书/企业微信/Slack）双向同步；群组活跃度、协作效率、瓶颈剖析等数据看板"
 tags:
   - 多Agent协作
   - 企业级
@@ -18,8 +19,6 @@ tags:
   - agent
   - 用户提供
   - 解析能力
-  - 完成核心
-  - 逻辑
 tools:
   - read
   - exec
@@ -29,7 +28,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
+pricing_tier: L2-标准级
 ---
+
 当企业内部运行着数十个Agent实例、数百个群组、上千个Agent成员时，免费版的"单实例轻量群组"模型就会遇到瓶颈：**跨实例群组无法联邦、权限无法统一管理、敏感协作无法加密、与企业IM无法打通、协作效率无法度量**.
 Agent群组工具专业版正是为企业级群组治理而设计。它在免费版极简协作的基础上，叠加"联邦层 + 权限层 + 加密层 + 集成层 + 分析层"，让Agent群组成为可治理、可审计、可优化的企业资产.
 ## 核心能力
@@ -261,7 +262,7 @@ group-agent analytics report \
 
 ### 示例3：企业IM同步
 
-## 最佳实践
+## 优秀实践
 ### 实践1：联邦信任分级
 不要对所有联邦实例给予相同信任。建议三级信任：
 - L1 完全信任：内部实例，无限制
@@ -347,9 +348,9 @@ audit:
       - permission.change
       - message.classified
     realtime: true
-```
-
-### 与BI系统集成
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 analytics:
   bi_integration:
@@ -360,10 +361,9 @@ analytics:
       - group_activity
       - member_contribution
       - collaboration_efficiency
-```
-
-## 版本升级迁移指南
-### 从免费版迁移至专业版
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 group-agent export --from free --output ./backup.zip
 # ...

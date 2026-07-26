@@ -1,4 +1,5 @@
 ---
+
 slug: "llm-provider-ai-tool-pro"
 name: "llm-provider-ai-tool-pro"
 version: "1.0.0"
@@ -6,20 +7,7 @@ displayName: "OpenAI助手专业版"
 summary: "企业级OpenAI API管理工具,支持批量任务、微调、评估与向量存储,适配团队协作与自动化流水线。"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  面向团队与企业用户的 llm-provider API 全功能管理工具。核心能力:
-  - 涵盖免费版全部能力(对话补全、图像生成、助手管理)
-  - 批量任务(Batch API)大规模异步处理
-  - 模型微调(Fine-tuning)定制化训练
-  - 评估(Evaluations)质量度量与回归测试
-  - 向量存储(Vector Stores)高级检索与 RAG
-  - 视频生成与异步任务管理
-  - 容器(Containers)隔离执行环境
-  - 审计日志与团队权限管理
-
-  适用场景:
-  - 企业级内容生产与自动化流水线
-  - ...
+description: "|-. 适用于需要llmvider ai tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 创意设计
   - AI助手
@@ -31,16 +19,6 @@ tags:
   - 工具
   - 效率
   - 自动化
-  - 写作
-  - 电商
-  - 创意
-  - 图像
-  - 开发
-  - llm-provider
-  - client
-  - batch
-  - create
-  - api
 tools:
   - read
   - exec
@@ -48,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # llm-provider 助手工具 - 专业版
 
 ## 概述
@@ -246,7 +226,7 @@ curl https://api.llm-provider.com/v1/models \
   -H "llm-provider-Project: $OPENAI_PROJECT_ID" | jq '.data | length'
 ```
 
-### 3. 创建第一个批量任务
+### 3. 创建领先个批量任务
 
 ```bash
 llm-provider.com/v1/batches" \
@@ -316,7 +296,7 @@ class AsyncTaskManager:
         raise TimeoutError(f"微调任务 {job_id} 超时")
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 批量任务优化
 
@@ -416,7 +396,7 @@ run = client.evals.runs.create(
 - 专业版支持项目级配额与审计,建议按团队划分 Project
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。专业版完整覆盖 llm-provider 平台资源,适合企业级自动化流水线、模型微调与质量评估场景.
 ## 错误处理
 

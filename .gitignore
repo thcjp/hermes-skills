@@ -32,3 +32,16 @@ skill-registry.db
 
 # Temporary duplicate DB
 data/skills.db
+
+# SQLite WAL files
+*.db-shm
+*.db-wal
+skills.db
+
+# Temporary version sync outputs
+tools/version_sync_*.json
+
+# Temporary analysis files
+data/clawhub_truly_not_found.json
+data/clawhub_truly_pending.json
+data/clawhub_upload_progress_v66.json

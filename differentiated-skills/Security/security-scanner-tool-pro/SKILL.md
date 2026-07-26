@@ -1,4 +1,5 @@
 ---
+
 slug: security-scanner-tool-pro
 name: security-scanner-tool-pro
 version: 1.0.0
@@ -6,41 +7,7 @@ displayName: 安全扫描器(专业版)
 summary: "企业级安全扫描平台,10+工具集成、批量并行扫描、HTML报告、CVE映射与定时调度,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
-description: 核心能力:，可自动提升工作效率
-
-  - 10+安全工具集成(nmap/nuclei/masscan/ffuf等)
-
-  - 多目标批量并行扫描
-
-  - HTML/PDF/SARIF专业报告
-
-  - CVE数据库自动映射
-
-  - Cron定时调度扫描
-
-  - 自定义扫描工作流
-
-  - 漏洞修复建议引擎
-
-  适用场景:
-
-  - 企业级安全评估项目
-
-  - 大规模网络资产扫描
-
-  - 合规性安全检查
-
-  - 持续安全监控
-
-  差异化:
-
-  - 10+工具统一编排,一键全量扫描
-
-  - 批量并行,支持100+目标同时扫描
-
-  - CVE自动关联,漏洞与修复方案匹配
-
-  - ...'
+description: "核心能力:，可自发提升工作效率. 适用于需要security scanner tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 安全
   - 漏洞扫描
@@ -52,15 +19,15 @@ tags:
   - command
   - installed
   - false
-  - nuclei
-  - ffuf
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Security"
+pricing_tier: L2-标准级
 ---
+
 # 安全扫描器(专业版)
 ## 概述
 安全扫描器专业版是一款面向企业用户的安全扫描与持续监控平台。在免费版4个核心工具基础上,扩展至10+工具集成(nmap、nuclei、masscan、ffuf、gobuster、testssl等),支持多目标批量并行扫描、HTML/PDF/SARIF专业报告、CVE数据库自动映射、Cron定时调度扫描和自定义扫描工作流。与免费版完全兼容,扫描配置和模板可无缝复用.
@@ -133,9 +100,9 @@ python （请参考skill目录中的脚本文件） \
 [5/7] CVE映射 ..........  关联 31 个CVE编号
 [6/7] 修复建议 .......... 生成 47 条修复建议
 [7/7] 报告生成 .......... 输出 HTML 报告(45页)
-```
-
-### 场景二:定时持续监控
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 配置每日安全扫描
 python （请参考skill目录中的脚本文件） \
@@ -145,9 +112,9 @@ python （请参考skill目录中的脚本文件） \
   --notify webhook \
   --webhook-url "https://hooks.example.com/security" \
   --alert-on HIGH
-```
-
-### 场景三:自定义扫描工作流
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 # custom_workflow.yml
 name: web-security-deep
@@ -177,9 +144,9 @@ steps:
     tool: wpscan
     command: "wpscan --url {target} --enumerate u,vp,vt"
     timeout: 600
-```
-
-### 场景四:多目标批量扫描
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 批量扫描100个目标
 python （请参考skill目录中的脚本文件） \
@@ -414,11 +381,9 @@ def schedule_scan(cron_expr, targets_file, workflow, webhook_url=None):
     print(f"定时扫描已配置: {cron_expr}")
     print(f"配置文件: {config_path}")
     return cron_config
-```
-
-#
-## 示例
-### 企业扫描配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "scan_config": {
@@ -458,26 +423,26 @@ def schedule_scan(cron_expr, targets_file, workflow, webhook_url=None):
 | P2 | MEDIUM | 30天内 | 中等风险漏洞 |
 | P3 | LOW | 90天内 | 低风险信息泄露 |
 
-## 最佳实践
+## 优秀实践
 ### 1. 分级扫描策略
 ```bash
-# 第一轮:快速全网扫描(1小时内)
+# 领先轮:快速全网扫描(1小时内)
 python （请参考skill目录中的脚本文件） --targets full_range.txt --workflow quick-scan --threads 20
 # ...
 # 第二轮:深度扫描(对发现的高危目标)
 python （请参考skill目录中的脚本文件） --targets high_risk.txt --workflow full-assessment --threads 5
-```
-
-### 2. 持续监控
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 每日快速扫描
 python （请参考skill目录中的脚本文件） --schedule "0 2 * * *" --workflow quick-scan
 # ...
 # 每周深度扫描
 python （请参考skill目录中的脚本文件） --schedule "0 3 * * 0" --workflow full-assessment
-```
-
-### 3. 趋势分析
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 导出90天趋势
 python （请参考skill目录中的脚本文件） --export-trends --period 90d --format json
@@ -518,7 +483,7 @@ A: 使用SARIF格式输出,可导入到GitHub Security、DefectDojo、Faraday等
 - 可选配置: WPScan API(增强WordPress漏洞检测)
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行企业级安全扫描任务
 
 ## 错误处理

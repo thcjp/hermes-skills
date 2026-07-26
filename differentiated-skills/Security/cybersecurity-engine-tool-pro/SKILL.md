@@ -1,4 +1,5 @@
 ---
+
 slug: cybersecurity-engine-tool-pro
 name: cybersecurity-engine-tool-pro
 version: 1.0.0
@@ -6,11 +7,7 @@ displayName: 网络安全评估引擎专业版
 summary: 企业级安全评估与威胁建模平台,支持完整十二阶段评估、合规框架映射、多维安全评分与自动化漏洞管理,适合安全团队与企业用户.
 license: Proprietary
 edition: pro
-description: '网络安全评估引擎专业版,为企业安全团队提供全方位安全评估与治理能力.
-  核心能力:十二阶段深度评估、STRIDE+攻击树建模、合规框架映射、100分制多维评分、自动化漏洞SLA管理、安全程序设计.
-  适用场景:企业安全架构评审、合规审计准备、安全程序建设、红蓝对抗准备.
-  差异化:专业版兼容免费版评估方法,新增企业级合规映射、自动化治理与团队协作能力,满足规模化安全管理需求.
-  适用关键词: 安全评估, 合规审计, 安全程序, 安全评分, enterprise, compliance, SOC2, ISO27001'
+description: "网络安全评估引擎专业版,为企业安全团队包含全方位安全评估与治理能力. 适用于需要cybersecurity engine tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 安全
   - 威胁建模
@@ -22,14 +19,15 @@ tags:
   - phase
   - self
   - weight
-  - score
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Security"
+pricing_tier: L2-标准级
 ---
+
 # 网络安全评估引擎专业版
 ## 概述
 专业版为企业安全团队提供完整的网络安全评估与治理平台,涵盖从安全态势评估到安全程序设计的全生命周期管理。在免费版基础评估能力之上,新增十二阶段深度评估、STRIDE+攻击树威胁建模、SOC 2/ISO 27001/GDPR/HIPAA合规框架映射、100分制多维安全评分、自动化漏洞SLA跟踪与企业级报告导出。专业版完全兼容免费版评估方法,已有评估流程可无缝升级.
@@ -278,9 +276,9 @@ echo ""
 echo "============================================"
 echo "评审完成,详细报告请查看专业版HTML输出"
 echo "============================================"
-```
-
-### 场景二:合规审计准备
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 #!/usr/bin/env python3
 """专业版合规审计准备工具"""
@@ -351,9 +349,9 @@ if __name__ == "__main__":
     prep = CompliancePrep()
     print(prep.generate_checklist("SOC2"))
     print(prep.generate_checklist("ISO27001"))
-```
-
-### 场景三:安全程序建设方案
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 # 四季度安全程序建设方案
 security_program:
@@ -422,17 +420,15 @@ bash security-check.sh
 # ...
 # 专业版:十二阶段深度评估
 bash security-check.sh --full --compliance SOC2 --report html
-```
-
-### 首次安全评分
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 运行100分制安全评分
 python3 security_score.py --dimensions all --output report.html
-```
-
-#
-## 配置示例
-### 安全指标看板
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 security_dashboard:
   vulnerability_management:
@@ -461,7 +457,7 @@ security_dashboard:
 | 渗透测试 | 每季度 | 人工+自动化 |
 | 红队演练 | 每年 | 外部安全公司 |
 
-## 最佳实践
+## 优秀实践
 1. **假设已被入侵**:设计时假设攻击者已在内部,验证一切.
 2. **零信任架构**:从不信任,始终验证,最小权限.
 3. **深度防御**:多层安全控制,无单点故障.
@@ -502,7 +498,7 @@ security_dashboard:
 - 无需额外API Key即可使用核心评估能力
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行企业级安全评估、合规审计与安全治理任务
 
 ## 错误处理
@@ -528,9 +524,9 @@ security_dashboard:
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

@@ -1,4 +1,5 @@
 ---
+
 slug: linear-toolkit-pro
 name: linear-toolkit-pro
 version: 1.0.0
@@ -6,25 +7,7 @@ displayName: Linear 工具箱专业版
 summary: "面向团队的跨团队看板、批量操作与项目健康度分析工具.。面向团队的 Linear 跨团队看板与项目健康度分析专业工具。核心能力:"
 license: Proprietary
 edition: pro
-description: '面向团队的 Linear 跨团队看板与项目健康度分析专业工具。核心能力:
-
-  - 跨团队统一看板与批量操作
-
-  - 项目健康度与吞吐量分析
-
-  - 自动化工作流与状态联动
-
-  - 团队权限与审计治理
-
-  适用场景:
-
-  - 多团队统一任务看板
-
-  - 项目健康度与瓶颈分析
-
-  - 自动化状态联动与批量治理
-
-  差异化: 专业版在免费版单团队基础上扩展跨团队看板、健康度分析、自动化与审计，兼容免费版命令'
+description: "面向团队的 Linear 跨团队看板与项目健康度剖析专业工具。核心能力:. 适用于需要linear toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Linear
   - 企业级
@@ -36,9 +19,6 @@ tags:
   - 生活
   - metrics
   - 批量操作
-  - 跨团队看
-  - json
-  - linear
 tools:
   - read
   - exec
@@ -46,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # Linear 工具箱（专业版）
 
 ## 概述
@@ -159,7 +141,7 @@ print(f"健康度: {'良好' if metrics['blocked_ratio']<0.1 else '预警'}")
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 - **看板先聚合**：跨团队看板按状态聚合，阻塞项优先处理.
 - **健康度看周期**：周期过长或阻塞率高是预警信号.

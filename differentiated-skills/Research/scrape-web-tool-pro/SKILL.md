@@ -1,4 +1,5 @@
 ---
+
 slug: scrape-web-tool-pro
 name: scrape-web-tool-pro
 version: 1.0.0
@@ -6,31 +7,7 @@ displayName: 网页抓取工具专业版
 summary: "企业级网页抓取系统,支持批量抓取、JS渲染、分页遍历、结构化输出、代理池与认证注入。网页抓取工具专业版为企业团队提供高阶网页内容抓取与数据提取能力。核心能力:"
 license: Proprietary
 edition: pro
-description: '网页抓取工具专业版为企业团队提供高阶网页内容抓取与数据提取能力。核心能力:
-
-  - 批量URL并发抓取
-
-  - JavaScript动态渲染支持
-
-  - 自动分页遍历
-
-  - 结构化输出(JSON/CSV/Excel)
-
-  - 代理池与请求头定制
-
-  - 认证页面抓取(Cookie/Header注入)
-
-  适用场景:
-
-  - 竞品数据批量采集
-
-  - 电商价格监控
-
-  - 行业目录全量抓取
-
-  - 需登录的内部系统数据提取
-
-  差异化:专业版在免费版单页抓取与CSS选择器基础上,扩展批量抓取、JS渲染、分页遍历、结构化输出、代理池与认证能力'
+description: "网页抓取工具专业版为企业团队包含高阶网页内容抓取与数据提取能力。核心能力:. 适用于需要scrape web tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 研究工具
   - 网页抓取
@@ -42,7 +19,6 @@ tags:
   - text
   - url
   - https
-  - json
 tools:
   - read
   - exec
@@ -51,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+pricing_tier: L2-标准级
 ---
+
 # 网页抓取工具专业版
 
 ## 概述
@@ -396,7 +374,7 @@ clean:
   price_normalize: true           # 价格格式化(去除货币符号)
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 合理设置并发数
 
@@ -434,7 +412,7 @@ A: 专业版自动重试失败URL(默认3次)。抓取结束后查看日志确�
 A: 专业版代理池支持自动健康检查。配置`retry_on_fail: true`后,失败代理会被临时移出轮换队列。建议定期运行代理健康检查更新代理列表,移除永久失效的代理.
 ### Q: 认证抓取的Cookie如何获取?
 
-A: 在浏览器中登录目标系统,打开开发者工具(F12)->Network->任一请求->Headers,复制Cookie值。将Cookie注入请求头:`--header "Cookie: session_id=xxx; auth_token=yyy"`。注意Cookie有有效期,过期后需重新获取.
+A: 在浏览器中登录目标系统,打开开发者工具(F12)->Network->任一请求->Headers,复制Cookie值。将Cookie注入请求头:`--header "Cookie: session_id=placeholder; auth_token=yyy"`。注意Cookie有有效期,过期后需重新获取.
 ### Q: 分页抓取如何判断是否到最后一页?
 
 A: 专业版通过`--next-page`选择器判断。如果该选择器未命中任何元素(没有"下一页"链接),则认为已到最后一页,停止遍历。也可通过`--max-pages`强制限制最大翻页数,避免无限翻页.
@@ -473,7 +451,7 @@ A: 专业版CSV输出遵循RFC 4180标准,自动处理逗号、引号、换行�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行Python脚本)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行Python脚本)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent调用Python脚本完成企业级网页抓取与数据提取任务。专业版在免费版基础上扩展批量抓取、JS渲染、分页遍历、结构化输出、代理池与认证能力,适合竞品数据批量采集、电商价格监控与需登录系统数据提取场景.
 ## 错误处理
 

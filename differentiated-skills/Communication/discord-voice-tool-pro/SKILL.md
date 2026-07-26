@@ -1,4 +1,5 @@
 ---
+
 slug: discord-voice-tool-pro
 name: discord-voice-tool-pro
 version: 1.0.0
@@ -6,27 +7,7 @@ displayName: Discord语音工具专业版
 summary: "企业级 Discord 语音 AI 对话,支持多服务商、流式转写、自动重连与批量频道管理.。面向企业与社区运营团队的 Discord 语音 AI 全功能对话工具。核心能力:"
 license: Proprietary
 edition: pro
-description: 面向企业与社区运营团队的 Discord 语音 AI 全功能对话工具。核心能力:，可自动提升工作效率
-
-  - 多 STT/TTS 服务商切换(OpenAI/Deepgram/ElevenLabs/本地)
-
-  - Deepgram 流式实时转写(延迟降低约 1 秒)
-
-  - 自动心跳监控与断线重连(指数退避)
-
-  - 智能打断(barge-in)、自动加入与多频道调度
-
-  - 企业级权限白名单与审计日志
-
-  适用场景:
-
-  - 企业语音会议室的 AI 实时助理
-
-  - 大型语音社区的多频道 AI 互动
-
-  - 高并发低延迟的实时语音问答
-
-  差异化: Pro 版在免...'
+description: "面向企业与社区运营团队的 Discord 语音 AI 全功能对话工具。核心能力:，可自发提升工作效率. 适用于需要discord voice tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Discord
   - 语音对话
@@ -38,8 +19,6 @@ tags:
   - deepgram
   - apikey
   - process
-  - env
-  - elevenlabs
 tools:
   - read
   - exec
@@ -47,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+pricing_tier: L2-标准级
 ---
+
 # Discord 语音工具(专业版)
 
 ## 概述
@@ -326,7 +307,7 @@ discord_voice status
 | `ELEVENLABS_API_KEY` | ElevenLabs API Key(TTS) |
 | `DEEPGRAM_API_KEY` | Deepgram API Key(STT) |
 
-## 最佳实践
+## 优秀实践
 
 1. **服务商选型策略**: 按场景选服务商。追求低延迟用 Deepgram 流式 STT + ElevenLabs TTS(自然度高);追求成本控制用本地 Whisper + 本地 Kokoro(零 API 成本);平衡选择用 OpenAI Whisper + OpenAI TTS。可按频道配置不同服务商组合.
 2. **流式 STT 优先启用**: 使用 Deepgram 时务必开启 `streamingSTT: true`。流式模式端到端延迟降低约 1 秒,并提供实时中间结果,对话体验显著优于批量模式。流式失败会自动回退批量,无需额外处理.
@@ -396,7 +377,7 @@ Pro 版审计日志记录:会话开始/结束时间、频道 ID、参与者列�
 - **本地方案**: 使用本地 Whisper/Kokoro 时基础LLM由Agent平台提供,与免费版一致.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令 + 部分功能需 `exec` 执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令 + 部分功能需 `exec` 执行能力)
 - **说明**: 以自然语言指令驱动 Agent 调用语音工具,多服务商处理音频,支持流式与自动重连
 - **适用规模**: 企业级、多频道、高并发实时语音场景
 - **兼容性**: 与 `discord-voice-tool-free` 配置兼容,可平滑升级

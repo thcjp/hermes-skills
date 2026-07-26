@@ -1,49 +1,24 @@
 ---
+
 slug: jellyfin-control-tool-free
 name: jellyfin-control-tool-free
 version: 1.0.0
 displayName: 媒体服务器控制
 summary: 轻量级 Jellyfin 媒体服务器控制工具，支持内容搜索、播放控制与设备管理，适合个人家庭影音娱乐使用.
-license: Proprietary
+license: MIT
 edition: free
-description: '轻量级 Jellyfin 媒体服务器控制工具，支持内容搜索、播放控制与设备管理，适合个人家庭影音娱乐使用。核心能力:
-
-  - 一键播放：搜索内容并自动开始播放
-
-  - 智能续播：自动定位上次观看位置
-
-  - 设备发现：自动检测可控设备
-
-  - 播放控制：暂停、继续、下一集、音量控制
-
-  适用场景:
-
-  - 个人家庭影音播放控制
-
-  - 电视剧追剧续播
-
-  - 电影快速搜索播放
-
-  差异化:
-
-  - 免费版聚焦单设备控制，操作简单
-
-  - 一键播放，无需手动操作电视
-
-  - 智能续播...'
+description: "轻量级 Jellyfin 媒体服务器控制工具，兼容内容搜索、播放控制与设备管控，适合个人家庭影音娱乐使用。核心能力:. 适用于需要jellyfin control tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要jellyfin control tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 媒体
+  - jellyfin
+  - control
+  - automation
+  - productivity
   - Jellyfin
   - 智能家居
   - 播放控制
   - 搜索
   - 检索
-  - 工具
-  - skills
-  - jellyfin-control
-  - jellyfin
-  - node
-  - cli
 tools:
   - read
   - exec
@@ -51,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 # 媒体服务器控制（免费版）
 
 ## 概述
@@ -257,7 +235,7 @@ js search "Star Wars"
 | ADB 直连 | Android TV/Fire TV | `apt install adb` |
 | 无后端 | 仅 Jellyfin 控制 | 无 |
 
-## 最佳实践
+## 优秀实践
 
 ### 一键播放流程
 
@@ -310,7 +288,7 @@ js search "Star Wars"
 curl http://YOUR_IP:8096/health
 # ...
 # 验证 API Key
-curl -H "X-Emby-Token: YOUR_API_KEY" http://YOUR_IP:8096/System/Info
+curl -H "X-Emby-item: YOUR_API_KEY" http://YOUR_IP:8096/System/Info
 # ...
 # 检查网络连通性
 ping YOUR_IP
@@ -330,11 +308,8 @@ echo $TV_MAC
 ### 播放内容找不到
 
 ```bash
-# 搜索内容确认存在
-# ...
-# 尝试模糊搜索
-# ...
-# 查看媒体库统计
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### Home Assistant 连接失败

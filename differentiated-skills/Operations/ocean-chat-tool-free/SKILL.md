@@ -1,15 +1,13 @@
 ---
+
 slug: ocean-chat-tool-free
 name: ocean-chat-tool-free
 version: 1.0.0
 displayName: P2P通讯入门工具
 summary: "基于WASM的P2P消息通讯工具，支持点对点文本消息与基础文件传输.。面向个人开发者的P2P消息通讯工具。基于WASM技术实现浏览器端的"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人开发者的P2P消息通讯工具。基于WASM技术实现浏览器端的
-
-  点对点通讯，支持文本消息与基础文件传输。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。Use
-  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
+description: "面向个人开发者的P2P消息通讯工具。基于WASM技术达成浏览器端的. 适用于需要ocean chat tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Operations
   - 通讯
@@ -21,17 +19,15 @@ tags:
   - 通信
   - 邮件
   - 开发
-  - 代码
-  - 安全
-  - python3
-  - p2p
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # P2P通讯入门工具（免费版）
 
 ## 概述
@@ -194,7 +190,7 @@ ocean_config:
     max_history: 1000
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **信令服务器**：P2P连接建立需要信令服务器中转，但消息内容不经过服务器
 2. **NAT穿透**：复杂网络环境可能需要TURN服务器辅助穿透

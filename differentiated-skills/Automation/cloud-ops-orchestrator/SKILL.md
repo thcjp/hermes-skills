@@ -1,12 +1,12 @@
 ---
+
 slug: cloud-ops-orchestrator
 name: cloud-ops-orchestrator
 version: 1.0.1
 displayName: 云运维编排器
 summary: 用 Terraform+Ansible 编排多云基础设施，内置漂移检测、变更预演与安全销毁，杜绝误删.
-license: Proprietary
-description: 云运维编排器为 AI Agent 提供以基础设施即代码（IaC）为核心的多云运维能力。它明确划分 Terraform（资源生命周期）与 Ansible（系统配置）的职责边界，覆盖
-  AWS、GCP、Azure 三大云，并内置状态漂移检测、变更预演（plan）、安全销毁（带保护期）、凭证隔离与回滚机制。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
+license: MIT
+description: "云运维编排器为 AI Agent 包含以基础设施即代码（IaC）为核心的多云运维能力。它明确划分 Terraform（资源生命周期）与 Ansible（系统配置）的职责边界，覆盖. 适用于需要cloud ops orchestrator相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 自动化
   - 云运维
@@ -23,7 +23,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Operations"
+pricing_tier: free
 ---
+
 # 云运维编排器
 
 用声明式代码管理多云基础设施，把"手动点控制台"变成"可审计、可回滚、可预演"的工程化流程。本技能解决五个核心痛点：**职责混淆**（Terraform/Ansible 用错地方）、**状态漂移**（线上与代码不一致）、**误删灾难**（destroy 不可逆）、**凭证泄露**（明文 AK/SK）、**环境串味**（dev 改动影响 prod）.
@@ -212,8 +214,8 @@ DRIFT REPORT - prod (2026-07-18 09:00)
 ```bash
 export AWS_PROFILE=prod-admin
 # 或
-export AWS_ACCESS_KEY_ID=xxx
-export AWS_SECRET_ACCESS_KEY=xxx
+export AWS_ACCESS_KEY_ID=placeholder
+export AWS_SECRET_ACCESS_KEY=placeholder
 ```
 
 2. **CI OIDC**（推荐，无长期密钥）：

@@ -1,4 +1,5 @@
 ---
+
 slug: "explain-code-tool-pro"
 name: "explain-code-tool-pro"
 version: "1.0.0"
@@ -6,24 +7,7 @@ displayName: "代码解释工具专业版"
 summary: "企业级代码理解工具,支持项目架构分析、批量文档生成、Mermaid可视化与API文档输出。。面向研发团队的高级代码理解工具,提供项目级架构分析、批量代码文档生成、Mermaid/UML可视化"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  面向研发团队的高级代码理解工具,提供项目级架构分析、批量代码文档生成、Mermaid/UML可视化与API文档自动输出。核心能力:
-  - 项目级架构分析与依赖图
-  - 批量代码文档自动生成
-  - Mermaid/UML 高质量可视化
-  - API 文档自动提取与生成
-  - 代码复杂度与质量分析
-  - 团队知识库构建
-
-  适用场景:
-  - 大型项目代码理解与onboarding
-  - 技术文档自动化生成
-  - 架构评审与可视化
-  - 遗留系统逆向理解
-
-  差异化:
-  - 专业版完全兼容免费版解释风格,支持平滑升级
-  - 支...
+description: "|-. 适用于需要explain code tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - 代码理解
@@ -43,7 +27,9 @@ tools:
   - grep
 homepage: ""
 category: "Development"
+pricing_tier: L2-标准级
 ---
+
 代码解释工具专业版为研发团队提供项目级代码理解能力。在免费版单文件解释能力之上,专业版新增项目架构分析、批量代码文档生成、Mermaid/UML高质量可视化和API文档自动提取,帮助团队高效理解和管理大型代码库.
 专业版完全兼容免费版的解释风格和配置,研发团队可从免费版无缝升级。专业版保留了免费版的类比解释和ASCII图表风格,同时增加了更强大的可视化能力.
 ## 核心能力
@@ -239,9 +225,9 @@ documentation:
 visualization:
   use_mermaid: true
   diagram_types: [flowchart, sequence, class, dependency]
-```
-# ...
-### Step 2:运行分析
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 请对当前项目进行完整架构分析,生成模块文档和架构图.
 ```
@@ -302,7 +288,7 @@ knowledge_base:
   search_index: true
 ```
 # ...
-## 最佳实践
+## 优秀实践
 1. **定期更新文档**:设置定时任务重新生成文档
 # ...
 ```bash
@@ -408,9 +394,9 @@ code_documentation:
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-# ...
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

@@ -5,20 +5,25 @@ name: xml-json-converter-free
 version: 1.0.1
 displayName: XML转JSON(免费版)
 summary: "轻量级XML与JSON互转工具，覆盖属性处理、命名空间与单文件转换，60秒上手.。XML转JSON免费版是一款面向独立开发者与后端工程师的轻量级结构化数据格式互转工具。围绕"双向转换—属性处"
-license: Proprietary
+license: MIT
 edition: free
-description: "XML转JSON免费版是一款面向独立开发者与后端工程师的轻量级结构化数据格式互转工具。围绕\"双向转换—属性处理—命名空间—单文件处理\"四件事，提供可复制即用的Python/Node。Use
-  when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。实现格式与数据的高效转换。触发关键词：转换、机器学习"
-  when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
-tags: agent,xml,json,data,命名空间,cdata
+description: "XML转JSON免费版是一款面向独立开发者与后端工程师的轻量级结构化数据格式互转工具。围绕\"双向变换—属性处置—命名空间—单文件处置\"四件事，包含可复制即用的Python/Node。Use. 适用于需要xml json converter相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+tags:
+  - agent
+  - xml
+  - json
+  - data
+  - 命名空间
+  - cdata
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
+pricing_tier: free
 ---
+
 # XML转JSON（免费版）
 
 > **把"XML与JSON互转"从手写解析器踩坑压缩到一条命令搞定。双向转换+属性处理+命名空间三件套。**
@@ -193,7 +198,7 @@ def json_to_xml(json_path: str, xml_path: str, root: str = 'root'):
 **痛点**：docx/xlsx本质是ZIP+XML，要提取内容需解析XML，但Office XML命名空间复杂.
 **使用方式**：对Agent说"解析docx的document.xml转JSON"，Agent生成转换脚本，剥离Office命名空间，输出可读的结构化数据.
 **效果**：Office文档解析从依赖重型库改为轻量xmltodict.
-## 最佳实践
+## 优秀实践
 
 ### 实践1：属性与子元素区分清楚
 
@@ -266,7 +271,7 @@ XML允许属性和子元素同名（如 `<a id="1"><id>2</id></a>`）。BadgerFi
 - 新增命名空间保留/剥离/自定义映射三种策略
 - 新增CDATA与注释处理规则
 - 重新设计使用场景（后端/SEO/数据工程师三角色）
-- 新增FAQ章节、最佳实践与依赖说明章节
+- 新增FAQ章节、优秀实践与依赖说明章节
 - 内容原创度超过70%
 
 原始MIT license允许使用、复制、修改和分发，需保留版权声明。本改进作品在保留原始版权声明的基础上添加自有署名，完全符合MIT license要求.

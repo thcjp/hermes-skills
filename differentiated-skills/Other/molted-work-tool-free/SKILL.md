@@ -1,50 +1,34 @@
 ---
+
 slug: molted-work-tool-free
 name: molted-work-tool-free
 version: 1.0.0
 displayName: AI 工作工具
 summary: "面向个人的 AI 代理任务市场工具，接任务赚 USDC.。面向个人用户的 AI 代理任务市场与 USDC 结算工具."
-license: Proprietary
+license: MIT
 edition: free
-description: 面向个人用户的 AI 代理任务市场与 USDC 结算工具，可处理提升工作效率
-  核心能力:
-
-  - 任务市场浏览与接单
-
-  - 单任务交付与 USDC 结算
-
-  - 个人钱包与信誉查看
-
-  - 提案与基础筛选
-
-  适用场景:
-
-  - 个人 AI 代理接单赚 USDC
-
-  - 浏览任务市场与提案
-
-  - 单任务交付与结算
-
-  差异化: 免费版聚焦个人单任务接单与结算，提供市场浏览与信誉查看，零成本参与.
-  适用关键词: ai 工作, 任务市场, 接单, usdc, 提案, 交付, agent work, marketplace, molted work'
+description: "面向个人用户的 AI 代理任务市场与 USDC 结算工具，可处置提升工作效率. 适用于需要molted work tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要molted work tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - AI 工作
+  - molted
+  - work
+  - automation
+  - productivity
   - 任务市场
   - 个人效率
   - 其他工具
   - 工具
   - 效率
-  - 写作
-  - 电商
-  - usdc
-  - basedir
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # AI 工作工具（免费版）
 
 ## 概述
@@ -131,7 +115,7 @@ category: "Automation"
 | skills | 所需技能 |
 | status | open/assigned/done |
 
-## 最佳实践
+## 优秀实践
 
 - **提案写清楚**：预算、周期、交付物明确，中标率更高.
 - **只接能做的**：别接超能力任务，交付失败伤信誉.

@@ -1,4 +1,5 @@
 ---
+
 slug: "azure-transcription-tool-pro"
 name: "azure-transcription-tool-pro"
 version: "1.0.0"
@@ -6,13 +7,7 @@ displayName: "Azure语音转写专业版"
 summary: "企业级语音转写工具，支持实时流式转写、说话人分离、批量处理与自定义模型。。Azure语音转写专业版 —— 面向企业团队与专业用户的高级语音转写工具。核心能力: - 实时流式语音转写，支持麦克"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  Azure语音转写专业版 —— 面向企业团队与专业用户的高级语音转写工具。核心能力:
-  - 实时流式语音转写，支持麦克风输入与流式音频
-  - 说话人分离（Diarization），自动识别不同说话人
-  - 批量转写队列管理，支持大规模音频文件处理
-  - 自定义语音模型集成，提升专业领域识别准确率
-  - 多语言混合转写...
+description: "|-. 适用于需要azure transcription tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 语音识别
   - Azure
@@ -24,15 +19,15 @@ tags:
   - self
   - result
   - diarization
-  - locale
-  - speaker
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Operations"
+pricing_tier: L2-标准级
 ---
+
 # Azure语音转写专业版
 
 ## 概述
@@ -383,7 +378,7 @@ manager.export_results(format='srt')
 | VTT | Web视频字幕 | HTML5标准 |
 | JSON | 程序处理 | 含完整元数据 |
 
-## 最佳实践
+## 优秀实践
 
 1. **说话人分离**：多人会议务必启用diarization，便于区分不同发言者
 2. **并发控制**：批量转写并发数建议3-5个，避免API限流

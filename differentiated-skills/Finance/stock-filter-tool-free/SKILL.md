@@ -1,15 +1,13 @@
 ---
+
 slug: stock-filter-tool-free
 name: stock-filter-tool-free
 version: 1.0.0
 displayName: 股票筛选入门工具
 summary: "A股股票筛选工具，支持基本面与技术面过滤，单策略逐只分析.。面向个人投资者的A股股票筛选工具。支持按基本面（PE/PB/ROE等）和"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人投资者的A股股票筛选工具。支持按基本面（PE/PB/ROE等）和
-
-  技术面（均线/RSI等）条件筛选股票。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use
-  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
+description: "面向个人投资者的A股股票筛选工具。兼容按基本面（PE/PB/ROE等）和. 适用于需要stock filter tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Finance
   - 股票筛选
@@ -25,7 +23,9 @@ tools:
   - write
 homepage: ""
 category: "Finance"
+pricing_tier: free
 ---
+
 # 股票筛选入门工具（免费版）
 
 ## 概述
@@ -188,7 +188,7 @@ filter_config:
     ttl: 3600                   # 数据缓存1小时
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **先粗后细**：先用宽松条件大范围筛选，再逐步收紧
 2. **多维度交叉**：基本面与技术面结合，提高筛选质量

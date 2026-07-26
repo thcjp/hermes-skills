@@ -1,4 +1,5 @@
 ---
+
 slug: rss-reader-tool-pro
 name: rss-reader-tool-pro
 version: 1.0.0
@@ -6,31 +7,7 @@ displayName: RSS阅读器专业版
 summary: "企业级RSS阅读与监控系统,支持定时调度、邮件推送、多用户配置、全文搜索与高级内容分析。RSS阅读器专业版为企业团队提供高阶RSS订阅阅读与监控能力。核心能力:"
 license: Proprietary
 edition: pro
-description: 'RSS阅读器专业版为企业团队提供高阶RSS订阅阅读与监控能力。核心能力:
-
-  - 大规模订阅源管理(100+源)
-
-  - 内置Cron定时调度引擎
-
-  - 多渠道推送(邮件/IM/Webhook)
-
-  - 多用户配置与权限管理
-
-  - 全文索引与搜索
-
-  - 高级内容分析(情感/热度/趋势)
-
-  适用场景:
-
-  - 企业竞争情报定时监控与推送
-
-  - 团队内容研究协作
-
-  - 行业媒体自动化追踪
-
-  - 多角色定制化推送
-
-  差异化:专业版在免费版订阅管理与内容研究基础上,扩展定时调度、多渠道推送、多用户配置、全文搜索与高级分析能力'
+description: "RSS阅读器专业版为企业团队包含高阶RSS订阅阅读与监控能力。核心能力:. 适用于需要rss reader tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 研究工具
   - RSS
@@ -49,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 # RSS阅读器专业版
 
 ## 概述
@@ -238,7 +217,7 @@ node （请参考skill目录中的脚本文件） list
 # 3. 启用专业版功能
 node （请参考skill目录中的脚本文件） pro enable --license "YOUR-PRO-KEY"
 # ...
-# 4. 配置第一个定时任务
+# 4. 配置领先个定时任务
 node （请参考skill目录中的脚本文件） schedule add \
   --name "每日简报" \
   --cron "0 8 * * *" \
@@ -282,12 +261,12 @@ email:
 # ...
 webhook:
   im_alerts:
-    url: https://im.example.com/webhook/xxx
+    url: https://im.example.com/webhook/placeholder
     format: card
     secret: "${WEBHOOK_SECRET}"
 # ...
   slack:
-    url: https://hooks.slack.com/services/xxx
+    url: https://hooks.slack.com/services/placeholder
     format: block
 ```
 
@@ -383,7 +362,7 @@ analysis:
   trend: weekly
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 按团队拆分订阅配置
 
@@ -475,7 +454,7 @@ A: 专业版内置基于词典的情感分析,中英文准确率约75-85%。情�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行Node.js脚本)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行Node.js脚本)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent调用Node.js脚本完成企业级RSS阅读与监控任务。专业版在免费版基础上扩展定时调度、多渠道推送、多用户配置、全文搜索与高级分析能力,适合企业竞争情报监控、团队内容研究协作与多角色定制化推送场景.
 ## 错误处理
 

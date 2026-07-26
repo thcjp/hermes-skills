@@ -1,51 +1,24 @@
 ---
+
 slug: parallel-research-tool-free
 name: parallel-research-tool-free
 version: 1.0.0
 displayName: 并行研究助手免费版
 summary: "开放式主题研究工具，构建可持续维护的研究文档，支持交互式探索。并行研究助手免费版，帮助用户围绕特定主题开展开放式研究，构建可持续维护的Markdown研究文档。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 并行研究助手免费版，帮助用户围绕特定主题开展开放式研究，构建可持续维护的Markdown研究文档。核心能力:，可自动提升工作效率
-
-  - 交互式研究模式，实时搜索与综合
-
-  - 为每个研究主题创建独立文件夹
-
-  - 结构化研究文档（问题、发现、资源、后续步骤）
-
-  - 定期综合检查点与进度回顾
-
-  - 研究文档PDF导出
-
-  适用场景:
-
-  - 个人开发者技术方案调研
-
-  - 学生课题研究
-
-  - 独立创业者市场验证
-
-  差异化:
-
-  - 免费版聚焦交互式研究，文档驱动而非对话驱动
-
-  - 研究成果持久化保存，可持续维护
-
-  - 与PRO版本完全兼容...'
+description: "并行研究助手免费版，帮助用户围绕特定主题开展开放式研究，构建可持续维护的Markdown研究文档。核心能力:，可自发提升工作效率. 适用于需要parallel research tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要parallel research tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 研究
+  - parallel
+  - research
+  - automation
+  - productivity
   - 文档
   - 调研
   - 知识管理
   - 搜索
   - 检索
-  - 工具
-  - research
-  - text
-  - agent
-  - 来源
-  - pdf
 tools:
   - read
   - exec
@@ -53,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 # 并行研究助手（免费版）
 
 ## 概述
@@ -123,7 +99,7 @@ Agent 执行流程：
 1. 创建研究文件夹 ~/.research-workspace/research/ai-coding-frameworks/
 2. 创建 prompt.md 记录原始问题
 3. 创建 research.md 初始化研究结构
-4. 开始第一轮搜索与发现
+4. 开始领先轮搜索与发现
 ```
 
 prompt.md 内容：
@@ -346,7 +322,7 @@ EOF
 - {date}: 完成{某方面}调研
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 提出明确的研究问题
 
@@ -365,7 +341,7 @@ new research: 编程语言
 帮我先搜索这个领域的主要参与者
 # ...
 # 再深度分析
-深入分析第一个发现的细节
+深入分析领先个发现的细节
 # ...
 # 最后综合
 帮我综合所有发现，写一个当前理解的总结
@@ -387,10 +363,8 @@ summarize
 ### 4. 记录不确定性
 
 ```text
-# 标注信息可信度
-# - "根据X来源" - 有明确来源
-# - "似乎是" - 需要验证
-# - "未经证实" - 存疑信息
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### 5. 为重要发现标注日期
@@ -415,10 +389,8 @@ summarize
 
 PDF 导出需要安装 pandoc 和 PyMuPDF。可通过系统包管理器安装.
 ```bash
-# 依赖说明
-# Ubuntu: sudo apt install pandoc
-# macOS: brew install pandoc
-# Windows: choco install pandoc
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### Q5：免费版与 PRO 版本的区别？

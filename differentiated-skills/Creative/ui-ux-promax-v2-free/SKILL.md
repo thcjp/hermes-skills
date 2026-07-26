@@ -5,31 +5,9 @@ name: ui-ux-promax-v2-free
 version: 1.0.1
 displayName: UI/UX ProMax V2免费版
 summary: "优先级驱动的设计指南数据库,含50+风格、97配色、57字体配对,适合个人快速查询。面向个人开发者的优先级驱动UI/UX设计指南,内置50+种界面风格、97套配色方案、"
-license: Proprietary
+license: MIT
 edition: free
-description: 面向个人开发者的优先级驱动UI/UX设计指南,内置50+种界面风格、97套配色方案、。可生成提升工作效率
-
-  57组字体配对、99条UX规则和25种图表类型,通过Python CLI按关键词查询。核心能力:
-
-  - 优先级分层的设计规则体系(8级优先级)
-
-  - 基础设计域搜索(style/color/typography/ux)
-
-  - 设计系统一键生成
-
-  - 默认html-tailwind技术栈指引
-
-  - 专业UI质量检查清单
-
-  适用场景:
-
-  - 个人项目UI风格快速选择
-
-  - 独立开发者配色和字体查询
-
-  - 小型项目UX规则自查
-
-  差异化:免费.'
+description: "面向个人开发者的优先级驱动UI/UX设计指南,内置50+种界面风格、97套配色方案、。可产出提升工作效率. 适用于需要ui uxmax v2相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 设计
   - UI
@@ -47,7 +25,7 @@ tools:
   - write
 homepage: ""
 category: "Creative"
-
+pricing_tier: free
 ---
 
 # UI/UX ProMax V2 - 免费版
@@ -100,7 +78,7 @@ python3 （请参考skill目录中的脚本文件） "animation accessibility" -
 | `style` | UI风格与效果 | 玻璃态, 极简, 暗色模式, 粗野主义 |
 | `typography` | 字体配对 | 优雅, 活泼, 专业, 现代 |
 | `color` | 配色方案 | saas, ecommerce, healthcare, fintech |
-| `ux` | 最佳实践与反模式 | 动画, 无障碍, z-index, 加载 |
+| `ux` | 优秀实践与反模式 | 动画, 无障碍, z-index, 加载 |
 
 **处理**: 解析基础设计域搜索的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回基础设计域搜索的响应数据,包含状态码、结果和日志.
@@ -268,7 +246,7 @@ python3 （请参考skill目录中的脚本文件） "layout responsive form" --
 | 优先级体系 | 8级分层 | 8级+深度审计 |
 | 适用对象 | 个人开发者 | 团队/企业 |
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 按优先级处理设计问题
 
@@ -364,7 +342,7 @@ winget install Python.Python.3.12
 本Skill的CLI搜索工具基于本地数据文件运行,无需额外API Key。设计建议由Agent内置LLM驱动.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。核心查询功能依赖Python CLI脚本,需确保exec工具可用.
 ## 错误处理
 

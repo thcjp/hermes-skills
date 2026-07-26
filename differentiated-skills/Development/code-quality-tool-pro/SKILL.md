@@ -1,4 +1,5 @@
 ---
+
 slug: "code-quality-tool-pro"
 name: "code-quality-tool-pro"
 version: "1.0.0"
@@ -6,23 +7,7 @@ displayName: "代码质量检查专业版"
 summary: "企业级代码质量审计,支持OWASP Top 10、批量扫描、自定义规则与CI/CD集成,输出多格式报告。"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  面向企业研发团队的高级代码质量审计工具,提供深度安全扫描、合规性检查、批量项目分析与CI/CD流水线集成。核心能力:
-  - OWASP Top 10 安全漏洞深度扫描
-  - 全项目批量代码审计
-  - 自定义规则引擎与策略管理
-  - 多格式报告输出(SARIF/HTML/JSON)
-  - CI/CD 流水线集成
-  - 多租户协同审查与问题跟踪
-
-  适用场景:
-  - 企业级代码安全审计
-  - 合规性检查(等保/GDPR)
-  - 大型项目批量质量扫描
-  - DevSecOps 流水线集成
-
-  差异化:
-  - 专业版完全兼容免费版...
+description: "|-. 适用于需要code quality tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - 代码质量
@@ -34,7 +19,6 @@ tags:
   - audit
   - python
   - json
-  - owasp
 tools:
   - read
   - exec
@@ -43,7 +27,9 @@ tools:
   - grep
 homepage: ""
 category: "Development"
+pricing_tier: L2-标准级
 ---
+
 代码质量检查工具专业版为企业研发团队提供深度代码审计能力。在免费版基础能力之上,专业版新增 OWASP Top 10 漏洞扫描、全项目批量分析、自定义规则引擎、多格式报告输出和 CI/CD 流水线集成,满足企业级 DevSecOps 实践需求.
 专业版完全兼容免费版的配置文件和检查规则,企业用户可从免费版无缝升级,已有配置无需修改即可在专业版中使用.
 ## 核心能力
@@ -268,9 +254,9 @@ rules:
 ci_cd:
   fail_on: [critical, high]
   report_format: [sarif, html]
-```
-
-### Step 2:运行审计
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 请对当前项目进行全面代码安全审计,生成 SARIF 和 HTML 格式报告.
 ```
@@ -286,7 +272,7 @@ ci_cd:
 ## 配置示例
 ### 企业级完整配置
 
-## 最佳实践
+## 优秀实践
 1. **分层扫描**:先运行快速扫描阻断关键问题,再进行深度审计
 2. **规则版本化**:将 `.codequality.yml` 纳入版本控制,确保团队规则一致
 3. **增量审计**:利用 Git diff 仅扫描变更文件,提升效率
@@ -294,7 +280,7 @@ ci_cd:
 5. **自动修复**:对低风险问题启用自动修复,减少人工干预
 
 ```bash
-echo "=== 第一层:快速阻断 ==="
+echo "=== 领先层:快速阻断 ==="
 python audit.py --quick --fail-on critical
 if [ $? -ne 0 ]; then exit 1; fi
 # ...

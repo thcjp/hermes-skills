@@ -1,4 +1,5 @@
 ---
+
 slug: market-news-tool-pro
 name: market-news-tool-pro
 version: 1.0.0
@@ -6,13 +7,7 @@ displayName: 财经资讯助手专业版
 summary: "企业级财经资讯平台，支持批量多市场分析、定时推送、历史回溯与专业级深度研报生成。财经资讯助手专业版，面向专业投资者、研究机构和企业用户提供高级财经资讯分析能力。核心能力:"
 license: Proprietary
 edition: pro
-description: '财经资讯助手专业版，面向专业投资者、研究机构和企业用户提供高级财经资讯分析能力。核心能力:
-
-  - 批量多主题并行分析，一次查询覆盖 10+ 行业板块
-
-  - 全球全市场覆盖，含 A 股、港股、美股、欧股、商品期货、外汇
-
-  - 近实时数据推送。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
+description: "财经资讯助手专业版，面向专业投资者、研究机构和企业用户包含高级财经资讯剖析能力。核心能力:. 适用于需要market news tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 财经
   - 资讯
@@ -24,9 +19,6 @@ tags:
   - 工具
   - pro
   - market-news-pro
-  - topics
-  - 财经资讯
-  - 推送
 tools:
   - read
   - exec
@@ -35,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 # 财经资讯助手（专业版）
 
 ## 概述
@@ -349,7 +343,7 @@ class MarketNewsProClient:
 {详细数据表格}
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 建立行业监控矩阵
 

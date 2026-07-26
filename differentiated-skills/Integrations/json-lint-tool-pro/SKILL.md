@@ -1,4 +1,5 @@
 ---
+
 slug: "json-lint-tool-pro"
 name: "json-lint-tool-pro"
 version: "1.0.0"
@@ -6,8 +7,7 @@ displayName: "JSON校验工具专业版"
 summary: "企业级JSON校验工具，支持并行扫描、Schema验证、超集兼容、自动修复与监控告警。。JSON校验工具专业版面向企业级场景，在免费版基础上扩展并行扫描、JSON Schema验证、JSON"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  JSON校验工具专业版面向企业级场景，在免费版基础上扩展并行扫描、JSON Schema验证、JSON5/JSONC超集兼容、自动修复建议、历史趋势监控等高级能力。核心能力：多线程并行扫描万级文件、基于JSON Schema的语义校验、JSON5/JSONC/JSON-LD超集支持、自动修复建议生成、通过率历史趋势与告警、CI/CD深度集成
+description: "|-. 适用于需要json lint tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 集成工具
   - JSON
@@ -19,16 +19,15 @@ tags:
   - 监控
   - json
   - schema
-  - string
-  - 并行扫描
-  - 验证
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # JSON校验工具（专业版）
 
 本工具是企业级JSON校验方案，在免费版基础上扩展并行扫描、Schema验证、超集兼容、自动修复与监控告警能力，适用于大型项目质量门禁与企业级配置治理场景.
@@ -227,7 +226,7 @@ node lint.js --dir ./config --format json5
 | `alert_webhook` | string | - | Webhook地址 |
 | `alert_channels` | array | [] | 告警通道 |
 
-## 最佳实践
+## 优秀实践
 
 ### 并行扫描优化
 - 线程数按CPU核数调整（建议核数×2）
@@ -244,7 +243,7 @@ node lint.js --dir ./config --format json5
 ### 超集兼容策略
 - 配置文件推荐JSON5（可读性高）
 - 编辑器配置推荐JSONC（VS Code兼容）
-- 数据交换坚持标准JSON（兼容性最好）
+- 数据交换坚持标准JSON（兼容性优秀）
 - 超集文件扩展名明确（.json5/.jsonc），避免混淆
 
 ### 自动修复策略
@@ -264,7 +263,7 @@ node lint.js --dir ./config --format json5
 ### Q1：并行扫描结果顺序混乱？
 A：并行扫描不保证文件处理顺序，但报告中的错误明细会按文件路径排序输出。若需保持扫描顺序，设置`parallel=1`，但会显著降低性能.
 ### Q2：Schema验证报错信息不清晰？
-A：专业版的Schema验证器支持详细错误路径，例如`$.user.address.city`。若错误信息仍不清晰，检查Schema本身的复杂度，必要时拆分为多个简单Schema。`strict`模式会报告所有违反项，非strict模式仅报告第一个.
+A：专业版的Schema验证器支持详细错误路径，例如`$.user.address.city`。若错误信息仍不清晰，检查Schema本身的复杂度，必要时拆分为多个简单Schema。`strict`模式会报告所有违反项，非strict模式仅报告领先个.
 ### Q3：JSON5文件被误报为标准JSON错误？
 A：确认`format`参数设置为`json5`。若仍报错，检查文件扩展名是否为`.json5`，或显式指定`--format json5`。专业版支持按扩展名自动识别格式.
 ### Q4：自动修复误修改了有效内容？

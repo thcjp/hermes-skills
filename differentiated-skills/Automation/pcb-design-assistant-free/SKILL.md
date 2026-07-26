@@ -1,13 +1,13 @@
 ---
+
 slug: pcb-design-assistant-free
 name: pcb-design-assistant-free
 version: 1.0.1
 displayName: PCB设计助手(免费版)
 summary: 面向JLC EDA/EasyEDA的电路设计副驾驶，单页原理图绘制、元件搜索、基础质量门检查，快速产出可打板方案.
-license: Proprietary
+license: MIT
 edition: free
-description: PCB设计助手（免费版）面向电子工程师、硬件创客与教学场景，作为JLC EDA / EasyEDA的智能副驾驶，帮助用户从需求描述快速产出可打板的单页原理图。基于三层架构（桥接层/EDA
-  API层/设计层），优先调用MCP工具协议，覆盖从元件搜索、原理图绘制到基础质量检查的完整单页设计流程。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "PCB设计助手（免费版）面向电子工程师、硬件创客与教学场景，作为JLC EDA / EasyEDA的智能副驾驶，帮助用户从需求描述快速产出可打板的单页原理图。基于三层架构（桥接层/EDA. 适用于需要pcb design assistant相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - PCB设计
   - 电路设计
@@ -19,15 +19,15 @@ tags:
   - easyeda
   - agent
   - 最小系统
-  - mcu
-  - 用户提供
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # PCB设计助手（免费版）
 
 > 从一句话需求到可打板原理图：连接EasyEDA、搜索真实元件、绘制规范电路、自动质量门检查.

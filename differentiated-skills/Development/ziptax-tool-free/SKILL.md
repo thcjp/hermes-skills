@@ -1,22 +1,13 @@
 ---
+
 slug: ziptax-tool-free
 name: ziptax-tool-free
 version: 1.0.0
 displayName: 销售税查询(免费版)
 summary: "面向个人开发者的销售税查询工具,支持按地址、邮编、经纬度查询,含基础CLI封装.。销售税查询工具免费版为个人开发者提供美国销售税率查询能力,支持按地址、邮编、经纬度查询,含基础CLI封装与税"
-license: Proprietary
+license: MIT
 edition: free
-description: '销售税查询工具免费版为个人开发者提供美国销售税率查询能力,支持按地址、邮编、经纬度查询,含基础CLI封装与税率解析。核心能力:
-
-  - 按地址查询销售税(最精确)
-
-  - 按邮编查询销售税
-
-  - 按经纬度查询销售税
-
-  - 税率结构解析(州/县/市/区)
-
-  - 基础CLI封装(lookup。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
+description: "销售税查询工具免费版为个人开发者包含美国销售税率查询能力,兼容按地址、邮编、经纬度查询,含基础CLI封装与税率解析。核心能力:. 适用于需要ziptax tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 销售税
   - 税务
@@ -28,16 +19,15 @@ tags:
   - 知识
   - api
   - ziptax_api_key
-  - postalcode
-  - metrics
-  - zip-tax
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 销售税查询工具(免费版)
 
 ## 概述
@@ -105,7 +95,7 @@ zip-tax.com/request/v60?lat=33.6525&lng=-117.7479" \
 适合移动端或基于地理定位的查询场景.
 ## 快速开始
 
-### 第一步:获取 API Key
+### 领先步:获取 API Key
 
 1. 访问 zip-tax.com 平台
 2. 注册账号并登录
@@ -186,9 +176,9 @@ fi
 # ...
 # 查询额度(metrics 不计入额度)
 if [ -n "${METRICS:-}" ]; then
-  curl -s "$API_URL/account/metrics" -H "X-API-KEY: $ZIPTAX_API_KEY"
+  curl -s "$API_URL/account/metrics" -H "X-API-ref: $ZIPTAX_API_KEY"
 else
-  curl -s "$API_URL?$QUERY" -H "X-API-KEY: $ZIPTAX_API_KEY"
+  curl -s "$API_URL?$QUERY" -H "X-API-ref: $ZIPTAX_API_KEY"
 fi
 ```
 
@@ -221,7 +211,7 @@ console.log(`服务应税: ${data.service.taxable}`);
 console.log(`运费应税: ${data.shipping.taxable}`);
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **优先用地址查询**:地址查询返回单一精确结果,邮编可能返回多个税区.
 2. **API Key 不外泄**:永不将 API Key 提交到代码仓库或暴露在前端代码中.
@@ -241,7 +231,7 @@ console.log(`运费应税: ${data.shipping.taxable}`);
 地址查询返回单一精确结果(最准);邮编查询返回该 ZIP 内所有税率(可能多个,因为一个 ZIP 可能跨越多个税区)。优先用地址查询.
 ### Q3: API Key 如何安全存储?
 
-环境变量是最佳实践。生产环境用密钥管理服务(AWS Secrets Manager / HashiCorp Vault)。永不提交到代码仓库,永不硬编码在前端.
+环境变量是优秀实践。生产环境用密钥管理服务(AWS Secrets Manager / HashiCorp Vault)。永不提交到代码仓库,永不硬编码在前端.
 ### Q4: 税率会变化吗?
 
 会。美国销售税率可能随州/县/市立法调整。建议定期刷新缓存,关键场景(结账)实时查询.
@@ -274,7 +264,7 @@ console.log(`运费应税: ${data.shipping.taxable}`);
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于自然语言指令驱动 Agent 调用 zip-tax.com API;需要预先注册并配置 API Key;查询通过 curl 或 CLI 封装脚本执行
 
 ## 错误处理

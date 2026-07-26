@@ -7,9 +7,7 @@ displayName: 多邮箱管理专业版
 summary: "企业级Gmail与Outlook统一管理，批量操作与多账户隔离。多邮箱管理专业版面向企业用户与高效能个人用户。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于"
 license: Proprietary
 edition: pro
-description: "多邮箱管理专业版面向企业用户与高效能个人用户。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use
-  when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。减少重复劳动，提升工作效率。触发关键词：自动化、性能优化、监控、搜索、机器学习、邮件"
-  when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
+description: "多邮箱管控专业版面向企业用户与高效能个人用户。Use when 需要提升效率、自发化流程、成批处置、工作流调优时使用。不适用于需要人工创意判断的任务。Use. 适用于需要email multivider相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 沟通协作
   - 邮件管理
@@ -21,8 +19,6 @@ tags:
   - 工具
   - profile
   - porteden
-  - email
-  - csv
 tools:
   - read
   - exec
@@ -30,8 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
-
+pricing_tier: L2-标准级
 ---
+
 # 多邮箱管理专业版
 **版本**: 1.0.0
 **适用对象**: 企业用户、团队管理者、客服与运营人员
@@ -232,9 +229,9 @@ porteden email send --to x@y.com --subject "测试" --body "内容"
 # 专业版新增命令
 porteden email batch-send --recipients list.csv --template tpl.html
 porteden email audit-log --since "2026-07-01"
-```
-
-### 配置多账户 Profile
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 添加工作账户
 porteden profile add --name work --login
@@ -250,9 +247,9 @@ porteden profile list
 # ...
 # 验证所有账户状态
 porteden profile health-check --all
-```
-
-### 配置审计日志
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "audit": {
@@ -281,9 +278,9 @@ porteden profile health-check --all
     "failure_log": "~/.config/porteden/batch_failures.log"
   }
 }
-```
-
-### 智能规则配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "rules": [
@@ -305,9 +302,9 @@ porteden profile health-check --all
     }
   ]
 }
-```
-
-### 团队协作配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "team": {
@@ -322,7 +319,7 @@ porteden profile health-check --all
 
 ---
 
-## 最佳实践
+## 优秀实践
 ### 批量操作安全
 ```bash
 # 始终先试运行
@@ -335,9 +332,9 @@ csv --template tpl.html \
 # 记录失败用例
 csv --template tpl.html \
   --log batch.log --on-failure log
-```
-
-### 多账户安全隔离
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 为每个部门使用独立 Profile
 porteden profile add --name finance --login

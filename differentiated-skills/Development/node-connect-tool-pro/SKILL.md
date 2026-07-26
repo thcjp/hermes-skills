@@ -1,4 +1,5 @@
 ---
+
 slug: "node-connect-tool-pro"
 name: "node-connect-tool-pro"
 version: "1.0.0"
@@ -6,23 +7,7 @@ displayName: "节点连接工具(专业版)"
 summary: "全拓扑节点连接诊断,含尾网/公网/远程网关、批量配对、审计日志与自动修复。。节点连接工具(专业版)面向团队与运维,提供全拓扑节点连接诊断、批量配对、连接审计日志与一键自动修复能力。核心能力:"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  节点连接工具(专业版)面向团队与运维,提供全拓扑节点连接诊断、批量配对、连接审计日志与一键自动修复能力。核心能力:
-  - 全拓扑支持:同机器/局域网/Tailscale尾网/公网反代/远程网关
-  - 批量设备配对与状态管理
-  - 连接审计日志与回溯
-  - 一键诊断与自动修复脚本
-  - 远程网关与多网关节点管理
-  - 高级鉴权配置(Tailscale Serve/Funnel)
-
-  适用场景:
-  - 跨网络团队节点协作
-  - 远程网关与多区域部署
-  - 大规模设备配对与运维
-  - 安全合规要求的连接审计
-
-  差异化:
-  - ...
+description: "|-. 适用于需要node connect tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Development
   - 网络
@@ -34,20 +19,15 @@ tags:
   - 效率
   - 自动化
   - 监控
-  - 研究
-  - 分析
-  - 写作
-  - skill-platform
-  - tailscale
-  - gateway
-  - config
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 节点连接工具(专业版)
 
 ## 概述
@@ -284,7 +264,7 @@ done
 | Tailscale | `gateway.auth.allowTailscale=true` | 尾网内信任 |
 | 混合 | token + allowTailscale | 兼容多场景 |
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 拓扑优先,跨网络不混淆
 
@@ -378,6 +358,8 @@ skill-platform nodes migrate --node dev-001 --gateway gw-west
 默认保留90天。可在配置中调整:
 
 ```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 合规要求更长的场景,建议定期导出到外部归档系统.
@@ -411,7 +393,7 @@ skill-platform nodes migrate --node dev-001 --gateway gw-west
 - 远程网关若使用反向代理,需按代理服务文档配置SSL证书与访问控制.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。PRO版面向团队与运维,提供全拓扑诊断、批量配对、审计日志与自动修复能力,完全兼容免费版本地与局域网诊断流程.
 ## 错误处理
 

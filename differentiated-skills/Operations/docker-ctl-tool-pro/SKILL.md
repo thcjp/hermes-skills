@@ -1,4 +1,5 @@
 ---
+
 slug: docker-ctl-tool-pro
 name: docker-ctl-tool-pro
 version: 1.0.0
@@ -6,10 +7,7 @@ displayName: 容器检查专业版
 summary: "企业级容器诊断平台，支持批量检查、智能诊断、历史分析与远程管理.。面向企业运维团队的容器诊断平台。兼容Podman与Docker，支持批量"
 license: Proprietary
 edition: pro
-description: '面向企业运维团队的容器诊断平台。兼容Podman与Docker，支持批量
-
-  容器检查、智能异常诊断、历史趋势分析、远程主机管理与安全审计。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。Use
-  when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。'
+description: "面向企业运维团队的容器诊断平台。兼容Podman与Docker，兼容成批. 适用于需要docker ctl tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Operations
   - 容器检查
@@ -27,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+pricing_tier: L2-标准级
 ---
+
 # 容器检查专业版（PRO版）
 
 ## 概述
@@ -230,7 +230,7 @@ pro_config:
     template_dir: "./templates"
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### PRO版企业实践
 

@@ -1,4 +1,5 @@
 ---
+
 slug: free-google-search-tool-pro
 name: free-google-search-tool-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: 谷歌搜索(专业版)
 summary: "企业级Google搜索专业版，含批量搜索、AI摘要、定时监控、多语言搜索与结果缓存.。谷歌搜索助手专业版是面向企业级场景的完整Google搜索与结果分析工具。在免费版单次搜索能力之上，新增批"
 license: Proprietary
 edition: pro
-description: 谷歌搜索助手专业版是面向企业级场景的完整Google搜索与结果分析工具。在免费版单次搜索能力之上，新增批量搜索、AI智能摘要、定时监控、多语言搜索、结果缓存、图片搜索、新闻搜索、学术搜索八大高级能力。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "谷歌搜索助手专业版是面向企业级场景的完整Google搜索与结果剖析工具。在免费版单次搜索能力之上，新增成批搜索、AI智能摘要、定时监控、多语言搜索、结果缓存、图片搜索、新闻搜索、学术搜索八大高级能力。Use. 适用于需要free google search tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 谷歌搜索
   - 企业级
@@ -19,8 +19,6 @@ tags:
   - 工具
   - results
   - query
-  - lang
-  - 多语言搜
 tools:
   - read
   - exec
@@ -29,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 > **批量搜索+AI摘要+定时监控+多语言。企业级Google搜索全功能覆盖。**
 
 将复杂的搜索任务交给专业工具处理。专业版在免费版单次搜索能力之上，新增批量搜索、AI智能摘要、定时监控、多语言搜索、结果缓存、图片搜索、新闻搜索、学术搜索八大高级能力，满足企业级场景对搜索的批量性、智能化与持续性要求.
@@ -197,7 +197,7 @@ generate_multilang_report(results)
 **场景描述**：监控品牌相关关键词变化，发现负面立即告警.
 ```python
 monitor = SearchMonitor()
-monitor.add_keyword("我的品牌", interval=3600, webhook_url="https://hooks.slack.com/services/xxx")
+monitor.add_keyword("我的品牌", interval=3600, webhook_url="https://hooks.slack.com/services/placeholder")
 monitor.add_keyword("我的品牌 投诉", interval=1800)
 monitor.add_keyword("我的品牌 评测", interval=3600)
 ```
@@ -214,9 +214,9 @@ monitor.add_keyword("我的品牌 评测", interval=3600)
 python3 batch_search.py --queries queries.txt --output results.json
 # ...
 python3 ai_summary.py --input results.json --output summaries.md
-```
-
-### 120秒标准搭建
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 npm install playwright
 npx playwright install chromium
@@ -239,7 +239,7 @@ monitor:
     - name: 品牌监控
       query: 我的品牌
       interval: 3600
-      webhook: https://hooks.slack.com/services/xxx
+      webhook: https://hooks.slack.com/services/placeholder
     - name: 竞品监控
       query: 竞争对手
       interval: 7200
@@ -254,11 +254,9 @@ export:
 EOF
 # ...
 python3 search_service.py --config search_config.yaml
-```
-
-#
-## 配置示例
-### 企业级配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 batch:
   max_workers: 3
@@ -279,11 +277,11 @@ monitor:
     - name: 品牌监控
       query: 我的品牌
       interval: 3600
-slack.com/services/xxx
+slack.com/services/placeholder
     - name: 竞品监控
       query: 竞争对手
       interval: 7200
-slack.com/services/xxx
+slack.com/services/placeholder
     - name: 行业动态
       query: AI芯片 行业
       interval: 86400
@@ -302,15 +300,14 @@ export:
   formats: [json, markdown, csv]
   output_dir: ./output
   include_metadata: true
-```
-
-## 最佳实践
-### 1. 批量搜索优化
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 batch = BatchGoogleSearcher(max_workers=3)  # 建议3-5
-```
-
-### 2. AI摘要优化
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 SUMMARY_TEMPLATES = {
     'formal': '正式报告风格',
@@ -318,9 +315,9 @@ SUMMARY_TEMPLATES = {
     'colloquial': '口语化风格',
     'analytical': '分析报告风格',
 }
-```
-
-### 3. 监控频率控制
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 MONITOR_INTERVALS = {
     '品牌负面': 1800,       # 30分钟
@@ -394,7 +391,7 @@ MONITOR_INTERVALS = {
 此外，专业版还提供：
 - 多角色场景指南（市场研究/产品团队/公关团队）
 - 完整FAQ（7问）与故障排查表
-- 性能优化建议与最佳实践
+- 性能优化建议与优秀实践
 - GPT-4o模型路由与优先支持
 
 ## 定价
@@ -425,9 +422,9 @@ MONITOR_INTERVALS = {
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

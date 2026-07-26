@@ -1,4 +1,5 @@
 ---
+
 slug: "ui-component-tool-pro"
 name: "ui-component-tool-pro"
 version: "1.0.0"
@@ -6,20 +7,7 @@ displayName: "UI组件生成(专业版)"
 summary: "面向团队的企业级UI组件工程平台,含设计系统、批量生成、可访问性增强与组件库管理。UI组件生成工具专业版为团队与企业提供端到端UI组件工程能力,涵盖设计系统令牌、批量组件生成、WCAG AA"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  UI组件生成工具专业版为团队与企业提供端到端UI组件工程能力,涵盖设计系统令牌、批量组件生成、WCAG AA可访问性增强与企业级组件库管理。核心能力:
-  - 设计系统令牌(颜色/排版/间距/圆角/阴影)生成与管理
-  - 批量组件生成与脚手架
-  - WCAG AA可访问性审查与增强
-  - 多框架输出(HTML/React/Vue/Angular)
-  - 企业级组件库结构与文档生成
-  - 主题切换与暗色模式工程化
-
-  适用场景:
-  - 中大型团队设计系统落地与维护
-  - 企业级组件库从0到1搭建
-  - 多项目组件复用与版本管理
-  .
+description: "|-. 适用于需要ui component tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - UI组件
   - 设计系统
@@ -31,16 +19,15 @@ tags:
   - 前端
   - 设计
   - comp
-  - rem
-  - eof
-  - wcag
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: L2-标准级
 ---
+
 # UI 组件生成工具(专业版)
 
 ## 概述
@@ -318,7 +305,7 @@ echo "=== 审查完成 ==="
 
 ## 快速开始
 
-### 第一步:声明团队上下文
+### 领先步:声明团队上下文
 
 在对话中说明团队规模、技术栈与设计系统现状,例如:
 
@@ -384,7 +371,7 @@ src/
 | Modal | `<div class="modal">` | `<Modal open onClose>` | `<Modal v-model:open>` |
 | Table | `<table class="table">` | `<Table data columns>` | `<Table :data :columns>` |
 
-## 最佳实践
+## 优秀实践
 
 1. **令牌驱动设计**:所有颜色、间距、圆角、阴影必须引用设计令牌,禁止硬编码。
 2. **WCAG AA 合规**:文字对比度 ≥ 4.5:1,大文字 ≥ 3:1,所有交互元素可键盘访问。
@@ -450,7 +437,7 @@ Pro 版完全兼容免费版的所有单文件 HTML 输出。个人开发者可�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于自然语言指令驱动 Agent 输出企业级组件工程方案;脚手架与审查脚本需在仓库中落地并由本地或 CI 执行
 
 ## 错误处理

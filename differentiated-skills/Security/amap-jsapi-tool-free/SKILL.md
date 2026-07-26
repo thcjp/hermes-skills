@@ -1,36 +1,34 @@
 ---
+
 slug: amap-jsapi-tool-free
 name: amap-jsapi-tool-free
 version: 1.0.0
 displayName: 高德地图JSAPI免费版
 summary: 高德地图JSAPI v2.0开发助手,支持地图展示、标注点、地理编码与基础路径规划,适合个人开发者快速集成地图功能.
-license: Proprietary
+license: MIT
 edition: free
-description: '高德地图JSAPI v2.0开发助手免费版,为个人开发者提供地图开发核心能力.
-  核心能力:WebGL地图渲染、标注点管理、地理编码/逆地理编码、基础路径规划.
-  适用场景:个人项目地图展示、位置搜索、基础导航功能开发.
-  差异化:免费版聚焦核心地图功能,适合个人开发者快速上手,每日5000次API调用额度.
-  适用关键词: 高德地图, 地图开发, JSAPI, 地理编码, 路径规划, amap, map, geocoding'
+description: "高德地图JSAPI v2.0开发助手免费版,为个人开发者包含地图开发核心能力. 适用于需要amap jsapi tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要amap jsapi tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 地图开发
+  - amap
+  - jsapi
+  - automation
+  - productivity
   - 高德地图
   - JSAPI
   - 免费版
   - API
   - 接口
-  - 开发工具
-  - amap
-  - map
-  - result
-  - const
-  - console
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
+
 ---
+
 # 高德地图JSAPI v2.0 开发助手免费版
 
 ## 概述
@@ -354,7 +352,7 @@ geocodes[0].location;
 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:申请API Key
+### 领先步:申请API Key
 
 1. 访问高德开放平台
 2. 创建应用,获取API Key和安全密钥
@@ -415,7 +413,7 @@ AMap.plugin([
 | 驾车路径规划 | 5000次/天 | 驾车导航 |
 | 步行路径规划 | 5000次/天 | 步行导航 |
 
-## 最佳实践
+## 优秀实践
 
 1. **安全密钥配置**:生产环境必须配置securityJsCode,避免Key泄露.
 2. **按需加载插件**:使用AMap.plugin按需加载,减少初始加载时间.
@@ -423,7 +421,7 @@ AMap.plugin([
 4. **错误处理**:所有异步回调中处理失败情况,提升用户体验.
 5. **移动端适配**:设置viewport meta标签,使用自适应布局.
 ```javascript
-// 最佳实践:安全初始化模板
+// 优秀实践:安全初始化模板
 function initMap(containerId, options = {}) {
     if (!window.AMap) {
         console.error('高德地图JSAPI未加载');
@@ -486,7 +484,7 @@ Map(containerId, { ...defaultOptions, ...options });
 - 在JSAPI script标签的key参数中传入API Key
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,需要exec能力生成HTML文件)
+- **分类**: MD+EXEC模式纯Markdown指令,需要exec能力生成HTML文件)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent生成高德地图JSAPI开发代码
 - API Key通过环境变量配置: export API_KEY=your_key
 

@@ -1,13 +1,13 @@
 ---
+
 slug: vector-db-manager-free
 name: vector-db-manager-free
 version: 1.0.1
 displayName: 向量数据库管理免费版
 summary: "管理向量数据库的索引、嵌入与相似度检索，支持本地与云端部署。面向AI应用开发者的向量数据库管理工具，覆盖向量索引创建、嵌入向量管理、相似度检索与基础性能调优。核心能力：创建与删除向量索引、批"
-license: Proprietary
+license: MIT
 edition: free
-description: 面向AI应用开发者的向量数据库管理工具，覆盖向量索引创建、嵌入向量管理、相似度检索与基础性能调优。核心能力：创建与删除向量索引、批量导入嵌入向量、执行KNN/ANN相似度检索、管理集合与分区、查询基础统计信息。Use
-  when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
+description: "面向AI应用开发者的向量数据库管控工具，覆盖向量索引创建、嵌入向量管控、相似度检索与基础性能调优。核心能力：创建与删除向量索引、成批导入嵌入向量、执行KNN/ANN相似度检索、管控集合与分区、查询基础统计信息。Use. 适用于需要vector db manager相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 数据库管理
   - 向量检索
@@ -19,12 +19,6 @@ tags:
   - 分析
   - 知识
   - 文档
-  - 写作
-  - embedding
-  - documents
-  - conn
-  - vectors
-  - source
 tools:
   - read
   - exec
@@ -32,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 向量数据库管理工具（免费版）
 
 ## 概述
@@ -88,7 +84,7 @@ category: "Automation"
 某客服系统将知识库文档转为向量存储，用户提问时检索最相关的文档片段，结合LLM生成回答。通过本Skill管理知识库向量索引.
 ## 快速开始
 
-### 第一步：选择向量数据库引擎（约30秒）
+### 领先步：选择向量数据库引擎（约30秒）
 
 | 引擎 | 适用场景 | 免费版支持 |
 |:-----|:-----|:-----|
@@ -222,7 +218,7 @@ results = collection.query(
 )
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 批量导入优化
 
@@ -266,7 +262,7 @@ def batch_import(vectors, conn):
 
 ### Q1：应该选择哪个向量数据库引擎？
 
-A：根据规模和现有技术栈选择：(1) 已有 `PostgreSQL` 且向量数<100万，选pgvector；(2) 需要高性能且向量数>100万，选Milvus；(3) 快速原型验证，选ChromaDB；(4) 追求极致性能，选Qdrant.
+A：根据规模和现有技术栈选择：(1) 已有 `PostgreSQL` 且向量数<100万，选pgvector；(2) 需要高性能且向量数>100万，选Milvus；(3) 快速原型验证，选ChromaDB；(4) 追求优秀性能，选Qdrant.
 ### Q2：HNSW和IVFFLAT怎么选？
 
 A：HNSW查询更快但构建慢、内存占用高，适合查询频繁的场景。IVFFLAT构建快、内存占用低，但查询速度和召回率略低，适合数据量大且可接受部分召回损失的场景.
@@ -341,9 +337,9 @@ A：免费版提供基础统计信息（向量数量、索引大小、查询延�
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

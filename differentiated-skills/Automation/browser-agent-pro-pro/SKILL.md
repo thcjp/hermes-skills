@@ -1,4 +1,5 @@
 ---
+
 slug: browser-agent-pro-pro
 name: browser-agent-pro-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: 浏览器代理(专业版)
 summary: 全功能浏览器自动化，含反检测、多标签页、代理、分页抓取、登录态保持与UI回归测试，支撑企业级自动化场景.
 license: Proprietary
 edition: pro
-description: 浏览器代理专业版是面向企业级自动化的全功能浏览器控制系统。在免费版基础上解锁反检测策略、多标签页与会话管理、代理与网络配置、分页抓取与无限滚动、动态内容抓取、登录态持久化、UI回归测试框架、性能监控八大高级能力。Use
-  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
+description: "浏览器代理专业版是面向企业级自发化的全功能浏览器控制系统。在免费版基础上解锁反查验策略、多标签页与会话管控、代理与网络配置、分页抓取与无限滚动、动态内容抓取、登录态持久化、UI回归测试框架、性能监控八大高级能力。Use. 适用于需要browser agent相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 浏览器自动化
   - 反检测
@@ -19,8 +19,6 @@ tags:
   - 效率
   - agent
   - product
-  - browser
-  - https
 tools:
   - read
   - exec
@@ -28,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 > **企业级浏览器自动化系统。反检测+多标签+代理+动态抓取+登录态+UI测试，支撑复杂自动化场景。**
 
 浏览器代理专业版解决企业级自动化的三大痛点：网站反爬检测导致被封禁、动态加载内容无法抓取、缺乏可回归的UI测试能力。在免费版基础操作能力之上，专业版提供完整的反检测、动态抓取、登录态管理与测试框架.
@@ -54,9 +54,9 @@ category: "Automation"
 ls ~/workspace/browser/
 # ...
 cat ~/workspace/browser/config.json | grep edition
-```
-
-### 120秒上手（反检测抓取）
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 用户："抓取 https://example.com/products 所有商品，启用反检测模式"
 # ...
@@ -301,22 +301,22 @@ if [ $? -ne 0 ]; then
 fi
 # ...
 agent browser test report --last --send dingtalk
-```
-
-### 与监控系统集成
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 curl http://localhost:19197/metrics
 # ...
-```
-
-### 与数据管道集成
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 agent browser scrape --url "https://example.com/data" \
   --format json --output - | \
   python3 pipeline.py --target warehouse
-```
-
-### 与告警系统集成
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "alerts": {

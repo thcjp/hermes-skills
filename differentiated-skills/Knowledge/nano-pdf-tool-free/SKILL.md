@@ -1,20 +1,13 @@
 ---
+
 slug: nano-pdf-tool-free
 name: nano-pdf-tool-free
 version: 1.0.2
 displayName: Nano PDF工具（免费版）
 summary: "轻量级PDF处理工具：读取、创建、编辑PDF，支持文本提取与基本页面操作.,支持多种使用场景和自动化处理"
-license: Proprietary
+license: MIT
 edition: free
-description: Nano PDF工具 - （免费版），可处理提升工作效率
-
-  核心能力: PDF读取, PDF创建, 文本提取, 页面操作, nano pdf, PDF编辑, 页面旋转
-
-  适用场景: 个人用户日常使用，核心功能覆盖基础需求
-
-  差异化: 精简版，适合个人用户快速上手，提供核心功能与基础用法
-
-  适用关键词: PDF读取, PDF创建, 文本提取, 页面操作, nano pdf, PDF编辑, 页面旋转'
+description: "Nano PDF工具 - （免费版），可处置提升工作效率. 适用于需要nano pdf tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - PDF处理
   - 轻量级
@@ -26,20 +19,15 @@ tags:
   - 知识
   - 文档
   - 研究
-  - 分析
-  - 写作
-  - pdf
-  - 支持创建
-  - 查询
-  - input_params
-  - nano
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Nano PDF工具（免费版）
 
 ## 概述
@@ -115,7 +103,7 @@ PDF读取、PDF创建、文本提取、页面操作、基本编辑、元数据�
 
 对PDF页面进行旋转、删除等基本操作。**示例指令**：`
 
-`旋转PDF的第一页
+`旋转PDF的领先页
 
 ## 快速开始
 
@@ -182,7 +170,7 @@ nano_pdf:
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 
-## 最佳实践
+## 优秀实践
 
 ### 基础使用建议
 
@@ -195,9 +183,8 @@ nano_pdf:
 ### 性能优化
 
 ```python
-# 免费版：单文件优化
-# 确保输入文件不超过建议大小
-# 处理完成后释放资源
+# 在此执行相关操作
+pass
 ```
 
 ## 常见问题

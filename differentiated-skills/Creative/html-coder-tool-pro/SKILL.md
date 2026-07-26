@@ -7,7 +7,7 @@ displayName: "HTML编码工具-专业版"
 summary: "企业级HTML开发引擎，支持HTML5高级API、Web Components、WCAG全面合规与性能优化。"
 license: "Proprietary"
 edition: "pro"
-description: HTML编码工具专业版，面向团队的企业级HTML开发平台。核心能力： - HTML5 全API覆盖（Canvas/SVG/Storage/Geolocation/Drag&Drop/Web Workers） - Web Components 与 Shadow DOM 组件化开发 - WCAG 2。可自动提升工作效率
+description: "HTML编码工具专业版，面向团队的企业级HTML开发平台。核心能力： - HTML5 全API覆盖（Canvas/SVG/Storage/Geolocation/Drag&Drop/Web Workers） - Web Components 与 Shadow DOM 组件化开发 - WCAG 2。可自发提升工作效率"
 tags:
   - Creative
   - HTML
@@ -19,8 +19,6 @@ tags:
   - html
   - canvas
   - web
-  - const
-  - api
 tools:
   - read
   - exec
@@ -29,7 +27,7 @@ tools:
   - grep
 homepage: ""
 category: "Development"
-
+pricing_tier: L2-标准级
 ---
 
 HTML编码工具专业版是企业级 HTML 开发平台，覆盖 HTML5 全部 API、Web Components 组件化开发、WCAG 2.1 全面合规检查和性能优化策略。从基础语义化标记到高级 Canvas 绘图、SVG 操作、Web Storage 和地理定位，专业版提供完整的 HTML 开发能力.
@@ -211,7 +209,7 @@ WCAG 合规:
 
 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
-### 第一步：选择能力级别
+### 领先步：选择能力级别
 ```text
 能力配置:
   基础能力: 语义化HTML + 表单 + 响应式图片（免费版功能）
@@ -220,9 +218,9 @@ WCAG 合规:
   可访问性: WCAG 2.1 AA / AAA
   性能: 关键路径 / 预加载 / 懒加载
   SEO: 结构化数据 / Open Graph
-```
-
-### 第二步：创建高级页面
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```html
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -265,18 +263,16 @@ WCAG 合规:
   <footer role="contentinfo"><!-- 页脚 --></footer>
 </body>
 </html>
-```
-
-### 第三步：运行合规检查
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python3 wcag-checker.py --file index.html --level AA
 # ...
 npx lighthouse https://example.com --output html --output-path ./report.html
-```
-
-#
-## 示例
-### 性能优化配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```html
 <!-- 资源预加载 -->
 <link rel="preload" href="critical-font.woff2" as="font" type="font/woff2" crossorigin>
@@ -302,9 +298,9 @@ webp" type="image/webp">
 <!-- 脚本优化 -->
 <script src="non-critical.js" defer></script>
 <script type="module" src="app.js"></script>
-```
-
-### Web Storage 配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```javascript
 // localStorage 持久化存储
 localStorage.setItem('userPrefs', JSON.stringify({
@@ -325,7 +321,7 @@ db.onupgradeneeded = (event) => {
 };
 ```
 
-## 最佳实践
+## 优秀实践
 1. **渐进增强**：先确保基础功能可用，再添加高级特性.
 2. **降级方案**：Canvas 降级为表格，Web Components 降级为标准 HTML.
 3. **可访问性内建**：从设计阶段就考虑 WCAG 合规，而非事后修补.

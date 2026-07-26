@@ -1,4 +1,5 @@
 ---
+
 slug: blog-seo-writer-tool-pro
 name: blog-seo-writer-tool-pro
 version: 1.0.0
@@ -6,10 +7,7 @@ displayName: SEO 博客写作专业版
 summary: "企业级 SEO 内容工坊,支持竞品分析、长尾词矩阵、多语言生成与发布管道自动化。核心能力: 内容营销领域的专业化 AI 辅助工具,提供企业级高级功能支持."
 license: Proprietary
 edition: pro
-description: '核心能力: 内容营销领域的专业化 AI 辅助工具,提供企业级高级功能支持.
-  适用场景: 企业团队与专业用户,涵盖日常操作、自动化工作流与智能决策辅助.
-  差异化: PRO 版本,面向企业用户提供高级功能、批量操作、团队协同与优先支持.
-  适用关键词: seo, 博客, 关键词, 元描述, 内容优化, 搜索引擎排名'
+description: "核心能力: 内容营销领域的专业化 AI 辅助工具,包含企业级高级功能兼容. 适用于需要blog seo writer tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - SEO
   - 内容写作
@@ -21,8 +19,6 @@ tags:
   - 集成
   - pro
   - coffee
-  - seo
-  - free
 tools:
   - read
   - exec
@@ -31,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # SEO 博客写作专业版
 
 ## 概述
@@ -262,14 +260,14 @@ primary_keyword = "best coffee shops NYC"
 | webhook_url | string | - | 事件通知 Webhook 地址 |
 | rate_limit | object | - | 速率限制配置 |
 
-## 最佳实践
+## 优秀实践
 
 1. **每篇文章聚焦一个主关键词**
 2. **主关键词出现在前 100 词中**
 3. **竞争性话题目标 1500+ 词**
 4. **每 500 词插入 1-2 条内链**
 
-### 企业级最佳实践
+### 企业级优秀实践
 
 - 建立标准化的操作流程文档(SOP),确保团队成员遵循统一规范
 - 使用批量操作时先在小范围测试,验证无误后再全量执行
@@ -333,7 +331,7 @@ PRO 版本支持以下 API Key 管理方式:
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于 Markdown 的 AI Skill,通过自然语言指令驱动 Agent 执行任务
 - **PRO 特性**: 支持批量执行、并发控制、操作日志、审计追踪、团队协作与自动化工作流
 - **安全等级**: 企业级,支持操作审计、权限隔离与合规报告
@@ -375,9 +373,9 @@ PRO 版本支持以下 API Key 管理方式:
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

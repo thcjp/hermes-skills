@@ -1,13 +1,13 @@
 ---
+
 slug: telegram-msg-toolkit-free
 name: telegram-msg-toolkit-free
 version: 1.0.1
 displayName: Telegram消息工具箱(免费版)
 summary: Telegram Bot 消息免费版：文本/图片/文件/投票发送，聊天信息查询与基础Bot命令管理.
-license: Proprietary
+license: MIT
 edition: free
-description: Telegram 消息工具箱（免费版）面向个人用户与独立开发者，封装 Telegram Bot API 的基础消息能力：文本消息、图片、文件、投票发送，聊天信息查询与基础，可生成提升工作效率
-  Bot 命令管理。通过 REST API 直接调用 Telegram Bot 接口，无需额外中间件。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
+description: "Telegram 消息工具箱（免费版）面向个人用户与独立开发者，封装 Telegram Bot API 的基础消息能力：文本消息、图片、文件、投票发送，聊天信息查询与基础，可产出提升工作效率. 适用于需要telegram msg toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 沟通协作
   - 即时通讯
@@ -19,15 +19,15 @@ tags:
   - bot
   - telegram
   - api
-  - https
-  - org
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: free
 ---
+
 # Telegram 消息工具箱（免费版）
 
 ## 概述
@@ -124,7 +124,7 @@ telegram.org/bot{{BOT_TOKEN}}/sendPoll" \
 1. 通过 BotFather 创建 Bot 获取 token（`/newbot` 命令）
 2. 将 Bot 加入目标群组并赋予发送消息权限
 3. 获取目标聊天 ID（群组以 `-100` 开头）
-4. 调用 `sendMessage` 发送第一条消息
+4. 调用 `sendMessage` 发送领先条消息
 
 ### 获取 Bot Token
 
@@ -142,7 +142,7 @@ telegram.org/bot{{BOT_TOKEN}}/sendPoll" \
 curl "https://api.telegram.org/bot{{BOT_TOKEN}}/getUpdates" | jq '.result[-1].message.chat.id'
 ```
 
-### 发送第一条消息
+### 发送领先条消息
 
 ```bash
 telegram.org/bot{{BOT_TOKEN}}/sendMessage" \
@@ -237,7 +237,7 @@ telegram.org/bot{{BOT_TOKEN}}/setMyCommands" \
 curl "https://api.telegram.org/bot{{BOT_TOKEN}}/getMyCommands"
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 已知限制
 

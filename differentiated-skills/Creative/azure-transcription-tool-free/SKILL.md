@@ -1,32 +1,13 @@
 ---
+
 slug: azure-transcription-tool-free
 name: azure-transcription-tool-free
 version: 1.0.0
 displayName: Azure语音转写免费版
 summary: "使用Azure AI进行批量语音转文字，支持基础转写与时间戳，适合个人用户处理音频.。Azure语音转写免费版 —— 面向个人用户的轻量级语音转文字工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: Azure语音转写免费版 —— 面向个人用户的轻量级语音转文字工具。核心能力:，可自动提升工作效率
-
-  - 批量语音转文字，支持存储在Blob中的音频文件
-
-  - 自动语言识别，支持中文、英文等多种语言
-
-  - 生成带时间戳的转写结果，便于字幕制作
-
-  - 支持WAV、MP3等主流音频格式
-
-  - 简单的Python API，几行代码完成转写
-
-  适用场景:
-
-  - 个人播客/会议录音转文字
-
-  - 视频字幕生成与翻译
-
-  - 语音笔记整理与归档
-
-  差异化:免费版提供核心批量转写能力，适合个人用户处理单个或少量音频文件'
+description: "Azure语音转写免费版 —— 面向个人用户的轻量级语音转文字工具。核心能力:，可自发提升工作效率. 适用于需要azure transcription tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 语音识别
   - Azure
@@ -38,14 +19,15 @@ tags:
   - azure
   - blob
   - wav
-  - locale
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Operations"
+pricing_tier: free
 ---
+
 # Azure语音转写免费版
 
 ## 概述
@@ -245,11 +227,11 @@ TRANSCRIPTION_KEY=your_subscription_key_here
 | MP3 | 16kHz+ | 有损压缩，兼容性好 |
 | FLAC | 16kHz+ | 无损压缩 |
 
-## 最佳实践
+## 优秀实践
 
 1. **音频质量**：使用清晰的录音，背景噪音越少识别准确率越高
 2. **语言指定**：始终指定正确的locale，可显著提升识别准确率
-3. **文件格式**：推荐使用WAV格式，16kHz采样率获得最佳效果
+3. **文件格式**：推荐使用WAV格式，16kHz采样率获得优秀效果
 4. **Blob存储**：音频文件需存储在可公开访问的Blob URL中
 5. **结果轮询**：批量转写为异步操作，需轮询结果直到完成
 6. **错误处理**：添加超时和重试机制，处理网络异常

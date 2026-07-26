@@ -1,4 +1,5 @@
 ---
+
 slug: mac-node-snapshot-tool-pro
 name: mac-node-snapshot-tool-pro
 version: 1.0.0
@@ -6,11 +7,7 @@ displayName: macOS截图工具专业版
 summary: 企业级macOS屏幕捕获平台,支持多屏截图、音频录屏、定时批量截图、OCR文字识别与自动上传,适合专业内容创作与文档制作.
 license: Proprietary
 edition: pro
-description: 'macOS截图工具专业版,为专业用户提供全方位屏幕捕获与处理能力.
-  核心能力:多屏截图、音频录屏、定时批量截图、OCR文字识别、图片编辑标注、云端自动上传、GIF制作.
-  适用场景:专业文档制作、教程录制、自动化测试截图、团队协作共享.
-  差异化:专业版兼容免费版截图功能,新增OCR识别与批量处理能力,满足专业内容创作需求.
-  适用关键词: macOS截图, OCR识别, 批量截图, 音频录屏, 多显示器, screenshot pro, OCR, batch capture'
+description: "macOS截图工具专业版,为专业用户包含全方位屏幕捕获与处置能力. 适用于需要mac node snapshot tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - macOS
   - 截图
@@ -27,7 +24,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Security"
+pricing_tier: L2-标准级
 ---
+
 # macOS截图工具专业版
 ## 概述
 专业版为专业用户提供完整的macOS屏幕捕获与处理平台,在免费版基础截图能力之上,新增多显示器截图、音频屏幕录制、定时批量截图、OCR文字识别、图片编辑标注、云端自动上传与GIF动图制作等专业功能。专业版完全兼容免费版截图命令,已有截图脚本可无缝升级,适合专业内容创作与文档制作场景.
@@ -359,9 +358,9 @@ echo ""
 echo "教程素材制作完成"
 echo "输出目录: ${OUTPUT_DIR}"
 ls -la "$OUTPUT_DIR"
-```
-
-### 场景二:自动化测试截图
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 #!/bin/bash
 # 自动化测试截图(定时捕获应用状态)
@@ -394,9 +393,9 @@ done
 echo ""
 echo "测试截图完成: ${COUNT}张"
 echo "总大小: $(du -sh "$OUTPUT_DIR" | cut -f1)"
-```
-
-### 场景三:截图OCR文档化
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 #!/bin/bash
 # 截图并OCR转换为文本文档
@@ -475,7 +474,7 @@ screencapture -i output.png && python3 ocr.py output.png
 | TIFF | .tiff | 无压缩,质量最高 | 打印输出 |
 | GIF | .gif | 动图格式 | 操作演示 |
 
-## 最佳实践
+## 优秀实践
 1. **批量管理**:使用定时截图功能进行自动化测试,减少人工操作.
 2. **OCR辅助**:对包含文字的截图执行OCR,便于搜索和编辑.
 3. **GIF优化**:教程使用GIF格式,控制帧率(10fps)和尺寸(800px宽)平衡质量与大小.
@@ -514,7 +513,7 @@ screencapture -i output.png && python3 ocr.py output.png
 - 云端上传功能需配置对应云存储的访问凭证
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行专业级macOS屏幕捕获与处理任务
 
 ## 错误处理

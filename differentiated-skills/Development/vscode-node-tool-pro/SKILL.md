@@ -1,4 +1,5 @@
 ---
+
 slug: "vscode-node-tool-pro"
 name: "vscode-node-tool-pro"
 version: "1.0.0"
@@ -6,21 +7,7 @@ displayName: "VSCode节点工具(专业版)"
 summary: "面向团队的企业级IDE远程操作平台,含调试、测试、终端、Agent委托与团队协作能力。。VSCode节点工具专业版为团队与企业提供端到端IDE远程操作能力,涵盖调试、测试、终端、Agent委"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  VSCode节点工具专业版为团队与企业提供端到端IDE远程操作能力,涵盖调试、测试、终端、Agent委托、工作区管理与团队协作。核心能力:
-  - 调试能力(启动/停止/断点/求值/堆栈/变量)
-  - 测试能力(列举/运行/结果)
-  - 终端执行(白名单命令)
-  - Agent委托(将复杂任务委托给Cursor Agent)
-  - 工作区信息管理
-  - 多节点团队协作
-  - 安全策略与审计日志
-
-  适用场景:
-  - 中大型团队远程协作开发
-  - 自动化调试与测试流水线
-  - 复杂任务委托给Agent执行
-  - 多节点并行任务调...
+description: "|-. 适用于需要vscode node tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - VSCode
   - Cursor
@@ -32,11 +19,6 @@ tags:
   - 开发工具
   - 代码生成
   - 编程辅助
-  - vscode
-  - agent
-  - nodes
-  - debug
-  - invoke
 tools:
   - read
   - exec
@@ -45,7 +27,9 @@ tools:
   - grep
 homepage: ""
 category: "Development"
+pricing_tier: L2-标准级
 ---
+
 # VSCode 节点工具(专业版)
 
 ## 概述
@@ -159,7 +143,7 @@ nodes invoke --node "team-vscode" \
 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:声明团队上下文
+### 领先步:声明团队上下文
 
 在对话中说明团队规模、节点配置与协作需求,例如:
 
@@ -250,7 +234,7 @@ bash （请参考skill目录中的脚本文件） "UserService"
 | Agent | `vscode.agent.*` | status, run, setup | Pro |
 | 工作区 | `vscode.workspace.*` | info | Pro |
 
-## 最佳实践
+## 优秀实践
 
 1. **命令白名单最小化**:仅启用团队实际需要的命令,降低误操作风险.
 2. **写操作确认**:启用 `confirmWrites`,关键写操作需人工确认.
@@ -309,7 +293,7 @@ Pro 版完全兼容免费版的所有命令与调用模式。个人开发者可�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于自然语言指令驱动 Agent 调用 `nodes invoke` 命令;需要预先安装 IDE 扩展、连接网关,并在团队场景配置安全策略与审计日志
 
 ## 错误处理

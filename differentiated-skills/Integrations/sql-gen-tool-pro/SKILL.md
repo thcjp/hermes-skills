@@ -1,4 +1,5 @@
 ---
+
 slug: "sql-gen-tool-pro"
 name: "sql-gen-tool-pro"
 version: "1.0.0"
@@ -6,8 +7,7 @@ displayName: "SQL生成器(专业版)"
 summary: "面向团队的自然语言转SQL专业版，含Schema感知、多表JOIN生成、性能优化建议、迁移脚本与优先支持。"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  面向团队、企业与专业开发者的SQL生成器专业版。在免费版基础上新增Schema智能感知自动补全、复杂多表JOIN自动生成、SQL性能优化建议、数据库迁移脚本自动生成、批量SQL生成与版本管理、生成质量回归测试等高级能力，配套面向产品、开发、DBA的多角色场景指南。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
+description: "|-. 适用于需要sql gen tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 集成工具
   - 数据库
@@ -19,16 +19,15 @@ tags:
   - 电商
   - sql
   - schema
-  - pro
-  - join
-  - python
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # SQL生成器（专业版）
 
 专业版在免费版核心能力之上，新增Schema智能感知、复杂多表JOIN生成、SQL性能优化建议、数据库迁移脚本生成、批量生成与版本管理等高级能力，专为团队协作、企业生产环境与高保真SQL生成场景设计.
@@ -137,7 +136,7 @@ pro.regression_test(baseline_dir="generated_sql/v1.2/")
 
 ## 快速开始
 
-### 第一步：连接数据库感知Schema
+### 领先步：连接数据库感知Schema
 
 ```python
 from sql_gen_tool import ProFeatures
@@ -197,7 +196,7 @@ pro.regression_config(
 )
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. Schema变更后刷新感知缓存
 

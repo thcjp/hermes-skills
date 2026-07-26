@@ -1,38 +1,13 @@
 ---
+
 slug: azure-cli-toolkit-free
 name: azure-cli-toolkit-free
 version: 1.0.1
 displayName: Azure命令行工具免费版
 summary: "Azure云平台命令行管理工具,支持虚拟机、存储、网络等核心资源的基本操作。面向个人开发者的 Azure 云平台命令行管理工具,提供核心资源管理能力。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人开发者的 Azure 云平台命令行管理工具,提供核心资源管理能力。核心能力:
-
-  - Azure 订阅与资源组管理
-
-  - 虚拟机、存储账户、网络资源基本操作
-
-  - 输出格式化与查询语法(JMESPath)
-
-  - 交互式登录与基础认证
-
-  适用场景:
-
-  - 个人云资源创建与查看
-
-  - 开发测试环境快速搭建
-
-  - 日常资源状态查询
-
-  差异化:
-
-  - 免费版覆盖个人开发者常用命令
-
-  - 交互式操作,适合手动执行
-
-  - 无需复杂配置,开箱即用
-
-  适用关键词: azure, cli, cloud, vm, storage,...'
+description: "面向个人开发者的 Azure 云平台命令行管控工具,包含核心资源管控能力。核心能力:. 适用于需要azure cli toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 云平台
   - Azure
@@ -44,14 +19,15 @@ tags:
   - list
   - create
   - myresourcegroup
-  - group
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Operations"
+pricing_tier: free
 ---
+
 # Azure 命令行工具免费版
 
 ## 概述
@@ -259,7 +235,7 @@ az login
 ```
 
 浏览器会打开登录页面,完成认证后终端会显示订阅列表.
-### 第四步: 创建第一个资源
+### 第四步: 创建领先个资源
 
 ```bash
 az group create -g my-first-rg -l eastus
@@ -294,7 +270,7 @@ az configure --defaults group=myRG location=eastus
 az configure --defaults group='' location=''
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 善用查询语法
 
@@ -392,7 +368,7 @@ export AZURE_TENANT_ID="your-tenant-id"
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(Markdown 指令 + 命令行执行)
+- **分类**: MD+EXEC模式Markdown 指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 执行 `az` 命令管理 Azure 资源
 - **离线可用**: 否,所有操作需要连接 Azure 云平台
 

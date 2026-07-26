@@ -1,12 +1,13 @@
 ---
+
 slug: ad-creative-intel-free
 name: ad-creative-intel-free
 version: 1.0.1
 displayName: 广告情报免费版
 summary: "解决竞品创意看不见、投放动态摸不透、榜单变化追不到的免费广告情报查询工具。广告情报免费版是面向买量投放、创意策划、市场研究人员的轻量级广告情报查询工具，针对"竞品创意素材分散在多平台难以横向"
-license: Proprietary
+license: MIT
 edition: free
-description: 广告情报免费版是面向买量投放、创意策划、市场研究人员的轻量级广告情报查询工具，针对"竞品创意素材分散在多平台难以横向对比、新投放素材发现滞后、应用榜单排名变化无法及时追踪、缺乏统一的数据查询入口"四大痛点而设计。它把多源广告情报数据封装为统一查询接口，让用户在一个会话内完成创意搜索、应用洞察、榜单查询三件事，可分析提升工作效率
+description: "广告情报免费版是面向买量投放、创意策划、市场研究人员的轻量级广告情报查询工具，针对\"竞品创意素材分散在多平台难以横向对比、新投放素材发现滞后、应用榜单排名变化无法及时追踪、缺乏统一的数据查询入口\"四大痛点而设计。它把多源广告情报数据封装为统一查询接口，让用户在一个会话内完成创意搜索、应用洞察、榜单查询三件事，可剖析提升工作效率"
 tags:
   - 广告情报
   - 创意搜索
@@ -18,8 +19,6 @@ tags:
   - api
   - data
   - post
-  - get
-  - 调用
 tools:
   - read
   - exec
@@ -28,7 +27,9 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+pricing_tier: free
 ---
+
 # 广告情报免费版（Ad Creative Intel Free）
 
 面向买量投放、创意策划、市场研究人员的轻量级广告情报查询工具。在一个会话内完成创意搜索、应用洞察、榜单查询三件事，所有结果以原始结构化 JSON 返回，由调用 Agent 决定分析与呈现方式.
@@ -60,7 +61,7 @@ curl -s "https://api.ad-creative-intel.com/api/data/filter-options" \
   -H "X-API-Key: ${ADC_INTEL_API_KEY}"
 ```
 
-### Step 3：执行第一次创意搜索（< 60 秒）
+### Step 3：执行领先次创意搜索（< 60 秒）
 
 ```bash
 curl -s -X POST "https://api.ad-creative-intel.com/api/data/search" \

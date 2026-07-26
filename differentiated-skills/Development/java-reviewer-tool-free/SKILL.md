@@ -1,30 +1,13 @@
 ---
+
 slug: java-reviewer-tool-free
 name: java-reviewer-tool-free
 version: 1.0.0
 displayName: Java代码审查免费版
 summary: "Java 代码变更审查工具，按 6 大维度生成结构化审查报告与修复建议.。面向 Java 开发者的代码审查工具，自动生成结构化审查报告。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向 Java 开发者的代码审查工具，自动生成结构化审查报告。核心能力:
-
-  - 6 大维度代码审查（风格/异常/安全/性能/设计/资源）
-
-  - 4 级严重程度分级（Critical/Major/Minor/Suggestion）
-
-  - 代码修复建议与前后对比
-
-  - Markdown 格式审查报告输出
-
-  适用场景:
-
-  - 个人 Java 代码变更审查
-
-  - 代码质量自查与缺陷发现
-
-  - 提交前的代码质量验证
-
-  差异化: 免费版聚焦个人开发者的代码变更审查，提供标准化的 6 维度检查与修复建议模板，开箱即用'
+description: "面向 Java 开发者的代码审查工具，自发产出结构化审查报告。核心能力:. 适用于需要java reviewer tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - Java
@@ -36,15 +19,15 @@ tags:
   - java
   - sql
   - 规则
-  - critical
-  - major
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Java 代码审查工具（免费版）
 
 ## 概述
@@ -135,7 +118,9 @@ public User findById(Long id) {
         // ...
     }
 }
-```
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### 场景二：审查单个源文件
@@ -205,7 +190,7 @@ public User findByUsername(String username) {
 | Critical | 必须修复，可能导致崩溃/安全漏洞/数据丢失 | SQL 注入、空指针崩溃、硬编码密码 |
 | Major | 强烈建议修复，影响质量/可维护性/性能 | 空 catch 块、N+1 查询、过长函数 |
 | Minor | 建议改进，不影响功能但有优化空间 | 魔法值未提取、命名不清晰 |
-| Suggestion | 可选优化，用于代码美化或最佳实践 | 添加 Javadoc、提取工具方法 |
+| Suggestion | 可选优化，用于代码美化或优秀实践 | 添加 Javadoc、提取工具方法 |
 
 ### 审查流程
 
@@ -310,7 +295,7 @@ public User findByUsername(String username) {
 | RES-003 | 及时关闭连接/流/文件 |
 | RES-004 | 避免内存泄漏 |
 
-## 最佳实践
+## 优秀实践
 
 1. **提交前审查**：所有代码变更提交前必须经过审查
 

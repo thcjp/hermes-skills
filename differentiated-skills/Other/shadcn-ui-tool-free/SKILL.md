@@ -1,54 +1,34 @@
 ---
+
 slug: shadcn-ui-tool-free
 name: shadcn-ui-tool-free
 version: 1.0.0
 displayName: shadcn UI工具-免费版
 summary: "使用shadcn/ui构建现代React应用,支持组件安装、表单验证与主题定制。shadcn/ui 开发工具免费版,面向个人开发者与小型项目。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: shadcn/ui 开发工具免费版,面向个人开发者与小型项目。核心能力:，可处理提升工作效率
-
-  - shadcn/ui 组件安装与管理
-
-  - Tailwind CSS 样式定制
-
-  - react-hook-form + zod 表单验证
-
-  - 暗色/亮色主题切换
-
-  - 常用组件使用示例
-
-  - 响应式布局指导
-
-  适用场景:
-
-  - 个人项目 UI 快速搭建
-
-  - 学习 shadcn/ui 组件库
-
-  - React 应用界面开发
-
-  差异化:免费版提供核心组件使用能力'
+description: "shadcn/ui 开发工具免费版,面向个人开发者与小型项目。核心能力:，可处置提升工作效率. 适用于需要shadcn ui tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要shadcn ui tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - shadcn/ui
+  - shadcn
+  - automation
+  - productivity
+  - developer-tools
   - React
   - Tailwind CSS
   - 前端开发
   - UI设计
   - 前端
-  - 设计
-  - form
-  - shadcn
-  - import
-  - button
-  - components
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
+
 ---
+
 # shadcn UI 工具 - 免费版
 
 ## 概述
@@ -361,7 +341,7 @@ npx shadcn@latest add button card input label
 | Tabs | `npx shadcn@latest add tabs` | 标签页 |
 | Select | `npx shadcn@latest add select` | 下拉选择 |
 
-## 最佳实践
+## 优秀实践
 
 1. **组件可控**:shadcn/ui 组件代码在项目中,可自由修改,不要当外部库用
 2. **统一主题**:通过 CSS 变量管理颜色,不要在组件中硬编码颜色值
@@ -413,7 +393,7 @@ A: 在 `components/` 目录下创建新组件,引用 `components/ui/` 中的基�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **分类**: MD+EXEC模式Markdown指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 执行 shadcn/ui 组件安装与代码生成
 - **限制**: 免费版不支持设计系统管理、企业组件库与团队协作
 

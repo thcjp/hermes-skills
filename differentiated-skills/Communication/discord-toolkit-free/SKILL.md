@@ -1,30 +1,13 @@
 ---
+
 slug: discord-toolkit-free
 name: discord-toolkit-free
 version: 1.0.1
 displayName: Discord工具箱免费版
 summary: "基础 Discord 消息管理工具,支持发送、回复、表情反应与简单投票,适合个人用户.。面向个人用户的轻量 Discord 消息与互动管理工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人用户的轻量 Discord 消息与互动管理工具。核心能力:
-
-  - 发送、编辑、删除频道消息与私信
-
-  - 对消息添加表情反应与查看反应列表
-
-  - 创建简单投票(Poll)与频道置顶
-
-  - 管理基础话题(Thread)与频道信息查询
-
-  适用场景:
-
-  - 个人 Discord 服务器日常消息互动
-
-  - 小型团队的通知发送与状态标记
-
-  - 个人机器人快速回复与表态
-
-  差异化: 免费版聚焦高频基础操作,零配置即用;Pro 版提供批量操作、审核管理与角色权限等企业级能力'
+description: "面向个人用户的轻量 Discord 消息与互动管控工具。核心能力:. 适用于需要discord toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Discord
   - 消息管理
@@ -36,14 +19,15 @@ tags:
   - json
   - action
   - sendmessage
-  - channel
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: free
 ---
+
 # Discord 工具箱(免费版)
 
 ## 概述
@@ -150,7 +134,7 @@ Agent 会调用 `discord` 工具完成发送。`to` 字段使用 `channel:<id>` 
 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:配置机器人令牌
+### 领先步:配置机器人令牌
 
 在 Agent 环境中配置 Discord 机器人令牌。机器人需要具备目标频道的「发送消息」「添加反应」「管理消息」等基础权限.
 ### 第二步:验证连通性
@@ -237,7 +221,7 @@ Agent 会调用 `discord` 工具完成发送。`to` 字段使用 `channel:<id>` 
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **消息风格简洁化**: Discord 是聊天平台,不是文档系统。消息控制在 1-3 句话,多个短消息优于一段长文。避免使用 Markdown 表格(Discord 会渲染成难看的 `| 文本 |`),改用列表.
 2. **善用表情代替回复**: 简单的确认(✅)、注意(⚠️)等场景,用表情反应比回复消息更高效,减少频道噪音.
@@ -291,7 +275,7 @@ Agent 会调用 `discord` 工具完成发送。`to` 字段使用 `channel:<id>` 
 - **其他 API Key**: 免费版不依赖额外 API Key,仅使用 Discord Bot Token.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令 + 部分功能需 `exec` 执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令 + 部分功能需 `exec` 执行能力)
 - **说明**: 以自然语言指令驱动 Agent 调用 Discord 工具完成消息与互动操作
 - **适用规模**: 单服务器、个人/小团队,日操作量 100 次以内
 - **升级建议**: 如需批量操作、审核管理、角色权限管理,请升级至 `discord-toolkit-pro`

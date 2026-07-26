@@ -7,13 +7,7 @@ displayName: "财务会计专业版"
 summary: "企业级财务会计系统，支持多账套、全税种、批量发票、ERP集成与审计追踪。。面向中大型企业财务部门的全栈会计处理系统。支持多公司多账套管理、 全税种自动计算、批量电子发票生成、银行API直连对"
 license: "Proprietary"
 edition: "pro"
-description: "|-
-  面向中大型企业财务部门的全栈会计处理系统。支持多公司多账套管理、
-  全税种自动计算、批量电子发票生成、银行API直连对账、ERP系统集成
-  与完整审计追踪。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。减少重复劳动，提升工作效率。触发关键词：API设计、自动化、转换、PDF、Excel、机器学习"
-  面向中大型企业财务部门的全栈会计处理系统。支持多公司多账套管理、
-  全税种自动计算、批量电子发票生成、银行API直连对账、ERP系统集成
-  与完整审计追踪。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
+description: "|-. 适用于需要finance acct tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Finance
   - 会计记账
@@ -25,16 +19,15 @@ tags:
   - true
   - pro
   - finance_pro
-  - python
-  - sap
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Finance"
-
+pricing_tier: L2-标准级
 ---
+
 # 财务会计专业版（PRO版）
 
 ## 概述
@@ -278,7 +271,7 @@ pro_config:
         permissions: ["all"]
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### PRO版企业实践
 

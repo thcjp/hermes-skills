@@ -1,25 +1,24 @@
 ---
+
 slug: thesis-helper-tool-free
 name: thesis-helper-tool-free
 version: 1.0.0
 displayName: 论文写作助手免费版
 summary: "面向学生和研究者的论文辅助工具,提供大纲生成、文献综述框架、摘要撰写与引用格式转换。论文写作助手免费版,面向学生和个人研究者提供基础的论文写作辅助能力。支持论文大纲生成、文献综述框架搭建、摘"
-license: Proprietary
+license: MIT
 edition: free
-description: 论文写作助手免费版,面向学生和个人研究者提供基础的论文写作辅助能力。支持论文大纲生成、文献综述框架搭建、摘要撰写、引用格式转换等核心功能。Use
-  when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
+description: "论文写作助手免费版,面向学生和个人研究者包含基础的论文写作辅助能力。兼容论文大纲产出、文献综述框架搭建、摘要撰写、引用格式变换等核心功能。Use. 适用于需要thesis helper tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要thesis helper tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 研究工具
+  - thesis
+  - helper
+  - automation
+  - productivity
   - 论文写作
   - 学术辅助
   - 搜索
   - 检索
   - 工具
-  - thesis-helper
-  - topic
-  - bash
-  - outline
-  - file
 tools:
   - read
   - exec
@@ -27,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 # 论文写作助手免费版
 
 ## 概述
@@ -59,7 +61,7 @@ thesis-helper outline --topic "社交媒体对青少年心理健康的影响" --
 ```text
 论文大纲:大语言模型在医疗诊断中的应用
 # ...
-第一章 绪论
+领先章 绪论
   1.1 研究背景与意义
   1.2 国内外研究现状
   1.3 研究目标与内容
@@ -218,7 +220,7 @@ thesis-helper outline --topic "我的研究主题" --template extracted_template
 
 ## 快速开始
 
-### 第一步:查看可用命令
+### 领先步:查看可用命令
 
 ```bash
 # 查看所有命令
@@ -275,7 +277,7 @@ thesis-helper config set --field "medicine" --template Vancouver
 thesis-helper config set --field "humanities" --template Chicago
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 大纲先行,再填内容
 
@@ -378,7 +380,7 @@ thesis-helper outline \
 免费版基于本地运行,无需额外 API Key。所有写作辅助功能通过 Agent 内置 LLM 实现.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,通过 exec 执行命令行工具)
+- **分类**: MD+EXEC模式纯 Markdown 指令,通过 exec 执行命令行工具)
 - **说明**: 基于命令行的论文写作辅助工具,通过自然语言指令驱动 Agent 生成论文结构化内容
 - **适用规模**: 单用户、单文档、本地运行
 

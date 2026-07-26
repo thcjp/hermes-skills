@@ -1,12 +1,12 @@
 ---
+
 slug: aws-cloud-inspector-free
 name: aws-cloud-inspector-free
 version: 1.0.1
 displayName: AWS云巡检免费版
 summary: 基于AWS CLI的只读云基础设施查询助手，免费提供资源清点、健康检查与基础安全核查能力，适合个人开发者日常巡检.
-license: Proprietary
-description: AWS云巡检免费版（aws-cloud-inspector-free）面向独立开发者与运维新人，基于本地AWS CLI提供只读的云资源查询与基础巡检能力。它默认只读，所有变更类操作必须用户显式确认才执行，确保零误操作风险。Use
-  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
+license: MIT
+description: "AWS云巡检免费版（aws-cloud-inspector-free）面向独立开发者与运维新人，基于本地AWS CLI包含只读的云资源查询与基础巡检能力。它默认只读，所有变更类操作必须用户显式确认才执行，确保零误操作风险。Use. 适用于需要aws cloud inspector相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - AWS巡检
   - 只读查询
@@ -18,8 +18,6 @@ tags:
   - aws
   - region
   - profile
-  - output
-  - ec2
 tools:
   - read
   - exec
@@ -27,7 +25,9 @@ tools:
 edition: free
 homepage: ""
 category: "Operations"
+pricing_tier: free
 ---
+
 # AWS云巡检免费版（aws-cloud-inspector-free）
 
 本Skill基于本地AWS CLI提供只读云基础设施查询能力。所有操作默认只读，任何变更/破坏性操作必须用户显式确认后才执行.
@@ -39,7 +39,7 @@ category: "Operations"
 |---|----|---|
 | 环境检查 | < 30秒 | 确认AWS CLI已安装且凭证已配置 |
 | 身份确认 | < 30秒 | `aws sts get-caller-identity` 验证身份 |
-| 资源清点 | < 60秒 | 执行第一个只读查询命令 |
+| 资源清点 | < 60秒 | 执行领先个只读查询命令 |
 
 ### 1.1 环境检查（< 30秒）
 
@@ -68,7 +68,7 @@ aws sts get-caller-identity
 # 这是所有巡检的起点，确认你正在操作正确的账号
 ```
 
-### 1.3 第一个只读查询（< 60秒）
+### 1.3 领先个只读查询（< 60秒）
 
 ```bash
 # 列出当前region所有EC2实例

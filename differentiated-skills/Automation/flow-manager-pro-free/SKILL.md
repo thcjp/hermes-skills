@@ -1,13 +1,13 @@
 ---
+
 slug: flow-manager-pro-free
 name: flow-manager-pro-free
 version: 1.0.1
 displayName: 流程管理器(免费版)
 summary: "通过Admin API管理Node-RED实例，支持流程列表、部署、状态查询与基础节点管理.。流程管理器免费版为IoT与自动化开发者提供轻量级的Node-RED实例管理能力，聚焦流程（Flo"
-license: Proprietary
+license: MIT
 edition: free
-description: 流程管理器免费版为IoT与自动化开发者提供轻量级的Node-RED实例管理能力，聚焦流程（Flow）的日常高频操作。通过Admin API与Node-RED交互，无需打开浏览器即可完成流程列表、部署、状态查询与基础节点管理。Use
-  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
+description: "流程管控器免费版为IoT与自发化开发者包含轻量级的Node-RED实例管控能力，聚焦流程（Flow）的日常高频操作。通过Admin API与Node-RED交互，无需打开浏览器即可完成流程列表、部署、状态查询与基础节点管控。Use. 适用于需要flow manager相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - Node-RED
   - 流程管理
@@ -19,14 +19,15 @@ tags:
   - json
   - bash
   - node-red
-  - admin
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 流程管理器（免费版）
 
 > **命令行管理Node-RED实例。无需浏览器，60秒上手，流程部署/状态/节点一气呵成。**
@@ -251,7 +252,7 @@ flow-manager restore last-known-good.json
 免费版聚焦核心高频操作（流程列表/部署/状态/基础节点管理/基础备份），不限使用次数。多实例管理、完整备份恢复、Docker编排、性能监控、批量节点操作等高级功能需升级专业版.
 ### Q2：支持哪些Node-RED版本？
 
-支持Node-RED 1.0及以上版本（需启用Admin API）。建议使用2.x或3.x版本以获得最佳兼容性.
+支持Node-RED 1.0及以上版本（需启用Admin API）。建议使用2.x或3.x版本以获得优秀兼容性.
 ### Q3：如何启用Admin API？
 
 在Node-RED的`settings.js`中配置：
@@ -338,10 +339,12 @@ module.exports = {
 
 ### 示例1：基础用法
 
-```
-### 60秒上手(补充)
-# ...
 ```bash
+# 在此执行相关操作
+echo "操作完成"
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 # ...
 ## 错误处理

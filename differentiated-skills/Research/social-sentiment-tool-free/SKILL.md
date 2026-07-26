@@ -1,50 +1,34 @@
 ---
+
 slug: social-sentiment-tool-free
 name: social-sentiment-tool-free
 version: 1.0.0
 displayName: 社交情感分析免费版
 summary: "轻量级社交媒体情感分析工具,支持单平台关键词监控与基础情感分类,适合个人品牌追踪。社交情感分析免费版为个人用户提供轻量级的社交媒体情感监控能力."
-license: Proprietary
+license: MIT
 edition: free
-description: '社交情感分析免费版为个人用户提供轻量级的社交媒体情感监控能力.
-  核心能力:
-
-  - 单平台社交媒体数据采集
-
-  - 关键词情感分类(正面/负面/中性)
-
-  - 基础主题提取
-
-  - 情感分布统计
-
-  适用场景:
-
-  - 个人品牌口碑监控
-
-  - 产品用户反馈分析
-
-  - 话题情感趋势追踪
-
-  差异化:免费版聚焦核心情感分析流程,通过Python+CSV实现轻量部署,适合个人用户监控单一平台的品牌或话题情感,无需复杂配置.
-  适用关键词: 社交媒体, 情感分析, sentiment, 口碑监控, 品牌追踪, 舆情分析, 关键词监控'
+description: "社交情感剖析免费版为个人用户包含轻量级的社交媒体情感监控能力. 适用于需要social sentiment tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要social sentiment tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 研究工具
+  - social
+  - sentiment
+  - automation
+  - productivity
   - 情感分析
   - 社交媒体
   - 个人效率
   - 营销
   - 通信
-  - text
-  - csv
-  - negative
-  - positive
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: free
+
 ---
+
 # 社交情感分析免费版
 
 ## 概述
@@ -379,15 +363,15 @@ if __name__ == '__main__':
     analyze(sys.argv[1])
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 情感词典要贴合领域
 
 通用词典的准确率有限。根据监控领域(产品、服务、话题)定制情感词典,加入领域特有表达,可显著提升准确率:
 
 ```python
-# 电商领域:加入"划算"、"性价比"、"假货"等领域词
-# 技术产品:加入"流畅"、"卡顿"、"闪退"等领域词
+# 在此执行相关操作
+pass
 ```
 
 ### 2. 数据量要足够
@@ -462,7 +446,7 @@ A: 可以。情感词典支持多语言,只需在词典中添加目标语言的�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行Python脚本)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行Python脚本)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent调用Python脚本完成社交媒体情感分析任务。免费版聚焦个人用户的单平台数据采集、词典法情感分类与基础主题提取,适合个人品牌口碑监控、产品用户反馈分析与话题情感趋势追踪场景.
 ## 错误处理
 

@@ -7,13 +7,14 @@ displayName: Flowforge Builder
 summary: "全功能JSON工作流构建，四种触发器、多条件组合、数据处理、通知发送、六模板库.。流程锻造器专业版是在免费版基础上的全功能升级，为AI Agent提供代码化的工作流构建能力。通过JSON定义"
 license: Proprietary
 edition: pro
-description: '流程锻造器专业版是在免费版基础上的全功能升级，为AI Agent提供代码化的工作流构建能力。通过JSON定义触发器、操作步骤、条件判断和错误处理，将跨平台自动化流程转化为可版本控制、可复用的工作流配置。专业版解锁API
-  Webhook触发、多条件组合、数据处理转换、通知发送四大高级能力.
-  核心能力：四种触发器（cron/watch/manual/webhook）、五类操作节点（文件/网络/命令/数据处理/通知发送）、多条件组合判断（AND/OR嵌套）、六模板库（数据同步/内容发布/报告生成/监控告警/客户入驻/订单处理）、多角色场景指南、完整故障排查表.
-  适用场景：定时数据抓取与保存、文件变化自动处理、多步骤数据同步、跨平台流程编排、Webhook事件驱动、数据实时处理与转换、多渠道通知发送、报告自动生成与分发.
-  差异化：采用JSON声明式工作流定义，便于版本控制和团队协作。专业版完整支持四种触发器和五类操作节点，提供六模板库和定制开发指南，适合企业级自动化流程构建。保留原始版权声明.
-  适用关键词：工作流构建、自动化流程、JSON工作流、触发器、Webhook、定时任务、文件监控、数据处理'
-tags: 工作流构建,触发器系统,Webhook,数据处理,webhook,json
+description: "流程锻造器专业版是在免费版基础上的全功能升级，为AI Agent包含代码化的工作流构建能力。通过JSON定义触发器、操作步骤、条件判断和错误处置，将跨平台自发化流程转化为可版本控制、可复用的工作流配置。专业版解锁API. 适用于需要flowforge builder相关能力的开发场景,提供结构化的工作流程和配置指引."
+tags:
+  - 工作流构建
+  - 触发器系统
+  - Webhook
+  - 数据处理
+  - webhook
+  - json
 tools:
   - read
   - exec
@@ -21,7 +22,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
+pricing_tier: L2-标准级
 ---
 
 # 流程锻造器（专业版）
@@ -806,8 +807,8 @@ runner.register_trigger('custom', CustomTrigger)
 # .env文件
 SOURCE_API=https://api.source.com
 TARGET_API=https://api.target.com
-SLACK_WEBHOOK=https://hooks.slack.com/services/xxx
-DINGTALK_WEBHOOK=https://oapi.dingtalk.com/robot/send?access_token=xxx
+SLACK_WEBHOOK=https://hooks.slack.com/services/placeholder
+DINGTALK_WEBHOOK=https://oapi.dingtalk.com/robot/send?access_token=placeholder
 WEBHOOK_TOKEN=your_secure_token
 PAYMENT_WEBHOOK_TOKEN=payment_webhook_secret
 # ...
@@ -851,7 +852,7 @@ PAYMENT_WEBHOOK_TOKEN=payment_webhook_secret
 可以。独立的步骤可以并行执行，用 `"parallel": true` 标记。有依赖关系的步骤必须串行。例如多个fetch请求互相独立，可以并行执行以减少总耗时。但后续的transform步骤依赖前面所有fetch的结果，必须等全部fetch完成后才能执行.
 ### Q8：重试机制如何工作？
 
-专业版支持两种退避策略：fixed（固定间隔重试）和exponential（指数退避）。例如 `"retry": {"count": 3, "interval": 60, "backoff": "exponential"}` 表示最多重试3次，第一次间隔60秒，第二次120秒，第三次240秒。重试期间工作流暂停，重试次数用完后触发onFail策略.
+专业版支持两种退避策略：fixed（固定间隔重试）和exponential（指数退避）。例如 `"retry": {"count": 3, "interval": 60, "backoff": "exponential"}` 表示最多重试3次，领先次间隔60秒，第二次120秒，第三次240秒。重试期间工作流暂停，重试次数用完后触发onFail策略.
 ### Q9：如何管理工作流版本？
 
 建议将工作流JSON文件纳入Git版本控制。每次修改提交commit，可以清晰追踪变更历史。生产环境使用tag标记稳定版本。回滚时只需checkout到历史版本即可。团队协作时通过Pull Request审查工作流变更，确保质量.
@@ -978,9 +979,9 @@ PAYMENT_WEBHOOK_TOKEN=payment_webhook_secret
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

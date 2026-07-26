@@ -1,13 +1,13 @@
 ---
+
 slug: context-compressor-free
 name: context-compressor-free
 version: 1.0.1
 displayName: Context Compressor
 summary: "智能压缩对话日志为结构化摘要，4-8倍压缩比，保留关键决策与教训，降低Token成本.。上下文压缩器免费版解决AI Agent长期协作中"记忆膨胀"的核心痛点：MEMORY。md动辄上万字、"
-license: Proprietary
+license: MIT
 edition: free
-description: 上下文压缩器免费版解决AI Agent长期协作中"记忆膨胀"的核心痛点：MEMORY。md动辄上万字、每日日志堆积如山、关键决策被冗余信息淹没、Token成本随对话增长线性飙升。Use，可处理提升工作效率
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "上下文压缩器免费版解决AI Agent长期协作中\"记忆膨胀\"的核心痛点：MEMORY。md动辄上万字、每日日志堆积如山、关键决策被冗余信息淹没、Token成本随对话增长线性飙升。Use，可处置提升工作效率. 适用于需要context compressor相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 上下文压缩
   - 记忆管理
@@ -27,7 +27,9 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+pricing_tier: free
 ---
+
 # 上下文压缩器（免费版）
 
 > **让Agent的记忆瘦身。4-8倍压缩比，关键信息零丢失。**
@@ -49,7 +51,7 @@ category: "Agents"
 │           三层记忆压缩体系                      │
 ├────────────────────────────────────────────────┤
 │                                                │
-│  第一层：身份档案 (IDENTITY.md)                 │
+│  领先层：身份档案 (IDENTITY.md)                 │
 │          超压缩，稳定不变                       │
 │          你是谁，什么最重要                     │
 │                                                │
@@ -75,7 +77,7 @@ category: "Agents"
 4. 参考## 错误处理章节处理异常
 5. 查看## FAQ解答常见疑问
 
-### 一分钟压缩你的第一个日志
+### 一分钟压缩你的领先个日志
 
 ```bash
 # 压缩单日日志为结构化摘要
@@ -118,7 +120,7 @@ cat /tmp/today.md >> MEMORY.md
 
 大多数记忆工具在面对非结构化日志时会失效，本工具采用三步混合策略：
 
-**第一步 - 关键词匹配**：扫描标题，识别40+种中英文模式：
+**领先步 - 关键词匹配**：扫描标题，识别40+种中英文模式：
 
 | 类别 | 中文模式 | 英文模式 |
 |:-----|:-----|:-----|
@@ -329,10 +331,12 @@ md /tmp/compressed.md
 
 ### 示例1：基础用法
 
-```
-### 一分钟压缩你的第一个日志(补充)
-# ...
 ```bash
+# 在此执行相关操作
+echo "操作完成"
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 # ...
 ## 错误处理

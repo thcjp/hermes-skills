@@ -1,4 +1,5 @@
 ---
+
 slug: apple-health-tool-pro
 name: apple-health-tool-pro
 version: 1.0.0
@@ -6,14 +7,7 @@ displayName: 健康数据助手专业版
 summary: "企业级健康数据分析平台,支持多用户聚合、PMC疲劳模型、团队报告与批量导出。面向企业、健身工作室与专业运动队的健康数据分析平台."
 license: Proprietary
 edition: pro
-description: '面向企业、健身工作室与专业运动队的健康数据分析平台.
-  核心能力: 多用户聚合分析、PMC疲劳模型、团队健康报告、批量数据导出、优先技术支持
-
-  适用场景: 健身工作室会员管理、运动队训练监控、企业员工健康关怀、保险精算数据采集
-
-  差异化: 专业版支持多租户隔离、批量操作、自定义报告模板,与免费版数据格式完全兼容
-
-  适用关键词: 健康数据分析, 团队健康报告, PMC疲劳模型, 运动队管理, 健身工作室, 批量导出'
+description: "面向企业、健身工作室与专业运动队的健康数据剖析平台. 适用于需要apple health tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 健康管理
   - 企业级
@@ -25,11 +19,6 @@ tags:
   - 效率
   - 生活
   - 健康
-  - self
-  - headers
-  - api
-  - resp
-  - pmc
 tools:
   - read
   - exec
@@ -37,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 健康数据助手 (专业版)
 
 ## 概述
@@ -216,7 +207,7 @@ export TRANSITION_EDITION="pro"
 
 ```bash
 # 批量导入会员 (CSV 格式)
-curl -X POST -H "X-API-Key: $TRANSITION_ADMIN_KEY" \
+curl -X POST -H "X-API-ref: $TRANSITION_ADMIN_KEY" \
   -H "Content-Type: multipart/form-data" \
   -F "file=@members.csv" \
   "https://api.transition.fun/api/v1/admin/members/import"
@@ -234,11 +225,11 @@ m002,李四,lisi@example.com,2026-02-01,basic
 
 ```bash
 # 切换不同租户上下文
-curl -H "X-API-Key: $TRANSITION_ADMIN_KEY" \
+curl -H "X-API-ref: $TRANSITION_ADMIN_KEY" \
   -H "X-Org-Id: studio_a" \
   "https://api.transition.fun/api/v1/admin/members"
 # ...
-curl -H "X-API-Key: $TRANSITION_ADMIN_KEY" \
+curl -H "X-API-ref: $TRANSITION_ADMIN_KEY" \
   -H "X-Org-Id: studio_b" \
   "https://api.transition.fun/api/v1/admin/members"
 ```
@@ -310,7 +301,7 @@ def render_report(data):
     return TEMPLATE.render(**data)
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 多租户数据隔离
 
@@ -389,7 +380,7 @@ def poll_job(job_id, interval=10, max_wait=600):
 启用审计日志,记录所有敏感操作,满足合规要求.
 ```bash
 # 查询审计日志
-curl -H "X-API-Key: $TRANSITION_ADMIN_KEY" \
+curl -H "X-API-ref: $TRANSITION_ADMIN_KEY" \
   "https://api.transition.fun/api/v1/admin/audit?start=2026-07-01&end=2026-07-31"
 ```
 
@@ -444,7 +435,7 @@ export TRANSITION_ORG_ID="org_your_id"
 export TRANSITION_EDITION="pro"
 # ...
 # 可选: Webhook 通知
-export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
+export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/placeholder"
 # ...
 # 可选: 数据库审计日志存储 (使用兼容数据库)
 export AUDIT_DB_URL="db://user:pass@host:5432/audit"
@@ -452,7 +443,7 @@ export AUDIT_DB_URL="db://user:pass@host:5432/audit"
 
 ### 可用性分类
 
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+exec方法(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 面向企业与组织用户,通过自然语言指令驱动 Agent 调用 Transition Pro API,完成多用户健康数据聚合分析、团队报告生成、批量数据操作
 - **专业版特性**: 多租户隔离、PMC 深度计算、批量导出、自定义模板、优先技术支持、SLA 保障
 - **兼容性**: 与免费版数据格式完全兼容,支持平滑升级
@@ -475,9 +466,9 @@ export AUDIT_DB_URL="db://user:pass@host:5432/audit"
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

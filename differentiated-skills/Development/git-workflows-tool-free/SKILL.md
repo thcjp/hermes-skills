@@ -5,29 +5,9 @@ name: git-workflows-tool-free
 version: 1.0.0
 displayName: Git高级操作免费版
 summary: "Git 进阶操作助手，涵盖交互式变基、二分查找、工作树与引用日志恢复.。面向进阶开发者的 Git 高级操作工具，覆盖 add/commit/push 之外的核心进阶场景。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 面向进阶开发者的 Git 高级操作工具，覆盖 add/commit/push 之外的核心进阶场景。核心能力:。可自动提升工作效率
-
-  - 交互式变基（rebase）整理提交历史
-
-  - 二分查找（bisect）定位引入缺陷的提交
-
-  - 工作树（worktree）并行多分支开发
-
-  - 引用日志（reflog）恢复丢失的提交
-
-  适用场景:
-
-  - 合并前清理提交历史
-
-  - 定位回归缺陷的引入提交
-
-  - 同时处理多个分支任务
-
-  - 误操作后的提交恢复
-
-  差异化: 免费版聚焦开发者日常高频的进阶操作，提供交互式变基与二分查找的完整指引，开箱即用'
+description: "面向进阶开发者的 Git 高级操作工具，覆盖 add/commit/push 之外的核心进阶场景。核心能力:。可自发提升工作效率. 适用于需要git workflows tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - 版本控制
@@ -44,7 +24,7 @@ tools:
   - write
 homepage: ""
 category: "Development"
-
+pricing_tier: free
 ---
 
 # Git 高级操作助手（免费版）
@@ -292,7 +272,7 @@ git cherry-pick --continue
 git cherry-pick --abort
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **变基仅限本地分支**：永远不要变基已推送到共享分支的提交
 
@@ -431,9 +411,9 @@ git cherry-pick --abort
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

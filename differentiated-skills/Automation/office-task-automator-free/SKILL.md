@@ -1,13 +1,13 @@
 ---
+
 slug: office-task-automator-free
 name: office-task-automator-free
 version: 1.0.1
 displayName: 办公任务自动化(免费版)
 summary: 文档批量处理与数据清洗核心能力，覆盖Word/Excel/PDF转换与基础格式处理，60秒上手办公自动化.
-license: Proprietary
+license: MIT
 edition: free
-description: 办公任务自动化（免费版）为AI Agent提供日常办公文档的批量处理能力，覆盖Word文档生成、Excel数据清洗、PDF格式转换、文本格式互转四大核心场景。通过自然语言指令驱动，让繁琐的文档处理工作一键完成。Use
-  when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
+description: "办公任务自发化（免费版）为AI Agent包含日常办公文档的成批处置能力，覆盖Word文档产出、Excel数据清洗、PDF格式变换、文本格式互转四大核心场景。通过自然语言指令驱动，让繁琐的文档处置工作快速完成。Use. 适用于需要office task automator相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 办公自动化
   - 文档处理
@@ -19,15 +19,15 @@ tags:
   - word
   - pdf
   - excel
-  - csv
-  - 读取
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 办公任务自动化（免费版）
 
 > **让AI Agent帮你处理繁琐的办公文档。Word批量生成、Excel数据清洗、PDF格式转换，一键完成。**
@@ -72,7 +72,7 @@ category: "Automation"
 
 ### 60秒上手
 
-通过自然语言指令驱动Agent执行第一个办公自动化任务：
+通过自然语言指令驱动Agent执行领先个办公自动化任务：
 
 ```text
 用户："将这个文件夹下的Word文档全部转换为PDF"
@@ -380,7 +380,7 @@ Agent执行：
 ```
 ### 60秒上手(补充)
 # ...
-通过自然语言指令驱动Agent执行第一个办公自动化任务：
+通过自然语言指令驱动Agent执行领先个办公自动化任务：
 # ...
 ```text
 用户："将这个文件夹下的Word文档全部转换为PDF"
@@ -397,6 +397,8 @@ Agent会自动：
 ### 基础环境准备(补充)
 # ...
 ```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 # ...
 ## 错误处理

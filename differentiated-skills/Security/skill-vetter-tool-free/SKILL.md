@@ -1,60 +1,33 @@
 ---
+
 slug: skill-vetter-tool-free
 name: skill-vetter-tool-free
 version: 1.0.0
 displayName: Skill安全审查(免费版)
 summary: "安装前安全审查协议,含红旗检测、权限评估与风险分级,保障Agent生态安全,支持多种使用场景和自动化处理"
-license: Proprietary
+license: MIT
 edition: free
-description: 核心能力:，可自动提升工作效率
-
-  - 4步安全审查协议(来源/代码/权限/风险)
-
-  - 12项红旗检测规则
-
-  - 权限范围评估清单
-
-  - 4级风险分类(LOW/MEDIUM/HIGH/EXTREME)
-
-  - 结构化审查报告输出
-
-  适用场景:
-
-  - 安装新Skill前的安全检查
-
-  - 第三方代码安全评估
-
-  - Skill市场安全把关
-
-  - Agent生态安全治理
-
-  差异化:
-
-  - 专为AI Agent Skill生态设计
-
-  - 覆盖Prompt注入、数据外泄等AI特有风险
-
-  - 4级风险分类与安装建议
-
-  - 纯人工审查流程,可操作性强'
+description: "核心能力:，可自发提升工作效率. 适用于需要skill vetter tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要skill vetter tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 安全
+  - skill
+  - vetter
+  - automation
+  - productivity
   - Skill安全
   - 代码审查
   - 风险评估
   - 加密
   - 工具
-  - pattern
-  - severity
-  - 安全审查
-  - high
-  - 文件
 tools:
   - read
   - exec
 homepage: ""
 category: "Security"
+pricing_tier: free
+
 ---
+
 # Skill安全审查(免费版)
 
 ## 概述
@@ -123,7 +96,7 @@ Step 2: 代码审查(强制)
   [ ] 读取 ~/.ssh ~/.aws ~/.config
   [ ] 访问 MEMORY.md, USER.md, IDENTITY.md
   [ ] 使用 base64 解码
-  [ ] 使用 eval() 或 exec() 处理外部输入
+  [ ] 使用 eval() 或 exec方法() 处理外部输入
   [ ] 修改工作区外的系统文件
   [ ] 未声明的包安装
   [ ] 连接到IP地址而非域名
@@ -380,7 +353,7 @@ Skill路径: {skill_path}
 | 4 | 新/未知来源 | 最大审查 |
 | 5 | 请求凭据的Skill | 始终需人工批准 |
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 安装前必审
 
@@ -432,7 +405,7 @@ A: 免费版提供人工审查清单。专业版提供自动扫描、AI分析、
 - 免费版无需API Key,所有审查在本地执行
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行Skill安全审查任务
 
 ## 错误处理

@@ -1,34 +1,13 @@
 ---
+
 slug: cloud-architect-design-free
 name: cloud-architect-design-free
 version: 1.0.1
 displayName: 云架构师免费版
 summary: "提供单云架构设计、基础成本估算与优选实践建议，帮助个人开发者规划云架构方案.。云架构师免费版 —— 面向个人开发者与初创团队的轻量级云架构设计工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 云架构师免费版 —— 面向个人开发者与初创团队的轻量级云架构设计工具。核心能力:，可自动提升工作效率
-
-  - 单云架构设计：针对AWS、Azure或GCP单一云平台设计方案
-
-  - 基础成本估算：提供架构方案的月度成本预估
-
-  - 优选实践建议：基于云厂商官方建议提供优化方向
-
-  - 架构图描述：以文本方式描述架构组件与连接关系
-
-  - 服务选型建议：根据需求推荐合适的云服务
-
-  - 基础安全建议：提供IAM、网络、数据安全基础建议
-
-  适用场景:
-
-  - 个人开发者规划云上应用架构
-
-  - 初创团队选择云服务方案
-
-  - 学习云架构设计优选实践
-
-  - 小型项目云.'
+description: "云架构师免费版 —— 面向个人开发者与初创团队的轻量级云架构设计工具。核心能力:，可自发提升工作效率. 适用于需要cloud architect design相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 云架构
   - 架构设计
@@ -40,14 +19,15 @@ tags:
   - ec2
   - 云架构师
   - api
-  - azure
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Operations"
+pricing_tier: free
 ---
+
 # 云架构师免费版
 
 ## 概述

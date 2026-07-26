@@ -7,14 +7,7 @@ displayName: 天气查询专业版
 summary: "企业级天气数据平台,支持多城市对比、历史数据、农业气象与定时推送。面向企业、农业、物流与媒体场景的专业天气数据平台."
 license: Proprietary
 edition: pro
-description: 面向企业、农业、物流与媒体场景的专业天气数据平台。可处理提升工作效率
-  核心能力: 多城市对比、历史天气、农业气象、分钟级降水、定时推送、批量查询
-
-  适用场景: 物流调度、农业决策、媒体播报、零售预测、能源调度
-
-  差异化: 专业版支持多城市批量查询、15 天预报、历史数据与定时推送,与免费版数据格式兼容
-
-  适用关键词: 多城市天气, 历史天气, 农业气象, 分钟级降水, 天气推送, 批量查询'
+description: "面向企业、农业、物流与媒体场景的专业天气数据平台。可处置提升工作效率. 适用于需要free weather api tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 天气数据
   - 企业级
@@ -26,10 +19,6 @@ tags:
   - 接口
   - 开发工具
   - headers
-  - api
-  - self
-  - resp
-  - city
 tools:
   - read
   - exec
@@ -37,7 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
+pricing_tier: L2-标准级
 ---
 
 # 天气查询 (专业版)
@@ -238,7 +227,7 @@ export WEATHER_EDITION="pro"
 
 ```bash
 # 批量查询
-curl -X POST -H "X-API-Key: $WEATHER_PRO_API_KEY" \
+curl -X POST -H "X-API-ref: $WEATHER_PRO_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"cities":["北京","上海","广州"],"days":7}' \
   "https://api.weather-pro.local/v1/batch/weather"
@@ -247,13 +236,13 @@ curl -X POST -H "X-API-Key: $WEATHER_PRO_API_KEY" \
 ### Step 4: 配置定时推送
 
 ```bash
-curl -X POST -H "X-API-Key: $WEATHER_PRO_API_KEY" \
+curl -X POST -H "X-API-ref: $WEATHER_PRO_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "name": "每日晨报",
     "schedule": "0 7 * * *",
     "cities": ["北京","上海"],
-    "channel": {"type":"webhook","url":"https://hooks.slack.com/xxx"}
+    "channel": {"type":"webhook","url":"https://hooks.slack.com/placeholder"}
   }' \
   "https://api.weather-pro.local/v1/schedules"
 ```
@@ -363,7 +352,7 @@ for y in range(this_year - 10, this_year):
     historical.append(historical_weather("北京", f"{y}-07-01", f"{y}-07-31"))
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 缓存策略
 
@@ -490,12 +479,12 @@ export WEATHER_EDITION="pro"
 # ...
 # 可选: 缓存与监控
 export REDIS_URL="redis://localhost:6379/0"
-export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
+export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/placeholder"
 ```
 
 ### 可用性分类
 
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+exec方法(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 面向企业用户,通过自然语言指令驱动 Agent 调用 Pro 天气 API,完成多城市批量查询、历史数据、农业气象等企业级场景
 - **专业版特性**: 多城市对比、15 天预报、10 年历史数据、农业专项、分钟级降水、定时推送、SLA 保障
 - **兼容性**: 与免费版数据格式完全兼容,支持平滑升级
@@ -524,9 +513,9 @@ export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

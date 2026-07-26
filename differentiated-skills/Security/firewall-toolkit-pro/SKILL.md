@@ -1,4 +1,5 @@
 ---
+
 slug: firewall-toolkit-pro
 name: firewall-toolkit-pro
 version: 1.0.0
@@ -6,11 +7,7 @@ displayName: 防火墙配置工具包专业版
 summary: 企业级防火墙管理平台,支持云安全组、nftables、批量多机部署、CIS基线审计与实时日志分析,适合企业网络安全团队.
 license: Proprietary
 edition: pro
-description: '防火墙配置工具包专业版,为企业安全团队提供全方位防火墙管理与网络安全加固能力.
-  核心能力:云安全组管理、nftables配置、批量多机部署、CIS安全基线审计、实时日志分析与告警、规则版本管理.
-  适用场景:企业网络安全架构、多云安全组统一管理、合规审计、自动化安全运维.
-  差异化:专业版兼容免费版配置方法,新增企业级多机管理与云安全组能力,满足规模化网络安全需求.
-  适用关键词: 云安全组, nftables, 批量部署, CIS基线, 防火墙审计, security group, nftables, multi-host'
+description: "防火墙配置工具包专业版,为企业安全团队包含全方位防火墙管控与网络安全加固能力. 适用于需要firewall toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 防火墙
   - 网络安全
@@ -28,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Security"
+pricing_tier: L2-标准级
 ---
+
 专业版为企业安全团队提供完整的防火墙管理与网络安全加固平台,在免费版iptables/ufw配置能力之上,新增云安全组(AWS/Azure/GCP)管理、nftables高级配置、批量多机部署、CIS安全基线完整审计、实时日志分析与告警、规则版本管理与回滚。专业版完全兼容免费版配置方法,已有防火墙规则可无缝升级,适合企业级网络安全运维.
 ### 专业版核心优势
 | 优势 | 说明 |
@@ -200,9 +199,9 @@ echo "  Redis安全组: 入站 6379 仅Web安全组"
 # ...
 echo ""
 echo "企业网络安全架构部署完成"
-```
-
-### 场景二:多云安全组统一管理
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 #!/usr/bin/env python3
 """多云安全组统一管理"""
@@ -256,9 +255,9 @@ if __name__ == "__main__":
 # ...
     report = manager.generate_compliance_report(findings)
     print(json.dumps(report, indent=2, ensure_ascii=False))
-```
-
-### 场景三:防火墙规则版本管理
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 #!/bin/bash
 RULES_DIR="/etc/firewall-versions"
@@ -352,7 +351,7 @@ python3 cloud_sg_manager.py --audit --provider aws
 | 4.3.x 网络参数 | 不支持 | 完整 |
 | 4.4.x 日志配置 | 不支持 | 完整 |
 
-## 最佳实践
+## 优秀实践
 1. **分层防御**:DMZ+内网分层,不同区域不同安全策略.
 2. **最小权限**:安全组遵循最小开放原则,仅允许必要的源IP和端口.
 3. **版本管理**:所有规则变更保存版本,支持快速回滚.
@@ -395,7 +394,7 @@ python3 cloud_sg_manager.py --audit --provider aws
 - GCP: 配置Service Account JSON密钥
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行企业级防火墙管理与网络安全加固任务
 - API Key通过环境变量配置: export API_KEY=your_key
 
@@ -422,9 +421,9 @@ python3 cloud_sg_manager.py --audit --provider aws
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

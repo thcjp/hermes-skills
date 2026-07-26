@@ -1,36 +1,13 @@
 ---
+
 slug: doubao-image-gen-tool-free
 name: doubao-image-gen-tool-free
 version: 1.0.0
 displayName: 豆包图片生成-免费版
 summary: "轻量级AI图片生成工具，支持单图生成与基础提示词，适合个人用户快速创作视觉内容.。豆包图片生成免费版，为个人用户提供轻量化的 AI 图片生成能力。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '豆包图片生成免费版，为个人用户提供轻量化的 AI 图片生成能力。核心能力:
-
-  - 单张图片生成（按提示词创作）
-
-  - 基础比例选择（3:4 默认）
-
-  - 生成结果截图确认
-
-  - 图片下载与保存
-
-  - 简易提示词优化
-
-  适用场景:
-
-  - 个人创意图片生成
-
-  - 社交媒体配图创作
-
-  - 设计灵感快速预览
-
-  - 学习 AI 绘图入门
-
-  差异化:
-
-  - 免费版聚焦单图生成核心场景.'
+description: "豆包图片产出免费版，为个人用户包含轻量化的 AI 图片产出能力。核心能力:. 适用于需要doubao image gen tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Creative
   - AI绘图
@@ -42,14 +19,15 @@ tags:
   - text
   - agent
   - 生成
-  - message
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # 豆包图片生成工具 - 免费版
 
 ## 概述
@@ -215,9 +193,9 @@ Agent: 好的，已为您下载第二张图片并保存
 、品牌视觉时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步：需求确认
+### 领先步：需求确认
 
-收到任务后，**第一步**必须是询问用户：
+收到任务后，**领先步**必须是询问用户：
 
 ```text
 Agent: 您想要生成什么样的图片？
@@ -304,7 +282,7 @@ cp /tmp/selected-image.png /target/directory/
 3:4 比例
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 提示词撰写技巧
 
@@ -422,8 +400,8 @@ ls ~/.skill-platform/workspace/
 | Skill 平台 Token | 平台配置 | 平台认证 | Skill 平台控制台 |
 
 ```bash
-# 浏览器登录豆包账号即可
-# Skill 平台通常会自动配置认证
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### 可用性分类

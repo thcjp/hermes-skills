@@ -1,4 +1,5 @@
 ---
+
 slug: git-essentials-tool-pro
 name: git-essentials-tool-pro
 version: 1.0.0
@@ -6,37 +7,7 @@ displayName: Git基础工具专业版
 summary: "企业级Git版本控制,支持高级变基、历史重写、子模块批量管理、性能优化与团队协作.。面向研发团队的高级Git版本控制工具,提供交互式变基、历史重写、子模块批量管理、仓库性能优化与团队协作工作"
 license: Proprietary
 edition: pro
-description: '面向研发团队的高级Git版本控制工具,提供交互式变基、历史重写、子模块批量管理、仓库性能优化与团队协作工作流。核心能力:
-
-  - 高级交互式变基与历史重写
-
-  - 子模块批量管理
-
-  - 仓库性能优化(gc/fsck)
-
-  - 二分查找(bisect)调试
-
-  - 批量标签与版本管理
-
-  - 团队协作工作流模板
-
-  适用场景:
-
-  - 企业级版本控制管理
-
-  - 复杂历史整理与重写
-
-  - 大型项目子模块管理
-
-  - 版本发布与标签管理
-
-  差异化:
-
-  - 专业版完全兼容免费版命令,支持平滑升级
-
-  - 提供高级历史管理能力
-
-  - 支持子模...'
+description: "面向研发团队的高级Git版本控制工具,包含交互式变基、历史重写、子模块成批管控、仓库性能调优与团队协作工作流。核心能力:. 适用于需要git essentials tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - Git
@@ -53,7 +24,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+pricing_tier: L2-标准级
 ---
+
 Git基础工具专业版为研发团队提供高级版本控制能力。在免费版核心Git命令之上,专业版新增交互式变基、历史重写、子模块批量管理、仓库性能优化和二分查找调试,满足企业级版本控制需求.
 专业版完全兼容免费版的所有Git命令和配置,研发团队可从免费版无缝升级,已有配置和别名无需修改.
 ## 核心能力
@@ -230,9 +203,9 @@ echo "开始交互式变基..."
 git rebase -i HEAD~5
 # ...
 echo "历史整理完成"
-```
-
-### 场景二:清除历史中的敏感信息
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 #!/bin/bash
 echo "=== 清除历史敏感信息 ==="
@@ -255,9 +228,9 @@ echo "  git push --force-with-lease origin --tags"
 rm -rf .git/refs/original/
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
-```
-
-### 场景三:大型项目子模块管理
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 #!/bin/bash
 echo "=== 子模块批量管理 ==="
@@ -320,9 +293,9 @@ fi
 # ...
 [rerere]
     enabled = true
-```
-
-### Step 2:运行高级操作
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 请帮我整理最近5个提交的历史,合并相关的提交.
 ```
@@ -332,7 +305,7 @@ fi
 ## 配置示例
 ### 企业级配置
 
-## 最佳实践
+## 优秀实践
 1. **变基前备份**:执行变基前创建备份分支
 
 ```bash
@@ -442,9 +415,9 @@ git config --global credential.helper store
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

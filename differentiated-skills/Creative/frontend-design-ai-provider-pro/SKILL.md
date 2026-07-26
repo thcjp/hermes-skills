@@ -1,4 +1,5 @@
 ---
+
 slug: "frontend-design-ai-provider-pro"
 name: "frontend-design-ai-provider-pro"
 version: "1.0.0"
@@ -6,22 +7,7 @@ displayName: "前端设计-专业版"
 summary: "企业级前端设计工具,支持设计系统生成、组件库批量产出、多端适配,适配商业产品开发。前端设计专业版,面向企业团队与专业设计师的高级前端界面设计工具。核心能力: - 完整设计系统生成(Desig"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  前端设计专业版,面向企业团队与专业设计师的高级前端界面设计工具。核心能力:
-  - 完整设计系统生成(Design Tokens、主题、规范文档)
-  - 组件库批量设计与产出,支持 Storybook 集成
-  - 响应式多端适配(桌面/平板/移动/暗色模式)
-  - 设计Token管理与团队协作
-  - 可访问性(a11y)合规检查与修复
-  - 性能优化建议与代码审查
-
-  适用场景:
-  - 企业产品设计系统建设
-  - 组件库标准化与批量产出
-  - 多端产品界面统一设计
-  - 设计团队协作与规范沉淀
-
-  差异化:专业版在免费版基础上.
+description: "|-. 适用于需要frontend design aivider相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Creative
   - 前端设计
@@ -33,15 +19,15 @@ tags:
   - storybook
   - css
   - rem
-  - tokens
-  - bash
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: L2-标准级
 ---
+
 # 前端设计工具 - 专业版
 
 ## 概述
@@ -221,7 +207,7 @@ python3 （请参考skill目录中的脚本文件） \
 
 ## 快速开始
 
-### 第一步:启用专业版功能
+### 领先步:启用专业版功能
 
 ```bash
 export FRONTEND_DESIGN_EDITION="pro"
@@ -282,7 +268,7 @@ FRONTEND_DESIGN_DEFAULT_BREAKPOINTS=sm,md,lg,xl
 /* 2xl: 1536px - 大桌面 */
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **Tokens 先行**:先定义 Design Tokens(颜色/字体/间距/圆角/阴影),再构建组件
 2. **组件原子化**:从最小粒度组件(Button/Input)开始,组合出复杂组件
@@ -335,7 +321,7 @@ A:可以。支持导入现有 Figma Tokens 或 Style Dictionary 配置,生成兼
 - **安全建议**: License 通过环境变量配置,避免写入代码仓库
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,支持设计系统生成、组件库批量产出、多端适配等企业级前端设计场景
 
 ## 错误处理
@@ -362,9 +348,9 @@ A:可以。支持导入现有 Figma Tokens 或 Style Dictionary 配置,生成兼
 用户: 执行核心功能
 Skill: 正在执行核心功能.
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

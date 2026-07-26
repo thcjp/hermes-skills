@@ -1,25 +1,24 @@
 ---
+
 slug: knowledge-agent-tool-free
 name: knowledge-agent-tool-free
 version: 1.0.0
 displayName: 知识管理工具-免费版
 summary: "基于文件的知识捕获与检索工具,支持URL、视频、文章、社交内容收藏与搜索。基于文件的知识组织工具,实现快速捕获、后续检索与自动整理。支持 URL 收藏、视频/文章/论文摘要、社交帖子与研究笔"
-license: Proprietary
+license: MIT
 edition: free
-description: 基于文件的知识组织工具,实现快速捕获、后续检索与自动整理。支持 URL 收藏、视频/文章/论文摘要、社交帖子与研究笔记管理。Use when
-  需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
+description: "基于文件的知识组织工具,达成快速捕获、后续检索与自发整理。兼容 URL 收藏、视频/文章/论文摘要、社交帖子与研究笔记管控。Use when. 适用于需要knowledge agent tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要knowledge agent tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 研究工具
+  - knowledge
+  - agent
+  - automation
+  - productivity
   - 知识管理
   - 信息收集
   - AI代理
   - 自动化
   - 智能
-  - know
-  - url
-  - add
-  - title
-  - research
 tools:
   - read
   - exec
@@ -28,7 +27,10 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+pricing_tier: free
+
 ---
+
 # 知识管理工具(免费版)
 
 ## 概述
@@ -220,7 +222,7 @@ INDEX_FORMAT=markdown
 ### #python
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 知识捕获纪律
 1. **有用就立即保存**:发现可能有用的内容,立即 `know add`,不要只留在记忆里.
@@ -279,7 +281,7 @@ cd ~/.knowledge-base && git add . && git commit -m "知识库更新"
 - 本 Skill 基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作
 
 ## 错误处理

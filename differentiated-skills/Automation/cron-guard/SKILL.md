@@ -1,11 +1,12 @@
 ---
+
 slug: cron-guard
 name: cron-guard
 version: 1.0.1
 displayName: 定时守护
 summary: "cron 作业可靠性护栏，脚本优先、确定环境、静默成功，跨平台故障模式一网打尽. 定时守护为cron作业与后台任务提供可靠性护栏,遵循脚本优先、确定环境、静默成功三原则,覆盖shell引用陷"
-license: Proprietary
-description: 定时守护为cron作业与后台任务提供可靠性护栏,遵循脚本优先、确定环境、静默成功三原则,覆盖shell引用陷阱、cwd/env漂移、SIGPIPE误报、git推送冲突、并发执行冲突等高频故障模式,提供跨平台适配(POSIX+PowerShell)与上线前预检清单。适用于cron作业加固、后台任务可靠性提升、跨平台定时作业场景。适用关键词:定时守护、cron加固、脚本可靠性、shell陷阱、静默成功、cron、shell、guardrails
+license: MIT
+description: "定时守护为cron作业与后台任务包含可靠性护栏,遵循脚本优先、确定环境、静默成功三原则,覆盖shell引用陷阱、cwd/env漂移、SIGPIPE误报、git推送冲突、并发执行冲突等高频故障模式,包含跨平台适配(POSIX+PowerShell)与上线前预检清单。适用于cron作业加固、后台任务可靠性提升、跨平台定时作业场景。适用关键词:定时守护、cron加固、脚本可靠性、shell陷阱、静默成功、cron、shell、guardrails"
 tags:
   - 自动化
   - 定时调度
@@ -23,7 +24,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 定时守护
 
 cron 作业的失败很少是"逻辑 bug",多半是 shell 引用炸了、环境漂移了、管道误报了。本技能用"脚本优先 + 确定环境 + 静默成功"三原则,把这些无聊但致命的坑堵死.
@@ -124,7 +127,7 @@ POSIX(bash/sh)与Windows(PowerShell)等效模式对照表,覆盖三大平台。
 
 **运行环境**: Linux/macOS(POSIX)/Windows(PowerShell),bash 4+/sh/PowerShell 5+。本技能无需API Key;被守护脚本可能需外部API Key,必须通过环境变量引用并文档化,禁止硬编码。
 
-**可用性分类**: MD+EXEC(Markdown指南 + 脚本执行),Agent据此编写/审查cron脚本,实际执行由调度系统调用脚本
+**可用性分类**: MD+EXEC模式Markdown指南 + 脚本执行),Agent据此编写/审查cron脚本,实际执行由调度系统调用脚本
 
 ## 示例代码
 

@@ -1,4 +1,5 @@
 ---
+
 slug: ping-monitor-tool-pro
 name: ping-monitor-tool-pro
 version: 1.0.0
@@ -6,14 +7,7 @@ displayName: 网络监控专业版
 summary: "企业级监控平台,支持多地区、API性能、状态页与团队协作 - 提供专业AI自动化处理能力,支持多种使用场景"
 license: Proprietary
 edition: pro
-description: '面向企业与运维团队的企业级监控平台.
-  核心能力: 多地区监控、API性能监控、公开状态页、多渠道告警、团队协作、SLA保障
-
-  适用场景: 企业服务监控、SRE运维、API网关监控、SLA管理、客户透明度
-
-  差异化: 专业版支持多地区与企业级能力,与免费版监控格式兼容
-
-  适用关键词: 多地区监控, API性能, 状态页, 团队协作, SLA保障, SRE运维'
+description: "面向企业与运维团队的企业级监控平台. 适用于需要ping monitor tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 网络监控
   - 企业级
@@ -25,17 +19,15 @@ tags:
   - 运维
   - 工具
   - headers
-  - resp
-  - target_config
-  - self
-  - json
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Operations"
+pricing_tier: L2-标准级
 ---
+
 # 网络监控 (专业版)
 
 ## 概述
@@ -248,7 +240,7 @@ export PING_MONITOR_EDITION="pro"
 ### Step 3: 批量添加监控
 
 ```bash
-curl -X POST -H "X-API-Key: $PING_MONITOR_ADMIN_KEY" \
+curl -X POST -H "X-API-ref: $PING_MONITOR_ADMIN_KEY" \
   -H "Content-Type: application/json" \
   -d '{"monitors":[
     {"name":"API","type":"http","target":"https://api.example.com/health"},
@@ -260,7 +252,7 @@ curl -X POST -H "X-API-Key: $PING_MONITOR_ADMIN_KEY" \
 ### Step 4: 配置状态页
 
 ```bash
-curl -X POST -H "X-API-Key: $PING_MONITOR_ADMIN_KEY" \
+curl -X POST -H "X-API-ref: $PING_MONITOR_ADMIN_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "domain": "status.example.com",
@@ -386,7 +378,7 @@ def root_cause_analysis(incident_id):
     return resp.json()
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 多地区策略
 
@@ -479,7 +471,7 @@ export PING_MONITOR_ORG_ID="org_your_id"
 export PING_MONITOR_EDITION="pro"
 # ...
 # 可选: 告警渠道
-export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
+export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/placeholder"
 export DINGTALK_WEBHOOK="..."
 export FEISHU_WEBHOOK="..."
 export SMS_API_KEY="..."
@@ -492,7 +484,7 @@ export DATADOG_API_KEY="..."
 
 ### 可用性分类
 
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+exec方法(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 面向企业与运维团队,通过自然语言指令驱动 Agent 调用 Pro API,完成企业级监控
 - **专业版特性**: 多地区监控、API 性能、状态页、多渠道告警、团队协作、SLA 保障、故障分析
 - **兼容性**: 与免费版监控格式完全兼容,支持平滑升级

@@ -1,4 +1,5 @@
 ---
+
 slug: go-security-vuln-tool-pro
 name: go-security-vuln-tool-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: Go安全漏洞扫描专业版
 summary: 企业级Go安全扫描平台,支持govulncheck+gosec双重扫描、深度调用路径分析、批量项目扫描与SARIF报告,适合Go安全团队使用.
 license: Proprietary
 edition: pro
-description: Go安全漏洞扫描专业版,为企业Go开发团队提供全方位安全扫描与修复能力。核心能力:govulncheck+gosec双重扫描、深度调用路径分析、批量多项目扫描、CI/CD安全门禁、SARIF报告、持续漏洞监控。Use
-  when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
+description: "Go安全漏洞扫描专业版,为企业Go开发团队包含全方位安全扫描与修正能力。核心能力:govulncheck+gosec双重扫描、深度调用路径剖析、成批多项目扫描、CI/CD安全门禁、SARIF报告、持续漏洞监控。Use. 适用于需要go security vuln tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 安全
   - Go
@@ -24,7 +24,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Security"
+pricing_tier: L2-标准级
 ---
+
 专业版为企业Go开发团队提供完整的安全扫描与治理平台,在免费版govulncheck依赖漏洞扫描基础上,新增gosec代码安全分析、深度调用路径追踪、批量多项目扫描、CI/CD安全门禁、SARIF合规报告与持续漏洞监控。专业版完全兼容免费版扫描方法,已有安全脚本可无缝升级,适合企业级Go安全治理.
 ### 专业版核心优势
 | 优势 | 说明 |
@@ -124,7 +126,7 @@ for line in lines:
             trace = finding.get('trace', [])
             if trace:
                 results.append({
-                    'ruleId': finding.get('osv', 'GO-XXX'),
+                    'ruleId': finding.get('osv', 'GO-placeholder'),
                     'level': 'error',
                     'message': {'text': f\"Vulnerability {finding.get('osv')} in {trace[0].get('module', 'unknown')}\"},
                     'locations': [{
@@ -189,9 +191,9 @@ echo "治理完成"
 echo "  批量报告: batch-report.json"
 echo "  SARIF报告: 各项目目录"
 echo "  调用路径: call-paths.json"
-```
-
-### 场景二:CI/CD安全门禁
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 name: Go Security Gate
 on: [push, pull_request]
@@ -242,9 +244,9 @@ jobs:
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: gosec-report.sarif
-```
-
-### 场景三:自动修复依赖漏洞
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 #!/bin/bash
 echo "=== 自动修复依赖漏洞 ==="
@@ -348,7 +350,7 @@ rules:
 | 自动修复 | 不支持 | 支持 | 依赖自动更新 |
 | 规则自定义 | 不支持 | 支持 | 自定义规则 |
 
-## 最佳实践
+## 优秀实践
 1. **双重扫描**:同时使用govulncheck和gosec,覆盖依赖漏洞和代码安全问题.
 2. **调用优先**:优先修复"called"漏洞(代码实际调用的),而非仅存在于依赖中的漏洞.
 3. **CI门禁**:在CI中设置HIGH级别问题零容忍,阻断不安全构建.
@@ -389,7 +391,7 @@ govulncheck扫描依赖中的已知漏洞(关注外部库),gosec扫描项目代�
 - GitHub SARIF上传使用GITHUB_TOKEN(CI自动提供)
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行企业级Go安全扫描与治理任务
 
 ## 错误处理

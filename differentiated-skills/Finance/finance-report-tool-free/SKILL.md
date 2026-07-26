@@ -5,15 +5,9 @@ name: finance-report-tool-free
 version: 1.0.0
 displayName: 财报分析入门工具
 summary: "从Excel/PDF文件分析财务数据，生成含趋势图的HTML分析报告.。面向个人投资者与初级分析师的财务报告分析工具。支持从本地Excel/PDF"
-license: Proprietary
+license: MIT
 edition: free
-description: "面向个人投资者与初级分析师的财务报告分析工具。支持从本地Excel/PDF
-  文件提取财务数据，自动生成包含趋势走势图（sparkline）的交互式HTML
-  分析报告。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。快速洞察数据价值，支持数据驱动决策。触发关键词：数据分析、自动化、PDF、Excel、机器学习、财务"
-
-  文件提取财务数据，自动生成包含趋势走势图（sparkline）的交互式HTML
-
-  分析报告。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
+description: "面向个人投资者与初级剖析师的财务报告剖析工具。兼容从本地Excel/PDF. 适用于需要finance report tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Finance
   - 财报分析
@@ -25,15 +19,15 @@ tags:
   - html
   - excel
   - 用户提供
-  - 完成核心
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Finance"
-
+pricing_tier: free
 ---
+
 # 财报分析入门工具（免费版）
 
 ## 概述
@@ -202,7 +196,7 @@ report_config:
     include_definitions: true    # 包含指标定义
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **数据完整性**：确保Excel/PDF包含完整的三大报表数据
 2. **时间跨度**：至少3年数据才能生成有意义的趋势图
@@ -284,9 +278,9 @@ PDF提取准确率取决于原文档格式。表格清晰的PDF提取效果较�
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

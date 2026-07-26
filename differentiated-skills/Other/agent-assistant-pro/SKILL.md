@@ -1,4 +1,5 @@
 ---
+
 slug: agent-assistant-pro
 name: agent-assistant-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Agent身份助手专业版
 summary: "多人格矩阵、跨场景自适应、合规审计与A/B测试一体的Agent身份治理平台。Agent身份助手专业版是面向团队与企业的Agent人格治理平台，在免费版三层身份模型的基础上，新增多人格矩阵管理"
 license: Proprietary
 edition: pro
-description: Agent身份助手专业版是面向团队与企业的Agent人格治理平台，在免费版三层身份模型的基础上，新增多人格矩阵管理、跨场景自适应切换、企业级合规审计、人格A/B测试框架与团队协作能力。核心能力：支持同时管理20+个Agent人格卡，根据对话上下文自动切换基调；生成价值观一致性审计报告；提供人格对比测试框架，量化不同人格在转化率、满意度上的差异；支持团队级人格库共享与权限管理
+description: "Agent身份助手专业版是面向团队与企业的Agent人格治理平台，在免费版三层身份模型的基础上，新增多人格矩阵管控、跨场景自适应切换、企业级合规审计、人格A/B测试框架与团队协作能力。核心能力：兼容同时管控20+个Agent人格卡，根据对话上下文自发切换基调；产出价值观一致性审计报告；包含人格对比测试框架，量化不同人格在转化率、满意度上的差异；兼容团队级人格库共享与权限管控"
 tags:
   - 智能助手
   - 人格治理
@@ -18,8 +19,6 @@ tags:
   - agent
   - 用户提供
   - 解析能力
-  - 完成核心
-  - 逻辑
 tools:
   - read
   - exec
@@ -29,7 +28,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
+pricing_tier: L2-标准级
 ---
+
 # Agent身份助手（专业版）
 
 ## 概述
@@ -221,7 +222,7 @@ agent-identity import --from ./free-identity-card.yaml
 # 3. 添加团队成员
 agent-identity member add --email editor@company.com --role editor
 # ...
-# 4. 创建第一张人格卡
+# 4. 创建领先张人格卡
 agent-identity card create --name "客服-售前" --template colleague
 ```
 
@@ -323,7 +324,7 @@ experiment:
       action: auto_pause
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 实践1：人格矩阵分阶段建设
 

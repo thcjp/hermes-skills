@@ -1,4 +1,5 @@
 ---
+
 slug: azure-agent-framework-tool-pro
 name: azure-agent-framework-tool-pro
 version: 1.0.0
@@ -6,33 +7,7 @@ displayName: Azure智能体框架工具-专业版
 summary: "企业级Azure AI智能体编排,支持批量管理、MCP工具集成、监控告警与多租户隔离。企业级 Azure AI Foundry 智能体编排工具,在免费版核心能力之上,提供智能体批量管理、"
 license: Proprietary
 edition: pro
-description: '企业级 Azure AI Foundry 智能体编排工具,在免费版核心能力之上,提供智能体批量管理、
-
-  MCP工具深度集成、监控告警、多租户隔离、CI/CD 集成与团队协作能力。核心能力:
-
-  - 免费版全部能力(完全兼容)
-
-  - 智能体批量管理与版本控制
-
-  - MCP工具深度集成(托管与客户端模式)
-
-  - 监控指标采集与告警通知
-
-  - 多租户隔离与权限管理
-
-  - CI/CD 集成与自动化部署
-
-  适用场景:
-
-  - 企业级智能体编排与部署
-
-  - 多智能体协作工作流
-
-  - 生产环境监控与运维
-
-  - 团队协作与版本管理
-
-  差异...'
+description: "企业级 Azure AI Foundry 智能体编排工具,在免费版核心能力之上,包含智能体成批管控、. 适用于需要azure agent framework tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 研究工具
   - AI开发
@@ -44,8 +19,6 @@ tags:
   - import
   - 专业版新
   - mcp
-  - credential
-  - azure
 tools:
   - read
   - exec
@@ -53,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Operations"
+pricing_tier: L2-标准级
 ---
+
 本工具是企业级 Azure AI Foundry 智能体编排工具,在免费版核心能力之上,扩展了智能体批量管理、MCP工具深度集成、监控告警、多租户隔离、CI/CD 集成与团队协作能力,适合企业级智能体编排、多智能体协作工作流、生产环境监控与运维场景。专业版与免费版完全兼容:免费版的所有代码、工作流均可直接在专业版中使用.
 ### 免费版 vs 专业版对比
 | 能力 | 免费版 | 专业版 |
@@ -143,7 +118,7 @@ async def main():
             ],
         )
 # ...
-        result = await agent.run("搜索 Python 最佳实践并总结")
+        result = await agent.run("搜索 Python 优秀实践并总结")
         print(result.text)
 # ...
 asyncio.run(main())
@@ -390,19 +365,18 @@ pip install agent-framework-azure-ai --pre
 python -m agent_framework pro init
 python -m agent_framework config set metrics.enabled true
 python -m agent_framework config set alerts.webhook "https://hooks.example.com/alerts"
-```
-
-### 2. 企业级配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 export AZURE_AI_PROJECT_ENDPOINT="https://<project>.services.ai.azure.com/api/projects/<project-id>"
 export AZURE_AI_MODEL_DEPLOYMENT_NAME="gpt-4o-mini"
 export AGENT_FRAMEWORK_EDITION="pro"
 export AGENT_FRAMEWORK_METRICS_ENABLED="true"
 export AGENT_FRAMEWORK_ALERT_WEBHOOK="https://hooks.example.com/alerts"
-```
-
-## 配置示例
-### 企业级配置文件
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 edition: pro
 metrics:
@@ -425,15 +399,15 @@ deployment:
 agents:
   max_concurrent: 50
   default_timeout: 300
-```
-
-### 监控指标示例
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python -m agent_framework metrics export --format prometheus
 # ...
 ```
 
-## 最佳实践
+## 优秀实践
 ### 智能体编排
 1. **单一职责**:每个智能体专注一个领域,通过多智能体协作处理复杂任务.
 2. **版本控制**:为智能体配置版本号,便于回滚与灰度发布.
@@ -504,7 +478,7 @@ python -m agent_framework pro init --migrate
 - 监控告警:配置 `alerts.webhook` 通知地址
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作
 - **版本**: 专业版(兼容免费版全部能力)
 

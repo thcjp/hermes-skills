@@ -1,13 +1,13 @@
 ---
+
 slug: text2sql-engine-free
 name: text2sql-engine-free
 version: 1.0.1
 displayName: 自然语言转SQL免费版
 summary: "将自然语言描述转换为标准SQL查询，支持多方言与Schema自动识别。面向数据分析人员与后端开发者的自然语言转SQL引擎，解决"知道想要什么数据但写不出SQL"的核心痛点。核心能力：将中文/"
-license: Proprietary
+license: MIT
 edition: free
-description: 面向数据分析人员与后端开发者的自然语言转SQL引擎，解决"知道想要什么数据但写不出SQL"的核心痛点。核心能力：将中文/英文的自然语言描述转换为语法正确的SQL查询，支持表结构自动识别、意图解析、JOIN关系推导与查询验证。Use
-  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+description: "面向数据剖析人员与后端开发者的自然语言转SQL引擎，解决\"知道想要什么数据但写不出SQL\"的核心痛点。核心能力：将中文/英文的自然语言描述变换为语法正确的SQL查询，兼容表结构自发识别、意图解析、JOIN关系推导与查询验证。Use. 适用于需要text2sql engine相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 数据查询
   - SQL生成
@@ -19,15 +19,15 @@ tags:
   - sql
   - join
   - select
-  - group
-  - created_at
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 自然语言转SQL引擎（免费版）
 
 ## 概述
@@ -83,7 +83,7 @@ category: "Automation"
 SQL初学者通过对比自然语言描述与生成的SQL，理解每个子句的作用，加速学习过程.
 ## 快速开始
 
-### 第一步：提供Schema（约30秒）
+### 领先步：提供Schema（约30秒）
 
 引擎需要知道你的表结构才能生成正确查询。提供方式任选其一：
 
@@ -185,7 +185,7 @@ SELECT strftime('%Y-%m-01', created_at), COUNT(*)
 FROM orders GROUP BY 1;
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### Schema提供规范
 

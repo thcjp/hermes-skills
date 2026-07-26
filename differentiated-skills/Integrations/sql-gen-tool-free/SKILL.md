@@ -1,13 +1,13 @@
 ---
+
 slug: sql-gen-tool-free
 name: sql-gen-tool-free
 version: 1.0.0
 displayName: SQL生成器(免费版)
 summary: "自然语言转SQL的生成器免费版，支持查询生成、SQL解释、建表语句、测试数据生成等核心场景.。面向独立开发者与AI Agent的SQL生成器免费版。通过自然语言描述快速生成SQL查询语句，同"
-license: Proprietary
+license: MIT
 edition: free
-description: 面向独立开发者与AI Agent的SQL生成器免费版。通过自然语言描述快速生成SQL查询语句，同时提供SQL解释、建表DDL、测试数据生成、SQL速查表等核心能力，帮助不熟悉SQL语法的用户也能高效完成数据库操作任务。Use
-  when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
+description: "面向独立开发者与AI Agent的SQL产出器免费版。通过自然语言描述快速产出SQL查询语句，同时包含SQL解释、建表DDL、测试数据产出、SQL速查表等核心能力，帮助不熟悉SQL语法的用户也能高效完成数据库操作任务。Use. 适用于需要sql gen tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 集成工具
   - 数据库
@@ -25,7 +25,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # SQL生成器（免费版）
 
 本工具为独立开发者、产品经理与AI Agent提供自然语言到SQL的转换能力。免费版聚焦核心场景：查询生成、SQL解释、建表DDL、测试数据生成，足以覆盖绝大多数日常SQL编写需求.
@@ -84,7 +86,7 @@ category: "Automation"
 在工作流中由Agent根据用户意图自动生成SQL，经校验后执行，实现数据访问的自动化.
 ## 快速开始
 
-### 第一步：生成查询SQL
+### 领先步：生成查询SQL
 
 ```text
 输入：查询最近7天注册但从未下单的用户，按注册时间倒序
@@ -157,7 +159,7 @@ SELECT u.name, o.total FROM users u INNER JOIN orders o ON o.user_id = u.id;
 SELECT date, revenue, SUM(revenue) OVER (ORDER BY date) AS cumulative FROM daily_sales;
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 描述需求时包含字段语义
 

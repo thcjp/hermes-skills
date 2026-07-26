@@ -7,25 +7,7 @@ displayName: Markdown 工具箱专业版
 summary: "面向团队的多文件站点、目录生成与文档规范治理工具.。面向团队的多文件 Markdown 站点与文档规范治理专业工具。核心能力:"
 license: Proprietary
 edition: pro
-description: 面向团队的多文件 Markdown 站点与文档规范治理专业工具。核心能力:。可自动提升工作效率
-
-  - 多文件站点与目录（TOC）自动生成
-
-  - 文档规范 lint 与团队规则集
-
-  - 链接校验与死链检测
-
-  - 多格式导出（HTML/PDF/DocBook）
-
-  适用场景:
-
-  - 团队文档站点多文件生成
-
-  - 文档规范 lint 与 CI 集成
-
-  - 死链检测与多格式导出
-
-  差异化: 专业版在免费版单文件基础上扩展多文件站点、规范 lint、死链检测与多格式导出，兼容免费版规则'
+description: "面向团队的多文件 Markdown 站点与文档规范治理专业工具。核心能力:。可自发提升工作效率. 适用于需要markdown toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Markdown
   - 企业级
@@ -43,7 +25,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
-
+pricing_tier: L2-标准级
 ---
 
 # Markdown 工具箱（专业版）
@@ -159,7 +141,7 @@ markdownlint docs/**/*.md --config .markdownlint.json
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 - **目录先规划**：多文件站点先定目录结构，再写内容.
 - **lint 入 CI**：文档变更跑 lint，违规阻断合并.

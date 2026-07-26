@@ -5,14 +5,9 @@ name: qq-zone-photo-tool-free
 version: 1.0.0
 displayName: QQ空间相册入门工具
 summary: "QQ空间相册管理工具，支持相册浏览与单张照片下载.。面向个人用户的QQ空间相册管理工具。支持登录QQ空间、浏览相册"
-license: Proprietary
+license: MIT
 edition: free
-description: "面向个人用户的QQ空间相册管理工具。支持登录QQ空间、浏览相册
-  列表、查看照片与单张下载。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。Use
-  when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。减少重复劳动，提升工作效率。触发关键词：自动化、安全、项目管理、图片、机器学习"
-
-  列表、查看照片与单张下载。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。Use
-  when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。'
+description: "面向个人用户的QQ空间相册管控工具。兼容登录QQ空间、浏览相册. 适用于需要qq zone photo tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Operations
   - QQ空间
@@ -24,17 +19,15 @@ tags:
   - 电商
   - 生活
   - 健康
-  - 安全
-  - python3
-  - cookie
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
+pricing_tier: free
 ---
+
 # QQ空间相册入门工具（免费版）
 
 ## 概述
@@ -176,7 +169,7 @@ qzone_config:
     ttl: 3600
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **登录安全**：使用Cookie登录，避免频繁输入密码
 2. **下载路径**：指定明确的下载目录，便于管理

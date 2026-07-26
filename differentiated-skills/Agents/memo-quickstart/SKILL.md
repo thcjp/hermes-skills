@@ -1,12 +1,12 @@
 ---
+
 slug: "memo-quickstart"
 name: "memo-quickstart"
 version: "1.0.0"
 displayName: "记忆快速启动"
 summary: "解决零依赖记忆能力弱、搜索精度低、上手难的本地记忆快速启动器。面向零依赖场景的本地记忆系统，解决搜索精度不足、上手门槛高、数据格式不统一四大痛点。提供三层记忆架构（热内存/冷存储/归档）、T"
-license: "Proprietary"
-description: |-
-  面向零依赖场景的本地记忆系统，解决搜索精度不足、上手门槛高、数据格式不统一四大痛点。提供三层记忆架构（热内存/冷存储/归档）、TF-IDF+近期加权+重要度加权+标签匹配混合检索、WAL写前日志、统一JSON schema、记忆关系图谱、迁移工具。适用于隐私敏感场景、离线开发、学习记忆系统。适用关键词：本地记忆、零依赖记忆、记忆快速启动、记忆搜索、记忆存储、local memory、zero-dependency memory
+license: MIT
+description: "|-. 适用于需要memo quickstart相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 本地记忆
   - 零依赖
@@ -18,15 +18,15 @@ tags:
   - json
   - 记忆
   - session-state
-  - tf-idf
-  - memory-store
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # 使用流程
 
 面向零依赖场景的**本地记忆系统**，用三层架构和混合检索算法，在不引入任何外部依赖的前提下，提供开箱即用的记忆能力。无 API Key、无云、无追踪，纯本地记忆.
@@ -143,7 +143,7 @@ memory-init
 ### 第 2 步：配置 Agent（20 秒）
 
 在 Agent 的系统提示词中写入规则：收到重要信息时先写入 SESSION-STATE.json 再 memory-store 持久化，然后响应用户；会话开始时读取 SESSION-STATE.json 并用 memory-search 检索相关记忆.
-### 第 3 步：存第一条记忆（15 秒）
+### 第 3 步：存领先条记忆（15 秒）
 
 ```bash
 memory-store --type preference --content "用户偏好 TypeScript" --importance 0.9

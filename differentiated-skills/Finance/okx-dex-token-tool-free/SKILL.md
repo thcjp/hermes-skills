@@ -5,14 +5,9 @@ name: okx-dex-token-tool-free
 version: 1.0.0
 displayName: DEX代币数据入门
 summary: "通过OKX DEX API查询链上代币信息，支持价格、流动性与基础交易数据获取.。面向个人加密货币投资者的DEX代币数据查询工具。通过OKX DEX聚合器"
-license: Proprietary
+license: MIT
 edition: free
-description: "面向个人加密货币投资者的DEX代币数据查询工具。通过OKX DEX聚合器，可自动提升工作效率
-  API获取多链代币的实时价格、流动性池信息和基础交易数据。Use
-  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'。快速洞察数据价值，支持数据驱动决策。触发关键词：API设计、数据分析、自动化、搜索、机器学习"
-
-  API获取多链代币的实时价格、流动性池信息和基础交易数据。Use
-  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
+description: "面向个人加密货币投资者的DEX代币数据查询工具。通过OKX DEX聚合器，可自发提升工作效率. 适用于需要okx dex token tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Finance
   - 加密货币
@@ -24,15 +19,15 @@ tags:
   - dex
   - okx
   - ethereum
-  - key
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Finance"
-
+pricing_tier: free
 ---
+
 # DEX代币数据入门（免费版）
 
 ## 概述
@@ -188,12 +183,12 @@ query_config:
     storage: "./cache/"
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **合约地址优先**：使用合约地址查询比代币符号更准确
 2. **多链验证**：同一代币可能在不同链上有不同合约
 3. **流动性关注**：低流动性代币滑点大，交易需谨慎
-4. **安全第一**：投资前验证合约地址，防范假冒代币
+4. **安全领先**：投资前验证合约地址，防范假冒代币
 
 | 实践要点 | 说明 |
 |:---:|:---:|

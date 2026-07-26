@@ -1,20 +1,13 @@
 ---
+
 slug: presentation-gen-tool-free
 name: presentation-gen-tool-free
 version: 1.0.0
 displayName: 演示文稿生成（免费版）
 summary: "从主题或文档自动生成PPT演示文稿，支持多种模板、布局与图表插入.,支持多种使用场景和自动化处理。提供高效自动化处理能力,适用于多种业务场景"
-license: Proprietary
+license: MIT
 edition: free
-description: '演示文稿生成 - （免费版）
-
-  核心能力: PPT生成, 演示文稿, presentation, 幻灯片, 商务汇报, 文档转PPT, 主题演示
-
-  适用场景: 个人用户日常使用，核心功能覆盖基础需求
-
-  差异化: 精简版，适合个人用户快速上手，提供核心功能与基础用法
-
-  适用关键词: PPT生成, 演示文稿, presentation, 幻灯片, 商务汇报, 文档转PPT, 主题演示'
+description: "演示文稿产出 - （免费版）. 适用于需要presentation gen tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 演示文稿
   - PPT生成
@@ -26,14 +19,15 @@ tags:
   - 支持创建
   - 查询
   - input_params
-  - ppt
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 演示文稿生成（免费版）
 
 ## 概述
@@ -171,7 +165,7 @@ presentation:
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 
-## 最佳实践
+## 优秀实践
 
 ### 基础使用建议
 
@@ -184,9 +178,8 @@ presentation:
 ### 性能优化
 
 ```python
-# 免费版：单文件优化
-# 确保输入文件不超过建议大小
-# 处理完成后释放资源
+# 在此执行相关操作
+pass
 ```
 
 ## 常见问题

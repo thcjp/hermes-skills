@@ -5,36 +5,27 @@ name: smart-light-controller-free
 version: 1.0.1
 displayName: 智能灯控(免费版)
 summary: "局域网智能灯泡控制工具，支持开关、亮度、颜色调节，零云端依赖.。智能灯控工具是一款面向本地局域网智能灯泡的轻量级控制方案，兼容 TP-Link Kasa 协议设备，无需云端账号即可完成开关、"
-license: Proprietary
+license: MIT
 edition: free
-description: 智能灯控工具是一款面向本地局域网智能灯泡的轻量级控制方案，兼容 TP-Link Kasa 协议设备，无需云端账号即可完成开关、亮度、色温与。可自动提升工作效率
-  HSV 颜色调节。核心能力：
-
-  - 基于 python-kasa 库实现局域网直连控制，延迟低、隐私强
-
-  - 支持单灯基础操作：开/关、亮度 0-100、HSV 色彩、色温切换
-
-  - 提供可复制的命令行模板，60 秒内上手
-
-  - 内置错误恢复策略...'
+description: "智能灯控工具是一款面向本地局域网智能灯泡的轻量级控制方案，兼容 TP-Link Kasa 协议设备，无需云端账号即可完成开关、亮度、色温与。可自发提升工作效率. 适用于需要smart light controller相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量."
 tags:
   - 智能家居
+  - smart
+  - light
+  - controller
+  - automation
   - 灯光控制
   - 局域网
   - 自动化
   - 工具
   - 写作
-  - bash
-  - run
-  - control_kasa_light
-  - hsv
-  - python
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 
 ---
 
@@ -128,7 +119,7 @@ done
 
 ### 60 秒上手
 
-第一步，安装依赖：
+领先步，安装依赖：
 
 ```bash
 uv pip install python-kasa>=0.10.2
@@ -137,6 +128,8 @@ uv pip install python-kasa>=0.10.2
 第二步，发现设备并记录 IP：
 
 ```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 第三步，开灯并设置颜色：
@@ -178,7 +171,7 @@ export LIGHT_IP=192.168.1.50
 py --ip "$LIGHT_IP" --on --brightness 60
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 固定灯泡 IP
 

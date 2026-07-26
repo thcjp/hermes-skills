@@ -1,35 +1,34 @@
 ---
+
 slug: domain-dns-manager-free
 name: domain-dns-manager-free
 version: 1.0.1
 displayName: 域名DNS管理免费版
 summary: 管理Cloudflare/DNSimple/Namecheap的域名与DNS记录，支持单域名接入与基础记录操作.
-license: Proprietary
+license: MIT
 edition: free
-description: 域名DNS管理免费版是一款面向个人开发者与小团队的域名管理Skill，封装Cloudflare、DNSimple、Namecheap三大平台的常用操作。Use
-  when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
+description: "域名DNS管控免费版是一款面向个人开发者与小团队的域名管控Skill，封装Cloudflare、DNSimple、Namecheap三大平台的常用操作。Use. 适用于需要domain dns manager相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量."
 tags:
   - 域名管理
+  - domain
+  - dns
+  - manager
+  - automation
   - DNS配置
   - Cloudflare
   - 运维工具
   - 工具
   - 效率
-  - 自动化
-  - 运维
-  - 监控
-  - 工作流
-  - 写作
-  - dns
-  - cloudflare
-  - https
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # 域名DNS管理免费版（Domain DNS Manager Free）
 
 ## 概述
@@ -186,7 +185,7 @@ export NAMECHEAP_API_KEY="your_api_key"
 使用Cloudflare代理时，A记录可使用以下占位IP（Cloudflare会自动替换为实际代理IP）：
 - `192.0.2.1` - 用于DNS占位，确保HTTPS可终止
 
-## 最佳实践
+## 优秀实践
 
 1. **先配置后切换**：在新DNS配好所有记录后再切换nameserver，避免服务中断
 2. **逐项验证**：每添加一条记录后用dig验证，不要批量添加后才发现问题

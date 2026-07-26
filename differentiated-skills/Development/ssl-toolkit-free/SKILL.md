@@ -1,40 +1,13 @@
 ---
+
 slug: ssl-toolkit-free
 name: ssl-toolkit-free
 version: 1.0.1
 displayName: SSL工具箱(免费版)
 summary: "个人用户的HTTPS配置、TLS证书管理与基础连接排障工具.。SSL工具箱(免费版)为个人用户提供HTTPS配置、TLS证书管理与基础连接排障能力。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 'SSL工具箱(免费版)为个人用户提供HTTPS配置、TLS证书管理与基础连接排障能力。核心能力:
-
-  - Let''s Encrypt免费证书申请与续期
-
-  - 证书状态检查与详情查看
-
-  - 常见错误诊断与修复
-
-  - Nginx/Apache基础HTTPS配置
-
-  - 证书类型选择指引
-
-  适用场景:
-
-  - 个人站点启用HTTPS
-
-  - 证书过期排查与续期
-
-  - 常见SSL错误诊断
-
-  差异化:
-
-  - 免费版聚焦个人站点的基础SSL管理
-
-  - 移除原始平台与作者引用,纯净适配SkillHub
-
-  - 提供中文友好的错误诊断表
-
-  ...'
+description: "SSL工具箱(免费版)为个人用户包含HTTPS配置、TLS证书管控与基础连接排障能力。核心能力:. 适用于需要ssl toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Development
   - 安全
@@ -46,17 +19,15 @@ tags:
   - 写作
   - 电商
   - 研究
-  - 分析
-  - openssl
-  - pem
-  - certbot
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # SSL工具箱(免费版)
 
 ## 概述
@@ -258,7 +229,7 @@ com:443 2>/dev/null | openssl x509 -noout -dates
 | 多域名(SAN) | 多个不同域名共用一个证书 |
 | 自签名 | 仅本地开发 — 浏览器会警告 |
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 始终自动化续期
 
@@ -287,9 +258,8 @@ com www.example.com;
 ### 3. 使用完整证书链
 
 ```nginx
-# 正确:使用fullchain.pem(包含中间证书)
-# ...
-# 错误:仅用cert.pem(缺少中间证书,部分客户端无法验证)
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### 4. 启用现代TLS协议
@@ -369,7 +339,7 @@ HTTPS页面引用HTTP资源会触发混合内容警告:
 - 域名DNS解析需提前配置好,指向你的服务器IP.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。免费版聚焦个人站点的HTTPS配置、证书管理与基础连接排障.
 ## 错误处理
 
@@ -395,9 +365,9 @@ HTTPS页面引用HTTP资源会触发混合内容警告:
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

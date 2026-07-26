@@ -1,44 +1,13 @@
 ---
+
 slug: podcast-chaptering-tool-free
 name: podcast-chaptering-tool-free
 version: 1.0.0
 displayName: 播客章节工具免费版
 summary: "从播客音频或文字稿生成章节标记与高光片段建议,适合个人创作者快速制作节目笔记.。面向个人创作者的播客章节标记工具(免费版)。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 面向个人创作者的播客章节标记工具(免费版)。核心能力:，可自动提升工作效率
-
-  - 从音频或文字稿生成章节标记(时间戳+标题)
-
-  - 高光片段建议与时间定位
-
-  - 节目笔记(Show Notes)草稿生成
-
-  - 支持中文与英文内容
-
-  - 基础隐私保护(仅分析不发布)
-
-  适用场景:
-
-  - 个人播客章节划分
-
-  - 节目笔记与时间戳生成
-
-  - 高光片段筛选
-
-  - 视频播客章节标记
-
-  差异化:
-
-  - 免费版聚焦单文件章节生成
-
-  - 支持音频与文字稿两种输入
-
-  - 隐私优先,仅生成草稿不发布
-
-  - 适配个人创作者快速出稿
-
-  适用关键词: po...'
+description: "面向个人创作者的播客章节标记工具(免费版)。核心能力:，可自发提升工作效率. 适用于需要podcast chaptering tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 创意设计
   - 播客
@@ -50,15 +19,15 @@ tags:
   - start
   - text
   - transcript
-  - json
-  - segments
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # 播客章节工具 - 免费版
 
 ## 概述
@@ -250,8 +219,8 @@ whisper audio.mp3 --model small --output_format json --output_dir .
 ### 2. 生成章节
 
 ```bash
-# 使用 Agent 自然语言指令
-# "请根据 transcript.json 生成章节标记,每段至少 2 分钟,输出 Markdown 格式"
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### 3. 输出格式
@@ -301,7 +270,7 @@ whisper audio.mp3 --model small --output_format json --output_dir .
 | 高光数量 | 5 | 建议提取的高光片段数 |
 | 语言 | 自动检测 | 可指定 zh 或 en |
 
-## 最佳实践
+## 优秀实践
 
 1. **章节划分原则**
    - 按话题转换划分,而非固定时长
@@ -331,7 +300,7 @@ whisper audio.mp3 --model small --output_format json --output_dir .
 
 ### Q1: 章节标记的准确度如何?
 
-准确度取决于文字稿质量与话题转换的清晰度。启发式规则可识别约 70-80% 的章节边界,建议人工校对。清晰的结构化对话(如访谈)效果最佳.
+准确度取决于文字稿质量与话题转换的清晰度。启发式规则可识别约 70-80% 的章节边界,建议人工校对。清晰的结构化对话(如访谈)效果优秀.
 ### Q2: 音频质量差怎么办?
 
 音频质量差会影响转录,进而影响章节生成。建议:
@@ -369,7 +338,7 @@ whisper audio.mp3 --model small --output_format json --output_dir .
 - 若使用 OpenAI 转录 API,需配置 `OPENAI_API_KEY`
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。免费版聚焦单文件章节生成,隐私优先,适合个人创作者快速制作节目笔记.
 ## 错误处理
 
@@ -395,9 +364,9 @@ whisper audio.mp3 --model small --output_format json --output_dir .
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

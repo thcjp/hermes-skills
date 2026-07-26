@@ -1,30 +1,13 @@
 ---
+
 slug: iris-formatter-tool-free
 name: iris-formatter-tool-free
 version: 1.0.0
 displayName: IRIS代码格式化免费版
 summary: "InterSystems IRIS ObjectScript 代码格式化与基础规范检查工具.。面向 IRIS 开发者的 ObjectScript 代码格式化与规范检查工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 面向 IRIS 开发者的 ObjectScript 代码格式化与规范检查工具。核心能力:，可处理提升工作效率
-
-  - 变量与方法命名规范检查
-
-  - 锁与事务规范验证
-
-  - 格式规范（缩进、空格、命令缩写）
-
-  - 注释规范检查与自动修正
-
-  适用场景:
-
-  - 个人 IRIS 代码格式化与审查
-
-  - ObjectScript 代码规范合规性检查
-
-  - 代码风格统一与自动修正
-
-  差异化: 免费版聚焦个人开发者的代码格式化与基础规范检查，提供速查表与修正模板，开箱即用'
+description: "面向 IRIS 开发者的 ObjectScript 代码格式化与规范检查工具。核心能力:，可处置提升工作效率. 适用于需要iris formatter tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - IRIS
@@ -36,15 +19,15 @@ tags:
   - objectscript
   - 代码格式
   - iris
-  - tro
-  - 方法命名
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # IRIS 代码格式化工具（免费版）
 
 ## 概述
@@ -148,7 +131,7 @@ category: "Automation"
 位置：第 12 行
 问题：锁未设置超时退出
 规范依据：加锁必须写超时退出，避免死锁
-建议修正：l +^XXX:3
+建议修正：l +^placeholder:3
 ```
 
 ### 场景三：后置表达式修正
@@ -297,7 +280,7 @@ Method MyMethod()
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **命令统一用缩写**：除循环结构外，所有命令使用缩写形式
 

@@ -1,13 +1,13 @@
 ---
+
 slug: json-repair-tool-free
 name: json-repair-tool-free
 version: 1.0.0
 displayName: JSON修复工具免费版
 summary: "轻量级JSON修复工具，自动修复尾随逗号、单引号、未引号键名等常见语法错误.。JSON修复工具免费版提供常见JSON语法错误的自动修复能力，帮助开发者快速修复因手写或编辑器问题导致的格式问题"
-license: Proprietary
+license: MIT
 edition: free
-description: JSON修复工具免费版提供常见JSON语法错误的自动修复能力，帮助开发者快速修复因手写或编辑器问题导致的格式问题。核心能力：修复尾随逗号、单引号转双引号、未引号键名补全、JS风格注释移除、十六进制数字转十进制；修复前自动备份，修复后验证合法性；沙箱化解析确保安全。Use
-  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
+description: "JSON修正工具免费版包含常见JSON语法错误的自发修正能力，帮助开发者快速修正因手写或编辑器问题导致的格式问题。核心能力：修正尾随逗号、单引号转双引号、未引号键名补全、JS风格注释移除、十六进制数字转十进制；修正前自发备份，修正后验证合法性；沙箱化解析确保安全。Use. 适用于需要json repair tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 集成工具
   - JSON
@@ -25,7 +25,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # JSON修复工具（免费版）
 
 本工具自动修复JSON文件中的常见语法错误，包括尾随逗号、单引号、未引号键名、注释、十六进制数字等，帮助开发者快速恢复JSON的可解析性.
@@ -161,7 +163,7 @@ node repair.js --file broken.json --out fixed.json
 | `js_comment` | `//.*` 或 `/*...*/` | JS风格注释 |
 | `hex_number` | `0x[0-9a-fA-F]+` | 十六进制数字 |
 
-## 最佳实践
+## 优秀实践
 
 ### 修复前备份
 - 始终保留默认的备份机制（不使用`--no-backup`）

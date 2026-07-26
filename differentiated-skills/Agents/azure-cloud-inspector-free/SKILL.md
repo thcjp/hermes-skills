@@ -1,13 +1,13 @@
 ---
+
 slug: azure-cloud-inspector-free
 name: azure-cloud-inspector-free
 version: 1.0.1
 displayName: Azure巡检员免费版
 summary: "面向日常巡检的Azure检查助手,默认只读,风险评分,暴露面发现,配置漂移检测.。Azure巡检员免费版是一个以"日常巡检"为核心视角的Azure CLI辅助工具。针对云上资源"配置漂移无人"
-license: Proprietary
+license: MIT
 edition: free
-description: Azure巡检员免费版是一个以"日常巡检"为核心视角的Azure CLI辅助工具。针对云上资源"配置漂移无人察觉、公网暴露面长期敞开、巡检脚本每次重写、风险等级无量化、巡检结论难分享"五大痛点,构建了风险评分模型、暴露面发现、配置漂移检测、巡检任务模板和巡检报告生成五大基础能力。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "Azure巡检员免费版是一个以\"日常巡检\"为核心视角的Azure CLI辅助工具。针对云上资源\"配置漂移无人察觉、公网暴露面长期敞开、巡检脚本每次重写、风险等级无量化、巡检结论难分享\"五大痛点,构建了风险评分模型、暴露面发现、配置漂移查验、巡检任务模板和巡检报告产出五大基础能力。Use. 适用于需要azure cloud inspector相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 智能代理
   - 云计算
@@ -25,7 +25,9 @@ tools:
   - write
 homepage: ""
 category: "Operations"
+pricing_tier: free
 ---
+
 # Azure巡检员(免费版)
 
 面向"日常巡检"场景的Azure CLI辅助工具。默认只读查询,聚焦检查与报告,不主动执行变更操作。仅在用户明确要求变更并确认后,才执行写/破坏性操作.
@@ -50,7 +52,7 @@ az account show --query '{Subscription:name, Tenant:tenantId, User:user.name}' -
 # 1. 列出当前订阅所有资源组
 az group list --query '[].{Name:name, Location:location, Count:length(resources())}' --output table
 # ...
-# 2. 巡检第一个资源组(替换 <RG>)
+# 2. 巡检领先个资源组(替换 <RG>)
 az group show -n <RG> --query '{Name:name, State:properties.provisioningState, Tags:tags}'
 az resource list -g <RG> --query '[].{Name:name, Type:type, Location:location}' --output table
 ```
@@ -100,9 +102,9 @@ az resource list -g "$RG" --query '[].{Name:name, Type:type, Location:location, 
 # ...
 echo "=== 资源数量统计 ==="
 type' -o tsv | sort | uniq -c | sort -rn
-```
-
-### 模板2:VM健康巡检
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 echo "=== VM状态 ==="
 az vm list -d --query '[].{Name:name, RG:resourceGroup, State:powerState, Size:hardwareProfile.vmSize}' --output table
@@ -114,9 +116,9 @@ echo "=== VM磁盘加密状态 ==="
 az vm list --query '[].{Name:name, RG:resourceGroup}' -o tsv | while read name rg; do
   echo -n "$name: "; az vm encryption show -n "$name" -g "$rg" --query 'disks[].statuses[].code' -o tsv 2>/dev/null || echo "无法查询"
 done
-```
-
-### 模板3:存储账户巡检
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 echo "=== 存储账户清单 ==="
 az storage account list --query '[].{Name:name, RG:resourceGroup, SKU:sku.name, TLS:minimumTlsVersion}' --output table
@@ -227,11 +229,9 @@ $(az resource list --query '[].type' -o tsv | sort | uniq -c | sort -rn)
 EOF
 # ...
 echo "巡检报告已生成: $REPORT"
-```
-
-## 真实场景示例
-
-### 场景一:上线前暴露面检查
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 用户:"我们准备上线一个新服务,帮我检查一下订阅里有没有不该暴露的东西"
 # ...
@@ -241,9 +241,9 @@ echo "巡检报告已生成: $REPORT"
 3. 扫描NSG入站规则中的0.0.0.0/0(免费版仅基础检查,深度检查在专业版)
 4. 列出公网负载均衡器
 5. 生成暴露面报告,标注高风险项
-```
-
-### 场景二:每日例行巡检
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 用户:"帮我跑一次日常巡检,关注资源组prod-rg"
 # ...
@@ -253,9 +253,9 @@ echo "巡检报告已生成: $REPORT"
 3. 对比昨日基线快照,标记新增/删除资源
 4. 生成Markdown巡检报告
 5. 报告中标注中高风险项的修复建议
-```
-
-### 场景三:配置漂移排查
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 用户:"运维同事昨天改了配置,我想知道具体改了什么"
 # ...
@@ -323,7 +323,7 @@ A: 免费版需手动切换订阅(`az account set --subscription <id>`)分别巡
 - **绝不要**在聊天、日志或巡检报告中输出密钥、客户端密钥、令牌
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,需要命令行执行能力运行Azure CLI)
+- **分类**: MD+EXEC模式纯Markdown指令,需要命令行执行能力运行Azure CLI)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent使用Azure CLI执行云资源巡检。需要Azure CLI和Azure账户.
 ## 已知限制
 

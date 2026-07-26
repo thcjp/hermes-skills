@@ -1,51 +1,34 @@
 ---
+
 slug: frontend-design-other-tool-free
 name: frontend-design-other-tool-free
 version: 1.0.0
 displayName: 前端设计工具
 summary: "面向个人开发者的前端界面设计助手，产出有辨识度的高质量页面.。面向个人开发者与独立设计者的前端界面设计工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 面向个人开发者与独立设计者的前端界面设计工具。核心能力:，可自动提升工作效率
-
-  - 色彩/字体/版式/签名元素四件套设计令牌生成
-
-  - 反模板化自检与差异化校准
-
-  - 响应式、可访问性、动效克制的基础质量底线
-
-  - 单页落地页与组件级设计方案输出
-
-  适用场景:
-
-  - 独立开发者快速产出有辨识度的产品落地页
-
-  - 为单个组件或模块设计视觉方案
-
-  - 个人作品集页面设计
-
-  差异化: 免费版聚焦单页与组件级设计，提供四件套令牌、反模板自检与基础质量底线，适合个人快速产出'
+description: "面向个人开发者与独立设计者的前端界面设计工具。核心能力:，可自发提升工作效率. 适用于需要frontend design other tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要frontend design other tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 前端设计
+  - frontend
+  - design
+  - other
+  - automation
   - 视觉设计
   - 落地页
   - 个人效率
   - 其他工具
   - 设计
-  - UI/UX
-  - 创意
-  - hero
-  - 工具
-  - 字体
-  - 默认外观
-  - 数字
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
+
 ---
+
 # 前端设计工具（免费版）
 
 ## 概述
@@ -163,7 +146,7 @@ CSS 变量化令牌，便于全局调整：
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 - **hero 是论点**：用最具特征的一件事开场，而非「大数字 + 小标签 + 渐变」模板答案.
 - **字体承担性格**：展示体与正文刻意搭配，别用 Inter/Roboto 当展示体.

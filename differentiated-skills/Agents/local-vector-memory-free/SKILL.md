@@ -5,11 +5,15 @@ name: local-vector-memory-free
 version: 1.0.1
 displayName: 本地向量记忆(免费版)
 summary: "零API零云依赖的本地向量记忆免费版：离线可用、隐私不出域，核心存储与检索开箱即用.。面向隐私敏感与离线场景的本地向量记忆系统免费体验版。基于 LanceDB + 纯本地 embedding"
-license: Proprietary
+license: MIT
 edition: free
-description: 面向隐私敏感与离线场景的本地向量记忆系统免费体验版。基于 LanceDB + 纯本地 embedding（Ollama/nomic-embed-text），实现零外部
-  API 调用、零数据出域、完全离线可用的语义记忆检索。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
-tags: 本地向量记忆,LanceDB,Ollama,语义检索,离线
+description: "面向隐私敏感与离线场景的本地向量记忆系统免费体验版。基于 LanceDB + 纯本地 embedding（Ollama/nomic-embed-text），达成零外部. 适用于需要local vector memory相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+tags:
+  - 本地向量记忆
+  - LanceDB
+  - Ollama
+  - 语义检索
+  - 离线
 tools:
   - read
   - exec
@@ -18,7 +22,7 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
-
+pricing_tier: free
 ---
 
 # 本地向量记忆（免费版）
@@ -47,7 +51,7 @@ category: "Agents"
 | 资源占用 | 零本地资源 | 需 2-4GB 内存 |
 | 部署难度 | 仅需 API Key | 需安装 Ollama |
 
-**结论**：个人/小团队/隐私场景用本地；追求极致质量且不敏感数据用云端.
+**结论**：个人/小团队/隐私场景用本地；追求优秀质量且不敏感数据用云端.
 ## 架构
 
 ## 输入格式
@@ -108,7 +112,7 @@ ollama pull nomic-embed-text
 # 初始化记忆系统
 node （请参考skill目录中的脚本文件）
 # ...
-# 存储第一条记忆
+# 存储领先条记忆
 node （请参考skill目录中的脚本文件） store "用户喜欢深色模式" --importance 0.9 --category preference
 # ...
 # 检索记忆

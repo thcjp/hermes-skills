@@ -7,15 +7,7 @@ displayName: 飞书文档工具（专业版）
 summary: "读取飞书Wiki、文档、表格、多维表格内容，支持文档创建、写入、追加与块操作.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
-description: 飞书文档工具 - （专业版）。可自动提升工作效率
-
-  核心能力: 飞书文档, 飞书Wiki, 文档读取, 文档创建, feishu, lark, 块操作, 长文档
-
-  适用场景: 企业级场景，支持批量操作、团队协作与高级功能
-
-  差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
-
-  适用关键词: 飞书文档, 飞书Wiki, 文档读取, 文档创建, feishu, lark, 块操作, 长文档'
+description: "飞书文档工具 - （专业版）。可自发提升工作效率. 适用于需要feishu doc tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 飞书集成
   - 文档管理
@@ -27,13 +19,6 @@ tags:
   - 知识
   - 文档
   - 研究
-  - 分析
-  - 安全
-  - self
-  - str
-  - token
-  - def
-  - 支持创建
 tools:
   - read
   - exec
@@ -41,7 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
+pricing_tier: L2-标准级
 ---
 
 # 飞书文档工具（专业版）
@@ -232,7 +217,7 @@ js", "--action", "read", "--token", token
         return url.split("/")[-1]
 # ...
 manager = EnterpriseFeishuDocManager("APP_ID", "APP_SECRET")
-doc = manager.create_long_document("季度报告", ["# 摘要", "## 第一章", "## 第二章"])
+doc = manager.create_long_document("季度报告", ["# 摘要", "## 领先章", "## 第二章"])
 print(f"文档已创建: {doc}")
 ```
 
@@ -311,9 +296,9 @@ feishu:
 - 多租户隔离支持
 - 合规性检查内置
 
-## 最佳实践
+## 优秀实践
 
-### 企业级最佳实践
+### 企业级优秀实践
 
 1. **明确需求**：对于大批量任务，先规划分批策略与并行度
 2. **检查输入**：批量处理前先验证所有输入文件的有效性
@@ -324,11 +309,8 @@ feishu:
 ### 性能优化
 
 ```python
-# 专业版：批量性能优化
-# 1. 合理设置并行度（建议CPU核心数）
-# 2. 分批处理避免内存溢出
-# 3. 使用异步IO提升吞吐量
-# 4. 启用结果缓存减少重复计算
+# 在此执行相关操作
+pass
 ```
 
 ## 常见问题

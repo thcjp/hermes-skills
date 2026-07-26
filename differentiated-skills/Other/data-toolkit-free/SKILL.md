@@ -1,25 +1,24 @@
 ---
+
 slug: data-toolkit-free
 name: data-toolkit-free
 version: 1.0.1
 displayName: 数据工具箱(免费版)
 summary: "数据全生命周期工具，覆盖提取、清洗、分析与基础可视化.。数据工具箱免费版是一款面向个人开发者的数据全生命周期处理工具，覆盖数据提取、清洗转换、探索性分析与基础可视化四大核心环节。Use wh"
-license: Proprietary
+license: MIT
 edition: free
-description: 数据工具箱免费版是一款面向个人开发者的数据全生命周期处理工具，覆盖数据提取、清洗转换、探索性分析与基础可视化四大核心环节。Use when
-  需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+description: "数据工具箱免费版是一款面向个人开发者的数据全生命周期处置工具，覆盖数据提取、清洗变换、探索性剖析与基础可视化四大核心环节。Use when. 适用于需要data toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要data toolkit相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 数据分析
+  - data
+  - toolkit
+  - automation
+  - productivity
   - 数据清洗
   - SQL
   - 可视化
   - 数据处理
   - 工具
-  - amount
-  - csv
-  - sql
-  - python
-  - agent
 tools:
   - read
   - exec
@@ -27,12 +26,15 @@ tools:
   - glob
 homepage: ""
 category: "Research"
+pricing_tier: free
+
 ---
+
 # 数据工具箱（免费版）
 
 ## 概述
 
-本工具箱覆盖数据处理的完整生命周期：从多源数据提取，到清洗转换，再到探索性分析与基础可视化。无论你是写 SQL 查询、清洗脏数据、生成统计摘要还是制作图表，本工具均能提供标准化流程与最佳实践指导.
+本工具箱覆盖数据处理的完整生命周期：从多源数据提取，到清洗转换，再到探索性分析与基础可视化。无论你是写 SQL 查询、清洗脏数据、生成统计摘要还是制作图表，本工具均能提供标准化流程与优秀实践指导.
 免费版聚焦核心数据处理能力，适合个人开发者的日常数据分析需求。专业版在此基础上扩展统计检验、数据质量监控、工作流自动化与高级可视化.
 ## 核心能力
 
@@ -206,7 +208,7 @@ df.groupby('channel')['amount'].sum().plot(kind='pie', autopct='%1.1f%%')
 plt.savefig('channel_share.png', dpi=150, bbox_inches='tight')
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 转换前预览
 

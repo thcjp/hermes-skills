@@ -5,11 +5,9 @@ name: api-doc-generator-free
 version: 1.0.1
 displayName: API文档生成器(免费版)
 summary: "从代码注释或接口描述自动生成OpenAPI 3.0文档与Markdown接口手册，60秒出稿.。API文档生成器免费版解决"接口文档写不动、写了不更新、新人看不懂"三大痛点。从代码注释、接口"
-license: Proprietary
+license: MIT
 edition: free
-description: "API文档生成器免费版解决\"接口文档写不动、写了不更新、新人看不懂\"三大痛点。从代码注释、接口签名或自然语言描述出发，自动生成符合OpenAPI
-  3。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。自动化生成专业文档，提升文档覆盖率。触发关键词：API设计、文档生成、设计、机器学习、自然语言"
-  3。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
+description: "API文档产出器免费版解决\"接口文档写不动、写了不更新、新人看不懂\"三大痛点。从代码注释、接口签名或自然语言描述出发，自发产出符合OpenAPI. 适用于需要api doc generator相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - API文档
   - OpenAPI
@@ -21,15 +19,15 @@ tags:
   - string
   - openapi
   - post
-  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
-
+pricing_tier: free
 ---
+
 # API文档生成器（免费版）
 
 > **把"写接口文档"从半天压缩到一分钟。自然语言描述→OpenAPI规范+Markdown手册双产出。**

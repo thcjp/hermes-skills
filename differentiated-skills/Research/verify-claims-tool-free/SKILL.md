@@ -1,26 +1,24 @@
 ---
+
 slug: verify-claims-tool-free
 name: verify-claims-tool-free
 version: 1.0.0
 displayName: 事实核查助手免费版
 summary: "多源交叉验证的事实核查工具,对接全球专业事实核查机构,适合个人信息鉴别。事实核查助手免费版,面向个人用户提供基础的事实核查能力。通过对接全球专业事实核查机构,对用户提供的声明进行多源交叉验证"
-license: Proprietary
+license: MIT
 edition: free
-description: 事实核查助手免费版,面向个人用户提供基础的事实核查能力。通过对接全球专业事实核查机构,对用户提供的声明进行多源交叉验证。Use when
-  需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。Use when
-  需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "事实核查助手免费版,面向个人用户包含基础的事实核查能力。通过对接全球专业事实核查机构,对用户包含的声明进行多源交叉验证。Use when. 适用于需要verify claims tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要verify claims tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 研究工具
+  - verify
+  - claims
+  - automation
+  - productivity
   - 事实核查
   - 信息鉴别
   - 搜索
   - 检索
   - 工具
-  - verify-claims
-  - check
-  - bash
-  - 用户提供
-  - 返回结构
 tools:
   - read
   - exec
@@ -28,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 # 事实核查助手免费版
 
 ## 概述
@@ -190,7 +191,7 @@ verify-claims check "全球气候变化导致海平面上升 3 米" --citations
 
 ## 快速开始
 
-### 第一步:查看可用命令
+### 领先步:查看可用命令
 
 ```bash
 # 查看所有命令
@@ -250,7 +251,7 @@ verify-claims config set-sources \
   --politics "politifact"
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 提供清晰的声明
 
@@ -349,7 +350,7 @@ SEARCH_API_KEY=your_search_api_key
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,通过 exec 执行 HTTP 请求和网页抓取)
+- **分类**: MD+EXEC模式纯 Markdown 指令,通过 exec 执行 HTTP 请求和网页抓取)
 - **说明**: 基于多源交叉验证的事实核查工具,通过自然语言指令驱动 Agent 查询和综合专业核查机构的结果
 - **适用规模**: 个人用户、单次核查、本地运行
 

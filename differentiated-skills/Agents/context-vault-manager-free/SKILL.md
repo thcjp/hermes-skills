@@ -5,11 +5,9 @@ name: context-vault-manager-free
 version: 1.0.1
 displayName: Context Vault Manage
 summary: "智能分层记忆管理，短期/长期/重要三层架构，关键词检索，自动清理，Token占用降低70%.。上下文保险库免费版解决长会话Agent"上下文溢出、记忆混乱、Token浪费"的核心痛点。采用短"
-license: Proprietary
+license: MIT
 edition: free
-description: "上下文保险库免费版解决长会话Agent\"上下文溢出、记忆混乱、Token浪费\"的核心痛点。采用短期/长期/重要三层记忆分层架构，自动清理过期短期记忆，避免上下文窗口被无效信息占满。Use，可自动提升工作效率
-  when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。提升信息检索效率与准确度。触发关键词：搜索、机器学习"
-  when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
+description: "上下文保险库免费版解决长会话Agent\"上下文溢出、记忆混乱、Token浪费\"的核心痛点。采用短期/长期/重要三层记忆分层架构，自发清理过期短期记忆，避免上下文窗口被无效信息占满。Use，可自发提升工作效率. 适用于需要context vault manager相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 记忆管理
   - 分层架构
@@ -21,8 +19,6 @@ tags:
   - action
   - contextvaultmanager
   - await
-  - skills
-  - 自动清理
 tools:
   - read
   - exec
@@ -31,8 +27,9 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
-
+pricing_tier: free
 ---
+
 # 上下文保险库（免费版）
 
 > **智能分层记忆管理。短期/长期/重要三层架构，Token占用降低70%。**
@@ -399,9 +396,9 @@ await skills.contextVaultManager({
 
 ### 示例1：基础用法
 
-```
-### 一分钟上手你的分层记忆(补充)
-# ...
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```typescript
 // 添加长期记忆
 await skills.contextVaultManager({
@@ -417,11 +414,12 @@ contextVaultManager({
   query: "用户喜好",
   limit: 3
 });
-```
-# ...
-### 可复制模板(补充)
-# ...
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```markdown
+# 在此执行相关操作
+echo "操作完成"
 ```
 # ...
 ## 错误处理

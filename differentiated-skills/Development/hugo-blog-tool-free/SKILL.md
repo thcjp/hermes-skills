@@ -1,30 +1,13 @@
 ---
+
 slug: hugo-blog-tool-free
 name: hugo-blog-tool-free
 version: 1.0.0
 displayName: Hugo博客发布免费版
 summary: 将 Markdown 文章发布到 Hugo 博客，自动生成 Front Matter 并推送到远程仓库.
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人博主的 Hugo 博客发布工具，简化文章发布流程。核心能力:
-
-  - 自动分析文章内容，提取标题、标签、分类
-
-  - 生成符合 Hugo 规范的 Front Matter
-
-  - 自动添加截断标记（more）
-
-  - Git 推送发布到远程仓库
-
-  适用场景:
-
-  - 个人技术博客文章发布
-
-  - Markdown 文章的 Front Matter 自动生成
-
-  - 博客内容的版本管理与推送
-
-  差异化: 免费版聚焦个人博主的单篇文章发布场景，提供自动化的 Front Matter 生成与推送流程，开箱即用'
+description: "面向个人博主的 Hugo 博客发布工具，简化文章发布流程。核心能力:. 适用于需要hugo blog tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - 博客
@@ -36,8 +19,6 @@ tags:
   - git
   - hugo
   - content
-  - posts
-  - draft
 tools:
   - read
   - exec
@@ -45,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Hugo 博客发布工具（免费版）
 
 ## 概述
@@ -112,7 +95,7 @@ category: "Automation"
    ---
 # ...
 4. 添加截断标记
-   在第一段后添加 <!--more-->
+   在领先段后添加 <!--more-->
 # ...
 5. Git 推送
    cd {博客路径}
@@ -239,7 +222,7 @@ AI、RAG、NLP、Kubernetes、Go、Elasticsearch、PHP、SQL、SSG、SSR 等技�
 
 ### 截断标记位置
 
-在第一段或导言后添加 `<!--more-->`，让列表页显示摘要.
+在领先段或导言后添加 `<!--more-->`，让列表页显示摘要.
 ```markdown
 ---
 title: "我的文章"
@@ -279,7 +262,7 @@ git push
 2. 博客目录下的 .git 配置
 
 如果未找到配置，才询问用户.
-## 最佳实践
+## 优秀实践
 
 1. **slug 使用英文**：文件名使用小写英文，不要用中文
    ```bash
@@ -292,7 +275,7 @@ git push
 
 2. **标签用英文 slug**：frontmatter 中用英文，页面展示用中文（通过 `_index.md`）
 
-3. **截断标记位置**：放在第一段结束后的空行，或导言和正文之间
+3. **截断标记位置**：放在领先段结束后的空行，或导言和正文之间
 
 4. **commit message 规范**：建议用 `新增:` 前缀
    ```bash

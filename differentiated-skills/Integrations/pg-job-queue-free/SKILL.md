@@ -1,13 +1,13 @@
 ---
+
 slug: pg-job-queue-free
 name: pg-job-queue-free
 version: 1.0.1
 displayName: PG任务队列(免费版)
 summary: 基于`PostgreSQL`的轻量任务队列，支持优先级调度、批量领取与进度跟踪，单机与小型团队适用.
-license: Proprietary
+license: MIT
 edition: free
-description: PG任务队列免费版是一套基于 `PostgreSQL` 的轻量任务队列知识库，帮助独立开发者在不引入 Redis 或 RabbitMQ 的前提下，用一张数据库表实现可靠的异步任务调度。核心能力：提供基于
-  SKIP LOCKED 的批量领取设计、优先级调度字段、进度跟踪结构、失败重试与超时回收方案、单 Worker 串行到多 Worker 并行的演进路径
+description: "PG任务队列免费版是一套基于 `PostgreSQL` 的轻量任务队列知识库，帮助独立开发者在不引入 Redis 或 RabbitMQ 的前提下，用一张数据库表达成可靠的异步任务调度。核心能力：包含基于. 适用于需要pg job queue相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 数据库
   - 集成工具
@@ -19,20 +19,15 @@ tags:
   - 写作
   - 电商
   - 研究
-  - 分析
-  - 创意
-  - worker
-  - default
-  - skip
-  - locked
-  - jobs
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # PG任务队列（免费版）
 
 ## 概述
@@ -216,7 +211,7 @@ $$ LANGUAGE plpgsql;
 | 100 | 系统常规任务 | 定时报表、批量通知 |
 | 30 | 后台回填任务 | 历史数据迁移、索引重建 |
 
-## 最佳实践
+## 优秀实践
 
 ### 实践一：永远使用 SKIP LOCKED
 

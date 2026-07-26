@@ -1,38 +1,34 @@
 ---
+
 slug: diagram-tool-free
 name: diagram-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: 图表工具免费版
 summary: "通过自然语言生成Mermaid流程图、时序图、ER图，快速可视化系统结构与业务流程.。图表工具免费版是一款面向开发者与技术写作者的智能图表生成Skill，支持通过自然语言描述快速产出标准化M"
-license: Proprietary
+license: MIT
 edition: free
-description: '图表工具免费版是一款面向开发者与技术写作者的智能图表生成Skill，支持通过自然语言描述快速产出标准化Mermaid图表。核心能力：
-
-  - 识别用户意图并自动选择流程图、时序图、ER图、类图、状态图等合适类型
-
-  - 内置风格规范与节点数量约束，避免过度复杂的"蜘蛛网"式图表
-
-  - 支持Markdown内联渲染与基础PNG导出，兼容主流文档平台
-
-  - 提供迭代式细化能力...'
+description: "图表工具免费版是一款面向开发者与技术写作者的智能图表产出Skill，兼容通过自然语言描述快速产出标准化Mermaid图表。核心能力：. 适用于需要diagram tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要diagram tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 图表生成
+  - diagram
+  - automation
+  - productivity
+  - developer-tools
   - 可视化
   - 文档辅助
   - Mermaid
   - 工具
   - 效率
-  - mermaid
-  - api
-  - png
-  - markdown
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # 图表工具免费版（Diagram Tool Free）
 
 ## 概述
@@ -187,9 +183,9 @@ stateDiagram-v2
     已拒绝 --> [*]
 ```
 
-## 最佳实践
+## 优秀实践
 
-1. **先简后繁**：第一版只画核心节点，确认无误后再补充异常分支
+1. **先简后繁**：领先版只画核心节点，确认无误后再补充异常分支
 2. **统一抽象层级**：不要在同一张图里混杂数据库表与业务概念
 3. **箭头方向一致**：避免双向箭头造成阅读混乱
 4. **标签简短**：节点名不超过5个字，过长则用图例说明

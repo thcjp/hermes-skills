@@ -1,4 +1,5 @@
 ---
+
 slug: calendar-reminder-tool-pro
 name: calendar-reminder-tool-pro
 version: 1.0.0
@@ -6,11 +7,7 @@ displayName: 日历提醒工具专业版
 summary: "企业级多日历智能提醒平台，支持多日历聚合、智能调度、团队同步、递进提醒与日程分析.。面向团队与企业的多日历智能提醒与调度平台."
 license: Proprietary
 edition: pro
-description: '面向团队与企业的多日历智能提醒与调度平台.
-  核心能力: 多日历聚合扫描、智能提醒调度、递进式提醒、团队日程同步、冲突检测、日程分析报表、多渠道通知.
-  适用场景: 团队日程协调、高管助理提醒、跨时区会议安排、会议室资源调度、日程效率分析.
-  差异化: 专业版在免费版基础上新增多日历与智能调度，兼容免费版扫描脚本与提醒格式.
-  适用关键词: 多日历, 智能提醒, 团队日程, 冲突检测, 递进提醒, 日程分析, calendar, 企业调度'
+description: "面向团队与企业的多日历智能提醒与调度平台. 适用于需要calendar reminder tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 日历提醒
   - 多日历聚合
@@ -22,14 +19,6 @@ tags:
   - 效率
   - 自动化
   - 通信
-  - 邮件
-  - 工作流
-  - 研究
-  - priority
-  - message
-  - event
-  - color
-  - all_events
 tools:
   - read
   - exec
@@ -37,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 日历提醒工具 专业版
 
 ## 概述
@@ -403,7 +394,7 @@ python3 calendar_reminder_pro.py
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 - **日历分类**：为不同类型日程设置优先级（工作=1，个人=2），冲突时按优先级建议调整.
 - **递进提醒**：高优先级日程启用 3 级递进提醒（24h/2h/30min），确保不遗漏.

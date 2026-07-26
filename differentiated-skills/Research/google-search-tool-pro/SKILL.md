@@ -1,4 +1,5 @@
 ---
+
 slug: google-search-tool-pro
 name: google-search-tool-pro
 version: 1.0.0
@@ -6,17 +7,7 @@ displayName: 谷歌搜索专业版
 summary: 企业级 Google 搜索工具，支持批量查询、多搜索引擎配置、结果导出、定时任务与搜索分析，适合专业研究与数据采集.
 license: Proprietary
 edition: pro
-description: '企业级 Google 搜索工具，支持批量查询、多搜索引擎配置、结果导出、定时任务与搜索分析，适合专业研究与数据采集。核心能力:
-
-  - 批量关键词查询，一次执行数十个搜索任务
-
-  - 多个自定义搜索引擎配置与切换
-
-  - 结果导出为 JSON/CSV/Markdown 多种格式
-
-  - 定时任务调度，自动执行搜索并归档
-
-  - 站点限定搜索...'
+description: "企业级 Google 搜索工具，兼容成批查询、多搜索引擎配置、结果导出、定时任务与搜索剖析，适合专业研究与数据采集。核心能力:. 适用于需要google search tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 搜索
   - 企业工具
@@ -35,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 # 谷歌搜索专业版
 
 ## 概述
@@ -296,7 +289,7 @@ curl -X POST http://localhost:8000/search \
 | `--cache` | 布尔 | true | 启用缓存 |
 | `--cron` | 字符串 | 无 | 定时表达式 |
 
-## 最佳实践
+## 优秀实践
 
 ### 批量搜索优化
 

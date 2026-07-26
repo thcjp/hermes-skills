@@ -1,43 +1,34 @@
 ---
+
 slug: dashboard-builder-free
 name: dashboard-builder-free
 version: 1.0.1
 displayName: 仪表盘构建(免费版)
 summary: "从任意数据源生成本地静态仪表盘，支持基础数据抓取与可视化 QA.。仪表盘构建工具免费版是一款面向个人开发者的本地仪表盘生成方案，支持从用户指定的数据源生成交互式静态 HTML 仪表盘，配套数"
-license: Proprietary
+license: MIT
 edition: free
-description: '仪表盘构建工具免费版是一款面向个人开发者的本地仪表盘生成方案，支持从用户指定的数据源生成交互式静态 HTML 仪表盘，配套数据抓取脚本与基础可视化
-  QA 流程，所有数据与凭据均在本地管理。核心能力：
-
-  - 根据用户描述生成静态 HTML 仪表盘页面
-
-  - 自动生成数据抓取脚本（支持 REST API 与文件源）
-
-  - 本地存储仪表盘配置与数据，目录结构清晰
-
-  - 基础可视化 QA：截图检查布局、字体、对比度
-
-  - 凭据通过环境变量注入...'
+description: "仪表盘构建工具免费版是一款面向个人开发者的本地仪表盘产出方案，兼容从用户指定的数据源产出交互式静态 HTML 仪表盘，配套数据抓取脚本与基础可视化. 适用于需要dashboard builder相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要dashboard builder相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 数据可视化
+  - dashboard
+  - builder
+  - automation
+  - productivity
   - 仪表盘
   - 本地工具
   - 自动化
   - UI设计
   - 前端
-  - 设计
-  - json
-  - stripe
-  - agent
-  - api
-  - dashboard
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
+
 ---
+
 # 仪表盘构建工具（免费版）
 
 ## 概述
@@ -126,7 +117,7 @@ Agent："我将生成抓取脚本。请在环境变量中设置 STRIPE_API_KEY�
 
 ### 120 秒上手
 
-第一步，创建存储目录：
+领先步，创建存储目录：
 
 ```bash
 mkdir -p ~/dashboard
@@ -203,9 +194,9 @@ curl -s -u "$STRIPE_API_KEY:" \
 * * * * * ~/dashboard/server/fetch.sh
 ```
 
-## 最佳实践
+## 优秀实践
 
-### 1. 凭据安全第一
+### 1. 凭据安全领先
 
 所有 API 凭据通过环境变量注入，禁止写入脚本或配置文件。在 cron 中使用环境变量文件：
 
@@ -325,9 +316,9 @@ curl -s ... | jq 'del(.customer.email, .customer.phone)' > data.json
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

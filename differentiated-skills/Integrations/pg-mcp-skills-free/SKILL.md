@@ -1,13 +1,13 @@
 ---
+
 slug: pg-mcp-skills-free
 name: pg-mcp-skills-free
 version: 1.0.1
 displayName: PG-MCP助手(免费版)
 summary: "PostgreSQL数据库管理与优化助手，通过MCP工具实现健康检查、索引调优、查询计划分析等.。PG-MCP助手免费版是一套基于 MCP工具协议的 `PostgreSQL` 数据库管理与优"
-license: Proprietary
+license: MIT
 edition: free
-description: PG-MCP助手免费版是一套基于 MCP工具协议的 `PostgreSQL` 数据库管理与优化知识库，帮助开发者在不离开 Agent 对话的前提下完成数据库健康检查、索引优化、查询计划分析、模式查询与
-  SQL 执行等日常运维任务。核心能力：提供 MCP工具可用性前置检查、六类常见意图的智能路由、写操作安全确认流程、只读模式兼容方案、长时间查询的性能保护策略
+description: "PG-MCP助手免费版是一套基于 MCP工具协议的 `PostgreSQL` 数据库管控与调优知识库，帮助开发者在不离开 Agent 对话的前提下完成数据库健康检查、索引调优、查询计划剖析、模式查询与. 适用于需要pg mcp skills相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 数据库
   - 集成工具
@@ -19,15 +19,15 @@ tags:
   - mcp
   - 执行
   - sql
-  - 查询计划
-  - 只读模式
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # PG-MCP助手（免费版）
 
 ## 概述
@@ -52,7 +52,7 @@ category: "Automation"
 根据用户输入判断意图，匹配对应的参考文档执行指令。意图不明确时先询问用户具体需求.
 | 用户意图 | 参考文档 | 典型说法 |
 |:-----|:-----|:-----|
-| 安装部署 | setup-postgres-mcp.md | 安装、部署、配置、第一次用、连不上 |
+| 安装部署 | setup-postgres-mcp.md | 安装、部署、配置、领先次用、连不上 |
 | 健康检查 | pg-health.md | 健康检查、数据库状态、性能监控、连接数 |
 | 索引优化 | pg-index-tuning.md | 索引优化、慢查询、性能调优、建索引 |
 | 查询计划 | pg-query-plan.md | 执行计划、EXPLAIN、查询分析、为什么慢 |
@@ -174,7 +174,7 @@ SQL: UPDATE users SET status = 'inactive' WHERE last_login < '2024-01-01';
 请确认是否执行？（输入"确认"继续，输入"取消"中止）
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 实践一：永远先做前置检查
 
@@ -190,7 +190,7 @@ SQL: UPDATE users SET status = 'inactive' WHERE last_login < '2024-01-01';
 遇到慢查询不要急于加索引。先用"查询计划"意图分析 EXPLAIN 输出，确认是否真的走索引、扫描行数多少、是否有嵌套循环.
 ### 实践五：模式查询善用系统视图
 
-`PostgreSQL` 的 `information_schema` 与 `pg_catalog` 提供了丰富的元数据查询视图。本助手优先使用这些标准视图，兼容性最好.
+`PostgreSQL` 的 `information_schema` 与 `pg_catalog` 提供了丰富的元数据查询视图。本助手优先使用这些标准视图，兼容性优秀.
 ### 实践六：长时间查询设置超时
 
 通过 `SET statement_timeout = '30s'` 为会话设置超时，避免意外执行了全表扫描等耗时查询拖垮数据库.

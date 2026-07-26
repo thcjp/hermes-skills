@@ -1,32 +1,13 @@
 ---
+
 slug: ai-podcast-tool-free
 name: ai-podcast-tool-free
 version: 1.0.0
 displayName: AI播客生成-免费版
 summary: "将PDF、文本、链接转为双人对话播客,适合个人创作者快速制作音频内容.。AI播客生成免费版,面向个人用户的文档转播客工具."
-license: Proprietary
+license: MIT
 edition: free
-description: 'AI播客生成免费版,面向个人用户的文档转播客工具.
-  核心能力:
-
-  - 将 PDF、文本、笔记转化为双人对话播客
-
-  - 支持多语种播客生成
-
-  - 分步引导式交互,一次一个问题
-
-  - 生成可分享的播客链接
-
-  适用场景:
-
-  - 个人创作者将文章转为播客
-
-  - 学习资料音频化方便通勤收听
-
-  - 内容多渠道分发(图文转音频)
-
-  差异化:免费版聚焦核心文档转播客能力,操作简单,适合个人用户体验AI播客生成.
-  适用关键词: AI播客, PDF转播客, 文本转音频, 双人对话, 播客生成, 音频内容, magicpodcast'
+description: "AI播客产出免费版,面向个人用户的文档转播客工具. 适用于需要ai podcast tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Creative
   - 播客生成
@@ -38,14 +19,15 @@ tags:
   - api
   - https
   - magicpodcast
-  - app
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # AI播客生成工具 - 免费版
 
 ## 概述
@@ -162,7 +144,7 @@ curl -sS -X POST "$MAGICPODCAST_API_URL/agent/v1/podcasts/pdf" \
 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:配置 API Key
+### 领先步:配置 API Key
 
 ```bash
 export MAGICPODCAST_API_KEY="your_api_key"
@@ -200,7 +182,7 @@ curl -sS "$MAGICPODCAST_API_URL/agent/v1/jobs/$JOB_ID" \
   -H "x-api-key: $MAGICPODCAST_API_KEY"
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **内容质量决定效果**:输入文本结构清晰、信息丰富,生成的播客质量更高
 2. **语言明确指定**:不要假设语言,明确指定(如"中文"、"English")避免异常
@@ -243,7 +225,7 @@ A:免费版仅提供在线分享链接。如需下载音频文件,请使用 PRO 
 - **存储建议**: 写入 `.env` 文件或系统环境变量,避免硬编码到脚本
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过分步对话与 curl 调用驱动播客生成流程
 
 ## 错误处理

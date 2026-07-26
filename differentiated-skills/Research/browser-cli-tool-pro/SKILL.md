@@ -1,4 +1,5 @@
 ---
+
 slug: browser-cli-tool-pro
 name: browser-cli-tool-pro
 version: 1.0.0
@@ -6,33 +7,7 @@ displayName: 浏览器CLI工具-专业版
 summary: "企业级浏览器自动化CLI,支持批量任务、并发会话、错误重试与监控,面向团队生产场景。企业级浏览器自动化命令行工具,在免费版核心能力之上,提供批量任务编排、"
 license: Proprietary
 edition: pro
-description: '企业级浏览器自动化命令行工具,在免费版核心能力之上,提供批量任务编排、
-
-  并发会话管理、错误重试机制、监控告警与团队协作能力。核心能力:
-
-  - 免费版全部能力(完全兼容)
-
-  - 批量任务编排与并发执行
-
-  - 错误重试与失败恢复机制
-
-  - 任务队列与调度器
-
-  - 监控指标采集与告警通知
-
-  - 团队共享状态库
-
-  适用场景:
-
-  - 企业级批量签到与表单处理
-
-  - 数据采集与自动化测试
-
-  - 多账号矩阵运营
-
-  - CI/CD 流水线集成
-
-  差异化:专业版面向团队与企业,提供批量、并发、重试、监控等高阶能力,并保持与免费版完全兼容'
+description: "企业级浏览器自发化命令行工具,在免费版核心能力之上,包含成批任务编排、. 适用于需要browser cli tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 研究工具
   - 浏览器自动化
@@ -44,7 +19,6 @@ tags:
   - agent-browser
   - 专业版新
   - session
-  - https
 tools:
   - read
   - exec
@@ -53,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 # 浏览器CLI工具(专业版)
 
 ## 概述
@@ -409,7 +385,7 @@ agent-browser metrics export --format prometheus
 # agent_browser_retry_total 12
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 批量任务优化
 1. **合理设置并发数**:根据机器资源设置 `session.max_concurrent`,通常 5-10 为宜.
@@ -485,7 +461,7 @@ agent-browser pro init --migrate
 - 远程浏览器服务(如 Browserbase):配置 `BROWSERBASE_API_KEY` 与 `BROWSERBASE_PROJECT_ID`
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作
 - **版本**: 专业版(兼容免费版全部能力)
 
@@ -513,9 +489,9 @@ agent-browser pro init --migrate
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

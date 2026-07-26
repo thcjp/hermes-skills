@@ -1,32 +1,33 @@
 ---
+
 slug: multi-search-engine-tool-free
 name: multi-search-engine-tool-free
 version: 1.0.0
 displayName: 多搜索引擎免费版
 summary: "多搜索引擎聚合查询工具,支持主流中文与国际搜索引擎,适合个人开发者快速信息检索.。多搜索引擎免费版,为个人用户提供多搜索引擎聚合查询能力."
-license: Proprietary
+license: MIT
 edition: free
-description: '多搜索引擎免费版,为个人用户提供多搜索引擎聚合查询能力.
-  核心能力:中文搜索引擎集成、国际搜索引擎查询、结果聚合展示.
-  适用场景:技术资料检索、多源信息对比、快速知识查询.
-  差异化:免费版聚焦核心搜索功能,支持8个主流搜索引擎,适合个人快速检索.
-  适用关键词: 搜索引擎, 多源搜索, 信息检索, 聚合查询, search engine, multi-search, web search'
+description: "多搜索引擎免费版,为个人用户包含多搜索引擎聚合查询能力. 适用于需要multi search engine tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要multi search engine tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 搜索
+  - multi
+  - search
+  - engine
+  - automation
   - 信息检索
   - 免费版
   - 安全
   - 加密
   - 工具
-  - https
-  - query
-  - url
 tools:
   - read
   - exec
 homepage: ""
 category: "Security"
+pricing_tier: free
+
 ---
+
 # 多搜索引擎免费版
 
 ## 概述
@@ -365,7 +366,7 @@ fi
 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:生成搜索链接
+### 领先步:生成搜索链接
 
 ```bash
 # 为关键词生成所有引擎的搜索链接
@@ -419,14 +420,14 @@ encoded = urllib.parse.quote(query)
 # 结果: Python%20%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **多源对比**:同一关键词在多个引擎搜索,对比结果差异.
 2. **中英结合**:中文关键词用中文引擎,英文关键词用国际引擎.
 3. **精确搜索**:使用引号进行精确匹配搜索.
 4. **站点限定**:使用 `site:` 限定搜索范围.
 ```bash
-# 最佳实践:精确搜索
+# 优秀实践:精确搜索
 QUERY='"exact match" site:stackoverflow.com'
 （请参考skill目录中的脚本文件） google "$QUERY"
 ```
@@ -469,7 +470,7 @@ QUERY='"exact match" site:stackoverflow.com'
 - 搜索引擎网页搜索为公开接口
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行多搜索引擎聚合查询任务
 
 ## 错误处理
@@ -490,9 +491,9 @@ QUERY='"exact match" site:stackoverflow.com'
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

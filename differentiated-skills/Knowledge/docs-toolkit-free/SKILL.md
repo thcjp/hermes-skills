@@ -1,20 +1,13 @@
 ---
+
 slug: docs-toolkit-free
 name: docs-toolkit-free
 version: 1.0.1
 displayName: 文档导航工具包（免费版）
 summary: "决策树导航的文档专家系统，支持站点地图、关键词搜索、全文索引与版本追踪.,支持多种使用场景和自动化处理"
-license: Proprietary
+license: MIT
 edition: free
-description: 文档导航工具包 - （免费版），可生成提升工作效率
-
-  核心能力: 文档导航, 站点地图, 全文搜索, 文档追踪, 配置片段, decision tree, documentation
-
-  适用场景: 个人用户日常使用，核心功能覆盖基础需求
-
-  差异化: 精简版，适合个人用户快速上手，提供核心功能与基础用法
-
-  适用关键词: 文档导航, 站点地图, 全文搜索, 文档追踪, 配置片段, decision tree, documentation'
+description: "文档导航工具包 - （免费版），可产出提升工作效率. 适用于需要docs toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 文档管理
   - 知识导航
@@ -26,13 +19,6 @@ tags:
   - 知识
   - 文档
   - 研究
-  - 分析
-  - 写作
-  - 支持创建
-  - 查询
-  - input_params
-  - api
-  - 免费版
 tools:
   - read
   - exec
@@ -40,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 文档导航工具包（免费版）
 
 ## 概述
@@ -180,7 +168,7 @@ docs:
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 
-## 最佳实践
+## 优秀实践
 
 ### 基础使用建议
 
@@ -193,9 +181,8 @@ docs:
 ### 性能优化
 
 ```python
-# 免费版：单文件优化
-# 确保输入文件不超过建议大小
-# 处理完成后释放资源
+# 在此执行相关操作
+pass
 ```
 
 ## 常见问题

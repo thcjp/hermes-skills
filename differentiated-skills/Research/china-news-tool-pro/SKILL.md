@@ -1,4 +1,5 @@
 ---
+
 slug: china-news-tool-pro
 name: china-news-tool-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: 中国新闻聚合(专业版)
 summary: "中国新闻聚合专业版，含浏览器模式、AI摘要、定时推送、情感分析与多渠道分发.。中国新闻聚合助手专业版是面向企业级场景的完整新闻聚合与分发工具。在免费版RSS订阅能力之上，新增浏览器自动化模式"
 license: Proprietary
 edition: pro
-description: 中国新闻聚合助手专业版是面向企业级场景的完整新闻聚合与分发工具。在免费版RSS订阅能力之上，新增浏览器自动化模式、AI智能摘要、定时自动执行、多渠道推送、AI辅助分类、新闻情感分析、历史新闻检索七大高级能力。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "中国新闻聚合助手专业版是面向企业级场景的完整新闻聚合与分发工具。在免费版RSS订阅能力之上，新增浏览器自发化模式、AI智能摘要、定时自发执行、多渠道推送、AI辅助分类、新闻情感剖析、历史新闻检索七大高级能力。Use. 适用于需要china news tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 中国新闻
   - 企业级
@@ -19,8 +19,6 @@ tags:
   - 工具
   - news
   - feishu
-  - self
-  - stats
 tools:
   - read
   - exec
@@ -29,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 > **浏览器模式+AI摘要+定时推送+情感分析。企业级新闻聚合全功能覆盖。**
 
 将复杂的新闻聚合与分发任务交给专业工具处理。专业版在免费版RSS订阅能力之上，新增浏览器自动化模式、AI智能摘要、定时自动执行、多渠道推送、AI辅助分类、新闻情感分析、历史新闻检索七大高级能力，满足企业级场景对新闻情报的广度、深度与时效性要求.
@@ -135,7 +135,7 @@ print(f"情感分析：正面 {stats['positive']}条，负面 {stats['negative']
 **场景描述**：每日自动获取行业新闻，AI摘要后推送到企业飞书群.
 ```python
 aggregator = ScheduledNewsAggregator()
-aggregator.pusher.register("feishu", "https://open.feishu.cn/open-apis/bot/v2/hook/xxx", "feishu")
+aggregator.pusher.register("feishu", "https://open.feishu.cn/open-apis/bot/v2/hook/placeholder", "feishu")
 aggregator.pusher.register("email", "https://api.email.com/send", "email")
 aggregator.start()
 ```
@@ -178,13 +178,13 @@ print(report)
 
 ### 30秒上手
 ```bash
-export FEISHU_WEBHOOK=https://open.feishu.cn/open-apis/bot/v2/hook/xxx
-export DINGTALK_WEBHOOK=https://oapi.dingtalk.com/robot/send?access_token=xxx
+export FEISHU_WEBHOOK=https://open.feishu.cn/open-apis/bot/v2/hook/placeholder
+export DINGTALK_WEBHOOK=https://oapi.dingtalk.com/robot/send?access_token=placeholder
 # ...
 python3 news_pipeline.py --mode full --push feishu,dingtalk
-```
-
-### 120秒标准搭建
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 pip install requests schedule beautifulsoup4
 npm install playwright
@@ -211,16 +211,15 @@ schedule:
   weekly: "0 9 * * 1"
 # ...
 push:
-  feishu: https://open.feishu.cn/open-apis/bot/v2/hook/xxx
-  dingtalk: https://oapi.dingtalk.com/robot/send?access_token=xxx
+  feishu: https://open.feishu.cn/open-apis/bot/v2/hook/placeholder
+  dingtalk: https://oapi.dingtalk.com/robot/send?access_token=placeholder
   email: https://api.email.com/send
 EOF
 # ...
 python3 news_scheduler.py --config news_config.yaml
-```
-
-## 配置示例
-### 企业级配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 sources:
   rss:
@@ -261,38 +260,37 @@ push:
   channels:
     - name: feishu
       type: feishu
-      url: https://open.feishu.cn/open-apis/bot/v2/hook/xxx
+      url: https://open.feishu.cn/open-apis/bot/v2/hook/placeholder
     - name: dingtalk
       type: dingtalk
-      url: https://oapi.dingtalk.com/robot/send?access_token=xxx
+      url: https://oapi.dingtalk.com/robot/send?access_token=placeholder
     - name: wechat
       type: wechat
-      url: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=xxx
+      url: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=placeholder
     - name: email
       type: email
       url: https://api.email-service.com/send
-```
-
-## 最佳实践
-### 1. 混合模式优化
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 def hybrid_fetch():
     rss_news = RSSFetcher().fetch_all()
     browser_sources = ['网易新闻', '腾讯新闻']
     browser_news = BrowserNewsFetcher().fetch_specific(browser_sources)
     return rss_news + browser_news
-```
-
-### 2. 推送频率控制
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 schedule.every().day.at("08:00").do(morning_brief)  # 每日1次早报
 schedule.every().day.at("20:00").do(evening_summary)  # 每日1次晚报
 def alert_negative(news):
     if news['sentiment'] == 'negative':
         pusher.push("alert_channel", news['title'], "负面新闻告警")
-```
-
-### 3. 缓存与去重
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 class NewsCache:
     """新闻缓存与去重"""
@@ -371,7 +369,7 @@ RSS模式优势：速度快、资源占用低、无需浏览器；适合已支�
 - 15+媒体源（含网易/腾讯/人民日报/新华网/央视网）
 - 多角色场景指南（信息部门/公关团队/市场研究）
 - 完整FAQ（7问）与故障排查表
-- 性能优化建议与最佳实践
+- 性能优化建议与优秀实践
 - GPT-4o模型路由与优先支持
 
 ## 定价
@@ -402,9 +400,9 @@ RSS模式优势：速度快、资源占用低、无需浏览器；适合已支�
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

@@ -1,35 +1,34 @@
 ---
+
 slug: skill-writer-tool-free
 name: skill-writer-tool-free
 version: 1.0.0
 displayName: Skill编写工具免费版
 summary: "创建结构规范的Agent技能，支持渐进式展开与资源捆绑，适合个人开发者快速上手.。Skill编写工具免费版，面向个人开发者的轻量级Agent技能创建工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: Skill编写工具免费版，面向个人开发者的轻量级Agent技能创建工具。核心能力:，可自动提升工作效率
-
-  - 结构化 SKILL。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。Use
-  when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。'
+description: "Skill编写工具免费版，面向个人开发者的轻量级Agent技能创建工具。核心能力:，可自发提升工作效率. 适用于需要skill writer tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要skill writer tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - Skill编写
+  - skill
+  - writer
+  - automation
+  - productivity
   - 技能创建
   - 结构规范
   - 免费版
   - 工具
   - 效率
-  - 写作
-  - 电商
-  - 编写工具
-  - reference
-  - use
-  - markdown
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # Skill编写工具（免费版）
 
 ## 概述
@@ -159,13 +158,14 @@ description: 简要描述能力。Use when [具体触发条件].
 ## Advanced features
 
 [详细内容链接至: See REFERENCE.md]
-```
-# ...
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 # 描述规范
 - 最大 1024 字符
 - 第三人称书写
-- 第一句: 做什么
+- 领先句: 做什么
 - 第二句: "Use when [触发条件]"
 
 # 好的描述示例:
@@ -177,7 +177,7 @@ Helps with documents.
 （Agent 无法区分此技能与其他文档技能）
 ```
 # ...
-## 最佳实践
+## 优秀实践
 # ...
 * 描述是 Agent 选择技能的唯一依据，务必精准.
 * SKILL.md 控制在 100 行以内，超出时拆分至引用文件.

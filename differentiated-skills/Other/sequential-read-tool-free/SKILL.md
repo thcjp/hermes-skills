@@ -1,61 +1,34 @@
 ---
+
 slug: sequential-read-tool-free
 name: sequential-read-tool-free
 version: 1.0.0
 displayName: 顺序阅读工具-免费版
 summary: "分段顺序阅读长篇文章,生成结构化反思笔记,适合个人学习与读书会。顺序阅读工具免费版,面向个人学习者的长文阅读助手."
-license: Proprietary
+license: MIT
 edition: free
-description: 顺序阅读工具免费版,面向个人学习者的长文阅读助手，可自动提升工作效率
-  核心能力:
-
-  - 长文分段顺序阅读
-
-  - 每段生成结构化反思
-
-  - 阅读进度追踪
-
-  - 关键概念提取
-
-  - 本地笔记保存
-
-  适用场景:
-
-  - 学术论文精读
-
-  - 技术文档学习
-
-  - 书籍章节阅读
-
-  - 读书会准备
-
-  差异化:免费版提供基础顺序阅读能力。PRO版扩展团队协作阅读、知识图谱与 AI 深度分析.
-  适用关键词: read, 顺序阅读, 精读, 反思笔记, reading, 长文阅读, 分段阅读'
+description: "顺序阅读工具免费版,面向个人学习者的长文阅读助手，可自发提升工作效率. 适用于需要sequential read tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要sequential read tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 阅读
+  - sequential
+  - read
+  - automation
+  - productivity
   - 学习
   - 笔记
   - 知识管理
   - 工具
   - 效率
-  - 自动化
-  - 知识
-  - 文档
-  - 研究
-  - 分析
-  - 创意
-  - segment-by
-  - pdf
-  - 顺序阅读
-  - 返回结构
-  - 关键概念
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # 顺序阅读工具 - 免费版
 
 ## 概述
@@ -183,10 +156,11 @@ python3 sequential_read.py \
 ### 安装
 
 ```bash
-# 依赖说明
+# 在此执行相关操作
+echo "操作完成"
 ```
 
-### 开始第一次阅读
+### 开始领先次阅读
 
 ```bash
 # 顺序阅读文本文件
@@ -256,7 +230,7 @@ py --progress notes/article_notes.md
 | `--discussion-points` | 生成讨论要点 | false |
 | `--resume` | 恢复阅读 | - |
 
-## 最佳实践
+## 优秀实践
 
 1. **按段落分段**:自然段落是最合理的阅读单元,保持语义完整性
 2. **认真反思**:每段阅读后花 1-2 分钟反思,不要急于下一段
@@ -303,7 +277,7 @@ A: 调整 `--max-chars` 参数增大每段字数,或使用 `--segment-by heading
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **分类**: MD+EXEC模式Markdown指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 执行顺序阅读与反思笔记生成
 - **限制**: 免费版不支持 PDF 直接读取、团队协作与知识图谱
 

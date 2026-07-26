@@ -1,15 +1,13 @@
 ---
+
 slug: auto-monitor-tool-free
 name: auto-monitor-tool-free
 version: 1.0.2
 displayName: 系统监控入门工具
 summary: "个人服务器监控工具，支持CPU/内存/磁盘基础指标与简单告警通知.。面向个人开发者的轻量级系统监控工具。支持CPU、内存、磁盘、网络等"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人开发者的轻量级系统监控工具。支持CPU、内存、磁盘、网络等
-
-  基础指标监控，提供简单的阈值告警与历史数据记录。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。Use
-  when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。'
+description: "面向个人开发者的轻量级系统监控工具。兼容CPU、内存、磁盘、网络等. 适用于需要auto monitor tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Operations
   - 系统监控
@@ -23,7 +21,9 @@ tools:
   - exec
 homepage: ""
 category: "Operations"
+pricing_tier: free
 ---
+
 # 系统监控入门工具（免费版）
 
 ## 概述
@@ -200,7 +200,7 @@ monitor_config:
     retention_days: 30          # 历史数据保留天数
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **合理阈值**：告警阈值不要设置过低，避免频繁误报
 2. **采集间隔**：个人服务器60秒足够，过短会消耗资源

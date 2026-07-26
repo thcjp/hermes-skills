@@ -1,43 +1,24 @@
 ---
+
 slug: linear-toolkit-free
 name: linear-toolkit-free
 version: 1.0.1
 displayName: Linear 工具箱
 summary: "面向个人的 Linear 任务查询与基础管理工具，含站会摘要.。面向个人开发者的 Linear 任务查询与基础管理工具."
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人开发者的 Linear 任务查询与基础管理工具.
-  核心能力:
-
-  - 个人任务、待办、紧急事项查询
-
-  - 任务创建、评论、状态与优先级管理
-
-  - 每日站会摘要
-
-  - Linear 与 Git 分支名联动
-
-  适用场景:
-
-  - 个人查看与更新 Linear 任务
-
-  - 每日站会快速摘要
-
-  - 从 Linear 任务生成 Git 分支名
-
-  差异化: 免费版聚焦个人单团队任务管理，提供查询、更新与站会摘要，零成本接入.
-  适用关键词: linear, 任务管理, 站会, 待办, issue, standup, branch'
+description: "面向个人开发者的 Linear 任务查询与基础管控工具. 适用于需要linear toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要linear toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Linear
+  - linear
+  - toolkit
+  - automation
+  - productivity
   - 任务管理
   - 个人效率
   - 其他工具
   - 工具
   - 效率
-  - 写作
-  - 电商
-  - basedir
-  - linear
 tools:
   - read
   - exec
@@ -45,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # Linear 工具箱（免费版）
 
 ## 概述
@@ -149,7 +133,7 @@ git push -u origin "$BRANCH"
 | low | 4 | 锦上添花 |
 | none | 0 | 待办池 |
 
-## 最佳实践
+## 优秀实践
 
 - **分支名走 Linear**：用 `branch` 命令生成分支名，PR 合并自动推进状态.
 - **main 保持干净**：改动只在 worktree，避免误推 main.

@@ -1,4 +1,5 @@
 ---
+
 slug: "model-switching-tool-pro"
 name: "model-switching-tool-pro"
 version: "1.0.0"
@@ -6,19 +7,7 @@ displayName: "模型切换工具(专业版)"
 summary: "团队级Claude模型切换套件,含成本仪表盘、批量分发、自定义规则与监控告警。。模型切换工具(专业版)面向团队与企业,在三层Claude模型切换基础上,扩展成本分析仪表盘、批量任务分发、自定"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  模型切换工具(专业版)面向团队与企业,在三层Claude模型切换基础上,扩展成本分析仪表盘、批量任务分发、自定义切换规则、实时监控告警与团队策略治理能力。核心能力:
-  - 三层切换 + 自定义规则引擎
-  - 成本仪表盘:按任务/项目/团队追踪成本
-  - 批量任务分发与并发切换
-  - 实时监控:超预算告警、异常切换检测
-  - 团队策略:切换白名单、降级策略、成本上限
-  - 自动降级:超预算自动从Opus/Sonnet降到Haiku
-
-  适用场景:
-  - 企业API成本治理与预算控制
-  - 大规模子Agent并发任务分发
-  - 团队...
+description: "|-. 适用于需要model switching tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Development
   - AI
@@ -30,23 +19,15 @@ tags:
   - 工具
   - 效率
   - 自动化
-  - 写作
-  - 电商
-  - 研究
-  - 分析
-  - 运维
-  - haiku
-  - sonnet
-  - opus
-  - yaml
-  - config
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 模型切换工具(专业版)
 
 ## 概述
@@ -315,7 +296,7 @@ policy:
 | 80-95% | 降级Sonnet→Haiku | 非关键任务降级 |
 | >95% | 全部降级到Haiku | 紧急降级,保留服务 |
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 成本治理三阶段
 
@@ -433,7 +414,7 @@ node （请参考skill目录中的脚本文件） \
 - 审计日志若存数据库,数据库凭据按对应服务文档配置.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。PRO版面向团队与企业,提供成本仪表盘、批量分发、自定义规则与监控告警能力,完全兼容免费版三层切换决策.
 ## 错误处理
 

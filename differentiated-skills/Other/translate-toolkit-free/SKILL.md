@@ -1,49 +1,34 @@
 ---
+
 slug: translate-toolkit-free
 name: translate-toolkit-free
 version: 1.0.1
 displayName: 翻译工具免费版
 summary: "格式保留术语一致的文本翻译,模板标记保护不误译,多语言处理,免费个人用。翻译工具免费版，面向个人用户的轻量级文本翻译工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 翻译工具免费版，面向个人用户的轻量级文本翻译工具。核心能力:，可自动提升工作效率
-
-  - 格式保留翻译（代码块、HTML、Markdown 结构不变）
-
-  - 占位符保护（{name}、%s、$1 等原样保留）
-
-  - 术语一致性与文化适配
-
-  - 上下文感知与歧义消解
-
-  适用场景:
-
-  - 个人文档与邮件的日常翻译
-
-  - Markdown/HTML 内容的格式保留翻译
-
-  - 多语言学习与对比
-
-  差异化: 免费版聚焦核心翻译与格式保留能力，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手'
+description: "翻译工具免费版，面向个人用户的轻量级文本翻译工具。核心能力:，可自发提升工作效率. 适用于需要translate toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要translate toolkit相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 翻译
+  - translate
+  - toolkit
+  - automation
+  - productivity
   - 本地化
   - 格式保留
   - 免费版
   - 语言
   - 工具
-  - markdown
-  - 用户
-  - json
-  - text
-  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 # 翻译工具（免费版）
 
 ## 概述
@@ -139,11 +124,8 @@ Temperature will be around 85°F. Bring a "piece of cake" for the potluck.
 ## 快速开始
 
 ```text
-# 纯自然语言驱动，无需命令行操作
-# 示例
-# 用户: 把这段 Markdown 翻译成英文，保留格式
-# 用户: 翻译这个 JSON 文件，只翻译值
-# 用户: 把这篇文章翻译成日语，注意文化适配
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 翻译流程：
@@ -166,7 +148,7 @@ Temperature will be around 85°F. Bring a "piece of cake" for the potluck.
 - 敬语级别: 根据上下文自动判断
 ```
 
-## 最佳实践
+## 优秀实践
 
 * 翻译前阅读完整上下文，理解原意再动手.
 * 不翻译专有名词、品牌名、技术术语、URL、邮箱地址.

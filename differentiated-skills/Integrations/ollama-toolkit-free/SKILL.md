@@ -1,13 +1,13 @@
 ---
+
 slug: ollama-toolkit-free
 name: ollama-toolkit-free
 version: 1.0.1
 displayName: Ollama工具箱(免费版)
 summary: "本地运行Ollama AI模型的免费工具，支持模型列表、运行推理与基础对话。Ollama工具箱免费版是一款面向本地AI模型运行的命令行辅助Skill，让AI Agent能够通过Ollama在"
-license: Proprietary
+license: MIT
 edition: free
-description: Ollama工具箱免费版是一款面向本地AI模型运行的命令行辅助Skill，让AI Agent能够通过Ollama在本地环境运行大语言模型，实现无需云端API的私有化AI推理。核心能力：模型列表查询、单轮对话推理、模型拉取下载、运行状态检查、基础参数配置。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "Ollama工具箱免费版是一款面向本地AI模型运行的命令行辅助Skill，让AI Agent能够通过Ollama在本地环境运行大语言模型，达成无需云端API的私有化AI推理。核心能力：模型列表查询、单轮对话推理、模型拉取下载、运行状态检查、基础参数配置。Use. 适用于需要ollama toolkit相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 本地AI
   - 模型推理
@@ -19,15 +19,15 @@ tags:
   - ollama
   - qwen2
   - api
-  - run
-  - 专业版提
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Ollama工具箱（免费版）
 
 通过命令行驱动AI Agent调用Ollama本地大语言模型，实现无需云端API的私有化AI推理。免费版提供模型管理、基础对话和参数配置功能.
@@ -188,7 +188,7 @@ curl http://localhost:11434/api/tags
 OLLAMA_HOST=0.0.0.0:11434 ollama serve
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **按需选择模型大小**：日常对话使用0.5b-3b参数的小模型，复杂推理任务使用7b以上模型，平衡速度与质量.
 2. **利用管道实现批量处理**：通过`echo`或`cat`管道输入文本，实现批量文本摘要和分类，无需交互操作.

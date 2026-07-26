@@ -1,12 +1,12 @@
 ---
+
 slug: "azure-cloud-architect"
 name: "azure-cloud-architect"
 version: "1.0.0"
 displayName: "Azure云架构师"
 summary: "多订阅导航,角色审计最小权限,成本分析,合规检查,跨订阅批量操作。。基于Azure CLI的智能云基础设施管理助手,提供多订阅导航、RBAC角色审计与最小权限、成本分析工作流、合规检查清单、"
-license: "Proprietary"
-description: |-
-  基于Azure CLI的智能云基础设施管理助手,提供多订阅导航、RBAC角色审计与最小权限、成本分析工作流、合规检查清单、跨订阅批量操作五大核心能力。适用于Azure资源盘点、健康监控、安全审计、Cost Management分析、多订阅多租户管理场景。默认只读查询,写操作与破坏性操作需确认。适用关键词:Azure云架构师、基础设施管理、多订阅、RBAC审计、成本分析、Azure CLI、azure-cloud-architect
+license: MIT
+description: "|-. 适用于需要azure cloud architect相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 通用办公
   - 云计算
@@ -18,14 +18,15 @@ tags:
   - 查询
   - cli
   - account
-  - 订阅
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Operations"
+pricing_tier: free
 ---
+
 # Azure云架构师
 
 使用本地Azure CLI回答关于Azure资源的问题。默认只读查询,仅在用户明确要求变更并确认后执行写/破坏性操作.
@@ -132,7 +133,9 @@ az account set --subscription "Production"
 **输出**:
 ```bash
 az vm list --query '[].{Name:name,ResourceGroup:resourceGroup,State:powerState}' -d --output table
-```
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 Name           ResourceGroup    State
 -------------  ---------------  --------
@@ -147,12 +150,14 @@ dev-test-01    dev-rg           VM stopped
 **输出**:
 ```bash
 az role assignment list --role "Owner" --query '[].{Assignee:principalName,Scope:scope}' --output table
-```
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 Assignee               Scope
 ---------------------  ------------------------------------
-admin@company.com      /subscriptions/xxx-xxx-xxx
-deploy-spn@company.com /subscriptions/xxx-xxx-xxx/resourceGroups/prod-rg
+admin@company.com      /subscriptions/placeholder-placeholder-placeholder
+deploy-spn@company.com /subscriptions/placeholder-placeholder-placeholder/resourceGroups/prod-rg
 ```
 **审计结论**:发现2个Owner分配,建议将deploy-spn降级为Contributor,遵循最小权限原则.
 ### 示例3: 跨订阅成本分析
@@ -194,7 +199,7 @@ az costmanagement query --type ActualCost \
 - 认证方式: `az login`(交互)或`az login --service-principal`(服务主体)
 - 绝不要在聊天或日志中输出密钥、客户端密钥、令牌
 
-**可用性分类**: MD+EXEC(纯Markdown指令,需要命令行执行能力运行Azure CLI)
+**可用性分类**: MD+EXEC模式纯Markdown指令,需要命令行执行能力运行Azure CLI)
 - **API Key**：本skill无需额外API Key配置
 
 ## 常见问题

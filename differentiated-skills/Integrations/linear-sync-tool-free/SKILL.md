@@ -1,13 +1,13 @@
 ---
+
 slug: linear-sync-tool-free
 name: linear-sync-tool-free
-version: 1.0.2
+version: 1.0.3
 displayName: Linear同步(免费版)
 summary: "管理Linear任务与项目的免费命令行工具，支持任务列表、查看与基础创建。Linear同步工具免费版是一款面向项目管理的命令行辅助Skill，让AI Agent能够通过Linear CLI管"
-license: Proprietary
+license: MIT
 edition: free
-description: Linear同步工具免费版是一款面向项目管理的命令行辅助Skill，让AI Agent能够通过Linear CLI管理任务工单、查看项目状态和创建基础任务，实现研发协作的命令行自动化。核心能力：任务列表查看、任务详情查看、基础任务创建、团队信息查询、项目列表查看。Use
-  when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
+description: "Linear同步工具免费版是一款面向项目管控的命令行辅助Skill，让AI Agent能够通过Linear CLI管控任务工单、查看项目状态和创建基础任务，达成研发协作的命令行自发化。核心能力：任务列表查看、任务详情查看、基础任务创建、团队信息查询、项目列表查看。Use. 适用于需要linear sync tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 任务管理
   - 项目协作
@@ -19,16 +19,15 @@ tags:
   - 电商
   - linear
   - issue
-  - api
-  - list
-  - toml
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Linear同步工具（免费版）
 
 通过命令行驱动AI Agent管理Linear任务和项目，实现任务查询、查看和基础创建。免费版提供只读查询和简单创建功能，满足个人开发者日常使用.
@@ -208,7 +207,7 @@ vcs = "git"
 | 任务排序 | `LINEAR_ISSUE_SORT` | `"priority"` 或 `"manual"` |
 | 版本控制 | `LINEAR_VCS` | `"git"` 或 `"jj"` |
 
-## 最佳实践
+## 优秀实践
 
 1. **配置默认团队**：在`.linear.toml`中设置`team_id`，避免每次查询都指定团队.
 2. **使用状态过滤**：日常查看用`-s started`只看进行中的任务，减少信息过载.

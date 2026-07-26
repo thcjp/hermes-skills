@@ -7,27 +7,7 @@ displayName: 写作工具专业版
 summary: "多人协作、自定义审计、多格式导出与内容资产库，适合内容团队与企业写作治理.。写作工具专业版，面向内容团队与企业的高阶写作流程治理平台。核心能力:"
 license: Proprietary
 edition: pro
-description: 写作工具专业版，面向内容团队与企业的高阶写作流程治理平台。核心能力:。可分析提升工作效率
-
-  - 多人协作与评论审核
-
-  - 自定义审计维度与权重
-
-  - 多格式导出（Markdown/PDF/DOCX/HTML）
-
-  - 内容资产库与模板复用
-
-  - 写作分析与团队统计
-
-  适用场景:
-
-  - 内容团队的多人文档协作
-
-  - 企业写作流程的标准化治理
-
-  - 内容资产的管理与复用
-
-  差异化: 专业版在免费版核心写作流程之上扩展协作与审计，新增多格式导出、资产库、写作分析等企业级能力，并与免费版工作流兼容'
+description: "写作工具专业版，面向内容团队与企业的高阶写作流程治理平台。核心能力:。可剖析提升工作效率. 适用于需要write toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 写作
   - 团队协作
@@ -39,12 +19,6 @@ tags:
   - 电商
   - 研究
   - 分析
-  - 知识
-  - write-pro
-  - 自定义审
-  - 权重
-  - true
-  - 多格式导
 tools:
   - read
   - exec
@@ -53,7 +27,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
+pricing_tier: L2-标准级
 ---
 
 # 写作工具（专业版）
@@ -108,15 +82,15 @@ write-pro project create --name "年度技术报告" --team "技术写作组"
 write-pro project invite --members "writer-a,writer-b,reviewer-c"
 # ...
 # 分配章节
-write-pro project assign --chapter "第一章" --to "writer-a"
+write-pro project assign --chapter "领先章" --to "writer-a"
 write-pro project assign --chapter "第二章" --to "writer-b"
 # ...
 # 评审与评论
-write-pro review comment --piece "年度技术报告" --chapter "第一章" --comment "建议补充数据来源"
+write-pro review comment --piece "年度技术报告" --chapter "领先章" --comment "建议补充数据来源"
 # ...
 # 输出
 # 📊 协作状态
-# 第一章: writer-a 起草中 (v1.2)
+# 领先章: writer-a 起草中 (v1.2)
 # 第二章: writer-b 审核中 (v1.0)
 # 评审: 3 条评论待处理
 ```
@@ -268,7 +242,7 @@ report:
 | 合规检查 | 版权、隐私、法律合规 | 10% |
 | 品牌一致 | 品牌调性、风格指南 | 10% |
 
-## 最佳实践
+## 优秀实践
 
 * 协作场景下明确角色分工（写作/评审/编辑/管理）.
 * 自定义审计维度按企业标准配置，权重反映优先级.

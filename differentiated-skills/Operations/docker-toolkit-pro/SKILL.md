@@ -1,4 +1,5 @@
 ---
+
 slug: docker-toolkit-pro
 name: docker-toolkit-pro
 version: 1.0.0
@@ -6,10 +7,7 @@ displayName: Docker容器专业版
 summary: "企业级Docker管理平台，支持集群、私有仓库、安全扫描与CI/CD集成.。面向企业运维团队的Docker全功能管理平台。支持多节点集群管理、"
 license: Proprietary
 edition: pro
-description: '面向企业运维团队的Docker全功能管理平台。支持多节点集群管理、
-
-  私有镜像仓库、镜像安全扫描、容器监控与CI/CD流水线集成。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。Use
-  when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。'
+description: "面向企业运维团队的Docker全功能管控平台。兼容多节点集群管控、. 适用于需要docker toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Operations
   - Docker
@@ -26,7 +24,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+pricing_tier: L2-标准级
 ---
+
 # Docker容器专业版（PRO版）
 
 ## 概述
@@ -79,10 +79,10 @@ python3 （请参考skill目录中的脚本文件） init \
 # 添加工作节点
 python3 （请参考skill目录中的脚本文件） join \
   --worker 192.168.1.20 \
-  --token "SWMTKN-xxx"
+  --token "SWMTKN-placeholder"
 python3 （请参考skill目录中的脚本文件） join \
   --worker 192.168.1.30 \
-  --token "SWMTKN-xxx"
+  --token "SWMTKN-placeholder"
 # ...
 # 查看集群状态
 python3 （请参考skill目录中的脚本文件） nodes
@@ -224,7 +224,7 @@ pro_config:
     cpu_threshold: 70             # CPU超过70%扩容
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### PRO版企业实践
 

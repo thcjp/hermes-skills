@@ -1,4 +1,5 @@
 ---
+
 slug: mac-system-tool-pro
 name: mac-system-tool-pro
 version: 1.0.0
@@ -6,27 +7,7 @@ displayName: Mac 系统工具专业版
 summary: "面向团队的多设备远程管理、自动化策略与合规审计工具.。面向团队的多 Mac 设备远程管理与自动化策略专业工具."
 license: Proprietary
 edition: pro
-description: '面向团队的多 Mac 设备远程管理与自动化策略专业工具.
-  核心能力:
-
-  - 多设备远程批量管理与执行
-
-  - 定时任务与自动化策略
-
-  - 系统合规审计与基线检查
-
-  - 资产清单与变更追踪
-
-  适用场景:
-
-  - 团队多台 Mac 统一管理
-
-  - 定时维护与自动化策略
-
-  - 合规审计与资产追踪
-
-  差异化: 专业版在免费版单机控制上扩展多设备远程、自动化策略、合规审计与资产追踪，兼容免费版命令.
-  适用关键词: 多设备管理, 远程执行, 自动化策略, 合规审计, 资产清单, mac pro, fleet, compliance'
+description: "面向团队的多 Mac 设备远程管控与自发化策略专业工具. 适用于需要mac system tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - macOS
   - 企业级
@@ -38,12 +19,6 @@ tags:
   - 自动化
   - 工作流
   - 写作
-  - 电商
-  - 研究
-  - cmd
-  - ssh
-  - json
-  - mdm
 tools:
   - read
   - exec
@@ -51,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # Mac 系统工具（专业版）
 
 ## 概述
@@ -161,7 +138,7 @@ category: "Automation"
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 - **设备先分组**：按团队/角色分组，批量操作不误伤.
 - **策略先试跑**：新策略先单设备验证再批量推.

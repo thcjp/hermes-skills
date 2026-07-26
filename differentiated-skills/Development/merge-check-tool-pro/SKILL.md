@@ -1,4 +1,5 @@
 ---
+
 slug: "merge-check-tool-pro"
 name: "merge-check-tool-pro"
 version: "1.0.0"
@@ -6,20 +7,7 @@ displayName: "合并检查工具(专业版)"
 summary: "批量PR合并性预测,含全维度分析、历史趋势、CI/CD门禁与自定义规则。。合并检查工具(专业版)面向团队与维护者,提供批量PR合并性预测、全维度深度分析、历史趋势追踪、CI/CD门禁集成与自"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  合并检查工具(专业版)面向团队与维护者,提供批量PR合并性预测、全维度深度分析、历史趋势追踪、CI/CD门禁集成与自定义拒绝向量规则。核心能力:
-  - 批量PR分析与团队级看板
-  - 全6维度深度分析:技术信号、PR卫生、架构契合、评审状态、流程合规、社交元信号
-  - 作者与仓库历史合并趋势追踪
-  - CI/CD流水线门禁集成
-  - 自定义拒绝向量与团队规则
-  - 风险预警与周报生成
-
-  适用场景:
-  - 维护者批量评审待合并PR队列
-  - 团队代码质量门禁与SRE治理
-  - 贡献者健康度跟踪与导师分配
-  - 大型开源项目PR...
+description: "|-. 适用于需要merge check tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Development
   - 代码审查
@@ -31,15 +19,15 @@ tags:
   - 效率
   - 集成
   - bash
-  - owner
-  - repo
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 合并检查工具(专业版)
 
 ## 概述
@@ -275,7 +263,7 @@ bash （请参考skill目录中的脚本文件） owner/repo --months 6 --format
 | 阻断 | 30-49 | 阻断合并,要求处理 |
 | 严重 | <30 | 阻断并通知维护者 |
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 维护者每日队列分流
 
@@ -424,7 +412,7 @@ jobs:
 - 通知渠道(Slack/飞书)的 webhook URL 需配置为仓库Secret.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。PRO版面向团队与维护者,提供批量分析、历史趋势、CI/CD门禁与自定义规则能力,完全兼容免费版单PR分析.
 ## 错误处理
 

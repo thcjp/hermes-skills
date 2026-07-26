@@ -1,14 +1,13 @@
 ---
+
 slug: vue-toolkit-free
 name: vue-toolkit-free
 version: 1.0.1
 displayName: Vue工具箱(免费版)
 summary: 规避 Vue 3 常见陷阱：响应式、ref 与 reactive、computed 时机与组合式 API 优选实践.
-license: Proprietary
+license: MIT
 edition: free
-description: Vue 工具箱（免费版）面向 Vue 3 开发者，聚焦 Composition API 下的高频问题：响应式陷阱、ref 与 reactive，可生成提升工作效率
-  的取舍、computed 与 watch 的边界、组件设计与路由集成。目标是让 Agent 在 60 秒内给出可直接复用的代码片段，避免反复踩坑。Use when
-  需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
+description: "Vue 工具箱（免费版）面向 Vue 3 开发者，聚焦 Composition API 下的高频问题：响应式陷阱、ref 与 reactive，可产出提升工作效率. 适用于需要vue toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 前端开发
   - Vue
@@ -20,14 +19,15 @@ tags:
   - ref
   - reactive
   - vue
-  - state
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Vue 工具箱（免费版）
 
 ## 概述

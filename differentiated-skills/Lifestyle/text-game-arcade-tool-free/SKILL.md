@@ -1,19 +1,13 @@
 ---
+
 slug: text-game-arcade-tool-free
 name: text-game-arcade-tool-free
 version: 1.0.0
 displayName: 文字游戏机免费版
 summary: "多类型文字游戏生成器,含冒险、悬疑、恋爱与互动小说 - 提供专业AI自动化处理能力,支持多种使用场景"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人用户的文字游戏生成与游玩工具.
-  核心能力: 多类型文字游戏、剧情分支、角色互动、存档读档、本地运行
-
-  适用场景: 个人娱乐、互动小说创作、剧情练习、游戏原型
-
-  差异化: 免费版聚焦单用户游玩,本地运行,无需联网
-
-  适用关键词: 文字游戏, 互动小说, 剧情游戏, 冒险游戏, 恋爱模拟, 文字冒险'
+description: "面向个人用户的文字游戏产出与游玩工具. 适用于需要text game arcade tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 文字游戏
   - 互动小说
@@ -25,14 +19,6 @@ tags:
   - 自动化
   - 生活
   - 健康
-  - 写作
-  - 电商
-  - 创意
-  - self
-  - text
-  - scene
-  - def
-  - choices
 tools:
   - read
   - exec
@@ -40,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 文字游戏机 (免费版)
 
 ## 概述
@@ -152,7 +140,7 @@ category: "Automation"
 # .
 你的任务: 在 7 天内找出真凶,洗清自己的嫌疑.
 # .
-第一天 - 早上 9:00
+领先天 - 早上 9:00
 你站在图书馆门前,手机上还留着张教授昨晚发来的消息:
 "如果你看到这条消息,说明我出事了。查 201 房间的资料"
 # .
@@ -340,7 +328,7 @@ GAME_TEMPLATES = {
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 剧情设计原则
 

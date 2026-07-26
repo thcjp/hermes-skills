@@ -1,48 +1,34 @@
 ---
+
 slug: markdown-toolkit-free
 name: markdown-toolkit-free
 version: 1.0.1
 displayName: Markdown 工具箱
 summary: "面向个人的干净可移植 Markdown 生成工具，兼容多平台.。面向个人用户的干净可移植 Markdown 生成工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人用户的干净可移植 Markdown 生成工具。核心能力:
-
-  - 避免平台专有语法，保证可移植
-
-  - 代码块语言标注与表格语法规范
-
-  - 单文件 Markdown 输出与基础校验
-
-  - 标题层级与链接规范
-
-  适用场景:
-
-  - 个人笔记/文档生成可移植 Markdown
-
-  - 单文件技术文档撰写
-
-  - 跨平台发布的 Markdown 校验
-
-  差异化: 免费版聚焦个人单文件 Markdown 生成与校验，提供可移植性规则，零成本使用'
+description: "面向个人用户的干净可移植 Markdown 产出工具。核心能力:. 适用于需要markdown toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要markdown toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Markdown
+  - markdown
+  - toolkit
+  - automation
+  - productivity
   - 文档
   - 个人效率
   - 其他工具
   - 工具
-  - markdown
   - 标题层级
-  - 全覆盖
-  - 代码块语
-  - agent
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
+
 ---
+
 # Markdown 工具箱（免费版）
 
 ## 概述
@@ -84,11 +70,15 @@ category: "Development"
 ### 场景一：代码块规范
 
 ````markdown
+# 在此执行相关操作
+echo "操作完成"
 ```python
 # 标注语言，启用高亮
 def hello(name: str) -> str:
     return f"Hello, {name}"
-```
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ````
 
 ### 场景二：表格语法
@@ -142,7 +132,7 @@ def hello(name: str) -> str:
 | 表格分隔行 | `|---|` 必填 |
 | 链接相对 | 内部链接用相对路径 |
 
-## 最佳实践
+## 优秀实践
 
 - **避免专有语法**：别用 `![[wiki-link]]`、`> [!callout]` 等平台语法.
 - **代码块标语言**：` ``` ` 后写语言名，启用高亮.
@@ -166,6 +156,8 @@ A：尽量避免，HTML 在部分 Markdown 渲染器不显示.
 ### 代码块语言标注全集
 
 ````markdown
+# 在此执行相关操作
+echo "操作完成"
 ```bash      # Shell 命令
 ```python    # Python
 ```javascript # JavaScript

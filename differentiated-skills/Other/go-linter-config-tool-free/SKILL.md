@@ -1,51 +1,34 @@
 ---
+
 slug: go-linter-config-tool-free
 name: go-linter-config-tool-free
 version: 1.0.0
 displayName: Go Lint 配置工具
 summary: "面向个人 Go 项目的 golangci-lint 配置与排障工具，快速起步.。面向个人 Go 开发者的 golangci-lint 配置与排障工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 面向个人 Go 开发者的 golangci-lint 配置与排障工具。核心能力:，可处理提升工作效率
-
-  - 最小与标准两套配置模板
-
-  - 常见导入解析、类型检查、CI 排障
-
-  - 基础 linter 选用指南
-
-  - 单项目本地运行与验证
-
-  适用场景:
-
-  - 个人 Go 项目接入 golangci-lint
-
-  - CI 环境导入解析报错快速修复
-
-  - 本地开发期格式与静态检查
-
-  差异化: 免费版聚焦单项目本地与基础 CI 场景，提供最小/标准模板与排障清单，零成本接入'
+description: "面向个人 Go 开发者的 golangci-lint 配置与排障工具。核心能力:，可处置提升工作效率. 适用于需要go linter config tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要go linter config tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - Go
+  - linter
+  - config
+  - automation
+  - productivity
   - 代码质量
   - 静态检查
   - 个人效率
   - 其他工具
   - 工具
-  - 效率
-  - 运维
-  - linter
-  - golangci-lint
-  - golangci
-  - run
-  - lint
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # Go Lint 配置工具（免费版）
 
 ## 概述
@@ -181,7 +164,7 @@ golangci-lint run --config .golangci.yml ./...
 | gosimple | 简化建议 |
 | ineffassign | 无效赋值 |
 
-## 最佳实践
+## 优秀实践
 
 - **CI 用最小**：CI 环境优先用最小配置，避免导入解析问题.
 - **本地用标准**：本地开发启用完整 linter 尽早发现问题.

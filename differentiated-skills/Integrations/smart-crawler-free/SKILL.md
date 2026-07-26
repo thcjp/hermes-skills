@@ -1,30 +1,13 @@
 ---
+
 slug: smart-crawler-free
 name: smart-crawler-free
 version: 1.0.1
 displayName: 智能爬虫(免费版)
 summary: 轻量化本地知识库爬取与检索工具,支持归档同步、新鲜度检测、关键词搜索与基础SQL查询,适合个人知识管理.
-license: Proprietary
+license: MIT
 edition: free
-description: '智能爬虫(免费版)是面向个人开发者与知识工作者的轻量化知识库爬取Skill,通过本地归档与只读查询的组合,帮助用户在离线环境下快速检索Notion工作空间内容。核心能力:
-
-  - 多源归档同步(桌面导出、API拉取),支持增量更新
-
-  - 新鲜度检测,智能判断是否需要刷新归档
-
-  - 关键词搜索与基础只读SQL查询
-
-  - 工作空间报告(页面数、数据库数、时间跨度)
-
-  - 完全只读操作,绝不修改源数据
-
-  适用场景:
-
-  - 个人Notion知识库的离线检索与备份
-
-  - 写作、研究场景的快速资料查找
-
-  - 团队Wiki的本地镜像,断网可...'
+description: "智能爬虫(免费版)是面向个人开发者与知识工作者的轻量化知识库爬取Skill,通过本地归档与只读查询的组合,帮助用户在离线环境下快速检索Notion工作空间内容。核心能力:. 适用于需要smart crawler相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 集成工具
   - 知识检索
@@ -36,12 +19,6 @@ tags:
   - 图像
   - 研究
   - 分析
-  - 知识
-  - smart-crawler
-  - sql
-  - api
-  - sync
-  - notion
 tools:
   - read
   - exec
@@ -49,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 智能爬虫(免费版)
 
 一个面向个人开发者与知识工作者的轻量化知识库爬取Skill,通过本地归档与只读查询的组合,帮助你在离线环境下快速检索工作空间内容。本免费版聚焦个人工作空间,适合日检索量不超过500次的场景.
@@ -228,7 +207,7 @@ select database_id, count(*) as page_count from pages group by database_id;
 ```
 
 > **重要**:仅支持只读SELECT查询,禁止任何修改语句(INSERT/UPDATE/DELETE),系统会自动拦截.
-## 最佳实践
+## 优秀实践
 
 1. **优先使用桌面源同步**:桌面导出对API配额无消耗,适合日常刷新
 2. **设置合理的同步频率**:个人知识库每天同步一次足够,避免频繁同步占用资源
@@ -301,7 +280,7 @@ A: 不可以。免费版仅支持单工作空间归档。多工作空间管理�
 - **权限最小化**: Notion Integration仅授予"读取内容"权限,禁止授予写入权限
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作
 
 ## 输出格式

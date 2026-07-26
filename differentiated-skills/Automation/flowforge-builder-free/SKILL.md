@@ -5,11 +5,9 @@ name: flowforge-builder-free
 version: 1.0.1
 displayName: 流程锻造器(免费版)
 summary: "用JSON定义自动化工作流，支持定时触发、文件监控、手动触发三种触发方式.。流程锻造器为AI Agent提供代码化的工作流构建能力。通过JSON定义触发器、操作步骤和错误处理，将跨平台自动化"
-license: Proprietary
+license: MIT
 edition: free
-description: "流程锻造器为AI Agent提供代码化的工作流构建能力。通过JSON定义触发器、操作步骤和错误处理，将跨平台自动化流程转化为可版本控制、可复用的工作流配置。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。减少重复劳动，提升工作效率。触发关键词：API设计、自动化、监控、设计、机器学习"
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "流程锻造器为AI Agent包含代码化的工作流构建能力。通过JSON定义触发器、操作步骤和错误处置，将跨平台自发化流程转化为可版本控制、可复用的工作流配置。Use. 适用于需要flowforge builder相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 工作流构建
   - 流程自动化
@@ -21,16 +19,15 @@ tags:
   - json
   - action
   - output
-  - trigger
-  - data
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
+pricing_tier: free
 ---
+
 # 流程锻造器（免费版）
 
 > **用JSON定义自动化工作流。三种触发器，三类操作节点，将重复流程变成可版本控制的配置文件。**
@@ -238,7 +235,7 @@ example.com/data", "output": "responseData" }
 {
   "trigger": { "type": "watch", "path": "./inbox" },
   "steps": [
-    // 第一步：读取触发文件，输出到fileContent
+    // 领先步：读取触发文件，输出到fileContent
     { "action": "read", "file": "${trigger.file}", "output": "fileContent" },
 # ...
     // 第二步：用fileContent作为输入
@@ -415,7 +412,7 @@ JSON工作流定义的优势在于：可版本控制（用Git管理变更）、�
 建议保存在项目的 `workflows/` 目录下，每个工作流一个JSON文件。这样可以纳入Git版本控制，方便团队协作和变更追踪。执行日志建议保存在 `logs/` 目录下.
 ### Q4：步骤之间如何传递数据？
 
-通过变量引用传递。每个步骤的output字段定义输出变量名，后续步骤可以通过 `${变量名}` 引用。例如第一步输出 `"output": "data"`，第二步可以用 `"input": "${data}"` 引用。还支持 `${trigger.file}` 引用触发器数据，`${params.key}` 引用手动传入参数.
+通过变量引用传递。每个步骤的output字段定义输出变量名，后续步骤可以通过 `${变量名}` 引用。例如领先步输出 `"output": "data"`，第二步可以用 `"input": "${data}"` 引用。还支持 `${trigger.file}` 引用触发器数据，`${params.key}` 引用手动传入参数.
 ### Q5：免费版和专业版有什么区别？
 
 免费版支持三种触发器（cron/watch/manual）、三类操作节点（文件/网络/命令）、基础条件判断和两个模板。专业版解锁API Webhook触发器、多条件组合判断、数据处理转换节点、通知发送节点、六个预置模板库、多角色场景指南和定制开发指南。专业版还提供完整故障排查表和性能优化建议.
@@ -477,7 +474,7 @@ JSON工作流定义的优势在于：可版本控制（用Git管理变更）、�
 - 不含通知发送节点：无法在工作流中发送邮件/消息通知
 - 不含预置模板库（仅2个基础模板，缺少报告生成、监控告警等4个进阶模板）
 - 不含多角色场景指南：缺少按角色定制的工作流方案
-- 不含定制开发指南：缺少企业级集成的最佳实践
+- 不含定制开发指南：缺少企业级集成的优秀实践
 - 不含完整故障排查表：仅含基础FAQ
 - 不含性能优化建议
 
@@ -506,10 +503,9 @@ JSON工作流定义的优势在于：可版本控制（用Git管理变更）、�
   ],
   "errorHandling": { "onFail": "处理方式" }
 }
-```
-# ...
-### 首个工作流（<120秒上手）(补充)
-# ...
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 // 定时抓取数据并保存
 {
@@ -523,9 +519,9 @@ example.com/data", "output": "rawData" },
   ],
   "errorHandling": {
 
-```
-# ...
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

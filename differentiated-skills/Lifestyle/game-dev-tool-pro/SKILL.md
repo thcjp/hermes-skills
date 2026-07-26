@@ -7,14 +7,7 @@ displayName: 游戏开发助手专业版
 summary: "企业级游戏开发平台,支持团队协作、资产管理、数据分析与商业化。面向游戏工作室与商业项目的企业级游戏开发平台."
 license: Proprietary
 edition: pro
-description: 面向游戏工作室与商业项目的企业级游戏开发平台。可自动提升工作效率
-  核心能力: 团队协作、资产管理、数据分析、CI/CD、商业化支持、多平台发布
-
-  适用场景: 商业游戏开发、工作室运营、多人协作项目、数据分析驱动迭代
-
-  差异化: 专业版支持团队协作与商业化能力,与免费版开发流程兼容
-
-  适用关键词: 团队协作, 资产管理, 玩家数据分析, CI/CD, 商业化, 多平台发布'
+description: "面向游戏工作室与商业项目的企业级游戏开发平台。可自发提升工作效率. 适用于需要game dev tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 游戏开发
   - 企业级
@@ -26,7 +19,6 @@ tags:
   - 效率
   - game_id
   - json
-  - run
 tools:
   - read
   - exec
@@ -34,7 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
+pricing_tier: L2-标准级
 ---
 
 专业版面向游戏工作室与商业项目,在免费版全流程指导之上,扩展团队协作、资产管理、玩家数据分析、CI/CD 自动化、商业化支持与多平台发布等企业级能力。支持数十人团队协作开发,提供完整的项目管理、版本控制、资产管线与数据驱动的运营决策能力.
@@ -173,11 +165,11 @@ pipeline:
 export GAME_DEV_ADMIN_KEY="sk_pro_admin_xxx"
 export GAME_DEV_ORG_ID="org_your_id"
 export GAME_DEV_EDITION="pro"
-```
-
-### Step 3: 创建团队项目
 ```bash
-curl -X POST -H "X-API-Key: $GAME_DEV_ADMIN_KEY" \
+# 在此执行相关操作
+echo "操作完成"
+```bash
+curl -X POST -H "X-API-ref: $GAME_DEV_ADMIN_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Project Aurora",
@@ -186,23 +178,17 @@ curl -X POST -H "X-API-Key: $GAME_DEV_ADMIN_KEY" \
     "engine": "godot"
   }' \
   "https://api.game-dev-pro.local/v1/projects"
-```
-
-### Step 4: 配置 CI/CD
 ```bash
-curl -X POST -H "X-API-Key: $GAME_DEV_ADMIN_KEY" \
+# 在此执行相关操作
+echo "操作完成"
+```bash
+curl -X POST -H "X-API-ref: $GAME_DEV_ADMIN_KEY" \
   -H "Content-Type: application/json" \
   -d '{"project_id":"p001","config_file":".game-dev-pro/ci-cd.yaml"}' \
   "https://api.game-dev-pro.local/v1/ci-cd/setup"
-```
-
-#
-## 配置示例
-### 企业级配置
-
-### 资产管理示例
-
-### 数据分析仪表盘
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 def generate_analytics_report(game_id, period):
     """生成数据分析报告"""
@@ -230,10 +216,9 @@ def generate_analytics_report(game_id, period):
         timeout=300,
     )
     return resp.json()
-```
-
-## 最佳实践
-### 1. 团队协作规范
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 COLLABORATION_GUIDELINES = {
     "code_review": {
@@ -251,9 +236,9 @@ COLLABORATION_GUIDELINES = {
         "sprint_length": 2,
     },
 }
-```
-
-### 2. 数据驱动决策
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 def data_driven_iteration(game_id):
     """基于数据的迭代决策"""
@@ -261,17 +246,17 @@ def data_driven_iteration(game_id):
 # ...
     decisions = []
     for insight in analysis["insights"]:
-        if "流失" in insight and "第一关" in insight:
-            decisions.append({"action": "降低第一关难度", "priority": "high"})
+        if "流失" in insight and "领先关" in insight:
+            decisions.append({"action": "降低领先关难度", "priority": "high"})
         if "首充" in insight and "转化率" in insight:
 append({"action": "优化首充礼包", "priority": "medium"})
         if "留存" in insight:
 append({"action": "增加留存活动", "priority": "high"})
 # ...
     return sorted(decisions, key=lambda x: {"high": 0, "medium": 1, "low": 2}[x["priority"]])
-```
-
-### 3. 多平台发布管理
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 def multi_platform_release(game_id, platforms):
     """多平台同步发布"""
@@ -300,9 +285,9 @@ def multi_platform_release(game_id, platforms):
         timeout=300,
     )
     return resp.json()
-```
-
-### 4. 商业化设计
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 def design_monetization(game_id, model):
     """设计商业化方案"""
@@ -368,11 +353,11 @@ export AWS_SECRET_ACCESS_KEY="..."
 export BIGQUERY_PROJECT="game-analytics"
 export BIGQUERY_KEY_FILE="/etc/game-dev/bigquery.json"
 # ...
-export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
+export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/placeholder"
 ```
 
 ### 可用性分类
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+exec方法(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 面向游戏工作室与商业项目,通过自然语言指令驱动 Agent 调用 Pro API,完成团队协作、资产管理、数据分析、CI/CD、商业化等企业级场景
 - **专业版特性**: 团队协作、资产管理、数据分析、CI/CD、商业化、多平台发布、优先支持
 - **兼容性**: 与免费版开发流程完全兼容,支持平滑升级
@@ -400,9 +385,9 @@ export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

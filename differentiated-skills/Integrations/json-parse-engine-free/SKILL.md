@@ -1,13 +1,13 @@
 ---
+
 slug: json-parse-engine-free
 name: json-parse-engine-free
 version: 1.0.1
 displayName: JSON解析引擎免费版
 summary: "轻量级JSON解析、展平与提取工具，支持文件与字符串解析、嵌套结构展平、路径提取.。JSON解析引擎免费版提供文件解析、字符串解析、嵌套展平、路径提取四项核心能力，帮助开发者将复杂JSON转"
-license: Proprietary
+license: MIT
 edition: free
-description: JSON解析引擎免费版提供文件解析、字符串解析、嵌套展平、路径提取四项核心能力，帮助开发者将复杂JSON转化为可消费的结构化数据。核心能力：支持文件与字符串两种输入源、嵌套JSON展平为单层字典、点分路径提取嵌套元素、必填字段校验与完整度评分、记录计数与错误报告。Use
-  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+description: "JSON解析引擎免费版包含文件解析、字符串解析、嵌套展平、路径提取四项核心能力，帮助开发者将复杂JSON转化为可消费的结构化数据。核心能力：兼容文件与字符串两种输入源、嵌套JSON展平为单层字典、点分路径提取嵌套元素、必填字段校验与完整度评分、记录计数与错误报告。Use. 适用于需要json parse engine相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 集成工具
   - JSON
@@ -19,15 +19,15 @@ tags:
   - json
   - 字段校验
   - api
-  - result
-  - 返回结构
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # JSON解析引擎（免费版）
 
 本工具提供JSON数据的解析、展平、提取与校验能力，帮助开发者将复杂嵌套JSON转化为可消费的结构化数据，适用于数据预处理与字段提取场景.
@@ -176,7 +176,7 @@ print(f"缺失: {report['missing_fields']}")
 | `present_fields` | array | 存在的字段列表 |
 | `completeness` | number | 完整度百分比（0-100） |
 
-## 最佳实践
+## 优秀实践
 
 ### 展平策略选择
 - 消费场景需表格结构时启用展平

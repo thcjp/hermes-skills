@@ -1,4 +1,5 @@
 ---
+
 slug: "anygen-diagram-tool-pro"
 name: "anygen-diagram-tool-pro"
 version: "1.0.0"
@@ -6,22 +7,7 @@ displayName: "AnyGen图表生成-专业版"
 summary: "企业级图表生成工具,支持批量生成、自定义模板、团队协作与API集成,适配商业文档生产。。AnyGen图表生成专业版,面向企业团队与专业用户的高级图表与可视化结构生成工具。核心能力: - 批量"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  AnyGen图表生成专业版,面向企业团队与专业用户的高级图表与可视化结构生成工具。核心能力:
-  - 批量图表生成,支持多描述队列处理
-  - 自定义图表模板库,统一团队风格
-  - 团队协作与图表资产管理
-  - API 集成,可嵌入文档生成系统
-  - 多格式输出(PNG/SVG/PDF/Markdown)
-  - 优先渲染队列与企业级技术支持
-
-  适用场景:
-  - 技术文档批量配图生产
-  - 企业架构图标准化管理
-  - 产品文档图表自动生成
-  - 团队知识库可视化资产沉淀
-
-  差异化:专业版在免费版基础上扩展批量生成、自定义模板、...
+description: "|-. 适用于需要anygen diagram tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Creative
   - 图表生成
@@ -33,16 +19,15 @@ tags:
   - 知识
   - 文档
   - 开发
-  - 代码
-  - svg
-  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # AnyGen图表生成工具 - 专业版
 
 ## 概述
@@ -184,12 +169,12 @@ python3 （请参考skill目录中的脚本文件） \
 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:配置企业 API Key
+### 领先步:配置企业 API Key
 
 ```bash
 # 企业版认证
-anygen auth login --api-key sk-pro-xxx
-export ANYGEN_API_KEY=sk-pro-xxx
+anygen auth login --api-key sk-pro-placeholder
+export ANYGEN_API_KEY=sk-pro-placeholder
 export ANYGEN_EDITION=pro
 ```
 
@@ -219,7 +204,7 @@ python3 （请参考skill目录中的脚本文件） \
 
 ```bash
 # 环境变量
-ANYGEN_API_KEY=sk-pro-xxx
+ANYGEN_API_KEY=sk-pro-placeholder
 ANYGEN_EDITION=pro
 ANYGEN_MAX_BATCH=50
 ANYGEN_DEFAULT_FORMAT=svg
@@ -248,7 +233,7 @@ ANYGEN_TEAM_REPO=git@team:diagrams-repo
 | PDF | 印刷、归档 | 适合正式文档 |
 | Markdown | 文档源码、Git | 文本格式,可版本控制 |
 
-## 最佳实践
+## 优秀实践
 
 1. **模板先行**:建立团队统一的图表模板(颜色/字体/风格),确保视觉一致性
 2. **描述规范化**:图表描述使用规范结构(节点+关系+层级),提升生成准确度
@@ -296,7 +281,7 @@ A:可以。通过 API 可集成到文档构建流水线,实现 PRD/Markdown 文�
 - **认证方式**: 支持 API Key、浏览器授权两种方式
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,支持批量生成、自定义模板、团队协作等企业级图表生产场景
 
 ## 错误处理

@@ -1,53 +1,34 @@
 ---
+
 slug: volcengine-dns-tool-free
 name: volcengine-dns-tool-free
 version: 1.0.0
 displayName: 火山引擎DNS免费版
 summary: "火山引擎DNS记录管理，支持域名区查询、记录增删改与传播验证，适合个人开发者日常运维.。火山引擎DNS管理工具免费版，面向个人开发者的轻量级DNS记录管理工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '火山引擎DNS管理工具免费版，面向个人开发者的轻量级DNS记录管理工具。核心能力:
-
-  - 域名区记录查询
-
-  - DNS记录增删改操作
-
-  - TTL 约束与回滚值保留
-
-  - 传播验证（权威与递归检查）
-
-  适用场景:
-
-  - 个人域名的DNS记录维护
-
-  - 服务迁移时的DNS切换
-
-  - DNS记录的日常查询与验证
-
-  差异化: 免费版聚焦核心DNS记录管理能力，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手'
+description: "火山引擎DNS管控工具免费版，面向个人开发者的轻量级DNS记录管控工具。核心能力:. 适用于需要volcengine dns tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要volcengine dns tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - DNS管理
+  - volcengine
+  - dns
+  - automation
+  - productivity
   - 火山引擎
   - 域名运维
   - 免费版
   - 工具
   - 效率
-  - 自动化
-  - 运维
-  - 监控
-  - 开发
-  - 代码
-  - 写作
-  - ttl
-  - api
-  - 记录
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # 火山引擎DNS管理（免费版）
 
 ## 概述
@@ -212,7 +193,7 @@ export VOLCENGINE_REGION="cn-beijing"
 # 4. 变更后执行传播验证
 ```
 
-## 最佳实践
+## 优秀实践
 
 * 修改前先查询现有记录，避免盲覆盖.
 * 所有修改操作保留回滚值，便于快速回滚.
@@ -280,9 +261,9 @@ A：免费版支持查询多个域名区，但每次操作针对单个区。如�
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

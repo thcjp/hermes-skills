@@ -1,12 +1,13 @@
 ---
+
 slug: linear-pilot-ai-free
 name: linear-pilot-ai-free
 version: 1.0.1
 displayName: Linear自动驾驶(免费版)
 summary: Linear任务自动化处理流水线，通过Webhook接收任务、更新状态、发送通知与Git同步，基础单工作流配置.
-license: Proprietary
+license: MIT
 edition: free
-description: Linear自动驾驶（免费版）面向使用Linear进行任务管理的个人开发者与小团队，提供从Linear任务创建到自动解析再到响应同步的端到端流水线。当Linear中创建新任务时，自动触发Webhook通知，Agent接收后完成任务解析、状态更新、响应通知与Git同步，让任务管理从手动任务变为自动流转
+description: "Linear自发驾驶（免费版）面向使用Linear进行任务管控的个人开发者与小团队，包含从Linear任务创建到自发解析再到响应同步的端到端流水线。当Linear中创建新任务时，自发触发Webhook通知，Agent接收后完成任务解析、状态更新、响应通知与Git同步，让任务管控从手动任务变为自发流转"
 tags:
   - Linear
   - 任务自动化
@@ -18,14 +19,15 @@ tags:
   - api
   - git
   - agent
-  - 用户提供
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Linear自动驾驶（免费版）
 
 > Linear任务一键流转：创建即触发，Agent自动处理，状态自动更新，结果自动同步至Git.
@@ -262,7 +264,7 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 | 服务 | 免费额度 | 建议 |
 |---:|---:|---:|
 | Linear | 250 issues，无限成员 | 足够个人/小团队使用 |
-| Make.com | 1000次/月，2个Scenario，15分钟间隔 | 免费方案最佳选择 |
+| Make.com | 1000次/月，2个Scenario，15分钟间隔 | 免费方案优秀选择 |
 | Pipedream | 约100 credits，即时触发 | 需要实时触发时用，额度消耗快 |
 | Zapier | 100任务/月，5个Zap，不支持Webhook | 免费方案不支持本工作流 |
 
@@ -363,16 +365,15 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 
 ### 示例1：基础用法
 
-```
-### Step 1：配置Linear API(补充)
-# ...
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 mkdir -p ~/.linear-pilot
 linear-pilot/linear.env
-```
-# ...
-### Step 2：获取团队与状态ID(补充)
-# ...
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 （请参考skill目录中的脚本文件） teams
 （请参考skill目录中的脚本文件） states

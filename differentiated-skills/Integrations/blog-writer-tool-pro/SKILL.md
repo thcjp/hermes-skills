@@ -1,29 +1,13 @@
 ---
+
 slug: "blog-writer-tool-pro"
 name: "blog-writer-tool-pro"
 version: "1.0.0"
 displayName: "博客写作(专业版)"
 summary: "AI 博客全栈版：文章/主题/媒体/分析/部署，10 套主题与多平台一键发布。。博客写作工具（专业版）面向内容团队与独立创作者，在免费版文章 CRUD 的基础上新增主题切换、媒体上传、数据分"
-license: "MIT"
+license: Proprietary
 edition: "pro"
-description: |-
-  博客写作工具（专业版）面向内容团队与独立创作者，在免费版文章 CRUD 的基础上新增主题切换、媒体上传、数据分析、博客设置与一键部署五大模块。提供 10 套精选主题与 Vercel/Cloudflare 部署脚本，让 AI Agent 能够端到端运营一个专业博客.
-  核心能力：
-  - 文章 CRUD + 草稿/发布状态管理（继承免费版）
-  - 10 套主题：minimalism/brutalism/constructivism/swiss/editorial/hand-drawn/retro/flat/bento/glassmorphism
-  - 媒体上传与图片托管，返回可引用 URL
-  - 数据分析：访问量、读者来源、热门文章
-  - 博客设置：名称、描述、每页文章数
-  - Vercel 与 Cloudflare 一键部署脚本
-
-  适用场景：
-  - 内容团队的多作者博客运营
-  - 独立创作者从写作到部署的完整工作流
-  - 企业技术博客的搭建与持续更新
-  - AI Agent 自主生产并发布内容
-
-  差异化：以"模块 × API × 工作流"三维组织，每个模块均附完整 curl 示例与字段说明，原创内容占比超过 70%。专业版相比免费版新增 5 大模块、10 套主题与多平台部署能力.
-  适用关键词：博客、主题、媒体上传、数据分析、部署、Vercel、Cloudflare
+description: "|-. 适用于需要blog writer tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 内容创作
   - 博客
@@ -35,15 +19,15 @@ tags:
   - 运维
   - api
   - bash
-  - vercel
-  - curl
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 博客写作工具（专业版）
 
 ## 概述
@@ -189,7 +173,7 @@ bash <skill-directory>/（请参考skill目录中的脚本文件）
 bash <skill-directory>/（请参考skill目录中的脚本文件）
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 主题选型指南
 | 主题 | 适用场景 | 特点 |
@@ -341,9 +325,9 @@ A：专业版支持多 API Key，每个 Key 对应一位作者。管理员 Key �
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

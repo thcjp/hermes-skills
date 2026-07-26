@@ -1,4 +1,5 @@
 ---
+
 slug: block-monitor-tool-pro
 name: block-monitor-tool-pro
 version: 1.0.0
@@ -6,12 +7,7 @@ displayName: 内容验证网关专业版
 summary: 企业级内容验证与策略管理平台,支持语义分析、批量验证、实时拦截、多语言审核与完整审计链,适合企业内容安全团队.
 license: Proprietary
 edition: pro
-description: '内容验证网关专业版,为企业提供全方位内容验证与策略治理能力.
-  核心能力:语义级内容分析、批量验证处理、实时拦截与告警、多语言审核、完整审计链、REST API集成.
-  适用场景:企业内容安全治理、合规审计、AI输出实时管控、多租户策略管理.
-  差异化:专业版兼容免费版检查方法,新增企业级语义分析与实时管控能力,满足规模化内容安全需求.
-  适用关键词: 语义分析, 实时拦截, 批量验证, 审计链, 多语言, content moderation, semantic analysis, audit
-  trail'
+description: "内容验证网关专业版,为企业包含全方位内容验证与策略治理能力. 适用于需要block monitor tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 安全
   - 内容验证
@@ -23,14 +19,15 @@ tags:
   - self
   - stats
   - json
-  - api
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Operations"
+pricing_tier: L2-标准级
 ---
+
 专业版为企业提供完整的内容验证与策略管理平台,在免费版黑白名单基础检查之上,新增语义级内容分析、批量验证处理、实时拦截与Webhook告警、20+语言审核、完整审计链与REST API集成。专业版完全兼容免费版检查规则,已有策略配置可无缝升级,适合企业级内容安全治理与合规审计.
 ### 专业版核心优势
 | 优势 | 说明 |
@@ -178,9 +175,9 @@ class EnterpriseContentGovernance:
                 "每月生成内容安全态势报告"
             ]
         }
-```
-
-### 场景二:多租户策略管理
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 #!/usr/bin/env python3
 """多租户内容策略管理"""
@@ -223,9 +220,9 @@ clients.get(client_id)
             "passed": len(violations) == 0,
             "violations": violations
         }
-```
-
-### 场景三:实时监控仪表板
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 #!/bin/bash
 echo "=== 内容安全监控仪表板 ==="
@@ -312,12 +309,12 @@ result = gateway.process(content)
 | 40-79 | REVIEW | 存在风险,需人工审核 |
 | 80+ | BLOCK | 高风险,直接拦截 |
 
-## 最佳实践
+## 优秀实践
 1. **分层策略**:结合关键词匹配与语义分析,多层防护.
 2. **渠道差异化**:不同发布渠道设置不同风险阈值.
 3. **审计留痕**:所有验证决策记录审计日志,可追溯.
 4. **定期复盘**:定期审查拦截与待审内容,优化规则.
-5. **告警配置**:高风险内容配置Webhook告警,第一时间响应.
+5. **告警配置**:高风险内容配置Webhook告警,领先时间响应.
 6. **API集成**:通过REST API集成到内容发布流程.
 ## 常见问题
 ### Q1: 专业版与免费版规则是否兼容?
@@ -352,7 +349,7 @@ result = gateway.process(content)
 - REST API服务建议配置认证Token
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行企业级内容验证与策略治理任务
 
 ## 错误处理

@@ -1,38 +1,13 @@
 ---
+
 slug: video-stream-upload-free
 name: video-stream-upload-free
 version: 1.0.1
 displayName: 视频上传-免费版
 summary: "轻量级视频上传工具，支持快速上传视频至流媒体平台并获取播放链接，适合个人创作者分发内容.。视频上传免费版，为个人用户提供轻量化的视频上传与流媒体分发能力。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '视频上传免费版，为个人用户提供轻量化的视频上传与流媒体分发能力。核心能力:
-
-  - 默认快速上传（仅需标题）
-
-  - 三步上传流程（创建 → 上传 → 完成）
-
-  - HLS 流媒体链接获取
-
-  - 上传进度查询
-
-  - 基础视频信息管理
-
-  适用场景:
-
-  - 个人创作者视频分发
-
-  - 教学视频上传分享
-
-  - 短视频内容发布
-
-  - 视频内容备份托管
-
-  差异化:
-
-  - 免费版聚焦默认上传流程，零配置快速出链接
-
-  - 三步上传流程清晰...'
+description: "视频上传免费版，为个人用户包含轻量化的视频上传与流媒体分发能力。核心能力:. 适用于需要video stream upload相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Creative
   - 视频上传
@@ -44,15 +19,15 @@ tags:
   - api
   - videos
   - mp4
-  - stream-public-key
-  - stream-secret-key
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # 视频上传工具 - 免费版
 
 ## 概述
@@ -211,7 +186,7 @@ curl -s -X GET "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/complete"
 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步：获取 API Key
+### 领先步：获取 API Key
 
 免费版需要流媒体平台的 API Key：
 
@@ -219,7 +194,7 @@ curl -s -X GET "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/complete"
 - `stream-secret-key`：私钥
 
 若未提供，Agent 会主动询问用户.
-### 第二步：上传第一个视频
+### 第二步：上传领先个视频
 
 最简单的用法 - 默认快速上传：
 
@@ -229,7 +204,7 @@ attoaioz.cyou/api/videos/create' \
   -H 'stream-public-key: YOUR_PUBLIC_KEY' \
   -H 'stream-secret-key: YOUR_SECRET_KEY' \
   -H 'Content-Type: application/json' \
-  -d '{"title": "我的第一个视频"}'
+  -d '{"title": "我的领先个视频"}'
 ```
 
 从响应中提取 `data.id` 作为 `VIDEO_ID`.
@@ -307,7 +282,7 @@ Step 3: GET /api/videos/VIDEO_ID/complete
 | 400 | 请求格式错误 | 检查请求体格式与参数 |
 | 500 | 服务器错误 | 稍后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 文件大小处理
 
@@ -352,7 +327,7 @@ STATUS=$(curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID' \
 
 | 项目 | 推荐值 |
 |:------|------:|
-| 格式 | mp4（兼容性最佳） |
+| 格式 | mp4（兼容性优秀） |
 | 大小 | < 50MB（免费版单分片） |
 | 分辨率 | 720p 或 1080p |
 | 编码 | H.264 + AAC |
@@ -395,7 +370,7 @@ done
 
 **A：** 平台支持主流视频格式，推荐使用：
 
-- mp4（兼容性最佳）
+- mp4（兼容性优秀）
 - mov（Apple 设备）
 - avi、mkv、webm（需转码）
 

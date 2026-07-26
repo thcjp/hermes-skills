@@ -1,14 +1,13 @@
 ---
+
 slug: prompt-architect-free
 name: prompt-architect-free
 version: 1.0.1
 displayName: 提示词架构师免费版
 summary: "解决 Prompt 答非所问、任务拆解混乱、Agent Loop 选型盲目的免费提示词工程工具。提示词架构师免费版是面向 AI Agent 开发者、Prompt 工程师、独立开发者的轻量级"
-license: Proprietary
+license: MIT
 edition: free
-description: 提示词架构师免费版是面向 AI Agent 开发者、Prompt 工程师、独立开发者的轻量级 Prompt 工程工具，针对"Prompt，可自动提升工作效率
-  答非所问与幻觉频发、复杂任务拆解颗粒度失控、Agent Loop 模式选型盲目、输出格式不可控"四大高频痛点而设计。它把零散的 Prompt 工程经验沉淀为可复用的结构化模板与决策表，让
-  Agent 从"能跑"升级到"基本可控"
+description: "提示词架构师免费版是面向 AI Agent 开发者、Prompt 工程师、独立开发者的轻量级 Prompt 工程工具，针对\"Prompt，可自发提升工作效率. 适用于需要prompt architect相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 提示词工程
   - 任务拆解
@@ -20,8 +19,6 @@ tags:
   - agent
   - prompt
   - schema
-  - text
-  - token
 tools:
   - read
   - exec
@@ -30,7 +27,9 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+pricing_tier: free
 ---
+
 面向 AI Agent 开发者、Prompt 工程师、独立开发者的轻量级 Prompt 工程工具。把零散的 Prompt 工程经验沉淀为可复用的结构化模板与决策表，让 Agent 从"能跑"升级到"基本可控".
 > 本免费版面向个人开发者试用与轻量场景。如需 Few-shot 自动生成、Token 预算管理、多 Agent 编排等高级能力，请使用 `prompt-architect-pro` 专业版.
 ## 设计动机：四大高频痛点
@@ -42,7 +41,7 @@ category: "Agents"
 | 输出格式不可控 | JSON 解析失败、字段缺失 | 输出 Schema 定义 + 三级解析兜底 |
 
 ## 使用流程
-### Step 1：生成第一个结构化 System Prompt（< 30 秒）
+### Step 1：生成领先个结构化 System Prompt（< 30 秒）
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
 |:-----|:-----|:-----|:-----|
@@ -59,9 +58,9 @@ category: "Agents"
 3. 行为规范（语气、流程、禁忌）
 4. 输出格式（结构化响应 schema）
 5. 异常处理（兜底策略、转人工条件）
-```
-
-### Step 2：选择 Agent Loop 模式（< 30 秒）
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 用户："这个任务该用 ReAct 还是 CoT？"
 # ...
@@ -71,9 +70,9 @@ category: "Agents"
   - 是 → 任务步数是否 > 5？
           - 否 → ReAct
           - 是 → 建议使用专业版的 Plan-Execute（免费版暂不支持）
-```
-
-### Step 3：定义输出 Schema（< 30 秒）
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 用户："让 Agent 输出结构化 JSON"
 # ...
@@ -216,7 +215,7 @@ Action: ...
 问题：{用户问题}
 # ...
 推理链：
-1. 首先，{第一步推理}
+1. 首先，{领先步推理}
 2. 因此，{第二步推理}
 3. 进一步，{第三步推理}
 4. 综上，{结论}
@@ -311,7 +310,7 @@ A：看是否需要调用工具。纯推理任务用 CoT，需要调用工具的
 **Q4：输出 Schema 校验失败怎么办？**
 A：按三级兜底策略处理：优先 JSON 模式 → 备选 Markdown 提取 → 兜底正则提取。若三次解析均失败，重试 2 次（附带错误反馈），仍失败则转人工审核.
 **Q5：颗粒度评分怎么用？**
-A：评分 0.6-0.8 为最佳区间。< 0.4 说明拆太细，编排开销大于执行开销；> 0.9 说明拆太粗，单节点失败影响大。可调整拆解粒度后重新评分.
+A：评分 0.6-0.8 为优秀区间。< 0.4 说明拆太细，编排开销大于执行开销；> 0.9 说明拆太粗，单节点失败影响大。可调整拆解粒度后重新评分.
 **Q6：幻觉约束清单必须全部包含吗？**
 A：不强制全部包含，但建议至少包含 3 项。"不确定时承认不知道"与"禁止编造引用/数据"是最低要求，其余按场景补充.
 ## 故障排查

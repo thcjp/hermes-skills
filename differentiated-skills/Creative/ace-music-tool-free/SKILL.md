@@ -1,30 +1,13 @@
 ---
+
 slug: ace-music-tool-free
 name: ace-music-tool-free
 version: 1.0.0
 displayName: ACE音乐生成-免费版
 summary: "通过ACE-Step模型免费生成带人声的AI歌曲,支持多语种、多风格,适合个人创作者快速出曲.。ACE音乐生成免费版,面向个人内容创作者的AI音乐生成工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 'ACE音乐生成免费版,面向个人内容创作者的AI音乐生成工具。核心能力:
-
-  - 文本描述生成完整歌曲(含人声与歌词)
-
-  - 支持流行、民谣、电子、爵士等多种风格
-
-  - 提供中文、英文、日文等多语种演唱
-
-  - 可调节时长、节奏(BPM)、调式等基础参数
-
-  适用场景:
-
-  - 短视频创作者快速生成背景音乐
-
-  - 独立开发者制作游戏或应用配乐
-
-  - 音乐爱好者进行创意灵感探索
-
-  差异化:免费版聚焦核心生成能力,操作简单,适合个人用户体验AI音乐创作'
+description: "ACE音乐产出免费版,面向个人内容创作者的AI音乐产出工具。核心能力:. 适用于需要ace music tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Creative
   - 音乐生成
@@ -41,7 +24,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # ACE音乐生成工具 - 免费版
 
 ## 概述
@@ -128,7 +113,7 @@ ACE音乐生成免费版是一款面向个人用户的AI音乐创作工具。通
 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:配置 API Key
+### 领先步:配置 API Key
 
 ```bash
 # 注册免费账号获取 Key
@@ -169,7 +154,7 @@ ACE_MUSIC_BASE_URL=https://api.acemusic.ai  # 默认值
 --seed 42
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **提示词要具体**:描述风格、乐器、情绪,例如"jazz, saxophone solo, smoky bar, melancholic"
 2. **歌词用结构标记**:使用 `[Verse]`、`[Chorus]`、`[Bridge]` 分段,生成效果更佳
@@ -210,7 +195,7 @@ A:使用相同的提示词、歌词和 `--seed` 参数值即可生成相似结�
 - **存储建议**: 写入 `.env` 文件或系统环境变量,避免硬编码到脚本
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作,核心生成流程依赖外部API
 
 ## 错误处理

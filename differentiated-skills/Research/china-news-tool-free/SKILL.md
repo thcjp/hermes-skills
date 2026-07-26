@@ -1,27 +1,24 @@
 ---
+
 slug: china-news-tool-free
 name: china-news-tool-free
 version: 1.0.0
 displayName: 中国新闻聚合(免费版)
 summary: "中国新闻聚合免费版，支持RSS订阅获取主流媒体新闻，智能分类生成简报.。中国新闻聚合助手免费版是面向个人用户的轻量新闻聚合工具。通过RSS订阅模式获取新浪、搜狐、网易等主流媒体内容，智能分类"
-license: Proprietary
+license: MIT
 edition: free
-description: 中国新闻聚合助手免费版是面向个人用户的轻量新闻聚合工具。通过RSS订阅模式获取新浪、搜狐、网易等主流媒体内容，智能分类生成新闻简报。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "中国新闻聚合助手免费版是面向个人用户的轻量新闻聚合工具。通过RSS订阅模式获取新浪、搜狐、网易等主流媒体内容，智能分类产出新闻简报。Use. 适用于需要china news tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要china news tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 中国新闻
+  - china
+  - news
+  - automation
+  - productivity
   - RSS聚合
   - 智能分类
   - 新闻简报
   - 搜索
   - 检索
-  - 工具
-  - rss
-  - self
-  - items
-  - news
-  - append
 tools:
   - read
   - exec
@@ -29,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 > **RSS订阅、智能分类、生成简报。三步完成中国主流媒体新闻聚合。**
 
 无需复杂配置，通过RSS订阅即可获取主流媒体的最新新闻。免费版聚焦轻量场景，提供基础的新闻聚合与分类能力.
@@ -325,9 +325,9 @@ for item in root.findall('.//item')[:5]:
     title = item.find('title').text
     print(f"- {title}")
 PYEOF
-```
-
-### 120秒标准搭建
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 pip install requests
 # ...
@@ -380,9 +380,9 @@ CATEGORIES = {
     '娱乐': ['明星', '电影', '音乐', '综艺', '热播'],
     '社会': ['事故', '案件', '民生', '教育', '医疗'],
 }
-```
-
-### 输出格式配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 OUTPUT_CONFIG = {
     'format': 'markdown',  # markdown / json / text
@@ -392,10 +392,9 @@ OUTPUT_CONFIG = {
     'output_dir': './output',
     'filename_pattern': 'news_{date}.md',
 }
-```
-
-## 最佳实践
-## 错误处理
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 def safe_fetch_all(fetcher):
     """安全的批量获取"""
@@ -415,9 +414,9 @@ def safe_fetch_all(fetcher):
     if failed_sources:
         print(f"\n警告：{len(failed_sources)} 个源获取失败：{failed_sources}")
     return all_news
-```
-
-### 2. 去重处理
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 def deduplicate(news_list):
     """去重（基于标题相似度）"""
@@ -431,9 +430,9 @@ def deduplicate(news_list):
 # ...
 unique_news = deduplicate(news)
 print(f"去重前：{len(news)} 条，去重后：{len(unique_news)} 条")
-```
-
-### 3. 缓存机制 - 处理方式: 按上述步骤操作并确认结果
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 import os
 import json

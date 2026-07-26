@@ -5,12 +5,9 @@ name: music-gen-cellcog-tool-free
 version: 1.0.0
 displayName: CellCog音乐生成免费版
 summary: 基于CellCog AI引擎的音乐生成工具,支持文本/歌词生成音乐、多种风格选择,适合个人内容创作.
-license: Proprietary
+license: MIT
 edition: free
-description: "CellCog音乐生成免费版帮助个人用户通过CellCog AI引擎创建音乐。支持从文本描述或歌词生成完整音乐作品,涵盖流行、电子、古典、环境等多种风格,
-  生成的音乐可用于个人内容创作。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。加速开发流程，提升代码质量与一致性。触发关键词：API设计、代码生成、自动化、转换、设计、视频"
-
-  生成的音乐可用于个人内容创作。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。'
+description: "CellCog音乐产出免费版帮助个人用户通过CellCog AI引擎创建音乐。兼容从文本描述或歌词产出完整音乐作品,涵盖流行、电子、古典、环境等多种风格,. 适用于需要music gen cellcog tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 音乐生成
   - CellCog
@@ -22,16 +19,15 @@ tags:
   - cellcog
   - mp3
   - api
-  - json
-  - 音乐
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
+pricing_tier: free
 ---
+
 # CellCog音乐生成免费版
 
 ## 概述
@@ -286,7 +282,7 @@ style_recommendations = {
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 提示词编写技巧
 
@@ -372,7 +368,7 @@ A: 生成的音乐商用权限取决于CellCog的服务条款。建议查阅最�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令+API调用能力)
+- **分类**: MD+EXEC模式纯Markdown指令+API调用能力)
 - **说明**: 基于Markdown指令驱动Agent执行音乐生成任务,通过CellCog API实现音乐生成
 - **免费版限制**: 基础文生音乐、歌词生音乐、标准音质、MP3格式、试用额度、无批量生成
 

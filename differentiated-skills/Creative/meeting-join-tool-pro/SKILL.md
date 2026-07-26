@@ -1,4 +1,5 @@
 ---
+
 slug: "meeting-join-tool-pro"
 name: "meeting-join-tool-pro"
 version: "1.0.0"
@@ -6,9 +7,7 @@ displayName: "AI会议助手专业版"
 summary: "企业级AI会议机器人,支持可视化头像、屏幕共享、实时协作、批量会议与团队管理,适合企业与团队场景。。AI会议助手专业版为企业与团队提供全方位的智能会议机器人解决方案。在免费版语音会议能力之上"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  AI会议助手专业版为企业与团队提供全方位的智能会议机器人解决方案。在免费版语音会议能力之上,增加可视化头像、屏幕共享、实时网页协作、
-  多种语音策略、批量会议调度与团队管理能力。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "|-. 适用于需要meeting join tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 会议
   - 语音转写
@@ -20,15 +19,15 @@ tags:
   - 效率
   - 创意
   - url
-  - https
-  - state
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # AI会议助手专业版
 
 ## 概述
@@ -365,7 +364,7 @@ python -m http.server 3001 --directory ./screenshare-content/
   --screenshare-url "https://your-site.com/slides"
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 免费版与PRO版能力对比
 
@@ -450,7 +449,7 @@ A: 建议配置Agent框架的权限系统(如allow列表、hooks、plan模式)�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令+脚本执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令+脚本执行能力)
 - **说明**: 专业版基于Markdown指令驱动Agent执行企业级会议任务,通过Python/Node.js脚本实现多模式接入、屏幕共享、批量调度与团队管理
 - **PRO版增强**: 四种会议模式、可视化头像、屏幕共享、协作式语音、批量会议、团队管理、CI/CD集成、数据分析
 

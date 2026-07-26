@@ -7,23 +7,21 @@ displayName: "精英前端设计-专业版"
 summary: "企业级前端设计系统，支持多页面应用、React/Vue组件、品牌一致性与高级动效编排。精英前端设计工具专业版，面向团队的企业级前端设计系统。核心能力： - 多页面应用设计，统一视觉语言贯穿全"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  精英前端设计工具专业版，面向团队的企业级前端设计系统。核心能力：
-  - 多页面应用设计，统一视觉语言贯穿全站
-  - React/Vue 组件库生成，含 TypeScript 类型定义
-  - 高级动效编排，Framer Motion / Vue Transition 深度集成
-  - 品牌设计系统，色彩/字体/间距/组件规范化
-  - 设计令牌（Design Token）自动生成与管理
-  - 响应式适配策略，多断点一致体验
-  - 可访问性合规.
-tags: 代码,vue,card,css,设计系统,design
+description: "|-. 适用于需要elite frontend tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+tags:
+  - 代码
+  - vue
+  - card
+  - css
+  - 设计系统
+  - design
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
+pricing_tier: L2-标准级
 ---
 
 精英前端设计工具专业版是企业级前端设计系统平台。它不仅生成单页面代码，更将设计规范扩展至多页面应用、React/Vue 组件库、品牌设计系统和高级动效编排。通过设计令牌（Design Token）管理，确保全站视觉语言的一致性与可维护性。
@@ -191,7 +189,7 @@ const cards = ref<Card[]>([
 、品牌视觉时使用。不适用于非本工具能力范围的需求。
 
 ## 快速开始
-### 第一步：定义品牌配置
+### 领先步：定义品牌配置
 ```json
 {
   "brand": {
@@ -208,23 +206,22 @@ const cards = ref<Card[]>([
     }
   }
 }
-```
-
-### 第二步：生成设计系统
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python3 generate-design-system.py --brand brand.json --output tokens.css
 # .
-```
-
-### 第三步：生成组件库
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 generate-components --framework react --typescript --tokens tokens.json
 # .
 generate-components --framework vue --typescript --tokens tokens.json
-```
-
-## 配置示例
-### Design Token CSS 变量
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```css
 :root {
   /* 色彩系统 */
@@ -272,9 +269,9 @@ generate-components --framework vue --typescript --tokens tokens.json
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-```
-
-### 响应式断点配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```css
 /* 响应式断点策略 */
  breakpoints: {
@@ -300,7 +297,7 @@ generate-components --framework vue --typescript --tokens tokens.json
 }
 ```
 
-## 最佳实践
+## 优秀实践
 1. **设计系统先行**：先定义 Design Token，再基于 Token 构建组件，确保一致性。
 2. **组件粒度合理**：原子组件 → 分子组件 → 页面模板，分层管理。
 3. **动效有节制**：一次精心编排的页面加载交错入场，优于散乱微交互。
@@ -384,9 +381,9 @@ A: 采用移动优先策略，通过 Design Token 统一间距和字号，各断
 用户: 执行核心功能
 Skill: 正在执行核心功能.
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

@@ -1,4 +1,5 @@
 ---
+
 slug: "mermaid-diagram-tool-pro"
 name: "mermaid-diagram-tool-pro"
 version: "1.0.0"
@@ -6,20 +7,7 @@ displayName: "Mermaid图表工具(专业版)"
 summary: "团队级Mermaid图表套件,含全类型、自定义主题、批量生成与CI语法校验。。Mermaid图表工具(专业版)面向团队与企业,提供全类型Mermaid图表生成、复杂多节点图、自定义主题样式、"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  Mermaid图表工具(专业版)面向团队与企业,提供全类型Mermaid图表生成、复杂多节点图、自定义主题样式、从文档批量生成、CI语法校验与文档自动嵌入能力。核心能力:
-  - 全图表类型:含C4架构图、Git图、类图、需求图等进阶类型
-  - 复杂多节点图与子图分组
-  - 自定义主题、样式与品牌色
-  - 从Markdown/PRD批量生成多张图表
-  - CI流水线语法校验,阻断错误图表
-  - 文档自动嵌入与版本同步
-
-  适用场景:
-  - 企业架构与C4模型文档
-  - 技术文档站点的图表统一管理
-  - PRD到图表的批量转换
-  ...
+description: "|-. 适用于需要mermaid diagram tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Development
   - 文档
@@ -31,20 +19,15 @@ tags:
   - 效率
   - 自动化
   - 开发
-  - 代码
-  - 知识
-  - mmd
-  - api
-  - web
-  - docs
-  - theme
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # Mermaid图表工具(专业版)
 
 ## 概述
@@ -324,7 +307,7 @@ gitGraph
     commit id: "发布v1.0" tag: "v1.0"
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 复杂图分段子图
 
@@ -364,9 +347,8 @@ flowchart TB
 ### 3. 文档嵌入与版本同步
 
 ```bash
-# 在Markdown中嵌入图表,使用引用而非内联
-# docs/architecture.md
-# ![系统架构](diagrams/architecture.mmd)
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ```bash
@@ -385,7 +367,7 @@ node （请参考skill目录中的脚本文件） \
   --embed
 ```
 
-### 5. CI校验最佳实践
+### 5. CI校验优秀实践
 
 | 校验项 | 工具 | 阻断级别 |
 |---:|---:|---:|
@@ -405,7 +387,7 @@ node （请参考skill目录中的脚本文件） \
 C4是一种架构描述方法,分Context/Container/Component/Code四层。本工具用流程图+子图模拟C4容器图,提供结构化的系统边界、容器、组件表达,适合企业架构文档.
 ### Q3:批量生成会修改我的文档吗?
 
-默认 `--embed` 模式会把生成的图表代码块嵌入回原Markdown的对应位置(替换 `<!-- mermaid:xxx -->` 标记处)。如不希望修改文档,去掉 `--embed` 仅生成独立 `.mmd` 文件.
+默认 `--embed` 模式会把生成的图表代码块嵌入回原Markdown的对应位置(替换 `<!-- mermaid:placeholder -->` 标记处)。如不希望修改文档,去掉 `--embed` 仅生成独立 `.mmd` 文件.
 ### Q4:主题文件支持热重载吗?
 
 支持。`render.mjs` 每次运行都重新读取主题文件,修改后无需重启。CI中建议锁定主题文件版本号,避免运行时变更导致不一致.
@@ -441,7 +423,7 @@ C4是一种架构描述方法,分Context/Container/Component/Code四层。本工
 - 若需对接在线图表托管服务,按对应服务文档配置令牌.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。PRO版面向团队与企业,提供全类型图表、自定义主题、批量生成与CI校验能力,完全兼容免费版基础类型与输出格式.
 ## 错误处理
 

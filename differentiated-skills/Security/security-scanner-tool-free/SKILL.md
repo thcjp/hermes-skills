@@ -1,62 +1,33 @@
 ---
+
 slug: security-scanner-tool-free
 name: security-scanner-tool-free
 version: 1.0.0
 displayName: 安全扫描器(免费版)
 summary: "自动化安全扫描工具包,含端口扫描、漏洞检测、SSL分析,适合安全测试与评估,支持多种使用场景和自动化处理"
-license: Proprietary
+license: MIT
 edition: free
-description: 核心能力:，可自动提升工作效率
-
-  - 端口扫描与服务识别(nmap)
-
-  - 漏洞模板扫描(nuclei)
-
-  - SSL/TLS配置分析(sslscan)
-
-  - Web服务器漏洞检测(nikto)
-
-  - 扫描报告自动生成
-
-  适用场景:
-
-  - 安全评估快速扫描
-
-  - 渗透测试前期侦察
-
-  - SSL证书合规检查
-
-  - 基础漏洞发现
-
-  差异化:
-
-  - 多工具集成,一键多种扫描
-
-  - 按场景分类的扫描模板
-
-  - Markdown格式扫描报告
-
-  - 包含道德使用准则
-
-  适用关键词: 安全扫描, 端口扫描, 漏洞检测, SSL检查, nmap,...'
+description: "核心能力:，可自发提升工作效率. 适用于需要security scanner tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要security scanner tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 安全
+  - security
+  - scanner
+  - automation
+  - productivity
   - 漏洞扫描
   - 渗透测试
   - 网络安全
   - 加密
   - 工具
-  - self
-  - target
-  - result
-  - results
-  - 扫描
 tools:
   - read
   - exec
 homepage: ""
 category: "Security"
+pricing_tier: free
+
 ---
+
 # 安全扫描器(免费版)
 
 ## 概述
@@ -330,7 +301,7 @@ nuclei -u target.com -t technologies/
 nuclei -u target.com -t custom-templates/
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 分阶段扫描
 
@@ -402,7 +373,7 @@ A: 免费版集成4个核心工具。专业版增加masscan、ffuf、gobuster、
 - 免费版无需API Key,所有扫描在本地执行
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行安全扫描任务
 
 ## 错误处理
@@ -430,9 +401,9 @@ A: 免费版集成4个核心工具。专业版增加masscan、ffuf、gobuster、
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

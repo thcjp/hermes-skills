@@ -5,11 +5,16 @@ name: pipedrive-toolkit-free
 version: 1.0.1
 displayName: Pipedrive工具(免费版)
 summary: "管理Pipedrive销售数据的免费工具，支持商机、联系人、组织的查询与搜索。Pipedrive工具免费版是一款面向销售数据管理的命令行辅助Skill，让AI Agent能够通过API查询P"
-license: Proprietary
+license: MIT
 edition: free
-description: Pipedrive工具免费版是一款面向销售数据管理的命令行辅助Skill，让AI Agent能够通过API查询Pipedrive中的商机、联系人、组织和活动数据，实现销售信息的快速检索和展示。核心能力：商机列表与搜索、联系人查询、组织查询、活动列表、管道与阶段查看、当前用户信息。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
-tags: request,api,urllib,json,req,pipedrive
+description: "Pipedrive工具免费版是一款面向销售数据管控的命令行辅助Skill，让AI Agent能够通过API查询Pipedrive中的商机、联系人、组织和活动数据，达成销售信息的快速检索和展示。核心能力：商机列表与搜索、联系人查询、组织查询、活动列表、管道与阶段查看、当前用户信息。Use. 适用于需要pipedrive toolkit相关能力的开发场景,提供结构化的工作流程和配置指引."
+tags:
+  - request
+  - api
+  - urllib
+  - json
+  - req
+  - pipedrive
 tools:
   - read
   - exec
@@ -17,7 +22,7 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
-
+pricing_tier: free
 ---
 
 # Pipedrive工具（免费版）
@@ -290,7 +295,7 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 | `limit` | 所有列表 | 每页数量（默认100） |
 | `sort` | 所有列表 | 排序字段和方向（如`add_time DESC`） |
 
-## 最佳实践
+## 优秀实践
 
 1. **使用status过滤提高效率**：查询商机时优先用`status=open`过滤，避免返回大量已关闭数据.
 2. **善用搜索功能**：通过`/search?term=关键词`快速定位特定商机或联系人，比遍历列表更高效.

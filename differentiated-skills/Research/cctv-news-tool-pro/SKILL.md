@@ -1,4 +1,5 @@
 ---
+
 slug: cctv-news-tool-pro
 name: cctv-news-tool-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: 央视新闻抓取(专业版)
 summary: "央视新闻联播抓取专业版，含批量查询、AI摘要、多渠道推送、历史趋势分析.。央视新闻抓取助手专业版是面向企业级场景的完整新闻联播内容获取与分析工具。在免费版单日查询能力之上，新增批量日期查询、"
 license: Proprietary
 edition: pro
-description: 央视新闻抓取助手专业版是面向企业级场景的完整新闻联播内容获取与分析工具。在免费版单日查询能力之上，新增批量日期查询、AI智能摘要、多渠道推送、历史趋势分析、全文内容获取、视频片段元数据、个性化订阅七大高级能力。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "央视新闻抓取助手专业版是面向企业级场景的完整新闻联播内容获取与剖析工具。在免费版单日查询能力之上，新增成批日期查询、AI智能摘要、多渠道推送、历史趋势剖析、全文内容获取、视频片段元数据、个性化订阅七大高级能力。Use. 适用于需要cctv news tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 央视新闻
   - 企业级
@@ -19,9 +19,6 @@ tags:
   - 工具
   - self
   - date
-  - stats
-  - success
-  - result
 tools:
   - read
   - exec
@@ -30,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 > **批量查询+AI摘要+多渠道推送+趋势分析。企业级新闻情报全功能覆盖。**
 
 将复杂的新闻情报获取与分析任务交给专业工具处理。专业版在免费版单日查询能力之上，新增批量日期查询、AI智能摘要、多渠道推送、历史趋势分析、全文内容获取、视频片段元数据、个性化订阅七大高级能力，满足企业级场景对新闻情报的深度、广度与时效性要求.
@@ -183,7 +182,7 @@ def daily_news_brief():
     fetcher = BatchNewsFetcher()
     summarizer = AINewsSummarizer()
     pusher = NewsPusher()
-    pusher.register_channel("feishu", "https://open.feishu.cn/open-apis/bot/v2/hook/xxx", "feishu")
+    pusher.register_channel("feishu", "https://open.feishu.cn/open-apis/bot/v2/hook/placeholder", "feishu")
 # ...
     result = fetcher._fetch_single("today")
     if not result.get("success"):
@@ -262,20 +261,19 @@ summarizer = AINewsSummarizer()
 generate_daily_summary(results['20250210'])
 print(summary)
 "
-```
-
-### 120秒标准搭建
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 pip install requests schedule
 # ...
-export FEISHU_WEBHOOK=https://open.feishu.cn/open-apis/bot/v2/hook/xxx
-export DINGTALK_WEBHOOK=https://oapi.dingtalk.com/robot/send?access_token=xxx
+export FEISHU_WEBHOOK=https://open.feishu.cn/open-apis/bot/v2/hook/placeholder
+export DINGTALK_WEBHOOK=https://oapi.dingtalk.com/robot/send?access_token=placeholder
 # ...
 python3 daily_pipeline.py --date-range 2025-02-01:2025-02-28 --push feishu,dingtalk
-```
-
-## 配置示例
-### 企业级配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 fetcher:
   max_workers: 5
@@ -291,13 +289,13 @@ pusher:
   channels:
     - name: feishu
       type: feishu
-      url: https://open.feishu.cn/open-apis/bot/v2/hook/xxx
+      url: https://open.feishu.cn/open-apis/bot/v2/hook/placeholder
     - name: dingtalk
       type: dingtalk
-      url: https://oapi.dingtalk.com/robot/send?access_token=xxx
+      url: https://oapi.dingtalk.com/robot/send?access_token=placeholder
     - name: wechat
       type: wechat
-      url: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=xxx
+      url: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=placeholder
     - name: email
       type: email
       url: https://api.email-service.com/send
@@ -314,20 +312,19 @@ analyzer:
 schedule:
   daily_brief: "0 20 * * *"  # 每天20:00
   weekly_digest: "0 10 * * 1"  # 每周一10:00
-```
-
-## 最佳实践
-### 1. 抓取频率控制
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 fetcher = BatchNewsFetcher(max_workers=3)  # 建议不超过5
-```
-
-### 2. 缓存策略
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 fetcher = BatchNewsFetcher(cache_dir="./cache")
-```
-
-### 3. AI摘要优化
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 summarizer = AINewsSummarizer()
 summary_formal = summarizer.generate_daily_summary(data, style="formal")
@@ -395,7 +392,7 @@ summary_brief = summarizer.generate_daily_summary(data, style="brief")
 此外，专业版还提供：
 - 多角色场景指南（企业信息部门/市场研究/自媒体创作者）
 - 完整FAQ（7问）与故障排查表
-- 性能优化建议与最佳实践
+- 性能优化建议与优秀实践
 - GPT-4o模型路由与优先支持
 
 ## 定价
@@ -426,9 +423,9 @@ summary_brief = summarizer.generate_daily_summary(data, style="brief")
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

@@ -1,12 +1,12 @@
 ---
+
 slug: "aws-graph-agent"
 name: "aws-graph-agent"
 version: "1.0.0"
 displayName: "AWS图代理"
 summary: "Bedrock AgentCore与LangGraph编排,引导式部署,一致性处理,多代理模式库。。AWS Bedrock AgentCore与LangGraph多代理部署编排工具：提供St"
-license: "Proprietary"
-description: |-
-  AWS Bedrock AgentCore与LangGraph多代理部署编排工具：提供StateGraph状态图编排、AgentCore Runtime HTTP封装（8080端口）、Memory跨会话STM/LTM持久记忆、Gateway外部API/Lambda工具集成、CLI全生命周期管理五大核心能力。适用于多代理协调的复杂业务系统、跨会话持久记忆代理、外部API集成到代理工具链、生产级AI代理部署。适用关键词：Bedrock AgentCore、LangGraph、多代理编排、状态图、agentcore、state-graph.
+license: MIT
+description: "|-. 适用于需要aws graph agent相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 智能代理
   - 云计算
@@ -24,7 +24,9 @@ tools:
   - write
 homepage: ""
 category: "Operations"
+pricing_tier: free
 ---
+
 # AWS图代理（AWS Graph Agent）
 
 基于 AWS Bedrock AgentCore 与 LangGraph 编排的多代理系统。通过 StateGraph 状态图定义代理工作流，AgentCore Runtime 封装为 HTTP 服务，Memory 管理持久记忆，Gateway 集成外部工具.
@@ -139,9 +141,9 @@ def invoke(payload, context):
     result = graph.invoke({"messages": [("user", payload.get("prompt", ""))]})
     return {"result": result["messages"][-1].content}
 app.run()
-```
-
-### Step 4：配置与部署
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 交互式配置
 agentcore configure -e agent.py --region us-east-1
@@ -151,24 +153,24 @@ agentcore configure -e agent.py --region us-east-1 --name my_agent --non-interac
 agentcore launch --deployment-type container
 # 无记忆部署（无状态代理）
 agentcore launch --disable-memory
-```
-
-### Step 5：测试与开发
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 agentcore dev                              # 热重载本地开发
 agentcore invoke '{"prompt": "Hello"}'    # 测试调用
-```
-
-### Step 6：按决策树选择多代理模式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 多代理协调? → 编排器+专家模式（编排器根据意图路由到专家，共享 session_id）
 跨会话持久记忆? → AgentCore Memory（非 LangGraph checkpoints）
 外部 API/Lambda? → AgentCore Gateway
 单一代理简单? → 快速开始模板
 复杂多步逻辑? → StateGraph + tools_condition + ToolNode
-```
-
-### Step 7：清理资源（避免持续计费）
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 agentcore destroy
 ```

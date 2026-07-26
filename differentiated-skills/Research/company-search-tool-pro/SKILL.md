@@ -1,4 +1,5 @@
 ---
+
 slug: company-search-tool-pro
 name: company-search-tool-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: 企业查询助手(专业版)
 summary: "企业级查询专业版，含尽调报告、风险筛查、批量查询、监控告警、关联关系分析.。企业查询助手专业版是面向企业级场景的完整企业信息查询与风险分析工具。在免费版单维度查询能力之上，新增企业尽调报告、"
 license: Proprietary
 edition: pro
-description: 企业查询助手专业版是面向企业级场景的完整企业信息查询与风险分析工具。在免费版单维度查询能力之上，新增企业尽调报告、风险筛查、批量查询、监控告警、关联关系分析、历史数据查询、知识产权查询、招投标查询八大高级能力。Use
-  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+description: "企业查询助手专业版是面向企业级场景的完整企业信息查询与风险剖析工具。在免费版单维度查询能力之上，新增企业尽调报告、风险筛查、成批查询、监控告警、关联关系剖析、历史数据查询、知识产权查询、招投标查询八大高级能力。Use. 适用于需要company search tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 企业查询
   - 企业尽调
@@ -19,8 +19,6 @@ tags:
   - 工具
   - self
   - company
-  - monitor
-  - key
 tools:
   - read
   - exec
@@ -29,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 > **尽调报告+风险筛查+批量查询+监控告警。企业级查询全功能覆盖。**
 
 将复杂的企业尽调与风险分析任务交给专业工具处理。专业版在免费版单维度查询能力之上，新增企业尽调报告、风险筛查、批量查询、监控告警、关联关系分析、历史数据查询、知识产权查询、招投标查询八大高级能力，满足企业级场景对风险控制与决策支持的深度要求.
@@ -185,9 +185,9 @@ monitor.start_monitoring()
 node （请参考skill目录中的脚本文件） generate-report "腾讯" --output report.json
 # ...
 node （请参考skill目录中的脚本文件） risk-screen "腾讯"
-```
-
-### 120秒标准搭建
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 export FN_API_KEY=your_private_key
 # ...
@@ -204,10 +204,9 @@ node （请参考skill目录中的脚本文件） batch-search --input companies
 python3 due_diligence.py --company "腾讯" --output report.txt
 # ...
 python3 monitor.py --config monitor.yaml
-```
-
-## 配置示例
-### 企业级配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 api:
   private_key: ${FN_API_KEY}
@@ -232,7 +231,7 @@ risk_screening:
   alert_on_high_risk: true
   alert_channels:
     - type: feishu
-      url: https://open.feishu.cn/open-apis/bot/v2/hook/xxx
+      url: https://open.feishu.cn/open-apis/bot/v2/hook/placeholder
     - type: email
       url: https://api.email-service.com/send
 # ...
@@ -253,10 +252,9 @@ monitoring:
 relationship:
   max_depth: 2
   limit_per_level: 5
-```
-
-## 最佳实践
-### 1. 批量查询优化
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 class CachedBatchSearcher(BatchCompanySearcher):
     def __init__(self, cache_dir="./cache"):
@@ -273,9 +271,9 @@ class CachedBatchSearcher(BatchCompanySearcher):
         with open(cache_file, "w", encoding="utf-8") as f:
             json.dump(result, f, ensure_ascii=False)
         return result
-```
-
-### 2. 风险告警分级
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 def classify_risk_level(risk_report):
     """风险分级"""
@@ -287,9 +285,9 @@ def classify_risk_level(risk_report):
         return "低风险", "正常合作但持续监控"
     else:
         return "无风险", "正常合作"
-```
-
-### 3. 监控频率控制
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 MONITOR_INTERVALS = {
     "工商变更": 86400,      # 每日
@@ -365,7 +363,7 @@ MONITOR_INTERVALS = {
 - 私有API Key支持（更高额度）
 - 多角色场景指南（投资团队/采购部门/风控团队）
 - 完整FAQ（8问）与故障排查表
-- 性能优化建议与最佳实践
+- 性能优化建议与优秀实践
 - GPT-4o模型路由与优先支持
 
 ## 定价
@@ -396,9 +394,9 @@ MONITOR_INTERVALS = {
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

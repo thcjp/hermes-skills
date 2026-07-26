@@ -1,13 +1,13 @@
 ---
+
 slug: desktop-automation-hub-free
 name: desktop-automation-hub-free
 version: 1.0.1
 displayName: 桌面自动化中枢(免费版)
 summary: "鼠标键盘精准控制与屏幕截图核心能力，60秒上手桌面自动化，覆盖表单填写与窗口操作基础场景.。桌面自动化中枢（免费版）为AI Agent提供桌面级精准操控能力，覆盖鼠标定位、键盘输入、屏幕截图"
-license: Proprietary
+license: MIT
 edition: free
-description: 桌面自动化中枢（免费版）为AI Agent提供桌面级精准操控能力，覆盖鼠标定位、键盘输入、屏幕截图、窗口激活与剪贴板操作五大核心模块。采用failsafe紧急停止机制，确保自动化任务可控可中断。Use
-  when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
+description: "桌面自发化中枢（免费版）为AI Agent包含桌面级精准操控能力，覆盖鼠标定位、键盘输入、屏幕截图、窗口激活与剪贴板操作五大核心模块。采用failsafe紧急停止机制，确保自发化任务可控可中断。Use. 适用于需要desktop automation hub相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 桌面自动化
   - 鼠标键盘控制
@@ -19,15 +19,15 @@ tags:
   - hotkey
   - ctrl
   - screenshot
-  - 桌面自动
-  - 鼠标控制
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 桌面自动化中枢（免费版）
 
 > **让AI Agent精准操控你的桌面。鼠标、键盘、截图、窗口、剪贴板，五大核心能力开箱即用。**
@@ -77,7 +77,7 @@ category: "Automation"
 
 ### 60秒上手
 
-安装依赖并执行第一个自动化操作：
+安装依赖并执行领先个自动化操作：
 
 ```bash
 # 依赖说明
@@ -90,7 +90,7 @@ from desktop_automation_hub import DesktopController
 # 初始化控制器（开启failsafe紧急停止）
 dc = DesktopController(failsafe=True)
 # ...
-# 第一个自动化操作：移动鼠标并截图
+# 领先个自动化操作：移动鼠标并截图
 dc.move_mouse(500, 300)           # 移动到坐标(500, 300)
 dc.click()                        # 左键单击
 dc.hotkey('ctrl', 'c')            # 复制
@@ -437,9 +437,11 @@ dc.press('down')          # 移动到下一行
 ```
 ### 60秒上手(补充)
 # ...
-安装依赖并执行第一个自动化操作：
+安装依赖并执行领先个自动化操作：
 # ...
 ```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 # ...
 ## 错误处理

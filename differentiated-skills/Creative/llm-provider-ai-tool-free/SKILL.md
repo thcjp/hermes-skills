@@ -1,29 +1,13 @@
 ---
+
 slug: "llm-provider-ai-tool-free"
 name: "llm-provider-ai-tool-free"
 version: "1.0.0"
 displayName: "OpenAI助手免费版"
 summary: "轻量级OpenAI API调用工具,支持对话补全、文件管理与图像生成,适合个人开发者快速集成。。面向个人开发者的OpenAI API轻量调用工具。核心能力: - 对话补全(chat comp"
-license: "Proprietary"
+license: MIT
 edition: "free"
-description: |-
-  面向个人开发者的OpenAI API轻量调用工具。核心能力:
-  - 对话补全(chat completions)与文本生成
-  - 文件上传与基础向量存储管理
-  - DALL-E 图像生成与编辑
-  - 助手(Assistants)基础创建与对话
-  - 文本嵌入(embeddings)生成
-
-  适用场景:
-  - 个人项目快速接入OpenAI能力
-  - 内容创作与文案生成
-  - 简单的知识库问答搭建
-  - 图像素材快速生成
-
-  差异化:
-  - 免费版聚焦高频核心能力,降低使用门槛
-  - 移除复杂的企业级功能,保持轻量易用
-  -...
+description: "|-. 适用于需要llmvider ai tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 创意设计
   - AI助手
@@ -35,14 +19,6 @@ tags:
   - 自动化
   - 开发
   - 代码
-  - 写作
-  - 电商
-  - 创意
-  - llm-provider
-  - api
-  - openai_api_key
-  - client
-  - import
 tools:
   - read
   - exec
@@ -50,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # llm-provider 助手工具 - 免费版
 
 ## 概述
@@ -190,7 +168,7 @@ curl https://api.llm-provider.com/v1/models \
   -H "Authorization: Bearer $OPENAI_API_KEY" | jq '.data[0:3]'
 ```
 
-### 3. 发起第一次对话
+### 3. 发起领先次对话
 
 ```bash
 llm-provider.com/v1/chat/completions" \
@@ -237,7 +215,7 @@ const client = new llm-provider({
 });
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **模型选择策略**
    - 日常对话与轻量任务:优先 `gpt-4o-mini`,成本低、速度快
@@ -318,7 +296,7 @@ def safe_chat(prompt, retries=3):
 - 免费版无需额外集成插件或托管服务
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。免费版聚焦核心 API 调用,适合个人开发者快速集成.
 ## 错误处理
 

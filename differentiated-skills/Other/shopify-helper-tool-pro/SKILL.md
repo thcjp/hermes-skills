@@ -7,33 +7,7 @@ displayName: Shopify助手-专业版
 summary: "企业级Shopify开发平台,支持多店铺管理、自定义App开发、Headless电商与高级SEO。企业级 Shopify 开发工具专业版,面向电商团队与代运营机构。核心能力:"
 license: Proprietary
 edition: pro
-description: 企业级 Shopify 开发工具专业版,面向电商团队与代运营机构。核心能力:。可自动提升工作效率
-
-  - 多店铺统一管理与部署
-
-  - Shopify App 自定义开发
-
-  - Headless 电商(Storefront API)
-
-  - 企业级 SEO 与结构化数据
-
-  - 性能优化与 Core Web Vitals
-
-  - A/B 测试与转化率优化
-
-  - 团队协作与代码审查
-
-  - CI/CD 与自动化部署
-
-  适用场景:
-
-  - 多品牌电商矩阵管理
-
-  - 企业级 Shopify Plus 运营
-
-  - Headless 电商开发
-
-  - 代运营团队多客...'
+description: "企业级 Shopify 开发工具专业版,面向电商团队与代运营机构。核心能力:。可自发提升工作效率. 适用于需要shopify helper tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Shopify
   - 企业级
@@ -45,10 +19,6 @@ tags:
   - 写作
   - 电商
   - shopify
-  - app
-  - 用户提供
-  - 完成核心
-  - 逻辑
 tools:
   - read
   - exec
@@ -56,7 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
+pricing_tier: L2-标准级
 ---
 
 # Shopify 助手 - 专业版
@@ -411,7 +381,7 @@ npm install -g @shopify-pro/cli
 | 团队协作 | 单人 | 代码审查 + 版本管理 |
 | 技术支持 | 社区 | 优先工单 + SLA |
 
-## 最佳实践
+## 优秀实践
 
 1. **Headless 按需使用**:Headless 提供最大灵活性但复杂度高,标准需求用 Liquid 主题即可
 2. **多店铺配置隔离**:每个店铺独立配置文件,API Token 通过环境变量管理
@@ -468,7 +438,7 @@ A: 1) 使用 Lighthouse CI 在每次部署时检测;2) 接入真实用户监控(
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **分类**: MD+EXEC模式Markdown指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 执行企业级 Shopify 开发与管理
 - **兼容性**: 完全兼容免费版主题代码
 - **支持**: 优先工单支持,SLA 保障响应时间

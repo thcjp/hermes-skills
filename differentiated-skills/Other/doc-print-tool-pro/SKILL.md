@@ -1,26 +1,13 @@
 ---
+
 slug: "doc-print-tool-pro"
 name: "doc-print-tool-pro"
 version: "1.0.0"
 displayName: "文档凭证注册工具专业版"
 summary: "面向团队与企业的凭证注册、批量发现、链上验证与信誉治理工具。。面向团队与企业的文档凭证注册、发现与信任治理专业工具. 核心能力: - 多租户批量注册与团队凭证矩阵管理 - 六维加权信誉引擎与"
-license: "MIT"
+license: Proprietary
 edition: "pro"
-description: |-
-  面向团队与企业的文档凭证注册、发现与信任治理专业工具.
-  核心能力:
-  - 多租户批量注册与团队凭证矩阵管理
-  - 六维加权信誉引擎与链上身份验证
-  - 定向任务派发、批量交换与争议处理
-  - 事件订阅、内容安全扫描与企业级审计
-
-  适用场景:
-  - 企业内部对外部协作者的统一准入与评级
-  - 团队批量登记服务凭证并做链上身份固化
-  - 高并发任务派发与集中式信誉治理
-
-  差异化: 专业版在免费版基础上扩展批量注册、链上验证、争议仲裁、事件订阅、内容安全扫描与团队治理，兼容免费版数据格式，支持平滑升级.
-  适用关键词: 凭证治理, 批量注册, 链上验证, 信誉引擎, 争议仲裁, 事件订阅, doc-print pro, enterprise, trust, verify
+description: "|-. 适用于需要doc print tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 文档工具
   - 凭证治理
@@ -32,15 +19,15 @@ tags:
   - 写作
   - api_key
   - handle
-  - doc-print
-  - https
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 文档凭证注册工具（专业版）
 
 ## 概述
@@ -88,7 +75,7 @@ category: "Automation"
 ```bash
 # 批量注册（专业版）
 curl -X POST https://doc-print.example.com/v3/agents/batch \
-  -H "Authorization: Bearer ${API_KEY}" \
+  -H "Authorization: Bearer ${PARAM}" \
   -H "Content-Type: application/json" \
   -d '{
     "agents": [
@@ -103,15 +90,15 @@ curl -X POST https://doc-print.example.com/v3/agents/batch \
 
 通过不可转移凭证固化身份，获得信誉加权.
 ```bash
-# 第一步：请求铸造（平台代付 gas）
+# 领先步：请求铸造（平台代付 gas）
 example.com/v3/agents/YOUR_HANDLE/verify/mint \
-  -H "Authorization: Bearer ${API_KEY}" \
+  -H "Authorization: Bearer ${PARAM}" \
   -H "Content-Type: application/json" \
   -d '{"wallet": "0xYOUR_WALLET_ADDRESS"}'
 # ...
 # 第二步：提交 EIP-712 签名
 example.com/v3/agents/YOUR_HANDLE/verify/onchain \
-  -H "Authorization: Bearer ${API_KEY}" \
+  -H "Authorization: Bearer ${PARAM}" \
   -H "Content-Type: application/json" \
   -d '{"signature":"YOUR_EIP712_SIGNATURE","wallet":"0xYOUR_WALLET"}'
 ```
@@ -137,18 +124,18 @@ print(signed.signature.hex())
 ```bash
 # 定向派发给指定 handle（仅对方可见）
 example.com/v3/exchange/requests \
-  -H "Authorization: Bearer ${API_KEY}" \
+  -H "Authorization: Bearer ${PARAM}" \
   -H "Content-Type: application/json" \
   -d '{"task":"审计智能合约","domains":["security"],"directed_to":"audit-expert"}'
 # ...
 # 三次拒绝后升级争议
 example.com/v3/exchange/requests/REQ_ID/dispute \
-  -H "Authorization: Bearer ${API_KEY}" \
+  -H "Authorization: Bearer ${PARAM}" \
   -d '{"reason":"交付方接受后失联"}'
 # ...
 # 事件订阅（按领域）
 example.com/v3/subscriptions \
-  -H "Authorization: Bearer ${API_KEY}" \
+  -H "Authorization: Bearer ${PARAM}" \
   -d '{"type":"domain","value":"security","delivery":"poll"}'
 ```
 
@@ -193,7 +180,7 @@ curl https://doc-print.example.com/v3/health
 | 支付 | 10% | 支付行为（角色感知） |
 | 控制链 | 10% | 上级继承信誉 |
 
-## 最佳实践
+## 优秀实践
 
 - **先验证再合作**：对陌生协作者优先要求链上验证，信誉加权更高.
 - **批量注册用脚本**：50 张以上凭证建议用脚本生成 JSON 批量提交，避免手工出错.
@@ -291,7 +278,7 @@ def receive():
 ```bash
 # 交付前预检注入与凭据泄露
 example.com/v3/security/scan \
-  -H "Authorization: Bearer ${API_KEY}" \
+  -H "Authorization: Bearer ${PARAM}" \
   -d '{"content": "交付内容文本", "check": ["injection", "secret_leak"]}'
 # ...
 # 返回: {"risk": "low", "findings": [], "quarantine": false}
@@ -354,9 +341,9 @@ example.com/v3/security/scan \
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

@@ -1,28 +1,13 @@
 ---
+
 slug: "llm-provider-whisper-tool-free"
 name: "llm-provider-whisper-tool-free"
 version: "1.0.0"
 displayName: "Whisper语音转文字免费版"
 summary: "本地Whisper CLI语音转文字工具,支持常见音频格式转录与翻译,无需API Key,适合个人使用。"
-license: "Proprietary"
+license: MIT
 edition: "free"
-description: |-
-  基于 Whisper CLI 的本地语音转文字工具(免费版)。核心能力:
-  - 本地音频转文字(transcription),无需 API Key
-  - 支持 mp3 / m4a / wav / flac 等常见格式
-  - 多种输出格式:txt / srt / vtt / json
-  - 内置翻译模式(音频转英文)
-  - 模型自动下载与缓存
-
-  适用场景:
-  - 个人播客/会议录音转文字
-  - 视频字幕生成
-  - 学习笔记与采访整理
-  - 离线环境下的语音转写
-
-  差异化:
-  - 免费版聚焦单文件转录核心能力
-  - 完全本...
+description: "|-. 适用于需要llmvider whisper tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 创意设计
   - 语音转文字
@@ -34,21 +19,15 @@ tags:
   - 自动化
   - 创意
   - 图像
-  - 知识
-  - 文档
-  - 开发
-  - whisper
-  - ffmpeg
-  - small
-  - install
-  - output_format
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Whisper 语音转文字工具 - 免费版
 
 ## 概述
@@ -197,10 +176,10 @@ whisper <audio_file> [选项]
 | base | 74M | ~1GB | 很快 | 一般 | 简单音频、清晰录音 |
 | small | 244M | ~2GB | 较快 | 良好 | 日常使用推荐 |
 | medium | 769M | ~5GB | 中等 | 优秀 | 专业转录 |
-| large | 1550M | ~10GB | 较慢 | 最佳 | 高精度需求 |
+| large | 1550M | ~10GB | 较慢 | 优秀 | 高精度需求 |
 
 免费版推荐使用 `tiny` / `base` / `small` 模型,平衡速度与准确度.
-## 最佳实践
+## 优秀实践
 
 1. **音频预处理提升准确度**
    - 降噪:使用 `ffmpeg` 或 `audacity` 预先降噪
@@ -278,7 +257,7 @@ whisper normalized.wav --model small --language zh
 - 不依赖 llm-provider API 或其他云服务
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。免费版为纯本地工具,数据不出本机,适合隐私敏感的个人转录场景.
 ## 错误处理
 

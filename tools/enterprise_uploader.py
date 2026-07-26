@@ -30,12 +30,14 @@ from config import (
 )
 from skill_core.parser import parse_frontmatter as _parse_fm
 
-# 营销关卡 (P1-2: 集成到上传前检查)
+# 质量门控 (P1-2: 营销关卡 + v2.3: 安全预检 + 防幻觉)
 try:
-    from quality_gate import run_marketing_gate
-    _MARKETING_GATE_AVAILABLE = True
+    from quality_gate import (
+        run_marketing_gate, run_security_precheck, run_anti_hallucination
+    )
+    _QUALITY_GATE_AVAILABLE = True
 except ImportError:
-    _MARKETING_GATE_AVAILABLE = False
+    _QUALITY_GATE_AVAILABLE = False
 
 # ============ 企业版配置 ============
 ORG_ID = 862
@@ -450,8 +452,9 @@ def upload_skill(slug: str, dry_run: bool = False, skip_gate: bool = False,
     if not skill_md:
         return {'success': False, 'slug': slug, 'message': 'SKILL.md文件未找到'}
     
-    # 2.5 营销关卡检查 (P1-2新增: 上传前确保营销数据质量)
-    if not skip_marketing and _MARKETING_GATE_AVAILABLE:
+    # 2.5 质量门控检查 (v2.3: 营销关卡 + 安全预检 + 防幻觉, 复用quality_gate统一函数)
+    if not skip_marketing and _QUALITY_GATE_AVAILABLE:
+        # 营销关卡
         mg = run_marketing_gate(skill_md)
         if not mg.get('overall_passed', True):
             failed = [c.get('name', c.get('check', '?')) for c in mg.get('checks', []) if not c.get('passed')]
@@ -464,6 +467,23 @@ def upload_skill(slug: str, dry_run: bool = False, skip_gate: bool = False,
                 msg += "\n修复建议:\n" + "\n".join(suggestions[:3])
             return {'success': False, 'slug': slug, 'message': msg,
                     'marketing_gate': mg}
+        
+        # 安全预检 (critical阻断, high/medium警告)
+        sec = run_security_precheck(skill_md)
+        critical_fails = [c for c in sec.get('checks', []) if not c.get('passed') and c.get('severity') == 'critical']
+        if critical_fails:
+            failed_names = [c['name'] for c in critical_fails]
+            return {'success': False, 'slug': slug,
+                    'message': f"安全预检未通过(严重风险): {', '.join(failed_names)}",
+                    'security_precheck': sec}
+        
+        # 防幻觉检查
+        ah = run_anti_hallucination(skill_md)
+        if not ah.get('overall_passed', True):
+            failed = [c.get('name', c.get('check', '?')) for c in ah.get('checks', []) if not c.get('passed')]
+            return {'success': False, 'slug': slug,
+                    'message': f"防幻觉检查未通过 ({len(failed)}项): {', '.join(failed[:3])}",
+                    'anti_hallucination': ah}
     
     # 3. 解析frontmatter
     content = skill_md.read_text(encoding='utf-8')
@@ -877,6 +897,7 @@ def cmd_status():
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("Usage: python enterprise_uploader.py [list|upload <slug>|upload-all|status] [--skip-marketing]")
+        print("  质量门控: 营销关卡 + 安全预检(critical阻断) + 防幻觉")
         sys.exit(1)
     
     cmd = sys.argv[1]

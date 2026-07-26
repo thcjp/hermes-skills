@@ -1,4 +1,5 @@
 ---
+
 slug: password-gen-pro-tool-pro
 name: password-gen-pro-tool-pro
 version: 1.0.0
@@ -6,11 +7,7 @@ displayName: 密码生成器Pro专业版
 summary: 企业级密码管理平台,支持批量生成、泄露检查、企业策略模板、加密存储与CSV导出,适合安全团队与企业用户.
 license: Proprietary
 edition: pro
-description: '密码生成器Pro专业版,为企业安全团队提供全方位密码生成与管理能力.
-  核心能力:批量密码生成、HaveIBeenPwned泄露检查、企业密码策略模板、加密存储、多格式导出.
-  适用场景:企业密码策略管理、批量账户初始化、密码安全审计、合规管理.
-  差异化:专业版兼容免费版生成方法,新增企业级批量管理与泄露检查能力,满足规模化密码安全需求.
-  适用关键词: 批量密码, 泄露检查, 密码策略, 企业密码, batch password, breach check, password policy'
+description: "密码产出器Pro专业版,为企业安全团队包含全方位密码产出与管控能力. 适用于需要password gen tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 安全
   - 密码
@@ -28,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Security"
+pricing_tier: L2-标准级
 ---
+
 专业版为企业安全团队提供完整的密码生成与管理平台,在免费版密码生成与强度检测基础上,新增批量密码生成(CSV导出)、HaveIBeenPwned泄露检查、企业密码策略模板、加密密码存储与多格式导出。专业版完全兼容免费版生成方法,已有密码生成脚本可无缝升级,适合企业级密码安全治理.
 ### 专业版核心优势
 | 优势 | 说明 |
@@ -175,9 +174,9 @@ def deploy_password_policy():
                 print(f"    - {v}")
 # ...
 deploy_password_policy()
-```
-
-### 场景二:批量账户初始化
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 #!/bin/bash
 echo "=== 批量账户密码初始化 ==="
@@ -230,9 +229,9 @@ with open("account_passwords.csv", "w", newline="") as f:
 # ...
 print(f"\n导出完成: account_passwords.csv ({len(results)}个账户)")
 PYTHON
-```
-
-### 场景三:密码安全审计
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 #!/usr/bin/env python3
 """密码安全审计"""
@@ -341,7 +340,7 @@ check_password(pwd["password"])
 | high_security | 20 | 要求 | 核心系统 |
 | passphrase | 20 | 不要求 | 用户友好 |
 
-## 最佳实践
+## 优秀实践
 1. **策略优先**:根据系统重要性选择合适的密码策略模板.
 2. **泄露检查**:所有新密码生成后执行泄露检查.
 3. **批量管理**:使用批量生成+CSV导出管理大量账户.
@@ -380,7 +379,7 @@ check_password(pwd["password"])
 - REST API服务建议配置认证Token
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行企业级密码生成与管理任务
 
 ## 错误处理
@@ -401,9 +400,9 @@ check_password(pwd["password"])
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

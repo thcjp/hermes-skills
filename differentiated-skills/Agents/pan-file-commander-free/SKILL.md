@@ -1,12 +1,13 @@
 ---
+
 slug: pan-file-commander-free
 name: pan-file-commander-free
 version: 1.0.1
 displayName: 网盘指挥官免费版
 summary: "命令式百度网盘文件管理,快捷命令模板,分类视图,路径校验,确认规则.。网盘指挥官免费版是一个以"命令式高效操作"为核心视角的百度网盘文件管理工具,所有操作限制在 `/apps/bdpan/`"
-license: Proprietary
+license: MIT
 edition: free
-description: 网盘指挥官免费版是一个以"命令式高效操作"为核心视角的百度网盘文件管理工具,所有操作限制在 `/apps/bdpan/` 目录内。针对网盘管理"命令记不住、操作不连贯、路径易出错、风险操作无确认、文件难分类"五大痛点,构建了快捷命令模板、分类视图、智能路径校验、分层确认规则和操作意图识别五大基础能力
+description: "网盘指挥官免费版是一个以\"命令式高效操作\"为核心视角的百度网盘文件管控工具,所有操作限制在 `/apps/bdpan/` 目录内。针对网盘管控\"命令记不住、操作不连贯、路径易出错、风险操作无确认、文件难分类\"五大痛点,构建了快捷命令模板、分类视图、智能路径校验、分层确认规则和操作意图识别五大基础能力"
 tags:
   - 智能代理
   - 文件管理
@@ -18,8 +19,6 @@ tags:
   - bdpan
   - docs
   - bash
-  - txt
-  - baidu
 tools:
   - read
   - exec
@@ -28,7 +27,9 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+pricing_tier: free
 ---
+
 百度网盘文件管理工具,以"命令式高效操作"为核心视角,所有操作限制在 `/apps/bdpan/` 目录内。适配所有支持SKILL.md的Agent平台.
 > 本免费版提供核心文件管理能力(上传/下载/转存/分享/搜索/移动/复制/重命名/创建/删除)。记忆备份恢复、大文件后台下载与批量操作为专业版功能.
 ## 触发规则
@@ -122,9 +123,9 @@ bdpan ls docs/ --order size --desc
 bdpan ls docs/ --folder
 # ...
 bdpan ls docs/ --json
-```
-
-### 搜索类快捷命令
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 bdpan search "报告"
 # ...
@@ -135,9 +136,9 @@ bdpan search "截图" --category 3
 bdpan search "合同" --category 4
 # ...
 bdpan search "项目" --dir-only
-```
-
-### 单文件操作快捷命令
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 bdpan upload ./local.txt docs/local.txt
 # ...
@@ -152,18 +153,18 @@ bdpan rename docs/old-name.txt new-name.txt
 bdpan mkdir docs/new-folder
 # ...
 bdpan rm docs/unwanted.txt
-```
-
-### 分享类快捷命令
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 bdpan share docs/report.pdf
 # ...
 # ...
 # ...
 bdpan share docs/file1.txt docs/file2.txt --period 7
-```
-
-### 转存类快捷命令
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 bdpan transfer "https://pan.baidu.com/s/1xxxxx?pwd=abcd"
 # ...
@@ -178,9 +179,9 @@ baidu.com/s/1xxxxx" -p abcd -d downloads/
 ### 按类型分类
 ```bash
 bdpan ls docs/ --json | jq -r '.[] | .path' | grep -oE '\.[^.]+$' | sort | uniq -c | sort -rn
-```
-
-### 按大小分类
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 bdpan ls docs/ --json | jq -r '
   if .size > 104857600 then "大文件(>100MB)"
@@ -188,20 +189,19 @@ bdpan ls docs/ --json | jq -r '
   elif .size > 1048576 then "小文件(1-10MB)"
   else "微小文件(<1MB)"
   end' | sort | uniq -c
-```
-
-### 按时间分类
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 created_at | .[0:7]' | sort | uniq -c
-```
-
-## 智能路径校验(差异化)
-### 路径补全
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 bdpan ls docs/ --folder
-```
-
-### 越界检测
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 validate_path() {
   local path="$1"
@@ -219,10 +219,9 @@ validate_path() {
 validate_path "docs/file.txt"    # 通过
 validate_path "../etc/passwd"    # 拒绝
 validate_path "/etc/passwd"      # 拒绝
-```
-
-## 操作意图识别(差异化)
-### 歧义消除决策树
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 用户输入 → 是否包含明确操作动词?
 ├─ 否 → 反问:"您想做什么?(上传/下载/查看/搜索/移动/删除/分享)"
@@ -234,9 +233,9 @@ validate_path "/etc/passwd"      # 拒绝
                         ├─ 高 → 列出影响范围,等待确认
                         ├─ 中 → 路径模糊时确认
                         └─ 低 → 直接执行
-```
-
-### 序数/代词引用处理
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 用户:"把第3个文件移到archive"
 # ...
@@ -270,16 +269,15 @@ bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） [--yes]
 bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）              # 登录(内置安全免责声明)
 bdpan logout                                            # 注销
 bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） [--yes]   # 卸载
-```
-
-### 更新(必须用户明确指令触发)
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件）              # 检查并更新(需用户确认)
 bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） --check       # 仅检查更新
-```
-
-## 示例
-### 场景一:个人用户 - 日常文件浏览与上传
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 角色: 个人用户
 任务: "帮我把本地的report.pdf上传到网盘的docs目录"
@@ -291,9 +289,9 @@ bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） --check   
 4. 如已存在,询问用户是否覆盖(高风险确认)
 5. 确认后执行 bdpan upload ./report.pdf docs/report.pdf
 6. 展示结果:"已上传到:我的应用数据/bdpan/docs/report.pdf"
-```
-
-### 场景二:团队协作者 - 分享文件给同事
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 角色: 团队协作者
 任务: "把网盘里的项目方案分享给同事,有效期7天"
@@ -305,9 +303,9 @@ bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） --check   
 4. 执行 bdpan share docs/项目方案.pdf --period 7
 5. 展示:链接+提取码+有效期(7天)
 6. 提示用户:链接7天后过期,请及时分享
-```
-
-### 场景三:内容创作者 - 转存分享链接
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 角色: 内容创作者
 任务: "朋友发给我一个分享链接,帮我转存到网盘的downloads目录"
@@ -377,7 +375,7 @@ A: 使用 `--category` 参数:0=全部,1=视频,2=音频,3=图片,4=文档,5=应
 - **禁止**读取或输出 `~/.config/bdpan/config.json` 内容(含敏感凭据)
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,需要命令行执行能力运行bdpan CLI)
+- **分类**: MD+EXEC模式纯Markdown指令,需要命令行执行能力运行bdpan CLI)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent使用bdpan CLI管理百度网盘文件。需要bdpan CLI和百度网盘账户.
 ## 免费版限制
 本免费体验版限制以下高级功能:

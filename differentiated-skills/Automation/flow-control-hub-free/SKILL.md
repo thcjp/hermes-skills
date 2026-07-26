@@ -1,13 +1,13 @@
 ---
+
 slug: flow-control-hub-free
 name: flow-control-hub-free
 version: 1.0.1
 displayName: 桌面流程控制中枢(免费版)
 summary: "桌面自动化流程控制中枢免费版，提供鼠标、键盘、屏幕截图等核心自动化能力，快速上手RPA任务.。桌面流程控制中枢免费版是一套面向AI Agent的桌面自动化执行框架，将鼠标操作、键盘输入、屏幕"
-license: Proprietary
+license: MIT
 edition: free
-description: 桌面流程控制中枢免费版是一套面向AI Agent的桌面自动化执行框架，将鼠标操作、键盘输入、屏幕截图等底层控制能力封装为统一的流程控制接口。通过本技能，Agent可以像人类一样操作桌面应用程序，实现表单填写、窗口切换、截图归档等常见RPA场景。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "桌面流程控制中枢免费版是一套面向AI Agent的桌面自发化执行框架，将鼠标操作、键盘输入、屏幕截图等底层控制能力封装为统一的流程控制接口。通过该技能，Agent可以像人类一样操作桌面应用程序，达成表单填写、窗口切换、截图归档等常见RPA场景。Use. 适用于需要flow control hub相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 桌面自动化
   - 流程控制
@@ -19,15 +19,15 @@ tags:
   - pyautogui
   - desc
   - self
-  - import
-  - click
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 > **让AI Agent像人类一样操作桌面。鼠标、键盘、截图，三合一流程控制。**
 
 将重复性桌面操作交给Agent执行。本技能提供统一的桌面控制接口，覆盖鼠标定位、键盘输入、屏幕截图三大核心能力，配合失败安全机制确保自动化过程可控可中止.
@@ -71,7 +71,7 @@ category: "Automation"
 5. 查看## FAQ解答常见疑问
 
 ### 30秒上手（最小可用）
-安装依赖并执行第一次鼠标移动：
+安装依赖并执行领先次鼠标移动：
 
 ```bash
 pip install pyautogui pillow
@@ -500,9 +500,9 @@ for i in range(10):
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

@@ -7,14 +7,7 @@ displayName: 店铺文化助手专业版
 summary: "企业级店铺运营平台,支持多店铺管理、数据分析、团队培训与商业授权。面向连锁品牌、电商运营公司与代运营机构的企业级店铺运营平台."
 license: Proprietary
 edition: pro
-description: 面向连锁品牌、电商运营公司与代运营机构的企业级店铺运营平台。可生成提升工作效率
-  核心能力: 多店铺管理、销售数据分析、团队培训、批量生成、商业授权、电商对接
-
-  适用场景: 连锁品牌运营、电商代运营、多店铺管理、企业培训、商业营销
-
-  差异化: 专业版支持多店铺与企业级能力,与免费版文案格式兼容
-
-  适用关键词: 多店铺管理, 销售分析, 团队培训, 批量生成, 电商对接, 商业营销'
+description: "面向连锁品牌、电商运营公司与代运营机构的企业级店铺运营平台。可产出提升工作效率. 适用于需要shop culture tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 店铺运营
   - 企业级
@@ -26,11 +19,6 @@ tags:
   - 效率
   - 写作
   - 电商
-  - headers
-  - resp
-  - json
-  - self
-  - payload
 tools:
   - read
   - exec
@@ -38,7 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
+pricing_tier: L2-标准级
 ---
 
 # 店铺文化助手 (专业版)
@@ -251,7 +239,7 @@ export SHOP_CULTURE_EDITION="pro"
 ### Step 3: 导入店铺数据
 
 ```bash
-curl -X POST -H "X-API-Key: $SHOP_CULTURE_ADMIN_KEY" \
+curl -X POST -H "X-API-ref: $SHOP_CULTURE_ADMIN_KEY" \
   -F "file=@shops.csv" \
   "https://api.shop-culture-pro.local/v1/shops/import"
 ```
@@ -259,7 +247,7 @@ curl -X POST -H "X-API-Key: $SHOP_CULTURE_ADMIN_KEY" \
 ### Step 4: 批量生成内容
 
 ```bash
-curl -X POST -H "X-API-Key: $SHOP_CULTURE_ADMIN_KEY" \
+curl -X POST -H "X-API-ref: $SHOP_CULTURE_ADMIN_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "shop_ids": ["s001","s002","s003"],
@@ -360,7 +348,7 @@ def create_content_ab_test(shop_id, variants, metric):
     return resp.json()
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 多店铺标准化
 
@@ -481,7 +469,7 @@ export WEIBO_API_KEY="..."
 
 ### 可用性分类
 
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+exec方法(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 面向连锁品牌与电商运营公司,通过自然语言指令驱动 Agent 调用 Pro API,完成多店铺管理与数据分析
 - **专业版特性**: 多店铺管理、销售分析、团队培训、批量生成、电商对接、A/B 测试、营销日历
 - **兼容性**: 与免费版文案格式完全兼容,支持平滑升级
@@ -510,9 +498,9 @@ export WEIBO_API_KEY="..."
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

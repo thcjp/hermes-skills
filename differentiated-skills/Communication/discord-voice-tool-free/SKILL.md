@@ -1,32 +1,13 @@
 ---
+
 slug: discord-voice-tool-free
 name: discord-voice-tool-free
 version: 1.0.0
 displayName: Discord语音工具免费版
 summary: "基础 Discord 语音频道 AI 对话工具,支持加入/离开与本地语音识别合成.。面向个人用户的 Discord 语音频道 AI 实时对话工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 面向个人用户的 Discord 语音频道 AI 实时对话工具。核心能力:，可自动提升工作效率
-
-  - 加入/离开 Discord 语音频道
-
-  - 语音活动检测(VAD)自动识别用户说话
-
-  - 本地 Whisper 离线语音转文字
-
-  - 文字转语音(TTS)将 AI 回复读出
-
-  - 基础打断(barge-in)与连接状态查询
-
-  适用场景:
-
-  - 个人语音频道与 AI 助手对话
-
-  - 小型语音社群的 AI 互动
-
-  - 本地化离线语音处理体验
-
-  差异化: 免费版聚焦本地离线方案,零 API 成本;Pro 版提供多服务商、流式 STT与企业级能力'
+description: "面向个人用户的 Discord 语音频道 AI 实时对话工具。核心能力:，可自发提升工作效率. 适用于需要discord voice tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Discord
   - 语音对话
@@ -38,14 +19,15 @@ tags:
   - discord
   - medium
   - tts
-  - allowedusers
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: free
 ---
+
 # Discord 语音工具(免费版)
 
 ## 概述
@@ -271,7 +253,7 @@ discord_voice join <channelId>
 | `medium` | 平衡(推荐) |
 | `high` | 需要更大声、更清晰的说话 |
 
-## 最佳实践
+## 优秀实践
 
 1. **本地模型预热**: 本地 Whisper 模型首次加载较慢(几秒到几十秒)。建议在正式使用前先执行一次测试转录预热模型,后续响应会更快.
 2. **VAD 灵敏度调优**: 默认 `medium` 适合多数场景。环境嘈杂时调高到 `high` 减少误触发;用户说话较轻时调低到 `low` 提高捕获率。配合 `silenceThresholdMs`(默认 1500ms)调整静音判定时长.
@@ -345,7 +327,7 @@ DEBUG=discord-voice agent gateway start
 - **云端 API(可选)**: 如需使用 OpenAI/Deepgram/ElevenLabs 云服务,需额外配置对应 API Key,但免费版不推荐(建议升级 Pro 版).
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令 + 部分功能需 `exec` 执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令 + 部分功能需 `exec` 执行能力)
 - **说明**: 以自然语言指令驱动 Agent 调用语音工具,本地模型处理音频
 - **适用规模**: 单服务器、个人/小团队,本地离线处理
 - **升级建议**: 如需多服务商、流式 STT、自动重连、企业级稳定性,请升级至 `discord-voice-tool-pro`

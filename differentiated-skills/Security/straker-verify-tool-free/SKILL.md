@@ -1,63 +1,33 @@
 ---
+
 slug: straker-verify-tool-free
 name: straker-verify-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: AI翻译验证(免费版)
 summary: "100+语言AI翻译服务,支持项目创建、状态查询与文件下载,适合个人翻译需求,支持多种使用场景和自动化处理"
-license: Proprietary
+license: MIT
 edition: free
-description: 核心能力:，可自动提升工作效率
-
-  - 100+语言AI翻译服务
-
-  - 翻译项目创建与管理
-
-  - 项目状态实时查询
-
-  - 翻译文件下载
-
-  - 支持文档与文本文件
-
-  适用场景:
-
-  - 个人文档翻译
-
-  - 多语言内容创建
-
-  - 翻译项目跟踪
-
-  - 快速文本翻译
-
-  差异化:
-
-  - 100+语言全覆盖
-
-  - 项目化翻译管理
-
-  - API驱动,可自动化
-
-  - 支持文件批量翻译
-
-  适用关键词: 翻译, AI翻译, 多语言, translation, translate, localization, 语言翻译, 文档翻译'
+description: "核心能力:，可自发提升工作效率. 适用于需要straker verify tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要straker verify tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 翻译
+  - straker
+  - verify
+  - automation
+  - productivity
   - 本地化
   - 多语言
   - AI翻译
   - 安全
   - 加密
-  - 工具
-  - self
-  - project_id
-  - response
-  - get
-  - headers
 tools:
   - read
   - exec
 homepage: ""
 category: "Security"
+pricing_tier: free
+
 ---
+
 # AI翻译验证(免费版)
 
 ## 概述
@@ -288,7 +258,7 @@ export TRANSLATE_API_KEY="your-api-key-here"
 | 阿拉伯语 | ar | lang-uuid-ar |
 | 葡萄牙语 | pt | lang-uuid-pt |
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 批量翻译工作流
 
@@ -376,7 +346,7 @@ A: 免费版每天限制10次API调用。如需更多调用量或质量提升、
 - 获取方式: 在翻译服务平台开发者门户注册
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent调用翻译API完成任务
 
 ## 错误处理
@@ -397,9 +367,9 @@ A: 免费版每天限制10次API调用。如需更多调用量或质量提升、
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

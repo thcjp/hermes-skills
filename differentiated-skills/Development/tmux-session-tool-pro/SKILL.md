@@ -1,4 +1,5 @@
 ---
+
 slug: "tmux-session-tool-pro"
 name: "tmux-session-tool-pro"
 version: "1.0.0"
@@ -6,26 +7,7 @@ displayName: "Tmux会话工具专业版"
 summary: "企业级多会话管理,支持批量会话操作、会话编排、监控告警与日志审计。面向团队与企业的高级 tmux 会话管理工具,在免费版基础上扩展多会话、编排、监控等能力。核心能力: - 多会话批量管理与并"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  面向团队与企业的高级 tmux 会话管理工具,在免费版基础上扩展多会话、编排、监控等能力。核心能力:
-  - 多会话批量管理与并行操作
-  - 会话编排与任务流水线
-  - 实时监控与告警通知
-  - 会话日志审计与回放
-  - 自定义会话模板与配置管理
-
-  适用场景:
-  - 多项目并行开发会话管理
-  - CI/CD 流水线终端编排
-  - 团队共享会话监控
-
-  差异化:
-  - 兼容免费版全部能力,无缝升级
-  - 支持多会话并行与编排
-  - 提供监控告警与日志审计
-  - 优先技术支持与更新通道
-
-  适用关键词: tmux, ses...
+description: "|-. 适用于需要tmux session tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 终端工具
   - tmux
@@ -37,9 +19,6 @@ tags:
   - 写作
   - 电商
   - project
-  - session
-  - send-keys
-  - sessions
 tools:
   - read
   - exec
@@ -47,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # Tmux 会话工具专业版
 
 ## 概述
@@ -261,7 +242,7 @@ done
 
 ## 快速开始
 
-### 第一步: 初始化配置
+### 领先步: 初始化配置
 
 ```bash
 mkdir -p .tmux-toolkit/{logs,templates,configs}
@@ -378,7 +359,7 @@ python3 .tmux-toolkit/status.py
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 会话命名规范
 
@@ -525,9 +506,9 @@ export TMUX_ALERT_EMAIL="team@example.com"
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

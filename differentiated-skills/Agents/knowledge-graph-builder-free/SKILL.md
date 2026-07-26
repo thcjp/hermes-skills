@@ -1,13 +1,13 @@
 ---
+
 slug: knowledge-graph-builder-free
 name: knowledge-graph-builder-free
 version: 1.0.1
 displayName: Knowledge Graph Buil
 summary: "AI Agent类型化知识图谱系统，实体-关系-约束三要素，JSONL存储+约束验证.。知识图谱构建器免费版为AI Agent提供类型化知识图谱系统，将零散的信息片段组织为可验证、可查询、可"
-license: Proprietary
+license: MIT
 edition: free
-description: 知识图谱构建器免费版为AI Agent提供类型化知识图谱系统，将零散的信息片段组织为可验证、可查询、可推理的结构化图谱。基于"实体-关系-约束"三要素，每条变更在提交前都经过类型约束验证，确保图谱一致性。Use
-  when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
+description: "知识图谱构建器免费版为AI Agent包含类型化知识图谱系统，将零散的信息片段组织为可验证、可查询、可推理的结构化图谱。基于\"实体-关系-约束\"三要素，每条变更在提交前都经过类型约束验证，确保图谱一致性。Use. 适用于需要knowledge graph builder相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 知识图谱
   - 类型化实体
@@ -19,15 +19,15 @@ tags:
   - task
   - project
   - type
-  - memory
-  - knowledge-graph
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # 知识图谱构建器（免费版）
 > **AI Agent的类型化知识图谱系统。实体-关系-约束三要素，每条变更都经过验证。**
 
@@ -111,9 +111,9 @@ relations:
     to_types: [Task]
     acyclic: true
 EOF
-```
-
-### 60秒完整配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 示例
 cat >> memory/knowledge-graph/graph.jsonl << 'EOF'
@@ -190,7 +190,7 @@ python3 （请参考skill目录中的脚本文件） related --id proj_001 --rel
 |:---:|:---:|:---:|
 | 必填属性 | required字段必须存在 | Task必须有title和status |
 | 枚举值 | 属性值必须在enum列表中 | Task.status必须是open/in_progress/blocked/done |
-| 禁止属性 | forbidden_properties不可出现 | Credential禁止password/secret/token |
+| 禁止属性 | forbidden_properties不可出现 | Credential禁止password/val/token |
 | 类型匹配 | 关系from/to类型必须匹配 | has_owner的from必须是Project或Task |
 | 基数约束 | 关系数量符合cardinality | many_to_one表示多个源可指向一个目标 |
 | 无环约束 | acyclic关系不允许环 | blocks关系不能形成循环依赖 |
@@ -545,9 +545,9 @@ JSONL（JSON Lines）每行一条记录，优势包括：
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

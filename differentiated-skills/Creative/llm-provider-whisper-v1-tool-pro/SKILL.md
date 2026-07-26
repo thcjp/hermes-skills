@@ -1,4 +1,5 @@
 ---
+
 slug: "llm-provider-whisper-v1-tool-pro"
 name: "llm-provider-whisper-v1-tool-pro"
 version: "1.0.0"
@@ -6,20 +7,7 @@ displayName: "Whisper v1转录专业版"
 summary: "Whisper v1稳定版企业级转录工具,支持批量处理、模型管理、性能调优与服务化部署。。基于 Whisper v1 稳定版本的企业级语音转文字工具(专业版)。核心能力: - 涵盖免费版全部"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  基于 Whisper v1 稳定版本的企业级语音转文字工具(专业版)。核心能力:
-  - 涵盖免费版全部能力(v1 稳定 CLI、多格式输出、翻译)
-  - 批量处理:目录递归与任务队列
-  - 模型管理:多版本预加载与热切换
-  - 性能调优:GPU 加速、半精度推理、批处理
-  - 自定义词典:initial_prompt 注入领域术语
-  - 服务化部署:FastAPI 封装,支持远程调用
-  - 质量评估:置信度分析与校对流程
-  - 任务监控:进度追踪与日志审计
-
-  适用场景:
-  - 企业会议纪要自动化
-  - 视频/播客批量字幕生成...
+description: "|-. 适用于需要llmvider whisper v1 tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 创意设计
   - 语音转文字
@@ -31,22 +19,15 @@ tags:
   - 效率
   - 自动化
   - 研究
-  - 分析
-  - 写作
-  - 电商
-  - 运维
-  - self
-  - whisper
-  - import
-  - device
-  - result
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # Whisper v1 语音转文字工具 - 专业版
 
 ## 概述
@@ -313,7 +294,7 @@ result = model.transcribe(
 )
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. v1 稳定性优势利用
 
@@ -415,7 +396,7 @@ v1 专业版基于稳定版接口,CLI 参数与模型行为固化,适合需要�
 - 企业部署建议通过密钥管理服务统一托管认证凭据
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。专业版基于 v1 稳定接口,支持批量处理、GPU 加速与服务化部署,适合长期维护的企业级转录场景.
 ## 错误处理
 

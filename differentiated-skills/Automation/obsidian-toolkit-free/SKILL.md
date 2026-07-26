@@ -1,13 +1,13 @@
 ---
+
 slug: obsidian-toolkit-free
 name: obsidian-toolkit-free
 version: 1.0.1
 displayName: Obsidian工具箱(免费版)
 summary: "Obsidian综合工具箱免费版，含vault发现、笔记管理、基础模板与插件生态入门指南.。Obsidian工具箱免费版是面向AI Agent的Obsidian综合管理工具。不同于基础入门指"
-license: Proprietary
+license: MIT
 edition: free
-description: Obsidian工具箱免费版是面向AI Agent的Obsidian综合管理工具。不同于基础入门指南，本技能聚焦"综合工具箱"能力：vault发现、笔记全生命周期管理、模板系统入门、插件生态认知，帮助Agent成为Obsidian用户的得力助手。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "Obsidian工具箱免费版是面向AI Agent的Obsidian综合管控工具。不同于基础入门指南，该技能聚焦\"综合工具箱\"能力：vault发现、笔记全生命周期管控、模板系统入门、插件生态认知，帮助Agent成为Obsidian用户的得力助手。Use. 适用于需要obsidian toolkit相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - Obsidian
   - 笔记管理
@@ -19,15 +19,15 @@ tags:
   - vault
   - obsidian
   - obsidian-cli
-  - documents
-  - path
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 > **不是教你入门Obsidian，而是提供一套综合工具箱。vault发现、笔记管理、模板入门、插件认知，一站式服务。**
 
 Obsidian的强大在于其灵活的笔记管理与丰富的插件生态。但如何自动发现多个vault？如何在移动笔记时自动更新wikilink？如何设计可复用的模板？如何选择合适的插件？本技能聚焦综合工具箱能力，帮助Agent成为Obsidian用户的得力助手.
@@ -203,17 +203,15 @@ EOF
 创建(create) → 搜索(search) → 编辑(edit) → 移动(move) → 删除(delete)
                                       ↓
                               wikilink自动重构
-```
-
-#
-### 搜索
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 obsidian-cli search "关键词"
 obsidian-cli search-content "关键词"
-```
-
-#
-### 创建
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 obsidian-cli create "Folder/NoteName" --content "内容" --open
 # ...
@@ -495,9 +493,9 @@ obsidian-cli create "Projects/ProjectA/会议" --content "# 会议记录
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

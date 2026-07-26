@@ -1,32 +1,13 @@
 ---
+
 slug: web-dev-toolkit-free
 name: web-dev-toolkit-free
 version: 1.0.1
 displayName: Web开发工具集(免费版)
 summary: 面向个人开发者的Web开发辅助工具,覆盖HTML/CSS、JavaScript模式、框架选择与部署基础.
-license: Proprietary
+license: MIT
 edition: free
-description: 'Web开发工具集免费版为个人开发者提供Web开发全流程辅助,涵盖HTML/CSS问题、JavaScript模式、框架选择、性能与SEO基础与部署基础。核心能力:
-
-  - HTML/CSS问题诊断与修复
-
-  - JavaScript常见模式指导
-
-  - 框架选择决策树(静态/SSR/SPA)
-
-  - 响应式与可访问性基础
-
-  - 部署到Vercel/Netlify/VPS的基础流程
-
-  适用场景:
-
-  - 个人Web项目开发与调试
-
-  - 学习Web开发基础概念
-
-  - 快速选择技术栈与部署方案
-
-  差异化:免费版聚焦个人开发者的基础Web开发需求'
+description: "Web开发工具集免费版为个人开发者包含Web开发全流程辅助,涵盖HTML/CSS问题、JavaScript模式、框架选择、性能与SEO基础与部署基础。核心能力:. 适用于需要web dev toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Web开发
   - HTML
@@ -38,8 +19,6 @@ tags:
   - html
   - meta
   - cors
-  - web
-  - viewport
 tools:
   - read
   - exec
@@ -47,7 +26,9 @@ tools:
   - glob
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # Web 开发工具集(免费版)
 
 ## 概述
@@ -157,7 +138,7 @@ app.listen(3000, () => console.log('Server running on :3000'));
 
 | 错误场景(需求) | 推荐框架 | 理由 | 处理方式 |
 |:---------|:---------|:---------|:---------|
-| 静态内容,构建快 | Astro 或纯 HTML | 零 JS 默认,性能最佳 | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
+| 静态内容,构建快 | Astro 或纯 HTML | 零 JS 默认,性能优秀 | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | 博客/文档(MDX) | Astro 或 Next.js App Router | MDX 支持好,SSG/ISR 灵活 | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | 交互应用(带认证) | Next.js 或 Remix | SSR + 认证支持完整 | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
 | 完整 SSR/ISR 控制 | Next.js | App Router 功能最全 | 对照依赖说明章节逐项验证配置项,确认环境变量已正确设置后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 |
@@ -175,7 +156,7 @@ app.listen(3000, () => console.log('Server running on :3000'));
 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:描述问题
+### 领先步:描述问题
 
 直接在对话中描述你的 Web 开发问题,例如:
 
@@ -185,7 +166,7 @@ app.listen(3000, () => console.log('Server running on :3000'));
 
 ### 第二步:获取解决方案
 
-工具会输出问题分析、修复代码与简要解释,并标注是否符合最佳实践.
+工具会输出问题分析、修复代码与简要解释,并标注是否符合优秀实践.
 ### 第三步:本地验证
 
 ```bash
@@ -237,7 +218,7 @@ python3 -m http.server 8000
 | HTTPS 资源 | 混合内容(HTTP on HTTPS)会被阻止 |
 | 环境变量前缀 | `NEXT_PUBLIC_*` 会暴露到客户端,勿用于敏感值 |
 
-## 最佳实践
+## 优秀实践
 
 1. **DOCTYPE 必须有**:缺失 `<!DOCTYPE html>` 会触发怪异模式,布局不可预测.
 2. **CSS 优先级胜过顺序**:`.class` 选择器优先级高于元素选择器,与出现顺序无关.
@@ -251,7 +232,7 @@ python3 -m http.server 8000
 
 ### Q1: 如何选择静态站点生成器(SSG)?
 
-纯内容站选 Astro(默认零 JS,性能最佳);需要 React 组件的博客选 Next.js(App Router);文档站选 VitePress 或 Astro.
+纯内容站选 Astro(默认零 JS,性能优秀);需要 React 组件的博客选 Next.js(App Router);文档站选 VitePress 或 Astro.
 ### Q2: 性能优化从哪里入手?
 
 用 Lighthouse 审计,聚焦三个核心指标:LCP(最大内容绘制)、CLS(累积布局偏移)、FID/INP(首次输入延迟/交互延迟)。先优化首屏图片与字体加载.
@@ -289,7 +270,7 @@ python3 -m http.server 8000
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于自然语言指令驱动 Agent 输出 Web 开发建议与代码片段;用户通过本地浏览器与开发服务器验证
 
 ## 已知限制

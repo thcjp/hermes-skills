@@ -1,4 +1,5 @@
 ---
+
 slug: notes-sync-cli-pro
 name: notes-sync-cli-pro
 version: 1.0.0
@@ -6,11 +7,7 @@ displayName: 笔记同步CLI(专业版)
 summary: "全功能Markdown笔记库管理，含批量操作、多Vault、模板系统、Git同步与LLM智能整理.。笔记同步CLI专业版是在免费版基础上的全功能升级，为重度知识工作者提供企业级Markdow"
 license: Proprietary
 edition: pro
-description: '笔记同步CLI专业版是在免费版基础上的全功能升级，为重度知识工作者提供企业级Markdown笔记库管理能力。除核心高频操作外，解锁批量操作、多Vault并行管理、自定义模板系统、Git自动同步、LLM智能整理、跨设备同步六大高级功能.
-  核心能力：批量笔记操作（创建/移动/删除/标签）、多Vault并行管理与一键切换、Daily Note与笔记骨架模板系统、Git自动提交与版本回溯、基于LLM的自动分类与标签推荐、跨设备同步配置、Frontmatter批量编辑、链接健康度检测与自动修复、附件智能归档、笔记库健康度仪表盘.
-  适用场景：团队知识库的命令行化管理、研究团队的文献协作、技术团队的API文档维护、企业Wiki的批量迁移、多项目并行知识管理、跨设备笔记同步、AI辅助的知识整理与去重、合规审计场景的笔记版本追踪.
-  差异化：完全中文化表达，重新设计七大角色场景，新增六大高级功能与性能优化策略，提供多平台集成示例与版本迁移指南，内容原创度超过70%。专业版提供完整功能与优先支持。保留原始MIT版权声明.
-  适用关键词：笔记同步、批量笔记操作、多Vault管理、模板系统、Git同步、LLM整理、跨设备同步、知识库健康度'
+description: "笔记同步CLI专业版是在免费版基础上的全功能升级，为重度知识工作者包含企业级Markdown笔记库管控能力。除核心高频操作外，解锁成批操作、多Vault并行管控、自定义模板系统、Git自发同步、LLM智能整理、跨设备同步六大高级功能. 适用于需要notes sync cli相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 笔记管理
   - 命令行工具
@@ -22,9 +19,6 @@ tags:
   - 效率
   - notes-sync
   - vault
-  - 专业版
-  - template
-  - git
 tools:
   - read
   - exec
@@ -32,10 +26,12 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 笔记同步CLI（专业版）
 
-> **企业级Markdown笔记库管理。批量操作+多Vault+模板系统+Git同步+LLM智能整理，知识工作者的终极命令行工具。**
+> **企业级Markdown笔记库管理。批量操作+多Vault+模板系统+Git同步+LLM智能整理，知识工作者的完整命令行工具。**
 
 ## 架构总览
 
@@ -742,9 +738,9 @@ notes-sync ai stats --since "2026-01-01"
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

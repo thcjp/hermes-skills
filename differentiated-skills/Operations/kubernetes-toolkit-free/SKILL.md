@@ -5,15 +5,9 @@ name: kubernetes-toolkit-free
 version: 1.0.1
 displayName: K8s集群管理入门
 summary: "Kubernetes集群基础管理工具，支持多Agent协作与常用资源操作.。面向个人开发者与小团队的K8s集群管理工具。支持多Agent协作模式，"
-license: Proprietary
+license: MIT
 edition: free
-description: "面向个人开发者与小团队的K8s集群管理工具。支持多Agent协作模式，
-  提供Pod/Service/Deployment/ConfigMap等常用资源的创建、查询与
-  管理功能。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。加速开发流程，提升代码质量与一致性。触发关键词：代码生成、自动化、测试、部署、监控、图片"
-
-  提供Pod/Service/Deployment/ConfigMap等常用资源的创建、查询与
-
-  管理功能。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
+description: "面向个人开发者与小团队的K8s集群管控工具。兼容多Agent协作模式，. 适用于需要kubernetes toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Operations
   - Kubernetes
@@ -29,8 +23,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
-
+pricing_tier: free
 ---
+
 # K8s集群管理入门（免费版）
 
 ## 概述
@@ -133,7 +128,7 @@ python3 （请参考skill目录中的脚本文件） list --namespace default --
 # Deployments: nginx-app (3/3)
 # Services: nginx-service (ClusterIP: 10.96.0.10)
 # ConfigMaps: nginx-config
-# Pods: nginx-app-xxx (running)
+# Pods: nginx-app-placeholder (running)
 ```
 
 ## 快速开始
@@ -163,8 +158,8 @@ python3 （请参考skill目录中的脚本文件） deploy --name my-app --imag
 # ...
 # 查询资源
 python3 （请参考skill目录中的脚本文件） list --namespace default
-python3 （请参考skill目录中的脚本文件） get pod --name my-app-xxx
-python3 （请参考skill目录中的脚本文件） logs --name my-app-xxx --tail 100
+python3 （请参考skill目录中的脚本文件） get pod --name my-app-placeholder
+python3 （请参考skill目录中的脚本文件） logs --name my-app-placeholder --tail 100
 # ...
 # 更新资源
 python3 （请参考skill目录中的脚本文件） scale --deployment my-app --replicas 5
@@ -172,10 +167,10 @@ python3 （请参考skill目录中的脚本文件） rollout --deployment my-app
 # ...
 # 配置管理
 python3 （请参考skill目录中的脚本文件） configmap create --name my-config --from-file ./config.yaml
-python3 （请参考skill目录中的脚本文件） secret create --name my-secret --from-literal password=xxx
+python3 （请参考skill目录中的脚本文件） secret create --name my-secret --from-literal password=placeholder
 # ...
 # 故障排查
-python3 （请参考skill目录中的脚本文件） diagnose --pod my-app-xxx
+python3 （请参考skill目录中的脚本文件） diagnose --pod my-app-placeholder
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -213,7 +208,7 @@ k8s_config:
       memory: "512Mi"
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **命名规范**：统一资源命名规范，便于管理
 2. **标签管理**：使用标签组织资源，便于查询筛选

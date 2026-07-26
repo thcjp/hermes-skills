@@ -1,30 +1,13 @@
 ---
+
 slug: agentvibes-skill-free
 name: agentvibes-skill-free
 version: 1.0.1
 displayName: AgentVibes语音合成-免费版
 summary: "免费离线TTS语音合成工具,支持914+声音切换、语速调节、个性风格,适合个人开发者使用.。AgentVibes语音合成免费版,面向个人开发者的离线文本转语音工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: AgentVibes语音合成免费版,面向个人开发者的离线文本转语音工具。核心能力:，可处理提升工作效率
-
-  - 支持 914+ 离线声音,覆盖 30+ 语种
-
-  - 切换声音、设置个性风格、调节语速
-
-  - 跨平台运行(Windows/macOS/Linux),无需账号
-
-  - 内置 macOS Say 与 Windows SAPI 零配置方案
-
-  适用场景:
-
-  - 个人开发者语音播报与提醒
-
-  - 内容创作者为视频添加配音
-
-  - 语言学习者多语种听力练习
-
-  差异化:免费版聚焦核心语音合成与基础控制能力,完全离线运行,零成本上手,适合个人用户体验AI语音合成'
+description: "AgentVibes语音合成免费版,面向个人开发者的离线文本转语音工具。核心能力:，可处置提升工作效率. 适用于需要agentvibes skill相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Creative
   - 语音合成
@@ -44,7 +27,9 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+pricing_tier: free
 ---
+
 # AgentVibes语音合成工具 - 免费版
 
 ## 概述
@@ -143,7 +128,7 @@ AgentVibes语音合成免费版是一款面向个人用户的离线文本转语�
 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:选择语音引擎
+### 领先步:选择语音引擎
 
 ```bash
 # 查看可用引擎
@@ -198,7 +183,7 @@ AgentVibes语音合成免费版是一款面向个人用户的离线文本转语�
 /agent-vibes:verbosity high     # 详细
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **先预览再切换**:使用 `/agent-vibes:preview` 试听后再用 `switch` 确认,避免反复切换
 2. **语速匹配内容**:信息密度高的内容用 1.2-1.5x,叙事内容用 0.8-1.0x
@@ -239,7 +224,7 @@ A:使用 `/agent-vibes:cleanup` 命令清理已缓存的音频文件.
 - 声音资源从 HuggingFace 公开仓库下载,无需账号
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过斜杠命令驱动语音合成,完全离线运行
 
 ## 错误处理

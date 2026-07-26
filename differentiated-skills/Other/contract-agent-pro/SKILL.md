@@ -1,4 +1,5 @@
 ---
+
 slug: contract-agent-pro
 name: contract-agent-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 合约Agent专业版
 summary: "多方合约、真实支付、AI仲裁、跨组织协作与企业合规审计一体的Agent商业合约平台。合约Agent专业版是面向企业级Agent商业协作的智能合约平台，在免费版基础上新增多方合约、真实支付网关"
 license: Proprietary
 edition: pro
-description: 合约Agent专业版是面向企业级Agent商业协作的智能合约平台，在免费版基础上新增多方合约、真实支付网关对接、AI仲裁员自动裁决、跨组织协作、合约模板市场与企业合规审计能力。核心能力：支持N方参与的复杂商业合约；对接Stripe/支付宝/微信支付等真实支付通道；AI仲裁员基于证据自动裁决纠纷；跨组织Agent身份互认；合约模板市场与社区共享；满足SOX/等保2
+description: "合约Agent专业版是面向企业级Agent商业协作的智能合约平台，在免费版基础上新增多方合约、真实支付网关对接、AI仲裁员自发裁决、跨组织协作、合约模板市场与企业合规审计能力。核心能力：兼容N方参与的复杂商业合约；对接Stripe/支付宝/微信支付等真实支付通道；AI仲裁员基于证据自发裁决纠纷；跨组织Agent身份互认；合约模板市场与社区共享；满足SOX/等保2"
 tags:
   - 智能合约
   - 企业级
@@ -18,8 +19,6 @@ tags:
   - agent
   - 合约
   - 合约模板
-  - 用户提供
-  - 解析能力
 tools:
   - read
   - exec
@@ -29,7 +28,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
+pricing_tier: L2-标准级
 ---
+
 当Agent商业化从"实验性尝试"走向"规模化运营"时，免费版的单组织简单合约模型就会遇到瓶颈：**跨企业合约无法签、真实资金无法走、纠纷仲裁无标准、合规审计无据可查**.
 合约Agent专业版正是为企业级Agent商业化而设计。它在免费版的基础上，把"合约"升级为"商业操作系统"——支持N方参与的复杂合约、对接真实支付通道、AI仲裁员自动裁决、跨组织身份互认、合约模板社区共享、企业级合规审计.
 ## 核心能力
@@ -281,7 +282,7 @@ payment:
 
 ### 示例3：AI仲裁裁决
 
-## 最佳实践
+## 优秀实践
 ### 实践1：多方合约份额设计
 多方合约的分账比例建议遵循"价值贡献"原则：
 - 数据提供方：30-50%
@@ -361,9 +362,9 @@ integration:
     - contract.milestone_completed
     - payment.released
   sync_to: [purchase_order, accounts_payable]
-```
-
-### 与企业身份系统（AD/LDAP）集成
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 identity:
   integrate_with: ldap
@@ -371,9 +372,9 @@ identity:
   bind_dn: ${LDAP_BIND_DN}
   bind_password: ${LDAP_BIND_PASSWORD}
   user_search_base: ou=agents,dc=company,dc=com
-```
-
-### 与区块链存证集成
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 evidence:
   blockchain:
@@ -381,10 +382,9 @@ evidence:
     channel: contracts-channel
     smart_contract: evidence_store
     notarize: true  # 关键证据上链
-```
-
-## 版本升级迁移指南
-### 从免费版迁移至专业版
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 contract-agent export --from free --output ./backup.zip
 # ...
@@ -404,7 +404,7 @@ contract-agent verify --all
 
 | 免费版字段 | 专业版字段 | 迁移策略 |
 |:-------|-------:|:-------|
-| agent_id（本地） | did:web:company.com:agents:xxx | 升级为DID格式 |
+| agent_id（本地） | did:web:company.com:agents:placeholder | 升级为DID格式 |
 | sqlite存储 | `PostgreSQL` | 数据迁移 |
 | 模拟托管 | Stripe/支付宝真实托管 | 重新配置支付通道 |
 | 人工纠纷处理 | AI仲裁员 | 配置规则集 |

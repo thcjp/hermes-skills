@@ -1,28 +1,13 @@
 ---
+
 slug: "llm-provider-whisper-v1-tool-free"
 name: "llm-provider-whisper-v1-tool-free"
 version: "1.0.0"
 displayName: "Whisper v1转录免费版"
 summary: "Whisper v1稳定版本地转录工具,支持基础语音转文字与字幕生成,适合个人快速上手。。基于 Whisper v1 稳定版本的本地语音转文字工具(免费版)。核心能力: - v1 稳定版 C"
-license: "Proprietary"
+license: MIT
 edition: "free"
-description: |-
-  基于 Whisper v1 稳定版本的本地语音转文字工具(免费版)。核心能力:
-  - v1 稳定版 CLI 转录能力,接口简洁可靠
-  - 支持 mp3 / m4a / wav 等常见音频格式
-  - 输出 txt / srt / vtt 等多种字幕格式
-  - 内置翻译模式(任意语言转英文)
-  - 模型自动下载与本地缓存
-
-  适用场景:
-  - 个人播客录音转文字
-  - 视频字幕快速生成
-  - 会议录音整理为文字稿
-  - 学习与采访内容转录
-
-  差异化:
-  - 基于 v1 稳定版,API 接口固化,适合长期维护
-  - 完全本地运...
+description: "|-. 适用于需要llmvider whisper v1 tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 创意设计
   - 语音转文字
@@ -34,21 +19,15 @@ tags:
   - 自动化
   - 知识
   - 文档
-  - 创意
-  - 图像
-  - 写作
-  - whisper
-  - model
-  - small
-  - output_format
-  - ffmpeg
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Whisper v1 语音转文字工具 - 免费版
 
 ## 概述
@@ -204,7 +183,7 @@ whisper <input> --model <model> --task translate --output_format <fmt> --output_
 | json | 程序处理 | 含完整时间戳与置信度 |
 | tsv | 数据分析 | 表格格式,便于 Excel |
 
-## 最佳实践
+## 优秀实践
 
 1. **音频预处理**
    - 转为 16kHz 单声道,匹配模型训练数据
@@ -278,7 +257,7 @@ v1 是稳定版本,CLI 接口与模型行为经过充分验证,适合长期维�
 - 不依赖 llm-provider API 或其他云服务
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。免费版基于 v1 稳定版本,接口固化,适合长期维护的个人转录场景.
 ## 错误处理
 

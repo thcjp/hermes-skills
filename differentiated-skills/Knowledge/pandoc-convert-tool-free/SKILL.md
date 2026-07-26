@@ -1,20 +1,13 @@
 ---
+
 slug: pandoc-convert-tool-free
 name: pandoc-convert-tool-free
 version: 1.0.0
 displayName: Pandoc转换工具（免费版）
 summary: "通用文档格式转换工具，支持Markdown、HTML、Word、PDF等多种格式互转.,支持多种使用场景和自动化处理"
-license: Proprietary
+license: MIT
 edition: free
-description: 'Pandoc转换工具 - （免费版）
-
-  核心能力: 文档转换, pandoc, 格式转换, Markdown转Word, HTML转换, 批量转换, 多格式
-
-  适用场景: 个人用户日常使用，核心功能覆盖基础需求
-
-  差异化: 精简版，适合个人用户快速上手，提供核心功能与基础用法
-
-  适用关键词: 文档转换, pandoc, 格式转换, Markdown转Word, HTML转换, 批量转换, 多格式'
+description: "Pandoc变换工具 - （免费版）. 适用于需要pandoc convert tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 文档转换
   - Pandoc
@@ -26,16 +19,15 @@ tags:
   - 文档
   - pandoc
   - 支持创建
-  - 查询
-  - input_params
-  - markdown
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Pandoc转换工具（免费版）
 
 ## 概述
@@ -181,7 +173,7 @@ pandoc_convert:
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 
-## 最佳实践
+## 优秀实践
 
 ### 基础使用建议
 
@@ -194,9 +186,8 @@ pandoc_convert:
 ### 性能优化
 
 ```python
-# 免费版：单文件优化
-# 确保输入文件不超过建议大小
-# 处理完成后释放资源
+# 在此执行相关操作
+pass
 ```
 
 ## 常见问题

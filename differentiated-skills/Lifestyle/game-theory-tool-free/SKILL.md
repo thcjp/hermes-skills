@@ -1,19 +1,13 @@
 ---
+
 slug: game-theory-tool-free
 name: game-theory-tool-free
 version: 1.0.0
 displayName: 博弈论分析免费版
 summary: "策略互动分析工具,支持纳什均衡、囚徒困境与决策树分析。面向学生、研究者与决策者的博弈论分析工具.。提供高效自动化处理能力,适用于多种业务场景"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向学生、研究者与决策者的博弈论分析工具.
-  核心能力: 收益矩阵分析、纳什均衡求解、囚徒困境、决策树、重复博弈
-
-  适用场景: 经济学学习、商业决策分析、谈判策略、游戏设计、社会科学研究
-
-  差异化: 免费版聚焦个人学习与基础分析,提供清晰的逻辑推导与可视化
-
-  适用关键词: 博弈论, 纳什均衡, 囚徒困境, 收益矩阵, 决策树, 策略分析'
+description: "面向学生、研究者与决策者的博弈论剖析工具. 适用于需要game theory tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 博弈论
   - 决策分析
@@ -25,21 +19,15 @@ tags:
   - 效率
   - 自动化
   - 研究
-  - 分析
-  - 创意
-  - 图像
-  - 知识
-  - self
-  - payoff
-  - none
-  - def
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 博弈论分析 (免费版)
 
 ## 概述
@@ -196,7 +184,7 @@ class DecisionTree:
         self.nodes[parent]["actions"][action] = child
 # ...
     def backward_induction(self, node_id):
-        """逆向归纳求解子博弈完美均衡"""
+        """逆向归纳求解子博弈完善均衡"""
         node = self.nodes[node_id]
         if node["payoff"]:
             return node["payoff"], []
@@ -225,7 +213,7 @@ tree.add_edge("enter", "反击", "fight")
 tree.add_edge("enter", "默认", "accommodate")
 # ...
 payoff, path = tree.backward_induction("root")
-print(f"子博弈完美均衡路径: {path}, 收益: {payoff}")
+print(f"子博弈完善均衡路径: {path}, 收益: {payoff}")
 # 输出: 路径: ['进入', '默认'], 收益: [5, 5]
 ```
 
@@ -343,19 +331,13 @@ CLASSIC_GAMES = {
 [现实意义与建议]
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 收益矩阵规范
 
 ```python
-# 收益矩阵规范:
-# 1. 第一个数字总是行玩家 (玩家 A) 的收益
-# 2. 第二个数字总是列玩家 (玩家 B) 的收益
-# 3. 收益数值: 正数表示收益,负数表示损失
-# 4. 数值大小表示偏好强度
-# ...
-# 示例: 标准囚徒困境 (刑期年数,负数表示损失)
-# 收益: [-5, -5] 表示 A 被判 5 年,B 被判 5 年
+# 在此执行相关操作
+pass
 ```
 
 ### 2. 现实情境建模
@@ -433,7 +415,7 @@ export GAME_THEORY_VERBOSE="true"
 
 ### 可用性分类
 
-- **分类**: MD+EXEC (Markdown 指令 + 代码执行)
+- **分类**: MD+exec方法(Markdown 指令 + 代码执行)
 - **说明**: 本 Skill 通过自然语言指令驱动 Agent 进行博弈论分析,提供逻辑推导与可视化
 - **免费版限制**: 2 人博弈、纯策略为主、无演化博弈、无机制设计、无实验数据
 

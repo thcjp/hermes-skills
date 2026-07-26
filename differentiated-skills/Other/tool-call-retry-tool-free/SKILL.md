@@ -1,49 +1,34 @@
 ---
+
 slug: tool-call-retry-tool-free
 name: tool-call-retry-tool-free
 version: 1.0.0
 displayName: 工具调用重试免费版
 summary: "为LLM工具调用提供指数退避重试与格式校验，零侵入封装，成功率提升90%以上，适合个人开发者.。工具调用重试工具免费版，面向个人开发者的轻量级LLM工具调用增强方案。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 工具调用重试工具免费版，面向个人开发者的轻量级LLM工具调用增强方案。核心能力:，可自动提升工作效率
-
-  - 指数退避重试机制
-
-  - 结果格式校验
-
-  - 零侵入封装，一行接入
-
-  - 幂等性键支持，避免重复副作用
-
-  适用场景:
-
-  - 个人Agent调用外部API时的稳定性增强
-
-  - 不稳定第三方服务的调用兜底
-
-  - 大模型工具调用格式错误的自动修复
-
-  差异化: 免费版聚焦核心重试与校验能力，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手'
+description: "工具调用重试工具免费版，面向个人开发者的轻量级LLM工具调用增强方案。核心能力:，可自发提升工作效率. 适用于需要tool call retry tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要tool call retry tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 工具调用
+  - call
+  - retry
+  - automation
+  - productivity
   - 重试机制
   - 稳定性增强
   - 免费版
   - 工具
   - 效率
-  - 集成
-  - const
-  - res
-  - llm
-  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # 工具调用重试工具（免费版）
 
 ## 概述
@@ -163,7 +148,7 @@ const result = await skills.toolCallRetry({
 | validatorFn | Function | 否 | ()=>true | 结果校验函数 |
 | idempotencyKey | string | 否 | undefined | 幂等性键 |
 
-## 最佳实践
+## 优秀实践
 
 * 重试次数建议 3-5 次，过多重试会放大下游压力.
 * 初始延迟建议 1000ms，给下游服务恢复时间.

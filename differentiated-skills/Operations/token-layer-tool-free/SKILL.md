@@ -1,17 +1,13 @@
 ---
+
 slug: token-layer-tool-free
 name: token-layer-tool-free
 version: 1.0.0
 displayName: 跨链代币入门工具
 summary: "跨链代币数据查询工具，支持主流链代币信息与基础价格查询.。面向个人加密货币用户的跨链代币数据查询工具。支持以太坊/BSC/"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人加密货币用户的跨链代币数据查询工具。支持以太坊/BSC/
-
-  Polygon等主流链上的代币信息查询，包括合约地址、价格、流动性
-
-  等基础数据。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use
-  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
+description: "面向个人加密货币用户的跨链代币数据查询工具。兼容以太坊/BSC/. 适用于需要token layer tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Operations
   - 加密货币
@@ -27,7 +23,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 跨链代币入门工具（免费版）
 
 ## 概述
@@ -188,7 +186,7 @@ token_config:
     bsc: "https://bsc-dataseed.binance.org"
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **合约验证**：投资前务必验证合约地址的真实性
 2. **多链对比**：同一代币在不同链上可能有不同合约

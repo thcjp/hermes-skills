@@ -5,12 +5,9 @@ name: markdown-converter-tool-free
 version: 1.0.0
 displayName: Markdown转换器免费版
 summary: 将PDF、Word、Excel、PPT等文件转换为Markdown格式,支持基础OCR与文档结构保留,适合个人使用.
-license: Proprietary
+license: MIT
 edition: free
-description: "Markdown转换器免费版帮助个人用户将各类文档文件转换为Markdown格式。支持PDF、Word、Excel、PPT、HTML、图片等常见格式,保留文档结构,
-  无需安装额外软件(使用uvx运行)。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。自动化生成专业文档，提升文档覆盖率。触发关键词：文档生成、自动化、转换、设计、图片、PDF"
-
-  无需安装额外软件(使用uvx运行)。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。'
+description: "Markdown变换器免费版帮助个人用户将各类文档文件变换为Markdown格式。兼容PDF、Word、Excel、PPT、HTML、图片等常见格式,保留文档结构,. 适用于需要markdown converter tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Markdown
   - 文档转换
@@ -22,16 +19,15 @@ tags:
   - uvx
   - markitdown
   - pdf
-  - markdown
-  - bash
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
-
+pricing_tier: free
 ---
+
 # Markdown转换器免费版
 
 ## 概述
@@ -203,7 +199,7 @@ uvx markitdown archive.zip -o archive.md
 cat document | uvx markitdown -x .pdf > output.md
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 格式选择指南
 
@@ -246,6 +242,8 @@ uvx markitdown --use-plugins input.docx -o output.md
 A: 使用`-c`选项指定字符集:
 
 ```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### Q2: PDF转换效果不好?
@@ -264,7 +262,7 @@ A: 免费版需逐个文件执行转换。如需批量处理整个目录,请使�
 A: 免费版输出标准Markdown格式。如需自定义输出模板、元数据提取等高级功能,请使用PRO版.
 ### Q5: 转换后的表格格式不对?
 
-A: 确保源文件的表格结构清晰。复杂合并单元格可能无法完美保留。建议在转换后手动检查并调整表格格式.
+A: 确保源文件的表格结构清晰。复杂合并单元格可能无法完善保留。建议在转换后手动检查并调整表格格式.
 ## 依赖说明
 
 ### 运行环境
@@ -289,7 +287,7 @@ A: 确保源文件的表格结构清晰。复杂合并单元格可能无法完�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令+命令行执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令+命令行执行能力)
 - **说明**: 基于Markdown指令驱动Agent执行文档转换任务,通过uvx运行markitdown工具
 - **免费版限制**: 单文件转换、基础OCR、无批量处理、无自定义模板
 

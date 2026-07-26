@@ -7,9 +7,7 @@ displayName: "Git高级操作专业版"
 summary: "企业级 Git 进阶方案，支持子树子模块、稀疏检出、大型单体仓库与冲突自动记忆。。面向企业级研发团队的 Git 进阶操作专业工具。Use when 需要提升效率、自动化流程、批量处理、工作流"
 license: "Proprietary"
 edition: "pro"
-description: "|-
-  面向企业级研发团队的 Git 进阶操作专业工具。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。自动识别潜在问题，保障代码质量。触发关键词：代码审查、自动化、性能优化、搜索、转换、机器学习"
-  面向企业级研发团队的 Git 进阶操作专业工具。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
+description: "|-. 适用于需要git workflows tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - 版本控制
@@ -21,15 +19,15 @@ tags:
   - submodule
   - path
   - file
-  - rerere
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
-
+pricing_tier: L2-标准级
 ---
+
 # Git 高级操作助手（专业版）
 
 ## 概述
@@ -302,7 +300,7 @@ git log --follow --oneline -- src/auth.ts
 git log --stat --oneline -20
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **大型仓库优先使用稀疏检出**：减少克隆时间和磁盘占用
 

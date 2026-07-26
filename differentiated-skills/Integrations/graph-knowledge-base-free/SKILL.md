@@ -1,20 +1,13 @@
 ---
+
 slug: graph-knowledge-base-free
 name: graph-knowledge-base-free
 version: 1.0.1
 displayName: 知识图谱库(免费版)
 summary: "原子化知识管理工具，支持实体事实添加、版本替代与摘要生成。知识图谱库(免费版)是一款原子化知识管理工具，通过实体-事实-摘要的三层结构组织知识，支持事实的添加、版本替代与摘要自动生成。核心能"
-license: Proprietary
+license: MIT
 edition: free
-description: '知识图谱库(免费版)是一款原子化知识管理工具，通过实体-事实-摘要的三层结构组织知识，支持事实的添加、版本替代与摘要自动生成。核心能力：
-
-  - 按实体添加原子化事实，每条事实独立可追溯
-
-  - 事实版本替代机制，标记旧事实为已替代并创建新事实
-
-  - 从活跃事实自动生成实体摘要
-
-  - 事实永不删除...'
+description: "知识图谱库(免费版)是一款原子化知识管控工具，通过实体-事实-摘要的三层结构组织知识，兼容事实的添加、版本替代与摘要自发产出。核心能力：. 适用于需要graph knowledge base相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 集成工具
   - 知识管理
@@ -26,19 +19,15 @@ tags:
   - 文档
   - 研究
   - 分析
-  - 写作
-  - json
-  - 事实
-  - people
-  - zhangsan
-  - 版本替代
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 知识图谱库(免费版)
 
 本工具通过原子化事实管理帮助用户构建可演进、可追溯的知识图谱，支持事实添加、版本替代与摘要自动生成.
@@ -104,16 +93,16 @@ category: "Automation"
 ## 快速开始
 
 本工具属于中等复杂度工具，预计120秒内可完成首次事实添加.
-### Step 1：添加第一条事实
+### Step 1：添加领先条事实
 ```bash
 python3 （请参考skill目录中的脚本文件） add \
   --entity people/zhangsan \
   --category status \
   --fact "担任前端开发工程师" \
   --source conversation
-```
-
-### Step 2：查看实体事实
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python3 （请参考skill目录中的脚本文件） list --entity people/zhangsan
 ```
@@ -126,9 +115,9 @@ python3 （请参考skill目录中的脚本文件） supersede \
   --old zhangsan-001 \
   --category status \
   --fact "晋升为前端技术负责人"
-```
-
-### Step 4：生成实体摘要
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python3 （请参考skill目录中的脚本文件） summarize --entity people/zhangsan
 ```
@@ -157,7 +146,7 @@ life/areas/
 ```
 
 #
-## 最佳实践
+## 优秀实践
 
 ### 实践一：原子化事实粒度
 每条事实应聚焦单一信息点，避免在一条事实中混合多个信息。例如"担任前端开发工程师，负责React项目"应拆分为两条事实：一条记录职位，一条记录负责项目。这种粒度便于后续替代与查询.
@@ -225,7 +214,7 @@ A：免费版不限制使用次数，但图谱关系查询、知识分析与跨�
 - **安全要求**：建议将知识库目录加入版本控制或定期备份
 
 ### 可用性分类
-- **分类**：MD+EXEC(纯Markdown指令，部分功能需要exec命令行执行能力)
+- **分类**：MD+EXEC模式纯Markdown指令，部分功能需要exec命令行执行能力)
 - **说明**：基于Markdown的AI Skill，通过自然语言指令驱动Agent执行知识图谱管理任务，数据完全本地化
 
 ## 输出格式

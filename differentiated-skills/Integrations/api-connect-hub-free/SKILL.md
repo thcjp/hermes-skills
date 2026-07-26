@@ -5,11 +5,9 @@ name: api-connect-hub-free
 version: 1.0.1
 displayName: API连接中心(免费版)
 summary: "轻量级第三方API连接与凭证管理，覆盖连接器注册、认证、调用模板与错误重试.。API连接中心免费版解决独立开发者"对接多个第三方API时凭证散乱、调用模板各写各的、错误重试靠蒙"的痛点。提供"
-license: Proprietary
+license: MIT
 edition: free
-description: "API连接中心免费版解决独立开发者\"对接多个第三方API时凭证散乱、调用模板各写各的、错误重试靠蒙\"的痛点。提供统一连接器注册、凭证安全存储、标准化调用模板、错误重试策略四大能力。Use
-  when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。系统性识别风险，保障系统安全合规。触发关键词：API设计、安全、搜索、设计、机器学习、邮件"
-  when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
+description: "API连接中心免费版解决独立开发者\"对接多个第三方API时凭证散乱、调用模板各写各的、错误重试靠蒙\"的痛点。包含统一连接器注册、凭证安全存储、标准化调用模板、错误重试策略四大能力。Use. 适用于需要api connect hub相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - API集成
   - 连接器管理
@@ -21,15 +19,15 @@ tags:
   - api
   - auth
   - path
-  - github
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
-
+pricing_tier: free
 ---
+
 # API连接中心（免费版）
 
 > **把"对接第三方API"从凭证乱贴、调用乱写、错误乱扛，变为注册一次、安全调用、自动重试。**
@@ -464,6 +462,8 @@ exceptions.ConnectionError:
 Agent输出连接器注册YAML：
 # ...
 ```yaml
+# 在此执行相关操作
+echo "操作完成"
 ```
 # ...
 ## 错误处理

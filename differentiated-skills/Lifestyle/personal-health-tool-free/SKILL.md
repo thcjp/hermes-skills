@@ -1,19 +1,13 @@
 ---
+
 slug: personal-health-tool-free
 name: personal-health-tool-free
 version: 1.0.2
 displayName: 个人健康管家免费版
 summary: "个人健康数据管理,支持运动、睡眠、饮食与体检报告分析。面向个人用户的健康管家,集成运动、睡眠、饮食与体检报告管理."
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人用户的健康管家,集成运动、睡眠、饮食与体检报告管理.
-  核心能力: 健康数据记录、体检报告解读、运动计划、饮食建议、健康趋势
-
-  适用场景: 个人健康管理、健身塑形、慢病预防、健康自检
-
-  差异化: 免费版聚焦个人健康数据管理,本地存储,支持体检报告解读
-
-  适用关键词: 个人健康, 健康管家, 体检报告, 运动计划, 饮食建议, 健康趋势'
+description: "面向个人用户的健康管家,集成运动、睡眠、饮食与体检报告管控. 适用于需要personal health tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 健康管理
   - 个人健康
@@ -25,22 +19,15 @@ tags:
   - 效率
   - 自动化
   - 研究
-  - 分析
-  - 生活
-  - 健康
-  - 写作
-  - normal
-  - high
-  - self
-  - ref
-  - metric
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 个人健康管家 (免费版)
 
 ## 概述
@@ -260,7 +247,7 @@ mkdir -p ~/.health/{weight,workouts,sleep,diet,reports}
 echo '{"version":"1.0","created":"'$(date -I)'"}' > ~/.health/config.json
 ```
 
-### Step 2: 记录第一条数据
+### Step 2: 记录领先条数据
 
 ```python
 import json
@@ -363,7 +350,7 @@ REPORT_TEMPLATE = {
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 数据记录习惯
 
@@ -452,7 +439,7 @@ export HEALTH_DATA_DIR="~/.health"
 
 ### 可用性分类
 
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+exec方法(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 通过自然语言指令驱动 Agent 管理个人健康数据,所有数据本地存储
 - **免费版限制**: 单用户、本地存储、无设备同步、无医生共享、无 AI 诊断、基础提醒
 

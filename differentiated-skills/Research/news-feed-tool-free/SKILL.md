@@ -1,49 +1,24 @@
 ---
+
 slug: news-feed-tool-free
 name: news-feed-tool-free
 version: 1.0.0
 displayName: RSS新闻订阅免费版
 summary: "从主流国际RSS源获取最新新闻标题与摘要，零API密钥零依赖。RSS新闻订阅免费版，从BBC、Reuters、AP等主流国际媒体RSS源获取最新新闻标题与摘要。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: RSS新闻订阅免费版，从BBC、Reuters、AP等主流国际媒体RSS源获取最新新闻标题与摘要。核心能力:，可自动提升工作效率
-
-  - 从7个国际主流媒体RSS源获取新闻
-
-  - 支持按来源、主题、数量筛选
-
-  - 零API密钥、零外部依赖
-
-  - 仅使用Python标准库和HTTP
-
-  适用场景:
-
-  - 个人用户浏览国际新闻
-
-  - 学生了解全球时事
-
-  - 独立开发者跟踪国际动态
-
-  差异化:
-
-  - 免费版零成本使用，纯Python标准库实现
-
-  - 覆盖7个主流国际RSS源
-
-  - 与PRO版本完全兼容...'
+description: "RSS新闻订阅免费版，从BBC、Reuters、AP等主流国际媒体RSS源获取最新新闻标题与摘要。核心能力:，可自发提升工作效率. 适用于需要news feed tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要news feed tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 新闻
+  - news
+  - feed
+  - automation
+  - productivity
   - RSS
   - 国际新闻
   - 订阅
   - 搜索
   - 检索
-  - 工具
-  - rss
-  - top
-  - bbc
-  - news
-  - reuters
 tools:
   - read
   - exec
@@ -51,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 # RSS新闻订阅工具（免费版）
 
 ## 概述
@@ -326,7 +304,7 @@ ITEM_TEMPLATE = """{index}. **{title}**
 """
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 合理使用 --limit 参数
 

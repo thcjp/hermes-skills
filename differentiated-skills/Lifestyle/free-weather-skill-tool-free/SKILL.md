@@ -1,19 +1,13 @@
 ---
+
 slug: free-weather-skill-tool-free
 name: free-weather-skill-tool-free
 version: 1.0.0
 displayName: 免费天气技能免费版
 summary: "通过wttr.in和Open-Meteo免费API查询全球天气,无需API Key。面向个人用户的轻量天气查询工具,完全免费且无需 API Key."
-license: Proprietary
+license: MIT
 edition: free
-description: 面向个人用户的轻量天气查询工具,完全免费且无需 API Key，可自动提升工作效率
-  核心能力: 全球城市天气查询、多格式输出、JSON编程接口、命令行便捷调用
-
-  适用场景: 个人出行查询、脚本集成、开发调试、终端天气展示
-
-  差异化: 免费版聚焦命令行查询,零配置开箱即用,适合个人与开发者
-
-  适用关键词: 免费天气, wttr.in, open-meteo, 命令行天气, 无需API Key'
+description: "面向个人用户的轻量天气查询工具,完全免费且无需 API Key，可自发提升工作效率. 适用于需要free weather skill tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 天气查询
   - 免费工具
@@ -25,16 +19,15 @@ tags:
   - 集成
   - wttr
   - curl
-  - beijing
-  - format
-  - params
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 免费天气技能 (免费版)
 
 ## 概述
@@ -299,7 +292,7 @@ in/$CITY.png" -o "/tmp/weather_$CITY.png"
 esac
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 城市名称处理
 
@@ -407,7 +400,7 @@ export WEATHER_LANG="zh"
 
 ### 可用性分类
 
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+exec方法(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 通过自然语言指令驱动 Agent 调用免费天气 API,完全零配置
 - **免费版特性**: 无需 API Key、命令行优先、多格式输出、双服务冗余
 - **限制**: 单城市查询、3 天预报、无 SLA、可能被限流

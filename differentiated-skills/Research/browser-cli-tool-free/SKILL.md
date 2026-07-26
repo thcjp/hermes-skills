@@ -1,44 +1,24 @@
 ---
+
 slug: browser-cli-tool-free
 name: browser-cli-tool-free
 version: 1.0.0
 displayName: 浏览器CLI工具-免费版
 summary: "基于Playwright的浏览器自动化CLI,支持签到、填表、截图与信息抓取,适合个人用户。浏览器自动化命令行工具,提供导航、交互、信息获取与截图能力,"
-license: Proprietary
+license: MIT
 edition: free
-description: '浏览器自动化命令行工具,提供导航、交互、信息获取与截图能力,
-
-  适合签到、填表、信息抓取等需要控制浏览器的任务。核心能力:
-
-  - 页面导航与历史控制
-
-  - 基于ref引用与CSS选择器的元素交互
-
-  - 文本、HTML、属性等信息提取
-
-  - 截图与页面快照
-
-  适用场景:
-
-  - 个人用户的每日签到与表单填写
-
-  - 网页信息抓取与数据收集
-
-  - 独立开发者的自动化工作流
-
-  差异化:免费版提供核心浏览器自动化能力,操作直观,适合个人轻量场景'
+description: "浏览器自发化命令行工具,包含导航、交互、信息获取与截图能力,. 适用于需要browser cli tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要browser cli tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 研究工具
+  - browser
+  - cli
+  - automation
+  - productivity
   - 浏览器自动化
   - 自动化
   - 搜索
   - 检索
   - 工具
-  - agent-browser
-  - find
-  - bash
-  - snapshot
-  - ref
 tools:
   - read
   - exec
@@ -46,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 # 浏览器CLI工具(免费版)
 
 ## 概述
@@ -257,7 +240,7 @@ agent-browser find label "Email" fill "test@test.com"
 agent-browser find placeholder "Search" type "query"
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **先 snapshot 再操作**:每次页面变化后重新获取 ref,避免引用失效.
 2. **添加等待**:页面加载需要时间,用 `sleep 2` 或等待命令.
@@ -272,7 +255,7 @@ agent-browser find placeholder "Search" type "query"
 ### Q2: 元素被遮挡无法点击?
 - 尝试滚动到元素位置后再点击
 - 检查是否有弹窗遮挡,先关闭弹窗
-- 使用 `find role button click --name "xxx"` 替代 ref
+- 使用 `find role button click --name "placeholder"` 替代 ref
 
 ### Q3: 安装失败怎么办?
 ```bash
@@ -315,7 +298,7 @@ agent-browser screenshot debug.png
 - 本 Skill 基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作
 
 ## 错误处理

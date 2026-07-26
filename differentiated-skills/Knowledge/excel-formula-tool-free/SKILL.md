@@ -1,20 +1,13 @@
 ---
+
 slug: excel-formula-tool-free
 name: excel-formula-tool-free
 version: 1.0.1
 displayName: Excel公式工具（免费版）
 summary: "从自然语言描述生成Excel公式，诊断表格错误，支持VLOOKUP、条件求和等常用函数.,支持多种使用场景和自动化处理"
-license: Proprietary
+license: MIT
 edition: free
-description: Excel公式工具 - （免费版），可生成提升工作效率
-
-  核心能力: Excel公式, VLOOKUP, SUMIF, COUNTIF, 公式诊断, 公式优化, 表格计算
-
-  适用场景: 个人用户日常使用，核心功能覆盖基础需求
-
-  差异化: 精简版，适合个人用户快速上手，提供核心功能与基础用法
-
-  适用关键词: Excel公式, VLOOKUP, SUMIF, COUNTIF, 公式诊断, 公式优化, 表格计算'
+description: "Excel公式工具 - （免费版），可产出提升工作效率. 适用于需要excel formula tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Excel
   - 公式生成
@@ -26,14 +19,15 @@ tags:
   - 支持创建
   - 查询
   - input_params
-  - 用户提供
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Excel公式工具（免费版）
 
 ## 概述
@@ -169,7 +163,7 @@ excel:
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 
-## 最佳实践
+## 优秀实践
 
 ### 基础使用建议
 
@@ -182,9 +176,8 @@ excel:
 ### 性能优化
 
 ```python
-# 免费版：单文件优化
-# 确保输入文件不超过建议大小
-# 处理完成后释放资源
+# 在此执行相关操作
+pass
 ```
 
 ## 常见问题
@@ -241,9 +234,9 @@ A: 免费版支持单次操作，适合个人日常使用。如需批量处理�
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

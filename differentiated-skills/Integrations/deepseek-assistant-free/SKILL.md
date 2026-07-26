@@ -1,13 +1,13 @@
 ---
+
 slug: deepseek-assistant-free
 name: deepseek-assistant-free
 version: 1.0.1
 displayName: DeepSeek助手(免费版)
 summary: "基于DeepSeek API的中文对话助手，支持通用对话、代码生成与基础推理能力.。DeepSeek 助手免费版是一个基于 DeepSeek 官方 API 的中文对话辅助工具，帮助开发者以极"
-license: Proprietary
+license: MIT
 edition: free
-description: DeepSeek 助手免费版是一个基于 DeepSeek 官方 API 的中文对话辅助工具，帮助开发者以极低成本接入大模型对话、代码生成与基础推理能力。核心能力：提供三种模型选择指引（通用对话、代码生成、深度推理）、单轮与短多轮对话模板、基础错误处理与重试策略、Token
-  用量预估参考。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "DeepSeek 助手免费版是一个基于 DeepSeek 官方 API 的中文对话辅助工具，帮助开发者以极低成本接入大模型对话、代码产出与基础推理能力。核心能力：包含三种模型选择指引（通用对话、代码产出、深度推理）、单轮与短多轮对话模板、基础错误处置与重试策略、Token. 适用于需要deepseek assistant相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - AI对话
   - 集成工具
@@ -19,15 +19,15 @@ tags:
   - api
   - deepseek
   - token
-  - key
-  - chat
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # DeepSeek 助手（免费版）
 
 ## 概述
@@ -92,7 +92,7 @@ DeepSeek 提供三种主力模型，各有侧重：
 初学者通过本助手的模板与示例，快速理解大模型 API 的请求结构与响应格式.
 ## 快速开始
 
-### 第一步：配置 API Key
+### 领先步：配置 API Key
 
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
@@ -177,7 +177,7 @@ const codeModel = 'deepseek-coder';
 const reasonModel = 'deepseek-reasoner';
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 实践一：密钥通过环境变量管理
 
@@ -210,7 +210,7 @@ const reasonModel = 'deepseek-reasoner';
 DeepSeek 定价极低，输入约 0.27 元/百万 Token，输出约 1.10 元/百万 Token。一次普通对话（约 500 Token）成本不到 0.001 元.
 ### Q3：中文效果好不好？
 
-DeepSeek 对中文理解优秀，特别适合中文问答、写作与翻译场景，在中文基准测试中表现处于第一梯队.
+DeepSeek 对中文理解优秀，特别适合中文问答、写作与翻译场景，在中文基准测试中表现处于领先梯队.
 ### Q4：出现 429 限流怎么办？
 
 免费额度或并发过高会触发限流。处理方式：降低请求频率、实现指数退避重试、升级到付费额度.

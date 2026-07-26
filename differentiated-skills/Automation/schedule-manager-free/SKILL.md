@@ -1,13 +1,13 @@
 ---
+
 slug: schedule-manager-free
 name: schedule-manager-free
 version: 1.0.1
 displayName: 任务调度管家(免费版)
 summary: 自然语言驱动的定时任务管理，支持一次性与周期任务、时区感知与执行日志，让Agent准确知道何时执行何事.
-license: Proprietary
+license: MIT
 edition: free
-description: 任务调度管家免费版为AI Agent提供轻量但可靠的任务调度能力。用户用自然语言描述"做什么"与"何时做"，本技能负责把模糊的时间表达（如"每天早上"、"下周五"、"工作日9点"）解析为标准cron表达式，并持久化到本地JSON存储，确保任务定义在会话重启后依然存在。Use
-  when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
+description: "任务调度管家免费版为AI Agent包含轻量但可靠的任务调度能力。用户用自然语言描述\"做什么\"与\"何时做\"，该技能负责把模糊的时间表达（如\"每天早上\"、\"下周五\"、\"工作日9点\"）解析为标准cron表达式，并持久化到本地JSON存储，确保任务定义在会话重启后依然存在。Use. 适用于需要schedule manager相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 任务调度
   - 自动化
@@ -19,14 +19,15 @@ tags:
   - 默认
   - 自然语言
   - agent
-  - 时区感知
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 任务调度管家（免费版）
 
 > **让Agent准确知道"何时"执行"何事"。自然语言驱动，时区感知，持久化存储。**
@@ -358,10 +359,9 @@ Agent："已创建任务：
   ✅ 提交周报（提醒）
   📅 2026-07-25 15:00 (Asia/Shanghai)
   🆔 job_a1b2c3
-```
-# ...
-### 120秒上手（周期任务 + 偏好学习）(补充)
-# ...
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 用户："每个工作日早上帮我汇总邮件"
 Agent："需要确认两点：

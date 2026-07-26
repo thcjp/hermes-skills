@@ -7,9 +7,14 @@ displayName: 日志脱敏专业版
 summary: 全功能日志脱敏工具，支持批量定时监控、MCP工具流水线、自定义规则引擎、合规报告导出与告警通道集成.
 license: Proprietary
 edition: pro
-description: 日志脱敏工具专业版面向团队与企业级日志安全场景，在免费版基础上扩展全功能脱敏能力。解决团队日志治理的"规模与合规"痛点：海量日志文件需要定时自动扫描、不同业务线需要差异化脱敏规则、合规审计要求可追溯的脱敏报告、敏感信息泄露需要实时告警、跨平台日志流水线需要统一编排。Use
-  when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
-tags: 日志安全,邮件,yaml,rules,日志脱敏,请参考
+description: "日志脱敏工具专业版面向团队与企业级日志安全场景，在免费版基础上扩展全功能脱敏能力。解决团队日志治理的\"规模与合规\"痛点：海量日志文件需要定时自发扫描、不同业务线需要差异化脱敏规则、合规审计要求可追溯的脱敏报告、敏感信息泄露需要实时告警、跨平台日志流水线需要统一编排。Use. 适用于需要log sanitizer相关能力的开发场景,提供结构化的工作流程和配置指引."
+tags:
+  - 日志安全
+  - 邮件
+  - yaml
+  - rules
+  - 日志脱敏
+  - 请参考
 tools:
   - read
   - exec
@@ -17,7 +22,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
+pricing_tier: L2-标准级
 ---
 
 # 日志脱敏工具（专业版）
@@ -87,9 +92,9 @@ python3 （请参考skill目录中的脚本文件） schedule --cron "0 2 * * *"
 # ...
 # 4. 立即执行全量脱敏并生成合规报告
 python3 （请参考skill目录中的脚本文件） scan /var/log/ --redact --report pdf --output reports/
-```
-
-### 企业部署模板
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 # enterprise-config.yaml
 enterprise:
@@ -371,9 +376,9 @@ example.com/log-alert
   pipeline:
     enabled: true
     config: pipeline.yaml
-```
-
-### 告警通知模板
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "alert_type": "SENSITIVE_INFO_DETECTED",
@@ -393,7 +398,7 @@ example.com/log-alert
 
 ---
 
-## 最佳实践
+## 优秀实践
 1. **分层规则配置**：内置规则覆盖通用场景，自定义规则覆盖业务特有字段，两者协同提升覆盖率.
 2. **增量扫描优先**：对大型日志目录启用增量扫描，仅扫描新增或修改文件，大幅降低扫描时间.
 3. **告警阈值分级**：CRITICAL级别立即告警，HIGH级别汇总后告警，MEDIUM级别纳入日报.

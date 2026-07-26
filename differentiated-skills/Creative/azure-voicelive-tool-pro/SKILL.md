@@ -1,4 +1,5 @@
 ---
+
 slug: "azure-voicelive-tool-pro"
 name: "azure-voicelive-tool-pro"
 version: "1.0.0"
@@ -6,11 +7,7 @@ displayName: "Azure语音交互专业版"
 summary: "企业级实时语音AI工具，支持函数调用、自定义语音、电话音频、高级会话与中断处理。。Azure语音交互专业版 —— 面向企业团队与专业开发者的高级实时语音AI工具。核心能力: - 函数调用（F"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  Azure语音交互专业版 —— 面向企业团队与专业开发者的高级实时语音AI工具。核心能力:
-  - 函数调用（Function Tools），支持AI主动调用外部API
-  - 自定义语音集成：Azure标准语音、自定义语音、个人语音
-  - 电话音频格式支持：G。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
+description: "|-. 适用于需要azure voicelive tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 语音AI
   - Azure
@@ -22,15 +19,15 @@ tags:
   - type
   - async
   - conn
-  - event
-  - function
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Operations"
+pricing_tier: L2-标准级
 ---
+
 # Azure语音交互专业版
 
 ## 概述
@@ -442,7 +439,7 @@ asyncio.run(main())
 | AzureCustomVoice | 自定义训练语音 | 品牌专属 |
 | AzurePersonalVoice | 个人语音克隆 | 个性化 |
 
-## 最佳实践
+## 优秀实践
 
 1. **函数工具设计**：函数描述清晰，参数定义完整，便于AI正确调用
 2. **中断处理**：始终实现speech_started中断处理，提升用户体验

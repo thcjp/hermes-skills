@@ -7,13 +7,7 @@ displayName: QQ空间相册专业版
 summary: "专业相册管理平台，支持批量下载、相册创建上传与多平台迁移.。面向专业用户的QQ空间相册管理平台。支持批量下载整个相册、创建"
 license: Proprietary
 edition: pro
-description: "面向专业用户的QQ空间相册管理平台。支持批量下载整个相册、创建
-  新相册、批量上传照片、相册管理与多平台迁移（至Google Photos/
-  iCloud等）。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。减少重复劳动，提升工作效率。触发关键词：自动化、测试、性能优化、转换、设计、图片"
-
-  新相册、批量上传照片、相册管理与多平台迁移（至Google Photos/
-
-  iCloud等）。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。'
+description: "面向专业用户的QQ空间相册管控平台。兼容成批下载整个相册、创建. 适用于需要qq zone photo tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Operations
   - QQ空间
@@ -25,9 +19,6 @@ tags:
   - 写作
   - 电商
   - 工作流
-  - 研究
-  - pro
-  - python3
 tools:
   - read
   - exec
@@ -35,8 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
+pricing_tier: L2-标准级
 ---
+
 # QQ空间相册专业版（PRO版）
 
 ## 概述
@@ -217,7 +209,7 @@ pro_config:
     timezone: "Asia/Shanghai"
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### PRO版高级实践
 

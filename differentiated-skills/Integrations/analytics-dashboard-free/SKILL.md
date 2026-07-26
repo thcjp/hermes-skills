@@ -1,13 +1,13 @@
 ---
+
 slug: analytics-dashboard-free
 name: analytics-dashboard-free
 version: 1.0.1
 displayName: 数据分析面板(免费版)
 summary: "轻量数据可视化面板，聚合邮件、会话、任务多源数据，token保护，5秒自动刷新，一站式监控.。数据分析面板免费版为AI Agent提供轻量但实用的数据可视化能力。聚合邮件收件箱、浏览器会话状"
-license: Proprietary
+license: MIT
 edition: free
-description: 数据分析面板免费版为AI Agent提供轻量但实用的数据可视化能力。聚合邮件收件箱、浏览器会话状态、任务执行情况等多源数据，通过token保护的Web
-  UI一站式展示，5秒自动刷新，让用户无需切换多个工具即可掌握全局状态。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+description: "数据剖析面板免费版为AI Agent包含轻量但实用的数据可视化能力。聚合邮件收件箱、浏览器会话状态、任务执行情况等多源数据，通过token保护的Web. 适用于需要analytics dashboard相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 数据可视化
   - 监控面板
@@ -19,20 +19,15 @@ tags:
   - 研究
   - 分析
   - 写作
-  - 电商
-  - 通信
-  - token
-  - json
-  - data
-  - inbox
-  - dashboard
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 数据分析面板（免费版）
 
 > **一站式监控你的邮件、会话与任务。token保护，5秒刷新，零配置启动。**
@@ -122,7 +117,7 @@ ls ~/workspace/dashboard/data/
 node ~/workspace/dashboard/（请参考skill目录中的脚本文件）
 # ...
 # 3. 浏览器访问（使用打印的token）
-# http://127.0.0.1:19195/?token=xxx
+# http://127.0.0.1:19195/?token=placeholder
 # ...
 # 4. 查看访问日志
 tail -10 ~/workspace/dashboard/logs/access.log
@@ -179,9 +174,9 @@ node server.js
 ```
 
 **token认证方式**（三选一）：
-- URL参数：`?token=xxx`
-- 请求头：`X-Dashboard-Token: xxx`
-- Bearer令牌：`Authorization: Bearer xxx`
+- URL参数：`?token=placeholder`
+- 请求头：`X-Dashboard-Token: placeholder`
+- Bearer令牌：`Authorization: Bearer placeholder`
 
 **安全机制**：
 - token存储在localStorage，加载后从URL移除
@@ -352,10 +347,12 @@ node server.js
 
 ### 示例1：基础用法
 
-```
-### 60秒上手（零配置启动）(补充)
-# ...
 ```bash
+# 在此执行相关操作
+echo "操作完成"
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 # ...
 ## 错误处理

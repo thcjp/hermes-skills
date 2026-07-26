@@ -1,37 +1,34 @@
 ---
+
 slug: dns-lookup-tool-free
 name: dns-lookup-tool-free
 version: 1.0.0
 displayName: DNS查询免费版
 summary: "使用dig工具解析域名A/AAAA/CNAME/MX记录，支持基础正反向查询与文档输出.。DNS查询免费版是一款面向运维与开发者的轻量级DNS诊断Skill，封装标准dig命令并提供结构化输"
-license: Proprietary
+license: MIT
 edition: free
-description: 'DNS查询免费版是一款面向运维与开发者的轻量级DNS诊断Skill，封装标准dig命令并提供结构化输出。核心能力：
-
-  - 解析A、AAAA、CNAME、MX、TXT、NS等常见记录类型
-
-  - 支持反向DNS查询（PTR记录）
-
-  - 指定上游DNS服务器（如1。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
+description: "DNS查询免费版是一款面向运维与开发者的轻量级DNS诊断Skill，封装标准dig命令并包含结构化输出。核心能力：. 适用于需要dns lookup tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要dns lookup tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - DNS查询
+  - dns
+  - lookup
+  - automation
+  - productivity
   - 网络诊断
   - 运维工具
   - 域名解析
   - 工具
   - 效率
-  - 运维
-  - 监控
-  - dns
-  - dig
-  - short
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # DNS查询免费版（DNS Lookup Tool Free）
 
 ## 概述
@@ -82,7 +79,7 @@ DNS是互联网的"电话簿"，但原生dig命令的输出对非运维人员不
 ## 使用场景
 
 ### 场景一：网站打不开排查
-用户报告网站无法访问。第一步用`dig example.com A +short`确认域名是否解析到正确IP。若返回空或错误IP，问题在DNS；若返回正确IP，问题在网络或服务端.
+用户报告网站无法访问。领先步用`dig example.com A +short`确认域名是否解析到正确IP。若返回空或错误IP，问题在DNS；若返回正确IP，问题在网络或服务端.
 ### 场景二：DNS变更验证
 修改DNS记录后，需要确认全球生效情况。通过`dig @1.1.1.1 example.com A`与`dig @8.8.8.8 example.com A`对比不同DNS的缓存状态，判断TTL过期进度.
 ### 场景三：邮件配置检查
@@ -164,7 +161,7 @@ sudo apt-get install -y dnsutils
 | 阿里DNS | 223.5.5.5 | 国内速度快 |
 | 腾讯DNS | 119.29.29.29 | 国内速度快 |
 
-## 最佳实践
+## 优秀实践
 
 1. **先精简后完整**：先用`+short`快速确认结果，需要细节时去掉`+short`
 2. **多源对比**：DNS变更后，至少对比2个DNS服务器的结果

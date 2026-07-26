@@ -1,40 +1,13 @@
 ---
+
 slug: tmux-session-tool-free
 name: tmux-session-tool-free
 version: 1.0.0
 displayName: Tmux会话工具免费版
 summary: "纯tmux指令操作终端会话,支持会话定位、内容查看、指令发送与调试。面向个人开发者的 tmux 会话管理工具,通过纯 tmux 指令操作终端会话。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人开发者的 tmux 会话管理工具,通过纯 tmux 指令操作终端会话。核心能力:
-
-  - 定位目标 tmux 会话与窗格
-
-  - 查看会话最新交互内容
-
-  - 向指定窗格发送指令
-
-  - 执行 /compact 等会话命令
-
-  - 转储原始缓冲区用于调试
-
-  适用场景:
-
-  - 个人开发环境会话管理
-
-  - 与 tmux 中的代码助手交互
-
-  - 远程终端会话调试
-
-  差异化:
-
-  - 免费版提供单会话管理能力
-
-  - 纯 tmux 指令,无需额外脚本
-
-  - 操作简单,开箱即用
-
-  适用关键词: tmux, session, pan...'
+description: "面向个人开发者的 tmux 会话管控工具,通过纯 tmux 指令操作终端会话。核心能力:. 适用于需要tmux session tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 终端工具
   - tmux
@@ -46,7 +19,6 @@ tags:
   - target
   - bash
   - claude
-  - myproject
 tools:
   - read
   - exec
@@ -54,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Tmux 会话工具免费版
 
 ## 概述
@@ -190,7 +164,7 @@ tmux -S /path/to/socket list-panes -a
 
 ## 快速开始
 
-### 第一步: 创建 tmux 会话
+### 领先步: 创建 tmux 会话
 
 ```bash
 # 创建命名会话
@@ -256,7 +230,7 @@ Ctrl-b : select-pane -T tests
 | 切换窗格 | `Ctrl-b 方向键` | 切换焦点 |
 | 列出会话 | `Ctrl-b s` | 选择会话 |
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 始终确认目标窗格
 
@@ -333,7 +307,7 @@ fi
 选择 `window_index` 和 `pane_index` 最低的那个,除非上下文有其他指示:
 
 ```bash
-# 如果有多个匹配,取第一个
+# 如果有多个匹配,取领先个
 TARGET=$(tmux list-panes -a -F '#{session_name}:#{window_index}.#{pane_index} #{pane_title}' \
   | grep "^myproject" | grep -i claude | head -1 | awk '{print $1}')
 ```
@@ -372,7 +346,7 @@ tmux -S /path/to/socket capture-pane -p -J -t $TARGET -S -200
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(Markdown 指令 + 命令行执行)
+- **分类**: MD+EXEC模式Markdown 指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 执行 tmux 命令管理终端会话
 - **离线可用**: 是,tmux 操作在本地完成
 

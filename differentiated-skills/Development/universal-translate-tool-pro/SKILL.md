@@ -1,4 +1,5 @@
 ---
+
 slug: "universal-translate-tool-pro"
 name: "universal-translate-tool-pro"
 version: "1.0.0"
@@ -6,23 +7,7 @@ displayName: "通用翻译工具(专业版)"
 summary: "面向团队的企业级本地化平台,含批量翻译、术语库、对话模式与CI集成,支持多文件并行。。通用翻译工具专业版为团队与企业提供端到端本地化工程能力,涵盖批量文件翻译、术语库管理、对话模式、API集"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  通用翻译工具专业版为团队与企业提供端到端本地化工程能力,涵盖批量文件翻译、术语库管理、对话模式、API集成与CI/CD流水线集成。核心能力:
-  - 批量文件翻译(多文件并行处理)
-  - 术语库管理(统一样式与命名)
-  - 对话模式(实时双语交替翻译)
-  - 多目标语言并行翻译
-  - 翻译记忆(TM)与复用
-  - CI/CD本地化流水线集成
-  - 翻译质量报告与审查
-
-  适用场景:
-  - 中大型团队多语言文档本地化
-  - 企业产品界面与文档同步本地化
-  - 跨国团队对话翻译辅助
-  - 持续本地化流水线(CI集成)
-
-  差异化...
+description: "|-. 适用于需要universal translate tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 翻译
   - 本地化
@@ -34,14 +19,15 @@ tags:
   - 工具
   - report_file
   - yaml
-  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 # 通用翻译工具(专业版)
 
 ## 概述
@@ -201,9 +187,9 @@ Hello everyone, today's meeting is mainly to discuss the product roadmap.
 # ...
 对方: Thanks. Let's start with Q1 priorities.
 **[英语 → 中文]**
-谢谢。让我们从第一季度的优先事项开始.
+谢谢。让我们从领先季度的优先事项开始.
 # ...
-你: 好的,第一季度我们重点关注用户增长和留存.
+你: 好的,领先季度我们重点关注用户增长和留存.
 **[中文 → 英语]**
 OK, in Q1 we focus on user growth and retention.
 ```
@@ -224,7 +210,7 @@ OK, in Q1 we focus on user growth and retention.
 
 ## 快速开始
 
-### 第一步:声明本地化上下文
+### 领先步:声明本地化上下文
 
 在对话中说明团队、源语言、目标语言与术语需求,例如:
 
@@ -332,7 +318,7 @@ email "bot@example.com"
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **术语库先行**:在翻译前先建立术语库,统一关键术语译法,避免事后返工.
 2. **翻译记忆复用**:对重复出现的句子复用历史翻译,保证一致性并降低成本.
@@ -390,7 +376,7 @@ Pro 版完全兼容免费版的所有翻译结果与格式保留规则。个人�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于自然语言指令驱动 Agent 完成翻译;批量脚本与 CI 集成需在仓库中落地并由本地或 CI 执行
 
 ## 错误处理

@@ -1,32 +1,13 @@
 ---
+
 slug: notion-api-toolkit-free
 name: notion-api-toolkit-free
 version: 1.0.1
 displayName: Notion API工具箱(免费版)
 summary: 轻量化Notion API集成工具,支持OAuth鉴权、页面查询、数据库检索与基础读写,适合个人快速接入Notion工作空间.
-license: Proprietary
+license: MIT
 edition: free
-description: Notion API工具箱(免费版)是面向个人开发者与知识工作者的轻量化Notion集成Skill,通过托管OAuth与REST API的组合,帮助用户在数分钟内接入Notion工作空间。核心能力:，可自动提升工作效率
-
-  - 托管OAuth鉴权,无需自建鉴权服务
-
-  - 页面与数据库的查询、检索
-
-  - 基础读写操作(创建、更新、归档页面)
-
-  - 块级内容管理(读取、追加、删除)
-
-  - 用户信息查询
-
-  - 写操作强制用户确认,保障数据安全
-
-  适用场景:
-
-  - 个人Notion工作空间的自动化查询
-
-  - 小型团队的页面检索与读取
-
-  - MVP阶段的..'
+description: "Notion API工具箱(免费版)是面向个人开发者与知识工作者的轻量化Notion集成Skill,通过托管OAuth与REST API的组合,帮助用户在数分钟内接入Notion工作空间。核心能力:，可自发提升工作效率. 适用于需要notion api toolkit相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 集成工具
   - Notion
@@ -38,14 +19,15 @@ tags:
   - notion
   - api
   - bash
-  - page
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # Notion API工具箱(免费版)
 
 一个面向个人开发者与知识工作者的轻量化Notion集成Skill,通过托管OAuth与REST API的组合,帮助你快速接入Notion工作空间。本免费版聚焦查询与基础读写,适合个人与小型团队试用.
@@ -254,7 +236,7 @@ notion-toolkit page archive <pageId>
 | `quote` | 引用 |
 | `divider` | 分割线 |
 
-## 最佳实践
+## 优秀实践
 
 1. **写操作必须用户确认**:任何创建、更新、删除操作前,明确告知用户目标资源与影响
 2. **使用最小权限连接**:仅授予任务所需的页面与数据库访问权限
@@ -347,7 +329,7 @@ A: 在API 2025-09-03中,`POST /databases`仅接受title属性,其他属性会被
 - **权限最小化**: OAuth授权时仅勾选任务所需的权限范围
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作
 
 ## 输出格式

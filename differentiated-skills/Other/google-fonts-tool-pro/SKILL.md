@@ -7,25 +7,7 @@ displayName: 谷歌字体工具专业版
 summary: "面向团队的自托管、子集化、合规与多字体系统治理工具.。面向团队与企业的 Google Fonts 自托管、子集化与字体系统治理专业工具。核心能力:"
 license: Proprietary
 edition: pro
-description: 面向团队与企业的 Google Fonts 自托管、子集化与字体系统治理专业工具。核心能力:。可自动提升工作效率
-
-  - GDPR 合规自托管与子集化
-
-  - 字体系统（令牌、字阶、多语言）治理
-
-  - 字体性能预算与 LCP 优化
-
-  - 字体版权与许可合规审计
-
-  适用场景:
-
-  - 企业站点 GDPR 合规自托管字体
-
-  - 多语言站点字体系统统一治理
-
-  - 字体性能预算与 LCP 优化
-
-  差异化: 专业版在免费版加载优化上扩展自托管、子集化、字体系统治理与合规审计，兼容免费版搭配方案'
+description: "面向团队与企业的 Google Fonts 自托管、子集化与字体系统治理专业工具。核心能力:。可自发提升工作效率. 适用于需要google fonts tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 字体
   - 企业级
@@ -37,10 +19,6 @@ tags:
   - 安全
   - 加密
   - woff2
-  - fonts
-  - lcp
-  - 字体系统
-  - font
 tools:
   - read
   - exec
@@ -48,7 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
+pricing_tier: L2-标准级
 ---
 
 # 谷歌字体工具（专业版）
@@ -177,7 +155,7 @@ curl -o inter.woff2 "https://gwfh.mranftl.com/api/fonts/inter?download=zip&subse
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 - **GDPR 必自托管**：Google Fonts 会记录 IP，欧盟站点务必自托管.
 - **子集按语言**：CJK 字体按语言切片，latin 仅需时再加 latin-ext.

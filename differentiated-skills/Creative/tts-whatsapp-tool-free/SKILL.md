@@ -1,40 +1,13 @@
 ---
+
 slug: tts-whatsapp-tool-free
 name: tts-whatsapp-tool-free
 version: 1.0.0
 displayName: WhatsApp语音消息免费版
 summary: 基于 Piper TTS 的 WhatsApp 语音消息发送工具,支持 40+ 语言,适合个人用户发送语音消息.
-license: Proprietary
+license: MIT
 edition: free
-description: 面向个人用户的 WhatsApp 语音消息工具(免费版)。核心能力:，可自动提升工作效率
-
-  - 基于 Piper TTS 的高质量语音合成(40+ 语言)
-
-  - 文字转 OGG/Opus 格式(WhatsApp 兼容)
-
-  - 自动发送语音消息到指定联系人
-
-  - 支持中文、英文、法文、西班牙文等
-
-  - 可调语速与音质
-
-  - 发送后自动清理临时文件
-
-  适用场景:
-
-  - 个人 WhatsApp 语音消息发送
-
-  - 多语言沟通辅助
-
-  - 文字转语音快速发送
-
-  - 无法语音输入时替代打字
-
-  差异化:
-
-  - 免费版聚焦单条消息发送核心能力
-
-  - 完...'
+description: "面向个人用户的 WhatsApp 语音消息工具(免费版)。核心能力:，可自发提升工作效率. 适用于需要tts whatsapp tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 创意设计
   - 语音合成
@@ -46,15 +19,15 @@ tags:
   - 语音消息
   - whatsapp
   - tts-whatsapp
-  - target
-  - bash
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: free
 ---
+
 # WhatsApp 语音消息工具 - 免费版
 
 ## 概述
@@ -208,10 +181,10 @@ export PIPER_DEFAULT_VOICE="zh_CN-huayan-medium"
 export PIPER_DEFAULT_QUALITY="medium"
 ```
 
-### 4. 发送第一条语音
+### 4. 发送领先条语音
 
 ```bash
-tts-whatsapp "你好,这是第一条语音消息!" --target "+8613800138000"
+tts-whatsapp "你好,这是领先条语音消息!" --target "+8613800138000"
 ```
 
 ## 示例
@@ -268,7 +241,7 @@ tts-whatsapp "你好,这是第一条语音消息!" --target "+8613800138000"
 | medium | 中 | ~120KB | 推荐平衡 |
 | high | 高 | ~200KB | 重要内容,清晰度优先 |
 
-## 最佳实践
+## 优秀实践
 
 1. **语音模型选择**
    - 中文:推荐 `zh_CN-huayan-medium`
@@ -351,7 +324,7 @@ tts-whatsapp "你好,这是第一条语音消息!" --target "+8613800138000"
 - 建议使用配置文件管理目标号码与默认参数
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。免费版聚焦单条语音消息发送,适合个人用户多语言沟通.
 ## 错误处理
 

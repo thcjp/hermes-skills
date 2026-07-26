@@ -1,4 +1,5 @@
 ---
+
 slug: "dlazy-audio-tool-pro"
 name: "dlazy-audio-tool-pro"
 version: "1.0.0"
@@ -6,12 +7,7 @@ displayName: "音频生成工具-专业版"
 summary: "全功能音频生成引擎，支持TTS、语音克隆、音乐生成、多角色对话与管道链接批量处理。。音频生成工具专业版，面向专业内容团队的全功能音频生成平台。核心能力： - 15+ 音频模型全覆盖（TTS、"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  音频生成工具专业版，面向专业内容团队的全功能音频生成平台。核心能力：
-  - 15+ 音频模型全覆盖（TTS、语音克隆、音乐生成、音效、对话）
-  - 多角色对话一次性渲染（最多10个角色）
-  - 语音克隆（ElevenLabs IVC、Qwen、Kling、Vidu）
-  - 原创音乐生成（Suno V5
+description: "|-. 适用于需要dlazy audio tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Creative
   - Audio
@@ -23,15 +19,15 @@ tags:
   - dlazy
   - text
   - bash
-  - voice
-  - 音频生成
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: L2-标准级
 ---
+
 # 音频生成工具（专业版）
 
 ## 概述
@@ -166,7 +162,7 @@ dlazy seedream-4.5 --prompt "city skyline" --n 4 \
 dlazy elevenlabs-search \
   --keyword "warm female narrator" \
   --category "audiobook" \
-  | dlazy elevenlabs-tts --text "第一章 初次相遇" --voice @0.voice_id
+  | dlazy elevenlabs-tts --text "领先章 初次相遇" --voice @0.voice_id
 ```
 
 ### 管道引用速查
@@ -174,7 +170,7 @@ dlazy elevenlabs-search \
 | 引用 | 解析为 |
 |---:|---:|
 | `-` | 上游输出的自然值 |
-| `@N` | 第N个输出的主值（@0 = 第一个输出URL） |
+| `@N` | 第N个输出的主值（@0 = 领先个输出URL） |
 | `@N.path` | 深入第N个输出（@0.url, @1.meta.fps） |
 | `@*` | 所有输出的主值数组 |
 | `@stdin` | 完整上游JSON信封 |
@@ -281,7 +277,7 @@ dlazy suno-music \
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **声音样本质量**：语音克隆需上传 30 秒以上干净样本，无背景噪音.
 2. **对话角色上限**：单次对话最多 10 个角色，超过请分段渲染.
@@ -289,7 +285,7 @@ dlazy suno-music \
 4. **音乐风格词**：Suno 使用具体风格词（如 "lo-fi chill"）比泛泛描述效果好.
 5. **批量生成**：长内容分段生成后用管道链接自动拼接.
 ```text
-专业版最佳实践:
+专业版优秀实践:
 [ ] 声音样本已清洗（无噪音，> 30秒）
 [ ] 对话角色数 ≤ 10
 [ ] 管道引用已用 --dry-run 测试
@@ -303,7 +299,7 @@ dlazy suno-music \
 
 ### Q: 语音克隆需要什么样的声音样本？
 
-A: 需要 30 秒以上的干净语音样本，无背景音乐和噪音。WAV 格式效果最佳。样本越清晰，克隆质量越高.
+A: 需要 30 秒以上的干净语音样本，无背景音乐和噪音。WAV 格式效果优秀。样本越清晰，克隆质量越高.
 ### Q: 管道链接中 stdin 为空怎么办？
 
 A: 上游命令未输出 JSON 信封时，CLI 会返回 `code: "no_stdin"` 错误。检查上游命令是否执行成功.
@@ -372,9 +368,9 @@ A: dlazy 文件服务托管的 URL 有一定有效期。建议生成后通过 `-
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

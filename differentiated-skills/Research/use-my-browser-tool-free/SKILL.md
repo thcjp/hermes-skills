@@ -5,22 +5,20 @@ name: use-my-browser-tool-free
 version: 1.0.0
 displayName: 真实浏览器控制免费版
 summary: "通过用户脚本注入控制真实 Chrome 浏览器,共享登录态与 Cookie,适合个人自动化操作。真实浏览器控制免费版,面向个人用户提供直接控制用户真实 Chrome 浏览器的能力。通过用户脚"
-license: Proprietary
+license: MIT
 edition: free
-description: "真实浏览器控制免费版,面向个人用户提供直接控制用户真实 Chrome 浏览器的能力。通过用户脚本注入技术,在页面上下文中执行 JavaScript,共享所有
-  Cookie、会话和登录状态。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。自动化生成专业文档，提升文档覆盖率。触发关键词：文档生成、自动化、安全、性能优化、搜索、Excel"
-  Cookie、会话和登录状态。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
+description: "真实浏览器控制免费版,面向个人用户包含直接控制用户真实 Chrome 浏览器的能力。通过用户脚本注入技术,在页面上下文中执行 JavaScript,共享所有. 适用于需要use my browser tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量."
 tags:
   - 研究工具
+  - use
+  - browser
+  - automation
+  - productivity
   - 浏览器控制
   - 个人效率
   - 搜索
   - 检索
   - 工具
-  - bash
-  - tmwd_exec
-  - document
-  - code
 tools:
   - read
   - exec
@@ -28,8 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
 
 ---
+
 # 真实浏览器控制免费版
 
 ## 概述
@@ -265,7 +265,7 @@ tmwd_text(max_chars=5000)
 | 返回上一页 | `history.back()` |
 | 按文本匹配点击 | `var btns=document.querySelectorAll('button'); for(var i=0;i<btns.length;i++){if(btns[i].innerText.includes('Submit')){btns[i].click();break}}` |
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 优先使用 tmwd,失败再回退
 
@@ -374,7 +374,7 @@ browser(action="snapshot", targetId=<targetId>)
 免费版基于本地浏览器运行,无需额外 API Key。所有操作在用户的真实浏览器中执行,数据不离开本机.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,通过 exec 执行浏览器控制命令)
+- **分类**: MD+EXEC模式纯 Markdown 指令,通过 exec 执行浏览器控制命令)
 - **说明**: 基于用户脚本注入的真实浏览器控制工具,通过自然语言指令驱动 Agent 操作用户已登录的浏览器
 - **适用规模**: 单用户、单浏览器实例、本地运行
 

@@ -7,17 +7,7 @@ displayName: 智能灯控(专业版)
 summary: "全功能智能灯控方案，支持多灯同步、灯光秀、场景预设与定时计划.。智能灯控专业版是一款面向局域网智能灯泡的全功能控制方案，兼容 TP-Link Kasa 协议设备，覆盖单灯控制、多灯同步、灯光"
 license: Proprietary
 edition: pro
-description: 智能灯控专业版是一款面向局域网智能灯泡的全功能控制方案，兼容 TP-Link Kasa 协议设备，覆盖单灯控制、多灯同步、灯光秀编排、场景预设、定时计划与日出日落联动等完整能力。核心能力：。可自动提升工作效率
-
-  - 多灯批量同步控制，支持分组与级联编排
-
-  - 灯光秀序列引擎，支持渐变、闪烁、节拍同步等过渡效果
-
-  - 场景预设保存与一键切换，支持 JSON 配置导入导出
-
-  - 定时计划任务与日出日落联动，自动适配地理位置
-
-  - 设备健康监控与异常告警...'
+description: "智能灯控专业版是一款面向局域网智能灯泡的全功能控制方案，兼容 TP-Link Kasa 协议设备，覆盖单灯控制、多灯同步、灯光秀编排、场景预设、定时计划与日出日落联动等完整能力。核心能力：。可自发提升工作效率. 适用于需要smart light controller相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 智能家居
   - 灯光控制
@@ -29,11 +19,6 @@ tags:
   - 电商
   - 工作流
   - 开发
-  - bash
-  - run
-  - json
-  - hsv
-  - brightness
 tools:
   - read
   - exec
@@ -41,7 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
+pricing_tier: L2-标准级
 ---
 
 # 智能灯控工具（专业版）
@@ -161,7 +146,7 @@ uv run light_schedule.py --rule sunrise-wake --offset -30 --duration 20 \
 
 ### 120 秒上手
 
-第一步，安装依赖：
+领先步，安装依赖：
 
 ```bash
 uv pip install python-kasa>=0.10.2 astral>=3.2
@@ -173,7 +158,7 @@ uv pip install python-kasa>=0.10.2 astral>=3.2
 uv run light_registry.py --discover --save devices.json
 ```
 
-第三步，创建第一个场景并应用：
+第三步，创建领先个场景并应用：
 
 ```bash
 uv run light_scene.py --create evening --template warm-dim
@@ -221,7 +206,7 @@ py --rule sunrise-wake --offset -30 --duration 20
 uv run light_monitor.py --interval 60 --alert-webhook https://your-hook.example/notify
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 并行指令优化
 

@@ -1,38 +1,13 @@
 ---
+
 slug: video-producer-tool-free
 name: video-producer-tool-free
 version: 1.0.0
 displayName: 短视频生成-免费版
 summary: "轻量短视频一键生成工具，支持画面规划、AI素材生成、TTS配音与视频渲染，适合个人创作者快速出片.。短视频生成免费版，为个人创作者提供从文案到成片的轻量化生产流程。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '短视频生成免费版，为个人创作者提供从文案到成片的轻量化生产流程。核心能力:
-
-  - 画面规划（分镜表自动生成）
-
-  - AI 素材生成（按文案智能匹配）
-
-  - TTS 配音（单场景配音）
-
-  - 视频渲染（Remotion + 动画）
-
-  - 音视频合成输出 MP4
-
-  适用场景:
-
-  - 个人短视频博主快速出片
-
-  - 知识科普视频制作
-
-  - 社交媒体内容创作
-
-  - 简易宣传视频生成
-
-  差异化:
-
-  - 免费版聚焦单视频生成流程，零门槛上手
-
-  - 内置常用素材关键词映射表...'
+description: "短视频产出免费版，为个人创作者包含从文案到成片的轻量化生产流程。核心能力:. 适用于需要videoducer tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Creative
   - 视频生成
@@ -44,16 +19,15 @@ tags:
   - 创意
   - text
   - emoji
-  - title
-  - 配音
-  - tts
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # 短视频生成工具 - 免费版
 
 ## 概述
@@ -204,7 +178,7 @@ node produce.js "小店宣传" '[
 
 ```bash
 node produce.js "学习要点" '[
-  {"text":"第一步 理解基础概念","emoji":"📚","title":"基础概念"},
+  {"text":"领先步 理解基础概念","emoji":"📚","title":"基础概念"},
   {"text":"第二步 掌握核心方法","emoji":"💡","title":"核心方法"},
   {"text":"第三步 实际应用练习","emoji":"✏️","title":"实践练习"}
 ]'
@@ -223,7 +197,7 @@ node produce.js "学习要点" '[
 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步：环境准备
+### 领先步：环境准备
 
 ```bash
 # 检查 Node.js 版本（需 16+）
@@ -233,7 +207,7 @@ node --version
 npx remotion --version
 ```
 
-### 第二步：生成第一个视频
+### 第二步：生成领先个视频
 
 最简单的用法 - 单场景视频：
 
@@ -319,7 +293,7 @@ test-video/
 └── out/final.mp4      # 最终视频
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 文案设计建议
 

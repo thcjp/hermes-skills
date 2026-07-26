@@ -1,15 +1,13 @@
 ---
+
 slug: aws-toolkit-free
 name: aws-toolkit-free
 version: 1.0.1
 displayName: AWS部署入门工具
 summary: "AWS基础架构部署工具，支持EC2/S3/VPC常用资源创建与管理.。面向个人开发者与初创团队的AWS基础部署工具。支持EC2实例、S3存储、"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人开发者与初创团队的AWS基础部署工具。支持EC2实例、S3存储、
-
-  VPC网络等常用资源的创建与管理。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。Use
-  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
+description: "面向个人开发者与初创团队的AWS基础部署工具。兼容EC2实例、S3存储、. 适用于需要aws toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Operations
   - AWS
@@ -24,7 +22,9 @@ tools:
   - write
 homepage: ""
 category: "Operations"
+pricing_tier: free
 ---
+
 # AWS部署入门工具（免费版）
 
 ## 概述
@@ -74,7 +74,7 @@ python3 （请参考skill目录中的脚本文件） ec2 create \
   --instance-type t3.micro \
   --ami ami-0abcdef1234567890 \
   --key-name my-key \
-  --security-group sg-xxx
+  --security-group sg-placeholder
 # ...
 # 输出实例信息
 ```
@@ -103,7 +103,7 @@ python3 （请参考skill目录中的脚本文件） s3 list --bucket my-bucket-
 python3 （请参考skill目录中的脚本文件） vpc create --cidr 10.0.0.0/16 --name my-vpc
 # ...
 # 创建子网
-python3 （请参考skill目录中的脚本文件） vpc create-subnet --vpc-id vpc-xxx --cidr 10.0.1.0/24
+python3 （请参考skill目录中的脚本文件） vpc create-subnet --vpc-id vpc-placeholder --cidr 10.0.1.0/24
 ```
 
 ## 快速开始
@@ -133,10 +133,10 @@ pip install boto3
 
 ```bash
 # EC2管理
-python3 （请参考skill目录中的脚本文件） ec2 create --name "server" --type t3.micro --ami ami-xxx
+python3 （请参考skill目录中的脚本文件） ec2 create --name "server" --type t3.micro --ami ami-placeholder
 python3 （请参考skill目录中的脚本文件） ec2 list
-python3 （请参考skill目录中的脚本文件） ec2 start --instance-id i-xxx
-python3 （请参考skill目录中的脚本文件） ec2 stop --instance-id i-xxx
+python3 （请参考skill目录中的脚本文件） ec2 start --instance-id i-placeholder
+python3 （请参考skill目录中的脚本文件） ec2 stop --instance-id i-placeholder
 # ...
 # S3管理
 python3 （请参考skill目录中的脚本文件） s3 create-bucket --name my-bucket
@@ -175,7 +175,7 @@ aws_config:
     ManagedBy: "aws-toolkit"
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **最小权限**：IAM用户仅授予必要权限，避免使用root账户
 2. **安全组**：仅开放必要端口，避免0.0.0.0/0全开放

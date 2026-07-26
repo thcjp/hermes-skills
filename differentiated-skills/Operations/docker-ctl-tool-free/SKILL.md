@@ -1,15 +1,13 @@
 ---
+
 slug: docker-ctl-tool-free
 name: docker-ctl-tool-free
 version: 1.0.0
 displayName: 容器检查入门工具
 summary: "Podman/Docker容器检查工具，支持容器状态查询与日志分析.。面向个人开发者的容器检查工具，兼容Podman与Docker。支持容器状态"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人开发者的容器检查工具，兼容Podman与Docker。支持容器状态
-
-  查询、日志分析、资源使用监控与配置检查。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。Use
-  when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。'
+description: "面向个人开发者的容器检查工具，兼容Podman与Docker。兼容容器状态. 适用于需要docker ctl tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Operations
   - 容器检查
@@ -25,7 +23,9 @@ tools:
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # 容器检查入门工具（免费版）
 
 ## 概述
@@ -189,7 +189,7 @@ ctl_config:
     color: true
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **引擎选择**：Podman无需守护进程更安全，Docker生态更成熟
 2. **日志过滤**：使用grep过滤关键词，快速定位问题

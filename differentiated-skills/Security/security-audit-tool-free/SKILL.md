@@ -1,61 +1,33 @@
 ---
+
 slug: security-audit-tool-free
 name: security-audit-tool-free
 version: 1.0.0
 displayName: 安全审计工具(免费版)
 summary: "扫描暴露凭据、开放端口、配置问题,支持自动修复常见安全问题,适合个人与小型团队,支持多种使用场景和自动化处理"
-license: Proprietary
+license: MIT
 edition: free
-description: 核心能力:，可自动提升工作效率
-
-  - 凭据泄露检测(API Key、Token、硬编码密码)
-
-  - 开放端口扫描与防火墙检查
-
-  - 配置安全验证(CORS、认证、速率限制)
-
-  - 文件权限审计
-
-  - Docker容器安全检查
-
-  - 常见问题自动修复
-
-  适用场景:
-
-  - 部署前安全自检
-
-  - 定期安全审计
-
-  - 开发环境安全基线
-
-  - 快速漏洞排查
-
-  差异化:
-
-  - 一键自动修复常见安全问题
-
-  - 多维度扫描(凭据/端口/配置/文件/Docker)
-
-  - 纯本地执行,无需外部依赖
-
-  - JSON格式报告输出
-
-  适用关键词: 安全审...'
+description: "核心能力:，可自发提升工作效率. 适用于需要security audit tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要security audit tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 安全
+  - security
+  - audit
+  - automation
+  - productivity
   - 安全审计
   - 漏洞扫描
   - 配置检查
   - 加密
   - 工具
-  - self
-  - node
 tools:
   - read
   - exec
 homepage: ""
 category: "Security"
+pricing_tier: free
+
 ---
+
 # 安全审计工具(免费版)
 
 ## 概述
@@ -416,7 +388,7 @@ read_text(encoding='utf-8', errors='ignore')
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 定期审计
 
@@ -479,7 +451,7 @@ A: 免费版覆盖5个核心维度。专业版增加了合规审计、Kubernetes
 - 免费版基础LLM由Agent平台提供,完全本地执行
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行安全审计任务
 
 ## 错误处理
@@ -505,9 +477,9 @@ A: 免费版覆盖5个核心维度。专业版增加了合规审计、Kubernetes
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

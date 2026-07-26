@@ -1,13 +1,13 @@
 ---
+
 slug: self-integration-tool-free
 name: self-integration-tool-free
 version: 1.0.1
 displayName: 自集成工具
 summary: "通过统一网关连接任意外部应用并执行操作，适合个人开发者快速打通多平台.。自集成工具（免费版）通过统一集成网关让Agent连接任意外部应用（Slack、HubSpot、Notion等）并执行操"
-license: Proprietary
+license: MIT
 edition: free
-description: 自集成工具（免费版）通过统一集成网关让Agent连接任意外部应用（Slack、HubSpot、Notion等）并执行操作，无需为每个平台单独开发集成。核心能力：已有连接查询、连接器搜索、OAuth授权连接创建、动作搜索与执行、基础API参考。Use，可自动提升工作效率
-  when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
+description: "自集成工具（免费版）通过统一集成网关让Agent连接任意外部应用（Slack、HubSpot、Notion等）并执行操作，无需为每个平台单独开发集成。核心能力：已有连接查询、连接器搜索、OAuth授权连接创建、动作搜索与执行、基础API参考。Use，可自发提升工作效率. 适用于需要self integration tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 集成工具
   - 自动化
@@ -19,10 +19,6 @@ tags:
   - 代码
   - 知识
   - api
-  - slack
-  - integration_token
-  - bash
-  - authorization
 tools:
   - read
   - exec
@@ -30,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 自集成工具（免费版）
 
 ## 概述
@@ -179,7 +177,7 @@ curl https://api.integration-gateway.com/connection-requests/req_xyz \
 ```
 
 状态说明：`pending`（等待用户授权）、`success`（成功，使用`resultConnectionId`）、`error`（失败，查看`resultError`）.
-## 最佳实践
+## 优秀实践
 
 1. **复用已有连接**：执行动作前先查询已有连接，避免重复授权
 2. **动作搜索用自然语言**：`intent`参数支持自然语言描述，如"发送消息"而非精确动作名

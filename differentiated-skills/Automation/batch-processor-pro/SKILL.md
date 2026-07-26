@@ -1,11 +1,12 @@
 ---
+
 slug: batch-processor-pro
 name: batch-processor-pro
 version: 1.0.1
 displayName: 批处理专家
 summary: "解决OOM、中断无法恢复、缺乏幂等、进度不可见四大痛点，附检查点与并行决策矩阵.。批处理专家解决大批量数据处理的OOM、中断无法恢复、缺乏幂等、进度不可见四大痛点,提供流式分块、检查点恢复、"
-license: Proprietary
-description: 批处理专家解决大批量数据处理的OOM、中断无法恢复、缺乏幂等、进度不可见四大痛点,提供流式分块、检查点恢复、幂等设计、进度报告、并行决策矩阵、五级错误分级六大核心能力。适用于批量文件/API/数据清洗/媒体转换等"对N个东西做同样操作"的场景。适用关键词:批处理、批量、检查点、断点续跑、幂等、并行、流式、OOM、进度
+license: MIT
+description: "批处置专家解决大成批数据处置的OOM、中断无法恢复、缺乏幂等、进度不可见四大痛点,包含流式分块、检查点恢复、幂等设计、进度报告、并行决策矩阵、五级错误分级六大核心能力。适用于成批文件/API/数据清洗/媒体变换等\"对N个东西做同样操作\"的场景。适用关键词:批处置、成批、检查点、断点续跑、幂等、并行、流式、OOM、进度"
 tags:
   - 自动化
   - 批处理
@@ -24,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 批处理专家
 
 处理多个数据项时应用本skill。核心信条:**永远先dry-run少量样本,必有检查点可恢复,每项必幂等。**
@@ -108,15 +111,15 @@ SAMPLE_SIZE = 3
 sample_items = items[:SAMPLE_SIZE]
 results = [process(item) for item in sample_items]
 # 人工核对结果正确再放量
-```
-
-### Step 2: 计数与预估
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 "将处理47项,预计2分钟完成"
 "将处理10000项,预计3小时,已存检查点可中断恢复"
-```
-
-### Step 3: 确认破坏性操作
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 "将删除200个文件,不可恢复。确认继续?[y/N]"
 "将向1000个客户发送邮件,不可撤回。确认继续?[y/N]"
@@ -236,7 +239,7 @@ with ThreadPoolExecutor(max_workers=10) as executor:
 - 本skill基于Markdown指令,无需额外API Key
 - 涉及外部API批量调用时,通过环境变量配置API Key
 
-**可用性分类**: MD+EXEC(Markdown指令 + 脚本执行)
+**可用性分类**: MD+EXEC模式Markdown指令 + 脚本执行)
 
 ## 常见问题
 

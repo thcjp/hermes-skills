@@ -1,4 +1,5 @@
 ---
+
 slug: v2ray-proxy-tool-free
 name: v2ray-proxy-tool-free
 version: 1.1.0
@@ -6,25 +7,28 @@ displayName: 网络连通性诊断工具(免费版)
 summary: "网络连通性诊断与端口检测工具，支持ping、traceroute、端口扫描、DNS解析检查，适合开发者日常网络排障使用"
 license: MIT
 edition: free
-description: '网络连通性诊断工具免费版，面向个人开发者的轻量级网络排障工具。核心能力: 网络连通性检测(ping/traceroute)、端口开放性扫描、DNS解析诊断、路由追踪分析。适用场景: 开发者排查API连接超时、DNS解析异常、端口不通等网络问题。差异化: 免费版聚焦核心诊断功能，去除所有外部平台引用，强化中文本地化，适合个人用户零成本上手'
+description: "网络连通性诊断工具免费版，面向个人开发者的轻量级网络排障工具。核心能力: 网络连通性查验(ping/traceroute)、端口开放性扫描、DNS解析诊断、路由追踪剖析。适用场景: 开发者排查API连接超时、DNS解析异常、端口不通等网络问题。差异化: 免费版聚焦核心诊断功能，去除所有外部平台引用，强化中文本地化，适合个人用户零成本上手"
 tags:
   - 网络诊断
+  - v2ray
+  - proxy
+  - automation
+  - productivity
   - 连通性检测
   - 端口扫描
   - DNS诊断
   - 免费版
   - 工具
-  - 效率
-  - 开发
-  - 运维
-  - bash
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Security"
+pricing_tier: free
+
 ---
+
 # 网络连通性诊断（免费版）
 
 ## 概述
@@ -163,7 +167,7 @@ DNS_SERVER="8.8.8.8"
 | status | 网卡状态                  |
 ```
 
-## 最佳实践
+## 优秀实践
 
 * 排查网络问题时先用 `ping` 检测基本连通性.
 * 端口不通时用 `traceroute` 定位中断节点.
@@ -178,7 +182,7 @@ DNS_SERVER="8.8.8.8"
 A：使用traceroute定位丢包发生的节点，检查该节点的网络配置和带宽状况.
 
 **Q：DNS解析正常但无法连接？**
-A：DNS解析只是第一步，还需用nc/telnet检测目标端口是否开放，可能是防火墙拦截.
+A：DNS解析只是领先步，还需用nc/telnet检测目标端口是否开放，可能是防火墙拦截.
 
 **Q：端口扫描被拦截？**
 A：部分云服务器有安全组规则，需在云控制台检查安全组配置，开放相应端口.
@@ -234,9 +238,9 @@ A：增加超时参数 `-w 5`，或检查本地网络是否正常.
 用户: 检测 api.example.com 的连通性
 Skill: 正在执行连通性检测...
 Skill: 执行完成,结果如下: 连通正常,平均延迟45ms
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

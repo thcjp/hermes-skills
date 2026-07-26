@@ -1,45 +1,24 @@
 ---
+
 slug: multi-search-tool-free
 name: multi-search-tool-free
 version: 1.0.0
 displayName: 多搜索引擎工具免费版
 summary: "集成10个国内免费搜索引擎，通过统一入口快速搜索互联网最新信息。多搜索引擎工具免费版，集成10个国内可访问的免费搜索引擎，帮助用户通过统一入口快速搜索互联网信息。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '多搜索引擎工具免费版，集成10个国内可访问的免费搜索引擎，帮助用户通过统一入口快速搜索互联网信息。核心能力:
-
-  - 集成10个国内搜索引擎（百度、必应、360、搜狗等）
-
-  - 统一关键词搜索，自动适配各搜索引擎URL格式
-
-  - 支持单引擎查询与多引擎对比
-
-  - 覆盖通用搜索、微信文章、头条资讯、学术查询等场景
-
-  适用场景:
-
-  - 个人用户日常信息搜索
-
-  - 学生与研究者快速查找资料
-
-  - 独立开发者技术问题检索
-
-  差异化:
-
-  - 免费版聚焦国内可访问搜索引擎，零成本使用
-
-  - 纯指令驱动...'
+description: "多搜索引擎工具免费版，集成10个国内可访问的免费搜索引擎，帮助用户通过统一入口快速搜索互联网信息。核心能力:. 适用于需要multi search tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要multi search tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 搜索
+  - multi
+  - search
+  - automation
+  - productivity
   - 研究
   - 信息检索
   - 国内
   - 检索
   - 工具
-  - https
-  - keyword
-  - url
-  - www
 tools:
   - read
   - exec
@@ -47,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 # 多搜索引擎工具（免费版）
 
 ## 概述
@@ -181,7 +163,7 @@ Agent：
 
 直接告诉 Agent 要搜索的内容和使用的引擎.
 ```text
-用百度搜索"Python 异步编程最佳实践"
+用百度搜索"Python 异步编程优秀实践"
 ```
 
 ### Step 2：多引擎对比
@@ -314,7 +296,7 @@ wolframalpha.com/input?i={keyword}",
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 根据目的选择引擎
 

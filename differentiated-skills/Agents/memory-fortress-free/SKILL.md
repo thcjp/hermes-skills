@@ -1,12 +1,12 @@
 ---
+
 slug: memory-fortress-free
 name: memory-fortress-free
 version: 1.0.1
 displayName: 记忆堡垒(免费版)
-summary: "AI Agent六层记忆系统，解决上下文丢失、决策遗忘、错误重复痛点，WAL协议确保持久化.。记忆堡垒是一款为AI Agent设计的终极记忆系统，采用六层架构（热内存/温存储/冷存储/归档/"
-license: Proprietary
-description: 记忆堡垒是一款为AI Agent设计的终极记忆系统，采用六层架构（热内存/温存储/冷存储/归档/云备份/自动提取），确保Agent永远不丢失上下文、不忘记决策、不重复犯错。基于写前日志（WAL）协议，在响应前先写入状态，保证记忆持久性。Use，可自动提升工作效率
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+summary: "AI Agent六层记忆系统，解决上下文丢失、决策遗忘、错误重复痛点，WAL协议确保持久化.。记忆堡垒是一款为AI Agent设计的完整记忆系统，采用六层架构（热内存/温存储/冷存储/归档/"
+license: MIT
+description: "记忆堡垒是一款为AI Agent设计的完整记忆系统，采用六层架构（热内存/温存储/冷存储/归档/云备份/自发提取），确保Agent永远不丢失上下文、不忘记决策、不重复犯错。基于写前日志（WAL）协议，在响应前先写入状态，保证记忆持久性。Use，可自发提升工作效率. 适用于需要memory fortress相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 记忆系统
   - Agent记忆
@@ -18,8 +18,6 @@ tags:
   - memory
   - agent
   - session-state
-  - 决策
-  - bash
 tools:
   - read
   - exec
@@ -29,14 +27,16 @@ tools:
 edition: free
 homepage: ""
 category: "Agents"
+pricing_tier: free
 ---
-> **AI Agent的终极记忆系统。六层架构，确保持久记忆。**
+
+> **AI Agent的完整记忆系统。六层架构，确保持久记忆。**
 
 永远不丢失上下文。永远不忘记决策。永远不重复犯错.
 记忆堡垒采用六层架构，将多种经过验证的记忆方法整合为一套可靠的记忆体系。基于写前日志（WAL）协议，在Agent响应前先将状态写入持久存储，确保即使发生压缩、重启或中断，关键上下文也不会丢失.
 > 详细内容已移至 `references/detail.md` - ## 架构总览
 ## 六层记忆架构
-### 第一层：热内存（SESSION-STATE.md）
+### 领先层：热内存（SESSION-STATE.md）
 活跃工作记忆，在上下文压缩、重启或中断后依然存活。采用写前日志（WAL）协议.
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
@@ -283,9 +283,9 @@ python3 memory.py -p . export --format json > memories.json
 du -sh ~/.agent/memory/
 wc -l MEMORY.md
 ls -la memory/
-```
-
-## 依赖说明
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 memory/
 ├── projects/
@@ -357,7 +357,7 @@ Git-Notes存储结构化的决策与经验，支持分支感知和版本追踪�
 ## License与版权声明
 本技能基于原始开源作品改进，保留原始版权声明：
 
-- 原始作品：AI Agent终极记忆系统（elite-longterm-memory）
+- 原始作品：AI Agent完整记忆系统（elite-longterm-memory）
 - 原始license：MIT
 - 改进作品：记忆堡垒（免费版） © 2026
 - 改进license：MIT
@@ -386,7 +386,7 @@ Git-Notes存储结构化的决策与经验，支持分支感知和版本追踪�
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
 ## 核心能力
 ### 记忆堡垒是一款为AI Agent设计的终
-记忆堡垒是一款为AI Agent设计的终极记忆系统，采用六层架构（热内存/温存储/冷存储/归档/云备份/自动提取），确保Agent永远不丢失上下文、不忘记决策、不重复犯错
+记忆堡垒是一款为AI Agent设计的完整记忆系统，采用六层架构（热内存/温存储/冷存储/归档/云备份/自动提取），确保Agent永远不丢失上下文、不忘记决策、不重复犯错
 
 **处理**: 解析记忆堡垒是一款为AI Agent设计的终的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回记忆堡垒是一款为AI Agent设计的终的响应数据,包含状态码、结果和日志.

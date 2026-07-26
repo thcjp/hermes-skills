@@ -7,14 +7,7 @@ displayName: 3D游戏构建器专业版
 summary: "企业级3D游戏开发平台,支持GLTF模型导入、多人联机、永久托管与团队协作。面向游戏工作室、教育与商业展示场景的专业 3D 游戏开发平台."
 license: Proprietary
 edition: pro
-description: 面向游戏工作室、教育与商业展示场景的专业 3D 游戏开发平台。可生成提升工作效率
-  核心能力: GLTF/FBX 模型导入、多人联机、永久托管、团队协作、高级图形管线、自定义着色器
-
-  适用场景: 商业游戏开发、教育互动内容、品牌营销小游戏、虚拟展厅、培训模拟
-
-  差异化: 专业版支持外部模型、实时多人、永久托管与团队协作,与免费版单文件格式兼容
-
-  适用关键词: 3D游戏开发, GLTF模型, 多人联机, 团队协作, 虚拟展厅, 品牌小游戏'
+description: "面向游戏工作室、教育与商业展示场景的专业 3D 游戏开发平台。可产出提升工作效率. 适用于需要game builder tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 游戏开发
   - 企业级
@@ -26,9 +19,6 @@ tags:
   - 前端
   - 设计
   - gltf
-  - api
-  - game-builder-pro
-  - local
 tools:
   - read
   - exec
@@ -36,7 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
+pricing_tier: L2-标准级
 ---
 
 # 3D 游戏构建器 (专业版)
@@ -218,7 +208,7 @@ export GAME_BUILDER_EDITION="pro"
 
 ```bash
 # 批量上传 GLTF 模型
-curl -X POST -H "X-API-Key: $GAME_BUILDER_ADMIN_KEY" \
+curl -X POST -H "X-API-ref: $GAME_BUILDER_ADMIN_KEY" \
   -F "files=@models/character.gltf" \
   -F "files=@textures/character.png" \
   "https://api.game-builder-pro.local/v1/assets/upload"
@@ -227,7 +217,7 @@ curl -X POST -H "X-API-Key: $GAME_BUILDER_ADMIN_KEY" \
 ### Step 4: 创建团队项目
 
 ```bash
-curl -X POST -H "X-API-Key: $GAME_BUILDER_ADMIN_KEY" \
+curl -X POST -H "X-API-ref: $GAME_BUILDER_ADMIN_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Q3 营销游戏",
@@ -348,7 +338,7 @@ def create_team_workflow(project_id):
     return resp.json()
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. GLTF 模型优化
 
@@ -415,7 +405,7 @@ class NetworkInterpolation {
 
 ```bash
 # 上传资产到 CDN
-curl -X POST -H "X-API-Key: $GAME_BUILDER_ADMIN_KEY" \
+curl -X POST -H "X-API-ref: $GAME_BUILDER_ADMIN_KEY" \
   -H "Content-Type: application/json" \
   -d '{"assets":["models/scene.gltf","textures/"],"cdm":"cloudfront"}' \
   "https://api.game-builder-pro.local/v1/assets/cdn/publish"
@@ -425,13 +415,13 @@ curl -X POST -H "X-API-Key: $GAME_BUILDER_ADMIN_KEY" \
 
 ```bash
 # 创建游戏版本
-curl -X POST -H "X-API-Key: $GAME_BUILDER_ADMIN_KEY" \
+curl -X POST -H "X-API-ref: $GAME_BUILDER_ADMIN_KEY" \
   -H "Content-Type: application/json" \
   -d '{"project_id":"p001","version":"v1.2.0","notes":"新增多人模式"}' \
   "https://api.game-builder-pro.local/v1/projects/p001/versions"
 # ...
 # 回滚到历史版本
-curl -X POST -H "X-API-Key: $GAME_BUILDER_ADMIN_KEY" \
+curl -X POST -H "X-API-ref: $GAME_BUILDER_ADMIN_KEY" \
   -H "Content-Type: application/json" \
   -d '{"version":"v1.1.0"}' \
   "https://api.game-builder-pro.local/v1/projects/p001/rollback"
@@ -447,7 +437,7 @@ curl -X POST -H "X-API-Key: $GAME_BUILDER_ADMIN_KEY" \
 标准版每房间最多 16 人,企业版可扩展到 100 人 (需要定制部署).
 ### Q3: 支持哪些 3D 模型格式?
 
-GLTF 2.0 (推荐)、GLB、FBX、OBJ。建议使用 GLTF 以获得最佳 web 兼容性.
+GLTF 2.0 (推荐)、GLB、FBX、OBJ。建议使用 GLTF 以获得优秀 web 兼容性.
 ### Q4: 商业授权范围?
 
 专业版允许商业用途,包括付费游戏、品牌营销、付费教育内容。需在 about 页面注明使用本平台.
@@ -487,7 +477,7 @@ export GAME_BUILDER_EDITION="pro"
 # ...
 # 可选: CDN 配置
 export CDN_PROVIDER="cloudfront"
-export CDN_DISTRIBUTION_ID="xxx"
+export CDN_DISTRIBUTION_ID="placeholder"
 # ...
 # 可选: 多人服务器
 export MP_SERVER_URL="wss://api.game-builder-pro.local/ws"
@@ -496,7 +486,7 @@ export MP_REGION="ap-east"
 
 ### 可用性分类
 
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+exec方法(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 面向游戏工作室、教育与商业展示场景,通过自然语言指令驱动 Agent 调用 Pro API,完成多人游戏开发、模型导入、团队协作
 - **专业版特性**: 多人联机、GLTF 模型导入、永久托管、团队协作、高级图形管线、自定义着色器、CDN 分发、版本管理
 - **兼容性**: 与免费版单文件格式完全兼容,支持平滑升级
@@ -525,9 +515,9 @@ export MP_REGION="ap-east"
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

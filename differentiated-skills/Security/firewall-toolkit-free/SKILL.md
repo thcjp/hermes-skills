@@ -1,33 +1,33 @@
 ---
+
 slug: firewall-toolkit-free
 name: firewall-toolkit-free
 version: 1.0.1
 displayName: 防火墙配置工具包免费版
 summary: 服务器防火墙配置助手,支持iptables/uffw基础规则、端口管理与安全基线检查,适合个人开发者服务器安全防护.
-license: Proprietary
+license: MIT
 edition: free
-description: '防火墙配置工具包免费版,为个人开发者提供服务器防火墙配置与安全加固能力.
-  核心能力:iptables/ufw规则配置、端口管理、安全基线检查、防火墙状态诊断.
-  适用场景:服务器初始安全加固、端口访问控制、基础防火墙规则管理.
-  差异化:免费版聚焦单机防火墙配置,支持Linux主流防火墙工具,适合个人服务器快速加固.
-  适用关键词: 防火墙, iptables, ufw, 端口管理, 安全基线, firewall, security group, network security'
+description: "防火墙配置工具包免费版,为个人开发者包含服务器防火墙配置与安全加固能力. 适用于需要firewall toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要firewall toolkit相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 防火墙
+  - firewall
+  - toolkit
+  - automation
+  - productivity
   - 网络安全
   - iptables
   - 免费版
   - 安全
   - 加密
-  - 工具
-  - ufw
-  - input
-  - tcp
 tools:
   - read
   - exec
 homepage: ""
 category: "Security"
+pricing_tier: free
+
 ---
+
 # 防火墙配置工具包免费版
 
 ## 概述
@@ -379,7 +379,7 @@ echo "  开放端口数: ${OPEN_PORTS}"
 
 ## 快速开始
 
-### 第一步:检查防火墙状态
+### 领先步:检查防火墙状态
 
 ```bash
 # 检查UFW状态
@@ -441,7 +441,7 @@ curl -s -o /dev/null -w "%{http_code}" http://localhost
 | `ufw delete RULE` | 删除规则 |
 | `ufw reset` | 重置所有规则 |
 
-## 最佳实践
+## 优秀实践
 
 1. **默认拒绝**:所有入站流量默认拒绝,仅开放必要端口.
 2. **最小开放**:仅开放业务必需的端口,减少攻击面.
@@ -449,7 +449,7 @@ curl -s -o /dev/null -w "%{http_code}" http://localhost
 4. **数据库隔离**:数据库端口不对外暴露,仅允许本地访问.
 5. **定期审计**:定期检查防火墙规则,清理过期规则.
 ```bash
-# 最佳实践:防火墙变更流程
+# 优秀实践:防火墙变更流程
 safe_firewall_change() {
     local action=$1
     local rule=$2
@@ -516,7 +516,7 @@ UFW是iptables的前端工具,提供更简单的配置接口。底层仍使用ip
 - 需要root/sudo权限执行防火墙配置命令
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行服务器防火墙配置与安全加固任务
 
 ## 错误处理

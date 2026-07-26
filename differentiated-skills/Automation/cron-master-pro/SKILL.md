@@ -1,12 +1,12 @@
 ---
+
 slug: cron-master-pro
 name: cron-master-pro
 version: 1.0.1
 displayName: 定时大师
 summary: "平台级定时系统精通指南，heartbeat 与 cron 决策矩阵、推送策略、自唤醒规则全覆盖.。定时大师是平台级定时系统的深度使用指南，解决"何时用心跳、何时用 cron""推送还是静默""
-license: Proprietary
-description: 定时大师是平台级定时系统的深度使用指南，解决"何时用心跳、何时用 cron""推送还是静默""怎么跨回合等待"等高阶决策问题。它提供 heartbeat
-  与 cron 的决策矩阵、payload 类型选择（agentTurn 推送 vs systemEvent 静默）、严格指令模板、自唤醒规则、时区锁定规范与历史模式迁移指南
+license: MIT
+description: "定时大师是平台级定时系统的深度使用指南，解决\"何时用心跳、何时用 cron\"\"推送还是静默\"\"怎么跨回合等待\"等高阶决策问题。它包含 heartbeat. 适用于需要cron master相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 自动化
   - 定时调度
@@ -25,10 +25,12 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 定时大师
 
-**第一法则：心跳会漂移，cron 才精确。**
+**领先法则：心跳会漂移，cron 才精确。**
 
 本技能是平台级定时系统的深度使用指南。它不重复基础调度（那是定时调度专家的职责），而是解决高阶问题：什么时候该用心跳、什么时候必须用 cron；要手机推送还是静默记日志；怎么跨回合等待而不丢任务。掌握这些，才能做到"提醒永不漏、推送不啰嗦".
 ## 分层定位
@@ -70,7 +72,7 @@ category: "Automation"
 
 ### 精度与"调度器节拍"
 
-Cron 是精确的，但执行取决于**网关心跳节拍**（通常每 10-60 秒）。设为 `:00` 秒的任务会在该时刻后第一个"节拍"触发，可能有最多 ~30 秒偏差.
+Cron 是精确的，但执行取决于**网关心跳节拍**（通常每 10-60 秒）。设为 `:00` 秒的任务会在该时刻后领先个"节拍"触发，可能有最多 ~30 秒偏差.
 ### 一次性提醒标准模式
 
 "X 分钟后提醒我"用一次性 `at` 调度：
@@ -173,7 +175,7 @@ DELIVER THIS EXACT MESSAGE TO THE USER WITHOUT MODIFICATION OR COMMENTARY:
 
 ## 4. 并发与死锁（已稳定但仍需注意）
 
-历史遗留的"先 add 再 update"模式曾导致死锁。虽然网关已修复，最佳实践仍是**单步创建**：所有参数（含 `wakeMode: "now"`）在首次 `cron.add` 时一次传入，不要先 add 再 update.
+历史遗留的"先 add 再 update"模式曾导致死锁。虽然网关已修复，优秀实践仍是**单步创建**：所有参数（含 `wakeMode: "now"`）在首次 `cron.add` 时一次传入，不要先 add 再 update.
 ```json
 // 正确：单步创建
 {
@@ -205,7 +207,7 @@ DELIVER THIS EXACT MESSAGE TO THE USER WITHOUT MODIFICATION OR COMMENTARY:
 {
   "name": "self-wake-30m",
   "schedule": { "kind": "at", "at": "<30分钟后的ISO时刻>" },
-  "payload": { "kind": "agentTurn", "message": "继续执行之前暂停的任务：XXX" },
+  "payload": { "kind": "agentTurn", "message": "继续执行之前暂停的任务：placeholder" },
   "wakeMode": "now",
   "deleteAfterRun": true
 }

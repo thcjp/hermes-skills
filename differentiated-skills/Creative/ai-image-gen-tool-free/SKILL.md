@@ -1,30 +1,13 @@
 ---
+
 slug: ai-image-gen-tool-free
 name: ai-image-gen-tool-free
 version: 1.0.0
 displayName: AI图像生成-免费版
 summary: "通过文本描述生成图片,支持多种比例与标准分辨率,适合个人创作者快速出图.。AI图像生成免费版,面向个人用户的文本生成图像工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 'AI图像生成免费版,面向个人用户的文本生成图像工具。核心能力:
-
-  - 文本描述生成图片(文生图)
-
-  - 支持 1:1、3:2、16:9、9:16 等多种比例
-
-  - 标准分辨率输出,满足社交媒体与基础设计需求
-
-  - 多风格支持:水彩、油画、赛博朋克、写实摄影等
-
-  适用场景:
-
-  - 社交媒体配图与头像生成
-
-  - 个人创意灵感可视化
-
-  - 简单设计素材快速产出
-
-  差异化:免费版聚焦核心文生图能力,提供标准分辨率与常用比例,适合个人用户体验AI图像生成'
+description: "AI图像产出免费版,面向个人用户的文本产出图像工具。核心能力:. 适用于需要ai image gen tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Creative
   - 图像生成
@@ -36,14 +19,15 @@ tags:
   - api
   - model
   - pro
-  - bash
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # AI图像生成工具 - 免费版
 
 ## 概述
@@ -129,7 +113,7 @@ python3 （请参考skill目录中的脚本文件） \
 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:配置 API Key
+### 领先步:配置 API Key
 
 ```bash
 export IMAGE_GEN_API_KEY="your_api_key_here"
@@ -183,7 +167,7 @@ IMAGE_GEN_BASE_URL=https://code.newcli.com/gemini  # 默认值
 | gemini-3.1-flash-image-16x9 | 16:9 | 电脑壁纸/视频 |
 | gemini-3.1-flash-image-21x9 | 21:9 | 超宽屏 |
 
-## 最佳实践
+## 优秀实践
 
 1. **提示词要具体**:描述主体、场景、光线、风格、色调,例如"一位老匠人在木工作坊中雕刻,暖黄光线,写实摄影风格"
 2. **指定艺术风格**:水彩、油画、赛博朋克、吉卜力、写实摄影、中国工笔等
@@ -226,7 +210,7 @@ A:API 调用受服务商配额限制,免费版配额较低。如需高频调用�
 - **存储建议**: 写入 `.env` 文件或系统环境变量,避免硬编码到脚本
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过Python脚本调用外部API生成图像
 
 ## 错误处理

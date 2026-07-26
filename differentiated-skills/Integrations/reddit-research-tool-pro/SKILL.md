@@ -1,4 +1,5 @@
 ---
+
 slug: "reddit-research-tool-pro"
 name: "reddit-research-tool-pro"
 version: "1.0.0"
@@ -6,8 +7,7 @@ displayName: "Reddit调研(专业版)"
 summary: "企业级Reddit社区调研方案，支持多平台聚合、自动化定时调研、情感分析与团队协作。。Reddit调研专业版是一套面向市场研究团队与内容机构的企业级社区调研解决方案，在免费版基础上扩展出多"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  Reddit调研专业版是一套面向市场研究团队与内容机构的企业级社区调研解决方案，在免费版基础上扩展出多 Subreddit 并行扫描、自动化定时调研、跨平台舆情对比、情感分析与热度预测、团队协作与报告分发等能力。核心能力：提供多社区并行扫描与聚合分析、定时调研任务调度与趋势追踪、Reddit 与其他平台舆情对比、基于 NLP 的情感分析与话题热度预测、团队协作调研与报告自动分发
+description: "|-. 适用于需要reddit research tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 调研
   - 集成工具
@@ -19,9 +19,6 @@ tags:
   - 工具
   - subreddit
   - reddit
-  - 情感分析
-  - 品牌舆情
-  - 团队协作
 tools:
   - read
   - exec
@@ -29,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 # Reddit调研（专业版）
 
 ## 概述
@@ -309,7 +308,7 @@ distribution:
     database_id: ${NOTION_DB_ID}
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 实践一：分层监控策略
 

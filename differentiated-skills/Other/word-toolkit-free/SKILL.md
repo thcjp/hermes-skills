@@ -1,55 +1,34 @@
 ---
+
 slug: word-toolkit-free
 name: word-toolkit-free
 version: 1.0.1
 displayName: Word文档控制免费版
 summary: 通过osascript控制Word应用，支持文档操作、选区编辑、评论与导出，适合个人macOS用户.
-license: Proprietary
+license: MIT
 edition: free
-description: Word文档控制工具免费版，面向个人macOS用户的轻量级Word应用控制工具。核心能力:，可处理提升工作效率
-
-  - 通过 osascript 控制 Word 应用会话
-
-  - 文档操作与选区感知编辑
-
-  - 评论与修订状态管理
-
-  - 文档导出与清理关闭
-
-  适用场景:
-
-  - 个人 macOS 用户的 Word 文档自动化
-
-  - 选区驱动的精确编辑
-
-  - 文档导出与格式转换
-
-  差异化: 免费版聚焦核心 Word 应用控制能力，去除所有外部平台与作者引用，强化中文本地化与适用关键词，适合个人用户零成本上手'
+description: "Word文档控制工具免费版，面向个人macOS用户的轻量级Word应用控制工具。核心能力:，可处置提升工作效率. 适用于需要word toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要word toolkit相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - Word文档
+  - word
+  - toolkit
+  - automation
+  - productivity
   - 应用控制
   - macOS自动化
   - 免费版
   - 工具
   - 效率
-  - 自动化
-  - 知识
-  - 文档
-  - 研究
-  - 分析
-  - 写作
-  - word
-  - osascript
-  - tell
-  - microsoft
-  - pdf
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # Word文档控制工具（免费版）
 
 ## 概述
@@ -196,7 +175,7 @@ end tell'
 7. 干净恢复，避免孤立应用会话
 ```
 
-## 最佳实践
+## 优秀实践
 
 * 操作前先读取文档名、当前选区、目标段落，确认目标正确.
 * 选区驱动的操作视为高风险，优先锚定到具体文档对象.

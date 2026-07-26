@@ -1,13 +1,13 @@
 ---
+
 slug: doubao-assistant-free
 name: doubao-assistant-free
 version: 1.0.1
 displayName: 豆包助手(免费版)
 summary: "基于豆包大模型的中文对话助手，支持联网搜索与基础问答能力.。豆包助手免费版是一个基于豆包大模型 API 的中文对话辅助工具，帮助开发者以零成本接入具备联网搜索能力的 AI 对话服务。核心能力"
-license: Proprietary
+license: MIT
 edition: free
-description: 豆包助手免费版是一个基于豆包大模型 API 的中文对话辅助工具，帮助开发者以零成本接入具备联网搜索能力的 AI 对话服务。核心能力：提供对话补全接口调用模板、联网搜索开关配置、基础错误处理与重试策略、会话管理指南。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "豆包助手免费版是一个基于豆包大模型 API 的中文对话辅助工具，帮助开发者以零成本接入具备联网搜索能力的 AI 对话服务。核心能力：包含对话补全接口调用模板、联网搜索开关配置、基础错误处置与重试策略、会话管控指南。Use. 适用于需要doubao assistant相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - AI对话
   - 集成工具
@@ -19,20 +19,15 @@ tags:
   - 知识
   - 文档
   - 开发
-  - 代码
-  - 创意
-  - 联网搜索
-  - api
-  - content
-  - 多轮对话
-  - role
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 豆包助手（免费版）
 
 ## 概述
@@ -121,7 +116,7 @@ const conversationHistory = [
 初学者通过本助手的模板与示例，快速理解对话补全 API 的请求结构与响应格式.
 ## 快速开始
 
-### 第一步：配置凭据
+### 领先步：配置凭据
 
 ```bash
 # 设置环境变量（切勿硬编码）
@@ -198,7 +193,7 @@ const systemPrompts = {
 };
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 实践一：凭据通过环境变量管理
 

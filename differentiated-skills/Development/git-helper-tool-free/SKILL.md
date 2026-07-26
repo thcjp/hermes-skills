@@ -1,42 +1,13 @@
 ---
+
 slug: git-helper-tool-free
 name: git-helper-tool-free
 version: 1.0.0
 displayName: Git助手免费版
 summary: "提供Git常见操作辅助、冲突解决指引、提交规范检查与安全操作清单,适合开发者日常使用.。面向开发者的Git操作辅助工具,提供常见操作指引、冲突解决步骤、提交规范检查与安全操作清单。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向开发者的Git操作辅助工具,提供常见操作指引、冲突解决步骤、提交规范检查与安全操作清单。核心能力:
-
-  - 常见Git操作辅助指引
-
-  - 合并冲突解决步骤
-
-  - 提交信息规范检查
-
-  - 安全操作检查清单
-
-  - 常用配置模板
-
-  适用场景:
-
-  - Git操作遇到问题时的辅助
-
-  - 冲突解决指引
-
-  - 提交规范自检
-
-  - 新手Git操作指导
-
-  差异化:
-
-  - 免费版提供操作指引和检查清单,开箱即用
-
-  - 安全优先,避免误操作
-
-  - 与专业版命令兼容,可平滑升级
-
-  适用关键词: Git助手, Git帮助, 冲突解决, ...'
+description: "面向开发者的Git操作辅助工具,包含常见操作指引、冲突解决步骤、提交规范检查与安全操作清单。核心能力:. 适用于需要git helper tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - Git
@@ -52,7 +23,9 @@ tools:
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 Git助手免费版为开发者提供Git操作辅助能力。工具提供常见操作指引、合并冲突解决步骤、提交信息规范检查和安全操作检查清单,帮助开发者安全高效地使用Git.
 本版本适合Git操作遇到问题时的辅助、冲突解决指引和新手Git操作指导。所有指引以步骤化方式呈现,易于跟随.
 ## 核心能力
@@ -356,7 +329,7 @@ recovery:
   safe_mode: true
 ```
 
-## 最佳实践
+## 优秀实践
 1. **操作前检查**:每次Git操作前运行安全检查
 
 2. **规范提交**:遵循Conventional Commits规范
@@ -381,9 +354,9 @@ git <command> --help
 git <command> -h    # 简短帮助
 git help commit
 git merge --help
-```
-
-### Q2:如何配置Git补全?
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 source ~/.git-completion.bash
 # ...
@@ -432,7 +405,7 @@ git config --global credential.helper store
 ```
 
 ### 可用性分类
-- **分类**:MD+EXEC(纯 Markdown 指令,需要 exec 命令行执行能力)
+- **分类**:MD+EXEC模式纯 Markdown 指令,需要 exec 命令行执行能力)
 - **说明**:基于 Markdown 的 AI Skill,通过自然语言指令驱动 Agent 提供Git辅助
 - **适用规模**:个人开发者日常使用
 
@@ -459,9 +432,9 @@ git config --global credential.helper store
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

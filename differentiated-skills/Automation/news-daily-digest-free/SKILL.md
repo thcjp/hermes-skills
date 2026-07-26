@@ -1,13 +1,13 @@
 ---
+
 slug: news-daily-digest-free
 name: news-daily-digest-free
 version: 1.0.1
 displayName: 每日新闻摘要(免费版)
 summary: "抓取X.com与RSS源的热门新闻Top10，自动翻译中文并生成精美海报，每日资讯一目了然.。每日新闻摘要免费版为AI Agent提供轻量的新闻聚合与可视化能力。用户指定关键词，本技能从X。"
-license: Proprietary
+license: MIT
 edition: free
-description: 每日新闻摘要免费版为AI Agent提供轻量的新闻聚合与可视化能力。用户指定关键词，本技能从X。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。Use
-  when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+description: "每日新闻摘要免费版为AI Agent包含轻量的新闻聚合与可视化能力。用户指定关键词，该技能从X。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。Use. 适用于需要news daily digest相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 新闻聚合
   - 信息摘要
@@ -19,14 +19,15 @@ tags:
   - 新闻海报
   - workspace
   - news-digest
-  - 自动翻译
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 每日新闻摘要（免费版）
 
 > **每日资讯一目了然。关键词驱动，多源聚合，精美海报，一键分享。**
@@ -332,9 +333,9 @@ Agent："已创建定时任务：
 
 ### 示例1：基础用法
 
-```
-### 60秒上手（单关键词简报）(补充)
-# ...
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 用户："X新闻简报 AI"
 Agent："正在抓取AI相关热门新闻...
@@ -345,10 +346,9 @@ Agent："正在抓取AI相关热门新闻...
     1. OpenAI发布GPT-5：多模态能力大幅提升
     2. 谷歌DeepMind新研究：AI推理能力接近人类
     3. AI芯片市场：英伟达占比超80%"
-```
-# ...
-### 120秒上手（自定义关键词 + 主题选择）(补充)
-# ...
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 用户："帮我生成NBA新闻海报，用活力红主题"
 Agent："正在生成NBA新闻海报...

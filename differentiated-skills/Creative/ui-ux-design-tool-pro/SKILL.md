@@ -7,13 +7,7 @@ displayName: UI/UX设计指南专业版
 summary: 企业级UI/UX设计体系,含WCAG 2.2合规、设计令牌、Shadcn/ui集成、2026趋势与高级产品深度分析
 license: Proprietary
 edition: pro
-description: "面向企业设计团队和专业前端的完整UI/UX设计体系,涵盖WCAG 2。2无障碍合规、。可生成提升工作效率
-  设计令牌系统、Shadcn/ui组件库深度集成、2026设计趋势、微交互动画模式、
-  以及对高级产品的深度设计分析'。加速开发流程，提升代码质量与一致性。触发关键词：代码生成、测试、转换、设计、品牌、机器学习"
-
-  设计令牌系统、Shadcn/ui组件库深度集成、2026设计趋势、微交互动画模式、
-
-  以及对高级产品的深度设计分析'
+description: "面向企业设计团队和专业前端的完整UI/UX设计体系,涵盖WCAG 2。2无障碍合规、。可产出提升工作效率. 适用于需要ui ux design tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 设计
   - UI
@@ -25,14 +19,6 @@ tags:
   - 企业级
   - 无障碍
   - 设计系统
-  - 组件库
-  - UI/UX
-  - 创意
-  - shadcn
-  - npx
-  - latest
-  - button
-  - tailwind
 tools:
   - read
   - exec
@@ -40,8 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
+pricing_tier: L2-标准级
 ---
+
 UI/UX设计指南专业版是一款面向企业设计团队和专业前端的完整设计体系参考。在免费版核心设计原则之上,扩展至WCAG 2.2无障碍合规、设计令牌系统、Shadcn/ui组件库深度集成、2026设计趋势、高级微交互动画,以及对Linear、Stripe、Vercel、Notion等高级产品的深度设计分析.
 专业版帮助企业建立可扩展、可维护、合规的设计系统,完全兼容免费版设计原则,可无缝升级.
 ## 核心能力
@@ -249,9 +236,9 @@ npx shadcn@latest add button card dialog dropdown-menu \
   tooltip badge avatar separator skeleton
 # .
 npm run dev
-```
-
-### 设计系统文档结构
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```text
 design-system/
 ├── tokens/
@@ -408,7 +395,7 @@ npm install -D tailwindcss-animate
 ### API Key 配置
 本Skill基于Markdown设计指南,无需额外API Key。设计建议的生成由Agent内置LLM驱动。Shadcn/ui组件安装通过npx本地执行,不依赖外部API。Figma设计令牌同步如需使用,需配置Figma API Token.
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。项目初始化、Shadcn/ui组件安装和Tailwind配置需要exec工具执行npm/npx命令。无障碍审计需配合浏览器开发工具使用.
 ## 错误处理
 

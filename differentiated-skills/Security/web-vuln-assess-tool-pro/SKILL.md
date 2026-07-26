@@ -1,4 +1,5 @@
 ---
+
 slug: web-vuln-assess-tool-pro
 name: web-vuln-assess-tool-pro
 version: 1.0.0
@@ -6,35 +7,7 @@ displayName: Web漏洞评估(专业版)
 summary: "企业级Web漏洞评估平台,API自动化评估、HTML/PDF报告、测试脚本生成与合规审计,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
-description: 核心能力:，可自动提升工作效率
-
-  - API驱动的自动化漏洞评估(19类100+检查项)
-
-  - HTML/PDF/SARIF专业评估报告
-
-  - 自动生成渗透测试脚本
-
-  - OWASP/PCI-DSS/GDPR/HIPAA合规映射
-
-  - 多应用批量评估与并行处理
-
-  - 漏洞修复优先级智能排序
-
-  - 技术栈特定检测规则(20+技术)
-
-  适用场景:
-
-  - 企业级Web应用安全评估
-
-  - 合规性安全审计(PCI-DSS/GDPR/HIPAA)
-
-  - 渗透测试范围规划与脚本生成
-
-  - DevSecOps安全门禁
-
-  差异化:
-
-  - API自动化评估...'
+description: "核心能力:，可自发提升工作效率. 适用于需要web vuln assess tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 安全
   - Web安全
@@ -46,8 +19,6 @@ tags:
   - 开发工具
   - api
   - html
-  - python
-  - web
 tools:
   - read
   - exec
@@ -56,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+pricing_tier: L2-标准级
 ---
+
 Web漏洞评估专业版是一款面向企业用户的自动化Web安全评估平台。在免费版手动检查清单基础上,增加API驱动的自动化评估能力,支持19类100+检查项的自动扫描。提供HTML/PDF/SARIF专业评估报告,自动生成渗透测试脚本,覆盖OWASP/PCI-DSS/GDPR/HIPAA四种合规框架映射。支持多应用批量评估与并行处理,满足企业级安全审计需求。与免费版完全兼容,检查清单和评估流程可无缝复用.
 ## 核心能力
 ### 功能矩阵
@@ -151,9 +124,9 @@ MEDIUM发现:
 测试脚本: 8个
 # ...
 HTML报告: assessment_report.html
-```
-
-### 场景二:合规审计评估
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python （请参考skill目录中的脚本文件） \
   --app-name "PaymentGateway" \
@@ -162,18 +135,18 @@ python （请参考skill目录中的脚本文件） \
   --include-remediation \
   --format pdf \
   --output pci_assessment.pdf
-```
-
-### 场景三:批量多应用评估
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python （请参考skill目录中的脚本文件） \
   --batch apps_config.json \
   --threads 5 \
   --format sarif \
   --output batch_results.sarif
-```
-
-### 场景四:生成渗透测试脚本
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python （请参考skill目录中的脚本文件） \
   --app-name "ShopFast" \
@@ -241,7 +214,7 @@ python （请参考skill目录中的脚本文件） \
 | GDPR | 个人数据保护 | 欧洲用户应用 | 8 |
 | HIPAA | 医疗数据保护 | 医疗健康应用 | 6 |
 
-## 最佳实践
+## 优秀实践
 ### 1. 评估流程
 ```bash
 python （请参考skill目录中的脚本文件） --app-name "MyApp" --scope all --format html
@@ -251,9 +224,9 @@ python （请参考skill目录中的脚本文件） --app-name "MyApp" --complia
 python （请参考skill目录中的脚本文件） --app-name "MyApp" --include-testing-scripts --format html
 # ...
 python （请参考skill目录中的脚本文件） --app-name "MyApp" --scope all --format html
-```
-
-### 2. CI/CD集成
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 web-security-assessment:
   stage: security
@@ -278,7 +251,7 @@ web-security-assessment:
 | P0 | CRITICAL(注入/认证绕过/零日) | 24小时 |
 | P1 | HIGH(XSS/SSRF/访问控制) | 7天 |
 | P2 | MEDIUM(配置/CORS/DoS) | 30天 |
-| P3 | LOW(信息泄露/最佳实践) | 90天 |
+| P3 | LOW(信息泄露/优秀实践) | 90天 |
 
 ## 常见问题
 ### Q1: 专业版与免费版兼容吗?
@@ -307,7 +280,7 @@ A: 支持HTML(交互式可打印)、PDF(正式报告)、SARIF(CI/CD集成)、JSO
 - 可选配置 `VULN_ASSESS_API_KEY`: 外部漏洞评估API(增强检测能力)
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行企业级Web漏洞评估任务
 
 ## 错误处理

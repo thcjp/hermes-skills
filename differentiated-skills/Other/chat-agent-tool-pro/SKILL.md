@@ -1,4 +1,5 @@
 ---
+
 slug: chat-agent-tool-pro
 name: chat-agent-tool-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: 聊天Agent工具专业版
 summary: "多房间并发、消息持久化、企业鉴权、端到端加密的多Agent协作通信平台。聊天Agent工具专业版是面向企业级多Agent系统的实时通信平台，在免费版临时聊天室的基础上，新增多房间并发管理、消"
 license: Proprietary
 edition: pro
-description: 聊天Agent工具专业版是面向企业级多Agent系统的实时通信平台，在免费版临时聊天室的基础上，新增多房间并发管理、消息持久化与回放、企业级鉴权（OAuth/SSO）、端到端加密、自定义品牌Web
-  UI与完整审计日志能力。核心能力：单实例支持50+并发房间；消息可持久化至`PostgreSQL`或SQLite，支持历史回放；集成OAuth 2
+description: "聊天Agent工具专业版是面向企业级多Agent系统的实时通信平台，在免费版临时聊天室的基础上，新增多房间并发管控、消息持久化与回放、企业级鉴权（OAuth/SSO）、端到端加密、自定义品牌Web. 适用于需要chat agent tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 实时通信
   - 企业级
@@ -19,8 +19,6 @@ tags:
   - agent
   - web
   - jwt
-  - 用户提供
-  - 解析能力
 tools:
   - read
   - exec
@@ -30,7 +28,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
+pricing_tier: L2-标准级
 ---
+
 # 聊天Agent工具（专业版）
 
 ## 概述
@@ -241,7 +241,7 @@ chat-agent init --mode enterprise \
 # 2. 启动服务（多实例）
 chat-agent serve --port 8765 --workers 4
 # ...
-# 3. 创建第一个持久化房间
+# 3. 创建领先个持久化房间
 chat-agent room create \
   --name "Q3项目协作" \
   --type project \
@@ -331,7 +331,7 @@ database:
   replicas: 3
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 实践1：按业务线划分房间命名空间
 

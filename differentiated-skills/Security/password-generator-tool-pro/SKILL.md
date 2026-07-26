@@ -1,4 +1,5 @@
 ---
+
 slug: password-generator-tool-pro
 name: password-generator-tool-pro
 version: 1.0.0
@@ -6,35 +7,7 @@ displayName: 密码生成器(专业版)
 summary: "企业级密码生成工具,支持8-128位自定义、批量生成、泄露检测、策略模板与多格式导出,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
-description: 核心能力:，可自动提升工作效率
-
-  - 8-128位高度可定制密码生成
-
-  - 批量生成100+密码并导出CSV/JSON
-
-  - 集成HaveIBeenPwned API进行泄露检测
-
-  - 10+企业级密码策略模板(NIST/PCI-DSS/ISO27001)
-
-  - 口令 passphrase 与 PIN 码生成
-
-  - 密码熵值计算与量化评估
-
-  适用场景:
-
-  - 企业账户统一密码管理
-
-  - 开发团队CI/CD密码自动化
-
-  - 合规审计密码策略执行
-
-  - 数据库与API密钥生成
-
-  差异化:
-
-  - 企业级密码策略引擎,支持合规框架映射
-
-  - 批...'
+description: "核心能力:，可自发提升工作效率. 适用于需要password generator tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 安全
   - 密码管理
@@ -46,15 +19,15 @@ tags:
   - true
   - string
   - policy
-  - self
-  - import
 tools:
   - read
   - exec
 homepage: ""
 # 定价元数据
 category: "Security"
+pricing_tier: L2-标准级
 ---
+
 # 密码生成器(专业版)
 
 ## 概述
@@ -383,7 +356,7 @@ generate-secrets:
       "
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 定期轮换策略
 
@@ -463,7 +436,7 @@ A: 生成100个密码约需2秒(含泄露检测约30秒),纯生成不检测泄�
 - 专业版无需任何付费API Key
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作,核心功能依赖Python脚本执行
 
 ## 错误处理

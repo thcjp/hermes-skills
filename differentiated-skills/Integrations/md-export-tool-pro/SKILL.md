@@ -1,4 +1,5 @@
 ---
+
 slug: "md-export-tool-pro"
 name: "md-export-tool-pro"
 version: "1.0.0"
@@ -6,8 +7,7 @@ displayName: "文档导出工具专业版"
 summary: "Markdown全格式专业导出工具，含批量并行、自定义样式、PDF加密水印、模板云同步与API服务模式。"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  面向内容团队与企业的Markdown全格式专业导出工具。在免费版基础上新增批量并行转换、自定义样式表、PDF水印加密、模板云端同步、REST API服务模式、版本对比与差异导出等高级能力，配套面向技术写作、运维、产品经理的多角色场景指南。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
+description: "|-. 适用于需要md export tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 集成工具
   - 文档转换
@@ -19,20 +19,15 @@ tags:
   - 知识
   - 文档
   - 开发
-  - 代码
-  - 安全
-  - pdf
-  - api
-  - css
-  - bash
-  - markdown-exporter-pro
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 文档导出工具（专业版）
 
 专业版在免费版核心能力之上，新增批量并行转换、自定义样式表、PDF水印加密、REST API服务模式、模板云端同步、版本差异导出等高级能力，专为内容团队、企业文档平台与品牌规范场景设计.
@@ -255,7 +250,7 @@ markdown-exporter-pro template list
   --highlight-changes
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 样式表分层管理
 

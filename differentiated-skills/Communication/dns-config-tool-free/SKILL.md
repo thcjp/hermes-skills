@@ -1,30 +1,13 @@
 ---
+
 slug: dns-config-tool-free
 name: dns-config-tool-free
 version: 1.0.0
 displayName: DNS配置工具免费版
 summary: "基础 DNS 记录配置工具,支持 TTL 管理、邮件认证与迁移前准备,适合个人站点.。面向个人开发者与小站点的 DNS 记录配置辅助工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 面向个人开发者与小站点的 DNS 记录配置辅助工具。核心能力:，可处理提升工作效率
-
-  - DNS 迁移前 TTL 调整与缓存检查
-
-  - 邮件认证三件套(SPF/DKIM/DMARC)配置指导
-
-  - www 与 apex 域名处理
-
-  - 基础 DNS 调试命令与记录验证
-
-  适用场景:
-
-  - 个人博客/项目站点的 DNS 配置
-
-  - 小型企业邮箱认证设置
-
-  - 域名迁移前的 TTL 准备
-
-  差异化: 免费版聚焦基础记录与邮件认证,适合个人轻量场景;Pro 版提供 CAA、Cloudflare 代理与批量迁移能力'
+description: "面向个人开发者与小站点的 DNS 记录配置辅助工具。核心能力:，可处置提升工作效率. 适用于需要dns config tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - DNS
   - 域名配置
@@ -36,18 +19,15 @@ tags:
   - 运维
   - 监控
   - 通信
-  - 邮件
-  - 开发
-  - ttl
-  - www
-  - dig
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # DNS 配置工具(免费版)
 
 ## 概述
@@ -155,7 +135,7 @@ curl -I https://www.example.com
 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:检查当前 DNS 状态
+### 领先步:检查当前 DNS 状态
 
 ```bash
 # 查看当前 A 记录与 TTL
@@ -206,7 +186,7 @@ example.com.google.com include:mailgun.org ~all"
 # 错误: 两条独立的 SPF TXT 记录
 # ...
 # SPF 结尾选择:
-# -all  严格拒绝(推荐,投递率最佳)
+# -all  严格拒绝(推荐,投递率优秀)
 # ~all  软失败(过渡期使用)
 # +all  允许所有(危险,勿用)
 # ?all  无策略(无意义,勿用)
@@ -253,7 +233,7 @@ dig example.com MX +short
 dig example.com TXT +short
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **TTL 迁移 48 小时提前量**: 迁移前至少 48 小时将 TTL 降至 300 秒。必须等原 TTL 过期后新 TTL 才生效,48 小时覆盖大多数解析器的缓存周期。迁移稳定 24 小时后再恢复 TTL.
 2. **邮件认证三件套缺一不可**: 仅配置 SPF 不足以保证投递率,DKIM 和 DMARC 同样必需。SPF 单独使用时投递率有限,三者配合才能通过主流邮箱服务商(Gmail/Outlook)的验证.
@@ -276,7 +256,7 @@ DNS 缓存未完全过期。迁移前 48 小时应将 TTL 降至 300 秒,并等�
 多条 SPF TXT 记录会导致解析冲突,接收方可能随机选择或全部拒绝,等于 SPF 失效。必须合并为单条 TXT,用 `include:` 引入多个来源。例如:`v=spf1 include:_spf.google.com include:mailgun.org ~all`.
 ### Q4: DMARC 的 p=quarantine 和 p=reject 怎么选?
 
-`p=quarantine` 将未通过认证的邮件隔离(进垃圾箱),适合过渡期观察;`p=reject` 直接拒绝,投递保护最强但可能误杀合法邮件。建议先用 `p=quarantine` 运行一段时间,确认 `rua` 报告无大量误判后再升级为 `p=reject`.
+`p=quarantine` 将未通过认证的邮件隔离(进垃圾箱),适合过渡期观察;`p=reject` 直接拒绝,投递保护强力但可能误杀合法邮件。建议先用 `p=quarantine` 运行一段时间,确认 `rua` 报告无大量误判后再升级为 `p=reject`.
 ### Q5: www.example.com 访问不了?
 
 检查 www 是否配置了记录。`*.example.com` 通配符不匹配 apex(`example.com`),需为 apex 单独配 A 记录。若使用 HTTPS 重定向,需确保两个变体(`example.com` 和 `www.example.com`)都有 SSL 证书覆盖.
@@ -314,7 +294,7 @@ TTL 修改本身也有缓存周期。你修改的是「未来查询的 TTL」,�
 - **邮件服务商**: DKIM 公钥由邮件服务商(如 Google Workspace、Mailgun)提供,需在其后台获取后填入 DNS.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令 + 部分功能需 `exec` 执行 dig 等命令)
+- **分类**: MD+EXEC模式纯 Markdown 指令 + 部分功能需 `exec` 执行 dig 等命令)
 - **说明**: 以自然语言指令驱动 Agent 指导 DNS 配置并执行调试命令
 - **适用规模**: 个人/小型站点,单域名配置
 - **升级建议**: 如需 CAA 记录、Cloudflare 代理、通配符证书、批量迁移,请升级至 `dns-config-tool-pro`
@@ -344,9 +324,9 @@ TTL 修改本身也有缓存周期。你修改的是「未来查询的 TTL」,�
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

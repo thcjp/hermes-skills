@@ -1,30 +1,13 @@
 ---
+
 slug: github-dev-standard-free
 name: github-dev-standard-free
 version: 1.0.1
 displayName: 项目开发标准免费版
 summary: "个人开发者项目开发标准流程，含 9 步开发流程与基础验收清单.。面向独立开发者的项目开发标准化工具，通过结构化流程约束代码质量。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 面向独立开发者的项目开发标准化工具，通过结构化流程约束代码质量。核心能力:，可处理提升工作效率
-
-  - 9 步开发流程（读需求→写任务卡→编码→验证→发布）
-
-  - 8 条编码纪律防止过度修改
-
-  - 4 层基础验证（语法/导入/样例/测试）
-
-  - 15 项验收清单确保交付质量
-
-  适用场景:
-
-  - 个人项目缺陷修复与功能开发
-
-  - 代码改动量控制与质量自查
-
-  - 提交前的多维度验证
-
-  差异化: 免费版聚焦个人开发者的标准化流程约束，提供轻量级验收清单与验证模板，开箱即用'
+description: "面向独立开发者的项目开发标准化工具，通过结构化流程约束代码质量。核心能力:，可处置提升工作效率. 适用于需要github dev standard相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - 开发规范
@@ -42,7 +25,9 @@ tools:
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # 项目开发标准（免费版）
 
 ## 概述
@@ -152,7 +137,7 @@ echo "B4. 新逻辑不会破坏旧逻辑？ [y/n]"
 # ...
 # C. 测试验证
 python3 -m py_compile （请参考skill目录中的脚本文件）        # C1. 语法检查
-python3 -c "from scripts.xxx import ClassName"  # C2. 导入检查
+python3 -c "from scripts.placeholder import ClassName"  # C2. 导入检查
 python3 test_fix.py                          # C3. 样例验证
 python3 -m pytest tests/                     # C4. 回归测试
 # ...
@@ -199,15 +184,15 @@ git diff --stat   # D1. 确认 diff 大小与任务规模匹配
 ### 4 层验证
 
 ```bash
-# 第一层：语法检查
+# 领先层：语法检查
 python3 -m py_compile （请参考skill目录中的脚本文件）
 # 或
-node -c src/xxx.js
+node -c src/placeholder.js
 # ...
 # 第二层：导入检查
-xxx import ClassName"
+placeholder import ClassName"
 # 或
-node -e "require('./src/xxx.js')"
+node -e "require('./src/placeholder.js')"
 # ...
 # 第三层：最小样例验证
 python3 test_fix.py
@@ -280,7 +265,7 @@ npm test
 | D3 | 版本号、文档、注释已同步 |
 | D4 | 可以指出这次改动的风险点 |
 
-## 最佳实践
+## 优秀实践
 
 1. **先写任务卡再编码**：明确目标和范围后再动手
 

@@ -1,4 +1,5 @@
 ---
+
 slug: gitcrawl-tool-pro
 name: gitcrawl-tool-pro
 version: 1.0.0
@@ -6,33 +7,7 @@ displayName: 仓库归档专业版
 summary: 企业级代码仓库归档管理工具，支持多仓库监控、重复聚类、实时同步、团队协作与自动化分流，适合团队协作与大型项目管理.
 license: Proprietary
 edition: pro
-description: '企业级代码仓库归档管理工具，支持多仓库监控、重复聚类、实时同步、团队协作与自动化分流，适合团队协作与大型项目管理。核心能力:
-
-  - 多仓库批量管理与监控
-
-  - 重复 issue 智能聚类分析
-
-  - 定时自动同步归档数据
-
-  - 团队协作与共享归档存储
-
-  - 自动化分流与标签建议
-
-  - PR 状态变更实时告警
-
-  适用场景:
-
-  - 企业多仓库项目管理
-
-  - 开源社区 issue 分流与治理
-
-  - 技术团队协作开发
-
-  - 代码仓库健康度监控
-
-  差异化:
-
-  - PRO 版支持多仓库批量管理...'
+description: "企业级代码仓库归档管控工具，兼容多仓库监控、重复聚类、实时同步、团队协作与自发化分流，适合团队协作与大型项目管控。核心能力:. 适用于需要gitcrawl tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - 企业工具
@@ -50,7 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+pricing_tier: L2-标准级
 ---
+
 # 仓库归档专业版
 
 ## 概述
@@ -202,7 +179,7 @@ python （请参考skill目录中的脚本文件） \
 python （请参考skill目录中的脚本文件） \
   --repos repos.txt \
   --watch="state,review,merge" \
-  --alert-webhook="https://hooks.slack.com/xxx" \
+  --alert-webhook="https://hooks.slack.com/placeholder" \
   --poll-interval=300
 ```
 
@@ -287,7 +264,7 @@ sync:
 # ...
 alerts:
   enabled: true
-  webhook: https://hooks.slack.com/xxx
+  webhook: https://hooks.slack.com/placeholder
   events:
     - pr_merged
     - pr_reviewed
@@ -322,7 +299,7 @@ analytics:
 | `--poll-interval` | 整数 | 300 | 轮询间隔秒数 |
 | `--team-id` | 字符串 | 无 | 团队标识 |
 
-## 最佳实践
+## 优秀实践
 
 ### 多仓库管理优化
 
@@ -412,7 +389,7 @@ python （请参考skill目录中的脚本文件） --labeled-data labels.json
 
 ```bash
 # 测试 Webhook 连通性
-curl -X POST https://hooks.slack.com/xxx \
+curl -X POST https://hooks.slack.com/placeholder \
   -H "Content-Type: application/json" \
   -d '{"text":"test alert"}'
 # ...

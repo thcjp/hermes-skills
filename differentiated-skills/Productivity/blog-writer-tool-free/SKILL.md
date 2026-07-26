@@ -1,28 +1,24 @@
 ---
+
 slug: blog-writer-tool-free
 name: blog-writer-tool-free
 version: 1.0.0
 displayName: 博客写作助手基础版
 summary: "根据个人风格偏好撰写博客文章,支持研究材料整合与多轮迭代修改。核心能力: 内容创作领域的专业化 AI 辅助工具,提供核心基础功能支持."
-license: Proprietary
+license: MIT
 edition: free
-description: '核心能力: 内容创作领域的专业化 AI 辅助工具,提供核心基础功能支持.
-  适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助.
-  差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持.
-  适用关键词: 博客, 文章写作, 个人风格, 内容草稿, 写作助手'
+description: "核心能力: 内容创作领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要blog writer tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要blog writer tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 博客写作
+  - blog
+  - writer
+  - automation
+  - productivity
   - 内容创作
   - 品牌语调
   - 工具
   - 效率
   - 写作
-  - 电商
-  - 知识
-  - free
-  - pro
-  - 用户提供
-  - 版本
 tools:
   - read
   - exec
@@ -30,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # 博客写作助手基础版
 
 ## 概述
@@ -137,7 +136,7 @@ FREE 版本提供以下能力:
 
 ### 场景 2: 观点文章撰写
 
-以第一人称撰写有态度的观点文章
+以领先人称撰写有态度的观点文章
 
 ```bash
 输入: "为什么大部分 OKR 都失败了"
@@ -221,7 +220,7 @@ structure = "thesis -> subheadings -> short paragraphs -> conclusion"
 | cache_enabled | bool | true | 启用结果缓存 |
 | timeout | int | 30 | 操作超时时间(秒) |
 
-## 最佳实践
+## 优秀实践
 
 1. **提供 3-5 篇已发布文章作为风格样本**
 2. **先确定核心论点再展开写作**
@@ -292,7 +291,7 @@ FREE 版本支持单一 API Key 配置,满足个人使用需求:
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于 Markdown 的 AI Skill,通过自然语言指令驱动 Agent 执行任务
 - **FREE 特性**: 支持单次执行、基础配置与社区支持
 - **安全等级**: 基础,数据本地存储,建议定期备份

@@ -1,51 +1,24 @@
 ---
+
 slug: smart-cache-tool-free
 name: smart-cache-tool-free
 version: 1.0.0
 displayName: 智能缓存工具-免费版
 summary: "智能缓存管理工具,支持LRU/LFU策略与自动失效,适合个人项目性能优化。智能缓存管理工具免费版,面向个人开发者与小型项目."
-license: Proprietary
+license: MIT
 edition: free
-description: '智能缓存管理工具免费版,面向个人开发者与小型项目.
-  核心能力:
-
-  - LRU/LFU 缓存策略
-
-  - TTL 自动过期失效
-
-  - 内存缓存管理
-
-  - 缓存命中率统计
-
-  - 手动缓存清理
-
-  - 简单持久化支持
-
-  适用场景:
-
-  - API 响应缓存
-
-  - 计算结果缓存
-
-  - 文件内容缓存
-
-  - 个人项目性能优化
-
-  差异化:免费版提供基础缓存能力。PRO版扩展分布式缓存、多级缓存与智能预热.
-  适用关键词: cache, lru, lfu, ttl, 缓存, 缓存策略, 命中率, 缓存失效'
+description: "智能缓存管控工具免费版,面向个人开发者与小型项目. 适用于需要smart cache tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要smart cache tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 缓存
+  - smart
+  - cache
+  - automation
+  - productivity
   - 性能优化
   - LRU
   - 工具
   - 效率
   - 创意
-  - 图像
-  - cache
-  - ttl
-  - lru
-  - 缓存策略
-  - lfu
 tools:
   - read
   - exec
@@ -53,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # 智能缓存工具 - 免费版
 
 ## 概述
@@ -165,7 +141,7 @@ def expensive_computation(n):
     time.sleep(2)  # 模拟耗时计算
     return sum(i * i for i in range(n))
 # ...
-# 第一次调用(缓存未命中,执行计算)
+# 领先次调用(缓存未命中,执行计算)
 result1 = expensive_computation(10000)  # 耗时约 2 秒
 # ...
 # 第二次调用(缓存命中,直接返回)
@@ -300,7 +276,7 @@ def search(query):
     return search_engine.search(query)
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **合理设置 TTL**:根据数据更新频率设置 TTL,太短命中率低,太长数据过期
 2. **选择合适策略**:访问均匀用 LRU,热点明显用 LFU
@@ -346,7 +322,7 @@ A: 会。调用 `save_to_disk()` 保存后,重启程序调用 `load_from_disk()`
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **分类**: MD+EXEC模式Markdown指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 实现缓存管理与优化
 - **限制**: 免费版仅支持本地内存缓存,不支持分布式缓存与多级缓存
 

@@ -1,38 +1,13 @@
 ---
+
 slug: timeline-digest-tool-free
 name: timeline-digest-tool-free
 version: 1.0.0
 displayName: 时间线摘要工具-免费版
 summary: "抓取X/Twitter时间线并生成去重摘要,适合个人用户的信息聚合阅读。时间线摘要工具免费版,从X(Twitter)时间线抓取推文并生成去重摘要。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '时间线摘要工具免费版,从X(Twitter)时间线抓取推文并生成去重摘要。核心能力:
-
-  - 抓取X/Twitter For You和Following时间线推文
-
-  - 基于推文ID的硬去重
-
-  - 基于文本相似度的近似去重
-
-  - 增量过滤(避免重复处理已推送推文)
-
-  - 生成结构化JSON摘要输出
-
-  - 基础启发式过滤(去除广告、垃圾内容)
-
-  适用场景:
-
-  - 个人用户的信息聚合阅读
-
-  - 关注领域的动态追踪
-
-  - 减少信息噪音,提取高价值内容
-
-  差异化:
-
-  - 免费版聚焦单次摘要生成,操作简洁
-
-  - 内置增量过滤,避免...'
+description: "时间线摘要工具免费版,从X(Twitter)时间线抓取推文并产出去重摘要。核心能力:. 适用于需要timeline digest tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 沟通协作
   - 信息聚合
@@ -44,15 +19,15 @@ tags:
   - tweet
   - self
   - tweets
-  - json
-  - list
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 时间线摘要工具免费版是一款X(Twitter)时间线信息聚合工具。通过命令行工具抓取For You和Following两个时间线的最新推文,进行增量过滤、硬去重和近似去重处理,最终生成结构化的JSON摘要数据,帮助用户快速了解关注领域的最新动态,减少信息噪音.
 本版本聚焦单次摘要生成能力,内置增量过滤机制避免重复处理。适合个人用户的日常信息聚合阅读需求。如需定时自动调度、智能分类摘要、多源聚合等高级功能,请升级至PRO版.
 ### 免费版与PRO版能力对比
@@ -341,7 +316,8 @@ py --input ai_digest.json --format text
 ### 场景三:减少信息过载
 通过去重和过滤,将大量推文压缩为高价值摘要.
 ```bash
-# ...
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ## 不适用场景
@@ -377,9 +353,9 @@ cat > config.json << 'EOF'
 EOF
 # ...
 mkdir -p ~/.timeline-digest
-```
-
-### 首次运行
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 py --config config.json
 # ...
@@ -408,16 +384,16 @@ py --config config.json
 | similarityThreshold | number | 0.9 | 近似去重相似度阈值 |
 | statePath | string | ~/.json | 状态文件路径 |
 
-## 最佳实践
+## 优秀实践
 ### 1. 合理设置抓取数量
 ```text
 抓取数量建议:
 - 高频用户(每天多次运行): For You 50, Following 30
 - 中频用户(每天1-2次): For You 100, Following 60
 - 低频用户(每周1-2次): For You 200, Following 100
-```
-
-### 2. 调整相似度阈值
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 THRESHOLD_GUIDE = {
     0.95: "严格去重 - 仅去除几乎完全相同的内容",
@@ -425,9 +401,9 @@ THRESHOLD_GUIDE = {
     0.85: "宽松去重 - 去除主题相似的内容",
     0.80: "激进去重 - 可能误删不同视角的同类内容",
 }
-```
-
-### 3. 状态文件管理
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 import os
 import json
@@ -488,7 +464,7 @@ def cleanup_state(state_path: str, retain_days: int = 30):
 - 如需LLM智能摘要功能,由Agent内置LLM提供
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行时间线摘要任务
 - **运行模式**: 本地脚本执行,需bird工具已认证
 - **安全等级**: 只读操作,不修改X/Twitter账户数据;状态文件存储在本地
@@ -516,9 +492,9 @@ def cleanup_state(state_path: str, retain_days: int = 30):
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

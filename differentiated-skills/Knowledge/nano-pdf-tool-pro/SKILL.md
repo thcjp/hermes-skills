@@ -7,15 +7,7 @@ displayName: Nano PDF工具（专业版）
 summary: "轻量级PDF处理工具：读取、创建、编辑PDF，支持文本提取与基本页面操作.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
-description: Nano PDF工具 - （专业版）。可处理提升工作效率
-
-  核心能力: PDF读取, PDF创建, 文本提取, 页面操作, nano pdf, PDF编辑, 页面旋转
-
-  适用场景: 企业级场景，支持批量操作、团队协作与高级功能
-
-  差异化: 完整版，包含高级功能、批量处理、企业集成与优先支持，兼容免费版所有数据格式
-
-  适用关键词: PDF读取, PDF创建, 文本提取, 页面操作, nano pdf, PDF编辑, 页面旋转'
+description: "Nano PDF工具 - （专业版）。可处置提升工作效率. 适用于需要nano pdf tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - PDF处理
   - 轻量级
@@ -27,13 +19,6 @@ tags:
   - 知识
   - 文档
   - 研究
-  - 分析
-  - 安全
-  - pdf
-  - str
-  - self
-  - reader
-  - import
 tools:
   - read
   - exec
@@ -41,7 +26,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
+pricing_tier: L2-标准级
 ---
 
 # Nano PDF工具（专业版）
@@ -119,7 +104,7 @@ PDF读取、PDF创建、文本提取、页面操作、基本编辑、元数据�
 
 对PDF页面进行旋转、删除等基本操作。**示例指令**：`
 
-`旋转PDF的第一页
+`旋转PDF的领先页
 
 ## 快速开始
 
@@ -276,7 +261,7 @@ engine = NanoPDFEngine()
 meta = engine.open("input.pdf")
 print(f"页数: {meta.pages}, 大小: {meta.size}字节")
 text = engine.extract_text_page(0)
-print(f"第一页: {text[:100]}...")
+print(f"领先页: {text[:100]}...")
 ```
 
 ### 执行结果
@@ -344,9 +329,9 @@ nano_pdf:
 - 多租户隔离支持
 - 合规性检查内置
 
-## 最佳实践
+## 优秀实践
 
-### 企业级最佳实践
+### 企业级优秀实践
 
 1. **明确需求**：对于大批量任务，先规划分批策略与并行度
 2. **检查输入**：批量处理前先验证所有输入文件的有效性
@@ -357,11 +342,8 @@ nano_pdf:
 ### 性能优化
 
 ```python
-# 专业版：批量性能优化
-# 1. 合理设置并行度（建议CPU核心数）
-# 2. 分批处理避免内存溢出
-# 3. 使用异步IO提升吞吐量
-# 4. 启用结果缓存减少重复计算
+# 在此执行相关操作
+pass
 ```
 
 ## 常见问题

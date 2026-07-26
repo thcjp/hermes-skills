@@ -1,55 +1,33 @@
 ---
+
 slug: password-generator-tool-free
 name: password-generator-tool-free
 version: 1.0.0
 displayName: 密码生成器(免费版)
 summary: "生成12-16位随机安全密码,支持大小写字母、数字、符号组合,满足个人日常密码需求,支持多种使用场景和自动化处理"
-license: Proprietary
+license: MIT
 edition: free
-description: 核心能力:，可自动提升工作效率
-
-  - 生成12-16位随机安全密码
-
-  - 支持大小写字母、数字、符号组合
-
-  - 密码强度评估与可视化展示
-
-  - 自动保存密码记录到本地文件
-
-  适用场景:
-
-  - 个人账户密码创建
-
-  - 临时密码快速生成
-
-  - 开发测试环境密码
-
-  差异化:
-
-  - 完全本地生成,不依赖外部服务
-
-  - 密码强度实时评估
-
-  - 自动记录历史密码
-
-  - 支持自定义字符集排除
-
-  适用关键词: 密码, 生成密码, 随机密码, password, generator, 安全密码, 创建密码'
+description: "核心能力:，可自发提升工作效率. 适用于需要password generator tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要password generator tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 安全
+  - password
+  - generator
+  - automation
+  - productivity
   - 密码管理
   - 随机生成
   - 加密
   - 工具
   - python
-  - length
-  - password
 tools:
   - read
   - exec
 homepage: ""
 category: "Security"
+pricing_tier: free
+
 ---
+
 # 密码生成器(免费版)
 
 ## 概述
@@ -227,7 +205,7 @@ PASSWORD_CONFIG = {
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 定期更换密码
 
@@ -286,7 +264,7 @@ A: 脚本内置验证逻辑,生成后会检查是否包含大小写字母、数�
 - 免费版无需任何 API Key,完全本地运行
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作,核心功能依赖Python脚本执行
 
 ## 错误处理

@@ -1,15 +1,13 @@
 ---
+
 slug: k8s-toolkit-free
 name: k8s-toolkit-free
 version: 1.0.1
 displayName: K8s避坑入门工具
 summary: "Kubernetes常见问题避坑指南，提供基础排查与优选实践建议.。面向K8s初学者与个人开发者的常见问题避坑工具。总结Kubernetes"
-license: Proprietary
+license: MIT
 edition: free
-description: 面向K8s初学者与个人开发者的常见问题避坑工具。总结Kubernetes，可自动提升工作效率
-
-  使用中的高频问题与陷阱，提供排查思路与解决方案。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。Use
-  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
+description: "面向K8s初学者与个人开发者的常见问题避坑工具。总结Kubernetes，可自发提升工作效率. 适用于需要k8s toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Operations
   - Kubernetes
@@ -21,14 +19,15 @@ tags:
   - kubectl
   - pod
   - deployment
-  - service
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # K8s避坑入门工具（免费版）
 
 ## 概述

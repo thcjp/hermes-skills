@@ -1,4 +1,5 @@
 ---
+
 slug: ai-podcast-tool-pro
 name: ai-podcast-tool-pro
 version: 1.0.0
@@ -6,31 +7,7 @@ displayName: AI播客生成-专业版
 summary: "企业级播客生产工具,支持批量生成、自定义风格、音频下载与团队协作,适配商业内容生产.。AI播客生成专业版,面向企业团队与专业内容生产者的高级播客制作工具。核心能力:"
 license: Proprietary
 edition: pro
-description: 'AI播客生成专业版,面向企业团队与专业内容生产者的高级播客制作工具。核心能力:
-
-  - 批量文档转播客,支持多文档队列处理
-
-  - 自定义对话风格(访谈、辩论、教学等)
-
-  - 音频文件下载(MP3/WAV)
-
-  - 节目封面自动生成与定制
-
-  - 团队协作与播客资产管理
-
-  - 优先生成队列与企业级技术支持
-
-  适用场景:
-
-  - 媒体机构批量内容音频化
-
-  - 企业培训资料播客化
-
-  - 出版机构有声内容生产
-
-  - 教育平台课程音频化
-
-  差异化:专业版在免费版基础上扩展批量生成、自定义风格、音频下载与团队协作,兼容免费版所有流程,适合商...'
+description: "AI播客产出专业版,面向企业团队与专业内容生产者的高级播客制作工具。核心能力:. 适用于需要ai podcast tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Creative
   - 播客生成
@@ -42,8 +19,6 @@ tags:
   - api
   - mp3
   - style
-  - bash
-  - language
 tools:
   - read
   - exec
@@ -51,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+pricing_tier: L2-标准级
 ---
+
 # AI播客生成工具 - 专业版
 
 ## 概述
@@ -157,7 +134,7 @@ python3 （请参考skill目录中的脚本文件） \
 # ...
 # 生成节目封面
 python3 （请参考skill目录中的脚本文件） \
-  --title "书籍试听:XXX" \
+  --title "书籍试听:placeholder" \
   --template brand_template_01 \
   --output cover.png
 ```
@@ -175,7 +152,7 @@ python3 （请参考skill目录中的脚本文件） \
 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:配置企业 API Key
+### 领先步:配置企业 API Key
 
 ```bash
 export MAGICPODCAST_API_URL="https://api.magicpodcast.app"
@@ -233,7 +210,7 @@ MAGICPODCAST_DEFAULT_FORMAT=mp3
 --cover-template <template> # 封面模板
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **风格匹配内容**:培训用教学式,新闻用访谈式,故事用叙事式
 2. **批量分批处理**:大批量任务建议分批(每批 10-20 个),避免队列拥堵
@@ -279,7 +256,7 @@ A:企业版支持私有化部署,数据完全留在企业内网。联系企业�
 - **安全建议**: 使用密钥管理服务存储 Key,避免明文写入脚本
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,支持批量生成、自定义风格、音频下载等企业级播客生产场景
 
 ## 错误处理

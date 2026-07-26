@@ -1,20 +1,13 @@
 ---
+
 slug: compress-pdf-tool-free
 name: compress-pdf-tool-free
 version: 1.0.0
 displayName: PDF压缩工具（免费版）
 summary: "通过API上传PDF文件进行压缩，支持图像质量与DPI参数调整，轮询返回下载链接.,支持多种使用场景和自动化处理"
-license: Proprietary
+license: MIT
 edition: free
-description: PDF压缩工具 - （免费版），可生成提升工作效率
-
-  核心能力: PDF压缩, 文件压缩, 减小体积, 压缩PDF, compress pdf, 批量压缩
-
-  适用场景: 个人用户日常使用，核心功能覆盖基础需求
-
-  差异化: 精简版，适合个人用户快速上手，提供核心功能与基础用法
-
-  适用关键词: PDF压缩, 文件压缩, 减小体积, 压缩PDF, compress pdf, 批量压缩'
+description: "PDF压缩工具 - （免费版），可产出提升工作效率. 适用于需要compress pdf tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - PDF处理
   - 文件压缩
@@ -26,15 +19,15 @@ tags:
   - pdf
   - api
   - 支持创建
-  - 查询
-  - input_params
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # PDF压缩工具（免费版）
 
 ## 概述
@@ -108,7 +101,7 @@ PDF文件上传、压缩参数配置、任务轮询、下载链接生成、批�
 
 ### 场景3：压缩参数优化
 
-根据文件类型推荐最佳压缩参数，平衡质量与体积。**示例指令**：`
+根据文件类型推荐优秀压缩参数，平衡质量与体积。**示例指令**：`
 
 `优化扫描文档的压缩参数
 
@@ -175,7 +168,7 @@ compress:
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 
-## 最佳实践
+## 优秀实践
 
 ### 基础使用建议
 
@@ -188,9 +181,8 @@ compress:
 ### 性能优化
 
 ```python
-# 免费版：单文件优化
-# 确保输入文件不超过建议大小
-# 处理完成后释放资源
+# 在此执行相关操作
+pass
 ```
 
 ## 常见问题

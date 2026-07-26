@@ -1,30 +1,13 @@
 ---
+
 slug: google-workspace-toolkit-free
 name: google-workspace-toolkit-free
 version: 1.0.1
 displayName: 谷歌办公工具接口免费版
 summary: 免配置云控制台的Google办公工具接口,OAuth登录即用,支持Gmail、日历、Drive核心工具调用.
-license: Proprietary
+license: MIT
 edition: free
-description: 谷歌办公工具接口免费版,通过工具协议直接调用 Google Workspace 服务,无需创建云控制台项目,OAuth 登录即可使用。核心能力:，可处理提升工作效率
-
-  - 零云控制台配置,Google 账号登录即用
-
-  - Gmail 邮件搜索、读取、发送、草稿
-
-  - Google 日历事件列表、创建、查询
-
-  - Google Drive 文件搜索与下载
-
-  - 通过工具协议统一调用,无需管理多个 SDK
-
-  适用场景:
-
-  - 个人用户快速访问 Google 邮件与日历
-
-  - 无云控制台配置经验的轻量用户
-
-  - 需要命令行驱动 Google 服务的自动化...'
+description: "谷歌办公工具接口免费版,通过工具协议直接调用 Google Workspace 服务,无需创建云控制台项目,OAuth 登录即可使用。核心能力:，可处置提升工作效率. 适用于需要google workspace toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 沟通协作
   - 谷歌办公
@@ -36,14 +19,6 @@ tags:
   - 自动化
   - 通信
   - 邮件
-  - 知识
-  - 文档
-  - 写作
-  - gmail
-  - gwtool
-  - google-workspace
-  - google
-  - drive
 tools:
   - read
   - exec
@@ -51,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 谷歌办公工具接口 - 免费版
 
 ## 概述
@@ -177,7 +154,7 @@ gwtool call --server google-workspace \
 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:安装与注册
+### 领先步:安装与注册
 
 ```bash
 # 安装工具接口
@@ -265,7 +242,7 @@ for mail in emails:
     print(f"  - {mail.get('from', '未知')}: {mail.get('subject', '无主题')}")
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 善用 OAuth 自动续期
 
@@ -368,7 +345,7 @@ search" query="is:unread" maxResults=1
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,核心功能通过工具协议调用需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,核心功能通过工具协议调用需要 exec 命令行执行能力)
 - **说明**: 基于工具接口的 AI Skill,通过工具协议统一调用 Google Workspace 服务。免费版主打零云控制台配置,OAuth 登录即用,支持 Gmail、Calendar、Drive 三大核心服务共 10 个工具,适合个人轻量办公场景.
 ## 错误处理
 

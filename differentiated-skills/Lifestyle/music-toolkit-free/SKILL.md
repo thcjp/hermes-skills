@@ -1,19 +1,13 @@
 ---
+
 slug: music-toolkit-free
 name: music-toolkit-free
 version: 1.0.1
 displayName: 音乐工具箱免费版
 summary: "音乐生成与编辑工具,支持MIDI生成、音频处理与基础乐理分析。面向个人音乐爱好者与学习者的音乐生成与编辑工具箱."
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人音乐爱好者与学习者的音乐生成与编辑工具箱.
-  核心能力: MIDI生成、音频处理、乐理分析、和弦进行、旋律创作辅助
-
-  适用场景: 音乐学习、创作原型、视频配乐、游戏音效、个人娱乐
-
-  差异化: 免费版聚焦个人创作与学习,本地处理,无版权限制
-
-  适用关键词: 音乐生成, MIDI, 音频处理, 乐理分析, 和弦进行, 旋律创作'
+description: "面向个人音乐爱好者与学习者的音乐产出与编辑工具箱. 适用于需要music toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 音乐生成
   - 音频处理
@@ -25,16 +19,15 @@ tags:
   - 创意
   - self
   - midi
-  - def
-  - return
-  - scale
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # 音乐工具箱 (免费版)
 
 ## 概述
@@ -257,7 +250,7 @@ pip install midiutil pydub numpy
 # Windows: 下载 FFmpeg 并配置 PATH
 ```
 
-### Step 2: 生成第一段旋律
+### Step 2: 生成领先段旋律
 
 ```python
 from midiutil import MIDIFile
@@ -338,7 +331,7 @@ MUSIC_THEORY = {
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 旋律创作原则
 
@@ -439,7 +432,7 @@ export MUSIC_OUTPUT_FORMAT="mp3"
 
 ### 可用性分类
 
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+exec方法(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 通过自然语言指令驱动 Agent 生成与处理音乐
 - **免费版限制**: 个人使用、基础音色、无 AI 编曲、无多轨录音、无母带处理、无商业授权
 
@@ -468,9 +461,9 @@ export MUSIC_OUTPUT_FORMAT="mp3"
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

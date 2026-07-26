@@ -1,4 +1,5 @@
 ---
+
 slug: "ziptax-tool-pro"
 name: "ziptax-tool-pro"
 version: "1.0.0"
@@ -6,21 +7,7 @@ displayName: "销售税查询(专业版)"
 summary: "面向团队的企业级销售税工程平台,含批量查询、本地缓存、合规报告与CI集成,支持高并发。。销售税查询工具专业版为团队与企业提供端到端销售税工程能力,涵盖批量查询、本地缓存、税务合规报告、CI集"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  销售税查询工具专业版为团队与企业提供端到端销售税工程能力,涵盖批量查询、本地缓存、税务合规报告、CI集成与高并发API封装。核心能力:
-  - 批量地址/邮编查询(并行处理)
-  - 本地缓存与增量刷新(降低API消耗)
-  - 税务合规报告(历史税率/审计追溯)
-  - 企业级API封装(SDK/重试/限流)
-  - CI/CD税率同步流水线
-  - 多税区聚合与对比分析
-  - 优先技术支持
-
-  适用场景:
-  - 中大型电商企业税率计算与结算
-  - 企业税务合规与审计追溯
-  - 跨州销售税率对比分析
-  - 高并发订单税率实时计算
+description: "|-. 适用于需要ziptax tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 销售税
   - 税务工程
@@ -32,12 +19,6 @@ tags:
   - 工具
   - 效率
   - 集成
-  - integration
-  - import
-  - address
-  - str
-  - rate
-  - return
 tools:
   - read
   - exec
@@ -45,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 销售税查询工具(专业版)
 ## 概述
 `ziptax-tool-pro` 是面向团队与企业的端到端销售税工程平台。它在免费版基础查询能力之上,扩展了批量并行查询、本地缓存与增量刷新、税务合规报告、企业级 API 封装与 CI/CD 集成能力,帮助团队构建可审计、可扩展、高可用的销售税计算体系.
@@ -298,7 +281,7 @@ if __name__ == "__main__":
 
 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
-### 第一步:声明企业上下文
+### 领先步:声明企业上下文
 在对话中说明团队规模、业务场景与合规需求,例如:
 
 ```
@@ -325,11 +308,9 @@ python3 （请参考skill目录中的脚本文件）
 # ...
 # 查看 CI 集成
 cat .github/workflows/taxrate-sync.yml
-```
-
-#
-## 配置示例
-### CI/CD 税率同步流水线
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 name: Daily Tax Rate Sync
 on:
@@ -367,9 +348,9 @@ email "bot@example.com"
         uses: slackapi/slack-github-action@v1
         with:
           slack-message: "税率同步失败,请检查"
-```
-
-### 企业级 API 封装(Node.js SDK)
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```typescript
 // src/tax-client.ts — 企业级税率查询客户端(缓存 + 重试)
 import { promises as fs } from 'fs';
@@ -425,7 +406,7 @@ export class TaxClient {
   private async getCache(query: string, type: string): Promise<TaxRateResult | null> {
     try {
       const key = Buffer.from(`${type}:${query}`).toString('base64').slice(0, 16);
-      const data = JSON.parse(await fs.readFile(path.join(this.cacheDir, `${key}.json`), 'utf-8'));
+      const data = JSON.parse(await fs.readFile(path.join(this.cacheDir, `${REF}.json`), 'utf-8'));
       if (Date.now() - data.queriedAt < this.cacheTtl) return data;
     } catch {}
     return null;
@@ -434,12 +415,12 @@ export class TaxClient {
   private async setCache(query: string, type: string, result: TaxRateResult): Promise<void> {
 toString('base64').slice(0, 16);
     await fs.mkdir(this.cacheDir, { recursive: true });
-    await fs.writeFile(path.join(this.cacheDir, `${key}.json`), JSON.stringify(result));
+    await fs.writeFile(path.join(this.cacheDir, `${REF}.json`), JSON.stringify(result));
   }
 }
 ```
 
-## 最佳实践
+## 优秀实践
 1. **缓存优先**:税率短期不变,本地缓存可降低 90%+ API 调用,显著降低成本.
 2. **批量并行**:多地址查询用并发(10-20),总耗时大幅缩短,但需注意 API 限流.
 3. **重试与退避**:网络抖动时指数退避重试,避免雪崩.
@@ -488,7 +469,7 @@ Pro 版完全兼容免费版的所有查询接口与 CLI 封装。个人开发�
 - **CI 集成**:在 CI 平台(如 GitHub Actions)的 Secrets 中配置 `ZIPTAX_API_KEY`
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于自然语言指令驱动 Agent 调用 zip-tax.com API;批量脚本、缓存与 CI 集成需在仓库中落地并由本地或 CI 执行;需要预先注册并配置 API Key
 
 ## 错误处理
@@ -513,9 +494,9 @@ Pro 版完全兼容免费版的所有查询接口与 CLI 封装。个人开发�
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

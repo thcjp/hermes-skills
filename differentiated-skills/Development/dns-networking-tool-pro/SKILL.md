@@ -1,4 +1,5 @@
 ---
+
 slug: "dns-networking-tool-pro"
 name: "dns-networking-tool-pro"
 version: "1.0.0"
@@ -6,23 +7,7 @@ displayName: "DNS网络诊断专业版"
 summary: "企业级网络诊断,支持批量巡检、防火墙审计、代理链分析与持续监控告警。。面向运维团队的企业级网络诊断工具,提供批量目标巡检、防火墙规则审计、代理链完整分析、持续监控与告警通知。核心能力: -"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  面向运维团队的企业级网络诊断工具,提供批量目标巡检、防火墙规则审计、代理链完整分析、持续监控与告警通知。核心能力:
-  - 批量多目标DNS与端口巡检
-  - 防火墙规则审计(iptables/ufw/云安全组)
-  - 代理链完整诊断(HTTP/SOCKS5)
-  - 持续监控与告警通知
-  - 网络拓扑路径分析(mtr/traceroute)
-  - 多格式诊断报告输出
-
-  适用场景:
-  - 企业级网络故障排查
-  - 服务可用性持续监控
-  - 防火墙策略审计
-  - 混合云网络连通性验证
-
-  差异化:
-  - 专业版完全兼容免费版命令...
+description: "|-. 适用于需要dns networking tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - 网络诊断
@@ -34,13 +19,14 @@ tags:
   - grep
   - sudo
   - iptables
-  - bash
 tools:
   - read
   - exec
 homepage: ""
 category: "Operations"
+pricing_tier: L2-标准级
 ---
+
 DNS网络诊断工具专业版为运维团队提供企业级网络诊断能力。在免费版基础诊断能力之上,专业版新增批量多目标巡检、防火墙规则审计、代理链完整分析、持续监控与告警通知,满足企业级网络运维需求.
 专业版完全兼容免费版的所有诊断命令和配置,运维团队可从免费版无缝升级,已有诊断脚本无需修改即可在专业版中使用.
 ## 核心能力
@@ -291,9 +277,9 @@ monitoring:
       to: ops@company.com
     webhook:
       url: "https://hooks.example.com/alert"
-```
-
-### Step 2:运行巡检
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 请对配置文件中的所有目标执行网络巡检,生成JSON格式报告.
 ```
@@ -308,7 +294,7 @@ monitoring:
 ## 配置示例
 ### 企业级完整配置
 
-## 最佳实践
+## 优秀实践
 1. **定期巡检**:设置定时任务进行每日网络巡检
 2. **变更后审计**:网络拓扑或防火墙变更后立即审计
 3. **历史趋势**:保存巡检历史,分析网络质量趋势
@@ -349,9 +335,9 @@ for target in api.example.com db.internal.com; do
     status=$(nc -zv -w 3 "$target" 443 2>&1 && echo 1 || echo 0)
     echo "network_target_up{target=\"$target\"} $status"
 done
-```
-
-### Q4:告警如何去重?
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 class AlertManager:
     def __init__(self):

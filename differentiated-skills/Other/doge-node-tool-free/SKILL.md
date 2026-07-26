@@ -1,43 +1,34 @@
 ---
+
 slug: doge-node-tool-free
 name: doge-node-tool-free
 version: 1.0.0
 displayName: DOGE节点免费版
 summary: "管理Dogecoin Core节点的状态查询与基础RPC操作，支持余额查看与交易记录检索.。DOGE节点免费版是一款面向Dogecoin全节点运维者的轻量级管理Skill，封装dogecoi"
-license: Proprietary
+license: MIT
 edition: free
-description: 'DOGE节点免费版是一款面向Dogecoin全节点运维者的轻量级管理Skill，封装dogecoin-cli命令并提供结构化的节点状态与钱包信息输出。核心能力：
-
-  - 查询节点同步状态、区块高度、连接数
-
-  - 查询钱包余额、交易记录、未花费输出
-
-  - 生成新收款地址
-
-  - 基础RPC命令速查与参数说明
-
-  - 节点配置文件（dogecoin'
+description: "DOGE节点免费版是一款面向Dogecoin全节点运维者的轻量级管控Skill，封装dogecoin-cli命令并包含结构化的节点状态与钱包信息输出。核心能力：. 适用于需要doge node tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要doge node tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - Dogecoin
+  - doge
+  - node
+  - automation
+  - productivity
   - 区块链节点
   - 钱包管理
   - RPC工具
   - 工具
   - 效率
-  - 金融
-  - 财务
-  - 运维
-  - dogecoin
-  - dogecoin-cli
-  - doge
-  - rpc
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # DOGE节点免费版（Doge Node Tool Free）
 
 ## 概述
@@ -46,7 +37,7 @@ category: "Automation"
 设计原则：
 1. **只读优先**：免费版聚焦查询能力，不涉及转账等写操作
 2. **结果可读**：将JSON输出转化为表格与摘要
-3. **安全第一**：敏感操作（导出私钥、转账）需二次确认
+3. **安全领先**：敏感操作（导出私钥、转账）需二次确认
 4. **配置规范**：提供标准dogecoin.conf模板，避免配置错误
 
 ## 核心能力
@@ -197,7 +188,7 @@ maxconnections=50
 └── debug.log          # 调试日志
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **RPC仅本地访问**：rpcbind绑定127.0.0.1，切勿暴露到公网
 2. **强密码**：rpcuser与rpcpassword使用随机生成的强密码

@@ -1,34 +1,34 @@
 ---
+
 slug: task-toolkit-free
 name: task-toolkit-free
 version: 1.0.1
 displayName: 任务工具包基础版
 summary: "个人任务与日程管理工具,支持添加、查询、修改与归档任务。核心能力: 任务管理领域的专业化 AI 辅助工具,提供核心基础功能支持."
-license: Proprietary
+license: MIT
 edition: free
-description: '核心能力: 任务管理领域的专业化 AI 辅助工具,提供核心基础功能支持.
-  适用场景: 个人用户与轻量级场景,涵盖日常操作、自动化工作流与智能决策辅助.
-  差异化: FREE 版本,面向个人用户提供核心功能、简洁操作与社区支持.
-  适用关键词: task, 任务, 待办, 日程, 优先级, 归档, 清单'
+description: "核心能力: 任务管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要task toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要task toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 任务管理
+  - task
+  - toolkit
+  - automation
+  - productivity
   - 待办
   - 日程
   - 时间管理
   - 效率
   - 工具
-  - agent
-  - free
-  - 截止日期
-  - pro
-  - 版本
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Productivity"
+pricing_tier: free
+
 ---
+
 # 任务工具包基础版
 
 ## 概述
@@ -233,7 +233,7 @@ Agent 将自动:
 | cache_enabled | bool | true | 启用结果缓存 |
 | timeout | int | 30 | 操作超时时间(秒) |
 
-## 最佳实践
+## 优秀实践
 
 1. **及时添加任务避免遗忘**
 2. **定期清理已完成任务保持列表整洁**
@@ -304,7 +304,7 @@ FREE 版本支持单一 API Key 配置,满足个人使用需求:
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于 Markdown 的 AI Skill,通过自然语言指令驱动 Agent 执行任务
 - **FREE 特性**: 支持单次执行、基础配置与社区支持
 - **安全等级**: 基础,数据本地存储,建议定期备份

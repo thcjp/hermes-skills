@@ -1,60 +1,34 @@
 ---
+
 slug: shopify-helper-tool-free
 name: shopify-helper-tool-free
 version: 1.0.0
 displayName: Shopify助手-免费版
 summary: "Shopify建站助手,支持主题定制、产品管理与基础开发,适合个人卖家。Shopify 建站助手免费版,面向个人卖家与小型电商。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: Shopify 建站助手免费版,面向个人卖家与小型电商。核心能力:，可处理提升工作效率
-
-  - Shopify 主题 Liquid 模板开发
-
-  - 产品与集合管理指导
-
-  - 基础 SEO 优化建议
-
-  - Shopify CLI 使用指导
-
-  - 常见建站问题解答
-
-  - 主题自定义代码示例
-
-  适用场景:
-
-  - 个人 Shopify 店铺搭建
-
-  - 主题模板修改与定制
-
-  - 产品页面优化
-
-  - 学习 Shopify 开发
-
-  差异化:免费版提供基础建站能力'
+description: "Shopify 建站助手免费版,面向个人卖家与小型电商。核心能力:，可处置提升工作效率. 适用于需要shopify helper tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要shopify helper tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - Shopify
+  - shopify
+  - helper
+  - automation
+  - productivity
   - 电商
   - Liquid
   - 建站
   - 工具
   - 效率
-  - 自动化
-  - 写作
-  - 创意
-  - 图像
-  - 开发
-  - shopify
-  - div
-  - product
-  - class
-  - liquid
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # Shopify 助手 - 免费版
 
 ## 概述
@@ -251,7 +225,7 @@ npm install -g @shopify/cli @shopify/theme
 shopify version
 ```
 
-### 创建第一个自定义主题
+### 创建领先个自定义主题
 
 ```bash
 # 使用 Shopify 官方 Dawn 主题创建
@@ -331,7 +305,7 @@ my-theme/
 | 页面速度 | 图片压缩,减少 JS | 高 |
 | 移动适配 | 响应式设计 | 高 |
 
-## 最佳实践
+## 优秀实践
 
 1. **使用 Dawn 主题**:Shopify 官方主题,代码质量高,适合作为定制基础
 2. **本地开发**:使用 Shopify CLI 本地开发,避免直接修改线上代码
@@ -379,7 +353,7 @@ A: Shopify 支持 Liquid 的 `{{ 'text' | t }}` 翻译 filter。在 `locales/` �
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **分类**: MD+EXEC模式Markdown指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 执行 Shopify 建站与主题开发
 - **限制**: 免费版仅支持单店铺,不支持自定义 App 开发与企业级 SEO
 

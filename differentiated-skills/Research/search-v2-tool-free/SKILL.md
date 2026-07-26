@@ -1,41 +1,24 @@
 ---
+
 slug: search-v2-tool-free
 name: search-v2-tool-free
 version: 1.0.0
 displayName: 搜索工具免费版
 summary: "轻量级LLM优化搜索工具,支持基础网页搜索与结果摘要,适合个人用户快速获取信息。搜索工具免费版为个人用户提供轻量级的LLM优化网页搜索能力."
-license: Proprietary
+license: MIT
 edition: free
-description: '搜索工具免费版为个人用户提供轻量级的LLM优化网页搜索能力.
-  核心能力:
-
-  - LLM优化的网页搜索
-
-  - 基础搜索深度选择
-
-  - 结果内容摘要
-
-  - 简单域名过滤
-
-  适用场景:
-
-  - 快速事实查找
-
-  - 技术问题搜索
-
-  - 日常信息检索
-
-  差异化:免费版聚焦核心搜索流程,通过Tavily API实现LLM友好的搜索结果,适合个人用户快速获取优化后的搜索内容,无需复杂配置.
-  适用关键词: 搜索, search, Tavily, 网页搜索, LLM优化, 检索, 查询'
+description: "搜索工具免费版为个人用户包含轻量级的LLM调优网页搜索能力. 适用于需要search v2 tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要search v2 tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 研究工具
+  - search
+  - automation
+  - productivity
+  - developer-tools
   - 搜索
   - 信息检索
   - 个人效率
   - 检索
   - 工具
-  - query
-  - python
 tools:
   - read
   - exec
@@ -43,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 # 搜索工具免费版
 
 ## 概述
@@ -199,7 +185,7 @@ category: "Knowledge"
 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:获取API Key
+### 领先步:获取API Key
 
 访问 https://tavily.com 注册并获取API Key.
 ### 第二步:配置API Key
@@ -280,7 +266,7 @@ org", "github.com"],
 （请参考skill目录中的脚本文件） '{"query": "your question", "include_answer": true}'
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 查询要简洁精准
 
@@ -387,7 +373,7 @@ A: score范围0-1,越高越相关。一般规律:>0.9高度相关,0.7-0.9较相�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行搜索脚本)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行搜索脚本)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent调用Tavily API完成LLM优化网页搜索任务。免费版聚焦个人用户的基础搜索、域名过滤与时间范围筛选,适合快速事实查找、技术问题搜索与日常信息检索场景.
 ## 错误处理
 

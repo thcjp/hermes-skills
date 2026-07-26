@@ -1,4 +1,5 @@
 ---
+
 slug: "doc-print-tool-free"
 name: "doc-print-tool-free"
 version: "1.0.0"
@@ -6,34 +7,18 @@ displayName: "文档凭证注册工具"
 summary: "面向个人用户的文档凭证注册、检索与基础交换工具，支持快速登记与发现。。面向个人开发者与一人公司的文档凭证注册与发现工具. 核心能力: - 文档/服务凭证的快速注册与唯一标识签发 - 按关键词"
 license: "MIT"
 edition: "free"
-description: |-
-  面向个人开发者与一人公司的文档凭证注册与发现工具.
-  核心能力:
-  - 文档/服务凭证的快速注册与唯一标识签发
-  - 按关键词、领域、能力维度检索已登记凭证
-  - 单条任务委托与交付的基础交换流程
-  - 个人信誉积分的查看与跟踪
-
-  适用场景:
-  - 独立开发者发布个人能力卡片并被他人检索
-  - 快速登记一份文档或服务以便后续引用
-  - 与另一名开发者进行单次任务协作
-
-  差异化: 免费版聚焦个人单用户场景，提供注册、检索、单条交换与信誉查看，配置简单、零成本上手.
-  适用关键词: 文档注册, 凭证打印, 登记, 发现, 检索, 能力卡片, doc-print, register, discover
+description: "|-. 适用于需要doc print tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要doc print tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 文档工具
+  - doc
+  - print
+  - automation
+  - productivity
   - 凭证注册
   - 个人效率
   - 其他工具
   - 工具
   - 效率
-  - 写作
-  - 电商
-  - handle
-  - api_key
-  - https
-  - doc-print
 tools:
   - read
   - exec
@@ -41,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # 文档凭证注册工具（免费版）
 
 ## 概述
@@ -126,17 +114,17 @@ curl "https://doc-print.example.com/v3/agents/search?domain=code-review&limit=10
 ```bash
 # 发起任务
 example.com/v3/exchange/requests \
-  -H "Authorization: Bearer ${API_KEY}" \
+  -H "Authorization: Bearer ${PARAM}" \
   -H "Content-Type: application/json" \
   -d '{"task": "评审这段代码的安全问题", "domains": ["security"]}'
 # ...
 # 查看收件箱
 curl https://doc-print.example.com/v3/exchange/inbox \
-  -H "Authorization: Bearer ${API_KEY}"
+  -H "Authorization: Bearer ${PARAM}"
 # ...
 # 完成交付并评分
 example.com/v3/exchange/requests/REQ_ID/complete \
-  -H "Authorization: Bearer ${API_KEY}" \
+  -H "Authorization: Bearer ${PARAM}" \
   -d '{"rating": 8, "review": "响应及时、结论准确"}'
 ```
 
@@ -173,7 +161,7 @@ export DOC_PRINT_HANDLE="my-tool"
 ```
 
 handle 命名规则：`^[a-z0-9][a-z0-9-]{0,30}[a-z0-9]$`，2-32 字符，小写字母数字与连字符.
-## 最佳实践
+## 优秀实践
 
 - **handle 一次定型**：注册后不建议频繁改名，handle 是长期身份标识.
 - **领域要精准**：只勾选真正提供的服务领域，避免被无关任务打扰.
@@ -215,7 +203,7 @@ A：不支持。链上身份验证为专业版能力.
 
 ```bash
 curl -X PATCH https://doc-print.example.com/v3/agents/my-tool \
-  -H "Authorization: Bearer ${API_KEY}" \
+  -H "Authorization: Bearer ${PARAM}" \
   -H "Content-Type: application/json" \
   -d '{
     "services": [

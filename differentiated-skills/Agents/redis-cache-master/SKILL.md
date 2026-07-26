@@ -1,12 +1,12 @@
 ---
+
 slug: redis-cache-master
 name: redis-cache-master
 version: 2.0.1
 displayName: Redis缓存大师
 summary: "生产级Redis实战：TTL纪律+淘汰决策树+集群哈希标签+原子陷阱防控，避坑指南.。面向生产环境的 Redis 实战指南，直击无 TTL 内存泄漏、淘汰策略错配、集群跨槽报错、原子性陷阱、"
-license: Proprietary
-description: 面向生产环境的 Redis 实战指南，直击无 TTL 内存泄漏、淘汰策略错配、集群跨槽报错、原子性陷阱、大 Key 拖垮 eviction，可处理提升工作效率
-  五大事故。适用于缓存设计、分布式锁、限流、消息队列、生产运维等场景。核心能力含 TTL 纪律、淘汰决策树、集群哈希标签、原子操作模式、Streams 可靠消息。适用关键词：Redis、缓存、TTL、淘汰策略、集群、分布式锁、限流、eviction、cluster.
+license: MIT
+description: "面向生产环境的 Redis 实战指南，直击无 TTL 内存泄漏、淘汰策略错配、集群跨槽报错、原子性陷阱、大 Key 拖垮 eviction，可处置提升工作效率. 适用于需要redis cache master相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 智能代理
   - 数据存储
@@ -18,7 +18,6 @@ tags:
   - redis
   - token
   - key
-  - set
 tools:
   - read
   - exec
@@ -28,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
+pricing_tier: free
 ---
+
 # Redis 缓存大师（Redis Cache Master）
 
 **不是命令清单，而是生产避坑指南。** 直击五大高频 Redis 生产事故：无 TTL 内存泄漏、淘汰策略错配、集群跨槽报错、原子性陷阱、大 Key 拖垮 eviction。提供决策树与模式库，让每次选型都有依据.

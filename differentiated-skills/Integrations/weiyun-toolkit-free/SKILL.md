@@ -1,13 +1,13 @@
 ---
+
 slug: weiyun-toolkit-free
 name: weiyun-toolkit-free
 version: 1.0.1
 displayName: 微云工具箱(免费版)
 summary: "微云网盘文件管理免费版：目录浏览、文件下载与上传，内置一键脚本与基础错误码指南.。微云工具箱（免费版）面向个人用户与独立开发者，封装微云网盘的日常文件操作：目录浏览、文件下载、文件上传。通过"
-license: Proprietary
+license: MIT
 edition: free
-description: 微云工具箱（免费版）面向个人用户与独立开发者，封装微云网盘的日常文件操作：目录浏览、文件下载、文件上传。通过 MCP工具协议与微云网盘交互，所有文件哈希计算在本地完成，避免敏感数据外泄。Use，可自动提升工作效率
-  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+description: "微云工具箱（免费版）面向个人用户与独立开发者，封装微云网盘的日常文件操作：目录浏览、文件下载、文件上传。通过 MCP工具协议与微云网盘交互，所有文件哈希计算在本地完成，避免敏感数据外泄。Use，可自发提升工作效率. 适用于需要weiyun toolkit相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 云存储
   - 微云
@@ -19,14 +19,15 @@ tags:
   - pdir_key
   - list
   - mcp
-  - token
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 微云工具箱（免费版）
 
 ## 概述
@@ -145,7 +146,7 @@ curl -s -L -o <本地文件名> -b "<cookie>" "<https_download_url>"
   → status=2 上传完成
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. pdir_key 取值规则
 所有需要 `pdir_key` 的操作都必须使用 `weiyun.list` 响应**顶层**的 `pdir_key`，**不要**使用文件条目自身的 `pdir_key` 字段（该字段常为空字符串）。这是最常见的错误来源.

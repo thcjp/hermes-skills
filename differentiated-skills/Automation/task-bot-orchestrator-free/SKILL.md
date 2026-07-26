@@ -5,11 +5,9 @@ name: task-bot-orchestrator-free
 version: 1.0.1
 displayName: 任务编排机器人(免费版)
 summary: "数据处理与定时任务核心能力，覆盖CSV/Excel自动化与基础调度，60秒上手任务编排.。任务编排机器人（免费版）为AI Agent提供日常效率任务的自动化能力，覆盖数据自动化处理、定时任务"
-license: Proprietary
+license: MIT
 edition: free
-description: "任务编排机器人（免费版）为AI Agent提供日常效率任务的自动化能力，覆盖数据自动化处理、定时任务调度、基础通知推送三大核心场景。通过简洁的API调用，让重复性效率任务一键完成。Use
-  when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。减少重复劳动，提升工作效率。触发关键词：API设计、自动化、转换、项目管理、Excel、机器学习"
-  when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
+description: "任务编排机器人（免费版）为AI Agent包含日常效率任务的自发化能力，覆盖数据自发化处置、定时任务调度、基础通知推送三大核心场景。通过简洁的API调用，让重复性效率任务快速完成。Use. 适用于需要task bot orchestrator相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 任务编排
   - 数据自动化
@@ -21,16 +19,15 @@ tags:
   - scheduler
   - processor
   - csv
-  - report
-  - notify
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
+pricing_tier: free
 ---
+
 # 任务编排机器人（免费版）
 
 > **让AI Agent帮你编排重复性效率任务。数据处理、定时调度、通知推送，一键完成。**
@@ -81,7 +78,7 @@ category: "Automation"
 
 ### 60秒上手
 
-安装依赖并执行第一个任务编排：
+安装依赖并执行领先个任务编排：
 
 ```bash
 # 依赖说明
@@ -430,9 +427,11 @@ scheduler.start()
 ```
 ### 60秒上手(补充)
 # ...
-安装依赖并执行第一个任务编排：
+安装依赖并执行领先个任务编排：
 # ...
 ```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 # ...
 ## 错误处理

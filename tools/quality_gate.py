@@ -93,8 +93,15 @@ import sys
 import json
 import re
 import argparse
+import sqlite3
 from pathlib import Path
 from datetime import datetime
+
+# 数据库路径(复用config)
+try:
+    from config import DB_PATH as _DB_PATH
+except ImportError:
+    _DB_PATH = Path(r"d:\skills\skill-registry.db")
 
 # 确保能导入skill_core和check_debranding
 SKILL_REGISTRY_DIR = Path(__file__).parent
@@ -522,14 +529,124 @@ def _check_cross_validation(l2_report: dict = None, l3_report: dict = None,
     }
 
 
-def _check_requirement_deviation(skill_md_path: Path, fm: dict) -> dict:
-    """防幻觉检查2: 需求理解偏差检测
+# slug关键词→中文关键词映射 (用于检测slug与displayName语义不匹配)
+_SLUG_KEYWORD_CN_MAP = {
+    'university': ['大学', '高校', '院校', '申请', 'admission', 'application'],
+    'applications': ['申请', '报名', 'application'],
+    'word': ['word', '文档', 'doc'],
+    'docx': ['docx', '文档'],
+    'pdf': ['pdf', '文档'],
+    'excel': ['excel', '表格'],
+    'sheet': ['sheet', '表格'],
+    'video': ['视频', 'video'],
+    'audio': ['音频', 'audio'],
+    'image': ['图片', '图像', 'image'],
+    'code': ['代码', 'code'],
+    'security': ['安全', 'security'],
+    'data': ['数据', 'data'],
+    'write': ['写作', 'write'],
+    'copy': ['文案', 'copy'],
+    'translate': ['翻译', 'translate'],
+    'search': ['搜索', 'search'],
+    'download': ['下载', 'download'],
+    'upload': ['上传', 'upload'],
+    'email': ['邮件', 'email'],
+    'chat': ['聊天', 'chat'],
+    'calendar': ['日历', 'calendar'],
+    'finance': ['财务', 'finance'],
+    'accounting': ['会计', 'accounting'],
+    'music': ['音乐', 'music'],
+    'weather': ['天气', 'weather'],
+    'news': ['新闻', 'news'],
+    'recipe': ['食谱', 'recipe'],
+    'health': ['健康', 'health'],
+    'travel': ['旅行', 'travel'],
+    'shopping': ['购物', 'shopping'],
+    'payment': ['支付', 'payment'],
+    'invoice': ['发票', 'invoice'],
+    'resume': ['简历', 'resume'],
+    'presentation': ['演示', 'presentation'],
+    'database': ['数据库', 'database'],
+    'api': ['api', '接口'],
+    'browser': ['浏览器', 'browser'],
+    'agent': ['代理', 'agent'],
+    'automation': ['自动化', 'automation'],
+    'monitor': ['监控', 'monitor'],
+    'backup': ['备份', 'backup'],
+    'deploy': ['部署', 'deploy'],
+    'test': ['测试', 'test'],
+    'debug': ['调试', 'debug'],
+}
+
+# slug中需要过滤的常见后缀词
+_SLUG_FILTER_WORDS = {'sk', 'free', 'paid', 'pro', 'tool', 'tools', 'master', 'pro', 'ai', 'the', 'and', 'for', 'a', 'an', 'with', 'new'}
+
+
+def _extract_slug_keywords(slug: str) -> list:
+    """从slug中提取有意义的关键词 (过滤常见后缀词)"""
+    parts = slug.lower().split('-')
+    keywords = []
+    for part in parts:
+        if len(part) > 2 and part not in _SLUG_FILTER_WORDS:
+            keywords.append(part)
+    return keywords
+
+
+def _check_slug_content_match(slug: str, display_name: str, description: str, body: str) -> dict:
+    """检查slug关键词是否在displayName/description/body中出现 (语义匹配)
     
-    提取description中的关键功能声明, 检查body中是否包含对应实现
+    检测场景: slug=university-applications-sk 但 displayName=命理大师 (内容不匹配)
+    """
+    if not slug:
+        return {'matched': True, 'details': 'slug为空, 跳过检查'}
+    
+    slug_keywords = _extract_slug_keywords(slug)
+    if not slug_keywords:
+        return {'matched': True, 'details': 'slug无有意义关键词, 跳过检查'}
+    
+    # 合并搜索目标: displayName + description + body前500字符
+    search_text = f"{display_name} {description} {body[:500]}".lower()
+    
+    unmatched = []
+    matched = []
+    for kw in slug_keywords:
+        # 直接检查英文关键词是否出现
+        if kw in search_text:
+            matched.append(kw)
+            continue
+        # 检查中文映射
+        cn_words = _SLUG_KEYWORD_CN_MAP.get(kw, [])
+        if any(cn in search_text for cn in cn_words):
+            matched.append(f"{kw}(→{[c for c in cn_words if c in search_text][0]})")
+            continue
+        # 无匹配
+        unmatched.append(kw)
+    
+    matched_result = len(matched) > 0
+    return {
+        'matched': matched_result,
+        'slug_keywords': slug_keywords,
+        'matched_keywords': matched,
+        'unmatched_keywords': unmatched,
+        'details': f"slug关键词: {slug_keywords}, 匹配: {matched}, 未匹配: {unmatched}"
+    }
+
+
+def _check_requirement_deviation(skill_md_path: Path, fm: dict) -> dict:
+    """防幻觉检查2: 需求理解偏差检测 (v2.3增强: 新增slug与内容语义匹配检查)
+    
+    v2.3新增:
+      - slug关键词与displayName/description/body语义匹配检查
+        (检测slug=university-applications但内容=命理大师 这类不匹配)
+    
+    原有:
+      - 提取description中的关键功能声明, 检查body中是否包含对应实现
     """
     fields = fm.get('fields', fm)
     body = fm.get('body', '')
     description = fields.get('description', '')
+    slug = fields.get('slug', '')
+    display_name = fields.get('displayName', '')
     
     issues = []
     
@@ -541,7 +658,16 @@ def _check_requirement_deviation(skill_md_path: Path, fm: dict) -> dict:
             'details': ['description或body为空, 跳过偏差检测']
         }
     
-    # 提取description中的功能关键词(动词+宾语)
+    # v2.3新增: slug与内容语义匹配检查
+    slug_match = _check_slug_content_match(slug, display_name, description, body)
+    if not slug_match['matched']:
+        unmatched_str = ', '.join(slug_match['unmatched_keywords'])
+        issues.append(
+            f'slug与内容语义不匹配: slug关键词[{unmatched_str}]在displayName/description/body中均未找到. '
+            f'displayName="{display_name}" — 请检查slug是否与实际功能一致'
+        )
+    
+    # 原有: 提取description中的功能关键词(动词+宾语)
     # 简单提取: 找到"支持/提供/实现/生成/转换/分析"等动词后的关键词
     action_keywords = ['支持', '提供', '实现', '生成', '转换', '分析', '优化', '管理', '处理', '检测', '修复', '批量', '自动']
     claimed_features = []
@@ -568,10 +694,11 @@ def _check_requirement_deviation(skill_md_path: Path, fm: dict) -> dict:
     return {
         'name': '需求理解偏差',
         'passed': len(issues) == 0,
-        'severity': 'medium',
-        'details': issues if issues else [f'已验证{len(claimed_features[:5])}个功能声明, body均有对应内容'],
+        'severity': 'high' if not slug_match['matched'] else 'medium',
+        'details': issues if issues else [f'已验证{len(claimed_features[:5])}个功能声明, body均有对应内容; slug语义匹配正常'],
         'claimed_features': claimed_features[:5],
         'missing_features': missing_features,
+        'slug_match': slug_match,
     }
 
 
@@ -1143,18 +1270,146 @@ def run_security_precheck(skill_md_path: Path) -> dict:
         }
 
 
-# ============ 统一质量检查入口 (v2.1增强) ============
+# ============ 评分门控 (v2.3新增 — 流程固化: 低于4.5分阻断上传) ============
+
+RATING_GATE_THRESHOLD = 4.5  # 与market_monitor.py的RATING_THRESHOLD一致
+
+def run_rating_gate(skill_md_path: Path, slug: str = None) -> dict:
+    """评分门控检查 (v2.3新增 — 需求7+8流程固化)
+
+    检查skill在平台上的历史评分, 阻止低评分skill重新上传。
+
+    流程固化逻辑:
+    1. 从DB查询skill的platform_rating (由sync_platform_ratings填充)
+    2. 如果 platform_rating > 0 且 < 4.5 → 阻断上传, 要求先升级
+    3. 如果 current_status == 'deleted' → 阻断上传, 要求重新差异化
+
+    检查项(2项):
+      1. 平台评分检查 — 历史评分是否低于阈值
+      2. 删除状态检查 — skill是否因质量问题被删除
+
+    参数:
+        skill_md_path: SKILL.md文件路径
+        slug: 可选的skill slug (如不提供则从路径推断)
+    """
+    checks = []
+
+    # 推断slug
+    if not slug:
+        slug = skill_md_path.parent.name
+
+    # 查询DB
+    try:
+        conn = sqlite3.connect(str(_DB_PATH))
+        conn.row_factory = sqlite3.Row
+        row = conn.execute("""
+            SELECT platform_rating, platform_rating_count, current_status,
+                   platform_ai_review, current_display_name
+            FROM skills WHERE slug = ?
+        """, (slug,)).fetchone()
+        conn.close()
+
+        if not row:
+            # DB中无此skill记录, 跳过评分检查(新skill)
+            checks.append({
+                'name': '评分门控: DB记录检查',
+                'passed': True,
+                'severity': 'info',
+                'details': [f'skill {slug} 不在DB中, 视为新skill, 跳过评分检查']
+            })
+            checks.append({
+                'name': '评分门控: 平台评分检查',
+                'passed': True,
+                'severity': 'info',
+                'details': ['新skill无历史评分, 跳过']
+            })
+        else:
+            rating = row['platform_rating'] or 0.0
+            rating_count = row['platform_rating_count'] or 0
+            status = row['current_status'] or 'active'
+            display_name = row['current_display_name'] or slug
+
+            # 检查1: 平台评分
+            if rating > 0 and rating < RATING_GATE_THRESHOLD:
+                checks.append({
+                    'name': '评分门控: 平台评分检查',
+                    'passed': False,
+                    'severity': 'critical',
+                    'details': [
+                        f'skill {slug} ({display_name}) 平台评分 {rating} < {RATING_GATE_THRESHOLD}',
+                        f'评分数: {rating_count}',
+                        f'修复方案: 执行 upgrade_single_skill("{slug}") 升级内容后重新上传',
+                        f'流程: 评分同步 → 检测低评分 → 阻断上传 → 触发升级 → 升级通过 → 允许重传',
+                    ]
+                })
+            else:
+                rating_str = f'{rating}' if rating > 0 else '无评分(新skill或未同步)'
+                checks.append({
+                    'name': '评分门控: 平台评分检查',
+                    'passed': True,
+                    'severity': 'info',
+                    'details': [f'评分: {rating_str}, 阈值: {RATING_GATE_THRESHOLD}']
+                })
+
+            # 检查2: 删除状态
+            if status == 'deleted':
+                checks.append({
+                    'name': '评分门控: 删除状态检查',
+                    'passed': False,
+                    'severity': 'critical',
+                    'details': [
+                        f'skill {slug} 当前状态为 deleted (已从平台删除)',
+                        f'修复方案: 重新差异化后以新slug上传, 或修复内容后恢复状态',
+                    ]
+                })
+            else:
+                checks.append({
+                    'name': '评分门控: 删除状态检查',
+                    'passed': True,
+                    'severity': 'info',
+                    'details': [f'当前状态: {status}']
+                })
+
+    except Exception as e:
+        checks.append({
+            'name': '评分门控: DB查询',
+            'passed': True,
+            'severity': 'warning',
+            'details': [f'DB查询异常(不阻断): {e}']
+        })
+
+    total = len(checks)
+    passed = sum(1 for c in checks if c.get('passed'))
+    failed = total - passed
+
+    return {
+        'passed': failed == 0,
+        'overall_passed': failed == 0,
+        'total_checks': total,
+        'passed_checks': passed,
+        'failed_checks': failed,
+        'checks': checks,
+        'gate_type': 'rating_gate',
+        'gate_threshold': RATING_GATE_THRESHOLD,
+        'checked_at': datetime.now().isoformat()
+    }
+
+
+# ============ 统一质量检查入口 (v2.3增强: +评分门控) ============
 
 def run_full_quality_check(skill_md_path: Path,
                             include_l2l3: bool = False,
                             l2_report: dict = None,
                             l3_report: dict = None,
-                            l4_report: dict = None) -> dict:
-    """统一质量检查入口 (v2.0新增)
+                            l4_report: dict = None,
+                            slug: str = None) -> dict:
+    """统一质量检查入口 (v2.3增强: +评分门控)
     
     执行完整质量检查链路:
-    L1(13项) → 安全预检(11项) → 营销关卡(7项) → 防幻觉(3项)
+    L1(13项) → 评分门控(2项) → 安全预检(21项) → 营销关卡(7项) → 防幻觉(3项)
     可选: L2/L3报告检查
+    
+    v2.3新增: 评分门控 — 检查平台历史评分,低于4.5分阻断上传
     
     参数:
         skill_md_path: SKILL.md文件路径
@@ -1162,12 +1417,16 @@ def run_full_quality_check(skill_md_path: Path,
         l2_report: L2验证报告(可选)
         l3_report: L3试运行报告(可选)
         l4_report: L4-L9审计报告(可选)
+        slug: skill slug (v2.3新增, 用于评分门控查询DB)
     
     返回:
-        统一质量检查结果, 包含L1/安全/营销/防幻觉各层结果
+        统一质量检查结果, 包含L1/评分/安全/营销/防幻觉各层结果
     """
     # L1: 静态格式合规
     l1_result = run_quality_gate(skill_md_path)
+    
+    # 评分门控 (v2.3新增 — 流程固化: 低于4.5分阻断上传)
+    rating_result = run_rating_gate(skill_md_path, slug)
     
     # 安全审核预检 (v2.1新增)
     security_result = run_security_precheck(skill_md_path)
@@ -1183,6 +1442,7 @@ def run_full_quality_check(skill_md_path: Path,
     # 汇总
     all_checks = (
         l1_result.get('checks', []) +
+        rating_result.get('checks', []) +
         security_result.get('checks', []) +
         marketing_result.get('checks', []) +
         anti_hallucination_result.get('checks', [])
@@ -1204,6 +1464,10 @@ def run_full_quality_check(skill_md_path: Path,
             'L1_static': {
                 'passed': l1_result.get('overall_passed', False),
                 'score': f"{l1_result.get('passed_checks', 0)}/{l1_result.get('total_checks', 0)}",
+            },
+            'rating_gate': {
+                'passed': rating_result.get('overall_passed', False),
+                'score': f"{rating_result.get('passed_checks', 0)}/{rating_result.get('total_checks', 0)}",
             },
             'security_precheck': {
                 'passed': security_result.get('overall_passed', False),
@@ -1275,8 +1539,10 @@ def main():
                         help='仅运行防幻觉检查(3项)')
     parser.add_argument('--security', action='store_true',
                         help='仅运行安全审核预检(21项高风险模式: 10基础+10科恩/云鼎+VPN)')
+    parser.add_argument('--rating', action='store_true',
+                        help='仅运行评分门控检查(2项: 平台评分+删除状态, 阈值4.5)')
     parser.add_argument('--full', action='store_true',
-                        help='完整质量检查: L1(13项) + 安全预检(21项) + 营销关卡(7项) + 防幻觉(3项)')
+                        help='完整质量检查: L1(13项) + 评分门控(2项) + 安全预检(21项) + 营销关卡(7项) + 防幻觉(3项)')
     args = parser.parse_args()
 
     target = Path(args.path)
@@ -1300,6 +1566,8 @@ def main():
             result = run_full_quality_check(sf)
         elif args.security:
             result = run_security_precheck(sf)
+        elif args.rating:
+            result = run_rating_gate(sf)
         elif args.marketing:
             result = run_marketing_gate(sf)
         elif args.anti_hallucination:

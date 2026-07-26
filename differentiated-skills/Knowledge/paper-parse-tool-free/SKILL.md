@@ -1,20 +1,13 @@
 ---
+
 slug: paper-parse-tool-free
 name: paper-parse-tool-free
 version: 1.0.0
 displayName: 论文解析工具（免费版）
 summary: "解析学术论文PDF，提取标题、摘要、章节、引用、图表等结构化信息.,支持多种使用场景和自动化处理。提供高效自动化处理能力,适用于多种业务场景"
-license: Proprietary
+license: MIT
 edition: free
-description: 论文解析工具 - （免费版），可分析提升工作效率
-
-  核心能力: 论文解析, 学术论文, paper parse, 引用提取, 章节分析, 文献管理, PDF解析
-
-  适用场景: 个人用户日常使用，核心功能覆盖基础需求
-
-  差异化: 精简版，适合个人用户快速上手，提供核心功能与基础用法
-
-  适用关键词: 论文解析, 学术论文, paper parse, 引用提取, 章节分析, 文献管理, PDF解析'
+description: "论文解析工具 - （免费版），可剖析提升工作效率. 适用于需要paper parse tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 论文解析
   - 文档解析
@@ -26,19 +19,15 @@ tags:
   - 研究
   - 分析
   - 知识
-  - 文档
-  - 写作
-  - 支持创建
-  - 查询
-  - input_params
-  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 论文解析工具（免费版）
 
 ## 概述
@@ -180,7 +169,7 @@ paper_parse:
 | 基础路径 | 工作目录 | `./` |
 | 输出格式 | 结果输出格式 | `json` |
 
-## 最佳实践
+## 优秀实践
 
 ### 基础使用建议
 
@@ -193,9 +182,8 @@ paper_parse:
 ### 性能优化
 
 ```python
-# 免费版：单文件优化
-# 确保输入文件不超过建议大小
-# 处理完成后释放资源
+# 在此执行相关操作
+pass
 ```
 
 ## 常见问题

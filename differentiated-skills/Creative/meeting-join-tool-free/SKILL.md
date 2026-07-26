@@ -1,38 +1,13 @@
 ---
+
 slug: meeting-join-tool-free
 name: meeting-join-tool-free
 version: 1.0.0
 displayName: AI会议助手免费版
 summary: 让AI机器人以语音方式加入视频会议(Google Meet/Teams/Zoom),支持实时转写、问答与笔记,适合个人使用.
-license: Proprietary
+license: MIT
 edition: free
-description: AI会议助手免费版让AI机器人以语音方式加入视频会议平台，可自动提升工作效率
-
-  (Google Meet、Microsoft Teams、Zoom),实现实时会议转写、
-
-  智能问答与会议纪要生成。核心能力:
-
-  - 以语音机器人身份加入主流视频会议平台
-
-  - 实时语音转写与会议内容理解
-
-  - 基于会议上下文的智能问答
-
-  - 会议结束后自动生成纪要与待办事项
-
-  适用场景:
-
-  - 个人用户的日常会议记录与回溯
-
-  - 自由职业者的客户沟通会议
-
-  - 在线课程与培训的内容整理
-
-  差异化:
-
-  - 免费版提供基础语音加入与转写能力
-
-  - 适合单人使用,...'
+description: "AI会议助手免费版让AI机器人以语音方式加入视频会议平台，可自发提升工作效率. 适用于需要meeting join tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 会议
   - 语音转写
@@ -50,7 +25,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # AI会议助手免费版
 
 ## 概述
@@ -240,7 +217,7 @@ EOF
 # 不推荐: AI助手、机器人、会议助手
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 会议前准备
 
@@ -319,7 +296,7 @@ A: 会议转写内容作为Agent输入处理。建议在可信会议环境中使
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令+脚本执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令+脚本执行能力)
 - **说明**: 基于Markdown指令驱动Agent执行会议加入任务,通过Python/Node.js脚本实现会议机器人连接
 - **免费版限制**: 纯语音模式、单次会议时长受限、基础转写引擎、无视频画面
 

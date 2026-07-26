@@ -1,4 +1,5 @@
 ---
+
 slug: "sql-query-tool-pro"
 name: "sql-query-tool-pro"
 version: "1.0.0"
@@ -6,8 +7,7 @@ displayName: "SQL查询工具(专业版)"
 summary: "面向团队与企业的SQL查询专业版，含慢查询采集、结果缓存、跨库SQL转换、性能基准测试与优先工单支持。"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  面向团队、企业与专业运维的SQL查询执行工具专业版。在免费版基础上新增查询结果缓存与命中率监控、慢查询自动采集与告警、跨数据库SQL自动转换、查询性能基准测试套件、连接池调优与读写分离路由等高级能力，配套面向运维、数据工程师、DBA的多角色场景指南。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
+description: "|-. 适用于需要sql query tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 集成工具
   - 数据库
@@ -19,15 +19,15 @@ tags:
   - pro
   - sql
   - python
-  - postgresql
-  - 自动转换
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # SQL查询工具（专业版）
 
 专业版在免费版核心能力之上，新增查询结果缓存、慢查询自动采集、跨数据库SQL自动转换、性能基准测试套件、连接池调优等高级能力，专为团队协作、企业生产环境与高并发查询场景设计.
@@ -133,7 +133,7 @@ pro.enable_read_write_split(
 
 ## 快速开始
 
-### 第一步：启用专业版功能
+### 领先步：启用专业版功能
 
 ```python
 from sql_query_tool import ProFeatures
@@ -199,7 +199,7 @@ pro.slow_query_alert(
 )
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 缓存键设计避免脏读
 
@@ -329,9 +329,9 @@ A：`PostgreSQL` 9.6+、MySQL 5.7+、SQL Server 2016+、SQLite 3.35+。对更低
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

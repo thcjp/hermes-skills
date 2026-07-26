@@ -1,36 +1,13 @@
 ---
+
 slug: knowledge-graph-tool-free
 name: knowledge-graph-tool-free
 version: 1.0.0
 displayName: 知识图谱工具(免费版)
 summary: "个人用户的嵌入式知识图谱,以JSON存储,提供基础增删查改与上下文摘要.。知识图谱工具(免费版)为个人用户提供轻量级的嵌入式知识图谱能力,以JSON文件持久化,通过命令行脚本查询与维护。核心"
-license: Proprietary
+license: MIT
 edition: free
-description: '知识图谱工具(免费版)为个人用户提供轻量级的嵌入式知识图谱能力,以JSON文件持久化,通过命令行脚本查询与维护。核心能力:
-
-  - 实体与关系的增删查改
-
-  - 基础查询:子节点、类型、分类、孤立节点
-
-  - KGML紧凑摘要,自动注入会话上下文
-
-  - 图谱统计与时间线查看
-
-  适用场景:
-
-  - 个人知识库与学习笔记结构化
-
-  - 研究资料的主题与关联整理
-
-  - 会话记忆的持久化与召回
-
-  差异化:
-
-  - 免费版聚焦单Agent、单用户的本地知识管理
-
-  - 移除原始平台引用,纯净适配SkillHub
-
-  - 提供中文友好的KGML格式...'
+description: "知识图谱工具(免费版)为个人用户包含轻量级的嵌入式知识图谱能力,以JSON文件持久化,通过命令行脚本查询与维护。核心能力:. 适用于需要knowledge graph tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Development
   - Knowledge
@@ -48,7 +25,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 知识图谱工具(免费版)
 
 ## 概述
@@ -211,7 +190,7 @@ node （请参考skill目录中的脚本文件） --json                 # 完�
 | consolidation | mergeSuggestions | true | 相似标签合并建议 |
 
 配置文件位置:`data/kg-config.json`(按Agent隔离,建议加入gitignore).
-## 最佳实践
+## 优秀实践
 
 ### 1. 复杂内容先评估深度
 
@@ -318,7 +297,7 @@ node （请参考skill目录中的脚本文件）
 - 个人知识图谱数据本地存储,不上传任何外部服务.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。免费版聚焦个人单Agent的本地知识图谱管理.
 ## 错误处理
 

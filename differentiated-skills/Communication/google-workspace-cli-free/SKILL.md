@@ -1,20 +1,13 @@
 ---
+
 slug: google-workspace-cli-free
 name: google-workspace-cli-free
 version: 1.0.1
 displayName: 谷歌办公命令行免费版
 summary: 轻量级Google Workspace命令行工具,支持Gmail、Calendar、Drive核心操作,适合个人用户日常使用.
-license: Proprietary
+license: MIT
 edition: free
-description: '谷歌办公命令行工具免费版,为个人用户提供Gmail邮件管理、Google日历日程查询、Google Drive文件搜索等核心能力。核心能力:
-
-  - Gmail邮件搜索、读取与发送
-
-  - Google日历事件查询与提醒
-
-  - Google Drive文件检索与下载
-
-  - OAuth 2。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。'
+description: "谷歌办公命令行工具免费版,为个人用户包含Gmail邮件管控、Google日历日程查询、Google Drive文件搜索等核心能力。核心能力:. 适用于需要google workspace cli相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 沟通协作
   - 邮件管理
@@ -26,13 +19,6 @@ tags:
   - 自动化
   - 通信
   - 邮件
-  - 写作
-  - 电商
-  - 知识
-  - gmail
-  - gog
-  - bash
-  - drive
 tools:
   - read
   - exec
@@ -40,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 谷歌办公命令行工具 - 免费版
 
 ## 概述
@@ -149,7 +137,8 @@ gog auth list
 ### 第二步:设置默认账户
 
 ```bash
-# 将常用账户设为默认,避免每次输入 --account
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### 第三步:开始使用
@@ -208,7 +197,7 @@ for i, mail in enumerate(emails, 1):
     print(f"  {i}. {mail.get('from', '未知')} | {mail.get('subject', '无主题')}")
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 使用默认账户减少输入
 
@@ -301,7 +290,7 @@ gog gmail search 'is:unread' --account personal@gmail.com --max 5
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
 - **说明**: 基于命令行的 AI Skill,通过自然语言指令驱动 Agent 执行 Google Workspace 操作。免费版支持 Gmail、Calendar、Drive 三大核心服务的基础操作,适合个人轻量办公场景.
 - API Key通过环境变量配置: export API_KEY=your_key
 

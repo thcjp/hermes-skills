@@ -5,12 +5,9 @@ name: email-toolkit-free
 version: 1.0.1
 displayName: 邮件工具箱免费版
 summary: "跨平台邮件发送与附件管理工具，支持多邮箱服务商。邮件工具箱免费版是一款面向个人用户的跨平台邮件发送工具，通过 Python 实现邮件"
-license: Proprietary
+license: MIT
 edition: free
-description: "邮件工具箱免费版是一款面向个人用户的跨平台邮件发送工具，通过 Python 实现邮件
-  自动化发送，支持 Gmail、Outlook、Yahoo、QQ邮箱等主流服务商。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。减少重复劳动，提升工作效率。触发关键词：API设计、自动化、测试、安全、图片、PDF"
-
-  自动化发送，支持 Gmail、Outlook、Yahoo、QQ邮箱等主流服务商。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。'
+description: "邮件工具箱免费版是一款面向个人用户的跨平台邮件发送工具，通过 Python 达成邮件. 适用于需要email toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 沟通协作
   - 邮件管理
@@ -28,8 +25,9 @@ tools:
   - write
 homepage: ""
 category: "Communication"
-
+pricing_tier: free
 ---
+
 # 邮件工具箱免费版
 
 **版本**: 1.0.0
@@ -149,7 +147,7 @@ python email_sender.py \
 
 ## 快速开始
 
-### 第一步：创建配置文件
+### 领先步：创建配置文件
 
 在工作目录创建 `email_config.json`：
 
@@ -243,7 +241,7 @@ $env:EMAIL_SENDER_NAME="邮件助手"
 
 ---
 
-## 最佳实践
+## 优秀实践
 
 ### Python API 调用
 
@@ -290,7 +288,7 @@ echo "email_config.json" >> .gitignore
 ls -lh report.pdf
 # ...
 # 大文件使用链接替代
-python email_sender.py --to x@y.com --subject "大文件" --body "文件链接: https://drive.google.com/xxx"
+python email_sender.py --to x@y.com --subject "大文件" --body "文件链接: https://drive.google.com/placeholder"
 ```
 
 ---

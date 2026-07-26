@@ -1,13 +1,13 @@
 ---
+
 slug: macro-sentinel-free
 name: macro-sentinel-free
 version: 1.0.1
 displayName: 宏观哨兵(免费版)
 summary: "每日宏观数据自动采集与整理，覆盖国内外核心数据源，生成结构化简报，60秒上手.。宏观哨兵（免费版）为AI Agent提供每日宏观经济数据的自动采集与整理能力，覆盖Trading Econom"
-license: Proprietary
+license: MIT
 edition: free
-description: 宏观哨兵（免费版）为AI Agent提供每日宏观经济数据的自动采集与整理能力，覆盖Trading Economics、FRED、国家统计局、央行官网等核心数据源。自动浏览免费数据源，整理过去24小时发布的宏观数据与政策信息，生成结构化简报并推送。Use
-  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+description: "宏观哨兵（免费版）为AI Agent包含每日宏观经济数据的自发采集与整理能力，覆盖Trading Economics、FRED、国家统计局、央行官网等核心数据源。自发浏览免费数据源，整理过去24小时发布的宏观数据与政策信息，产出结构化简报并推送。Use. 适用于需要macro sentinel相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 宏观经济
   - 数据监控
@@ -19,15 +19,15 @@ tags:
   - text
   - cpi
   - 科普解释
-  - 政策动态
-  - 国际数据
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # 宏观哨兵（免费版）
 
 > **每日宏观经济数据自动采集与整理。国内外核心数据源全覆盖，结构化简报一键生成。**
@@ -387,10 +387,9 @@ Agent执行：
 用户："采集今日宏观经济数据，重点关注CPI和LPR"
 
 用户："生成今日宏观简报"
-```
-# ...
-### 定时调度配置(补充)
-# ...
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "name": "macro-sentinel-daily",

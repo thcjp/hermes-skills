@@ -1,4 +1,5 @@
 ---
+
 slug: k8s-toolkit-pro
 name: k8s-toolkit-pro
 version: 1.0.0
@@ -6,10 +7,7 @@ displayName: K8s运维专业版
 summary: "企业级K8s运维平台，支持集群诊断、自动修复、性能优化与安全合规.。面向企业K8s运维团队的全栈运维平台。支持集群级问题诊断、自动修复、"
 license: Proprietary
 edition: pro
-description: '面向企业K8s运维团队的全栈运维平台。支持集群级问题诊断、自动修复、
-
-  性能优化、安全合规审计与容量规划。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。Use
-  when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。'
+description: "面向企业K8s运维团队的全栈运维平台。兼容集群级问题诊断、自发修正、. 适用于需要k8s toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Operations
   - Kubernetes
@@ -21,10 +19,6 @@ tags:
   - 安全
   - 加密
   - 运维
-  - 监控
-  - 研究
-  - pro
-  - python3
 tools:
   - read
   - exec
@@ -32,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # K8s运维专业版（PRO版）
 
 ## 概述
@@ -241,7 +237,7 @@ kube/config-staging"
       channels: ["webhook", "email"]
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### PRO版企业实践
 

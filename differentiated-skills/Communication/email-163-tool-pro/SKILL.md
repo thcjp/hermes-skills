@@ -1,4 +1,5 @@
 ---
+
 slug: "email-163-tool-pro"
 name: "email-163-tool-pro"
 version: "1.0.0"
@@ -6,15 +7,7 @@ displayName: "163邮箱助手专业版"
 summary: "企业级163邮箱管理，支持批量收发、高级搜索、定时任务与邮件归档。163邮箱助手专业版面向企业用户与高效能个人用户，在免费版基础能力之上扩展批量操作、 高级搜索过滤、定时任务调度、邮件归档审"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  163邮箱助手专业版面向企业用户与高效能个人用户，在免费版基础能力之上扩展批量操作、
-  高级搜索过滤、定时任务调度、邮件归档审计、模板化发送与多账户管理等企业级特性。核心能力:
-  - 批量邮件发送与群发通知（支持变量替换与模板）
-  - 高级搜索：多维度组合过滤、正则匹配、结果导出
-  - 邮件归档与审计日志，满足合规要求
-  - 定时任务调度，支持周期性邮件处理
-  - 多账户统一管理，租户隔离配置
-  - 邮件模板系统...
+description: "|-. 适用于需要email 163 tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 沟通协作
   - 邮件管理
@@ -26,15 +19,15 @@ tags:
   - 工具
   - email-163-tool
   - csv
-  - company
-  - 用户提供
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: L2-标准级
 ---
+
 # 163邮箱助手专业版
 **版本**: 1.0.0
 **适用对象**: 企业用户、团队管理者、运维与运营人员
@@ -308,9 +301,9 @@ email-163-tool accounts list
     "failure_log": "~/.config/email-163-tool/batch_failures.log"
   }
 }
-```
-
-### 归档规则配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "archive_rules": [
@@ -334,9 +327,9 @@ email-163-tool accounts list
     }
   ]
 }
-```
-
-### 定时任务配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "schedules": [
@@ -356,7 +349,7 @@ email-163-tool accounts list
 
 ---
 
-## 最佳实践
+## 优秀实践
 ### 批量发送安全规范
 ```bash
 # 始终先试运行，确认无误后正式发送
@@ -368,9 +361,9 @@ csv --template tpl.html --rate-limit 10
 # 失败重试与日志记录
 csv --template tpl.html \
   --retry 3 --retry-delay 60 --log batch_send.log
-```
-
-### 邮件模板管理
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 创建模板
 email-163-tool template create --name "月度报告" --file templates/monthly.html

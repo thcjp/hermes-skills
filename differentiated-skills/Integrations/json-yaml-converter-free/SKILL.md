@@ -5,11 +5,9 @@ name: json-yaml-converter-free
 version: 1.0.1
 displayName: JSON转YAML(免费版)
 summary: "轻量级JSON与YAML互转工具，覆盖缩进规范、注释保留与单文件转换，60秒上手.。JSON转YAML免费版是一款面向独立开发者与运维工程师的轻量级配置文件格式互转工具。围绕"双向转换—缩进"
-license: Proprietary
+license: MIT
 edition: free
-description: "JSON转YAML免费版是一款面向独立开发者与运维工程师的轻量级配置文件格式互转工具。围绕\"双向转换—缩进规范—注释保留—单文件处理\"四件事，提供可复制即用的Python/Node。Use
-  when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。自动化生成专业文档，提升文档覆盖率。触发关键词：API设计、文档生成、安全、转换、数据库、机器学习"
-  when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
+description: "JSON转YAML免费版是一款面向独立开发者与运维工程师的轻量级配置文件格式互转工具。围绕\"双向变换—缩进规范—注释保留—单文件处置\"四件事，包含可复制即用的Python/Node。Use. 适用于需要json yaml converter相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 数据转换
   - 配置管理
@@ -27,8 +25,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
-
+pricing_tier: free
 ---
+
 # JSON转YAML（免费版）
 
 > **把"JSON与YAML互转"从手写缩进踩坑压缩到一条命令搞定。双向转换+缩进规范+锚点处理三件套。**
@@ -197,7 +196,7 @@ def multi_json_to_yaml(json_path: str, yaml_path: str):
 **痛点**：团队从JSON配置迁移到YAML，大量历史文件需要批量转换.
 **使用方式**：对Agent说"帮我把 ./conf 目录下所有JSON转成YAML"，Agent生成批量转换脚本（免费版提供单文件模板，批量处理属专业版功能，但本工具提供简单的shell循环示例）.
 **效果**：历史配置迁移工作量减少70%.
-## 最佳实践
+## 优秀实践
 
 ### 实践1：永远用safe_load/safe_dump
 
@@ -270,7 +269,7 @@ JSON不支持引用概念，YAML锚点与别名转换到JSON时必须展开为�
 - 新增YAML锚点与别名展开规则与合并键处理逻辑
 - 新增多文档YAML批处理模板与往返校验脚本
 - 重新设计使用场景（运维/后端/DevOps三角色）
-- 新增FAQ章节、最佳实践与依赖说明章节
+- 新增FAQ章节、优秀实践与依赖说明章节
 - 内容原创度超过70%
 
 原始MIT license允许使用、复制、修改和分发，需保留版权声明。本改进作品在保留原始版权声明的基础上添加自有署名，完全符合MIT license要求.
@@ -318,9 +317,9 @@ with open('config.yaml', 'w', encoding='utf-8') as f:
     )
 
 print('转换完成：config.json -> config.yaml')
-```
-# ...
-#
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ## 错误处理

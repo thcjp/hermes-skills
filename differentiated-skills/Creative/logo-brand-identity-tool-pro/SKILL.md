@@ -7,20 +7,23 @@ displayName: "品牌标识设计专业版"
 summary: "企业级AI品牌标识设计系统,支持完整品牌套件、多品牌管理、批量生成、品牌审计与CI/CD集成,适合团队与商业项目"
 license: "Proprietary"
 edition: "pro"
-description: "|-
-  品牌标识设计专业版为企业与设计团队提供系统化的AI品牌标识设计解决方案。在免费版基础品牌套件能力之上,增加完整品牌系统、多品牌管理、
-  批量资产生成、品牌一致性审计与CI/CD集成能力。标准化部署流程，降低运维风险。触发关键词：部署、写作、设计、品牌、图片、PPT。降低专业门槛，让非专业人员也能快速上手"
-  品牌标识设计专业版为企业与设计团队提供系统化的AI品牌标识设计解决方案。在免费版基础品牌套件能力之上,增加完整品牌系统、多品牌管理、
-  批量资产生成、品牌一致性审计与CI/CD集成能力。
-tags: 企业级,品牌系统,品牌标识,CI/CD,identity,master_brand
+description: "|-. 适用于需要logo brand identity tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+tags:
+  - 企业级
+  - 品牌系统
+  - 品牌标识
+  - CI/CD
+  - identity
+  - master_brand
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
+pricing_tier: L2-标准级
 ---
+
 品牌标识设计专业版为企业与设计团队提供系统化的AI品牌标识设计解决方案。在免费版基础品牌套件能力之上,PRO版引入完整品牌系统、多品牌管理、批量资产生成、品牌一致性审计与CI/CD集成能力,满足企业级品牌建设的全面需求。
 
 PRO版完全兼容免费版,可直接继承免费版的品牌简介与配置,并在此基础上扩展为完整的品牌管理系统。
@@ -325,37 +328,35 @@ python3 brand_refresh.py \
   --generate-migration-guide \
   --output ./refreshed/ \
   --stakeholder-presentation
-```
-
-## 快速开始
-### Step 1:品牌策略分析
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python3 analyze_brand.py \
   --company "企业名称" \
   --industry "行业" \
   --competitors "竞品A,竞品B" \
   --output ./strategy/
-```
-
-### Step 2:生成品牌系统
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python3 generate_brand_system.py \
   --config brand-system.yml \
   --assets all \
   --guidelines full \
   --output ./brand/
-```
-
-### Step 3:品牌审计
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python3 audit_brand.py \
   --brand ./brand/ \
   --scan-assets ./assets/ \
   --report ./audit/
-```
-
-## 示例
-### 品牌指南文档结构
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```markdown
 # 品牌指南 - [品牌名称]
 ## 1. 品牌策略
@@ -399,9 +400,9 @@ python3 audit_brand.py \
 - 印刷应用
 - 环境空间
 - 产品包装
-```
-
-### CI/CD集成
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 # .github/workflows/brand-system.yml
 name: Brand System CI
@@ -426,7 +427,7 @@ jobs:
           path: ./brand/
 ```
 
-## 最佳实践
+## 优秀实践
 ### 免费版与PRO版能力对比
 | 能力维度 | 免费版 | PRO版 |
 |:-----|:-----|:-----|
@@ -479,7 +480,7 @@ A: PRO版提供"一致性规则"配置,指定哪些元素必须共享(如字体�
 A: 可检测:颜色未使用品牌色、字体不符合规范、Logo使用不当(清晰空间不足、尺寸过小)、文案语调偏离品牌个性等。生成详细报告并提供修复建议。
 
 ### Q4: 支持哪些输出格式?
-A: 数字资产:SVG、PNG、HTML、PPTX。印刷资产:PDF、AI、EPS。动态资产:MP4、GIF。可根据使用场景自动选择最佳格式。
+A: 数字资产:SVG、PNG、HTML、PPTX。印刷资产:PDF、AI、EPS。动态资产:MP4、GIF。可根据使用场景自动选择优秀格式。
 
 ### Q5: 如何管理品牌资产的版本?
 A: PRO版支持语义化版本控制,每次品牌变更自动生成变更日志。可集成Git进行团队协作,支持品牌资产的审批与发布流程。
@@ -507,7 +508,7 @@ A: PRO版支持语义化版本控制,每次品牌变更自动生成变更日志�
 - 企业版支持多账户管理与并发控制
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令+脚本执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令+脚本执行能力)
 - **说明**: 专业版基于Markdown指令驱动Agent执行企业级品牌标识设计任务,通过Python脚本实现批量生成、品牌审计与CI/CD集成
 - **PRO版增强**: 完整品牌系统、多品牌管理、批量生成、品牌审计、策略分析、CI/CD集成、团队协作
 

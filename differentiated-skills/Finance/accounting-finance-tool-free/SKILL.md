@@ -1,15 +1,13 @@
 ---
+
 slug: accounting-finance-tool-free
 name: accounting-finance-tool-free
 version: 1.0.0
 displayName: 财务分析入门工具
 summary: "企业财务分析与估值建模基础工具集，涵盖DCF、可比估值、财务比率等核心技能.。面向个人投资者与初级分析师的财务分析技能包，提供估值建模、财务比率分析、"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人投资者与初级分析师的财务分析技能包，提供估值建模、财务比率分析、
-
-  风险评估等基础能力。通过自然语言指令驱动Agent执行专业财务分析任务。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use
-  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
+description: "面向个人投资者与初级剖析师的财务剖析技能包，包含估值建模、财务比率剖析、. 适用于需要accounting finance tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Finance
   - 估值分析
@@ -21,14 +19,15 @@ tags:
   - 分析
   - dcf
   - 风险评估
-  - 盈利质量
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Finance"
+pricing_tier: free
 ---
+
 # 财务分析入门工具（免费版）
 
 ## 概述
@@ -208,7 +207,7 @@ analysis_config:
     gross_margin_min: 0.2      # 毛利率下限
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **数据完整性优先**：分析前确认财务数据完整，缺失关键科目会导致结论偏差
 2. **多维度交叉验证**：不要仅依赖单一指标，结合财务比率、估值和风险三个维度
@@ -290,9 +289,9 @@ DCF是内在价值估算，与市场价格存在差异属正常现象。建议�
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

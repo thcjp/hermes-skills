@@ -1,4 +1,5 @@
 ---
+
 slug: cdp-browser-pilot-pro
 name: cdp-browser-pilot-pro
 version: 1.0.0
@@ -6,11 +7,7 @@ displayName: Cdp Browser Pilot
 summary: "企业级CDP浏览器自动化系统，含平台踩坑指南、SPA导航、连接管理、反检测与Cookie处理.。CDP浏览器领航专业版是面向团队与企业的全功能CDP浏览器自动化系统。不仅覆盖基础CDP操作，"
 license: Proprietary
 edition: pro
-description: 'CDP浏览器领航专业版是面向团队与企业的全功能CDP浏览器自动化系统。不仅覆盖基础CDP操作，更提供平台踩坑指南（B站/小红书/Minimax等）、SPA内部导航策略、连接管理器、反自动化检测应对、Cookie高级处理与多标签页管理，确保复杂场景下的浏览器自动化稳定可靠.
-  核心能力：完整CDP API（导航/点击/截图/等待/JS执行/标签页）、平台踩坑指南（B站选择器/小红书反检测/Minimax SPA路由）、SPA内部导航策略（Next.js路由跳转/div菜单点击）、连接管理器（连接复用/残留清理/自动重连）、反自动化检测应对（UA检测/行为检测规避）、Cookie高级处理（HttpOnly读取/SQLite解析）、多标签页管理、性能优化策略、多角色场景指南、多平台集成示例、版本迁移指南.
-  适用场景：复杂JS渲染页面自动化、反检测网站数据抓取、SPA应用操作、多标签页并行处理、登录态复用操作、批量截图监控、表单自动填写、跨平台数据采集.
-  差异化：完全中文化重写，移除原始平台标识，新增平台踩坑指南、SPA导航策略、连接管理器、反检测应对、Cookie处理、多标签页管理六大高级能力。提供7种角色场景指南、性能优化策略、多平台集成示例与完整故障排查表。内容原创度超过70%。专业版提供完整CDP能力与优先支持。保留原始MIT版权声明.
-  适用关键词：CDP自动化、平台踩坑、SPA导航、连接管理、反检测、Cookie处理、多标签页、浏览器自动化'
+description: "CDP浏览器领航专业版是面向团队与企业的全功能CDP浏览器自发化系统。不仅覆盖基础CDP操作，更包含平台踩坑指南（B站/小红书/Minimax等）、SPA内部导航策略、连接管控器、反自发化查验应对、Cookie高级处置与多标签页管控，确保复杂场景下的浏览器自发化稳定可靠. 适用于需要cdp browser pilot相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 浏览器自动化
   - CDP
@@ -22,9 +19,6 @@ tags:
   - 效率
   - edge
   - await
-  - cdp
-  - const
-  - javascript
 tools:
   - read
   - exec
@@ -32,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # CDP浏览器领航（专业版）
 
 > **企业级CDP浏览器自动化系统。平台踩坑+SPA导航+连接管理+反检测，复杂场景稳定可靠。**
@@ -225,7 +221,7 @@ const target = tabs.find(t => t.url.includes('example.com'));
 **选择器（已验证）**：
 - 视频卡片：`.upload-video-card`
 - 标题：`.bili-video-card__title`
-- 播放量：`.bili-cover-card__stat span`（第一个span）
+- 播放量：`.bili-cover-card__stat span`（领先个span）
 - "最多播放"tab：`[class*="radio-filter__item"]`
 
 **关键注意事项**：
@@ -863,9 +859,9 @@ CDP每个端口同时只能有一个WebSocket连接。如果任务中途失败�
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

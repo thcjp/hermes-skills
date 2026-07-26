@@ -1,15 +1,13 @@
 ---
+
 slug: k8s-devops-tool-free
 name: k8s-devops-tool-free
 version: 1.0.2
 displayName: K8s清单生成入门
 summary: "Kubernetes YAML清单生成工具，支持常用资源模板与基础校验.。面向个人开发者的K8s YAML清单生成工具。支持Deployment/Service/"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人开发者的K8s YAML清单生成工具。支持Deployment/Service/
-
-  ConfigMap等常用资源的清单生成与基础校验。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。Use
-  when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
+description: "面向个人开发者的K8s YAML清单产出工具。兼容Deployment/Service/. 适用于需要k8s devops tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Operations
   - Kubernetes
@@ -25,7 +23,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # K8s清单生成入门（免费版）
 
 ## 概述
@@ -189,10 +189,10 @@ generate_config:
   validation:
     schema_check: true
     dry_run: true               # kubectl dry-run验证
-    best_practices: true         # 最佳实践检查
+    best_practices: true         # 优秀实践检查
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **模板复用**：将常用配置保存为模板，避免重复编写
 2. **校验优先**：生成后先校验再应用，避免配置错误

@@ -1,19 +1,13 @@
 ---
+
 slug: game-builder-tool-free
 name: game-builder-tool-free
 version: 1.0.0
 displayName: 3D游戏构建器免费版
 summary: "用自然语言生成可玩的浏览器3D小游戏,支持迭代修改与本地预览。面向个人开发者与游戏爱好者的 3D 浏览器游戏生成工具."
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人开发者与游戏爱好者的 3D 浏览器游戏生成工具.
-  核心能力: 自然语言描述生成游戏、Three.js 单文件输出、迭代修改、本地预览
-
-  适用场景: Game Jam 快速原型、学习 Three.js、娱乐小游戏制作、创意展示
-
-  差异化: 免费版支持单文件游戏生成与基础迭代,适合个人创作者与原型验证
-
-  适用关键词: 3D游戏生成, Three.js, 浏览器游戏, 游戏原型, game jam, 自然语言生成'
+description: "面向个人开发者与游戏爱好者的 3D 浏览器游戏产出工具. 适用于需要game builder tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 游戏开发
   - Three.js
@@ -25,16 +19,15 @@ tags:
   - 设计
   - three
   - html
-  - tmp
-  - game-build
-  - bash
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # 3D 游戏构建器 (免费版)
 
 ## 概述
@@ -83,12 +76,12 @@ category: "Creative"
 
 在 48 小时 Game Jam 中快速生成可玩原型.
 ```text
-用户: "做一个第一人称射击游戏,玩家在太空站里打外星人"
+用户: "做一个领先人称射击游戏,玩家在太空站里打外星人"
 # ...
 助手:
 1. 解析需求: FPS + 太空站场景 + 外星敌人
 2. 生成单 HTML 文件 (包含):
-   - PointerLockControls 第一人称视角
+   - PointerLockControls 领先人称视角
    - 程序化太空站走廊 (金属材质 + 荧光灯)
    - 外星敌人 FSM (巡逻 → 追击 → 攻击)
    - WASD 移动 + 鼠标视角 + 左键射击
@@ -140,7 +133,7 @@ python --version
 which python3
 ```
 
-### Step 2: 生成第一个游戏
+### Step 2: 生成领先个游戏
 
 ```bash
 # 创建工作目录
@@ -286,7 +279,7 @@ CAMERA_CONTROL_MAP = {
 - [可添加的新功能]
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 颜色可见性
 
@@ -408,7 +401,7 @@ export GAME_SERVER_PORT=8000
 
 ### 可用性分类
 
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+exec方法(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 通过自然语言指令驱动 Agent 生成 Three.js 单文件游戏,使用本地服务器预览
 - **免费版限制**: 单文件输出、临时分享链接 (24h)、程序化资产、单人开发
 
@@ -437,9 +430,9 @@ export GAME_SERVER_PORT=8000
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

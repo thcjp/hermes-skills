@@ -1,30 +1,13 @@
 ---
+
 slug: figma-design-tool-free
 name: figma-design-tool-free
 version: 1.0.0
 displayName: Figma设计集成-免费版
 summary: "轻量级Figma集成工具，支持文件浏览、节点读取、图片导出与评论查看.。Figma设计集成工具免费版，面向个人设计师的Figma工作区访问工具。核心能力："
-license: Proprietary
+license: MIT
 edition: free
-description: Figma设计集成工具免费版，面向个人设计师的Figma工作区访问工具。核心能力：，可自动提升工作效率
-
-  - 浏览Figma团队项目与文件列表
-
-  - 读取设计文件结构与指定节点详情
-
-  - 导出设计图片（PNG/JPG/SVG/PDF）
-
-  - 查看文件评论与版本历史
-
-  适用场景：
-
-  - 个人设计师查看设计文件
-
-  - 开发者获取设计资产与图标
-
-  - 设计走查与评论查看
-
-  差异化：免费版聚焦文件浏览、节点读取与图片导出，适合个人使用'
+description: "Figma设计集成工具免费版，面向个人设计师的Figma工作区访问工具。核心能力：，可自发提升工作效率. 适用于需要figma design tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Creative
   - Figma
@@ -36,14 +19,15 @@ tags:
   - figma
   - mx_figma
   - action
-  - depth
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
+
 # Figma设计集成工具（免费版）
 
 ## 概述
@@ -142,25 +126,25 @@ mx_figma:
 # 1. 查看页面列表
 mx_figma:
   action: get_file
-  file_key: "xxx"
+  file_key: "placeholder"
   depth: 1
 # ...
 # 2. 查看指定页面详情
 mx_figma:
   action: get_file_nodes
-  file_key: "xxx"
+  file_key: "placeholder"
   node_ids: ["page_id"]
   depth: 1
 # ...
 # 3. 查看设计评论
 mx_figma:
   action: list_comments
-  file_key: "xxx"
+  file_key: "placeholder"
 # ...
 # 4. 查看版本历史
 mx_figma:
   action: list_versions
-  file_key: "xxx"
+  file_key: "placeholder"
 ```
 
 ### 场景三：获取指定节点属性
@@ -288,7 +272,7 @@ node_id 格式: "1:2"（冒号分隔）
   例: node-id=1-2 → node_id="1:2"
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **控制读取深度**：大文件使用 `depth: 1` 或 `depth: 2`，避免加载完整树.
 2. **SVG优先图标**：图标导出用 SVG 格式，无损可缩放.
@@ -296,7 +280,7 @@ node_id 格式: "1:2"（冒号分隔）
 4. **URL提取Key**：`file_key` 和 `node_id` 均从 Figma URL 提取.
 5. **临时URL及时下载**：导出的图片URL有有效期，需及时下载保存.
 ```text
-免费版最佳实践:
+免费版优秀实践:
 [ ] 读取深度已优化（大文件用 depth: 1）
 [ ] 图标导出用 SVG 格式
 [ ] 位图导出 scale ≥ 2

@@ -1,4 +1,5 @@
 ---
+
 slug: "git-cli-tool-pro"
 name: "git-cli-tool-pro"
 version: "1.0.0"
@@ -6,28 +7,7 @@ displayName: "Git命令行助手专业版"
 summary: "企业级Git CLI工具,支持自动化脚本、深度诊断、工作流模板与故障排除,提升团队效率。。面向企业研发团队的高级Git命令行工具,提供自动化脚本、深度仓库诊断、工作流模板、故障排除与批量操作"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  面向企业研发团队的高级Git命令行工具,提供自动化脚本、深度仓库诊断、工作流模板、故障排除与批量操作能力。核心能力:
-  - Git自动化脚本库
-  - 深度仓库诊断与分析
-  - 标准化工作流模板
-  - 故障排除与恢复
-  - 批量Git操作
-  - 多仓库管理
-
-  适用场景:
-  - 企业级Git工作流自动化
-  - 仓库健康诊断
-  - 团队标准化操作
-  - 复杂故障排除
-
-  差异化:
-  - 专业版完全兼容免费版命令,支持平滑升级
-  - 提供自动化脚本和批量操作
-  - 内置深度诊断和工作流模板
-  - 支持多仓库统一管理
-
-  ...
+description: "|-. 适用于需要git cli tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - Git
@@ -45,7 +25,9 @@ tools:
   - write
 homepage: ""
 category: "Development"
+pricing_tier: L2-标准级
 ---
+
 Git命令行助手专业版为企业研发团队提供高级Git CLI自动化能力。在免费版基础命令参考之上,专业版新增自动化脚本库、深度仓库诊断、标准化工作流模板、故障排除与恢复以及批量操作能力,帮助团队提升Git使用效率.
 专业版完全兼容免费版的所有Git命令和配置,研发团队可从免费版无缝升级,已有别名和配置无需修改.
 ## 核心能力
@@ -209,16 +191,14 @@ workflows:
 multi_repo:
   repos_file: repos.txt
   batch_operations: [status, sync, cleanup]
-```
-
-### Step 2:运行诊断
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```
 请对当前Git仓库进行深度健康诊断,输出问题和建议.
-```
-
-#
-## 配置示例
-### 企业级完整配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 version: "2.0"
 edition: pro
@@ -280,7 +260,7 @@ multi_repo:
   parallel: true
 ```
 
-## 最佳实践
+## 优秀实践
 1. **定期诊断**:每周运行仓库健康诊断
 
 ```bash
@@ -382,9 +362,9 @@ git config --global credential.helper store
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

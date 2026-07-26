@@ -1,4 +1,5 @@
 ---
+
 slug: "markdown-format-tool-pro"
 name: "markdown-format-tool-pro"
 version: "1.0.0"
@@ -6,24 +7,7 @@ displayName: "Markdown格式化工具专业版"
 summary: "企业级文档批量格式化,支持自定义模板、团队规范、多格式输出与质量审计。面向团队与企业的高级 Markdown 格式化工具,在免费版基础上扩展批量处理、规范管理、质量审计等能力。核心能力: -"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  面向团队与企业的高级 Markdown 格式化工具,在免费版基础上扩展批量处理、规范管理、质量审计等能力。核心能力:
-  - 批量目录格式化与聚合报告
-  - 自定义格式化模板与团队规范
-  - 多格式输出(Markdown / HTML / PDF)
-  - 文档质量评分与审计报告
-  - Git 变更追踪与增量格式化
-
-  适用场景:
-  - 技术文档库批量格式化
-  - 团队文档规范统一
-  - 文档质量治理与审计
-
-  差异化:
-  - 兼容免费版全部能力,无缝升级
-  - 支持自定义模板与团队规范配置
-  - 提供质量评分与审计能力
-  ...
+description: "|-. 适用于需要markdown format tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 文档工具
   - Markdown
@@ -35,15 +19,15 @@ tags:
   - docs
   - true
   - bash
-  - markdown
-  - json
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
+pricing_tier: L2-标准级
 ---
+
 # Markdown 格式化工具专业版
 
 ## 概述
@@ -235,7 +219,7 @@ Markdown 格式化工具专业版为企业团队提供高级文档处理能力�
 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步: 初始化项目配置
+### 领先步: 初始化项目配置
 
 ```bash
 mkdir -p .markdown-toolkit/{templates,reports,output}
@@ -329,7 +313,7 @@ EOF
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 建立格式化基线
 

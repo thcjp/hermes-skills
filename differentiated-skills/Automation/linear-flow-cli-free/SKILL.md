@@ -1,13 +1,13 @@
 ---
+
 slug: linear-flow-cli-free
 name: linear-flow-cli-free
 version: 1.0.1
 displayName: Linear流程CLI(免费版)
 summary: 通过命令行读写Linear任务管理系统，支持任务查询、创建、更新与团队管理，提供稳定的JSON输出与基础工作流.
-license: Proprietary
+license: MIT
 edition: free
-description: Linear流程CLI（免费版）面向使用Linear进行项目管理的开发团队，提供通过命令行读写Linear数据的Agent原生能力。基于稳定的JSON契约设计，让AI
-  Agent能够以机器可读的方式查询任务、创建Issue、更新状态、管理团队与项目，无需通过Web界面手动操作。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
+description: "Linear流程CLI（免费版）面向使用Linear进行项目管控的开发团队，包含通过命令行读写Linear数据的Agent原生能力。基于稳定的JSON契约设计，让AI. 适用于需要linear flow cli相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Linear
   - 任务管理
@@ -19,15 +19,15 @@ tags:
   - linear
   - issue
   - list
-  - bash
-  - agent
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # Linear流程CLI（免费版）
 
 > 用命令行驱动Linear：查询任务、创建Issue、更新状态，稳定的JSON输出让AI Agent成为你的任务管理副驾驶.

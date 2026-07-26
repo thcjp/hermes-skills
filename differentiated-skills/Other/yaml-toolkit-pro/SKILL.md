@@ -1,4 +1,5 @@
 ---
+
 slug: yaml-toolkit-pro
 name: yaml-toolkit-pro
 version: 1.0.0
@@ -6,15 +7,7 @@ displayName: YAML处理工具专业版
 summary: "模式验证、格式互转、批量处理与配置合并，适合DevOps团队与企业配置治理.。YAML处理工具专业版，面向DevOps团队与企业的高阶YAML处理平台。核心能力:"
 license: Proprietary
 edition: pro
-description: 'YAML处理工具专业版，面向DevOps团队与企业的高阶YAML处理平台。核心能力:
-
-  - JSON Schema 模式验证
-
-  - YAML/JSON/TOML/Properties 互转
-
-  - 批量处理与配置合并
-
-  - YAML 1。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。'
+description: "YAML处置工具专业版，面向DevOps团队与企业的高阶YAML处置平台。核心能力:. 适用于需要yaml toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - YAML
   - 配置治理
@@ -26,8 +19,6 @@ tags:
   - yaml
   - json
   - yaml-pro
-  - config
-  - true
 tools:
   - read
   - exec
@@ -35,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # YAML处理工具（专业版）
 
 ## 概述
@@ -240,7 +233,7 @@ report:
 | array-merge | 数组合并去重 | 列表扩展 |
 | null-overrides | null 覆盖非 null | 显式清空 |
 
-## 最佳实践
+## 优秀实践
 
 * 生产环境配置务必通过 Schema 验证，确保合规.
 * 多环境配置采用 base + overlay 模式，避免重复.

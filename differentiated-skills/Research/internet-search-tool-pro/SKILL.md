@@ -1,4 +1,5 @@
 ---
+
 slug: internet-search-tool-pro
 name: internet-search-tool-pro
 version: 1.0.0
@@ -6,15 +7,7 @@ displayName: 聚合搜索专业版
 summary: 企业级多引擎聚合搜索工具，支持批量查询、自定义引擎、结果导出、定时任务与搜索分析，适合专业研究与数据采集.
 license: Proprietary
 edition: pro
-description: '企业级多引擎聚合搜索工具，支持批量查询、自定义引擎、结果导出、定时任务与搜索分析，适合专业研究与数据采集。核心能力:
-
-  - 批量关键词查询，并行执行数十个搜索任务
-
-  - 自定义搜索引擎配置与组合
-
-  - 结果导出为 JSON/CSV/Markdown 多种格式
-
-  - 定时任务调度。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。'
+description: "企业级多引擎聚合搜索工具，兼容成批查询、自定义引擎、结果导出、定时任务与搜索剖析，适合专业研究与数据采集。核心能力:. 适用于需要internet search tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 搜索
   - 企业工具
@@ -33,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 # 聚合搜索专业版
 
 ## 概述
@@ -295,7 +290,7 @@ curl -X POST http://localhost:8000/batch-search \
 | `--cache` | 布尔 | true | 启用缓存 |
 | `--workers` | 整数 | 4 | 并行线程数 |
 
-## 最佳实践
+## 优秀实践
 
 ### 批量搜索优化
 

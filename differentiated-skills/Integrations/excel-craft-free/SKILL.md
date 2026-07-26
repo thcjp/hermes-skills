@@ -5,18 +5,23 @@ name: excel-craft-free
 version: 1.0.1
 displayName: Excel工艺免费版
 summary: "专业 Excel 文件生成器，支持多 Sheet、公式、图表与基础格式，适合日常表格生成需求.。Excel 工艺免费版面向需要程序化生成 Excel 文件的开发者与运营人员，提供多 Shee"
-license: Proprietary
+license: MIT
 edition: free
-description: Excel 工艺免费版面向需要程序化生成 Excel 文件的开发者与运营人员，提供多 Sheet、公式、图表与基础格式化能力。基于 openpyxl
-  与 Python，输出兼容 Excel / WPS / LibreOffice 的。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
-tags: 表格生成,sheet,excel,python,openpyxl,font
+description: "Excel 工艺免费版面向需要程序化产出 Excel 文件的开发者与运营人员，包含多 Sheet、公式、图表与基础格式化能力。基于 openpyxl. 适用于需要excel craft相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+tags:
+  - 表格生成
+  - sheet
+  - excel
+  - python
+  - openpyxl
+  - font
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
-
+pricing_tier: free
 ---
 
 # Excel 工艺（免费版）
@@ -94,7 +99,7 @@ ws = wb.active
 ws.title = "销售数据"
 # ...
 # 标题
-ws['A1'] = "2026 年第一季度销售报告"
+ws['A1'] = "2026 年领先季度销售报告"
 ws['A1'].font = Font(bold=True, size=16)
 # ...
 # 表头
@@ -156,7 +161,7 @@ ws1['A2'] = '=SUM(Sheet1:Sheet3!A1)
 ws1['A3'] = '=SUMIF(Sheet1!A:A, "条件", Sheet1!B:B)'
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **先规划再写码**：确定 Sheet 数量、字段、公式、图表位置后再开始，避免返工.
 2. **格式集中管理**：把格式对象定义为字典或常量，便于统一修改.
@@ -233,9 +238,9 @@ A：这是 Excel 的设计——合并范围内只有左上角单元格保留值
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

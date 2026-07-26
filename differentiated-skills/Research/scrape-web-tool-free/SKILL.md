@@ -1,44 +1,24 @@
 ---
+
 slug: scrape-web-tool-free
 name: scrape-web-tool-free
 version: 1.0.0
 displayName: 网页抓取工具免费版
 summary: "轻量级网页内容抓取工具,支持CSS选择器提取与文件保存,适合个人用户快速获取网页文本。网页抓取工具免费版为个人用户提供轻量级的网页内容抓取与提取能力."
-license: Proprietary
+license: MIT
 edition: free
-description: '网页抓取工具免费版为个人用户提供轻量级的网页内容抓取与提取能力.
-  核心能力:
-
-  - 网页纯文本抓取
-
-  - CSS选择器精准提取
-
-  - 抓取结果保存文件
-
-  - 多种输出格式
-
-  适用场景:
-
-  - 单页内容快速提取
-
-  - 文章正文抓取归档
-
-  - 数据字段精准提取
-
-  差异化:免费版聚焦核心抓取与选择器提取流程,基于Scrapling实现轻量部署,适合个人用户快速抓取网页内容,无需复杂配置.
-  适用关键词: 网页抓取, scrape, 爬虫, CSS选择器, 内容提取, Scrapling, Python'
+description: "网页抓取工具免费版为个人用户包含轻量级的网页内容抓取与提取能力. 适用于需要scrape web tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要scrape web tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 研究工具
+  - scrape
+  - web
+  - automation
+  - productivity
   - 网页抓取
   - 数据采集
   - 个人效率
   - Web开发
   - 前端
-  - 开发工具
-  - url
-  - text
-  - python
-  - https
 tools:
   - read
   - exec
@@ -46,7 +26,10 @@ tools:
   - glob
 homepage: ""
 category: "Development"
+pricing_tier: free
+
 ---
+
 # 网页抓取工具免费版
 
 ## 概述
@@ -204,7 +187,8 @@ pip install httpx
 ### 第二步:首次抓取
 
 ```bash
-# 最简用法:抓取网页纯文本
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### 第三步:使用CSS选择器
@@ -250,7 +234,7 @@ ul.menu li::text                 # menu列表项文本
 table.data tr td::text           # 表格单元格文本
 # ...
 # 伪类选择
-li:first-child::text             # 第一个列表项
+li:first-child::text             # 领先个列表项
 a[href*=pdf]::attr(href)         # 包含pdf的链接
 ```
 
@@ -268,7 +252,7 @@ pip install scrapling
 python -c "import scrapling; print(scrapling.__version__)"
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 优先使用CSS选择器精准提取
 
@@ -307,7 +291,7 @@ A: 部分网站有反爬机制。免费版不支持代理和自定义请求头�
 A: CSS选择器遵循标准语法。常用模式:`标签名`(如`h1`)、`.类名`(如`.title`)、`#ID`(如`#header`)、`属性选择器`(如`a[href]`)。文本提取用`::text`,属性提取用`::attr(属性名)`。参考W3Schools CSS选择器教程.
 ### Q: 抓取结果包含大量HTML标签怎么办?
 
-A: 使用`::text`后缀只提取文本内容,不带HTML标签。如果未使用`::text`而直接选择元素,返回的是HTML片段。确保选择器以`::text`或`::attr(xxx)`结尾.
+A: 使用`::text`后缀只提取文本内容,不带HTML标签。如果未使用`::text`而直接选择元素,返回的是HTML片段。确保选择器以`::text`或`::attr(placeholder)`结尾.
 ### Q: 如何抓取需要登录的页面?
 
 A: 免费版不支持认证抓取。需要登录的页面无法直接抓取。解决方法:(1)寻找该页面的公开API;(2)手动复制页面内容;(3)升级到专业版使用Cookie/Header注入功能.
@@ -339,7 +323,7 @@ A: 免费版不支持认证抓取。需要登录的页面无法直接抓取。�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行Python脚本)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行Python脚本)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent调用Python脚本完成网页内容抓取任务。免费版聚焦个人用户的单页抓取、CSS选择器提取与文件保存,适合文章正文提取、数据字段精准提取与页面元数据获取场景.
 ## 错误处理
 

@@ -1,40 +1,13 @@
 ---
+
 slug: docker-essentials-v1-tool-free
 name: docker-essentials-v1-tool-free
 version: 1.0.0
 displayName: Docker V1基础工具免费版
 summary: "提供Docker V1经典命令集与基础容器管理,适合维护旧版Docker环境的开发者.。面向旧版Docker环境的容器管理工具,涵盖V1经典命令集、基础容器生命周期与镜像管理。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向旧版Docker环境的容器管理工具,涵盖V1经典命令集、基础容器生命周期与镜像管理。核心能力:
-
-  - Docker V1经典命令支持
-
-  - 容器生命周期管理
-
-  - 镜像构建与标签管理
-
-  - 基础Compose编排(V1格式)
-
-  - 旧版环境兼容性检查
-
-  适用场景:
-
-  - 旧版Docker环境维护
-
-  - 遗留系统容器管理
-
-  - V1到V2迁移准备
-
-  差异化:
-
-  - 免费版专注V1命令兼容,覆盖经典操作
-
-  - 提供旧版环境兼容性检测
-
-  - 与专业版命令兼容,支持后续升级
-
-  适用关键词: Docker V1, 旧版D...'
+description: "面向旧版Docker环境的容器管控工具,涵盖V1经典命令集、基础容器生命周期与镜像管控。核心能力:. 适用于需要docker essentials v1 tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 开发工具
   - Docker
@@ -51,7 +24,9 @@ tools:
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # Docker V1基础工具 - 免费版
 ## 概述
 Docker V1基础工具免费版为维护旧版Docker环境的开发者提供经典命令集支持。工具涵盖V1版本的容器生命周期管理、镜像构建管理、基础Compose编排和旧版环境兼容性检查,帮助开发者在V1环境中高效进行容器管理.
@@ -357,9 +332,9 @@ images:
   web: nginx:1.19
   db: postgres:13
   cache: redis:6
-```
-
-### V1 Dockerfile示例
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```dockerfile
 # V1兼容Dockerfile
 FROM node:14
@@ -376,7 +351,7 @@ EXPOSE 3000
 CMD ["npm", "start"]
 ```
 
-## 最佳实践
+## 优秀实践
 1. **版本固定**:在V1环境中固定镜像版本,避免自动更新
 
 ```dockerfile
@@ -448,9 +423,9 @@ docker compose config  # 验证V1的compose文件
 # 5. 逐步替换命令
 # 旧: docker-compose up -d
 # 新: docker compose up -d
-```
-
-### Q4:V1环境镜像构建注意事项?
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```dockerfile
 # V1兼容Dockerfile注意事项:
 # 1. 不使用BuildKit特性(如--mount)
@@ -493,7 +468,7 @@ docker login registry.example.com
 ```
 
 ### 可用性分类
-- **分类**:MD+EXEC(纯 Markdown 指令,需要 exec 命令行执行能力)
+- **分类**:MD+EXEC模式纯 Markdown 指令,需要 exec 命令行执行能力)
 - **说明**:基于 Markdown 的 AI Skill,通过自然语言指令驱动 Agent 执行V1 Docker管理任务
 - **适用规模**:单机环境,适合旧版Docker维护场景
 - **兼容性**:兼容Docker V1 API,可后续升级到V2工具

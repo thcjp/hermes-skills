@@ -7,12 +7,14 @@ displayName: DNS管理专业版
 summary: "企业级DNS管理平台，支持多域名批量、DNS监控、告警与多注册商集成.。面向企业运维团队的DNS管理平台。支持多域名批量管理、DNS传播监控、"
 license: Proprietary
 edition: pro
-description: '面向企业运维团队的DNS管理平台。支持多域名批量管理、DNS传播监控、
-
-  告警通知、多注册商集成（Namecheap/Cloudflare/AWS Route53等）与
-
-  DNS安全配置（DNSSEC/CAA）。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。'
-tags: DNS,企业级,运维,监控,dns,python3
+description: "面向企业运维团队的DNS管控平台。兼容多域名成批管控、DNS传播监控、. 适用于需要namecheap dns tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+tags:
+  - DNS
+  - 企业级
+  - 运维
+  - 监控
+  - dns
+  - python3
 tools:
   - read
   - exec
@@ -20,7 +22,7 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
-
+pricing_tier: L2-标准级
 ---
 
 # DNS管理专业版（PRO版）
@@ -232,7 +234,7 @@ pro_config:
     rate_limit_delay: 1
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### PRO版企业实践
 

@@ -7,11 +7,7 @@ displayName: "Logo设计工具专业版"
 summary: "企业级AI Logo设计系统,支持批量生成、自动矢量化、品牌变体管理、CI/CD集成,适合团队与商业项目"
 license: "Proprietary"
 edition: "pro"
-description: "|-
-  Logo设计工具专业版为企业与设计团队提供系统化的AI Logo设计解决方案。在免费版基础生成能力之上,增加批量生成、自动矢量化、品牌变体管理、
-  多格式导出、设计审计与CI/CD集成能力。加速开发流程，提升代码质量与一致性。触发关键词：代码生成、自动化、性能优化、部署、设计、品牌。降低专业门槛，让非专业人员也能快速上手"
-  Logo设计工具专业版为企业与设计团队提供系统化的AI Logo设计解决方案。在免费版基础生成能力之上,增加批量生成、自动矢量化、品牌变体管理、
-  多格式导出、设计审计与CI/CD集成能力。
+description: "|-. 适用于需要logo design tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Logo设计
   - 品牌设计
@@ -23,18 +19,15 @@ tags:
   - UI/UX
   - 创意
   - logo
-  - svg
-  - true
-  - png
-  - assets
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
-
+pricing_tier: L2-标准级
 ---
+
 # Logo设计工具专业版
 
 ## 概述
@@ -284,7 +277,7 @@ python3 init_brand.py \
 ### Step 3:选择与优化
 
 ```bash
-# 选择最佳方向后,生成完整变体系统
+# 选择优秀方向后,生成完整变体系统
   --source ./output/best-logo.png \
   --variants all \
   --vectorize \
@@ -373,7 +366,7 @@ jobs:
           path: ./brand/
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 免费版与PRO版能力对比
 
@@ -434,7 +427,7 @@ A: 使用"统一风格家族"模式,所有子品牌共享设计元素(如几何�
 
 ### Q5: 支持哪些导出格式?
 
-A: 支持SVG(矢量)、PNG(透明/白底)、ICO(favicon)、高分辨率PNG(4096px+)。可根据使用场景自动选择最佳格式。
+A: 支持SVG(矢量)、PNG(透明/白底)、ICO(favicon)、高分辨率PNG(4096px+)。可根据使用场景自动选择优秀格式。
 
 ## 依赖说明
 
@@ -463,7 +456,7 @@ A: 支持SVG(矢量)、PNG(透明/白底)、ICO(favicon)、高分辨率PNG(4096p
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令+脚本执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令+脚本执行能力)
 - **说明**: 专业版基于Markdown指令驱动Agent执行批量Logo设计任务,通过Python脚本实现矢量化、变体管理与质量审计
 - **PRO版增强**: 批量生成、自动矢量化、品牌变体管理、质量审计、CI/CD集成、团队协作
 

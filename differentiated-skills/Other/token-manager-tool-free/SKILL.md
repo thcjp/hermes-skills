@@ -1,51 +1,34 @@
 ---
+
 slug: token-manager-tool-free
 name: token-manager-tool-free
 version: 1.0.0
 displayName: Token用量管理免费版
 summary: "监控LLM API的Token用量与费用，提供省钱建议与余额提醒，适合个人开发者日常使用.。Token用量管理工具免费版，面向个人开发者的轻量级LLM用量监控工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 'Token用量管理工具免费版，面向个人开发者的轻量级LLM用量监控工具。核心能力:
-
-  - 实时会话Token用量分析与费用估算
-
-  - 余额查询与基础提醒
-
-  - 省钱优化建议（上下文管理、推理优化、模型选择）
-
-  - 支持 Kimi/Moonshot、OpenAI、Anthropic、Gemini、Ollama
-
-  适用场景:
-
-  - 个人开发者监控API费用
-
-  - 日常会话的Token用量追踪
-
-  - 余额不足时的基础提醒
-
-  差异化: 免费版聚焦核心用量监控与省钱建议，去除所有外部平台与作者引用，强化中文本地化与适用关键词...'
+description: "Token用量管控工具免费版，面向个人开发者的轻量级LLM用量监控工具。核心能力:. 适用于需要token manager tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要token manager tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - Token管理
+  - token
+  - manager
+  - automation
+  - productivity
   - 费用监控
   - LLM优化
   - 免费版
   - 工具
   - 效率
-  - 写作
-  - 电商
-  - api
-  - token
-  - moonshot
-  - node
-  - 建议
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # Token用量管理工具（免费版）
 
 ## 概述
@@ -183,7 +166,7 @@ export ANTHROPIC_API_KEY="your-claude-key"     # Anthropic（可选）
 | 使用 Claude Opus | 考虑 Claude Sonnet 省 5 倍 |
 | 运行 Ollama | 免费！无 API 费用 |
 
-## 最佳实践
+## 优秀实践
 
 * API 密钥仅从环境变量读取，不要硬编码在脚本中.
 * 所有数据本地存储在 `.data/` 目录，不会上传第三方服务器.
@@ -248,9 +231,9 @@ A：所有数据存储在本地 `.data/` 目录，不上传至任何第三方服
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

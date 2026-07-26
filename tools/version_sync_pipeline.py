@@ -463,6 +463,36 @@ def run_anti_hallucination_check(skill_md: Path) -> Dict[str, Any]:
         }
 
 
+def run_rating_gate_check(skill_md: Path, slug: str = None) -> Dict[str, Any]:
+    """评分门控检查(v2.3新增 — 流程固化: 低于4.5分阻断上传)
+    
+    在L1静态检查通过后, 检查skill在平台上的历史评分:
+    - 平台评分 < 4.5 → 阻断上传, 要求先升级
+    - current_status == deleted → 阻断上传, 要求重新差异化
+    
+    这是质检门控闭环的关键环节:
+    评分同步(sync_platform_ratings) → 检测低评分(check_low_rating_skills) 
+    → 阻断上传(rating_gate) → 触发升级(upgrade_single_skill) → 升级通过 → 允许重传
+    """
+    try:
+        sys.path.insert(0, str(SKILL_REGISTRY_DIR))
+        from quality_gate import run_rating_gate
+        result = run_rating_gate(skill_md, slug)
+        failed_checks = [c['name'] for c in result.get('checks', []) if not c['passed']]
+        return {
+            'passed': result.get('overall_passed', False),
+            'score': f"{result.get('passed_checks', 0)}/{result.get('total_checks', 0)}",
+            'failed_checks': failed_checks,
+        }
+    except ImportError:
+        return {
+            'passed': True,
+            'score': 'skipped',
+            'failed_checks': [],
+            'note': 'quality_gate.run_rating_gate not available, skipped',
+        }
+
+
 def run_l2_check(slug: str) -> Dict[str, Any]:
     """L2 LLM验证报告检查(v2.0新增)
     
@@ -1008,6 +1038,18 @@ def sync_skill_to_all_platforms(slug: str, skip_github: bool = False,
     else:
         result['phases']['security_precheck'] = {'status': 'skipped'}
 
+    # 5.1.8 评分门控(v2.3新增 — 流程固化: 低于4.5分阻断上传)
+    print(f"  [3.58/7] 评分门控检查...")
+    rg = run_rating_gate_check(skill_md, slug)
+    result['phases']['rating_gate'] = rg
+    if not rg['passed']:
+        print(f"  ✗ 评分门控未通过: {rg['failed_checks']}")
+        result['status'] = 'blocked_by_rating_gate'
+        record_platform_upload(skill_id, new_version, 'rating_gate', slug,
+                               'blocked', error=str(rg['failed_checks']))
+        return result
+    print(f"  ✓ 评分门控通过 ({rg['score']})")
+
     # 5.2 营销关卡检查(v2.0新增)
     if not skip_marketing:
         print(f"  [3.6/7] 营销关卡检查...")
@@ -1105,6 +1147,42 @@ def sync_skill_to_all_platforms(slug: str, skip_github: bool = False,
         free_status = free_upload.get('status', 'unknown')
         if free_status == 'success':
             print(f"  ✓ SkillHub同步成功")
+
+            # 8.5 发布到社区 (publish-to-community, 设置visibility=public)
+            # 修复企业页可见性问题: published状态但visibility非public导致前台不可见
+            print(f"  [5.5/7] 发布到社区...")
+            try:
+                from platform_ops import publish_to_community
+                ptc_result = publish_to_community(slug)
+                result['phases']['publish_to_community'] = ptc_result
+                if ptc_result.get('success'):
+                    print(f"  ✓ 已发布到社区 (visibility=public)")
+                    # 更新DB的community_published状态
+                    try:
+                        conn = sqlite3.connect(str(DB_PATH))
+                        conn.execute("PRAGMA foreign_keys = ON")
+                        conn.execute("""
+                            UPDATE platform_uploads SET community_published = 1
+                            WHERE skill_id = ? AND platform = 'skillhub'
+                        """, (skill_id,))
+                        conn.execute("""
+                            UPDATE skills SET skillhub_sync_status = 'synced'
+                            WHERE id = ?
+                        """, (skill_id,))
+                        conn.commit()
+                        conn.close()
+                    except Exception:
+                        pass
+                else:
+                    err = ptc_result.get('error', '未知错误')
+                    if 'expired' in err or '401' in err or '认证' in err:
+                        print(f"  ⚠ 社区发布跳过(认证过期): {err[:80]}")
+                    else:
+                        print(f"  ⚠ 社区发布失败: {err[:80]}")
+                    result['phases']['publish_to_community'] = ptc_result
+            except ImportError:
+                print(f"  ⚠ platform_ops模块不可用,跳过社区发布")
+                result['phases']['publish_to_community'] = {'status': 'skipped', 'reason': 'module_unavailable'}
         else:
             print(f"  ⚠ SkillHub: {free_status}")
     else:

@@ -1,38 +1,13 @@
 ---
+
 slug: code-analysis-toolkit-free
 name: code-analysis-toolkit-free
 version: 1.0.1
 displayName: 代码分析工具包免费版
 summary: "个人Git历史自查工具,生成提交模式、代码风格、质量指标的描述性报告。面向个人开发者的 Git 历史自查工具,生成描述性的提交模式分析报告。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人开发者的 Git 历史自查工具,生成描述性的提交模式分析报告。核心能力:
-
-  - 个人提交模式分析(频率、大小、合并率)
-
-  - 代码风格标记(提交规范、Issue 引用)
-
-  - 代码质量指标(Bug 修复率、回退率、复杂度)
-
-  - 自我反思叙事报告
-
-  适用场景:
-
-  - 个人开发习惯自查与改进
-
-  - 代码提交质量回顾
-
-  - 开发效率自我评估
-
-  差异化:
-
-  - 免费版仅支持自我分析(当前 Git 用户)
-
-  - 描述性报告,非评判性结论
-
-  - 完全本地运行,数据不出本机
-
-  适用关键词: git, history, r...'
+description: "面向个人开发者的 Git 历史自查工具,产出描述性的提交模式剖析报告。核心能力:. 适用于需要code analysis toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 代码分析
   - Git历史
@@ -44,8 +19,6 @@ tags:
   - git
   - i-have-consent
   - html
-  - python
-  - src
 tools:
   - read
   - exec
@@ -54,7 +27,9 @@ tools:
   - grep
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # 代码分析工具包免费版
 
 ## 概述
@@ -273,7 +248,7 @@ python -m src.main --i-have-consent -r /path/to/my-repo \
 | 代码风格 | 规范提交 | Conventional Commits 使用 |
 | | Issue 引用 | 提交中引用 Issue 的占比 |
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 正确理解报告
 

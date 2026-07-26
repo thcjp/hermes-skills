@@ -1,4 +1,5 @@
 ---
+
 slug: "accounting-finance-tool-pro"
 name: "accounting-finance-tool-pro"
 version: "1.0.0"
@@ -6,10 +7,7 @@ displayName: "财务分析专业套件"
 summary: "企业级财务分析与估值建模全套技能，58个专业分析模块，支持批量处理与自动化报告。。面向专业分析师、机构投资者与企业财务部门的全栈财务分析技能套件。包含58个 专家级分析技能，覆盖估值建模、财"
 license: "Proprietary"
 edition: "pro"
-description: |-
-  面向专业分析师、机构投资者与企业财务部门的全栈财务分析技能套件。包含58个
-  专家级分析技能，覆盖估值建模、财务分析、风险评估三大核心领域，支持批量
-  处理、自动化报告生成与企业级工作流。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
+description: "|-. 适用于需要accounting finance tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Finance
   - 估值分析
@@ -21,16 +19,15 @@ tags:
   - 数据
   - pro
   - 分析
-  - 个技能
-  - 技能
-  - 用途
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Finance"
+pricing_tier: L2-标准级
 ---
+
 # 财务分析专业套件（PRO版）
 
 ## 概述
@@ -321,7 +318,7 @@ pro_config:
       scenarios: ["base", "adverse", "severe"]
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### PRO版高级实践
 

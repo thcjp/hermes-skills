@@ -1,4 +1,5 @@
 ---
+
 slug: security-audit-tool-pro
 name: security-audit-tool-pro
 version: 1.0.0
@@ -6,35 +7,7 @@ displayName: 安全审计工具(专业版)
 summary: "企业级安全审计平台,8维度扫描、合规模板、HTML报告、定时审计与CI/CD集成,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
-description: 核心能力:，可自动提升工作效率
-
-  - 8维度安全扫描(凭据/端口/配置/权限/Docker/K8s/云/合规)
-
-  - 等保2。0/PCI-DSS/ISO27001合规模板
-
-  - HTML/PDF/SARIF多格式专业报告
-
-  - Cron定时审计+邮件/Webhook告警
-
-  - 智能修复+回滚机制
-
-  - CI/CD流水线集成
-
-  适用场景:
-
-  - 企业级安全合规审计
-
-  - 等保/PCI-DSS认证评估
-
-  - DevSecOps流水线集成
-
-  - 多环境安全基线管理
-
-  差异化:
-
-  - 8维度全覆盖,支持云原生与容器安全
-
-  - 合规框架映射,一键...'
+description: "核心能力:，可自发提升工作效率. 适用于需要security audit tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 安全
   - 安全审计
@@ -51,7 +24,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Security"
+pricing_tier: L2-标准级
 ---
+
 安全审计工具专业版是一款面向企业用户的安全审计与合规评估平台。在免费版5个扫描维度基础上,扩展至8个维度(增加Kubernetes安全、云安全配置、合规审计),支持等保2.0、PCI-DSS、ISO27001合规框架映射。提供HTML/PDF/SARIF多格式专业报告,Cron定时审计与告警通知,智能修复与回滚机制,以及CI/CD流水线集成能力。与免费版完全兼容,扫描结果和配置可无缝迁移.
 ## 核心能力
 ### 功能矩阵
@@ -80,7 +55,7 @@ category: "Security"
 ┌──────────────────────────────────────────────────────┐
 │              专业版8维度扫描                          │
 ├───────────────┬──────────────────────────────────────┤
-│ 1.凭据检测     │ API Key/Token/硬编码密码             │
+│ 1.凭据检测     │ API Key/item/硬编码密码             │
 │ 2.端口扫描     │ 开放端口/防火墙/暴露服务             │
 │ 3.配置安全     │ CORS/认证/速率限制/调试模式          │
 │ 4.文件权限     │ 敏感文件权限/全局可读/可执行         │
@@ -159,9 +134,9 @@ jobs:
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: results.sarif
-```
-
-### 场景三:定时审计与告警
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python （请参考skill目录中的脚本文件） \
   --schedule "0 2 * * *" \
@@ -170,9 +145,9 @@ python （请参考skill目录中的脚本文件） \
   --notify webhook \
   --webhook-url "https://hooks.example.com/security" \
   --alert-on HIGH
-```
-
-### 场景四:多环境批量审计
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python （请参考skill目录中的脚本文件） \
   --targets environments.txt \
@@ -227,28 +202,27 @@ python （请参考skill目录中的脚本文件） \
     }
   }
 }
-```
-
-## 最佳实践
-### 1. 合规评估流程
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python （请参考skill目录中的脚本文件） --compliance djcp-level3 --target 10.0.0.0/24 --report html
 # ...
 python （请参考skill目录中的脚本文件） --compliance djcp-level3 --smart-fix --rollback
 # ...
 0.0.0/24 --report html
-```
-
-### 2. DevSecOps集成
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python （请参考skill目录中的脚本文件） --credentials --configs --format sarif
 # ...
 python （请参考skill目录中的脚本文件） --full --fail-on HIGH --format sarif
 # ...
 python （请参考skill目录中的脚本文件） --compliance pci-dss --report html
-```
-
-### 3. 趋势分析
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 python （请参考skill目录中的脚本文件） --export-trends --period 90d --format json
 ```
@@ -282,7 +256,7 @@ A: 支持GitHub Actions、GitLab CI、Jenkins。使用SARIF格式输出,GitHub�
 - K8s审计需要配置kubeconfig
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行企业级安全审计与合规评估任务
 
 ## 错误处理

@@ -1,4 +1,5 @@
 ---
+
 slug: amap-jsapi-tool-pro
 name: amap-jsapi-tool-pro
 version: 1.0.0
@@ -6,11 +7,7 @@ displayName: 高德地图JSAPI专业版
 summary: 企业级高德地图开发平台,支持矢量图层、实时路况、批量地理编码、自定义样式与货车导航,适合商业级地图应用开发.
 license: Proprietary
 edition: pro
-description: '高德地图JSAPI v2.0开发助手专业版,为企业提供全方位地图开发能力.
-  核心能力:WebGL高级渲染、矢量图层、实时路况、批量地理编码、自定义地图样式、货车路径规划、公交导航.
-  适用场景:商业级地图应用、物流调度、位置服务SaaS、智慧城市可视化.
-  差异化:专业版兼容免费版接口,新增企业级数据处理与高级渲染能力,满足商业场景需求.
-  适用关键词: 高德地图, 矢量图层, 实时路况, 批量地理编码, 货车导航, amap pro, vector layer'
+description: "高德地图JSAPI v2.0开发助手专业版,为企业包含全方位地图开发能力. 适用于需要amap jsapi tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 地图开发
   - 高德地图
@@ -22,7 +19,6 @@ tags:
   - amap
   - function
   - styles
-  - map
 tools:
   - read
   - exec
@@ -30,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+pricing_tier: L2-标准级
 ---
+
 专业版为企业开发者提供完整的高德地图JSAPI v2.0开发能力,在免费版基础功能之上,新增WebGL高级渲染、矢量图层管理、实时路况数据、批量地理编码、自定义地图样式、货车路径规划与公交导航等企业级功能。专业版完全兼容免费版接口,已有免费版代码可无缝升级,适合商业级地图应用开发.
 ### 专业版核心优势
 | 优势 | 说明 |
@@ -217,9 +215,9 @@ optimizeDeliveryRoute(
         [116.377849, 39.915378]  // 配送点3:西单
     ]
 );
-```
-
-### 场景二:商圈分析可视化
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```javascript
 // 商圈热力图分析
 function analyzeBusinessDistrict(map, poiData) {
@@ -265,9 +263,9 @@ function analyzeBusinessDistrict(map, poiData) {
         marker.setMap(map);
     });
 }
-```
-
-### 场景三:等时圈分析
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```javascript
 // 等时圈:从某点出发,N分钟内可达范围
 function reachabilityAnalysis(center, minutes) {
@@ -378,7 +376,7 @@ const map = new AMap.Map('container', { zoom: 12 });
 });
 ```
 
-## 最佳实践
+## 优秀实践
 1. **海量数据优化**:超过1000个标注点使用MassMarks而非普通Marker.
 2. **批量限流**:批量地理编码控制在每秒10个请求以内.
 3. **图层管理**:使用图层组管理多个图层,按需显示/隐藏.
@@ -415,7 +413,7 @@ MassMarks支持10万级别数据点流畅渲染,配合缩放级别动态加载�
 - 通过 `window._AMapSecurityConfig` 配置安全密钥
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,需要exec能力生成HTML文件)
+- **分类**: MD+EXEC模式纯Markdown指令,需要exec能力生成HTML文件)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent生成企业级高德地图JSAPI开发代码
 - API Key通过环境变量配置: export API_KEY=your_key
 

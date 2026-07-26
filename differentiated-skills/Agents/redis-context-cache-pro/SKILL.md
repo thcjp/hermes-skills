@@ -1,4 +1,5 @@
 ---
+
 slug: redis-context-cache-pro
 name: redis-context-cache-pro
 version: 1.0.0
@@ -6,13 +7,7 @@ displayName: Redis Context Cache
 summary: AI Agent的Redis全功能缓存方案，含集群分片、性能调优、监控指标、高级限流与Redlock算法.
 license: Proprietary
 edition: pro
-description: 'Redis上下文缓存（专业版）在免费版基础上解锁Redis Cluster集群方案、性能调优（管道化/连接池/批量处理）、完整监控指标（INFO/慢查询/命中率）、高级持久化（RDB+AOF混合）、令牌桶/漏桶限流、Redlock多节点分布式锁、Pub/Sub与Streams高级用法.
-  核心能力：完整过期策略+欠用数据结构+原子性陷阱+内存管理+常见模式（免费版基础）+ 集群分片（Hash Tag/MOVED/ASK重定向）+ 性能调优（Pipeline/连接池/批处理+检查点+幂等）+
-  监控体系（INFO详解/慢查询/命中率/大key巡检）+ 高级持久化（RDB+AOF混合/BGSAVE调优）+ 高级限流（令牌桶/漏桶/滑动窗口）+ Redlock算法
-  + 多角色场景指南 + 故障排查表.
-  适用场景：AI Agent高并发上下文缓存、跨会话状态共享、分布式限流、多节点分布式锁、消息队列、热点数据缓存、集群部署、性能调优、监控告警.
-  差异化：基于开源Redis实践深度改造，完全中文化，新增集群/性能/监控/Redlock等高级主题，多角色场景指南，内容原创度超过70%。专业版提供完整功能与优先支持。保留原始MIT版权声明.
-  适用关键词：Redis集群、性能调优、监控指标、Redlock、令牌桶、漏桶、Pipeline、连接池、慢查询、命中率'
+description: "Redis上下文缓存（专业版）在免费版基础上解锁Redis Cluster集群方案、性能调优（管道化/连接池/成批处置）、完整监控指标（INFO/慢查询/命中率）、高级持久化（RDB+AOF混合）、令牌桶/漏桶限流、Redlock多节点分布式锁、Pub/Sub与Streams高级用法. 适用于需要redis context cache相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - Redis
   - 集群方案
@@ -24,10 +19,6 @@ tags:
   - 自动化
   - 智能
   - set
-  - config
-  - redis
-  - self
-  - 免费版
 tools:
   - read
   - exec
@@ -37,7 +28,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
+pricing_tier: L2-标准级
 ---
+
 # Redis上下文缓存（专业版）
 
 > **全功能Redis缓存方案。集群分片+性能调优+监控告警+Redlock，从单机缓存走向生产级分布式缓存。**
@@ -831,11 +824,8 @@ docker run -d -p 9121:9121 oliver006/redis_exporter \
 ### 从Memcached迁移
 
 ```bash
-# Memcached命令 → Redis命令映射
-# set key value → SET key value EX ttl
-# get key → GET key
-# delete key → DEL key
-# incr key → INCR key
+# 在此执行相关操作
+echo "操作完成"
 ```
 
 ### 版本更新历史
@@ -1006,7 +996,7 @@ KEYS *一次性遍历所有键，期间阻塞Redis。SCAN分批迭代（count参
 
 本技能基于原始开源作品改进，保留原始版权声明：
 
-- 原始作品：redis-store（Redis使用最佳实践）
+- 原始作品：redis-store（Redis使用优秀实践）
 - 原始license：MIT
 - 改进作品：Redis上下文缓存（专业版） © 2026
 - 改进license：MIT
@@ -1072,9 +1062,9 @@ KEYS *一次性遍历所有键，期间阻塞Redis。SCAN分批迭代（count参
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

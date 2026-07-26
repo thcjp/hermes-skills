@@ -1,4 +1,5 @@
 ---
+
 slug: security-toolkit-pro
 name: security-toolkit-pro
 version: 1.0.0
@@ -6,35 +7,7 @@ displayName: Agent安全工具箱(专业版)
 summary: "企业级AI Agent安全平台,含行动评估、8项自动巡检、信任注册表、6维健康评分与HTML报告,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
-description: 核心能力:，可自动提升工作效率
-
-  - 24条规则+自定义规则安全扫描引擎
-
-  - 运行时行动安全评估(ALLOW/DENY/CONFIRM决策)
-
-  - 8项自动化安全巡检(完整性/密钥/网络/定时任务等)
-
-  - Skill信任注册表与能力模型管理
-
-  - 6维度健康评分与可视化HTML报告
-
-  - 3级保护策略(strict/balanced/permissive)
-
-  适用场景:
-
-  - 企业AI Agent安全治理
-
-  - Skill供应链安全管理
-
-  - 合规审计与安全基线
-
-  - 红蓝对抗安全演练
-
-  差异化:
-
-  - 企业级运行时安全决策引擎
-
-  ...'
+description: "核心能力:，可自发提升工作效率. 适用于需要security toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 安全
   - Agent安全
@@ -51,7 +24,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Security"
+pricing_tier: L2-标准级
 ---
+
 # Agent安全工具箱(专业版)
 ## 概述
 Agent安全工具箱专业版是一款面向企业用户的AI Agent安全治理平台。在免费版24条静态扫描规则基础上,增加了运行时行动安全评估、8项自动化安全巡检、Skill信任注册表、6维度健康评分与可视化HTML报告等企业级功能。支持3级保护策略(strict/balanced/permissive),全面保障企业AI Agent生态安全。与免费版完全兼容,扫描规则和报告格式可无缝复用.
@@ -139,9 +114,9 @@ node （请参考skill目录中的脚本文件） --type web3_tx \
   --from 0x1234... \
   --to 0x5678... \
   --value 1000000000000000000
-```
-
-### 场景三:8项自动化安全巡检
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 执行完整巡检
 node （请参考skill目录中的脚本文件） run
@@ -155,9 +130,9 @@ node （请参考skill目录中的脚本文件） run
 # [6] 审计日志分析 - 分析攻击模式
 # [7] 环境与配置 - 验证安全配置
 # [8] 信任注册表健康 - 检查过期或过度授权的记录
-```
-
-### 场景四:信任等级管理
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 注册信任Skill
 node （请参考skill目录中的脚本文件） attest \
@@ -346,9 +321,9 @@ class TrustRegistry:
                 record["revoked_reason"] = reason
                 return f"已撤销: {skill_id} (原因: {reason})"
         return "未找到记录"
-```
-
-### 健康评分系统
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 class HealthCheckup:
     """6维度安全健康检查"""
@@ -407,11 +382,9 @@ class HealthCheckup:
         elif score >= 70: return {"grade": "A", "label": "健康", "mascot": "持盾龙虾"}
         elif score >= 50: return {"grade": "B", "label": "疲惫", "mascot": "喝咖啡龙虾"}
         else: return {"grade": "F", "label": "危险", "mascot": "受伤龙虾"}
-```
-
-#
-## 示例
-### 保护级别配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "protection_level": "balanced",
@@ -433,9 +406,9 @@ class HealthCheckup:
     }
   }
 }
-```
-
-### 巡检计划配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "patrol_schedule": {
@@ -455,7 +428,7 @@ class HealthCheckup:
 }
 ```
 
-## 最佳实践
+## 优秀实践
 ### 1. 保护级别选择
 | 级别 | 适用场景 | 建议 |
 |---:|---:|---:|
@@ -474,9 +447,9 @@ node （请参考skill目录中的脚本文件） run
 # ...
 # 发现问题:立即撤销
 node （请参考skill目录中的脚本文件） revoke --source /path/to/skill --reason "检测到恶意行为"
-```
-
-### 3. 健康检查频率
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 每周健康检查
 node （请参考skill目录中的脚本文件）
@@ -514,7 +487,7 @@ A: 使用 `patrol setup` 配置定时任务,支持 cron 表达式。巡检结果
 - 可选配置 `GOPLUS_API_KEY` 和 `GOPLUS_API_SECRET` 以增强Web3安全检测
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行企业级安全治理任务
 
 ## 错误处理

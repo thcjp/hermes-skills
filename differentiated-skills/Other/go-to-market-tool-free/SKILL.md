@@ -1,51 +1,34 @@
 ---
+
 slug: go-to-market-tool-free
 name: go-to-market-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: 上市策略工具
 summary: "面向个人开发者的产品上市（GTM）策略生成工具，七步快速成稿.。面向个人开发者与一人公司的产品上市（GTM）策略生成工具。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人开发者与一人公司的产品上市（GTM）策略生成工具。核心能力:
-
-  - 目标客户（ICP）画像模板
-
-  - 定位陈述与 GTM 动作选择
-
-  - 渠道筛选与 90 天执行计划
-
-  - 定价建议与基础指标跟踪
-
-  适用场景:
-
-  - 独立开发者产品上市策略起草
-
-  - 单产品 90 天获客计划
-
-  - 个人项目定价与渠道选择
-
-  差异化: 免费版聚焦单一产品与个人场景，提供七步模板与 90 天计划，快速成稿'
+description: "面向个人开发者与一人公司的产品上市（GTM）策略产出工具。核心能力:. 适用于需要go to market tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要go to market tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 市场策略
+  - market
+  - automation
+  - productivity
+  - developer-tools
   - 获客
   - 个人效率
   - 其他工具
   - 工具
   - 效率
-  - 写作
-  - 电商
-  - icp
-  - 即时
-  - text
-  - 时间
-  - 动作
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
+
 ---
+
 # 上市策略工具（免费版）
 
 ## 概述
@@ -158,7 +141,7 @@ ICP: 小型 SaaS 创始人（1-5 人团队）
 | 邮件营销 | 自有受众 | 即时 | 低 |
 | 冷触达 | B2B 直客 | 即时 | 低（时间） |
 
-## 最佳实践
+## 优秀实践
 
 - **ICP 要窄**：「所有人」不是目标客户，越窄越有效.
 - **渠道别贪多**：选 2 个主渠道做透，再加第三个.

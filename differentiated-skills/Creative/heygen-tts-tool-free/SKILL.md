@@ -1,18 +1,13 @@
 ---
+
 slug: heygen-tts-tool-free
 name: heygen-tts-tool-free
 version: 1.0.0
 displayName: HeyGen TTS免费版
 summary: 基于HeyGen Starfish模型的文字转语音工具,支持多语言语音合成与基础语速控制,适合个人使用.
-license: Proprietary
+license: MIT
 edition: free
-description: 面向个人用户的 HeyGen 文字转语音工具(免费版)。核心能力:，可自动提升工作效率
-
-  - 基于 HeyGen Starfish TTS 模型的语音合成
-
-  - 支持 40+ 语言的语音选择
-
-  - 基础语速控制(0。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。'
+description: "面向个人用户的 HeyGen 文字转语音工具(免费版)。核心能力:，可自发提升工作效率. 适用于需要heygen tts tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 创意设计
   - 语音合成
@@ -24,17 +19,15 @@ tags:
   - 创意
   - 图像
   - language
-  - heygen
-  - data
-  - api
-  - voice_id
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
+
 # HeyGen TTS 工具 - 免费版
 
 ## 概述
@@ -178,7 +171,7 @@ heygen.com/v3/voices?engine=starfish" \
   -H "X-Api-Key: $HEYGEN_API_KEY" | jq '.data[0:3]'
 ```
 
-### 3. 生成第一段语音
+### 3. 生成领先段语音
 
 ```bash
 heygen.com/v3/voices/speech" \
@@ -269,7 +262,7 @@ tts.download(result["audio_url"], "output.wav")
 | `speed` | number | 否 | 语速 0.5-2.0(默认 1.0) |
 | `language` | string | 否 | 基础语言代码(如 `zh`、`en`) |
 
-## 最佳实践
+## 优秀实践
 
 1. **语音选择策略**
    - 使用 `GET /v3/voices?engine=starfish` 获取 TTS 兼容语音
@@ -356,7 +349,7 @@ ffmpeg -i input.wav -codec:a libmp3lame -qscale:a 2 output.mp3
 - 建议使用 `.env` 文件管理,避免硬编码
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+EXEC模式纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。免费版聚焦基础 TTS 合成,适合个人开发者快速集成语音能力.
 ## 错误处理
 

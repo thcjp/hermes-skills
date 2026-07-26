@@ -1,4 +1,5 @@
 ---
+
 slug: rss-fetcher-tool-pro
 name: rss-fetcher-tool-pro
 version: 1.0.0
@@ -6,31 +7,7 @@ displayName: RSS采集器专业版
 summary: "企业级RSS采集管理系统,支持并行抓取、HTML报告、自定义标签规则、数据导出与源健康监控告警。RSS采集器专业版为企业团队提供高阶RSS订阅采集与管理系统。核心能力:"
 license: Proprietary
 edition: pro
-description: 'RSS采集器专业版为企业团队提供高阶RSS订阅采集与管理系统。核心能力:
-
-  - 多源并行抓取(50+ workers)
-
-  - 交互式HTML报告生成
-
-  - 自定义标签规则与LLM辅助标签
-
-  - 数据导出(JSON/CSV/OPML)
-
-  - 源健康监控与自动告警
-
-  - 定时调度与增量同步
-
-  适用场景:
-
-  - 企业内容资产采集与归档
-
-  - 行业媒体监控与报告生成
-
-  - 多团队订阅源集中管理
-
-  - 数据分析与导出集成
-
-  差异化:专业版在免费版增量抓取与SQLite存储基础上,扩展并行抓取、HTML报告、自定义标签、数据导出与健...'
+description: "RSS采集器专业版为企业团队包含高阶RSS订阅采集与管控系统。核心能力:. 适用于需要rss fetcher tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 研究工具
   - RSS
@@ -50,7 +27,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 # RSS采集器专业版
 
 ## 概述
@@ -377,7 +356,7 @@ python3 （请参考skill目录中的脚本文件） \
   --include-content
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 合理设置并发数
 
@@ -480,7 +459,7 @@ A: 运行`schedule.py logs <task-name>`查看执行日志。常见原因:数据�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行Python脚本)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行Python脚本)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent调用Python脚本完成企业级RSS采集与管理任务。专业版在免费版基础上扩展并行抓取、HTML报告、自定义标签、数据导出与健康监控能力,适合企业内容资产采集、行业媒体监控与多团队订阅源集中管理场景.
 ## 错误处理
 
@@ -500,9 +479,9 @@ A: 运行`schedule.py logs <task-name>`查看执行日志。常见原因:数据�
 用户: 执行核心功能
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
-```
-
-## 输出格式
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```json
 {
   "success": true,

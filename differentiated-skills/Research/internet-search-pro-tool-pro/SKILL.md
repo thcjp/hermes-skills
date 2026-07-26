@@ -1,4 +1,5 @@
 ---
+
 slug: internet-search-pro-tool-pro
 name: internet-search-pro-tool-pro
 version: 1.0.0
@@ -6,17 +7,7 @@ displayName: 联网搜索专业版
 summary: 企业级智能搜索助手，支持多轮对话、批量查询、结果导出、定时监控与多引擎策略，适合专业研究与情报收集.
 license: Proprietary
 edition: pro
-description: '企业级智能搜索助手，支持多轮对话、批量查询、结果导出、定时监控与多引擎策略，适合专业研究与情报收集。核心能力:
-
-  - 多轮追问式深入搜索，支持上下文理解
-
-  - 批量查询，一次处理多个问题
-
-  - 结果导出为 JSON/CSV/Markdown 多种格式
-
-  - 定时监控，自动追踪信息变化
-
-  - 多搜索引擎策略...'
+description: "企业级智能搜索助手，兼容多轮对话、成批查询、结果导出、定时监控与多引擎策略，适合专业研究与情报收集。核心能力:. 适用于需要internet search tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 搜索
   - 企业工具
@@ -35,7 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+pricing_tier: L2-标准级
 ---
+
 # 联网搜索专业版
 
 ## 概述
@@ -133,7 +126,7 @@ python （请参考skill目录中的脚本文件） \
 
 市场团队需要深入了解某个市场的多个维度.
 ```text
-第一轮：
+领先轮：
 用户：查一下 2026 年新能源汽车市场规模
 # ...
 AI 输出：
@@ -335,7 +328,7 @@ curl -X POST http://localhost:8000/monitor \
 | `--alert-changes` | 布尔 | false | 变更告警 |
 | `--engine` | 字符串 | auto | 搜索引擎 |
 
-## 最佳实践
+## 优秀实践
 
 ### 多轮搜索优化
 

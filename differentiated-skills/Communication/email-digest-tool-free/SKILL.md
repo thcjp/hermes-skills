@@ -1,18 +1,13 @@
 ---
+
 slug: email-digest-tool-free
 name: email-digest-tool-free
 version: 1.0.0
 displayName: 邮件日报免费版
 summary: "自动生成每日邮件摘要，支持主流邮箱，快速了解重要邮件。邮件日报免费版是一款面向个人用户的邮件摘要生成工具，通过浏览器自动化登录邮箱，"
-license: Proprietary
+license: MIT
 edition: free
-description: '邮件日报免费版是一款面向个人用户的邮件摘要生成工具，通过浏览器自动化登录邮箱，
-
-  自动获取最新邮件列表并生成每日邮件总结报告，帮助用户快速了解当日邮件概况。核心能力:
-
-  - 支持 Gmail、Outlook、QQ邮箱、163邮箱等主流邮箱
-
-  - 复用浏览器已登录会话。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。'
+description: "邮件日报免费版是一款面向个人用户的邮件摘要产出工具，通过浏览器自发化登录邮箱，. 适用于需要email digest tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 沟通协作
   - 邮件管理
@@ -30,7 +25,9 @@ tools:
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: free
 ---
+
 # 邮件日报免费版
 
 **版本**: 1.0.0
@@ -234,7 +231,7 @@ browser-use close
 | 邮箱服务 | 登录 URL | 收件箱 URL |
 |:-----|:-----|:-----|
 | Gmail | https://accounts.google.com | https://mail.google.com |
-| Outlook | https://login.live.com | https://outlook.live.com |
+| Outlook | https://api.example.com.com | https://api.example.com.com |
 | QQ邮箱 | https://mail.qq.com | https://mail.qq.com |
 | 163邮箱 | https://mail.163.com | https://mail.163.com |
 | 126邮箱 | https://mail.126.com | https://mail.126.com |
@@ -275,7 +272,7 @@ browser-use open https://mail.google.com
 
 ---
 
-## 最佳实践
+## 优秀实践
 
 ### 安全优先原则
 

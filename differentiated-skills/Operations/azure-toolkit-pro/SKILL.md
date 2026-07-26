@@ -7,13 +7,7 @@ displayName: Azure管理专业版
 summary: "企业级Azure全服务管理平台，支持多区域、IaC、合规审计与成本优化.。面向企业运维团队的Azure全服务管理平台。支持计算/存储/网络/数据库/"
 license: Proprietary
 edition: pro
-description: "面向企业运维团队的Azure全服务管理平台。支持计算/存储/网络/数据库/
-  AI全量Azure服务，提供基础设施即代码（IaC）、多区域批量部署、合规
-  审计、成本优化与安全扫描功能。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。加速开发流程，提升代码质量与一致性。触发关键词：代码生成、数据分析、自动化、测试、安全、性能优化"
-
-  AI全量Azure服务，提供基础设施即代码（IaC）、多区域批量部署、合规
-
-  审计、成本优化与安全扫描功能。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。'
+description: "面向企业运维团队的Azure全服务管控平台。兼容计算/存储/网络/数据库/. 适用于需要azure toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Operations
   - Azure
@@ -31,8 +25,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Operations"
-
+pricing_tier: L2-标准级
 ---
+
 # Azure管理专业版（PRO版）
 
 ## 概述
@@ -237,7 +232,7 @@ pro_config:
     cross_region: true
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### PRO版企业实践
 

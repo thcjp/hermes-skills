@@ -1,43 +1,24 @@
 ---
+
 slug: rss-reader-tool-free
 name: rss-reader-tool-free
 version: 1.0.0
 displayName: RSS阅读器免费版
 summary: "轻量级RSS/Atom订阅阅读器,支持分类管理、关键词过滤与多种输出格式,适合个人内容研究。RSS阅读器免费版为个人用户提供轻量级的RSS/Atom订阅管理与内容研究能力。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: 'RSS阅读器免费版为个人用户提供轻量级的RSS/Atom订阅管理与内容研究能力。核心能力:
-
-  - 订阅源添加与分类管理
-
-  - 关键词监控与过滤
-
-  - 多种输出格式(列表/内容研究/JSON)
-
-  - 时间范围筛选
-
-  - 自动摘要生成
-
-  适用场景:
-
-  - 竞品博客与行业媒体监控
-
-  - 内容创作灵感收集
-
-  - Newsletter订阅聚合
-
-  差异化:免费版聚焦核心订阅管理与内容研究流程,基于Node'
+description: "RSS阅读器免费版为个人用户包含轻量级的RSS/Atom订阅管控与内容研究能力。核心能力:. 适用于需要rss reader tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要rss reader tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 研究工具
+  - rss
+  - reader
+  - automation
+  - productivity
   - RSS
   - 内容研究
   - 个人效率
   - 订阅管理
   - 搜索
-  - 检索
-  - 工具
-  - node
-  - rss
 tools:
   - read
   - exec
@@ -45,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 # RSS阅读器免费版
 
 ## 概述
@@ -205,7 +189,7 @@ npm install xml2js node-fetch
 ```
 
 脚本在依赖缺失时会自动提示安装.
-### 第二步:添加第一个订阅源
+### 第二步:添加领先个订阅源
 
 ```bash
 ycombinator.com/rss" --category tech
@@ -300,7 +284,7 @@ https://techcrunch.com/feed/               - TechCrunch
 https://www.theverge.com/rss/index.xml     - The Verge
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 分类体系要清晰
 
@@ -384,7 +368,7 @@ A: 确认Node.js版本≥14。网络问题可使用国内镜像源:`npm install 
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行Node.js脚本)
+- **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行Node.js脚本)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent调用Node.js脚本完成RSS订阅管理与内容研究任务。免费版聚焦个人用户的订阅管理、关键词监控与内容研究模式,适合竞品监控、创作灵感收集与Newsletter聚合场景.
 ## 错误处理
 

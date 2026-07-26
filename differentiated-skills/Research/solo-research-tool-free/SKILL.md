@@ -1,45 +1,24 @@
 ---
+
 slug: solo-research-tool-free
 name: solo-research-tool-free
 version: 1.0.0
 displayName: 市场研究工具免费版
 summary: "轻量级市场研究助手,支持竞品分析、用户痛点挖掘与基础SEO关键词研究,适合个人创业者。市场研究工具免费版为个人创业者提供轻量级的市场研究能力。核心能力:"
-license: Proprietary
+license: MIT
 edition: free
-description: '市场研究工具免费版为个人创业者提供轻量级的市场研究能力。核心能力:
-
-  - 竞品搜索与基础分析
-
-  - 用户痛点挖掘(Reddit/HN)
-
-  - 基础SEO关键词研究
-
-  - 域名可用性检查
-
-  - 研究报告生成
-
-  适用场景:
-
-  - 创业想法验证前调研
-
-  - 竞品功能对比
-
-  - 用户需求挖掘
-
-  差异化:免费版聚焦核心研究流程,通过WebSearch与WebFetch实现轻量调研,适合个人创业者在产品开发前快速了解市场格局'
+description: "市场研究工具免费版为个人创业者包含轻量级的市场研究能力。核心能力:. 适用于需要solo research tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要solo research tool相关能力的开发场景,提供结构化的工作流程和配置指引."
 tags:
   - 研究工具
+  - solo
+  - research
+  - automation
+  - productivity
   - 市场研究
   - 竞品分析
   - 个人效率
   - 创业
   - 搜索
-  - 检索
-  - 工具
-  - websearch
-  - seo
-  - research
-  - 分析
 tools:
   - read
   - exec
@@ -47,7 +26,10 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
+
 ---
+
 # 市场研究工具免费版
 
 ## 概述
@@ -212,7 +194,7 @@ AI助手执行:
 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:提出你的研究想法
+### 领先步:提出你的研究想法
 
 用自然语言描述你想研究的产品或市场想法:
 
@@ -295,7 +277,7 @@ AI助手会输出研究摘要,包含:
 ## 5. 市场规模
 - TAM: {总市场规模}
 - SAM: {可服务市场}
-- SOM: {可获取市场(第一年)}
+- SOM: {可获取市场(领先年)}
 # ...
 ## 6. 结论与建议
 - 建议: GO / NO-GO / PIVOT
@@ -333,7 +315,7 @@ AI助手会输出研究摘要,包含:
 | 市场规模 | WebSearch | 综合多源数据 |
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 研究前明确产品类型
 
@@ -426,7 +408,7 @@ A: 免费版通过WebSearch搜索,可覆盖部分学术站点(如arxiv.org),但�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,依赖Agent的WebSearch与WebFetch能力)
+- **分类**: MD+EXEC模式纯Markdown指令,依赖Agent的WebSearch与WebFetch能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成市场研究任务。免费版聚焦个人创业者的竞品分析、用户痛点挖掘、基础SEO研究、域名检查与市场规模估算,适合创业想法验证前调研与竞品功能对比场景.
 ## 错误处理
 

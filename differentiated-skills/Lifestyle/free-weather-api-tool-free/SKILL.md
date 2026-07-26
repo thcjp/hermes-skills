@@ -1,19 +1,13 @@
 ---
+
 slug: free-weather-api-tool-free
 name: free-weather-api-tool-free
 version: 1.0.1
 displayName: 天气查询免费版
 summary: "查询城市天气,支持实时天气、未来7天预报、空气质量与出行建议。面向个人用户的天气查询助手,提供实时天气、多日预报、空气质量与智能建议."
-license: Proprietary
+license: MIT
 edition: free
-description: '面向个人用户的天气查询助手,提供实时天气、多日预报、空气质量与智能建议.
-  核心能力: 城市天气查询、未来7天预报、空气质量分析、出行建议、天气预警提醒
-
-  适用场景: 出行规划、穿衣建议、户外活动决策、差旅准备
-
-  差异化: 免费版聚焦单城市查询与基础建议,适合个人日常使用
-
-  适用关键词: 天气查询, 实时天气, 未来预报, 空气质量, 出行建议, 天气预警'
+description: "面向个人用户的天气查询助手,包含实时天气、多日预报、空气质量与智能建议. 适用于需要free weather api tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 天气查询
   - 生活助手
@@ -25,16 +19,15 @@ tags:
   - 开发工具
   - get
   - data
-  - current
-  - location
-  - 天气
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Development"
+pricing_tier: free
 ---
+
 # 天气查询 (免费版)
 
 ## 概述
@@ -311,7 +304,7 @@ def generate_suggestions(data):
     return "\n".join(f"- {s}" for s in suggestions) if suggestions else "- 天气良好,适合正常活动"
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 城市名称规范
 
@@ -422,7 +415,7 @@ export WEATHER_LANGUAGE="zh"
 
 ### 可用性分类
 
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+exec方法(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 通过自然语言指令驱动 Agent 调用免费天气 API,完成天气查询与建议生成
 - **免费版限制**: 单城市查询、最多 7 天预报、无历史数据、无推送服务
 

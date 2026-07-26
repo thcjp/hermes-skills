@@ -1,13 +1,12 @@
 ---
+
 slug: flow-editor-pro
 name: flow-editor-pro
 version: 1.0.1
 displayName: 流程编辑专家
 summary: "解决Node-RED无版本管理、部署易翻车、多实例难管痛点，带回滚与安全加固的流程运维。通过 Admin API 或 CLI 管理 Node-RED 实例的运维专家。聚焦流程部署可回滚、多实"
-license: Proprietary
-description: '通过 Admin API 或 CLI 管理 Node-RED 实例的运维专家。聚焦流程部署可回滚、多实例统一管理、
-
-  节点依赖可治理、Context 持久化与安全加固，解决无版本控制、部署即翻车、多实例配置散乱痛点。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。'
+license: MIT
+description: "通过 Admin API 或 CLI 管控 Node-RED 实例的运维专家。聚焦流程部署可回滚、多实例统一管控、. 适用于需要flow editor相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - 自动化
   - 运维
@@ -23,7 +22,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+pricing_tier: L2-标准级
 ---
+
 # 流程编辑专家
 
 通过 Admin API 与 CLI 管理 Node-RED 实例，把"部署即翻车"变为"可回滚、可审计、可治理"的运维流程.

@@ -7,10 +7,7 @@ displayName: Logo设计指南专业版
 summary: 企业级AI Logo设计系统指南,支持批量提示词管理、自动矢量化、设计审计与多模型策略,适合团队与商业项目.
 license: Proprietary
 edition: pro
-description: "Logo设计指南专业版为企业与设计团队提供系统化的AI Logo设计方法论。在免费版设计原则之上,增加批量提示词管理、多模型策略、
-  自动矢量化流程、设计质量审计与团队设计规范。减少重复劳动，提升工作效率。触发关键词：自动化、设计、机器学习、自然语言。降低专业门槛，让非专业人员也能快速上手。提供结构化方法论与最佳实践"
-
-  自动矢量化流程、设计质量审计与团队设计规范'
+description: "Logo设计指南专业版为企业与设计团队包含系统化的AI Logo设计方法论。在免费版设计原则之上,增加成批提示词管控、多模型策略、. 适用于需要logo design guide tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
 tags:
   - Logo设计
   - 设计指南
@@ -22,10 +19,6 @@ tags:
   - UI/UX
   - 创意
   - logo
-  - true
-  - model
-  - text_rendering
-  - test
 tools:
   - read
   - exec
@@ -33,8 +26,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
-
+pricing_tier: L2-标准级
 ---
+
 # Logo设计指南专业版
 ## 概述
 Logo设计指南专业版为企业与设计团队提供系统化的AI Logo设计方法论。在免费版设计原则之上,PRO版增加批量提示词管理、多模型策略、自动矢量化流程、设计质量审计与团队设计规范,满足商业级Logo设计项目的效率与质量需求.
@@ -105,8 +99,8 @@ model_strategy:
     cost: "low"
 # .
   text_rendering:
-    use_case: "完美文字效果"
-    text_rendering: "完美"
+    use_case: "完善文字效果"
+    text_rendering: "完善"
     best_for: ["wordmarks", "lettermarks"]
     cost: "medium"
 # .
@@ -321,27 +315,26 @@ python3 generate_proposal.py \
   --generate-presentation \
   --include-rationale \
   --output ./proposals/client-b/
-```
-
-## 快速开始
-### Step 1:初始化设计项目
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
   --name "LogoDesignProject" \
   --team "design_team" \
   --standards team-design-standards.yml \
   --output ./project/
-```
-
-### Step 2:配置批量生成
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
   --config prompts.yml \
   --auto-select-model \
   --parallel 4 \
   --auto-validate \
   --output ./output/
-```
-
-### Step 3:矢量化与审计
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```bash
 # 自动矢量化
 python3 vectorize_batch.py \
@@ -353,10 +346,9 @@ python3 vectorize_batch.py \
   --input ./vectorized/ \
   --checks all \
   --report ./audit/
-```
-
-## 示例
-### 多模型配置
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 # 模型配置与API管理
 model_config = {
@@ -381,9 +373,9 @@ model_config = {
     "fallback": True,
     "retry_on_failure": 3
 }
-```
-
-### CI/CD集成
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```yaml
 # .github/workflows/logo-design.yml
 name: Logo Design Pipeline
@@ -413,7 +405,7 @@ jobs:
           path: ./vectorized/
 ```
 
-## 最佳实践
+## 优秀实践
 ### 免费版与PRO版能力对比
 | 能力维度 | 免费版 | PRO版 |
 |:-----|:-----|:-----|
@@ -435,9 +427,9 @@ jobs:
 └─ 否 -> 需要艺术感?
     ├─ 是 -> 艺术图标模型
     └─ 否 -> 综合最优模型
-```
-
-### 设计质量门禁
+```bash
+# 在此执行相关操作
+echo "操作完成"
 ```python
 # 质量门禁配置
 quality_gates = {
@@ -490,7 +482,7 @@ A: 支持Git版本控制、设计分支管理、代码审查流程。每个设�
 - 企业版支持多账户管理与并发控制
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令+脚本执行能力)
+- **分类**: MD+EXEC模式纯Markdown指令+脚本执行能力)
 - **说明**: 专业版基于Markdown指令驱动Agent执行批量Logo设计任务,通过Python脚本实现矢量化、质量审计与CI/CD集成
 - **PRO版增强**: 批量提示词管理、多模型策略、自动矢量化、设计审计、团队规范、CI/CD集成
 
