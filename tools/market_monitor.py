@@ -717,10 +717,13 @@ def sync_platform_ratings(limit: int = 0, scrape_ai_rating: bool = True):
     conn = sqlite3.connect(str(DB_PATH))
     conn.row_factory = sqlite3.Row
     
-    # 获取已上传到SkillHub的skill列表
+    # 获取已上传到SkillHub但尚未同步平台数据的skill列表
+    # v2.5修复: 添加last_platform_sync_at IS NULL过滤,避免重复同步
     query = """
         SELECT slug FROM skills 
         WHERE skillhub_sync_status = 'synced'
+          AND (last_platform_sync_at IS NULL OR last_platform_sync_at = '')
+        ORDER BY slug
     """
     if limit > 0:
         query += f" LIMIT {limit}"

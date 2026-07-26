@@ -38,9 +38,11 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
 from project_config import PROJECT_ROOT
 from project_config import DB_PATH
 from project_config import TOOLS_DIR
+from project_config import DATA_DIR
 # === End Phase 1 ===
 SKILLS_ROOT = PROJECT_ROOT
 SKILL_REGISTRY_DIR = TOOLS_DIR
+SKILL_DATA_DIR = DATA_DIR  # v2.5修复: 修复SKILL_DATA_DIR未定义bug
 
 
 import argparse
