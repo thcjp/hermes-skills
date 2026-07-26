@@ -99,7 +99,7 @@ echo "=== 资源清单 ==="
 az resource list -g "$RG" --query '[].{Name:name, Type:type, Location:location, Created:createdTime}' --output table
 # ...
 echo "=== 资源数量统计 ==="
-az resource list -g "$RG" --query '[].type' -o tsv | sort | uniq -c | sort -rn
+type' -o tsv | sort | uniq -c | sort -rn
 ```
 
 ### 模板2:VM健康巡检
@@ -122,10 +122,10 @@ echo "=== 存储账户清单 ==="
 az storage account list --query '[].{Name:name, RG:resourceGroup, SKU:sku.name, TLS:minimumTlsVersion}' --output table
 # ...
 echo "=== 公共Blob访问检查(应为false) ==="
-az storage account list --query '[].{Name:name, PublicAccess:allowBlobPublicAccess}' --output table
+{Name:name, PublicAccess:allowBlobPublicAccess}' --output table
 # ...
 echo "=== HTTPS强制检查(应为true) ==="
-az storage account list --query '[].{Name:name, HTTPS:enableHttpsTrafficOnly}' --output table
+{Name:name, HTTPS:enableHttpsTrafficOnly}' --output table
 ```
 
 ## 五维风险评分模型(差异化核心)
@@ -363,7 +363,6 @@ A: 免费版需手动切换订阅(`az account set --subscription <id>`)分别巡
 ### Azure巡检员免费版是一个以
 Azure巡检员免费版是一个以"日常巡检"为核心视角的Azure CLI辅助工具
 
-**输入**: 用户提供Azure巡检员免费版是一个以所需的指令和必要参数.
 **处理**: 解析Azure巡检员免费版是一个以的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Azure巡检员免费版是一个以的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -371,7 +370,6 @@ Azure巡检员免费版是一个以"日常巡检"为核心视角的Azure CLI辅�
 ### 针对云上资源"配置漂移无人察觉、公网暴露
 针对云上资源"配置漂移无人察觉、公网暴露面长期敞开、巡检脚本每次重写、风险等级无量化、巡检结论难分享"五大痛点,构建了风险评分模型、暴露面发现、配置漂移检测、巡检任务模板和巡检报告生成五大基础能力
 
-**输入**: 用户提供针对云上资源"配置漂移无人察觉、公网暴露所需的指令和必要参数.
 **处理**: 解析针对云上资源"配置漂移无人察觉、公网暴露的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回针对云上资源"配置漂移无人察觉、公网暴露的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -379,7 +377,6 @@ Azure巡检员免费版是一个以"日常巡检"为核心视角的Azure CLI辅�
 ### 核心能力包括
 核心能力包括:默认只读查询保障安全
 
-**输入**: 用户提供核心能力包括所需的指令和必要参数.
 **处理**: 解析核心能力包括的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心能力包括的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -387,7 +384,6 @@ Azure巡检员免费版是一个以"日常巡检"为核心视角的Azure CLI辅�
 ### 写操作与破坏性操作需双重确认
 写操作与破坏性操作需双重确认
 
-**输入**: 用户提供写操作与破坏性操作需双重确认所需的指令和必要参数.
 **处理**: 解析写操作与破坏性操作需双重确认的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回写操作与破坏性操作需双重确认的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -395,7 +391,6 @@ Azure巡检员免费版是一个以"日常巡检"为核心视角的Azure CLI辅�
 ### 支持--dry-run与wha
 支持--dry-run与what-if预演
 
-**输入**: 用户提供支持--dry-run与wha所需的指令和必要参数.
 **处理**: 解析支持--dry-run与wha的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回支持--dry-run与wha的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作

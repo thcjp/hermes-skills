@@ -1,9 +1,8 @@
----
-slug: slack-hub-tool-free
+---slug: slack-hub-tool-free
 name: slack-hub-tool-free
 version: 1.0.0
 displayName: Slack Hub工具免费版
-summary: "Slack消息发送与搜索基础工具，支持频道列表查看、消息发送与线程回复，适合个人日常使用.。Slack Hub工具（免费版）—— 面向个人用户的Slack消息发送与搜索工具."
+summary: "Slack消息发送与搜"
 license: Proprietary
 edition: free
 description: Slack Hub工具（免费版）—— 面向个人用户的Slack消息发送与搜索工具，可处理提升工作效率
@@ -45,9 +44,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Communication"
----
-# Slack Hub工具（免费版）
+category: "Communication"---# Slack Hub工具（免费版）
 
 ## 概述
 
@@ -57,28 +54,28 @@ Slack Hub工具免费版是一款面向个人用户的Slack消息发送与搜索
 ### 1. 消息发送
 
 向指定频道或用户发送文本消息，支持通过频道ID或频道名称指定目标.
-**输入**: 用户提供消息发送所需的指令和必要参数.
+
 **处理**: 解析消息发送的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回消息发送的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 2. 线程回复
 
 在指定消息的线程中进行回复，保持讨论上下文完整.
-**输入**: 用户提供线程回复所需的指令和必要参数.
+
 **处理**: 解析线程回复的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回线程回复的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 3. 工作区搜索
 
 搜索工作区中的消息或文件，快速定位历史信息.
-**输入**: 用户提供工作区搜索所需的指令和必要参数.
+
 **处理**: 解析工作区搜索的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回工作区搜索的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 4. 频道列表
 
 列出工作区中所有公开频道，方便查找目标频道.
-**输入**: 用户提供频道列表所需的指令和必要参数.
+
 **处理**: 解析频道列表的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回频道列表的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
@@ -172,7 +169,6 @@ slack-hub-tool send --target "#general" --message "Hello World"
 # 线程回复
 slack-hub-tool send --target "C0123456789" \
   --message "收到，我来跟进" \
-  --thread-ts "1712023032.1234"
 # ...
 # 搜索消息
 slack-hub-tool search --query "项目计划"

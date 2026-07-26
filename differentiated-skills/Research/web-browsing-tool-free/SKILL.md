@@ -56,7 +56,6 @@ web-browsing fetch "https://news.example.com" --summarize
 web-browsing fetch "https://docs.example.com" --format markdown
 ```
 
-**输入**: 用户提供直接 URL 访问所需的指令和必要参数.
 **处理**: 解析直接 URL 访问的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回直接 URL 访问的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -70,10 +69,9 @@ web-browsing summarize "https://long-article.example.com"
 # ...
 # 指定总结长度
 web-browsing summarize "https://article.example.com" --length short
-web-browsing summarize "https://article.example.com" --length detailed
+example.com" --length detailed
 ```
 
-**输入**: 用户提供网页内容智能总结所需的指令和必要参数.
 **处理**: 解析网页内容智能总结的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回网页内容智能总结的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -92,7 +90,6 @@ web-browsing search "气候变化最新报告" --summarize
 web-browsing search "React 教程" --limit 5
 ```
 
-**输入**: 用户提供网络搜索所需的指令和必要参数.
 **处理**: 解析网络搜索的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回网络搜索的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -111,7 +108,6 @@ web-browsing extract "https://data.example.com" --selector "table" --format csv
 web-browsing extract "https://list.example.com" --selector ".item" --format json
 ```
 
-**输入**: 用户提供结构化数据提取所需的指令和必要参数.
 **处理**: 解析结构化数据提取的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结构化数据提取的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：浏览和总结网站内、提取信息、适合个人日常使用、网页浏览助手免费、面向个人用户提供、基础的网页浏览和、信息提取能力、支持网站访问、内容总结、内容提取、网络搜索等核心功、Use、when、SEO、关键词分析、排名提升、搜索流量优化时使、不适用于黑帽、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -179,7 +175,6 @@ web-browsing search --help
 
 ```bash
 # 访问简单网页
-web-browsing fetch "https://example.com"
 # ...
 # 总结网页内容
 web-browsing summarize "https://example.com"
@@ -238,17 +233,16 @@ web-browsing config set-search \
 
 ```bash
 # 正确做法:明确说明需要什么
-web-browsing fetch "https://example.com" --fields "title,price,availability"
+com" --fields "title,price,availability"
 # ...
 # 错误做法:目标不明确
-web-browsing fetch "https://example.com"  # 不知道需要什么内容
 ```
 
 ### 2. 善用总结功能
 
 ```bash
 # 长文章用总结
-web-browsing summarize "https://long-article.example.com" --length short
+example.com" --length short
 # ...
 # 需要详情时直接获取
 web-browsing fetch "https://article.example.com" --format markdown

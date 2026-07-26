@@ -73,7 +73,6 @@ category: "Communication"
 ### 仅支持单一平台数据采集
 仅支持单一平台数据采集
 
-**输入**: 用户提供仅支持单一平台数据采集所需的指令和必要参数.
 **处理**: 解析仅支持单一平台数据采集的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回仅支持单一平台数据采集的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -81,7 +80,6 @@ category: "Communication"
 ### 情感分类使用词典法(准确率约7
 情感分类使用词典法(准确率约70-80%)
 
-**输入**: 用户提供情感分类使用词典法(准确率约7所需的指令和必要参数.
 **处理**: 解析情感分类使用词典法(准确率约7的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回情感分类使用词典法(准确率约7的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -89,7 +87,6 @@ category: "Communication"
 ### 不支持LLM增强情感分析
 不支持LLM增强情感分析
 
-**输入**: 用户提供不支持LLM增强情感分析所需的指令和必要参数.
 **处理**: 解析不支持LLM增强情感分析的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回不支持LLM增强情感分析的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -97,7 +94,6 @@ category: "Communication"
 ### 不支持病毒式传播内容检测
 不支持病毒式传播内容检测
 
-**输入**: 用户提供不支持病毒式传播内容检测所需的指令和必要参数.
 **处理**: 解析不支持病毒式传播内容检测的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回不支持病毒式传播内容检测的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -105,7 +101,6 @@ category: "Communication"
 ### 不支持竞品情感对比
 不支持竞品情感对比
 
-**输入**: 用户提供不支持竞品情感对比所需的指令和必要参数.
 **处理**: 解析不支持竞品情感对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回不支持竞品情感对比的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -113,7 +108,6 @@ category: "Communication"
 - 不支持定时自动监控
 - 不支持可视化图表报告
 
-**输入**: 用户提供已知限制所需的指令和必要参数.
 **处理**: 解析已知限制的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回已知限制的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级社交媒体情、感分析工具、支持单平台关键词、监控与基础情感分、适合个人品牌追踪、社交情感分析免费、版为个人用户提供、轻量级的社交媒体、情感监控能力等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -178,7 +172,6 @@ def classify(text):
     neg = sum(1 for k in NEGATIVE if k in t)
     return 'positive' if pos > neg else ('negative' if neg > pos else 'neutral')
 # ...
-df['sentiment'] = df['text'].apply(classify)
 # ...
 # 负面反馈分析
 negative_feedback = df[df['sentiment'] == 'negative']
@@ -220,10 +213,9 @@ def classify(text):
     neg = sum(1 for k in NEGATIVE if k in t)
     return 'positive' if pos > neg else ('negative' if neg > pos else 'neutral')
 # ...
-df['sentiment'] = df['text'].apply(classify)
 # ...
 # 按日统计情感分布
-daily = df.groupby('date')['sentiment'].value_counts(normalize=True).unstack()
+daily = df.groupby('date')['sentiment'].unstack()
 print(daily.fillna(0).round(2))
 ```
 
@@ -262,7 +254,6 @@ id,text,created_at,author
 ```python
 import pandas as pd
 # ...
-df = pd.read_csv('social-mentions.csv')
 # ...
 POSITIVE = ['好', '推荐', '好用', '优秀', 'love', 'amazing', 'best']
 NEGATIVE = ['差', '糟糕', '问题', 'bug', 'hate', 'terrible', 'broken']
@@ -273,12 +264,10 @@ def classify(text):
     neg = sum(1 for k in NEGATIVE if k in t)
     return 'positive' if pos > neg else ('negative' if neg > pos else 'neutral')
 # ...
-df['sentiment'] = df['text'].apply(classify)
 # ...
 # 输出结果
 print(df[['text', 'sentiment']])
 print("\n情感分布:")
-print(df['sentiment'].value_counts(normalize=True).round(2))
 ```
 
 ### 第四步:生成简要报告
@@ -371,7 +360,7 @@ def classify_sentiment(text):
 def analyze(csv_path):
     """执行情感分析"""
     df = pd.read_csv(csv_path)
-    df['sentiment'] = df['text'].apply(classify_sentiment)
+apply(classify_sentiment)
 # ...
     # 统计
     total = len(df)
@@ -419,7 +408,7 @@ negative = df[df['sentiment'] == 'negative']
 
 ```python
 # 按日/周统计情感分布
-df.groupby('date')['sentiment'].value_counts(normalize=True)
+df.value_counts(normalize=True)
 ```
 
 ### 5. 词典法结果需人工复核

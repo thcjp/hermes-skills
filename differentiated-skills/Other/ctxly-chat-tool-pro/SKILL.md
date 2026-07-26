@@ -65,21 +65,21 @@ category: "Automation"
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -93,7 +93,7 @@ category: "Automation"
 ```bash
 # 创建多个房间
 curl -X POST https://chat.ctxly.app/room  # 房间 A（数据处理 Agent）
-curl -X POST https://chat.ctxly.app/room  # 房间 B（报告生成 Agent）
+ctxly.app/room  # 房间 B（报告生成 Agent）
 # ...
 # 聚合查询所有房间未读
 curl https://chat.ctxly.app/rooms/summary \
@@ -106,7 +106,7 @@ curl https://chat.ctxly.app/rooms/summary \
 
 ```bash
 # 注册 Webhook
-curl -X POST https://chat.ctxly.app/room/webhook \
+ctxly.app/room/webhook \
   -H "Authorization: Bearer chat_xxx" \
   -H "Content-Type: application/json" \
   -d '{"url": "https://your-agent.example/webhook", "events": ["message.new"]}'
@@ -135,7 +135,6 @@ curl https://chat.ctxly.app/room/export \
 # 导出为 CSV 格式
 curl https://chat.ctxly.app/room/export?format=csv \
   -H "Authorization: Bearer chat_xxx" \
-  -o messages_2026_02.csv
 ```
 
 ### 场景四：端到端加密通信（安全场景）
@@ -144,7 +143,7 @@ curl https://chat.ctxly.app/room/export?format=csv \
 
 ```bash
 # 发送加密消息（客户端加密后发送密文）
-curl -X POST https://chat.ctxly.app/room/message \
+ctxly.app/room/message \
   -H "Authorization: Bearer chat_xxx" \
   -H "Content-Type: application/json" \
   -d '{"content": "ENC:aes256:base64ciphertext", "encrypted": true}'
@@ -175,14 +174,12 @@ curl -X POST https://chat.ctxly.app/room/message \
 
 ```bash
 # 创建房间
-curl -X POST https://chat.ctxly.app/room
 # 返回 token 与 invite
 # ...
 # 注册 Webhook 实时推送
-curl -X POST https://chat.ctxly.app/room/webhook \
+ctxly.app/room/webhook \
   -H "Authorization: Bearer chat_xxx" \
   -H "Content-Type: application/json" \
-  -d '{"url": "https://your-agent.example/webhook", "events": ["message.new"]}'
 ```
 
 第二步，开启消息持久化：
@@ -221,7 +218,7 @@ curl https://chat.ctxly.app/rooms/unread \
 
 ```bash
 # 注册 Webhook
-curl -X POST https://chat.ctxly.app/room/webhook \
+ctxly.app/room/webhook \
   -H "Authorization: Bearer chat_xxx" \
   -H "Content-Type: application/json" \
   -d '{
@@ -241,7 +238,7 @@ curl -X POST https://chat.ctxly.app/room/webhook \
 
 ```bash
 # 配置指数退避重试
-curl -X POST https://chat.ctxly.app/room/message \
+ctxly.app/room/message \
   -H "Authorization: Bearer chat_xxx" \
   -H "Content-Type: application/json" \
   -H "X-Retry-Max: 3" \
@@ -255,7 +252,7 @@ curl -X POST https://chat.ctxly.app/room/message \
 # 客户端加密后发送（示例使用 openssl）
 ENCRYPTED=$(echo -n "敏感内容" | openssl enc -aes-256-cbc -pass pass:"$SHARED_KEY" -base64)
 # ...
-curl -X POST https://chat.ctxly.app/room/message \
+ctxly.app/room/message \
   -H "Authorization: Bearer chat_xxx" \
   -H "Content-Type: application/json" \
   -d "{\"content\": \"ENC:aes256:$ENCRYPTED\", \"encrypted\": true}"

@@ -48,7 +48,8 @@ category: "Automation"
 ### 1. Health Data Recording 📊
 Track and record various health metrics 基于 user profile:
 
-#### Blood Pressure 💉
+#
+### Blood Pressure 💉
 | Category | Systolic | Diastolic |
 |:---------|:---------|:---------|
 | Normal | <120 | <80 |
@@ -57,14 +58,16 @@ Track and record various health metrics 基于 user profile:
 | Stage 2 HTN | ≥140 | ≥90 |
 | Crisis | >180 | >120 ⚠️ |
 
-#### Blood Glucose 🍬
+#
+### Blood Glucose 🍬
 | Status | Fasting | 2h Post-Meal |
 |----:|----:|----:|
 | Normal | <100 | <140 |
 | Prediabetes | 100-125 | 140-199 |
 | Diabetes | ≥126 | ≥200 |
 
-#### Heart Rate ❤️
+#
+### Heart Rate ❤️
 | Age Group | Normal Resting | Max Heart Rate |
 |:--------:|:--------:|:--------:|
 | 20-29 | 60-100 | 190-200 |
@@ -73,7 +76,8 @@ Track and record various health metrics 基于 user profile:
 | 50-59 | 60-100 | 160-170 |
 | 60+ | 60-100 | 150-160 |
 
-#### BMI Calculator ⚖️
+#
+### BMI Calculator ⚖️
 | Category | BMI Range |
 |:----------|----------:|
 | Underweight | <18.5 |
@@ -83,18 +87,10 @@ Track and record various health metrics 基于 user profile:
 
 > 详细内容已移至 `references/detail.md` -
 
-**处理**: 解析Health Data Recording 📊的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Health Data Recording 📊的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. Age-Specific Health Guidance
-> 详细内容已移至 `references/detail.md` -
 
-**输入**: 用户提供Age-Specific Health Guidance所需的指令和必要参数.
-**处理**: 解析Age-Specific Health Guidance的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Age-Specific Health Guidance的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. Gender-Specific Health
 
-**处理**: 解析Health Data Recording 📊的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Health Data Recording 📊的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`Gender-Specific Health`的配置文档进行参数调优
 ### 4. Medication Management 💊
 **Features:**
@@ -106,7 +102,8 @@ Track and record various health metrics 基于 user profile:
 * Refill reminders
 * Medication history
 
-#### Common Medications by Condition
+#
+### Common Medications by Condition
 **Hypertension:**
 
 * ACE inhibitors (enalapril, lisinopril)
@@ -142,9 +139,6 @@ Track and record various health metrics 基于 user profile:
 | Statins | Grapefruit | Increased side effects |
 | ACE inhibitors | Potassium | High potassium |
 
-**输入**: 用户提供Medication Management 💊所需的指令和必要参数.
-**处理**: 解析Medication Management 💊的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Medication Management 💊的处理结果,包含执行状态码、结果数据和执行日志.
 ### 5. Symptom Analysis 🩺
 **Process:**
 
@@ -154,7 +148,8 @@ Track and record various health metrics 基于 user profile:
 4. Recommend when to seek medical attention
 5. Suggest self-care measures if appropriate
 
-#### Age-Specific Symptom Considerations
+#
+### Age-Specific Symptom Considerations
 **Children:**
 
 * Temperature thresholds lower
@@ -175,7 +170,8 @@ Track and record various health metrics 基于 user profile:
 * Falls may indicate underlying problem
 * Medication side effects more common
 
-#### Red Flags - Seek Immediate Care 🚨
+#
+### Red Flags - Seek Immediate Care 🚨
 * Chest pain + sweating + pain in arm/jaw
 * Difficulty breathing
 * Severe bleeding
@@ -186,9 +182,9 @@ Track and record various health metrics 基于 user profile:
 * Severe vomiting + unable to keep fluids down
 * Overdose symptoms
 
-**输出**: 返回Symptom Analysis 🩺的处理结果,包含执行状态码、结果数据和执行日志.
 ### 6. Exercise Recommendations 🏃
-#### By Age & Fitness Level
+#
+### By Age & Fitness Level
 **Beginner (Any Age):**
 
 * Start with 10-minute walks
@@ -210,7 +206,8 @@ Track and record various health metrics 基于 user profile:
 * Heavy strength training
 * Sports
 
-#### By Health Condition
+#
+### By Health Condition
 **High Blood Pressure:**
 
 * Walking, swimming, cycling
@@ -236,9 +233,9 @@ Track and record various health metrics 基于 user profile:
 
 - 参考`Exercise Recommendations 🏃`的配置文档进行参数调优
 
-**输出**: 返回Exercise Recommendations 🏃的处理结果,包含执行状态码、结果数据和执行日志.
 ### 7. Nutrition Advice 🥗
-#### By Age
+#
+### By Age
 **Children:**
 
 * Make food fun
@@ -279,12 +276,8 @@ Track and record various health metrics 基于 user profile:
 * Limit added sugars
 * Drink water before meals
 
-**输入**: 用户提供Nutrition Advice 🥗所需的指令和必要参数.
-**输出**: 返回Nutrition Advice 🥗的处理结果,包含执行状态码、结果数据和执行日志.
 ### 8. Travel Health Preparation ✈️
 
-**输入**: 用户提供Nutrition Advice 🥗所需的指令和必要参数.
-**输出**: 返回Nutrition Advice 🥗的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`Travel Health Preparation ✈️`的配置文档进行参数调优
 #
 ## 快速开始

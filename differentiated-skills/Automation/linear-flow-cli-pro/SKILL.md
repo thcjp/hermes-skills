@@ -100,7 +100,6 @@ linear issue batch-create --csv /tmp/batch_create.csv --dry-run
 # {"issue": 3, "title": "实现日志模块", "team": "ENG", "status": "will_create"}
 # ...
 # 确认无误后执行
-linear issue batch-create --csv /tmp/batch_create.csv
 # 输出：
 # {"created": 3, "identifiers": ["ENG-201", "ENG-202", "ENG-203"]}
 # ...
@@ -142,7 +141,6 @@ linear issue create \
 linear issue update ENG-123 --state "Done" --dry-run --json
 # 输出：
 # {
-#   "operation": "issue.update",
 #   "dry_run": true,
 #   "preview": {
 #     "identifier": "ENG-123",
@@ -169,11 +167,11 @@ linear issue create --title "..." --autonomy-policy suggest-only
 # 输出建议，不创建
 # ...
 # preview-required：必须预览
-linear issue create --title "..." --autonomy-policy preview-required
+.." --autonomy-policy preview-required
 # 提示先执行 --dry-run
 # ...
 # autonomous：自动执行
-linear issue create --title "..." --autonomy-policy autonomous
+.." --autonomy-policy autonomous
 # 直接创建，输出结果
 ```
 
@@ -207,7 +205,6 @@ linear issue create \
 # --apply-triage 会自动应用 hints 中的团队/优先级/标签
 # 输出：
 # {
-#   "operation": "issue.create",
 #   "context_source": "slack",
 #   "triage_applied": {
 #     "team": "ENG",
@@ -225,8 +222,6 @@ Git提交自动关联Linear Issue，提交时自动更新任务状态：
 ```bash
 # 配置Git联动
 linear config set git.auto-link true
-linear config set git.commit-prefix "ENG"
-linear config set git.done-on-merge true
 # ...
 # 提交时自动关联Issue
 git commit -m "ENG-123: 实现用户登录接口"
@@ -372,7 +367,6 @@ linear issue create \
 # 确认预览无误后执行
 linear issue create \
   --title "实现API网关" \
-  --description-file /tmp/api.md \
   --team ENG
 ```
 
@@ -382,12 +376,9 @@ linear issue create \
 
 ```bash
 # 配置Git联动
-linear config set git.auto-link true
-linear config set git.done-on-merge true
 # ...
 # 批量创建Sprint任务
 linear issue batch-create --csv /tmp/sprint_tasks.csv --dry-run
-linear issue batch-create --csv /tmp/sprint_tasks.csv
 # ...
 # 提交代码自动关联
 git commit -m "ENG-201: 完成登录接口"
@@ -599,8 +590,6 @@ jobs:
       - name: 配置Linear
         run: |
           linear auth login --token ${{ secrets.LINEAR_API_KEY }}
-          linear config set git.auto-link true
-          linear config set git.done-on-merge true
       - name: PR创建时关联Issue
         if: github.event_name == 'pull_request'
         run: |
@@ -611,7 +600,7 @@ jobs:
       - name: PR合并时完成Issue
         if: github.event.pull_request.merged == true
         run: |
-          ISSUE_ID=$(echo "${{ github.event.pull_request.title }}" | grep -oE 'ENG-[0-9]+')
+event.pull_request.title }}" | grep -oE 'ENG-[0-9]+')
           linear issue update $ISSUE_ID --state "Done"
           linear issue comment add $ISSUE_ID --body "已通过PR合并完成"
 ```
@@ -837,8 +826,6 @@ done
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

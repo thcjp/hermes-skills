@@ -83,7 +83,6 @@ cat > ~/.skill-platform/security-radar/assets.json <<'EOF'
   ]
 }
 EOF
-chmod 600 ~/.skill-platform/security-radar/assets.json
 ```
 
 也可用自动扫描生成（见下文「资产清单自动维护」）.
@@ -99,7 +98,6 @@ bash ~/.skill-platform/security-radar/scan.sh --init
 在 Agent 心跳例程中调用：
 
 ```bash
-bash ~/.skill-platform/security-radar/scan.sh
 ```
 
 仅当出现新的、关联到资产、且优先级达标的告警时才输出通知；否则输出 `RADAR_OK`.
@@ -164,7 +162,7 @@ jq '[.advisories[] | {
   id, title, severity, exploitability_score,
   priority: (
     if .severity == "critical" and .exploitability_score == "critical" then "P0"
-    elif .severity == "critical" and .exploitability_score == "high" then "P1"
+    elif .exploitability_score == "high" then "P1"
     elif .severity == "high" and .exploitability_score == "high" then "P1"
     elif .severity == "critical" then "P2"
     elif .severity == "high" then "P2"
@@ -214,7 +212,6 @@ jq -n --arg dir "$SCAN_DIR" '{
 
 ```json
 {
-  "schema_version": "1.0",
   "last_check": "2026-07-18T08:00:00Z",
   "last_feed_updated": "2026-07-18T07:30:00Z",
   "known_advisories": ["GA-2026-001", "GA-2026-002", "CVE-2026-27488"],
@@ -226,7 +223,7 @@ jq -n --arg dir "$SCAN_DIR" '{
 
 **增量逻辑**：每次拉取后，用 `known_advisories` 做差集，只处理新增 ID。处理完成后把新 ID 合并进 `known_advisories`.
 ```bash
-STATE_FILE="$HOME/.skill-platform/security-radar/state.json"
+STATE_FILE="$HOME/.json"
 FEED_FILE="$HOME/.skill-platform/security-radar/cache/feed.json"
 # ...
 # 已知告警集合
@@ -367,7 +364,7 @@ A：每次技能增删后运行 `scan.sh --refresh-assets`；也可在技能安�
 **Q：上游 feed 结构变了怎么办？**
 A：脚本在解析前用 `jq empty` 校验 JSON，并用 `jq -e '.advisories'` 校验必要字段。结构异常时记入 `consecutive_failures` 并降级到缓存.
 **Q：多个 Agent 共享一份状态吗？**
-A：状态文件默认在 `~/.skill-platform/security-radar/state.json`，按用户隔离。多 Agent 共享需自行挂载共享卷并加文件锁（`flock`）.
+A：状态文件默认在 `~/.json`，按用户隔离。多 Agent 共享需自行挂载共享卷并加文件锁（`flock`）.
 **Q：如何临时禁用推送但保留扫描？**
 A：`export RADAR_QUIET=1`，扫描结果只写日志不输出通知.
 ## 故障排查
@@ -420,7 +417,6 @@ A：`export RADAR_QUIET=1`，扫描结果只写日志不输出通知.
 ### 安全情报雷达为 AI Agen
 安全情报雷达为 AI Agent 提供智能化的漏洞与威胁情报订阅能力
 
-**输入**: 用户提供安全情报雷达为 AI Agen所需的指令和必要参数.
 **处理**: 解析安全情报雷达为 AI Agen的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回安全情报雷达为 AI Agen的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -428,7 +424,6 @@ A：`export RADAR_QUIET=1`，扫描结果只写日志不输出通知.
 ### 它聚合 NVD CVE、GitHub S
 它聚合 NVD CVE、GitHub Security Advisory、社区恶意技能通报等多源数据，并按资产关联度与可利用性双重排序，把每天数十上百条告警压缩到只剩必须处理的两三条
 
-**输入**: 用户提供它聚合 NVD CVE、GitHub S所需的指令和必要参数.
 **处理**: 解析它聚合 NVD CVE、GitHub S的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回它聚合 NVD CVE、GitHub S的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -436,7 +431,6 @@ A：`export RADAR_QUIET=1`，扫描结果只写日志不输出通知.
 ### 核心能力(补充)
 核心能力：多源情报聚合（CVE/GHSA/恶意技能）、资产清单自动关联、可利用性优先级评分、增量去重推送、离线降级与缓存、严格速率限制
 
-**输入**: 用户提供核心能力所需的指令和必要参数.
 **处理**: 解析核心能力的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心能力的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -444,7 +438,6 @@ A：`export RADAR_QUIET=1`，扫描结果只写日志不输出通知.
 ### 适用场景
 适用场景：Agent 心跳巡检、CI 流水线依赖扫描、技能市场安全门禁、个人开发者漏洞订阅、团队安全日报生成
 
-**输入**: 用户提供适用场景所需的指令和必要参数.
 **处理**: 解析适用场景的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回适用场景的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -452,7 +445,6 @@ A：`export RADAR_QUIET=1`，扫描结果只写日志不输出通知.
 ### 适用关键词
 适用关键词：安全, 漏洞, CVE, 情报, 告警, 订阅, advisory, vulnerability, threat, security, radar, feed
 
-**输入**: 用户提供适用关键词所需的指令和必要参数.
 **处理**: 解析适用关键词的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回适用关键词的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -466,7 +458,7 @@ A：`export RADAR_QUIET=1`，扫描结果只写日志不输出通知.
 ### 场景 B：CI 流水线门禁(补充)
 
 ```bash
-bash scan.sh --mode gate --assets ci-deps.json --fail-on P1
+bash scan.json --fail-on P1
 ```
 
 ### 场景 C：安全日报(补充)
@@ -492,16 +484,15 @@ bash scan.sh --query "recent 7d" --no-push
 # ...
 ```bash
 mkdir -p ~/.skill-platform/security-radar
-cat > ~/.skill-platform/security-radar/assets.json <<'EOF'
+cat > ~/.json <<'EOF'
 {
-  "schema_version": "1.0",
   "updated": "2026-07-18T00:00:00Z",
   "skills": [
-    {"name": "pdf-toolkit", "version": "1.2.0", "source": "marketplace"},
-    {"name": "excel-writer", "version": "0.9.1", "source": "marketplace"}
+2.0", "source": "marketplace"},
+9.1", "source": "marketplace"}
   ],
   "dependencies": [
-    {"name": "pdfplumber", "version": "0.11.0", "ecosystem": "pypi"},
+11.0", "ecosystem": "pypi"},
     {"name": 
 ```
 # ...

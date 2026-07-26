@@ -1,5 +1,4 @@
----
-slug: openclaw-cron-setup
+---slug: openclaw-cron-setup
 name: openclaw-cron-setup
 version: "1.0.0"
 displayName: OpenClaw Cron Setup
@@ -7,7 +6,7 @@ summary: OpenClaw Gateway 内置定时任务调度器。用于创建一次性提
   Webhook。
 license: MIT
 description: |-
-  OpenClaw Gateway 内置定时任务调度器。用于创建一次性提醒、周期性任务、后台自动化。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
+  OpenClaw Gateway 内置定时任务调度器。用于创建一次性提醒、周期性任务、后台自动化。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Automation
 tools:
@@ -15,11 +14,7 @@ tools:
 - exec
 pricing_tier: "L4"
 pricing_model: "monthly"
-suggested_price: 99.9
----
-
-
-# Skill平台 Cron Setup
+suggested_price: 99.9---# Skill平台 Cron Setup
 
 Cron 是 Gateway 内置的调度器，持久化存储任务，在指定时间唤醒 agent 执行，并可选择将结果投递到聊天频道。
 
@@ -191,7 +186,6 @@ skill-platform cron remove <job-id>
 
 ### 查看存储位置
 
-* 任务存储：`~/.skill-platform/cron/jobs.json`
 * 运行历史：`~/.skill-platform/cron/runs/<jobId>.jsonl`
 
 ## 高级配置

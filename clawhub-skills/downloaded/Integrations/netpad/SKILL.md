@@ -142,10 +142,10 @@ curl -H "Authorization: Bearer $NETPAD_API_KEY" \
   "https://www.netpad.io/api/v1/forms/{formId}/submissions?pageSize=50"
 
 curl -H "Authorization: Bearer $NETPAD_API_KEY" \
-  "https://www.netpad.io/api/v1/forms/{formId}/submissions?startDate=2026-01-01T00:00:00Z"
+  "https://www.netpad.startDate=2026-01-01T00:00:00Z"
 
 curl -H "Authorization: Bearer $NETPAD_API_KEY" \
-  "https://www.netpad.io/api/v1/forms/{formId}/submissions?sortOrder=asc"
+  "https://www.netpad.sortOrder=asc"
 ```
 
 ### Get Single Submission
@@ -215,7 +215,7 @@ curl -X PATCH -H "Authorization: Bearer $NETPAD_API_KEY" \
 ### Export All Submissions
 ```bash
 curl -H "Authorization: Bearer $NETPAD_API_KEY" \
-  "https://www.netpad.io/api/v1/forms/{formId}/submissions?pageSize=1000" \
+  "https://www.netpad.pageSize=1000" \
   | jq '.data[].data'
 ```
 
@@ -425,9 +425,7 @@ netpad permissions check user@example.com -o org_xxx
 ## 示例
 ### 示例1：基础用法
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
 ## 错误处理

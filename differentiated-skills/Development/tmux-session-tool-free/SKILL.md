@@ -80,7 +80,6 @@ Tmux 会话工具免费版为个人开发者提供通过纯 tmux 指令管理终
 tmux list-panes -a -F '#{session_name}:#{window_index}.#{pane_index} #{pane_title}'
 ```
 
-**输入**: 用户提供会话与窗格定位所需的指令和必要参数.
 **处理**: 解析会话与窗格定位的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回会话与窗格定位的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -92,7 +91,6 @@ tmux list-panes -a -F '#{session_name}:#{window_index}.#{pane_index} #{pane_titl
 tmux capture-pane -p -J -t <target> -S -200
 ```
 
-**输入**: 用户提供查看最新交互所需的指令和必要参数.
 **处理**: 解析查看最新交互的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回查看最新交互的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -106,7 +104,6 @@ sleep 0.1
 tmux send-keys -t <target> Enter
 ```
 
-**输入**: 用户提供发送指令所需的指令和必要参数.
 **处理**: 解析发送指令的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回发送指令的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -120,7 +117,6 @@ sleep 0.1
 tmux send-keys -t <target> Enter
 ```
 
-**输入**: 用户提供执行会话命令所需的指令和必要参数.
 **处理**: 解析执行会话命令的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回执行会话命令的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -132,7 +128,6 @@ tmux send-keys -t <target> Enter
 tmux capture-pane -p -J -t <target> -S -400
 ```
 
-**输入**: 用户提供缓冲区转储所需的指令和必要参数.
 **处理**: 解析缓冲区转储的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回缓冲区转储的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：指令操作终端会话、支持会话定位、内容查看、指令发送与调试、面向个人开发者的、会话管理工具、通过纯、核心能力、查看会话最新交互、向指定窗格发送指、等会话命令、转储原始缓冲区用、于调试等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -145,7 +140,7 @@ tmux capture-pane -p -J -t <target> -S -400
 在 tmux 中运行代码助手,查看其最新交互内容.
 ```bash
 # 1. 定位窗格
-tmux list-panes -a -F '#{session_name}:#{window_index}.#{pane_index} #{pane_title}' \
+#{pane_index} #{pane_title}' \
   | grep "^myproject" | grep -i claude
 # ...
 # 假设找到: myproject:0.1 claude
@@ -212,7 +207,7 @@ claude
 
 ```bash
 # 查找标题为 claude 的窗格
-tmux list-panes -a -F '#{session_name}:#{window_index}.#{pane_index} #{pane_title}' \
+#{pane_index} #{pane_title}' \
   | grep -i claude
 ```
 
@@ -229,7 +224,6 @@ tmux capture-pane -p -J -t myproject:0.1 -S -200
 # 发送任务
 tmux send-keys -t myproject:0.1 -l -- "实现用户注册功能"
 sleep 0.1
-tmux send-keys -t myproject:0.1 Enter
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.

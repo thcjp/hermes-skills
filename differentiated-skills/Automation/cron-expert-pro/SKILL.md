@@ -185,7 +185,7 @@ class ProductionReminderSystem(ExpertReminderSystem):
 # ...
     def release_lock(self, job_id):
         """释放锁"""
-        locks = json.loads(self.locks_file.read_text(encoding="utf-8"))
+loads(self.locks_file.read_text(encoding="utf-8"))
         locks = [l for l in locks if l["job_id"] != job_id]
         self.locks_file.write_text(json.dumps(locks, ensure_ascii=False, indent=2), encoding="utf-8")
         print(f"✓ 已释放锁：{job_id}")
@@ -209,7 +209,6 @@ class ProductionReminderSystem(ExpertReminderSystem):
     def janitor_cleanup(self):
         """清理工：归档过期任务"""
         jobs = json.loads(self.jobs_file.read_text(encoding="utf-8"))
-        now = datetime.now()
         cleaned = 0
 # ...
         for job in jobs:
@@ -264,11 +263,10 @@ class EnterpriseReminderSystem(ProductionReminderSystem):
     def check_sla(self):
         """检查SLA达标情况"""
         jobs = json.loads(self.jobs_file.read_text(encoding="utf-8"))
-        audit = json.loads(self.audit_file.read_text(encoding="utf-8"))
+loads(self.audit_file.read_text(encoding="utf-8"))
 # ...
         sla_report = []
         for job in jobs:
-            if job["status"] != "active":
                 continue
 # ...
             job_runs = [a for a in audit if a["job_id"] == job["id"]]
@@ -319,7 +317,7 @@ class EnterpriseReminderSystem(ProductionReminderSystem):
                 print(f"  ✓ 补偿成功")
                 return True
             except Exception as e:
-                self._audit_log(job_id, "compensate_failed", str(e))
+_audit_log(job_id, "compensate_failed", str(e))
                 if attempt < max_retries - 1:
                     time.sleep(2 ** attempt)  # 指数退避
                 else:
@@ -384,7 +382,6 @@ enterprise.migrate_from_crontab(crontab)
 | SLA保障 | sla_seconds | 时效要求 | 95%达标率监控 |
 | 故障补偿 | compensate_failure | 失败恢复 | 指数退避重试 |
 
-**输入**: 用户提供高级调度模式（专业版）所需的指令和必要参数.
 **处理**: 解析高级调度模式（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级调度模式（专业版）的响应数据,包含状态码、结果和日志.
 ### 遗留系统迁移（专业版）
@@ -397,7 +394,6 @@ enterprise.migrate_from_crontab(crontab)
 | Jenkins | 触发器转cron | 构建参数迁移 |
 | Kubernetes CronJob | spec.schedule提取 | 时区统一 |
 
-**输入**: 用户提供遗留系统迁移（专业版）所需的指令和必要参数.
 **处理**: 解析遗留系统迁移（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回遗留系统迁移（专业版）的响应数据,包含状态码、结果和日志.
 ### 并发控制规则（专业版）
@@ -409,7 +405,6 @@ enterprise.migrate_from_crontab(crontab)
 | 超时释放 | 锁超过timeout自动释放 | 防止死锁 |
 | 审计追踪 | 锁获取/释放记录日志 | 合规审计 |
 
-**输入**: 用户提供并发控制规则（专业版）所需的指令和必要参数.
 **处理**: 解析并发控制规则（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回并发控制规则（专业版）的响应数据,包含状态码、结果和日志.
 ### 清理工规则（专业版）
@@ -421,7 +416,6 @@ enterprise.migrate_from_crontab(crontab)
 | 一次性任务完成 | type=once且已执行 | 归档 |
 | 过期提醒 | 超过end_date | 归档 |
 
-**输入**: 用户提供清理工规则（专业版）所需的指令和必要参数.
 **处理**: 解析清理工规则（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回清理工规则（专业版）的响应数据,包含状态码、结果和日志.
 ### 完整陷阱库（15+类）
@@ -446,7 +440,6 @@ enterprise.migrate_from_crontab(crontab)
 
 ---
 
-**输入**: 用户提供完整陷阱库（15+类）所需的指令和必要参数.
 **处理**: 解析完整陷阱库（15+类）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回完整陷阱库（15+类）的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、最佳实践专业版、含高级调度模式、遗留迁移、最佳实践专家专业、版是面向企业级场、景的定时系统最佳、实践完整指南、在免费版基础实践、专业版新增高级调、表达式精确控制、遗留系统迁移指南、清理工自动化规则、五大高级能力、满足复杂生产环境、的定时系统治理需等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -700,8 +693,6 @@ Quartz使用6-7字段格式（含秒和年），迁移时需要：(1) 去掉秒�
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

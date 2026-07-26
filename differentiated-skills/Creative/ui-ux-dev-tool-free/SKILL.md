@@ -82,8 +82,8 @@ UI/UX开发工具免费版是一款面向个人开发者的自然语言驱动Rea
   <title>页面标题</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+com/react-dom@18/umd/react-dom.production.min.js"></script>
+com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
   <div id="root"></div>
@@ -113,7 +113,6 @@ UI/UX开发工具免费版是一款面向个人开发者的自然语言驱动Rea
 </html>
 ```
 
-**输入**: 用户提供自然语言生成React页面所需的指令和必要参数.
 **处理**: 解析自然语言生成React页面的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自然语言生成React页面的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -140,7 +139,6 @@ UI/UX开发工具免费版是一款面向个人开发者的自然语言驱动Rea
 }
 ```
 
-**输入**: 用户提供项目配置管理所需的指令和必要参数.
 **处理**: 解析项目配置管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回项目配置管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -157,7 +155,6 @@ bash （请参考skill目录中的脚本文件） "http://localhost:5174/my-proj
 bash （请参考skill目录中的脚本文件） "http://localhost:5174/my-project/landing/" /tmp/landing-mobile.png 390 844
 ```
 
-**输入**: 用户提供截图视觉审查所需的指令和必要参数.
 **处理**: 解析截图视觉审查的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回截图视觉审查的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -177,7 +174,6 @@ bash （请参考skill目录中的脚本文件） hero.jpg hero.webp 85
 bash （请参考skill目录中的脚本文件） icon.png icon.webp 70
 ```
 
-**输入**: 用户提供图片WebP转换所需的指令和必要参数.
 **处理**: 解析图片WebP转换的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回图片WebP转换的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -195,7 +191,6 @@ bash （请参考skill目录中的脚本文件） icon.png icon.webp 70
 | 组件交互 | SVG图标(非emoji),悬停反馈,150-200ms过渡,可见焦点环 |
 | 性能 | WebP图片,懒加载,aspect-ratio防布局偏移 |
 
-**输入**: 用户提供自动应用设计原则所需的指令和必要参数.
 **处理**: 解析自动应用设计原则的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自动应用设计原则的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：零构建、含截图审查循环、适合个人快速原型、面向个人开发者的、自然语言驱动、页面生成工具、方式零构建运行、内置截图视觉审查、支持快速原型迭代、核心能力、自然语言描述生成、项目配置与偏好管、截图视觉审查与迭、基础设计原则自动、格式优化、静态文件导出等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.

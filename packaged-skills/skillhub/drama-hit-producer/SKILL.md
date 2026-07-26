@@ -346,8 +346,8 @@ category: "Automation"
     "quality_grade": "A",
     "character_count": 3,
     "publish_results": [
-      {"platform": "douyin", "success": true, "url": "https://douyin.com/video/drama_001"},
-      {"platform": "kuaishou", "success": true, "url": "https://kuaishou.com/video/drama_001"},
+com/video/drama_001"},
+com/video/drama_001"},
       {"platform": "bilibili", "success": true, "url": "https://bilibili.com/video/drama_001"}
     ],
     "pipeline_steps_completed": 25,
@@ -382,14 +382,14 @@ category: "Automation"
   "success": true,
   "data": {
     "drama_id": "drama_20260720_002",
-    "video_url": "https://cdn.dramastudio.com/output/drama_20260720_002.mp4",
+dramastudio.com/output/drama_20260720_002.mp4",
     "style_track": "real_person",
     "scene_id": "scene_8",
     "duration": 120,
     "quality_grade": "A",
     "character_count": 4,
     "publish_results": [
-      {"platform": "douyin", "success": true, "url": "https://douyin.com/video/drama_002"}
+com/video/drama_002"}
     ],
     "pipeline_steps_completed": 25,
     "cost_estimate": 90
@@ -422,14 +422,14 @@ category: "Automation"
   "success": true,
   "data": {
     "drama_id": "drama_20260720_003",
-    "video_url": "https://cdn.dramastudio.com/output/drama_20260720_003.mp4",
+dramastudio.com/output/drama_20260720_003.mp4",
     "style_track": "anime",
     "scene_id": "scene_6",
     "duration": 60,
     "quality_grade": "B",
     "character_count": 2,
     "publish_results": [
-      {"platform": "douyin", "success": true, "url": "https://douyin.com/video/drama_003"}
+com/video/drama_003"}
     ],
     "pipeline_steps_completed": 25,
     "cost_estimate": 14,
@@ -464,15 +464,15 @@ category: "Automation"
   "success": true,
   "data": {
     "drama_id": "drama_20260720_004",
-    "video_url": "https://cdn.dramastudio.com/output/drama_20260720_004.mp4",
+dramastudio.com/output/drama_20260720_004.mp4",
     "style_track": "anime",
     "scene_id": "scene_7",
     "duration": 75,
     "quality_grade": "A",
     "character_count": 3,
     "publish_results": [
-      {"platform": "douyin", "success": true, "url": "https://douyin.com/video/drama_004"},
-      {"platform": "kuaishou", "success": true, "url": "https://kuaishou.com/video/drama_004"}
+com/video/drama_004"},
+com/video/drama_004"}
     ],
     "pipeline_steps_completed": 25,
     "cost_estimate": 44,

@@ -66,7 +66,7 @@ audit-toolkit --batch ./src/ --standard OWASP-Top-10 --parallel 4
 audit-toolkit --monitor --watch ./src/ --alert high
 ```
 
-> 详细内容已移至 `references/detail.md` - ### 完整搭建（<300秒）
+### 完整搭建（<300秒）
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
 #
@@ -79,7 +79,6 @@ audit-toolkit --monitor --watch ./src/ --alert high
 | 技术安全 | 代码与系统安全 | 漏洞/权限/数据安全 | 自动化扫描+持续监控 |
 | 伦理评估 | AI偏见与对齐 | 偏见/公平性/对齐度 | 全生命周期评估 |
 
-**输入**: 用户提供四大审计领域（基础+增强）所需的指令和必要参数.
 **处理**: 解析四大审计领域（基础+增强）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回四大审计领域（基础+增强）的响应数据,包含状态码、结果和日志.
 ### 2. 三步审计协议（基础+增强）
@@ -89,20 +88,19 @@ audit-toolkit --monitor --watch ./src/ --alert high
 | 差异分析 | 单标准交叉引用 | 多标准并行+模式匹配+预测分析 |
 | 认证签发 | 文本报告 | 数字签名+防篡改+区块链存证 |
 
-**输入**: 用户提供三步审计协议（基础+增强）所需的指令和必要参数.
 **处理**: 解析三步审计协议（基础+增强）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回三步审计协议（基础+增强）的响应数据,包含状态码、结果和日志.
 ### 3. 批量审计自动化（专业版）
 多对象一键审计，支持并行与检查点：
 
 ```bash
-audit-toolkit --batch ./src/ --standard OWASP-Top-10 --parallel 4
+/src/ --standard OWASP-Top-10 --parallel 4
 # ...
-audit-toolkit --batch ./contracts/ --type contract --standard GDPR
+/contracts/ --type contract --standard GDPR
 # ...
-audit-toolkit --batch ./ai-logs/ --type ethics --standard fairness
+/ai-logs/ --type ethics --standard fairness
 # ...
-audit-toolkit --batch ./src/ --checkpoint --resume
+/src/ --checkpoint --resume
 ```
 
 **专业版优势**：
@@ -111,14 +109,12 @@ audit-toolkit --batch ./src/ --checkpoint --resume
 - 幂等设计：重复执行不产生重复结果
 - 自动调度：支持cron定时批量审计
 
-**输入**: 用户提供批量审计自动化（专业版）所需的指令和必要参数.
 **处理**: 解析批量审计自动化（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量审计自动化（专业版）的响应数据,包含状态码、结果和日志.
 ### 4. 实时监控告警（专业版）
 持续审计与风险预警：
 
 ```bash
-audit-toolkit --monitor --watch ./src/ --alert high
 # ...
 audit-toolkit --monitor \
   --watch ./src/ \
@@ -135,7 +131,6 @@ audit-toolkit --monitor \
 | 中 | 检测到潜在风险 | 2小时内响应 | 邮件 |
 | 低 | 检测到改进空间 | 每日汇总 | 日报 |
 
-**输入**: 用户提供实时监控告警（专业版）所需的指令和必要参数.
 **处理**: 解析实时监控告警（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回实时监控告警（专业版）的响应数据,包含状态码、结果和日志.
 ### 5. 多标准交叉合规分析（专业版）
@@ -163,7 +158,6 @@ audit-toolkit --multi-standard \
 - 优先级排序：按合规风险综合排序修复优先级
 - 合规差距分析：量化组织与各标准的差距
 
-**输入**: 用户提供多标准交叉合规分析（专业版）所需的指令和必要参数.
 **处理**: 解析多标准交叉合规分析（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多标准交叉合规分析（专业版）的响应数据,包含状态码、结果和日志.
 ### 6. 审计历史趋势分析（专业版）
@@ -182,7 +176,6 @@ audit-toolkit --trend --range 365d --export reports/trend-annual.json
 | 反复出现 | 跨周期反复出现的风险 | 根因分析 |
 | 预测分析 | 基于历史数据预测未来风险 | 风险预测报告 |
 
-**输入**: 用户提供审计历史趋势分析（专业版）所需的指令和必要参数.
 **处理**: 解析审计历史趋势分析（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回审计历史趋势分析（专业版）的响应数据,包含状态码、结果和日志.
 ### 7. 自定义审计模板（专业版）
@@ -198,7 +191,6 @@ audit-toolkit --list-templates
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供自定义审计模板（专业版）所需的指令和必要参数.
 **处理**: 解析自定义审计模板（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自定义审计模板（专业版）的响应数据,包含状态码、结果和日志.
 ### 8. 加密认证签发（专业版）
@@ -211,7 +203,6 @@ audit-toolkit --certify \
   --key ~/.audit-keys/private.pem
 # ...
 audit-toolkit --verify \
-  --report reports/audit-2026-07.json \
   --key ~/.audit-keys/public.pem
 ```
 
@@ -222,7 +213,6 @@ audit-toolkit --verify \
 | 哈希链 | 证据链式哈希，确保证据完整性 |
 | 审计员身份 | 数字证书标识审计员身份 |
 
-**输入**: 用户提供加密认证签发（专业版）所需的指令和必要参数.
 **处理**: 解析加密认证签发（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回加密认证签发（专业版）的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全功能审计验证系、含批量审计、多标准交叉分析、加密认证与趋势追、审计验证工具箱专、业版是企业级审计、验证的完整解决方、在免费版基础上解、锁批量审计自动化、加密认证签发六大、高级功能、帮助组织建立持续、可追溯的审计验证、Use、when、需要安全检测、合规审计、漏洞扫描、加密防护时使用、不适用于渗透测试、未授权目标等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -231,13 +221,11 @@ audit-toolkit --verify \
 **场景描述**：企业需要在CI/CD流水线中自动审计所有代码变更，确保安全漏洞在部署前被发现.
 **操作流程**：
 ```bash
-audit-toolkit --batch ./src/ \
   --standard OWASP-Top-10 \
   --parallel 4 \
   --fail-on high \
   --certify --sign RSA-2048
 # ...
-audit-toolkit --monitor --watch ./production/ \
   --alert high \
   --notify security-team
 ```
@@ -263,7 +251,6 @@ audit-toolkit --monitor \
 **场景描述**：大型企业每月需要审查数百份供应链合同，人工审查耗时且标准不统一.
 **操作流程**：
 ```bash
-audit-toolkit --batch ./contracts/ \
   --type contract \
   --template ~/.audit-templates/supply-chain.json \
   --parallel 8 \
@@ -279,7 +266,6 @@ audit-toolkit --summary \
 **场景描述**：AI系统从训练到部署到迭代的全生命周期都需要伦理审计，确保公平性和无偏见.
 **操作流程**：
 ```bash
-audit-toolkit --batch ./training-data/ \
   --type ethics \
   --standard fairness \
   --metrics "demographic-parity,equal-opportunity"

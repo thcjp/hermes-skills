@@ -76,7 +76,6 @@ Token权限建议:
 - `read:org`: 读取组织信息
 - `workflow`: 管理Actions工作流
 
-**输入**: 用户提供认证机制所需的指令和必要参数.
 **处理**: 解析认证机制的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回认证机制的响应数据,包含状态码、结果和日志.
 ### 仓库管理
@@ -103,7 +102,6 @@ curl -X PATCH -H "Authorization: Bearer $GITHUB_TOKEN" \
   "https://api.repos/owner/repo"
 ```
 
-**输入**: 用户提供仓库管理所需的指令和必要参数.
 **处理**: 解析仓库管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回仓库管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -138,7 +136,6 @@ curl -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
   "https://api.repos/owner/repo/issues/123/comments"
 ```
 
-**输入**: 用户提供Issue管理所需的指令和必要参数.
 **处理**: 解析Issue管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Issue管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -167,7 +164,6 @@ curl -X PUT -H "Authorization: Bearer $GITHUB_TOKEN" \
   "https://api.repos/owner/repo/pulls/55/merge"
 ```
 
-**输入**: 用户提供Pull Request管理所需的指令和必要参数.
 **处理**: 解析Pull Request管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Pull Request管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -188,7 +184,6 @@ curl -H "Authorization: Bearer $GITHUB_TOKEN" \
   "https://api.repos/owner/repo/compare/main..feature-branch"
 ```
 
-**输入**: 用户提供分支与提交管理所需的指令和必要参数.
 **处理**: 解析分支与提交管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回分支与提交管理的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：REST、管理仓库、与分支、支持基础、CRUD、与结构化输出、适合个人开发者集、成场景、工具包、免费版、是一款面向开发者、集成工具、封装常用、帮助用户通过命令、行或脚本管理仓库、核心能力、CLI、Python、两种调用方式等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -234,7 +229,7 @@ done
 ```bash
 #!/bin/bash
 COUNT=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
-  "https://api.repos/owner/repo/issues?state=open" \
+  "https://api.state=open" \
   | jq 'length')
 # ..
 echo "当前开放Issue数: $COUNT"
@@ -270,7 +265,6 @@ fi
 export GITHUB_TOKEN="ghp_your_token_here"
 # ..
 # 验证认证
-curl -H "Authorization: Bearer $GITHUB_TOKEN" https://api.user
 ```
 
 ### Step 3:首次API调用
@@ -323,7 +317,6 @@ gh-api-post() {
   local endpoint=$1
   local data=$2
   curl -s -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
-       -H "Accept: application/vnd.github+json" \
        -H "Content-Type: application/json" \
        -d "$data" \
        "https://api.github.com$endpoint"
@@ -345,7 +338,6 @@ class GitHubAPI:
         self.token = token or os.environ['GITHUB_TOKEN']
         self.headers = {
             'Authorization': f'Bearer {self.token}',
-            'Accept': 'application/vnd.github+json'
         }
         self.base_url = 'https://api.github.com'
 # ..
@@ -359,9 +351,7 @@ class GitHubAPI:
         return resp.json()
 # ..
     def list_issues(self, owner, repo, state='open'):
-        resp = requests.get(
             f'{self.base_url}/repos/{owner}/{repo}/issues',
-            headers=self.headers,
             params={'state': state}
         )
         resp.raise_for_status()
@@ -371,9 +361,7 @@ class GitHubAPI:
         data = {'title': title, 'body': body}
         if labels:
             data['labels'] = labels
-        resp = requests.post(
             f'{self.base_url}/repos/{owner}/{repo}/issues',
-            headers=self.headers,
             json=data
         )
         resp.raise_for_status()

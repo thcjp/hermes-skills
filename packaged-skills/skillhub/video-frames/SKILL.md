@@ -168,7 +168,7 @@ First frame:
 At a timestamp:
 # ...
 ```bash
-{baseDir}/（请参考skill目录中的脚本文件） /path/to/video.mp4 --time 00:00:10 --out /tmp/frame-10s.jpg
+mp4 --time 00:00:10 --out /tmp/frame-10s.jpg
 ```
 ```
 

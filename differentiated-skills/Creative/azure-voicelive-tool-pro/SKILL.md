@@ -125,16 +125,14 @@ async def voice_assistant_with_tools():
                         "call_id": event.call_id,
                         "output": json.dumps(result)
                     })
-                    await conn.response.create()  # 触发后续响应
+response.create()  # 触发后续响应
 # ...
-                case "response.audio_transcript.delta":
+audio_transcript.delta":
                     print(event.delta, end="", flush=True)
 # ...
-                case "response.audio.delta":
                     audio = base64.b64decode(event.delta)
                     await play_audio(audio)
 # ...
-                case "response.done":
                     break
 # ...
 async def handle_function(name, arguments):
@@ -147,7 +145,6 @@ async def handle_function(name, arguments):
     return {"error": "未知函数"}
 ```
 
-**输入**: 用户提供函数调用（Function Tools）所需的指令和必要参数.
 **处理**: 解析函数调用（Function Tools）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回函数调用（Function Tools）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -159,7 +156,7 @@ async def handle_function(name, arguments):
 async def telephony_voice_bot():
     async with connect(
         endpoint=os.environ["AZURE_COGNITIVE_SERVICES_ENDPOINT"],
-        credential=AzureKeyCredential(os.environ["AZURE_COGNITIVE_SERVICES_KEY"]),
+environ["AZURE_COGNITIVE_SERVICES_KEY"]),
         model="gpt-4o-realtime-preview"
     ) as conn:
         await conn.session.update(session={
@@ -170,14 +167,12 @@ async def telephony_voice_bot():
             "output_audio_format": "g711_ulaw",
             "turn_detection": {
                 "type": "server_vad",
-                "threshold": 0.5,
                 "silence_duration_ms": 600
             }
         })
         # ... 事件处理逻辑
 ```
 
-**输入**: 用户提供电话音频格式支持所需的指令和必要参数.
 **处理**: 解析电话音频格式支持的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回电话音频格式支持的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -198,17 +193,15 @@ async def interruptible_assistant():
         async for event in conn:
             if event.type == "input_audio_buffer.speech_started":
                 # 用户开始说话 → 取消当前AI响应
-                await conn.response.cancel()
-                await conn.output_audio_buffer.clear()
+output_audio_buffer.clear()
                 print("[用户打断，已停止当前回复]")
 # ...
             elif event.type == "response.audio.delta":
-                audio = base64.b64decode(event.delta)
+b64decode(event.delta)
                 await play_audio(audio)
 # ...
 # 手动轮次模式（无VAD）
 async def manual_turn_mode():
-    async with connect(...) as conn:
         # 关闭自动VAD
         await conn.session.update(session={"turn_detection": None})
 # ...
@@ -220,7 +213,6 @@ async def manual_turn_mode():
         await conn.response.create()            # 触发AI响应
 ```
 
-**输入**: 用户提供中断处理与手动轮次所需的指令和必要参数.
 **处理**: 解析中断处理与手动轮次的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回中断处理与手动轮次的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -248,7 +240,6 @@ await conn.session.update(session={
 })
 ```
 
-**输入**: 用户提供自定义语音集成所需的指令和必要参数.
 **处理**: 解析自定义语音集成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自定义语音集成的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级实时语音、支持函数调用、高级会话与中断处、语音交互专业版、面向企业团队与专、业开发者的高级实、时语音、核心能力、主动调用外部、API、个人语音、Use、when、接口对接、Webhook、系统连接时使用、不适用于逆向工程等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -275,7 +266,6 @@ async def enterprise_customer_service():
             output_audio_format="pcm16",
             turn_detection={
                 "type": "azure_semantic_vad",  # 语义VAD，更准确的端点检测
-                "threshold": 0.5
             },
             tools=[
                 FunctionTool(type="function", name="query_order",
@@ -295,18 +285,13 @@ async def enterprise_customer_service():
         ))
 # ...
         async for event in conn:
-            if event.type == "response.function_call_arguments.done":
+type == "response.done":
                 result = await handle_service_function(event.name, event.arguments)
-                await conn.conversation.item.create(item={
+conversation.item.create(item={
                     "type": "function_call_output",
-                    "call_id": event.call_id,
-                    "output": json.dumps(result)
                 })
-                await conn.response.create()
-            elif event.type == "input_audio_buffer.speech_started":
-                await conn.response.cancel()
-                await conn.output_audio_buffer.clear()
-            elif event.type == "response.done":
+output_audio_buffer.clear()
+type == "response.done":
                 pass  # 继续监听
 ```
 
@@ -317,7 +302,7 @@ async def enterprise_customer_service():
 async def telephony_bot():
     async with connect(
         endpoint=os.environ["AZURE_COGNITIVE_SERVICES_ENDPOINT"],
-        credential=AzureKeyCredential(os.environ["AZURE_COGNITIVE_SERVICES_KEY"]),
+environ["AZURE_COGNITIVE_SERVICES_KEY"]),
         model="gpt-4o-realtime-preview"
     ) as conn:
         # 电话音频格式配置
@@ -329,7 +314,6 @@ async def telephony_bot():
             "output_audio_format": "g711_ulaw",
             "turn_detection": {
                 "type": "server_vad",
-                "threshold": 0.5,
                 "silence_duration_ms": 700  # 电话场景适当延长静默时间
             }
         })
@@ -353,7 +337,7 @@ async def branded_voice_experience():
         endpoint=os.environ["AZURE_COGNITIVE_SERVICES_ENDPOINT"],
         credential=DefaultAzureCredential(),
         model="gpt-4o-realtime-preview",
-        credential_scopes=["https://cognitiveservices.azure.com/.default"]
+azure.com/.default"]
     ) as conn:
         # 品牌定制语音
         await conn.session.update(session={
@@ -406,7 +390,7 @@ async def main():
         endpoint=os.environ["AZURE_COGNITIVE_SERVICES_ENDPOINT"],
         credential=DefaultAzureCredential(),
         model="gpt-4o-realtime-preview",
-        credential_scopes=["https://cognitiveservices.azure.com/.default"]
+azure.com/.default"]
     ) as conn:
         await conn.session.update(session=RequestSession(
             instructions="你是智能助手。",
@@ -417,15 +401,12 @@ async def main():
                 parameters={"type": "object", "properties": {}})]
         ))
         async for event in conn:
-            if event.type == "response.function_call_arguments.done":
-                if event.name == "get_time":
-                    await conn.conversation.item.create(item={
+type == "response.done":
+conversation.item.create(item={
                         "type": "function_call_output",
-                        "call_id": event.call_id,
-                        "output": json.dumps({"time": "2026-01-18 10:00"})
+dumps({"time": "2026-01-18 10:00"})
                     })
-                    await conn.response.create()
-            elif event.type == "response.done":
+type == "response.done":
                 break
 # ...
 asyncio.run(main())

@@ -1,9 +1,8 @@
----
-slug: "file-auto-organizer"
+---slug: "file-auto-organizer"
 name: "file-auto-organizer"
 version: 1.0.1
 displayName: "文件"
-summary: "文件自动整理工具。按文件类型、日期自动归类下载文件夹，适合整理控和洁癖用户。。文件自动整理工具。按文件类型、日期自动归类下载文件夹，适合整理控和洁癖用户。Use when 需要文件处理、文档"
+summary: "文件自动整理工具。按文"
 summary_zh: "文件自动整理工具。按文件类型、日期自动归类下载文件夹，适合整理控和洁癖用户。。文件自动整理工具。按文件类型、日期自动归类下载文件夹，适合整理控和洁癖用户。Use when 需要文件处理、文档"
 license: "MIT"
 description: |-
@@ -19,9 +18,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# File Auto Organizer
+category: "Automation"---# File Auto Organizer
 
 ## 付费版专享能力
 

@@ -1,5 +1,4 @@
----
-slug: "postgres-mcp-skills"
+---slug: "postgres-mcp-skills"
 name: "postgres-mcp-skills"
 version: 1.0.3
 displayName: "PostgreSQL数据库工具"
@@ -7,7 +6,7 @@ summary: "PostgreSQL 数据库管理和优化助手。提供完整的数据库�
 summary_zh: "PostgreSQL 数据库管理和优化助手。提供完整的数据库操作能力：健康检查、索引优化、查询计划分析、模式查询、SQL 执行。 当用户提到 PostgreSQL、Postgres、数据库优化、..."
 license: "MIT"
 description: |-
-  PostgreSQL 数据库管理和优化助手。提供完整的数据库操作能力：健康检查、索引优化、查询计划分析、模式查询、SQL 执行。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
+  PostgreSQL 数据库管理和优化助手。提供完整的数据库操作能力：健康检查、索引优化、查询计划分析、模式查询、SQL 执行。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。不适用于数据库架构设计决策.
 tags:
   - Integrations
   - 工具
@@ -19,9 +18,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# postgres mcp
+category: "Automation"---# postgres mcp
 
 ## 付费版专享能力
 

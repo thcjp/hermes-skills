@@ -77,7 +77,6 @@ category: "Security"
 | 修复建议 | 修复指南 | 基础 | 详细+优先级 |
 | 趋势分析 | 历史对比 | 不支持 | 时间序列 |
 
-**输入**: 用户提供功能矩阵所需的指令和必要参数.
 **处理**: 解析功能矩阵的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能矩阵的响应数据,包含状态码、结果和日志.
 ### 10+工具集成
@@ -101,14 +100,13 @@ category: "Security"
 └───────────────┴──────────────────────────────────────┘
 ```
 
-**输入**: 用户提供+工具集成所需的指令和必要参数.
 **处理**: 解析+工具集成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回+工具集成的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -343,7 +341,7 @@ class EnterpriseSecurityScanner:
             desc = vuln["description"].lower()
             for cve_id, cve_info in self.CVE_DATABASE.items():
                 if cve_info["name"].lower() in desc or cve_id.lower() in desc:
-                    self.cve_mappings.append({
+cve_mappings.append({
                         "target": target,
                         "vulnerability": vuln["description"],
                         "cve": cve_id,

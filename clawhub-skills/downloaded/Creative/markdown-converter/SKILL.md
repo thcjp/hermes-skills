@@ -14,9 +14,6 @@ Convert files to Markdown using `uvx markitdown` — no installation required.
 ```bash
 uvx markitdown input.pdf
 
-uvx markitdown input.pdf -o output.md
-uvx markitdown input.docx > output.md
-
 cat input.pdf | uvx markitdown
 ```
 

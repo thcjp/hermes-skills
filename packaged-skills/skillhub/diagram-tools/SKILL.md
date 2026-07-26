@@ -1,10 +1,8 @@
----
-slug: "diagram-tools"
+---slug: "diagram-tools"
 name: "diagram-tools"
 version: 1.0.3
 displayName: "图解"
-summary: "图表工具技能 - 支持 Mermaid、Graphviz、流程图、思维导图等多种图表生成。图表工具技能 - 支持 Mermaid、Graphviz、流程图、思维导图等多种图表生成
-
+summary: "图表工具技能 - 支持 Mermaid、Graphviz、流程图、思维导图等多种图表生成"
 核心"
 summary_zh: "图表工具技能 - 支持 Mermaid、Graphviz、流程图、思维导图等多种图表生成。图表工具技能 - 支持 Mermaid、Graphviz、流程图、思维导图等多种图表生成"
 license: "MIT"
@@ -21,9 +19,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# Diagram Tools
+category: "Automation"---# Diagram Tools
 
 ## 付费版专享能力
 
@@ -51,8 +47,6 @@ category: "Automation"
 * Mindmap 思维导图
 * Timeline 时间线
 
-**输入**: 用户提供Mermaid 图表所需的指令和必要参数.
-**处理**: 解析Mermaid 图表的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 2. Graphviz 图表
 使用 DOT 语言生成：
 
@@ -60,16 +54,11 @@ category: "Automation"
 * 层级图
 * 树形图
 
-**输入**: 用户提供Graphviz 图表所需的指令和必要参数.
-**处理**: 解析Graphviz 图表的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 3. 数据图表
 * 柱状图
 * 折线图
 * 饼图
 
-**输入**: 用户提供数据图表所需的指令和必要参数.
-**处理**: 解析数据图表的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回数据图表的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 

@@ -73,7 +73,7 @@ category: "Automation"
 ## 使用流程
 
 ### Step 1: 计划输入分析
-1. **设计文档解析**:读取design.md或设计输入,提取目标/范围/技术栈/数据模型/架构图,识别依赖关系与执行顺序
+1.md或设计输入,提取目标/范围/技术栈/数据模型/架构图,识别依赖关系与执行顺序
 2. **约束确认**:技术栈版本、团队规模与技能、时间约束、测试要求
 
 ### Step 2: 任务拆分(2-5分钟粒度)
@@ -175,7 +175,6 @@ export const auth = betterAuth({
   emailAndPassword: { enabled: true },
 });
 ```
-- **验证**: `npx vitest run tests/auth.test.ts`
 - **预期**: 测试通过 - Green阶段
 - **依赖**: Task 1, Task 2
 - **时间**: ~4分钟
@@ -221,13 +220,11 @@ Bug: 用户购物车在刷新后丢失商品。
 - **文件**: hooks/useCart.ts (修改)
 - **描述**: 添加localStorage读写逻辑
 - **代码**: [useEffect持久化+初始化时恢复的代码]
-- **验证**: `npx vitest run tests/cart.test.ts`
 - **预期**: 测试通过
 - **依赖**: Task 1
 - **时间**: ~4分钟
 # ...
 ## Task 3: 添加防御措施(SSR安全)
-- **文件**: hooks/useCart.ts (修改)
 - **描述**: SSR环境下localStorage不存在,需做安全检查
 - **代码**: [typeof window检查+try-catch包裹]
 - **验证**: `npm run build` 构建成功(无SSR错误)
@@ -309,7 +306,7 @@ Task 8 → Task 9 (Webhook测试) → Task 10 (Webhook实现)
 - **文件**: package.json (修改)
 - **描述**: 安装Stripe SDK及其类型定义
 - **命令**: `pnpm add stripe @stripe/stripe-js`
-- **验证**: `cat package.json | grep stripe` 输出包含stripe和@stripe/stripe-js
+json | grep stripe` 输出包含stripe和@stripe/stripe-js
 - **时间**: ~1分钟
 # ...
 ## Task 2: 编写订阅Schema测试(Red阶段)
@@ -374,7 +371,6 @@ model Subscription {
   @@index([status])
 }
 ```
-- **验证**: `npx vitest run tests/schema.test.ts`
 - **预期**: 测试通过 - Green阶段
 - **依赖**: Task 1, Task 2
 - **时间**: ~4分钟
@@ -438,7 +434,6 @@ export const STRIPE_PRICES = {
   yearly: process.env.STRIPE_PRICE_YEARLY!,
 } as const;
 ```
-- **验证**: `npx vitest run tests/stripe-config.test.ts`
 - **预期**: 测试通过 - Green阶段
 - **依赖**: Task 1, Task 5
 - **时间**: ~3分钟
@@ -531,13 +526,11 @@ export async function POST(req: NextRequest) {
     },
   });
 
-  return NextResponse.json({
     subscriptionId: subscription.id,
     status: subscription.status,
   });
 }
 ```
-- **验证**: `npx vitest run tests/api/create-subscription.test.ts`
 - **预期**: 测试通过 - Green阶段
 - **依赖**: Task 4, Task 6, Task 7
 - **时间**: ~5分钟
@@ -548,7 +541,7 @@ export async function POST(req: NextRequest) {
 - **代码**:
 ```typescript
 import { describe, it, expect, vi } from "vitest";
-import { POST } from "../app/api/stripe/webhook/route";
+./app/api/stripe/webhook/route";
 
 vi.mock("../lib/stripe", () => ({
   getStripeClient: () => ({
@@ -595,7 +588,6 @@ import { getStripeClient } from "@/lib/stripe";
 import { prisma } from "@/lib/prisma";
 
 export async function POST(req: NextRequest) {
-  const body = await req.text();
   const signature = req.headers.get("stripe-signature")!;
   const stripe = getStripeClient();
 
@@ -607,7 +599,7 @@ export async function POST(req: NextRequest) {
       process.env.STRIPE_WEBHOOK_SECRET!
     );
   } catch (err) {
-    return NextResponse.json({ error: "签名验证失败" }, { status: 400 });
+json({ error: "签名验证失败" }, { status: 400 });
   }
 
   switch (event.type) {
@@ -635,10 +627,9 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  return NextResponse.json({ received: true });
+json({ received: true });
 }
 ```
-- **验证**: `npx vitest run tests/api/webhook.test.ts`
 - **预期**: 测试通过 - Green阶段
 - **依赖**: Task 8, Task 9
 - **时间**: ~5分钟
@@ -873,7 +864,6 @@ function transformRow(table: string, row: any): any {
   return row;
 }
 ```
-- **验证**: `npx vitest run tests/migration.test.ts`
 - **预期**: 测试通过
 - **依赖**: Task 2, Task 3
 - **时间**: ~5分钟
@@ -931,7 +921,6 @@ export async function dualWriteUser(data: { email: string; is_active: boolean })
   }
 }
 ```
-- **验证**: `npx vitest run tests/dual-write.test.ts`
 - **预期**: 测试通过
 - **依赖**: Task 5
 - **时间**: ~4分钟
@@ -969,14 +958,13 @@ zongji.on("binlog", (event) => {
     rows.forEach(async (row) => {
       const transformed = transformRow(table, row.after);
       const sets = Object.keys(transformed).map((k, i) => `${k}=$${i + 1}`).join(",");
-      await pgClient.query(
         `UPDATE ${table} SET ${sets} WHERE id = $${Object.keys(transformed).length + 1}`,
         [...Object.values(transformed), transformed.id]
       );
     });
   } else if (event.getTypeName() === "DeleteRows") {
     rows.forEach(async (row) => {
-      await pgClient.query(`DELETE FROM ${table} WHERE id = $1`, [row.id]);
+query(`DELETE FROM ${table} WHERE id = $1`, [row.id]);
     });
   }
 });
@@ -1078,7 +1066,6 @@ console.log("增量同步已启动,监听MySQL binlog...");
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
 
-> 详细的输入输出格式请参考下方章节说明。
 ## 第1周: 清理已弃用API(P0, 6h)
 # ...
 ### Task 1: 检测已弃用API使用位置
@@ -1181,7 +1168,6 @@ module.exports = {
 ### Task 11: 修复eslint 120个warning
 - **策略**: 自动修复 + 手动修复
 - **命令**: `npx eslint ./src --fix` (自动修复约60%)
-- **验证**: `npx eslint ./src` warning数量为0
 - **时间**: ~3h
 # ...
 ## 总览

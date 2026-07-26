@@ -83,19 +83,18 @@ category: "Knowledge"
 | 获取信息 | `snapshot` / `get text` / `get html` / `screenshot` | 信息提取 |
 | 元素定位 | `find role` / `find text` / `find label` | 多种定位方式 |
 
-**输入**: 用户提供命令总览所需的指令和必要参数.
 **处理**: 解析命令总览的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回命令总览的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
@@ -129,7 +128,6 @@ agent-browser close
 
 自动填写并提交表单.
 ```bash
-agent-browser open https://example.com/form
 agent-browser snapshot
 # ...
 # 通过 label 定位并填写
@@ -147,7 +145,6 @@ agent-browser find role button click --name "提交"
 # 创建脚本 ~/.skill-platform/（请参考skill目录中的脚本文件）
 cat > ~/.skill-platform/（请参考skill目录中的脚本文件） << 'EOF'
 #!/bin/bash
-agent-browser open https://example.com/checkin
 sleep 2
 agent-browser find role button click --name "签到"
 agent-browser screenshot /tmp/checkin_$(date +%Y%m%d).png

@@ -201,7 +201,7 @@ https://cdn.example.com/video.mp4?auth_key=1700000000-0-0-abc123hash
 
 ```
 # 1. 确认缓存是否已被刷新
-curl -sI "https://example.com/page.html" | grep -i "age\|x-cache"
+com/page.html" | grep -i "age\|x-cache"
 
 # 2. 检查文件名是否带版本号（推荐方案）
 # 错误做法: app.js  (更新后需手动刷新缓存)
@@ -251,7 +251,6 @@ curl -X POST "https://api.cloudflare.com/client/v4/zones/{zone_id}/purge_cache" 
     },
     "performance": {
       "avg_ttfb_ms": 45,
-      "cache_hit_rate": "94.2%",
       "bandwidth_saved": "78.5%"
     },
     "metadata": {

@@ -207,7 +207,6 @@ category: "Automation"
 ```json
 {
   "author_id": "tech-blogger-001",
-  "vocabulary_score": 0.72,
   "sentence_structure": "短句为主(平均18字), 偶用设问",
   "tone_tendency": "权威,幽默",
   "rhythm_pattern": "段落短(3-5句), 信息密度高",
@@ -270,7 +269,6 @@ category: "Automation"
   "success": true,
   "data": {
     "fingerprint": {
-      "vocabulary_score": 0.72,
       "sentence_structure": "短句为主(平均18字), 偶用设问(每300字1次)",
       "tone_tendency": "权威,幽默",
       "rhythm_pattern": "段落短(3-5句), 换行频繁, 信息密度高",
@@ -288,7 +286,6 @@ category: "Automation"
   "action": "save",
   "author_id": "tech-blogger-001",
   "fingerprint": {
-    "vocabulary_score": 0.72,
     "sentence_structure": "短句为主(平均18字), 偶用设问",
     "tone_tendency": "权威,幽默",
     "rhythm_pattern": "段落短(3-5句), 信息密度高",
@@ -325,7 +322,6 @@ category: "Automation"
   "success": true,
   "data": {
     "fingerprint": {
-      "vocabulary_score": 0.72,
       "sentence_structure": "短句为主(平均18字), 偶用设问",
       "tone_tendency": "权威,幽默",
       "rhythm_pattern": "段落短(3-5句), 信息密度高",
@@ -366,7 +362,7 @@ category: "Automation"
 {
   "action": "distill",
   "author_id": "tech-blogger-001",
-  "content": "效率就是生命。别废话,上方案。今天分享3个自动化技巧,实测每天省2小时。第一个,GitHub Actions自动部署,配置一次永久生效。第二个,Python脚本批量重命名,100个文件3秒搞定。第三个,iOS快捷指令自动打卡,再也不用担心忘记。别问我为什么知道,问就是踩过坑。数据不会骗人,效率提升73%。不信?试试就知道了。"
+别废话,上方案。今天分享3个自动化技巧,实测每天省2小时。第一个,GitHub Actions自动部署,配置一次永久生效。第二个,Python脚本批量重命名,100个文件3秒搞定。第三个,iOS快捷指令自动打卡,再也不用担心忘记。别问我为什么知道,问就是踩过坑。数据不会骗人,效率提升73%。不信?试试就知道了。"
 }
 ```
 
@@ -376,7 +372,6 @@ category: "Automation"
   "success": true,
   "data": {
     "fingerprint": {
-      "vocabulary_score": 0.68,
       "sentence_structure": "短句为主(平均15字),频繁使用设问句和祈使句",
       "tone_tendency": "权威,幽默",
       "rhythm_pattern": "段落极短(2-4句),换行频繁,信息密度高,节奏快",
@@ -410,7 +405,6 @@ category: "Automation"
   "success": true,
   "data": {
     "fingerprint": {
-      "vocabulary_score": 0.82,
       "sentence_structure": "长短句交替(平均25字),大量使用设问句和感叹句",
       "tone_tendency": "亲和,感性",
       "rhythm_pattern": "段落中等(3-6句),节奏舒缓,情绪递进式铺陈",
@@ -425,7 +419,7 @@ category: "Automation"
 }
 ```
 
-**效果验证**: ✓6维风格指纹完整提取 ✓词汇丰富度0.82(偏文学性) ✓推荐公式与风格匹配(亲和+感性→情感共鸣法) ✓修辞偏好准确识别(排比+第二人称) ✓输出格式合规
+82(偏文学性) ✓推荐公式与风格匹配(亲和+感性→情感共鸣法) ✓修辞偏好准确识别(排比+第二人称) ✓输出格式合规
 
 ### 案例3: 风格指纹保存(persist到JSON文件)
 
@@ -435,7 +429,6 @@ category: "Automation"
   "action": "save",
   "author_id": "tech-blogger-001",
   "fingerprint": {
-    "vocabulary_score": 0.68,
     "sentence_structure": "短句为主(平均15字),频繁使用设问句和祈使句",
     "tone_tendency": "权威,幽默",
     "rhythm_pattern": "段落极短(2-4句),换行频繁,信息密度高",
@@ -453,7 +446,6 @@ category: "Automation"
   "data": {
     "author_id": "tech-blogger-001",
     "saved": true,
-    "file_path": "style_fingerprints/tech-blogger-001.json",
     "updated_at": "2026-07-20 14:30:00"
   },
   "error": null,
@@ -480,7 +472,6 @@ category: "Automation"
   "success": true,
   "data": {
     "fingerprint": {
-      "vocabulary_score": 0.68,
       "sentence_structure": "短句为主(平均15字),频繁使用设问句和祈使句",
       "tone_tendency": "权威,幽默",
       "rhythm_pattern": "段落极短(2-4句),换行频繁,信息密度高",

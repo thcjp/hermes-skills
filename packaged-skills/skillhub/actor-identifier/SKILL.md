@@ -203,7 +203,7 @@ jobs:
       - name: 提交报告到文档库
         run: |
           git config user.name "Analysis Bot"
-          git config user.email "bot@example.com"
+email "bot@example.com"
           git add reports/
           git commit -m "chore: weekly repo analysis report [skip ci]" || true
           git push

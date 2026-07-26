@@ -28,7 +28,8 @@ for page in reader.pages:
 
 ### pypdf - Basic Operations
 
-#### Merge PDFs
+#
+### Merge PDFs
 
 ```python
 from pypdf import PdfWriter, PdfReader
@@ -43,7 +44,8 @@ with open("merged.pdf", "wb") as output:
     writer.write(output)
 ```
 
-#### Split PDF
+#
+### Split PDF
 
 ```python
 reader = PdfReader("input.pdf")
@@ -54,10 +56,10 @@ for i, page in enumerate(reader.pages):
         writer.write(output)
 ```
 
-#### Extract Metadata
+#
+### Extract Metadata
 
 ```python
-reader = PdfReader("document.pdf")
 meta = reader.metadata
 print(f"Title: {meta.title}")
 print(f"Author: {meta.author}")
@@ -65,10 +67,10 @@ print(f"Subject: {meta.subject}")
 print(f"Creator: {meta.creator}")
 ```
 
-#### Rotate Pages
+#
+### Rotate Pages
 
 ```python
-reader = PdfReader("input.pdf")
 writer = PdfWriter()
 
 page = reader.pages[0]
@@ -81,7 +83,8 @@ with open("rotated.pdf", "wb") as output:
 
 ### pdfplumber - Text and Table Extraction
 
-#### Extract Text with Layout
+#
+### Extract Text with Layout
 
 ```python
 import pdfplumber
@@ -92,7 +95,8 @@ with pdfplumber.open("document.pdf") as pdf:
         print(text)
 ```
 
-#### Extract Tables
+#
+### Extract Tables
 
 ```python
 with pdfplumber.open("document.pdf") as pdf:
@@ -104,7 +108,8 @@ with pdfplumber.open("document.pdf") as pdf:
                 print(row)
 ```
 
-#### Advanced Table Extraction
+#
+### Advanced Table Extraction
 
 ```python
 import pandas as pd
@@ -112,7 +117,6 @@ import pandas as pd
 with pdfplumber.open("document.pdf") as pdf:
     all_tables = []
     for page in pdf.pages:
-        tables = page.extract_tables()
         for table in tables:
             if table:  # Check if table is not empty
                 df = pd.DataFrame(table[1:], columns=table[0])
@@ -125,7 +129,8 @@ if all_tables:
 
 ### reportlab - Create PDFs
 
-#### Basic PDF Creation
+#
+### Basic PDF Creation
 
 ```python
 from reportlab.lib.pagesizes import letter
@@ -142,7 +147,8 @@ c.line(100, height - 140, 400, height - 140)
 c.save()
 ```
 
-#### Create PDF with Multiple Pages
+#
+### Create PDF with Multiple Pages
 
 ```python
 from reportlab.lib.pagesizes import letter
@@ -167,7 +173,8 @@ story.append(Paragraph("Content for page 2", styles['Normal']))
 doc.build(story)
 ```
 
-#### Subscripts and Superscripts
+#
+### Subscripts and Superscripts
 
 **IMPORTANT**: Never use Unicode subscript/superscript characters (₀₁₂₃₄₅₆₇₈₉, ⁰¹²³⁴⁵⁶⁷⁸⁹) in ReportLab PDFs. The built-in fonts do not include these glyphs, causing them to render as solid black boxes.
 
@@ -247,7 +254,6 @@ from pypdf import PdfReader, PdfWriter
 
 watermark = PdfReader("watermark.pdf").pages[0]
 
-reader = PdfReader("document.pdf")
 writer = PdfWriter()
 
 for page in reader.pages:
@@ -270,7 +276,6 @@ pdfimages -j input.pdf output_prefix
 ```python
 from pypdf import PdfReader, PdfWriter
 
-reader = PdfReader("input.pdf")
 writer = PdfWriter()
 
 for page in reader.pages:
@@ -322,8 +327,6 @@ with open("encrypted.pdf", "wb") as output:
 
 ## 核心能力
 
-This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see REFERENCE.md. If you need to fill out a PDF form, read FORMS.md and follow its instructions.
-
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -339,9 +342,6 @@ This guide covers essential PDF processing operations using Python libraries and
 ```
 ```python
 from pypdf import PdfReader, PdfWriter
-
-reader = PdfReader("document.pdf")
-print(f"Pages: {len(reader.pages)}")
 
 text = ""
 for page in reader.pages:

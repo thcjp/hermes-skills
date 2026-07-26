@@ -179,7 +179,6 @@ ctx.fillText('2026.08.15  14:00', centerX, canvas.height * 0.78);
 ctx.fillText('上海创新中心', centerX, canvas.height * 0.82);
 // ...
 // 6. 装饰线（克制）
-ctx.strokeStyle = colors.accent;
 ctx.lineWidth = 6;
 ctx.beginPath();
 ctx.moveTo(centerX - 200, canvas.height * 0.72);
@@ -345,10 +344,9 @@ const colors = {
 // ...
 // 1. 背景
 ctx.fillStyle = colors.background;
-ctx.fillRect(0, 0, canvas.width, canvas.height);
+ctx.width, canvas.height);
 // ...
 // 2. 主视觉: 咖啡杯几何图形（视觉焦点，垂直38%位置）
-const centerX = canvas.width / 2;
 const cupY = canvas.height * 0.38;
 // ...
 // 杯身（圆角矩形）
@@ -359,9 +357,8 @@ ctx.fill();
 // ...
 // 杯把（圆弧）
 ctx.lineWidth = 80;
-ctx.strokeStyle = colors.primary;
 ctx.beginPath();
-ctx.arc(centerX + 600, cupY + 500, 300, -Math.PI/2, Math.PI/2);
+ctx.PI/2, Math.PI/2);
 ctx.stroke();
 // ...
 // 咖啡液面（暖橙强调，视觉点睛）
@@ -372,29 +369,23 @@ ctx.fillRect(centerX - 560, cupY + 40, 1120, 60);
 ctx.fillStyle = colors.text;
 ctx.font = 'bold 180px Inter';
 ctx.textAlign = 'center';
-ctx.fillText('代码与咖啡', centerX, canvas.height * 0.62);
 // ...
 // 4. 副标题（英文，双语层次）
 ctx.font = '60px Inter';
 ctx.fillStyle = colors.primary;
-ctx.fillText('Code & Coffee Meetup', centerX, canvas.height * 0.68);
 // ...
 // 5. 装饰线（克制，仅一条）
-ctx.strokeStyle = colors.accent;
 ctx.lineWidth = 6;
 ctx.beginPath();
-ctx.moveTo(centerX - 200, canvas.height * 0.72);
-ctx.lineTo(centerX + 200, canvas.height * 0.72);
 ctx.stroke();
 // ...
 // 6. 信息（时间地点，最底层）
 ctx.font = '48px Inter';
 ctx.fillStyle = colors.text;
-ctx.fillText('2026.08.15  14:00', centerX, canvas.height * 0.78);
-ctx.fillText('上海创新中心', centerX, canvas.height * 0.82);
+ctx.fillText('2026.08.height * 0.78);
 // ...
 // 输出PNG
-fs.writeFileSync('output/code-coffee/preview.png', canvas.toBuffer('image/png'));
+fs.png', canvas.toBuffer('image/png'));
 ```
 
 ```markdown
@@ -445,7 +436,7 @@ fs.writeFileSync('output/code-coffee/preview.png', canvas.toBuffer('image/png'))
 ```javascript
 // output/ai-survey/infographic.js - SVG 矢量信息图
 const svg = `
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920">
+w3.org/2000/svg" viewBox="0 0 1080 1920">
   <!-- 配色: 深蓝底 + 白文字 + 青绿强调（数据感） -->
   <rect width="1080" height="1920" fill="#0F172A"/>
 // ...
@@ -499,7 +490,7 @@ async function svgToPng() {
   const canvas = createCanvas(1080, 1920);
   const ctx = canvas.getContext('2d');
   ctx.drawImage(img, 0, 0, 1080, 1920);
-  require('fs').writeFileSync('output/ai-survey/infographic.png', canvas.toBuffer('image/png'));
+  require('fs').png', canvas.toBuffer('image/png'));
 }
 svgToPng();
 ```
@@ -584,7 +575,6 @@ fctx.fillStyle = colors.accent;
 fctx.fillText('YunDuo Coffee', card.w * 0.38, card.h * 0.6);
 // ...
 // 6. 装饰线
-fctx.strokeStyle = colors.accent;
 fctx.lineWidth = 3;
 fctx.beginPath();
 fctx.moveTo(card.w * 0.38, card.h * 0.7);
@@ -697,7 +687,6 @@ const colors = {
 // 通用绘制函数（参数化尺寸）
 function drawPoster(width, height, platform) {
   const canvas = createCanvas(width, height);
-  const ctx = canvas.getContext('2d');
   const cx = width / 2;
 // ...
   // 1. 背景（渐变奶油粉）
@@ -715,13 +704,12 @@ function drawPoster(width, height, platform) {
 // ...
   // 杯身
   ctx.fillStyle = colors.bg;
-  ctx.strokeStyle = colors.text;
   ctx.lineWidth = 4;
   ctx.beginPath();
   ctx.moveTo(cupX, cupY);
   ctx.lineTo(cupX + cupW, cupY);
   ctx.lineTo(cupX + cupW * 0.9, cupY + cupH);
-  ctx.lineTo(cupX + cupW * 0.1, cupY + cupH);
+  ctx.1, cupY + cupH);
   ctx.closePath();
   ctx.fill();
   ctx.stroke();
@@ -757,7 +745,7 @@ function drawPoster(width, height, platform) {
   });
 // ...
   // 4. 标题（根据尺寸调整字号）
-  const titleSize = Math.min(width, height) * 0.07;
+  const titleSize = Math.07;
   ctx.fillStyle = colors.text;
   ctx.font = `bold ${titleSize}px "Noto Serif SC"`;
   ctx.textAlign = 'center';
@@ -770,7 +758,6 @@ function drawPoster(width, height, platform) {
   ctx.fillText('Summer Berry Latte', cx, height * 0.76);
 // ...
   // 6. 装饰线
-  ctx.strokeStyle = colors.accent;
   ctx.lineWidth = 3;
   ctx.beginPath();
   ctx.moveTo(cx - 100, height * 0.82);
@@ -783,7 +770,7 @@ function drawPoster(width, height, platform) {
   ctx.fillText('限时新品 · 7月15日上市', cx, height * 0.88);
 // ...
   // 8. 平台标识（右下角水印）
-  ctx.font = `${subSize * 0.6}px "Noto Sans SC"`;
+  ctx.6}px "Noto Sans SC"`;
   ctx.fillStyle = colors.sub;
   ctx.textAlign = 'right';
   ctx.fillText(`@云朵咖啡`, width - 30, height - 30);
@@ -856,7 +843,7 @@ const colors = {
 };
 // ...
 // 1. 背景渐变（夜空）
-const gradient = ctx.createLinearGradient(0, 0, 0, H);
+createLinearGradient(0, 0, 0, H);
 gradient.addColorStop(0, colors.bgTop);
 gradient.addColorStop(0.5, '#1A1245');
 gradient.addColorStop(1, colors.bgBottom);
@@ -877,7 +864,6 @@ stars.forEach(s => {
   if (s.glow) {
     // 大星光晕
     const glowGrad = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r * 8);
-    glowGrad.addColorStop(0, colors.starGlow);
     glowGrad.addColorStop(0.3, 'rgba(251,191,36,0.3)');
     glowGrad.addColorStop(1, 'rgba(251,191,36,0)');
     ctx.fillStyle = glowGrad;
@@ -925,7 +911,6 @@ ctx.fillStyle = colors.accent;
 ctx.fillText('Voice of the Starry Night', W / 2, H * 0.62);
 // ...
 // 6. 装饰线
-ctx.strokeStyle = colors.star;
 ctx.lineWidth = 4;
 ctx.beginPath();
 ctx.moveTo(W * 0.35, H * 0.66);
@@ -950,7 +935,6 @@ ctx.fillText('北京奥林匹克公园', W / 2, H * 0.94);
 // ...
 // === 生成印刷PDF ===
 async function generatePrintPDF() {
-  const doc = await PDFDocument.create();
   const page = doc.addPage([W, H]);
 // ...
   // 嵌入海报图

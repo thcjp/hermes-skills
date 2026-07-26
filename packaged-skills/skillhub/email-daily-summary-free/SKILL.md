@@ -1,9 +1,8 @@
----
-slug: "email-daily-summary-free"
+---slug: "email-daily-summary-free"
 name: "email-daily-summary-free"
 version: "1.0.0"
 displayName: "邮件摘要免费版"
-summary: "基于 browser-use 登录单个邮箱并生成当日邮件摘要的基础版。基于 browser-use CLI 自动化登录 Gmail、Outlook、QQ 邮箱等 Web 邮箱, 抓取当日收件"
+summary: "基于 browser-"
 summary_zh: "基于 browser-use 登录单个邮箱并生成当日邮件摘要的基础版。基于 browser-use CLI 自动化登录 Gmail、Outlook、QQ 邮箱等 Web 邮箱, 抓取当日收件"
 license: "MIT"
 description: |-
@@ -26,9 +25,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Communication"
----
-# Email Daily Summary Free
+category: "Communication"---# Email Daily Summary Free
 
 通过 `browser-use` CLI 驱动浏览器自动化登录 Web 邮箱,抓取当日邮件并生成基础日报。本免费版支持单邮箱当日摘要,适合个人日常使用.
 ## 输入格式

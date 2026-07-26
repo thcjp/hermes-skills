@@ -77,12 +77,12 @@ category: "Knowledge"
 | API 接口 | 否 | REST API |
 | 优先支持 | 社区 | 优先响应 |
 
-**输入**: 用户提供功能对比所需的指令和必要参数.
 **处理**: 解析功能对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能对比的响应数据,包含状态码、结果和日志.
 ### PRO 版独有功能
 
-#### 1. 多平台批量投递
+#
+### 1. 多平台批量投递
 
 ```bash
 python （请参考skill目录中的脚本文件） \
@@ -94,7 +94,8 @@ python （请参考skill目录中的脚本文件） \
 ```
 
 支持跨 5+ 平台批量投递，并行处理多个候选人的申请.
-#### 2. 申请状态追踪
+#
+### 2. 申请状态追踪
 
 ```bash
 # 追踪所有申请状态
@@ -108,7 +109,8 @@ python （请参考skill目录中的脚本文件） \
   --alert-email=recruiter@agency.com
 ```
 
-#### 3. 效果分析与优化
+#
+### 3. 效果分析与优化
 
 ```bash
 # 生成投递效果报告
@@ -119,7 +121,8 @@ python （请参考skill目录中的脚本文件） \
   --optimization-suggestions
 ```
 
-#### 4. AI 智能匹配
+#
+### 4. AI 智能匹配
 
 ```bash
 # AI 推荐匹配职位
@@ -130,14 +133,13 @@ python （请参考skill目录中的脚本文件） \
   --max-results 20
 ```
 
-**输入**: 用户提供PRO 版独有功能所需的指令和必要参数.
 **处理**: 解析PRO 版独有功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回PRO 版独有功能的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -189,7 +191,6 @@ python （请参考skill目录中的脚本文件） \
 ```bash
 # 配置定时投递
 python （请参考skill目录中的脚本文件） \
-  --profile ~/job_profile.json \
   --title "Software Engineer" \
   --cron="0 9,14,18 * * 1-5" \
   --applications-per-run 5 \
@@ -365,7 +366,6 @@ python （请参考skill目录中的脚本文件） --status "interview,offer"
 # ...
 # 生成追踪报告
 python （请参考skill目录中的脚本文件） \
-  --output=tracking_report.md \
   --include-timeline \
   --include-responses
 ```

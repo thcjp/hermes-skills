@@ -89,7 +89,6 @@ Agent安全工具箱免费版是一款专为AI Agent生态设计的安全扫描�
 | 23 | SUSPICIOUS_IP | MEDIUM | 硬编码公网IP |
 | 24 | SOCIAL_ENGINEERING | HIGH | 社会工程学诱导 |
 
-**输入**: 用户提供条安全检测规则所需的指令和必要参数.
 **处理**: 解析条安全检测规则的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回条安全检测规则的响应数据,包含状态码、结果和日志.
 ### 免费版与专业版对比
@@ -105,12 +104,11 @@ Agent安全工具箱免费版是一款专为AI Agent生态设计的安全扫描�
 | HTML报告 | 不支持 | 可视化报告 |
 | 批量扫描 | 单目录 | 多目录批量 |
 
-**输入**: 用户提供免费版与专业版对比所需的指令和必要参数.
 **处理**: 解析免费版与专业版对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版与专业版对比的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -283,7 +281,6 @@ class SecurityScanner:
             for line_num, line in enumerate(lines, 1):
                 for rule_id, rule in self.RULES.items():
                     if re.search(rule["pattern"], line, re.IGNORECASE):
-                        self.findings.append({
                             "rule": rule_id,
                             "severity": rule["severity"],
                             "file": str(filepath),

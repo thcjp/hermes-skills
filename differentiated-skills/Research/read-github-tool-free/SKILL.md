@@ -1,9 +1,8 @@
----
-slug: read-github-tool-free
+---slug: read-github-tool-free
 name: read-github-tool-free
 version: 1.0.0
 displayName: 代码仓库阅读免费版
-summary: "通过MCP server读取代码仓库文档与代码，支持文档搜索与代码检索。代码仓库阅读工具免费版，通过MCP server读取代码仓库的文档和代码，帮助用户快速理解开源项目。核心能力:"
+summary: "通过MCP serve"
 license: Proprietary
 edition: free
 description: '代码仓库阅读工具免费版，通过MCP server读取代码仓库的文档和代码，帮助用户快速理解开源项目。核心能力:
@@ -35,9 +34,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Development"
----
-# 代码仓库阅读工具（免费版）
+category: "Development"---# 代码仓库阅读工具（免费版）
 
 ## 概述
 
@@ -87,21 +84,18 @@ karpathy/llm-council → gitmcp.io/karpathy/llm-council
 [限制] 不支持API集成
 ```
 
-**输入**: 用户提供URL 转换规则所需的指令和必要参数.
 **处理**: 解析URL 转换规则的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回URL 转换规则的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：server、读取代码仓库文档、与代码、支持文档搜索与代、码检索、代码仓库阅读工具、读取代码仓库的文、档和代码、帮助用户快速理解、开源项目、核心能力、获取文档中引用的、自动转换、github、Use、when、需要文件处理、文档转换、格式互转、内容提取时使用、不适用于加密文件等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ### 核心功能执行(补充)
 执行核心功能执行操作,使用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
-**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
-**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
+
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
@@ -250,12 +244,12 @@ class GitMCPClient:
 # ...
     def search_docs(self, repo, query):
         """语义搜索文档"""
-        tool_name = self._generate_tool_name(repo, "documentation")
+_generate_tool_name(repo, "documentation")
         return self._call_tool(repo, f"search_{tool_name}", {"query": query})
 # ...
     def search_code(self, repo, query):
         """搜索代码"""
-        tool_name = self._generate_tool_name(repo, "code")
+_generate_tool_name(repo, "code")
         return self._call_tool(repo, f"search_{tool_name}", {"query": query})
 # ...
     def _generate_tool_name(self, repo, suffix):
@@ -265,7 +259,6 @@ class GitMCPClient:
 # ...
     def _call_tool(self, repo, tool_name, args):
         """调用MCP工具"""
-        url = f"{self.base_url}/{repo}"
         payload = {
             "tool": tool_name,
             "args": args

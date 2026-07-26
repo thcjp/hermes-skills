@@ -1,6 +1,4 @@
----
-
-slug: "okx-dex-token-paid"
+---slug: "okx-dex-token-paid"
 name: "okx-dex-token-paid"
 version: 1.0.1
 displayName: "DEX代币数据专业版"
@@ -11,7 +9,7 @@ edition: "pro"
 description: |-
   面向专业DeFi交易者与研究员的DEX代币分析与交易工具。支持15+条链
   深度数据分析、批量代币查询、链上行为追踪、流动性监控告警与限价
-  交易执行。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+  交易执行。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。不适用于实时流数据处理.
 tags:
   - DEX
   - 工具
@@ -25,10 +23,7 @@ tools:
   - write
 homepage: ""
 category: "Automation"
-
----
-
-# DEX代币数据专业版
+---# DEX代币数据专业版
 
 ## 付费版专享能力
 
@@ -55,7 +50,6 @@ category: "Automation"
 | 安全审计 | 不支持 | 合约风险评分 |
 | 数据导出 | 不支持 | CSV/Excel/JSON |
 
-**输入**: 用户提供PRO版功能增强对比所需的指令和必要参数.
 ### 全链支持
 | 链名称 | Chain ID | 免费版 | PRO版 |
 |---:|---:|---:|---:|
@@ -73,9 +67,6 @@ category: "Automation"
 | Mantle | 5000 | 不支持 | 支持 |
 | ... | ... | ... | 支持 |
 
-**输入**: 用户提供全链支持所需的指令和必要参数.
-**处理**: 解析全链支持的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回全链支持的处理结果,包含执行状态码、结果数据和执行日志.
 ### 支持链数
 
 针对支持链数,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
@@ -178,7 +169,6 @@ python3 （请参考skill目录中的脚本文件） create --token UNIS --side 
 python3 （请参考skill目录中的脚本文件） --chains ethereum,bsc,arbitrum
 # ...
 # 安全审计
-python3 （请参考skill目录中的脚本文件） --token 0x... --chain ethereum
 ```
 
 #

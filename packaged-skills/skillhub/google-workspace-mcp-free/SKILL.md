@@ -97,18 +97,18 @@ npm install -g @presto-ai/google-workspace-mcp
 mcporter config add google-workspace --command "npx" --arg "-y" --arg "@presto-ai/google-workspace-mcp" --scope home
 ```
 
-首次调用任意工具会打开浏览器请求Google授权,完成后凭证写入 `~/.config/google-workspace-mcp/`.
+首次调用任意工具会打开浏览器请求Google授权,完成后凭证写入 `~/.
 ## 常用命令
 
 ```bash
 mcporter call --server google-workspace --tool "gmail.search" query="is:unread" maxResults=10
-mcporter call --server google-workspace --tool "gmail.get" messageId="18c1f3a2b5d4e6f7"
+get" messageId="18c1f3a2b5d4e6f7"
 mcporter call --server google-workspace --tool "calendar.list"
-mcporter call --server google-workspace --tool "calendar.listEvents" calendarId="primary" timeMin="2026-07-20T00:00:00Z" timeMax="2026-07-20T23:59:59Z"
+listEvents" calendarId="primary" timeMin="2026-07-20T00:00:00Z" timeMax="2026-07-20T23:59:59Z"
 mcporter call --server google-workspace --tool "drive.search" query="季度财报"
-mcporter call --server google-workspace --tool "drive.downloadFile" fileId="1A2B3C4D5E6F" localPath="/tmp/report.pdf"
+downloadFile" fileId="1A2B3C4D5E6F" localPath="/tmp/report.pdf"
 mcporter call --server google-workspace --tool "docs.find" query="会议纪要"
-mcporter call --server google-workspace --tool "docs.getText" documentId="1A2B3C4D5E6F"
+getText" documentId="1A2B3C4D5E6F"
 mcporter call --server google-workspace --tool "sheets.getRange" spreadsheetId="1A2B3C4D5E6F" range="Sheet1!A1:D20"
 mcporter call --server google-workspace --tool "time.getCurrentDate"
 ```

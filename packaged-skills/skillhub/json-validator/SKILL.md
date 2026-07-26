@@ -79,7 +79,6 @@ def validate_with_schema(data: dict, schema_path: str) -> dict:
 ```
 
 **支持的Schema规范**：JSON Schema Draft-07、K8s CRD Schema、OpenAPI Schema。三种规范自动识别.
-**处理**: 解析能力2：JSON Schema校验的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 能力3：自动修复
 15类典型语法错误的自动修复规则：
 
@@ -97,7 +96,6 @@ def validate_with_schema(data: dict, schema_path: str) -> dict:
 | 截断 | 标记为不可修复 | 高（人工处理） |
 
 **Agent执行规则**：低风险自动修复；中风险修复后提示用户确认；高风险不修复，仅报告。修复前自动备份原文件到 `.bak`.
-**输出**: 返回能力3：自动修复的处理结果,包含执行状态码、结果数据和执行日志.
 ### 能力4：流式校验
 
 ```python
@@ -127,7 +125,6 @@ def stream_validate(json_path: str, expected_keys: list = None) -> dict:
 - 关键参数: `能力4：流式校验` 选项
 - 处理流程: 接收输入 -> 执行能力4：流式校验 -> 返回结果
 - 输入: 用户提供能力4：流式校验所需的参数和指令
-- 输出: 返回能力4：流式校验的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 能力5：持续监控
 ```python
@@ -168,12 +165,10 @@ observer.start()
 print("已启动JSON文件变更监控，按Ctrl+C停止")
 ```
 
-**处理**: 解析能力5：持续监控的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `能力5：持续监控` 选项
 - 处理流程: 接收输入 -> 执行能力5：持续监控 -> 返回结果
 - 输入: 用户提供能力5：持续监控所需的参数和指令
-- 输出: 返回能力5：持续监控的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 能力6：CI/CD集成
 
@@ -433,10 +428,9 @@ def auto_fix_json(content: str) -> dict:
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
 
-> 详细的输入输出格式请参考下方章节说明。
 直接对Agent说：
 # ...
-> "帮我校验 ./data 目录下所有JSON，按 user-schema.json 校验结构。"
+> "帮我校验 .json 校验结构。"
 # ...
 Agent会按本工具的批量校验模板输出：
 # ...
@@ -445,12 +439,12 @@ import json, glob, jsonschema
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 
-SCHEMA = json.loads(Path('user-schema.json').read_text(encoding='utf-8'))
+SCHEMA = json.json').read_text(encoding='utf-8'))
 
 def validate_one(json_path: str) -> dict:
     """单文件语法+Schema双重校验"""
     try:
-        data = json.loads(Path(json_path).read_text(encoding='utf-8'))
+        data = json.read_text(encoding='utf-8'))
     except json.JSONDecodeError as e:
         ret
 ```

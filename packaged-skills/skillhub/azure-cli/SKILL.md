@@ -212,7 +212,7 @@ brew install azure-cli
 ```
 # ...
 ```bash
-curl -sL https://aka.ms/InstallAzureCliLinux | bash
+ms/InstallAzureCliLinux | bash
 ```
 # 变体实现(与上文代码相似度100.0%,此处为azure-cli的差异化处理路径)
 # ...

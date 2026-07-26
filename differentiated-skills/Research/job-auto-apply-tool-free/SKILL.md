@@ -1,9 +1,8 @@
----
-slug: job-auto-apply-tool-free
+---slug: job-auto-apply-tool-free
 name: job-auto-apply-tool-free
 version: 1.0.0
 displayName: 求职自动申请
-summary: "轻量级求职自动化工具，支持多平台职位搜索与申请提交，自动生成求职信，适合个人求职者提升效率.。轻量级求职自动化工具，支持多平台职位搜索与申请提交，自动生成求职信，适合个人求职者提升效率."
+summary: "轻量级求职自动化工具，"
 license: Proprietary
 edition: free
 description: '轻量级求职自动化工具，支持多平台职位搜索与申请提交，自动生成求职信，适合个人求职者提升效率.
@@ -53,9 +52,7 @@ tools:
   - glob
   - grep
 homepage: ""
-category: "Knowledge"
----
-# 求职自动申请（免费版）
+category: "Knowledge"---# 求职自动申请（免费版）
 
 ## 概述
 
@@ -80,7 +77,6 @@ category: "Knowledge"
 ### 支持最多 2 个招聘平台
 支持最多 2 个招聘平台
 
-**输入**: 用户提供支持最多 2 个招聘平台所需的指令和必要参数.
 **处理**: 解析支持最多 2 个招聘平台的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回支持最多 2 个招聘平台的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -88,7 +84,6 @@ category: "Knowledge"
 ### 单日最多投递 10 个申请
 单日最多投递 10 个申请
 
-**输入**: 用户提供单日最多投递 10 个申请所需的指令和必要参数.
 **处理**: 解析单日最多投递 10 个申请的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回单日最多投递 10 个申请的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -96,7 +91,6 @@ category: "Knowledge"
 ### 不支持批量自动投递
 不支持批量自动投递
 
-**输入**: 用户提供不支持批量自动投递所需的指令和必要参数.
 **处理**: 解析不支持批量自动投递的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回不支持批量自动投递的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -104,7 +98,6 @@ category: "Knowledge"
 ### 不支持申请状态追踪
 不支持申请状态追踪
 
-**输入**: 用户提供不支持申请状态追踪所需的指令和必要参数.
 **处理**: 解析不支持申请状态追踪的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回不支持申请状态追踪的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -112,12 +105,10 @@ category: "Knowledge"
 ### 不支持投递效果分析
 不支持投递效果分析
 
-**输入**: 用户提供不支持投递效果分析所需的指令和必要参数.
 **处理**: 解析不支持投递效果分析的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回不支持投递效果分析的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**输入**: 用户提供已知限制所需的指令和必要参数.
 **处理**: 解析已知限制的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回已知限制的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级求职自动化、支持多平台职位搜、索与申请提交、适合个人求职者提、升效率等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -136,7 +127,6 @@ python job_search_apply.py \
   --dry-run
 # ...
 # 实际提交（需确认）
-python job_search_apply.py \
   --profile ~/job_profile.json \
   --title "Backend Engineer" \
   --platforms linkedin,indeed \
@@ -148,8 +138,6 @@ python job_search_apply.py \
 求职者想找远程工作机会.
 ```bash
 # 搜索远程职位
-python job_search_apply.py \
-  --profile ~/job_profile.json \
   --title "Frontend Developer" \
   --remote \
   --max-applications 5 \
@@ -161,8 +149,6 @@ python job_search_apply.py \
 毕业生首次求职，谨慎投递.
 ```bash
 # 使用确认模式逐个审核
-python job_search_apply.py \
-  --profile ~/job_profile.json \
   --title "Junior Developer" \
   --require-confirmation \
   --max-applications 3
@@ -218,8 +204,6 @@ vim ~/job_profile.json
 
 ```bash
 # 试运行搜索
-python job_search_apply.py \
-  --profile ~/job_profile.json \
   --title "Software Engineer" \
   --location "Remote" \
   --dry-run
@@ -312,13 +296,11 @@ Best regards,
 
 ```bash
 # 放宽搜索条件
-python job_search_apply.py \
   --title "Developer" \
   --location "Remote" \
   --dry-run
 # ...
 # 尝试不同关键词
-python job_search_apply.py \
   --title "Software Engineer" \
   --location "" \
   --dry-run
@@ -328,13 +310,12 @@ python job_search_apply.py \
 
 ```bash
 # 检查资料完整性
-python job_search_apply.py --validate-profile
+py --validate-profile
 # ...
 # 验证平台连接
-python job_search_apply.py --check-platforms
+py --check-platforms
 # ...
 # 使用试运行模式测试
-python job_search_apply.py --dry-run
 ```
 
 ### 求职信质量不佳
@@ -344,14 +325,14 @@ python job_search_apply.py --dry-run
 vim ~/job_profile.json
 # ...
 # 自定义求职信模板
-python job_search_apply.py --cover-letter-template custom_template.txt
+py --cover-letter-template custom_template.txt
 ```
 
 ### 匹配分数过低
 
 ```bash
 # 降低匹配阈值（谨慎使用）
-python job_search_apply.py --min-match-score 0.6
+py --min-match-score 0.6
 # ...
 # 优化资料中的技能关键词
 # 确保技能与目标职位匹配

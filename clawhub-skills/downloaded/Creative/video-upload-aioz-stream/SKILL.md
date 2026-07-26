@@ -38,7 +38,7 @@ Example user prompt:
 
 ### Option 2: Custom Upload (Advanced)
 
-Creates a video object with full encoding configuration including quality presets (240p, 360p, 480p, 720p, 1080p, 1440p, 2160p, 4320p), codecs (h264, h265), bitrates, container types, tags, metadata, etc. Then uploads the file.
+Creates a video object with full encoding configuration including quality presets (240p, 360p, 480p, 720p, 1080p, 1440p, 2160p, 4320p), codecs (h264, h265), bitrates, container types, tags, metadata, etc.
 
 Example user prompt:
 
@@ -63,7 +63,7 @@ curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
 **Custom (with encoding config):**
 
 ```bash
-curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
+attoaioz.cyou/api/videos/create' \
   -H 'stream-public-key: PUBLIC_KEY' \
   -H 'stream-secret-key: SECRET_KEY' \
   -H 'Content-Type: application/json' \
@@ -308,7 +308,7 @@ Specify only `audio_config` without `video_config`:
 Before uploading, estimate the transcoding cost:
 
 ```bash
-curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/cost?duration=60&qualities=360p,1080p' \
+attoaioz.cyou/api/videos/cost?duration=60&qualities=360p,1080p' \
   -H 'stream-public-key: PUBLIC_KEY' \
   -H 'stream-secret-key: SECRET_KEY'
 ```
@@ -318,7 +318,7 @@ curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/cost?duration=60&qualitie
 After creating a video, upload a custom thumbnail:
 
 ```bash
-curl -s -X POST "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/thumbnail" \
+attoaioz.cyou/api/videos/VIDEO_ID/thumbnail" \
   -H 'stream-public-key: PUBLIC_KEY' \
   -H 'stream-secret-key: SECRET_KEY' \
   -F 'file=@/path/to/thumbnail.jpg'
@@ -348,7 +348,7 @@ curl -s -X PATCH "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID" \
 Retrieve all videos with filtering:
 
 ```bash
-curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos' \
+attoaioz.cyou/api/videos' \
   -H 'stream-public-key: PUBLIC_KEY' \
   -H 'stream-secret-key: SECRET_KEY' \
   -H 'Content-Type: application/json' \

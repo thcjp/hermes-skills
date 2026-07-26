@@ -1,9 +1,8 @@
----
-slug: "doubao-assistant"
+---slug: "doubao-assistant"
 name: "doubao-assistant"
 version: 1.0.1
 displayName: "豆包助手(专业版)"
-summary: "全功能豆包大模型集成平台，支持流式响应、函数调用、知识库与批量处理。。豆包助手专业版是面向团队与生产环境的全功能豆包大模型集成平台，在免费版基础上新增流式响应、函数调用、知识库检索增强、批量"
+summary: "全功能豆包大模型集成平"
 summary_zh: "全功能豆包大模型集成平台，支持流式响应、函数调用、知识库与批量处理。。豆包助手专业版是面向团队与生产环境的全功能豆包大模型集成平台，在免费版基础上新增流式响应、函数调用、知识库检索增强、批量"
 license: "MIT"
 edition: "pro"
@@ -33,9 +32,7 @@ tools:
   - glob
   - grep
 homepage: ""
-category: "Automation"
----
-# 豆包助手(专业版)
+category: "Automation"---# 豆包助手(专业版)
 
 ## 付费版专享能力
 
@@ -136,7 +133,7 @@ const tools = [
 async function chatWithTools(message, history) {
   const messages = [...history, { role: 'user', content: message }];
 // ...
-  const resp = await fetch('https://api.example.com/v1/chat/completions', {
+example.com/v1/chat/completions', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ model: 'doubao-pro', messages, tools })
@@ -207,13 +204,12 @@ ${context}`;
     { role: 'user', content: question }
   ];
 // ...
-  const resp = await fetch('https://api.example.com/v1/chat/completions', {
+example.com/v1/chat/completions', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ model: 'doubao-pro', messages })
   });
 // ...
-  const data = await resp.json();
   return {
     answer: data.choices[0].message.content,
     sources: relevantDocs.map(d => ({ title: d.title, score: d.score }))
@@ -260,7 +256,6 @@ async function batchProcess(tasks, concurrency = 5) {
 }
 ```
 
-**输入**: 用户提供模块四：批量并发管理（专业版独有）所需的指令和必要参数.
 ### 模块五：系统提示词模板库（专业版独有）
 | 模板名称 | 系统提示词要点 | 适用场景 |
 |:---:|:---:|:---:|
@@ -270,7 +265,6 @@ async function batchProcess(tasks, concurrency = 5) {
 | 翻译专家 | 保留术语、适配文化、自然流畅 | 多语言翻译 |
 | 数据分析 | 输出结论与建议、标注数据来源 | 报表解读 |
 
-**输入**: 用户提供模块五：系统提示词模板库（专业版独有）所需的指令和必要参数.
 ### 模块六：用量与会话分析（专业版独有）
 ```javascript
 // 会话级用量统计
@@ -298,7 +292,7 @@ class SessionAnalytics {
   }
 // ...
   getReport(sessionId) {
-    const stats = this.sessions.get(sessionId);
+sessions.get(sessionId);
     if (!stats) return null;
     return {
       ...stats,

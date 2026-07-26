@@ -71,14 +71,14 @@ category: "Creative"
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
@@ -136,7 +136,7 @@ EOF
 在设计多个 UI 组件时，避免每次都重复说明自己的审美要求.
 ```python
 # 模拟偏好读取与应用流程
-def load_preferences(profile_path="~/.design-preferences/profile.md"):
+def load_preferences(profile_path="~/.md"):
     """加载用户视觉偏好"""
     prefs = {
         "aesthetic": "暗色系 / 高对比",
@@ -185,7 +185,6 @@ echo "弱化文字: #8892b0"
 ### 第三步：查看已学习的偏好
 
 ```bash
-cat ~/.design-preferences/profile.md
 ```
 
 ### 第四步：手动修正偏好
@@ -194,9 +193,7 @@ cat ~/.design-preferences/profile.md
 
 ```bash
 # 用你喜欢的编辑器打开
-code ~/.design-preferences/profile.md
 # 或
-vim ~/.design-preferences/profile.md
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -241,7 +238,6 @@ medium_scope:                # 支持的媒介
   - graphic
 storage:
   type: markdown
-  path: ~/.design-preferences/profile.md
 ```
 
 ## 最佳实践
@@ -273,7 +269,7 @@ A: 直接编辑偏好文件，删除或修改对应条目即可。工具不会�
 A: 免费版聚焦 UI 和图形设计两类媒介。视频、印刷等多媒介支持请升级至专业版.
 ### Q: 偏好数据存储在哪里？
 
-A: 默认存储在 `~/.design-preferences/profile.md`，可自定义路径。所有数据保留在本地.
+A: 默认存储在 `~/.md`，可自定义路径。所有数据保留在本地.
 ### Q: 可以在多个项目间共享偏好吗？
 
 A: 可以。复制偏好文件到新项目目录即可。专业版支持多项目偏好管理与团队共享.

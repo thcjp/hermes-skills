@@ -1,5 +1,4 @@
----
-slug: "tool-finder"
+---slug: "tool-finder"
 name: "tool-finder"
 version: 1.7.1
 displayName: "工具"
@@ -7,7 +6,7 @@ summary: "统一搜索 SkillHub skills 和 Smithery 协议 servers 的工具发�
 summary_zh: "统一搜索 SkillHub skills 和 Smithery 协议 servers 的工具发现引擎。支持评分排序、推荐规则、来源标识。优先原词搜索，扩展补充。**自动触发：看到\""
 license: "MIT"
 description: |-
-  统一搜索 SkillHub skills 和 Smithery 协议 servers 的工具发现引擎。支持评分排序、推荐规则、来源标识。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
+  统一搜索 SkillHub skills 和 Smithery 协议 servers 的工具发现引擎。支持评分排序、推荐规则、来源标识。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。不适用于黑帽SEO手段.
 tags:
   - Research
   - 工具
@@ -23,9 +22,7 @@ tools:
   - glob
   - grep
 homepage: ""
-category: "Automation"
----
-# Tool Finder
+category: "Automation"---# Tool Finder
 
 ## 付费版专享能力
 
@@ -76,8 +73,6 @@ Smithery 协议 安装需指定客户端（claude-code/cursor/vscode 等）.
 1. 确认运行环境满足依赖说明中的要求
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
-
-> 详细的输入输出格式请参考下方章节说明。
 
 ## 输入格式
 
@@ -265,7 +260,6 @@ A:
 在 `AGENTS.md` 中添加：
 
 ```markdown
-### 🔍 Tool Discovery — Use `tool-finder` First!(补充)
 # ...
 **When user asks to find/search/install skills or MCPs:**
 1. ALWAYS use `tool-finder` skill first

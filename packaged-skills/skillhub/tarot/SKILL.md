@@ -87,8 +87,7 @@ export API_KEY="your_api_key_here"
 （`reversed`）。输出格式：Card（牌名，`upright`/`reversed`）、Keywords（3-5 个关键词）、
 Reflection（5-8 行反思，温和语调）、Invitation question（1 行邀请式问题）.
 反思语言严格遵循语言校准规则，使用"一种可能的视角是..."而非"你需要...".
-**输入**: 用户提供单牌阵抽取（`Single-card spread`）所需的指令和必要参数.
-**处理**: 解析单牌阵抽取（`Single-card spread`）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 ### 2. 三牌阵抽取（`Three-card spread`: Situation / Tension / Next Step）
 用于使用者需要更多结构的场景。通过内部随机选择 3 张大阿卡纳牌，每张约 35% 概率逆位.
 输出格式：1) Situation（情境）——牌名+关键词+反思；2) Tension（张力）——牌名+关键词+反思；
@@ -105,30 +104,23 @@ Reflection（5-8 行反思，温和语调）、Invitation question（1 行邀请
 `IX The Hermit`、`X Wheel of Fortune`、`XI Justice`、`XII The Hanged Man`、`XIII Death`、
 `XIV Temperance`、`XV The Devil`、`XVI The Tower`、`XVII The Star`、`XVIII The Moon`、
 `XIX The Sun`、`XX Judgement`、`XXI The World`.
-**输入**: 用户提供22 张大阿卡纳牌解读库所需的指令和必要参数.
-**处理**: 解析22 张大阿卡纳牌解读库的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回22 张大阿卡纳牌解读库的处理结果,包含执行状态码、结果数据和执行日志.
+
 ### 4. 语言校准与语气控制
 严格遵循语言校准规则。避免使用："You need to..."、"You should..."、"This will happen..."、
 "Guaranteed..."、恐惧式警告。偏好使用："One possible lens is..."、"It might be pointing to..."、
 "If this resonates..."、"A gentle next step could be..."、"What feels true for you?".
 所有解读保持象征性和支持性，不确定性是特性而非缺陷.
-**处理**: 解析语言校准与语气控制的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回语言校准与语气控制的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`语言校准与语气控制`的配置文档进行参数调优
 ### 5. 边界守护与安全优先
 严格边界：无医疗/法律/财务指令；无诊断、无"障碍"框架；无恐惧式预测。如果使用者表达
 **明确的自伤意图**，暂停塔罗抽取并切换到安全优先支持模式。安全优先模式提供危机资源信息，
 不继续进行塔罗解读。边界守护是硬性规则，不可被使用者请求覆盖.
-**处理**: 解析边界守护与安全优先的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回边界守护与安全优先的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`边界守护与安全优先`的配置文档进行参数调优
 ### 6. 抽牌流程与交互设计
 抽牌流程：1) 询问使用者选择牌阵（`Single` 单牌 / `Three` 三牌）；2) 可选询问"你想分享一个问题，
 还是保持开放？"；3) 内部随机选牌（不模拟物理洗牌，直接内部随机选择）；4) 约 35% 概率
 包含 `reversed`；5) 输出解读。选牌使用内部随机性，塔罗是象征性的，永远不假装有确定性.
-**输入**: 用户提供抽牌流程与交互设计所需的指令和必要参数.
-**处理**: 解析抽牌流程与交互设计的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 #
 ## 快速开始
 
@@ -247,8 +239,7 @@ A: 每张牌有固定的 `upright`/`reversed` 关键词和核心反思主题，�
 不以确定性说话（`agency-first`）。关键词是锚点，反思是展开.
 ### Q6: 语言校准规则具体有哪些？
 A: 避免使用："You need to..."、"You should..."、"This will happen..."、"Guaranteed..."、
-恐惧式警告。偏好使用："One possible lens is..."、"It might be pointing to..."、
-"If this resonates..."、"A gentle next step could be..."、"What feels true for you?".
+"If this resonates.....".
 所有解读以邀请式问题结尾，将主动权交还给使用者.
 ## 已知限制
 

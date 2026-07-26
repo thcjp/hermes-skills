@@ -75,12 +75,12 @@ category: "Knowledge"
 | API 接口 | 否 | REST API |
 | 优先支持 | 社区 | 优先响应 |
 
-**输入**: 用户提供功能对比所需的指令和必要参数.
 **处理**: 解析功能对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能对比的响应数据,包含状态码、结果和日志.
 ### PRO 版独有功能
 
-#### 1. 50+ 新闻源监控
+#
+### 1. 50+ 新闻源监控
 
 ```bash
 python （请参考skill目录中的脚本文件） \
@@ -90,7 +90,8 @@ python （请参考skill目录中的脚本文件） \
 ```
 
 支持从配置文件批量加载新闻源，并行抓取，统一归档.
-#### 2. 定时自动更新
+#
+### 2. 定时自动更新
 
 ```bash
 # 配置定时抓取任务
@@ -101,7 +102,8 @@ python （请参考skill目录中的脚本文件） \
 ```
 
 每 2 小时自动增量抓取最新新闻，保持数据实时性.
-#### 3. 关键词告警与推送
+#
+### 3. 关键词告警与推送
 
 ```bash
 # 配置关键词告警
@@ -113,7 +115,8 @@ python （请参考skill目录中的脚本文件） \
 ```
 
 监控指定关键词，发现匹配新闻时立即通过 Slack 和邮件推送告警.
-#### 4. 舆情趋势分析
+#
+### 4. 舆情趋势分析
 
 ```bash
 # 生成舆情分析报告
@@ -124,14 +127,14 @@ python （请参考skill目录中的脚本文件） \
 ```
 
 分析指定时间段内的新闻情感倾向，生成趋势图表和摘要.
-**输入**: 用户提供PRO 版独有功能所需的指令和必要参数.
+
 **处理**: 解析PRO 版独有功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回PRO 版独有功能的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -233,13 +236,11 @@ sources:
     url: https://www.jiqizhixin.com
     category: tech
   - name: 观察者网
-    url: https://www.guancha.cn
     category: military
 EOF
 # ...
 # 执行多源抓取
 python （请参考skill目录中的脚本文件） \
-  --sources-file sources.yaml \
   --export json \
   --output news.json
 ```
@@ -254,16 +255,13 @@ python （请参考skill目录中的脚本文件） \
 sources:
   tech:
     - name: 36氪
-      url: https://36kr.com/information/tech
+com/information/tech
     - name: 机器之心
-      url: https://www.jiqizhixin.com
     - name: TechCrunch
       url: https://techcrunch.com
   military:
     - name: 观察者网
-      url: https://www.guancha.cn
     - name: Defense News
-      url: https://www.defensenews.com
 # ...
 monitoring:
   brand_keywords:

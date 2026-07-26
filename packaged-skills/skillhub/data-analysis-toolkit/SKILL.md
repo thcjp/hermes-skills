@@ -1,9 +1,8 @@
----
-slug: "data-analysis-toolkit"
+---slug: "data-analysis-toolkit"
 name: "data-analysis-toolkit"
 version: "1.0.1"
 displayName: "数据工具箱"
-summary: "提供Python数据清洗、统计分析及可视化建议，辅助业务和科研数据的快速处理与分析。。提供Python数据清洗、统计分析及可视化建议，辅助业务和科研数据的快速处理与分析. 核心能力:数据清洗"
+summary: "提供Python数据清"
 summary_zh: "提供Python数据清洗、统计分析及可视化建议，辅助业务和科研数据的快速处理与分析。。提供Python数据清洗、统计分析及可视化建议，辅助业务和科研数据的快速处理与分析. 核心能力:数据清洗"
 license: "MIT"
 description: |-
@@ -24,9 +23,7 @@ tools:
   - exec
   - glob
 homepage: ""
-category: "Research"
----
-# Python Data Analysis
+category: "Research"---# Python Data Analysis
 
 ## 核心能力
 

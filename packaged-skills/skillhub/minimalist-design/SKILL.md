@@ -71,9 +71,7 @@ python3 generate_components.py \
 ### 多主题系统
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供多主题系统所需的指令和必要参数。
-**处理**: 解析多主题系统的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回多主题系统的处理结果,包含执行状态码、结果数据和执行日志。### 设计令牌多平台导出
+### 设计令牌多平台导出
 ```python
 export_config = {
     "source": "design-tokens.yml",
@@ -110,13 +108,9 @@ doc_config = {
 }
 ```
 
-**输入**: 用户提供设计系统文档自动生成所需的指令和必要参数。
-**处理**: 解析设计系统文档自动生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 视觉一致性审计
-> 详细代码示例已移至 `references/detail.md`
+### 视觉一致性审计
 
-**输入**: 用户提供视觉一致性审计所需的指令和必要参数。
-**处理**: 解析视觉一致性审计的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回视觉一致性审计的处理结果,包含执行状态码、结果数据和执行日志。### Framer Motion高级动效
+### Framer Motion高级动效
 ```javascript
 // 高级动效系统
 const motionSystem = {
@@ -153,10 +147,6 @@ const motionSystem = {
 };
 ```
 
-**输入**: 用户提供Framer Motion高级动效所需的指令和必要参数。
-**处理**: 解析Framer Motion高级动效的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回Framer Motion高级动效的处理结果,包含执行状态码、结果数据和执行日志。
-
 #
 ## 快速开始
 
@@ -178,14 +168,11 @@ python3 init_design_system.py \
   --themes "light,dark,brand" \
   --output ./design-system/
 # .
-python3 generate_components.py \
-  --config components.yml \
   --output ./design-system/components/ \
   --with-docs \
   --with-tests \
   --with-stories
 # .
-python3 export_tokens.py \
   --source design-tokens.yml \
   --formats "css,tailwind,figma,scss,json"
 # .
@@ -261,13 +248,9 @@ jobs:
       - uses: actions/checkout@v3
       - name: Export Tokens
         run: |
-          python3 export_tokens.py \
-            --source design-tokens.yml \
             --formats "css,tailwind,figma"
       - name: Generate Components
         run: |
-          python3 generate_components.py \
-            --config components.yml \
             --output ./src/components/
       - name: Audit Design
         run: |
@@ -276,15 +259,12 @@ jobs:
             --report ./audit/
       - name: Generate Docs
         run: |
-          python3 generate_docs.py \
-            --output ./docs/
 ```
 
 ## 使用流程
 
 ### 步骤一:初始化设计系统
 ```bash
-python3 init_design_system.py \
   --name "MyDesignSystem" \
   --base-theme "light" \
   --output ./design-system/
@@ -292,8 +272,6 @@ python3 init_design_system.py \
 
 ### 步骤二:生成组件库
 ```bash
-python3 generate_components.py \
-  --config components.yml \
   --output ./design-system/components/ \
   --with-docs \
   --with-tests
@@ -301,9 +279,8 @@ python3 generate_components.py \
 
 ### 步骤三:审计与文档
 ```bash
-python3 audit_design.py --scan ./src/ --report ./audit/
+py --scan ./src/ --report ./audit/
 # .
-python3 generate_docs.py --output ./docs/
 ```
 
 #
@@ -374,8 +351,6 @@ python3 generate_docs.py --output ./docs/
 ## 案例展示
 
 ### 企业级设计令牌
-
-> 详细代码示例已移至 `references/detail.md`
 
 ### 组件生成配置
 ```yaml

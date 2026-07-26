@@ -336,13 +336,12 @@ export const auth = betterAuth({
   },
   socialProviders: {
     google: {
-      clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+env.GOOGLE_CLIENT_ID!,
       scope: ["openid", "email", "profile"],
     },
     github: {
-      clientId: process.env.GITHUB_CLIENT_ID!,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET!,
+env.GITHUB_CLIENT_ID!,
+env.GITHUB_CLIENT_SECRET!,
     },
   },
   plugins: [
@@ -388,7 +387,6 @@ export const auth = betterAuth({
 // ...
 // 强制2FA中间件
 export async function requireAdmin2FA(req: Request) {
-  const session = await auth.api.getSession({ headers: req.headers });
   if (!session) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -478,7 +476,7 @@ const samlProviders: Record<string, SAMLProvider> = {
     },
   },
   "company-b.com": {
-    entityId: "https://auth.ourapp.com/saml/company-b",
+ourapp.com/saml/company-b",
     entryPoint: "https://company-b.okta.com/app/ourapp/def456/sso/saml",
     cert: process.env.SAML_CERT_COMPANY_B!,
     signatureAlgorithm: "sha256",
@@ -652,9 +650,8 @@ export const auth = betterAuth({
 // 权限检查中间件
 export function requirePermission(permission: string) {
   return async (req: Request, ctx: { params: { orgId: string } }) => {
-    const session = await auth.api.getSession({ headers: req.headers });
     if (!session) {
-      return Response.json({ error: "Unauthorized" }, { status: 401 });
+json({ error: "Unauthorized" }, { status: 401 });
     }
 // ...
     const orgId = ctx.params.orgId;
@@ -664,7 +661,7 @@ export function requirePermission(permission: string) {
     });
 // ...
     if (!membership) {
-      return Response.json({ error: "Not a member" }, { status: 403 });
+json({ error: "Not a member" }, { status: 403 });
     }
 // ...
     // 检查权限（支持通配符）
@@ -683,7 +680,6 @@ export function requirePermission(permission: string) {
         resource: req.url,
         timestamp: new Date(),
       });
-      return Response.json(
         { error: "Forbidden", required: permission },
         { status: 403 }
       );
@@ -697,13 +693,12 @@ export function requirePermission(permission: string) {
 // app/api/auth/switch-organization/route.ts
 export async function POST(req: Request) {
   const { orgId } = await req.json();
-  const session = await auth.api.getSession({ headers: req.headers });
 // ...
   // 验证用户是该组织成员
   const membership = await db.query.organizationMembers.findFirst({
     where: and(
       eq(organizationMembers.userId, session.user.id),
-      eq(organizationMembers.organizationId, orgId)
+organizationId, orgId)
     ),
   });
 // ...
@@ -817,7 +812,6 @@ export async function verifyBackupCode(
 // 4. 启用2FA时生成备份码
 // app/api/auth/2fa/enable/route.ts
 export async function POST(req: Request) {
-  const session = await auth.api.getSession({ headers: req.headers });
   const { totpCode, secret } = await req.json();
 // ...
   // 验证TOTP码
@@ -888,7 +882,7 @@ export async function POST(req: Request) {
     .where(eq(twoFactor.userId, user.id));
 // ...
   // 4. 创建会话
-  const session = await auth.api.createSession({ userId: user.id });
+api.createSession({ userId: user.id });
 // ...
   // 5. 安全提醒
   await sendSecurityEmail(user.email, {
@@ -986,7 +980,6 @@ export async function POST(req: Request) {
   }
 // ...
   // 3. 创建会话
-  const session = await auth.api.createSession({ userId: user.id });
   const refreshToken = await auth.api.generateRefreshToken({ userId: user.id });
 // ...
   // 4. 注册设备
@@ -1050,7 +1043,7 @@ export async function POST(req: Request) {
   }
 // ...
   // 签发新的Access Token
-  const session = await auth.api.createSession({ userId: device.userId });
+api.createSession({ userId: device.userId });
 // ...
   // 更新设备活跃时间
   await db.update(devices)
@@ -1058,7 +1051,6 @@ export async function POST(req: Request) {
     .where(eq(devices.deviceId, deviceId));
 // ...
   return Response.json({
-    accessToken: session.token,
     expiresIn: 900,
   });
 }
@@ -1066,11 +1058,10 @@ export async function POST(req: Request) {
 // 远程登出某台设备
 // app/api/auth/mobile/revoke-device/route.ts
 export async function POST(req: Request) {
-  const session = await auth.api.getSession({ headers: req.headers });
   const { deviceId } = await req.json();
 // ...
   // 验证设备属于当前用户
-  const device = await db.query.devices.findFirst({
+query.devices.findFirst({
     where: and(
       eq(devices.userId, session.user.id),
       eq(devices.deviceId, deviceId),

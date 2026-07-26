@@ -197,10 +197,9 @@ LEFT JOIN read_csv_auto('customers.csv') c
 COPY (SELECT * FROM sales) TO 'output.csv' (HEADER, DELIMITER ',');
 # ...
 -- Parquet(列式存储,压缩)
-COPY (SELECT * FROM sales) TO 'output.parquet' (FORMAT PARQUET);
+parquet' (FORMAT PARQUET);
 # ...
 -- JSON
-COPY (SELECT * FROM sales) TO 'output.json';
 ```
 
 ### 5. Pandas 集成
@@ -317,7 +316,6 @@ SELECT
   count(*) AS total_requests,
   count(CASE WHEN status >= 400 THEN 1 END) AS error_count,
   ROUND(count(CASE WHEN status >= 400 THEN 1 END) * 100.0 / count(*), 2) AS error_rate_pct
-FROM read_csv_auto('app_logs.csv')
 GROUP BY page
 HAVING count(*) > 100
 ORDER BY error_rate_pct DESC;
@@ -327,7 +325,6 @@ SELECT
   date_trunc('hour', timestamp) AS hour,
   count(*) AS requests,
   avg(duration_ms) AS avg_duration
-FROM read_csv_auto('app_logs.csv')
 GROUP BY hour
 ORDER BY hour;
 ```
@@ -363,7 +360,6 @@ SELECT
   o.order_date,
   o.quantity,
   o.quantity * p.price AS revenue
-FROM read_csv_auto('orders.csv') o
 LEFT JOIN read_parquet('customers.parquet') c
   ON o.customer_id = c.customer_id
 LEFT JOIN read_json_auto('products.json') p
@@ -552,10 +548,8 @@ SELECT
   p.category,
   p.unit_price,
   o.quantity * p.unit_price AS revenue
-FROM read_csv_auto('orders.csv') o
 LEFT JOIN read_parquet('customers/part-*.parquet') c
   ON o.customer_id = c.customer_id
-LEFT JOIN read_json_auto('products.json') p
   ON o.product_id = p.product_id;
 # ...
 -- 2. 区域-品类销售汇总(含小计)
@@ -629,7 +623,7 @@ COPY (
       COUNT(DISTINCT order_id) AS order_count,
       SUM(revenue) AS total_revenue,
       ROUND(AVG(revenue), 2) AS avg_order_value,
-      ROUND(SUM(revenue) * 100.0 / SUM(SUM(revenue)) OVER (), 2) AS revenue_share_pct
+0 / SUM(SUM(revenue)) OVER (), 2) AS revenue_share_pct
     FROM sales_detail
     GROUP BY region, category
   )
@@ -674,8 +668,8 @@ SELECT
   COUNT(*) AS request_count,
   ROUND(AVG(duration_ms), 2) AS avg_duration_ms,
   ROUND(percentile_cont(0.50) WITHIN GROUP (ORDER BY duration_ms), 2) AS p50_ms,
-  ROUND(percentile_cont(0.95) WITHIN GROUP (ORDER BY duration_ms), 2) AS p95_ms,
-  ROUND(percentile_cont(0.99) WITHIN GROUP (ORDER BY duration_ms), 2) AS p99_ms,
+95) WITHIN GROUP (ORDER BY duration_ms), 2) AS p95_ms,
+99) WITHIN GROUP (ORDER BY duration_ms), 2) AS p99_ms,
   MAX(duration_ms) AS max_duration_ms
 FROM read_parquet('app_logs.parquet')
 WHERE status_code < 400
@@ -693,7 +687,6 @@ SELECT
   ROUND(COUNT(CASE WHEN status_code >= 400 THEN 1 END) * 100.0 / COUNT(*), 2) AS error_rate_pct,
   -- 最常见错误码
   MODE() WITHIN GROUP (ORDER BY status_code) AS most_common_error
-FROM read_parquet('app_logs.parquet')
 GROUP BY path, method
 HAVING COUNT(CASE WHEN status_code >= 400 THEN 1 END) > 0
 ORDER BY error_rate_pct DESC
@@ -706,7 +699,6 @@ WITH hourly_stats AS (
     COUNT(*) AS request_count,
     ROUND(AVG(duration_ms), 2) AS avg_duration_ms,
     COUNT(CASE WHEN status_code >= 500 THEN 1 END) AS server_errors
-  FROM read_parquet('app_logs.parquet')
   GROUP BY hour
 ),
 stats_baseline AS (
@@ -739,9 +731,8 @@ SELECT
   path,
   ROUND(AVG(response_size) / 1024.0, 2) AS avg_size_kb,
   ROUND(MAX(response_size) / 1024.0, 2) AS max_size_kb,
-  ROUND(percentile_cont(0.95) WITHIN GROUP (ORDER BY response_size) / 1024.0, 2) AS p95_size_kb,
+95) WITHIN GROUP (ORDER BY response_size) / 1024.0, 2) AS p95_size_kb,
   COUNT(CASE WHEN response_size > 1048576 THEN 1 END) AS oversized_count
-FROM read_parquet('app_logs.parquet')
 GROUP BY path
 HAVING COUNT(CASE WHEN response_size > 1048576 THEN 1 END) > 0
 ORDER BY avg_size_kb DESC;
@@ -759,7 +750,6 @@ COPY (
         WHEN COUNT(CASE WHEN status_code >= 500 THEN 1 END) > 10 THEN '错误激增'
         ELSE '正常'
       END AS anomaly_flag
-    FROM read_parquet('app_logs.parquet')
     GROUP BY hour
   )
   WHERE anomaly_flag != '正常'
@@ -954,13 +944,12 @@ SELECT
   ROUND(AVG(temperature), 2) AS avg_temp,
   ROUND(MIN(temperature), 2) AS min_temp,
   ROUND(MAX(temperature), 2) AS max_temp,
-  ROUND(percentile_cont(0.95) WITHIN GROUP (ORDER BY temperature), 2) AS p95_temp,
+95) WITHIN GROUP (ORDER BY temperature), 2) AS p95_temp,
   ROUND(AVG(humidity), 2) AS avg_humidity,
   ROUND(AVG(pressure), 2) AS avg_pressure,
   ROUND(AVG(battery_level), 2) AS avg_battery,
   COUNT(*) AS sample_count,
   COUNT(CASE WHEN temperature > 80 OR temperature < -20 THEN 1 END) AS anomaly_count
-FROM read_parquet('iot_sensors.parquet')
 GROUP BY sensor_id, date_trunc('hour', timestamp);
 # ...
 -- 验证降采样效果
@@ -969,7 +958,6 @@ SELECT
   (SELECT COUNT(*) FROM sensor_hourly) AS downsampled_rows,
   ROUND(
     (SELECT COUNT(*) FROM sensor_hourly) * 100.0 / 
-    (SELECT COUNT(*) FROM read_parquet('iot_sensors.parquet')), 4
   ) AS compression_ratio_pct;
 # ...
 -- 4. 异常检测(基于3σ规则)
@@ -1049,7 +1037,7 @@ COPY (
         WHEN h.anomaly_count > 100 THEN '高频异常'
       END AS anomaly_type
     FROM sensor_hourly h
-    JOIN temp_stats s ON h.sensor_id = s.sensor_id
+sensor_id = s.sensor_id
     WHERE h.avg_temp > s.mean_temp + 3 * s.std_temp
        OR h.avg_temp < s.mean_temp - 3 * s.std_temp
        OR h.anomaly_count > 100

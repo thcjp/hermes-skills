@@ -65,9 +65,7 @@ export API_KEY="your_api_key_here"
 验证技能来源的可靠性。回答 5 个关键问题：技能从哪里来（SkillHub / GitHub / 其他）？
 作者是否知名/可信？下载量/星标数是多少？最后更新时间？是否有其他 Agent 的评价？
 基础版支持手动来源验证，不包含 GitHub API 自动查询命令.
-**输入**: 用户提供来源检查（Source Check）所需的指令和必要参数.
-**处理**: 解析来源检查（Source Check）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回来源检查（Source Check）的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+
 - 参考`来源检查（Source Check）`的配置文档进行参数调优
 ### 2. 强制代码审查（Code Review - MANDATORY）
 读取技能中的所有文件，逐一检查 RED FLAGS 清单。发现以下任何一项立即拒绝安装：
@@ -75,7 +73,6 @@ export API_KEY="your_api_key_here"
 读取 `~/.ssh`、`~/.aws`、`~/.config` 路径而无明确理由；访问 `MEMORY.md`、`USER.md`、
 `SOUL.md`、`IDENTITY.md` 等身份文件；使用 `eval()` 或 `exec()` 处理外部输入；
 修改工作区外的系统文件；向 IP 地址而非域名发起网络调用；使用混淆代码.
-**输出**: 返回强制代码审查（Code Review - MANDATORY）的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. 基础审查报告生成
 生成基础审查报告，包含：技能名称、来源、作者、版本；RED FLAGS 列表（None 或具体列表）；
 基础安装建议（SAFE TO INSTALL / DO NOT INSTALL）。基础版不包含风险分级（LOW/MEDIUM/HIGH/EXTREME）

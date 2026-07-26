@@ -220,7 +220,6 @@ git merge --abort
 
 ```bash
 git rebase main
-# CONFLICT (content): Merge conflict in src/index.js
 
 # 解决冲突
 git add src/index.js
@@ -324,21 +323,18 @@ git diff main..feature/branch --stat
 ```bash
 # 用户信息
 git config --global user.name "Your Name"
-git config --global user.email "you@example.com"
+email "you@example.com"
 
 # 默认分支名
 git config --global init.defaultBranch main
 
 # 行尾处理
 git config --global core.autocrlf input   # macOS/Linux
-git config --global core.autocrlf true    # Windows
+autocrlf true    # Windows
 
 # 别名
 git config --global alias.co checkout
-git config --global alias.br branch
-git config --global alias.ci commit
-git config --global alias.st status
-git config --global alias.lg "log --oneline --graph --all"
+lg "log --oneline --graph --all"
 
 # Pull 默认使用 rebase
 git config --global pull.rebase true

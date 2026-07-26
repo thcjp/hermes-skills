@@ -72,7 +72,6 @@ results = translator.translate_directory(
 | JSON | 翻译value，保留key | i18n资源文件 |
 | PO/POT | 翻译msgid对应的msgstr | GNU gettext国际化 |
 
-**输入**: 用户提供批量文档翻译（专业版独有）所需的指令和必要参数.
 ### 2. 自定义术语库管理（专业版独有）
 通过YAML格式管理术语库，支持团队共享与版本控制：
 
@@ -85,8 +84,6 @@ text = "Configure the Dashboard and API Gateway in your Workspace."
 result = translator.translate(text, source="en", target="zh")
 ```
 
-**输入**: 用户提供自定义术语库管理（专业版独有）所需的指令和必要参数.
-**处理**: 解析自定义术语库管理（专业版独有）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 3. 翻译记忆库TM（专业版独有）
 复用历史翻译，提升一致性与效率：
 
@@ -103,7 +100,6 @@ translator.save_tm("translation_memory.tmx")
 | 模糊匹配 | 75-99% | 复用并微调（如数字、标点差异） |
 | 新翻译 | <75% | 调用LLM翻译，并存入记忆库 |
 
-**输入**: 用户提供翻译记忆库TM（专业版独有）所需的指令和必要参数.
 ### 4. 多语言互译（专业版独有）
 支持8种语言的双向互译：
 
@@ -131,8 +127,6 @@ for lang, text in texts.items():
     print(f"{lang} → zh: {result}")
 ```
 
-**输入**: 用户提供多语言互译（专业版独有）所需的指令和必要参数.
-**处理**: 解析多语言互译（专业版独有）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 5. 文档级上下文记忆（专业版独有）
 跨段落保持翻译一致性，理解文档全局上下文：
 
@@ -145,8 +139,6 @@ result = translator.translate_document(
 )
 ```
 
-**输入**: 用户提供文档级上下文记忆（专业版独有）所需的指令和必要参数.
-**处理**: 解析文档级上下文记忆（专业版独有）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `文档级上下文记忆（专业版独有）` 选项
 
@@ -169,11 +161,6 @@ legal_text = "The parties hereto agree to the terms and conditions set forth her
 result = translator.translate(legal_text, source="en", target="zh")
 ```
 
-**输入**: 用户提供领域专用术语库（专业版独有）所需的指令和必要参数.
-**处理**: 解析领域专用术语库（专业版独有）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输入**: 用户提供API集成与CI/CD自动化（专业版独有）所需的指令和必要参数.
-**处理**: 解析API集成与CI/CD自动化（专业版独有）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回API集成与CI/CD自动化（专业版独有）的处理结果,包含执行状态码、结果数据和执行日志.
 ### 8. 翻译质量评估（专业版独有）
 ```python
 evaluation = translator.evaluate(
@@ -184,9 +171,6 @@ evaluation = translator.evaluate(
 # ...
 ```
 
-**输入**: 用户提供翻译质量评估（专业版独有）所需的指令和必要参数.
-**处理**: 解析翻译质量评估（专业版独有）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回翻译质量评估（专业版独有）的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -309,8 +293,6 @@ localization:
 from translate_hub_pro import Translator
 # ...
 translator = Translator()
-translator.load_glossary("glossary.yaml")
-translator.load_tm("translation_memory.tmx")
 # ...
 result = translator.translate("Deploy the service to production.", source="en", target="zh")
 print(result.translation)  # "将服务部署至生产环境。"
@@ -319,7 +301,8 @@ print(result.translation)  # "将服务部署至生产环境。"
 ### 标准搭建（<120秒）
 批量文档翻译+术语库+TM：
 
-> 详细内容已移至 `references/detail.md` - ### 完整搭建（<300秒）
+> 详细内容已移至 `references/detail.md` - 
+### 完整搭建（<300秒）
 
 **使用步骤**:
 1. 阅读依赖说明章节,确认运行环境已就绪

@@ -1,5 +1,4 @@
----
-slug: "web-content-fetcher"
+---slug: "web-content-fetcher"
 name: "web-content-fetcher"
 version: 1.0.2
 displayName: "网页内容抓取器"
@@ -7,7 +6,7 @@ summary: "网页内容获取工具 | 当常规爬虫被过滤时，使用替代�
 summary_zh: "网页内容获取工具 | 当常规爬虫被过滤时，使用替代服务获取网页内容。支持：1) r.jina.ai - 最稳定 2) markdown.new -"
 license: "MIT"
 description: |-
-  网页内容获取工具 | 当常规爬虫被过滤时，使用替代服务获取网页内容。支持：1) r。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
+  网页内容获取工具 | 当常规爬虫被过滤时，使用替代服务获取网页内容。支持：1) r。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。不适用于纯技术文档撰写.
 tags:
   - Other
   - Web开发
@@ -22,9 +21,7 @@ tools:
   - write
   - glob
 homepage: ""
-category: "Development"
----
-# Web Content Fetcher
+category: "Development"---# Web Content Fetcher
 
 ## 付费版专享能力
 

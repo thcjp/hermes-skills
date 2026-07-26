@@ -67,7 +67,6 @@ python3 render_x_like_posts.py \
   --input posts.json \
   --out tmp/x_posts.png
 # ...
-python3 render_x_like_posts.py \
   --input posts.json \
   --platform twitter \
   --out tmp/x_posts_twitter.png
@@ -102,17 +101,13 @@ python3 render_x_like_posts.py \
 - Twitter风格蓝白灰配色(默认)
 - 帖子过多时自动分页(Part 1 / Part 2)
 
-**处理**: 解析X风格帖子分享长图(x-like-posts)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 2. 自定义模板创建
 PRO版支持创建和管理自定义模板,满足品牌个性化需求.
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供自定义模板创建所需的指令和必要参数.
-**处理**: 解析自定义模板创建的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 3. 批量生成
 支持从数据文件批量生成卡片图,大幅提升内容生产效率.
-**输入**: 用户提供批量生成所需的指令和必要参数.
-**处理**: 解析批量生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 ### 4. 高级高亮功能
 PRO版支持整行高亮、按词高亮和组合高亮三种模式.
 ```bash
@@ -137,15 +132,9 @@ python3 render_card.py \
   --out tmp/highlight_combined.png
 ```
 
-**输入**: 用户提供高级高亮功能所需的指令和必要参数.
-**处理**: 解析高级高亮功能的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回高级高亮功能的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `高级高亮功能` 选项
 
-**输入**: 用户提供全平台配色预设与品牌定制所需的指令和必要参数.
-**处理**: 解析全平台配色预设与品牌定制的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回全平台配色预设与品牌定制的处理结果,包含执行状态码、结果数据和执行日志.
 ### 6. 水印与版权信息
 ```bash
 python3 render_card.py \
@@ -163,9 +152,6 @@ python3 render_card.py \
   --out tmp/with_copyright.png
 ```
 
-**输入**: 用户提供水印与版权信息所需的指令和必要参数.
-**处理**: 解析水印与版权信息的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回水印与版权信息的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `水印与版权信息` 选项
 
@@ -197,7 +183,6 @@ for platform in ["公众号", "小红书", "微博", "知乎"]:
 ### 场景二:X/Twitter帖子长图分享
 将有趣的Twitter对话或帖子串制作为分享长图.
 ```bash
-python3 render_x_like_posts.py \
   --input twitter_thread.json \
   --platform twitter \
   --out tmp/twitter_thread.png
@@ -232,7 +217,7 @@ skill-platform skills install card-image-builder-pro
 # ...
 python3 init_brand.py --name "你的品牌名"
 # ...
-python3 render_x_like_posts.py --input sample.json --out tmp/test.png
+py --input sample.json --out tmp/test.png
 ```
 
 #

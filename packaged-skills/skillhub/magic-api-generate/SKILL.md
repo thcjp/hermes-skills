@@ -45,30 +45,30 @@ category: "Development"
 * **[语法参考](/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)** - 完整语法、内置函数、模块导入
 * **[数据库操作](/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)** - 多数据源、分页、事务
 * **[业务示例](/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)** - 登录认证、文件上传、导出等
-### 语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)
+### 语法参考(/api/v1/skills/magic-api-generate/file?md&ownerHandle=webx32)
 
-针对语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32),自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
-**输入**: 用户提供语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)相关的配置参数、输入数据和处理选项.
-**输出**: 返回语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)的处理结果.
-- 针对`语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)`,解析输入数据并返回响应
+针对语法参考(/api/v1/skills/magic-api-generate/file?md&ownerHandle=webx32),自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
+**输入**: 用户提供语法参考(/api/v1/skills/magic-api-generate/file?md&ownerHandle=webx32)相关的配置参数、输入数据和处理选项.
+**输出**: 返回语法参考(/api/v1/skills/magic-api-generate/file?md&ownerHandle=webx32)的处理结果.
+- 针对`语法参考(/api/v1/skills/magic-api-generate/file?md&ownerHandle=webx32)`,解析输入数据并返回响应
 - 验证返回数据的完整性和格式正确性
-- 参考`语法参考(/api/v1/skills/magic-api-generate/file?path=references%2Fsyntax.md&ownerHandle=webx32)`的配置文档进行参数调优
-### 数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)
+- 参考`语法参考(/api/v1/skills/magic-api-generate/file?md&ownerHandle=webx32)`的配置文档进行参数调优
+### 数据库操作(/api/v1/skills/magic-api-generate/file?md&ownerHandle=webx32)
 
-针对数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32),自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
-**输入**: 用户提供数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)相关的配置参数、输入数据和处理选项.
-**输出**: 返回数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)的处理结果.
-- 针对`数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)`,解析输入数据并返回响应
+针对数据库操作(/api/v1/skills/magic-api-generate/file?
+**输入**: 用户提供数据库操作(/api/v1/skills/magic-api-generate/file?
+**输出**: 返回数据库操作(/api/v1/skills/magic-api-generate/file?
+- 针对`数据库操作(/api/v1/skills/magic-api-generate/file?md&ownerHandle=webx32)`,解析输入数据并返回响应
 - 验证返回数据的完整性和格式正确性
-- 参考`数据库操作(/api/v1/skills/magic-api-generate/file?path=references%2Fdatabase.md&ownerHandle=webx32)`的配置文档进行参数调优
-### 业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)
+- 参考`数据库操作(/api/v1/skills/magic-api-generate/file?md&ownerHandle=webx32)`的配置文档进行参数调优
+### 业务示例(/api/v1/skills/magic-api-generate/file?md&ownerHandle=webx32)
 
-针对业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32),自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
-**输入**: 用户提供业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)相关的配置参数、输入数据和处理选项.
-**输出**: 返回业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)的处理结果.
-- 针对`业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)`,解析输入数据并返回响应
+针对业务示例(/api/v1/skills/magic-api-generate/file?
+**输入**: 用户提供业务示例(/api/v1/skills/magic-api-generate/file?
+**输出**: 返回业务示例(/api/v1/skills/magic-api-generate/file?
+- 针对`业务示例(/api/v1/skills/magic-api-generate/file?md&ownerHandle=webx32)`,解析输入数据并返回响应
 - 验证返回数据的完整性和格式正确性
-- 参考`业务示例(/api/v1/skills/magic-api-generate/file?path=references%2Fexamples.md&ownerHandle=webx32)`的配置文档进行参数调优
+- 参考`业务示例(/api/v1/skills/magic-api-generate/file?md&ownerHandle=webx32)`的配置文档进行参数调优
 #
 ## 快速开始
 
@@ -102,7 +102,8 @@ category: "Development"
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
-3. ### 可用性分类
+3. 
+### 可用性分类
 4. **分类**: MD+EXEC()
 5. **说明**: 基于Markdown的AI Skill,
 

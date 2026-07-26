@@ -77,7 +77,7 @@ category: "Agents"
 ## 使用流程
 
 第一步：创建记忆系统结构。手动创建 SESSION-STATE.md（热内存，含 Current Task、Key Context、Pending Actions、Recent Decisions 四区块）、MEMORY.md（长期摘要）、memory/ 目录（每日日志）.
-第二步：配置 Agent 记忆协议。在 AGENTS.md 或 SOUL.md 中添加记忆协议：会话开始时读取 SESSION-STATE.md 获取热上下文，检查 memory/YYYY-MM-DD.md 了解近期活动。对话中用户给出具体细节则先写入 SESSION-STATE.md 再回复.
+第二步：配置 Agent 记忆协议。在 AGENTS.md 或 SOUL.md 中添加记忆协议：会话开始时读取 SESSION-STATE.md 了解近期活动。对话中用户给出具体细节则先写入 SESSION-STATE.md 再回复.
 第三步：会话结束与维护。会话结束时更新 SESSION-STATE.md 最终状态，将重要内容迁移至 MEMORY.md，创建或更新 memory/YYYY-MM-DD.md 每日日志。定期合并每日日志到 MEMORY.md 保持精简.
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤.
 ## 错误处理

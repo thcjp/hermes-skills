@@ -106,7 +106,7 @@ Control speech rate (0.5x – 3.0x).
 
 ```bash
 /agent-vibes:set-speed 1.0             # Normal speed
-/agent-vibes:set-speed 1.5             # 50% faster
+5             # 50% faster
 /agent-vibes:set-speed 0.8             # Slower
 ```
 
@@ -315,9 +315,7 @@ Enjoy your TTS experience! 🎵
 ### 示例1：基础用法
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
 ## 错误处理

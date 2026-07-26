@@ -720,7 +720,7 @@ def collect_mfa_status():
             'mfa_devices': [d['SerialNumber'] for d in mfa_devices['MFADevices']]
         })
     
-    output = EVIDENCE_DIR / "CC6.1" / "mfa-status" / f"{datetime.utcnow().strftime('%Y-%m-%d')}.json"
+1" / "mfa-status" / f"{datetime.utcnow().json"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(mfa_status, indent=2, ensure_ascii=False))
     
@@ -736,7 +736,7 @@ def collect_password_policy():
     client = boto3.client('iam')
     policy = client.get_account_password_policy()['PasswordPolicy']
     
-    output = EVIDENCE_DIR / "CC6.3" / "password-policy" / f"{datetime.utcnow().strftime('%Y-%m-%d')}.json"
+3" / "password-policy" / f"{datetime.utcnow().json"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(policy, indent=2, ensure_ascii=False, default=str))
     print(f"密码策略: 最低{policy.get('MinimumPasswordLength', 'N/A')}位")

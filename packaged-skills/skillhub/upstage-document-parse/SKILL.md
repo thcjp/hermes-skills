@@ -96,14 +96,13 @@ export API_KEY="your_api_key_here"
 支持 14 种元素类别：`paragraph`、`heading1`、`heading2`、`heading3`、`list`、`table`、
 `figure`、`chart`、`equation`、`caption`、`header`、`footer`、`index`、`footnote`.
 坐标为归一化值（0-1 范围），表示元素在页面中的相对位置.
-**输入**: 用户提供版面元素识别与坐标输出所需的指令和必要参数.
+
 ### 5. 增强模式与 OCR 控制
 `mode=enhanced` 用于复杂表格、图表和图片的精确解析，支持 `merge_multipage_tables=true`
 合并跨页表格（enhanced 模式下最多 20 页）。`mode=auto` 让 API 逐页自动决定最佳模式.
 `ocr=force` 强制对扫描 PDF 或图片执行 OCR，适用于非原生数字文档.
 `coordinates=false` 可省略边界框以减小响应体积.
-**输入**: 用户提供增强模式与 OCR 控制所需的指令和必要参数.
-**输出**: 返回增强模式与 OCR 控制的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+
 - 参考`增强模式与 OCR 控制`的配置文档进行参数调优
 ### 6. 输出文件管理
 默认输出到 `<system-temp>/<input-stem>.parsed.<ext>`，其中 `<ext>` 匹配 `output_formats`
@@ -179,9 +178,8 @@ import os
 import requests
 # ...
 with open("financial_statements.pdf", "rb") as f:
-    response = requests.post(
-        "https://api.example.com/v1/document-digitization",
-        headers={"Authorization": f"Bearer {os.environ['DOCUMENT_PARSE_API_KEY']}"},
+example.com/v1/document-digitization",
+environ['DOCUMENT_PARSE_API_KEY']}"},
         files={"document": f},
         data={
             "model": "document-parse",

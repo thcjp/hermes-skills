@@ -413,7 +413,7 @@ jobs:
       - name: 提交翻译产物
         run: |
           git config user.name "Localization Bot"
-          git config user.email "bot@example.com"
+email "bot@example.com"
           git add docs.* reports/
           git commit -m "chore: sync localized docs [skip ci]" || true
           git push

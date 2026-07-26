@@ -34,19 +34,19 @@ cron 作业的失败很少是"逻辑 bug",多半是 shell 引用炸了、环境�
 禁止在cron里写多行`bash -lc '..'`,把逻辑放进仓库脚本(`tools/<job>.py`),cron只跑一行短命令,避免引用地狱。使用`input_params`参数支持创建/查询/导出操作。
 
 ### 2. 确定环境
-显式确定cwd(`cd "$(dirname "$0")/."`)、PATH(不依赖.bashrc)、文档化必需环境变量(`: "${API_KEY:?未设置}"`),解决"本地能跑cron里失败"。使用`input_params`参数支持创建/查询/导出操作。
+显式确定cwd(`cd "$(dirname "$0")/."`)、PATH(不依赖.bashrc)、文档化必需环境变量(`: "${API_KEY:?未设置}"`),解决"本地能跑cron里失败"。
 
 ### 3. 静默成功约定
 成功时输出`NO_REPLY`(或空),只在失败时输出`ALERT`到stderr,避免每次成功都发通知淹没用户。
 
 ### 4. 故障模式目录
-8种高频故障(EOF引号错误/SIGPIPE误报/cwd漂移/git push被拒/Python -c陷阱/Windows路径/临时文件残留/并发冲突)附修复模板。使用`input_params`参数支持创建/查询/导出操作。
+8种高频故障(EOF引号错误/SIGPIPE误报/cwd漂移/git push被拒/Python -c陷阱/Windows路径/临时文件残留/并发冲突)附修复模板。
 
 ### 5. 跨平台适配
-POSIX(bash/sh)与Windows(PowerShell)等效模式对照表,覆盖三大平台。使用`input_params`参数支持创建/查询/导出操作。
+POSIX(bash/sh)与Windows(PowerShell)等效模式对照表,覆盖三大平台。
 
 ### 6. 上线前预检清单
-10项检查清单(逻辑在脚本/cwd确定/变量校验/PATH设置/静默成功/trap清理/文件锁/无force-push等)+ 本地cron环境模拟测试。使用`input_params`参数支持创建/查询/导出操作。
+10项检查清单(逻辑在脚本/cwd确定/变量校验/PATH设置/静默成功/trap清理/文件锁/无force-push等)+ 本地cron环境模拟测试。
 
 ## 快速开始
 

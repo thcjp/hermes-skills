@@ -48,9 +48,7 @@ category: "Creative"
 ### 批量音乐生成
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供批量音乐生成所需的指令和必要参数.
-**处理**: 解析批量音乐生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回批量音乐生成的处理结果,包含执行状态码、结果数据和执行日志。### 高质量音频输出
+### 高质量音频输出
 | 格式 | 音质 | 文件大小 | 适用场景 |
 |:-----|:-----|:-----|:-----|
 | MP3 | Standard | 小 | 在线播放、预览 |
@@ -108,9 +106,7 @@ license_manager = {
 }
 ```
 
-**输入**: 用户提供版权资产管理所需的指令和必要参数.
-**处理**: 解析版权资产管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回版权资产管理的处理结果,包含执行状态码、结果数据和执行日志。### 音乐库管理
+### 音乐库管理
 ```python
 music_library = {
     "categories": {
@@ -152,14 +148,8 @@ music_library = {
 }
 ```
 
-**输入**: 用户提供音乐库管理所需的指令和必要参数.
-**处理**: 解析音乐库管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回音乐库管理的处理结果,包含执行状态码、结果数据和执行日志。### 音乐质量审计
-> 详细代码示例已移至 `references/detail.md`
+### 音乐质量审计
 
-**输入**: 用户提供音乐质量审计所需的指令和必要参数.
-**处理**: 解析音乐质量审计的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回音乐质量审计的处理结果,包含执行状态码、结果数据和执行日志.
 ### MP3
 
 针对MP3,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
@@ -243,7 +233,6 @@ for scene in game_scenes:
 
 ### 步骤一:初始化音乐资产管理
 ```bash
-python3 init_music_library.py \
   --brand "MyBrand" \
   --output ./music-library/ \
   --license-tracking \
@@ -252,7 +241,6 @@ python3 init_music_library.py \
 
 ### 步骤二:配置批量生成
 ```bash
-python3 batch_music_gen.py \
   --config music-tasks.yml \
   --parallel 5 \
   --format flac \
@@ -372,7 +360,6 @@ jobs:
         env:
           CELLCOG_API_KEY: $相关信息
         run: |
-          python3 batch_music_gen.py \
             --config music-tasks/config.yml \
             --parallel 5 \
             --format flac \
@@ -381,7 +368,6 @@ jobs:
             --quality-check
       - name: License Audit
         run: |
-          python3 license_audit.py \
             --library ./music-library/ \
             --report ./audit/
       - name: Upload Music

@@ -71,19 +71,18 @@ category: "Automation"
 | 笔记规模 | ≤500条 | 无限制(分布式支撑) |
 | 技术支持 | 社区 | 优先工单(4小时响应) |
 
-**输入**: 用户提供与免费版能力对比所需的指令和必要参数.
 **处理**: 解析与免费版能力对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回与免费版能力对比的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
@@ -225,7 +224,6 @@ visualization:
 export:
   templates:
     - name: research-report
-      path: ./templates/research-report.md.j2
     - name: weekly-digest
       path: ./templates/weekly-digest.html.j2
 # ...
@@ -300,7 +298,6 @@ note_process_engine.py visualize --db research-main \
 ### 导出报告模板
 
 ```jinja2
-{# ./templates/research-report.md.j2 #}
 # 研究报告:{{ topic }}
 # ...
 ## 补充概述

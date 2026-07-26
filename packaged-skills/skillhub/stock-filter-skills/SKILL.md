@@ -1,5 +1,4 @@
----
-slug: "stock-filter-skills"
+---slug: "stock-filter-skills"
 name: "stock-filter-skills"
 version: 1.3.1
 displayName: "过滤"
@@ -7,7 +6,7 @@ summary: "股票多条件筛选、热门因子管理、Jiuyan 数据查询和抖
 summary_zh: "股票多条件筛选、热门因子管理、Jiuyan 数据查询和抖音热点分析。提供 17 个 CLI 工具覆盖四大模块。"
 license: "MIT"
 description: |-
-  股票多条件筛选、热门因子管理、Jiuyan 数据查询和抖音热点分析。提供 17 个 CLI 工具覆盖四大模块。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+  股票多条件筛选、热门因子管理、Jiuyan 数据查询和抖音热点分析。提供 17 个 CLI 工具覆盖四大模块。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。不适用于实时流数据处理.
 tags:
   - Finance
   - 工具
@@ -21,9 +20,7 @@ tools:
   - glob
   - grep
 homepage: ""
-category: "Automation"
----
-# Stock Filter Skills
+category: "Automation"---# Stock Filter Skills
 
 ## 付费版专享能力
 

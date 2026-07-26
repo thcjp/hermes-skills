@@ -33,29 +33,20 @@ category: "Creative"
 ### Calculate Transcode Price
 Before uploading, estimate the transcoding cost. 请参考平台API文档了解具体调用方式。
 
-**输入**: 用户提供Calculate Transcode Price所需的指令和必要参数.
-**处理**: 解析Calculate Transcode Price的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Calculate Transcode Price的处理结果,包含执行状态码、结果数据和执行日志。### Upload Thumbnail
+### Upload Thumbnail
 After creating a video, upload a custom thumbnail. 请参考平台API文档了解具体调用方式。
 
 Supported formats: `.png`, `.jpg`
 
-**输入**: 用户提供Upload Thumbnail所需的指令和必要参数.
-**处理**: 解析Upload Thumbnail的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Upload Thumbnail的处理结果,包含执行状态码、结果数据和执行日志。### Update Video Object
+### Update Video Object
 Modify video metadata after creation. 请参考平台API文档了解具体调用方式。
 
-**处理**: 解析Update Video Object的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Update Video Object的处理结果,包含执行状态码、结果数据和执行日志。### List All Videos
+### List All Videos
 Retrieve all videos with filtering. 请参考平台API文档了解具体调用方式。
 
-**输入**: 用户提供List All Videos所需的指令和必要参数.
-**处理**: 解析List All Videos的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### Delete Video
+### Delete Video
 Remove a video. 请参考平台API文档了解具体调用方式。
 
-**输入**: 用户提供Delete Video所需的指令和必要参数.
-**处理**: 解析Delete Video的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Delete Video的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 

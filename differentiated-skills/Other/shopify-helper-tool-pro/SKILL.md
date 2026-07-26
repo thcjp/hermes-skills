@@ -70,56 +70,56 @@ Shopify 助手专业版是企业级 Shopify 开发平台,在免费版主题开�
 ### 1. 多店铺管理
 
 统一管理多个 Shopify 店铺,批量部署主题与配置,支持环境隔离.
-**输入**: 用户提供多店铺管理所需的指令和必要参数.
+
 **处理**: 解析多店铺管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多店铺管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 2. Shopify App 开发
 
 开发自定义 Shopify App,扩展后台功能、添加 Webhook、集成第三方服务.
-**输入**: 用户提供Shopify App 开发所需的指令和必要参数.
+
 **处理**: 解析Shopify App 开发的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Shopify App 开发的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 3. Headless 电商
 
 使用 Shopify Storefront API + Next.js 构建 Headless 电商,前端完全自定义.
-**输入**: 用户提供Headless 电商所需的指令和必要参数.
+
 **处理**: 解析Headless 电商的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Headless 电商的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 4. 企业级 SEO
 
 结构化数据(JSON-LD)、站点地图优化、页面速度优化、Core Web Vitals 达标.
-**输入**: 用户提供企业级 SEO所需的指令和必要参数.
+
 **处理**: 解析企业级 SEO的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回企业级 SEO的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 5. 性能优化
 
 图片懒加载、CSS/JS 压缩、CDN 配置、LCP/CLS/FID 指标优化.
-**输入**: 用户提供性能优化所需的指令和必要参数.
+
 **处理**: 解析性能优化的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回性能优化的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 6. A/B 测试
 
 页面元素 A/B 测试,转化漏斗分析,数据驱动的优化决策.
-**输入**: 用户提供A/B 测试所需的指令和必要参数.
+
 **处理**: 解析A/B 测试的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回A/B 测试的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 7. 团队协作
 
 多开发者协作开发,代码审查,主题版本管理.
-**输入**: 用户提供团队协作所需的指令和必要参数.
+
 **处理**: 解析团队协作的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回团队协作的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 8. CI/CD 自动化
 
 GitHub Actions/GitLab CI 集成,自动测试、构建、部署到多店铺.
-**输入**: 用户提供CI/CD 自动化所需的指令和必要参数.
+
 **处理**: 解析CI/CD 自动化的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回CI/CD 自动化的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
@@ -204,7 +204,6 @@ export async function getProducts() {
 // ...
 // 获取单个产品
 export async function getProduct(handle: string) {
-  const { data } = await client.query({
     data: `query getProduct($handle: String!) {
       productByHandle(handle: $handle) {
         id
@@ -264,7 +263,7 @@ Shopify.Webhooks.Registry.addHandler("ORDERS_CREATE", {
 // 自定义接口: 批量更新产品
 app.post("/api/products/batch-update", async (req, res) => {
   const session = await Shopify.Utils.loadCurrentSession(req, res);
-  const client = new Shopify.Clients.Rest(session.shop, session.accessToken);
+Clients.Rest(session.shop, session.accessToken);
 // ...
   const results = await Promise.all(
     req.body.products.map((product) =>
@@ -367,7 +366,6 @@ npm install -g @shopify-pro/cli
   "stores": [
     {
       "name": "品牌A",
-      "domain": "brand-a.myshopify.com",
       "apiToken": "${BRAND_A_TOKEN}",
       "storefrontToken": "${BRAND_A_STOREFRONT_TOKEN}",
       "theme": "themes/brand-a",

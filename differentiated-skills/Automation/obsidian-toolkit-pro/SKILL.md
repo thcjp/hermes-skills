@@ -451,12 +451,12 @@ git commit -m "resolve merge conflict"
 git push origin main
 ```
 
-**输入**: 用户提供vault发现与高级管理所需的指令和必要参数.
 **处理**: 解析vault发现与高级管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回vault发现与高级管理的响应数据,包含状态码、结果和日志.
 ### 笔记全生命周期管理（含批量操作）
 
-#### 批量搜索与操作
+#
+### 批量搜索与操作
 
 ```bash
 #!/bin/bash
@@ -493,7 +493,7 @@ find "$VAULT" -name "*.md" -not -path "*/.obsidian/*" -not -path "*/Templates/*"
 done
 # ...
 # 3. 批量更新标签
-find "$VAULT" -name "*.md" -path "*/Meetings/*" | while read -r file; do
+md" -path "*/Meetings/*" | while read -r file; do
   if ! grep -q "tags:.*meeting" "$file"; then
     sed -i '' 's/tags: \[/tags: [meeting, /' "$file" 2>/dev/null || \
     sed -i 's/tags: \[/tags: [meeting, /' "$file"
@@ -523,7 +523,8 @@ find "$VAULT/Inbox" -name "*.md" -type f 2>/dev/null | while read -r file; do
 done
 ```
 
-#### 笔记关系图谱分析
+#
+### 笔记关系图谱分析
 
 ```python
 import os
@@ -569,7 +570,7 @@ class NoteGraphAnalyzer:
         for source, targets in self.links.items():
             for target in targets:
                 if target in self.notes:
-                    self.notes[target]["links_in"] += 1
+notes[target]["links_in"] += 1
 # ...
     def find_orphans(self):
         """查找孤立笔记（无入度无出度）"""
@@ -591,7 +592,6 @@ class NoteGraphAnalyzer:
     def find_broken_links(self):
         """查找失效链接"""
         broken = []
-        for source, targets in self.links.items():
             for target in targets:
                 if target not in self.notes:
                     broken.append((source, target))
@@ -639,7 +639,6 @@ if len(broken) > 10:
     print(f"  ... 共{len(broken)}个失效链接")
 ```
 
-**输入**: 用户提供笔记全生命周期管理（含批量操作）所需的指令和必要参数.
 **处理**: 解析笔记全生命周期管理（含批量操作）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回笔记全生命周期管理（含批量操作）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -698,13 +697,13 @@ recent.forEach(f => {
 %>
 ```
 
-**输入**: 用户提供高级模板系统（Templater）所需的指令和必要参数.
 **处理**: 解析高级模板系统（Templater）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级模板系统（Templater）的响应数据,包含状态码、结果和日志.
 ### 插件深度集成
 
 **解析流程**：调用Obsidian插件API完成任务,解析插件配置和状态管理,返回插件完成响应。支持Dataview查询、Templater模板渲染等.
-#### Dataview查询语法
+#
+### Dataview查询语法
 
 **TABLE查询**：
 
@@ -758,7 +757,8 @@ WHERE type = "meeting"
 | `file.mtime` | 修改时间 | `SORT file.mtime DESC` |
 | `file.tags` | 标签列表 | `FLATTEN file.tags as tag` |
 
-#### Obsidian Git版本控制
+#
+### Obsidian Git版本控制
 
 **自动备份工作流**：
 
@@ -789,7 +789,8 @@ git show <commit-hash>:"Projects/ProjectA/需求.md"
 git checkout <commit-hash> -- "Projects/ProjectA/需求.md"
 ```
 
-#### Tasks任务管理
+#
+### Tasks任务管理
 
 **Tasks语法**：
 
@@ -902,7 +903,7 @@ class CanvasManager:
     def add_file_node(self, file_path, x, y, width=400, height=300):
         """添加文件节点"""
         node = {
-            "id": f"node-{len(self.data['nodes']) + 1}",
+data['nodes']) + 1}",
             "type": "file",
             "file": file_path,
             "x": x,
@@ -971,7 +972,7 @@ class AutoArchiveWorkflow:
         cutoff = datetime.now() - timedelta(days=days_old)
         archived = []
 
-        for md_file in self.vault.rglob("*.md"):
+vault.rglob("*.md"):
             # 跳过特殊目录
             if any(part in str(md_file) for part in [".obsidian", "Templates", "Archive", "Canvases"]):
                 continue
@@ -979,7 +980,7 @@ class AutoArchiveWorkflow:
             mtime = datetime.fromtimestamp(md_file.stat().st_mtime)
             if mtime < cutoff:
                 # 读取frontmatter获取创建日期
-                content = md_file.read_text(encoding="utf-8")
+read_text(encoding="utf-8")
                 create_date = self._extract_date(content)
 
                 if create_date:
@@ -994,7 +995,7 @@ class AutoArchiveWorkflow:
                 target_dir.mkdir(parents=True, exist_ok=True)
 
                 # 移动文件
-                rel_path = md_file.relative_to(self.vault)
+relative_to(self.vault)
                 target_path = target_dir / md_file.name
 
                 if not target_path.exists():
@@ -1024,7 +1025,7 @@ workflow.run(days_old=30)
 # ...
 ---
 # ...
-**输入**: 用户提供插件深度集成所需的指令和必要参数.
+
 **处理**: 解析插件深度集成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回插件深度集成的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：综合工具箱专业版、管理与多、工具箱专业版是在、免费版基础上的全、功能升级、Agent、提供企业级、综合管理能力、专业版解锁批量笔、高级管理等高级特、实现复杂知识库的、高效管理等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -1151,7 +1152,7 @@ def generate_task_report(vault_path):
     tasks = []
 
     for md_file in vault.rglob("*.md"):
-        content = md_file.read_text(encoding="utf-8")
+read_text(encoding="utf-8")
         # 解析Tasks格式：- [ ] 任务 📅 日期
         import re
         matches = re.findall(r"- \[ \] (.+?) 📅 (\d{4}-\d{2}-\d{2})", content)
@@ -1174,12 +1175,11 @@ def export_meetings_to_ics(vault_path, output_file):
     vault = Path(vault_path)
     events = []
 
-    for md_file in vault.glob("Meetings/*.md"):
-        content = md_file.read_text(encoding="utf-8")
+glob("Meetings/*.md"):
+read_text(encoding="utf-8")
         # 解析frontmatter
         if content.startswith("---"):
-            end = content.find("---", 3)
-            frontmatter = yaml.safe_load(content[3:end])
+safe_load(content[3:end])
             if frontmatter and frontmatter.get("type") == "meeting":
                 events.append({
                     "title": frontmatter.get("title", md_file.stem),
@@ -1443,7 +1443,7 @@ Dataview支持四种查询类型：TABLE（表格）、LIST（列表）、TASK�
 # ...
 ### 基本用法
 # ...
-**输入**：用户提供操作指令和必要参数
+
 # ...
 **输出**：返回执行结果,包含操作状态和输出数据
 # ...

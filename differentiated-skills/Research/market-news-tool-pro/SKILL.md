@@ -57,7 +57,6 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 | 多租户支持 | 不支持 | 支持团队协作 |
 | API 调用 | 不支持 | 支持 REST API 集成 |
 
-**输入**: 用户提供能力矩阵所需的指令和必要参数.
 **处理**: 解析能力矩阵的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回能力矩阵的响应数据,包含状态码、结果和日志.
 ### PRO 专属能力详解
@@ -83,14 +82,13 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 [PRO] REST API 集成接入
 ```
 
-**输入**: 用户提供PRO 专属能力详解所需的指令和必要参数.
 **处理**: 解析PRO 专属能力详解的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回PRO 专属能力详解的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -306,21 +304,15 @@ class MarketNewsProClient:
 # ...
     def get_history(self, topic, days=30):
         """获取历史数据"""
-        response = requests.get(
             f"{self.base_url}/v1/history",
-            headers=self.headers,
             params={"topic": topic, "days": days}
         )
-        return response.json()
 # ...
     def create_schedule(self, cron, topics):
         """创建定时推送任务"""
-        response = requests.post(
             f"{self.base_url}/v1/schedules",
-            headers=self.headers,
             json={"cron": cron, "topics": topics}
         )
-        return response.json()
 ```
 
 ### 专业研报模板
@@ -498,8 +490,6 @@ EOF
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

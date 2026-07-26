@@ -1,9 +1,8 @@
----
-slug: "bookmark-smart-hub"
+---slug: "bookmark-smart-hub"
 name: "bookmark-smart-hub"
 version: 1.0.1
 displayName: "书签智能中心专业版"
-summary: "自动化书签监控与 AI 深度分析平台，支持后台守护、多渠道通知与知识库全文检索。。面向知识工作者与团队的自动化书签监控与 AI 分析平台. 核心能力: 后台自动监控、AI 深度分析、多渠道通"
+summary: "自动化书签监控与 AI"
 summary_zh: "自动化书签监控与 AI 深度分析平台，支持后台守护、多渠道通知与知识库全文检索。。面向知识工作者与团队的自动化书签监控与 AI 分析平台. 核心能力: 后台自动监控、AI 深度分析、多渠道通"
 license: "MIT"
 edition: "pro"
@@ -32,9 +31,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# 书签智能中心专业版
+category: "Automation"---# 书签智能中心专业版
 
 ## 付费版专享能力
 

@@ -53,27 +53,22 @@ category: "Automation"
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供批量URL处理（并发模式）所需的指令和必要参数.
 **处理**: 解析批量URL处理（并发模式）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量URL处理（并发模式）的响应数据,包含状态码、结果和日志.
 ### 2. 并发锁机制（防profile冲突）
 
-**输入**: 用户提供并发锁机制（防profile冲突）所需的指令和必要参数.
 **处理**: 解析并发锁机制（防profile冲突）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回并发锁机制（防profile冲突）的响应数据,包含状态码、结果和日志.
 ### 3. Cloudflare自动绕过
 
-**输入**: 用户提供Cloudflare自动绕过所需的指令和必要参数.
 **处理**: 解析Cloudflare自动绕过的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Cloudflare自动绕过的响应数据,包含状态码、结果和日志.
 ### 4. 页面截图与PDF导出
 
-**输入**: 用户提供页面截图与PDF导出所需的指令和必要参数.
 **处理**: 解析页面截图与PDF导出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回页面截图与PDF导出的响应数据,包含状态码、结果和日志.
 ### 5. 复杂表单填写
 
-**输入**: 用户提供复杂表单填写所需的指令和必要参数.
 **处理**: 解析复杂表单填写的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回复杂表单填写的响应数据,包含状态码、结果和日志.
 ### 6. 结构化数据提取
@@ -103,7 +98,7 @@ class DataExtractor:
     def extract_by_xpath(self, url, xpath):
         """XPath提取"""
         cmd = ["node", "extract-data.js", url, "--method", "xpath", "--selector", xpath]
-        result = subprocess.run(cmd, capture_output=True, text=True)
+run(cmd, capture_output=True, text=True)
         return json.loads(result.stdout) if result.returncode == 0 else []
 # ...
     def extract_table(self, url, table_selector="table"):
@@ -117,10 +112,9 @@ class DataExtractor:
 # ...
 extractor = DataExtractor()
 titles = extractor.extract_by_css("https://news.example.com", ".article-title", "text")
-links = extractor.extract_by_css("https://news.example.com", ".article-link", "href")
+links = extractor.example.com", ".article-link", "href")
 ```
 
-**输入**: 用户提供结构化数据提取所需的指令和必要参数.
 **处理**: 解析结构化数据提取的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结构化数据提取的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级浏览器自动、化专业版、含批量处理、监控集成、浏览器自动化助手、专业版是面向企业、级场景的完整浏览、器自动化工具链、在免费版单页面能、力之上、新增批量、集成与监控告警七、大高级能力、Use、when、需要提升效率、自动化流程、批量处理、工作流优化时使用、不适用于需要人工、创意判断的任务等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -278,7 +272,7 @@ jobs:
         env:
           BROWSER_PROFILE: ci-profile
           MAX_CONCURRENCY: 3
-        run: node multi-pages.js --input urls.txt --output results.json
+        run: node multi-pages.js --input urls.json
       - name: Upload results
         uses: actions/upload-artifact@v3
         with:
@@ -413,8 +407,6 @@ if processor.stats["failed"] / processor.stats["total"] > 0.2:
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

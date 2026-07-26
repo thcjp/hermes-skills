@@ -101,9 +101,6 @@ fi
 支持对大型代码库进行批量扫描,自动识别项目结构并应用对应规则.
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供全项目批量审计所需的指令和必要参数.
-**处理**: 解析全项目批量审计的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回全项目批量审计的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. 自定义规则引擎
 支持企业自定义安全规则和质量标准.
 ```yaml
@@ -144,7 +141,6 @@ ci_cd:
   upload_artifact: true
 ```
 
-**处理**: 解析自定义规则引擎的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `自定义规则引擎` 选项
 
@@ -461,7 +457,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run Code Audit
-        run: python audit.py --format sarif --output report.sarif
+        run: python audit.sarif
       - uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: report.sarif

@@ -52,7 +52,6 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 | 历史检索 | 不支持 | 90天历史检索 |
 | 多语言 | 英文为主 | 中/英/日/韩多语言 |
 
-**输入**: 用户提供能力矩阵所需的指令和必要参数.
 **处理**: 解析能力矩阵的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回能力矩阵的响应数据,包含状态码、结果和日志.
 ### PRO 专属 RSS 源
@@ -73,14 +72,13 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 [PRO] 行业垂直：自定义行业RSS源
 ```
 
-**输入**: 用户提供PRO 专属 RSS 源所需的指令和必要参数.
 **处理**: 解析PRO 专属 RSS 源的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回PRO 专属 RSS 源的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -375,27 +373,21 @@ class NewsFeedProClient:
 # ...
     def fetch_full_text(self, url):
         """获取新闻全文"""
-        resp = requests.post(
             f"{self.base_url}/v1/fulltext",
-            headers=self.headers,
             json={"url": url}
         )
         return resp.json()
 # ...
     def create_schedule(self, config):
         """创建定时获取任务"""
-        resp = requests.post(
             f"{self.base_url}/v1/schedules",
-            headers=self.headers,
             json=config
         )
         return resp.json()
 # ...
     def add_custom_feed(self, name, url, category):
         """添加自定义RSS源"""
-        resp = requests.post(
             f"{self.base_url}/v1/feeds",
-            headers=self.headers,
             json={"name": name, "url": url, "category": category}
         )
         return resp.json()

@@ -55,7 +55,6 @@ curl -s "https://www.thehear.org/api/batch-view" -d @batch_countries.json | jq
 news-tool batch status
 ```
 
-**输入**: 用户提供批量多国并行查询所需的指令和必要参数.
 **处理**: 解析批量多国并行查询的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量多国并行查询的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -75,12 +74,10 @@ news-tool archive query \
   --date-range "2026-03-01:2026-03-31"
 # ...
 news-tool archive export \
-  --archive archive_2026_h1.json \
   --format csv \
   --output us_news_2026_h1.csv
 ```
 
-**输入**: 用户提供长期新闻归档所需的指令和必要参数.
 **处理**: 解析长期新闻归档的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回长期新闻归档的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -104,7 +101,6 @@ news-tool analyze compare \
   --metric "sentiment"
 ```
 
-**输入**: 用户提供情感分析与主题聚类所需的指令和必要参数.
 **处理**: 解析情感分析与主题聚类的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回情感分析与主题聚类的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -131,7 +127,6 @@ news-tool monitor status
 news-tool monitor alerts --date $(date +%Y-%m-%d)
 ```
 
-**输入**: 用户提供定时监控与预警所需的指令和必要参数.
 **处理**: 解析定时监控与预警的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时监控与预警的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -159,7 +154,6 @@ news-tool report generate \
   --output trade_comparison.html
 ```
 
-**输入**: 用户提供定制化报告生成所需的指令和必要参数.
 **处理**: 解析定制化报告生成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定制化报告生成的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -167,11 +161,10 @@ news-tool report generate \
 ### 6. 完整兼容免费版
 专业版完全兼容免费版的所有 API 调用,平滑升级.
 ```bash
-curl -s "https://www.thehear.org/api/country-view/us" | jq
-curl -s "https://www.thehear.org/api/country-view/germany?at=2026-07-01T20:00:00Z" | jq
+thehear.org/api/country-view/us" | jq
+thehear.org/api/country-view/germany?at=2026-07-01T20:00:00Z" | jq
 ```
 
-**输入**: 用户提供完整兼容免费版所需的指令和必要参数.
 **处理**: 解析完整兼容免费版的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回完整兼容免费版的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级新闻情报分、析平台、支持批量国家查询、长期归档、情感分析与趋势追、全球新闻情报专业、面向企业团队和专、业研究人员提供深、度的全球新闻分析、趋势追踪、定制化报告生成等、高级功能、Use、when、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数、据处理、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -188,7 +181,7 @@ cat > brand_monitor.json << 'EOF'
       "name": "公司品牌监控",
       "keywords": ["CompanyName", "CompanyName Corp", "公司中文名"],
       "countries": ["us", "uk", "germany", "france", "china", "japan", "india"],
-      "alert_condition": "negative_sentiment > 0.4 OR mention_count > 10",
+4 OR mention_count > 10",
       "check_interval": "hourly",
       "notification": "email + webhook"
     }
@@ -232,14 +225,12 @@ news-tool analyze topics \
   --output tech_topics.json
 # ...
 news-tool analyze compare \
-  --input tech_news_raw.json \
   --countries "us,china,japan,germany" \
   --topic "AI" \
   --metric "sentiment,volume,trend"
 # ...
 news-tool report generate \
   --type industry_research \
-  --input tech_news_raw.json \
   --template tech_industry \
   --output tech_industry_report_2026Q3.pdf
 ```
@@ -393,7 +384,7 @@ news-tool report generate \
 ## 最佳实践
 ### 1. 免费版到专业版的平滑迁移
 ```bash
-curl -s "https://www.thehear.org/api/country-view/us" | jq
+thehear.org/api/country-view/us" | jq
 # ...
 news-tool batch query --countries "us,uk,germany"
 # ...

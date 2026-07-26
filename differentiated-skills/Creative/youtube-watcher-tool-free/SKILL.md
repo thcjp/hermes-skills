@@ -81,7 +81,6 @@ YouTube 字幕提取免费版是一款面向个人用户的轻量级视频字幕
 | 关键词追踪 | 跨视频关键词 | 不支持 |
 | 时间戳标记 | 字幕带时间戳 | 不支持（仅文本） |
 
-**输入**: 用户提供能力清单所需的指令和必要参数.
 **处理**: 解析能力清单的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回能力清单的响应数据,包含状态码、结果和日志.
 ### 工作流程
@@ -105,7 +104,6 @@ YouTube 字幕提取免费版是一款面向个人用户的轻量级视频字幕
 返回结果给用户
 ```
 
-**输入**: 用户提供工作流程所需的指令和必要参数.
 **处理**: 解析工作流程的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回工作流程的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -120,13 +118,13 @@ YouTube 视频通常有两种字幕：
 | CC 字幕 | 人工上传字幕 | 高（人工校对） |
 
 免费版优先提取 CC 字幕，若无则使用自动字幕.
-**输入**: 用户提供字幕类型说明所需的指令和必要参数.
+
 **处理**: 解析字幕类型说明的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回字幕类型说明的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级、视频字幕提取工具、支持单视频字幕获、取与内容摘要、适合个人学习与内、容分析、字幕提取免费版、为个人用户提供轻、量化的视频字幕获、取能力、核心能力、单视频字幕提取、自动字幕与、字幕内容摘要生成、视频内容问答、字幕文本导出等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ### 核心功能执行
 执行核心功能执行操作,使用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -178,7 +176,7 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） "https://www.yout
 
 ```bash
 # 提取字幕
-python3 {baseDir}/（请参考skill目录中的脚本文件） "https://www.youtube.com/watch?v=VIDEO_ID"
+youtube.com/watch?v=VIDEO_ID"
 # ...
 # 示例
 grep -A 2 -B 2 "续航" /tmp/transcript.txt
@@ -198,7 +196,7 @@ grep -A 2 -B 2 "续航" /tmp/transcript.txt
 
 ```bash
 # 提取英文字幕
-python3 {baseDir}/（请参考skill目录中的脚本文件） "https://www.youtube.com/watch?v=VIDEO_ID" --lang en
+youtube.com/watch?v=VIDEO_ID" --lang en
 ```
 
 ## 不适用场景
@@ -232,7 +230,7 @@ yt-dlp --version
 最简单的用法 - 提取视频字幕：
 
 ```bash
-python3 {baseDir}/（请参考skill目录中的脚本文件） "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+youtube.com/watch?v=dQw4w9WgXcQ"
 ```
 
 ### 第三步：生成摘要
@@ -241,7 +239,7 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） "https://www.yout
 
 ```bash
 # 提取字幕到文件
-python3 {baseDir}/（请参考skill目录中的脚本文件） "https://www.youtube.com/watch?v=VIDEO_ID" > /tmp/transcript.txt
+youtube.com/watch?v=VIDEO_ID" > /tmp/transcript.txt
 # ...
 # 让 Agent 读取并生成摘要
 ```
@@ -250,7 +248,7 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） "https://www.yout
 
 ```bash
 # 提取字幕
-python3 {baseDir}/（请参考skill目录中的脚本文件） "https://www.youtube.com/watch?v=VIDEO_ID" > /tmp/transcript.txt
+youtube.com/watch?txt
 # ...
 # 搜索关键词
 grep -i "关键词" /tmp/transcript.txt
@@ -362,7 +360,8 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） "URL" > /tmp/tran
 | yt-dlp | 命令行工具 | 必需 | `pip install yt-dlp` | 2023.0+ |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 | - |
 
-#### 安装命令
+#
+### 安装命令
 
 ```bash
 # 安装 yt-dlp
@@ -414,8 +413,6 @@ yt-dlp --version
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

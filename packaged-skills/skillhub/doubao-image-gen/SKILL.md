@@ -1,5 +1,4 @@
----
-slug: "doubao-image-gen"
+---slug: "doubao-image-gen"
 name: "doubao-image-gen"
 version: 1.0.1
 displayName: "豆包图片生成-专业版"
@@ -8,7 +7,7 @@ summary_zh: "企业级AI图片生成平台，支持批量生成、多比例输�
 license: "MIT"
 edition: "pro"
 description: |-
-  豆包图片生成专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
+  豆包图片生成专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。不适用于需要人工创意判断的任务.
 tags:
   - Creative
   - AI绘图
@@ -28,9 +27,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Creative"
----
-# 豆包图片生成-专业版
+category: "Creative"---# 豆包图片生成-专业版
 
 ## 付费版专享能力
 
@@ -63,7 +60,6 @@ category: "Creative"
 - 关键参数: `批量图片生成` 选项
 - 处理流程: 接收输入 -> 执行批量图片生成 -> 返回结果
 - 输入: 用户提供批量图片生成所需的参数和指令
-- 输出: 返回批量图片生成的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 2. 多比例同时输出
 一次提示词生成多种比例版本：
@@ -78,8 +74,6 @@ category: "Creative"
 | 2:3 | 海报 |
 | 3:2 | 横版海报 |
 
-**输入**: 用户提供多比例同时输出所需的指令和必要参数.
-**处理**: 解析多比例同时输出的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 3. 风格预设管理
 预设风格模板，保障视觉一致性：
 
@@ -88,8 +82,6 @@ category: "Creative"
 - 风格参数自定义
 - 跨项目风格复用
 
-**处理**: 解析风格预设管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回风格预设管理的处理结果,包含执行状态码、结果数据和执行日志.
 ### 4. 提示词增强
 AI 自动优化提示词：
 
@@ -98,8 +90,6 @@ AI 自动优化提示词：
 - 负面提示词生成
 - 多语言提示词支持
 
-**输入**: 用户提供提示词增强所需的指令和必要参数.
-**处理**: 解析提示词增强的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 5. 参考图生成
 基于参考图进行风格迁移：
 
@@ -108,8 +98,6 @@ AI 自动优化提示词：
 - 应用到新内容生成
 - 保留参考图风格一致性
 
-**输入**: 用户提供参考图生成所需的指令和必要参数.
-**处理**: 解析参考图生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 6. 工作流自动化
 完整自动化生产流程：
 
@@ -128,7 +116,8 @@ AI 自动优化提示词：
 
 ## 适用场景
 
-> 详细内容已移至 `references/detail.md` - ### 场景 1：电商商品图批量生成
+> 详细内容已移至 `references/detail.md` - 
+### 场景 1：电商商品图批量生成
 ### 场景 2：品牌营销素材规模化生产
 某品牌需要为营销活动生成一系列风格统一的素材图.
 **风格预设配置 `brand-style.json`：**
@@ -223,27 +212,21 @@ python3 batch_generate.py \
 
 ### 第三步：多比例输出
 ```bash
-python3 batch_generate.py \
-  --config /tmp/items.json \
   --ratios "3:4,1:1,16:9" \
   --output-dir /tmp/multi-ratio/
 ```
 
 ### 第四步：使用风格预设
 ```bash
-python3 batch_generate.py \
-  --config /tmp/items.json \
   --style-preset /config/brand-style.json \
   --output-dir /tmp/branded/
 ```
 
 ### 第五步：提示词增强
 ```bash
-python3 prompt_enhancer.py \
   --input "咖啡店" \
   --output /tmp/enhanced.txt
 # ...
-python3 prompt_enhancer.py \
   --batch /tmp/prompts.txt \
   --output-dir /tmp/enhanced/
 ```
@@ -308,7 +291,8 @@ python3 prompt_enhancer.py \
 | 豆包账号 | 服务 | 必需 | 豆包平台注册 | - |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 | - |
 
-#### 完整安装命令
+#
+### 完整安装命令
 ```bash
 pip3 install requests pyyaml Pillow
 # ...
@@ -375,16 +359,15 @@ export PROMPT_ENHANCE_API_KEY="your_enhance_key"
 **A：** 专业版自动记录失败任务：
 
 ```bash
-python3 batch_generate.py --retry-failed /tmp/generate-queue.json
+py --retry-failed /tmp/generate-queue.json
 # ...
-python3 batch_generate.py --resume /tmp/generate-queue.json
+py --resume /tmp/generate-queue.json
 ```
 
 ### Q3：多比例输出如何工作？
 **A：** 一次提示词同时生成多种比例版本：
 
 ```bash
-python3 batch_generate.py \
   --config items.json \
   --ratios "3:4,1:1,16:9"
 ```
@@ -411,7 +394,6 @@ python3 style_manager.py create \
 **A：** 支持。提示词增强支持中英文输入与输出：
 
 ```bash
-python3 prompt_enhancer.py \
   --input "a cat" \
   --language "en" \
   --output /tmp/enhanced-en.txt
@@ -421,7 +403,6 @@ python3 prompt_enhancer.py \
 **A：** 启用自动归档：
 
 ```bash
-python3 batch_generate.py \
   --config items.json \
   --auto-archive \
   --archive-dir /images/archive/

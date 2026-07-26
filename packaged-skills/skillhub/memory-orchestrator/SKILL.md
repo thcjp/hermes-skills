@@ -379,7 +379,7 @@ await skills.memoryOrchestrator({
 # ..
 执行：
 1. 生成短期记忆摘要：
-   const summary = await skills.memoryOrchestrator({
+memoryOrchestrator({
      action: "summarize",
      typeFilter: "short-term",
      maxTokens: 500
@@ -397,7 +397,7 @@ await skills.memoryOrchestrator({
 # ..
 4. 继续会话
 5. 验证效果：
-   const health = await skills.memoryOrchestrator({ action: "health" });
+memoryOrchestrator({ action: "health" });
    // 检查 short_term 容量是否下降
 # ..
 结果：
@@ -461,7 +461,7 @@ Agent A 与 Agent B 同时操作共享记忆库，需要解决并发冲突。
 # ..
 执行：
 1. 调用健康度仪表盘：
-   const health = await skills.memoryOrchestrator({ action: "health" });
+memoryOrchestrator({ action: "health" });
 # ..
 2. 检查告警项：
    - 工作记忆使用率 90%（> 85%，warning）

@@ -65,14 +65,14 @@ message action=send channel=discord target="1234567890" message="按 ID 发送"
 - 多链接用 `<>` 包裹抑制预览:`<https://example.com>`.
 - 支持消息特效:`effect=balloons`、`effectId=invisible-ink`.
 - 不支持 markdown 表格,改用项目符号列表.
-**输入**: 用户提供消息发送所需的指令和必要参数.
-**输出**: 返回消息发送的处理结果,包含执行状态码、结果数据和执行日志。### 线程回复
+
+### 线程回复
 ```bash
 message action=send channel=discord target="#channel-name" message="回复内容" replyTo="message-id"
 ```
 - `replyTo` 以指定消息 ID 创建线程式回复.
-**输入**: 用户提供线程回复所需的指令和必要参数.
-**处理**: 解析线程回复的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 全文搜索
+
+### 全文搜索
 ```bash
 message action=search channel=discord channelId="1234567890" query="搜索词" limit=50
 ```
@@ -85,32 +85,23 @@ message action=search channel=discord channelId="1234567890" query="搜索词" l
 message action=read channel=discord target="#channel-name" limit=20
 ```
 
-**输入**: 用户提供历史读取所需的指令和必要参数.
-**处理**: 解析历史读取的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回历史读取的处理结果,包含执行状态码、结果数据和执行日志。### 表情回应
+### 表情回应
 ```bash
 message action=react channel=discord messageId="1234567890" emoji="👍"
 ```
 
-**输入**: 用户提供表情回应所需的指令和必要参数.
-**处理**: 解析表情回应的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回表情回应的处理结果,包含执行状态码、结果数据和执行日志。### 消息编辑与删除
+### 消息编辑与删除
 ```bash
 message action=edit channel=discord messageId="1234567890" message="更新后的文本"
 message action=delete channel=discord messageId="1234567890"
 ```
 
-**输入**: 用户提供消息编辑与删除所需的指令和必要参数.
-**处理**: 解析消息编辑与删除的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回消息编辑与删除的处理结果,包含执行状态码、结果数据和执行日志。### 频道管理
+### 频道管理
 ```bash
 message action=channel-list channel=discord guildId="server-id"
 message action=channel-info channel=discord channelId="1234567890"
 ```
 
-**输入**: 用户提供频道管理所需的指令和必要参数.
-**处理**: 解析频道管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回频道管理的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 

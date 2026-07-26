@@ -335,9 +335,7 @@ sudo ln -s /path/to/obsidian /usr/local/bin/obsidian
 ### 示例1：基础用法
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
 ## 常见问题

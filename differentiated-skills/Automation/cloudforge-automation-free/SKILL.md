@@ -126,14 +126,15 @@ az login --tenant your-tenant-id
 ```
 
 > 注：`--tenant`是Azure CLI标准参数，用于指定租户ID.
-**输入**: 用户提供功能一：单云初始化所需的指令和必要参数.
+
 **处理**: 解析功能一：单云初始化的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能一：单云初始化的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 功能二：Terraform模板
 
-#### Web应用模板
+#
+### Web应用模板
 
 ```hcl
 # web-app.tf
@@ -162,7 +163,7 @@ resource "aws_subnet" "public" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.1.0/24"
   map_public_ip_on_launch = true
-  tags = { Name = "${var.app_name}-public-subnet" }
+app_name}-public-subnet" }
 }
 # ...
 # 安全组
@@ -178,15 +179,12 @@ resource "aws_security_group" "web" {
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
   }
   egress {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
   }
-  tags = { Name = "${var.app_name}-sg" }
 }
 # ...
 # EC2实例
@@ -195,11 +193,12 @@ resource "aws_instance" "web" {
   instance_type          = "t3.micro"
   subnet_id              = aws_subnet.public.id
   vpc_security_group_ids = [aws_security_group.web.id]
-  tags = { Name = "${var.app_name}-instance" }
+app_name}-instance" }
 }
 ```
 
-#### 数据库模板
+#
+### 数据库模板
 
 ```hcl
 # database.tf
@@ -214,7 +213,6 @@ resource "aws_db_instance" "main" {
   password             = var.db_password
   db_subnet_group_name = aws_db_subnet_group.main.name
   skip_final_snapshot  = true
-  tags = { Name = "${var.app_name}-db" }
 }
 # ...
 variable "db_password" {
@@ -223,7 +221,8 @@ variable "db_password" {
 }
 ```
 
-#### 基础网络模板
+#
+### 基础网络模板
 
 ```hcl
 # network.tf
@@ -244,7 +243,6 @@ resource "aws_route_table" "public" {
 }
 ```
 
-**输入**: 用户提供功能二：Terraform模板所需的指令和必要参数.
 **处理**: 解析功能二：Terraform模板的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能二：Terraform模板的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -284,7 +282,6 @@ case $ACTION in
 esac
 ```
 
-**输入**: 用户提供功能三：一键部署与销毁所需的指令和必要参数.
 **处理**: 解析功能三：一键部署与销毁的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能三：一键部署与销毁的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -310,7 +307,6 @@ terraform validate
 
 ---
 
-**输入**: 用户提供功能四：状态管理所需的指令和必要参数.
 **处理**: 解析功能四：状态管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能四：状态管理的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：单云基础设施即代、码工具、基础资源配置与一、云锻造自动化免费、版帮助你使用基础、设施即代码、IaC、管理云资源、模板定义、一键部署与基础配、置管理、告别手动控制台操、实现云资源的可重、可版本化、可追溯管理、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -468,7 +464,6 @@ Terraform的state文件包含资源ID、敏感信息（如数据库密码）。�
 帮我初始化AWS基础设施项目，创建一个Web应用的基础架构
 ```
 # ...
-Agent会引导你选择云平台、生成Terraform模板、执行部署.
 # ...
 ### 标准流程（<120秒）(补充)
 # ...

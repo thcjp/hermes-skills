@@ -133,7 +133,6 @@ class ProFeedMonitor:
 # ...
     def calculate_exploitability(self, advisory):
         """可利用性评分（EPSS-like简化模型）"""
-        text = (advisory["title"] + " " + advisory.get("description", "")).lower()
         score = 0.0
 # ...
         # 基础分：严重性
@@ -224,7 +223,7 @@ class EnterpriseFeedMonitor(ProFeedMonitor):
             "previous_state": old_state,
             "updated_at": datetime.now().isoformat(),
             "note": note,
-            "history": states.get(advisory_id, {}).get("history", []) + [{
+            "history": states.get("history", []) + [{
                 "state": old_state,
                 "timestamp": datetime.now().isoformat(),
                 "note": note
@@ -235,12 +234,12 @@ class EnterpriseFeedMonitor(ProFeedMonitor):
 # ...
     def get_state(self, advisory_id):
         """获取公告状态"""
-        states = json.loads(self.states_file.read_text(encoding="utf-8"))
+loads(self.states_file.read_text(encoding="utf-8"))
         return states.get(advisory_id, {"state": "new"})
 # ...
     def list_by_state(self, state):
         """按状态筛选公告"""
-        states = json.loads(self.states_file.read_text(encoding="utf-8"))
+loads(self.states_file.read_text(encoding="utf-8"))
         advisories = json.loads(self.advisories_file.read_text(encoding="utf-8"))
 # ...
         matched = []
@@ -257,7 +256,7 @@ class EnterpriseFeedMonitor(ProFeedMonitor):
 # ...
     def verify_integrity(self):
         """数据完整性校验"""
-        advisories = json.loads(self.advisories_file.read_text(encoding="utf-8"))
+loads(self.advisories_file.read_text(encoding="utf-8"))
         integrity = json.loads(self.integrity_file.read_text(encoding="utf-8"))
 # ...
         verified = 0
@@ -356,7 +355,7 @@ class FullEnterpriseMonitor(EnterpriseFeedMonitor):
                 "fetch_count": limits.get(feed_url, {}).get("fetch_count", 0) + 1
             }
             self.rate_limit_file.write_text(
-                json.dumps(limits, ensure_ascii=False, indent=2), encoding="utf-8")
+dumps(limits, ensure_ascii=False, indent=2), encoding="utf-8")
 # ...
             print(f"✓ 抓取成功（速率限制：{min_interval}秒间隔）")
             return content
@@ -386,7 +385,7 @@ class FullEnterpriseMonitor(EnterpriseFeedMonitor):
 # ...
     def send_webhook(self, advisory):
         """发送Webhook通知"""
-        webhooks = json.loads(self.webhook_file.read_text(encoding="utf-8"))
+loads(self.webhook_file.read_text(encoding="utf-8"))
         severity = advisory.get("severity", "info")
 # ...
         for hook in webhooks:
@@ -403,17 +402,15 @@ class FullEnterpriseMonitor(EnterpriseFeedMonitor):
                 "link": advisory.get("link", ""),
                 "cve_ids": advisory.get("cve_ids", []),
                 "exploitability_score": advisory.get("exploitability_score", 0),
-                "timestamp": datetime.now().isoformat()
             }, ensure_ascii=False).encode()
 # ...
             try:
-                req = urllib.request.Request(
                     hook["url"],
                     data=payload,
                     headers={"Content-Type": "application/json"},
                     method="POST"
                 )
-                with urllib.request.urlopen(req, timeout=10) as resp:
+request.urlopen(req, timeout=10) as resp:
                     if resp.status == 200:
                         hook["sent_count"] += 1
                         print(f"✓ Webhook已发送：{hook['name']} → {advisory['title'][:40]}")
@@ -429,8 +426,8 @@ class FullEnterpriseMonitor(EnterpriseFeedMonitor):
 # ...
     def generate_report(self):
         """生成分析报告"""
-        advisories = json.loads(self.advisories_file.read_text(encoding="utf-8"))
-        states = json.loads(self.states_file.read_text(encoding="utf-8"))
+loads(self.advisories_file.read_text(encoding="utf-8"))
+loads(self.states_file.read_text(encoding="utf-8"))
 # ...
         report = {
             "generated_at": datetime.now().isoformat(),
@@ -462,7 +459,7 @@ class FullEnterpriseMonitor(EnterpriseFeedMonitor):
 # ...
         # 待处理
         for adv in advisories:
-            state = states.get(adv.get("id", ""), {}).get("state", "new")
+get(adv.get("id", ""), {}).get("state", "new")
             if state in ["new", "read"] and adv.get("severity") in ["critical", "high"]:
                 report["pending_action"].append({
                     "title": adv["title"][:60],
@@ -525,7 +522,6 @@ monitor.generate_report()
 | 版本范围 | 识别受影响的版本范围 |
 | 修复关联 | 关联补丁和修复建议 |
 
-**输入**: 用户提供CVE关联分析（专业版）所需的指令和必要参数.
 **处理**: 解析CVE关联分析（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回CVE关联分析（专业版）的响应数据,包含状态码、结果和日志.
 ### 可利用性评分（专业版）
@@ -548,7 +544,6 @@ monitor.generate_report()
 | 0.3-0.59 | medium | 一周内处理 |
 | 0.0-0.29 | low | 常规处理 |
 
-**输入**: 用户提供可利用性评分（专业版）所需的指令和必要参数.
 **处理**: 解析可利用性评分（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回可利用性评分（专业版）的响应数据,包含状态码、结果和日志.
 ### 状态追踪（专业版）
@@ -567,7 +562,6 @@ new → read → processing → resolved
 | resolved | 已修复/已解决 |
 | ignored | 评估后忽略（不影响/重复） |
 
-**输入**: 用户提供状态追踪（专业版）所需的指令和必要参数.
 **处理**: 解析状态追踪（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回状态追踪（专业版）的响应数据,包含状态码、结果和日志.
 ### 速率限制与礼貌抓取（专业版）
@@ -579,13 +573,12 @@ new → read → processing → resolved
 | timeout | 30秒 | 抓取超时 |
 | 重试 | 1次 | 失败后重试 |
 
-**输入**: 用户提供速率限制与礼貌抓取（专业版）所需的指令和必要参数.
 **处理**: 解析速率限制与礼貌抓取（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回速率限制与礼貌抓取（专业版）的响应数据,包含状态码、结果和日志.
 ### 数据完整性校验（专业版）
 
 每条公告使用SHA-256哈希校验，检测数据是否被篡改.
-**输入**: 用户提供数据完整性校验（专业版）所需的指令和必要参数.
+
 **处理**: 解析数据完整性校验（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回数据完整性校验（专业版）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -600,7 +593,6 @@ new → read → processing → resolved
 
 ---
 
-**输入**: 用户提供Webhook通知（专业版）所需的指令和必要参数.
 **处理**: 解析Webhook通知（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Webhook通知（专业版）的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级安全公告监、控专业版、安全公告流监控专、业版是面向企业级、场景的完整安全公、告监控解决方案、在免费版基础监控、专业版新增、状态追踪管理、通知集成六大高级、满足安全团队对漏、洞情报的深度分析、和响应需求等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -612,7 +604,7 @@ new → read → processing → resolved
 ```python
 monitor = FullEnterpriseMonitor()
 # 抓取并分析
-content = monitor.fetch_with_rate_limit("https://nvd.nist.gov/...")
+content = monitor.nist.gov/...")
 # 计算可利用性评分
 for adv in advisories:
     monitor.calculate_exploitability(adv)
@@ -626,8 +618,6 @@ report = monitor.generate_report()
 ```python
 monitor = ProFeedMonitor()
 inventory = [
-    {"name": "Apache", "version": "2.4.49"},
-    {"name": "nginx", "version": "1.21.0"},
 ]
 # 关联产品
 for adv in advisories:
@@ -875,8 +865,6 @@ if result["corrupted"] > 0:
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

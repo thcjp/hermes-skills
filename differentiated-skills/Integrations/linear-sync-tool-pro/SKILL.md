@@ -63,21 +63,21 @@ Linear作为研发项目管理工具，其高级功能（任务流转、批量�
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -293,7 +293,6 @@ linear document create \
 linear document view <slug>
 # ...
 # 更新文档
-linear document update <slug> --content-file ./updated.md
 # ...
 # 删除文档
 linear document delete <slug> -y
@@ -342,7 +341,6 @@ linear label list
 
 ```bash
 # 导出Schema用于参考
-linear schema -o /tmp/linear-schema.graphql
 # ...
 # 搜索Schema中的特定类型
 grep -i "cycle" /tmp/linear-schema.graphql
@@ -352,11 +350,11 @@ grep -A 30 "^type Issue " /tmp/linear-schema.graphql
 linear api '{ viewer { id name email } }'
 # ...
 # 带变量的查询
-linear api 'query($teamId: String!) { team(id: $teamId) { name } }' \
+) { team(id: $teamId) { name } }' \
   --variable teamId=abc123
 # ...
 # 带JSON变量的复杂查询
-linear api 'query($filter: IssueFilter!) { issues(filter: $filter) { nodes { title } } }' \
+) { issues(filter: $filter) { nodes { title } } }' \
   --variables-json '{"filter": {"state": {"name": {"eq": "In Progress"}}}}'
 # ...
 # 使用curl直接调用

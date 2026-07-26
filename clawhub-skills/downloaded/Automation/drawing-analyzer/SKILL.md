@@ -64,7 +64,6 @@ pip install pdfplumber
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
 
 ## 核心能力
-Analyze construction drawings (PDF, DWG) to extract dimensions, annotations, symbols, title block data, and support automated quantity takeoff and design review.
 
 ## 适用场景
 | 场景 | 输入 | 输出 |
@@ -79,16 +78,12 @@ Analyze construction drawings (PDF, DWG) to extract dimensions, annotations, sym
 ```python
 analyzer = DrawingAnalyzer()
 
-result = analyzer.analyze_pdf_drawing("A101_Floor_Plan.pdf")
+result = analyzer.pdf")
 
 if result.title_block:
-    print(f"Sheet: {result.title_block.sheet_number}")
-    print(f"Title: {result.title_block.sheet_title}")
-    print(f"Scale: {result.title_block.scale}")
-
-print(f"Dimensions: {len(result.dimensions)}")
-print(f"Annotations: {len(result.annotations)}")
-print(f"Symbols: {len(result.symbols)}")
+title_block.sheet_number}")
+title_block.sheet_title}")
+title_block.scale}")
 
 for issue in result.quality_issues:
     print(f"Issue: {issue}")

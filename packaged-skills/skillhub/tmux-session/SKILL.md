@@ -79,8 +79,6 @@ for session in project-a project-b project-c; do
 done
 ```
 
-**输入**: 用户提供多会话批量管理所需的指令和必要参数.
-**输出**: 返回多会话批量管理的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`实时监控与告警`的配置文档进行参数调优- 验证返回数据的完整性和格式正确性
 - 参考`会话编排与任务流水线`的配置文档进行参数调优
 ### 2. 会话编排与任务流水线
@@ -90,7 +88,6 @@ SESSIONS=("setup" "build" "test" "deploy")
 # ...
 for i in "${!SESSIONS[@]}"; do
   session="${SESSIONS[$i]}"
-  target="${session}:0.0"
 # ...
   # 等待上一个会话完成
   if [ $i -gt 0 ]; then
@@ -103,12 +100,10 @@ for i in "${!SESSIONS[@]}"; do
 done
 ```
 
-**输出**: 返回会话编排与任务流水线的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `会话编排与任务流水线` 选项
 - 处理流程: 接收输入 -> 执行会话编排与任务流水线 -> 返回结果
 - 输入: 用户提供会话编排与任务流水线所需的参数和指令
-- 输出: 返回会话编排与任务流水线的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 3. 实时监控与告警
 
@@ -138,7 +133,6 @@ def monitor_sessions(sessions, interval=60):
 - 关键参数: `实时监控与告警` 选项
 - 处理流程: 接收输入 -> 执行实时监控与告警 -> 返回结果
 - 输入: 用户提供实时监控与告警所需的参数和指令
-- 输出: 返回实时监控与告警的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 4. 会话日志审计
 ```bash
@@ -149,9 +143,6 @@ tmux pipe-pane -t $TARGET -o 'cat >> .tmux-logs/$(date +%Y%m%d)-session.log'
 cat .tmux-logs/20260718-session.log
 ```
 
-**输入**: 用户提供会话日志审计所需的指令和必要参数.
-**处理**: 解析会话日志审计的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回会话日志审计的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `会话日志审计` 选项
 
@@ -179,8 +170,6 @@ cat .tmux-logs/20260718-session.log
 }
 ```
 
-**输入**: 用户提供会话模板管理所需的指令和必要参数.
-**输出**: 返回会话模板管理的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -209,14 +198,10 @@ for project in "${PROJECTS[@]}"; do
 # ...
   # 设置窗格标题
   tmux select-pane -t $project:0.0 -T editor
-  tmux select-pane -t $project:0.1 -T claude
-  tmux select-pane -t $project:0.2 -T logs
 # ...
   # 在各窗格启动程序
   tmux send-keys -t $project:0.0 -l -- "cd /projects/$project && vim"
-  tmux send-keys -t $project:0.0 Enter
-  tmux send-keys -t $project:0.1 -l -- "cd /projects/$project && claude"
-  tmux send-keys -t $project:0.1 Enter
+1 -l -- "cd /projects/$project && claude"
 done
 # ...
 echo "已创建 ${#PROJECTS[@]} 个项目会话"
@@ -309,9 +294,9 @@ cat > .tmux-toolkit/templates/dev-environment.json << 'EOF'
 {
   "name": "开发环境",
   "sessions": [
-    {"name": "editor", "command": "vim .", "title": "editor"},
+", "title": "editor"},
     {"name": "assistant", "command": "claude", "title": "claude"},
-    {"name": "logs", "command": "tail -f logs/app.log", "title": "logs"}
+log", "title": "logs"}
   ]
 }
 EOF

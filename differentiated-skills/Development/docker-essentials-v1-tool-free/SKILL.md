@@ -84,7 +84,6 @@ docker rm -f container_name                # 强制删除
 docker container prune                     # 清理已停止容器
 ```
 
-**输入**: 用户提供V1容器生命周期管理所需的指令和必要参数.
 **处理**: 解析V1容器生命周期管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回V1容器生命周期管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -106,7 +105,6 @@ docker image prune                                # 清理悬空镜像
 docker image prune -a                             # 清理所有未使用镜像
 ```
 
-**输入**: 用户提供V1镜像管理所需的指令和必要参数.
 **处理**: 解析V1镜像管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回V1镜像管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -128,7 +126,6 @@ docker stats                                      # 资源使用
 docker top container_name                         # 进程信息
 ```
 
-**输入**: 用户提供V1容器调试所需的指令和必要参数.
 **处理**: 解析V1容器调试的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回V1容器调试的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -152,7 +149,6 @@ docker-compose build web                         # 重新构建
 docker-compose up -d --build                     # 重建并启动
 ```
 
-**输入**: 用户提供V1 Compose编排所需的指令和必要参数.
 **处理**: 解析V1 Compose编排的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回V1 Compose编排的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -198,7 +194,6 @@ else
 fi
 ```
 
-**输入**: 用户提供V1兼容性检查所需的指令和必要参数.
 **处理**: 解析V1兼容性检查的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回V1兼容性检查的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：经典命令集与基础、适合维护旧版、环境的开发者、面向旧版、环境的容器管理工、经典命令集、基础容器生命周期、与镜像管理、核心能力、经典命令支持、镜像构建与标签管、旧版环境兼容性检等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -298,7 +293,7 @@ find . -name "docker-compose*.yml" -exec sh -c '
 # ...
 # 4. 已弃用特性检查
 echo -e "\n--- 弃用特性检查 ---"
-find . -name "docker-compose*.yml" -exec grep -l "links:" {} \; | \
+find .yml" -exec grep -l "links:" {} \; | \
     while read f; do
         echo "[!] $f 使用了已弃用的 links 特性"
     done
@@ -420,7 +415,7 @@ tar -czf docker-v1-backup-$(date +%Y%m%d).tar.gz \
 ### Q1:如何判断当前是否为V1环境?
 ```bash
 # 检查API版本
-API_VERSION=$(docker version --format '{{.Server.APIVersion}}' 2>/dev/null)
+Server.APIVersion}}' 2>/dev/null)
 echo "API版本: $API_VERSION"
 # ...
 # V1 API版本范围: 1.0 - 1.39

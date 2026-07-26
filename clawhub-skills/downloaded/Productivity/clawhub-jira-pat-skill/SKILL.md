@@ -75,7 +75,7 @@ curl -s -H "Authorization: Bearer $JIRA_PAT" \
   "$JIRA_URL/rest/api/2/search?jql=parent=EPIC-123" | jq
 
 curl -s -H "Authorization: Bearer $JIRA_PAT" \
-  "$JIRA_URL/rest/api/2/search?jql=project%3DPROJ%20AND%20status%3DOpen" | jq
+jql=project%3DPROJ%20AND%20status%3DOpen" | jq
 ```
 
 Common JQL patterns:
@@ -221,9 +221,7 @@ This skill uses **Bearer token authentication** (`Authorization: Bearer <PAT>`),
 ### 示例1：基础用法
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
 ## 常见问题

@@ -91,21 +91,18 @@ category: "Knowledge"
 [限制] 不支持搜索历史记录
 ```
 
-**输入**: 用户提供搜索引擎列表所需的指令和必要参数.
 **处理**: 解析搜索引擎列表的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回搜索引擎列表的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：个国内免费搜索引、通过统一入口快速、搜索互联网最新信、多搜索引擎工具免、个国内可访问的免、费搜索引擎、帮助用户通过统一、入口快速搜索互联、网信息、核心能力、个国内搜索引擎、搜狗等、统一关键词搜索、自动适配各搜索引、支持单引擎查询与、覆盖通用搜索、头条资讯、学术查询等场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ### 核心功能执行(补充)
 执行核心功能执行操作,使用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
-**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
-**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
+
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
@@ -268,13 +265,13 @@ ENGINES = {
     },
     "bing_int": {
         "name": "必应国际版",
-        "url": "https://cn.bing.com/search?q={keyword}&ensearch=1",
+bing.com/search?q={keyword}&ensearch=1",
         "encoding": "utf-8",
         "category": "general"
     },
     "360": {
         "name": "360搜索",
-        "url": "https://www.so.com/s?q={keyword}",
+so.com/s?q={keyword}",
         "encoding": "utf-8",
         "category": "general"
     },
@@ -298,19 +295,19 @@ ENGINES = {
     },
     "jisilu": {
         "name": "集思录",
-        "url": "https://www.jisilu.cn/explore/?keyword={keyword}",
+jisilu.cn/explore/?keyword={keyword}",
         "encoding": "utf-8",
         "category": "finance"
     },
     "ecosia": {
         "name": "Ecosia",
-        "url": "https://www.ecosia.org/search?q={keyword}",
+ecosia.org/search?q={keyword}",
         "encoding": "utf-8",
         "category": "general"
     },
     "wolframalpha": {
         "name": "WolframAlpha",
-        "url": "https://www.wolframalpha.com/input?i={keyword}",
+wolframalpha.com/input?i={keyword}",
         "encoding": "utf-8",
         "category": "knowledge"
     }

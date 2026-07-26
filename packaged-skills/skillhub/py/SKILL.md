@@ -1,9 +1,8 @@
----
-slug: "py"
+---slug: "py"
 name: "py"
 version: 1.0.2
 displayName: "Python健壮编程"
-summary: "编写可靠Python代码,避免可变默认值、导入陷阱与运行时意外。编写可靠Python代码,避免可变默认值、导入陷阱与常见运行时意外。核心能力涵盖动态类型与类型提示、集合陷阱与推导式、参数/闭"
+summary: "编写可靠Python代"
 summary_zh: "编写可靠Python代码,避免可变默认值、导入陷阱与运行时意外。编写可靠Python代码,避免可变默认值、导入陷阱与常见运行时意外。核心能力涵盖动态类型与类型提示、集合陷阱与推导式、参数/闭"
 license: "MIT"
 description: |-
@@ -24,9 +23,7 @@ tags:
   - print
   - python
   - none
-category: "Automation"
----
-# Python健壮编程
+category: "Automation"---# Python健壮编程
 
 编写可靠Python代码,避免可变默认值、导入陷阱与常见运行时意外。涵盖从动态类型陷阱到并发模型的完整防护指南.
 ## 输入格式

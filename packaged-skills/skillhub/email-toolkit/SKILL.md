@@ -1,5 +1,4 @@
----
-slug: "email-toolkit"
+---slug: "email-toolkit"
 name: "email-toolkit"
 version: 1.0.1
 displayName: "邮件工具箱专业版"
@@ -8,7 +7,7 @@ summary_zh: "企业邮件自动化与批量发送方案，支持模板与定时�
 license: "MIT"
 edition: "pro"
 description: |-
-  邮件工具箱专业版面向企业用户与高效能个人用户。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
+  邮件工具箱专业版面向企业用户与高效能个人用户。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。不适用于需要人工创意判断的任务.
 tags:
   - 沟通协作
   - 邮件管理
@@ -27,9 +26,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Communication"
----
-# 邮件工具箱专业版
+category: "Communication"---# 邮件工具箱专业版
 
 ## 付费版专享能力
 
@@ -51,7 +48,6 @@ category: "Communication"
 - **失败重试**: 自动重试失败邮件
 - **发送日志**: 完整记录发送结果
 
-**输入**: 用户提供批量发送引擎所需的指令和必要参数.
 ### 邮件模板系统
 - **内置模板**: 通知、报告、邀请、提醒、审批等常用模板
 - **自定义模板**: 创建、编辑、删除自定义模板
@@ -59,35 +55,30 @@ category: "Communication"
 - **条件渲染**: 支持条件判断逻辑
 - **模板预览**: 渲染效果预览
 
-**输入**: 用户提供邮件模板系统所需的指令和必要参数.
-**处理**: 解析邮件模板系统的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 定时调度
+### 定时调度
 - **一次性定时**: 指定时间发送
 - **周期性任务**: 每日/每周/每月/自定义 cron
 - **任务队列**: 管理待发送任务
 - **状态监控**: 实时查看任务执行状态
 
-**输入**: 用户提供定时调度所需的指令和必要参数.
-**输出**: 返回定时调度的处理结果,包含执行状态码、结果数据和执行日志。### 多服务商负载均衡
+### 多服务商负载均衡
 - **多 SMTP 池**: 配置多个 SMTP 服务商
 - **负载分配**: 按权重或轮询分配发送
 - **故障切换**: 自动切换到可用服务商
 - **用量监控**: 各服务商发送量统计
 
-**输入**: 用户提供多服务商负载均衡所需的指令和必要参数.
-**输出**: 返回多服务商负载均衡的处理结果,包含执行状态码、结果数据和执行日志。### 发送队列与重试
+### 发送队列与重试
 - **异步队列**: 非阻塞发送，提升吞吐量
 - **优先级队列**: 支持邮件优先级
 - **自动重试**: 可配置重试次数与间隔
 - **死信处理**: 失败邮件单独存储
 
-**输入**: 用户提供发送队列与重试所需的指令和必要参数.
-**输出**: 返回发送队列与重试的处理结果,包含执行状态码、结果数据和执行日志。### 退信处理
+### 退信处理
 - **退信检测**: 自动识别退信邮件
 - **地址清理**: 自动清理无效地址
 - **退信报告**: 退信统计与分析
 
-**输入**: 用户提供退信处理所需的指令和必要参数.
-**输出**: 返回退信处理的处理结果,包含执行状态码、结果数据和执行日志。### 分析报告
+### 分析报告
 - **发送统计**: 成功/失败/退信统计
 - **趋势分析**: 发送量趋势图表
 - **服务商效能**: 各 SMTP 服务商性能对比
@@ -144,8 +135,6 @@ python email_sender.py batch-send \
 # ...
 # 正式发送（使用多 SMTP 负载均衡）
 python email_sender.py batch-send \
-  --recipients customers.csv \
-  --template templates/promo.html \
   --subject ""toolkit_details" - 专属优惠码 "toolkit_details"" \
   --rate-limit 20 \
   --pool gmail,outlook \
@@ -247,16 +236,13 @@ sender.batch_send(recipients="list.csv", template="tpl.html", subject="通知")
       "name": "primary",
       "smtp_server": "smtp.gmail.com",
       "smtp_port": 587,
-      "username": "sender1@company.com",
       "password": "app_password_1",
       "weight": 50,
       "daily_limit": 500
     },
     {
       "name": "backup",
-      "smtp_server": "smtp.office365.com",
       "smtp_port": 587,
-      "username": "sender2@company.com",
       "password": "app_password_2",
       "weight": 50,
       "daily_limit": 500
@@ -270,7 +256,6 @@ sender.batch_send(recipients="list.csv", template="tpl.html", subject="通知")
 ### 专业版扩展配置
 ```json
 {
-  "smtp_server": "smtp.gmail.com",
   "smtp_port": 587,
   "username": "your-email@gmail.com",
   "password": "your-app-password",

@@ -87,7 +87,6 @@ python -m src.main --i-have-consent \
 | 匿名化选项 | 可输出匿名化结果 |
 | 审计追踪 | 记录同意时间与范围 |
 
-**输入**: 用户提供团队复盘分析(需全员同意)所需的指令和必要参数.
 ### 2. 同意管理
 ```json
 {
@@ -111,8 +110,6 @@ python -m src.main --i-have-consent \
 | 过期时间 | 同意有效期 |
 | 撤回状态 | 是否已撤回同意 |
 
-**输入**: 用户提供同意管理所需的指令和必要参数.
-**输出**: 返回同意管理的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. 多仓库批量扫描
 ```bash
 # 批量扫描多个仓库
@@ -124,8 +121,6 @@ python -m src.main --i-have-consent \
 # 每个仓库单独分析,合并为聚合报告
 ```
 
-**输入**: 用户提供多仓库批量扫描所需的指令和必要参数.
-**输出**: 返回多仓库批量扫描的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `多仓库批量扫描` 选项
 
@@ -147,16 +142,11 @@ python -m src.main --i-have-consent \
 | 测试覆盖 | 测试文件变更率 | 测试投入趋势 |
 | 提交规范 | 规范符合度变化 | 规范采纳趋势 |
 
-**输入**: 用户提供历史趋势追踪所需的指令和必要参数.
-**处理**: 解析历史趋势追踪的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回历史趋势追踪的处理结果,包含执行状态码、结果数据和执行日志.
 ### 5. 匿名化输出
 ```bash
 # 匿名化团队报告
 python -m src.main --i-have-consent \
   --multi-author-team-retro \
-  --consented-author "Alice <alice@example.com>" \
-  --consented-author "Bob <bob@example.com>" \
   -r /path/to/repo \
   --anonymize \
   -f markdown -o anonymous-retro.md
@@ -171,8 +161,6 @@ python -m src.main --i-have-consent \
 | 提交哈希 | 保留(用于引用) |
 | 文件路径 | 保留(技术分析需要) |
 
-**输入**: 用户提供匿名化输出所需的指令和必要参数.
-**输出**: 返回匿名化输出的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -190,9 +178,6 @@ python -m src.main --i-have-consent \
 # 团队复盘(全员已同意)
 python -m src.main --i-have-consent \
   --multi-author-team-retro \
-  --consented-author "Alice <alice@example.com>" \
-  --consented-author "Bob <bob@example.com>" \
-  --consented-author "Carol <carol@example.com>" \
   -r /path/to/sprint-repo \
   -s 2026-04-01 -u 2026-06-30 \
   --anonymize \
@@ -246,7 +231,6 @@ python -m src.main --i-have-consent \
 python -m src.main --i-have-consent \
   -r /path/to/projects \
   --scan-all \
-  --compare-baseline .code-analysis/baselines/q1-baseline.json \
   -f markdown -o trend-audit.md
 ```
 
@@ -262,7 +246,6 @@ python -m src.main --i-have-consent \
 python -m src.main --i-have-consent \
   -r /path/to/repo \
   -s 2026-07-01 -u 2026-09-30 \
-  --compare-baseline .code-analysis/baselines/q2-baseline.json \
   -f markdown -o q3-trend.md
 ```
 
@@ -298,7 +281,7 @@ cat > .code-analysis/config.json << 'EOF'
   "edition": "pro",
   "consent_management": {
     "enabled": true,
-    "consent_log": ".code-analysis/consent/consent-log.json",
+code-analysis/consent/consent-log.json",
     "require_explicit": true,
     "consent_expiry_days": 90
   },
@@ -333,12 +316,8 @@ EOF
 # 团队复盘分析
 python -m src.main --i-have-consent \
   --multi-author-team-retro \
-  --consented-author "Alice <alice@example.com>" \
-  --consented-author "Bob <bob@example.com>" \
-  --consented-author "Carol <carol@example.com>" \
   -r /path/to/repo \
   --anonymize \
-  -f markdown -o team-retro.md
 ```
 
 #
@@ -444,7 +423,6 @@ python -m src.main --i-have-consent \
   },
   "consent_management": {
     "enabled": true,
-    "consent_log": ".code-analysis/consent/consent-log.json",
     "require_explicit": true,
     "consent_expiry_days": 90,
     "revocation_supported": true
@@ -455,7 +433,7 @@ python -m src.main --i-have-consent \
     "concurrent": 3
   },
   "trend": {
-    "baseline_dir": ".code-analysis/baselines/",
+code-analysis/baselines/",
     "auto_compare": true,
     "retention_baselines": 365
   },
@@ -497,7 +475,7 @@ python -m src.main --i-have-consent \
 ### Q2: 团队复盘需要每个人的同意吗?
 是的。每个被分析的 Git 作者都必须明确同意。缺少任何一人的同意,该作者的数据不会被分析.
 ### Q3: 同意记录如何管理?
-同意记录存储在 `.code-analysis/consent/consent-log.json` 中,包含同意时间、范围、有效期等。支持随时撤回.
+同意记录存储在 `.json` 中,包含同意时间、范围、有效期等。支持随时撤回.
 ### Q4: 匿名化报告还能用于技术分析吗?
 可以。匿名化只替换作者名和邮箱,保留提交哈希和文件路径,技术分析不受影响.
 ### Q5: 趋势对比的基线如何建立?

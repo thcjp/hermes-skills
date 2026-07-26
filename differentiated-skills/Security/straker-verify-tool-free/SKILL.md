@@ -87,19 +87,18 @@ AI翻译验证免费版是一款面向个人用户的AI翻译服务工具。支�
 | 报告格式 | 文本 | HTML/JSON |
 | Webhook | 不支持 | 翻译完成回调 |
 
-**输入**: 用户提供免费版与专业版对比所需的指令和必要参数.
 **处理**: 解析免费版与专业版对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版与专业版对比的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
@@ -125,11 +124,11 @@ curl -X POST https://api-verify.example.com/project \
 
 ```bash
 # 查询项目状态
-curl https://api-verify.example.com/project/<project-uuid> \
+example.com/project/<project-uuid> \
   -H "Authorization: Bearer $TRANSLATE_API_KEY"
 # ...
 # 确认项目(如需要)
-curl -X POST https://api-verify.example.com/project/confirm \
+example.com/project/confirm \
   -H "Authorization: Bearer $TRANSLATE_API_KEY" \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -d "project_id=<project-uuid>"
@@ -139,7 +138,7 @@ curl -X POST https://api-verify.example.com/project/confirm \
 
 ```bash
 # 下载完成的翻译文件
-curl https://api-verify.example.com/project/<project-uuid>/download \
+example.com/project/<project-uuid>/download \
   -H "Authorization: Bearer $TRANSLATE_API_KEY" \
   -o translations.zip
 ```
@@ -189,7 +188,6 @@ class TranslationClient:
     def create_project(self, file_path, language_uuid, title="翻译项目"):
         """创建翻译项目"""
         with open(file_path, 'rb') as f:
-            response = requests.post(
                 f"{self.BASE_URL}/project",
                 headers=self.headers,
                 files={"files": f},
@@ -199,30 +197,21 @@ class TranslationClient:
                     "confirmation_required": "true"
                 }
             )
-        return response.json()
 # ...
     def confirm_project(self, project_id):
         """确认翻译项目"""
-        response = requests.post(
             f"{self.BASE_URL}/project/confirm",
-            headers=self.headers,
             data={"project_id": project_id}
         )
-        return response.json()
 # ...
     def get_status(self, project_id):
         """查询项目状态"""
-        response = requests.get(
             f"{self.BASE_URL}/project/{project_id}",
-            headers=self.headers
         )
-        return response.json()
 # ...
     def download(self, project_id, output_path="translations.zip"):
         """下载翻译结果"""
-        response = requests.get(
             f"{self.BASE_URL}/project/{project_id}/download",
-            headers=self.headers,
             stream=True
         )
         with open(output_path, 'wb') as f:
@@ -401,8 +390,6 @@ A: 免费版每天限制10次API调用。如需更多调用量或质量提升、
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

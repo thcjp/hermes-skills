@@ -90,12 +90,10 @@ class GoogleSearcher:
         ]
 # ..
         try:
-            result = subprocess.run(
                 cmd, capture_output=True, text=True,
                 timeout=timeout + 10, encoding="utf-8"
             )
 # ..
-            if result.returncode != 0:
                 return {"success": False, "error": result.stderr}
 # ..
             results = json.loads(result.stdout)
@@ -119,7 +117,6 @@ else:
     print(f"搜索失败：{result.get('error')}")
 ```
 
-**输入**: 用户提供浏览器自动化搜索所需的指令和必要参数.
 **处理**: 解析浏览器自动化搜索的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回浏览器自动化搜索的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -128,17 +125,14 @@ else:
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供搜索结果解析所需的指令和必要参数.
 **处理**: 解析搜索结果解析的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回搜索结果解析的响应数据,包含状态码、结果和日志.
 ### 3. 基础筛选
 
-**输入**: 用户提供基础筛选所需的指令和必要参数.
 **处理**: 解析基础筛选的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回基础筛选的响应数据,包含状态码、结果和日志.
 ### 4. 结果导出
 
-**输入**: 用户提供结果导出所需的指令和必要参数.
 **处理**: 解析结果导出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果导出的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：谷歌搜索免费版、通过浏览器自动化、解析结果、基础摘要生成、谷歌搜索助手免费、版是面向个人用户、的轻量、搜索工具、方式执行搜索、API、Key、解析搜索结果、提取标题、与摘要、Use、when、SEO、关键词分析、排名提升、搜索流量优化时使、不适用于黑帽、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -301,7 +295,6 @@ def safe_search(query, max_retries=2):
     """带重试的安全搜索"""
     searcher = GoogleSearcher()
     for attempt in range(max_retries):
-        result = searcher.search(query)
         if result.get("success"):
             return result
         print(f"第{attempt+1}次失败：{result.get('error')}")
@@ -372,8 +365,6 @@ def safe_search(query, max_retries=2):
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

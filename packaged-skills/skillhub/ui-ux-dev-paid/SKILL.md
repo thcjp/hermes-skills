@@ -84,8 +84,6 @@ serve/
 │   └── landing/index.html
 ```
 
-**处理**: 解析多页面项目管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回多页面项目管理的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`批量图片转换与优化报告`的配置文档进行参数调优
 ### 2. 设计系统持久化与引用
 项目配置中引用设计系统,保障跨页面一致性:
@@ -124,9 +122,6 @@ serve/
 }
 ```
 
-**输入**: 用户提供设计系统持久化与引用所需的指令和必要参数.
-**处理**: 解析设计系统持久化与引用的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回设计系统持久化与引用的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `设计系统持久化与引用` 选项
 
@@ -147,9 +142,6 @@ bash （请参考skill目录中的脚本文件） "http://localhost:5174/project
 bash （请参考skill目录中的脚本文件） "http://localhost:5174/project/page/" /tmp/mobile-small.png 320 568
 ```
 
-**输入**: 用户提供自动化多分辨率截图审查所需的指令和必要参数.
-**处理**: 解析自动化多分辨率截图审查的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回自动化多分辨率截图审查的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `自动化多分辨率截图审查` 选项
 
@@ -179,8 +171,6 @@ done
 echo "批量截图完成,输出目录: ${OUTPUT_DIR}"
 ```
 
-**输入**: 用户提供批量截图审查脚本所需的指令和必要参数.
-**处理**: 解析批量截图审查脚本的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 5. 批量图片转换与优化报告
 ```bash
 #!/bin/bash
@@ -221,19 +211,15 @@ echo "总节省: $(numfmt --to=iec $((total_before - total_after)))"
 - 关键参数: `批量图片转换与优化报告` 选项
 - 处理流程: 接收输入 -> 执行批量图片转换与优化报告 -> 返回结果
 - 输入: 用户提供批量图片转换与优化报告所需的参数和指令
-- 输出: 返回批量图片转换与优化报告的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 6. Zip打包导出
 ```bash
 cd serve && zip -r /tmp/enterprise-app.zip enterprise-app/
 # ...
-cd serve && zip -r /tmp/enterprise-app.zip enterprise-app/ \
+zip enterprise-app/ \
   -x "*.DS_Store" "*/tmp/*" "*/.git/*"
 ```
 
-**输入**: 用户提供Zip打包导出所需的指令和必要参数.
-**处理**: 解析Zip打包导出的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Zip打包导出的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `zip打包导出` 选项
 
@@ -423,8 +409,8 @@ sudo apt install webp zip coreutils
   <title>企业应用 - 首页</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+com/react-dom@18/umd/react-dom.production.min.js"></script>
+com/@babel/standalone/babel.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {

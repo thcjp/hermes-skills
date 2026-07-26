@@ -115,10 +115,10 @@ csv-insight stream group access_log.csv \
 csv-insight correlate features.csv --method pearson
 # ...
 # 输出热力图（ASCII）
-csv-insight correlate features.csv --method pearson --heatmap
+csv --method pearson --heatmap
 # ...
 # 识别强相关对（|r| > 0.8）
-csv-insight correlate features.csv --method pearson --threshold 0.8
+csv --method pearson --threshold 0.8
 ```
 
 输出示例：
@@ -173,13 +173,12 @@ amount 分布直方图（20 箱）:
 csv-insight anomalies data.csv --column amount --method iqr --factor 1.5
 # ...
 # DBSCAN 方法（适合多维异常）
-csv-insight anomalies data.csv \
   --columns amount,frequency,recency \
   --method dbscan \
   --eps 0.5 --min-samples 5
 # ...
 # 多方法对比
-csv-insight anomalies data.csv --column amount --method all --compare
+csv --column amount --method all --compare
 ```
 
 ### 场景五：多数据集对比（业务分析师）
@@ -205,10 +204,8 @@ csv-insight report data.csv \
   --output data-quality-report.md
 # ...
 # HTML 格式（含图表）
-csv-insight report data.csv \
   --include stats,schema,anomalies,distribution \
   --format html \
-  --output data-quality-report.html
 ```
 
 ## 使用流程
@@ -423,7 +420,7 @@ eps 是邻域半径，min_samples 是核心点最小邻居数。建议从 `eps=0
 支持。启用 `--checkpoint` 后，中断后可从断点恢复：
 
 ```bash
-csv-insight stream stats large.csv --checkpoint --resume-on-failure
+csv --checkpoint --resume-on-failure
 ```
 
 ### Q9：HTML 报表的图表是图片吗？

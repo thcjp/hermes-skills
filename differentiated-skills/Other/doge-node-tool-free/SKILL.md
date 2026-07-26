@@ -61,7 +61,6 @@ category: "Automation"
 | `getpeerinfo` | 已连接节点详情 | IP、版本、延迟、服务 |
 | `getnetworkinfo` | 网络与版本信息 | 版本、协议、子版本 |
 
-**输入**: 用户提供节点状态查询所需的指令和必要参数.
 **处理**: 解析节点状态查询的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回节点状态查询的响应数据,包含状态码、结果和日志.
 ### 钱包查询
@@ -74,12 +73,11 @@ category: "Automation"
 | `getnewaddress` | 生成新地址 | DGKGv8wP8i... |
 | `listtransactions` | 交易记录 | 时间、金额、方向、确认数 |
 
-**输入**: 用户提供钱包查询所需的指令和必要参数.
 **处理**: 解析钱包查询的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回钱包查询的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -132,27 +130,27 @@ category: "Automation"
 
 **查询链信息**：
 ```bash
-./dogecoin-cli -datadir=$HOME/.dogecoin getblockchaininfo
+.dogecoin getblockchaininfo
 ```
 
 **查询连接数**：
 ```bash
-./dogecoin-cli -datadir=$HOME/.dogecoin getconnectioncount
+.dogecoin getconnectioncount
 ```
 
 **查询钱包余额**：
 ```bash
-./dogecoin-cli -datadir=$HOME/.dogecoin getwalletinfo
+.dogecoin getwalletinfo
 ```
 
 **查询交易记录**：
 ```bash
-./dogecoin-cli -datadir=$HOME/.dogecoin listtransactions "*" 10
+.dogecoin listtransactions "*" 10
 ```
 
 **生成新地址**：
 ```bash
-./dogecoin-cli -datadir=$HOME/.dogecoin getnewaddress
+.dogecoin getnewaddress
 ```
 
 ## 示例

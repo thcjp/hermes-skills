@@ -105,7 +105,6 @@ archive pro team list
 archive pro team stats --member alice
 ```
 
-**输入**: 用户提供团队共享归档库(专业版新增)所需的指令和必要参数.
 **处理**: 解析团队共享归档库(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回团队共享归档库(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -126,7 +125,6 @@ archive pro keywords --id 2026-02-16-pricing-strategy --top 10
 archive pro digest --project my-project --length 800
 ```
 
-**输入**: 用户提供AI 自动摘要与关键词提取(专业版新增)所需的指令和必要参数.
 **处理**: 解析AI 自动摘要与关键词提取(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回AI 自动摘要与关键词提取(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -147,7 +145,6 @@ archive pro diff --id 2026-02-16-pricing-strategy --v1 1 --v2 3
 archive pro changelog --project my-project
 ```
 
-**输入**: 用户提供版本控制与历史追溯(专业版新增)所需的指令和必要参数.
 **处理**: 解析版本控制与历史追溯(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回版本控制与历史追溯(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -168,7 +165,6 @@ archive pro search --author "张三"
 archive pro search --project my-project --sort relevance
 ```
 
-**输入**: 用户提供全文检索与高级筛选(专业版新增)所需的指令和必要参数.
 **处理**: 解析全文检索与高级筛选(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回全文检索与高级筛选(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -185,7 +181,6 @@ curl -s http://localhost:8080/api/items/2026-02-16-pricing-strategy
 curl -s -X POST http://localhost:8080/api/items -d '{"url":"...","tags":["..."]}'
 ```
 
-**输入**: 用户提供API 访问与第三方集成(专业版新增)所需的指令和必要参数.
 **处理**: 解析API 访问与第三方集成(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回API 访问与第三方集成(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -204,7 +199,6 @@ archive pro permission set --project confidential --team all --deny
 archive pro audit log --limit 50 --member alice
 ```
 
-**输入**: 用户提供权限管理与操作审计(专业版新增)所需的指令和必要参数.
 **处理**: 解析权限管理与操作审计(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回权限管理与操作审计(专业版新增)的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级内容归档、支持团队共享、企业级内容归档工、在免费版核心能力、权限管理与监控统、计能力、核心能力、免费版全部能力、完全兼容、团队共享归档库与、归档版本控制与历等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -307,19 +301,19 @@ def search_archive(query, project=None, limit=10):
     params = {"q": query, "limit": limit}
     if project:
         params["project"] = project
-    response = requests.get(f"{ARCHIVE_API}/search", headers=HEADERS, params=params)
+get(f"{ARCHIVE_API}/search", headers=HEADERS, params=params)
     return response.json()
 # ...
 def get_item_with_summary(item_id):
     """获取归档条目(含 AI 摘要)"""
-    response = requests.get(f"{ARCHIVE_API}/items/{item_id}", headers=HEADERS)
+get(f"{ARCHIVE_API}/items/{item_id}", headers=HEADERS)
     return response.json()
 # ...
 # 示例:归档一批研究资料
 research_urls = [
     {"url": "https://example.com/ai-paper-1", "why": "AI智能体基础理论", "tags": ["ai", "theory"]},
-    {"url": "https://example.com/ai-paper-2", "why": "多智能体协作", "tags": ["ai", "collaboration"]},
-    {"url": "https://example.com/ai-paper-3", "why": "智能体评估方法", "tags": ["ai", "evaluation"]},
+com/ai-paper-2", "why": "多智能体协作", "tags": ["ai", "collaboration"]},
+com/ai-paper-3", "why": "智能体评估方法", "tags": ["ai", "evaluation"]},
 ]
 # ...
 for item in research_urls:
@@ -566,8 +560,6 @@ curl -H "Authorization: Bearer <token>" http://localhost:8080/api/search?q=test
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

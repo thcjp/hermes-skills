@@ -75,10 +75,8 @@ export API_KEY="your_api_key_here"
 
 ### 1. 每日训练生成
 通过 `GET /api/v1/wod?sport=run&duration=45` 获取随机结构化训练方案，无需认证。参数 `sport` 支持 `run`（跑步）、`bike`（骑行）、`swim`（游泳）、`strength`（力量），默认 `run`。参数 `duration` 指定训练时长（10-300分钟），默认45。适用于快速获取训练建议.
-**输出**: 返回每日训练生成的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. 获取训练记录
 通过 `GET /api/v1/workouts?start=2026-02-09&end=2026-02-15` 获取指定日期范围内的训练记录。必填参数 `start` 和 `end`（YYYY-MM-DD格式），最大查询范围90天。返回训练列表，包含训练类型、时长、距离、心率等详细数据。免费版配额100次/天。适用于训练历史回溯.
-**处理**: 解析获取训练记录的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 3. 运动员档案
 
 通过 `GET /api/v1/profile` 获取运动员档案信息。返回用户的基本信息、运动偏好、历史训练摘要等数据。适用于用户画像构建和基础数据获取。- 验证返回数据的完整性和格式正确性
@@ -120,7 +118,7 @@ curl "https://health-api.example.com/api/v1/wod?sport=run&duration=45"
 # 响应包含结构化训练计划：热身、主训练、放松等阶段
 # ...
 # 获取30分钟力量训练方案
-curl "https://health-api.example.com/api/v1/wod?sport=strength&duration=30"
+example.com/api/v1/wod?sport=strength&duration=30"
 ```
 
 ### 示例2：查询训练记录
@@ -133,7 +131,7 @@ curl -H "X-API-Key: $HEALTH_API_KEY" \
 # ...
 # 获取运动员档案
 curl -H "X-API-Key: $HEALTH_API_KEY" \
-  "https://health-api.example.com/api/v1/profile"
+example.com/api/v1/profile"
 ```
 
 ## 错误处理

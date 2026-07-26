@@ -18,7 +18,6 @@ The skill uses the `@anyone-protocol/anyone-client` NPM package to:
 3. Route traffic through these circuits
 4. Return responses while keeping the origin IP hidden
 
-
 ## Install anyone-client
 
 ```bash
@@ -114,9 +113,7 @@ main();
 ### 示例1：基础用法
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
 ## 错误处理

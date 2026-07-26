@@ -85,6 +85,8 @@ If you don’t have it, read:
 | 参数名 | 类型 | 必填 | 说明 |
 |---:|---:|---:|---:|
 
+| instruction | string | 是 | 用户指令文本 |
+| context | string | 否 | 上下文信息 |
 ## 输出格式
 
 ```json
@@ -142,8 +144,6 @@ Use the bundled script:
 ```bash
 python3 skills/vector-control/（请参考skill目录中的脚本文件） --serial <ESN> assume
 python3 skills/vector-control/（请参考skill目录中的脚本文件） --serial <ESN> say --text "Hello Dom"
-python3 skills/vector-control/（请参考skill目录中的脚本文件） --serial <ESN> move --lw 160 --rw 160 --time 1.5
-python3 skills/vector-control/（请参考skill目录中的脚本文件） --serial <ESN> snapshot --out /tmp/vector.mjpg
 ```
 # ...
 ### Find ESN/serial(补充)

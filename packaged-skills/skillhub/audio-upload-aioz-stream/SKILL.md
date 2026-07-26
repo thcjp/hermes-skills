@@ -88,7 +88,7 @@ curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
 
 **自定义上传**：包含完整编码配置.
 ```bash
-curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
+attoaioz.cyou/api/videos/create' \
   -H 'stream-public-key: YOUR_PUBLIC_KEY' \
   -H 'stream-secret-key: YOUR_SECRET_KEY' \
   -H 'Content-Type: application/json' \

@@ -110,7 +110,8 @@ Agent（六步执行）：
 ## 核心能力
 ### 六步自动化框架
 
-#### Step 1：观察（Observe）
+#
+### Step 1：观察（Observe）
 
 识别重复任务是自动化的前提。Agent应主动观察用户的操作模式.
 **观察清单**：
@@ -131,7 +132,8 @@ Agent（六步执行）：
 | 跨系统 | 10% | 涉及多个系统切换 | 单系统内操作 |
 
 **评分标准**：总分≥70分（满分100）建议自动化，50-70分可考虑，<50分手动即可.
-#### Step 2：抽象（Abstract）
+#
+### Step 2：抽象（Abstract）
 
 将具体操作抽象为通用模式，与模式库匹配.
 ```text
@@ -146,7 +148,8 @@ Agent（六步执行）：
 模式库匹配：→ "定期收集汇总"模式
 ```
 
-#### Step 3：设计（Design）
+#
+### Step 3：设计（Design）
 
 设计自动化方案，明确触发方式、处理步骤和输出.
 ```text
@@ -160,7 +163,8 @@ Agent（六步执行）：
   超时处理：单步骤超过30分钟自动终止并告警
 ```
 
-#### Step 4：实现（Implement）
+#
+### Step 4：实现（Implement）
 
 将设计方案转化为可执行的脚本或配置.
 ```bash
@@ -186,7 +190,7 @@ python collect_reports.py --sources "部门A,部门B,部门C,部门D,部门E" ||
 log "Step 2: 合并数据"
 python merge_data.py --input ./raw/ --output 汇总表.xlsx || {
     log "ERROR: 数据合并失败"
-    python send_alert.py --message "周报数据合并失败"
+py --message "周报数据合并失败"
     exit 1
 }
 # ...
@@ -201,7 +205,8 @@ python send_email.py --to boss@company.com --subject "本周周报" --attachment
 log "周报自动化完成"
 ```
 
-#### Step 5：测试（Test）— 专业版新增
+#
+### Step 5：测试（Test）— 专业版新增
 
 小范围验证自动化方案，确保可靠性.
 **测试清单**：
@@ -228,7 +233,8 @@ python test_weekly_report.py --mode test --test-data ./test_data/
 # [PASS] 错误恢复测试
 ```
 
-#### Step 6：优化（Optimize）— 专业版新增
+#
+### Step 6：优化（Optimize）— 专业版新增
 
 迭代改进自动化方案，提升稳定性和效率.
 **优化方向**：
@@ -242,7 +248,6 @@ python test_weekly_report.py --mode test --test-data ./test_data/
 | 并行化 | 独立步骤并行执行 | 缩短总耗时 |
 | 缓存策略 | 缓存中间结果 | 减少重复计算 |
 
-**输入**: 用户提供六步自动化框架所需的指令和必要参数.
 **处理**: 解析六步自动化框架的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回六步自动化框架的响应数据,包含状态码、结果和日志.
 ### 模式库（12种常见自动化模式）— 专业版独有
@@ -262,7 +267,6 @@ python test_weekly_report.py --mode test --test-data ./test_data/
 | 定期报告 | 数据源 | 查询→计算→生成 | 格式化报告 | 财务月报 |
 | 增量处理 | 变更数据 | 检测→提取→处理 | 增量结果 | 日志分析 |
 
-**输入**: 用户提供模式库（12种常见自动化模式）— 专业版独有所需的指令和必要参数.
 **处理**: 解析模式库（12种常见自动化模式）— 专业版独有的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回模式库（12种常见自动化模式）— 专业版独有的响应数据,包含状态码、结果和日志.
 ### ROI计算工具 — 专业版独有
@@ -301,7 +305,6 @@ ROI计算公式：
 结论：回收周期<1个月 → 立即自动化 ✅
 ```
 
-**输入**: 用户提供ROI计算工具 — 专业版独有所需的指令和必要参数.
 **处理**: 解析ROI计算工具 — 专业版独有的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回ROI计算工具 — 专业版独有的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：六步完整自动化框、含模式库、个进阶模板、多角色场景与故障、工作流催化器专业、版是在免费版基础、上的全功能升级、提供完整的六步自、从识别重复任务到、测试优化、全流程覆盖自动化、工作流的构建与维、专业版解锁模式库、多角色场景指南和、完整故障排查表等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -383,7 +386,7 @@ python watch_crm.py --trigger "新客户" --handler onboarding_flow
 python send_email.py --template 欢迎邮件.html --to "${customer.email}"
 python create_task.py --assignee 销售团队 --due +3days --title "跟进客户: ${customer.name}"
 python schedule_reminder.py --delay 3days --action "提醒跟进"
-python schedule_email.py --delay 7days --template 案例资料.html --to "${customer.email}"
+python schedule_email.py --delay 7days --template 案例资料.email}"
 ```
 
 ### 模板5：库存跨系统同步
@@ -400,10 +403,10 @@ python schedule_email.py --delay 7days --template 案例资料.html --to "${cust
 
 ```bash
 python fetch_inventory.py --system 电商 --output 电商库存.json
-python fetch_inventory.py --system ERP --output ERP库存.json
+py --system ERP --output ERP库存.json
 python compare_inventory.py --source1 电商库存.json --source2 ERP库存.json --output 差异报告.json
 python sync_inventory.py --rules 同步规则.json --report 差异报告.json
-python generate_report.py --data 差异报告.json --output 库存同步报告.xlsx
+py --data 差异报告.json --output 库存同步报告.xlsx
 ```
 
 ### 模板6：系统告警通知
@@ -703,8 +706,6 @@ ROI计算工具通过四个参数量化自动化的投入产出：单次耗时�
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

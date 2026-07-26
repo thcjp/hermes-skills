@@ -127,7 +127,6 @@ class Selector extends BTNode {
         return status;  // SUCCESS 或 RUNNING
       }
     }
-    return NodeStatus.FAILURE;
   }
 }
 
@@ -138,13 +137,10 @@ class Sequence extends BTNode {
     this.children = children;
   }
   tick(bb) {
-    for (const child of this.children) {
-      const status = child.tick(bb);
       if (status !== NodeStatus.SUCCESS) {
         return status;  // FAILURE 或 RUNNING
       }
     }
-    return NodeStatus.SUCCESS;
   }
 }
 
@@ -204,7 +200,7 @@ class Inverter extends BTNode {
   tick(bb) {
     const status = this.child.tick(bb);
     if (status === NodeStatus.SUCCESS) return NodeStatus.FAILURE;
-    if (status === NodeStatus.FAILURE) return NodeStatus.SUCCESS;
+FAILURE) return NodeStatus.SUCCESS;
     return status;
   }
 }
@@ -217,11 +213,9 @@ class Repeater extends BTNode {
   tick(bb) {
     let count = 0;
     while (count < this.maxTimes) {
-      const status = this.child.tick(bb);
       if (status !== NodeStatus.SUCCESS) return status;
       count++;
     }
-    return NodeStatus.SUCCESS;
   }
 }
 
@@ -234,9 +228,7 @@ class TimeLimit extends BTNode {
     if (!bb.startTime) bb.startTime = Date.now();
     if (Date.now() - bb.startTime > this.maxTime) {
       bb.startTime = null;
-      return NodeStatus.FAILURE;
     }
-    const status = this.child.tick(bb);
     if (status !== NodeStatus.RUNNING) bb.startTime = null;
     return status;
   }
@@ -302,7 +294,7 @@ class PatrolState {
 }
 
 class ChaseState {
-  enter(enemy) { enemy.speed = 120; enemy.setAnim('run'); }
+speed = 120; enemy.setAnim('run'); }
   update(enemy, dt) {
     enemy.moveTo(enemy.target.position, dt);
     if (enemy.distanceToTarget() < enemy.attackRange) {

@@ -111,7 +111,7 @@ az group show -n "$RG" --query '{Name:name, Location:location, State:properties.
 echo "=== 资源清单 ==="
 az resource list -g "$RG" --query '[].{Name:name, Type:type, Location:location, Created:createdTime}' --output table
 echo "=== 资源数量统计 ==="
-az resource list -g "$RG" --query '[].type' -o tsv | sort | uniq -c | sort -rn
+type' -o tsv | sort | uniq -c | sort -rn
 ```
 
 ### 模板2:VM健康巡检
@@ -133,9 +133,9 @@ done
 echo "=== 存储账户清单 ==="
 az storage account list --query '[].{Name:name, RG:resourceGroup, SKU:sku.name, TLS:minimumTlsVersion}' --output table
 echo "=== 公共Blob访问检查(应为false) ==="
-az storage account list --query '[].{Name:name, PublicAccess:allowBlobPublicAccess}' --output table
+{Name:name, PublicAccess:allowBlobPublicAccess}' --output table
 echo "=== HTTPS强制检查(应为true) ==="
-az storage account list --query '[].{Name:name, HTTPS:enableHttpsTrafficOnly}' --output table
+{Name:name, HTTPS:enableHttpsTrafficOnly}' --output table
 ```
 
 ### 模板4:RBAC深度审计(专业版独有)
@@ -172,7 +172,7 @@ az costmanagement query --type ActualCost \
   --query '[].{Service:ServiceName, Cost:Cost}' --output table
 # ...
 echo "=== 空闲资源识别 ==="
-echo "停止的VM:"; az vm list -d --query "[?powerState=='VM stopped'].{Name:name, RG:resourceGroup}" --output table
+echo "停止的VM:"; az vm list -d --query "[?{Name:name, RG:resourceGroup}" --output table
 echo "未挂载磁盘:"; az disk list --query "[?diskState=='Unattached'].{Name:name, RG:resourceGroup, Size:diskSizeGb}" --output table
 echo "未使用公网IP:"; az network public-ip list --query '[?ipConfiguration==null].{Name:name, IP:ipAddress}' --output table
 ```
@@ -194,7 +194,7 @@ done
 # ...
 echo "=== 端口暴露矩阵 ==="
 # 汇总所有NSG的0.0.0.0/0入站规则,生成端口暴露矩阵
-az network nsg list --query '[].name' -o tsv | while read nsg; do
+name' -o tsv | while read nsg; do
   az network nsg rule list --nsg-name "$nsg" --query "[?sourceAddressPrefix=='0.0.0.0/0'].{Port:destinationPortRange, Protocol:protocol}" -o tsv
 done | sort | uniq -c | sort -rn
 ```
@@ -213,8 +213,6 @@ az postgres server list --query '[].{Name:name, RG:resourceGroup, Version:versio
 echo "=== CosmosDB清单 ==="
 az cosmosdb list --query '[].{Name:name, RG:resourceGroup, Kind:kind}' --output table
 EOF
-chmod +x ~/.azure-inspector/templates/databases-inspection.sh
-bash ~/.azure-inspector/templates/databases-inspection.sh
 ```
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全维度、Azure、RBAC、成本管理、NSG、暴露矩阵、跨订阅批量、定时调度、趋势对比、巡检员专业版是一、日常巡检、为核心视角的、CLI、辅助工具、面向运维工程师、云架构师、安全工程师、FinOps、合规审计员五类角、针对云上资源、配置漂移无人察觉、公网暴露面长期敞、过度授权难发现、成本失控无预警、端口暴露无矩阵、跨订阅巡检低效、巡检结论难分享、历史趋势无对比、八大痛点、构建了风险评分模、暴露面发现、配置漂移检测、巡检任务模板、巡检报告生成、深度审计、Cost、Management、跨订阅批量巡检、定时巡检调度与历、史趋势对比十一大、核心能力等.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -241,7 +239,6 @@ bash ~/.azure-inspector/templates/databases-inspection.sh
 ### 自定义权重配置(专业版独有)
 ```bash
 # 权重配置文件 ~/.azure-inspector/weights.json
-cat > ~/.azure-inspector/weights.json <<EOF
 {
   "exposure": 1.5,
   "encryption": 1.2,
@@ -253,7 +250,7 @@ EOF
 # ...
 # 评分计算脚本(读取权重)
 exposure_score=$(计算暴露面得分)
-weights=$(jq -r '.' ~/.azure-inspector/weights.json)
+weights=$(jq -r '.' ~/.json)
 weighted_total=$(jq -n --argjson w "$weights" --argjson e $exposure_score \
   '($e * $w.exposure) + ($e * $w.encryption) + ($e * $w.access) + ($e * $w.drift) + ($e * $w.health)')
 echo "加权风险总分: $weighted_total"
@@ -268,7 +265,7 @@ echo "=== 公网IP清单 ==="
 az network public-ip list --query '[].{Name:name, IP:ipAddress, Associated:ipConfiguration!=null}' --output table
 # ...
 echo "=== 未关联的公网IP ==="
-az network public-ip list --query '[?ipConfiguration==null].{Name:name, IP:ipAddress}' --output table
+az network public-ip list --query '[?{Name:name, IP:ipAddress}' --output table
 # ...
 echo "=== 存储账户公共访问 ==="
 az storage account list --query '[?allowBlobPublicAccess==true].{Name:name, RG:resourceGroup}' --output table
@@ -291,12 +288,12 @@ az resource list --query '[].{Name:name, Type:type, RG:resourceGroup, Tags:tags}
 # 2. 与基线快照对比
 if [ -f ~/.azure-inspector/baseline.json ]; then
   echo "=== 与基线对比 ==="
-  diff <(jq -r '.[] | "\(.Type)/\(.Name)"' ~/.azure-inspector/baseline.json | sort) \
+  diff <(jq -r '.[] | "\(.Type)/\(.Name)"' ~/.json | sort) \
        <(jq -r '.[] | "\(.Type)/\(.Name)"' /tmp/azure-snapshot-current.json | sort) || true
 fi
 # ...
 # 3. 保存为新基线(用户确认后)
-# cp /tmp/azure-snapshot-current.json ~/.azure-inspector/baseline.json
+# cp /tmp/azure-snapshot-current.json ~/.json
 ```
 
 ## 跨订阅批量巡检(专业版独有)
@@ -330,7 +327,6 @@ done
 # 0 9 * * * bash ~/.azure-inspector/scheduled-inspection.sh >> /var/log/azure-inspector.log 2>&1
 # ...
 # scheduled-inspection.sh
-cat > ~/.azure-inspector/scheduled-inspection.sh <<'EOF'
 #!/bin/bash
 set -e
 REPORT_DIR=~/.azure-inspector/reports
@@ -344,7 +340,7 @@ echo "- 订阅: $(az account show --query name -o tsv)" >> "$REPORT"
 echo "" >> "$REPORT"
 echo "## 资源概览" >> "$REPORT"
 echo '```' >> "$REPORT"
-az resource list --query '[].type' -o tsv | sort | uniq -c | sort -rn >> "$REPORT"
+type' -o tsv | sort | uniq -c | sort -rn >> "$REPORT"
 echo '```' >> "$REPORT"
 echo "" >> "$REPORT"
 echo "## 高风险项" >> "$REPORT"
@@ -352,7 +348,6 @@ echo "- 停止的VM: $(az vm list -d --query "[?powerState=='VM stopped'] | leng
 echo "- 未关联公网IP: $(az network public-ip list --query '[?ipConfiguration==null] | length(@)' -o tsv)" >> "$REPORT"
 echo "- Owner角色数: $(az role assignment list --role "Owner" --query 'length(@)' -o tsv)" >> "$REPORT"
 EOF
-chmod +x ~/.azure-inspector/scheduled-inspection.sh
 ```
 
 ## 历史趋势对比(专业版独有)
@@ -365,7 +360,7 @@ ls -lt ~/.azure-inspector/reports/ | head -20
 # ...
 # 2. 对比最近两次巡检
 LATEST=$(ls -t ~/.azure-inspector/reports/inspection-*.md | head -1)
-PREVIOUS=$(ls -t ~/.azure-inspector/reports/inspection-*.md | head -2 | tail -1)
+PREVIOUS=$(ls -t ~/.md | head -2 | tail -1)
 echo "最新巡检: $LATEST"
 echo "上次巡检: $PREVIOUS"
 echo ""
@@ -374,14 +369,14 @@ diff <(grep -E '^\- ' "$PREVIOUS") <(grep -E '^\- ' "$LATEST") || true
 # ...
 # 3. 生成趋势图表数据(可导入Excel或BI工具)
 echo "日期,停止VM数,未关联IP数,Owner角色数" > ~/.azure-inspector/trend.csv
-for report in $(ls ~/.azure-inspector/reports/inspection-*.md); do
+for report in $(ls ~/.md); do
   date=$(basename "$report" | sed 's/inspection-//;s/.md//')
   vm=$(grep '停止的VM' "$report" | grep -oE '[0-9]+')
   ip=$(grep '未关联公网IP' "$report" | grep -oE '[0-9]+')
   owner=$(grep 'Owner角色数' "$report" | grep -oE '[0-9]+')
-  echo "$date,$vm,$ip,$owner" >> ~/.azure-inspector/trend.csv
+  echo "$date,$vm,$ip,$owner" >> ~/.csv
 done
-echo "趋势数据已导出: ~/.azure-inspector/trend.csv"
+echo "趋势数据已导出: ~/.csv"
 ```
 
 ## 巡检报告生成(差异化)
@@ -520,9 +515,9 @@ echo "专业版巡检报告已生成: $REPORT"
 **Q: 巡检会修改我的Azure资源吗?**
 A: 不会。巡检默认全部使用只读命令(list/show/get/query),不会对资源做任何变更。即使用户要求修复建议,也仅展示命令,需用户明确确认后才执行.
 **Q: 五维风险评分如何加权?**
-A: 专业版支持自定义权重(默认:暴露面1.5x,加密1.2x,访问控制1.3x,配置漂移1.0x,健康度0.8x)。权重配置保存在 `~/.azure-inspector/weights.json`,可按业务场景调整。例如金融业务可提高"加密"权重至1.5x.
+A: 专业版支持自定义权重(默认:暴露面1.5x,加密1.2x,访问控制1.3x,配置漂移1.0x,健康度0.8x)。权重配置保存在 `~/.json`,可按业务场景调整。例如金融业务可提高"加密"权重至1.5x.
 **Q: 配置漂移检测的基线快照如何生成?**
-A: 首次运行时执行 `az resource list --query ... > ~/.azure-inspector/baseline.json` 生成基线。后续每次巡检生成current快照并与baseline对比。基线可手动更新(确认当前配置为新的标准).
+A: 首次运行时执行 `az resource list --query ... > ~/.json` 生成基线。后续每次巡检生成current快照并与baseline对比。基线可手动更新(确认当前配置为新的标准).
 **Q: 巡检报告可以分享给团队吗?**
 A: 可以。报告为标准Markdown格式,可直接粘贴到企业IM、Wiki或工单系统。专业版报告含资源概览、健康状态、RBAC审计、成本概览、NSG暴露矩阵、风险等级、建议项与历史趋势对比.
 **Q: 跨订阅巡检如何处理权限不足?**
@@ -547,9 +542,9 @@ A: 专业版在免费版基础上新增:RBAC深度安全审计(Owner过度授权
 | `Subscription not found` | 订阅ID错误或无权限 | 用 `az account list` 确认可访问的订阅 |
 | `Access denied` | RBAC权限不足 | 检查身份 `az account show`,确认Reader角色;RBAC审计需Reader+Role Based Access Control Reader |
 | 巡检报告为空 | 资源组无资源或权限不足 | 确认资源组名称,检查订阅级Reader权限 |
-| 配置漂移对比失败 | 基线快照不存在或格式错误 | 重新生成基线快照到 `~/.azure-inspector/baseline.json`,确认JSON格式正确 |
+| 配置漂移对比失败 | 基线快照不存在或格式错误 | 重新生成基线快照到 `~/.json`,确认JSON格式正确 |
 | jq命令未找到 | 缺少jq工具 | 从stedolan.github.io/jq安装jq |
-| 风险评分异常 | 部分资源查询失败 | 检查对应资源权限,补齐缺失维度后重算;查看 `~/.azure-inspector/weights.json` 权重配置 |
+| 风险评分异常 | 部分资源查询失败 | 检查对应资源权限,补齐缺失维度后重算;查看 `~/.json` 权重配置 |
 | 巡检超时 | 订阅资源过多 | 缩小巡检范围(按资源组);使用跨订阅批量巡检的并行模式 |
 | Cost Management返回空 | 未配置或订阅类型不支持 | 确认Cost Management已在Portal配置;EA账户需EA Reader权限 |
 | NSG扫描慢 | NSG数量多 | 缩小扫描范围;使用并行模式;缓存结果 |

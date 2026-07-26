@@ -133,7 +133,7 @@ agentcore launch --deployment-type container
 | 命令 | 用途 | 免费版支持 |
 |:-----|:-----|:-----|
 | `agentcore configure -e agent.py --region us-east-1` | 交互式配置 | ✅ |
-| `agentcore configure -e agent.py --region us-east-1 --name my_agent --non-interactive` | 脚本化配置 | ✅ |
+py --region us-east-1 --name my_agent --non-interactive` | 脚本化配置 | ✅ |
 | `agentcore launch --deployment-type container` | 容器模式部署 | ✅ |
 | `agentcore launch --disable-memory` | 部署但不启用记忆子系统 | ✅ |
 | `agentcore dev` | 热重载本地开发服务器 | ✅ |
@@ -173,21 +173,21 @@ agentcore launch --deployment-type container
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：AWS、Bedrock、的多智能体编排部、署助手、免费体验核心编排、适合个人开发者快、速上手、智能体编排免费版、free、面向独立开发者与、一人公司、提供基于、的单智能体快速部、署能力、它聚焦、最小可用编排、让用户在、秒内跑通第一个、零成本验证多智能、体可行性、Use、when、模型调用、智能对话、LLM、应用时使用、不适用于需要、确定性的关键决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 扩展能力3
 用`param_3`参数进行配置.
-**输入**: 用户提供扩展能力3所需的指令和必要参数.
+
 **处理**: 解析扩展能力3的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回扩展能力3的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`param_3`参数,支持创建/查询/修改操作
@@ -367,7 +367,6 @@ SOFTWARE.
 CATEGORIES = ["技术", "产品", "运营", "其他"]
 # ...
 def agent_node(state: State):
-    content = state["messages"][-1].content
     # 免费版使用规则匹配，专业版可接入Bedrock Claude模型
     for cat in CATEGORIES:
         if cat in content:

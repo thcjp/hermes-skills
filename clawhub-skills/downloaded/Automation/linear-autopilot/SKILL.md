@@ -78,7 +78,8 @@ Update `~/.clawdbot/linear-config.json`:
 
 Choose your preferred automation platform:
 
-#### Option A: Make.com (Recommended for free tier)
+#
+### Option A: Make.com (Recommended for free tier)
 
 * 1,000 operations/month free
 * 15-minute minimum interval on free tier
@@ -92,7 +93,8 @@ Quick setup:
 4. Add Discord webhook action
 5. Activate scenario
 
-#### Option B: Pipedream (If you need instant triggers)
+#
+### Option B: Pipedream (If you need instant triggers)
 
 * Instant webhook triggers
 * Limited free credits (deplete fast)
@@ -114,7 +116,8 @@ Quick setup:
      ID: {{steps.trigger.event.data.identifier}}
    ```
 
-#### Option B: Zapier (If you have a paid account)
+#
+### Option B: Zapier (If you have a paid account)
 
 * 100 tasks/month on free (very limited)
 * Native Linear + Discord integrations

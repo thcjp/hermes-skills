@@ -122,7 +122,6 @@ read path=/home/hmzo/.skill-platform/workspace/skills/macro-monitor/references/i
 
 使用 message 工具将整理好的报告推送给用户：
 
-
 ## 数据源快速访问
 
 ### Trading Economics 经济日历
@@ -230,10 +229,7 @@ browser action=start profile=skill-platform
 
 ### 2. 读取科普知识库
 
-**必须先读取** references/indicators.md 文件，获取常见指标的科普解释：
-
 ```text
-read path=/home/hmzo/.skill-platform/workspace/skills/macro-monitor/references/indicators.md
 ```
 
 ### 3. 采集数据
@@ -242,8 +238,8 @@ read path=/home/hmzo/.skill-platform/workspace/skills/macro-monitor/references/i
 
 **国际数据：**
 
-* Trading Economics (<https://tradingeconomics.com/calendar>) - 查看经济日历
-* FRED (<https://fred.stlouisfed.org/releases>) - 美联储经济数据发布
+com/calendar>) - 查看经济日历
+stlouisfed.org/releases>) - 美联储经济数据发布
 
 **国内
 ```

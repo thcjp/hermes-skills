@@ -53,7 +53,6 @@ category: "Communication"
 - **批量删除/归档**: 按过滤条件批量处理
 - **批量标记**: 批量标记已读、添加标签、设置重要性
 
-**输入**: 用户提供批量操作引擎所需的指令和必要参数.
 **处理**: 解析批量操作引擎的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量操作引擎的响应数据,包含状态码、结果和日志.
 ### 多账户 Profile 隔离
@@ -63,7 +62,6 @@ category: "Communication"
 - 账户健康状态监控
 - 账户权限与作用域管理
 
-**输入**: 用户提供多账户 Profile 隔离所需的指令和必要参数.
 **处理**: 解析多账户 Profile 隔离的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多账户 Profile 隔离的响应数据,包含状态码、结果和日志.
 ### 高级过滤策略
@@ -73,7 +71,6 @@ category: "Communication"
 - 过滤结果导出（CSV/JSON）
 - 规则模板复用
 
-**输入**: 用户提供高级过滤策略所需的指令和必要参数.
 **处理**: 解析高级过滤策略的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级过滤策略的响应数据,包含状态码、结果和日志.
 ### 邮件模板系统
@@ -82,7 +79,6 @@ category: "Communication"
 - 变量插值与条件渲染
 - 模板共享与版本控制
 
-**输入**: 用户提供邮件模板系统所需的指令和必要参数.
 **处理**: 解析邮件模板系统的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回邮件模板系统的响应数据,包含状态码、结果和日志.
 ### 审计与合规
@@ -92,7 +88,6 @@ category: "Communication"
 - 敏感邮件标记与保护
 - 数据保留策略
 
-**输入**: 用户提供审计与合规所需的指令和必要参数.
 **处理**: 解析审计与合规的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回审计与合规的响应数据,包含状态码、结果和日志.
 ### 团队协作
@@ -103,7 +98,6 @@ category: "Communication"
 
 ---
 
-**输入**: 用户提供团队协作所需的指令和必要参数.
 **处理**: 解析团队协作的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回团队协作的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
@@ -151,8 +145,6 @@ porteden email batch-send \
 # 正式发送
 porteden email batch-send \
   --profile support \
-  --recipients customers.csv \
-  --template templates/reply.html \
   --subject "工单 {{ticket_id}} 处理通知" \
   --rate-limit 10 \
   --log batch_send.log
@@ -334,14 +326,14 @@ porteden profile health-check --all
 ### 批量操作安全
 ```bash
 # 始终先试运行
-porteden email batch-send --recipients list.csv --template tpl.html --dry-run
+csv --template tpl.html --dry-run
 # ...
 # 控制速率与重试
-porteden email batch-send --recipients list.csv --template tpl.html \
+csv --template tpl.html \
   --rate-limit 10 --retry 3 --retry-delay 60
 # ...
 # 记录失败用例
-porteden email batch-send --recipients list.csv --template tpl.html \
+csv --template tpl.html \
   --log batch.log --on-failure log
 ```
 
@@ -402,7 +394,7 @@ Error: Rate limit exceeded
 
 ```bash
 # 降低速率
-porteden email batch-send --recipients list.csv --template tpl.html --rate-limit 5
+csv --template tpl.html --rate-limit 5
 ```
 
 ### 问题2：Profile 切换失败

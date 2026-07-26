@@ -193,7 +193,7 @@ for event in stream:
 ### 批量转写会议录音并分离说话人
 用户有一段 90 分钟的会议录音 `meeting.wav` 已上传至 Blob 并得到 SAS URL。先配置环境变量 `TRANSCRIPTION_ENDPOINT` 与 `TRANSCRIPTION_KEY`,实例化 `TranscriptionClient`。调用 `begin_transcription(name="meeting-20260406", locale="zh-CN", content_urls=["https://<storage>/meeting.wav?<sas>"], diarization_enabled=True)`。`job.result()` 阻塞等待,完成后从 `result` 取回分说话人的完整文稿,每段发言附带说话人标识与时间戳。导出为会议纪要后关闭会话.
 ### 实时流式转写本地音频
-用户需要把一段本地 `audio.wav` 实时转写为字幕。建立流式会话 `stream = client.begin_stream_transcription(locale="en-US")`,调用 `stream.send_audio_file("audio.wav")` 按块送入音频,迭代 `for event in stream` 获取识别事件,把 `event.text` 实时渲染到字幕层。处理流式背压避免发送速率过快,转写结束后关闭会话释放资源.
+用户需要把一段本地 `audio.wav` 实时转写为字幕。建立流式会话 `stream = client.begin_stream_transcription(locale="en-US")`,调用 `stream.wav")` 按块送入音频,迭代 `for event in stream` 获取识别事件,把 `event.text` 实时渲染到字幕层。处理流式背压避免发送速率过快,转写结束后关闭会话释放资源.
 ### 指定语言生成带时间戳字幕
 用户有一段英文播客 `podcast.wav`,需要生成 SRT 字幕。批量提交 `begin_transcription(locale="en-US", content_urls=[...], diarization_enabled=False)`,在结果处理中提取每个识别片段的起始与结束时间戳,按 SRT 格式拼接序号、时间码与文本后写入 `podcast.srt`。指定 `en-US` 后专有名词识别准确率明显提升.
 ## 异常处理

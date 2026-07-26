@@ -313,7 +313,6 @@ curl http://localhost:11434/api/chat -d '{
 cat > CodeReviewer.modelfile << 'EOF'
 FROM qwen2.5:7b
 # ...
-PARAMETER temperature 0.2
 PARAMETER num_ctx 8192
 PARAMETER top_p 0.9
 PARAMETER top_k 40
@@ -395,7 +394,7 @@ echo "# 文档摘要报告" > summary.md
 echo "" >> summary.md
 for file in docs/*.md; do
   echo "## $(basename $file)" >> summary.md
-  cat "$file" | ollama run qwen2.5:7b "用3句话总结核心内容" >> summary.md
+5:7b "用3句话总结核心内容" >> summary.md
   echo "" >> summary.md
 done
 # ...
@@ -423,7 +422,6 @@ curl http://localhost:11434/api/generate -d '{
   "model": "qwen2.5:7b",
   "prompt": "生成随机数",
   "options": {
-    "temperature": 0.3,
     "num_ctx": 8192,
     "num_predict": 500,
     "top_p": 0.9,
@@ -474,7 +472,7 @@ cat > ~/.ollama/templates/summary.txt << 'EOF'
 EOF
 # ...
 # 使用模板进行推理
-cat 文档.txt | ollama run qwen2.5:7b "$(cat ~/.ollama/templates/summary.txt)"
+cat 文档.txt | ollama run qwen2.5:7b "$(cat ~/.txt)"
 ```
 
 ## 常见问题

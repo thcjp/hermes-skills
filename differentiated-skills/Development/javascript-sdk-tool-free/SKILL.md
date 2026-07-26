@@ -1,9 +1,8 @@
----
-slug: javascript-sdk-tool-free
+---slug: javascript-sdk-tool-free
 name: javascript-sdk-tool-free
 version: 1.0.0
 displayName: JS SDK工具免费版
-summary: "JavaScript AI 应用 SDK 入门工具，支持模型调用、文件上传与基础代理配置.。面向个人开发者的 JavaScript AI 应用 SDK 工具，提供基础的模型调用与文件处理能力"
+summary: "JavaScript "
 license: Proprietary
 edition: free
 description: '面向个人开发者的 JavaScript AI 应用 SDK 工具，提供基础的模型调用与文件处理能力。核心能力:
@@ -45,9 +44,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# JavaScript SDK 工具（免费版）
+category: "Automation"---# JavaScript SDK 工具（免费版）
 
 ## 概述
 
@@ -64,21 +61,21 @@ category: "Automation"
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -117,7 +114,6 @@ category: "Automation"
 # ...
 4. 错误处理
    try {
-       const result = await client.run({...});
    } catch (e) {
        if (e.name === 'RequirementsNotMet') {
            console.log('缺少必要参数:', e.errors);
@@ -133,7 +129,6 @@ category: "Automation"
 ```typescript
 import { createClient } from '@ai/sdk';
 // ...
-const client = createClient({ apiKey: process.env.AI_API_KEY });
 // ...
 // 方式一：自动上传（路径作为输入）
 const result1 = await client.run({
@@ -157,10 +152,9 @@ const result2 = await client.run({
 // ...
 // 方式三：浏览器文件上传
 const input = document.querySelector('input[type="file"]');
-const file = await client.uploadFile(input.files[0]);
+uploadFile(input.files[0]);
 const result3 = await client.run({
     app: 'image-processor',
-    input: { image: file.uri }
 });
 ```
 
@@ -230,7 +224,6 @@ import { createClient } from '@ai/sdk';
 const client = createClient({ apiKey: 'your_api_key' });
 // ...
 // 方式二：环境变量（推荐）
-const client = createClient({ apiKey: process.env.AI_API_KEY });
 // ...
 // 方式三：前端代理（不暴露 Key）
 const client = createClient({ proxyUrl: '/api/proxy' });
@@ -241,11 +234,9 @@ const client = createClient({ proxyUrl: '/api/proxy' });
 ```typescript
 import { createClient } from '@ai/sdk';
 // ...
-const client = createClient({ apiKey: process.env.AI_API_KEY });
 // ...
 async function main() {
     try {
-        const result = await client.run({
             app: 'text-generator',
             input: {
                 prompt: '用一句话介绍 JavaScript',
@@ -283,7 +274,6 @@ const { createClient } = require('@ai/sdk');
 const client = createClient({ apiKey: 'your_api_key' });
 // ...
 async function run() {
-    const result = await client.run({
         app: 'text-generator',
         input: { prompt: '你好' }
     });
@@ -303,20 +293,17 @@ AI_API_KEY=your_api_key_here
 # npm install dotenv
 import 'dotenv/config';
 # ...
-const client = createClient({ apiKey: process.env.AI_API_KEY });
 ```
 
 ## 最佳实践
 
 1. **API Key 用环境变量**：不要硬编码在代码中
    ```typescript
-   const client = createClient({ apiKey: process.env.AI_API_KEY });
    ```
 
 2. **始终做错误处理**：网络和 API 调用可能失败
    ```typescript
    try {
-       const result = await client.run({...});
    } catch (e) {
        console.error(e);
    }
@@ -324,7 +311,7 @@ const client = createClient({ apiKey: process.env.AI_API_KEY });
 
 3. **长任务用异步模式**：避免请求超时
    ```typescript
-   const task = await client.run({...}, { wait: false });
+run({...}, { wait: false });
    ```
 
 4. **文件上传指定类型**：确保正确处理
@@ -351,7 +338,6 @@ Settings → API Keys → Create API Key
 
 ```typescript
 // 长耗时任务使用异步模式
-const task = await client.run({
     app: 'video-generator',
     input: { prompt: '...' }
 }, { wait: false });
@@ -359,7 +345,6 @@ const task = await client.run({
 // 轮询任务状态
 async function waitForTask(taskId, interval = 5000) {
     while (true) {
-        const status = await client.getTask(taskId);
         if (status.status === 'completed') return status;
         if (status.status === 'failed') throw new Error(status.error);
         await new Promise(r => setTimeout(r, interval));
@@ -377,8 +362,8 @@ const result = await waitForTask(task.id);
 const client = createClient({ proxyUrl: '/api/proxy' });
 // ...
 // 浏览器文件上传
-const input = document.querySelector('input[type="file"]');
-const file = await client.uploadFile(input.files[0]);
+querySelector('input[type="file"]');
+uploadFile(input.files[0]);
 ```
 
 ### Q4：如何处理 API 错误？
@@ -387,7 +372,6 @@ const file = await client.uploadFile(input.files[0]);
 import { RequirementsNotMetError, APIError } from '@ai/sdk';
 // ...
 try {
-    const result = await client.run({...});
 } catch (e) {
     if (e instanceof RequirementsNotMetError) {
         // 缺少必要参数
@@ -431,7 +415,6 @@ const results = await Promise.all(
 // 串行调用（避免速率限制）
 const results = [];
 for (const prompt of prompts) {
-    const result = await client.run({
         app: 'text-generator',
         input: { prompt }
     });

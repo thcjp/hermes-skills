@@ -47,7 +47,6 @@ category: "Automation"
 - 支持指定目标号码与详细的通话任务指令
 - 通话结束后返回转写文本、结果与录音链接
 
-**输入**: 用户提供单次外呼所需的指令和必要参数.
 **处理**: 解析单次外呼的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回单次外呼的响应数据,包含状态码、结果和日志.
 ### 通话指令构建
@@ -56,7 +55,6 @@ category: "Automation"
 - 应包含：身份说明、通话目标、已知事实、问题清单、边界条件
 - 代理不知道指令中未提及的信息，需充分准备
 
-**输入**: 用户提供通话指令构建所需的指令和必要参数.
 **处理**: 解析通话指令构建的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回通话指令构建的响应数据,包含状态码、结果和日志.
 ### 状态轮询
@@ -65,7 +63,6 @@ category: "Automation"
 - 轮询直到`lifecycle = "finalized"`表示通话结束
 - 结束后返回`outcome`（网络结果）、`transcript`（转写）、`recording_url`（录音）
 
-**输入**: 用户提供状态轮询所需的指令和必要参数.
 **处理**: 解析状态轮询的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回状态轮询的响应数据,包含状态码、结果和日志.
 ### API Key管理
@@ -74,15 +71,12 @@ category: "Automation"
 - 后续调用自动携带Key，无需手动配置
 - 用户也可手动提供自己的API Key替换
 
-**输入**: 用户提供API Key管理所需的指令和必要参数.
 **处理**: 解析API Key管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回API Key管理的响应数据,包含状态码、结果和日志.
 ### 持久化状态
 - API Key与用户电话号码持久化存储
 - 用户电话号码可作为默认回拨号码复用
-- 配置文件路径：`~/.config/call-bridge/key.json`
 
-**输入**: 用户提供持久化状态所需的指令和必要参数.
 **处理**: 解析持久化状态的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回持久化状态的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：代理拨打美国电话、的桥接工具、支持单次外呼、任务指令构建与通、话状态轮询、通话桥接免费版是、一款面向独立开发、电话代理工具、通过语音、完成通话后返回转、通话结果与录音链、并将结果结构化返、Use、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -108,7 +102,7 @@ category: "Automation"
 
 ```bash
 # 检查是否已有API Key
-cat ~/.config/call-bridge/key.json 2>/dev/null || echo "首次使用，将在首次外呼时自动获取Key"
+cat ~/.json 2>/dev/null || echo "首次使用，将在首次外呼时自动获取Key"
 ```
 
 ### 第二步：构建通话指令
@@ -130,7 +124,7 @@ curl -X POST https://api.call-bridge.dev/call \
   -H "X-Api-Key: cb_sk_..." \
   -d '{
     "to": "+15551234567",
-    "task": "你好，我是为张先生预约的助手。请帮我预约本周六晚上7点两位用餐..."
+请帮我预约本周六晚上7点两位用餐..."
   }'
 ```
 
@@ -144,7 +138,7 @@ curl -X POST https://api.call-bridge.dev/call \
 }
 ```
 
-若响应中包含`api_key`，立即保存到`~/.config/call-bridge/key.json`.
+若响应中包含`api_key`，立即保存到`~/.json`.
 ### 第四步：轮询通话状态
 
 ```bash
@@ -157,7 +151,6 @@ curl -H "X-Api-Key: cb_sk_..." \
 
 ```json
 {
-  "call_id": "ba645d75-...",
   "lifecycle": "finalized",
   "outcome": "answered",
   "talk_seconds": 145,
@@ -181,7 +174,6 @@ curl -H "X-Api-Key: cb_sk_..." \
 
 ```json
 {
-  "api_key": "cb_sk_...",
   "user_phone_number": "+15559876543"
 }
 ```
@@ -230,7 +222,7 @@ curl -H "X-Api-Key: cb_sk_..." \
 - 避免在深夜或清晨拨打，尊重对方作息
 
 ### API Key安全
-- Key持久化在`~/.config/call-bridge/key.json`，设置适当文件权限
+- Key持久化在`~/.json`，设置适当文件权限
 - 不要在代码或日志中明文打印Key
 - 定期检查Key是否有效，过期后重新获取
 - 不要将Key提交到版本控制系统
@@ -248,7 +240,7 @@ curl -H "X-Api-Key: cb_sk_..." \
 ### Q2：提示missing_fields（缺少必填字段）？
 外呼请求必须包含`to`（目标号码）和`task`（通话指令）两个字段。确保两者都已提供且非空.
 ### Q3：提示auth_required或invalid_api_key（认证失败）？
-API Key错误或已失效。检查`~/.config/call-bridge/key.json`中的Key是否正确，或重新获取Key.
+API Key错误或已失效。检查`~/.json`中的Key是否正确，或重新获取Key.
 ### Q4：提示quota_exceeded或trial_exhausted（配额用尽）？
 免费试用额度已用完。新用户可获得10次通话与10分钟通话时长的试用额度。通话达到5秒 talk time才算一次有效试用.
 ### Q5：如何挂断正在进行的通话？
@@ -287,7 +279,7 @@ curl -X POST -H "X-Api-Key: cb_sk_..." \
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
-- **Call Bridge API Key**: 持久化在`~/.config/call-bridge/key.json`
+- **Call Bridge API Key**: 持久化在`~/.json`
 - **首次获取**: 首次未认证外呼的响应中自动返回Key
 - **手动替换**: 用户可提供自己的Key替换自动获取的Key
 - **禁止**: 在代码、日志或版本控制中暴露API Key

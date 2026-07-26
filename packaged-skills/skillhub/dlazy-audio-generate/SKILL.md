@@ -78,9 +78,6 @@ export API_KEY="your_api_key_here"
 
 ### 可用音频模型
 
-**输入**: 用户提供可用音频模型所需的指令和必要参数.
-**处理**: 解析可用音频模型的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回可用音频模型的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`可用音频模型`的配置文档进行参数调优
 ### 文本转语音(TTS)
 - `doubao-tts`: 字节豆包语音合成,多语言多音色,流式高自然度,适合新闻播报与有声书
@@ -89,8 +86,6 @@ export API_KEY="your_api_key_here"
 - `keling-tt
 
 **输入**: 用户提供可用音频模型相关的配置参数、输入数据和处理选项.
-**处理**: 解析可用音频模型的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回文本转语音(TTS)的处理结果,包含执行状态码、结果数据和执行日志.
 ### 模型选择策略
 
 **关键指令**:
@@ -103,7 +98,6 @@ export API_KEY="your_api_key_here"
 - 多角色对话: `elevenlabs-dialogue`(单次多角色)
 - 音
 
-**输出**: 返回模型选择策略的处理结果,包含执行状态码、结果数据和执行日志.
 ### 管道串联
 
 每次 `dlazy` 调用会在 stdout 输出 JSON 信封。任意 flag 值可以是管道引用,从上游命令的信封中取值,无需手动复制 URL:
@@ -277,7 +271,7 @@ dlazy suno-music --prompt "summer electronic" \
 dlazy elevenlabs-voice-clone --audio sample-voice.wav --name "narrator-male"
 # ...
 # Step 2: 用克隆音色生成 TTS(管道串联,无需手动复制 voice id)
-dlazy elevenlabs-voice-clone --audio sample-voice.wav --name "narrator-male" \
+wav --name "narrator-male" \
   | dlazy elevenlabs-tts --voice @0.voice_id \
       --text "本章我们将探讨人工智能在音频生成领域的最新进展。" \
       --output chapter-1.mp3
@@ -312,7 +306,7 @@ A: 需要干净人声样本(无背景噪音、无音乐、单一说话人),时�
 ### Q5: 生成的内容版权归属如何?
 A: 生成内容的版权与商用授权以 dLazy 服务条款为准,详见 dlazy.com。涉及版权受保护的媒体内容(如已有歌曲翻唱、受保护音色模仿)不在本技能范围内,用户需自行确保输入内容与生成用途的合法性.
 ### Q6: 余额不足怎么办?
-A: CLI 返回 `code: "insufficient_balance"` 时,明确告知用户余额不足,引导访问 `dlazy.com/dashboard/organization/settings?tab=credits` 充值。充值后无需重新配置 Key,可直接重试生成请求.
+A: CLI 返回 `code: "insufficient_balance"` 时,明确告知用户余额不足,引导访问 `dlazy.tab=credits` 充值。充值后无需重新配置 Key,可直接重试生成请求.
 ## 已知限制
 
 1. **依赖 dLazy API**: 必须配置 `DLAZY_API_KEY`,无 Key 环境无法使用

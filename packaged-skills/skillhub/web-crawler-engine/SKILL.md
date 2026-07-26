@@ -1,9 +1,8 @@
----
-slug: "web-crawler-engine"
+---slug: "web-crawler-engine"
 name: "web-crawler-engine"
 version: 1.0.1
 displayName: "网页抓取引擎(专业版)"
-summary: "全功能数据抓取与归档平台，支持增量同步、SQL分析、批量调度与监控告警。。网页抓取引擎专业版是面向团队与生产环境的全功能数据抓取与归档平台，在免费版基础上新增增量同步调度、SQL 高级分析、"
+summary: "全功能数据抓取与归档平"
 summary_zh: "全功能数据抓取与归档平台，支持增量同步、SQL分析、批量调度与监控告警。。网页抓取引擎专业版是面向团队与生产环境的全功能数据抓取与归档平台，在免费版基础上新增增量同步调度、SQL 高级分析、"
 license: "MIT"
 edition: "pro"
@@ -28,9 +27,7 @@ tools:
   - write
   - glob
 homepage: ""
-category: "Development"
----
-# 网页抓取引擎(专业版)
+category: "Development"---# 网页抓取引擎(专业版)
 
 ## 付费版专享能力
 
@@ -182,7 +179,7 @@ class CrawlerPool:
                 url_hash = hashlib.md5(url.encode()).hexdigest()
                 if url_hash in self.visited:
                     continue  # 跳过已抓取
-                self.visited.add(url_hash)
+visited.add(url_hash)
                 future = executor.submit(self.crawl_one, url)
                 futures[future] = url
 # ...
@@ -191,7 +188,7 @@ class CrawlerPool:
                 try:
                     result = future.result()
                     if result:
-                        self.results.append({'url': url, 'data': result})
+results.append({'url': url, 'data': result})
                 except Exception as e:
                     print(f"抓取失败 {url}: {e}")
 # ...
@@ -204,7 +201,6 @@ class CrawlerPool:
         pass
 ```
 
-**处理**: 解析模块三：批量并发抓取（专业版独有）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 模块四：多格式数据导出（专业版独有）
 ```python
 # 多格式导出器
@@ -248,8 +244,7 @@ class DataExporter:
             f.write('\n'.join(lines))
 ```
 
-**输入**: 用户提供模块四：多格式数据导出（专业版独有）所需的指令和必要参数.
-**处理**: 解析模块四：多格式数据导出（专业版独有）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 模块五：监控告警体系（专业版独有）
+### 模块五：监控告警体系（专业版独有）
 
 | 监控指标 | 告警阈值 | 说明 |
 |:------|------:|:------|
@@ -283,7 +278,7 @@ class CrawlerMonitor:
         if total > 10:
             failure_rate = self.metrics['sync_failure'] / total
             if failure_rate > 0.1:
-                self.send_alert(f"同步失败率 {failure_rate:.0%} 超过阈值 10%")
+send_alert(f"同步失败率 {failure_rate:.0%} 超过阈值 10%")
 # ...
     def send_alert(self, message):
         print(f"[监控告警] {message}")
@@ -297,9 +292,6 @@ class CrawlerMonitor:
 | 分布式数据库 | > 100 万条 | 水平扩展，高可用 |
 | 云端备份 | 所有规模 | 灾难恢复，异地冗余 |
 
-**输入**: 用户提供模块六：分布式归档与云端备份（专业版独有）所需的指令和必要参数.
-**处理**: 解析模块六：分布式归档与云端备份（专业版独有）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回模块六：分布式归档与云端备份（专业版独有）的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 

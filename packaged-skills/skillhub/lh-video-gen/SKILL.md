@@ -165,7 +165,7 @@ python3 generate.py script.md -o output.mp4
 ### 使用预制图片（跳过 Chrome 截图）(补充)
 # ...
 ```bash
-python3 generate.py script.md --images-dir ./my-slides -o output.mp4
+python3 generate.py script.md --images-dir .mp4
 ```
 # ...
 图片命名规则：`slide_01.png`, `slide_02.png`...，与脚本分段一一对应.
@@ -176,7 +176,6 @@ python3 generate.py script.md --images-dir ./my-slides -o output.mp4
 python3 generate.py script.md --tts-command "my-tts {text} -o {output} -v {voice} -r {rate}"
 ```
 # ...
-占位符：`{text}` 口播文案、`{output}` 输出路径、`{voice}` 音色、`{rate}` 语速.
 ```
 
 ## 常见问题

@@ -110,12 +110,10 @@ template:
     frontmatter: true
 ```
 
-**输入**: 用户提供自定义输出模板所需的指令和必要参数。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `自定义输出模板` 选项
 - 处理流程: 接收输入 -> 执行自定义输出模板 -> 返回结果
 - 输入: 用户提供自定义输出模板所需的参数和指令
-- 输出: 返回自定义输出模板的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 元数据提取
 ```python
@@ -141,7 +139,6 @@ metadata_config = {
 - 关键参数: `元数据提取` 选项
 - 处理流程: 接收输入 -> 执行元数据提取 -> 返回结果
 - 输入: 用户提供元数据提取所需的参数和指令
-- 输出: 返回元数据提取的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 文档质量审计
 ```python
@@ -179,8 +176,7 @@ quality_audit = {
 }
 ```
 
-**输入**: 用户提供文档质量审计所需的指令和必要参数.
-**输出**: 返回文档质量审计的处理结果,包含执行状态码、结果数据和执行日志。### 转换历史与版本管理
+### 转换历史与版本管理
 ```python
 # 转换历史管理
 history_config = {
@@ -210,7 +206,6 @@ history_config = {
 需求:企业需要将历史文档库(数千文件)批量转为Markdown.
 ```bash
 # 批量转换企业文档库
-python3 batch_convert.py \
   --input /company/documents/ \
   --output /company/markdown/ \
   --recursive \
@@ -251,9 +246,9 @@ company/markdown/
 knowledge_base = {
     "sources": [
         {"type": "directory", "path": "./docs/", "category": "技术文档"},
-        {"type": "directory", "path": "./wiki/", "category": "团队Wiki"},
-        {"type": "directory", "path": "./meetings/", "category": "会议记录"},
-        {"type": "directory", "path": "./designs/", "category": "设计文档"}
+/wiki/", "category": "团队Wiki"},
+/meetings/", "category": "会议记录"},
+/designs/", "category": "设计文档"}
     ],
     "output": "./knowledge-base/",
     "template": "knowledge-base-template.yml",
@@ -293,7 +288,6 @@ python3 init_project.py \
 
 ### 步骤二:配置批量转换
 ```bash
-python3 batch_convert.py \
   --config conversion-config.yml \
   --parallel 8 \
   --quality-check
@@ -448,7 +442,6 @@ jobs:
         run: pip install uv
       - name: Batch Convert Documents
         run: |
-          python3 batch_convert.py \
             --input ./source-docs/ \
             --output ./docs/ \
             --parallel 8 \
@@ -456,8 +449,6 @@ jobs:
             --generate-index
       - name: Quality Audit
         run: |
-          python3 audit_conversion.py \
-            --input ./docs/ \
             --report ./audit/
       - name: Upload Documents
         uses: actions/upload-artifact@v3

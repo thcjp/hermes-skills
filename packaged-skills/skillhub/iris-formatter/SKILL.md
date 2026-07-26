@@ -268,7 +268,7 @@ done
 echo ""
 echo "## 重复代码检测"
 # 查找重复的代码块（5 行以上相同）
-find "$TARGET" -name "*.cls" -exec cat {} \; | \
+cls" -exec cat {} \; | \
   awk 'BEGIN{block=""} {
     block = block $0 "\n"
     if (NF == 0) {

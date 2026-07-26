@@ -268,7 +268,7 @@ python3 （请参考skill目录中的脚本文件） \
 | aiohttp | 异步 HTTP | 推荐 | pip install aiohttp |
 
 ### API Key 配置
-- **配置文件**: `~/.skill-platform/skill-platform.json`
+- **配置文件**: `~/.json`
 - **字段路径**: `skills.dashscope.apiKey`(企业版 Key)
 - **附加字段**: `skills.dashscope.edition=pro`
 - **获取方式**: 通过企业服务渠道申请,享有高优先级配额
@@ -284,7 +284,6 @@ python3 （请参考skill目录中的脚本文件） \
 
 ```bash
 # 配置文件
-~/.skill-platform/skill-platform.json
 # ...
 # 环境变量
 DASHSCOPE_API_KEY=your_pro_key

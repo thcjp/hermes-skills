@@ -211,7 +211,6 @@ curl https://api.stripe.com/v1/charges \
 
 ```bash
 head -20 apis/ai-ml.md
-sed -n '119,230p' apis/ai-ml.md
 ```
 
 **提取信息**:

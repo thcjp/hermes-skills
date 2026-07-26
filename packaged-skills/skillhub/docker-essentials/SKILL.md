@@ -103,7 +103,6 @@ docker rm -f container_name   # 强制删除容器
 docker container prune        # 清理所有已停止容器
 ```
 
-**输入**: 用户提供容器生命周期管理（Container Lifecycle）所需的指令和必要参数.
 ### 容器检查与调试（Container Inspection & Debugging）
 查看日志、执行命令、检查容器状态：
 
@@ -135,8 +134,7 @@ docker stats container_name   # 指定容器资源使用
 docker top container_name     # 容器内进程
 ```
 
-**输入**: 用户提供容器检查与调试（Container Inspection & Debugging）所需的指令和必要参数.
-**输出**: 返回容器检查与调试（Container Inspection & Debugging）的处理结果,包含执行状态码、结果数据和执行日志。### 镜像管理（Image Management）
+### 镜像管理（Image Management）
 
 构建、拉取、推送、清理镜像：
 
@@ -186,8 +184,7 @@ docker-compose build web     # 重新构建服务
 docker-compose up -d --build # 重新构建并启动
 ```
 
-**输入**: 用户提供Docker Compose所需的指令和必要参数.
-**输出**: 返回Docker Compose的处理结果,包含执行状态码、结果数据和执行日志。### 网络配置（Networking）
+### 网络配置（Networking）
 管理Docker网络与容器互联：
 
 ```bash
@@ -199,8 +196,7 @@ docker network inspect mynetwork             # 查看网络详情
 docker network rm mynetwork                  # 删除网络
 ```
 
-**输入**: 用户提供网络配置（Networking）所需的指令和必要参数.
-**处理**: 解析网络配置（Networking）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 数据卷管理（Volumes）
+### 数据卷管理（Volumes）
 
 持久化数据存储管理：
 
@@ -225,8 +221,7 @@ docker info                     # 系统信息
 docker version                  # 版本信息
 ```
 
-**输入**: 用户提供系统管理（System Management）所需的指令和必要参数.
-**输出**: 返回系统管理（System Management）的处理结果,包含执行状态码、结果数据和执行日志。### 常见工作流（Common Workflows）
+### 常见工作流（Common Workflows）
 预置开发、数据库、调试与构建工作流：
 
 **开发容器（Development container）：**
@@ -274,8 +269,6 @@ FROM nginx:alpine
 COPY --from=builder /app/dist /usr/share/nginx/html
 ```
 
-**输入**: 用户提供常见工作流（Common Workflows）所需的指令和必要参数.
-**输出**: 返回常见工作流（Common Workflows）的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 

@@ -88,19 +88,19 @@ class PasswordGenerator:
             if exclude_similar:
                 upper = upper.replace('I', '').replace('O', '')
             chars += upper
-            required.append(secrets.choice(upper))
+append(secrets.choice(upper))
 # ...
         if use_digits:
             digits = self.CHAR_SETS['digits']
             if exclude_similar:
                 digits = digits.replace('0', '').replace('1', '')
             chars += digits
-            required.append(secrets.choice(digits))
+append(secrets.choice(digits))
 # ...
         if use_symbols:
             symbols = self.CHAR_SETS['symbols']
             chars += symbols
-            required.append(secrets.choice(symbols))
+append(secrets.choice(symbols))
 # ...
         if not chars:
             return "Error: 至少选择一种字符类型"
@@ -141,7 +141,6 @@ if __name__ == "__main__":
     print(f"口令短语(6词):    {gen.generate_passphrase(6)}")
 ```
 
-**输入**: 用户提供强密码生成所需的指令和必要参数.
 **处理**: 解析强密码生成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回强密码生成的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -167,13 +166,12 @@ class PasswordStrengthChecker:
             feedback.append("长度优秀(>=16)")
         elif length >= 12:
             score += 30
-            feedback.append("长度良好(>=12)")
+append("长度良好(>=12)")
         elif length >= 8:
             score += 20
-            feedback.append("长度及格(>=8)")
         else:
             score += 5
-            feedback.append("长度不足(<8),建议至少12位")
+append("长度不足(<8),建议至少12位")
 # ...
         has_lower = bool(re.search(r'[a-z]', password))
         has_upper = bool(re.search(r'[A-Z]', password))
@@ -188,19 +186,18 @@ class PasswordStrengthChecker:
         if has_digit: feedback.append("包含数字")
         if has_symbol: feedback.append("包含特殊字符")
         if diversity < 3:
-            feedback.append("建议使用至少3种字符类型")
+append("建议使用至少3种字符类型")
 # ...
         if re.search(r'(.)\1{2,}', password):
             score -= 15
-            feedback.append("包含重复字符(如aaa)")
+append("包含重复字符(如aaa)")
 # ...
         if re.search(r'(123|abc|qwe|password|admin)', password, re.IGNORECASE):
             score -= 20
-            feedback.append("包含常见弱模式")
 # ...
         if re.search(r'^\d+$', password):
             score -= 20
-            feedback.append("纯数字密码,易被破解")
+append("纯数字密码,易被破解")
 # ...
         score = max(0, min(100, score))
 # ...
@@ -245,7 +242,6 @@ if __name__ == "__main__":
         print()
 ```
 
-**输入**: 用户提供密码强度检测所需的指令和必要参数.
 **处理**: 解析密码强度检测的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回密码强度检测的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -289,7 +285,6 @@ echo "8词:       $(generate_passphrase 8)"
 echo "下划线分隔: $(generate_passphrase 4 '_')"
 ```
 
-**输入**: 用户提供口令短语生成所需的指令和必要参数.
 **处理**: 解析口令短语生成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回口令短语生成的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -320,7 +315,6 @@ if __name__ == "__main__":
         print(f"  {pin}")
 ```
 
-**输入**: 用户提供PIN码生成所需的指令和必要参数.
 **处理**: 解析PIN码生成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回PIN码生成的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：专业密码生成工具、支持强密码生成、口令短语与、适合个人用户密码、Pro、为个人用户提供多、样化密码生成与强、度检测能力、核心能力、适用场景、账户密码创建、密码强度验证、memorable、差异化、免费版聚焦核心生、成能力、支持多种密码类型、适合个人用户日常、适用关键词等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -529,8 +523,6 @@ print(gen.generate_passphrase())
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

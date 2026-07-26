@@ -313,7 +313,6 @@ POST /api/v1/users
 ```json
 {
   "name": "张三",
-  "email": "zhangsan@example.com",
   "phone": "13800138000",
   "password": "123456"
 }

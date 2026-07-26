@@ -65,21 +65,21 @@ category: "Automation"
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -183,7 +183,7 @@ uv run light_scene.py --apply evening
 第四步，设置定时计划：
 
 ```bash
-uv run light_schedule.py --add "0 22 * * *" --scene evening
+py --add "0 22 * * *" --scene evening
 ```
 
 ## 示例
@@ -208,10 +208,10 @@ uv run light_show.py --ip 192.168.1.50 \
 
 ```bash
 # 日落时自动开灯
-uv run light_schedule.py --rule sunset-on --offset 0 --scene evening
+py --rule sunset-on --offset 0 --scene evening
 # ...
 # 日出前 30 分钟渐亮唤醒
-uv run light_schedule.py --rule sunrise-wake --offset -30 --duration 20
+py --rule sunrise-wake --offset -30 --duration 20
 ```
 
 ### 设备健康监控
@@ -228,7 +228,7 @@ uv run light_monitor.py --interval 60 --alert-webhook https://your-hook.example/
 多灯控制时启用并行调度，将延迟从串行的 N×200ms 降至并行的 200ms+N×10ms：
 
 ```bash
-uv run control_multi.py --ips 192.168.1.50,192.168.1.51,192.168.1.52 \
+py --ips 192.168.1.50,192.168.1.51,192.168.1.52 \
   --on --parallel --max-concurrency 5
 ```
 
@@ -246,7 +246,7 @@ git commit -m "feat: 新增观影模式场景"
 当某盏灯泡连续 3 次无响应时，自动触发熔断跳过该设备，避免阻塞整批指令。熔断后每 5 分钟尝试一次恢复探测：
 
 ```bash
-uv run control_multi.py --ips 192.168.1.50,192.168.1.51 \
+py --ips 192.168.1.50,192.168.1.51 \
   --on --circuit-breaker --threshold 3 --recovery-interval 300
 ```
 

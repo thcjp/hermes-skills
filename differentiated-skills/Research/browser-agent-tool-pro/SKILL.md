@@ -1,9 +1,8 @@
----
-slug: browser-agent-tool-pro
+---slug: browser-agent-tool-pro
 name: browser-agent-tool-pro
 version: 1.0.0
 displayName: 浏览器智能代理工具-专业版
-summary: "企业级无头浏览器自动化,支持批量调度、网络拦截、代理池与监控告警,面向团队生产场景。企业级无头浏览器自动化命令行工具,在免费版核心能力之上,提供网络拦截与Mock、"
+summary: "企业级无头浏览器自动化"
 license: Proprietary
 edition: pro
 description: '企业级无头浏览器自动化命令行工具,在免费版核心能力之上,提供网络拦截与Mock、
@@ -54,9 +53,7 @@ tools:
   - grep
 homepage: ""
 # 定价元数据
-category: "Agents"
----
-# 浏览器智能代理工具(专业版)
+category: "Agents"---# 浏览器智能代理工具(专业版)
 
 ## 概述
 
@@ -99,7 +96,6 @@ agent-browser network route "**/api/*" --body '{"code":0,"data":{}}'
 agent-browser network requests --filter api
 ```
 
-**输入**: 用户提供网络拦截与 Mock(专业版新增)所需的指令和必要参数.
 **处理**: 解析网络拦截与 Mock(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回网络拦截与 Mock(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -117,7 +113,6 @@ agent-browser storage local key
 agent-browser storage local set key val
 ```
 
-**输入**: 用户提供Cookies 与 Storage 精细化管理(专业版增强)所需的指令和必要参数.
 **处理**: 解析Cookies 与 Storage 精细化管理(专业版增强)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Cookies 与 Storage 精细化管理(专业版增强)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -141,7 +136,6 @@ wait
 echo "批量签到完成"
 ```
 
-**输入**: 用户提供批量任务调度(专业版新增)所需的指令和必要参数.
 **处理**: 解析批量任务调度(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量任务调度(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -156,7 +150,6 @@ export BROWSER_PROXY_POOL="http://proxy1:8080,http://proxy2:8080,http://proxy3:8
 agent-browser --proxy-pool open https://example.com
 ```
 
-**输入**: 用户提供代理池集成(专业版新增)所需的指令和必要参数.
 **处理**: 解析代理池集成(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回代理池集成(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -172,7 +165,6 @@ agent-browser metrics export --format json > metrics.json
 agent-browser metrics export --format prometheus > metrics.prom
 ```
 
-**输入**: 用户提供监控指标采集(专业版新增)所需的指令和必要参数.
 **处理**: 解析监控指标采集(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回监控指标采集(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -186,7 +178,6 @@ agent-browser --workspace globex --session admin open https://app.example.com
 agent-browser workspace list
 ```
 
-**输入**: 用户提供多租户隔离(专业版新增)所需的指令和必要参数.
 **处理**: 解析多租户隔离(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多租户隔离(专业版新增)的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级无头浏览器、自动化、支持批量调度、代理池与监控告警、面向团队生产场景、自动化命令行工具、在免费版核心能力、代理池管理、监控告警、多租户隔离与团队、协作能力、核心能力、免费版全部能力、完全兼容、与请求重放、批量任务调度与并、发会话池、代理池与反爬虫策、略集成、监控指标采集与告、警通知等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -268,8 +259,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 # ...
 ACCOUNTS = [
     {"name": "brand_a", "auth": "auth/brand_a.json", "url": "https://app.example.com/post"},
-    {"name": "brand_b", "auth": "auth/brand_b.json", "url": "https://app.example.com/post"},
-    {"name": "brand_c", "auth": "auth/brand_c.json", "url": "https://app.example.com/post"},
+    {"name": "brand_b", "auth": "auth/brand_b.example.com/post"},
+    {"name": "brand_c", "auth": "auth/brand_c.example.com/post"},
 ]
 # ...
 def run_account(account):
@@ -435,7 +426,6 @@ agent-browser pro init --migrate
 export BROWSER_PROXY_POOL="http://p1:8080,http://p2:8080"
 # 配置文件方式(见上文 config.yaml)
 # 运行时启用
-agent-browser --proxy-pool open https://example.com
 ```
 
 ### Q5: 监控指标如何接入现有系统?
@@ -498,8 +488,6 @@ agent-browser --proxy-pool open https://example.com
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

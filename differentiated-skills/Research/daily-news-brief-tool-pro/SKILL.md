@@ -54,22 +54,18 @@ category: "Knowledge"
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供定时自动执行所需的指令和必要参数.
 **处理**: 解析定时自动执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时自动执行的响应数据,包含状态码、结果和日志.
 ### 2. 多渠道推送
 
-**输入**: 用户提供多渠道推送所需的指令和必要参数.
 **处理**: 解析多渠道推送的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多渠道推送的响应数据,包含状态码、结果和日志.
 ### 3. AI智能分析
 
-**输入**: 用户提供AI智能分析所需的指令和必要参数.
 **处理**: 解析AI智能分析的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回AI智能分析的响应数据,包含状态码、结果和日志.
 ### 4. 个性化定制
 
-**输入**: 用户提供个性化定制所需的指令和必要参数.
 **处理**: 解析个性化定制的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回个性化定制的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级新闻简报专、含定时推送、多渠道分发、情感分析与趋势预、每日新闻简报助手、专业版是面向企业、级场景的完整新闻、简报生成与分发工、在免费版基础搜集、能力之上、新增定时自动执行、多语言支持、历史回顾、情感分析、趋势预测八大高级、Use、when、模型调用、智能对话、Agent、LLM、应用时使用、不适用于需要、确定性的关键决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -193,7 +189,7 @@ customization:
   languages: [zh, en]
 EOF
 # ...
-python3 news_brief_service.py --config news_brief_config.yaml
+py --config news_brief_config.yaml
 ```
 
 ## 示例
@@ -205,12 +201,10 @@ sources:
     - https://www.reuters.com/world
     - https://www.bbc.com/news/world
   economic:
-    - https://finance.sina.com.cn
     - https://www.bloomberg.com/markets
     - https://www.ft.com/markets
   technology:
     - https://tech.sina.com.cn
-    - https://techcrunch.com
     - https://www.theverge.com/tech
 # ...
 schedule:
@@ -229,7 +223,7 @@ push:
       url: https://oapi.dingtalk.com/robot/send?access_token=xxx
     - name: wechat
       type: wechat
-      url: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=xxx
+      url: https://qyapi.weixin.qq.key=xxx
     - name: email
       type: email
       url: https://api.email-service.com/send

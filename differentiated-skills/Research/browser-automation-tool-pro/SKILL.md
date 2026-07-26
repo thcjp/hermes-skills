@@ -1,9 +1,8 @@
----
-slug: browser-automation-tool-pro
+---slug: browser-automation-tool-pro
 name: browser-automation-tool-pro
 version: 1.0.0
 displayName: 浏览器自动化工具-专业版
-summary: "企业级自然语言浏览器自动化,支持远程浏览器、隐身模式、代理与批量任务,面向团队生产场景。企业级自然语言浏览器自动化工具,在免费版核心能力之上,提供远程浏览器集群、"
+summary: "企业级自然语言浏览器自"
 license: Proprietary
 edition: pro
 description: '企业级自然语言浏览器自动化工具,在免费版核心能力之上,提供远程浏览器集群、
@@ -51,9 +50,7 @@ tools:
   - write
 homepage: ""
 # 定价元数据
-category: "Automation"
----
-# 浏览器自动化工具(专业版)
+category: "Automation"---# 浏览器自动化工具(专业版)
 
 ## 概述
 
@@ -104,7 +101,6 @@ browser navigate https://example.com
 browser act "点击登录按钮"
 ```
 
-**输入**: 用户提供远程浏览器集群(专业版新增)所需的指令和必要参数.
 **处理**: 解析远程浏览器集群(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回远程浏览器集群(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -119,7 +115,6 @@ browser --stealth navigate https://example.com
 browser --stealth --fingerprint "windows-chrome-120" navigate https://example.com
 ```
 
-**输入**: 用户提供隐身模式与反检测(专业版新增)所需的指令和必要参数.
 **处理**: 解析隐身模式与反检测(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回隐身模式与反检测(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -134,7 +129,6 @@ export BROWSER_PROXY_POOL="http://proxy1:8080,http://proxy2:8080,http://proxy3:8
 browser --proxy-pool navigate https://example.com
 ```
 
-**输入**: 用户提供代理池集成(专业版新增)所需的指令和必要参数.
 **处理**: 解析代理池集成(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回代理池集成(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -147,7 +141,6 @@ browser --captcha-solver navigate https://example.com
 browser act "完成验证码"
 ```
 
-**输入**: 用户提供CAPTCHA 自动处理(专业版新增)所需的指令和必要参数.
 **处理**: 解析CAPTCHA 自动处理(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回CAPTCHA 自动处理(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -172,7 +165,6 @@ browser batch run --file tasks.yaml --concurrency 10
 #       - extract: "获取文章列表" '{"items":[{"title":"string","url":"string"}]}'
 ```
 
-**输入**: 用户提供批量任务编排(专业版新增)所需的指令和必要参数.
 **处理**: 解析批量任务编排(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量任务编排(专业版新增)的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级自然语言浏、览器自动化、支持远程浏览器、代理与批量任务、面向团队生产场景、览器自动化工具、在免费版核心能力、批量任务编排与监、控告警能力、核心能力、免费版全部能力、完全兼容、远程浏览器集群与、弹性扩缩容、代理池与、批量任务编排与并、发执行、监控指标采集与告、警通知等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -228,13 +220,11 @@ PLATFORMS = [
     {
         "name": "platform_b",
         "url": "https://platform-b.example.com/create",
-        "content": "今日产品更新公告...",
         "auth_env": {"BROWSERBASE_API_KEY": "key_b", "BROWSERBASE_PROJECT_ID": "proj_b"}
     },
     {
         "name": "platform_c",
         "url": "https://platform-c.example.com/new",
-        "content": "今日产品更新公告...",
         "auth_env": {"BROWSERBASE_API_KEY": "key_c", "BROWSERBASE_PROJECT_ID": "proj_c"}
     },
 ]
@@ -383,7 +373,7 @@ browser close
 
 ```bash
 # 使用任务清单批量执行
-browser batch run --file tasks.yaml --concurrency 10
+yaml --concurrency 10
 # ...
 # 查看任务状态
 browser batch status
@@ -539,8 +529,6 @@ browser pro init --migrate
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

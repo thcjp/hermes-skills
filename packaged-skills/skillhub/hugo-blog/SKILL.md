@@ -223,7 +223,7 @@ jobs:
       - name: 优化图片
         run: |
           find static/images -name "*.jpg" -exec jpegoptim --max=80 {} \;
-          find static/images -name "*.png" -exec optipng -o7 {} \;
+png" -exec optipng -o7 {} \;
 # ...
       - name: 构建站点
         run: hugo --minify --gc
@@ -292,17 +292,17 @@ find "$IMAGE_DIR" -name "*.jpg" -o -name "*.jpeg" | while read f; do
   echo "  优化: $f"
 done
 # ...
-find "$IMAGE_DIR" -name "*.png" | while read f; do
+png" | while read f; do
   optipng -o7 "$f"
   echo "  优化: $f"
 done
 # ...
-find "$IMAGE_DIR" -name "*.jpg" -o -name "*.png" | while read f; do
+jpg" -o -name "*.png" | while read f; do
   cwebp -q 80 "$f" -o "${f%.*}.webp"
   echo "  WebP: ${f%.*}.webp"
 done
 # ...
-find "$IMAGE_DIR" -name "*.jpg" | while read f; do
+jpg" | while read f; do
   convert "$f" -resize 300x300^ -gravity center -extent 300x300 "${f%.*}-thumb.jpg"
   echo "  缩略图: ${f%.*}-thumb.jpg"
 done

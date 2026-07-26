@@ -97,8 +97,6 @@ category: "Creative"
   - API 接口对接
 ```
 
-**处理**: 解析核心能力的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回核心能力的处理结果,包含执行状态码、结果数据和执行日志.
 ### 能力维度
 
 针对能力维度,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
@@ -190,11 +188,10 @@ for project in "$PROJECTS_DIR"/*/; do
 ### 优秀步：从免费版升级
 ```bash
 # 导入免费版偏好
-cp ~/.design-preferences/profile.md \
    ~/.design-preferences/personal-backup.md
 
 # 初始化专业版品牌系统
-cat > ~/.design-preferences/brand-system.json << 'EOF'
+cat > ~/.json << 'EOF'
 {
   "brand": {
     "name": "你的品牌名称",
@@ -245,7 +242,7 @@ EOF
 ### 第三步：启动批量工作流
 ```bash
 # 运行批量偏好注入
-python3 batch_inject.py --brand ~/.design-preferences/brand-system.json \
+python3 batch_inject.py --brand ~/.json \
                         --tasks ./design-tasks.json \
                         --output ./enriched-tasks/
 ```

@@ -71,8 +71,8 @@ export API_KEY="your_api_key_here"
 - ATS Optimization（ATS兼容性）
 
 输出分数、等级与Top 3问题.
-**输入**: 用户提供Score - 简历评分所需的指令和必要参数.
-**处理**: 解析Score - 简历评分的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### Polish - 简历润色
+
+### Polish - 简历润色
 
 基础检查项审查与改进：
 
@@ -86,8 +86,6 @@ export API_KEY="your_api_key_here"
 - Markdown：干净、结构化
 - HTML：自包含文件，可浏览器打印为PDF
 
-**输入**: 用户提供Export - 基础导出所需的指令和必要参数.
-**处理**: 解析Export - 基础导出的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 #
 ## 快速开始
 

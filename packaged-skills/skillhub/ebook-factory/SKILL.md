@@ -87,7 +87,8 @@ category: "Automation"
 - 用户用Markdown编写大纲,三级结构:
   - `# 主标题` (书名,1个)
   - `## 章节标题` (章节,多个)
-  - `### section标题` (小节,每章节下多个)
+  - `
+### section标题` (小节,每章节下多个)
 - 提供书籍主题、目标读者、写作风格(可选)
 
 **大纲示例**:
@@ -149,7 +150,8 @@ category: "Automation"
   "book_title": "Python自动化实战",
   "outline_markdown": "# Python自动化实战\n## 第一章 自动化基础\n
 # ...
-### 1.1 为什么要自动化\n### 1.2 Python自动化工具生态",
+### 1.1 为什么要自动化\n
+### 1.2 Python自动化工具生态",
   "target_audience": "Python初学者到中级开发者",
   "writing_style": "实用教程风格,代码示例丰富",
   "cover_style": "技术书籍封面,蓝色科技感",
@@ -159,7 +161,8 @@ category: "Automation"
 
 ### 预览目录树
 ```json
-{"action": "preview_outline", "outline_markdown": "# 书名\n## 章节\n### 小节"}
+{"action": "preview_outline", "outline_markdown": "# 书名\n## 章节\n
+### 小节"}
 ```
 
 ## 输出格式
@@ -206,8 +209,6 @@ category: "Automation"
 | 存储位置 | 说明 |
 |:---:|:---:|
 | output/books/{book_id}/book.md | 完整电子书Markdown源文件 |
-| output/books/{book_id}/book.epub | EPUB格式电子书 |
-| output/books/{book_id}/book.pdf | PDF格式电子书 |
 | output/books/{book_id}/cover.png | 封面图 |
 | output/books/{book_id}/outline.json | 目录树JSON |
 | output/books/{book_id}/progress.json | 生成进度(支持断点续写) |
@@ -253,7 +254,10 @@ category: "Automation"
   "book_title": "Python自动化实战",
   "outline_markdown": "# Python自动化实战\n## 第一章 自动化基础\n
 # ...
-### 1.1 为什么要自动化\n### 1.2 Python自动化工具生态\n## 第二章 办公自动化\n### 2.1 Excel自动化处理\n### 2.2 Word文档批量生成",
+### 1.1 为什么要自动化\n
+### 1.2 Python自动化工具生态\n## 第二章 办公自动化\n
+### 2.1 Excel自动化处理\n
+### 2.2 Word文档批量生成",
   "target_audience": "Python初学者到中级开发者",
   "writing_style": "实用教程风格,代码示例丰富",
   "cover_style": "技术书籍封面,蓝色科技感",
@@ -273,10 +277,6 @@ category: "Automation"
     "sections_generated": 4,
     "total_words": 8500,
     "files": {
-      "markdown": "output/books/book_20260717_001/book.md",
-      "epub": "output/books/book_20260717_001/book.epub",
-      "pdf": "output/books/book_20260717_001/book.pdf",
-      "cover": "output/books/book_20260717_001/cover.png"
     },
     "publish_results": [
       {"platform": "kdp", "success": true, "book_url": "https://kdp.amazon.com/book/xxx"},
@@ -294,7 +294,8 @@ category: "Automation"
 ```json
 {"action": "preview_outline", "outline_markdown": "# Python自动化实战\n## 第一章 自动化基础\n
 # ...
-### 1.1 为什么要自动化\n### 1.2 Python自动化工具生态"}
+### 1.1 为什么要自动化\n
+### 1.2 Python自动化工具生态"}
 ```
 
 **输出**:
@@ -309,7 +310,6 @@ category: "Automation"
           "title": "第一章 自动化基础",
           "sections": [
             {"title": "1.1 为什么要自动化"},
-            {"title": "1.2 Python自动化工具生态"}
           ]
         }
       ]
@@ -328,7 +328,8 @@ category: "Automation"
 ```json
 {"action": "generate", "book_title": "测试书", "outline_markdown": "# 测试书\n## 第一章\n
 # ...
-### 1.1 节\n### 1.2 节"}
+### 1.1 节\n
+### 1.2 节"}
 ```
 
 **输出**: 1.2节生成失败跳过
@@ -361,7 +362,12 @@ category: "Automation"
   "book_title": "Python自动化实战",
   "outline_markdown": "# Python自动化实战\n## 第一章 自动化基础\n
 # ...
-### 1.1 为什么要自动化\n### 1.2 Python自动化工具生态\n## 第二章 办公自动化\n### 2.1 Excel自动化处理\n### 2.2 Word文档批量生成\n## 第三章 网页自动化\n### 3.1 网页数据抓取\n### 3.2 自动化测试入门",
+### 1.1 为什么要自动化\n
+### 1.2 Python自动化工具生态\n## 第二章 办公自动化\n
+### 2.1 Excel自动化处理\n
+### 2.2 Word文档批量生成\n## 第三章 网页自动化\n
+### 3.1 网页数据抓取\n
+### 3.2 自动化测试入门",
   "target_audience": "Python初学者到中级开发者",
   "writing_style": "实用教程风格,代码示例丰富",
   "cover_style": "技术书籍封面,蓝色科技感",
@@ -393,8 +399,8 @@ category: "Automation"
       "cover": "output/books/book_20260720_001/cover.png"
     },
     "publish_results": [
-      {"platform": "kdp", "success": true, "book_url": "https://kdp.amazon.com/book/B0XXXXX"},
-      {"platform": "wechat_read", "success": true, "book_url": "https://weread.qq.com/book/XXXXX"},
+amazon.com/book/B0XXXXX"},
+qq.com/book/XXXXX"},
       {"platform": "douban_read", "success": true, "book_url": "https://read.douban.com/book/XXXXX"}
     ]
   },
@@ -413,7 +419,10 @@ category: "Automation"
   "action": "preview_outline",
   "outline_markdown": "# AI写作指南\n## 第一章 AI写作基础\n
 # ...
-### 1.1 什么是AI写作\n### 1.2 AI写作工具对比\n## 第二章 提示词工程\n### 2.1 提示词基础\n### 2.2 高级提示词技巧"
+### 1.1 什么是AI写作\n
+### 1.2 AI写作工具对比\n## 第二章 提示词工程\n
+### 2.1 提示词基础\n
+### 2.2 高级提示词技巧"
 }
 ```
 
@@ -450,7 +459,10 @@ category: "Automation"
   "book_title": "副业赚钱指南",
   "outline_markdown": "# 副业赚钱指南\n## 第一章 副业认知\n
 # ...
-### 1.1 副业的本质\n### 1.2 常见副业误区\n## 第二章 副业实操\n### 2.1 自媒体副业\n### 2.2 电商副业",
+### 1.1 副业的本质\n
+### 1.2 常见副业误区\n## 第二章 副业实操\n
+### 2.1 自媒体副业\n
+### 2.2 电商副业",
   "target_audience": "想做副业的上班族",
   "writing_style": "通俗易懂,案例驱动",
   "resume_from": "2.1"
@@ -495,7 +507,9 @@ category: "Automation"
   "book_title": "时间管理手册",
   "outline_markdown": "# 时间管理手册\n## 第一章 时间管理概述\n
 # ...
-### 1.1 为什么需要时间管理\n## 第二章 实用技巧\n### 2.1 番茄工作法\n### 2.2 GTD方法",
+### 1.1 为什么需要时间管理\n## 第二章 实用技巧\n
+### 2.1 番茄工作法\n
+### 2.2 GTD方法",
   "target_audience": "职场人士",
   "cover_style": "简约商务风格"
 }
@@ -532,7 +546,8 @@ category: "Automation"
 {
   "action": "generate",
   "book_title": "测试书籍",
-  "outline_markdown": "# 测试书籍\n### 直接跳到小节"
+  "outline_markdown": "# 测试书籍\n
+### 直接跳到小节"
 }
 ```
 
@@ -541,7 +556,8 @@ category: "Automation"
 {
   "success": false,
   "data": null,
-  "error": "大纲格式错误:层级跳跃(从#直接到###,缺少##章节标题)。正确格式: # 主标题 → ## 章节标题 → ### section标题,层级不能跳跃。",
+  "error": "大纲格式错误:层级跳跃(从#直接到###,缺少##章节标题)。正确格式: # 主标题 → ## 章节标题 → 
+### section标题,层级不能跳跃。",
   "code": "OUTLINE_FORMAT_ERROR"
 }
 ```
@@ -551,7 +567,8 @@ category: "Automation"
 ## 常见问题
 
 ### Q1: 大纲Markdown格式有什么要求?
-A: 大纲必须使用三级Markdown结构:`# 主标题`(书名,1个) / `## 章节标题`(章节,多个) / `### section标题`(小节,每章节下多个)。层级不能跳跃(如#直接到###)。格式不规范返回OUTLINE_FORMAT_ERROR错误并给出正确格式示例。建议先用preview_outline预览目录树确认结构无误后再生成.
+A: 大纲必须使用三级Markdown结构:`# 主标题`(书名,1个) / `## 章节标题`(章节,多个) / `
+### section标题`(小节,每章节下多个)。层级不能跳跃(如#直接到###)。格式不规范返回OUTLINE_FORMAT_ERROR错误并给出正确格式示例。建议先用preview_outline预览目录树确认结构无误后再生成.
 ### Q2: section生成失败怎么办?
 A: 单个section生成失败会重试3次,仍失败则跳过该节并标记SECTION_FAILED,不阻塞其他section生成。最终电子书会包含已成功生成的section,失败section位置会留空标记。建议:1)检查LLM服务是否正常;2)重新生成失败的section(提供section_id);3)手动补充失败section内容.
 ### Q3: 支持哪些发布平台?格式有什么差异?

@@ -87,8 +87,7 @@ export API_KEY="your_api_key_here"
 通过 `POST /v1/simulate-tx` 端点在链下环境中模拟交易执行。请求体包含 `from`（发送方地址）、`to`（接收方或合约地址）、`value`（wei单位的字符串）、`data`（可选calldata hex）和 `chain_id`（默认8453）。返回交易是否成功执行、状态变更详情和潜在风险警告。适用于DeFi合约交互前的安全预检.
 ### 3. 代币蜜罐检测
 通过 `GET /v1/check-token/:address` 端点检测代币合约是否存在蜜罐行为。传入代币合约地址和 `chain_id`（1=Ethereum, 8453=Base等），返回蜜罐概率百分比、风险评估和具体风险信号（如买入税率过高、卖出暂停等）。适用于购买新代币前的风险评估.
-**输入**: 用户提供代币蜜罐检测所需的指令和必要参数.
-**处理**: 解析代币蜜罐检测的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 ### 4. 免费额度查询
 
 通过 `GET /v1/usage` 端点查询当前指纹的免费配额使用情况。通过 `X-Client-Fingerprint` 头部识别用户身份，返回 `dailyLimit`（100次/天）、`usedToday`、`remainingChecks` 和 `nextResetAt`（UTC时间戳）。适用于配额监控和调用规划.
@@ -98,15 +97,12 @@ export API_KEY="your_api_key_here"
 - 参考`x402付费机制`的配置文档进行参数调优
 ### 6. 风险等级评估
 根据检查结果自动计算综合风险等级。`LOW` 表示次要风险可放行，`MEDIUM` 表示存在部分风险需人工复核，`HIGH` 表示显著风险需阻止并确认，`CRITICAL` 表示恶意或不安全必须阻止。每个响应包含 `isSafe` 布尔值和详细威胁信号列表。适用于自动化交易策略中的风险决策.
-**输入**: 用户提供风险等级评估所需的指令和必要参数.
+
 ### 7. 多链支持
 支持8条区块链的地址和代币检查：Ethereum(chain_id=1)、Base(chain_id=8453)、Polygon(chain_id=137)、Arbitrum(chain_id=42161)、Optimism(chain_id=10)、BSC(chain_id=56)、Avalanche(chain_id=43114)和Solana。`check-address` 和 `check-token` 支持全部链，`simulate-tx` 仅支持EVM链（Solana不支持交易模拟）.
-**输入**: 用户提供多链支持所需的指令和必要参数.
-**输出**: 返回多链支持的处理结果,包含执行状态码、结果数据和执行日志.
+
 ### 8. 反馈提交
 通过 `POST /v1/feedback` 端点提交问题报告或功能反馈，不消耗免费配额。请求体包含 `kind`（issue/feedback/expectation）、`summary`、`endpoint`、`status_code`、`chain_id` 和 `agent` 对象（含name和version）。支持通过 `failed_request_id` 关联 `_meta.requestId` 进行服务端追踪。适用于问题反馈和服务改进.
-**处理**: 解析反馈提交的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回反馈提交的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -148,7 +144,7 @@ curl "https://security-api.example.com/v1/usage" \
 # }
 # ...
 # 检查Base链上的地址安全性
-curl "https://security-api.example.com/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454e4438f44e?chain_id=8453" \
+example.com/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454e4438f44e?chain_id=8453" \
   -H "X-Client-Fingerprint: agent-default"
 # ...
 # 响应包含 isSafe、riskLevel、threatSignals 等字段
@@ -169,7 +165,7 @@ curl -X POST "https://security-api.example.com/v1/simulate-tx" \
   }'
 # ...
 # 同时检查目标代币是否存在蜜罐风险
-curl "https://security-api.example.com/v1/check-token/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48?chain_id=1" \
+example.com/v1/check-token/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48?chain_id=1" \
   -H "X-Client-Fingerprint: agent-default"
 ```
 

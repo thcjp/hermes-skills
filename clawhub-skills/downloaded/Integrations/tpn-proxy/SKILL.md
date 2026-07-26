@@ -59,8 +59,8 @@ Before constructing any shell command, **validate every user-provided value**. N
 | --- | --- |
 | `geo` | Must be exactly 2 uppercase ASCII letters (ISO 3166-1 alpha-2). Reject anything else. |
 | `minutes` | Must be a positive integer between 1 and 1440. Reject non-numeric or out-of-range values. |
-| `connection_type` | Must be one of: `any`, `datacenter`, `residential`. Reject anything else. |
-| `format` | Must be one of: `text`, `json`. Reject anything else. |
+| `connection_type` | Must be one of: `any`, `datacenter`, `residential`. |
+| `format` | Must be one of: `text`, `json`. |
 | URLs (for Step 5) | Must start with `http://` or `https://`, contain no shell metacharacters (`` ` `` `$` `(` `)` `;` `&` ` |
 
 **Rules:**

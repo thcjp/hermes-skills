@@ -75,7 +75,6 @@ docker rm container_name     # 删除容器
 docker container prune       # 清理已停止容器
 ```
 
-**输入**: 用户提供容器生命周期管理（Container Lifecycle）所需的指令和必要参数.
 ### 镜像管理（Image Management）
 构建与管理Docker镜像：
 
@@ -87,8 +86,7 @@ docker rmi image_name            # 删除镜像
 docker image prune               # 清理悬空镜像
 ```
 
-**输入**: 用户提供镜像管理（Image Management）所需的指令和必要参数.
-**输出**: 返回镜像管理（Image Management）的处理结果,包含执行状态码、结果数据和执行日志。### 容器调试（Container Inspection & Debugging）
+### 容器调试（Container Inspection & Debugging）
 查看日志与进入容器调试：
 
 ```bash
@@ -99,9 +97,7 @@ docker stats                           # 资源使用
 docker inspect container_name          # 容器详情
 ```
 
-**输入**: 用户提供容器调试（Container Inspection & Debugging）所需的指令和必要参数.
-**处理**: 解析容器调试（Container Inspection & Debugging）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回容器调试（Container Inspection & Debugging）的处理结果,包含执行状态码、结果数据和执行日志。### 常用工作流（Common Workflows）
+### 常用工作流（Common Workflows）
 预置开发与数据库容器工作流：
 
 ```bash
@@ -112,8 +108,6 @@ docker run -it --rm -v $(pwd):/app -w /app -p 3000:3000 node:18 npm run dev
 docker run -d --name postgres -e POSTGRES_PASSWORD=secret -v postgres-data:/var/lib/postgresql/data -p 5432:5432 postgres:15
 ```
 
-**输入**: 用户提供常用工作流（Common Workflows）所需的指令和必要参数.
-**输出**: 返回常用工作流（Common Workflows）的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 

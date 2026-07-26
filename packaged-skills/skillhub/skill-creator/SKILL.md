@@ -104,7 +104,6 @@ skill-name/
 
 - **Frontmatter（YAML）**：包含`name`和`description`字段。这是Claude读取以判断何时使用skill的唯一依据，必须清晰全面地描述skill是什么以及何时使用。`description`是primary triggering mechanism，应包含skill做什么与具体触发场景.
 - **Body（Markdown）**：使用skill的instructions和guidance。仅在skill触发后加载.
-**处理**: 解析SKILL.md结构设计的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### Bundled Resources组织
 
 提供三类bundled resources的组织规范：
@@ -136,7 +135,6 @@ skill-name/
 - **Pattern 3: Conditional details**：展示基础内容，链接高级内容
 
 重要准则：references保持一级深度；长reference文件（>100 lines）顶部包含table of contents.
-**输出**: 返回Progressive Disclosure设计的处理结果,包含执行状态码、结果数据和执行日志.
 ### Skill Creation Process
 
 提供从理解到迭代的六步创建流程：

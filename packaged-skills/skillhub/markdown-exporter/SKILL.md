@@ -94,32 +94,29 @@ markdown-exporter md_to_latex /path/input.md /path/output.tex
 - 关键参数: `表格数据导出` 选项
 - 处理流程: 接收输入 -> 执行表格数据导出 -> 返回结果
 - 输入: 用户提供表格数据导出所需的参数和指令
-- 输出: 返回表格数据导出的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 3. 演示文稿生成
 ```bash
 markdown-exporter md_to_pptx /path/input.md /path/output.pptx
-markdown-exporter md_to_pptx /path/input.md /path/output.pptx --template /path/template.pptx
+md /path/output.pptx --template /path/template.pptx
 ```
 支持Pandoc风格的幻灯片语法：分栏布局（`::::: columns`）、演讲者备注（`::: notes`）、增量列表（`::: incremental`）、背景图片.
-**处理**: 解析演示文稿生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `演示文稿生成` 选项
 
 ### 4. 代码块提取
 ```bash
 markdown-exporter md_to_codeblock /path/input.md /path/output_dir
-markdown-exporter md_to_codeblock /path/input.md /path/output.zip --compress
+md /path/output.zip --compress
 ```
 从Markdown中提取所有代码块，按语言保存为独立文件（`.py`/`.js`/`.sh`等）.
-**处理**: 解析代码块提取的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `代码块提取` 选项
 
 ### 5. Jupyter Notebook转换
 ```bash
 markdown-exporter md_to_ipynb /path/input.md /path/output.ipynb
-markdown-exporter md_to_ipynb /path/input.md /path/output.ipynb --strip-wrapper
+md /path/output.ipynb --strip-wrapper
 ```
 `--strip-wrapper` 选项移除代码块外层```包裹后再处理.
 #

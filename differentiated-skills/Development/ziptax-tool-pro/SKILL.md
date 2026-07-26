@@ -64,21 +64,21 @@ category: "Automation"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -164,7 +164,7 @@ import requests
 # ...
 CACHE_DIR = Path("cache/taxrates")
 CACHE_TTL = 7 * 24 * 3600  # 7 天缓存
-API_URL = "https://api.zip-tax.com/request/v60"
+zip-tax.com/request/v60"
 API_KEY = os.environ.get("ZIPTAX_API_KEY", "")
 # ...
 def cache_key(query: str) -> str:
@@ -183,7 +183,6 @@ def get_cached(key: str):
 def set_cached(key: str, result):
     """写入缓存"""
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    cache_file = CACHE_DIR / f"{key}.json"
     cache_file.write_text(json.dumps({
         "cached_at": time.time(),
         "result": result
@@ -272,7 +271,7 @@ def generate_report():
 # ...
     # CSV 报告(供审计)
     with open(report_file, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=report_data[0].keys())
+DictWriter(f, fieldnames=report_data[0].keys())
         writer.writeheader()
         writer.writerows(report_data)
 # ...
@@ -332,7 +331,6 @@ cat .github/workflows/taxrate-sync.yml
 ## 配置示例
 ### CI/CD 税率同步流水线
 ```yaml
-# .github/workflows/taxrate-sync.yml
 name: Daily Tax Rate Sync
 on:
   schedule:
@@ -359,7 +357,7 @@ jobs:
       - name: 提交报告
         run: |
           git config user.name "Tax Sync Bot"
-          git config user.email "bot@example.com"
+email "bot@example.com"
           git add reports/compliance/
           git commit -m "chore: daily tax rate sync [skip ci]" || true
           git push
@@ -405,7 +403,6 @@ export class TaxClient {
         const resp = await fetch(`${this.apiUrl}?${params}`, {
           headers: { 'X-API-KEY': this.apiKey }
         });
-        data = await resp.json();
         if (data.metadata?.response?.code === 100) break;
         throw new Error(`API error: ${data.metadata?.response?.message}`);
       } catch (err) {
@@ -435,7 +432,7 @@ export class TaxClient {
   }
 // ...
   private async setCache(query: string, type: string, result: TaxRateResult): Promise<void> {
-    const key = Buffer.from(`${type}:${query}`).toString('base64').slice(0, 16);
+toString('base64').slice(0, 16);
     await fs.mkdir(this.cacheDir, { recursive: true });
     await fs.writeFile(path.join(this.cacheDir, `${key}.json`), JSON.stringify(result));
   }
@@ -509,8 +506,6 @@ Pro 版完全兼容免费版的所有查询接口与 CLI 封装。个人开发�
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

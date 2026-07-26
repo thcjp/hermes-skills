@@ -1,9 +1,8 @@
----
-slug: nextjs-fullstack-guide
+---slug: nextjs-fullstack-guide
 name: nextjs-fullstack-guide
 version: 1.0.1
 displayName: Next.js全栈指南
-summary: "基于Vercel官方优选实践,Next.js全栈应用从路由到部署全流程指导。Next.js全栈指南基于Vercel官方优选实践构建生产级全栈应用,核心功能包括App Router路由设计、S"
+summary: "基于Vercel官方优"
 summary_zh: "基于Vercel官方优选实践,Next.js全栈应用从路由到部署全流程指导。Next.js全栈指南基于Vercel官方优选实践构建生产级全栈应用,核心功能包括App Router路由设计、S"
 license: Proprietary
 description: Next.js全栈指南基于Vercel官方优选实践构建生产级全栈应用,核心功能包括App Router路由设计、Server/Client组件分层、数据获取策略(SSR/SSG/ISR/Streaming)、Middleware认证、性能优化(Core
@@ -27,9 +26,7 @@ tools:
   - read
   - exec
   - write
-category: "Creative"
----
-# Next.js全栈指南
+category: "Creative"---# Next.js全栈指南
 
 基于 Vercel 官方优选实践,构建生产级 Next.js 全栈应用。从路由设计到数据获取,从性能优化到部署配置,全流程指导。
 
@@ -207,10 +204,8 @@ export function middleware(request: NextRequest) {
   if (!session && request.nextUrl.pathname.startsWith("/dashboard")) {
     const loginUrl = new URL("/login", request.url);
     loginUrl.searchParams.set("from", request.nextUrl.pathname);
-    return NextResponse.redirect(loginUrl);
   }
 // ...
-  return NextResponse.next();
 }
 // ...
 export const config = {
@@ -301,17 +296,13 @@ export async function middleware(request: NextRequest) {
   if (publicPaths.some((p) => pathname.startsWith(p))) {
     // 已登录用户访问登录页,重定向到dashboard
     if (token && pathname === "/login") {
-      return NextResponse.redirect(new URL("/dashboard", request.url));
     }
-    return NextResponse.next();
   }
 // ...
   // 受保护路由需要认证
   if (pathname.startsWith("/dashboard")) {
     if (!token) {
-      const loginUrl = new URL("/login", request.url);
       loginUrl.searchParams.set("from", pathname);
-      return NextResponse.redirect(loginUrl);
     }
     try {
       const { payload } = await jwtVerify(token, JWT_SECRET);
@@ -321,13 +312,10 @@ export async function middleware(request: NextRequest) {
       response.headers.set("x-user-role", payload.role as string);
       return response;
     } catch {
-      const loginUrl = new URL("/login", request.url);
       loginUrl.searchParams.set("error", "session_expired");
-      return NextResponse.redirect(loginUrl);
     }
   }
 // ...
-  return NextResponse.next();
 }
 // ...
 export const config = {
@@ -377,12 +365,11 @@ async function RevenueChart() {
 # ...
 export default async function DashboardPage() {
   const headersList = headers();
-  const userId = headersList.get("x-user-id");
 # ...
   // 并行获取卡片数据和活动列表
   const [statsRes, activityRes] = await Promise.all([
     fetch(`${process.env.API_BASE}/api/stats?userId=${userId}`, { cache: "no-store" }),
-    fetch(`${process.env.API_BASE}/api/activities?userId=${userId}&limit=10`, { cache: "no-store" }),
+env.API_BASE}/api/activities?userId=${userId}&limit=10`, { cache: "no-store" }),
   ]);
 # ...
   const stats = await statsRes.json();
@@ -507,7 +494,6 @@ export async function generateMetadata({
     description: post.excerpt,
     openGraph: {
       title: post.title,
-      description: post.excerpt,
       type: "article",
       publishedTime: post.date,
       authors: [post.author],
@@ -516,14 +502,12 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: post.title,
-      description: post.excerpt,
       images: [post.coverImage],
     },
   };
 }
 # ...
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = await getPost(params.slug);
   if (!post) notFound();
 # ...
   return (
@@ -590,9 +574,9 @@ export async function getSortedPosts(): Promise<PostMeta[]> {
 }
 // ...
 export async function getPost(slug: string): Promise<Post | null> {
-  const fullPath = path.join(postsDirectory, `${slug}.mdx`);
+join(postsDirectory, `${slug}.mdx`);
   if (!fs.existsSync(fullPath)) return null;
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
   return {
     slug,
@@ -601,13 +585,12 @@ export async function getPost(slug: string): Promise<Post | null> {
     excerpt: data.excerpt,
     readTime: data.readTime || "5分钟",
     author: data.author || "匿名",
-    coverImage: data.coverImage,
     content,
   };
 }
 // ...
 export async function getAllPostSlugs(): Promise<string[]> {
-  const fileNames = fs.readdirSync(postsDirectory);
+readdirSync(postsDirectory);
   return fileNames.filter((f) => f.endsWith(".mdx")).map((f) => f.replace(/\.mdx$/, ""));
 }
 ```
@@ -635,7 +618,6 @@ export const dynamic = "force-dynamic";
 // ...
 export async function GET(request: NextRequest) {
   const headersList = headers();
-  const userId = headersList.get("x-user-id");
 // ...
   const stream = new ReadableStream({
     start(controller) {
@@ -692,10 +674,9 @@ export async function createTask(formData: FormData) {
   }
 // ...
   const headersList = headers();
-  const userId = headersList.get("x-user-id");
 // ...
   try {
-    const res = await fetch(`${process.env.API_BASE}/api/tasks`, {
+env.API_BASE}/api/tasks`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title, description, column, userId }),
@@ -715,7 +696,7 @@ export async function createTask(formData: FormData) {
 // ...
 export async function moveTask(taskId: string, targetColumn: string) {
   try {
-    const res = await fetch(`${process.env.API_BASE}/api/tasks/${taskId}`, {
+env.API_BASE}/api/tasks/${taskId}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ column: targetColumn }),
@@ -855,7 +836,8 @@ export default function KanbanBoard({ initialTasks }: { initialTasks: Task[] }) 
 # ...
 ### 1. LCP优化(4.2s → 2.1s)
 # ...
-#### 1.1 使用next/image优化Hero图片
+#
+### 1.1 使用next/image优化Hero图片
 ```tsx
 // 优化前
 <img src="/hero-banner.jpg" alt="Hero" className="w-full" />
@@ -875,7 +857,8 @@ import Image from "next/image";
 ```
 **效果**: 自动WebP转换+响应式srcset+懒加载非首屏图,LCP降低至2.1s
 # ...
-#### 1.2 图片预加载
+#
+### 1.2 图片预加载
 ```tsx
 import { ImageLoader } from "next/image";
 
@@ -892,7 +875,8 @@ import { ImageLoader } from "next/image";
 # ...
 ### 2. CLS优化(0.25 → 0.05)
 # ...
-#### 2.1 为所有图片添加尺寸属性
+#
+### 2.1 为所有图片添加尺寸属性
 ```tsx
 // 优化前 - 无尺寸导致布局偏移
 <img src="/product-1.jpg" alt="产品" />
@@ -907,7 +891,8 @@ import { ImageLoader } from "next/image";
 />
 ```
 # ...
-#### 2.2 使用next/font消除字体闪烁
+#
+### 2.2 使用next/font消除字体闪烁
 ```tsx
 // app/layout.tsx
 import { Inter } from "next/font/google";
@@ -930,7 +915,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 # ...
 ### 3. FID/INP优化(180ms → 85ms)
 # ...
-#### 3.1 延迟加载第三方脚本
+#
+### 3.1 延迟加载第三方脚本
 ```tsx
 import Script from "next/script";
 
@@ -945,7 +931,8 @@ import Script from "next/script";
 />
 ```
 # ...
-#### 3.2 代码分割减少主线程阻塞
+#
+### 3.2 代码分割减少主线程阻塞
 ```tsx
 import dynamic from "next/dynamic";
 
@@ -956,7 +943,8 @@ const HeavyChart = dynamic(() => import("@/components/HeavyChart"), {
 });
 ```
 # ...
-#### 3.3 React并发特性优化
+#
+### 3.3 React并发特性优化
 ```tsx
 import { useTransition } from "react";
 

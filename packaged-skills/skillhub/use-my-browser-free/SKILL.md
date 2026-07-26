@@ -1,9 +1,8 @@
----
-slug: "use-my-browser-free"
+---slug: "use-my-browser-free"
 name: "use-my-browser-free"
 version: 1.0.1
 displayName: "浏览器控制工具(免费版)"
-summary: "控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取(免费版)。控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取。通过浏览器扩展 桥接，直接操作用户已登录的浏览器"
+summary: "控制用户Chrome浏"
 summary_zh: "控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取(免费版)。控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取。通过浏览器扩展 桥接，直接操作用户已登录的浏览器"
 license: "MIT"
 description: |-
@@ -26,9 +25,7 @@ tags:
   - tmwd_text
   - tmwd_elements
   - max_chars
-category: "Automation"
----
-# 浏览器控制工具(免费版)
+category: "Automation"---# 浏览器控制工具(免费版)
 
 控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取.
 ## 输入格式
@@ -47,33 +44,24 @@ category: "Automation"
 {"tool": "tmwd_status"}
 ```
 
-**输入**: 用户提供浏览器状态检查所需的指令和必要参数.
-**输出**: 返回浏览器状态检查的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. 页面导航
 通过 `tmwd_navigate` 导航到指定URL，支持等待页面加载完成.
 ```json
 {"tool": "tmwd_navigate", "url": "https://example.com", "wait": "load"}}
 ```
 
-**输入**: 用户提供页面导航所需的指令和必要参数.
-**处理**: 解析页面导航的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回页面导航的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. 页面文本提取
 通过 `tmwd_text` 提取页面文本内容，`max_chars` 参数限制提取长度（默认5000）.
 ```json
 {"tool": "tmwd_text", "max_chars": 5000}}
 ```
 
-**处理**: 解析页面文本提取的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回页面文本提取的处理结果,包含执行状态码、结果数据和执行日志.
 ### 4. 元素查找与交互
 通过 `tmwd_elements` 查找页面元素，支持CSS选择器和XPath.
 ```json
 {"tool": "tmwd_elements", "selector": "#search-input", "action": "click"}}
 ```
 
-**处理**: 解析元素查找与交互的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回元素查找与交互的处理结果,包含执行状态码、结果数据和执行日志.
 ### 输出格式
 
 完成响应以Markdown格式返回,包含任务状态(成功/失败)、解析摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。- 验证返回数据的完整性和格式正确性

@@ -69,7 +69,6 @@ category: "Automation"
 | MCP工具集成 | ❌ | ✅ | 自然语言运维 |
 | DNSSEC管理 | ❌ | ✅ | 安全增强 |
 
-**输入**: 用户提供能力矩阵所需的指令和必要参数.
 **处理**: 解析能力矩阵的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回能力矩阵的响应数据,包含状态码、结果和日志.
 ### 支持的供应商
@@ -82,12 +81,11 @@ category: "Automation"
 | AWS Route53 | ✅ | ✅ | ✅ | 健康检查、流量策略 |
 | Aliyun DNS | ✅ | ✅ | ✅ | 国内速度优势 |
 
-**输入**: 用户提供支持的供应商所需的指令和必要参数.
 **处理**: 解析支持的供应商的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回支持的供应商的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -176,13 +174,13 @@ python3 domain_rollback.py --domain example.com --version 20260718_001
 
 ```bash
 # 按域名查询变更记录
-python3 domain_audit.py --domain example.com --query
+py --domain example.com --query
 # ...
 # 按时间范围查询
-python3 domain_audit.py --from 2026-07-01 --to 2026-07-18 --query
+py --from 2026-07-01 --to 2026-07-18 --query
 # ...
 # 导出审计报告
-python3 domain_audit.py --export --format csv --output audit_report.csv
+py --export --format csv --output audit_report.csv
 ```
 
 ## 配置示例

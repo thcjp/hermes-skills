@@ -53,7 +53,6 @@ category: "Communication"
 - **命名收件人**: 支持"姓名 <邮箱>"格式
 - **抄送与密送**: 支持 CC 与 BCC 收件人
 
-**输入**: 用户提供邮件发送所需的指令和必要参数.
 **处理**: 解析邮件发送的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回邮件发送的响应数据,包含状态码、结果和日志.
 ### 附件管理
@@ -62,7 +61,6 @@ category: "Communication"
 - **多附件发送**: 一次性发送多个附件
 - **多种格式**: 支持 PDF、Excel、图片、代码文件等各类格式
 
-**输入**: 用户提供附件管理所需的指令和必要参数.
 **处理**: 解析附件管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回附件管理的响应数据,包含状态码、结果和日志.
 ### 多服务商支持
@@ -73,7 +71,6 @@ category: "Communication"
 - QQ邮箱（smtp.qq.com）
 - 自定义 SMTP 服务器
 
-**输入**: 用户提供多服务商支持所需的指令和必要参数.
 **处理**: 解析多服务商支持的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多服务商支持的响应数据,包含状态码、结果和日志.
 ### 安全特性
@@ -83,7 +80,6 @@ category: "Communication"
 - 应用专用密码支持（Gmail）
 - 环境变量凭证存储
 
-**输入**: 用户提供安全特性所需的指令和必要参数.
 **处理**: 解析安全特性的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回安全特性的响应数据,包含状态码、结果和日志.
 ### 测试功能
@@ -94,7 +90,6 @@ category: "Communication"
 
 ---
 
-**输入**: 用户提供测试功能所需的指令和必要参数.
 **处理**: 解析测试功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回测试功能的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
@@ -194,7 +189,7 @@ python email_sender.py --to "your-email@gmail.com" --test
 python email_sender.py --to "friend@example.com" --subject "你好" --body "这是一封测试邮件"
 # ...
 # 发送带附件的邮件
-python email_sender.py --to "friend@example.com" --subject "报告" --body "请查收" --attachment "report.pdf"
+python email_sender.com" --subject "报告" --body "请查收" --attachment "report.pdf"
 ```
 
 ---
@@ -237,7 +232,6 @@ $env:EMAIL_SENDER_NAME="邮件助手"
 
 ```json
 {
-  "smtp_server": "smtp.163.com",
   "smtp_port": 465,
   "username": "your-email@163.com",
   "password": "your_auth_code",

@@ -124,7 +124,7 @@ export API_KEY="your_api_key_here"
 
 ```
 ```bash
-（请参考skill目录中的脚本文件） "https://www.xiaoyuzhoufm.com/episode/abc123def456ghi789jklmno"
+xiaoyuzhoufm.com/episode/abc123def456ghi789jklmno"
 ```
 ```
 

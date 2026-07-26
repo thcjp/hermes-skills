@@ -71,6 +71,8 @@ This skill provides specialized capabilities for searching assistant.
 | 参数名 | 类型 | 必填 | 说明 |
 |---:|---:|---:|---:|
 
+| instruction | string | 是 | 用户指令文本 |
+| context | string | 否 | 上下文信息 |
 ## 输出格式
 
 ```json

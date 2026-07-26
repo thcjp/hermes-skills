@@ -112,7 +112,6 @@ category: "Automation"
     "entries": {
       "jellyfin-control": {
         "env": {
-          "JF_URL": "http://192.168.1.50:8096",
           "JF_API_KEY": "your-jellyfin-api-key",
           "JF_USER": "victor",
           "TV_IP": "192.168.1.100",
@@ -134,7 +133,6 @@ category: "Automation"
     "entries": {
       "jellyfin-control": {
         "env": {
-          "JF_URL": "http://192.168.1.50:8096",
           "JF_API_KEY": "your-jellyfin-api-key",
           "JF_USER": "victor",
           "ADB_DEVICE": "192.168.1.100:5555",
@@ -240,7 +238,6 @@ export API_KEY="your_api_key_here"
     "entries": {
       "jellyfin-control": {
         "env": {
-          "JF_URL": "http://192.168.1.50:8096",
           "JF_AP
 ```
 # ...

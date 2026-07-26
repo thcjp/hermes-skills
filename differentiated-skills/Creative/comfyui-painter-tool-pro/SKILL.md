@@ -98,21 +98,18 @@ class AutoTuneGenerator:
                 "scheduler": "normal",
                 "steps": 25,
                 "cfg": 6.5,
-                "denoise": 1.0
             },
             "artistic": {
                 "sampler": "dpmpp_sde",
                 "scheduler": "karras",
                 "steps": 35,
                 "cfg": 8.0,
-                "denoise": 1.0
             },
             "fast_preview": {
                 "sampler": "euler",
                 "scheduler": "normal",
                 "steps": 12,
                 "cfg": 5.0,
-                "denoise": 1.0
             }
         }
         return presets.get(style, presets["photorealistic"])
@@ -160,7 +157,6 @@ class AutoTuneGenerator:
         }
 ```
 
-**输入**: 用户提供自动调参所需的指令和必要参数.
 **处理**: 解析自动调参的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自动调参的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -180,19 +176,15 @@ class CivitAIManager:
 # ..
     def search_models(self, query, model_type="checkpoint", limit=10):
         """搜索CivitAI模型"""
-        response = requests.get(
             f"{self.base_url}/models",
             params={"query": query, "types": model_type, "limit": limit},
             headers={"Authorization": f"Bearer {self.api_key}"}
         )
-        return response.json()
 # ..
     def download_model(self, model_id, version_id, model_type="checkpoint"):
         """下载模型"""
         # 获取下载链接
-        response = requests.get(
             f"{self.base_url}/models/{model_id}",
-            headers={"Authorization": f"Bearer {self.api_key}"}
         )
         model_info = response.json()
 # ..
@@ -209,9 +201,7 @@ class CivitAIManager:
 # ..
                 # 下载模型
                 print(f"下载模型: {filename}")
-                response = requests.get(
                     download_url,
-                    headers={"Authorization": f"Bearer {self.api_key}"},
                     stream=True
                 )
                 with open(save_path, 'wb') as f:
@@ -236,7 +226,6 @@ class CivitAIManager:
         return models
 ```
 
-**输入**: 用户提供CivitAI模型管理所需的指令和必要参数.
 **处理**: 解析CivitAI模型管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回CivitAI模型管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -277,11 +266,10 @@ def img2img(self, input_image_path, prompt, negative_prompt="",
         "13": {"class_type": "SaveImage", "inputs": {"filename_prefix": "ComfyUI_Img2Img", "images": ["12", 0]}}
     }
 # ..
-    response = requests.post(f"{self.url}/prompt", json={"prompt": workflow})
+post(f"{self.url}/prompt", json={"prompt": workflow})
     return response.json().get("prompt_id")
 ```
 
-**输入**: 用户提供图生图（Image-to-Image）所需的指令和必要参数.
 **处理**: 解析图生图（Image-to-Image）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回图生图（Image-to-Image）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -291,12 +279,10 @@ def img2img(self, input_image_path, prompt, negative_prompt="",
 ```python
 def generate_with_controlnet(self, input_image_path, prompt, control_type="openpose",
                               negative_prompt="", seed=-1, steps=30, cfg=7.5,
-                              model="sdxl_base.safetensors"):
     """使用ControlNet控制生成"""
     # 上传输入图像
     with open(input_image_path, 'rb') as f:
-        upload_response = requests.post(f"{self.url}/upload/image", files={"image": f})
-    image_name = upload_response.json()["name"]
+post(f"{self.url}/upload/image", files={"image": f})
 # ..
     # ControlNet模型映射
     controlnet_models = {
@@ -337,11 +323,10 @@ def generate_with_controlnet(self, input_image_path, prompt, control_type="openp
         "13": {"class_type": "SaveImage", "inputs": {"filename_prefix": "ComfyUI_ControlNet", "images": ["12", 0]}}
     }
 # ..
-    response = requests.post(f"{self.url}/prompt", json={"prompt": workflow})
+post(f"{self.url}/prompt", json={"prompt": workflow})
     return response.json().get("prompt_id")
 ```
 
-**输入**: 用户提供ControlNet集成所需的指令和必要参数.
 **处理**: 解析ControlNet集成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回ControlNet集成的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：绘画工具、支持自动调参、批量生成、图生图与、绘画专业版、面向专业创作者与、设计团队的高级本、核心能力、根据提示词自动优、化采样器、等参数、平台模型与、姿态控制、边缘检测、深度图等专业控制、队列管理等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -370,7 +355,6 @@ for product in products:
         seed=-1,
         width=1024,
         height=1024,
-        model="sdxl_base.safetensors"
     )
     print(f"已提交生成: {product['name']}")
 ```
@@ -417,7 +401,6 @@ generator.generate_with_controlnet(
     seed=42,
     steps=30,
     cfg=7.5,
-    model="sdxl_base.safetensors"
 )
 print("ControlNet生成已提交")
 ```

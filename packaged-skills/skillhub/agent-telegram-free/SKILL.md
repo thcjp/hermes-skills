@@ -1,9 +1,8 @@
----
-slug: "agent-telegram-free"
+---slug: "agent-telegram-free"
 name: "agent-telegram-free"
 version: "1.0.0"
 displayName: "智能体Telegram免费版"
-summary: "Agent Telegram 基础通信规范，支持 3 类角色消息发送。。Agent Telegram 通信规范免费版。定义 main、backend、frontend 三类基础 Agent"
+summary: "Agent Teleg"
 summary_zh: "Agent Telegram 基础通信规范，支持 3 类角色消息发送。。Agent Telegram 通信规范免费版。定义 main、backend、frontend 三类基础 Agent"
 license: "MIT"
 description: |-
@@ -29,9 +28,7 @@ tools:
   - glob
   - grep
 homepage: ""
-category: "Agents"
----
-# Agent Telegram LITE
+category: "Agents"---# Agent Telegram LITE
 
 Agent Telegram 通信规范免费版。定义 3 类基础 Agent 角色的账号映射与消息发送格式，Agent 向用户发送 Telegram 消息时遵循此规范.
 ## 输入格式
@@ -191,7 +188,7 @@ A：不可以。本规范约定所有 Agent 消息统一发送给用户 `5440561
 ### Q3：免费版支持哪些角色？
 A：免费版仅支持 main、backend、frontend 三类基础角色。如需 architect、product、content、crawler、qa 等角色，请升级付费版.
 ### Q4：如何配置 Telegram Bot？
-A：在 `~/.skill-platform/skill-platform.json` 的 `channels.telegram.accounts` 节点下配置 Bot Token。Bot Token 通过 @BotFather 创建获取.
+A：在 `~/.json` 的 `channels.telegram.accounts` 节点下配置 Bot Token。Bot Token 通过 @BotFather 创建获取.
 ## 已知限制
 
 - 仅支持 main、backend、frontend 三类角色，不支持 architect/product/content/crawler/qa
@@ -213,11 +210,11 @@ A：在 `~/.skill-platform/skill-platform.json` 的 `channels.telegram.accounts`
 |:------|------:|:------|:------|
 | message 工具 | Agent 平台工具 | 必需 | Agent 平台内置或插件提供 |
 | Telegram Bot Token | 凭证 | 必需 | 通过 @BotFather 创建 Bot 获取 |
-| skill-platform.json | 配置文件 | 必需 | `~/.skill-platform/skill-platform.json` 中配置 accounts |
+| skill-platform.json | 配置文件 | 必需 | `~/.json` 中配置 accounts |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供决策能力 |
 
 ### API Key 配置
-- Telegram Bot Token 配置在 `~/.skill-platform/skill-platform.json` 的 `channels.telegram.accounts.<accountId>.token` 字段
+- Telegram Bot Token 配置在 `~/.json` 的 `channels.telegram.accounts.<accountId>.token` 字段
 
 ### 可用性分类
 - **分类**：MD+EXEC（纯 Markdown 指令，消息发送需要 exec 调用 message 工具）
@@ -229,8 +226,6 @@ A：在 `~/.skill-platform/skill-platform.json` 的 `channels.telegram.accounts`
 1. 确认运行环境满足依赖说明中的要求
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
-
-> 详细的输入输出格式请参考下方章节说明。
 
 ## 升级提示
 

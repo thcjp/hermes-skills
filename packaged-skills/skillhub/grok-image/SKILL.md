@@ -1,6 +1,4 @@
----
-
-slug: "grok-image"
+---slug: "grok-image"
 name: "grok-image"
 version: 1.0.1
 displayName: "Grok图片生成-专业版"
@@ -9,7 +7,7 @@ summary_zh: "批量AI图片生成引擎，支持多格式导出、消息平台�
 license: "MIT"
 edition: "pro"
 description: |-
-  Grok图片生成工具专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
+  Grok图片生成工具专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。不适用于需要人工创意判断的任务.
 tags:
   - 创意
   - self
@@ -22,10 +20,7 @@ tools:
   - write
 homepage: ""
 category: "Creative"
-
----
-
-# Grok图片生成-专业版
+---# Grok图片生成-专业版
 
 ## 付费版专享能力
 
@@ -96,7 +91,6 @@ category: "Creative"
 - 关键参数: `核心能力` 选项
 - 处理流程: 接收输入 -> 执行核心能力 -> 返回结果
 - 输入: 用户提供核心能力所需的参数和指令
-- 输出: 返回核心能力的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 能力维度
 
@@ -255,7 +249,7 @@ class PromptTemplateManager:
         """从模板批量生成提示词"""
         prompts = []
         for variables in variable_sets:
-            prompt = self.generate_from_template(template_name, variables)
+generate_from_template(template_name, variables)
             prompts.append(prompt)
         return prompts
 # ...
@@ -316,7 +310,6 @@ done
 # ...
 # 第3步: 发送到飞书
 echo "=== 第3步: 发送到飞书 ==="
-for img in "$OUTPUT_DIR"/*.jpg; do
     # message工具发送
     echo "已发送: $img"
 done

@@ -1,9 +1,8 @@
----
-slug: "google-fonts"
+---slug: "google-fonts"
 name: "google-fonts"
 version: 1.0.1
 displayName: "Google Fonts指南"
-summary: "Google Fonts字体选择与配对指南，覆盖加载优化、可变字体、子集化与自托管。Google Fonts 字体选择与配对指南，涵盖加载优化、可变字体、子集化、经典字体配对、 按用途选字体"
+summary: "Google Font"
 summary_zh: "Google Fonts字体选择与配对指南，覆盖加载优化、可变字体、子集化与自托管。Google Fonts 字体选择与配对指南，涵盖加载优化、可变字体、子集化、经典字体配对、 按用途选字体"
 license: "MIT"
 description: |-
@@ -25,9 +24,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# Google Fonts 字体选择与配对指南
+category: "Automation"---# Google Fonts 字体选择与配对指南
 
 Google Fonts 字体加载优化、配对选择、子集化与自托管的完整参考.
 ## 输入格式
@@ -61,12 +58,11 @@ Google Fonts 字体加载优化、配对选择、子集化与自托管的完整�
 
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:wght@500;700&display=swap" rel="stylesheet">
 ```
 
-**处理**: 解析Loading Mistakes（加载常见错误）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Loading Mistakes（加载常见错误）的处理结果,包含执行状态码、结果数据和执行日志。### Variable Fonts（可变字体）
+### Variable Fonts（可变字体）
 可变字体在单文件中包含整个字重和宽度范围，通过 `font-variation-settings` 控制轴值：
 
 ```css
@@ -77,16 +73,14 @@ Google Fonts 字体加载优化、配对选择、子集化与自托管的完整�
 ```
 
 推荐可变字体：Inter、Roboto Flex、Montserrat、Work Sans、DM Sans、Source Sans 3、IBM Plex Sans。启用方式：CSS2 API URL 中使用 `wght@300..700` 范围语法.
-**处理**: 解析Variable Fonts（可变字体）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Variable Fonts（可变字体）的处理结果,包含执行状态码、结果数据和执行日志。### Subsetting（字体子集化）
+### Subsetting（字体子集化）
 Google Fonts CSS2 API 默认只返回 `latin` 子集。如需中文（Noto Sans SC）或日文（Noto Sans JP），需显式指定 `&subset=latin,latin-ext` 或按需引入.
 自托管场景使用 `google-webfonts-helper` 或 `pyftsubset` 工具生成子集字体，只保留页面实际使用的字符（可从 1MB+ 降至 20KB）.
 ```bash
 pyftsubset NotoSansSC-Regular.otf --text-file=chars.txt --output-file=NotoSansSC-subset.woff2 --flavor=woff2
 ```
 
-**输入**: 用户提供Subsetting（字体子集化）所需的指令和必要参数.
-**处理**: 解析Subsetting（字体子集化）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### Proven Pairings（经典字体配对）
+### Proven Pairings（经典字体配对）
 12 组经验证的 Google Fonts 配对方案，覆盖设计风格与用途：
 
 | 配对方案 | 用途 |
@@ -104,16 +98,14 @@ pyftsubset NotoSansSC-Regular.otf --text-file=chars.txt --output-file=NotoSansSC
 | IBM Plex Sans + IBM Plex Mono | 企业级统一字体方案 |
 | Abril Fatface, Bebas Neue, Oswald — never use these for body text | 装饰性字体仅限标题 |
 
-**处理**: 解析Proven Pairings（经典字体配对）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Proven Pairings（经典字体配对）的处理结果,包含执行状态码、结果数据和执行日志。### Font Selection by Purpose（按用途选字体）
+### Font Selection by Purpose（按用途选字体）
 - **长文正文**：Inter、Source Sans Pro、Open Sans、Work Sans — 高 x-height，小字号清晰
 - **标题/Display**：Playfair Display、Abril Fatface、Bebas Neue、Oswald — 有表现力但勿用于正文
 - **代码/等宽**：JetBrains Mono、Fira Code、Source Code Pro、Space Mono、DM Mono — 连字支持好
 - **品牌/Logo**：Poppins、Montserrat、Space Grotesk — 几何感强，辨识度高
 - **学术/法律**：Crimson Text、Libre Baskerville、Source Serif Pro — 传统 serif
 
-**处理**: 解析Font Selection by Purpose（按用途选字体）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Font Selection by Purpose（按用途选字体）的处理结果,包含执行状态码、结果数据和执行日志。### Self-Hosting（自托管字体方案）
+### Self-Hosting（自托管字体方案）
 Google Fonts CDN 在部分地区（如欧盟 GDPR 场景）可能有隐私问题。自托管方案：
 
 1. 下载 woff2 字体文件
@@ -130,9 +122,6 @@ Google Fonts CDN 在部分地区（如欧盟 GDPR 场景）可能有隐私问题
 }
 ```
 
-**输入**: 用户提供Self-Hosting（自托管字体方案）所需的指令和必要参数.
-**处理**: 解析Self-Hosting（自托管字体方案）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Self-Hosting（自托管字体方案）的处理结果,包含执行状态码、结果数据和执行日志.
 ### 配对方案
 
 针对配对方案,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.

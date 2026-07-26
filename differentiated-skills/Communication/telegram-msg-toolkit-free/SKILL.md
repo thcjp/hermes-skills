@@ -56,21 +56,21 @@ Telegram Bot API 使用 HTTP REST 接口，所有请求通过 `https://api.teleg
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -94,7 +94,7 @@ curl -X POST "https://api.telegram.org/bot{{BOT_TOKEN}}/sendMessage" \
 
 用户说"把这张周报图表发到 Telegram"。Agent 调用 `sendPhoto` 发送图片，附带说明文字.
 ```bash
-curl -X POST "https://api.telegram.org/bot{{BOT_TOKEN}}/sendPhoto" \
+telegram.org/bot{{BOT_TOKEN}}/sendPhoto" \
   -H "Content-Type: application/json" \
   -d '{
     "chat_id": "-1001234567890",
@@ -107,7 +107,7 @@ curl -X POST "https://api.telegram.org/bot{{BOT_TOKEN}}/sendPhoto" \
 
 用户说"在群里发起投票问下个版本优先做什么"。Agent 调用 `sendPoll` 发送原生投票.
 ```bash
-curl -X POST "https://api.telegram.org/bot{{BOT_TOKEN}}/sendPoll" \
+telegram.org/bot{{BOT_TOKEN}}/sendPoll" \
   -H "Content-Type: application/json" \
   -d '{
     "chat_id": "-1001234567890",
@@ -145,7 +145,7 @@ curl "https://api.telegram.org/bot{{BOT_TOKEN}}/getUpdates" | jq '.result[-1].me
 ### 发送第一条消息
 
 ```bash
-curl -X POST "https://api.telegram.org/bot{{BOT_TOKEN}}/sendMessage" \
+telegram.org/bot{{BOT_TOKEN}}/sendMessage" \
   -H "Content-Type: application/json" \
   -d '{
     "chat_id": "CHAT_ID",
@@ -163,7 +163,7 @@ curl -X POST "https://api.telegram.org/bot{{BOT_TOKEN}}/sendMessage" \
 export TELEGRAM_BOT_TOKEN="123456789:ABCdefGHIjklMNOpqrSTUvwxYZ"
 # ...
 # 在命令中引用
-curl -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
   -H "Content-Type: application/json" \
   -d '{"chat_id": "-1001234567890", "text": "Test message"}'
 ```
@@ -180,7 +180,7 @@ curl -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
 
 ```bash
 # Markdown 格式
-curl -X POST "https://api.telegram.org/bot{{BOT_TOKEN}}/sendMessage" \
+telegram.org/bot{{BOT_TOKEN}}/sendMessage" \
   -H "Content-Type: application/json" \
   -d '{
     "chat_id": "-1001234567890",
@@ -190,7 +190,7 @@ curl -X POST "https://api.telegram.org/bot{{BOT_TOKEN}}/sendMessage" \
   }'
 # ...
 # HTML 格式
-curl -X POST "https://api.telegram.org/bot{{BOT_TOKEN}}/sendMessage" \
+telegram.org/bot{{BOT_TOKEN}}/sendMessage" \
   -H "Content-Type: application/json" \
   -d '{
     "chat_id": "-1001234567890",
@@ -202,7 +202,7 @@ curl -X POST "https://api.telegram.org/bot{{BOT_TOKEN}}/sendMessage" \
 ### 内联键盘按钮
 
 ```bash
-curl -X POST "https://api.telegram.org/bot{{BOT_TOKEN}}/sendMessage" \
+telegram.org/bot{{BOT_TOKEN}}/sendMessage" \
   -H "Content-Type: application/json" \
   -d '{
     "chat_id": "-1001234567890",
@@ -222,7 +222,7 @@ curl -X POST "https://api.telegram.org/bot{{BOT_TOKEN}}/sendMessage" \
 
 ```bash
 # 设置命令列表
-curl -X POST "https://api.telegram.org/bot{{BOT_TOKEN}}/setMyCommands" \
+telegram.org/bot{{BOT_TOKEN}}/setMyCommands" \
   -H "Content-Type: application/json" \
   -d '{
     "commands": [
@@ -253,7 +253,7 @@ Telegram Bot API 限制：全局约 30 条消息/秒，单个聊天约 1 条消�
 `sendPhoto` 会压缩图片。如需保持原始质量，改用 `sendDocument` 发送：
 
 ```bash
-curl -X POST "https://api.telegram.org/bot{{BOT_TOKEN}}/sendDocument" \
+telegram.org/bot{{BOT_TOKEN}}/sendDocument" \
   -F "chat_id=-1001234567890" \
   -F "document=@/path/to/image.png"
 ```

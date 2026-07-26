@@ -1,9 +1,8 @@
----
-slug: "security"
+---slug: "security"
 name: "security"
 version: 1.0.13
 displayName: "GoPlus安全扫描"
-summary: "GoPlus AgentGuard安全扫描，支持定时巡逻、漏洞发现、Webhook通知与结果检查。。GoPlus AgentGuard驱动的安全扫描工具，提供代码与依赖安全检查. 支持定时巡"
+summary: "GoPlus Agen"
 summary_zh: "GoPlus AgentGuard安全扫描，支持定时巡逻、漏洞发现、Webhook通知与结果检查。。GoPlus AgentGuard驱动的安全扫描工具，提供代码与依赖安全检查. 支持定时巡"
 license: "MIT"
 description: |-
@@ -25,9 +24,7 @@ tags:
   - high
   - 安全扫描
   - critical
-category: "Security"
----
-# GoPlus安全扫描
+category: "Security"---# GoPlus安全扫描
 
 GoPlus AgentGuard安全扫描，支持定时巡逻、漏洞发现、Webhook通知与结果检查.
 ## 输入格式
@@ -82,7 +79,6 @@ export API_KEY="your_api_key_here"
 - **扫描范围**：支持指定目录、文件或整个项目
 - **扫描结果**：按严重程度分类（Critical / High / Medium / Low / Info）
 
-**输入**: 用户提供安全扫描（Security Scan）所需的指令和必要参数.
 ### 定时巡逻（Schedule Patrol）
 配置定时安全巡逻，实现持续安全监控：
 
@@ -92,8 +88,7 @@ export API_KEY="your_api_key_here"
 - **巡逻状态**：启动、停止、查看巡逻状态
 - **巡逻间隔**：支持每日、每周、自定义间隔
 
-**输入**: 用户提供定时巡逻（Schedule Patrol）所需的指令和必要参数.
-**输出**: 返回定时巡逻（Schedule Patrol）的处理结果,包含执行状态码、结果数据和执行日志。### 漏洞发现详情（Findings Detail）
+### 漏洞发现详情（Findings Detail）
 
 查看每个安全发现（finding）的详细信息：
 
@@ -113,7 +108,6 @@ export API_KEY="your_api_key_here"
 - **通知时机**：扫描完成、发现Critical/High漏洞、巡逻告警
 - **通知配置**：可配置通知阈值（如仅通知High以上漏洞）
 
-**输入**: 用户提供Chat ID / Webhook通知所需的指令和必要参数.
 ### 按文件路径定位漏洞（Finding with File Path）
 根据文件路径快速定位相关漏洞：
 
@@ -123,8 +117,7 @@ export API_KEY="your_api_key_here"
 - **快速跳转**：从通知直接跳转到漏洞代码位置
 - **批量处理**：按文件路径批量修复或忽略漏洞
 
-**输入**: 用户提供按文件路径定位漏洞（Finding with File Path）所需的指令和必要参数.
-**输出**: 返回按文件路径定位漏洞（Finding with File Path）的处理结果,包含执行状态码、结果数据和执行日志。### 检查结果（Check Results）
+### 检查结果（Check Results）
 
 查看与管理安全扫描结果：
 
@@ -142,8 +135,6 @@ export API_KEY="your_api_key_here"
 - **连接测试**：测试与通知平台的连接是否正常
 - **版本检查**：检查GoPlus CLI版本是否为最新
 
-**输入**: 用户提供健康检查（Health Check）所需的指令和必要参数.
-**输出**: 返回健康检查（Health Check）的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 

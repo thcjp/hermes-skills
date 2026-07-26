@@ -72,7 +72,6 @@ WhatsApp 表情搜索免费版是一款面向个人用户的 GIF 表情搜索与
 ### 单次搜索最多返回 5 个结果
 单次搜索最多返回 5 个结果
 
-**输入**: 用户提供单次搜索最多返回 5 个结果所需的指令和必要参数.
 **处理**: 解析单次搜索最多返回 5 个结果的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回单次搜索最多返回 5 个结果的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -80,7 +79,6 @@ WhatsApp 表情搜索免费版是一款面向个人用户的 GIF 表情搜索与
 ### 一次只能发送给 1 个联系人
 一次只能发送给 1 个联系人
 
-**输入**: 用户提供一次只能发送给 1 个联系人所需的指令和必要参数.
 **处理**: 解析一次只能发送给 1 个联系人的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回一次只能发送给 1 个联系人的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -88,7 +86,6 @@ WhatsApp 表情搜索免费版是一款面向个人用户的 GIF 表情搜索与
 ### 不支持自定义字幕（使用空格占位
 不支持自定义字幕（使用空格占位）
 
-**输入**: 用户提供不支持自定义字幕（使用空格占位所需的指令和必要参数.
 **处理**: 解析不支持自定义字幕（使用空格占位的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回不支持自定义字幕（使用空格占位的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -96,7 +93,6 @@ WhatsApp 表情搜索免费版是一款面向个人用户的 GIF 表情搜索与
 ### 不支持定时发送
 不支持定时发送
 
-**输入**: 用户提供不支持定时发送所需的指令和必要参数.
 **处理**: 解析不支持定时发送的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回不支持定时发送的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -104,12 +100,10 @@ WhatsApp 表情搜索免费版是一款面向个人用户的 GIF 表情搜索与
 ### 不支持 GIF 收藏库
 不支持 GIF 收藏库
 
-**输入**: 用户提供不支持 GIF 收藏库所需的指令和必要参数.
 **处理**: 解析不支持 GIF 收藏库的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回不支持 GIF 收藏库的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**输入**: 用户提供已知限制所需的指令和必要参数.
 **处理**: 解析已知限制的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回已知限制的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：表情搜索发送工具、搜索并自动转换为、格式发送、适合个人日常聊天、核心能力、平台的、自动将、转换为、兼容的、一键发送到指定、支持中英文关键词等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -137,7 +131,7 @@ ffmpeg -i /tmp/gif.gif -movflags faststart -pix_fmt yuv420p \
 # 发送到 WhatsApp
 cp /tmp/gif.mp4 /root/.skill-platform/workspace/gif.mp4
 message action=send to=NUMBER message=" " \
-  filePath=/root/.skill-platform/workspace/gif.mp4 gifPlayback=true
+  filePath=/root/.mp4 gifPlayback=true
 ```
 
 预期效果：联系人在 WhatsApp 中收到一个循环播放的庆祝 GIF.
@@ -154,7 +148,7 @@ ffmpeg -i /tmp/newyear.gif -movflags faststart -pix_fmt yuv420p \
   -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" /tmp/newyear.mp4 -y
 cp /tmp/newyear.mp4 /root/.skill-platform/workspace/newyear.mp4
 message action=send to=FRIEND_NUMBER message="新年快乐" \
-  filePath=/root/.skill-platform/workspace/newyear.mp4 gifPlayback=true
+  filePath=/root/.mp4 gifPlayback=true
 ```
 
 ### 场景三：情感表达回复
@@ -219,14 +213,13 @@ curl -sL "GIF_URL_FROM_RESULTS" -o /tmp/gif.gif
 # ...
 # 3. 转换为 MP4
 ffmpeg -i /tmp/gif.gif -movflags faststart -pix_fmt yuv420p \
-  -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" /tmp/gif.mp4 -y
 # ...
 # 4. 复制到工作区
-cp /tmp/gif.mp4 /root/.skill-platform/workspace/gif.mp4
+cp /tmp/gif.mp4 /root/.mp4
 # ...
 # 5. 发送
 message action=send to=CONTACT_NUMBER message=" " \
-  filePath=/root/.skill-platform/workspace/gif.mp4 gifPlayback=true
+  filePath=/root/.mp4 gifPlayback=true
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -320,11 +313,11 @@ file /tmp/gif.gif
 
 ```bash
 # 正确流程
-cp /tmp/gif.mp4 /root/.skill-platform/workspace/gif.mp4
+cp /tmp/gif.mp4 /root/.mp4
 # ...
 # 然后再发送
 message action=send to=NUMBER message=" " \
-  filePath=/root/.skill-platform/workspace/gif.mp4 gifPlayback=true
+  filePath=/root/.mp4 gifPlayback=true
 ```
 
 ### GIF 在 WhatsApp 中不循环播放
@@ -332,11 +325,10 @@ message action=send to=NUMBER message=" " \
 ```bash
 # 确保设置了 gifPlayback=true
 message action=send to=NUMBER message=" " \
-  filePath=/root/.skill-platform/workspace/gif.mp4 gifPlayback=true
+  filePath=/root/.mp4 gifPlayback=true
 # ...
 # 检查 MP4 格式参数
 ffmpeg -i /tmp/gif.gif -movflags faststart -pix_fmt yuv420p \
-  -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" /tmp/gif.mp4 -y
 ```
 
 ## 依赖说明

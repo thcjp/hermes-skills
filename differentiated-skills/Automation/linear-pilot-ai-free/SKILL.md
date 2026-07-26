@@ -58,7 +58,6 @@ chmod 600 ~/.linear-pilot/linear.env
 
 获取API Key：Linear → Settings → API → Personal API keys
 
-**输入**: 用户提供Linear API配置与认证所需的指令和必要参数.
 **处理**: 解析Linear API配置与认证的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Linear API配置与认证的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -79,7 +78,6 @@ chmod 600 ~/.linear-pilot/linear.env
 # Done - ID: state_done789
 ```
 
-**输入**: 用户提供团队与工作流状态ID获取所需的指令和必要参数.
 **处理**: 解析团队与工作流状态ID获取的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回团队与工作流状态ID获取的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -106,7 +104,6 @@ chmod 600 ~/.linear-pilot/linear.env
 }
 ```
 
-**输入**: 用户提供工作流配置所需的指令和必要参数.
 **处理**: 解析工作流配置的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回工作流配置的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -130,7 +127,6 @@ HTTP Request → Agent endpoint
 Discord notification
 ```
 
-**输入**: 用户提供Webhook服务接入（Make.com免费方案）所需的指令和必要参数.
 **处理**: 解析Webhook服务接入（Make.com免费方案）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Webhook服务接入（Make.com免费方案）的响应数据,包含状态码、结果和日志.
 ### 5. 任务处理工作流
@@ -153,7 +149,6 @@ Discord notification
 步骤6: Git同步（如启用）
 ```
 
-**输入**: 用户提供任务处理工作流所需的指令和必要参数.
 **处理**: 解析任务处理工作流的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回任务处理工作流的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -171,7 +166,6 @@ Discord notification
 （请参考skill目录中的脚本文件） comment ENG-123 "任务完成：已生成研究报告，保存至 research/topic.md"
 ```
 
-**输入**: 用户提供Linear状态自动更新所需的指令和必要参数.
 **处理**: 解析Linear状态自动更新的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Linear状态自动更新的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -185,7 +179,6 @@ git commit -m "task: ENG-123 - 用户行为分析研究"
 git push
 ```
 
-**输入**: 用户提供Git自动同步所需的指令和必要参数.
 **处理**: 解析Git自动同步的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Git自动同步的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：任务自动化解析流、接收任务、发送通知与、基础单工作流配置、自动驾驶、面向使用、进行任务管理的个、人开发者与小团队、提供从、任务创建到自动处、理再到响应同步的、端到端流水线、中创建新任务时、自动触发、接收后完成任务处、状态更新、响应通知与、让任务管理从手动、任务变为自动流转等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的任务支持.
@@ -207,7 +200,6 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 （请参考skill目录中的脚本文件） states
 ```
 
-将获取的ID填入 `~/.linear-pilot/linear-config.json`.
 ### Step 3：配置Webhook
 
 在Make.com创建Scenario：
@@ -376,7 +368,7 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 # ...
 ```bash
 mkdir -p ~/.linear-pilot
-echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
+linear-pilot/linear.env
 ```
 # ...
 ### Step 2：获取团队与状态ID(补充)
@@ -386,7 +378,6 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 （请参考skill目录中的脚本文件） states
 ```
 # ...
-将获取的ID填入 `~/.linear-pilot/linear-config.json`.
 # ...
 ### Step 3：配置Webhook(补充)
 # ...

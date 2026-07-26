@@ -84,7 +84,6 @@ category: "Research"
 | 百分比聚合错误 | Aggregating percentages | 各组百分比不能直接平均，需用加权平均或回到原始计数 |
 | 摘樱桃 | Cherry-picking | 是否只展示有利数据？检查完整时间范围和所有分组 |
 
-**输出**: 返回Analytical Pitfalls（分析陷阱识别）的处理结果,包含执行状态码、结果数据和执行日志.
 ### Approach Selection（分析方法选择）
 根据分析目标选择正确的分析方法：
 
@@ -95,7 +94,6 @@ category: "Research"
 - **规范性分析（Prescriptive）**：optimization、simulation — 回答"应该怎么做"
 
 选择原则：correlation 不等于 causation。观察数据只能发现关联，因果需实验或准实验方法.
-**输出**: 返回Approach Selection（分析方法选择）的处理结果,包含执行状态码、结果数据和执行日志.
 ### Output Standards（输出规范）
 分析输出的标准化要求：
 
@@ -106,7 +104,6 @@ category: "Research"
 - **方法论说明**：使用的统计方法、假设检验类型、校正方法
 - **局限性声明**：数据局限性、未控制的 confounder、generalizability 限制
 
-**输入**: 用户提供Output Standards（输出规范）所需的指令和必要参数.
 ### Red Flags to Escalate（风险升级机制）
 
 遇到以下情况时必须升级到资深分析师或暂停分析：

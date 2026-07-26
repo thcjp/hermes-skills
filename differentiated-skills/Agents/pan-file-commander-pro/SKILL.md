@@ -164,7 +164,6 @@ bdpan upload ./local-file.txt docs/local-file.txt
 ## 核心能力
 ### 浏览类快捷命令
 执行浏览类快捷命令操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作.
-执行浏览类快捷命令操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作.
 ```bash
 # 列出根目录
 bdpan ls
@@ -186,7 +185,6 @@ bdpan ls docs/ --json
 ```
 
 ### 搜索类快捷命令
-执行搜索类快捷命令操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作.
 执行搜索类快捷命令操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作.
 ```bash
 # 按关键词搜索
@@ -232,16 +230,13 @@ bdpan rm docs/unwanted.txt
 
 ### 分享类快捷命令
 执行分享类快捷命令操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作.
-执行分享类快捷命令操作,使用`input_params`参数进行配置,支持创建/查询/导出等操作.
 ```bash
 # 分享文件(默认7天有效期)
 bdpan share docs/report.pdf
 # ...
 # 分享文件(永久有效,需提示用户安全风险)
-bdpan share docs/report.pdf --period 0
 # ...
 # 分享文件(30天有效期)
-bdpan share docs/report.pdf --period 30
 # ...
 # 分享多个文件
 bdpan share docs/file1.txt docs/file2.txt --period 7
@@ -254,10 +249,10 @@ bdpan share docs/file1.txt docs/file2.txt --period 7
 bdpan transfer "https://pan.baidu.com/s/1xxxxx?pwd=abcd"
 # ...
 # 转存分享链接(提取码单独传入)
-bdpan transfer "https://pan.baidu.com/s/1xxxxx" -p abcd
+baidu.com/s/1xxxxx" -p abcd
 # ...
 # 转存到指定目录
-bdpan transfer "https://pan.baidu.com/s/1xxxxx" -p abcd -d downloads/
+baidu.com/s/1xxxxx" -p abcd -d downloads/
 ```
 
 ---
@@ -309,8 +304,8 @@ rm -f /tmp/bdpan-dl-<PID>.log
 ### 分享链接下载(先转存再下载到本地)
 ```bash
 bdpan download "https://pan.baidu.com/s/1xxxxx?pwd=abcd" ./downloaded/
-bdpan download "https://pan.baidu.com/s/1xxxxx" ./downloaded/ -p abcd    # 提取码单独传入
-bdpan download "https://pan.baidu.com/s/1xxxxx?pwd=abcd" ./downloaded/ -t my-folder  # 指定转存目录
+baidu.com/s/1xxxxx" ./downloaded/ -p abcd    # 提取码单独传入
+baidu.com/s/1xxxxx?pwd=abcd" ./downloaded/ -t my-folder  # 指定转存目录
 ```
 
 > 分享链接下载同样适用大文件策略:转存完成后,用 `bdpan ls --json` 获取文件大小,再按上述策略执行下载.
@@ -448,7 +443,7 @@ bdpan ls docs/ --json | jq -r '
 
 ### 按时间分类
 ```bash
-bdpan ls docs/ --json | jq -r '.created_at | .[0:7]' | sort | uniq -c
+created_at | .[0:7]' | sort | uniq -c
 ```
 
 ---

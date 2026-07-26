@@ -1,12 +1,11 @@
----
-slug: openclaw-automation-recipes
+---slug: openclaw-automation-recipes
 name: openclaw-automation-recipes
 version: "1.1.0"
 displayName: Openclaw Automation 
 summary: OpenClaw 自动化配方 - 10 个实用自动化场景。适合：效率工具爱好者、自动化新手。
 license: MIT-0
 description: |-
-  OpenClaw 自动化配方 - 10 个实用自动化场景。适合：效率工具爱好者、自动化新手。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
+  OpenClaw 自动化配方 - 10 个实用自动化场景。适合：效率工具爱好者、自动化新手。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Automation
 tools:
@@ -14,11 +13,7 @@ tools:
 - exec
 pricing_tier: "L3"
 pricing_model: "per_use"
-suggested_price: 29.9
----
-
-
-# Openclaw Automation Recipes
+suggested_price: 29.9---# Openclaw Automation Recipes
 
 10 个开箱即用的自动化场景。
 
@@ -250,9 +245,7 @@ skill-platform restart
 ### 示例1：基础用法
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
 ## 错误处理

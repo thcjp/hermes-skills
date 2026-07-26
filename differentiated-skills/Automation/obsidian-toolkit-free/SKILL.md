@@ -196,7 +196,6 @@ EOF
 - 多vault常见（iCloud vs Documents，work vs personal）
 - vault名称通常为文件夹名（路径后缀）
 
-**输入**: 用户提供vault发现所需的指令和必要参数.
 **处理**: 解析vault发现的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回vault发现的响应数据,包含状态码、结果和日志.
 ### 笔记全生命周期管理
@@ -206,13 +205,15 @@ EOF
                               wikilink自动重构
 ```
 
-#### 搜索
+#
+### 搜索
 ```bash
 obsidian-cli search "关键词"
 obsidian-cli search-content "关键词"
 ```
 
-#### 创建
+#
+### 创建
 ```bash
 obsidian-cli create "Folder/NoteName" --content "内容" --open
 # ...
@@ -225,7 +226,8 @@ obsidian-cli create "Meetings/2026-07-18评审会" --content "$TEMPLATE" --open
 - 避免在隐藏dot-folder下创建（如`.something/...`），Obsidian可能拒绝
 - 路径中的文件夹不存在时会自动创建
 
-#### 移动与重命名（安全重构）
+#
+### 移动与重命名（安全重构）
 ```bash
 obsidian-cli move "old/path/note" "new/path/note"
 # ...
@@ -247,7 +249,8 @@ obsidian-cli move "path/old-name" "path/new-name"
 ```
 
 **这是`obsidian-cli move`相比`mv`命令的核心优势**：自动更新所有引用了该笔记的wikilink，避免链接失效.
-#### 删除
+#
+### 删除
 ```bash
 obsidian-cli delete "path/note"
 ```
@@ -257,7 +260,6 @@ obsidian-cli delete "path/note"
 - 确认无重要引用后再删除
 - 考虑使用归档目录而非直接删除
 
-**输入**: 用户提供笔记全生命周期管理所需的指令和必要参数.
 **处理**: 解析笔记全生命周期管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回笔记全生命周期管理的响应数据,包含状态码、结果和日志.
 ### 模板系统入门
@@ -294,7 +296,6 @@ tags:                  # 标签
 status: active         # 状态
 ```
 
-**输入**: 用户提供模板系统入门所需的指令和必要参数.
 **处理**: 解析模板系统入门的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回模板系统入门的响应数据,包含状态码、结果和日志.
 ### 插件生态认知
@@ -313,7 +314,6 @@ status: active         # 状态
 
 **配置入口**：设置 → 第三方插件 → 启用核心插件
 
-**输入**: 用户提供插件生态认知所需的指令和必要参数.
 **处理**: 解析插件生态认知的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回插件生态认知的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：综合工具箱免费版、笔记管理、基础模板与插件生、态入门指南、工具箱免费版是面、Agent、综合管理工具、不同于基础入门指、本技能聚焦、综合工具箱、用户的得力助手、Use、when、模型调用、智能对话、LLM、应用时使用、不适用于需要、确定性的关键决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -343,7 +343,6 @@ obsidian-cli search-content "[[架构"
 
 **场景描述**：使用模板快速创建结构化会议笔记.
 ```bash
-TEMPLATE=$(cat Templates/meeting.md)
 TEMPLATE=${TEMPLATE//\{\{date\}\}/$(date +%Y-%m-%d)}
 TEMPLATE=${TEMPLATE//\{\{time\}\}/$(date +%H:%M)}
 TEMPLATE=${TEMPLATE//\{\{title\}\}/"Q3规划评审会"}
@@ -489,8 +488,6 @@ obsidian-cli create "Projects/ProjectA/会议" --content "# 会议记录
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

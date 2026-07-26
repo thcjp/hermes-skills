@@ -170,7 +170,7 @@ node （请参考skill目录中的脚本文件）
 **输出**:
 ```
 AIC DASHBOARD READY
-Access URL: http://127.0.0.1:19195/?token=a3f9c2e7b1d4f8a6...
+0.0.1:19195/?token=a3f9c2e7b1d4f8a6...
 ```
 
 **说明**: 零配置启动,自动生成 token,绑定 `127.0.0.1:19195`,仅本机可访问。读取 `./data/inbox.jsonl` 与 `./data/session.json`.

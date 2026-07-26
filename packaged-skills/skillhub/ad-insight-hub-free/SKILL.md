@@ -61,8 +61,7 @@ category: "Automation"
 
 ### 1. 广告创意搜索/计数
 按关键词、国家、行业、创意类型多维度检索广告创意。`page_size` 上限 10 自动钳制。支持创意搜索（`search`）与计数（`count`）.
-**输入**: 用户提供广告创意搜索/计数所需的指令和必要参数.
-**输出**: 返回广告创意搜索/计数的处理结果,包含执行状态码、结果数据和执行日志.
+
 ### 2. 应用与开发者画像
 统一产品搜索（`unified-product-search`）、应用详情（`app-detail`）、开发者详情（`developer-detail`）.
 > **升级提示**：创意分布查询、商店榜单、下载/收入估算（带可信度分级）、端点依赖编排、结果缓存复用等高级功能仅在 [ad-insight-hub 付费版](#) 中提供.
@@ -155,7 +154,7 @@ curl -s -X POST "https://api.admapix.com/api/data/search" \
 
 ```bash
 # 先搜索应用获取 unifiedProductId
-curl -s -X POST "https://api.admapix.com/api/data/unified-product-search" \
+admapix.com/api/data/unified-product-search" \
   -H "X-API-Key: ${ADMAPIX_API_KEY}" -H "Content-Type: application/json" \
   -d '{"keyword":"应用名称","page":1,"page_size":10}'
 # ...

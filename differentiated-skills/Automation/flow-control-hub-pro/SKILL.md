@@ -153,7 +153,6 @@ class ProFlowController:
         try:
             location = pyautogui.locateOnScreen(image_path, confidence=confidence)
             if location:
-                center = pyautogui.center(location)
                 pyautogui.click(center)
                 self._log('click_image', {
                     'image': image_path, 'position': str(center),
@@ -161,7 +160,7 @@ class ProFlowController:
                 })
                 return center
             else:
-                self._log('click_image', {
+_log('click_image', {
                     'image': image_path, 'desc': desc,
                     'success': False, 'error': 'image_not_found'
                 })
@@ -250,8 +249,7 @@ class EnterpriseFlowController:
         for attempt in range(self.max_retries):
             try:
                 result = action_func(*args, **kwargs)
-                self.failure_count = 0  # 成功则重置计数
-                self.actions.append({
+failure_count = 0  # 成功则重置计数
                     'time': datetime.now().isoformat(),
                     'desc': desc, 'attempt': attempt + 1, 'success': True
                 })
@@ -259,14 +257,10 @@ class EnterpriseFlowController:
             except pyautogui.FailSafeException:
                 raise  # 失败安全不重试
             except Exception as e:
-                self.failure_count += 1
-                self._circuit_check()
                 if attempt < self.max_retries - 1:
                     print(f"第 {attempt+1} 次失败：{e}，{self.retry_delay}秒后重试...")
                     time.sleep(self.retry_delay)
                 else:
-                    self.actions.append({
-                        'time': datetime.now().isoformat(),
                         'desc': desc, 'attempt': attempt + 1,
                         'success': False, 'error': str(e)
                     })
@@ -346,7 +340,6 @@ while time.time() - start < 10:
     time.sleep(0.5)
 ```
 
-**输入**: 用户提供图像识别定位（专业版）所需的指令和必要参数.
 **处理**: 解析图像识别定位（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回图像识别定位（专业版）的响应数据,包含状态码、结果和日志.
 ### 多显示器支持（专业版）
@@ -378,7 +371,6 @@ print(f"主屏：{main_w}x{main_h}")
 # secondary_screen = pyautogui.screenshot(region=(-1920, 0, 1920, 1080))
 ```
 
-**输入**: 用户提供多显示器支持（专业版）所需的指令和必要参数.
 **处理**: 解析多显示器支持（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多显示器支持（专业版）的响应数据,包含状态码、结果和日志.
 ### 审批模式（专业版）
@@ -419,7 +411,6 @@ ac.execute('click', pyautogui.click, 500, 300)
 ac.execute('submit', pyautogui.click, 800, 600)  # 会提示审批
 ```
 
-**输入**: 用户提供审批模式（专业版）所需的指令和必要参数.
 **处理**: 解析审批模式（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回审批模式（专业版）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -442,7 +433,6 @@ class ActionRecorder:
 # ...
     def record(self, action_type, params, result):
         self.recording.append({
-            'timestamp': datetime.now().isoformat(),
             'type': action_type,
             'params': params,
             'result': str(result),
@@ -450,7 +440,7 @@ class ActionRecorder:
         })
 # ...
     def save(self, name="recording"):
-        filename = self.log_dir / f"{name}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        filename = self.log_dir / f"{name}_{datetime.now().json"
         with open(filename, 'w', encoding='utf-8') as f:
             json.dump(self.recording, f, ensure_ascii=False, indent=2)
         print(f"录制已保存：{filename}（{len(self.recording)}条操作）")
@@ -471,13 +461,11 @@ class ActionRecorder:
 # ...
             if action['type'] == 'click':
                 x, y = action['params']
-                pyautogui.click(x, y)
             elif action['type'] == 'type':
                 text = action['params'][0]
-                pyautogui.typewrite(text, interval=0.03 / speed)
+typewrite(text, interval=0.03 / speed)
             elif action['type'] == 'hotkey':
                 keys = action['params']
-                pyautogui.hotkey(*keys)
 # ...
             print(f"  [{i+1}/{len(actions)}] {action['type']} - {action['params']}")
 # ...
@@ -491,7 +479,6 @@ recorder.save("form_filling")
 # recorder.replay("replay_logs/form_filling_20260101_120000.json")
 ```
 
-**输入**: 用户提供操作日志与回放（专业版）所需的指令和必要参数.
 **处理**: 解析操作日志与回放（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回操作日志与回放（专业版）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -536,7 +523,6 @@ if target_window:
     print(f"已最大化：{win.title}")
 ```
 
-**输入**: 用户提供窗口管理（专业版）所需的指令和必要参数.
 **处理**: 解析窗口管理（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回窗口管理（专业版）的响应数据,包含状态码、结果和日志.
 ### 自定义移动曲线（专业版）
@@ -581,7 +567,6 @@ bezier_move(start.x, start.y, 800, 400, duration=0.8)
 
 ---
 
-**输入**: 用户提供自定义移动曲线（专业版）所需的指令和必要参数.
 **处理**: 解析自定义移动曲线（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自定义移动曲线（专业版）的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：桌面自动化全功能、含图像识别、操作回放、覆盖企业级、RPA、桌面流程控制中枢、专业版是面向企业、场景的完整桌面自、动化解决方案、在免费版核心能力、专业版解锁图像识、操作日志回放、自定义移动曲线五、大高级功能、满足高精度、高安全、高可靠的自动化需等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -654,9 +639,8 @@ class UITester:
         """断言UI元素存在"""
         start = time.time()
         while time.time() - start < timeout:
-            location = pyautogui.locateOnScreen(image_path, confidence=confidence)
+locateOnScreen(image_path, confidence=confidence)
             if location:
-                self.results.append({
                     'test': f'image_exists: {image_path}',
                     'passed': True
                 })
@@ -672,7 +656,7 @@ class UITester:
         return False
 # ...
     def screenshot(self, name):
-        filename = self.screenshot_dir / f"{name}_{int(time.time())}.png"
+screenshot_dir / f"{name}_{int(time.time())}.png"
         pyautogui.screenshot(filename=str(filename))
         return filename
 # ...
@@ -836,7 +820,7 @@ controller = EnterpriseFlowController(config={
 for i in range(100):
     try:
         controller.retry_action(
-            pyautogui.click, 300, 200 + i * 5,
+click, 300, 200 + i * 5,
             desc=f"处理第 {i+1} 条"
         )
         time.sleep(0.5)
@@ -914,7 +898,7 @@ def cached_locate(image_path, confidence=0.9, cache_key=None):
     if key in template_cache:
         return template_cache[key]
 # ...
-    location = pyautogui.locateOnScreen(image_path, confidence=confidence)
+locateOnScreen(image_path, confidence=confidence)
     if location:
         template_cache[key] = location
     return location
@@ -1095,8 +1079,6 @@ Windows默认DPI缩放（如125%、150%）会导致物理像素与逻辑像素�
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

@@ -59,19 +59,19 @@ Requires `curl`, `jq`, `bc`, and `python3`.
 All commands live in `{baseDir}/scripts/jira.sh`.
 
 * `{baseDir}/scripts/jira.sh search "timeout" [max]` — fuzzy search by summary or key inside `JIRA_BOARD`
-* `{baseDir}/scripts/jira.sh link ABC-123` — browser link for an issue
-* `{baseDir}/scripts/jira.sh issue ABC-123` — quick issue details
-* `{baseDir}/scripts/jira.sh status ABC-123 "In Progress"` — move an issue (validates available transitions)
-* `{baseDir}/scripts/jira.sh transitions ABC-123` — list allowed transitions
-* `{baseDir}/scripts/jira.sh assign ABC-123 "name or email"` — assign by user search
-* `{baseDir}/scripts/jira.sh assign-me ABC-123` — assign to yourself
-* `{baseDir}/scripts/jira.sh comment ABC-123 "text"` — add a comment
-* `{baseDir}/scripts/jira.sh create "Title" ["Description"]` — create a Task in `JIRA_BOARD`
-* `{baseDir}/scripts/jira.sh log ABC-123 2.5 [YYYY-MM-DD]` — log hours (defaults to today UTC)
-* `{baseDir}/scripts/jira.sh my [max]` — open issues assigned to you
-* `{baseDir}/scripts/jira.sh hours 2025-01-01 2025-01-07` — your logged hours by issue (JSON)
-* `{baseDir}/scripts/jira.sh hours-day 2025-01-07 [name|email]` — logged hours for a day grouped by user/issue; optional filter (name/email; also resolves to accountId)
-* `{baseDir}/scripts/jira.sh hours-issue ABC-123 [name|email]` — logged hours for an issue; optional filter (name/email; also resolves to accountId)
+sh link ABC-123` — browser link for an issue
+sh issue ABC-123` — quick issue details
+sh status ABC-123 "In Progress"` — move an issue (validates available transitions)
+sh transitions ABC-123` — list allowed transitions
+sh assign ABC-123 "name or email"` — assign by user search
+sh assign-me ABC-123` — assign to yourself
+sh comment ABC-123 "text"` — add a comment
+sh create "Title" ["Description"]` — create a Task in `JIRA_BOARD`
+sh log ABC-123 2.5 [YYYY-MM-DD]` — log hours (defaults to today UTC)
+sh my [max]` — open issues assigned to you
+sh hours 2025-01-01 2025-01-07` — your logged hours by issue (JSON)
+sh hours-day 2025-01-07 [name|email]` — logged hours for a day grouped by user/issue; optional filter (name/email; also resolves to accountId)
+sh hours-issue ABC-123 [name|email]` — logged hours for an issue; optional filter (name/email; also resolves to accountId)
 
 ## Command Reference
 
@@ -87,98 +87,95 @@ All commands live in `{baseDir}/scripts/jira.sh`.
   bash
 
   ```
-  {baseDir}/scripts/jira.sh link ABC-321
   ```
 * **Issue details**
 
   bash
 
   ```
-  {baseDir}/scripts/jira.sh issue ABC-321
   ```
 * **Update status**
 
   bash
 
   ```
-  {baseDir}/scripts/jira.sh status ABC-321 "Done"
+sh status ABC-321 "Done"
   ```
 * **List transitions**
 
   bash
 
   ```
-  {baseDir}/scripts/jira.sh transitions ABC-321
+sh transitions ABC-321
   ```
 * **Assign issue**
 
   bash
 
   ```
-  {baseDir}/scripts/jira.sh assign ABC-321 "Jane Doe"
+sh assign ABC-321 "Jane Doe"
   ```
 * **Assign to yourself**
 
   bash
 
   ```
-  {baseDir}/scripts/jira.sh assign-me ABC-321
+sh assign-me ABC-321
   ```
 * **Add comment**
 
   bash
 
   ```
-  {baseDir}/scripts/jira.sh comment ABC-321 "Deployed to staging"
+sh comment ABC-321 "Deployed to staging"
   ```
 * **Create issue**
 
   bash
 
   ```
-  {baseDir}/scripts/jira.sh create "Fix auth timeout" "Users being logged out after 5m"
+sh create "Fix auth timeout" "Users being logged out after 5m"
   ```
 * **Log hours**
 
   bash
 
   ```
-  {baseDir}/scripts/jira.sh log PB-321 1.5 2025-01-18
+sh log PB-321 1.5 2025-01-18
   ```
 * **My open issues**
 
   bash
 
   ```
-  {baseDir}/scripts/jira.sh my [maxResults]
   ```
 * **Logged hours by issue (me)**
 
   bash
 
   ```
-  {baseDir}/scripts/jira.sh hours 2025-01-01 2025-01-05
+sh hours 2025-01-01 2025-01-05
   ```
 * **Logged hours for a day (everyone)**
 
   bash
 
   ```
-  {baseDir}/scripts/jira.sh hours-day 2025-01-05
+sh hours-day 2025-01-05
   ```
 * **Logged hours for a day (user filter)**
 
   bash
 
   ```
-  {baseDir}/scripts/jira.sh hours-day 2025-01-05 "jane"
+sh hours-day 2025-01-05 "jane"
   ```
 * **Logged hours for an issue**
 
   bash
 
   ```
-  {baseDir}/scripts/jira.sh hours-issue ABC-321 "jane"
+sh hours-issue ABC-321 "jane"
   ```
 
 ## Notes
@@ -232,9 +229,7 @@ All commands live in `{baseDir}/scripts/jira.sh`.
 ### 示例1：基础用法
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
 ## 错误处理

@@ -97,8 +97,7 @@ category: "Automation"
 | Incentive Compatibility | 诚实行为对参与者最优的状态 | Oracle设计中诚实报告为Dominant Strategy |
 | Common Knowledge | 所有人知道X，所有人知道所有人知道X，无限递归 | 公链状态创建balances/positions的Common Knowledge |
 
-**输入**: 用户提供核心博弈论概念应用所需的指令和必要参数.
-**处理**: 解析核心博弈论概念应用的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 六大分析模式
+### 六大分析模式
 
 支持识别并分析六种经典博弈模式，每种均提供crypto实例与解决方案：
 
@@ -118,7 +117,6 @@ category: "Automation"
 - **Staking Game**：玩家为stakers、validators、delegators；核心洞察为security budget必须超过attack profit
 - **Oracle Game**：玩家为data providers、consumers、attackers；核心洞察为操纵收益必须小于操纵成本
 
-**输出**: 返回Common Crypto Games分析的处理结果,包含执行状态码、结果数据和执行日志.
 ### Red Flags检测
 提供三维度协议设计风险检测：
 
@@ -126,7 +124,6 @@ category: "Automation"
 - **Governance Red Flags**：quorum过低、无timelock（flash loan攻击）、token voting only（plutocracy）、delegates无skin in game
 - **Mechanism Red Flags**：first-come-first-served（bot优势）、sealed bid无commitment（frontrunning）、rebates（MEV提取）、复杂公式（隐藏漏洞）
 
-**输出**: 返回Red Flags检测的处理结果,包含执行状态码、结果数据和执行日志.
 ### 高级分析能力
 支持四类高级博弈论主题的深入分析：
 

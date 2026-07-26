@@ -57,8 +57,6 @@ category: "Operations"
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ## 输入格式
@@ -392,7 +390,7 @@ aws logs describe-log-groups \
 # ...
 # 检查5：AWS Config规则合规
 aws configservice describe-compliance-by-config-rule \
-  --query 'ComplianceByConfigRules[?Compliance.ComplianceType==`NON_COMPLIANT`].ConfigRuleName' \
+Compliance.ConfigRuleName' \
   --output text
 ```
 

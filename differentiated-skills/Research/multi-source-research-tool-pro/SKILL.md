@@ -52,7 +52,6 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 | 自定义数据源 | 不支持 | 支持自定义接入 |
 | 定时研究 | 不支持 | 支持 cron 调度 |
 
-**输入**: 用户提供能力矩阵所需的指令和必要参数.
 **处理**: 解析能力矩阵的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回能力矩阵的响应数据,包含状态码、结果和日志.
 ### PRO 专属能力详解
@@ -77,14 +76,13 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 [PRO] 引用管理与文献格式化
 ```
 
-**输入**: 用户提供PRO 专属能力详解所需的指令和必要参数.
 **处理**: 解析PRO 专属能力详解的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回PRO 专属能力详解的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -253,7 +251,7 @@ custom_sources:
 # ...
   - name: "企业征信查询"
     type: "api"
-    url: "https://api.credit-query.local/v2"
+credit-query.local/v2"
     auth:
       type: "api_key"
       key: "${CREDIT_API_KEY}"
@@ -388,17 +386,13 @@ class ResearchProClient:
 # ...
     def get_research_status(self, research_id):
         """查询研究状态"""
-        resp = requests.get(
             f"{self.base_url}/v1/research/{research_id}/status",
-            headers=self.headers
         )
         return resp.json()
 # ...
     def export_report(self, research_id, format="pdf"):
         """导出研究报告"""
-        resp = requests.post(
             f"{self.base_url}/v1/research/{research_id}/export",
-            headers=self.headers,
             json={"format": format}
         )
         return resp.content

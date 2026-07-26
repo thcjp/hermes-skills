@@ -117,7 +117,6 @@ news = fetcher.fetch_all()
 print(f"\n共获取 {len(news)} 条新闻")
 ```
 
-**输入**: 用户提供RSS订阅获取新闻所需的指令和必要参数.
 **处理**: 解析RSS订阅获取新闻的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回RSS订阅获取新闻的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -169,7 +168,6 @@ for cat, count in stats.items():
     print(f"  {cat}: {count}条")
 ```
 
-**输入**: 用户提供智能分类所需的指令和必要参数.
 **处理**: 解析智能分类的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回智能分类的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -201,17 +199,14 @@ class NewsBriefGenerator:
         lines.append("---")
         lines.append("")
 # ...
-        for category, news_list in categorized_news.items():
             if news_list:
-                lines.append(f"## {category}新闻（{len(news_list)}条）")
-                lines.append("")
+append(f"## {category}新闻（{len(news_list)}条）")
                 for i, news in enumerate(news_list[:5], 1):
                     title = news.get('title', '无标题')[:80]
                     source = news.get('source', '')
-                    lines.append(f"{i}. {title}")
+append(f"{i}. {title}")
                     if source:
-                        lines.append(f"   - 来源：{source}")
-                lines.append("")
+append(f"   - 来源：{source}")
 # ...
         lines.append("---")
         lines.append(f"*共 {sum(len(v) for v in categorized_news.values())} 条新闻*")
@@ -239,7 +234,6 @@ print(brief[:500])
 generator.save_to_file(brief)
 ```
 
-**输入**: 用户提供新闻简报生成所需的指令和必要参数.
 **处理**: 解析新闻简报生成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回新闻简报生成的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：中国新闻聚合免费、订阅获取主流媒体、智能分类生成简报、中国新闻聚合助手、免费版是面向个人、用户的轻量新闻聚、合工具、订阅模式获取新浪、网易等主流媒体内、智能分类生成新闻、when、模型调用、智能对话、LLM、应用时使用、不适用于需要、确定性的关键决策、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -256,7 +250,6 @@ generator = NewsBriefGenerator()
 print("正在获取新闻...")
 news = fetcher.fetch_all()
 # ...
-categorized = categorizer.categorize(news)
 # ...
 brief = generator.generate(categorized)
 print(brief)
@@ -271,7 +264,6 @@ fetcher = RSSFetcher()
 categorizer = NewsCategorizer()
 # ...
 news = fetcher.fetch_all()
-categorized = categorizer.categorize(news)
 # ...
 for category in ['科技', '财经']:
     if category in categorized:
@@ -302,7 +294,7 @@ class EnglishBriefGenerator:
             cat_en = self.CATEGORY_EN.get(cat, cat)
             lines.append(f"## {cat_en} ({len(news_list)} items)")
             for i, news in enumerate(news_list[:3], 1):
-                lines.append(f"{i}. {news['title']}")
+append(f"{i}. {news['title']}")
             lines.append("")
         return "\n".join(lines)
 # ...
@@ -345,8 +337,8 @@ import xml.etree.ElementTree as ET
 from datetime import datetime
 # ...
 sources = {
-    '新浪国内': 'https://rss.sina.com.cn/news/china/roll.xml',
-    '新浪科技': 'https://rss.sina.com.cn/tech/roll.xml',
+sina.com.cn/news/china/roll.xml',
+sina.com.cn/tech/roll.xml',
 }
 # ...
 all_news = []
@@ -354,9 +346,8 @@ for name, url in sources.items():
     try:
         r = requests.get(url, timeout=10, headers={'User-Agent': 'Mozilla/5.0'})
         root = ET.fromstring(r.content)
-        for item in root.findall('.//item')[:10]:
-            title = item.find('title').text
-            all_news.append({'title': title, 'source': name})
+findall('.//item')[:10]:
+append({'title': title, 'source': name})
     except Exception as e:
         print(f"{name} 获取失败：{e}")
 # ...
@@ -373,11 +364,10 @@ python3 news_aggregator.py
 ### RSS源配置
 ```python
 RSS_SOURCES = {
-    '新浪国内': 'https://rss.sina.com.cn/news/china/roll.xml',
-    '新浪国际': 'https://rss.sina.com.cn/news/world/roll.xml',
-    '新浪财经': 'https://rss.sina.com.cn/finance/roll.xml',
-    '新浪科技': 'https://rss.sina.com.cn/tech/roll.xml',
-    '搜狐新闻': 'https://news.sohu.com/rss/',
+sina.com.cn/news/china/roll.xml',
+sina.com.cn/news/world/roll.xml',
+sina.com.cn/finance/roll.xml',
+sina.com.cn/tech/roll.xml',
     '36氪': 'https://36kr.com/feed',
     '凤凰资讯': 'https://news.ifeng.com/rss/',
 }
@@ -417,12 +407,10 @@ def safe_fetch_all(fetcher):
             if items:
                 for item in items:
                     item['source'] = name
-                all_news.extend(items)
             else:
                 failed_sources.append(name)
         except Exception as e:
             print(f"  {name} 失败：{e}")
-            failed_sources.append(name)
 # ...
     if failed_sources:
         print(f"\n警告：{len(failed_sources)} 个源获取失败：{failed_sources}")
@@ -436,7 +424,6 @@ def deduplicate(news_list):
     seen = set()
     unique = []
     for news in news_list:
-        title = news.get('title', '')
         if title not in seen:
             seen.add(title)
             unique.append(news)
@@ -466,7 +453,7 @@ class NewsCache:
         return None
 # ...
     def set(self, date_str, data):
-        cache_file = os.path.join(self.cache_dir, f"news_{date_str}.json")
+path.join(self.json")
         with open(cache_file, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
 ```
@@ -525,8 +512,6 @@ class NewsCache:
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

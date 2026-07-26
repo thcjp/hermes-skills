@@ -45,12 +45,10 @@ category: "Security"
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供提示注入检测所需的指令和必要参数.
 **处理**: 解析提示注入检测的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回提示注入检测的响应数据,包含状态码、结果和日志.
 ### 2. 工具调用过滤
 
-**输入**: 用户提供工具调用过滤所需的指令和必要参数.
 **处理**: 解析工具调用过滤的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回工具调用过滤的响应数据,包含状态码、结果和日志.
 ### 3. 输入净化
@@ -88,7 +86,6 @@ echo "原始: $USER_INPUT"
 echo "净化: $SANITIZED"
 ```
 
-**输入**: 用户提供输入净化所需的指令和必要参数.
 **处理**: 解析输入净化的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回输入净化的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -127,7 +124,6 @@ class SecurityPolicyChecker:
 # ...
         for blocked in self.POLICIES["blocked_paths"]:
             if blocked in file_path:
-                violations.append({
                     "policy": "blocked_paths",
                     "violation": f"访问禁止路径: {file_path}"
                 })
@@ -135,7 +131,6 @@ class SecurityPolicyChecker:
         import os
         ext = os.path.splitext(file_path)[1].lower()
         if ext and ext not in self.POLICIES["allowed_file_extensions"]:
-            violations.append({
                 "policy": "allowed_file_extensions",
                 "violation": f"文件类型 {ext} 不在允许列表中"
             })
@@ -143,7 +138,6 @@ class SecurityPolicyChecker:
         return {"passed": len(violations) == 0, "violations": violations}
 ```
 
-**输入**: 用户提供安全策略检查所需的指令和必要参数.
 **处理**: 解析安全策略检查的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回安全策略检查的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：安全防护层、支持提示注入检测、工具调用过滤与基、础安全策略、适合个人开发者保、防火墙免费版、应用提供基础安全、防护能力、核心能力、适用场景、应用安全防护、用户输入净化、工具调用安全验证、差异化、免费版聚焦核心防、护能力、支持单、适合个人开发者快、速集成、适用关键词、防火墙、安全防护、firewall、injection、sanitization等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -376,8 +370,6 @@ if result["action"] == "ALLOW":
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

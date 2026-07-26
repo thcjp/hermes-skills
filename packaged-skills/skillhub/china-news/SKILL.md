@@ -1,5 +1,4 @@
----
-slug: "china-news"
+---slug: "china-news"
 name: "china-news"
 version: 1.0.4
 displayName: "新闻"
@@ -7,7 +6,7 @@ summary: "中国新闻资讯聚合,一键获取中文源最新动态。中国新
 summary_zh: "中国新闻资讯聚合,一键获取中文源最新动态。中国新闻资讯聚合工具。Use when user wants to get latest news from Chinese sources。Use"
 license: "MIT"
 description: |-
-  中国新闻资讯聚合工具。Use when user wants to get latest news from Chinese sources。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
+  中国新闻资讯聚合工具。Use when user wants to get latest news from Chinese sources。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。不适用于无明确技术栈的模糊需求.
 tags:
   - Research
   - 新闻
@@ -19,9 +18,7 @@ tools:
   - read
   - exec
 homepage: ""
-category: "Knowledge"
----
-# China News
+category: "Knowledge"---# China News
 
 ## 付费版专享能力
 

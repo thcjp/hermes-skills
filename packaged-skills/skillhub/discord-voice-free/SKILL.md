@@ -62,20 +62,13 @@ node -e "require('@discordjs/opus')"  # Opus 编解码
 
 Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`Use Voice Activity`(检测语音活动)。在 Discord Developer Portal > OAuth2 > Permissions 中勾选。
 
-**输入**: 用户提供先验证系统依赖与 Bot 权限所需的指令和必要参数。
-**输出**: 返回先验证系统依赖与 Bot 权限的处理结果,包含执行状态码、结果数据和执行日志。
 ### 2. 仅支持本地 Whisper STT
 免费版仅支持 `sttProvider: "local-whisper"`,无需外部 API Key。Deepgram 流式 STT 与 Whisper API 需升级付费版。本地模型首次加载需下载(数百 MB)。
 
-**输入**: 用户提供仅支持本地 Whisper STT所需的指令和必要参数。
-**处理**: 解析仅支持本地 Whisper STT的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回仅支持本地 Whisper STT的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`仅支持本地 Whisper STT`的配置文档进行参数调优
 ### 3. 仅支持默认配置
 免费版使用固定默认配置:`vadSensitivity: "medium"`、`silenceThresholdMs: 1500`、`maxRecordingMs: 30000`。不可调整 Barge-in 与 allowedUsers 等高级选项。
 
-**处理**: 解析仅支持默认配置的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回仅支持默认配置的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`仅支持默认配置`的配置文档进行参数调优
 #
 ## 快速开始

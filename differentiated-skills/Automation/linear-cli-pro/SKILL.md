@@ -285,7 +285,7 @@ A: `linear auth login` 交互式登录后存于 `~/.config/linear/credentials.js
 ### API Key 配置
 - 交互式：`linear auth login`（浏览器 OAuth）
 - CI/自动化：环境变量 `LINEAR_API_KEY`（Personal API Key，从 Linear → Settings → API 获取）
-- 凭证存储：`~/.config/linear/credentials.json`（勿提交到仓库）
+- 凭证存储：`~/.json`（勿提交到仓库）
 
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 必须通过 exec 执行 `linear` CLI 命令）
@@ -296,7 +296,6 @@ A: `linear auth login` 交互式登录后存于 `~/.config/linear/credentials.js
 ### 面向在 Agent（Claud
 面向在 Agent（Claude Code / Codex / Cursor 等）中调用 `linear` CLI 的开发者
 
-**输入**: 用户提供面向在 Agent（Claud所需的指令和必要参数.
 **处理**: 解析面向在 Agent（Claud的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回面向在 Agent（Claud的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -304,7 +303,6 @@ A: `linear auth login` 交互式登录后存于 `~/.config/linear/credentials.js
 ### 聚焦 v3 执行模型下的稳定 
 聚焦 v3 执行模型下的稳定 JSON 契约、预演式写入、Markdown 安全传参、批量操作与鉴权自愈
 
-**输入**: 用户提供聚焦 v3 执行模型下的稳定 所需的指令和必要参数.
 **处理**: 解析聚焦 v3 执行模型下的稳定 的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回聚焦 v3 执行模型下的稳定 的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -312,7 +310,6 @@ A: `linear auth login` 交互式登录后存于 `~/.config/linear/credentials.js
 ### 核心能力(补充)
 核心能力:
 
-**输入**: 用户提供核心能力所需的指令和必要参数.
 **处理**: 解析核心能力的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心能力的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作

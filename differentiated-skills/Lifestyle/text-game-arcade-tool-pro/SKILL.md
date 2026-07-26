@@ -63,21 +63,21 @@ category: "Automation"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -137,9 +137,7 @@ class AIDynamicStory:
             "memory": True,  # 记住之前的对话
             "emotion": True,  # 情感反应
         }
-        resp = requests.post(
             f"{API_BASE}/ai/npc/dialogue",
-            headers=self.headers,
             json=payload,
             timeout=30,
         )
@@ -172,7 +170,6 @@ class CollaborativeGameProject:
             "version_control": True,
             "real_time_editing": True,
         }
-        resp = requests.post(
             f"{API_BASE}/projects",
             headers=story.headers,
             json=payload,
@@ -189,9 +186,7 @@ class CollaborativeGameProject:
             "deadline": "2026-08-01",
             "review_required": True,
         }
-        resp = requests.post(
             f"{API_BASE}/projects/assign",
-            headers=story.headers,
             json=payload,
             timeout=30,
         )
@@ -219,7 +214,6 @@ def publish_game(game_id, platforms, metadata):
     }
     resp = requests.post(
         f"{API_BASE}/publish",
-        headers=story.headers,
         json=payload,
         timeout=300,
     )
@@ -345,7 +339,6 @@ def create_ai_npc(npc_config):
     }
     resp = requests.post(
         f"{API_BASE}/ai/npc/create",
-        headers=story.headers,
         json=payload,
         timeout=60,
     )
@@ -372,7 +365,6 @@ def analyze_player_behavior(game_id, period):
     }
     resp = requests.post(
         f"{API_BASE}/analytics/players",
-        headers=story.headers,
         json=payload,
         timeout=120,
     )
@@ -398,7 +390,6 @@ def maintain_story_consistency(story_context, new_content):
     }
     resp = requests.post(
         f"{API_BASE}/ai/consistency-check",
-        headers=story.headers,
         json=payload,
         timeout=60,
     )
@@ -436,7 +427,6 @@ def localize_game(game_id, target_languages):
     }
     resp = requests.post(
         f"{API_BASE}/localize",
-        headers=story.headers,
         json=payload,
         timeout=600,
     )

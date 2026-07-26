@@ -105,8 +105,8 @@ query dependencyGraph($owner: String!, $name: String!) {
 }
 ```
 
-**处理**: 解析GraphQL API的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回GraphQL API的解析响应,包含完成状态码、响应数据和完成日志。### 批量任务
+**输出**: 返回GraphQL API的解析响应,包含完成状态码、响应数据和完成日志。
+### 批量任务
 ```bash
 gh-api-toolkit batch-create-issues \
   --repo owner/repo \
@@ -197,12 +197,10 @@ curl -L -H "Authorization: Bearer $GITHUB_TOKEN" \
   https://api.相关技术文档
 ```
 
-**输出**: 返回GitHub Actions API的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `github_actions_api` 选项
 - 处理流程: 接收输入 -> 执行GitHub Actions API -> 返回结果
 - 输入: 用户提供GitHub Actions API所需的参数和指令
-- 输出: 返回GitHub Actions API的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 组织与团队管理
 ```bash
@@ -226,9 +224,7 @@ curl -H "Authorization: Bearer $GITHUB_TOKEN" \
   https://api.相关技术文档
 ```
 
-**输入**: 用户提供组织与团队管理所需的指令和必要参数.
-**处理**: 解析组织与团队管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回组织与团队管理的处理结果,包含执行状态码、结果数据和执行日志。### 高级搜索
+### 高级搜索
 ```bash
 curl -H "Authorization: Bearer $GITHUB_TOKEN" \
   "https://api.相关技术文档
@@ -324,7 +320,6 @@ EOF
 # ...
 gh-api-toolkit batch-create-issues --repo owner/repo --input issues.csv --dry-run
 # ...
-gh-api-toolkit batch-create-issues --repo owner/repo --input issues.csv
 ```
 
 ### 第4步:配置Webhook

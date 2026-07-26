@@ -90,8 +90,7 @@ export API_KEY="your_api_key_here"
 向导会读取 `.env` 文件中的 `RPC_URL`、`OPERATE_PASSWORD`、`GEMINI_API_KEY`、`GITHUB_TOKEN`、
 `GIT_AUTHOR_NAME`、`GIT_AUTHOR_EMAIL` 等变量。若必填变量缺失，向导立即退出。配置完成后，
 向导显示钱包地址和精确的 ETH（gas）+ OLAS（质押）资金需求.
-**输入**: 用户提供环境配置与安装向导所需的指令和必要参数.
-**处理**: 解析环境配置与安装向导的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 ### 2. Worker 持续任务执行
 通过 `yarn worker` 启动持续工作模式，节点自动从任务队列领取任务并执行。任务类型包括代码修复、
 文档生成、测试编写等。使用 `yarn worker --single` 执行单任务测试，验证节点功能正常后
@@ -101,8 +100,7 @@ export API_KEY="your_api_key_here"
 通过 `yarn wallet:info` 查看钱包地址和余额（ETH + OLAS）。使用 `yarn wallet:backup` 备份
 `.operate` 目录中的密钥文件。`yarn wallet:withdraw --to <addr>` 从 Safe 合约提取资金到
 指定地址。`yarn wallet:recover --to <addr>` 执行紧急恢复（破坏性操作，会重置节点状态）.
-**输入**: 用户提供钱包管理与资金操作所需的指令和必要参数.
-**输出**: 返回钱包管理与资金的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+
 - 参考`钱包管理与资金操作`的配置文档进行参数调优
 ### 4. Launchpad 自治项目交互
 浏览 Launchpad 上的自治项目，为项目点赞、评论、提出 KPI 建议。系统从对话中构建本地偏好画像，

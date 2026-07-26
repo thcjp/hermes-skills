@@ -43,7 +43,8 @@ category: "Creative"
 
 ### 设计令牌速查
 
-#### 色彩
+#
+### 色彩
 
 | 令牌 | 数值 | 用途 |
 |---|---|---|
@@ -57,19 +58,22 @@ category: "Creative"
 
 **签名渐变**:`linear-gradient(135deg, #0052FF, #4D7CFF)`
 
-#### 字体
+#
+### 字体
 
 - **Display**: `"Calistoga", serif` - H1/H2标题
 - **UI/Body**: `"Inter", sans-serif` - 正文/UI
 - **Monospace**: `"JetBrains Mono"` - Badge/代码
 
-#### 空间
+#
+### 空间
 
 - 章节Padding:`py-28` 到 `py-44`(奢侈留白)
 - 容器宽度:`max-w-6xl` (72rem)
 - 英雄区比例:`1.1fr / 0.9fr`(微妙的失衡动量)
 
-#### 阴影
+#
+### 阴影
 
 ```css
 shadow-sm: 0 1px 3px rgba(0,0,0,0.06)
@@ -78,29 +82,30 @@ shadow-xl: 0 20px 25px rgba(0,0,0,0.1)
 shadow-accent: 0 4px 14px rgba(0,82,255,0.25)
 ```
 
-**输入**: 用户提供设计令牌速查所需的指令和必要参数.
 **处理**: 解析设计令牌速查的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回设计令牌速查的响应数据,包含状态码、结果和日志.
 ### 组件规范
 
-#### 按钮
+#
+### 按钮
 
 - Primary:渐变背景,圆角`12px`
 - 悬停:阴影加深 + 向上平移`2px`
 - 点击:`scale(0.98)` 机械按压感
 
-#### 卡片
+#
+### 卡片
 
 - 纯白背景 + 1px边框(`Slate-200`)
 - 悬停:阴影`md`→`xl`,背景渐变发光`accent/0.03`
 - 特色卡片:2px渐变边框
 
-#### 输入框
+#
+### 输入框
 
 - 高度`h-14`,背景`muted/10`
 - 焦点:`ring-2 ring-offset-2`强调色
 
-**输入**: 用户提供组件规范所需的指令和必要参数.
 **处理**: 解析组件规范的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回组件规范的响应数据,包含状态码、结果和日志.
 ### 工程目标
@@ -110,7 +115,6 @@ shadow-accent: 0 4px 14px rgba(0,82,255,0.25)
 - **全设备适配**:超宽屏到移动端
 - **减弱动效**:监听`prefers-reduced-motion`
 
-**输入**: 用户提供工程目标所需的指令和必要参数.
 **处理**: 解析工程目标的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回工程目标的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：极简现代主义设计、系统集成指南、组件规范与响应式、适合个人前端项目、极简设计系统免费、版帮助个人开发者、将精密设计系统无、缝集成到现有代码、响应式策略与可访、问性指南、确保视觉一致性与、技术架构的前瞻性、Use、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -240,7 +244,7 @@ function Button({ variant = "primary", children, ...props }) {
   return (
     <button
       className={`px-6 py-3 rounded-xl transition-all
-                  hover:-translate-y-0.5 active:scale-[0.98]
+5 active:scale-[0.98]
                   ${variants[variant]}`}
       {...props}
     >
@@ -279,10 +283,6 @@ module.exports = {
       },
       borderRadius: { xl: "12px", "2xl": "16px" },
       boxShadow: {
-        sm: "0 1px 3px rgba(0,0,0,0.06)",
-        md: "0 4px 6px rgba(0,0,0,0.07)",
-        xl: "0 20px 25px rgba(0,0,0,0.1)",
-        accent: "0 4px 14px rgba(0,82,255,0.25)"
       },
       spacing: { section: "7rem" },
       backgroundImage: {
@@ -318,10 +318,6 @@ module.exports = {
   --container-max: 72rem;
 // ...
   /* 阴影 */
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-  --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
-  --shadow-xl: 0 20px 25px rgba(0,0,0,0.1);
-  --shadow-accent: 0 4px 14px rgba(0,82,255,0.25);
 // ...
   /* 圆角 */
   --radius-md: 8px;

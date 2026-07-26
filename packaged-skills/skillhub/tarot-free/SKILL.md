@@ -72,8 +72,7 @@ export API_KEY="your_api_key_here"
 （`reversed`）。输出格式：Card（牌名，`upright`/`reversed`）、Keywords（3-5 个关键词）、
 Reflection（5-8 行反思，温和语调）、Invitation question（1 行邀请式问题）.
 反思语言使用"一种可能的视角是..."而非"你需要...".
-**输入**: 用户提供单牌阵抽取（`Single-card spread`）所需的指令和必要参数.
-**处理**: 解析单牌阵抽取（`Single-card spread`）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 ### 2. 22 张大阿卡纳牌解读库
 内置 0-XXI 共 22 张 `Major Arcana`（大阿卡纳牌）的基础解读。每张牌包含：`Upright keywords`（正位关键词，4 个）、
 `Reversed keywords`（逆位关键词，3-4 个）、`Reflection`（反思文本，象征性语调）.
@@ -82,16 +81,12 @@ Reflection（5-8 行反思，温和语调）、Invitation question（1 行邀请
 `IX The Hermit`、`X Wheel of Fortune`、`XI Justice`、`XII The Hanged Man`、`XIII Death`、
 `XIV Temperance`、`XV The Devil`、`XVI The Tower`、`XVII The Star`、`XVIII The Moon`、
 `XIX The Sun`、`XX Judgement`、`XXI The World`.
-**输入**: 用户提供22 张大阿卡纳牌解读库所需的指令和必要参数.
-**处理**: 解析22 张大阿卡纳牌解读库的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回22 张大阿卡纳牌解读库的处理结果,包含执行状态码、结果数据和执行日志.
+
 ### 3. 基础语言校准
 基础版遵循核心语言校准规则。避免使用："You need to..."、"You should..."、"This will happen...".
 偏好使用："One possible lens is..."、"It might be pointing to...".
 解读保持象征性语调，以邀请式问题结尾。基础版不包含完整的语言校准规则集.
-**输入**: 用户提供基础语言校准所需的指令和必要参数.
-**处理**: 解析基础语言校准的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回基础语言校准的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+
 - 参考`基础语言校准`的配置文档进行参数调优
 #
 ## 快速开始

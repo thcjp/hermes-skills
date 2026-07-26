@@ -54,7 +54,6 @@ category: "Creative"
 - **简单文本**: 直接发送纯文本内容
 - **文件内容**: 从文件读取内容发送（推荐，支持完整 Markdown）
 
-**输入**: 用户提供卡片消息发送所需的指令和必要参数.
 **处理**: 解析卡片消息发送的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回卡片消息发送的响应数据,包含状态码、结果和日志.
 ### Markdown 渲染
@@ -65,7 +64,6 @@ category: "Creative"
 - 加粗、斜体、行内代码
 - 链接
 
-**输入**: 用户提供Markdown 渲染所需的指令和必要参数.
 **处理**: 解析Markdown 渲染的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Markdown 渲染的响应数据,包含状态码、结果和日志.
 ### 卡片样式
@@ -74,7 +72,6 @@ category: "Creative"
 - **彩色头部**: 蓝/红/橙/绿/紫/灰六种颜色
 - **底部按钮**: 文本按钮 + 跳转链接
 
-**输入**: 用户提供卡片样式所需的指令和必要参数.
 **处理**: 解析卡片样式的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回卡片样式的响应数据,包含状态码、结果和日志.
 ### 图片支持
@@ -83,7 +80,6 @@ category: "Creative"
 - 图片嵌入卡片
 - 自动获取 image_key
 
-**输入**: 用户提供图片支持所需的指令和必要参数.
 **处理**: 解析图片支持的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回图片支持的响应数据,包含状态码、结果和日志.
 ### 安全发送
@@ -92,7 +88,6 @@ category: "Creative"
 - 自动清理临时文件
 - 避免反引号等字符被 shell 吞掉
 
-**输入**: 用户提供安全发送所需的指令和必要参数.
 **处理**: 解析安全发送的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回安全发送的响应数据,包含状态码、结果和日志.
 ### 人设消息
@@ -103,7 +98,6 @@ category: "Creative"
 
 ---
 
-**输入**: 用户提供人设消息所需的指令和必要参数.
 **处理**: 解析人设消息的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回人设消息的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：飞书富文本卡片消、息构建工具、与按钮交互、飞书卡片免费版是、一款面向个人用户、的飞书卡片消息构、建与发送工具、支持向飞书用户或、群组发送包含、按钮与图片的富交、互卡片消息、Use、when、需要生成营销文案、写作内容、标题优化、内容创作时使用、不适用于纯技术文、档撰写、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -157,7 +151,6 @@ node skills/feishu-card-builder/send_safe.js \
 上传本地图片并发送带图片的展示卡片.
 ```bash
 # 发送带图片的卡片
-node skills/feishu-card-builder/send.js \
   --target "oc_xxxxxxx" \
   --text "本周数据图表如下：" \
   --title "周报数据" \
@@ -182,7 +175,7 @@ node skills/feishu-card-builder/send.js \
 
 ```bash
 # 发送简单文本
-node skills/feishu-card-builder/send.js --target "ou_xxxxxxx" --text "Hello World"
+js --target "ou_xxxxxxx" --text "Hello World"
 ```
 
 ### 第三步：发送 Markdown 卡片（推荐）
@@ -197,14 +190,13 @@ print('hello')
 \`\`\`"
 # ...
 # 使用文件发送
-node skills/feishu-card-builder/send.js --target "ou_xxxxxxx" --text-file "temp/msg.md"
+js --target "ou_xxxxxxx" --text-file "temp/msg.md"
 ```
 
 ### 第四步：使用安全发送模式
 
 ```bash
 # 安全发送（自动处理临时文件）
-node skills/feishu-card-builder/send_safe.js \
   --target "ou_xxxxxxx" \
   --text "包含 \`反引号\` 和 *markdown* 的内容" \
   --title "安全消息"
@@ -228,10 +220,10 @@ node skills/feishu-card-builder/send_safe.js \
 # ...
 # 正确做法1：写入文件后用 --text-file 发送
 write temp/msg.md "代码: \`code\`"
-node skills/feishu-card-builder/send.js --target "ou_xxx" --text-file "temp/msg.md"
+js --target "ou_xxx" --text-file "temp/msg.md"
 # ...
 # 正确做法2：使用 send_safe.js 自动处理
-node skills/feishu-card-builder/send_safe.js --target "ou_xxx" --text "代码: \`code\`"
+js --target "ou_xxx" --text "代码: \`code\`"
 ```
 
 ### Markdown 内容组织
@@ -252,7 +244,6 @@ write temp/report.md "## 本周进展
 npm run deploy
 \`\`\`"
 # ...
-node skills/feishu-card-builder/send.js \
   --target "oc_xxx" \
   --text-file "temp/report.md" \
   --title "周报" \
@@ -272,7 +263,6 @@ node skills/feishu-card-builder/send.js \
 ls -lh chart.png
 # ...
 # 发送带图片的卡片
-node skills/feishu-card-builder/send.js \
   --target "oc_xxx" \
   --text "数据图表" \
   --image-path "chart.png" \
@@ -296,10 +286,9 @@ node skills/feishu-card-builder/send.js \
 ```bash
 # 使用文件方式
 write temp/msg.md "代码: \`code\`"
-node skills/feishu-card-builder/send.js --target "ou_xxx" --text-file "temp/msg.md"
 # ...
 # 或使用安全发送
-node skills/feishu-card-builder/send_safe.js --target "ou_xxx" --text "代码: \`code\`"
+js --target "ou_xxx" --text "代码: \`code\`"
 ```
 
 ### 问题2：图片上传失败
@@ -330,7 +319,6 @@ file image.png
 
 ```bash
 # 使用完整 URL
---button-url "https://example.com/page"
 # ...
 # 确认链接可访问
 curl -I https://example.com/page

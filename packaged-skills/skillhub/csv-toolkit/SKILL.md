@@ -97,7 +97,6 @@ category: "Automation"
 csv-toolkit stream parse large.csv --chunk-size 100MB --output parsed.jsonl
 # ...
 # 流式过滤并生成
-csv-toolkit stream parse large.csv \
   --filter "amount > 1000" \
   --output big_orders.csv
 ```
@@ -130,7 +129,7 @@ csv-toolkit schema infer sample.csv --output schema.yaml
 csv-toolkit schema validate production.csv --schema schema.yaml
 # ...
 # 校验结果（含错误详情）
-csv-toolkit schema validate production.csv --schema schema.yaml --report validation-report.md
+csv --schema schema.yaml --report validation-report.md
 ```
 
 Schema 配置示例：
@@ -183,13 +182,13 @@ csv-toolkit merge orders.csv customers.csv \
 csv-toolkit convert data.csv --to parquet --output data.parquet
 # ...
 # CSV 转 Arrow（内存列式）
-csv-toolkit convert data.csv --to arrow --output data.arrow
+csv --to arrow --output data.arrow
 # ...
 # CSV 转 JSON Lines
-csv-toolkit convert data.csv --to jsonl --output data.jsonl
+csv --to jsonl --output data.jsonl
 # ...
 # Parquet 转回 CSV
-csv-toolkit convert data.parquet --to csv --output data.csv
+parquet --to csv --output data.csv
 ```
 
 ### 场景六：按列值拆分大文件（运维工程师）
@@ -228,7 +227,6 @@ export CSV_TOOLKIT_HOME="$HOME/.csv-toolkit"
 csv-toolkit stream parse sample.csv --chunk-size 10MB
 # ...
 # 验证 Schema 推断
-csv-toolkit schema infer sample.csv
 ```
 
 ### 依赖说明
@@ -349,7 +347,6 @@ columns:
   - name: email
     type: string
     required: false
-    pattern: "^[^@]+@[^@]+\\.[^@]+$"
   - name: age
     type: integer
     required: false
@@ -406,8 +403,8 @@ report_format: markdown
 源 CSV 可能不是 UTF-8。先用 `csv-toolkit profile data.csv` 检测编码，转换前先统一转为 UTF-8：
 
 ```bash
-csv-toolkit convert data.csv --to csv --encoding utf-8 --output data_utf8.csv
-csv-toolkit convert data_utf8.csv --to parquet --output data.parquet
+csv --to csv --encoding utf-8 --output data_utf8.csv
+csv-toolkit convert data_utf8.parquet
 ```
 
 ### Q5：合并多个 CSV 时列顺序不一致？

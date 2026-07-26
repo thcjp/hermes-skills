@@ -1,9 +1,8 @@
----
-slug: telegram-alert-tool-free
+---slug: telegram-alert-tool-free
 name: telegram-alert-tool-free
 version: 1.0.0
 displayName: Telegram告警入门
-summary: "通过Telegram Bot发送基础交易告警，支持单一群组与简单价格触发.。面向个人交易者的Telegram告警通知工具。通过Telegram Bot将交易信号、"
+summary: "通过Telegram "
 license: Proprietary
 edition: free
 description: 面向个人交易者的Telegram告警通知工具。通过Telegram Bot将交易信号、，可自动提升工作效率
@@ -24,9 +23,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Finance"
----
-# Telegram告警入门（免费版）
+category: "Finance"---# Telegram告警入门（免费版）
 
 ## 概述
 
@@ -46,19 +43,18 @@ category: "Finance"
 | 定时推送 | 定时通知 | 不支持 |
 | 告警历史 | 记录查询 | 基础记录 |
 
-**输入**: 用户提供告警功能所需的指令和必要参数.
 **处理**: 解析告警功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回告警功能的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作

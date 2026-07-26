@@ -50,7 +50,6 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 | 导出格式 | 纯文本 | MD/PDF/HTML/Email |
 | 监控告警 | 不支持 | 源失效检测+告警 |
 
-**输入**: 用户提供能力矩阵所需的指令和必要参数.
 **处理**: 解析能力矩阵的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回能力矩阵的响应数据,包含状态码、结果和日志.
 ### PRO 专属能力详解
@@ -76,14 +75,13 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 [PRO] 多格式导出（Markdown/PDF/HTML/Email）
 ```
 
-**输入**: 用户提供PRO 专属能力详解所需的指令和必要参数.
 **处理**: 解析PRO 专属能力详解的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回PRO 专属能力详解的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -102,8 +100,8 @@ groups:
     name: "技术资讯"
     feeds:
       - "https://feeds.example.com/ai-news.xml"
-      - "https://feeds.example.com/tech-general.xml"
-      - "https://feeds.example.com/devops.xml"
+example.com/tech-general.xml"
+example.com/devops.xml"
     schedule:
       cron: "0 8 * * 1-5"
     recipients:
@@ -113,8 +111,8 @@ groups:
   finance:
     name: "财经资讯"
     feeds:
-      - "https://feeds.example.com/finance.xml"
-      - "https://feeds.example.com/market.xml"
+example.com/finance.xml"
+example.com/market.xml"
     schedule:
       cron: "0 7 * * 1-5"
     recipients:
@@ -124,8 +122,8 @@ groups:
   market:
     name: "市场资讯"
     feeds:
-      - "https://feeds.example.com/market-research.xml"
-      - "https://feeds.example.com/competitor.xml"
+example.com/market-research.xml"
+example.com/competitor.xml"
     schedule:
       cron: "0 9 * * 1-5"
     recipients:
@@ -317,7 +315,6 @@ health_check:
 # ...
     - condition: "feed_empty_days >= 7"
       action: "flag_inactive"
-      notify: ["admin@company.com"]
 EOF
 ```
 

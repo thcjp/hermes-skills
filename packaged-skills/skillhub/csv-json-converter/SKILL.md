@@ -50,7 +50,7 @@ category: "Automation"
 | 分布式转换 | TB级跨机器处理 | 配合Celery/Dask调度 |
 
 **Agent执行规则**：默认4线程并行；文件数<5时降级为串行；输出每个文件的转换状态与耗时，便于定位慢文件.
-**输入**: 用户提供能力1：批量并行转换所需的指令和必要参数.
+
 ### 能力2：流式转换（GB级不OOM）
 
 ```python
@@ -116,7 +116,6 @@ mapping:
 ```
 
 **Agent执行规则**：读取 `field-mapping.yaml` 后按映射规则转换；支持重命名、拆分、合并、计算字段、常量字段、类型强转六种操作；映射规则冲突时报错并列出冲突项.
-**输出**: 返回能力4：自定义字段映射DSL的处理结果,包含执行状态码、结果数据和执行日志.
 ### 能力5：增量同步
 
 ```python
@@ -140,7 +139,6 @@ def incremental_convert(csv_path: str, key_field: str = 'id'):
     new_last_key = last_key
     new_rows = 0
     with open(csv_path, 'r', encoding='utf-8-sig', newline='') as f:
-        reader = csv.DictReader(f)
         for row in reader:
             current_key = row[key_field]
             if last_key is not None and current_key <= last_key:
@@ -169,7 +167,6 @@ def csv_to_postgres(csv_path: str, table_name: str, dsn: str):
     conn = psycopg2.connect(dsn)
     cur = conn.cursor()
     with open(csv_path, 'r', encoding='utf-8-sig', newline='') as f:
-        reader = csv.DictReader(f)
         columns = reader.fieldnames
         rows = [tuple(r[c] for c in columns) for r in reader]
     # 批量写入（分批，每批5000行）
@@ -234,12 +231,10 @@ def convert_one(csv_path: str, out_dir: str):
     out_path = Path(out_dir) / (Path(csv_path).stem + '.json')
     with open(csv_path, 'r', encoding='utf-8-sig', newline='') as fin, \
          open(out_path, 'w', encoding='utf-8') as fout:
-        reader = csv.DictReader(fin)
         fout.write('[')
         first = True
         for row in reader:
             if not first:
-                fout.write(',')
             json.dump(dict(row), fout, ensure_ascii=False)
             first = False
         fout.write(']')
@@ -355,8 +350,6 @@ print("Schema校验通过")
 1. 确认运行环境满足依赖说明中的要求
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
-
-> 详细的输入输出格式请参考下方章节说明。
 
 ## 案例展示
 

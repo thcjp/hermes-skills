@@ -205,7 +205,6 @@ func Square(ctx context.Context, in <-chan int) <-chan int {
         for n := range in {
             select {
             case out <- n * n:
-            case <-ctx.Done():
                 return
             }
         }
@@ -222,7 +221,6 @@ func FilterEven(ctx context.Context, in <-chan int) <-chan int {
             if n%2 == 0 {
                 select {
                 case out <- n:
-                case <-ctx.Done():
                     return
                 }
             }
@@ -531,8 +529,6 @@ logInt(42)  // 不逃逸
 ### Q4：Pipeline 中如何处理错误？
 ```go
 // 使用 errgroup + channel 传递错误
-func Pipeline(ctx context.Context) error {
-    g, ctx := errgroup.WithContext(ctx)
 // ...
     ch1 := generate(ctx, g)
     ch2 := process(ctx, g, ch1)

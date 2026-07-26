@@ -100,7 +100,6 @@ bailian-pro batch-search "AI智能体" "大模型" "向量数据库" --concurren
 # 向量数据库对比
 ```
 
-**输入**: 用户提供批量查询与并发搜索(专业版新增)所需的指令和必要参数.
 **处理**: 解析批量查询与并发搜索(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量查询与并发搜索(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -115,13 +114,11 @@ bailian-pro search "Python asyncio" --cache
 bailian-pro search "Python asyncio" --cache --ttl 3600
 # ...
 # 跨查询去重(相同URL只保留一次)
-bailian-pro batch-search --file queries.txt --dedup
 # ...
 # 清理过期缓存
 bailian-pro cache cleanup
 ```
 
-**输入**: 用户提供智能结果缓存与去重(专业版新增)所需的指令和必要参数.
 **处理**: 解析智能结果缓存与去重(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回智能结果缓存与去重(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -142,7 +139,6 @@ bailian-pro history --member alice
 bailian-pro history --export json > search-history.json
 ```
 
-**输入**: 用户提供搜索历史与审计(专业版新增)所需的指令和必要参数.
 **处理**: 解析搜索历史与审计(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回搜索历史与审计(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -160,7 +156,6 @@ bailian-pro aggregate "AI智能体" "大模型" "智能体框架" --top 10
 bailian-pro report "AI智能体调研" --queries "AI智能体,智能体框架,多智能体" --format markdown
 ```
 
-**输入**: 用户提供结果分析与聚合(专业版新增)所需的指令和必要参数.
 **处理**: 解析结果分析与聚合(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果分析与聚合(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -176,7 +171,6 @@ curl -s "http://localhost:8080/api/search?q=AI智能体&count=10"
 curl -s -X POST "http://localhost:8080/api/batch" -d '{"queries":["AI","大模型"]}'
 ```
 
-**输入**: 用户提供API 访问与第三方集成(专业版新增)所需的指令和必要参数.
 **处理**: 解析API 访问与第三方集成(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回API 访问与第三方集成(专业版新增)的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、支持批量查询、并发搜索与搜索分、面向团队生产场景、优化网页搜索工具、在免费版核心能力、结果去重与搜索分、析能力、核心能力、免费版全部能力、完全兼容等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -323,7 +317,6 @@ else
     >> "$SHARED_DIR/history.jsonl"
 # ...
   echo "[新搜索] 结果已归档到共享库"
-  cat "$SHARED_DIR/cache/${HASH}.json"
 fi
 # ...
 # 查看团队搜索统计
@@ -358,7 +351,6 @@ bailian-pro init
 # 配置
 bailian-pro config set api.key "$DASHSCOPE_API_KEY"
 bailian-pro config set cache.enabled true
-bailian-pro config set cache.ttl 86400
 bailian-pro config set batch.max_concurrency 5
 ```
 
@@ -369,7 +361,7 @@ bailian-pro config set batch.max_concurrency 5
 bailian-pro search "AI智能体" --count 10 --cache
 # ...
 # 批量搜索(并发)
-bailian-pro batch-search --file queries.txt --concurrency 5 --dedup
+txt --concurrency 5 --dedup
 # ...
 # 生成调研报告
 bailian-pro report --input results.json --format markdown
@@ -548,8 +540,6 @@ curl "http://localhost:8080/api/search?q=AI&count=10"
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

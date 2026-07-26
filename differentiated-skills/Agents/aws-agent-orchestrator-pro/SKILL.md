@@ -54,8 +54,6 @@ category: "Operations"
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ```text
@@ -89,7 +87,7 @@ agentcore --version
 from langgraph.graph import StateGraph, START, END
 from langgraph.graph.message import add_messages
 from bedrock_agentcore.runtime import BedrockAgentCoreApp
-from bedrock_agentcore.memory import MemoryClient
+memory import MemoryClient
 from typing import Annotated
 from typing_extensions import TypedDict
 # ...
@@ -147,7 +145,7 @@ python -m bedrock_agentcore.gateway.deploy --stack-name my-agents --region us-ea
 ```
 
 ```python
-from bedrock_agentcore.gateway import GatewayToolClient
+gateway import GatewayToolClient
 gateway = GatewayToolClient()
 result = gateway.call("query_order", order_id="12345")
 ```
@@ -164,7 +162,7 @@ agentcore launch --deployment-type container
 | 命令 | 用途 | 专业版增强 |
 |:-----|:-----|:-----|
 | `agentcore configure -e agent.py --region us-east-1` | 交互式配置 | ✅ |
-| `agentcore configure -e agent.py --region us-east-1 --name my_agent --non-interactive` | 脚本化配置 | ✅ |
+py --region us-east-1 --name my_agent --non-interactive` | 脚本化配置 | ✅ |
 | `agentcore launch --deployment-type container` | 容器模式部署 | ✅ 含Gateway挂载 |
 | `agentcore launch --disable-memory` | 部署但不启用记忆子系统 | ✅ |
 | `agentcore dev` | 热重载本地开发服务器 | ✅ 支持多Agent调试 |
@@ -218,21 +216,21 @@ agentcore launch --deployment-type container
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：完整的、AWS、多智能体编排能力、工具链与跨会话、长期记忆、面向团队与企业生、产环境、智能体编排专业版、在免费版单智能体、能力之上、解锁多智能体编排、工具链与跨会话长、期记忆、三大高级能力、它让企业能够在统、session、上下文中协调多个、网关转化为、并跨会话沉淀事实、与决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ### 核心功能执行
 执行核心功能执行操作,使用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 执行参数配置与调用操作,使用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 扩展能力3
 执行扩展能力3操作,使用`param_3`参数进行配置.
-**输入**: 用户提供扩展能力3所需的指令和必要参数.
+
 **处理**: 解析扩展能力3的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回扩展能力3的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`param_3`参数,支持创建/查询/修改操作
@@ -274,12 +272,12 @@ agentcore launch --deployment-type container
 **能力**：将AWS Lambda、RESTful API、MCP端点统一封装为Agent可调用的工具，自动注入鉴权.
 **部署**：
 ```bash
-python -m bedrock_agentcore.gateway.deploy --stack-name my-agents --region us-east-1
+gateway.deploy --stack-name my-agents --region us-east-1
 ```
 
 **调用**：
 ```python
-from bedrock_agentcore.gateway import GatewayToolClient
+gateway import GatewayToolClient
 gateway = GatewayToolClient()
 result = gateway.call("tool_name", param1=value1, param2=value2)
 ```
@@ -299,7 +297,7 @@ result = gateway.call("tool_name", param1=value1, param2=value2)
 **能力**：跨会话、跨Agent持久化事实与决策，约10秒最终一致性.
 **API**：
 ```python
-from bedrock_agentcore.memory import MemoryClient
+memory import MemoryClient
 memory = MemoryClient()
 # 写入
 memory.create_event(session_id, actor_id, event_type, payload)
@@ -340,7 +338,6 @@ def tech_support_agent(state: State):
     return {"messages": [("assistant", "[技术] 请提供错误日志")]}
 # ...
 def orchestrator(state: State):
-    user_msg = state["messages"][-1].content
     if "购买" in user_msg or "推荐" in user_msg:
         return presales_agent(state)
     elif "退款" in user_msg or "售后" in user_msg:
@@ -367,7 +364,7 @@ def fraud_detection_agent(state: State):
 # ...
 def credit_evaluation_agent(state: State):
     """信用评估"""
-    history = memory.list_events(state["session_id"])
+list_events(state["session_id"])
     return {"messages": [("assistant", "[信用] 评估完成")]}
 # ...
 def risk_alert_agent(state: State):
@@ -404,11 +401,10 @@ def payment_agent(state: State):
 # ...
 def logistics_agent(state: State):
     """物流"""
-    history = memory.list_events(state["session_id"])
+list_events(state["session_id"])
     return {"messages": [("assistant", "[物流] 已发货")]}
 # ...
 def orchestrator(state: State):
-    user_msg = state["messages"][-1].content
     if "推荐" in user_msg:
         return shopping_guide(state)
     elif "下单" in user_msg:
@@ -436,7 +432,7 @@ def triage_agent(state: State):
 # ...
 def specialist_consult(state: State):
     """专家会诊"""
-    history = memory.list_events(state["session_id"])
+list_events(state["session_id"])
     return {"messages": [("assistant", "[心内科] 建议心电图检查")]}
 # ...
 def prescription_agent(state: State):

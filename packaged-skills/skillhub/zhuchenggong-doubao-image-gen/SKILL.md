@@ -1,9 +1,8 @@
----
-slug: "zhuchenggong-doubao-image-gen"
+---slug: "zhuchenggong-doubao-image-gen"
 name: "zhuchenggong-doubao-image-gen"
 version: 1.0.1
 displayName: "图像"
-summary: "Zhuchenggong Doubao提供Zhuchenggong Doubao的核心功能（详见使用流程和示例）等核心能力,付费版独享高级功能与批量处理。"
+summary: "Zhuchenggon"
 summary_zh: "Zhuchenggong Doubao提供Zhuchenggong Doubao的核心功能（详见使用流程和示例）等核心能力,付费版独享高级功能与批量处理。"
 license: "MIT"
 description: |-
@@ -21,9 +20,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Creative"
----
-# Zhuchenggong Doubao
+category: "Creative"---# Zhuchenggong Doubao
 
 ## 付费版专享能力
 

@@ -285,10 +285,8 @@ export const GrowthScene = () => {
 **LLM生成输出** (`output/course-promo/src/Composition.tsx`):
 ```tsx
 import { Composition } from "remotion";
-import { HookScene } from "./scenes/HookScene";
 import { SolutionScene } from "./scenes/SolutionScene";
-import { FeatureScene } from "./scenes/FeatureScene";
-import { CTAScene } from "./scenes/CTAScene";
+/scenes/FeatureScene";
 # ...
 export const CoursePromo = () => (
   <Composition

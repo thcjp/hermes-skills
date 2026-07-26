@@ -76,7 +76,6 @@ category: "Security"
 | A05 | 安全配置错误 | MEDIUM | 默认凭据、错误信息泄露、安全头 |
 | A07 | 身份认证失败 | HIGH | JWT安全、Cookie配置、速率限制 |
 
-**输入**: 用户提供OWASP Top 10 检查清单所需的指令和必要参数.
 **处理**: 解析OWASP Top 10 检查清单的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回OWASP Top 10 检查清单的响应数据,包含状态码、结果和日志.
 ### 免费版与专业版对比
@@ -91,12 +90,11 @@ category: "Security"
 | 合规映射 | 不支持 | PCI-DSS/OWASP ASVS |
 | 持续监控 | 不支持 | Git Hook集成 |
 
-**输入**: 用户提供免费版与专业版对比所需的指令和必要参数.
 **处理**: 解析免费版与专业版对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版与专业版对比的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -144,7 +142,7 @@ app.delete('/api/posts/:id', authenticate, async (req, res) => {
   if (post.authorId !== req.user.id && req.user.role !== 'admin') {
     return res.status(403).json({ error: 'Forbidden' })
   }
-  await db.post.delete({ where: { id: req.params.id } })
+  await db.post.params.id } })
   res.json({ success: true })
 })
 ```

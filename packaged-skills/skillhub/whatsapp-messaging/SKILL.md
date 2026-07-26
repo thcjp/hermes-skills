@@ -288,7 +288,6 @@ clawlink_call_tool --tool "whatsapp_send_media" \
   --params '{
     "phone_number_id": "PHONE_NUMBER_ID",
     "recipient_phone": "+15551234567",
-    "media_url": "https://example.com/receipt.png",
     "caption": "Here is your receipt for order #12345"
   }'
 ```

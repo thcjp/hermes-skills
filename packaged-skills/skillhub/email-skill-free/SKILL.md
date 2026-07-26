@@ -220,6 +220,4 @@ python email_sender.py --to "your-email@gmail.com" --test
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
 
-> 详细的输入输出格式请参考下方章节说明。
-
 > 想要HTML富文本、多附件并行、CC/BCC抄送、多供应商适配与企业级凭据管理?升级至付费版 **email-skill**,解锁完整邮件自动化能力.

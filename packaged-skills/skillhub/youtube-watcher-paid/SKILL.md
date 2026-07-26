@@ -1,5 +1,4 @@
----
-slug: "youtube-watcher-paid"
+---slug: "youtube-watcher-paid"
 name: "youtube-watcher-paid"
 version: 1.0.1
 displayName: "YouTube字幕提取-专业版"
@@ -8,7 +7,7 @@ summary_zh: "企业级YouTube内容分析平台，支持批量字幕提取、频
 license: "MIT"
 edition: "pro"
 description: |-
-  YouTube 内容分析专业版。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证.
+  YouTube 内容分析专业版。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。不适用于专业医学法律翻译认证.
 tags:
   - Creative
   - 视频处理
@@ -30,9 +29,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Creative"
----
-# YouTube字幕提取-专业版
+category: "Creative"---# YouTube字幕提取-专业版
 
 ## 付费版专享能力
 
@@ -65,7 +62,6 @@ category: "Creative"
 - 关键参数: `批量字幕提取` 选项
 - 处理流程: 接收输入 -> 执行批量字幕提取 -> 返回结果
 - 输入: 用户提供批量字幕提取所需的参数和指令
-- 输出: 返回批量字幕提取的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 2. 频道监控与自动追踪
 监控指定频道，新视频自动提取字幕：
@@ -75,9 +71,6 @@ category: "Creative"
 - 增量更新（避免重复提取）
 - 新字幕通知（邮件/Webhook）
 
-**输入**: 用户提供频道监控与自动追踪所需的指令和必要参数.
-**处理**: 解析频道监控与自动追踪的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回频道监控与自动追踪的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. 多语言字幕对比
 单视频提取多语言字幕并对比：
 
@@ -86,8 +79,6 @@ category: "Creative"
 - 翻译质量分析
 - 适合语言学习与研究
 
-**输入**: 用户提供多语言字幕对比所需的指令和必要参数.
-**输出**: 返回多语言字幕对比的处理结果,包含执行状态码、结果数据和执行日志.
 ### 4. 跨视频关键词追踪
 在多个视频字幕中追踪关键词：
 
@@ -96,16 +87,12 @@ category: "Creative"
 - 关键词上下文分析
 - 趋势变化追踪
 
-**输入**: 用户提供跨视频关键词追踪所需的指令和必要参数.
-**输出**: 返回跨视频关键词追踪的处理结果,包含执行状态码、结果数据和执行日志.
 ### 5. 时间戳标记与全文检索
 - 字幕带精确时间戳
 - 全文检索（支持模糊匹配）
 - 关键词定位到视频时间点
 - 跳转到指定时间查看
 
-**输入**: 用户提供时间戳标记与全文检索所需的指令和必要参数.
-**输出**: 返回时间戳标记与全文检索的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -155,7 +142,6 @@ python3 batch_extract.py --config /path/to/batch-extract.json --parallel 8
 ```bash
 python3 channel_monitor.py --config /path/to/channel-monitor.yaml --daemon
 # ...
-python3 channel_monitor.py --config /path/to/channel-monitor.yaml --check-now
 ```
 
 ### 场景 3：多语言字幕对比研究
@@ -163,7 +149,6 @@ python3 channel_monitor.py --config /path/to/channel-monitor.yaml --check-now
 **多语言配置：**
 
 ```bash
-python3 batch_extract.py \
   --url "https://www.youtube.com/watch?v=VIDEO_ID" \
   --languages zh,en \
   --align \
@@ -222,15 +207,14 @@ yt-dlp --version
 ```json
 [
   {"url": "https://www.youtube.com/watch?v=VIDEO_1"},
-  {"url": "https://www.youtube.com/watch?v=VIDEO_2"},
-  {"url": "https://www.youtube.com/watch?v=VIDEO_3"}
+youtube.com/watch?v=VIDEO_2"},
+youtube.com/watch?v=VIDEO_3"}
 ]
 ```
 
 执行批量提取：
 
 ```bash
-python3 batch_extract.py \
   --config /tmp/videos.json \
   --output-dir /tmp/transcripts/ \
   --parallel 8 \
@@ -239,14 +223,12 @@ python3 batch_extract.py \
 
 ### 第三步：频道监控
 ```bash
-python3 channel_monitor.py \
   --config /tmp/channel-monitor.yaml \
   --daemon
 ```
 
 ### 第四步：关键词追踪
 ```bash
-python3 keyword_tracker.py \
   --config /tmp/keyword-config.json \
   --keywords "AI,芯片,半导体" \
   --output /tmp/keyword-report.csv
@@ -309,7 +291,8 @@ python3 keyword_tracker.py \
 | whoosh | Python 库 | 可选 | `pip install whoosh` | 2.7+（全文检索） |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 | - |
 
-#### 完整安装命令
+#
+### 完整安装命令
 ```bash
 pip3 install yt-dlp requests pyyaml whoosh
 # ...
@@ -370,17 +353,15 @@ yt-dlp --cookies /path/to/cookies.txt "URL"
 **A：** 专业版自动记录失败任务：
 
 ```bash
-python3 batch_extract.py --retry-failed /tmp/extract-queue.json
+py --retry-failed /tmp/extract-queue.json
 # ...
-python3 batch_extract.py --resume /tmp/extract-queue.json
+py --resume /tmp/extract-queue.json
 ```
 
 ### Q3：频道监控如何避免重复提取？
 **A：** 专业版支持增量更新：
 
 ```bash
-python3 channel_monitor.py \
-  --config /tmp/channel-monitor.yaml \
   --incremental
 ```
 
@@ -389,7 +370,6 @@ python3 channel_monitor.py \
 **A：** 使用 `--align` 参数：
 
 ```bash
-python3 batch_extract.py \
   --url "URL" \
   --languages zh,en \
   --align
@@ -400,9 +380,9 @@ python3 batch_extract.py \
 **A：** 支持多种导出格式：
 
 ```bash
-python3 keyword_tracker.py --config config.json --output report.csv
+py --config config.json --output report.csv
 # ...
-python3 keyword_tracker.py --config config.json --output report.json
+py --config config.json
 ```
 
 ### Q6：如何监控多个频道？

@@ -120,7 +120,7 @@ const data = await edge.evaluate(`提取数据的JS`);
 
 ```javascript
 // 专业版完整配置
-const { edge, chrome, ConnectionManager } = require('./browser-automation/cdp-automation.js');
+const { edge, chrome, ConnectionManager } = require('.js');
 // ...
 // 启用连接管理器（专业版）
 const manager = new ConnectionManager({
@@ -147,7 +147,8 @@ await edge.goto('https://目标网站.com');
 ## 核心能力
 ### 功能一：完整CDP API
 
-#### 页面导航（goto）
+#
+### 页面导航（goto）
 
 ```javascript
 // 基础导航
@@ -158,14 +159,14 @@ await edge.goto('https://app.example.com/dashboard');
 await edge.wait(5000);
 ```
 
-#### JS执行（evaluate）
+#
+### JS执行（evaluate）
 
 ```javascript
 // 读取DOM
 const r = await edge.evaluate(`document.title`);
 // ...
 // 提取结构化数据
-const r = await edge.evaluate(`
     JSON.stringify(
         Array.from(document.querySelectorAll('.item-card')).slice(0,5).map(c => ({
             title: c.querySelector('.title')?.innerText,
@@ -176,7 +177,8 @@ const r = await edge.evaluate(`
 const items = JSON.parse(r.result.value);
 ```
 
-#### 元素点击（click）
+#
+### 元素点击（click）
 
 ```javascript
 // CSS选择器点击
@@ -187,35 +189,38 @@ await edge.click('.next-page');
 await edge.wait(3000);
 ```
 
-#### 页面截图（screenshot）
+#
+### 页面截图（screenshot）
 
 ```javascript
 const png = await edge.screenshot();
 require('fs').writeFileSync('screenshot.png', Buffer.from(png, 'base64'));
 ```
 
-#### 显式等待（wait）
+#
+### 显式等待（wait）
 
 ```javascript
 await edge.wait(5000);  // 等待5秒
 await edge.wait(8000);  // JS密集型页面等待8秒
 ```
 
-#### 标签页管理（tabs）
+#
+### 标签页管理（tabs）
 
 ```javascript
 const tabs = await edge.tabs();
 const target = tabs.find(t => t.url.includes('example.com'));
 ```
 
-**输入**: 用户提供功能一：完整CDP API所需的指令和必要参数.
 **处理**: 解析功能一：完整CDP API的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能一：完整CDP API的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 功能二：平台踩坑指南 — 专业版启用
 
-#### B站（Bilibili）
+#
+### B站（Bilibili）
 
 **选择器（已验证）**：
 - 视频卡片：`.upload-video-card`
@@ -234,10 +239,9 @@ const target = tabs.find(t => t.url.includes('example.com'));
 await edge.goto('https://space.bilibili.com/151190274/video');
 await edge.wait(5000);
 // ...
-const r = await edge.evaluate(`
     JSON.stringify(
         Array.from(document.querySelectorAll('.upload-video-card')).slice(0,10).map(c => ({
-            title: c.querySelector('.bili-video-card__title')?.innerText,
+querySelector('.bili-video-card__title')?.innerText,
             play: parseInt(c.querySelector('.bili-cover-card__stat span')?.innerText?.replace(/\\D/g,'') || 0)
         }))
     )
@@ -251,7 +255,8 @@ await edge.click('[class*="radio-filter__item"]');  // 文字为"最多播放"
 await edge.wait(5000);
 ```
 
-#### 小红书（Xiaohongshu）
+#
+### 小红书（Xiaohongshu）
 
 **注意事项**：
 - 有强反自动化检测（UA检测、行为检测）
@@ -276,7 +281,8 @@ const r = await xhs.evaluate(`
 console.log(JSON.parse(r.result.value));
 ```
 
-#### Minimax（平台：platform.minimaxi.com）
+#
+### Minimax（平台：platform.minimaxi.com）
 
 **查询目标**：Token Plan配额（每5小时重置）
 
@@ -292,7 +298,6 @@ await edge.goto('https://platform.minimaxi.com/user-center/basic-information');
 await edge.wait(3000);
 // ...
 // 步骤2：JS点击Token Plan菜单项（div而非a标签）
-const r = await edge.evaluate(`
   (function() {
     var allDivs = document.querySelectorAll('div');
     for (var d of allDivs) {
@@ -318,7 +323,6 @@ const quota = await edge.evaluate(`(function(){
 })()`);
 ```
 
-**输入**: 用户提供功能二：平台踩坑指南 — 专业版启用所需的指令和必要参数.
 **处理**: 解析功能二：平台踩坑指南 — 专业版启用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能二：平台踩坑指南 — 专业版启用的响应数据,包含状态码、结果和日志.
 ### 功能三：SPA内部导航策略 — 专业版启用
@@ -344,7 +348,7 @@ async function spaNavigate(browser, entryUrl, targetMenuText) {
     // Step 2: JS点击菜单项（div而非a）
     const result = await browser.evaluate(`
       (function() {
-        var allDivs = document.querySelectorAll('div.cursor-pointer');
+querySelectorAll('div.cursor-pointer');
         for (var d of allDivs) {
           if (d.innerText && d.innerText.trim() === '${targetMenuText}') {
             d.click();
@@ -364,7 +368,6 @@ async function spaNavigate(browser, entryUrl, targetMenuText) {
 await spaNavigate(edge, 'https://app.example.com/dashboard', '账户设置');
 ```
 
-**输入**: 用户提供功能三：SPA内部导航策略 — 专业版启用所需的指令和必要参数.
 **处理**: 解析功能三：SPA内部导航策略 — 专业版启用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能三：SPA内部导航策略 — 专业版启用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -372,7 +375,7 @@ await spaNavigate(edge, 'https://app.example.com/dashboard', '账户设置');
 ### 功能四：连接管理器 — 专业版启用
 
 ```javascript
-const { ConnectionManager } = require('./browser-automation/cdp-automation.js');
+const { ConnectionManager } = require('.js');
 // ...
 const manager = new ConnectionManager({
     autoReconnect: true,           // 连接断开自动重连
@@ -397,7 +400,6 @@ const status = manager.getStatus();
 console.log(`活跃连接：${status.active}，残留连接：${status.stale}`);
 ```
 
-**输入**: 用户提供功能四：连接管理器 — 专业版启用所需的指令和必要参数.
 **处理**: 解析功能四：连接管理器 — 专业版启用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能四：连接管理器 — 专业版启用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -429,7 +431,6 @@ await edge.randomScroll();  // 随机滚动页面
 - 逐字符输入（而非瞬间填入）
 - 随机滚动（模拟阅读行为）
 
-**输入**: 用户提供功能五：反自动化检测应对 — 专业版启用所需的指令和必要参数.
 **处理**: 解析功能五：反自动化检测应对 — 专业版启用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能五：反自动化检测应对 — 专业版启用的响应数据,包含状态码、结果和日志.
 ### 功能六：Cookie高级处理 — 专业版启用
@@ -456,14 +457,12 @@ console.log(httpOnlyCookies);
 - Session Cookie：通过CDP Network.getCookies获取
 - Cookie同步：跨标签页同步登录态
 
-**输入**: 用户提供功能六：Cookie高级处理 — 专业版启用所需的指令和必要参数.
 **处理**: 解析功能六：Cookie高级处理 — 专业版启用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能六：Cookie高级处理 — 专业版启用的响应数据,包含状态码、结果和日志.
 ### 功能七：多标签页管理 — 专业版启用
 
 ```javascript
 // 获取所有标签页
-const tabs = await edge.tabs();
 // ...
 // 在指定标签页执行操作
 const targetTab = tabs.find(t => t.url.includes('example.com'));
@@ -485,7 +484,6 @@ await edge.closeTab(newTab.id);
 
 ---
 
-**输入**: 用户提供功能七：多标签页管理 — 专业版启用所需的指令和必要参数.
 **处理**: 解析功能七：多标签页管理 — 专业版启用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能七：多标签页管理 — 专业版启用的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、浏览器自动化系统、含平台踩坑指南、反检测与、浏览器领航专业版、是面向团队与企业、的全功能、不仅覆盖基础、更提供平台踩坑指、高级处理与多标签、确保复杂场景下的、浏览器自动化稳定等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -528,7 +526,6 @@ const notes = await xhs.evaluate(`提取笔记JS`);
 // SPA导航至Token Plan页面
 await spaNavigate(edge, 'https://platform.minimaxi.com/user-center/basic-information', 'Token Plan');
 // 提取配额
-const quota = await edge.evaluate(`提取配额JS`);
 ```
 
 **效果**：成功通过SPA导航获取Token配额数据，可定期监控.
@@ -574,7 +571,6 @@ for (const config of configs) {
 for (const url of monitorUrls) {
     await edge.goto(url);
     await edge.wait(5000);
-    const png = await edge.screenshot();
     require('fs').writeFileSync(`screenshots/${url}-${Date.now()}.png`, Buffer.from(png, 'base64'));
 }
 ```
@@ -657,7 +653,6 @@ pipeline:
 
 ```javascript
 // 采集数据写入数据管道
-const data = await edge.evaluate(`提取JS`);
 await pipeline.ingest({
     source: 'cdp-browser',
     data: JSON.parse(data),
@@ -861,8 +856,6 @@ CDP每个端口同时只能有一个WebSocket连接。如果任务中途失败�
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

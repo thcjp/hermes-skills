@@ -79,17 +79,13 @@ export API_KEY="your_api_key_here"
 - **graphql** `<name>` — GraphQL Type + Query + Mutation schema 定义
 - **swagger** `<name>` — OpenAPI 3.0 规范文档,含路径、参数、响应定义
 
-**处理**: 解析核心生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回核心生成的处理结果,包含执行状态码、结果数据和执行日志。### 工具生成
+### 工具生成
 - **client** `<name>` — Python API 客户端类,含 GET/POST/PUT/DELETE 方法封装
 - **mock** `<name>` — Mock API 服务器,内存存储,支持 CRUD 操作
 - **auth** `<type>` — 认证代码,支持 `jwt` / `oauth` / `apikey` 三种类型
 - **rate-limit** `<type>` — 速率限制器,支持 `token-bucket` / `sliding-window` 两种算法
 - **test** `<name>` — Jest + Supertest API 测试套件,含 CRUD 测试用例
 
-**输入**: 用户提供工具生成所需的指令和必要参数.
-**处理**: 解析工具生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回工具生成的处理结果,包含执行状态码、结果数据和执行日志.
 ### rest
 
 针对rest,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.

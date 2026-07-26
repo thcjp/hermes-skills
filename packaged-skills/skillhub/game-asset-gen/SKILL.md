@@ -1,5 +1,4 @@
----
-slug: "game-asset-gen"
+---slug: "game-asset-gen"
 name: "game-asset-gen"
 version: 1.0.1
 displayName: "游戏资产生成-专业版"
@@ -8,7 +7,7 @@ summary_zh: "全栈游戏资产生成引擎，支持2D/3D资产、完整GDD、�
 license: "MIT"
 edition: "pro"
 description: |-
-  游戏资产生成工具专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
+  游戏资产生成工具专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。不适用于需要人工创意判断的任务.
 tags:
   - Creative
   - GameDev
@@ -31,9 +30,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# 游戏资产生成-专业版
+category: "Automation"---# 游戏资产生成-专业版
 
 ## 付费版专享能力
 
@@ -61,8 +58,7 @@ category: "Automation"
 | 角色一致性 | 基础 | 跨资产深度一致 |
 | 对话模式 | 单agent | agent + agent team |
 
-**输入**: 用户提供能力对比所需的指令和必要参数.
-**处理**: 解析能力对比的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 核心能力
+### 核心能力
 ```text
 3D 模型生成 (GLB):
   - 角色模型: 主角/NPC/敌人
@@ -108,8 +104,6 @@ category: "Automation"
   - 环境氛围粒子
 ```
 
-**输入**: 用户提供核心能力所需的指令和必要参数.
-**处理**: 解析核心能力的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 能力维度
 
 针对能力维度,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.

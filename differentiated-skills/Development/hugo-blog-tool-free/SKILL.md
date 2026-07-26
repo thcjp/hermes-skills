@@ -63,21 +63,21 @@ category: "Automation"
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -263,7 +263,6 @@ categories: ["tech"]
 cd {博客路径}
 # ...
 # 添加新文章
-git add content/posts/{文件名}.md
 # ...
 # 提交（建议用"新增:"前缀）
 git commit -m "新增：{文章标题}"
@@ -321,7 +320,6 @@ git push
 ```bash
 # 创建标签映射文件
 mkdir -p content/tags/new-tag
-cat > content/tags/new-tag/_index.md << 'EOF'
 ---
 title: "新标签"
 ---
@@ -356,7 +354,6 @@ lastmod: 2026-07-19
 ---
 # ...
 # 3. 推送更新
-git add content/posts/{文件名}.md
 git commit -m "更新：{文章标题}"
 git push
 ```
@@ -370,7 +367,7 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 # ...
 # 方案二：配置凭据缓存
 git config --global credential.helper cache
-git config --global credential.helper "cache --timeout=3600"
+helper "cache --timeout=3600"
 ```
 
 ### Q6：如何批量发布多篇文章？

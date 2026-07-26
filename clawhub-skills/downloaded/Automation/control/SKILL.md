@@ -71,13 +71,15 @@ position = dc.get_mouse_position()
 
 ## 📋 Complete API Reference
 
-> 详细内容已移至 `references/detail.md` - ### Mouse Functions
+> 详细内容已移至 `references/detail.md` - 
+### Mouse Functions
 
-> 详细内容已移至 `references/detail.md` - ### Keyboard Functions
+### Keyboard Functions
 
-> 详细内容已移至 `references/detail.md` - ### Screen Functions
+### Screen Functions
 ### Window Functions
-#### `get_all_windows()`
+#
+### `get_all_windows()`
 List all open windows.
 
 **Returns:** List of window titles
@@ -90,7 +92,8 @@ for title in windows:
     print(f"Window: {title}")
 ```
 
-#### `activate_window(title_substring)`
+#
+### `activate_window(title_substring)`
 Bring window to front by title.
 
 **Parameters:**
@@ -105,7 +108,8 @@ dc.activate_window("Chrome")
 dc.activate_window("Visual Studio Code")
 ```
 
-#### `get_active_window()`
+#
+### `get_active_window()`
 Get currently focused window.
 
 **Returns:** Window title (str)
@@ -118,7 +122,8 @@ print(f"Active window: {active}")
 ```
 
 ### Clipboard Functions
-#### `copy_to_clipboard(text)`
+#
+### `copy_to_clipboard(text)`
 Copy text to clipboard.
 
 **Example:**
@@ -127,7 +132,8 @@ Copy text to clipboard.
 dc.copy_to_clipboard("Hello from Skill平台!")
 ```
 
-#### `get_from_clipboard()`
+#
+### `get_from_clipboard()`
 Get text from clipboard.
 
 **Returns:** str

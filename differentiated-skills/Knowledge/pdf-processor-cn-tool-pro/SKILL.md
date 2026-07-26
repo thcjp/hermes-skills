@@ -57,7 +57,6 @@ category: "Automation"
 ### 批量处理与并行执行
 批量处理与并行执行
 
-**输入**: 用户提供批量处理与并行执行所需的指令和必要参数.
 **处理**: 解析批量处理与并行执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量处理与并行执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -65,7 +64,6 @@ category: "Automation"
 ### 企业级安全与审计
 企业级安全与审计
 
-**输入**: 用户提供企业级安全与审计所需的指令和必要参数.
 **处理**: 解析企业级安全与审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回企业级安全与审计的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -73,7 +71,6 @@ category: "Automation"
 ### 高级配置与自定义策略
 高级配置与自定义策略
 
-**输入**: 用户提供高级配置与自定义策略所需的指令和必要参数.
 **处理**: 解析高级配置与自定义策略的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级配置与自定义策略的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -81,7 +78,6 @@ category: "Automation"
 ### 免费版完全兼容
 免费版完全兼容，无缝升级
 
-**输入**: 用户提供免费版完全兼容所需的指令和必要参数.
 **处理**: 解析免费版完全兼容的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版完全兼容的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -89,12 +85,10 @@ category: "Automation"
 ### 优先技术支持与问题响应
 优先技术支持与问题响应
 
-**输入**: 用户提供优先技术支持与问题响应所需的指令和必要参数.
 **处理**: 解析优先技术支持与问题响应的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回优先技术支持与问题响应的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**输入**: 用户提供专业版增强功能所需的指令和必要参数.
 **处理**: 解析专业版增强功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回专业版增强功能的响应数据,包含状态码、结果和日志.
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
@@ -188,7 +182,7 @@ class CNPDFProcessor:
     def extract_text(self, pdf_path: str) -> str:
         """提取中文文本（PRO 专属：版面保持）"""
         text_parts = []
-        with pdfplumber.open(pdf_path) as pdf:
+open(pdf_path) as pdf:
             for page in pdf.pages:
                 text = page.extract_text() or ""
                 text = self._fix_cn_text(text)
@@ -200,8 +194,7 @@ class CNPDFProcessor:
         """提取中文表格（PRO 专属：自动导出）"""
         import pandas as pd
         all_tables = []
-        with pdfplumber.open(pdf_path) as pdf:
-            for i, page in enumerate(pdf.pages):
+open(pdf_path) as pdf:
                 tables = page.extract_tables()
                 for j, table in enumerate(tables):
                     if table and len(table) > 1:
@@ -218,7 +211,7 @@ class CNPDFProcessor:
             output = Path(pdf_path).stem + "_tables.xlsx"
             with pd.ExcelWriter(output) as writer:
                 for idx, t in enumerate(all_tables):
-                    df = pd.DataFrame(t["data"])
+DataFrame(t["data"])
                     df.to_excel(writer, sheet_name=f"表{idx+1}", index=False)
         return all_tables
 # ...
@@ -264,7 +257,7 @@ class CNPDFProcessor:
             result["file"] = pdf_path
             results.append(result)
             # 导出文本
-            text = self.extract_text(pdf_path)
+extract_text(pdf_path)
             output_file = Path(output_dir) / (Path(pdf_path).stem + ".txt")
             output_file.write_text(text, encoding="utf-8")
         return results
@@ -272,7 +265,7 @@ class CNPDFProcessor:
     def _process_page(self, page, page_idx, reader):
         text = page.extract_text() or ""
         text = self._fix_cn_text(text)
-        tables = page.extract_tables() or []
+extract_tables() or []
         layout = self._detect_layout(page)
         return CNPDFPage(
             page_num=page_idx + 1,

@@ -57,7 +57,6 @@ category: "Automation"
 ### 批量处理与并行执行
 批量处理与并行执行
 
-**输入**: 用户提供批量处理与并行执行所需的指令和必要参数.
 **处理**: 解析批量处理与并行执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量处理与并行执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -65,7 +64,6 @@ category: "Automation"
 ### 企业级安全与审计
 企业级安全与审计
 
-**输入**: 用户提供企业级安全与审计所需的指令和必要参数.
 **处理**: 解析企业级安全与审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回企业级安全与审计的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -73,7 +71,6 @@ category: "Automation"
 ### 高级配置与自定义策略
 高级配置与自定义策略
 
-**输入**: 用户提供高级配置与自定义策略所需的指令和必要参数.
 **处理**: 解析高级配置与自定义策略的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级配置与自定义策略的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -81,7 +78,6 @@ category: "Automation"
 ### 免费版完全兼容
 免费版完全兼容，无缝升级
 
-**输入**: 用户提供免费版完全兼容所需的指令和必要参数.
 **处理**: 解析免费版完全兼容的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版完全兼容的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -89,12 +85,10 @@ category: "Automation"
 ### 优先技术支持与问题响应
 优先技术支持与问题响应
 
-**输入**: 用户提供优先技术支持与问题响应所需的指令和必要参数.
 **处理**: 解析优先技术支持与问题响应的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回优先技术支持与问题响应的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**输入**: 用户提供专业版增强功能所需的指令和必要参数.
 **处理**: 解析专业版增强功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回专业版增强功能的响应数据,包含状态码、结果和日志.
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
@@ -271,8 +265,7 @@ class SoloAuditEngine:
     def audit_performance(self, project_dir: str) -> List[AuditFinding]:
         """性能审计（PRO 专属）"""
         findings = []
-        for file_path in Path(project_dir).rglob("*.py"):
-            content = file_path.read_text(encoding="utf-8", errors="ignore")
+read_text(encoding="utf-8", errors="ignore")
             if re.search(r"for.*in.*\.readlines\(\)", content):
                 findings.append(AuditFinding(
                     category="performance", severity="low",
@@ -282,10 +275,10 @@ class SoloAuditEngine:
                     recommendation="使用 for line in file: 替代"
                 ))
             if content.count("import") > 20:
-                findings.append(AuditFinding(
+append(AuditFinding(
                     category="performance", severity="info",
                     title="导入过多",
-                    description=f"{file_path.name}: {content.count('import')}个导入",
+name}: {content.count('import')}个导入",
                     file=str(file_path),
                     recommendation="考虑拆分模块"
                 ))
@@ -296,17 +289,16 @@ class SoloAuditEngine:
         """合规审计（PRO 专属）"""
         findings = []
         all_content = ""
-        for file_path in Path(project_dir).rglob("*"):
-            if file_path.suffix in [".py", ".js", ".md", ".yaml"]:
+suffix in [".py", ".js", ".md", ".yaml"]:
                 all_content += file_path.read_text(encoding="utf-8", errors="ignore")
-        for check_name, check in self.COMPLIANCE_CHECKS.items():
+COMPLIANCE_CHECKS.items():
             found = False
             for pattern in check["patterns"]:
                 if re.search(pattern, all_content, re.IGNORECASE):
                     found = True
                     break
             if not found:
-                findings.append(AuditFinding(
+append(AuditFinding(
                     category="compliance", severity="medium",
                     title=f"合规检查: {check_name}",
                     description=check["requirement"],

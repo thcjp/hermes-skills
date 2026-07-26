@@ -53,22 +53,18 @@ category: "Knowledge"
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供浏览器自动化模式所需的指令和必要参数.
 **处理**: 解析浏览器自动化模式的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回浏览器自动化模式的响应数据,包含状态码、结果和日志.
 ### 2. AI智能摘要
 
-**输入**: 用户提供AI智能摘要所需的指令和必要参数.
 **处理**: 解析AI智能摘要的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回AI智能摘要的响应数据,包含状态码、结果和日志.
 ### 3. 定时自动执行
 
-**输入**: 用户提供定时自动执行所需的指令和必要参数.
 **处理**: 解析定时自动执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时自动执行的响应数据,包含状态码、结果和日志.
 ### 4. 多渠道推送
 
-**输入**: 用户提供多渠道推送所需的指令和必要参数.
 **处理**: 解析多渠道推送的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多渠道推送的响应数据,包含状态码、结果和日志.
 ### 5. 新闻情感分析
@@ -129,7 +125,6 @@ stats = analyzer.get_sentiment_stats(news)
 print(f"情感分析：正面 {stats['positive']}条，负面 {stats['negative']}条，中性 {stats['neutral']}条")
 ```
 
-**输入**: 用户提供新闻情感分析所需的指令和必要参数.
 **处理**: 解析新闻情感分析的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回新闻情感分析的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：中国新闻聚合专业、含浏览器模式、定时推送、情感分析与多渠道、中国新闻聚合助手、专业版是面向企业、级场景的完整新闻、聚合与分发工具、在免费版、RSS、订阅能力之上、新增浏览器自动化、辅助分类、历史新闻检索七大、高级能力、Use、when、模型调用、智能对话、Agent、LLM、应用时使用、不适用于需要、确定性的关键决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -232,11 +227,11 @@ sources:
     - name: 新浪国内
       url: https://rss.sina.com.cn/news/china/roll.xml
     - name: 新浪国际
-      url: https://rss.sina.com.cn/news/world/roll.xml
+sina.com.cn/news/world/roll.xml
     - name: 新浪财经
-      url: https://rss.sina.com.cn/finance/roll.xml
+sina.com.cn/finance/roll.xml
     - name: 新浪科技
-      url: https://rss.sina.com.cn/tech/roll.xml
+sina.com.cn/tech/roll.xml
     - name: 搜狐新闻
       url: https://news.sohu.com/rss/
     - name: 36氪
@@ -244,9 +239,7 @@ sources:
 # ...
   browser:
     - name: 网易新闻
-      url: https://news.163.com
     - name: 腾讯新闻
-      url: https://news.qq.com
     - name: 人民网
       url: http://www.people.com.cn
 # ...
@@ -402,8 +395,6 @@ RSS模式优势：速度快、资源占用低、无需浏览器；适合已支�
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

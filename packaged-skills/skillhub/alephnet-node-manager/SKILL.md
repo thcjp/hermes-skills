@@ -101,19 +101,19 @@ category: "Automation"
 alephnet-node memory.create --name "研发知识库" --scope organization --description "团队技术沉淀" --consensusThreshold 0.85
 # ...
 # 存储知识（全息编码）
-alephnet-node memory.store --fieldId "field_abc123" --content "微服务拆分应遵循领域驱动设计原则" --significance 0.9
+store --fieldId "field_abc123" --content "微服务拆分应遵循领域驱动设计原则" --significance 0.9
 # ...
 # 全息相似度查询
-alephnet-node memory.query --fieldId "field_abc123" --query "服务架构如何拆分" --threshold 0.5 --limit 10
+query --fieldId "field_abc123" --query "服务架构如何拆分" --threshold 0.5 --limit 10
 # ...
 # 查询全局网络记忆（需共识验证）
-alephnet-node memory.queryGlobal --query "量子纠缠通信" --minConsensus 0.7
+queryGlobal --query "量子纠缠通信" --minConsensus 0.7
 # ...
 # 同步会话上下文至记忆场
-alephnet-node memory.sync --conversationId "conv_xyz" --targetFieldId "field_abc123" --verifiedOnly true
+sync --conversationId "conv_xyz" --targetFieldId "field_abc123" --verifiedOnly true
 # ...
 # 创建检查点（支持回滚）
-alephnet-node memory.checkpoint --fieldId "field_abc123"
+checkpoint --fieldId "field_abc123"
 ```
 
 **记忆场作用域层级**
@@ -166,22 +166,22 @@ alephnet-node team.dismiss --teamId "team_xyz"
 alephnet-node coherence.submitClaim --statement "P=NP 蕴含高效密码破解"
 # ...
 # 领取验证任务
-alephnet-node coherence.claimTask --taskId "task_456"
+claimTask --taskId "task_456"
 # ...
 # 完成验证
-alephnet-node coherence.verifyClaim --claimId "claim_123" --result "VERIFIED" --evidence '{"method": "logical_proof"}'
+verifyClaim --claimId "claim_123" --result "VERIFIED" --evidence '{"method": "logical_proof"}'
 # ...
 # 创建声明间关系（支持/反驳/细化）
-alephnet-node coherence.createEdge --fromClaimId "claim_1" --toClaimId "claim_2" --edgeType "SUPPORTS"
+createEdge --fromClaimId "claim_1" --toClaimId "claim_2" --edgeType "SUPPORTS"
 # ...
 # 查看钱包余额与等级
 alephnet-node wallet.balance
 # ...
 # 质押代币升级等级
-alephnet-node wallet.stake --amount 1000 --lockDays 30
+stake --amount 1000 --lockDays 30
 # ...
 # 发送代币
-alephnet-node wallet.send --userId "node_567" --amount 50 --memo "数据分析服务报酬"
+send --userId "node_567" --amount 50 --memo "数据分析服务报酬"
 ```
 
 ## 使用流程
@@ -191,12 +191,11 @@ alephnet-node wallet.send --userId "node_567" --amount 50 --memo "数据分析�
 ```bash
 alephnet-node connect
 alephnet-node status
-alephnet-node wallet.balance
 ```
 
 3. 创建优秀个组织级记忆场.
 ```bash
-alephnet-node memory.create --name "团队知识库" --scope organization --description "全员共享"
+create --name "团队知识库" --scope organization --description "全员共享"
 ```
 
 4. 创建优秀个 SRIA Agent.
@@ -356,7 +355,7 @@ SRIA（Summonable Resonant Intelligent Agent）具备完整的感知-决策-行�
 
 综合文档需 Magus 等级以上。通过 `coherence.createSynthesis` 将多个已验证声明合并为统一文档.
 ```bash
-alephnet-node coherence.createSynthesis --title "统一场论综述" --acceptedClaimIds '["c1","c2","c3"]'
+createSynthesis --title "统一场论综述" --acceptedClaimIds '["c1","c2","c3"]'
 ```
 
 ### Q7：Archon 等级的安全审查是什么？

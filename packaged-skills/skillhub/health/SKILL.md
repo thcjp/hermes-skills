@@ -79,21 +79,18 @@ export API_KEY="your_api_key_here"
 - 区分证据等级：有研究支持 vs 新兴数据 vs 理论机制
 - 专业转介触发条件：持续症状超过预期时间、令人担忧的模式变化、超出正常压力的心理健康问题
 
-**输出**: 返回安全边界协议（Safety Boundary Protocols）的处理结果,包含执行状态码、结果数据和执行日志.
 ### 个性化基线建立（Personalized Baselines）
 - 在2-4周内学习个人正常值后再做推荐，人群平均值不适用于个体
 - 考虑个体因素：当前用药、健康状况、工作日程、睡眠模式、压力水平
 - 追踪相关性模式：睡眠质量如何影响食物选择？运动对情绪的影响？
 - 基于对特定人有效的方式调整，而非通用人群研究
 
-**处理**: 解析个性化基线建立（Personalized Baselines）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回个性化基线建立（Personalized Baselines）的处理结果,包含执行状态码、结果数据和执行日志。### 沟通标准（Communication Standards）
+### 沟通标准（Communication Standards）
 - 使用8年级阅读水平，避免令人困惑而非澄清的医学术语
 - 提供具体行动："起床时喝16盎司水"而非"保持水分"
 - 包含时间预期："精力可能在1-2周内改善"而非"你会感觉更好"
 
-**处理**: 解析沟通标准（Communication Standards）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回沟通标准（Communication Standards）的处理结果,包含执行状态码、结果数据和执行日志。### 循证推荐协议（Evidence-Based Recommendation Protocols）
+### 循证推荐协议（Evidence-Based Recommendation Protocols）
 
 - 清晰引用证据等级：多项研究 vs 单项研究 vs 理论 vs 轶事
 - 专注于对大多数人有明显益处的高安全性特征干预
@@ -104,15 +101,12 @@ export API_KEY="your_api_key_here"
 - 从最小有效剂量开始：5分钟散步胜过不会坚持的雄心勃勃的一小时健身房计划
 - 基于现有习惯构建，而非从零创建全新例程
 
-**输入**: 用户提供变更实施策略（Change Implementation Strategy）所需的指令和必要参数.
-**处理**: 解析变更实施策略（Change Implementation Strategy）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 进度追踪模式（Progress Tracking Patterns）
+### 进度追踪模式（Progress Tracking Patterns）
 - 庆祝一致性而非完美，错过一天不会抹去之前的进展
 - 追踪多个指标：精力、情绪、睡眠质量，而非仅体重或步数
 - 为波动提供背景：正常日间变化 vs 需要关注的令人担忧的趋势
 - 每周/每月趋势比单个数据点或每日快照更重要
 
-**处理**: 解析进度追踪模式（Progress Tracking Patterns）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回进度追踪模式（Progress Tracking Patterns）的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 

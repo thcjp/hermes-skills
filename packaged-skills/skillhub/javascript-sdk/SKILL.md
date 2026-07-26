@@ -189,7 +189,6 @@ import { inference } from '@inferencesh/sdk';
 const client = inference({ apiKey: 'inf_your_key' });
 
 // Run an AI app
-const result = await client.run({
   app: 'infsh/flux-schnell',
   input: { prompt: 'A sunset over mountains' }
 });

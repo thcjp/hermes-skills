@@ -93,7 +93,7 @@ export API_KEY="your_api_key_here"
 - 写作约束叠加:全局 `.aws-article/config.yaml` + 本篇 `article.yaml`,同键以本篇为准
 - 文风字段驱动:`target_reader` 控深度与用词,`tone` 控语气,`writing_style` 控结构表达
 - 多模型切换:`writing_model` 段配 `provider` / `base_url` / `model`,兼容 Chat Completions 协议
-- 业务资料库引用:本篇涉及自身业务时必读 `.aws-article/products/{产品名}/*.md`,可传 `--reference`(最多 5 个)
+- 业务资料库引用:本篇涉及自身业务时必读 `.md`,可传 `--reference`(最多 5 个)
 - 配图占位生成:按 `image_density`(默认每节一图)产出 `![类型名:画面内容](placeholder)`,封面占位置于标题前
 - 发布意图管理:`publish_method` 取 `draft` / `published` / `none`,默认 `draft`
 - 降级机制:模型未配置(退出码 2)自动取 prompt 由 Agent 代写;网络类失败自动重试一次
@@ -221,9 +221,9 @@ stderr 含 `[NO_MODEL]`。自动降级:运行 `write.py prompt <mode> <input>` �
 ### write.py 退出码 1 网络类失败
 stderr 含超时、连接失败、`URLError`、临时性 502/503。必须自动再试 1 次并告知正在;第二次仍为网络类失败则改用 `write.py prompt` 取提示词后由 Agent 按相同约束代写,必须明确告知第三方 API 网络不可用本次由对话模型代写.
 ### write.py 退出码 1 配置/凭证类失败
-stderr 含 401/403、Key 无效、`未找到写作约束`、YAML 解析失败。不要为省事自动降级掩盖问题。列出须检查项(`config.yaml` 的 `writing_model`、`aws.env` 的 `WRITING_MODEL_API_KEY`、本篇目录是否有 `article.yaml`),请用户修正后重跑 `write.py`。用户明确打字愿意本次改由 Agent 代写,再按本次例外处理并留痕.
+stderr 含 401/403、Key 无效、`未找到写作约束`、YAML 解析失败。不要为省事自动降级掩盖问题。列出须检查项(`config.yaml`),请用户修正后重跑 `write.py`。用户明确打字愿意本次改由 Agent 代写,再按本次例外处理并留痕.
 ### 全局三键缺失
-`article_category`、`target_reader`、`default_author` 中任一项 trim 后为空。须暂停写稿,逐项询问用户,取得明确答复后写回 `.aws-article/config.yaml`,再进入写作流程。禁止从 `article.yaml` 等其它文件静默推断并写盘;禁止仅在对话里确认却不落盘.
+`article_category`、`target_reader`、`default_author` 中任一项 trim 后为空。须暂停写稿,逐项询问用户,取得明确答复后写回 `.aws-article/config.yaml`,再进入写作流程。禁止从 `article.
 ### publish_method 非法值
 `publish_method` 不在 `draft` / `published` / `none` 中。禁止调用 `write.py`。按规则与用户确认:默认 `draft`,明确要对外发布改 `published`,明确不填微信改 `none`,写回文件后再进入写作.
 ### img_analysis.md 缺失(用户供图分支)
@@ -239,7 +239,7 @@ stderr 含 401/403、Key 无效、`未找到写作约束`、YAML 解析失败。
 ### Q2:draft.md 与 article.md 有什么区别?
 `draft.md` 是本 skill 的产物,含配图标记与括号引用路径,用于事实溯源。`article.md` 是 review skill 的产物,由 review 调用 `write.py strip-citations` 剥离括号路径、追加文末 `{embed:...}` 后写入。writing 阶段禁止自行命名 `article.md` 或自行剥离引用标注.
 ### Q3:什么时候该传 --reference?
-本篇主题涉及用户自身业务(对外介绍、教程、案例、自家业务安利)且 `.aws-article/products/{产品名}/` 下有相关业务介绍 `.md` 时传;路径形如 `.aws-article/products/<产品名>/<文件名>.md`,可重复最多 5 个,不接受 `images/` 子目录下的图片说明 `.md`。主题与自身业务无关时不传.
+本篇主题涉及用户自身业务(对外介绍、教程、案例、自家业务安利)且 `.aws-article/products/{产品名}/` 下有相关业务介绍 `.md` 时传;路径形如 `.md`,可重复最多 5 个,不接受 `images/` 子目录下的图片说明 `.md`。主题与自身业务无关时不传.
 ### Q4:publish_method 三个值分别什么效果?
 `draft`(默认)定稿后 `publish.py full` 只写入公众号草稿箱不自动发出;`published` 在创建草稿后再提交发布(异步),也可 `full --publish` 单次强制;`none` 用户明确不填微信,`publish.py full` 直接跳过不调微信,写稿/审稿/排版照常.
 ### Q5:多草稿时如何确定写哪一篇?

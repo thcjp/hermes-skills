@@ -144,7 +144,7 @@ class BatchPushEngine:
                     results["blocked"] += 1
                 else:
                     results["failed"] += 1
-                self.delivery_tracker[group_id] = {"status": "failed", "error": str(e)}
+delivery_tracker[group_id] = {"status": "failed", "error": str(e)}
         return results
 ```
 

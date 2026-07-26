@@ -68,7 +68,6 @@ Agent安全工具箱专业版是一款面向企业用户的AI Agent安全治理�
 | 审计日志 | 事件追踪 | 不支持 | JSONL格式审计日志 |
 | 批量扫描 | 多目录扫描 | 单目录 | 多目录批量+并行 |
 
-**输入**: 用户提供功能矩阵所需的指令和必要参数.
 **处理**: 解析功能矩阵的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能矩阵的响应数据,包含状态码、结果和日志.
 ### 六大子命令
@@ -92,14 +91,13 @@ Agent安全工具箱专业版是一款面向企业用户的AI Agent安全治理�
 └──────────────┴────────────────────────────────────┘
 ```
 
-**输入**: 用户提供六大子命令所需的指令和必要参数.
 **处理**: 解析六大子命令的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回六大子命令的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -226,15 +224,14 @@ class ActionEvaluator:
         if action_type == "network_request":
             return self._eval_network(params)
         elif action_type == "exec_command":
-            return self._eval_command(params)
+_eval_command(params)
         elif action_type == "read_file":
-            return self._eval_file_read(params)
+_eval_file_read(params)
         elif action_type == "write_file":
-            return self._eval_file_write(params)
+_eval_file_write(params)
         elif action_type == "secret_access":
-            return self._eval_secret(params)
+_eval_secret(params)
         elif action_type == "web3_tx":
-            return self._eval_web3(params)
         else:
             return Decision.CONFIRM, "未知操作类型,需确认"
 # ...
@@ -246,20 +243,19 @@ class ActionEvaluator:
         # 检查Webhook域名
         for domain in self.WEBHOOK_DOMAINS:
             if domain in url:
-                return Decision.DENY, f"检测到Webhook外泄域名: {domain}"
+DENY, f"检测到Webhook外泄域名: {domain}"
 # ...
         # 检查请求体中的密钥
         for pattern, name in self.SENSITIVE_PATTERNS:
             if re.search(pattern, body):
-                return Decision.DENY, f"请求体包含{name},禁止传输"
+DENY, f"请求体包含{name},禁止传输"
 # ...
         # 检查高风险TLD
         high_risk_tlds = [".zip", ".mov", ".xyz", ".top"]
         for tld in high_risk_tlds:
             if tld in url:
-                return Decision.CONFIRM, f"高风险TLD: {tld}"
+CONFIRM, f"高风险TLD: {tld}"
 # ...
-        return Decision.ALLOW, "网络请求安全"
 # ...
     def _eval_command(self, params):
         """评估命令执行"""
@@ -267,25 +263,22 @@ class ActionEvaluator:
 # ...
         for dangerous in self.DANGEROUS_COMMANDS:
             if re.search(dangerous, command, re.IGNORECASE):
-                return Decision.DENY, f"危险命令: {dangerous}"
+DENY, f"危险命令: {dangerous}"
 # ...
         sensitive_paths = ["/etc/shadow", "/etc/passwd", "~/.ssh", "~/.gnupg"]
         for path in sensitive_paths:
             if path in command:
-                return Decision.CONFIRM, f"访问敏感路径: {path}"
+CONFIRM, f"访问敏感路径: {path}"
 # ...
-        return Decision.ALLOW, "命令执行安全"
 # ...
     def _eval_secret(self, params):
         """评估密钥访问"""
         secret_name = params.get("name", "").upper()
 # ...
         if "PRIVATE_KEY" in secret_name or "MNEMONIC" in secret_name:
-            return Decision.DENY, "禁止访问私钥或助记词"
         elif "API_SECRET" in secret_name or "TOKEN" in secret_name:
-            return Decision.CONFIRM, "访问API密钥需确认"
+CONFIRM, "访问API密钥需确认"
         else:
-            return Decision.ALLOW, "密钥访问安全"
 # ...
     def _eval_web3(self, params):
         """评估Web3交易"""
@@ -296,13 +289,12 @@ class ActionEvaluator:
         if "0x095ea7b3" in data:  # approve function
             approve_value = data[-64:] if len(data) >= 64 else ""
             if approve_value == "f" * 64:
-                return Decision.CONFIRM, "检测到无限授权,需确认"
+CONFIRM, "检测到无限授权,需确认"
 # ...
         # 检查大额转账
         if value > 10**18:  # > 1 ETH
-            return Decision.CONFIRM, f"大额转账: {value / 10**18} ETH"
+CONFIRM, f"大额转账: {value / 10**18} ETH"
 # ...
-        return Decision.ALLOW, "Web3交易安全"
 # ...
 class TrustRegistry:
     """Skill信任注册表"""

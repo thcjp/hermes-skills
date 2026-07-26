@@ -22,7 +22,6 @@ tools:
 homepage: ""
 category: "Automation"
 
-
 ---
 # 综合生成工具（专业版）
 
@@ -43,7 +42,6 @@ category: "Automation"
 | 音频生成 | 不支持 | 15个 | doubao-tts, suno-music, elevenlabs-dialogue |
 | 管道链接 | 不支持 | 支持 | 多步骤串联 |
 
-**输入**: 用户提供模态覆盖对比所需的指令和必要参数.
 **处理**: 解析模态覆盖对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回模态覆盖对比的响应数据,包含状态码、结果和日志.
 ### 核心能力(补充)
@@ -64,7 +62,7 @@ category: "Automation"
   - 轻量级: seedream-5.0-lite
 # ...
 视频生成（17个模型）:
-  - 文生视频: veo-3.1, seedance-2.0, kling-v3, pixverse-c1, wan2.7
+  - 文生视频: veo-3.1, seedance-2.7
   - 图生视频: jimeng-i2v-first, viduq2-i2v, kling-v3-omni
   - 首尾帧: jimeng-i2v-first-tail
   - 数字人: jimeng-omnihuman-1.5, jimeng-dream-actor
@@ -82,14 +80,13 @@ category: "Automation"
   - 矢量图输出（SVG）
 ```
 
-**输入**: 用户提供核心能力所需的指令和必要参数.
 **处理**: 解析核心能力的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心能力的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -185,7 +182,7 @@ class VideoBatchProducer:
                     output = json.loads(result.stdout)
                     steps.append({"step": step["type"], "output": output})
                 except:
-                    steps.append({"step": step["type"], "error": "failed"})
+append({"step": step["type"], "error": "failed"})
             results.append({"scenario": scenario, "steps": steps})
         return results
 # ...
@@ -195,7 +192,6 @@ class VideoBatchProducer:
             cmd += ["--prompt", step["prompt"].format(**scenario),
                     "--ratio", step["ratio"]]
         elif step["type"] == "video":
-            cmd += ["--prompt", step["prompt"].format(**scenario),
                     "--duration", str(step["duration"])]
         elif step["type"] == "audio":
             cmd += ["--text", step["text"].format(**scenario)]
@@ -271,7 +267,7 @@ dlazy kling-v3 \
 ```bash
 # 文生图 → 图生视频 → 自动串联
 dlazy seedream-4.5 --prompt "山间日出，云海翻涌" \
-  | dlazy kling-v3 --image @0.url --prompt "云海流动，太阳升起" --duration 5
+url --prompt "云海流动，太阳升起" --duration 5
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -318,7 +314,7 @@ dlazy seedance-2.0 \
 # 多步骤管道链接
 dlazy seedream-4.5 --prompt "城市夜景" --n 4 \
   | dlazy superres --images @* \
-  | dlazy kling-v3 --image @0.url --prompt "城市灯火流动"
+url --prompt "城市灯火流动"
 # ...
 # 管道引用说明:
 # @0.url  = 上游第一个输出的URL

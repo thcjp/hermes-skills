@@ -59,42 +59,42 @@ shadcn/ui 工具免费版帮助开发者使用 shadcn/ui 组件库构建现代 R
 ### 依赖详情
 
 通过 CLI 工具安装 shadcn/ui 组件,组件代码直接复制到项目中,完全可控.
-**输入**: 用户提供依赖说明所需的指令和必要参数.
+
 **处理**: 解析依赖说明的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回依赖说明的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 2. Tailwind CSS 样式
 
 基于 Tailwind CSS 的原子化样式系统,支持深度定制主题颜色、字体、间距.
-**输入**: 用户提供Tailwind CSS 样式所需的指令和必要参数.
+
 **处理**: 解析Tailwind CSS 样式的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Tailwind CSS 样式的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 3. 表单验证
 
 react-hook-form + zod 实现类型安全的表单验证,覆盖登录、注册、数据录入等场景.
-**输入**: 用户提供表单验证所需的指令和必要参数.
+
 **处理**: 解析表单验证的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回表单验证的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 4. 主题切换
 
 支持暗色/亮色主题切换,基于 CSS 变量实现,性能优异.
-**输入**: 用户提供主题切换所需的指令和必要参数.
+
 **处理**: 解析主题切换的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回主题切换的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 示例
 
 提供 Button、Card、Dialog、Form、Table 等常用组件的使用示例.
-**输入**: 用户提供示例所需的指令和必要参数.
+
 **处理**: 解析示例的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回示例的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 6. 响应式布局
 
 基于 Tailwind 的响应式工具类,适配手机、平板、桌面多种屏幕.
-**输入**: 用户提供响应式布局所需的指令和必要参数.
+
 **处理**: 解析响应式布局的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回响应式布局的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
@@ -168,7 +168,6 @@ export function LoginForm() {
           )}
         />
         <FormField
-          control={form.control}
           name="password"
           render={({ field }) => (
             <FormItem>
@@ -227,7 +226,6 @@ export function UserTable() {
             <TableRow key={user.id}>
               <TableCell className="font-medium">{user.name}</TableCell>
               <TableCell>{user.email}</TableCell>
-              <TableCell>{user.role}</TableCell>
             </TableRow>
           ))}
         </TableBody>

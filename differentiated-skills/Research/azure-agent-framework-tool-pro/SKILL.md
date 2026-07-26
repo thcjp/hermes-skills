@@ -109,7 +109,6 @@ async def manage_agents():
 asyncio.run(manage_agents())
 ```
 
-**输入**: 用户提供智能体批量管理(专业版新增)所需的指令和必要参数.
 **处理**: 解析智能体批量管理(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回智能体批量管理(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -121,7 +120,7 @@ from agent_framework import (
     HostedMCPTool,           # 服务端托管 MCP工具
     MCPStreamableHTTPTool,    # 客户端管理 MCP server
 )
-from agent_framework.azure import AzureAIAgentsProvider
+azure import AzureAIAgentsProvider
 from azure.identity.aio import DefaultAzureCredential
 # ...
 async def main():
@@ -133,7 +132,6 @@ async def main():
         ) as mcp_tool,
         AzureAIAgentsProvider(credential=credential) as provider,
     ):
-        agent = await provider.create_agent(
             name="ResearchAssistant",
             instructions="你是一个研究助手,具备多种能力。",
             tools=[
@@ -151,7 +149,6 @@ async def main():
 asyncio.run(main())
 ```
 
-**输入**: 用户提供MCP工具深度集成(专业版增强)所需的指令和必要参数.
 **处理**: 解析MCP工具深度集成(专业版增强)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回MCP工具深度集成(专业版增强)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -159,7 +156,7 @@ asyncio.run(main())
 ### 3. 监控指标采集(专业版新增)
 ```python
 import asyncio
-from agent_framework.azure import AzureAIAgentsProvider
+azure import AzureAIAgentsProvider
 from azure.identity.aio import DefaultAzureCredential
 # ...
 async def monitored_agent():
@@ -171,19 +168,16 @@ async def monitored_agent():
             metrics_export_interval=60,     # 导出间隔(秒)
         ) as provider,
     ):
-        agent = await provider.create_agent(
             name="MonitoredAgent",
             instructions="你是一个乐于助人的助手。",
         )
 # ...
-        result = await agent.run("分析最近一周的销售数据")
 # ...
         metrics = await provider.export_metrics(format="prometheus")
         print(metrics)
 asyncio.run(monitored_agent())
 ```
 
-**输入**: 用户提供监控指标采集(专业版新增)所需的指令和必要参数.
 **处理**: 解析监控指标采集(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回监控指标采集(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -191,7 +185,7 @@ asyncio.run(monitored_agent())
 ### 4. 多租户隔离(专业版新增)
 ```python
 import asyncio
-from agent_framework.azure import AzureAIAgentsProvider
+azure import AzureAIAgentsProvider
 from azure.identity.aio import DefaultAzureCredential
 # ...
 async def multi_tenant():
@@ -205,7 +199,6 @@ async def multi_tenant():
                 workspace=tenant,           # 租户隔离
             ) as provider,
         ):
-            agent = await provider.create_agent(
                 name=f"{tenant}-assistant",
                 instructions=f"你是 {tenant} 公司的专属助手。",
             )
@@ -214,7 +207,6 @@ async def multi_tenant():
 asyncio.run(multi_tenant())
 ```
 
-**输入**: 用户提供多租户隔离(专业版新增)所需的指令和必要参数.
 **处理**: 解析多租户隔离(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多租户隔离(专业版新增)的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、智能体编排、支持批量管理、工具集成、监控告警与多租户、Foundry、智能体编排工具、在免费版核心能力、监控告警、集成与团队协作能、核心能力、免费版全部能力、完全兼容、智能体批量管理与、版本控制、托管与客户端模式、监控指标采集与告、警通知、多租户隔离与权限、集成与自动化部署等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -231,7 +223,7 @@ import asyncio
 from typing import Annotated
 from pydantic import BaseModel, Field
 from agent_framework import HostedWebSearchTool, HostedCodeInterpreterTool
-from agent_framework.azure import AzureAIAgentsProvider
+azure import AzureAIAgentsProvider
 from azure.identity.aio import DefaultAzureCredential
 # ...
 class ResearchResult(BaseModel):
@@ -293,7 +285,7 @@ asyncio.run(collaborative_workflow())
 """生产环境智能体监控示例"""
 import asyncio
 import json
-from agent_framework.azure import AzureAIAgentsProvider
+azure import AzureAIAgentsProvider
 from azure.identity.aio import DefaultAzureCredential
 # ...
 async def production_monitor():
@@ -308,7 +300,6 @@ async def production_monitor():
             alert_on_error_rate=5.0,        # 错误率超5%告警
         ) as provider,
     ):
-        agent = await provider.create_agent(
             name="ProductionAgent",
             instructions="你是生产环境的客户服务助手。",
             tools=[faq_tool, search_tool],
@@ -322,11 +313,10 @@ async def production_monitor():
 # ...
         for query in queries:
             try:
-                result = await agent.run(query)
                 print(f"[OK] {query} -> {result.text[:50]}...")
             except Exception as e:
                 print(f"[FAIL] {query} -> {e}")
-        metrics = await provider.export_metrics(format="json")
+export_metrics(format="json")
         with open("metrics.json", "w") as f:
             json.dump(metrics, f, indent=2)
         print("\n指标已导出到 metrics.json")
@@ -359,7 +349,7 @@ echo "部署完成: ${ENVIRONMENT}"
 ```python
 import asyncio
 import yaml
-from agent_framework.azure import AzureAIAgentsProvider
+azure import AzureAIAgentsProvider
 from azure.identity.aio import DefaultAzureCredential
 # ...
 async def deploy(config_path, environment):
@@ -374,7 +364,6 @@ async def deploy(config_path, environment):
             metrics_enabled=True,
         ) as provider,
     ):
-        agent = await provider.create_agent(
             name=config["name"],
             instructions=config["instructions"],
             tools=config.get("tools", []),
@@ -540,8 +529,6 @@ python -m agent_framework pro init --migrate
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

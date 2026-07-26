@@ -23,11 +23,11 @@ summary: "完整UI/UX设计资源库中文版,界面如专业设计师"
 | 资源类型 | 文件 | 内容 |
 | --- | --- | --- |
 | 🎨 **UI 风格库** | [references/ui-styles.md](/api/v1/skills/ui-ux-pro-max-plus/file?path=references%2Fui-styles.md&ownerHandle=ireact2code) | 50+ 种界面设计风格 |
-| 🌈 **配色方案** | [references/color-palettes.md](/api/v1/skills/ui-ux-pro-max-plus/file?path=references%2Fcolor-palettes.md&ownerHandle=ireact2code) | 100+ 专业调色板 |
-| 🔤 **字体配对** | [references/typography.md](/api/v1/skills/ui-ux-pro-max-plus/file?path=references%2Ftypography.md&ownerHandle=ireact2code) | 精选字体组合 |
-| 📊 **图表类型** | [references/charts.md](/api/v1/skills/ui-ux-pro-max-plus/file?path=references%2Fcharts.md&ownerHandle=ireact2code) | 数据可视化指南 |
-| 📘 **UX 模式** | [references/ux-patterns.md](/api/v1/skills/ui-ux-pro-max-plus/file?path=references%2Fux-patterns.md&ownerHandle=ireact2code) | 用户体验最佳实践 |
-| 🎯 **组件库** | [references/components.md](/api/v1/skills/ui-ux-pro-max-plus/file?path=references%2Fcomponents.md&ownerHandle=ireact2code) | 常用组件设计规范 |
+| 🌈 **配色方案** | [references/color-palettes.path=references%2Fcolor-palettes.md&ownerHandle=ireact2code) | 100+ 专业调色板 |
+| 🔤 **字体配对** | [references/typography.path=references%2Ftypography.md&ownerHandle=ireact2code) | 精选字体组合 |
+| 📊 **图表类型** | [references/charts.path=references%2Fcharts.md&ownerHandle=ireact2code) | 数据可视化指南 |
+| 📘 **UX 模式** | [references/ux-patterns.path=references%2Fux-patterns.md&ownerHandle=ireact2code) | 用户体验最佳实践 |
+| 🎯 **组件库** | [references/components.path=references%2Fcomponents.md&ownerHandle=ireact2code) | 常用组件设计规范 |
 
 ## 快速开始
 
@@ -142,12 +142,12 @@ space-16: 64px
 
 ## 参考资源
 
-* [UI Styles →](/api/v1/skills/ui-ux-pro-max-plus/file?path=references%2Fui-styles.md&ownerHandle=ireact2code) 选择界面风格
-* [Color Palettes →](/api/v1/skills/ui-ux-pro-max-plus/file?path=references%2Fcolor-palettes.md&ownerHandle=ireact2code) 选择配色方案
-* [Typography →](/api/v1/skills/ui-ux-pro-max-plus/file?path=references%2Ftypography.md&ownerHandle=ireact2code) 选择字体配对
-* [Charts →](/api/v1/skills/ui-ux-pro-max-plus/file?path=references%2Fcharts.md&ownerHandle=ireact2code) 选择图表类型
-* [UX Patterns →](/api/v1/skills/ui-ux-pro-max-plus/file?path=references%2Fux-patterns.md&ownerHandle=ireact2code) 学习交互模式
-* [Components →](/api/v1/skills/ui-ux-pro-max-plus/file?path=references%2Fcomponents.md&ownerHandle=ireact2code) 查看组件规范
+* [UI Styles →](/api/v1/skills/ui-ux-pro-max-plus/file?md&ownerHandle=ireact2code) 选择界面风格
+* [Color Palettes →](/api/v1/skills/ui-ux-pro-max-plus/file?md&ownerHandle=ireact2code) 选择配色方案
+* [Typography →](/api/v1/skills/ui-ux-pro-max-plus/file?md&ownerHandle=ireact2code) 选择字体配对
+* [Charts →](/api/v1/skills/ui-ux-pro-max-plus/file?md&ownerHandle=ireact2code) 选择图表类型
+* [UX Patterns →](/api/v1/skills/ui-ux-pro-max-plus/file?md&ownerHandle=ireact2code) 学习交互模式
+* [Components →](/api/v1/skills/ui-ux-pro-max-plus/file?md&ownerHandle=ireact2code) 查看组件规范
 
 ---
 
@@ -184,8 +184,6 @@ space-16: 64px
 ```
 ### 1. 确定设计风格
 
-先读取 `references/ui-styles.md`，选择适合项目的设计风格：
-
 * SaaS/企业应用 → Minimalist / Corporate
 * 电商 → Modern E-commerce / Luxury
 * 创意作品 → Brutalist / Glassmorphism
@@ -193,16 +191,12 @@ space-16: 64px
 
 ### 2. 选择配色
 
-读取 `references/color-palettes.md`，根据品牌调性选择：
-
 * 科技/专业 → Blue/Cyan 系列
 * 自然/健康 → Green/Earth 系列
 * 时尚/美妆 → Purple/Pink 系列
 * 金融/法律 → Navy/Gray 系列
 
 ### 3. 搭配字体
-
-读取 `references/typography.md`：
 
 * 现代科技感 → Inter + JetBrains Mono
 * 优雅精致 → Playfair Display + Inter

@@ -79,7 +79,6 @@ YouTube 内容分析专业版是一款面向企业团队与内容研究机构的
 生成提取报告
 ```
 
-**输入**: 用户提供批量字幕提取所需的指令和必要参数.
 **处理**: 解析批量字幕提取的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量字幕提取的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -92,7 +91,6 @@ YouTube 内容分析专业版是一款面向企业团队与内容研究机构的
 - 增量更新（避免重复提取）
 - 新字幕通知（邮件/Webhook）
 
-**输入**: 用户提供频道监控与自动追踪所需的指令和必要参数.
 **处理**: 解析频道监控与自动追踪的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回频道监控与自动追踪的响应数据,包含状态码、结果和日志.
 ### 3. 多语言字幕对比
@@ -103,7 +101,6 @@ YouTube 内容分析专业版是一款面向企业团队与内容研究机构的
 - 翻译质量分析
 - 适合语言学习与研究
 
-**输入**: 用户提供多语言字幕对比所需的指令和必要参数.
 **处理**: 解析多语言字幕对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多语言字幕对比的响应数据,包含状态码、结果和日志.
 ### 4. 跨视频关键词追踪
@@ -114,7 +111,6 @@ YouTube 内容分析专业版是一款面向企业团队与内容研究机构的
 - 关键词上下文分析
 - 趋势变化追踪
 
-**输入**: 用户提供跨视频关键词追踪所需的指令和必要参数.
 **处理**: 解析跨视频关键词追踪的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回跨视频关键词追踪的响应数据,包含状态码、结果和日志.
 ### 5. 时间戳标记与全文检索
@@ -123,7 +119,6 @@ YouTube 内容分析专业版是一款面向企业团队与内容研究机构的
 - 关键词定位到视频时间点
 - 跳转到指定时间查看
 
-**输入**: 用户提供时间戳标记与全文检索所需的指令和必要参数.
 **处理**: 解析时间戳标记与全文检索的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回时间戳标记与全文检索的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、YouTube、内容分析平台、支持批量字幕提取、多语言对比与关键、适合内容研究团队、内容分析专业版、Use、when、需要文本翻译、多语言转换、本地化处理时使用、不适用于专业医学、法律翻译认证、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -166,7 +161,6 @@ python3 batch_extract.py --config /path/to/batch-extract.json --parallel 8
 ```bash
 python3 channel_monitor.py --config /path/to/channel-monitor.yaml --daemon
 # ...
-python3 channel_monitor.py --config /path/to/channel-monitor.yaml --check-now
 ```
 
 ### 场景 3：多语言字幕对比研究
@@ -174,7 +168,6 @@ python3 channel_monitor.py --config /path/to/channel-monitor.yaml --check-now
 **多语言配置：**
 
 ```bash
-python3 batch_extract.py \
   --url "https://www.youtube.com/watch?v=VIDEO_ID" \
   --languages zh,en \
   --align \
@@ -232,15 +225,14 @@ yt-dlp --version
 ```json
 [
   {"url": "https://www.youtube.com/watch?v=VIDEO_1"},
-  {"url": "https://www.youtube.com/watch?v=VIDEO_2"},
-  {"url": "https://www.youtube.com/watch?v=VIDEO_3"}
+youtube.com/watch?v=VIDEO_2"},
+youtube.com/watch?v=VIDEO_3"}
 ]
 ```
 
 执行批量提取：
 
 ```bash
-python3 batch_extract.py \
   --config /tmp/videos.json \
   --output-dir /tmp/transcripts/ \
   --parallel 8 \
@@ -249,14 +241,12 @@ python3 batch_extract.py \
 
 ### 第三步：频道监控
 ```bash
-python3 channel_monitor.py \
   --config /tmp/channel-monitor.yaml \
   --daemon
 ```
 
 ### 第四步：关键词追踪
 ```bash
-python3 keyword_tracker.py \
   --config /tmp/keyword-config.json \
   --keywords "AI,芯片,半导体" \
   --output /tmp/keyword-report.csv
@@ -264,7 +254,8 @@ python3 keyword_tracker.py \
 
 ## 配置示例
 
-> 详细内容已移至 `references/detail.md` - ### 完整配置文件模板
+> 详细内容已移至 `references/detail.md` - 
+### 完整配置文件模板
 ### 时间戳标记格式
 
 ### 频道监控配置
@@ -295,7 +286,6 @@ monitor:
 
 ### 3. 关键词追踪优化
 ```bash
-python3 keyword_tracker.py \
   --keywords "AI,人工智能,artificial intelligence" \
   --synonyms-file /tmp/synonyms.json
 ```
@@ -314,17 +304,15 @@ python3 keyword_tracker.py \
 **A：** 专业版自动记录失败任务：
 
 ```bash
-python3 batch_extract.py --retry-failed /tmp/extract-queue.json
+py --retry-failed /tmp/extract-queue.json
 # ...
-python3 batch_extract.py --resume /tmp/extract-queue.json
+py --resume /tmp/extract-queue.json
 ```
 
 ### Q3：频道监控如何避免重复提取？
 **A：** 专业版支持增量更新：
 
 ```bash
-python3 channel_monitor.py \
-  --config /tmp/channel-monitor.yaml \
   --incremental
 ```
 
@@ -333,7 +321,6 @@ python3 channel_monitor.py \
 **A：** 使用 `--align` 参数：
 
 ```bash
-python3 batch_extract.py \
   --url "URL" \
   --languages zh,en \
   --align
@@ -344,9 +331,9 @@ python3 batch_extract.py \
 **A：** 支持多种导出格式：
 
 ```bash
-python3 keyword_tracker.py --config config.json --output report.csv
+py --config config.json --output report.csv
 # ...
-python3 keyword_tracker.py --config config.json --output report.json
+py --config config.json
 ```
 
 ### Q6：如何监控多个频道？
@@ -390,7 +377,8 @@ python3 search_engine.py \
 | whoosh | Python 库 | 可选 | `pip install whoosh` | 2.7+（全文检索） |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 | - |
 
-#### 完整安装命令
+#
+### 完整安装命令
 ```bash
 pip3 install yt-dlp requests pyyaml whoosh
 # ...

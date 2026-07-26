@@ -133,7 +133,7 @@ FILE_KEY=$(curl -s -X POST "https://open.feishu.cn/open-apis/im/v1/files" \
   -F "file_type=stream" \
   -F "file_name=<文件名>" \
   -F "file=@<文件路径>" \
-  | python3 -c "import json,sys; print(json.load(sys.stdin)['data']['file_key'])")
+load(sys.stdin)['data']['file_key'])")
 ```
 
 Step 2 - 发送文件消息:
@@ -169,7 +169,6 @@ curl -s -X POST "https://open.feishu.cn/open-apis/im/v1/messages?receive_id_type
 
 ```bash
 python3 /root/.skill-platform/workspace/skills/feishu-send-file/（请参考skill目录中的脚本文件） \
-  /root/myfiles/report.html \
   ou_abc123def456 \
   cli_a1b2c3d4e5f6g7h8 \
   secretAbCdEfGhIjKlMnOp \

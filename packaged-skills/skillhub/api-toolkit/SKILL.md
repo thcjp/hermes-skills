@@ -66,7 +66,6 @@ assert:
   - time_total < 500  # 响应时间小于500ms
 ```
 
-**输入**: 用户提供功能1：回归测试集（批量测试）所需的指令和必要参数.
 ### 功能2：本地Mock服务器
 **解决痛点**：前端等后端、后端等前端，串行开发慢；第三方API联调期不稳定.
 **专业版能力**：
@@ -85,7 +84,6 @@ api-toolkit mock record --target https://api.example.com --port 8080
 api-toolkit mock replay --recording ./recordings/2026-07.json
 ```
 
-**处理**: 解析功能2：本地Mock服务器的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 功能3：性能压测
 **解决痛点**：上线前才知道接口扛不住，或压测工具太重不会用.
 **专业版能力**：
@@ -137,7 +135,6 @@ api-toolkit contract-check --spec ./openapi.yaml --ci-mode
 
 > 详细代码示例已移至 `references/detail.md`
 
-**处理**: 解析功能4：OpenAPI契约校验的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 错误恢复步骤
 **解决痛点**：第三方API的业务错误码散落在文档各处，排查时翻半天.
 **专业版能力**：80+服务、1000+业务错误码的结构化字典，支持按服务、按错误类型检索.
@@ -152,7 +149,6 @@ Recovery: 提示用户更换支付方式，或使用Idempotency-Key
 Doc: 搜索 "Stripe card_declined codes"
 ```
 
-**输出**: 返回错误处理的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `错误处理` 选项
 
@@ -234,12 +230,13 @@ Doc: 搜索 "Stripe card_declined codes"
 
 Agent会按免费版的模板规则输出curl命令，并额外提示：是否要把这个请求加入回归测试集？
 
-> 详细内容已移至 `references/detail.md` - ### 标准搭建（<120秒）：跑优秀个回归测试集
+> 详细内容已移至 `references/detail.md` - 
+### 标准搭建（<120秒）：跑优秀个回归测试集
 ### 完整搭建（<300秒）：启用Mock与压测
 启动Mock服务器（基于OpenAPI Spec）：
 
 ```bash
-api-toolkit mock start --spec ./openapi.yaml --port 8080
+/openapi.yaml --port 8080
 ```
 
 运行阶梯压测：

@@ -56,17 +56,14 @@ category: "Knowledge"
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供批量搜索所需的指令和必要参数.
 **处理**: 解析批量搜索的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量搜索的响应数据,包含状态码、结果和日志.
 ### 2. AI智能摘要
 
-**输入**: 用户提供AI智能摘要所需的指令和必要参数.
 **处理**: 解析AI智能摘要的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回AI智能摘要的响应数据,包含状态码、结果和日志.
 ### 3. 定时监控
 
-**输入**: 用户提供定时监控所需的指令和必要参数.
 **处理**: 解析定时监控的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时监控的响应数据,包含状态码、结果和日志.
 ### 4. 多语言搜索
@@ -138,7 +135,7 @@ class MultiLanguageSearcher:
 # ...
             for i, r in enumerate(data['results'][:5], 1):
                 lines.append(f"{i}. {r.get('title', '')}")
-                lines.append(f"   URL: {r.get('url', '')}")
+append(f"   URL: {r.get('url', '')}")
             lines.append("")
 # ...
         return "\n".join(lines)
@@ -150,14 +147,12 @@ report = ml_searcher.generate_multilang_report(results)
 print(report)
 ```
 
-**输入**: 用户提供多语言搜索所需的指令和必要参数.
 **处理**: 解析多语言搜索的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多语言搜索的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 5. 结果缓存
 
-**输入**: 用户提供结果缓存所需的指令和必要参数.
 **处理**: 解析结果缓存的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果缓存的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、搜索专业版、含批量搜索、多语言搜索与结果、谷歌搜索助手专业、版是面向企业级场、景的完整、搜索与结果分析工、在免费版单次搜索、能力之上、新增批量搜索、图片搜索、新闻搜索、学术搜索八大高级、Use、when、模型调用、智能对话、Agent、应用时使用、不适用于需要、确定性的关键决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -191,11 +186,10 @@ summarizer = AISearchSummarizer()
 # ...
 competitors = ["CompetitorA", "CompetitorB", "CompetitorC"]
 for competitor in competitors:
-    results = ml_searcher.search_multilang(
         f"{competitor} 产品评测",
         languages=['zh-CN', 'en-US']
     )
-    report = ml_searcher.generate_multilang_report(results)
+generate_multilang_report(results)
     print(report)
 ```
 
@@ -285,11 +279,11 @@ monitor:
     - name: 品牌监控
       query: 我的品牌
       interval: 3600
-      webhook: https://hooks.slack.com/services/xxx
+slack.com/services/xxx
     - name: 竞品监控
       query: 竞争对手
       interval: 7200
-      webhook: https://hooks.slack.com/services/xxx
+slack.com/services/xxx
     - name: 行业动态
       query: AI芯片 行业
       interval: 86400
@@ -424,8 +418,6 @@ MONITOR_INTERVALS = {
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

@@ -52,7 +52,7 @@ Check EXTEND.md in priority order — the first one found wins:
 | --- | --- | --- |
 | 1 | `.baoyu-skills/baoyu-format-markdown/EXTEND.md` | Project |
 | 2 | `${XDG_CONFIG_HOME:-$HOME/.config}/baoyu-skills/baoyu-format-markdown/EXTEND.md` | XDG |
-| 3 | `$HOME/.baoyu-skills/baoyu-format-markdown/EXTEND.md` | User home |
+| 3 | `$HOME/.md` | User home |
 
 If none found, use defaults — no first-time setup required for this skill.
 
@@ -95,7 +95,6 @@ Detected existing markdown formatting. What would you like to do?
 2. Keep original formatting
    - Preserve existing markdown structure
    - Run typography script only
-   - Output: {filename}-formatted.md
 
 3. Typography fixes only
    - Run typography script on original file in-place
@@ -176,7 +175,8 @@ Check for YAML frontmatter (`---` block). Create if missing.
 | `description` | Longer descriptive summary (see **Summary Generation** below) |
 | `coverImage` | Check if `imgs/cover.png` exists in same directory; if so, use relative path |
 
-#### Title Generation
+#
+### Title Generation
 
 Whether or not a title already exists, run the title optimization flow unless `auto_select_title` is set.
 
@@ -214,7 +214,8 @@ If the first line is an H1, extract it to frontmatter and remove it from the bod
 
 **Skip behavior**: If `auto_select: true` or `auto_select_title: true`, skip the user prompt and use the top candidate directly.
 
-#### Summary Generation
+#
+### Summary Generation
 
 Generate two versions directly (no user selection), both stored in frontmatter:
 
@@ -307,11 +308,10 @@ ${BUN_X} {baseDir}/scripts/main.ts {output-file-path} [options]
 **Examples:**
 
 ```bash
-${BUN_X} {baseDir}/scripts/main.ts article.md
 
-${BUN_X} {baseDir}/scripts/main.ts article.md --quotes
+ts article.md --quotes
 
-${BUN_X} {baseDir}/scripts/main.ts article.md --no-spacing
+ts article.md --no-spacing
 ```
 
 **Script performs (based on options):**
@@ -410,9 +410,7 @@ Custom configurations via EXTEND.md. See **Preferences** section for paths and s
 ### 示例1：基础用法
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
 ## 错误处理

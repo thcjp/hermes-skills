@@ -1,5 +1,4 @@
----
-slug: "note-taker"
+---slug: "note-taker"
 name: "note-taker"
 version: 2.0.2
 displayName: "笔记"
@@ -7,7 +6,7 @@ summary: "笔记整理助手。康奈尔笔记法、卡片盒笔记(Zettelkasten
 summary_zh: "笔记整理助手。康奈尔笔记法、卡片盒笔记(Zettelkasten)、思维导图笔记、会议笔记、课堂笔记、笔记整理。Note-taking with"
 license: "MIT"
 description: |-
-  笔记整理助手。康奈尔笔记法、卡片盒笔记(Zettelkasten)、思维导图笔记、会议笔记、课堂笔记、笔记整理。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+  笔记整理助手。康奈尔笔记法、卡片盒笔记(Zettelkasten)、思维导图笔记、会议笔记、课堂笔记、笔记整理。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。不适用于需要100%确定性的关键决策.
 tags:
   - Productivity
   - 工具
@@ -21,9 +20,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# Note Taker
+category: "Automation"---# Note Taker
 
 ## 付费版专享能力
 

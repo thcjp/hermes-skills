@@ -77,7 +77,6 @@ category: "Communication"
 - **列出回应**: 查询某条消息上已有的所有回应,返回每个 emoji 的计数与 reacted 用户列表
 - **使用场景**: 用 ✅ 标记已完成任务、用 👀 表示正在查看、用 🎉 庆祝里程碑
 
-**处理**: 解析Reactions(消息回应)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 2. Messages(消息收发与编辑)
 - **发送消息**: 向 channel 或 user 发送文本消息,to 字段格式为 `channel:<id>` 或 `user:<id>`
 - **编辑消息**: 修改已发送消息的内容,需提供 channelId 与 messageId
@@ -89,21 +88,14 @@ category: "Communication"
 - **取消置顶**: 移除消息的置顶状态
 - **列出置顶**: 获取频道中所有置顶消息列表
 
-**输入**: 用户提供Pins(置顶管理)所需的指令和必要参数.
-**处理**: 解析Pins(置顶管理)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Pins(置顶管理)的处理结果,包含执行状态码、结果数据和执行日志.
 ### 4. MemberInfo(成员信息)
 - **查询成员**: 根据 userId 获取成员的显示名、邮箱、头像、状态等信息
 - **使用场景**: 确认消息发送者身份、获取成员联系方式、查看成员在线状态
 
-**输出**: 返回MemberInfo(成员信息)的处理结果,包含执行状态码、结果数据和执行日志.
 ### 5. EmojiList(表情列表)
 - **列出表情**: 获取工作区中所有自定义表情的名称与 URL
 - **使用场景**: 查看可用表情名以便在 reactions 中使用 :name: 格式引用
 
-**输入**: 用户提供EmojiList(表情列表)所需的指令和必要参数.
-**处理**: 解析EmojiList(表情列表)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回EmojiList(表情列表)的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -172,7 +164,6 @@ category: "Communication"
 {
   "action": "reactions",
   "channelId": "C123",
-  "messageId": "1712023032.1234"
 }
 ```
 
@@ -192,7 +183,6 @@ category: "Communication"
 {
   "action": "editMessage",
   "channelId": "C123",
-  "messageId": "1712023032.1234",
   "content": "周报已更新(修订版),请查看"
 }
 ```
@@ -203,7 +193,6 @@ category: "Communication"
 {
   "action": "deleteMessage",
   "channelId": "C123",
-  "messageId": "1712023032.1234"
 }
 ```
 
@@ -223,7 +212,6 @@ category: "Communication"
 {
   "action": "pinMessage",
   "channelId": "C123",
-  "messageId": "1712023032.1234"
 }
 ```
 
@@ -233,7 +221,6 @@ category: "Communication"
 {
   "action": "unpinMessage",
   "channelId": "C123",
-  "messageId": "1712023032.1234"
 }
 ```
 
@@ -275,7 +262,6 @@ category: "Communication"
 {
   "action": "react",
   "channelId": "C0LPBBKMQ",
-  "messageId": "1712023032.1234",
   "emoji": "✅"
 }
 ```
@@ -286,7 +272,6 @@ category: "Communication"
 {
   "action": "pinMessage",
   "channelId": "C0LPBBKMQ",
-  "messageId": "1712023032.1234"
 }
 ```
 

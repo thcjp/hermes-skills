@@ -85,7 +85,6 @@ generate_sbom() {
             ;;
         spdx)
             # SPDX格式生成
-            if [ -f package.json ]; then
                 npx spdx-sbom-generator npm -o "$output" 2>/dev/null
             fi
             ;;
@@ -100,7 +99,6 @@ generate_sbom "." "cyclonedx" "sbom-cdx.json"
 generate_sbom "." "spdx" "sbom-spdx.json"
 ```
 
-**输入**: 用户提供多生态SBOM生成(专业版独有)所需的指令和必要参数.
 **处理**: 解析多生态SBOM生成(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多生态SBOM生成(专业版独有)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -139,8 +137,6 @@ class MultiSourceVulnChecker:
     def _query_ghsa(self, pkg, version, ecosystem):
         """查询GitHub安全公告"""
         # 通过OSV查询GHSA
-        resp = requests.post(
-            "https://api.osv.dev/v1/query",
             json={
                 "package": {"name": pkg, "ecosystem": ecosystem},
                 "version": version
@@ -155,7 +151,6 @@ class MultiSourceVulnChecker:
         cpe = self._guess_cpe(pkg, ecosystem)
         if not cpe:
             return []
-        resp = requests.get(
             "https://services.nvd.nist.gov/rest/json/cves/2.0",
             params={"cpeName": cpe},
             timeout=10
@@ -210,7 +205,6 @@ if __name__ == "__main__":
     print(json.dumps(result, indent=2, ensure_ascii=False))
 ```
 
-**输入**: 用户提供三漏洞库联查(专业版独有)所需的指令和必要参数.
 **处理**: 解析三漏洞库联查(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回三漏洞库联查(专业版独有)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -263,7 +257,6 @@ echo ""
 echo "扫描完成,报告: ${OUTPUT_FILE}"
 ```
 
-**输入**: 用户提供批量项目扫描(专业版独有)所需的指令和必要参数.
 **处理**: 解析批量项目扫描(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量项目扫描(专业版独有)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -294,7 +287,6 @@ monitoring:
     previous_report: "reports/vuln-20260711.json"
 ```
 
-**输入**: 用户提供持续监控与告警(专业版独有)所需的指令和必要参数.
 **处理**: 解析持续监控与告警(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回持续监控与告警(专业版独有)的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、管理平台、支持多生态、批量扫描、适合安全团队与企、业用户、物料清单漏洞情报、为企业安全团队提、供全方位、管理与依赖漏洞治、理能力、核心能力、标准输出、SARIF、Use、when、需要系统监控、日志分析、运维告警、部署管理时使用、不适用于物理硬件等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -433,7 +425,7 @@ done
 
 ```bash
 # 免费版:单包查询
-curl -s -X POST "https://api.osv.dev/v1/query" ...
+osv.dev/v1/query" ...
 # ...
 # 专业版:三库联查
 python3 multi_vuln_check.py --package lodash --version 4.17.20
@@ -520,8 +512,6 @@ CycloneDX更适合云原生与现代开发流程,SPDX更适合需要详细许可
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

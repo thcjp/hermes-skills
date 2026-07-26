@@ -180,7 +180,7 @@ import requests
 # ...
 CACHE_DIR = Path("cache/taxrates")
 CACHE_TTL = 7 * 24 * 3600  # 7 天缓存
-API_URL = "https://api.zip-tax.com/request/v60"
+zip-tax.com/request/v60"
 API_KEY = os.environ.get("ZIPTAX_API_KEY", "")
 # ...
 def cache_key(query: str) -> str:
@@ -199,7 +199,6 @@ def get_cached(key: str):
 def set_cached(key: str, result):
     """写入缓存"""
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    cache_file = CACHE_DIR / f"{key}.json"
     cache_file.write_text(json.dumps({
         "cached_at": time.time(),
         "result": result
@@ -288,7 +287,7 @@ def generate_report():
 # ...
     # CSV 报告(供审计)
     with open(report_file, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=report_data[0].keys())
+DictWriter(f, fieldnames=report_data[0].keys())
         writer.writeheader()
         writer.writerows(report_data)
 # ...

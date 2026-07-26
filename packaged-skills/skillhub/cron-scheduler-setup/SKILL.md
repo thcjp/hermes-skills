@@ -1,5 +1,4 @@
----
-slug: "cron-scheduler-setup"
+---slug: "cron-scheduler-setup"
 name: "cron-scheduler-setup"
 version: 1.0.1
 displayName: "定时调度器设置"
@@ -7,7 +6,7 @@ summary: "SkillHub Gateway 内置定时任务调度器。用于创建一次性�
 summary_zh: "SkillHub Gateway 内置定时任务调度器。用于创建一次性提醒、周期性任务、后台自动化。支持主会话系统事件和独立会话执行，可配置投递到聊天频道或"
 license: "MIT"
 description: |-
-  SkillHub Gateway 内置定时任务调度器。用于创建一次性提醒、周期性任务、后台自动化。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
+  SkillHub Gateway 内置定时任务调度器。用于创建一次性提醒、周期性任务、后台自动化。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。不适用于需要人工创意判断的任务.
 tags:
   - Automation
   - 定时任务
@@ -21,9 +20,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# SkillHub Cron Setup
+category: "Automation"---# SkillHub Cron Setup
 
 ## 付费版专享能力
 
@@ -209,7 +206,7 @@ export API_KEY="your_api_key_here"
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 案例展示
 
-当前工作配置示例（`~/.skill-platform/cron/jobs.json`）：
+当前工作配置示例（`~/.json`）：
 
 ```json
 {

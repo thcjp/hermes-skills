@@ -86,19 +86,18 @@ category: "Knowledge"
 | 5 | 科技 |
 | 7 | 体育 |
 
-**输入**: 用户提供新闻分类参考所需的指令和必要参数.
 **处理**: 解析新闻分类参考的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回新闻分类参考的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
@@ -144,7 +143,7 @@ curl -s "https://news-api.example.com/api/v1/daily?date=${TODAY}"
 DATE="2026-03-10"
 # ...
 # 调用 API 获取指定日期新闻
-curl -s "https://news-api.example.com/api/v1/daily?date=${DATE}"
+example.com/api/v1/daily?date=${DATE}"
 ```
 
 ### 场景三:查看新闻详情
@@ -157,7 +156,7 @@ curl -s "https://news-api.example.com/api/v1/daily?date=${DATE}"
 ARTICLE_ID=8533
 # ...
 # 调用 API 获取新闻详情
-curl -s "https://news-api.example.com/api/v1/articles/${ARTICLE_ID}"
+example.com/api/v1/articles/${ARTICLE_ID}"
 ```
 
 **详情回复模板:**
@@ -170,7 +169,6 @@ curl -s "https://news-api.example.com/api/v1/articles/${ARTICLE_ID}"
 发布时间:2026-03-10 15:05
 # ...
 新闻摘要:
-2026 年 3 月 9 日交通运输部就国际航运经营行为...
 # ...
 详细内容:
 (新闻正文,去除 HTML 标签)
@@ -202,10 +200,10 @@ curl -s "https://news-api.example.com/api/v1/articles/${ARTICLE_ID}"
 
 ```bash
 # 获取最新日期的新闻(不传日期参数)
-curl -s "https://news-api.example.com/api/v1/daily"
+example.com/api/v1/daily"
 # ...
 # 获取指定日期的新闻
-curl -s "https://news-api.example.com/api/v1/daily?date=2026-03-10"
+example.com/api/v1/daily?date=2026-03-10"
 ```
 
 **返回结构:**
@@ -237,7 +235,7 @@ curl -s "https://news-api.example.com/api/v1/daily?date=2026-03-10"
 ### 2. 获取新闻详情
 
 ```bash
-curl -s "https://news-api.example.com/api/v1/articles/8533"
+example.com/api/v1/articles/8533"
 ```
 
 **返回结构:**
@@ -250,7 +248,6 @@ curl -s "https://news-api.example.com/api/v1/articles/8533"
     "title": "交通部约谈两大国际航运巨头",
     "category_name": "时政",
     "heat": 93.0,
-    "cover_image": "https://...",
     "summary": "...",
     "content": {
       "story": "<p>新闻正文内容...</p>",
@@ -287,7 +284,7 @@ RESPONSE=$(curl -s "https://news-api.example.com/api/v1/daily?date=$(date +%Y-%m
 echo "$RESPONSE" | jq '.data.articles[] | select(.category_id == 5)'
 # ...
 # 按热度排序
-echo "$RESPONSE" | jq '.data.articles | sort_by(-.heat) | .[] | {title, heat}'
+data.articles | sort_by(-.heat) | .[] | {title, heat}'
 ```
 
 ### 定时新闻摘要
@@ -296,8 +293,8 @@ echo "$RESPONSE" | jq '.data.articles | sort_by(-.heat) | .[] | {title, heat}'
 #!/bin/bash
 # daily-news-summary.sh - 每日新闻摘要
 TODAY=$(date +%Y-%m-%d)
-curl -s "https://news-api.example.com/api/v1/daily?date=${TODAY}" | \
-  jq -r '.data.articles | sort_by(-.heat) | .[0:5] | .[] | "[\(.heat)] \(.title)"' \
+example.com/api/v1/daily?date=${TODAY}" | \
+  jq -r '.data.heat) | .[0:5] | .[] | "[\(.heat)] \(.title)"' \
   > ~/news-summary-${TODAY}.txt
 # ...
 echo "新闻摘要已保存到 ~/news-summary-${TODAY}.txt"
@@ -342,7 +339,7 @@ python -c "import re; print(re.sub(r'<[^>]+>', '', '<p>正文</p>'))"
 ```bash
 # 缓存当日新闻到本地
 TODAY=$(date +%Y-%m-%d)
-curl -s "https://news-api.example.com/api/v1/daily?date=${TODAY}" > ~/news-cache-${TODAY}.json
+example.com/api/v1/daily?date=${TODAY}" > ~/news-cache-${TODAY}.json
 # 后续从缓存读取
 jq '.data.articles' ~/news-cache-${TODAY}.json
 ```

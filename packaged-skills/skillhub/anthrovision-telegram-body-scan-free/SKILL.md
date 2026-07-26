@@ -1,9 +1,8 @@
----
-slug: "anthrovision-telegram-body-scan-free"
+---slug: "anthrovision-telegram-body-scan-free"
 name: "anthrovision-telegram-body-scan-free"
 version: "1.0.0"
 displayName: "Telegram免费版"
-summary: "在Telegram中运行基础身体扫描流程,提交视频并轮询测量结果。在Telegram中运行基础身体扫描测量流程。提交视频至AnthroVision桥接工具, 轮询状态并输出基础测量结果。基础"
+summary: "在Telegram中运"
 summary_zh: "在Telegram中运行基础身体扫描流程,提交视频并轮询测量结果。在Telegram中运行基础身体扫描测量流程。提交视频至AnthroVision桥接工具, 轮询状态并输出基础测量结果。基础"
 license: "MIT"
 description: |-
@@ -26,9 +25,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Communication"
----
-# Anthrovision Telegram Body Scan Free
+category: "Communication"---# Anthrovision Telegram Body Scan Free
 
 ## 输入格式
 
@@ -69,14 +66,11 @@ export API_KEY="your_api_key_here"
 - 必需输入: `gender`(male/female)、`height_cm`(100-250)、`video`附件或可下载URL、`phone_model`
 - 拒绝本地文件路径与私有/本地URL
 
-**处理**: 解析输入校验(基础)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回输入校验(基础)的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. 扫描提交与轮询(基础)
 - 调用 `anthrovision_bridge_submit_scan` 提交
 - 调用 `anthrovision_bridge_check_scan` 轮询状态
 - 状态complete时输出基础测量结果
 
-**输入**: 用户提供扫描提交与轮询(基础)所需的指令和必要参数.
 #
 ## 快速开始
 

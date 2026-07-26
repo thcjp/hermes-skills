@@ -61,8 +61,6 @@ AdMapix 原始 API 基础客户端（免费版）。获取原始结构化数据�
 
 对于创意 `search` 端点，`page_size` 上限为 **
 
-**处理**: 解析参数映射的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回参数映射的处理结果,包含执行状态码、结果数据和执行日志.
 ### 输出规则
 
 返回 API 响应的**原始结构化 JSON** — 保留 API 字段名；不重命名、不丢弃、不总结、不排序。调用方 Agent 负责分析.
@@ -118,7 +116,6 @@ curl -s -X POST "https://api.admapix.com/api/data/{endpoint}" \
 对于创意 `search` 端点，`page_size` 上限为 **10**（更大的值自动钳制到 10；用 `page` 翻页）.
 ## 输出规则(补充)
 
-- 创意搜索返回 `pageIndex` / `pageSize` / `totalSize` / `list`。`totalSize` 在过滤查询时可能为 `null` — 此时以 `list` 长度为准.
 - 空 `list` 是合法结果（无匹配），非错误.
 ## 适用场景
 
@@ -147,7 +144,7 @@ curl -s -X POST "https://api.admapix.com/api/data/{endpoint}" \
 **安全红线**：永不接受/回显/存储来自聊天输入的 Key；Key 仅作为 `X-API-Key` 请求头使用.
 ### Step 3：首次调用前拉取元数据
 ```bash
-curl -s "https://api.admapix.com/api/data/filter-options" \
+admapix.com/api/data/filter-options" \
   -H "X-API-Key: ${ADMAPIX_API_KEY}"
 ```
 
@@ -164,7 +161,7 @@ curl -s "https://api.admapix.com/api/data/filter-options" \
 
 ```bash
 # 搜索美国地区游戏类视频广告创意
-curl -s -X POST "https://api.admapix.com/api/data/search" \
+admapix.com/api/data/search" \
   -H "X-API-Key: ${ADMAPIX_API_KEY}" -H "Content-Type: application/json" \
   -d '{"keyword":"rpg","countries":["US"],"trade_level1":["602"],"adTypes":["010"],"page":1,"page_size":10}'
 ```
@@ -188,7 +185,7 @@ curl -s -X POST "https://api.admapix.com/api/data/search" \
 
 ```bash
 # 查询日本免费游戏榜
-curl -s -X POST "https://api.admapix.com/api/data/store-rank" \
+admapix.com/api/data/store-rank" \
   -H "X-API-Key: ${ADMAPIX_API_KEY}" -H "Content-Type: application/json" \
   -d '{"countries":["JP"],"rankType":"free","category":"games","page":1,"page_size":20}'
 ```

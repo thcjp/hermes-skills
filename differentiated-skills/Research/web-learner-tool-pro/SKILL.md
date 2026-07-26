@@ -62,7 +62,6 @@ web-learner batch status
 web-learner batch export --format json --output knowledge_batch.json
 ```
 
-**输入**: 用户提供批量主题并行学习所需的指令和必要参数.
 **处理**: 解析批量主题并行学习的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量主题并行学习的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -88,7 +87,6 @@ web-learner knowledge version --diff v1.0 v1.1
 web-learner knowledge merge --deduplicate --threshold 0.8
 ```
 
-**输入**: 用户提供知识库管理与版本控制所需的指令和必要参数.
 **处理**: 解析知识库管理与版本控制的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回知识库管理与版本控制的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -115,7 +113,6 @@ web-learner schedule history
 web-learner schedule changes --period "2026-07"
 ```
 
-**输入**: 用户提供定时知识更新所需的指令和必要参数.
 **处理**: 解析定时知识更新的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时知识更新的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -135,7 +132,6 @@ web-learner integrate \
   --output integrated_knowledge.json
 ```
 
-**输入**: 用户提供多源深度整合所需的指令和必要参数.
 **处理**: 解析多源深度整合的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多源深度整合的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -154,7 +150,6 @@ web-learner team permissions \
   --permissions "add,edit,delete"
 ```
 
-**输入**: 用户提供团队协作所需的指令和必要参数.
 **处理**: 解析团队协作的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回团队协作的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -172,7 +167,6 @@ web-learner config set-scoring \
   --weights '{"relevance": 0.3, "credibility": 0.3, "freshness": 0.2, "completeness": 0.2}'
 ```
 
-**输入**: 用户提供自定义学习策略所需的指令和必要参数.
 **处理**: 解析自定义学习策略的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自定义学习策略的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -185,7 +179,6 @@ web_fetch("https://example.com", format="markdown")
 browser_start()
 ```
 
-**输入**: 用户提供完整兼容免费版所需的指令和必要参数.
 **处理**: 解析完整兼容免费版的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回完整兼容免费版的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级知识获取平、支持批量学习、定时更新与团队协、自主学习助手专业、面向企业团队和专、业研究人员提供深、度的知识获取能力、支持批量主题学习、团队协作等高级功、Use、when、需要提升效率、自动化流程、批量处理、工作流优化时使用、不适用于需要人工、创意判断的任务、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -266,7 +259,6 @@ web-learner batch export --output learnings.json
 ### 1. 免费版到专业版的平滑迁移
 ```bash
 web_search("关键词")
-web_fetch("https://example.com")
 # ...
 web-learner batch learn batch.json
 # ...
@@ -275,9 +267,9 @@ web-learner knowledge create --name "my_kb"
 
 ### 2. 批量学习的性能优化
 ```bash
-web-learner batch learn batch.json --concurrency 15
+json --concurrency 15
 # ...
-web-learner batch learn batch.json --cache-dir ./cache --skip-cached
+json --cache-dir ./cache --skip-cached
 # ...
 web-learner batch learn large_batch.json --batch-size 50
 ```

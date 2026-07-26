@@ -1,10 +1,8 @@
----
-
-slug: logo-design-tool-free
+---slug: logo-design-tool-free
 name: logo-design-tool-free
 version: 1.0.0
 displayName: Logo设计工具免费版
-summary: "使用AI图像生成工具创建Logo,提供提示词框架、验证循环与导出建议,适合个人与小型项目.。Logo设计工具免费版帮助个人用户使用AI图像生成工具创建专业Logo。提供结构化的提示词框架、多"
+summary: "使用AI图像生成工具创"
 license: Proprietary
 edition: free
 description: "Logo设计工具免费版帮助个人用户使用AI图像生成工具创建专业Logo。提供结构化的提示词框架、多模型对比、视觉验证循环与导出格式建议,
@@ -31,9 +29,7 @@ tools:
   - write
 homepage: ""
 category: "Creative"
-
----
-# Logo设计工具免费版
+---# Logo设计工具免费版
 
 ## 概述
 
@@ -60,10 +56,8 @@ Create a [STYLE] logo featuring [ELEMENT] on [BACKGROUND].
 ```text
 Create a minimalist logo featuring a geometric mountain peak on white background.
 Clean lines, navy blue (#1E3A5A), modern and professional style.
-The logo should look good at 32px with recognizable shapes.
 ```
 
-**输入**: 用户提供提示词框架所需的指令和必要参数.
 **处理**: 解析提示词框架的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回提示词框架的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -77,7 +71,6 @@ The logo should look good at 32px with recognizable shapes.
 | 文字渲染模型 | 完美文字效果 | 完美 | 专注文字渲染 |
 | 艺术图标模型 | 仅图标(无文字) | 不支持 | 艺术感强 |
 
-**输入**: 用户提供AI模型选择所需的指令和必要参数.
 **处理**: 解析AI模型选择的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回AI模型选择的响应数据,包含状态码、结果和日志.
 ### Logo类型识别
@@ -91,7 +84,6 @@ The logo should look good at 32px with recognizable shapes.
 | 吉祥物 | 角色插画 | 友好品牌 | KFC |
 | 组合标 | 图标+文字 | 新品牌 | Adidas |
 
-**输入**: 用户提供Logo类型识别所需的指令和必要参数.
 **处理**: 解析Logo类型识别的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Logo类型识别的响应数据,包含状态码、结果和日志.
 ### 视觉验证循环
@@ -99,7 +91,6 @@ The logo should look good at 32px with recognizable shapes.
 **强制流程**:每次AI生成后必须视觉检查,不可直接交付.
 1. 生成 -> 2. 查看实际图片 -> 3. 检查问题 -> 4. 修复或重新生成 -> 5. 重复(最多5-7次)
 
-**输入**: 用户提供视觉验证循环所需的指令和必要参数.
 **处理**: 解析视觉验证循环的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回视觉验证循环的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：图像生成工具创建、验证循环与导出建、适合个人与小型项、设计工具免费版帮、助个人用户使用、提供结构化的提示、多模型对比、视觉验证循环与导、出格式建议、让没有设计经验的、用户也能产出可用、Use、when、、品牌视觉时使用、不适用于、建模和动画制作、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -162,8 +153,6 @@ The icon represents [APP PURPOSE].
 
 ```text
 # 基础公式
-Create a [STYLE] logo featuring [ELEMENT] on [BACKGROUND].
-[DESCRIPTION]. The logo should look good at 32px with recognizable shapes.
 # .
 # 关键要素
 # STYLE: minimalist, geometric, flat, modern, professional

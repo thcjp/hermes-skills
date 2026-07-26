@@ -1,9 +1,8 @@
----
-slug: "aws-agentcore-langgraph"
+---slug: "aws-agentcore-langgraph"
 name: "aws-agentcore-langgraph"
 version: 1.0.3
 displayName: "AWS AgentCore开发工具"
-summary: "AWS Bedrock AgentCore 与 LangGraph 多智能体编排部署助手。基于 AWS Bedrock AgentCore Runtime 与 LangGraph 的多智能体"
+summary: "AWS Bedrock"
 summary_zh: "AWS Bedrock AgentCore 与 LangGraph 多智能体编排部署助手。基于 AWS Bedrock AgentCore Runtime 与 LangGraph 的多智能体"
 license: "MIT"
 description: |-
@@ -30,9 +29,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Operations"
----
-# aws-agentcore-langgraph
+category: "Operations"---# aws-agentcore-langgraph
 
 Multi-agent systems on AWS Bedrock AgentCore with LangGraph orchestration. 
 
@@ -119,7 +116,7 @@ app.run()
 | 命令 | 用途 |
 |---:|---:|
 | `agentcore configure -e agent.py --region us-east-1` | 初始化配置 |
-| `agentcore configure -e agent.py --region us-east-1 --name my_agent --non-interactive` | 脚本化配置 |
+py --region us-east-1 --name my_agent --non-interactive` | 脚本化配置 |
 | `agentcore launch --deployment-type container` | 容器模式部署 |
 | `agentcore launch --disable-memory` | 部署时禁用记忆子系统 |
 | `agentcore dev` | 热重载本地开发服务器 |
@@ -136,7 +133,7 @@ app.run()
 ### 记忆系统 (STM/LTM)
 
 ```python
-from bedrock_agentcore.memory import MemoryClient
+memory import MemoryClient
 memory = MemoryClient()
 memory.create_event(session_id, actor_id, event_type, payload)  # 写入
 events = memory.list_events(session_id)  # 读取(返回列表)
@@ -153,7 +150,7 @@ python -m bedrock_agentcore.gateway.deploy --stack-name my-agents --region us-ea
 ```
 
 ```python
-from bedrock_agentcore.gateway import GatewayToolClient
+gateway import GatewayToolClient
 gateway = GatewayToolClient()
 result = gateway.call("tool_name", param1=value1, param2=value2)
 ```
@@ -255,7 +252,7 @@ events = memory.list_events("sess_001")
 
 ```bash
 # 部署 Gateway,将 Lambda 转为 MCP 工具
-python -m bedrock_agentcore.gateway.deploy --stack-name my-agents --region us-east-1
+gateway.deploy --stack-name my-agents --region us-east-1
 # 部署后自动设置 BEDROCK_AGENTCORE_GATEWAY_URL
 ```
 ```python

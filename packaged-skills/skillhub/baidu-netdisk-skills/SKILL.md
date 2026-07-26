@@ -134,9 +134,6 @@ bdpan whoami                                          # 查看登录状态
 bdpan ls [目录路径] [--json] [--order name|time|size] [--desc] [--folder]
 ```
 
-**输入**: 用户提供查看状态与列表所需的指令和必要参数.
-**处理**: 解析查看状态与列表的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回查看状态与列表的处理结果,包含执行状态码、结果数据和执行日志.
 ### 上传
 ```bash
 bdpan upload <本地路径> <远端路径>
@@ -144,8 +141,7 @@ bdpan upload <本地路径> <远端路径>
 
 **关键约束：** 单文件上传远端路径必须是文件名，禁止以 `/` 结尾。文件夹上传：`bdpan upload ./project/ project/`.
 步骤：确认本地路径存在 → 确认远端路径 → `bdpan ls` 检查远端是否已存在 → 执行.
-**输入**: 用户提供上传所需的指令和必要参数.
-**输出**: 返回上传的处理结果,包含执行状态码、结果数据和执行日志.
+
 ### 下载
 **直接下载：**
 
@@ -178,12 +174,10 @@ rm -f /tmp/bdpan-dl-<PID>.log
 
 ```bash
 bdpan download "https://pan.baidu.com/s/1xxxxx?pwd=abcd" ./downloaded/
-bdpan download "https://pan.baidu.com/s/1xxxxx" ./downloaded/ -p abcd       # 提取码单独传入
-bdpan download "https://pan.baidu.com/s/1xxxxx?pwd=abcd" ./downloaded/ -t my-folder  # 指定转存目录
+baidu.com/s/1xxxxx" ./downloaded/ -p abcd       # 提取码单独传入
+baidu.com/s/1xxxxx?pwd=abcd" ./downloaded/ -t my-folder  # 指定转存目录
 ```
 
-**输入**: 用户提供下载所需的指令和必要参数.
-**输出**: 返回下载的处理结果,包含执行状态码、结果数据和执行日志.
 ### 转存
 将分享文件转存到网盘，**不下载到本地**：
 
@@ -191,9 +185,6 @@ bdpan download "https://pan.baidu.com/s/1xxxxx?pwd=abcd" ./downloaded/ -t my-fol
 bdpan transfer "https://pan.baidu.com/s/1xxxxx" -p <提取码> [-d 目标目录] [--json]
 ```
 
-**输入**: 用户提供转存所需的指令和必要参数.
-**处理**: 解析转存的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回转存的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `转存` 选项
 
@@ -203,8 +194,6 @@ bdpan share <路径> [路径...] [--period <天数>] [--json]
 ```
 
 **--period 参数：** 0=永久, 1, 7, 30（默认：7）。根据用户语义意图选择有效期。永久链接需提示用户注意文件安全。付费接口，需在百度网盘开放平台购买服务.
-**处理**: 解析分享的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回分享的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `分享` 选项
 
@@ -214,9 +203,7 @@ bdpan search <关键词> [--category 0-7] [--no-dir|--dir-only] [--page-size N] 
 ```
 
 category：0=全部 1=视频 2=音频 3=图片 4=文档 5=应用 6=其他 7=种子.
-**输入**: 用户提供搜索所需的指令和必要参数.
-**处理**: 解析搜索的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回搜索的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
+
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `搜索` 选项
 
@@ -228,8 +215,6 @@ bdpan rename <路径> <新名称>       # 第二参数是文件名，非完整�
 bdpan mkdir <路径>
 ```
 
-**处理**: 解析移动 / 复制 / 重命名 / 创建文件夹的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回移动 / 复制 / 重命名 / 创建文件夹的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -291,7 +276,7 @@ bdpan whoami
 # ...
 # 2. 转存分享链接到网盘（写操作，需确认）
 # 向用户展示：将转存 https://pan.baidu.com/s/1abcXYZ 到 /apps/bdpan/downloaded/，确认后执行
-bdpan download "https://pan.baidu.com/s/1abcXYZ?pwd=w9k3" ./downloaded/
+baidu.com/s/1abcXYZ?pwd=w9k3" ./downloaded/
 # ...
 # 3. 转存后获取文件大小
 bdpan ls --json ./downloaded/

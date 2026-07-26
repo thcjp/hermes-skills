@@ -154,7 +154,7 @@ curl -s -X POST "https://api.tokenlayer.network/functions/v1/enter-referral-code
 Image can be URL or base64 data URI:
 
 ```bash
-curl -s -X POST "https://api.tokenlayer.network/functions/v1/create-token-transaction" \
+tokenlayer.network/functions/v1/create-token-transaction" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $TOKENLAYER_API_KEY" \
   -d '{
@@ -177,7 +177,7 @@ With base64 image:
 ### Quote Token (Get Price Before Trading)
 
 ```bash
-curl -s -X POST "https://api.tokenlayer.network/functions/v1/quote-token" \
+tokenlayer.network/functions/v1/quote-token" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $TOKENLAYER_API_KEY" \
   -d '{
@@ -192,7 +192,7 @@ curl -s -X POST "https://api.tokenlayer.network/functions/v1/quote-token" \
 ### Buy Token
 
 ```bash
-curl -s -X POST "https://api.tokenlayer.network/functions/v1/trade-token" \
+tokenlayer.network/functions/v1/trade-token" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $TOKENLAYER_API_KEY" \
   -d '{
@@ -206,7 +206,7 @@ curl -s -X POST "https://api.tokenlayer.network/functions/v1/trade-token" \
 ### Sell Token
 
 ```bash
-curl -s -X POST "https://api.tokenlayer.network/functions/v1/trade-token" \
+tokenlayer.network/functions/v1/trade-token" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $TOKENLAYER_API_KEY" \
   -d '{
@@ -220,7 +220,7 @@ curl -s -X POST "https://api.tokenlayer.network/functions/v1/trade-token" \
 ### Send Transaction
 
 ```bash
-curl -s -X POST "https://api.tokenlayer.network/functions/v1/send-transaction" \
+tokenlayer.network/functions/v1/send-transaction" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $TOKENLAYER_API_KEY" \
   -d '{
@@ -234,7 +234,7 @@ curl -s -X POST "https://api.tokenlayer.network/functions/v1/send-transaction" \
 ### Get Trending Tokens
 
 ```bash
-curl -s -X POST "https://api.tokenlayer.network/functions/v1/get-tokens-v2" \
+tokenlayer.network/functions/v1/get-tokens-v2" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $TOKENLAYER_API_KEY" \
   -d '{
@@ -247,7 +247,7 @@ curl -s -X POST "https://api.tokenlayer.network/functions/v1/get-tokens-v2" \
 ### Filter by Chain
 
 ```bash
-curl -s -X POST "https://api.tokenlayer.network/functions/v1/get-tokens-v2" \
+tokenlayer.network/functions/v1/get-tokens-v2" \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $TOKENLAYER_API_KEY" \
   -d '{

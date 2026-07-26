@@ -376,7 +376,6 @@ public void testConcurrentUpdate() throws InterruptedException {
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {
-                latch.countDown();
             }
         });
     }
@@ -416,7 +415,7 @@ public void testConcurrentUpdateNoTimeout() {
     // 修复后: 此测试应通过
     long startTime = System.currentTimeMillis();
     runConcurrentUpdates(100, 10);
-    long duration = System.currentTimeMillis() - startTime;
+currentTimeMillis() - startTime;
     assertTrue("Should complete within 5s, took: " + duration + "ms", 
         duration < 5000);
 }
@@ -528,7 +527,7 @@ public class CustomCache {
 // 修复后: Caffeine带TTL和大小限制
 public class CustomCache {
     private Cache<String, User> userCache = Caffeine.newBuilder()
-        .expireAfterWrite(1, TimeUnit.HOURS)    // 1小时TTL
+        .HOURS)    // 1小时TTL
         .maximumSize(10_000)                     // 最大1万条
         .recordStats()                           // 记录统计
         .removalListener((key, value, cause) -> 
@@ -707,7 +706,6 @@ func TestDeadlock(t *testing.T) {
 ```go
 // 修复: 按账户ID排序，确保锁顺序一致
 func (s *AccountService) Transfer(from, to int64, amount int) error {
-    fromAccount := s.getAccount(from)
     toAccount := s.getAccount(to)
     
     // 按ID排序，小ID先锁
@@ -737,17 +735,15 @@ func (s *AccountService) Transfer(from, to int64, amount int) error {
 ### 替代方案: TryLock + 超时
 ```go
 func (s *AccountService) Transfer(from, to int64, amount int) error {
-    fromAccount := s.getAccount(from)
     toAccount := s.getAccount(to)
     
     // TryLock带超时，避免永久阻塞
     if !fromAccount.TryLockTimeout(5 * time.Second) {
         return errors.New("acquire from account timeout")
     }
-    defer fromAccount.Unlock()
     
-    if !toAccount.TryLockTimeout(5 * time.Second) {
-        return errors.New("acquire to account timeout")
+    if !toAccount.Second) {
+New("acquire to account timeout")
     }
     defer toAccount.Unlock()
     
@@ -906,7 +902,7 @@ async def log_consumer():
         while not log_queue.empty():
             batch.append(log_queue.get())
         if batch:
-            await ActivityLog.bulk_create(batch)  # 批量写入
+bulk_create(batch)  # 批量写入
         await asyncio.sleep(1)  # 每秒刷新
 
 # 启动消费者

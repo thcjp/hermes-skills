@@ -85,13 +85,13 @@ routes:
 gateway-manager render --config gateway.yaml --target kong --output kong.yaml
 # ...
 # 生成APISIX路由
-gateway-manager render --config gateway.yaml --target apisix --output apisix-routes.yaml
+yaml --target apisix --output apisix-routes.yaml
 # ...
 # 生成Nginx配置
-gateway-manager render --config gateway.yaml --target nginx --output nginx.conf
+yaml --target nginx --output nginx.conf
 # ...
 # 生成Envoy配置
-gateway-manager render --config gateway.yaml --target envoy --output envoy.yaml
+yaml --target envoy --output envoy.yaml
 ```
 
 #
@@ -114,7 +114,6 @@ gateway-manager render --config gateway.yaml --target envoy --output envoy.yaml
 - 多路由按优先级排序（精确 > 前缀 > 通配）
 - 默认超时 connect 5s / send 30s / read 30s
 
-**输入**: 用户提供功能1：声明式路由配置所需的指令和必要参数.
 **处理**: 解析功能1：声明式路由配置的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能1：声明式路由配置的响应数据,包含状态码、结果和日志.
 ### 功能2：统一认证代理
@@ -157,7 +156,6 @@ auth:
 - OAuth2 introspection结果必须缓存，避免每次请求都查auth服务
 - 认证失败统一返回401，不泄露"用户存在与否"
 
-**输入**: 用户提供功能2：统一认证代理所需的指令和必要参数.
 **处理**: 解析功能2：统一认证代理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能2：统一认证代理的响应数据,包含状态码、结果和日志.
 ### 已知限制
@@ -186,7 +184,6 @@ rate_limit:
 - `jwt:sub`：按用户限流
 - `header:X-Tenant-Id`：多租户按租户限流
 
-**输入**: 用户提供已知限制所需的指令和必要参数.
 **处理**: 解析已知限制的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回已知限制的响应数据,包含状态码、结果和日志.
 ### 功能4：监控指标采集
@@ -226,7 +223,6 @@ Top Routes by QPS:
 3. /api/v1/products   280 QPS  P95:90ms
 ```
 
-**输入**: 用户提供功能4：监控指标采集所需的指令和必要参数.
 **处理**: 解析功能4：监控指标采集的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能4：监控指标采集的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -252,7 +248,6 @@ Top Routes by QPS:
 - 大型/微服务：Envoy（Service Mesh原生支持）
 - 已有K8s：APISIX或Kong Ingress
 
-**输入**: 用户提供功能5：网关选型决策矩阵所需的指令和必要参数.
 **处理**: 解析功能5：网关选型决策矩阵的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能5：网关选型决策矩阵的响应数据,包含状态码、结果和日志.
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
@@ -371,7 +366,6 @@ Top Routes by QPS:
 > 详细的输入输出格式请参考下方章节说明。
 对Agent说：
 # ...
-> "帮我配置一个网关路由：把 /api/v1/users/* 转发到用户服务 http://user-service:8001，需要JWT认证，限流100QPS。"
 # ...
 Agent输出声明式YAML：
 # ...

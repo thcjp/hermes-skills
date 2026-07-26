@@ -92,36 +92,30 @@ export API_KEY="your_api_key_here"
 通过 `POST /agent/shop` 发送自然语言购物请求。请求体包含 `message`（自然语言查询）和可选 `context`（含 `priceRange`、`preferences` 等）。返回AI回复文本和匹配的 `products` 数组（含 `id`、`title`、`price`、`inStock`、`badge` 等字段）。适用于对话式商品搜索和推荐场景.
 ### 3. 分类树查询
 通过 `GET /categories` 获取商品分类树。返回包含分类slug、名称和商品数量的层级结构。适用于商品分类浏览和导航场景.
-**输入**: 用户提供分类树查询所需的指令和必要参数.
-**处理**: 解析分类树查询的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证返回数据的完整性和格式正确性
+
 - 参考`分类树查询`的配置文档进行参数调优
 ### 4. 精选商品
 通过 `GET /products/featured` 获取精选商品列表。返回带 `trending`、`new`、`bestseller` 等标签的精选商品。适用于礼品推荐和热门商品展示场景.
-**输入**: 用户提供精选商品所需的指令和必要参数.
-**处理**: 解析精选商品的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 ### 5. 语义搜索
 
 通过 `GET /products/search?q=<query>` 进行自然语言语义搜索。支持参数：`q`（查询词）、`category`（分类slug）、`priceMin`/`priceMax`（价格范围）、`sort`（newest/popular/rating/price_asc/price_desc）、`limit`（默认20，最大100）、`offset`（分页偏移）。仅返回有库存商品。适用于精准商品查找场景.
 ### 6. 商品详情
 通过 `GET /products/{slug}` 获取商品完整信息。返回 `id`（用于结账）、`variants[]`（含 `id`、`name`、`inStock`、`stockQuantity`、`price`）、`images[]`、`relatedProducts[]` 和 `description`。若商品有变体，需选择 `inStock` 的变体并在结账时包含 `variantId`。适用于结账前的商品信息确认.
-**输入**: 用户提供商品详情所需的指令和必要参数.
-**处理**: 解析商品详情的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 ### 7. 支付方式查询
 通过 `GET /payment-methods` 获取所有支持的支付方式。返回 `data`（已启用支付方式设置）和 `chains`（区块链网络和代币列表）。支持Solana（SOL/USDC/USDT/CULT）、Ethereum（ETH/USDC/USDT）、Base（ETH/USDC）、Polygon（MATIC/USDC）、Arbitrum、Bitcoin、Dogecoin、Monero等。结账前必须验证支付方式是否支持.
-**输入**: 用户提供支付方式查询所需的指令和必要参数.
-**处理**: 解析支付方式查询的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 ### 8. 标准结账
 通过 `POST /checkout` 创建订单。请求体包含 `items`（含 `productId`、`quantity`、可选 `variantId`）、`email`、`payment`（含 `chain` 和 `token`）和 `shipping`（含 `name`、`address1`、`city`、`stateCode`、`postalCode`、`countryCode`）。返回 `orderId`、`payment.address`（付款地址）、`payment.amount`（精确金额）、`payment.qrCode`（二维码）和 `expiresAt`（约15分钟有效期）。仅在用户明确确认后告知付款信息.
-**处理**: 解析标准结账的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 9. x402结账
 
 通过 `POST /checkout/x402` 创建x402协议订单。API返回HTTP 402状态码和付费要求，运行时（或用户）构建并签名USDC转账（含memo `Store Order: {orderId}`），通过 `X-PAYMENT` 头部重试请求。成功后返回201和订单确认。skill不访问私钥，签名由运行时负责。适用于自动化代理支付场景.
 ### 10. 订单状态跟踪
 通过 `GET /orders/{orderId}/status` 跟踪订单状态。返回 `status`（awaiting_payment/paid/processing/shipped/delivered/expired/cancelled）和时间戳。轮询间隔：`awaiting_payment` 每5秒、`paid`/`processing` 每60秒、`shipped` 每小时。`shipped` 状态包含 `tracking` 对象（carrier、number、URL）。适用于订单物流跟踪.
-**输入**: 用户提供订单状态跟踪所需的指令和必要参数.
+
 ### 11. 订单详情
 通过 `GET /orders/{orderId}` 获取完整订单详情。返回商品列表、配送信息、支付信息（含 `txHash`）、订单总额和跟踪信息。始终向用户传达响应中的 `_actions.next` 指引下一步操作。适用于订单信息查询和问题排查.
-**处理**: 解析订单详情的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 12. 代理身份
 通过 `GET /agent/me`、`GET /agent/me/orders`、`GET /agent/me/preferences` 获取代理身份信息。需在请求头中携带 `X-Moltbook-Identity` 令牌（由代理运行时提供）。仅在运行时明确提供令牌时使用，正常浏览和结账流程禁止发送身份令牌。适用于代理个性化场景.
 #
@@ -158,7 +152,7 @@ curl -X POST "https://lifestyle-store.example.com/api/agent/shop" \
 # {"reply": "Found great options...", "products": [{"id": "prod_sony_wh1000xm4", "title": "Sony WH-1000XM4", "price": 198.00, "inStock": true, "badge": "bestseller"}]}
 # ...
 # 创建订单
-curl -X POST "https://lifestyle-store.example.com/api/checkout" \
+example.com/api/checkout" \
   -H "Content-Type: application/json" \
   -d '{
     "items": [{"productId": "prod_sony_wh1000xm4", "quantity": 1}],
@@ -179,7 +173,7 @@ curl "https://lifestyle-store.example.com/api/orders/order_j4rv15_001/status"
 # {"status": "shipped", "tracking": {"carrier": "USPS", "number": "9405511899223456", "url": "https://tools.usps.com/..."}, "_actions": {"next": "Your order shipped! Track it here."}}
 # ...
 # 获取完整订单详情
-curl "https://lifestyle-store.example.com/api/orders/order_j4rv15_001"
+example.com/api/orders/order_j4rv15_001"
 ```
 
 ## 错误处理
@@ -204,7 +198,7 @@ curl "https://lifestyle-store.example.com/api/orders/order_j4rv15_001"
 支付窗口约15分钟。从 `POST /checkout` 创建订单开始计时，`expiresAt` 字段记录截止时间。超时后订单状态变为 `expired`，需创建新订单重新结账。建议使用稳定币（USDC/USDT）避免浏览和支付间的价格波动.
 ### Q3: 如何跟踪订单状态？
 
-调用 `GET /orders/{orderId}/status` 查询状态。轮询间隔：`awaiting_payment` 每5秒、`paid`/`processing` 每60秒、`shipped` 每小时。`shipped` 状态包含 `tracking` 对象（carrier、number、URL）。`delivered`/`expired`/`cancelled` 状态停止轮询。始终传达 `_actions.next` 指引用户.
+调用 `GET /orders/{orderId}/status` 查询状态。`delivered`/`expired`/`cancelled` 状态停止轮询。始终传达 `_actions.next` 指引用户.
 ### Q4: CULT token折扣如何使用？
 
 CULT token持有者享5-20%折扣加免运费。结账时可选提供 `wallet`/`walletAddress`，通过关联钱包或签名验证消息（`GET /api/checkout/wallet-verify-message`）验证链上质押等级。三个等级（BASE/PRIME/APEX）对应不同折扣。注意：分享钱包地址会将链上活动与订单关联.

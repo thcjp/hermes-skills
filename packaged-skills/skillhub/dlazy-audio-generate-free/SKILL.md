@@ -170,7 +170,7 @@ A: 登录 dlazy.com,在 `dashboard/organization/api-key` 创建 Key。终端运�
 ### Q3: 支持哪些语言?
 A: `doubao-tts` 与 `keling-tts` 均支持中英文。`doubao-tts` 在中文长文本上自然度较高,`keling-tts` 支持中英混排与语速控制。其他语言支持情况以 dlazy 官方文档为准.
 ### Q4: 余额不足怎么办?
-A: CLI 返回 `code: "insufficient_balance"` 时,明确告知用户余额不足,引导访问 `dlazy.com/dashboard/organization/settings?tab=credits` 充值。充值后可直接重试生成请求.
+A: CLI 返回 `code: "insufficient_balance"` 时,明确告知用户余额不足,引导访问 `dlazy.tab=credits` 充值。充值后可直接重试生成请求.
 ## 已知限制
 
 1. **基础模型**: 仅支持 `doubao-tts` 与 `keling-tts`,不支持音乐/音效/克隆/对话(需升级付费版)
@@ -185,8 +185,6 @@ A: CLI 返回 `code: "insufficient_balance"` 时,明确告知用户余额不足,
 1. 确认运行环境满足依赖说明中的要求
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
-
-> 详细的输入输出格式请参考下方章节说明。
 
 > **想要音乐生成、音效、语音克隆、多角色对话?** 升级到 dlazy-audio-generate 付费版解锁 15+ 高级音频模型.
 ## 输出格式

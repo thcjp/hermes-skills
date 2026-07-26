@@ -84,7 +84,6 @@ prompt_manager = {
 }
 ```
 
-**输入**: 用户提供批量提示词管理所需的指令和必要参数.
 **处理**: 解析批量提示词管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量提示词管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -129,7 +128,6 @@ auto_selection_rules:
     model: "artistic"
 ```
 
-**输入**: 用户提供多模型策略所需的指令和必要参数.
 **处理**: 解析多模型策略的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多模型策略的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -170,7 +168,6 @@ vectorization_pipeline = {
 python3 vectorize_pipeline.py --config vectorization_pipeline
 ```
 
-**输入**: 用户提供自动矢量化工作流所需的指令和必要参数.
 **处理**: 解析自动矢量化工作流的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自动矢量化工作流的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -223,7 +220,6 @@ design_audit = {
 }
 ```
 
-**输入**: 用户提供设计质量审计所需的指令和必要参数.
 **处理**: 解析设计质量审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回设计质量审计的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -255,7 +251,6 @@ team_standards:
     metadata: ["version", "designer", "model_used", "prompt_id"]
 ```
 
-**输入**: 用户提供团队设计规范所需的指令和必要参数.
 **处理**: 解析团队设计规范的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回团队设计规范的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、设计系统指南、支持批量提示词管、设计审计与多模型、适合团队与商业项、设计指南专业版为、企业与设计团队提、供系统化的、设计方法论、在免费版设计原则、增加批量提示词管、自动矢量化流程、设计质量审计与团、when、、品牌视觉时使用、不适用于、建模和动画制作、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -331,7 +326,6 @@ python3 generate_proposal.py \
 ## 快速开始
 ### Step 1:初始化设计项目
 ```bash
-python3 init_project.py \
   --name "LogoDesignProject" \
   --team "design_team" \
   --standards team-design-standards.yml \
@@ -340,7 +334,6 @@ python3 init_project.py \
 
 ### Step 2:配置批量生成
 ```bash
-python3 batch_generate.py \
   --config prompts.yml \
   --auto-select-model \
   --parallel 4 \
@@ -357,7 +350,6 @@ python3 vectorize_batch.py \
   --optimize
 # .
 # 设计审计
-python3 audit_design.py \
   --input ./vectorized/ \
   --checks all \
   --report ./audit/
@@ -405,19 +397,14 @@ jobs:
       - uses: actions/checkout@v3
       - name: Generate Logos
         run: |
-          python3 batch_generate.py \
             --config design-config.yml \
             --auto-select-model \
             --output ./logos/
       - name: Vectorize
         run: |
-          python3 vectorize_batch.py \
             --input ./logos/ \
-            --output ./vectorized/
       - name: Audit
         run: |
-          python3 audit_design.py \
-            --input ./vectorized/ \
             --report ./audit/
       - name: Upload Assets
         uses: actions/upload-artifact@v3

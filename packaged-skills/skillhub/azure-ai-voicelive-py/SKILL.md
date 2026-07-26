@@ -199,7 +199,7 @@ async def main():
         endpoint=os.environ["AZURE_COGNITIVE_SERVICES_ENDPOINT"],
         credential=DefaultAzureCredential(),
         model="gpt-4o-realtime-preview",
-        credential_scopes=["https://cognitiveservices.azure.com/.default"]
+azure.com/.default"]
     ) as conn:
         await conn.session.update(session={
             "instructions": "You are a helpful assistant.",
@@ -213,15 +213,14 @@ async def main():
             elif event.type == "response.audio.delta":
                 audio_bytes = base64.b64decode(event.delta)
                 # 将audio_bytes送入扬声器播放
-            elif event.type == "response.function_call_arguments.done":
+type == "response.function_call_arguments.done":
                 result = handle_function(event.name, event.arguments)
                 await conn.conversation.item.create(item={
                     "type": "function_call_output",
                     "call_id": event.call_id,
                     "output": json.dumps(result)
                 })
-                await conn.response.create()
-            elif event.type == "response.done":
+type == "response.done":
                 break
 # ...
 asyncio.run(main())
@@ -251,7 +250,7 @@ async for event in conn:
     if event.type == "input_audio_buffer.speech_started":
         await conn.response.cancel()
         await conn.output_audio_buffer.clear()
-    elif event.type == "input_audio_buffer.speech_stopped":
+    elif event.speech_stopped":
         print(f"Speech stopped at {event.audio_end_ms}ms")
 ```
 
@@ -260,9 +259,9 @@ async for event in conn:
 `async for event in conn` 可迭代以下事件:
 - 会话事件: `session.created`、`session.updated`
 - 音频输入: `input_audio_buffer.speech_started`、`input_audio_buffer.speech_stopped`
-- 转写: `conversation.item.input_audio_transcription.delta`、`conversation.item.input_audio_transcription.completed`
+- 转写: `conversation.item.delta`、`conversation.item.completed`
 - 响应: `response.created`、`response.audio.delta`、`response.audio_transcript.delta`、`response.audio_transcript.done`、`response.done`
-- 函数调用: `response.function_call_arguments.done`
+- 函数调用: `response.done`
 - 错误: `error` (包含 `event.error.code` 与 `event.error.message`)
 
 ## 异常处理
@@ -284,7 +283,7 @@ async for event in conn:
 原因: `server_vad.threshold` 过高/过低,`silence_duration_ms` 太短.
 处理: 嘈杂环境调高 `threshold` 至 0.6-0.7;温和场景降至 0.3-0.4;`silence_duration_ms` 默认500ms,中文对话可调至700ms.
 ### 函数调用回填丢失
-现象: 模型不再继续响应,事件流停滞在 `response.function_call_arguments.done`.
+现象: 模型不再继续响应,事件流停滞在 `response.done`.
 原因: 未调用 `conn.conversation.item.create` 注入 `function_call_output`,或 `call_id` 不匹配.
 处理: 始终用事件提供的 `event.call_id` 作为回填 `call_id`;回填后必须显式 `await conn.response.create()` 触发下一轮响应.
 ### 音色不可用

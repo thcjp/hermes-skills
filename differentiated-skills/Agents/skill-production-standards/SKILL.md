@@ -436,7 +436,7 @@ A: 通过`exclude_dirs = ['skill-production-standards']`排除，因为规范需
 | check_debranding | Python脚本 | 必需 | `d:\skills\skill-registry\check_debranding.py` |
 
 ### API Key 配置
-- **SkillHub Token**: 存储于`d:\skills\.skillhub-credentials\api-key.txt`（已gitignore）
+- **SkillHub Token**: 存储于`d:\skills\.txt`（已gitignore）
 - **ClawHub Token**: 存储于`d:\skills\.clawhub-credentials\token.txt`（已gitignore）
 - **禁止**：在SKILL.md或脚本中硬编码Token
 
@@ -450,7 +450,6 @@ A: 通过`exclude_dirs = ['skill-production-standards']`排除，因为规范需
 ### ✅ [高级功能1]
 ✅ [高级功能1]：[价值描述]
 
-**输入**: 用户提供✅ [高级功能1]所需的指令和必要参数.
 **处理**: 解析✅ [高级功能1]的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回✅ [高级功能1]的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -458,7 +457,6 @@ A: 通过`exclude_dirs = ['skill-production-standards']`排除，因为规范需
 ### ✅ [高级功能2]
 ✅ [高级功能2]：[价值描述]
 
-**输入**: 用户提供✅ [高级功能2]所需的指令和必要参数.
 **处理**: 解析✅ [高级功能2]的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回✅ [高级功能2]的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -466,7 +464,6 @@ A: 通过`exclude_dirs = ['skill-production-standards']`排除，因为规范需
 ### ✅ [高级功能3]
 ✅ [高级功能3]：[价值描述]
 
-**输入**: 用户提供✅ [高级功能3]所需的指令和必要参数.
 **处理**: 解析✅ [高级功能3]的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回✅ [高级功能3]的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作

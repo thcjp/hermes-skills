@@ -641,7 +641,8 @@ agent focus-flow sync --source slack --pull-todos
 
 ### 从其他生产力工具迁移
 
-#### 从Notion迁移
+#
+### 从Notion迁移
 
 ```bash
 # 导出Notion数据库为Markdown
@@ -657,7 +658,8 @@ agent focus-flow migrate --from notion --path ~/Downloads/notion-export/
 # - "Habits" database → focus/sessions.md（习惯追踪）
 ```
 
-#### 从Todoist迁移
+#
+### 从Todoist迁移
 
 ```bash
 # 导出Todoist为CSV
@@ -672,7 +674,8 @@ agent focus-flow migrate --from todoist --path ~/Downloads/todoist.csv
 # - Priority 4 → someday候选
 ```
 
-#### 从滴答清单迁移
+#
+### 从滴答清单迁移
 
 ```bash
 # 导出滴答清单为CSV
@@ -895,8 +898,6 @@ ADHD场景采用更细的任务颗粒度（15-30分钟，而非1-2小时）、5�
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

@@ -194,7 +194,6 @@ def call_api(endpoint, method='GET', data=None, headers=None):
 import requests
 # ...
 def get_oauth_token(client_id, client_secret):
-    response = requests.post(
         'https://api.example.com/oauth/token',
         data={
             'grant_type': 'client_credentials',
@@ -231,7 +230,6 @@ def safe_api_call(endpoint):
 import requests
 # ...
 def graphql_query(endpoint, query, token):
-    response = requests.post(
         endpoint,
         json={'query': query},
         headers={'Authorization': f'Bearer {token}'}

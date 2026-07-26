@@ -138,7 +138,7 @@ class ReminderSystem:
 # ...
     def add_reminder(self, name, remind_type, config, message):
         """添加提醒"""
-        reminders = json.loads(self.file.read_text(encoding="utf-8"))
+loads(self.file.read_text(encoding="utf-8"))
         reminder = {
             "id": f"rem_{len(reminders)+1:04d}",
             "name": name,
@@ -161,14 +161,13 @@ class ReminderSystem:
 # ...
     def check_and_execute(self):
         """检查并执行到期提醒"""
-        reminders = json.loads(self.file.read_text(encoding="utf-8"))
+loads(self.file.read_text(encoding="utf-8"))
         now = datetime.now()
         executed = []
 # ...
         for r in reminders:
-            if r["status"] != "active":
                 continue
-            next_run = datetime.fromisoformat(r["next_run"])
+fromisoformat(r["next_run"])
             if next_run <= now:
                 # 执行提醒
                 print(f"\n⏰ [{r['name']}] {r['message']}")
@@ -186,7 +185,7 @@ class ReminderSystem:
 # ...
     def confirm_execution(self, reminder_id):
         """确认执行结果"""
-        reminders = json.loads(self.file.read_text(encoding="utf-8"))
+loads(self.file.read_text(encoding="utf-8"))
         for r in reminders:
             if r["id"] == reminder_id:
                 r["confirmed"] = True
@@ -198,7 +197,6 @@ class ReminderSystem:
 # ...
     def _calc_next(self, remind_type, config):
         """计算下次提醒时间"""
-        now = datetime.now()
         if remind_type == "once":
             return datetime.fromisoformat(config["datetime"])
         elif remind_type == "daily":
@@ -210,14 +208,12 @@ class ReminderSystem:
             return next_run.isoformat()
         elif remind_type == "weekly":
             target_day = config.get("weekday", 0)
-            time_str = config.get("time", "09:00")
-            h, m = map(int, time_str.split(":"))
+get("time", "09:00")
             days_ahead = (target_day - now.weekday()) % 7
-            next_run = now.replace(hour=h, minute=m, second=0, microsecond=0)
+replace(hour=h, minute=m, second=0, microsecond=0)
             if days_ahead == 0 and next_run <= now:
                 days_ahead = 7
             next_run += timedelta(days=days_ahead)
-            return next_run.isoformat()
         return now.isoformat()
 # ...
 # 示例
@@ -252,7 +248,7 @@ class SmartReminderSystem(ReminderSystem):
 # ...
     def add_escalating_reminder(self, name, start_time, intervals, message):
         """递增提醒：间隔逐渐缩短"""
-        reminders = json.loads(self.file.read_text(encoding="utf-8"))
+loads(self.file.read_text(encoding="utf-8"))
         reminder = {
             "id": f"rem_{len(reminders)+1:04d}",
             "name": name,
@@ -264,8 +260,6 @@ class SmartReminderSystem(ReminderSystem):
             },
             "message": message,
             "status": "active",
-            "timezone": self.TIMEZONE,
-            "created_at": datetime.now().isoformat(),
             "next_run": start_time,
             "last_run": None,
             "confirm_required": True
@@ -278,16 +272,14 @@ class SmartReminderSystem(ReminderSystem):
 # ...
     def check_escalating(self):
         """检查递增提醒"""
-        reminders = json.loads(self.file.read_text(encoding="utf-8"))
-        now = datetime.now()
+loads(self.file.read_text(encoding="utf-8"))
 # ...
         for r in reminders:
             if r["type"] != "escalating" or r["status"] != "active":
                 continue
-            next_run = datetime.fromisoformat(r["next_run"])
+fromisoformat(r["next_run"])
             if next_run <= now:
                 print(f"\n⏰ [{r['name']}] {r['message']}")
-                r["last_run"] = now.isoformat()
 # ...
                 # 计算下次间隔
                 config = r["config"]
@@ -328,7 +320,6 @@ Agent在每次会话开始时执行的自唤醒检查流程：
 | 4 | 更新状态 | 记录 last_run，计算新 next_run |
 | 5 | 确认执行 | 用户确认后标记 confirmed |
 
-**输入**: 用户提供自唤醒规则所需的指令和必要参数.
 **处理**: 解析自唤醒规则的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自唤醒规则的响应数据,包含状态码、结果和日志.
 ### 时区锁定策略
@@ -340,7 +331,6 @@ Agent在每次会话开始时执行的自唤醒检查流程：
 | 显示格式 | 本地时间 + UTC偏移 |
 | DST规避 | 不依赖DST自动切换，固定偏移 |
 
-**输入**: 用户提供时区锁定策略所需的指令和必要参数.
 **处理**: 解析时区锁定策略的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回时区锁定策略的响应数据,包含状态码、结果和日志.
 ### 提醒模式
@@ -352,7 +342,6 @@ Agent在每次会话开始时执行的自唤醒检查流程：
 | 每周(weekly) | weekday+time | 周期性周提醒 |
 | 递增(escalating) | intervals列表 | 紧急程度递增 |
 
-**输入**: 用户提供提醒模式所需的指令和必要参数.
 **处理**: 解析提醒模式的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回提醒模式的响应数据,包含状态码、结果和日志.
 ### 陷阱规避清单
@@ -368,7 +357,6 @@ Agent在每次会话开始时执行的自唤醒检查流程：
 
 ---
 
-**输入**: 用户提供陷阱规避清单所需的指令和必要参数.
 **处理**: 解析陷阱规避清单的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回陷阱规避清单的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：cron、定时系统优选实践、指南免费版、含自唤醒规则、基础提醒模式、常见陷阱规避、优选实践专家免费、版是面向、的定时系统使用优、选实践指南、不同于表达式编写、本技能聚焦、如何正确使用定时、的方法论与经验法、建立可靠的定时行、为模式、Use、when、模型调用、智能对话、LLM、应用时使用、不适用于需要、确定性的关键决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -510,8 +498,6 @@ rs.add_reminder("周报提醒", "weekly",
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

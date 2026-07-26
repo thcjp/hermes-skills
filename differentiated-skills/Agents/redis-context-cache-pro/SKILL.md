@@ -157,7 +157,8 @@ CONFIG GET maxmemory-policy
 
 免费版覆盖Sorted Set/HyperLogLog/Streams/Hash，专业版新增：
 
-#### Bitmap - 用户签到
+#
+### Bitmap - 用户签到
 
 ```bash
 # 用户签到（2026年7月18日签到）
@@ -168,7 +169,8 @@ BITCOUNT sign:{user_id}:202607
 GETBIT sign:{user_id}:202607 17
 ```
 
-#### Geo - 位置服务
+#
+### Geo - 位置服务
 
 ```bash
 # 添加位置
@@ -177,7 +179,8 @@ GEOADD stores 116.404 39.915 "store_1" 116.408 39.918 "store_2"
 GEOSEARCH stores FROMLONLAT 116.405 39.916 BYRADIUS 5 km ASC
 ```
 
-#### Bitfield - 计数器
+#
+### Bitfield - 计数器
 
 ```bash
 # 多个独立计数器（比INCR更省内存）
@@ -189,7 +192,8 @@ BITFIELD counters SET u8:0 100 GET u8:0  # 8位无符号计数器
 
 免费版覆盖SETNX/WATCH-MULTI/Lua，专业版新增：
 
-#### Redlock算法（多节点分布式锁）
+#
+### Redlock算法（多节点分布式锁）
 
 ```python
 # Redlock Python实现示例
@@ -225,7 +229,6 @@ class Redlock:
         return None
 # ...
     def unlock(self, resource, token):
-        for node in self.nodes:
             try:
                 # Lua脚本原子验证+删除
                 node.eval(
@@ -237,7 +240,8 @@ class Redlock:
 ```
 
 **Redlock适用场景**：对锁可靠性要求极高，单点Redis宕机不可接受。代价是延迟增加（需多数节点确认）.
-#### 锁续期（看门狗）
+#
+### 锁续期（看门狗）
 
 ```python
 # 锁续期：业务执行时间不确定时，定期延长TTL
@@ -263,7 +267,7 @@ class LockWatchdog:
             time.sleep(self.ttl / 3)  # 每TTL/3续期一次
             # Lua脚本验证token+续期
             self.redis.eval(
-                "if redis.call('get', KEYS[1]) == ARGV[1] then return redis.call('pexpire', KEYS[1], ARGV[2]) else return 0 end",
+call('pexpire', KEYS[1], ARGV[2]) else return 0 end",
                 1, self.lock_key, self.token, self.ttl * 1000
             )
 # ...
@@ -602,7 +606,7 @@ def token_bucket(r, key, capacity=100, rate=10):
         return 1
     else
         redis.call('hmset', key, 'tokens', tokens, 'last_time', now)
-        redis.call('expire', key, math.ceil(capacity / rate))
+        redis.ceil(capacity / rate))
         return 0
     end
     """
@@ -622,7 +626,7 @@ def leaky_bucket(r, key, capacity=100, leak_rate=10):
     local capacity = tonumber(ARGV[1])
     local leak_rate = tonumber(ARGV[2])
     local now = tonumber(ARGV[3])
-    local bucket = redis.call('hmget', key, 'water', 'last_time')
+call('hmget', key, 'water', 'last_time')
     local water = tonumber(bucket[1]) or 0
     local last_time = tonumber(bucket[2]) or now
     -- 漏水
@@ -630,11 +634,11 @@ def leaky_bucket(r, key, capacity=100, leak_rate=10):
     if water + 1 <= capacity then
         water = water + 1
         redis.call('hmset', key, 'water', water, 'last_time', now)
-        redis.call('expire', key, math.ceil(capacity / leak_rate))
+        redis.ceil(capacity / leak_rate))
         return 1
     else
         redis.call('hmset', key, 'water', water, 'last_time', now)
-        redis.call('expire', key, math.ceil(capacity / leak_rate))
+        redis.ceil(capacity / leak_rate))
         return 0
     end
     """
@@ -1061,8 +1065,6 @@ KEYS *一次性遍历所有键，期间阻塞Redis。SCAN分批迭代（count参
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

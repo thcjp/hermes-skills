@@ -77,8 +77,6 @@ export API_KEY="your_api_key_here"
 - **auth** `<type>` — 认证代码生成（`jwt`/`oauth`/`apikey`）
 - **rate-limit** `<type>` — 速率限制器生成（`token-bucket`/`sliding-window`）
 
-**输入**: 用户提供付费版专享功能所需的指令和必要参数.
-**处理**: 解析付费版专享功能的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### rest
 
 针对rest,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
@@ -215,7 +213,5 @@ A: 不能。`rate-limit` 命令为付费版专享。升级付费版可生成 `to
 1. 确认运行环境满足依赖说明中的要求
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
-
-> 详细的输入输出格式请参考下方章节说明。
 
 > **升级付费版** 解锁: swagger（OpenAPI 文档）、client（Python 客户端）、mock（Mock 服务器）、auth（认证代码）、rate-limit（速率限制器）等完整生成能力.

@@ -84,30 +84,23 @@ export API_KEY="your_api_key_here"
 - `update_issue` 更新史诗状态与字段
 - 史诗作为大粒度工作容器,拆分为多个故事追踪
 
-**输入**: 用户提供史诗管理所需的指令和必要参数.
-**处理**: 解析史诗管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 2. 故事管理
 - `create_issue` 创建故事:type=Story,含 summary、description、priority、assignee
 - 故事字段:Story Points(1/2/3/5/8/13)、Sprint、Epic Link
 - `get_issue` 读取故事详情,含评论、附件、子任务
 - 故事可拆分为子任务,子任务完成度反映故事进度
 
-**输入**: 用户提供故事管理所需的指令和必要参数.
-**处理**: 解析故事管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 3. 缺陷管理
 - `create_issue` 创建缺陷:type=Bug,含 priority、environment、steps to reproduce
 - 缺陷优先级:Highest、High、Medium、Low、Lowest
 - `link_issues` 关联缺陷到故事或史诗:link type=Blocks/Is Blocked By
 - 缺陷字段:Affected Version、Fix Version、Resolution
 
-**输入**: 用户提供缺陷管理所需的指令和必要参数.
-**处理**: 解析缺陷管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 4. 子任务管理
 - `create_issue` 创建子任务:type=Subtask,parent=父故事key
 - 子任务继承父任务的字段默认值
 - 子任务状态转换独立于父任务,但父任务状态由子任务聚合
 
-**输入**: 用户提供子任务管理所需的指令和必要参数.
 ### 5. 冲刺管理
 - `create_sprint` 创建冲刺:name、startDate、endDate、goal
 - 标准冲刺周期30天,可配置为14天或7天
@@ -115,16 +108,11 @@ export API_KEY="your_api_key_here"
 - `get_sprint_issues` 获取冲刺内所有工作项,`maxResults: 50` 默认返回前50条
 - 冲刺状态:Future、Active、Closed,关闭后无法添加工作项
 
-**输入**: 用户提供冲刺管理所需的指令和必要参数.
-**处理**: 解析冲刺管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 6. 看板管理
 - `get_board_issues` 获取看板工作项,按状态列分组
 - 看板列映射工作流状态:To Do、In Progress、In Review、Done
 - `move_issue_in_board` 调整工作项在看板中的顺序
 
-**输入**: 用户提供看板管理所需的指令和必要参数.
-**处理**: 解析看板管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回看板管理的处理结果,包含执行状态码、结果数据和执行日志.
 ### 7. JQL高级搜索
 - `search_issues` 使用 JQL 查询:`jql="project = PROJ AND status = Open ORDER BY priority DESC"`
 - 常用 JQL 操作符:`=、!=、>、<、IN、NOT IN、AND、OR`
@@ -136,23 +124,17 @@ export API_KEY="your_api_key_here"
 - 关联方向有向:Blocks 表示 A 阻塞 B,Is Blocked By 表示 A 被 B 阻塞
 - 关联用于依赖管理、缺陷溯源、史诗聚合
 
-**输入**: 用户提供工作项关联所需的指令和必要参数.
-**处理**: 解析工作项关联的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回工作项关联的处理结果,包含执行状态码、结果数据和执行日志.
 ### 9. 状态转换
 - `transition_issue` 转换工作项状态:issue_key + transition_id
 - 工作流状态:Open → In Progress → In Review → Done
 - 转换需符合工作流定义,非法转换被拒绝
 - 转换可触发事件:自动指派、发送通知、更新字段
 
-**输出**: 返回状态转换的处理结果,包含执行状态码、结果数据和执行日志.
 ### 10. 用户与项目管理
 - `get_user` 查询用户信息:username、displayName、email
 - `get_project` 查询项目信息:key、name、lead、issue types
 - `get_all_projects` 列出所有可访问项目
 
-**处理**: 解析用户与项目管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回用户与项目管理的处理结果,包含执行状态码、结果数据和执行日志.
 ### 输出格式
 
 完成响应以Markdown格式返回,包含任务状态(成功/失败)、解析摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。- 验证返回数据的完整性和格式正确性

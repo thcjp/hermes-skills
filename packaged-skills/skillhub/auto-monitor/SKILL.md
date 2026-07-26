@@ -1,9 +1,8 @@
----
-slug: "auto-monitor"
+---slug: "auto-monitor"
 name: "auto-monitor"
 version: 1.0.1
 displayName: "监控器"
-summary: "主动监控系统状态。定期检查服务器健康，主动汇报，无需等待指令。。主动监控系统状态。定期检查服务器健康，主动汇报，无需等待指令。Use when 需要系统监控、日志分析、运维告警、部署管理时使"
+summary: "主动监控系统状态。定期"
 summary_zh: "主动监控系统状态。定期检查服务器健康，主动汇报，无需等待指令。。主动监控系统状态。定期检查服务器健康，主动汇报，无需等待指令。Use when 需要系统监控、日志分析、运维告警、部署管理时使"
 license: "MIT"
 description: |-
@@ -20,9 +19,7 @@ tools:
   - read
   - exec
 homepage: ""
-category: "Operations"
----
-# Auto Monitor
+category: "Operations"---# Auto Monitor
 
 ## 付费版专享能力
 

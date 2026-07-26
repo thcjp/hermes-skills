@@ -67,21 +67,21 @@ DNS 配置工具专业版是一款面向企业运维与基础设施团队的 DNS
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -163,7 +163,6 @@ for domain in $(cat domains.txt); do
 done
 # ...
 # 2. 导出所有域名当前记录
-for domain in $(cat domains.txt); do
   dig +nocmd +noall +answer $domain ANY > "records-$domain.txt"
   dig +nocmd +noall +answer _dmarc.$domain TXT >> "records-$domain.txt"
 done
@@ -171,13 +170,11 @@ done
 # 3. 在新服务商预配置所有记录(不切换 NS)
 # ...
 # 4. 迁移当日:切换 NS 记录
-for domain in $(cat domains.txt); do
   # 在域名注册商处更新 NS 为新服务商
   echo "切换 $domain 的 NS 记录..."
 done
 # ...
 # 5. 多解析器验证
-for domain in $(cat domains.txt); do
   echo "验证 $domain:"
   dig @8.8.8.8 $domain +short
   dig @1.1.1.1 $domain +short
@@ -238,16 +235,12 @@ done
 
 ```bash
 # 仅允许 Let's Encrypt 签发常规证书
-example.com. CAA 0 issue "letsencrypt.org"
 # ...
 # 通配符证书单独授权
-example.com. CAA 0 issuewild "letsencrypt.org"
 # ...
 # 异常签发事件通知
-example.com. CAA 0 iodef "mailto:security@example.com"
 # ...
 # 多 CA 授权(如同时用 Let's Encrypt 和 ZeroSSL)
-example.com. CAA 0 issue "letsencrypt.org"
 example.com. CAA 0 issue "sectigo.com"
 # ...
 # 完全禁止签发(紧急锁定)
@@ -423,8 +416,6 @@ Pro 版提供迁移检查清单和脚本模板。批量操作可编写脚本循�
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

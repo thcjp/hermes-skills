@@ -94,7 +94,6 @@ category: "Development"
 </html>
 ```
 
-**输入**: 用户提供WebGL地图渲染所需的指令和必要参数.
 **处理**: 解析WebGL地图渲染的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回WebGL地图渲染的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -117,7 +116,6 @@ function addMarker(map, position, title) {
 function addInfoWindow(map, position, content) {
     const infoWindow = new AMap.InfoWindow({
         content: content,
-        offset: new AMap.Pixel(0, -30)
     });
     infoWindow.open(map, position);
 }
@@ -136,7 +134,6 @@ const locations = [
 locations.forEach(loc => addMarker(map, loc.pos, loc.name));
 ```
 
-**输入**: 用户提供标注点(Marker)管理所需的指令和必要参数.
 **处理**: 解析标注点(Marker)管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回标注点(Marker)管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -165,11 +162,9 @@ function geocode(address) {
 // ...
 // 逆地理编码: 坐标 -> 地址
 function reverseGeocode(lng, lat) {
-    const geocoder = new AMap.Geocoder();
     const lnglat = [lng, lat];
 // ...
     geocoder.getAddress(lnglat, function(status, result) {
-        if (status === 'complete' && result.info === 'OK') {
             const address = result.regeocode.formattedAddress;
             console.log(`(${lng}, ${lat}) -> ${address}`);
         }
@@ -181,7 +176,6 @@ geocode('北京市朝阳区望京SOHO');
 reverseGeocode(116.397428, 39.90923);
 ```
 
-**输入**: 用户提供地理编码与逆地理编码所需的指令和必要参数.
 **处理**: 解析地理编码与逆地理编码的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回地理编码与逆地理编码的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -202,12 +196,12 @@ function drivingRoute(origin, destination) {
             if (status === 'complete') {
                 console.log('规划成功:');
                 result.routes[0].steps.forEach((step, i) => {
-                    console.log(`  ${i+1}. ${step.instructions}`);
+log(`  ${i+1}. ${step.instructions}`);
                 });
-                console.log(`总距离: ${(result.routes[0].distance / 1000).toFixed(1)}公里`);
-                console.log(`预计时间: ${Math.ceil(result.routes[0].time / 60)}分钟`);
+log(`总距离: ${(result.routes[0].distance / 1000).toFixed(1)}公里`);
+log(`预计时间: ${Math.ceil(result.routes[0].time / 60)}分钟`);
             } else {
-                console.log('规划失败:', result);
+log('规划失败:', result);
             }
         });
     });
@@ -219,8 +213,8 @@ function walkingRoute(origin, destination) {
         const walking = new AMap.Walking({ map: map });
         walking.search(origin, destination, function(status, result) {
             if (status === 'complete') {
-                console.log(`步行距离: ${result.routes[0].distance}米`);
-                console.log(`预计时间: ${Math.ceil(result.routes[0].time / 60)}分钟`);
+log(`步行距离: ${result.routes[0].distance}米`);
+log(`预计时间: ${Math.ceil(result.routes[0].time / 60)}分钟`);
             }
         });
     });
@@ -231,7 +225,6 @@ drivingRoute([116.377849, 39.915378], [116.413384, 39.911023]);  // 西单 -> �
 walkingRoute([116.397428, 39.90923], [116.413384, 39.911023]);    // 天安门 -> 王府井
 ```
 
-**输入**: 用户提供基础路径规划所需的指令和必要参数.
 **处理**: 解析基础路径规划的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回基础路径规划的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：JSAPI、开发助手、支持地图展示、地理编码与基础路、适合个人开发者快、速集成地图功能、开发助手免费版、为个人开发者提供、地图开发核心能力、核心能力、标注点管理、适用场景、个人项目地图展示、位置搜索、基础导航功能开发、差异化、免费版聚焦核心地、图功能、速上手、调用额度、适用关键词、地图开发、geocoding等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -257,13 +250,13 @@ walkingRoute([116.397428, 39.90923], [116.413384, 39.911023]);    // 天安门 -
     <div id="map"></div>
     <div class="shop-info" id="shopInfo"></div>
 # ...
-    <script src="https://webapi.amap.com/maps?v=2.0&key=你的API_KEY"></script>
+amap.com/maps?v=2.0&key=你的API_KEY"></script>
     <script>
         const SHOP_ADDRESS = '北京市朝阳区望京SOHO T1';
-        const map = new AMap.Map('map', { zoom: 15, center: [116.481028, 39.996729] });
+Map('map', { zoom: 15, center: [116.481028, 39.996729] });
 # ...
         // 地理编码定位店铺
-        const geocoder = new AMap.Geocoder({ city: '北京' });
+Geocoder({ city: '北京' });
         geocoder.getLocation(SHOP_ADDRESS, function(status, result) {
             if (status === 'complete') {
                 const loc = result.geocodes[0].location;
@@ -312,7 +305,6 @@ markers.forEach((marker, i) => {
                 <h4>${branches[i].name}</h4>
                 <p>${branches[i].address}</p>
             </div>`,
-            offset: new AMap.Pixel(0, -30)
         }).open(map, branches[i].pos);
     });
 });
@@ -331,15 +323,13 @@ function searchAddress() {
     const address = document.getElementById('searchInput').value;
     if (!address) return;
 # ...
-    const geocoder = new AMap.Geocoder({ city: '全国' });
+Geocoder({ city: '全国' });
     geocoder.getLocation(address, function(status, result) {
-        if (status === 'complete' && result.geocodes.length > 0) {
-            const loc = result.geocodes[0].location;
+geocodes.length > 0) {
+geocodes[0].location;
             map.setZoomAndCenter(15, [loc.lng, loc.lat]);
 # ...
             map.clearMap();
-            new AMap.Marker({
-                position: [loc.lng, loc.lat],
                 map: map,
                 title: address
             });
@@ -376,13 +366,12 @@ function searchAddress() {
 <script>
     window._AMapSecurityConfig = { securityJsCode: '你的安全密钥' };
 </script>
-<script src="https://webapi.amap.com/maps?v=2.0&key=你的API_KEY"></script>
+amap.com/maps?v=2.0&key=你的API_KEY"></script>
 ```
 
 ### 第三步:初始化地图
 
 ```javascript
-const map = new AMap.Map('container', {
     zoom: 12,
     center: [116.397428, 39.90923]
 });
@@ -443,11 +432,10 @@ function initMap(containerId, options = {}) {
 // ...
     const defaultOptions = {
         zoom: 12,
-        center: [116.397428, 39.90923],
         viewMode: '2D'
     };
 // ...
-    const map = new AMap.Map(containerId, { ...defaultOptions, ...options });
+Map(containerId, { ...defaultOptions, ...options });
 // ...
     // 添加基础控件
     AMap.plugin(['AMap.ToolBar', 'AMap.Scale'], function() {

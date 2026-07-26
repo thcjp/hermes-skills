@@ -1,9 +1,8 @@
----
-slug: "data-format-converter"
+---slug: "data-format-converter"
 name: "data-format-converter"
 version: 1.0.1
 displayName: "数据格式转换器"
-summary: "在CSV、JSON、XML、YAML、TOML格式间高效互转，支持批量处理与嵌套结构处理。数据格式转换器——在CSV、JSON、XML、YAML、TOML等主流数据格式间高效转换. 核心能力"
+summary: "在CSV、JSON、X"
 summary_zh: "在CSV、JSON、XML、YAML、TOML格式间高效互转，支持批量处理与嵌套结构处理。数据格式转换器——在CSV、JSON、XML、YAML、TOML等主流数据格式间高效转换. 核心能力"
 license: "MIT"
 description: |-
@@ -34,9 +33,7 @@ tools:
   - write
   - glob
 homepage: ""
-category: "Research"
----
-# 数据格式转换器
+category: "Research"---# 数据格式转换器
 
 ## 输入格式
 
@@ -110,8 +107,7 @@ with open('output.csv', 'w', encoding='utf-8-sig', newline='') as f:
     writer.writerows(data)
 ```
 
-**输入**: 用户提供CSV与JSON互转所需的指令和必要参数.
-**处理**: 解析CSV与JSON互转的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### JSON与YAML互转
+### JSON与YAML互转
 
 **JSON转YAML**：使用 `yaml.safe_dump()` 输出，`default_flow_style=False` 使用块样式（更易读），`allow_unicode=True` 保留中文.
 ```python
@@ -155,7 +151,6 @@ with open('data.json', 'r', encoding='utf-8') as f:
 xml_str = xmltodict.unparse(data, pretty=True)
 ```
 
-**输入**: 用户提供XML与JSON互转所需的指令和必要参数。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `xml与json互转` 选项
 
@@ -180,7 +175,6 @@ with open('data.json', 'r', encoding='utf-8') as f:
 toml_str = toml.dumps(data)
 ```
 
-**输入**: 用户提供TOML与JSON互转所需的指令和必要参数。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `toml与json互转` 选项
 

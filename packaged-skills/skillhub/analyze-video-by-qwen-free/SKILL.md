@@ -73,15 +73,15 @@ Qwen 视频智能分析基础版,基于 Qwen 3.5 Plus 多模态模型对本地�
 
 ## 认证
 
-API Key 从 `~/.skill-platform/skill-platform.json` 的 `skills.dashscope.apiKey` 字段读取.
+API Key 从 `~/.json` 的 `skills.dashscope.apiKey` 字段读取.
 ```bash
-cat ~/.skill-platform/skill-platform.json | grep apiKey
+cat ~/.json | grep apiKey
 ```
 
 若 Key 缺失,引导用户:
 1. 登录阿里云 DashScope 控制台
 2. 开通 Qwen 多模态模型服务并创建 API Key
-3. 在 `~/.skill-platform/skill-platform.json` 中添加配置:
+3. 在 `~/.json` 中添加配置:
 
 ```json
 {
@@ -119,14 +119,13 @@ python （请参考skill目录中的脚本文件） /path/to/video.mp4
 
 ### Step 1: 校验 API Key 配置
 ```bash
-cat ~/.skill-platform/skill-platform.json | grep apiKey
+cat ~/.json | grep apiKey
 ```
 若返回为空或文件不存在,按照认证章节引导用户配置.
 ### Step 2: 确认视频文件
 确认本地视频文件路径存在且为支持的视频格式(mp4/avi/mov/mkv/webm 等).
 ### Step 3: 执行分析
 ```bash
-python （请参考skill目录中的脚本文件） /path/to/video.mp4
 ```
 使用默认 FPS=2 和默认提示词进行分析,结果输出到 stdout.
 #
@@ -136,7 +135,6 @@ python （请参考skill目录中的脚本文件） /path/to/video.mp4
 **场景**: 用户需要快速了解一段本地视频的内容
 
 ```bash
-python （请参考skill目录中的脚本文件） /path/to/video.mp4
 ```
 
 **输出**: 模型返回视频场景描述,概括视频主要内容
@@ -156,7 +154,7 @@ python （请参考skill目录中的脚本文件） /path/to/product-demo.mp4
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
 |:---:|:---:|:---:|:---:|
-| api_key_missing | `apiKey not found in config` | 配置文件中未找到 DashScope API Key | 引导用户按照认证章节配置 ~/.skill-platform/skill-platform.json |
+| api_key_missing | `apiKey not found in config` | 配置文件中未找到 DashScope API Key | 引导用户按照认证章节配置 ~/.json |
 | file_not_found | `FileNotFoundError: video.mp4` | 本地视频文件路径不存在 | 确认文件路径正确,检查文件是否存在 |
 | unsupported_format | `Unsupported video format` | 视频格式不被支持 | 转换为 mp4/avi/mov/mkv/webm 等常见格式后检查网络连接和配置后重试 |
 | api_rate_limited | `429 Too Many Requests` | 短时间内 API 调用过多 | 等待 60 秒后检查网络连接和配置后重试 |
@@ -165,7 +163,7 @@ python （请参考skill目录中的脚本文件） /path/to/product-demo.mp4
 ## 常见问题
 
 ### Q1: 如何配置 DashScope API Key?
-A: 在 `~/.skill-platform/skill-platform.json` 文件中添加 `skills.dashscope.apiKey` 字段。首先登录阿里云 DashScope 控制台开通 Qwen 多模态模型服务并创建 API Key,然后将 Key 写入配置文件.
+A: 在 `~/.json` 文件中添加 `skills.dashscope.apiKey` 字段。首先登录阿里云 DashScope 控制台开通 Qwen 多模态模型服务并创建 API Key,然后将 Key 写入配置文件.
 ### Q2: 支持哪些视频格式?
 A: 支持 mp4、avi、mov、mkv、webm 等常见视频格式。本地文件路径可以是绝对路径或相对路径。免费版仅支持本地文件,不支持远程 URL(需升级付费版).
 ### Q3: 免费版和付费版有什么区别?
@@ -193,8 +191,6 @@ A: 免费版使用默认提示词"这段视频描绘的是什么景象?",提供�
 1. 确认运行环境满足依赖说明中的要求
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
-
-> 详细的输入输出格式请参考下方章节说明。
 
 > **想要远程 URL 分析、自定义提示词与抽帧频率?** 升级到 [analyze-video-by-qwen 付费版](#) 解锁全部高级能力.
 ## 输出格式

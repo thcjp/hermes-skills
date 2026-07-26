@@ -438,7 +438,6 @@ class ModelRouter:
         complexity = self.assess_complexity(query, context_complexity)
 # ..
         if complexity >= self.complexity_threshold:
-            return self.models['complex']
         return self.models['simple']
 # ..
     def assess_complexity(self, query, context):
@@ -448,10 +447,8 @@ class ModelRouter:
             score += 0.3
         # 长上下文：高复杂度
         if len(context) > 5000:
-            score += 0.2
         # 多步骤推理：高复杂度
         if any(kw in query for kw in ['分析', '对比', '设计', '优化']):
-            score += 0.2
         # 简单查询：低复杂度
         if any(kw in query for kw in ['什么是', '列表', '定义']):
             score -= 0.2
@@ -637,7 +634,7 @@ token-economist estimate --query "production_queries.json"
 1. **无需迁移数据**：专业版完全兼容免费版的配置与缓存
 2. **新增功能激活**：
    - 启用L4向量缓存：安装 `sentence-transformers`
-   - 启用预算控制：配置 `~/.token-economist/config.json`
+   - 启用预算控制：配置 `~/.json`
    - 启用多模型路由：配置模型API Key
 3. **历史缓存导入**：免费版的L1-L3缓存可直接复用
 4. **指令兼容**：免费版的所有指令在专业版中均可使用
@@ -861,8 +858,6 @@ L2基于关键词相似度（如Jaccard、编辑距离），需要部分用词�
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

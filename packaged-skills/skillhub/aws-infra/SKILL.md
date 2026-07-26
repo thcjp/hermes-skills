@@ -95,7 +95,6 @@ export API_KEY="your_api_key_here"
 - **ELB目标健康**: 检查负载均衡器目标组的健康状态
   `aws elbv2 describe-target-health --target-group-arn arn:aws:elasticloadbalancing:REGION:ACCOUNT:targetgroup/TG_NAME/TG_ID`
 
-**输入**: 用户提供健康检查 (Health)所需的指令和必要参数.
 ### 3. 安全审计 (Security)
 - **IAM用户列表**: 查询所有IAM用户及其最后登录时间
   `aws iam list-users --query 'Users[].[UserName,CreateDate,PasswordLastUsed]' --output table`
@@ -116,9 +115,6 @@ export API_KEY="your_api_key_here"
 - **成本预测**: 获取本月剩余时间的成本预测
   `aws ce get-cost-forecast --time-period Start=2024-01-15,End=2024-02-15 --granularity MONTHLY --metric BLENDED_COST`
 
-**输入**: 用户提供成本分析 (Costs)所需的指令和必要参数.
-**处理**: 解析成本分析 (Costs)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回成本分析 (Costs)的处理结果,包含执行状态码、结果数据和执行日志.
 ### 5. 变更追踪 (Changes)
 - **CloudTrail事件查询**: 查询特定的API调用事件(如谁启动了实例)
   `aws cloudtrail lookup-events --lookup-attributes AttributeKey=EventName,AttributeValue=RunInstances --max-results 20`
@@ -205,7 +201,7 @@ aws configure set region us-west-2
 ```bash
 # 查询所有实例的状态检查结果
 aws ec2 describe-instance-status --include-all-instances \
-  --query 'InstanceStatuses[].[InstanceId,InstanceStatus.Status,SystemStatus.Status,AvailabilityZone]' \
+  --query 'InstanceStatuses[].Status,SystemStatus.Status,AvailabilityZone]' \
   --output table
 ```
 
@@ -344,11 +340,11 @@ aws ec2 describe-instances --filters Name=instance-state-name,Values=running \
 # ...
 # 按标签过滤
 aws ec2 describe-instances --filters "Name=tag:Environment,Values=production" \
-  --query 'Reservations[].Instances[].InstanceId'
+Instances[].InstanceId'
 # ...
 # 使用JMESPath高级过滤
 aws ec2 describe-instances \
-  --query 'Reservations[].Instances[?State.Name==`running` && InstanceType==`t3.medium`].[InstanceId,Tags[?Key==`Name`].Value | [0]]'
+Instances[?State.Name==`running` && InstanceType==`t3.medium`].[InstanceId,Tags[?Key==`Name`].Value | [0]]'
 ```
 
 ### Q5: 如何导出查询结果到文件?

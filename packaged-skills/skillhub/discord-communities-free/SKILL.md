@@ -58,17 +58,14 @@ clawlink_list_tools({ integration: "discord" });
 ```
 
 未连接时返回 `integration_not_found`,需先完成 OAuth 配对流程.
-**输入**: 用户提供先验证 ClawLink 集成可用所需的指令和必要参数.
-**处理**: 解析先验证 ClawLink 集成可用的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 ### 2. 仅使用 OAuth2 Bearer Token
 免费版仅支持只读操作,所有调用均使用 Bearer Token。Bot Token 不适用本 skill 任何工具.
-**输入**: 用户提供仅使用 OAuth2 Bearer Token所需的指令和必要参数.
-**输出**: 返回仅使用 OAuth2 Bearer Token的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+
 - 参考`仅使用 OAuth2 Bearer Token`的配置文档进行参数调优
 ### 3. 仅执行 safe 级别操作
 免费版不包含 `confirm` 与 `high_impact` 级别工具(如退出公会、修改用户名、删除测试权益)。变更类操作请升级付费版.
 **处理**: 解析 safe 级别指令的输入参数,完成核心逻辑,返回结构化响应和状态.
-**输出**: 返回仅执行 safe 级别的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 

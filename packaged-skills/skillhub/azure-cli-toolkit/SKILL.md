@@ -83,7 +83,6 @@ echo "$AZURE_ACCESS_TOKEN" | az login --service-principal \
   -u $AZURE_CLIENT_ID --password-stdin --tenant $AZURE_TENANT_ID
 ```
 
-**输出**: 返回自动化认证方式的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. 批量资源操作
 ```bash
 # 批量删除资源组下所有虚拟机
@@ -96,8 +95,6 @@ az vm list -d --query "[?powerState=='VM running'].id" -o tsv | xargs az vm stop
 az resource list --tag env=production --query "[].id" -o tsv
 ```
 
-**输入**: 用户提供批量资源操作所需的指令和必要参数.
-**输出**: 返回批量资源的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `批量资源操作` 选项
 
@@ -131,8 +128,6 @@ az network nsg rule create -g prod-rg --nsg-name prod-nsg \
   --access Allow --protocol Tcp
 ```
 
-**输入**: 用户提供自动化部署脚本所需的指令和必要参数.
-**处理**: 解析自动化部署脚本的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `自动化部署脚本` 选项
 
@@ -149,9 +144,6 @@ for sub in $(az account list --query "[].id" -o tsv); do
 done
 ```
 
-**输入**: 用户提供多订阅管理所需的指令和必要参数.
-**处理**: 解析多订阅管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回多订阅管理的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `多订阅管理` 选项
 
@@ -173,9 +165,6 @@ az monitor metrics list \
   --interval PT1H -o table
 ```
 
-**输入**: 用户提供成本分析与优化所需的指令和必要参数.
-**处理**: 解析成本分析与优化的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回成本分析与优化的处理结果,包含执行状态码、结果数据和执行日志.
 ### 6. 策略合规审计
 ```bash
 # 查看策略分配
@@ -188,8 +177,6 @@ az policy state list --query "[?complianceState=='NonCompliant']" -o table
 az security assessment list -o table
 ```
 
-**输入**: 用户提供策略合规审计所需的指令和必要参数.
-**输出**: 返回策略合规审计的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -255,7 +242,7 @@ az vm list -g app-dev-rg --query "[].id" -o tsv | \
 az disk list --query "[?diskState=='Unattached']" -o table
 # ...
 # 查找停止超过 7 天的虚拟机
-az vm list -d --query "[?powerState!='VM running']" -o table
+powerState!='VM running']" -o table
 # ...
 # 批量删除未使用的存储容器
 az storage container list \

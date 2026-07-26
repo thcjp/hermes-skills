@@ -66,9 +66,6 @@ category: "Automation"
 
 ### 核心能力（免费版）
 
-**输入**: 用户提供核心能力（免费版）所需的指令和必要参数.
-**处理**: 解析核心能力（免费版）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回核心能力（免费版）的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`核心能力（免费版）`的配置文档进行参数调优
 ### 1. 快速统计（stats）
 ```bash
@@ -76,7 +73,7 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） stats data.csv
 ```
 
 返回行数、列类型、数值列的min/max/mean、文本列的unique计数.
-**输入**: 用户提供快速统计（stats）所需的指令和必要参数。- 验证执行结果,确认输出符合预期格式
+
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `快速统计（stats）` 选项
 
@@ -85,15 +82,12 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） stats data.csv
 python3 {baseDir}/（请参考skill目录中的脚本文件） 
 # ...
 **输入**: 用户提供核心能力（免费版）相关的配置参数、输入数据和处理选项.
-**处理**: 解析核心能力（免费版）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 # ...
-**输出**: 返回基础筛选（filter）的处理结果,包含执行状态码、结果数据和执行日志.
 ### 为何不用pandas？
 # ...
 pandas很强大，但仅导入就占100MB+内存，对快速分析任务过于重型。本技能仅用Python标准库，在2GB内存服务器上运行无压力.
 # ...
 **输入**: 用户提供为何不用pandas？相关的配置参数、输入数据和处理选项.
-**输出**: 返回为何不用pandas？的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`为何不用pandas？`的配置文档进行参数调优
 ### 付费版专享能力
 # ...
@@ -104,8 +98,6 @@ pandas很强大，但仅导入就占100MB+内存，对快速分析任务过于�
 - **分组聚合**：`group` 命令按指定列分组，支持 `sum`/`count` 等多种聚合函数，可同时指定多个
 # ...
 **输入**: 用户提供付费版专享能力相关的配置参数、输入数据和处理选项.
-**处理**: 解析付费版专享能力的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回付费版专享能力的处理结果,包含执行状态码、结果数据和执行日志.
 # ...
 #
 ## 快速开始
@@ -121,10 +113,8 @@ pandas很强大，但仅导入就占100MB+内存，对快速分析任务过于�
 ### 1. 快速统计（stats）(补充)
 # ...
 ```bash
-python3 {baseDir}/（请参考skill目录中的脚本文件） stats data.csv
 ```
 # ...
-返回行数、列类型、数值列的min/max/mean、文本列的unique计数.
 # ...
 ### 2. 基础筛选（filter）(补充)
 # ...
@@ -140,7 +130,6 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） filter data.csv -
 # ...
 ## 为何不用pandas？(补充)
 # ...
-pandas很强大，但仅导入就占100MB+内存，对快速分析任务过于重型。本技能仅用Python标准库，在2GB内存服务器上运行无压力.
 # ...
 ## 使用流程
 # ...
@@ -165,14 +154,14 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） stats orders.csv
 ### 示例2：筛选大额订单并导出
 # ...
 ```bash
-python3 {baseDir}/（请参考skill目录中的脚本文件） filter orders.csv --where "amount>1000" --output big_orders.csv
+python3 {baseDir}/（请参考skill目录中的脚本文件） filter orders.csv
 # 输出：筛选出87行，已导出到 big_orders.csv
 ```
 # ...
 ### 示例3：按条件筛选
 # ...
 ```bash
-python3 {baseDir}/（请参考skill目录中的脚本文件） filter orders.csv --where "category==electronics"
+csv --where "category==electronics"
 # 输出：筛选出category为electronics的行
 ```
 # ...
@@ -180,8 +169,6 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） filter orders.csv
 # ...
 > 升级付费版解锁以下高级能力：
 # ...
-- **Top/Bottom N**：`top`/`bottom` 命令按指定列取前N/后N行（如 `--column revenue --n 10`）.
-- **异常检测**：`anomalies` 命令基于z-score检测超出2σ的值.
 - **分组聚合**：`group` 命令按指定列分组，支持 `sum`/`count` 等多种聚合函数，可同时指定多个.
 - **多聚合组合**：`--agg "sum:amount" "count:id"` 一次指定多个聚合.
 - **统计分析扩展**：mean之外的median/std/percentiles等统计量.

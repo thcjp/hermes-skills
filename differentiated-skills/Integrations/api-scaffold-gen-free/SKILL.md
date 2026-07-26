@@ -118,7 +118,6 @@ router.put('/:id', (req, res) => {
   if (!existing) {
     return res.status(404).json({ code: 3001, message: '用户不存在', data: null });
   }
-  const { name, email } = req.body;
   const updated = { ...existing, name, email, updated_at: new Date().toISOString() };
   users.set(id, updated);
   res.json({ code: 0, message: 'success', data: updated });
@@ -128,7 +127,6 @@ router.put('/:id', (req, res) => {
  * DELETE /users/:id - 删除用户
  */
 router.delete('/:id', (req, res) => {
-  const id = parseInt(req.params.id);
   if (!users.has(id)) {
     return res.status(404).json({ code: 3001, message: '用户不存在', data: null });
   }
@@ -178,7 +176,7 @@ describe('用户接口', () => {
     });
 // ...
     it('应对不存在的用户返回404', async () => {
-      const res = await request(app).get('/users/99999');
+get('/users/99999');
       expect(res.status).toBe(404);
     });
   });
@@ -203,7 +201,6 @@ describe('用户接口', () => {
 - 创建返回201，删除返回204
 - 错误码沿用模板（1001参数错/3001不存在）
 
-**输入**: 用户提供功能1：RESTful CRUD端点生成所需的指令和必要参数.
 **处理**: 解析功能1：RESTful CRUD端点生成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能1：RESTful CRUD端点生成的响应数据,包含状态码、结果和日志.
 ### 功能2：GraphQL Schema生成
@@ -256,7 +253,6 @@ type ProductPage {
 }
 ```
 
-**输入**: 用户提供功能2：GraphQL Schema生成所需的指令和必要参数.
 **处理**: 解析功能2：GraphQL Schema生成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能2：GraphQL Schema生成的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -304,11 +300,10 @@ function authApiKey(validKeys) {
 // auth/oauth2.js - OAuth2 Token Introspection
 async function authOAuth2(introspectUrl) {
   return async (req, res, next) => {
-    const authHeader = req.headers.authorization;
+headers.authorization;
     if (!authHeader) {
       return res.status(401).json({ code: 2001, message: '未授权', data: null });
     }
-    const token = authHeader.slice(7);
     try {
       const resp = await fetch(introspectUrl, {
         method: 'POST',
@@ -328,7 +323,6 @@ async function authOAuth2(introspectUrl) {
 }
 ```
 
-**输入**: 用户提供功能3：认证模板所需的指令和必要参数.
 **处理**: 解析功能3：认证模板的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能3：认证模板的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -345,7 +339,6 @@ async function authOAuth2(introspectUrl) {
 | 分页测试 | 第2页、超大page_size、负数page | 分页结构 |
 | 并发测试 | 同时创建同名资源 | 409冲突或幂等处理 |
 
-**输入**: 用户提供功能4：测试套件模板所需的指令和必要参数.
 **处理**: 解析功能4：测试套件模板的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能4：测试套件模板的响应数据,包含状态码、结果和日志.
 ### 功能5：Mock API服务器
@@ -362,7 +355,6 @@ api-scaffold-gen mock user --port 3000
 - 支持错误注入（`?error=500`）
 - 一键启动，无需数据库
 
-**输入**: 用户提供功能5：Mock API服务器所需的指令和必要参数.
 **处理**: 解析功能5：Mock API服务器的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能5：Mock API服务器的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：从资源名一键生成、脚手架代码、测试模板、秒出码、脚手架生成器免费、版解决、新项目起步慢、样板代码写到吐、的痛点、从资源名出发、一键生成、基础测试套件、数据等生产可用脚、手架代码、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.

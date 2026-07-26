@@ -78,7 +78,6 @@ RSS聚合摘要专业版是企业级RSS/Atom订阅聚合与分发系统。在免
 | 多语言 | 中文/英文 | 15+语言自动检测与翻译 |
 | 批量操作 | 不支持 | 批量源管理+配置导入导出 |
 
-**输入**: 用户提供免费版 vs 专业版能力对比所需的指令和必要参数.
 **处理**: 解析免费版 vs 专业版能力对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版 vs 专业版能力对比的响应数据,包含状态码、结果和日志.
 ### 专业版独有功能
@@ -91,12 +90,11 @@ RSS聚合摘要专业版是企业级RSS/Atom订阅聚合与分发系统。在免
 6. **高级过滤**:正则表达式、情感分析、语言检测、热度评分多维过滤
 7. **认证源管理**:安全存储并管理需要认证的私有RSS源的凭证
 
-**输入**: 用户提供专业版独有功能所需的指令和必要参数.
 **处理**: 解析专业版独有功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回专业版独有功能的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -219,7 +217,6 @@ python3 （请参考skill目录中的脚本文件） fetch \
 # ...
 # 3. 开始使用专业版功能
 python3 （请参考skill目录中的脚本文件） fetch \
-  --feed-file my-feeds.txt \
   --hours 24 \
   --output-html daily-report.html \
   --template branded-brief
@@ -382,16 +379,12 @@ python3 （请参考skill目录中的脚本文件） schedule add \
 ```bash
 # 同一批次生成两种报告
 python3 （请参考skill目录中的脚本文件） fetch \
-  --feed-file industry-feeds.txt \
   --hours 24 \
   --template executive-brief \
-  --distribute "email:c-level@corp.com"
 # ...
 python3 （请参考skill目录中的脚本文件） fetch \
-  --feed-file industry-feeds.txt \
   --hours 24 \
   --template detailed-report \
-  --distribute "email:team@corp.com"
 ```
 
 ## 常见问题

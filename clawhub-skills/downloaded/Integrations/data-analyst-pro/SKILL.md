@@ -41,8 +41,6 @@ Complete the data analysis tasks delegated by the user.If the code needs to oper
 
 ## 核心能力
 
-This skill provides specialized capabilities for data analyst.
-
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -63,9 +61,7 @@ This skill provides specialized capabilities for data analyst.
 ### 示例1：基础用法
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
 ## 错误处理

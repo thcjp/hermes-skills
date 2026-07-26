@@ -65,17 +65,14 @@ category: "Automation"
 ### 2. 媒体投放
 通过 `catt cast <url>` 命令将视频或音频投放到目标设备。支持YouTube视频、Vimeo、直接视频URL（MP4/MKV/WebM）和本地文件。使用 `-d <device>` 参数指定目标设备。适用于家庭影院和基础投屏场景.
 **处理**: 解析用户提供的媒体URL或文件路径,验证格式兼容性后通过catt命令投放到目标Chromecast设备,自动处理设备发现和连接.
-**输出**: 返回媒体投放的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`媒体投放`的配置文档进行参数调优
 ### 3. 播放控制
-通过 `catt play`、`catt pause` 和 `catt stop` 命令控制播放状态。`play` 恢复播放，`pause` 暂停播放，`stop` 完全停止播放。使用 `-d <device>` 参数指定目标设备。适用于播放过程中的即时控制.
+通过 `catt play`、`catt pause` 和 `catt stop` 命令控制播放状态。`play` 恢复播放，`pause` 暂停播放，`stop` 完全停止播放。适用于播放过程中的即时控制.
 **处理**: 接收播放控制指令(play/pause/stop/skip),映射到对应的catt子命令并执行,返回播放状态变更确认.
-**输出**: 返回播放控制的处理结果,包含执行状态码、结果数据和执行日志.
 ### 4. 音量控制
 通过 `catt volume <0-100>` 设置绝对音量（0-100范围），`catt volumeup 10` 增加10，`catt volumedown 10` 减少10。`catt volumemute on` 静音，`catt volumemute off` 取消静音。适用于不同内容间的音量统一管理.
-**输入**: 用户提供音量控制所需的指令和必要参数.
+
 **处理**: 解析音量参数(绝对值0-100或相对增减),通过catt volume命令调整设备音量,返回设置后的音量值.
-**输出**: 返回音量控制的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`音量控制`的配置文档进行参数调优
 ### 输出格式
 
@@ -173,7 +170,7 @@ catt -d 192.168.1.163 stop
 不可以。`catt seek`、`catt ffwd` 和 `catt rewind` 是完整版独有功能。免费版仅支持 `play`/`pause`/`stop` 基础播放控制。如需进度跳转，请升级至完整版.
 ### Q4: 如何调节音量？
 
-使用 `catt volume <0-100>` 设置绝对音量（0-100范围），`catt volumeup 10` 增加10，`catt volumedown 10` 减少10。`catt volumemute on` 静音，`catt volumemute off` 取消静音。使用 `-d <device>` 参数指定目标设备.
+使用 `catt volume <0-100>` 设置绝对音量（0-100范围），`catt volumeup 10` 增加10，`catt volumedown 10` 减少10。使用 `-d <device>` 参数指定目标设备.
 ### Q5: 免费版支持队列管理吗？
 
 不支持。`catt add`/`remove`/`clear` 队列管理是完整版独有功能。免费版每次只能投放单个媒体。如需队列管理，请升级至完整版.

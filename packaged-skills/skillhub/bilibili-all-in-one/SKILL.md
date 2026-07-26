@@ -285,7 +285,7 @@ playlist = await app.execute("player", "get_playlist", url="BV1xx411c7mD")
 ### Q1: 哪些功能不需要登录凭据?
 热门监控(`get_hot`/`get_trending`/`get_weekly`/`get_rank`)、标准清晰度(360p-1080p)下载、数据追踪(`watch`/`get_stats`/`track`/`compare`)、字幕列表、弹幕获取、播放信息全部使用公共API,无需任何凭据。仅1080p+/4K下载、高清播放直链、投稿发布需要 `SESSDATA`+`bili_jct`.
 ### Q2: 凭据会被保存到磁盘吗?
-默认不会。凭据仅在内存中持有,进程退出即销毁。显式设置 `BILIBILI_PERSIST=1` 环境变量或 `BilibiliAllInOne(persist=True)` 后,凭据会保存到当前目录 `.credentials.json`,文件权限0600(仅属主可读写)。运行时可用 `app.auth.persist = False` 关闭并调用 `app.auth.clear_persisted()` 删除文件.
+默认不会。凭据仅在内存中持有,进程退出即销毁。显式设置 `BILIBILI_PERSIST=1` 环境变量或 `BilibiliAllInOne(persist=True)` 后,凭据会保存到当前目录 `.credentials.json`,文件权限0600(仅属主可读写)。运行时可用 `app.auth.persist = False` 关闭并调用 `app.auth.
 ### Q3: SESSDATA和bili_jct是受限API密钥吗?
 不是。它们是B站浏览器完整会话Cookie,等同于账号密码级别权限,可执行登录态下所有操作。务必使用小号测试,不要在共享环境或公共仓库中暴露;启用持久化时确认 `.credentials.json` 已加入 `.gitignore`.
 ### Q4: batch_download支持多少个视频?

@@ -54,30 +54,25 @@ category: "Automation"
 - 跟进通话复用上一次通话的转写文本，代理可自然衔接
 - 通话结果汇总与对比报表
 
-**输入**: 用户提供并行外呼与通话活动所需的指令和必要参数.
-**处理**: 解析并行外呼与通话活动的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 实时转接（live handoff）
+### 实时转接（live handoff）
 - 将用户桥接到正在进行的通话中，跳过等待时间
 - 用户通过`bridge_number`加入通话，代理负责引导转接
 - 转接前的对话记录在转写文本中，转接后的对话为私密
 - 适合身份验证、敏感谈判、实时决策等场景
 
-**处理**: 解析实时转接（live handoff）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回实时转接（live handoff）的处理结果,包含执行状态码、结果数据和执行日志。### 呼入号码配置
+### 呼入号码配置
 - 配置来电应答规则：代理如何接听、收集什么信息、何时转接
 - 站立式简报：为未来未知来电者预设应答指令
 - 转接号码配置：将来电转接到用户的外部号码
 - 需要预留号码与对应服务套餐
 
-**处理**: 解析呼入号码配置的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回呼入号码配置的处理结果,包含执行状态码、结果数据和执行日志。### 个性化语音配置
+### 个性化语音配置
 - 语音音色：jessica(默认,女)、sarah(女)、chris(男)、eric(男)
 - 个性化风格：定义代理的身份、语气、持久度、谨慎度与决策边界
 - 开场白：配置外呼时的标准开场语
 - 呼入问候语：为来电者定制应答问候
 
-**输入**: 用户提供个性化语音配置所需的指令和必要参数.
-**处理**: 解析个性化语音配置的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回个性化语音配置的处理结果,包含执行状态码、结果数据和执行日志。### 错误处理
+### 错误处理
 
 - 认证错误：Key无效或缺失时的恢复策略
 - 配额错误：试用耗尽、套餐不足、余额不足时的引导
@@ -85,15 +80,12 @@ category: "Automation"
 - 配置错误：语音选项无效、呼入配置缺失时的修复指引
 - 保留所有返回的`action.url`与`action.sign_in_url`
 
-**输入**: 用户提供错误处理所需的指令和必要参数.
-**处理**: 解析错误处理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 外呼前侦察
+### 外呼前侦察
 - 调用查找工具预填商家电话、地址、营业时间等公开信息
 - 预判身份核验、OTP、付款、费用、审批等关键节点
 - 评估通话风险等级：信息收集型、边界承诺型、实时转接型
 - 适度探询：只询问防止无效或风险通话的必要信息
 
-**输入**: 用户提供外呼前侦察所需的指令和必要参数.
-**输出**: 返回外呼前侦察的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -145,7 +137,6 @@ curl -X PUT https://api.call-bridge.dev/me/call-preferences \
 for restaurant in "rest1_phone" "rest2_phone" "rest3_phone"; do
   curl -X POST https://api.call-bridge.dev/call \
     -H "Content-Type: application/json" \
-    -H "X-Api-Key: cb_sk_..." \
     -d "{
       \"to\": \"$restaurant\",
       \"task\": \"你好，我想了解本周六晚上7点两位用餐的可用时段与套餐价格。仅收集信息，不要预订。请询问：1)是否有包间 2)最低消费 3)是否需要预付定金。请报告完整信息。\"
@@ -157,9 +148,8 @@ wait
 ### 第四步：发起实时转接通话
 
 ```bash
-curl -X POST https://api.call-bridge.dev/call \
+call-bridge.dev/call \
   -H "Content-Type: application/json" \
-  -H "X-Api-Key: cb_sk_..." \
   -d '{
     "to": "+1555bankphone",
     "bridge_number": "+1555userphone",
@@ -175,9 +165,8 @@ curl -H "X-Api-Key: cb_sk_..." \
   https://api.call-bridge.dev/me/call-preferences
 # ...
 # 更新呼入配置
-curl -X PUT https://api.call-bridge.dev/me/call-preferences \
+call-bridge.dev/me/call-preferences \
   -H "Content-Type: application/json" \
-  -H "X-Api-Key: cb_sk_..." \
   -d '{
     "voice": "jessica",
     "personality": "专业友善的助理",
@@ -194,7 +183,6 @@ curl -X PUT https://api.call-bridge.dev/me/call-preferences \
 
 ```bash
 # 查看最近的呼入通话
-curl -H "X-Api-Key: cb_sk_..." \
   "https://api.call-bridge.dev/me/calls?direction=inbound&limit=25"
 ```
 
@@ -275,7 +263,7 @@ curl -H "X-Api-Key: cb_sk_..." \
 
 > 呼入功能需要预留号码与对应服务套餐，外呼功能无需额外资源.
 ### API Key 配置
-- **Call Bridge API Key**: 持久化在`~/.config/call-bridge/key.json`
+- **Call Bridge API Key**: 持久化在`~/.json`
 - **首次获取**: 首次未认证外呼的响应中自动返回Key
 - **手动替换**: 用户可提供自己的Key替换自动获取的Key
 - **账户关联**: 使用`https://call-bridge.dev/sign-in?token=<api_key>`关联账户

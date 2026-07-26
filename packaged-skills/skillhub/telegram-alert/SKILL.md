@@ -1,5 +1,4 @@
----
-slug: "telegram-alert"
+---slug: "telegram-alert"
 name: "telegram-alert"
 version: 1.0.1
 displayName: "Telegram告警专业版"
@@ -9,7 +8,7 @@ license: "MIT"
 edition: "pro"
 description: |-
   面向专业交易团队的多通道告警通知系统。支持Telegram多群组推送、
-  复合触发条件、富媒体消息（图表/图片）、定时播报与团队协作功能。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发.
+  复合触发条件、富媒体消息（图表/图片）、定时播报与团队协作功能。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。不适用于垃圾信息群发.
 tags:
   - Finance
   - 告警通知
@@ -25,9 +24,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Communication"
----
-# Telegram告警专业版
+category: "Communication"---# Telegram告警专业版
 
 ## 付费版专享能力
 
@@ -54,7 +51,6 @@ category: "Communication"
 | 优先级 | 不支持 | 3级优先级 |
 | 历史分析 | 基础记录 | 统计与分析 |
 
-**输出**: 返回PRO版功能增强对比的处理结果,包含执行状态码、结果数据和执行日志.
 ### 复合触发条件
 ```yaml
 # PRO版支持复合逻辑
@@ -84,8 +80,6 @@ triggers:
     logic: "OR"
 ```
 
-**处理**: 解析复合触发条件的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回复合触发条件的处理结果,包含执行状态码、结果数据和执行日志.
 ### 目标群组
 
 针对目标群组,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.

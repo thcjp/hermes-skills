@@ -71,7 +71,6 @@ def validate_config(data: dict, schema_path: str) -> dict:
 ```
 
 **支持的Schema规范**：JSON Schema Draft-07、K8s CRD Schema、OpenAPI Schema。三种规范自动识别.
-**处理**: 解析能力2：JSON Schema校验的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 能力3：YAML模板渲染
 ```yaml
 # config-template.yaml.j2
@@ -98,8 +97,8 @@ spec:
 ```
 
 **Agent执行规则**：模板用Jinja2语法；渲染后必须用 `yaml.safe_load` 校验合法性；支持变量默认值、循环、条件、过滤器；模板与变量分离，变量文件用JSON或YAML.
-**输入**: 用户提供能力3：YAML模板渲染所需的指令和必要参数.
-**输出**: 返回能力3：YAML模板渲染的处理结果,包含执行状态码、结果数据和执行日志。### 能力4：多配置合并
+
+### 能力4：多配置合并
 
 ```python
 import yaml
@@ -120,7 +119,6 @@ def merge_yamls(files: list, strategy: str = 'deep') -> dict:
                 merged[k] = v
         elif strategy == 'array_merge':
             # 数组按索引合并
-            for k, v in data.items():
                 if k in merged and isinstance(merged[k], list) and isinstance(v, list):
                     merged[k] = (merged[k] + v)[-len(v):]  # 后者优先
                 else:
@@ -165,7 +163,6 @@ def yaml_to_jsonc(yaml_path: str, jsonc_path: str):
 - 关键参数: `能力5：注释迁移` 选项
 - 处理流程: 接收输入 -> 执行能力5：注释迁移 -> 返回结果
 - 输入: 用户提供能力5：注释迁移所需的参数和指令
-- 输出: 返回能力5：注释迁移的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 能力6：配置中心对接
 
@@ -398,10 +395,8 @@ print(config)
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
 
-> 详细的输入输出格式请参考下方章节说明。
 直接对Agent说：
 # ...
-> "帮我把 ./configs 目录下所有JSON批量转YAML，并按 k8s-schema.json 校验。"
 # ...
 Agent会按本工具的批量校验模板输出：
 # ...
@@ -410,10 +405,10 @@ import json, yaml, glob, jsonschema
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 
-SCHEMA = json.loads(Path('k8s-schema.json').read_text(encoding='utf-8'))
+SCHEMA = json.json').read_text(encoding='utf-8'))
 
 def convert_and_validate(json_path: str, out_dir: str):
-    data = json.loads(Path(json_path).read_text(encoding='utf-8'))
+    data = json.read_text(encoding='utf-8'))
     # 1. Schema校验
     try:
         jsonschema.validate(data, SC

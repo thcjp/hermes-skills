@@ -57,7 +57,6 @@ category: "Knowledge"
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch status
 ```
 
-**输入**: 用户提供批量并行搜索所需的指令和必要参数.
 **处理**: 解析批量并行搜索的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量并行搜索的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -74,7 +73,6 @@ category: "Knowledge"
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） team collect-ratings --tool "target-tool"
 ```
 
-**输入**: 用户提供团队推荐与协作所需的指令和必要参数.
 **处理**: 解析团队推荐与协作的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回团队推荐与协作的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -88,7 +86,6 @@ category: "Knowledge"
 # ...
 ```
 
-**输入**: 用户提供工具评估报告所需的指令和必要参数.
 **处理**: 解析工具评估报告的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回工具评估报告的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -111,7 +108,6 @@ category: "Knowledge"
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） batch verify --input deploy.json
 ```
 
-**输入**: 用户提供自动化部署所需的指令和必要参数.
 **处理**: 解析自动化部署的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自动化部署的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -126,7 +122,6 @@ category: "Knowledge"
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） stats export --format csv --output usage_report.csv
 ```
 
-**输入**: 用户提供使用统计与分析所需的指令和必要参数.
 **处理**: 解析使用统计与分析的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回使用统计与分析的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -142,7 +137,6 @@ category: "Knowledge"
   --custom-rules custom_rules.json
 ```
 
-**输入**: 用户提供自定义评分规则所需的指令和必要参数.
 **处理**: 解析自定义评分规则的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自定义评分规则的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -154,7 +148,6 @@ category: "Knowledge"
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） install "target-tool" --type skill
 ```
 
-**输入**: 用户提供完整兼容免费版所需的指令和必要参数.
 **处理**: 解析完整兼容免费版的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回完整兼容免费版的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级工具发现与、评估平台、支持批量搜索、工具评估报告与自、工具发现引擎专业、面向企业团队和高、级用户提供深度的、工具发现与评估能、使用统计等高级功、Use、when、需要提升效率、自动化流程、批量处理、工作流优化时使用、不适用于需要人工、创意判断的任务、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -185,7 +178,6 @@ EOF
   --dimensions "community,quality,security,maintenance"
 # ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） team collect-ratings \
-  --input candidates.json \
   --team "tech_committee"
 # ...
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） report selection \
@@ -314,7 +306,6 @@ EOF
   "evaluation": {
     "dimensions": ["community", "quality", "security", "maintenance", "compatibility"],
     "custom_weights": {},
-    "min_threshold": 3.0,
     "auto_evaluate": true
   },
   "team": {
@@ -396,7 +387,7 @@ EOF
 ```bash
 ~/.skill-platform/workspace/skills/tool-finder-tool-pro/（请参考skill目录中的脚本文件） evaluate "tool" \
   --dimensions "community,quality,security" \
-  --weights '{"community": 0.4, "quality": 0.4, "security": 0.2}' \
+4, "quality": 0.4, "security": 0.2}' \
   --output custom_report.html
 ```
 

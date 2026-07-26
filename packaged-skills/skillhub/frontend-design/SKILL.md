@@ -192,7 +192,6 @@ AI 生成的前端界面常有以下通病，需刻意避免：
   inset: 0;
   background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
   transform: translateX(-100%);
-  transition: transform 0.5s;
 }
 
 .btn-primary:hover {

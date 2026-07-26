@@ -1,5 +1,4 @@
----
-slug: "ai-news"
+---slug: "ai-news"
 name: "ai-news"
 version: 1.0.2
 displayName: "AI新闻"
@@ -7,7 +6,7 @@ summary: "每日新闻获取技能。通过 API 获取每日新闻摘要和详�
 summary_zh: "每日新闻获取技能。通过 API 获取每日新闻摘要和详情，支持按日期查询、热点新闻排行、新闻详情阅读。"
 license: "MIT"
 description: |-
-  每日新闻获取技能。通过 API 获取每日新闻摘要和详情，支持按日期查询、热点新闻排行、新闻详情阅读。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
+  每日新闻获取技能。通过 API 获取每日新闻摘要和详情，支持按日期查询、热点新闻排行、新闻详情阅读。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。不适用于数据库架构设计决策.
 tags:
   - Research
   - 新闻
@@ -20,9 +19,7 @@ tools:
   - read
   - exec
 homepage: ""
-category: "Knowledge"
----
-# ai-news
+category: "Knowledge"---# ai-news
 
 ## 付费版专享能力
 
@@ -88,7 +85,7 @@ category: "Knowledge"
 **处理步骤：**
 
 1. 解析用户输入的日期
-2. 调用 API：`curl -s "https://api.cjiot.cc/api/v1/daily?date={日期}"`
+2.cjiot.cc/api/v1/daily?date={日期}"`
 3. 解析并展示新闻列表
 
 **回复模板：**
@@ -112,7 +109,7 @@ category: "Knowledge"
 # ...
 1. 从上下文获取当前新闻列表
 2. 提取用户指定的文章 ID
-3. 调用 API：`curl -s "https://api.cjiot.cc/api/v1/articles/{article_id}"`
+3.cjiot.cc/api/v1/articles/{article_id}"`
 4. 解析并展示新闻详情（标题、分类、热度、正文）
 # ...
 **回复模板：**

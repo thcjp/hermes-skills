@@ -1,9 +1,8 @@
----
-slug: "encoding-formats"
+---slug: "encoding-formats"
 name: "encoding-formats"
 version: 1.0.1
 displayName: "编码格式工具"
-summary: "编码解码与数据格式转换，覆盖Base64、URL编码、Hex、Unicode、JWT、哈希、序列化。编码解码与数据格式转换工具，覆盖Base64、URL编码、Hex、Unicode、JWT解"
+summary: "编码解码与数据格式转换"
 summary_zh: "编码解码与数据格式转换，覆盖Base64、URL编码、Hex、Unicode、JWT、哈希、序列化。编码解码与数据格式转换工具，覆盖Base64、URL编码、Hex、Unicode、JWT解"
 license: "MIT"
 description: |-
@@ -26,9 +25,7 @@ tags:
   - url
   - hello
   - jwt
-category: "Automation"
----
-# 编码格式工具
+category: "Automation"---# 编码格式工具
 
 编码、解码和检查常见数据格式。覆盖Base64、URL编码、Hex、Unicode、JWT、哈希校验和序列化格式.
 ## 输入格式
@@ -93,14 +90,13 @@ echo -n "Hello" | base64 | tr '+/' '-_' | tr -d '='
 python3 -c "from urllib.parse import quote; print(quote('hello world & foo=bar'))"
 # 输出: hello%20world%20%26%20foo%3Dbar
 # ...
-python3 -c "from urllib.parse import unquote; print(unquote('hello%20world%20%26%20foo%3Dbar'))"
+parse import unquote; print(unquote('hello%20world%20%26%20foo%3Dbar'))"
 # 输出: hello world & foo=bar
 ```- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `url编码解码` 选项
 - 处理流程: 接收输入 -> 执行URL编码解码 -> 返回结果
 - 输入: 用户提供URL编码解码所需的参数和指令
-- 输出: 返回URL编码解码的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 3. Hex查看与转换
 查看二进制文件的十六进制转储，在Hex和文本之间转换.
@@ -110,7 +106,6 @@ xxd -l 64 file.bin       # 前64字节
 echo "48656c6c6f" | xxd -r -p   # Hex转文本: Hello
 ```
 
-**输入**: 用户提供Hex查看与转换所需的指令和必要参数。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `hex查看与转换` 选项
 
@@ -124,7 +119,6 @@ file -bi document.txt     # 检测文件编码
 - 关键参数: `unicode检查与编码转换` 选项
 - 处理流程: 接收输入 -> 执行Unicode检查与编码转换 -> 返回结果
 - 输入: 用户提供Unicode检查与编码转换所需的参数和指令
-- 输出: 返回Unicode检查与编码转换的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 5. JWT解码
 解码JWT令牌的header和payload（JWT是签名而非加密，任何人可解码）.
@@ -134,8 +128,6 @@ echo "$TOKEN" | cut -d. -f2 | tr '-_' '+/' | base64 -d 2>/dev/null | jq
 # 输出: {"sub": "1234567890", "name": "John Doe"}
 ```
 
-**输入**: 用户提供JWT解码所需的指令和必要参数.
-**处理**: 解析JWT解码的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `jwt解码` 选项
 
@@ -149,7 +141,6 @@ sha256sum *.tar.gz > checksums.sha256
 sha256sum -c checksums.sha256    # 验证
 ```
 
-**输入**: 用户提供哈希与校验和所需的指令和必要参数。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `哈希与校验和` 选项
 
@@ -161,8 +152,6 @@ jq -r '.[] | [.id, .name, .email] | @csv' data.json > data.csv
 protoc --decode_raw < data.pb    # Protobuf解码
 ```
 
-**输入**: 用户提供序列化格式转换所需的指令和必要参数.
-**输出**: 返回序列化格式转换的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -217,7 +206,6 @@ print(f"Expired: {is_expired}")
 sha256sum file.bin
 # 输出: 3a7bd8e1c4f2b9a6e8d5c1f4b7a2e9d6c3f8b1a4e7d2c9f6b3a8e1d5c4f7b2a9  file.bin
 # ...
-sha256sum -c checksums.sha256
 # 输出: file.bin: OK
 ```
 

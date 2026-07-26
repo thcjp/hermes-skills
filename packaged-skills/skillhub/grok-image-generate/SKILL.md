@@ -1,9 +1,8 @@
----
-slug: "grok-image-generate"
+---slug: "grok-image-generate"
 name: "grok-image-generate"
 version: 1.0.1
 displayName: "图像"
-summary: "通过 Grok Imagine 生成用户描述的图片，并指导保存及发送至飞书的完整流程。。通过 Grok Imagine 生成用户描述的图片，并指导保存及发送至飞书的完整流程。核心能力: -"
+summary: "通过 Grok Ima"
 summary_zh: "通过 Grok Imagine 生成用户描述的图片，并指导保存及发送至飞书的完整流程。。通过 Grok Imagine 生成用户描述的图片，并指导保存及发送至飞书的完整流程。核心能力: -"
 license: "MIT"
 description: |-
@@ -37,9 +36,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Creative"
----
-# grok_image_generate
+category: "Creative"---# grok_image_generate
 
 ## 付费版专享能力
 
@@ -109,7 +106,8 @@ playwright({
 
 图片生成后，需要保存到本地。有两种方式：
 
-#### 方式一：使用 Desktop Control 技能保存（推荐）
+#
+### 方式一：使用 Desktop Control 技能保存（推荐）
 
 使用 `desktop-control` 技能通过鼠标操作保存图片：
 
@@ -179,7 +177,7 @@ cp ~/Downloads/图片文件名.jpg ~/.skill-platform/workspace/images/描述.jpg
 // 然后发送
 message({
   action: "send",
-  filePath: "/Users/xiaohuozi/.skill-platform/workspace/images/描述.jpg",
+  filePath: "/Users/xiaohuozi/.jpg",
   message: "图片描述"
 })
 ```
@@ -257,13 +255,11 @@ export API_KEY="your_api_key_here"
 playwright({
   action: "open",
   profile: "skill-platform",
-  url: "https://grok.com/imagine"
 })
 ```
 # ...
 ### 2. 输入提示词并生成(补充)
 # ...
-等待页面加载后，在输入框中输入提示词，然后点击提交按钮生成图片.
 # ...
 ```javascript
 // 输入提示词

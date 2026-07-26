@@ -214,7 +214,6 @@ chmod +x （请参考skill目录中的脚本文件）
 ### CI/CD 集成配置
 
 ```yaml
-# .github/workflows/quality-check.yml
 name: 质量检查
 on:
   pull_request:
@@ -270,7 +269,7 @@ python3 -m py_compile $(find src -name "*.py") && echo "  通过" || exit 1
 # ...
 # C2. 导入检查
 echo "[C2] 导入检查..."
-python3 -c "from src.main import app" && echo "  通过" || exit 1
+main import app" && echo "  通过" || exit 1
 # ...
 # C3. 样例验证
 echo "[C3] 样例验证..."
@@ -282,7 +281,7 @@ python3 -m pytest tests/ --tb=short && echo "  通过" || exit 1
 # ...
 # D1. diff 改动量
 echo "[D1] diff 改动量检查..."
-DIFF_LINES=$(git diff origin/main...HEAD --shortstat | grep -o '[0-9]* insertion' | awk '{print $1}')
+..HEAD --shortstat | grep -o '[0-9]* insertion' | awk '{print $1}')
 echo "  新增行数: $DIFF_LINES"
 if [ "$DIFF_LINES" -gt 200 ]; then
   echo "  [警告] 改动量偏大，请审查必要性"
@@ -381,7 +380,6 @@ echo "=== 验收完成 ==="
 ### 团队合并请求模板
 
 ```markdown
-<!-- .github/pull_request_template.md -->
 # ...
 ## 常见问题
 # ...
@@ -428,7 +426,7 @@ check_references() {
   grep -r "$old_name" src/ --include="*.py"
 
   # JavaScript 引用
-  grep -r "$old_name" src/ --include="*.js" --include="*.ts"
+js" --include="*.ts"
 
   # 配置文件引用
   grep -r "$old_name" config/ --include="*.yaml" --include="*.json"

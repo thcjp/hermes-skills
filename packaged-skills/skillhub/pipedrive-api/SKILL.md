@@ -1,9 +1,8 @@
----
-slug: "pipedrive-api"
+---slug: "pipedrive-api"
 name: "pipedrive-api"
 version: 1.0.5
 displayName: "Pipedrive API工具"
-summary: "Pipedrive API托管OAuth,管交易/联系人/机构/活动。Pipedrive API integration with managed OAuth。Manage deals, p"
+summary: "Pipedrive A"
 summary_zh: "Pipedrive API托管OAuth,管交易/联系人/机构/活动。Pipedrive API integration with managed OAuth。Manage deals, p"
 license: "MIT"
 description: |-
@@ -24,9 +23,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Development"
----
-# Pipedrive
+category: "Development"---# Pipedrive
 
 ## 付费版专享能力
 
@@ -162,8 +159,8 @@ echo $MATON_API_KEY
 ```bash
 python <<'EOF'
 import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/connections')
-req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
+req = urllib.request.maton.ai/connections')
+req.environ["MATON_API_KEY"]}')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 EOF
 ```

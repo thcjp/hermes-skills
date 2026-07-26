@@ -65,42 +65,42 @@ Shopify 助手免费版帮助个人卖家搭建与定制 Shopify 店铺。覆盖
 ### 1. Liquid 模板开发
 
 Shopify 主题使用 Liquid 模板语言,提供模板开发指导与代码示例.
-**输入**: 用户提供Liquid 模板开发所需的指令和必要参数.
+
 **处理**: 解析Liquid 模板开发的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Liquid 模板开发的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 2. 产品与集合管理
 
 产品上传、分类集合、变体配置的管理指导.
-**输入**: 用户提供产品与集合管理所需的指令和必要参数.
+
 **处理**: 解析产品与集合管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回产品与集合管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 3. 基础 SEO 优化
 
 页面标题、Meta 描述、URL 结构、图片 Alt 文本的优化建议.
-**输入**: 用户提供基础 SEO 优化所需的指令和必要参数.
+
 **处理**: 解析基础 SEO 优化的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回基础 SEO 优化的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 4. Shopify CLI
 
 使用 Shopify CLI 进行本地开发、预览与部署.
-**输入**: 用户提供Shopify CLI所需的指令和必要参数.
+
 **处理**: 解析Shopify CLI的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Shopify CLI的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 5. 主题定制
 
 自定义主题颜色、字体、布局,不需要编程基础的操作指导.
-**输入**: 用户提供主题定制所需的指令和必要参数.
+
 **处理**: 解析主题定制的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回主题定制的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 常见问题
 
 Shopify 建站中的高频问题解决方案.
-**输入**: 用户提供常见问题所需的指令和必要参数.
+
 **处理**: 解析常见问题的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回常见问题的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
@@ -201,9 +201,9 @@ shopify theme list
   <div class="filters">
     <select onchange="window.location.href=this.value">
       <option value="{{ collection.url }}">排序: 推荐</option>
-      <option value="{{ collection.url }}?sort_by=price-ascending">价格升序</option>
-      <option value="{{ collection.url }}?sort_by=price-descending">价格降序</option>
-      <option value="{{ collection.url }}?sort_by=created-descending">最新上架</option>
+url }}?sort_by=price-ascending">价格升序</option>
+url }}?sort_by=price-descending">价格降序</option>
+url }}?sort_by=created-descending">最新上架</option>
     </select>
   </div>
 # ...
@@ -211,7 +211,7 @@ shopify theme list
     {%- for product in collection.products -%}
       <div class="product-card">
         <a href="{{ product.url }}">
-          {{ product.featured_image | image_url: width: 300 | image_tag: loading: 'lazy' }}
+featured_image | image_url: width: 300 | image_tag: loading: 'lazy' }}
           <h3>{{ product.title }}</h3>
           <p class="price">{{ product.price | money }}</p>
         </a>

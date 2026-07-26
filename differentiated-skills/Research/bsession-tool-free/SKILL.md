@@ -82,7 +82,7 @@ class BsessionFetcher:
         for port in range(start, start + max_try):
             check_cmd = f"docker exec {self.container} python3 -c \"import urllib.request; " \
                        f"urllib.request.urlopen('http://localhost:{port}/json/version', timeout=2)\""
-            result = subprocess.run(check_cmd, shell=True, capture_output=True)
+run(check_cmd, shell=True, capture_output=True)
             if result.returncode != 0:
                 return port
         return None
@@ -99,7 +99,7 @@ class BsessionFetcher:
         try:
             # 启动临时Chrome
             subprocess.run(
-                ["docker", "exec", self.container, "python3", "-c",
+container, "python3", "-c",
                  f"import sys; sys.path.insert(0, '/app'); "
                  f"from lib.browser import start_chrome; "
                  f"start_chrome({port}, '/workspace/data/profile-tmp')"],
@@ -107,8 +107,7 @@ class BsessionFetcher:
             )
 # ...
             # 打开URL
-            subprocess.run(
-                ["docker", "exec", self.container, "agent-browser",
+container, "agent-browser",
                  "--cdp", str(port), "open", url],
                 capture_output=True, text=True, timeout=30
             )
@@ -118,8 +117,7 @@ class BsessionFetcher:
             time.sleep(wait_seconds)
 # ...
             # 获取页面快照
-            result = subprocess.run(
-                ["docker", "exec", self.container, "agent-browser",
+container, "agent-browser",
                  "--cdp", str(port), "snapshot"],
                 capture_output=True, text=True, timeout=10
             )
@@ -134,10 +132,9 @@ class BsessionFetcher:
             return {"success": False, "error": str(e)}
         finally:
             # 清理临时Chrome
-            subprocess.run(
-                ["docker", "exec", self.container, "python3", "-c",
-                 f"import sys; sys.path.insert(0, '/app'); "
-                 f"from lib.browser import stop_chrome; "
+container, "python3", "-c",
+path.insert(0, '/app'); "
+browser import stop_chrome; "
                  f"stop_chrome({port})"],
                 capture_output=True, text=True, timeout=5
             )
@@ -148,7 +145,6 @@ result = fetcher.fetch_url("https://example.com", wait_seconds=3)
 print(result.get("content", "")[:500] if result.get("success") else result.get("error"))
 ```
 
-**输入**: 用户提供单次页面抓取（fetch模式）所需的指令和必要参数.
 **处理**: 解析单次页面抓取（fetch模式）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回单次页面抓取（fetch模式）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -166,22 +162,19 @@ class BsessionInteraction:
         """点击元素"""
         cmd = ["docker", "exec", self.container, "agent-browser",
                "--cdp", str(self.port), "click", ref]
-        result = subprocess.run(cmd, capture_output=True, text=True)
-        return result.returncode == 0
+run(cmd, capture_output=True, text=True)
 # ...
     def fill_field(self, ref, value):
         """填写表单字段"""
-        cmd = ["docker", "exec", self.container, "agent-browser",
-               "--cdp", str(self.port), "fill", ref, value]
-        result = subprocess.run(cmd, capture_output=True, text=True)
-        return result.returncode == 0
+container, "agent-browser",
+port), "fill", ref, value]
+run(cmd, capture_output=True, text=True)
 # ...
     def take_snapshot(self):
         """获取页面快照"""
-        cmd = ["docker", "exec", self.container, "agent-browser",
-               "--cdp", str(self.port), "snapshot"]
-        result = subprocess.run(cmd, capture_output=True, text=True)
-        return result.stdout if result.returncode == 0 else ""
+container, "agent-browser",
+run(cmd, capture_output=True, text=True)
+stdout if result.returncode == 0 else ""
 # ...
 # 使用示例
 interaction = BsessionInteraction(port=9222)
@@ -191,7 +184,6 @@ content = interaction.take_snapshot()
 # interaction.fill_field("ref_input_email", "user@test.com")
 ```
 
-**输入**: 用户提供基础元素交互所需的指令和必要参数.
 **处理**: 解析基础元素交互的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回基础元素交互的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -204,30 +196,25 @@ class SessionLister:
     def list_sessions(self):
         """列出所有会话"""
         try:
-            result = subprocess.run(
                 ["docker", "exec", "agent-browser", "python3", "-c",
                  "import sys; sys.path.insert(0, '/app'); "
                  "from lib.browser import list_sessions; "
                  "list_sessions()"],
                 capture_output=True, text=True, timeout=10
             )
-            return result.stdout
         except Exception as e:
             return f"查询失败：{e}"
 # ...
     def show_session(self, session_name):
         """查看指定会话详情"""
         try:
-            result = subprocess.run(
                 ["docker", "exec", "agent-browser", "bsession", "show", session_name],
                 capture_output=True, text=True, timeout=10
             )
-            return result.stdout
         except Exception as e:
             return f"查询失败：{e}"
 ```
 
-**输入**: 用户提供会话列表查看所需的指令和必要参数.
 **处理**: 解析会话列表查看的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回会话列表查看的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：浏览器会话管理免、支持一次性页面抓、基础会话列表与简、易调试、浏览器会话助手免、费版是面向个人开、发者的轻量浏览器、会话管理工具、提取信息、返回结果、三步流程、无需编写完整脚本、即可完成单次页面、抓取任务、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -287,7 +274,7 @@ port = fetcher.find_free_port()
 print(f"   可用端口：{port}")
 # ...
 print("\n3. 抓取页面")
-result = fetcher.fetch_url("https://example.com")
+result = fetcher.com")
 print(f"   抓取结果：{'成功' if result.get('success') else '失败'}")
 # ...
 print("\n4. 解析内容")
@@ -397,7 +384,7 @@ def resolve_bsession_paths():
         "./workspace/"
     ]
     for candidate in workspace_candidates:
-        if candidate and os.path.exists(candidate):
+path.exists(candidate):
             paths["workspace"] = candidate
             break
 # ...
@@ -423,8 +410,8 @@ def safe_fetch(url):
         # 确保临时Chrome被关闭
         subprocess.run(
             ["docker", "exec", "agent-browser", "python3", "-c",
-             "import sys; sys.path.insert(0, '/app'); "
-             "from lib.browser import cleanup_temp; cleanup_temp()"],
+path.insert(0, '/app'); "
+browser import cleanup_temp; cleanup_temp()"],
             capture_output=True
         )
 ```
@@ -438,7 +425,6 @@ def robust_fetch(url, max_retries=2):
         try:
             fetcher = BsessionFetcher()
             result = fetcher.fetch_url(url)
-            if result.get("success"):
                 return result
             print(f"第{attempt+1}次失败：{result.get('error')}")
         except Exception as e:
@@ -470,7 +456,6 @@ class PortManager:
 检查`error_code`并按照处理方式进行排查.
 ### 错误场景3
 
-检查`error_code`并按照处理方式进行排查.
 ## 常见问题
 ### Q1：免费版支持定时任务吗？
 不支持。免费版仅支持单次（one-shot）抓取任务。如需定时执行（如每30分钟检查一次）、循环监控、状态变化检测等场景，需升级至专业版.
@@ -534,8 +519,6 @@ class PortManager:
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

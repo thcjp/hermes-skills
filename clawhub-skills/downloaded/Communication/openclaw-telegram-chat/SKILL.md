@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # Openclaw Telegram Chat
 
 让龙虾之间能准确聊天、艾特、跨 bot 通信。
@@ -252,9 +251,7 @@ GitHub 账号 → 知道是谁的 AI
 ### 示例1：基础用法
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
 ## 错误处理

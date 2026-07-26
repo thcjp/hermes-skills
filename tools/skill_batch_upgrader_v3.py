@@ -20,7 +20,9 @@ Usage:
 import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
-from project_config import DB_PATH, DATA_DIR
+from project_config import DB_PATH, DATA_DIR, PROJECT_ROOT
+from project_config import PACKAGED_SKILLS_DIR, OPENSOURCE_SKILLS_DIR
+from project_config import ENTERPRISE_UPLOAD_DIR, DIFFERENTIATED_DIR
 # === End Phase 1 ===
 
 
@@ -70,6 +72,39 @@ SUMMARY_PATTERNS = [
     r'本技能用于帮助用户',
     r'帮助用户处理各种',
     r'帮助用户完成各种',
+]
+
+# v3.1新增: 内容质量模式
+# 模板化短语(批量生成脚本产出的通用套话)
+TEMPLATE_CONTENT_PATTERNS = [
+    r'按照skill规范执行',
+    r'遵循单一意图原则',
+    r'解析.*任务的输入参数,完成核心解析逻辑,返回结构化响应和完成状态',
+    r'解析.*的输入参数,执行核心处理逻辑,返回结构化结果和执行状态',
+    r'返回.*处理结果,包含执行状态码、结果数据和执行日志',
+    r'验证执行结果，确认输出符合预期格式',
+    r'参考.*相关配置参数进行设置',
+    r'处理输入数据,执行转换操作并输出结果',
+]
+
+# 占位符内容模式
+PLACEHOLDER_CONTENT_PATTERNS = [
+    r'根据实际场景填充',
+    r'相关说明',
+    r'用户提供.*所需的指令和必要参数',
+    r'用户提供操作指令和必要参数',
+    r'返回操作执行的结果',
+    r'输入: 用户请求',
+    r'处理: 根据使用流程执行',
+    r'输出: 处理结果',
+    r'result: "browser 相关配置参数"',
+    r'result: "相关说明"',
+]
+
+# 空节区检测模式
+EMPTY_SECTION_PATTERNS = [
+    r'API Key 配置\s*\n-\s*\n',
+    r'可用性分类.*MD\+EXEC\(\)',
 ]
 
 # v3.0新增: 硬编码凭证模式
@@ -126,6 +161,50 @@ TRIGGER_TEMPLATES = {
     '监控运维': 'Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。',
     '电商': 'Use when 需要电商运营、商品管理、订单处理、支付集成时使用。不适用于虚假交易和刷单。',
 }
+
+
+def find_skill_md(slug: str) -> Path:
+    """查找skill的SKILL.md文件(优先搜索发布目录)
+    
+    搜索顺序:
+    1. packaged-skills/skillhub/{slug}/SKILL.md (发布版,最优先)
+    2. opensource-skills/packaged/{slug}/SKILL.md
+    3. enterprise-upload/{slug}/SKILL.md
+    4. differentiated-skills/*/{slug}/SKILL.md
+    5. 回退到数据库中的local_path
+    """
+    search_dirs = [
+        PACKAGED_SKILLS_DIR / slug,
+        OPENSOURCE_SKILLS_DIR / slug,
+        ENTERPRISE_UPLOAD_DIR / slug,
+    ]
+    for d in search_dirs:
+        md = d / "SKILL.md"
+        if md.exists():
+            return md
+    # 差异化目录按分类查找
+    if DIFFERENTIATED_DIR.is_dir():
+        for cat_dir in DIFFERENTIATED_DIR.iterdir():
+            if cat_dir.is_dir():
+                md = cat_dir / slug / "SKILL.md"
+                if md.exists():
+                    return md
+    # 回退到数据库local_path
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        conn.row_factory = sqlite3.Row
+        c = conn.cursor()
+        c.execute("SELECT local_path FROM skills WHERE slug = ?", (slug,))
+        row = c.fetchone()
+        conn.close()
+        if row and row['local_path']:
+            p = Path(row['local_path'])
+            md = p / "SKILL.md" if p.is_dir() else p
+            if md.exists():
+                return md
+    except Exception:
+        pass
+    return None
 
 
 def check_name_folder_consistency(skill_md_path):
@@ -229,7 +308,7 @@ def check_summary_style_description(skill_md_path):
         if desc_match:
             desc = desc_match.group(1).strip()
         else:
-            return False, "description不存在"
+            return True, "description不存在(无需检查)"
     
     for pattern in SUMMARY_PATTERNS:
         if re.search(pattern, desc):
@@ -385,6 +464,423 @@ def check_description_length(skill_md_path):
         return False, f"太长({desc_len}c >280)"
     else:
         return True, f"合格({desc_len}c)"
+
+
+# ============ v3.1新增: 内容质量检查 ============
+
+def check_duplicate_summary(skill_md_path):
+    """检查summary是否包含重复文本"""
+    content = skill_md_path.read_text(encoding='utf-8')
+    if content.startswith('\ufeff'):
+        content = content[1:]
+    fm, _ = parse_skill_md(content)
+    match = re.search(r'^summary:\s*["\']?(.+?)["\']?\s*$', fm, re.MULTILINE)
+    if not match:
+        return True, "summary不存在(无需检查)"
+    value = match.group(1).strip()
+    # 检测: 前半段和后半段是否重复
+    half = len(value) // 2
+    if half > 10:
+        first_half = value[:half].rstrip('.。 ')
+        second_half = value[half:].lstrip('.。 ')
+        if first_half and second_half and first_half == second_half:
+            return False, f"summary前后重复: '{first_half[:30]}...'"
+    # 检测: 连续重复的短语
+    for i in range(10, len(value) // 2):
+        segment = value[:i]
+        if value.count(segment) >= 2 and len(segment) > 10:
+            return False, f"summary含重复段落: '{segment[:30]}...'"
+    return True, "无重复"
+
+
+def check_duplicate_description(skill_md_path):
+    """检查description是否包含重复文本"""
+    content = skill_md_path.read_text(encoding='utf-8')
+    if content.startswith('\ufeff'):
+        content = content[1:]
+    fm, _ = parse_skill_md(content)
+    desc_match = re.search(r'description:\s*\|-\s*\n((?:\s+.+\n?)+)', fm)
+    if desc_match:
+        desc = desc_match.group(1).strip()
+    else:
+        desc_match = re.search(r'description:\s*["\']?(.+?)["\']?\s*$', fm, re.MULTILINE)
+        if desc_match:
+            desc = desc_match.group(1).strip()
+        else:
+            return True, "description不存在(无需检查)"
+    # 检测重复的句子(以.或。分隔)
+    sentences = re.split(r'[.。]', desc)
+    sentences = [s.strip() for s in sentences if len(s.strip()) > 10]
+    seen = set()
+    for s in sentences:
+        if s in seen:
+            return False, f"description含重复句子: '{s[:40]}...'"
+        seen.add(s)
+    # 检测前半段和后半段重复
+    half = len(desc) // 2
+    if half > 20:
+        first = desc[:half].rstrip('.。 ')
+        second = desc[half:].lstrip('.。 ')
+        if first and second and first == second:
+            return False, "description前后重复"
+    return True, "无重复"
+
+
+def check_template_content(skill_md_path):
+    """检查是否含模板化套话"""
+    content = skill_md_path.read_text(encoding='utf-8')
+    issues = []
+    for pattern in TEMPLATE_CONTENT_PATTERNS:
+        matches = re.findall(pattern, content)
+        if matches:
+            issues.append(f"模板短语: {matches[0][:50]}")
+    return len(issues) == 0, issues
+
+
+def check_placeholder_content(skill_md_path):
+    """检查是否含占位符内容"""
+    content = skill_md_path.read_text(encoding='utf-8')
+    issues = []
+    for pattern in PLACEHOLDER_CONTENT_PATTERNS:
+        matches = re.findall(pattern, content)
+        if matches:
+            issues.append(f"占位符: {matches[0][:50]}")
+    return len(issues) == 0, issues
+
+
+def check_duplicate_sentences_body(skill_md_path):
+    """检查body中是否有重复句子"""
+    content = skill_md_path.read_text(encoding='utf-8')
+    if content.startswith('\ufeff'):
+        content = content[1:]
+    parts = content.split('---', 2)
+    body = parts[2] if len(parts) >= 3 else content
+    # 提取所有句子(以.或。或!或?结尾, 长度>20)
+    sentences = re.findall(r'[^.。\n!?]{20,}[.。!?]', body)
+    seen = {}
+    duplicates = []
+    for s in sentences:
+        s = s.strip()
+        if s in seen:
+            duplicates.append(s[:50])
+        else:
+            seen[s] = True
+    if duplicates:
+        return False, f"{len(duplicates)}处重复句子: {duplicates[0][:40]}..."
+    return True, "无重复"
+
+
+def check_section_merging(skill_md_path):
+    """检查章节是否错误合并(### 标题直接跟在上一行末尾)"""
+    content = skill_md_path.read_text(encoding='utf-8')
+    if content.startswith('\ufeff'):
+        content = content[1:]
+    # 检测: 某行末尾直接跟### 标题(无换行)
+    merged = re.findall(r'[^\n]###\s', content)
+    if merged:
+        return False, f"{len(merged)}处章节合并"
+    return True, "无合并"
+
+
+def check_empty_input_table(skill_md_path):
+    """检查输入格式表是否为空(只有表头没有数据行)"""
+    content = skill_md_path.read_text(encoding='utf-8')
+    if content.startswith('\ufeff'):
+        content = content[1:]
+    # 查找 ## 输入格式 后的表格
+    input_section = re.search(r'##\s*输入格式\s*\n(.*?)(?=\n##\s|\Z)', content, re.DOTALL)
+    if input_section:
+        section_text = input_section.group(1)
+        # 检查表格行数(排除表头和分隔行)
+        table_rows = [l for l in section_text.split('\n') if l.strip().startswith('|') and '---' not in l]
+        # 表头行通常1行, 如果只有表头没有数据行
+        if len(table_rows) <= 1:
+            return False, "输入格式表为空(只有表头)"
+    return True, "正常"
+
+
+def run_content_quality_check(skill_md_path):
+    """运行全部内容质量检查(v3.1新增)"""
+    results = {
+        'path': str(skill_md_path),
+        'slug': skill_md_path.parent.name,
+        'checks': [],
+        'pass_count': 0,
+        'fail_count': 0,
+    }
+    checks = [
+        ('dup_summary', 'summary无重复', lambda: check_duplicate_summary(skill_md_path)),
+        ('dup_description', 'description无重复', lambda: check_duplicate_description(skill_md_path)),
+        ('template_content', '无模板化套话', lambda: check_template_content(skill_md_path)),
+        ('placeholder_content', '无占位符内容', lambda: check_placeholder_content(skill_md_path)),
+        ('dup_sentences', 'body无重复句子', lambda: check_duplicate_sentences_body(skill_md_path)),
+        ('section_merging', '章节无错误合并', lambda: check_section_merging(skill_md_path)),
+        ('empty_input_table', '输入格式表非空', lambda: check_empty_input_table(skill_md_path)),
+    ]
+    for check_id, check_name, check_func in checks:
+        try:
+            passed, message = check_func()
+            results['checks'].append({
+                'id': check_id,
+                'name': check_name,
+                'passed': passed,
+                'message': message if isinstance(message, str) else str(message),
+            })
+            if passed:
+                results['pass_count'] += 1
+            else:
+                results['fail_count'] += 1
+        except Exception as e:
+            results['checks'].append({
+                'id': check_id,
+                'name': check_name,
+                'passed': False,
+                'message': f'检查异常: {e}',
+            })
+            results['fail_count'] += 1
+    return results
+
+
+# ============ v3.1新增: 内容质量修复函数 ============
+
+def fix_duplicate_summary(skill_md_path):
+    """修复summary重复: 取前半段"""
+    content = skill_md_path.read_text(encoding='utf-8')
+    if content.startswith('\ufeff'):
+        content = content[1:]
+    fm, body = parse_skill_md(content)
+    match = re.search(r'^(summary):\s*["\']?(.+?)["\']?\s*$', fm, re.MULTILINE)
+    if not match:
+        return False
+    value = match.group(2).strip()
+    half = len(value) // 2
+    if half > 10:
+        first_half = value[:half].rstrip('.。 ')
+        second_half = value[half:].lstrip('.。 ')
+        if first_half and second_half and first_half == second_half:
+            new_value = first_half
+            new_fm = fm.replace(match.group(0), f'{match.group(1)}: "{new_value}"')
+            new_content = f'---{new_fm}---{body}'
+            skill_md_path.write_text(new_content, encoding='utf-8')
+            return True
+    # 检测连续重复短语
+    for i in range(10, len(value) // 2):
+        segment = value[:i]
+        if value.count(segment) >= 2 and len(segment) > 10:
+            new_value = segment
+            new_fm = fm.replace(match.group(0), f'{match.group(1)}: "{new_value}"')
+            new_content = f'---{new_fm}---{body}'
+            skill_md_path.write_text(new_content, encoding='utf-8')
+            return True
+    return False
+
+
+def fix_duplicate_description(skill_md_path):
+    """修复description重复: 去除重复句子"""
+    content = skill_md_path.read_text(encoding='utf-8')
+    if content.startswith('\ufeff'):
+        content = content[1:]
+    fm, body = parse_skill_md(content)
+    desc_match = re.search(r'(description:\s*\|-\s*\n)((?:\s+.+\n?)+)', fm)
+    if desc_match:
+        desc = desc_match.group(2).strip()
+        old_block = desc_match.group(0)
+    else:
+        desc_match = re.search(r'^(description:\s*)["\']?(.+?)["\']?\s*$', fm, re.MULTILINE)
+        if desc_match:
+            desc = desc_match.group(2).strip()
+            old_block = desc_match.group(0)
+        else:
+            return False
+    # 去重: 按.或。分割, 保留首次出现
+    sentences = re.split(r'([.。])', desc)
+    deduped = []
+    seen = set()
+    i = 0
+    while i < len(sentences):
+        if i + 1 < len(sentences) and sentences[i+1] in '.。':
+            sent = sentences[i] + sentences[i+1]
+            sent_stripped = sent.strip()
+            if sent_stripped and sent_stripped not in seen and len(sent_stripped) > 5:
+                deduped.append(sent)
+                seen.add(sent_stripped)
+            i += 2
+        else:
+            if sentences[i].strip():
+                deduped.append(sentences[i])
+            i += 1
+    new_desc = ''.join(deduped).strip()
+    if new_desc != desc:
+        if 'description: |-' in old_block:
+            new_block = f'description: |-\n  {new_desc}\n'
+        else:
+            new_block = f'description: "{new_desc}"'
+        new_fm = fm.replace(old_block, new_block)
+        new_content = f'---{new_fm}---{body}'
+        skill_md_path.write_text(new_content, encoding='utf-8')
+        return True
+    return False
+
+
+def fix_template_content(skill_md_path):
+    """修复模板化套话: 删除模板短语"""
+    content = skill_md_path.read_text(encoding='utf-8')
+    if content.startswith('\ufeff'):
+        content = content[1:]
+    original = content
+    # 删除模板化短语所在的整行
+    for pattern in TEMPLATE_CONTENT_PATTERNS:
+        # 删除包含模板短语的**输入/处理/输出**行
+        content = re.sub(r'\*\*输入\*\*:.*' + pattern + r'.*\n?', '', content)
+        content = re.sub(r'\*\*处理\*\*:.*' + pattern + r'.*\n?', '', content)
+        content = re.sub(r'\*\*输出\*\*:.*' + pattern + r'.*\n?', '', content)
+        # 删除独立行的模板短语
+        content = re.sub(r'^.*' + pattern + r'.*$', '', content, flags=re.MULTILINE)
+    # 清理连续空行
+    content = re.sub(r'\n{3,}', '\n\n', content)
+    if content != original:
+        skill_md_path.write_text(content, encoding='utf-8')
+        return True
+    return False
+
+
+def fix_placeholder_content(skill_md_path):
+    """修复占位符内容: 删除含占位符的行"""
+    content = skill_md_path.read_text(encoding='utf-8')
+    if content.startswith('\ufeff'):
+        content = content[1:]
+    original = content
+    for pattern in PLACEHOLDER_CONTENT_PATTERNS:
+        # 删除包含占位符的表格行
+        content = re.sub(r'^\|.*' + pattern + r'.*\|?\s*$', '', content, flags=re.MULTILINE)
+        # 删除包含占位符的整行(非表格)
+        content = re.sub(r'^.*' + pattern + r'.*$', '', content, flags=re.MULTILINE)
+    # 清理连续空行
+    content = re.sub(r'\n{3,}', '\n\n', content)
+    if content != original:
+        skill_md_path.write_text(content, encoding='utf-8')
+        return True
+    return False
+
+
+def fix_section_merging(skill_md_path):
+    """修复章节合并: 在### 前添加换行"""
+    content = skill_md_path.read_text(encoding='utf-8')
+    if content.startswith('\ufeff'):
+        content = content[1:]
+    # 在非行首的### 前添加换行
+    new_content = re.sub(r'([^\n])(###\s)', r'\1\n\2', content)
+    if new_content != content:
+        skill_md_path.write_text(new_content, encoding='utf-8')
+        return True
+    return False
+
+
+def fix_empty_input_table(skill_md_path):
+    """修复空输入表: 补充基本输入参数(v3.2增强: 支持空行和可变列数)"""
+    content = skill_md_path.read_text(encoding='utf-8')
+    if content.startswith('\ufeff'):
+        content = content[1:]
+    # v3.2: 更灵活的正则,允许header和separator之间有空行
+    input_section = re.search(
+        r'(##\s*输入格式\s*\n)\s*\n?(\|.*\|\n)\s*\n?(\|[-:\s|]+\|\n)(\s*\n*)(?=\n?##\s|\Z)',
+        content
+    )
+    if input_section:
+        # 补充基本输入行
+        new_rows = "| instruction | string | 是 | 用户指令文本 |\n| context | string | 否 | 上下文信息 |\n"
+        new_content = content[:input_section.end()] + new_rows + content[input_section.end():]
+        skill_md_path.write_text(new_content, encoding='utf-8')
+        return True
+    return False
+
+
+def fix_duplicate_sentences_body(skill_md_path):
+    """修复body重复句子: 保留首次出现,删除后续重复(v3.2新增)"""
+    content = skill_md_path.read_text(encoding='utf-8')
+    if content.startswith('\ufeff'):
+        content = content[1:]
+    parts = content.split('---', 2)
+    if len(parts) < 3:
+        return False
+    fm = parts[1]
+    body = parts[2]
+
+    # 与check_duplicate_sentences_body相同的句子提取逻辑
+    sentence_pattern = r'[^.。\n!?]{20,}[.。!?]'
+    all_matches = list(re.finditer(sentence_pattern, body))
+
+    # 找出重复句子(非首次出现)
+    seen = set()
+    duplicates_to_remove = []  # (start, end, sentence)
+    for m in all_matches:
+        s = m.group().strip()
+        if s in seen:
+            duplicates_to_remove.append((m.start(), m.end(), s))
+        else:
+            seen.add(s)
+
+    if not duplicates_to_remove:
+        return False
+
+    # 从后往前删除,避免位置偏移
+    new_body = body
+    for start, end, s in sorted(duplicates_to_remove, key=lambda x: -x[0]):
+        # 找到句子所在行的范围
+        line_start = new_body.rfind('\n', 0, start) + 1
+        line_end = new_body.find('\n', end)
+        if line_end == -1:
+            line_end = len(new_body)
+        line_content = new_body[line_start:line_end].strip()
+        # 如果整行只有这个句子,删除整行
+        if line_content == s or (len(line_content) < len(s) + 20 and s in line_content):
+            new_body = new_body[:line_start] + new_body[line_end + 1:]
+        else:
+            # 只删除句子本身
+            new_body = new_body[:start] + new_body[end:]
+
+    # 清理连续空行
+    new_body = re.sub(r'\n{3,}', '\n\n', new_body)
+
+    if new_body != body:
+        new_content = f'---{fm}---{new_body}'
+        skill_md_path.write_text(new_content, encoding='utf-8')
+        return True
+    return False
+
+
+def auto_fix_content(skill_md_path):
+    """自动修复内容质量问题(v3.2增强)"""
+    fixes = []
+    # 1. 修复summary重复
+    ok, _ = check_duplicate_summary(skill_md_path)
+    if not ok and fix_duplicate_summary(skill_md_path):
+        fixes.append('summary去重')
+    # 2. 修复description重复
+    ok, _ = check_duplicate_description(skill_md_path)
+    if not ok and fix_duplicate_description(skill_md_path):
+        fixes.append('description去重')
+    # 3. 修复章节合并
+    ok, _ = check_section_merging(skill_md_path)
+    if not ok and fix_section_merging(skill_md_path):
+        fixes.append('章节换行')
+    # 4. 修复模板化内容
+    ok, _ = check_template_content(skill_md_path)
+    if not ok and fix_template_content(skill_md_path):
+        fixes.append('模板内容清理')
+    # 5. 修复占位符内容
+    ok, _ = check_placeholder_content(skill_md_path)
+    if not ok and fix_placeholder_content(skill_md_path):
+        fixes.append('占位符清理')
+    # 6. 修复空输入表
+    ok, _ = check_empty_input_table(skill_md_path)
+    if not ok and fix_empty_input_table(skill_md_path):
+        fixes.append('输入表补充')
+    # 7. 修复body重复句子 (v3.2新增)
+    ok, _ = check_duplicate_sentences_body(skill_md_path)
+    if not ok and fix_duplicate_sentences_body(skill_md_path):
+        fixes.append('body去重')
+    return fixes
 
 
 def fix_name_folder(skill_md_path):
@@ -829,7 +1325,7 @@ def trim_long_skill(skill_md_path):
 
 
 def run_compliance_check(skill_md_path):
-    """运行全部30项合规检查"""
+    """运行全部合规检查(含v3.1内容质量检查)"""
     results = {
         'path': str(skill_md_path),
         'slug': skill_md_path.parent.name,
@@ -851,6 +1347,14 @@ def run_compliance_check(skill_md_path):
         ('summary_length', 'summary≤100字符', lambda: check_summary_length(skill_md_path)),
         ('hardcoded_keys', '无硬编码凭证', lambda: check_hardcoded_keys(skill_md_path)),
         ('desc_length', 'description 150-280c', lambda: check_description_length(skill_md_path)),
+        # v3.1新增: 内容质量检查
+        ('dup_summary', 'summary无重复', lambda: check_duplicate_summary(skill_md_path)),
+        ('dup_description', 'description无重复', lambda: check_duplicate_description(skill_md_path)),
+        ('template_content', '无模板化套话', lambda: check_template_content(skill_md_path)),
+        ('placeholder_content', '无占位符内容', lambda: check_placeholder_content(skill_md_path)),
+        ('dup_sentences', 'body无重复句子', lambda: check_duplicate_sentences_body(skill_md_path)),
+        ('section_merging', '章节无错误合并', lambda: check_section_merging(skill_md_path)),
+        ('empty_input_table', '输入格式表非空', lambda: check_empty_input_table(skill_md_path)),
     ]
     
     for check_id, check_name, check_func in checks:
@@ -949,6 +1453,10 @@ def auto_fix(skill_md_path):
     if not ok:
         if trim_long_skill(skill_md_path):
             fixes.append('行数优化')
+    
+    # 12. v3.1新增: 内容质量修复
+    content_fixes = auto_fix_content(skill_md_path)
+    fixes.extend(content_fixes)
     
     return fixes
 
@@ -1138,6 +1646,131 @@ def cmd_report():
             print(f"  {r['slug']}: {r['fail_count']}项失败 - {', '.join(failed_names)}")
 
 
+def cmd_content_check(args):
+    """v3.1新增: 内容质量检查"""
+    if args and args[0] == '--slug':
+        slug = args[1]
+        skill_md = find_skill_md(slug)
+        if not skill_md:
+            print(f"Skill '{slug}' 的SKILL.md未找到")
+            return
+        skills = [(slug, str(skill_md.parent))]
+    else:
+        skills = get_all_skills()
+    
+    print(f"内容质量检查 {len(skills)} 个skills...")
+    
+    all_results = []
+    issue_stats = {}
+    
+    for slug, local_path in skills:
+        # v3.1.1修复: 优先使用find_skill_md搜索发布目录,而非数据库local_path
+        skill_md = find_skill_md(slug)
+        if not skill_md:
+            # 回退到local_path
+            skill_md = Path(local_path) / "SKILL.md"
+            if not skill_md.exists():
+                skill_md = Path(local_path)
+                if not skill_md.exists():
+                    continue
+        
+        result = run_content_quality_check(skill_md)
+        all_results.append(result)
+        
+        if result['fail_count'] > 0:
+            for check in result['checks']:
+                if not check['passed']:
+                    issue_stats[check['name']] = issue_stats.get(check['name'], 0) + 1
+    
+    total = len(all_results)
+    all_pass = sum(1 for r in all_results if r['fail_count'] == 0)
+    has_fail = sum(1 for r in all_results if r['fail_count'] > 0)
+    
+    print(f"\n{'='*80}")
+    print(f"内容质量检查报告 v3.1")
+    print(f"{'='*80}")
+    print(f"总计: {total}个skill")
+    print(f"  全部通过: {all_pass}个 ({all_pass/total*100:.1f}%)")
+    print(f"  有内容问题: {has_fail}个 ({has_fail/total*100:.1f}%)")
+    
+    if issue_stats:
+        print(f"\n问题分布(按检查项):")
+        for name, count in sorted(issue_stats.items(), key=lambda x: -x[1]):
+            print(f"  {name}: {count}个")
+    
+    # 保存报告
+    report_path = DATA_DIR / "reports" / "content_quality_report.json"
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(report_path, 'w', encoding='utf-8') as f:
+        json.dump({
+            'timestamp': datetime.now().isoformat(),
+            'total': total,
+            'all_pass': all_pass,
+            'has_fail': has_fail,
+            'issue_stats': issue_stats,
+            'results': all_results,
+        }, f, ensure_ascii=False, indent=2)
+    print(f"\n报告保存到: {report_path}")
+    
+    return all_results
+
+
+def cmd_content_fix(args):
+    """v3.1新增: 内容质量修复"""
+    if args and args[0] == '--slug':
+        slug = args[1]
+        skill_md = find_skill_md(slug)
+        if not skill_md:
+            print(f"Skill '{slug}' 的SKILL.md未找到")
+            return
+        skills = [(slug, str(skill_md.parent))]
+    elif args and args[0] == '--top':
+        # 只修复问题最多的N个skill
+        n = int(args[1]) if len(args) > 1 else 50
+        report_path = DATA_DIR / "reports" / "content_quality_report.json"
+        if not report_path.exists():
+            print("请先运行: python skill_batch_upgrader_v3.py content-check")
+            return
+        with open(report_path, 'r', encoding='utf-8') as f:
+            report = json.load(f)
+        # 按fail_count降序
+        sorted_results = sorted(report['results'], key=lambda x: -x['fail_count'])
+        top_slugs = [r['slug'] for r in sorted_results[:n] if r['fail_count'] > 0]
+        skills = [(slug, '') for slug in top_slugs]
+        print(f"修复问题最多的 {len(skills)} 个skills...")
+    else:
+        skills = get_all_skills()
+        print(f"修复 {len(skills)} 个skills...")
+    
+    fixed_count = 0
+    fix_stats = {}
+    
+    for slug, local_path in skills:
+        # v3.1.1修复: 优先使用find_skill_md搜索发布目录
+        skill_md = find_skill_md(slug)
+        if not skill_md:
+            # 回退到local_path
+            skill_md = Path(local_path) / "SKILL.md"
+            if not skill_md.exists():
+                skill_md = Path(local_path)
+                if not skill_md.exists():
+                    continue
+        
+        fixes = auto_fix_content(skill_md)
+        if fixes:
+            fixed_count += 1
+            for fix in fixes:
+                fix_stats[fix] = fix_stats.get(fix, 0) + 1
+            print(f"  [FIXED] {slug}: {', '.join(fixes)}")
+    
+    print(f"\n{'='*80}")
+    print(f"内容质量修复完成: {fixed_count}/{len(skills)} 个skill被修复")
+    if fix_stats:
+        print(f"\n修复统计:")
+        for fix, count in sorted(fix_stats.items(), key=lambda x: -x[1]):
+            print(f"  {fix}: {count}个")
+
+
 def main():
     if len(sys.argv) < 2:
         print(__doc__)
@@ -1152,6 +1785,10 @@ def main():
         cmd_fix(args)
     elif cmd == 'report':
         cmd_report()
+    elif cmd == 'content-check':
+        cmd_content_check(args)
+    elif cmd == 'content-fix':
+        cmd_content_fix(args)
     else:
         print(f"未知命令: {cmd}")
         print(__doc__)

@@ -77,7 +77,6 @@ AI翻译验证专业版是一款面向企业用户的翻译与本地化平台。
 | 报告格式 | 输出类型 | 文本 | HTML/JSON |
 | 项目协作 | 团队功能 | 不支持 | 多用户协作 |
 
-**输入**: 用户提供功能矩阵所需的指令和必要参数.
 **处理**: 解析功能矩阵的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能矩阵的响应数据,包含状态码、结果和日志.
 ### 翻译质量层次
@@ -99,14 +98,13 @@ AI翻译验证专业版是一款面向企业用户的翻译与本地化平台。
 └──────────────┴───────────────────────────────────┘
 ```
 
-**输入**: 用户提供翻译质量层次所需的指令和必要参数.
 **处理**: 解析翻译质量层次的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回翻译质量层次的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -201,19 +199,16 @@ class TranslationClientPro:
             if options.get("quality_boost"):
                 data["quality_boost"] = "true"
 # ...
-            if options.get("human_verify"):
+get("human_verify"):
                 data["human_verify"] = "true"
                 data["priority"] = options.get("priority", "normal")
 # ...
-            if options.get("webhook_url"):
                 data["webhook_url"] = options["webhook_url"]
                 data["webhook_events"] = json.dumps(
                     options.get("webhook_events", ["project.completed"])
                 )
 # ...
-            if options.get("use_tm"):
                 data["use_translation_memory"] = "true"
-                if options.get("tm_file"):
                     with open(options["tm_file"], 'rb') as tm:
                         response = requests.post(
                             f"{self.BASE_URL}/project",
@@ -222,9 +217,6 @@ class TranslationClientPro:
                             data=data
                         )
                 else:
-                    response = requests.post(
-                        f"{self.BASE_URL}/project",
-                        headers=self.headers,
                         files={"files": f},
                         data=data
                     )
@@ -232,9 +224,6 @@ class TranslationClientPro:
                 lang_uuids = [self._get_lang_uuid(lang) for lang in target_langs]
                 data["languages"] = ",".join(filter(None, lang_uuids))
 # ...
-                response = requests.post(
-                    f"{self.BASE_URL}/project",
-                    headers=self.headers,
                     files={"files": f},
                     data=data
                 )
@@ -245,25 +234,19 @@ class TranslationClientPro:
         """AI质量增强"""
         lang_uuid = self._get_lang_uuid(target_lang)
         with open(file_path, 'rb') as f:
-            response = requests.post(
-                f"{self.BASE_URL}/quality-boost",
-                headers=self.headers,
+BASE_URL}/quality-boost",
                 files={"files": f},
                 data={"language": lang_uuid}
             )
-        return response.json()
 # ...
     def human_verify(self, file_path, target_lang):
         """人工审核翻译"""
-        lang_uuid = self._get_lang_uuid(target_lang)
+_get_lang_uuid(target_lang)
         with open(file_path, 'rb') as f:
-            response = requests.post(
-                f"{self.BASE_URL}/human-verify",
-                headers=self.headers,
+BASE_URL}/human-verify",
                 files={"files": f},
                 data={"language": lang_uuid}
             )
-        return response.json()
 # ...
     def batch_translate(self, files_dir, target_langs, threads=5, **options):
         """批量并行翻译"""
@@ -293,7 +276,6 @@ class TranslationClientPro:
                     })
                     print(f"[完成] {file_name} -> {lang}")
                 except Exception as e:
-                    results.append({
                         "file": file_name,
                         "language": lang,
                         "status": "error",
@@ -308,7 +290,7 @@ class TranslationClientPro:
         if format == "html":
             return self._generate_html_report(results, output_path + ".html")
         elif format == "json":
-            return self._generate_json_report(results, output_path + ".json")
+_generate_json_report(results, output_path + ".json")
 # ...
     def _generate_html_report(self, results, output_path):
         """生成HTML报告"""
@@ -356,14 +338,13 @@ class TranslationClientPro:
     def _get_lang_uuid(self, lang_code):
         """获取语言UUID"""
         if lang_code in self.tm_cache:
-            return self.tm_cache[lang_code]
 # ...
-        response = requests.get(f"{self.BASE_URL}/languages")
+get(f"{self.BASE_URL}/languages")
         languages = response.json().get("data", [])
 # ...
         for lang in languages:
             if lang.get("code") == lang_code:
-                self.tm_cache[lang_code] = lang.get("uuid")
+tm_cache[lang_code] = lang.get("uuid")
                 return lang.get("uuid")
         return None
 ```
@@ -393,7 +374,7 @@ class TranslationClientPro:
     },
     "webhook": {
       "url": "https://api.example.com/translation-complete",
-      "events": ["project.completed", "project.failed"],
+      "events": ["project.failed"],
       "secret": "webhook-secret"
     },
     "batch": {
@@ -449,7 +430,6 @@ Cloud,zh,云,技术
 ```bash
 python （请参考skill目录中的脚本文件） \
   --update-tm \
-  --tm-file company_tm.tmx \
   --from-projects "project1,project2,project3"
 ```
 

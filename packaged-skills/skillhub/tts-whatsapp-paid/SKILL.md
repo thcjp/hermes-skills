@@ -76,8 +76,6 @@ category: "Communication"
 | API 服务 | 不支持 | FastAPI | 远程调用 |
 | CRM 集成 | 不支持 | 联系人管理 | 客户运营 |
 
-**输入**: 用户提供免费版 vs 专业版对比所需的指令和必要参数.
-**输出**: 返回免费版 vs 专业版对比的处理结果,包含执行状态码、结果数据和执行日志.
 ### TTS 合成
 
 针对TTS 合成,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
@@ -238,7 +236,7 @@ class ScheduledSender:
     def _send(self, message, target, lang):
         """执行发送"""
         cmd = ["tts-whatsapp", message, "--lang", lang, "--target", target]
-        result = subprocess.run(cmd, capture_output=True, text=True)
+run(cmd, capture_output=True, text=True)
         status = "成功" if result.returncode == 0 else "失败"
         print(f"[{time.strftime('%H:%M:%S')}] {status}: {message[:30]}")
 # ...
@@ -289,7 +287,7 @@ async def send_voice(
     if voice:
         cmd.extend(["--voice", voice])
 # ...
-    result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+run(cmd, capture_output=True, text=True, timeout=30)
 # ...
     if result.returncode == 0:
         return JSONResponse({"status": "success", "target": target})

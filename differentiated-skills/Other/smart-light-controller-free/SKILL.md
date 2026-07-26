@@ -57,21 +57,21 @@ category: "Automation"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -91,8 +91,7 @@ uv run control_kasa_light.py --ip 192.168.1.50 --on --hsv 30 80 40 --brightness 
 开发者拿到新灯泡后需验证局域网可达性与协议兼容性。使用发现命令扫描设备，再用状态查询确认响应：
 
 ```bash
-uv run control_kasa_light.py --discover
-uv run control_kasa_light.py --ip 192.168.1.50 --status
+py --ip 192.168.1.50 --status
 ```
 
 ### 场景三：自动化脚本嵌入
@@ -102,7 +101,7 @@ uv run control_kasa_light.py --ip 192.168.1.50 --status
 ```bash
 #!/bin/bash
 for i in 1 20 40 60 80; do
-  uv run control_kasa_light.py --ip 192.168.1.50 --on --brightness $i --hsv 200 50 $i
+py --ip 192.168.1.50 --on --brightness $i --hsv 200 50 $i
   sleep 30
 done
 ```
@@ -138,13 +137,12 @@ uv pip install python-kasa>=0.10.2
 第二步，发现设备并记录 IP：
 
 ```bash
-uv run control_kasa_light.py --discover
 ```
 
 第三步，开灯并设置颜色：
 
 ```bash
-uv run control_kasa_light.py --ip 192.168.1.50 --on --hsv 0 100 80 --brightness 80
+py --ip 192.168.1.50 --on --hsv 0 100 80 --brightness 80
 ```
 
 执行成功后灯泡将立即响应，控制台输出包含设备型号、固件版本与执行耗时.
@@ -154,30 +152,30 @@ uv run control_kasa_light.py --ip 192.168.1.50 --on --hsv 0 100 80 --brightness 
 
 ```bash
 # 开灯（默认全亮暖白）
-uv run control_kasa_light.py --ip 192.168.1.50 --on
+py --ip 192.168.1.50 --on
 # ...
 # 关灯
-uv run control_kasa_light.py --ip 192.168.1.50 --off
+py --ip 192.168.1.50 --off
 ```
 
 ### 颜色与亮度组合
 
 ```bash
 # 红色 80% 亮度
-uv run control_kasa_light.py --ip 192.168.1.50 --on --hsv 0 100 80 --brightness 80
+py --ip 192.168.1.50 --on --hsv 0 100 80 --brightness 80
 # ...
 # 蓝色 50% 亮度
-uv run control_kasa_light.py --ip 192.168.1.50 --on --hsv 240 100 50 --brightness 50
+py --ip 192.168.1.50 --on --hsv 240 100 50 --brightness 50
 # ...
 # 高色温白光（9000K 接近日光）
-uv run control_kasa_light.py --ip 192.168.1.50 --on --white-temp 9000
+py --ip 192.168.1.50 --on --white-temp 9000
 ```
 
 ### 环境变量方式（推荐用于脚本）
 
 ```bash
 export LIGHT_IP=192.168.1.50
-uv run control_kasa_light.py --ip "$LIGHT_IP" --on --brightness 60
+py --ip "$LIGHT_IP" --on --brightness 60
 ```
 
 ## 最佳实践
@@ -201,7 +199,7 @@ export DEFAULT_BRIGHTNESS=60
 ```bash
 #!/bin/bash
 for attempt in 1 2 3; do
-  uv run control_kasa_light.py --ip "$LIGHT_IP" --on && break
+py --ip "$LIGHT_IP" --on && break
   echo "第 $attempt 次尝试失败，3 秒后重试"
   sleep 3
 done

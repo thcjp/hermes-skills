@@ -1,9 +1,8 @@
----
-slug: "deepseek-chat"
+---slug: "deepseek-chat"
 name: "deepseek-chat"
 version: 1.0.1
 displayName: "Deepseek聊天"
-summary: "DeepSeek 官方 API 对话（免费/超便宜，支持中文）。DeepSeek 官方 API 对话（免费/超便宜，支持中文） 核心能力: - 集成工具领域的专业化AI辅助工具 - 基于高人"
+summary: "DeepSeek 官方"
 summary_zh: "DeepSeek 官方 API 对话（免费/超便宜，支持中文）。DeepSeek 官方 API 对话（免费/超便宜，支持中文） 核心能力: - 集成工具领域的专业化AI辅助工具 - 基于高人"
 license: "MIT"
 description: |-
@@ -36,9 +35,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# DeepSeek Chat
+category: "Automation"---# DeepSeek Chat
 
 ## 付费版专享能力
 
@@ -95,6 +92,8 @@ node （请参考skill目录中的脚本文件） "你好"
 | 参数名 | 类型 | 必填 | 说明 |
 |---:|---:|---:|---:|
 
+| instruction | string | 是 | 用户指令文本 |
+| context | string | 否 | 上下文信息 |
 ## 输出格式
 
 ```json

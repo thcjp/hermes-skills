@@ -1,5 +1,4 @@
----
-slug: "sql-generator"
+---slug: "sql-generator"
 name: "sql-generator"
 version: 2.3.8
 displayName: "SQL生成器"
@@ -7,7 +6,7 @@ summary: "SQL生成器。自然语言转SQL、SQL解释、性能优化、建表�
 summary_zh: "SQL生成器。自然语言转SQL、SQL解释、性能优化、建表语句、测试数据生成、数据库迁移、SQL速查表。SQL generator from natural"
 license: "MIT"
 description: |-
-  SQL生成器。自然语言转SQL、SQL解释、性能优化、建表语句、测试数据生成、数据库迁移、SQL速查表。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
+  SQL生成器。自然语言转SQL、SQL解释、性能优化、建表语句、测试数据生成、数据库迁移、SQL速查表。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。不适用于数据库架构设计决策.
 tags:
   - Integrations
   - 工具
@@ -20,9 +19,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# Sql Generator
+category: "Automation"---# Sql Generator
 
 ## 付费版专享能力
 

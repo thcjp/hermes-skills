@@ -158,9 +158,7 @@ bdpan rm docs/unwanted.txt
 ```bash
 bdpan share docs/report.pdf
 # ...
-bdpan share docs/report.pdf --period 0
 # ...
-bdpan share docs/report.pdf --period 30
 # ...
 bdpan share docs/file1.txt docs/file2.txt --period 7
 ```
@@ -169,9 +167,9 @@ bdpan share docs/file1.txt docs/file2.txt --period 7
 ```bash
 bdpan transfer "https://pan.baidu.com/s/1xxxxx?pwd=abcd"
 # ...
-bdpan transfer "https://pan.baidu.com/s/1xxxxx" -p abcd
+baidu.com/s/1xxxxx" -p abcd
 # ...
-bdpan transfer "https://pan.baidu.com/s/1xxxxx" -p abcd -d downloads/
+baidu.com/s/1xxxxx" -p abcd -d downloads/
 ```
 
 ## 文件分类视图(差异化)
@@ -194,7 +192,7 @@ bdpan ls docs/ --json | jq -r '
 
 ### 按时间分类
 ```bash
-bdpan ls docs/ --json | jq -r '.created_at | .[0:7]' | sort | uniq -c
+created_at | .[0:7]' | sort | uniq -c
 ```
 
 ## 智能路径校验(差异化)
@@ -421,15 +419,13 @@ A: 使用 `--category` 参数:0=全部,1=视频,2=音频,3=图片,4=文档,5=应
 bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） [--yes]
 ```
 
-**输入**: 用户提供安装所需的指令和必要参数.
 **处理**: 解析安装的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回安装的响应数据,包含状态码、结果和日志.
-**输入**: 用户提供登录 / 注销 / 卸载所需的指令和必要参数.
+
 **处理**: 解析登录 / 注销 / 卸载的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回登录 / 注销 / 卸载的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**输入**: 用户提供更新(必须用户明确指令触发)所需的指令和必要参数.
 **处理**: 解析更新(必须用户明确指令触发)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回更新(必须用户明确指令触发)的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：命令式百度网盘文、件管理、快捷命令模板、分类视图、路径校验、确认规则、网盘指挥官免费版、是一个以、命令式高效操作、为核心视角的百度、网盘文件管理工具、所有操作限制在、apps、bdpan、目录内、针对网盘管理、命令记不住、操作不连贯、路径易出错、风险操作无确认、文件难分类、五大痛点、构建了快捷命令模、智能路径校验、分层确认规则和操、作意图识别五大基、础能力等.
@@ -454,8 +450,7 @@ bash ${CLAUDE_SKILL_DIR}/（请参考skill目录中的脚本文件） [--yes]
 2. 路径校验(docs/在合法范围内)
 3. bdpan ls docs/ 检查是否已存在同名文件
 4. 如已存在,询问用户是否覆盖(高风险确认)
-5. 确认后执行 bdpan upload ./report.pdf docs/report.pdf
-6. 展示结果:"已上传到:我的应用数据/bdpan/docs/report.pdf"
+5./report.pdf docs/report.pdf
 ```
 
 ## 不适用场景

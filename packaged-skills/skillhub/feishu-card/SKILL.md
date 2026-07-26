@@ -81,7 +81,6 @@ export API_KEY="your_api_key_here"
 
 ### 1. 简单文本卡片
 通过 `node skills/feishu-card/send.js --target "ou_..." --text "Hello World"` 发送简单文本卡片。`--target` 参数接受用户Open ID（`ou_` 前缀）或群组Chat ID（`oc_` 前缀）。适用于不含特殊字符的简单消息推送场景.
-**输出**: 返回简单文本卡片的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. Markdown复杂卡片
 
 通过 `--text-file` 参数从文件读取Markdown内容发送复杂卡片。支持代码块、表格、列表等完整Markdown语法。**关键**：为防止shell转义问题（如反引号被吞），始终先将内容写入临时文件，再用 `--text-file "temp/msg.md"` 发送。适用于发送代码片段、日志和格式化报告。- 验证返回数据的完整性和格式正确性
@@ -92,13 +91,10 @@ export API_KEY="your_api_key_here"
 - 参考`安全发送`的配置文档进行参数调优
 ### 4. 卡片标题和颜色
 通过 `--title <string>` 设置卡片头部标题，`--color <string>` 设置头部颜色。支持6种颜色：`blue`（默认）、`red`、`orange`、`green`、`purple`、`grey`。适用于按消息类型或紧急程度区分卡片视觉样式.
-**输入**: 用户提供卡片标题和颜色所需的指令和必要参数.
-**处理**: 解析卡片标题和颜色的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回卡片标题和颜色的处理结果,包含执行状态码、结果数据和执行日志.
+
 ### 5. 按钮组件
 通过 `--button-text <string>` 设置底部操作按钮文本，`--button-url <url>` 设置按钮跳转链接。卡片底部渲染可点击按钮，点击后跳转到指定URL。适用于消息内嵌操作入口，如"查看详情"、"立即处理"等交互场景.
-**输入**: 用户提供按钮组件所需的指令和必要参数.
-**输出**: 返回按钮组件的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+
 - 参考`按钮组件`的配置文档进行参数调优
 ### 6. 图片嵌入
 
@@ -157,7 +153,6 @@ node skills/feishu-card/send_persona.js \
   --text "服务API响应延迟超过5000ms，已触发自动降级。当前错误率: 12.3%"
 # ...
 # 使用green-tea人格发送日常提醒
-node skills/feishu-card/send_persona.js \
   --target "ou_xyz789abc" \
   --persona "green-tea" \
   --text "今天的代码评审会议15分钟后开始哦~"
@@ -171,7 +166,7 @@ node skills/feishu-card/send_persona.js \
 | 目标ID格式错误 | 传入的ID不以 `ou_` 或 `oc_` 开头 | 确认Open ID格式为 `ou_` 前缀，群组Chat ID为 `oc_` 前缀 |
 | 图片上传失败 | 图片路径不存在或格式不支持 | 确认 `--image-path` 指向有效图片文件（PNG/JPG/GIF），检查文件路径 |
 | 颜色参数无效 | 传入了不在支持列表中的颜色 | 使用6种有效颜色之一：`blue`/`red`/`orange`/`green`/`purple`/`grey` |
-| 依赖缺失 | 未安装 `feishu-common` | 先安装 `feishu-common`，确保 `../feishu-common/index.js` 可访问 |
+| 依赖缺失 | 未安装 `feishu-common` | 先安装 `feishu-common`，确保 `..js` 可访问 |
 | Markdown表格渲染异常 | 表格格式不符合Markdown规范 | 确保表格使用标准 `|---|---|` 分隔符，表头和数据行对齐 |
 | 人格类型不存在 | `--persona` 传入了无效类型 | 使用4种有效人格之一：`d-guide`/`green-tea`/`mad-dog`/`default` |
 | Token认证失败 | `feishu-common` Token过期或无效 | 检查 `feishu-common` 配置，重新获取有效的access_token |
@@ -195,7 +190,7 @@ Shell将反引号（`` ` ``）解释为命令替换，导致代码块标记被�
 Open ID（`ou_` 前缀）标识单个用户，消息发送到该用户的私聊。Group Chat ID（`oc_` 前缀）标识群组，消息发送到群聊中所有成员。通过 `--target` 参数指定，两种ID均可用于所有发送方式.
 ### Q6: 如何设置卡片颜色？
 
-使用 `--color <string>` 参数设置卡片头部颜色。支持6种颜色：`blue`（默认）、`red`、`orange`、`green`、`purple`、`grey`。不同颜色适用于不同场景：`red` 用于告警，`green` 用于成功，`orange` 用于警告，`grey` 用于普通通知.
+使用 `--color <string>` 参数设置卡片头部颜色。不同颜色适用于不同场景：`red` 用于告警，`green` 用于成功，`orange` 用于警告，`grey` 用于普通通知.
 ## 已知限制
 
 - 含特殊字符（反引号、$等）的内容必须使用 `--text-file` 或 `send_safe.js`

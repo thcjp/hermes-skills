@@ -1,9 +1,8 @@
----
-slug: stagehand-browser-tool-free
+---slug: stagehand-browser-tool-free
 name: stagehand-browser-tool-free
 version: 1.0.0
 displayName: 浏览器自动化工具免费版
-summary: "通过自然语言指令驱动本地 Chrome 浏览器的轻量级自动化工具,适合个人开发者日常网页交互。浏览器自动化工具免费版,面向个人用户提供基础的网页自动化能力。通过自然语言指令驱动本地 Chro"
+summary: "通过自然语言指令驱动本"
 license: Proprietary
 edition: free
 description: 浏览器自动化工具免费版,面向个人用户提供基础的网页自动化能力。通过自然语言指令驱动本地 Chrome 浏览器,实现页面导航、元素操作、数据提取等核心功能。Use
@@ -25,9 +24,7 @@ tools:
   - glob
   - grep
 homepage: ""
-category: "Knowledge"
----
-# 浏览器自动化工具免费版
+category: "Knowledge"---# 浏览器自动化工具免费版
 
 ## 概述
 
@@ -52,7 +49,6 @@ browser act "在搜索框中输入'人工智能最新进展'"
 browser act "滚动到页面底部并点击下一页"
 ```
 
-**输入**: 用户提供自然语言指令驱动所需的指令和必要参数.
 **处理**: 解析自然语言指令驱动的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自然语言指令驱动的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -71,7 +67,6 @@ browser extract "获取页面标题和正文摘要"
 browser extract "提取商品列表中的名称、价格和评分" '{"items":[{"name":"string","price":"number","rating":"number"}]}'
 ```
 
-**输入**: 用户提供页面导航与内容提取所需的指令和必要参数.
 **处理**: 解析页面导航与内容提取的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回页面导航与内容提取的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -87,7 +82,6 @@ browser observe "找到所有可点击的按钮和链接"
 browser screenshot
 ```
 
-**输入**: 用户提供元素发现与截图所需的指令和必要参数.
 **处理**: 解析元素发现与截图的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回元素发现与截图的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -95,7 +89,7 @@ browser screenshot
 ### 4. 本地浏览器模式
 
 完全基于本地 Chrome 浏览器运行,数据不出本机,保障隐私安全.
-**输入**: 用户提供本地浏览器模式所需的指令和必要参数.
+
 **处理**: 解析本地浏览器模式的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回本地浏览器模式的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -192,7 +186,6 @@ browser --version
 
 ```bash
 # 启动浏览器并导航到测试页面
-browser navigate https://example.com
 # ...
 # 查看页面内容
 browser extract "获取页面标题"
@@ -250,7 +243,6 @@ CHROME_PATH=C:\Program Files\Google\Chrome\Application\chrome.exe
 每次执行交互操作前,确保已导航到目标页面.
 ```bash
 # 正确做法:先导航再操作
-browser navigate https://example.com
 browser act "点击登录按钮"
 # ...
 # 错误做法:未导航直接操作
@@ -360,8 +352,6 @@ browser extract "提取商品名称" '{"name":"string"}'
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

@@ -47,21 +47,21 @@ Telegram Bot API是构建对话式机器人与自动化通知通道的主流方�
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -141,8 +141,7 @@ def handle_update(update):
 
 ```bash
 # 设置Webhook时携带secret_token
-curl -X POST "https://api.telegram.org/bot${TG_BOT_TOKEN}/setWebhook" \
-  -d "url=https://your-domain.com/webhook" \
+telegram.org/bot${TG_BOT_TOKEN}/setWebhook" \
   -d "secret_token=$(openssl rand -hex 32)" \
   -d "allowed_updates=[\"message\",\"callback_query\"]"
 # ...
@@ -154,7 +153,7 @@ curl -X POST "https://api.telegram.org/bot${TG_BOT_TOKEN}/setWebhook" \
 
 ```bash
 # 通过 setMyCommands 注册命令列表，显示在输入框快捷菜单
-curl -X POST "https://api.telegram.org/bot${TG_BOT_TOKEN}/setMyCommands" \
+telegram.org/bot${TG_BOT_TOKEN}/setMyCommands" \
   -H "Content-Type: application/json" \
   -d '{
     "commands": [

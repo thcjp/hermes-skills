@@ -1,9 +1,8 @@
----
-slug: "report-free"
+---slug: "report-free"
 name: "report-free"
 version: "1.0.0"
 displayName: "报表配置基础版"
-summary: "自定义报表基础能力，支持单一数据源接入、基础字段映射与标准格式导出。。自定义报表基础能力，支持单一数据源接入、基础字段映射 与标准格式导出. 核心能力: - 单一数据源的基础报表配置 - 字"
+summary: "自定义报表基础能力，支"
 summary_zh: "自定义报表基础能力，支持单一数据源接入、基础字段映射与标准格式导出。。自定义报表基础能力，支持单一数据源接入、基础字段映射 与标准格式导出. 核心能力: - 单一数据源的基础报表配置 - 字"
 license: "MIT"
 description: |-
@@ -40,9 +39,7 @@ tools:
   - write
   - exec
 homepage: ""
-category: "Automation"
----
-# 报表配置基础版
+category: "Automation"---# 报表配置基础版
 
 ## 核心能力
 

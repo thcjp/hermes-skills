@@ -1,10 +1,8 @@
----
-
-slug: feed-to-md-tool-free
+---slug: feed-to-md-tool-free
 name: feed-to-md-tool-free
 version: 1.0.0
 displayName: RSS转MD(免费版)
-summary: "RSS转Markdown免费版，支持单个订阅源转换、基础元素提取与文件保存.。RSS转Markdown助手免费版是面向个人用户的轻量RSS内容转换工具。聚焦"获取-解析-转换-保存"四步流程"
+summary: "RSS转Markdow"
 license: Proprietary
 edition: free
 description: "RSS转Markdown助手免费版是面向个人用户的轻量RSS内容转换工具。聚焦\"获取-解析-转换-保存\"四步流程，将RSS订阅内容转换为结构化Markdown文档。Use
@@ -30,9 +28,7 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
-
----
-> **获取、解析、转换、保存。四步完成RSS到Markdown的转换。**
+---> **获取、解析、转换、保存。四步完成RSS到Markdown的转换。**
 
 无需复杂配置，通过简单的脚本即可将RSS订阅内容转换为结构化的Markdown文档。免费版聚焦轻量场景，提供基础的转换能力.
 ## 概述
@@ -54,7 +50,6 @@ category: "Knowledge"
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供RSS获取与解析所需的指令和必要参数.
 **处理**: 解析RSS获取与解析的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回RSS获取与解析的响应数据,包含状态码、结果和日志.
 ### 2. Markdown转换
@@ -80,7 +75,7 @@ class MarkdownConverter:
             lines.append("")
 # ...
         lines.append(f"**订阅源链接**：{feed_info.get('link', '无')}")
-        if feed_info.get('last_build_date'):
+get('last_build_date'):
             lines.append(f"**最后更新**：{feed_info['last_build_date']}")
         lines.append("")
         lines.append("---")
@@ -94,24 +89,22 @@ class MarkdownConverter:
         lines.append("")
 # ...
         for i, item in enumerate(items, 1):
-            lines.append(f"### {i}. {item.get('title', '无标题')}")
+            lines.append(f"
+### {i}. {item.get('title', '无标题')}")
             lines.append("")
 # ...
             if item.get('pub_date'):
                 lines.append(f"**发布日期**：{item['pub_date']}")
             if item.get('author'):
-                lines.append(f"**作者**：{item['author']}")
+append(f"**作者**：{item['author']}")
             if item.get('link'):
-                lines.append(f"**原文链接**：[{item['link']}]({item['link']})")
+append(f"**原文链接**：[{item['link']}]({item['link']})")
             lines.append("")
 # ...
             if item.get('description'):
                 desc = self._strip_html(item['description'])
-                lines.append(desc[:500])
                 if len(desc) > 500:
-                    lines.append("")
-                    lines.append(f"... [查看完整内容]({item.get('link', '')})")
-                lines.append("")
+append(f"... [查看完整内容]({item.get('link', '')})")
 # ...
             lines.append("---")
             lines.append("")
@@ -129,7 +122,6 @@ markdown = converter.convert(feed, max_items=10)
 print(markdown[:500])
 ```
 
-**输入**: 用户提供Markdown转换所需的指令和必要参数.
 **处理**: 解析Markdown转换的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Markdown转换的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -186,7 +178,6 @@ filepath = saver.save(markdown, feed_title=feed.get('title'))
 saver.save_batch_info(feed)
 ```
 
-**输入**: 用户提供文件保存所需的指令和必要参数.
 **处理**: 解析文件保存的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回文件保存的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：支持单个订阅源转、基础元素提取与文、助手免费版是面向、个人用户的轻量、内容转换工具、四步流程、订阅内容转换为结、Use、when、需要文件处理、文档转换、格式互转、内容提取时使用、不适用于加密文件、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -204,7 +195,6 @@ xml = parser.fetch("https://example.com/feed.xml")
 # ...
 feed = parser.parse(xml)
 # ...
-markdown = converter.convert(feed)
 # ...
 saver.save(markdown, feed_title=feed['title'])
 ```
@@ -220,7 +210,7 @@ blog_feed = "https://myblog.com/rss.xml"
 xml = parser.fetch(blog_feed)
 feed = parser.parse(xml)
 # ...
-markdown = converter.convert(feed, max_items=None)  # 全部条目
+convert(feed, max_items=None)  # 全部条目
 saver.save(markdown, feed_title="blog_backup")
 # ...
 for item in feed['items']:
@@ -238,7 +228,7 @@ saver = FileSaver("./learning")
 # ...
 tech_feeds = [
     "https://example.com/tech-feed-1.xml",
-    "https://example.com/tech-feed-2.xml",
+com/tech-feed-2.xml",
 ]
 # ...
 for url in tech_feeds:
@@ -246,7 +236,7 @@ for url in tech_feeds:
     if xml:
         feed = parser.parse(xml)
         if feed:
-            markdown = converter.convert(feed, max_items=5)
+convert(feed, max_items=5)
             saver.save(markdown, feed_title=feed['title'])
 ```
 
@@ -316,7 +306,8 @@ OUTPUT_TEMPLATE = """# {title}
 *转换时间：{converted_at}*
 """
 # ...
-ITEM_TEMPLATE = """### {index}. {title}
+ITEM_TEMPLATE = """
+### {index}. {title}
 **发布日期**：{pub_date}
 **作者**：{author}
 **原文链接**：[{link}]({link})
@@ -337,7 +328,6 @@ def safe_fetch_and_convert(url):
         if not xml:
             return None
 # ...
-        feed = parser.parse(xml)
         if not feed:
             return None
 # ...
@@ -367,10 +357,10 @@ def generate_filename(feed_title, item_title=None):
     date_str = datetime.now().strftime('%Y%m%d')
 # ...
     if item_title:
-        safe_title = "".join(c for c in item_title if c.isalnum() or c in (' ', '-', '_')).strip()
+join(c for c in item_title if c.strip()
         return f"{safe_title[:50]}_{date_str}.md"
     else:
-        safe_name = "".join(c for c in feed_title if c.isalnum() or c in (' ', '-', '_')).strip()
+        safe_name = "".strip()
         return f"{safe_name}_{date_str}.md"
 ```
 ### 错误场景3
@@ -430,8 +420,6 @@ def generate_filename(feed_title, item_title=None):
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

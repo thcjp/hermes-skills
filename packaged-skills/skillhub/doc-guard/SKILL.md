@@ -1,5 +1,4 @@
----
-slug: "doc-guard"
+---slug: "doc-guard"
 name: "doc-guard"
 version: 1.0.1
 displayName: "文档护盾专业版"
@@ -8,7 +7,7 @@ summary_zh: "团队级端到端加密文档协作平台，支持批量操作、�
 license: "MIT"
 edition: "pro"
 description: |-
-  文档护盾专业版在免费版基础上扩展团队协作、版本管理、自定义加密与批量操作能力。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
+  文档护盾专业版在免费版基础上扩展团队协作、版本管理、自定义加密与批量操作能力。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。不适用于需要人工创意判断的任务.
 tags:
   - 集成工具
   - 安全
@@ -31,9 +30,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# 文档护盾专业版
+category: "Automation"---# 文档护盾专业版
 
 ## 付费版专享能力
 
@@ -315,7 +312,7 @@ def load_checkpoint():
 # ...
 def save_checkpoint(checkpoint):
     from pathlib import Path
-    p = Path.home() / '.doc-guard' / 'migration.checkpoint'
+    p = Path.home() / '.checkpoint'
     p.write_text(json.dumps(list(checkpoint)))
 ```
 

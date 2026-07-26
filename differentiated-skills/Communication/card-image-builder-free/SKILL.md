@@ -120,7 +120,6 @@ python3 render_card.py \
 | `--highlight` | 高亮色 | `#22a854` |
 | `--out` | 输出路径 | `tmp/poster.png` |
 
-**输入**: 用户提供文字海报生成(poster-3-4)所需的指令和必要参数.
 **处理**: 解析文字海报生成(poster-3-4)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回文字海报生成(poster-3-4)的响应数据,包含状态码、结果和日志.
 ### 2. 长文分页卡片(article-3-4)
@@ -133,14 +132,12 @@ python3 render_article.py \
   --out tmp/article_page1.png
 # .
 # 多页生成(手动指定每页内容)
-python3 render_article.py \
   --template article-3-4 \
   --text "第一页内容." \
   --page 1 \
   --total 3 \
   --out tmp/article_p1.png
 # .
-python3 render_article.py \
   --template article-3-4 \
   --text "第二页内容." \
   --page 2 \
@@ -148,7 +145,6 @@ python3 render_article.py \
   --out tmp/article_p2.png
 ```
 
-**输入**: 用户提供长文分页卡片(article-3-4)所需的指令和必要参数.
 **处理**: 解析长文分页卡片(article-3-4)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回长文分页卡片(article-3-4)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -167,7 +163,7 @@ python3 render_card.py \
 ```
 
 **注意:** 公众号封面标题过长时,系统会自动压缩为2-3行短标题再渲染.
-**输入**: 用户提供公众号文章封面图(wechat-cover-split)所需的指令和必要参数.
+
 **处理**: 解析公众号文章封面图(wechat-cover-split)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回公众号文章封面图(wechat-cover-split)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -194,7 +190,6 @@ PLATFORM_PRESETS = {
 # - 默认 -> 使用公众号预设
 ```
 
-**输入**: 用户提供平台配色预设所需的指令和必要参数.
 **处理**: 解析平台配色预设的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回平台配色预设的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：将文案渲染为、卡片图、支持海报和文章封、适合个人创作者快、速出图、卡片图生成器免费、将文字文案渲染为、精美的、卡片图片、核心能力、长文分页卡片生成、默认平台配色预设、基础高亮功能等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -237,7 +232,6 @@ python3 render_card.py \
 将操作步骤渲染为分页卡片,便于分享.
 ```bash
 # 生成步骤卡片(第一页)
-python3 render_article.py \
   --template article-3-4 \
   --text "步骤一:安装Python环境。访问python.org下载最新版本." \
   --page 1 \

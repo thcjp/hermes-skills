@@ -147,7 +147,6 @@ class ProCronMate:
             try:
                 desc.append(f"（周{names[int(dow)]}）")
             except (ValueError, KeyError):
-                desc.append(f"（周{dow}）")
 # ...
         return prefix + " ".join(desc) + " 执行"
 # ...
@@ -158,7 +157,6 @@ class ProCronMate:
         if base_time is None:
             base_time = datetime.now()
 # ...
-        parts = cron_expr.split()
         if len(parts) != 5:
             return ["仅支持5字段格式预览"]
 # ...
@@ -173,16 +171,16 @@ class ProCronMate:
             if not self._match_field(current.minute, min_f, 0, 59):
                 continue
             # 检查小时
-            if not self._match_field(current.hour, hour_f, 0, 23):
+hour, hour_f, 0, 23):
                 continue
             # 检查日
-            if not self._match_day(current, day_f):
+_match_day(current, day_f):
                 continue
             # 检查月
-            if not self._match_field(current.month, mon_f, 1, 12):
+month, mon_f, 1, 12):
                 continue
             # 检查周
-            if not self._match_field(current.weekday() + 1 if current.weekday() < 6 else 0, dow_f, 0, 7):
+weekday() + 1 if current.weekday() < 6 else 0, dow_f, 0, 7):
                 continue
 # ...
             runs.append(current.strftime("%Y-%m-%d %H:%M (%a)"))
@@ -231,7 +229,7 @@ mate = ProCronMate()
 print(mate.translate_advanced("0 0 L * *"))        # 每月最后一天 00:00 执行
 print(mate.translate_advanced("0 0 15W * *"))       # 每月15号最近的工作日 00:00 执行
 print(mate.translate_advanced("0 9 ? * 2#1"))       # 每月第一个周一 09:00 执行
-print(mate.translate_advanced("0 9 ? * 5#3"))       # 每月第三个周五 09:00 执行
+print(mate. * 5#3"))       # 每月第三个周五 09:00 执行
 # ...
 # 执行预览
 runs = mate.preview_next_runs("0 8 * * 1-5", count=5)
@@ -251,8 +249,6 @@ class AdvancedCronMate(ProCronMate):
 # ...
     def convert_timezone(self, cron_expr, from_tz, to_tz):
         """时区转换"""
-        parts = cron_expr.split()
-        if len(parts) != 5:
             return None, "仅支持5字段格式"
 # ...
         min_f, hour_f, day_f, mon_f, dow_f = parts
@@ -296,8 +292,6 @@ class AdvancedCronMate(ProCronMate):
 # ...
     def detect_conflicts(self, cron_expr):
         """检测表达式冲突"""
-        parts = cron_expr.split()
-        if len(parts) != 5:
             return []
 # ...
         min_f, hour_f, day_f, mon_f, dow_f = parts
@@ -314,7 +308,6 @@ class AdvancedCronMate(ProCronMate):
 # ...
         # 2月30号（不可能的日期）
         if day_f == "30" and (mon_f == "2" or mon_f == "*"):
-            conflicts.append({
                 "type": "impossible_date",
                 "severity": "error",
                 "message": "2月没有30号",
@@ -325,7 +318,6 @@ class AdvancedCronMate(ProCronMate):
         if day_f == "31":
             short_months = [2, 4, 6, 9, 11]
             if mon_f == "*":
-                conflicts.append({
                     "type": "skipped_months",
                     "severity": "info",
                     "message": "31号在2/4/6/9/11月不会执行",
@@ -336,8 +328,6 @@ class AdvancedCronMate(ProCronMate):
 # ...
     def optimize(self, cron_expr):
         """表达式优化建议"""
-        parts = cron_expr.split()
-        if len(parts) != 5:
             return cron_expr, []
 # ...
         suggestions = []
@@ -356,7 +346,7 @@ class AdvancedCronMate(ProCronMate):
 # ...
         # 检查冗余字段
         if mon_f != "*" and day_f == "*" and dow_f == "*":
-            suggestions.append(f"月字段指定了'{mon_f}'，但日和周为'*'，确认是否需要限定具体日期")
+append(f"月字段指定了'{mon_f}'，但日和周为'*'，确认是否需要限定具体日期")
 # ...
         optimized = f"{min_f} {hour_f} {day_f} {mon_f} {dow_f}"
         return optimized, suggestions
@@ -393,7 +383,6 @@ class EnterpriseCronMate(AdvancedCronMate):
 # ...
     def adapt_format(self, cron_expr, target_platform):
         """适配不同平台格式"""
-        parts = cron_expr.split()
 # ...
         if target_platform == "linux":
             # Linux crontab: 5字段
@@ -402,7 +391,7 @@ class EnterpriseCronMate(AdvancedCronMate):
             elif len(parts) == 7:
                 return f"{' '.join(parts[1:6])}", "去掉秒和年字段"
             elif len(parts) == 6:
-                return f"{' '.join(parts[1:6])}", "去掉秒字段"
+join(parts[1:6])}", "去掉秒字段"
 # ...
         elif target_platform == "quartz":
             # Quartz: 6或7字段（秒 分 时 日 月 周 [年]）
@@ -416,17 +405,17 @@ class EnterpriseCronMate(AdvancedCronMate):
         elif target_platform == "spring":
             # Spring: 6字段（秒 分 时 日 月 周）
             if len(parts) == 5:
-                return f"0 {' '.join(parts)}", "添加秒字段'0'"
+join(parts)}", "添加秒字段'0'"
             elif len(parts) == 6:
                 return cron_expr, "已是Spring格式"
             elif len(parts) == 7:
-                return f"{' '.join(parts[:6])}", "去掉年字段"
+join(parts[:6])}", "去掉年字段"
 # ...
         elif target_platform == "aws":
             # AWS EventBridge: 6字段（分 时 日 月 周 年）
             if len(parts) == 5:
                 year = datetime.now().year
-                return f"{' '.join(parts)} {year}", "添加年字段"
+join(parts)} {year}", "添加年字段"
             elif len(parts) == 6:
                 return cron_expr, "已是AWS格式"
 # ...
@@ -503,7 +492,6 @@ for r in results:
 | `#` | 第N个 | `0 9 ? * 2#1` | 每月第一个周一9点 |
 | `?` | 不指定 | `0 0 ? * 1` | 日字段不指定（与周互斥） |
 
-**输入**: 用户提供高级特殊字符（专业版）所需的指令和必要参数.
 **处理**: 解析高级特殊字符（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级特殊字符（专业版）的响应数据,包含状态码、结果和日志.
 ### 时区转换（专业版）
@@ -514,7 +502,6 @@ for r in results:
 | 多时区对比 | 同一表达式在不同时区的执行时间 |
 | 偏移计算 | 自动计算时区差并调整小时字段 |
 
-**输入**: 用户提供时区转换（专业版）所需的指令和必要参数.
 **处理**: 解析时区转换（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回时区转换（专业版）的响应数据,包含状态码、结果和日志.
 ### 冲突检测（专业版）
@@ -526,7 +513,6 @@ for r in results:
 | 跳过月份 | info | 31号在短月不会执行 |
 | 步长过大 | info | 如 */60 分钟实际等于整点 |
 
-**输入**: 用户提供冲突检测（专业版）所需的指令和必要参数.
 **处理**: 解析冲突检测（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回冲突检测（专业版）的响应数据,包含状态码、结果和日志.
 ### 优化建议（专业版）
@@ -538,13 +524,12 @@ for r in results:
 | 合并建议 | 多个表达式合并为一个 |
 | 可读性提升 | 建议使用更清晰的表达方式 |
 
-**输入**: 用户提供优化建议（专业版）所需的指令和必要参数.
 **处理**: 解析优化建议（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回优化建议（专业版）的响应数据,包含状态码、结果和日志.
 ### 执行时间预览（专业版）
 
 预计算未来N次执行时间，便于验证表达式正确性.
-**输入**: 用户提供执行时间预览（专业版）所需的指令和必要参数.
+
 **处理**: 解析执行时间预览（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回执行时间预览（专业版）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -559,7 +544,6 @@ for r in results:
 
 ---
 
-**输入**: 用户提供多平台适配（专业版）所需的指令和必要参数.
 **处理**: 解析多平台适配（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多平台适配（专业版）的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、表达式工具专业版、含高级语法、执行预览、表达式助手专业版、是面向企业级场景、的完整、表达式工具、在免费版基础语法、专业版新增高级特、时区转换与对比、表达式冲突检测、智能优化建议、执行时间预计算五、大高级能力、满足复杂调度场景、的表达式编写需求等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -581,7 +565,7 @@ print(mate.translate_advanced(cron))
 **场景描述**：北京团队设定9点任务，需确认纽约团队的对应时间.
 ```python
 mate = AdvancedCronMate()
-converted, info = mate.convert_timezone("0 9 * * 1-5", "Asia/Shanghai", "America/New_York")
+convert_timezone("0 9 * * 1-5", "Asia/Shanghai", "America/New_York")
 print(f"北京 9:00 → 纽约：{converted}")
 print(info)
 ```
@@ -593,7 +577,6 @@ print(info)
 mate = AdvancedCronMate()
 exprs = ["0,15,30,45 * * * *", "0 0 * * 1-5", "0 0 15 * 1"]
 for expr in exprs:
-    optimized, suggestions = mate.optimize(expr)
     print(f"{expr} → {optimized}")
     for s in suggestions:
         print(f"  建议：{s}")
@@ -625,7 +608,7 @@ for i, run in enumerate(runs, 1):
 **场景描述**：将Linux crontab表达式迁移到Quartz调度器.
 ```python
 mate = EnterpriseCronMate()
-adapted, note = mate.adapt_format("0 8 * * 1-5", "quartz")
+adapt_format("0 8 * * 1-5", "quartz")
 print(f"Linux → Quartz: {adapted} ({note})")
 ```
 
@@ -637,7 +620,6 @@ mate = EnterpriseCronMate()
 all_exprs = ["0 0 L * *", "0 0 30 2 *", "0,15,30,45 * * * *"]
 for expr in all_exprs:
     conflicts = mate.detect_conflicts(expr)
-    optimized, suggestions = mate.optimize(expr)
     print(f"\n{expr}:")
     for c in conflicts:
         print(f"  [{c['severity']}] {c['message']}")
@@ -820,8 +802,6 @@ Linux crontab使用5字段（分时日月周）；Quartz使用6-7字段（增加
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

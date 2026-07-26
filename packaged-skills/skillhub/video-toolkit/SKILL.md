@@ -129,7 +129,7 @@ echo "批量处理完成: $count/$total"
 realesrgan-ncnn-vulkan -i input.mp4 -o output_2x.mp4 -n realesr-animevideov3 -s 2
 # ...
 # 4x超分(适合480p->1080p)
-realesrgan-ncnn-vulkan -i input.mp4 -o output_4x.mp4 -n realesrgan-x4plus -s 4
+mp4 -o output_4x.mp4 -n realesrgan-x4plus -s 4
 # ...
 # 超分后重新编码为标准格式
 ffmpeg -i output_2x.mp4 -c:v libx264 -crf 18 -preset slow -c:a copy final.mp4
@@ -143,7 +143,6 @@ ffmpeg -i output_2x.mp4 -c:v libx264 -crf 18 -preset slow -c:a copy final.mp4
 | 720p | 2x | 1440p | realesr-animevideov3 |
 | 1080p | 2x | 4K | realesr-animevideov3 |
 
-**处理**: 解析AI超分辨率(Real-ESRGAN)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 3. 智能重构图
 通过AI分析视频内容,自动选择优秀裁剪区域:
 
@@ -163,7 +162,6 @@ ffmpeg -i input.mp4 -vf "crop=w='ih*9/16':h='ih':x='(iw-w)/2':y=0" -c:a copy out
 - 关键参数: `智能重构图` 选项
 - 处理流程: 接收输入 -> 执行智能重构图 -> 返回结果
 - 输入: 用户提供智能重构图所需的参数和指令
-- 输出: 返回智能重构图的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 4. 多码率自适应流(HLS)
 ```bash
@@ -192,12 +190,10 @@ echo "  主播放列表: $OUTPUT_DIR/master.m3u8"
 echo "  分辨率: 1080p/720p/480p/360p"
 ```
 
-**处理**: 解析多码率自适应流(HLS)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `多码率自适应流(hls)` 选项
 - 处理流程: 接收输入 -> 执行多码率自适应流(HLS) -> 返回结果
 - 输入: 用户提供多码率自适应流(HLS)所需的参数和指令
-- 输出: 返回多码率自适应流(HLS)的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 5. 自动化工作流
 ```bash
@@ -263,7 +259,6 @@ echo "输出目录: $WORK_DIR/"
 - 关键参数: `自动化工作流` 选项
 - 处理流程: 接收输入 -> 执行自动化工作流 -> 返回结果
 - 输入: 用户提供自动化工作流所需的参数和指令
-- 输出: 返回自动化工作流的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 6. 高级字幕定制
 ```bash
@@ -306,9 +301,6 @@ ffmpeg -i original.mp4 -i compressed.mp4 -lavfi ssim -f null - 2>&1 | grep "All"
 ffmpeg -i distorted.mp4 -i reference.mp4 -lavfi libvmaf="model_path=vmaf_v0.6.1.pkl" -f null - 2>&1 | grep "VMAF"
 ```
 
-**输入**: 用户提供视频质量评估所需的指令和必要参数.
-**处理**: 解析视频质量评估的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回视频质量评估的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `视频质量评估` 选项
 

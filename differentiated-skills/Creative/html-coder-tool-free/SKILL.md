@@ -92,14 +92,14 @@ HTML编码工具免费版是一款面向个人开发者的专业 HTML 开发辅�
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
@@ -238,8 +238,6 @@ HTML编码工具免费版是一款面向个人开发者的专业 HTML 开发辅�
 <picture>
   <source media="(min-width: 1200px)" srcset="large.webp" type="image/webp">
   <source media="(min-width: 768px)" srcset="medium.webp" type="image/webp">
-  <source media="(min-width: 1200px)" srcset="large.jpg">
-  <source media="(min-width: 768px)" srcset="medium.jpg">
   <img
     src="small.jpg"
     alt="图片描述文本"
@@ -280,7 +278,6 @@ HTML编码工具免费版是一款面向个人开发者的专业 HTML 开发辅�
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>我的网页</title>
 </head>
 <body>

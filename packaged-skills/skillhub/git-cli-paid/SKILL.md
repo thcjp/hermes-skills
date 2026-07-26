@@ -67,17 +67,6 @@ category: "Development"
 提供常用Git操作的自动化脚本.
 > 详细代码示例已移至 `references/detail.md`
 
-**处理**: 解析Git自动化脚本库的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Git自动化脚本库的处理结果,包含执行状态码、结果数据和执行日志.
-**输入**: 用户提供深度仓库诊断所需的指令和必要参数.
-**处理**: 解析深度仓库诊断的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回深度仓库诊断的处理结果,包含执行状态码、结果数据和执行日志.
-**输入**: 用户提供工作流模板所需的指令和必要参数.
-**处理**: 解析工作流模板的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回工作流模板的处理结果,包含执行状态码、结果数据和执行日志.
-**输入**: 用户提供多仓库管理所需的指令和必要参数.
-**处理**: 解析多仓库管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回多仓库管理的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -113,7 +102,6 @@ print(result)
 echo -e "\n3. 智能同步:"
 python3 -c "
 from git_automation import GitAutomation
-result = GitAutomation.sync_branch()
 print(result)
 "
 ```
@@ -167,7 +155,6 @@ for repo, info in status.items():
 echo -e "\n2. 批量同步:"
 python3 -c "
 from multi_repo import MultiRepoManager
-manager = MultiRepoManager('repos.txt')
 results = manager.batch_sync()
 for repo, result in results.items():
     print(f'{repo}: {result}')
@@ -176,9 +163,7 @@ for repo, result in results.items():
 echo -e "\n3. 批量清理:"
 python3 -c "
 from multi_repo import MultiRepoManager
-manager = MultiRepoManager('repos.txt')
 results = manager.batch_cleanup()
-for repo, result in results.items():
     print(f'{repo}: {result}')
 "
 ```

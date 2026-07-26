@@ -173,8 +173,7 @@ done
 
 ## daily note 模板化
 
-`notesmd-cli daily` 自动读 `.obsidian/daily-notes.json`，按配置的文件夹、格式、模板生成.
-### 配置示例（`.obsidian/daily-notes.json`）
+`notesmd-cli daily` 自动读 `.json`，按配置的文件夹、格式、模板生成.
 
 ```json
 {
@@ -292,7 +291,7 @@ A: 所有批量脚本支持 `--dry-run`，先打印将执行的命令列表，�
 |:---:|:---:|
 | `print-default` 返回空 | 未设默认 → 读 obsidian.json 找 `"open": true` |
 | `create` 报路径错 | 检查 `.obsidian/app.json` 默认位置 → 避免隐藏 dot-folder |
-| `daily` 不按模板生成 | 检查 `.obsidian/daily-notes.json` 的 `template` 字段 → 模板文件存在 |
+| `daily` 不按模板生成 | 检查 `.json` 的 `template` 字段 → 模板文件存在 |
 | frontmatter 编辑失败 | 检查 YAML 是否合法 → 用 `--print` 看当前内容 → 修复格式 |
 | `--editor` 无反应 | 检查 `$EDITOR` 是否设置 → `echo $EDITOR` → 设为 `vim` 等 |
 | CI 中 `search` 卡住 | `search` 是交互式模糊搜索，CI 用 `search-content` 替代 |
@@ -328,7 +327,6 @@ A: 所有批量脚本支持 `--dry-run`，先打印将执行的命令列表，�
 ### 基于 `notesmd-cli
 基于 `notesmd-cli` 的 Obsidian 笔记批处理工具箱
 
-**输入**: 用户提供基于 `notesmd-cli所需的指令和必要参数.
 **处理**: 解析基于 `notesmd-cli的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回基于 `notesmd-cli的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -336,7 +334,6 @@ A: 所有批量脚本支持 `--dry-run`，先打印将执行的命令列表，�
 ### 聚焦无头（headless）批
 聚焦无头（headless）批量操作、
 
-**输入**: 用户提供聚焦无头（headless）批所需的指令和必要参数.
 **处理**: 解析聚焦无头（headless）批的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回聚焦无头（headless）批的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -346,7 +343,6 @@ A: 所有批量脚本支持 `--dry-run`，先打印将执行的命令列表，�
 ### obsidian/daily-
 obsidian/daily-notes
 
-**输入**: 用户提供obsidian/daily-所需的指令和必要参数.
 **处理**: 解析obsidian/daily-的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回obsidian/daily-的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作

@@ -247,7 +247,7 @@ category: "Automation"
   "task_name": "Apache漏洞监控",
   "keywords": ["CVE-2024", "Apache Log4j"],
   "sources": ["vulnerability_db", "news", "tech_blog"],
-  "alert_channels": [{"type": "email", "target": "security@company.com"}, {"type": "webhook", "target": "https://hooks.company.com/security"}],
+company.com/security"}],
   "alert_threshold": "high",
   "frequency": "daily"
 }
@@ -270,7 +270,7 @@ category: "Automation"
       "title": "CVE-2024-1234: Apache Log4j 远程代码执行漏洞",
       "threat_level": "critical",
       "attack_intent": "远程代码执行",
-      "impact_scope": {"systems": ["Apache Log4j 2.0-2.14.1"], "industries": ["全行业"]},
+0-2.14.1"], "industries": ["全行业"]},
       "iocs": {"file_hashes": ["sha256:abc123..."]},
       "alert_sent": true
     }
@@ -463,7 +463,7 @@ category: "Automation"
   "data": {
     "task_id": "monitor_20260720_002",
     "task_name": "数据泄露监控",
-    "keywords": ["company.com", "@company.com"],
+com", "@company.com"],
     "sources_configured": ["social_media", "vulnerability_db", "news"],
     "sources_skipped": ["dark_web"],
     "alert_channels": ["im"],

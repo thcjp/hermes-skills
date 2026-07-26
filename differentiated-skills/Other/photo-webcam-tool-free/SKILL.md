@@ -1,9 +1,8 @@
----
-slug: photo-webcam-tool-free
+---slug: photo-webcam-tool-free
 name: photo-webcam-tool-free
 version: 1.0.0
 displayName: 网络摄像头工具-免费版
-summary: "网络摄像头快照获取工具,支持收藏列表管理与图片下载,适合个人使用。网络摄像头快照获取工具免费版,面向个人用户."
+summary: "网络摄像头快照获取工具"
 license: Proprietary
 edition: free
 description: 网络摄像头快照获取工具免费版,面向个人用户，可自动提升工作效率
@@ -47,9 +46,7 @@ tools:
   - write
   - glob
 homepage: ""
-category: "Development"
----
-# 网络摄像头工具 - 免费版
+category: "Development"---# 网络摄像头工具 - 免费版
 
 ## 概述
 
@@ -60,28 +57,28 @@ category: "Development"
 ### 1. 收藏列表管理
 
 维护一个 JSON 格式的摄像头收藏列表,每个条目包含编号、名称和页面 URL.
-**输入**: 用户提供收藏列表管理所需的指令和必要参数.
+
 **处理**: 解析收藏列表管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回收藏列表管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 2. 快照获取
 
 通过编号快速获取对应摄像头的最新快照,支持自动解析图片 URL.
-**输入**: 用户提供快照获取所需的指令和必要参数.
+
 **处理**: 解析快照获取的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回快照获取的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 3. 批量获取
 
 支持一次获取多个摄像头的快照(最多 6 个),分别保存为独立文件.
-**输入**: 用户提供批量获取所需的指令和必要参数.
+
 **处理**: 解析批量获取的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量获取的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 4. 列表查看
 
 查看收藏列表中所有摄像头的编号与名称.
-**输入**: 用户提供列表查看所需的指令和必要参数.
+
 **处理**: 解析列表查看的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回列表查看的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
@@ -114,7 +111,7 @@ open /tmp/zugspitze.jpg  # macOS
 从收藏列表中按编号获取摄像头快照.
 ```bash
 # 查看收藏列表
-python3 foto_webcam_snapshot.py --favorites favorites.json --list
+py --favorites favorites.json --list
 # ...
 # 输出:
 # Webcam 1: 慕尼黑市中心
@@ -122,7 +119,6 @@ python3 foto_webcam_snapshot.py --favorites favorites.json --list
 # Webcam 3: 新天鹅堡
 # ...
 # 获取编号 1 的快照
-python3 foto_webcam_snapshot.py \
   --favorites favorites.json \
   --id 1 \
   --out /tmp/webcam1.jpg
@@ -134,8 +130,6 @@ python3 foto_webcam_snapshot.py \
 ```bash
 # 获取编号 1、3、5 的快照
 for id in 1 3 5; do
-  python3 foto_webcam_snapshot.py \
-    --favorites favorites.json \
     --id $id \
     --out /tmp/webcam${id}.jpg
   echo "Webcam $id 已保存"
@@ -163,7 +157,7 @@ done
   {
     "id": 2,
     "name": "Zugspitze 滑雪场",
-    "page": "https://www.foto-webcam.eu/webcam/zugspitze/"
+foto-webcam.eu/webcam/zugspitze/"
   }
 ]
 ```
@@ -171,10 +165,7 @@ done
 ### 获取第一张快照
 
 ```bash
-python3 foto_webcam_snapshot.py \
-  --favorites favorites.json \
   --id 1 \
-  --out /tmp/webcam1.jpg
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.

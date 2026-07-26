@@ -227,20 +227,15 @@ export API_KEY="your_api_key_here"
 ### Using Python Helper (Recommended)(补充)
 # ...
 ```bash
-python （请参考skill目录中的脚本文件） input.md output.pdf
 
-python （请参考skill目录中的脚本文件） report.md report.pdf --template business --toc
+md report.pdf --template business --toc
 
-python （请参考skill目录中的脚本文件） --batch *.md --format pdf --output-dir ./pdfs
 ```
 # ...
 ### Using Bash Utilities(补充)
 # ...
 ```bash
-（请参考skill目录中的脚本文件） input/*.md pdf output/
 
-（请参考skill目录中的脚本文件） output/document.pdf
-（请参考skill目录中的脚本文件） output/book.epub
 ```
 # ...
 ### Direct Pandoc(补充)

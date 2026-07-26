@@ -1,9 +1,8 @@
----
-slug: "grain-crawler"
+---slug: "grain-crawler"
 name: "grain-crawler"
 version: 1.0.1
 displayName: "归档检索(专业版)"
-summary: "全功能 Granola 归档检索，含同步、SQL、转录稿、面板、批量导出。。全功能 Granola 归档检索。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于"
+summary: "全功能 Granola"
 summary_zh: "全功能 Granola 归档检索，含同步、SQL、转录稿、面板、批量导出。。全功能 Granola 归档检索。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于"
 license: "MIT"
 edition: "pro"
@@ -33,9 +32,7 @@ tools:
   - glob
   - grep
 homepage: ""
-category: "Automation"
----
-# 归档检索(专业版)
+category: "Automation"---# 归档检索(专业版)
 
 ## 付费版专享能力
 

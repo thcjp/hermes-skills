@@ -58,7 +58,7 @@ Pairing is a deliberate, user-initiated flow (the plugin does **not** auto-pair 
 
    **Do NOT use `tr pair --json` for this.** The CLI holds the pair WebSocket in a subprocess that Skill平台's ~30s shell-tool timeout kills — the WS then drops, and when the user submits their phrase the relay returns a **502** (`gateway_disconnected`). The in-process route above avoids that entirely. Only fall back to the CLI if the route is unreachable (no `curl`, or a pre-3.3.14 plugin), and then it MUST be detached so the WS outlives the shell exec: `setsid -f node "$TR_CLI" pair --json < /dev/null` — never run `tr pair` in the foreground.
 2. Surface the **url** and **pin** to the user verbatim (read from the JSON; never invent values): "Open `<url>` in your browser, enter PIN `<pin>`, and generate or paste your 12-word recovery phrase. Reply done once it's sealed." Emit the URL as plain text on its own line — the `#pk=` fragment breaks if wrapped in backticks/markdown.
-3. The user completes in the browser (phrase is generated/imported browser-side, encrypted, uploaded to the relay — never touches this chat). On completion `~/.totalreclaw/credentials.json` is written.
+3. The user completes in the browser (phrase is generated/imported browser-side, encrypted, uploaded to the relay — never touches this chat). On completion `~/.json` is written.
 4. Confirm: `✓ TotalReclaw set up.` (If credentials already exist when first asked: `✓ TotalReclaw is already set up.`)
 
 Pair is UNCONDITIONAL when no credentials — the user installing/requesting setup IS the consent; do not add a second consent gate. `tr --help` lists every subcommand.
@@ -128,9 +128,7 @@ Full guide: <https://github.com/p-diogo/totalreclaw/blob/main/docs/guides/skill-
 ### 示例1：基础用法
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
 ## 错误处理

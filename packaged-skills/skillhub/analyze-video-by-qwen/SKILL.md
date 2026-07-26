@@ -77,15 +77,15 @@ category: "Creative"
 
 ## 认证
 
-API Key 从 `~/.skill-platform/skill-platform.json` 的 `skills.dashscope.apiKey` 字段读取.
+API Key 从 `~/.json` 的 `skills.dashscope.apiKey` 字段读取.
 ```bash
-cat ~/.skill-platform/skill-platform.json | grep apiKey
+cat ~/.json | grep apiKey
 ```
 
 若 Key 缺失，引导用户:
 1. 登录阿里云 DashScope 控制台
 2. 开通 Qwen 多模态模型服务并创建 API Key
-3. 在 `~/.skill-platform/skill-platform.json` 中添加配置:
+3. 在 `~/.json` 中添加配置:
 
 ```json
 {
@@ -121,13 +121,12 @@ python （请参考skill目录中的脚本文件） /path/to/video.mp4
 自定义提示词,引导模型关注特定内容:
 
 ```bash
-python （请参考skill目录中的脚本文件） /path/to/video.mp4 --prompt "请详细描述视频中的每个场景,包括人物动作和背景环境"
+mp4 --prompt "请详细描述视频中的每个场景,包括人物动作和背景环境"
 ```
 
 自定义抽帧频率(FPS 越高,分析越精细):
 
 ```bash
-python （请参考skill目录中的脚本文件） /path/to/video.mp4 --fps 5
 ```
 
 ### 分析远程视频 URL
@@ -141,8 +140,8 @@ python （请参考skill目录中的脚本文件） https://example.com/video.mp
 组合使用参数:
 
 ```bash
-python （请参考skill目录中的脚本文件） /path/to/video.mp4 --fps 3 --prompt "视频中出现了哪些人物和物体?请逐一列出"
-python （请参考skill目录中的脚本文件） https://example.com/video.mp4 --fps 4 --prompt "请详细描述视频场景的色调和构图"
+mp4 --fps 3 --prompt "视频中出现了哪些人物和物体?请逐一列出"
+com/video.mp4 --fps 4 --prompt "请详细描述视频场景的色调和构图"
 ```
 
 ## 适用场景
@@ -160,7 +159,7 @@ python （请参考skill目录中的脚本文件） https://example.com/video.mp
 ### Step 1: 校验 API Key 配置
 ```bash
 # 变体实现(与上文代码相似度100.0%,此处为Qwen视频智能分析的差异化处理路径)
-cat ~/.skill-platform/skill-platform.json | grep apiKey
+cat ~/.json | grep apiKey
 ```
 若返回为空或文件不存在,按照认证章节引导用户配置.
 ### Step 2: 确认视频源
@@ -203,7 +202,7 @@ python （请参考skill目录中的脚本文件） /path/to/product-demo.mp4 \
 **场景**: 运营团队需要审核一段在线视频是否包含不适宜内容
 
 ```bash
-python （请参考skill目录中的脚本文件） https://example.com/user-upload.mp4 \
+com/user-upload.mp4 \
   --fps 4 \
   --prompt "请审查视频内容是否包含暴力、色情或违规信息,逐帧描述可疑画面并给出风险等级"
 ```
@@ -227,7 +226,7 @@ python （请参考skill目录中的脚本文件） /path/to/training.mp4 \
 
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
 |:------|------:|:------|:------|
-| api_key_missing | `apiKey not found in config` | 配置文件中未找到 DashScope API Key | 引导用户按照认证章节配置 ~/.skill-platform/skill-platform.json |
+| api_key_missing | `apiKey not found in config` | 配置文件中未找到 DashScope API Key | 引导用户按照认证章节配置 ~/.json |
 | file_not_found | `FileNotFoundError: video.mp4` | 本地视频文件路径不存在或拼写错误 | 确认文件路径正确,检查文件是否存在 |
 | invalid_url | `URL not accessible` | 远程视频 URL 无法访问或非直链 | 确认 URL 为可公开访问的视频直链,需登录的页面链接不支持 |
 | unsupported_format | `Unsupported video format` | 视频格式不被支持 | 转换为 mp4/avi/mov/mkv/webm 等常见格式后 |
@@ -239,7 +238,7 @@ python （请参考skill目录中的脚本文件） /path/to/training.mp4 \
 ## 常见问题
 
 ### Q1: 如何配置 DashScope API Key?
-A: 在 `~/.skill-platform/skill-platform.json` 文件中添加 `skills.dashscope.apiKey` 字段。首先登录阿里云 DashScope 控制台开通 Qwen 多模态模型服务并创建 API Key,然后将 Key 写入配置文件。配置文件格式参见认证章节.
+A: 在 `~/.json` 文件中添加 `skills.dashscope.apiKey` 字段。首先登录阿里云 DashScope 控制台开通 Qwen 多模态模型服务并创建 API Key,然后将 Key 写入配置文件。配置文件格式参见认证章节.
 ### Q2: FPS 参数应该设置多少?
 A: 默认 FPS 为 2,适合大多数概览场景。短视频(<30秒)可用 fps=2;常规分析(30秒-3分钟)建议 fps=3;需要动作识别或物体检测的高精度分析建议 fps=5。注意 FPS 越高,API 调用次数越多,成本相应增加。超长视频建议降低 FPS 或分段分析.
 ### Q3: 支持哪些视频格式?

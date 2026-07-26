@@ -1,9 +1,8 @@
----
-slug: "java-dev-manual-tool-pro"
+---slug: "java-dev-manual-tool-pro"
 name: "java-dev-manual-tool-pro"
 version: "1.0.0"
 displayName: "Java开发手册专业版"
-summary: "企业级 Java 开发规约方案，含自定义规则、团队规范模板与 CI 集成。。面向企业级 Java 开发团队的开发规约治理工具，提供团队级规范定制能力。核心能力: - 7 大维度规约的团队级自"
+summary: "企业级 Java 开发"
 license: "Proprietary"
 edition: "pro"
 description: |-
@@ -41,9 +40,7 @@ tools:
   - glob
   - grep
 homepage: ""
-category: "Automation"
----
-本工具面向企业级 Java 开发团队，提供开发规约的完整治理方案。在免费版 7 大维度规约速查能力之上，专业版新增团队级规则定制、规约合规性自动检查、新项目脚手架集成、架构分层约束、设计模式示例库、CI/CD 规约门禁等能力。通过可配置的规则引擎与自动化检查脚本，帮助团队建立统一、可执行、可追踪的编码规范体系.
+category: "Automation"---本工具面向企业级 Java 开发团队，提供开发规约的完整治理方案。在免费版 7 大维度规约速查能力之上，专业版新增团队级规则定制、规约合规性自动检查、新项目脚手架集成、架构分层约束、设计模式示例库、CI/CD 规约门禁等能力。通过可配置的规则引擎与自动化检查脚本，帮助团队建立统一、可执行、可追踪的编码规范体系.
 **版本兼容性说明**：专业版完全兼容免费版（`java-dev-manual-tool-free`）的所有规约内容与速查表，可无缝升级.
 ## 核心能力
 | 能力模块 | 免费版 | 专业版新增 |
@@ -59,21 +56,21 @@ category: "Automation"
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -107,7 +104,8 @@ echo "| Java 文件数 | $FILE_COUNT |" >> "$REPORT_FILE"
 # ...
 echo "" >> "$REPORT_FILE"
 echo "## 1. 命名规范审计" >> "$REPORT_FILE"
-echo "### 类名后缀合规性" >> "$REPORT_FILE"
+echo "
+### 类名后缀合规性" >> "$REPORT_FILE"
 echo "| 规则 | 合规数 | 违规数 | 合规率 |" >> "$REPORT_FILE"
 echo "| --- | --- | --- | --- |" >> "$REPORT_FILE"
 # ...
@@ -115,7 +113,8 @@ CONTROLLER_OK=$(find "$PROJECT_DIR" -name "*Controller.java" | wc -l)
 CONTROLLER_BAD=$(find "$PROJECT_DIR" -path "*/controller/*" -name "*.java" ! -name "*Controller.java" | wc -l)
 echo "| Controller 后缀 | $CONTROLLER_OK | $CONTROLLER_BAD | $(echo "scale=0; $CONTROLLER_OK * 100 / ($CONTROLLER_OK + $CONTROLLER_BAD + 1)" | bc)% |" >> "$REPORT_FILE"
 # ...
-echo "### 拼音命名检查" >> "$REPORT_FILE"
+echo "
+### 拼音命名检查" >> "$REPORT_FILE"
 PINYIN_ISSUES=$(grep -rn "yonghu\|dingdan\|zhifu\|shangpin\|gongsi" "$PROJECT_DIR" --include="*.java" | wc -l)
 echo "- 拼音命名违规: $PINYIN_ISSUES 处" >> "$REPORT_FILE"
 # ...
@@ -132,12 +131,12 @@ echo "## 3. 安全审计" >> "$REPORT_FILE"
 SQL_CONCAT=$(grep -rn "String sql.*+.*\"" "$PROJECT_DIR" --include="*.java" | wc -l)
 echo "- SQL 拼接: $SQL_CONCAT 处" >> "$REPORT_FILE"
 # ...
-HARDCODED_PWD=$(grep -rin "password.*=.*\"\|secret.*=.*\"" "$PROJECT_DIR" --include="*.java" | wc -l)
+HARDCODED_PWD=$(grep -rin "password.*=.*\"\|secret.*=.java" | wc -l)
 echo "- 硬编码密码: $HARDCODED_PWD 处" >> "$REPORT_FILE"
 # ...
 echo "" >> "$REPORT_FILE"
 echo "## 4. 并发审计" >> "$REPORT_FILE"
-EXECUTORS_USE=$(grep -rn "Executors\." "$PROJECT_DIR" --include="*.java" | wc -l)
+EXECUTORS_USE=$(grep -rn "Executors\.java" | wc -l)
 echo "- 使用 Executors: $EXECUTORS_USE 处" >> "$REPORT_FILE"
 # ...
 THREADLOCAL_NO_REMOVE=$(grep -rn "ThreadLocal" "$PROJECT_DIR" --include="*.java" -l | while read f; do
@@ -230,7 +229,6 @@ public class AlipayStrategy implements PaymentStrategy {
 // ...
 @Component
 public class WechatPayStrategy implements PaymentStrategy {
-    public PayResult pay(PayRequest request) { /* ... */ }
 }
 // ...
 @Component

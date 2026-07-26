@@ -76,7 +76,8 @@ category: "Knowledge"
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
-3. ### 可用性分类
+3. 
+### 可用性分类
 4. **分类**: MD+EXEC()
 5. **说明**: 基于Markdown的AI Skill,
 

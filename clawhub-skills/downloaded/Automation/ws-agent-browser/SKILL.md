@@ -1,12 +1,11 @@
----
-slug: ws-agent-browser
+---slug: ws-agent-browser
 name: ws-agent-browser
 version: "1.0.0"
 displayName: Agent Browser
 summary: 浏览器智能控制。自动化操作、截图、填表、数据抓取。
 license: MIT-0
 description: |-
-  浏览器智能控制。自动化操作、截图、填表、数据抓取。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
+  浏览器智能控制。自动化操作、截图、填表、数据抓取。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Automation
 tools:
@@ -14,11 +13,7 @@ tools:
 - exec
 pricing_tier: "L4"
 pricing_model: "monthly"
-suggested_price: 99.9
----
-
-
-# Agent Browser
+suggested_price: 99.9---# Agent Browser
 
 智能浏览器控制助手。
 
@@ -171,9 +166,7 @@ Skill平台 内置浏览器功能。
 ### 示例1：基础用法
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
 ## 错误处理

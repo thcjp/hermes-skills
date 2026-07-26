@@ -77,21 +77,21 @@ SSL工具箱(免费版)为个人用户提供HTTPS配置、TLS证书管理与基�
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -175,7 +175,7 @@ openssl s_client -connect example.com:443 -servername example.com
 
 ```bash
 # 方式一:certbot(最常用)
-certbot certonly --nginx -d example.com -d www.example.com
+com -d www.example.com
 # ...
 # 方式二:certbot standalone(无Web服务器时)
 certbot certonly --standalone -d example.com
@@ -188,10 +188,10 @@ acme.sh --issue -d example.com --nginx
 
 ```bash
 # 查看远程证书有效期
-echo | openssl s_client -connect example.com:443 2>/dev/null | openssl x509 -noout -dates
+com:443 2>/dev/null | openssl x509 -noout -dates
 # ...
 # 查看证书详情
-echo | openssl s_client -connect example.com:443 2>/dev/null | openssl x509 -noout -text
+com:443 2>/dev/null | openssl x509 -noout -text
 # ...
 # 查看本地证书文件
 openssl x509 -in cert.pem -text -noout
@@ -204,20 +204,14 @@ Nginx配置:
 ```nginx
 server {
     listen 443 ssl http2;
-    server_name example.com;
 # ...
-    ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
 # ...
-    ssl_protocols TLSv1.2 TLSv1.3;
-    ssl_ciphers HIGH:!aNULL:!MD5;
     ssl_prefer_server_ciphers on;
 }
 # ...
 # HTTP跳转HTTPS
 server {
     listen 80;
-    server_name example.com;
     return 301 https://$host$request_uri;
 }
 ```
@@ -247,13 +241,12 @@ SSLCertificateChainFile /path/to/chain.pem
 
 ```bash
 # 申请证书
-certbot certonly --nginx -d example.com -d www.example.com
+com -d www.example.com
 # ...
 # 查看远程证书有效期
-echo | openssl s_client -connect example.com:443 2>/dev/null | openssl x509 -noout -dates
+com:443 2>/dev/null | openssl x509 -noout -dates
 # ...
 # 查看远程证书完整信息
-openssl s_client -connect example.com:443 -servername example.com
 ```
 
 ### 证书类型选择
@@ -286,7 +279,7 @@ crontab -e
 ```nginx
 server {
     listen 80;
-    server_name example.com www.example.com;
+com www.example.com;
     return 301 https://$host$request_uri;
 }
 ```
@@ -295,10 +288,8 @@ server {
 
 ```nginx
 # 正确:使用fullchain.pem(包含中间证书)
-ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
 # ...
 # 错误:仅用cert.pem(缺少中间证书,部分客户端无法验证)
-ssl_certificate /etc/letsencrypt/live/example.com/cert.pem;
 ```
 
 ### 4. 启用现代TLS协议
@@ -397,8 +388,6 @@ HTTPS页面引用HTTP资源会触发混合内容警告:
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

@@ -48,8 +48,6 @@ category: "Automation"
 * Support for interruptions and resumption
 * Voice and text input support
 
-**处理**: 解析Activity Recording的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Activity Recording的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. Smart Categorization
 Auto-categorize activities into:
 
@@ -59,22 +57,16 @@ Auto-categorize activities into:
 * **Life**: cooking, cleaning, family time
 * **Rest**: entertainment, social media, breaks
 
-**处理**: 解析Smart Categorization的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Smart Categorization的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. Time Analysis
 * Daily/weekly/monthly time distribution
 * Focus time vs. fragmented time analysis
 * Peak productivity hours identification
 * Work-life balance metrics
 
-**处理**: 解析Time Analysis的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Time Analysis的处理结果,包含执行状态码、结果数据和执行日志.
 ### 4. Daily Report Generation
 ```markdown
 # ...
-**输入**: 用户提供Daily Report Generation所需的指令和必要参数.
-**处理**: 解析Daily Report Generation的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Daily Report Generation的处理结果,包含执行状态码、结果数据和执行日志.
+
 # ...
 #
 ## 快速开始

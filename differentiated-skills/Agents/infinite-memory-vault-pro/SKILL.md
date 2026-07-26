@@ -182,8 +182,8 @@ node （请参考skill目录中的脚本文件） sync --enable --source built-i
 ```bash
 # 配置语义搜索（本地 embedding）
 node （请参考skill目录中的脚本文件） config set semantic.enabled true
-node （请参考skill目录中的脚本文件） config set semantic.model "nomic-embed-text"
-node （请参考skill目录中的脚本文件） config set semantic.ollamaUrl "http://localhost:11434"
+model "nomic-embed-text"
+ollamaUrl "http://localhost:11434"
 # ...
 # 构建语义索引
 node （请参考skill目录中的脚本文件） index rebuild
@@ -191,13 +191,10 @@ node （请参考skill目录中的脚本文件） index rebuild
 # ...
 # 配置自动同步
 node （请参考skill目录中的脚本文件） config set sync.enabled true
-node （请参考skill目录中的脚本文件） config set sync.schedule "hourly"
-node （请参考skill目录中的脚本文件） config set sync.rules '[{"source":"built-in/preferences","target":"sync/preferences.md"}]'
+rules '[{"source":"built-in/preferences","target":"sync/preferences.md"}]'
 # ...
 # 配置大规模索引
 node （请参考skill目录中的脚本文件） config set largeScale.enabled true
-node （请参考skill目录中的脚本文件） config set largeScale.autoSplit true
-node （请参考skill目录中的脚本文件） config set largeScale.splitThreshold 100
 # ...
 # 启动后台服务（自动同步 + 索引维护）
 node （请参考skill目录中的脚本文件） daemon start
@@ -246,7 +243,7 @@ node （请参考skill目录中的脚本文件） search "用户认证方案" --
 
 ```bash
 # 批量导入客户档案
-node （请参考skill目录中的脚本文件） batch-import ./contacts/ --category people --recursive
+/contacts/ --category people --recursive
 # 输出：已导入 1247 个客户档案
 # ...
 # 自动拆分子分类（> 100 条时）
@@ -325,7 +322,7 @@ node （请参考skill目录中的脚本文件） search "AI 创意" --cross-cat
 
 ```bash
 # 批量导入文献笔记
-node （请参考skill目录中的脚本文件） batch-import ./papers/ --category knowledge --recursive
+/papers/ --category knowledge --recursive
 # 输出：已导入 856 篇文献笔记
 # ...
 # 语义搜索（学术概念匹配）
@@ -359,7 +356,7 @@ node （请参考skill目录中的脚本文件） cluster --category knowledge -
 - Agent 的 `memory/` 文件夹（如工作区中存在）
 
 **并行，而非替代。** 两套系统协同工作。专业版的自动同步是**单向的**：内置 → 本系统，绝不反向修改.
-**输入**: 用户提供规则 1：与内置记忆分离所需的指令和必要参数.
+
 **处理**: 解析规则 1：与内置记忆分离的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回规则 1：与内置记忆分离的响应数据,包含状态码、结果和日志.
 ### 规则 2：用户定义结构
@@ -374,7 +371,6 @@ node （请参考skill目录中的脚本文件） cluster --category knowledge -
 | "我在学 [主题]" | `~/memory/knowledge/[主题]/` | 建议语义聚类 |
 | "我收集 [东西]" | `~/memory/collections/[东西]/` | 建议标签系统 |
 
-**输入**: 用户提供规则 2：用户定义结构所需的指令和必要参数.
 **处理**: 解析规则 2：用户定义结构的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回规则 2：用户定义结构的响应数据,包含状态码、结果和日志.
 ### 规则 3：每个分类都有索引
@@ -393,7 +389,6 @@ node （请参考skill目录中的脚本文件） index health-check
 # 输出：各分类索引状态、过期索引、缺失索引
 ```
 
-**输入**: 用户提供规则 3：每个分类都有索引所需的指令和必要参数.
 **处理**: 解析规则 3：每个分类都有索引的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回规则 3：每个分类都有索引的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -415,7 +410,6 @@ node （请参考skill目录中的脚本文件） store "内容" --category proj
 # 自动存储到对应分类，更新索引
 ```
 
-**输入**: 用户提供规则 4：即写即存（专业版自动捕获）所需的指令和必要参数.
 **处理**: 解析规则 4：即写即存（专业版自动捕获）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回规则 4：即写即存（专业版自动捕获）的响应数据,包含状态码、结果和日志.
 ### 规则 5：语义搜索优先
@@ -441,7 +435,6 @@ node （请参考skill目录中的脚本文件） search "AI 相关" --cross-cat
 grep -r "关键词" ~/memory/
 ```
 
-**输入**: 用户提供规则 5：语义搜索优先所需的指令和必要参数.
 **处理**: 解析规则 5：语义搜索优先的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回规则 5：语义搜索优先的响应数据,包含状态码、结果和日志.
 ### 规则 6：自动同步（专业版）
@@ -466,7 +459,6 @@ node （请参考skill目录中的脚本文件） sync status
 # 绝不修改内置记忆
 ```
 
-**输入**: 用户提供规则 6：自动同步（专业版）所需的指令和必要参数.
 **处理**: 解析规则 6：自动同步（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回规则 6：自动同步（专业版）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -477,8 +469,6 @@ node （请参考skill目录中的脚本文件） sync status
 
 ```bash
 # 自动拆分（> 100 条时触发）
-node （请参考skill目录中的脚本文件） config set largeScale.autoSplit true
-node （请参考skill目录中的脚本文件） config set largeScale.splitThreshold 100
 # ...
 # 手动拆分
 node （请参考skill目录中的脚本文件） split --category projects --by status
@@ -495,7 +485,6 @@ node （请参考skill目录中的脚本文件） split --category projects --by
 #     └── ...
 ```
 
-**输入**: 用户提供规则 7：大规模索引（专业版自动拆分）所需的指令和必要参数.
 **处理**: 解析规则 7：大规模索引（专业版自动拆分）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回规则 7：大规模索引（专业版自动拆分）的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：内置记忆并行的无、限组织化记忆专业、全功能解锁、面向需要超越、内置记忆的长期结、构化存储场景的无、限记忆库专业版、内置记忆并行工作、互不冲突、提供无限分类、大规模索引能力、专业版解锁全部高、级功能、适合团队、企业级知识管理与、长期记忆需求等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -538,7 +527,6 @@ node （请参考skill目录中的脚本文件） hygiene --dedup --archive --sp
 # ...
 # 设置自动卫生
 node （请参考skill目录中的脚本文件） config set hygiene.auto true
-node （请参考skill目录中的脚本文件） config set hygiene.schedule "weekly"
 # ...
 # 卫生策略：
 # - 去重：语义相似度 > 0.95 的条目合并
@@ -558,7 +546,7 @@ node （请参考skill目录中的脚本文件） stats --detailed
 node （请参考skill目录中的脚本文件） search "自然语言查询" --cross-category --limit 20
 # ...
 # 批量导入
-node （请参考skill目录中的脚本文件） batch-import ./docs/ --category knowledge --recursive
+/docs/ --category knowledge --recursive
 # ...
 # 索引管理
 node （请参考skill目录中的脚本文件） index rebuild
@@ -728,9 +716,6 @@ node （请参考skill目录中的脚本文件） stats --detailed
 # 确认文件数量与升级前一致
 # ...
 # 6. 启用高级功能
-node （请参考skill目录中的脚本文件） config set semantic.enabled true
-node （请参考skill目录中的脚本文件） config set sync.enabled true
-node （请参考skill目录中的脚本文件） config set largeScale.enabled true
 # ...
 # 7. 启动后台服务
 node （请参考skill目录中的脚本文件） daemon start

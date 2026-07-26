@@ -288,7 +288,6 @@ function validateField(field) {
 <!-- 面包屑结构化数据 -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://example.com/"},
@@ -383,11 +382,8 @@ function validateField(field) {
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="页面描述">
   <title>页面标题</title>
-  <link rel="canonical" href="https://example.com/page">
-  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
   <header>
@@ -399,7 +395,6 @@ function validateField(field) {
   </main>
   <aside aria-label="侧边栏"><!-- 侧边内容 --></aside>
   <footer><!-- 页脚 --></footer>
-  <script src="/js/main.js" defer></script>
 </body>
 </html>
 ```

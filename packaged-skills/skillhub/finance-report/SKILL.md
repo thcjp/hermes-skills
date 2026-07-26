@@ -1,5 +1,4 @@
----
-slug: "finance-report"
+---slug: "finance-report"
 name: "finance-report"
 version: 1.0.1
 displayName: "财报分析专业版"
@@ -9,7 +8,7 @@ license: "MIT"
 edition: "pro"
 description: |-
   面向专业分析师与机构的财报分析系统。支持批量文件处理、PDF/DOCX/
-  Markdown多格式导出、行业基准对比、高级预测模型与自定义报告模板。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+  Markdown多格式导出、行业基准对比、高级预测模型与自定义报告模板。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。不适用于实时流数据处理.
 tags:
   - Finance
   - 财报分析
@@ -25,9 +24,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Finance"
----
-# 财报分析专业版
+category: "Finance"---# 财报分析专业版
 
 ## 付费版专享能力
 
@@ -53,8 +50,7 @@ category: "Finance"
 | 报告模板 | 固定模板 | 自定义品牌模板 |
 | 对比报告 | 不支持 | 多公司横向对比 |
 
-**输入**: 用户提供PRO版功能增强对比所需的指令和必要参数.
-**输出**: 返回PRO版功能增强对比的处理结果,包含执行状态码、结果数据和执行日志。### 高级预测模型
+### 高级预测模型
 | 模型 | 适用场景 | 准确度 |
 |---:|---:|---:|
 | 线性回归 | 线性趋势数据 | 中 |
@@ -63,9 +59,6 @@ category: "Finance"
 | 机器学习 | 复杂模式 | 高（需训练数据） |
 | 蒙特卡洛 | 概率区间预测 | 高 |
 
-**输入**: 用户提供高级预测模型所需的指令和必要参数.
-**处理**: 解析高级预测模型的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回高级预测模型的处理结果,包含执行状态码、结果数据和执行日志.
 ### 数据提取
 
 针对数据提取,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
@@ -153,7 +146,7 @@ cp config_pro_template.yaml config_pro.yaml
 python3 （请参考skill目录中的脚本文件） --input-dir ./data/ --format pdf
 # ...
 # 多格式导出
-python3 （请参考skill目录中的脚本文件） data.xlsx -o pdf,docx,html
+xlsx -o pdf,docx,html
 # ...
 # OCR提取
 python3 （请参考skill目录中的脚本文件） scanned_report.pdf --ocr
@@ -162,7 +155,6 @@ python3 （请参考skill目录中的脚本文件） scanned_report.pdf --ocr
 python3 （请参考skill目录中的脚本文件） --company "000001.SZ" --industry "银行业"
 # ...
 # 高级预测
-python3 （请参考skill目录中的脚本文件） data.xlsx \
   --forecast-model arima \
   --forecast-years 3
 ```

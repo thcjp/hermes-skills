@@ -135,7 +135,6 @@ wb.save("existing.xlsx")
 | 校验 | **validate_excel.py**。 |
 | 选择/重命名列 | **select_columns.py**。 |
 | 两表按键合并 | **merge_tables.py**（left/inner/outer）。 |
-| 行列转置 | **transpose_excel.py**。 |
 | 模板填充 | **template_fill.py**（{{列名}} 占位符）。 |
 | 重命名 sheet | **rename_sheets.py**。 |
 | 多表 VLOOKUP | **vlookup_multi.py**（主表 + 多个查找表依次左连接）。 |
@@ -186,8 +185,8 @@ skill 目录下 `scripts/` 提供可执行脚本，优先在用户环境中运�
 
 ## 更多说明
 
-* 详细 API 与参数见 [reference.md](/api/v1/skills/automate-excel/file?path=reference.md&ownerHandle=zways)。
-* 更多场景示例见 [examples.md](/api/v1/skills/automate-excel/file?path=examples.md&ownerHandle=zways)。
+* 详细 API 与参数见 [reference.path=reference.
+* 更多场景示例见 [examples.path=examples.
 
 ## 依赖说明
 
@@ -233,9 +232,7 @@ skill 目录下 `scripts/` 提供可执行脚本，优先在用户环境中运�
 ### 示例1：基础用法
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
 ## 常见问题

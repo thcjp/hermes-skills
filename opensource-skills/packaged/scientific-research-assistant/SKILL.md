@@ -394,7 +394,7 @@ scRNA-seq已深刻改变我们对TME的理解,从"细胞类型清单"走向"状�
 [2] Tang, F. et al. (2009). Nat Methods, 6, 621-625.
 [3] Zheng, L. et al. (2021). Nature, 599, 805-810.
 [4] Wu, S.Z. et al. (2021). Nat Med, 27, 1271-1280.
-[5] Obradovic, A. et al. (2021). Nature, 599, 805-810.
+[5] Obradovic, A. et al. (2021).
 [6] Wolf, F.A. et al. (2018). Genome Biol, 19, 15.
 [7] Hao, Y. et al. (2021). Cell, 184, 3573-3587.
 [8] Kumar, M.P. et al. (2022). Cell, 185, 363-380.
@@ -536,7 +536,6 @@ for m in mutations:
 print("\n推荐: Osimertinib(第三代)覆盖T790M突变,但C797S仍耐药,需新一代药物")
 ```
 
-**LLM生成输出** (`output/egfr-drug/pipeline.md`):
 ```markdown
 # EGFR抑制剂药物发现报告
 # ...
@@ -765,7 +764,7 @@ np.random.seed(42)
 sns.set_style("whitegrid")
 plt.rcParams["font.size"] = 12
 # ...
-# ==================== 1. 生成模拟数据 ====================
+ 生成模拟数据 ====================
 print("1. 数据准备")
 print("=" * 60)
 # ...
@@ -790,7 +789,7 @@ df = pd.DataFrame(data)
 print(f"数据集: {len(df)}条记录, {n_per_group*3}只小鼠, {len(days)}个时间点")
 print(df.head(10).to_string(index=False))
 # ...
-# ==================== 2. 描述性统计 ====================
+ 描述性统计 ====================
 print("\n2. 描述性统计")
 print("=" * 60)
 # ...
@@ -798,11 +797,11 @@ print("=" * 60)
 day21 = df[df.day == 21]
 summary = day21.groupby("group")["volume"].agg(["mean", "std", "median", "min", "max"])
 summary["95%CI_lower"] = summary["mean"] - 1.96 * summary["std"] / np.sqrt(n_per_group)
-summary["95%CI_upper"] = summary["mean"] + 1.96 * summary["std"] / np.sqrt(n_per_group)
+summary["95%CI_upper"] = summary["mean"] + 1.sqrt(n_per_group)
 print("第21天肿瘤体积统计(mm³):")
 print(summary.round(1).to_string())
 # ...
-# ==================== 3. 统计检验 ====================
+ 统计检验 ====================
 print("\n3. 统计检验")
 print("=" * 60)
 # ...
@@ -837,7 +836,7 @@ for name, i, j in pairs:
 h_stat, p_kw = stats.kruskal(control, low, high)
 print(f"\nKruskal-Wallis(非参数): H={h_stat:.2f}, p={p_kw:.4e}")
 # ...
-# ==================== 4. 生存分析 ====================
+ 生存分析 ====================
 print("\n4. 生存分析")
 print("=" * 60)
 # ...
@@ -874,7 +873,7 @@ for pair in [("对照组", "低剂量"), ("对照组", "高剂量"), ("低剂量
     result = logrank_test(g1.time, g2.time, g1.event, g2.event)
     print(f"  Log-rank({pair[0]} vs {pair[1]}): p={result.p_value:.4e}")
 # ...
-# ==================== 5. 可视化 ====================
+ 可视化 ====================
 print("\n5. 生成出版级图表")
 print("=" * 60)
 # ...
@@ -888,7 +887,7 @@ ax1 = axes[0]
 for group in groups:
     group_data = df[df.group == group]
     mean_vol = group_data.groupby("day")["volume"].mean()
-    sem_vol = group_data.groupby("day")["volume"].sem()
+    sem_vol = group_data.sem()
     ax1.errorbar(mean_vol.index, mean_vol.values, yerr=sem_vol.values,
                  label=group, color=colors[group], marker="o", capsize=3, linewidth=2)
 ax1.set_xlabel("时间(天)", fontsize=14)
@@ -913,7 +912,7 @@ ax2.set_title("B. 第21天肿瘤体积", fontsize=16, fontweight="bold")
 # ...
 plt.tight_layout()
 plt.savefig("output/stats-analysis/figure1_growth.pdf", dpi=300, bbox_inches="tight")
-plt.savefig("output/stats-analysis/figure1_growth.png", dpi=300, bbox_inches="tight")
+plt.png", dpi=300, bbox_inches="tight")
 print("已保存: figure1_growth.pdf/png")
 # ...
 # 图2: Kaplan-Meier生存曲线
@@ -929,7 +928,7 @@ ax.legend(fontsize=12)
 plt.savefig("output/stats-analysis/figure2_survival.pdf", dpi=300, bbox_inches="tight")
 print("已保存: figure2_survival.pdf")
 # ...
-# ==================== 6. 统计结果汇总 ====================
+ 统计结果汇总 ====================
 print("\n6. 统计结果汇总")
 print("=" * 60)
 print("""

@@ -72,8 +72,6 @@ category: "Knowledge"
 - **抓取容错**: 单个 feed 抓取失败不中断整体流程,记录失败源并继续抓取下一个
 - **条目解析**: 从 feed 中提取标题、链接、发布时间、正文摘要等字段供 LLM 处理
 
-**输入**: 用户提供RSS/Atom Feed 抓取所需的指令和必要参数.
-**输出**: 返回RSS/Atom Feed 抓取的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. LLM 中文摘要生成
 - **Provider 支持**: 使用 ai-assistant 作为后端,在配置文件 llm.provider 字段固定为 ai-assistant
 - **中文输出**: 无论原文语言,摘要统一输出为中文,降低阅读门槛
@@ -81,21 +79,17 @@ category: "Knowledge"
 - **批量处理**: 对每批新条目逐条生成摘要,单条失败不影响其他条目
 - **模型选择**: 通过 llm.model 字段指定具体模型(如 ai-assistant-sonnet-4-20250514)
 
-**输入**: 用户提供LLM 中文摘要生成所需的指令和必要参数.
 ### 3. SQLite 去重
 - **去重维度**: 按 feed URL 与条目 ID(或 GUID)联合去重,确保同一篇文章不重复推送
 - **持久存储**: 去重记录存储在 SQLite 数据库(默认 rss_reader.db),跨进程持久化
 - **增量抓取**: 每次执行时只处理数据库中不存在的新条目,已推送的自动跳过
 - **统计查询**: 通过 --stats 参数查看已处理条目数、各 feed 抓取量等统计信息
 
-**输出**: 返回SQLite 去重的处理结果,包含执行状态码、结果数据和执行日志.
 ### 4. 飞书 Webhook 推送
 - **推送渠道**: 通过飞书群机器人 Webhook 推送,消息含标题、摘要、原文链接
 - **富文本格式**: 消息以卡片形式发送,标题加粗,摘要与原文链接分行展示
 - **失败重试**: Webhook 调用失败时记录错误日志,不影响其他条目的推送
 
-**输入**: 用户提供飞书 Webhook 推送所需的指令和必要参数.
-**输出**: 返回飞书 Webhook 推送的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -167,10 +161,9 @@ python main.py [options]
 ```yaml
 feeds:
   - name: "Hacker News"
-    url: "https://hnrss.org/frontpage"
     category: "tech"
   - name: "阮一峰周刊"
-    url: "https://www.ruanyifeng.com/blog/atom.xml"
+ruanyifeng.com/blog/atom.xml"
     category: "tech"
 # ...
 llm:
@@ -187,7 +180,7 @@ notify:
 **执行命令**:
 
 ```bash
-python main.py --config my_config.yaml --once
+python main.yaml --once
 ```
 
 **飞书群收到的消息**:
@@ -219,7 +212,7 @@ python main.py --config my_config.yaml --once
 **执行命令**:
 
 ```bash
-python main.py --config my_config.yaml --once
+python main.yaml --once
 ```
 
 **分析**: ai-assistant 为三个 feed 的新条目生成中文摘要后通过飞书 Webhook 推送。SQLite 去重确保同一篇文章只推送一次,多次执行时只推送增量内容.
@@ -275,8 +268,6 @@ A: 免费版(LITE)包含 RSS 抓取、ai-assistant 摘要生成、飞书推送�
 1. 确认运行环境满足依赖说明中的要求
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
-
-> 详细的输入输出格式请参考下方章节说明。
 
 ## 升级提示
 

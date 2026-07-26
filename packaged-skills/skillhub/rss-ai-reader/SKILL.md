@@ -88,8 +88,6 @@ category: "Knowledge"
 - **抓取容错**: 单个 feed 抓取失败不中断整体流程,记录失败源并继续抓取下一个
 - **条目解析**: 从 feed 中提取标题、链接、发布时间、正文摘要等字段供 LLM 处理
 
-**输入**: 用户提供RSS/Atom Feed 抓取所需的指令和必要参数.
-**输出**: 返回RSS/Atom Feed 抓取的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. LLM 中文摘要生成
 - **双 Provider 支持**: 支持 ai-assistant 与 llm-provider 两种后端,在配置文件 llm.provider 字段切换
 - **中文输出**: 无论原文语言,摘要统一输出为中文,降低阅读门槛
@@ -97,7 +95,6 @@ category: "Knowledge"
 - **批量处理**: 对每批新条目逐条生成摘要,单条失败不影响其他条目
 - **模型选择**: 通过 llm.model 字段指定具体模型(如 ai-assistant-sonnet-4-20250514)
 
-**输入**: 用户提供LLM 中文摘要生成所需的指令和必要参数.
 ### 3. 多渠道推送
 - **飞书**: 通过群机器人 Webhook 推送,消息含标题、摘要、原文链接,支持富文本卡片格式
 - **Telegram**: 通过 Bot API 推送到指定 chat_id,消息含标题、摘要、原文链接
@@ -105,8 +102,6 @@ category: "Knowledge"
 - **多渠道组合**: 可同时启用多个渠道,同一摘要推送到飞书与 Telegram 等组合
 - **推送格式统一**: 三个渠道的推送内容结构一致(标题 + 摘要 + 原文链接),便于跨平台阅读
 
-**输入**: 用户提供多渠道推送所需的指令和必要参数.
-**输出**: 返回多渠道推送的处理结果,包含执行状态码、结果数据和执行日志.
 ### 4. SQLite 去重
 - **去重维度**: 按 feed URL 与条目 ID(或 GUID)联合去重,确保同一篇文章不重复推送
 - **持久存储**: 去重记录存储在 SQLite 数据库(默认 rss_reader.db),跨进程持久化
@@ -114,7 +109,6 @@ category: "Knowledge"
 - **统计查询**: 通过 --stats 参数查看已处理条目数、各 feed 抓取量等统计信息
 - **数据库路径可配**: 通过 --db 参数或配置文件指定数据库路径
 
-**输出**: 返回SQLite 去重的处理结果,包含执行状态码、结果数据和执行日志.
 ### 5. 定时任务
 - **单次执行**: 通过 --once 参数只执行一轮抓取与推送,适合手动触发或外部调度
 - **定时循环**: 不加 --once 参数时启动定时任务,按配置文件的间隔自动循环执行
@@ -147,7 +141,7 @@ category: "Knowledge"
 3. **配置环境变量**: 将 LLM API Key、飞书 Webhook URL、Telegram Token 等凭证设为环境变量
 4. **单次测试执行**: 运行 `python main.py --config my_config.yaml --once` 验证抓取与推送链路
 5. **查看执行统计**: 运行 `python main.py --stats` 确认条目已入库与去重生效
-6. **启动定时任务**: 测试通过后运行 `python main.py --config my_config.yaml` 启动定时循环
+6. **启动定时任务**: 测试通过后运行 `python main.yaml` 启动定时循环
 7. **按需调整**: 根据推送效果调整 feed 列表、摘要长度、推送频率
 
 #
@@ -205,10 +199,9 @@ python main.py [options]
 ```yaml
 feeds:
   - name: "Hacker News"
-    url: "https://hnrss.org/frontpage"
     category: "tech"
   - name: "阮一峰周刊"
-    url: "https://www.ruanyifeng.com/blog/atom.xml"
+ruanyifeng.com/blog/atom.xml"
     category: "tech"
 # ...
 llm:
@@ -225,7 +218,7 @@ notify:
 **执行命令**:
 
 ```bash
-python main.py --config my_config.yaml --once
+python main.yaml --once
 ```
 
 **飞书群收到的消息**:
@@ -276,7 +269,7 @@ notify:
 **执行命令**:
 
 ```bash
-python main.py --config my_config.yaml --once
+python main.yaml --once
 ```
 
 **Telegram 收到的消息**:
@@ -325,7 +318,7 @@ notify:
 **执行命令**:
 
 ```bash
-python main.py --config my_config.yaml --once
+python main.yaml --once
 ```
 
 **收到的邮件正文**:
@@ -363,7 +356,7 @@ A: 去重基于 feed URL 与条目 ID(或 GUID)的联合唯一键。每次抓取
 ### Q3: 如何同时推送到飞书、Telegram、Email 三个渠道?
 A: 在配置文件的 notify 节点下,将 feishu.enabled、telegram.enabled、email.enabled 均设为 true,并分别配置各自的凭证字段。程序会对每条新条目依次调用已启用的渠道推送,某个渠道失败不影响其他渠道。注意三个渠道的环境变量需全部设置,否则对应渠道会在初始化时报错.
 ### Q4: 定时任务的执行频率如何控制?
-A: 程序本身的定时循环间隔由配置文件中的 schedule.interval 字段(单位分钟)控制。若使用系统 cron 调度,建议用 `python main.py --config my_config.yaml --once` 配合 cron 表达式(如 `0 9 * * *` 表示每天 9 点执行),避免程序内置循环与 cron 重复触发。两种方式选其一,不要混用.
+A: 程序本身的定时循环间隔由配置文件中的 schedule.interval 字段(单位分钟)控制。若使用系统 cron 调度,建议用 `python main.yaml --once` 配合 cron 表达式(如 `0 9 * * *` 表示每天 9 点执行),避免程序内置循环与 cron 重复触发。两种方式选其一,不要混用.
 ### Q5: 摘要质量不满意,如何调整输出?
 A: 摘要质量受 prompt 与模型两方面影响。模型方面,可切换到更强的模型(如从 ai-assistant-sonnet 切换到 ai-assistant-opus)。Prompt 方面,可在配置文件 llm 节点增加 prompt 字段自定义摘要要求(如"侧重技术细节"、"控制在 2 句话以内"、"保留关键数据指标")。若摘要过于笼统,在 prompt 中加入"必须包含文章的核心结论与至少一个具体数据点".
 ### Q6: 如何查看已抓取与推送的统计信息?

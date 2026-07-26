@@ -70,8 +70,7 @@ export API_KEY="your_api_key_here"
 - **作业辅导**：逐步解答数学、物理等问题并解释每步
 - **代码调试**：解释代码问题并帮助修复
 
-**处理**: 解析概念解释（Concept Explanations）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回概念解释（Concept Explanations）的处理结果,包含执行状态码、结果数据和执行日志。### 语言学习（Language Learning）
+### 语言学习（Language Learning）
 
 基础语言学习辅导：
 
@@ -86,8 +85,6 @@ export API_KEY="your_api_key_here"
 - **摘要笔记**：如"Summarize Chapter 5 of my biology textbook"
 - **速查表**：如"Create a one-page reference for Python syntax"
 
-**输入**: 用户提供学习指南（Study Guides）所需的指令和必要参数.
-**处理**: 解析学习指南（Study Guides）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 概念拆解
 
 针对概念拆解,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.

@@ -78,29 +78,21 @@ category: "Automation"
 
 ### 1. 广告创意搜索/计数/分布
 按关键词、国家、行业、创意类型多维度检索广告创意。`page_size` 上限 10 自动钳制；配额紧张时优先用 `count` 替代 `search` 降低消耗。支持创意分布维度查询（`distribute` / `distribute-dims`）与创意关联应用反查（`item-apps`）.
-**输入**: 用户提供广告创意搜索/计数/分布所需的指令和必要参数.
-**处理**: 解析广告创意搜索/计数/分布的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回广告创意搜索/计数/分布的处理结果,包含执行状态码、结果数据和执行日志.
+
 ### 2. 应用与开发者画像
 统一产品搜索（`unified-product-search`）、应用详情（`app-detail`）、开发者详情（`developer-detail`）、相似应用（`similar-apps`）、SDK 详情（`sdk-detail`）；支持从创意 ID 反查关联应用（`item-apps`）。- 验证返回数据的完整性和格式正确性
 ### 3. 商店榜单查询
 应用商店免费/付费/畅销榜单（`store-rank`），按类目与国家筛选；通用榜单（`generic-rank`）支持自定义维度聚合.
-**输入**: 用户提供商店榜单查询所需的指令和必要参数.
-**处理**: 解析商店榜单查询的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回商店榜单查询的处理结果,包含执行状态码、结果数据和执行日志.
+
 ### 4. 下载与收入估算（带可信度分级）
 按日期（`download-date` / `revenue-date`）、详情（`download-detail` / `revenue-detail`）、国家（`download-country` / `revenue-country`）维度查询第三方估算数据；强制附 A/B/C 三级可信度标注：
 - **A 级**：多源交叉方差 < 10%，可用于定量对比
 - **B 级**：单源方差 10%-25%，可用于趋势参考
 - **C 级**：长尾方差 > 25%，仅用于方向性判断
 
-**输入**: 用户提供下载与收入估算（带可信度分级）所需的指令和必要参数.
-**处理**: 解析下载与收入估算（带可信度分级）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回下载与收入估算（带可信度分级）的处理结果,包含执行状态码、结果数据和执行日志.
 ### 5. 参数自然语言翻译与端点编排
 内置 40+ 行业码与 200+ 国家码中文映射；端点依赖图自动并行化无依赖调用、串行化有依赖调用，单轮可编排 5-10 个端点.
-**输入**: 用户提供参数自然语言翻译与端点编排所需的指令和必要参数.
-**输出**: 返回参数自然语言翻译与端点编排的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+
 - 参考`参数自然语言翻译与端点编排`的配置文档进行参数调优
 #
 ## 快速开始
@@ -206,7 +198,7 @@ curl -s -X POST "https://api.admapix.com/api/data/product-search" \
   -d '{"keyword":"竞品名称","page":1,"page_size":10}'
 # ...
 # Step 2: 查询近7天美国视频创意
-curl -s -X POST "https://api.admapix.com/api/data/product-content-search" \
+admapix.com/api/data/product-content-search" \
   -H "X-API-Key: ${ADMAPIX_API_KEY}" -H "Content-Type: application/json" \
   -d '{"unifiedProductId":"xxx","countries":["US"],"adTypes":["010"],"dateRange":"7d","page":1,"page_size":10}'
 ```
@@ -230,22 +222,22 @@ curl -s -X POST "https://api.admapix.com/api/data/product-content-search" \
 **编排（首轮 4 个请求并行）**：
 ```bash
 # 美国下载估算
-curl -s -X POST "https://api.admapix.com/api/data/download-country" \
+admapix.com/api/data/download-country" \
   -H "X-API-Key: ${ADMAPIX_API_KEY}" -H "Content-Type: application/json" \
   -d '{"countries":["US"],"trade_level1":["602"],"genre":["match3"],"dateRange":"30d"}'
 # ...
 # 东南亚下载估算（多国合并）
-curl -s -X POST "https://api.admapix.com/api/data/download-country" \
+admapix.com/api/data/download-country" \
   -H "X-API-Key: ${ADMAPIX_API_KEY}" -H "Content-Type: application/json" \
   -d '{"countries":["TH","VN","ID","PH","MY"],"trade_level1":["602"],"genre":["match3"],"dateRange":"30d"}'
 # ...
 # 美国收入估算
-curl -s -X POST "https://api.admapix.com/api/data/revenue-country" \
+admapix.com/api/data/revenue-country" \
   -H "X-API-Key: ${ADMAPIX_API_KEY}" -H "Content-Type: application/json" \
   -d '{"countries":["US"],"trade_level1":["602"],"genre":["match3"],"dateRange":"30d"}'
 # ...
 # 东南亚收入估算
-curl -s -X POST "https://api.admapix.com/api/data/revenue-country" \
+admapix.com/api/data/revenue-country" \
   -H "X-API-Key: ${ADMAPIX_API_KEY}" -H "Content-Type: application/json" \
   -d '{"countries":["TH","VN","ID","PH","MY"],"trade_level1":["602"],"genre":["match3"],"dateRange":"30d"}'
 ```
@@ -269,7 +261,7 @@ curl -s -X POST "https://api.admapix.com/api/data/revenue-country" \
 
 ```bash
 # Step 1: 搜索开发者
-curl -s -X POST "https://api.admapix.com/api/data/company-search" \
+admapix.com/api/data/company-search" \
   -H "X-API-Key: ${ADMAPIX_API_KEY}" -H "Content-Type: application/json" \
   -d '{"keyword":"开发者名称","page":1,"page_size":10}'
 # ...

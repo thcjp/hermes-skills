@@ -119,13 +119,13 @@ category: "Creative"
     "logic": "and",
     "rules": [
       { "field": "${trigger.body.status}", "equals": "paid" },
-      { "field": "${trigger.body.amount}", "greaterThan": 100 }
+body.amount}", "greaterThan": 100 }
     ]
   },
   "steps": [
     { "action": "fetch", "url": "https://api.crm.com/customers/${trigger.body.customerId}", "output": "customer" },
     { "action": "transform", "input": "${customer}", "script": "addTag(data, 'VIP')", "output": "vipCustomer" },
-    { "action": "fetch", "url": "https://api.crm.com/customers/${trigger.body.customerId}", "method": "PUT", "body": "${vipCustomer}" },
+crm.body.customerId}", "method": "PUT", "body": "${vipCustomer}" },
     { "action": "notify", "channel": "email", "to": "sales@company.com", "subject": "新VIP订单", "body": "订单号：${trigger.body.orderId}" }
   ],
   "errorHandling": {
@@ -166,7 +166,8 @@ cat logs/order_processing_$(date +%Y%m%d).log
 
 专业版完整支持四种触发器：
 
-#### 1. 定时触发（Cron）
+#
+### 1. 定时触发（Cron）
 
 ```json
 {
@@ -189,7 +190,8 @@ cat logs/order_processing_$(date +%Y%m%d).log
 | `*/30 * * * *` | 每30分钟执行 |
 | `0 0 * * 0` | 每周日0点执行 |
 
-#### 2. 文件监控触发（Watch）
+#
+### 2. 文件监控触发（Watch）
 
 ```json
 {
@@ -203,7 +205,8 @@ cat logs/order_processing_$(date +%Y%m%d).log
 }
 ```
 
-#### 3. 手动触发（Manual）
+#
+### 3. 手动触发（Manual）
 
 ```json
 {
@@ -214,7 +217,8 @@ cat logs/order_processing_$(date +%Y%m%d).log
 }
 ```
 
-#### 4. API Webhook触发 — 专业版独有
+#
+### 4. API Webhook触发 — 专业版独有
 
 接收外部HTTP请求触发工作流.
 ```json
@@ -245,14 +249,14 @@ cat logs/order_processing_$(date +%Y%m%d).log
 - `${trigger.headers}`：请求头
 - `${trigger.query}`：URL查询参数
 
-**输入**: 用户提供四种触发器所需的指令和必要参数.
 **处理**: 解析四种触发器的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回四种触发器的响应数据,包含状态码、结果和日志.
 ### 五类操作节点
 
 专业版完整支持五类操作节点：
 
-#### 1. 文件操作
+#
+### 1. 文件操作
 
 ```json
 { "action": "read", "file": "./input/data.json", "output": "fileContent" }
@@ -262,11 +266,12 @@ cat logs/order_processing_$(date +%Y%m%d).log
 { "action": "delete", "file": "./temp/old_data.json" }
 ```
 
-#### 2. 网络请求
+#
+### 2. 网络请求
 
 ```json
 // GET请求
-{ "action": "fetch", "url": "https://api.example.com/data", "headers": {"Authorization": "Bearer ${env.API_TOKEN}"}, "output": "responseData" }
+example.com/data", "headers": {"Authorization": "Bearer ${env.API_TOKEN}"}, "output": "responseData" }
 # ...
 // POST请求
 {
@@ -281,21 +286,23 @@ cat logs/order_processing_$(date +%Y%m%d).log
 // PUT请求
 {
   "action": "fetch",
-  "url": "https://api.example.com/resource/123",
+example.com/resource/123",
   "method": "PUT",
   "body": "${processedData}",
   "output": "updateResult"
 }
 ```
 
-#### 3. 命令执行
+#
+### 3. 命令执行
 
 ```json
 { "action": "exec", "command": "python process.py --input data.json", "output": "cmdResult" }
 { "action": "exec", "command": "git add . && git commit -m 'auto update'", "output": "gitResult" }
 ```
 
-#### 4. 数据处理转换 — 专业版独有
+#
+### 4. 数据处理转换 — 专业版独有
 
 在工作流内进行数据格式转换和计算.
 ```json
@@ -357,7 +364,8 @@ cat logs/order_processing_$(date +%Y%m%d).log
 | format | 格式化 | `format(data, 'YYYY-MM-DD')` |
 | addTag | 添加标签 | `addTag(data, 'VIP')` |
 
-#### 5. 通知发送 — 专业版独有
+#
+### 5. 通知发送 — 专业版独有
 
 在工作流中发送邮件或消息通知.
 ```json
@@ -395,13 +403,13 @@ cat logs/order_processing_$(date +%Y%m%d).log
 }
 ```
 
-**输入**: 用户提供五类操作节点所需的指令和必要参数.
 **处理**: 解析五类操作节点的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回五类操作节点的响应数据,包含状态码、结果和日志.
 ### 多条件组合判断 — 专业版独有
 
 支持AND/OR嵌套的多条件组合判断.
-#### 单条件（与免费版一致）
+#
+### 单条件（与免费版一致）
 
 ```json
 {
@@ -412,47 +420,50 @@ cat logs/order_processing_$(date +%Y%m%d).log
 }
 ```
 
-#### AND组合
+#
+### AND组合
 
 ```json
 {
   "conditions": {
     "logic": "and",
     "rules": [
-      { "field": "${trigger.body.status}", "equals": "paid" },
-      { "field": "${trigger.body.amount}", "greaterThan": 100 }
+body.status}", "equals": "paid" },
+body.amount}", "greaterThan": 100 }
     ]
   }
 }
 ```
 
-#### OR组合
+#
+### OR组合
 
 ```json
 {
   "conditions": {
     "logic": "or",
     "rules": [
-      { "field": "${trigger.body.category}", "equals": "VIP" },
-      { "field": "${trigger.body.amount}", "greaterThan": 1000 }
+body.category}", "equals": "VIP" },
+body.amount}", "greaterThan": 1000 }
     ]
   }
 }
 ```
 
-#### 嵌套组合
+#
+### 嵌套组合
 
 ```json
 {
   "conditions": {
     "logic": "and",
     "rules": [
-      { "field": "${trigger.body.status}", "equals": "paid" },
+body.status}", "equals": "paid" },
       {
         "logic": "or",
         "rules": [
-          { "field": "${trigger.body.category}", "equals": "VIP" },
-          { "field": "${trigger.body.amount}", "greaterThan": 1000 }
+body.category}", "equals": "VIP" },
+body.amount}", "greaterThan": 1000 }
         ]
       }
     ]
@@ -473,7 +484,6 @@ cat logs/order_processing_$(date +%Y%m%d).log
 | in | 在列表中 | `{"field": "${status}", "in": ["paid", "shipped"]}` |
 | matches | 正则匹配 | `{"field": "${email}", "matches": ".*@company\\.com$"}` |
 
-**输入**: 用户提供多条件组合判断 — 专业版独有所需的指令和必要参数.
 **处理**: 解析多条件组合判断 — 专业版独有的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多条件组合判断 — 专业版独有的响应数据,包含状态码、结果和日志.
 ### 变量引用
@@ -488,7 +498,6 @@ cat logs/order_processing_$(date +%Y%m%d).log
 | `${params.key}` | 手动执行参数 | `${params.date}` |
 | `${env.VAR}` | 环境变量 | `${env.API_TOKEN}` |
 
-**输入**: 用户提供变量引用所需的指令和必要参数.
 **处理**: 解析变量引用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回变量引用的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全功能、工作流构建、六模板库、流程锻造器专业版、是在免费版基础上、的全功能升级、Agent、提供代码化的工作、流构建能力、定义触发器、操作步骤、条件判断和错误处、将跨平台自动化流、程转化为可版本控、可复用的工作流配、专业版解锁、通知发送四大高级等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -520,7 +529,6 @@ cat logs/order_processing_$(date +%Y%m%d).log
 | alertTarget | 告警目标（邮箱/频道/URL） |
 | logPath | 日志文件路径 |
 
-**输入**: 用户提供错误处理所需的指令和必要参数.
 **处理**: 解析错误处理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回错误处理的响应数据,包含状态码、结果和日志.
 ## 预置工作流模板库（6个）
@@ -535,7 +543,7 @@ cat logs/order_processing_$(date +%Y%m%d).log
     { "action": "fetch", "url": "${SOURCE_API}", "output": "sourceData" },
     { "action": "transform", "input": "${sourceData}", "script": "map(data, normalizeRecord)", "output": "normalized" },
     { "action": "fetch", "url": "${TARGET_API}", "method": "POST", "body": "${normalized}", "output": "syncResult" },
-    { "action": "save", "path": "./logs/sync_$(date +%Y%m%d_%H).json", "input": "${syncResult}" }
+/logs/sync_$(date +%Y%m%d_%H).json", "input": "${syncResult}" }
   ],
   "errorHandling": { "onFail": "alert", "retry": { "count": 3, "interval": 60 }, "alertChannel": "email", "alertTarget": "ops@company.com" }
 }
@@ -551,7 +559,7 @@ cat logs/order_processing_$(date +%Y%m%d).log
     { "action": "read", "file": "${trigger.file}", "output": "draftContent" },
     { "action": "transform", "input": "${draftContent}", "script": "format(data, 'html')", "output": "htmlContent" },
     { "action": "fetch", "url": "${CMS_API}/posts", "method": "POST", "body": "${htmlContent}", "output": "publishResult" },
-    { "action": "move", "from": "${trigger.file}", "to": "./published/" },
+file}", "to": "./published/" },
     { "action": "notify", "channel": "slack", "webhook": "${env.SLACK_WEBHOOK}", "message": "新内容已发布" }
   ],
   "errorHandling": { "onFail": "continue", "logPath": "./logs/publish.log" }
@@ -595,7 +603,7 @@ cat logs/order_processing_$(date +%Y%m%d).log
   },
   "steps_after_condition": [
     { "action": "notify", "channel": "dingtalk", "webhook": "${env.DINGTALK_WEBHOOK}", "message": "告警：以下服务异常 ${unhealthyServices}" },
-    { "action": "save", "path": "./logs/alert_$(date +%Y%m%d_%H%M).json", "input": "${unhealthyServices}" }
+/logs/alert_$(date +%Y%m%d_%H%M).json", "input": "${unhealthyServices}" }
   ],
   "errorHandling": { "onFail": "log", "logPath": "./logs/monitor.log" }
 }
@@ -612,7 +620,7 @@ cat logs/order_processing_$(date +%Y%m%d).log
     { "action": "transform", "input": "${customer}", "script": "extract(data, 'id')", "output": "customerId" },
     { "action": "fetch", "url": "${PROJECT_API}/projects", "method": "POST", "body": { "customerId": "${customerId}", "name": "${trigger.body.companyName}" }, "output": "project" },
     { "action": "notify", "channel": "email", "to": "${trigger.body.email}", "subject": "欢迎加入", "body": "您的账号已创建完成" },
-    { "action": "notify", "channel": "slack", "webhook": "${env.SLACK_WEBHOOK}", "message": "新客户入驻：${trigger.body.companyName}" }
+SLACK_WEBHOOK}", "message": "新客户入驻：${trigger.body.companyName}" }
   ],
   "errorHandling": { "onFail": "alert", "retry": { "count": 3, "interval": 30 }, "alertChannel": "email", "alertTarget": "ops@company.com" }
 }
@@ -627,15 +635,15 @@ cat logs/order_processing_$(date +%Y%m%d).log
   "conditions": {
     "logic": "and",
     "rules": [
-      { "field": "${trigger.body.status}", "equals": "paid" },
-      { "field": "${trigger.body.amount}", "greaterThan": 0 }
+body.status}", "equals": "paid" },
+body.amount}", "greaterThan": 0 }
     ]
   },
   "steps": [
     { "action": "fetch", "url": "${ERP_API}/orders", "method": "POST", "body": "${trigger.body}", "output": "erpOrder" },
     { "action": "fetch", "url": "${INVENTORY_API}/reserve", "method": "POST", "body": { "items": "${trigger.body.items}" }, "output": "reservation" },
-    { "action": "notify", "channel": "email", "to": "${trigger.body.customerEmail}", "subject": "订单确认", "body": "订单号：${trigger.body.orderId}已确认" },
-    { "action": "notify", "channel": "slack", "webhook": "${env.SLACK_WEBHOOK}", "message": "新订单：${trigger.body.orderId}，金额：${trigger.body.amount}" }
+body.customerEmail}", "subject": "订单确认", "body": "订单号：${trigger.body.orderId}已确认" },
+SLACK_WEBHOOK}", "message": "新订单：${trigger.body.body.amount}" }
   ],
   "errorHandling": { "onFail": "alert", "retry": { "count": 5, "interval": 30, "backoff": "exponential" }, "alertChannel": "slack", "alertTarget": "#ops-alerts" }
 }
@@ -652,7 +660,7 @@ cat logs/order_processing_$(date +%Y%m%d).log
   "trigger": { "type": "cron", "schedule": "0 9 * * *" },
   "steps": [
     { "action": "fetch", "url": "${COMPETITOR_API}/prices", "output": "currentPrices" },
-    { "action": "read", "file": "./data/price_history.json", "output": "historyPrices" },
+/data/price_history.json", "output": "historyPrices" },
     { "action": "transform", "input": ["${currentPrices}", "${historyPrices}"], "script": "comparePrices(data[0], data[1])", "output": "changes" }
   ],
   "conditions": {
@@ -662,10 +670,9 @@ cat logs/order_processing_$(date +%Y%m%d).log
     ]
   },
   "steps_after_condition": [
-    { "action": "notify", "channel": "dingtalk", "webhook": "${env.DINGTALK_WEBHOOK}", "message": "竞品价格变动：${changes}" },
-    { "action": "save", "path": "./data/price_history.json", "input": "${currentPrices}" }
+DINGTALK_WEBHOOK}", "message": "竞品价格变动：${changes}" },
+/data/price_history.json", "input": "${currentPrices}" }
   ],
-  "errorHandling": { "onFail": "alert", "alertChannel": "email", "alertTarget": "ops@company.com" }
 }
 ```
 
@@ -675,15 +682,14 @@ cat logs/order_processing_$(date +%Y%m%d).log
 ```json
 {
   "name": "内容自动发布",
-  "trigger": { "type": "watch", "path": "./drafts", "events": ["create"], "filter": "*.md" },
   "steps": [
-    { "action": "read", "file": "${trigger.file}", "output": "draft" },
+file}", "output": "draft" },
     { "action": "transform", "input": "${draft}", "script": "format(data, 'html')", "output": "html" },
     { "action": "fetch", "url": "${CMS_API}/posts", "method": "POST", "body": "${html}", "output": "published" },
-    { "action": "move", "from": "${trigger.file}", "to": "./published/" },
-    { "action": "notify", "channel": "slack", "webhook": "${env.SLACK_WEBHOOK}", "message": "新内容已发布：${trigger.file}" }
+file}", "to": "./published/" },
+SLACK_WEBHOOK}", "message": "新内容已发布：${trigger.file}" }
   ],
-  "errorHandling": { "onFail": "continue", "logPath": "./logs/publish.log" }
+/logs/publish.log" }
 }
 ```
 
@@ -701,9 +707,8 @@ cat logs/order_processing_$(date +%Y%m%d).log
     { "action": "transform", "input": ["${analytics}", "${sales}", "${marketing}"], "script": "merge(data[0], data[1], data[2])", "output": "merged" },
     { "action": "transform", "input": "${merged}", "script": "calculateMetrics(data)", "output": "metrics" },
     { "action": "exec", "command": "python build_report.py --data metrics.json --output 周报.pdf", "output": "report" },
-    { "action": "notify", "channel": "email", "to": "management@company.com", "subject": "本周数据周报", "body": "请查收附件", "attachment": "${report}" }
+com", "subject": "本周数据周报", "body": "请查收附件", "attachment": "${report}" }
   ],
-  "errorHandling": { "onFail": "alert", "alertChannel": "email", "alertTarget": "ops@company.com" }
 }
 ```
 
@@ -717,15 +722,15 @@ cat logs/order_processing_$(date +%Y%m%d).log
   "conditions": {
     "logic": "and",
     "rules": [
-      { "field": "${trigger.body.event}", "equals": "payment.succeeded" },
-      { "field": "${trigger.body.amount}", "greaterThan": 0 }
+body.event}", "equals": "payment.succeeded" },
+body.amount}", "greaterThan": 0 }
     ]
   },
   "steps": [
     { "action": "fetch", "url": "${ERP_API}/orders/${trigger.body.orderId}", "method": "PUT", "body": { "status": "paid", "paidAt": "$(date)" }, "output": "orderUpdate" },
     { "action": "fetch", "url": "${INVENTORY_API}/reserve", "method": "POST", "body": { "orderId": "${trigger.body.orderId}" }, "output": "reservation" },
-    { "action": "notify", "channel": "email", "to": "${trigger.body.customerEmail}", "subject": "支付成功", "body": "订单${trigger.body.orderId}已支付" },
-    { "action": "notify", "channel": "slack", "webhook": "${env.SLACK_WEBHOOK}", "message": "新支付：${trigger.body.amount}元，订单${trigger.body.orderId}" }
+body.customerEmail}", "subject": "支付成功", "body": "订单${trigger.body.orderId}已支付" },
+SLACK_WEBHOOK}", "message": "新支付：${trigger.body.amount}元，订单${trigger.body.orderId}" }
   ],
   "errorHandling": { "onFail": "alert", "retry": { "count": 5, "interval": 30, "backoff": "exponential" }, "alertChannel": "slack", "alertTarget": "#ops-alerts" }
 }
@@ -966,8 +971,6 @@ PAYMENT_WEBHOOK_TOKEN=payment_webhook_secret
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

@@ -103,7 +103,6 @@ git bisect good v1.2.0
 git bisect good   # if this commit doesn't have the bug
 git bisect bad    # if this commit has the bug
 
-
 git bisect reset
 ```
 
@@ -300,7 +299,6 @@ git checkout --ours path/to/file.ts
 git add path/to/file.ts
 
 git checkout --theirs path/to/file.ts
-git add path/to/file.ts
 
 git checkout --ours .
 git add .
@@ -327,7 +325,6 @@ git rebase --skip
 
 ```bash
 git config --global rerere.enabled true
-
 
 ls .git/rr-cache/
 
@@ -452,9 +449,7 @@ git push origin --delete v1.2.0  # Remote
 ### 示例1：基础用法
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
 ## 错误处理

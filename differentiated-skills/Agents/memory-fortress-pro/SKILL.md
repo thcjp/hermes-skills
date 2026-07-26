@@ -661,7 +661,7 @@ rm -rf ~/.agent/memory/vectordb/
 agent gateway restart
 # ...
 # 导出记忆为JSON
-python3 memory.py -p . export --format json > memories.json
+python3 memory.py -p .json
 # ...
 # 检查记忆存储大小
 du -sh ~/.agent/memory/

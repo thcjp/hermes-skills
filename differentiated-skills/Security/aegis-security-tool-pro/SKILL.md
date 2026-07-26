@@ -75,7 +75,6 @@ curl -s -X POST "https://aegis402.xyz/v1/simulate-tx" \
 - 授权变更检测
 - 潜在风险标记
 
-**输入**: 用户提供交易模拟(专业版独有)所需的指令和必要参数.
 **处理**: 解析交易模拟(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回交易模拟(专业版独有)的响应数据,包含状态码、结果和日志.
 ### 2. 批量地址检查(专业版独有)
@@ -113,7 +112,6 @@ echo "]" >> "$OUTPUT_FILE"
 echo "批量检查完成,结果已保存至 ${OUTPUT_FILE}"
 ```
 
-**输入**: 用户提供批量地址检查(专业版独有)所需的指令和必要参数.
 **处理**: 解析批量地址检查(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量地址检查(专业版独有)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -125,7 +123,6 @@ curl -s -H "X-Client-Fingerprint: pro-agent" \
   "https://aegis402.xyz/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454e4438f44e?chain_id=1&include_history=true" | jq
 ```
 
-**输入**: 用户提供地址信誉查询(兼容免费版)所需的指令和必要参数.
 **处理**: 解析地址信誉查询(兼容免费版)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回地址信誉查询(兼容免费版)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -137,7 +134,6 @@ curl -s -H "X-Client-Fingerprint: pro-agent" \
   "https://aegis402.xyz/v1/check-token/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48?chain_id=1&deep_scan=true" | jq
 ```
 
-**输入**: 用户提供代币深度检测(兼容免费版增强)所需的指令和必要参数.
 **处理**: 解析代币深度检测(兼容免费版增强)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回代币深度检测(兼容免费版增强)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -146,7 +142,6 @@ curl -s -H "X-Client-Fingerprint: pro-agent" \
 生成符合SARIF标准的报告,可直接集成到GitHub代码扫描与CI/CD流水线.
 ```bash
 # 生成SARIF报告
-curl -s -X POST "https://aegis402.xyz/v1/export" \
   -H "Content-Type: application/json" \
   -H "X-Client-Fingerprint: pro-agent" \
   -d '{
@@ -160,7 +155,6 @@ curl -s -X POST "https://aegis402.xyz/v1/export" \
 echo "SARIF报告已生成: security_report.sarif"
 ```
 
-**输入**: 用户提供SARIF报告导出(专业版独有)所需的指令和必要参数.
 **处理**: 解析SARIF报告导出(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回SARIF报告导出(专业版独有)的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级区块链安全、支持交易模拟、批量地址检查、多链覆盖、风险报告导出与告、警推送、DeFi、团队与机构用户、区块链安全扫描专、团队与机构用户提、供全方位链上安全、核心能力、交易模拟、多链深度扫描、SARIF、报告导出、Webhook、高并发、API、适用场景、协议安全审计、机构级交易风控、批量地址筛查、安全门禁、差异化、专业版兼容免费版、新增交易模拟、批量操作与企业级、报告能力、满足合规与规模化、适用关键词、区块链安全、批量扫描、风险报告、blockchain、simulate、batch等.
@@ -194,12 +188,12 @@ for entry in "${CONTRACTS[@]}"; do
 # ...
     # 地址检查
     ADDR_RESULT=$(curl -s -H "X-Client-Fingerprint: pro-audit" \
-        "https://aegis402.xyz/v1/check-address/${addr}?chain_id=${CHAIN_ID}")
+xyz/v1/check-address/${addr}?chain_id=${CHAIN_ID}")
     ADDR_RISK=$(echo "$ADDR_RESULT" | jq -r '.risk_level')
 # ...
     # 代币检查(如果是代币合约)
     TOKEN_RESULT=$(curl -s -H "X-Client-Fingerprint: pro-audit" \
-        "https://aegis402.xyz/v1/check-token/${addr}?chain_id=${CHAIN_ID}")
+xyz/v1/check-token/${addr}?chain_id=${CHAIN_ID}")
     TOKEN_RISK=$(echo "$TOKEN_RESULT" | jq -r '.risk_level // "N/A"')
 # ...
     echo ""
@@ -258,10 +252,8 @@ class BlockchainRiskControl:
 # ...
     def check_token(self, token_address, chain_id=1):
         """代币安全检测"""
-        resp = requests.get(
             f"{self.BASE_URL}/check-token/{token_address}",
             params={"chain_id": chain_id},
-            headers=self.headers
         )
         return resp.json()
 # ...
@@ -274,10 +266,8 @@ class BlockchainRiskControl:
             "data": data,
             "chain_id": chain_id
         }
-        resp = requests.post(
             f"{self.BASE_URL}/simulate-tx",
             json=payload,
-            headers=self.headers
         )
         return resp.json()
 # ...
@@ -304,7 +294,6 @@ class BlockchainRiskControl:
         # 2. 代币检查
         if token_addr:
             token_result = self.check_token(token_addr, chain_id)
-            report["checks"].append({
                 "check": "token_safety",
                 "risk": token_result.get("risk_level", "UNKNOWN"),
                 "honeypot": token_result.get("is_honeypot", False)
@@ -317,7 +306,6 @@ class BlockchainRiskControl:
 # ...
         # 3. 交易模拟(专业版核心)
         sim_result = self.simulate_transaction(from_addr, to_addr, value, chain_id=chain_id)
-        report["checks"].append({
             "check": "transaction_simulation",
             "success": sim_result.get("success", False),
             "gas_estimate": sim_result.get("gas_estimate", 0),
@@ -363,7 +351,7 @@ jobs:
           CRITICAL=0
           for addr in $(cat contracts.txt); do
             RISK=$(curl -s -H "X-Client-Fingerprint: ci-pro" \
-              "https://aegis402.xyz/v1/check-address/${addr}?chain_id=1" | jq -r '.risk_level')
+chain_id=1" | jq -r '.risk_level')
             echo "${addr}: ${RISK}"
             if [ "$RISK" = "CRITICAL" ]; then
               CRITICAL=$((CRITICAL + 1))
@@ -392,12 +380,12 @@ curl -s "https://aegis402.xyz/v1/check-address/0x..."
 # ...
 # 专业版调用(更换指纹)
 curl -s -H "X-Client-Fingerprint: pro-agent" \
-  "https://aegis402.xyz/v1/check-address/0x..."
+  "https://aegis402..."
 ```
 
 ### 首次交易模拟
 ```bash
-curl -s -X POST "https://aegis402.xyz/v1/simulate-tx" \
+xyz/v1/simulate-tx" \
   -H "Content-Type: application/json" \
   -H "X-Client-Fingerprint: pro-agent" \
   -d '{
@@ -506,8 +494,6 @@ address,label,chain_id
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

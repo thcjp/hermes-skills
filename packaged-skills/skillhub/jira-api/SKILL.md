@@ -224,7 +224,7 @@ const cloudId = resources[0].id;
 // Search issues
 const issues = await fetch(
   `https://api.maton.ai/jira/ex/jira/${cloudId}/rest/api/3/search/jql?jql=project=KEY`,
-  { headers: { 'Authorization': `Bearer ${process.env.MATON_API_KEY}` } }
+env.MATON_API_KEY}` } }
 ).then(r => r.json());
 ```
 

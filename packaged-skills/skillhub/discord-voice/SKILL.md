@@ -77,8 +77,7 @@ node -e "require('sodium-native')"    # 加密
 ```
 
 Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`Use Voice Activity`(检测语音活动)。在 Discord Developer Portal > OAuth2 > Permissions 中勾选.
-**输入**: 用户提供先验证系统依赖与 Bot 权限所需的指令和必要参数.
-**输出**: 返回先验证系统依赖与 Bot 权限的处理结果,包含执行状态码、结果数据和执行日志.
+
 ### 2. STT/TTS 引擎必须配置 API Key
 | 引擎 | 类型 | 必需环境变量 |
 |---:|---:|---:|
@@ -90,7 +89,7 @@ Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`
 | Kokoro | TTS | 无需 API Key,需本地模型 |
 
 未配置 Key 的引擎会在调用时返回 `provider_api_key_missing`.
-**输入**: 用户提供STT/TTS 引擎必须配置 API Key所需的指令和必要参数.
+
 ### 3. 单公会单频道约束
 
 每个公会同一时间仅允许 Bot 加入 1 个语音频道。重复调用 `join` 会返回 `already_in_voice_channel`,需先 `leave` 再切换。- 验证返回数据的完整性和格式正确性

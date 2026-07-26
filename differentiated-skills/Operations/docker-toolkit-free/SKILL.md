@@ -1,10 +1,8 @@
----
-
-slug: docker-toolkit-free
+---slug: docker-toolkit-free
 name: docker-toolkit-free
 version: 1.0.1
 displayName: Docker容器入门工具
-summary: "Docker容器管理工具，支持镜像/容器/卷/网络基础操作与简单编排.。面向个人开发者的Docker容器管理工具。支持镜像构建与拉取、容器"
+summary: "Docker容器管理工"
 license: Proprietary
 edition: free
 description: "面向个人开发者的Docker容器管理工具。支持镜像构建与拉取、容器
@@ -28,9 +26,7 @@ tools:
   - write
 homepage: ""
 category: "Development"
-
----
-# Docker容器入门工具（免费版）
+---# Docker容器入门工具（免费版）
 
 ## 概述
 
@@ -50,19 +46,18 @@ category: "Development"
 | 集群管理 | Swarm/K8s | 不支持 |
 | 安全扫描 | 镜像漏洞扫描 | 不支持 |
 
-**输入**: 用户提供管理功能所需的指令和必要参数.
 **处理**: 解析管理功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回管理功能的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作

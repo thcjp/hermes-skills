@@ -47,7 +47,6 @@ category: "Security"
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供批量密码生成(专业版独有)所需的指令和必要参数.
 **处理**: 解析批量密码生成(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量密码生成(专业版独有)的响应数据,包含状态码、结果和日志.
 ### 2. 泄露检查(专业版独有)
@@ -132,19 +131,16 @@ if __name__ == "__main__":
         print()
 ```
 
-**输入**: 用户提供泄露检查(专业版独有)所需的指令和必要参数.
 **处理**: 解析泄露检查(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回泄露检查(专业版独有)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 3. 企业密码策略模板(专业版独有)
 
-**输入**: 用户提供企业密码策略模板(专业版独有)所需的指令和必要参数.
 **处理**: 解析企业密码策略模板(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回企业密码策略模板(专业版独有)的响应数据,包含状态码、结果和日志.
 ### 4. 加密密码存储(专业版独有)
 
-**输入**: 用户提供加密密码存储(专业版独有)所需的指令和必要参数.
 **处理**: 解析加密密码存储(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回加密密码存储(专业版独有)的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级密码管理平、支持批量生成、泄露检查、企业策略模板、加密存储与、CSV、适合安全团队与企、业用户、密码生成器、Pro、专业版、为企业安全团队提、供全方位密码生成、与管理能力、核心能力、批量密码生成、HaveIBeenPwned、企业密码策略模板、加密存储、多格式导出、适用场景、企业密码策略管理、批量账户初始化、密码安全审计、合规管理、差异化、专业版兼容免费版、生成方法、新增企业级批量管、理与泄露检查能力、满足规模化密码安、全需求、适用关键词、批量密码、密码策略、企业密码、batch、password、breach、check、policy等.
@@ -264,15 +260,14 @@ def password_audit(passwords, policy_name="standard"):
     }
 # ...
     for pwd in passwords:
-        validation = policy_mgr.validate_password(pwd, policy_name)
+validate_password(pwd, policy_name)
 # ...
-        breach = checker.check_password(pwd)
 # ...
         detail = {
             "password_preview": pwd[:3] + "***",
             "length": len(pwd),
             "compliant": validation["valid"],
-            "breached": breach.get("breached", False),
+get("breached", False),
             "violations": validation.get("violations", [])
         }
 # ...
@@ -321,7 +316,7 @@ batch_gen = BatchPasswordGenerator()
 passwords = batch_gen.generate_batch(100, length=16)
 checker = BreachChecker()
 for pwd in passwords:
-    breach = checker.check_password(pwd["password"])
+check_password(pwd["password"])
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -399,8 +394,6 @@ for pwd in passwords:
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

@@ -336,7 +336,7 @@ task = {
 }
 # ...
 # 自动拆解为各团队的子任务
-subtasks = dispatcher.distribute(task, teams=["FE", "BE", "QA"])
+distribute(task, teams=["FE", "BE", "QA"])
 # 输出：
 # [
 #   {"team": "FE", "subtask": "FE-101: 实现前端界面", "depends_on": []},
@@ -416,7 +416,7 @@ echo "LINEAR_API_KEY=lin_api_xxx" > ~/.linear-pilot/linear.env
 # ...
 # 启用专业版特性
 echo 'enable_retry: true' >> ~/.linear-pilot/linear-config.json
-echo 'enable_metrics: true' >> ~/.linear-pilot/linear-config.json
+echo 'enable_metrics: true' >> ~/.json
 ```
 
 ### 标准搭建（<300秒）
@@ -544,9 +544,8 @@ research_task = {
 }
 # ...
 # 自动拆解为10个子任务，10个Agent并行
-subtasks = dispatcher.split(research_task, max_parallel=4)
-results = dispatcher.execute_parallel(subtasks)
-final_report = dispatcher.merge(results)
+split(research_task, max_parallel=4)
+execute_parallel(subtasks)
 ```
 
 **Agent行为**：
@@ -571,7 +570,6 @@ task = {
 }
 # ...
 # 自动分发并建立依赖
-subtasks = dispatcher.distribute(task)
 # FE-101: 前端开发（无依赖）
 # BE-201: 后端API开发（无依赖）
 # QA-301: 测试用例编写（依赖FE-101 + BE-201）
@@ -729,7 +727,6 @@ alerts:
     notify: ["slack", "email"]
 # ...
   - name: "成功率低于70%"
-    condition: "success_rate < 0.7"
     duration: "5m"
     severity: "critical"
     notify: ["slack", "email", "sms"]
@@ -920,8 +917,6 @@ alerts:
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

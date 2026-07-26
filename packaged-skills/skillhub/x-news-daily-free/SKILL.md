@@ -126,7 +126,7 @@ X News Daily 免费版。抓取 X.com 上指定关键词的热门新闻 Top 10�
 - 提取 10 条 NBA 相关热闻，含赛事结果与球员动态
 - 翻译示例：`"Lakers defeat Celtics in overtime"` 翻译为 `"湖人加时击败凯尔特人"`
 
-**输出文件**：`2026-07-20.png`，1600×2400 像素基础海报
+png`，1600×2400 像素基础海报
 
 ## 错误处理
 
@@ -361,9 +361,7 @@ chrome --headless --disable-gpu \
 # 如果 Chrome 不在 PATH 中,指定绝对路径
 "C:\Program Files\Google\Chrome\Application\chrome.exe" \
   --headless --disable-gpu \
-  --screenshot=2026-07-22.png \
   --window-size=1600,2400 \
-  "file:///path/to/news_2026-07-22.html"
 # ...
 # 如果生成的 PNG 超过 10MB,使用 pngquant 压缩
 pngquant --quality=80 --output=2026-07-22-compressed.png 2026-07-22.png
@@ -396,8 +394,6 @@ pngquant --quality=80 --output=2026-07-22-compressed.png 2026-07-22.png
 1. 确认运行环境满足依赖说明中的要求
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
-
-> 详细的输入输出格式请参考下方章节说明。
 
 ## 升级提示
 

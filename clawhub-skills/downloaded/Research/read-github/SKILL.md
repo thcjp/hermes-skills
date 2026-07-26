@@ -31,7 +31,7 @@ python3 scripts/gitmcp.py list-tools owner/repo
 Retrieves the full documentation file (README, docs, etc.):
 
 ```bash
-python3 scripts/gitmcp.py fetch-docs owner/repo
+py fetch-docs owner/repo
 ```
 
 ### Search Documentation
@@ -39,7 +39,7 @@ python3 scripts/gitmcp.py fetch-docs owner/repo
 Semantic search within repository documentation:
 
 ```bash
-python3 scripts/gitmcp.py search-docs owner/repo "query"
+py search-docs owner/repo "query"
 ```
 
 ### Search Code
@@ -47,7 +47,7 @@ python3 scripts/gitmcp.py search-docs owner/repo "query"
 Search code using GitHub Search API (exact match):
 
 ```bash
-python3 scripts/gitmcp.py search-code owner/repo "function_name"
+py search-code owner/repo "function_name"
 ```
 
 ### Fetch Referenced URL
@@ -55,7 +55,7 @@ python3 scripts/gitmcp.py search-code owner/repo "function_name"
 Fetch content from URLs mentioned in documentation:
 
 ```bash
-python3 scripts/gitmcp.py fetch-url owner/repo "https://example.com/doc"
+py fetch-url owner/repo "https://example.com/doc"
 ```
 
 ### Direct Tool Call
@@ -63,7 +63,7 @@ python3 scripts/gitmcp.py fetch-url owner/repo "https://example.com/doc"
 Call any MCP tool directly:
 
 ```bash
-python3 scripts/gitmcp.py call owner/repo tool_name '{"arg": "value"}'
+py call owner/repo tool_name '{"arg": "value"}'
 ```
 
 ## Tool Names
@@ -135,9 +135,7 @@ For any repository, these tools are available:
 ### 示例1：基础用法
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
 ## 错误处理

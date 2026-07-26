@@ -1,5 +1,4 @@
----
-slug: "java-reviewer"
+---slug: "java-reviewer"
 name: "java-reviewer"
 version: 1.0.1
 displayName: "Java代码审查专业版"
@@ -8,7 +7,7 @@ summary_zh: "企业级 Java 代码审查方案，支持批量审查、自定义�
 license: "MIT"
 edition: "pro"
 description: |-
-  面向企业级 Java 开发团队的代码审查治理工具。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
+  面向企业级 Java 开发团队的代码审查治理工具。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。不适用于无明确技术栈的模糊需求.
 tags:
   - 开发工具
   - Java
@@ -28,9 +27,7 @@ tools:
   - glob
   - grep
 homepage: ""
-category: "Automation"
----
-# Java代码审查专业版
+category: "Automation"---# Java代码审查专业版
 
 ## 付费版专享能力
 
@@ -547,7 +544,7 @@ echo "检查 SQL 注入..."
 grep -rn "String sql.*+.*\"" src/ --include="*.java"
 # ...
 echo "检查硬编码凭据..."
-grep -rn "password.*=.*\"\|secret.*=.*\"" src/ --include="*.java"
+grep -rn "password.*=.*\"\|secret.*=.java"
 # ...
 echo "检查明文传输..."
 # ...

@@ -65,7 +65,6 @@ Git工具包免费版为开发者提供日常版本管理能力。工具涵盖�
 4. **推送前先拉取**:`git pull --rebase` 避免不必要的合并提交
 5. **合并前清理**:使用 `git rebase -i` 压缩修复提交
 
-**输入**: 用户提供核心规则所需的指令和必要参数.
 **处理**: 解析核心规则的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心规则的响应数据,包含状态码、结果和日志.
 ### 2. 提交管理
@@ -102,7 +101,6 @@ git diff file.txt                         # 特定文件变更
 git diff commit1 commit2                  # 比较两个提交
 ```
 
-**输入**: 用户提供提交管理所需的指令和必要参数.
 **处理**: 解析提交管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回提交管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -126,7 +124,6 @@ git branch -D branch-name                  # 强制删除
 git branch -m old-name new-name            # 重命名当前分支
 ```
 
-**输入**: 用户提供分支管理所需的指令和必要参数.
 **处理**: 解析分支管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回分支管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -154,7 +151,6 @@ git rebase --continue                      # 完成变基
 grep -r "<<<\|>>>\|===" .
 ```
 
-**输入**: 用户提供合并与冲突解决所需的指令和必要参数.
 **处理**: 解析合并与冲突解决的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回合并与冲突解决的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -184,7 +180,6 @@ git reflog                                 # 操作历史(保留约90天)
 git checkout -b branch-name <sha>          # 从历史创建分支
 ```
 
-**输入**: 用户提供历史检查与恢复所需的指令和必要参数.
 **处理**: 解析历史检查与恢复的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回历史检查与恢复的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：冲突解决与历史恢、复等核心命令、适合开发者日常版、本管理、面向开发者的、版本管理工具包、涵盖提交管理、分支策略、合并冲突解决、核心能力、提交管理与规范、分支管理与切换、基本团队协作工作等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -301,17 +296,14 @@ echo "  git push origin main"
 ```bash
 # 设置用户信息
 git config --global user.name "你的名字"
-git config --global user.email "your@email.com"
+email "your@email.com"
 # ...
 # 设置默认分支名
 git config --global init.defaultBranch main
 # ...
 # 配置别名
 git config --global alias.st status
-git config --global alias.co checkout
-git config --global alias.br branch
-git config --global alias.ci commit
-git config --global alias.lg "log --graph --oneline --all"
+lg "log --graph --oneline --all"
 ```
 
 ### Step 2:触发Git操作
@@ -494,7 +486,6 @@ git switch branch-name          # 切换分支
 git switch -c new-branch        # 创建并切换
 # git restore(新命令,专用于恢复)
 git restore file.txt            # 丢弃变更
-git restore --staged file.txt   # 取消暂存
 ```
 
 ## 依赖说明

@@ -1,9 +1,8 @@
----
-slug: "hugo-blog-publisher-free"
+---slug: "hugo-blog-publisher-free"
 name: "hugo-blog-publisher-free"
 version: "1.0.0"
 displayName: "博客发布工具(免费版)"
-summary: "将Markdown文章发布到静态站点生成器博客并推送到代码仓库(免费版)。将Markdown文章发布到静态站点生成器博客并推送到代码仓库。自动分析内容提取 标题、标签、分类，生成front"
+summary: "将Markdown文章"
 summary_zh: "将Markdown文章发布到静态站点生成器博客并推送到代码仓库(免费版)。将Markdown文章发布到静态站点生成器博客并推送到代码仓库。自动分析内容提取 标题、标签、分类，生成front"
 license: "MIT"
 description: |-
@@ -30,9 +29,7 @@ tags:
   - content
   - front
   - matter
-category: "Automation"
----
-# 博客发布工具(免费版)
+category: "Automation"---# 博客发布工具(免费版)
 
 将Markdown文章发布到静态站点生成器博客并推送到代码仓库.
 ## 输入格式
@@ -51,8 +48,6 @@ category: "Automation"
 - 标签：根据内容主题自动判断（如AI → `["ai"]`）
 - 分类：根据内容类型判断（如技术文章 → `["tech"]`）
 
-**处理**: 解析自动内容分析的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回自动内容分析的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. Front Matter渲染
 ```yaml
 ---
@@ -70,9 +65,6 @@ description: "文章描述"
 - `tags`：使用小写英文slug，不用中文
 - `slug`：文件名使用小写英文，不用中文
 
-**输入**: 用户提供Front Matter渲染所需的指令和必要参数.
-**处理**: 解析Front Matter渲染的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Front Matter渲染的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. 标签分类映射（Taxonomy Branch Bundle）
 文章frontmatter用英文slug，页面展示用中文，通过 `_index.md` 实现：
 
@@ -95,8 +87,6 @@ title: "显示的中文名"
 ---
 ```
 
-**输入**: 用户提供标签分类映射（Taxonomy Branch Bundle）所需的指令和必要参数.
-**处理**: 解析标签分类映射（Taxonomy Branch Bundle）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 4. 截断标记与Git推送
 在第一段或导言后添加 `<!--more-->`，让列表页显示摘要.
 从博客目录自动检测git状态并推送：
@@ -107,9 +97,6 @@ git commit -m "新增：{文章标题}"
 git push
 ```
 
-**输入**: 用户提供截断标记与Git推送所需的指令和必要参数.
-**处理**: 解析截断标记与Git推送的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回截断标记与Git推送的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 

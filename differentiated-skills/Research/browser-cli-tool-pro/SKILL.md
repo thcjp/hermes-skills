@@ -105,7 +105,6 @@ agent-browser batch run --file tasks.yaml --concurrency 5
 #       - screenshot: "logs/b.png"
 ```
 
-**输入**: 用户提供批量任务编排(专业版新增)所需的指令和必要参数.
 **处理**: 解析批量任务编排(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量任务编排(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -123,7 +122,6 @@ agent-browser config set session.max_concurrent 10
 agent-browser session cleanup --idle 300
 ```
 
-**输入**: 用户提供并发会话管理(专业版新增)所需的指令和必要参数.
 **处理**: 解析并发会话管理(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回并发会话管理(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -136,11 +134,8 @@ agent-browser --retry 3 --retry-delay 5 open https://example.com
 # ...
 # 配置文件方式
 agent-browser config set retry.max 5
-agent-browser config set retry.delay 10
-agent-browser config set retry.backoff exponential
 ```
 
-**输入**: 用户提供错误重试机制(专业版新增)所需的指令和必要参数.
 **处理**: 解析错误重试机制(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回错误重试机制(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -163,7 +158,6 @@ agent-browser schedule add --cron "0 9 * * *" --file daily-checkin.yaml
 agent-browser schedule list
 ```
 
-**输入**: 用户提供任务队列与调度(专业版新增)所需的指令和必要参数.
 **处理**: 解析任务队列与调度(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回任务队列与调度(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -179,7 +173,6 @@ agent-browser metrics export --format json > metrics.json
 agent-browser metrics export --format prometheus > metrics.prom
 ```
 
-**输入**: 用户提供监控指标采集(专业版新增)所需的指令和必要参数.
 **处理**: 解析监控指标采集(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回监控指标采集(专业版新增)的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级浏览器自动、支持批量任务、错误重试与监控、面向团队生产场景、化命令行工具、在免费版核心能力、监控告警与团队协、作能力、核心能力、免费版全部能力、完全兼容、批量任务编排与并、发执行、错误重试与失败恢、复机制、任务队列与调度器、监控指标采集与告、警通知、团队共享状态库等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -244,22 +237,20 @@ def submit_form(form, max_retries=3):
     for attempt in range(1, max_retries + 1):
         try:
             subprocess.run(["agent-browser", "--session", session, "open", form["url"]], check=True, timeout=30)
-            subprocess.run(["agent-browser", "--session", session, "snapshot"], check=True, timeout=15)
-            subprocess.run(["agent-browser", "--session", session, "find", "label", "姓名", "fill", form["data"]["name"]], check=True)
-            subprocess.run(["agent-browser", "--session", session, "find", "label", "电话", "fill", form["data"]["phone"]], check=True)
-            subprocess.run(["agent-browser", "--session", session, "find", "role", "button", "click", "--name", "提交"], check=True)
-            subprocess.run(["agent-browser", "--session", session, "screenshot", f"logs/{session}.png"])
-            subprocess.run(["agent-browser", "--session", session, "close"])
+run(["agent-browser", "--session", session, "snapshot"], check=True, timeout=15)
+run(["agent-browser", "--session", session, "find", "label", "姓名", "fill", form["data"]["name"]], check=True)
+run(["agent-browser", "--session", session, "find", "label", "电话", "fill", form["data"]["phone"]], check=True)
+run(["agent-browser", "--session", session, "find", "role", "button", "click", "--name", "提交"], check=True)
+run(["agent-browser", "--session", session, "screenshot", f"logs/{session}.png"])
+run(["agent-browser", "--session", session, "close"])
             return {"id": session, "status": "success", "attempts": attempt}
         except subprocess.CalledProcessError as e:
             print(f"[{session}] 第{attempt}次尝试失败: {e}")
-            subprocess.run(["agent-browser", "--session", session, "screenshot", f"logs/{session}_fail.png"])
+run(["agent-browser", "--session", session, "screenshot", f"logs/{session}_fail.png"])
             if attempt < max_retries:
                 time.sleep(5 * attempt)  # 指数退避
-        except subprocess.TimeoutExpired:
             print(f"[{session}] 第{attempt}次尝试超时")
             if attempt < max_retries:
-                time.sleep(5 * attempt)
     subprocess.run(["agent-browser", "--session", session, "close"])
     return {"id": session, "status": "failed", "attempts": max_retries}
 # ...
@@ -315,7 +306,6 @@ agent-browser snapshot > "$ARTIFACTS_DIR/dashboard.json"
 agent-browser screenshot "$ARTIFACTS_DIR/dashboard.png"
 # ...
 echo "全部测试通过"
-agent-browser metrics export --format json > "$ARTIFACTS_DIR/metrics.json"
 agent-browser close
 ```
 
@@ -346,8 +336,6 @@ agent-browser install --with-deps
 # ...
 # 专业版初始化
 agent-browser pro init
-agent-browser config set retry.max 3
-agent-browser config set session.max_concurrent 5
 agent-browser config set metrics.enabled true
 ```
 
@@ -355,10 +343,9 @@ agent-browser config set metrics.enabled true
 
 ```bash
 # 方式一:使用任务清单
-agent-browser batch run --file tasks.yaml --concurrency 5
+yaml --concurrency 5
 # ...
 # 方式二:使用队列(支持暂停/恢复)
-agent-browser queue submit --file tasks.yaml
 agent-browser queue status
 ```
 
@@ -366,7 +353,6 @@ agent-browser queue status
 
 ```bash
 # 添加每日9点签到任务
-agent-browser schedule add --cron "0 9 * * *" --file daily-checkin.yaml --name "每日签到"
 # ...
 # 查看所有调度
 agent-browser schedule list
@@ -520,8 +506,6 @@ agent-browser pro init --migrate
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

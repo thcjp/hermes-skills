@@ -149,7 +149,6 @@ endpoints:
 - 速率限制信息用于自动重试决策
 - 端点名用蛇形命名（如 `list_repos`）
 
-**输入**: 用户提供功能1：连接器注册表所需的指令和必要参数.
 **处理**: 解析功能1：连接器注册表的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能1：连接器注册表的响应数据,包含状态码、结果和日志.
 ### 功能2：凭证安全存储
@@ -203,7 +202,6 @@ token = get_credential('GITHUB_TOKEN')
 print(f"使用Token: {mask_credential(token)}")  # 输出: 使用Token: ghp_************
 ```
 
-**输入**: 用户提供功能2：凭证安全存储所需的指令和必要参数.
 **处理**: 解析功能2：凭证安全存储的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能2：凭证安全存储的响应数据,包含状态码、结果和日志.
 ### 功能3：统一调用模板
@@ -268,11 +266,10 @@ def call_api(connector, endpoint_name, path_params=None, query=None, body=None, 
                 time.sleep(retry_after)
                 continue
 # ...
-            if response.status_code >= 500 and attempt < max_retries:
+status_code >= 500 and attempt < max_retries:
                 # 5xx：指数退避重试
                 wait = 2 ** attempt
                 print(f"服务端错误 {response.status_code}，{wait}秒后重试")
-                time.sleep(wait)
                 continue
 # ...
             response.raise_for_status()
@@ -282,21 +279,18 @@ def call_api(connector, endpoint_name, path_params=None, query=None, body=None, 
             if attempt < max_retries:
                 wait = 2 ** attempt
                 print(f"请求超时，{wait}秒后重试")
-                time.sleep(wait)
                 continue
             raise
-        except requests.exceptions.ConnectionError:
+exceptions.ConnectionError:
             if attempt < max_retries:
                 wait = 2 ** attempt
                 print(f"连接失败，{wait}秒后重试")
-                time.sleep(wait)
                 continue
             raise
 # ...
     return response
 ```
 
-**输入**: 用户提供功能3：统一调用模板所需的指令和必要参数.
 **处理**: 解析功能3：统一调用模板的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能3：统一调用模板的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -320,7 +314,6 @@ def call_api(connector, endpoint_name, path_params=None, query=None, body=None, 
 - 401可能是Token过期，刷新后重试1次
 - 重试时记录日志，便于排查
 
-**输入**: 用户提供功能4：错误重试策略所需的指令和必要参数.
 **处理**: 解析功能4：错误重试策略的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能4：错误重试策略的响应数据,包含状态码、结果和日志.
 ### 功能5：20+常见服务连接器模板
@@ -350,7 +343,6 @@ def call_api(connector, endpoint_name, path_params=None, query=None, body=None, 
 | Pipedrive | API Key | https://{domain}.pipedrive.com | 按计划 |
 | Zoom | OAuth2 | https://api.zoom.us | 按账户 |
 
-**输入**: 用户提供功能5：20+常见服务连接器模板所需的指令和必要参数.
 **处理**: 解析功能5：20+常见服务连接器模板的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能5：20+常见服务连接器模板的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级第三方、连接与凭证管理、覆盖连接器注册、调用模板与错误重、连接中心免费版解、决独立开发者、对接多个第三方、时凭证散乱、调用模板各写各的、错误重试靠蒙、的痛点、提供统一连接器注、标准化调用模板、错误重试策略四大、when、接口对接、Webhook、系统连接时使用、不适用于逆向工程、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -468,7 +460,6 @@ def call_api(connector, endpoint_name, path_params=None, query=None, body=None, 
 > 详细的输入输出格式请参考下方章节说明。
 对Agent说：
 # ...
-> "帮我注册一个GitHub连接器，用Personal Access Token认证。"
 # ...
 Agent输出连接器注册YAML：
 # ...

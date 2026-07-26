@@ -1,10 +1,8 @@
----
-
-slug: "trending-feed-skill"
+---slug: "trending-feed-skill"
 name: "trending-feed-skill"
 version: 1.0.1
 displayName: "热榜订阅(专业版)"
-summary: "全功能 GitHub Trending 订阅，含批量抓取、多级缓存、定时推送、自定义模板。。全功能 GitHub Trending 订阅，含批量抓取、多级缓存、定时推送、自定义模板。核心能力"
+summary: "全功能 GitHub "
 summary_zh: "全功能 GitHub Trending 订阅，含批量抓取、多级缓存、定时推送、自定义模板。。全功能 GitHub Trending 订阅，含批量抓取、多级缓存、定时推送、自定义模板。核心能力"
 license: "MIT"
 edition: "pro"
@@ -27,10 +25,7 @@ tools:
   - write
 homepage: ""
 category: "Automation"
-
----
-
-# 热榜订阅(专业版)
+---# 热榜订阅(专业版)
 
 ## 付费版专享能力
 

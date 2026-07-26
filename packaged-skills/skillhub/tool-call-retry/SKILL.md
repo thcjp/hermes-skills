@@ -68,6 +68,8 @@ category: "Automation"
 | 参数名 | 类型 | 必填 | 说明 |
 |:-----|:-----|:-----|:-----|
 
+| instruction | string | 是 | 用户指令文本 |
+| context | string | 否 | 上下文信息 |
 ## 输出格式
 
 ```json
@@ -131,7 +133,6 @@ const result = await skills.toolCallRetry({
 ### 带结果校验
 
 ```typescript
-const result = await skills.toolCallRetry({
   toolFn: callLLM,
   args: { prompt: "Generate JSON output" },
   validatorFn: (res) => typeof res === "object" && res !== null && res.code === 0,
@@ -142,7 +143,6 @@ const result = await skills.toolCallRetry({
 ### 高级用法（错误自动修复）
 
 ```typescript
-const result = await skills.toolCallRetry({
   toolFn: callDatabase,
   args: { sql: "SELECT * FROM users" },
   errorHandlerFn: async (error, attempt) => {

@@ -194,7 +194,7 @@ maton salesforce query 'SELECT Id,Name FROM Contact LIMIT 10'
 **Python**:
 ```python
 import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/salesforce/services/data/v64.0/query?q=SELECT+Id,Name+FROM+Contact+LIMIT+10')
+req = urllib.request.Request('https://api.maton.0/query?q=SELECT+Id,Name+FROM+Contact+LIMIT+10')
 req.add_header('Authorization', f'Bearer {os.environ["MATON_API_KEY"]}')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 ```

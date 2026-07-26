@@ -82,7 +82,7 @@ class CCTVNewsFetcher:
         elif date_input in ["yesterday", "昨天"]:
             return (datetime.now() - timedelta(days=1)).strftime("%Y%m%d")
         elif date_input in ["tomorrow", "明天"]:
-            return (datetime.now() + timedelta(days=1)).strftime("%Y%m%d")
+now() + timedelta(days=1)).strftime("%Y%m%d")
         else:
             # 标准化日期格式
             date_str = date_input.replace("-", "").replace("/", "").replace(".", "")
@@ -97,11 +97,9 @@ class CCTVNewsFetcher:
 # ...
         try:
             cmd = [self.runtime, self.script_path, date_str]
-            result = subprocess.run(
                 cmd, capture_output=True, text=True, timeout=60, encoding="utf-8"
             )
 # ...
-            if result.returncode != 0:
                 return {"success": False, "error": result.stderr}
 # ...
             # 解析JSON输出
@@ -124,7 +122,6 @@ else:
     print(f"失败：{result.get('error')}")
 ```
 
-**输入**: 用户提供按日期抓取新闻联播所需的指令和必要参数.
 **处理**: 解析按日期抓取新闻联播的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回按日期抓取新闻联播的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -169,7 +166,7 @@ class NewsCategorizer:
 # ...
     def _is_international(self, title, content):
         text = title + content
-        return any(kw in text for kw in self.INTERNATIONAL_KEYWORDS)
+INTERNATIONAL_KEYWORDS)
 # ...
 # 使用示例
 categorizer = NewsCategorizer()
@@ -184,7 +181,6 @@ print(f"国际：{len(categorized['international'])} 条")
 print(f"其他：{len(categorized['other'])} 条")
 ```
 
-**输入**: 用户提供国内/国际新闻分类所需的指令和必要参数.
 **处理**: 解析国内/国际新闻分类的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回国内/国际新闻分类的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -208,7 +204,6 @@ class NewsBriefGenerator:
             lines.append("【国内新闻】")
             lines.append("-" * 40)
             for i, news in enumerate(domestic[:10], 1):
-                title = news.get("title", "无标题")
                 lines.append(f"{i}. {title}")
             lines.append("")
 # ...
@@ -218,8 +213,7 @@ class NewsBriefGenerator:
             lines.append("【国际新闻】")
             lines.append("-" * 40)
             for i, news in enumerate(international[:10], 1):
-                title = news.get("title", "无标题")
-                lines.append(f"{i}. {title}")
+append(f"{i}. {title}")
             lines.append("")
 # ...
         # 其他
@@ -228,8 +222,7 @@ class NewsBriefGenerator:
             lines.append("【其他要闻】")
             lines.append("-" * 40)
             for i, news in enumerate(other[:5], 1):
-                title = news.get("title", "无标题")
-                lines.append(f"{i}. {title}")
+append(f"{i}. {title}")
             lines.append("")
 # ...
         lines.append("=" * 50)
@@ -250,7 +243,6 @@ brief = generator.generate("20250210", categorized)
 print(brief)
 ```
 
-**输入**: 用户提供基础简报生成所需的指令和必要参数.
 **处理**: 解析基础简报生成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回基础简报生成的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：央视新闻联播抓取、支持按日期获取新、闻标题与摘要、生成基础简报、央视新闻抓取助手、免费版是面向个人、用户的轻量新闻联、播内容抓取工具、抓取标题、生成简报、三步流程、快速获取新闻联播、Use、when、需要生成营销文案、写作内容、标题优化、内容创作时使用、不适用于纯技术文、档撰写、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -269,7 +261,7 @@ result = fetcher.fetch("today")
 if result.get("success"):
     news_list = result["data"].get("news", [])
     # 分类
-    categorized = categorizer.categorize(news_list)
+categorize(news_list)
     # 生成简报
     brief = generator.generate(result["date"], categorized)
     print(brief)
@@ -283,7 +275,6 @@ else:
 # 查询特定日期
 result = fetcher.fetch("2025-01-01")
 if result.get("success"):
-    news_list = result["data"].get("news", [])
     print(f"2025年元旦新闻联播共 {len(news_list)} 条")
     for i, news in enumerate(news_list, 1):
         print(f"{i}. {news.get('title')}")
@@ -299,7 +290,6 @@ for days_ago in range(7):
     date = (datetime.datetime.now() - datetime.timedelta(days=days_ago)).strftime("%Y%m%d")
     result = fetcher.fetch(date)
     if result.get("success"):
-        news_list = result["data"].get("news", [])
         print(f"\n=== {date} ===")
         for news in news_list[:5]:
             print(f"  - {news.get('title')}")
@@ -380,7 +370,6 @@ CCTVConfig.show()
     },
     {
       "title": "国际组织发布重要报告",
-      "content": "新闻联播内容摘要...",
       "category": "international",
       "order": 2
     }
@@ -398,7 +387,6 @@ def safe_fetch_with_retry(date_input, max_retries=2):
     """带重试的安全抓取"""
     fetcher = CCTVNewsFetcher()
     for attempt in range(max_retries):
-        result = fetcher.fetch(date_input)
         if result.get("success"):
             return result
         print(f"第{attempt+1}次失败：{result.get('error')}")
@@ -442,7 +430,6 @@ def fetch_with_cache(date_input, cache_dir="./cache"):
             return json.load(f)
 # ...
     # 抓取并缓存
-    result = fetcher.fetch(date_str)
     if result.get("success"):
         with open(cache_file, "w", encoding="utf-8") as f:
             json.dump(result, f, ensure_ascii=False, indent=2)
@@ -513,8 +500,6 @@ def fetch_with_cache(date_input, cache_dir="./cache"):
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

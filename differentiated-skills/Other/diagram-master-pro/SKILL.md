@@ -67,7 +67,7 @@ diagram-master --batch diagrams/ --parallel 4
 diagram-master --template microservice --output arch.svg
 ```
 
-> 详细内容已移至 `references/detail.md` - ### 完整搭建（<300秒）
+### 完整搭建（<300秒）
 ## 核心能力
 ### 1. 九种图表类型（基础+增强）
 | 图表类型 | 适用场景 | 基础能力 | 专业版增强 |
@@ -82,7 +82,6 @@ diagram-master --template microservice --output arch.svg
 | 状态机 | 状态转换 | 静态状态 | 动画演示转换 |
 | 数据流图 | 数据管道 | 静态流 | 动画数据流动 |
 
-**输入**: 用户提供九种图表类型（基础+增强）所需的指令和必要参数.
 **处理**: 解析九种图表类型（基础+增强）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回九种图表类型（基础+增强）的响应数据,包含状态码、结果和日志.
 ### 2. 语义化配色系统（基础+增强）
@@ -97,7 +96,6 @@ diagram-master --template microservice --output arch.svg
 | 中性 | rgba(30,41,59,0.5) | #94a3b8 | 外部/通用 | 支持品牌色替换 |
 | 高亮 | rgba(59,130,246,0.3) | #60a5fa | 激活/焦点 | 支持品牌色替换 |
 
-**输入**: 用户提供语义化配色系统（基础+增强）所需的指令和必要参数.
 **处理**: 解析语义化配色系统（基础+增强）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回语义化配色系统（基础+增强）的响应数据,包含状态码、结果和日志.
 ### 3. 批量图表生成（专业版）
@@ -117,7 +115,6 @@ diagram-master --batch diagrams/ --checkpoint --resume
 - 文档提取：从Markdown文档自动提取图表定义并生成
 - 批量导出：一次生成SVG+PNG@2x+PNG@4x三种格式
 
-**输入**: 用户提供批量图表生成（专业版）所需的指令和必要参数.
 **处理**: 解析批量图表生成（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量图表生成（专业版）的响应数据,包含状态码、结果和日志.
 ### 4. 自定义配色方案（专业版）
@@ -140,14 +137,12 @@ diagram-master --create-theme my-brand \
 | high-contrast | 高对比度 | 无障碍场景 |
 | monochrome | 单色专业 | 学术论文 |
 
-**输入**: 用户提供自定义配色方案（专业版）所需的指令和必要参数.
 **处理**: 解析自定义配色方案（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自定义配色方案（专业版）的响应数据,包含状态码、结果和日志.
 ### 5. 图表模板库（专业版）
 预设模板快速套用：
 
 ```bash
-diagram-master --template microservice --output arch.svg
 diagram-master --template ci-cd-pipeline --output pipeline.svg
 diagram-master --template er-database --output er.svg
 # .
@@ -169,16 +164,15 @@ diagram-master --save-template my-arch --from arch.svg
 | 结构图 | class-diagram | 类图 |
 | 状态机 | order-lifecycle | 订单生命周期 |
 
-**输入**: 用户提供图表模板库（专业版）所需的指令和必要参数.
 **处理**: 解析图表模板库（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回图表模板库（专业版）的响应数据,包含状态码、结果和日志.
 ### 6. SVG转PNG高清导出（专业版）
 ```bash
 diagram-master --export arch.svg --format png --scale 2
 # .
-diagram-master --export arch.svg --format png --scale 4
+svg --format png --scale 4
 # .
-diagram-master --export arch.svg --format svg,png@2x,png@4x
+svg --format svg,png@2x,png@4x
 ```
 
 | 导出格式 | 分辨率 | 适用场景 |
@@ -188,7 +182,6 @@ diagram-master --export arch.svg --format svg,png@2x,png@4x
 | PNG @4x | 4倍 | 出版印刷、高清展示 |
 | PDF | 矢量 | 正式文档 |
 
-**输入**: 用户提供SVG转PNG高清导出（专业版）所需的指令和必要参数.
 **处理**: 解析SVG转PNG高清导出（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回SVG转PNG高清导出（专业版）的响应数据,包含状态码、结果和日志.
 ### 7. 图表版本管理（专业版）
@@ -202,7 +195,6 @@ diagram-master --diff arch.svg --v1 1 --v2 3
 diagram-master --rollback arch.svg --version 2
 ```
 
-**输入**: 用户提供图表版本管理（专业版）所需的指令和必要参数.
 **处理**: 解析图表版本管理（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回图表版本管理（专业版）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -226,7 +218,6 @@ diagram-master --interactive --template ci-cd-pipeline \
 | 悬停提示 | 鼠标悬停显示详情 | 组件说明 |
 | 动画播放 | 时序消息动画 | 时序图演示 |
 
-**输入**: 用户提供交互式图表（专业版）所需的指令和必要参数.
 **处理**: 解析交互式图表（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回交互式图表（专业版）的响应数据,包含状态码、结果和日志.
 ### 9. 图表组件库（专业版）
@@ -238,7 +229,6 @@ diagram-master --use-component "db-postgres" --output new-arch.svg
 diagram-master --list-components
 ```
 
-**输入**: 用户提供图表组件库（专业版）所需的指令和必要参数.
 **处理**: 解析图表组件库（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回图表组件库（专业版）的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全功能、图表系统、含批量生成、版本管理与交互式、图表制作大师专业、版是技术文档图表、制作的完整解决方、在免费版基础上解、锁批量图表生成、图表组件库七大高、级功能、帮助团队建立统一、可复用的图表制作、when、、品牌视觉时使用、不适用于、建模和动画制作等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -262,7 +252,7 @@ diagram-master --save-version --batch docs/diagrams/
 ```
 
 **效果**：100+图表统一风格，生成时间从2周缩短至4小时，后续更新一键批量.
-> 详细内容已移至 `references/detail.md` - ### 场景二：大规模API文档批量生图（API文档工程师角色）
+### 场景二：大规模API文档批量生图（API文档工程师角色）
 ### 场景三：品牌定制图表主题（品牌设计师角色）
 **场景描述**：企业要求所有技术图表使用品牌配色，不能使用默认暗色主题.
 **操作流程**：
@@ -282,7 +272,6 @@ diagram-master --batch diagrams/ --theme brand-official
 **场景描述**：技术书籍出版需要@4x高清PNG图表，普通截图分辨率不够.
 **操作流程**：
 ```bash
-diagram-master --export arch.svg --format png@4x
 # .
 diagram-master --export --batch book/diagrams/ \
   --format png@4x,pdf \
@@ -294,13 +283,10 @@ diagram-master --export --batch book/diagrams/ \
 **场景描述**：10人团队协作维护技术文档图表，经常出现覆盖和冲突.
 **操作流程**：
 ```bash
-diagram-master --save-version arch.svg --message "增加Redis缓存层"
+svg --message "增加Redis缓存层"
 # .
-diagram-master --history arch.svg
 # .
-diagram-master --diff arch.svg --v1 1 --v2 5
 # .
-diagram-master --rollback arch.svg --version 3
 ```
 
 **效果**：图表变更可追溯，冲突可回滚，团队协作效率提升.

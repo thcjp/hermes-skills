@@ -176,7 +176,6 @@ for domain in $(cat domains.txt); do
 done
 # ...
 # 2. 导出所有域名当前记录
-for domain in $(cat domains.txt); do
   dig +nocmd +noall +answer $domain ANY > "records-$domain.txt"
   dig +nocmd +noall +answer _dmarc.$domain TXT >> "records-$domain.txt"
 done
@@ -184,13 +183,11 @@ done
 # 3. 在新服务商预配置所有记录(不切换 NS)
 # ...
 # 4. 迁移当日:切换 NS 记录
-for domain in $(cat domains.txt); do
   # 在域名注册商处更新 NS 为新服务商
   echo "切换 $domain 的 NS 记录..."
 done
 # ...
 # 5. 多解析器验证
-for domain in $(cat domains.txt); do
   echo "验证 $domain:"
   dig @8.8.8.8 $domain +short
   dig @1.1.1.1 $domain +short

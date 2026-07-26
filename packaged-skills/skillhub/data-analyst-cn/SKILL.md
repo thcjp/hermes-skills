@@ -93,8 +93,7 @@ export API_KEY="your_api_key_here"
 | SQLite | `pd.read_sql('SELECT * FROM table', conn)` | 需先 `sqlite3.connect('database.db')` |
 | API | `pd.DataFrame(response.json())` | 需先 `requests.get('https://api.example.com/data')` |
 
-**处理**: 解析多源数据读取的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回多源数据读取的处理结果,包含执行状态码、结果数据和执行日志。### 数据预览与质量检查
+### 数据预览与质量检查
 ```python
 print(df.shape)        # 行列数，如 (1542, 7)
 print(df.columns)      # 列名列表
@@ -109,9 +108,7 @@ print(df.describe())   # 数值列统计
 print(df.describe(include='all'))  # 所有列（含分类列）
 ```
 
-**输入**: 用户提供数据预览与质量检查所需的指令和必要参数.
-**处理**: 解析数据预览与质量检查的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回数据预览与质量检查的处理结果,包含执行状态码、结果数据和执行日志。### 数据清洗
+### 数据清洗
 **缺失值处理**：
 
 ```python
@@ -151,12 +148,11 @@ df = df[(df['col'] >= Q1 - 1.5*IQR) & (df['col'] <= Q3 + 1.5*IQR)]
 
 ```python
 df['name'] = df['name'].str.strip()           # 去首尾空白
-df['name'] = df['name'].str.lower()           # 转小写
-df['name'] = df['name'].str.replace('old', 'new')  # 替换
+str.lower()           # 转小写
+str.replace('old', 'new')  # 替换
 ```
 
-**输入**: 用户提供数据清洗所需的指令和必要参数.
-**输出**: 返回数据清洗的处理结果,包含执行状态码、结果数据和执行日志。### 统计分析
+### 统计分析
 **描述统计**：
 
 ```python
@@ -193,8 +189,7 @@ df.groupby('category').agg({
 pd.crosstab(df['col1'], df['col2'])
 ```
 
-**输入**: 用户提供统计分析所需的指令和必要参数.
-**输出**: 返回统计分析的处理结果,包含执行状态码、结果数据和执行日志。### 时间序列分析
+### 时间序列分析
 
 ```python
 df['date'] = pd.to_datetime(df['date'])
@@ -258,14 +253,12 @@ ax.fill_between(df.index, df['lower'], df['upper'], alpha=0.2)
 ax.legend()
 ```
 
-**输出**: 返回可视化代码生成的处理结果,包含执行状态码、结果数据和执行日志.
 ### 分析报告自动生成
 ```python
 def generate_report(df):
     report = f"""
 # ...
-**输入**: 用户提供分析报告自动生成所需的指令和必要参数.
-**处理**: 解析分析报告自动生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 # ...
 #
 ## 快速开始

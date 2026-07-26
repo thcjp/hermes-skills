@@ -138,7 +138,6 @@ export API_KEY="your_api_key_here"
 | `target_role` | string | 否 | - | 目标职位（用于匹配度评估） |
 | `language` | string | 否 | `en` | `en`英文 / `zh`中文 |
 
-**输出**: 返回Score - 简历评分的处理结果,包含执行状态码、结果数据和执行日志.
 ### Export - 多格式导出
 
 将简历转换为Word、Markdown、HTML、LaTeX或PDF格式：

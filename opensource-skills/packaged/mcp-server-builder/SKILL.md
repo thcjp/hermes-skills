@@ -183,7 +183,7 @@ server.tool(
   { limit: z.number().int().min(1).max(100).default(10) },
   async ({ limit }) => {
     const users = db.prepare("SELECT id, name FROM users LIMIT ?").all(limit);
-    return { content: [{ type: "text", text: JSON.stringify(users, null, 2) }] };
+stringify(users, null, 2) }] };
   }
 );
 // ...
@@ -334,7 +334,7 @@ server.tool(
   },
   async ({ limit }) => {
     try {
-      const result = await client.conversations.list({
+conversations.list({
         limit,
         types: "public_channel,private_channel",
       });
@@ -344,7 +344,7 @@ server.tool(
         is_private: ch.is_private,
         num_members: ch.num_members,
       }));
-      return { content: [{ type: "text", text: JSON.stringify(channels, null, 2) }] };
+stringify(channels, null, 2) }] };
     } catch {
       return {
         content: [{ type: "text", text: "错误: AUTH_FAILED - Token无效或已过期" }],
@@ -363,7 +363,7 @@ server.tool(
   },
   async ({ query, count }) => {
     try {
-      const result = await client.search.messages({ query, count });
+search.messages({ query, count });
       const messages = (result.messages?.matches || []).map((m: any) => ({
         channel: m.channel?.name,
         user: m.user,
@@ -371,7 +371,7 @@ server.tool(
         timestamp: m.ts,
         permalink: m.permalink,
       }));
-      return { content: [{ type: "text", text: JSON.stringify(messages, null, 2) }] };
+stringify(messages, null, 2) }] };
     } catch {
       return {
         content: [{ type: "text", text: "错误: search_not_enabled - 需要Slack付费计划支持搜索" }],
@@ -641,7 +641,7 @@ server.tool(
         },
       };
       auditLog("query_users", { status, role, page, page_size }, `${response.users.length} users returned`);
-      return { content: [{ type: "text", text: JSON.stringify(response, null, 2) }] };
+stringify(response, null, 2) }] };
     } catch (error: any) {
       auditLog("query_users", { status, role, page, page_size }, `ERROR: ${error.message}`);
       return {
@@ -658,7 +658,6 @@ server.tool(
   { id: z.number().int().positive().describe("用户ID") },
   async ({ id }) => {
     try {
-      const result = await pool.query(
         "SELECT id, name, email, role, status, created_at FROM users WHERE id = $1",
         [id]
       );
@@ -667,7 +666,7 @@ server.tool(
         return { content: [{ type: "text", text: `用户 ${id} 不存在` }] };
       }
       auditLog("get_user_by_id", { id }, `Found user ${result.rows[0].name}`);
-      return { content: [{ type: "text", text: JSON.stringify(result.rows[0], null, 2) }] };
+stringify(result.rows[0], null, 2) }] };
     } catch (error: any) {
       return {
         content: [{ type: "text", text: "错误: DB_CONNECTION_ERROR - 查询失败" }],
@@ -681,7 +680,7 @@ server.tool(
 server.tool(
   "count_users",
   {
-    status: z.enum(["active", "inactive", "all"]).default("all").describe("按状态统计"),
+    status: z.default("all").describe("按状态统计"),
   },
   async ({ status }) => {
     try {
@@ -689,9 +688,9 @@ server.tool(
         ? "SELECT status, COUNT(*) as count FROM users GROUP BY status"
         : "SELECT COUNT(*) as count FROM users WHERE status = $1";
       const params = status === "all" ? [] : [status];
-      const result = await pool.query(query, params);
+query(query, params);
       auditLog("count_users", { status }, `${result.rows.length} rows`);
-      return { content: [{ type: "text", text: JSON.stringify(result.rows, null, 2) }] };
+stringify(result.rows, null, 2) }] };
     } catch {
       return {
         content: [{ type: "text", text: "错误: DB_CONNECTION_ERROR - 统计失败" }],
@@ -751,14 +750,12 @@ def create_ticket(title: str, description: str, priority: str = "normal") -> dic
 # ...
     token = os.environ.get("INTERNAL_API_TOKEN", "")
     try:
-        response = httpx.post(
             f"{API_BASE}/api/tickets",
             json={"title": title, "description": description, "priority": priority},
             headers={"Authorization": f"Bearer {token}"},
             timeout=10,
         )
         response.raise_for_status()
-        data = response.json()
         logger.info(f"Ticket created: {data.get('id')}")
         return {"success": True, "ticket_id": data["id"], "status": data["status"]}
     except httpx.TimeoutException:
@@ -782,7 +779,6 @@ def update_ticket_status(ticket_id: str, status: str) -> dict:
 # ...
     token = os.environ.get("INTERNAL_API_TOKEN", "")
     try:
-        response = httpx.patch(
             f"{API_BASE}/api/tickets/{ticket_id}",
             json={"status": status},
             headers={"Authorization": f"Bearer {token}"},
@@ -804,7 +800,6 @@ def list_tickets() -> str:
     """获取所有工单列表"""
     token = os.environ.get("INTERNAL_API_TOKEN", "")
     try:
-        response = httpx.get(
             f"{API_BASE}/api/tickets",
             headers={"Authorization": f"Bearer {token}"},
             timeout=10,
@@ -820,7 +815,6 @@ def get_ticket_detail(ticket_id: str) -> str:
     """获取指定工单的详细信息"""
     token = os.environ.get("INTERNAL_API_TOKEN", "")
     try:
-        response = httpx.get(
             f"{API_BASE}/api/tickets/{ticket_id}",
             headers={"Authorization": f"Bearer {token}"},
             timeout=10,
@@ -828,7 +822,6 @@ def get_ticket_detail(ticket_id: str) -> str:
         if response.status_code == 404:
             return f'{{"error": "NOT_FOUND", "message": "工单 {ticket_id} 不存在"}}'
         response.raise_for_status()
-        return response.text
     except Exception as e:
         return f'{{"error": "RESOURCE_UNAVAILABLE", "message": "无法获取工单详情"}}'
 # ...

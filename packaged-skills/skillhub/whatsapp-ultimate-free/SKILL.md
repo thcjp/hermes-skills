@@ -1,9 +1,8 @@
----
-slug: "whatsapp-ultimate-free"
+---slug: "whatsapp-ultimate-free"
 name: "whatsapp-ultimate-free"
 version: "1.0.0"
 displayName: "通讯应用工具(免费版)"
-summary: "通讯应用消息发送、交互反应、群组管理和多Agent讨论工具(免费版)。通讯应用消息发送、交互反应、群组管理和多Agent讨论工具。支持文本、图片、 语音、视频、贴纸等多种消息类型，支持投票、"
+summary: "通讯应用消息发送、交互"
 summary_zh: "通讯应用消息发送、交互反应、群组管理和多Agent讨论工具(免费版)。通讯应用消息发送、交互反应、群组管理和多Agent讨论工具。支持文本、图片、 语音、视频、贴纸等多种消息类型，支持投票、"
 license: "MIT"
 description: |-
@@ -26,9 +25,7 @@ tags:
   - net
   - send
   - type
-category: "Communication"
----
-# 通讯应用工具(免费版)
+category: "Communication"---# 通讯应用工具(免费版)
 
 通讯应用消息发送、交互反应、群组管理和多Agent讨论.
 ## 输入格式
@@ -54,9 +51,6 @@ category: "Communication"
 python3 （请参考skill目录中的脚本文件） action=send --to "contact-id@s.whatsapp.net" --type text --content "你好，这是一条测试消息"
 ```
 
-**输入**: 用户提供消息发送所需的指令和必要参数.
-**处理**: 解析消息发送的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回消息发送的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. 交互反应
 对消息添加表情反应、回复消息和转发消息.
 ```bash
@@ -64,24 +58,18 @@ python3 （请参考skill目录中的脚本文件） action=react --message-id "
 python3 （请参考skill目录中的脚本文件） action=reply --message-id "msg-abc123" --content "收到"
 ```
 
-**输入**: 用户提供交互反应所需的指令和必要参数.
-**处理**: 解析交互反应的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回交互反应的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. 群组管理
 创建群组、添加/移除成员、修改群组信息.
 ```bash
 python3 （请参考skill目录中的脚本文件） action=group-create --name "项目讨论组" --participants "user1@s.whatsapp.net" "user2@s.whatsapp.net"
 ```
 
-**处理**: 解析群组管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 4. 历史搜索
 搜索聊天历史记录，支持关键词和日期范围.
 ```bash
 python3 （请参考skill目录中的脚本文件） action=search --chat "contact-id@s.whatsapp.net" --query "会议纪要" --limit 20
 ```
 
-**输入**: 用户提供历史搜索所需的指令和必要参数.
-**输出**: 返回历史搜索的处理结果,包含执行状态码、结果数据和执行日志.
 ### 输出格式
 
 完成响应以Markdown格式返回,包含任务状态(成功/失败)、解析摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。- 验证返回数据的完整性和格式正确性

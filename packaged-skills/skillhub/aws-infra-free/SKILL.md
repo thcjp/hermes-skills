@@ -1,9 +1,8 @@
----
-slug: "aws-infra-free"
+---slug: "aws-infra-free"
 name: "aws-infra-free"
 version: "1.0.0"
 displayName: "AWS免费版"
-summary: "通过AWS CLI执行基础只读查询,覆盖EC2/S3/RDS资源清单和实例健康检查两大场景。AWS基础设施基础查询工具(免费版)。通过AWS CLI执行read-only查询,帮助开发者快速"
+summary: "通过AWS CLI执行"
 summary_zh: "通过AWS CLI执行基础只读查询,覆盖EC2/S3/RDS资源清单和实例健康检查两大场景。AWS基础设施基础查询工具(免费版)。通过AWS CLI执行read-only查询,帮助开发者快速"
 license: "MIT"
 description: |-
@@ -27,9 +26,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Operations"
----
-# AWS Infra LITE
+category: "Operations"---# AWS Infra LITE
 
 通过AWS CLI执行基础只读查询,覆盖资源清单和健康检查两大场景.
 ## 输入格式
@@ -144,7 +141,7 @@ aws configure set region us-west-2
 ```bash
 # 查询所有实例的状态检查结果
 aws ec2 describe-instance-status --include-all-instances \
-  --query 'InstanceStatuses[].[InstanceId,InstanceStatus.Status,SystemStatus.Status,AvailabilityZone]' \
+  --query 'InstanceStatuses[].Status,SystemStatus.Status,AvailabilityZone]' \
   --output table
 ```
 

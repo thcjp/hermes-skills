@@ -368,7 +368,6 @@ plt.savefig('output/sales/charts/overview.png', dpi=150)
 | 列名 | 缺失数 | 缺失率 | 异常数 |
 |----|----|----|----|
 | order_id | 0 | 0% | 0 |
-| customer_id | 12 | 0.12% | 0 |
 | quantity | 0 | 0% | 23 |
 | price | 0 | 0% | 15 |
 | region | 45 | 0.45% | 0 |

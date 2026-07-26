@@ -94,21 +94,18 @@ RSS新闻订阅工具免费版是一款轻量级的国际新闻获取工具，�
 [限制] 不支持多源去重与聚合
 ```
 
-**输入**: 用户提供RSS 源列表所需的指令和必要参数.
 **处理**: 解析RSS 源列表的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回RSS 源列表的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：从主流国际、源获取最新新闻标、题与摘要、API、密钥零依赖、新闻订阅免费版、等主流国际媒体、核心能力、个国际主流媒体、源获取新闻、支持按来源、数量筛选、零外部依赖、仅使用、Python、标准库和、HTTP等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ### 核心功能执行(补充)
 执行核心功能执行操作,使用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
-**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
-**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
+
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
@@ -157,7 +154,6 @@ python3 {baseDir}/（请参考skill目录中的脚本文件）
 2. **Tech Giants Face New Antitrust Rules**
    - Published: 2026-07-18 07:15 GMT
    - Summary: EU announces sweeping new regulations...
-   - Link: https://bbc.com/news/...
 # ...
 ## Reuters
 # ...
@@ -283,17 +279,17 @@ FEEDS = {
     "guardian": {
         "name": "The Guardian",
         "feeds": {
-            "top": "https://www.theguardian.com/world/rss",
-            "world": "https://www.theguardian.com/international/rss",
-            "business": "https://www.theguardian.com/business/rss",
-            "tech": "https://www.theguardian.com/technology/rss",
+theguardian.com/world/rss",
+theguardian.com/international/rss",
+theguardian.com/business/rss",
+theguardian.com/technology/rss",
             "science": "https://www.theguardian.com/science/rss",
         }
     },
     "aljazeera": {
         "name": "Al Jazeera",
         "feeds": {
-            "top": "https://www.aljazeera.com/xml/rss/all.xml",
+aljazeera.com/xml/rss/all.xml",
         }
     },
     "npr": {
@@ -435,7 +431,7 @@ python3 -c "import urllib.request, xml.etree.ElementTree; print('OK')"
 # 预期输出: OK
 # ...
 # 验证RSS源连通性
-curl -s -o /dev/null -w "%{http_code}" http://feeds.bbci.co.uk/news/rss.xml
+bbci.co.uk/news/rss.xml
 # 预期输出: 200
 ```
 

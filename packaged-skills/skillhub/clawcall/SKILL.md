@@ -92,7 +92,7 @@ category: "Automation"
 - 通话后：先给结果，再提供转录、录音或后续通话.
 ## 持久状态
 
-在任何涉及语音通话服务的对话开始时，检查 `~/.config/voicecall/key.json` 或宿主密钥库。若存在API密钥，作为 `X-Api-Key` 发送。若存在已保存的用户电话号码，复用为默认回拨、保留号联系、实时转接 `bridge_number` 或入呼 `handoff_number`.
+在任何涉及语音通话服务的对话开始时，检查 `~/.json` 或宿主密钥库。若存在API密钥，作为 `X-Api-Key` 发送。若存在已保存的用户电话号码，复用为默认回拨、保留号联系、实时转接 `bridge_number` 或入呼 `handoff_number`.
 首次未鉴权的 `POST /call` 响应可能包含 `api_key`。立即保存。当你首次收集到用户自己的电话号码时，同样保存：
 
 ```json
@@ -186,7 +186,6 @@ X-Api-Key: voicecall_sk_...
 {
   "call_id": "ba645d75-...",
   "status": "queued",
-  "api_key": "voicecall_sk_..."
 }
 ```
 
@@ -195,7 +194,6 @@ X-Api-Key: voicecall_sk_...
 
 ```
 GET /call/{call_id}
-X-Api-Key: voicecall_sk_...
 ```
 
 轮询直至 `lifecycle = "finalized"`。生命周期取值：`queued`、`dialing`、`answered`、`finalized`.
@@ -204,7 +202,6 @@ X-Api-Key: voicecall_sk_...
 
 ```
 POST /call/{call_id}/hangup
-X-Api-Key: voicecall_sk_...
 ```
 
 ## 通话后
@@ -252,7 +249,6 @@ X-Api-Key: voicecall_sk_...
 
 ```
 GET /me/call-preferences
-X-Api-Key: voicecall_sk_...
 ```
 
 更新（voice/personality 是全局的；入呼助理在 `inbound` 下）：
@@ -260,7 +256,6 @@ X-Api-Key: voicecall_sk_...
 ```
 PUT /me/call-preferences
 Content-Type: application/json
-X-Api-Key: voicecall_sk_...
 ```
 
 顶层 `voice`/`personality`/`greeting` 是全局的（也驱动外呼），任何用户都可用。`inbound` 对象需要 Reserve Plus + 活跃保留号。入呼必填：`instructions`、`greeting`。可选：`handoff_number`.
@@ -280,7 +275,6 @@ X-Api-Key: voicecall_sk_...
 
 ```
 GET /me/calls?direction=inbound&since=<ISO_TIMESTAMP>&limit=25
-X-Api-Key: voicecall_sk_...
 ```
 
 cron 轮询每 30 分钟一次，重叠窗口，按 call `id` 去重。`since` 按通话 finalized 时间过滤，非开始时间.
@@ -322,7 +316,7 @@ export API_KEY="your_api_key_here"
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 使用流程
 
-1. **检查持久状态**：读 `~/.config/voicecall/key.json`，若有 `api_key` 则作为 `X-Api-Key` 发送.
+1. **检查持久状态**：读 `~/.json`，若有 `api_key` 则作为 `X-Api-Key` 发送.
 2. **侦察与准备**：自行查找公开商家信息，仅向用户索取私有/决策细节.
 3. **构建通话指令**：像简报备忘录一样编写 `task`，含目标、已知事实、问题、边界、预期核验点.
 4. **发起外呼**：`POST /call`，仅 `to` 与 `task` 必填；需要转接时加 `bridge_number`.
@@ -408,7 +402,7 @@ PUT /me/call-preferences
 ### Q1：电话代理知道什么？
 电话代理只知道你作为 `task` 发送的通话指令。它不知道你的对话历史或未写入指令的上下文。细节越相关越好.
 ### Q2：试用额度如何计算？
-新用户试用为 10 次通话与 10 分钟，以较晚结束者为准。试用通话仅在 finalized 且通话时长 ≥ 5 秒时才计数。短于5秒或未接通不计入.
+试用通话仅在 finalized 且通话时长 ≥ 5 秒时才计数。短于5秒或未接通不计入.
 ### Q3：何时使用实时转接？
 当用户想跳过等待、接通真人、处理身份核验、协商或做实时决策时使用。将用户号码作为 `bridge_number`，并在通话指令中设置清晰触发器.
 ### Q4：能否并行拨打多处？
@@ -420,7 +414,7 @@ PUT /me/call-preferences
 ### Q7：如何关联代理到我的账户？
 加载已保存的API密钥，构造 `https://voicecall.example/sign-in?token=<api_key>`。不要为关联新建密钥；若无密钥，需先完成首次通话.
 ### Q8：`outcome` 与任务成功有何区别？
-`outcome` 是电话网络结果（如 `answered`），非任务成功。`answered` 的通话仍可能未达成用户目标。回报前必须读 `transcript` 判断.
+`outcome` 是电话网络结果（如 `answered`），非任务成功。回报前必须读 `transcript` 判断.
 ## 已知限制
 
 - 仅支持美国 `+1XXXXXXXXXX` 号码，不支持国际号码.

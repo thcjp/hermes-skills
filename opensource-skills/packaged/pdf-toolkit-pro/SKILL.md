@@ -411,7 +411,7 @@ for idx, row in df.iterrows():
         value = str(row[excel_col])
         if form_field in writer.get_form_text_fields():
             writer.update_page_form_field_values(
-                writer.pages[0], {form_field: value}
+pages[0], {form_field: value}
             )
 # ...
     # 扁平化（锁定不可编辑）
@@ -619,7 +619,7 @@ A: 扫描件是图片形式,需用OCR识别。步骤:(1)用pdf2image将PDF转为
 A: pdfplumber提供两种提取策略:lattice(基于线条,适合有边框表格)和stream(基于文本对齐,适合无边框表格)。先尝试lattice,失败再尝试stream。对于合并单元格导致的错乱,需后处理逻辑修正。复杂表格建议人工校对。
 
 ### Q3: 生成PDF时中文显示乱码?
-A: 中文字体未正确注册。reportlab需用`pdfmetrics.registerFont(TTFont("SimSun", "simsun.ttc"))`注册中文字体。Windows系统字体在`C:\Windows\Fonts\`,macOS在`/System/Library/Fonts/`,Linux需安装文泉驿或思源字体。推荐使用开源的思源黑体(Noto Sans CJK)。
+A: 中文字体未正确注册。reportlab需用`pdfmetrics.ttc"))`注册中文字体。Windows系统字体在`C:\Windows\Fonts\`,macOS在`/System/Library/Fonts/`,Linux需安装文泉驿或思源字体。推荐使用开源的思源黑体(Noto Sans CJK)。
 
 ### Q4: 如何在国内安装PDF处理依赖?
 A: Python库用清华源:`pip install pypdf pdfplumber reportlab pymupdf -i https://pypi.tuna.tsinghua.edu.cn/simple`。Tesseract OCR需单独安装:Windows从UB-Mannheim下载,macOS用brew,Linux用apt。poppler:Windows下载二进制并添加PATH,macOS用brew install poppler。

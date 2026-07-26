@@ -328,7 +328,6 @@ param sqlAdminPassword string
 @description('数据库容量(GB)')
 param dbCapacityGB int = 50
 # ...
-var location = resourceGroup().location
 var namePrefix = '${appName}-${environment}'
 var uniqueSuffix = uniqueString(resourceGroup().id)
 # ...
@@ -369,17 +368,15 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2023-12-01' = {
 }
 # ...
 // App Service
-resource appService 'Microsoft.Web/sites@2023-12-01' = {
+Web/sites@2023-12-01' = {
   name: '${namePrefix}-app-${uniqueSuffix}'
   location: location
   identity: {
     type: 'SystemAssigned'  // 托管身份，访问Key Vault
   }
   properties: {
-    serverFarmId: appServicePlan.id
     siteConfig: {
-      netFrameworkVersion: 'v8.0'
-      minTlsVersion: '1.2'        // 强制TLS 1.2+
+2'        // 强制TLS 1.2+
       httpsOnly: true              // 强制HTTPS
       ftpsState: 'Disabled'        // 禁用FTP
       http20Enabled: true
@@ -392,13 +389,12 @@ resource appService 'Microsoft.Web/sites@2023-12-01' = {
 }
 # ...
 // SQL Server
-resource sqlServer 'Microsoft.Sql/servers@2023-08-01-preview' = {
+Sql/servers@2023-08-01-preview' = {
   name: '${namePrefix}-sql-${uniqueSuffix}'
   location: location
   properties: {
     administratorLogin: 'sqladmin'
     administratorLoginPassword: sqlAdminPassword
-    minimalTlsVersion: '1.2'
     publicNetworkAccess: (environment == 'prod') ? 'Disabled' : 'Enabled'
   }
   tags: { environment: environment, project: appName }
@@ -410,7 +406,6 @@ resource sqlDatabase 'Microsoft.Sql/servers/databases@2023-08-01-preview' = {
   name: '${appName}db'
   location: location
   sku: {
-    name: skuMap[environment].sql.tier
     capacity: skuMap[environment].sql.capacity
   }
   properties: {
@@ -420,10 +415,9 @@ resource sqlDatabase 'Microsoft.Sql/servers/databases@2023-08-01-preview' = {
 }
 # ...
 // Storage Account
-resource storage 'Microsoft.Storage/storageAccounts@2023-05-01' = {
+Storage/storageAccounts@2023-05-01' = {
   name: '${replace(namePrefix, '-', '')}storage${uniqueSuffix}'
   location: location
-  sku: { name: skuMap[environment].storage }
   kind: 'StorageV2'
   properties: {
     accessTier: 'Hot'
@@ -449,8 +443,8 @@ resource appInsights 'Microsoft.Insights/components@2020-02-02' = {
 }
 # ...
 // 输出
-output appServiceUrl string = 'https://${appService.properties.defaultHostName}'
-output sqlServerFqdn string = sqlServer.properties.fullyQualifiedDomainName
+properties.defaultHostName}'
+properties.fullyQualifiedDomainName
 output appInsightsInstrumentationKey string = appInsights.properties.InstrumentationKey
 output storageAccountName string = storage.name
 ```
@@ -458,8 +452,7 @@ output storageAccountName string = storage.name
 ```json
 // output/shopapp/infra/parameters.prod.json
 {
-  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
-  "contentVersion": "1.0.0.0",
+management.azure.json#",
   "parameters": {
     "environment": { "value": "prod" },
     "appName": { "value": "shopapp" },
@@ -486,8 +479,6 @@ az deployment group create \
 # Prod环境（密钥从Key Vault引用）
 az deployment group create \
   --resource-group shopapp-prod-rg \
-  --template-file main.bicep \
-  --parameters @parameters.prod.json
 # ...
 ## Key Vault配置
 1. 创建Key Vault: shopapp-prod-kv
@@ -943,7 +934,7 @@ resource http5xxAlert 'Microsoft.Insights/metricAlerts@2023-03-01-preview' = {
   properties: {
     severity: 0
     enabled: true
-    scopes: [resourceId('Microsoft.Web/sites', appServiceName)]
+Web/sites', appServiceName)]
     evaluationFrequency: 'PT1M'
     windowSize: 'PT5M'
     criteria: {
@@ -967,7 +958,7 @@ resource responseTimeAlert 'Microsoft.Insights/metricAlerts@2023-03-01-preview' 
   properties: {
     severity: 1
     enabled: true
-    scopes: [resourceId('Microsoft.Insights/components', appInsightsName)]
+Insights/components', appInsightsName)]
     evaluationFrequency: 'PT5M'
     windowSize: 'PT15M'
     criteria: {
@@ -993,7 +984,7 @@ resource healthCheckAlert 'Microsoft.Insights/metricAlerts@2023-03-01-preview' =
   properties: {
     severity: 0
     enabled: true
-    scopes: [resourceId('Microsoft.Web/sites', appServiceName)]
+Web/sites', appServiceName)]
     evaluationFrequency: 'PT1M'
     windowSize: 'PT2M'
     criteria: {
@@ -1006,7 +997,6 @@ resource healthCheckAlert 'Microsoft.Insights/metricAlerts@2023-03-01-preview' =
         }
       ]
     }
-    actions: [{ actionGroupId: criticalActionGroup.id }]
   }
 }
 # ...
@@ -1017,7 +1007,7 @@ resource cpuEarlyWarningAlert 'Microsoft.Insights/metricAlerts@2023-03-01-previe
   properties: {
     severity: 2  // 2=Info
     enabled: true
-    scopes: [resourceId('Microsoft.Web/sites', appServiceName)]
+Web/sites', appServiceName)]
     evaluationFrequency: 'PT5M'
     windowSize: 'PT10M'
     criteria: {
@@ -1031,7 +1021,6 @@ resource cpuEarlyWarningAlert 'Microsoft.Insights/metricAlerts@2023-03-01-previe
         }
       ]
     }
-    actions: [{ actionGroupId: warningActionGroup.id }]
   }
 }
 ```

@@ -311,8 +311,6 @@ Payback: ($50 setup cost) / ($250/month value saved) = 0.2 months → Absolutely
 
 ## 核心能力
 
-As a solopreneur, your time is your most valuable asset. Automation lets you scale without hiring. The goal is simple: automate anything you do more than twice a week that doesn't require creative thinking. This playbook shows you how to identify automation opportunities, design workflows, and implement them without writing code.
-
 ---
 
 ## 适用场景
@@ -335,9 +333,7 @@ As a solopreneur, your time is your most valuable asset. Automation lets you sca
 ### 示例1：基础用法
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
 ## 错误处理

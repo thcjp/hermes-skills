@@ -1,9 +1,8 @@
----
-slug: ai-video-studio-pro
+---slug: ai-video-studio-pro
 name: ai-video-studio-pro
 version: "1.0.1"
 displayName: "AI视频导演"
-summary: "一个人就是一支视频团队,脚本到成片一站式+智能路由+营销策略注入。AI视频导演是一款从脚本到成片一站式视频制作工具。一个人就是一支视频团队,支持热点短视频生成、 口型同步数字人、智能路由决策"
+summary: "一个人就是一支视频团队"
 summary_zh: "一个人就是一支视频团队,脚本到成片一站式+智能路由+营销策略注入。AI视频导演是一款从脚本到成片一站式视频制作工具。一个人就是一支视频团队,支持热点短视频生成、 口型同步数字人、智能路由决策"
 license: "MIT"
 description: |-
@@ -34,9 +33,7 @@ tools:
   - read
   - exec
   - write
-category: "Creative"
----
-# AI视频导演
+category: "Creative"---# AI视频导演
 
 > 定位: 脚本到成片一站式视频制作
 > 设计: 热点短视频生成 + 口型同步视频 + 智能路由决策树 + 多引擎降级
@@ -181,7 +178,7 @@ category: "Creative"
 ### 输出格式(场景路由模式)
 
 ```json
-{"success": true, "data": {"video_url": "...", "duration": 58, "with_subtitle": true, "route_metadata": {"scene": "scene_1", "engine_used": "universal_engine", "fallback_applied": false, "fallback_chain_used": [], "cost_estimate": 0}}, "error": null, "code": "VG-SUCCESS-01"}
+..", "duration": 58, "with_subtitle": true, "route_metadata": {"scene": "scene_1", "engine_used": "universal_engine", "fallback_applied": false, "fallback_chain_used": [], "cost_estimate": 0}}, "error": null, "code": "VG-SUCCESS-01"}
 ```
 
 ## 异常处理
@@ -273,7 +270,7 @@ TTS降级链最终方案为静默+字幕。通用视频引擎免费。ffmpeg用�
 **输入**:
 ```json
 // 变体实现(与上文代码相似度100.0%,此处为AI视频导演的差异化处理路径)
-{"action": "lip_sync_video", "agent_id": "mengyao", "text": "嗨,今天想我了没?", "resolution": "480P", "scene": "咖啡厅"}
+", "resolution": "480P", "scene": "咖啡厅"}
 ```
 
 **执行流程**: 接收请求→验证agent_id→获取人设外观→生成人设图片→生成情感语音→提交口型同步→轮询等待(每30秒,超时600秒)→下载验证
@@ -401,7 +398,7 @@ TTS降级链最终方案为静默+字幕。通用视频引擎免费。ffmpeg用�
 {
   "success": true,
   "data": {
-    "video_url": "https://cdn.videostudio.com/output/lip_sync_mengyao_001.mp4",
+videostudio.com/output/lip_sync_mengyao_001.mp4",
     "duration": 12,
     "with_subtitle": false,
     "route_metadata": {
@@ -438,7 +435,7 @@ TTS降级链最终方案为静默+字幕。通用视频引擎免费。ffmpeg用�
 {
   "success": true,
   "data": {
-    "video_url": "https://cdn.videostudio.com/output/ai_tools_scene1_001.mp4",
+videostudio.com/output/ai_tools_scene1_001.mp4",
     "duration": 30,
     "with_subtitle": true,
     "route_metadata": {
@@ -474,7 +471,7 @@ TTS降级链最终方案为静默+字幕。通用视频引擎免费。ffmpeg用�
 {
   "success": true,
   "data": {
-    "video_url": "https://cdn.videostudio.com/output/workplace_tips_001.mp4",
+videostudio.com/output/workplace_tips_001.mp4",
     "duration": 44,
     "with_subtitle": true,
     "route_metadata": {
@@ -515,7 +512,7 @@ TTS降级链最终方案为静默+字幕。通用视频引擎免费。ffmpeg用�
 {
   "success": true,
   "data": {
-    "video_url": "https://cdn.videostudio.com/output/moisturizer_review_001.mp4",
+videostudio.com/output/moisturizer_review_001.mp4",
     "duration": 60,
     "with_subtitle": true,
     "route_metadata": {

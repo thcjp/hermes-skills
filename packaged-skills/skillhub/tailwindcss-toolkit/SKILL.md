@@ -77,8 +77,6 @@ category: "Automation"
 | v4 迁移 | 不支持 | 支持 | 版本升级 |
 | CI/CD | 不支持 | 集成规范 | 自动化 |
 
-**输入**: 用户提供免费版 vs 专业版对比所需的指令和必要参数.
-**输出**: 返回免费版 vs 专业版对比的处理结果,包含执行状态码、结果数据和执行日志.
 ### 实用类编写
 
 针对实用类编写,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
@@ -203,7 +201,6 @@ module.exports = plugin(function({ addComponents, theme }) {
       'background-color': theme('colors.brand.500'),
       'color': '#fff',
       '&:hover': {
-        'background-color': theme('colors.brand.600'),
       },
     },
     '.btn-secondary': {
@@ -211,12 +208,10 @@ module.exports = plugin(function({ addComponents, theme }) {
       'border': `1px solid ${theme('colors.gray.300')}`,
       'color': theme('colors.gray.700'),
       '&:hover': {
-        'background-color': theme('colors.gray.50'),
       },
     },
     '.card': {
       'background-color': '#fff',
-      'border-radius': theme('borderRadius.lg'),
       'box-shadow': theme('boxShadow.card'),
       'padding': theme('spacing.md'),
     },

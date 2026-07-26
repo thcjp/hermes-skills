@@ -97,7 +97,6 @@ ls .article/products/
 # ...
 # 写作时引用业务资料（最多5个）
 python3 write.py draft \
-  --input topic-card.md \
   --reference .article/products/product_a/intro.md \
   --reference .article/products/product_a/tutorial.md \
   -o draft.md
@@ -125,8 +124,6 @@ products_structure = """
 # 无相关文档 → 仅靠选题卡与合并配置写稿
 ```
 
-**处理**: 解析业务资料库集成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回业务资料库集成的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `业务资料库集成` 选项
 
@@ -152,12 +149,10 @@ python3 publish.py full \
   --publish
 ```
 
-**输入**: 用户提供完整发布流程所需的指令和必要参数。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `完整发布流程` 选项
 - 处理流程: 接收输入 -> 执行完整发布流程 -> 返回结果
 - 输入: 用户提供完整发布流程所需的参数和指令
-- 输出: 返回完整发布流程的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 4. 智能配图管理
 
@@ -182,7 +177,6 @@ user_image_config = {
 - 关键参数: `智能配图管理` 选项
 - 处理流程: 接收输入 -> 执行智能配图管理 -> 返回结果
 - 输入: 用户提供智能配图管理所需的参数和指令
-- 输出: 返回智能配图管理的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 5. 多草稿管理
 ```bash
@@ -199,8 +193,6 @@ drafts/
 │   └── draft.md
 ```
 
-**处理**: 解析多草稿管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回多草稿管理的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -221,7 +213,6 @@ ls .article/products/smart_speaker/
 # ...
 # 2. 使用DeepSeek模型写作，引用产品资料
 python3 write.py draft \
-  --input topic-card.md \
   --model deepseek \
   --reference .article/products/smart_speaker/intro.md \
   --reference .article/products/smart_speaker/features.md \
@@ -336,15 +327,13 @@ EOF
 # ...
 # 步骤2：生成初稿（引用业务资料）
 python3 write.py draft \
-  --input topic-card.md \
-  --reference .article/products/your_product/intro.md \
   -o draft.md
 # ...
 # 步骤3：审查与修正
-python3 write.py strip-citations draft.md -o article_temp.md
+python3 write.md -o article_temp.md
 # ...
 # 步骤4：发布
-python3 publish.py full --article article.md --method draft
+python3 publish.md --method draft
 ```
 
 #

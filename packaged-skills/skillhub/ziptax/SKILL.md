@@ -71,14 +71,14 @@ curl -s "https://api.zip-tax.com/request/v60?address=200+Spectrum+Center+Drive+I
 ### Postal Code Lookup
 
 ```bash
-curl -s "https://api.zip-tax.com/request/v60?postalcode=92618" \
+zip-tax.com/request/v60?postalcode=92618" \
   -H "X-API-KEY: $ZIPTAX_API_KEY"
 ```
 
 ### Lat/Lng Lookup
 
 ```bash
-curl -s "https://api.zip-tax.com/request/v60?lat=33.6525&lng=-117.7479" \
+zip-tax.com/request/v60?lat=33.6525&lng=-117.7479" \
   -H "X-API-KEY: $ZIPTAX_API_KEY"
 ```
 
@@ -182,21 +182,21 @@ export API_KEY="your_api_key_here"
 ### Address Lookup (most accurate)(补充)
 # ...
 ```bash
-curl -s "https://api.zip-tax.com/request/v60?address=200+Spectrum+Center+Drive+Irvine+CA+92618" \
+zip-tax.com/request/v60?address=200+Spectrum+Center+Drive+Irvine+CA+92618" \
   -H "X-API-KEY: $ZIPTAX_API_KEY"
 ```
 # ...
 ### Postal Code Lookup(补充)
 # ...
 ```bash
-curl -s "https://api.zip-tax.com/request/v60?postalcode=92618" \
+zip-tax.com/request/v60?postalcode=92618" \
   -H "X-API-KEY: $ZIPTAX_API_KEY"
 ```
 # ...
 ### Lat/Lng Lookup(补充)
 # ...
 ```bash
-curl -s "https://api.zip-tax.com/request/v60?lat=33.6525&lng=-117.7479" \
+zip-tax.com/request/v60?lat=33.6525&lng=-117.7479" \
   -H "X-API-KEY: $ZIPTAX_API_KEY"
 ```
 ```

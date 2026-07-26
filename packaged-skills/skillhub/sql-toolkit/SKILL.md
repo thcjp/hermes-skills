@@ -115,8 +115,8 @@ SELECT month, revenue, LAG(revenue) OVER (ORDER BY month) AS prev_revenue FROM m
 - 预估行数偏差大 → 执行 `ANALYZE tablename` 更新统计
 
 索引策略：单列索引、复合索引（等值过滤在前、范围过滤在后）、覆盖索引（`INCLUDE` 避免回表）、部分索引（`WHERE` 条件缩小体积）、GIN 索引（JSONB 查询）。SQLite 用 `EXPLAIN QUERY PLAN` 检查 SCAN vs SEARCH USING INDEX.
-**输入**: 用户提供Query Optimization（EXPLAIN 与索引策略）所需的指令和必要参数.
-**输出**: 返回Query Optimization（EXPLAIN 与索引策略）的处理结果,包含执行状态码、结果数据和执行日志。### Backup & Restore（备份与恢复）
+
+### Backup & Restore（备份与恢复）
 ```bash
 # PostgreSQL
 pg_dump -Fc -h localhost -U myuser mydb > backup.dump
@@ -131,8 +131,6 @@ mysqldump -h localhost -u root -p mydb > backup.sql
 mysql -h localhost -u root -p mydb < backup.sql
 ```
 
-**处理**: 解析Backup & Restore（备份与恢复）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Backup & Restore（备份与恢复）的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 示例
 

@@ -165,7 +165,7 @@ bash background:true command:"node {baseDir}/timer-chain.js --config escalation.
 工作流需要按顺序执行：准备 5 分钟 → 工作 25 分钟 → 总结 5 分钟 → 休息 10 分钟。前一个完成后自动启动下一个.
 ```bash
 # 定时器链
-bash background:true command:"node {baseDir}/timer-chain.js --config workflow.json"
+js --config workflow.json"
 ```
 
 ```json
@@ -220,10 +220,10 @@ schedule_config = {
 
 ```bash
 # 每 15 分钟提醒一次
-bash background:true command:"node {baseDir}/timer-loop.js --interval 15m --message '站起来活动一下！'"
+js --interval 15m --message '站起来活动一下！'"
 # ...
 # 工作日每小时提醒
-bash background:true command:"node {baseDir}/timer-loop.js --interval 1h --message '整点检查' --weekdays-only"
+js --interval 1h --message '整点检查' --weekdays-only"
 ```
 
 ### 使用流程(补充)
@@ -231,8 +231,8 @@ bash background:true command:"node {baseDir}/timer-loop.js --interval 1h --messa
 ```bash
 # 使用预设模板
 bash background:true command:"node {baseDir}/timer-template.js --template pomodoro"
-bash background:true command:"node {baseDir}/timer-template.js --template standup"
-bash background:true command:"node {baseDir}/timer-template.js --template break-reminder"
+js --template standup"
+js --template break-reminder"
 ```
 
 ### 监控面板

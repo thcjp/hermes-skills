@@ -1,9 +1,8 @@
----
-slug: "git-workflow-cn"
+---slug: "git-workflow-cn"
 name: "git-workflow-cn"
 version: 1.1.1
 displayName: "Git工作流"
-summary: "Git 工作流助手 - 分支管理、冲突解决、提交规范。适合：开发者、团队协作。。Git 工作流助手 - 分支管理、冲突解决、提交规范。适合：开发者、团队协作。Use when 需要代码生成、"
+summary: "Git 工作流助手 -"
 summary_zh: "Git 工作流助手 - 分支管理、冲突解决、提交规范。适合：开发者、团队协作。。Git 工作流助手 - 分支管理、冲突解决、提交规范。适合：开发者、团队协作。Use when 需要代码生成、"
 license: "MIT"
 description: |-
@@ -23,9 +22,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Development"
----
-# Git Workflow Cn
+category: "Development"---# Git Workflow Cn
 
 ## 付费版专享能力
 
@@ -327,8 +324,6 @@ git gc --prune=now --aggressive
 1. 确认运行环境满足依赖说明中的要求
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
-
-> 详细的输入输出格式请参考下方章节说明。
 
 创建：2026-03-12
 版本：1.0

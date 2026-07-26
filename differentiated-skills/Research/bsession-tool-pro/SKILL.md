@@ -52,22 +52,18 @@ category: "Knowledge"
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供定时任务（recurring循环执行）所需的指令和必要参数.
 **处理**: 解析定时任务（recurring循环执行）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时任务（recurring循环执行）的响应数据,包含状态码、结果和日志.
 ### 2. 会话持久化（保存为可复用脚本）
 
-**输入**: 用户提供会话持久化（保存为可复用脚本）所需的指令和必要参数.
 **处理**: 解析会话持久化（保存为可复用脚本）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回会话持久化（保存为可复用脚本）的响应数据,包含状态码、结果和日志.
 ### 3. Webhook通知（多渠道）
 
-**输入**: 用户提供Webhook通知（多渠道）所需的指令和必要参数.
 **处理**: 解析Webhook通知（多渠道）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Webhook通知（多渠道）的响应数据,包含状态码、结果和日志.
 ### 4. 批量会话管理
 
-**输入**: 用户提供批量会话管理所需的指令和必要参数.
 **处理**: 解析批量会话管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量会话管理的响应数据,包含状态码、结果和日志.
 ### 5. 企业级监控告警
@@ -115,14 +111,13 @@ class SessionMonitor:
                 if health["status"] != "healthy":
                     self.failure_counts[name] = self.failure_counts.get(name, 0) + 1
                     if self.failure_counts[name] >= self.max_failures:
-                        self.notifier.notify(
                             "slack-alerts",
                             "会话异常告警",
                             f"会话 {name} 连续失败 {self.failure_counts[name]} 次\n状态：{health.get('status')}\n详情：{health.get('error', '')[:200]}"
                         )
-                        self._restart_session(name)
+_restart_session(name)
                 else:
-                    self.failure_counts[name] = 0
+failure_counts[name] = 0
 # ...
             time.sleep(self.check_interval)
 # ...
@@ -141,7 +136,6 @@ monitor = SessionMonitor(check_interval=300, max_failures=3)
 monitor.notifier.register("slack-alerts", "https://hooks.slack.com/services/xxx", "slack")
 ```
 
-**输入**: 用户提供企业级监控告警所需的指令和必要参数.
 **处理**: 解析企业级监控告警的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回企业级监控告警的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级浏览器会话、含定时任务、批量会话管理与监、浏览器会话助手专、业版是面向企业级、场景的完整浏览器、会话管理工具、在免费版单次抓取、能力之上、新增定时任务、Cloudflare、自动绕过、会话调试增强七大、高级能力、Use、when、需要项目管理、任务规划、进度跟踪、团队协作时使用、不适用于实际人员、绩效评估等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -224,7 +218,6 @@ def run():
 # ...
     urls = [
         "https://example.com/page1",
-        "https://example.com/page2",
     ]
 # ...
     for url in urls:
@@ -386,8 +379,6 @@ manager = BatchSessionManager(max_workers=3)
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

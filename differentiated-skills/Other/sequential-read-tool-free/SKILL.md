@@ -66,35 +66,35 @@ category: "Automation"
 ### 1. 分段顺序阅读
 
 将长文按自然段落或字数分段,逐段顺序阅读,确保不遗漏内容.
-**输入**: 用户提供分段顺序阅读所需的指令和必要参数.
+
 **处理**: 解析分段顺序阅读的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回分段顺序阅读的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 2. 结构化反思
 
 每段阅读后生成结构化反思:核心观点、关键概念、疑问点、与已有知识的联系.
-**输入**: 用户提供结构化反思所需的指令和必要参数.
+
 **处理**: 解析结构化反思的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结构化反思的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 3. 进度追踪
 
 记录阅读进度,支持中断后继续阅读.
-**输入**: 用户提供进度追踪所需的指令和必要参数.
+
 **处理**: 解析进度追踪的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回进度追踪的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 4. 关键概念提取
 
 自动提取文章中的关键概念与术语,生成词汇表.
-**输入**: 用户提供关键概念提取所需的指令和必要参数.
+
 **处理**: 解析关键概念提取的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回关键概念提取的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 5. 本地笔记保存
 
 反思笔记保存为 Markdown 文件,便于后续查阅与整理.
-**输入**: 用户提供本地笔记保存所需的指令和必要参数.
+
 **处理**: 解析本地笔记保存的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回本地笔记保存的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
@@ -138,7 +138,6 @@ python3 sequential_read.py \
 逐节阅读技术文档,确保理解每个部分.
 ```bash
 # 按章节分段
-python3 sequential_read.py \
   --input api-docs.md \
   --segment-by heading \
   --output notes/api_docs_notes.md \
@@ -159,7 +158,6 @@ python3 sequential_read.py \
 阅读书籍章节,生成讨论要点.
 ```bash
 # 阅读书籍章节
-python3 sequential_read.py \
   --input chapter1.txt \
   --segment-by paragraph \
   --max-chars 500 \
@@ -186,14 +184,12 @@ python3 sequential_read.py \
 
 ```bash
 # 依赖说明
-python3 sequential_read.py --help
 ```
 
 ### 开始第一次阅读
 
 ```bash
 # 顺序阅读文本文件
-python3 sequential_read.py \
   --input article.txt \
   --segment-by paragraph \
   --output notes/article_notes.md \
@@ -204,10 +200,9 @@ python3 sequential_read.py \
 
 ```bash
 # 查看阅读进度
-python3 sequential_read.py --progress notes/article_notes.md
+py --progress notes/article_notes.md
 # ...
 # 从断点继续
-python3 sequential_read.py \
   --input article.txt \
   --resume notes/article_notes.md
 ```
@@ -328,8 +323,6 @@ A: 调整 `--max-chars` 参数增大每段字数,或使用 `--segment-by heading
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

@@ -1,10 +1,8 @@
----
-
-slug: "mongodb-atlas-admin-free"
+---slug: "mongodb-atlas-admin-free"
 name: "mongodb-atlas-admin-free"
 version: "1.0.0"
 displayName: "文档数据库管理(免费版)"
-summary: "通过API浏览和调用文档数据库云管理平台，支持目录浏览、端点详情和实时调用(免费版)。通过API浏览和调用文档数据库云管理平台。支持API目录浏览、端点详情获取、 Schema定义查询和实时"
+summary: "通过API浏览和调用文"
 summary_zh: "通过API浏览和调用文档数据库云管理平台，支持目录浏览、端点详情和实时调用(免费版)。通过API浏览和调用文档数据库云管理平台。支持API目录浏览、端点详情获取、 Schema定义查询和实时"
 license: "MIT"
 description: |-
@@ -26,10 +24,7 @@ tags:
   - 请参考
   - 目录中的
 category: "Automation"
-
----
-
-# 文档数据库云管理平台(免费版)
+---# 文档数据库云管理平台(免费版)
 
 通过API浏览和调用文档数据库云管理平台的管理接口.
 ## 输入格式
@@ -48,8 +43,6 @@ category: "Automation"
 node （请参考skill目录中的脚本文件） catalog
 ```
 
-**处理**: 解析API目录浏览的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回API目录浏览的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. 端点详情获取
 通过 `atlas-api.mjs detail` 查看特定端点的详细信息，包括HTTP方法、路径参数、请求体Schema和响应格式.
 ```bash

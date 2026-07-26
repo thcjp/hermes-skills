@@ -62,17 +62,12 @@ category: "Communication"
 创建和管理可复用的样式预设,团队共享统一的消息风格.
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供自定义样式预设所需的指令和必要参数.
-**处理**: 解析自定义样式预设的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 2. 批量格式转换
 支持文件级和目录级的批量格式转换,大幅提升运营效率.
-**输入**: 用户提供批量格式转换所需的指令和必要参数.
-**输出**: 返回批量格式转换的处理结果,包含执行状态码、结果数据和执行日志.
+
 ### 3. 多平台格式适配
 将同一内容自动适配为不同平台的消息格式.
-**输入**: 用户提供多平台格式适配所需的指令和必要参数.
-**处理**: 解析多平台格式适配的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回多平台格式适配的处理结果,包含执行状态码、结果数据和执行日志.
+
 ### 4. 团队样式规范
 定义团队统一的消息样式规范,自动校验消息一致性.
 ```python
@@ -104,9 +99,8 @@ class TeamStyleGuide:
                     "message": rule["message"]
                 })
 # ...
-        for rule in self.rules["required_elements"]:
+rules["required_elements"]:
             if not re.search(rule["pattern"], message):
-                violations.append({
                     "rule": rule["name"],
                     "severity": "warning",
                     "message": f"缺少必需元素: {rule['description']}"

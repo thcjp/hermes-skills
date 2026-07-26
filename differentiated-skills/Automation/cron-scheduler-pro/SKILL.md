@@ -162,7 +162,6 @@ def write_jobs(jobs_data):
             tmp.write_text(json.dumps(jobs_data, indent=2))
             tmp.replace(CRON_DIR / "jobs.json")
         finally:
-            fcntl.flock(lock_file, fcntl.LOCK_UN)
 ```
 
 **单步创建原则**：所有属性在 `add_job` 时一次传入，禁止"先 add 再 update"两步操作.
@@ -228,7 +227,6 @@ python3 tools/cron/stats.py
 
 ```bash
 # 替代每 30 分钟心跳检查收件箱
-python3 tools/cron/add_job.py \
   --name "inbox-check" --type interval --every "2h" \
   --task "检查收件箱并汇总"
 # ...
@@ -239,7 +237,6 @@ python3 tools/cron/next_run.py --due-only
 ### 场景 B：精确一次性提醒
 
 ```bash
-python3 tools/cron/add_job.py \
   --name "meeting-reminder" \
   --type once \
   --at "2026-07-18T15:25:00+08:00" \
@@ -250,7 +247,6 @@ python3 tools/cron/add_job.py \
 ### 场景 C：日报生成
 
 ```bash
-python3 tools/cron/add_job.py \
   --name "daily-report" \
   --type daily \
   --time "18:00" \
@@ -261,7 +257,6 @@ python3 tools/cron/add_job.py \
 ### 场景 D：健康检查带熔断
 
 ```bash
-python3 tools/cron/add_job.py \
   --name "api-health" \
   --type interval \
   --every "5m" \
@@ -348,21 +343,21 @@ A：复制整个 `cron/` 目录即可。时区信息在 `MEMORY.md`，一并复�
 
 ### 核心功能执行
 执行核心功能执行操作,使用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 执行参数配置与调用操作,使用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 扩展能力3
 执行扩展能力3操作,使用`param_3`参数进行配置.
-**输入**: 用户提供扩展能力3所需的指令和必要参数.
+
 **处理**: 解析扩展能力3的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回扩展能力3的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`param_3`参数,支持创建/查询/修改操作

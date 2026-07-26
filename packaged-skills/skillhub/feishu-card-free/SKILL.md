@@ -74,12 +74,9 @@ export API_KEY="your_api_key_here"
 
 ### 1. 简单文本卡片
 通过 `node skills/feishu-card/send.js --target "ou_..." --text "Hello World"` 发送简单文本卡片。`--target` 参数接受用户Open ID（`ou_` 前缀）或群组Chat ID（`oc_` 前缀）。适用于不含特殊字符的简单消息推送场景.
-**输出**: 返回简单文本卡片的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. 卡片标题和颜色
 通过 `--title <string>` 设置卡片头部标题，`--color <string>` 设置头部颜色。支持6种颜色：`blue`（默认）、`red`、`orange`、`green`、`purple`、`grey`。适用于按消息类型区分卡片视觉样式.
-**输入**: 用户提供卡片标题和颜色所需的指令和必要参数.
-**处理**: 解析卡片标题和颜色的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回卡片标题和颜色的处理结果,包含执行状态码、结果数据和执行日志.
+
 ### 3. 安全发送
 
 通过 `node skills/feishu-card/send_safe.js` 包装器安全发送原始文本。自动处理临时文件创建和清理，避免shell转义问题。支持 `--text` 直接传入含特殊字符的内容，配合 `--title` 设置卡片标题。适用于自动化流程中的安全消息发送。- 验证返回数据的完整性和格式正确性
@@ -145,7 +142,7 @@ node skills/feishu-card/send_safe.js \
 | `--text` 中反引号消失 | Shell将反引号解释为命令替换 | 使用 `send_safe.js` 包装器自动处理转义 |
 | 目标ID格式错误 | 传入的ID不以 `ou_` 或 `oc_` 开头 | 确认Open ID格式为 `ou_` 前缀，群组Chat ID为 `oc_` 前缀 |
 | 颜色参数无效 | 传入了不在支持列表中的颜色 | 使用6种有效颜色之一：`blue`/`red`/`orange`/`green`/`purple`/`grey` |
-| 依赖缺失 | 未安装 `feishu-common` | 先安装 `feishu-common`，确保 `../feishu-common/index.js` 可访问 |
+| 依赖缺失 | 未安装 `feishu-common` | 先安装 `feishu-common`，确保 `..js` 可访问 |
 | 请求Markdown功能 | 免费版不支持 `--text-file` | 升级至完整版以使用Markdown复杂卡片功能 |
 | 请求按钮组件 | 免费版不支持 `--button-text`/`--button-url` | 升级至完整版以使用按钮组件功能 |
 | 请求图片嵌入 | 免费版不支持 `--image-path` | 升级至完整版以使用图片嵌入功能 |

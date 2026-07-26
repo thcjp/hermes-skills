@@ -81,24 +81,18 @@ export API_KEY="your_api_key_here"
 - 工作项字段:title、description、priority、estimate、assignee、labels、state、project、cycle
 - 优先级数值:0=紧急、1=高、2=中、3=低、4=无(对应 priorityUrgent 到 priorityNone)
 
-**输入**: 用户提供工作项管理所需的指令和必要参数.
-**处理**: 解析工作项管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 2. 项目管理
 - `createProject` 创建项目:含 name、description、teamIds
 - `updateProject` 更新项目状态:planned、started、paused、completed、canceled
 - `projectIssues` 查询项目下所有工作项
 - 项目作为跨周期的工作容器,工作项可关联到项目
 
-**输入**: 用户提供项目管理所需的指令和必要参数.
-**处理**: 解析项目管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 3. 团队管理
 - `teams` 查询所有团队:含 id、name、key
 - `team` 查询单个团队详情:含 workflow、states、labels
 - 工作项必须归属于一个团队,teamId 是创建工作项的必填字段
 - 团队 key 作为工作项标识前缀(如 ENG-123)
 
-**输入**: 用户提供团队管理所需的指令和必要参数.
-**处理**: 解析团队管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 4. 周期管理
 - `createCycle` 创建周期:含 name、startsAt、endsAt、teamId
 - 标准周期14天,可自定义
@@ -106,54 +100,40 @@ export API_KEY="your_api_key_here"
 - 周期状态:active、upcoming、past,过去周期不可添加工作项
 - `updateIssue` 的 cycleId 字段将工作项加入周期
 
-**输入**: 用户提供周期管理所需的指令和必要参数.
-**处理**: 解析周期管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 5. 标签管理
 - `createLabel` 创建标签:含 name、color、teamId
 - `updateIssue` 的 labelIds 字段为工作项添加标签
 - 标签用于分类筛选:bug、feature、tech-debt、customer-request
 - 标签颜色用十六进制(如 `#E5484D` 表示红色)
 
-**处理**: 解析标签管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 6. 评论管理
 - `createComment` 创建评论:含 body、issueId
 - `updateComment` 编辑评论,`deleteComment` 删除评论
 - 评论支持 Markdown 格式
 - `issueComments` 查询工作项所有评论
 
-**输入**: 用户提供评论管理所需的指令和必要参数.
-**处理**: 解析评论管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 7. 工作项关联
 - `issueRelation` 建立关联:type=blocks、is blocked by、relates to、duplicate
 - 关联方向有向:blocks 表示 A 阻塞 B
 - `issueRelations` 查询工作项的所有关联
 
-**输入**: 用户提供工作项关联所需的指令和必要参数.
-**处理**: 解析工作项关联的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回工作项关联的处理结果,包含执行状态码、结果数据和执行日志.
 ### 8. 工作流状态
 - `teamWorkflow` 查询团队工作流:含 states 与 transitions
 - 默认状态:Backlog、Triage、Todo、In Progress、In Review、Done、Canceled
 - `updateIssue` 的 stateId 字段转换状态
 - 状态类型:backlog、unstarted、started、completed、canceled
 
-**输入**: 用户提供工作流状态所需的指令和必要参数.
-**输出**: 返回工作流状态的处理结果,包含执行状态码、结果数据和执行日志.
 ### 9. 自定义视图
 - `createView` 创建视图:含 name、query、filters
 - 视图查询语法:`status = "In Progress" AND priority = 1`
 - `views` 查询所有视图,`viewIssues` 获取视图内工作项
 
-**输入**: 用户提供自定义视图所需的指令和必要参数.
-**处理**: 解析自定义视图的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 10. GraphQL查询构造
 - 查询用 `query` 关键字,变更用 `mutation`
 - 字段选择:只查询需要的字段,减少响应体积
 - 分页:用 `first`、`after` 参数,默认 first 50
 - 变量:用 `$variable` 参数化,避免字符串拼接
 
-**处理**: 解析GraphQL查询构造的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回GraphQL查询构造的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 

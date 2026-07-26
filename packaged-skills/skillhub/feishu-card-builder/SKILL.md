@@ -56,7 +56,6 @@ category: "Creative"
 - **速率控制**: 可配置发送速率与并发
 - **失败重试**: 自动重试失败目标
 
-**输出**: 返回批量推送引擎的处理结果,包含执行状态码、结果数据和执行日志.
 ### 卡片模板系统
 - **内置模板**: 通知、报告、审批、邀请、告警等企业常用模板
 - **自定义模板**: 创建、编辑、删除自定义模板
@@ -65,8 +64,7 @@ category: "Creative"
 - **模板预览**: 渲染效果实时预览
 - **版本管理**: 模板版本控制与回滚
 
-**输入**: 用户提供卡片模板系统所需的指令和必要参数.
-**处理**: 解析卡片模板系统的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 高级交互组件
+### 高级交互组件
 - **表单组件**: 输入框、文本域、选择器
 - **多按钮组**: 多个操作按钮排列
 - **分栏布局**: 多列内容布局
@@ -74,15 +72,13 @@ category: "Creative"
 - **备注组件**: 折叠展开内容
 - **数据表格**: 结构化数据展示
 
-**处理**: 解析高级交互组件的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回高级交互组件的处理结果,包含执行状态码、结果数据和执行日志。### 数据动态绑定
+### 数据动态绑定
 - **JSON 数据源**: 从 JSON 文件自动填充卡片内容
 - **API 数据源**: 从外部 API 获取数据填充
 - **数据映射**: 字段映射与转换
 - **条件显示**: 根据数据动态显示/隐藏组件
 
-**输入**: 用户提供数据动态绑定所需的指令和必要参数.
-**输出**: 返回数据动态绑定的处理结果,包含执行状态码、结果数据和执行日志。### 发送分析
+### 发送分析
 - **送达统计**: 成功/失败/已读统计
 - **阅读追踪**: 卡片打开率追踪
 - **按钮点击**: 按钮点击统计
@@ -161,9 +157,6 @@ node skills/feishu-card-builder/batch-send.js \
   --dry-run
 # ...
 # 正式发送
-node skills/feishu-card-builder/batch-send.js \
-  --recipients employees.csv \
-  --template templates/salary_card.json \
   --rate-limit 20 \
   --log batch_send.log
 ```
@@ -196,10 +189,9 @@ node skills/feishu-card-builder/schedule.js create \
   --timezone "Asia/Shanghai"
 # ...
 # 查看定时任务
-node skills/feishu-card-builder/schedule.js list
 # ...
 # 查看任务历史
-node skills/feishu-card-builder/schedule.js history --name "daily-monitor-report"
+js history --name "daily-monitor-report"
 ```
 
 ### 场景三：交互式审批卡片
@@ -249,8 +241,8 @@ node skills/feishu-card-builder/send.js --target "ou_详情见说明" --text "He
 node skills/feishu-card-builder/send_safe.js --target "ou_详情见说明" --text "内容" --title "通知"
 # ...
 # 专业版新增命令
-node skills/feishu-card-builder/batch-send.js --recipients list.csv --template tpl.json
-node skills/feishu-card-builder/interactive-send.js --target "ou_详情见说明" --template tpl.json
+js --recipients list.csv --template tpl.json
+js --target "ou_详情见说明" --template tpl.json
 ```
 
 ### 配置模板系统
@@ -413,7 +405,6 @@ node skills/feishu-card-builder/interactive-send.js --target "ou_详情见说明
 **解决**: 降低发送速率，飞书 API 有频率限制：
 
 ```bash
-node skills/feishu-card-builder/batch-send.js \
   --recipients list.csv --template tpl.json --rate-limit 10
 ```
 
@@ -433,15 +424,14 @@ node skills/feishu-card-builder/template.js validate --name "通知" --data samp
 node skills/feishu-card-builder/interactive.js test-callback
 # ...
 # 查看回调日志
-node skills/feishu-card-builder/interactive.js callback-log
 ```
 
 ### 问题4：定时任务未执行
 **解决**: 检查 cron 表达式与时区：
 
 ```bash
-node skills/feishu-card-builder/schedule.js validate --cron "0 9 * * 1-5"
-node skills/feishu-card-builder/schedule.js status --name "daily-report"
+js validate --cron "0 9 * * 1-5"
+js status --name "daily-report"
 ```
 
 ### 问题5：卡片内容超长

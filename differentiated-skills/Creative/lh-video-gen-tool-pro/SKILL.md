@@ -72,7 +72,6 @@ python3 batch_generate.py \
   --auto-optimize
 ```
 
-**输入**: 用户提供批量视频生成所需的指令和必要参数.
 **处理**: 解析批量视频生成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量视频生成的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -117,7 +116,6 @@ templates:
     animation: "type_writer"
 ```
 
-**输入**: 用户提供多模板系统所需的指令和必要参数.
 **处理**: 解析多模板系统的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多模板系统的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -150,7 +148,6 @@ multilingual_config = {
 }
 ```
 
-**输入**: 用户提供多语言与多音色所需的指令和必要参数.
 **处理**: 解析多语言与多音色的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多语言与多音色的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -185,7 +182,6 @@ brand_assets = {
 }
 ```
 
-**输入**: 用户提供品牌资产管理所需的指令和必要参数.
 **处理**: 解析品牌资产管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回品牌资产管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -204,7 +200,6 @@ quality_checks = {
 }
 ```
 
-**输入**: 用户提供视频质量审计所需的指令和必要参数.
 **处理**: 解析视频质量审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回视频质量审计的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级竖版短视频、批量生成系统、支持多模板、批量处理、品牌定制与、适合团队与商业项、短视频生成专业版、为企业与内容团队、提供系统化的竖版、短视频生产解决方、在免费版单视频生、成能力之上、增加批量生成、团队协作与自动化、工作流能力、Use、when、需要提升效率、自动化流程、工作流优化时使用、不适用于需要人工、创意判断的任务、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -241,7 +236,6 @@ for account in mcn_pipeline["accounts"]:
 需求:电商平台需要为100个商品生成介绍视频.
 ```bash
 # 批量生成商品视频
-python3 batch_generate.py \
   --tasks products.csv \
   --parallel 8 \
   --template brand \
@@ -313,7 +307,6 @@ EOF
 ### Step 3:执行批量生成
 
 ```bash
-python3 batch_generate.py \
   --tasks tasks.json \
   --parallel 4 \
   --quality-check \
@@ -382,7 +375,6 @@ jobs:
         run: sudo apt install ffmpeg
       - name: Batch Generate Videos
         run: |
-          python3 batch_generate.py \
             --tasks tasks.json \
             --parallel 4 \
             --output ./output/ \
@@ -445,7 +437,7 @@ A: PRO版完全兼容免费版。现有Markdown脚本格式与命令行参数可
 A: PRO版支持失败重试机制。失败的记录会保存到`failed-tasks.json`,可单独重试:
 
 ```bash
-python3 batch_generate.py --retry failed-tasks.json
+py --retry failed-tasks.json
 ```
 
 ### Q3: GPU加速如何启用?

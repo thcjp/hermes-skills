@@ -68,7 +68,6 @@ PRO版支持四种会议模式,适应不同场景需求:
   --context "企业销售会议,产品演示..."
 ```
 
-**输入**: 用户提供多模式会议接入所需的指令和必要参数.
 **处理**: 解析多模式会议接入的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多模式会议接入的响应数据,包含状态码、结果和日志.
 ### 协作式语音策略
@@ -94,7 +93,6 @@ collaborative_config = {
 3. 语音智能层 -> 在自然停顿处播报结果
 4. 参会者追问 -> 基于上下文即时回答
 
-**输入**: 用户提供协作式语音策略所需的指令和必要参数.
 **处理**: 解析协作式语音策略的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回协作式语音策略的响应数据,包含状态码、结果和日志.
 ### 屏幕共享与实时演示
@@ -105,13 +103,12 @@ collaborative_config = {
 {"command": "screenshare.start", "port": 3001}
 # ...
 # 共享在线URL
-{"command": "screenshare.start", "url": "https://slides.example.com/..."}
+start", "url": "https://slides.example.com/..."}
 # ...
 # 切换共享内容(无缝切换)
-{"command": "screenshare.swap", "port": 3002}
+swap", "port": 3002}
 # ...
 # 停止共享
-{"command": "screenshare.stop"}
 ```
 
 **实时内容更新模式**:
@@ -128,12 +125,10 @@ with open("/tmp/screenshare/state.json", "w") as f:
 # 会议中切换幻灯片
 state["slide"] = 1
 state["title"] = "市场分析"
-with open("/tmp/screenshare/state.json", "w") as f:
     json.dump(state, f)
 # 页面每2秒轮询,自动更新显示
 ```
 
-**输入**: 用户提供屏幕共享与实时演示所需的指令和必要参数.
 **处理**: 解析屏幕共享与实时演示的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回屏幕共享与实时演示的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -144,9 +139,9 @@ with open("/tmp/screenshare/state.json", "w") as f:
 # 批量调度多个会议
 meetings = [
     {"url": "https://meet.google.com/aaa", "time": "09:00", "topic": "晨会"},
-    {"url": "https://meet.google.com/bbb", "time": "11:00", "topic": "客户演示"},
-    {"url": "https://meet.google.com/ccc", "time": "14:00", "topic": "项目评审"},
-    {"url": "https://meet.google.com/ddd", "time": "16:00", "topic": "周总结"}
+google.com/bbb", "time": "11:00", "topic": "客户演示"},
+google.com/ccc", "time": "14:00", "topic": "项目评审"},
+google.com/ddd", "time": "16:00", "topic": "周总结"}
 ]
 # ...
 scheduler = MeetingScheduler(
@@ -163,7 +158,6 @@ for meeting in meetings:
 scheduler.run()  # 按计划执行
 ```
 
-**输入**: 用户提供批量会议调度所需的指令和必要参数.
 **处理**: 解析批量会议调度的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量会议调度的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -197,7 +191,6 @@ teams = {
 }
 ```
 
-**输入**: 用户提供团队管理与多租户所需的指令和必要参数.
 **处理**: 解析团队管理与多租户的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回团队管理与多租户的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、会议机器人、支持可视化头像、屏幕共享、实时协作、批量会议与团队管、适合企业与团队场、会议助手专业版为、企业与团队提供全、方位的智能会议机、器人解决方案、在免费版语音会议、能力之上、增加可视化头像、实时网页协作、多种语音策略、批量会议调度与团、队管理能力、Use、when、模型调用、智能对话、Agent、LLM、应用时使用、不适用于需要、确定性的关键决策、适用于独立开发者、企业团队和自动化、工作流场景等.
@@ -210,7 +203,7 @@ teams = {
 需求:销售团队需要机器人辅助产品演示,实时展示幻灯片并回答客户问题.
 ```bash
 # 启动销售演示会议
-（请参考skill目录中的脚本文件） "https://meet.google.com/sales-demo" \
+google.com/sales-demo" \
   --mode webpage-av-screenshare \
   --bot-name "产品专家" \
   --template pattern \

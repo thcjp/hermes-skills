@@ -306,7 +306,6 @@ AI搜索时代品牌霸屏利器,通过5维GEO评分+JSON-LD结构化数据注�
       "content_quality": 70
     },
     "json_ld": {
-      "@context": "https://schema.org",
       "@type": "Article",
       "headline": "AI编程启蒙第3课",
       "author": {"@type": "Person", "name": "编程教育团队"},
@@ -314,9 +313,9 @@ AI搜索时代品牌霸屏利器,通过5维GEO评分+JSON-LD结构化数据注�
       "description": "AI编程启蒙课程介绍,面向6-12岁少儿,通过Scratch图形化编程入门"
     },
     "faq_schema": [
-      {"question": "什么是AI编程启蒙?", "answer": "AI编程启蒙是面向6-12岁少儿的编程入门课程,通过Scratch图形化编程培养计算思维"},
-      {"question": "适合什么年龄段?", "answer": "适合6-12岁少儿,零基础即可开始"},
-      {"question": "需要什么基础?", "answer": "零基础即可开始,课程从Scratch图形化编程入门"}
+", "answer": "AI编程启蒙是面向6-12岁少儿的编程入门课程,通过Scratch图形化编程培养计算思维"},
+", "answer": "适合6-12岁少儿,零基础即可开始"},
+", "answer": "零基础即可开始,课程从Scratch图形化编程入门"}
     ],
     "llms_txt": "本文介绍AI编程启蒙第3课的核心内容,涵盖Scratch图形化编程入门,面向6-12岁少儿,培养计算思维和创造力。课程分12节,每节45分钟。",
     "retry_count": 0,
@@ -358,7 +357,6 @@ AI搜索时代品牌霸屏利器,通过5维GEO评分+JSON-LD结构化数据注�
       "content_quality": 78
     },
     "json_ld": {
-      "@context": "https://schema.org",
       "@type": "HowTo",
       "name": "Scratch动画制作教程",
       "step": [
@@ -439,7 +437,7 @@ AI搜索时代品牌霸屏利器,通过5维GEO评分+JSON-LD结构化数据注�
 {
   "success": true,
   "data": {
-    "optimized_content": "<script type=\"application/ld+json\">\n{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"AI编程启蒙第3课:Python变量与数据类型详解\",\"author\":{\"@type\":\"Person\",\"name\":\"AI编程教研室\"},\"datePublished\":\"2026-07-20\",\"description\":\"本节课学习Python变量与数据类型,涵盖int、float、str、bool四种核心数据类型\"}\n</script>\n\nAI编程启蒙第3课:本节课学习Python变量与数据类型。变量是存储数据的容器,Python中常用数据类型包括整数(int)、浮点数(float)、字符串(str)和布尔值(bool)...",
+    "optimized_content": "<script type=\"application/ld+json\">\n{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"AI编程启蒙第3课:Python变量与数据类型详解\",\"author\":{\"@type\":\"Person\",\"name\":\"AI编程教研室\"},\"datePublished\":\"2026-07-20\",\"description\":\"本节课学习Python变量与数据类型,涵盖int、float、str、bool四种核心数据类型\"}\n</script>\n\nAI编程启蒙第3课:本节课学习Python变量与数据类型。..",
     "geo_score": 72,
     "score_details": {
       "structured_data": 80,
@@ -449,7 +447,6 @@ AI搜索时代品牌霸屏利器,通过5维GEO评分+JSON-LD结构化数据注�
       "content_quality": 70
     },
     "json_ld": {
-      "@context": "https://schema.org",
       "@type": "Article",
       "headline": "AI编程启蒙第3课:Python变量与数据类型详解",
       "author": {"@type": "Person", "name": "AI编程教研室"},
@@ -532,7 +529,8 @@ AI搜索时代品牌霸屏利器,通过5维GEO评分+JSON-LD结构化数据注�
 {
   "success": true,
   "data": {
-    "optimized_content": "<script type=\"application/ld+json\">\n{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Python入门教程\",\"author\":{\"@type\":\"Person\",\"name\":\"编程教育团队\"},\"datePublished\":\"2026-07-20\"}\n</script>\n\nPython入门教程\n\nPython是一门简单易学、功能强大的编程语言,广泛应用于数据分析、人工智能、Web开发等领域。本教程将带你从零开始学习Python编程。\n\n## 一、Python简介\nPython由Guido van Rossum于1991年创建,以简洁优雅的语法著称。它可以用来做很多事情:数据分析、机器学习、网站开发、自动化脚本等。学习Python很简单,适合零基础入门。\n\n## 二、为什么学Python?\n- 语法简洁:接近自然语言,易读易写\n- 生态丰富:大量第三方库可直接使用\n- 应用广泛:从Web到AI,全覆盖\n- 社区活跃:遇到问题容易找到解决方案\n\n### FAQ\nQ: Python适合零基础吗?\nA: 适合,Python语法简洁,是零基础入门编程的最佳选择之一。",
+org\",\"@type\":\"Article\",\"headline\":\"Python入门教程\",\"author\":{\"@type\":\"Person\",\"name\":\"编程教育团队\"},\"datePublished\":\"2026-07-20\"}\n</script>\n\nPython入门教程\n\nPython是一门简单易学、功能强大的编程语言,广泛应用于数据分析、人工智能、Web开发等领域。本教程将带你从零开始学习Python编程。\n\n## 一、Python简介\nPython由Guido van Rossum于1991年创建,以简洁优雅的语法著称。它可以用来做很多事情:数据分析、机器学习、网站开发、自动化脚本等。学习Python很简单,适合零基础入门。\n\n## 二、为什么学Python?\n- 语法简洁:接近自然语言,易读易写\n- 生态丰富:大量第三方库可直接使用\n- 应用广泛:从Web到AI,全覆盖\n- 社区活跃:遇到问题容易找到解决方案\n\n
+### FAQ\nQ: Python适合零基础吗?\nA: 适合,Python语法简洁,是零基础入门编程的最佳选择之一。",
     "geo_score": 65,
     "score_details": {
       "structured_data": 80,
@@ -542,7 +540,6 @@ AI搜索时代品牌霸屏利器,通过5维GEO评分+JSON-LD结构化数据注�
       "content_quality": 60
     },
     "json_ld": {
-      "@context": "https://schema.org",
       "@type": "Article",
       "headline": "Python入门教程",
       "author": {"@type": "Person", "name": "编程教育团队"},
@@ -583,7 +580,7 @@ AI搜索时代品牌霸屏利器,通过5维GEO评分+JSON-LD结构化数据注�
 {
   "success": true,
   "data": {
-    "optimized_content": "<script type=\"application/ld+json\">\n{\"@context\":\"https://schema.org\",\"@type\":\"HowTo\",\"name\":\"Python网页爬虫教程:4步搞定数据抓取\",\"author\":{\"@type\":\"Person\",\"name\":\"技术教程团队\"},\"datePublished\":\"2026-07-20\",\"step\":[{\"@type\":\"HowToStep\",\"position\":1,\"name\":\"安装requests库\",\"text\":\"使用pip install requests安装HTTP请求库\"},{\"@type\":\"HowToStep\",\"position\":2,\"name\":\"发送HTTP请求\",\"text\":\"使用requests.get(url)获取网页内容\"},{\"@type\":\"HowToStep\",\"position\":3,\"name\":\"解析HTML提取数据\",\"text\":\"使用BeautifulSoup解析HTML并提取目标数据\"},{\"@type\":\"HowToStep\",\"position\":4,\"name\":\"保存数据\",\"text\":\"将提取的数据保存到CSV或JSON文件\"}]}\n</script>\n\n如何用Python爬取网页数据...",
+org\",\"@type\":\"HowTo\",\"name\":\"Python网页爬虫教程:4步搞定数据抓取\",\"author\":{\"@type\":\"Person\",\"name\":\"技术教程团队\"},\"datePublished\":\"2026-07-20\",\"step\":[{\"@type\":\"HowToStep\",\"position\":1,\"name\":\"安装requests库\",\"text\":\"使用pip install requests安装HTTP请求库\"},{\"@type\":\"HowToStep\",\"position\":2,\"name\":\"发送HTTP请求\",\"text\":\"使用requests.get(url)获取网页内容\"},{\"@type\":\"HowToStep\",\"position\":3,\"name\":\"解析HTML提取数据\",\"text\":\"使用BeautifulSoup解析HTML并提取目标数据\"},{\"@type\":\"HowToStep\",\"position\":4,\"name\":\"保存数据\",\"text\":\"将提取的数据保存到CSV或JSON文件\"}]}\n</script>\n\n如何用Python爬取网页数据...",
     "geo_score": 78,
     "score_details": {
       "structured_data": 90,
@@ -593,7 +590,6 @@ AI搜索时代品牌霸屏利器,通过5维GEO评分+JSON-LD结构化数据注�
       "content_quality": 75
     },
     "json_ld": {
-      "@context": "https://schema.org",
       "@type": "HowTo",
       "name": "Python网页爬虫教程:4步搞定数据抓取",
       "author": {"@type": "Person", "name": "技术教程团队"},

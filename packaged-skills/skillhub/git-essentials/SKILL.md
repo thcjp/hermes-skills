@@ -58,7 +58,7 @@ Git 版本控制必备命令与团队协作工作流技能。本技能将说明�
 
 ```bash
 git config --global user.name "Your Name"
-git config --global user.email "your@email.com"
+email "your@email.com"
 git init
 git clone https://gitee.com/user/repo.git
 git clone https://gitcode.com/user/repo.git custom-name

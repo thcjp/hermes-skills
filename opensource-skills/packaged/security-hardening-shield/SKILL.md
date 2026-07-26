@@ -1,9 +1,8 @@
----
-slug: security-hardening-shield
+---slug: security-hardening-shield
 name: security-hardening-shield
 version: 1.0.1
 displayName: 安全加固之盾
-summary: "OWASP Top 10防护+三层边界系统,上线前安全加固不留死角。安全加固之盾——系统化安全防护框架,基于OWASP Top 10预防+三层边界(信任/数据/网络)分层防护,提供从输入校验"
+summary: "OWASP Top 1"
 summary_zh: "OWASP Top 10防护+三层边界系统,上线前安全加固不留死角。安全加固之盾——系统化安全防护框架,基于OWASP Top 10预防+三层边界(信任/数据/网络)分层防护,提供从输入校验"
 license: Proprietary
 description: 安全加固之盾——系统化安全防护框架,基于OWASP Top 10预防+三层边界(信任/数据/网络)分层防护,提供从输入校验到密钥管理到依赖审计的全链路加固方案。适用于上线前安全审计、认证授权设计、密钥凭证管理、依赖漏洞扫描、输入输出防护场景。触发关键词:安全加固、安全审计、OWASP、漏洞扫描、密钥管理、认证授权、依赖审计、安全边界、输入校验、安全防护
@@ -24,9 +23,7 @@ tags:
 tools:
   - read
   - exec
-category: "Security"
----
-# 安全加固之盾
+category: "Security"---# 安全加固之盾
 
 系统化的安全防护框架。处理用户输入、认证、数据存储、外部集成时,强制执行安全检查与加固。核心理念:默认不信任、最小权限、纵深防御。
 
@@ -317,13 +314,12 @@ router.post("/login", async (req, res) => {
 - **影响**: 攻击者可通过NoSQL注入绕过认证,以任意用户身份登录
 - **修复方案**:
 ```javascript
-const { email, password } = req.body;
 // 输入校验:确保email和password是字符串
 if (typeof email !== "string" || typeof password !== "string") {
   return res.status(400).json({ error: "无效的输入" });
 }
 // 使用参数化查询
-const user = await User.findOne({ email: email });
+findOne({ email: email });
 if (!user || !await bcrypt.compare(password, user.passwordHash)) {
   return res.status(401).json({ error: "邮箱或密码错误" });
 }
@@ -332,7 +328,6 @@ if (!user || !await bcrypt.compare(password, user.passwordHash)) {
 ### VULN-002: 密码使用MD5哈希
 - **OWASP类别**: A02:2021 - Cryptographic Failures
 - **严重程度**: Critical
-- **位置**: `src/routes/auth.js:45`
 - **漏洞代码**:
 ```javascript
 const crypto = require("crypto");
@@ -375,7 +370,6 @@ router.post("/pay", async (req, res) => {
 - **修复方案**:
 ```javascript
 router.post("/pay", authenticate, async (req, res) => {
-  const { orderId, amount } = req.body;
   const userId = req.user.id;
 
   // 服务端权限校验:确认订单属于当前用户
@@ -414,7 +408,7 @@ router.post("/:id/review", async (req, res) => {
 // 方案1: 服务端输出编码(推荐使用DOMPurify)
 const DOMPurify = require("isomorphic-dompurify");
 const cleanContent = DOMPurify.sanitize(content);
-await Review.create({ productId: req.params.id, content: cleanContent });
+await Review.params.id, content: cleanContent });
 
 // 方案2: 前端使用安全的渲染方式
 // React默认转义: <div>{review.content}</div> ← 安全
@@ -712,7 +706,6 @@ CREATE TABLE user_roles (
 ```javascript
 function requirePermission(resource, action) {
   return async (req, res, next) => {
-    const userId = req.user.id;
     const scopeId = req.user.enterpriseId;  // 企业作用域
 
     // 查询用户是否有该权限
@@ -749,7 +742,6 @@ function generateAPIKey() {
 
 // API Key存储:仅存储哈希值
 async function storeAPIKey(userId, key) {
-  const hashed = await bcrypt.hash(key, 12);
   await db.query(
     "INSERT INTO api_keys (user_id, key_hash, scopes, expires_at) VALUES (?, ?, ?, ?)",
     [userId, hashed, ["read:orders"], new Date(Date.now() + 365 * 24 * 3600 * 1000)]

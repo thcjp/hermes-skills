@@ -81,7 +81,6 @@ category: "Creative"
 | 预览链接 | 返回可预览 URL | 支持 |
 | 任务状态查询 | 轮询任务进度 | 支持 |
 
-**输入**: 用户提供能力清单所需的指令和必要参数.
 **处理**: 解析能力清单的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回能力清单的响应数据,包含状态码、结果和日志.
 ### 工作流程
@@ -98,7 +97,6 @@ category: "Creative"
 返回预览链接（preview_url）
 ```
 
-**输入**: 用户提供工作流程所需的指令和必要参数.
 **处理**: 解析工作流程的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回工作流程的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -110,13 +108,12 @@ category: "Creative"
 - **Base URL**：`https://audiox-api-global.luoji.cn`
 - 不使用本地服务地址，所有请求统一发往该地址
 
-**输入**: 用户提供固定服务地址所需的指令和必要参数.
 **处理**: 解析固定服务地址的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回固定服务地址的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级视频翻译与、配音工具、支持中英互译、字幕翻译出片、适合个人创作者快、速完成跨语言视频、本地化、视频翻译免费版、为个人用户提供轻、量化的视频翻译与、配音能力、核心能力、中英双向视频翻译、视频字幕翻译出片、单视频翻译任务处、翻译结果预览链接、任务状态轮询查询等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ### 核心功能执行
 执行核心功能执行操作,使用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -157,7 +154,7 @@ curl -s -X POST 'https://audiox-api-global.luoji.cn/video-trans/orchestrate' \
 **示例调用：**
 
 ```bash
-curl -s -X POST 'https://audiox-api-global.luoji.cn/video-trans/orchestrate' \
+luoji.cn/video-trans/orchestrate' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -F 'video=@/path/to/tutorial.mp4' \
   -F 'sourceLanguage=en' \
@@ -178,7 +175,7 @@ curl -s -X POST 'https://audiox-api-global.luoji.cn/video-trans/orchestrate' \
 **示例调用：**
 
 ```bash
-curl -s -X POST 'https://audiox-api-global.luoji.cn/video-trans/orchestrate' \
+luoji.cn/video-trans/orchestrate' \
   -H 'Authorization: Bearer ${API_KEY}' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -219,9 +216,8 @@ export VIDEO_TRANSLATE_SERVICE_API_KEY="your_api_key_here"
 
 ```bash
 # 提交中文视频翻译为英文
-curl -s -X POST 'https://audiox-api-global.luoji.cn/video-trans/orchestrate' \
+luoji.cn/video-trans/orchestrate' \
   -H "Authorization: Bearer $VIDEO_TRANSLATE_SERVICE_API_KEY" \
-  -F 'video=@/path/to/video.mp4' \
   -F 'sourceLanguage=zh' \
   -F 'targetLanguage=en'
 ```
@@ -392,7 +388,8 @@ done
 | jq | JSON 处理 | 可选 | 系统包管理器 | 1.6+ |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 | - |
 
-#### 安装命令
+#
+### 安装命令
 
 ```bash
 # macOS 安装 jq

@@ -101,6 +101,8 @@ elements = parser.extract_elements(result.data, "project.building.floors")
 | 参数名 | 类型 | 必填 | 说明 |
 |:-----|:-----|:-----|:-----|
 
+| instruction | string | 是 | 用户指令文本 |
+| context | string | 否 | 上下文信息 |
 ## 输出格式
 
 ```json
@@ -156,14 +158,14 @@ export API_KEY="your_api_key_here"
 ```python
 parser = ConstructionJSONParser()
 
-result = parser.parse_file("bim_export.json")
+result = parser.json")
 if result.success:
     df = parser.to_dataframe(result.data)
     print(f"Loaded {len(df)} records")
 
 flat = parser.flatten_json(result.data)
 
-elements = parser.extract_elements(result.data, "project.building.floors")
+elements = parser.data, "project.building.floors")
 ```
 ```
 

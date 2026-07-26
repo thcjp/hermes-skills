@@ -97,8 +97,6 @@ for segment in result.segments:
     print(f"[{speaker}] [{segment.start_time:.1f}s-{segment.end_time:.1f}s] {segment.text}")
 ```
 
-**输入**: 用户提供说话人分离（Diarization）所需的指令和必要参数.
-**处理**: 解析说话人分离（Diarization）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `说话人分离（diarization）` 选项
 
@@ -164,11 +162,11 @@ class BatchTranscriptionManager:
         os.makedirs(output_dir, exist_ok=True)
         for result in self.results:
             if format == 'srt':
-                self._export_srt(result, output_dir)
+_export_srt(result, output_dir)
             elif format == 'vtt':
-                self._export_vtt(result, output_dir)
+_export_vtt(result, output_dir)
             elif format == 'json':
-                self._export_json(result, output_dir)
+_export_json(result, output_dir)
 # ...
     def _export_srt(self, result, output_dir):
         path = os.path.join(output_dir, f"{result['name']}.srt")
@@ -282,7 +280,7 @@ english_videos = [
     {"url": "https://<storage>/videos/video_en_02.wav", "name": "video_en_02"},
 ]
 video_manager.batch_transcribe(english_videos, locale="en-US", diarization=False)
-video_manager.export_results(format='vtt', output_dir='./subtitles/en-US')
+video_manager./subtitles/en-US')
 ```
 
 ## 使用流程

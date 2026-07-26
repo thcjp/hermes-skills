@@ -53,22 +53,18 @@ Git命令行助手专业版为企业研发团队提供高级Git CLI自动化能�
 提供常用Git操作的自动化脚本.
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供Git自动化脚本库所需的指令和必要参数.
 **处理**: 解析Git自动化脚本库的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Git自动化脚本库的响应数据,包含状态码、结果和日志.
 ### 2. 深度仓库诊断
 
-**输入**: 用户提供深度仓库诊断所需的指令和必要参数.
 **处理**: 解析深度仓库诊断的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回深度仓库诊断的响应数据,包含状态码、结果和日志.
 ### 3. 工作流模板
 
-**输入**: 用户提供工作流模板所需的指令和必要参数.
 **处理**: 解析工作流模板的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回工作流模板的响应数据,包含状态码、结果和日志.
 ### 4. 多仓库管理
 
-**输入**: 用户提供多仓库管理所需的指令和必要参数.
 **处理**: 解析多仓库管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多仓库管理的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、CLI、支持自动化脚本、深度诊断、工作流模板与故障、提升团队效率、面向企业研发团队、的高级、命令行工具、提供自动化脚本、故障排除与批量操、作能力、核心能力、深度仓库诊断与分、标准化工作流模板、故障排除与恢复等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -104,7 +100,6 @@ print(result)
 echo -e "\n3. 智能同步:"
 python3 -c "
 from git_automation import GitAutomation
-result = GitAutomation.sync_branch()
 print(result)
 "
 ```
@@ -158,7 +153,6 @@ for repo, info in status.items():
 echo -e "\n2. 批量同步:"
 python3 -c "
 from multi_repo import MultiRepoManager
-manager = MultiRepoManager('repos.txt')
 results = manager.batch_sync()
 for repo, result in results.items():
     print(f'{repo}: {result}')
@@ -167,9 +161,7 @@ for repo, result in results.items():
 echo -e "\n3. 批量清理:"
 python3 -c "
 from multi_repo import MultiRepoManager
-manager = MultiRepoManager('repos.txt')
 results = manager.batch_cleanup()
-for repo, result in results.items():
     print(f'{repo}: {result}')
 "
 ```
@@ -383,8 +375,6 @@ git config --global credential.helper store
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

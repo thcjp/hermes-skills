@@ -1,9 +1,8 @@
----
-slug: "java-free"
+---slug: "java-free"
 name: "java-free"
 version: "1.0.0"
 displayName: "Java基础版"
-summary: "编写健壮 Java 代码的基础能力，覆盖空指针防护、相等性判断与基础异常处理。。编写健壮 Java 代码的基础能力，覆盖空指针防护、相等性判断 与基础异常处理. 核心能力: - NullPo"
+summary: "编写健壮 Java 代"
 summary_zh: "编写健壮 Java 代码的基础能力，覆盖空指针防护、相等性判断与基础异常处理。。编写健壮 Java 代码的基础能力，覆盖空指针防护、相等性判断 与基础异常处理. 核心能力: - NullPo"
 license: "MIT"
 description: |-
@@ -42,9 +41,7 @@ tools:
   - write
   - exec
 homepage: ""
-category: "Automation"
----
-# Java 基础版
+category: "Automation"---# Java 基础版
 
 ## 核心能力
 

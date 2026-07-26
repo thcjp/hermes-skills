@@ -1,9 +1,8 @@
----
-slug: "gog-free"
+---slug: "gog-free"
 name: "gog-free"
 version: "1.0.0"
 displayName: "Gog(免费)"
-summary: "Google Workspace命令行工具基础版,覆盖Gmail搜索与Sheets读写。。Google Workspace 命令行工具的基础免费版。覆盖 Gmail 邮件搜索与 Sheets"
+summary: "Google Work"
 summary_zh: "Google Workspace命令行工具基础版,覆盖Gmail搜索与Sheets读写。。Google Workspace 命令行工具的基础免费版。覆盖 Gmail 邮件搜索与 Sheets"
 license: "MIT"
 description: |-
@@ -31,9 +30,7 @@ tools:
   - glob
   - grep
 homepage: ""
-category: "Automation"
----
-# gog-free
+category: "Automation"---# gog-free
 
 `gog` 是 Google Workspace 的命令行工具。本免费版封装 Gmail 邮件搜索与 Sheets 表格读写两类基础操作,通过 OAuth 凭证鉴权,适合个人开发者轻量级使用.
 ## 输入格式

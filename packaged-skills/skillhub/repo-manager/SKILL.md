@@ -69,9 +69,8 @@ category: "Automation"
 | 重跑失败步骤 | rerun_workflow_failed_jobs | 仅重跑失败部分,节省时间 |
 | 触发工作流 | create_workflow_dispatch | 手动触发指定工作流 |
 
-**输入**: 用户提供Release管理所需的指令和必要参数.
-**处理**: 解析Release管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Release管理的解析响应,包含完成状态码、响应数据和完成日志。### 批量任务
+**输出**: 返回Release管理的解析响应,包含完成状态码、响应数据和完成日志。
+### 批量任务
 ```bash
 repo-manager batch-call --file batch_query.json --parallel 5
 # ...
@@ -148,9 +147,6 @@ repo-manager team share-config --file team-config.json
 repo-manager team show
 ```
 
-**输入**: 用户提供团队共享配置所需的指令和必要参数.
-**处理**: 解析团队共享配置的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回团队共享配置的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 

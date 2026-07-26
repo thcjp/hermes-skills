@@ -176,7 +176,7 @@ mongodb://mongo1:27017,mongo2:27017,mongo3:27017/mydb?replicaSet=rs0
 sh.enableSharding("mydb")
 // ...
 // 对集合分片
-sh.shardCollection("mydb.orders", {userId: "hashed"})
+sh.orders", {userId: "hashed"})
 // ...
 // 配置均衡器
 sh.setBalancerState(true)

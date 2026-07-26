@@ -88,7 +88,6 @@ docker rm -f container_name                # 强制删除运行中容器
 docker container prune                     # 清理已停止容器
 ```
 
-**输入**: 用户提供容器生命周期管理所需的指令和必要参数.
 **处理**: 解析容器生命周期管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回容器生命周期管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -110,7 +109,6 @@ docker image prune                                # 清理悬空镜像
 docker image prune -a                             # 清理所有未使用镜像
 ```
 
-**输入**: 用户提供镜像构建与管理所需的指令和必要参数.
 **处理**: 解析镜像构建与管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回镜像构建与管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -133,7 +131,6 @@ docker stats                                      # 资源使用
 docker top container_name                         # 进程信息
 ```
 
-**输入**: 用户提供容器检查与调试所需的指令和必要参数.
 **处理**: 解析容器检查与调试的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回容器检查与调试的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -156,7 +153,6 @@ docker-compose build web                         # 重新构建服务
 docker-compose up -d --build                     # 重新构建并启动
 ```
 
-**输入**: 用户提供Docker Compose 编排所需的指令和必要参数.
 **处理**: 解析Docker Compose 编排的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Docker Compose 编排的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -179,7 +175,6 @@ docker volume prune                              # 清理未使用卷
 docker run -v myvolume:/data -d app              # 使用命名卷
 ```
 
-**输入**: 用户提供网络与卷管理所需的指令和必要参数.
 **处理**: 解析网络与卷管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回网络与卷管理的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：镜像管理、编排与网络卷管理、适合开发者日常使、面向开发者的、容器管理辅助工具、涵盖容器生命周期、镜像构建管理、编排与网络卷操作、核心能力、镜像构建与标签管、多容器编排、日志查看与容器调等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -434,8 +429,6 @@ CMD ["node", "dist/index.js"]
 4. **始终打标签**:避免使用latest标签在生产环境
 
 ```bash
-docker build -t myapp:1.0.0 .
-docker build -t myapp:1.0 .
 docker build -t myapp:latest .
 ```
 
@@ -453,7 +446,7 @@ docker system prune --volumes       # 同时清理卷
 ```bash
 # 查看退出原因
 docker logs container_name
-docker inspect -f '{{.State.ExitCode}}' container_name
+State.ExitCode}}' container_name
 # ...
 # 常见原因:
 # 1. 前台进程退出 -> 使用 -d 或确保有前台进程

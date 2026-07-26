@@ -64,21 +64,21 @@ category: "Automation"
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -208,7 +208,7 @@ jobs:
       - name: 优化图片
         run: |
           find static/images -name "*.jpg" -exec jpegoptim --max=80 {} \;
-          find static/images -name "*.png" -exec optipng -o7 {} \;
+png" -exec optipng -o7 {} \;
 # ...
       - name: 构建站点
         run: hugo --minify --gc
@@ -293,17 +293,17 @@ find "$IMAGE_DIR" -name "*.jpg" -o -name "*.jpeg" | while read f; do
   echo "  优化: $f"
 done
 # ...
-find "$IMAGE_DIR" -name "*.png" | while read f; do
+png" | while read f; do
   optipng -o7 "$f"
   echo "  优化: $f"
 done
 # ...
-find "$IMAGE_DIR" -name "*.jpg" -o -name "*.png" | while read f; do
+jpg" -o -name "*.png" | while read f; do
   cwebp -q 80 "$f" -o "${f%.*}.webp"
   echo "  WebP: ${f%.*}.webp"
 done
 # ...
-find "$IMAGE_DIR" -name "*.jpg" | while read f; do
+jpg" | while read f; do
   convert "$f" -resize 300x300^ -gravity center -extent 300x300 "${f%.*}-thumb.jpg"
   echo "  缩略图: ${f%.*}-thumb.jpg"
 done
@@ -332,9 +332,9 @@ series_weight: 2
         <a href="{{ .RelPermalink }}">上一篇：{{ .Title }}</a>
       {{ end }}
     {{ end }}
-    {{ range where .Site.RegularPages "Params.series" "intersect" $series }}
+    {{ range where .Site.series" "intersect" $series }}
       {{ if eq .Params.series_weight (add $weight 1) }}
-        <a href="{{ .RelPermalink }}">下一篇：{{ .Title }}</a>
+RelPermalink }}">下一篇：{{ .Title }}</a>
       {{ end }}
     {{ end }}
   </nav>

@@ -267,7 +267,7 @@ export function MultiStepForm() {
           </div>
           <div>
             <Label>手机号</Label>
-            <Input value={formData.phone} onChange={e => updateField('phone', e.target.value)} />
+phone} onChange={e => updateField('phone', e.target.value)} />
           </div>
         </div>
       )}
@@ -400,7 +400,6 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGri
 import { Card, CardHeader, CardContent, CardTitle } from '@/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/ui/select';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/ui/table';
-import salesData from './data/sales.json';
 # ...
 // Zustand 全局状态
 interface DashboardStore {
@@ -434,7 +433,6 @@ export default function App() {
   const { region, product, setRegion, setProduct } = useDashboardStore();
 # ...
   const filteredData = useMemo(() => {
-    return salesData.filter(item =>
       (region === 'all' || item.region === region) &&
       (product === 'all' || item.product === product)
     );
@@ -443,7 +441,7 @@ export default function App() {
   // KPI 计算
   const totalSales = filteredData.reduce((sum, d) => sum + d.amount, 0);
   const avgGrowth = filteredData.length > 0
-    ? (filteredData.reduce((sum, d) => sum + d.growthRate, 0) / filteredData.length).toFixed(1)
+    ? (filteredData.growthRate, 0) / filteredData.length).toFixed(1)
     : '0';
   const topRegion = useMemo(() => {
     const regionMap: Record<string, number> = {};
@@ -525,8 +523,6 @@ export default function App() {
               {filteredData.map((item, i) => (
                 <TableRow key={i}>
                   <TableCell>{item.product}</TableCell>
-                  <TableCell>{item.region}</TableCell>
-                  <TableCell>{item.month}</TableCell>
                   <TableCell className="text-right">¥{item.amount.toLocaleString()}</TableCell>
                   <TableCell className={`text-right ${item.growthRate >= 0 ? 'text-green-600' : 'text-red-600'}`}>
                     {item.growthRate >= 0 ? '+' : ''}{item.growthRate}%
@@ -590,7 +586,7 @@ export function MultiStepForm() {
   // localStorage 持久化
   const [formData, setFormData] = useState<FormData>(() => {
     try {
-      const saved = localStorage.getItem('registration-form');
+getItem('registration-form');
       if (saved) {
         const parsed = JSON.parse(saved);
         return { name: '', age: 0, email: '', phone: '', interests: [], notifications: false, ...parsed };
@@ -683,13 +679,12 @@ export function MultiStepForm() {
             <>
               <div>
                 <Label>姓名 *</Label>
-                <Input value={formData.name} onChange={e => updateField('name', e.target.value)} />
                 {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
               </div>
               <div>
                 <Label>年龄 *</Label>
                 <Input type="number" value={formData.age || ''} onChange={e => updateField('age', parseInt(e.target.value) || 0)} />
-                {errors.age && <p className="text-red-500 text-sm mt-1">{errors.age}</p>}
+age && <p className="text-red-500 text-sm mt-1">{errors.age}</p>}
               </div>
             </>
           )}
@@ -699,13 +694,12 @@ export function MultiStepForm() {
             <>
               <div>
                 <Label>邮箱 *</Label>
-                <Input type="email" value={formData.email} onChange={e => updateField('email', e.target.value)} />
-                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
               </div>
               <div>
                 <Label>手机号 *</Label>
-                <Input value={formData.phone} onChange={e => updateField('phone', e.target.value)} placeholder="13800138000" />
-                {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
+target.value)} placeholder="13800138000" />
+phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
               </div>
             </>
           )}
@@ -753,7 +747,6 @@ export function MultiStepForm() {
           {/* 导航按钮 */}
           <div className="flex justify-between pt-4">
             <Button variant="outline" onClick={prev} disabled={step === 0}>上一步</Button>
-            {step < STEPS.length - 1 ? (
               <Button onClick={next}>下一步</Button>
             ) : (
               <Button onClick={handleSubmit}>提交注册</Button>
@@ -808,7 +801,7 @@ const useKanban = () => useContext(KanbanContext)!;
 function KanbanProvider({ children }: { children: ReactNode }) {
   const [tasks, setTasks] = useState<Task[]>(() => {
     try {
-      const saved = localStorage.getItem('kanban-tasks');
+getItem('kanban-tasks');
       return saved ? JSON.parse(saved) : [];
     } catch { return []; }
   });
@@ -924,8 +917,8 @@ function TaskDetail() {
           </div>
           <div className="flex gap-2">
             <Button size="sm" variant="outline" onClick={() => moveTask(task.id, 'todo')}>移到待办</Button>
-            <Button size="sm" variant="outline" onClick={() => moveTask(task.id, 'doing')}>移到进行中</Button>
-            <Button size="sm" variant="outline" onClick={() => moveTask(task.id, 'done')}>移到已完成</Button>
+id, 'doing')}>移到进行中</Button>
+id, 'done')}>移到已完成</Button>
           </div>
           <Button variant="destructive" size="sm" onClick={() => { deleteTask(task.id); navigate('/kanban'); }}>
             删除任务

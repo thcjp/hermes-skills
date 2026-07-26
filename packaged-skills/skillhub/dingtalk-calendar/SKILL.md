@@ -1,6 +1,4 @@
----
-
-slug: "dingtalk-calendar"
+---slug: "dingtalk-calendar"
 name: "dingtalk-calendar"
 version: 1.0.3
 displayName: "钉钉日历"
@@ -8,7 +6,7 @@ summary: "钉钉日程管理（创建日程、查询闲忙、会议室预订）�
 summary_zh: "钉钉日程管理（创建日程、查询闲忙、会议室预订）。使用 mcporter CLI 连接钉钉 协议 server 执行日程管理、日程查询、会议室预订等操作。使用场景：日程创建管理、会议预订、查询他..."
 license: "MIT"
 description: |-
-  钉钉日程管理（创建日程、查询闲忙、会议室预订）。使用 mcporter CLI 连接钉钉 协议 server 执行日程管理、日程查询、会议室预订等操作。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
+  钉钉日程管理（创建日程、查询闲忙、会议室预订）。使用 mcporter CLI 连接钉钉 协议 server 执行日程管理、日程查询、会议室预订等操作。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。不适用于数据库架构设计决策.
 tags:
   - calendar
   - json
@@ -22,10 +20,7 @@ tools:
   - write
 homepage: ""
 category: "Automation"
-
----
-
-# Dingtalk Calendar
+---# Dingtalk Calendar
 
 ## 付费版专享能力
 

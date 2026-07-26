@@ -1,5 +1,4 @@
----
-slug: "finance-radar-tool-pro"
+---slug: "finance-radar-tool-pro"
 name: "finance-radar-tool-pro"
 version: "1.0.0"
 displayName: "股票分析雷达专业版"
@@ -8,7 +7,7 @@ license: "Proprietary"
 edition: "pro"
 description: |-
   面向专业投资者与机构的股票与加密货币分析平台。支持批量标的分析、
-  投资组合追踪、价格告警、热门趋势检测、传闻与早期信号识别。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
+  投资组合追踪、价格告警、热门趋势检测、传闻与早期信号识别。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。不适用于渗透测试未授权目标.
 tags:
   - Finance
   - 股票分析
@@ -24,9 +23,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Finance"
----
-# 股票分析雷达专业版（PRO版）
+category: "Finance"---# 股票分析雷达专业版（PRO版）
 
 ## 概述
 
@@ -47,7 +44,6 @@ PRO版完全兼容免费版全部命令与评分模型，升级后原有分析�
 | 传闻检测 | 不支持 | 早期信号识别 |
 | 数据导出 | 不支持 | CSV/Excel/JSON |
 
-**输入**: 用户提供PRO版功能增强对比所需的指令和必要参数.
 **处理**: 解析PRO版功能增强对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回PRO版功能增强对比的响应数据,包含状态码、结果和日志.
 ### 批量分析与导出
@@ -67,7 +63,6 @@ python3 （请参考skill目录中的脚本文件） --tickers AAPL,GOOG,MSFT,AM
 python3 （请参考skill目录中的脚本文件） --tickers AAPL,GOOG,MSFT --export --output comparison.csv
 ```
 
-**输入**: 用户提供批量分析与导出所需的指令和必要参数.
 **处理**: 解析批量分析与导出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量分析与导出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -85,7 +80,6 @@ python3 （请参考skill目录中的脚本文件） summary
 python3 （请参考skill目录中的脚本文件） risk-analysis --output risk_report.pdf
 ```
 
-**输入**: 用户提供投资组合追踪所需的指令和必要参数.
 **处理**: 解析投资组合追踪的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回投资组合追踪的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：专业股票与加密货、币分析平台、支持批量分析、价格告警与传闻检、面向专业投资者与、机构的股票与加密、货币分析平台、支持批量标的分析、热门趋势检测、传闻与早期信号识、Use、when、需要安全检测、合规审计、漏洞扫描、加密防护时使用、不适用于渗透测试、未授权目标、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -171,7 +165,6 @@ cp config_pro_template.yaml config_pro.yaml
 python3 （请参考skill目录中的脚本文件） --tickers AAPL,GOOG,MSFT --export
 # ...
 # 组合管理
-python3 （请参考skill目录中的脚本文件） import --file holdings.csv
 python3 （请参考skill目录中的脚本文件） summary
 python3 （请参考skill目录中的脚本文件） risk-analysis
 # ...

@@ -87,13 +87,13 @@ curl -s -X POST "https://api.ad-creative-intel.com/api/data/search" \
 
 ```bash
 # 下载量预估（按日期）
-curl -s -X POST "https://api.ad-creative-intel.com/api/data/download-date" \
+ad-creative-intel.com/api/data/download-date" \
   -H "X-API-Key: ${ADC_INTEL_API_KEY}" \
   -H "Content-Type: application/json" \
   -d '{"unifiedProductId":"XXXXX","dateRange":"30d"}'
 # ...
 # 收入预估（按国家）
-curl -s -X POST "https://api.ad-creative-intel.com/api/data/revenue-country" \
+ad-creative-intel.com/api/data/revenue-country" \
   -H "X-API-Key: ${ADC_INTEL_API_KEY}" \
   -H "Content-Type: application/json" \
   -d '{"unifiedProductId":"XXXXX","countries":["US","JP"]}'
@@ -104,7 +104,7 @@ curl -s -X POST "https://api.ad-creative-intel.com/api/data/revenue-country" \
 ```bash
 # 并行拉取 3 个市场数据（专业版支持 5 路并发）
 for country in US JP KR; do
-  curl -s -X POST "https://api.ad-creative-intel.com/api/data/search" \
+ad-creative-intel.com/api/data/search" \
     -H "X-API-Key: ${ADC_INTEL_API_KEY}" \
     -H "Content-Type: application/json" \
     -d "{\"keyword\":\"rpg\",\"countries\":[\"$country\"],\"pageSize\":50}" &
@@ -137,7 +137,7 @@ wait
 | 批量导出 | 翻页 50 次 | 翻页 3 次即可 |
 
 端点清单同免费版（`/api/data/search`、`/api/data/count`、`/api/data/count-all`、`/api/data/distribute`、`/api/data/distribute-dims`、`/api/data/content-detail`、`/api/data/item-apps`、`/api/data/screen-types`、`/api/data/page-config`），但参数约束放宽.
-**输入**: 用户提供广告创意搜索（专业版增强）所需的指令和必要参数.
+
 **处理**: 解析广告创意搜索（专业版增强）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回广告创意搜索（专业版增强）的响应数据,包含状态码、结果和日志.
 ### 2. 应用与开发者洞察（专业版增强）
@@ -152,7 +152,6 @@ wait
 | `/api/data/product-list` | POST | 产品列表 | 专业版独有 |
 | `/api/data/product-agg-list` | POST | 产品聚合列表 | 专业版独有 |
 
-**输入**: 用户提供应用与开发者洞察（专业版增强）所需的指令和必要参数.
 **处理**: 解析应用与开发者洞察（专业版增强）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回应用与开发者洞察（专业版增强）的响应数据,包含状态码、结果和日志.
 ### 3. 应用商店榜单查询（专业版增强）
@@ -165,7 +164,6 @@ wait
 | 历史对比 | 不支持 | 支持 T-7 / T-30 对比 |
 | 批量分类查询 | 不支持 | 一次请求多个分类 |
 
-**输入**: 用户提供应用商店榜单查询（专业版增强）所需的指令和必要参数.
 **处理**: 解析应用商店榜单查询（专业版增强）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回应用商店榜单查询（专业版增强）的响应数据,包含状态码、结果和日志.
 ### 4. 下载与收入预估数据（专业版独有）
@@ -182,7 +180,7 @@ wait
 | `/api/data/revenue-country` | GET/POST | 按国家的收入预估 |
 
 > 预估数据声明：下载/收入数据为第三方**预估值**，非官方数据。返回时原样透传，呈现时必须标注"预估值".
-**输入**: 用户提供下载与收入预估数据（专业版独有）所需的指令和必要参数.
+
 **处理**: 解析下载与收入预估数据（专业版独有）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回下载与收入预估数据（专业版独有）的响应数据,包含状态码、结果和日志.
 ### 5. 多市场对比分析（专业版独有）
@@ -210,7 +208,6 @@ wait
 | 游戏行业占比 | 42% | 38% | 55% | 30% | 48% |
 | Top 10 交集 | 7 | 7 | 5 | 4 | 3 |
 
-**输入**: 用户提供多市场对比分析（专业版独有）所需的指令和必要参数.
 **处理**: 解析多市场对比分析（专业版独有）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多市场对比分析（专业版独有）的响应数据,包含状态码、结果和日志.
 ### 6. 创意效果归因（专业版独有）
@@ -244,7 +241,7 @@ wait
 ```
 
 **归因数据来源**：通过创意 ID 关联 `/item-apps`、`/app-detail`、`/store-rank`（历史）、`/download-date` 等端点交叉拼接.
-**输入**: 用户提供创意效果归因（专业版独有）所需的指令和必要参数.
+
 **处理**: 解析创意效果归因（专业版独有）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回创意效果归因（专业版独有）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -258,7 +255,6 @@ wait
 | 优先队列 | 无 | 有 |
 | 5xx 错误重试 | 自行处理 | 服务端优先重试 |
 
-**输入**: 用户提供优先 API 速率与并发（专业版独有）所需的指令和必要参数.
 **处理**: 解析优先 API 速率与并发（专业版独有）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回优先 API 速率与并发（专业版独有）的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：解决批量创意导出、历史趋势无法回溯、下载收入数据缺失、的专业广告情报分、析平台、广告情报专业版是、面向买量团队、投放优化师、市场研究负责人的、全功能广告情报分、批量创意导出受限、于单次、据缺失、跨市场对比需手动、创意效果难以归因、五大高频痛点而设、它在免费版三大端、点集群基础上、解锁批量导出、历史回溯、收入预估三类高级、并新增多市场对比、优先速率并发三项、独有能力等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.

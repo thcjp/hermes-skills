@@ -50,12 +50,11 @@ Docker V1迁移工具专业版为企业运维团队提供从V1到V2的完整迁�
 自动扫描项目中的所有Docker配置,识别迁移风险点.
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供V1到V2兼容性深度扫描所需的指令和必要参数.
 **处理**: 解析V1到V2兼容性深度扫描的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回V1到V2兼容性深度扫描的响应数据,包含状态码、结果和日志.
 ### 2. 批量配置转换
 自动将V1 Compose文件和Dockerfile转换为V2格式.
-**输入**: 用户提供批量配置转换所需的指令和必要参数.
+
 **处理**: 解析批量配置转换的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量配置转换的响应数据,包含状态码、结果和日志.
 ### 3. Dockerfile现代化重构
@@ -97,12 +96,12 @@ class DockerfileModernizer:
             if stripped.startswith('MAINTAINER '):
                 author = stripped.split(' ', 1)[1]
                 self.modernized.append(f'LABEL maintainer="{author}"\n')
-                self.changes.append("MAINTAINER -> LABEL maintainer")
+changes.append("MAINTAINER -> LABEL maintainer")
                 continue
 # ...
             if 'apt-get install' in stripped and '&&' not in stripped:
-                self.modernized.append(line)
-                self.changes.append("建议合并apt-get install指令")
+modernized.append(line)
+changes.append("建议合并apt-get install指令")
                 continue
 # ...
             self.modernized.append(line)
@@ -118,18 +117,16 @@ class DockerfileModernizer:
 # ...
     def _write(self):
         """写回文件"""
-        with open(self.path, 'w', encoding='utf-8') as f:
+path, 'w', encoding='utf-8') as f:
             f.writelines(self.modernized)
 ```
 
-**输入**: 用户提供Dockerfile现代化重构所需的指令和必要参数.
 **处理**: 解析Dockerfile现代化重构的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Dockerfile现代化重构的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 4. 渐进式迁移与回滚
 
-**输入**: 用户提供渐进式迁移与回滚所需的指令和必要参数.
 **处理**: 解析渐进式迁移与回滚的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回渐进式迁移与回滚的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、迁移工具、支持自动兼容性扫、批量迁移、配置转换与回滚保、面向企业运维团队、迁移专业工具、提供自动兼容性扫、核心能力、自动兼容性深度扫、迁移影响评估与报、流水线适配等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -318,7 +315,7 @@ verification:
 1. **先评估后迁移**:运行兼容性扫描,了解迁移风险
 
 ```bash
-python3 compatibility_scanner.py ./ > assessment.json
+py ./ > assessment.json
 ```
 
 2. **创建备份**:迁移前备份所有配置
@@ -408,8 +405,6 @@ rollback_service web
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

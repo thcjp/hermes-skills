@@ -365,7 +365,6 @@ linear document create \
 linear document view <slug>
 # ...
 # 更新文档
-linear document update <slug> --content-file ./updated.md
 # ...
 # 删除文档
 linear document delete <slug> -y
@@ -414,7 +413,6 @@ linear label list
 
 ```bash
 # 导出Schema用于参考
-linear schema -o /tmp/linear-schema.graphql
 # ...
 # 搜索Schema中的特定类型
 grep -i "cycle" /tmp/linear-schema.graphql
@@ -424,11 +422,11 @@ grep -A 30 "^type Issue " /tmp/linear-schema.graphql
 linear api '{ viewer { id name email } }'
 # ...
 # 带变量的查询
-linear api 'query($teamId: String!) { team(id: $teamId) { name } }' \
+) { team(id: $teamId) { name } }' \
   --variable teamId=abc123
 # ...
 # 带JSON变量的复杂查询
-linear api 'query($filter: IssueFilter!) { issues(filter: $filter) { nodes { title } } }' \
+) { issues(filter: $filter) { nodes { title } } }' \
   --variables-json '{"filter": {"state": {"name": {"eq": "In Progress"}}}}'
 # ...
 # 使用curl直接调用

@@ -77,7 +77,6 @@ category: "Creative"
   10. Soft/Pastel          柔粉色调
 ```
 
-**输入**: 用户提供美学方向选择所需的指令和必要参数.
 **处理**: 解析美学方向选择的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回美学方向选择的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -93,14 +92,13 @@ category: "Creative"
   ❌ 多次生成趋向同一字体（如 Space Grotesk）
 ```
 
-**输入**: 用户提供反模式禁令所需的指令和必要参数.
 **处理**: 解析反模式禁令的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回反模式禁令的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -340,13 +338,13 @@ echo "10. 柔粉色调  - 柔和渐变，圆润边角"
 ```html
 <!-- 独特字体配对示例 -->
 <!-- 配对1: 衬线标题 + 无衬线正文 -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+googleapis.com/css2?family=Playfair+Display:wght@400;900&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 # .
 <!-- 配对2: 等宽字体 + 衬线正文 -->
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 # .
 <!-- 配对3: 几何无衬线 + 人文衬线 -->
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Newsreader:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Newsreader:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 ```
 
 ### 第三步：生成代码

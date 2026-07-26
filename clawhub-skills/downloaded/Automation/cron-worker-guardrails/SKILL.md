@@ -147,15 +147,10 @@ Use this near the top of a cron prompt (2 lines, low-noise):
 ### 示例1：基础用法
 
 ```
-1. **Scripts-first:** move logic into a repo script (recommended: `tools/<job>.py` or `tools/<job>.sh`).
-2. **One command in cron:** cron should run *one short command* (no multi-line `bash -lc '...'`).
-3. **Deterministic cwd/env:** `cd` to the repo (or have the script do it), and document required env vars.
-4. **Silent on success:** print nothing (or exactly `NO_REPLY`) when OK; only emit a short alert when broken.
+1.py` or `tools/<job>.sh`).
 
 Also see:
 
-* `references/cron-agent-contract.md`
-* `references/pitfalls.md`
 ```
 
 ## 错误处理

@@ -67,7 +67,6 @@ category: "Automation"
 | 双ID处理 | 自动 | 自动+手动切换 |
 | 技术支持 | 社区 | 优先工单(4小时响应) |
 
-**输入**: 用户提供与免费版能力对比所需的指令和必要参数.
 ### 工作空间数量
 
 针对工作空间数量,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
@@ -311,7 +310,6 @@ dualIds:
 
 ### 批量操作示例
 ```bash
-notion batch-add tasks --input ./data/tasks.csv \
   --checkpoint --parallel 5
 # ...
 notion batch-update tasks \
@@ -328,11 +326,7 @@ notion batch resume --job-id <jobId>
 
 ### 文件上传示例
 ```bash
-notion upload <page-id> ./report.pdf
-notion upload <page-id> ./screenshot.png
-notion upload <page-id> ./document.docx
 # ...
-notion upload tasks --filter "Name=季度报告" ./q2-report.pdf
 # ...
 ```
 
@@ -393,7 +387,6 @@ cli 相关配置参数
 
 ```bash
 notion get tasks --filter "Name=Ship feature" \
-  --transform ./templates/task-report.md.j2
 ```
 
 ### 审计日志查询

@@ -310,7 +310,7 @@ category: "Automation"
     "disclaimer": "本报告由AI辅助生成,仅供娱乐参考,不构成任何决策建议",
     "delivery": {
       "file_path": "reports/ORDER20240115002_tarot_20260115.pdf",
-      "share_link": "https://pan.example.com/s/xyz789ghi",
+example.com/s/xyz789ghi",
       "share_password": "4p7q1r",
       "expire_at": "2026-04-18T00:00:00Z",
       "verified": true
@@ -425,7 +425,7 @@ category: "Automation"
     "disclaimer": "本报告由AI辅助生成,仅供娱乐参考,不构成任何决策建议",
     "delivery": {
       "file_path": "reports/ORDER20260720002_tarot_20260720.pdf",
-      "share_link": "https://share.fortune-reader.com/r/ORDER20260720002",
+fortune-reader.com/r/ORDER20260720002",
       "share_password": "7nWqL3",
       "expire_at": "2026-07-23T00:00:00Z",
       "verified": true
@@ -471,7 +471,7 @@ category: "Automation"
     "disclaimer": "本报告由AI辅助生成,仅供娱乐参考,不构成任何决策建议",
     "delivery": {
       "file_path": "reports/ORDER20260720003_astrology_20260720.pdf",
-      "share_link": "https://share.fortune-reader.com/r/ORDER20260720003",
+fortune-reader.com/r/ORDER20260720003",
       "share_password": "P4tR8s",
       "expire_at": "2026-07-23T00:00:00Z",
       "verified": true
@@ -552,7 +552,7 @@ category: "Automation"
     "disclaimer": "本报告由AI辅助生成,仅供娱乐参考,不构成任何决策建议",
     "delivery": {
       "file_path": "reports/ORDER20260720004_bazi_20260720.pdf",
-      "share_link": "https://share.fortune-reader.com/r/ORDER20260720004",
+fortune-reader.com/r/ORDER20260720004",
       "share_password": "3mK9xR",
       "expire_at": "2026-07-23T00:00:00Z",
       "verified": true

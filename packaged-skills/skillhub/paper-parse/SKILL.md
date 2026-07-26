@@ -1,5 +1,4 @@
----
-slug: "paper-parse"
+---slug: "paper-parse"
 name: "paper-parse"
 version: 1.0.1
 displayName: "对用户提供的任何学术论文"
@@ -7,7 +6,7 @@ summary: "对用户提供的任何学术论文（PDF附件或URL）进行双模�
 summary_zh: "对用户提供的任何学术论文（PDF附件或URL）进行双模式深度研读。当用户请求分析、研读、解读或总结一篇学术论文时，使用此技能。一次性生成两份报告：Part"
 license: "MIT"
 description: |-
-  对用户提供的任何学术论文（PDF附件或URL）进行双模式深度研读。当用户请求分析、研读、解读或总结一篇学术论文时，使用此技能。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+  对用户提供的任何学术论文（PDF附件或URL）进行双模式深度研读。当用户请求分析、研读、解读或总结一篇学术论文时，使用此技能。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。不适用于实时流数据处理.
 tags:
   - Knowledge
   - 工具
@@ -20,9 +19,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# Paper Parse
+category: "Automation"---# Paper Parse
 
 ## 付费版专享能力
 
@@ -187,24 +184,19 @@ export API_KEY="your_api_key_here"
 # ...
 ### Step 1: 通读论文全文(补充)
 # ...
-使用 `pdftotext` 命令或 `file` 工具的 `read` 动作提取论文全文。对于URL来源的论文，先尝试下载PDF再提取。必须覆盖从摘要到参考文献的所有内容。对于包含重要图表的论文，使用 `file` 工具的 `view` 动作查看关键图表页面，并将图表信息保存到文本文件中.
 # ...
 ### Step 2: 综合分析(补充)
 # ...
-创建临时分析文件 `temp_analysis.md`，提取并组织以下要素：
 # ...
 * 研究问题、假设、方法论、数据来源
 * 核心发现与关键数据
 * 理论贡献与实践意义
 * 论文的根本矛盾点、切入视角、方法创新
 # ...
-**此步骤不可跳过**，它是保证最终报告质量的思考过程.
 # ...
 ### Step 3: 撰写双模报告(补充)
 # ...
-创建最终交付文件，文件名格式为 `[论文简称]_研读报告.md`.
 # ...
-**撰写 Part A 前**，先读取模板：`/home/ubuntu/skills/paper-parse/references/part-a-template.md`
 # ...
 **撰写 Part B 前**，先读取模板：`/h
 ```

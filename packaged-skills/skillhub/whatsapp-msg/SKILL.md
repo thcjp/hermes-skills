@@ -218,9 +218,7 @@ sync_config = {
 ### 批量文件发送
 
 ```bash
-python wa_batch_sender.py \
   --store ~/.wacli \
-  --recipients "contacts.json" \
   --file "/path/to/report.pdf" \
   --caption ""msg_status"您好，这是您本月的使用报告。" \
   --rate_limit 5 \
@@ -235,7 +233,6 @@ wacli messages search --regex "合同.*[0-9]{4}年" --limit 50 --json
 # ...
 # 多维度过滤
 wacli messages search \
-  --chat "8613800138000@s.whatsapp.net" \
   --after 2026-01-01 \
   --before 2026-07-31 \
   --from-me false \

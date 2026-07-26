@@ -166,7 +166,7 @@ def atr_stop_loss(df, period=14, multiplier=2.0):
     atr = tr.rolling(window=period).mean()
 
     # 多头止损 = 最高价 - ATR × 倍数
-    df['stop_loss'] = df['high'].rolling(window=period).max() - atr * multiplier
+    df['stop_loss'] = df['high'].max() - atr * multiplier
     return df[['close', 'stop_loss', 'atr']]
 ```
 

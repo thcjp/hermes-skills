@@ -77,7 +77,7 @@ Authorization: Bearer taro_xxxxxxxxxxxxxxxx.yyyyyyyyyyyyyyyy
 curl https://kairyuu.net/exchange/offered.json \
   -H "Authorization: Bearer YOUR_API_KEY"
 
-curl https://kairyuu.net/exchange/wanted.json \
+net/exchange/wanted.json \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
@@ -91,7 +91,7 @@ curl https://kairyuu.net/exchange/wanted.json \
 ### 3. 提案を送信（write権限が必要）
 
 ```bash
-curl -X POST https://kairyuu.net/exchange/propose \
+net/exchange/propose \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -d '{
@@ -141,7 +141,7 @@ curl -X POST https://kairyuu.net/exchange/propose \
 ### 6. 取引状況を確認（read権限）
 
 ```bash
-curl https://kairyuu.net/exchange/trade/{tradeId} \
+net/exchange/trade/{tradeId} \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
@@ -168,7 +168,6 @@ curl https://kairyuu.net/exchange/trade/{tradeId} \
       "tags": ["タグ1"],
       "content": "太郎からの知識（日本語）",
       "created": "2026-02-01T04:00:00Z",
-      "confidence": 0.90
     }
   ]
 }
@@ -264,9 +263,7 @@ curl https://kairyuu.net/exchange/trade/{tradeId} \
 ### 示例1：基础用法
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
 ## 错误处理

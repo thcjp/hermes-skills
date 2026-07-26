@@ -63,14 +63,10 @@ category: "Development"
 自动扫描项目中的所有Docker配置,识别迁移风险点.
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供V1到V2兼容性深度扫描所需的指令和必要参数.
-**处理**: 解析V1到V2兼容性深度扫描的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回V1到V2兼容性深度扫描的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`Dockerfile现代化重构`的配置文档进行参数调优
 ### 2. 批量配置转换
 自动将V1 Compose文件和Dockerfile转换为V2格式.
-**输入**: 用户提供批量配置转换所需的指令和必要参数.
-**输出**: 返回批量配置转换的处理结果,包含执行状态码、结果数据和执行日志.
+
 ### 3. Dockerfile现代化重构
 ```python
 class DockerfileModernizer:
@@ -103,12 +99,12 @@ class DockerfileModernizer:
             if stripped.startswith('MAINTAINER '):
                 author = stripped.split(' ', 1)[1]
                 self.modernized.append(f'LABEL maintainer="{author}"\n')
-                self.changes.append("MAINTAINER -> LABEL maintainer")
+changes.append("MAINTAINER -> LABEL maintainer")
                 continue
 # ...
             if 'apt-get install' in stripped and '&&' not in stripped:
-                self.modernized.append(line)
-                self.changes.append("建议合并apt-get install指令")
+modernized.append(line)
+changes.append("建议合并apt-get install指令")
                 continue
 # ...
             self.modernized.append(line)
@@ -124,18 +120,14 @@ class DockerfileModernizer:
 # ...
     def _write(self):
         """写回文件"""
-        with open(self.path, 'w', encoding='utf-8') as f:
+path, 'w', encoding='utf-8') as f:
             f.writelines(self.modernized)
 ```- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `dockerfile现代化重构` 选项
 - 处理流程: 接收输入 -> 执行Dockerfile现代化重构 -> 返回结果
 - 输入: 用户提供Dockerfile现代化重构所需的参数和指令
-- 输出: 返回Dockerfile现代化重构的处理结果,包含执行状态码、结果数据和执行日志
 
-**输入**: 用户提供渐进式迁移与回滚所需的指令和必要参数.
-**处理**: 解析渐进式迁移与回滚的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回渐进式迁移与回滚的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 

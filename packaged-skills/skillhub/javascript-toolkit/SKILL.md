@@ -1,9 +1,8 @@
----
-slug: "javascript-toolkit"
+---slug: "javascript-toolkit"
 name: "javascript-toolkit"
 version: 1.0.1
 displayName: "JavaScript工具包专业版"
-summary: "企业级 JavaScript 开发方案，含性能优化、模块化架构、测试策略与构建工具链。。面向企业级 JavaScript 开发团队的专业工具包。Use when 需要代码生成、编程辅助、调试"
+summary: "企业级 JavaScr"
 summary_zh: "企业级 JavaScript 开发方案，含性能优化、模块化架构、测试策略与构建工具链。。面向企业级 JavaScript 开发团队的专业工具包。Use when 需要代码生成、编程辅助、调试"
 license: "MIT"
 edition: "pro"
@@ -27,9 +26,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# JavaScript工具包专业版
+category: "Automation"---# JavaScript工具包专业版
 
 ## 付费版专享能力
 

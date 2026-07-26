@@ -60,7 +60,6 @@ category: "Automation"
 ### 批量处理与并行执行
 批量处理与并行执行
 
-**输入**: 用户提供批量处理与并行执行所需的指令和必要参数.
 **处理**: 解析批量处理与并行执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量处理与并行执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -68,7 +67,6 @@ category: "Automation"
 ### 企业级安全与审计
 企业级安全与审计
 
-**输入**: 用户提供企业级安全与审计所需的指令和必要参数.
 **处理**: 解析企业级安全与审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回企业级安全与审计的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -76,7 +74,6 @@ category: "Automation"
 ### 高级配置与自定义策略
 高级配置与自定义策略
 
-**输入**: 用户提供高级配置与自定义策略所需的指令和必要参数.
 **处理**: 解析高级配置与自定义策略的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级配置与自定义策略的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -84,7 +81,6 @@ category: "Automation"
 ### 免费版完全兼容
 免费版完全兼容，无缝升级
 
-**输入**: 用户提供免费版完全兼容所需的指令和必要参数.
 **处理**: 解析免费版完全兼容的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版完全兼容的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -92,12 +88,10 @@ category: "Automation"
 ### 优先技术支持与问题响应
 优先技术支持与问题响应
 
-**输入**: 用户提供优先技术支持与问题响应所需的指令和必要参数.
 **处理**: 解析优先技术支持与问题响应的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回优先技术支持与问题响应的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**输入**: 用户提供专业版增强功能所需的指令和必要参数.
 **处理**: 解析专业版增强功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回专业版增强功能的响应数据,包含状态码、结果和日志.
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
@@ -192,9 +186,9 @@ class FeishuDocWriter:
             if op["type"] == "create":
                 r = self._append_block(doc_token, op["content"])
             elif op["type"] == "update":
-                r = self._update_block(doc_token, op["block_id"], op["content"])
+_update_block(doc_token, op["block_id"], op["content"])
             elif op["type"] == "delete":
-                r = self._delete_block(doc_token, op["block_id"])
+_delete_block(doc_token, op["block_id"])
             else:
                 r = {"error": f"未知操作: {op['type']}"}
             results.append(r)
@@ -223,16 +217,14 @@ class FeishuDocWriter:
         return {"status": "ok", "output": result.stdout.strip()}
 # ...
     def _update_block(self, token, block_id, content):
-        result = subprocess.run([
-            "node", "index.js", "--action", "update",
+js", "--action", "update",
             "--token", token, "--block-id", block_id,
             "--content", content
         ], capture_output=True, text=True)
         return {"status": "ok", "block_id": block_id}
 # ...
     def _delete_block(self, token, block_id):
-        result = subprocess.run([
-            "node", "index.js", "--action", "delete",
+js", "--action", "delete",
             "--token", token, "--block-id", block_id
         ], capture_output=True, text=True)
         return {"status": "deleted", "block_id": block_id}

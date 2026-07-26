@@ -60,14 +60,13 @@ echo -n "Hello" | base64 | tr '+/' '-_' | tr -d '='
 python3 -c "from urllib.parse import quote; print(quote('hello world & foo=bar'))"
 # 输出: hello%20world%20%26%20foo%3Dbar
 # ...
-python3 -c "from urllib.parse import unquote; print(unquote('hello%20world%20%26%20foo%3Dbar'))"
+parse import unquote; print(unquote('hello%20world%20%26%20foo%3Dbar'))"
 # 输出: hello world & foo=bar
 ```- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `url编码解码` 选项
 - 处理流程: 接收输入 -> 执行URL编码解码 -> 返回结果
 - 输入: 用户提供URL编码解码所需的参数和指令
-- 输出: 返回URL编码解码的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 3. Hex查看与转换
 查看二进制文件的十六进制转储，在Hex和文本之间转换.
@@ -77,7 +76,6 @@ xxd -l 64 file.bin       # 前64字节
 echo "48656c6c6f" | xxd -r -p   # Hex转文本: Hello
 ```
 
-**输入**: 用户提供Hex查看与转换所需的指令和必要参数。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `hex查看与转换` 选项
 
@@ -89,8 +87,6 @@ echo "$TOKEN" | cut -d. -f2 | tr '-_' '+/' | base64 -d 2>/dev/null | jq
 # 输出: {"sub": "1234567890", "name": "John Doe"}
 ```
 
-**输入**: 用户提供JWT解码所需的指令和必要参数.
-**处理**: 解析JWT解码的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 #
 ## 快速开始
 

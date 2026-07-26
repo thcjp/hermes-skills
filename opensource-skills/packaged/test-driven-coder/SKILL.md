@@ -114,18 +114,21 @@ category: "Development"
   /------------------\
 ```
 
-#### 单元测试(80%)
+#
+### 单元测试(80%)
 - 测试单个函数/类的行为
 - 依赖全部 mock
 - 执行时间 < 100ms/个
 - 命名:`describe('ClassName', () => { it('should_behavior_when_condition') })`
 
-#### 集成测试(15%)
+#
+### 集成测试(15%)
 - 测试模块间协作(如 Service + Repository)
 - 使用真实依赖或测试数据库
 - 执行时间 < 1s/个
 
-#### 端到端测试(5%)
+#
+### 端到端测试(5%)
 - 测试完整用户流程
 - 使用真实环境或接近真实
 - 执行时间可接受较慢
@@ -400,7 +403,6 @@ class TestValidatePassword:
         assert "需包含至少1个特殊字符(!@#$%^&*)" in errors
 # ...
     def test_should_return_error_when_contains_space(self):
-        is_valid, errors = validate_password("Str0ng! Pass")
         assert is_valid is False
         assert "密码不能包含空格" in errors
 # ...
@@ -441,7 +443,6 @@ def validate_password(password: str, rules: dict = None) -> tuple[bool, list[str
 
 **LLM生成输出** (Step 3: Refactor - 可配置规则):
 ```python
-# password_validator.py (重构后)
 import re
 from dataclasses import dataclass, field
 from typing import Callable
@@ -528,7 +529,6 @@ describe('calculateFinalPrice', () => {
 // ...
   it('should_not_apply_tier_discounts_cumulatively', () => {
     // 500时只减60,不减(60+25+10)
-    expect(calculateFinalPrice({ subtotal: 500, isVip: false })).toBe(440);
   });
 });
 ```
@@ -831,20 +831,18 @@ class OrderPriceCalculatorTest {
 
     @Test
     void should_not_allow_negative_final_price() {
-        BigDecimal result = calculator.calculate(
             new BigDecimal("10"), true, new BigDecimal("50")
         );
-        assertThat(result).isEqualByComparingTo("0.00");
+isEqualByComparingTo("0.00");
     }
 
     @Test
     void should_use_BigDecimal_not_double_for_currency() {
         // 防止浮点精度问题: 0.1 + 0.2 != 0.3
-        BigDecimal result = calculator.calculateSubtotal(List.of(
+calculateSubtotal(List.of(
             new OrderItem("P1", new BigDecimal("0.10"), 1),
             new OrderItem("P2", new BigDecimal("0.20"), 1)
         ));
-        assertThat(result).isEqualByComparingTo("0.30");
     }
 }
 ```

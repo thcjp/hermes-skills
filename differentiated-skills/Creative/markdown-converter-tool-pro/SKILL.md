@@ -74,7 +74,6 @@ batch_config = {
 }
 ```
 
-**输入**: 用户提供批量目录扫描所需的指令和必要参数.
 **处理**: 解析批量目录扫描的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量目录扫描的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -114,7 +113,6 @@ template:
     frontmatter: true
 ```
 
-**输入**: 用户提供自定义输出模板所需的指令和必要参数.
 **处理**: 解析自定义输出模板的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自定义输出模板的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -140,7 +138,6 @@ metadata_config = {
 }
 ```
 
-**输入**: 用户提供元数据提取所需的指令和必要参数.
 **处理**: 解析元数据提取的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回元数据提取的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -181,7 +178,6 @@ quality_audit = {
 }
 ```
 
-**输入**: 用户提供文档质量审计所需的指令和必要参数.
 **处理**: 解析文档质量审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回文档质量审计的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -199,7 +195,6 @@ history_config = {
 }
 ```
 
-**输入**: 用户提供转换历史与版本管理所需的指令和必要参数.
 **处理**: 解析转换历史与版本管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回转换历史与版本管理的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级文档批量转、换系统、支持目录扫描、批量处理、自定义模板、适合团队与商业项、转换器专业版为企、业与内容团队提供、系统化的文档转换、解决方案、在免费版基础转换、能力之上、增加批量处理、文档质量审计与、集成能力、Use、when、需要文件处理、文档转换、格式互转、内容提取时使用、不适用于加密文件、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -210,7 +205,6 @@ history_config = {
 需求:企业需要将历史文档库(数千文件)批量转为Markdown.
 ```bash
 # 批量转换企业文档库
-python3 batch_convert.py \
   --input /company/documents/ \
   --output /company/markdown/ \
   --recursive \
@@ -251,9 +245,9 @@ company/markdown/
 knowledge_base = {
     "sources": [
         {"type": "directory", "path": "./docs/", "category": "技术文档"},
-        {"type": "directory", "path": "./wiki/", "category": "团队Wiki"},
-        {"type": "directory", "path": "./meetings/", "category": "会议记录"},
-        {"type": "directory", "path": "./designs/", "category": "设计文档"}
+/wiki/", "category": "团队Wiki"},
+/meetings/", "category": "会议记录"},
+/designs/", "category": "设计文档"}
     ],
     "output": "./knowledge-base/",
     "template": "knowledge-base-template.yml",
@@ -292,7 +286,6 @@ python3 init_project.py \
 
 ### Step 2:配置批量转换
 ```bash
-python3 batch_convert.py \
   --config conversion-config.yml \
   --parallel 8 \
   --quality-check
@@ -381,7 +374,6 @@ jobs:
         run: pip install uv
       - name: Batch Convert Documents
         run: |
-          python3 batch_convert.py \
             --input ./source-docs/ \
             --output ./docs/ \
             --parallel 8 \
@@ -389,8 +381,6 @@ jobs:
             --generate-index
       - name: Quality Audit
         run: |
-          python3 audit_conversion.py \
-            --input ./docs/ \
             --report ./audit/
       - name: Upload Documents
         uses: actions/upload-artifact@v3

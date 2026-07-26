@@ -94,15 +94,11 @@ export API_KEY="your_api_key_here"
 
 - **上午日程(开始时间 < 12:00)**:提前 2 小时飞书提醒。例如明日 09:30 的晨会,会在当日 07:30 推送提醒,确保用户有充足时间准备材料.
 - **下午日程(开始时间 >= 12:00)**:在当天 12:00 统一汇总提醒。将所有下午日程打包成一条消息推送,避免下午日程过多导致消息轰炸.
-**处理**: 解析按时段差异化提醒策略的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回按时段差异化提醒策略的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. 跨时区日程处理
 基于 Python `zoneinfo` 模块将 Outlook 返回的 UTC 时间转换为本地时区(默认 Asia/Shanghai),正确处理跨时区会议、夏令时切换、全天事件等边界场景,确保提醒时间不会因时区错位而提前或延后.
-**输入**: 用户提供跨时区日程处理所需的指令和必要参数.
+
 ### 4. Cron 定时任务注册
 通过 `skill-platform cron add` 命令注册每日扫描任务,支持自定义时区、session 名称、system-event 消息内容。注册后任务持久化在 skill-platform 中,即使 Agent 重启也会按时触发.
-**处理**: 解析Cron 定时任务注册的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Cron 定时任务注册的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`Cron 定时任务注册`的配置文档进行参数调优
 ### 5. 扫描结果汇报
 
@@ -184,7 +180,6 @@ skill-platform cron add \
 在注册 cron 后,手动运行一次脚本验证端到端流程是否通畅:
 
 ```bash
-python3 ~/.skill-platform/workspace/skills/calendar-reminder/calendar_reminder.py
 ```
 
 检查飞书是否收到扫描汇报消息,并确认明日日程被正确分段.
@@ -263,7 +258,7 @@ skill-platform cron list
 **处理**: 在脚本中增加"安静时段"判断(如 23:00-07:00 不推送),将落在安静时段的提醒延后到 07:00 合并推送;或在汇报消息中提示"06:00 早班日程,提醒已延后至 07:00".
 ### 7. 脚本路径变更导致 cron 执行失败
 
-**原因**: 用户重装 skill-platform 或迁移 workspace,导致 `~/.skill-platform/workspace/skills/calendar-reminder/calendar_reminder.py` 路径失效.
+**原因**: 用户重装 skill-platform 或迁移 workspace,导致 `~/.py` 路径失效.
 **处理**: 重新部署脚本到新路径,执行 `skill-platform cron update calendar-daily-scan --system-event "CALENDAR_SCAN: 请运行 python3 <新路径>/calendar_reminder.py"`;建议在脚本部署后用 `readlink -f` 确认绝对路径.
 ### 8. 全天事件被误判为上午日程
 
@@ -273,7 +268,7 @@ skill-platform cron list
 
 ### Q1: 如何将提醒从个人飞书改为团队群提醒?
 
-将 `calendar_reminder.py` 中 `send_feishu` 的 `--target` 参数从 `user:ou_xxx` 改为 `chat:oc_xxx`,并确保飞书机器人已被群管理员加入目标群。若希望同时推送个人与群,可调用两次 `send_feishu` 分别传入不同 target.
+py` 中 `send_feishu` 的 `--target` 参数从 `user:ou_xxx` 改为 `chat:oc_xxx`,并确保飞书机器人已被群管理员加入目标群。若希望同时推送个人与群,可调用两次 `send_feishu` 分别传入不同 target.
 ### Q2: 明日没有日程时还会推送消息吗?
 
 默认会推送一条"明日无日程安排"的汇报消息,确保用户知道扫描已正常执行。若希望无日程时静默,可在脚本中增加判断:`if not events: return` 跳过飞书推送,但建议保留日志记录以便排查.

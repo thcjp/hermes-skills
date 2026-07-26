@@ -89,12 +89,8 @@ export API_KEY="your_api_key_here"
 - `（请参考skill目录中的脚本文件）` — 空闲自动关闭检查
 - `（请参考skill目录中的脚本文件）` — CivitAI 集成（搜索/详情
 
-**输入**: 用户提供脚本路径所需的指令和必要参数.
 ### ComfyUI 生命周期管理
 
-**输入**: 用户提供ComfyUI 生命周期管理所需的指令和必要参数.
-**处理**: 解析ComfyUI 生命周期管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回ComfyUI 生命周期管理的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`ComfyUI 生命周期管理`的配置文档进行参数调优
 ### 启动 ComfyUI
 ```python
@@ -103,22 +99,17 @@ mgr.start()  # 自动启动本地 ComfyUI 进程
 ```
 
 启动后默认监听 `http://127.0.0.1:8188`。脚本会等待服务就绪后返回.
-**输入**: 用户提供启动 ComfyUI所需的指令和必要参数.
-**处理**: 解析启动 ComfyUI的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 ### 状态检查
 ```python
 import scripts.comfyui_manager 
 # ...
 **输入**: 用户提供ComfyUI 生命周期管理相关的配置参数、输入数据和处理选项.
-**处理**: 解析ComfyUI 生命周期管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 # ...
-**输出**: 返回状态检查的处理结果,包含执行状态码、结果数据和执行日志.
 ### 图片生成
 # ...
 # ...
-**输入**: 用户提供图片生成所需的指令和必要参数.
-**处理**: 解析图片生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回图片生成的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+
 - 参考`图片生成`的配置文档进行参数调优
 ### 基础生成
 # ...
@@ -131,12 +122,8 @@ result = generate(
     width
 
 **输入**: 用户提供图片生成相关的配置参数、输入数据和处理选项.
-**处理**: 解析图片生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### CivitAI 集成
 
-**输入**: 用户提供CivitAI 集成所需的指令和必要参数.
-**处理**: 解析CivitAI 集成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回CivitAI 集成的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`CivitAI 集成`的配置文档进行参数调优
 ### 搜索模型
 ```bash
@@ -144,8 +131,7 @@ python3 （请参考skill目录中的脚本文件） search "anime checkpoint" -
 ```
 
 返回模型名称、ID、下载量、基础模型等元数据.
-**输入**: 用户提供搜索模型所需的指令和必要参数.
-**处理**: 解析搜索模型的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
+
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `搜索模型` 选项
 
@@ -154,9 +140,6 @@ python3 （请参考skill目录中的脚本文件） search "anime checkpoint" -
 python3 （请参考skill目录中的脚本文件） info 140272
 ```
 
-**输入**: 用户提供查看模型详情所需的指令和必要参数.
-**处理**: 解析查看模型详情的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回查看模型详情的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `查看模型详情` 选项
 
@@ -164,10 +147,8 @@ python3 （请参考skill目录中的脚本文件） info 140272
 ```bash
 pyth
 # ...
-**处理**: 解析CivitAI 集成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 # ...
-**输入**: 用户提供获取推荐参数所需的指令和必要参数.
-**输出**: 返回获取推荐参数的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
+
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `获取推荐参数` 选项
 # ...
@@ -179,8 +160,6 @@ pyth
 | noobv6 | pornmasterPro_noobV6 | 1045588 | noob-V6 |
 # ...
 **输入**: 用户提供模型别名相关的配置参数、输入数据和处理选项.
-**处理**: 解析模型别名的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回模型别名的处理结果,包含执行状态码、结果数据和执行日志.
 # ...
 ### 自动调参参数表
 # ...
@@ -193,8 +172,6 @@ pyth
 | noobv6 | 20 | 7 | euler_a |
 | sdxlv8 | 25 
 # ...
-**处理**: 解析自动调参参数表的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回自动调参参数表的处理结果,包含执行状态码、结果数据和执行日志.
 # ...
 ### 提示词优化指南
 # ...
@@ -206,7 +183,6 @@ pyth
 - 细节标签: `detailed skin,
 # ...
 **输入**: 用户提供提示词优化指南相关的配置参数、输入数据和处理选项.
-**输出**: 返回提示词优化指南的处理结果,包含执行状态码、结果数据和执行日志.
 # ...
 #
 ## 快速开始
@@ -239,7 +215,7 @@ Token: your_api_key_here
 校验 Key 是否存在:
 # ...
 ```bash
-[ -f ~/.skill-platform/workspace/credentials/civitai.md ] && echo ok || echo missing
+[ -f ~/.md ] && echo ok || echo missing
 ```
 # ...
 Key 缺失时不阻塞基础画图功能,但 CivitAI 搜索/下载/更新检查将不可用,需引导用户前往 civitai.com 注册并配置.
@@ -325,7 +301,6 @@ result = generate(
 python3 （请参考skill目录中的脚本文件） search "anime checkpoint" --limit 5
 ```
 # ...
-返回模型名称、ID、下载量、基础模型等元数据.
 # ...
 ### 查看模型详情(补充)
 # ...
@@ -370,7 +345,7 @@ python3 （请参考skill目录中的脚本文件） update-all
 # ...
 | 别名(续)| Checkpoint | CivitAI ID | 版本 | 风格 |
 |---:|:---|---:|---:|:---|
-| hassaku | hassakuXLIllustrious_v34 | 140272 | v3.4 | Illustrious 动漫 |
+4 | Illustrious 动漫 |
 | noobv6 | pornmasterPro_noobV6 | 1045588 | noob-V6 | NoobAI 动漫（默认） |
 | noobv4 | pornmasterPro_noobV4 | 1045588 | noob-V4 | NoobAI 动漫（旧版） |
 | sdxlv8 | pornmaster_proSDXLV8 | 82543 | Pro-SDXL-V8 | SDXL 写实 |
@@ -440,7 +415,7 @@ result = generate(positive="your prompt", model="janku", **params)
 python3 （请参考skill目录中的脚本文件） check-updates
 
 # 下载新模型
-python3 （请参考skill目录中的脚本文件） download "https://civitai.com/api/download/models/XXXXX" --filename new_model.safetensors
+com/api/download/models/XXXXX" --filename new_model.safetensors
 ```
 # ...
 ## 使用流程
@@ -510,7 +485,7 @@ result = generate(
 python3 （请参考skill目录中的脚本文件） check-updates
 
 # 下载新模型
-python3 （请参考skill目录中的脚本文件） download "https://civitai.com/api/download/models/140272" --filename hassakuXLIllustrious_v35.safetensors
+com/api/download/models/140272" --filename hassakuXLIllustrious_v35.safetensors
 
 # 更新所有模型推荐参数到 config
 python3 （请参考skill目录中的脚本文件） update-all

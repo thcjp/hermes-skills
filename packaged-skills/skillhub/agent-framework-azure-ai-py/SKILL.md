@@ -222,7 +222,6 @@ async def main():
         print()
 # ...
         # Structured output
-        result = await agent.run(
             "Analyze findings",
             thread=thread,
             response_format=AnalysisResult,

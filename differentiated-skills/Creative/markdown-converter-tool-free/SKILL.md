@@ -49,7 +49,6 @@ Markdown转换器免费版帮助个人用户将各类文档文件转换为Markdo
 | 媒体 | 图片(EXIF+OCR)、音频(EXIF+转录) | 媒体元数据与内容 |
 | 其他 | ZIP(遍历内容)、YouTube URL、EPub | 特殊格式支持 |
 
-**输入**: 用户提供支持的格式所需的指令和必要参数.
 **处理**: 解析支持的格式的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回支持的格式的响应数据,包含状态码、结果和日志.
 ### 文档结构保留
@@ -63,13 +62,12 @@ Markdown转换器免费版帮助个人用户将各类文档文件转换为Markdo
 - 图片引用
 - 代码块
 
-**输入**: 用户提供文档结构保留所需的指令和必要参数.
 **处理**: 解析文档结构保留的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回文档结构保留的响应数据,包含状态码、结果和日志.
 ### 基础OCR
 
 对图片进行OCR文字识别,提取图片中的文字内容并转为Markdown.
-**输入**: 用户提供基础OCR所需的指令和必要参数.
+
 **处理**: 解析基础OCR的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回基础OCR的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -144,10 +142,8 @@ powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 uvx markitdown input.pdf
 # ...
 # 指定输出文件
-uvx markitdown input.pdf -o output.md
 # ...
 # 重定向输出
-uvx markitdown input.docx > output.md
 ```
 
 ### Step 3:检查结果
@@ -185,10 +181,8 @@ uvx markitdown [输入文件] [选项]
 
 ```bash
 # PDF转Markdown
-uvx markitdown report.pdf -o report.md
 # ...
 # Word转Markdown
-uvx markitdown document.docx -o document.md
 # ...
 # Excel转Markdown(表格保留)
 uvx markitdown spreadsheet.xlsx > spreadsheet.md
@@ -252,7 +246,6 @@ uvx markitdown --use-plugins input.docx -o output.md
 A: 使用`-c`选项指定字符集:
 
 ```bash
-uvx markitdown input.pdf -c UTF-8 -o output.md
 ```
 
 ### Q2: PDF转换效果不好?
@@ -260,7 +253,7 @@ uvx markitdown input.pdf -c UTF-8 -o output.md
 A: 对于扫描版PDF或复杂排版的PDF,使用`-d`选项启用文档智能服务:
 
 ```bash
-uvx markitdown scan.pdf -d -e "https://your-resource.cognitiveservices.azure.com/"
+uvx markitdown scan.cognitiveservices.azure.com/"
 ```
 
 ### Q3: 免费版支持批量转换吗?

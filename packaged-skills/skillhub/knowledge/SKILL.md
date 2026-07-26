@@ -1,9 +1,8 @@
----
-slug: "knowledge"
+---slug: "knowledge"
 name: "knowledge"
 version: 1.0.1
 displayName: "本地知识库集成"
-summary: "本地知识库集成 - 文档检索、投喂、双轨模式切换。本地知识库集成 - 文档检索、投喂、双轨模式切换 核心能力: - 知识管理领域的专业化AI辅助工具 - 基于高人气开源Skill深度优化升级"
+summary: "本地知识库集成 - 文"
 summary_zh: "本地知识库集成 - 文档检索、投喂、双轨模式切换。本地知识库集成 - 文档检索、投喂、双轨模式切换 核心能力: - 知识管理领域的专业化AI辅助工具 - 基于高人气开源Skill深度优化升级"
 license: "MIT"
 description: |-
@@ -36,9 +35,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# Knowledge
+category: "Automation"---# Knowledge
 
 ## 付费版专享能力
 
@@ -98,6 +95,8 @@ category: "Automation"
 | 参数名 | 类型 | 必填 | 说明 |
 |:---:|:---:|:---:|:---:|
 
+| instruction | string | 是 | 用户指令文本 |
+| context | string | 否 | 上下文信息 |
 ## 输出格式
 
 ```json

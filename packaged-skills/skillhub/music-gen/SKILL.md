@@ -60,7 +60,7 @@ batch_config = {
             "id": "bgm_002",
             "platform": "mubert",
             "prompt": "lo-fi hip hop, relaxed, 80 BPM, 3 minutes",
-            "output": "./output/bgm_002.mp3",
+/output/bgm_002.mp3",
             "license": "commercial"
         },
         {
@@ -68,7 +68,7 @@ batch_config = {
             "platform": "suno",
             "prompt": "pop song with vocals, uplifting, 120 BPM",
             "lyrics": "lyrics/song_001.txt",
-            "output": "./output/song_001.mp3",
+/output/song_001.mp3",
             "license": "commercial"
         }
     ],
@@ -120,9 +120,7 @@ platform_scheduler = {
 }
 ```
 
-**输入**: 用户提供多平台智能调度所需的指令和必要参数.
-**处理**: 解析多平台智能调度的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回多平台智能调度的处理结果,包含执行状态码、结果数据和执行日志。### 版权资产管理
+### 版权资产管理
 ```python
 license_manager = {
     "assets": [
@@ -159,9 +157,7 @@ license_manager = {
 }
 ```
 
-**输入**: 用户提供版权资产管理所需的指令和必要参数.
-**处理**: 解析版权资产管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回版权资产管理的处理结果,包含执行状态码、结果数据和执行日志。### 音乐质量审计
+### 音乐质量审计
 ```python
 quality_audit = {
     "checks": [
@@ -203,8 +199,7 @@ quality_audit = {
 }
 ```
 
-**输入**: 用户提供音乐质量审计所需的指令和必要参数.
-**输出**: 返回音乐质量审计的处理结果,包含执行状态码、结果数据和执行日志。### 音乐库管理
+### 音乐库管理
 ```python
 music_library = {
     "categories": {
@@ -240,9 +235,6 @@ music_library = {
 }
 ```
 
-**输入**: 用户提供音乐库管理所需的指令和必要参数.
-**处理**: 解析音乐库管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回音乐库管理的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `多平台智能调度` 选项
 
@@ -260,7 +252,6 @@ music_library = {
 ### 场景一:MCN批量配乐生产
 需求:MCN机构需要为多个账号批量生产背景音乐.
 ```bash
-python3 batch_music_gen.py \
   --tasks music-tasks.json \
   --parallel 5 \
   --auto-select-platform \
@@ -319,7 +310,6 @@ for scene in game_scenes:
 
 ### 步骤一:初始化音乐资产管理
 ```bash
-python3 init_music_library.py \
   --brand "MyBrand" \
   --output ./music-library/ \
   --license-tracking
@@ -327,7 +317,6 @@ python3 init_music_library.py \
 
 ### 步骤二:配置批量生成
 ```bash
-python3 batch_music_gen.py \
   --config music-tasks.yml \
   --parallel 5 \
   --auto-select-platform \
@@ -480,14 +469,12 @@ jobs:
           python-version: "3.10"
       - name: Batch Generate Music
         run: |
-          python3 batch_music_gen.py \
             --config music-tasks/config.yml \
             --parallel 5 \
             --auto-select-platform \
             --quality-check
       - name: License Audit
         run: |
-          python3 license_audit.py \
             --library ./music-library/ \
             --report ./audit/
       - name: Upload Music

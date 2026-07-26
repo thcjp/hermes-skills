@@ -69,18 +69,14 @@ export API_KEY="your_api_key_here"
 - **Visual Hierarchy**：通过大小、颜色、留白、对比引导注意力
 - **Whitespace**：间距使用8px倍数（8, 16, 24, 32, 48, 64）
 
-**输入**: 用户提供核心设计原则（Core Design Principles）所需的指令和必要参数.
-**处理**: 解析核心设计原则（Core Design Principles）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回核心设计原则（Core Design Principles）的处理结果,包含执行状态码、结果数据和执行日志。### 配色系统（Color System）
+### 配色系统（Color System）
 基础配色方案构建：
 
 - **Primary**：品牌色（CTA、链接、激活状态）
 - **Neutrals**：灰色50-900（文本、背景、边框）
 - **Semantic**：Success（绿）、Error（红）、Warning（黄）
 
-**输入**: 用户提供配色系统（Color System）所需的指令和必要参数.
-**处理**: 解析配色系统（Color System）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回配色系统（Color System）的处理结果,包含执行状态码、结果数据和执行日志。### 排版系统（Typography Scale）
+### 排版系统（Typography Scale）
 基于8px基线的排版尺度：
 
 ```text
@@ -93,18 +89,13 @@ text-3xl:  30px / 36px (section headers)
 
 字体配对：最多2种字体（UI用无衬线，标题可选衬线）
 
-**输入**: 用户提供排版系统（Typography Scale）所需的指令和必要参数.
-**处理**: 解析排版系统（Typography Scale）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回排版系统（Typography Scale）的处理结果,包含执行状态码、结果数据和执行日志。### 基础无障碍（Accessibility）
+### 基础无障碍（Accessibility）
 WCAG基础要求：
 
 - 文本对比度：最低4.5:1（正常文本），3:1（大文本）
 - UI组件：最低3:1对比度
 - 键盘导航：Tab顺序合理，焦点状态可见
 
-**输入**: 用户提供基础无障碍（Accessibility）所需的指令和必要参数.
-**处理**: 解析基础无障碍（Accessibility）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回基础无障碍（Accessibility）的处理结果,包含执行状态码、结果数据和执行日志.
 ### Mobile-First
 
 针对Mobile-First,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.

@@ -1,9 +1,8 @@
----
-slug: web-scraper-engine
+---slug: web-scraper-engine
 name: web-scraper-engine
 version: 1.0.1
 displayName: 网页抓取引擎
-summary: "Firecrawl/Playwright/Crawl4AI全流程网页数据采集,搜索爬取提取表单。网页抓取引擎——基于Firecrawl/Playwright/Crawl4AI实现全流程网页数"
+summary: "Firecrawl/P"
 summary_zh: "Firecrawl/Playwright/Crawl4AI全流程网页数据采集,搜索爬取提取表单。网页抓取引擎——基于Firecrawl/Playwright/Crawl4AI实现全流程网页数"
 license: Proprietary
 description: 网页抓取引擎——基于Firecrawl/Playwright/Crawl4AI实现全流程网页数据采集。覆盖搜索发现、单页抓取、结构化提取、多步骤浏览器交互全链路。同时提供Crawl4AI开源国内替代方案,无需海外API。适用于竞品分析、价格监控、内容采集、Lead
@@ -27,9 +26,7 @@ tools:
   - exec
   - write
   - glob
-category: "Development"
----
-# 网页抓取引擎
+category: "Development"---# 网页抓取引擎
 
 基于 Firecrawl / Playwright / Crawl4AI 实现全流程网页数据采集。从搜索发现到结构化提取,从单页抓取到多步骤浏览器交互,无需维护爬虫基础设施。同时提供开源国内替代方案(Crawl4AI),降低对海外 API 的依赖。
 
@@ -400,7 +397,7 @@ import csv
 from datetime import datetime
 from firecrawl import FirecrawlApp
 # ...
-app = FirecrawlApp(api_key=os.environ['FIRECRAWL_API_KEY'])
+environ['FIRECRAWL_API_KEY'])
 # ...
 # JSON Schema 定义
 price_schema = {
@@ -572,7 +569,6 @@ async def scrape_36kr():
     ) as crawler:
 # ...
         # 抓取首页文章列表
-        result = await crawler.arun(
             url="https://36kr.com/information/technology/",
             extraction_strategy=extraction_strategy,
             bypass_cache=True
@@ -582,7 +578,7 @@ async def scrape_36kr():
             print("未提取到内容")
             return
 # ...
-        articles = json.loads(result.extracted_content)
+loads(result.extracted_content)
         print(f"原始抓取: {len(articles)} 篇文章")
 # ...
         # 去重: URL规范化 + 内容哈希
@@ -619,7 +615,7 @@ async def scrape_36kr():
         print(f"去重后: {len(unique_articles)} 篇文章")
 # ...
         # 导出JSON
-        with open('articles.json', 'w', encoding='utf-8') as f:
+json', 'w', encoding='utf-8') as f:
             json.dump(unique_articles, f, ensure_ascii=False, indent=2)
         print("JSON导出: articles.json")
 # ...
@@ -655,7 +651,7 @@ articles = asyncio.run(scrape_36kr())
   },
   {
     "title": "字节跳动豆包大模型日均调用量突破万亿token",
-    "url": "https://36kr.com/p/2801234567890124",
+com/p/2801234567890124",
     "summary": "字节跳动宣布其豆包大模型日均调用量已突破1万亿token,成为国内调用量最大的大模型之一...",
     "author": "36氪AI",
     "date": "2026-01-15 08:15"
@@ -691,12 +687,11 @@ from playwright.async_api import async_playwright
 async def scrape_orders():
     async with async_playwright() as p:
         # 启动浏览器(stealth模式)
-        browser = await p.chromium.launch(
             headless=True,
             args=['--disable-blink-features=AutomationControlled']
         )
         context = await browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+0 (Windows NT 10.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
             viewport={'width': 1920, 'height': 1080},
             locale='zh-CN'
         )
@@ -745,10 +740,10 @@ async def scrape_orders():
 # ...
         while True:
             print(f"  采集第 {page_num} 页...")
-            await asyncio.sleep(random.uniform(2, 4))  # 随机延迟防反爬
+sleep(random.uniform(2, 4))  # 随机延迟防反爬
 # ...
             # 提取当前页数据
-            rows = await page.query_selector_all('.order-row')
+            rows = await page.order-row')
             for row in rows:
                 order = {
                     'order_id': await (await row.query_selector('.col-id')).inner_text(),
@@ -760,14 +755,13 @@ async def scrape_orders():
                 all_orders.append(order)
 # ...
             # 检查是否有下一页
-            next_btn = await page.query_selector('.pagination .next:not(.disabled)')
+query_selector('.pagination .next:not(.disabled)')
             if not next_btn:
                 print("  已到最后一页")
                 break
 # ...
-            await next_btn.click()
-            await page.wait_for_selector('.order-row', timeout=10000)
-            await asyncio.sleep(random.uniform(1, 2))  # 翻页延迟
+wait_for_selector('.order-row', timeout=10000)
+sleep(random.uniform(1, 2))  # 翻页延迟
             page_num += 1
 # ...
         # ===== Step 6: 导出CSV =====
@@ -783,7 +777,6 @@ async def scrape_orders():
         await page.screenshot(path='final_page.png', full_page=True)
         print("截图保存: final_page.png")
 # ...
-        await browser.close()
 # ...
 asyncio.run(scrape_orders())
 ```
@@ -851,13 +844,11 @@ site_configs = {
         "fields": job_schema_fields
     },
     "boss": {
-        "url": "https://www.zhipin.com/web/geek/job?query=Python",
-        "base_selector": ".job-card-wrapper",
+zhipin.com/web/geek/job?query=Python",
         "fields": job_schema_fields
     },
     "51job": {
         "url": "https://search.51job.com/list/000000,000000,0000,00,9,99,Python,2,1.html",
-        "base_selector": ".j_joblist .e",
         "fields": job_schema_fields
     }
 }
@@ -895,13 +886,11 @@ async def scrape_all_sites():
                     "fields": config["fields"]
                 })
 # ...
-                result = await crawler.arun(
                     url=config["url"],
                     extraction_strategy=strategy,
                     bypass_cache=True
                 )
 # ...
-                if not result.extracted_content:
                     print(f"  {site_name}: 未提取到内容")
                     continue
 # ...

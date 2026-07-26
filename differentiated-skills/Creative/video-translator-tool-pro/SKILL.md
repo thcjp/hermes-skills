@@ -66,7 +66,6 @@ category: "Creative"
 | 西班牙文 | es | zh / en |
 | 德文 | de | zh / en |
 
-**输入**: 用户提供多语言翻译支持所需的指令和必要参数.
 **处理**: 解析多语言翻译支持的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多语言翻译支持的响应数据,包含状态码、结果和日志.
 ### 2. 双语字幕烧录
@@ -77,7 +76,6 @@ category: "Creative"
 - 自定义字幕样式（字体/颜色/位置）
 - 双语对照便于学习
 
-**输入**: 用户提供双语字幕烧录所需的指令和必要参数.
 **处理**: 解析双语字幕烧录的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回双语字幕烧录的响应数据,包含状态码、结果和日志.
 ### 3. 批量翻译处理
@@ -104,7 +102,6 @@ category: "Creative"
 生成翻译报告
 ```
 
-**输入**: 用户提供批量翻译处理所需的指令和必要参数.
 **处理**: 解析批量翻译处理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量翻译处理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -117,7 +114,6 @@ category: "Creative"
 - 保留语调与情感
 - 适合访谈、演讲、教程类视频
 
-**输入**: 用户提供语音克隆所需的指令和必要参数.
 **处理**: 解析语音克隆的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回语音克隆的响应数据,包含状态码、结果和日志.
 ### 5. 翻译记忆库与术语表
@@ -133,7 +129,6 @@ category: "Creative"
 - 保障术语一致性
 - 支持多领域术语表（科技/医疗/法律等）
 
-**输入**: 用户提供翻译记忆库与术语表所需的指令和必要参数.
 **处理**: 解析翻译记忆库与术语表的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回翻译记忆库与术语表的响应数据,包含状态码、结果和日志.
 ### 6. 任务优先级队列
@@ -151,7 +146,6 @@ category: "Creative"
 结果通知
 ```
 
-**输入**: 用户提供任务优先级队列所需的指令和必要参数.
 **处理**: 解析任务优先级队列的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回任务优先级队列的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级视频翻译与、配音平台、种语言、语音克隆与优先队、适合跨国内容本地、视频翻译专业版、Use、when、需要视频处理、音频编辑、媒体转换、配音生成时使用、不适用于版权受保、护的媒体内容处理、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -184,7 +178,7 @@ python3 batch_translate.py --config /path/to/batch-translate.json --parallel 8
 **执行命令：**
 
 ```bash
-python3 batch_translate.py --config /path/to/multilingual.yaml --parallel 6
+py --config /path/to/multilingual.yaml --parallel 6
 ```
 
 ### 场景 3：影视作品出海字幕与配音
@@ -228,7 +222,7 @@ curl -s -X POST 'https://audiox-api-global.luoji.cn/video-trans/orchestrate' \
 
 ### 第四步：提交双语字幕任务
 ```bash
-curl -s -X POST 'https://audiox-api-global.luoji.cn/video-trans/orchestrate' \
+luoji.cn/video-trans/orchestrate' \
   -H "Authorization: Bearer $VIDEO_TRANSLATE_SERVICE_API_KEY" \
   -F 'video=@/path/to/japanese-video.mp4' \
   -F 'sourceLanguage=ja' \
@@ -239,7 +233,6 @@ curl -s -X POST 'https://audiox-api-global.luoji.cn/video-trans/orchestrate' \
 
 ### 第五步：批量翻译
 ```bash
-python3 batch_translate.py \
   --config /tmp/batch-translate.json \
   --parallel 8 \
   --voice-clone \
@@ -256,9 +249,9 @@ python3 batch_translate.py \
 ```bash
 python3 queue_manager.py status --queue /tmp/translate-queue.json
 # ...
-python3 queue_manager.py priority --task-id task-001 --level urgent
+py priority --task-id task-001 --level urgent
 # ...
-python3 queue_manager.py pause --queue /tmp/translate-queue.json
+py pause --queue /tmp/translate-queue.json
 ```
 
 ## 最佳实践
@@ -277,11 +270,9 @@ python3 glossary_manager.py create \
   --domain technology \
   --output /config/glossary-tech.json
 # ...
-python3 glossary_manager.py import \
   --file /data/terms.csv \
   --domain technology
 # ...
-python3 batch_translate.py \
   --config batch.json \
   --glossary /config/glossary-tech.json
 ```
@@ -292,8 +283,6 @@ python3 memory_manager.py cleanup \
   --database /data/translation-memory.db \
   --min-quality 0.8
 # ...
-python3 memory_manager.py export \
-  --database /data/translation-memory.db \
   --output /data/memory-export.json
 ```
 
@@ -317,9 +306,9 @@ python3 memory_manager.py export \
 **A：** 专业版自动记录失败任务：
 
 ```bash
-python3 batch_translate.py --retry-failed /tmp/translate-queue.json
+py --retry-failed /tmp/translate-queue.json
 # ...
-python3 batch_translate.py --resume /tmp/translate-queue.json
+py --resume /tmp/translate-queue.json
 ```
 
 ### Q4：双语字幕布局如何自定义？
@@ -337,9 +326,9 @@ subtitle:
 **A：** 专业版支持记忆库导入导出：
 
 ```bash
-python3 memory_manager.py export --project A --output /data/memory-a.json
+py export --project A --output /data/memory-a.json
 # ...
-python3 memory_manager.py import --project B --file /data/memory-a.json
+py import --project B --file /data/memory-a.json
 ```
 
 ### Q6：API 调用配额如何管理？
@@ -348,14 +337,14 @@ python3 memory_manager.py import --project B --file /data/memory-a.json
 ```bash
 python3 quota_manager.py status
 # ...
-python3 quota_manager.py set --project "培训本地化" --limit 10000
+py set --project "培训本地化" --limit 10000
 ```
 
 ### Q7：术语表支持哪些格式？
 **A：** 支持 JSON、CSV、XLSX 三种格式：
 
 ```bash
-python3 glossary_manager.py import --file /data/terms.csv --format csv
+py import --file /data/terms.csv --format csv
 ```
 
 ## 依赖说明
@@ -376,7 +365,8 @@ python3 glossary_manager.py import --file /data/terms.csv --format csv
 | PyYAML | Python 库 | 可选 | `pip install pyyaml` | 5.4+ |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 | - |
 
-#### 完整安装命令
+#
+### 完整安装命令
 ```bash
 pip3 install requests pyyaml
 # ...
@@ -397,7 +387,7 @@ curl --version
 export VIDEO_TRANSLATE_SERVICE_API_KEY="your_translation_api_key"
 export VOICE_CLONE_API_KEY="your_voice_clone_key"
 # ...
-curl -s 'https://audiox-api-global.luoji.cn/video-trans/health' \
+luoji.cn/video-trans/health' \
   -H "Authorization: Bearer $VIDEO_TRANSLATE_SERVICE_API_KEY"
 ```
 

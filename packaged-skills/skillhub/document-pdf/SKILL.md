@@ -147,9 +147,6 @@ export API_KEY="your_api_key_here"
 ```python
 from pypdf import PdfReader, PdfWriter
 
-reader = PdfReader("document.pdf")
-print(f"Pages: {len(reader.pages)}")
-
 text = ""
 for page in reader.pages:
     text += page.extract_text()

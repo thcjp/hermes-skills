@@ -51,7 +51,6 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 | 趋势分析 | 不支持 | 热点追踪+趋势 |
 | 历史检索 | 不支持 | 90天历史检索 |
 
-**输入**: 用户提供能力矩阵所需的指令和必要参数.
 **处理**: 解析能力矩阵的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回能力矩阵的响应数据,包含状态码、结果和日志.
 ### PRO 专属信息源
@@ -71,14 +70,13 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 [PRO] 多语言源：日语（Nikkei）、韩语（Yonhap）等
 ```
 
-**输入**: 用户提供PRO 专属信息源所需的指令和必要参数.
 **处理**: 解析PRO 专属信息源的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回PRO 专属信息源的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -337,27 +335,21 @@ class NewsAggregatorProClient:
 # ...
     def create_schedule(self, schedule_config):
         """创建定时聚合任务"""
-        resp = requests.post(
             f"{self.base_url}/v1/schedules",
-            headers=self.headers,
             json=schedule_config
         )
         return resp.json()
 # ...
     def search_history(self, query, days=90):
         """搜索历史新闻"""
-        resp = requests.get(
             f"{self.base_url}/v1/history",
-            headers=self.headers,
             params={"q": query, "days": days}
         )
         return resp.json()
 # ...
     def get_trends(self, category, period="7d"):
         """获取新闻趋势分析"""
-        resp = requests.get(
             f"{self.base_url}/v1/trends",
-            headers=self.headers,
             params={"category": category, "period": period}
         )
         return resp.json()

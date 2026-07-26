@@ -1,10 +1,8 @@
----
-
-slug: feishu-file-sender-free
+---slug: feishu-file-sender-free
 name: feishu-file-sender-free
 version: 1.0.1
 displayName: 飞书文件发送免费版
-summary: "飞书文件与图片发送工具，支持两步上传与稳定投递。飞书文件发送免费版是一款面向个人用户的飞书文件与图片发送工具，通过两步上传流程"
+summary: "飞书文件与图片发送工具"
 license: Proprietary
 edition: free
 description: "飞书文件发送免费版是一款面向个人用户的飞书文件与图片发送工具，通过两步上传流程，可处理提升工作效率
@@ -35,9 +33,7 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
-
----
-# 飞书文件发送免费版
+---# 飞书文件发送免费版
 
 **版本**: 1.0.0
 **适用对象**: 个人用户、独立开发者、一人公司
@@ -60,7 +56,6 @@ category: "Automation"
 - **自定义文件名**: 可指定发送时的文件名
 - **file_type=stream**: 适用于所有普通文件类型
 
-**输入**: 用户提供普通文件发送所需的指令和必要参数.
 **处理**: 解析普通文件发送的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回普通文件发送的响应数据,包含状态码、结果和日志.
 ### 图片稳定发送
@@ -70,7 +65,6 @@ category: "Automation"
 - **成功标准**: 用户在飞书中实际看到图片本体
 - **国际版支持**: 兼容国际版 Lark
 
-**输入**: 用户提供图片稳定发送所需的指令和必要参数.
 **处理**: 解析图片稳定发送的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回图片稳定发送的响应数据,包含状态码、结果和日志.
 ### 操作方式
@@ -79,7 +73,6 @@ category: "Automation"
 - **手动两步**: 分别执行上传与发送命令
 - **AI 助手集成**: 支持在 AI 助手中通过 exec 调用
 
-**输入**: 用户提供操作方式所需的指令和必要参数.
 **处理**: 解析操作方式的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回操作方式的响应数据,包含状态码、结果和日志.
 ### 接收者支持
@@ -89,7 +82,6 @@ category: "Automation"
 
 ---
 
-**输入**: 用户提供接收者支持所需的指令和必要参数.
 **处理**: 解析接收者支持的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回接收者支持的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：飞书文件与图片发、送工具、支持两步上传与稳、定投递、飞书文件发送免费、版是一款面向个人、用户的飞书文件与、图片发送工具、通过两步上传流程、先上传获取、再发送消息、确保文件稳定投递、Use、when、需要文件处理、文档转换、格式互转、内容提取时使用、不适用于加密文件、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -249,7 +241,7 @@ FILE_KEY=$(curl -s -X POST "https://open.feishu.cn/open-apis/im/v1/files" \
   -F "file_type=stream" \
   -F "file_name=report.html" \
   -F "file=@/path/to/report.html" \
-  | python3 -c "import json,sys; print(json.load(sys.stdin)['data']['file_key'])")
+load(sys.stdin)['data']['file_key'])")
 # ...
 echo "file_key: $FILE_KEY"
 ```
@@ -345,7 +337,7 @@ python3 （请参考skill目录中的脚本文件） compressed.zip ou_xxx app_i
 python3 （请参考skill目录中的脚本文件） /path/to/file.pdf ou_xxx app_id app_secret
 # ...
 # 图片（特别重要）
-python3 （请参考skill目录中的脚本文件） /path/to/image.png ou_xxx app_id app_secret
+png ou_xxx app_id app_secret
 ```
 
 ### 问题2：文件上传失败
@@ -374,7 +366,7 @@ Error: tenant_access_token 获取失败
 
 ```bash
 # 验证凭证
-curl -s -X POST "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal" \
+feishu.cn/open-apis/auth/v3/tenant_access_token/internal" \
   -H "Content-Type: application/json" \
   -d '{"app_id":"your_app_id","app_secret":"your_app_secret"}'
 ```
@@ -388,7 +380,7 @@ curl -s -X POST "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/in
 python3 （请参考skill目录中的脚本文件） image.png ou_xxx app_id app_secret
 # ...
 # 国际版 Lark
-python3 （请参考skill目录中的脚本文件） image.png ou_xxx app_id app_secret lark
+png ou_xxx app_id app_secret lark
 ```
 
 ### 问题5：群聊发送失败

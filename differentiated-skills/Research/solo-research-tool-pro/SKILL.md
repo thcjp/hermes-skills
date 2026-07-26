@@ -75,7 +75,6 @@ category: "Knowledge"
 | 知识库搜索 | 不支持 | 历史研究检索 |
 | 代码图谱 | 不支持 | 可复用代码与架构发现 |
 
-**输入**: 用户提供免费版 vs 专业版能力对比所需的指令和必要参数.
 **处理**: 解析免费版 vs 专业版能力对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版 vs 专业版能力对比的响应数据,包含状态码、结果和日志.
 ### 专业版独有功能
@@ -87,12 +86,11 @@ category: "Knowledge"
 6. **混合搜索策略**:MCP工具+WebSearch多后端组合,各取所长
 7. **知识库与历史研究**:检索过往研究,避免重复,发现关联
 
-**输入**: 用户提供专业版独有功能所需的指令和必要参数.
 **处理**: 解析专业版独有功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回专业版独有功能的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -147,7 +145,7 @@ AI助手执行专业研究流程:
 AI助手执行:
 # ...
 1. TrustMRR收入验证:
-   - WebFetch: trustmrr.com/startup/examplecorp
+com/startup/examplecorp
    - 提取: MRR $250K/月,年增长180%,订阅数3,200
 # ...
 2. 竞争格局:
@@ -291,7 +289,7 @@ Reddit内容获取回退链(从最佳到最后手段):
 ```text
 | 步骤 | 最佳后端 | 原因 |
 |:---:|:---:|:---:|
-| 竞品发现 | WebSearch + site:producthunt.com + site:g2.com | 广泛发现+PH+B2B评价 |
+com + site:g2.com | 广泛发现+PH+B2B评价 |
 | Reddit/痛点 | MCP工具 web_search(engines="reddit") + MCP工具 Playwright | PullPush API, selftext内容 |
 | YouTube评测 | MCP工具 web_search(engines="youtube") | 视频评测(观看量=需求) |
 | 市场规模 | WebSearch | 综合10个来源的数字 |
@@ -299,7 +297,7 @@ Reddit内容获取回退链(从最佳到最后手段):
 | 页面抓取 | WebFetch或MCP工具 web_search(include_raw_content) | 最多5000字符页面内容 |
 | Hacker News | WebSearch site:news.ycombinator.com | HN讨论与观点 |
 | 融资/公司 | WebSearch site:crunchbase.com | 竞品融资,团队规模 |
-| 收入验证 | WebFetch trustmrr.com/startup/<slug> | Stripe验证MRR,增长,技术栈 |
+com/startup/<slug> | Stripe验证MRR,增长,技术栈 |
 ```
 
 ### MCP工具配置

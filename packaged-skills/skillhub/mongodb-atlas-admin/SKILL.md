@@ -1,10 +1,8 @@
----
-
-slug: "mongodb-atlas-admin"
+---slug: "mongodb-atlas-admin"
 name: "mongodb-atlas-admin"
 version: 1.0.1
 displayName: "文档数据库管理"
-summary: "通过API浏览和调用文档数据库云管理平台，支持目录浏览、端点详情和实时调用。通过API浏览和调用文档数据库云管理平台。支持API目录浏览、端点详情获取、 Schema定义查询和实时API调用"
+summary: "通过API浏览和调用文"
 summary_zh: "通过API浏览和调用文档数据库云管理平台，支持目录浏览、端点详情和实时调用。通过API浏览和调用文档数据库云管理平台。支持API目录浏览、端点详情获取、 Schema定义查询和实时API调用"
 license: "MIT"
 description: |-
@@ -26,10 +24,7 @@ tags:
   - 脚本文件
   - node
 category: "Automation"
-
----
-
-# 文档数据库云管理平台
+---# 文档数据库云管理平台
 
 通过API浏览和调用文档数据库云管理平台的管理接口.
 ## 输入格式
@@ -81,8 +76,6 @@ export API_KEY="your_api_key_here"
 node （请参考skill目录中的脚本文件） catalog
 ```
 
-**处理**: 解析API目录浏览的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回API目录浏览的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. 端点详情获取
 通过 `atlas-api.mjs detail` 查看特定端点的详细信息，包括HTTP方法、路径参数、请求体Schema和响应格式.
 ```bash
@@ -105,15 +98,12 @@ node （请参考skill目录中的脚本文件） --category "Clusters" --endpoi
 node （请参考skill目录中的脚本文件） --category "Clusters" --endpoint "Create Cluster" --yes --data '{"name":"myCluster", "providerSettings": {"providerName": "AWS", "regionName": "US_EAST_1", "instanceSizeName": "M10"}}'
 ```
 
-**输入**: 用户提供实时API调用所需的指令和必要参数.
 ### 5. 分类搜索
 按关键词搜索API分类，快速定位需要的端点.
 ```bash
 node （请参考skill目录中的脚本文件） catalog --search "backup"
 ```
 
-**输入**: 用户提供分类搜索所需的指令和必要参数.
-**输出**: 返回分类搜索的处理结果,包含执行状态码、结果数据和执行日志.
 ### 6. 凭证管理
 通过环境变量管理API凭证，支持公私钥认证方式.
 ```bash
@@ -121,8 +111,6 @@ export ATLAS_CLIENT_ID="your_client_id"
 export ATLAS_CLIENT_SECRET="your_client_secret"
 ```
 
-**输入**: 用户提供凭证管理所需的指令和必要参数.
-**处理**: 解析凭证管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 #
 ## 快速开始
 

@@ -89,7 +89,7 @@ Agent会按"错误体诊断决策树"判断：4xx + 业务错误码 → 客户�
 | 文件上传 | `Content-Type: multipart/form-data` | 边界boundary由库自动处理 |
 
 **Agent执行规则**：生成请求时自动补全 `Content-Type`、`Accept`、`Authorization` 三大头；POST/PUT/PATCH默认附加 `Idempotency-Key`（用UUID或时间戳）；输出末尾追加 `-w '\nHTTP_STATUS:%{http_code} TIME:%{time_total}s\n'` 便于诊断.
-**输入**: 用户提供功能1：请求模板生成器所需的指令和必要参数.
+
 **处理**: 解析功能1：请求模板生成器的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能1：请求模板生成器的响应数据,包含状态码、结果和日志.
 ### 功能2：认证范式速查
@@ -114,7 +114,7 @@ curl -H "Authorization: Bearer $TOKEN" https://api.example.com/v1/data
 ```
 
 **安全红线**：API Key永远放在Header或环境变量中，禁止放在URL Query；Token禁止输出到日志或echo；Agent在示例中一律使用 `配置值` 占位，绝不写出真实凭证.
-**输入**: 用户提供功能2：认证范式速查所需的指令和必要参数.
+
 **处理**: 解析功能2：认证范式速查的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能2：认证范式速查的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -142,7 +142,7 @@ HTTP状态码
 ```
 
 **关键提醒**：约30%的API在业务失败时仍返回HTTP 200，把错误码塞在response body里。诊断时必须同时检查HTTP状态码与响应体的 `code`/`error` 字段.
-**输入**: 用户提供功能3：错误体诊断决策树所需的指令和必要参数.
+
 **处理**: 解析功能3：错误体诊断决策树的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能3：错误体诊断决策树的响应数据,包含状态码、结果和日志.
 ### 功能4：服务端点速查索引
@@ -166,7 +166,6 @@ HTTP状态码
 | 地理 | Mapbox、Google Maps | API Key | Key放URL Query是惯例（注意泄露风险） |
 | 分析 | Mixpanel、Amplitude、Segment | API Key/Basic | Segment用Basic Auth |
 
-**输入**: 用户提供功能4：服务端点速查索引所需的指令和必要参数.
 **处理**: 解析功能4：服务端点速查索引的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能4：服务端点速查索引的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级、API、测试调试工具箱、覆盖请求构造、错误诊断与文档速、秒上手、工具箱免费版是一、套面向独立开发者、与一人公司的轻量、测试与调试工具集、请求构造、认证管理、错误诊断、文档速查、四件事、提供可复制即用的、curl、HTTPie、常见认证流程速查、HTTP、状态码与错误体诊、断决策树、以及一份覆盖、主流第三方服务的、端点索引、Use、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求等.
@@ -280,12 +279,11 @@ HTTP状态码
 > 详细的输入输出格式请参考下方章节说明。
 直接对Agent说：
 # ...
-> "帮我发一个 POST 请求到 https://api.example.com/v1/orders，body 是 `{"sku":"A1","qty":2}`，用 Bearer Token 认证。"
 # ...
 Agent会按本工具的模板规则输出：
 # ...
 ```bash
-curl -X POST 'https://api.example.com/v1/orders' \
+example.com/v1/orders' \
   -H 'Authorization: Bearer 配置值' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \

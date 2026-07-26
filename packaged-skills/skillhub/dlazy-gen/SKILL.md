@@ -64,7 +64,7 @@ category: "Automation"
   - 轻量级: seedream-5.0-lite
 # ...
 视频生成（17个模型）:
-  - 文生视频: veo-3.1, seedance-2.0, kling-v3, pixverse-c1, wan2.7
+  - 文生视频: veo-3.1, seedance-2.7
   - 图生视频: jimeng-i2v-first, viduq2-i2v, kling-v3-omni
   - 首尾帧: jimeng-i2v-first-tail
   - 数字人: jimeng-omnihuman-1.5, jimeng-dream-actor
@@ -80,12 +80,10 @@ category: "Automation"
   - 矢量图输出（SVG）
 ```
 
-**输入**: 用户提供核心能力所需的指令和必要参数。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `核心能力` 选项
 - 处理流程: 接收输入 -> 执行核心能力 -> 返回结果
 - 输入: 用户提供核心能力所需的参数和指令
-- 输出: 返回核心能力的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 基础文生图
 
@@ -193,7 +191,7 @@ class VideoBatchProducer:
                     output = json.loads(result.stdout)
                     steps.append({"step": step["type"], "output": output})
                 except:
-                    steps.append({"step": step["type"], "error": "failed"})
+append({"step": step["type"], "error": "failed"})
             results.append({"scenario": scenario, "steps": steps})
         return results
 # ...
@@ -203,7 +201,6 @@ class VideoBatchProducer:
             cmd += ["--prompt", step["prompt"].format(**scenario),
                     "--ratio", step["ratio"]]
         elif step["type"] == "video":
-            cmd += ["--prompt", step["prompt"].format(**scenario),
                     "--duration", str(step["duration"])]
         elif step["type"] == "audio":
             cmd += ["--text", step["text"].format(**scenario)]
@@ -404,7 +401,7 @@ dlazy seedance-2.0 \
 # 多步骤管道链接
 dlazy seedream-4.5 --prompt "城市夜景" --n 4 \
   | dlazy superres --images @* \
-  | dlazy kling-v3 --image @0.url --prompt "城市灯火流动"
+url --prompt "城市灯火流动"
 # ...
 # 管道引用说明:
 # @0.url  = 上游优秀个输出的URL

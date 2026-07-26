@@ -80,7 +80,6 @@ export API_KEY="your_api_key_here"
 
 ### 1. 消息发送与线程回复
 向指定频道或用户发送文本消息，支持以 `thread_ts` 参数回复指定消息的线程。频道参数接受频道ID（`C0123456789`）或频道名（`#general`）；用户消息需使用用户ID或DM频道ID。支持Slack消息格式化语法：`*bold*`、`_italic_`、`~strike~`、`` `code` ``、` ```code block``` `、`>quote`.
-**输出**: 返回消息发送与线程回复的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. 工作区内容搜索
 按关键词检索工作区内的消息和文件。搜索范围包括所有可访问的公共频道及Bot已加入的私有频道。支持Slack搜索修饰符：`from:@user`、`in:#channel`、`has:link`、`has:file`、`before:YYYY-MM-DD`、`after:YYYY-MM-DD`。搜索结果包含匹配片段、来源频道、作者、时间戳与永久链接。- 验证返回数据的完整性和格式正确性
 - 参考`工作区内容搜索`的配置文档进行参数调优
@@ -89,9 +88,7 @@ export API_KEY="your_api_key_here"
 - 参考`公共频道发现`的配置文档进行参数调优
 ### 4. 速率限制感知
 Slack Web API 对不同端点有独立速率限制：`chat.postMessage` 约1次/秒/频道，`search.messages` 约20次/分钟，`conversations.list` 约20次/分钟。本技能在收到 `429 rate_limited` 响应时读取 `Retry-After` 头并指数退避重试，最多3次.
-**输入**: 用户提供速率限制感知所需的指令和必要参数.
-**处理**: 解析速率限制感知的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回速率限制感知的处理结果,包含执行状态码、结果数据和执行日志.
+
 #
 ## 快速开始
 
@@ -185,7 +182,7 @@ curl -s -X POST "https://slack.com/api/chat.postMessage" \
   "channel": "C0123456789",
   "ts": "1721452800.123456",
   "message": {
-    "text": ":rocket: *部署完成* v2.1.0 已上线\n• 服务: payment-api\n• 区域: us-east-1\n• 提交: a1b2c3d\n• 耗时: 2m30s",
+1.0 已上线\n• 服务: payment-api\n• 区域: us-east-1\n• 提交: a1b2c3d\n• 耗时: 2m30s",
     "type": "message",
     "user": "U0BOT1234"
   }
@@ -199,7 +196,7 @@ curl -s -X POST "https://slack.com/api/chat.postMessage" \
 **执行**：
 ```bash
 # 搜索工作区消息，限定在#eng-platform频道
-curl -s "https://slack.com/api/search.messages?query=migration%20in%3A%23eng-platform&count=5&page=1" \
+com/api/search.messages?query=migration%20in%3A%23eng-platform&count=5&page=1" \
   -H "Authorization: Bearer ${SLACK_BOT_TOKEN}"
 ```
 
@@ -232,11 +229,11 @@ curl -s "https://slack.com/api/search.messages?query=migration%20in%3A%23eng-pla
 **执行**：
 ```bash
 # 第一步：搜索找到目标消息的ts
-curl -s "https://slack.com/api/search.messages?query=API%20change%20in%3A%23general&count=1" \
+com/api/search.messages?query=API%20change%20in%3A%23general&count=1" \
   -H "Authorization: Bearer ${SLACK_BOT_TOKEN}"
 # ...
 # 第二步：用thread_ts回复该消息的线程
-curl -s -X POST "https://slack.com/api/chat.postMessage" \
+com/api/chat.postMessage" \
   -H "Authorization: Bearer ${SLACK_BOT_TOKEN}" \
   -H "Content-Type: application/json" \
   -d '{
@@ -254,7 +251,6 @@ curl -s -X POST "https://slack.com/api/chat.postMessage" \
   "ts": "1721453000.123456",
   "message": {
     "text": "已安排周三下午2点评审API变更方案...",
-    "thread_ts": "1721400000.000000"
   }
 }
 ```

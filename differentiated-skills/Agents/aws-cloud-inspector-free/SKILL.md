@@ -126,8 +126,6 @@ aws_access_key_id = AKIA...
 aws_secret_access_key = ...
 # ...
 [production]
-aws_access_key_id = AKIA...
-aws_secret_access_key = ...
 ```
 
 > 安全提示：本Skill永不读取或输出 `~/.aws/credentials` 文件内容，仅通过AWS CLI内部机制使用凭证.
@@ -157,7 +155,7 @@ aws sts get-caller-identity
 aws ec2 describe-regions --query 'Regions[].RegionName' --output text | tr '\t' '\n' | while read region; do
   echo "=== $region ==="
   aws ec2 describe-instances --region $region \
-    --query 'Reservations[].Instances[].{ID:InstanceId,State:State.Name,Type:InstanceType}' \
+    --query 'Reservations[].Instances[].Name,Type:InstanceType}' \
     --output table
 done
 # ...
@@ -221,7 +219,7 @@ A：运行 `aws configure` 配置访问密钥，或检查 `~/.aws/credentials` �
 A：使用 `--filters` 参数。例如：
 ```bash
 aws ec2 describe-instances --filters Name=instance-state-name,Values=running \
-  --query 'Reservations[].Instances[].InstanceId' --output text
+Instances[].InstanceId' --output text
 ```
 
 ### Q6：免费版与专业版的核心差异？
@@ -330,7 +328,6 @@ SOFTWARE.
 ### AWS云巡检免费版（aws-cloud-
 AWS云巡检免费版（aws-cloud-inspector-free）面向独立开发者与运维新人，基于本地AWS CLI提供只读的云资源查询与基础巡检能力
 
-**输入**: 用户提供AWS云巡检免费版（aws-cloud-所需的指令和必要参数.
 **处理**: 解析AWS云巡检免费版（aws-cloud-的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回AWS云巡检免费版（aws-cloud-的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -338,7 +335,6 @@ AWS云巡检免费版（aws-cloud-inspector-free）面向独立开发者与运�
 ### 它默认只读
 它默认只读，所有变更类操作必须用户显式确认才执行，确保零误操作风险
 
-**输入**: 用户提供它默认只读所需的指令和必要参数.
 **处理**: 解析它默认只读的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回它默认只读的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -346,7 +342,6 @@ AWS云巡检免费版（aws-cloud-inspector-free）面向独立开发者与运�
 ### aws/config` 与 `
 aws/config` 与 `~/
 
-**输入**: 用户提供aws/config` 与 `所需的指令和必要参数.
 **处理**: 解析aws/config` 与 `的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回aws/config` 与 `的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -354,7 +349,6 @@ aws/config` 与 `~/
 ### aws/credentials
 aws/credentials` 标准位置）
 
-**输入**: 用户提供aws/credentials所需的指令和必要参数.
 **处理**: 解析aws/credentials的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回aws/credentials的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -362,7 +356,6 @@ aws/credentials` 标准位置）
 ### 适用场景
 适用场景：个人AWS账号日常巡检、新接手项目的资源盘点、上线前基础安全自检、CloudWatch告警排查、IAM权限梳理、学习AWS CLI命令模式、为团队试点云巡检流程前的个人练习
 
-**输入**: 用户提供适用场景所需的指令和必要参数.
 **处理**: 解析适用场景的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回适用场景的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作

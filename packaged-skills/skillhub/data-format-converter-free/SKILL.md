@@ -61,8 +61,6 @@ with open('data.csv', 'r', encoding='utf-8') as f:
 json_str = json.dumps(rows, ensure_ascii=False, indent=2)
 ```
 
-**输入**: 用户提供CSV转JSON所需的指令和必要参数.
-**处理**: 解析CSV转JSON的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### JSON转CSV
 使用 `csv.DictWriter()` 写入，需指定 `fieldnames`，`encoding='utf-8-sig'` 确保Excel兼容.
 ```python
@@ -78,8 +76,6 @@ with open('output.csv', 'w', encoding='utf-8-sig', newline='') as f:
     writer.writerows(data)
 ```
 
-**输入**: 用户提供JSON转CSV所需的指令和必要参数.
-**处理**: 解析JSON转CSV的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### JSON转YAML
 使用 `yaml.safe_dump()` 输出，`default_flow_style=False` 使用块样式，`allow_unicode=True` 保留中文.
 ```python
@@ -91,8 +87,6 @@ with open('data.json', 'r', encoding='utf-8') as f:
 yaml_str = yaml.safe_dump(data, default_flow_style=False, allow_unicode=True, sort_keys=False)
 ```
 
-**输入**: 用户提供JSON转YAML所需的指令和必要参数.
-**处理**: 解析JSON转YAML的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### YAML转JSON
 使用 `yaml.safe_load()` 安全解析（不执行任意Python对象）.
 ```python
@@ -105,8 +99,7 @@ json_str = json.dumps(data, ensure_ascii=False, indent=2)
 ```
 
 > **升级提示**：XML与JSON互转（`xmltodict.parse`/`unparse`）、TOML与JSON互转（`toml.load`/`dumps`）、批量目录级转换、嵌套结构自动扁平化为付费版专享功能.
-**输入**: 用户提供YAML转JSON所需的指令和必要参数.
-**输出**: 返回YAML转JSON的处理结果,包含执行状态码、结果数据和执行日志.
+
 #
 ## 快速开始
 

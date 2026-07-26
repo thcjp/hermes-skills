@@ -56,7 +56,6 @@ tmwd_status()
 tmwd_status()  # 返回所有已连接标签页列表
 ```
 
-**输入**: 用户提供真实浏览器控制所需的指令和必要参数.
 **处理**: 解析真实浏览器控制的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回真实浏览器控制的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -78,7 +77,6 @@ tmwd_text(max_chars=5000)
 tmwd_scan()
 ```
 
-**输入**: 用户提供页面导航与内容提取所需的指令和必要参数.
 **处理**: 解析页面导航与内容提取的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回页面导航与内容提取的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -97,7 +95,6 @@ tmwd_exec(code="document.querySelector('#submit').click()")
 tmwd_exec(code="var e=document.querySelector('#email'); e.value='user@example.com'; e.dispatchEvent(new Event('input',{bubbles:true}))")
 ```
 
-**输入**: 用户提供元素发现与交互所需的指令和必要参数.
 **处理**: 解析元素发现与交互的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回元素发现与交互的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -116,7 +113,6 @@ tmwd_exec(code="return Array.from(document.querySelectorAll('h2')).map(e=>e.text
 tmwd_exec(code="var rows=document.querySelectorAll('table tr'); var d=[]; rows.forEach(function(r){var c=[]; r.querySelectorAll('td,th').forEach(function(e){c.push(e.innerText.trim())}); if(c.length) d.push(c)}); return d")
 ```
 
-**输入**: 用户提供数据提取所需的指令和必要参数.
 **处理**: 解析数据提取的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回数据提取的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -129,10 +125,8 @@ tmwd_exec(code="var rows=document.querySelectorAll('table tr'); var d=[]; rows.f
 tmwd_newtab(url="https://example.com")
 # ...
 # 切换到匹配的标签页
-tmwd_switch(pattern="example.com")
 ```
 
-**输入**: 用户提供多标签页管理所需的指令和必要参数.
 **处理**: 解析多标签页管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多标签页管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -149,7 +143,6 @@ browser(action="open", profile="skill-platform", url="<same-url>")
 browser(action="snapshot", targetId=<targetId>)
 ```
 
-**输入**: 用户提供CSP 回退机制所需的指令和必要参数.
 **处理**: 解析CSP 回退机制的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回CSP 回退机制的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：通过用户脚本注入、控制真实、共享登录态与、Cookie、适合个人自动化操、真实浏览器控制免、面向个人用户提供、直接控制用户真实、浏览器的能力、在页面上下文中执、共享所有、会话和登录状态、when、需要提升效率、自动化流程、批量处理、工作流优化时使用、不适用于需要人工、创意判断的任务、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -185,7 +178,6 @@ tmwd_navigate(url="https://form.example.com/apply")
 tmwd_exec(code="var f={'#username':'liming','#email':'liming@example.com','#phone':'13800138000'}; Object.keys(f).forEach(function(s){var e=document.querySelector(s); e.value=f[s]; e.dispatchEvent(new Event('input',{bubbles:true}))})")
 # ...
 # 步骤3:提交表单
-tmwd_exec(code="document.querySelector('#submit').click()")
 # ...
 # 步骤4:验证提交结果
 tmwd_text(max_chars=1000)
@@ -202,7 +194,7 @@ tmwd_switch(pattern="article.example.com")
 tmwd_exec(code="return {title:document.querySelector('h1').innerText,content:document.querySelector('.article-body').innerText}")
 # ...
 # 步骤3:提取所有链接
-tmwd_exec(code="return Array.from(document.querySelectorAll('a')).map(function(a){return {text:a.innerText,href:a.href}})")
+from(document.querySelectorAll('a')).map(function(a){return {text:a.innerText,href:a.href}})")
 ```
 
 ## 快速开始
@@ -233,7 +225,6 @@ tmwd_status()
 tmwd_text(max_chars=5000)
 # ...
 # 执行简单操作
-tmwd_exec(code="return document.title")
 ```
 
 ## 示例
@@ -280,7 +271,7 @@ tmwd_exec(code="return document.title")
 
 ```bash
 # 正确做法:先尝试 tmwd,失败再回退
-tmwd_exec(code="document.querySelector('#btn').click()")
+querySelector('#btn').click()")
 # ...
 # 如果返回 csp_blocked: true,再回退到内置浏览器
 browser(action="open", profile="skill-platform", url="<same-url>")
@@ -290,20 +281,20 @@ browser(action="open", profile="skill-platform", url="<same-url>")
 
 ```bash
 # 对于 React/Vue 应用,设置值后必须触发事件
-tmwd_exec(code="var e=document.querySelector('#input'); e.value='new_value'; e.dispatchEvent(new Event('input',{bubbles:true}))")
+value='new_value'; e.dispatchEvent(new Event('input',{bubbles:true}))")
 # ...
 # 直接设置 value 不会触发框架响应
-tmwd_exec(code="document.querySelector('#input').value='new_value'")  # 无效
+querySelector('#input').value='new_value'")  # 无效
 ```
 
 ### 3. 使用 return 返回数据
 
 ```bash
 # 有 return:返回执行结果
-tmwd_exec(code="return document.querySelector('.title').innerText")
+querySelector('.title').innerText")
 # ...
 # 无 return:无输出
-tmwd_exec(code="document.querySelector('.title').innerText")  # 无输出
+querySelector('.title').innerText")  # 无输出
 ```
 
 ### 4. 检查连接状态
@@ -334,10 +325,9 @@ tmwd_status()
 
 ```bash
 # 直接 click 可能无效
-tmwd_exec(code="document.querySelector('#btn').click()")
 # ...
 # 改用事件分发
-tmwd_exec(code="document.querySelector('#btn').dispatchEvent(new MouseEvent('click',{bubbles:true}))")
+dispatchEvent(new MouseEvent('click',{bubbles:true}))")
 ```
 
 ### Q3: CSP 阻止脚本执行怎么办?

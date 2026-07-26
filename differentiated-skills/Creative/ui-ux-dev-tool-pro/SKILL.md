@@ -77,7 +77,6 @@ serve/
 │   └── landing/index.html
 ```
 
-**输入**: 用户提供多页面项目管理所需的指令和必要参数.
 **处理**: 解析多页面项目管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多页面项目管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -119,7 +118,6 @@ serve/
 }
 ```
 
-**输入**: 用户提供设计系统持久化与引用所需的指令和必要参数.
 **处理**: 解析设计系统持久化与引用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回设计系统持久化与引用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -141,7 +139,6 @@ bash （请参考skill目录中的脚本文件） "http://localhost:5174/project
 bash （请参考skill目录中的脚本文件） "http://localhost:5174/project/page/" /tmp/mobile-small.png 320 568
 ```
 
-**输入**: 用户提供自动化多分辨率截图审查所需的指令和必要参数.
 **处理**: 解析自动化多分辨率截图审查的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自动化多分辨率截图审查的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -172,7 +169,6 @@ done
 echo "批量截图完成,输出目录: ${OUTPUT_DIR}"
 ```
 
-**输入**: 用户提供批量截图审查脚本所需的指令和必要参数.
 **处理**: 解析批量截图审查脚本的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量截图审查脚本的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -214,7 +210,6 @@ echo "转换后大小: $(numfmt --to=iec $total_after)"
 echo "总节省: $(numfmt --to=iec $((total_before - total_after)))"
 ```
 
-**输入**: 用户提供批量图片转换与优化报告所需的指令和必要参数.
 **处理**: 解析批量图片转换与优化报告的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量图片转换与优化报告的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -223,11 +218,10 @@ echo "总节省: $(numfmt --to=iec $((total_before - total_after)))"
 ```bash
 cd serve && zip -r /tmp/enterprise-app.zip enterprise-app/
 # ...
-cd serve && zip -r /tmp/enterprise-app.zip enterprise-app/ \
+zip enterprise-app/ \
   -x "*.DS_Store" "*/tmp/*" "*/.git/*"
 ```
 
-**输入**: 用户提供Zip打包导出所需的指令和必要参数.
 **处理**: 解析Zip打包导出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Zip打包导出的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：React、项目生成、面向团队的专业页、面开发引擎、面向开发团队和代、理机构的专业级、页面生成引擎、支持多页面项目管、自动化截图审查循、批量图片处理和、核心能力、多页面项目管理与、配置持久化、设计系统引用与跨、页面一致性保障、打包导出与独立部、署支持、企业级设计原则自、动应用与质量门禁、组件化、开发与状态管理等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -354,8 +348,8 @@ cd serve && zip -r /tmp/${PROJECT_NAME}.zip ${PROJECT_NAME}/
   <title>企业应用 - 首页</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+com/react-dom@18/umd/react-dom.production.min.js"></script>
+com/@babel/standalone/babel.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {

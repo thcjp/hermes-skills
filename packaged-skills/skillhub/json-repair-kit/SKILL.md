@@ -1,9 +1,8 @@
----
-slug: "json-repair-kit"
+---slug: "json-repair-kit"
 name: "json-repair-kit"
 version: 1.0.1
 displayName: "JSON修复工具"
-summary: "通过Node.js解析修复格式错误的JSON文件，支持尾逗号、单引号等修复。。JSON修复工具通过Node.js解析将格式错误的"宽松"JSON文件（如含尾逗号、单引号、未加引号键） 解析为"
+summary: "通过Node.js解析"
 summary_zh: "通过Node.js解析修复格式错误的JSON文件，支持尾逗号、单引号等修复。。JSON修复工具通过Node.js解析将格式错误的"宽松"JSON文件（如含尾逗号、单引号、未加引号键） 解析为"
 license: "MIT"
 description: |-
@@ -24,9 +23,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# JSON Repair Kit — JSON修复工具
+category: "Automation"---# JSON Repair Kit — JSON修复工具
 
 ## 输入格式
 
@@ -73,14 +70,14 @@ export API_KEY="your_api_key_here"
 
 ### Trailing Commas 修复
 修复JSON中多余的尾逗号。将 `{"a": 1,}` 规范化为 `{"a": 1}`，消除解析器拒绝的尾逗号问题。解析为JavaScript对象后重新序列化，自动去除逗号.
-**输入**: 用户提供Trailing Commas 修复所需的指令和必要参数.
-**输出**: 返回Trailing Commas 修复的处理结果,包含执行状态码、结果数据和执行日志。### Single Quotes 修复
+
+### Single Quotes 修复
 修复JSON中使用单引号而非双引号的问题。将 `{'a': 'b'}` 转换为 `{"a": "b"}`，确保字符串使用标准双引号。通过Node.js的JavaScript对象解析能力自动转换引号风格.
-**输入**: 用户提供Single Quotes 修复所需的指令和必要参数.
-**输出**: 返回Single Quotes 修复的处理结果,包含执行状态码、结果数据和执行日志。### Unquoted Keys 修复
+
+### Unquoted Keys 修复
 修复JSON中键名未加引号的问题。将 `{key: "value"}` 转换为 `{"key": "value"}`，确保所有键名使用双引号包裹。JavaScript对象语法允许未加引号的键，修复后重新序列化为标准JSON.
-**输入**: 用户提供Unquoted Keys 修复所需的指令和必要参数.
-**输出**: 返回Unquoted Keys 修复的处理结果,包含执行状态码、结果数据和执行日志。### Comments 移除
+
+### Comments 移除
 
 移除JS风格注释。处理 `//` 行注释（标准Node解析器在字符串外时会剥离行注释），确保输出为纯净JSON。注释在JavaScript对象解析阶段被自动移除。- 验证返回数据的完整性和格式正确性
 - 参考`Trailing Commas 修复`的配置文档进行参数调优
@@ -125,10 +122,10 @@ Agent将根据指令调用对应能力,返回响应数据。响应格式取决�
 node skills/json-repair-kit/index.js --file path/to/broken.json
 # ...
 # 修复并输出到新文件
-node skills/json-repair-kit/index.js --file broken.json --out fixed.json
+js --file broken.json --out fixed.json
 # ...
 # 递归修复整个目录
-node skills/json-repair-kit/index.js --dir config/ --recursive
+js --dir config/ --recursive
 ```
 
 ## 安全机制

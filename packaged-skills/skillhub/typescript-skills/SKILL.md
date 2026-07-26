@@ -86,23 +86,20 @@ export API_KEY="your_api_key_here"
 | React组件文件 | `PascalCase.tsx` | `UserProfile.tsx` |
 
 规则：不使用 `I` 前缀接口名（~~`IUser`~~ → `User`）；不使用 `Type` 或 `Interface` 后缀；2字符缩写保持大写（`IO`、`ID`），3+字符用PascalCase（`Http`、`Xml`）.
-**处理**: 解析命名约定（Naming Conventions）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回命名约定（Naming Conventions）的处理结果,包含执行状态码、结果数据和执行日志。### 类型与接口（Types & Interfaces）
+### 类型与接口（Types & Interfaces）
 - 对象形状优先使用 `interface`，联合/交叉/映射类型使用 `type`
 - 公共API始终显式标注函数返回类型；局部变量让TypeScript推断
 - 函数签名优先使用 `type`：`type Comparator<T> = (a: T, b: T) => number`
 - 使用 `Record<K, V>` 而非 `{ [key: string]: V }`
 - 使用工具类型（`Partial<T>`、`Pick<T, K>`、`Omit<T, K>`、`Required<T>`）派生类型
 
-**输入**: 用户提供类型与接口（Types & Interfaces）所需的指令和必要参数.
-**处理**: 解析类型与接口（Types & Interfaces）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 枚举（Enums）
+### 枚举（Enums）
 - 优先使用字符串枚举（String Enums）以提高可读性和可调试性
 - 不需要反向映射时使用 `const enum`（零运行时成本）
 - 小集合优先使用字符串字面量联合类型（String Literal Union）：`type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE'`
 - 不使用无显式值的数字枚举；不混合字符串和数字成员
 
-**输入**: 用户提供枚举（Enums）所需的指令和必要参数.
-**输出**: 返回枚举（Enums）的处理结果,包含执行状态码、结果数据和执行日志。### 错误处理（Error Handling）
+### 错误处理（Error Handling）
 
 - 永不静默吞错（空 `catch` 块）；`catch` 变量类型为 `unknown`（TS 4.4+默认）
 - 使用扩展 `Error` 的自定义错误类处理领域特定错误
@@ -115,27 +112,24 @@ export API_KEY="your_api_key_here"
 - 永不在async函数足够时使用 `new Promise()`；避免 `async void` 函数
 - 顺序异步迭代用 `for...of` + `await`，而非 `forEach`
 
-**输入**: 用户提供Async/Await 与 Promise所需的指令和必要参数.
-**处理**: 解析Async/Await 与 Promise的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### Null 与 Undefined 处理
+### Null 与 Undefined 处理
 - 启用 `strictNullChecks`（包含在 `strict` 模式中）
 - 优先使用 `undefined` 而非 `null`（除非外部API使用 `null`）
 - 使用可选链（`?.`）和空值合并（`??`）替代手动检查
 - 不使用非空断言（`!`），除非能证明值始终已定义并添加注释
 - 优先使用 `satisfies` 运算符（TS 5.0+）验证类型而不扩展
 
-**输入**: 用户提供Null 与 Undefined 处理所需的指令和必要参数.
-**输出**: 返回Null 与 Undefined 处理的处理结果,包含执行状态码、结果数据和执行日志。### 类型断言与守卫（Type Assertions & Guards）
+### 类型断言与守卫（Type Assertions & Guards）
 - 优先使用类型守卫（`is` 关键字）而非类型断言（`as`）
 - 使用 `as const` 进行字面量收窄；使用判别联合（discriminated unions）+ `kind`/`type` 字段
 - 避免 `as unknown as T` 双重断言；断言必要时添加注释说明
 
-**输入**: 用户提供类型断言与守卫（Type Assertions & Guards）所需的指令和必要参数.
-**处理**: 解析类型断言与守卫（Type Assertions & Guards）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回类型断言与守卫（Type Assertions & Guards）的处理结果,包含执行状态码、结果数据和执行日志。### 工具配置（Tooling & Configuration）
+### 工具配置（Tooling & Configuration）
 ### Recommended `tsconfig.json` (Baseline)
 
 启用 `"strict": true`（含 `noImplicitAny`、`strictNullChecks`、`strictFunctionTypes`）。2空格缩进、单引号、分号、尾逗号、100字符行宽.
-#### Recommended ESLint Rules
+#
+### Recommended ESLint Rules
 
 | Rule | Setting |
 |:------|------:|
@@ -150,8 +144,7 @@ export API_KEY="your_api_key_here"
 | `@typescript-eslint/naming-convention` | `error`（按构造配置） |
 
 使用 Prettier 自动格式化（`semi: true`、`singleQuote: true`、`trailingComma: "all"`、`printWidth: 100`、`tabWidth: 2`、`arrowParens: "always"`）.
-**输入**: 用户提供工具配置（Tooling & Configuration）所需的指令和必要参数.
-**处理**: 解析工具配置（Tooling & Configuration）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 ### 输出格式
 
 完成响应以Markdown格式返回,包含任务状态(成功/失败)、解析摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题.

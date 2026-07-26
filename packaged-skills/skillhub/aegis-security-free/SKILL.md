@@ -73,8 +73,7 @@ export API_KEY="your_api_key_here"
 通过 `GET /v1/check-address/:address` 端点检查接收地址的链上声誉。传入地址路径参数和 `chain_id` 查询参数（免费版支持1=Ethereum和8453=Base），返回 `isSafe` 布尔值、风险等级（LOW/MEDIUM/HIGH/CRITICAL）和威胁信号列表。适用于转账前验证收款方是否为已知恶意地址.
 ### 2. 代币蜜罐检测
 通过 `GET /v1/check-token/:address` 端点检测代币合约是否存在蜜罐行为。传入代币合约地址和 `chain_id`（免费版支持1和8453），返回蜜罐概率百分比、风险评估和具体风险信号（如买入税率过高、卖出暂停等）。适用于购买新代币前的风险评估.
-**输入**: 用户提供代币蜜罐检测所需的指令和必要参数.
-**处理**: 解析代币蜜罐检测的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 ### 3. 免费额度查询
 
 通过 `GET /v1/usage` 端点查询当前指纹的免费配额使用情况。通过 `X-Client-Fingerprint` 头部识别用户身份，返回 `dailyLimit`（100次/天）、`usedToday`、`remainingChecks` 和 `nextResetAt`（UTC时间戳）。适用于配额监控和调用规划.
@@ -132,14 +131,14 @@ curl "https://security-api.example.com/v1/usage" \
 # }
 # ...
 # 检查Base链上的地址安全性
-curl "https://security-api.example.com/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454e4438f44e?chain_id=8453" \
+example.com/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454e4438f44e?chain_id=8453" \
   -H "X-Client-Fingerprint: agent-default"
 ```
 
 ### 示例2：检测Ethereum链上代币蜜罐
 
 ```bash
-curl "https://security-api.example.com/v1/check-token/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48?chain_id=1" \
+example.com/v1/check-token/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48?chain_id=1" \
   -H "X-Client-Fingerprint: agent-default"
 # ...
 # 响应包含 honeypot概率、riskLevel、threatSignals 等字段

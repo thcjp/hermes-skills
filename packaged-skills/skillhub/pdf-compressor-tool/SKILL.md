@@ -121,7 +121,7 @@ Write-Host "压缩任务已创建, Job ID: $jobId"
 $status = "processing"
 while ($status -eq "processing") {
     Start-Sleep -Seconds 3
-    $statusResponse = Invoke-RestMethod -Uri "https://api.cross-service-solutions.com/status/$jobId"
+    $statusResponse = Invoke-RestMethod -Uri "https://api.com/status/$jobId"
     $status = $statusResponse.status
     Write-Host "当前状态: $status"
 }

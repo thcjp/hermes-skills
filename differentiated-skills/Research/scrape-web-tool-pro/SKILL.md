@@ -78,7 +78,6 @@ category: "Development"
 | 去重 | 不支持 | URL+内容指纹 |
 | 数据清洗 | 不支持 | 自动清洗与规范化 |
 
-**输入**: 用户提供免费版 vs 专业版能力对比所需的指令和必要参数.
 **处理**: 解析免费版 vs 专业版能力对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版 vs 专业版能力对比的响应数据,包含状态码、结果和日志.
 ### 专业版独有功能
@@ -92,12 +91,11 @@ category: "Development"
 7. **认证页面抓取**:注入Cookie或Authorization Header,抓取需登录页面
 8. **数据清洗**:自动去除空白、HTML实体、广告内容,规范化输出
 
-**输入**: 用户提供专业版独有功能所需的指令和必要参数.
 **处理**: 解析专业版独有功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回专业版独有功能的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -128,8 +126,7 @@ python （请参考skill目录中的脚本文件） batch \
 # ...
 # 导出为CSV
 python （请参考skill目录中的脚本文件） batch \
-  --urls-file competitors-urls.txt \
-  --selectors "name:h1.product-title::text" "price:span.price::text" \
+product-title::text" "price:span.price::text" \
   --format csv \
   --output /reports/competitor-pricing.csv
 ```
@@ -345,7 +342,6 @@ python （请参考skill目录中的脚本文件） batch \
 ```bash
 # 自动分页抓取
 python （请参考skill目录中的脚本文件） paginate \
-  --url "https://example.com/list?page=1" \
   --next-page "a.next-page::attr(href)" \
   --max-pages 20 \
   --selector "div.item h3::text" \

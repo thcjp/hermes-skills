@@ -51,21 +51,21 @@ category: "Automation"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -212,7 +212,6 @@ const response4 = await agent.sendMessage('比较这两张图片', {
 
 ### 技能（Skills）配置
 ```typescript
-const agent = client.agent({
     core_app: { ref: 'claude-sonnet@latest' },
     skills: [
         {
@@ -232,7 +231,7 @@ const agent = client.agent({
 });
 // ...
 // 智能体会自动参考技能内容进行回答
-const response = await agent.sendMessage('帮我审查这段代码');
+sendMessage('帮我审查这段代码');
 ```
 
 ### 完整类型定义
@@ -273,11 +272,9 @@ function useAgent() {
     const send = useCallback(async (text: string) => {
         setLoading(true);
         try {
-            const agent = client.agent({
                 core_app: { ref: 'claude-sonnet@latest' }
             });
 // ...
-            const response = await agent.sendMessage(text, {
                 onMessage: (msg) => {
                     if (msg.content) {
                         setMessages(prev => [...prev, {
@@ -298,14 +295,11 @@ function useAgent() {
 
 ### Q2：如何处理工具执行错误？
 ```typescript
-const response = await agent.sendMessage('执行任务', {
+sendMessage('执行任务', {
     onToolCall: async (call) => {
         try {
-            const result = await executeTool(call.name, call.args);
-            agent.submitToolResult(call.id, result);
         } catch (error) {
             // 工具执行失败也返回结果
-            agent.submitToolResult(call.id, {
                 error: `工具执行失败: ${error.message}`
             });
         }

@@ -119,7 +119,7 @@ export API_KEY="your_api_key_here"
 
 ### 场景二： SPF/DMARC基础配置检查
 - **输入**: 域名 example.com,邮件发送后进入垃圾箱
-- **处理**: 用 `dig TXT example.com` 检查SPF是否为单条TXT;检查结尾是否为 `-all`/`~all`;配置DMARC基础记录 `_dmarc.example.com TXT "v=DMARC1; p=quarantine; rua=mailto:dmarc@example.com"`
+- **处理**: 用 `dig TXT example.com` 检查SPF是否为单条TXT;检查结尾是否为 `-all`/`~all`;配置DMARC基础记录 `_dmarc.example.com"`
 - **输出**: SPF配置状态 + DMARC配置建议
 
 ### 场景三： www子域访问排查

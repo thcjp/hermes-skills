@@ -83,7 +83,6 @@ category: "Creative"
 | 视频管理 | 列表/删除/更新 | 不支持 |
 | 转码费用预估 | 上传前估算成本 | 不支持 |
 
-**输入**: 用户提供能力清单所需的指令和必要参数.
 **处理**: 解析能力清单的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回能力清单的响应数据,包含状态码、结果和日志.
 ### 工作流程
@@ -109,7 +108,6 @@ Step 3: 完成上传（触发转码）
 返回播放链接给用户
 ```
 
-**输入**: 用户提供工作流程所需的指令和必要参数.
 **处理**: 解析工作流程的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回工作流程的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -121,13 +119,12 @@ Step 3: 完成上传（触发转码）
 - **API Base URL**：`https://api-w3stream.attoaioz.cyou`
 - 所有 API 调用统一发往该地址
 
-**输入**: 用户提供服务地址所需的指令和必要参数.
 **处理**: 解析服务地址的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回服务地址的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级视频上传工、支持快速上传视频、至流媒体平台并获、取播放链接、适合个人创作者分、发内容、视频上传免费版、为个人用户提供轻、量化的视频上传与、流媒体分发能力、核心能力、默认快速上传、三步上传流程、流媒体链接获取、上传进度查询、基础视频信息管理等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ### 核心功能执行
 执行核心功能执行操作,使用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -228,7 +225,7 @@ curl -s -X GET "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/complete"
 
 ```bash
 # Step 1: 创建视频对象（仅需标题）
-curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
+attoaioz.cyou/api/videos/create' \
   -H 'stream-public-key: YOUR_PUBLIC_KEY' \
   -H 'stream-secret-key: YOUR_SECRET_KEY' \
   -H 'Content-Type: application/json' \
@@ -245,7 +242,7 @@ END_POS=$((FILE_SIZE - 1))
 HASH=$(md5sum /path/to/video.mp4 | awk '{print $1}')
 # ...
 # 上传文件分片
-curl -s -X POST "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/part" \
+attoaioz.cyou/api/videos/VIDEO_ID/part" \
   -H 'stream-public-key: YOUR_PUBLIC_KEY' \
   -H 'stream-secret-key: YOUR_SECRET_KEY' \
   -H "Content-Range: bytes 0-$END_POS/$FILE_SIZE" \
@@ -258,7 +255,7 @@ curl -s -X POST "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/part" \
 
 ```bash
 # 完成上传（触发转码）
-curl -s -X GET "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/complete" \
+attoaioz.cyou/api/videos/VIDEO_ID/complete" \
   -H 'stream-public-key: YOUR_PUBLIC_KEY' \
   -H 'stream-secret-key: YOUR_SECRET_KEY'
 # ...
@@ -383,9 +380,8 @@ STATUS=$(curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID' \
 ```bash
 # 轮询转码状态
 while true; do
-  STATUS=$(curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID' \
+attoaioz.cyou/api/videos/VIDEO_ID' \
     -H 'stream-public-key: YOUR_PUBLIC_KEY' \
-    -H 'stream-secret-key: YOUR_SECRET_KEY' | jq -r '.data.status')
 # ...
   if [ "$STATUS" = "done" ]; then
     echo "转码完成"
@@ -431,7 +427,8 @@ done
 | jq | JSON 处理 | 可选 | 系统包管理器 | 1.6+ |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 | - |
 
-#### 安装命令
+#
+### 安装命令
 
 ```bash
 # macOS 安装 jq
@@ -462,7 +459,7 @@ export STREAM_PUBLIC_KEY="your_public_key"
 export STREAM_SECRET_KEY="your_secret_key"
 # ...
 # 验证配置
-curl -s 'https://api-w3stream.attoaioz.cyou/api/videos' \
+attoaioz.cyou/api/videos' \
   -X POST \
   -H "stream-public-key: $STREAM_PUBLIC_KEY" \
   -H "stream-secret-key: $STREAM_SECRET_KEY" \

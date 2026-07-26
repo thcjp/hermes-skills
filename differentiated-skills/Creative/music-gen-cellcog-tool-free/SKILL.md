@@ -64,7 +64,6 @@ curl -X POST https://api.cellcog.com/v1/music/generate \
   }'
 ```
 
-**输入**: 用户提供文生音乐(Text-to-Music)所需的指令和必要参数.
 **处理**: 解析文生音乐(Text-to-Music)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回文生音乐(Text-to-Music)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -75,7 +74,7 @@ curl -X POST https://api.cellcog.com/v1/music/generate \
 
 ```bash
 # 歌词生音乐
-curl -X POST https://api.cellcog.com/v1/music/generate \
+cellcog.com/v1/music/generate \
   -H "Authorization: Bearer $CELLCOG_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -87,7 +86,6 @@ curl -X POST https://api.cellcog.com/v1/music/generate \
   }'
 ```
 
-**输入**: 用户提供歌词生音乐(Lyrics-to-Music)所需的指令和必要参数.
 **处理**: 解析歌词生音乐(Lyrics-to-Music)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回歌词生音乐(Lyrics-to-Music)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -105,7 +103,6 @@ curl -X POST https://api.cellcog.com/v1/music/generate \
 | Jazz | 爵士 | 休闲场景 | "smooth jazz, saxophone, piano" |
 | Folk | 民谣 | 温馨场景 | "acoustic folk, guitar, warm" |
 
-**输入**: 用户提供音乐风格选择所需的指令和必要参数.
 **处理**: 解析音乐风格选择的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回音乐风格选择的响应数据,包含状态码、结果和日志.
 ### 自定义参数
@@ -126,7 +123,6 @@ generation_params = {
 }
 ```
 
-**输入**: 用户提供自定义参数所需的指令和必要参数.
 **处理**: 解析自定义参数的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自定义参数的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：引擎的音乐生成工、支持文本、歌词生成音乐、多种风格选择、适合个人内容创作、音乐生成免费版帮、助个人用户通过、引擎创建音乐、支持从文本描述或、歌词生成完整音乐、涵盖流行、环境等多种风格、生成的音乐可用于、个人内容创作、Use、when、需要视频处理、音频编辑、媒体转换、配音生成时使用、不适用于版权受保、护的媒体内容处理、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -139,7 +135,7 @@ generation_params = {
 需求:内容创作者需要为Vlog制作背景音乐.
 ```bash
 # 生成Vlog背景音乐
-curl -X POST https://api.cellcog.com/v1/music/generate \
+cellcog.com/v1/music/generate \
   -H "Authorization: Bearer $CELLCOG_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -158,7 +154,7 @@ curl -X POST https://api.cellcog.com/v1/music/generate \
 需求:独立音乐人希望创作一首完整的原创歌曲.
 ```bash
 # 生成原创歌曲(含人声)
-curl -X POST https://api.cellcog.com/v1/music/generate \
+cellcog.com/v1/music/generate \
   -H "Authorization: Bearer $CELLCOG_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -176,7 +172,7 @@ curl -X POST https://api.cellcog.com/v1/music/generate \
 需求:短视频创作者需要15-30秒的配乐片段.
 ```bash
 # 生成短视频配乐
-curl -X POST https://api.cellcog.com/v1/music/generate \
+cellcog.com/v1/music/generate \
   -H "Authorization: Bearer $CELLCOG_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -210,7 +206,7 @@ echo '{"api_key": "your-api-key"}' > ~/.cellcog/config.json
 
 ```bash
 # 最简生成:文本描述
-curl -X POST https://api.cellcog.com/v1/music/generate \
+cellcog.com/v1/music/generate \
   -H "Authorization: Bearer $CELLCOG_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{

@@ -54,17 +54,14 @@ category: "Knowledge"
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供多源新闻搜集所需的指令和必要参数.
 **处理**: 解析多源新闻搜集的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多源新闻搜集的响应数据,包含状态码、结果和日志.
 ### 2. 智能筛选
 
-**输入**: 用户提供智能筛选所需的指令和必要参数.
 **处理**: 解析智能筛选的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回智能筛选的响应数据,包含状态码、结果和日志.
 ### 3. 简报生成
 
-**输入**: 用户提供简报生成所需的指令和必要参数.
 **处理**: 解析简报生成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回简报生成的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：每日新闻简报免费、自动搜集国际时事、经济形势、科技发展新闻生成、每日新闻简报助手、免费版是面向个人、用户的轻量新闻简、报生成工具、三步流程、自动获取国际时事、科技发展新闻、生成统一格式的简、Use、when、模型调用、智能对话、Agent、LLM、应用时使用、不适用于需要、确定性的关键决策、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -111,7 +108,7 @@ for news in filtered.get('economic', [])[:3]:
     print(f"- {news['title']}")
 # ...
 print("\n=== 科技发展 ===")
-for news in filtered.get('technology', [])[:3]:
+get('technology', [])[:3]:
     print(f"- {news['title']}")
 ```
 
@@ -121,7 +118,6 @@ for news in filtered.get('technology', [])[:3]:
 collector = NewsCollector()
 filterer = NewsFilter()
 # ...
-all_news = collector.collect_all()
 filtered = filterer.filter_news(all_news)
 # ...
 print("=== 今日创作素材 ===")
@@ -179,8 +175,7 @@ def collect():
         items = []
         for url in urls:
             try:
-                r = requests.get(url, timeout=10, headers={'User-Agent': 'Mozilla/5.0'})
-                soup = BeautifulSoup(r.content, 'html.parser')
+content, 'html.parser')
                 for link in soup.find_all('a', href=True)[:10]:
                     title = link.get_text(strip=True)
                     if title and 10 < len(title) < 100:
@@ -228,7 +223,7 @@ class BriefConfig:
         ],
         'economic': [
             'https://finance.sina.com.cn',
-            'https://www.bloomberg.com/markets',
+bloomberg.com/markets',
         ],
         'technology': [
             'https://tech.sina.com.cn',
@@ -282,7 +277,7 @@ FILTER_KEYWORDS = {
 def safe_collect(url, category):
     """安全的新闻搜集"""
     try:
-        response = requests.get(url, timeout=10, headers={'User-Agent': 'Mozilla/5.0'})
+        response = requests.0'})
         if response.status_code == 200:
             return parse_news(response.content, category)
         return []
@@ -329,7 +324,7 @@ class BriefCache:
 # ...
     def set(self, date_str, data):
         """设置缓存"""
-        cache_file = os.path.join(self.cache_dir, f"brief_{date_str}.json")
+path.join(self.json")
         with open(cache_file, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
 ```
@@ -391,8 +386,6 @@ class BriefCache:
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

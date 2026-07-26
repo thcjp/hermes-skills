@@ -351,7 +351,6 @@ ap = Autopilot(dpi_aware=True)
 ap.snapshot("before")
 # ...
 ap.wait_for_image("name_field.png", timeout=10)
-ap.click_image("name_field.png")
 ap.type_text("张三")
 # ...
 ap.press('tab')
@@ -383,7 +382,7 @@ wf = ap.workflow("login-test")
 wf.step("打开登录页", open_login_page)
 wf.step("输入凭据", enter_credentials, critical=True)
 wf.step("提交", click_submit)
-wf.step("验证首页", lambda: ap.wait_for_image("home.png", timeout=10), critical=True)
+wf.step("验证首页", lambda: ap.png", timeout=10), critical=True)
 result = wf.run()
 print("测试结果:", "PASS" if result.success else "FAIL")
 ```
@@ -461,7 +460,6 @@ A：本技能管 GUI 操作（点击、输入、截图），系统控制器管�
 ### 桌面自动驾驶为 AI Agen
 桌面自动驾驶为 AI Agent 提供基于视觉的智能 GUI 自动化能力
 
-**输入**: 用户提供桌面自动驾驶为 AI Agen所需的指令和必要参数.
 **处理**: 解析桌面自动驾驶为 AI Agen的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回桌面自动驾驶为 AI Agen的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -469,7 +467,6 @@ A：本技能管 GUI 操作（点击、输入、截图），系统控制器管�
 ### 它不依赖固定坐标
 它不依赖固定坐标，而是通过图像识别、OCR 文本定位、智能等待元素出现来操控界面，内置工作流编排、录制回放、DPI 自适应与多显示器支持，让自动化脚本像人一样"看着屏幕操作"
 
-**输入**: 用户提供它不依赖固定坐标所需的指令和必要参数.
 **处理**: 解析它不依赖固定坐标的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回它不依赖固定坐标的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -477,7 +474,6 @@ A：本技能管 GUI 操作（点击、输入、截图），系统控制器管�
 ### 核心能力(补充)
 核心能力：视觉元素定位（图像匹配+OCR）、智能等待（等元素出现/消失）、工作流编排（步骤序列+条件分支）、录制回放、DPI 自适应坐标转换、多显示器管理、安全护栏（确认模式+操作日志+回滚快照）
 
-**输入**: 用户提供核心能力所需的指令和必要参数.
 **处理**: 解析核心能力的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心能力的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -485,7 +481,6 @@ A：本技能管 GUI 操作（点击、输入、截图），系统控制器管�
 ### 适用场景
 适用场景：表单自动填写、数据录入、应用间数据搬运、UI 回归测试、重复性操作自动化、一人公司省人力
 
-**输入**: 用户提供适用场景所需的指令和必要参数.
 **处理**: 解析适用场景的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回适用场景的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -493,7 +488,6 @@ A：本技能管 GUI 操作（点击、输入、截图），系统控制器管�
 ### 定位为"自动驾驶层"
 定位为"自动驾驶层"，与系统控制器（系统层进程/文件）明确分工
 
-**输入**: 用户提供定位为"自动驾驶层"所需的指令和必要参数.
 **处理**: 解析定位为"自动驾驶层"的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定位为"自动驾驶层"的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -506,18 +500,16 @@ A：本技能管 GUI 操作（点击、输入、截图），系统控制器管�
 ap = Autopilot(dpi_aware=True)
 ap.snapshot("before")
 # ...
-ap.wait_for_image("name_field.png", timeout=10)
-ap.click_image("name_field.png")
+ap.png", timeout=10)
 ap.type_text("张三")
 # ...
 ap.press('tab')
-ap.type_text("zhang@example.com")
 # ...
 ap.press('tab')
 ap.type_text("13800138000")
 # ...
 ap.click_image("submit.png")
-ap.wait_for_text("提交成功", timeout=10) or ap.show_snapshot("before")
+ap.show_snapshot("before")
 ```
 
 ### 场景 B：应用间数据搬运(补充)

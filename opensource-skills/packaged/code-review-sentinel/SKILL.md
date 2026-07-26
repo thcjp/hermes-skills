@@ -78,34 +78,39 @@ category: "Development"
 
 ### Step 2: 五维度审查
 
-#### 维度一：正确性
+#
+### 维度一：正确性
 - 逻辑是否正确实现需求
 - 边界条件是否处理（空值/零值/极值/并发）
 - 错误处理是否完整（异常捕获/错误传播/降级）
 - 是否引入回归
 
-#### 维度二：可维护性
+#
+### 维度二：可维护性
 - 命名是否清晰表达意图
 - 函数/类职责是否单一
 - 是否存在重复代码（应抽象）
 - 复杂度是否可控（圈复杂度 < 10）
 - 注释是否解释"为什么"而非"是什么"
 
-#### 维度三：安全性
+#
+### 维度三：安全性
 - 输入是否校验（防注入/XSS）
 - 权限检查是否到位
 - 密钥/凭证是否泄露
 - 依赖是否有已知漏洞
 - 是否遵循最小权限原则
 
-#### 维度四：性能
+#
+### 维度四：性能
 - 是否有不必要的计算/查询
 - N+1 查询问题
 - 内存泄漏风险
 - 大数据集处理是否分页/流式
 - 是否阻塞主线程/事件循环
 
-#### 维度五：可测试性
+#
+### 维度五：可测试性
 - 是否有对应的测试
 - 测试是否覆盖关键路径
 - 是否易于编写测试（依赖注入/可 mock）
@@ -204,7 +209,6 @@ const schema = z.object({
 ### Praise（值得表扬）
 # ...
 **[P1] 错误处理清晰**
-- 文件：`src/auth/register.ts:25`
 - 表扬：错误分类明确（VALIDATION_FAILED/EMAIL_EXISTS），包含 requestId，便于排查
 ```
 
@@ -358,7 +362,6 @@ async function processPayment(orderId: string) {
 ### Should Fix（强烈建议修复）(补充)
 # ...
 **[S1] N+1查询问题**
-- 文件: src/payment/service.ts:120
 - 问题: 循环中查询用户信息，100笔支付触发100次DB查询
 - 建议: 批量查询用户信息
 ```typescript
@@ -379,7 +382,6 @@ for (const payment of payments) {
 ```
 # ...
 **[S2] 缺少并发控制**
-- 文件: src/payment/service.ts:55
 - 问题: 同一订单可能并发处理，导致重复扣款
 - 建议: 使用乐观锁或分布式锁
 ```typescript
@@ -396,14 +398,12 @@ if (result.affected === 0) {
 ### Nit（小问题）
 # ...
 **[N1] 命名不清晰**
-- 文件: src/payment/service.ts:15
 - 问题: `proc` 函数名缩写过度，应为 `processPayment`
 - 建议: 使用完整动词+名词命名
 # ...
 ### Praise（值得表扬）(补充)
 # ...
 **[P1] 事件版本化设计**
-- 文件: src/payment/event_publisher.ts:8
 - 表扬: 事件schema包含version字段，为后续演化预留空间，是优秀的实践
 ```
 
@@ -448,16 +448,14 @@ app.post('/upload', async (req, res) => {
 - 建议: 使用参数化查询
 ```typescript
 // 修复方案
-const url = await db.query(
   'SELECT * FROM files WHERE name = $1',
   [file.name]  // 参数化
 );
 // 或使用ORM
-const url = await db.files.findFirst({ where: { name: file.name } });
+files.findFirst({ where: { name: file.name } });
 ```
 # ...
 **[B2] 路径遍历漏洞（严重）**
-- 文件: src/upload/handler.ts:4
 - 问题: 未过滤文件名，攻击者可上传 `../../../etc/passwd`
 - 建议: 生成随机文件名，过滤特殊字符
 ```typescript
@@ -481,7 +479,6 @@ if (!resolved.startsWith(path.resolve('/uploads'))) {
 ```
 # ...
 **[B3] 无文件类型校验**
-- 文件: src/upload/handler.ts:3
 - 问题: 接受任意文件类型，可上传可执行文件
 - 建议: 白名单校验MIME类型和扩展名
 ```typescript
@@ -498,7 +495,6 @@ if (!isRealImage) {
 ```
 # ...
 **[B4] 无文件大小限制**
-- 文件: src/upload/handler.ts:2
 - 问题: 无大小限制，可上传超大文件耗尽磁盘
 - 建议: 限制文件大小
 ```typescript
@@ -510,12 +506,11 @@ if (file.size > MAX_SIZE) {
 ```
 # ...
 **[B5] 上传文件可公开访问**
-- 文件: src/upload/handler.ts:5
 - 问题: 文件存储在web可访问目录，可能泄露敏感文件
 - 建议: 存储在非web目录，通过API鉴权访问
 ```typescript
 // 修复方案
-const filePath = path.join('/data/uploads', safeName);  // 非web目录
+join('/data/uploads', safeName);  // 非web目录
 // 通过API提供受控访问
 app.get('/files/:id', authMiddleware, async (req, res) => {
   const file = await db.files.findById(req.params.id);
@@ -546,7 +541,7 @@ app.get('/timeline/:userId', async (req, res) => {
   
   const enriched = [];
   for (const activity of activities) {
-    const user = await db.query(`SELECT * FROM users WHERE id = ${activity.user_id}`);
+query(`SELECT * FROM users WHERE id = ${activity.user_id}`);
     const post = activity.post_id ? 
       await db.query(`SELECT * FROM posts WHERE id = ${activity.post_id}`) : null;
     const comment = activity.comment_id ?
@@ -577,14 +572,12 @@ app.get('/timeline/:userId', async (req, res) => {
 # ...
 # ...
 **[S1] 严重N+1查询问题（性能）**
-- 文件: src/api/timeline.ts:8-12
 - 问题: 每条活动查询user/post/comment，100条活动=300+次DB查询
 - 影响: 100条活动API响应时间预计5-10秒
 - 建议: 批量查询 + JOIN
 ```typescript
 // 修复方案1: JOIN查询（推荐）
 app.get('/timeline/:userId', async (req, res) => {
-  const userId = req.params.userId;
   const enriched = await db.query(`
     SELECT 
       a.*,
@@ -603,7 +596,6 @@ app.get('/timeline/:userId', async (req, res) => {
 });
 
 // 修复方案2: 批量查询
-const activities = await db.query(
   'SELECT * FROM activities WHERE user_id = $1 ORDER BY created_at DESC LIMIT 50',
   [userId]
 );
@@ -620,7 +612,6 @@ const [users, posts, comments] = await Promise.all([
 ```
 # ...
 **[S2] 无分页限制**
-- 文件: src/api/timeline.ts:3
 - 问题: 查询所有活动，活跃用户可能上万条
 - 建议: 强制分页，默认50条
 ```typescript
@@ -629,7 +620,6 @@ const offset = parseInt(req.query.offset) || 0;
 ```
 # ...
 **[S3] 无缓存策略**
-- 文件: src/api/timeline.ts:2
 - 问题: 时间线是高频访问接口，无缓存导致DB压力
 - 建议: Redis缓存 + 短TTL
 ```typescript
@@ -648,7 +638,6 @@ app.get('/timeline/:userId', cacheMiddleware, async (req, res) => {
 ```
 # ...
 **[S4] 无索引提示**
-- 文件: src/api/timeline.ts:3
 - 问题: ORDER BY created_at可能全表扫描
 - 建议: 确保有(user_id, created_at DESC)复合索引
 ```sql
@@ -790,7 +779,6 @@ export async function getUsers(req, res) {
 - 学习点: 永远不要返回敏感字段，使用字段选择
 ```typescript
 // 改进方案
-const users = await User.findAll({
   attributes: ['id', 'name', 'email', 'createdAt']  // 明确字段
 });
 ```

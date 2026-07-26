@@ -78,8 +78,6 @@ category: "Creative"
 | 并发控制 | 不支持 | 队列 + 并发 | 高吞吐 |
 | API 服务 | 不支持 | FastAPI | 远程调用 |
 
-**输入**: 用户提供免费版 vs 专业版对比所需的指令和必要参数.
-**输出**: 返回免费版 vs 专业版对比的处理结果,包含执行状态码、结果数据和执行日志.
 ### 单集下载
 
 针对单集下载,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
@@ -208,13 +206,13 @@ class PodcastSubscriber:
                 f"AUDIO_QUALITY={show['quality']} "
                 f"（请参考skill目录中的脚本文件） {ep['url']}"
             )
-            ep_hash = hashlib.md5(ep["url"].encode()).hexdigest()
+md5(ep["url"].encode()).hexdigest()
             self.downloaded.add(ep_hash)
         self._save_downloaded()
         print(f"同步完成: 新增 {len(new_eps)} 集")
 # ...
     def _save(self):
-        with open(self.config_file, "w", encoding="utf-8") as f:
+config_file, "w", encoding="utf-8") as f:
             json.dump(self.subscriptions, f, ensure_ascii=False, indent=2)
 # ...
     def _save_downloaded(self):
@@ -308,6 +306,8 @@ def embed_metadata(mp3_path, title, artist, album, cover_path=None):
 | 参数名 | 类型 | 必填 | 说明 |
 |:---:|:---:|:---:|:---:|
 
+| instruction | string | 是 | 用户指令文本 |
+| context | string | 否 | 上下文信息 |
 ## 输出格式
 
 ```json

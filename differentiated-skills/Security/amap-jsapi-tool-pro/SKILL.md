@@ -49,7 +49,6 @@ category: "Development"
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供WebGL高级渲染与矢量图层(专业版独有)所需的指令和必要参数.
 **处理**: 解析WebGL高级渲染与矢量图层(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回WebGL高级渲染与矢量图层(专业版独有)的响应数据,包含状态码、结果和日志.
 ### 2. 实时路况数据(专业版独有)
@@ -83,9 +82,9 @@ function queryRoadCondition(roadName, city) {
             if (status === 'complete') {
                 result.info.forEach(info => {
                     console.log(`路段: ${info.name}`);
-                    console.log(`  状态: ${info.status}`);
-                    console.log(`  方向: ${info.direction}`);
-                    console.log(`  拥堵程度: ${info.congestion}`);
+log(`  状态: ${info.status}`);
+log(`  方向: ${info.direction}`);
+log(`  拥堵程度: ${info.congestion}`);
                 });
             }
         });
@@ -97,14 +96,12 @@ const traffic = enableTraffic(map);
 queryRoadCondition('建国路', '北京');
 ```
 
-**输入**: 用户提供实时路况数据(专业版独有)所需的指令和必要参数.
 **处理**: 解析实时路况数据(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回实时路况数据(专业版独有)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 3. 批量地理编码(专业版独有)
 
-**输入**: 用户提供批量地理编码(专业版独有)所需的指令和必要参数.
 **处理**: 解析批量地理编码(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量地理编码(专业版独有)的响应数据,包含状态码、结果和日志.
 ### 4. 货车路径规划(专业版独有)
@@ -127,10 +124,9 @@ function truckRoute(origin, destination, truckInfo) {
             function(status, result) {
                 if (status === 'complete') {
                     const route = result.routes[0];
-                    console.log('货车路径规划:');
-                    console.log(`  总距离: ${(route.distance / 1000).toFixed(1)}公里`);
-                    console.log(`  预计时间: ${Math.ceil(route.time / 60)}分钟`);
-                    console.log(`  收费路段: ${route.tolls}元`);
+log(`  总距离: ${(route.distance / 1000).toFixed(1)}公里`);
+log(`  预计时间: ${Math.ceil(route.time / 60)}分钟`);
+log(`  收费路段: ${route.tolls}元`);
                 }
             }
         );
@@ -145,7 +141,6 @@ truckRoute(
 );
 ```
 
-**输入**: 用户提供货车路径规划(专业版独有)所需的指令和必要参数.
 **处理**: 解析货车路径规划(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回货车路径规划(专业版独有)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -174,7 +169,6 @@ const customStyles = {
 applyCustomStyle(map, customStyles.dark);
 ```
 
-**输入**: 用户提供自定义地图样式(专业版独有)所需的指令和必要参数.
 **处理**: 解析自定义地图样式(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自定义地图样式(专业版独有)的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级高德地图开、发平台、支持矢量图层、实时路况、批量地理编码、自定义样式与货车、适合商业级地图应、用开发、高德地图、JSAPI、开发助手专业版、为企业提供全方位、地图开发能力、核心能力、WebGL、高级渲染、矢量图层、自定义地图样式、货车路径规划、公交导航、适用场景、商业级地图应用、物流调度、位置服务、SaaS、智慧城市可视化、差异化、专业版兼容免费版、新增企业级数据处、理与高级渲染能力、满足商业场景需求、适用关键词、货车导航、amap、pro、vector、layer等.
@@ -186,9 +180,8 @@ applyCustomStyle(map, customStyles.dark);
 // 物流调度:多点配送路径优化
 function optimizeDeliveryRoute(warehouse, deliveryPoints) {
     AMap.plugin('AMap.TruckDriving', function() {
-        const truckDriving = new AMap.TruckDriving({
             map: map,
-            policy: AMap.TruckDrivingPolicy.LEAST_DISTANCE,
+TruckDrivingPolicy.LEAST_DISTANCE,
             size: 1
         });
 // ...
@@ -198,18 +191,17 @@ function optimizeDeliveryRoute(warehouse, deliveryPoints) {
             ...deliveryPoints.map(p => ({ lnglat: p, name: '配送点' }))
         ];
 // ...
-        truckDriving.search(points, function(status, result) {
+search(points, function(status, result) {
             if (status === 'complete') {
-                const route = result.routes[0];
-                console.log('=== 配送路径优化 ===');
-                console.log(`配送点数量: ${deliveryPoints.length}`);
-                console.log(`总距离: ${(route.distance / 1000).toFixed(1)}公里`);
-                console.log(`预计时间: ${Math.ceil(route.time / 3600)}小时`);
-                console.log(`收费: ${route.tolls}元`);
+log('=== 配送路径优化 ===');
+log(`配送点数量: ${deliveryPoints.length}`);
+log(`总距离: ${(route.distance / 1000).toFixed(1)}公里`);
+log(`预计时间: ${Math.ceil(route.time / 3600)}小时`);
+log(`收费: ${route.tolls}元`);
 // ...
                 // 显示配送顺序
                 route.steps.forEach((step, i) => {
-                    console.log(`  ${i+1}. ${step.instruction}`);
+log(`  ${i+1}. ${step.instruction}`);
                 });
             }
         });
@@ -281,7 +273,7 @@ function analyzeBusinessDistrict(map, poiData) {
 function reachabilityAnalysis(center, minutes) {
     AMap.plugin('AMap.Driving', function() {
         const driving = new AMap.Driving({
-            policy: AMap.DrivingPolicy.LEAST_TIME
+DrivingPolicy.LEAST_TIME
         });
 // ...
         // 在中心点周围采样多个方向
@@ -298,7 +290,6 @@ function reachabilityAnalysis(center, minutes) {
         const reachablePoints = [];
         let completed = 0;
 // ...
-        samplePoints.forEach(target => {
             driving.search(center, target, function(status, result) {
                 completed++;
                 if (status === 'complete') {
@@ -316,10 +307,8 @@ function reachabilityAnalysis(center, minutes) {
 }
 // ...
 function drawReachableArea(points) {
-    const polygon = new AMap.Polygon({
         path: points,
         fillColor: '#00b38a',
-        fillOpacity: 0.2,
         strokeColor: '#00b38a',
         strokeWeight: 2
     });
@@ -352,7 +341,6 @@ function drawReachableArea(points) {
 const map = new AMap.Map('container', { zoom: 12 });
 // ...
 // 专业版:启用高级功能
-const map = new AMap.Map('container', {
     zoom: 12,
     viewMode: '3D',
     pitch: 45,
@@ -379,7 +367,6 @@ const map = new AMap.Map('container', {
 
 ### 3D地图配置
 ```javascript
-const map = new AMap.Map('container', {
     zoom: 14,
     center: [116.397428, 39.90923],
     viewMode: '3D',         // 3D视图

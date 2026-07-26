@@ -60,7 +60,6 @@ tmwd batch status
 tmwd batch exec --all-sessions --code "return document.querySelector('.notification').innerText"
 ```
 
-**输入**: 用户提供批量会话管理所需的指令和必要参数.
 **处理**: 解析批量会话管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量会话管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -72,13 +71,12 @@ tmwd profile create --name "account_a" --isolated
 tmwd profile create --name "account_b" --isolated
 # ...
 tmwd exec --profile "account_a" --code "document.querySelector('#user-menu').click()"
-tmwd exec --profile "account_b" --code "document.querySelector('#user-menu').click()"
+tmwd exec --profile "account_b" --code "document.click()"
 # ...
 tmwd profile list
 tmwd profile delete --name "old_account"
 ```
 
-**输入**: 用户提供多浏览器配置文件隔离所需的指令和必要参数.
 **处理**: 解析多浏览器配置文件隔离的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多浏览器配置文件隔离的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -96,7 +94,6 @@ tmwd audit export --format csv --output audit_report.csv
 # ...
 ```
 
-**输入**: 用户提供安全审计与操作日志所需的指令和必要参数.
 **处理**: 解析安全审计与操作日志的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回安全审计与操作日志的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -113,7 +110,6 @@ tmwd session share --id "session_1" --team "qa_team"
 tmwd team resources --team "qa_team"
 ```
 
-**输入**: 用户提供团队协作所需的指令和必要参数.
 **处理**: 解析团队协作的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回团队协作的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -123,12 +119,10 @@ tmwd team resources --team "qa_team"
 ```bash
 tmwd exec --code "document.querySelector('#btn').click()" --auto-strategy
 # ...
-tmwd exec --code "document.querySelector('#btn').click()" --force-cdp
+click()" --force-cdp
 # ...
-tmwd exec --code "document.querySelector('#btn').click()" --stealth
 ```
 
-**输入**: 用户提供高级 CSP 绕过所需的指令和必要参数.
 **处理**: 解析高级 CSP 绕过的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级 CSP 绕过的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -155,7 +149,6 @@ tmwd schedule start schedule.json
 tmwd schedule status
 ```
 
-**输入**: 用户提供定时任务与自动化流程所需的指令和必要参数.
 **处理**: 解析定时任务与自动化流程的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时任务与自动化流程的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -167,10 +160,9 @@ tmwd_status()
 tmwd_switch(pattern="example.com")
 tmwd_navigate(url="https://example.com")
 tmwd_text(max_chars=5000)
-tmwd_exec(code="document.querySelector('#btn').click()")
+tmwd_exec(code="document.click()")
 ```
 
-**输入**: 用户提供完整兼容免费版所需的指令和必要参数.
 **处理**: 解析完整兼容免费版的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回完整兼容免费版的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级真实浏览器、控制平台、支持批量会话、多浏览器管理、安全审计与团队协、真实浏览器控制专、面向企业团队和高、级用户提供深度的、真实浏览器控制能、支持批量会话管理、多浏览器实例控制、团队协作等高级功、when、需要安全检测、合规审计、漏洞扫描、加密防护时使用、不适用于渗透测试、未授权目标、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -393,7 +385,6 @@ tmwd batch status
 ### 1. 免费版到专业版的平滑迁移
 ```bash
 tmwd_status()
-tmwd_exec(code="document.querySelector('#btn').click()")
 # ...
 tmwd batch start sessions.json
 # ...
@@ -403,14 +394,14 @@ tmwd profile create --name "test_env" --isolated
 
 ### 2. 批量任务的性能优化
 ```bash
-tmwd batch start sessions.json --concurrency 5
+json --concurrency 5
 # ...
 tmwd session pool create --size 10 --profile "default"
 ```
 
 ### 3. 安全审计的最佳实践
 ```bash
-tmwd audit enable --log-dir ./audit_logs --encrypt
+/audit_logs --encrypt
 # ...
 tmwd audit export --format csv --output monthly_audit.csv --period "2026-07"
 # ...
@@ -480,7 +471,6 @@ tmwd config set --auto-cleanup --idle-timeout 300
 **A:** 专业版提供 CLI 接口和 Webhook,支持与 CI/CD 系统集成:
 
 ```bash
-tmwd batch start test_sessions.json --headless
 tmwd batch results --output ci_results.json
 tmwd report generate --input ci_results.json --format junit --output test_report.xml
 ```

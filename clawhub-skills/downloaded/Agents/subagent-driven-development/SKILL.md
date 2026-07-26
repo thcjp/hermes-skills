@@ -24,12 +24,12 @@ digraph when_to_use {
     "executing-plans" [shape=box];
     "Manual execution or brainstorm first" [shape=box];
 
-    "Have implementation plan?" -> "Tasks mostly independent?" [label="yes"];
-    "Have implementation plan?" -> "Manual execution or brainstorm first" [label="no"];
-    "Tasks mostly independent?" -> "Stay in this session?" [label="yes"];
-    "Tasks mostly independent?" -> "Manual execution or brainstorm first" [label="no - tightly coupled"];
-    "Stay in this session?" -> "subagent-driven-development" [label="yes"];
-    "Stay in this session?" -> "executing-plans" [label="no - parallel session"];
+" -> "Tasks mostly independent?" [label="yes"];
+" -> "Manual execution or brainstorm first" [label="no"];
+" -> "Stay in this session?" [label="yes"];
+" -> "Manual execution or brainstorm first" [label="no - tightly coupled"];
+" -> "subagent-driven-development" [label="yes"];
+" -> "executing-plans" [label="no - parallel session"];
 }
 ```
 
@@ -69,22 +69,22 @@ digraph process {
     "Use superpowers:finishing-a-development-branch" [shape=box style=filled fillcolor=lightgreen];
 
     "Read plan, extract all tasks with full text, note context, create TodoWrite" -> "Dispatch implementer subagent (./implementer-prompt.md)";
-    "Dispatch implementer subagent (./implementer-prompt.md)" -> "Implementer subagent asks questions?";
-    "Implementer subagent asks questions?" -> "Answer questions, provide context" [label="yes"];
+/implementer-prompt.md)" -> "Implementer subagent asks questions?";
+" -> "Answer questions, provide context" [label="yes"];
     "Answer questions, provide context" -> "Dispatch implementer subagent (./implementer-prompt.md)";
-    "Implementer subagent asks questions?" -> "Implementer subagent implements, tests, commits, self-reviews" [label="no"];
-    "Implementer subagent implements, tests, commits, self-reviews" -> "Dispatch spec reviewer subagent (./spec-reviewer-prompt.md)";
-    "Dispatch spec reviewer subagent (./spec-reviewer-prompt.md)" -> "Spec reviewer subagent confirms code matches spec?";
-    "Spec reviewer subagent confirms code matches spec?" -> "Implementer subagent fixes spec gaps" [label="no"];
-    "Implementer subagent fixes spec gaps" -> "Dispatch spec reviewer subagent (./spec-reviewer-prompt.md)" [label="re-review"];
-    "Spec reviewer subagent confirms code matches spec?" -> "Dispatch code quality reviewer subagent (./code-quality-reviewer-prompt.md)" [label="yes"];
-    "Dispatch code quality reviewer subagent (./code-quality-reviewer-prompt.md)" -> "Code quality reviewer subagent approves?";
-    "Code quality reviewer subagent approves?" -> "Implementer subagent fixes quality issues" [label="no"];
-    "Implementer subagent fixes quality issues" -> "Dispatch code quality reviewer subagent (./code-quality-reviewer-prompt.md)" [label="re-review"];
-    "Code quality reviewer subagent approves?" -> "Mark task complete in TodoWrite" [label="yes"];
+" -> "Implementer subagent implements, tests, commits, self-reviews" [label="no"];
+    "Implementer subagent implements, tests, commits, self-reviews" -> "Dispatch spec reviewer subagent (.md)";
+md)" -> "Spec reviewer subagent confirms code matches spec?";
+" -> "Implementer subagent fixes spec gaps" [label="no"];
+    "Implementer subagent fixes spec gaps" -> "Dispatch spec reviewer subagent (.md)" [label="re-review"];
+" -> "Dispatch code quality reviewer subagent (.md)" [label="yes"];
+md)" -> "Code quality reviewer subagent approves?";
+" -> "Implementer subagent fixes quality issues" [label="no"];
+    "Implementer subagent fixes quality issues" -> "Dispatch code quality reviewer subagent (.md)" [label="re-review"];
+" -> "Mark task complete in TodoWrite" [label="yes"];
     "Mark task complete in TodoWrite" -> "More tasks remain?";
-    "More tasks remain?" -> "Dispatch implementer subagent (./implementer-prompt.md)" [label="yes"];
-    "More tasks remain?" -> "Dispatch final code reviewer subagent for entire implementation" [label="no"];
+" -> "Dispatch implementer subagent (./implementer-prompt.md)" [label="yes"];
+" -> "Dispatch final code reviewer subagent for entire implementation" [label="no"];
     "Dispatch final code reviewer subagent for entire implementation" -> "Use superpowers:finishing-a-development-branch";
 }
 ```
@@ -92,8 +92,8 @@ digraph process {
 ## Prompt Templates
 
 * `./implementer-prompt.md` - Dispatch implementer subagent
-* `./spec-reviewer-prompt.md` - Dispatch spec compliance reviewer subagent
-* `./code-quality-reviewer-prompt.md` - Dispatch code quality reviewer subagent
+* `.md` - Dispatch spec compliance reviewer subagent
+* `.md` - Dispatch code quality reviewer subagent
 
 ## 示例
 

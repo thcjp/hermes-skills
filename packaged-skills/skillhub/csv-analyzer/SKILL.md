@@ -1,9 +1,8 @@
----
-slug: "csv-analyzer"
+---slug: "csv-analyzer"
 name: "csv-analyzer"
 version: 1.0.1
 displayName: "CSV数据分析器"
-summary: "用简单命令分析CSV文件，获取统计、筛选行、检测异常、分组聚合，零外部依赖。。CSV数据分析器用简单命令分析CSV文件，即时获取统计、筛选数据、检测异常并导出结果. 仅依赖Python标准库"
+summary: "用简单命令分析CSV文"
 summary_zh: "用简单命令分析CSV文件，获取统计、筛选行、检测异常、分组聚合，零外部依赖。。CSV数据分析器用简单命令分析CSV文件，即时获取统计、筛选数据、检测异常并导出结果. 仅依赖Python标准库"
 license: "MIT"
 description: |-
@@ -32,9 +31,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# Csv Analyzer — CSV数据分析器
+category: "Automation"---# Csv Analyzer — CSV数据分析器
 
 用简单命令分析CSV文件，即时获取统计、筛选数据、检测异常并导出结果——无需pandas或重型依赖.
 ## 输入格式
@@ -81,7 +78,7 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） stats data.csv
 ```
 
 返回行数、列类型、数值列的min/max/mean、文本列的unique计数.
-**输入**: 用户提供快速统计（stats）所需的指令和必要参数。- 验证执行结果,确认输出符合预期格式
+
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `快速统计（stats）` 选项
 
@@ -91,7 +88,7 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） filter data.csv -
 ```
 
 支持比较运算符（`>`、`<`、`>=`、`<=`、`==`、`!=`），可将筛选结果导出为CSV.
-**输入**: 用户提供灵活筛选（filter）所需的指令和必要参数.
+
 ### 3. Top/Bottom N
 ```bash
 python3 {baseDir}/（请参考skill目录中的脚本文件） top data.csv --column revenue --n 10
@@ -99,29 +96,24 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） bottom data.csv -
 ```
 
 按指定列取前N或后N行.
-**输入**: 用户提供Top/Bottom N所需的指令和必要参数.
-**输出**: 返回Top/Bottom N的处理结果,包含执行状态码、结果数据和执行日志.
+
 ### 4. 异常检测（anomalies）
 ```bash
 python3 {baseDir}/（请参考skill目录中的脚本文件） anomalies data.csv --column price
 ```
 
 基于z-score检测超出2σ（2倍标准差）的值.
-**输入**: 用户提供异常检测（anomalies）所需的指令和必要参数.
-**输出**: 返回异常检测（anomalies）的处理结果,包含执行状态码、结果数据和执行日志.
+
 ### 5. 分组聚合（group）
 ```bash
 python3 {baseDir}/（请参考skill目录中的脚本文件） group data.csv --by category --agg "sum:amount" "count:id"
 ```
 
 按指定列分组，支持 `sum`、`count` 等多种聚合函数，可同时指定多个聚合.
-**输入**: 用户提供分组聚合（group）所需的指令和必要参数.
-**输出**: 返回分组聚合（group）的处理结果,包含执行状态码、结果数据和执行日志.
+
 ### 6. 自动列类型检测
 自动识别列类型：数值（numeric）、日期（date）、文本（text）。数值列做统计计算，文本列做unique计数.
-**输入**: 用户提供自动列类型检测所需的指令和必要参数.
-**处理**: 解析自动列类型检测的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回自动列类型检测的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+
 - 参考`自动列类型检测`的配置文档进行参数调优
 ### 7. 结果导出
 
@@ -168,7 +160,7 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） stats orders.csv
 ### 示例2：筛选大额订单并导出
 
 ```bash
-python3 {baseDir}/（请参考skill目录中的脚本文件） filter orders.csv --where "amount>1000" --output big_orders.csv
+python3 {baseDir}/（请参考skill目录中的脚本文件） filter orders.csv
 # 输出：筛选出87行，已导出到 big_orders.csv
 ```
 
@@ -200,7 +192,7 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） group orders.csv 
 ### 示例6：多条件组合（先filter再stats）
 
 ```bash
-python3 {baseDir}/（请参考skill目录中的脚本文件） filter orders.csv --where "amount>500" --output high_value.csv
+csv --where "amount>500" --output high_value.csv
 python3 {baseDir}/（请参考skill目录中的脚本文件） stats high_value.csv
 # 输出：高价值订单的统计概况
 ```

@@ -118,7 +118,7 @@ cat > memory/knowledge-graph/.storage-config.json << 'EOF'
 EOF
 # ...
 # 2. 启用图可视化
-cat > memory/knowledge-graph/.viz-config.json << 'EOF'
+viz-config.json << 'EOF'
 {
   "enabled": true,
   "layout": "force-directed",
@@ -134,7 +134,7 @@ cat > memory/knowledge-graph/.viz-config.json << 'EOF'
 EOF
 # ...
 # 3. 启用版本追踪
-cat > memory/knowledge-graph/.version-config.json << 'EOF'
+version-config.json << 'EOF'
 {
   "enabled": true,
   "autoSnapshot": "daily",
@@ -145,7 +145,7 @@ cat > memory/knowledge-graph/.version-config.json << 'EOF'
 EOF
 # ...
 # 4. 启用跨技能通信
-cat > memory/knowledge-graph/.event-config.json << 'EOF'
+event-config.json << 'EOF'
 {
   "enabled": true,
   "eventBus": true,
@@ -224,7 +224,6 @@ ls -la memory/knowledge-graph/
 | 约束 | 7类基础约束 | +自定义规则+跨实体验证 |
 | 关系 | 基础关系类型 | +自定义关系+属性关系 |
 
-**输入**: 用户提供类型化实体系统（基础+增强）所需的指令和必要参数.
 **处理**: 解析类型化实体系统（基础+增强）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回类型化实体系统（基础+增强）的响应数据,包含状态码、结果和日志.
 ### 2. SQLite迁移（专业版独有）
@@ -263,7 +262,6 @@ kg storage migrate --to sqlite
 | 全文搜索 | grep | FTS5全文索引 |
 | 并发 | 文件锁 | WAL模式并发 |
 
-**输入**: 用户提供SQLite迁移（专业版独有）所需的指令和必要参数.
 **处理**: 解析SQLite迁移（专业版独有）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回SQLite迁移（专业版独有）的响应数据,包含状态码、结果和日志.
 ### 3. 图可视化（专业版独有）
@@ -294,7 +292,6 @@ kg viz interactive --layout force-directed
 - 节点限制：默认max=500，可配置至1000
 - 导出格式：SVG / PNG / Mermaid / Graphviz
 
-**输入**: 用户提供图可视化（专业版独有）所需的指令和必要参数.
 **处理**: 解析图可视化（专业版独有）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回图可视化（专业版独有）的响应数据,包含状态码、结果和日志.
 ### 4. SPARQL-like高级查询（专业版独有）
@@ -343,7 +340,6 @@ kg query "SELECT ?person ?projectCount WHERE {
 | 路径查询 | PATH (blocks+) | 依赖链分析 |
 | 模式匹配 | 复杂图模式 | 深度关系发现 |
 
-**输入**: 用户提供SPARQL-like高级查询（专业版独有）所需的指令和必要参数.
 **处理**: 解析SPARQL-like高级查询（专业版独有）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回SPARQL-like高级查询（专业版独有）的响应数据,包含状态码、结果和日志.
 ### 5. 版本追踪与差异对比（专业版独有）
@@ -382,7 +378,6 @@ kg snapshot restore --id snap_20260115 --confirm
 kg snapshot branch --from snap_20260115 --name "v1.x-maintenance"
 ```
 
-**输入**: 用户提供版本追踪与差异对比（专业版独有）所需的指令和必要参数.
 **处理**: 解析版本追踪与差异对比（专业版独有）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回版本追踪与差异对比（专业版独有）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -423,7 +418,6 @@ def update_report(task):
 - 消息队列：异步处理，不阻塞主流程
 - 可配置：订阅关系在.event-config.json中配置
 
-**输入**: 用户提供跨技能通信增强（专业版独有）所需的指令和必要参数.
 **处理**: 解析跨技能通信增强（专业版独有）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回跨技能通信增强（专业版独有）的响应数据,包含状态码、结果和日志.
 ### 7. 多平台集成（专业版独有）
@@ -442,7 +436,6 @@ kg integrate knowledge-base --export --format markdown
 kg integrate jira --sync --direction both
 ```
 
-**输入**: 用户提供多平台集成（专业版独有）所需的指令和必要参数.
 **处理**: 解析多平台集成（专业版独有）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多平台集成（专业版独有）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -480,7 +473,6 @@ relations:
 
 ---
 
-**输入**: 用户提供自定义类型与关系扩展（专业版独有）所需的指令和必要参数.
 **处理**: 解析自定义类型与关系扩展（专业版独有）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自定义类型与关系扩展（专业版独有）的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Agent、全功能知识图谱引、知识图谱构建器专、业版是在免费版基、础上的全功能升级、提供从类型化图谱、到可视化的完整知、识管理引擎、专业版解锁、多平台集成六大高、级功能、实现大规模图谱的、高性能管理与可视等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -502,9 +494,7 @@ kg viz render --format mermaid --max-nodes 500 --filter "type=Project OR type=Pe
 # ...
 # 高级查询：找出负责3个以上活跃项目的人
 kg query "SELECT ?person ?count WHERE {
-  ?person rdf:type Person .
   ?project has_owner ?person .
-  ?project status 'active' .
   AGGREGATE ?count = COUNT(?project)
 } HAVING (?count > 3)"
 ```
@@ -554,7 +544,6 @@ kg query "SELECT ?path WHERE {
 # 影响范围分析
 kg query "SELECT ?affected WHERE {
   ?start name '用户服务' .
-  PATH ?start (depends_on+) ?affected .
   AGGREGATE ?count = COUNT(?affected)
 }"
 # 输出：影响6个下游服务
@@ -899,8 +888,6 @@ kg sync --with knowledge-base/ --direction both
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

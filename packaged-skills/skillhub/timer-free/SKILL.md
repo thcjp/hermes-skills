@@ -44,8 +44,7 @@ category: "Automation"
 
 ```bash
 bash background:true command:"node {baseDir}/timer.js 5m"
-bash background:true command:"node {baseDir}/timer.js 10m 'Check the oven'"
-bash background:true command:"node {baseDir}/timer.js 30s"
+js 10m 'Check the oven'"
 ```
 
 第一个参数为时长，第二个可选参数为提醒文案。提醒文案会在定时器完成时回传给 Agent，再由 Agent 转达给用户.
@@ -109,7 +108,7 @@ export API_KEY="your_api_key_here"
 
 用户煮意面需要 12 分钟，希望到期提醒.
 ```bash
-bash background:true command:"node {baseDir}/timer.js 12m 'Pasta is ready!'"
+js 12m 'Pasta is ready!'"
 ```
 
 定时器在后台运行，12 分钟后收到系统通知。Agent 收到通知后立即向用户转达提醒："⏰ 您的 12 分钟计时已到：Pasta is ready!"。回复必须直接以提醒文案开头，不要以 `HEARTBEAT_OK` 开头，否则提醒会被过滤.
@@ -117,7 +116,7 @@ bash background:true command:"node {baseDir}/timer.js 12m 'Pasta is ready!'"
 
 用户工作一段时间后希望 5 分钟后提醒休息.
 ```bash
-bash background:true command:"node {baseDir}/timer.js 5m 'Take a break'"
+js 5m 'Take a break'"
 ```
 
 5 分钟后到期，Agent 转达提醒文案。需要继续工作时，可由用户再次请求启动新的定时器.

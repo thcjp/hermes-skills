@@ -206,21 +206,20 @@ resource "aws_subnet" "public" {
   cidr_block              = cidrsubnet(var.cidr_block, 8, index(var.availability_zones, each.value))
   availability_zone       = each.value
   map_public_ip_on_launch = true
-  tags = merge(var.tags, { Name = "${var.name_prefix}-public-${each.value}" })
+  tags = merge(var.name_prefix}-public-${each.value}" })
 }
 # ...
 resource "aws_internet_gateway" "this" {
   vpc_id = aws_vpc.this.id
-  tags   = merge(var.tags, { Name = "${var.name_prefix}-igw" })
+  tags   = merge(var.name_prefix}-igw" })
 }
 # ...
 resource "aws_nat_gateway" "this" {
-  for_each = toset(var.availability_zones)
 # ...
   allocation_id = aws_eip.nat[each.key].id
   subnet_id     = aws_subnet.public[each.key].id
   depends_on     = [aws_internet_gateway.this]
-  tags           = merge(var.tags, { Name = "${var.name_prefix}-nat-${each.key}" })
+  tags           = merge(var.name_prefix}-nat-${each.key}" })
 }
 ```
 
@@ -233,7 +232,6 @@ Region: cn-hangzhou
 可用区: cn-hangzhou-a, cn-hangzhou-b, cn-hangzhou-c
 ```
 
-**输出**(modules/vpc/main.tf 片段):
 ```hcl
 terraform {
   required_providers {
@@ -250,12 +248,11 @@ resource "alicloud_vpc" "this" {
 }
 # ...
 resource "alicloud_vswitch" "public" {
-  for_each = toset(var.availability_zones)
 # ...
   vpc_id            = alicloud_vpc.this.id
-  cidr_block        = cidrsubnet(var.cidr_block, 8, index(var.availability_zones, each.value))
+  cidr_block        = cidrsubnet(var.value))
   zone_id           = each.value
-  vswitch_name      = "${var.name_prefix}-public-${each.value}"
+  vswitch_name      = "${var.value}"
 }
 ```
 
@@ -354,39 +351,29 @@ Region: cn-hangzhou
 ```hcl
 # modules/vpc/main.tf
 terraform {
-  required_version = ">= 1.5"
   required_providers {
     alicloud = {
       source  = "aliyun/alicloud"
-      version = "~> 1.220"
     }
   }
 }
 # ...
 resource "alicloud_vpc" "this" {
-  vpc_name   = "${var.name_prefix}-vpc"
   cidr_block = var.cidr_block
-  tags       = merge(var.tags, { Name = "${var.name_prefix}-vpc" })
+  tags       = merge(var.name_prefix}-vpc" })
 }
 # ...
 resource "alicloud_vswitch" "private" {
-  for_each = toset(var.availability_zones)
 # ...
   vpc_id       = alicloud_vpc.this.id
-  cidr_block   = cidrsubnet(var.cidr_block, 8, index(var.availability_zones, each.value) + 10)
+  cidr_block   = cidrsubnet(var.value) + 10)
   zone_id      = each.value
   vswitch_name = "${var.name_prefix}-private-${each.value}"
-  tags         = merge(var.tags, { Name = "${var.name_prefix}-private-${each.value}" })
+  tags         = merge(var.value}" })
 }
 # ...
 resource "alicloud_vswitch" "public" {
-  for_each = toset(var.availability_zones)
 # ...
-  vpc_id       = alicloud_vpc.this.id
-  cidr_block   = cidrsubnet(var.cidr_block, 8, index(var.availability_zones, each.value))
-  zone_id      = each.value
-  vswitch_name = "${var.name_prefix}-public-${each.value}"
-  tags         = merge(var.tags, { Name = "${var.name_prefix}-public-${each.value}" })
 }
 # ...
 resource "alicloud_nat_gateway" "this" {
@@ -455,7 +442,7 @@ output "private_subnet_ids" {
 # ...
 output "public_subnet_ids" {
   description = "公有子网ID映射"
-  value       = { for k, v in alicloud_vswitch.public : k => v.id }
+public : k => v.id }
 }
 ```
 
@@ -481,20 +468,16 @@ resource "alicloud_security_group_rule" "allow_https" {
   type              = "ingress"
   ip_protocol       = "tcp"
   port_range        = "443/443"
-  security_group_id = alicloud_security_group.this.id
-  cidr_ip           = "0.0.0.0/0"
 }
 # ...
 resource "alicloud_security_group_rule" "allow_ssh" {
   type              = "ingress"
   ip_protocol       = "tcp"
   port_range        = "22/22"
-  security_group_id = alicloud_security_group.this.id
   cidr_ip           = var.ssh_cidr
 }
 # ...
 resource "alicloud_instance" "this" {
-  for_each = toset(var.availability_zones)
 # ...
   instance_type           = var.instance_type
   image_id                = var.image_id
@@ -505,7 +488,7 @@ resource "alicloud_instance" "this" {
   system_disk_category    = "cloud_essd"
   system_disk_size        = var.system_disk_size
   internet_max_bandwidth_out = 0  # 通过NAT访问外网
-  tags                    = merge(var.tags, { Name = "${var.name_prefix}-ecs-${each.value}" })
+  tags                    = merge(var.value}" })
 }
 ```
 

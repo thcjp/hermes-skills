@@ -300,7 +300,6 @@ const response4 = await agent.sendMessage('比较这两张图片', {
 
 ### 技能（Skills）配置
 ```typescript
-const agent = client.agent({
     core_app: { ref: 'claude-sonnet@latest' },
     skills: [
         {
@@ -320,7 +319,7 @@ const agent = client.agent({
 });
 // ...
 // 智能体会自动参考技能内容进行回答
-const response = await agent.sendMessage('帮我审查这段代码');
+sendMessage('帮我审查这段代码');
 ```
 
 ### 完整类型定义
@@ -342,11 +341,9 @@ function useAgent() {
     const send = useCallback(async (text: string) => {
         setLoading(true);
         try {
-            const agent = client.agent({
                 core_app: { ref: 'claude-sonnet@latest' }
             });
 // ...
-            const response = await agent.sendMessage(text, {
                 onMessage: (msg) => {
                     if (msg.content) {
                         setMessages(prev => [...prev, {
@@ -367,14 +364,11 @@ function useAgent() {
 
 ### Q2：如何处理工具执行错误？
 ```typescript
-const response = await agent.sendMessage('执行任务', {
+sendMessage('执行任务', {
     onToolCall: async (call) => {
         try {
-            const result = await executeTool(call.name, call.args);
-            agent.submitToolResult(call.id, result);
         } catch (error) {
             // 工具执行失败也返回结果
-            agent.submitToolResult(call.id, {
                 error: `工具执行失败: ${error.message}`
             });
         }

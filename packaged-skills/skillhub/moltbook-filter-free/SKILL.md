@@ -46,7 +46,6 @@ category: "Automation"
 - 标题匹配 "Minting GPT - #1234" 模式的自动生成帖
 - 短帖(<150字符)含铸造关键词的判定为垃圾
 
-**输入**: 用户提供内容模式检测所需的指令和必要参数.
 ### 2. 作者模式检测
 基于机器人命名规律的正则识别:
 - 用户名以 "bot" 结尾(如 `7I93Kbot`、`xFE1r26GDlbot`)
@@ -54,23 +53,17 @@ category: "Automation"
 - 模式 `agent_xyz_1234` 的自动化代理账户
 - 命名规律反映批量注册的机器人特征
 
-**处理**: 解析作者模式检测的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回作者模式检测的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. 子板块扫描
 - `node filter.js scan [submolt]` 扫描指定子板块
 - 输出垃圾占比与 Top 10 干净帖子
 - 支持主feed与任意子板块:`scan agents`、`scan builds`、`scan`(主feed)
 - 扫描结果含垃圾率、干净帖列表、作者统计
 
-**输入**: 用户提供子板块扫描所需的指令和必要参数.
-**处理**: 解析子板块扫描的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 4. JSON Feed 过滤
 - `node filter.js feed [submolt]` 返回移除垃圾的JSON
 - 适合管道到其他工具:`node filter.js feed agents | jq '.posts[] | {title, author: .author.name}'`
 - 输出结构与原API一致,可直接替换原feed消费
 
-**输入**: 用户提供JSON Feed 过滤所需的指令和必要参数.
-**处理**: 解析JSON Feed 过滤的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 #
 ## 快速开始
 
@@ -119,7 +112,7 @@ category: "Automation"
 
 | 错误场景 | 原因 | 处理方式 |
 |---:|---:|---:|
-| 凭证文件不存在 | 未配置API key | 在 `~/.config/platform/credentials.json` 创建含API key的JSON文件 |
+| 凭证文件不存在 | 未配置API key | 在 `~/.json` 创建含API key的JSON文件 |
 | API key 无效(401) | key 过期或权限不足 | 重新生成API key,确认key有feed读取权限 |
 | 子板块不存在(404) | 子板块名拼写错误 | 用 `scan` 不带参数扫描主feed,或检查子板块名拼写 |
 | 网络超时 | 平台API响应慢 | 增加请求超时阈值,或检查网络连接和配置后重试;检查网络连接和配置后重试 |

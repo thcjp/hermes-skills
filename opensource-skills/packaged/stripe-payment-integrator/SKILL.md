@@ -330,7 +330,7 @@ app.post("/api/create-payment-intent", async (req, res) => {
       return res.status(400).json({ error: "金额不匹配" });
     }
 // ...
-    const paymentIntent = await stripe.paymentIntents.create({
+paymentIntents.create({
       amount: Math.round(amount * 100), // 转为分
       currency,
       description: `Order ${orderId}`,
@@ -377,10 +377,8 @@ app.post("/api/stripe/webhook", express.raw({ type: "application/json" }), async
     case "payment_intent.succeeded":
       await handlePaymentSuccess(event.data.object);
       break;
-    case "payment_intent.payment_failed":
       await handlePaymentFailure(event.data.object);
       break;
-    case "payment_intent.requires_action":
       // 3D Secure需要用户认证
       console.log("需要3D Secure认证:", event.data.object.id);
       break;
@@ -392,14 +390,12 @@ app.post("/api/stripe/webhook", express.raw({ type: "application/json" }), async
 async function handlePaymentSuccess(paymentIntent) {
   const { order_id } = paymentIntent.metadata;
   await updateOrderStatus(order_id, "paid", {
-    paymentIntentId: paymentIntent.id,
     paidAt: new Date(),
   });
   await sendOrderConfirmationEmail(order_id);
 }
 // ...
 async function handlePaymentFailure(paymentIntent) {
-  const { order_id } = paymentIntent.metadata;
   await updateOrderStatus(order_id, "failed", {
     failureReason: paymentIntent.last_payment_error?.message,
   });
@@ -443,7 +439,7 @@ function CheckoutForm({ clientSecret, orderId }) {
     } else if (paymentIntent.status === "succeeded") {
       // 支付成功,跳转订单页(Webhook也会同步更新)
       window.location.href = `/orders/${orderId}?status=success`;
-    } else if (paymentIntent.status === "requires_action") {
+status === "requires_action") {
       // 3D Secure认证由Stripe.js自动处理
       setError("需要进行3D Secure认证,请完成验证");
     }
@@ -499,11 +495,11 @@ SaaS产品: Pro计划 $29/月, Enterprise $99/月
 
 **LLM生成输出** (`output/saas-subscription/subscription.js`):
 ```javascript
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+env.STRIPE_SECRET_KEY);
 // ...
 // ==================== 1. 创建订阅(7天试用) ====================
 async function createSubscription(customerId, priceId, trialDays = 7) {
-  const subscription = await stripe.subscriptions.create({
+subscriptions.create({
     customer: customerId,
     items: [{ price: priceId }],
     trial_period_days: trialDays,
@@ -524,7 +520,7 @@ async function createSubscription(customerId, priceId, trialDays = 7) {
 // ...
 // ==================== 2. 升级订阅(Pro→Enterprise) ====================
 async function upgradeSubscription(subscriptionId, newPriceId) {
-  const subscription = await stripe.subscriptions.retrieve(subscriptionId);
+subscriptions.retrieve(subscriptionId);
 // ...
   // 获取当前订阅项
   const itemId = subscription.items.data[0].id;
@@ -551,8 +547,7 @@ async function upgradeSubscription(subscriptionId, newPriceId) {
 // ...
 // ==================== 3. 降级订阅(Enterprise→Pro,下个周期生效) ====================
 async function downgradeSubscription(subscriptionId, newPriceId) {
-  const subscription = await stripe.subscriptions.retrieve(subscriptionId);
-  const itemId = subscription.items.data[0].id;
+subscriptions.retrieve(subscriptionId);
 // ...
   // 使用schedule实现下个周期生效的降级
   const schedule = await stripe.subscriptionSchedules.create({
@@ -561,7 +556,7 @@ async function downgradeSubscription(subscriptionId, newPriceId) {
 // ...
   // 当前阶段保持不变,下个阶段切换价格
   const currentPhase = schedule.phases[0];
-  await stripe.subscriptionSchedules.update(schedule.id, {
+  await stripe.update(schedule.id, {
     phases: [
       {
         items: currentPhase.items,
@@ -570,7 +565,6 @@ async function downgradeSubscription(subscriptionId, newPriceId) {
       },
       {
         items: [{ price: newPriceId, quantity: 1 }],
-        start_date: currentPhase.end_date, // 下个周期开始
       },
     ],
   });
@@ -603,7 +597,6 @@ async function handleDunning(event) {
         items: [{ price: process.env.FREE_PLAN_PRICE_ID }],
         metadata: { downgrade_reason: "payment_failed_final" },
       });
-      await sendEmail(invoice.customer_email, {
         subject: "已降级为免费计划",
         body: `多次续费失败,已降级为免费计划。更新支付方式后可随时恢复。`,
       });
@@ -667,7 +660,7 @@ async function createCustomerPortalSession(customerId) {
 **LLM生成输出** (`output/webhook-handler/webhook.js`):
 ```javascript
 const express = require("express");
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+env.STRIPE_SECRET_KEY);
 const { Pool } = require("pg");
 const redis = require("redis");
 // ...
@@ -765,7 +758,6 @@ async function routeEvent(event) {
 // ...
 // 处理器示例
 async function handlePaymentSuccess(paymentIntent) {
-  const { order_id } = paymentIntent.metadata;
   await pool.query(
     "UPDATE orders SET status = $1, paid_at = NOW() WHERE id = $2",
     ["paid", order_id]
@@ -774,7 +766,6 @@ async function handlePaymentSuccess(paymentIntent) {
 }
 // ...
 async function handlePaymentFailure(paymentIntent) {
-  const { order_id } = paymentIntent.metadata;
   const reason = paymentIntent.last_payment_error?.decline_code || "unknown";
   await pool.query(
     "UPDATE orders SET status = $1, failure_reason = $2 WHERE id = $3",
@@ -823,7 +814,7 @@ app.listen(3000, () => console.log("Webhook服务已启动:3000"));
 
 **LLM生成输出** (`output/payment-adapter/payment-service.ts`):
 ```typescript
-// ==================== 1. 统一支付接口 ====================
+ 统一支付接口 ====================
 interface PaymentService {
   createPayment(params: PaymentParams): Promise<PaymentResult>;
   queryPayment(paymentId: string): Promise<PaymentStatus>;
@@ -848,7 +839,7 @@ interface PaymentResult {
   payParams?: Record<string, string>; // 微信/支付宝前端调起参数
 }
 // ...
-// ==================== 2. Stripe适配器 ====================
+ Stripe适配器 ====================
 class StripeAdapter implements PaymentService {
   private stripe: any;
 // ...
@@ -872,7 +863,7 @@ class StripeAdapter implements PaymentService {
   }
 // ...
   async queryPayment(paymentId: string) {
-    const intent = await this.stripe.paymentIntents.retrieve(paymentId);
+stripe.paymentIntents.retrieve(paymentId);
     return { paymentId, status: intent.status, amount: intent.amount };
   }
 // ...
@@ -896,7 +887,7 @@ class StripeAdapter implements PaymentService {
   }
 }
 // ...
-// ==================== 3. 微信支付适配器 ====================
+ 微信支付适配器 ====================
 class WechatPayAdapter implements PaymentService {
   private pay: any;
 // ...
@@ -910,7 +901,6 @@ class WechatPayAdapter implements PaymentService {
 // ...
     const result = await this.pay.transactions_jsapi({
       out_trade_no: params.orderId,
-      description: params.description,
       amount: { total: params.amount, currency: "CNY" },
       payer: { openid: params.openid },
       notify_url: `${process.env.API_BASE}/webhook/wechat`,
@@ -931,7 +921,6 @@ class WechatPayAdapter implements PaymentService {
   }
 // ...
   async queryPayment(paymentId: string) {
-    const result = await this.pay.query({
       out_trade_no: paymentId,
     });
     const statusMap = {
@@ -945,8 +934,6 @@ class WechatPayAdapter implements PaymentService {
     };
   }
 // ...
-  async refundPayment(paymentId: string, amount?: number) {
-    const result = await this.pay.refunds({
       out_trade_no: paymentId,
       out_refund_no: `REFUND-${Date.now()}`,
       amount: {
@@ -973,7 +960,7 @@ class WechatPayAdapter implements PaymentService {
   }
 }
 // ...
-// ==================== 4. 支付工厂(根据channel创建适配器) ====================
+ 支付工厂(根据channel创建适配器) ====================
 class PaymentFactory {
   static create(channel: "stripe" | "wechat" | "alipay"): PaymentService {
     switch (channel) {
@@ -983,13 +970,12 @@ class PaymentFactory {
         return new WechatPayAdapter({
           appid: process.env.WX_APPID!,
           mchid: process.env.WX_MCHID!,
-          privateKey: process.env.WX_PRIVATE_KEY!,
-          publicKey: process.env.WX_PUBLIC_KEY!,
+env.WX_PRIVATE_KEY!,
         });
       case "alipay":
         return new AlipayAdapter({
           appId: process.env.ALIPAY_APP_ID!,
-          privateKey: process.env.ALIPAY_PRIVATE_KEY!,
+env.ALIPAY_PRIVATE_KEY!,
           alipayPublicKey: process.env.ALIPAY_PUBLIC_KEY!,
         });
       default:
@@ -998,7 +984,7 @@ class PaymentFactory {
   }
 }
 // ...
-// ==================== 5. 业务层调用(统一接口) ====================
+ 业务层调用(统一接口) ====================
 async function processOrderPayment(orderId: string, userRegion: string) {
   const order = await getOrder(orderId);
 // ...
@@ -1021,8 +1007,7 @@ async function processOrderPayment(orderId: string, userRegion: string) {
 // Webhook统一入口
 app.post("/webhook/:channel", express.raw({ type: "application/json" }), async (req, res) => {
   const { channel } = req.params;
-  const paymentService = PaymentFactory.create(channel);
-  const result = await paymentService.handleWebhook(req.body.toString(), req.headers);
+handleWebhook(req.body.toString(), req.headers);
   await updateOrderStatus(result.paymentId, result.status);
   res.status(200).send(channel === "wechat" ? JSON.stringify({ code: "SUCCESS" }) : JSON.stringify({ received: true }));
 });

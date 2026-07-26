@@ -103,7 +103,6 @@ class ConstructionXMLReader:
 
             # Get child values
             for child in elem:
-                child_tag = child.tag.split('}')[-1]
                 if child.text and child.text.strip():
                     record[child_tag] = child.text.strip()
                 # Also get child attributes
@@ -166,7 +165,6 @@ class IFCXMLReader(ConstructionXMLReader):
     def get_entity_types(self, root: ET.Element) -> Dict[str, int]:
         """Count entity types."""
         counts = {}
-        for elem in root.iter():
             tag = elem.tag
             if tag.startswith('Ifc'):
                 counts[tag] = counts.get(tag, 0) + 1
@@ -185,7 +183,7 @@ class COBieXMLReader(ConstructionXMLReader):
         result = {}
 
         for sheet in self.COBIE_SHEETS:
-            elements = self.find_elements(root, sheet)
+find_elements(root, sheet)
             if elements:
                 result[sheet] = self.elements_to_dataframe(elements)
 
@@ -275,8 +273,6 @@ for entity_type, count in sorted(types.items(), key=lambda x: -x[1])[:10]:
 
 ## 核心能力
 
-XML is used in construction for P6 schedules (XER), IFC-XML, COBie-XML, and buildingSMART Data Dictionary exports. This skill parses XML and converts to structured DataFrames.
-
 ## 示例
 
 ### 示例1：基础用法
@@ -284,8 +280,6 @@ XML is used in construction for P6 schedules (XER), IFC-XML, COBie-XML, and buil
 ```
 ```python
 reader = ConstructionXMLReader()
-
-root = reader.parse_file("schedule.xml")
 
 activities = reader.find_elements(root, "Activity")
 print(f"Found {len(activities)} activities")

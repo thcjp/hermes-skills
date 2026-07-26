@@ -91,7 +91,6 @@ export API_KEY="your_api_key_here"
 > "Walk me through building a REST API step by step"
 > "Teach me React hooks: My level is I know basic JavaScript, never used React"
 
-**输出**: 返回项目教程（Project Tutorials）的处理结果,包含执行状态码、结果数据和执行日志.
 ### 语言学习（Language Learning）
 系统化掌握新语言，覆盖听说读写全方位训练：
 
@@ -101,9 +100,7 @@ export API_KEY="your_api_key_here"
 - **多语言支持**：日语（JLPT N4-N1）、法语、西班牙语、中文等
 - **文化背景**：附带语言使用的文化语境与注意事项
 
-**输入**: 用户提供语言学习（Language Learning）所需的指令和必要参数.
-**处理**: 解析语言学习（Language Learning）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回语言学习（Language Learning）的处理结果,包含执行状态码、结果数据和执行日志。### 写作反馈（Writing Feedback）
+### 写作反馈（Writing Feedback）
 
 对文章、论文、邮件等写作内容提供专业反馈：
 
@@ -122,8 +119,7 @@ export API_KEY="your_api_key_here"
 - **对比图**：通过视觉对比帮助理解差异
 - **学习风格适配**：支持Visual（图表）、Examples（示例）、Analogies（类比）、Step-by-Step（步骤）、Big Picture（全局）、Hands-On（实践）等多种学习风格
 
-**输入**: 用户提供视觉学习（Visual Learning）所需的指令和必要参数.
-**处理**: 解析视觉学习（Visual Learning）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 学习指南（Study Guides）
+### 学习指南（Study Guides）
 生成系统化的学习材料与备考资源：
 
 - **学习指南（Study Guides）**：如"Create a study guide for AP Chemistry exam"
@@ -132,8 +128,7 @@ export API_KEY="your_api_key_here"
 - **摘要笔记（Summary Notes）**：如"Summarize Chapter 5 of my biology textbook"
 - **速查表（Cheat Sheets）**：如"Create a one-page reference for Python syntax"
 
-**输入**: 用户提供学习指南（Study Guides）所需的指令和必要参数.
-**处理**: 解析学习指南（Study Guides）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 概念解释与作业辅导（Concept Explanations & Homework）
+### 概念解释与作业辅导（Concept Explanations & Homework）
 多角度解释概念与作业问题解答：
 
 - **概念拆解**：如"Explain quantum entanglement like I'm 10 years old"
@@ -142,8 +137,6 @@ export API_KEY="your_api_key_here"
 - **代码调试**：解释代码为何不工作并帮助修复
 - **作文结构**：帮助构建论文框架与论点
 
-**处理**: 解析概念解释与作业辅导（Concept Explanations & Homework）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回概念解释与作业辅导（Concept Explanations & Homework）的处理结果,包含执行状态码、结果数据和执行日志.
 ---
 
 ## 快速开始

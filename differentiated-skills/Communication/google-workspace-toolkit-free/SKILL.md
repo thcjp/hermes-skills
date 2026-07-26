@@ -69,7 +69,6 @@ category: "Automation"
 - 无需配置回调地址
 - 只需 Google 账号登录授权
 
-**输入**: 用户提供零配置快速接入所需的指令和必要参数.
 **处理**: 解析零配置快速接入的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回零配置快速接入的响应数据,包含状态码、结果和日志.
 ### Gmail 邮件工具
@@ -79,7 +78,6 @@ category: "Automation"
 - `gmail.send`:发送邮件
 - `gmail.createDraft`:创建草稿
 
-**输入**: 用户提供Gmail 邮件工具所需的指令和必要参数.
 **处理**: 解析Gmail 邮件工具的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Gmail 邮件工具的响应数据,包含状态码、结果和日志.
 ### Calendar 日历工具
@@ -89,7 +87,6 @@ category: "Automation"
 - `calendar.createEvent`:创建日历事件
 - `calendar.findFreeTime`:查找空闲时间段
 
-**输入**: 用户提供Calendar 日历工具所需的指令和必要参数.
 **处理**: 解析Calendar 日历工具的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Calendar 日历工具的响应数据,包含状态码、结果和日志.
 ### Drive 文件工具
@@ -97,7 +94,6 @@ category: "Automation"
 - `drive.search`:搜索云端文件
 - `drive.downloadFile`:下载文件到本地
 
-**输入**: 用户提供Drive 文件工具所需的指令和必要参数.
 **处理**: 解析Drive 文件工具的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Drive 文件工具的响应数据,包含状态码、结果和日志.
 ### 认证管理
@@ -106,7 +102,6 @@ category: "Automation"
 - 支持重新认证与令牌刷新
 - 支持清除凭据重新授权
 
-**输入**: 用户提供认证管理所需的指令和必要参数.
 **处理**: 解析认证管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回认证管理的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：免配置云控制台的、办公工具接口、核心工具调用、谷歌办公工具接口、免费版、通过工具协议直接、Workspace、无需创建云控制台、登录即可使用、核心能力、零云控制台配置、账号登录即用、邮件搜索、日历事件列表、文件搜索与下载、通过工具协议统一、无需管理多个、SDK等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -202,7 +197,7 @@ gwtool config add google-workspace \
 
 ```bash
 # 触发 OAuth 登录
-gwtool call --server google-workspace --tool "gmail.search" query="is:unread" maxResults=5
+search" query="is:unread" maxResults=5
 ```
 
 浏览器中登录 Google 账号并授权后,凭据自动保存到本地.
@@ -210,10 +205,9 @@ gwtool call --server google-workspace --tool "gmail.search" query="is:unread" ma
 
 ```bash
 # 搜索邮件
-gwtool call --server google-workspace --tool "gmail.search" query="newer_than:7d" maxResults=10
+search" query="newer_than:7d" maxResults=10
 # ...
 # 查看日历
-gwtool call --server google-workspace --tool "calendar.list"
 # ...
 # 搜索文件
 gwtool call --server google-workspace --tool "drive.search" query="报告"
@@ -278,7 +272,7 @@ for mail in emails:
 工具接口会自动管理令牌刷新,正常使用无需手动干预。若长时间未使用导致令牌过期,执行任意命令会自动触发刷新.
 ```bash
 # 令牌过期后,执行任意命令自动刷新
-gwtool call --server google-workspace --tool "gmail.search" query="is:unread" maxResults=1
+search" query="is:unread" maxResults=1
 ```
 
 ### 2. 跨设备使用需重新授权
@@ -291,8 +285,6 @@ gwtool call --server google-workspace --tool "gmail.search" query="is:unread" ma
 ```bash
 # 创建日历事件
 gwtool call --server google-workspace \
-    --tool "calendar.createEvent" \
-    calendarId="your@gmail.com" \
     summary="团队周会" \
     start='{"dateTime":"2026-07-25T14:00:00Z"}' \
     end='{"dateTime":"2026-07-25T15:00:00Z"}'
@@ -304,7 +296,6 @@ gwtool call --server google-workspace \
 
 ```bash
 gwtool call --server google-workspace \
-    --tool "calendar.findFreeTime" \
     attendees='["a@example.com","b@example.com"]' \
     timeMin="2026-07-25T09:00:00Z" \
     timeMax="2026-07-25T18:00:00Z" \
@@ -325,7 +316,7 @@ gwtool call --server google-workspace \
 gwtool call --server google-workspace --tool "auth.refreshToken"
 # ...
 # 或直接执行业务命令(自动刷新)
-gwtool call --server google-workspace --tool "gmail.search" query="is:unread" maxResults=1
+search" query="is:unread" maxResults=1
 ```
 
 ### Q3: 如何切换 Google 账号?
@@ -334,10 +325,9 @@ gwtool call --server google-workspace --tool "gmail.search" query="is:unread" ma
 
 ```bash
 # 清除凭据
-gwtool call --server google-workspace --tool "auth.clear"
 # ...
 # 执行任意命令重新触发 OAuth 登录
-gwtool call --server google-workspace --tool "gmail.search" query="is:unread" maxResults=1
+search" query="is:unread" maxResults=1
 ```
 
 ### Q4: 免费版支持哪些工具?与专业版有何区别?

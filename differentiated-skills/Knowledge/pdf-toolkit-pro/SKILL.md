@@ -60,7 +60,6 @@ PDF创建、PDF编辑、格式转换、合并拆分、压缩优化、加密解�
 ### 批量处理与并行执行
 批量处理与并行执行
 
-**输入**: 用户提供批量处理与并行执行所需的指令和必要参数.
 **处理**: 解析批量处理与并行执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量处理与并行执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -68,7 +67,6 @@ PDF创建、PDF编辑、格式转换、合并拆分、压缩优化、加密解�
 ### 企业级安全与审计
 企业级安全与审计
 
-**输入**: 用户提供企业级安全与审计所需的指令和必要参数.
 **处理**: 解析企业级安全与审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回企业级安全与审计的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -76,7 +74,6 @@ PDF创建、PDF编辑、格式转换、合并拆分、压缩优化、加密解�
 ### 高级配置与自定义策略
 高级配置与自定义策略
 
-**输入**: 用户提供高级配置与自定义策略所需的指令和必要参数.
 **处理**: 解析高级配置与自定义策略的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级配置与自定义策略的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -84,7 +81,6 @@ PDF创建、PDF编辑、格式转换、合并拆分、压缩优化、加密解�
 ### 免费版完全兼容
 免费版完全兼容，无缝升级
 
-**输入**: 用户提供免费版完全兼容所需的指令和必要参数.
 **处理**: 解析免费版完全兼容的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版完全兼容的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -92,12 +88,10 @@ PDF创建、PDF编辑、格式转换、合并拆分、压缩优化、加密解�
 ### 优先技术支持与问题响应
 优先技术支持与问题响应
 
-**输入**: 用户提供优先技术支持与问题响应所需的指令和必要参数.
 **处理**: 解析优先技术支持与问题响应的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回优先技术支持与问题响应的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**输入**: 用户提供专业版增强功能所需的指令和必要参数.
 **处理**: 解析专业版增强功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回专业版增强功能的响应数据,包含状态码、结果和日志.
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
@@ -180,8 +174,8 @@ class PDFToolkit:
                   page_size: str = "A4") -> PDFOperationResult:
         """创建PDF（PRO 专属：ReportLab集成）"""
         from reportlab.lib.pagesizes import A4, letter
-        from reportlab.platypus import SimpleDocTemplate, Paragraph
-        from reportlab.lib.styles import getSampleStyleSheet
+platypus import SimpleDocTemplate, Paragraph
+lib.styles import getSampleStyleSheet
         sizes = {"A4": A4, "letter": letter}
         doc = SimpleDocTemplate(output_path, pagesize=sizes.get(page_size, A4))
         styles = getSampleStyleSheet()
@@ -229,10 +223,9 @@ class PDFToolkit:
         for i in range(0, len(reader.pages), pages_per_file):
             writer = PdfWriter()
             for j in range(i, min(i + pages_per_file, len(reader.pages))):
-                writer.add_page(reader.pages[j])
+add_page(reader.pages[j])
             out = str(Path(output_dir) / f"part_{i//pages_per_file+1}.pdf")
             with open(out, "wb") as f:
-                writer.write(f)
             outputs.append(out)
         return outputs
 # ...
@@ -240,7 +233,6 @@ class PDFToolkit:
         """压缩PDF（PRO 专属）"""
         reader = PdfReader(pdf_path)
         writer = PdfWriter()
-        for page in reader.pages:
             page.compress_content_streams()
             writer.add_page(page)
         with open(output_path, "wb") as f:
@@ -261,7 +253,6 @@ class PDFToolkit:
         """加密PDF（PRO 专属）"""
         reader = PdfReader(pdf_path)
         writer = PdfWriter()
-        for page in reader.pages:
             writer.add_page(page)
         writer.encrypt(password)
         with open(output_path, "wb") as f:
@@ -276,7 +267,6 @@ class PDFToolkit:
         reader = PdfReader(pdf_path)
         watermark = PdfReader(watermark_path).pages[0]
         writer = PdfWriter()
-        for page in reader.pages:
             page.merge_page(watermark)
             writer.add_page(page)
         with open(output_path, "wb") as f:
@@ -290,7 +280,7 @@ class PDFToolkit:
                      operations: List[str],
                      output_dir: str = "./output") -> List[PDFOperationResult]:
         """批量处理（PRO 专属）"""
-        Path(output_dir).mkdir(exist_ok=True)
+mkdir(exist_ok=True)
         results = []
         for file_path in file_list:
             for op in operations:
@@ -298,7 +288,7 @@ class PDFToolkit:
                 if op == "compress":
                     r = self.compress(file_path, output_path)
                 elif op == "encrypt":
-                    r = self.encrypt(file_path, output_path, "default_pass")
+encrypt(file_path, output_path, "default_pass")
                 elif op == "extract_text":
                     text = self.extract_text(file_path)
                     r = PDFOperationResult(op, file_path, "", "success",

@@ -23,7 +23,6 @@ Ocean Chat 是 OceanBus 生态的 **核心用户界面 Skill**。三个能力：
 | 存在且 Roster 有联系人 | → 正常使用，跳过冷启动 |
 
 ### Step 1：未注册 → 注册
-> 详细内容已移至 `references/detail.md`
 
 ### Step 1b：朋友收到邀请（B 侧）
 当用户粘贴了 `<OpenID> <名字>` 给自己的 AI 时：
@@ -83,7 +82,6 @@ ocean-chat 是通讯录的**唯一 UI 入口**。用户说"加人/查人/改人/
 底层原理：`RosterService` 来自 `oceanbus` SDK（`require('oceanbus').RosterService`）。SDK 负责数据模型和索引；LLM 负责语义理解和消歧。
 
 ### 1.1 查找联系人
-> 详细内容已移至 `references/detail.md`
 
 ### 1.2 添加联系人
 ```
@@ -361,7 +359,6 @@ node chat.js listen
 | **captain-lobster** | 独自管理数据，不关联。 |
 
 ### ocean-agent（保险代理人能力包）
-> 详细内容已移至 `references/detail.md`
 
 ## 十、约束规则
 1. **发消息前必须查 Roster**：用户说人名 → `roster.search()` → 消歧 → 拿 OpenID → 发。不要直接当 OpenID 用。
@@ -420,9 +417,7 @@ node chat.js listen
 ## 示例
 ### 示例1：基础用法
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
 ## 错误处理

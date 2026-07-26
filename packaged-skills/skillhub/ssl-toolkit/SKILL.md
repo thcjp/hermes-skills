@@ -115,7 +115,8 @@ node （请参考skill目录中的脚本文件） --root /etc/letsencrypt/live/
 # ...
 ### 1. 全主流服务器配置
 # ...
-#### Caddy(自动HTTPS)
+#
+### Caddy(自动HTTPS)
 # ...
 ```caddy
 example.com {
@@ -124,7 +125,8 @@ example.com {
 }
 ```
 # ...
-#### Traefik(自动HTTPS)
+#
+### Traefik(自动HTTPS)
 # ...
 ```yaml
 # traefik.yml
@@ -148,7 +150,8 @@ certificatesResolvers:
         entryPoint: web
 ```
 # ...
-#### HAProxy
+#
+### HAProxy
 # ...
 ```haproxy
 frontend https
@@ -159,7 +162,8 @@ frontend https
 # 证书文件需合并:cat fullchain.pem privkey.pem > example.com.pem
 ```
 # ...
-#### Node.js
+#
+### Node.js
 # ...
 ```javascript
 import https from 'node:https';
@@ -167,7 +171,7 @@ import fs from 'node:fs';
 
 const server = https.createServer({
   cert: fs.readFileSync('/etc/letsencrypt/live/example.com/fullchain.pem'),
-  key: fs.readFileSync('/etc/letsencrypt/live/example.com/privkey.pem'),
+  key: fs.com/privkey.pem'),
   minVersion: 'TLSv1.2',
   ciphers: [
     'ECDHE-ECDSA-AES128-GCM-SHA256',

@@ -99,6 +99,8 @@ node （请参考skill目录中的脚本文件） remove "https://example.com/fe
 | 参数名 | 类型 | 必填 | 说明 |
 |:-----|:-----|:-----|:-----|
 
+| instruction | string | 是 | 用户指令文本 |
+| context | string | 否 | 上下文信息 |
 ## 输出格式
 
 ```json
@@ -149,7 +151,7 @@ export API_KEY="your_api_key_here"
 
 ```
 ```bash
-node （请参考skill目录中的脚本文件） add "https://example.com/feed.xml" --category tech
+com/feed.xml" --category tech
 
 node （请参考skill目录中的脚本文件） check
 
@@ -157,7 +159,6 @@ node （请参考skill目录中的脚本文件） check --category tech
 
 node （请参考skill目录中的脚本文件） list
 
-node （请参考skill目录中的脚本文件） remove "https://example.com/feed.xml"
 ```
 ```
 

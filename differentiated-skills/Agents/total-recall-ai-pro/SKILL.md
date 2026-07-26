@@ -169,7 +169,6 @@ memory-cli status --json --verbose
   "autoExtract": {
     "enabled": true,
     "categories": ["preference", "decision", "fact", "relationship", "goal"],
-    "minConfidence": 0.8,
     "deduplicate": true,
     "updateExisting": true,
     "backgroundPolling": true
@@ -236,7 +235,7 @@ class AutoFactExtractor:
                         extracted.append({'action': 'updated', 'fact': fact})
                     else:
                         self.memory_store(fact)
-                        extracted.append({'action': 'added', 'fact': fact})
+append({'action': 'added', 'fact': fact})
         return extracted
 # ...
     def is_duplicate(self, fact, threshold=0.95):
@@ -302,9 +301,8 @@ class CrossDeviceSync:
                 # 冲突解决
                 if local['updated_at'] != change['updated_at']:
                     resolved = self.resolve_conflict(local, change)
-                    self.local_store(resolved)
+local_store(resolved)
             else:
-                self.local_store(change)
 # ...
     def resolve_conflict(self, local, remote):
         if self.conflict_resolution == "merge":
@@ -410,11 +408,9 @@ class MemoryCurator:
         # 近期记忆 → 重要
         days_ago = (time.time() - memory['created_at']) / 86400
         if days_ago < 7:
-            score += 0.1
 # ...
         # 用户标记重要 → 重要
         if memory.get('user_starred'):
-            score += 0.2
 # ...
         return min(1.0, score)
 # ...
@@ -427,15 +423,13 @@ class MemoryCurator:
                 if sim > self.deduplicate_threshold:
                     # 合并：保留重要性更高的
                     keeper = mem1 if self.score_importance(mem1) > self.score_importance(mem2) else mem2
-                    self.merge(mem1, mem2, keeper)
+merge(mem1, mem2, keeper)
 # ...
     def archive_old(self):
         """归档90天前的低重要性记忆"""
-        for memory in self.get_all_memories():
-            days_ago = (time.time() - memory['created_at']) / 86400
+time() - memory['created_at']) / 86400
             if days_ago > self.archive_after_days:
-                if self.score_importance(memory) < 0.5:
-                    self.archive(memory)
+score_importance(memory) < 0.5:
 ```
 
 **策展规则**：
@@ -722,7 +716,6 @@ memory-cli import from notion --file ~/Downloads/notion-export/
 memory-cli import from json --file ~/Downloads/memories.json
 # ...
 # 从Mem0格式迁移
-memory-cli import from mem0 --file ~/Downloads/mem0-export.json
 ```
 
 ### 版本更新历史
@@ -957,8 +950,6 @@ memory-cli repair --re-derive-key
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

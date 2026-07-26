@@ -59,21 +59,21 @@ category: "Operations"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -138,7 +138,7 @@ class PingMonitor:
             if target["type"] == "icmp":
                 ok = self.ping(target["host"])
             elif target["type"] == "http":
-                ok = self.http_check(target["url"])
+http_check(target["url"])
             else:
                 continue
 # ...
@@ -196,7 +196,7 @@ class PingMonitor:
         stats = {}
         for i in range(days):
             date = (datetime.now() - timedelta(days=i)).strftime("%Y-%m-%d")
-            log_file = self.data_dir / f"{date}.jsonl"
+data_dir / f"{date}.jsonl"
             if not log_file.exists(): continue
 # ...
             for line in log_file.read_text().splitlines():
@@ -239,7 +239,7 @@ def check_api_health(url, expected_response=None):
     """检查 API 健康状态"""
     import requests
     try:
-        resp = requests.get(url, timeout=10)
+get(url, timeout=10)
         if resp.status_code != 200:
             return {"healthy": False, "reason": f"HTTP {resp.status_code}"}
         if expected_response:
@@ -297,7 +297,6 @@ cat > ~/.ping-monitor/config.json << 'EOF'
 {
   "targets": [
     {"name": "博客", "type": "http", "url": "https://example.com"},
-    {"name": "服务器", "type": "icmp", "host": "192.168.1.1"}
   ],
   "interval_seconds": 60,
   "timeout_seconds": 5
@@ -321,7 +320,7 @@ for r in results:
 ```bash
 # 每分钟执行监控
 crontab -e
-# 添加: * * * * * python ~/.ping-monitor/monitor.py
+# 添加: * * * * * python ~/.py
 ```
 
 ### Step 4: 配置告警 (可选)
@@ -398,7 +397,6 @@ def generate_report(stats):
     """生成可用性报告"""
     report = "网站可用性报告\n"
     report += "=" * 40 + "\n"
-    for name, s in stats.items():
         status = "正常" if s["availability_pct"] >= 99.9 else "异常"
         report += f"\n{name}:\n"
         report += f"  可用率: {s['availability_pct']}%\n"
@@ -522,8 +520,6 @@ export ALERT_EMAIL="you@example.com"
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

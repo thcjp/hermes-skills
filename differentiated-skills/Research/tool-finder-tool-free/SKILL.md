@@ -1,10 +1,8 @@
----
-
-slug: tool-finder-tool-free
+---slug: tool-finder-tool-free
 name: tool-finder-tool-free
 version: 1.0.0
 displayName: 工具发现引擎免费版
-summary: "统一搜索 SkillHub 技能和 MCP server的智能发现工具,支持评分排序与推荐等级。工具发现引擎免费版,面向个人用户提供智能的技能和工具搜索能力。统一搜索 SkillHub 平台"
+summary: "统一搜索 SkillH"
 license: Proprietary
 edition: free
 description: "工具发现引擎免费版,面向个人用户提供智能的技能和工具搜索能力。统一搜索 SkillHub 平台技能和 MCP server,支持评分排序、推荐等级、来源标识等功能。Use
@@ -26,9 +24,7 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
-
----
-# 工具发现引擎免费版
+---# 工具发现引擎免费版
 
 ## 概述
 
@@ -57,7 +53,6 @@ category: "Knowledge"
 ~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "database" --all
 ```
 
-**输入**: 用户提供统一搜索所需的指令和必要参数.
 **处理**: 解析统一搜索的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回统一搜索的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -73,7 +68,6 @@ category: "Knowledge"
 ~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "browser"
 ```
 
-**输入**: 用户提供名称匹配优先所需的指令和必要参数.
 **处理**: 解析名称匹配优先的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回名称匹配优先的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -99,7 +93,6 @@ category: "Knowledge"
 | 低相关 | 2星 | 评分 1.0+(模糊搜索常见) |
 | 不推荐 | 无 | 评分 1.0 以下(默认隐藏) |
 
-**输入**: 用户提供评分排序与推荐等级所需的指令和必要参数.
 **处理**: 解析评分排序与推荐等级的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回评分排序与推荐等级的响应数据,包含状态码、结果和日志.
 ### 4. 来源标识
@@ -114,7 +107,6 @@ category: "Knowledge"
 # brave-search [MCP服务] ⭐⭐⭐⭐ - Brave search MCP service
 ```
 
-**输入**: 用户提供来源标识所需的指令和必要参数.
 **处理**: 解析来源标识的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回来源标识的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -130,7 +122,6 @@ category: "Knowledge"
 ~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） install "github" --type mcp
 ```
 
-**输入**: 用户提供依赖说明所需的指令和必要参数.
 **处理**: 解析依赖说明的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回依赖说明的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：的智能发现工具、支持评分排序与推、工具发现引擎免费、面向个人用户提供、智能的技能和工具、搜索能力、平台技能和、支持评分排序、来源标识等功能、Use、when、SEO、关键词分析、排名提升、搜索流量优化时使、不适用于黑帽、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -372,8 +363,6 @@ npx @anthropic-ai/skillhub@latest login
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

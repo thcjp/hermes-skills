@@ -96,11 +96,10 @@ curl -X PUT "https://your-domain.atlassian.net/rest/api/3/issue/PROJ-123" \
   -d '{"fields": {"summary": "更新后的标题"}}'
 ```
 
-**处理**: 解析问题管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 2. JQL高级查询
 ```bash
 # JQL查询
-curl -X GET "https://your-domain.atlassian.net/rest/api/3/search" \
+atlassian.net/rest/api/3/search" \
   -u "email@example.com:API_TOKEN" \
   --data-urlencode 'jql=project = PROJ AND sprint in openSprints() AND status != Done ORDER BY priority DESC' \
   -G
@@ -112,53 +111,47 @@ curl -X GET "https://your-domain.atlassian.net/rest/api/3/search" \
 - 高优先级缺陷：`issuetype = Bug AND priority in (Highest, High) AND status = Open`
 - 过期问题：`duedate < now() AND statusCategory != Done`
 
-**处理**: 解析JQL高级查询的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回JQL高级查询的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. Sprint与看板管理
 ```bash
 # 获取活跃Sprint
-curl -X GET "https://your-domain.atlassian.net/rest/agile/1.0/board/1/sprint?state=active" \
+atlassian.net/rest/agile/1.0/board/1/sprint?state=active" \
   -u "email@example.com:API_TOKEN"
 # ...
 # 将问题移入Sprint
-curl -X POST "https://your-domain.atlassian.net/rest/agile/1.0/sprint/1/issue" \
+atlassian.net/rest/agile/1.0/sprint/1/issue" \
   -u "email@example.com:API_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"issues": ["PROJ-1", "PROJ-2"]}'
 # ...
 # 创建Sprint
-curl -X POST "https://your-domain.atlassian.net/rest/agile/1.0/sprint" \
+atlassian.net/rest/agile/1.0/sprint" \
   -u "email@example.com:API_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"name": "Sprint 15", "startDate": "2026-08-01", "endDate": "2026-08-14", "originBoardId": 1}'
 ```
 
-**输入**: 用户提供Sprint与看板管理所需的指令和必要参数.
-**处理**: 解析Sprint与看板管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `sprint与看板管理` 选项
 
 ### 4. 工作流与状态流转
 ```bash
 # 获取可用状态流转
-curl -X GET "https://your-domain.atlassian.net/rest/api/3/issue/PROJ-123/transitions" \
+atlassian.net/rest/api/3/issue/PROJ-123/transitions" \
   -u "email@example.com:API_TOKEN"
 # ...
 # 执行状态流转
-curl -X POST "https://your-domain.atlassian.net/rest/api/3/issue/PROJ-123/transitions" \
+atlassian.net/rest/api/3/issue/PROJ-123/transitions" \
   -u "email@example.com:API_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"transition": {"id": "21"}}'
 # ...
 # 添加评论
-curl -X POST "https://your-domain.atlassian.net/rest/api/3/issue/PROJ-123/comment" \
+atlassian.net/rest/api/3/issue/PROJ-123/comment" \
   -u "email@example.com:API_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"body": {"type": "doc","version": 1,"content": [{"type": "paragraph","content": [{"type": "text","text": "已修复，请验证"}]}]}}'
 ```
 
-**输入**: 用户提供工作流与状态流转所需的指令和必要参数.
-**输出**: 返回工作流与状态流转的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `工作流与状态流转` 选项
 

@@ -96,7 +96,7 @@ python runner.py --workflow workflows/fetch_data.json
 # ...
 # 注册为定时任务（Linux）
 crontab -e
-# 添加：0 */6 * * * python runner.py --workflow workflows/fetch_data.json
+# 添加：0 */6 * * * python runner.json
 ```
 
 #
@@ -105,7 +105,8 @@ crontab -e
 
 免费版支持三种基础触发器：
 
-#### 1. 定时触发（Cron）
+#
+### 1. 定时触发（Cron）
 
 按Cron表达式定时执行工作流.
 ```json
@@ -127,7 +128,8 @@ crontab -e
 | `0 9,18 * * *` | 每天9点和18点执行 |
 | `*/30 * * * *` | 每30分钟执行 |
 
-#### 2. 文件监控触发（Watch）
+#
+### 2. 文件监控触发（Watch）
 
 监控目录变化，当有新文件添加时触发工作流.
 ```json
@@ -148,7 +150,8 @@ crontab -e
 | events | array | 监控的事件类型：create（新建）、modify（修改）、delete（删除） |
 | recursive | boolean | 是否递归监控子目录（默认false） |
 
-#### 3. 手动触发（Manual）
+#
+### 3. 手动触发（Manual）
 
 通过命令行手动触发工作流，适合调试和按需执行.
 ```json
@@ -164,24 +167,24 @@ crontab -e
 python runner.py --workflow workflows/my_workflow.json
 # ...
 # 带参数执行
-python runner.py --workflow workflows/my_workflow.json --params '{"date":"2026-01-15"}'
+python runner.json --params '{"date":"2026-01-15"}'
 ```
 
-**输入**: 用户提供三种触发器所需的指令和必要参数.
 **处理**: 解析三种触发器的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回三种触发器的响应数据,包含状态码、结果和日志.
 ### 三类基础操作节点
 
 免费版支持三类基础操作节点：
 
-#### 1. 文件操作
+#
+### 1. 文件操作
 
 ```json
 // 读取文件
 { "action": "read", "file": "./input/data.json", "output": "fileContent" }
 # ...
 // 写入文件
-{ "action": "save", "path": "./output/result.json", "input": "processedData" }
+/output/result.json", "input": "processedData" }
 # ...
 // 移动文件
 { "action": "move", "from": "${trigger.file}", "to": "./processed/" }
@@ -190,11 +193,12 @@ python runner.py --workflow workflows/my_workflow.json --params '{"date":"2026-0
 { "action": "copy", "from": "${trigger.file}", "to": "./backup/" }
 ```
 
-#### 2. 网络请求
+#
+### 2. 网络请求
 
 ```json
 // GET请求
-{ "action": "fetch", "url": "https://api.example.com/data", "output": "responseData" }
+example.com/data", "output": "responseData" }
 # ...
 // POST请求
 {
@@ -207,7 +211,8 @@ python runner.py --workflow workflows/my_workflow.json --params '{"date":"2026-0
 }
 ```
 
-#### 3. 命令执行
+#
+### 3. 命令执行
 
 ```json
 // 执行Shell命令
@@ -221,7 +226,6 @@ python runner.py --workflow workflows/my_workflow.json --params '{"date":"2026-0
 }
 ```
 
-**输入**: 用户提供三类基础操作节点所需的指令和必要参数.
 **处理**: 解析三类基础操作节点的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回三类基础操作节点的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -238,10 +242,10 @@ python runner.py --workflow workflows/my_workflow.json --params '{"date":"2026-0
     { "action": "read", "file": "${trigger.file}", "output": "fileContent" },
 # ...
     // 第二步：用fileContent作为输入
-    { "action": "fetch", "url": "https://api.example.com/process", "method": "POST", "body": "${fileContent}", "output": "result" },
+example.com/process", "method": "POST", "body": "${fileContent}", "output": "result" },
 # ...
     // 第三步：用result作为输入
-    { "action": "save", "path": "./output/result.json", "input": "${result}" }
+/output/result.json", "input": "${result}" }
   ]
 }
 ```
@@ -252,7 +256,6 @@ python runner.py --workflow workflows/my_workflow.json --params '{"date":"2026-0
 - `${stepName}`：引用前一步骤的输出变量
 - `${params.key}`：引用手动执行时传入的参数
 
-**输入**: 用户提供变量引用所需的指令和必要参数.
 **处理**: 解析变量引用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回变量引用的响应数据,包含状态码、结果和日志.
 ### 条件判断（基础）
@@ -262,7 +265,6 @@ python runner.py --workflow workflows/my_workflow.json --params '{"date":"2026-0
 ```json
 {
   "action": "fetch",
-  "url": "https://api.example.com/data",
   "output": "data",
   "condition": {
     "field": "${params.mode}",
@@ -280,7 +282,6 @@ python runner.py --workflow workflows/my_workflow.json --params '{"date":"2026-0
 | contains | 包含 | `{"field": "${tags}", "contains": "urgent"}` |
 | greaterThan | 大于 | `{"field": "${count}", "greaterThan": 100}` |
 
-**输入**: 用户提供条件判断（基础）所需的指令和必要参数.
 **处理**: 解析条件判断（基础）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回条件判断（基础）的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：定义自动化工作流、支持定时触发、手动触发三种触发、流程锻造器为、Agent、提供代码化的工作、流构建能力、定义触发器、操作步骤和错误处、将跨平台自动化流、程转化为可版本控、可复用的工作流配、Use、when、模型调用、智能对话、LLM、应用时使用、不适用于需要、确定性的关键决策、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -306,7 +307,6 @@ python runner.py --workflow workflows/my_workflow.json --params '{"date":"2026-0
 | retry.count | 失败执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令次数 |
 | retry.interval | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令间隔（秒） |
 
-**输入**: 用户提供错误处理所需的指令和必要参数.
 **处理**: 解析错误处理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回错误处理的响应数据,包含状态码、结果和日志.
 ## 使用场景
@@ -318,8 +318,8 @@ python runner.py --workflow workflows/my_workflow.json --params '{"date":"2026-0
 {
   "trigger": { "type": "cron", "schedule": "0 */6 * * *" },
   "steps": [
-    { "action": "fetch", "url": "https://api.example.com/data", "output": "rawData" },
-    { "action": "save", "path": "./output/data_$(date +%Y%m%d_%H).json", "input": "${rawData}" }
+example.com/data", "output": "rawData" },
+/output/data_$(date +%Y%m%d_%H).json", "input": "${rawData}" }
   ],
   "errorHandling": { "onFail": "log", "logPath": "./logs/fetch.log" }
 }
@@ -330,11 +330,11 @@ python runner.py --workflow workflows/my_workflow.json --params '{"date":"2026-0
 监控inbox目录，有新文件时自动读取、处理、移动到processed目录.
 ```json
 {
-  "trigger": { "type": "watch", "path": "./inbox", "events": ["create"] },
+/inbox", "events": ["create"] },
   "steps": [
-    { "action": "read", "file": "${trigger.file}", "output": "content" },
-    { "action": "exec", "command": "python process.py --input ${trigger.file}", "output": "result" },
-    { "action": "move", "from": "${trigger.file}", "to": "./processed/" }
+file}", "output": "content" },
+py --input ${trigger.file}", "output": "result" },
+file}", "to": "./processed/" }
   ],
   "errorHandling": { "onFail": "continue", "logPath": "./logs/watch.log" }
 }
@@ -347,10 +347,10 @@ python runner.py --workflow workflows/my_workflow.json --params '{"date":"2026-0
 {
   "trigger": { "type": "manual" },
   "steps": [
-    { "action": "fetch", "url": "https://api.source1.com/data", "output": "data1" },
-    { "action": "fetch", "url": "https://api.source2.com/data", "output": "data2" },
+source1.com/data", "output": "data1" },
+source2.com/data", "output": "data2" },
     { "action": "exec", "command": "python merge.py --source1 data1.json --source2 data2.json --output merged.json", "output": "mergeResult" },
-    { "action": "save", "path": "./output/merged.json", "input": "${mergeResult}" }
+/output/merged.json", "input": "${mergeResult}" }
   ],
   "errorHandling": { "onFail": "stop", "logPath": "./logs/sync.log" }
 }
@@ -373,7 +373,7 @@ python runner.py --workflow workflows/my_workflow.json --params '{"date":"2026-0
   "trigger": { "type": "cron", "schedule": "0 * * * *" },
   "steps": [
     { "action": "fetch", "url": "${SOURCE_API}", "output": "sourceData" },
-    { "action": "save", "path": "./sync/source.json", "input": "${sourceData}" },
+/sync/source.json", "input": "${sourceData}" },
     { "action": "fetch", "url": "${TARGET_API}", "method": "POST", "body": "${sourceData}", "output": "syncResult" }
   ],
   "errorHandling": { "onFail": "log", "retry": { "count": 3, "interval": 60 } }
@@ -392,11 +392,11 @@ python runner.py --workflow workflows/my_workflow.json --params '{"date":"2026-0
 
 ```json
 {
-  "trigger": { "type": "watch", "path": "./drafts", "events": ["create"] },
+/drafts", "events": ["create"] },
   "steps": [
-    { "action": "read", "file": "${trigger.file}", "output": "draftContent" },
-    { "action": "exec", "command": "python format.py --input ${trigger.file} --output formatted.json", "output": "formatted" },
-    { "action": "move", "from": "${trigger.file}", "to": "./published/" }
+file}", "output": "draftContent" },
+    { "action": "exec", "command": "python format.file} --output formatted.json", "output": "formatted" },
+file}", "to": "./published/" }
   ],
   "errorHandling": { "onFail": "continue" }
 }
@@ -518,8 +518,8 @@ JSON工作流定义的优势在于：可版本控制（用Git管理变更）、�
     "schedule": "0 */6 * * *"
   },
   "steps": [
-    { "action": "fetch", "url": "https://api.example.com/data", "output": "rawData" },
-    { "action": "save", "path": "./output/data.json", "input": "rawData" }
+example.com/data", "output": "rawData" },
+/output/data.json", "input": "rawData" }
   ],
   "errorHandling": {
 

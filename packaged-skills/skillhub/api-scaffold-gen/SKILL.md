@@ -64,12 +64,11 @@ api-scaffold-gen rest user --stack java-springboot --orm jpa
 api-scaffold-gen rest user --stack go-gin --orm gorm
 ```
 
-**处理**: 解析功能2：多框架支持的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回功能2：多框架支持的处理结果,包含执行状态码、结果数据和执行日志。### 功能3：DDD分层架构
+### 功能3：DDD分层架构
 **解决痛点**：CRUD代码全堆在controller里，业务复杂后维护不动.
 **专业版能力**：按DDD四层架构生成代码，职责清晰.
-**输入**: 用户提供功能3：DDD分层架构所需的指令和必要参数.
-**处理**: 解析功能3：DDD分层架构的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 功能4：微服务模板
+
+### 功能4：微服务模板
 **解决痛点**：微服务项目起步要配服务注册、发现、通信、追踪，半天搭不完.
 **专业版能力**：一键生成微服务全套基础设施代码.
 ```bash
@@ -91,19 +90,17 @@ api-scaffold-gen microservice order-service \
 - 熔断与降级（Resilience4j/Hystrix）
 - 分布式事务（Seata）
 
-**输入**: 用户提供功能4：微服务模板所需的指令和必要参数.
-**处理**: 解析功能4：微服务模板的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 功能5：OpenAPI Spec反向生成
+### 功能5：OpenAPI Spec反向生成
 **解决痛点**：代码写完了才发现没文档，手写Spec太慢.
 **专业版能力**：从代码注解反向生成OpenAPI Spec.
 ```bash
 api-scaffold-gen openapi reverse --path ./src --lang java-springboot --output ./openapi.yaml
 # ...
-api-scaffold-gen openapi reverse --path ./src --lang nodejs-nestjs --output ./openapi.yaml
+/src --lang nodejs-nestjs --output ./openapi.yaml
 # ...
 ```
 
-**输入**: 用户提供功能5：OpenAPI Spec反向生成所需的指令和必要参数.
-**处理**: 解析功能5：OpenAPI Spec反向生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 功能6：多资源关联生成
+### 功能6：多资源关联生成
 **解决痛点**：资源间有one-to-many/many-to-many关系，手写关联代码容易出错.
 **专业版能力**：声明资源关系，自动生成关联代码.
 ```bash
@@ -129,15 +126,13 @@ router.模板化内容生成('/"gen_status"', async (req, res) => {
 });
 ```
 
-**处理**: 解析功能7：自定义模板引擎的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `功能7：自定义模板引擎` 选项
 
 ### 功能9：WebSocket端点生成
 **解决痛点**：实时通信API（聊天/通知/协作）的WebSocket代码与REST不同，手写易错.
 **专业版能力**：生成WebSocket端点，支持房间/广播/心跳.
-**输入**: 用户提供功能9：WebSocket端点生成所需的指令和必要参数.
-**处理**: 解析功能9：WebSocket端点生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证返回数据的完整性和格式正确性
+
 - 参考`功能9：WebSocket端点生成`的配置文档进行参数调优
 #
 ## 快速开始

@@ -1,9 +1,8 @@
----
-slug: the-news-tool-free
+---slug: the-news-tool-free
 name: the-news-tool-free
 version: 1.0.0
 displayName: 全球新闻速递免费版
-summary: "覆盖 20 个国家的实时头条新闻聚合工具,提供多语种新闻快照与历史查询,适合个人资讯获取。全球新闻速递免费版,面向个人用户提供覆盖 20 个国家的实时头条新闻聚合能力。通过统一的公共 API"
+summary: "覆盖 20 个国家的实"
 license: Proprietary
 edition: free
 description: 全球新闻速递免费版,面向个人用户提供覆盖 20 个国家的实时头条新闻聚合能力。通过统一的公共 API 获取多语种新闻快照,支持实时查询和基础历史回溯。Use
@@ -26,9 +25,7 @@ tools:
   - glob
   - grep
 homepage: ""
-category: "Knowledge"
----
-# 全球新闻速递免费版
+category: "Knowledge"---# 全球新闻速递免费版
 
 ## 概述
 
@@ -51,13 +48,12 @@ category: "Knowledge"
 curl -s "https://www.thehear.org/api/country-view/germany" | jq
 # ...
 # 获取美国当前头条新闻
-curl -s "https://www.thehear.org/api/country-view/us" | jq
+thehear.org/api/country-view/us" | jq
 # ...
 # 获取日本当前头条新闻
-curl -s "https://www.thehear.org/api/country-view/japan" | jq
+thehear.org/api/country-view/japan" | jq
 ```
 
-**输入**: 用户提供实时新闻快照所需的指令和必要参数.
 **处理**: 解析实时新闻快照的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回实时新闻快照的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -67,13 +63,12 @@ curl -s "https://www.thehear.org/api/country-view/japan" | jq
 查询指定时间点的历史新闻快照,最多回溯 7 天.
 ```bash
 # 查询德国在指定 UTC 时间点的头条新闻
-curl -s "https://www.thehear.org/api/country-view/germany?at=2026-07-01T20:00:00Z" | jq
+thehear.org/api/country-view/germany?at=2026-07-01T20:00:00Z" | jq
 # ...
 # 查询法国昨天的头条新闻
-curl -s "https://www.thehear.org/api/country-view/france?at=2026-07-17T08:00:00Z" | jq
+thehear.org/api/country-view/france?at=2026-07-17T08:00:00Z" | jq
 ```
 
-**输入**: 用户提供基础历史查询所需的指令和必要参数.
 **处理**: 解析基础历史查询的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回基础历史查询的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -93,7 +88,6 @@ curl -s "https://www.thehear.org/api/country-view/france?at=2026-07-17T08:00:00Z
 # 其他: italy, russia, india, brazil, israel, turkey
 ```
 
-**输入**: 用户提供多语种新闻覆盖所需的指令和必要参数.
 **处理**: 解析多语种新闻覆盖的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多语种新闻覆盖的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -103,10 +97,9 @@ curl -s "https://www.thehear.org/api/country-view/france?at=2026-07-17T08:00:00Z
 每个新闻快照附带 AI 生成的概览,帮助快速理解新闻脉络.
 ```bash
 # 获取新闻快照后,API 返回包含 AI 概览
-curl -s "https://www.thehear.org/api/country-view/germany" | jq '.overview'
+thehear.org/api/country-view/germany" | jq '.overview'
 ```
 
-**输入**: 用户提供AI 新闻概览所需的指令和必要参数.
 **处理**: 解析AI 新闻概览的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回AI 新闻概览的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：个国家的实时头条、新闻聚合工具、提供多语种新闻快、照与历史查询、适合个人资讯获取、全球新闻速递免费、面向个人用户提供、新闻聚合能力、通过统一的公共、获取多语种新闻快、支持实时查询和基、础历史回溯、Use、when、需要数据库操作、SQL、数据存储管理时使、不适用于数据库架、构设计决策、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -120,16 +113,16 @@ curl -s "https://www.thehear.org/api/country-view/germany" | jq '.overview'
 ```bash
 # 获取主要国家的今日头条
 echo "=== 美国头条 ==="
-curl -s "https://www.thehear.org/api/country-view/us" | jq '.headlines[0:5]'
+thehear.org/api/country-view/us" | jq '.headlines[0:5]'
 # ...
 echo "=== 英国头条 ==="
-curl -s "https://www.thehear.org/api/country-view/uk" | jq '.headlines[0:5]'
+thehear.org/api/country-view/uk" | jq '.headlines[0:5]'
 # ...
 echo "=== 日本头条 ==="
-curl -s "https://www.thehear.org/api/country-view/japan" | jq '.headlines[0:5]'
+thehear.org/api/country-view/japan" | jq '.headlines[0:5]'
 # ...
 echo "=== 中国头条 ==="
-curl -s "https://www.thehear.org/api/country-view/china" | jq '.headlines[0:5]'
+thehear.org/api/country-view/china" | jq '.headlines[0:5]'
 ```
 
 ### 场景二:学生了解特定国家舆论
@@ -137,10 +130,9 @@ curl -s "https://www.thehear.org/api/country-view/china" | jq '.headlines[0:5]'
 小李是新闻专业学生,需要了解某个国家不同媒体的报道视角.
 ```bash
 # 获取德国所有新闻源的头条(约 40 个来源)
-curl -s "https://www.thehear.org/api/country-view/germany" | jq '.sources'
 # ...
 # 查看不同政治立场的媒体如何报道同一事件
-curl -s "https://www.thehear.org/api/country-view/us" | jq '.sources[] | {name, headline, leaning}'
+thehear.sources[] | {name, headline, leaning}'
 ```
 
 ### 场景三:自媒体创作者获取新闻素材
@@ -150,7 +142,7 @@ curl -s "https://www.thehear.org/api/country-view/us" | jq '.sources[] | {name, 
 # 获取多国突发新闻
 for country in us uk germany france japan; do
   echo "=== $country 热点 ==="
-  curl -s "https://www.thehear.org/api/country-view/$country" | jq -r '.headlines[0:3][] | "- " + .'
+thehear.org/api/country-view/$country" | jq -r '.headlines[0:3][] | "- " + .'
 done
 ```
 
@@ -160,27 +152,26 @@ done
 
 ```bash
 # 测试 API 连通性
-curl -s "https://www.thehear.org/api/country-view/us" | jq '.status'
 # ...
 # 获取可用国家列表
-curl -s "https://www.thehear.org/api/country-view/" | jq '.countries'
+thehear.org/api/country-view/" | jq '.countries'
 ```
 
 ### 第二步:获取首个新闻快照
 
 ```bash
 # 获取美国当前头条新闻
-curl -s "https://www.thehear.org/api/country-view/us" | jq
+thehear.org/api/country-view/us" | jq
 # ...
 # 提取新闻标题列表
-curl -s "https://www.thehear.org/api/country-view/us" | jq -r '.headlines[]'
+thehear.org/api/country-view/us" | jq -r '.headlines[]'
 ```
 
 ### 第三步:查询历史新闻
 
 ```bash
 # 查询 3 天前美国的头条新闻
-curl -s "https://www.thehear.org/api/country-view/us?at=2026-07-15T12:00:00Z" | jq
+thehear.org/api/country-view/us?at=2026-07-15T12:00:00Z" | jq
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -198,7 +189,7 @@ COUNTRIES=("us" "uk" "germany" "france" "japan" "china")
 # 获取每个国家的头条
 for country in "${COUNTRIES[@]}"; do
   echo "========== $country =========="
-  curl -s "https://www.thehear.org/api/country-view/$country" | jq -r '.headlines[0:3][]'
+thehear.headlines[0:3][]'
   echo ""
 done
 ```
@@ -221,7 +212,7 @@ done
 # ...
 # 批量查询时加入延迟
 for country in us uk germany; do
-  curl -s "https://www.thehear.org/api/country-view/$country" >> news.json
+thehear.org/api/country-view/$country" >> news.json
   sleep 2
 done
 ```
@@ -230,13 +221,13 @@ done
 
 ```bash
 # 只提取标题
-curl -s "https://www.thehear.org/api/country-view/us" | jq -r '.headlines[]'
+thehear.headlines[]'
 # ...
 # 提取特定来源的新闻
-curl -s "https://www.thehear.org/api/country-view/us" | jq '.sources[] | select(.name | contains("Times"))'
+thehear.sources[] | select(.name | contains("Times"))'
 # ...
 # 格式化输出
-curl -s "https://www.thehear.org/api/country-view/us" | jq -r '.sources[] | "\(.name): \(.headline)"'
+thehear.sources[] | "\(.name): \(.headline)"'
 ```
 
 ### 3. 历史查询注意时间格式
@@ -248,7 +239,7 @@ curl -s "https://www.thehear.org/api/country-view/us" | jq -r '.sources[] | "\(.
 # ...
 # 查询昨天此时
 YESTERDAY=$(date -u -d "yesterday" +"%Y-%m-%dT%H:%M:%SZ")
-curl -s "https://www.thehear.org/api/country-view/us?at=$YESTERDAY" | jq
+thehear.at=$YESTERDAY" | jq
 ```
 
 ## 常见问题

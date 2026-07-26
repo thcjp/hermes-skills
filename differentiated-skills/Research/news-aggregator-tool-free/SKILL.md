@@ -1,9 +1,8 @@
----
-slug: news-aggregator-tool-free
+---slug: news-aggregator-tool-free
 name: news-aggregator-tool-free
 version: 1.0.0
 displayName: 新闻聚合工具免费版
-summary: "聚合国内外社会、科技、军事新闻，自动搜索筛选整理新闻要点。新闻聚合工具免费版，自动聚合国内外社会、科技、军事领域的新闻，通过搜索、筛选、整理生成结构化新闻汇总。核心能力:"
+summary: "聚合国内外社会、科技、"
 license: Proprietary
 edition: free
 description: '新闻聚合工具免费版，自动聚合国内外社会、科技、军事领域的新闻，通过搜索、筛选、整理生成结构化新闻汇总。核心能力:
@@ -49,9 +48,7 @@ tools:
   - glob
   - grep
 homepage: ""
-category: "Knowledge"
----
-# 新闻聚合工具（免费版）
+category: "Knowledge"---# 新闻聚合工具（免费版）
 
 ## 概述
 
@@ -67,7 +64,6 @@ category: "Knowledge"
 | 国内军事 | 观察者网、澎湃新闻、腾讯军事 | 军事防务资讯 |
 | 国内社会 | 央视新闻、新华社、腾讯新闻 | 社会时事要闻 |
 
-**输入**: 用户提供新闻源覆盖所需的指令和必要参数.
 **处理**: 解析新闻源覆盖的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回新闻源覆盖的响应数据,包含状态码、结果和日志.
 ### 可信度过滤规则
@@ -99,13 +95,12 @@ category: "Knowledge"
 [限制] 不支持自定义新闻源
 ```
 
-**输入**: 用户提供可信度过滤规则所需的指令和必要参数.
 **处理**: 解析可信度过滤规则的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回可信度过滤规则的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：聚合国内外社会、自动搜索筛选整理、新闻要点、新闻聚合工具免费、自动聚合国内外社、军事领域的新闻、通过搜索、整理生成结构化新、核心能力、聚合国内科技、军事新闻源、自动搜索、去重新闻要点、按类别整理新闻、每条含标题、可信度规则过滤、优先官方权威来源等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ### 核心功能执行
 执行核心功能执行操作,使用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -228,19 +223,15 @@ sources:
         url: "https://www.jiqizhixin.com/"
         tier: B
       - name: 量子位
-        url: "https://www.1baijia.com/"
         tier: B
       - name: IT之家
-        url: "https://www.ithome.com/"
         tier: B
 # ...
   military:
     domestic:
       - name: 观察者网
-        url: "https://www.guancha.cn/"
         tier: B
       - name: 澎湃新闻
-        url: "https://www.thepaper.cn/"
         tier: A
       - name: 腾讯军事
         url: "https://new.qq.com/om/mil/"

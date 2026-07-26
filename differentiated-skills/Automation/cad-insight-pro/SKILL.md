@@ -302,7 +302,7 @@ from cad_insight import CadAnalyzer
 analyzer = CadAnalyzer()
 analyzer.load_titleblock_template("gb")           # 国标标题栏
 analyzer.load_symbol_library("architectural.json") # 建筑符号库
-result = analyzer.analyze("A101_Floor_Plan.pdf")
+result = analyzer.pdf")
 print(f"图号: {result.title_block.sheet_number}")
 print(f"标题: {result.title_block.sheet_title}")
 print(f"比例: {result.title_block.scale}")
@@ -374,15 +374,14 @@ class Dimension:
 ```python
 analyzer = CadAnalyzer()
 analyzer.load_titleblock_template("gb")
-analyzer.load_symbol_library("architectural.json")
 analyzer.load_symbol_library("door-window.json")
 # ..
-takeoff = analyzer.quantity_takeoff("A101.pdf")
+takeoff = analyzer.pdf")
 ```
 
 ### 场景 B：老旧图纸数字化
 ```python
-result = analyzer.analyze("scanned_1990.pdf", ocr=True)
+result = analyzer.pdf", ocr=True)
 for item in result.low_confidence_items():
     print(f"需复核: {item.raw} (置信度 {item.confidence}%)")
 ```
@@ -399,7 +398,7 @@ for issue in issues:
 
 ### 场景 D：DWG 文件分析
 ```python
-result = analyzer.analyze("S200_Structural.dwg")
+result = analyzer.dwg")
 print(f"钢筋标注: {len(result.annotations)} 条")
 print(f"构件数: {len(result.symbols)} 个")
 ```
@@ -466,7 +465,6 @@ A：能。`export_csv` 导出标准 CSV，可导入广联达、鲁班等造价�
 ### CAD 洞察专家为 AI Agent 提
 CAD 洞察专家为 AI Agent 提供工程图纸智能分析能力，支持 PDF 与 DWG 两种格式，可提取标题栏、尺寸、标注、符号、比例并生成质量检查报告与工程量统计
 
-**输入**: 用户提供CAD 洞察专家为 AI Agent 提所需的指令和必要参数.
 **处理**: 解析CAD 洞察专家为 AI Agent 提的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回CAD 洞察专家为 AI Agent 提的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -474,7 +472,6 @@ CAD 洞察专家为 AI Agent 提供工程图纸智能分析能力，支持 PDF �
 ### 它通过可配置的标题栏模板适配不同公司/标
 它通过可配置的标题栏模板适配不同公司/标准的图框，通过多比例检测处理一张图多比例的情况，通过 OCR 管线处理扫描件，通过尺寸上下文关联还原尺寸与构件的对应关系
 
-**输入**: 用户提供它通过可配置的标题栏模板适配不同公司/标所需的指令和必要参数.
 **处理**: 解析它通过可配置的标题栏模板适配不同公司/标的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回它通过可配置的标题栏模板适配不同公司/标的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -482,7 +479,6 @@ CAD 洞察专家为 AI Agent 提供工程图纸智能分析能力，支持 PDF �
 ### 核心能力(补充)
 核心能力：PDF+DWG 双格式解析、可配置标题栏模板、多比例检测、符号库（可扩展）、OCR 扫描件支持、尺寸上下文关联、工程量自动统计、图纸索引生成、质量合规检查、Markdown 分析报告
 
-**输入**: 用户提供核心能力所需的指令和必要参数.
 **处理**: 解析核心能力的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心能力的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -490,7 +486,6 @@ CAD 洞察专家为 AI Agent 提供工程图纸智能分析能力，支持 PDF �
 ### 适用场景
 适用场景：施工图算量、图纸质量审查、设计合规校验、项目图纸数字化归档、BIM 数据前置采集、一人公司承接设计审查
 
-**输入**: 用户提供适用场景所需的指令和必要参数.
 **处理**: 解析适用场景的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回适用场景的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -498,7 +493,6 @@ CAD 洞察专家为 AI Agent 提供工程图纸智能分析能力，支持 PDF �
 ### 从"能解析单张 PDF"升级为
 从"能解析单张 PDF"升级为"工程图纸全流程分析"
 
-**输入**: 用户提供从"能解析单张 PDF"升级为所需的指令和必要参数.
 **处理**: 解析从"能解析单张 PDF"升级为的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回从"能解析单张 PDF"升级为的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -511,10 +505,8 @@ CAD 洞察专家为 AI Agent 提供工程图纸智能分析能力，支持 PDF �
 ```python
 analyzer = CadAnalyzer()
 analyzer.load_titleblock_template("gb")
-analyzer.load_symbol_library("architectural.json")
-analyzer.load_symbol_library("door-window.json")
 # ..
-takeoff = analyzer.quantity_takeoff("A101.pdf")
+takeoff = analyzer.pdf")
 # ..
 ```
 ### 安装(补充)
@@ -544,8 +536,6 @@ pip install pdfplumber ezdxf pytesseract pillow opencv-python
 ## 示例
 
 ### 基本用法(补充)
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

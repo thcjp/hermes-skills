@@ -67,7 +67,6 @@ category: "Knowledge"
 - 支持从 CSV/JSON 文件导入股票清单
 - 并发扫描提升效率
 
-**输入**: 用户提供一、批量多股票扫描(专业版独有)所需的指令和必要参数.
 **处理**: 解析一、批量多股票扫描(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回一、批量多股票扫描(专业版独有)的响应数据,包含状态码、结果和日志.
 ### 二、自定义权重配置(专业版独有)
@@ -76,7 +75,6 @@ category: "Knowledge"
 - 支持保存多套权重方案
 - 按场景快速切换配置
 
-**输入**: 用户提供二、自定义权重配置(专业版独有)所需的指令和必要参数.
 **处理**: 解析二、自定义权重配置(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回二、自定义权重配置(专业版独有)的响应数据,包含状态码、结果和日志.
 ### 三、结构化报告导出(专业版独有)
@@ -85,7 +83,6 @@ category: "Knowledge"
 - HTML 格式:便于分享与可视化展示
 - 自定义报告模板
 
-**输入**: 用户提供三、结构化报告导出(专业版独有)所需的指令和必要参数.
 **处理**: 解析三、结构化报告导出(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回三、结构化报告导出(专业版独有)的响应数据,包含状态码、结果和日志.
 ### 四、历史趋势对比(专业版独有)
@@ -94,7 +91,6 @@ category: "Knowledge"
 - 生成情绪趋势图表
 - 识别情绪拐点
 
-**输入**: 用户提供四、历史趋势对比(专业版独有)所需的指令和必要参数.
 **处理**: 解析四、历史趋势对比(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回四、历史趋势对比(专业版独有)的响应数据,包含状态码、结果和日志.
 ### 五、异常情绪预警(专业版独有)
@@ -103,7 +99,6 @@ category: "Knowledge"
 - 支持邮件/消息通知
 - 可集成到监控系统中
 
-**输入**: 用户提供五、异常情绪预警(专业版独有)所需的指令和必要参数.
 **处理**: 解析五、异常情绪预警(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回五、异常情绪预警(专业版独有)的响应数据,包含状态码、结果和日志.
 ### 六、行业板块对比(专业版独有)
@@ -112,7 +107,6 @@ category: "Knowledge"
 - 识别板块内强弱分化
 - 输出板块情绪排名
 
-**输入**: 用户提供六、行业板块对比(专业版独有)所需的指令和必要参数.
 **处理**: 解析六、行业板块对比(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回六、行业板块对比(专业版独有)的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
@@ -258,9 +252,8 @@ EOF
 
 ### 第二步:执行批量扫描
 ```bash
-python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 --format json --output report.json
 # ...
-python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 --format html --output report.html
+csv 7 --format html --output report.html
 ```
 
 ### 第三步:查看分析结果
@@ -294,7 +287,6 @@ for r in data['results']:
 避免命令行传入大量参数,使用 CSV 文件管理股票清单,便于维护与复用:
 
 ```bash
-python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7
 # ...
 python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --codes "002594,600519,0700.HK" 7
 ```
@@ -315,7 +307,6 @@ python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） 002594 7
 
 ```bash
 DATE=$(date +%Y%m%d)
-python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 \
     --format json \
     --output ~/reports/sentiment_${DATE}.json
 ```
@@ -331,9 +322,8 @@ python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfol
 优先使用 JSON 或 CSV 格式,便于导入数据库或 BI 工具做深度分析:
 
 ```bash
-python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 --format csv --output report.csv
+csv 7 --format csv --output report.csv
 # ...
-python3 {SKILL_DIR}/（请参考skill目录中的脚本文件） --batch portfolio.csv 7 --format json --output report.json
 ```
 
 ## 常见问题

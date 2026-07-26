@@ -174,24 +174,23 @@ nodes invoke --node "my-vscode" --invokeCommand "vscode.file.read" --invokeParam
 ### Find all references
 
 ```text
-nodes invoke --node "my-vscode" --invokeCommand "vscode.lang.references" --invokeParamsJson '{"path":"src/main.ts","line":10,"character":5}'
+lang.references" --invokeParamsJson '{"path":"src/main.ts","line":10,"character":5}'
 → { locations: [{ path, line, character }] }
 ```
 
 ### Git status + commit
 
 ```text
-nodes invoke --node "my-vscode" --invokeCommand "vscode.git.status"
 → { branch, staged, modified, untracked, ahead, behind }
 # ...
-nodes invoke --node "my-vscode" --invokeCommand "vscode.git.stage" --invokeParamsJson '{"paths":["src/main.ts"]}'
-nodes invoke --node "my-vscode" --invokeCommand "vscode.git.commit" --invokeParamsJson '{"message":"fix: resolve type error"}'
+git.stage" --invokeParamsJson '{"paths":["src/main.ts"]}'
+git.commit" --invokeParamsJson '{"message":"fix: resolve type error"}'
 ```
 
 ### Delegate to Cursor Agent
 
 ```text
-nodes invoke --node "my-vscode" --invokeCommand "vscode.agent.run" --invokeParamsJson '{"prompt":"Add error handling to all API endpoints","mode":"plan"}' --invokeTimeoutMs 180000 --timeoutMs 185000
+agent.run" --invokeParamsJson '{"prompt":"Add error handling to all API endpoints","mode":"plan"}' --invokeTimeoutMs 180000 --timeoutMs 185000
 → { output, exitCode }
 ```
 

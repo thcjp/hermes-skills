@@ -64,11 +64,9 @@ category: "Development"
 分析整个项目的架构,生成依赖关系图和模块结构图.
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供项目级架构分析所需的指令和必要参数.
 ### 2. 批量代码文档生成
 自动为整个项目生成代码文档.
-**输入**: 用户提供批量代码文档生成所需的指令和必要参数.
-**处理**: 解析批量代码文档生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 ### 3. Mermaid 高质量可视化
 ```python
 class MermaidDiagramGenerator:
@@ -146,13 +144,9 @@ classDiagram
         return '\n'.join(lines)
 ```
 # ...
-**处理**: 解析Mermaid 高质量可视化的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 4. 代码复杂度分析
-> 详细代码示例已移至 `references/detail.md`
 # ...
-**输入**: 用户提供代码复杂度分析所需的指令和必要参数.
-**处理**: 解析代码复杂度分析的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回代码复杂度分析的处理结果,包含执行状态码、结果数据和执行日志.
+
 # ...
 #
 ## 快速开始
@@ -202,13 +196,11 @@ echo "  - 入门指南: ONBOARDING.md"
 从代码中自动提取API文档.
 # ...
 ```bash
-python3 doc_generator.py \
     --mode api \
     --input ./src \
     --output ./docs/api.md \
     --format markdown
 
-python3 doc_generator.py \
     --mode api \
     --input ./src \
     --output ./docs/openapi.json \
@@ -218,7 +210,6 @@ python3 doc_generator.py \
 ### 场景三:遗留系统逆向理解
 对遗留系统进行逆向分析和文档化.
 # ...
-> 详细代码示例已移至 `references/detail.md`
 # ...
 ## 使用流程
 # ...

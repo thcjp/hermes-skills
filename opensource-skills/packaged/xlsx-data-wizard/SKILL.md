@@ -194,7 +194,7 @@ for row_idx, data in enumerate(sales_data, 2):
 # 汇总公式
 ws.cell(row=len(sales_data)+2, column=1, value='合计')
 ws.cell(row=len(sales_data)+2, column=3, value=f'=SUM(C2:C{len(sales_data)+1})')
-ws.cell(row=len(sales_data)+2, column=3).number_format = '#,##0.00'
+ws.cell(row=len(sales_data)+2, column=3).00'
 # ...
 # 创建柱状图
 chart = BarChart()
@@ -295,7 +295,6 @@ ws.conditional_formatting.add(range_str,
 # ...
 # 规则2: 销售额 < 50000 标红色
 red_fill = PatternFill(start_color='ef4444', end_color='ef4444', fill_type='solid')
-ws.conditional_formatting.add(range_str,
     CellIsRule(operator='lessThan', formula=['50000'], fill=red_fill))
 # ...
 # 规则3: 数据条可视化
@@ -303,7 +302,7 @@ data_bar = DataBarRule(
     start_type='min', end_type='max',
     color='3b82f6', showValue=True
 )
-ws.conditional_formatting.add(range_str, data_bar)
+ws.add(range_str, data_bar)
 # ...
 wb.save('sales_formatted.xlsx')
 ```
@@ -419,12 +418,12 @@ for col, header in enumerate(headers, 1):
 for row_idx, data in enumerate(sales_data, 2):
     ws.cell(row=row_idx, column=1, value=data['product']).alignment = center_align
     ws.cell(row=row_idx, column=2, value=data['oct']).number_format = '¥#,##0.00'
-    ws.cell(row=row_idx, column=3, value=data['nov']).number_format = '¥#,##0.00'
-    ws.cell(row=row_idx, column=4, value=data['dec']).number_format = '¥#,##0.00'
+    ws.cell(row=row_idx, column=3, value=data['nov']).00'
+    ws.cell(row=row_idx, column=4, value=data['dec']).00'
     # Q4合计公式
-    ws.cell(row=row_idx, column=5, value=f'=SUM(B{row_idx}:D{row_idx})').number_format = '¥#,##0.00'
+    ws.cell(row=row_idx, column=5, value=f'=SUM(B{row_idx}:D{row_idx})').00'
     # 月均公式
-    ws.cell(row=row_idx, column=6, value=f'=AVERAGE(B{row_idx}:D{row_idx})').number_format = '¥#,##0.00'
+    ws.cell(row=row_idx, column=6, value=f'=AVERAGE(B{row_idx}:D{row_idx})').00'
 # ...
     # 斑马纹(偶数行底色)
     if row_idx % 2 == 0:
@@ -444,7 +443,7 @@ ws.cell(row=total_row, column=1, value='合计')
 for col in range(2, 7):
     col_letter = get_column_letter(col)
     ws.cell(row=total_row, column=col,
-            value=f'=SUM({col_letter}2:{col_letter}{total_row-1})').number_format = '¥#,##0.00'
+            value=f'=SUM({col_letter}2:{col_letter}{total_row-1})').00'
 # ...
 for col in range(1, 7):
     cell = ws.cell(row=total_row, column=col)
@@ -511,7 +510,6 @@ from openpyxl.utils import get_column_letter
 # ...
 # ===== Step 1: 合并3个分公司文件 =====
 merged_wb = Workbook()
-merged_ws = merged_wb.active
 merged_ws.title = "合并数据"
 # ...
 # 表头
@@ -561,24 +559,24 @@ for row_idx in range(2, current_row):
         # 销售金额 = 数量 * 单价
         quantity = merged_ws.cell(row=row_idx, column=3).value
         price = product_map[product_id]['price']
-        merged_ws.cell(row=row_idx, column=7, value=quantity * price).number_format = '¥#,##0.00'
+        merged_ws.cell(row=row_idx, column=7, value=quantity * price).00'
 # ...
 # ===== Step 3: 条件格式 =====
 amount_range = f'G2:G{total_data_rows}'
 # ...
 # 销售额 > 100000 标绿
 green_fill = PatternFill(start_color='10b981', end_color='10b981', fill_type='solid')
-merged_ws.conditional_formatting.add(amount_range,
+merged_ws.add(amount_range,
     CellIsRule(operator='greaterThan', formula=['100000'], fill=green_fill))
 # ...
 # 销售额 < 50000 标红
 red_fill = PatternFill(start_color='ef4444', end_color='ef4444', fill_type='solid')
-merged_ws.conditional_formatting.add(amount_range,
+merged_ws.add(amount_range,
     CellIsRule(operator='lessThan', formula=['50000'], fill=red_fill))
 # ...
 # 数据条可视化
 data_bar = DataBarRule(start_type='min', end_type='max', color='3b82f6', showValue=True)
-merged_ws.conditional_formatting.add(amount_range, data_bar)
+merged_ws.add(amount_range, data_bar)
 # ...
 # ===== Step 4: 创建汇总Sheet =====
 summary_ws = merged_wb.create_sheet("地区类别汇总")
@@ -604,10 +602,9 @@ for row_idx, branch in enumerate(branches, 2):
                 merged_ws.cell(row=data_row, column=6).value == cat):
                 total += merged_ws.cell(row=data_row, column=7).value or 0
         cell = summary_ws.cell(row=row_idx, column=col_idx, value=total)
-        cell.number_format = '¥#,##0.00'
     # 行合计
     summary_ws.cell(row=row_idx, column=len(categories) + 2,
-        value=f'=SUM(B{row_idx}:{get_column_letter(len(categories)+1)}{row_idx})').number_format = '¥#,##0.00'
+        value=f'=SUM(B{row_idx}:{get_column_letter(len(categories)+1)}{row_idx})').00'
 # ...
 # 列合计行
 total_row = len(branches) + 2
@@ -615,13 +612,12 @@ summary_ws.cell(row=total_row, column=1, value='合计')
 for col in range(2, len(categories) + 3):
     col_letter = get_column_letter(col)
     summary_ws.cell(row=total_row, column=col,
-        value=f'=SUM({col_letter}2:{col_letter}{total_row-1})').number_format = '¥#,##0.00'
 # ...
 # 汇总表样式
 header_font = Font(name='微软雅黑', size=11, bold=True, color='FFFFFF')
 header_fill = PatternFill(start_color='1a56db', end_color='1a56db', fill_type='solid')
 for col in range(1, len(categories) + 3):
-    cell = summary_ws.cell(row=1, column=col)
+cell(row=1, column=col)
     cell.font = header_font
     cell.fill = header_fill
     cell.alignment = Alignment(horizontal='center')
@@ -729,7 +725,6 @@ for row_idx, emp in enumerate(employees, 2):
     ).alignment = center
 # ...
     for col in range(1, 8):
-        ws.cell(row=row_idx, column=col).border = border
 # ...
 # ===== Step 1: 部门下拉验证 =====
 dept_validation = DataValidation(
@@ -763,15 +758,13 @@ color_scale = ColorScaleRule(
     mid_type='num', mid_value=75, mid_color='f59e0b',         # 黄
     end_type='num', end_value=100, end_color='10b981'          # 绿
 )
-ws.conditional_formatting.add(score_range, color_scale)
+ws.add(score_range, color_scale)
 # ...
 # 等级颜色
 grade_range = f'G2:G{len(employees)+1}'
-ws.conditional_formatting.add(grade_range,
     CellIsRule(operator='equal', formula=['"优秀"'],
                fill=PatternFill(start_color='10b981', end_color='10b981', fill_type='solid'),
                font=Font(color='FFFFFF', bold=True)))
-ws.conditional_formatting.add(grade_range,
     CellIsRule(operator='equal', formula=['"不合格"'],
                fill=PatternFill(start_color='ef4444', end_color='ef4444', fill_type='solid'),
                font=Font(color='FFFFFF', bold=True)))
@@ -809,7 +802,6 @@ ws.protection.enable()
 # ...
 # 列宽
 for col, width in enumerate([10, 12, 14, 12, 12, 14, 10], 1):
-    ws.column_dimensions[get_column_letter(col)].width = width
 # ...
 ws.freeze_panes = 'A2'
 # ...
@@ -867,7 +859,7 @@ ws1.title = "收入明细"
 ws1.merge_cells('A1:D1')
 ws1.cell(row=1, column=1, value='Q4季度收入明细').font = title_font
 ws1.cell(row=1, column=1).fill = title_fill
-ws1.cell(row=1, column=1).alignment = center
+ws1.alignment = center
 # ...
 # 表头
 headers1 = ['产品名称', '销售数量', '单价', '金额']
@@ -893,7 +885,6 @@ for row_idx, p in enumerate(products, 3):
     # 金额公式 = 数量 * 单价
     ws1.cell(row=row_idx, column=4, value=f'=B{row_idx}*C{row_idx}').number_format = money_fmt
     for col in range(1, 5):
-        ws1.cell(row=row_idx, column=col).border = border
 # ...
 # 合计行
 total_row1 = len(products) + 3
@@ -901,7 +892,6 @@ ws1.cell(row=total_row1, column=1, value='总收入').alignment = center
 ws1.cell(row=total_row1, column=4, value=f'=SUM(D3:D{total_row1-1})').number_format = money_fmt
 for col in range(1, 5):
     ws1.cell(row=total_row1, column=col).font = Font(bold=True, color='1a56db')
-    ws1.cell(row=total_row1, column=col).border = border
 # ...
 # 产品名称下拉验证
 product_validation = DataValidation(
@@ -917,8 +907,8 @@ ws2 = wb.create_sheet("成本分析")
 # ...
 ws2.merge_cells('A1:C1')
 ws2.cell(row=1, column=1, value='Q4季度成本分析').font = title_font
-ws2.cell(row=1, column=1).fill = title_fill
-ws2.cell(row=1, column=1).alignment = center
+ws2.fill = title_fill
+ws2.alignment = center
 # ...
 headers2 = ['成本项', '金额', '占总收入比']
 for col, h in enumerate(headers2, 1):
@@ -945,7 +935,6 @@ for row_idx, c in enumerate(costs, 3):
         value=f'=B{row_idx}/收入明细!D{total_row1}'
     ).number_format = percent_fmt
     for col in range(1, 4):
-        ws2.cell(row=row_idx, column=col).border = border
 # ...
 # 成本合计
 total_row2 = len(costs) + 3
@@ -954,15 +943,14 @@ ws2.cell(row=total_row2, column=2, value=f'=SUM(B3:B{total_row2-1})').number_for
 ws2.cell(row=total_row2, column=3, value=f'=B{total_row2}/收入明细!D{total_row1}').number_format = percent_fmt
 for col in range(1, 4):
     ws2.cell(row=total_row2, column=col).font = Font(bold=True, color='1a56db')
-    ws2.cell(row=total_row2, column=col).border = border
 # ...
 # ===== Sheet3: 利润汇总 =====
 ws3 = wb.create_sheet("利润汇总")
 # ...
 ws3.merge_cells('A1:D1')
 ws3.cell(row=1, column=1, value='Q4季度利润汇总').font = title_font
-ws3.cell(row=1, column=1).fill = title_fill
-ws3.cell(row=1, column=1).alignment = center
+ws3.fill = title_fill
+ws3.alignment = center
 # ...
 headers3 = ['项目', '金额', '占比', '备注']
 for col, h in enumerate(headers3, 1):
@@ -989,17 +977,16 @@ for row_idx, d in enumerate(profit_data, 3):
     # 占比(除利润率外,其他项占比=金额/总收入)
     if d['label'] != '利润率':
         ws3.cell(row=row_idx, column=3, value=f'=B{row_idx}/B3').number_format = percent_fmt
-    ws3.cell(row=row_idx, column=3).alignment = center
+    ws3.alignment = center
 # ...
     ws3.cell(row=row_idx, column=4, value=d['note']).alignment = center
     for col in range(1, 5):
-        ws3.cell(row=row_idx, column=col).border = border
 # ...
 # 利润行高亮
 profit_fill = PatternFill(start_color='d1fae5', end_color='d1fae5', fill_type='solid')
 for col in range(1, 5):
     ws3.cell(row=5, column=col).fill = profit_fill
-    ws3.cell(row=5, column=col).font = Font(bold=True, color='10b981')
+    ws3.font = Font(bold=True, color='10b981')
 # ...
 # ===== 饼图: 成本结构 =====
 pie = PieChart()
@@ -1015,7 +1002,6 @@ ws3.add_chart(pie, "F2")
 # 列宽
 for ws, widths in [(ws1, [16, 12, 12, 14]), (ws2, [18, 14, 14]), (ws3, [12, 14, 10, 16])]:
     for col, w in enumerate(widths, 1):
-        ws.column_dimensions[get_column_letter(col)].width = w
 # ...
 # 冻结首2行
 for ws in [ws1, ws2, ws3]:

@@ -26,13 +26,6 @@ V2Ray 位置: `/media/felix/d/v2rayN-linux-64/`
 ```bash
 bash <skill>/scripts/v2ray-proxy.sh on
 
-bash <skill>/scripts/v2ray-proxy.sh off
-
-bash <skill>/scripts/v2ray-proxy.sh auto
-
-bash <skill>/scripts/v2ray-proxy.sh status
-
-bash <skill>/scripts/v2ray-proxy.sh test
 ```
 
 ## 命令说明
@@ -105,9 +98,7 @@ V2Ray 可以设置开机自启，但代理开关由本脚本控制：
 ### 示例1：基础用法
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
 ## 错误处理

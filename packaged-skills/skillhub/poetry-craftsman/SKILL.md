@@ -238,7 +238,6 @@ category: "Automation"
     "audience": "elementary",
     "voiceover": "off",
     "meter_check": {"passed": true, "notes": "五言古诗,平仄合律"},
-    "imagery_score": 0.88
   }
 }
 ```
@@ -290,7 +289,6 @@ category: "Automation"
     "audience": "adult",
     "voiceover": "off",
     "meter_check": {"passed": true, "notes": "原诗合律,打油诗为自由体不校验"},
-    "imagery_score": 0.75
   }
 }
 ```
@@ -314,7 +312,6 @@ category: "Automation"
     "audience": "middle",
     "voiceover": "off",
     "meter_check": {"passed": true, "notes": "散文体,无需平仄校验"},
-    "imagery_score": 0.82
   }
 }
 ```
@@ -348,7 +345,6 @@ category: "Automation"
     "audience": "elementary",
     "voiceover": "off",
     "meter_check": {"passed": true, "notes": "七言古诗,平仄基本合律。'长风破浪会有时'平平仄仄仄仄平,'直挂云帆济沧海'仄仄平平仄平仄,符合古体诗宽韵要求。"},
-    "imagery_score": 0.92
   }
 }
 ```
@@ -381,7 +377,6 @@ category: "Automation"
     "audience": "adult",
     "voiceover": "off",
     "meter_check": {"passed": true, "notes": "原词为词牌念奴娇,平仄合律。打油诗为顺口溜形式,不拘格律。"},
-    "imagery_score": 0.85
   }
 }
 ```
@@ -454,7 +449,6 @@ category: "Automation"
     "audience": "elementary",
     "voiceover": "off",
     "meter_check": {"passed": true, "notes": "五言绝句,平仄合律。'空山不见人'平平仄仄平,'但闻人语响'仄平平仄仄,符合五绝格律。"},
-    "imagery_score": 0.88
   },
   "error": "诗词数据库不可用,已降级为纯LLM创作(基于通用诗词知识),诗词准确性可能略有偏差",
   "code": "POETRY_DB_FALLBACK"
@@ -489,7 +483,6 @@ category: "Automation"
     "audience": "adult",
     "voiceover": "off",
     "meter_check": {"passed": true, "notes": "词牌声声慢,叠字开篇为李清照独创,格律自由但不失韵律。"},
-    "imagery_score": 0.90
   }
 }
 ```

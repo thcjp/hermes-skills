@@ -47,12 +47,10 @@ category: "Security"
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供上下文感知深度注入检测(专业版独有)所需的指令和必要参数.
 **处理**: 解析上下文感知深度注入检测(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回上下文感知深度注入检测(专业版独有)的响应数据,包含状态码、结果和日志.
 ### 2. 沙盒隔离执行(专业版独有)
 
-**输入**: 用户提供沙盒隔离执行(专业版独有)所需的指令和必要参数.
 **处理**: 解析沙盒隔离执行(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回沙盒隔离执行(专业版独有)的响应数据,包含状态码、结果和日志.
 ### 3. 多Agent统一管理(专业版独有)
@@ -122,7 +120,6 @@ class MultiAgentSecurityManager:
                     report["summary"]["critical"] += 1
 # ...
             if agent["rate_limit"] > 100:
-                report["findings"].append({
                     "agent": agent_id,
                     "severity": "MEDIUM",
                     "finding": f"速率限制过高: {agent['rate_limit']}/min"
@@ -131,7 +128,6 @@ class MultiAgentSecurityManager:
 # ...
             stats = agent["stats"]
             if stats["blocked_calls"] > 10:
-                report["findings"].append({
                     "agent": agent_id,
                     "severity": "HIGH",
                     "finding": f"被阻止调用过多: {stats['blocked_calls']}次"
@@ -144,7 +140,7 @@ class MultiAgentSecurityManager:
     def get_security_dashboard(self):
         """获取安全仪表板"""
         return {
-            "timestamp": datetime.utcnow().isoformat() + "Z",
+utcnow().isoformat() + "Z",
             "agents": [
                 {
                     "id": a["id"],
@@ -161,7 +157,6 @@ class MultiAgentSecurityManager:
         }
 ```
 
-**输入**: 用户提供多Agent统一管理(专业版独有)所需的指令和必要参数.
 **处理**: 解析多Agent统一管理(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多Agent统一管理(专业版独有)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -197,7 +192,7 @@ class SecurityMonitor:
     def record_event(self, event_type, details):
         """记录安全事件"""
         event = {
-            "timestamp": datetime.utcnow().isoformat() + "Z",
+utcnow().isoformat() + "Z",
             "type": event_type,
             "details": details
         }
@@ -221,7 +216,7 @@ class SecurityMonitor:
 # ...
         if recent_injections >= self.ALERT_THRESHOLDS["injection_attempts_per_minute"]:
             alert = {
-                "timestamp": datetime.utcnow().isoformat() + "Z",
+utcnow().isoformat() + "Z",
                 "level": "CRITICAL",
                 "type": "injection_burst",
                 "message": f"注入攻击频率异常: {recent_injections}次",
@@ -236,7 +231,7 @@ class SecurityMonitor:
     def get_dashboard(self):
         """获取监控仪表板"""
         return {
-            "timestamp": datetime.utcnow().isoformat() + "Z",
+utcnow().isoformat() + "Z",
             "metrics": self.metrics,
             "recent_events": list(self.events)[-10:],
             "active_alerts": [a for a in self.alerts if a["level"] in ["CRITICAL", "HIGH"]],
@@ -244,7 +239,6 @@ class SecurityMonitor:
         }
 ```
 
-**输入**: 用户提供实时监控与告警(专业版独有)所需的指令和必要参数.
 **处理**: 解析实时监控与告警(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回实时监控与告警(专业版独有)的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、安全防护平台、支持深度注入检测、实时监控与审计、适合企业、安全团队、防火墙专业版、为企业提供全方位、安全防护能力、核心能力、参数投毒检测、完整审计链、Use、when、需要安全检测、合规审计、漏洞扫描、加密防护时使用、不适用于渗透测试、未授权目标、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.

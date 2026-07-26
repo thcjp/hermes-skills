@@ -71,7 +71,6 @@ A robust skill to control Jellyfin playback and TV power via CLI.
     "entries": {
       "jellyfin-control": {
         "env": {
-          "JF_URL": "http://192.168.1.50:8096",
           "JF_API_KEY": "your-jellyfin-api-key",
           "JF_USER": "victor",
           "TV_IP": "192.168.1.100",
@@ -93,7 +92,6 @@ A robust skill to control Jellyfin playback and TV power via CLI.
     "entries": {
       "jellyfin-control": {
         "env": {
-          "JF_URL": "http://192.168.1.50:8096",
           "JF_API_KEY": "your-jellyfin-api-key",
           "JF_USER": "victor",
           "ADB_DEVICE": "192.168.1.100:5555",
@@ -151,7 +149,7 @@ Turn on TV → launch Jellyfin → find next episode → play it. All in one com
 
 ```bash
 node skills/jellyfin-control/cli.js tv play "Breaking Bad"
-node skills/jellyfin-control/cli.js tv play "The Matrix"
+js tv play "The Matrix"
 ```
 
 The skill validates the content exists BEFORE turning on the TV (fail fast).
@@ -161,47 +159,41 @@ The skill validates the content exists BEFORE turning on the TV (fail fast).
 If TV and Jellyfin are already running:
 
 ```bash
-node skills/jellyfin-control/cli.js resume "Breaking Bad"
-node skills/jellyfin-control/cli.js resume "Matrix" --device "Chromecast"
+js resume "Breaking Bad"
+js resume "Matrix" --device "Chromecast"
 ```
 
 ### TV Control
 
 ```bash
-node skills/jellyfin-control/cli.js tv on           # Turn on (Wake-on-LAN)
-node skills/jellyfin-control/cli.js tv off          # Turn off
-node skills/jellyfin-control/cli.js tv launch       # Launch Jellyfin app
-node skills/jellyfin-control/cli.js tv launch com.webos.app.hdmi1  # Launch specific app
-node skills/jellyfin-control/cli.js tv apps         # List installed apps
+js tv on           # Turn on (Wake-on-LAN)
+js tv off          # Turn off
+js tv launch       # Launch Jellyfin app
+js tv launch com.webos.app.hdmi1  # Launch specific app
+js tv apps         # List installed apps
 ```
 
 ### Remote Control
 
 ```bash
-node skills/jellyfin-control/cli.js control pause
-node skills/jellyfin-control/cli.js control play
-node skills/jellyfin-control/cli.js control next
-node skills/jellyfin-control/cli.js control vol 50
 ```
 
 ### Search Content
 
 ```bash
-node skills/jellyfin-control/cli.js search "Star Wars"
+js search "Star Wars"
 ```
 
 ### Library Stats & Scan
 
 ```bash
-node skills/jellyfin-control/cli.js stats
-node skills/jellyfin-control/cli.js scan            # requires admin API key
+js scan            # requires admin API key
 ```
 
 ### User History (requires admin API key)
 
 ```bash
-node skills/jellyfin-control/cli.js history
-node skills/jellyfin-control/cli.js history jorge --days 7
+js history jorge --days 7
 ```
 
 ## Choosing a TV Backend
@@ -310,7 +302,6 @@ Agent → cli.js tv play "Star Trek"
     "entries": {
       "jellyfin-control": {
         "env": {
-          "JF_URL": "http://192.168.1.50:8096",
           "JF_AP
 ```
 

@@ -193,19 +193,16 @@ tts-whatsapp "Hello, this is a test" --target "+15555550123"
 ### Send to WhatsApp group(补充)
 # ...
 ```bash
-tts-whatsapp "Hello everyone" --target "120363257357161211@g.us"
 ```
 # ...
 ### Change language(补充)
 # ...
 ```bash
-tts-whatsapp "Hola mundo" --lang es_ES --voice carlfm --target "+34..."
 ```
 # ...
 ### Different quality levels(补充)
 # ...
 ```bash
-tts-whatsapp "High quality" --quality high --target "+1..."
 ```
 ```
 

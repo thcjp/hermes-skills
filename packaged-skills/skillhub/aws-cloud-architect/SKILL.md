@@ -271,10 +271,10 @@ export API_KEY="your_api_key_here"
 aws ec2 describe-nat-gateways --query 'NatGateways[].{ID:NatGatewayId,State:State}'
 # 为 S3/DynamoDB 创建 VPC 终端节点(免费)
 aws ec2 create-vpc-endpoint --vpc-id vpc-xxx \
-  --service-name com.amazonaws.us-east-1.s3 --route-table-ids rtb-xxx
+amazonaws.us-east-1.s3 --route-table-ids rtb-xxx
 # 清理闲置 EBS 快照
 aws ec2 describe-snapshots --owner-ids self \
-  --query 'Snapshots[?StartTime<=`2024-01-01`].[SnapshotId,StartTime,VolumeSize]'
+[SnapshotId,StartTime,VolumeSize]'
 # 设置 CloudWatch Logs 保留期
 aws logs put-retention-policy --log-group-name /aws/lambda/fn --retention-in-days 14
 ```

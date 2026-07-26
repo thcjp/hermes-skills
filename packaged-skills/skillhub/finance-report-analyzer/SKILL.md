@@ -192,7 +192,6 @@ export API_KEY="your_api_key_here"
 
 ```
 ```bash
-python3 （请参考skill目录中的脚本文件） input.xlsx -o pdf --company "公司名" --ticker "000001.SZ"
 ```
 ```
 

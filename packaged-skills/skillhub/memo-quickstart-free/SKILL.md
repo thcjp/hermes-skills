@@ -99,7 +99,7 @@ memory-search "TypeScript"
 
 ### 第三步：执行WAL协议与定期维护
 
-用户表达偏好/做决策/给截止时间/纠正错误时，执行：更新SESSION-STATE.json → memory-store持久化 → 响应用户.
+用户表达偏好/做决策/给截止时间/纠正错误时，执行：更新SESSION-STATE.
 每日运行 `memory-stats` 查看统计；每周运行 `memory-archive --days 7` 归档旧记忆.
 #
 ## 错误处理

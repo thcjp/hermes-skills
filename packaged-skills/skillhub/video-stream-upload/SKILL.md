@@ -1,5 +1,4 @@
----
-slug: "video-stream-upload"
+---slug: "video-stream-upload"
 name: "video-stream-upload"
 version: 1.0.1
 displayName: "视频上传-专业版"
@@ -8,7 +7,7 @@ summary_zh: "企业级视频上传与流媒体管理平台，支持自定义编�
 license: "MIT"
 edition: "pro"
 description: |-
-  视频上传专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
+  视频上传专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。不适用于版权受保护的媒体内容处理.
 tags:
   - Creative
   - 视频上传
@@ -27,9 +26,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Creative"
----
-# 视频上传-专业版
+category: "Creative"---# 视频上传-专业版
 
 ## 付费版专享能力
 
@@ -54,8 +51,6 @@ category: "Creative"
 - **码率**：自定义视频与音频码率
 - **音频配置**：采样率、声道数、语言
 
-**处理**: 解析自定义编码配置的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回自定义编码配置的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. 多分辨率输出
 单次上传支持输出多档分辨率：
 
@@ -70,8 +65,6 @@ category: "Creative"
 | 2160p | 3840×2160 | 30,000,000 bps | 4K 超高清 |
 | 4320p | 7680×4320 | 60,000,000 bps | 8K 优秀画质 |
 
-**输入**: 用户提供多分辨率输出所需的指令和必要参数.
-**处理**: 解析多分辨率输出的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 3. 批量视频上传
 支持单任务上传 50+ 视频：
 
@@ -92,7 +85,6 @@ category: "Creative"
 - 关键参数: `批量视频上传` 选项
 - 处理流程: 接收输入 -> 执行批量视频上传 -> 返回结果
 - 输入: 用户提供批量视频上传所需的参数和指令
-- 输出: 返回批量视频上传的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 4. 缩略图管理
 ```bash
@@ -104,9 +96,6 @@ curl -s -X POST "https://api-w3stream.attoaioz.cyou/api/videos/VIDEO_ID/thumbnai
 
 支持格式：`.png`、`.jpg`
 
-**输入**: 用户提供缩略图管理所需的指令和必要参数.
-**处理**: 解析缩略图管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回缩略图管理的处理结果,包含执行状态码、结果数据和执行日志.
 ### 5. 转码费用预估
 上传前估算转码成本：
 
@@ -116,9 +105,6 @@ curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/cost?duration=60&qualitie
   -H 'stream-secret-key: YOUR_SECRET_KEY'
 ```
 
-**输入**: 用户提供转码费用预估所需的指令和必要参数.
-**处理**: 解析转码费用预估的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回转码费用预估的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `转码费用预估` 选项
 
@@ -128,9 +114,6 @@ curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/cost?duration=60&qualitie
 - **删除视频**：移除视频及关联资源
 - **状态查询**：实时获取转码进度
 
-**输入**: 用户提供视频全生命周期管理所需的指令和必要参数.
-**处理**: 解析视频全生命周期管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回视频全生命周期管理的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -214,14 +197,13 @@ curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
 
 ### 第四步：转码费用预估
 ```bash
-curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/cost?duration=60&qualities=360p,1080p' \
+attoaioz.duration=60&qualities=360p,1080p' \
   -H "stream-public-key: $STREAM_PUBLIC_KEY" \
   -H "stream-secret-key: $STREAM_SECRET_KEY"
 ```
 
 ### 第五步：批量上传
 ```bash
-python3 batch_upload.py \
   --config /tmp/batch-upload.json \
   --parallel 8 \
   --report /tmp/upload-report.json
@@ -284,7 +266,8 @@ python3 batch_upload.py \
 | PyYAML | Python 库 | 可选 | `pip install pyyaml` | 5.4+ |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 | - |
 
-#### 完整安装命令
+#
+### 完整安装命令
 ```bash
 pip3 install requests pyyaml
 # ...
@@ -305,7 +288,7 @@ jq --version
 export STREAM_PUBLIC_KEY="your_public_key"
 export STREAM_SECRET_KEY="your_secret_key"
 # ...
-curl -s 'https://api-w3stream.attoaioz.cyou/api/videos' \
+attoaioz.cyou/api/videos' \
   -X POST \
   -H "stream-public-key: $STREAM_PUBLIC_KEY" \
   -H "stream-secret-key: $STREAM_SECRET_KEY" \
@@ -357,16 +340,16 @@ curl -s 'https://api-w3stream.attoaioz.cyou/api/videos' \
 **A：** 专业版自动记录失败任务：
 
 ```bash
-python3 batch_upload.py --retry-failed /tmp/upload-queue.json
+py --retry-failed /tmp/upload-queue.json
 # ...
-python3 batch_upload.py --resume /tmp/upload-queue.json
+py --resume /tmp/upload-queue.json
 ```
 
 ### Q4：4K 视频转码费用如何估算？
 **A：** 使用费用预估接口：
 
 ```bash
-curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/cost?duration=60&qualities=2160p' \
+attoaioz.duration=60&qualities=2160p' \
   -H "stream-public-key: $STREAM_PUBLIC_KEY" \
   -H "stream-secret-key: $STREAM_SECRET_KEY"
 ```
@@ -380,7 +363,7 @@ curl -s 'https://api-w3stream.attoaioz.cyou/api/videos/cost?duration=60&qualitie
 
 ### Q6：视频管理 API 如何使用？
 ```bash
-curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos' \
+attoaioz.cyou/api/videos' \
   -H "stream-public-key: $STREAM_PUBLIC_KEY" \
   -H "stream-secret-key: $STREAM_SECRET_KEY" \
   -H 'Content-Type: application/json' \

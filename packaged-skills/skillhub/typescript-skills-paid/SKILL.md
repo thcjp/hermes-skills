@@ -214,11 +214,11 @@ jobs:
       - name: ESLint 检查(零警告)
         run: npx eslint . --max-warnings=0
       - name: 导入顺序检查
-        run: npx eslint . --rule 'import/order: error'
+ --rule 'import/order: error'
       - name: 命名约定检查
-        run: npx eslint . --rule '@typescript-eslint/naming-convention: error'
+ --rule '@typescript-eslint/naming-convention: error'
       - name: 复杂度门禁
-        run: npx eslint . --rule 'sonarjs/cognitive-complexity: [error, 15]'
+ --rule 'sonarjs/cognitive-complexity: [error, 15]'
       - name: 类型覆盖率门禁
         run: npx type-coverage --strict --at-least 95
       - name: 上传报告

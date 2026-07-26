@@ -1,5 +1,4 @@
----
-slug: "video-frames-paid"
+---slug: "video-frames-paid"
 name: "video-frames-paid"
 version: 1.0.1
 displayName: "视频帧提取-专业版"
@@ -8,7 +7,7 @@ summary_zh: "企业级视频帧提取与剪辑工具，支持批量处理、区�
 license: "MIT"
 edition: "pro"
 description: |-
-  视频帧提取专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
+  视频帧提取专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。不适用于版权受保护的媒体内容处理.
 tags:
   - Creative
   - 视频处理
@@ -28,9 +27,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Creative"
----
-# 视频帧提取-专业版
+category: "Creative"---# 视频帧提取-专业版
 
 ## 付费版专享能力
 
@@ -64,14 +61,12 @@ category: "Creative"
 - 关键参数: `批量视频处理` 选项
 - 处理流程: 接收输入 -> 执行批量视频处理 -> 返回结果
 - 输入: 用户提供批量视频处理所需的参数和指令
-- 输出: 返回批量视频处理的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 2. 区间帧提取与剪辑
 - 按时间区间提取多帧（如 10s-30s 每 2 秒一帧）
 - 视频片段剪辑输出为 GIF 或 MP4
 - 支持精确到帧的区间控制
 
-**处理**: 解析区间帧提取与剪辑的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 3. 智能关键帧检测
 基于场景变化自动识别关键帧：
 
@@ -79,24 +74,17 @@ category: "Creative"
 - 自动跳过黑屏与过渡帧
 - 智能去重（相似度阈值可调）
 
-**输入**: 用户提供智能关键帧检测所需的指令和必要参数.
-**处理**: 解析智能关键帧检测的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回智能关键帧检测的处理结果,包含执行状态码、结果数据和执行日志.
 ### 4. 水印与分辨率自定义
 - 图片水印：支持 PNG 透明水印，可设置位置与透明度
 - 文字水印：支持字体、大小、颜色、位置
 - 分辨率：输出任意分辨率，保持纵横比或强制拉伸
 
-**输入**: 用户提供水印与分辨率自定义所需的指令和必要参数.
-**处理**: 解析水印与分辨率自定义的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 5. 任务队列与断点续传
 - 大批量任务自动入队
 - 异常中断后可从断点继续
 - 处理进度实时查询
 - 失败任务自动重试（最多 3 次）
 
-**输入**: 用户提供任务队列与断点续传所需的指令和必要参数.
-**输出**: 返回任务队列与断点续传的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -242,7 +230,6 @@ python3 --version
 {baseDir}/（请参考skill目录中的脚本文件） \
   --input /videos/long-video.mp4 \
   --output /tmp/keyframes/ \
-  --scene-threshold 0.4
 ```
 
 ### 第四步：添加水印
@@ -257,9 +244,7 @@ python3 --version
   --wm-opacity 0.7
 # ...
 # 文字水印
-{baseDir}/（请参考skill目录中的脚本文件） /videos/promo.mp4 \
   --time 00:00:10 \
-  --out /tmp/watermarked.jpg \
   --text-watermark "© 2026 Company" \
   --wm-font-size 24 \
   --wm-color white
@@ -323,7 +308,8 @@ python3 --version
 | PyYAML | Python 库 | 可选 | `pip install pyyaml` | 5.4+ |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 | - |
 
-#### 完整安装命令
+#
+### 完整安装命令
 
 ```bash
 # 安装 ffmpeg + Python 依赖
@@ -419,7 +405,6 @@ python3 -c "import yaml; print('PyYAML ready')"
 {baseDir}/（请参考skill目录中的脚本文件） video.mp4 \
   --time 00:00:10 \
   --out /tmp/output.jpg \
-  --watermark /assets/logo.png \
   --wm-position custom \
   --wm-x 100 --wm-y 200
 ```

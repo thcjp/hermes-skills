@@ -1,5 +1,4 @@
----
-slug: "excel-expert"
+---slug: "excel-expert"
 name: "excel-expert"
 version: 1.0.1
 displayName: "Excel专家专业版"
@@ -8,7 +7,7 @@ summary_zh: "全场景表格诊断与建模引擎，含跨平台降级矩阵、V
 license: "MIT"
 edition: "pro"
 description: |-
-  Excel 专家专业版在免费版诊断能力基础上，扩展跨平台深度降级矩阵、VBA 宏生成与优化、财务建模与敏感性分析、仪表盘设计与完整故障排查体系。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+  Excel 专家专业版在免费版诊断能力基础上，扩展跨平台深度降级矩阵、VBA 宏生成与优化、财务建模与敏感性分析、仪表盘设计与完整故障排查体系。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。不适用于实时流数据处理.
 tags:
   - 集成工具
   - 表格处理
@@ -26,9 +25,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# Excel专家专业版
+category: "Automation"---# Excel专家专业版
 
 ## 付费版专享能力
 

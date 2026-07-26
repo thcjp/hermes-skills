@@ -74,7 +74,6 @@ category: "Automation"
 | JWT签名 | RS256, ES256 | HS256(弱密钥) |
 | TLS | 1.2+ | TLS 1.0/1.1, SSLv3 |
 
-**输入**: 用户提供加密算法选择指南所需的指令和必要参数.
 **处理**: 解析加密算法选择指南的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回加密算法选择指南的响应数据,包含状态码、结果和日志.
 ### 2. 文件加密与解密
@@ -100,7 +99,6 @@ for f in *.secret; do
 done
 ```
 
-**输入**: 用户提供文件加密与解密所需的指令和必要参数.
 **处理**: 解析文件加密与解密的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回文件加密与解密的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -137,7 +135,7 @@ def verify_password_pbkdf2(password: str, stored: str) -> bool:
     iterations = int(parts[1])
     salt = bytes.fromhex(parts[2])
     stored_hash = parts[3]
-    computed = hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'), salt, iterations)
+    computed = hashlib.encode('utf-8'), salt, iterations)
     return hmac.compare_digest(computed.hex(), stored_hash)
 # ...
 password = "mySecurePassword123"
@@ -176,7 +174,6 @@ function generateSecureToken(length = 32) {
 }
 ```
 
-**输入**: 用户提供密码哈希所需的指令和必要参数.
 **处理**: 解析密码哈希的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回密码哈希的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -209,7 +206,6 @@ grep -rn "ECB\|ecb" . --include="*.js" --include="*.py" | grep -v "node_modules"
 echo -e "\n=== 审计完成 ==="
 ```
 
-**输入**: 用户提供基础代码安全审计所需的指令和必要参数.
 **处理**: 解析基础代码安全审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回基础代码安全审计的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -227,12 +223,11 @@ openssl verify -CAfile /etc/ssl/certs/ca-certificates.crt server.pem
 # ...
 for version in tls1 tls1_1 tls1_2 tls1_3; do
     echo -n "$version: "
-    echo | openssl s_client -connect example.com:443 -$version 2>/dev/null | \
+com:443 -$version 2>/dev/null | \
       grep -q "Cipher" && echo "支持" || echo "不支持"
 done
 ```
 
-**输入**: 用户提供TLS证书检查所需的指令和必要参数.
 **处理**: 解析TLS证书检查的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回TLS证书检查的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：算法选择指南与基、础安全审计、适合个人开发者保、护数据、面向开发者的数据、加密辅助工具、涵盖文件加密、加密算法选择与基、核心能力等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -283,7 +278,7 @@ class PasswordManager:
     def verify_password(password: str, hashed: str) -> bool:
         """验证密码(常量时间比较)"""
         try:
-            return bcrypt.checkpw(password.encode('utf-8'), hashed.encode('utf-8'))
+            return bcrypt.checkpw(password.encode('utf-8'))
         except Exception:
             return False
 # ...
@@ -422,7 +417,7 @@ hashed = bcrypt.hashpw(password.encode(), bcrypt.gensalt(12))
 ```javascript
 // 正确:每次加密生成新IV
 const iv = crypto.randomBytes(12);
-const cipher = crypto.createCipheriv('aes-256-gcm', key, iv);
+createCipheriv('aes-256-gcm', key, iv);
 // ...
 // 错误:固定IV
 // const iv = Buffer.from('fixed-iv-12byt');
@@ -487,7 +482,7 @@ chmod 600 ~/.config/age/key.txt
 ```bash
 nmap --script ssl-enum-ciphers -p 443 example.com
 # ...
-echo | openssl s_client -connect example.com:443 2>/dev/null | \
+com:443 2>/dev/null | \
   grep -E "Protocol|Cipher|Verify"
 ```
 
@@ -537,8 +532,6 @@ export AGE_KEY_FILE="~/.config/age/key.txt"
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

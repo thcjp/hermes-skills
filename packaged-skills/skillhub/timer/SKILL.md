@@ -60,9 +60,7 @@ category: "Automation"
 
 ```bash
 bash background:true command:"node {baseDir}/timer.js 5m"
-bash background:true command:"node {baseDir}/timer.js 10m 'Check the oven'"
-bash background:true command:"node {baseDir}/timer.js 30s"
-bash background:true command:"node {baseDir}/timer.js 1h"
+js 10m 'Check the oven'"
 ```
 
 第一个参数为时长，第二个可选参数为提醒文案。提醒文案会在定时器完成时回传给 Agent，再由 Agent 转达给用户。若不提供文案，将使用默认提示.
@@ -133,9 +131,9 @@ export API_KEY="your_api_key_here"
 
 用户同时煮意面、蒸蛋、烤面包，需要在各自完成时分别提醒.
 ```bash
-bash background:true command:"node {baseDir}/timer.js 12m 'Pasta is ready!'"
-bash background:true command:"node {baseDir}/timer.js 8m 'Eggs are done'"
-bash background:true command:"node {baseDir}/timer.js 25m 'Bread is done'"
+js 12m 'Pasta is ready!'"
+js 8m 'Eggs are done'"
+js 25m 'Bread is done'"
 ```
 
 每个定时器独立运行，到期后分别收到系统通知。Agent 收到通知后应立即向用户转达对应提醒，例如："⏰ 您的 8 分钟计时已到：Eggs are done"。三个定时器互不影响，即使意面计时仍在运行，蒸蛋到期也会准时提醒.
@@ -143,9 +141,9 @@ bash background:true command:"node {baseDir}/timer.js 25m 'Bread is done'"
 
 用户希望进行两轮番茄工作法，每轮专注 25 分钟、休息 5 分钟.
 ```bash
-bash background:true command:"node {baseDir}/timer.js 25m 'Pomodoro done - time for a break!'"
+js 25m 'Pomodoro done - time for a break!'"
 # 专注计时完成后，再启动休息计时
-bash background:true command:"node {baseDir}/timer.js 5m 'Break over - back to work!'"
+js 5m 'Break over - back to work!'"
 ```
 
 专注计时到期时提醒休息，休息计时到期时提醒回到工作。Agent 在每次系统通知到达时，直接以提醒文案开头回复用户，不要附加无关上下文。需要继续下一轮时，由 Agent 再次启动 25 分钟专注计时.
@@ -153,8 +151,8 @@ bash background:true command:"node {baseDir}/timer.js 5m 'Break over - back to w
 
 用户在 14:00 有会议，当前时间 13:45，希望提前 10 分钟和准点各提醒一次.
 ```bash
-bash background:true command:"node {baseDir}/timer.js 10m 'Meeting in 10 minutes'"
-bash background:true command:"node {baseDir}/timer.js 15m 'Meeting starts now'"
+js 10m 'Meeting in 10 minutes'"
+js 15m 'Meeting starts now'"
 ```
 
 两个定时器并行运行，分别在 13:55 和 14:00 触发。Agent 收到通知后直接转达，确保用户在会议前有充足准备时间。提前 10 分钟的提醒让用户有时间收尾当前工作，准点提醒确保不迟到.

@@ -1,9 +1,8 @@
----
-slug: "java"
+---slug: "java"
 name: "java"
 version: 1.0.2
 displayName: "Java健壮编程"
-summary: "编写健壮Java代码,避免空指针陷阱、相等性Bug与并发问题。编写健壮Java代码,避免空指针陷阱、相等性Bug与并发问题。核心能力涵盖空值与Optional处理、集合迭代陷阱、泛型与类型擦"
+summary: "编写健壮Java代码,"
 summary_zh: "编写健壮Java代码,避免空指针陷阱、相等性Bug与并发问题。编写健壮Java代码,避免空指针陷阱、相等性Bug与并发问题。核心能力涵盖空值与Optional处理、集合迭代陷阱、泛型与类型擦"
 license: "MIT"
 description: |-
@@ -22,9 +21,7 @@ tags:
   - equals
   - string
   - user
-category: "Automation"
----
-# Java健壮编程
+category: "Automation"---# Java健壮编程
 
 编写健壮Java代码,避免空指针陷阱、相等性Bug与并发问题。涵盖从基础语法陷阱到高级并发模型的完整防护指南.
 ## 输入格式
@@ -185,7 +182,7 @@ public class Person {
 public boolean equals(Object o) {
     if (this == o) return true;
     if (!(o instanceof Person)) return false;
-    return Objects.equals(name, ((Person) o).name);
+    return Objects.name);
 }
 @Override
 public int hashCode() {

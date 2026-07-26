@@ -175,9 +175,7 @@ title.alignment = WD_ALIGN_PARAGRAPH.CENTER
 # ...
 doc.add_paragraph('\n\n\n')
 p = doc.add_paragraph('编制:产品部')
-p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 p = doc.add_paragraph('日期:2024年7月')
-p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 # ...
 doc.add_page_break()
 # ...
@@ -219,7 +217,6 @@ section = doc.sections[0]
 footer = section.footer
 footer_p = footer.paragraphs[0]
 footer_p.text = 'TaskFlow产品方案 | 机密'
-footer_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 # ...
 doc.save('output/taskflow-proposal/document.docx')
 print('文档已生成')
@@ -257,17 +254,16 @@ for idx, row in df.iterrows():
         if '{{name}}' in paragraph.text:
             paragraph.text = paragraph.text.replace('{{name}}', row['name'])
         if '{{company}}' in paragraph.text:
-            paragraph.text = paragraph.text.replace('{{company}}', row['company'])
+text = paragraph.text.replace('{{company}}', row['company'])
         if '{{date}}' in paragraph.text:
-            paragraph.text = paragraph.text.replace('{{date}}', row['date'])
+text = paragraph.text.replace('{{date}}', row['date'])
 # ...
     # 同样处理表格中的占位符
     for table in doc.tables:
         for row in table.rows:
             for cell in row.cells:
                 for paragraph in cell.paragraphs:
-                    if '{{name}}' in paragraph.text:
-                        paragraph.text = paragraph.text.replace('{{name}}', row['name'])
+text = paragraph.text.replace('{{name}}', row['name'])
 # ...
     filename = f"output/invitations/merged/invitation_{row['name']}.docx"
     doc.save(filename)
@@ -344,12 +340,10 @@ style.paragraph_format.line_spacing = 1.5
 header = section.header
 header_p = header.paragraphs[0]
 header_p.text = '合同编号: DEV-2024-0815'
-header_p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
 header_p.runs[0].font.size = Pt(9)
 # ...
 # 封面
 title = doc.add_heading('软件定制开发服务合同', level=0)
-title.alignment = WD_ALIGN_PARAGRAPH.CENTER
 for run in title.runs:
     run.font.name = '黑体'
     run.element.rPr.rFonts.set(qn('w:eastAsia'), '黑体')
@@ -415,7 +409,6 @@ for i, h in enumerate(headers):
     cell = table.rows[0].cells[i]
     cell.text = h
     for p in cell.paragraphs:
-        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
         for run in p.runs:
             run.bold = True
 # ...
@@ -519,7 +512,6 @@ section = doc.sections[0]
 section.page_width = Cm(21)
 section.page_height = Cm(29.7)
 section.top_margin = Cm(2.5)
-section.bottom_margin = Cm(2.5)
 section.left_margin = Cm(3)
 section.right_margin = Cm(2.5)
 # ...
@@ -564,19 +556,16 @@ for _ in range(4):
     doc.add_paragraph()
 # ...
 p = doc.add_paragraph()
-p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 run = p.add_run('XX大学')
 set_font(run, '黑体', 26, True)
 # ...
 p = doc.add_paragraph()
-p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 run = p.add_run('硕士学位论文')
 set_font(run, '黑体', 22, True)
 # ...
 doc.add_paragraph('\n\n\n')
 # ...
 p = doc.add_paragraph()
-p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 run = p.add_run('基于深度学习的文本分类研究')
 set_font(run, '黑体', 18, True)
 # ...
@@ -591,7 +580,6 @@ info = [
 ]
 for label, value in info:
     p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p.add_run(f'{label} {value}')
     set_font(run, '宋体', 14)
 # ...
@@ -599,7 +587,6 @@ doc.add_page_break()
 # ...
 # ========== 目录(占位符) ==========
 p = doc.add_paragraph()
-p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 run = p.add_run('目  录')
 set_font(run, '黑体', 16, True)
 # ...
@@ -625,13 +612,10 @@ add_heading_custom(doc, '第一章 绪论', 1)
 add_heading_custom(doc, '1.1 研究背景与意义', 2)
 add_body_paragraph(doc, '文本分类是自然语言处理领域的基础任务之一，旨在将文本按照预定义的类别进行归类。随着深度学习技术的发展，基于神经网络的文本分类方法逐渐取代了传统的机器学习方法...')
 # ...
-add_heading_custom(doc, '1.1.1 研究背景', 3)
 add_body_paragraph(doc, '互联网的快速发展产生了海量的文本数据，如何高效地组织、管理和检索这些文本数据成为一个重要挑战。文本分类作为解决这一问题的核心技术...')
 # ...
-add_heading_custom(doc, '1.2 国内外研究现状', 2)
 add_body_paragraph(doc, '文本分类方法经历了从基于规则的方法，到传统机器学习方法，再到深度学习方法的演进过程...')
 # ...
-add_heading_custom(doc, '1.3 本文研究内容', 2)
 add_body_paragraph(doc, '本文围绕基于深度学习的文本分类展开研究，主要内容包括以下几个方面:')
 # ...
 # 列表
@@ -644,7 +628,7 @@ for i, item in enumerate(items, 1):
     p = doc.add_paragraph()
     run = p.add_run(f'({i}) {item}')
     set_font(run, '宋体', 12)
-    p.paragraph_format.first_line_indent = Cm(0.74)
+    p.paragraph_format.74)
     p.paragraph_format.line_spacing = 1.5
 # ...
 # ========== 参考文献 ==========
@@ -667,7 +651,6 @@ section = doc.sections[0]
 # 页脚: 页码居中
 footer = section.footer
 footer_p = footer.paragraphs[0]
-footer_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 # ...
 # 添加页码域
 run = footer_p.add_run()
@@ -681,7 +664,6 @@ fldChar2.set(qn('w:fldCharType'), 'end')
 run._r.append(fldChar1)
 run._r.append(instrText)
 run._r.append(fldChar2)
-set_font(run, '宋体', 10.5)
 # ...
 doc.save('output/thesis-formatting/document.docx')
 print('论文文档已生成')
@@ -755,7 +737,6 @@ for idx, row in df.iterrows():
     # 标题
     doc.add_paragraph('\n')
     p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p.add_run('结 业 证 书')
     set_font(run, '黑体', 36, True, RGBColor(0x1F, 0x49, 0x7D))
 # ...
@@ -763,28 +744,23 @@ for idx, row in df.iterrows():
 # ...
     # 证书编号
     p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
     cert_no = f'证书编号: CERT-2024-{idx+1:04d}'
     run = p.add_run(cert_no)
-    set_font(run, '宋体', 10.5)
 # ...
     doc.add_paragraph('\n')
 # ...
     # 正文
     p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p.add_run(row['name'])
     set_font(run, '黑体', 18, True)
 # ...
     p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p.add_run('同学: ')
     set_font(run, '宋体', 14)
 # ...
     doc.add_paragraph('\n')
 # ...
     p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p.add_run('于')
     set_font(run, '宋体', 14)
     run = p.add_run(f' {row["date"]} ')
@@ -795,14 +771,12 @@ for idx, row in df.iterrows():
     doc.add_paragraph('\n')
 # ...
     p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p.add_run(f'《{row["course"]}》')
     set_font(run, '黑体', 16, True, RGBColor(0x1F, 0x49, 0x7D))
 # ...
     doc.add_paragraph('\n')
 # ...
     p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p.add_run('培训课程，完成全部学习内容，考试成绩: ')
     set_font(run, '宋体', 14)
 # ...
@@ -818,7 +792,6 @@ for idx, row in df.iterrows():
     doc.add_paragraph('\n')
 # ...
     p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run = p.add_run('特发此证，以资证明。')
     set_font(run, '宋体', 14)
 # ...
@@ -826,7 +799,6 @@ for idx, row in df.iterrows():
 # ...
     # 签发信息
     p = doc.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.RIGHT
     run = p.add_run('XX培训中心\n')
     set_font(run, '宋体', 14)
     run = p.add_run(f'{row["date"]}')
@@ -898,8 +870,8 @@ def add_revision_replace(paragraph, old_text, new_text, author, date):
             del_rpr = OxmlElement('w:rPr')
             del_mark = OxmlElement('w:del')
             del_mark.set(qn('w:id'), '1')
-            del_mark.set(qn('w:author'), author)
-            del_mark.set(qn('w:date'), date)
+set(qn('w:author'), author)
+set(qn('w:date'), date)
             del_run._element.insert(0, del_mark)
             del_run.font.strike = True
             del_run.font.color.rgb = None
@@ -908,14 +880,13 @@ def add_revision_replace(paragraph, old_text, new_text, author, date):
             ins_run = paragraph.add_run(new_text)
             ins_mark = OxmlElement('w:ins')
             ins_mark.set(qn('w:id'), '2')
-            ins_mark.set(qn('w:author'), author)
-            ins_mark.set(qn('w:date'), date)
+set(qn('w:author'), author)
+set(qn('w:date'), date)
             ins_run._element.insert(0, ins_mark)
             ins_run.bold = True
 # ...
             # 添加剩余文本
             if after:
-                paragraph.add_run(after)
             break
 # ...
 def add_comment(paragraph, comment_text, author, date, comment_id):
@@ -1063,7 +1034,6 @@ def add_param_table(doc, params):
         cell = table.rows[0].cells[i]
         cell.text = h
         for p in cell.paragraphs:
-            for run in p.runs:
                 run.bold = True
     for i, param in enumerate(params):
         for j, val in enumerate(param):
@@ -1071,7 +1041,6 @@ def add_param_table(doc, params):
 # ...
 # 标题
 title = doc.add_heading('TaskFlow API v2.0 接口文档', level=0)
-title.alignment = WD_ALIGN_PARAGRAPH.CENTER
 # ...
 # 概述
 doc.add_heading('1. 概述', level=1)

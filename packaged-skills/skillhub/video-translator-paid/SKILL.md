@@ -1,5 +1,4 @@
----
-slug: "video-translator-paid"
+---slug: "video-translator-paid"
 name: "video-translator-paid"
 version: 1.0.1
 displayName: "视频翻译-专业版"
@@ -8,7 +7,7 @@ summary_zh: "企业级视频翻译与配音平台，支持8种语言、双语字
 license: "MIT"
 edition: "pro"
 description: |-
-  视频翻译专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
+  视频翻译专业版。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。不适用于版权受保护的媒体内容处理.
 tags:
   - Creative
   - 视频翻译
@@ -29,9 +28,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Creative"
----
-# 视频翻译-专业版
+category: "Creative"---# 视频翻译-专业版
 
 ## 付费版专享能力
 
@@ -60,9 +57,6 @@ category: "Creative"
 | 西班牙文 | es | zh / en |
 | 德文 | de | zh / en |
 
-**输入**: 用户提供多语言翻译支持所需的指令和必要参数.
-**处理**: 解析多语言翻译支持的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回多语言翻译支持的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`任务优先级队列`的配置文档进行参数调优
 ### 2. 双语字幕烧录
 支持原文与译文同时显示：
@@ -72,9 +66,6 @@ category: "Creative"
 - 自定义字幕样式（字体/颜色/位置）
 - 双语对照便于学习
 
-**输入**: 用户提供双语字幕烧录所需的指令和必要参数.
-**处理**: 解析双语字幕烧录的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回双语字幕烧录的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. 批量翻译处理
 支持单任务翻译 50+ 视频：
 
@@ -95,7 +86,6 @@ category: "Creative"
 - 关键参数: `批量翻译处理` 选项
 - 处理流程: 接收输入 -> 执行批量翻译处理 -> 返回结果
 - 输入: 用户提供批量翻译处理所需的参数和指令
-- 输出: 返回批量翻译处理的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 4. 语音克隆
 保留原视频说话人的音色特征：
@@ -105,9 +95,6 @@ category: "Creative"
 - 保留语调与情感
 - 适合访谈、演讲、教程类视频
 
-**输入**: 用户提供语音克隆所需的指令和必要参数.
-**处理**: 解析语音克隆的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回语音克隆的处理结果,包含执行状态码、结果数据和执行日志.
 ### 5. 翻译记忆库与术语表
 **翻译记忆库：**
 
@@ -121,8 +108,6 @@ category: "Creative"
 - 保障术语一致性
 - 支持多领域术语表（科技/医疗/法律等）
 
-**输入**: 用户提供翻译记忆库与术语表所需的指令和必要参数.
-**输出**: 返回翻译记忆库与术语表的处理结果,包含执行状态码、结果数据和执行日志.
 ### 6. 任务优先级队列
 ```text
 任务提交
@@ -175,7 +160,7 @@ python3 batch_translate.py --config /path/to/batch-translate.json --parallel 8
 **执行命令：**
 
 ```bash
-python3 batch_translate.py --config /path/to/multilingual.yaml --parallel 6
+py --config /path/to/multilingual.yaml --parallel 6
 ```
 
 ### 场景 3：影视作品出海字幕与配音
@@ -220,7 +205,7 @@ curl -s -X POST 'https://audiox-api-global.luoji.cn/video-trans/orchestrate' \
 
 ### 第四步：提交双语字幕任务
 ```bash
-curl -s -X POST 'https://audiox-api-global.luoji.cn/video-trans/orchestrate' \
+luoji.cn/video-trans/orchestrate' \
   -H "Authorization: Bearer $VIDEO_TRANSLATE_SERVICE_API_KEY" \
   -F 'video=@/path/to/japanese-video.mp4' \
   -F 'sourceLanguage=ja' \
@@ -231,7 +216,6 @@ curl -s -X POST 'https://audiox-api-global.luoji.cn/video-trans/orchestrate' \
 
 ### 第五步：批量翻译
 ```bash
-python3 batch_translate.py \
   --config /tmp/batch-translate.json \
   --parallel 8 \
   --voice-clone \
@@ -295,7 +279,8 @@ python3 batch_translate.py \
 | PyYAML | Python 库 | 可选 | `pip install pyyaml` | 5.4+ |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 | - |
 
-#### 完整安装命令
+#
+### 完整安装命令
 ```bash
 pip3 install requests pyyaml
 # ...
@@ -316,7 +301,7 @@ curl --version
 export VIDEO_TRANSLATE_SERVICE_API_KEY="your_translation_api_key"
 export VOICE_CLONE_API_KEY="your_voice_clone_key"
 # ...
-curl -s 'https://audiox-api-global.luoji.cn/video-trans/health' \
+luoji.cn/video-trans/health' \
   -H "Authorization: Bearer $VIDEO_TRANSLATE_SERVICE_API_KEY"
 ```
 
@@ -337,9 +322,9 @@ curl -s 'https://audiox-api-global.luoji.cn/video-trans/health' \
 ```bash
 python3 queue_manager.py status --queue /tmp/translate-queue.json
 # ...
-python3 queue_manager.py priority --task-id task-001 --level urgent
+py priority --task-id task-001 --level urgent
 # ...
-python3 queue_manager.py pause --queue /tmp/translate-queue.json
+py pause --queue /tmp/translate-queue.json
 ```
 
 ## 常见问题
@@ -358,9 +343,9 @@ python3 queue_manager.py pause --queue /tmp/translate-queue.json
 **A：** 专业版自动记录失败任务：
 
 ```bash
-python3 batch_translate.py --retry-failed /tmp/translate-queue.json
+py --retry-failed /tmp/translate-queue.json
 # ...
-python3 batch_translate.py --resume /tmp/translate-queue.json
+py --resume /tmp/translate-queue.json
 ```
 
 ### Q4：双语字幕布局如何自定义？
@@ -380,7 +365,7 @@ subtitle:
 ```bash
 python3 memory_manager.py export --project A --output /data/memory-a.json
 # ...
-python3 memory_manager.py import --project B --file /data/memory-a.json
+py import --project B --file /data/memory-a.json
 ```
 
 ### Q6：API 调用配额如何管理？
@@ -389,7 +374,7 @@ python3 memory_manager.py import --project B --file /data/memory-a.json
 ```bash
 python3 quota_manager.py status
 # ...
-python3 quota_manager.py set --project "培训本地化" --limit 10000
+py set --project "培训本地化" --limit 10000
 ```
 
 ### Q7：术语表支持哪些格式？

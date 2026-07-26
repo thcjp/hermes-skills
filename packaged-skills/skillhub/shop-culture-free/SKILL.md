@@ -78,20 +78,17 @@ export API_KEY="your_api_key_here"
 通过 `POST /agent/shop` 发送自然语言购物请求。请求体包含 `message`（自然语言查询）和可选 `context`（含 `priceRange`、`preferences` 等）。返回AI回复文本和匹配的 `products` 数组（含 `id`、`title`、`price`、`inStock`、`badge` 等字段）。适用于对话式商品搜索和推荐.
 ### 3. 分类树查询
 通过 `GET /categories` 获取商品分类树。返回包含分类slug、名称和商品数量的层级结构。适用于商品分类浏览和导航场景.
-**输入**: 用户提供分类树查询所需的指令和必要参数.
-**处理**: 解析分类树查询的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证返回数据的完整性和格式正确性
+
 - 参考`分类树查询`的配置文档进行参数调优
 ### 4. 精选商品
 通过 `GET /products/featured` 获取精选商品列表。返回带 `trending`、`new`、`bestseller` 等标签的精选商品。适用于礼品推荐和热门商品展示.
-**输入**: 用户提供精选商品所需的指令和必要参数.
-**处理**: 解析精选商品的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 ### 5. 语义搜索
 
 通过 `GET /products/search?q=<query>` 进行自然语言语义搜索。支持参数：`q`（查询词）、`category`（分类slug）、`priceMin`/`priceMax`（价格范围）、`sort`（newest/popular/rating/price_asc/price_desc）、`limit`（默认20，最大100）、`offset`（分页偏移）。仅返回有库存商品。适用于精准商品查找.
 ### 6. 商品详情
 通过 `GET /products/{slug}` 获取商品完整信息。返回 `id`、`variants[]`（含 `id`、`name`、`inStock`、`stockQuantity`、`price`）、`images[]`、`relatedProducts[]` 和 `description`。若商品有变体，需选择 `inStock` 的变体。适用于商品信息查看和结账前确认（完整版结账）.
-**输入**: 用户提供商品详情所需的指令和必要参数.
-**处理**: 解析商品详情的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 #
 ## 快速开始
 
@@ -143,10 +140,10 @@ curl "https://lifestyle-store.example.com/api/categories"
 # 响应包含分类slug、名称和商品数量
 # ...
 # 语义搜索
-curl "https://lifestyle-store.example.com/api/products/search?q=headphones&sort=popular&limit=20"
+example.com/api/products/search?q=headphones&sort=popular&limit=20"
 # ...
 # 查看商品详情
-curl "https://lifestyle-store.example.com/api/products/sony-wh-1000xm4"
+example.com/api/products/sony-wh-1000xm4"
 # 响应包含 id, variants[], images[], relatedProducts[]
 ```
 
@@ -172,7 +169,7 @@ curl "https://lifestyle-store.example.com/api/products/sony-wh-1000xm4"
 `GET /products/search` 支持参数：`q`（自然语言查询）、`category`（分类slug）、`priceMin`/`priceMax`（USD价格范围）、`sort`（newest/popular/rating/price_asc/price_desc，默认newest）、`limit`（每页结果数，默认20，最大100）、`offset`（分页偏移）。仅返回有库存商品。使用 `POST /agent/shop` 可获得AI增强的自然语言搜索体验.
 ### Q3: 免费版可以查看商品详情吗？
 
-可以。`GET /products/{slug}` 获取商品完整信息，包括 `id`、`variants[]`（含 `id`、`name`、`inStock`、`stockQuantity`、`price`）、`images[]`、`relatedProducts[]` 和 `description`。适用于商品信息查看和结账前确认（完整版结账）.
+可以。`GET /products/{slug}` 获取商品完整信息，包括 `id`、`variants[]`（含 `id`、`name`、`inStock`、`stockQuantity`、`price`）、`images[]`、`relatedProducts[]` 和 `description`。
 ### Q4: 免费版可以跟踪订单吗？
 
 不可以。`GET /orders/{orderId}/status` 订单状态跟踪和 `GET /orders/{orderId}` 订单详情是完整版独有功能。免费版不支持任何订单相关操作。如需订单跟踪，请升级至完整版.

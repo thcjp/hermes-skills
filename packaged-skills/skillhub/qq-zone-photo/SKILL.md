@@ -91,12 +91,9 @@ export API_KEY="your_api_key_here"
 - 参考`浏览相册照片`的配置文档进行参数调优
 ### 4. 上传照片
 通过 `python3 （请参考skill目录中的脚本文件） --action upload --photo "/path/to/image.jpg" --album-id "ALBUM_ID" --cookies cookies.json` 上传照片到指定相册。必填参数 `--photo` 指定本地图片路径，`--album-id` 指定目标相册。可选参数 `--qq` 指定账号。适用于照片备份和迁移场景.
-**处理**: 解析上传照片的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回上传照片的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`上传照片`的配置文档进行参数调优
 ### 5. 下载单张照片
 通过 `python3 （请参考skill目录中的脚本文件） --action download --url "PHOTO_URL" --cookies cookies.json` 下载单张照片。必填参数 `--url` 指定照片URL（从 `photos` action获取），可选参数 `--output` 指定下载目录。适用于选择性下载特定照片.
-**处理**: 解析下载单张照片的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 6. 下载整个相册
 
 通过 `python3 （请参考skill目录中的脚本文件） --action download-album --album-id "ALBUM_ID" --output ./downloads --cookies cookies.json` 下载整个相册的所有照片。必填参数 `--album-id` 指定目标相册，可选参数 `--output` 指定下载目录（默认当前目录）。适用于相册全量备份场景。- 验证返回数据的完整性和格式正确性
@@ -140,7 +137,7 @@ python3 （请参考skill目录中的脚本文件） --action list --cookies coo
 # 相册ID: V0005 | 标题: 2024毕业季 | 照片数: 28
 # ...
 # 下载整个旅行相册
-python3 （请参考skill目录中的脚本文件） --action download-album --album-id "V0003" --output ./downloads --cookies cookies.json
+python3 （请参考skill目录中的脚本文件） --action download-album --album-id "V0003" --output .json
 ```
 
 ### 示例2：创建相册并上传多张照片
@@ -152,7 +149,7 @@ python3 （请参考skill目录中的脚本文件） --action create --title "20
 # ...
 # 上传照片到新相册
 python3 （请参考skill目录中的脚本文件） --action upload --photo "/path/to/graduation1.jpg" --album-id "V0007" --cookies cookies.json
-python3 （请参考skill目录中的脚本文件） --action upload --photo "/path/to/graduation2.jpg" --album-id "V0007" --cookies cookies.json
+python3 （请参考skill目录中的脚本文件） --action upload --photo "/path/to/graduation2.json
 # ...
 # 浏览相册确认上传结果
 python3 （请参考skill目录中的脚本文件） --action photos --album-id "V0007" --cookies cookies.json
@@ -187,7 +184,7 @@ Cookie包含的 `p_skey` 和 `skey` 有时效性，过期后所有操作会返�
 上传功能支持常见的图片格式，包括JPG、JPEG、PNG、GIF、BMP等。通过 `--photo` 参数指定本地图片文件路径。建议使用绝对路径（如 `/path/to/image.jpg`）确保文件可访问。单次上传一张照片，批量上传需多次执行命令.
 ### Q5: 如何批量下载整个相册？
 
-使用 `--action download-album` 命令下载整个相册的所有照片。指定 `--album-id` 和 `--output`（下载目录）参数。例如：`python3 （请参考skill目录中的脚本文件） --action download-album --album-id "V0003" --output ./downloads --cookies cookies.json`。脚本会自动遍历相册中所有照片并逐一下载.
+使用 `--action download-album` 命令下载整个相册的所有照片。指定 `--album-id` 和 `--output`（下载目录）参数。例如：`python3 （请参考skill目录中的脚本文件） --action download-album --album-id "V0003" --output .json`。脚本会自动遍历相册中所有照片并逐一下载.
 ### Q6: Cookie文件包含哪些字段？
 
 Cookie文件（`cookies.json`）为JSON格式，包含4个字段：`qq_number`（社交平台账号）、`p_skey`（认证密钥）、`skey`（会话密钥）和 `uin`（用户标识，格式如 `o0123456789`）。也可手动从浏览器开发者工具（F12 -> Application -> Cookies）提取，但推荐使用扫码登录自动获取.

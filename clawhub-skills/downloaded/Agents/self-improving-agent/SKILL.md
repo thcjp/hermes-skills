@@ -42,7 +42,6 @@ Append to `.learnings/LEARNINGS.md`:
 > 详细内容已移至 `references/detail.md`
 
 ### Feature Request Entry
-Append to `.learnings/FEATURE_REQUESTS.md`:
 
 ## ID Generation
 Format: `TYPE-YYYYMMDD-XXX`
@@ -67,7 +66,7 @@ When an issue is fixed, update the entry:
 Other status values:
 - `in_progress` - Actively being worked on
 - `wont_fix` - Decided not to address (add reason in Resolution notes)
-- `promoted` - Elevated to CLAUDE.md, AGENTS.md, or .github/copilot-instructions.md
+- `promoted` - Elevated to CLAUDE.md, AGENTS.md, or .md
 - `promoted_to_skill` - Extracted as a reusable skill (see Automatic Skill Extraction)
 
 ## Promoting to Project Memory
@@ -84,7 +83,7 @@ When a learning is broadly applicable (not a one-off fix), promote it to permane
 |--------|-------------------|
 | `CLAUDE.md` | Project facts, conventions, gotchas for all Claude interactions |
 | `AGENTS.md` | Agent-specific workflows, tool usage patterns, automation rules |
-| `.github/copilot-instructions.md` | Project context and conventions for GitHub Copilot |
+| `.md` | Project context and conventions for GitHub Copilot |
 
 工作空间 targets (`SOUL.md`, `TOOLS.md`) are covered in `references/skill-platform-integration.md`.
 
@@ -93,7 +92,7 @@ When a learning is broadly applicable (not a one-off fix), promote it to permane
 2. **Add** to appropriate section in target file (create file if needed)
 3. **Update** original entry:
    - Change `**Status**: pending` → `**Status**: promoted`
-   - Add `**Promoted**: CLAUDE.md`, `AGENTS.md`, or `.github/copilot-instructions.md`
+   - Add `**Promoted**: CLAUDE.md`, `AGENTS.md`, or `.md`
 
 ### 示例
 **Learning** (verbose):
@@ -118,7 +117,7 @@ If logging something similar to an existing entry:
 2. **Link entries**: Add `**See Also**: ERR-20250110-001` in Metadata
 3. **Bump priority** if issue keeps recurring
 4. **Consider systemic fix**: Recurring issues often indicate:
-   - Missing documentation (→ promote to CLAUDE.md or .github/copilot-instructions.md)
+   - Missing documentation (→ promote to CLAUDE.md or .md)
    - Missing automation (→ add to AGENTS.md)
    - Architectural problem (→ create tech debt ticket)
 
@@ -150,7 +149,6 @@ Promote recurring patterns into agent context/system prompt files when all are t
 Promotion targets:
 - `CLAUDE.md`
 - `AGENTS.md`
-- `.github/copilot-instructions.md`
 - 工作空间 files when applicable — see `references/skill-platform-integration.md`
 
 This three-condition rule is the single promotion threshold for this skill. The Quick Reference row for self-healing Handoff blocks and the aggregator skills (`learning-aggregator`, `learning-aggregator-ci`) all use this same rule.
@@ -182,7 +180,6 @@ grep -l "Area**: backend" .learnings/*.md
 - Escalate recurring issues
 
 ## Detection Triggers
-> 详细内容已移至 `references/detail.md`
 
 ## Priority Guidelines
 | Priority | When to Use |
@@ -211,7 +208,7 @@ Use to filter learnings by codebase region:
 4. **Link related files** - makes fixes easier
 5. **Suggest concrete fixes** - not just "investigate"
 6. **Use consistent categories** - enables filtering
-7. **Promote aggressively** - if in doubt, add to CLAUDE.md or .github/copilot-instructions.md
+7. **Promote aggressively** - if in doubt, add to CLAUDE.md or .md
 8. **Review regularly** - stale learnings lose value
 
 ## Gitignore Options
@@ -281,7 +278,6 @@ A learning qualifies for skill extraction when ANY of these apply:
 2. **Run helper** (or create manually):
    ```bash
    ./skills/self-improvement/scripts/extract-skill.sh skill-name --dry-run
-   ./skills/self-improvement/scripts/extract-skill.sh skill-name
    ```
 3. **Customize SKILL.md**: Fill in template with learning content
 4. **Update learning**: Set status to `promoted_to_skill`, add `Skill-Path`
@@ -337,7 +333,7 @@ This skill works across different AI coding agents with agent-specific activatio
 
 ### GitHub Copilot
 **Activation**: Instructions file (Copilot hooks exist in `.github/hooks/*.json` but their output is ignored for prompt/tool events — they can log, not inject context)
-**Setup**: Add to `.github/copilot-instructions.md`:
+**Setup**: Add to `.md`:
 
 ```markdown
 After solving non-obvious issues, consider logging to `.learnings/`:

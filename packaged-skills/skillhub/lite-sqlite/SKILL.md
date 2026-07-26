@@ -188,8 +188,6 @@ export API_KEY="your_api_key_here"
 ```python
 from sqlite_connector import SQLiteDB
 
-db = SQLiteDB("agent_data.db")
-
 db.create_table("memos", {
     "id": "INTEGER PRIMARY KEY AUTOINCREMENT",
     "title": "TEXT NOT NULL",
@@ -200,9 +198,8 @@ db.create_table("memos", {
 
 db.insert("memos", [title="First memo", content="Hello world", tags="test"])
 
-results = db.query("SELECT * FROM memos WHERE tags = ?", ("test",))
+results = db.", ("test",))
 
-db.update("memos", "id = ?", [content="
 ```
 # ...
 
@@ -212,7 +209,6 @@ db.update("memos", "id = ?", [content="
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
 
-> 详细的输入输出格式请参考下方章节说明。
 ## 常见问题
 # ...
 ### Q1: 如何开始使用Lite Sqlite？

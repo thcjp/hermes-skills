@@ -469,7 +469,8 @@ EOF
 ## 核心能力
 ### 高级外观配置
 
-#### 主题系统
+#
+### 主题系统
 
 **主题分类与推荐**：
 
@@ -488,7 +489,8 @@ EOF
 3. 点击安装
 4. 切换至该主题
 
-#### CSS片段
+#
+### CSS片段
 
 **CSS片段是轻量级自定义方案**，无需创建完整主题：
 
@@ -524,7 +526,6 @@ EOF
 3. 创建`.css`文件
 4. 回到设置启用片段
 
-**输入**: 用户提供高级外观配置所需的指令和必要参数.
 **处理**: 解析高级外观配置的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级外观配置的响应数据,包含状态码、结果和日志.
 ### 快捷键完整自定义
@@ -555,12 +556,12 @@ EOF
 4. 按下自定义快捷键组合
 5. 避免与系统快捷键冲突
 
-**输入**: 用户提供快捷键完整自定义所需的指令和必要参数.
 **处理**: 解析快捷键完整自定义的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回快捷键完整自定义的响应数据,包含状态码、结果和日志.
 ### 完整工作流体系
 
-#### 工作流1：日记笔记（增强版）
+#
+### 工作流1：日记笔记（增强版）
 
 **特点**：晨间规划 + 日间记录 + 晚间反思
 
@@ -575,7 +576,7 @@ tags: [daily]
 # ...
 # 2026-07-18 周六
 # ...
-**输入**: 用户提供完整工作流体系所需的指令和必要参数.
+
 **处理**: 解析完整工作流体系的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回完整工作流体系的响应数据,包含状态码、结果和日志.
 # ...
@@ -608,7 +609,8 @@ tags: [daily]
 - [ ] 评审材料准备
 ```
 
-#### 工作流2：会议笔记
+#
+### 工作流2：会议笔记
 
 ```markdown
 ---
@@ -652,7 +654,8 @@ tags: [meeting, project-a]
 - [[2026-07-15-项目启动会]]
 ```
 
-#### 工作流3：项目笔记
+#
+### 工作流3：项目笔记
 
 ```markdown
 ---
@@ -697,7 +700,8 @@ tags: [project, project-a]
 - [[Projects/ProjectA/需求文档]]
 ```
 
-#### 工作流4：读书笔记
+#
+### 工作流4：读书笔记
 
 详见"120秒标准搭建"中的读书笔记模板.
 **读书笔记工作流**：
@@ -709,7 +713,8 @@ tags: [project, project-a]
 6. 制定行动计划
 7. 用标签分类（#reading #技术 #管理）
 
-#### 工作流5：课程笔记
+#
+### 工作流5：课程笔记
 
 详见"120秒标准搭建"中的课程笔记模板.
 **课程笔记工作流**：
@@ -721,7 +726,8 @@ tags: [project, project-a]
 6. 制定复习计划（1天/3天/7天）
 7. 用标签分类（#course #编程 #设计）
 
-#### 工作流6：文献笔记
+#
+### 工作流6：文献笔记
 
 详见"120秒标准搭建"中的文献笔记模板.
 **文献笔记工作流**：
@@ -772,7 +778,6 @@ git remote add origin git@your-git-server.com:username/my-vault.git
 # 3. 创建.gitignore
 cat > .gitignore << 'EOF'
 .obsidian/workspace.json
-.obsidian/workspace-mobile.json
 .trash/
 *.canvas
 EOF
@@ -783,7 +788,7 @@ git commit -m "initial commit"
 git push -u origin main
 # ...
 # 5. 在其他设备克隆
-git clone git@your-git-server.com:username/my-vault.git ~/Documents/MyVault
+git clone git@your-git-server.git ~/Documents/MyVault
 # ...
 # 6. 安装Obsidian Git插件实现自动同步
 # 设置 → 社区插件 → 搜索"Obsidian Git" → 安装
@@ -864,7 +869,7 @@ git clone git@your-git-server.com:username/my-vault.git ~/Documents/MyVault
 
 ```bash
 # 团队成员各自克隆仓库
-git clone git@your-git-server.com:team/shared-vault.git
+com:team/shared-vault.git
 # ...
 # 工作前拉取最新
 git pull origin main
@@ -1245,8 +1250,6 @@ Obsidian支持的高级Markdown：(1) wikilink（`[[笔记名]]`）；(2) 嵌入
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

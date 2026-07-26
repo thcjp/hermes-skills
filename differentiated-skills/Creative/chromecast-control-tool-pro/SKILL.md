@@ -125,14 +125,12 @@ class ChromecastManager:
         """向设备分组投屏"""
         if group_name in self.groups:
             with ThreadPoolExecutor(max_workers=5) as executor:
-                for name in self.groups[group_name]:
-                    executor.submit(self.cast_to_device, name, url)
+submit(self.cast_to_device, name, url)
 # ...
     def get_all_status(self):
         """获取所有设备状态"""
         statuses = {}
         for name, info in self.devices.items():
-            result = subprocess.run(
                 ['catt', '-d', name, 'status'],
                 capture_output=True, text=True
             )
@@ -143,7 +141,6 @@ class ChromecastManager:
         return statuses
 ```
 
-**输入**: 用户提供多设备同步管理所需的指令和必要参数.
 **处理**: 解析多设备同步管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多设备同步管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -164,7 +161,6 @@ class PlaylistManager:
 # ...
     def add_batch_to_queue(self, device_name, urls):
         """批量添加到队列"""
-        if device_name not in self.queues:
             self.queues[device_name] = []
         self.queues[device_name].extend(urls)
 # ...
@@ -179,7 +175,7 @@ class PlaylistManager:
 # ...
     def play_next(self, device_name):
         """播放队列中的下一个"""
-        if device_name in self.queues and self.queues[device_name]:
+queues and self.queues[device_name]:
             next_url = self.queues[device_name].pop(0)
             self.manager.cast_to_device(device_name, next_url)
             return next_url
@@ -187,11 +183,9 @@ class PlaylistManager:
 # ...
     def clear_queue(self, device_name):
         """清空队列"""
-        if device_name in self.queues:
             self.queues[device_name] = []
 ```
 
-**输入**: 用户提供播放队列管理所需的指令和必要参数.
 **处理**: 解析播放队列管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回播放队列管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -220,7 +214,7 @@ class AutomationManager:
         """定时播放列表"""
         def play_playlist():
             for url in urls:
-                self.manager.cast_to_device(device_name, url)
+manager.cast_to_device(device_name, url)
                 time.sleep(300)  # 每个内容播放5分钟
         self.scheduler.every().day.at(time_str).do(play_playlist)
 # ...
@@ -230,7 +224,6 @@ class AutomationManager:
 # ...
     def stop_all(self):
         """停止所有设备"""
-        for name in self.manager.devices:
             subprocess.run(['catt', '-d', name, 'stop'])
 # ...
     def start(self):
@@ -249,7 +242,6 @@ class AutomationManager:
             time.sleep(1)
 ```
 
-**输入**: 用户提供自动化脚本与定时任务所需的指令和必要参数.
 **处理**: 解析自动化脚本与定时任务的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自动化脚本与定时任务的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -283,14 +275,12 @@ class StatusMonitor:
     def _monitor_loop(self, interval):
         import time
         while self.monitoring:
-            for name in self.manager.devices:
                 status = self._get_device_status(name)
                 if self._has_changed(name, status):
-                    self._notify_change(name, status)
+_notify_change(name, status)
             time.sleep(interval)
 # ...
     def _get_device_status(self, device_name):
-        result = subprocess.run(
             ['catt', '-d', device_name, 'status'],
             capture_output=True, text=True, timeout=5
         )
@@ -306,7 +296,6 @@ class StatusMonitor:
             callback(device_name, new_status)
 ```
 
-**输入**: 用户提供实时状态监控所需的指令和必要参数.
 **处理**: 解析实时状态监控的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回实时状态监控的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级投屏管理系、支持多设备管理、状态监控与定时任、投屏控制专业版、面向专业用户与企、业环境的高级、投屏管理系统、核心能力、统一管理多台、创建与管理视频播、自动播放列表、场景联动、监控所有设备的播、放状态、将设备分组等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -357,8 +346,6 @@ manager.cast_to_group('whole_house', 'https://example.com/jazz.mp3')
 playlist = PlaylistManager(manager)
 playlist.add_batch_to_queue('whole_house', [
     'https://example.com/song1.mp3',
-    'https://example.com/song2.mp3',
-    'https://example.com/song3.mp3',
 ])
 # ...
 # 监控播放状态，自动播放下一首
@@ -379,21 +366,21 @@ automation = AutomationManager(manager)
 # ...
 # 早上播放晨间内容
 automation.schedule_playlist('展示屏', [
-    'https://example.com/morning-ad1.mp4',
-    'https://example.com/morning-ad2.mp4',
-    'https://example.com/morning-ad3.mp4',
+com/morning-ad1.mp4',
+com/morning-ad2.mp4',
+com/morning-ad3.mp4',
 ], '08:00')
 # ...
 # 下午播放午间内容
 automation.schedule_playlist('展示屏', [
-    'https://example.com/afternoon-ad1.mp4',
-    'https://example.com/afternoon-ad2.mp4',
+com/afternoon-ad1.mp4',
+com/afternoon-ad2.mp4',
 ], '12:00')
 # ...
 # 晚上播放晚间内容
 automation.schedule_playlist('展示屏', [
-    'https://example.com/evening-ad1.mp4',
-    'https://example.com/evening-ad2.mp4',
+com/evening-ad1.mp4',
+com/evening-ad2.mp4',
 ], '18:00')
 # ...
 automation.start()

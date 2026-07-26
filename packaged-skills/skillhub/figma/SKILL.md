@@ -41,14 +41,10 @@ category: "Automation"
 ### API Rate Limiting
 Built-in rate limiting and retry logic to handle Figma's API constraints gracefully.
 
-**输入**: 用户提供API Rate Limiting所需的指令和必要参数.
-**处理**: 解析API Rate Limiting的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回API Rate Limiting的处理结果,包含执行状态码、结果数据和执行日志。### Error Handling
+### Error Handling
 Comprehensive error handling with detailed logging and recovery suggestions.
 
-**输入**: 用户提供Error Handling所需的指令和必要参数.
-**处理**: 解析Error Handling的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Error Handling的处理结果,包含执行状态码、结果数据和执行日志。### Multi-Format Support
+### Multi-Format Support
 
 Export assets in PNG, SVG, PDF, and WEBP with platform-specific sizing.- 验证返回数据的完整性和格式正确性
 - 参考`API Rate Limiting`的配置文档进行参数调优

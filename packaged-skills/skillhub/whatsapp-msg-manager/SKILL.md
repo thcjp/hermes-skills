@@ -70,14 +70,13 @@ connector_call_tool --tool "whatsapp_send_media" --params '{
 connector_call_tool --tool "whatsapp_send_media" --params '{
   "phone_number_id": "1029384756",
   "recipient_phone": "+8613800138000",
-  "media_url": "https://example.com/product-demo.mp4",
+com/product-demo.mp4",
   "caption": "产品使用演示视频"
 }'
 # ...
 connector_call_tool --tool "whatsapp_send_media" --params '{
   "phone_number_id": "1029384756",
   "recipient_phone": "+8613800138000",
-  "media_url": "https://example.com/contract.pdf",
   "caption": "服务合同 PDF"
 }'
 ```- 验证返回数据的完整性和格式正确性
@@ -88,7 +87,6 @@ connector_call_tool --tool "whatsapp_send_media" --params '{
 发送带回复按钮的消息，引导用户快速交互,提升转化率.
 > 详细代码示例已移至 `references/detail.md`
 
-**输出**: 返回交互式按钮消息的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. 位置与联系人消息
 ```bash
 connector_call_tool --tool "whatsapp_send_location" --params '{
@@ -113,21 +111,15 @@ connector_call_tool --tool "whatsapp_send_contacts" --params '{
 }'
 ```
 
-**输出**: 返回位置与联系人消息的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `位置与联系人消息` 选项
 - 处理流程: 接收输入 -> 执行位置与联系人消息 -> 返回结果
 - 输入: 用户提供位置与联系人消息所需的参数和指令
-- 输出: 返回位置与联系人消息的处理结果,包含执行状态码、结果数据和执行日志
 
-**输入**: 用户提供消息模板全生命周期管理所需的指令和必要参数.
-**处理**: 解析消息模板全生命周期管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回消息模板全生命周期管理的处理结果,包含执行状态码、结果数据和执行日志.
 ### 5. 媒体上传与复用
 ```bash
 connector_call_tool --tool "whatsapp_upload_media" --params '{
   "phone_number_id": "1029384756",
-  "media_url": "https://example.com/logo.png",
   "media_type": "image/png"
 }'
 # ...
@@ -143,12 +135,10 @@ connector_call_tool --tool "whatsapp_get_media_info" --params '{
 }'
 ```
 
-**输出**: 返回媒体上传与复用的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `媒体上传与复用` 选项
 - 处理流程: 接收输入 -> 执行媒体上传与复用 -> 返回结果
 - 输入: 用户提供媒体上传与复用所需的参数和指令
-- 输出: 返回媒体上传与复用的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 6. 业务资料与多账号管理
 ```bash
@@ -159,8 +149,7 @@ connector_call_tool --tool "whatsapp_get_phone_numbers" --params '{}'
 - 参考`业务资料与多账号管理`的配置文档进行参数调优
 ### 7. 批量消息发送
 PRO版支持批量消息发送,适合营销触达和批量通知场景.
-**输入**: 用户提供批量消息发送所需的指令和必要参数.
-**输出**: 返回批量消息发送的处理结果,包含执行状态码、结果数据和执行日志.
+
 #
 ## 快速开始
 

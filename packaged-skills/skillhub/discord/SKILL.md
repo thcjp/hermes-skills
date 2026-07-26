@@ -61,35 +61,32 @@ category: "Communication"
 - `editMessage`:按 `channelId` + `messageId` 编辑已发消息内容.
 - `deleteMessage`:按 `channelId` + `messageId` 删除消息.
 - `readMessages`:按 `channelId` 拉取最近消息,支持 `limit` 控制条数.
-**输出**: 返回消息管理的处理结果,包含执行状态码、结果数据和执行日志.
 ### 表情回应
 - `react`:对指定消息添加 emoji(如 `✅`、`⚠️`).
 - `reactions`:列出某条消息的回应及对应用户列表,支持 `limit`.
 - `emojiList`:列出服务器可用自定义表情.
 - `emojiUpload`:上传自定义表情,需 `guildId`、`name`、`mediaUrl`,可选 `roleIds` 限定可见角色。PNG/JPG/GIF,≤256KB.
-**处理**: 解析表情回应的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回表情回应的解析响应,包含完成状态码、响应数据和完成日志。### 贴纸任务
+**输出**: 返回表情回应的解析响应,包含完成状态码、响应数据和完成日志。
+### 贴纸任务
 - `sticker`:发送贴纸,`to` 指定目标,`stickerIds` 最多 3 个,可附带 `content`.
 - `stickerUpload`:上传贴纸,需 `guildId`、`name`、`description`、`tags`、`mediaUrl`。PNG/APNG/Lottie JSON,≤512KB.
-**输入**: 用户提供贴纸操作所需的指令和必要参数.
-**输出**: 返回贴纸的处理结果,包含执行状态码、结果数据和执行日志。### 投票创建
+
+### 投票创建
 - `poll`:在频道发起投票,需 `question` + 2~10 个 `answers`,支持 `allowMultiselect`、`durationHours`(默认 24,最大 768 即 32 天).
-**输入**: 用户提供投票创建所需的指令和必要参数.
-**处理**: 解析投票创建的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回投票创建的处理结果,包含执行状态码、结果数据和执行日志。### 线程管理
+
+### 线程管理
 - `threadCreate`:基于消息或频道创建线程,需 `channelId`、`name`,可选 `messageId`.
 - `threadList`:列出服务器下所有活跃线程.
 - `threadReply`:在线程内回复消息.
-**输入**: 用户提供线程管理所需的指令和必要参数.
-**处理**: 解析线程管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 置顶与搜索
+
+### 置顶与搜索
 - `pinMessage` / `listPins`:置顶或列出频道置顶消息.
 - `searchMessages`:按 `guildId` 全文搜索,支持 `content`、`channelIds`、`limit`.
-**输入**: 用户提供置顶与搜索所需的指令和必要参数.
-**输出**: 返回置顶与搜索的处理结果,包含执行状态码、结果数据和执行日志。### 成员与角色
+
+### 成员与角色
 - `memberInfo`:查询成员资料(`guildId` + `userId`).
 - `roleInfo` / `roleAdd` / `roleRemove`:查询或变更角色(默认关闭,需显式开启 `discord.actions.roles`).
-**处理**: 解析成员与角色的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回成员与角色的处理结果,包含执行状态码、结果数据和执行日志。### 频道、语音、事件
+### 频道、语音、事件
 - `channelInfo` / `channelList`:频道详情与列表.
 - `voiceStatus`:查询成员当前语音状态.
 - `eventList`:列出服务器定时事件.
@@ -97,9 +94,7 @@ category: "Communication"
 ### 审核(默认关闭)
 - `timeout`:临时禁言成员(`durationMinutes`).
 - `kick` / `ban`:踢出或封禁成员。需开启 `discord.actions.moderation`.
-**输入**: 用户提供审核(默认关闭)所需的指令和必要参数.
-**处理**: 解析审核(默认关闭)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回审核(默认关闭)的处理结果,包含执行状态码、结果数据和执行日志.
+
 #
 ## 快速开始
 

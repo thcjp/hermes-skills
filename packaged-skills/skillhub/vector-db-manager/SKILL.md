@@ -146,7 +146,6 @@ class MultiModalRetriever:
     async def search_by_image(self, image_url, top_k=20):
         """图片检索商品"""
         img_vec = await self.image_encoder.encode(image_url)
-        return await self.db.search(
             collection="products",
             vector=img_vec,
             vector_field="image_embedding",
@@ -155,8 +154,8 @@ class MultiModalRetriever:
 # ...
     async def search_mixed(self, query_text, image_url, top_k=20):
         """多模态联合检索"""
-        text_vec = await self.text_encoder.encode(query_text)
-        img_vec = await self.image_encoder.encode(image_url)
+text_encoder.encode(query_text)
+image_encoder.encode(image_url)
 # ...
         # 融合两个模态的检索结果
         text_results = await self.db.search(
@@ -193,7 +192,7 @@ class VectorVersionManager:
 # ...
     async def rollback(self, collection, target_version):
         """回滚到指定版本"""
-        snapshot = await self.store.load(collection, target_version)
+store.load(collection, target_version)
         await self.db.restore(collection, snapshot)
         await self.reindex(collection)
 # ...

@@ -90,7 +90,6 @@ collaborative_config = {
 3. 语音智能层 -> 在自然停顿处播报结果
 4. 参会者追问 -> 基于上下文即时回答
 
-**输入**: 用户提供协作式语音策略所需的指令和必要参数.
 ### 屏幕共享与实时演示
 ```bash
 # 启动屏幕共享(会议中动态控制)
@@ -98,13 +97,12 @@ collaborative_config = {
 {"command": "screenshare.start", "port": 3001}
 # ...
 # 共享在线URL
-{"command": "screenshare.start", "url": "https://slides.example.com/..."}
+start", "url": "https://slides.example.com/..."}
 # ...
 # 切换共享内容(无缝切换)
-{"command": "screenshare.swap", "port": 3002}
+swap", "port": 3002}
 # ...
 # 停止共享
-{"command": "screenshare.stop"}
 ```
 
 **实时内容更新模式**:
@@ -121,26 +119,23 @@ with open("/tmp/screenshare/state.json", "w") as f:
 # 会议中切换幻灯片
 state["slide"] = 1
 state["title"] = "市场分析"
-with open("/tmp/screenshare/state.json", "w") as f:
     json.dump(state, f)
 # 页面每2秒轮询,自动更新显示
 ```
 
-**输入**: 用户提供屏幕共享与实时演示所需的指令和必要参数。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `屏幕共享与实时演示` 选项
 - 处理流程: 接收输入 -> 执行屏幕共享与实时演示 -> 返回结果
 - 输入: 用户提供屏幕共享与实时演示所需的参数和指令
-- 输出: 返回屏幕共享与实时演示的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 批量会议调度
 ```python
 # 批量调度多个会议
 meetings = [
     {"url": "https://meet.google.com/aaa", "time": "09:00", "topic": "晨会"},
-    {"url": "https://meet.google.com/bbb", "time": "11:00", "topic": "客户演示"},
-    {"url": "https://meet.google.com/ccc", "time": "14:00", "topic": "项目评审"},
-    {"url": "https://meet.google.com/ddd", "time": "16:00", "topic": "周总结"}
+google.com/bbb", "time": "11:00", "topic": "客户演示"},
+google.com/ccc", "time": "14:00", "topic": "项目评审"},
+google.com/ddd", "time": "16:00", "topic": "周总结"}
 ]
 # ...
 scheduler = MeetingScheduler(
@@ -157,12 +152,10 @@ for meeting in meetings:
 scheduler.run()  # 按计划执行
 ```
 
-**输入**: 用户提供批量会议调度所需的指令和必要参数。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `批量会议调度` 选项
 - 处理流程: 接收输入 -> 执行批量会议调度 -> 返回结果
 - 输入: 用户提供批量会议调度所需的参数和指令
-- 输出: 返回批量会议调度的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 团队管理与多租户
 ```python
@@ -192,9 +185,6 @@ teams = {
 }
 ```
 
-**输入**: 用户提供团队管理与多租户所需的指令和必要参数.
-**处理**: 解析团队管理与多租户的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回团队管理与多租户的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -211,7 +201,7 @@ teams = {
 需求:销售团队需要机器人辅助产品演示,实时展示幻灯片并回答客户问题.
 ```bash
 # 启动销售演示会议
-（请参考skill目录中的脚本文件） "https://meet.google.com/sales-demo" \
+google.com/sales-demo" \
   --mode webpage-av-screenshare \
   --bot-name "产品专家" \
   --template pattern \

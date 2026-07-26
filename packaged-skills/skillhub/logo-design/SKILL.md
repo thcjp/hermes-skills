@@ -104,7 +104,6 @@ python3 vectorize.py --config vectorization_config
 - 关键参数: `自动矢量化` 选项
 - 处理流程: 接收输入 -> 执行自动矢量化 -> 返回结果
 - 输入: 用户提供自动矢量化所需的参数和指令
-- 输出: 返回自动矢量化的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 品牌变体管理
 ```python
@@ -147,8 +146,7 @@ brand_variants = {
 python3 generate_variants.py --config brand_variants
 ```
 
-**输入**: 用户提供品牌变体管理所需的指令和必要参数。
-**处理**: 解析品牌变体管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 设计质量审计
+### 设计质量审计
 ```python
 # 自动设计质量检查
 quality_audit = {
@@ -165,8 +163,6 @@ quality_audit = {
 }
 ```
 
-**输入**: 用户提供设计质量审计所需的指令和必要参数。
-**输出**: 返回设计质量审计的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `品牌变体管理` 选项
 
@@ -203,7 +199,6 @@ python3 generate_logo_system.py \
 brand/
 ├── primary/
 │   ├── logo-primary.svg
-│   ├── logo-primary.png
 │   └── logo-primary-dark.png
 ├── variants/
 │   ├── logo-horizontal.svg
@@ -249,7 +244,6 @@ for brand in sub_brands:
 
 ```bash
 # 批量生成客户方案
-python3 batch_logo_gen.py \
   --client "客户A" \
   --directions 5 \
   --variations-per-direction 3 \
@@ -274,7 +268,6 @@ python3 init_brand.py \
 ### 步骤二:批量生成Logo方向
 
 ```bash
-python3 batch_logo_gen.py \
   --config directions.yml \
   --parallel 3 \
   --auto-validate \
@@ -285,7 +278,6 @@ python3 batch_logo_gen.py \
 
 ```bash
 # 选择优秀方向后,生成完整变体系统
-python3 generate_variants.py \
   --source ./output/best-logo.png \
   --variants all \
   --vectorize \
@@ -430,7 +422,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: Generate Logo System
         run: |
-          python3 generate_logo_system.py \
             --config brand-config.yml \
             --output ./brand/ \
             --vectorize \

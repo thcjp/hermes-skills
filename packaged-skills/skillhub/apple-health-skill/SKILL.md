@@ -89,20 +89,16 @@ export API_KEY="your_api_key_here"
 通过 `GET /api/v1/wod?sport=run&duration=45` 获取随机结构化训练方案，无需认证。参数 `sport` 支持 `run`（跑步）、`bike`（骑行）、`swim`（游泳）、`strength`（力量），默认 `run`。参数 `duration` 指定训练时长（10-300分钟），默认45。适用于快速获取训练建议和运动计划生成.
 ### 2. AI教练对话
 通过 `POST /api/v1/coach/chat` 向AI教练提问健康数据相关问题。请求体包含 `message` 字段（自然语言问题），AI教练拥有用户训练和健康指标的完整上下文。支持查询如"最近一个月静息心率变化"、"本周做了多少次训练"、"VO2 Max趋势如何"等问题。适用于自然语言健康数据查询场景.
-**处理**: 解析AI教练对话的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回AI教练对话的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. 获取训练记录
 
 通过 `GET /api/v1/workouts?start=2026-02-09&end=2026-02-15` 获取指定日期范围内的训练记录。必填参数 `start` 和 `end`（YYYY-MM-DD格式），最大查询范围90天。返回训练列表，包含训练类型、时长、距离、心率等详细数据。适用于训练历史回溯和数据分析.
 ### 4. 性能管理图表（PMC）
 通过 `GET /api/v1/performance/pmc` 获取性能管理图表数据。返回CTL（慢性训练负荷，反映健身水平）、ATL（急性训练负荷，反映疲劳度）和TSB（训练压力平衡，反映状态/形态）。TSB低于-20表示运动员处于疲劳状态，建议安排恢复日。适用于训练负荷监控和恢复评估.
-**输入**: 用户提供性能管理图表（PMC）所需的指令和必要参数.
-**处理**: 解析性能管理图表（PMC）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证返回数据的完整性和格式正确性
+
 - 参考`性能管理图表（PMC）`的配置文档进行参数调优
 ### 5. 性能统计
 通过 `GET /api/v1/performance/stats` 获取从健康数据推导的性能指标。返回FTP（功能阈值功率）、阈值配速、心率区间分布和其他运动表现指标。适用于运动能力评估和训练强度设定.
-**输入**: 用户提供性能统计所需的指令和必要参数.
-**处理**: 解析性能统计的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证返回数据的完整性和格式正确性
+
 - 参考`性能统计`的配置文档进行参数调优
 ### 6. 运动员档案
 
@@ -157,13 +153,13 @@ curl -H "X-API-Key: $HEALTH_API_KEY" \
 # ...
 # 检查训练负荷和疲劳状态
 curl -H "X-API-Key: $HEALTH_API_KEY" \
-  "https://health-api.example.com/api/v1/performance/pmc"
+example.com/api/v1/performance/pmc"
 # 响应包含 CTL（健身）、ATL（疲劳）、TSB（状态）
 # 若 TSB < -20，建议安排恢复日
 # ...
 # 获取性能统计（FTP、心率区间等）
 curl -H "X-API-Key: $HEALTH_API_KEY" \
-  "https://health-api.example.com/api/v1/performance/stats"
+example.com/api/v1/performance/stats"
 ```
 
 ## 错误处理

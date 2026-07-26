@@ -1,9 +1,8 @@
----
-slug: monad-dev-tool-free
+---slug: monad-dev-tool-free
 name: monad-dev-tool-free
 version: 1.0.0
 displayName: Monad开发工具-免费版
-summary: "Monad区块链DApp开发助手,支持合约部署、验证与前端集成,适合个人开发者快速上手。Monad区块链DApp开发助手免费版,面向个人开发者与区块链爱好者。核心能力:"
+summary: "Monad区块链DAp"
 license: Proprietary
 edition: free
 description: Monad区块链DApp开发助手免费版,面向个人开发者与区块链爱好者。核心能力:，可生成提升工作效率
@@ -51,9 +50,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# Monad 开发工具 - 免费版
+category: "Automation"---# Monad 开发工具 - 免费版
 
 ## 概述
 
@@ -64,35 +61,35 @@ Monad 开发工具免费版是面向个人开发者的 Monad 区块链 DApp 开�
 ### 1. 测试网合约部署
 
 支持 Monad 测试网(Chain ID: 10143)上的合约部署,使用 `forge script` 进行可靠部署.
-**输入**: 用户提供测试网合约部署所需的指令和必要参数.
+
 **处理**: 解析测试网合约部署的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回测试网合约部署的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 2. 合约验证
 
 一键验证已部署合约,支持 Monadscan、MonadVision、Socialscan 三大浏览器.
-**输入**: 用户提供合约验证所需的指令和必要参数.
+
 **处理**: 解析合约验证的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回合约验证的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 3. 标准合约模板
 
 内置 ERC20、ERC721 标准合约模板,快速生成代币与 NFT 项目骨架.
-**输入**: 用户提供标准合约模板所需的指令和必要参数.
+
 **处理**: 解析标准合约模板的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回标准合约模板的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 4. 钱包管理
 
 安全生成 Monad 钱包,支持私钥持久化存储与 faucet 领水.
-**输入**: 用户提供钱包管理所需的指令和必要参数.
+
 **处理**: 解析钱包管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回钱包管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 5. 前端集成指导
 
 提供 viem/wagmi 前端集成代码示例,帮助开发者快速搭建 DApp 前端.
-**输入**: 用户提供前端集成指导所需的指令和必要参数.
+
 **处理**: 解析前端集成指导的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回前端集成指导的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
@@ -154,7 +151,7 @@ curl -X POST https://agents.devnads.com/v1/verify \
 
 为新钱包申请测试网代币.
 ```bash
-curl -X POST https://agents.devnads.com/v1/faucet \
+devnads.com/v1/faucet \
   -H "Content-Type: application/json" \
   -d '{"chainId": 10143, "address": "0xYOUR_ADDRESS"}'
 ```
@@ -189,7 +186,7 @@ foundryup
 cast wallet new
 # ...
 # 领取测试网代币
-curl -X POST https://agents.devnads.com/v1/faucet \
+devnads.com/v1/faucet \
   -H "Content-Type: application/json" \
   -d '{"chainId": 10143, "address": "0xYOUR_ADDRESS"}'
 ```

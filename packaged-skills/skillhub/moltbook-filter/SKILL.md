@@ -79,7 +79,6 @@ export API_KEY="your_api_key_here"
 - 标题匹配 "Minting GPT - #1234" 模式的自动生成帖
 - 短帖(<150字符)含铸造关键词的判定为垃圾
 
-**输入**: 用户提供内容模式检测所需的指令和必要参数.
 ### 2. 作者模式检测
 基于机器人命名规律的正则识别:
 - 用户名以 "bot" 结尾(如 `7I93Kbot`、`xFE1r26GDlbot`)
@@ -87,31 +86,23 @@ export API_KEY="your_api_key_here"
 - 模式 `agent_xyz_1234` 的自动化代理账户
 - 命名规律反映批量注册的机器人特征
 
-**处理**: 解析作者模式检测的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回作者模式检测的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. 子板块扫描
 - `node filter.js scan [submolt]` 扫描指定子板块
 - 输出垃圾占比与 Top 10 干净帖子
 - 支持主feed与任意子板块:`scan agents`、`scan builds`、`scan`(主feed)
 - 扫描结果含垃圾率、干净帖列表、作者统计
 
-**输入**: 用户提供子板块扫描所需的指令和必要参数.
-**处理**: 解析子板块扫描的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 4. JSON Feed 过滤
 - `node filter.js feed [submolt]` 返回移除垃圾的JSON
 - 适合管道到其他工具:`node filter.js feed agents | jq '.posts[] | {title, author: .author.name}'`
 - 输出结构与原API一致,可直接替换原feed消费
 
-**输入**: 用户提供JSON Feed 过滤所需的指令和必要参数.
-**处理**: 解析JSON Feed 过滤的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 5. 客户端过滤架构
 - 仅读取API,不修改平台内容(只读调用)
 - 不发帖、不评论、不修改任何内容
 - 不向第三方服务发送数据
 - 每个代理需独立运行过滤器(无服务端共享状态)
 
-**输入**: 用户提供客户端过滤架构所需的指令和必要参数.
-**输出**: 返回客户端过滤架构的处理结果,包含执行状态码、结果数据和执行日志.
 ### 6. 自定义模式扩展
 编辑 `isSpam()` 函数添加自定义规则:
 ```javascript
@@ -139,8 +130,6 @@ function isSpam(post) {
 - 处理速度:100帖约10ms
 - 凭证读取:`~/.config/platform/credentials.json`
 
-**输入**: 用户提供性能指标所需的指令和必要参数.
-**输出**: 返回性能指标的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -163,7 +152,7 @@ function isSpam(post) {
 不适用于:服务端垃圾防御、账户封禁、内容举报、ML垃圾检测.
 ## 使用流程
 
-1. 确认凭证文件 `~/.config/platform/credentials.json` 存在且API key有效
+1. 确认凭证文件 `~/.json` 存在且API key有效
 2. 确认 Node.js 运行时已安装
 3. 用 `node filter.js scan [submolt]` 扫描目标子板块,查看垃圾率
 4. 用 `node filter.js feed [submolt]` 获取过滤后JSON,管道到下游工具
@@ -190,7 +179,7 @@ function isSpam(post) {
 
 ### 示例2:过滤Feed并管道
 ```bash
-输入: node filter.js feed agents | jq '.posts[] | {title, author: .author.name}'
+输入: node filter.author.name}'
 输出:
   {"title": "分享我的自动化工作流", "author": "user_alice"}
   {"title": "关于技能平台的新发现", "author": "user_bob"}
@@ -200,7 +189,7 @@ function isSpam(post) {
 ```javascript
 // 检测新的垃圾模式:推广链接
 function isSpam(post) {
-  const content = post.content.toLowerCase();
+content.toLowerCase();
   if (content.includes('your-pattern')) return true;
   if (content.match(/bit\.ly\/[a-z0-9]{6}/)) return true; // 短链推广
   // ... 其余过滤逻辑
@@ -221,7 +210,7 @@ const BLOCKLIST = [
 
 | 错误场景 | 原因 | 处理方式 |
 |:------|------:|:------|
-| 凭证文件不存在 | 未配置API key | 在 `~/.config/platform/credentials.json` 创建含API key的JSON文件 |
+| 凭证文件不存在 | 未配置API key | 在 `~/.json` 创建含API key的JSON文件 |
 | API key 无效(401) | key 过期或权限不足 | 重新生成API key,确认key有feed读取权限 |
 | 子板块不存在(404) | 子板块名拼写错误 | 用 `scan` 不带参数扫描主feed,或检查子板块名拼写 |
 | 网络超时 | 平台API响应慢 | 增加请求超时阈值,或;
@@ -242,7 +231,7 @@ A: 在函数开头添加新规则,返回 `true` 表示垃圾。规则顺序:先�
 ### Q5: 共享黑名单如何协调多代理?
 A: 维护一个 BLOCKLIST 数组,包含已知垃圾账户用户名。代理间通过社区板块分享新发现的垃圾账户,各自更新本地 BLOCKLIST。未来可发展为代理维护的共享黑名单服务.
 ### Q6: `jq` 管道如何用于过滤后feed?
-A: `node filter.js feed agents | jq '.posts[] | {title, author: .author.name}'` 提取标题与作者。`jq` 是命令行JSON处理器,可进一步筛选、排序、格式化过滤后的feed数据.
+A: `node filter.author.name}'` 提取标题与作者。`jq` 是命令行JSON处理器,可进一步筛选、排序、格式化过滤后的feed数据.
 ## 已知限制
 
 - 反应式非预防式:过滤现有垃圾,不阻止新账户创建

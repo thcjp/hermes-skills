@@ -74,13 +74,11 @@ SECRETS=$(grep -rn 'AKIA[0-9A-Z]\{16\}\|BEGIN.*PRIVATE KEY\|sk-[A-Za-z0-9]\{20,\
 # 检查生产环境调试模式
 DEBUG=$(grep -rn 'DEBUG\s*=\s*True\|debug:\s*true' \
   --include='*.{py,js,ts,yml,yaml,json}' . 2>/dev/null | \
-  grep -v 'node_modules\|\.git\|test' | wc -l)
 [ "$DEBUG" -gt 0 ] && echo "[!] 发现 ${DEBUG} 处调试模式开启" && ((ISSUES++))
 # ...
 # 检查CORS通配符
 CORS=$(grep -rn "Access-Control-Allow-Origin.*\*" \
   --include='*.{py,js,ts,go}' . 2>/dev/null | \
-  grep -v 'node_modules\|\.git' | wc -l)
 [ "$CORS" -gt 0 ] && echo "[!] 发现 ${CORS} 处CORS通配符配置" && ((ISSUES++))
 # ...
 echo ""
@@ -102,7 +100,6 @@ echo "关键风险检查完成,发现问题: ${ISSUES} 项"
 - 服务账号权限过大
 - 无密钥轮换策略
 
-**输入**: 用户提供安全态势快速检查所需的指令和必要参数.
 **处理**: 解析安全态势快速检查的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回安全态势快速检查的响应数据,包含状态码、结果和日志.
 ### 2. OWASP Top 10 基础审计
@@ -137,7 +134,6 @@ grep -rn "DEBUG\s*=\s*True\|debug:\s*true" \
   --include='*.{py,js,ts,yml,yaml}' . 2>/dev/null | grep -v test
 ```
 
-**输入**: 用户提供OWASP Top 10 基础审计所需的指令和必要参数.
 **处理**: 解析OWASP Top 10 基础审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回OWASP Top 10 基础审计的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -172,7 +168,6 @@ threats:
     status: "open"
 ```
 
-**输入**: 用户提供威胁登记管理所需的指令和必要参数.
 **处理**: 解析威胁登记管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回威胁登记管理的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级安全评估与、威胁建模工具、提供安全态势检查、OWASP、基础审计与漏洞管、适合个人开发者快、速安全自查、网络安全评估引擎、免费版、为个人开发者提供、基础安全评估与威、胁建模能力、核心能力、安全态势快速检查、Top、基础审计、威胁登记管理、漏洞生命周期跟踪、适用场景、项目上线前安全自、代码安全审查、基础威胁建模、差异化、免费版聚焦核心评、估能力、无需额外工具依赖、速上手、适用关键词、安全评估、威胁建模、漏洞管理、security、assessment、threat、modeling等.
@@ -198,8 +193,8 @@ ISSUES=0
 echo ""
 echo "--- 1. 密钥泄露检查 ---"
 for pattern in 'AKIA[0-9A-Z]\{16\}' 'BEGIN.*PRIVATE KEY' 'sk-[A-Za-z0-9]\{20,\}' 'ghp_[A-Za-z0-9]\{36\}'; do
-    count=$(grep -rn "$pattern" --include='*.{js,ts,py,go,env,yml,yaml,json}' . 2>/dev/null | \
-            grep -v 'node_modules\|\.git\|example\|test' | wc -l)
+    count=$(grep -rn "$pattern" --include='*. 2>/dev/null | \
+git\|example\|test' | wc -l)
     [ "$count" -gt 0 ] && echo "  [!] 发现 ${count} 处匹配: ${pattern}" && ((ISSUES++))
 done
 # ...
@@ -280,7 +275,7 @@ bash security-check.sh
 
 ```bash
 # 检查注入风险
-grep -rn "query\|execute" --include='*.py' . | grep -i "f\"\|%s"
+py' . | grep -i "f\"\|%s"
 # ...
 # 检查XSS风险
 grep -rn "innerHTML\|dangerouslySetInnerHTML" --include='*.{js,ts,jsx}' .

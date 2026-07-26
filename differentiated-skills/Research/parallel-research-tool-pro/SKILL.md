@@ -53,7 +53,6 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 | 研究模板 | 固定 | 自定义模板 |
 | 历史检索 | 不支持 | 全文检索 |
 
-**输入**: 用户提供能力矩阵所需的指令和必要参数.
 **处理**: 解析能力矩阵的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回能力矩阵的响应数据,包含状态码、结果和日志.
 ### 处理器等级
@@ -77,14 +76,13 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 [PRO] -fast     - 速度优先（如 ultra-fast）
 ```
 
-**输入**: 用户提供处理器等级所需的指令和必要参数.
 **处理**: 解析处理器等级的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回处理器等级的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -145,7 +143,6 @@ for run_id in $(cat run_ids.txt); do
     parallel-research status $run_id
 done
 # ...
-for run_id in $(cat run_ids.txt); do
     parallel-research result $run_id > ~/research-pro/results/${run_id}.md
 done
 ```
@@ -174,7 +171,6 @@ schedules:
     output:
       format: word
       path: "~/research-pro/reports/monthly_competitive_{date}.docx"
-    notify: ["strategy@company.com"]
 EOF
 ```
 
@@ -345,44 +341,34 @@ class ParallelResearchProClient:
 # ...
     def batch_research(self, topics, processor="ultra"):
         """批量多主题研究"""
-        resp = requests.post(
             f"{self.base_url}/v1/research/batch",
-            headers=self.headers,
             json={"topics": topics, "processor": processor}
         )
         return resp.json()
 # ...
     def get_status(self, run_id):
         """获取研究状态"""
-        resp = requests.get(
             f"{self.base_url}/v1/research/{run_id}/status",
-            headers=self.headers
         )
         return resp.json()
 # ...
     def get_result(self, run_id, format="markdown"):
         """获取研究结果"""
-        resp = requests.get(
             f"{self.base_url}/v1/research/{run_id}/result",
-            headers=self.headers,
             params={"format": format}
         )
         return resp.json()
 # ...
     def create_schedule(self, config):
         """创建定时研究任务"""
-        resp = requests.post(
             f"{self.base_url}/v1/schedules",
-            headers=self.headers,
             json=config
         )
         return resp.json()
 # ...
     def search_history(self, query):
         """搜索历史研究"""
-        resp = requests.get(
             f"{self.base_url}/v1/history",
-            headers=self.headers,
             params={"q": query}
         )
         return resp.json()
@@ -422,7 +408,6 @@ cat > ~/research-pro/auto_check.sh << 'EOF'
 for run_id in $(cat ~/research-pro/run_ids.txt); do
     status=$(parallel-research status $run_id | jq -r '.status')
     if [ "$status" = "completed" ]; then
-        parallel-research result $run_id > ~/research-pro/results/${run_id}.md
         echo "完成: $run_id"
         curl -X POST "https://hooks.notify.local/research" \
             -d "{\"run_id\":\"$run_id\",\"status\":\"completed\"}"

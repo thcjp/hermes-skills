@@ -113,10 +113,10 @@ const tools = [
 ];
 // ...
 async function chatWithTools(message) {
-  const resp = await fetch('https://api.deepseek.com/v1/chat/completions', {
+deepseek.com/v1/chat/completions', {
     method: 'POST',
     headers: {
-      'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`,
+env.DEEPSEEK_API_KEY}`,
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({

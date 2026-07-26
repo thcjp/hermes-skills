@@ -192,7 +192,6 @@ flow-manager instance remove "测试环境"
 | --token | string | 否 | - | 认证Token（替代用户名密码） |
 | --verbose | bool | 否 | false | 显示详细状态 |
 
-**输入**: 用户提供多实例管理（专业版）所需的指令和必要参数.
 **处理**: 解析多实例管理（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多实例管理（专业版）的响应数据,包含状态码、结果和日志.
 ### 2. 完整备份与恢复（专业版）
@@ -211,7 +210,6 @@ flow-manager backup schedule --interval daily --retention 30
 flow-manager restore backup-20260130.json --confirm
 # ...
 # 选择性恢复（仅恢复流程）
-flow-manager restore backup-20260130.json --only flows
 # ...
 # 备份对比
 flow-manager backup diff backup-old.json backup-new.json
@@ -223,7 +221,6 @@ flow-manager backup diff backup-old.json backup-new.json
 - 支持选择性恢复（仅流程/仅上下文/仅配置）
 - 备份文件支持加密存储
 
-**输入**: 用户提供完整备份与恢复（专业版）所需的指令和必要参数.
 **处理**: 解析完整备份与恢复（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回完整备份与恢复（专业版）的响应数据,包含状态码、结果和日志.
 ### 3. Docker容器编排（专业版）
@@ -255,7 +252,6 @@ flow-manager docker resources --cpu 2 --memory 2g
 flow-manager docker health
 ```
 
-**输入**: 用户提供Docker容器编排（专业版）所需的指令和必要参数.
 **处理**: 解析Docker容器编排（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Docker容器编排（专业版）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -297,7 +293,6 @@ flow-manager monitor report --output "perf-report.md" --period "7d"
 | flow-errors | 流程错误数 | >0 |
 | msg-rate | 消息处理速率 | - |
 
-**输入**: 用户提供性能监控与告警（专业版）所需的指令和必要参数.
 **处理**: 解析性能监控与告警（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回性能监控与告警（专业版）的响应数据,包含状态码、结果和日志.
 ### 5. 批量节点操作（专业版）
@@ -320,7 +315,6 @@ flow-manager batch disable --filter "category=deprecated"
 flow-manager batch analyze --output "node-deps.json"
 ```
 
-**输入**: 用户提供批量节点操作（专业版）所需的指令和必要参数.
 **处理**: 解析批量节点操作（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量节点操作（专业版）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -344,7 +338,6 @@ flow-manager version tag <flow-id> --tag "stable"
 flow-manager version export <flow-id> --version "v1.0" --output "flow-v1.0.json"
 ```
 
-**输入**: 用户提供流程版本对比与回滚（专业版）所需的指令和必要参数.
 **处理**: 解析流程版本对比与回滚（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回流程版本对比与回滚（专业版）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -371,7 +364,6 @@ flow-manager audit report --period "30d" --output "audit-report.md"
 flow-manager audit compliance --standard "ISO27001"
 ```
 
-**输入**: 用户提供审计日志（专业版）所需的指令和必要参数.
 **处理**: 解析审计日志（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回审计日志（专业版）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -394,7 +386,6 @@ flow-manager recovery trigger --instance "生产环境"
 
 ---
 
-**输入**: 用户提供自动故障恢复（专业版）所需的指令和必要参数.
 **处理**: 解析自动故障恢复（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自动故障恢复（专业版）的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全功能、含多实例、性能监控与审计日、流程管理器专业版、是在免费版基础上、的全功能升级、团队与自动化运维、提供企业级、实例管理能力、除核心流程操作外、解锁多实例管理、完整备份恢复、性能监控告警、流程版本对比回滚、审计日志七大高级等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -814,8 +805,6 @@ flow-manager stats --verbose
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

@@ -78,8 +78,7 @@ clawlink_list_tools({ integration: "discord" });
 ```
 
 未连接时返回 `integration_not_found`,需先完成 OAuth 配对流程.
-**输入**: 用户提供先验证 ClawLink 集成可用所需的指令和必要参数.
-**处理**: 解析先验证 ClawLink 集成可用的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 ### 2. 鉴权方式必须匹配
 
 | 鉴权方式 | 适用工具 | 限制 |

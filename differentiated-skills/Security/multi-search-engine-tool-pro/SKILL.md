@@ -48,12 +48,10 @@ category: "Security"
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供16引擎聚合搜索(专业版独有)所需的指令和必要参数.
 **处理**: 解析16引擎聚合搜索(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回16引擎聚合搜索(专业版独有)的响应数据,包含状态码、结果和日志.
 ### 2. 批量关键词搜索(专业版独有)
 
-**输入**: 用户提供批量关键词搜索(专业版独有)所需的指令和必要参数.
 **处理**: 解析批量关键词搜索(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量关键词搜索(专业版独有)的响应数据,包含状态码、结果和日志.
 ### 3. 搜索结果缓存(专业版独有)
@@ -108,7 +106,7 @@ class SearchCache:
     def set(self, query, result, engine=None):
         """设置缓存"""
         key = self._get_cache_key(query, engine)
-        cache_file = os.path.join(self.cache_dir, f"{key}.json")
+path.join(self.cache_dir, f"{key}.json")
 # ...
         result["timestamp"] = datetime.utcnow().isoformat() + "Z"
 # ...
@@ -135,7 +133,6 @@ class SearchCache:
         }
 ```
 
-**输入**: 用户提供搜索结果缓存(专业版独有)所需的指令和必要参数.
 **处理**: 解析搜索结果缓存(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回搜索结果缓存(专业版独有)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -171,9 +168,8 @@ def search():
     if engine:
         result = aggregator._search_engines(query, [engine])
     elif engine_type:
-        result = aggregator.search_by_type(query, engine_type)
+search_by_type(query, engine_type)
     else:
-        result = aggregator.search_all(query)
 # ...
     cache.set(query, result, engine)
 # ...
@@ -210,7 +206,6 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 ```
 
-**输入**: 用户提供REST API服务(专业版独有)所需的指令和必要参数.
 **处理**: 解析REST API服务(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回REST API服务(专业版独有)的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级多搜索引擎、聚合平台、个引擎、结果去重排序、批量搜索、API、访问与本地缓存、适合专业信息检索、多搜索引擎专业版、为专业用户提供全、方位多搜索引擎聚、合与检索能力、核心能力、引擎聚合搜索、智能去重排序、批量关键词搜索、本地结果缓存、JSON、CSV、适用场景、专业信息检索、市场调研、竞品分析、学术研究、差异化、专业版兼容免费版、搜索配置、新增结果聚合分析、满足专业检索需求、适用关键词、搜索聚合、结果去重、结果缓存、search、aggregation、dedup、batch等.

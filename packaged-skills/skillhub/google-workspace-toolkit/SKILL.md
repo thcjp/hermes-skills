@@ -76,14 +76,13 @@ category: "Automation"
 - `calendar.findFreeTime`:查找空闲时间
 - `calendar.respondToEvent`:响应事件邀请
 
-**输入**: 用户提供二、Calendar 高级日程管理(8个工具)所需的指令和必要参数.
-**处理**: 解析二、Calendar 高级日程管理(8个工具)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 三、Drive 文件管理(3个工具)
+### 三、Drive 文件管理(3个工具)
 - `drive.search`:搜索文件
 - `drive.downloadFile`:下载文件
 - `drive.findFolder`:查找文件夹
 
-**输入**: 用户提供三、Drive 文件管理(3个工具)所需的指令和必要参数.
-**输出**: 返回三、Drive 文件管理(3个工具)的解析响应,包含完成状态码、响应数据和完成日志。### 四、Docs 文档任务(8个工具,专业版独有)
+**输出**: 返回三、Drive 文件管理(3个工具)的解析响应,包含完成状态码、响应数据和完成日志。
+### 四、Docs 文档任务(8个工具,专业版独有)
 - `docs.create`:创建新文档
 - `docs.find`:查找文档
 - `docs.getText`:获取文档全文
@@ -93,23 +92,23 @@ category: "Automation"
 - `docs.move`:移动文档
 - `docs.extractIdFromUrl`:从 URL 提取文档 ID
 
-**输入**: 用户提供四、Docs 文档操作(8个工具,专业版独有)所需的指令和必要参数.
-**解析**: 解析四、Docs 文档任务(8个工具,专业版独有)的输入参数,完成核心解析逻辑,返回结构化响应和完成状态。### 五、Sheets 表格任务(4个工具,专业版独有)
+**解析**: 解析四、Docs 文档任务(8个工具,专业版独有)的输入参数,完成核心解析逻辑,返回结构化响应和完成状态。
+### 五、Sheets 表格任务(4个工具,专业版独有)
 - `sheets.getText`:获取表格文本
 - `sheets.getRange`:按范围读取数据
 - `sheets.find`:查找数据
 - `sheets.getMetadata`:获取表格元数据
 
-**输入**: 用户提供五、Sheets 表格操作(4个工具,专业版独有)所需的指令和必要参数.
 **解析**: 解析五、Sheets 表格任务(4个工具,专业版独有)的输入参数,完成核心解析逻辑,返回结构化响应和完成状态.
-**输出**: 返回五、Sheets 表格任务(4个工具,专业版独有)的解析响应,包含完成状态码、响应数据和完成日志。### 六、Slides 幻灯片任务(3个工具,专业版独有)
+**输出**: 返回五、Sheets 表格任务(4个工具,专业版独有)的解析响应,包含完成状态码、响应数据和完成日志。
+### 六、Slides 幻灯片任务(3个工具,专业版独有)
 - `slides.getText`:获取幻灯片文本
 - `slides.find`:查找文本
 - `slides.getMetadata`:获取幻灯片元数据
 
-**输入**: 用户提供六、Slides 幻灯片操作(3个工具,专业版独有)所需的指令和必要参数.
 **解析**: 解析六、Slides 幻灯片任务(3个工具,专业版独有)的输入参数,完成核心解析逻辑,返回结构化响应和完成状态.
-**输出**: 返回六、Slides 幻灯片任务(3个工具,专业版独有)的解析响应,包含完成状态码、响应数据和完成日志。### 七、Chat 群组协作(8个工具,专业版独有)
+**输出**: 返回六、Slides 幻灯片任务(3个工具,专业版独有)的解析响应,包含完成状态码、响应数据和完成日志。
+### 七、Chat 群组协作(8个工具,专业版独有)
 - `chat.listSpaces`:列出所有空间
 - `chat.findSpaceByName`:按名称查找空间
 - `chat.sendMessage`:发送空间消息
@@ -123,20 +122,15 @@ category: "Automation"
 - `people.getUserProfile`:获取用户资料
 - `people.getMe`:获取当前用户信息
 
-**处理**: 解析八、People 人员管理(2个工具,专业版独有)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回八、People 人员管理(2个工具,专业版独有)的处理结果,包含执行状态码、结果数据和执行日志。### 九、Time 时间工具(3个工具,专业版独有)
+### 九、Time 时间工具(3个工具,专业版独有)
 - `time.getCurrentDate`:获取当前日期
 - `time.getCurrentTime`:获取当前时间
 - `time.getTimeZone`:获取时区
 
-**处理**: 解析九、Time 时间工具(3个工具,专业版独有)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回九、Time 时间工具(3个工具,专业版独有)的处理结果,包含执行状态码、结果数据和执行日志。### 十、Auth 认证管理(2个工具)
+### 十、Auth 认证管理(2个工具)
 - `auth.clear`:清除凭据
 - `auth.refreshToken`:刷新令牌
 
-**输入**: 用户提供十、Auth 认证管理(2个工具)所需的指令和必要参数.
-**处理**: 解析十、Auth 认证管理(2个工具)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回十、Auth 认证管理(2个工具)的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -235,7 +229,6 @@ import json
 # ...
 def fetch_sheet_data(sheet_id, sheet_range):
     """从指定 Sheets 读取数据"""
-    result = subprocess.run([
         'gwtool', 'call', '--server', 'google-workspace',
         '--tool', 'sheets.getRange',
         f'spreadsheetId={sheet_id}',
@@ -391,12 +384,10 @@ class WorkspaceToolkit:
 # ...
     def call(self, tool_name, **params):
         cmd = ['gwtool', 'call', '--server', self.server, '--tool', tool_name]
-        for key, value in params.items():
             if isinstance(value, (dict, list)):
-                cmd.append(f'{key}={json.dumps(value)}')
             else:
                 cmd.append(f'{key}={value}')
-        result = subprocess.run(cmd, capture_output=True, text=True)
+run(cmd, capture_output=True, text=True)
         return json.loads(result.stdout) if result.stdout else {}
 # ...
     def get_current_user(self):
@@ -465,7 +456,7 @@ gwtool call --server google-workspace --tool "gmail.search" query="is:unread" ma
 # ...
 # 切换到账户 B
 gwtool call --server google-workspace --tool "auth.clear"
-gwtool call --server google-workspace --tool "gmail.search" query="is:unread" maxResults=5
+search" query="is:unread" maxResults=5
 ```
 
 ### Q6: 49 个工具是否都需要单独授权?

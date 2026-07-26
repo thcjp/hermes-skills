@@ -121,7 +121,7 @@ async def batch_download():
         "BV1zz411c9oF"
     ]
 # ...
-    result = await app.execute("downloader", "batch_download",
+execute("downloader", "batch_download",
         urls=urls,
         quality="1080p+",  # 专业版支持高清
         format="mp4",
@@ -132,12 +132,10 @@ async def batch_download():
 asyncio.run(batch_download())
 ```
 
-**输入**: 用户提供批量下载与队列管理所需的指令和必要参数。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `批量下载与队列管理` 选项
 - 处理流程: 接收输入 -> 执行批量下载与队列管理 -> 返回结果
 - 输入: 用户提供批量下载与队列管理所需的参数和指令
-- 输出: 返回批量下载与队列管理的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 3. 数据追踪与对比分析
 ```python
@@ -159,12 +157,10 @@ async def track_and_compare():
 asyncio.run(track_and_compare())
 ```
 
-**输入**: 用户提供数据追踪与对比分析所需的指令和必要参数。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `数据追踪与对比分析` 选项
 - 处理流程: 接收输入 -> 执行数据追踪与对比分析 -> 返回结果
 - 输入: 用户提供数据追踪与对比分析所需的参数和指令
-- 输出: 返回数据追踪与对比分析的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 4. 凭证安全管理
 ```python
@@ -189,8 +185,6 @@ app.auth.persist = True   # 启用持久化
 app.auth.clear_persisted()  # 清除持久化文件
 ```
 
-**输入**: 用户提供凭证安全管理所需的指令和必要参数.
-**输出**: 返回凭证安全管理的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `凭证安全管理` 选项
 
@@ -286,11 +280,10 @@ async def batch_archive():
         "BV1aa411c0pG"
     ]
 # ...
-    result = await app.execute("downloader", "batch_download",
+execute("downloader", "batch_download",
         urls=video_list,
         quality="4k",      # 4K超清
         format="mp4",
-        output_dir="./archive/4k_videos"
     )
 # ...
     # 批量获取字幕
@@ -299,7 +292,6 @@ async def batch_archive():
             url=bv,
             language="zh-CN",
             format="srt",
-            output_dir="./archive/subtitles"
         )
 # ...
     print(f"归档完成: {result}")

@@ -370,7 +370,6 @@ for (const cmdId of commands) {
 // 完整的权益发放与消费流程
 // ...
 // 1. 查询用户是否有有效订阅
-const entitlements = await integration.call_tool({
   tool: "discord_get_current_user_application_entitlements",
   parameters: { application_id: "987654321" }
 });

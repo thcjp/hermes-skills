@@ -55,7 +55,6 @@ category: "Automation"
 - 邮件发送:支持指定收件人、主题、正文的一键发送
 - 邮件读取:获取邮件正文与元数据
 
-**输入**: 用户提供邮件管理(Gmail)所需的指令和必要参数.
 **处理**: 解析邮件管理(Gmail)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回邮件管理(Gmail)的响应数据,包含状态码、结果和日志.
 ### 日历管理(Calendar)
@@ -63,7 +62,6 @@ category: "Automation"
 - 事件查询:按时间范围列出日历事件
 - 多日历支持:可查询指定日历 ID 的事件列表
 
-**输入**: 用户提供日历管理(Calendar)所需的指令和必要参数.
 **处理**: 解析日历管理(Calendar)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回日历管理(Calendar)的响应数据,包含状态码、结果和日志.
 ### 云盘管理(Drive)
@@ -71,7 +69,6 @@ category: "Automation"
 - 文件搜索:按关键词检索云端文件
 - 文件列表:获取最近文件清单
 
-**输入**: 用户提供云盘管理(Drive)所需的指令和必要参数.
 **处理**: 解析云盘管理(Drive)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回云盘管理(Drive)的响应数据,包含状态码、结果和日志.
 ### 认证与安全
@@ -80,7 +77,6 @@ category: "Automation"
 - 多账户配置(基础)
 - 凭据本地加密存储
 
-**输入**: 用户提供认证与安全所需的指令和必要参数.
 **处理**: 解析认证与安全的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回认证与安全的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
@@ -154,7 +150,6 @@ gog auth list
 
 ```bash
 # 将常用账户设为默认,避免每次输入 --account
-export GOG_ACCOUNT=you@gmail.com
 ```
 
 ### 第三步:开始使用
@@ -185,7 +180,6 @@ no_input: true
 
 ```bash
 # 设置默认账户
-export GOG_ACCOUNT=you@gmail.com
 # ...
 # 设置输出格式为JSON(便于脚本处理)
 export GOG_OUTPUT=json
@@ -232,7 +226,7 @@ echo "主题: 周报提交"
 echo "正文: 本周周报已更新"
 read -p "确认发送?(y/N)" confirm
 if [ "$confirm" = "y" ]; then
-    gog gmail send --to team@example.com --subject "周报提交" --body "本周周报已更新"
+com --subject "周报提交" --body "本周周报已更新"
 fi
 ```
 
@@ -257,7 +251,7 @@ Gmail 搜索语法强大,熟练使用可大幅提升检索效率:
 
 ```bash
 gog auth remove you@gmail.com
-gog auth add you@gmail.com --services gmail,calendar,drive
+com --services gmail,calendar,drive
 ```
 
 ### Q2: 搜索邮件返回结果为空?

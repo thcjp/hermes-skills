@@ -40,7 +40,6 @@ PRO版完全兼容免费版,可直接继承免费版的API Key与配置,并在�
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供批量音乐生成所需的指令和必要参数.
 **处理**: 解析批量音乐生成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量音乐生成的响应数据,包含状态码、结果和日志.
 ### 高质量音频输出
@@ -74,7 +73,6 @@ curl -X POST https://api.cellcog.com/v1/music/generate \
   -o epic-music.flac
 ```
 
-**输入**: 用户提供高质量音频输出所需的指令和必要参数.
 **处理**: 解析高质量音频输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高质量音频输出的响应数据,包含状态码、结果和日志.
 ### 版权资产管理
@@ -111,7 +109,6 @@ license_manager = {
 }
 ```
 
-**输入**: 用户提供版权资产管理所需的指令和必要参数.
 **处理**: 解析版权资产管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回版权资产管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -158,14 +155,12 @@ music_library = {
 }
 ```
 
-**输入**: 用户提供音乐库管理所需的指令和必要参数.
 **处理**: 解析音乐库管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回音乐库管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 音乐质量审计
 
-**输入**: 用户提供音乐质量审计所需的指令和必要参数.
 **处理**: 解析音乐质量审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回音乐质量审计的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：CellCog、引擎的企业级音乐、生成系统、支持批量生成、版权管理、高质量输出与、适合团队与商业项、音乐生成专业版为、企业与内容团队提、供系统化的、音乐生成解决方案、在免费版基础生成、能力之上、增加批量生成、高质量音频输出、版权资产管理、音乐库管理与、集成能力、Use、when、需要视频处理、音频编辑、媒体转换、配音生成时使用、不适用于版权受保、护的媒体内容处理、适用于独立开发者、企业团队和自动化、工作流场景等.
@@ -235,7 +230,6 @@ for scene in game_scenes:
 ## 快速开始
 ### Step 1:初始化音乐资产管理
 ```bash
-python3 init_music_library.py \
   --brand "MyBrand" \
   --output ./music-library/ \
   --license-tracking \
@@ -244,7 +238,6 @@ python3 init_music_library.py \
 
 ### Step 2:配置批量生成
 ```bash
-python3 batch_music_gen.py \
   --config music-tasks.yml \
   --parallel 5 \
   --format flac \
@@ -296,7 +289,6 @@ jobs:
         env:
           CELLCOG_API_KEY: ${{ secrets.CELLSOG_API_KEY }}
         run: |
-          python3 batch_music_gen.py \
             --config music-tasks/config.yml \
             --parallel 5 \
             --format flac \
@@ -305,7 +297,6 @@ jobs:
             --quality-check
       - name: License Audit
         run: |
-          python3 license_audit.py \
             --library ./music-library/ \
             --report ./audit/
       - name: Upload Music

@@ -56,28 +56,28 @@ category: "Operations"
 ### 1. 单次截图
 
 截取当前屏幕画面,保存为 PNG/JPG 图片.
-**输入**: 用户提供单次截图所需的指令和必要参数.
+
 **处理**: 解析单次截图的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回单次截图的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 2. 定时截图
 
 按设定间隔自动截图,适合长时间监控场景.
-**输入**: 用户提供定时截图所需的指令和必要参数.
+
 **处理**: 解析定时截图的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时截图的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 3. 本地管理
 
 截图按时间戳命名,自动归档到指定目录.
-**输入**: 用户提供本地管理所需的指令和必要参数.
+
 **处理**: 解析本地管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回本地管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 4. 基础分析
 
 对截图进行基础内容识别(文字提取、颜色分析).
-**输入**: 用户提供基础分析所需的指令和必要参数.
+
 **处理**: 解析基础分析的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回基础分析的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -86,7 +86,6 @@ category: "Operations"
 - 主动模式:用户主动触发截图
 - 被动模式:按计划自动截图
 
-**输入**: 用户提供双模式运行所需的指令和必要参数.
 **处理**: 解析双模式运行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回双模式运行的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
@@ -109,12 +108,11 @@ category: "Operations"
 python3 screen_capture.py --mode single --output /tmp/screenshot.png
 # ...
 # 截取指定区域
-python3 screen_capture.py --mode single \
   --region "100,100,800,600" \
   --output /tmp/region.png
 # ...
 # 截取并查看
-python3 screen_capture.py --mode single --output /tmp/shot.png
+py --mode single --output /tmp/shot.png
 open /tmp/shot.png  # macOS
 ```
 
@@ -123,7 +121,7 @@ open /tmp/shot.png  # macOS
 按固定间隔自动截图,记录工作进度.
 ```bash
 # 每 5 分钟截图一次
-python3 screen_capture.py --mode interval \
+py --mode interval \
   --interval 300 \
   --output-dir /tmp/screenshots \
   --duration 3600
@@ -142,7 +140,6 @@ python3 screen_capture.py --mode interval \
 对截图进行基础文字提取.
 ```bash
 # 截图并提取文字
-python3 screen_capture.py --mode single --output /tmp/shot.png --ocr
 # ...
 # 输出:
 # 截图已保存: /tmp/shot.png
@@ -188,7 +185,7 @@ pip install Pillow pyautogui pytesseract
 
 ```bash
 # 截取全屏
-python3 screen_capture.py --mode single --output ~/screenshot.png
+py --mode single --output ~/screenshot.png
 # ...
 # 查看截图
 open ~/screenshot.png  # macOS

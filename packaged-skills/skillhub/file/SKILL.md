@@ -76,7 +76,6 @@ category: "Automation"
 - **项目文件夹模板**：每个项目统一分类 — 工作文档、参考材料、assets、deliverables、communications
 - **归档机制**：项目完成后干净归档 — 压缩需保留的、删除不需要的，确保一年后客户提问时能快速找到
 
-**处理**: 解析文件夹结构设计（Folder Structure）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 文件检索与找回（Finding Lost Files）
 通过自然语言描述检索找不到的文件：
 
@@ -85,7 +84,6 @@ category: "Automation"
 - **根因分析**：危机过后分析文件为什么难找 — 检索问题几乎总是命名或组织问题的伪装
 - **预防措施**：确保类似文件下次可在秒级而非分钟级找到
 
-**输入**: 用户提供文件检索与找回（Finding Lost Files）所需的指令和必要参数.
 ### Downloads 与 Desktop 清理（Inbox Zero for Files）
 像邮件 Inbox Zero 一样处理文件堆积点：
 
@@ -94,8 +92,7 @@ category: "Automation"
 - **定期处理**：每周 5 分钟检查 Downloads 文件夹，项目结束时 15 分钟收尾清理
 - **系统 vs 积累**：区分运行的系统和积累债务的系统 — 定期处理的文件环境保持可控
 
-**输入**: 用户提供Downloads 与 Desktop 清理（Inbox Zero for Files）所需的指令和必要参数.
-**输出**: 返回Downloads 与 Desktop 清理（Inbox Zero for Files）的处理结果,包含执行状态码、结果数据和执行日志。### 关键文档 inventory 管理（Critical Documents）
+### 关键文档 inventory 管理（Critical Documents）
 识别和管理有实际后果的重要文档：
 
 - **文档类型**：合同、税务文件、医疗记录、财务报表、法律信函 — 丢失或无法访问会有实际后果
@@ -104,9 +101,7 @@ category: "Automation"
 - **到期追踪**：追踪文档的有效期和更新时间，避免需要时不知道是否有这份文件
 - **备份策略**：关键文档多重备份，确保可访问性
 
-**输入**: 用户提供关键文档 inventory 管理（Critical Documents）所需的指令和必要参数.
-**处理**: 解析关键文档 inventory 管理（Critical Documents）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回关键文档 inventory 管理（Critical Documents）的处理结果,包含执行状态码、结果数据和执行日志。### 文件维护习惯养成（Maintenance Without Effort）
+### 文件维护习惯养成（Maintenance Without Effort）
 建立足够轻量可持续的文件管理习惯：
 
 - **低摩擦原则**：正确归档只需 10 秒而非 10 分钟，结构清晰到不存在"该放哪"的问题
@@ -115,8 +110,6 @@ category: "Automation"
 - **季度回顾**：季度检查容易积累杂物的文件夹
 - **目标**：不是完美系统，而是维护成本足够低以至于你实际会维护的系统
 
-**输入**: 用户提供文件维护习惯养成（Maintenance Without Effort）所需的指令和必要参数.
-**输出**: 返回文件维护习惯养成（Maintenance Without Effort）的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 

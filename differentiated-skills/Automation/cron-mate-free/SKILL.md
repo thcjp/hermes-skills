@@ -1,9 +1,8 @@
----
-slug: cron-mate-free
+---slug: cron-mate-free
 name: cron-mate-free
 version: 1.0.1
 displayName: cron表达式助手(免费版)
-summary: "cron表达式辅助编写与验证工具免费版，支持自然语言转表达式、常用模板速查、基础语法验证.。cron表达式助手免费版是面向开发者和运维人员的cron表达式辅助编写工具。将晦涩的cron语法转"
+summary: "cron表达式辅助编写"
 license: Proprietary
 edition: free
 description: cron表达式助手免费版是面向开发者和运维人员的cron表达式辅助编写工具。将晦涩的cron语法转化为友好的交互体验：自然语言转表达式、常用模板速查、基础语法验证、人类可读翻译，让cron编写不再痛苦。Use，可自动提升工作效率
@@ -26,9 +25,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-> **写cron不用查文档。自然语言描述，自动生成表达式，一键验证语法。**
+category: "Automation"---> **写cron不用查文档。自然语言描述，自动生成表达式，一键验证语法。**
 
 将"每天早上8点"翻译成 `0 8 * * *`，将 `0 8 * * 1-5` 翻译成"工作日每天8点"。本技能提供cron表达式的辅助编写与验证能力，让定时规则编写变得直观高效.
 ## 架构总览
@@ -140,7 +137,7 @@ def cron_to_chinese(cron):
     elif weekday not in ["*", "?"]:
         names = ["周日","周一","周二","周三","周四","周五","周六","周日"]
         try:
-            desc_parts.append(f"（仅{names[int(weekday)]}）")
+append(f"（仅{names[int(weekday)]}）")
         except (ValueError, IndexError):
             pass
 # ...
@@ -193,17 +190,13 @@ class InteractiveCronMate(CronMate):
             cron = f"{m} {h} * * *"
         elif choice == "4":
             time = input("工作日几点？(格式 HH:MM): ").strip()
-            h, m = time.split(":")
             cron = f"{m} {h} * * 1-5"
         elif choice == "5":
             days = input("星期几？(0=日,1=一,...,6=六): ").strip()
             time = input("几点？(格式 HH:MM): ").strip()
-            h, m = time.split(":")
             cron = f"{m} {h} * * {days}"
         elif choice == "6":
             day = input("每月几号？(1-31): ").strip()
-            time = input("几点？(格式 HH:MM): ").strip()
-            h, m = time.split(":")
             cron = f"{m} {h} {day} * *"
         else:
             print("无效选择")
@@ -246,7 +239,6 @@ class InteractiveCronMate(CronMate):
 | 每小时整点 | `0 * * * *` |
 | 每分钟 | `* * * * *` |
 
-**输入**: 用户提供自然语言转换所需的指令和必要参数.
 **处理**: 解析自然语言转换的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自然语言转换的响应数据,包含状态码、结果和日志.
 ### 语法验证
@@ -259,7 +251,6 @@ class InteractiveCronMate(CronMate):
 | 列表格式 | `1,3,5` 逗号分隔 |
 | 范围格式 | `1-5` 连字符 |
 
-**输入**: 用户提供语法验证所需的指令和必要参数.
 **处理**: 解析语法验证的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回语法验证的响应数据,包含状态码、结果和日志.
 ### 中文翻译
@@ -269,12 +260,11 @@ class InteractiveCronMate(CronMate):
 - `0 8 * * 1-5` → "在08:00执行（仅工作日）"
 - `0 0 1 * *` → "在00:00执行，每月1号"
 
-**输入**: 用户提供中文翻译所需的指令和必要参数.
 **处理**: 解析中文翻译的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回中文翻译的响应数据,包含状态码、结果和日志.
 ### 模板速查库
 提供20+常用调度模板，按类别分类：每日、每周、每月、间隔、工作日.
-**输入**: 用户提供模板速查库所需的指令和必要参数.
+
 **处理**: 解析模板速查库的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回模板速查库的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -411,8 +401,6 @@ for expr in expressions:
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

@@ -94,12 +94,11 @@ if (typeof api.registerView === "function") {
 - 参考`UI视图注册（registerView API）`的配置文档进行参数调优
 ### 导航分组集成（Navigation Group Integration）
 注册的视图通过group字段指定所属导航分组，支持四个分组：Chat（聊天）、Control（控制）、Agent（代理）、Settings（设置）。position字段控制视图在组内的显示顺序.
-**输入**: 用户提供导航分组集成（Navigation Group Integration）所需的指令和必要参数.
-**处理**: 解析导航分组集成（Navigation Group Integration）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回导航分组集成（Navigation Group Integration）的处理结果,包含执行状态码、结果数据和执行日志。### 图标系统配置（Icon System）
+
+### 图标系统配置（Icon System）
 通过icon字段指定视图图标，使用图标集中的图标名称（如 `database`、`settings`、`chat` 等）。图标名称需匹配Control仪表板内置图标集.
-**输入**: 用户提供图标系统配置（Icon System）所需的指令和必要参数.
-**输出**: 返回图标系统配置（Icon System）的处理结果,包含执行状态码、结果数据和执行日志。### 安装流程（Installation Process）
+
+### 安装流程（Installation Process）
 此技能需要由SkillHub agent手动安装。安装步骤：
 
 1. 将技能解压到skills文件夹
@@ -110,16 +109,12 @@ if (typeof api.registerView === "function") {
 Please install the plugin-architecture skill. Read the INSTALL_INSTRUCTIONS.md file in the skill folder and follow it step by step.
 ```
 
-**输入**: 用户提供安装流程（Installation Process）所需的指令和必要参数.
-**输出**: 返回安装流程（Installation Process）的处理结果,包含执行状态码、结果数据和执行日志。### 参考代码文件（Reference Files）
+### 参考代码文件（Reference Files）
 技能包含以下文件供参考：
 - `SKILL.md` — 技能说明文件
 - `INSTALL_INSTRUCTIONS.md` — agent逐步安装指令
 - `reference/` — 参考代码文件，展示需要添加的代码
 
-**输入**: 用户提供参考代码文件（Reference Files）所需的指令和必要参数.
-**处理**: 解析参考代码文件（Reference Files）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回参考代码文件（Reference Files）的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 

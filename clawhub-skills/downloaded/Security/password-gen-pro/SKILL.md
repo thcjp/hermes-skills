@@ -117,16 +117,12 @@ Supported options:
 ## FEATURE 3: Passphrase Generator
 When user says **"passphrase"** or **"memorable password"**:
 
-> 详细代码示例已移至 `references/detail.md`
-
 ## FEATURE 4: Password Strength Checker
 When user says **"check password"** or **"how strong is [password]"**:
 
 ```text
 User: "check strength: Summer2024!"
 ```
-
-> 详细代码示例已移至 `references/detail.md`
 
 **Scoring criteria:**
 
@@ -155,8 +151,6 @@ When user says **"generate PIN"** or **"new PIN"**:
 
 ## FEATURE 6: Bulk Password Generator
 When user says **"bulk 10 passwords"** or **"generate 5 passwords"**:
-
-> 详细代码示例已移至 `references/detail.md`
 
 Max 50 at once.
 
@@ -194,8 +188,6 @@ Other contexts:
 ## FEATURE 8: API Key / Token Generator
 When user says **"generate API key"** or **"create token"**:
 
-> 详细代码示例已移至 `references/detail.md`
-
 ## FEATURE 9: Username Generator
 When user says **"username ideas"** or **"suggest username"**:
 
@@ -203,12 +195,8 @@ When user says **"username ideas"** or **"suggest username"**:
 User: "gaming username ideas"
 ```
 
-> 详细代码示例已移至 `references/detail.md`
-
 ## FEATURE 10: Security Tips
 When user says **"password tips"** or **"security tips"**:
-
-> 详细代码示例已移至 `references/detail.md`
 
 ## FEATURE 11: Password Pattern Detector
 Analyze a password for common vulnerable patterns:
@@ -329,8 +317,6 @@ User: "password that has 8-20 chars, 1 uppercase, 1 number, 1 special, no spaces
 3. Remind users to use a password manager for storage
 
 ## Updated Commands
-
-> 详细代码示例已移至 `references/detail.md`
 
 Built by **Manish Pareek** ([@Mkpareek19_](https://x.com/Mkpareek19_))
 

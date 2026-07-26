@@ -1,9 +1,8 @@
----
-slug: "memory-radar"
+---slug: "memory-radar"
 name: "memory-radar"
 version: 1.0.1
 displayName: "记忆雷达"
-summary: "面向AI Agent记忆文件的安全扫描系统，检测注入、凭证泄漏、数据外泄等七大威胁。面向AI Agent记忆文件的安全扫描系统，解决Prompt注入检测难、凭证泄漏被动发现、扫描误报高、跨文"
+summary: "面向AI Agent记"
 summary_zh: "面向AI Agent记忆文件的安全扫描系统，检测注入、凭证泄漏、数据外泄等七大威胁。面向AI Agent记忆文件的安全扫描系统，解决Prompt注入检测难、凭证泄漏被动发现、扫描误报高、跨文"
 license: "MIT"
 description: |-
@@ -23,9 +22,7 @@ tags:
   - AI
   - memory
   - line
-category: "Agents"
----
-# 记忆雷达（Memory Radar）
+category: "Agents"---# 记忆雷达（Memory Radar）
 
 面向 AI Agent 记忆文件的**安全扫描系统**，对记忆文件、日志、工作区配置进行持续安全审计，主动发现恶意指令、注入模式、凭证泄漏与行为操纵，防患于未然.
 ## 输入格式

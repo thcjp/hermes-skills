@@ -78,8 +78,6 @@ export API_KEY="your_api_key_here"
 node （请参考skill目录中的脚本文件） report
 ```
 
-**处理**: 解析使用量监控的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回使用量监控的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. 定时提醒
 通过 `scheduler.js check` 定时检查Token使用情况，在达到阈值时触发提醒.
 - 80%上下文阈值：上下文窗口使用超过80%时提醒
@@ -90,7 +88,6 @@ node （请参考skill目录中的脚本文件） report
 node （请参考skill目录中的脚本文件） check --interval 300
 ```
 
-**输出**: 返回定时提醒的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. 工具集成
 通过 `session-tracker.js record` 记录每次API调用的Token消耗，自动分类和统计.
 ```bash
@@ -103,8 +100,6 @@ node （请参考skill目录中的脚本文件） record --input 1200 --output 8
 node （请参考skill目录中的脚本文件） report --range 7d --format table
 ```
 
-**输入**: 用户提供跨会话分析所需的指令和必要参数.
-**输出**: 返回跨会话分析的处理结果,包含执行状态码、结果数据和执行日志.
 ### 5. 余额查询
 通过API实时查询账户余额，按¥12/1M tokens计费.
 ```bash
@@ -112,8 +107,6 @@ curl -s https://api.moonshot.cn/v1/users/me/balance \
   -H "Authorization: Bearer ${MOONSHOT_API_KEY}"
 ```
 
-**处理**: 解析余额查询的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回余额查询的处理结果,包含执行状态码、结果数据和执行日志.
 ### 6. 费用估算
 根据Token使用量和模型单价估算费用：
 - 输入Token：¥12/1M tokens
@@ -122,15 +115,12 @@ curl -s https://api.moonshot.cn/v1/users/me/balance \
 
 - 参考`费用估算`的配置文档进行参数调优
 
-**处理**: 解析费用估算的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 7. 提供商管理
 支持多API提供商配置，通过环境变量切换：
 - `MOONSHOT_API_KEY`：月之暗面API密钥
 - `OPENAI_API_KEY`：OpenAI API密钥
 - `ANTHROPIC_API_KEY`：Anthropic API密钥
 
-**处理**: 解析提供商管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回提供商管理的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 

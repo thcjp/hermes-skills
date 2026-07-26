@@ -91,7 +91,6 @@ bird home --following -n 60 --json > following_raw.json
 - `--json`: 以JSON格式输出
 - `--following`: 抓取Following时间线(不加此参数默认For You)
 
-**输入**: 用户提供时间线抓取所需的指令和必要参数.
 **处理**: 解析时间线抓取的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回时间线抓取的响应数据,包含状态码、结果和日志.
 ### 2. 增量过滤
@@ -136,13 +135,13 @@ class IncrementalFilter:
         }
 ```
 
-**输入**: 用户提供增量过滤所需的指令和必要参数.
 **处理**: 解析增量过滤的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回增量过滤的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 3. 去重处理
-#### 硬去重(基于推文ID)
+#
+### 硬去重(基于推文ID)
 ```python
 class Deduplicator:
     """推文去重器"""
@@ -178,11 +177,9 @@ class Deduplicator:
                         )
                     break
             if not is_duplicate:
-                unique.append(tweet)
         return unique
 ```
 
-**输入**: 用户提供去重处理所需的指令和必要参数.
 **处理**: 解析去重处理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回去重处理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -227,7 +224,6 @@ class HeuristicFilter:
         return filtered
 ```
 
-**输入**: 用户提供启发式过滤所需的指令和必要参数.
 **处理**: 解析启发式过滤的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回启发式过滤的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -246,7 +242,6 @@ class DigestGenerator:
 # ...
     def generate(self, tweets: list) -> dict:
         """生成结构化摘要"""
-        now = datetime.now(timezone.utc)
         window_start = now - timedelta(hours=self.interval_hours)
 # ...
         sorted_tweets = sorted(
@@ -290,7 +285,6 @@ digest = generator.generate(tweets)
 print(json.dumps(digest, indent=2, ensure_ascii=False))
 ```
 
-**输入**: 用户提供结构化输出所需的指令和必要参数.
 **处理**: 解析结构化输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结构化输出的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：时间线并生成去重、适合个人用户的信、息聚合阅读、时间线摘要工具免、时间线抓取推文并、生成去重摘要、核心能力、时间线推文、的硬去重、避免重复处理已推、送推文、摘要输出、基础启发式过滤、去除广告等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -339,15 +333,14 @@ python3 format_digest.py --input digest.json
 ### 场景二:关注领域追踪
 追踪特定领域的最新推文动态.
 ```bash
-python3 generate_digest.py --filter "AI,LLM,GPT,大模型" > ai_digest.json
+py --filter "AI,LLM,GPT,大模型" > ai_digest.json
 # ...
-python3 format_digest.py --input ai_digest.json --format text
+py --input ai_digest.json --format text
 ```
 
 ### 场景三:减少信息过载
 通过去重和过滤,将大量推文压缩为高价值摘要.
 ```bash
-python3 generate_digest.py --stats-only
 # ...
 ```
 
@@ -388,7 +381,7 @@ mkdir -p ~/.timeline-digest
 
 ### 首次运行
 ```bash
-python3 generate_digest.py --config config.json
+py --config config.json
 # ...
 ```
 
@@ -401,8 +394,7 @@ python3 generate_digest.py --config config.json
   "fetchLimitForYou": 100,
   "fetchLimitFollowing": 60,
   "maxItemsPerDigest": 25,
-  "similarityThreshold": 0.9,
-  "statePath": "~/.timeline-digest/state.json"
+  "statePath": "~/.json"
 }
 ```
 
@@ -414,7 +406,7 @@ python3 generate_digest.py --config config.json
 | fetchLimitFollowing | number | 60 | Following抓取数量 |
 | maxItemsPerDigest | number | 25 | 摘要最大推文数 |
 | similarityThreshold | number | 0.9 | 近似去重相似度阈值 |
-| statePath | string | ~/.timeline-digest/state.json | 状态文件路径 |
+| statePath | string | ~/.json | 状态文件路径 |
 
 ## 最佳实践
 ### 1. 合理设置抓取数量
@@ -517,8 +509,6 @@ def cleanup_state(state_path: str, retain_days: int = 30):
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

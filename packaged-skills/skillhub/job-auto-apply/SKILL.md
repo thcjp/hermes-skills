@@ -85,14 +85,11 @@ python job_search_apply.py \
   --max-applications 10 \
   --dry-run
 # ...
-python job_search_apply.py \
   --profile ~/job_profile.json \
   --title "Backend Engineer" \
   --platforms linkedin,indeed \
   --auto-apply
 # ...
-python job_search_apply.py \
-  --profile ~/job_profile.json \
   --title "Senior Developer" \
   --no-dry-run \
   --require-confirmation
@@ -207,20 +204,16 @@ cp profile_template.json ~/job_profile.json
 ### 2. Run Job Search and Apply(补充)
 # ...
 ```bash
-python job_search_apply.py \
   --title "Software Engineer" \
   --location "San Francisco, CA" \
   --remote \
   --max-applications 10 \
   --dry-run
 
-python job_search_apply.py \
-  --profile ~/job_profile.json \
   --title "Backend Engineer" \
   --platforms linkedin,indeed \
   --auto-apply
 
-python job_search_apply.py \
   --p
 ```
 # ...

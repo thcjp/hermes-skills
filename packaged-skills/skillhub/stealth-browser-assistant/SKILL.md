@@ -353,7 +353,6 @@ category: "Automation"
   "action": "recover_tab",
   "params": {
     "url": "https://seller.example.com/dashboard",
-    "cookie_path": "/cookies/account_001.json"
   }
 }
 ```

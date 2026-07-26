@@ -140,7 +140,7 @@ Wiki 节点的 URL 中的 token 并非真实文档 token，需要通过 API 转�
 ### 示例 2：提取电子表格数据
 
 ```
-输入 URL: https://example.feishu.cn/sheets/Iow7sNbNeabcdef123
+feishu.cn/sheets/Iow7sNbNeabcdef123
 
 查询参数:
 - sheet_id: "sheetA1B2C3"  (工作表 ID)
@@ -167,7 +167,7 @@ Wiki 节点的 URL 中的 token 并非真实文档 token，需要通过 API 转�
 ### 示例 3：查询多维表格记录
 
 ```
-输入 URL: https://example.feishu.cn/base/bascnabcdef123
+feishu.cn/base/bascnabcdef123
 
 筛选条件:
 - filter: AND(CurrentValue.[状态] = "进行中")
@@ -200,7 +200,8 @@ Wiki 节点的 URL 中的 token 并非真实文档 token，需要通过 API 转�
 | 2 | 文本 Text | 普通段落 |
 | 3 | 标题1 Heading1 | `# 标题` |
 | 4 | 标题2 Heading2 | `## 标题` |
-| 5 | 标题3 Heading3 | `### 标题` |
+| 5 | 标题3 Heading3 | `
+### 标题` |
 | 9 | 有序列表 | `1. 列表项` |
 | 12 | 无序列表 | `- 列表项` |
 | 13 | 代码块 | ` ```lang ... ``` ` |

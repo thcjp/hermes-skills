@@ -1,9 +1,8 @@
----
-slug: content-cms-architect
+---slug: content-cms-architect
 name: content-cms-architect
 version: 1.0.1
 displayName: CMS内容架构师
-summary: "Headless CMS内容架构,从内容建模到SEO-AEO,打造可扩展内容平台。CMS内容架构师——基于Sanity/Strapi/Payload等Headless CMS最佳实践设计可扩"
+summary: "Headless CM"
 summary_zh: "Headless CMS内容架构,从内容建模到SEO-AEO,打造可扩展内容平台。CMS内容架构师——基于Sanity/Strapi/Payload等Headless CMS最佳实践设计可扩"
 license: MIT
 description: CMS内容架构师——基于Sanity/Strapi/Payload等Headless CMS最佳实践设计可扩展内容管理系统,从内容建模到GROQ/REST/GraphQL查询,从SEO-AEO优化到内容A/B实验,打造前端自由、内容结构化的现代内容平台。覆盖Schema定义、字段类型设计、引用关系、Portable
@@ -30,9 +29,7 @@ tools:
   - read
   - exec
   - write
-category: "Automation"
----
-# CMS内容架构师
+category: "Automation"---# CMS内容架构师
 
 基于 Headless CMS 官方最佳实践,设计可扩展、高性能的内容管理系统。从内容建模到 GROQ 查询,从 SEO 优化到内容实验,全栈 CMS 架构。
 
@@ -355,7 +352,7 @@ export const post = defineType({
   title: '文章',
   type: 'document',
   fields: [
-    { name: 'title', title: '标题', type: 'string', validation: Rule => Rule.required().max(120) },
+required().max(120) },
     { name: 'slug', title: 'URL路径', type: 'slug', options: { source: 'title', maxLength: 96 } },
     { name: 'excerpt', title: '摘要', type: 'text', rows: 3, validation: Rule => Rule.max(300) },
     { name: 'body', title: '正文', type: 'array', of: [{ type: 'block' }] },
@@ -419,7 +416,6 @@ export const category = defineType({
 // output/blog/queries/recent-posts.groq
 // 获取最近10篇已发布文章
 *[_type == "post" && publishedAt <= now()]
-  | order(publishedAt desc) [0...10]
   {
     "id": _id,
     title,
@@ -428,7 +424,6 @@ export const category = defineType({
     excerpt,
     "author": author->{
       name,
-      "avatar": avatar.asset->url,
       "slug": slug.current
     },
     "categories": categories[]->{ title, "slug": slug.current },
@@ -444,11 +439,9 @@ export const category = defineType({
   body,
   "author": author->{
     name,
-    "avatar": avatar.asset->url,
     bio,
     "slug": slug.current
   },
-  "categories": categories[]->{ title, "slug": slug.current },
   "relatedPosts": *[_type == "post" 
     && publishedAt <= now() 
     && slug.current != $slug
@@ -496,7 +489,6 @@ export const product = defineType({
           description: '如: 颜色-红色, 尺寸-L' },
         { name: 'sku', title: 'SKU编码', type: 'string' },
         { name: 'price', title: '价格', type: 'number', 
-          validation: Rule => Rule.min(0) },
         { name: 'compareAtPrice', title: '划线价', type: 'number' },
         { name: 'stock', title: '库存', type: 'number' },
         { name: 'image', title: '规格图', type: 'image' }

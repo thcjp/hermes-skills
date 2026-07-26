@@ -66,19 +66,18 @@ WhatsApp 语音消息工具(专业版)在免费版(`tts-whatsapp-tool-free`)单�
 | API 服务 | 不支持 | FastAPI | 远程调用 |
 | CRM 集成 | 不支持 | 联系人管理 | 客户运营 |
 
-**输入**: 用户提供免费版 vs 专业版对比所需的指令和必要参数.
 **处理**: 解析免费版 vs 专业版对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版 vs 专业版对比的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
@@ -221,7 +220,7 @@ class ScheduledSender:
     def _send(self, message, target, lang):
         """执行发送"""
         cmd = ["tts-whatsapp", message, "--lang", lang, "--target", target]
-        result = subprocess.run(cmd, capture_output=True, text=True)
+run(cmd, capture_output=True, text=True)
         status = "成功" if result.returncode == 0 else "失败"
         print(f"[{time.strftime('%H:%M:%S')}] {status}: {message[:30]}")
 # ...
@@ -272,7 +271,7 @@ async def send_voice(
     if voice:
         cmd.extend(["--voice", voice])
 # ...
-    result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+run(cmd, capture_output=True, text=True, timeout=30)
 # ...
     if result.returncode == 0:
         return JSONResponse({"status": "success", "target": target})

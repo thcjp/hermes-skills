@@ -1,9 +1,8 @@
----
-slug: "azure-infra"
+---slug: "azure-infra"
 name: "azure-infra"
 version: 1.0.1
 displayName: "Azure基础设施工具"
-summary: "通过本地 Azure CLI 查询与管理 Azure 资源，默认只读，写操作需确认。。Azure Infra 技能通过本地 Azure CLI（az 命令）帮助用户查询、诊断和管理 Azur"
+summary: "通过本地 Azure "
 summary_zh: "通过本地 Azure CLI 查询与管理 Azure 资源，默认只读，写操作需确认。。Azure Infra 技能通过本地 Azure CLI（az 命令）帮助用户查询、诊断和管理 Azur"
 license: "MIT"
 description: |-
@@ -41,9 +40,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Operations"
----
-# Azure Infra
+category: "Operations"---# Azure Infra
 
 ## 输入格式
 
@@ -125,29 +122,24 @@ export API_KEY="your_api_key_here"
 | App Service | `az webapp list --query "[].{name:name,rg:resourceGroup,state:state}" -o table` |
 | Key Vault | `az keyvault list --query "[].{name:name,rg:resourceGroup}" -o table` |
 
-**输入**: 用户提供资源清单查询所需的指令和必要参数.
-**处理**: 解析资源清单查询的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回资源清单查询的处理结果,包含执行状态码、结果数据和执行日志。### 健康与诊断
+### 健康与诊断
 - **活动日志**：`az monitor activity-log list --resource-group <rg> --status Failed -o table`
 - **指标查询**：`az monitor metrics list --resource <resource-id> --metric "Percentage CPU" --interval PT1H -o table`
 - **资源健康**：`az resource health --resource <resource-id>`
 - **VM 启动诊断**：`az vm boot-diagnostics get-boot-log --name <vm> --resource-group <rg>`
 
-**输入**: 用户提供健康与诊断所需的指令和必要参数.
-**处理**: 解析健康与诊断的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回健康与诊断的处理结果,包含执行状态码、结果数据和执行日志。### 安全审计
+### 安全审计
 - **RBAC 角色**：`az role assignment list --resource-group <rg> --query "[].{user:principalName,role:roleDefinitionName}" -o table`
 - **NSG 规则**：`az network nsg rule list --nsg-name <nsg> -g <rg> --query "[].{name:name,access:access,destPort:destinationPortRange}" -o table`
 - **存储公开访问**：`az storage container list --account-name <acct> --query "[].{name:name,perm:publicAccess}" -o table`
 - **Key Vault 策略**：`az keyvault show --name <vault> --query "properties.accessPolicies"`
 
-**处理**: 解析安全审计的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回安全审计的处理结果,包含执行状态码、结果数据和执行日志。### 成本分析
+### 成本分析
 - **按订阅查询**：`az costmanagement query --type ActualCost --timeframe MonthToDate --scope "subscriptions/<sub-id>"`
 - **按资源组**：追加 `--query "items[*].properties"` 过滤分组维度
 
-**输入**: 用户提供成本分析所需的指令和必要参数.
-**输出**: 返回成本分析的解析响应,包含完成状态码、响应数据和完成日志。### 变更任务（需确认）
+**输出**: 返回成本分析的解析响应,包含完成状态码、响应数据和完成日志。
+### 变更任务（需确认）
 | 操作 | 命令 | 确认要求 |
 |:------|------:|:------|
 | 启动 VM | `az vm start --name <vm> -g <rg>` | 列出 VM 名称与资源组 |
@@ -155,7 +147,6 @@ export API_KEY="your_api_key_here"
 | 删除资源组 | `az group delete --name <rg>` | 高风险，列出组内资源数量后等待确认 |
 | 修改 NSG 规则 | `az network nsg rule update ...` | 展示变更前后差异 |
 
-**输入**: 用户提供变更操作（需确认）所需的指令和必要参数.
 **解析**: 解析变更任务（需确认）的输入参数,完成核心解析逻辑,返回结构化响应和完成状态.
 **输出**: 返回变更任务（需确认）的解析响应,包含完成状态码、响应数据和完成日志.
 ### 资源类型

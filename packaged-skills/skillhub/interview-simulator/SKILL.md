@@ -192,8 +192,6 @@ How would you approach this? Start with the high-level architecture.
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
 
-> 详细的输入输出格式请参考下方章节说明。
-
 **User:** Mock interview for HR, mid-level, focus on talent acquisition, 30 minutes.
 
 **Interviewer:** Welcome! Let's start your HR mock interview focused on talent acquisition. We have 30 minutes — I'll cover a scenario question, domain knowledge, and a behavioral question.

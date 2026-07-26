@@ -202,7 +202,6 @@ Or disable temporarily in config:
 Ask SkillHub to set up the auto-updater:
 
 ```text
-Set up daily auto-updates for yourself and all your skills.
 ```
 
 Or manually add the cron job:
@@ -215,7 +214,6 @@ SkillHub cron add \
   --session isolated \
   --wake now \
   --deliver \
-  --message "Run daily auto-updates: check for SkillHub updates and update all skills. Report what was updated."
 ```
 ```
 

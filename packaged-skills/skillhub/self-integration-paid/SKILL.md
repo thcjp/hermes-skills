@@ -276,23 +276,23 @@ curl -X POST "https://api.integration-gateway.com/actions/batch" \
 
 ```bash
 # 创建会话
-curl -X POST https://api.integration-gateway.com/agent/sessions \
+integration-gateway.com/agent/sessions \
   -H "Authorization: Bearer $INTEGRATION_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"prompt": "为Jira（https://company.atlassian.net）构建连接器，支持创建Issue与查询项目"}'
 # ...
 # 轮询状态（state为idle或status为completed即完成）
-curl "https://api.integration-gateway.com/agent/sessions/sess_xyz?wait=true&timeout=30" \
+curl "https://api.integration-gateway.wait=true&timeout=30" \
   -H "Authorization: Bearer $INTEGRATION_TOKEN"
 # ...
 # 发送后续指令（如需调整）
-curl -X POST https://api.integration-gateway.com/agent/sessions/sess_xyz/message \
+integration-gateway.com/agent/sessions/sess_xyz/message \
   -H "Authorization: Bearer $INTEGRATION_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"input": "创建Issue时需要支持指定优先级字段"}'
 # ...
 # 中止会话（如需）
-curl -X POST https://api.integration-gateway.com/agent/sessions/sess_xyz/interrupt \
+integration-gateway.com/agent/sessions/sess_xyz/interrupt \
   -H "Authorization: Bearer $INTEGRATION_TOKEN"
 ```
 

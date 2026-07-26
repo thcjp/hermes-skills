@@ -161,22 +161,22 @@ export API_KEY="your_api_key_here"
 web_fetch({"url": "https://www.google.com/search?q=python+tutorial"})
 // ...
 // Site-specific
-web_fetch({"url": "https://www.google.com/search?q=site:github.com+react"})
+google.com/search?q=site:github.com+react"})
 // ...
 // File type
-web_fetch({"url": "https://www.google.com/search?q=machine+learning+filetype:pdf"})
+google.com/search?q=machine+learning+filetype:pdf"})
 // ...
 // Time filter (past week)
-web_fetch({"url": "https://www.google.com/search?q=ai+news&tbs=qdr:w"})
+google.com/search?q=ai+news&tbs=qdr:w"})
 // ...
 // Privacy search
 web_fetch({"url": "https://duckduckgo.com/html/?q=privacy+tools"})
 // ...
 // DuckDuckGo Bangs
-web_fetch({"url": "https://duckduckgo.com/html/?q=!gh+tensorflow"})
+com/html/?q=!gh+tensorflow"})
 // ...
 // Knowledge calculation
-web_fetch({"url": "https://www.wolframalpha.com/input?i=100+USD+to+CNY"})
+wolframalpha.com/input?i=100+USD+to+CNY"})
 ```
 
 ## 常见问题

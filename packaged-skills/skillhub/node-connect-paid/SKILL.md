@@ -109,8 +109,6 @@ category: "Automation"
 ```bash
 # 标准检查 + 尾网检查
 skill-platform config get gateway.bind
-skill-platform config get gateway.tailscale.mode
-skill-platform config get gateway.auth.allowTailscale
 skill-platform qr --json
 tailscale status --json
 ```
@@ -128,7 +126,6 @@ tailscale status --json
 ```bash
 # 检查公共URL配置
 skill-platform config get plugins.entries.device-pair.config.publicUrl
-skill-platform config get gateway.remote.url
 # ...
 # 远程模式QR
 skill-platform qr --remote --json
@@ -175,7 +172,7 @@ set -euo pipefail
 echo "=== 拓扑识别 ==="
 echo "gateway.mode: $(skill-platform config get gateway.mode)"
 echo "gateway.bind: $(skill-platform config get gateway.bind)"
-echo "tailscale.mode: $(skill-platform config get gateway.tailscale.mode)"
+echo "tailscale.tailscale.mode)"
 echo "remote.url: $(skill-platform config get gateway.remote.url)"
 echo "publicUrl: $(skill-platform config get plugins.entries.device-pair.config.publicUrl)"
 

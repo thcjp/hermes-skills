@@ -73,22 +73,20 @@ PRO版与免费版完全兼容,升级后原有配置和状态数据继续使用�
 PRO版通过LLM对去重后的推文进行智能分类和中文摘要生成.
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供智能分类摘要所需的指令和必要参数.
 **处理**: 解析智能分类摘要的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回智能分类摘要的响应数据,包含状态码、结果和日志.
 ### 2. 定时自动调度
 PRO版支持cron式定时调度,自动执行摘要生成流程.
-**输入**: 用户提供定时自动调度所需的指令和必要参数.
+
 **处理**: 解析定时自动调度的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时自动调度的响应数据,包含状态码、结果和日志.
 ### 3. 多源信息聚合
 除X/Twitter时间线外,PRO版支持聚合RSS源和自定义信息源.
-**输入**: 用户提供多源信息聚合所需的指令和必要参数.
+
 **处理**: 解析多源信息聚合的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多源信息聚合的响应数据,包含状态码、结果和日志.
 ### 4. 自动推送通知
 
-**输入**: 用户提供自动推送通知所需的指令和必要参数.
 **处理**: 解析自动推送通知的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自动推送通知的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、时间线摘要平台、支持定时调度、多源聚合、时间线摘要工具专、面向企业和专业用、户的高级、时间线信息聚合平、核心能力、全时间线抓取、You、Following、自定义列表、加密货币、商业洞察、高级语义过滤与降、定时自动调度与增、量处理、自定义源、Telegram、Webhook、状态管理与云端同、摘要分析仪表盘与、趋势追踪等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -153,7 +151,7 @@ aggregator = MultiSourceAggregator()
 aggregator.add_twitter_source("X-Trending", limit=200)
 # ...
 items = aggregator.fetch_all()
-digest = SmartDigestGenerator().generate_smart_digest(items)
+generate_smart_digest(items)
 # ...
 for section in digest["sections"]:
     print(f"\n{section['icon']} {section['category_name']} - {section['count']}条素材")
@@ -239,7 +237,6 @@ python3 start_scheduler.py --config config.json
       "enabled": false,
       "from": "digest@example.com",
       "to": "user@example.com",
-      "smtp_host": "smtp.example.com",
       "smtp_port": 587
     },
     "webhook": {
@@ -376,8 +373,6 @@ PUSH_BEST_PRACTICES = {
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

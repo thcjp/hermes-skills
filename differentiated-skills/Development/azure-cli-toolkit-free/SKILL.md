@@ -83,7 +83,6 @@ az account list
 az account set --subscription "我的订阅"
 ```
 
-**输入**: 用户提供认证与账户管理所需的指令和必要参数.
 **处理**: 解析认证与账户管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回认证与账户管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -104,7 +103,6 @@ az group show -g myResourceGroup
 az group delete -g myResourceGroup
 ```
 
-**输入**: 用户提供资源组管理所需的指令和必要参数.
 **处理**: 解析资源组管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回资源组管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -127,7 +125,6 @@ az vm restart -g myResourceGroup -n myVM
 az vm show -g myResourceGroup -n myVM
 ```
 
-**输入**: 用户提供虚拟机操作所需的指令和必要参数.
 **处理**: 解析虚拟机操作的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回虚拟机操作的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -173,7 +170,6 @@ az vm list --query "[].name" -o tsv
 az vm list --query "[?powerState=='VM running'].name"
 ```
 
-**输入**: 用户提供存储账户操作所需的指令和必要参数.
 **处理**: 解析存储账户操作的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回存储账户操作的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Azure、云平台命令行管理、支持虚拟机、网络等核心资源的、基本操作、面向个人开发者的、提供核心资源管理、核心能力、订阅与资源组管理、网络资源基本操作、交互式登录与基础等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -207,7 +203,7 @@ az resource list -g dev-test-rg -o table
 定期查看个人云资源的状态与费用.
 ```bash
 # 查看所有运行中的虚拟机
-az vm list -d --query "[?powerState=='VM running'].{name:name, location:location}" -o table
+az vm list -d --query "[?{name:name, location:location}" -o table
 # ...
 # 查看存储账户使用情况
 az storage account list --query "[].{name:name, sku:sku.name}" -o table
@@ -304,7 +300,7 @@ az configure --defaults group='' location=''
 
 ```bash
 # 提取关键字段
-az vm list --query "[].{name:name, state:powerState}" -o table
+{name:name, state:powerState}" -o table
 # ...
 # 排序输出
 az vm list --query "sort_by([], &name)"

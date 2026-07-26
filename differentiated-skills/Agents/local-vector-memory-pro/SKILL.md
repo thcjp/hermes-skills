@@ -503,7 +503,6 @@ node （请参考skill目录中的脚本文件） cache --warmup "常见查询"
   "skill": "local-vector-memory-pro",
   "config": {
     "autoRecall": true,
-    "recallThreshold": 0.75
   }
 }
 ```
@@ -605,7 +604,7 @@ codex --skill local-vector-memory-pro
 
 ```bash
 # 1. 备份现有记忆
-node （请参考skill目录中的脚本文件） backup ./backups/pre-upgrade.zip
+/backups/pre-upgrade.zip
 # ...
 # 2. 替换 SKILL.md 为专业版
 # 3. 更新插件配置

@@ -77,21 +77,21 @@ category: "Operations"
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -131,7 +131,7 @@ asyncio.run(main())
 import asyncio
 from typing import Annotated
 from pydantic import Field
-from agent_framework.azure import AzureAIAgentsProvider
+azure import AzureAIAgentsProvider
 from azure.identity.aio import AzureCliCredential
 # ...
 def get_weather(
@@ -150,14 +150,11 @@ async def main():
         AzureCliCredential() as credential,
         AzureAIAgentsProvider(credential=credential) as provider,
     ):
-        agent = await provider.create_agent(
             name="WeatherAgent",
             instructions="你帮助用户查询天气和时间。",
             tools=[get_weather, get_current_time],  # 直接传入函数
         )
 # ...
-        result = await agent.run("北京今天天气怎么样?")
-        print(result.text)
 # ...
 asyncio.run(main())
 ```
@@ -167,7 +164,7 @@ asyncio.run(main())
 使用线程保持多轮对话上下文.
 ```python
 import asyncio
-from agent_framework.azure import AzureAIAgentsProvider
+azure import AzureAIAgentsProvider
 from azure.identity.aio import AzureCliCredential
 # ...
 async def main():
@@ -175,9 +172,7 @@ async def main():
         AzureCliCredential() as credential,
         AzureAIAgentsProvider(credential=credential) as provider,
     ):
-        agent = await provider.create_agent(
             name="ChatAgent",
-            instructions="你是一个乐于助人的助手。",
         )
 # ...
         # 创建会话线程
@@ -254,7 +249,7 @@ from agent_framework import (
     HostedFileSearchTool,
     HostedWebSearchTool,
 )
-from agent_framework.azure import AzureAIAgentsProvider
+azure import AzureAIAgentsProvider
 from azure.identity.aio import AzureCliCredential
 # ...
 async def main():
@@ -262,7 +257,6 @@ async def main():
         AzureCliCredential() as credential,
         AzureAIAgentsProvider(credential=credential) as provider,
     ):
-        agent = await provider.create_agent(
             name="MultiToolAgent",
             instructions="你可以执行代码、搜索文件和搜索网络。",
             tools=[
@@ -271,8 +265,7 @@ async def main():
             ],
         )
 # ...
-        result = await agent.run("用 Python 计算 20 的阶乘")
-        print(result.text)
+run("用 Python 计算 20 的阶乘")
 # ...
 asyncio.run(main())
 ```
@@ -285,9 +278,7 @@ async def main():
         AzureCliCredential() as credential,
         AzureAIAgentsProvider(credential=credential) as provider,
     ):
-        agent = await provider.create_agent(
             name="StreamingAgent",
-            instructions="你是一个乐于助人的助手。",
         )
 # ...
         print("助手: ", end="", flush=True)
@@ -315,13 +306,11 @@ async def main():
         AzureCliCredential() as credential,
         AzureAIAgentsProvider(credential=credential) as provider,
     ):
-        agent = await provider.create_agent(
             name="StructuredAgent",
             instructions="以结构化格式提供天气信息。",
             response_format=WeatherResponse,
         )
 # ...
-        result = await agent.run("北京的天气?")
         weather = WeatherResponse.model_validate_json(result.text)
         print(f"{weather.location}: {weather.temperature}°{weather.unit}, {weather.conditions}")
 ```

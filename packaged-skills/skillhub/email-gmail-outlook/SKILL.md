@@ -1,9 +1,8 @@
----
-slug: "email-gmail-outlook"
+---slug: "email-gmail-outlook"
 name: "email-gmail-outlook"
 version: 1.0.8
 displayName: "邮件"
-summary: "基于 porteden CLI 管理 Gmail、Outlook、Exchange 多账号邮件。基于 porteden CLI(`porteden email` / `porteden ma"
+summary: "基于 porteden"
 summary_zh: "基于 porteden CLI 管理 Gmail、Outlook、Exchange 多账号邮件。基于 porteden CLI(`porteden email` / `porteden ma"
 license: "MIT"
 description: |-
@@ -28,9 +27,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Communication"
----
-# Email Gmail Outlook
+category: "Communication"---# Email Gmail Outlook
 
 使用 `porteden email`(别名 `porteden mail`)读写当前活动账号的邮件。所有列表/搜索类操作默认带 `-jc` 标志(`--json --compact`),剥离附件详情、截断正文预览、限制标签数量,显著降低 token 消耗.
 若未安装 porteden:

@@ -60,7 +60,6 @@ Word文档工具V102是针对文档处理领域的专业化AI辅助工具。专�
 ### 批量处理与并行执行
 批量处理与并行执行
 
-**输入**: 用户提供批量处理与并行执行所需的指令和必要参数.
 **处理**: 解析批量处理与并行执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量处理与并行执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -68,7 +67,6 @@ Word文档工具V102是针对文档处理领域的专业化AI辅助工具。专�
 ### 企业级安全与审计
 企业级安全与审计
 
-**输入**: 用户提供企业级安全与审计所需的指令和必要参数.
 **处理**: 解析企业级安全与审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回企业级安全与审计的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -76,7 +74,6 @@ Word文档工具V102是针对文档处理领域的专业化AI辅助工具。专�
 ### 高级配置与自定义策略
 高级配置与自定义策略
 
-**输入**: 用户提供高级配置与自定义策略所需的指令和必要参数.
 **处理**: 解析高级配置与自定义策略的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级配置与自定义策略的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -84,7 +81,6 @@ Word文档工具V102是针对文档处理领域的专业化AI辅助工具。专�
 ### 免费版完全兼容
 免费版完全兼容，无缝升级
 
-**输入**: 用户提供免费版完全兼容所需的指令和必要参数.
 **处理**: 解析免费版完全兼容的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版完全兼容的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -92,12 +88,10 @@ Word文档工具V102是针对文档处理领域的专业化AI辅助工具。专�
 ### 优先技术支持与问题响应
 优先技术支持与问题响应
 
-**输入**: 用户提供优先技术支持与问题响应所需的指令和必要参数.
 **处理**: 解析优先技术支持与问题响应的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回优先技术支持与问题响应的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**输入**: 用户提供专业版增强功能所需的指令和必要参数.
 **处理**: 解析专业版增强功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回专业版增强功能的响应数据,包含状态码、结果和日志.
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
@@ -202,7 +196,7 @@ class WordV102Engine:
         try:
             style = self.doc.styles[style_def.name]
         except KeyError:
-            style = self.doc.styles.add_style(style_def.name, 1)  # WD_STYLE_TYPE.PARAGRAPH
+doc.styles.add_style(style_def.name, 1)  # WD_STYLE_TYPE.PARAGRAPH
         style.font.name = style_def.font_name
         style.font.size = Pt(style_def.font_size)
         style.font.bold = style_def.bold
@@ -235,7 +229,7 @@ class WordV102Engine:
             f"[批注 - {author}]: {text}"
         )
         comment_para.runs[0].italic = True
-        comment_para.runs[0].font.color.rgb = RGBColor(128, 128, 128)
+runs[0].font.color.rgb = RGBColor(128, 128, 128)
 # ...
     def add_content_control(self, paragraph, control_type: str,
                            options: List[str] = None):
@@ -244,10 +238,8 @@ class WordV102Engine:
             run = paragraph.add_run(f"[下拉选择: {' / '.join(options)}]")
             run.font.color.rgb = RGBColor(0, 0, 255)
         elif control_type == "checkbox":
-            run = paragraph.add_run("[ ] ")
             run.font.size = Pt(14)
         elif control_type == "date":
-            run = paragraph.add_run("[日期选择器]")
             run.font.color.rgb = RGBColor(0, 0, 255)
 # ...
     def add_section_break(self, break_type: str = "page"):
@@ -276,13 +268,11 @@ class WordV102Engine:
                 footer.paragraphs[0].text = footer_text
             if page_numbers:
                 para = footer.paragraphs[0]
-                para.alignment = WD_ALIGN_PARAGRAPH.CENTER
                 run = para.add_run()
                 fldChar1 = OxmlElement("w:fldChar")
                 fldChar1.set(qn("w:fldCharType"), "begin")
                 instrText = OxmlElement("w:instrText")
                 instrText.set(qn("xml:space"), "preserve")
-                instrText.text = "PAGE"
                 fldChar2 = OxmlElement("w:fldChar")
                 fldChar2.set(qn("w:fldCharType"), "end")
                 run._r.append(fldChar1)
@@ -308,17 +298,16 @@ class WordV102Engine:
                 engine.define_style(StyleDefinition(**style_def))
             for content in spec.get("content", []):
                 if content["type"] == "heading":
-                    engine.doc.add_heading(content["text"], content.get("level", 1))
+doc.add_heading(content["text"], content.get("level", 1))
                 elif content["type"] == "paragraph":
                     para = engine.doc.add_paragraph(content["text"])
                     if content.get("style"):
-                        engine.apply_style(para, content["style"])
+apply_style(para, content["style"])
             if spec.get("track_changes"):
-                engine.enable_track_changes()
+enable_track_changes()
             if spec.get("header") or spec.get("footer"):
-                engine.add_header_footer(
                     spec.get("header", ""), spec.get("footer", ""),
-                    spec.get("page_numbers", True)
+get("page_numbers", True)
                 )
             output = str(Path(output_dir) / f"doc_{i+1}.docx")
             engine.save(output)

@@ -95,7 +95,6 @@ flow-manager list-flows
 flow-manager get-flow <flow-id>
 # ...
 # 部署新流程
-flow-manager deploy --file assets/flows/example.json
 # ...
 # 更新现有流程
 flow-manager update-flow <flow-id> --file updated-flow.json
@@ -110,7 +109,6 @@ flow-manager get-flow-state
 flow-manager set-flow-state --file state.json
 ```
 
-**输入**: 用户提供流程管理所需的指令和必要参数.
 **处理**: 解析流程管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回流程管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -137,7 +135,6 @@ flow-manager disable-node node-red-contrib-http-request
 flow-manager remove-node node-red-contrib-http-request
 ```
 
-**输入**: 用户提供基础节点管理所需的指令和必要参数.
 **处理**: 解析基础节点管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回基础节点管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -152,7 +149,6 @@ flow-manager get-settings
 flow-manager get-diagnostics
 ```
 
-**输入**: 用户提供运行时信息所需的指令和必要参数.
 **处理**: 解析运行时信息的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回运行时信息的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -167,7 +163,6 @@ flow-manager backup
 flow-manager backup --output my-backup.json
 ```
 
-**输入**: 用户提供基础备份所需的指令和必要参数.
 **处理**: 解析基础备份的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回基础备份的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -191,7 +186,6 @@ flow-manager set-context global config '{"key": "value"}'
 
 ---
 
-**输入**: 用户提供上下文管理所需的指令和必要参数.
 **处理**: 解析上下文管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回上下文管理的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Admin、API、支持流程列表、状态查询与基础节、流程管理器免费版、IoT、与自动化开发者提、供轻量级的、实例管理能力、聚焦流程、的日常高频操作、无需打开浏览器即、可完成流程列表、Use、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.

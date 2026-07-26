@@ -1,9 +1,8 @@
----
-slug: "azure-ai-transcription-py-free"
+---slug: "azure-ai-transcription-py-free"
 name: "azure-ai-transcription-py-free"
 version: "1.0.0"
 displayName: "Azure语音转文字基础版"
-summary: "Azure AI Transcription 基础功能,支持批量语音转文字与语言指定。Azure AI Transcription 的 Python 客户端库基础功能。支持对存储在 Blob"
+summary: "Azure AI Tr"
 summary_zh: "Azure AI Transcription 基础功能,支持批量语音转文字与语言指定。Azure AI Transcription 的 Python 客户端库基础功能。支持对存储在 Blob"
 license: "MIT"
 description: |-
@@ -27,9 +26,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Operations"
----
-# Azure Ai Transcription Py Free
+category: "Operations"---# Azure Ai Transcription Py Free
 
 Azure AI Transcription(speech-to-text)Python 客户端库基础功能,支持批量转写.
 ## 输入格式

@@ -76,16 +76,15 @@ Endpoints Needing Comments:
 ...
 ```
 
-**处理**: 解析功能1：代码仓库自动扫描的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 功能2：多格式导出
 **解决痛点**：不同角色要看不同格式——开发要YAML，产品要HTML，客户要PDF.
 **专业版能力**：一键导出五种格式.
 ```bash
 api-doc export --spec ./openapi.yaml --format yaml --output ./openapi.yaml
-api-doc export --spec ./openapi.yaml --format json --output ./openapi.json
-api-doc export --spec ./openapi.yaml --format html --output ./docs/index.html
-api-doc export --spec ./openapi.yaml --format pdf --output ./docs/api.pdf
-api-doc export --spec ./openapi.yaml --format swagger-ui --output ./swagger-ui/
+/openapi.yaml --format json --output ./openapi.json
+/openapi.yaml --format html --output ./docs/index.html
+/openapi.yaml --format pdf --output ./docs/api.pdf
+/openapi.yaml --format swagger-ui --output ./swagger-ui/
 ```
 
 | 格式 | 用途 | 特点 |
@@ -114,7 +113,6 @@ DIFF: v1.2.0 → v1.3.0
 [REMOVED]  DELETE /api/v1/users/batch - 批量删除接口已下线
 ```
 
-**输出**: 返回功能3：文档版本管理与diff的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `功能3：文档版本管理与diff` 选项
 
@@ -126,20 +124,19 @@ api-doc mock start --spec ./openapi.yaml --port 8080
 # ...
 api-doc mock reload  # 无需重启
 curl http://localhost:8080/api/v1/users?mock_scenario=empty    # 空列表
-curl http://localhost:8080/api/v1/users?mock_scenario=error    # 错误响应
-curl http://localhost:8080/api/v1/users?mock_delay=2000        # 慢响应
+mock_scenario=error    # 错误响应
+mock_delay=2000        # 慢响应
 ```
 
-**处理**: 解析功能4：Mock服务器联动的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回功能4：Mock服务器联动的处理结果,包含执行状态码、结果数据和执行日志。### 功能5：团队评审与协作
+### 功能5：团队评审与协作
 **解决痛点**：接口文档谁都能改，改完没人审，字段命名混乱.
 **专业版能力**：PR评审流程，评论与@提及，变更通知.
 > 详细代码示例已移至 `references/detail.md`
 
-> 详细内容已移至 `references/detail.md` - ### 功能6：GraphQL Schema生成
+> 详细内容已移至 `references/detail.md` - 
+### 功能6：GraphQL Schema生成
 
-**输入**: 用户提供功能5：团队评审与协作所需的指令和必要参数.
-**处理**: 解析功能5：团队评审与协作的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 功能7：自定义模板引擎
+### 功能7：自定义模板引擎
 **解决痛点**：每个公司的文档模板不同，统一工具产出的格式不合公司规范.
 **专业版能力**：基于模板引擎自定义文档结构.
 ```bash
@@ -155,11 +152,9 @@ api-doc generate --spec ./openapi.yaml --template ./templates/company.md.tpl
 **解决痛点**：国际化团队需要中英双语文档，手动维护两份不同步.
 **专业版能力**：一次生成，中英双语对照.
 ```bash
-api-doc generate --spec ./openapi.yaml --bilingual --output ./docs/
+/openapi.yaml --bilingual --output ./docs/
 ```
 
-**输入**: 用户提供功能8：多语言文档所需的指令和必要参数.
-**处理**: 解析功能8：多语言文档的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 #
 ## 快速开始
 
@@ -232,7 +227,7 @@ Agent会按免费版的规则生成YAML与Markdown，并额外提示：是否要
 ```bash
 api-doc scan --lang go --path ./src --output ./openapi.yaml
 # ...
-api-doc scan --lang java --path ./src/main/java --output ./openapi.yaml
+/src/main/java --output ./openapi.yaml
 # ...
 api-doc scan --lang python --path ./app --output ./openapi.yaml
 # ...
@@ -246,7 +241,7 @@ api-doc init-repo --remote git@your-git-server:team/api-docs.git
 # ...
 api-doc generate --from ./openapi.yaml --tag v1.2.0
 # ...
-api-doc mock start --spec ./openapi.yaml --port 8080
+/openapi.yaml --port 8080
 # ...
 api-doc collab enable --reviewers @zhang,@li
 ```

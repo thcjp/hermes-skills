@@ -51,7 +51,6 @@ HTML编码工具专业版是企业级 HTML 开发平台，覆盖 HTML5 全部 AP
 | 结构化数据 | 不支持 | Schema.org + JSON-LD |
 | 性能优化 | 基础懒加载 | 关键路径+预加载+懒加载 |
 
-**输入**: 用户提供能力对比所需的指令和必要参数.
 **处理**: 解析能力对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回能力对比的响应数据,包含状态码、结果和日志.
 ### 核心能力(补充)
@@ -107,14 +106,13 @@ WCAG 合规:
   - Twitter Card 标签
 ```
 
-**输入**: 用户提供核心能力所需的指令和必要参数.
 **处理**: 解析核心能力的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心能力的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -297,7 +295,7 @@ npx lighthouse https://example.com --output html --output-path ./report.html
 <!-- 图片格式优化 -->
 <picture>
   <source srcset="image.avif" type="image/avif">
-  <source srcset="image.webp" type="image/webp">
+webp" type="image/webp">
   <img src="image.jpg" alt="描述" loading="lazy" decoding="async">
 </picture>
 # ...

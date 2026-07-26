@@ -51,7 +51,6 @@ category: "Communication"
 - 按账户分组展示与统一视图切换
 - 多账户健康状态监控
 
-**输入**: 用户提供多邮箱聚合所需的指令和必要参数.
 **处理**: 解析多邮箱聚合的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多邮箱聚合的响应数据,包含状态码、结果和日志.
 ### AI 智能摘要
@@ -60,7 +59,6 @@ category: "Communication"
 - 风险邮件识别与提示
 - 摘要自然语言生成（支持中文）
 
-**输入**: 用户提供AI 智能摘要所需的指令和必要参数.
 **处理**: 解析AI 智能摘要的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回AI 智能摘要的响应数据,包含状态码、结果和日志.
 ### 定时报告推送
@@ -69,7 +67,6 @@ category: "Communication"
 - 多渠道推送（邮件、飞书、钉钉、Slack、Webhook）
 - 报告格式自定义（文本/HTML/Markdown）
 
-**输入**: 用户提供定时报告推送所需的指令和必要参数.
 **处理**: 解析定时报告推送的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时报告推送的响应数据,包含状态码、结果和日志.
 ### 智能分类与标签
@@ -78,7 +75,6 @@ category: "Communication"
 - 优先级自动排序
 - 分类统计与占比分析
 
-**输入**: 用户提供智能分类与标签所需的指令和必要参数.
 **处理**: 解析智能分类与标签的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回智能分类与标签的响应数据,包含状态码、结果和日志.
 ### 告警通知
@@ -87,7 +83,6 @@ category: "Communication"
 - 告警渠道配置（邮件/即时通讯）
 - 告警级别与静默策略
 
-**输入**: 用户提供告警通知所需的指令和必要参数.
 **处理**: 解析告警通知的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回告警通知的响应数据,包含状态码、结果和日志.
 ### 趋势分析
@@ -98,7 +93,6 @@ category: "Communication"
 
 ---
 
-**输入**: 用户提供趋势分析所需的指令和必要参数.
 **处理**: 解析趋势分析的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回趋势分析的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
@@ -171,7 +165,7 @@ email-digest-tool schedule create \
   --accounts gmail,outlook \
   --format markdown \
   --push feishu \
-  --webhook "https://open.feishu.cn/open-apis/bot/v2/hook/xxx" \
+feishu.cn/open-apis/bot/v2/hook/xxx" \
   --timezone "Asia/Shanghai"
 # ...
 # 查看所有定时任务
@@ -189,7 +183,7 @@ email-digest-tool alert create \
   --name "ceo-alert" \
   --condition "from:ceo@company.com" \
   --channel feishu \
-  --webhook "https://open.feishu.cn/open-apis/bot/v2/hook/xxx" \
+feishu.cn/open-apis/bot/v2/hook/xxx" \
   --priority critical
 # ...
 email-digest-tool alert create \
@@ -415,7 +409,6 @@ email-digest-tool archive search --keyword "董事会" --since "2026-01-01"
 email-digest-tool accounts health-check
 # ...
 # 重新登录失效账户
-browser-use --browser real open https://mail.google.com
 ```
 
 ### 问题2：AI 摘要质量不佳

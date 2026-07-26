@@ -78,7 +78,6 @@ category: "Knowledge"
 ### 仅支持控制单台电视设备
 仅支持控制单台电视设备
 
-**输入**: 用户提供仅支持控制单台电视设备所需的指令和必要参数.
 **处理**: 解析仅支持控制单台电视设备的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回仅支持控制单台电视设备的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -86,7 +85,6 @@ category: "Knowledge"
 ### 不支持多用户配置管理
 不支持多用户配置管理
 
-**输入**: 用户提供不支持多用户配置管理所需的指令和必要参数.
 **处理**: 解析不支持多用户配置管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回不支持多用户配置管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -94,7 +92,6 @@ category: "Knowledge"
 ### 不支持定时播放功能
 不支持定时播放功能
 
-**输入**: 用户提供不支持定时播放功能所需的指令和必要参数.
 **处理**: 解析不支持定时播放功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回不支持定时播放功能的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -102,7 +99,6 @@ category: "Knowledge"
 ### 不支持媒体库自动扫描
 不支持媒体库自动扫描
 
-**输入**: 用户提供不支持媒体库自动扫描所需的指令和必要参数.
 **处理**: 解析不支持媒体库自动扫描的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回不支持媒体库自动扫描的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -110,12 +106,10 @@ category: "Knowledge"
 ### 不支持播放历史统计
 不支持播放历史统计
 
-**输入**: 用户提供不支持播放历史统计所需的指令和必要参数.
 **处理**: 解析不支持播放历史统计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回不支持播放历史统计的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**输入**: 用户提供已知限制所需的指令和必要参数.
 **处理**: 解析已知限制的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回已知限制的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级、Jellyfin、媒体服务器控制工、支持内容搜索、播放控制与设备管、适合个人家庭影音、娱乐使用、核心能力、搜索内容并自动开、始播放、自动定位上次观看、自动检测可控设备、下一集、音量控制等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -143,7 +137,7 @@ node skills/jellyfin-control/cli.js tv play "Breaking Bad"
 用户想观看某部电影.
 ```bash
 # 播放电影
-node skills/jellyfin-control/cli.js tv play "The Matrix"
+js tv play "The Matrix"
 ```
 
 ### 场景三：续播控制
@@ -151,10 +145,10 @@ node skills/jellyfin-control/cli.js tv play "The Matrix"
 电视已开启，Jellyfin 已运行，直接续播.
 ```bash
 # 续播
-node skills/jellyfin-control/cli.js resume "Breaking Bad"
+js resume "Breaking Bad"
 # ...
 # 指定设备续播
-node skills/jellyfin-control/cli.js resume "Matrix" --device "Chromecast"
+js resume "Matrix" --device "Chromecast"
 ```
 
 ## 不适用场景
@@ -220,10 +214,9 @@ node skills/jellyfin-control/cli.js resume "Matrix" --device "Chromecast"
 
 ```bash
 # 搜索内容验证
-node skills/jellyfin-control/cli.js search "Star Wars"
+js search "Star Wars"
 # ...
 # 查看媒体库统计
-node skills/jellyfin-control/cli.js stats
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -232,7 +225,8 @@ node skills/jellyfin-control/cli.js stats
 
 ### 环境变量说明
 
-#### Jellyfin 配置（必需）
+#
+### Jellyfin 配置（必需）
 
 | 变量 | 必需 | 说明 |
 |---:|---:|---:|
@@ -242,7 +236,8 @@ node skills/jellyfin-control/cli.js stats
 | `JF_USER_ID` | 否 | 用户 ID（直接指定） |
 | `JF_PASS` | 否 | 密码（会话认证时） |
 
-#### 电视控制配置（可选）
+#
+### 电视控制配置（可选）
 
 | 变量 | 说明 |
 |:---:|:---:|
@@ -283,18 +278,18 @@ node skills/jellyfin-control/cli.js stats
 
 ```bash
 # 电视控制
-node skills/jellyfin-control/cli.js tv on           # 开启电视
-node skills/jellyfin-control/cli.js tv off          # 关闭电视
-node skills/jellyfin-control/cli.js tv launch       # 启动 Jellyfin 应用
+js tv on           # 开启电视
+js tv off          # 关闭电视
+js tv launch       # 启动 Jellyfin 应用
 # ...
 # 播放控制
-node skills/jellyfin-control/cli.js control pause    # 暂停
-node skills/jellyfin-control/cli.js control play     # 播放
-node skills/jellyfin-control/cli.js control next     # 下一集
-node skills/jellyfin-control/cli.js control vol 50   # 音量 50%
+js control pause    # 暂停
+js control play     # 播放
+js control next     # 下一集
+js control vol 50   # 音量 50%
 # ...
 # 内容搜索
-node skills/jellyfin-control/cli.js search "Star Wars"
+js search "Star Wars"
 ```
 
 ### 后端选择建议
@@ -328,7 +323,6 @@ ping YOUR_IP
 echo $TV_MAC
 # ...
 # 验证 Wake-on-LAN
-node skills/jellyfin-control/cli.js tv on --debug
 # ...
 # 手动开启电视后重试
 ```
@@ -337,13 +331,10 @@ node skills/jellyfin-control/cli.js tv on --debug
 
 ```bash
 # 搜索内容确认存在
-node skills/jellyfin-control/cli.js search "内容名称"
 # ...
 # 尝试模糊搜索
-node skills/jellyfin-control/cli.js search "Matrix"
 # ...
 # 查看媒体库统计
-node skills/jellyfin-control/cli.js stats
 ```
 
 ### Home Assistant 连接失败

@@ -86,7 +86,6 @@ for event in stream:
         print(f"[完成] {event.text}")
 ```
 
-**输入**: 用户提供实时流式转写所需的指令和必要参数.
 **处理**: 解析实时流式转写的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回实时流式转写的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -114,7 +113,6 @@ for segment in result.segments:
     print(f"[{speaker}] [{segment.start_time:.1f}s-{segment.end_time:.1f}s] {segment.text}")
 ```
 
-**输入**: 用户提供说话人分离（Diarization）所需的指令和必要参数.
 **处理**: 解析说话人分离（Diarization）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回说话人分离（Diarization）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -181,11 +179,11 @@ class BatchTranscriptionManager:
         os.makedirs(output_dir, exist_ok=True)
         for result in self.results:
             if format == 'srt':
-                self._export_srt(result, output_dir)
+_export_srt(result, output_dir)
             elif format == 'vtt':
-                self._export_vtt(result, output_dir)
+_export_vtt(result, output_dir)
             elif format == 'json':
-                self._export_json(result, output_dir)
+_export_json(result, output_dir)
 # ...
     def _export_srt(self, result, output_dir):
         path = os.path.join(output_dir, f"{result['name']}.srt")
@@ -204,7 +202,6 @@ class BatchTranscriptionManager:
         return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
 ```
 
-**输入**: 用户提供批量转写队列管理所需的指令和必要参数.
 **处理**: 解析批量转写队列管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量转写队列管理的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级语音转写工、支持实时流式转写、批量处理与自定义、语音转写专业版、面向企业团队与专、业用户的高级语音、转写工具、核心能力、实时流式语音转写、支持麦克风输入与、流式音频、自动识别不同说话、支持大规模音频文、件处理、自定义语音模型集、提升专业领域识别、准确率、多语言混合转写等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -294,7 +291,7 @@ english_videos = [
     {"url": "https://<storage>/videos/video_en_02.wav", "name": "video_en_02"},
 ]
 video_manager.batch_transcribe(english_videos, locale="en-US", diarization=False)
-video_manager.export_results(format='vtt', output_dir='./subtitles/en-US')
+video_manager./subtitles/en-US')
 ```
 
 ## 不适用场景

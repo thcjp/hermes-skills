@@ -1,9 +1,8 @@
----
-slug: "task"
+---slug: "task"
 name: "task"
 version: 0.1.1
 displayName: "任务"
-summary: "Tasker docstore任务管理,清单/今日到期/逾期/周计划。Tasker docstore task management via tool-dispatch。Use for ta"
+summary: "Tasker docs"
 summary_zh: "Tasker docstore任务管理,清单/今日到期/逾期/周计划。Tasker docstore task management via tool-dispatch。Use for ta"
 license: "MIT"
 description: |-
@@ -22,9 +21,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Productivity"
----
-# Task
+category: "Productivity"---# Task
 
 ## 付费版专享能力
 

@@ -1,5 +1,4 @@
----
-slug: "git-workflows-paid"
+---slug: "git-workflows-paid"
 name: "git-workflows-paid"
 version: 1.0.1
 displayName: "Git高级操作专业版"
@@ -8,7 +7,7 @@ summary_zh: "企业级 Git 进阶方案，支持子树子模块、稀疏检出�
 license: "MIT"
 edition: "pro"
 description: |-
-  面向企业级研发团队的 Git 进阶操作专业工具。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
+  面向企业级研发团队的 Git 进阶操作专业工具。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。不适用于需要人工创意判断的任务.
 tags:
   - 开发工具
   - 版本控制
@@ -26,9 +25,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Development"
----
-# Git高级操作专业版
+category: "Development"---# Git高级操作专业版
 
 ## 付费版专享能力
 
@@ -204,7 +201,6 @@ git add path/to/file.ts
 
 ```bash
 # 启用冲突自动记忆
-git config --global rerere.enabled true
 # ...
 # 启用部分克隆支持
 git config --global feature.experimental true
@@ -220,7 +216,6 @@ git config --global fetch.prune true
 git config --global diff.algorithm patience
 # ...
 # 配置合并策略
-git config --global merge.conflictstyle diff3
 ```
 
 ### 子模块批量管理脚本
@@ -408,7 +403,6 @@ git submodule update --init --recursive
 
 ```bash
 # 忘记指定文件的方案
-git rerere forget path/to/file.ts
 # ...
 # 清除所有记忆
 rm -rf .git/rr-cache/

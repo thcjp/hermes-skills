@@ -73,7 +73,6 @@ category: "Development"
 ### 单次只抓取一个URL
 单次只抓取一个URL
 
-**输入**: 用户提供单次只抓取一个URL所需的指令和必要参数.
 **处理**: 解析单次只抓取一个URL的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回单次只抓取一个URL的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -81,7 +80,6 @@ category: "Development"
 ### 不支持JavaScript动态
 不支持JavaScript动态渲染页面
 
-**输入**: 用户提供不支持JavaScript动态所需的指令和必要参数.
 **处理**: 解析不支持JavaScript动态的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回不支持JavaScript动态的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -89,7 +87,6 @@ category: "Development"
 ### 不支持自动翻页
 不支持自动翻页
 
-**输入**: 用户提供不支持自动翻页所需的指令和必要参数.
 **处理**: 解析不支持自动翻页的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回不支持自动翻页的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -97,7 +94,6 @@ category: "Development"
 ### 不支持结构化(JSON/CSV
 不支持结构化(JSON/CSV)输出
 
-**输入**: 用户提供不支持结构化(JSON/CSV所需的指令和必要参数.
 **处理**: 解析不支持结构化(JSON/CSV的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回不支持结构化(JSON/CSV的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -105,12 +101,10 @@ category: "Development"
 ### 不支持代理与认证
 不支持代理与认证
 
-**输入**: 用户提供不支持代理与认证所需的指令和必要参数.
 **处理**: 解析不支持代理与认证的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回不支持代理与认证的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**输入**: 用户提供已知限制所需的指令和必要参数.
 **处理**: 解析已知限制的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回已知限制的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级网页内容抓、取工具、选择器提取与文件、适合个人用户快速、获取网页文本、网页抓取工具免费、版为个人用户提供、轻量级的网页内容、抓取与提取能力等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -131,7 +125,7 @@ category: "Development"
 python （请参考skill目录中的脚本文件） --url "https://example.com/article"
 # ...
 # 抓取并保存到文件
-python （请参考skill目录中的脚本文件） --url "https://example.com/article" --out "article.txt"
+com/article" --out "article.txt"
 ```
 
 输出示例:
@@ -152,20 +146,19 @@ Fetched: 2026-07-18 10:30:00
 用户需要从网页中提取特定字段(如标题、价格、日期),使用CSS选择器精准定位.
 ```bash
 # 提取页面标题
-python （请参考skill目录中的脚本文件） --url "https://example.com" --selector "title::text"
+com" --selector "title::text"
 # ...
 # 提取文章标题
-python （请参考skill目录中的脚本文件） --url "https://example.com/blog" --selector "h1.article-title::text"
+com/blog" --selector "h1.article-title::text"
 # ...
 # 提取多个元素(列表)
-python （请参考skill目录中的脚本文件） --url "https://example.com/products" --selector "div.product-name::text"
+com/products" --selector "div.product-name::text"
 ```
 
 输出示例:
 
 ```text
 === Selector: h1.article-title::text ===
-Source: https://example.com/blog
 # ...
 vLLM 0.8发布:PagedAttention全面升级
 ```
@@ -175,13 +168,13 @@ vLLM 0.8发布:PagedAttention全面升级
 用户希望提取网页的meta信息(描述、关键词、作者等).
 ```bash
 # 提取meta描述
-python （请参考skill目录中的脚本文件） --url "https://example.com" --selector "meta[name=description]::attr(content)"
+com" --selector "meta[name=description]::attr(content)"
 # ...
 # 提取meta关键词
-python （请参考skill目录中的脚本文件） --url "https://example.com" --selector "meta[name=keywords]::attr(content)"
+com" --selector "meta[name=keywords]::attr(content)"
 # ...
 # 提取canonical URL
-python （请参考skill目录中的脚本文件） --url "https://example.com" --selector "link[rel=canonical]::attr(href)"
+com" --selector "link[rel=canonical]::attr(href)"
 ```
 
 ## 不适用场景
@@ -212,17 +205,16 @@ pip install httpx
 
 ```bash
 # 最简用法:抓取网页纯文本
-python （请参考skill目录中的脚本文件） --url "https://example.com"
 ```
 
 ### 第三步:使用CSS选择器
 
 ```bash
 # 提取特定元素
-python （请参考skill目录中的脚本文件） --url "https://example.com" --selector "h1::text"
+com" --selector "h1::text"
 # ...
 # 保存到文件
-python （请参考skill目录中的脚本文件） --url "https://example.com" --selector "h1::text" --out "title.txt"
+com" --selector "h1::text" --out "title.txt"
 ```
 
 ## 示例
@@ -295,7 +287,7 @@ python -c "import scrapling; print(scrapling.__version__)"
 抓取结果保存为文件后,便于AI助手进一步分析、总结或归档:
 
 ```bash
-python （请参考skill目录中的脚本文件） --url "https://example.com/long-article" --out "article.txt"
+com/long-article" --out "article.txt"
 # 然后让AI助手阅读article.txt并生成摘要
 ```
 

@@ -84,8 +84,7 @@ export API_KEY="your_api_key_here"
 - **依赖分析**：分析库的依赖关系与兼容性
 - **社区评估**：检查贡献者数量、fork数、release频率
 
-**输入**: 用户提供GitHub Library Discovery所需的指令和必要参数.
-**输出**: 返回GitHub Library Discovery的处理结果,包含执行状态码、结果数据和执行日志。### WebFetch
+### WebFetch
 获取指定URL的网页内容并进行结构化提取：
 
 - **内容获取**：获取网页全文内容
@@ -94,9 +93,7 @@ export API_KEY="your_api_key_here"
 - **重试机制**：网络失败时自动重试
 - **内容清洗**：去除广告、导航等无关内容
 
-**输入**: 用户提供WebFetch所需的指令和必要参数.
-**处理**: 解析WebFetch的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回WebFetch的处理结果,包含执行状态码、结果数据和执行日志。### MCP web_search
+### MCP web_search
 
 通过MCP（Model Context Protocol）web_search服务进行网络搜索：
 
@@ -125,7 +122,6 @@ export API_KEY="your_api_key_here"
 - **发布时间**：查看产品发布时间与更新历史
 - **用户反馈**：提取用户评论中的优缺点分析
 
-**输出**: 返回Product Hunt Research的处理结果,包含执行状态码、结果数据和执行日志.
 ### 研究方法论（Research Methodology）
 
 系统化的研究流程确保结果全面准确：

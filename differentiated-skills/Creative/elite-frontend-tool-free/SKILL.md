@@ -95,21 +95,20 @@ category: "Automation"
   ✅ 不对称布局、Bento Grid、杂志排版、错落层叠
 ```
 
-**输入**: 用户提供免费版设计规则所需的指令和必要参数.
 **处理**: 解析免费版设计规则的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版设计规则的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
@@ -180,7 +179,6 @@ category: "Automation"
       font-size: 1.1rem;
       color: var(--text-muted);
       max-width: 28rem;
-      line-height: 1.7;
     }
 # .
     /* 交错入场动效 */
@@ -342,10 +340,10 @@ generate_palette "dracula"
 
 ```html
 <!-- 代码/硬核风格 -->
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
+googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
 # .
 <!-- 社论/高级风格 -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+googleapis.com/css2?family=Playfair+Display:wght@400;900&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 ```
 
 ### 第三步：生成代码
@@ -371,8 +369,8 @@ generate_palette "dracula"
 /* 背景深度 - 多层渐变叠加 */
 body {
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(233,69,96,0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(15,52,96,0.2) 0%, transparent 50%),
+15) 0%, transparent 50%),
+2) 0%, transparent 50%),
     linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
 }
 ```
@@ -382,9 +380,6 @@ body {
 ```css
 /* 交错入场 - 核心动效模式 */
 .card { opacity: 0; animation: fadeSlideUp 0.6s ease forwards; }
-.card:nth-child(1) { animation-delay: 0.1s; }
-.card:nth-child(2) { animation-delay: 0.2s; }
-.card:nth-child(3) { animation-delay: 0.3s; }
 // .
 @keyframes fadeSlideUp {
   from { opacity: 0; transform: translateY(24px); }

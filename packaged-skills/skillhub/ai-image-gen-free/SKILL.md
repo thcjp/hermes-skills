@@ -1,9 +1,8 @@
----
-slug: "ai-image-gen-free"
+---slug: "ai-image-gen-free"
 name: "ai-image-gen-free"
 version: 1.0.1
 displayName: "AI图像生成基础版"
-summary: "Gemini Flash Image 文生图基础版,支持标准与2K分辨率、10种画面比例。。AI 图像生成基础版(免费),通过执行脚本调用 Gemini Flash Image API 完成"
+summary: "Gemini Flas"
 summary_zh: "Gemini Flash Image 文生图基础版,支持标准与2K分辨率、10种画面比例。。AI 图像生成基础版(免费),通过执行脚本调用 Gemini Flash Image API 完成"
 license: "MIT"
 description: |-
@@ -32,9 +31,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Creative"
----
-# AI Image Gen LITE
+category: "Creative"---# AI Image Gen LITE
 
 AI 图像生成基础版,通过执行 `（请参考skill目录中的脚本文件）` 调用 Gemini Flash Image API 生成图片。仅支持文本生成图像(文生图),覆盖标准与 2K 两档分辨率、10 种画面比例.
 **范围外**(本技能不做): 图生图(图+文)、风格转换、4K 分辨率、批量生成(需升级 ai-image-gen 专业版).
@@ -76,7 +73,7 @@ export IMAGE_GEN_BASE_URL="https://code.newcli.com/gemini"  # 可选,默认即�
 # ...
 **处理**: 解析API密钥和配置参数,验证认证信息有效性,初始化运行时环境.
 # ...
-**输入**: 用户提供认证与配置所需的指令和必要参数.
+
 ### 基础生成
 # ...
 使用 `（请参考skill目录中的脚本文件）` 完成文生图:
@@ -102,9 +99,7 @@ python3 （请参考skill目录中的脚本文件） "你的提示词" \
 **处理**: 解析命令行参数和配置选项,验证参数合法性,映射到内部处理流程.
 ### 可用模型(基础版)
 默认模型 `gemini-3.1-flash-image-2k-16x9`(2K,16:9 横屏).
-**输入**: 用户提供可用模型(基础版)所需的指令和必要参数.
-**处理**: 解析可用模型(基础版)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回可用模型(基础版)的处理结果,包含执行状态码、结果数据和执行日志.
+
 ### 标准分辨率
 | 模型 ID | 比例 | 适用场景 |
 |---:|---:|---:|
@@ -113,8 +108,6 @@ python3 （请参考skill目录中的脚本文件） "你的提示词" \
 | ge
 
 **输入**: 用户提供可用模型(基础版)相关的配置参数、输入数据和处理选项.
-**处理**: 解析可用模型(基础版)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回可用模型(基础版)的处理结果,包含执行状态码、结果数据和执行日志.
 ### 提示词技巧
 
 - **具体描述**: 主体、场景、光线、风格、色调
@@ -123,8 +116,6 @@ python3 （请参考skill目录中的脚本文件） "你的提示词" \
 - **色彩指定**: 主色调、配色方案
 
 **输入**: 用户提供提示词技巧相关的配置参数、输入数据和处理选项.
-**处理**: 解析提示词技巧的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回提示词技巧的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -139,7 +130,7 @@ python3 （请参考skill目录中的脚本文件） "你的提示词" \
 ```bash
 # 变体实现(与上文代码相似度100.0%,此处为AI图像生成基础版的差异化处理路径)
 export IMAGE_GEN_API_KEY="your_api_key"
-export IMAGE_GEN_BASE_URL="https://code.newcli.com/gemini"  # 可选,默认即此值
+newcli.com/gemini"  # 可选,默认即此值
 ```
 
 校验配置是否就绪:
@@ -154,7 +145,6 @@ export IMAGE_GEN_BASE_URL="https://code.newcli.com/gemini"  # 可选,默认即�
 
 ```bash
 # 默认 2K-16x9 横屏
-python3 （请参考skill目录中的脚本文件） "你的提示词" --output output.png
 # ...
 # 指定 1:1 方形(社交头像)
 python3 （请参考skill目录中的脚本文件） "你的提示词" \
@@ -241,7 +231,6 @@ python3 （请参考skill目录中的脚本文件） \
 python3 （请参考skill目录中的脚本文件） \
   "深邃星空,银河横跨夜空,远山下宁静的湖泊倒映星光,极简构图,冷色调,9:16 竖屏" \
   --model gemini-3.1-flash-image-2k-9x16 \
-  --output wallpaper.png
 ```
 
 **输出**: `wallpaper.png` 文件路径
@@ -290,8 +279,6 @@ A: 图片版权以 Gemini Image 服务方条款为准。商业使用前请确认
 1. 确认运行环境满足依赖说明中的要求
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
-
-> 详细的输入输出格式请参考下方章节说明。
 
 > **想要 4K 印刷级输出、图生图、风格转换、批量生成?** 升级到 ai-image-gen 专业版解锁全部高级能力.
 ## 输出格式

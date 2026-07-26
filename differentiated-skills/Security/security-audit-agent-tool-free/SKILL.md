@@ -104,7 +104,6 @@ echo "扫描完成,发现问题: ${ISSUES} 项"
 echo "========================================="
 ```
 
-**输入**: 用户提供代码库安全扫描所需的指令和必要参数.
 **处理**: 解析代码库安全扫描的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回代码库安全扫描的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -120,7 +119,6 @@ echo "=== 提示注入风险检测 ==="
 # ...
 # 检查系统提示词文件
 PROMPT_FILES=$(find . -name "*.txt" -o -name "*.md" -o -name "*.prompt" -o -name "*system*prompt*" 2>/dev/null | \
-               grep -v 'node_modules\|\.git\|README')
 # ...
 INJECTION_PATTERNS=(
     'ignore.*previous.*instruction'
@@ -139,7 +137,7 @@ for file in $PROMPT_FILES; do
     echo "检查文件: ${file}"
     for pattern in "${INJECTION_PATTERNS[@]}"; do
         matches=$(grep -ic "$pattern" "$file" 2>/dev/null)
-        [ "$matches" -gt 0 ] && echo "  [!] 疑似注入模式: ${pattern} (${matches}处)" && ((RISKS++))
+] 疑似注入模式: ${pattern} (${matches}处)" && ((RISKS++))
     done
 done
 # ...
@@ -147,7 +145,6 @@ echo ""
 echo "提示注入风险: ${RISKS} 项"
 ```
 
-**输入**: 用户提供提示注入检测所需的指令和必要参数.
 **处理**: 解析提示注入检测的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回提示注入检测的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -173,23 +170,19 @@ for config in config.json config.yaml .env agent_config.json settings.json; do
 # ...
         # 检查最大token限制
         if ! grep -qi 'max_tokens\|max_length' "$config" 2>/dev/null; then
-            echo "  [!] 未设置max_tokens限制"
         fi
 # ...
         # 检查超时配置
         if ! grep -qi 'timeout\|time_limit' "$config" 2>/dev/null; then
-            echo "  [!] 未设置超时限制"
         fi
 # ...
         # 检查速率限制
         if ! grep -qi 'rate_limit\|max_requests' "$config" 2>/dev/null; then
-            echo "  [!] 未设置速率限制"
         fi
     fi
 done
 ```
 
-**输入**: 用户提供Agent配置审计所需的指令和必要参数.
 **处理**: 解析Agent配置审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Agent配置审计的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -227,7 +220,6 @@ for file in $TOOL_FILES; do
 done
 ```
 
-**输入**: 用户提供工具调用安全检查所需的指令和必要参数.
 **处理**: 解析工具调用安全检查的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回工具调用安全检查的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：系统安全审计工具、支持代码库安全检、提示注入检测与基、础配置审计、适合个人开发者快、速安全自查、安全审计免费版、开发者提供基础安、全审计能力、核心能力、适用场景、上线前安全自查、提示词安全审查、工具权限验证、差异化、免费版聚焦核心审、计能力、支持单、速上手、适用关键词、poisoning、audit等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -349,17 +341,17 @@ class ToolPermissionChecker:
 # ...
             # 检查是否有输入验证
             if "input_schema" not in tool and "parameters" not in tool:
-                issues.append(f"[{name}] 未定义输入验证schema")
+append(f"[{name}] 未定义输入验证schema")
 # ...
             # 检查命令中是否有危险模式
             cmd = str(tool.get("command", "") or tool.get("function", ""))
             for pattern in self.DANGEROUS_PATTERNS:
                 if pattern.lower() in cmd.lower():
-                    issues.append(f"[{name}] 发现危险操作: {pattern}")
+append(f"[{name}] 发现危险操作: {pattern}")
 # ...
             # 检查是否有限流
             if "rate_limit" not in tool:
-                issues.append(f"[{name}] 未设置调用频率限制")
+append(f"[{name}] 未设置调用频率限制")
 # ...
         return issues
 # ...

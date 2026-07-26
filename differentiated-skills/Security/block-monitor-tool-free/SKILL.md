@@ -78,7 +78,7 @@ class ContentPolicyChecker:
 # ...
         try:
             with open("allowlist.txt", "r", encoding="utf-8") as f:
-                self.allowlist = set(line.strip().lower() for line in f if line.strip())
+allowlist = set(line.strip().strip())
         except FileNotFoundError:
             pass
 # ...
@@ -103,7 +103,6 @@ class ContentPolicyChecker:
                 result["passed"] = False
 # ...
         if not result["passed"]:
-            for term in self.allowlist:
                 if term in content_lower:
                     result["violations"] = [
                         v for v in result["violations"]
@@ -120,7 +119,6 @@ class ContentPolicyChecker:
         for pattern, desc, severity in sensitive_patterns:
             matches = re.findall(pattern, content)
             if matches:
-                result["violations"].append({
                     "type": "pattern",
                     "description": desc,
                     "count": len(matches),
@@ -139,7 +137,6 @@ if __name__ == "__main__":
     print(json.dumps(result, indent=2, ensure_ascii=False))
 ```
 
-**输入**: 用户提供内容策略检查所需的指令和必要参数.
 **处理**: 解析内容策略检查的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回内容策略检查的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -187,7 +184,6 @@ add_allowlist "密码学"  # 白名单豁免
 list_rules
 ```
 
-**输入**: 用户提供黑白名单管理所需的指令和必要参数.
 **处理**: 解析黑白名单管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回黑白名单管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -207,8 +203,8 @@ class ContentClassifier:
             "patterns": [
                 (r'\b\d{3}-\d{2}-\d{4}\b', "SSN"),
                 (r'\b\d{17}[\dXx]\b', "中国身份证号"),
-                (r'\b\d{3}\.\d{3}\.\d{3}\.\d{3}\b', "IP地址"),
-                (r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', "邮箱"),
+\d{3}\.\d{3}\.\d{3}\b', "IP地址"),
+_%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', "邮箱"),
             ],
             "label": "个人信息"
         },
@@ -272,7 +268,6 @@ if __name__ == "__main__":
     print(json.dumps(result, indent=2, ensure_ascii=False))
 ```
 
-**输入**: 用户提供内容分类标记所需的指令和必要参数.
 **处理**: 解析内容分类标记的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回内容分类标记的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -308,7 +303,6 @@ stats_log() {
 }
 ```
 
-**输入**: 用户提供验证结果记录所需的指令和必要参数.
 **处理**: 解析验证结果记录的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回验证结果记录的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：生成内容验证与策、略检查工具、支持黑白名单管理、内容分类与基础策、略执行、适合个人开发者内、容审核、内容验证网关免费、为个人开发者提供、生成内容的验证与、策略管理能力、核心能力、适用场景、输出内容审核、敏感内容过滤、内容发布前验证、差异化、免费版聚焦基础策、支持单规则管理、适合个人项目快速、适用关键词、内容验证、内容审核等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -324,7 +318,7 @@ import json
 # ...
 def audit_ai_output(content, checker):
     """审核AI生成的内容"""
-    result = checker.check_content(content)
+check_content(content)
 # ...
     if result["passed"]:
         return {
@@ -514,8 +508,6 @@ cat logs/verification_$(date '+%Y%m%d').log
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

@@ -76,11 +76,9 @@ Resolve all paths relative to WORKSPACE=/home/alfred/.skill-platform/workspace. 
 ### 示例1：基础用法
 
 ```
-Resolve all paths relative to WORKSPACE=/home/alfred/.skill-platform/workspace. Sanitize inputs to prevent escapes or absolutes.
 
-* To list directory: exec("scripts/list_files.sh", [rel_path]) → JSON {success: bool, data: array of names, error: string}
-* To read file: exec("scripts/read_file.sh", [rel_path]) → JSON {success: bool, data: string (text content), error: string}
-* Handle errors: For binary/large/non-text files, return error JSON.
+sh", [rel_path]) → JSON {success: bool, data: array of names, error: string}
+sh", [rel_path]) → JSON {success: bool, data: string (text content), error: string}
 ```
 
 ## 错误处理

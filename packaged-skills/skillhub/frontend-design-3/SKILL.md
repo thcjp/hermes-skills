@@ -87,50 +87,39 @@ brutalist/raw、art deco/geometric、soft/pastel、industrial/utilitarian。- �
 将独特的 display 字体与精致的 body 字体配对。禁止跨代收敛到常见 AI 选择（如 Space Grotesk）.
 根据美学方向匹配字体气质：editorial 方向使用衬线 display + 无衬线 body；
 brutalist 方向使用等宽字体；art deco 方向使用几何无衬线.
-**输入**: 用户提供字体策略（Display + Body 配对）所需的指令和必要参数.
-**输出**: 返回字体策略（Display + Body 配对）的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+
 - 参考`字体策略（Display + Body 配对）`的配置文档进行参数调优
 ### 3. 色彩与主题系统
 承诺一个连贯的美学。使用 CSS variables 保持一致性。主色配以锐利强调色优于胆怯的均匀分布调色板.
 根据美学方向建立色彩系统：maximalist 使用高饱和度撞色；minimalist 使用单色+一个强调色；
 retro-futuristic 使用霓虹色+暗色背景；organic/natural 使用大地色系.
 支持 light/dark 主题切换，每次设计应使用不同的主题和配色.
-**输入**: 用户提供色彩与主题系统所需的指令和必要参数.
-**处理**: 解析色彩与主题系统的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回色彩与主题系统的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+
 - 参考`色彩与主题系统`的配置文档进行参数调优
 ### 4. 动效与微交互
 使用动画创造效果和微交互。HTML 优先使用 CSS-only 方案（`@keyframes`、`transition`、
 `transform`）。React 环境优先使用 Motion 库（`motion.div`、`useScroll`、`useTransform`）.
 聚焦高影响力时刻：一次精心编排的页面加载配合 staggered reveals 比散落的微交互更有感染力.
 maximalist 设计需要大量动画和效果；minimalist 设计需要克制、精准和细微细节.
-**输入**: 用户提供动效与微交互所需的指令和必要参数.
-**处理**: 解析动效与微交互的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回动效与微交互的处理结果,包含执行状态码、结果数据和执行日志.
+
 ### 5. 空间构图与布局
 使用意想不到的布局。非对称构图、重叠元素、对角线流向、grid-breaking 元素.
 慷慨的负空间或受控的密度。根据美学方向选择构图策略：editorial 方向使用严格的网格+刻意打破；
 brutalist 方向使用原始的未对齐布局；art deco 方向使用对称几何构图.
 使用 CSS Grid 和 Flexbox 实现复杂布局，`grid-template-areas` 定义区域关系.
-**输入**: 用户提供空间构图与布局所需的指令和必要参数.
-**处理**: 解析空间构图与布局的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回空间构图与布局的处理结果,包含执行状态码、结果数据和执行日志.
+
 ### 6. 背景与视觉细节
 创造氛围和深度而非默认纯色背景。应用创意形式：gradient meshes（`radial-gradient` 叠加）、
 noise textures（SVG `feTurbulence` 滤镜）、geometric patterns（`repeating-linear-gradient`）、
 layered transparencies（`rgba` + `backdrop-filter`）、dramatic shadows（多层 `box-shadow`）、
 decorative borders（`border-image` 或伪元素）、custom cursors（`cursor: url()`）、
 grain overlays（SVG noise pattern 叠加 `mix-blend-mode`）.
-**输入**: 用户提供背景与视觉细节所需的指令和必要参数.
-**处理**: 解析背景与视觉细节的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回背景与视觉细节的处理结果,包含执行状态码、结果数据和执行日志.
+
 ### 7. 反模式规避
 禁止使用：过度使用的字体族（Inter、Roboto、Arial、system fonts）；老套配色方案
 （白色背景上的紫色渐变）；可预测的布局和组件模式；缺乏上下文特征的千篇一律设计.
 禁止跨代收敛到常见 AI 选择。每次设计应使用不同的字体、配色和美学方向.
-**输入**: 用户提供反模式规避所需的指令和必要参数.
-**处理**: 解析反模式规避的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回反模式规避的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+
 - 参考`反模式规避`的配置文档进行参数调优
 ### 8. 实现复杂度匹配
 根据美学愿景匹配实现复杂度。maximalist 设计需要精心编写大量代码，包含丰富的动画和效果.

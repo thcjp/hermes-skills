@@ -98,7 +98,6 @@ category: "Creative"
 - 关键参数: `核心能力` 选项
 - 处理流程: 接收输入 -> 执行核心能力 -> 返回结果
 - 输入: 用户提供核心能力所需的参数和指令
-- 输出: 返回核心能力的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 能力维度
 
@@ -168,7 +167,6 @@ class AccessibilityChecker:
         """检查标题层级"""
         self.issues.append({
             "level": "info",
-            "rule": "WCAG 1.3.1",
             "message": "标题层级应按 h1→h2→h3 顺序，不跳级"
         })
 # .
@@ -176,7 +174,6 @@ class AccessibilityChecker:
         """检查颜色对比度"""
         self.issues.append({
             "level": "info",
-            "rule": "WCAG 1.4.3",
             "message": "文本对比度应 ≥ 4.5:1 (AA标准)"
         })
 # .
@@ -194,7 +191,6 @@ class AccessibilityChecker:
         if '<img' in html and 'alt=' not in html:
             self.issues.append({
                 "level": "error",
-                "rule": "WCAG 1.1.1",
                 "message": "图片缺少 alt 属性"
             })
 # .
@@ -317,7 +313,7 @@ audit-performance ./src/ --lighthouse
 ```html
 <!-- 字体加载优化 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&family=IBM+Plex+Sans:wght@300;400;600&display=swap"
       rel="stylesheet">
 # .

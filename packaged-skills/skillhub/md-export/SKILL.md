@@ -250,11 +250,9 @@ markdown-exporter-pro md_to_pdf input.md output.pdf \
 ### 批量并行转换
 
 ```bash
-markdown-exporter-pro batch /docs/**/*.md \
   --output-dir /publish \
   --formats html,pdf,docx,xlsx \
   --parallel 8 \
-  --template /templates/corporate.docx \
   --style /styles/corporate.css \
   --watermark "公司机密" \
   --fail-on-error false \
@@ -298,7 +296,6 @@ markdown-exporter-pro template list
 
 ```bash
 # 对比两个版本，仅导出变更部分
-markdown-exporter-pro diff v1.2.md v1.3.md \
   --output changelog.pdf \
   --format pdf \
   --highlight-changes

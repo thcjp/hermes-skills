@@ -60,8 +60,6 @@ category: "Automation"
 - 免费版完全兼容，无缝升级
 - 优先技术支持与问题响应
 
-**输入**: 用户提供专业版增强功能所需的指令和必要参数.
-**输出**: 返回专业版增强功能的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -149,7 +147,7 @@ class DocumentParseEngine:
         if ext == ".pdf":
             result = self._parse_pdf(file_path, options)
         elif ext in [".png", ".jpg", ".jpeg", ".tiff", ".bmp"]:
-            result = self._parse_image(file_path, options)
+_parse_image(file_path, options)
         return result
 # ...
     def batch_parse(self, file_paths: List[str],
@@ -158,7 +156,6 @@ class DocumentParseEngine:
         Path(output_dir).mkdir(exist_ok=True)
         results = []
         for file_path in file_paths:
-            result = self.parse(file_path)
             output_file = Path(output_dir) / (Path(file_path).stem + ".json")
             self._export_result(result, str(output_file))
             results.append(result)
@@ -166,7 +163,7 @@ class DocumentParseEngine:
 # ...
     def extract_tables(self, file_path: str) -> List[dict]:
         """表格提取（PRO 专属）"""
-        result = self.parse(file_path, {"tables_only": True})
+parse(file_path, {"tables_only": True})
         return result.tables
 # ...
     def ocr_image(self, image_path: str, lang: str = "chi_sim") -> str:
@@ -181,7 +178,6 @@ class DocumentParseEngine:
 # ...
     def analyze_layout(self, file_path: str) -> dict:
         """版面分析（PRO 专属）"""
-        result = self.parse(file_path)
         layout = {
             "total_pages": max((e.page for e in result.elements), default=0),
             "element_counts": {},
@@ -196,7 +192,7 @@ class DocumentParseEngine:
                 layout["text_blocks"] += 1
             elif elem.element_type == "table":
                 layout["table_count"] += 1
-            elif elem.element_type == "image":
+element_type == "image":
                 layout["image_count"] += 1
         return layout
 # ...
@@ -217,28 +213,26 @@ class DocumentParseEngine:
                             element_type="text", content=text,
                             page=i, confidence=0.9
                         ))
-                        result.full_text += text + NL
+full_text += text + NL
                     tables = page.extract_tables() or []
                     for table in tables:
-                        result.tables.append({
                             "page": i, "data": table
                         })
-                        result.elements.append(ParsedElement(
+elements.append(ParsedElement(
                             element_type="table", content=str(table),
-                            page=i, confidence=0.8
                         ))
         except ImportError:
             from pypdf import PdfReader
             reader = PdfReader(file_path)
             for i, page in enumerate(reader.pages, 1):
-                text = page.extract_text() or ""
-                result.elements.append(ParsedElement(
+extract_text() or ""
+elements.append(ParsedElement(
                     element_type="text", content=text, page=i
                 ))
-                result.full_text += text + NL
+full_text += text + NL
         result.metadata = {
             "format": "pdf",
-            "pages": max((e.page for e in result.elements), default=0),
+            "pages": max((e.elements), default=0),
             "elements": len(result.elements)
         }
         return result

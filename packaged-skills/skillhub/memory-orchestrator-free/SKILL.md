@@ -53,7 +53,6 @@ category: "Agents"
 | 第一层 | 短期记忆 | 上限 100 条 | FIFO 淘汰 |
 | 第二层 | 长期记忆 | 无上限 | 手动管理 |
 
-**处理**: 解析两层记忆存储的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 2. 关键词检索
 
 通过关键词匹配检索记忆条目.
@@ -76,7 +75,6 @@ const result = await skills.memoryOrchestrator({
 - **用法**：`action: "summarize"` 触发摘要生成
 - **输出**：结构化摘要
 
-**处理**: 解析基础摘要生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 4. 本地持久化
 
 保存记忆到磁盘文件，重启后可加载.
@@ -111,7 +109,7 @@ await skills.memoryOrchestrator({
 
 使用关键词检索查找相关记忆条目.
 ```typescript
-const result = await skills.memoryOrchestrator({
+memoryOrchestrator({
   action: "search",
   query: "用户喜好",
   limit: 3,
@@ -161,7 +159,7 @@ await skills.memoryOrchestrator({
    });
 # ...
 3. 后续会话检索：
-   const result = await skills.memoryOrchestrator({
+memoryOrchestrator({
      action: "search",
      query: "用户偏好",
      limit: 3,

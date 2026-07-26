@@ -75,7 +75,7 @@ Git基础工具免费版为开发者提供版本控制核心命令支持。工�
 ```bash
 # 全局配置
 git config --global user.name "你的名字"
-git config --global user.email "your@email.com"
+email "your@email.com"
 git config --global init.defaultBranch main
 # ...
 # 初始化仓库
@@ -83,10 +83,9 @@ git init
 # ...
 # 克隆仓库
 git clone https://example.com/user/repo.git
-git clone https://example.com/user/repo.git custom-name
+com/user/repo.git custom-name
 ```
 
-**输入**: 用户提供初始设置所需的指令和必要参数.
 **处理**: 解析初始设置的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回初始设置的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -113,7 +112,6 @@ git diff file.txt                    # 特定文件
 git diff commit1 commit2             # 比较两个提交
 ```
 
-**输入**: 用户提供基本工作流所需的指令和必要参数.
 **处理**: 解析基本工作流的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回基本工作流的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -139,7 +137,6 @@ git merge --abort                    # 取消合并
 git diff --name-only --diff-filter=U # 查看冲突文件
 ```
 
-**输入**: 用户提供分支与合并所需的指令和必要参数.
 **处理**: 解析分支与合并的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回分支与合并的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -162,7 +159,6 @@ git push -u origin branch-name       # 首次推送
 git push --force-with-lease          # 安全强制推送
 ```
 
-**输入**: 用户提供远程操作所需的指令和必要参数.
 **处理**: 解析远程操作的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回远程操作的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -185,7 +181,6 @@ git log -S "function_name"           # 搜索代码变更
 git blame file.txt                   # 逐行历史
 ```
 
-**输入**: 用户提供历史与日志所需的指令和必要参数.
 **处理**: 解析历史与日志的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回历史与日志的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -207,7 +202,6 @@ git reset --hard HEAD~1              # 撤销提交,丢弃变更
 git revert commit-hash               # 创建反向提交
 ```
 
-**输入**: 用户提供撤销与恢复所需的指令和必要参数.
 **处理**: 解析撤销与恢复的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回撤销与恢复的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -225,7 +219,6 @@ git stash drop stash@{0}             # 删除指定暂存
 git stash clear                      # 清除所有
 ```
 
-**输入**: 用户提供暂存(stash)所需的指令和必要参数.
 **处理**: 解析暂存(stash)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回暂存(stash)的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：版本控制核心命令、涵盖初始化、远程同步与历史管、适合开发者入门、面向开发者的、版本控制基础工具、涵盖仓库初始化、暂存提交、远程操作与历史查、核心能力、仓库初始化与克隆、暂存与提交管理、分支创建与合并、远程仓库同步、历史查看与搜索等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -345,8 +338,7 @@ echo "fork同步完成"
 ### Step 1:配置Git
 
 ```bash
-git config --global user.name "你的名字"
-git config --global user.email "your@email.com"
+email "your@email.com"
 ```
 
 ### Step 2:触发操作

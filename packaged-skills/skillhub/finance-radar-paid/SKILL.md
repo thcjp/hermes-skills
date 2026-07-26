@@ -1,5 +1,4 @@
----
-slug: "finance-radar-paid"
+---slug: "finance-radar-paid"
 name: "finance-radar-paid"
 version: 1.0.1
 displayName: "股票分析雷达专业版"
@@ -9,7 +8,7 @@ license: "MIT"
 edition: "pro"
 description: |-
   面向专业投资者与机构的股票与加密货币分析平台。支持批量标的分析、
-  投资组合追踪、价格告警、热门趋势检测、传闻与早期信号识别。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
+  投资组合追踪、价格告警、热门趋势检测、传闻与早期信号识别。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。不适用于渗透测试未授权目标.
 tags:
   - Finance
   - 股票分析
@@ -24,9 +23,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Finance"
----
-# 股票分析雷达专业版
+category: "Finance"---# 股票分析雷达专业版
 
 ## 付费版专享能力
 
@@ -64,12 +61,10 @@ python3 （请参考skill目录中的脚本文件） --tickers AAPL,GOOG,MSFT,AM
 python3 （请参考skill目录中的脚本文件） --tickers AAPL,GOOG,MSFT --export --output comparison.csv
 ```
 
-**输入**: 用户提供批量分析与导出所需的指令和必要参数。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `批量分析与导出` 选项
 - 处理流程: 接收输入 -> 执行批量分析与导出 -> 返回结果
 - 输入: 用户提供批量分析与导出所需的参数和指令
-- 输出: 返回批量分析与导出的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 投资组合追踪
 ```bash
@@ -166,7 +161,6 @@ cp config_pro_template.yaml config_pro.yaml
 python3 （请参考skill目录中的脚本文件） --tickers AAPL,GOOG,MSFT --export
 # ...
 # 组合管理
-python3 （请参考skill目录中的脚本文件） import --file holdings.csv
 python3 （请参考skill目录中的脚本文件） summary
 python3 （请参考skill目录中的脚本文件） risk-analysis
 # ...

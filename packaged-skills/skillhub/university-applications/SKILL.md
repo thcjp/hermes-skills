@@ -1,9 +1,8 @@
----
-slug: "university-applications"
+---slug: "university-applications"
 name: "university-applications"
 version: 1.2.11
 displayName: "命理大师"
-summary: "全体系命理大师—八字四柱、紫微斗数、奇门遁甲、六爻、梅花易数、塔罗、星盘。。全体系命理大师—八字四柱、紫微斗数、奇门遁甲、六爻、梅花易数、塔罗、星盘。核心能力: - 金融工具领域的专业化AI"
+summary: "全体系命理大师—八字四"
 summary_zh: "全体系命理大师—八字四柱、紫微斗数、奇门遁甲、六爻、梅花易数、塔罗、星盘。。全体系命理大师—八字四柱、紫微斗数、奇门遁甲、六爻、梅花易数、塔罗、星盘。核心能力: - 金融工具领域的专业化AI"
 license: "MIT"
 description: |-
@@ -32,9 +31,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# 命理大师
+category: "Automation"---# 命理大师
 
 ## 付费版专享能力
 
@@ -192,4 +189,3 @@ A:
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
 
-> 详细的输入输出格式请参考下方章节说明。

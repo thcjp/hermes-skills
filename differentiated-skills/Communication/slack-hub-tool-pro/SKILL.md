@@ -47,36 +47,36 @@ Slack Hub工具专业版是一款面向团队和企业的高级Slack集成工具
 ## 核心能力
 ### 1. 批量消息发送与多频道分发
 支持向多个频道同时发送消息，按频道分组批量推送，并自动处理发送结果.
-**输入**: 用户提供批量消息发送与多频道分发所需的指令和必要参数.
+
 **处理**: 解析批量消息发送与多频道分发的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量消息发送与多频道分发的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 2. 高级搜索与结果过滤
 支持按时间范围、频道、用户、文件类型等多维度过滤搜索结果，并提供搜索结果排序与分页.
-**输入**: 用户提供高级搜索与结果过滤所需的指令和必要参数.
+
 **处理**: 解析高级搜索与结果过滤的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级搜索与结果过滤的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 3. 智能限流处理
 内置Slack API限流处理机制，自动识别`Retry-After`头部，智能调整请求频率，避免触发限流.
-**输入**: 用户提供智能限流处理所需的指令和必要参数.
+
 **处理**: 解析智能限流处理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回智能限流处理的响应数据,包含状态码、结果和日志.
 ### 4. 消息模板库
 提供常用消息模板管理，支持变量替换、分类存储与团队共享.
-**输入**: 用户提供消息模板库所需的指令和必要参数.
+
 **处理**: 解析消息模板库的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回消息模板库的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 5. 工作区频道深度管理
 列出频道详情、成员列表、创建时间、主题等信息，支持频道分类与标签管理.
-**输入**: 用户提供工作区频道深度管理所需的指令和必要参数.
+
 **处理**: 解析工作区频道深度管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回工作区频道深度管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 6. 搜索结果导出
 将搜索结果导出为CSV、JSON、Markdown等格式，便于归档与分析.
-**输入**: 用户提供搜索结果导出所需的指令和必要参数.
+
 **处理**: 解析搜索结果导出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回搜索结果导出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -129,14 +129,11 @@ class BatchDistributor:
                 wait_time = e.retry_after
                 print(f"限流，等待{wait_time}秒后重试 [{channel}]")
                 time.sleep(wait_time)
-                result = self.client.send_message(channel=channel, text=message)
-                results.append({
+client.send_message(channel=channel, text=message)
                     'channel': channel,
                     'status': 'success_after_retry',
-                    'timestamp': result.get('ts')
                 })
             except Exception as e:
-                results.append({
                     'channel': channel,
                     'status': 'failed',
                     'error': str(e)
@@ -189,7 +186,7 @@ class AdvancedSearch:
         filtered = self.apply_filters(results, filters)
 # ...
         if filters.get('sort_by'):
-            filtered = self.sort_results(filtered, filters['sort_by'])
+sort_results(filtered, filters['sort_by'])
 # ...
         return filtered
 # ...
@@ -217,9 +214,9 @@ class AdvancedSearch:
         if format == 'csv':
             return self.export_csv(results)
         elif format == 'json':
-            return self.export_json(results)
+export_json(results)
         elif format == 'markdown':
-            return self.export_markdown(results)
+export_markdown(results)
 # ...
 searcher = AdvancedSearch()
 results = searcher.search(
@@ -252,7 +249,7 @@ slack-hub-tool-pro template send \
 slack-hub-tool-pro template broadcast \
   --name "上线通知" \
   --targets "#engineering,#product,#support" \
-  --vars '{"project":"Alpha","version":"2.1.0","environment":"生产","changes":"新增用户认证模块"}'
+1.0","environment":"生产","changes":"新增用户认证模块"}'
 ```
 
 ## 不适用场景
@@ -380,11 +377,10 @@ class ThrottleStrategy:
             except RateLimitError as e:
                 wait = e.headers.get('Retry-After', 1)
                 print(f"触发限流，第{attempt+1}次重试，等待{wait}秒")
-                time.sleep(float(wait))
             except Exception as e:
                 print(f"请求失败: {e}")
                 if attempt < max_retries - 1:
-                    time.sleep(2 ** attempt)  # 指数退避
+sleep(2 ** attempt)  # 指数退避
                 else:
                     raise
 ```
@@ -483,8 +479,8 @@ export SLACK_APP_TOKEN="xapp-your-app-token-here"
 - `https://slack.com/api/search.messages` - 搜索消息
 - `https://slack.com/api/search.files` - 搜索文件
 - `https://slack.com/api/conversations.list` - 列出频道
-- `https://slack.com/api/conversations.info` - 频道详情
-- `https://slack.com/api/conversations.members` - 频道成员
+- `https://slack.info` - 频道详情
+- `https://slack.members` - 频道成员
 
 所有端点均实现了限流处理与自动重试机制.
 ### 可用性分类
@@ -510,8 +506,6 @@ export SLACK_APP_TOKEN="xapp-your-app-token-here"
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

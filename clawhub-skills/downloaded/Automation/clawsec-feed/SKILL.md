@@ -84,7 +84,8 @@ Installation steps:
 mkdir -p ~/.skill-platform/skills/clawsec-feed
 ```
 
-> 详细内容已移至 `references/detail.md` - ### Step 2: Install skill files
+> 详细内容已移至 `references/detail.md` - 
+### Step 2: Install skill files
 ### Step 3: Add to your heartbeat
 Add ClawSec Feed to your heartbeat routine:
 
@@ -125,12 +126,8 @@ curl -sSL --fail --show-error --retry 3 --retry-delay 1 "$FEED_URL"
 
 **Feed structure:**
 
-> 详细代码示例已移至 `references/detail.md`
-
 ## Parsing the Feed
 ### Get advisory count
-
-> 详细代码示例已移至 `references/detail.md`
 
 ### Get critical advisories
 ```bash
@@ -145,7 +142,7 @@ echo "$CRITICAL"
 ### Get advisories from the last 7 days
 ```bash
 WEEK_AGO=$(TZ=UTC date -v-7d +%Y-%m-%dT00:00:00Z 2>/dev/null || TZ=UTC date -d '7 days ago' +%Y-%m-%dT00:00:00Z)
-RECENT=$(echo "$FEED" | jq --arg since "$WEEK_AGO" '.advisories[] | select(.published > $since)')
+RECENT=$(echo "$FEED" | jq --arg since "$WEEK_AGO" '.published > $since)')
 if [ $? -ne 0 ]; then
   echo "Error: Failed to filter recent advisories"
   exit 1
@@ -162,7 +159,7 @@ Shared exploitability prioritization guidance is maintained in:
 ### Get exploitability context for an advisory
 ```bash
 CVE_ID="CVE-2026-27488"
-echo "$FEED" | jq --arg cve "$CVE_ID" '.advisories[] | select(.id == $cve) | {
+echo "$FEED" | jq --arg cve "$CVE_ID" '.id == $cve) | {
   id: .id,
   severity: .severity,
   exploitability_score: .exploitability_score,
@@ -173,7 +170,7 @@ echo "$FEED" | jq --arg cve "$CVE_ID" '.advisories[] | select(.id == $cve) | {
 
 ### Prioritize advisories by exploitability
 ```bash
-echo "$FEED" | jq '[.advisories[] | select(.exploitability_score != null)] |
+echo "$FEED" | jq '[.exploitability_score != null)] |
   sort_by(
     if .exploitability_score == "critical" then 0
     elif .exploitability_score == "high" then 1
@@ -185,8 +182,6 @@ echo "$FEED" | jq '[.advisories[] | select(.exploitability_score != null)] |
 
 ## Cross-Reference Installed Skills
 Check if any of your installed skills are affected by advisories:
-
-> 详细代码示例已移至 `references/detail.md`
 
 **If you find affected skills:**
 
@@ -227,7 +222,7 @@ Check if any of your installed skills are affected by advisories:
    bash
 
    ```
-   echo "$FEED" | jq '.advisories[] | select(.exploitability_score == "high")'
+   echo "$FEED" | jq '.exploitability_score == "high")'
    ```
 2. **Include exploitability in notifications:**
 
@@ -318,8 +313,6 @@ Save to: `~/.skill-platform/clawsec-feed-state.json`
 
 ### State File Operations
 
-> 详细代码示例已移至 `references/detail.md`
-
 ## Rate Limiting
 **Important:** To avoid excessive requests to the feed server, follow these guidelines:
 
@@ -330,7 +323,7 @@ Save to: `~/.skill-platform/clawsec-feed-state.json`
 | Cross-reference scan | Once per session | 5 minutes |
 
 ```bash
-STATE_FILE="$HOME/.skill-platform/clawsec-feed-state.json"
+STATE_FILE="$HOME/.json"
 MIN_INTERVAL_SECONDS=300  # 5 minutes
 LAST_CHECK=$(jq -r '.last_feed_check // "1970-01-01T00:00:00Z"' "$STATE_FILE" 2>/dev/null)
 LAST_EPOCH=$(TZ=UTC date -j -f "%Y-%m-%dT%H:%M:%SZ" "$LAST_CHECK" +%s 2>/dev/null || date -d "$LAST_CHECK" +%s 2>/dev/null || echo 0)
@@ -350,8 +343,6 @@ fi
 
 ## Updating ClawSec Feed
 Check for and install newer versions:
-
-> 详细代码示例已移至 `references/detail.md`
 
 ## Initial Download Integrity
 **Bootstrap Trust Problem:** The initial download of this skill cannot be verified by the skill itself. To establish trust:

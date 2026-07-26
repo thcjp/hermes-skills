@@ -87,9 +87,7 @@ export API_KEY="your_api_key_here"
 | Windows PC | OneDrive | Windows内置，Office集成 |
 | 混合设备 | Dropbox | 各平台表现一致 |
 
-**输入**: 用户提供快速服务选型（Quick Service Picker）所需的指令和必要参数.
-**处理**: 解析快速服务选型（Quick Service Picker）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回快速服务选型（Quick Service Picker）的处理结果,包含执行状态码、结果数据和执行日志。### 常见困惑澄清（Common Confusions）
+### 常见困惑澄清（Common Confusions）
 对照"What you think"与实际发生的差异，澄清同步机制、存储空间区别与重复备份问题.
 | What you think | What's actually happening |
 |:----------------|----------------:|
@@ -98,9 +96,7 @@ export API_KEY="your_api_key_here"
 | "我的照片到处都是重复的" | 多个服务备份同一相机卷 |
 | "我付了3个云服务的钱" | 选一个主服务，取消其余 |
 
-**输入**: 用户提供常见困惑澄清（Common Confusions）所需的指令和必要参数.
-**处理**: 解析常见困惑澄清（Common Confusions）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回常见困惑澄清（Common Confusions）的处理结果,包含执行状态码、结果数据和执行日志。### 存储满处理（Storage Full）
+### 存储满处理（Storage Full）
 4步清理流程，详细的服务专属清理步骤见 `cleanup.md`：
 
 1. **检查什么占用空间**——照片通常占大头
@@ -108,15 +104,14 @@ export API_KEY="your_api_key_here"
 3. **关闭重复备份**——只选一个照片备份服务
 4. **归档旧文件**——将归档移至外置硬盘
 
-**输入**: 用户提供存储满处理（Storage Full）所需的指令和必要参数.
-**输出**: 返回存储满处理（Storage Full）的处理结果,包含执行状态码、结果数据和执行日志。### 备份策略（Backup Strategy）
+### 备份策略（Backup Strategy）
 - **3-2-1规则**：3份副本、2种不同介质、1份异地
 - **云算异地**——但也要保留本地备份
 - **每月检查备份状态**——不要假设它在工作
 
 什么该备份、什么不该存云端：见 `backup.md`.
-**输入**: 用户提供备份策略（Backup Strategy）所需的指令和必要参数.
-**输出**: 返回备份策略（Backup Strategy）的处理结果,包含执行状态码、结果数据和执行日志。### 文件分享（Sharing Files）
+
+### 文件分享（Sharing Files）
 | 需求 | 方法 |
 |---:|:---|
 | 快速分享给任何人 | 链接（设置过期时间） |
@@ -124,16 +119,12 @@ export API_KEY="your_api_key_here"
 | 敏感文档 | 不要用云，或先加密 |
 
 各服务详细步骤：见 `sharing.md`.
-**输入**: 用户提供文件分享（Sharing Files）所需的指令和必要参数.
-**处理**: 解析文件分享（Sharing Files）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回文件分享（Sharing Files）的处理结果,包含执行状态码、结果数据和执行日志。### 安全基础（Security Basics）
+
+### 安全基础（Security Basics）
 - 在所有云账户**启用2FA**
 - **季度审查共享链接**——撤销旧的
 - **不要未加密存储**：密码、证件、财务文档
 
-**输入**: 用户提供安全基础（Security Basics）所需的指令和必要参数.
-**处理**: 解析安全基础（Security Basics）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回安全基础（Security Basics）的处理结果,包含执行状态码、结果数据和执行日志.
 ### 你的设备
 
 针对你的设备,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.

@@ -100,8 +100,7 @@ radius:
   full: "9999px"
 ```
 
-**处理**: 解析设计令牌系统的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回设计令牌系统的处理结果,包含执行状态码、结果数据和执行日志。### 企业级组件库
+### 企业级组件库
 
 ```python
 # 批量生成组件库
@@ -138,9 +137,7 @@ function switchTheme(themeName) {
 }
 ```
 
-**输入**: 用户提供多主题切换系统所需的指令和必要参数。
-**处理**: 解析多主题切换系统的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。
-**输出**: 返回多主题切换系统的处理结果,包含执行状态码、结果数据和执行日志。### 批量页面生成
+### 批量页面生成
 ```bash
 # 批量生成多个页面
 python3 generate_pages.py --config pages-config.yml --output ./dist/
@@ -158,8 +155,6 @@ python3 generate_pages.py --config pages-config.yml --output ./dist/
 #     theme: "brand"
 ```
 
-**输入**: 用户提供批量页面生成所需的指令和必要参数。
-**处理**: 解析批量页面生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `多主题切换系统` 选项
 
@@ -316,7 +311,6 @@ python3 generate_components.py \
 
 ```bash
 # 批量生成页面并验证
-python3 generate_pages.py \
   --config pages.yml \
   --output "./dist/" \
   --validate \

@@ -54,28 +54,28 @@ RSS智能阅读器免费版是一款面向个人用户的自动化信息聚合�
 ### 1. RSS/Atom 自动抓取
 
 支持标准RSS 2.0和Atom格式的订阅源自动抓取，可配置抓取频率.
-**输入**: 用户提供RSS/Atom 自动抓取所需的指令和必要参数.
+
 **处理**: 解析RSS/Atom 自动抓取的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回RSS/Atom 自动抓取的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 2. AI 中文摘要生成
 
 调用大语言模型（支持Claude/OpenAI），将英文或长篇内容自动生成简洁的中文摘要，保留核心信息.
-**输入**: 用户提供AI 中文摘要生成所需的指令和必要参数.
+
 **处理**: 解析AI 中文摘要生成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回AI 中文摘要生成的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 3. 智能去重
 
 使用轻量级数据库（SQLite）记录已推送内容，通过内容指纹去重，避免重复推送.
-**输入**: 用户提供智能去重所需的指令和必要参数.
+
 **处理**: 解析智能去重的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回智能去重的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 4. 单渠道推送
 
 免费版支持选择一个推送渠道：飞书群机器人、Telegram Bot 或 Email.
-**输入**: 用户提供单渠道推送所需的指令和必要参数.
+
 **处理**: 解析单渠道推送的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回单渠道推送的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
@@ -102,7 +102,6 @@ feeds:
     url: "https://www.ruanyifeng.com/blog/atom.xml"
     category: "tech"
   - name: "V2EX热门"
-    url: "https://www.v2ex.com/index.xml"
     category: "tech"
 ```
 
@@ -127,7 +126,6 @@ Why SQLite is Taking Over
 摘要: 本期内容包括AI编程工具对比、WebAssembly最新进展、
 开源许可证选择指南等.
 # ...
-阅读原文: https://example.com/article2
 ============================
 ```
 
@@ -139,7 +137,7 @@ Why SQLite is Taking Over
 python main.py --once --config morning_news.yaml
 # ...
 # 配置定时任务（crontab）
-0 8 * * * cd ~/rss-reader && python main.py --once --config morning_news.yaml
+0 8 * * * cd ~/rss-reader && python main.yaml
 ```
 
 ### 场景三：兴趣主题聚合
@@ -151,7 +149,7 @@ feeds:
     url: "https://feeds.example.com/ai-research.xml"
     category: "ai"
   - name: "摄影博客"
-    url: "https://feeds.example.com/photography.xml"
+example.com/photography.xml"
     category: "photography"
 # ...
 llm:
@@ -231,10 +229,9 @@ python main.py [options]
 # config.yaml - 免费版配置
 feeds:
   - name: "Hacker News"
-    url: "https://hnrss.org/frontpage"
     category: "tech"
   - name: "阮一峰周刊"
-    url: "https://www.ruanyifeng.com/blog/atom.xml"
+ruanyifeng.com/blog/atom.xml"
     category: "tech"
 # ...
 # AI摘要配置

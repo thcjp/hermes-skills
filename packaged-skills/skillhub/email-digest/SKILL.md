@@ -1,5 +1,4 @@
----
-slug: "email-digest"
+---slug: "email-digest"
 name: "email-digest"
 version: 1.0.1
 displayName: "邮件日报专业版"
@@ -8,7 +7,7 @@ summary_zh: "多邮箱AI智能摘要与定时报告，企业级邮件监控与�
 license: "MIT"
 edition: "pro"
 description: |-
-  邮件日报专业版面向企业用户与高效能个人用户。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发.
+  邮件日报专业版面向企业用户与高效能个人用户。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。不适用于垃圾信息群发.
 tags:
   - 沟通协作
   - 邮件管理
@@ -27,9 +26,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Communication"
----
-# 邮件日报专业版
+category: "Communication"---# 邮件日报专业版
 
 ## 付费版专享能力
 
@@ -50,37 +47,31 @@ category: "Communication"
 - 按账户分组展示与统一视图切换
 - 多账户健康状态监控
 
-**输入**: 用户提供多邮箱聚合所需的指令和必要参数.
-**输出**: 返回多邮箱聚合的处理结果,包含执行状态码、结果数据和执行日志。### AI 智能摘要
+### AI 智能摘要
 - 邮件重要度自动评分（高/中/低）
 - 智能生成行动建议（回复/审批/跟进）
 - 风险邮件识别与提示
 - 摘要自然语言生成（支持中文）
 
-**输入**: 用户提供AI 智能摘要所需的指令和必要参数.
-**处理**: 解析AI 智能摘要的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 定时报告推送
+### 定时报告推送
 - 一次性定时生成报告
 - 周期性任务（每日/每周/自定义）
 - 多渠道推送（邮件、飞书、钉钉、Slack、Webhook）
 - 报告格式自定义（文本/HTML/Markdown）
 
-**输入**: 用户提供定时报告推送所需的指令和必要参数.
-**处理**: 解析定时报告推送的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 智能分类与标签
+### 智能分类与标签
 - 自动按发件人、主题、内容分类
 - 自定义分类规则与标签
 - 优先级自动排序
 - 分类统计与占比分析
 
-**输入**: 用户提供智能分类与标签所需的指令和必要参数.
-**输出**: 返回智能分类与标签的处理结果,包含执行状态码、结果数据和执行日志。### 告警通知
+### 告警通知
 - 关键邮件实时告警（来自特定发件人或含关键词）
 - 未读邮件超量告警
 - 告警渠道配置（邮件/即时通讯）
 - 告警级别与静默策略
 
-**输入**: 用户提供告警通知所需的指令和必要参数.
-**处理**: 解析告警通知的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回告警通知的处理结果,包含执行状态码、结果数据和执行日志。### 趋势分析
+### 趋势分析
 - 邮件量趋势图表（日/周/月）
 - 发件人排行与占比
 - 响应时间统计分析
@@ -88,8 +79,6 @@ category: "Communication"
 
 ---
 
-**输入**: 用户提供趋势分析所需的指令和必要参数.
-**输出**: 返回趋势分析的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -161,7 +150,7 @@ email-digest-tool schedule create \
   --accounts gmail,outlook \
   --format markdown \
   --push feishu \
-  --webhook "https://open.feishu.cn/open-apis/bot/v2/hook/详情见说明" \
+feishu.cn/open-apis/bot/v2/hook/详情见说明" \
   --timezone "Asia/Shanghai"
 # ...
 # 查看所有定时任务
@@ -179,7 +168,7 @@ email-digest-tool alert create \
   --name "ceo-alert" \
   --condition "from:ceo@company.com" \
   --channel feishu \
-  --webhook "https://open.feishu.cn/open-apis/bot/v2/hook/详情见说明" \
+feishu.cn/open-apis/bot/v2/hook/详情见说明" \
   --priority critical
 # ...
 email-digest-tool alert create \
@@ -416,7 +405,6 @@ email-digest-tool aggregate --accounts gmail --format html
 email-digest-tool accounts health-check
 # ...
 # 重新登录失效账户
-browser-use --browser real open https://mail.google.com
 ```
 
 ### 问题2：AI 摘要质量不佳

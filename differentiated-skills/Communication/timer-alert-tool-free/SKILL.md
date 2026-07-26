@@ -58,21 +58,21 @@ category: "Automation"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -97,19 +97,15 @@ bash background:true command:"node {baseDir}/timer.js 12m '意大利面好了！
 用户说"帮我启动番茄钟工作法"。Agent 先后启动 25 分钟专注定时器与 5 分钟休息定时器，交替提醒.
 ```bash
 # 专注阶段（25 分钟）
-bash background:true command:"node {baseDir}/timer.js 25m '番茄钟专注时间结束！该休息了。'"
+js 25m '番茄钟专注时间结束！该休息了。'"
 # ...
 # 休息阶段（5 分钟，专注结束后启动）
-bash background:true command:"node {baseDir}/timer.js 5m '休息结束！回到工作。'"
 ```
 
 ### 场景三：多任务并行计时
 
 用户说"帮我同时设三个定时器：茶 5 分钟、鸡蛋 10 分钟、会议 30 分钟"。Agent 并行启动三个后台定时器.
 ```bash
-bash background:true command:"node {baseDir}/timer.js 5m '茶泡好了'"
-bash background:true command:"node {baseDir}/timer.js 10m '鸡蛋煮好了'"
-bash background:true command:"node {baseDir}/timer.js 30m '会议马上开始'"
 ```
 
 ## 快速开始
@@ -125,13 +121,10 @@ bash background:true command:"node {baseDir}/timer.js 30m '会议马上开始'"
 
 ```bash
 # 5 分钟定时器
-bash background:true command:"node {baseDir}/timer.js 5m '时间到了！'"
 # ...
 # 30 秒定时器
-bash background:true command:"node {baseDir}/timer.js 30s '快速提醒'"
 # ...
 # 1 小时定时器
-bash background:true command:"node {baseDir}/timer.js 1h '一小时已到'"
 ```
 
 ### 管理运行中的定时器
@@ -168,13 +161,13 @@ process action:kill sessionId:XXX
 
 ```bash
 # 标准番茄钟：25 分钟专注 + 5 分钟休息
-bash background:true command:"node {baseDir}/timer.js 25m '番茄钟：专注完成！休息 5 分钟。'"
+js 25m '番茄钟：专注完成！休息 5 分钟。'"
 # 专注结束后启动休息
-bash background:true command:"node {baseDir}/timer.js 5m '番茄钟：休息结束！开始下一轮专注。'"
+js 5m '番茄钟：休息结束！开始下一轮专注。'"
 # ...
 # 长休息版：50 分钟专注 + 10 分钟休息
-bash background:true command:"node {baseDir}/timer.js 50m '深度专注完成！休息 10 分钟。'"
-bash background:true command:"node {baseDir}/timer.js 10m '长休息结束！继续工作。'"
+js 50m '深度专注完成！休息 10 分钟。'"
+js 10m '长休息结束！继续工作。'"
 ```
 
 ### 多计时器场景配置

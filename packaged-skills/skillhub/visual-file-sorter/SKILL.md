@@ -1,9 +1,8 @@
----
-slug: "visual-file-sorter"
+---slug: "visual-file-sorter"
 name: "visual-file-sorter"
 version: 0.1.1
 displayName: "文件"
-summary: "自动遍历下载文件夹或桌面，利用视觉模型“看”文件内容并重命名，最后归档到指定分类目录。。自动遍历下载文件夹或桌面，利用视觉模型“看”文件内容并重命名，最后归档到指定分类目录。核心能力: -"
+summary: "自动遍历下载文件夹或桌"
 summary_zh: "自动遍历下载文件夹或桌面，利用视觉模型“看”文件内容并重命名，最后归档到指定分类目录。。自动遍历下载文件夹或桌面，利用视觉模型“看”文件内容并重命名，最后归档到指定分类目录。核心能力: -"
 license: "MIT"
 description: |-
@@ -42,9 +41,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# Visual File Sorter
+category: "Automation"---# Visual File Sorter
 
 ## 付费版专享能力
 

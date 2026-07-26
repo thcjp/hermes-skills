@@ -93,7 +93,6 @@ connector_call_tool --tool "whatsapp_send_message" --params '{
 }'
 ```
 
-**输入**: 用户提供文本消息发送所需的指令和必要参数.
 **处理**: 解析文本消息发送的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回文本消息发送的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -111,7 +110,6 @@ connector_call_tool --tool "whatsapp_get_phone_number" --params '{
 }'
 ```
 
-**输入**: 用户提供电话号码查询所需的指令和必要参数.
 **处理**: 解析电话号码查询的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回电话号码查询的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -129,7 +127,6 @@ connector_call_tool --tool "whatsapp_get_template_status" --params '{
 }'
 ```
 
-**输入**: 用户提供模板浏览所需的指令和必要参数.
 **处理**: 解析模板浏览的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回模板浏览的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：查看号码与模板、适合个人用户的轻、量消息管理工具、消息管理免费版、提供核心的、消息发送能力、核心能力、文本消息给单个联、账号下的电话号码、浏览已审批的消息、简单的消息预览与、确认流程等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -382,7 +379,7 @@ def handle_error(error_code: str, context: dict) -> str:
 2. 确认WhatsApp集成已连接: `connector_list_integrations`
 3. 如工具仍不可见,重启网关并新建会话:
 ```bash
-skill-platform config set tools.alsoAllow '["connector-plugin"]' --strict-json
+alsoAllow '["connector-plugin"]' --strict-json
 skill-platform gateway restart
 ```
 4. 重启后发送 `/new` 重新加载工具目录
@@ -446,8 +443,6 @@ connector_call_tool --tool "whatsapp_get_phone_numbers" --params '{}'
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

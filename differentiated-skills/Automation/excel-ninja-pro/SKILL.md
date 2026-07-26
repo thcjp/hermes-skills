@@ -142,12 +142,12 @@ python （请参考skill目录中的脚本文件） --input Q1地区统计.xlsx 
 | aggregate_excel.py | 分组聚合 | `--group-by 地区 --agg "销售额:sum"` |
 | validate_excel.py | 数据校验 | `--require-cols 列名 --key-cols 列名` |
 
-**输入**: 用户提供基础脚本（8个，与免费版一致）所需的指令和必要参数.
 **处理**: 解析基础脚本（8个，与免费版一致）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回基础脚本（8个，与免费版一致）的响应数据,包含状态码、结果和日志.
 ### 高级脚本（8个，专业版独有）
 
-#### select_columns.py — 列选择与重命名
+#
+### select_columns.py — 列选择与重命名
 
 选择指定列、重命名列、调整列顺序.
 ```bash
@@ -155,13 +155,14 @@ python （请参考skill目录中的脚本文件） --input Q1地区统计.xlsx 
 python （请参考skill目录中的脚本文件） --input data.xlsx --columns "姓名,电话,地址" --output 精简.xlsx
 # ...
 # 重命名列
-python （请参考skill目录中的脚本文件） --input data.xlsx --rename "姓名:客户名称,电话:联系方式" --output 重命名.xlsx
+xlsx --rename "姓名:客户名称,电话:联系方式" --output 重命名.xlsx
 # ...
 # 选择并重命名
-python （请参考skill目录中的脚本文件） --input data.xlsx --columns "姓名,电话" --rename "姓名:客户名称" --output 结果.xlsx
+xlsx --columns "姓名,电话" --rename "姓名:客户名称" --output 结果.xlsx
 ```
 
-#### merge_tables.py — 两表按键列合并（VLOOKUP式）
+#
+### merge_tables.py — 两表按键列合并（VLOOKUP式）
 
 将两个表按指定键列对齐合并，支持left/inner/outer三种连接方式.
 ```bash
@@ -169,13 +170,14 @@ python （请参考skill目录中的脚本文件） --input data.xlsx --columns 
 python （请参考skill目录中的脚本文件） --left 订单表.xlsx --right 客户表.xlsx --on 客户ID --output 合并.xlsx
 # ...
 # 内连接（只保留两表都有的行）
-python （请参考skill目录中的脚本文件） --left 订单表.xlsx --right 客户表.xlsx --on 客户ID --join inner --output 交集.xlsx
+xlsx --right 客户表.xlsx --on 客户ID --join inner --output 交集.xlsx
 # ...
 # 外连接（保留两表全部行）
-python （请参考skill目录中的脚本文件） --left 订单表.xlsx --right 客户表.xlsx --on 客户ID --join outer --output 全集.xlsx
+xlsx --right 客户表.xlsx --on 客户ID --join outer --output 全集.xlsx
 ```
 
-#### vlookup_multi.py — 多表VLOOKUP
+#
+### vlookup_multi.py — 多表VLOOKUP
 
 主表依次与多个查找表执行左连接，一次性关联多个数据源.
 ```bash
@@ -192,7 +194,8 @@ python （请参考skill目录中的脚本文件） \
   --output 员工全视图.xlsx
 ```
 
-#### transpose_excel.py — 行列转置
+#
+### transpose_excel.py — 行列转置
 
 将行数据转为列数据，列数据转为行数据.
 ```bash
@@ -201,7 +204,8 @@ python （请参考skill目录中的脚本文件） --input 原始表.xlsx --out
 ```
 
 **典型场景**：某些系统导出的数据是"宽表"（每个指标一列），需要转成"长表"（指标名+指标值两列）方便分析.
-#### template_fill.py — 模板填充
+#
+### template_fill.py — 模板填充
 
 用数据表的每一行数据，填充模板中的{{列名}}占位符，批量生成报表.
 ```bash
@@ -216,7 +220,8 @@ python （请参考skill目录中的脚本文件） \
 ```
 
 **典型场景**：月度报告批量生成、工资条批量生成、合同批量填充.
-#### rename_sheets.py — 工作表重命名
+#
+### rename_sheets.py — 工作表重命名
 
 批量重命名工作表，支持原名映射、索引映射、前缀/后缀添加.
 ```bash
@@ -224,52 +229,54 @@ python （请参考skill目录中的脚本文件） \
 python （请参考skill目录中的脚本文件） --input file.xlsx --rename "Sheet1:1月,Sheet2:2月,Sheet3:3月"
 # ...
 # 添加前缀
-python （请参考skill目录中的脚本文件） --input file.xlsx --prefix "2024_"
+xlsx --prefix "2024_"
 # ...
 # 添加后缀
-python （请参考skill目录中的脚本文件） --input file.xlsx --suffix "_已审核"
+xlsx --suffix "_已审核"
 # ...
 # 按索引重命名
-python （请参考skill目录中的脚本文件） --input file.xlsx --rename "0:汇总,1:明细,2:图表"
+xlsx --rename "0:汇总,1:明细,2:图表"
 ```
 
-#### format_conditional.py — 条件格式
+#
+### format_conditional.py — 条件格式
 
 按条件自动着色，支持大于/小于/介于/重复值/色阶五种规则.
 ```bash
 # 大于某值标红
-python （请参考skill目录中的脚本文件） --input data.xlsx --column 金额 --rule gt --value 10000 --fill red --output 高亮.xlsx
+xlsx --column 金额 --rule gt --value 10000 --fill red --output 高亮.xlsx
 # ...
 # 小于某值标黄
-python （请参考skill目录中的脚本文件） --input data.xlsx --column 库存 --rule lt --value 10 --fill yellow --output 预警.xlsx
+xlsx --column 库存 --rule lt --value 10 --fill yellow --output 预警.xlsx
 # ...
 # 介于两个值之间标绿
-python （请参考skill目录中的脚本文件） --input data.xlsx --column 分数 --rule between --value 80 100 --fill green --output 优秀.xlsx
+xlsx --column 分数 --rule between --value 80 100 --fill green --output 优秀.xlsx
 # ...
 # 重复值标红
-python （请参考skill目录中的脚本文件） --input data.xlsx --column 订单号 --rule duplicate --fill red --output 查重.xlsx
+xlsx --column 订单号 --rule duplicate --fill red --output 查重.xlsx
 # ...
 # 色阶（渐变色）
-python （请参考skill目录中的脚本文件） --input data.xlsx --column 销售额 --rule colorscale --output 色阶.xlsx
+xlsx --column 销售额 --rule colorscale --output 色阶.xlsx
 ```
 
-#### format_columns_as_text.py — 列文本格式
+#
+### format_columns_as_text.py — 列文本格式
 
 将指定列设为文本格式，避免长数字被显示为科学计数法.
 ```bash
 # 身份证号、订单号等长数字列设为文本
-python （请参考skill目录中的脚本文件） --input data.xlsx --columns "身份证号,订单号,银行卡号" --output 文本格式.xlsx
+xlsx --columns "身份证号,订单号,银行卡号" --output 文本格式.xlsx
 ```
 
 **典型场景**：身份证号(18位)、银行卡号(16-19位)、订单号(长数字)等导入Excel后变成科学计数法，设为文本格式后正确显示.
-**输入**: 用户提供高级脚本（8个，专业版独有）所需的指令和必要参数.
+
 **处理**: 解析高级脚本（8个，专业版独有）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级脚本（8个，专业版独有）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -338,7 +345,7 @@ python （请参考skill目录中的脚本文件） \
 python （请参考skill目录中的脚本文件） --input 员工表.xlsx --require-cols "工号,姓名,身份证号,部门" --key-cols "工号,身份证号"
 # ...
 # 第二步：去重
-python （请参考skill目录中的脚本文件） --input 员工表.xlsx --keys 工号 --keep first --output 员工去重.xlsx
+xlsx --keys 工号 --keep first --output 员工去重.xlsx
 # ...
 # 第三步：身份证号设为文本格式（避免科学计数法）
 python （请参考skill目录中的脚本文件） --input 员工去重.xlsx --columns "身份证号,银行卡号" --output 员工最终.xlsx
@@ -368,7 +375,7 @@ python （请参考skill目录中的脚本文件） --input 长表.xlsx --group-
 python （请参考skill目录中的脚本文件） --input 年度数据.xlsx --prefix "2024_"
 # ...
 # 或按序号重命名
-python （请参考skill目录中的脚本文件） --input 年度数据.xlsx --rename "0:Q1,13:Q2,26:Q3,39:Q4"
+xlsx --rename "0:Q1,13:Q2,26:Q3,39:Q4"
 ```
 
 **效果**：52个工作表的重命名从手工操作1小时，变成一条命令5秒完成.
@@ -398,7 +405,7 @@ python （请参考skill目录中的脚本文件） --input 年度数据.xlsx --
 python （请参考skill目录中的脚本文件） --input 超大表.xlsx --by-rows 50000
 # 对每个分块文件处理...
 # 最后用merge_sheets.py合并结果
-python （请参考skill目录中的脚本文件） --inputs ./分块结果/ --output 最终结果.xlsx
+/分块结果/ --output 最终结果.xlsx
 ```
 
 ### 批量处理优化
@@ -707,8 +714,6 @@ format_conditional.py支持五种规则：
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

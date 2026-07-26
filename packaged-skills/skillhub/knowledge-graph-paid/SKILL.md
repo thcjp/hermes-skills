@@ -339,17 +339,13 @@ export API_KEY="your_api_key_here"
 
 ```bash
 # 团队高标准:要求更多实体与关系
-node （请参考skill目录中的脚本文件） set validation.minEntities 50
-node （请参考skill目录中的脚本文件） set validation.minRelationRatio 0.6
-node （请参考skill目录中的脚本文件） set validation.minEvents 5
+minRelationRatio 0.6
 # ...
 # 大图谱压缩策略
-node （请参考skill目录中的脚本文件） set summary.compactThreshold 300
-node （请参考skill目录中的脚本文件） set summary.tokenBudget 8000
+compactThreshold 300
 # ...
 # 可视化调整(大图谱需要更大斥力)
 node （请参考skill目录中的脚本文件） set visualization.repulsion 8000
-node （请参考skill目录中的脚本文件） set visualization.simulationSteps 800
 ```
 
 ## 常见问题

@@ -1,9 +1,8 @@
----
-slug: "agent-telegram"
+---slug: "agent-telegram"
 name: "agent-telegram"
 version: 1.0.1
 displayName: "智能体Telegram"
-summary: "Agent 团队 Telegram 通信规范，统一 8 类角色消息发送与汇报。。Agent 团队 Telegram 通信规范。定义 main、architect、backend、fronte"
+summary: "Agent 团队 Te"
 summary_zh: "Agent 团队 Telegram 通信规范，统一 8 类角色消息发送与汇报。。Agent 团队 Telegram 通信规范。定义 main、architect、backend、fronte"
 license: "MIT"
 description: |-
@@ -31,9 +30,7 @@ tools:
   - glob
   - grep
 homepage: ""
-category: "Agents"
----
-# Agent Telegram
+category: "Agents"---# Agent Telegram
 
 所有 Agent 向用户（Legend）发送 Telegram 消息时必须遵循此规范。规范定义了 8 类 Agent 角色的账号映射、消息格式、汇报时机与消息模板，确保多 Agent 协作时消息统一路由到用户 Telegram 账号 `5440561025`.
 ## 输入格式
@@ -236,7 +233,7 @@ message({
 | 消息未送达 Telegram | 误用 `sessions_send` 等其他工具 | 必须使用 `message` 工具，channel 固定为 `telegram` |
 | product 角色报"账号不存在" | product 误用 `accountId: "product"` | product 的正确 accountId 是 `sproduct`（带 s 前缀），非 `product` |
 | 消息发给错误用户 | target 字段写错或用了其他用户 ID | target 固定为 `5440561025`，不得使用其他值 |
-| message 工具未找到 | Agent 平台未配置 message 工具或未启用 | 检查 `~/.skill-platform/skill-platform.json` 中 `channels.telegram` 配置 |
+| message 工具未找到 | Agent 平台未配置 message 工具或未启用 | 检查 `~/.json` 中 `channels.telegram` 配置 |
 | Telegram 账号未绑定 Bot | accounts 节点缺少对应 accountId 的 Bot Token | 在配置文件 `channels.telegram.accounts` 下补充该角色的 Bot Token |
 | 消息内容含非法字符 | message 含未转义引号或换行符异常 | 对引号转义，换行用 `\n`，避免直接粘贴未格式化文本 |
 | 消息超长被截断 | Telegram 单条消息上限 4096 字符 | 拆分为多条消息发送，或附件形式上传长文本 |
@@ -250,7 +247,7 @@ A：不可以。`sessions_send` 是 Agent 会话内部通信工具，不会将�
 ### Q3：target 字段可以改成其他用户 ID 吗？
 A：不可以。本规范约定所有 Agent 消息统一发送给用户 `5440561025`。若需向其他用户发送消息，需另行配置多用户路由，不在本规范范围内.
 ### Q4：如何新增一个 Agent 角色？
-A：在 `~/.skill-platform/skill-platform.json` 的 `channels.telegram.accounts` 下新增一个账号节点，配置 Bot Token 与 accountId，然后在本文档账号映射表追加一行。新角色的 emoji 自选，建议与职责语义相关.
+A：在 `~/.json` 的 `channels.telegram.accounts` 下新增一个账号节点，配置 Bot Token 与 accountId，然后在本文档账号映射表追加一行。新角色的 emoji 自选，建议与职责语义相关.
 ### Q5：消息中可以发送文件吗？
 A：可以。在 message 内容中包含文件路径（如 `~/Desktop/project/docs/api.md`），用户可点击路径查看。如需直接发送文件附件，需使用 message 工具的 `attachment` 字段（若平台支持）或单独的文件上传工具.
 ### Q6：多个 Agent 同时发消息会冲突吗？
@@ -267,7 +264,7 @@ A：不会。每个 Agent 使用独立 accountId 与 Bot Token，消息通过各
 
 ## 配置位置
 
-- **主配置**：`~/.skill-platform/skill-platform.json` 的 `channels.telegram.accounts` 节点
+- **主配置**：`~/.json` 的 `channels.telegram.accounts` 节点
 - **本 Skill**：`~/.skill-platform/workspace/skills/agent-telegram/SKILL.md`
 
 **核心口诀**：发送 Telegram 消息 = `message` 工具 + `accountId` + `target: "5440561025"`
@@ -284,11 +281,11 @@ A：不会。每个 Agent 使用独立 accountId 与 Bot Token，消息通过各
 |---:|:---|---:|---:|
 | message 工具 | Agent 平台工具 | 必需 | Agent 平台内置或插件提供 |
 | Telegram Bot Token | 凭证 | 必需 | 通过 @BotFather 创建 Bot 获取 |
-| skill-platform.json | 配置文件 | 必需 | `~/.skill-platform/skill-platform.json` 中配置 accounts |
+| skill-platform.json | 配置文件 | 必需 | `~/.json` 中配置 accounts |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供决策能力 |
 
 ### API Key 配置
-- Telegram Bot Token 配置在 `~/.skill-platform/skill-platform.json` 的 `channels.telegram.accounts.<accountId>.token` 字段
+- Telegram Bot Token 配置在 `~/.json` 的 `channels.telegram.accounts.<accountId>.token` 字段
 - 每个 Agent 角色对应一个独立的 Bot Token
 
 ### 可用性分类

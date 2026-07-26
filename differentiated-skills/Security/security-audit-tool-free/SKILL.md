@@ -73,7 +73,6 @@ category: "Security"
 | 文件权限 | 全局可读文件、全局可执行文件、敏感文件暴露 | HIGH |
 | Docker安全 | 特权容器、缺失资源限制、容器内root用户 | HIGH |
 
-**输入**: 用户提供扫描维度所需的指令和必要参数.
 **处理**: 解析扫描维度的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回扫描维度的响应数据,包含状态码、结果和日志.
 ### 免费版与专业版对比
@@ -88,12 +87,11 @@ category: "Security"
 | CI/CD集成 | 不支持 | 流水线集成 |
 | 多目标扫描 | 单目标 | 批量+并行 |
 
-**输入**: 用户提供免费版与专业版对比所需的指令和必要参数.
 **处理**: 解析免费版与专业版对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版与专业版对比的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -287,7 +285,6 @@ class SecurityAuditor:
             for line in result.stdout.split('\n')[1:]:
                 for port, service in self.HIGH_RISK_PORTS.items():
                     if f":{port} " in line and "0.0.0.0" in line:
-                        self.findings.append({
                             "level": "HIGH",
                             "category": "ports",
                             "message": f"{service}端口{port}暴露在0.0.0.0",
@@ -302,14 +299,11 @@ class SecurityAuditor:
         target_path = Path(target)
 # ...
         # 检查CORS配置
-        for filepath in target_path.rglob("*"):
-            if filepath.suffix in {".js", ".ts", ".json", ".yaml"}:
-                if any(skip in str(filepath) for skip in ["node_modules", ".git"]):
+suffix in {".js", ".ts", ".json", ".yaml"}:
                     continue
                 try:
-                    content = filepath.read_text(encoding='utf-8', errors='ignore')
+read_text(encoding='utf-8', errors='ignore')
                     if "cors" in content.lower() and "*" in content:
-                        self.findings.append({
                             "level": "MEDIUM",
                             "category": "configs",
                             "message": "CORS配置为通配符(*)",
@@ -317,7 +311,6 @@ class SecurityAuditor:
                             "fix": "配置具体的允许源,而非通配符"
                         })
                     if "debug" in content.lower() and "true" in content.lower():
-                        self.findings.append({
                             "level": "MEDIUM",
                             "category": "configs",
                             "message": "调试模式可能已开启",
@@ -334,11 +327,9 @@ class SecurityAuditor:
         sensitive_files = [".env", ".env.local", ".env.production", "id_rsa", "config.json"]
         for filename in sensitive_files:
             filepath = target_path / filename
-            if filepath.exists():
                 stat = filepath.stat()
                 perms = oct(stat.st_mode)[-3:]
                 if perms[-1] in ["4", "6", "7"]:  # 全局可读
-                    self.findings.append({
                         "level": "HIGH",
                         "category": "permissions",
                         "message": f"敏感文件权限过宽: {filename} ({perms})",
@@ -352,7 +343,6 @@ class SecurityAuditor:
         if dockerfile.exists():
             content = dockerfile.read_text()
             if "USER" not in content:
-                self.findings.append({
                     "level": "HIGH",
                     "category": "docker",
                     "message": "Docker容器以root用户运行",
@@ -360,7 +350,6 @@ class SecurityAuditor:
                     "fix": "添加非root用户: RUN useradd -m appuser && USER appuser"
                 })
             if "--privileged" in content:
-                self.findings.append({
                     "level": "HIGH",
                     "category": "docker",
                     "message": "Docker容器使用特权模式",
@@ -509,8 +498,6 @@ A: 免费版覆盖5个核心维度。专业版增加了合规审计、Kubernetes
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

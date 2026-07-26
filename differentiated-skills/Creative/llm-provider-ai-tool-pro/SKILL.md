@@ -74,19 +74,18 @@ llm-provider 助手工具(专业版)为团队与企业用户提供 llm-provider 
 | 容器隔离 | 不支持 | 支持(隔离执行) | 安全沙箱 |
 | 审计日志 | 不支持 | 支持 | 合规追溯 |
 
-**输入**: 用户提供免费版 vs 专业版能力对比所需的指令和必要参数.
 **处理**: 解析免费版 vs 专业版能力对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版 vs 专业版能力对比的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
@@ -153,7 +152,7 @@ curl -X POST "https://api.llm-provider.com/v1/files" \
   -F "file=@./training_data.jsonl"
 # ...
 # 2. 创建微调任务
-curl -X POST "https://api.llm-provider.com/v1/fine_tuning/jobs" \
+llm-provider.com/v1/fine_tuning/jobs" \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -207,7 +206,6 @@ client.beta.threads.messages.create(
     content="2026 年的报销政策有哪些变化?"
 )
 run = client.beta.threads.runs.create(
-    thread_id=thread.id,
     assistant_id=assistant.id
 )
 ```
@@ -251,7 +249,7 @@ curl https://api.llm-provider.com/v1/models \
 ### 3. 创建第一个批量任务
 
 ```bash
-curl -X POST "https://api.llm-provider.com/v1/batches" \
+llm-provider.com/v1/batches" \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -309,7 +307,6 @@ class AsyncTaskManager:
         raise TimeoutError(f"批量任务 {batch_id} 超时")
 # ...
     def wait_for_fine_tune(self, job_id, timeout=86400):
-        deadline = time.time() + timeout
         while time.time() < deadline:
             job = client.fine_tuning.jobs.retrieve(job_id)
             print(f"[FineTune] {job.status} | {job.fine_tuned_model}")

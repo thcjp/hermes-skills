@@ -1,9 +1,8 @@
----
-slug: seo-doctor
+---slug: seo-doctor
 name: seo-doctor
 version: 1.0.1
 displayName: "SEO体检医生"
-summary: "给网站做全面SEO体检,技术+内容+结构化数据三维度诊断,BERT关键词+排名追踪。SEO体检医生是一款给网站做全面SEO体检的工具。基于BERT语义模型提取关键词,品牌词最高优先级注入,"
+summary: "给网站做全面SEO体检"
 summary_zh: "给网站做全面SEO体检,技术+内容+结构化数据三维度诊断,BERT关键词+排名追踪。SEO体检医生是一款给网站做全面SEO体检的工具。基于BERT语义模型提取关键词,品牌词最高优先级注入,"
 license: "MIT"
 description: |-
@@ -34,9 +33,7 @@ tools:
   - exec
   - glob
   - grep
-category: "Automation"
----
-# SEO体检医生 v1.1.0
+category: "Automation"---# SEO体检医生 v1.1.0
 
 给网站做全面SEO体检,基于BERT语义模型提取关键词,品牌词最高优先级注入,发布前优化+发布后排名追踪闭环.
 ## 付费版专享能力
@@ -370,7 +367,6 @@ BERT模型加载失败时降级为正则+词频统计。热搜API不可用时跳
   "success": true,
   "data": {
     "tracking_result": {
-      "content_url": "https://example.com/article/123",
       "check_date": "2026-05-28",
       "keywords": [
         {"keyword": "AI代写", "rank": 3, "last_rank": 5, "trend": "上升", "change": 2, "suggestion": "排名上升,保持当前策略"},
@@ -494,7 +490,7 @@ BERT模型加载失败时降级为正则+词频统计。热搜API不可用时跳
   "success": true,
   "data": {
     "tracking_result": {
-      "content_url": "https://zhuanlan.zhihu.com/p/123456",
+zhihu.com/p/123456",
       "check_date": "2026-07-20",
       "keywords": [
         {"keyword": "AI写作工具", "rank": 3, "last_rank": 5, "trend": "上升", "change": 2, "suggestion": "排名上升2位,保持当前内容策略,可考虑增加外链巩固排名"},

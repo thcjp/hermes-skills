@@ -1,5 +1,4 @@
----
-slug: "git-workflow-cn-paid"
+---slug: "git-workflow-cn-paid"
 name: "git-workflow-cn-paid"
 version: 1.0.1
 displayName: "Git工作流专业版"
@@ -8,7 +7,7 @@ summary_zh: "企业级 Git 工作流方案，支持 Git Flow、团队协作、�
 license: "MIT"
 edition: "pro"
 description: |-
-  面向团队协作与企业研发场景的 Git 工作流专业工具。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
+  面向团队协作与企业研发场景的 Git 工作流专业工具。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。不适用于需要人工创意判断的任务.
 tags:
   - 开发工具
   - 版本控制
@@ -25,9 +24,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Development"
----
-# Git工作流专业版
+category: "Development"---# Git工作流专业版
 
 ## 付费版专享能力
 
@@ -189,7 +186,6 @@ git flow init
 
 ```bash
 # 启用冲突自动记忆
-git config --global rerere.enabled true
 # ...
 # 配置三方合并工具
 git config --global merge.tool vscode
@@ -338,7 +334,6 @@ npm install -g conventional-changelog-cli
 conventional-changelog -p angular -i CHANGELOG.md -s
 # ...
 # 首次生成完整历史
-conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 ```
 
 ## 常见问题
@@ -347,7 +342,6 @@ conventional-changelog -p angular -i CHANGELOG.md -s -r 0
 
 ```bash
 # 启用后，首次解决冲突时 Git 会记录解决方案
-git config --global rerere.enabled true
 # ...
 # 再次遇到相同冲突时自动应用记忆的方案
 git rerere diff     # 查看当前记忆的解决方案

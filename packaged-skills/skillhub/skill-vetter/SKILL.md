@@ -1,9 +1,8 @@
----
-slug: "skill-vetter"
+---slug: "skill-vetter"
 name: "skill-vetter"
 version: 1.0.1
 displayName: "技能"
-summary: "安全优先的 AI Agent 技能审查协议，安装任何技能前必须执行。。skill-vetter 是一个安全优先的 AI Agent 技能审查工具。在安装任何技能前执行 4 步审查协议： 来源"
+summary: "安全优先的 AI Ag"
 summary_zh: "安全优先的 AI Agent 技能审查协议，安装任何技能前必须执行。。skill-vetter 是一个安全优先的 AI Agent 技能审查工具。在安装任何技能前执行 4 步审查协议： 来源"
 license: "MIT"
 description: |-
@@ -25,9 +24,7 @@ tags:
   - curl
   - source
   - github
-category: "Automation"
----
-# Skill Vetter
+category: "Automation"---# Skill Vetter
 
 skill-vetter 是安全优先的 AI Agent 技能审查协议。**永远不要在未审查前安装任何技能。**
 
@@ -79,9 +76,7 @@ export API_KEY="your_api_key_here"
 作者是否知名/可信？下载量/星标数是多少？最后更新时间？是否有其他 Agent 的评价？
 通过 GitHub API 查询仓库元数据：`curl -s "https://api.相关技术文档 | jq '{stars: .stargazers_count, forks: .forks_count, updated: .updated_at}'`.
 获取仓库文件列表：`curl -s "https://api.相关技术文档 | jq '.[].name'`.
-**输入**: 用户提供来源检查（Source Check）所需的指令和必要参数.
-**处理**: 解析来源检查（Source Check）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回来源检查（Source Check）的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+
 - 参考`来源检查（Source Check）`的配置文档进行参数调优
 ### 2. 强制代码审查（Code Review - MANDATORY）
 读取技能中的所有文件，逐一检查 RED FLAGS 清单。发现以下任何一项立即拒绝安装：
@@ -91,7 +86,6 @@ export API_KEY="your_api_key_here"
 使用 `eval()` 或 `exec()` 处理外部输入；修改工作区外的系统文件；
 未声明就安装包；向 IP 地址而非域名发起网络调用；使用混淆代码（压缩、编码、最小化）；
 请求 `sudo`/提权；访问浏览器 cookie/session；触及凭证文件.
-**输出**: 返回强制代码审查（Code Review - MANDATORY）的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. 权限范围评估（Permission Scope）
 评估技能的最小权限需求。回答 5 个问题：需要读取哪些文件？需要写入哪些文件？
 运行哪些命令？是否需要网络访问？访问目标是什么？权限范围是否最小化以满足其声明的目的？
@@ -101,16 +95,14 @@ export API_KEY="your_api_key_here"
 根据功能类型和权限需求进行 4 级风险分级。LOW（绿色）：笔记、天气、格式化——基础审查后可安装.
 MEDIUM（黄色）：文件操作、浏览器访问、API 调用——必须完整代码审查。HIGH（红色）：凭证、交易、
 系统操作——必须人工批准。EXTREME（禁止）：安全配置、root 访问——绝不安装.
-**输入**: 用户提供风险分级（Risk Classification）所需的指令和必要参数.
-**输出**: 返回风险分级（Risk Classification）的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+
 - 参考`风险分级（Risk Classification）`的配置文档进行参数调优
 ### 5. 结构化审查报告生成
 生成标准化的审查报告，包含：技能名称、来源、作者、版本；指标（下载量/星标数、最后更新时间、
 审查文件数）；RED FLAGS 列表（None 或具体列表）；权限需求（文件、网络、命令）；
 风险等级（LOW/MEDIUM/HIGH/EXTREME）；安装建议（SAFE TO INSTALL / INSTALL WITH CAUTION /
 DO NOT INSTALL）；附注观察.
-**输入**: 用户提供结构化审查报告生成所需的指令和必要参数.
-**处理**: 解析结构化审查报告生成的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证返回数据的完整性和格式正确性
+
 - 参考`结构化审查报告生成`的配置文档进行参数调优
 ### 6. 信任层级评估
 根据来源应用差异化审查强度。5 级信任层级：官方技能（低度审查但仍需检查）→
@@ -144,7 +136,7 @@ DO NOT INSTALL）；附注观察.
 
 ```bash
 # 1. 查询仓库元数据
-curl -s "https://api.相关技术文档 | jq '{stars: .stargazers_count, forks: .forks_count, updated: .updated_at}'
+curl -s "https://api.updated_at}'
 # 输出：
 # {
 #   "stars": 342,
@@ -153,7 +145,7 @@ curl -s "https://api.相关技术文档 | jq '{stars: .stargazers_count, forks: 
 # }
 # ...
 # 2. 获取技能文件列表
-curl -s "https://api.相关技术文档 | jq '.[].name'
+相关技术文档 | jq '.[].name'
 # 输出：
 # "SKILL.md"
 # "（请参考skill目录中的脚本文件）"

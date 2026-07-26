@@ -349,11 +349,11 @@ webhooks:
       retry: 3
       timeout: 10
     - event: "new_message"
-      url: "https://your-app.com/webhooks/message"
+com/webhooks/message"
       filter:
         from_unmatched: false
     - event: "relationship_proposed"
-      url: "https://your-app.com/webhooks/relationship"
+com/webhooks/relationship"
 ```
 
 ### 数据分析维度

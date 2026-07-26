@@ -1,10 +1,8 @@
----
-
-slug: "scrape-web"
+---slug: "scrape-web"
 name: "scrape-web"
 version: 1.0.1
 displayName: "爬虫网页"
-summary: "使用 Python + Scrapling 获取网页内容，支持简单选择器。使用 Python + Scrapling 获取网页内容，支持简单选择器 核心能力: - 研究工具领域的专业化AI辅"
+summary: "使用 Python +"
 summary_zh: "使用 Python + Scrapling 获取网页内容，支持简单选择器。使用 Python + Scrapling 获取网页内容，支持简单选择器 核心能力: - 研究工具领域的专业化AI辅"
 license: "MIT"
 description: |-
@@ -38,10 +36,7 @@ tools:
   - glob
 homepage: ""
 category: "Development"
-
----
-
-# Scrape Web
+---# Scrape Web
 
 ## 付费版专享能力
 
@@ -91,6 +86,8 @@ category: "Development"
 | 参数名 | 类型 | 必填 | 说明 |
 |---:|---:|---:|---:|
 
+| instruction | string | 是 | 用户指令文本 |
+| context | string | 否 | 上下文信息 |
 ## 输出格式
 
 ```json

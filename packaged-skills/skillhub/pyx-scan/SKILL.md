@@ -1,9 +1,8 @@
----
-slug: "pyx-scan"
+---slug: "pyx-scan"
 name: "pyx-scan"
 version: 1.1.1
 displayName: "技能安全扫描"
-summary: "AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告。AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告。评估维度 包括恶意指令、数据泄露、"
+summary: "AI技能安全检查工具，"
 summary_zh: "AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告。AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告。评估维度 包括恶意指令、数据泄露、"
 license: "MIT"
 description: |-
@@ -26,9 +25,7 @@ tags:
   - owner
   - scanner
   - curl
-category: "Automation"
----
-# 技能安全扫描
+category: "Automation"---# 技能安全扫描
 
 通过Scanner API对AI技能进行安全评级和风险报告.
 ## 输入格式
@@ -79,16 +76,13 @@ export API_KEY="your_api_key_here"
 - 参考`技能安全检查`的配置文档进行参数调优
 ### 2. 信任评分
 返回 `trust_score`（0-10），分数越高表示技能越可信。10分为最高信任，0分为最低信任.
-**输入**: 用户提供信任评分所需的指令和必要参数.
-**处理**: 解析信任评分的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 ### 3. 风险评分
 返回 `risk_score`（0-10），分数越高表示风险越大。0分为无风险，10分为极高风险.
-**输入**: 用户提供风险评分所需的指令和必要参数.
-**处理**: 解析风险评分的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 ### 4. 置信度评估
 返回 `confidence` 百分比（0-100%），表示评估结果的可信程度。100%为最高置信度.
-**输入**: 用户提供置信度评估所需的指令和必要参数.
-**处理**: 解析置信度评估的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 ### 5. 风险报告生成
 根据扫描结果生成详细的风险报告，包含：
 - 恶意指令检测
@@ -97,17 +91,14 @@ export API_KEY="your_api_key_here"
 - 供应链风险检查
 - 代码注入风险
 
-**输入**: 用户提供风险报告生成所需的指令和必要参数.
 ### 6. WebFetch与curl双模式
 支持两种调用方式：
 - WebFetch：通过工具调用API
 - curl：通过命令行调用API（fallback）
 
-**输入**: 用户提供WebFetch与curl双模式所需的指令和必要参数.
-**输出**: 返回WebFetch与curl双模式的处理结果,包含执行状态码、结果数据和执行日志.
 ### 7. 批量扫描
 支持对多个技能进行批量安全扫描，逐个调用API并汇总结果.
-**输入**: 用户提供批量扫描所需的指令和必要参数。- 验证返回数据的完整性和格式正确性
+
 - 参考`批量扫描`的配置文档进行参数调优
 #
 ## 快速开始
@@ -130,13 +121,15 @@ export API_KEY="your_api_key_here"
 
 ### 第二步：调用Scanner API
 
-#### 方式1：WebFetch
+#
+### 方式1：WebFetch
 
 ```
 WebFetch: https://scanner.pyxmate.com/api/v1/check/owner/name
 ```
 
-#### 方式2：curl（fallback）
+#
+### 方式2：curl（fallback）
 
 ```bash
 curl -s "https://scanner.pyxmate.com/api/v1/check/owner/name"
@@ -151,7 +144,7 @@ curl -s "https://scanner.pyxmate.com/api/v1/check/owner/name"
 ### 示例1：扫描单个技能
 
 ```bash
-curl -s "https://scanner.pyxmate.com/api/v1/check/acme-corp/data-processor"
+pyxmate.com/api/v1/check/acme-corp/data-processor"
 ```
 
 输出：
@@ -176,7 +169,7 @@ curl -s "https://scanner.pyxmate.com/api/v1/check/acme-corp/data-processor"
 ### 示例2：扫描高风险技能
 
 ```bash
-curl -s "https://scanner.pyxmate.com/api/v1/check/unknown-vendor/suspicious-tool"
+pyxmate.com/api/v1/check/unknown-vendor/suspicious-tool"
 ```
 
 输出：
@@ -213,7 +206,7 @@ curl -s "https://scanner.pyxmate.com/api/v1/check/unknown-vendor/suspicious-tool
 ```bash
 for skill in "acme-corp/data-processor" "acme-corp/auth-helper" "vendor-x/file-utils"; do
   echo "=== Scanning: $skill ==="
-  curl -s "https://scanner.pyxmate.com/api/v1/check/$skill" | jq '{name: .name, trust: .trust_score, risk: .risk_score, confidence: .confidence}'
+pyxmate.com/api/v1/check/$skill" | jq '{name: .name, trust: .trust_score, risk: .risk_score, confidence: .confidence}'
 done
 ```
 
@@ -230,7 +223,7 @@ done
 ### 示例4：技能不存在
 
 ```bash
-curl -s "https://scanner.pyxmate.com/api/v1/check/nonexistent/missing-skill"
+pyxmate.com/api/v1/check/nonexistent/missing-skill"
 ```
 
 输出：

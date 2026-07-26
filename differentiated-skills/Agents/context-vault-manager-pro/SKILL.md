@@ -192,7 +192,6 @@ const hybrid = await skills.contextVaultManager({
 | 长期记忆 | long-term | 内存+磁盘+向量 | 永久存储 | 向量索引 |
 | 重要记忆 | important | 内存+磁盘+向量 | 永不清理 | 优先检索 |
 
-**输入**: 用户提供三层记忆分层（基础+增强）所需的指令和必要参数.
 **处理**: 解析三层记忆分层（基础+增强）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回三层记忆分层（基础+增强）的响应数据,包含状态码、结果和日志.
 ### 2. 语义检索（专业版）
@@ -201,7 +200,7 @@ const hybrid = await skills.contextVaultManager({
 
 ```typescript
 // 语义检索（理解意图而非匹配关键词）
-const result = await skills.contextVaultManager({
+contextVaultManager({
   action: "search",
   query: "用户的饮品偏好",
   searchMode: "semantic",
@@ -215,7 +214,6 @@ const result = await skills.contextVaultManager({
 - 模糊查询：找到概念相关的记忆，即使没有关键词重叠
 - 阈值可配：可配置相似度阈值（minScore），平衡召回率与精确度
 
-**输入**: 用户提供语义检索（专业版）所需的指令和必要参数.
 **处理**: 解析语义检索（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回语义检索（专业版）的响应数据,包含状态码、结果和日志.
 ### 3. 混合检索（专业版）
@@ -224,7 +222,7 @@ const result = await skills.contextVaultManager({
 
 ```typescript
 // 混合检索（关键词+语义）
-const hybrid = await skills.contextVaultManager({
+contextVaultManager({
   action: "search",
   query: "咖啡偏好",
   searchMode: "hybrid",
@@ -244,7 +242,6 @@ const hybrid = await skills.contextVaultManager({
 - RAG优化：混合检索使RAG准确率提升40%
 - 自动选择：auto模式智能选择最优检索模式
 
-**输入**: 用户提供混合检索（专业版）所需的指令和必要参数.
 **处理**: 解析混合检索（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回混合检索（专业版）的响应数据,包含状态码、结果和日志.
 ### 4. 自动摘要（专业版）
@@ -276,7 +273,6 @@ const summary = await skills.contextVaultManager({
 - 智能压缩：摘要压缩比可达4:1，Token占用降低70%
 - 上下文注入：摘要可自动注入上下文窗口
 
-**输入**: 用户提供自动摘要（专业版）所需的指令和必要参数.
 **处理**: 解析自动摘要（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自动摘要（专业版）的响应数据,包含状态码、结果和日志.
 ### 5. 向量数据库集成（专业版）
@@ -309,7 +305,6 @@ await skills.contextVaultManager({
 - 自动向量化：存储记忆时自动生成向量嵌入
 - 嵌入模型可选：支持OpenAI、本地嵌入模型
 
-**输入**: 用户提供向量数据库集成（专业版）所需的指令和必要参数.
 **处理**: 解析向量数据库集成（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回向量数据库集成（专业版）的响应数据,包含状态码、结果和日志.
 ### 6. 多项目隔离（专业版）
@@ -344,7 +339,6 @@ await skills.contextVaultManager({
 - 跨项目检索：可跨项目检索共享知识
 - 项目管理：创建/切换/删除项目记忆空间
 
-**输入**: 用户提供多项目隔离（专业版）所需的指令和必要参数.
 **处理**: 解析多项目隔离（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多项目隔离（专业版）的响应数据,包含状态码、结果和日志.
 ### 7. 智能清理策略（专业版）
@@ -374,7 +368,6 @@ await skills.contextVaultManager({
 - 摘要保留：清理前自动生成摘要，不丢失信息
 - 可配策略：可配置清理因素权重
 
-**输入**: 用户提供智能清理策略（专业版）所需的指令和必要参数.
 **处理**: 解析智能清理策略（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回智能清理策略（专业版）的响应数据,包含状态码、结果和日志.
 ### 8. 记忆关系网络（专业版）
@@ -407,7 +400,6 @@ const related = await skills.contextVaultManager({
 
 ---
 
-**输入**: 用户提供记忆关系网络（专业版）所需的指令和必要参数.
 **处理**: 解析记忆关系网络（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回记忆关系网络（专业版）的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：智能分层记忆专业、含语义检索、上下文保险库专业、版是智能分层记忆、管理的终极方案、在免费版基础上解、锁语义检索、记忆关系网络七大、高级功能等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -422,7 +414,6 @@ const related = await skills.contextVaultManager({
   "vault_pro": {
     "search": {
       "default_mode": "hybrid",
-      "semantic_threshold": 0.75
     },
     "vector_db": {
       "provider": "lancedb",
@@ -484,7 +475,7 @@ await skills.contextVaultManager({
 });
 // ...
 // 混合检索
-const result = await skills.contextVaultManager({
+contextVaultManager({
   action: "search",
   query: "退款政策",
   searchMode: "hybrid",
@@ -507,7 +498,7 @@ await skills.contextVaultManager({
 });
 // ...
 // 自动摘要控制Token
-const summary = await skills.contextVaultManager({
+contextVaultManager({
   action: "summarize",
   typeFilter: "short-term",
   maxTokens: 500,
@@ -835,8 +826,6 @@ skills.contextVaultManager action="export" project="project-a" \
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

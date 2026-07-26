@@ -156,7 +156,6 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 # ...
 # 按操作类型筛选
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
-     "http://localhost:3000/api/audit/logs?type=mutation"
 # ...
 # 导出审计报告（JSON格式）
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
@@ -356,7 +355,7 @@ curl -X POST -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 # ...
 # 查看成本趋势
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
-     "http://localhost:3000/api/cost/trend?period=daily&days=30"
+period=daily&days=30"
 ```
 
 ### 变更操作与备份
@@ -428,19 +427,17 @@ curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
 # ...
 # 按类型筛选（mutation类型为变更操作）
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
-     "http://localhost:3000/api/audit/logs?type=mutation"
 # ...
 # 按时间范围筛选
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
-     "http://localhost:3000/api/audit/logs?start=2026-01-01&end=2026-01-31"
+start=2026-01-01&end=2026-01-31"
 # ...
 # 按操作者筛选
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
-     "http://localhost:3000/api/audit/logs?operator=admin"
 # ...
 # 导出审计报告
 curl -H "Authorization: Bearer $OPS_DASHBOARD_AUTH_TOKEN" \
-     "http://localhost:3000/api/audit/export?format=json" > audit.json
+format=json" > audit.json
 ```
 
 ### 服务商审计集成

@@ -56,21 +56,21 @@ category: "Communication"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -208,9 +208,7 @@ sync_config = {
 ### 批量文件发送
 
 ```bash
-python wa_batch_sender.py \
   --store ~/.wacli \
-  --recipients "contacts.json" \
   --file "/path/to/report.pdf" \
   --caption "{{name}}您好，这是您本月的使用报告。" \
   --rate_limit 5 \
@@ -225,7 +223,6 @@ wacli messages search --regex "合同.*[0-9]{4}年" --limit 50 --json
 # ...
 # 多维度过滤
 wacli messages search \
-  --chat "8613800138000@s.whatsapp.net" \
   --after 2026-01-01 \
   --before 2026-07-31 \
   --from-me false \

@@ -71,7 +71,6 @@ Request → Plan → Draft → Audit → Refine → Deliver
 - **Run quality audit before delivering**：交付前运行quality audit
 - **Offer cleanup only after user confirms**：仅在用户确认piece最终后提供cleanup
 
-**输出**: 返回版本化写作工作流的处理结果,包含执行状态码、结果数据和执行日志.
 ### 基础Scripts工具集
 
 提供核心shell脚本：
@@ -92,8 +91,7 @@ Request → Plan → Draft → Audit → Refine → Deliver
 - **depth**: `"quick"` | `"standard"` | `"thorough"` — 控制研究与修订轮次
 - **auto_audit**: `true`/`false` — drafts后自动运行audits
 
-**输入**: 用户提供配置系统所需的指令和必要参数.
-**输出**: 返回配置系统的处理结果,包含执行状态码、结果数据和执行日志。### 工作空间初始化
+### 工作空间初始化
 首次使用时创建工作空间：
 
 ```bash
@@ -101,8 +99,7 @@ Request → Plan → Draft → Audit → Refine → Deliver
 ```
 
 创建标准项目结构，包含pieces目录、scripts目录、references目录与config.json配置文件.
-**输入**: 用户提供工作空间初始化所需的指令和必要参数.
-**处理**: 解析工作空间初始化的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 #
 ## 快速开始
 

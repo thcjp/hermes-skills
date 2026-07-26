@@ -214,7 +214,6 @@ node （请参考skill目录中的脚本文件） \
   --input docs/specs/ \
   --output docs/diagrams/ \
   --embed \
-  --theme theme/brand-theme.yaml
 ```
 
 ### 4. CI语法校验

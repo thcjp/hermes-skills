@@ -70,21 +70,21 @@ DNS 配置工具免费版是一款面向个人开发者与小站点的 DNS 记�
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -159,7 +159,6 @@ curl -I https://www.example.com
 
 ```bash
 # 查看当前 A 记录与 TTL
-dig +nocmd +noall +answer example.com
 # ...
 # 查看邮件认证记录
 dig +short TXT example.com          # SPF
@@ -200,7 +199,7 @@ dig example.com +short
 
 ```bash
 # SPF(单条 TXT,多个来源用 include,结尾用 ~all 或 -all)
-example.com. TXT "v=spf1 include:_spf.google.com include:mailgun.org ~all"
+example.com.google.com include:mailgun.org ~all"
 # ...
 # 注意:SPF 必须是单条 TXT 记录,多条 SPF 记录无效
 # 正确: 用 include 合并多个来源
@@ -216,7 +215,7 @@ example.com. TXT "v=spf1 include:_spf.google.com include:mailgun.org ~all"
 default._domainkey.example.com. TXT "v=DKIM1; k=rsa; p=<public_key>"
 # ...
 # DMARC
-_dmarc.example.com. TXT "v=DMARC1; p=quarantine; rua=mailto:dmarc@example.com; pct=100"
+_dmarc.example.com.com; pct=100"
 ```
 
 ### www 处理方案
@@ -338,8 +337,6 @@ TTL 修改本身也有缓存周期。你修改的是「未来查询的 TTL」,�
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

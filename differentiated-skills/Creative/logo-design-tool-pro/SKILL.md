@@ -84,7 +84,6 @@ batch_config = {
 python3 batch_logo_gen.py --config batch_config
 ```
 
-**输入**: 用户提供批量Logo生成所需的指令和必要参数。
 **处理**: 解析批量Logo生成的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回批量Logo生成的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -110,7 +109,6 @@ vectorization_config = {
 python3 vectorize.py --config vectorization_config
 ```
 
-**输入**: 用户提供自动矢量化所需的指令和必要参数。
 **处理**: 解析自动矢量化的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回自动矢量化的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -157,7 +155,6 @@ brand_variants = {
 python3 generate_variants.py --config brand_variants
 ```
 
-**输入**: 用户提供品牌变体管理所需的指令和必要参数。
 **处理**: 解析品牌变体管理的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回品牌变体管理的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -180,7 +177,6 @@ quality_audit = {
 }
 ```
 
-**输入**: 用户提供设计质量审计所需的指令和必要参数。
 **处理**: 解析设计质量审计的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回设计质量审计的响应数据,包含状态码、结果和日志。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、设计系统、支持批量生成、适合团队与商业项、设计工具专业版为、企业与设计团队提、供系统化的、设计解决方案、在免费版基础生成、能力之上、增加批量生成、多格式导出、设计审计与、集成能力、Use、when、、品牌视觉时使用、不适用于、建模和动画制作、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -210,7 +206,6 @@ python3 generate_logo_system.py \
 brand/
 ├── primary/
 │   ├── logo-primary.svg
-│   ├── logo-primary.png
 │   └── logo-primary-dark.png
 ├── variants/
 │   ├── logo-horizontal.svg
@@ -256,7 +251,6 @@ for brand in sub_brands:
 
 ```bash
 # 批量生成客户方案
-python3 batch_logo_gen.py \
   --client "客户A" \
   --directions 5 \
   --variations-per-direction 3 \
@@ -281,7 +275,6 @@ python3 init_brand.py \
 ### Step 2:批量生成Logo方向
 
 ```bash
-python3 batch_logo_gen.py \
   --config directions.yml \
   --parallel 3 \
   --auto-validate \
@@ -292,7 +285,6 @@ python3 batch_logo_gen.py \
 
 ```bash
 # 选择最佳方向后,生成完整变体系统
-python3 generate_variants.py \
   --source ./output/best-logo.png \
   --variants all \
   --vectorize \
@@ -368,7 +360,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: Generate Logo System
         run: |
-          python3 generate_logo_system.py \
             --config brand-config.yml \
             --output ./brand/ \
             --vectorize \

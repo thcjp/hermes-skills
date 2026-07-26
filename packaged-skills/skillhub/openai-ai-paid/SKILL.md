@@ -80,7 +80,6 @@ category: "Automation"
 | 容器隔离 | 不支持 | 支持(隔离执行) | 安全沙箱 |
 | 审计日志 | 不支持 | 支持 | 合规追溯 |
 
-**输入**: 用户提供免费版 vs 专业版能力对比所需的指令和必要参数.
 ### 能力分类
 
 针对能力分类,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
@@ -164,7 +163,7 @@ curl -X POST "https://api.llm-provider.com/v1/files" \
   -F "file=@./training_data.jsonl"
 # ...
 # 2. 创建微调任务
-curl -X POST "https://api.llm-provider.com/v1/fine_tuning/jobs" \
+llm-provider.com/v1/fine_tuning/jobs" \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -218,7 +217,6 @@ client.beta.threads.messages.create(
     content="2026 年的报销政策有哪些变化?"
 )
 run = client.beta.threads.runs.create(
-    thread_id=thread.id,
     assistant_id=assistant.id
 )
 ```
@@ -245,7 +243,7 @@ curl https://api.llm-provider.com/v1/models \
 ### 3. 创建优秀个批量任务
 
 ```bash
-curl -X POST "https://api.llm-provider.com/v1/batches" \
+llm-provider.com/v1/batches" \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -390,7 +388,6 @@ class AsyncTaskManager:
         raise TimeoutError(f"批量任务 {batch_id} 超时")
 # ...
     def wait_for_fine_tune(self, job_id, timeout=86400):
-        deadline = time.time() + timeout
         while time.time() < deadline:
             job = client.fine_tuning.jobs.retrieve(job_id)
             print(f"[FineTune] {job.status} | {job.fine_tuned_model}")

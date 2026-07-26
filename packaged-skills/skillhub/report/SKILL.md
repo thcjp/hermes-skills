@@ -1,9 +1,8 @@
----
-slug: "report"
+---slug: "report"
 name: "report"
 version: 1.0.4
 displayName: "定制报表生成"
-summary: "配置自定义周期性报表,用户定义数据源,自动处理调度与格式化投递。配置自定义周期性报表,用户定义数据源,自动处理调度与格式化投递。核心能力包括数据源用户驱动配置、YAML报表配置、Cron定时"
+summary: "配置自定义周期性报表,"
 summary_zh: "配置自定义周期性报表,用户定义数据源,自动处理调度与格式化投递。配置自定义周期性报表,用户定义数据源,自动处理调度与格式化投递。核心能力包括数据源用户驱动配置、YAML报表配置、Cron定时"
 license: "MIT"
 description: |-
@@ -22,9 +21,7 @@ tags:
   - 报表
   - yaml
   - telegram
-category: "Automation"
----
-# 定制报表生成
+category: "Automation"---# 定制报表生成
 
 配置自定义周期性报表,用户定义数据源,自动处理调度与格式化投递.
 ## 输入格式
@@ -218,7 +215,7 @@ delivery: telegram
 1. 执行 `mkdir -p ~/report` 创建数据存储目录
 2. 用户定义报表名称、数据源和所需凭证
 3. 用户在环境中设置所需的环境变量(如 `STRIPE_API_KEY`)
-4. 在 `~/report/{name}/config.md` 中创建YAML配置,指定 `schedule`、`sources`、`format` 和 `delivery`
+4.md` 中创建YAML配置,指定 `schedule`、`sources`、`format` 和 `delivery`
 5. 根据调度计划自动生成报表,或用户请求按需运行
 6. 通过配置的投递渠道发送报表内容
 7. 使用"列出我的报表"查看所有报表,"暂停X报表"暂停,"立即运行X"按需生成
@@ -261,7 +258,7 @@ schedule: "0 8 * * 1-5"
 sources:
   - type: api
     env: PROJECT_API_TOKEN
-    endpoint: "https://api.projectmgmt.com/v2/tasks"
+projectmgmt.com/v2/tasks"
     params:
       assignee: "current_user"
       status: "in_progress"

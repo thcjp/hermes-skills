@@ -1,9 +1,8 @@
----
-slug: "juejin-skills"
+---slug: "juejin-skills"
 name: "juejin-skills"
 version: 1.0.9
 displayName: "掘金技能集"
-summary: "掘金技术社区一站式操作技能，支持热门文章排行榜查询。。掘金技术社区一站式操作技能，支持热门文章排行榜查询。核心能力: - 其他工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优"
+summary: "掘金技术社区一站式操作"
 summary_zh: "掘金技术社区一站式操作技能，支持热门文章排行榜查询。。掘金技术社区一站式操作技能，支持热门文章排行榜查询。核心能力: - 其他工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优"
 license: "MIT"
 description: |-
@@ -38,9 +37,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# 掘金技能集
+category: "Automation"---# 掘金技能集
 
 ## 付费版专享能力
 
@@ -70,8 +67,7 @@ category: "Automation"
 * 分类文章：`POST https://api.juejin.cn/recommend_api/v1/article/recommend_cate_feed`
 * 标签列表：`POST https://api.juejin.cn/tag_api/v1/query_category_tags`
 
-**输入**: 用户提供📊 功能一：热门文章排行榜所需的指令和必要参数.
-**输出**: 返回📊 功能一：热门文章排行榜的处理结果,包含执行状态码、结果数据和执行日志。### 📝 功能二：文章自动发布
+### 📝 功能二：文章自动发布
 
 | 子功能(续)| 说明 |
 |----:|----:|

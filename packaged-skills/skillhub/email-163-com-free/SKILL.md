@@ -147,7 +147,6 @@ export API_KEY="your_api_key_here"
 登录163网页版 → 设置 → POP3/SMTP/IMAP → 开启IMAP/SMTP服务 → 生成客户端授权码。授权码仅显示一次,请妥善保存,不要使用邮箱登录密码.
 ### 安全建议
 ```bash
-chmod 600 ~/.config/email-163-com/config.json
 ```
 
 ## 案例展示
@@ -215,7 +214,7 @@ email-163-com search --from "Cloudflare" --count 5
 ### Q1: 为什么必须使用客户端授权码?
 A: 163邮箱IMAP/SMTP登录必须使用客户端授权码而非登录密码。获取方式:登录网页版 → 设置 → POP3/SMTP/IMAP → 开启服务并生成授权码.
 ### Q2: 配置文件应该放在哪里?
-A: 默认路径 `~/.config/email-163-com/config.json`,包含 `email`、`password`(授权码)、`imap_server`(imap.163.com)、`imap_port`(993)、`smtp_server`(smtp.163.com)、`smtp_port`(465)。建议执行 `chmod 600` 设置权限.
+A: 默认路径 `~/.json`,包含 `email`、`password`(授权码)、`imap_server`(imap.163.com)、`imap_port`(993)、`smtp_server`(smtp.163.com)、`smtp_port`(465)。建议执行 `chmod 600` 设置权限.
 ### Q3: 如何发送HTML格式邮件?
 A: 基础版支持纯文本(`--body`)与单附件,不支持HTML格式发送。如需HTML邮件、多附件、文件正文等功能,请升级付费版.
 ### Q4: IMAP ID是什么?为什么163邮箱必需?

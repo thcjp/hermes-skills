@@ -49,9 +49,6 @@ category: "Automation"
 
 ### 1. 智能拆解算法（专业版）
 
-**输入**: 用户提供智能拆解算法（专业版）所需的指令和必要参数.
-**处理**: 解析智能拆解算法（专业版）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回智能拆解算法（专业版）的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`智能拆解算法（专业版）`的配置文档进行参数调优
 ### 2. 多模型并行编排（专业版）
 ```bash
@@ -76,8 +73,6 @@ workflow-splitter route fallback --primary "gpt-4o" --secondary "claude-sonnet"
 | consensus | 多模型达成共识 | 高准确度要求 |
 | specialize | 按专长分配子任务 | 复杂多领域 |
 
-**输入**: 用户提供多模型并行编排（专业版）所需的指令和必要参数.
-**输出**: 返回多模型并行编排（专业版）的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. 并行执行（专业版）
 ```bash
 workflow-splitter analyze-deps --task-id "task-001"
@@ -104,12 +99,8 @@ T1: 步骤4（等待1,2,3完成）
 T2: 步骤5（等待4完成）
 ```
 
-**输入**: 用户提供并行执行（专业版）所需的指令和必要参数.
 ### 4. 性能分析（专业版）
 
-**输入**: 用户提供性能分析（专业版）所需的指令和必要参数.
-**处理**: 解析性能分析（专业版）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回性能分析（专业版）的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`性能分析（专业版）`的配置文档进行参数调优
 ### 5. 模板库（专业版）
 ```bash
@@ -139,7 +130,6 @@ workflow-splitter template import "custom.json"
 | migration | 系统迁移 | 10-15步 |
 | refactor | 代码重构 | 6-8步 |
 
-**输入**: 用户提供模板库（专业版）所需的指令和必要参数.
 ### 6. 自定义路由（专业版）
 ```bash
 workflow-splitter route add \
@@ -154,9 +144,6 @@ workflow-splitter route test --task "开发登录API"
 workflow-splitter route priority --rule-id "rule-001" --priority 1
 ```
 
-**输入**: 用户提供自定义路由（专业版）所需的指令和必要参数.
-**处理**: 解析自定义路由（专业版）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回自定义路由（专业版）的处理结果,包含执行状态码、结果数据和执行日志.
 ### 7. 团队协作（专业版）
 ```bash
 workflow-splitter team add --member "alice" --skills "frontend"
@@ -181,8 +168,6 @@ workflow-splitter team report --task-id "task-001"
 | round-robin | 轮询分配 | 任务均匀 |
 | availability | 按可用性 | 紧急任务 |
 
-**输入**: 用户提供团队协作（专业版）所需的指令和必要参数.
-**输出**: 返回团队协作（专业版）的处理结果,包含执行状态码、结果数据和执行日志.
 ### 8. 版本管理（专业版）
 ```bash
 workflow-splitter version log --task-id "task-001"
@@ -194,8 +179,6 @@ workflow-splitter version rollback --task-id "task-001" --to "v1"
 workflow-splitter version tag --task-id "task-001" --tag "approved"
 ```
 
-**处理**: 解析版本管理（专业版）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回版本管理（专业版）的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -274,7 +257,7 @@ workflow-splitter assign --task-id "task-001" --team "marketing,dev,ops"
 workflow-splitter progress --task-id "task-001"
 ```
 
-> 详细内容已移至 `references/detail.md` - ### 场景七：大型重构的步骤规划（架构师角色）
+### 场景七：大型重构的步骤规划（架构师角色）
 
 ## 使用流程
 
@@ -300,7 +283,7 @@ workflow-splitter split "开发电商平台" --template "software-dev"
 workflow-splitter template list
 ```
 
-> 详细内容已移至 `references/detail.md` - ### 完整搭建（<300秒）
+### 完整搭建（<300秒）
 
 以下是工作流分解器(专业版)的快速搭建流程，从初始化到完整配置的步骤说明.
 ## 输入格式
@@ -441,7 +424,6 @@ workflow-splitter split "实现PR #$PR_NUMBER" --smart
 workflow-splitter assign --task-id "task-001" --team "reviewers"
 ```
 
-> 详细内容已移至 `references/detail.md` - ## 版本升级迁移指南
 ### 从免费版升级至专业版
 1. **无需迁移数据**：专业版完全兼容免费版的任务格式与命令
 2. **新增功能激活**：
@@ -460,7 +442,7 @@ workflow-splitter assign --task-id "task-001" --team "reviewers"
 
 ### Q1：免费版与专业版有什么区别？
 免费版提供基础拆解能力（任务分析/步骤拆解/模型匹配/进度跟踪/问题诊断）。专业版解锁八大高级功能：智能拆解算法、多模型并行编排、并行执行、性能分析、模板库、自定义路由、团队协作、版本管理。此外提供多角色场景指南、性能优化策略和多平台集成示例.
-> 详细内容已移至 `references/detail.md` - ### Q2：智能拆解算法如何学习？
+### Q2：智能拆解算法如何学习？
 ### Q3：多模型并行编排会增加成本吗？
 会。多模型并行意味着多次API调用。专业版通过四种方式控制成本：(1) 仅关键步骤用多模型；(2) 简单步骤用低成本模型；(3) 结果缓存复用；(4) 投票策略取最优而非全用.
 ### Q4：并行执行支持多少个步骤？
@@ -471,7 +453,7 @@ workflow-splitter assign --task-id "task-001" --team "reviewers"
 通过共享任务状态文件同步。每个成员执行完一步后更新状态，其他成员可实时查看。支持冲突检测与解决.
 ### Q7：版本管理支持分支吗？
 支持。每个版本是拆解方案的快照，可通过tag标记。支持任意版本间的对比与回滚。适用于客户确认场景.
-> 详细内容已移至 `references/detail.md` - ### Q8：性能分析能识别哪些瓶颈？
+### Q8：性能分析能识别哪些瓶颈？
 ### Q9：可以与Jira/Asana集成吗？
 可以。专业版支持导出为Jira、Asana、Trello等项目管理工具的格式。也支持从这些工具导入现有项目.
 ### Q10：自定义路由的规则优先级如何工作？

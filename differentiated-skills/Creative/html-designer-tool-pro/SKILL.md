@@ -107,7 +107,6 @@ radius:
   full: "9999px"
 ```
 
-**输入**: 用户提供设计令牌系统所需的指令和必要参数。
 **处理**: 解析设计令牌系统的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回设计令牌系统的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -132,7 +131,6 @@ for category, items in components.items():
         generate_documentation(category, item)
 ```
 
-**输入**: 用户提供企业级组件库所需的指令和必要参数。
 **处理**: 解析企业级组件库的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回企业级组件库的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -155,7 +153,6 @@ function switchTheme(themeName) {
 }
 ```
 
-**输入**: 用户提供多主题切换系统所需的指令和必要参数。
 **处理**: 解析多主题切换系统的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回多主题切换系统的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -179,7 +176,6 @@ python3 generate_pages.py --config pages-config.yml --output ./dist/
 #     theme: "brand"
 ```
 
-**输入**: 用户提供批量页面生成所需的指令和必要参数。
 **处理**: 解析批量页面生成的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回批量页面生成的响应数据,包含状态码、结果和日志。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：设计系统、支持设计令牌、主题切换与团队协、适合团队与商业项、设计工具专业版是、一款面向企业与专、业团队的网页设计、系统化解决方案、在免费版核心能力、可复用组件库、团队协作与品牌一、致性保障、Use、when、、品牌视觉时使用、不适用于、建模和动画制作、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -329,7 +325,6 @@ python3 generate_components.py \
 
 ```bash
 # 批量生成页面并验证
-python3 generate_pages.py \
   --config pages.yml \
   --output "./dist/" \
   --validate \
@@ -358,7 +353,6 @@ module.exports = {
         mono: ["JetBrains Mono", "monospace"]
       },
       boxShadow: {
-        accent: "0 4px 14px rgba(0,82,255,0.25)"
       }
     }
   }
@@ -428,7 +422,6 @@ jobs:
       - name: Check Accessibility
         run: python3 （请参考skill目录中的脚本文件） ./dist/
       - name: Performance Audit
-        run: python3 （请参考skill目录中的脚本文件） ./dist/
       - name: Generate Docs
         run: python3 （请参考skill目录中的脚本文件） --output ./docs/
 ```
@@ -507,8 +500,6 @@ A: 支持语义化版本控制,每次变更自动生成变更日志。可集成G
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

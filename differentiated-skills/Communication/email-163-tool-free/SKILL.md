@@ -52,7 +52,6 @@ category: "Communication"
 - **读取邮件**: 支持 IMAP ID 认证，完整获取收件箱邮件
 - **邮件详情**: 查看单封邮件的完整内容
 
-**输入**: 用户提供邮件收发所需的指令和必要参数.
 **处理**: 解析邮件收发的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回邮件收发的响应数据,包含状态码、结果和日志.
 ### 邮件搜索
@@ -62,7 +61,6 @@ category: "Communication"
 - 按日期范围筛选
 - 多条件组合搜索
 
-**输入**: 用户提供邮件搜索所需的指令和必要参数.
 **处理**: 解析邮件搜索的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回邮件搜索的响应数据,包含状态码、结果和日志.
 ### 邮件操作
@@ -71,7 +69,6 @@ category: "Communication"
 - 在文件夹之间移动邮件
 - 标记邮件为已读/未读
 
-**输入**: 用户提供邮件操作所需的指令和必要参数.
 **处理**: 解析邮件操作的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回邮件操作的响应数据,包含状态码、结果和日志.
 ### 文件夹管理
@@ -80,7 +77,6 @@ category: "Communication"
 - 创建自定义文件夹
 - 删除空文件夹
 
-**输入**: 用户提供文件夹管理所需的指令和必要参数.
 **处理**: 解析文件夹管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回文件夹管理的响应数据,包含状态码、结果和日志.
 ### 附件管理
@@ -90,7 +86,6 @@ category: "Communication"
 
 ---
 
-**输入**: 用户提供附件管理所需的指令和必要参数.
 **处理**: 解析附件管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回附件管理的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
@@ -220,11 +215,8 @@ email-163-tool send --to your_email@163.com --subject "测试" --body "配置成
 
 ```json
 {
-  "email": "your_email@163.com",
   "password": "your_auth_code",
-  "imap_server": "imap.163.com",
   "imap_port": 993,
-  "smtp_server": "smtp.163.com",
   "smtp_port": 465,
   "imap_id": {
     "name": "email-163-tool",
@@ -258,7 +250,6 @@ $env:EMAIL_163_PASS="your_auth_code"
 
 ```bash
 # 已知限制
-chmod 600 ~/.config/email-163-tool/config.json
 ```
 
 ---
@@ -279,7 +270,7 @@ chmod 600 ~/.config/email-163-tool/config.json
 email-163-tool send --to friend@example.com --subject "周报" --file weekly_report.txt
 # ...
 # HTML 邮件使用引号包裹
-email-163-tool send --to friend@example.com --subject "通知" --html "<h1>会议通知</h1><p>明天上午10点开会</p>"
+com --subject "通知" --html "<h1>会议通知</h1><p>明天上午10点开会</p>"
 ```
 
 ### 附件管理建议

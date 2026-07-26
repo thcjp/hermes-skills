@@ -86,11 +86,10 @@ class BatchNewsFetcher:
                     result = future.result()
                     with self.lock:
                         self.results[date] = result
-                        self.stats["total"] += 1
                         if result.get("success"):
-                            self.stats["success"] += 1
+stats["success"] += 1
                         else:
-                            self.stats["failed"] += 1
+stats["failed"] += 1
                         status = "成功" if result.get("success") else "失败"
                         print(f"[{status}] {date}")
                 except Exception as e:
@@ -133,7 +132,6 @@ class BatchNewsFetcher:
                 ["node", "（请参考skill目录中的脚本文件）", date_str],
                 capture_output=True, text=True, timeout=60, encoding="utf-8"
             )
-            if result.returncode == 0:
                 data = json.loads(result.stdout)
                 with open(cache_file, "w", encoding="utf-8") as f:
                     json.dump({"success": True, "data": data, "date": date_str}, f, ensure_ascii=False)
@@ -156,7 +154,6 @@ fetcher = BatchNewsFetcher(max_workers=3)
 results = fetcher.fetch_date_range("2025-02-01", "2025-02-28")
 ```
 
-**输入**: 用户提供批量日期查询（并发抓取）所需的指令和必要参数.
 **处理**: 解析批量日期查询（并发抓取）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量日期查询（并发抓取）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -165,17 +162,14 @@ results = fetcher.fetch_date_range("2025-02-01", "2025-02-28")
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供AI智能摘要（基于LLM）所需的指令和必要参数.
 **处理**: 解析AI智能摘要（基于LLM）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回AI智能摘要（基于LLM）的响应数据,包含状态码、结果和日志.
 ### 3. 多渠道推送
 
-**输入**: 用户提供多渠道推送所需的指令和必要参数.
 **处理**: 解析多渠道推送的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多渠道推送的响应数据,包含状态码、结果和日志.
 ### 4. 历史趋势分析
 
-**输入**: 用户提供历史趋势分析所需的指令和必要参数.
 **处理**: 解析历史趋势分析的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回历史趋势分析的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：央视新闻联播抓取、含批量查询、央视新闻抓取助手、专业版是面向企业、级场景的完整新闻、联播内容获取与分、析工具、在免费版单日查询、能力之上、新增批量日期查询、全文内容获取、视频片段元数据、个性化订阅七大高、级能力、Use、when、模型调用、智能对话、Agent、应用时使用、不适用于需要、确定性的关键决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -265,7 +259,7 @@ results = fetcher.fetch_date_range('2025-02-04', '2025-02-10')
 python3 -c "
 from ai_summarizer import AINewsSummarizer
 summarizer = AINewsSummarizer()
-summary = summarizer.generate_daily_summary(results['20250210'])
+generate_daily_summary(results['20250210'])
 print(summary)
 "
 ```
@@ -425,8 +419,6 @@ summary_brief = summarizer.generate_daily_summary(data, style="brief")
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

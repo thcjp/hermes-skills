@@ -94,12 +94,11 @@ export API_KEY="your_api_key_here"
 - `iso-8859-1`：ISO标准西欧编码
 
 检测失败时回退至 `utf-8`，避免抛出 `UnicodeDecodeError`.
-**输入**: 用户提供编码自动检测所需的指令和必要参数.
-**处理**: 解析编码自动检测的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 分隔符自动识别
+
+### 分隔符自动识别
 读取文件前 5000 字符，统计 `COMMON_DELIMITERS = [',', ';', '\t', '|']` 各分隔符出现频次，选取频次最高者作为分隔符。支持欧式CSV（分号分隔）、TSV（制表符分隔）、管道分隔等非标准格式.
-**输入**: 用户提供分隔符自动识别所需的指令和必要参数.
-**处理**: 解析分隔符自动识别的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回分隔符自动识别的处理结果,包含执行状态码、结果数据和执行日志。### CSV文件画像分析
+
+### CSV文件画像分析
 
 调用 `profile_csv()` 生成 `CSVProfile` 对象，包含：
 
@@ -127,34 +126,30 @@ export API_KEY="your_api_key_here"
 3. 删除全空列：`df.dropna(axis=1, how='all')`
 4. 字符串列空白裁剪：`df[col].str.strip()`
 
-**输出**: 返回数据读取与清洗的处理结果,包含执行状态码、结果数据和执行日志.
 ### 多文件合并
 `merge_csvs()` 支持两种模式：
 
 - **按键合并**：指定 `on_column` 参数，使用 `pd.merge(how='outer')` 横向连接，自动标记 `_source_file` 来源列
 - **纵向堆叠**：不指定 `on_column`，使用 `pd.concat(ignore_index=True)` 纵向拼接
 
-**处理**: 解析多文件合并的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回多文件合并的处理结果,包含执行状态码、结果数据和执行日志。### 按列拆分
+### 按列拆分
 `split_csv()` 按 `group_column` 的唯一值将DataFrame拆分为多个CSV文件，输出到指定目录，文件名格式为 `{group_column}_{value}.csv`，自动创建目录 `output_path.mkdir(parents=True, exist_ok=True)`.
-**输入**: 用户提供按列拆分所需的指令和必要参数.
-**处理**: 解析按列拆分的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 智能类型转换
+
+### 智能类型转换
 `convert_types()` 支持两种模式：
 
 - **手动映射**：传入 `type_map={'col_name': 'float64'}` 指定列类型
 - **自动推断**：依次尝试 `pd.to_numeric()` 和 `pd.to_datetime()`，转换失败保持原类型
 
-**输入**: 用户提供智能类型转换所需的指令和必要参数.
-**输出**: 返回智能类型转换的处理结果,包含执行状态码、结果数据和执行日志。### 进度计划CSV专用解析
+### 进度计划CSV专用解析
 `ScheduleCSVHandler` 继承基础处理器，`parse_schedule()` 自动识别包含 `date`、`start`、`end` 关键词的列并调用 `pd.to_datetime()` 转换。标准进度计划列：`task_id`、`task_name`、`start_date`、`end_date`、`duration`、`predecessors`、`resources`.
-**输入**: 用户提供进度计划CSV专用解析所需的指令和必要参数.
-**输出**: 返回进度计划CSV专用解析的处理结果,包含执行状态码、结果数据和执行日志。### 成本CSV专用解析
+
+### 成本CSV专用解析
 `CostCSVHandler` 的 `parse_costs()` 自动识别包含 `cost`、`price`、`amount`、`total`、`qty`、`quantity` 关键词的列，通过正则 `r'[\$,]'` 去除美元符号和千位分隔符后调用 `pd.to_numeric(errors='coerce')` 转换.
-**输入**: 用户提供成本CSV专用解析所需的指令和必要参数.
-**输出**: 返回成本CSV专用解析的处理结果,包含执行状态码、结果数据和执行日志。### 多编码导出
+
+### 多编码导出
 `export_csv()` 默认使用 `utf-8-sig` 编码导出（带BOM，确保Excel正确显示中文），支持自定义分隔符，`index=False` 不写入行索引.
-**输入**: 用户提供多编码导出所需的指令和必要参数.
-**处理**: 解析多编码导出的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
+
 #
 ## 快速开始
 
@@ -241,7 +236,7 @@ A: `detect_delimiter()` 会自动识别分号。也可手动指定：`handler.re
 ### Q3: 合并多个CSV时列名不一致怎么处理？
 A: 先对每个文件调用 `read_csv(clean=True)`，列名会自动标准化（小写、下划线连接）。再执行 `merge_csvs()`.
 ### Q4: 成本列含 `$` 和逗号，如何转为数值？
-A: 使用 `CostCSVHandler.parse_costs()`，会自动通过正则 `r'[\$,]'` 去除符号后用 `pd.to_numeric(errors='coerce')` 转换.
+A: 使用 `CostCSVHandler.parse_costs()`，会自动通过正则 `r'[\$,]'` 去除符号后用 `pd.
 ### Q5: 大文件（>1GB）如何避免内存溢出？
 A: 使用 `pd.read_csv(chunksize=10000)` 分块迭代处理，或仅读取需要的列 `usecols=['col1', 'col2']`.
 ### Q6: 如何判断CSV是否有表头行？

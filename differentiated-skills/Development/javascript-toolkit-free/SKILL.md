@@ -1,9 +1,8 @@
----
-slug: javascript-toolkit-free
+---slug: javascript-toolkit-free
 name: javascript-toolkit-free
 version: 1.0.1
 displayName: JavaScript工具包免费版
-summary: "JavaScript 陷阱防范与优选实践指南，覆盖异步、类型转换、闭包等核心场景.。面向 JavaScript 开发者的代码陷阱防范工具，帮助编写健壮的 JS 代码。核心能力:"
+summary: "JavaScript "
 license: Proprietary
 edition: free
 description: 面向 JavaScript 开发者的代码陷阱防范工具，帮助编写健壮的 JS 代码。核心能力:，可分析提升工作效率
@@ -47,9 +46,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-本工具为 JavaScript 开发者提供代码陷阱防范与优选实践指引，覆盖相等性比较、this 绑定、闭包、数组变异、异步编程、类型转换、严格模式等核心场景。通过自然语言指令驱动，帮助开发者识别和规避 JavaScript 中常见的陷阱，编写更加健壮、可靠的代码。免费版聚焦个人开发者高频遇到的语言陷阱，提供简明速查表与代码示例.
+category: "Automation"---本工具为 JavaScript 开发者提供代码陷阱防范与优选实践指引，覆盖相等性比较、this 绑定、闭包、数组变异、异步编程、类型转换、严格模式等核心场景。通过自然语言指令驱动，帮助开发者识别和规避 JavaScript 中常见的陷阱，编写更加健壮、可靠的代码。免费版聚焦个人开发者高频遇到的语言陷阱，提供简明速查表与代码示例.
 ## 核心能力
 | 能力模块 | 描述 | 典型陷阱 |
 |----|---|----|
@@ -64,21 +61,21 @@ category: "Automation"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -300,7 +297,6 @@ const results = await Promise.all([
 ]);
 // ...
 // allSettled：等待所有完成，无论成功失败
-const results = await Promise.allSettled([
     fetch('/api/1'),
     fetch('/api/2'),
 ]);

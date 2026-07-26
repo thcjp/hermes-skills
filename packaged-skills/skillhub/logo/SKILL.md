@@ -75,7 +75,6 @@ Create a [STYLE] logo featuring [ELEMENT] on [BACKGROUND].
 ```text
 Create a minimalist logo featuring a geometric mountain peak on white background.
 Clean lines, navy blue (#1E3A5A), modern and professional style.
-The logo should look good at 32px with recognizable shapes.
 ```
 
 For the full 7-step prompt framework and model comparison, load `ai-generation.md`.
@@ -86,8 +85,6 @@ For the full 7-step prompt framework and model comparison, load `ai-generation.m
 1. 确认运行环境满足依赖说明中的要求
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
-
-> 详细的输入输出格式请参考下方章节说明。
 
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤.
 **使用步骤**:

@@ -71,7 +71,6 @@ thesis-helper outline --topic "社交媒体对青少年心理健康的影响" --
   2.3 自然语言处理在医疗领域的应用
 ```
 
-**输入**: 用户提供论文大纲生成所需的指令和必要参数.
 **处理**: 解析论文大纲生成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回论文大纲生成的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -87,7 +86,6 @@ thesis-helper literature --topic "深度学习发展" --method timeline
 thesis-helper literature --topic "推荐系统算法" --method thematic
 ```
 
-**输入**: 用户提供文献综述框架所需的指令和必要参数.
 **处理**: 解析文献综述框架的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回文献综述框架的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -103,7 +101,6 @@ thesis-helper abstract --topic "基于图神经网络的社交网络分析" --la
 thesis-helper abstract --topic "Graph Neural Network for Social Network Analysis" --lang en --words 200
 ```
 
-**输入**: 用户提供摘要撰写所需的指令和必要参数.
 **处理**: 解析摘要撰写的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回摘要撰写的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -116,10 +113,9 @@ thesis-helper abstract --topic "Graph Neural Network for Social Network Analysis
 thesis-helper cite --input "Smith, J. (2023). AI Research. Journal of CS, 15(3), 45-67." --from apa --to mla
 # ...
 # 转换为中文国标格式(GB-T7714)
-thesis-helper cite --input "Smith, J. (2023). AI Research. Journal of CS, 15(3), 45-67." --from apa --to gbt7714
+ (2023). AI Research." --from apa --to gbt7714
 ```
 
-**输入**: 用户提供引用格式转换所需的指令和必要参数.
 **处理**: 解析引用格式转换的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回引用格式转换的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -132,10 +128,9 @@ thesis-helper cite --input "Smith, J. (2023). AI Research. Journal of CS, 15(3),
 thesis-helper format --file my_thesis.docx
 # ...
 # 检查特定格式项
-thesis-helper format --file my_thesis.docx --check headings,references,tables
+docx --check headings,references,tables
 ```
 
-**输入**: 用户提供格式规范检查所需的指令和必要参数.
 **处理**: 解析格式规范检查的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回格式规范检查的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -148,10 +143,8 @@ thesis-helper format --file my_thesis.docx --check headings,references,tables
 thesis-helper defense --file my_thesis.docx
 # ...
 # 常见问题
-thesis-helper defense --file my_thesis.docx --questions
 ```
 
-**输入**: 用户提供答辩准备所需的指令和必要参数.
 **处理**: 解析答辩准备的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回答辩准备的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：面向学生和研究者、的论文辅助工具、提供大纲生成、摘要撰写与引用格、论文写作助手免费、面向学生和个人研、究者提供基础的论、文写作辅助能力、支持论文大纲生成、文献综述框架搭建、引用格式转换等核、心功能、Use、when、需要生成营销文案、写作内容、标题优化、内容创作时使用、不适用于纯技术文、档撰写、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.

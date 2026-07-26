@@ -84,7 +84,6 @@ page = open_page("https://example.com")
 print(page.get("title", "未获取到标题"))
 ```
 
-**输入**: 用户提供单页面自动打开与导航所需的指令和必要参数.
 **处理**: 解析单页面自动打开与导航的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回单页面自动打开与导航的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -111,7 +110,6 @@ config = smart_wait(selector="#main-content", wait_type="selector")
 print(f"等待策略：{config['strategy']}, 选择器：{config['selector']}")
 ```
 
-**输入**: 用户提供智能等待机制所需的指令和必要参数.
 **处理**: 解析智能等待机制的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回智能等待机制的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -139,7 +137,6 @@ def fetch_with_retry(url, max_retries=3, base_timeout=30):
     return {"success": False, "error": "重试次数已用完"}
 ```
 
-**输入**: 用户提供超时与重试（指数退避）所需的指令和必要参数.
 **处理**: 解析超时与重试（指数退避）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回超时与重试（指数退避）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -168,7 +165,6 @@ class TabManager:
 # ...
     def cleanup(self):
         """清理所有未关闭的标签页"""
-        for tab in self.tabs:
             if tab["status"] == "open":
                 self.close_tab(tab["id"])
         print(f"清理完成，共处理 {len(self.tabs)} 个标签页")
@@ -179,7 +175,6 @@ tab = manager.open_tab("https://example.com")
 manager.cleanup()
 ```
 
-**输入**: 用户提供标签页自动清理所需的指令和必要参数.
 **处理**: 解析标签页自动清理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回标签页自动清理的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：浏览器自动化免费、支持标签页自动清、超时重试、智能等待与基础表、单填写、浏览器自动化助手、免费版是面向个人、开发者和轻量任务、场景的浏览器自动、化工具、提取数据、四步基础流程、让重复的网页操作、自动化、Use、when、需要提升效率、自动化流程、批量处理、工作流优化时使用、不适用于需要人工、创意判断的任务、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -221,7 +216,7 @@ def fill_login_form(url, email, password):
         "--fields", json.dumps(form_data, ensure_ascii=False),
         "--submit", "true"
     ]
-    result = subprocess.run(cmd, capture_output=True, text=True)
+run(cmd, capture_output=True, text=True)
     return json.loads(result.stdout) if result.returncode == 0 else {"error": result.stderr}
 # ...
 # 使用示例
@@ -244,7 +239,7 @@ def daily_price_check():
         price = result.get("price", "未找到")
         print(f"[{time.strftime('%Y-%m-%d %H:%M')}] 当前价格：{price}")
     else:
-        print(f"[{time.strftime('%Y-%m-%d %H:%M')}] 抓取失败：{result.get('error')}")
+strftime('%Y-%m-%d %H:%M')}] 抓取失败：{result.get('error')}")
 # ...
 # 每天早上8点执行
 schedule.every().day.at("08:00").do(daily_price_check)
@@ -462,8 +457,6 @@ os.environ["DEBUG"] = "1"
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

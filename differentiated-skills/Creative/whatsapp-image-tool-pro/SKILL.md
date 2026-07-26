@@ -66,7 +66,6 @@ WhatsApp 多媒体消息发送专业版是一款面向企业团队与营销机�
 | 音频 | MP3/WAV/AAC | 语音消息、音乐 |
 | 文档 | PDF/DOCX/XLSX/PPTX | 合同、报告、资料 |
 
-**输入**: 用户提供多媒体类型支持所需的指令和必要参数.
 **处理**: 解析多媒体类型支持的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多媒体类型支持的响应数据,包含状态码、结果和日志.
 ### 2. 批量发送
@@ -91,7 +90,6 @@ WhatsApp 多媒体消息发送专业版是一款面向企业团队与营销机�
 生成发送报告
 ```
 
-**输入**: 用户提供批量发送所需的指令和必要参数.
 **处理**: 解析批量发送的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量发送的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -103,7 +101,6 @@ WhatsApp 多媒体消息发送专业版是一款面向企业团队与营销机�
 - 重复定时（每日/每周/每月）
 - 时区感知（跨时区发送）
 
-**输入**: 用户提供定时发送所需的指令和必要参数.
 **处理**: 解析定时发送的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时发送的响应数据,包含状态码、结果和日志.
 ### 4. 群组消息与广播
@@ -111,7 +108,6 @@ WhatsApp 多媒体消息发送专业版是一款面向企业团队与营销机�
 - 广播列表（多收件人单独发送）
 - 群组管理（创建/删除/查询）
 
-**输入**: 用户提供群组消息与广播所需的指令和必要参数.
 **处理**: 解析群组消息与广播的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回群组消息与广播的响应数据,包含状态码、结果和日志.
 ### 5. 消息模板管理
@@ -123,7 +119,6 @@ WhatsApp 多媒体消息发送专业版是一款面向企业团队与营销机�
 结果：亲爱的 张三，您的订单 A12345 已发货
 ```
 
-**输入**: 用户提供消息模板管理所需的指令和必要参数.
 **处理**: 解析消息模板管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回消息模板管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -136,7 +131,6 @@ WhatsApp 多媒体消息发送专业版是一款面向企业团队与营销机�
 - 每日发送总量限制
 - 多账号轮询分流
 
-**输入**: 用户提供发送频率控制所需的指令和必要参数.
 **处理**: 解析发送频率控制的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回发送频率控制的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、WhatsApp、多媒体消息平台、支持批量发送、视频音频文档、群组消息与模板管、多媒体消息发送专、Use、when、需要视频处理、音频编辑、媒体转换、配音生成时使用、不适用于版权受保、护的媒体内容处理、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -206,7 +200,6 @@ python3 batch_send.py --config /path/to/batch-send.json --parallel 5
     },
     {
       "target": "+8613900139000",
-      "image": "/images/promo-poster.jpg",
       "message": "限时促销 全场 8 折 立即抢购"
     }
   ],
@@ -249,8 +242,6 @@ message --channel whatsapp \
   --filePath ~/.skill-platform/workspace/minutes.pdf \
   --message "会议纪要文档"
 # ...
-rm ~/.skill-platform/workspace/meeting.mp4
-rm ~/.skill-platform/workspace/minutes.pdf
 ```
 
 ## 快速开始
@@ -285,7 +276,6 @@ python3 batch_send.py \
 
 ### 第三步：定时发送
 ```bash
-python3 scheduled_send.py \
   --config /tmp/schedule.json \
   --datetime "2026-07-20T10:00:00+08:00"
 ```
@@ -293,7 +283,6 @@ python3 scheduled_send.py \
 ### 第四步：使用消息模板
 ```bash
 python3 batch_send.py \
-  --config /tmp/recipients.json \
   --template "亲爱的 {name}，{content}" \
   --variables-file /tmp/variables.csv
 ```
@@ -384,7 +373,6 @@ cat > /templates/order-notification.json << 'EOF'
 EOF
 # ...
 python3 batch_send.py \
-  --config /tmp/recipients.json \
   --template /templates/order-notification.json
 ```
 
@@ -489,7 +477,8 @@ accounts:
 | WhatsApp 账号 | 服务 | 必需 | WhatsApp 注册 | - |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 | - |
 
-#### 完整安装命令
+#
+### 完整安装命令
 ```bash
 pip3 install requests pyyaml
 # ...

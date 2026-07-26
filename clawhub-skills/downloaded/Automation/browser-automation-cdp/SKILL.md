@@ -13,7 +13,6 @@ summary: "CDP协议浏览器自动化"
 - 非结构化头脑风暴
 - 人际沟通协调
 
-
 # Browser Automation (CDP)
 
 > 通过用户已登录的浏览器（Edge/Chrome）执行自动化任务。
@@ -60,7 +59,7 @@ taskkill /F /IM msedge.exe /T
 Start-Sleep 3
 Start-Process "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --remote-debugging-port=9222
 
-Start-Process "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --remote-debugging-port=9222 --user-data-dir="C:\Skill平台Browser\Edge"
+exe" --remote-debugging-port=9222 --user-data-dir="C:\Skill平台Browser\Edge"
 ```
 
 **Chrome（端口 9223）：**
@@ -105,11 +104,11 @@ await edge.goto('https://space.bilibili.com/151190274/video');
 
 ```javascript
 // 读取 DOM
-const r = await edge./* REMOVED: eval */ (`document.title`);
+const r = await edge.title`);
 console.log(r.result.value);
 
 // 提取结构化数据
-const r = await edge./* REMOVED: eval */ (`
+/* REMOVED: eval */ (`
     JSON.stringify(
         Array.from(document.querySelectorAll('.upload-video-card')).slice(0,5).map(c => ({
             title: c.querySelector('.bili-video-card__title')?.innerText,
@@ -133,7 +132,6 @@ await edge.click('[class*="radio-filter__item"]');  // 点击"最多播放"tab
 截图当前页面，返回 PNG base64 字符串。可选保存到文件：
 
 ```javascript
-const png = await edge.screenshot();
 require('fs').writeFileSync('/tmp/screenshot.png', Buffer.from(png, 'base64'));
 ```
 
@@ -213,7 +211,7 @@ console.log(JSON.parse(r.result.value));
 
    ```
    // 找到并点击"Token Plan"菜单项
-   const r = await edge./* REMOVED: eval */ (`
+/* REMOVED: eval */ (`
      (function() {
        var allDivs = document.querySelectorAll('div');
        for (var d of allDivs) {
@@ -245,7 +243,7 @@ console.log(JSON.parse(r.result.value));
 
 ```javascript
 // 已在 basic-information 页面，点击 Token Plan 后执行：
-const r = await edge./* REMOVED: eval */ (`(function(){
+/* REMOVED: eval */ (`(function(){
   var t = document.body.innerText;
   // 提取套餐信息
   var plan = t.match(/(Starter|Pro|Enterprise)[^\\n]*/)?.[0];
@@ -344,17 +342,16 @@ const { edge, chrome } = require('~/.skill-platform/browser-automation/cdp-autom
 **Edge（端口 9222）：**
 
 ```powershell
-taskkill /F /IM msedge.exe /T
 Start-Sleep 3
-Start-Process "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --remote-debugging-port=9222
+exe" --remote-debugging-port=9222
 
-Start-Process "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --remote-debugging-port=9222 --user-data-dir="C:\Skill平台Browser\Edge"
+exe" --remote-debugging-port=9222 --user-data-dir="C:\Skill平台Browser\Edge"
 ```
 
 **Chrome（端口 9223）：**
 
 ```powershell
-Start-Process "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-por
+exe" --remote-debugging-por
 ```
 
 ## 错误处理

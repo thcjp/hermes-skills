@@ -102,7 +102,6 @@ category: "Automation"
 }
 ```
 
-**处理**: 解析自动fallback链的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 后台守护进程
 实时探测模型可用性,限速中断时自动重建链路:
 
@@ -130,7 +129,6 @@ free-finder daemon --stop
 4. 选出最优可用模型作为新主模型
 5. 通知Agent应用新配置
 
-**输出**: 返回后台守护进程的处理结果,包含执行状态码、结果数据和执行日志.
 ### 多API Key负载均衡
 聚合多账号额度,突破单账号限速:
 
@@ -156,9 +154,7 @@ free-finder keys stats
 | lowest_latency | 优先延迟最低的Key | 追求响应速度 |
 | weighted | 按权重分配 | 混合免费与付费Key |
 
-**输入**: 用户提供多API Key负载均衡所需的指令和必要参数.
-**处理**: 解析多API Key负载均衡的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回多API Key负载均衡的处理结果,包含执行状态码、结果数据和执行日志。### 调用统计与成本分析
+### 调用统计与成本分析
 ```bash
 # 查看今日统计
 free-finder stats --today
@@ -195,8 +191,7 @@ free-finder stats --from 2026-07-01 --to 2026-07-18 --format csv
 }
 ```
 
-**输入**: 用户提供智能路由所需的指令和必要参数.
-**输出**: 返回智能路由的处理结果,包含执行状态码、结果数据和执行日志。### 模型质量监控
+### 模型质量监控
 持续评估模型表现,自动调整排序:
 
 ```bash
@@ -365,7 +360,7 @@ free-finder monitor report --format html --output quality.html
   "fallback_chain": [
     {"model": "qwen/qwen3-coder:free", "priority": 1},
     {"model": "deepseek/deepseek-coder:free", "priority": 2},
-    {"model": "meta-llama/llama-3.3-70b-instruct:free", "priority": 3}
+3-70b-instruct:free", "priority": 3}
   ],
   "fallback_policy": {
     "trigger_on": ["429", "500", "502", "503", "timeout"],

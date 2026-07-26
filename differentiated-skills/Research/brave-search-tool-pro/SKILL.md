@@ -95,10 +95,9 @@ brave-pro batch-search --file queries.txt --concurrency 5
 brave-pro batch-search "AI智能体" "大模型" "向量数据库" --concurrency 3
 # ...
 # 批量查询带内容提取
-brave-pro batch-search --file queries.txt --content --concurrency 3
+txt --content --concurrency 3
 ```
 
-**输入**: 用户提供批量查询与并发搜索(专业版新增)所需的指令和必要参数.
 **处理**: 解析批量查询与并发搜索(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量查询与并发搜索(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -113,13 +112,11 @@ brave-pro search "Python asyncio" --cache
 brave-pro search "Python asyncio" --cache --ttl 3600
 # ...
 # 跨查询去重
-brave-pro batch-search --file queries.txt --dedup
 # ...
 # 清理缓存
 brave-pro cache cleanup
 ```
 
-**输入**: 用户提供智能结果缓存与去重(专业版新增)所需的指令和必要参数.
 **处理**: 解析智能结果缓存与去重(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回智能结果缓存与去重(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -140,7 +137,6 @@ brave-pro history --member alice
 brave-pro history --export json > search-history.json
 ```
 
-**输入**: 用户提供搜索历史与审计(专业版新增)所需的指令和必要参数.
 **处理**: 解析搜索历史与审计(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回搜索历史与审计(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -158,7 +154,6 @@ brave-pro report "AI智能体调研" --queries "AI智能体,智能体框架" --f
 brave-pro extract-batch --file urls.txt --format markdown
 ```
 
-**输入**: 用户提供内容聚合与报告生成(专业版新增)所需的指令和必要参数.
 **处理**: 解析内容聚合与报告生成(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回内容聚合与报告生成(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -175,7 +170,6 @@ curl -s -X POST "http://localhost:8080/api/batch" -d '{"queries":["AI","大模�
 curl -s "http://localhost:8080/api/extract?url=https://example.com/article"
 ```
 
-**输入**: 用户提供API 访问与第三方集成(专业版新增)所需的指令和必要参数.
 **处理**: 解析API 访问与第三方集成(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回API 访问与第三方集成(专业版新增)的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、支持批量查询、结果缓存与搜索分、面向团队生产场景、网页搜索工具、在免费版核心能力、访问能力、核心能力、免费版全部能力、完全兼容等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -289,7 +283,7 @@ for comp in "${COMPETITORS[@]}"; do
   done
 # ...
   # 深度提取重要文章内容
-  echo "$RESULTS" | jq -r '.results[0:3][].url' | while read url; do
+results[0:3][].url' | while read url; do
     CONTENT=$(brave-pro extract "$url" --format markdown --cache)
     echo "$CONTENT" >> "reports/${comp}_$(date +%Y%m%d).md"
   done
@@ -326,7 +320,6 @@ else
     >> "$SHARED_DIR/history.jsonl"
 # ...
   echo "[新搜索] 结果已归档到共享库"
-  cat "$SHARED_DIR/cache/${HASH}.json"
 fi
 # ...
 # 查看团队搜索统计
@@ -353,7 +346,6 @@ brave-pro init
 # 配置
 brave-pro config set api.key "$BRAVE_API_KEY"
 brave-pro config set cache.enabled true
-brave-pro config set cache.ttl 86400
 brave-pro config set batch.max_concurrency 5
 ```
 
@@ -364,7 +356,7 @@ brave-pro config set batch.max_concurrency 5
 brave-pro search "AI智能体" --count 10 --content --cache
 # ...
 # 批量搜索(并发)
-brave-pro batch-search --file queries.txt --concurrency 5 --dedup
+txt --concurrency 5 --dedup
 # ...
 # 生成调研报告
 brave-pro report --input results.json --format markdown
@@ -551,8 +543,6 @@ curl "http://localhost:8080/api/extract?url=https://example.com"
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

@@ -18,7 +18,6 @@ tools:
 homepage: ""
 category: "Automation"
 
-
 ---
 # XML转JSON（免费版）
 
@@ -110,7 +109,7 @@ Agent会按"JSON转XML规则"输出：
 
 **支持的约定**：BadgerFish（`@attr`+`#text`，默认）、Parker（属性与子元素同级）、Gdata（`$t` 文本）、自定义。本工具默认BadgerFish，最通用.
 **Agent执行规则**：默认BadgerFish；转换后输出JSON预览；提示用户属性用 `@` 前缀访问.
-**输入**: 用户提供功能1：双向转换约定所需的指令和必要参数.
+
 **处理**: 解析功能1：双向转换约定的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能1：双向转换约定的响应数据,包含状态码、结果和日志.
 ### 功能2：命名空间处理
@@ -135,7 +134,7 @@ data = xmltodict.parse(xml_content, process_namespaces=True, namespaces=namespac
 ```
 
 **Agent执行规则**：默认剥离命名空间（前端消费更友好）；若需保留，提示用户加 `process_namespaces=False`；自定义映射时输出映射表供确认.
-**输入**: 用户提供功能2：命名空间处理所需的指令和必要参数.
+
 **处理**: 解析功能2：命名空间处理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能2：命名空间处理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -151,7 +150,7 @@ data = xmltodict.parse(xml_content, process_namespaces=True, namespaces=namespac
 | XML声明 `<?xml ?>` | 默认丢弃 | 写出时自动添加 |
 
 **Agent执行规则**：默认丢弃注释与处理指令（JSON侧通常不需要）；若用户明确需保留，提供 `--keep-comments` 选项.
-**输入**: 用户提供功能3：CDATA与注释处理所需的指令和必要参数.
+
 **处理**: 解析功能3：CDATA与注释处理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能3：CDATA与注释处理的响应数据,包含状态码、结果和日志.
 ### 功能4：JSON转XML规则
@@ -173,7 +172,7 @@ def json_to_xml(json_path: str, xml_path: str, root: str = 'root'):
 ```
 
 **转换规则**：`@` 前缀键转为属性；`#text` 键转为文本；数组转为同名重复元素；`null` 转为自闭合标签 `<tag/>`；必须包一层根元素.
-**输入**: 用户提供功能4：JSON转XML规则所需的指令和必要参数.
+
 **处理**: 解析功能4：JSON转XML规则的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能4：JSON转XML规则的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级、互转工具、覆盖属性处理、命名空间与单文件、秒上手、免费版是一款面向、独立开发者与后端、工程师的轻量级结、构化数据格式互转、属性处理、单文件处理、四件事、提供可复制即用的、Node、Use、when、需要文件处理、文档转换、格式互转、内容提取时使用、不适用于加密文件、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -303,7 +302,6 @@ XML允许属性和子元素同名（如 `<a id="1"><id>2</id></a>`）。BadgerFi
 > 详细的输入输出格式请参考下方章节说明。
 直接对Agent说：
 # ...
-> "帮我把 response.xml 转成 JSON，属性用 @ 前缀。"
 # ...
 Agent会按本工具的模板规则输出：
 # ...
@@ -313,9 +311,7 @@ import xmltodict, json
 def xml_to_json(xml_path: str, json_path: str, attr_prefix: str = '@'):
     """XML转JSON（BadgerFish约定）"""
     with open(xml_path, 'r', encoding='utf-8') as f:
-        xml_content = f.read()
     # xmltodict 默认用 @ 作为属性前缀，#text 作为文本键
-    data = xmltodict.parse(
         xml_content,
         attr_prefix=attr_prefix,
         cdata_key='#text',

@@ -1,6 +1,4 @@
----
-
-slug: "shopify-helper"
+---slug: "shopify-helper"
 name: "shopify-helper"
 version: 2.0.1
 displayName: "Shopify辅助"
@@ -8,7 +6,7 @@ summary: "Shopify建站助手。店铺搭建、主题定制、产品管理、SEO
 summary_zh: "Shopify建站助手。店铺搭建、主题定制、产品管理、SEO优化、应用推荐、上线检查。Shopify store builder with setup,"
 license: "MIT"
 description: |-
-  Shopify建站助手。店铺搭建、主题定制、产品管理、SEO优化、应用推荐、上线检查。Use when 需要电商运营、商品管理、订单处理、支付集成时使用。不适用于虚假交易和刷单。Use when 需要电商运营、商品管理、订单处理、支付集成时使用。不适用于虚假交易和刷单.
+  Shopify建站助手。店铺搭建、主题定制、产品管理、SEO优化、应用推荐、上线检查。Use when 需要电商运营、商品管理、订单处理、支付集成时使用。不适用于虚假交易和刷单。不适用于虚假交易和刷单.
 tags:
   - shopify
   - api
@@ -21,10 +19,7 @@ tools:
   - write
 homepage: ""
 category: "Automation"
-
----
-
-# Shopify Helper
+---# Shopify Helper
 
 ## 付费版专享能力
 
@@ -74,6 +69,8 @@ category: "Automation"
 | 参数名 | 类型 | 必填 | 说明 |
 |---:|---:|---:|---:|
 
+| instruction | string | 是 | 用户指令文本 |
+| context | string | 否 | 上下文信息 |
 ## 输出格式
 
 ```json

@@ -67,7 +67,6 @@ gh issue view 123 --repo owner/repo
 gh issue view 123 --repo owner/repo --comments
 ```
 
-**输入**: 用户提供Issue管理所需的指令和必要参数.
 **处理**: 解析Issue管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Issue管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -88,7 +87,6 @@ gh pr checks 55 --repo owner/repo
 gh pr view 55 --repo owner/repo --json reviews --jq '.reviews[] | {author: .author.login, state: .state}'
 ```
 
-**输入**: 用户提供Pull Request管理所需的指令和必要参数.
 **处理**: 解析Pull Request管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Pull Request管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -109,7 +107,6 @@ gh run view <run-id> --repo owner/repo --log-failed
 gh run rerun <run-id> --repo owner/repo --failed
 ```
 
-**输入**: 用户提供工作流管理所需的指令和必要参数.
 **处理**: 解析工作流管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回工作流管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -129,7 +126,6 @@ gh pr list --repo owner/repo --json number,title,state --jq '.[] | select(.state
 gh issue list --repo owner/repo --json state --jq 'group_by(.state) | map({state: .[0].state, count: length})'
 ```
 
-**输入**: 用户提供结构化输出与过滤所需的指令和必要参数.
 **处理**: 解析结构化输出与过滤的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结构化输出与过滤的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：CLI、GitHub、仓库的、与工作流、支持基础查询、状态检查与结构化、适合个人开发者日、常协作、管理器、免费版、是一款面向个人开、发者的、日常协作助手、命令行工具封装常、用操作、帮助用户高效管理、核心能力、的基础查询、工作流运行列表查、看与失败步骤定位、提供常用命令速查、与故障排查指南等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -275,7 +271,7 @@ gh issue list --json number,title,createdAt --jq 'sort_by(.createdAt) | reverse 
 gh pr list --json number,title,labels --jq '.[] | select(.labels[].name == "bug") | .number'
 # ...
 # 分组统计
-gh issue list --json state --jq 'group_by(.state) | map({state: .[0].state, count: length})'
+gh issue list --json state --jq 'group_by(.[0].state, count: length})'
 ```
 
 ## 常见问题

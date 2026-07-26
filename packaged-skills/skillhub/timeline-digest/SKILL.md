@@ -65,19 +65,12 @@ category: "Automation"
 PRO版通过LLM对去重后的推文进行智能分类和中文摘要生成.
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供智能分类摘要所需的指令和必要参数.
-**处理**: 解析智能分类摘要的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 2. 定时自动调度
 PRO版支持cron式定时调度,自动执行摘要生成流程.
-**输入**: 用户提供定时自动调度所需的指令和必要参数.
+
 ### 3. 多源信息聚合
 除X/Twitter时间线外,PRO版支持聚合RSS源和自定义信息源.
-**输入**: 用户提供多源信息聚合所需的指令和必要参数.
-**处理**: 解析多源信息聚合的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回多源信息聚合的处理结果,包含执行状态码、结果数据和执行日志.
-**输入**: 用户提供自动推送通知所需的指令和必要参数.
-**处理**: 解析自动推送通知的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回自动推送通知的处理结果,包含执行状态码、结果数据和执行日志.
+
 #
 ## 快速开始
 
@@ -142,7 +135,7 @@ aggregator = MultiSourceAggregator()
 aggregator.add_twitter_source("X-Trending", limit=200)
 # ...
 items = aggregator.fetch_all()
-digest = SmartDigestGenerator().generate_smart_digest(items)
+generate_smart_digest(items)
 # ...
 for section in digest["sections"]:
     print(f"\n{section['icon']} {section['category_name']} - {section['count']}条素材")

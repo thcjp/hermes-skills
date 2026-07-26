@@ -1,9 +1,8 @@
----
-slug: "market-news"
+---slug: "market-news"
 name: "market-news"
 version: 1.0.1
 displayName: "新闻"
-summary: "自动搜索和总结最新财经新闻与市场动态。自动搜索和总结最新财经新闻与市场动态 核心能力: - 研究工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优化升级 - 移除风险代码,增强"
+summary: "自动搜索和总结最新财经"
 summary_zh: "自动搜索和总结最新财经新闻与市场动态。自动搜索和总结最新财经新闻与市场动态 核心能力: - 研究工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优化升级 - 移除风险代码,增强"
 license: "MIT"
 description: |-
@@ -35,9 +34,7 @@ tools:
   - read
   - exec
 homepage: ""
-category: "Knowledge"
----
-# Market News
+category: "Knowledge"---# Market News
 
 ## 付费版专享能力
 
@@ -88,6 +85,8 @@ category: "Knowledge"
 | 参数名 | 类型 | 必填 | 说明 |
 |---:|---:|---:|---:|
 
+| instruction | string | 是 | 用户指令文本 |
+| context | string | 否 | 上下文信息 |
 ## 输出格式
 
 ```json

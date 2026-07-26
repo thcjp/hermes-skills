@@ -145,7 +145,7 @@ class FilteredMonitor(FeedStreamMonitor):
     def apply_filters(self):
         """应用过滤器"""
         advisories = json.loads(self.advisories_file.read_text(encoding="utf-8"))
-        filters = json.loads(self.filters_file.read_text(encoding="utf-8"))
+loads(self.filters_file.read_text(encoding="utf-8"))
 # ...
         for advisory in advisories:
             text = (advisory["title"] + " " + advisory.get("description", "")).lower()
@@ -190,7 +190,6 @@ fm.fetch_all()
 | cert | 应急响应中心 | US-CERT、CNVD、CNNVD |
 | general | 通用安全信息 | 安全新闻、技术文章 |
 
-**输入**: 用户提供订阅源管理所需的指令和必要参数.
 **处理**: 解析订阅源管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回订阅源管理的响应数据,包含状态码、结果和日志.
 ### 严重性分级
@@ -202,7 +201,6 @@ fm.fetch_all()
 | low | low, information disclosure, minor | 低危：信息泄露等 |
 | info | 无匹配关键词 | 信息：一般性公告 |
 
-**输入**: 用户提供严重性分级所需的指令和必要参数.
 **处理**: 解析严重性分级的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回严重性分级的响应数据,包含状态码、结果和日志.
 ### 关键词过滤
@@ -212,12 +210,11 @@ fm.fetch_all()
 | hide | 隐藏匹配的公告 |
 | alert | 匹配时发送告警 |
 
-**输入**: 用户提供关键词过滤所需的指令和必要参数.
 **处理**: 解析关键词过滤的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回关键词过滤的响应数据,包含状态码、结果和日志.
 ### 去重机制
 基于标题+链接的MD5哈希去重，确保同一公告不会被重复存储.
-**输入**: 用户提供去重机制所需的指令和必要参数.
+
 **处理**: 解析去重机制的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回去重机制的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -229,7 +226,7 @@ fm.fetch_all()
 **场景描述**：监控NVD的CVE公告，关注critical和high级别漏洞.
 ```python
 monitor = FeedStreamMonitor()
-monitor.add_feed("NVD", "https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss-analyzed.xml", "rss", "cve")
+monitor.add_feed("NVD", "https://nvd.nist.xml", "rss", "cve")
 monitor.fetch_feed("feed_001")
 monitor.search(severity="critical")
 ```
@@ -250,7 +247,7 @@ fm.fetch_all()
 **场景描述**：聚合多个安全博客和新闻源，收集安全情报.
 ```python
 monitor = FeedStreamMonitor()
-monitor.add_feed("安全客", "https://api.anquanke.com/data/v1/rss", "rss", "blog")
+monitor.anquanke.com/data/v1/rss", "rss", "blog")
 monitor.fetch_all()
 monitor.stats()
 ```
@@ -339,8 +336,6 @@ monitor.stats()
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

@@ -1,9 +1,8 @@
----
-slug: "neosoul-decision-agent"
+---slug: "neosoul-decision-agent"
 name: "neosoul-decision-agent"
 version: 1.0.1
 displayName: "自主决策代理"
-summary: "具备自改进记忆的结构化决策支持系统，学习用户风险偏好与决策框架偏好。具备自改进记忆的结构化决策支持系统，帮助用户在面临权衡选择时做出更优决策. 通过分层记忆体系（HOT/WARM/RECOR"
+summary: "具备自改进记忆的结构化"
 summary_zh: "具备自改进记忆的结构化决策支持系统，学习用户风险偏好与决策框架偏好。具备自改进记忆的结构化决策支持系统，帮助用户在面临权衡选择时做出更优决策. 通过分层记忆体系（HOT/WARM/RECOR"
 license: "MIT"
 description: |-
@@ -29,9 +28,7 @@ tags:
   - memory
   - 信号
   - 更新
-category: "Agents"
----
-# 自主决策代理（Neosoul Decision Agent）
+category: "Agents"---# 自主决策代理（Neosoul Decision Agent）
 
 具备自改进记忆的结构化决策支持系统，通过分层记忆体系学习用户的风险偏好与决策框架偏好，在后续决策中应用学到的模式，帮助用户做出更优决策.
 ## 输入格式
@@ -158,8 +155,6 @@ touch ~/decision-making/{memory.md,index.md,heartbeat-state.md,frameworks.md,rev
 在日常交互中自动识别决策信号：
 - 风险偏好信号 → 更新memory.md
 - 框架偏好信号 → 更新memory.md + frameworks.md
-- 领域权重信号 → 更新domains/{domain}.md
-- 结果反馈信号 → 更新reversals.md或决策记录
 - 信号观察3次后自动提升为HOT层模式
 
 ### 第三步：执行结构化决策分析

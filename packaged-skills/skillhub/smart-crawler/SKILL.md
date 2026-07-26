@@ -67,7 +67,6 @@ category: "Automation"
 | 页面规模 | ≤5000 | 无限制(分布式支撑) |
 | 技术支持 | 社区 | 优先工单(4小时响应) |
 
-**处理**: 解析与免费版能力对比的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 工作空间数量
 
 针对工作空间数量,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
@@ -326,7 +325,6 @@ smart-crawler search "如何提升工作效率" --mode semantic --top-k 10
 -- 多表JOIN查询
 SELECT p.title, p.last_updated, d.name as database, w.name as workspace
 FROM pages p
-JOIN databases d ON p.database_id = d.id
 JOIN workspaces w ON p.workspace_id = w.id
 WHERE p.last_updated > '2026-01-01'
   AND w.name IN ('research', 'product')
@@ -341,7 +339,6 @@ SELECT
   MAX(p.last_updated) as latest_update
 FROM pages p
 LEFT JOIN databases d ON p.database_id = d.id
-JOIN workspaces w ON p.workspace_id = w.id
 GROUP BY w.name
 ORDER BY page_count DESC;
 ```

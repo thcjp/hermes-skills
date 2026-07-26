@@ -64,7 +64,6 @@ category: "Security"
 | 持续监控 | 集成方式 | 不支持 | Git Hook/CI/CD |
 | 误报抑制 | 精确度 | 模式匹配 | AST语义分析 |
 
-**输入**: 用户提供功能矩阵所需的指令和必要参数.
 **处理**: 解析功能矩阵的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能矩阵的响应数据,包含状态码、结果和日志.
 ### OWASP Top 10全覆盖
@@ -92,14 +91,13 @@ category: "Security"
 └──────────┴───────────────────────┴───────────────────────┘
 ```
 
-**输入**: 用户提供OWASP Top 10全覆盖所需的指令和必要参数.
 **处理**: 解析OWASP Top 10全覆盖的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回OWASP Top 10全覆盖的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -232,7 +230,7 @@ class ASTSecurityAnalyzer:
         },
         "express": {
             "patterns": [
-                r"app\.(get|post|put|delete)\(.*\)",
+(get|post|put|delete)\(.*\)",
                 r"req\.query\.",
                 r"res\.send\(.*req\."
             ]
@@ -268,11 +266,9 @@ class ASTSecurityAnalyzer:
                 if filepath.suffix == ".py":
                     self._analyze_python(filepath)
                 elif filepath.suffix in [".ts", ".tsx", ".js", ".jsx"]:
-                    self._analyze_typescript(filepath)
-                elif filepath.suffix == ".go":
-                    self._analyze_go(filepath)
-                elif filepath.suffix == ".java":
-                    self._analyze_java(filepath)
+_analyze_typescript(filepath)
+_analyze_go(filepath)
+_analyze_java(filepath)
 # ...
         return self._generate_report()
 # ...
@@ -287,7 +283,6 @@ class ASTSecurityAnalyzer:
             for node in ast.walk(tree):
                 if isinstance(node, ast.Call):
                     if self._is_sql_concat(node, source):
-                        self._add_finding(
                             "A03", "SQL注入", "CRITICAL",
                             filepath, node.lineno, source,
                             "字符串拼接SQL查询",
@@ -295,31 +290,24 @@ class ASTSecurityAnalyzer:
                         )
 # ...
                     if isinstance(node.func, ast.Name) and node.func.id == "eval":
-                        self._add_finding(
                             "A03", "代码注入", "CRITICAL",
-                            filepath, node.lineno, source,
                             "使用eval()执行动态代码",
                             "移除eval(),使用安全的替代方案"
                         )
 # ...
-                    if isinstance(node.func, ast.Attribute) and node.func.attr == "loads":
+func, ast.Attribute) and node.func.attr == "loads":
                         if "pickle" in source:
-                            self._add_finding(
                                 "A08", "不安全反序列化", "HIGH",
-                                filepath, node.lineno, source,
                                 "使用pickle.loads()反序列化",
                                 "使用JSON替代pickle,或验证数据来源"
                             )
 # ...
-                if isinstance(node, ast.Assign):
                     for target_node in node.targets:
                         if isinstance(target_node, ast.Name):
                             name = target_node.id.lower()
                             if any(kw in name for kw in ["password", "secret", "token", "key"]):
-                                if isinstance(node.value, ast.Constant) and isinstance(node.value.value, str):
-                                    self._add_finding(
+value, ast.Constant) and isinstance(node.value.value, str):
                                         "A02", "硬编码密钥", "CRITICAL",
-                                        filepath, node.lineno, source,
                                         f"硬编码{name}",
                                         "使用环境变量: os.environ.get('SECRET_KEY')"
                                     )
@@ -347,7 +335,6 @@ class ASTSecurityAnalyzer:
             for pattern, owasp, category, severity, fix in patterns:
                 for match in re.finditer(pattern, content, re.IGNORECASE):
                     line_num = content[:match.start()].count('\n') + 1
-                    self._add_finding(
                         owasp, category, severity,
                         filepath, line_num, content,
                         match.group()[:80],
@@ -374,7 +361,7 @@ class ASTSecurityAnalyzer:
 # ...
     def _is_sql_concat(self, node, source):
         """检测SQL字符串拼接"""
-        if isinstance(node.func, ast.Attribute) and node.func.attr in ["execute", "query"]:
+func, ast.Attribute) and node.func.attr in ["execute", "query"]:
             if node.args and isinstance(node.args[0], ast.BinOp):
                 return True
         return False
@@ -414,7 +401,6 @@ class ASTSecurityAnalyzer:
                     "issue": f.issue, "fix": f.fix,
                     "asvs": f.asvs
                 }
-                for f in self.findings
             ]
         }
 ```
@@ -467,7 +453,7 @@ python （请参考skill目录中的脚本文件） --files $(git diff --name-on
 # ...
 python （请参考skill目录中的脚本文件） --target . --owasp top10 --format html
 # ...
-python （请参考skill目录中的脚本文件） --target . --owasp top10 --asvs L2 --format pdf
+ --owasp top10 --asvs L2 --format pdf
 ```
 
 ### 2. 误报抑制
@@ -492,7 +478,7 @@ python （请参考skill目录中的脚本文件） --target . --owasp top10 --a
 ```bash
 python （请参考skill目录中的脚本文件） --install-hook --fail-on HIGH
 # ...
-python （请参考skill目录中的脚本文件） --target . --format sarif --output results.sarif
+ --format sarif --output results.sarif
 ```
 
 ## 已知限制

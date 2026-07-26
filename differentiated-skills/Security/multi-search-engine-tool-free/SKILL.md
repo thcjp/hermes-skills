@@ -90,12 +90,11 @@ echo ""
 echo "--- 国际搜索引擎 ---"
 for engine in "${ENGINES_GLOBAL[@]}"; do
     IFS='|' read -r name url <<< "$engine"
-    encoded_query=$(python3 -c "import urllib.parse; print(urllib.parse.quote('${QUERY}'))")
+parse; print(urllib.parse.quote('${QUERY}'))")
     echo "  ${name}: ${url}${encoded_query}"
 done
 ```
 
-**输入**: 用户提供多引擎搜索所需的指令和必要参数.
 **处理**: 解析多引擎搜索的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多引擎搜索的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -121,12 +120,11 @@ class MultiSearchAggregator:
         },
         "sogou": {
             "name": "搜狗",
-            "url": "https://www.sogou.com/web?query={}",
+sogou.com/web?query={}",
             "type": "cn"
         },
         "360": {
             "name": "360搜索",
-            "url": "https://www.so.com/s?q={}",
             "type": "cn"
         },
         "bing_cn": {
@@ -137,12 +135,12 @@ class MultiSearchAggregator:
         # 国际搜索引擎
         "google": {
             "name": "Google",
-            "url": "https://www.google.com/search?q={}",
+google.com/search?q={}",
             "type": "global"
         },
         "bing": {
             "name": "Bing",
-            "url": "https://www.bing.com/search?q={}",
+bing.com/search?q={}",
             "type": "global"
         },
         "duckduckgo": {
@@ -198,7 +196,6 @@ if __name__ == "__main__":
     print(json.dumps(result, indent=2, ensure_ascii=False))
 ```
 
-**输入**: 用户提供搜索结果聚合所需的指令和必要参数.
 **处理**: 解析搜索结果聚合的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回搜索结果聚合的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -234,7 +231,6 @@ generate_search_links() {
 generate_search_links "人工智能最新进展"
 ```
 
-**输入**: 用户提供搜索链接生成所需的指令和必要参数.
 **处理**: 解析搜索链接生成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回搜索链接生成的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：询工具、支持主流中文与国、适合个人开发者快、速信息检索、多搜索引擎免费版、为个人用户提供多、核心能力、中文搜索引擎集成、国际搜索引擎查询、结果聚合展示、适用场景、技术资料检索、多源信息对比、快速知识查询、差异化、免费版聚焦核心搜、索功能、个主流搜索引擎、适合个人快速检索、适用关键词、多源搜索、信息检索等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -318,7 +314,7 @@ ENGINE="${1:-baidu}"
 shift
 QUERY="$*"
 # ...
-ENCODED=$(python3 -c "import urllib.parse; print(urllib.parse.quote('$QUERY'))")
+parse; print(urllib.parse.quote('$QUERY'))")
 # ...
 case "$ENGINE" in
     baidu)    URL="https://www.baidu.com/s?wd=${ENCODED}" ;;
@@ -487,8 +483,6 @@ QUERY='"exact match" site:stackoverflow.com'
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

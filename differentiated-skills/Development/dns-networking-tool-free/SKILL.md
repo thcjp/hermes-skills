@@ -92,7 +92,6 @@ nslookup example.com 8.8.8.8
 nslookup -type=MX example.com
 ```
 
-**输入**: 用户提供DNS 解析查询所需的指令和必要参数.
 **处理**: 解析DNS 解析查询的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回DNS 解析查询的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -118,7 +117,6 @@ timeout 3 bash -c 'echo > /dev/tcp/example.com/443' && echo "Open" || echo "Clos
 curl -sI -o /dev/null -w "%{http_code}" https://example.com
 ```
 
-**输入**: 用户提供端口连通性测试所需的指令和必要参数.
 **处理**: 解析端口连通性测试的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回端口连通性测试的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -148,7 +146,6 @@ curl -sI https://api.example.com/endpoint
 curl -sIL https://example.com
 ```
 
-**输入**: 用户提供curl 请求诊断所需的指令和必要参数.
 **处理**: 解析curl 请求诊断的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回curl 请求诊断的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -162,7 +159,7 @@ echo | openssl s_client -connect example.com:443 -servername example.com 2>/dev/
   openssl x509 -noout -subject -issuer -dates
 # ...
 # 查看证书过期时间
-echo | openssl s_client -connect example.com:443 2>/dev/null | \
+com:443 2>/dev/null | \
   openssl x509 -noout -enddate
 # ...
 # 验证证书链
@@ -170,7 +167,6 @@ echo | openssl s_client -showcerts -connect example.com:443 < /dev/null 2>/dev/n
   awk '/BEGIN CERT/,/END CERT/' > chain.pem
 ```
 
-**输入**: 用户提供TLS 证书检查所需的指令和必要参数.
 **处理**: 解析TLS 证书检查的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回TLS 证书检查的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -191,7 +187,6 @@ ipconfig /flushdns                                             # Windows
 resolvectl status
 ```
 
-**输入**: 用户提供本地 DNS 缓存管理所需的指令和必要参数.
 **处理**: 解析本地 DNS 缓存管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回本地 DNS 缓存管理的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：诊断与证书检查、适合开发者日常网、络问题排查、面向开发者的网络、诊断辅助工具、解析调试、请求诊断与、核心能力、请求诊断与时序分、证书有效期检查等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -364,7 +359,6 @@ echo "诊断日志: $diag_log"
 ```bash
 # 临时域名映射测试
 echo "203.0.113.50  example.com" | sudo tee -a /etc/hosts
-curl -sI https://example.com
 # 测试完成后移除
 sudo sed -i '/203.0.113.50/d' /etc/hosts
 ```
@@ -391,10 +385,9 @@ nslookup example.com
 
 ```bash
 # 使用bash内置TCP测试替代
-timeout 3 bash -c 'echo > /dev/tcp/example.com/443' && echo "Open" || echo "Closed"
+com/443' && echo "Open" || echo "Closed"
 # ...
 # 或使用curl
-curl -sI -o /dev/null -w "%{http_code}" https://example.com
 ```
 
 ### Q3:免费版与专业版有何区别?

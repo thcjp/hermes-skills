@@ -151,11 +151,11 @@ export API_KEY="your_api_key_here"
 ## 异常处理
 
 ### write.py 退出码 2(模型未配置)
-stderr 含 `[NO_MODEL]`。自动降级:运行 `write.py prompt <mode> <input>` 取提示词 JSON,Agent 按该 `system_prompt` 和 `user_prompt` 写文章输出到 `-o` 指定路径。无须用户确认.
+stderr 含 `[NO_MODEL]`。自动降级:运行 `write.无须用户确认.
 ### write.py 退出码 1 网络类失败
 stderr 含超时、连接失败、`URLError`。必须自动再试 1 次并告知正在检查网络连接和配置后重试;第二次仍失败则改用 `write.py prompt` 取提示词后由 Agent 按相同约束代写,必须明确告知第三方 API 网络不可用本次由对话模型代写.
 ### write.py 退出码 1 配置/凭证类失败
-stderr 含 401/403、Key 无效、YAML 解析失败。不要自动降级掩盖问题。列出须检查项(`config.yaml` 的 `writing_model`、`aws.env` 的 `WRITING_MODEL_API_KEY`、本篇目录是否有 `article.yaml`),请用户修正后重跑 `write.py`.
+stderr 含 401/403、Key 无效、YAML 解析失败。不要自动降级掩盖问题。列出须检查项(`config.yaml`),请用户修正后重跑 `write.py`.
 ### 全局三键缺失
 `article_category`、`target_reader`、`default_author` 中任一项 trim 后为空。须暂停写稿,逐项询问用户,取得明确答复后写回 `.aws-article/config.yaml`,再进入写作流程。禁止从 `article.yaml` 等其它文件静默推断并写盘.
 ### 目录命名不符合规范
@@ -169,7 +169,7 @@ stderr 含 401/403、Key 无效、YAML 解析失败。不要自动降级掩盖�
 ### Q3:什么情况下会自动降级为对话模型代写?
 模型未配置(退出码 2)时自动取 prompt 由 Agent 代写,无须确认;网络类失败(退出码 1)自动重试一次,第二次仍失败则取 prompt 由 Agent 代写并明确告知。配置/凭证类失败不会自动降级,须用户修正。降级前都先运行 `write.py prompt` 取相同 `system_prompt` 和 `user_prompt`,确保写作约束一致.
 ### Q4:新开一篇目录怎么命名?
-必须为 `YYYYMMDD-标题slug`(如 `drafts/20260406-wechat-article-skills/`)。`YYYYMMDD` 为当日日期,`slug` 为小写、连字符分隔的标题缩写。禁止省略日期前缀.
+必须为 `YYYYMMDD-标题slug`(如 `drafts/20260406-wechat-article-skills/`)。禁止省略日期前缀.
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |

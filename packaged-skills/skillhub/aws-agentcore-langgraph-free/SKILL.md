@@ -1,9 +1,8 @@
----
-slug: "aws-agentcore-langgraph-free"
+---slug: "aws-agentcore-langgraph-free"
 name: "aws-agentcore-langgraph-free"
 version: "1.0.0"
 displayName: "AgentCore 免费"
-summary: "AWS Bedrock AgentCore 与 LangGraph 基础智能体部署助手。基于 AWS Bedrock AgentCore Runtime 与 LangGraph 的基础智能体"
+summary: "AWS Bedrock"
 summary_zh: "AWS Bedrock AgentCore 与 LangGraph 基础智能体部署助手。基于 AWS Bedrock AgentCore Runtime 与 LangGraph 的基础智能体"
 license: "MIT"
 description: |-
@@ -28,9 +27,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Operations"
----
-# aws-agentcore-langgraph (免费版)
+category: "Operations"---# aws-agentcore-langgraph (免费版)
 
 基于 AWS Bedrock AgentCore 与 LangGraph 的基础智能体部署助手.
 ## 输入格式
@@ -160,7 +157,7 @@ export API_KEY="your_api_key_here"
 ```python
 from langgraph.graph import StateGraph, START
 from langgraph.prebuilt import ToolNode, tools_condition
-from bedrock_agentcore.runtime import BedrockAgentCoreApp
+runtime import BedrockAgentCoreApp
 # ...
 # 定义工具
 def search_tool(query: str) -> str:
@@ -177,8 +174,7 @@ graph = builder.compile()
 app = BedrockAgentCoreApp()
 @app.entrypoint
 def invoke(payload, context):
-    result = graph.invoke({"messages": [("user", payload.get("prompt", ""))]})
-    return {"result": result["messages"][-1].content}
+    result = graph.get("prompt", ""))]})
 app.run()
 ```
 

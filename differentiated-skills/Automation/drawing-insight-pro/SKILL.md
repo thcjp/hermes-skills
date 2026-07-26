@@ -100,7 +100,6 @@ def analyze_dwg(dwg_path: str):
         elif entity.dxftype() == 'TEXT':
             annotations.append({
                 'text': entity.dxf.text,
-                'location': tuple(entity.dxf.insert),
                 'layer': entity.dxf.layer
             })
 # ...
@@ -139,7 +138,7 @@ def generate_drawing_index(results: list) -> str:
             issues_count = len(r.quality_issues)
             lines.append(
                 f"| {tb.sheet_number} | {tb.sheet_title} | {tb.discipline} "
-                f"| {tb.scale} | {tb.revision} | {tb.date} "
+scale} | {tb.revision} | {tb.date} "
                 f"| {len(r.dimensions)} | {issues_count} |"
             )
     return "\n".join(lines)
@@ -378,7 +377,7 @@ quality_rules:
     check: title_block.project_number != ''
     severity: high
   - name: 建筑图纸必须包含防火分区说明
-    check: any('防火' in a.text for a in annotations) if discipline == 'Architectural'
+text for a in annotations) if discipline == 'Architectural'
     severity: high
   - name: 结构图纸必须包含混凝土强度等级
     check: any('C' in a.text and '混凝土' in a.text for a in annotations) if discipline == 'Structural'
@@ -516,7 +515,6 @@ app = Flask(__name__)
 def auto_parse():
     payload = request.json
     pdf_path = payload['file_path']
-    analyzer = DrawingAnalyzerPro.from_config("project_config.yaml")
     result = analyzer.analyze(pdf_path)
     # 推送解析结果至项目管理平台
     push_to_pm_platform(result)
@@ -696,8 +694,6 @@ def auto_parse():
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

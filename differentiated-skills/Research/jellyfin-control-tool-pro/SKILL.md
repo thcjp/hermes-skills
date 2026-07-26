@@ -77,11 +77,11 @@ category: "Knowledge"
 | API 接口 | 否 | REST API |
 | 优先支持 | 社区 | 优先响应 |
 
-**输入**: 用户提供功能对比所需的指令和必要参数.
 **处理**: 解析功能对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能对比的响应数据,包含状态码、结果和日志.
 ### PRO 版独有功能
-#### 1. 多设备管理
+#
+### 1. 多设备管理
 ```bash
 # 同时控制多个设备
 node skills/jellyfin-control/cli.js multi-device \
@@ -90,12 +90,12 @@ node skills/jellyfin-control/cli.js multi-device \
   --content "playlist_name"
 # ...
 # 同步播放（多房间音频）
-node skills/jellyfin-control/cli.js sync-play \
   --devices "living_room,bedroom" \
   --content "music_playlist"
 ```
 
-#### 2. 多用户配置
+#
+### 2. 多用户配置
 ```bash
 # 添加用户
 python （请参考skill目录中的脚本文件） add \
@@ -104,10 +104,11 @@ python （请参考skill目录中的脚本文件） add \
   --library-filter="movies,tvshows"
 # ...
 # 切换用户
-node skills/jellyfin-control/cli.js switch-user "Alice"
+js switch-user "Alice"
 ```
 
-#### 3. 定时播放
+#
+### 3. 定时播放
 ```bash
 # 定时播放（闹钟模式）
 python （请参考skill目录中的脚本文件） \
@@ -126,7 +127,8 @@ python （请参考skill目录中的脚本文件） \
   --fade-out 300
 ```
 
-#### 4. 媒体库自动扫描
+#
+### 4. 媒体库自动扫描
 ```bash
 # 配置自动扫描
 python （请参考skill目录中的脚本文件） \
@@ -135,14 +137,13 @@ python （请参考skill目录中的脚本文件） \
   --notify=true
 ```
 
-**输入**: 用户提供PRO 版独有功能所需的指令和必要参数.
 **处理**: 解析PRO 版独有功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回PRO 版独有功能的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -152,13 +153,11 @@ python （请参考skill目录中的脚本文件） \
 家庭聚会时，需要多个房间同步播放音乐.
 ```bash
 # 同步播放音乐到多个房间
-node skills/jellyfin-control/cli.js sync-play \
   --devices "living_room,bedroom,kitchen" \
   --content "party_playlist" \
   --sync-mode precise
 # ...
 # 调整各房间音量
-node skills/jellyfin-control/cli.js multi-volume \
   --devices "living_room:50,bedroom:40,kitchen:30"
 ```
 
@@ -228,7 +227,6 @@ npm install node-cron winston
 pip install apscheduler
 # ...
 # 验证升级
-node skills/jellyfin-control/cli.js --version
 # 输出: jellyfin-control-tool-pro v1.0.0
 ```
 
@@ -269,10 +267,9 @@ node skills/jellyfin-control/cli.js --version
 ### 首次多设备控制
 ```bash
 # 列出所有设备
-node skills/jellyfin-control/cli.js devices list
 # ...
 # 控制指定设备
-node skills/jellyfin-control/cli.js tv play "Movie" --device "living_room"
+js tv play "Movie" --device "living_room"
 ```
 
 #
@@ -357,13 +354,11 @@ curl -X POST http://localhost:8000/schedule \
 ### 多设备同步优化
 ```bash
 # 使用精确同步模式
-node skills/jellyfin-control/cli.js sync-play \
   --devices "living_room,bedroom" \
   --sync-mode precise \
   --buffer 1000
 # ...
 # 独立音量控制
-node skills/jellyfin-control/cli.js multi-volume \
   --devices "living_room:50,bedroom:30"
 ```
 
@@ -406,10 +401,10 @@ python （请参考skill目录中的脚本文件） \
 ### 多设备同步延迟
 ```bash
 # 使用精确同步模式
-node skills/jellyfin-control/cli.js sync-play --sync-mode precise
+js sync-play --sync-mode precise
 # ...
 # 增加缓冲
-node skills/jellyfin-control/cli.js sync-play --buffer 2000
+js sync-play --buffer 2000
 # ...
 # 检查网络延迟
 ping each_device_ip

@@ -1,9 +1,8 @@
----
-slug: slack-crawler-free
+---slug: slack-crawler-free
 name: slack-crawler-free
 version: 1.0.1
 displayName: Slack爬虫工具
-summary: "基于本地Slack归档数据的检索与统计工具，支持新鲜度检查与只读SQL查询.。Slack爬虫工具（免费版）基于本地Slack归档数据提供消息检索、新鲜度检查与只读SQL统计，优先使用本地数据"
+summary: "基于本地Slack归档"
 license: Proprietary
 edition: free
 description: 'Slack爬虫工具（免费版）基于本地Slack归档数据提供消息检索、新鲜度检查与只读SQL统计，优先使用本地数据避免重复API调用.
@@ -27,9 +26,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Communication"
----
-# Slack爬虫工具（免费版）
+category: "Communication"---# Slack爬虫工具（免费版）
 
 ## 概述
 
@@ -52,21 +49,21 @@ Slack爬虫工具（免费版）基于本地Slack归档数据提供消息检索�
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -240,7 +237,7 @@ A：可定期清理旧数据。建议保留近1年数据，更早的数据导出
 ### 运行环境
 - **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**：Windows / macOS / Linux
-- **本地存储**：归档数据库存储于`~/.slack-crawler/archive.db`
+- **本地存储**：归档数据库存储于`~/.db`
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |

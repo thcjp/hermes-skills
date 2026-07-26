@@ -1,9 +1,8 @@
----
-slug: "github-development-standard"
+---slug: "github-development-standard"
 name: "github-development-standard"
 version: 2.0.1
 displayName: "GitHub开发规范工具"
-summary: "完整的 GitHub 项目开发标准流程 - 9步流程 + 4层验证 + 15项验收清单。完整的 GitHub 项目开发标准流程 - 9步流程 + 4层验证 + 15项验收清单 核心能力: -"
+summary: "完整的 GitHub "
 summary_zh: "完整的 GitHub 项目开发标准流程 - 9步流程 + 4层验证 + 15项验收清单。完整的 GitHub 项目开发标准流程 - 9步流程 + 4层验证 + 15项验收清单 核心能力: -"
 license: "MIT"
 description: |-
@@ -36,9 +35,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Development"
----
-# Github Development S
+category: "Development"---# Github Development S
 
 ## 付费版专享能力
 

@@ -1,9 +1,8 @@
----
-slug: "write"
+---slug: "write"
 name: "write"
 version: 1.0.1
 displayName: "版本化写作工具"
-summary: "带强制版本控制与质量审计的写作工作流，通过edit.sh脚本管理草稿版本与audit审计。带强制版本控制与质量审计的版本化写作工具. 遵循Request→Plan→Draft→Audit→R"
+summary: "带强制版本控制与质量审"
 summary_zh: "带强制版本控制与质量审计的写作工作流，通过edit.sh脚本管理草稿版本与audit审计。带强制版本控制与质量审计的版本化写作工具. 遵循Request→Plan→Draft→Audit→R"
 license: "MIT"
 description: |-
@@ -26,9 +25,7 @@ tags:
   - 电商
   - audit
   - step
-category: "Automation"
----
-# 版本化写作工具
+category: "Automation"---# 版本化写作工具
 
 带强制版本控制与质量审计的写作工作流，通过edit.sh脚本管理版本，遵循Request→Plan→Draft→Audit→Refine→Deliver流程.
 ## 输入格式
@@ -86,7 +83,6 @@ Request → Plan → Draft → Audit → Refine → Deliver
 - **Run quality audit before delivering**：交付前运行quality audit（参见audit.md）
 - **Offer cleanup only after user confirms**：仅在用户确认piece最终后提供cleanup
 
-**输出**: 返回版本化写作工作流的处理结果,包含执行状态码、结果数据和执行日志.
 ### 强制Scripts工具集
 
 提供七个强制使用的shell脚本：
@@ -112,8 +108,7 @@ Request → Plan → Draft → Audit → Refine → Deliver
   - `thorough`：深度写作，最多研究轮次与修订passes
 - **auto_audit**: `true`/`false` — drafts后自动运行audits
 
-**输入**: 用户提供配置系统所需的指令和必要参数.
-**输出**: 返回配置系统的处理结果,包含执行状态码、结果数据和执行日志。### 参考文档库
+### 参考文档库
 
 集成八份参考文档，按需加载支撑写作各阶段：
 
@@ -136,8 +131,8 @@ Request → Plan → Draft → Audit → Refine → Deliver
 ```
 
 创建标准项目结构，包含pieces目录（存放各写作piece及其versions）、scripts目录、references目录与config.json配置文件.
-**输入**: 用户提供工作空间初始化所需的指令和必要参数.
-**处理**: 解析工作空间初始化的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 质量审计与版本管理
+
+### 质量审计与版本管理
 
 - **Quality Audit**：通过`（请参考skill目录中的脚本文件）`运行，依据audit.md中的dimensions生成审计报告
 - **Version管理**：每次通过edit.sh编辑自动创建version备份，通过`（请参考skill目录中的脚本文件）`查看所有versions，通过`（请参考skill目录中的脚本文件）`恢复任意version

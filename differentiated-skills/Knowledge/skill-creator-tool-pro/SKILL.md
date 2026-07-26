@@ -61,7 +61,6 @@ Skill模板生成、SKILL.md创建、元数据管理、结构验证、触发词�
 ### 批量处理与并行执行
 批量处理与并行执行
 
-**输入**: 用户提供批量处理与并行执行所需的指令和必要参数.
 **处理**: 解析批量处理与并行执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量处理与并行执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -69,7 +68,6 @@ Skill模板生成、SKILL.md创建、元数据管理、结构验证、触发词�
 ### 企业级安全与审计
 企业级安全与审计
 
-**输入**: 用户提供企业级安全与审计所需的指令和必要参数.
 **处理**: 解析企业级安全与审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回企业级安全与审计的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -77,7 +75,6 @@ Skill模板生成、SKILL.md创建、元数据管理、结构验证、触发词�
 ### 高级配置与自定义策略
 高级配置与自定义策略
 
-**输入**: 用户提供高级配置与自定义策略所需的指令和必要参数.
 **处理**: 解析高级配置与自定义策略的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级配置与自定义策略的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -85,7 +82,6 @@ Skill模板生成、SKILL.md创建、元数据管理、结构验证、触发词�
 ### 免费版完全兼容
 免费版完全兼容，无缝升级
 
-**输入**: 用户提供免费版完全兼容所需的指令和必要参数.
 **处理**: 解析免费版完全兼容的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版完全兼容的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -93,12 +89,10 @@ Skill模板生成、SKILL.md创建、元数据管理、结构验证、触发词�
 ### 优先技术支持与问题响应
 优先技术支持与问题响应
 
-**输入**: 用户提供优先技术支持与问题响应所需的指令和必要参数.
 **处理**: 解析优先技术支持与问题响应的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回优先技术支持与问题响应的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**输入**: 用户提供专业版增强功能所需的指令和必要参数.
 **处理**: 解析专业版增强功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回专业版增强功能的响应数据,包含状态码、结果和日志.
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
@@ -211,13 +205,12 @@ class SkillCreatorEngine:
         for field_name in self.REQUIRED_FIELDS:
             if field_name not in fm:
                 result.errors.append(f"缺少必需字段: {field_name}")
-                result.valid = False
         # 验证内容部分
         required_sections = ["## 概述", "## 核心能力", "## 使用场景",
                            "## 快速开始", "## 依赖说明"]
         for section in required_sections:
             if section not in content:
-                result.warnings.append(f"缺少推荐章节: {section}")
+warnings.append(f"缺少推荐章节: {section}")
         # 计算评分
         total_checks = len(self.REQUIRED_FIELDS) + len(required_sections)
         passed = total_checks - len(result.errors) - len(result.warnings)
@@ -227,7 +220,7 @@ class SkillCreatorEngine:
     def optimize_triggers(self, skill_path: str,
                          additional_keywords: List[str] = None) -> dict:
         """优化触发词（PRO 专属）"""
-        content = Path(skill_path).read_text(encoding="utf-8")
+read_text(encoding="utf-8")
         existing = set()
         trigger_match = re.search(r"适用关键词[:\s]*(.+)", content)
         if trigger_match:
@@ -256,7 +249,7 @@ class SkillCreatorEngine:
                     "warnings": result.warnings
                 })
             else:
-                results.append({"skill": d, "valid": False,
+append({"skill": d, "valid": False,
                                "errors": ["SKILL.md不存在"]})
         return results
 # ...
@@ -335,7 +328,6 @@ python3 --version
         result = set(triggers)
         for key, values in expansions.items():
             if key.lower() in str(triggers).lower():
-                result.update(values)
         return result
 # ...
     def _extract_tags(self, description: str) -> List[str]:

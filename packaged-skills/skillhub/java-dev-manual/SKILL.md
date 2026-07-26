@@ -1,9 +1,8 @@
----
-slug: "java-dev-manual"
+---slug: "java-dev-manual"
 name: "java-dev-manual"
 version: 1.0.1
 displayName: "Java开发手册专业版"
-summary: "企业级 Java 开发规约方案，含自定义规则、团队规范模板与 CI 集成。。面向企业级 Java 开发团队的开发规约治理工具，提供团队级规范定制能力。核心能力: - 7 大维度规约的团队级自"
+summary: "企业级 Java 开发"
 summary_zh: "企业级 Java 开发规约方案，含自定义规则、团队规范模板与 CI 集成。。面向企业级 Java 开发团队的开发规约治理工具，提供团队级规范定制能力。核心能力: - 7 大维度规约的团队级自"
 license: "MIT"
 edition: "pro"
@@ -41,9 +40,7 @@ tools:
   - glob
   - grep
 homepage: ""
-category: "Automation"
----
-# Java开发手册专业版
+category: "Automation"---# Java开发手册专业版
 
 ## 付费版专享能力
 
@@ -125,7 +122,8 @@ echo "| Java 文件数 | $FILE_COUNT |" >> "$REPORT_FILE"
 # ...
 echo "" >> "$REPORT_FILE"
 echo "## 1. 命名规范审计" >> "$REPORT_FILE"
-echo "### 类名后缀合规性" >> "$REPORT_FILE"
+echo "
+### 类名后缀合规性" >> "$REPORT_FILE"
 echo "| 规则 | 合规数 | 违规数 | 合规率 |" >> "$REPORT_FILE"
 echo "| --- | --- | --- | --- |" >> "$REPORT_FILE"
 # ...
@@ -133,7 +131,8 @@ CONTROLLER_OK=$(find "$PROJECT_DIR" -name "*Controller.java" | wc -l)
 CONTROLLER_BAD=$(find "$PROJECT_DIR" -path "*/controller/*" -name "*.java" ! -name "*Controller.java" | wc -l)
 echo "| Controller 后缀 | $CONTROLLER_OK | $CONTROLLER_BAD | $(echo "scale=0; $CONTROLLER_OK * 100 / ($CONTROLLER_OK + $CONTROLLER_BAD + 1)" | bc)% |" >> "$REPORT_FILE"
 # ...
-echo "### 拼音命名检查" >> "$REPORT_FILE"
+echo "
+### 拼音命名检查" >> "$REPORT_FILE"
 PINYIN_ISSUES=$(grep -rn "yonghu\|dingdan\|zhifu\|shangpin\|gongsi" "$PROJECT_DIR" --include="*.java" | wc -l)
 echo "- 拼音命名违规: $PINYIN_ISSUES 处" >> "$REPORT_FILE"
 # ...
@@ -150,12 +149,12 @@ echo "## 3. 安全审计" >> "$REPORT_FILE"
 SQL_CONCAT=$(grep -rn "String sql.*+.*\"" "$PROJECT_DIR" --include="*.java" | wc -l)
 echo "- SQL 拼接: $SQL_CONCAT 处" >> "$REPORT_FILE"
 # ...
-HARDCODED_PWD=$(grep -rin "password.*=.*\"\|secret.*=.*\"" "$PROJECT_DIR" --include="*.java" | wc -l)
+HARDCODED_PWD=$(grep -rin "password.*=.*\"\|secret.*=.java" | wc -l)
 echo "- 硬编码密码: $HARDCODED_PWD 处" >> "$REPORT_FILE"
 # ...
 echo "" >> "$REPORT_FILE"
 echo "## 4. 并发审计" >> "$REPORT_FILE"
-EXECUTORS_USE=$(grep -rn "Executors\." "$PROJECT_DIR" --include="*.java" | wc -l)
+EXECUTORS_USE=$(grep -rn "Executors\.java" | wc -l)
 echo "- 使用 Executors: $EXECUTORS_USE 处" >> "$REPORT_FILE"
 # ...
 THREADLOCAL_NO_REMOVE=$(grep -rn "ThreadLocal" "$PROJECT_DIR" --include="*.java" -l | while read f; do
@@ -232,7 +231,6 @@ public class AlipayStrategy implements PaymentStrategy {
 // ...
 @Component
 public class WechatPayStrategy implements PaymentStrategy {
-    public PayResult pay(PayRequest request) { /* ... */ }
 }
 // ...
 @Component

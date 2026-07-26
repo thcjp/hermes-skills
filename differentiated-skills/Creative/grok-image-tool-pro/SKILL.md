@@ -18,7 +18,6 @@ tools:
 homepage: ""
 category: "Creative"
 
-
 ---
 # Grok图片生成工具（专业版）
 
@@ -41,7 +40,6 @@ Grok图片生成工具专业版是批量图片生成平台，通过浏览器自�
 | 工作流 | 手动 | 自动化编排 |
 | 后处理 | 无 | 压缩/裁剪/水印 |
 
-**输入**: 用户提供能力对比所需的指令和必要参数.
 **处理**: 解析能力对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回能力对比的响应数据,包含状态码、结果和日志.
 ### 核心能力(补充)
@@ -91,14 +89,13 @@ Grok图片生成工具专业版是批量图片生成平台，通过浏览器自�
   - 尺寸调整
 ```
 
-**输入**: 用户提供核心能力所需的指令和必要参数.
 **处理**: 解析核心能力的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心能力的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -245,7 +242,7 @@ class PromptTemplateManager:
         """从模板批量生成提示词"""
         prompts = []
         for variables in variable_sets:
-            prompt = self.generate_from_template(template_name, variables)
+generate_from_template(template_name, variables)
             prompts.append(prompt)
         return prompts
 # ...
@@ -306,7 +303,6 @@ done
 # ...
 # 步骤3: 发送到飞书
 echo "=== 步骤3: 发送到飞书 ==="
-for img in "$OUTPUT_DIR"/*.jpg; do
     # message工具发送
     echo "已发送: $img"
 done

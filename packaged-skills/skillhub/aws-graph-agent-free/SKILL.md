@@ -67,12 +67,10 @@ export API_KEY="your_api_key_here"
 
 ### 1. StateGraph 状态图编排
 使用 LangGraph StateGraph 定义代理工作流，支持 `tools_condition` 自动路由（代理 → 工具或 END）、`ToolNode` 预置工具执行器，实现工具调用与自动路由.
-**输入**: 用户提供StateGraph 状态图编排所需的指令和必要参数.
-**输出**: 返回StateGraph 状态图编排的处理结果,包含执行状态码、结果数据和执行日志.
+
 ### 2. AgentCore Runtime HTTP 封装
 将代理封装为 8080 端口 HTTP 服务，处理 `/invocations`（调用）与 `/ping`（健康检查）端点，支持容器模式部署.
-**输入**: 用户提供AgentCore Runtime HTTP 封装所需的指令和必要参数.
-**输出**: 返回AgentCore Runtime HTTP 封装的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
+
 - 参考`AgentCore Runtime HTTP 封装`的配置文档进行参数调优
 ### 3. agentcore CLI 基础管理
 `configure`（配置）→ `launch`（部署）→ `dev`（本地开发）→ `invoke`（测试调用）→ `destroy`（清理资源）.
@@ -170,7 +168,7 @@ graph = builder.compile()
 
 **部署命令**:
 ```bash
-agentcore configure -e agent.py --region us-east-1
+py --region us-east-1
 agentcore launch
 agentcore invoke '{"prompt": "查询北京今天天气"}'
 ```

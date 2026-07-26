@@ -70,7 +70,7 @@ Start-Sleep 3
 Start-Process "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --remote-debugging-port=9222
 # ...
 # 或使用独立用户数据目录
-Start-Process "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --remote-debugging-port=9222 --user-data-dir="C:\BrowserAutomation\Edge"
+exe" --remote-debugging-port=9222 --user-data-dir="C:\BrowserAutomation\Edge"
 ```
 
 **Chrome（端口9223）**：
@@ -116,7 +116,6 @@ await edge.goto('https://app.example.com/dashboard');
 await edge.wait(3000);  // 额外等待3秒确保渲染完成
 ```
 
-**输入**: 用户提供功能一：页面导航（goto）所需的指令和必要参数.
 **处理**: 解析功能一：页面导航（goto）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能一：页面导航（goto）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -130,7 +129,6 @@ const r = await edge.evaluate(`document.title`);
 console.log(r.result.value);
 // ...
 // 提取结构化数据
-const r = await edge.evaluate(`
     JSON.stringify(
         Array.from(document.querySelectorAll('.item-card')).slice(0,5).map(c => ({
             title: c.querySelector('.title')?.innerText,
@@ -141,7 +139,6 @@ const r = await edge.evaluate(`
 const items = JSON.parse(r.result.value);
 ```
 
-**输入**: 用户提供功能二：JS执行（evaluate）所需的指令和必要参数.
 **处理**: 解析功能二：JS执行（evaluate）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能二：JS执行（evaluate）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -161,7 +158,6 @@ await edge.click('.next-page');
 await edge.wait(3000);
 ```
 
-**输入**: 用户提供功能三：元素点击（click）所需的指令和必要参数.
 **处理**: 解析功能三：元素点击（click）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能三：元素点击（click）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -171,15 +167,12 @@ await edge.wait(3000);
 截图当前页面，返回PNG base64字符串，可保存到文件.
 ```javascript
 // 截图并保存
-const png = await edge.screenshot();
 require('fs').writeFileSync('screenshot.png', Buffer.from(png, 'base64'));
 // ...
 // 截图用于调试
-const png = await edge.screenshot();
 console.log(`截图已保存，大小：${Math.round(png.length * 3/4 / 1024)}KB`);
 ```
 
-**输入**: 用户提供功能四：页面截图（screenshot）所需的指令和必要参数.
 **处理**: 解析功能四：页面截图（screenshot）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能四：页面截图（screenshot）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -189,7 +182,6 @@ console.log(`截图已保存，大小：${Math.round(png.length * 3/4 / 1024)}KB
 显式等待，用于等待JS渲染或网络请求完成.
 ```javascript
 // 等待JS渲染
-await edge.goto('https://example.com');
 await edge.wait(5000);  // 等待5秒
 // ...
 // 点击后等待内容加载
@@ -200,7 +192,6 @@ await edge.wait(3000);  // 等待新内容加载
 await edge.wait(8000);  // 等待8秒
 ```
 
-**输入**: 用户提供功能五：显式等待（wait）所需的指令和必要参数.
 **处理**: 解析功能五：显式等待（wait）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能五：显式等待（wait）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -222,7 +213,6 @@ if (targetTab) {
 
 ---
 
-**输入**: 用户提供功能六：标签页管理（tabs）所需的指令和必要参数.
 **处理**: 解析功能六：标签页管理（tabs）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能六：标签页管理（tabs）的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：通过已登录的、Edge、Chrome、浏览器执行、渲染页面自动化、含导航、截图与数据提取、CDP、浏览器领航免费版、帮助你通过已登录、浏览器、DevTools、Protocol、渲染页面的自动化、web、fetch、无法处理登录态与、渲染的痛点、实现导航、截图与基础数据提、Use、when、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数、据处理等.
@@ -409,18 +399,17 @@ web_fetch只能获取静态HTML，无法处理JS渲染的页面（如动态加�
 // Start-Process "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --remote-debugging-port=9222
 
 // 2. 导入 CDP 模块
-const { edge } = require('./browser-automation/cdp-automation.js');
+const { edge } = require('.js');
 
 // 3. 导航到目标页面（需JS渲染的动态页面）
-await edge.goto('https://example.com/dashboard');
+await edge.com/dashboard');
 await edge.wait(5000);  // 等待JS渲染完成
 
 // 4. 提取渲染后的数据
-const result = await edge.evaluate(`
     JSON.stringify(
         Array.from(document.querySelectorAll('.item-card')).slice(0, 10).map(c => ({
-            title: c.querySelector('.title')?.innerText,
-            price: c.querySelector('.price')?.innerText
+querySelector('.title')?.innerText,
+querySelector('.price')?.innerText
         }))
     )
 `);
@@ -428,8 +417,7 @@ const items = JSON.parse(result.result.value);
 console.log(`提取到 ${items.length} 条数据`);
 
 // 5. 截图保存
-const png = await edge.screenshot();
-require('fs').writeFileSync('screenshot.png', Buffer.from(png, 'base64'));
+require('fs').png', Buffer.from(png, 'base64'));
 ```
 
 ## 错误处理

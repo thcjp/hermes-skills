@@ -78,7 +78,7 @@ def validate_xsd(xml_path: str, xsd_path: str) -> dict:
 ```
 
 **支持的校验规范**：XSD 1.0、XSD 1.1、DTD、RelaxNG。XSD最常用，专业版默认XSD.
-**输入**: 用户提供能力2：XSD Schema校验所需的指令和必要参数。- 验证执行结果,确认输出符合预期格式
+
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `能力2：xsd_schema校验` 选项
 
@@ -126,7 +126,7 @@ mapping:
 ```
 
 **Agent执行规则**：读取 `xpath-mapping.yaml` 后按映射规则提取；支持单值、多值、嵌套、条件、命名空间感知五种提取模式；类型转换按 `type` 字段执行.
-**输入**: 用户提供能力3：XPath字段映射DSL所需的指令和必要参数.
+
 ### 能力4：流式转换
 ```python
 from lxml import etree
@@ -156,7 +156,6 @@ def stream_xml_to_json(xml_path: str, json_path: str, item_xpath: str = '//Item'
 - 关键参数: `能力4：流式转换` 选项
 - 处理流程: 接收输入 -> 执行能力4：流式转换 -> 返回结果
 - 输入: 用户提供能力4：流式转换所需的参数和指令
-- 输出: 返回能力4：流式转换的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 能力5：SOAP协议封装
 ```python
@@ -202,7 +201,6 @@ def build_soap_request(operation: str, namespace: str, payload: dict) -> str:
 - 关键参数: `能力5：soap协议封装` 选项
 - 处理流程: 接收输入 -> 执行能力5：SOAP协议封装 -> 返回结果
 - 输入: 用户提供能力5：SOAP协议封装所需的参数和指令
-- 输出: 返回能力5：SOAP协议封装的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 能力6：数据库直写
 ```python
@@ -289,7 +287,7 @@ def validate_and_convert(xml_path: str, out_dir: str) -> dict:
     # 2. XML转JSON
     try:
         with open(xml_path, 'r', encoding='utf-8') as f:
-            data = xmltodict.parse(f.read(), attr_prefix='@', cdata_key='#text')
+parse(f.read(), attr_prefix='@', cdata_key='#text')
         out_path = Path(out_dir) / (Path(xml_path).stem + '.json')
         out_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
         return {'file': xml_path, 'status': 'ok', 'output': str(out_path)}
@@ -429,8 +427,6 @@ print(json.dumps(data, ensure_ascii=False, indent=2))
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
 
-> 详细的输入输出格式请参考下方章节说明。
-> "帮我把 ./xml 目录下所有XML批量转JSON，按 schema.xsd 校验结构。"
 # ...
 Agent会按本工具的批量校验模板输出：
 # ...

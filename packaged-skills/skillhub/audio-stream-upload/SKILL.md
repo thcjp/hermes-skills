@@ -97,7 +97,7 @@ class AudioBatchUploader:
 # ...
             with open(file_path, 'rb') as f:
                 requests.post(
-                    f'{self.base_url}/videos/{audio_id}/part',
+base_url}/videos/{audio_id}/part',
                     headers={
                         **self.headers,
                         'Content-Range': f'bytes 0-{file_size-1}/{file_size}'
@@ -107,8 +107,7 @@ class AudioBatchUploader:
                 )
 # ...
             # 步骤3：完成上传
-            requests.get(
-                f'{self.base_url}/videos/{audio_id}/complete',
+base_url}/videos/{audio_id}/complete',
                 headers={'accept': 'application/json', **self.headers}
             )
 # ...
@@ -208,9 +207,6 @@ DASH_CONFIG = {
 }
 ```
 
-**输入**: 用户提供自定义编码配置所需的指令和必要参数.
-**处理**: 解析自定义编码配置的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回自定义编码配置的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `自定义编码配置` 选项
 
@@ -223,7 +219,7 @@ def upload_large_file(self, file_path, title, chunk_size=10*1024*1024):
 # ...
     # 创建音频对象
     resp = requests.post(f'{self.base_url}/videos/create',
-        headers={**self.headers, 'Content-Type': 'application/json'},
+headers, 'Content-Type': 'application/json'},
         json={'title': title, 'type': 'audio'})
     audio_id = resp.json()['data']['id']
 # ...
@@ -244,8 +240,8 @@ def upload_large_file(self, file_path, title, chunk_size=10*1024*1024):
             start = chunk_index * chunk_size
             end = min(start + len(chunk) - 1, file_size - 1)
 # ...
-            requests.post(f'{self.base_url}/videos/{audio_id}/part',
-                headers={**self.headers, 'Content-Range': f'bytes {start}-{end}/{file_size}'},
+post(f'{self.base_url}/videos/{audio_id}/part',
+headers, 'Content-Range': f'bytes {start}-{end}/{file_size}'},
                 files={'file': chunk},
                 data={'index': chunk_index, 'hash': chunk_hash})
 # ...
@@ -253,7 +249,6 @@ def upload_large_file(self, file_path, title, chunk_size=10*1024*1024):
 # ...
     # 完成上传
     requests.get(f'{self.base_url}/videos/{audio_id}/complete',
-        headers={'accept': 'application/json', **self.headers})
     return audio_id
 ```- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
@@ -391,7 +386,7 @@ export STREAM_SECRET_KEY="your_secret_key"
 
 ```bash
 # 使用自定义编码配置创建音频对象
-curl -s -X POST 'https://api-w3stream.attoaioz.cyou/api/videos/create' \
+attoaioz.cyou/api/videos/create' \
   -H "stream-public-key: $STREAM_PUBLIC_KEY" \
   -H "stream-secret-key: $STREAM_SECRET_KEY" \
   -H 'Content-Type: application/json' \

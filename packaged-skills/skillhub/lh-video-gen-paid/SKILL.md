@@ -105,8 +105,7 @@ templates:
     animation: "type_writer"
 ```
 
-**处理**: 解析多模板系统的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回多模板系统的处理结果,包含执行状态码、结果数据和执行日志。### 多语言与多音色
+### 多语言与多音色
 ```python
 # 多语言混排配置
 multilingual_config = {
@@ -133,9 +132,7 @@ multilingual_config = {
 }
 ```
 
-**输入**: 用户提供多语言与多音色所需的指令和必要参数.
-**处理**: 解析多语言与多音色的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回多语言与多音色的处理结果,包含执行状态码、结果数据和执行日志。### 品牌资产管理
+### 品牌资产管理
 ```python
 # 品牌资产统一管理
 brand_assets = {
@@ -164,8 +161,7 @@ brand_assets = {
 }
 ```
 
-**处理**: 解析品牌资产管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回品牌资产管理的处理结果,包含执行状态码、结果数据和执行日志。### 视频质量审计
+### 视频质量审计
 
 ```python
 # 自动质量检查
@@ -221,7 +217,6 @@ for account in mcn_pipeline["accounts"]:
 需求:电商平台需要为100个商品生成介绍视频.
 ```bash
 # 批量生成商品视频
-python3 batch_generate.py \
   --tasks products.csv \
   --parallel 8 \
   --template brand \
@@ -293,7 +288,6 @@ EOF
 ### 步骤三:执行批量生成
 
 ```bash
-python3 batch_generate.py \
   --tasks tasks.json \
   --parallel 4 \
   --quality-check \
@@ -431,7 +425,6 @@ jobs:
         run: sudo apt install ffmpeg
       - name: Batch Generate Videos
         run: |
-          python3 batch_generate.py \
             --tasks tasks.json \
             --parallel 4 \
             --output ./output/ \
@@ -453,7 +446,7 @@ A: PRO版完全兼容免费版。现有Markdown脚本格式与命令行参数可
 A: PRO版支持失败重试机制。失败的记录会保存到`failed-tasks.json`,可单独重试:
 
 ```bash
-python3 batch_generate.py --retry failed-tasks.json
+py --retry failed-tasks.json
 ```
 
 ### Q3: GPU加速如何启用?

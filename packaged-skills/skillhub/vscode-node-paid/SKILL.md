@@ -113,21 +113,17 @@ nodes invoke --node "team-vscode" \
 # ...
 # 2. 设置断点
 nodes invoke --node "team-vscode" \
-  --invokeCommand "vscode.debug.breakpoint" \
   --invokeParamsJson '{"path":"src/handler.ts","line":42,"condition":"userId === null"}'
 # ...
 # 3. 求值变量
 nodes invoke --node "team-vscode" \
-  --invokeCommand "vscode.debug.evaluate" \
   --invokeParamsJson '{"expression":"user?.profile?.email"}'
 # ...
 # 4. 获取堆栈
 nodes invoke --node "team-vscode" \
-  --invokeCommand "vscode.debug.stackTrace"
 # ...
 # 5. 获取变量
 nodes invoke --node "team-vscode" \
-  --invokeCommand "vscode.debug.variables" \
   --invokeParamsJson '{"frameId":1,"scope":"local"}'
 ```
 
@@ -137,18 +133,15 @@ nodes invoke --node "team-vscode" \
 ```bash
 # 1. 列举测试
 nodes invoke --node "team-vscode" \
-  --invokeCommand "vscode.test.list" \
   --invokeParamsJson '{"pattern":"**/*.test.ts"}'
 # ...
 # 2. 运行测试
 nodes invoke --node "team-vscode" \
-  --invokeCommand "vscode.test.run" \
   --invokeParamsJson '{"filter":"UserService"}' \
   --invokeTimeoutMs 120000 --timeoutMs 125000
 # ...
 # 3. 获取结果
 nodes invoke --node "team-vscode" \
-  --invokeCommand "vscode.test.results"
 ```
 
 返回示例:`{ passed: 42, failed: 3, skipped: 1, duration: 12345 }`
@@ -158,7 +151,6 @@ nodes invoke --node "team-vscode" \
 将复杂的多文件重构任务委托给 Cursor Agent 执行.
 ```bash
 nodes invoke --node "team-vscode" \
-  --invokeCommand "vscode.agent.run" \
   --invokeParamsJson '{
     "prompt": "为所有 API 端点添加错误处理,确保返回统一的错误响应格式,并补充对应的单元测试",
     "mode": "plan"

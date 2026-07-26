@@ -71,19 +71,18 @@ category: "Creative"
 | 并发控制 | 不支持 | 队列 + 并发 | 高吞吐 |
 | API 服务 | 不支持 | FastAPI | 远程调用 |
 
-**输入**: 用户提供免费版 vs 专业版对比所需的指令和必要参数.
 **处理**: 解析免费版 vs 专业版对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版 vs 专业版对比的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
@@ -194,13 +193,13 @@ class PodcastSubscriber:
                 f"AUDIO_QUALITY={show['quality']} "
                 f"（请参考skill目录中的脚本文件） {ep['url']}"
             )
-            ep_hash = hashlib.md5(ep["url"].encode()).hexdigest()
+md5(ep["url"].encode()).hexdigest()
             self.downloaded.add(ep_hash)
         self._save_downloaded()
         print(f"同步完成: 新增 {len(new_eps)} 集")
 # ...
     def _save(self):
-        with open(self.config_file, "w", encoding="utf-8") as f:
+config_file, "w", encoding="utf-8") as f:
             json.dump(self.subscriptions, f, ensure_ascii=False, indent=2)
 # ...
     def _save_downloaded(self):
@@ -303,7 +302,7 @@ pip install requests
     },
     {
       "name": "设计对谈",
-      "feed_url": "https://www.xiaoyuzhoufm.com/podcast/def456",
+xiaoyuzhoufm.com/podcast/def456",
       "platform": "xiaoyuzhoufm",
       "auto_download": true,
       "quality": 0,

@@ -53,7 +53,6 @@ category: "Communication"
 - 手动登录流程（headed 模式可见操作过程）
 - 支持主流邮箱服务
 
-**输入**: 用户提供邮箱登录所需的指令和必要参数.
 **处理**: 解析邮箱登录的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回邮箱登录的响应数据,包含状态码、结果和日志.
 ### 邮件获取
@@ -62,7 +61,6 @@ category: "Communication"
 - 统计未读邮件数量
 - 提取发件人、主题、摘要、时间信息
 
-**输入**: 用户提供邮件获取所需的指令和必要参数.
 **处理**: 解析邮件获取的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回邮件获取的响应数据,包含状态码、结果和日志.
 ### 摘要生成
@@ -72,7 +70,6 @@ category: "Communication"
 - 生成邮件列表截图存档
 - 输出文本格式摘要报告
 
-**输入**: 用户提供摘要生成所需的指令和必要参数.
 **处理**: 解析摘要生成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回摘要生成的响应数据,包含状态码、结果和日志.
 ### 邮件统计
@@ -83,7 +80,6 @@ category: "Communication"
 
 ---
 
-**输入**: 用户提供邮件统计所需的指令和必要参数.
 **处理**: 解析邮件统计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回邮件统计的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
@@ -148,7 +144,7 @@ browser-use eval "
 ```bash
 browser-use eval "
   const emails = [];
-  document.querySelectorAll('tr.zA').forEach((row, i) => {
+  document.zA').forEach((row, i) => {
     if (i < 20) {
       const sender = row.querySelector('.yX.xY span')?.innerText || '';
       const subject = row.querySelector('.y6 span')?.innerText || '';
@@ -180,7 +176,6 @@ browser-use install
 
 ```bash
 # 使用已登录会话生成摘要
-browser-use --browser real open https://mail.google.com
 sleep 3
 browser-use state
 browser-use screenshot daily_digest.png
@@ -203,7 +198,6 @@ echo "📧 邮件日报生成中..."
 echo "日期: $DATE $TIME"
 echo "=========================================="
 # ...
-browser-use --browser real open https://mail.google.com
 sleep 3
 # ...
 echo ""
@@ -218,12 +212,10 @@ echo ""
 echo "📊 邮件统计:"
 browser-use eval "
 (() => {
-  const unreadCount = document.querySelectorAll('.zE').length;
-  const totalVisible = document.querySelectorAll('tr.zA').length;
+querySelectorAll('.zE').length;
   return JSON.stringify({
     unread: unreadCount,
     visible: totalVisible,
-    timestamp: new Date().toISOString()
   });
 })()
 "
@@ -293,7 +285,6 @@ browser-use open https://mail.google.com
 
 ```bash
 # 安全做法：复用会话
-browser-use --browser real open https://mail.google.com
 # ...
 # 完成后关闭
 browser-use close
@@ -348,7 +339,6 @@ browser-use state
 
 ```bash
 browser-use close --all
-browser-use --browser real open https://mail.google.com
 ```
 
 ### 问题3：browser-use 命令未找到
@@ -369,7 +359,6 @@ browser-use --version
 **解决**: 增加等待时间后再截图：
 
 ```bash
-browser-use --browser real open https://mail.google.com
 sleep 5
 browser-use screenshot inbox.png
 ```

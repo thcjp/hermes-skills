@@ -66,7 +66,6 @@ category: "Automation"
 | 实时价格集成 | ❌ | ✅ | 汇率转换 |
 | 多节点集群 | ❌ | ✅ | 高可用 |
 
-**输入**: 用户提供能力矩阵所需的指令和必要参数.
 **处理**: 解析能力矩阵的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回能力矩阵的响应数据,包含状态码、结果和日志.
 ### 打赏系统架构
@@ -79,12 +78,11 @@ category: "Automation"
 | transactions | 打赏交易记录 | sender, receiver, amount, timestamp |
 | balance_summary | 打赏统计汇总 | total_sent, total_received, tip_count |
 
-**输入**: 用户提供打赏系统架构所需的指令和必要参数.
 **处理**: 解析打赏系统架构的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回打赏系统架构的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -130,19 +128,18 @@ python3 doge_tipping.py init
 
 **注册用户钱包**：
 ```bash
-python3 doge_tipping.py add-user alice DGKGv8wP8iRJmjdRUEdvVL2b5BywKC65JT
-python3 doge_tipping.py add-user bob DBpLvNcR1Zj8B6dKJp4n3XEAT4FmRxbnJb
+py add-user alice DGKGv8wP8iRJmjdRUEdvVL2b5BywKC65JT
+py add-user bob DBpLvNcR1Zj8B6dKJp4n3XEAT4FmRxbnJb
 ```
 
 **记录打赏**：
 ```bash
-python3 doge_tipping.py tip alice bob 12.5
+py tip alice bob 12.5
 # 记录 alice 向 bob 打赏 12.5 DOGE
 ```
 
 **查询打赏统计**：
 ```bash
-python3 doge_tipping.py stats alice bob
 # 输出：alice 共向 bob 打赏 N 次，合计 X DOGE
 ```
 
@@ -153,7 +150,7 @@ python3 doge_tipping.py stats alice bob
 ./dogecoin-cli -datadir=$HOME/.dogecoin sendtoaddress <address> <amount>
 # ...
 # 查询交易详情
-./dogecoin-cli -datadir=$HOME/.dogecoin gettransaction <txid>
+.dogecoin gettransaction <txid>
 ```
 
 ### 健康检查脚本
@@ -174,7 +171,7 @@ python3 doge_tipping.py stats alice bob
 
 ```bash
 # 钱包备份
-./dogecoin-cli -datadir=$HOME/.dogecoin backupwallet ~/backups/wallet_$(date +%Y%m%d).dat
+.dogecoin backupwallet ~/backups/wallet_$(date +%Y%m%d).dat
 # ...
 # 配置快照
 cp ~/.dogecoin/dogecoin.conf ~/backups/dogecoin.conf.$(date +%Y%m%d)
@@ -389,8 +386,6 @@ A：主从同步存在延迟，故障切换可能丢失最近几秒的数据。�
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

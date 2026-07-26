@@ -71,19 +71,18 @@ Whisper v1 语音转文字工具(专业版)在免费版(`llm-provider-whisper-v1
 | 质量评估 | 不支持 | 置信度分析 | 质控流程 |
 | 任务监控 | 不支持 | 进度 + 日志 | 运维能力 |
 
-**输入**: 用户提供免费版 vs 专业版对比所需的指令和必要参数.
 **处理**: 解析免费版 vs 专业版对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版 vs 专业版对比的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
@@ -342,7 +341,7 @@ import traceback
 def safe_transcribe(model, audio_path, output_dir, **kwargs):
     """带容错的转录函数"""
     try:
-        result = model.transcribe(audio_path, **kwargs)
+transcribe(audio_path, **kwargs)
         # 保存结果
         basename = os.path.splitext(os.path.basename(audio_path))[0]
         with open(f"{output_dir}/{basename}.json", "w", encoding="utf-8") as f:

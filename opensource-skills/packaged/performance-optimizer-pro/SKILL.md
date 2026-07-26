@@ -156,7 +156,7 @@ Lighthouse报告显示:未优化的PNG图片2.5MB,阻塞渲染的CSS 800KB,未�
 - 第三方库defer加载
 # ...
 ## 验证命令
-lighthouse https://example.com --output html --output-path ./after-optimization.html --throttling-method=devtools
+lighthouse https://example./after-optimization.html --throttling-method=devtools
 ```
 
 ### 示例2: 性能反模式检测
@@ -304,7 +304,7 @@ Lighthouse审计结果(移动端):
 <!-- 优化后 -->
 <picture>
   <source srcset="/hero.avif" type="image/avif">
-  <source srcset="/hero.webp" type="image/webp">
+webp" type="image/webp">
   <img src="/hero.jpg" alt="首页大图" width="1920" height="800"
        fetchpriority="high" decoding="async" class="hero">
 </picture>
@@ -361,7 +361,7 @@ Lighthouse审计结果(移动端):
 <img src="/product-1.jpg" alt="产品">
 
 <!-- 优化后 -->
-<img src="/product-1.webp" alt="产品" width="300" height="300"
+webp" alt="产品" width="300" height="300"
      loading="lazy" decoding="async">
 <!-- 预期: CLS从0.32降至0.12 -->
 ```
@@ -422,7 +422,7 @@ location ~ \.html$ {
 lighthouse https://shop.example.com --output json --output-path ./before.json --preset=desktop
 
 # 优化后验证
-lighthouse https://shop.example.com --output json --output-path ./after.json --preset=desktop
+example./after.json --preset=desktop
 
 # 对比
 npx lighthouse-compare before.json after.json
@@ -529,7 +529,6 @@ function VirtualTable({ data }) {
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
 
-> 详细的输入输出格式请参考下方章节说明。
 ## 瓶颈2: 内存泄漏(10分钟堆内存15MB→120MB)
 # ...
 ### 症状(补充)
@@ -605,7 +604,6 @@ class TableFilter {
       this.allRows = extractAllData(this.table);
     }
     this.filteredRows = this.allRows.filter(row =>
-      matchCriteria(row.data, criteria)
     );
   }
 }
@@ -615,7 +613,7 @@ class TableFilterV2 {
   constructor(table) {
     this.table = table;
     this.abortController = new AbortController();
-    this.table.addEventListener('click', this.handleClick, {
+    this.table.handleClick, {
       signal: this.abortController.signal,
     });
   }

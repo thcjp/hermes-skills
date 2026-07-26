@@ -162,7 +162,6 @@ export API_KEY="your_api_key_here"
 ### Create a sandbox for the current project(补充)
 # ...
 ```bash
-docker sandbox create --name my-sandbox claude .
 ```
 # ...
 This creates a VM-isolated sandbox with:

@@ -84,7 +84,6 @@ location ~* \.(php|jsp|do)$ {
 }
 ```
 
-**输入**: 用户提供缓存策略配置所需的指令和必要参数.
 **处理**: 解析缓存策略配置的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回缓存策略配置的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -131,7 +130,6 @@ echo "  [ ] 仅允许CDN回源IP访问"
 echo "  [ ] 源站防火墙已配置"
 ```
 
-**输入**: 用户提供基础安全加固所需的指令和必要参数.
 **处理**: 解析基础安全加固的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回基础安全加固的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -173,7 +171,6 @@ echo "--- 4. 关键响应头 ---"
 curl -s -I "https://${DOMAIN}" | grep -i "cache-control\|content-encoding\|content-type\|strict-transport"
 ```
 
-**输入**: 用户提供CDN性能诊断所需的指令和必要参数.
 **处理**: 解析CDN性能诊断的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回CDN性能诊断的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -210,7 +207,6 @@ echo "  [ ] 缓存键已优化(忽略无关参数)"
 echo "  [ ] Gzip/Brotli压缩已启用"
 ```
 
-**输入**: 用户提供域名配置指导所需的指令和必要参数.
 **处理**: 解析域名配置指导的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回域名配置指导的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：配置与优化助手、支持缓存策略设置、基础安全加固与性、适合个人开发者快、速部署、配置工具包免费版、为个人开发者提供、部署与优化核心能、核心能力、适用场景、网站加速部署、静态资源缓存优化、安全配置、差异化、免费版聚焦核心配、置能力、支持主流、服务商、适合个人项目快速、适用关键词、边缘节点、内容分发、edge、optimization等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -271,19 +267,18 @@ curl -s -X PATCH "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/settings
     --data '{"value":"on"}' | jq '.success'
 # ...
 # 2. 设置最小TLS版本为1.2
-curl -s -X PATCH "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/settings/min_tls_version" \
+cloudflare.com/client/v4/zones/${ZONE_ID}/settings/min_tls_version" \
     -H "Authorization: Bearer ${API_TOKEN}" \
     -H "Content-Type: application/json" \
     --data '{"value":"1.2"}' | jq '.success'
 # ...
 # 3. 开启Gzip压缩
-curl -s -X PATCH "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/settings/gzip" \
+cloudflare.com/client/v4/zones/${ZONE_ID}/settings/gzip" \
     -H "Authorization: Bearer ${API_TOKEN}" \
     -H "Content-Type: application/json" \
-    --data '{"value":"on"}' | jq '.success'
 # ...
 # 4. 开启浏览器缓存TTL
-curl -s -X PATCH "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/settings/browser_cache_ttl" \
+cloudflare.com/client/v4/zones/${ZONE_ID}/settings/browser_cache_ttl" \
     -H "Authorization: Bearer ${API_TOKEN}" \
     -H "Content-Type: application/json" \
     --data '{"value":86400}' | jq '.success'
@@ -295,7 +290,6 @@ curl -s -X PATCH "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/settings
 #!/bin/bash
 # CDN缓存命中率诊断
 # ...
-DOMAIN="${1:-example.com}"
 SAMPLES=20
 # ...
 echo "=== CDN缓存命中率诊断: ${DOMAIN} ==="
@@ -472,8 +466,6 @@ iptables -A INPUT -p tcp --dport 443 -j DROP
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

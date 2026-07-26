@@ -61,7 +61,7 @@ python （请参考skill目录中的脚本文件） --inputs 北京.xlsx 上海.
 python （请参考skill目录中的脚本文件） --input 全国汇总.xlsx --by-column 地区
 # ...
 # 示例：筛选销售额大于10000的行
-python （请参考skill目录中的脚本文件） --input 全国汇总.xlsx --where "销售额>10000" --output 高价值客户.xlsx
+xlsx --where "销售额>10000" --output 高价值客户.xlsx
 ```
 
 ## 核心能力
@@ -80,7 +80,8 @@ python （请参考skill目录中的脚本文件） --input 全国汇总.xlsx --
 
 ### 脚本详解
 
-#### merge_sheets.py — 多表合并
+#
+### merge_sheets.py — 多表合并
 
 将多个Excel文件或同一文件的多个工作表合并为一张表。支持自动对齐列名.
 ```bash
@@ -94,7 +95,8 @@ python （请参考skill目录中的脚本文件） --inputs ./月报/ --output 
 python （请参考skill目录中的脚本文件） --inputs 多sheet.xlsx --output 合并.xlsx
 ```
 
-#### filter_excel.py — 条件筛选
+#
+### filter_excel.py — 条件筛选
 
 支持四种比较方式：等于(=)、大于(>)、小于(<)、包含(~).
 ```bash
@@ -102,13 +104,14 @@ python （请参考skill目录中的脚本文件） --inputs 多sheet.xlsx --out
 python （请参考skill目录中的脚本文件） --input data.xlsx --where "地区=北京" --output 北京.xlsx
 # ...
 # 大于
-python （请参考skill目录中的脚本文件） --input data.xlsx --where "金额>5000" --output 大额.xlsx
+xlsx --where "金额>5000" --output 大额.xlsx
 # ...
 # 包含（模糊匹配）
-python （请参考skill目录中的脚本文件） --input data.xlsx --where "名称~科技" --output 科技公司.xlsx
+xlsx --where "名称~科技" --output 科技公司.xlsx
 ```
 
-#### split_excel.py — 拆分文件
+#
+### split_excel.py — 拆分文件
 
 两种拆分模式：按固定行数拆分、按某列的不同取值拆分.
 ```bash
@@ -119,7 +122,8 @@ python （请参考skill目录中的脚本文件） --input 大表.xlsx --by-row
 python （请参考skill目录中的脚本文件） --input 全国.xlsx --by-column 地区
 ```
 
-#### aggregate_excel.py — 分组聚合
+#
+### aggregate_excel.py — 分组聚合
 
 按指定列分组，对数值列执行聚合运算。支持sum、count、mean、min、max.
 ```bash
@@ -127,38 +131,38 @@ python （请参考skill目录中的脚本文件） --input 全国.xlsx --by-col
 python （请参考skill目录中的脚本文件） --input 明细.xlsx --group-by 地区 --agg "销售额:sum" --output 地区汇总.xlsx
 # ...
 # 多列聚合
-python （请参考skill目录中的脚本文件） --input 明细.xlsx --group-by 地区 --agg "销售额:sum,订单数:count,利润:mean" --output 综合统计.xlsx
+xlsx --group-by 地区 --agg "销售额:sum,订单数:count,利润:mean" --output 综合统计.xlsx
 ```
 
-#### validate_excel.py — 数据校验
+#
+### validate_excel.py — 数据校验
 
 检查数据质量：必填列是否存在、键列是否有重复、是否存在空行.
 ```bash
 # 校验必填列
-python （请参考skill目录中的脚本文件） --input data.xlsx --require-cols "订单号,客户名,金额"
+xlsx --require-cols "订单号,客户名,金额"
 # ...
 # 校验键列唯一性
-python （请参考skill目录中的脚本文件） --input data.xlsx --key-cols "订单号"
+xlsx --key-cols "订单号"
 # ...
 # 同时校验必填列和键列
-python （请参考skill目录中的脚本文件） --input data.xlsx --require-cols "订单号,客户名" --key-cols "订单号"
+xlsx --require-cols "订单号,客户名" --key-cols "订单号"
 ```
 
-**输入**: 用户提供脚本详解所需的指令和必要参数.
 **处理**: 解析脚本详解的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回脚本详解的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
@@ -170,7 +174,7 @@ python （请参考skill目录中的脚本文件） --input data.xlsx --require-
 每周需要将5个渠道的数据表合并成一份周报.
 ```bash
 # 一行命令完成合并
-python （请参考skill目录中的脚本文件） --inputs ./渠道数据/ --output 本周周报.xlsx
+/渠道数据/ --output 本周周报.xlsx
 # ...
 # 按渠道分组统计
 python （请参考skill目录中的脚本文件） --input 本周周报.xlsx --group-by 渠道 --agg "访客数:sum,转化率:mean" --output 渠道统计.xlsx
@@ -185,7 +189,7 @@ python （请参考skill目录中的脚本文件） --input 本周周报.xlsx --
 python （请参考skill目录中的脚本文件） --input 原始数据.xlsx --require-cols "ID,姓名,手机号" --key-cols "ID"
 # ...
 # 第二步：去重
-python （请参考skill目录中的脚本文件） --input 原始数据.xlsx --keys ID --keep first --output 去重后.xlsx
+xlsx --keys ID --keep first --output 去重后.xlsx
 # ...
 # 第三步：筛选有效记录
 python （请参考skill目录中的脚本文件） --input 去重后.xlsx --where "状态=有效" --output 清洗完成.xlsx
@@ -385,8 +389,6 @@ with pd.ExcelWriter("output.xlsx", engine="openpyxl") as writer:
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

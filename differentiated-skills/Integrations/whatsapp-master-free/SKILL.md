@@ -52,21 +52,21 @@ WhatsApp 是全球使用最广泛的即时通讯应用之一。本工具箱通�
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -135,19 +135,22 @@ WhatsApp 内部使用 JID（Jabber ID）：
 使用 `to=` 传入手机号时，Agent 平台会自动转换为 JID 格式.
 ### ffmpeg 媒体转换模板
 
-#### 语音笔记转换
+#
+### 语音笔记转换
 
 ```bash
 ffmpeg -i input.wav -c:a libopus -b:a 64k output.ogg
 ```
 
-#### 贴纸转换（图片转 WebP）
+#
+### 贴纸转换（图片转 WebP）
 
 ```bash
 ffmpeg -i input.png -vf "scale=512:512:force_original_aspect_ratio=decrease,pad=512:512:(ow-iw)/2:(oh-ih)/2:color=0x00000000" output.webp
 ```
 
-#### GIF 转 MP4
+#
+### GIF 转 MP4
 
 ```bash
 ffmpeg -i input.gif -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" output.mp4 -y

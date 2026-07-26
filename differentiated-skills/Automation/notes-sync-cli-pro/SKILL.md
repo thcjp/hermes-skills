@@ -181,7 +181,6 @@ notes-sync batch delete \
 | --dry-run | bool | 否 | false | 预演不实际执行 |
 | --confirm | bool | 否 | false | 批量删除确认 |
 
-**输入**: 用户提供批量操作（专业版）所需的指令和必要参数.
 **处理**: 解析批量操作（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量操作（专业版）的响应数据,包含状态码、结果和日志.
 ### 2. 多Vault并行管理（专业版）
@@ -203,7 +202,6 @@ notes-sync vault move "笔记路径" --from "个人库" --to "工作库"
 notes-sync vault diff "库A" "库B"
 ```
 
-**输入**: 用户提供多Vault并行管理（专业版）所需的指令和必要参数.
 **处理**: 解析多Vault并行管理（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多Vault并行管理（专业版）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -238,7 +236,7 @@ notes-sync template create "my-template" --file ~/templates/my.md
 **项目**: {{project}}
 **状态**: draft
 # ...
-**输入**: 用户提供模板系统（专业版）所需的指令和必要参数.
+
 **处理**: 解析模板系统（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回模板系统（专业版）的响应数据,包含状态码、结果和日志.
 # ...
@@ -365,7 +363,6 @@ notes-sync vault copy "literature/transformer" \
   --from "个人库" --to "团队文献库"
 # ...
 # 团队库自动去重
-notes-sync ai deduplicate --dir "literature/" --threshold 0.85
 # ...
 # 生成主题知识图谱
 notes-sync ai graph --filter "topic=NLP" --output "nlp-graph.html"
@@ -738,8 +735,6 @@ notes-sync ai stats --since "2026-01-01"
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

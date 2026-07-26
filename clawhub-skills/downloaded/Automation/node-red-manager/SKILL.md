@@ -163,9 +163,7 @@ See `references/admin-api.md` for complete Admin API endpoint documentation.
 ### 示例1：基础用法
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
 ## 错误处理

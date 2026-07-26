@@ -160,8 +160,6 @@ $ chart.sh sparkline "3,7,2,8,5,9,1,6"
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
 
-> 详细的输入输出格式请参考下方章节说明。
-
 💬 Feedback & Feature Requests: <https://bytesagain.com/feedback>
 Powered by BytesAgain | bytesagain.com
 

@@ -94,7 +94,8 @@ The blog will be available at `http://localhost:3000`.
 
 Use the REST API to create posts. All API calls require the `X-API-Key` header.
 
-#### Create a Post
+#
+### Create a Post
 
 ```bash
 curl -X POST http://localhost:3000/api/posts \
@@ -111,21 +112,24 @@ curl -X POST http://localhost:3000/api/posts \
   }'
 ```
 
-#### List Posts
+#
+### List Posts
 
 ```bash
 curl http://localhost:3000/api/posts \
   -H "X-API-Key: YOUR_API_KEY"
 ```
 
-#### Get a Single Post
+#
+### Get a Single Post
 
 ```bash
 curl http://localhost:3000/api/posts/my-first-post \
   -H "X-API-Key: YOUR_API_KEY"
 ```
 
-#### Update a Post
+#
+### Update a Post
 
 ```bash
 curl -X PUT http://localhost:3000/api/posts/my-first-post \
@@ -137,7 +141,8 @@ curl -X PUT http://localhost:3000/api/posts/my-first-post \
   }'
 ```
 
-#### Delete a Post
+#
+### Delete a Post
 
 ```bash
 curl -X DELETE http://localhost:3000/api/posts/my-first-post \
@@ -194,13 +199,15 @@ curl -X PUT http://localhost:3000/api/settings \
 
 ### 8. Deployment
 
-#### Deploy to Vercel
+#
+### Deploy to Vercel
 
 ```bash
 bash <skill-directory>/（请参考skill目录中的脚本文件）
 ```
 
-#### Deploy to Cloudflare
+#
+### Deploy to Cloudflare
 
 ```bash
 bash <skill-directory>/（请参考skill目录中的脚本文件）
@@ -315,7 +322,6 @@ cd <skill-directory>/platform
 npm run dev
 ```
 # ...
-The blog will be available at `http://localhost:3000`.
 # ...
 ### 3. Writing & Pub
 ```

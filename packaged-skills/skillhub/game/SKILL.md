@@ -139,7 +139,6 @@ class Game {
     }
     this.render();              // 渲染画面
 
-    requestAnimationFrame((time) => this.loop(time));
   }
 
   update(dt) {
@@ -175,10 +174,8 @@ function handleStateTransition(newState) {
     case GAME_STATES.PLAYING:
       gameLoop.start();
       break;
-    case GAME_STATES.PAUSED:
       gameLoop.stop();
       break;
-    case GAME_STATES.GAME_OVER:
       showGameOverScreen();
       break;
   }
@@ -342,8 +339,8 @@ document.addEventListener('keydown', (e) => {
 
 document.addEventListener('keyup', (e) => {
   switch(e.code) {
-    case 'ArrowLeft': case 'KeyA': input.left = false; break;
-    case 'ArrowRight': case 'KeyD': input.right = false; break;
+left = false; break;
+right = false; break;
     case 'Space': case 'ArrowUp': case 'KeyW': input.jump = false; break;
   }
 });

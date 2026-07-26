@@ -170,7 +170,7 @@ curl -X POST "https://api.telegram.org/bot<TOKEN>/setWebhook" \
 设置Webhook时添加 secret_token 参数，Bot发送的每个请求会在HTTP头中携带 `X-Telegram-Bot-Api-Secret-Token`，服务端验证该值是否匹配：
 
 ```bash
-curl -X POST "https://api.telegram.org/bot<TOKEN>/setWebhook" \
+telegram.org/bot<TOKEN>/setWebhook" \
   -d '{"url": "https://yourdomain.com/webhook/telegram", "secret_token": "MY_SECRET_123"}'
 ```
 

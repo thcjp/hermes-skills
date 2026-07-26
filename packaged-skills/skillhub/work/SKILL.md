@@ -65,14 +65,12 @@ category: "Automation"
 3. Prepare one-liner if asked "any updates?" — 准备一句话电梯汇报，被问到时能快速回答
 
 **状态汇报（Status updates）**：主动汇报，不等被问。格式：本周完成 → 下周计划 → 风险/阻塞。用书面记录贡献，邮件先发再开会.
-**输出**: 返回Professional Communication（专业沟通）的处理结果,包含执行状态码、结果数据和执行日志.
 ### Workplace Dynamics（职场动态）
 识别和处理办公室政治与人际动态.
 - **被抢功（When someone takes credit）**：Document contributions in writing before meetings. 会前用邮件记录你的贡献。会后跟进 "as I mentioned in my email about X..."
 - **被公开质疑（When undermined publicly）**：当场不反应。私下先沟通："I noticed X happened. Can we talk about how we work together?"
 - **建立联盟（Building alliances）**：Visibility comes from being useful to the right people. 找到你的工作与有影响力的人的交集.
 - **读懂氛围（Reading the room）**：观察谁发言、谁被打断、谁做最终决定 — 那才是真正的组织架构图.
-**输出**: 返回Workplace Dynamics（职场动态）的处理结果,包含执行状态码、结果数据和执行日志.
 ### First 90 Days（入职90天）
 新角色适应的分阶段策略：
 
@@ -84,9 +82,7 @@ category: "Automation"
 - "Who should I build relationships with?" — 确定需要建立关系的关键人物
 - "What should I definitely avoid?" — 了解必须避免的雷区
 
-**输入**: 用户提供First 90 Days（入职90天）所需的指令和必要参数.
-**处理**: 解析First 90 Days（入职90天）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回First 90 Days（入职90天）的处理结果,包含执行状态码、结果数据和执行日志。### Situation Detection（情境识别）
+### Situation Detection（情境识别）
 根据用户描述自动识别工作情境并加载对应策略：
 
 | 信号 | 上下文 | 对应场景 |
@@ -97,11 +93,8 @@ category: "Automation"
 | 可见性、被忽视、认可 | 感知管理 | visibility 策略 |
 | 模糊任务、不清晰优先级 | 任务清晰度 | clarity 策略 |
 
-**处理**: 解析Situation Detection（情境识别）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Situation Detection（情境识别）的处理结果,包含执行状态码、结果数据和执行日志。### Work Profile（工作画像）
+### Work Profile（工作画像）
 逐步构建用户的工作环境画像，包括 Environment（工作环境）、Key Relationships（关键关系）、Culture Signals（文化信号）、Challenges（挑战）。每次工作相关问题都会丰富画像。空字段表示尚未收集到信息.
-**处理**: 解析Work Profile（工作画像）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Work Profile（工作画像）的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 

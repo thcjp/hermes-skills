@@ -11,7 +11,8 @@ Generate production-quality React pages from natural language, serve live, itera
 
 ## Setup
 
-Check TOOLS.md for `### UI Designer` config. If missing, run first-time setup:
+Check TOOLS.md for `
+### UI Designer` config. If missing, run first-time setup:
 
 1. Ask user which port (default: 5174)
 2. Run: `bash scripts/setup.sh <port>`
@@ -39,8 +40,8 @@ Check TOOLS.md for `### UI Designer` config. If missing, run first-time setup:
   <title>Page Title</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+com/react-dom@18/umd/react-dom.production.min.js"></script>
+com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
   <div id="root"></div>
@@ -258,9 +259,7 @@ Apply these consistently to every generated page. These are non-negotiable quali
 ### 示例1：基础用法
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
 ## 错误处理

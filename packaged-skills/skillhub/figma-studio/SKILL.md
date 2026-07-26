@@ -87,7 +87,6 @@ def get_webhook_requests(webhook_id: str):
 ```
 
 **支持的事件类型**：`FILE_UPDATE`（文件更新）、`FILE_COMMENT`（评论）、`FILE_DELETE`（文件删除）、`FILE_VERSION_UPDATE`（版本更新）、`LIBRARY_PUBLISH`（库发布）、`LIBRARY_DELETE`（库删除）.
-**处理**: 解析能力2：Webhook全生命周期管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 能力3：设计变更监控
 ```python
 import hashlib, json, time
@@ -119,7 +118,6 @@ def watch_file_changes(file_key: str, callback_url: str = None):
         save_state(state)
         return {'status': 'changed', 'change': change}
     else:
-        state[file_key] = {'version': current_version, 'last_checked': time.time()}
         save_state(state)
         return {'status': 'unchanged'}
 ```- 验证执行结果,确认输出符合预期格式
@@ -127,7 +125,6 @@ def watch_file_changes(file_key: str, callback_url: str = None):
 - 关键参数: `能力3：设计变更监控` 选项
 - 处理流程: 接收输入 -> 执行能力3：设计变更监控 -> 返回结果
 - 输入: 用户提供能力3：设计变更监控所需的参数和指令
-- 输出: 返回能力3：设计变更监控的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 能力4：团队资源治理
 ```python
@@ -159,12 +156,10 @@ def generate_team_asset_report(team_id: str) -> dict:
     return report
 ```
 
-**处理**: 解析能力4：团队资源治理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `能力4：团队资源治理` 选项
 - 处理流程: 接收输入 -> 执行能力4：团队资源治理 -> 返回结果
 - 输入: 用户提供能力4：团队资源治理所需的参数和指令
-- 输出: 返回能力4：团队资源治理的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 能力5：设计令牌转Tailwind
 ```python
@@ -206,12 +201,10 @@ def tokens_to_tailwind_config(file_key: str) -> str:
     return config
 ```
 
-**处理**: 解析能力5：设计令牌转Tailwind的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `能力5：设计令牌转tailwind` 选项
 - 处理流程: 接收输入 -> 执行能力5：设计令牌转Tailwind -> 返回结果
 - 输入: 用户提供能力5：设计令牌转Tailwind所需的参数和指令
-- 输出: 返回能力5：设计令牌转Tailwind的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 能力6：设计版本对比
 ```python
@@ -316,7 +309,7 @@ def batch_export_and_download(file_key: str, out_dir: str, format: str = 'svg'):
     def collect_nodes(node, path=''):
         if 'id' in node:
             node_ids.append(node['id'])
-        for child in node.get('children', []):
+get('children', []):
             collect_nodes(child, path + '/' + node.get('name', ''))
     for page in file_data['document']['children']:
         collect_nodes(page)
@@ -326,7 +319,7 @@ def batch_export_and_download(file_key: str, out_dir: str, format: str = 'svg'):
     for i in range(0, len(node_ids), 50):
         batch = node_ids[i:i+50]
         params = {'ids': ','.join(n.replace(':', '-') for n in batch), 'format': format}
-        r = requests.get(f'{FIGMA_BASE}/images/{file_key}', headers=headers, params=params, timeout=60)
+get(f'{FIGMA_BASE}/images/{file_key}', headers=headers, params=params, timeout=60)
         r.raise_for_status()
         all_images.update(r.json().get('images', {}))
 # ...
@@ -335,7 +328,7 @@ def batch_export_and_download(file_key: str, out_dir: str, format: str = 'svg'):
             return None
         ext = 'svg' if format == 'svg' else format
         out_path = Path(out_dir) / f'{node_id.replace(":", "_")}.{ext}'
-        r = requests.get(url, timeout=60)
+get(url, timeout=60)
         r.raise_for_status()
         out_path.write_bytes(r.content)
         return str(out_path)
@@ -457,7 +450,6 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 FIGMA_TOKEN = os.environ.get('FIGMA_ACCESS_TOKEN', '')
-FIGMA_BASE = 'https://api.figma.com/v1'
 headers = {'X-Figma-Token': FIGMA_TOKEN}
 
 def batch_export_and_download(file_key: str, out_dir: str, format: str = 'svg'):

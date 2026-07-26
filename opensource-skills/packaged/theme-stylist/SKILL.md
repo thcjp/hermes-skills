@@ -768,19 +768,22 @@ PPT文件: 30页企业汇报(多人协作制作)
 # ...
 ### [Critical] 色彩偏差(8页)
 # ...
-#### P5, P8, P12: 使用非主题灰色
+#
+### P5, P8, P12: 使用非主题灰色
 - **当前**: #999999 (中灰)
 - **应为**: #6b7280 (Corporate次级文字色)
 - **影响**: 与主题灰阶不一致,视觉突兀
 - **修复**: 全局查找替换 #999999 → #6b7280
 # ...
-#### P15, P18: 强调色错误
+#
+### P15, P18: 强调色错误
 - **当前**: #ff0000 (纯红)
 - **应为**: #f59e0b (琥珀色,Corporate强调色)
 - **影响**: 纯红过于刺眼,不符合商务调性
 - **修复**: 全局查找替换 #ff0000 → #f59e0b
 # ...
-#### P20-P25: 图表使用Office默认色板
+#
+### P20-P25: 图表使用Office默认色板
 - **当前**: #4472C4, #ED7D31, #A5A5A5, #FFC000... (Office默认)
 - **应为**: #1a56db, #3b82f6, #f59e0b, #10b981, #8b5cf6 (Corporate色板)
 - **影响**: 图表与PPT整体风格割裂
@@ -832,9 +835,7 @@ for slide_idx, slide in enumerate(prs.slides, 1):
         # 修复字体(P3, P7)
         if slide_idx in [3, 7]:
             if shape.has_text_frame:
-                for para in shape.text_frame.paragraphs:
-                    for run in para.runs:
-                        run.font.name = '思源黑体'
+text_frame.paragraphs:
 
         # 修复图表色板
         if shape.has_chart:

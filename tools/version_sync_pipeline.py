@@ -375,6 +375,36 @@ def run_quality_check(skill_md: Path) -> Dict[str, Any]:
         }
 
 
+def run_content_quality_gate(skill_md: Path) -> Dict[str, Any]:
+    """L1.5内容质量门禁检查(v3.1新增)
+    
+    在L1格式合规检查通过后,检查内容质量:
+    - summary/description无重复
+    - 无模板化套话
+    - 无占位符内容
+    - 章节无错误合并
+    - 输入格式表非空
+    """
+    try:
+        sys.path.insert(0, str(SKILL_REGISTRY_DIR))
+        from skill_batch_upgrader_v3 import run_content_quality_check
+        result = run_content_quality_check(skill_md)
+        failed_checks = [c['name'] for c in result.get('checks', []) if not c['passed']]
+        return {
+            'passed': result.get('fail_count', 0) == 0,
+            'score': f"{result.get('pass_count', 0)}/{result.get('pass_count', 0) + result.get('fail_count', 0)}",
+            'failed_checks': failed_checks,
+            'fail_count': result.get('fail_count', 0),
+        }
+    except ImportError:
+        return {
+            'passed': True,
+            'score': 'skipped',
+            'failed_checks': [],
+            'note': 'skill_batch_upgrader_v3 not available, content quality check skipped',
+        }
+
+
 # ============================================================
 # Phase 4: SYNC_GITHUB - GitHub双仓库同步
 # ============================================================
@@ -665,10 +695,11 @@ def sync_to_clawhub(slug: str, skill_md: Path, new_version: str,
 def sync_skill_to_all_platforms(slug: str, skip_github: bool = False,
                                 skip_skillhub: bool = False,
                                 skip_clawhub: bool = False,
+                                skip_content_quality: bool = False,
                                 force: bool = False) -> Dict[str, Any]:
     """端到端同步单个skill到所有平台
 
-    流程: 检测变更 → 版本递增 → 质量门禁 → GitHub → SkillHub → ClawHub
+    流程: 检测变更 → 版本递增 → L1质量门禁 → L1.5内容质量门禁 → GitHub → SkillHub → ClawHub
     """
     print(f"\n{'='*60}")
     print(f"同步skill: {slug}")
@@ -736,6 +767,21 @@ def sync_skill_to_all_platforms(slug: str, skip_github: bool = False,
                                'blocked', error=str(qc['failed_checks']))
         return result
     print(f"  ✓ 质量门禁通过 ({qc['score']})")
+
+    # 5.1 L1.5内容质量门禁(v3.1新增)
+    if not skip_content_quality:
+        print(f"  [3.5/7] 内容质量门禁检查...")
+        cq = run_content_quality_gate(skill_md)
+        result['phases']['content_quality'] = cq
+        if not cq['passed']:
+            print(f"  ✗ 内容质量门禁未通过: {cq['failed_checks']}")
+            result['status'] = 'blocked_by_content_quality'
+            record_platform_upload(skill_id, new_version, 'content_quality_gate', slug,
+                                   'blocked', error=str(cq['failed_checks']))
+            return result
+        print(f"  ✓ 内容质量门禁通过 ({cq['score']})")
+    else:
+        result['phases']['content_quality'] = {'status': 'skipped'}
 
     # 6. 记录新版本
     record_version(skill_id, new_version, new_hash, changelog,
@@ -846,6 +892,144 @@ def sync_all_changed_skills(skip_github: bool = False,
 # 命令行入口
 # ============================================================
 
+def upgrade_single_skill(slug: str, skip_platforms: bool = False,
+                          force_sync: bool = False) -> Dict[str, Any]:
+    """独立skill升级完整流程
+
+    流程: 查找SKILL.md → 内容质量检测 → 自动修复 → 验证修复 → L1合规检查 → 多平台同步 → 记录
+    
+    这是完整的独立skill升级流程,适用于:
+    - 发现单个skill有质量问题(如AI测评报告)
+    - 需要升级并重新发布到所有平台
+    - 需要版本递增和质量保证
+
+    参数:
+        slug: skill的slug标识
+        skip_platforms: 跳过平台同步(仅检测+修复,不重传)
+        force_sync: 强制同步(即使内容质量未完全通过)
+    
+    返回:
+        dict: 升级结果详情
+    """
+    print(f"\n{'='*60}")
+    print(f"独立skill升级流程: {slug}")
+    print(f"{'='*60}")
+
+    result = {
+        'slug': slug,
+        'timestamp': NOW,
+        'phases': {},
+    }
+
+    # === Step 1: 查找SKILL.md ===
+    print(f"\n[1/6] 查找SKILL.md...")
+    sys.path.insert(0, str(SKILL_REGISTRY_DIR))
+    try:
+        from skill_batch_upgrader_v3 import find_skill_md, run_content_quality_check, auto_fix_content, auto_fix
+    except ImportError as e:
+        result['error'] = f'skill_batch_upgrader_v3导入失败: {e}'
+        print(f"  ✗ 导入失败: {e}")
+        return result
+
+    skill_md = find_skill_md(slug)
+    if not skill_md:
+        result['error'] = f'SKILL.md not found for: {slug}'
+        print(f"  ✗ 未找到SKILL.md: {slug}")
+        return result
+    result['skill_md_path'] = str(skill_md)
+    print(f"  ✓ 找到: {skill_md}")
+
+    # === Step 2: 内容质量检测 ===
+    print(f"\n[2/6] 内容质量检测...")
+    cq_before = run_content_quality_check(skill_md)
+    result['phases']['content_check_before'] = {
+        'pass_count': cq_before['pass_count'],
+        'fail_count': cq_before['fail_count'],
+        'failed_checks': [c['name'] for c in cq_before['checks'] if not c['passed']],
+    }
+    if cq_before['fail_count'] == 0:
+        print(f"  ✓ 内容质量全部通过 ({cq_before['pass_count']}/7)")
+    else:
+        print(f"  ⚠ 发现 {cq_before['fail_count']} 项内容质量问题:")
+        for check in cq_before['checks']:
+            if not check['passed']:
+                print(f"    ✗ {check['name']}: {check['message'][:80]}")
+
+    # === Step 3: 自动修复 ===
+    print(f"\n[3/6] 自动修复内容质量问题...")
+    content_fixes = auto_fix_content(skill_md)
+    compliance_fixes = auto_fix(skill_md)
+    all_fixes = content_fixes + compliance_fixes
+    result['phases']['auto_fix'] = {
+        'content_fixes': content_fixes,
+        'compliance_fixes': compliance_fixes,
+        'total_fixes': len(all_fixes),
+    }
+    if all_fixes:
+        print(f"  ✓ 修复 {len(all_fixes)} 项: {', '.join(all_fixes)}")
+    else:
+        print(f"  ℹ 无可自动修复的问题")
+
+    # === Step 4: 验证修复 ===
+    print(f"\n[4/6] 验证修复结果...")
+    cq_after = run_content_quality_check(skill_md)
+    result['phases']['content_check_after'] = {
+        'pass_count': cq_after['pass_count'],
+        'fail_count': cq_after['fail_count'],
+        'failed_checks': [c['name'] for c in cq_after['checks'] if not c['passed']],
+    }
+    if cq_after['fail_count'] == 0:
+        print(f"  ✓ 内容质量全部通过 ({cq_after['pass_count']}/7)")
+    else:
+        print(f"  ⚠ 仍有 {cq_after['fail_count']} 项问题需手动处理:")
+        for check in cq_after['checks']:
+            if not check['passed']:
+                print(f"    ✗ {check['name']}: {check['message'][:80]}")
+        if not force_sync:
+            result['status'] = 'needs_manual_fix'
+            result['error'] = f'仍有{cq_after["fail_count"]}项内容质量问题需手动处理,使用--force可强制同步'
+            print(f"\n  使用 --force 可强制同步到平台(不推荐)")
+            return result
+
+    # === Step 5: L1合规检查 ===
+    print(f"\n[5/6] L1合规检查...")
+    qc = run_quality_check(skill_md)
+    result['phases']['l1_compliance'] = qc
+    if not qc['passed']:
+        print(f"  ⚠ L1合规检查未通过: {qc['failed_checks']}")
+        if not force_sync:
+            result['status'] = 'blocked_by_l1'
+            result['error'] = f'L1合规检查未通过: {qc["failed_checks"]}'
+            return result
+    else:
+        print(f"  ✓ L1合规检查通过 ({qc['score']})")
+
+    # === Step 6: 多平台同步 ===
+    if skip_platforms:
+        print(f"\n[6/6] 跳过平台同步 (skip_platforms=True)")
+        result['phases']['platform_sync'] = {'status': 'skipped'}
+        result['status'] = 'fixed_locally'
+    else:
+        print(f"\n[6/6] 同步到所有平台...")
+        sync_result = sync_skill_to_all_platforms(
+            slug, skip_content_quality=True, force=True
+        )
+        result['phases']['platform_sync'] = sync_result
+        if sync_result.get('status') == 'success':
+            print(f"  ✓ 全平台同步成功")
+        else:
+            print(f"  ⚠ 同步状态: {sync_result.get('status', 'unknown')}")
+        result['status'] = sync_result.get('status', 'unknown')
+
+    # 保存升级报告
+    report_path = SKILL_REGISTRY_DIR / f"upgrade_{slug}_{NOW.replace(':', '')}.json"
+    with open(report_path, 'w', encoding='utf-8') as f:
+        json.dump(result, f, ensure_ascii=False, indent=2)
+    print(f"\n升级报告已保存: {report_path}")
+
+    return result
+
+
 def cmd_scan():
     """扫描变更"""
     changed = scan_all_changes()
@@ -905,6 +1089,26 @@ def cmd_sync_github(slug: str):
     print(f"GitHub同步结果: {result['status']}")
     if result.get('error'):
         print(f"  错误: {result['error']}")
+
+
+def cmd_upgrade(slug: str, skip_platforms: bool = False, force: bool = False):
+    """独立skill升级完整流程"""
+    result = upgrade_single_skill(slug, skip_platforms=skip_platforms, force_sync=force)
+    print(f"\n{'='*60}")
+    print(f"升级结果: {result.get('status', 'unknown')}")
+    print(f"{'='*60}")
+    if result.get('error'):
+        print(f"错误: {result['error']}")
+    phases = result.get('phases', {})
+    if phases.get('content_check_before'):
+        before = phases['content_check_before']
+        print(f"修复前: {before['fail_count']}项问题")
+    if phases.get('content_check_after'):
+        after = phases['content_check_after']
+        print(f"修复后: {after['fail_count']}项问题")
+    if phases.get('auto_fix'):
+        fixes = phases['auto_fix']
+        print(f"自动修复: {fixes['total_fixes']}项")
 
 
 def cmd_status():
@@ -1035,6 +1239,11 @@ def main():
     gh_parser = sub.add_parser('sync-github', help='仅同步到GitHub')
     gh_parser.add_argument('slug', help='skill slug')
 
+    upgrade_parser = sub.add_parser('upgrade', help='独立skill升级完整流程(检测+修复+同步)')
+    upgrade_parser.add_argument('slug', help='skill slug')
+    upgrade_parser.add_argument('--skip-platforms', action='store_true', help='跳过平台同步(仅检测+修复)')
+    upgrade_parser.add_argument('--force', action='store_true', help='强制同步(即使内容质量未完全通过)')
+
     args = parser.parse_args()
 
     if args.command == 'scan':
@@ -1049,6 +1258,8 @@ def main():
         cmd_status()
     elif args.command == 'report':
         cmd_report()
+    elif args.command == 'upgrade':
+        cmd_upgrade(args.slug, skip_platforms=args.skip_platforms, force=args.force)
     else:
         parser.print_help()
 

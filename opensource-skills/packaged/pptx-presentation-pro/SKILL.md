@@ -138,7 +138,7 @@ slide2.addText([
 // ...
 // 数据图表页
 const slide3 = pptx.addSlide();
-slide3.addText("市场增长趋势", { x: 0.5, y: 0.3, w: 12, h: 0.8, fontSize: 36, color: theme.primary, bold: true });
+slide3.addText("市场增长趋势", { x: 0.5, y: 0.3, w: 12, h: 0.primary, bold: true });
 slide3.addChart(pptx.ChartType.line, [{
   name: "市场规模(亿元)",
   labels: ["2021", "2022", "2023", "2024E", "2025E"],
@@ -181,7 +181,7 @@ slide2.shapes.title.text = "区域销售分布"
 pie_data = CategoryChartData()
 pie_data.categories = ["华东", "华北", "华南", "其他"]
 pie_data.add_series("占比", (40, 25, 20, 15))
-slide2.shapes.add_chart(XL_CHART_TYPE.PIE, Inches(1), Inches(2), Inches(6), Inches(4), pie_data)
+slide2.shapes.PIE, Inches(1), Inches(2), Inches(6), Inches(4), pie_data)
 # ...
 prs.save("output/sales-report/presentation.pptx")
 ```
@@ -306,12 +306,11 @@ const theme = {
 // ...
 // Slide 1: 封面
 const s1 = pptx.addSlide();
-s1.background = { color: theme.primary };
 s1.addText("2024年Q3业务汇报", {
   x: 1, y: 2.5, w: 11, h: 1.2, fontSize: 44, color: "FFFFFF", bold: true, fontFace: "微软雅黑",
 });
 s1.addText("持续高速增长 突破历史新高", {
-  x: 1, y: 3.8, w: 11, h: 0.8, fontSize: 24, color: theme.accent, fontFace: "微软雅黑",
+  x: 1, y: 3.8, w: 11, h: 0.accent, fontFace: "微软雅黑",
 });
 s1.addText("汇报人: 张明  |  2024年10月15日", {
   x: 1, y: 5.5, w: 11, h: 0.5, fontSize: 18, color: theme.light, fontFace: "微软雅黑",
@@ -320,7 +319,7 @@ s1.addText("汇报人: 张明  |  2024年10月15日", {
 // Slide 2: 议程
 const s2 = pptx.addSlide();
 s2.addText("议程", {
-  x: 0.5, y: 0.3, w: 12, h: 0.8, fontSize: 36, color: theme.primary, bold: true, fontFace: "微软雅黑",
+  x: 0.5, y: 0.3, w: 12, h: 0.primary, bold: true, fontFace: "微软雅黑",
 });
 s2.addText([
   { text: "1. 业绩概览\n", options: { fontSize: 24, color: theme.text, fontFace: "微软雅黑" } },
@@ -333,7 +332,7 @@ s2.addText([
 // Slide 4: 营收趋势柱状图
 const s4 = pptx.addSlide();
 s4.addText("季度营收趋势(万元)", {
-  x: 0.5, y: 0.3, w: 12, h: 0.8, fontSize: 36, color: theme.primary, bold: true, fontFace: "微软雅黑",
+  x: 0.5, y: 0.3, w: 12, h: 0.primary, bold: true, fontFace: "微软雅黑",
 });
 s4.addChart(pptx.ChartType.bar, [{
   name: "营收(万元)",
@@ -356,7 +355,7 @@ s4.addText("数据来源: 财务部 2024年Q3报表", {
 // Slide 5: 用户增长折线图
 const s5 = pptx.addSlide();
 s5.addText("用户增长趋势(万人)", {
-  x: 0.5, y: 0.3, w: 12, h: 0.8, fontSize: 36, color: theme.primary, bold: true, fontFace: "微软雅黑",
+  x: 0.5, y: 0.3, w: 12, h: 0.primary, bold: true, fontFace: "微软雅黑",
 });
 s5.addChart(pptx.ChartType.line, [{
   name: "用户数(万)",
@@ -366,17 +365,14 @@ s5.addChart(pptx.ChartType.line, [{
   x: 1, y: 1.5, w: 11, h: 5,
   showValue: true,
   showLegend: false,
-  chartColors: [theme.primary],
   lineSize: 3,
   lineDataSymbolSize: 10,
-  catAxisLabelColor: theme.text,
-  valAxisLabelColor: theme.text,
 });
 // ...
 // Slide 6: 产品线分布饼图
 const s6 = pptx.addSlide();
 s6.addText("产品线营收占比", {
-  x: 0.5, y: 0.3, w: 12, h: 0.8, fontSize: 36, color: theme.primary, bold: true, fontFace: "微软雅黑",
+  x: 0.5, y: 0.3, w: 12, h: 0.primary, bold: true, fontFace: "微软雅黑",
 });
 s6.addChart(pptx.ChartType.pie, [{
   name: "产品线占比",
@@ -416,7 +412,7 @@ pptx.writeFile({ fileName: "output/q3-report/presentation.pptx" });
 ```javascript
 const PptxGenJS = require("pptxgenjs");
 const pptx = new PptxGenJS();
-pptx.defineLayout({ name: "WIDE", width: 13.33, height: 7.5 });
+pptx.33, height: 7.5 });
 pptx.layout = "WIDE";
 // ...
 const theme = {
@@ -429,12 +425,11 @@ const theme = {
 // ...
 // Slide 1: 封面
 const s1 = pptx.addSlide();
-s1.background = { color: theme.primary };
 s1.addText("Python装饰器入门", {
   x: 1, y: 2.5, w: 11, h: 1.2, fontSize: 44, color: "FFFFFF", bold: true, fontFace: "微软雅黑",
 });
 s1.addText("从概念到实战,30分钟掌握装饰器", {
-  x: 1, y: 4, w: 11, h: 0.8, fontSize: 24, color: theme.accent, fontFace: "微软雅黑",
+  x: 1, y: 4, w: 11, h: 0.accent, fontFace: "微软雅黑",
 });
 s1.addText("讲师: 李老师  |  Python进阶课程", {
   x: 1, y: 5.5, w: 11, h: 0.5, fontSize: 18, color: "CCCCCC", fontFace: "微软雅黑",
@@ -442,9 +437,8 @@ s1.addText("讲师: 李老师  |  Python进阶课程", {
 // ...
 // Slide 2: 什么是装饰器
 const s2 = pptx.addSlide();
-s2.background = { color: theme.bg };
 s2.addText("什么是装饰器?", {
-  x: 0.5, y: 0.3, w: 12, h: 0.8, fontSize: 36, color: theme.primary, bold: true, fontFace: "微软雅黑",
+  x: 0.5, y: 0.3, w: 12, h: 0.primary, bold: true, fontFace: "微软雅黑",
 });
 s2.addText([
   { text: "装饰器本质", options: { fontSize: 28, color: theme.accent, bold: true, fontFace: "微软雅黑", breakLine: true } },
@@ -455,7 +449,6 @@ s2.addText([
 // ...
 // Slide 3: 代码示例(深色背景模拟代码块)
 const s3 = pptx.addSlide();
-s3.background = { color: theme.code };
 s3.addText("基本语法", {
   x: 0.5, y: 0.3, w: 12, h: 0.6, fontSize: 28, color: "00FF88", bold: true, fontFace: "Consolas",
 });
@@ -469,9 +462,8 @@ s3.addText(
 // ...
 // Slide 4: 常用场景对比表
 const s4 = pptx.addSlide();
-s4.background = { color: theme.bg };
 s4.addText("装饰器常用场景", {
-  x: 0.5, y: 0.3, w: 12, h: 0.8, fontSize: 36, color: theme.primary, bold: true, fontFace: "微软雅黑",
+  x: 0.5, y: 0.3, w: 12, h: 0.primary, bold: true, fontFace: "微软雅黑",
 });
 s4.addTable([
   [{ text: "场景", options: { bold: true, color: "FFFFFF", fill: { color: theme.primary } } },
@@ -624,7 +616,7 @@ const theme = {
 // 批量生成函数
 function generateRegionPPT(region) {
   const pptx = new PptxGenJS();
-  pptx.defineLayout({ name: "WIDE", width: 13.33, height: 7.5 });
+  pptx.33, height: 7.5 });
   pptx.layout = "WIDE";
 // ...
   // 根据排名选择颜色
@@ -632,7 +624,6 @@ function generateRegionPPT(region) {
 // ...
   // 封面页
   const s1 = pptx.addSlide();
-  s1.background = { color: theme.primary };
   s1.addText(`${region.name}区域`, {
     x: 1, y: 2, w: 11, h: 1.2, fontSize: 44, color: "FFFFFF", bold: true, fontFace: "微软雅黑",
   });
@@ -646,7 +637,7 @@ function generateRegionPPT(region) {
   // 业绩数据页
   const s2 = pptx.addSlide();
   s2.addText("核心业绩指标", {
-    x: 0.5, y: 0.3, w: 12, h: 0.8, fontSize: 36, color: theme.primary, bold: true, fontFace: "微软雅黑",
+    x: 0.5, y: 0.3, w: 12, h: 0.primary, bold: true, fontFace: "微软雅黑",
   });
 // ...
   // 三个数据卡片
@@ -654,7 +645,7 @@ function generateRegionPPT(region) {
   const cardH = 2.5;
   // 销售额卡片
   s2.addText("Q3销售额", {
-    x: 0.5, y: cardY, w: 3.8, h: 0.5, fontSize: 18, color: theme.text, fontFace: "微软雅黑",
+    x: 0.5, y: cardY, w: 3.8, h: 0.text, fontFace: "微软雅黑",
     align: "center", fill: { color: "F0F0F0" },
   });
   s2.addText(`${region.sales}万元`, {
@@ -664,17 +655,17 @@ function generateRegionPPT(region) {
 // ...
   // 增长率卡片
   s2.addText("同比增长", {
-    x: 4.7, y: cardY, w: 3.8, h: 0.5, fontSize: 18, color: theme.text, fontFace: "微软雅黑",
+    x: 4.7, y: cardY, w: 3.8, h: 0.text, fontFace: "微软雅黑",
     align: "center", fill: { color: "F0F0F0" },
   });
   s2.addText(`${region.growth}%`, {
-    x: 4.7, y: cardY + 0.6, w: 3.8, h: 1.5, fontSize: 40, color: theme.accent, bold: true,
+    x: 4.7, y: cardY + 0.6, w: 3.8, h: 1.accent, bold: true,
     fontFace: "微软雅黑", align: "center", fill: { color: "F0F0F0" },
   });
 // ...
   // 排名卡片
   s2.addText("全国排名", {
-    x: 8.9, y: cardY, w: 3.8, h: 0.5, fontSize: 18, color: theme.text, fontFace: "微软雅黑",
+    x: 8.9, y: cardY, w: 3.8, h: 0.text, fontFace: "微软雅黑",
     align: "center", fill: { color: "F0F0F0" },
   });
   s2.addText(`第${region.rank}名`, {

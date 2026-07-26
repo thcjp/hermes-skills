@@ -1,9 +1,8 @@
----
-slug: "file-organizer-zh"
+---slug: "file-organizer-zh"
 name: "file-organizer-zh"
 version: 1.0.1
 displayName: "文件"
-summary: "文件整理器，按类型自动分类（中文版）。文件整理器，按类型自动分类（中文版） 核心能力: - 其他工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优化升级 - 移除风险代码,增强"
+summary: "文件整理器，按类型自动"
 summary_zh: "文件整理器，按类型自动分类（中文版）。文件整理器，按类型自动分类（中文版） 核心能力: - 其他工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优化升级 - 移除风险代码,增强"
 license: "MIT"
 description: |-
@@ -34,9 +33,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# File Organizer
+category: "Automation"---# File Organizer
 
 ## 付费版专享能力
 
@@ -85,6 +82,8 @@ category: "Automation"
 | 参数名 | 类型 | 必填 | 说明 |
 |---:|---:|---:|---:|
 
+| instruction | string | 是 | 用户指令文本 |
+| context | string | 否 | 上下文信息 |
 ## 输出格式
 
 ```json

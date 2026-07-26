@@ -74,7 +74,6 @@ category: "Development"
 每个任务: 独立会话,完成后通知
 ```
 
-**输出**: 返回多任务并行委派的处理结果,包含执行状态码、结果数据和执行日志.
 ### 2. 任务队列管理
 | 功能 | 说明 |
 |:-----|:-----|
@@ -94,7 +93,6 @@ category: "Development"
 并行度: 2(同时执行 2 个无依赖任务)
 ```
 
-**输入**: 用户提供任务队列管理所需的指令和必要参数.
 ### 3. 写入保护与权限治理
 ```json
 {
@@ -116,9 +114,6 @@ category: "Development"
 }
 ```
 
-**输入**: 用户提供写入保护与权限治理所需的指令和必要参数.
-**处理**: 解析写入保护与权限治理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回写入保护与权限治理的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `写入保护与权限治理` 选项
 
@@ -132,8 +127,6 @@ category: "Development"
 汇总: 所有任务完成后生成集成报告
 ```
 
-**输入**: 用户提供团队协作会话所需的指令和必要参数.
-**处理**: 解析团队协作会话的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 5. 质量审计与代码审查
 ```bash
 # 委派后自动审计
@@ -264,7 +257,6 @@ cat > .delegate-toolkit/write-guard.json << 'EOF'
 {
   "protected": [".skill-platform/", "**/auth/**", "**/*.env"],
   "allowed": ["projects/**", "workspace/**"],
-  "log": ".delegate-toolkit/logs/write-audit.log"
 }
 EOF
 ```
@@ -396,7 +388,6 @@ export CLAUDE_CODE_API_KEY="your-api-key"
       "**/config/production/**"
     ],
     "allowed_paths": ["projects/**", "workspace/**"],
-    "log_file": ".delegate-toolkit/logs/write-audit.log"
   },
   "audit": {
     "enabled": true,

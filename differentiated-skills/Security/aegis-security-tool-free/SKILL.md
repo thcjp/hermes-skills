@@ -62,7 +62,6 @@ category: "Security"
 curl -s "https://aegis402.xyz/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454e4438f44e?chain_id=1" | jq
 # ...
 # 查询Base链地址信誉
-curl -s "https://aegis402.xyz/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454e4438f44e?chain_id=8453" | jq
 ```
 
 返回示例:
@@ -82,7 +81,6 @@ curl -s "https://aegis402.xyz/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454
 }
 ```
 
-**输入**: 用户提供地址信誉查询所需的指令和必要参数.
 **处理**: 解析地址信誉查询的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回地址信誉查询的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -92,10 +90,9 @@ curl -s "https://aegis402.xyz/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454
 检测代币是否存在蜜罐风险(买入后无法卖出)、无限增发、隐藏转账等恶意行为.
 ```bash
 # 检测ERC20代币安全性
-curl -s "https://aegis402.xyz/v1/check-token/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48?chain_id=1" | jq
+xyz/v1/check-token/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48?chain_id=1" | jq
 ```
 
-**输入**: 用户提供代币蜜罐检测所需的指令和必要参数.
 **处理**: 解析代币蜜罐检测的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回代币蜜罐检测的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -104,7 +101,6 @@ curl -s "https://aegis402.xyz/v1/check-token/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3
 
 实时查看当日剩余免费检查次数.
 ```bash
-curl -s "https://aegis402.xyz/v1/usage" | jq
 ```
 
 返回示例:
@@ -122,7 +118,6 @@ curl -s "https://aegis402.xyz/v1/usage" | jq
 }
 ```
 
-**输入**: 用户提供免费额度查询所需的指令和必要参数.
 **处理**: 解析免费额度查询的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费额度查询的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：区块链地址与代币、安全检查工具、支持地址信誉查询、代币蜜罐检测、适合个人开发者日、常交易前快速验证、区块链安全扫描免、为个人用户提供地、址信誉查询、代币安全检测等核、心能力、核心能力、地址风险检查、免费额度查询、风险等级分级、适用场景、DeFi、交易前验证、代币安全排查、收款地址风险评估、差异化、免费版聚焦核心检、查能力、次免费额度、适合个人用户日常、适用关键词、区块链安全、地址检查、代币扫描、蜜罐检测、blockchain、scan、token、address等.
@@ -166,7 +161,7 @@ fi
 # 收款地址风险评估
 RECEIVER="0x742d35Cc6634C0532925a3b844Bc454e4438f44e"
 # ...
-RESULT=$(curl -s "https://aegis402.xyz/v1/check-address/${RECEIVER}?chain_id=1")
+xyz/v1/check-address/${RECEIVER}?chain_id=1")
 RISK=$(echo "$RESULT" | jq -r '.risk_level')
 # ...
 case $RISK in
@@ -219,13 +214,12 @@ curl -s https://aegis402.xyz/health
 ### 第二步:查询免费额度
 
 ```bash
-curl -s "https://aegis402.xyz/v1/usage" | jq '.freeTier'
+xyz/v1/usage" | jq '.freeTier'
 ```
 
 ### 第三步:执行首次地址检查
 
 ```bash
-curl -s "https://aegis402.xyz/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454e4438f44e?chain_id=1" | jq
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -241,7 +235,7 @@ curl -s "https://aegis402.xyz/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454
 FINGERPRINT="user-$(whoami)-$(hostname)"
 # ...
 curl -s -H "X-Client-Fingerprint: ${FINGERPRINT}" \
-  "https://aegis402.xyz/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454e4438f44e?chain_id=1"
+  "https://aegis402.chain_id=1"
 ```
 
 ### 支持的链
@@ -297,7 +291,6 @@ check_before_transact() {
     RESULT=$(curl -s -H "X-Client-Fingerprint: ${fingerprint}" \
         "https://aegis402.xyz/v1/check-address/${to_addr}?chain_id=${chain}")
 # ...
-    RISK=$(echo "$RESULT" | jq -r '.risk_level')
     echo "地址风险等级: ${RISK}"
 # ...
     if [ "$RISK" = "CRITICAL" ] || [ "$RISK" = "HIGH" ]; then

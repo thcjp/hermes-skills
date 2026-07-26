@@ -59,17 +59,14 @@ category: "Knowledge"
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供AI深度摘要所需的指令和必要参数.
 **处理**: 解析AI深度摘要的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回AI深度摘要的响应数据,包含状态码、结果和日志.
 ### 2. 多源聚合
 
-**输入**: 用户提供多源聚合所需的指令和必要参数.
 **处理**: 解析多源聚合的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多源聚合的响应数据,包含状态码、结果和日志.
 ### 3. 定时推送
 
-**输入**: 用户提供定时推送所需的指令和必要参数.
 **处理**: 解析定时推送的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时推送的响应数据,包含状态码、结果和日志.
 ### 4. 团队共享
@@ -120,7 +117,6 @@ class TeamSharing:
 # ...
     def get_team_digest(self, team_name):
         """获取团队共享摘要"""
-        if team_name not in self.team_subscriptions:
             return "团队不存在"
 # ...
         team = self.team_subscriptions[team_name]
@@ -154,14 +150,12 @@ team.share_entry(
 print(team.get_team_digest("engineering"))
 ```
 
-**输入**: 用户提供团队共享所需的指令和必要参数.
 **处理**: 解析团队共享的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回团队共享的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 5. 个性化推荐
 
-**输入**: 用户提供个性化推荐所需的指令和必要参数.
 **处理**: 解析个性化推荐的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回个性化推荐的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级订阅摘要专、团队共享与个性化、订阅摘要助手专业、版是面向企业级场、景的完整、RSS、订阅内容管理与分、析工具、在免费版基础筛选、能力之上、全文搜索增强、阅读统计分析七大、高级能力、Use、when、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数、据处理、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -255,9 +249,8 @@ sources:
   - name: 技术博客
     url: https://example.com/tech-feed.xml
   - name: 行业资讯
-    url: https://example.com/industry-feed.xml
+com/industry-feed.xml
   - name: 学术论文
-    url: https://example.com/papers-feed.xml
 # ...
 ai_digest:
   model: gpt-4o
@@ -290,7 +283,6 @@ team:
     - name: engineering
       members: [alice, bob, charlie]
       shared_feeds:
-        - https://tech-feed.com/rss
     - name: product
       members: [dave, eve]
       shared_feeds:
@@ -327,7 +319,7 @@ TEAM_GUIDELINES = {
 ```python
 def update_preferences_based_on_history(recommender):
     """基于阅读历史自动更新偏好"""
-    patterns = recommender.analyze_reading_patterns()
+analyze_reading_patterns()
     if patterns['most_read_theme']:
         recommender.update_preferences({
             'themes': [patterns['most_read_theme']]
@@ -417,8 +409,6 @@ def update_preferences_based_on_history(recommender):
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

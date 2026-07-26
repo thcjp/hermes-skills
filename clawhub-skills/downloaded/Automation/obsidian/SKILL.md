@@ -111,9 +111,6 @@ Search
 
 Create
 
-* `obsidian-cli create "Folder/New note" --content "..." --open`
-* Requires Obsidian URI handler (`obsidian://…`) working (Obsidian installed).
-* Avoid creating notes under “hidden” dot-folders (e.g. `.s
 ```
 
 ## 错误处理

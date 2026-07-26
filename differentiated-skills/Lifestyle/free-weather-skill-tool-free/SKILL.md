@@ -60,21 +60,21 @@ category: "Automation"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -247,7 +247,6 @@ class WeatherTool:
 # ...
     def detailed(self, city):
         """详细查询"""
-        resp = requests.get(
             f"{self.base_url}/{city}",
             params={"format": "j1"},
             timeout=30,
@@ -265,7 +264,6 @@ class WeatherTool:
 # ...
     def fallback(self, lat, lon):
         """Open-Meteo 备选"""
-        resp = requests.get(
             self.fallback_url,
             params={"latitude": lat, "longitude": lon, "current_weather": True},
             timeout=30,
@@ -287,14 +285,12 @@ case "$FORMAT" in
         curl -s "wttr.in/$CITY?format=3&lang=zh"
         ;;
     "json")
-        curl -s "wttr.in/$CITY?format=j1"
         ;;
     "png")
-        curl -s "wttr.in/$CITY.png" -o "/tmp/weather_$CITY.png"
+in/$CITY.png" -o "/tmp/weather_$CITY.png"
         echo "图片已保存到 /tmp/weather_$CITY.png"
         ;;
     "full"|"default")
-        curl -s "wttr.in/$CITY?T&lang=zh"
         ;;
     *)
         echo "用法: weather <city> [short|json|png|full]"
@@ -357,7 +353,6 @@ def robust_weather(city):
     except Exception:
         # 切换到 Open-Meteo
         coords = get_coordinates(city)
-        return requests.get(
             "https://api.open-meteo.com/v1/forecast",
             params={"latitude": coords[0], "longitude": coords[1], "current_weather": True},
             timeout=30,

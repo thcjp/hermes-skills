@@ -139,7 +139,6 @@ const result = await skills.contextVaultManager({
 | 长期记忆 | long-term | 内存+磁盘 | 永久存储 | 用户偏好、历史事实 |
 | 重要记忆 | important | 内存+磁盘 | 永不清理 | 关键决策、核心配置 |
 
-**输入**: 用户提供三层记忆分层所需的指令和必要参数.
 **处理**: 解析三层记忆分层的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回三层记忆分层的响应数据,包含状态码、结果和日志.
 ### 2. 关键词检索
@@ -148,7 +147,7 @@ const result = await skills.contextVaultManager({
 
 ```typescript
 // 关键词搜索
-const result = await skills.contextVaultManager({
+contextVaultManager({
   action: "search",
   query: "用户喜好",
   limit: 3
@@ -162,7 +161,6 @@ const preferences = await skills.contextVaultManager({
 });
 ```
 
-**输入**: 用户提供关键词检索所需的指令和必要参数.
 **处理**: 解析关键词检索的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回关键词检索的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -180,7 +178,6 @@ const summary = await skills.contextVaultManager({
 });
 ```
 
-**输入**: 用户提供手动摘要生成所需的指令和必要参数.
 **处理**: 解析手动摘要生成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回手动摘要生成的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -203,7 +200,6 @@ await skills.contextVaultManager({
 });
 ```
 
-**输入**: 用户提供持久化存储所需的指令和必要参数.
 **处理**: 解析持久化存储的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回持久化存储的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -219,7 +215,6 @@ await skills.contextVaultManager({
 
 ---
 
-**输入**: 用户提供自动清理机制所需的指令和必要参数.
 **处理**: 解析自动清理机制的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自动清理机制的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：智能分层记忆管理、重要三层架构、占用降低、上下文保险库免费、版解决长会话、Agent、上下文溢出、记忆混乱、的核心痛点、采用短期、重要三层记忆分层、自动清理过期短期、避免上下文窗口被、无效信息占满、Use、when、需要项目管理、任务规划、进度跟踪、团队协作时使用、不适用于实际人员、绩效评估、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -246,7 +241,7 @@ await skills.contextVaultManager({
 });
 // ...
 // 上下文溢出时生成摘要
-const summary = await skills.contextVaultManager({
+contextVaultManager({
   action: "summarize",
   typeFilter: "short-term",
   maxTokens: 500
@@ -276,7 +271,7 @@ await skills.contextVaultManager({
 });
 // ...
 // 检索相关记忆
-const result = await skills.contextVaultManager({
+contextVaultManager({
   action: "search",
   query: "收费模式",
   typeFilter: "important"
@@ -298,7 +293,7 @@ await skills.contextVaultManager({
 // 加载特定用户的记忆
 await skills.contextVaultManager({
   action: "load",
-  persistPath: `./customers/${userId}-memory.json`
+  persistPath: `.json`
 });
 ```
 
@@ -417,7 +412,7 @@ await skills.contextVaultManager({
 });
 
 // 搜索记忆
-const result = await skills.contextVaultManager({
+contextVaultManager({
   action: "search",
   query: "用户喜好",
   limit: 3

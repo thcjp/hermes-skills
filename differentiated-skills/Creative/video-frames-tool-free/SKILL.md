@@ -76,7 +76,6 @@ category: "Creative"
 | 水印添加 | 自定义水印与位置 | 不支持 |
 | 自定义分辨率 | 输出指定分辨率 | 不支持 |
 
-**输入**: 用户提供能力清单所需的指令和必要参数.
 **处理**: 解析能力清单的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回能力清单的响应数据,包含状态码、结果和日志.
 ### 工作流程
@@ -100,23 +99,20 @@ category: "Creative"
 返回结果路径供用户查看
 ```
 
-**输入**: 用户提供工作流程所需的指令和必要参数.
 **处理**: 解析工作流程的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回工作流程的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级视频帧提取、支持单帧抓取与时、间点截图、适合个人创作者快、速生成缩略图、视频帧提取免费版、专注于为个人用户、提供简洁高效的视、频帧抓取能力、核心能力、单帧精准提取、指定时间点抓取、首帧快速抓取、一秒生成预览图、输出格式切换、基础缩略图批量生等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ### 核心功能执行(补充)
 执行核心功能执行操作,使用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
-**处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
-**输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
+
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
@@ -165,8 +161,8 @@ category: "Creative"
 
 ```bash
 {baseDir}/（请参考skill目录中的脚本文件） /videos/tutorial.mp4 --time 00:02:15 --out /tmp/step-1.png
-{baseDir}/（请参考skill目录中的脚本文件） /videos/tutorial.mp4 --time 00:05:30 --out /tmp/step-2.png
-{baseDir}/（请参考skill目录中的脚本文件） /videos/tutorial.mp4 --time 00:08:45 --out /tmp/step-3.png
+mp4 --time 00:05:30 --out /tmp/step-2.png
+mp4 --time 00:08:45 --out /tmp/step-3.png
 ```
 
 ## 不适用场景
@@ -204,7 +200,7 @@ ffmpeg -version
 抓取第 10 秒的画面：
 
 ```bash
-{baseDir}/（请参考skill目录中的脚本文件） /path/to/video.mp4 --time 00:00:10 --out /tmp/frame-10s.jpg
+mp4 --time 00:00:10 --out /tmp/frame-10s.jpg
 ```
 
 ### 第四步：生成缩略图
@@ -212,7 +208,7 @@ ffmpeg -version
 为长视频生成预览缩略图：
 
 ```bash
-{baseDir}/（请参考skill目录中的脚本文件） /path/to/video.mp4 --thumbs 8 --out /tmp/thumbs/
+mp4 --thumbs 8 --out /tmp/thumbs/
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -259,7 +255,7 @@ video_frames_free:
 {baseDir}/（请参考skill目录中的脚本文件） video.mp4 --time 00:00:05 --out /tmp/share.jpg
 # ...
 # UI 设计稿用 PNG（无损画质）
-{baseDir}/（请参考skill目录中的脚本文件） video.mp4 --time 00:00:05 --out /tmp/ui-frame.png
+mp4 --time 00:00:05 --out /tmp/ui-frame.png
 ```
 
 ### 3. 缩略图数量建议
@@ -332,7 +328,8 @@ ffmpeg -ss 00:00:10 -i video.mp4 -vf scale=1280:-1 -frames:v 1 output.jpg
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3 | 运行时 | 可选 | python.org 官网下载 |
 
-#### ffmpeg 安装命令
+#
+### ffmpeg 安装命令
 
 ```bash
 # Windows (PowerShell)

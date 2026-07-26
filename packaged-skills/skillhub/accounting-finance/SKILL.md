@@ -160,7 +160,7 @@ def batch_analyze(targets, max_workers=10):
             try:
                 results.append(future.result())
             except Exception as e:
-                results.append({"code": futures[future], "error": str(e)})
+append({"code": futures[future], "error": str(e)})
     df = pd.DataFrame(results)
     df.to_excel("./reports/batch_analysis_matrix.xlsx", index=False)
     return df

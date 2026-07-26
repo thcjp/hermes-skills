@@ -1,9 +1,8 @@
----
-slug: "doubao-chat"
+---slug: "doubao-chat"
 name: "doubao-chat"
 version: 1.0.1
 displayName: "聊天"
-summary: "豆包大模型对话（免费 API，支持联网搜索）。豆包大模型对话（免费 API，支持联网搜索） 核心能力: - 集成工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优化升级 - 移"
+summary: "豆包大模型对话（免费 "
 summary_zh: "豆包大模型对话（免费 API，支持联网搜索）。豆包大模型对话（免费 API，支持联网搜索） 核心能力: - 集成工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优化升级 - 移"
 license: "MIT"
 description: |-
@@ -36,9 +35,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# Doubao Chat
+category: "Automation"---# Doubao Chat
 
 ## 付费版专享能力
 
@@ -95,6 +92,8 @@ node （请参考skill目录中的脚本文件） "你好"
 | 参数名 | 类型 | 必填 | 说明 |
 |---:|---:|---:|---:|
 
+| instruction | string | 是 | 用户指令文本 |
+| context | string | 否 | 上下文信息 |
 ## 输出格式
 
 ```json

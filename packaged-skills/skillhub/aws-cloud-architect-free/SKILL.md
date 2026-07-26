@@ -50,8 +50,7 @@ aws ec2 describe-vpcs --query 'Vpcs[].{ID:VpcId,CIDR:CidrBlock,Default:IsDefault
 ```
 
 确认: Region(默认 us-east-1)、账户类型、现有基础设施.
-**输入**: 用户提供先验证账户上下文所需的指令和必要参数.
-**输出**: 返回先验证账户上下文的处理结果,包含执行状态码、结果数据和执行日志.
+
 ### 2. 成本优先架构
 | 阶段 | 推荐技术栈 | 月成本 |
 |:-----|:-----|:-----|
@@ -59,17 +58,12 @@ aws ec2 describe-vpcs --query 'Vpcs[].{ID:VpcId,CIDR:CidrBlock,Default:IsDefault
 | Growth(1-10k) | ALB + ASG + RDS Multi-AZ | ~$200 |
 
 **默认使用最小可行实例。** 扩容容易,缩容浪费钱.
-**处理**: 解析成本优先架构的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回成本优先架构的处理结果,包含执行状态码、结果数据和执行日志.
 ### 3. 默认安全
 - 最小权限 IAM
 - 静态加密(KMS 默认密钥起)
 - VPC 隔离(数据库不入公有子网)
 - 安全组入站默认全拒绝
 
-**输入**: 用户提供默认安全所需的指令和必要参数.
-**处理**: 解析默认安全的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回默认安全的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -169,7 +163,7 @@ aws rds create-db-instance --db-instance-identifier mydb \
   --db-instance-class db.t3.micro --engine postgres --allocated-storage 20
 # 为 S3 创建 VPC 终端节点避免 NAT 费用
 aws ec2 create-vpc-endpoint --vpc-id vpc-xxx \
-  --service-name com.amazonaws.us-east-1.s3 --route-table-ids rtb-xxx
+amazonaws.us-east-1.s3 --route-table-ids rtb-xxx
 ```
 
 ### 案例2: 只读资源盘点

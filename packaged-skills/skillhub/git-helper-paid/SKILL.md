@@ -141,20 +141,9 @@ class ConflictResolver:
 - 关键参数: `自动修复建议` 选项
 - 处理流程: 接收输入 -> 执行自动修复建议 -> 返回结果
 - 输入: 用户提供自动修复建议所需的参数和指令
-- 输出: 返回自动修复建议的处理结果,包含执行状态码、结果数据和执行日志
 
 ### 3. 批量仓库诊断
-> 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供批量仓库诊断所需的指令和必要参数.
-**处理**: 解析批量仓库诊断的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回批量仓库诊断的处理结果,包含执行状态码、结果数据和执行日志.
-**输入**: 用户提供自动化故障恢复所需的指令和必要参数.
-**处理**: 解析自动化故障恢复的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回自动化故障恢复的处理结果,包含执行状态码、结果数据和执行日志.
-**输入**: 用户提供团队知识库所需的指令和必要参数.
-**处理**: 解析团队知识库的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回团队知识库的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -176,7 +165,6 @@ echo "1. 分析冲突..."
 python3 -c "
 from conflict_analyzer import ConflictAnalyzer
 import json
-analysis = ConflictAnalyzer.analyze_conflicts()
 print(json.dumps(analysis, indent=2, ensure_ascii=False))
 print(f\"\\n冲突总数: {analysis['summary']['total_conflicts']}\")
 print(f\"可自动解决: {analysis['summary']['auto_resolvable']}\")

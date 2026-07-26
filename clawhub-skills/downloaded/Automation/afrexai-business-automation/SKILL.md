@@ -48,10 +48,9 @@ Score each process (0-3 per dimension):
 ## PHASE 2: WORKFLOW DESIGN
 ### Workflow Architecture Template
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### Common Workflow Patterns
-#### 1. Inbound Lead Processing
+#
+### 1. Inbound Lead Processing
 ```text
 Trigger: Form submission / Email / Chat
   → Validate & deduplicate
@@ -65,7 +64,8 @@ Trigger: Form submission / Email / Chat
   → Update dashboard metrics
 ```
 
-#### 2. Invoice & Payment Processing
+#
+### 2. Invoice & Payment Processing
 ```text
 Trigger: Invoice received (email attachment / upload)
   → Extract data (vendor, amount, line items, due date)
@@ -79,7 +79,8 @@ Trigger: Invoice received (email attachment / upload)
   → Send payment confirmation
 ```
 
-#### 3. Employee Onboarding
+#
+### 3. Employee Onboarding
 ```text
 Trigger: Offer letter signed
   → Create accounts (email, Slack, GitHub, etc.)
@@ -95,7 +96,8 @@ Trigger: Offer letter signed
   → Notify hiring manager: "All set for [date]"
 ```
 
-#### 4. Report Generation & Distribution
+#
+### 4. Report Generation & Distribution
 ```text
 Trigger: Schedule (weekly Monday 8 AM)
   → Fetch data from sources (DB, API, spreadsheet)
@@ -110,7 +112,8 @@ Trigger: Schedule (weekly Monday 8 AM)
   → Archive report
 ```
 
-#### 5. Customer Support Escalation
+#
+### 5. Customer Support Escalation
 ```text
 Trigger: New support ticket
   → Classify (billing / technical / feature request / bug)
@@ -126,7 +129,8 @@ Trigger: New support ticket
     - If SLA breached → alert manager + customer update
 ```
 
-#### 6. Content Publishing Pipeline
+#
+### 6. Content Publishing Pipeline
 ```text
 Trigger: Content marked "Ready for Review"
   → Run quality checks (grammar, SEO score, links)
@@ -181,10 +185,9 @@ payload:
 
 ### Script Template (for complex steps)
 
-> 详细代码示例已移至 `references/detail.md`
-
 ### Integration Patterns
-#### API Integration Checklist
+#
+### API Integration Checklist
 * Authentication method documented (API key / OAuth / JWT)
 * Rate limits known and respected (add delays between calls)
 * Error responses handled (4xx = bad request, 5xx = retry)
@@ -194,15 +197,12 @@ payload:
 * Timeout set for all HTTP calls
 * Retry logic with exponential backoff
 
-#### Data Mapping Template
-
-> 详细代码示例已移至 `references/detail.md`
+#
+### Data Mapping Template
 
 ## PHASE 4: MONITORING & OPTIMIZATION
 ### Automation Health Dashboard
 Track these metrics for every automation:
-
-> 详细代码示例已移至 `references/detail.md`
 
 ### Weekly Automation Review Checklist
 Every week, review your automations:

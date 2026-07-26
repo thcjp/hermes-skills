@@ -63,7 +63,6 @@ verify-claims batch status
 verify-claims batch export --format csv --output results.csv
 ```
 
-**输入**: 用户提供批量声明并行核查所需的指令和必要参数.
 **处理**: 解析批量声明并行核查的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量声明并行核查的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -90,7 +89,6 @@ verify-claims monitor status
 verify-claims monitor alerts --date $(date +%Y-%m-%d)
 ```
 
-**输入**: 用户提供定时监控与预警所需的指令和必要参数.
 **处理**: 解析定时监控与预警的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时监控与预警的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -109,7 +107,6 @@ verify-claims analyze batch \
 # ...
 ```
 
-**输入**: 用户提供深度分析报告所需的指令和必要参数.
 **处理**: 解析深度分析报告的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回深度分析报告的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -126,7 +123,6 @@ verify-claims knowledge add --category "health" --claim "已核查的声明" --v
 verify-claims knowledge query --keyword "疫苗" --category "health"
 ```
 
-**输入**: 用户提供团队协作所需的指令和必要参数.
 **处理**: 解析团队协作的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回团队协作的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -143,7 +139,6 @@ verify-claims config set-scoring \
   --weights '{"source_credibility": 0.3, "evidence_quality": 0.3, "consistency": 0.2, "recency": 0.2}'
 ```
 
-**输入**: 用户提供自定义核查规则所需的指令和必要参数.
 **处理**: 解析自定义核查规则的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自定义核查规则的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -162,7 +157,6 @@ verify-claims track visualize \
   --output spread_graph.html
 ```
 
-**输入**: 用户提供舆情追踪与虚假信息监控所需的指令和必要参数.
 **处理**: 解析舆情追踪与虚假信息监控的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回舆情追踪与虚假信息监控的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -175,7 +169,6 @@ verify-claims check --file article.txt
 verify-claims history --list
 ```
 
-**输入**: 用户提供完整兼容免费版所需的指令和必要参数.
 **处理**: 解析完整兼容免费版的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回完整兼容免费版的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级事实核查平、支持批量声明核查、深度分析与团队协、事实核查助手专业、面向企业团队和专、业研究人员提供深、度的事实核查能力、定时监控预警、团队协作等高级功、Use、when、模型调用、智能对话、Agent、LLM、应用时使用、不适用于需要、确定性的关键决策、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -213,7 +206,6 @@ verify-claims analyze deep \
 verify-claims track misinformation \
   --claim "虚假声明内容" \
   --period "2026-07-01:2026-07-17" \
-  --output spread_analysis.json
 # ...
 verify-claims report crisis \
   --analysis deep_analysis.html \
@@ -233,12 +225,10 @@ verify-claims batch check claims_batch.json \
   --min-sources 3
 # ...
 verify-claims report review \
-  --input batch_results.json \
   --output editorial_review.html \
   --threshold "confidence < 0.7"
 # ...
 verify-claims report flag \
-  --input batch_results.json \
   --criteria "verdict == 'mixed' OR confidence < 0.6" \
   --output manual_review_list.csv
 ```
@@ -395,9 +385,9 @@ verify-claims monitor start monitor.json
 
 ### 2. 批量核查的性能优化
 ```bash
-verify-claims batch check batch.json --concurrency 15
+json --concurrency 15
 # ...
-verify-claims batch check batch.json --cache-dir ./cache --skip-cached
+json --cache-dir ./cache --skip-cached
 ```
 
 ### 3. 监控预警的精细化配置
@@ -459,7 +449,6 @@ verify-claims config set-alerts \
 **A:** 专业版支持知识库的导入导出:
 
 ```bash
-verify-claims knowledge export --format json --output knowledge_base.json
 # ...
 verify-claims knowledge import --file external_kb.json
 ```

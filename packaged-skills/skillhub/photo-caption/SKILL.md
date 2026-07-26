@@ -68,22 +68,19 @@ category: "Automation"
 | Substack | 叙事性、散文感 | 2-4句内嵌配文 | 无标签 |
 | Pinterest | 描述性、可搜索 | 标题+描述(SEO优化) | 关键词替代标签 |
 
-**输入**: 用户提供一、13 个平台全覆盖(专业版独有 10 个平台)所需的指令和必要参数.
-**输出**: 返回一、13 个平台全覆盖(专业版独有 10 个平台)的处理结果,包含执行状态码、结果数据和执行日志。### 二、批量配文生成(专业版独有)
+### 二、批量配文生成(专业版独有)
 - 一组照片一次性生成全部平台配文
 - 支持系列作品统一风格
 - 批量导出配文清单
 - 按平台分组输出
 
-**输入**: 用户提供二、批量配文生成(专业版独有)所需的指令和必要参数.
-**处理**: 解析二、批量配文生成(专业版独有)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 三、品牌风格定制(专业版独有)
+### 三、品牌风格定制(专业版独有)
 - 自定义语气风格(如品牌调性:专业/活泼/文艺)
 - 自定义标签策略
 - 保存品牌风格配置
 - 多品牌快速切换
 
-**输入**: 用户提供三、品牌风格定制(专业版独有)所需的指令和必要参数.
-**处理**: 解析三、品牌风格定制(专业版独有)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### 四、编辑分析(专业版独有)
+### 四、编辑分析(专业版独有)
 - 配合 `photo-edit-analysis` 技能
 - 分析照片构图、曝光、色彩
 - 提供编辑改进建议
@@ -95,8 +92,6 @@ category: "Automation"
 - 地点相关的语言选择
 - 多语言批量生成
 
-**输入**: 用户提供五、多语言完整支持(专业版独有)所需的指令和必要参数.
-**处理**: 解析五、多语言完整支持(专业版独有)的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### Instagram
 
 针对Instagram,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.
@@ -195,7 +190,7 @@ Camera: Canon EOS 1V · Lens: 50mm · Film: Tri-X 400
 ```text
 Title: Desert road at dusk, Amboy California [Canon EOS 1V, Tri-X 400]
 # ...
-Comment: Shot this on Route 66 last weekend. The light changed fast, maybe a ten minute window. Tri-X 400 at box speed, developed in HC-110. The desert just keeps going out there.
+Comment: Shot this on Route 66 last weekend. The light changed fast, maybe a ten minute window. The desert just keeps going out there.
 Posted to r/analog
 ```
 
@@ -460,7 +455,6 @@ Instagram (中文):
 公路尽头是橘红色的天...
 # ...
 Instagram (English):
-The road ends where the sky turns orange...
 ```
 
 ### Q6: 免费版用户升级后使用方式有变化吗?

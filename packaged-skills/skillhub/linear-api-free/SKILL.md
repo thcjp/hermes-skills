@@ -80,7 +80,7 @@ curl -X POST "https://api.linear.app/graphql" \
   }'
 # ...
 # 查询Issue
-curl -X POST "https://api.linear.app/graphql" \
+linear.app/graphql" \
   -H "Authorization: YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -88,7 +88,7 @@ curl -X POST "https://api.linear.app/graphql" \
   }'
 # ...
 # 更新Issue
-curl -X POST "https://api.linear.app/graphql" \
+linear.app/graphql" \
   -H "Authorization: YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -96,11 +96,10 @@ curl -X POST "https://api.linear.app/graphql" \
   }'
 ```
 
-**处理**: 解析Issue管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 2. Cycle与Project管理
 ```bash
 # 获取当前活跃Cycle
-curl -X POST "https://api.linear.app/graphql" \
+linear.app/graphql" \
   -H "Authorization: YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -108,7 +107,7 @@ curl -X POST "https://api.linear.app/graphql" \
   }'
 # ...
 # 将Issue加入Cycle
-curl -X POST "https://api.linear.app/graphql" \
+linear.app/graphql" \
   -H "Authorization: YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -116,7 +115,7 @@ curl -X POST "https://api.linear.app/graphql" \
   }'
 # ...
 # 查询Project及其Issues
-curl -X POST "https://api.linear.app/graphql" \
+linear.app/graphql" \
   -H "Authorization: YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -124,15 +123,13 @@ curl -X POST "https://api.linear.app/graphql" \
   }'
 ```
 
-**处理**: 解析Cycle与Project管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Cycle与Project管理的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `cycle与project管理` 选项
 
 ### 3. 工作流与状态流转
 ```bash
 # 获取团队的工作流状态
-curl -X POST "https://api.linear.app/graphql" \
+linear.app/graphql" \
   -H "Authorization: YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -140,7 +137,7 @@ curl -X POST "https://api.linear.app/graphql" \
   }'
 # ...
 # 更新Issue状态
-curl -X POST "https://api.linear.app/graphql" \
+linear.app/graphql" \
   -H "Authorization: YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -148,7 +145,7 @@ curl -X POST "https://api.linear.app/graphql" \
   }'
 # ...
 # 添加标签
-curl -X POST "https://api.linear.app/graphql" \
+linear.app/graphql" \
   -H "Authorization: YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -156,15 +153,13 @@ curl -X POST "https://api.linear.app/graphql" \
   }'
 ```
 
-**处理**: 解析工作流与状态流转的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回工作流与状态流转的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `工作流与状态流转` 选项
 
 ### 4. GraphQL高级查询
 ```bash
 # 查询我的待办Issue
-curl -X POST "https://api.linear.app/graphql" \
+linear.app/graphql" \
   -H "Authorization: YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -172,7 +167,7 @@ curl -X POST "https://api.linear.app/graphql" \
   }'
 # ...
 # 批量查询多个团队Issue
-curl -X POST "https://api.linear.app/graphql" \
+linear.app/graphql" \
   -H "Authorization: YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -180,8 +175,6 @@ curl -X POST "https://api.linear.app/graphql" \
   }'
 ```
 
-**处理**: 解析GraphQL高级查询的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回GraphQL高级查询的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `graphql高级查询` 选项
 

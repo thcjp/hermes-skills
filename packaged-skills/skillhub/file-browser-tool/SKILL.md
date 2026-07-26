@@ -166,7 +166,6 @@ export API_KEY="your_api_key_here"
 ### 示例1：基础用法
 
 ```
-Resolve all paths relative to WORKSPACE=/home/alfred/.skill-platform/workspace. Sanitize inputs to prevent escapes or absolutes.
 # ...
 * To list directory: exec("（请参考skill目录中的脚本文件）", [rel_path]) → JSON {success: bool, data: array of names, error: string}
 * To read file: exec("（请参考skill目录中的脚本文件）", [rel_path]) → JSON {success: bool, data: string (text content), error: string}

@@ -128,13 +128,11 @@ export API_KEY="your_api_key_here"
 ### Port Scan(补充)
 # ...
 ```bash
-nmap -sV -sC -oN scan.txt TARGET
 ```
 # ...
 ### Vulnerability Scan(补充)
 # ...
 ```bash
-nuclei -u TARGET -o results.txt
 ```
 # ...
 ### SSL Check(补充)

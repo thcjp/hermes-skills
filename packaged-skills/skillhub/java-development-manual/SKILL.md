@@ -77,9 +77,9 @@ category: "Automation"
 ## 适用场景
 
 1. **命名检查** → 查看 [coding-convention.md](/api/v1/skills/java-development-manual/file?path=references%2Fcoding-convention.md&ownerHandle=shinelon) 的"命名风格"章节
-2. **并发问题** → 查看 [coding-convention.md](/api/v1/skills/java-development-manual/file?path=references%2Fcoding-convention.md&ownerHandle=shinelon) 的"并发处理"章节
-3. **异常处理** → 查看 [exception-log.md](/api/v1/skills/java-development-manual/file?path=references%2Fexception-log.md&ownerHandle=shinelon)
-4. **安全问题** → 查看 [security.md](/api/v1/skills/java-development-manual/file?path=references%2Fsecurity.md&ownerHandle=shinelon)
+2. **并发问题** → 查看 [coding-convention.md&ownerHandle=shinelon) 的"并发处理"章节
+3. **异常处理** → 查看 [exception-log.path=references%2Fexception-log.md&ownerHandle=shinelon)
+4. **安全问题** → 查看 [security.path=references%2Fsecurity.md&ownerHandle=shinelon)
 
 ## 使用流程
 
@@ -197,10 +197,9 @@ export API_KEY="your_api_key_here"
 ```
 ### 代码审查场景
 # ...
-1. **命名检查** → 查看 [coding-convention.md](/api/v1/skills/java-development-manual/file?path=references%2Fcoding-convention.md&ownerHandle=shinelon) 的"命名风格"章节
-2. **并发问题** → 查看 [coding-convention.md](/api/v1/skills/java-development-manual/file?path=references%2Fcoding-convention.md&ownerHandle=shinelon) 的"并发处理"章节
-3. **异常处理** → 查看 [exception-log.md](/api/v1/skills/java-development-manual/file?path=references%2Fexception-log.md&ownerHandle=shinelon)
-4. **安全问题** → 查看 [security.md](/api/v1/sk
+1.md&ownerHandle=shinelon) 的"命名风格"章节
+2.md&ownerHandle=shinelon) 的"并发处理"章节
+3.md&ownerHandle=shinelon)
 ```
 
 ## 常见问题

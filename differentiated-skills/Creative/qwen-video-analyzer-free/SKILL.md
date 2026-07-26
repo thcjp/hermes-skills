@@ -67,21 +67,21 @@ category: "Creative"
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -110,7 +110,6 @@ python （请参考skill目录中的脚本文件） /path/to/clip.mp4 \
   --prompt "请用一段话概括这段视频的主要内容"
 # ...
 # 识别视频中的关键场景
-python （请参考skill目录中的脚本文件） /path/to/clip.mp4 \
   --prompt "请详细描述视频中的每个场景,按时间顺序列出" \
   --fps 3
 ```
@@ -155,10 +154,8 @@ API Key 从 `~/.skill-platform/skill-platform.json` 的 `skills.dashscope.apiKey
 
 ```bash
 # 默认分析(使用默认提示词与 FPS=2)
-python （请参考skill目录中的脚本文件） /path/to/video.mp4
 # ...
 # 自定义提示词与帧率
-python （请参考skill目录中的脚本文件） /path/to/video.mp4 \
   --prompt "视频中出现了哪些人物和物体?" \
   --fps 5
 ```
@@ -172,7 +169,6 @@ python （请参考skill目录中的脚本文件） /path/to/video.mp4 \
 
 ```bash
 # 配置文件路径
-~/.skill-platform/skill-platform.json
 # ...
 # 参数说明
 | 参数 | 说明 | 默认值 | 必填 |
@@ -219,7 +215,7 @@ A:取决于视频长度与 FPS。1 分钟视频 FPS=2 约 10-30 秒;长视频可
 ### 已知限制
 A:API 调用受 DashScope 配额限制,免费版配额较低。如需高频调用或批量分析,请使用 PRO 版.
 ### Q6:API Key 如何获取?
-A:在阿里云 DashScope 平台注册并创建 API Key,写入配置文件 `~/.skill-platform/skill-platform.json`.
+A:在阿里云 DashScope 平台注册并创建 API Key,写入配置文件 `~/.json`.
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
 ## 依赖说明
 
@@ -237,7 +233,7 @@ A:在阿里云 DashScope 平台注册并创建 API Key,写入配置文件 `~/.sk
 | ffmpeg | 视频处理 | 推荐 | 包管理器安装 |
 
 ### API Key 配置
-- **配置文件**: `~/.skill-platform/skill-platform.json`
+- **配置文件**: `~/.json`
 - **字段路径**: `skills.dashscope.apiKey`
 - **获取方式**: 阿里云 DashScope 平台注册创建
 - **存储建议**: 配置文件设置合理权限(600),避免泄露

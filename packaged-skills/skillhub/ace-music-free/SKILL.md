@@ -78,9 +78,7 @@ export API_KEY="your_api_key_here"
 # ...
 > **升级提示*
 # ...
-**处理**: 解析参数指南（基础参数）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 # ...
-**输出**: 返回参数指南（基础参数）的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 
@@ -112,7 +110,6 @@ export API_KEY="your_api_key_here"
 # ...
 ```bash
 # 基础文本生成
-（请参考skill目录中的脚本文件） "upbeat pop song about summer" --duration 30 --output summer.mp3
 
 # 自定义歌词
 （请参考skill目录中的脚本文件） "gentle acoustic ballad, female vocal" \
@@ -130,7 +127,6 @@ export API_KEY="your_api_key_here"
 | 想要(续)| 参数 |
 |---:|---:|
 | 特定风格 | 在 prompt 中描述: "jazz, saxophone solo, smoky bar" |
-| 自定义歌词 | `--lyrics "[Verse]...[Chorus]..."` |
 | 无人声 | `--instrumental` |
 | 更长歌曲 | `--duration 120`（秒） |
 # ...
@@ -190,7 +186,6 @@ export API_KEY="your_api_key_here"
 ```bash
 （请参考skill目录中的脚本文件） "gentle acoustic ballad, female vocal, fingerstyle guitar" \
   --lyrics "[Verse 1]\nSunlight through the window\nCoffee getting cold\n\n[Chorus]\nWe are the dreamers\nChasing after light" \
-  --duration 60 --output ballad.mp3
 ```
 # ...
 **输出**: `ballad.mp3` 文件路径
@@ -246,7 +241,6 @@ A: 免费版（LITE）支持文本转音乐、自定义歌词、纯音乐三种�
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
 
-> 详细的输入输出格式请参考下方章节说明。
 > **想要翻唱、批量生成、精确 BPM 控制?** 升级到 [ace-music 付费版](#) 解锁全部高级能力.
 # ...
 ## 输出格式

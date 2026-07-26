@@ -236,7 +236,6 @@ python3 （请参考skill目录中的脚本文件） \
 
 ```bash
 python3 （请参考skill目录中的脚本文件） \
-  --config components.yaml \
   --output ./src/components/ \
   --storybook
 ```

@@ -160,16 +160,16 @@ class BatchChapterGenerator:
             f.write(self.to_markdown(chapters, highlights, notes))
 # ...
         # JSON 格式(程序处理)
-        with open(base / "chapters.json", "w", encoding="utf-8") as f:
+json", "w", encoding="utf-8") as f:
             json.dump({"chapters": chapters, "highlights": highlights},
                      f, ensure_ascii=False, indent=2)
 # ...
         # SRT 格式(字幕)
-        with open(base / "chapters.srt", "w", encoding="utf-8") as f:
+srt", "w", encoding="utf-8") as f:
             f.write(self.to_srt(chapters))
 # ...
         # ID3 标签(MP3 章节)
-        with open(base / "chapters.id3", "w", encoding="utf-8") as f:
+id3", "w", encoding="utf-8") as f:
             f.write(self.to_id3(chapters))
 # ...
         # 社媒文案
@@ -264,7 +264,6 @@ async def generate_chapters(
     try:
         import json
         with open(tmp_path, "r", encoding="utf-8") as f:
-            transcript = json.load(f)
 # ...
         result = ai_smart_chapters(transcript, target_chapters)
 # ...

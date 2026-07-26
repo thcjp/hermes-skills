@@ -1,9 +1,8 @@
----
-slug: "azure-infra-free"
+---slug: "azure-infra-free"
 name: "azure-infra-free"
 version: "2.0.0"
 displayName: "Azure免费版"
-summary: "通过本地 Azure CLI 只读查询 Azure 资源，基础盘点与健康检查。。Azure Infra Free 是 Azure Infra 技能的免费精简版，通过本地 Azure CLI（"
+summary: "通过本地 Azure "
 summary_zh: "通过本地 Azure CLI 只读查询 Azure 资源，基础盘点与健康检查。。Azure Infra Free 是 Azure Infra 技能的免费精简版，通过本地 Azure CLI（"
 license: "MIT"
 description: |-
@@ -38,9 +37,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Operations"
----
-# Azure Infra Free
+category: "Operations"---# Azure Infra Free
 
 ## 输入格式
 
@@ -183,27 +180,20 @@ export API_KEY="your_api_key_here"
 
 | 资源类型(续)| 只读命令 |
 |:---------|---------:|
-| 资源组 | `az group list --query "[].{name:name,location:location}" -o table` |
-| 虚拟机 | `az vm list --show-details --query "[].{name:name,rg:resourceGroup,state:pow
+{name:name,location:location}" -o table` |
+{name:name,rg:resourceGroup,state:pow
 
 **输入**: 用户提供基础查询命令相关的配置参数、输入数据和处理选项.
-**处理**: 解析基础查询命令的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回基础查询命令的处理结果,包含执行状态码、结果数据和执行日志.
 ### 简单健康检查(补充)
 
-- **VM 电源状态**：`az vm list --show-details --query "[].{name:name,state:powerState}" -o table`
-- **VM 实例视图**：`az vm get-instance-view --name <vm> -g <rg> --query "instanceView.statuses" -o table`
+{name:name,state:powerState}" -o table`
 - **失败
 
 **输入**: 用户提供简单健康检查相关的配置参数、输入数据和处理选项.
-**处理**: 解析简单健康检查的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回简单健康检查的处理结果,包含执行状态码、结果数据和执行日志.
 ### 工作流程(补充)
 
 ### 触发条件(补充)
 
-**处理**: 解析触发条件的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回触发条件的处理结果,包含执行状态码、结果数据和执行日志.
 #
 
 ## 输出格式

@@ -90,7 +90,6 @@ query_npm_package "express"
 query_pip_package "flask"
 ```
 
-**输入**: 用户提供包信息查询所需的指令和必要参数.
 **处理**: 解析包信息查询的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回包信息查询的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -136,7 +135,6 @@ echo "  ]"
 echo "}"
 ```
 
-**输入**: 用户提供基础SBOM生成所需的指令和必要参数.
 **处理**: 解析基础SBOM生成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回基础SBOM生成的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -183,7 +181,6 @@ check_osv "axios" "0.21.0" "npm"
 check_osv "requests" "2.25.0" "PyPI"
 ```
 
-**输入**: 用户提供OSV漏洞查询所需的指令和必要参数.
 **处理**: 解析OSV漏洞查询的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回OSV漏洞查询的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -199,7 +196,6 @@ if [ -f package.json ]; then
 fi
 # ...
 # 显示pip依赖树
-if [ -f requirements.txt ]; then
     echo "=== pip依赖列表 ==="
     cat requirements.txt | grep -v '^#' | grep -v '^$' | while read -r line; do
         echo "  └── ${line}"
@@ -207,7 +203,6 @@ if [ -f requirements.txt ]; then
 fi
 ```
 
-**输入**: 用户提供依赖说明所需的指令和必要参数.
 **处理**: 解析依赖说明的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回依赖说明的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：软件物料清单、SBOM、生成与依赖漏洞检、查工具、支持基础包扫描与、OSV、GHSA、适合个人开发者日、常使用、物料清单漏洞情报、免费版、为个人开发者提供、软件物料清单生成、与依赖漏洞检测能、核心能力、包信息查询、漏洞匹配、依赖树可视化、适用场景、依赖更新前漏洞检、项目安全自查、基础物料清单生成、差异化、免费版聚焦单项目、npm、pip、两种生态、适合个人开发者快、速上手、适用关键词、物料清单、依赖漏洞、CVE、vulnerability、dependency等.
@@ -237,37 +232,31 @@ if [ -f package.json ]; then
         version=$(echo "$version" | tr -d '^~>=' | head -1)
         [ -z "$version" ] && version="latest"
 # ...
-        RESULT=$(curl -s -X POST "https://api.osv.dev/v1/query" \
             -H "Content-Type: application/json" \
             -d "{\"package\": {\"name\": \"${pkg}\", \"ecosystem\": \"npm\"}, \"version\": \"${version}\"}")
 # ...
         COUNT=$(echo "$RESULT" | jq '.vulns | length // 0')
         if [ "$COUNT" -gt 0 ]; then
             echo "  [!] ${pkg}@${version}: ${COUNT} 个漏洞"
-            echo "$RESULT" | jq -r '.vulns[]? | "       - \(.id)"'
+vulns[]? | "       - \(.id)"'
         fi
     done
 fi
 # ...
 # pip依赖检查
-if [ -f requirements.txt ]; then
     echo ""
     echo "--- pip依赖检查 ---"
     while IFS= read -r line; do
-        line=$(echo "$line" | sed 's/#.*//; s/^ *//; s/ *$//')
+*//; s/^ *//; s/ *$//')
         [ -z "$line" ] && continue
-        pkg=$(echo "$line" | sed 's/[=<>].*//')
-        ver=$(echo "$line" | grep -oP '[\d.]+')
 # ...
-        RESULT=$(curl -s -X POST "https://api.osv.dev/v1/query" \
             -H "Content-Type: application/json" \
             -d "{\"package\": {\"name\": \"${pkg}\", \"ecosystem\": \"PyPI\"}, \"version\": \"${ver:-1.0.0}\"}")
 # ...
-        COUNT=$(echo "$RESULT" | jq '.vulns | length // 0')
+vulns | length // 0')
         if [ "$COUNT" -gt 0 ]; then
-            echo "  [!] ${pkg}@${ver}: ${COUNT} 个漏洞"
+] ${pkg}@${ver}: ${COUNT} 个漏洞"
         fi
-    done < requirements.txt
 fi
 # ...
 echo ""
@@ -295,7 +284,7 @@ echo "正在生成SBOM: ${OUTPUT_FILE}"
     FIRST=true
     if [ -f package.json ]; then
         cat package.json | jq -r '.dependencies // {} | to_entries[] | 
-            "{\"name\": \"\(.key)\", \"version\": \"\(.value)\", \"ecosystem\": \"npm\"}"' | \
+            "{\"name\": \"\(.value)\", \"ecosystem\": \"npm\"}"' | \
             while read -r comp; do
                 [ "$FIRST" = true ] && FIRST=false || echo ","
                 echo "    $comp"
@@ -329,7 +318,7 @@ echo "=== 包安全评估: ${PACKAGE} ==="
 # 1. 查询包信息
 echo ""
 echo "1. 包基本信息:"
-curl -s "https://registry.npmjs.org/${PACKAGE}" | jq "{
+npmjs.org/${PACKAGE}" | jq "{
     name: .name,
     latest: .\"dist-tags\".latest,
     license: .versions[.\"dist-tags\".latest].license,
@@ -452,7 +441,6 @@ safe_update() {
 # ...
     # 3. 检查最新版本漏洞
     echo "检查最新版本漏洞..."
-    curl -s -X POST "https://api.osv.dev/v1/query" \
         -H "Content-Type: application/json" \
         -d "{\"package\": {\"name\": \"${pkg}\", \"ecosystem\": \"npm\"}, \"version\": \"${LATEST}\"}" | \
         jq '.vulns | if . then "有漏洞,请谨慎" else "安全,可更新" end'
@@ -519,8 +507,6 @@ OSV匹配基于包名和版本号,可能存在误报。建议结合npm audit或p
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

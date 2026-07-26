@@ -1,9 +1,8 @@
----
-slug: "email-daily-summary"
+---slug: "email-daily-summary"
 name: "email-daily-summary"
 version: 0.1.1
 displayName: "邮件摘要"
-summary: "基于 browser-use 自动登录邮箱并生成每日邮件摘要与统计日报。基于 browser-use CLI 自动化登录 Gmail、Outlook、QQ 邮箱、163/126 邮箱及企业微"
+summary: "基于 browser-"
 summary_zh: "基于 browser-use 自动登录邮箱并生成每日邮件摘要与统计日报。基于 browser-use CLI 自动化登录 Gmail、Outlook、QQ 邮箱、163/126 邮箱及企业微"
 license: "MIT"
 description: |-
@@ -27,9 +26,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Communication"
----
-# Email Daily Summary
+category: "Communication"---# Email Daily Summary
 
 通过 `browser-use` CLI 驱动浏览器自动化登录 Web 邮箱,抓取当日邮件并生成结构化日报。优先复用本机 Chrome 已登录会话(`--browser real`),避免在脚本中存储明文密码.
 ## 输入格式
@@ -205,7 +202,7 @@ browser-use eval "
 browser-use eval "
 (() => {
   const unread = document.querySelectorAll('.zE').length;
-  const visible = document.querySelectorAll('tr.zA').length;
+  const visible = document.zA').length;
   return JSON.stringify({ unread, visible, timestamp: new Date().toISOString() });
 })()
 "
@@ -237,13 +234,12 @@ browser-use close
 ### 案例 2:监控 boss@company.com 邮件
 
 ```bash
-browser-use --browser real open https://mail.google.com
 sleep 3
 # ...
 browser-use eval "
   const hits = [];
-  document.querySelectorAll('tr.zA').forEach(row => {
-    const sender = row.querySelector('.yX.xY span')?.innerText || '';
+  document.zA').forEach(row => {
+querySelector('.yX.xY span')?.innerText || '';
     if (sender.toLowerCase().includes('boss@company.com')) {
       hits.push({
         sender,
@@ -261,7 +257,7 @@ browser-use eval "
 ```json
 [
   { "sender": "boss@company.com", "subject": "项目进度汇报 - 紧急", "time": "09:30" },
-  { "sender": "boss@company.com", "subject": "周一晨会议程", "time": "07:45" }
+com", "subject": "周一晨会议程", "time": "07:45" }
 ]
 ```
 
@@ -273,14 +269,12 @@ REPORT="$OUTPUT_DIR/daily_$DATE.md"
 echo "# 跨邮箱日报 $DATE" > "$REPORT"
 # ...
 # Gmail 分节
-browser-use --browser real open https://mail.google.com
 sleep 3
 echo "## Gmail" >> "$REPORT"
 browser-use extract "提取前 10 封邮件的发件人、主题、时间,按重要性排序" >> "$REPORT"
 browser-use close
 # ...
 # QQ 邮箱分节
-browser-use --browser real open https://mail.qq.com
 sleep 3
 echo "## QQ 邮箱" >> "$REPORT"
 browser-use extract "提取前 10 封邮件的发件人、主题、时间,按重要性排序" >> "$REPORT"

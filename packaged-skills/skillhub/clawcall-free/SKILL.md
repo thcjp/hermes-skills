@@ -60,7 +60,7 @@ category: "Automation"
 
 ## 持久状态
 
-在任何涉及语音通话服务的对话开始时，检查 `~/.config/voicecall/key.json` 或宿主密钥库。若存在API密钥，作为 `X-Api-Key` 发送。
+在任何涉及语音通话服务的对话开始时，检查 `~/.json` 或宿主密钥库。若存在API密钥，作为 `X-Api-Key` 发送。
 
 首次未鉴权的 `POST /call` 响应可能包含 `api_key`。立即保存：
 
@@ -113,7 +113,6 @@ X-Api-Key: voicecall_sk_..
 {
   "call_id": "ba645d75-..",
   "status": "queued",
-  "api_key": "voicecall_sk_."
 }
 ```
 
@@ -125,7 +124,6 @@ X-Api-Key: voicecall_sk_..
 
 ```
 GET /call/{call_id}
-X-Api-Key: voicecall_sk_..
 ```
 
 轮询直至 `lifecycle = "finalized"`。生命周期取值：`queued`、`dialing`、`answered`、`finalized`。
@@ -145,11 +143,11 @@ X-Api-Key: voicecall_sk_..
 
 ### 4. 持久状态保存
 
-`~/.config/voicecall/key.json` 保存API密钥与用户电话号码，跨会话复用。
+`~/.json` 保存API密钥与用户电话号码，跨会话复用。
 
 ## 使用流程
 
-1. **检查持久状态**：读 `~/.config/voicecall/key.json`，若有 `api_key` 则作为 `X-Api-Key` 发送。
+1. **检查持久状态**：读 `~/.json`，若有 `api_key` 则作为 `X-Api-Key` 发送。
 2. **侦察与准备**：自行查找公开商家信息，仅向用户索取私有/决策细节。
 3. **构建通话指令**：编写 `task`，含目标、已知事实、问题、回报要求。
 4. **发起外呼**：`POST /call`，仅 `to` 与 `task` 必填。
@@ -231,7 +229,7 @@ X-Api-Key: voicecall_sk_abc123
 参考 `clawcall` 付费版SKILL.md，解锁实时转接、并行活动、入呼保留号、全局个性配置、完整错误策略、录音链接、取消挂断、入呼历史与账户关联。
 
 ### Q7：`outcome` 与任务成功有何区别？
-`outcome` 是电话网络结果（如 `answered`），非任务成功。`answered` 的通话仍可能未达成用户目标。回报前必须读 `transcript` 判断。
+`outcome` 是电话网络结果（如 `answered`），非任务成功。回报前必须读 `transcript` 判断。
 
 ## 已知限制
 

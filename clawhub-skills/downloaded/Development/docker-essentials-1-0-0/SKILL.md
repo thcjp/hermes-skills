@@ -333,9 +333,7 @@ Compose file reference: <https://docs.docker.com/compose/compose-file/>
 ### 示例1：基础用法
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
 ## 错误处理

@@ -80,8 +80,7 @@ category: "Automation"
 - **Staking Game**：玩家为stakers、validators、delegators；核心洞察为security budget必须超过attack profit
 - **Oracle Game**：玩家为data providers、consumers、attackers；核心洞察为操纵收益必须小于操纵成本
 
-**处理**: 解析Common Crypto Games识别的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Common Crypto Games识别的处理结果,包含执行状态码、结果数据和执行日志。### Red Flags基础检测
+### Red Flags基础检测
 
 提供三维度协议设计风险检测：
 
@@ -99,8 +98,6 @@ category: "Automation"
 - **Adverse Selection**：Token launches、insurance protocols
 - **Moral Hazard**：带保险的协议冒险、anonymous teams
 
-**输入**: 用户提供六大分析模式基础支持所需的指令和必要参数.
-**输出**: 返回六大分析模式基础支持的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 

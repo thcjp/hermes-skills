@@ -48,27 +48,20 @@ Add a new task with optional priority and due date.
 bash （请参考skill目录中的脚本文件） add "Task description" --priority high --due 2026-12-31
 ```
 
-**输入**: 用户提供add所需的指令和必要参数.
-**处理**: 解析add的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回add的处理结果,包含执行状态码、结果数据和执行日志。### list
+### list
 Display pending or all tasks.
 
 ```bash
 bash （请参考skill目录中的脚本文件） list --status pending
 ```
 
-**输入**: 用户提供list所需的指令和必要参数.
-**处理**: 解析list的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回list的处理结果,包含执行状态码、结果数据和执行日志。### done
+### done
 Complete a task by ID.
 
 ```bash
 bash （请参考skill目录中的脚本文件） done 1
 ```
 
-**输入**: 用户提供done所需的指令和必要参数.
-**处理**: 解析done的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回done的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 

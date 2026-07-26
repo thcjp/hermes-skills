@@ -118,28 +118,28 @@ mcporter config add google-workspace --command "npx" --arg "-y" --arg "@presto-a
 
 ```bash
 mcporter call --server google-workspace --tool "gmail.search" query="is:unread" maxResults=10
-mcporter call --server google-workspace --tool "gmail.get" messageId="18c1f3a2b5d4e6f7"
-mcporter call --server google-workspace --tool "gmail.send" to="team@corp.com" subject="周报" body="本周进展如下"
-mcporter call --server google-workspace --tool "gmail.createDraft" to="review@corp.com" subject="审阅请求" body="请确认附件"
+get" messageId="18c1f3a2b5d4e6f7"
+send" to="team@corp.com" subject="周报" body="本周进展如下"
+createDraft" to="review@corp.com" subject="审阅请求" body="请确认附件"
 ```
 
 ### Calendar
 
 ```bash
 mcporter call --server google-workspace --tool "calendar.list"
-mcporter call --server google-workspace --tool "calendar.listEvents" calendarId="primary" timeMin="2026-07-20T00:00:00Z" timeMax="2026-07-20T23:59:59Z"
-mcporter call --server google-workspace --tool "calendar.createEvent" calendarId="primary" summary="评审会" start='{"dateTime":"2026-07-21T10:00:00+08:00"}' end='{"dateTime":"2026-07-21T11:00:00+08:00"}'
-mcporter call --server google-workspace --tool "calendar.findFreeTime" attendees='["a@corp.com","b@corp.com"]' timeMin="2026-07-21T09:00:00+08:00" timeMax="2026-07-21T18:00:00+08:00" duration=60
+listEvents" calendarId="primary" timeMin="2026-07-20T00:00:00Z" timeMax="2026-07-20T23:59:59Z"
+createEvent" calendarId="primary" summary="评审会" start='{"dateTime":"2026-07-21T10:00:00+08:00"}' end='{"dateTime":"2026-07-21T11:00:00+08:00"}'
+findFreeTime" attendees='["a@corp.com","b@corp.com"]' timeMin="2026-07-21T09:00:00+08:00" timeMax="2026-07-21T18:00:00+08:00" duration=60
 ```
 
 ### Drive / Docs / Sheets
 
 ```bash
 mcporter call --server google-workspace --tool "drive.search" query="季度财报"
-mcporter call --server google-workspace --tool "drive.downloadFile" fileId="1A2B3C4D5E6F" localPath="/tmp/report.pdf"
+downloadFile" fileId="1A2B3C4D5E6F" localPath="/tmp/report.pdf"
 mcporter call --server google-workspace --tool "docs.find" query="会议纪要"
-mcporter call --server google-workspace --tool "docs.getText" documentId="1A2B3C4D5E6F"
-mcporter call --server google-workspace --tool "docs.create" title="需求文档" markdown="# 背景\n本次需求..."
+getText" documentId="1A2B3C4D5E6F"
+create" title="需求文档" markdown="# 背景\n本次需求..."
 mcporter call --server google-workspace --tool "sheets.getRange" spreadsheetId="1A2B3C4D5E6F" range="Sheet1!A1:D20"
 ```
 
@@ -147,30 +147,28 @@ mcporter call --server google-workspace --tool "sheets.getRange" spreadsheetId="
 
 ```bash
 mcporter call --server google-workspace --tool "chat.listSpaces"
-mcporter call --server google-workspace --tool "chat.findSpaceByName" name="项目协调"
-mcporter call --server google-workspace --tool "chat.sendMessage" spaceName="spaces/AAAA123" text="部署已完成"
-mcporter call --server google-workspace --tool "chat.sendDm" email="colleague@corp.com" text="请查看最新方案"
-mcporter call --server google-workspace --tool "chat.getMessages" spaceName="spaces/AAAA123" maxResults=20
-mcporter call --server google-workspace --tool "chat.setUpSpace" name="新项目空间" users='["a@corp.com","b@corp.com"]'
+findSpaceByName" name="项目协调"
+sendMessage" spaceName="spaces/AAAA123" text="部署已完成"
+sendDm" email="colleague@corp.com" text="请查看最新方案"
+getMessages" spaceName="spaces/AAAA123" maxResults=20
+setUpSpace" name="新项目空间" users='["a@corp.com","b@corp.com"]'
 ```
 
 ### People / Time / Slides
 
 ```bash
 mcporter call --server google-workspace --tool "people.getMe"
-mcporter call --server google-workspace --tool "people.getUserProfile" email="manager@corp.com"
+getUserProfile" email="manager@corp.com"
 mcporter call --server google-workspace --tool "time.getCurrentDate"
-mcporter call --server google-workspace --tool "time.getTimeZone"
 mcporter call --server google-workspace --tool "slides.getText" presentationId="1A2B3C4D5E6F"
-mcporter call --server google-workspace --tool "slides.find" presentationId="1A2B3C4D5E6F" query="季度目标"
-mcporter call --server google-workspace --tool "slides.getMetadata" presentationId="1A2B3C4D5E6F"
+find" presentationId="1A2B3C4D5E6F" query="季度目标"
+getMetadata" presentationId="1A2B3C4D5E6F"
 ```
 
 ### 鉴权与维护
 
 ```bash
 mcporter call --server google-workspace --tool "auth.refreshToken"
-mcporter call --server google-workspace --tool "auth.clear"
 rm -rf ~/.config/google-workspace-mcp
 ```
 

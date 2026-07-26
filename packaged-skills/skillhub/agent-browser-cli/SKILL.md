@@ -1,5 +1,4 @@
----
-slug: "agent-browser-cli"
+---slug: "agent-browser-cli"
 name: "agent-browser-cli"
 version: 1.0.1
 displayName: "智能体浏览器命令行"
@@ -7,7 +6,7 @@ summary: "使用 agent-browser CLI 进行浏览器自动化。用于签到、填
 summary_zh: "使用 agent-browser CLI 进行浏览器自动化。用于签到、填表、截图、信息抓取等需要控制浏览器的任务。触发条件：(1) 用户要求自动化浏览器操作"
 license: "MIT"
 description: |-
-  使用 agent-browser CLI 进行浏览器自动化。用于签到、填表、截图、信息抓取等需要控制浏览器的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
+  使用 agent-browser CLI 进行浏览器自动化。用于签到、填表、截图、信息抓取等需要控制浏览器的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。不适用于需要人工创意判断的任务.
 tags:
   - Research
   - Automation
@@ -25,9 +24,7 @@ tools:
   - glob
   - grep
 homepage: ""
-category: "Agents"
----
-# Agent Browser CLI
+category: "Agents"---# Agent Browser CLI
 
 ## 付费版专享能力
 
@@ -214,11 +211,9 @@ Step 1 [按流程执行]: 示例数据 ✓ (0.9s)
   Gate: 示例数据 ✓
 Step 2 [按流程执行]: 示例数据 ✓ (2.8s)
   Gate: 示例数据 ✗ → 重试
-Step 2 [按流程执行]: 示例数据 ✓ (3.1s)
   Gate: 示例数据 ✓
 Step 3 [按流程执行]: 示例数据 ✓ (1.5s)
   Gate: 示例数据 ✓
-Step 4 [按流程执行]: 示例数据 ✓ (0.6s)
 ```
 **最终输出**:
 ```
@@ -236,7 +231,6 @@ Step 4 [按流程执行]: 示例数据 ✓ (0.6s)
 ```
 **执行日志**:
 ```
-Step 1 [按流程执行]: 示例数据 ✓ (1.1s)
   Gate: 示例数据 ✓
 Step 2 [按流程执行]: 示例数据 ✗ → 重试(1/1)
 Step 2 [按流程执行]: 示例数据 ✗ → 超过最大重试次数

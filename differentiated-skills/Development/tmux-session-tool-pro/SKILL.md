@@ -77,7 +77,6 @@ for session in project-a project-b project-c; do
 done
 ```
 
-**输入**: 用户提供多会话批量管理所需的指令和必要参数.
 **处理**: 解析多会话批量管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多会话批量管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -90,7 +89,6 @@ SESSIONS=("setup" "build" "test" "deploy")
 # ...
 for i in "${!SESSIONS[@]}"; do
   session="${SESSIONS[$i]}"
-  target="${session}:0.0"
 # ...
   # 等待上一个会话完成
   if [ $i -gt 0 ]; then
@@ -103,7 +101,6 @@ for i in "${!SESSIONS[@]}"; do
 done
 ```
 
-**输入**: 用户提供会话编排与任务流水线所需的指令和必要参数.
 **处理**: 解析会话编排与任务流水线的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回会话编排与任务流水线的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -133,7 +130,6 @@ def monitor_sessions(sessions, interval=60):
         time.sleep(interval)
 ```
 
-**输入**: 用户提供实时监控与告警所需的指令和必要参数.
 **处理**: 解析实时监控与告警的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回实时监控与告警的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -148,7 +144,6 @@ tmux pipe-pane -t $TARGET -o 'cat >> .tmux-logs/$(date +%Y%m%d)-session.log'
 cat .tmux-logs/20260718-session.log
 ```
 
-**输入**: 用户提供会话日志审计所需的指令和必要参数.
 **处理**: 解析会话日志审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回会话日志审计的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -178,7 +173,6 @@ cat .tmux-logs/20260718-session.log
 }
 ```
 
-**输入**: 用户提供会话模板管理所需的指令和必要参数.
 **处理**: 解析会话模板管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回会话模板管理的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级多会话管理、支持批量会话操作、监控告警与日志审、面向团队与企业的、会话管理工具、在免费版基础上扩、展多会话、监控等能力、核心能力、多会话批量管理与、并行操作、实时监控与告警通、会话日志审计与回、自定义会话模板与、配置管理等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -203,14 +197,10 @@ for project in "${PROJECTS[@]}"; do
 # ...
   # 设置窗格标题
   tmux select-pane -t $project:0.0 -T editor
-  tmux select-pane -t $project:0.1 -T claude
-  tmux select-pane -t $project:0.2 -T logs
 # ...
   # 在各窗格启动程序
   tmux send-keys -t $project:0.0 -l -- "cd /projects/$project && vim"
-  tmux send-keys -t $project:0.0 Enter
-  tmux send-keys -t $project:0.1 -l -- "cd /projects/$project && claude"
-  tmux send-keys -t $project:0.1 Enter
+1 -l -- "cd /projects/$project && claude"
 done
 # ...
 echo "已创建 ${#PROJECTS[@]} 个项目会话"
@@ -303,9 +293,9 @@ cat > .tmux-toolkit/templates/dev-environment.json << 'EOF'
 {
   "name": "开发环境",
   "sessions": [
-    {"name": "editor", "command": "vim .", "title": "editor"},
+", "title": "editor"},
     {"name": "assistant", "command": "claude", "title": "claude"},
-    {"name": "logs", "command": "tail -f logs/app.log", "title": "logs"}
+log", "title": "logs"}
   ]
 }
 EOF
@@ -454,7 +444,6 @@ python3 .tmux-toolkit/status.py
 ```json
 {
   "alert_channels": ["email", "webhook"],
-  "webhook_url": "https://hooks.example.com/alerts"
 }
 ```
 
@@ -529,8 +518,6 @@ export TMUX_ALERT_EMAIL="team@example.com"
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

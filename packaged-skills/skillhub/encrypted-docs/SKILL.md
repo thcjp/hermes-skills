@@ -1,5 +1,4 @@
----
-slug: "encrypted-docs"
+---slug: "encrypted-docs"
 name: "encrypted-docs"
 version: 1.0.1
 displayName: "文档"
@@ -7,7 +6,7 @@ summary: "端到端加密md文档,Agent与人协同编辑,隐私不泄。End-to-
 summary_zh: "端到端加密md文档,Agent与人协同编辑,隐私不泄。End-to-end encrypted 。md documents for agents & humans to collaborat"
 license: "MIT"
 description: |-
-  End-to-end encrypted 。md documents for agents & humans to collaborate。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
+  End-to-end encrypted 。md documents for agents & humans to collaborate。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。不适用于加密文件破解.
 tags:
   - Integrations
   - Security
@@ -21,9 +20,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# Encrypted Docs
+category: "Automation"---# Encrypted Docs
 
 ## 付费版专享能力
 

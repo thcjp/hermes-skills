@@ -1,9 +1,8 @@
----
-slug: "ai-agent-helper-free"
+---slug: "ai-agent-helper-free"
 name: "ai-agent-helper-free"
 version: "1.0.0"
 displayName: "AI智能体辅助免费版"
-summary: "AI Agent基础设计助手,提供Prompt工程与ReAct循环设计两大基础能力。AI Agent基础设计助手(免费版)。面向独立开发者,提供Prompt工程与ReAct循环设计两大基础能"
+summary: "AI Agent基础设"
 summary_zh: "AI Agent基础设计助手,提供Prompt工程与ReAct循环设计两大基础能力。AI Agent基础设计助手(免费版)。面向独立开发者,提供Prompt工程与ReAct循环设计两大基础能"
 license: "MIT"
 description: |-
@@ -30,9 +29,7 @@ tools:
   - glob
   - grep
 homepage: ""
-category: "Agents"
----
-# AI Agent LITE
+category: "Agents"---# AI Agent LITE
 
 帮你setup基础AI Agents的技能。提供Prompt工程与ReAct循环设计两大基础能力,快速搭建可用的AI Agent.
 ## 输入格式

@@ -1,9 +1,8 @@
----
-slug: "quant-data-quality"
+---slug: "quant-data-quality"
 name: "quant-data-quality"
 version: 1.0.1
 displayName: "数据"
-summary: "数据质量检查技能。当用户说\。数据质量检查技能。当用户说\ 核心能力: - 商业工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优化升级 - 移除风险代码,增强安全性和稳定性"
+summary: "数据质量检查技能。当用"
 summary_zh: "数据质量检查技能。当用户说\。数据质量检查技能。当用户说\ 核心能力: - 商业工具领域的专业化AI辅助工具 - 基于高人气开源Skill深度优化升级 - 移除风险代码,增强安全性和稳定性"
 license: "MIT"
 description: |-
@@ -38,9 +37,7 @@ tools:
   - write
   - glob
 homepage: ""
-category: "Research"
----
-# Quant Data Quality
+category: "Research"---# Quant Data Quality
 
 ## 付费版专享能力
 

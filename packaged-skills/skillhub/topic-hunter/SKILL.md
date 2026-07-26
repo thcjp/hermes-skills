@@ -324,7 +324,6 @@ category: "Automation"
         "sustainability": "high",
         "score": 84,
         "differentiation": "可做长期使用体验对比,而非短期测评",
-        "user_interest_match": 0.95
       },
       {
         "title": "程序员必备AI效率工具",
@@ -337,7 +336,6 @@ category: "Automation"
         "sustainability": "medium",
         "score": 75,
         "differentiation": "红海选题,建议聚焦小众工具或特定场景",
-        "user_interest_match": 0.92
       }
     ],
     "summary": {

@@ -111,7 +111,6 @@ query teamContributions($logins: [String!]!, $since: DateTime!) {
 }
 ```
 
-**输出**: 返回GraphQL高级查询的处理结果,包含执行状态码、结果数据和执行日志。- 验证执行结果,确认输出符合预期格式
 - 异常时参考错误处理章节进行恢复
 - 关键参数: `graphql高级查询` 选项
 
@@ -167,8 +166,7 @@ gh-manager dashboard summary --org my-org --period week
 - CI/CD成功率与平均时长
 - 标签分布与趋势
 
-**输入**: 用户提供团队仪表盘所需的指令和必要参数.
-**处理**: 解析团队仪表盘的输入参数,执行核心处理逻辑,返回结构化结果和执行状态。### Webhook管理
+### Webhook管理
 ```bash
 # 列出仓库Webhook
 gh-manager webhook list --repo owner/repo
@@ -186,8 +184,7 @@ gh-manager webhook test --repo owner/repo --id 123 --event "issues"
 gh-manager webhook delete --repo owner/repo --id 123
 ```
 
-**处理**: 解析Webhook管理的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回Webhook管理的处理结果,包含执行状态码、结果数据和执行日志。### 安全审计
+### 安全审计
 ```bash
 # 权限审查
 gh-manager audit permissions --repo owner/repo --format csv
@@ -202,9 +199,6 @@ gh-manager audit compliance --org my-org --standard SOC2 --format pdf
 gh-manager audit tokens --org my-org --period 90d
 ```
 
-**输入**: 用户提供安全审计所需的指令和必要参数.
-**处理**: 解析安全审计的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回安全审计的处理结果,包含执行状态码、结果数据和执行日志.
 #
 ## 快速开始
 

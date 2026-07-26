@@ -63,21 +63,21 @@ category: "Automation"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -123,9 +123,7 @@ class TeamProject:
             "due": due,
             "priority": priority,
         }
-        resp = requests.post(
             f"{API_BASE}/tasks",
-            headers=self.headers,
             json=payload,
             timeout=30,
         )
@@ -133,9 +131,7 @@ class TeamProject:
 # ...
     def progress_report(self, project_id):
         """生成项目进度报告"""
-        resp = requests.get(
             f"{API_BASE}/projects/{project_id}/progress",
-            headers=self.headers,
             timeout=60,
         )
         return resp.json()
@@ -193,7 +189,6 @@ def create_workflow(name, trigger, actions):
     }
     resp = requests.post(
         f"{API_BASE}/workflows",
-        headers=proj.headers,
         json=payload,
         timeout=30,
     )
@@ -355,7 +350,6 @@ def submit_async_task(task_type, payload):
     """提交异步任务"""
     resp = requests.post(
         f"{API_BASE}/async/tasks",
-        headers=proj.headers,
         json={"type": task_type, "payload": payload},
         timeout=30,
     )
@@ -366,9 +360,7 @@ def poll_task(task_id, interval=5, max_wait=300):
     import time
     elapsed = 0
     while elapsed < max_wait:
-        resp = requests.get(
             f"{API_BASE}/async/tasks/{task_id}",
-            headers=proj.headers,
             timeout=30,
         )
         if resp.json()["status"] in ("completed", "failed"):
@@ -393,7 +385,6 @@ def create_kb_entry(title, content, tags, category):
     }
     resp = requests.post(
         f"{API_BASE}/kb/entries",
-        headers=proj.headers,
         json=payload,
         timeout=30,
     )
@@ -403,7 +394,6 @@ def search_kb(query, limit=10):
     """全文检索知识库"""
     resp = requests.get(
         f"{API_BASE}/kb/search",
-        headers=proj.headers,
         params={"q": query, "limit": limit},
         timeout=30,
     )
@@ -503,8 +493,6 @@ export AUDIT_DB_URL="db://user:pass@host:5432/audit"
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 

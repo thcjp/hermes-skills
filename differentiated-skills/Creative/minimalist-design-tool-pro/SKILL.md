@@ -68,7 +68,6 @@ python3 generate_components.py \
   --with-stories
 ```
 
-**输入**: 用户提供完整企业级组件库所需的指令和必要参数。
 **处理**: 解析完整企业级组件库的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回完整企业级组件库的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -77,7 +76,6 @@ python3 generate_components.py \
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供多主题系统所需的指令和必要参数。
 **处理**: 解析多主题系统的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回多主题系统的响应数据,包含状态码、结果和日志。
 
@@ -99,7 +97,6 @@ export_config = {
 python3 export_tokens.py --config export_config
 ```
 
-**输入**: 用户提供设计令牌多平台导出所需的指令和必要参数。
 **处理**: 解析设计令牌多平台导出的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回设计令牌多平台导出的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -123,14 +120,12 @@ doc_config = {
 }
 ```
 
-**输入**: 用户提供设计系统文档自动生成所需的指令和必要参数。
 **处理**: 解析设计系统文档自动生成的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回设计系统文档自动生成的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 视觉一致性审计
 
-**输入**: 用户提供视觉一致性审计所需的指令和必要参数。
 **处理**: 解析视觉一致性审计的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回视觉一致性审计的响应数据,包含状态码、结果和日志。
 
@@ -171,7 +166,6 @@ const motionSystem = {
 };
 ```
 
-**输入**: 用户提供Framer Motion高级动效所需的指令和必要参数。
 **处理**: 解析Framer Motion高级动效的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回Framer Motion高级动效的响应数据,包含状态码、结果和日志。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级极简设计系、统解决方案、支持完整组件库、多主题切换、设计审计与、适合团队与商业项、极简设计系统专业、版为企业与专业团、队提供系统化的极、简现代主义设计系、在免费版核心设计、令牌之上、增加完整组件库、集成能力、Use、when、、品牌视觉时使用、不适用于、建模和动画制作、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -188,14 +182,11 @@ python3 init_design_system.py \
   --themes "light,dark,brand" \
   --output ./design-system/
 # .
-python3 generate_components.py \
-  --config components.yml \
   --output ./design-system/components/ \
   --with-docs \
   --with-tests \
   --with-stories
 # .
-python3 export_tokens.py \
   --source design-tokens.yml \
   --formats "css,tailwind,figma,scss,json"
 # .
@@ -271,13 +262,9 @@ jobs:
       - uses: actions/checkout@v3
       - name: Export Tokens
         run: |
-          python3 export_tokens.py \
-            --source design-tokens.yml \
             --formats "css,tailwind,figma"
       - name: Generate Components
         run: |
-          python3 generate_components.py \
-            --config components.yml \
             --output ./src/components/
       - name: Audit Design
         run: |
@@ -286,14 +273,11 @@ jobs:
             --report ./audit/
       - name: Generate Docs
         run: |
-          python3 generate_docs.py \
-            --output ./docs/
 ```
 
 ## 快速开始
 ### Step 1:初始化设计系统
 ```bash
-python3 init_design_system.py \
   --name "MyDesignSystem" \
   --base-theme "light" \
   --output ./design-system/
@@ -301,8 +285,6 @@ python3 init_design_system.py \
 
 ### Step 2:生成组件库
 ```bash
-python3 generate_components.py \
-  --config components.yml \
   --output ./design-system/components/ \
   --with-docs \
   --with-tests
@@ -310,9 +292,8 @@ python3 generate_components.py \
 
 ### Step 3:审计与文档
 ```bash
-python3 audit_design.py --scan ./src/ --report ./audit/
+py --scan ./src/ --report ./audit/
 # .
-python3 generate_docs.py --output ./docs/
 ```
 
 ## 示例

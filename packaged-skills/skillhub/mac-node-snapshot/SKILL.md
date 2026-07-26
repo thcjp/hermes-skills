@@ -176,12 +176,9 @@ export API_KEY="your_api_key_here"
 ### 示例1：基础用法
 
 ```
-All paths are **relative** to `{skill}`.
 # ...
 ```bash
 mkdir -p "{skill}/tmp" \
-&& skill-platform nodes screen record --node "<node>" --duration 1000 --fps 10 --no-audio --out "{skill}/tmp/snap.mp4" \
-&& ffmpeg -hide_banner -loglevel error -y -ss 00:00:00 -i "{skill}/tmp/snap.mp4" -frames:v 1 "{skill}/tmp/snap.png"
 ```
 ```
 

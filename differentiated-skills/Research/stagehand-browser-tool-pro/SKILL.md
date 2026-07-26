@@ -62,7 +62,6 @@ browser act "启用隐身模式浏览" --stealth
 browser navigate https://region-specific.com --proxy "us-east"
 ```
 
-**输入**: 用户提供远程浏览器集群所需的指令和必要参数.
 **处理**: 解析远程浏览器集群的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回远程浏览器集群的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -92,7 +91,6 @@ browser batch status
 browser batch export --format csv --output results.csv
 ```
 
-**输入**: 用户提供批量任务调度所需的指令和必要参数.
 **处理**: 解析批量任务调度的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量任务调度的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -110,7 +108,6 @@ browser act "填写表单并提交" --captcha auto
 browser navigate https://region-site.com --geo "US,California"
 ```
 
-**输入**: 用户提供代理网络与验证码处理所需的指令和必要参数.
 **处理**: 解析代理网络与验证码处理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回代理网络与验证码处理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -128,7 +125,6 @@ browser session restore --name "project_a_session"
 browser session share --name "project_a_session" --team "dev_team"
 ```
 
-**输入**: 用户提供会话持久化与团队协作所需的指令和必要参数.
 **处理**: 解析会话持久化与团队协作的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回会话持久化与团队协作的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -144,7 +140,6 @@ browser screenshot
 browser close
 ```
 
-**输入**: 用户提供完整兼容免费版所需的指令和必要参数.
 **处理**: 解析完整兼容免费版的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回完整兼容免费版的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级浏览器自动、化平台、支持远程浏览器、代理穿透与团队协、浏览器自动化工具、面向企业团队和高、级用户提供完整的、浏览器自动化解决、支持远程浏览器集、代理穿透、团队协作等高级能、Use、when、需要提升效率、自动化流程、批量处理、工作流优化时使用、不适用于需要人工、创意判断的任务、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -262,7 +257,6 @@ RETRY_ATTEMPTS=3
 EOF
 # ...
 # 验证远程连接
-browser navigate https://example.com --mode remote
 ```
 
 ### 第三步:运行首个批量任务
@@ -359,7 +353,6 @@ npm install && npm link
 cp .env.backup .env
 # ...
 # 4. 验证原有脚本仍可运行
-browser navigate https://example.com
 browser extract "页面标题"
 ```
 

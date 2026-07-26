@@ -294,7 +294,8 @@ Sitemap: https://blog.example.com/sitemap.xml
 # ...
 ### Critical(3项)
 # ...
-#### 1. [Critical] 175个商品页缺少canonical标签
+#
+### 1. [Critical] 175个商品页缺少canonical标签
 - **影响**: 商品页存在URL参数变体(?color=red&size=L),导致重复内容,百度判定为重复页面拒绝索引
 - **位置**: 所有 `/product/{id}` 页面
 - **检测方法**: `curl -s https://shop.example.com/product/123 | grep canonical` 返回空
@@ -306,7 +307,8 @@ Sitemap: https://blog.example.com/sitemap.xml
 - **预期收益**: 百度索引覆盖率从64%提升至85%+
 - **实施难度**: 低(模板修改)
 # ...
-#### 2. [Critical] 移动端LCP超标(4.8s,目标<2.5s)
+#
+### 2. [Critical] 移动端LCP超标(4.8s,目标<2.5s)
 - **影响**: Google移动端排名下降,百度移动友好度评分降低
 - **根因**: Hero Banner图片3.2MB JPEG未压缩,CSS渲染阻塞1.2s
 - **修复方案**:
@@ -326,7 +328,8 @@ Sitemap: https://blog.example.com/sitemap.xml
 - **预期收益**: LCP从4.8s降至2.2s,移动端排名提升20-30%
 - **实施难度**: 中
 # ...
-#### 3. [Critical] sitemap.xml不完整
+#
+### 3. [Critical] sitemap.xml不完整
 - **影响**: 爬虫无法发现新增的120个商品页
 - **当前状态**: sitemap仅包含367个URL,缺少120个新商品页
 - **修复方案**:
@@ -341,7 +344,8 @@ python generate_sitemap.py --db sqlite:///products.db --output public/sitemap.xm
 # ...
 ### Important(5项)
 # ...
-#### 4. [Important] 38%页面title标签重复
+#
+### 4. [Important] 38%页面title标签重复
 - **影响**: 百度无法区分页面主题,影响关键词排名
 - **示例**: 175个商品页title均为"商品详情 - 某某商城"
 - **修复方案**:
@@ -356,11 +360,13 @@ export async function generateMetadata({ params }) {
 }
 ```
 # ...
-#### 5. [Important] 商品图片缺少alt文本
+#
+### 5. [Important] 商品图片缺少alt文本
 - **影响**: 图片搜索无法索引,无障碍体验差
 - **修复方案**: 为所有商品图片添加alt属性: `alt="{商品名称} - {商品规格}"`
 # ...
-#### 6. [Important] 结构化数据缺少price字段
+#
+### 6. [Important] 结构化数据缺少price字段
 - **影响**: 搜索结果无法显示价格富媒体,点击率降低15-20%
 - **修复方案**:
 ```html
@@ -381,11 +387,13 @@ export async function generateMetadata({ params }) {
 </script>
 ```
 # ...
-#### 7. [Important] 内部链接结构不合理
+#
+### 7. [Important] 内部链接结构不合理
 - **影响**: 重要商品页点击深度>4,爬虫难以发现,权重传递不足
 - **修复方案**: 在首页和分类页添加热门商品链接,确保所有页面点击深度≤3
 # ...
-#### 8. [Important] robots.txt阻止了JS/CSS文件
+#
+### 8. [Important] robots.txt阻止了JS/CSS文件
 - **影响**: 百度爬虫无法渲染页面,影响JS生成内容的索引
 - **修复方案**:
 ```
@@ -555,7 +563,6 @@ CMS: WordPress
 ## 1. 百度站长平台配置
 # ...
 ### 1.1 注册与验证
-- [ ] 注册百度搜索资源平台(ziyuan.baidu.com)
 - [ ] 添加站点 https://blog.example.com
 - [ ] 完成所有权验证(推荐HTML标签验证)
 - [ ] 选择站点类型(普通网站)
@@ -593,7 +600,7 @@ Allow: /wp-content/uploads/
 User-agent: Baiduspider
 Allow: /
 
-Sitemap: https://blog.example.com/sitemap_index.xml
+example.com/sitemap_index.xml
 ```
 # ...
 ## 3. 基础SEO插件配置(Yoast SEO)
@@ -618,7 +625,6 @@ Sitemap: https://blog.example.com/sitemap_index.xml
 ```html
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Python装饰器完全指南",
   "author": { "@type": "Person", "name": "作者名" },
@@ -639,7 +645,6 @@ Sitemap: https://blog.example.com/sitemap_index.xml
 ```html
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://blog.example.com/" },

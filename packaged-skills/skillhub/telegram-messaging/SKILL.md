@@ -261,7 +261,7 @@ A：调用 `telegram_set_my_commands` 传入命令列表，用户在聊天框输
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供决策能力 |
 
 ### API Key 配置
-- Bot Token 配置在 `~/.skill-platform/skill-platform.json` 的 `channels.telegram.accounts.default.token` 字段
+- Bot Token 配置在 `~/.json` 的 `channels.telegram.accounts.default.token` 字段
 - 所有 Telegram API 调用自动注入该 Token，无需在调用参数中传递
 
 ### 可用性分类

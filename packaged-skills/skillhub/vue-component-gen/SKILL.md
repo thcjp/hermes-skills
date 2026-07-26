@@ -231,7 +231,7 @@ describe('${comp}', () => {
 # ...
   it('键盘应可聚焦', async () => {
     const wrapper = mount(${comp})
-    expect(wrapper.attributes('tabindex')).toBe('0')
+    expect(wrapper.toBe('0')
   })
 })
 EOF

@@ -331,7 +331,6 @@ node （请参考skill目录中的脚本文件） get API_KEY
 ### 示例4:深度启发式评估
 
 ```bash
-node （请参考skill目录中的脚本文件） --file /path/to/article.txt --json
 # 输出:
 # {
 #   "score": 5,

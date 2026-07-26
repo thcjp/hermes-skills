@@ -73,15 +73,12 @@ export API_KEY="your_api_key_here"
 加载 `00-core-framework.md` 获取 3 支柱决策工作流。决策流程为三步权衡：
 institutional knowledge → user familiarity → research，通过 JTBD 支持度选择方案.
 基础版支持核心决策框架，不包含 `01-anchors.md` 和 `02-information-scaffold.md` 的完整内容.
-**处理**: 解析基础框架引用与决策流程的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回基础框架引用与决策流程的处理结果,包含执行状态码、结果数据和执行日志。- 验证返回数据的完整性和格式正确性
 - 参考`基础框架引用与决策流程`的配置文档进行参数调优
 ### 2. 视觉样式审计（Spacing/Color/Elevation/Typography/Motion）
 参照 `12-checklist-visual-style.md` 审计视觉样式。检查间距一致性（8px 基线网格）、
 色彩调色板遵循度、阴影/elevation 层级、字体系统配对、圆角/边框一致性和图标风格统一性.
 每项检查标注 pass/warn/fail/na 状态.
-**输入**: 用户提供视觉样式审计（Spacing/Color/Elevation/Typography/Motion）所需的指令和必要参数.
-**输出**: 返回视觉样式审计（Spacing/Color/Elevation/Typography/Motion）的处理结果,包含执行状态码、结果数据和执行日志.
+
 - 针对`视觉样式审计（Spacing/Color/Elevation/Typography/Motion）`,解析输入数据并返回响应
 - 验证返回数据的完整性和格式正确性
 - 参考`视觉样式审计（Spacing/Color/Elevation/Typography/Motion）`的配置文档进行参数调优
@@ -103,7 +100,6 @@ Onboarding 等上下文检查项，也不包含 macro_bets 对齐分析。- 验�
 
 1. 确定审计目标界面，收集截图或设计稿
 2. 执行三步权衡：institutional knowledge → user familiarity → research
-3. 参照 `12-checklist-visual-style.md` 执行视觉样式审计
 4. 生成 JSON 格式审计报告，包含三项必检项
 5. 输出基础修复建议列表
 
@@ -170,7 +166,7 @@ Macro Bet 分析、上下文检查项和结构化优先修复列表.
 - 不包含 12 类 UI 模式库匹配功能
 - 不包含 Macro Bet 对齐分析
 - 不包含 5 级原创性光谱（Level 0-4）评估
-- 不包含 `01-anchors.md` 和 `02-information-scaffold.md` 的完整内容
+- 不包含 `01-anchors.md` 的完整内容
 
 ## 输出格式
 

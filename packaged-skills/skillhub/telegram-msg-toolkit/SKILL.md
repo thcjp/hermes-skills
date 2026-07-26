@@ -222,17 +222,17 @@ curl "https://api.telegram.org/bot"toolkit_summary"/getWebhookInfo"
 
 ```bash
 # 踢出成员（可恢复）
-curl -X POST "https://api.telegram.org/bot"toolkit_details"/kickChatMember" \
+telegram.org/bot"toolkit_details"/kickChatMember" \
   -H "Content-Type: application/json" \
   -d '{"chat_id": "-1001234567890", "user_id": 123456789, "until_date": 0}'
 # ...
 # 解除封禁
-curl -X POST "https://api.telegram.org/bot"toolkit_count"/unbanChatMember" \
+telegram.org/bot"toolkit_count"/unbanChatMember" \
   -H "Content-Type: application/json" \
   -d '{"chat_id": "-1001234567890", "user_id": 123456789, "only_if_banned": true}'
 # ...
 # 已知限制
-curl -X POST "https://api.telegram.org/bot"toolkit_timestamp"/restrictChatMember" \
+telegram.org/bot"toolkit_timestamp"/restrictChatMember" \
   -H "Content-Type: application/json" \
   -d '{
     "chat_id": "-1001234567890",
@@ -247,7 +247,7 @@ curl -X POST "https://api.telegram.org/bot"toolkit_timestamp"/restrictChatMember
   }'
 # ...
 # 提升为管理员
-curl -X POST "https://api.telegram.org/bot"toolkit_version"/promoteChatMember" \
+telegram.org/bot"toolkit_version"/promoteChatMember" \
   -H "Content-Type: application/json" \
   -d '{
     "chat_id": "-1001234567890",
@@ -262,7 +262,7 @@ curl -X POST "https://api.telegram.org/bot"toolkit_version"/promoteChatMember" \
 
 ```bash
 # 创建邀请链接
-curl -X POST "https://api.telegram.org/bot"field_9"/createChatInviteLink" \
+telegram.org/bot"field_9"/createChatInviteLink" \
   -H "Content-Type: application/json" \
   -d '{
     "chat_id": "-1001234567890",
@@ -272,14 +272,13 @@ curl -X POST "https://api.telegram.org/bot"field_9"/createChatInviteLink" \
   }'
 # ...
 # 编辑邀请链接
-curl -X POST "https://api.telegram.org/bot"field_10"/editChatInviteLink" \
+telegram.org/bot"field_10"/editChatInviteLink" \
   -H "Content-Type: application/json" \
   -d '{"chat_id": "-1001234567890", "invite_link": "https://t.me/+ABC...", "member_limit": 100}'
 # ...
 # 撤销邀请链接
-curl -X POST "https://api.telegram.org/bot"field_11"/revokeChatInviteLink" \
+telegram.org/bot"field_11"/revokeChatInviteLink" \
   -H "Content-Type: application/json" \
-  -d '{"chat_id": "-1001234567890", "invite_link": "https://t.me/+ABC..."}'
 ```
 
 #

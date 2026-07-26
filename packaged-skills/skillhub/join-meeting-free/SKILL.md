@@ -69,8 +69,7 @@ export API_KEY="your_api_key_here"
 - **离开会议（Leave Meeting）**：通过API离开会议，触发 `bot_left` 事件
 - **系统状态**：Idle（空闲）、In Meeting（会议中）、Left（离场）
 
-**处理**: 解析生命周期管理（Lifecycle）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
-**输出**: 返回生命周期管理（Lifecycle）的处理结果,包含执行状态码、结果数据和执行日志。### 语音状态（Voice State）
+### 语音状态（Voice State）
 
 基础语音状态监听：
 
@@ -85,8 +84,6 @@ export API_KEY="your_api_key_here"
 - 标注发言人与时间戳
 - 保存转写记录
 
-**输入**: 用户提供会议转写（Transcription）所需的指令和必要参数.
-**处理**: 解析会议转写（Transcription）的输入参数,执行核心处理逻辑,返回结构化结果和执行状态.
 ### 加入会议（Join Meeting）
 
 针对加入会议（Join Meeting）,自动解析输入参数、调度任务队列、格式化输出,返回结构化响应.

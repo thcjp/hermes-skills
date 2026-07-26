@@ -1,9 +1,8 @@
----
-slug: "t-trading"
+---slug: "t-trading"
 name: "t-trading"
 version: 1.0.1
 displayName: "基于维加斯通道"
-summary: "基于维加斯通道EMA多层通道与斐波那契回撤，提供A股和加密货币短线交易分析。。基于维加斯通道EMA多层通道与斐波那契回撤，提供A股和加密货币短线交易分析。核心能力: - 金融工具领域的专业化"
+summary: "基于维加斯通道EMA多"
 summary_zh: "基于维加斯通道EMA多层通道与斐波那契回撤，提供A股和加密货币短线交易分析。。基于维加斯通道EMA多层通道与斐波那契回撤，提供A股和加密货币短线交易分析。核心能力: - 金融工具领域的专业化"
 license: "MIT"
 description: |-
@@ -31,9 +30,7 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"
----
-# T Trading
+category: "Automation"---# T Trading
 
 ## 付费版专享能力
 
@@ -183,8 +180,6 @@ export API_KEY="your_api_key_here"
 1. 确认运行环境满足依赖说明中的要求
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
-
-> 详细的输入输出格式请参考下方章节说明。
 
 ## 常见问题
 

@@ -275,7 +275,6 @@ export class CollabRoom {
 // ...
   // 广播消息（排除发送者）
   private broadcast(message: object, exclude?: WebSocket) {
-    const data = JSON.stringify(message);
     for (const [ws] of this.sessions) {
       if (ws !== exclude) {
         ws.send(data);
@@ -393,7 +392,7 @@ const app = new Hono<{ Bindings: Bindings }>();
 // ...
 // CORS配置
 app.use('*', cors({
-  origin: ['https://myapp.com', 'https://staging.myapp.com'],
+com', 'https://staging.myapp.com'],
   allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowHeaders: ['Content-Type', 'Authorization'],
   exposeHeaders: ['X-Total-Count'],
@@ -463,7 +462,6 @@ app.post('/api/users', async (c) => {
   const { name, email, age } = parsed.data;
 // ...
   // 检查邮箱唯一
-  const existing = await c.env.DB.prepare(
     'SELECT id FROM users WHERE email = ?'
   ).bind(email).first();
   if (existing) {
@@ -495,10 +493,9 @@ app.get('/api/users/:id', async (c) => {
 // PUT /api/users/:id
 app.put('/api/users/:id', async (c) => {
   const id = c.req.param('id');
-  const body = await c.req.json();
   const parsed = updateUserSchema.safeParse(body);
   if (!parsed.success) {
-    return errorResponse('VALIDATION_FAILED', parsed.error.message, 400);
+error.message, 400);
   }
 // ...
   const updates = parsed.data;
@@ -512,7 +509,6 @@ app.put('/api/users/:id', async (c) => {
   values.push(new Date().toISOString());
   values.push(id);
 // ...
-  const result = await c.env.DB.prepare(
     `UPDATE users SET ${setClauses.join(', ')} WHERE id = ?`
   ).bind(...values).run();
 // ...
@@ -525,7 +521,6 @@ app.put('/api/users/:id', async (c) => {
 // DELETE /api/users/:id
 app.delete('/api/users/:id', async (c) => {
   const id = c.req.param('id');
-  const result = await c.env.DB.prepare(
     'DELETE FROM users WHERE id = ?'
   ).bind(id).run();
 // ...
@@ -548,7 +543,6 @@ export default app;
 // output/users-api/wrangler.jsonc
 {
   "name": "users-api",
-  "main": "src/index.ts",
   "compatibility_date": "2024-09-01",
   "d1_databases": [{
     "binding": "DB",
@@ -595,10 +589,9 @@ export class CollabRoom {
     }
 // ...
     const pair = new WebSocketPair();
-    const [client, server] = Object.values(pair);
     this.state.acceptWebSocket(server);
 // ...
-    const userId = request.headers.get('x-user-id') || crypto.randomUUID();
+headers.get('x-user-id') || crypto.randomUUID();
     const name = request.headers.get('x-user-name') || '匿名用户';
     const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#FFA07A', '#98D8C8'];
     const color = colors[this.sessions.size % colors.length];
@@ -616,16 +609,15 @@ export class CollabRoom {
     this.broadcast({
       type: 'user_joined',
       user: { userId, name, color },
-      onlineCount: this.sessions.size,
     }, server);
 // ...
     server.addEventListener('message', (event) => {
-      const data = JSON.parse(event.data as string);
+parse(event.data as string);
 // ...
       switch (data.type) {
         case 'cursor_move':
-          const session = this.sessions.get(server);
-          if (session) session.cursor = data.cursor;
+sessions.get(server);
+cursor = data.cursor;
           this.broadcast({
             type: 'cursor',
             userId,
@@ -658,21 +650,17 @@ export class CollabRoom {
     });
 // ...
     server.addEventListener('close', () => {
-      const session = this.sessions.get(server);
+sessions.get(server);
       this.sessions.delete(server);
       this.broadcast({
         type: 'user_left',
         userId,
-        onlineCount: this.sessions.size,
       });
     });
 // ...
     return new Response(null, { status: 101, webSocket: client });
   }
 // ...
-  private broadcast(message: object, exclude?: WebSocket) {
-    const data = JSON.stringify(message);
-    for (const [ws] of this.sessions) {
       if (ws !== exclude && ws.readyState === WebSocket.READY_STATE_OPEN) {
         ws.send(data);
       }
@@ -685,7 +673,7 @@ export class CollabRoom {
       result = result.slice(0, delta.position) + result.slice(delta.position + delta.delete);
     }
     if (delta.insert) {
-      result = result.slice(0, delta.position) + delta.insert + result.slice(delta.position);
+slice(0, delta.position) + delta.insert + result.slice(delta.position);
     }
     return result;
   }
@@ -695,7 +683,6 @@ export class CollabRoom {
 ```typescript
 // output/collab-editor/src/index.ts
 import { Hono } from 'hono';
-export { CollabRoom } from './room';
 // ...
 const app = new Hono<{ Bindings: { COLLAB_ROOM: DurableObjectNamespace } }>();
 // ...
@@ -709,7 +696,6 @@ app.get('/room/:roomId', (c) => {
   const id = c.env.COLLAB_ROOM.idFromName(roomId);
   const stub = c.env.COLLAB_ROOM.get(id);
 // ...
-  const headers = new Headers(c.req.headers);
   headers.set('x-user-id', c.req.query('userId') || crypto.randomUUID());
   headers.set('x-user-name', c.req.query('name') || '匿名用户');
 // ...
@@ -816,13 +802,13 @@ app.post('/api/track', async (c) => {
 // ...
 // 实验结果查询
 app.get('/api/results/:experimentId', async (c) => {
-  const experimentId = c.req.param('experimentId');
-  const experimentStr = await c.env.AB_CONFIG.get(`exp:${experimentId}`);
+req.param('experimentId');
+env.AB_CONFIG.get(`exp:${experimentId}`);
   if (!experimentStr) {
     return c.json({ error: 'Experiment not found' }, 404);
   }
 // ...
-  const experiment: Experiment = JSON.parse(experimentStr);
+parse(experimentStr);
   const results = await Promise.all(
     experiment.variants.map(async (v) => {
       const [visitors, conversions] = await Promise.all([
@@ -970,7 +956,7 @@ app.post('/api/generate', async (c) => {
 // ...
     // 写入Cache API
     c.executionCtx.waitUntil(
-      cache.put(new Request(`https://cache.local/${cacheKey}`), finalResponse.clone())
+      cache.local/${cacheKey}`), finalResponse.clone())
     );
 // ...
     return finalResponse;
@@ -986,7 +972,6 @@ app.post('/api/generate-batch', async (c) => {
     return c.json({ error: 'BATCH_LIMIT', message: 'Max 4 prompts per batch' }, 400);
   }
 // ...
-  const results = await Promise.allSettled(
     prompts.map(prompt =>
       c.env.AI.run('@cf/stabilityai/stable-diffusion-xl-base-1.0', { prompt })
     )
@@ -1022,7 +1007,6 @@ export default app;
 // output/ai-image/wrangler.jsonc
 {
   "name": "ai-image-api",
-  "main": "src/index.ts",
   "compatibility_date": "2024-09-01",
   "ai": { "binding": "AI" },
   "r2_buckets": [{
@@ -1090,8 +1074,8 @@ function detectBestFormat(accept?: string | null): ImageOptions['format'] {
 // 生成缓存key
 async function cacheKey(path: string, options: ImageOptions): Promise<string> {
   const optionsStr = JSON.stringify(options);
-  const hash = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(path + optionsStr));
-  const hashHex = Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+subtle.encode(path + optionsStr));
+  const hashHex = Array.map(b => b.toString(16).padStart(2, '0')).join('');
   return `optimized:${hashHex}`;
 }
 // ...
@@ -1105,7 +1089,6 @@ app.get('/images/*', async (c) => {
     return c.json({ error: 'INVALID_PATH' }, 400);
   }
 // ...
-  const cache = caches.default;
   const cKey = await cacheKey(path, options);
 // ...
   // 1. 检查边缘缓存
@@ -1130,7 +1113,7 @@ app.get('/images/*', async (c) => {
   let optimizedBuffer: ArrayBuffer;
   const contentType = options.format === 'avif' ? 'image/avif' :
                       options.format === 'webp' ? 'image/webp' :
-                      options.format === 'png' ? 'image/png' : 'image/jpeg';
+format === 'png' ? 'image/png' : 'image/jpeg';
 // ...
   // 简化: 直接返回原图(实际用@cf/image-resizing binding)
   optimizedBuffer = originalBuffer;

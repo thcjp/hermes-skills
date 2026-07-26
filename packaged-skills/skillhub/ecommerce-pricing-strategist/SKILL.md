@@ -256,7 +256,6 @@ AI驱动的电商定价策略工具,分析市场数据智能定价,支持5种定
   "cost": 80,
   "current_price": 199,
   "current_sales": 5000,
-  "price_elasticity": -1.5
 }
 ```
 
@@ -326,7 +325,7 @@ AI驱动的电商定价策略工具,分析市场数据智能定价,支持5种定
     "recommended_strategy": "penetration",
     "strategy_reason": "新品上市+价格敏感市场(拼多多竞品169元销量最高),建议渗透定价抢份额,定价低于竞品均价建立价格优势",
     "price_range": {"min": 149, "max": 179, "recommended": 159},
-    "competitor_analysis": {"avg_price": 195.7, "min_price": 169, "max_price": 219, "median_price": 199, "std_dev": 20.5},
+7, "min_price": 169, "max_price": 219, "median_price": 199, "std_dev": 20.5},
     "profit_estimate": {
       "at_recommended_price": {
         "price": 159,
@@ -483,7 +482,6 @@ AI驱动的电商定价策略工具,分析市场数据智能定价,支持5种定
       "at_recommended_price": {
         "price": 649,
         "margin": 499,
-        "margin_rate": 0.769,
         "estimated_sales": 400,
         "estimated_profit": 199600
       }
