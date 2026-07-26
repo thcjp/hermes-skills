@@ -189,7 +189,7 @@
     "Security": 1
   },
 
-  "_clawhub_categories_note": "ClawHub标准分类(slug格式),用于npx clawhub publish --categories参数",
+  "_clawhub_categories_note": "ClawHub标准分类(slug格式),用于npx clawhub publish --categories参数。映射链: local_to_platform → clawhub_categories (两步); local_to_clawhub (一步直连, 优先使用)",
   "clawhub_categories": {
     "office-efficiency": "productivity",
     "content-creation": "creative",
@@ -203,6 +203,24 @@
     "education": "knowledge",
     "professional": "other",
     "life-service": "lifestyle"
+  },
+
+  "_local_to_clawhub_note": "本地分类格式直连ClawHub分类(跳过平台中转, 修复frontmatter category=Agents时映射断裂的bug)",
+  "local_to_clawhub": {
+    "Agents": "agents",
+    "Automation": "automation",
+    "Communication": "communication",
+    "Creative": "creative",
+    "Development": "productivity",
+    "Finance": "research",
+    "Integrations": "integrations",
+    "Knowledge": "knowledge",
+    "Lifestyle": "lifestyle",
+    "Operations": "productivity",
+    "Other": "other",
+    "Productivity": "productivity",
+    "Research": "research",
+    "Security": "security"
   },
 
   "_clawhub_category_slugs_note": "ClawHub所有标准分类slug列表(用于验证)",

@@ -39,10 +39,13 @@ def _load_category_map():
 _CATEGORY_MAP_CACHE = None
 
 def get_clawhub_category(skill_dir):
-    """从SKILL.md推断ClawHub分类
+    """从SKILL.md推断ClawHub分类 (v2.2: 修复映射链断裂bug)
     
-    映射链: SKILL.md frontmatter category → SkillHub平台分类 → ClawHub分类
-    如果没有category字段, 从slug和body内容推断
+    映射优先级:
+    1. local_to_clawhub直连 (本地格式→ClawHub格式, 修复frontmatter category=Agents时断裂)
+    2. clawhub_categories中转 (平台格式→ClawHub格式, 需先local_to_platform转换)
+    3. slug关键词推断
+    4. body内容推断
     """
     global _CATEGORY_MAP_CACHE
     if _CATEGORY_MAP_CACHE is None:
@@ -67,9 +70,22 @@ def get_clawhub_category(skill_dir):
                     key, _, val = line.partition(':')
                     fm[key.strip()] = val.strip().strip('"\'')
     
-    # 1. 从frontmatter category字段获取
+    # 1. 优先: local_to_clawhub直连 (修复frontmatter category=Agents等本地格式时的映射断裂)
     fm_category = fm.get('category', '')
     if fm_category:
+        local_to_clawhub = _CATEGORY_MAP_CACHE.get('local_to_clawhub', {})
+        if fm_category in local_to_clawhub:
+            return local_to_clawhub[fm_category]
+        
+        # 2. 中转: local_to_platform → clawhub_categories
+        local_to_platform = _CATEGORY_MAP_CACHE.get('local_to_platform', {})
+        platform_cat = local_to_platform.get(fm_category, '')
+        if platform_cat:
+            clawhub_map = _CATEGORY_MAP_CACHE.get('clawhub_categories', {})
+            if platform_cat in clawhub_map:
+                return clawhub_map[platform_cat]
+        
+        # 3. 兼容: frontmatter已经是平台格式(如ai-agent)
         clawhub_map = _CATEGORY_MAP_CACHE.get('clawhub_categories', {})
         if fm_category in clawhub_map:
             return clawhub_map[fm_category]

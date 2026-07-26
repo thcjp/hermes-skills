@@ -772,9 +772,14 @@ def sync_to_skillhub(slug: str, skill_md: Path, new_version: str,
 
 def sync_to_clawhub(slug: str, skill_md: Path, new_version: str,
                     skill_id: int) -> Dict[str, Any]:
-    """同步skill到ClawHub
+    """同步skill到ClawHub (v2.2: 增加营销包装参数)
 
-    通过npx clawhub publish直接上传单个skill
+    营销元素(复用clawhub_batch_uploader的提取函数):
+    - --categories: 分类(从SKILL.md推断, local_to_clawhub直连映射)
+    - --topics: 话题标签(从frontmatter tags和slug提取)
+    - --name: 显示名称(从frontmatter displayName获取)
+    - --slug: 确保slug一致性
+    - --json: JSON输出便于解析
     """
     result = {
         'slug': slug,
@@ -786,8 +791,37 @@ def sync_to_clawhub(slug: str, skill_md: Path, new_version: str,
     skill_dir = skill_md.parent
     changelog = f'Auto-sync v{new_version}'
 
+    # v2.2: 提取营销参数(复用clawhub_batch_uploader的函数, 避免重复实现)
     try:
-        cmd_str = f'npx clawhub --registry "https://clawhub.ai" publish "{skill_dir}" --changelog "{changelog}"'
+        sys.path.insert(0, str(SKILL_REGISTRY_DIR))
+        from clawhub_batch_uploader import get_clawhub_category, get_clawhub_topics, get_display_name
+        category = get_clawhub_category(skill_dir)
+        topics = get_clawhub_topics(skill_dir, slug)
+        display_name = get_display_name(skill_dir)
+    except ImportError:
+        category = "other"
+        topics = []
+        display_name = ""
+        result['marketing_warning'] = 'clawhub_batch_uploader不可用, 营销参数缺失'
+
+    # 构建上传命令(含营销参数)
+    cmd_parts = [
+        'npx', 'clawhub',
+        '--registry', '"https://clawhub.ai"',
+        'publish', f'"{skill_dir}"',
+        '--changelog', f'"{changelog}"',
+        '--categories', f'"{category}"',
+        '--topics', f'"{",".join(topics)}"',
+        '--slug', f'"{slug}"',
+        '--json',
+    ]
+    if display_name:
+        cmd_parts.extend(['--name', f'"{display_name}"'])
+
+    cmd_str = ' '.join(cmd_parts)
+    result['marketing'] = {'category': category, 'topics': topics[:5], 'name': display_name}
+
+    try:
         proc = subprocess.run(
             cmd_str,
             capture_output=True, text=True, timeout=120,
@@ -795,9 +829,22 @@ def sync_to_clawhub(slug: str, skill_md: Path, new_version: str,
         )
         output = proc.stdout + proc.stderr
 
+        # 尝试解析JSON输出
+        json_result = None
+        try:
+            json_result = json.loads(proc.stdout.strip())
+        except (json.JSONDecodeError, ValueError):
+            pass
+
         if proc.returncode == 0:
             result['status'] = 'success'
             result['output'] = output[:200]
+            if json_result:
+                result['clawhub_data'] = {
+                    'slug': json_result.get('slug', slug),
+                    'version': json_result.get('version', new_version),
+                    'url': json_result.get('url', ''),
+                }
             record_platform_upload(skill_id, new_version, 'clawhub', slug,
                                    'success', visibility='public', pricing='free')
         elif 'Rate limit' in output or 'rate limit' in output:
