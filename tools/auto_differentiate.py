@@ -68,7 +68,9 @@ CANDIDATES_FILE = DATA_DIR / "discovery" / "candidates_unified.json"
 SKILLHUB_ROOT = Path(r"d:\skills\packaged-skills\skillhub")
 
 # v3.0: 移除-pro后缀(会创建近似重复slug触发平台反垃圾系统)
-SLUG_CONFLICT_SUFFIXES = ['-v2', '-v3', '-plus', '-v4', '-max', '-v5', '-elite']
+# v3.3: 移除所有程序化后缀(-v2/-v3/-plus等),避免被反垃圾系统识别为"绕过唯一性约束"
+# 冲突时改为返回错误,由人工或语义化重命名处理
+SLUG_CONFLICT_SUFFIXES = []  # v3.3: 空列表,不自动追加任何后缀
 
 # 分类 -> (痛点, 方案) 映射, 用于 summary 生成
 CATEGORY_PAIN_SOLUTION_MAP: Dict[str, Tuple[str, str]] = {
@@ -142,24 +144,20 @@ def resolve_slug_conflict(
     existing_slugs: Set[str],
     batch_slugs: Set[str],
 ) -> str:
-    """检测 slug 冲突, 冲突时自动添加后缀 (-v2, -pro 等)。
+    """检测 slug 冲突, 冲突时返回None由调用方语义化重命名。
 
+    v3.3: 移除所有程序化后缀(-v2/-v3等),避免被反垃圾系统识别为"绕过唯一性约束"。
     检查范围包括数据库已有 slug 和当前批次已分配 slug。
+    
+    Returns:
+        str: 可用的slug (无冲突时返回base_slug)
+        None: 存在冲突且无法自动解决 (需调用方语义化重命名)
     """
     all_used = existing_slugs | batch_slugs
     if base_slug not in all_used:
         return base_slug
-    for suffix in SLUG_CONFLICT_SUFFIXES:
-        candidate = f"{base_slug}{suffix}"
-        if candidate not in all_used:
-            return candidate
-    # 所有预设后缀都冲突, 使用数字递增
-    counter = 6
-    while True:
-        candidate = f"{base_slug}-v{counter}"
-        if candidate not in all_used:
-            return candidate
-        counter += 1
+    # v3.3: 不再自动追加程序化后缀,返回None由调用方处理
+    return None
 
 
 # ============================================================
@@ -646,6 +644,10 @@ def process_candidates(
 
         # b. 检查 slug 冲突并解决
         final_slug = resolve_slug_conflict(base_slug, existing_slugs, batch_slugs)
+        if final_slug is None:
+            # v3.3: slug冲突时跳过该候选,不使用程序化后缀
+            print(f"  [SKIP] slug冲突无法自动解决: {base_slug} (需语义化重命名)")
+            continue
         batch_slugs.add(final_slug)
 
         # c. 生成 displayName

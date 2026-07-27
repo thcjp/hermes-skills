@@ -273,10 +273,25 @@ def scan_github_all() -> List[Dict[str, Any]]:
 # ============================================================
 
 def deduplicate(discovered_skills: List[Dict[str, Any]]) -> Dict[str, Any]:
-    """去重比对，分离新skill和已存在skill"""
+    """去重比对，分离新skill和已存在skill
+    
+    v3.3: 新增content_hash内容相似度检查,防止相同内容以不同slug上传
+    """
     existing_slugs = get_existing_slugs()
     existing_source_slugs = get_existing_source_slugs()
     existing_names = get_existing_display_names()
+    
+    # v3.3: 加载已有content_hash集合,用于内容去重
+    existing_content_hashes = set()
+    try:
+        import sqlite3
+        from config.project_config import DB_PATH
+        conn = sqlite3.connect(str(DB_PATH))
+        for row in conn.execute("SELECT content_hash FROM skills WHERE content_hash IS NOT NULL AND content_hash != ''"):
+            existing_content_hashes.add(row[0])
+        conn.close()
+    except Exception:
+        pass  # content_hash不可用时跳过内容去重(向后兼容)
 
     result = {
         'dedup_time': datetime.now().isoformat(),
@@ -285,6 +300,7 @@ def deduplicate(discovered_skills: List[Dict[str, Any]]) -> Dict[str, Any]:
         'duplicate_by_source_slug': [],
         'duplicate_by_display_name': [],
         'duplicate_by_slug': [],
+        'duplicate_by_content_hash': [],  # v3.3: 内容指纹去重
     }
 
     for skill in discovered_skills:
@@ -306,6 +322,15 @@ def deduplicate(discovered_skills: List[Dict[str, Any]]) -> Dict[str, Any]:
         if slug in existing_slugs:
             result['duplicate_by_slug'].append(skill)
             continue
+
+        # v3.3: 检查content_hash是否已存在(内容指纹去重)
+        content = skill.get('content', '')
+        if content and existing_content_hashes:
+            import hashlib
+            content_hash = hashlib.sha256(content.encode('utf-8')).hexdigest()[:16]
+            if content_hash in existing_content_hashes:
+                result['duplicate_by_content_hash'].append(skill)
+                continue
 
         result['new_skills'].append(skill)
 

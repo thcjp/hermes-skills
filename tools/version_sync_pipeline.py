@@ -721,9 +721,17 @@ def sync_to_skillhub(slug: str, skill_md: Path, new_version: str,
                                    'rate_limited', error=result['error'])
             return result
     except ImportError:
-        pass  # daily_sync不可用时跳过速率限制(向后兼容)
-    except Exception:
-        pass  # 速率限制异常不阻断上传(容错)
+        # v3.3: 失败安全(fail-safe) — daily_sync不可用时阻止上传
+        result['status'] = 'rate_limited'
+        result['error'] = '速率限制模块不可用,已阻止上传以防爆发式触发反垃圾系统'
+        result['free_upload'] = {'status': 'rate_limited', 'error': result['error']}
+        return result
+    except Exception as e:
+        # v3.3: 失败安全(fail-safe) — 速率限制异常时阻止上传
+        result['status'] = 'rate_limited'
+        result['error'] = f'速率限制检查异常,已阻止上传: {e}'
+        result['free_upload'] = {'status': 'rate_limited', 'error': result['error']}
+        return result
 
     # 检查内容长度(WAF限制)
     content = skill_md.read_text(encoding='utf-8', errors='replace')
@@ -748,10 +756,11 @@ def sync_to_skillhub(slug: str, skill_md: Path, new_version: str,
             record_platform_upload(skill_id, new_version, 'skillhub_free', slug,
                                    'success', visibility='public', pricing='free')
             # v3.0: 记录上传时间戳用于速率限制
+            # v3.4: record_upload失败时记录警告(非静默pass),避免速率限制计数偏少
             try:
                 record_upload('skillhub', slug)
-            except Exception:
-                pass
+            except Exception as e:
+                print(f"  [WARN] record_upload失败,速率限制计数可能不准: {e}")
         elif 'VERSION_EXISTS' in output:
             result['free_upload'] = {'status': 'version_exists', 'output': output[:200]}
             record_platform_upload(skill_id, new_version, 'skillhub_free', slug,

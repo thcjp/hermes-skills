@@ -177,8 +177,8 @@ def get_clawhub_topics(skill_dir, slug=None):
                     if val.startswith('['):
                         try:
                             topics.extend(json.loads(val))
-                        except:
-                            pass
+                        except (json.JSONDecodeError, ValueError, TypeError):
+                            pass  # JSON解析失败时忽略该tags行
                     elif val:
                         # 逗号分隔
                         topics.extend([t.strip().strip('"\'') for t in val.split(',') if t.strip()])
@@ -372,8 +372,8 @@ def find_skill_dir(slug, dir_mapping):
             p = Path(local_path)
             if p.exists() and (p / "SKILL.md").exists():
                 return p
-    except Exception:
-        pass
+    except Exception as e:
+        print(f"  [WARN] find_skill_dir DB查询失败: {e}")
 
     # Check dir mapping
     d = dir_mapping.get(slug)
@@ -550,12 +550,26 @@ def upload_skill(skill_dir, slug, dry_run=False, skip_quality_gate=False):
                 'error': 'PATH_ERROR',
                 'message': output.strip()[:200]
             }
+        elif 'protected' in output and 'slug namespace' in output:
+            return {
+                'success': False,
+                'slug': slug,
+                'error': 'PROTECTED_NAMESPACE',
+                'message': output.strip()[:200]
+            }
         elif 'Not logged in' in output or 'Run: clawhub login' in output:
             return {
                 'success': False,
                 'slug': slug,
                 'error': 'NOT_LOGGED_IN',
                 'message': 'ClawHub CLI not logged in. Run: npx clawhub --registry https://clawhub.ai login'
+            }
+        elif 'Unknown skill category' in output:
+            return {
+                'success': False,
+                'slug': slug,
+                'error': 'INVALID_CATEGORY',
+                'message': output.strip()[:200]
             }
         else:
             return {
@@ -691,9 +705,15 @@ def main():
                 rate_limited = True
                 break
         except ImportError:
-            pass  # daily_sync不可用时跳过速率限制(向后兼容)
-        except Exception:
-            pass  # 速率限制异常不阻断上传(容错)
+            # v3.3: 失败安全(fail-safe) — daily_sync不可用时停止上传
+            print(f"\n  [FATAL] 速率限制模块不可用,停止上传以防爆发式触发反垃圾系统")
+            rate_limited = True
+            break
+        except Exception as e:
+            # v3.3: 失败安全(fail-safe) — 速率限制异常时停止上传
+            print(f"\n  [FATAL] 速率限制检查异常,停止上传: {e}")
+            rate_limited = True
+            break
 
         # Upload
         print(f"  [{i}/{len(to_upload)}] {slug}...", end="", flush=True)
@@ -708,11 +728,12 @@ def main():
             if not args.dry_run:
                 update_db_clawhub_status(slug, 'synced', result.get('version'))
                 # v3.0: 记录上传到速率限制表
+                # v3.4: record_upload失败时记录警告(非静默pass),避免速率限制计数偏少
                 try:
                     from daily_sync import record_upload
                     record_upload('clawhub', slug)
-                except Exception:
-                    pass
+                except Exception as e:
+                    print(f"  [WARN] record_upload失败,速率限制计数可能不准: {e}")
         elif result.get('error') == 'VERSION_EXISTS':
             # Try incrementing version and retry
             print(f" VERSION_EXISTS, incrementing...", end="", flush=True)
@@ -728,11 +749,12 @@ def main():
                     if not args.dry_run:
                         update_db_clawhub_status(slug, 'synced', new_ver)
                         # v3.0: 记录上传到速率限制表
+                        # v3.4: record_upload失败时记录警告(非静默pass),避免速率限制计数偏少
                         try:
                             from daily_sync import record_upload
                             record_upload('clawhub', slug)
-                        except Exception:
-                            pass
+                        except Exception as e:
+                            print(f"  [WARN] record_upload失败,速率限制计数可能不准: {e}")
                 else:
                     print(f" FAIL: {result2.get('error', '')}")
                     fail_count += 1
@@ -746,10 +768,17 @@ def main():
             fail_count += 1
             results['failed'].append({'slug': slug, 'error': 'RATE_LIMITED'})
             rate_limited = True
+        elif result.get('error') == 'PROTECTED_NAMESPACE':
+            print(f" PROTECTED NAMESPACE (skip)")
+            skip_count += 1
+            results['skipped'].append(slug)
+            if not args.dry_run:
+                update_db_clawhub_status(slug, 'not_applicable')
         else:
-            print(f" FAIL: {result.get('error', '')}")
+            msg = result.get('message', '')[:80]
+            print(f" FAIL: {result.get('error', '')} | {msg}")
             fail_count += 1
-            results['failed'].append({'slug': slug, 'error': result.get('error', '')})
+            results['failed'].append({'slug': slug, 'error': result.get('error', ''), 'message': msg})
 
         # Save checkpoint every 10 uploads
         if i % 10 == 0:

@@ -308,8 +308,8 @@ def load_cookies():
                     api_key = org_data.get('apiKey', '')
                     if api_key:
                         return f'BEARER:{api_key}'
-        except Exception:
-            pass
+        except Exception as e:
+            print(f"  [WARN] API key加载失败: {e}")
 
     # 其次: 从cookie文件加载(使用utf-8-sig自动去除BOM)
     if COOKIE_FILE.exists():
@@ -500,9 +500,19 @@ def upload_skill(slug: str, dry_run: bool = False, skip_gate: bool = False,
                 'rate_limit_status': rate_check,
             }
     except ImportError:
-        pass  # daily_sync不可用时跳过速率限制(向后兼容)
-    except Exception:
-        pass  # 速率限制异常不阻断上传(容错)
+        # v3.3: 失败安全(fail-safe) — daily_sync不可用时阻止上传,防止无限流爆发式上传
+        return {
+            'success': False, 'slug': slug,
+            'message': '速率限制模块不可用,已阻止上传以防爆发式触发反垃圾系统',
+            'rate_limited': True,
+        }
+    except Exception as e:
+        # v3.3: 失败安全(fail-safe) — 速率限制异常时阻止上传,不可静默跳过
+        return {
+            'success': False, 'slug': slug,
+            'message': f'速率限制检查异常,已阻止上传: {e}',
+            'rate_limited': True,
+        }
     
     # 4. 构建上传payload
     is_paid = gate['is_paid'] or is_paid_skill(fm.get('license', ''), fm.get('edition', ''))
@@ -632,8 +642,9 @@ def upload_skill(slug: str, dry_run: bool = False, skip_gate: bool = False,
         # v3.0: 记录上传时间戳用于速率限制 (防止爆发式上传)
         try:
             record_upload('skillhub', slug)
-        except Exception:
-            pass  # 记录失败不影响上传结果
+        except Exception as e:
+            # v3.4: record_upload失败时记录警告(非静默pass),避免速率限制计数偏少
+            print(f"  [WARN] record_upload失败,速率限制计数可能不准: {e}")
         # v2.7: 上传成功后执行完整发布流程(approve→publish_to_community→star)
         publish_result = {}
         if not skip_publish and not dry_run:
