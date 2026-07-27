@@ -1395,21 +1395,59 @@ def run_rating_gate(skill_md_path: Path, slug: str = None) -> dict:
     }
 
 
-# ============ 统一质量检查入口 (v2.3增强: +评分门控) ============
+# ============ 本地LLM质量评分 (v2.4新增 — T1-003) ============
+
+def run_local_scoring(skill_md_path: Path) -> dict:
+    """调用local_quality_scorer对SKILL.md进行5维度LLM评分
+    
+    返回:
+        {total_score, dimensions, feedback, passed, scored_at}
+        评分失败时返回 {total_score: 0.0, feedback: '...', error: '...'}
+    """
+    try:
+        # 延迟导入，避免local_quality_scorer未安装时影响quality_gate核心功能
+        import sys as _sys
+        _tools_dir = str(Path(__file__).resolve().parent)
+        if _tools_dir not in _sys.path:
+            _sys.path.insert(0, _tools_dir)
+        from local_quality_scorer import score_skill
+        return score_skill(skill_md_path)
+    except ImportError:
+        return {
+            'total_score': 0.0,
+            'dimensions': {},
+            'feedback': 'local_quality_scorer模块未安装,跳过本地评分',
+            'passed': False,
+            'error': 'ImportError: local_quality_scorer'
+        }
+    except Exception as e:
+        return {
+            'total_score': 0.0,
+            'dimensions': {},
+            'feedback': f'本地评分异常: {e}',
+            'passed': False,
+            'error': str(e)
+        }
+
+
+# ============ 统一质量检查入口 (v2.4增强: +本地LLM质量评分) ============
 
 def run_full_quality_check(skill_md_path: Path,
                             include_l2l3: bool = False,
                             l2_report: dict = None,
                             l3_report: dict = None,
                             l4_report: dict = None,
-                            slug: str = None) -> dict:
-    """统一质量检查入口 (v2.3增强: +评分门控)
+                            slug: str = None,
+                            include_local_score: bool = True) -> dict:
+    """统一质量检查入口 (v2.4增强: +本地LLM质量评分)
     
     执行完整质量检查链路:
     L1(13项) → 评分门控(2项) → 安全预检(21项) → 营销关卡(7项) → 防幻觉(3项)
     可选: L2/L3报告检查
+    可选: 本地LLM质量评分(5维度, 阈值4.5)
     
     v2.3新增: 评分门控 — 检查平台历史评分,低于4.5分阻断上传
+    v2.4新增: 本地LLM质量评分 — 5维度评测,低于4.5分阻断上传
     
     参数:
         skill_md_path: SKILL.md文件路径
@@ -1418,9 +1456,11 @@ def run_full_quality_check(skill_md_path: Path,
         l3_report: L3试运行报告(可选)
         l4_report: L4-L9审计报告(可选)
         slug: skill slug (v2.3新增, 用于评分门控查询DB)
+        include_local_score: 是否执行本地LLM质量评分 (v2.4新增, 默认True)
     
     返回:
         统一质量检查结果, 包含L1/评分/安全/营销/防幻觉各层结果
+        v2.4新增: local_score(0.0-5.0), local_score_feedback, local_score_dimensions
     """
     # v2.4修复: 文件不存在时提前返回错误, 避免后续函数异常
     if not skill_md_path.exists():
@@ -1454,6 +1494,9 @@ def run_full_quality_check(skill_md_path: Path,
         skill_md_path, l2_report, l3_report, l4_report
     )
     
+    # 本地LLM质量评分 (v2.4新增 — 5维度评测, 阈值4.5)
+    local_score_result = run_local_scoring(skill_md_path) if include_local_score else None
+    
     # 汇总 (v2.7: 为每个check添加layer字段, 便于失败归因)
     all_checks = []
     for _layer_name, _result in [
@@ -1467,11 +1510,28 @@ def run_full_quality_check(skill_md_path: Path,
             _check['layer'] = _layer_name
             all_checks.append(_check)
     
+    # 本地评分检查项 (v2.4新增)
+    local_score = 0.0
+    local_score_feedback = ''
+    local_score_dimensions = {}
+    if local_score_result:
+        local_score = local_score_result.get('total_score', 0.0)
+        local_score_feedback = local_score_result.get('feedback', '')
+        local_score_dimensions = local_score_result.get('dimensions', {})
+        all_checks.append({
+            'layer': 'local_score',
+            'name': '本地LLM质量评分',
+            'passed': local_score >= 4.5,
+            'severity': 'high' if local_score < 4.5 else 'info',
+            'message': f"本地评分 {local_score:.2f}/5.0 ({'通过' if local_score >= 4.5 else '未通过'}) — {local_score_feedback[:200]}"
+        })
+    
     total = len(all_checks)
     passed = sum(1 for c in all_checks if c.get('passed'))
     failed = total - passed
     
-    return {
+    # v2.4: local_score < 4.5 也阻断 (与现有 failed > 0 逻辑合并)
+    result = {
         'skill': skill_md_path.parent.name,
         'path': str(skill_md_path),
         'overall_passed': failed == 0,
@@ -1504,6 +1564,18 @@ def run_full_quality_check(skill_md_path: Path,
         'all_checks': all_checks,
         'checked_at': datetime.now().isoformat()
     }
+    
+    # v2.4: 仅在include_local_score=True时添加本地评分字段 (向后兼容)
+    if include_local_score:
+        result['local_score'] = local_score
+        result['local_score_feedback'] = local_score_feedback
+        result['local_score_dimensions'] = local_score_dimensions
+        result['layers']['local_score'] = {
+            'passed': local_score >= 4.5,
+            'score': f"{local_score:.2f}/5.0",
+        }
+    
+    return result
 
 
 def format_terminal_output(result: dict) -> str:

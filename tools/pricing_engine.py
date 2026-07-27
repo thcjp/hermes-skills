@@ -63,6 +63,8 @@ CATEGORY_BASE_PRICE = {
     'AI模型': {'min': 3.0, 'max': 15.0, 'base': 6.9, 'rationale': 'AI辅助工具,中等频次'},
     '监控运维': {'min': 9.9, 'max': 29.0, 'base': 15.0, 'rationale': '企业级运维,低频高价值'},
     '电商': {'min': 5.0, 'max': 19.9, 'base': 12.0, 'rationale': '直接关联收入,付费意愿强'},
+    # v2.0新增: 金融量化类别 — 高价值专业领域,直接关联投资收益
+    '金融量化': {'min': 19.9, 'max': 199.0, 'base': 49.0, 'rationale': '金融量化工具直接关联投资收益,专业壁垒极高,付费意愿强,参考Bloomberg Terminal $2000/月'},
 }
 
 # 市场大小系数（市场越大，单价越低，走量）
@@ -109,11 +111,24 @@ MARKETING_KEYWORDS = {
     'AI模型': ['AI', 'LLM', 'GPT', '模型', 'model', '智能', 'agent', '助手'],
     '监控运维': ['监控', 'monitor', '运维', 'ops', '日志', 'log', '告警', 'alert'],
     '电商': ['电商', 'ecommerce', '商品', 'product', '店铺', 'shop', '订单', 'order', '支付'],
+    # v2.0新增: 金融量化关键词分类
+    '金融量化': ['股票', 'stock', 'A股', '港股', '美股', '期货', 'futures', '期权', 'options', '外汇', 'forex',
+                '加密', 'crypto', '比特币', 'bitcoin', '以太坊', 'ethereum', '区块链', 'blockchain',
+                '量化', 'quant', '交易', 'trading', '选股', '回测', 'backtest', '行情', 'quote',
+                'K线', 'candlestick', '技术分析', 'technical', '均线', 'MA', 'MACD', 'RSI', 'KDJ',
+                '布林带', 'bollinger', '斐波那契', 'fibonacci', 'EMA', '止损', '止盈', '仓位', 'position',
+                '杠杆', 'leverage', '保证金', 'margin', '套利', 'arbitrage', '做空', '做多', 'short', 'long',
+                '估值', 'valuation', 'DCF', 'PE', 'PB', 'PEG', 'WACC', 'CAPM', '财报', 'financial',
+                '投资', 'invest', '基金', 'fund', 'ETF', '指数', 'index', '债券', 'bond', '收益率', 'yield',
+                '波动率', 'volatility', '风险', 'risk', '风控', '对冲', 'hedge', '组合', 'portfolio',
+                'DeFi', 'NFT', '智能合约', 'smart-contract', '链上', 'on-chain', '代币', 'token',
+                '挖矿', 'mining', '流动性', 'liquidity', '做市', 'market-making', '高频', 'HFT'],
 }
 
 # 市场大小判断关键词
 LARGE_MARKET_KEYWORDS = ['文案', '写作', '翻译', '文件', '转换', '格式', '效率', '自动化', '批量']
-NICHE_MARKET_KEYWORDS = ['安全', '合规', '审计', '加密', '漏洞', '渗透', '金融', '税务', '法律', '医疗']
+NICHE_MARKET_KEYWORDS = ['安全', '合规', '审计', '加密', '漏洞', '渗透', '金融', '税务', '法律', '医疗',
+                          '量化', 'quant', '期货', '期权', '风控', '对冲', '套利', '估值', 'DCF', 'WACC']
 
 # 使用频次判断关键词
 DAILY_USE_KEYWORDS = ['文案', '写作', '翻译', '文件', '转换', '格式', '效率', '快捷', '自动']
@@ -281,8 +296,10 @@ def calculate_price(skill_md_path):
         tier = 'free'
     else:
         # 四舍五入到合理的价格点
+        # v2.0: 新增129/159/199高价位,支持金融量化等高价值类别
         price_points = [0.99, 1.9, 2.9, 3.9, 4.9, 5.9, 6.9, 7.9, 8.9, 9.9, 
-                       12.0, 15.0, 19.0, 19.9, 25.0, 29.0, 39.0, 49.0, 69.0, 99.0]
+                       12.0, 15.0, 19.0, 19.9, 25.0, 29.0, 39.0, 49.0, 69.0, 99.0,
+                       129.0, 159.0, 199.0]
         
         # 找到最接近的价格点
         final_price = min(price_points, key=lambda x: abs(x - raw_price))
@@ -298,8 +315,10 @@ def calculate_price(skill_md_path):
             tier = 'business'     # 中高频专业
         elif final_price <= 49.0:
             tier = 'premium'      # 低频高价值
-        else:
+        elif final_price <= 99.0:
             tier = 'enterprise'   # 企业级
+        else:
+            tier = 'finance_premium'  # v2.0: 金融级(129-199元),量化交易/专业金融工具
     
     return {
         'slug': slug,
@@ -383,20 +402,21 @@ def cmd_price_all():
     for r in paid_results:
         tier_counts[r['tier']] = tier_counts.get(r['tier'], 0) + 1
     print(f"\n分层分布:")
-    for tier in ['standard', 'professional', 'business', 'premium', 'enterprise']:
+    for tier in ['standard', 'professional', 'business', 'premium', 'enterprise', 'finance_premium']:
         count = tier_counts.get(tier, 0)
         if count > 0:
             print(f"  {tier:<14}: {count:>3} ({count/len(paid_results)*100:.0f}%)")
     
     # 价格分布
-    price_ranges = {'0.99-3.9': 0, '4.9-9.9': 0, '12-19.9': 0, '25-49': 0, '50+': 0}
+    price_ranges = {'0.99-3.9': 0, '4.9-9.9': 0, '12-19.9': 0, '25-49': 0, '50-99': 0, '100-199': 0}
     for r in paid_results:
         p = r['final_price']
         if p <= 3.9: price_ranges['0.99-3.9'] += 1
         elif p <= 9.9: price_ranges['4.9-9.9'] += 1
         elif p <= 19.9: price_ranges['12-19.9'] += 1
         elif p <= 49: price_ranges['25-49'] += 1
-        else: price_ranges['50+'] += 1
+        elif p <= 99: price_ranges['50-99'] += 1
+        else: price_ranges['100-199'] += 1
     
     print(f"\n价格分布:")
     for rng, count in price_ranges.items():

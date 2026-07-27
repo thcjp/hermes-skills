@@ -42,6 +42,16 @@ HIGH_VALUE_KEYWORDS = [
     '机器学习', '深度学习', '神经网络', 'NLP', '计算机视觉', '推荐系统', '大数据', '实时',
     '高并发', '分布式', '微服务', '架构', 'pipeline', '工作流', 'workflow', '编排',
     '安全审计', '漏洞', '渗透', 'pentest', '防火墙', 'firewall', '加密', 'encryption',
+    # v2.0新增: 金融量化高价值关键词 — 直接关联投资收益,付费意愿极强
+    '股票', 'stock', 'A股', '港股', '美股', '期货', 'futures', '期权', 'options', '外汇', 'forex',
+    '量化', 'quant', '交易', 'trading', '选股', '回测', 'backtest', '行情', 'K线', 'candlestick',
+    '技术分析', 'technical-analysis', '均线', 'MACD', 'RSI', 'KDJ', '布林带', 'bollinger',
+    '斐波那契', 'fibonacci', 'EMA', '止损', '止盈', '仓位', 'position', '杠杆', 'leverage',
+    '保证金', 'margin', '套利', 'arbitrage', '做空', '做多', '估值', 'valuation',
+    'DCF', 'WACC', 'CAPM', '财报', '投资', 'invest', '基金', 'fund', 'ETF',
+    '指数', 'index', '债券', 'bond', '收益率', 'yield', '波动率', 'volatility',
+    '风控', '对冲', 'hedge', '组合', 'portfolio', 'DeFi', 'NFT', '智能合约', 'smart-contract',
+    '链上', 'on-chain', '代币', 'token', '流动性', 'liquidity', '做市', 'market-making', '高频', 'HFT',
 ]
 
 # 低价值关键词 (含v34.0新增基础工具关键词)
@@ -98,6 +108,10 @@ UNIQUENESS_KEYWORDS = [
     '金融', 'finance', '医疗', 'healthcare', '法律', 'legal', '税务', 'tax',
     'AI', 'LLM', 'GPT', 'agent', '智能',
     '区块链', '智能合约', 'smart-contract', 'DeFi', 'NFT',
+    # v2.0新增: 金融量化独特性关键词
+    '量化', 'quant', '期货', 'futures', '期权', 'options', '风控', '对冲', 'hedge',
+    '套利', 'arbitrage', '估值', 'valuation', 'DCF', 'WACC', '回测', 'backtest',
+    '选股', '行情', 'K线', '技术分析', '高频', 'HFT', '做市', 'market-making',
 ]
 
 SIMPLE_TOOL_SLUG_PATTERNS = [
@@ -106,6 +120,17 @@ SIMPLE_TOOL_SLUG_PATTERNS = [
     'random', 'generator', 'calculator', 'checksum', 'hash', 'uuid', 'password',
     'base64', 'hex', 'json', 'yaml', 'csv', 'xml', 'markdown-formatter',
     'beautifier', 'formatter', 'parser', 'validator', 'converter',
+]
+
+# v2.0新增: 金融类slug关键词 — 命中时免除简单工具惩罚
+FINANCE_SLUG_KEYWORDS = [
+    'stock', 'trading', 'trade', 'finance', 'financial', 'quant', 'crypto',
+    'bitcoin', 'ethereum', 'blockchain', 'forex', 'futures', 'options',
+    'portfolio', 'backtest', 'market', 'ticker', 'candlestick', 'kline',
+    'invest', 'fund', 'etf', 'bond', 'yield', 'volatility', 'arbitrage',
+    'defi', 'nft', 'token', 'liquidity', 'exchange', 'okx', 'binance',
+    'a-stock', 'a_stock', 'ashare', 'a-share', 'treading', 'select-stock',
+    'stock-filter', 'finance-radar', 'finance-report', 'accounting',
 ]
 
 
@@ -207,6 +232,12 @@ def score_alternative(text):
 
 def simple_tool_penalty(slug):
     slug_lower = slug.lower()
+    
+    # v2.0新增: 金融类slug免除简单工具惩罚
+    for fin_kw in FINANCE_SLUG_KEYWORDS:
+        if fin_kw in slug_lower:
+            return 0
+    
     for pattern in SIMPLE_TOOL_SLUG_PATTERNS:
         if slug_lower == pattern or slug_lower.startswith(pattern + '-') or slug_lower.endswith('-' + pattern):
             return 4
@@ -254,18 +285,22 @@ def calculate_pricing_score_slug_only(slug):
 # ============ 阈值与价格映射 ============
 
 # 校准后阈值 (基于dry-run累积分布校准)
-TIER_THRESHOLDS = {'L4': 18, 'L3': 13, 'L2': 8, 'L1': 0}
+# v2.0: 新增L5金融级阈值,支持金融量化高价值skill
+TIER_THRESHOLDS = {'L5': 25, 'L4': 18, 'L3': 13, 'L2': 8, 'L1': 0}
 
 TIER_PRICE_MAP = {
     'L1': {'price': 9.9, 'model': 'per_use', 'name': 'L1-入门级', 'desc': '基础工具'},
     'L2': {'price': 19.9, 'model': 'per_use', 'name': 'L2-标准级', 'desc': '标准工具'},
     'L3': {'price': 29.9, 'model': 'per_use', 'name': 'L3-专业级', 'desc': '专业工具'},
     'L4': {'price': 99.9, 'model': 'monthly', 'name': 'L4-企业级', 'desc': '企业级'},
+    # v2.0新增: L5金融级 — 量化交易/专业金融工具,直接关联投资收益
+    'L5': {'price': 199.9, 'model': 'monthly', 'name': 'L5-金融级', 'desc': '金融量化专业工具'},
 }
 
 
 def score_to_tier(score):
-    if score >= TIER_THRESHOLDS['L4']: return 'L4'
+    if score >= TIER_THRESHOLDS['L5']: return 'L5'
+    elif score >= TIER_THRESHOLDS['L4']: return 'L4'
     elif score >= TIER_THRESHOLDS['L3']: return 'L3'
     elif score >= TIER_THRESHOLDS['L2']: return 'L2'
     else: return 'L1'

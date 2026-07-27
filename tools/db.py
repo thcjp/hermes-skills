@@ -162,6 +162,20 @@ def init_database():
     except sqlite3.OperationalError:
         pass
 
+    # v1.6: 本地LLM质量评分字段 (T1-004)
+    try:
+        c.execute("ALTER TABLE skills ADD COLUMN local_quality_score REAL DEFAULT 0.0")
+    except sqlite3.OperationalError:
+        pass
+    try:
+        c.execute("ALTER TABLE skills ADD COLUMN local_score_feedback TEXT DEFAULT ''")
+    except sqlite3.OperationalError:
+        pass
+    try:
+        c.execute("ALTER TABLE skills ADD COLUMN local_score_at TEXT")
+    except sqlite3.OperationalError:
+        pass
+
     # 2. versions - 版本历史表
     c.execute("""
         CREATE TABLE IF NOT EXISTS versions (
