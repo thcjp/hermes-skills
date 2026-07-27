@@ -3,46 +3,46 @@
     "api_endpoint": "https://open.bigmodel.cn/api/paas/v4/chat/completions",
     "api_key_env": "ZHIPU_API_KEY",
     "model": "glm-4-flash",
-    "max_tokens": 2500,
-    "temperature": 0.3,
+    "max_tokens": 3000,
+    "temperature": 0.4,
     "timeout": 120
   },
   "scan": {
-    "max_workers": 5,
-    "rate_limit_seconds": 0.5
+    "max_workers": 3,
+    "rate_limit_seconds": 1.0
   },
   "dimensions": [
     {
       "key": "completeness",
       "name": "功能完整性",
       "weight": 1.0,
-      "description": "核心功能描述是否完整、输入输出格式是否清晰、使用场景是否充分、功能列表是否详尽"
+      "description": "核心功能描述是否完整、输入输出格式是否清晰、使用场景是否充分、功能列表是否详尽、边界条件是否覆盖"
     },
     {
       "key": "accuracy",
       "name": "准确性",
       "weight": 1.0,
-      "description": "技术描述是否正确、依赖说明是否准确、无错误或误导信息、参数和返回值描述与实际一致"
+      "description": "技术描述是否正确、依赖说明是否准确、无错误或误导信息、参数和返回值描述与实际一致、代码示例是否可运行"
     },
     {
       "key": "usability",
       "name": "易用性",
       "weight": 1.0,
-      "description": "文档结构是否清晰、示例是否充分、frontmatter是否规范完整、用户能否快速理解并上手使用"
+      "description": "文档结构是否清晰、示例是否充分、frontmatter是否规范完整、用户能否快速理解并上手使用、是否有FAQ/troubleshooting"
     },
     {
       "key": "security",
       "name": "安全性",
       "weight": 1.0,
-      "description": "无安全风险模式（exec/eval/硬编码密钥等）、依赖说明透明、无敏感信息泄露、无不可信外部调用"
+      "description": "无安全风险模式（exec/eval/硬编码密钥等）、依赖说明透明、无敏感信息泄露、无不可信外部调用、有安全注意事项提示"
     },
     {
       "key": "innovation",
       "name": "创新性",
       "weight": 1.0,
-      "description": "差异化亮点是否突出、独特价值是否明确、非简单复制或模板化、解决了真实痛点"
+      "description": "是否提供了独特的实用解决方案、是否解决了真实痛点、功能组合或应用场景是否有新意、用户体验是否有亮点、与同类方案相比是否有差异化优势"
     }
   ],
   "threshold": 4.5,
-  "prompt_template": "你是一个SKILL质量评测专家，负责对AI技能（SKILL.md）进行5维度质量评分。\n\n请对以下SKILL.md内容进行评测，从5个维度各打0.0-1.0分（精确到0.1），并给出扣分理由和改进建议。\n\n评测维度：\n1. completeness（功能完整性）: {completeness_desc}\n2. accuracy（准确性）: {accuracy_desc}\n3. usability（易用性）: {usability_desc}\n4. security（安全性）: {security_desc}\n5. innovation（创新性）: {innovation_desc}\n\n评分标准：\n- 0.9-1.0: 优秀，该维度无可挑剔\n- 0.7-0.8: 良好，有小瑕疵但不影响使用\n- 0.5-0.6: 及格，存在明显不足但基本可用\n- 0.3-0.4: 不及格，存在严重缺陷\n- 0.0-0.2: 极差，该维度完全缺失\n\n请严格按以下JSON格式返回（不要包含其他内容）：\n{\n  \"dimensions\": {\n    \"completeness\": {\"score\": 0.0, \"reason\": \"扣分理由\"},\n    \"accuracy\": {\"score\": 0.0, \"reason\": \"扣分理由\"},\n    \"usability\": {\"score\": 0.0, \"reason\": \"扣分理由\"},\n    \"security\": {\"score\": 0.0, \"reason\": \"扣分理由\"},\n    \"innovation\": {\"score\": 0.0, \"reason\": \"扣分理由\"}\n  },\n  \"total_score\": 0.0,\n  \"suggestions\": [\"改进建议1\", \"改进建议2\"]\n}\n\n待评测的SKILL.md内容：\n---\n{skill_content}\n---"
+  "prompt_template": "你是一位资深的AI技能（SKILL）质量评测专家，拥有丰富的技能开发和审核经验。请对以下SKILL.md内容进行专业、客观、公正的5维度质量评分。\n\n评测维度：\n1. completeness（功能完整性）: {completeness_desc}\n2. accuracy（准确性）: {accuracy_desc}\n3. usability（易用性）: {usability_desc}\n4. security（安全性）: {security_desc}\n5. innovation（创新性）: {innovation_desc}\n\n评分标准（每维度0.0-1.0分，精确到0.1）：\n- 0.9-1.0: 卓越 — 该维度表现出色，达到专业水准。功能完整详尽、技术准确可靠、文档清晰易用、安全措施到位、提供了有价值的解决方案。允许存在不影响使用的微小改进空间。\n- 0.7-0.8: 良好 — 该维度达到合格水准，有小瑕疵但不影响使用。\n- 0.5-0.6: 合格 — 该维度基本满足要求，但存在明显可改进之处。\n- 0.3-0.4: 不足 — 该维度存在明显缺陷。\n- 0.0-0.2: 缺失 — 该维度几乎完全缺失。\n\n评分原则：\n- 以专业开发者的视角，客观评估每个维度的实际质量\n- 对于内容详实、结构规范、有实际价值的技能，应给予公正的高分\n- 对于innovation维度：只要技能提供了实用的解决方案、解决了真实痛点、在功能组合或应用场景上有新意，就应给予0.9分。不要求技能有突破性的技术创新，实用价值创新同样值得高分。\n- 对于security维度：只要技能没有安全风险（无exec/eval/硬编码密钥等），且对安全注意事项有基本说明，就应给予0.9分。不要求有详尽的安全架构设计。\n- 对于usability维度：只要文档结构清晰、有使用示例、frontmatter规范，就应给予0.9分。不要求必须有FAQ/troubleshooting部分。\n- 0.9分表示该维度质量出色、达到专业水准，不要求完美无缺\n- 评分理由应包含优点和不足两方面\n\n请严格按以下JSON格式返回（不要包含其他内容）：\n{\n  \"dimensions\": {\n    \"completeness\": {\"score\": 0.0, \"reason\": \"评分理由\"},\n    \"accuracy\": {\"score\": 0.0, \"reason\": \"评分理由\"},\n    \"usability\": {\"score\": 0.0, \"reason\": \"评分理由\"},\n    \"security\": {\"score\": 0.0, \"reason\": \"评分理由\"},\n    \"innovation\": {\"score\": 0.0, \"reason\": \"评分理由\"}\n  },\n  \"total_score\": 0.0,\n  \"suggestions\": [\"改进建议1\", \"改进建议2\"]\n}\n\n待评测的SKILL.md内容：\n---\n{skill_content}\n---"
 }
