@@ -514,6 +514,27 @@ def upload_skill(slug: str, dry_run: bool = False, skip_gate: bool = False,
             'rate_limited': True,
         }
     
+    # 3.6 内容指纹去重预检 (v3.4: 防止相同内容以不同slug上传触发平台反垃圾系统)
+    # 根因: 2026-07-24批量上传中大量近似重复内容被封禁(93.4%封禁率)
+    try:
+        import sys as _sys
+        _tools_dir = os.path.dirname(os.path.abspath(__file__))
+        if _tools_dir not in _sys.path:
+            _sys.path.insert(0, _tools_dir)
+        from content_dedup import check_content_dedup
+        dedup_result = check_content_dedup(slug, content)
+        if dedup_result.get('duplicate'):
+            return {
+                'success': False, 'slug': slug,
+                'message': f"内容去重: {dedup_result['reason']}",
+                'dedup_blocked': True,
+                'existing_slug': dedup_result.get('existing_slug'),
+            }
+    except ImportError:
+        pass  # 去重模块不可用时不阻断(已有速率限制和安全预检)
+    except Exception as e:
+        print(f"[WARN] 内容去重检查异常(不阻断): {e}")
+    
     # 4. 构建上传payload
     is_paid = gate['is_paid'] or is_paid_skill(fm.get('license', ''), fm.get('edition', ''))
     price = gate['price'] or 0

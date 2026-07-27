@@ -743,6 +743,27 @@ def sync_to_skillhub(slug: str, skill_md: Path, new_version: str,
                                'blocked_content_too_long', error=result['error'])
         return result
 
+    # v3.4: 内容指纹去重预检 (防止相同内容以不同slug上传触发平台反垃圾系统)
+    # 根因: 2026-07-24批量上传中大量近似重复内容被封禁(93.4%封禁率)
+    try:
+        import sys as _sys
+        _tools_dir = os.path.dirname(os.path.abspath(__file__))
+        if _tools_dir not in _sys.path:
+            _sys.path.insert(0, _tools_dir)
+        from content_dedup import check_content_dedup
+        dedup_result = check_content_dedup(slug, content)
+        if dedup_result.get('duplicate'):
+            result['status'] = 'dedup_blocked'
+            result['error'] = f"内容去重: {dedup_result['reason']}"
+            result['free_upload'] = {'status': 'dedup_blocked', 'error': result['error']}
+            record_platform_upload(skill_id, new_version, 'skillhub', slug,
+                                   'dedup_blocked', error=result['error'])
+            return result
+    except ImportError:
+        pass  # 去重模块不可用时不阻断
+    except Exception as e:
+        print(f"[WARN] 内容去重检查异常(不阻断): {e}")
+
     # 免费版上传 - 通过CLI
     try:
         cli_cmd = f'skillhub publish "{skill_dir}" --changelog "Auto-sync v{new_version}"'
