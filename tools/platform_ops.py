@@ -1287,6 +1287,11 @@ def publish_to_community(slug: str) -> dict:
             # publish失败,继续尝试下一个后缀(此时current_slug=new_slug)
         # rename失败(409=已占用),继续尝试下一个后缀
     
+    # C1修复增强: 如果rename成功过, current_slug可能已不同于原始slug
+    # 返回current_slug而非原始slug, 让调用方知道平台上的实际slug
+    if current_slug != slug:
+        return {'success': False, 'slug': current_slug, 'original_slug': slug,
+                'error': f'slug已改名为{current_slug}但发布到社区失败: {err_str}'}
     return {'success': False, 'slug': slug, 'error': f'slug冲突且所有后缀(-sk/-sk1/-sk2/-sk3)均被占用: {err_str}'}
 
 
@@ -1503,17 +1508,20 @@ def check_banned_skills(limit: int = 0, use_admin_verify: bool = True) -> dict:
                         visibility = admin_data.get('visibility', '')
                         review_status = admin_data.get('reviewStatus', admin_data.get('review_status', ''))
 
-                        if visibility != 'public':
+                        # H1修复: 先检查pending状态, 再检查visibility
+                        # 因为pending skill的visibility通常不是public(尚未发布到社区),
+                        # 如果先检查visibility会误判pending为never_published
+                        if review_status == 'pending':
+                            # 仍在审核中 — 非封禁
+                            pending_review += 1
+                            if i % 50 == 0:
+                                print(f"  [{i}/{len(all_slugs)}] {slug} — pending (审核中)")
+                        elif visibility != 'public':
                             # 从未发布到社区 — 非封禁
                             never_published += 1
                             never_published_slugs.append(slug)
                             if i % 50 == 0:
                                 print(f"  [{i}/{len(all_slugs)}] {slug} — org_only (未发布到社区)")
-                        elif review_status == 'pending':
-                            # 仍在审核中 — 非封禁
-                            pending_review += 1
-                            if i % 50 == 0:
-                                print(f"  [{i}/{len(all_slugs)}] {slug} — pending (审核中)")
                         else:
                             # admin可见且public但公开API 404 — 异常
                             inconsistent += 1

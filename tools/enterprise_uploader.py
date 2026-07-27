@@ -423,20 +423,34 @@ def _post_upload_publish(slug: str) -> dict:
             }
 
             # Step 4: 更新SQLite DB — 门控在社区发布成功条件下(与version_sync_pipeline一致)
+            # C1修复增强: 添加错误日志, 避免IntegrityError被静默吞掉
             try:
                 conn = sqlite3.connect(str(DB_PATH))
                 conn.execute("PRAGMA foreign_keys = ON")
                 # 如果slug被改名, 先更新skills表的slug字段
                 if was_renamed and actual_slug != slug:
-                    conn.execute("""
-                        UPDATE skills SET slug = ?, skillhub_sync_status = 'synced'
-                        WHERE slug = ?
-                    """, (actual_slug, slug))
+                    # 检查新slug是否已存在(避免UNIQUE约束冲突)
+                    check = conn.execute(
+                        "SELECT id FROM skills WHERE slug = ?", (actual_slug,)
+                    ).fetchone()
+                    if check:
+                        # 新slug已存在 — 仅更新sync_status, 不改slug
+                        conn.execute("""
+                            UPDATE skills SET skillhub_sync_status = 'synced'
+                            WHERE slug = ?
+                        """, (slug,))
+                        result['db_warning'] = f'新slug {actual_slug} 已存在, 保留原slug {slug}'
+                    else:
+                        conn.execute("""
+                            UPDATE skills SET slug = ?, skillhub_sync_status = 'synced'
+                            WHERE slug = ?
+                        """, (actual_slug, slug))
+                    # platform_uploads更新
                     conn.execute("""
                         UPDATE platform_uploads SET community_published = 1, platform_slug = ?
                         WHERE skill_id = (SELECT id FROM skills WHERE slug = ?)
                         AND platform = 'skillhub'
-                    """, (actual_slug, actual_slug))
+                    """, (actual_slug, actual_slug if not check else slug))
                 else:
                     conn.execute("""
                         UPDATE platform_uploads SET community_published = 1
@@ -449,8 +463,10 @@ def _post_upload_publish(slug: str) -> dict:
                     """, (slug,))
                 conn.commit()
                 conn.close()
-            except Exception:
-                pass
+            except sqlite3.IntegrityError as e:
+                result['db_error'] = f'DB约束冲突(可能slug重复): {e}'
+            except Exception as e:
+                result['db_error'] = f'DB更新异常: {e}'
         else:
             # 社区发布失败时不标记community_published, 避免重蹈"已发布但不可见"的覆辙
             result['warning'] = '社区发布失败, DB未更新community_published, 需手动修复'

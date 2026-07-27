@@ -1,0 +1,1192 @@
+﻿发现 1072 个SKILL.md文件
+DB中已评分: 3 个（将跳过）
+待扫描: 1069 个
+并行线程数: 5
+  [1/1069] FAIL ace-music: 3.00
+  [2/1069] FAIL ad-insight-hub-free: 3.00
+  [3/1069] FAIL ace-music-free: 3.80
+  [4/1069] FAIL actor-identifier: 3.90
+  [5/1069] FAIL admapix: 3.70
+  [6/1069] FAIL admapix-free: 3.50
+  [7/1069] FAIL afrexai-cybersecurity-engine: 3.00
+  [8/1069] FAIL afrexai-cybersecurity-engine-free: 3.50
+  [9/1069] FAIL ad-insight-hub: 3.90
+  [10/1069] FAIL aegis-security: 3.90
+  --- 进度: 10/1069 (0.9%) 成功=10 错误=0 速率=0.2/s 预计剩余=6067s ---
+  [11/1069] FAIL afrexai-knowledge-management: 3.50
+  [12/1069] FAIL aegis-security-free: 3.80
+  [13/1069] FAIL afrexai-knowledge-management-free: 3.90
+  [14/1069] FAIL agent: 3.50
+  [15/1069] FAIL agent-browser-assistant: 2.90
+  [16/1069] FAIL agent-browser-stagehand: 3.50
+  [17/1069] FAIL agent-browser-cli: 3.00
+  [18/1069] FAIL agent-chat: 3.00
+  [19/1069] FAIL agent-bom-vulnerability-intel: 4.10
+  [20/1069] FAIL agent-knowledge: 2.90
+  --- 进度: 20/1069 (1.9%) 成功=20 错误=0 速率=0.2/s 预计剩余=5671s ---
+  [21/1069] FAIL agent-commercial-contract: 3.00
+  [22/1069] FAIL agent-group: 2.90
+  [23/1069] FAIL agent-framework-azure-ai-py: 3.00
+  [24/1069] FAIL agent-research: 3.80
+  [25/1069] FAIL agent-browser-automation: 3.90
+  [26/1069] FAIL agent-telegram: 3.00
+  [27/1069] FAIL agent-telegram-free: 2.90
+  [28/1069] FAIL agentvibes-skill: 3.50
+  [29/1069] FAIL agentic-security-audit: 3.50
+  [30/1069] FAIL agentvibes-content-skill: 2.90
+  --- 进度: 30/1069 (2.8%) 成功=30 错误=0 速率=0.2/s 预计剩余=5661s ---
+  [31/1069] FAIL ai-agent-helper-free: 3.50
+  [32/1069] FAIL agentvibes-voice-skill: 3.50
+  [33/1069] FAIL agentvibes-voice-skill-free: 3.50
+  [34/1069] FAIL ai-artist-workstation: 3.90
+  [35/1069] FAIL ai-agent-helper: 3.90
+  [36/1069] FAIL ai-artist-workstation-pro: 3.50
+  [37/1069] FAIL ai-finance: 3.80
+  [38/1069] FAIL ai-finance-free: 3.80
+  [39/1069] FAIL ai-assistant: 3.80
+  [40/1069] FAIL ai-assistant-free: 3.90
+  --- 进度: 40/1069 (3.7%) 成功=39 错误=1 速率=0.2/s 预计剩余=5574s ---
+  [41/1069] FAIL ai-kujiale-design: 3.90
+  [42/1069] FAIL ai-kujiale-design-free: 3.70
+  [43/1069] FAIL ai-news: 2.90
+  [44/1069] FAIL ai-podcast: 3.80
+  [45/1069] FAIL ai-image-gen-free: 3.50
+  [46/1069] FAIL ai-image-gen: 3.90
+  [47/1069] FAIL ai-report: 3.90
+  [48/1069] FAIL ai-video-studio-pro: 3.90
+  [49/1069] FAIL aic-dashboard: 3.50
+  [50/1069] FAIL aic-dashboard-free: 3.00
+  --- 进度: 50/1069 (4.7%) 成功=49 错误=1 速率=0.2/s 预计剩余=5386s ---
+  [51/1069] FAIL ai-podcast-free: 3.00
+  [52/1069] FAIL alephnet-node: 4.10
+  [53/1069] FAIL alibaba-quark-scan-free: 2.90
+  [54/1069] FAIL alephnet-node-manager: 3.90
+  [55/1069] FAIL alibaba-quark-scan: 3.00
+  [56/1069] FAIL alephnet-node-free: 3.70
+  [57/1069] FAIL ai-writing-style-cloner: 3.90
+  [58/1069] FAIL amap-jsapi-skill: 2.90
+  [59/1069] FAIL analytics-dashboard: 3.80
+  [60/1069] FAIL alpha-feed-creator: 3.90
+  --- 进度: 60/1069 (5.6%) 成功=59 错误=1 速率=0.2/s 预计剩余=5051s ---
+  [61/1069] FAIL analyze-video-by-qwen: 3.90
+  [62/1069] FAIL analyze-video-by-qwen-free: 3.50
+  [63/1069] FAIL anthropics-frontend-design: 3.90
+  [64/1069] FAIL analyze: 3.80
+  [65/1069] FAIL anthrovision-telegram-body-scan-free: 3.50
+  [66/1069] FAIL anygen-diagram: 3.90
+  [67/1069] FAIL anygen-diagram-generator: 3.80
+  [68/1069] FAIL anthropics-frontend-design-free: 3.90
+  [69/1069] FAIL anthrovision-telegram-body-scan: 3.90
+  [70/1069] FAIL api-connect-hub: 3.90
+  --- 进度: 70/1069 (6.5%) 成功=69 错误=1 速率=0.2/s 预计剩余=4910s ---
+  [71/1069] FAIL api-development: 3.00
+  [72/1069] FAIL api-doc-generator: 3.80
+  [73/1069] FAIL api-doc-writer: 3.80
+  [74/1069] FAIL api-doc-writer-free: 3.50
+  [75/1069] FAIL api-free: 3.50
+  [76/1069] FAIL api-gateway-free: 2.90
+  [77/1069] FAIL api-generator-free: 3.00
+  [78/1069] FAIL anygen-diagram-generator-free: 3.00
+  [79/1069] FAIL api-generator: 3.80
+  [80/1069] FAIL api-integration: 3.50
+  --- 进度: 80/1069 (7.5%) 成功=79 错误=1 速率=0.2/s 预计剩余=4780s ---
+  [81/1069] FAIL api-gateway: 3.90
+  [82/1069] FAIL api-magic-gen: 3.80
+  [83/1069] FAIL api-toolkit: 3.90
+  [84/1069] FAIL api-integration-free: 3.50
+  [85/1069] FAIL api-scaffold-gen: 3.80
+  [86/1069] FAIL apple-health-skill-free: 3.70
+  [87/1069] FAIL archive: 3.90
+  [88/1069] FAIL arb-engine: 3.80
+  [89/1069] FAIL assistant: 3.70
+  [90/1069] FAIL apple-health-skill: 3.50
+  --- 进度: 90/1069 (8.4%) 成功=89 错误=1 速率=0.2/s 预计剩余=4886s ---
+  [91/1069] FAIL art: 3.00
+  [92/1069] FAIL archive-free: 3.50
+  [93/1069] FAIL atlas-admin-console: 3.90
+  [94/1069] FAIL audio-upload-aioz-stream: 3.70
+  [95/1069] FAIL audit: 3.00
+  [96/1069] FAIL audio-upload-aioz-stream-free: 3.50
+  [97/1069] FAIL auto-monitor: 2.90
+  [98/1069] FAIL automation-recipe-pack: 3.80
+  [99/1069] FAIL auto-updater: 3.80
+  [100/1069] FAIL auto-workflow: 3.00
+  --- 进度: 100/1069 (9.4%) 成功=99 错误=1 速率=0.2/s 预计剩余=4871s ---
+  [101/1069] FAIL automation-recipe-book: 3.80
+  [102/1069] FAIL audio-stream-upload: 3.50
+  [103/1069] FAIL aws-cloud-architect-free: 3.90
+  [104/1069] FAIL aws-cloud-architect: 3.80
+  [105/1069] FAIL aws: 3.00
+  [106/1069] FAIL aws-graph-agent: 3.50
+  [107/1069] FAIL aws-agentcore-langgraph-free: 3.50
+  [108/1069] FAIL aws-agentcore-langgraph: 3.80
+  [109/1069] FAIL aws-infra-free: 3.70
+  [110/1069] FAIL aws-wechat-article-writing: 3.90
+  --- 进度: 110/1069 (10.3%) 成功=109 错误=1 速率=0.2/s 预计剩余=4825s ---
+  [111/1069] FAIL aws-toolkit: 3.00
+  [112/1069] FAIL azure: 3.00
+  [113/1069] FAIL azure-ai-transcription-py: 3.80
+  [114/1069] FAIL aws-graph-agent-free: 3.70
+  [115/1069] FAIL aws-infra: 3.90
+  [116/1069] FAIL azure-ai-transcription-py-free: 3.50
+  [117/1069] FAIL aws-wechat-article-writing-free: 3.80
+  [118/1069] FAIL azure-cli: 3.50
+  [119/1069] FAIL azure-ai-voicelive-py-free: 3.80
+  [120/1069] FAIL azure-devops: 3.20
+  --- 进度: 120/1069 (11.2%) 成功=119 错误=1 速率=0.2/s 预计剩余=4884s ---
+  [121/1069] FAIL azure-ai-voicelive-py: 3.90
+  [122/1069] FAIL azure-cloud-architect: 3.80
+  [123/1069] FAIL azure-cli-toolkit: 3.50
+  [124/1069] FAIL azure-infra-free: 3.80
+  [125/1069] FAIL azure-cloud-architect-free: 3.50
+  [126/1069] FAIL azure-infra: 3.90
+  [127/1069] FAIL azure-voicelive: 3.00
+  [128/1069] FAIL azure-gateway-cli: 3.90
+  [129/1069] FAIL backtest: 3.90
+  [130/1069] FAIL azure-transcription: 3.50
+  --- 进度: 130/1069 (12.2%) 成功=129 错误=1 速率=0.2/s 预计剩余=4855s ---
+  [131/1069] FAIL bailian-web-search: 3.50
+  [132/1069] FAIL baidu-netdisk-skills: 3.90
+  [133/1069] FAIL baidu-netdisk-skills-free: 3.70
+  [134/1069] FAIL baoyu-md-formatter: 2.90
+  [135/1069] FAIL baoyu-diagram: 3.00
+  [136/1069] FAIL beware-piper-tts-free: 3.00
+  [137/1069] FAIL bilibili-all-in-one: 3.50
+  [138/1069] FAIL bilibili-helper: 3.90
+  [139/1069] FAIL bilibili-all-in-one-free: 3.80
+  [140/1069] FAIL beware-piper-tts: 3.50
+  --- 进度: 140/1069 (13.1%) 成功=139 错误=1 速率=0.2/s 预计剩余=4751s ---
+  [141/1069] FAIL bilibili-toolkit: 3.50
+  [142/1069] FAIL blog-seo-writer: 3.50
+  [143/1069] FAIL bilibili-helper-free: 3.80
+  [144/1069] FAIL bookmark-intelligence: 3.80
+  [145/1069] FAIL blog-writer: 3.50
+  [146/1069] FAIL bookmark-smart-hub: 3.90
+  [147/1069] FAIL bookmark-intelligence-free: 3.50
+  [148/1069] FAIL blog-writer-free: 3.50
+  [149/1069] FAIL book-painter: 2.00
+  [150/1069] FAIL brainz-calendar: 3.50
+  --- 进度: 150/1069 (14.0%) 成功=149 错误=1 速率=0.2/s 预计剩余=4776s ---
+  [151/1069] FAIL browser-automation: 3.50
+  [152/1069] FAIL browser-automation-v2: 3.00
+  [153/1069] FAIL bsession: 2.90
+  [154/1069] FAIL calendar-reminder: 3.80
+  [155/1069] FAIL brave-search: 2.90
+  [156/1069] FAIL calendar: 2.90
+  [157/1069] FAIL build-game: 3.10
+  [158/1069] FAIL calendar-skill: 3.00
+  [159/1069] FAIL calendar-reminder-free: 3.50
+  [160/1069] FAIL can: 3.70
+  --- 进度: 160/1069 (15.0%) 成功=159 错误=1 速率=0.2/s 预计剩余=4746s ---
+  [161/1069] FAIL call-bridge: 3.90
+  [162/1069] FAIL can-bus-toolkit: 3.90
+  [163/1069] FAIL can-free: 3.50
+  [164/1069] FAIL cashu-emoji: 3.00
+  [165/1069] FAIL calendar-sync-tool: 2.90
+  [166/1069] FAIL canvas-json-handler: 3.90
+  [167/1069] FAIL cctv-news-fetcher: 3.00
+  [168/1069] FAIL chart: 3.90
+  [169/1069] FAIL cdn: 3.50
+  [170/1069] FAIL chart-free: 3.50
+  --- 进度: 170/1069 (15.9%) 成功=169 错误=1 速率=0.2/s 预计剩余=4602s ---
+  [171/1069] FAIL chart-craft: 3.80
+  [172/1069] FAIL card-image-builder: 3.90
+  [173/1069] FAIL chat: 3.00
+  [174/1069] FAIL chart-generator-2-0-0: 2.90
+  [175/1069] FAIL cheat-code-paid: 3.90
+  [176/1069] FAIL cheat-code: 2.90
+  [177/1069] FAIL chief-creative-officer: 3.90
+  [178/1069] FAIL chief-creative-officer-free: 3.90
+  [179/1069] FAIL chromecast-control: 3.80
+  [180/1069] FAIL claude-code-delegate: 3.80
+  --- 进度: 180/1069 (16.8%) 成功=179 错误=1 速率=0.2/s 预计剩余=4478s ---
+  [181/1069] FAIL chromecast-control-free: 3.50
+  [182/1069] FAIL claude-code-runner: 2.90
+  [183/1069] FAIL claude-code-delegate-free: 3.50
+  [184/1069] FAIL clawcall-free: 3.90
+  [185/1069] FAIL china-news: 3.00
+  [186/1069] FAIL claude-tmux: 2.60
+  [187/1069] FAIL clawddocs: 2.90
+  [188/1069] FAIL clawcall: 3.90
+  [189/1069] FAIL clawprint: 2.90
+  [190/1069] FAIL cloud-architect: 3.90
+  --- 进度: 190/1069 (17.8%) 成功=189 错误=1 速率=0.2/s 预计剩余=4412s ---
+  [191/1069] FAIL cloud-architect-design: 3.90
+  [192/1069] FAIL cloud-architect-free: 3.50
+  [193/1069] FAIL cloud-free: 3.50
+  [194/1069] FAIL cloud-manager: 3.90
+  [195/1069] FAIL cloud-storage: 3.50
+  [196/1069] FAIL cloud: 3.80
+  [197/1069] FAIL code: 3.00
+  [198/1069] FAIL code-analysis-toolkit: 3.90
+  [199/1069] FAIL code-analyze: 3.90
+  [200/1069] FAIL code-dev-v1: 3.90
+  --- 进度: 200/1069 (18.7%) 成功=199 错误=1 速率=0.2/s 预计剩余=4381s ---
+  [201/1069] FAIL code-dev-toolkit: 3.90
+  [202/1069] FAIL code-quality-paid: 3.90
+  [203/1069] FAIL code-analysis-skills: 3.50
+  [204/1069] FAIL code-delegate: 3.50
+  [205/1069] FAIL comfyui-painter: 3.90
+  [206/1069] FAIL code-runner: 3.50
+  [207/1069] FAIL code-quality: 2.90
+  [208/1069] FAIL communication-skill-free: 3.70
+  [209/1069] FAIL compress: 3.70
+  [210/1069] FAIL communication-skill: 4.10
+  --- 进度: 210/1069 (19.6%) 成功=209 错误=1 速率=0.2/s 预计剩余=4394s ---
+  [211/1069] FAIL content-refiner: 3.90
+  [212/1069] FAIL context-driven-development: 3.00
+  [213/1069] FAIL company-search-fengniao: 3.80
+  [214/1069] FAIL control-ikea-lightbulb: 2.90
+  [215/1069] FAIL comfyui-painter-free: 3.80
+  [216/1069] FAIL creative-officer: 3.90
+  [217/1069] FAIL creator-alpha-feed: 4.10
+  [218/1069] FAIL creator-alpha-feed-free: 3.80
+  [219/1069] FAIL cron-scheduler-setup: 3.50
+  [220/1069] FAIL cross-market: 3.90
+  --- 进度: 220/1069 (20.6%) 成功=219 错误=1 速率=0.2/s 预计剩余=4301s ---
+  [221/1069] FAIL cron-setup-guide: 3.90
+  [222/1069] FAIL cron-mastery: 3.90
+  [223/1069] FAIL crypto-portfolio-free: 3.80
+  [224/1069] FAIL cron-precision-scheduler: 4.10
+  [225/1069] FAIL crypto-portfolio: 3.90
+  [226/1069] FAIL css: 3.90
+  [227/1069] FAIL css-free: 3.90
+  [228/1069] FAIL csv: 3.90
+  [229/1069] FAIL csv-analyzer: 3.90
+  [230/1069] FAIL csv-handler: 4.20
+  --- 进度: 230/1069 (21.5%) 成功=229 错误=1 速率=0.2/s 预计剩余=4217s ---
+  [231/1069] FAIL csv-handler-free: 3.50
+  [232/1069] FAIL csv-insight: 3.90
+  [233/1069] FAIL csv-analyzer-free: 3.20
+  [234/1069] FAIL csv-json-converter: 3.90
+  [235/1069] FAIL ctxly-chat: 2.90
+  [236/1069] FAIL daily-news-brief: 3.50
+  [237/1069] FAIL csv-toolkit: 3.50
+  [238/1069] FAIL daily-report-writer: 2.90
+  [239/1069] FAIL csv-free: 2.90
+  [240/1069] FAIL dashboard: 2.90
+  --- 进度: 240/1069 (22.5%) 成功=239 错误=1 速率=0.2/s 预计剩余=4154s ---
+  [241/1069] FAIL dashboard-toolkit: 2.90
+  [242/1069] FAIL data: 2.90
+  [243/1069] FAIL data-analysis-hub: 3.90
+  [244/1069] FAIL data-analysis-litiao-free: 3.00
+  [245/1069] FAIL dashboard-analytics-tool: 1.50
+  [246/1069] FAIL data-analysis-litiao: 3.90
+  [247/1069] FAIL data-analyst-chinese: 3.90
+  [248/1069] FAIL data-analysis-toolkit: 3.50
+  [249/1069] FAIL data-analyst-cn: 3.80
+  [250/1069] FAIL data-analyst-cn-free: 2.90
+  --- 进度: 250/1069 (23.4%) 成功=249 错误=1 速率=0.2/s 预计剩余=4075s ---
+  [251/1069] FAIL data-format-converter-free: 2.90
+  [252/1069] FAIL database-admin-free: 2.90
+  [253/1069] FAIL database-admin: 3.70
+  [254/1069] FAIL data-analyst-expert: 3.50
+  [255/1069] FAIL db-admin-console: 3.90
+  [256/1069] FAIL db: 3.80
+  [257/1069] FAIL db-connector: 3.90
+  [258/1069] FAIL data-format-converter: 3.90
+  [259/1069] FAIL db-free: 3.00
+  [260/1069] FAIL decision-architect: 4.10
+  --- 进度: 260/1069 (24.3%) 成功=259 错误=1 速率=0.2/s 预计剩余=4077s ---
+  [261/1069] FAIL db-schema-designer: 3.90
+  [262/1069] FAIL decision-architect-free: 3.50
+  [263/1069] FAIL deepseek-assistant: 3.50
+  [264/1069] FAIL design-toolkit: 3.90
+  [265/1069] FAIL design: 3.50
+  [266/1069] FAIL deepseek-chat: 2.90
+  [267/1069] FAIL design-free: 2.80
+  [268/1069] FAIL diagram-gen: 3.00
+  [269/1069] FAIL diagram-generator-free: 3.00
+  [270/1069] FAIL diagram-generator: 3.80
+  --- 进度: 270/1069 (25.3%) 成功=269 错误=1 速率=0.2/s 预计剩余=4022s ---
+  [271/1069] FAIL diagram: 3.70
+  [272/1069] FAIL diagram-tools: 3.50
+  [273/1069] FAIL dex-token: 3.50
+  [274/1069] FAIL discord-chat: 3.80
+  [275/1069] FAIL discord-chat-free: 3.50
+  [276/1069] FAIL dingtalk-calendar: 2.90
+  [277/1069] FAIL discord-chat-manager: 3.90
+  [278/1069] FAIL discord-communities-free: 3.50
+  [279/1069] FAIL discord: 3.80
+  [280/1069] FAIL discord-community-hub: 3.80
+  --- 进度: 280/1069 (26.2%) 成功=279 错误=1 速率=0.2/s 预计剩余=3956s ---
+  [281/1069] FAIL discord-hub: 3.50
+  [282/1069] FAIL discord-toolkit: 3.90
+  [283/1069] FAIL discord-free: 2.90
+  [284/1069] FAIL discord-master: 3.90
+  [285/1069] FAIL discord-communities: 4.20
+  [286/1069] FAIL discord-voice: 3.90
+  [287/1069] FAIL dlazy-audio: 3.00
+  [288/1069] FAIL dlazy-audio-generate: 3.00
+  [289/1069] FAIL discord-voice-free: 2.90
+  [290/1069] FAIL dns: 3.90
+  --- 进度: 290/1069 (27.1%) 成功=289 错误=1 速率=0.2/s 预计剩余=3978s ---
+  [291/1069] FAIL discrawl: 3.50
+  [292/1069] FAIL dlazy-gen: 3.50
+  [293/1069] FAIL dlazy-generate: 2.50
+  [294/1069] FAIL dns-free: 3.50
+  [295/1069] FAIL dlazy-audio-generate-free: 3.50
+  [296/1069] FAIL dns-lookup: 2.90
+  [297/1069] FAIL dns-networking: 2.90
+  [298/1069] FAIL dns-config: 3.90
+  [299/1069] FAIL dns-networking-paid: 3.00
+  [300/1069] FAIL doc-assistant: 2.90
+  --- 进度: 300/1069 (28.1%) 成功=299 错误=1 速率=0.2/s 预计剩余=3926s ---
+  [301/1069] FAIL doc-guard: 3.50
+  [302/1069] FAIL docker-ctl: 3.00
+  [303/1069] FAIL docker-essentials-free: 3.00
+  [304/1069] FAIL docker-essentials-v1: 3.50
+  [305/1069] FAIL doc-parse: 2.90
+  [306/1069] FAIL docker: 3.00
+  [307/1069] FAIL docker-sandbox: 3.00
+  [308/1069] FAIL docker-essentials: 3.50
+  [309/1069] FAIL domain-dns-ops: 2.50
+  [310/1069] FAIL document-pdf: 2.90
+  --- 进度: 310/1069 (29.0%) 成功=309 错误=1 速率=0.2/s 预计剩余=3916s ---
+  [311/1069] FAIL doubao-chat: 3.00
+  [312/1069] FAIL dogecoin-node: 3.00
+  [313/1069] FAIL ebook-factory: 3.90
+  [314/1069] FAIL ecommerce-pricing-strategist: 3.80
+  [315/1069] FAIL doubao-assistant: 3.50
+  [316/1069] FAIL elite-frontend-design: 2.90
+  [317/1069] FAIL drama-hit-producer: 3.00
+  [318/1069] FAIL elite-frontend: 3.50
+  [319/1069] FAIL elite-longterm-memory: 3.50
+  [320/1069] FAIL elite-longterm-memory-local-free: 3.50
+  --- 进度: 320/1069 (29.9%) 成功=319 错误=1 速率=0.2/s 预计剩余=3861s ---
+  [321/1069] FAIL doubao-image-gen: 3.00
+  [322/1069] FAIL elite-longterm-memory-free: 3.20
+  [323/1069] FAIL email-163: 3.90
+  [324/1069] FAIL email-daily-summary: 3.80
+  [325/1069] FAIL email-163-com: 3.70
+  [326/1069] FAIL email-daily-summary-free: 3.50
+  [327/1069] FAIL email-163-com-free: 2.90
+  [328/1069] FAIL email-digest: 3.50
+  [329/1069] FAIL elite-longterm-memory-local: 4.10
+  [330/1069] FAIL email-gmail-outlook: 3.90
+  --- 进度: 330/1069 (30.9%) 成功=329 错误=1 速率=0.2/s 预计剩余=3808s ---
+  [331/1069] FAIL email-skill: 3.70
+  [332/1069] FAIL email-gmail-outlook-free: 3.50
+  [333/1069] FAIL email-toolkit: 3.50
+  [334/1069] FAIL encoding-formats-free: 3.50
+  [335/1069] FAIL encoding-formats: 3.50
+  [336/1069] FAIL encoding-toolkit: 3.50
+  [337/1069] FAIL encryption: 3.90
+  [338/1069] FAIL email-skill-free: 3.70
+  [339/1069] FAIL evolution-engine: 3.90
+  [340/1069] FAIL evolution-engine-free: 2.80
+  --- 进度: 340/1069 (31.8%) 成功=339 错误=1 速率=0.2/s 预计剩余=3736s ---
+  [341/1069] FAIL encryption-paid: 3.90
+  [342/1069] FAIL excel-formula: 3.50
+  [343/1069] FAIL encrypted-docs: 2.90
+  [344/1069] FAIL excel-expert: 3.20
+  [345/1069] FAIL excel-xlsx: 3.50
+  [346/1069] FAIL expanso-csv-to-json: 3.50
+  [347/1069] FAIL excel-studio: 3.00
+  [348/1069] FAIL excel-craft: 3.00
+  [349/1069] FAIL expanso-xml-to-json: 2.90
+  [350/1069] FAIL explain-code: 3.80
+  --- 进度: 350/1069 (32.7%) 成功=349 错误=1 速率=0.2/s 预计剩余=3749s ---
+  [351/1069] FAIL expanso-json-to-yaml: 3.00
+  [352/1069] FAIL expanso-json-validate: 3.00
+  [353/1069] FAIL expanso-log-sanitize: 3.20
+  [354/1069] FAIL feed-to-md: 2.20
+  [355/1069] FAIL explain-code-paid: 3.80
+  [356/1069] FAIL feishu-card: 3.80
+  [357/1069] FAIL feishu-card-builder: 3.80
+  [358/1069] FAIL feishu-doc: 3.70
+  [359/1069] FAIL feishu-doc-write: 2.90
+  [360/1069] FAIL feed-digest: 2.90
+  --- 进度: 360/1069 (33.7%) 成功=359 错误=1 速率=0.2/s 预计剩余=3671s ---
+  [361/1069] FAIL feishu-file-sender: 3.00
+  [362/1069] FAIL feishu-send-file-free: 3.50
+  [363/1069] FAIL feishu-send-file: 3.90
+  [364/1069] FAIL feishu-card-free: 3.50
+  [365/1069] FAIL figma: 3.80
+  [366/1069] FAIL figma-design: 3.00
+  [367/1069] FAIL figma-studio: 3.20
+  [368/1069] FAIL figma-design-paid: 3.50
+  [369/1069] FAIL figma-tw-designer: 3.80
+  [370/1069] FAIL file-auto-organizer: 2.90
+  --- 进度: 370/1069 (34.6%) 成功=369 错误=1 速率=0.2/s 预计剩余=3595s ---
+  [371/1069] FAIL file: 3.90
+  [372/1069] FAIL figma-2: 2.90
+  [373/1069] FAIL file-browser-tool: 2.90
+  [374/1069] FAIL file-organizer-zh: 3.50
+  [375/1069] FAIL fin-literacy: 3.90
+  [376/1069] FAIL finance: 3.80
+  [377/1069] FAIL finance-accounting: 3.90
+  [378/1069] FAIL fin-literacy-free: 3.90
+  [379/1069] FAIL finance-acct: 3.50
+  [380/1069] FAIL finance-radar: 3.00
+  --- 进度: 380/1069 (35.5%) 成功=379 错误=1 速率=0.2/s 预计剩余=3511s ---
+  [381/1069] FAIL finance-report: 3.50
+  [382/1069] FAIL finance-radar-paid: 3.50
+  [383/1069] FAIL financial-literacy-paid: 3.00
+  [384/1069] FAIL fin-terminal: 3.80
+  [385/1069] FAIL finance-toolkit: 3.80
+  [386/1069] FAIL finance-report-analyzer: 3.50
+  [387/1069] FAIL firewall: 3.70
+  [388/1069] FAIL flexible-database-design: 2.90
+  [389/1069] FAIL fonts: 3.90
+  [390/1069] FAIL format-converter: 3.90
+  --- 进度: 390/1069 (36.5%) 成功=389 错误=1 速率=0.2/s 预计剩余=3458s ---
+  [391/1069] FAIL free-google-search-with-browser: 2.90
+  [392/1069] FAIL financial-literacy: 3.50
+  [393/1069] FAIL free-resource-finder: 3.80
+  [394/1069] FAIL free-weather-api: 2.90
+  [395/1069] FAIL free-weather-skill: 2.90
+  [396/1069] FAIL fortune-reading-studio: 3.50
+  [397/1069] FAIL frontend-design: 3.50
+  [398/1069] FAIL frontend-design-3: 3.50
+  [399/1069] FAIL frontend-design-3-free: 3.00
+  [400/1069] FAIL frontend-design-anthropic: 3.50
+  --- 进度: 400/1069 (37.4%) 成功=399 错误=1 速率=0.2/s 预计剩余=3404s ---
+  [401/1069] FAIL free-ride: 3.50
+  [402/1069] FAIL futures-quant: 3.80
+  [403/1069] FAIL free-web-search: 3.10
+  [404/1069] FAIL frontend-design-v3: 3.00
+  [405/1069] FAIL game-asset-gen: 3.00
+  [406/1069] FAIL game-developer-skill: 3.10
+  [407/1069] FAIL game: 3.50
+  [408/1069] FAIL game-ai: 3.50
+  [409/1069] FAIL game-theory: 3.90
+  [410/1069] FAIL game-theory-free: 3.50
+  --- 进度: 410/1069 (38.4%) 成功=409 错误=1 速率=0.2/s 预计剩余=3355s ---
+  [411/1069] FAIL generate-mindmap: 3.70
+  [412/1069] FAIL gateway-manager: 3.90
+  [413/1069] FAIL game-asset-generation-cellcog: 2.90
+  [414/1069] FAIL generate-presentation: 2.90
+  [415/1069] FAIL gif-whatsapp: 3.00
+  [416/1069] FAIL git-cli: 3.80
+  [417/1069] FAIL git: 3.80
+  [418/1069] FAIL git-cli-paid: 3.90
+  [419/1069] FAIL git-essentials: 4.00
+  [420/1069] FAIL geo-rank-architect: 4.10
+  --- 进度: 420/1069 (39.3%) 成功=419 错误=1 速率=0.2/s 预计剩余=3278s ---
+  [421/1069] FAIL git-essentials-free: 3.80
+  [422/1069] FAIL git-helper: 3.50
+  [423/1069] FAIL git-helper-paid: 3.50
+  [424/1069] FAIL git-toolkit: 3.90
+  [425/1069] FAIL git-workflow-cn: 3.80
+  [426/1069] FAIL git-workflows-paid: 3.90
+  [427/1069] FAIL git-workflow-cn-paid: 3.50
+  [428/1069] FAIL gitcrawl: 3.50
+  [429/1069] FAIL github-api-toolkit: 3.80
+  [430/1069] FAIL github-development-standard: 3.00
+  --- 进度: 430/1069 (40.2%) 成功=429 错误=1 速率=0.2/s 预计剩余=3197s ---
+  [431/1069] FAIL github: 2.90
+  [432/1069] FAIL github-repos: 3.30
+  [433/1069] FAIL github-manager: 3.90
+  [434/1069] FAIL github-trending-feed: 2.90
+  [435/1069] FAIL github-api: 2.90
+  [436/1069] FAIL github-dev-standard: 3.90
+  [437/1069] FAIL go-linter-configuration: 3.50
+  [438/1069] FAIL go-security-vulnerability: 3.50
+  [439/1069] FAIL go-security-vulnerability-free: 3.80
+  [440/1069] FAIL gog: 3.90
+  --- 进度: 440/1069 (41.2%) 成功=439 错误=1 速率=0.2/s 预计剩余=3155s ---
+  [441/1069] FAIL glitch-dashboard: 3.70
+  [442/1069] FAIL go-to-market: 3.00
+  [443/1069] FAIL go-to-market-free: 3.50
+  [444/1069] FAIL gog-free: 3.80
+  [445/1069] FAIL go: 3.80
+  [446/1069] FAIL golang-toolkit: 3.50
+  [447/1069] FAIL google-workspace-cli: 3.90
+  [448/1069] FAIL google-fonts: 3.90
+  [449/1069] FAIL google-workspace-mcp: 3.50
+  [450/1069] FAIL google-workspace-mcp-free: 3.70
+  --- 进度: 450/1069 (42.1%) 成功=449 错误=1 速率=0.2/s 预计剩余=3083s ---
+  [451/1069] FAIL google-workspace-toolkit: 3.90
+  [452/1069] FAIL grain-crawler: 3.50
+  [453/1069] FAIL graincrawl: 2.90
+  [454/1069] FAIL graph-advocate: 3.00
+  [455/1069] FAIL grok-image: 3.00
+  [456/1069] FAIL graph-query: 3.50
+  [457/1069] FAIL grok-image-generate: 3.00
+  [458/1069] FAIL google-search: 2.90
+  [459/1069] FAIL health: 3.90
+  [460/1069] FAIL hook-retention-master: 3.90
+  --- 进度: 460/1069 (43.0%) 成功=459 错误=1 速率=0.2/s 预计剩余=3028s ---
+  [461/1069] FAIL hot-news-aggregator: 3.50
+  [462/1069] FAIL graph-knowledge-base: 3.90
+  [463/1069] FAIL html: 3.10
+  [464/1069] FAIL html-designer: 2.90
+  [465/1069] FAIL html-coder-paid: 3.90
+  [466/1069] FAIL heygen-tts: 3.90
+  [467/1069] FAIL html-designer-paid: 3.90
+  [468/1069] FAIL hugo-blog-publisher-free: 3.30
+  [469/1069] FAIL hugo-blog-publisher: 3.80
+  [470/1069] FAIL hugo-blog: 3.90
+  --- 进度: 470/1069 (44.0%) 成功=469 错误=1 速率=0.2/s 预计剩余=2970s ---
+  [471/1069] FAIL html-coder: 3.00
+  [472/1069] FAIL in-depth-research-free: 3.50
+  [473/1069] FAIL in-depth-research: 3.90
+  [474/1069] FAIL humanizer: 3.00
+  [475/1069] FAIL intel-sentinel: 3.90
+  [476/1069] FAIL image: 2.90
+  [477/1069] FAIL interview-simulator: 3.00
+  [478/1069] FAIL internet-search: 2.50
+  [479/1069] FAIL java-code-reviewer: 3.80
+  [480/1069] FAIL iris-formatter: 3.50
+  --- 进度: 480/1069 (44.9%) 成功=479 错误=1 速率=0.2/s 预计剩余=2926s ---
+  [481/1069] FAIL iris-code-formatter: 3.70
+  [482/1069] FAIL java-development-manual: 3.80
+  [483/1069] FAIL java: 3.80
+  [484/1069] FAIL java-reviewer: 3.50
+  [485/1069] FAIL javascript: 3.80
+  [486/1069] FAIL java-free: 3.80
+  [487/1069] FAIL javascript-sdk: 3.00
+  [488/1069] FAIL javascript-skills: 3.00
+  [489/1069] FAIL javascript-skills-paid: 3.90
+  [490/1069] FAIL javascript-sdk-paid: 3.50
+  --- 进度: 490/1069 (45.8%) 成功=489 错误=1 速率=0.2/s 预计剩余=2884s ---
+  [491/1069] FAIL java-dev-manual: 3.90
+  [492/1069] FAIL javascript-toolkit: 3.00
+  [493/1069] FAIL jinn-node: 3.50
+  [494/1069] FAIL jira: 3.00
+  [495/1069] FAIL jira-api: 3.00
+  [496/1069] FAIL jira-integration-skill: 2.90
+  [497/1069] FAIL jira-flow-skill: 3.90
+  [498/1069] FAIL jira-free: 3.50
+  [499/1069] FAIL jinn-node-free: 3.80
+  [500/1069] FAIL jira-api-toolkit: 3.50
+  --- 进度: 500/1069 (46.8%) 成功=499 错误=1 速率=0.2/s 预计剩余=2823s ---
+  [501/1069] FAIL jira-pat-toolkit: 3.00
+  [502/1069] FAIL jira-pat-manager: 2.90
+  [503/1069] FAIL job-auto-apply: 3.00
+  [504/1069] FAIL join-meeting: 3.90
+  [505/1069] FAIL jira-skill: 3.80
+  [506/1069] FAIL json-beautifier: 3.90
+  [507/1069] FAIL join-meeting-free: 2.90
+  [508/1069] FAIL json-canvas: 3.60
+  [509/1069] FAIL jira-skill-free: 3.50
+  [510/1069] FAIL json-formatter: 3.80
+  --- 进度: 510/1069 (47.7%) 成功=509 错误=1 速率=0.2/s 预计剩余=2791s ---
+  [511/1069] FAIL json-lint: 3.90
+  [512/1069] FAIL json-linter: 2.90
+  [513/1069] FAIL json: 3.50
+  [514/1069] FAIL json-parser: 2.90
+  [515/1069] FAIL json-parse-engine: 3.50
+  [516/1069] FAIL json-toolkit: 3.50
+  [517/1069] FAIL json-repair-kit: 3.80
+  [518/1069] FAIL json-validator: 3.90
+  [519/1069] FAIL json-repair: 3.90
+  [520/1069] FAIL json-yaml-converter: 3.50
+  --- 进度: 520/1069 (48.6%) 成功=519 错误=1 速率=0.2/s 预计剩余=2727s ---
+  [521/1069] FAIL k8s: 3.80
+  [522/1069] FAIL juejin-skills: 3.10
+  [523/1069] FAIL key-vault-manager: 3.90
+  [524/1069] FAIL key-guard: 3.50
+  [525/1069] FAIL kai-tw-figma: 2.90
+  [526/1069] FAIL knowledge-graph-paid: 3.90
+  [527/1069] FAIL knowledge: 3.00
+  [528/1069] FAIL knowledge-capture: 3.00
+  [529/1069] FAIL knowledge-graph-skill-free: 3.80
+  [530/1069] FAIL knowledge-graph-skill: 3.90
+  --- 进度: 530/1069 (49.6%) 成功=529 错误=1 速率=0.2/s 预计剩余=2681s ---
+  [531/1069] FAIL knowledge-ontology: 3.90
+  [532/1069] FAIL kubernetes-devops: 3.00
+  [533/1069] FAIL knowledge-graph: 2.90
+  [534/1069] FAIL knowledge-ontology-free: 3.50
+  [535/1069] FAIL kubernetes: 3.00
+  [536/1069] FAIL learn-cog: 3.90
+  [537/1069] FAIL learn-cog-free: 3.00
+  [538/1069] FAIL kujiale-design: 3.90
+  [539/1069] FAIL lh-video-gen-paid: 3.90
+  [540/1069] FAIL linear: 3.00
+  --- 进度: 540/1069 (50.5%) 成功=539 错误=1 速率=0.2/s 预计剩余=2637s ---
+  [541/1069] FAIL linear-api: 3.50
+  [542/1069] FAIL lh-video-gen: 3.70
+  [543/1069] FAIL linear-integration: 2.90
+  [544/1069] FAIL linear-api-free: 3.50
+  [545/1069] FAIL learn: 3.50
+  [546/1069] FAIL linear-sync: 3.50
+  [547/1069] FAIL linear-skill: 2.90
+  [548/1069] FAIL linear-project-manager: 2.90
+  [549/1069] FAIL linear-api-toolkit: 3.90
+  [550/1069] ERROR live-stream-script: LLM API HTTP错误: 400 Client Error: Bad Request for url: https://open.bigmodel.cn/api/paas/v4/chat/completions
+  --- 进度: 550/1069 (51.4%) 成功=548 错误=2 速率=0.2/s 预计剩余=2578s ---
+  [551/1069] FAIL lite-sqlite: 3.00
+  [552/1069] FAIL llm-assistant-hub-free: 3.50
+  [553/1069] FAIL llm-assistant-hub: 3.90
+  [554/1069] FAIL logo: 3.00
+  [555/1069] FAIL logo-brand-identity: 3.50
+  [556/1069] FAIL logo-brand-identity-cellcog: 3.90
+  [557/1069] FAIL local-file-rag-basic: 3.00
+  [558/1069] FAIL logo-design: 3.00
+  [559/1069] FAIL logo-design-guide: 3.90
+  [560/1069] FAIL linear-workflow-skill: 3.90
+  --- 进度: 560/1069 (52.4%) 成功=558 错误=2 速率=0.2/s 预计剩余=2533s ---
+  [561/1069] FAIL longmemo-elite-free: 3.50
+  [562/1069] FAIL mac-node-snapshot: 2.90
+  [563/1069] FAIL mac-system-control: 3.70
+  [564/1069] FAIL magic-api-generate: 3.00
+  [565/1069] FAIL markdown-converter-compdf: 3.50
+  [566/1069] FAIL longmemo-elite: 3.70
+  [567/1069] FAIL logo-design-guide-free: 3.90
+  [568/1069] FAIL markdown: 3.50
+  [569/1069] FAIL manage-liquidity: 3.50
+  [570/1069] FAIL markdown-format: 3.50
+  --- 进度: 570/1069 (53.3%) 成功=568 错误=2 速率=0.2/s 预计剩余=2510s ---
+  [571/1069] FAIL markdown-exporter-free: 3.50
+  [572/1069] FAIL markdown-converter-paid: 3.90
+  [573/1069] FAIL markdown-converter-tool: 3.00
+  [574/1069] FAIL markdown-exporter: 3.80
+  [575/1069] FAIL mcporter: 3.00
+  [576/1069] FAIL md-export: 3.80
+  [577/1069] FAIL market-news: 2.90
+  [578/1069] FAIL meeting-join: 3.80
+  [579/1069] FAIL meeting-note: 3.50
+  [580/1069] FAIL memo-quickstart: 3.90
+  --- 进度: 580/1069 (54.3%) 成功=578 错误=2 速率=0.2/s 预计剩余=2462s ---
+  [581/1069] FAIL memory: 3.50
+  [582/1069] FAIL media-server-control: 2.90
+  [583/1069] FAIL memory-compress: 3.90
+  [584/1069] FAIL memory-compress-free: 3.10
+  [585/1069] FAIL memory-distiller: 3.90
+  [586/1069] FAIL memo-quickstart-free: 3.50
+  [587/1069] FAIL memory-orchestrator: 3.90
+  [588/1069] FAIL memory-radar: 3.90
+  [589/1069] FAIL memory-radar-free: 3.80
+  [590/1069] FAIL memory-scan: 3.90
+  --- 进度: 590/1069 (55.2%) 成功=588 错误=2 速率=0.2/s 预计剩余=2419s ---
+  [591/1069] FAIL memory-distiller-free: 3.10
+  [592/1069] FAIL memory-free: 3.10
+  [593/1069] FAIL merge-check-paid: 3.90
+  [594/1069] FAIL memory-scan-free: 3.00
+  [595/1069] FAIL memory-orchestrator-free: 2.90
+  [596/1069] FAIL merge-check: 3.00
+  [597/1069] FAIL minimalist-design: 3.50
+  [598/1069] FAIL merge-pdf: 2.90
+  [599/1069] FAIL minimalist-design-system: 3.50
+  [600/1069] FAIL mermaid-diagram: 3.10
+  --- 进度: 600/1069 (56.1%) 成功=598 错误=2 速率=0.2/s 预计剩余=2376s ---
+  [601/1069] FAIL mermaid-diagram-paid: 3.50
+  [602/1069] FAIL miniprogram-development: 2.90
+  [603/1069] FAIL model-switching: 3.90
+  [604/1069] FAIL molt-board-art-free: 2.90
+  [605/1069] FAIL moltblock: 3.00
+  [606/1069] FAIL moltbook-filter: 2.90
+  [607/1069] FAIL molt-board-art: 3.50
+  [608/1069] FAIL model-routing: 3.80
+  [609/1069] FAIL moltbook-filter-free: 3.50
+  [610/1069] FAIL monad-development: 3.00
+  --- 进度: 610/1069 (57.1%) 成功=608 错误=2 速率=0.2/s 预计剩余=2328s ---
+  [611/1069] FAIL moltbook-firewall-tool: 3.00
+  [612/1069] FAIL mongo-manager: 3.00
+  [613/1069] FAIL molted-work: 3.00
+  [614/1069] FAIL mongodb-atlas-admin: 3.00
+  [615/1069] FAIL mongodb: 3.00
+  [616/1069] FAIL multi-agent-dev: 3.80
+  [617/1069] FAIL multi-agent-dev-free: 3.00
+  [618/1069] FAIL multi-research: 3.80
+  [619/1069] FAIL mongodb-atlas-admin-free: 3.50
+  [620/1069] FAIL multi-research-free: 3.90
+  --- 进度: 620/1069 (58.0%) 成功=618 错误=2 速率=0.2/s 预计剩余=2278s ---
+  [621/1069] FAIL multi-search-engine: 3.50
+  [622/1069] FAIL multi-search-engine-simple: 2.90
+  [623/1069] FAIL monitor: 3.00
+  [624/1069] FAIL music: 3.50
+  [625/1069] FAIL music-gen-cellcog: 3.50
+  [626/1069] FAIL music-generation: 3.50
+  [627/1069] FAIL multi-source-research: 3.80
+  [628/1069] FAIL music-gen: 3.30
+  [629/1069] FAIL music-generation-cellcog: 2.50
+  [630/1069] FAIL neosoul-decision-agent-free: 3.90
+  --- 进度: 630/1069 (58.9%) 成功=628 错误=2 速率=0.2/s 预计剩余=2245s ---
+  [631/1069] FAIL netpad-tool: 2.00
+  [632/1069] FAIL nano-pdf: 2.90
+  [633/1069] FAIL namecheap-dns: 3.50
+  [634/1069] FAIL news: 3.00
+  [635/1069] FAIL news-aggregator: 3.50
+  [636/1069] FAIL neosoul-decision-agent: 3.90
+  [637/1069] FAIL neural-memory-enhanced: 3.90
+  [638/1069] FAIL neural-memory-enhanced-free: 3.20
+  [639/1069] FAIL news-aggregator-free: 3.90
+  [640/1069] FAIL news-daily-digest: 3.90
+  --- 进度: 640/1069 (59.9%) 成功=638 错误=2 速率=0.2/s 预计剩余=2192s ---
+  [641/1069] FAIL news-feed: 4.10
+  [642/1069] FAIL news-sentiment-scan-free: 3.50
+  [643/1069] FAIL node-connect: 2.90
+  [644/1069] FAIL notcrawl: 2.90
+  [645/1069] FAIL news-sentiment-scan: 3.90
+  [646/1069] FAIL news-sentiment: 3.90
+  [647/1069] FAIL note-taker: 3.50
+  [648/1069] FAIL note-app-cli: 2.90
+  [649/1069] FAIL note: 3.50
+  [650/1069] FAIL notion: 3.50
+  --- 进度: 650/1069 (60.8%) 成功=648 错误=2 速率=0.2/s 预计剩余=2142s ---
+  [651/1069] FAIL notion-api-skill: 2.90
+  [652/1069] FAIL notion-cli: 3.90
+  [653/1069] FAIL node-connect-paid: 3.80
+  [654/1069] FAIL notion-pages: 3.00
+  [655/1069] FAIL notion-skill: 3.50
+  [656/1069] FAIL notion-api-toolkit: 3.90
+  [657/1069] FAIL obsidian-cli: 3.50
+  [658/1069] FAIL novel-autopilot: 3.90
+  [659/1069] FAIL okx-dex-token: 2.90
+  [660/1069] FAIL ocean-chat-assistant: 2.90
+  --- 进度: 660/1069 (61.7%) 成功=658 错误=2 速率=0.2/s 预计剩余=2105s ---
+  [661/1069] FAIL ollama-integration: 2.90
+  [662/1069] FAIL notioncli: 2.90
+  [663/1069] FAIL ollama-toolkit: 3.90
+  [664/1069] FAIL ontology: 3.90
+  [665/1069] FAIL openai-ai: 3.00
+  [666/1069] FAIL ontology-free: 3.50
+  [667/1069] FAIL openai-whisper: 2.90
+  [668/1069] FAIL openai-ai-paid: 3.90
+  [669/1069] FAIL openai-whisper-1-0-0: 2.90
+  [670/1069] FAIL okx-dex-token-paid: 3.50
+  --- 进度: 670/1069 (62.7%) 成功=668 错误=2 速率=0.2/s 预计剩余=2051s ---
+  [671/1069] FAIL openai-whisper-paid: 3.90
+  [672/1069] FAIL ops-dashboard: 3.50
+  [673/1069] FAIL pandoc-converter: 3.00
+  [674/1069] FAIL openai-whisper-v1: 3.90
+  [675/1069] FAIL pandoc-document-converter: 2.90
+  [676/1069] FAIL parallel-ai-research: 3.00
+  [677/1069] FAIL password-generator: 3.80
+  [678/1069] FAIL paper-parse: 3.00
+  [679/1069] FAIL pdf: 2.90
+  [680/1069] FAIL pentest-commands: 3.00
+  --- 进度: 680/1069 (63.6%) 成功=678 错误=2 速率=0.2/s 预计剩余=2016s ---
+  [681/1069] FAIL persistent-memory-engine-free: 3.90
+  [682/1069] FAIL pdf-compressor-tool: 3.50
+  [683/1069] ERROR photo-caption: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [684/1069] ERROR photo-captions: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [685/1069] ERROR photo-captions-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [686/1069] ERROR photo-webcam: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [687/1069] ERROR ping-monitor: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [688/1069] ERROR pipedrive-api: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [689/1069] ERROR pipedrive-toolkit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [690/1069] ERROR piper-tts-engine: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 690/1069 (64.5%) 成功=680 错误=10 速率=0.2/s 预计剩余=1946s ---
+  [691/1069] ERROR plugin-architecture: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [692/1069] ERROR podcast: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [693/1069] ERROR podcast-chaptering: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [694/1069] ERROR podcast-chaptering-highlights: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [695/1069] ERROR podcast-downloader: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [696/1069] ERROR podcast-downloader-paid: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [697/1069] ERROR podcast-downloader-tool: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [698/1069] ERROR podcast-toolkit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [699/1069] ERROR poetry-craftsman: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [700/1069] ERROR postgres-job-queue: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 700/1069 (65.5%) 成功=680 错误=20 速率=0.2/s 预计剩余=1868s ---
+  [701/1069] ERROR postgres-mcp-skills: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [702/1069] ERROR powerpoint: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [703/1069] ERROR powerpoint-pptx: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [704/1069] ERROR powerpoint-pptx-cn: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [705/1069] ERROR pptx-pdf-font-fix: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [706/1069] ERROR pro-comm-toolkit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [707/1069] ERROR proactive-agent: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [708/1069] ERROR proactive-agent-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [709/1069] ERROR productivity: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [710/1069] ERROR productivity-bot: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 710/1069 (66.4%) 成功=680 错误=30 速率=0.2/s 预计剩余=1791s ---
+  [711/1069] ERROR productivity-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [712/1069] ERROR productivity-improving: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [713/1069] ERROR professional-communication: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [714/1069] ERROR professional-communication-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [715/1069] ERROR py: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [716/1069] ERROR py-data-analyzer: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [717/1069] ERROR py-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [718/1069] ERROR python: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [719/1069] ERROR python-dataviz: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [720/1069] ERROR python-toolkit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 720/1069 (67.4%) 成功=680 错误=40 速率=0.2/s 预计剩余=1717s ---
+  [721/1069] ERROR python3: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [722/1069] ERROR pyx-scan: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [723/1069] ERROR pyx-scan-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [724/1069] ERROR pyx-scanner: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [725/1069] ERROR qq-zone-photo: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [726/1069] ERROR qq-zone-photo-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [727/1069] ERROR quant-data-quality: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [728/1069] ERROR quark-scan: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [729/1069] ERROR queue-task: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [730/1069] ERROR qwen-video-analyzer: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 730/1069 (68.3%) 成功=680 错误=50 速率=0.2/s 预计剩余=1645s ---
+  [731/1069] ERROR realtime-quote: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [732/1069] ERROR realtime-quote-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [733/1069] ERROR reddit-research: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [734/1069] ERROR reddit-research-paid: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [735/1069] ERROR reminder: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [736/1069] ERROR reminder-engine: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [737/1069] ERROR remix-api-key-auth: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [738/1069] ERROR remix-auth: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [739/1069] ERROR repo-manager: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [740/1069] ERROR repo-reader-tool: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 740/1069 (69.2%) 成功=680 错误=60 速率=0.2/s 预计剩余=1575s ---
+  [741/1069] ERROR report: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [742/1069] ERROR report-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [743/1069] ERROR report-summary-builder: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [744/1069] ERROR report-viz: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [745/1069] ERROR report-viz-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [746/1069] ERROR research-agent: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [747/1069] ERROR rest-api-reference: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [748/1069] ERROR resume-assistant: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [749/1069] ERROR resume-assistant-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [750/1069] ERROR rho-telegram-alerts-tool: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 750/1069 (70.2%) 成功=680 错误=70 速率=0.2/s 预计剩余=1507s ---
+  [751/1069] ERROR rss-aggregator: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [752/1069] ERROR rss-ai-reader: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [753/1069] ERROR rss-ai-reader-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [754/1069] ERROR rss-digest: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [755/1069] ERROR rss-feed-digest: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [756/1069] ERROR rss-fetcher: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [757/1069] ERROR rss-reader: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [758/1069] ERROR rss-reader-ai: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [759/1069] ERROR rust: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [760/1069] ERROR rust-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 760/1069 (71.1%) 成功=680 错误=80 速率=0.2/s 预计剩余=1441s ---
+  [761/1069] ERROR safe-encryption-skill: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [762/1069] ERROR sales-copy-writer: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [763/1069] ERROR schedule: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [764/1069] ERROR schedule-manager: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [765/1069] ERROR scrape-web: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [766/1069] ERROR screen-monitor: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [767/1069] ERROR search-2: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [768/1069] ERROR searching-assistant: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [769/1069] ERROR secure-api-calls: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [770/1069] ERROR secure-api-toolkit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 770/1069 (72.0%) 成功=680 错误=90 速率=0.2/s 预计剩余=1376s ---
+  [771/1069] ERROR security: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [772/1069] ERROR security-audit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [773/1069] ERROR security-auditor: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [774/1069] ERROR security-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [775/1069] ERROR security-scanner: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [776/1069] ERROR self-integration: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [777/1069] ERROR self-integration-paid: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [778/1069] ERROR seo-doctor: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [779/1069] ERROR seo-rank-monopolizer: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [780/1069] ERROR sequential-read: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 780/1069 (73.0%) 成功=680 错误=100 速率=0.2/s 预计剩余=1313s ---
+  [781/1069] ERROR shadcn-ui: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [782/1069] ERROR shop-culture: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [783/1069] ERROR shop-culture-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [784/1069] ERROR shopify-helper: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [785/1069] ERROR skill-creator: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [786/1069] ERROR skill-creator-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [787/1069] ERROR skill-vetter: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [788/1069] ERROR skill-vetter-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [789/1069] ERROR slack: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [790/1069] ERROR slack-api: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 790/1069 (73.9%) 成功=680 错误=110 速率=0.2/s 预计剩余=1251s ---
+  [791/1069] ERROR slack-api-toolkit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [792/1069] ERROR slack-crawler: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [793/1069] ERROR slack-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [794/1069] ERROR slack-hub: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [795/1069] ERROR slack-hub-skill: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [796/1069] ERROR slack-hub-skill-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [797/1069] ERROR slack-toolkit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [798/1069] ERROR slack-workspace: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [799/1069] ERROR slack-workspace-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [800/1069] ERROR slack-workspace-manager: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 800/1069 (74.8%) 成功=680 错误=120 速率=0.2/s 预计剩余=1191s ---
+  [801/1069] ERROR slacrawl: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [802/1069] ERROR smart-auto-updater: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [803/1069] ERROR smart-cache: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [804/1069] ERROR smart-crawler: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [805/1069] ERROR smart-model-routing-for-zai: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [806/1069] ERROR smart-model-switching: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [807/1069] ERROR smart-reminder: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [808/1069] ERROR smart-reminder-system: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [809/1069] ERROR smart-weekly-report: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [810/1069] ERROR social: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 810/1069 (75.8%) 成功=680 错误=130 速率=0.2/s 预计剩余=1133s ---
+  [811/1069] ERROR social-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [812/1069] ERROR social-media-scheduler: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [813/1069] ERROR social-media-scheduler-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [814/1069] ERROR social-media-toolkit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [815/1069] ERROR social-sentiment: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [816/1069] ERROR solo-audit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [817/1069] ERROR solo-build: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [818/1069] ERROR solo-build-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [819/1069] ERROR solo-dev-companion: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [820/1069] ERROR solo-research: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 820/1069 (76.7%) 成功=680 错误=140 速率=0.2/s 预计剩余=1076s ---
+  [821/1069] ERROR solo-research-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [822/1069] ERROR solo-validate: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [823/1069] ERROR sonoscli: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [824/1069] ERROR sovereign-aws-cost-optimizer: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [825/1069] ERROR sql: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [826/1069] ERROR sql-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [827/1069] ERROR sql-gen: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [828/1069] ERROR sql-generator: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [829/1069] ERROR sql-master: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [830/1069] ERROR sql-query: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 830/1069 (77.6%) 成功=680 错误=150 速率=0.2/s 预计剩余=1020s ---
+  [831/1069] ERROR sql-toolkit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [832/1069] ERROR sqlite: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [833/1069] ERROR sqlite-lite-manager: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [834/1069] ERROR sqlite-manager: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [835/1069] ERROR ssl: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [836/1069] ERROR ssl-toolkit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [837/1069] ERROR stagehand-browser-cli: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [838/1069] ERROR stealth-browser-assistant: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [839/1069] ERROR stock-filter: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [840/1069] ERROR stock-filter-skills: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 840/1069 (78.6%) 成功=680 错误=160 速率=0.2/s 预计剩余=966s ---
+  [841/1069] ERROR stock-filter-skills-v2: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [842/1069] ERROR stock-radar: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [843/1069] ERROR stock-radar-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [844/1069] ERROR story-long-analyze: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [845/1069] ERROR story-long-write: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [846/1069] ERROR story-long-write-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [847/1069] ERROR story-short-write: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [848/1069] ERROR straker-verify: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [849/1069] ERROR t-trading: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [850/1069] ERROR tailwindcss: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 850/1069 (79.5%) 成功=680 错误=170 速率=0.2/s 预计剩余=913s ---
+  [851/1069] ERROR tailwindcss-toolkit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [852/1069] ERROR tardis: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [853/1069] ERROR tarot: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [854/1069] ERROR tarot-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [855/1069] ERROR tarot-reader: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [856/1069] ERROR task: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [857/1069] ERROR task-bot-orchestrator: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [858/1069] ERROR task-planner: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [859/1069] ERROR task-queue-manager: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [860/1069] ERROR telegram: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 860/1069 (80.4%) 成功=680 错误=180 速率=0.2/s 预计剩余=861s ---
+  [861/1069] ERROR telegram-agent-comm: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [862/1069] ERROR telegram-alert: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [863/1069] ERROR telegram-bot-builder: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [864/1069] ERROR telegram-chat: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [865/1069] ERROR telegram-chat-manager: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [866/1069] ERROR telegram-messaging: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [867/1069] ERROR telegram-messaging-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [868/1069] ERROR telegram-msg-toolkit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [869/1069] ERROR telegram-toolkit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [870/1069] ERROR text: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 870/1069 (81.4%) 成功=680 错误=190 速率=0.2/s 预计剩余=811s ---
+  [871/1069] ERROR text-rpg-arcade-v3: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [872/1069] ERROR text-to-speech-heygen: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [873/1069] ERROR text-to-sql: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [874/1069] ERROR text2sql-engine: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [875/1069] ERROR tg-body-scan: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [876/1069] ERROR tg-bot-builder: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [877/1069] ERROR the-news: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [878/1069] ERROR thesis-helper: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [879/1069] ERROR timeline-digest: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [880/1069] ERROR timer: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 880/1069 (82.3%) 成功=680 错误=200 速率=0.2/s 预计剩余=761s ---
+  [881/1069] ERROR timer-alert: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [882/1069] ERROR timer-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [883/1069] ERROR title-hook-factory: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [884/1069] ERROR tmux-session: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [885/1069] ERROR token-layer: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [886/1069] ERROR token-manager: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [887/1069] ERROR token-manager-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [888/1069] ERROR token-saver-skill: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [889/1069] ERROR tool: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [890/1069] ERROR tool-call-retry: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 890/1069 (83.3%) 成功=680 错误=210 速率=0.3/s 预计剩余=713s ---
+  [891/1069] ERROR tool-finder: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [892/1069] ERROR topic-hunter: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [893/1069] ERROR trade-alert: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [894/1069] ERROR trade-alert-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [895/1069] ERROR trade-bot: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [896/1069] ERROR trading: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [897/1069] ERROR trading-strategy-guide: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [898/1069] ERROR translate: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [899/1069] ERROR translate-en-zh: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [900/1069] ERROR translate-hub: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 900/1069 (84.2%) 成功=680 错误=220 速率=0.3/s 预计剩余=666s ---
+  [901/1069] ERROR travel-assistant: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [902/1069] ERROR trending-feed-skill: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [903/1069] ERROR tts-whatsapp: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [904/1069] ERROR tts-whatsapp-paid: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [905/1069] ERROR typescript: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [906/1069] ERROR typescript-skills: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [907/1069] ERROR typescript-skills-paid: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [908/1069] ERROR typescript-toolkit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [909/1069] ERROR ui: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [910/1069] ERROR ui-audit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 910/1069 (85.1%) 成功=680 错误=230 速率=0.3/s 预计剩余=619s ---
+  [911/1069] ERROR ui-audit-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [912/1069] ERROR ui-component: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [913/1069] ERROR ui-component-paid: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [914/1069] ERROR ui-design-toolkit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [915/1069] ERROR ui-ux: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [916/1069] ERROR ui-ux-design: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [917/1069] ERROR ui-ux-design-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [918/1069] ERROR ui-ux-dev-paid: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [919/1069] ERROR ui-ux-developer-tool: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [920/1069] ERROR ui-ux-toolkit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 920/1069 (86.1%) 成功=680 错误=240 速率=0.3/s 预计剩余=574s ---
+  [921/1069] ERROR universal-translate: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [922/1069] ERROR universal-translate-paid: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [923/1069] ERROR university-app: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [924/1069] ERROR university-applications: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [925/1069] ERROR upstage-document-parse: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [926/1069] ERROR upstage-document-parse-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [927/1069] ERROR use-my-browser: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [928/1069] ERROR use-my-browser-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [929/1069] ERROR ux: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [930/1069] ERROR ux-design: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 930/1069 (87.0%) 成功=680 错误=250 速率=0.3/s 预计剩余=530s ---
+  [931/1069] ERROR valuation-model: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [932/1069] ERROR valuation-model-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [933/1069] ERROR vector-control: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [934/1069] ERROR vector-db-manager: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [935/1069] ERROR vegas-tunnel: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [936/1069] ERROR vegas-tunnel-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [937/1069] ERROR verify-claims: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [938/1069] ERROR version-control-workflows: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [939/1069] ERROR video: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [940/1069] ERROR video-editing: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 940/1069 (87.9%) 成功=680 错误=260 速率=0.3/s 预计剩余=486s ---
+  [941/1069] ERROR video-editing-paid: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [942/1069] ERROR video-frames: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [943/1069] ERROR video-frames-paid: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [944/1069] ERROR video-stream-upload: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [945/1069] ERROR video-toolkit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [946/1069] ERROR video-translator: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [947/1069] ERROR video-translator-paid: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [948/1069] ERROR video-upload-stream-tool: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [949/1069] ERROR viral-decoder: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [950/1069] ERROR viral-prophet: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 950/1069 (88.9%) 成功=680 错误=270 速率=0.3/s 预计剩余=444s ---
+  [951/1069] ERROR visual-file-sorter: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [952/1069] ERROR volcengine-network-dns: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [953/1069] ERROR vpn: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [954/1069] ERROR vpn-rotate-skill: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [955/1069] ERROR vpn-rotator: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [956/1069] ERROR vscode-node: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [957/1069] ERROR vscode-node-paid: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [958/1069] ERROR vue: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [959/1069] ERROR vue-component-gen: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [960/1069] ERROR vue-component-generator: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 960/1069 (89.8%) 成功=680 错误=280 速率=0.3/s 预计剩余=403s ---
+  [961/1069] ERROR vue-toolkit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [962/1069] ERROR vulnerability-scanner: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [963/1069] ERROR weather: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [964/1069] ERROR web: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [965/1069] ERROR web-browsing: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [966/1069] ERROR web-content-fetcher: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [967/1069] ERROR web-crawler-engine: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [968/1069] ERROR web-dev-toolkit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [969/1069] ERROR web-learner: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [970/1069] ERROR web-notepad: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 970/1069 (90.7%) 成功=680 错误=290 速率=0.3/s 预计剩余=362s ---
+  [971/1069] ERROR web-vulnerability-assessment: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [972/1069] ERROR wechat-article-writer: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [973/1069] ERROR weekly-report-writer: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [974/1069] ERROR weiyun-skills: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [975/1069] ERROR weiyun-toolkit: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [976/1069] ERROR wenxiang-2d5-banner: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [977/1069] ERROR whatsapp-image: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [978/1069] ERROR whatsapp-image-send: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [979/1069] ERROR whatsapp-master: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [980/1069] ERROR whatsapp-messaging: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 980/1069 (91.7%) 成功=680 错误=300 速率=0.3/s 预计剩余=322s ---
+  [981/1069] ERROR whatsapp-messaging-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [982/1069] ERROR whatsapp-msg: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [983/1069] ERROR whatsapp-msg-manager: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [984/1069] ERROR whatsapp-style: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [985/1069] ERROR whatsapp-style-guide: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [986/1069] ERROR whatsapp-styler: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [987/1069] ERROR whatsapp-styler-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [988/1069] ERROR whatsapp-styling-guide: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [989/1069] ERROR whatsapp-styling-guide-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [990/1069] ERROR whatsapp-ultimate: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 990/1069 (92.6%) 成功=680 错误=310 速率=0.3/s 预计剩余=283s ---
+  [991/1069] ERROR whatsapp-ultimate-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [992/1069] ERROR who-is-actor: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [993/1069] ERROR word: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [994/1069] ERROR word-docx: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [995/1069] ERROR work: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [996/1069] ERROR workflow: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [997/1069] ERROR workflow-decomposer: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [998/1069] ERROR workflow-orchestrator: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [999/1069] ERROR workflow-splitter: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1000/1069] ERROR write: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 1000/1069 (93.5%) 成功=680 错误=320 速率=0.3/s 预计剩余=245s ---
+  [1001/1069] ERROR write-a-skill: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1002/1069] ERROR write-a-skill-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1003/1069] ERROR write-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1004/1069] ERROR write-my-blog: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1005/1069] ERROR writing-assistant: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1006/1069] ERROR ws-agent-browser: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1007/1069] ERROR ws-calendar: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1008/1069] ERROR ws-excel: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1009/1069] ERROR ws-excel-paid: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1010/1069] ERROR x-news-daily: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 1010/1069 (94.5%) 成功=680 错误=330 速率=0.3/s 预计剩余=207s ---
+  [1011/1069] ERROR x-news-daily-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1012/1069] ERROR x-timeline-digest: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1013/1069] ERROR x-timeline-digest-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1014/1069] ERROR xlsx-handler: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1015/1069] ERROR xml: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1016/1069] ERROR xml-json-converter: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1017/1069] ERROR xml-parser-tool: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1018/1069] ERROR yaml: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1019/1069] ERROR youtube-watcher: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1020/1069] ERROR youtube-watcher-paid: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 1020/1069 (95.4%) 成功=680 错误=340 速率=0.3/s 预计剩余=170s ---
+  [1021/1069] ERROR z-card-image: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1022/1069] ERROR z-card-image-free: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1023/1069] ERROR zhuchenggong-doubao-image-gen: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1024/1069] ERROR ziptax: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1025/1069] ERROR ziptax-paid: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1026/1069] ERROR api-design-architect: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1027/1069] ERROR auth-security-architect: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1028/1069] ERROR azure-cloud-automator: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1029/1069] ERROR requirement-explorer-pro: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1030/1069] ERROR brand-identity-creator: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 1030/1069 (96.4%) 成功=680 错误=350 速率=0.3/s 预计剩余=134s ---
+  [1031/1069] ERROR c-suite-advisor: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1032/1069] ERROR canvas-art-designer: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1033/1069] ERROR clickhouse-olap-expert: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1034/1069] ERROR cloudflare-edge-developer: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1035/1069] ERROR code-review-sentinel: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1036/1069] ERROR competitive-ad-spy: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1037/1069] ERROR compliance-manager: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1038/1069] ERROR content-cms-architect: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1039/1069] ERROR copywriting-master: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1040/1069] ERROR csv-insight-miner: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 1040/1069 (97.3%) 成功=680 错误=360 速率=0.3/s 预计剩余=99s ---
+  [1041/1069] ERROR debug-doctor: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1042/1069] ERROR deep-research-engine: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1043/1069] ERROR docx-document-master: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1044/1069] ERROR duckdb-analytics-engine: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1045/1069] ERROR lead-research-hunter: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1046/1069] ERROR legal-doc-reviewer: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1047/1069] ERROR mcp-toolkit-builder: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1048/1069] ERROR nextjs-fullstack-guide: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1049/1069] ERROR pdf-workflow-suite: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1050/1069] ERROR performance-optimizer-pro: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  --- 进度: 1050/1069 (98.2%) 成功=680 错误=370 速率=0.3/s 预计剩余=64s ---
+  [1051/1069] ERROR plan-architect: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1052/1069] ERROR pptx-presentation-pro: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1053/1069] ERROR react-video-composer: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1054/1069] ERROR research-article-crafter: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1055/1069] ERROR scientific-research-assistant: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1056/1069] ERROR security-hardening-shield: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1057/1069] ERROR seo-audit-master: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1058/1069] ERROR stripe-payment-integrator: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1059/1069] ERROR terraform-iac-architect: LLM API连接失败: HTTPSConnectionPool(host='open.bigmodel.cn', port=443): Max retries exceeded with url: /api/paas/v4/chat/completions (Caused by NameResolutionError("HTTPSConnection(host='open.bigmodel.cn', port=443): Failed to resolve 'open.bigmodel.cn' ([Errno 11001] getaddrinfo failed)"))
+  [1060/1069] FAIL test-driven-coder: 3.90
+  --- 进度: 1060/1069 (99.2%) 成功=681 错误=379 速率=0.3/s 预计剩余=30s ---
+  [1061/1069] FAIL personal-health-manager: 3.00
+  [1062/1069] FAIL pg-job-queue: 3.50
+  [1063/1069] FAIL pg-mcp-skills: 3.90
+  [1064/1069] FAIL theme-stylist: 3.90
+  [1065/1069] FAIL web-artifact-studio: 3.90
+  [1066/1069] FAIL web-scraper-engine: 3.90
+  [1067/1069] FAIL xlsx-data-wizard: 3.90
+  [1068/1069] ERROR persistent-memory-engine: LLM API连接失败: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+  [1069/1069] FAIL twitter-viral-optimizer: 4.10
+
+============================================================
+扫描完成: 1069 个
+  成功: 689
+  错误: 380
+  耗时: 3622秒 (60.4分钟)
+
+报告已生成: D:\skills\data\reports\local_quality_scan.json
+  总评分数: 703
+  通过(>4.5): 0
+  未通过(<=4.5): 703
+  平均分: 3.47
+  评分分布: {'0.0-2.0': 0, '2.0-3.0': 109, '3.0-3.5': 125, '3.5-4.0': 454, '4.0-4.5': 15, '4.5-5.0': 0}

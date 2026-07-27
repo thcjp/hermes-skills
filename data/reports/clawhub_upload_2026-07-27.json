@@ -1,0 +1,208 @@
+{
+  "date": "2026-07-27",
+  "started_at": "2026-07-27T07:02:54.163860",
+  "dry_run": false,
+  "total_pending": 300,
+  "total_processed": 37,
+  "success": [
+    {
+      "slug": "amap-jsapi-tool-free",
+      "version": "unknown",
+      "uploaded_at": "2026-07-27T07:03:03.992104"
+    },
+    {
+      "slug": "archive-tool-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:03:21.165104"
+    },
+    {
+      "slug": "audio-stream-upload-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:03:38.028078"
+    },
+    {
+      "slug": "azure-agent-framework-tool-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:03:53.615291"
+    },
+    {
+      "slug": "azure-devops-tool-free",
+      "version": "1.0.2",
+      "uploaded_at": "2026-07-27T07:04:09.455587"
+    },
+    {
+      "slug": "bailian-search-tool-free",
+      "version": "1.0.2",
+      "uploaded_at": "2026-07-27T07:04:26.214551"
+    },
+    {
+      "slug": "block-monitor-tool-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:04:43.558691"
+    },
+    {
+      "slug": "blog-seo-writer-tool-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:04:59.137840"
+    },
+    {
+      "slug": "blog-writer-tool-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:05:16.348915"
+    },
+    {
+      "slug": "bom-vuln-intel-tool-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:05:36.011089"
+    },
+    {
+      "slug": "brainz-calendar-tool-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:05:54.444116"
+    },
+    {
+      "slug": "brave-search-tool-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:06:11.228556"
+    },
+    {
+      "slug": "browser-agent-tool-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:06:29.279330"
+    },
+    {
+      "slug": "browser-automation-tool-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:06:45.870305"
+    },
+    {
+      "slug": "browser-automation-v2-tool-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:07:04.656034"
+    },
+    {
+      "slug": "browser-cli-tool-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:07:22.356566"
+    },
+    {
+      "slug": "bsession-tool-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:07:42.311102"
+    },
+    {
+      "slug": "calendar-skill-tool-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:07:58.487067"
+    },
+    {
+      "slug": "calendar-toolkit-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:08:16.727337"
+    },
+    {
+      "slug": "cctv-news-tool-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:08:34.444812"
+    },
+    {
+      "slug": "cdn-toolkit-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:08:54.513863"
+    },
+    {
+      "slug": "china-news-tool-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:09:11.440217"
+    },
+    {
+      "slug": "comm-skill-tool-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:09:33.308046"
+    },
+    {
+      "slug": "company-search-tool-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:09:56.147966"
+    },
+    {
+      "slug": "css-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:10:19.020271"
+    },
+    {
+      "slug": "css-toolkit-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:10:39.632821"
+    },
+    {
+      "slug": "csv-analyzer-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:10:56.684670"
+    },
+    {
+      "slug": "csv-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:11:12.125582"
+    },
+    {
+      "slug": "csv-handler-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:11:28.855190"
+    },
+    {
+      "slug": "ctxly-chat-tool-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:11:44.251478"
+    },
+    {
+      "slug": "cybersecurity-engine-tool-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:12:00.768735"
+    },
+    {
+      "slug": "daily-news-brief-tool-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:12:17.785540"
+    },
+    {
+      "slug": "daily-report-tool-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:12:33.935322"
+    },
+    {
+      "slug": "dashboard-builder-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:12:50.969074"
+    },
+    {
+      "slug": "data-analysis-litiao-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:13:06.807175"
+    },
+    {
+      "slug": "data-analyst-cn-free",
+      "version": "1.0.1",
+      "uploaded_at": "2026-07-27T07:13:24.268278"
+    }
+  ],
+  "failed": [
+    {
+      "slug": "data-format-converter-free",
+      "error": "RATE_LIMITED",
+      "message": "Rate limit: max 200 new skills per 24 hours. Please wait before publishing more.\n    at enforceNewSkillRateLimit (../../convex/skills.ts:1536:6)\n    at handler (../../convex/skills.ts:12676:6)\n    at "
+    }
+  ],
+  "skipped_audit_fail": [],
+  "skipped_not_found": [],
+  "error_breakdown": {},
+  "finished_at": "2026-07-27T07:14:03.567342",
+  "summary": {
+    "success": 36,
+    "failed": 1,
+    "audit_failed": 0,
+    "not_found": 0,
+    "rate_limited": true,
+    "total_processed": 37
+  }
+}

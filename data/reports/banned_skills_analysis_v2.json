@@ -1,0 +1,136 @@
+{
+  "generated_at": "2026-07-27 13:35:14",
+  "total_banned": 1564,
+  "status_distribution": {
+    "local_only": 1780,
+    "deleted_on_skillhub": 1564,
+    "synced_from_skillhub": 98,
+    "differentiated": 32,
+    "deleted": 17,
+    "pending_upload": 4
+  },
+  "suffix_categories": {
+    "-free后缀": 364,
+    "-tool-free后缀": 306,
+    "-tool-pro后缀": 300,
+    "无后缀(源技能)": 250,
+    "-sk后缀(改名产物)": 232,
+    "-pro后缀": 106,
+    "xml-trunc(测试产物)": 5,
+    "短slug(<=8字符)": 1
+  },
+  "source_distribution": {
+    "differentiated": 717,
+    "clawhub_differentiated": 255,
+    "skillhub_sync": 202,
+    "clawhub": 195,
+    "packaged": 141,
+    "original_creation": 17,
+    "clawhub_download": 17,
+    "opensource_modified": 16,
+    "manual": 3,
+    "hermes": 1
+  },
+  "edition_distribution": {
+    "free": 1488,
+    "pro": 75,
+    "unknown": 1
+  },
+  "sk_suffix_count": 195,
+  "sk_suffix_sample": [
+    "doc-parse-sk",
+    "document-pdf-sk",
+    "doubao-image-gen-sk",
+    "evolution-engine-v2-sk",
+    "figma-design-sk",
+    "figma-sk",
+    "financial-literacy-sk",
+    "free-weather-api-sk",
+    "free-weather-skill-sk",
+    "frontend-design-3-sk",
+    "github-api-sk",
+    "github-repos-sk",
+    "javascript-skills-sk",
+    "kai-tw-figma-sk",
+    "kubernetes-devops-sk",
+    "kubernetes-sk",
+    "linear-skill-sk",
+    "memory-distiller-v2-sk",
+    "memory-orchestrator-v2-sk",
+    "model-routing-sk",
+    "multi-search-engine-simple-sk",
+    "news-sentiment-sk",
+    "notion-api-skill-sk",
+    "notion-pages-sk",
+    "notioncli-sk",
+    "obsidian-cli-sk",
+    "openai-whisper-sk",
+    "pandoc-convert-openclaw-sk",
+    "parallel-ai-research-sk",
+    "productivity-boost-sk",
+    "productivity-bot-sk",
+    "productivity-improving-sk",
+    "productivity-sk",
+    "professional-communication-sk",
+    "py-sk",
+    "python-dataviz-sk",
+    "python-sk",
+    "python3-sk",
+    "pyx-scan-sk",
+    "quant-data-quality-sk",
+    "queue-task-sk",
+    "reddit-research-sk",
+    "redis-cache-master-sk",
+    "reminder-sk",
+    "remix-api-key-auth-sk",
+    "report-summary-builder-sk",
+    "resume-assistant-sk",
+    "rss-aggregator-sk",
+    "rss-ai-reader-sk",
+    "rss-digest-sk"
+  ],
+  "banned_reasons": [
+    {
+      "reason": "1. 爆发式上传 (2026-07-24单日1098个skill同一时间戳)",
+      "impact": "极高 - 触发平台反垃圾自动检测",
+      "affected": 1564,
+      "fix": "已实施速率限制: 30/hour, 100/day, 2min间隔"
+    },
+    {
+      "reason": "2. 近似重复派生内容 (-free/-pro/-tool-*后缀)",
+      "impact": "高 - 内容指纹系统识别为批量生产垃圾内容",
+      "affected": 1076,
+      "fix": "建议: 停止生成-free/-pro多个独立slug, 改为单一slug+edition元数据"
+    },
+    {
+      "reason": "3. 程序化slug变异 (-sk系列后缀)",
+      "impact": "中 - 被识别为绕过唯一性约束的滥用行为",
+      "affected": 232,
+      "fix": "已修复C2: 清除已有-sk后缀避免畸形slug; 建议slug冲突时使用有语义的后缀"
+    },
+    {
+      "reason": "4. 乐观同步标记导致误判放大",
+      "impact": "中 - 912个无上传记录被标记synced",
+      "affected": "912个(历史问题)",
+      "fix": "已修复C3: 改为基于platform_uploads实际记录标记synced"
+    },
+    {
+      "reason": "5. 短/通用slug占用",
+      "impact": "低 - 通用词抢占检测",
+      "affected": 1,
+      "fix": "建议: 避免使用<=8字符的通用词slug"
+    }
+  ],
+  "survivor_sources": {
+    "clawhub_download": 78,
+    "clawhub_differentiated": 8,
+    "packaged": 3,
+    "clawhub": 3,
+    "hermes": 2,
+    "original_creation": 1,
+    "opensource_modified": 1,
+    "e2e_test": 1,
+    "differentiated": 1
+  },
+  "key_finding": "1564个skill被封禁, 其中232个-sk后缀(改名产物)是最新封禁批次, 根因是爆发式上传+重复派生内容+slug变异"
+}

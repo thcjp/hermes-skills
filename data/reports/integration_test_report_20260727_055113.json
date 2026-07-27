@@ -1,0 +1,428 @@
+{
+  "test_time": "2026-07-27T05:51:13.710810",
+  "duration_seconds": 0.8,
+  "summary": {
+    "total_tests": 48,
+    "passed": 43,
+    "failed": 5,
+    "issues_found": 5
+  },
+  "test_results": [
+    {
+      "test": "L1合格skill: csv-analyzer-free",
+      "category": "L1_positive",
+      "passed": true,
+      "details": "通过: 13/13",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.034175"
+    },
+    {
+      "test": "L1不合格skill检测",
+      "category": "L1_negative",
+      "passed": true,
+      "details": "应失败, 实际: 失败, 失败项: ['slug==name==folder一致性', 'frontmatter 8必需字段', 'displayName≤20字符', 'summary≤100字符', 'description长度', 'version格式', 'tools为YAML数组']",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.048298"
+    },
+    {
+      "test": "L1不存在文件处理",
+      "category": "L1_edge",
+      "passed": true,
+      "details": "文件不存在: \\nonexistent\\SKILL.md",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.051701"
+    },
+    {
+      "test": "新skill评分门控",
+      "category": "rating_positive",
+      "passed": true,
+      "details": "新skill应通过评分门控, 实际: 通过",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.059288"
+    },
+    {
+      "test": "低评分skill评分门控阻断",
+      "category": "rating_negative",
+      "passed": true,
+      "details": "低评分(3.3)已删除skill应被阻断, 实际: 阻断",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.070067"
+    },
+    {
+      "test": "高评分skill评分门控",
+      "category": "rating_positive",
+      "passed": true,
+      "details": "DB中无高评分skill(评分覆盖0.1%),跳过",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.131535"
+    },
+    {
+      "test": "安全预检干净skill",
+      "category": "security_positive",
+      "passed": true,
+      "details": "通过: 21/21",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.160137"
+    },
+    {
+      "test": "安全预检critical风险阻断",
+      "category": "security_negative",
+      "passed": true,
+      "details": "应阻断, 实际: 阻断, critical失败: 1",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.177224"
+    },
+    {
+      "test": "admapix安全预检",
+      "category": "security_known",
+      "passed": true,
+      "details": "admapix应被安全预检阻断, 实际: 阻断",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.213181"
+    },
+    {
+      "test": "营销关卡合格数据",
+      "category": "marketing_positive",
+      "passed": false,
+      "details": "通过: 6/7 失败: ['description非模板化']",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.229117"
+    },
+    {
+      "test": "营销关卡不合格数据",
+      "category": "marketing_negative",
+      "passed": true,
+      "details": "应失败, 实际: 失败, 失败项: ['displayName中文化', 'summary营销优化', 'description非模板化', 'tags质量', 'categoryIds映射', 'pricing合理性']",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.247442"
+    },
+    {
+      "test": "bilibili-helper营销关卡",
+      "category": "marketing_known",
+      "passed": true,
+      "details": "应失败, 实际: 失败, 失败: ['displayName中文化', 'tags质量', 'categoryIds映射', 'pricing合理性', 'license合规']",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.261445"
+    },
+    {
+      "test": "防幻觉无虚假实现",
+      "category": "hallucination_positive",
+      "passed": false,
+      "details": "通过: 2/3",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.278373"
+    },
+    {
+      "test": "防幻觉虚假实现检测",
+      "category": "hallucination_negative",
+      "passed": true,
+      "details": "应失败, 实际: 失败, 失败: ['需求理解偏差', '虚假实现检测']",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.298145"
+    },
+    {
+      "test": "统一入口完整性",
+      "category": "full_check",
+      "passed": true,
+      "details": "层: ['L1_static', 'rating_gate', 'security_precheck', 'marketing_gate', 'anti_hallucination'], 检查: 46项 (通过42/失败4)",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.329091"
+    },
+    {
+      "test": "统一入口检查项数量",
+      "category": "full_check",
+      "passed": true,
+      "details": "共46项 (期望≥40)",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.329091"
+    },
+    {
+      "test": "统一入口-L1_static",
+      "category": "full_check_layer",
+      "passed": false,
+      "details": "score=10/13",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.329091"
+    },
+    {
+      "test": "统一入口-rating_gate",
+      "category": "full_check_layer",
+      "passed": true,
+      "details": "score=2/2",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.330101"
+    },
+    {
+      "test": "统一入口-security_precheck",
+      "category": "full_check_layer",
+      "passed": true,
+      "details": "score=21/21",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.330101"
+    },
+    {
+      "test": "统一入口-marketing_gate",
+      "category": "full_check_layer",
+      "passed": false,
+      "details": "score=6/7",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.330101"
+    },
+    {
+      "test": "统一入口-anti_hallucination",
+      "category": "full_check_layer",
+      "passed": true,
+      "details": "score=3/3",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.330101"
+    },
+    {
+      "test": "WAL模式启用",
+      "category": "db_concurrency",
+      "passed": true,
+      "details": "journal_mode=wal",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.340565"
+    },
+    {
+      "test": "busy_timeout设置",
+      "category": "db_concurrency",
+      "passed": true,
+      "details": "busy_timeout=5000ms",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.341564"
+    },
+    {
+      "test": "db._get_db_connection存在",
+      "category": "db_concurrency",
+      "passed": true,
+      "details": "找到",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.341564"
+    },
+    {
+      "test": "_get_db_connection配置",
+      "category": "db_concurrency",
+      "passed": true,
+      "details": "busy_timeout=5000, foreign_keys=1",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.342324"
+    },
+    {
+      "test": "并发写入(5线程)",
+      "category": "db_concurrency",
+      "passed": true,
+      "details": "错误数: 0 全部成功",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.446162"
+    },
+    {
+      "test": "version_sync_pipeline导入",
+      "category": "platform_sync",
+      "passed": true,
+      "details": "sync_skill_to_all_platforms: 存在",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.563241"
+    },
+    {
+      "test": "质量门禁集成到vsp",
+      "category": "platform_sync",
+      "passed": true,
+      "details": "集成: {'run_quality_gate': True, 'run_security_precheck': True, 'run_marketing_gate': True, 'run_anti_hallucination': True, 'run_rating_gate': True} 全部集成",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.565053"
+    },
+    {
+      "test": "质量门禁集成到EU",
+      "category": "platform_sync",
+      "passed": true,
+      "details": "集成: {'run_security_precheck': True, 'run_marketing_gate': True, 'run_anti_hallucination': True}",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.566065"
+    },
+    {
+      "test": "clawhub_uploader集成",
+      "category": "platform_sync",
+      "passed": true,
+      "details": "from_db=True, db_tracking=True, marketing=True",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.582184"
+    },
+    {
+      "test": "orchestrator配置导入",
+      "category": "platform_sync",
+      "passed": true,
+      "details": "SKILL_DATA_DIR: 已定义",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.589760"
+    },
+    {
+      "test": "阻断skill文件存在: bilibili-helper",
+      "category": "blocked_analysis",
+      "passed": true,
+      "details": "path=d:\\skills\\clawhub-skills\\downloaded\\Creative\\bilibili-helper\\SKILL.md",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.611085"
+    },
+    {
+      "test": "阻断skill文件存在: ad-insight-hub",
+      "category": "blocked_analysis",
+      "passed": true,
+      "details": "path=d:\\skills\\differentiated-skills\\Agents\\ad-insight-hub\\SKILL.md",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.611627"
+    },
+    {
+      "test": "阻断skill文件存在: ai-agent-helper",
+      "category": "blocked_analysis",
+      "passed": true,
+      "details": "path=d:\\skills\\clawhub-skills\\downloaded\\Agents\\ai-agent-helper\\SKILL.md",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.612599"
+    },
+    {
+      "test": "阻断skill文件存在: aws-agentcore-langgraph",
+      "category": "blocked_analysis",
+      "passed": true,
+      "details": "path=d:\\skills\\clawhub-skills\\downloaded\\Agents\\aws-agentcore-langgraph\\SKILL.md",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.612599"
+    },
+    {
+      "test": "阻断skill文件存在: admapix",
+      "category": "blocked_analysis",
+      "passed": true,
+      "details": "path=d:\\skills\\clawhub-skills\\downloaded\\Agents\\admapix\\SKILL.md",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.612599"
+    },
+    {
+      "test": "阻断skill文件存在: chat",
+      "category": "blocked_analysis",
+      "passed": true,
+      "details": "path=d:\\skills\\clawhub-skills\\downloaded\\Other\\chat\\SKILL.md",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.614108"
+    },
+    {
+      "test": "阻断skill文件存在: chat",
+      "category": "blocked_analysis",
+      "passed": true,
+      "details": "path=d:\\skills\\clawhub-skills\\downloaded\\Other\\chat\\SKILL.md",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.614108"
+    },
+    {
+      "test": "阻断skill分析",
+      "category": "blocked_analysis",
+      "passed": true,
+      "details": "共7个唯一阻断记录",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.614108"
+    },
+    {
+      "test": "空文件处理",
+      "category": "edge_case",
+      "passed": true,
+      "details": "正确处理空文件",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.619700"
+    },
+    {
+      "test": "仅frontmatter检测",
+      "category": "edge_case",
+      "passed": true,
+      "details": "总检查: 46, 防幻觉检查: 1",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.646287"
+    },
+    {
+      "test": "超长displayName检测",
+      "category": "edge_case",
+      "passed": true,
+      "details": "应检测到超长, name检查: ['displayName≤20字符']",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.661774"
+    },
+    {
+      "test": "评分覆盖率",
+      "category": "rating_sync",
+      "passed": false,
+      "details": "有评分: 2/1768 (0.1%)",
+      "severity": "high",
+      "timestamp": "2026-07-27T05:51:13.699427"
+    },
+    {
+      "test": "stars覆盖率",
+      "category": "rating_sync",
+      "passed": true,
+      "details": "有stars: 674/1768",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.699427"
+    },
+    {
+      "test": "downloads覆盖率",
+      "category": "rating_sync",
+      "passed": true,
+      "details": "有downloads: 703/1768",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.699427"
+    },
+    {
+      "test": "同步时间记录",
+      "category": "rating_sync",
+      "passed": true,
+      "details": "有同步时间: 704/1768",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.699427"
+    },
+    {
+      "test": "ClawHub pending数量",
+      "category": "clawhub_status",
+      "passed": true,
+      "details": "pending: 274, synced: 1020, platform_uploads success: 1406",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.708291"
+    },
+    {
+      "test": "ClawHub pending本地文件",
+      "category": "clawhub_status",
+      "passed": true,
+      "details": "有文件: 274, 无文件: 0",
+      "severity": "info",
+      "timestamp": "2026-07-27T05:51:13.708291"
+    }
+  ],
+  "issues_found": [
+    {
+      "test": "营销关卡合格数据",
+      "category": "marketing_positive",
+      "severity": "info",
+      "details": "通过: 6/7 失败: ['description非模板化']"
+    },
+    {
+      "test": "防幻觉无虚假实现",
+      "category": "hallucination_positive",
+      "severity": "info",
+      "details": "通过: 2/3"
+    },
+    {
+      "test": "统一入口-L1_static",
+      "category": "full_check_layer",
+      "severity": "info",
+      "details": "score=10/13"
+    },
+    {
+      "test": "统一入口-marketing_gate",
+      "category": "full_check_layer",
+      "severity": "info",
+      "details": "score=6/7"
+    },
+    {
+      "test": "评分覆盖率",
+      "category": "rating_sync",
+      "severity": "high",
+      "details": "有评分: 2/1768 (0.1%)"
+    }
+  ]
+}

@@ -93,7 +93,8 @@ def score_skill(skill_input):
         return _error_result("无法读取SKILL.md内容")
 
     # 2. 截断过长的内容（避免超出LLM token限制）
-    max_chars = 8000
+    # GLM-4-Flash支持128K上下文,20000字符约10000tokens,足够覆盖完整SKILL.md
+    max_chars = 20000
     if len(skill_content) > max_chars:
         skill_content = skill_content[:max_chars] + "\n... (内容已截断)"
 
