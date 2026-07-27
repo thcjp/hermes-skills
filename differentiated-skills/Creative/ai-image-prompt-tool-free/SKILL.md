@@ -1,6 +1,6 @@
 ---
 
-slug: ai-image-prompt-tool-free
+slug: ai-image-prompt-2
 name: ai-image-prompt-tool-free
 version: 1.0.0
 displayName: AI图像提示词-免费版

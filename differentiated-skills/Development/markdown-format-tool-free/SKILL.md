@@ -1,6 +1,6 @@
 ---
 
-slug: markdown-format-tool-free
+slug: markdown-format-2
 name: markdown-format-tool-free
 version: 1.0.0
 displayName: Markdown格式化工具免费版

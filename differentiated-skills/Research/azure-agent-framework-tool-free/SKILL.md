@@ -1,5 +1,5 @@
 ---
-slug: azure-agent-framework-tool-free
+slug: azure-agent-framework-2
 name: azure-agent-framework-tool-free
 version: 1.0.0
 displayName: Azure智能体框架工具-免费版

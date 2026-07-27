@@ -1,0 +1,63 @@
+{
+  "verification_at": "2026-07-28T04:32:03.434352",
+  "measures": {
+    "rate_limiting": {
+      "table_exists": true,
+      "record_count": 90,
+      "check_function": true,
+      "wait_function": true,
+      "table_creation": true,
+      "pass": true
+    },
+    "content_dedup": {
+      "module_exists": true,
+      "check_function": true,
+      "hash_function": true,
+      "enterprise_uploader_integration": true,
+      "version_sync_integration": true,
+      "pass": true
+    },
+    "security_precheck": {
+      "run_security_precheck": true,
+      "run_security_precheck_with_autofix": true,
+      "run_marketing_gate": true,
+      "run_anti_hallucination": true,
+      "run_rating_gate": true,
+      "uploader_integration": true,
+      "clawhub_integration": true,
+      "pass": true
+    },
+    "slug_cleanup": {
+      "remaining_suspicious_not_synced": 0,
+      "synced_suspicious": 341,
+      "new_uploads_clean": true,
+      "pass": true
+    },
+    "duplicate_prevention": {
+      "remaining_duplicate_groups": 0,
+      "marked_duplicate_removed": 788,
+      "pass": true
+    },
+    "pipeline_integration": {
+      "enterprise_uploader.py": {
+        "exists": true,
+        "has_security_precheck": true,
+        "has_content_dedup": true,
+        "has_rate_limit": true
+      },
+      "version_sync_pipeline.py": {
+        "exists": true,
+        "has_security_precheck": true,
+        "has_content_dedup": true,
+        "has_rate_limit": true
+      },
+      "clawhub_batch_uploader.py": {
+        "exists": true,
+        "has_security_precheck": true,
+        "has_content_dedup": true,
+        "has_rate_limit": true
+      }
+    }
+  },
+  "overall_pass": true
+}

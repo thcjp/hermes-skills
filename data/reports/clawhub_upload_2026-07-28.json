@@ -1,0 +1,2034 @@
+{
+  "date": "2026-07-28",
+  "started_at": "2026-07-28T04:19:09.089723",
+  "total_not_uploaded": 261,
+  "total_eligible": 261,
+  "target_count": 196,
+  "dry_run": false,
+  "skip_audit": false,
+  "success": [
+    {
+      "slug": "db-free",
+      "version": "1.0.2",
+      "retried": true
+    },
+    {
+      "slug": "decision-architect-free",
+      "version": "1.0.2",
+      "retried": true
+    },
+    {
+      "slug": "design-free",
+      "version": "1.0.2",
+      "retried": true
+    },
+    {
+      "slug": "diagram-generator-free",
+      "version": "1.0.2"
+    },
+    {
+      "slug": "diagram-master-free",
+      "version": "1.0.2",
+      "retried": true
+    },
+    {
+      "slug": "diagram-tool-free",
+      "version": "1.0.5",
+      "retried": true
+    },
+    {
+      "slug": "diagram-tools-tool-free",
+      "version": "1.0.3"
+    },
+    {
+      "slug": "dingtalk-calendar-tool-free",
+      "version": "1.0.3"
+    },
+    {
+      "slug": "discord-chat-free",
+      "version": "1.0.1"
+    },
+    {
+      "slug": "discord-communities-free",
+      "version": "1.0.1"
+    },
+    {
+      "slug": "discord-free",
+      "version": "1.0.1"
+    },
+    {
+      "slug": "discord-voice-free",
+      "version": "1.0.0"
+    },
+    {
+      "slug": "dlazy-audio-generate-free",
+      "version": "1.0.1"
+    },
+    {
+      "slug": "dns-free",
+      "version": "1.0.1"
+    },
+    {
+      "slug": "doc-print-tool-free",
+      "version": "1.0.1"
+    },
+    {
+      "slug": "doc-toolkit-free",
+      "version": "1.0.1"
+    },
+    {
+      "slug": "docker-essentials-free",
+      "version": "1.0.0"
+    },
+    {
+      "slug": "domain-dns-manager-free",
+      "version": "1.0.1"
+    },
+    {
+      "slug": "elite-longterm-memory-free",
+      "version": "1.0.1"
+    },
+    {
+      "slug": "elite-longterm-memory-local-free",
+      "version": "1.0.1"
+    },
+    {
+      "slug": "email-163-com-free",
+      "version": "1.0.1"
+    },
+    {
+      "slug": "email-daily-summary-free",
+      "version": "1.0.1"
+    },
+    {
+      "slug": "email-gmail-outlook-free",
+      "version": "1.0.1"
+    },
+    {
+      "slug": "email-skill-free",
+      "version": "1.0.1"
+    },
+    {
+      "slug": "emoji-toolkit-free",
+      "version": "1.0.1"
+    },
+    {
+      "slug": "encoding-formats-free",
+      "version": "1.0.1"
+    },
+    {
+      "slug": "evolution-engine-free",
+      "version": "1.0.1"
+    },
+    {
+      "slug": "feishu-card-free",
+      "version": "1.0.1"
+    },
+    {
+      "slug": "feishu-send-file-free",
+      "version": "1.0.1"
+    },
+    {
+      "slug": "file-compressor-free",
+      "version": "1.0.1"
+    },
+    {
+      "slug": "file-toolkit-free",
+      "version": "1.0.1"
+    },
+    {
+      "slug": "firewall-toolkit-free",
+      "version": "1.0.1"
+    },
+    {
+      "slug": "font-manager-free",
+      "version": "1.0.1"
+    }
+  ],
+  "failed": [],
+  "skipped": [],
+  "audit_failed": [
+    {
+      "slug": "dns-lookup-tool-free",
+      "blockers": [
+        "[L1-L3] SLUG_DIRNAME_MISMATCH: slug='dns-lookup-4' 与目录名='dns-lookup-tool-free' 不匹配"
+      ],
+      "warnings": []
+    },
+    {
+      "slug": "doge-node-tool-free",
+      "blockers": [
+        "[L1-L3] SLUG_DIRNAME_MISMATCH: slug='doge-node-2' 与目录名='doge-node-tool-free' 不匹配"
+      ],
+      "warnings": []
+    },
+    {
+      "slug": "feed-digest-tool-free",
+      "blockers": [
+        "[L1-L3] SLUG_DIRNAME_MISMATCH: slug='feed-digest-4' 与目录名='feed-digest-tool-free' 不匹配"
+      ],
+      "warnings": []
+    },
+    {
+      "slug": "feed-to-md-tool-free",
+      "blockers": [
+        "[L1-L3] SLUG_DIRNAME_MISMATCH: slug='feed-to-md-4' 与目录名='feed-to-md-tool-free' 不匹配"
+      ],
+      "warnings": []
+    },
+    {
+      "slug": "feishu-calendar-tool-free",
+      "blockers": [
+        "[L1-L3] SLUG_DIRNAME_MISMATCH: slug='feishu-calendar-2' 与目录名='feishu-calendar-tool-free' 不匹配"
+      ],
+      "warnings": []
+    },
+    {
+      "slug": "file-browser-tool-free",
+      "blockers": [
+        "[L1-L3] SLUG_DIRNAME_MISMATCH: slug='file-browser-2' 与目录名='file-browser-tool-free' 不匹配"
+      ],
+      "warnings": []
+    },
+    {
+      "slug": "file-sorter-tool-free",
+      "blockers": [
+        "[L1-L3] SLUG_DIRNAME_MISMATCH: slug='file-sorter-2' 与目录名='file-sorter-tool-free' 不匹配"
+      ],
+      "warnings": []
+    }
+  ],
+  "details": [
+    {
+      "slug": "db-free",
+      "status": "uploaded",
+      "version": "1.0.2",
+      "retried": true,
+      "original_error": "VERSION_EXISTS",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 95
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 84
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 1,
+          "critical_fails": 0,
+          "high_fails": 1
+        }
+      }
+    },
+    {
+      "slug": "decision-architect-free",
+      "status": "uploaded",
+      "version": "1.0.2",
+      "retried": true,
+      "original_error": "VERSION_EXISTS",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 85
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 72
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "B",
+          "score": 85
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "design-free",
+      "status": "uploaded",
+      "version": "1.0.2",
+      "retried": true,
+      "original_error": "VERSION_EXISTS",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 90
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 83
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "B",
+          "score": 85
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "diagram-generator-free",
+      "status": "uploaded",
+      "version": "1.0.2",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 90
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 78
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "diagram-master-free",
+      "status": "uploaded",
+      "version": "1.0.2",
+      "retried": true,
+      "original_error": "VERSION_EXISTS",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "diagram-tool-free",
+      "status": "uploaded",
+      "version": "1.0.5",
+      "retried": true,
+      "original_error": "VERSION_EXISTS",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 95
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 84
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "diagram-tools-tool-free",
+      "status": "uploaded",
+      "version": "1.0.3",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 95
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 84
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "dingtalk-calendar-tool-free",
+      "status": "uploaded",
+      "version": "1.0.3",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 95
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 84
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "discord-chat-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 90
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 93
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "discord-communities-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 90
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 88
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "B",
+          "score": 85
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "discord-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 90
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 83
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "B",
+          "score": 85
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 1,
+          "critical_fails": 0,
+          "high_fails": 1
+        }
+      }
+    },
+    {
+      "slug": "discord-voice-free",
+      "status": "uploaded",
+      "version": "1.0.0",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 90
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 78
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 1,
+          "critical_fails": 0,
+          "high_fails": 1
+        }
+      }
+    },
+    {
+      "slug": "dlazy-audio-generate-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 90
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 78
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "dns-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 85
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 77
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 1,
+          "critical_fails": 0,
+          "high_fails": 1
+        }
+      }
+    },
+    {
+      "slug": "dns-lookup-tool-free",
+      "status": "audit_failed",
+      "blockers": [
+        "[L1-L3] SLUG_DIRNAME_MISMATCH: slug='dns-lookup-4' 与目录名='dns-lookup-tool-free' 不匹配"
+      ],
+      "layers": {
+        "L1-L3_format": {
+          "passed": false,
+          "severity": "critical",
+          "critical_count": 1,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 95
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 84
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "B",
+          "score": 85
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "doc-print-tool-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 95
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 94
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "B",
+          "score": 85
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "doc-toolkit-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 95
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 94
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "docker-essentials-free",
+      "status": "uploaded",
+      "version": "1.0.0",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 90
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 78
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 1,
+          "critical_fails": 0,
+          "high_fails": 1
+        }
+      }
+    },
+    {
+      "slug": "doge-node-tool-free",
+      "status": "audit_failed",
+      "blockers": [
+        "[L1-L3] SLUG_DIRNAME_MISMATCH: slug='doge-node-2' 与目录名='doge-node-tool-free' 不匹配"
+      ],
+      "layers": {
+        "L1-L3_format": {
+          "passed": false,
+          "severity": "critical",
+          "critical_count": 1,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 95
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 84
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "B",
+          "score": 85
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "domain-dns-manager-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 95
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 94
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "elite-longterm-memory-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 85
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 82
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "elite-longterm-memory-local-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 90
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 88
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "email-163-com-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 90
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 83
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "email-daily-summary-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 90
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 78
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "B",
+          "score": 75
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "email-gmail-outlook-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 90
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 83
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "B",
+          "score": 75
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "email-skill-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 90
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 83
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "emoji-toolkit-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "encoding-formats-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 90
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 78
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "evolution-engine-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 90
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 88
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "feed-digest-tool-free",
+      "status": "audit_failed",
+      "blockers": [
+        "[L1-L3] SLUG_DIRNAME_MISMATCH: slug='feed-digest-4' 与目录名='feed-digest-tool-free' 不匹配"
+      ],
+      "layers": {
+        "L1-L3_format": {
+          "passed": false,
+          "severity": "critical",
+          "critical_count": 1,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "B",
+          "score": 85
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "feed-to-md-tool-free",
+      "status": "audit_failed",
+      "blockers": [
+        "[L1-L3] SLUG_DIRNAME_MISMATCH: slug='feed-to-md-4' 与目录名='feed-to-md-tool-free' 不匹配"
+      ],
+      "layers": {
+        "L1-L3_format": {
+          "passed": false,
+          "severity": "critical",
+          "critical_count": 1,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "B",
+          "score": 75
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "feishu-calendar-tool-free",
+      "status": "audit_failed",
+      "blockers": [
+        "[L1-L3] SLUG_DIRNAME_MISMATCH: slug='feishu-calendar-2' 与目录名='feishu-calendar-tool-free' 不匹配"
+      ],
+      "layers": {
+        "L1-L3_format": {
+          "passed": false,
+          "severity": "critical",
+          "critical_count": 1,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 95
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 84
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "feishu-card-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 95
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 89
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "feishu-send-file-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 90
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 93
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "file-browser-tool-free",
+      "status": "audit_failed",
+      "blockers": [
+        "[L1-L3] SLUG_DIRNAME_MISMATCH: slug='file-browser-2' 与目录名='file-browser-tool-free' 不匹配"
+      ],
+      "layers": {
+        "L1-L3_format": {
+          "passed": false,
+          "severity": "critical",
+          "critical_count": 1,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "file-compressor-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 95
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 94
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "file-sorter-tool-free",
+      "status": "audit_failed",
+      "blockers": [
+        "[L1-L3] SLUG_DIRNAME_MISMATCH: slug='file-sorter-2' 与目录名='file-sorter-tool-free' 不匹配"
+      ],
+      "layers": {
+        "L1-L3_format": {
+          "passed": false,
+          "severity": "critical",
+          "critical_count": 1,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 95
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 94
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "file-toolkit-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "firewall-toolkit-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 95
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 94
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    },
+    {
+      "slug": "font-manager-free",
+      "status": "uploaded",
+      "version": "1.0.1",
+      "audit": {
+        "L1-L3_format": {
+          "passed": true,
+          "severity": "ok",
+          "critical_count": 0,
+          "warning_count": 0
+        },
+        "L4_functional": {
+          "passed": true,
+          "grade": "A",
+          "score": 95
+        },
+        "L5_sellability": {
+          "passed": true,
+          "grade": "A",
+          "score": 99
+        },
+        "L6_authenticity": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L8_security": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L9_visibility": {
+          "passed": true,
+          "grade": "A",
+          "score": 100
+        },
+        "L1.5_security": {
+          "passed": true,
+          "total_checks": 22,
+          "failed_checks": 0,
+          "critical_fails": 0,
+          "high_fails": 0
+        }
+      }
+    }
+  ],
+  "checkpoint": {
+    "processed": 40,
+    "success": 33,
+    "failed": 0,
+    "skipped": 0,
+    "audit_failed": 7
+  }
+}

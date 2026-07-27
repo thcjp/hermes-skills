@@ -1,6 +1,6 @@
 ---
 
-slug: rust-toolkit-pro
+slug: rust-toolkit-2
 name: rust-toolkit-pro
 version: 1.0.0
 displayName: Rust工具包-专业版

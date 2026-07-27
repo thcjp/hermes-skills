@@ -1,5 +1,5 @@
 ---
-slug: "csv-free"
+slug: csv-free-tool
 name: "csv-free"
 version: "1.0.0"
 displayName: "CSV解析生成-免费版"

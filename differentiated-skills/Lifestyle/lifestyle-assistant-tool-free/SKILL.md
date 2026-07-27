@@ -1,6 +1,6 @@
 ---
 
-slug: lifestyle-assistant-tool-free
+slug: lifestyle-assistant-2
 name: lifestyle-assistant-tool-free
 version: 1.0.0
 displayName: 生活助手免费版

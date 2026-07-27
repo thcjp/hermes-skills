@@ -1,5 +1,5 @@
 ---
-slug: quant-data-quality-tool-free
+slug: quant-data-quality-2
 name: quant-data-quality-tool-free
 version: 1.0.0
 displayName: 数据质量检查基础版

@@ -1,6 +1,6 @@
 ---
 
-slug: json-lint-tool-free
+slug: json-lint-2
 name: json-lint-tool-free
 version: 1.0.2
 displayName: JSON校验工具免费版

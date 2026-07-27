@@ -1,6 +1,6 @@
 ---
 
-slug: podcast-chaptering-tool-free
+slug: podcast-chaptering-2
 name: podcast-chaptering-tool-free
 version: 1.0.0
 displayName: 播客章节工具免费版

@@ -1,6 +1,6 @@
 ---
 
-slug: podcast-downloader-tool-free
+slug: podcast-downloader-2
 name: podcast-downloader-tool-free
 version: 1.0.0
 displayName: 播客下载工具免费版

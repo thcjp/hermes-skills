@@ -1,5 +1,5 @@
 ---
-slug: "csv-analyzer-free"
+slug: csv-analyzer-2
 name: "csv-analyzer-free"
 version: "1.0.0"
 displayName: "CSV数据分析-免费版"

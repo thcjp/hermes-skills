@@ -1,6 +1,6 @@
 ---
 
-slug: straker-verify-tool-pro
+slug: straker-verify-3
 name: straker-verify-tool-pro
 version: 1.0.0
 displayName: AI翻译验证(专业版)

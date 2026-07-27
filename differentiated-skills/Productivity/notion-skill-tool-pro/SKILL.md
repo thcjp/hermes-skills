@@ -1,6 +1,6 @@
 ---
 
-slug: notion-skill-tool-pro
+slug: notion-skill-3
 name: notion-skill-tool-pro
 version: 1.0.0
 displayName: Notion 技能专业版

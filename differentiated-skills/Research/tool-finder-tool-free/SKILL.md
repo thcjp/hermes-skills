@@ -1,5 +1,5 @@
 ---
-slug: tool-finder-tool-free
+slug: tool-finder-4
 name: tool-finder-tool-free
 version: 1.0.0
 displayName: 工具发现引擎免费版

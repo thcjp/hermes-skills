@@ -1,6 +1,6 @@
 ---
 
-slug: internet-search-pro-tool-pro
+slug: internet-search-6
 name: internet-search-pro-tool-pro
 version: 1.0.0
 displayName: 联网搜索专业版

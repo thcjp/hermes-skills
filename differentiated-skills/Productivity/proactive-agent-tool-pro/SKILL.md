@@ -1,6 +1,6 @@
 ---
 
-slug: proactive-agent-tool-pro
+slug: proactive-agent-2
 name: proactive-agent-tool-pro
 version: 1.0.0
 displayName: 主动型 Agent 专业版

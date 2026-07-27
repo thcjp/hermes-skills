@@ -1,6 +1,6 @@
 ---
 
-slug: read-github-tool-pro
+slug: read-github-2
 name: read-github-tool-pro
 version: 1.0.0
 displayName: 代码仓库阅读专业版

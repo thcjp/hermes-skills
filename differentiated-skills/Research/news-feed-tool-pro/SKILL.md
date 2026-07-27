@@ -1,6 +1,6 @@
 ---
 
-slug: news-feed-tool-pro
+slug: news-feed-2
 name: news-feed-tool-pro
 version: 1.0.0
 displayName: RSS新闻订阅专业版

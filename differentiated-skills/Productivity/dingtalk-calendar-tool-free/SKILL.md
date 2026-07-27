@@ -1,5 +1,5 @@
 ---
-slug: dingtalk-calendar-tool-free
+slug: dingtalk-calendar-2
 name: dingtalk-calendar-tool-free
 version: 1.0.0
 displayName: 钉钉日历基础版

@@ -1,6 +1,6 @@
 ---
 
-slug: java-dev-manual-tool-free
+slug: java-dev-manual-2
 name: java-dev-manual-tool-free
 version: 1.0.0
 displayName: Java开发手册免费版

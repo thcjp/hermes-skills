@@ -1,5 +1,5 @@
 ---
-slug: doge-node-tool-free
+slug: doge-node-2
 name: doge-node-tool-free
 version: 1.0.0
 displayName: DOGE节点免费版

@@ -1,6 +1,6 @@
 ---
 
-slug: game-asset-gen-tool-free
+slug: game-asset-gen-2
 name: game-asset-gen-tool-free
 version: 1.0.0
 displayName: 游戏资产生成-免费版

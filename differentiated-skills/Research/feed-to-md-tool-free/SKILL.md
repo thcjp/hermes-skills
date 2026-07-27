@@ -1,5 +1,5 @@
 ---
-slug: feed-to-md-tool-free
+slug: feed-to-md-4
 name: feed-to-md-tool-free
 version: 1.0.0
 displayName: RSS转MD(免费版)

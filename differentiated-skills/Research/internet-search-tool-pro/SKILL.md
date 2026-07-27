@@ -1,6 +1,6 @@
 ---
 
-slug: internet-search-tool-pro
+slug: internet-search-2
 name: internet-search-tool-pro
 version: 1.0.0
 displayName: 聚合搜索专业版

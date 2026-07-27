@@ -1,6 +1,6 @@
 ---
 
-slug: health-toolkit-pro
+slug: health-toolkit-2
 name: health-toolkit-pro
 version: 1.0.0
 displayName: 健康管理工具箱专业版

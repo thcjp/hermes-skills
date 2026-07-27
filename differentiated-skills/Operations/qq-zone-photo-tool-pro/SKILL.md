@@ -1,6 +1,6 @@
 ---
 
-slug: qq-zone-photo-tool-pro
+slug: qq-zone-photo-2
 name: qq-zone-photo-tool-pro
 version: 1.0.0
 displayName: QQ空间相册专业版

@@ -1,6 +1,6 @@
 ---
 
-slug: telegram-chat-tool-free
+slug: telegram-chat-2
 name: telegram-chat-tool-free
 version: 1.0.0
 displayName: 电报聊天工具免费版

@@ -1,5 +1,5 @@
 ---
-slug: "csv-handler-free"
+slug: csv-handler-2
 name: "csv-handler-free"
 version: "1.0.0"
 displayName: "CSV文件处理(免费版)"

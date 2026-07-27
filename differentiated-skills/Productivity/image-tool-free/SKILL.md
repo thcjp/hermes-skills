@@ -1,5 +1,5 @@
 ---
-slug: image-tool-free
+slug: image-2
 name: image-tool-free
 version: 1.0.0
 displayName: 图像处理基础版

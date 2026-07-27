@@ -1,6 +1,6 @@
 ---
 
-slug: rss-feed-digest-tool-pro
+slug: rss-feed-digest-2
 name: rss-feed-digest-tool-pro
 version: 1.0.0
 displayName: RSS聚合摘要专业版

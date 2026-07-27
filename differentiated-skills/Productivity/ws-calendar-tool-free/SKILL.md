@@ -1,5 +1,5 @@
 ---
-slug: ws-calendar-tool-free
+slug: ws-calendar-2
 name: ws-calendar-tool-free
 version: 1.0.0
 displayName: 日历同步工具基础版

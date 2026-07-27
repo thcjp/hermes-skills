@@ -1,6 +1,6 @@
 ---
 
-slug: pandoc-convert-tool-free
+slug: pandoc-convert-2
 name: pandoc-convert-tool-free
 version: 1.0.0
 displayName: Pandoc转换工具（免费版）

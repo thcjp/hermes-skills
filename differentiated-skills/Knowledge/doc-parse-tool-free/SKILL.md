@@ -1,6 +1,6 @@
 ---
 
-slug: doc-parse-tool-free
+slug: doc-parse-2
 name: doc-parse-tool-free
 version: 1.0.1
 displayName: 文档解析工具（免费版）

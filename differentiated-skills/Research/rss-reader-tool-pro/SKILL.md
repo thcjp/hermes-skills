@@ -1,6 +1,6 @@
 ---
 
-slug: rss-reader-tool-pro
+slug: rss-reader-2
 name: rss-reader-tool-pro
 version: 1.0.0
 displayName: RSS阅读器专业版

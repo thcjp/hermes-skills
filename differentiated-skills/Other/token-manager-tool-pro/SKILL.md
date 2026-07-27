@@ -1,6 +1,6 @@
 ---
 
-slug: token-manager-tool-pro
+slug: token-manager-2
 name: token-manager-tool-pro
 version: 1.0.0
 displayName: Token用量管理专业版

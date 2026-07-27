@@ -1,6 +1,6 @@
 ---
 
-slug: skill-vetter-tool-pro
+slug: skill-vetter-2
 name: skill-vetter-tool-pro
 version: 1.0.0
 displayName: Skill安全审查(专业版)

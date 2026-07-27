@@ -1,5 +1,5 @@
 ---
-slug: ctxly-chat-tool-free
+slug: ctxly-chat-2
 name: ctxly-chat-tool-free
 version: 1.0.1
 displayName: 匿名聊天(免费版)

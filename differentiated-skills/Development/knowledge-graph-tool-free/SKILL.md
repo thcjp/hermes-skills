@@ -1,6 +1,6 @@
 ---
 
-slug: knowledge-graph-tool-free
+slug: knowledge-graph-2
 name: knowledge-graph-tool-free
 version: 1.0.0
 displayName: 知识图谱工具(免费版)

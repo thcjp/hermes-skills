@@ -1,5 +1,5 @@
 ---
-slug: web-vuln-assess-tool-free
+slug: web-vuln-assess-2
 name: web-vuln-assess-tool-free
 version: 1.0.0
 displayName: Web漏洞评估(免费版)

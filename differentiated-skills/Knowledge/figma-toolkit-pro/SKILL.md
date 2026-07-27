@@ -1,6 +1,6 @@
 ---
 
-slug: figma-toolkit-pro
+slug: figma-toolkit-2
 name: figma-toolkit-pro
 version: 1.0.0
 displayName: Figma设计工具包（专业版）

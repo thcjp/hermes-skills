@@ -1,6 +1,6 @@
 ---
 
-slug: markdown-converter-tool-free
+slug: markdown-converter-2
 name: markdown-converter-tool-free
 version: 1.0.0
 displayName: Markdown转换器免费版

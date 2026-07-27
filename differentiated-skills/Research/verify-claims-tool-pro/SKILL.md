@@ -1,6 +1,6 @@
 ---
 
-slug: verify-claims-tool-pro
+slug: verify-claims-3
 name: verify-claims-tool-pro
 version: 1.0.0
 displayName: 事实核查助手专业版

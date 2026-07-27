@@ -1,6 +1,6 @@
 ---
 
-slug: finance-radar-tool-free
+slug: finance-radar-2
 name: finance-radar-tool-free
 version: 1.0.0
 displayName: 股票分析雷达入门

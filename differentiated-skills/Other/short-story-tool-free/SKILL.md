@@ -1,5 +1,5 @@
 ---
-slug: short-story-tool-free
+slug: short-story-2
 name: short-story-tool-free
 version: 1.0.0
 displayName: 短篇网文写作-免费版

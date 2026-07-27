@@ -1,6 +1,6 @@
 ---
 
-slug: feishu-doc-write-tool-free
+slug: feishu-doc-write-2
 name: feishu-doc-write-tool-free
 version: 1.0.0
 displayName: 飞书文档写入（免费版）

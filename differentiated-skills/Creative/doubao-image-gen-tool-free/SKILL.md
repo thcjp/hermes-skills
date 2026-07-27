@@ -1,6 +1,6 @@
 ---
 
-slug: doubao-image-gen-tool-free
+slug: doubao-image-gen-3
 name: doubao-image-gen-tool-free
 version: 1.0.0
 displayName: 豆包图片生成-免费版

@@ -1,6 +1,6 @@
 ---
 
-slug: context-driven-dev-tool-free
+slug: context-driven-dev-2
 name: context-driven-dev-tool-free
 version: 1.0.0
 displayName: 上下文驱动开发（免费版）

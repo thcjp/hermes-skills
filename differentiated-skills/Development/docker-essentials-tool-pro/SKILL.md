@@ -1,6 +1,6 @@
 ---
 
-slug: docker-essentials-tool-pro
+slug: docker-essentials-2
 name: docker-essentials-tool-pro
 version: 1.0.0
 displayName: Docker基础工具专业版

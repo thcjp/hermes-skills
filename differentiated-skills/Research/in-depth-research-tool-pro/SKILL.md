@@ -1,6 +1,6 @@
 ---
 
-slug: in-depth-research-tool-pro
+slug: in-depth-research-2
 name: in-depth-research-tool-pro
 version: 1.0.0
 displayName: 深度研究专业版

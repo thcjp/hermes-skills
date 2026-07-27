@@ -1,5 +1,5 @@
 ---
-slug: juejin-tool-free
+slug: juejin-2
 name: juejin-tool-free
 version: 1.0.0
 displayName: 掘金工具

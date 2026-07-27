@@ -1,5 +1,5 @@
 ---
-slug: glitch-dashboard-tool-free
+slug: glitch-dashboard-4
 name: glitch-dashboard-tool-free
 version: 1.0.0
 displayName: 统一仪表盘基础版

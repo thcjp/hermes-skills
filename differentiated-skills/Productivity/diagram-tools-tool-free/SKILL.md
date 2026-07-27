@@ -1,5 +1,5 @@
 ---
-slug: diagram-tools-tool-free
+slug: diagram-tools-4
 name: diagram-tools-tool-free
 version: 1.0.0
 displayName: 图表工具基础版

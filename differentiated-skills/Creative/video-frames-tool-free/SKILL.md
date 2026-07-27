@@ -1,6 +1,6 @@
 ---
 
-slug: video-frames-tool-free
+slug: video-frames-2
 name: video-frames-tool-free
 version: 1.0.0
 displayName: 视频帧提取-免费版

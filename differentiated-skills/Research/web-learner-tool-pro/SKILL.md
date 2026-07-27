@@ -1,6 +1,6 @@
 ---
 
-slug: web-learner-tool-pro
+slug: web-learner-3
 name: web-learner-tool-pro
 version: 1.0.0
 displayName: 自主学习助手专业版

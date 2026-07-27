@@ -1,5 +1,5 @@
 ---
-slug: comm-skill-tool-free
+slug: comm-skill-2
 name: comm-skill-tool-free
 version: 1.0.1
 displayName: 沟通助手基础版

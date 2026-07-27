@@ -1,6 +1,6 @@
 ---
 
-slug: moltbook-firewall-tool-pro
+slug: moltbook-firewall-2
 name: moltbook-firewall-tool-pro
 version: 1.0.0
 displayName: Agent防火墙专业版

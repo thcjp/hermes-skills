@@ -1,6 +1,6 @@
 ---
 
-slug: v2ray-proxy-tool-pro
+slug: v2ray-proxy-2
 name: v2ray-proxy-tool-pro
 version: 1.1.0
 displayName: 网络安全审计工具(专业版)

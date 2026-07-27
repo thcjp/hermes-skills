@@ -1,6 +1,6 @@
 ---
 
-slug: use-my-browser-tool-pro
+slug: use-my-browser-2
 name: use-my-browser-tool-pro
 version: 1.0.0
 displayName: 真实浏览器控制专业版

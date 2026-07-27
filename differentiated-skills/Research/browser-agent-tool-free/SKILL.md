@@ -1,5 +1,5 @@
 ---
-slug: browser-agent-tool-free
+slug: browser-agent-2
 name: browser-agent-tool-free
 version: 1.0.2
 displayName: 浏览器智能代理工具-免费版

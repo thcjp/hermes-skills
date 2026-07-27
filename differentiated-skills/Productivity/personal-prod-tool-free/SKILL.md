@@ -1,5 +1,5 @@
 ---
-slug: personal-prod-tool-free
+slug: personal-prod-2
 name: personal-prod-tool-free
 version: 1.0.0
 displayName: 个人效率顾问基础版

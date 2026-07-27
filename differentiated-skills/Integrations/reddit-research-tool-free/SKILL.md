@@ -1,6 +1,6 @@
 ---
 
-slug: reddit-research-tool-free
+slug: reddit-research-2
 name: reddit-research-tool-free
 version: 1.0.0
 displayName: Reddit调研(免费版)

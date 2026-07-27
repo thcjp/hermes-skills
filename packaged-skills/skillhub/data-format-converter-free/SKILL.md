@@ -1,5 +1,5 @@
 ---
-slug: "data-format-converter-free"
+slug: data-format-converter-2
 name: "data-format-converter-free"
 version: "1.0.0"
 displayName: "数据格式转换(免费版)"

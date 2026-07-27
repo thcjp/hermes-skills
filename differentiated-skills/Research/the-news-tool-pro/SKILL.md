@@ -1,6 +1,6 @@
 ---
 
-slug: the-news-tool-pro
+slug: the-news-3
 name: the-news-tool-pro
 version: 1.0.0
 displayName: 全球新闻情报专业版

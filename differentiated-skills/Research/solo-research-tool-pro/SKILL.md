@@ -1,6 +1,6 @@
 ---
 
-slug: solo-research-tool-pro
+slug: solo-research-2
 name: solo-research-tool-pro
 version: 1.0.0
 displayName: 市场研究工具专业版

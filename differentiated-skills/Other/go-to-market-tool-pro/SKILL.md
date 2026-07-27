@@ -1,6 +1,6 @@
 ---
 
-slug: go-to-market-tool-pro
+slug: go-to-market-2
 name: go-to-market-tool-pro
 version: 1.0.0
 displayName: 上市策略工具专业版

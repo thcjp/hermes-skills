@@ -1,6 +1,6 @@
 ---
 
-slug: whatsapp-image-tool-free
+slug: whatsapp-image-2
 name: whatsapp-image-tool-free
 version: 1.0.0
 displayName: WhatsApp图片发送-免费版

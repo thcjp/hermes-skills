@@ -1,5 +1,5 @@
 ---
-slug: "persistent-memory-engine-free"
+slug: persistent-memory-engine-2
 name: "persistent-memory-engine-free"
 version: "1.0.0"
 displayName: "持久记忆引擎"

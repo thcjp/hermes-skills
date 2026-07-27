@@ -1,5 +1,5 @@
 ---
-slug: bom-vuln-intel-tool-free
+slug: bom-vuln-intel-2
 name: bom-vuln-intel-tool-free
 version: 1.0.0
 displayName: 物料清单漏洞情报免费版

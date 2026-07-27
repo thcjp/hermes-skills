@@ -1,6 +1,6 @@
 ---
 
-slug: explain-code-tool-free
+slug: explain-code-2
 name: explain-code-tool-free
 version: 1.0.0
 displayName: 代码解释工具免费版

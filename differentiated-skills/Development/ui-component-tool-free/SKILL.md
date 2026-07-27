@@ -1,6 +1,6 @@
 ---
 
-slug: ui-component-tool-free
+slug: ui-component-2
 name: ui-component-tool-free
 version: 1.0.0
 displayName: UI组件生成(免费版)

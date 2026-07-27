@@ -1,5 +1,5 @@
 ---
-slug: news-tool-free
+slug: news-free-tool
 name: news-tool-free
 version: 1.0.0
 displayName: 个性化新闻助手免费版

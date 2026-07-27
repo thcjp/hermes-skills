@@ -1,5 +1,5 @@
 ---
-slug: brainz-calendar-tool-free
+slug: brainz-calendar-2
 name: brainz-calendar-tool-free
 version: 1.0.2
 displayName: Google 日历基础版

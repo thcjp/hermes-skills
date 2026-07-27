@@ -1,6 +1,6 @@
 ---
 
-slug: dns-networking-tool-free
+slug: dns-networking-3
 name: dns-networking-tool-free
 version: 1.0.0
 displayName: DNS网络诊断基础版

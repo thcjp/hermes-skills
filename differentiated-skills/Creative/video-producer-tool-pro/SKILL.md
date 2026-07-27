@@ -1,6 +1,6 @@
 ---
 
-slug: video-producer-tool-pro
+slug: video-producer-2
 name: video-producer-tool-pro
 version: 1.0.0
 displayName: 短视频生成-专业版

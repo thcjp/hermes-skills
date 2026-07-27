@@ -1,6 +1,6 @@
 ---
 
-slug: game-ai-tool-free
+slug: game-ai-2
 name: game-ai-tool-free
 version: 1.0.0
 displayName: 游戏AI工具免费版

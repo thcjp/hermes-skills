@@ -1,6 +1,6 @@
 ---
 
-slug: solo-validate-tool-pro
+slug: solo-validate-2
 name: solo-validate-tool-pro
 version: 1.0.0
 displayName: 想法验证工具专业版

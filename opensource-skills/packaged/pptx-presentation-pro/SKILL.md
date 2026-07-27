@@ -1,5 +1,5 @@
 ---
-slug: pptx-presentation-pro
+slug: pptx-presentation
 name: pptx-presentation-pro
 version: 1.0.1
 displayName: 演示文稿大师

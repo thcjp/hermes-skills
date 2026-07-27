@@ -1,6 +1,6 @@
 ---
 
-slug: docker-sandbox-tool-free
+slug: docker-sandbox-2
 name: docker-sandbox-tool-free
 version: 1.0.0
 displayName: Docker沙箱入门工具

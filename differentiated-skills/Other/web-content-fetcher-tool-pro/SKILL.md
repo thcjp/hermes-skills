@@ -1,6 +1,6 @@
 ---
 
-slug: web-content-fetcher-tool-pro
+slug: web-content-fetcher-3
 name: web-content-fetcher-tool-pro
 version: 1.0.0
 displayName: 网页内容获取专业版

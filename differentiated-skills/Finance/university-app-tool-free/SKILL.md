@@ -1,6 +1,6 @@
 ---
 
-slug: university-app-tool-free
+slug: university-app-2
 name: university-app-tool-free
 version: 1.0.0
 displayName: 命理咨询入门工具

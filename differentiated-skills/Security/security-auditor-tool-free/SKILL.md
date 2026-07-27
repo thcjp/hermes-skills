@@ -1,5 +1,5 @@
 ---
-slug: security-auditor-tool-free
+slug: security-auditor-4
 name: security-auditor-tool-free
 version: 1.0.0
 displayName: 代码安全审计员(免费版)

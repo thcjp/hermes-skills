@@ -1,6 +1,6 @@
 ---
 
-slug: feishu-doc-tool-pro
+slug: feishu-doc-3
 name: feishu-doc-tool-pro
 version: 1.0.0
 displayName: 飞书文档工具（专业版）

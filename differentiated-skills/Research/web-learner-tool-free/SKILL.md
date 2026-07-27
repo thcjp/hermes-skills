@@ -1,5 +1,5 @@
 ---
-slug: web-learner-tool-free
+slug: web-learner-2
 name: web-learner-tool-free
 version: 1.0.0
 displayName: 自主学习助手免费版

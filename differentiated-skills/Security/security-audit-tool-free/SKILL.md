@@ -1,5 +1,5 @@
 ---
-slug: security-audit-tool-free
+slug: security-audit-4
 name: security-audit-tool-free
 version: 1.0.0
 displayName: 安全审计工具(免费版)

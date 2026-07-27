@@ -1,6 +1,6 @@
 ---
 
-slug: okx-dex-token-tool-free
+slug: okx-dex-token-2
 name: okx-dex-token-tool-free
 version: 1.0.0
 displayName: DEX代币数据入门

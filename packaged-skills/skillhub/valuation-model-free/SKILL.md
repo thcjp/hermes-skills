@@ -1,5 +1,5 @@
 ---
-slug: "valuation-model-free"
+slug: valuation-model-2
 name: "valuation-model-free"
 version: "1.0.0"
 displayName: "估值建模专家"

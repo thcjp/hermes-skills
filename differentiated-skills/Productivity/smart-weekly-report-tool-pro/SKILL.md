@@ -1,6 +1,6 @@
 ---
 
-slug: smart-weekly-report-tool-pro
+slug: smart-weekly-report-2
 name: smart-weekly-report-tool-pro
 version: 1.0.0
 displayName: 智能周报专业版

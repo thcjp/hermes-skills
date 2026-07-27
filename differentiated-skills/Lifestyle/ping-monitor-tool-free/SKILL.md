@@ -1,6 +1,6 @@
 ---
 
-slug: ping-monitor-tool-free
+slug: ping-monitor-4
 name: ping-monitor-tool-free
 version: 1.0.0
 displayName: 网络监控免费版

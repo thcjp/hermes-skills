@@ -1,5 +1,5 @@
 ---
-slug: miniprogram-dev-tool-free
+slug: miniprogram-dev-2
 name: miniprogram-dev-tool-free
 version: 1.0.1
 displayName: 小程序开发工具

@@ -1,6 +1,6 @@
 ---
 
-slug: typescript-skills-tool-free
+slug: typescript-skills-2
 name: typescript-skills-tool-free
 version: 1.0.0
 displayName: TS编码规范工具(免费版)

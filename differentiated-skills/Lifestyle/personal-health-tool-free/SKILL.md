@@ -1,6 +1,6 @@
 ---
 
-slug: personal-health-tool-free
+slug: personal-health-2
 name: personal-health-tool-free
 version: 1.0.2
 displayName: 个人健康管家免费版

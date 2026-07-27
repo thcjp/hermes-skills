@@ -1,6 +1,6 @@
 ---
 
-slug: daily-news-brief-tool-pro
+slug: daily-news-brief-3
 name: daily-news-brief-tool-pro
 version: 1.0.0
 displayName: 每日新闻简报(专业版)

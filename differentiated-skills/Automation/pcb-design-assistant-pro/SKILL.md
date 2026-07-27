@@ -1,6 +1,6 @@
 ---
 
-slug: pcb-design-assistant-pro
+slug: pcb-design-assistant-2
 name: pcb-design-assistant-pro
 version: 1.0.0
 displayName: PCB设计助手(专业版)

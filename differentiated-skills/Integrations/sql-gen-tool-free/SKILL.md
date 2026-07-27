@@ -1,6 +1,6 @@
 ---
 
-slug: sql-gen-tool-free
+slug: sql-gen-2
 name: sql-gen-tool-free
 version: 1.0.0
 displayName: SQL生成器(免费版)

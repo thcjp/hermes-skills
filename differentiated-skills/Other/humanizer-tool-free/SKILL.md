@@ -1,5 +1,5 @@
 ---
-slug: humanizer-tool-free
+slug: humanizer-2
 name: humanizer-tool-free
 version: 1.0.0
 displayName: 文本人性化工具

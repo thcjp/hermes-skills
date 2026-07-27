@@ -1,6 +1,6 @@
 ---
 
-slug: git-workflow-cn-tool-free
+slug: git-workflow-cn-2
 name: git-workflow-cn-tool-free
 version: 1.0.0
 displayName: Git工作流助手免费版

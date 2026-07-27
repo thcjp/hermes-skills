@@ -1,6 +1,6 @@
 ---
 
-slug: tmux-session-tool-free
+slug: tmux-session-2
 name: tmux-session-tool-free
 version: 1.0.0
 displayName: Tmux会话工具免费版

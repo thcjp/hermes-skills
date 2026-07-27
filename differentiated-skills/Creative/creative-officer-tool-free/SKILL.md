@@ -1,6 +1,6 @@
 ---
 
-slug: creative-officer-tool-free
+slug: creative-officer-2
 name: creative-officer-tool-free
 version: 1.0.0
 displayName: 创意总监免费版

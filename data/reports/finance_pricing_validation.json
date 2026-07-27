@@ -1,262 +1,322 @@
 {
-  "validated_at": "2026-07-27T12:09:11.360903",
-  "total_validated": 5,
-  "pass_count": 5,
+  "validated_at": "2026-07-28T04:25:44.037860",
+  "total_validated": 30,
+  "pass_count": 30,
   "fail_count": 0,
   "tier_distribution": {
-    "L3": 4,
-    "L4": 1
+    "L1": 11,
+    "L2": 2,
+    "L3": 8,
+    "L4": 5,
+    "L5": 4
   },
-  "penalty_exempt_count": 5,
-  "has_L3": true,
-  "has_L4": true,
-  "has_L5": false,
-  "all_penalty_exempt": true,
+  "price_range_distribution": {
+    "9.9-29.9": 10,
+    "30-99": 0,
+    "100-199": 9,
+    "free": 11
+  },
+  "all_pass": true,
   "results": [
     {
-      "name": "stock-filter-skills",
-      "direction": "A股多条件筛选",
-      "path": "d:\\skills\\clawhub-skills\\downloaded\\Finance\\stock-filter-skills",
-      "pricing_engine": {
-        "category": "数据分析",
-        "tier": "free",
-        "final_price": 0.0,
-        "market_size": "medium",
-        "complexity": "enterprise",
-        "frequency": "weekly",
-        "raw_price": 15.84,
-        "rationale": "数据分析类, medium市场, enterprise复杂度, weekly频次, free层 → 中频专业工具,中等市场",
-        "is_paid": false
-      },
-      "task3_calibration": {
-        "slug": "stock-filter-skills",
-        "score": 15,
-        "score_detail": {
-          "complexity": 5,
-          "frequency": 3,
-          "value": 3,
-          "cost": 4,
-          "uniqueness": 3,
-          "alternative": 3,
-          "penalty": 0,
-          "total": 15
-        },
-        "tier": "L3",
-        "tier_name": "L3-专业级",
-        "price": 29.9,
-        "model": "per_use",
-        "penalty": 0
-      },
-      "penalty_check": {
-        "penalty": 0,
-        "is_exempt": true,
-        "status": "PASS"
-      },
-      "validation": {
-        "price_in_range": true,
-        "tier_distribution_ok": true,
-        "penalty_exempt": true,
-        "overall_status": "PASS",
-        "pricing_engine_price": 0.0,
-        "task3_price": 29.9,
-        "task3_tier": "L3"
-      }
+      "slug": "agent-research",
+      "price": 99.9,
+      "tier": "L4",
+      "is_paid": 1,
+      "quality_score": 4.5,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
     },
     {
-      "name": "t-trading",
-      "direction": "维加斯通道交易策略",
-      "path": "d:\\skills\\clawhub-skills\\downloaded\\Finance\\t-trading",
-      "pricing_engine": {
-        "category": "金融量化",
-        "tier": "free",
-        "final_price": 0.0,
-        "market_size": "small",
-        "complexity": "moderate",
-        "frequency": "monthly",
-        "raw_price": 102.9,
-        "rationale": "金融量化类, small市场, moderate复杂度, monthly频次, free层 → 金融量化工具直接关联投资收益,专业壁垒极高,付费意愿强,参考Bloomberg Terminal $2000/月",
-        "is_paid": false
-      },
-      "task3_calibration": {
-        "slug": "t-trading",
-        "score": 16,
-        "score_detail": {
-          "complexity": 4,
-          "frequency": 3,
-          "value": 5,
-          "cost": 2,
-          "uniqueness": 3,
-          "alternative": 1,
-          "penalty": 0,
-          "total": 16
-        },
-        "tier": "L3",
-        "tier_name": "L3-专业级",
-        "price": 29.9,
-        "model": "per_use",
-        "penalty": 0
-      },
-      "penalty_check": {
-        "penalty": 0,
-        "is_exempt": true,
-        "status": "PASS"
-      },
-      "validation": {
-        "price_in_range": true,
-        "tier_distribution_ok": true,
-        "penalty_exempt": true,
-        "overall_status": "PASS",
-        "pricing_engine_price": 0.0,
-        "task3_price": 29.9,
-        "task3_tier": "L3"
-      }
+      "slug": "ai-finance",
+      "price": 29.9,
+      "tier": "L3",
+      "is_paid": 1,
+      "quality_score": 4.4,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
     },
     {
-      "name": "okx-dex-token",
-      "direction": "DEX代币分析",
-      "path": "d:\\skills\\clawhub-skills\\downloaded\\Finance\\okx-dex-token",
-      "pricing_engine": {
-        "category": "数据分析",
-        "tier": "free",
-        "final_price": 0.0,
-        "market_size": "medium",
-        "complexity": "complex",
-        "frequency": "weekly",
-        "raw_price": 12.87,
-        "rationale": "数据分析类, medium市场, complex复杂度, weekly频次, free层 → 中频专业工具,中等市场",
-        "is_paid": false
-      },
-      "task3_calibration": {
-        "slug": "okx-dex-token",
-        "score": 15,
-        "score_detail": {
-          "complexity": 5,
-          "frequency": 2,
-          "value": 5,
-          "cost": 4,
-          "uniqueness": 2,
-          "alternative": 3,
-          "penalty": 0,
-          "total": 15
-        },
-        "tier": "L3",
-        "tier_name": "L3-专业级",
-        "price": 29.9,
-        "model": "per_use",
-        "penalty": 0
-      },
-      "penalty_check": {
-        "penalty": 0,
-        "is_exempt": true,
-        "status": "PASS"
-      },
-      "validation": {
-        "price_in_range": true,
-        "tier_distribution_ok": true,
-        "penalty_exempt": true,
-        "overall_status": "PASS",
-        "pricing_engine_price": 0.0,
-        "task3_price": 29.9,
-        "task3_tier": "L3"
-      }
+      "slug": "ai-finance-free",
+      "price": null,
+      "tier": "L1",
+      "is_paid": 0,
+      "quality_score": 4.5,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
     },
     {
-      "name": "finance-radar",
-      "direction": "选股雷达8维度评分",
-      "path": "d:\\skills\\clawhub-skills\\downloaded\\Finance\\finance-radar",
-      "pricing_engine": {
-        "category": "金融量化",
-        "tier": "free",
-        "final_price": 0.0,
-        "market_size": "small",
-        "complexity": "moderate",
-        "frequency": "monthly",
-        "raw_price": 102.9,
-        "rationale": "金融量化类, small市场, moderate复杂度, monthly频次, free层 → 金融量化工具直接关联投资收益,专业壁垒极高,付费意愿强,参考Bloomberg Terminal $2000/月",
-        "is_paid": false
-      },
-      "task3_calibration": {
-        "slug": "finance-radar",
-        "score": 17,
-        "score_detail": {
-          "complexity": 3,
-          "frequency": 4,
-          "value": 5,
-          "cost": 3,
-          "uniqueness": 4,
-          "alternative": 2,
-          "penalty": 0,
-          "total": 17
-        },
-        "tier": "L3",
-        "tier_name": "L3-专业级",
-        "price": 29.9,
-        "model": "per_use",
-        "penalty": 0
-      },
-      "penalty_check": {
-        "penalty": 0,
-        "is_exempt": true,
-        "status": "PASS"
-      },
-      "validation": {
-        "price_in_range": true,
-        "tier_distribution_ok": true,
-        "penalty_exempt": true,
-        "overall_status": "PASS",
-        "pricing_engine_price": 0.0,
-        "task3_price": 29.9,
-        "task3_tier": "L3"
-      }
+      "slug": "ai-report",
+      "price": 99.9,
+      "tier": "L4",
+      "is_paid": 1,
+      "quality_score": 4.5,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
     },
     {
-      "name": "accounting-and-finance",
-      "direction": "58个财务分析子技能",
-      "path": "d:\\skills\\clawhub-skills\\downloaded\\Finance\\accounting-and-finance",
-      "pricing_engine": {
-        "category": "金融量化",
-        "tier": "free",
-        "final_price": 0.0,
-        "market_size": "small",
-        "complexity": "enterprise",
-        "frequency": "monthly",
-        "raw_price": 164.64,
-        "rationale": "金融量化类, small市场, enterprise复杂度, monthly频次, free层 → 金融量化工具直接关联投资收益,专业壁垒极高,付费意愿强,参考Bloomberg Terminal $2000/月",
-        "is_paid": false
-      },
-      "task3_calibration": {
-        "slug": "accounting-and-finance",
-        "score": 19,
-        "score_detail": {
-          "complexity": 5,
-          "frequency": 2,
-          "value": 5,
-          "cost": 3,
-          "uniqueness": 5,
-          "alternative": 1,
-          "penalty": 0,
-          "total": 19
-        },
-        "tier": "L4",
-        "tier_name": "L4-企业级",
-        "price": 99.9,
-        "model": "monthly",
-        "penalty": 0
-      },
-      "penalty_check": {
-        "penalty": 0,
-        "is_exempt": true,
-        "status": "PASS"
-      },
-      "validation": {
-        "price_in_range": true,
-        "tier_distribution_ok": true,
-        "penalty_exempt": true,
-        "overall_status": "PASS",
-        "pricing_engine_price": 0.0,
-        "task3_price": 99.9,
-        "task3_tier": "L4"
-      }
+      "slug": "ai-report-free",
+      "price": null,
+      "tier": "L1",
+      "is_paid": 0,
+      "quality_score": 4.5,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "arb-engine",
+      "price": 199.0,
+      "tier": "L5",
+      "is_paid": 1,
+      "quality_score": 4.5,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "backtest",
+      "price": 99.9,
+      "tier": "L4",
+      "is_paid": 1,
+      "quality_score": 4.5,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "backtest-free",
+      "price": null,
+      "tier": "L1",
+      "is_paid": 0,
+      "quality_score": 4.5,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "cross-market",
+      "price": 99.9,
+      "tier": "L4",
+      "is_paid": 1,
+      "quality_score": 4.5,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "crypto-portfolio",
+      "price": 29.9,
+      "tier": "L3",
+      "is_paid": 1,
+      "quality_score": 4.1,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "crypto-portfolio-free",
+      "price": null,
+      "tier": "L1",
+      "is_paid": 0,
+      "quality_score": 4.5,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "dex-token",
+      "price": 99.9,
+      "tier": "L4",
+      "is_paid": 1,
+      "quality_score": 4.1,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "fin-literacy",
+      "price": 19.9,
+      "tier": "L2",
+      "is_paid": 1,
+      "quality_score": 4.1,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "fin-literacy-free",
+      "price": null,
+      "tier": "L1",
+      "is_paid": 0,
+      "quality_score": 4.5,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "fin-terminal",
+      "price": 199.0,
+      "tier": "L5",
+      "is_paid": 1,
+      "quality_score": 4.1,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "futures-quant",
+      "price": 199.0,
+      "tier": "L5",
+      "is_paid": 1,
+      "quality_score": 4.5,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "multi-research",
+      "price": 29.9,
+      "tier": "L3",
+      "is_paid": 1,
+      "quality_score": 4.5,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "multi-research-free",
+      "price": null,
+      "tier": "L1",
+      "is_paid": 0,
+      "quality_score": 4.5,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "realtime-quote",
+      "price": 29.9,
+      "tier": "L3",
+      "is_paid": 1,
+      "quality_score": 4.4,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "realtime-quote-free",
+      "price": null,
+      "tier": "L1",
+      "is_paid": 0,
+      "quality_score": 4.5,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "report-viz",
+      "price": 29.9,
+      "tier": "L3",
+      "is_paid": 1,
+      "quality_score": 4.1,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "report-viz-free",
+      "price": null,
+      "tier": "L1",
+      "is_paid": 0,
+      "quality_score": 4.5,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "stock-filter",
+      "price": 9.9,
+      "tier": "L3",
+      "is_paid": 1,
+      "quality_score": 4.5,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "stock-radar",
+      "price": 29.9,
+      "tier": "L3",
+      "is_paid": 1,
+      "quality_score": 4.3,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "stock-radar-free",
+      "price": null,
+      "tier": "L1",
+      "is_paid": 0,
+      "quality_score": 4.5,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "trade-alert",
+      "price": 19.9,
+      "tier": "L2",
+      "is_paid": 1,
+      "quality_score": 4.5,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "trade-alert-free",
+      "price": null,
+      "tier": "L1",
+      "is_paid": 0,
+      "quality_score": 4.4,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "trade-bot",
+      "price": 199.0,
+      "tier": "L5",
+      "is_paid": 1,
+      "quality_score": 4.3,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "vegas-tunnel",
+      "price": 29.9,
+      "tier": "L3",
+      "is_paid": 1,
+      "quality_score": 4.1,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "vegas-tunnel-free",
+      "price": null,
+      "tier": "L1",
+      "is_paid": 0,
+      "quality_score": 4.5,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
     }
   ]
 }

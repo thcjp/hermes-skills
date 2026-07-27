@@ -1,5 +1,5 @@
 ---
-slug: social-sentiment-tool-free
+slug: social-sentiment-2
 name: social-sentiment-tool-free
 version: 1.0.0
 displayName: 社交情感分析免费版

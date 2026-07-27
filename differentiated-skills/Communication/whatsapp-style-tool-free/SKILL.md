@@ -1,6 +1,6 @@
 ---
 
-slug: whatsapp-style-tool-free
+slug: whatsapp-style-2
 name: whatsapp-style-tool-free
 version: 1.0.0
 displayName: WhatsApp样式工具-免费版

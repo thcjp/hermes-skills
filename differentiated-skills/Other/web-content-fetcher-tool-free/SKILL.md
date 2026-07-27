@@ -1,5 +1,5 @@
 ---
-slug: web-content-fetcher-tool-free
+slug: web-content-fetcher-2
 name: web-content-fetcher-tool-free
 version: 1.0.0
 displayName: 网页内容获取免费版

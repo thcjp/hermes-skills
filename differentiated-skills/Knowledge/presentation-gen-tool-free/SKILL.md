@@ -1,6 +1,6 @@
 ---
 
-slug: presentation-gen-tool-free
+slug: presentation-gen-2
 name: presentation-gen-tool-free
 version: 1.0.0
 displayName: 演示文稿生成（免费版）

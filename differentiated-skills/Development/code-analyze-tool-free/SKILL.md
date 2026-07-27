@@ -1,6 +1,6 @@
 ---
 
-slug: code-analyze-tool-free
+slug: code-analyze-2
 name: code-analyze-tool-free
 version: 1.0.0
 displayName: 代码分析工具免费版

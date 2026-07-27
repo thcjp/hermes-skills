@@ -1,5 +1,5 @@
 ---
-slug: cybersecurity-engine-tool-free
+slug: cybersecurity-engine-2
 name: cybersecurity-engine-tool-free
 version: 1.0.1
 displayName: 网络安全评估引擎免费版

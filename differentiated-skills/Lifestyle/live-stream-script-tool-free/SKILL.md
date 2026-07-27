@@ -1,6 +1,6 @@
 ---
 
-slug: live-stream-script-tool-free
+slug: live-stream-script-2
 name: live-stream-script-tool-free
 version: 1.0.0
 displayName: 直播脚本生成免费版

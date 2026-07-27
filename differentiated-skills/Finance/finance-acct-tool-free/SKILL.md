@@ -1,6 +1,6 @@
 ---
 
-slug: finance-acct-tool-free
+slug: finance-acct-2
 name: finance-acct-tool-free
 version: 1.0.0
 displayName: 财务会计入门工具

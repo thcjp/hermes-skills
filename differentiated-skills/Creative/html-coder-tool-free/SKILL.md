@@ -1,6 +1,6 @@
 ---
 
-slug: html-coder-tool-free
+slug: html-coder-2
 name: html-coder-tool-free
 version: 1.0.0
 displayName: HTML编码工具-免费版

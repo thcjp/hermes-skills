@@ -1,5 +1,5 @@
 ---
-slug: go-security-vuln-tool-free
+slug: go-security-vuln-2
 name: go-security-vuln-tool-free
 version: 1.0.0
 displayName: Go安全漏洞扫描免费版

@@ -1,6 +1,6 @@
 ---
 
-slug: security-audit-tool-pro
+slug: security-audit-2
 name: security-audit-tool-pro
 version: 1.0.0
 displayName: 安全审计工具(专业版)

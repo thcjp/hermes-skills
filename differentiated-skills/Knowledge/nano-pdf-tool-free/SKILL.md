@@ -1,6 +1,6 @@
 ---
 
-slug: nano-pdf-tool-free
+slug: nano-pdf-2
 name: nano-pdf-tool-free
 version: 1.0.2
 displayName: Nano PDF工具（免费版）

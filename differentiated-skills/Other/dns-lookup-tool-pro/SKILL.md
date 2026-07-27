@@ -1,6 +1,6 @@
 ---
 
-slug: dns-lookup-tool-pro
+slug: dns-lookup-2
 name: dns-lookup-tool-pro
 version: 1.0.0
 displayName: DNS查询专业版

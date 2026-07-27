@@ -1,5 +1,5 @@
 ---
-slug: multi-source-research-tool-free
+slug: multi-source-research-2
 name: multi-source-research-tool-free
 version: 1.0.0
 displayName: 多源研究助手免费版

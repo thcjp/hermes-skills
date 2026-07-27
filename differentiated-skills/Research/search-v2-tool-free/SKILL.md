@@ -1,5 +1,5 @@
 ---
-slug: search-v2-tool-free
+slug: search-v2-2
 name: search-v2-tool-free
 version: 1.0.0
 displayName: 搜索工具免费版

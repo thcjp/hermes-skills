@@ -1,6 +1,6 @@
 ---
 
-slug: feishu-calendar-tool-pro
+slug: feishu-calendar-3
 name: feishu-calendar-tool-pro
 version: 1.0.0
 displayName: 飞书日历专业版

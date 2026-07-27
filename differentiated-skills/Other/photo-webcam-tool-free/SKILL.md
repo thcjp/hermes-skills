@@ -1,5 +1,5 @@
 ---
-slug: photo-webcam-tool-free
+slug: photo-webcam-2
 name: photo-webcam-tool-free
 version: 1.0.0
 displayName: 网络摄像头工具-免费版

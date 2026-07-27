@@ -1,6 +1,6 @@
 ---
 
-slug: ui-ux-design-tool-pro
+slug: ui-ux-design-2
 name: ui-ux-design-tool-pro
 version: 1.0.0
 displayName: UI/UX设计指南专业版

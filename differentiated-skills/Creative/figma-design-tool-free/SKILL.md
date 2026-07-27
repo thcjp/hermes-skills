@@ -1,6 +1,6 @@
 ---
 
-slug: figma-design-tool-free
+slug: figma-design-3
 name: figma-design-tool-free
 version: 1.0.0
 displayName: Figma设计集成-免费版

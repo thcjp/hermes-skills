@@ -1,7 +1,7 @@
 {
   "metadata": {
     "schema_version": "4.0",
-    "last_updated": "2026-07-26T16:57:35",
+    "last_updated": "2026-07-28T04:36:49.486868",
     "description": "本地技能主数据库 v3.0 - 源skill注册 + 来源追踪 + 升级管理 + 双平台状态",
     "total_skills": 2193,
     "data_sources": [
@@ -71,8 +71,8 @@
     "sh_deleted": 9,
     "sh_not_uploaded": 0,
     "sh_not_applicable": 110,
-    "ch_published": 652,
-    "ch_not_uploaded": 304,
+    "ch_published": 655,
+    "ch_not_uploaded": 301,
     "ch_not_eligible": 1150,
     "ch_withdrawn": 0,
     "ch_paid_promotional": 173,
@@ -37657,11 +37657,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:09:02.929800",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -37742,11 +37742,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:09:28.469372",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -37984,11 +37984,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:09:50.625960",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -38481,11 +38481,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.2",
+        "status": "published",
+        "last_sync": "2026-07-28T04:19:57.983126",
+        "notes": "版本递增后上传成功 v1.0.2"
       },
       "is_source": false,
       "source_origin": {
@@ -38807,11 +38807,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.2",
+        "status": "published",
+        "last_sync": "2026-07-28T04:20:42.004779",
+        "notes": "版本递增后上传成功 v1.0.2"
       },
       "is_source": false,
       "source_origin": {
@@ -39226,11 +39226,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.2",
+        "status": "published",
+        "last_sync": "2026-07-28T04:21:25.690890",
+        "notes": "版本递增后上传成功 v1.0.2"
       },
       "is_source": false,
       "source_origin": {
@@ -40124,11 +40124,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.2",
+        "status": "published",
+        "last_sync": "2026-07-28T04:21:51.763940",
+        "notes": "上传成功 v1.0.2"
       },
       "is_source": false,
       "source_origin": {
@@ -40209,11 +40209,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.2",
+        "status": "published",
+        "last_sync": "2026-07-28T04:22:35.500991",
+        "notes": "版本递增后上传成功 v1.0.2"
       },
       "is_source": false,
       "source_origin": {
@@ -40371,11 +40371,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.5",
+        "status": "published",
+        "last_sync": "2026-07-28T04:24:14.423723",
+        "notes": "版本递增后上传成功 v1.0.5"
       },
       "is_source": false,
       "source_origin": {
@@ -40615,11 +40615,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.3",
+        "status": "published",
+        "last_sync": "2026-07-28T04:24:37.925957",
+        "notes": "上传成功 v1.0.3"
       },
       "is_source": false,
       "source_origin": {
@@ -40859,11 +40859,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.3",
+        "status": "published",
+        "last_sync": "2026-07-28T04:25:02.064263",
+        "notes": "上传成功 v1.0.3"
       },
       "is_source": false,
       "source_origin": {
@@ -41197,11 +41197,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:25:28.446841",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -41538,11 +41538,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:25:54.258739",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -41791,11 +41791,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:26:19.794663",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -42383,11 +42383,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.0",
+        "status": "published",
+        "last_sync": "2026-07-28T04:26:52.580996",
+        "notes": "上传成功 v1.0.0"
       },
       "is_source": false,
       "source_origin": {
@@ -42874,11 +42874,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:27:19.440081",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -43755,11 +43755,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:27:44.449346",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -43924,9 +43924,9 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "status": "audit_failed",
+        "last_sync": "2026-07-28T04:27:49.514855",
+        "notes": "L1-L9审计失败: [L1-L3] SLUG_DIRNAME_MISMATCH: slug='dns-lookup-4' 与目录名='dns-lookup-tool-free' 不匹配"
       },
       "is_source": false,
       "source_origin": {
@@ -44873,11 +44873,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:28:10.694060",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -45181,11 +45181,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:28:39.436381",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -45751,11 +45751,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.0",
+        "status": "published",
+        "last_sync": "2026-07-28T04:29:16.601805",
+        "notes": "上传成功 v1.0.0"
       },
       "is_source": false,
       "source_origin": {
@@ -47047,9 +47047,9 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "status": "audit_failed",
+        "last_sync": "2026-07-28T04:29:21.738761",
+        "notes": "L1-L9审计失败: [L1-L3] SLUG_DIRNAME_MISMATCH: slug='doge-node-2' 与目录名='doge-node-tool-free' 不匹配"
       },
       "is_source": false,
       "source_origin": {
@@ -47281,11 +47281,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:29:46.119112",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -48796,11 +48796,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:30:16.008792",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -48969,11 +48969,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:30:44.485237",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -49216,11 +49216,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:31:14.303975",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -49551,11 +49551,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:31:40.126352",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -49960,11 +49960,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:32:12.401745",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -50287,11 +50287,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:32:38.432434",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -50533,11 +50533,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:33:05.953363",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -50775,11 +50775,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:33:32.987890",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -51506,11 +51506,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:33:58.429161",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -53587,9 +53587,9 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "status": "audit_failed",
+        "last_sync": "2026-07-28T04:34:03.513167",
+        "notes": "L1-L9审计失败: [L1-L3] SLUG_DIRNAME_MISMATCH: slug='feed-digest-4' 与目录名='feed-digest-tool-free' 不匹配"
       },
       "is_source": false,
       "source_origin": {
@@ -53831,9 +53831,9 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "status": "audit_failed",
+        "last_sync": "2026-07-28T04:34:03.582141",
+        "notes": "L1-L9审计失败: [L1-L3] SLUG_DIRNAME_MISMATCH: slug='feed-to-md-4' 与目录名='feed-to-md-tool-free' 不匹配"
       },
       "is_source": false,
       "source_origin": {
@@ -54237,9 +54237,9 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "status": "audit_failed",
+        "last_sync": "2026-07-28T04:34:03.644848",
+        "notes": "L1-L9审计失败: [L1-L3] SLUG_DIRNAME_MISMATCH: slug='feishu-calendar-2' 与目录名='feishu-calendar-tool-free' 不匹配"
       },
       "is_source": false,
       "source_origin": {
@@ -54653,11 +54653,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:34:24.741087",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -55481,11 +55481,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:34:49.433323",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -56779,9 +56779,9 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "status": "audit_failed",
+        "last_sync": "2026-07-28T04:34:54.526111",
+        "notes": "L1-L9审计失败: [L1-L3] SLUG_DIRNAME_MISMATCH: slug='file-browser-2' 与目录名='file-browser-tool-free' 不匹配"
       },
       "is_source": false,
       "source_origin": {
@@ -56939,11 +56939,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:35:19.118700",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -57177,9 +57177,9 @@
         "upload_eligible": true,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "status": "audit_failed",
+        "last_sync": "2026-07-28T04:35:24.282217",
+        "notes": "L1-L9审计失败: [L1-L3] SLUG_DIRNAME_MISMATCH: slug='file-sorter-2' 与目录名='file-sorter-tool-free' 不匹配"
       },
       "is_source": false,
       "source_origin": {
@@ -57329,11 +57329,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:35:48.565875",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -59089,11 +59089,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:36:18.547365",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {
@@ -60095,11 +60095,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "published",
+        "last_sync": "2026-07-28T04:36:49.482008",
+        "notes": "上传成功 v1.0.1"
       },
       "is_source": false,
       "source_origin": {

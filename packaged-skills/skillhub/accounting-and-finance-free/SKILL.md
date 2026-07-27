@@ -1,5 +1,5 @@
 ---
-slug: "accounting-and-finance-free"
+slug: accounting-and-finance-2
 name: "accounting-and-finance-free"
 version: "1.0.0"
 displayName: "财务免费版"

@@ -1,6 +1,6 @@
 ---
 
-slug: shop-culture-tool-pro
+slug: shop-culture-2
 name: shop-culture-tool-pro
 version: 1.0.0
 displayName: 店铺文化助手专业版

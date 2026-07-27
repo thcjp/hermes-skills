@@ -1,5 +1,5 @@
 ---
-slug: report-builder-tool-free
+slug: report-builder-2
 name: report-builder-tool-free
 version: 1.0.0
 displayName: 报告汇总构建器基础版

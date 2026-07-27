@@ -1,6 +1,6 @@
 ---
 
-slug: ocean-chat-tool-pro
+slug: ocean-chat-3
 name: ocean-chat-tool-pro
 version: 1.0.0
 displayName: P2P通讯专业版

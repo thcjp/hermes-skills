@@ -1,5 +1,5 @@
 ---
-slug: feed-digest-tool-free
+slug: feed-digest-4
 name: feed-digest-tool-free
 version: 1.0.0
 displayName: 订阅摘要(免费版)

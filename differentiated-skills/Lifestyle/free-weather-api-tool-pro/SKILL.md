@@ -1,6 +1,6 @@
 ---
 
-slug: free-weather-api-tool-pro
+slug: free-weather-api-3
 name: free-weather-api-tool-pro
 version: 1.0.0
 displayName: 天气查询专业版

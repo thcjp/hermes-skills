@@ -1,5 +1,5 @@
 ---
-slug: feishu-calendar-tool-free
+slug: feishu-calendar-2
 name: feishu-calendar-tool-free
 version: 1.0.0
 displayName: 飞书日历基础版

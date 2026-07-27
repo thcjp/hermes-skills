@@ -1,6 +1,6 @@
 ---
 
-slug: java-toolkit-pro
+slug: java-toolkit-2
 name: java-toolkit-pro
 version: 1.0.0
 displayName: Java 工具箱专业版

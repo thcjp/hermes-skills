@@ -1,5 +1,5 @@
 ---
-slug: bailian-search-tool-free
+slug: bailian-search-2
 name: bailian-search-tool-free
 version: 1.0.0
 displayName: 百炼搜索工具-免费版

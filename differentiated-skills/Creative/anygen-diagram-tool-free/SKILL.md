@@ -1,6 +1,6 @@
 ---
 
-slug: anygen-diagram-tool-free
+slug: anygen-diagram-2
 name: anygen-diagram-tool-free
 version: 1.0.0
 displayName: AnyGen图表生成-免费版

@@ -1,6 +1,6 @@
 ---
 
-slug: linear-sync-tool-free
+slug: linear-sync-2
 name: linear-sync-tool-free
 version: 1.0.3
 displayName: Linear同步(免费版)

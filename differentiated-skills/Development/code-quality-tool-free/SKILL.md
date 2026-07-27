@@ -1,6 +1,6 @@
 ---
 
-slug: code-quality-tool-free
+slug: code-quality-2
 name: code-quality-tool-free
 version: 1.0.0
 displayName: 代码质量检查基础版

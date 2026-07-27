@@ -1,6 +1,6 @@
 ---
 
-slug: news-aggregator-tool-pro
+slug: news-aggregator-2
 name: news-aggregator-tool-pro
 version: 1.0.0
 displayName: 新闻聚合工具专业版

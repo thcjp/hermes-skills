@@ -1,5 +1,5 @@
 ---
-slug: rss-feed-digest-tool-free
+slug: rss-feed-digest-4
 name: rss-feed-digest-tool-free
 version: 1.0.0
 displayName: RSS聚合摘要免费版

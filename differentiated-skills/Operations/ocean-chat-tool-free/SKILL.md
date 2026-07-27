@@ -1,6 +1,6 @@
 ---
 
-slug: ocean-chat-tool-free
+slug: ocean-chat-2
 name: ocean-chat-tool-free
 version: 1.0.0
 displayName: P2P通讯入门工具

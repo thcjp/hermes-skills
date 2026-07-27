@@ -1,6 +1,6 @@
 ---
 
-slug: heygen-tts-tool-free
+slug: heygen-tts-2
 name: heygen-tts-tool-free
 version: 1.0.0
 displayName: HeyGen TTS免费版

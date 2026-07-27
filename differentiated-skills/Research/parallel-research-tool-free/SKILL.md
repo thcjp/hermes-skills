@@ -1,5 +1,5 @@
 ---
-slug: parallel-research-tool-free
+slug: parallel-research-2
 name: parallel-research-tool-free
 version: 1.0.0
 displayName: 并行研究助手免费版

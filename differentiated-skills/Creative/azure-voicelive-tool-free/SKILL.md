@@ -1,6 +1,6 @@
 ---
 
-slug: azure-voicelive-tool-free
+slug: azure-voicelive-2
 name: azure-voicelive-tool-free
 version: 1.0.0
 displayName: Azure语音交互免费版

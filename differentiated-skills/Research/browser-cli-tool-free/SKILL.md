@@ -1,5 +1,5 @@
 ---
-slug: browser-cli-tool-free
+slug: browser-cli-2
 name: browser-cli-tool-free
 version: 1.0.1
 displayName: 浏览器CLI工具-免费版

@@ -1,6 +1,6 @@
 ---
 
-slug: ui-ux-dev-tool-free
+slug: ui-ux-dev-2
 name: ui-ux-dev-tool-free
 version: 1.0.0
 displayName: UI/UX开发工具免费版

@@ -1,6 +1,6 @@
 ---
 
-slug: finance-report-tool-free
+slug: finance-report-2
 name: finance-report-tool-free
 version: 1.0.0
 displayName: 财报分析入门工具

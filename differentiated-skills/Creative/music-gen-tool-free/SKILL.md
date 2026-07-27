@@ -1,6 +1,6 @@
 ---
 
-slug: music-gen-tool-free
+slug: music-gen-2
 name: music-gen-tool-free
 version: 1.0.0
 displayName: 音乐生成工具免费版

@@ -1,6 +1,6 @@
 ---
 
-slug: china-news-tool-pro
+slug: china-news-3
 name: china-news-tool-pro
 version: 1.0.0
 displayName: 中国新闻聚合(专业版)

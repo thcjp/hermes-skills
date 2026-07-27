@@ -1,6 +1,6 @@
 ---
 
-slug: social-scheduler-pro-pro
+slug: social-scheduler
 name: social-scheduler-pro-pro
 version: 1.0.0
 displayName: 社媒内容排期(专业版)

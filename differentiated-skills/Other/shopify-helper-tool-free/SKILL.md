@@ -1,5 +1,5 @@
 ---
-slug: shopify-helper-tool-free
+slug: shopify-helper-4
 name: shopify-helper-tool-free
 version: 1.0.0
 displayName: Shopify助手-免费版

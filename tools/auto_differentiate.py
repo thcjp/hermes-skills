@@ -42,6 +42,13 @@ from typing import Any, Dict, List, Optional, Set, Tuple
 # 此处采用相同来源, 保证获取同一数据库连接。
 # ============================================================
 
+# === Phase 1: 统一配置导入 ===
+_config_dir = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "config"))
+if _config_dir not in sys.path:
+    sys.path.insert(0, _config_dir)
+from project_config import DATA_DIR
+# === End Phase 1 ===
+
 _sys_path = os.path.dirname(os.path.abspath(__file__))
 if _sys_path not in sys.path:
     sys.path.insert(0, _sys_path)

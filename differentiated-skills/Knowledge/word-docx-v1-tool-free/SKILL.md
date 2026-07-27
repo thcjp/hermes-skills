@@ -1,6 +1,6 @@
 ---
 
-slug: word-docx-v1-tool-free
+slug: word-docx-v1-2
 name: word-docx-v1-tool-free
 version: 1.0.0
 displayName: Word文档工具V1（免费版）

@@ -1,6 +1,6 @@
 ---
 
-slug: whatsapp-msg-tool-free
+slug: whatsapp-msg-2
 name: whatsapp-msg-tool-free
 version: 1.0.0
 displayName: WhatsApp消息工具(免费版)

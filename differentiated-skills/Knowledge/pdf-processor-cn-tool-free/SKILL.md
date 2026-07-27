@@ -1,6 +1,6 @@
 ---
 
-slug: pdf-processor-cn-tool-free
+slug: pdf-processor-cn-2
 name: pdf-processor-cn-tool-free
 version: 1.0.0
 displayName: 中文PDF处理器（免费版）

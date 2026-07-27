@@ -1,6 +1,6 @@
 ---
 
-slug: thesis-helper-tool-pro
+slug: thesis-helper-2
 name: thesis-helper-tool-pro
 version: 1.0.0
 displayName: 论文写作助手专业版

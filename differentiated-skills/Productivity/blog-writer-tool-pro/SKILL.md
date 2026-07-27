@@ -1,6 +1,6 @@
 ---
 
-slug: blog-writer-tool-pro
+slug: blog-writer-2
 name: blog-writer-tool-pro
 version: 1.0.0
 displayName: 博客写作助手专业版

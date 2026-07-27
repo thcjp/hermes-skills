@@ -1,5 +1,5 @@
 ---
-slug: "chief-creative-officer-free"
+slug: chief-creative-officer-2
 name: "chief-creative-officer-free"
 version: "1.0.0"
 displayName: "首席创意官助手-免费版"

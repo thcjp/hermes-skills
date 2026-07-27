@@ -1,6 +1,6 @@
 ---
 
-slug: xml-reader-tool-pro
+slug: xml-reader-3
 name: xml-reader-tool-pro
 version: 1.0.0
 displayName: XML读取器专业版

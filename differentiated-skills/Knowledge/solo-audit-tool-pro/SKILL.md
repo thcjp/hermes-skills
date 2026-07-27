@@ -1,6 +1,6 @@
 ---
 
-slug: solo-audit-tool-pro
+slug: solo-audit-2
 name: solo-audit-tool-pro
 version: 1.0.0
 displayName: 独立审计工具（专业版）

@@ -1,6 +1,6 @@
 ---
 
-slug: document-pdf-tool-pro
+slug: document-pdf-3
 name: document-pdf-tool-pro
 version: 1.0.0
 displayName: PDF文档工具（专业版）

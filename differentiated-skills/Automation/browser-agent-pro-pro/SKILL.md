@@ -1,6 +1,6 @@
 ---
 
-slug: browser-agent-pro-pro
+slug: browser-agent-3
 name: browser-agent-pro-pro
 version: 1.0.0
 displayName: 浏览器代理(专业版)

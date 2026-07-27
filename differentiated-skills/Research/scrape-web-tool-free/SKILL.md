@@ -1,5 +1,5 @@
 ---
-slug: scrape-web-tool-free
+slug: scrape-web-3
 name: scrape-web-tool-free
 version: 1.0.0
 displayName: 网页抓取工具免费版

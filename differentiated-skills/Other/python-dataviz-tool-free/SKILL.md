@@ -1,5 +1,5 @@
 ---
-slug: python-dataviz-tool-free
+slug: python-dataviz-2
 name: python-dataviz-tool-free
 version: 1.0.0
 displayName: Python数据可视化-免费版

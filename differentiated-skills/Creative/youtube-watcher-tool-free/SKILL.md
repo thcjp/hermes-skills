@@ -1,6 +1,6 @@
 ---
 
-slug: youtube-watcher-tool-free
+slug: youtube-watcher-3
 name: youtube-watcher-tool-free
 version: 1.0.0
 displayName: YouTube字幕提取-免费版

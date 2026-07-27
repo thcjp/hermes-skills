@@ -1,6 +1,6 @@
 ---
 
-slug: compress-pdf-tool-pro
+slug: compress-pdf-3
 name: compress-pdf-tool-pro
 version: 1.0.0
 displayName: PDF压缩工具（专业版）

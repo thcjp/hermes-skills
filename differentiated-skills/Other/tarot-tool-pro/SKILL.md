@@ -1,6 +1,6 @@
 ---
 
-slug: tarot-tool-pro
+slug: tarot-2
 name: tarot-tool-pro
 version: 1.0.0
 displayName: 塔罗反思工具专业版

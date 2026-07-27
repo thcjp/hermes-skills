@@ -1,6 +1,6 @@
 ---
 
-slug: browser-automation-v2-tool-pro
+slug: browser-automation-v2-2
 name: browser-automation-v2-tool-pro
 version: 1.0.0
 displayName: 浏览器自动化(专业版)

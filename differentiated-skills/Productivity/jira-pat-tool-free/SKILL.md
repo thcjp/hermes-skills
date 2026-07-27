@@ -1,5 +1,5 @@
 ---
-slug: jira-pat-tool-free
+slug: jira-pat-2
 name: jira-pat-tool-free
 version: 1.0.0
 displayName: Jira PAT 管理基础版

@@ -1,6 +1,6 @@
 ---
 
-slug: jellyfin-control-tool-pro
+slug: jellyfin-control-2
 name: jellyfin-control-tool-pro
 version: 1.0.0
 displayName: 媒体控制专业版

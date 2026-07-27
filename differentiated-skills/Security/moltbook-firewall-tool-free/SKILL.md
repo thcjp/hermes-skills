@@ -1,5 +1,5 @@
 ---
-slug: moltbook-firewall-tool-free
+slug: moltbook-firewall-3
 name: moltbook-firewall-tool-free
 version: 1.0.0
 displayName: Agent防火墙免费版

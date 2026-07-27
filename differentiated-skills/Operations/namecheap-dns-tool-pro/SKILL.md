@@ -1,6 +1,6 @@
 ---
 
-slug: namecheap-dns-tool-pro
+slug: namecheap-dns-2
 name: namecheap-dns-tool-pro
 version: 1.0.0
 displayName: DNS管理专业版

@@ -1,6 +1,6 @@
 ---
 
-slug: news-tool-pro
+slug: news-paid-tool
 name: news-tool-pro
 version: 1.0.0
 displayName: 个性化新闻助手专业版

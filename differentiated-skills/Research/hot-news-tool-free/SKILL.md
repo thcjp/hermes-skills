@@ -1,5 +1,5 @@
 ---
-slug: hot-news-tool-free
+slug: hot-news-2
 name: hot-news-tool-free
 version: 1.0.0
 displayName: 热点新闻聚合

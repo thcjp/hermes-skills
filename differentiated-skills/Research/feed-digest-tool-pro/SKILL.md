@@ -1,6 +1,6 @@
 ---
 
-slug: feed-digest-tool-pro
+slug: feed-digest-2
 name: feed-digest-tool-pro
 version: 1.0.0
 displayName: 订阅摘要(专业版)

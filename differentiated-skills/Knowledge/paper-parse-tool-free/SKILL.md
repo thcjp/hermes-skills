@@ -1,6 +1,6 @@
 ---
 
-slug: paper-parse-tool-free
+slug: paper-parse-2
 name: paper-parse-tool-free
 version: 1.0.0
 displayName: 论文解析工具（免费版）

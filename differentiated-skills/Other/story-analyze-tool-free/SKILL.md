@@ -1,5 +1,5 @@
 ---
-slug: story-analyze-tool-free
+slug: story-analyze-2
 name: story-analyze-tool-free
 version: 1.0.0
 displayName: 网文拆文工具-免费版

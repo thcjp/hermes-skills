@@ -1,6 +1,6 @@
 ---
 
-slug: docker-ctl-tool-pro
+slug: docker-ctl-3
 name: docker-ctl-tool-pro
 version: 1.0.0
 displayName: 容器检查专业版

@@ -1,6 +1,6 @@
 ---
 
-slug: python3-tool-pro
+slug: python3-3
 name: python3-tool-pro
 version: 1.0.0
 displayName: Python 环境工具专业版

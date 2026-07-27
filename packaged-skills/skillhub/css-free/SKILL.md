@@ -1,5 +1,5 @@
 ---
-slug: "css-free"
+slug: css-free-tool
 name: "css-free"
 version: "1.0.0"
 displayName: "CSS样式引擎(免费版)"

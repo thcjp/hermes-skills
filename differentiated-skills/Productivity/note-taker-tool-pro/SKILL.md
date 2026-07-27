@@ -1,6 +1,6 @@
 ---
 
-slug: note-taker-tool-pro
+slug: note-taker-3
 name: note-taker-tool-pro
 version: 1.0.0
 displayName: 笔记记录器专业版

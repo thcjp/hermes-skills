@@ -1,6 +1,6 @@
 ---
 
-slug: ziptax-tool-free
+slug: ziptax-2
 name: ziptax-tool-free
 version: 1.0.0
 displayName: 销售税查询(免费版)

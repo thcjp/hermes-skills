@@ -1,5 +1,5 @@
 ---
-slug: rss-reader-tool-free
+slug: rss-reader-4
 name: rss-reader-tool-free
 version: 1.0.0
 displayName: RSS阅读器免费版

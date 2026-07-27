@@ -1,7 +1,7 @@
 ---
-slug: diagram-tool-free
+slug: diagram-4
 name: diagram-tool-free
-version: 1.0.1
+version: 1.0.5
 displayName: 图表工具免费版
 summary: "通过自然语言生成Mermaid流程图、时序图、ER图，快速可视化系统结构与业务流程.。图表工具免费版是一款面向开发者与技术写作者的智能图表生成Skill，支持通过自然语言描述快速产出标准化M"
 license: MIT

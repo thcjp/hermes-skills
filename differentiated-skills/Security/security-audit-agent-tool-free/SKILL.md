@@ -1,5 +1,5 @@
 ---
-slug: security-audit-agent-tool-free
+slug: security-audit-agent-2
 name: security-audit-agent-tool-free
 version: 1.0.0
 displayName: Agent安全审计免费版

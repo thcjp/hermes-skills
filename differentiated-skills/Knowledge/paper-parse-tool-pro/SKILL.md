@@ -1,6 +1,6 @@
 ---
 
-slug: paper-parse-tool-pro
+slug: paper-parse-3
 name: paper-parse-tool-pro
 version: 1.0.0
 displayName: 论文解析工具（专业版）

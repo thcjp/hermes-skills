@@ -1,6 +1,6 @@
 ---
 
-slug: excel-formula-tool-pro
+slug: excel-formula-3
 name: excel-formula-tool-pro
 version: 1.0.0
 displayName: Excel公式工具（专业版）

@@ -1,6 +1,6 @@
 ---
 
-slug: auto-updater-tool-pro
+slug: auto-updater-3
 name: auto-updater-tool-pro
 version: 1.0.0
 displayName: 自动更新工具-专业版

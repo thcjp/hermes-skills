@@ -1,5 +1,5 @@
 ---
-slug: notion-pages-tool-free
+slug: notion-pages-2
 name: notion-pages-tool-free
 version: 1.0.0
 displayName: Notion 页面管理基础版

@@ -1,5 +1,5 @@
 ---
-slug: "neural-memory-enhanced-free"
+slug: neural-memory-enhanced-2
 name: "neural-memory-enhanced-free"
 version: "1.0.0"
 displayName: "神经记忆增强系统"

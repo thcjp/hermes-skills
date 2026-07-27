@@ -1,5 +1,5 @@
 ---
-slug: amap-jsapi-tool-free
+slug: amap-jsapi-2
 name: amap-jsapi-tool-free
 version: 1.0.0
 displayName: 高德地图JSAPI免费版

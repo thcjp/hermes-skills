@@ -1,6 +1,6 @@
 ---
 
-slug: blog-seo-writer-tool-pro
+slug: blog-seo-writer-2
 name: blog-seo-writer-tool-pro
 version: 1.0.0
 displayName: SEO 博客写作专业版

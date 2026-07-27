@@ -1,5 +1,5 @@
 ---
-slug: sonos-cli-tool-free
+slug: sonos-cli-2
 name: sonos-cli-tool-free
 version: 1.0.0
 displayName: Sonos控制工具-免费版

@@ -1,6 +1,6 @@
 ---
 
-slug: resume-assistant-tool-pro
+slug: resume-assistant-2
 name: resume-assistant-tool-pro
 version: 1.0.0
 displayName: 简历助手工具(专业版)

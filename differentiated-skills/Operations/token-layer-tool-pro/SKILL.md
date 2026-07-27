@@ -1,6 +1,6 @@
 ---
 
-slug: token-layer-tool-pro
+slug: token-layer-3
 name: token-layer-tool-pro
 version: 1.0.0
 displayName: 跨链代币专业版

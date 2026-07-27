@@ -1,6 +1,6 @@
 ---
 
-slug: dingtalk-calendar-tool-pro
+slug: dingtalk-calendar-3
 name: dingtalk-calendar-tool-pro
 version: 1.0.0
 displayName: 钉钉日历专业版

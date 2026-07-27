@@ -1,6 +1,6 @@
 ---
 
-slug: task-planner-tool-pro
+slug: task-planner-3
 name: task-planner-tool-pro
 version: 1.0.0
 displayName: 任务规划器专业版

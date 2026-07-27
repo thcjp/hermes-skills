@@ -1,6 +1,6 @@
 ---
 
-slug: model-routing-tool-free
+slug: model-routing-2
 name: model-routing-tool-free
 version: 1.0.0
 displayName: 模型路由工具(免费版)

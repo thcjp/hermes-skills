@@ -1,6 +1,6 @@
 ---
 
-slug: cheat-code-tool-free
+slug: cheat-code-2
 name: cheat-code-tool-free
 version: 1.0.0
 displayName: 能力扩展工具免费版

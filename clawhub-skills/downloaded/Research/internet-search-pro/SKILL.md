@@ -1,5 +1,5 @@
 ---
-slug: internet-search-pro
+slug: internet-search-3
 name: internet-search-pro
 version: 1.0.0
 displayName: Internet Search

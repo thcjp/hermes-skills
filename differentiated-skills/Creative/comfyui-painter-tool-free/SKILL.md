@@ -1,6 +1,6 @@
 ---
 
-slug: comfyui-painter-tool-free
+slug: comfyui-painter-2
 name: comfyui-painter-tool-free
 version: 1.0.0
 displayName: ComfyUI绘画免费版

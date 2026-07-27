@@ -1,5 +1,5 @@
 ---
-slug: daily-report-tool-free
+slug: daily-report-2
 name: daily-report-tool-free
 version: 1.0.1
 displayName: 日报生成器基础版

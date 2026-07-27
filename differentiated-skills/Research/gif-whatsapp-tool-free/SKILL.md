@@ -1,5 +1,5 @@
 ---
-slug: gif-whatsapp-tool-free
+slug: gif-whatsapp-2
 name: gif-whatsapp-tool-free
 version: 1.0.0
 displayName: WhatsApp表情搜索

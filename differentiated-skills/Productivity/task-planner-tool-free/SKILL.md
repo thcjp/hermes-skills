@@ -1,5 +1,5 @@
 ---
-slug: task-planner-tool-free
+slug: task-planner-2
 name: task-planner-tool-free
 version: 1.0.1
 displayName: 任务规划器基础版

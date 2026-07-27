@@ -1,6 +1,6 @@
 ---
 
-slug: travel-assistant-tool-pro
+slug: travel-assistant-3
 name: travel-assistant-tool-pro
 version: 1.0.0
 displayName: 旅行规划助手专业版

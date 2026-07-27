@@ -1,6 +1,6 @@
 ---
 
-slug: self-integration-tool-free
+slug: self-integration-2
 name: self-integration-tool-free
 version: 1.0.1
 displayName: 自集成工具

@@ -1,6 +1,6 @@
 ---
 
-slug: sql-query-tool-free
+slug: sql-query-2
 name: sql-query-tool-free
 version: 1.0.0
 displayName: SQL查询工具(免费版)

@@ -1,6 +1,6 @@
 ---
 
-slug: diagram-gen-tool-free
+slug: diagram-gen-2
 name: diagram-gen-tool-free
 version: 1.0.0
 displayName: 图表生成工具-免费版

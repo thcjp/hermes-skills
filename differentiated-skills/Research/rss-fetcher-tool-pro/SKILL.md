@@ -1,6 +1,6 @@
 ---
 
-slug: rss-fetcher-tool-pro
+slug: rss-fetcher-2
 name: rss-fetcher-tool-pro
 version: 1.0.0
 displayName: RSS采集器专业版

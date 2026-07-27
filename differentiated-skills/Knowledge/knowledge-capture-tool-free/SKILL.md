@@ -1,6 +1,6 @@
 ---
 
-slug: knowledge-capture-tool-free
+slug: knowledge-capture-2
 name: knowledge-capture-tool-free
 version: 1.0.0
 displayName: 知识捕获工具（免费版）

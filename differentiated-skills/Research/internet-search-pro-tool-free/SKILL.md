@@ -1,5 +1,5 @@
 ---
-slug: internet-search-pro-tool-free
+slug: internet-search-pro-2
 name: internet-search-pro-tool-free
 version: 1.0.0
 displayName: 联网搜索助手

@@ -1,5 +1,5 @@
 ---
-slug: writing-assistant-tool-free
+slug: writing-assistant-2
 name: writing-assistant-tool-free
 version: 1.0.0
 displayName: 写作助手基础版

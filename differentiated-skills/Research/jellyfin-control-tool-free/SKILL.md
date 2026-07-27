@@ -1,5 +1,5 @@
 ---
-slug: jellyfin-control-tool-free
+slug: jellyfin-control-3
 name: jellyfin-control-tool-free
 version: 1.0.0
 displayName: 媒体服务器控制

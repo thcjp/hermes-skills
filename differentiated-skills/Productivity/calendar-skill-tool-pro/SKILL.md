@@ -1,6 +1,6 @@
 ---
 
-slug: calendar-skill-tool-pro
+slug: calendar-skill-3
 name: calendar-skill-tool-pro
 version: 1.0.0
 displayName: 日历管理技能专业版

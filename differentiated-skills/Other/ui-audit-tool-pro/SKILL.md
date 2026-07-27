@@ -1,6 +1,6 @@
 ---
 
-slug: ui-audit-tool-pro
+slug: ui-audit-2
 name: ui-audit-tool-pro
 version: 1.0.0
 displayName: UI审计工具专业版

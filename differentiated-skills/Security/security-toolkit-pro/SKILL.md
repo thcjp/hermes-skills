@@ -1,6 +1,6 @@
 ---
 
-slug: security-toolkit-pro
+slug: security-toolkit-2
 name: security-toolkit-pro
 version: 1.0.0
 displayName: Agent安全工具箱(专业版)

@@ -1,6 +1,6 @@
 ---
 
-slug: bilibili-helper-tool-pro
+slug: bilibili-helper-2
 name: bilibili-helper-tool-pro
 version: 1.0.0
 displayName: B站创作助手专业版

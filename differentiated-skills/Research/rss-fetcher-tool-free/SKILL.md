@@ -1,5 +1,5 @@
 ---
-slug: rss-fetcher-tool-free
+slug: rss-fetcher-4
 name: rss-fetcher-tool-free
 version: 1.0.0
 displayName: RSS采集器免费版

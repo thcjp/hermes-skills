@@ -1,6 +1,6 @@
 ---
 
-slug: tg-body-scan-tool-free
+slug: tg-body-scan-2
 name: tg-body-scan-tool-free
 version: 1.0.0
 displayName: 体测扫描工具免费版

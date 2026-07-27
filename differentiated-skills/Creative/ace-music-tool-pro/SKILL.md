@@ -1,6 +1,6 @@
 ---
 
-slug: ace-music-tool-pro
+slug: ace-music-2
 name: ace-music-tool-pro
 version: 1.0.0
 displayName: ACE音乐生成-专业版

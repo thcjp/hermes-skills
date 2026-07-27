@@ -1,6 +1,6 @@
 ---
 
-slug: mac-node-snapshot-tool-pro
+slug: mac-node-snapshot-3
 name: mac-node-snapshot-tool-pro
 version: 1.0.0
 displayName: macOS截图工具专业版

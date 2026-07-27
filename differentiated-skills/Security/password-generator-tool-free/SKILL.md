@@ -1,5 +1,5 @@
 ---
-slug: password-generator-tool-free
+slug: password-generator-4
 name: password-generator-tool-free
 version: 1.0.0
 displayName: 密码生成器(免费版)

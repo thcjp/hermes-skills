@@ -1,6 +1,6 @@
 ---
 
-slug: ping-monitor-tool-pro
+slug: ping-monitor-2
 name: ping-monitor-tool-pro
 version: 1.0.0
 displayName: 网络监控专业版

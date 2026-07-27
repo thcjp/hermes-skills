@@ -1,5 +1,5 @@
 ---
-slug: china-news-tool-free
+slug: china-news-2
 name: china-news-tool-free
 version: 1.0.1
 displayName: 中国新闻聚合(免费版)

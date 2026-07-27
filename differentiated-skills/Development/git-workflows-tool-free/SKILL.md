@@ -1,6 +1,6 @@
 ---
 
-slug: git-workflows-tool-free
+slug: git-workflows-2
 name: git-workflows-tool-free
 version: 1.0.0
 displayName: Git高级操作免费版

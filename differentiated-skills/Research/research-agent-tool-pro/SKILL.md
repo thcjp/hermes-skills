@@ -1,6 +1,6 @@
 ---
 
-slug: research-agent-tool-pro
+slug: research-agent-3
 name: research-agent-tool-pro
 version: 1.0.0
 displayName: 研究代理助手专业版

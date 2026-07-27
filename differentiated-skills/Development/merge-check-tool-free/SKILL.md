@@ -1,6 +1,6 @@
 ---
 
-slug: merge-check-tool-free
+slug: merge-check-3
 name: merge-check-tool-free
 version: 1.0.0
 displayName: 合并检查工具(免费版)

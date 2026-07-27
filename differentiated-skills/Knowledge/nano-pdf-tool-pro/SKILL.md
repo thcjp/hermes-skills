@@ -1,6 +1,6 @@
 ---
 
-slug: nano-pdf-tool-pro
+slug: nano-pdf-3
 name: nano-pdf-tool-pro
 version: 1.0.0
 displayName: Nano PDF工具（专业版）

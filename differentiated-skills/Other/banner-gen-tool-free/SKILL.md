@@ -1,6 +1,6 @@
 ---
 
-slug: banner-gen-tool-free
+slug: banner-gen-2
 name: banner-gen-tool-free
 version: 1.0.0
 displayName: 横幅插画生成免费版

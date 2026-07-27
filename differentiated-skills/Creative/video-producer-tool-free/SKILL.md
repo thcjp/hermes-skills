@@ -1,6 +1,6 @@
 ---
 
-slug: video-producer-tool-free
+slug: video-producer-3
 name: video-producer-tool-free
 version: 1.0.0
 displayName: 短视频生成-免费版

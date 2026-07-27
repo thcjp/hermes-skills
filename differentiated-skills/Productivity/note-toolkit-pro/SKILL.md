@@ -1,6 +1,6 @@
 ---
 
-slug: note-toolkit-pro
+slug: note-toolkit-2
 name: note-toolkit-pro
 version: 1.0.0
 displayName: 笔记工具包专业版

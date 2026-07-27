@@ -1,6 +1,6 @@
 ---
 
-slug: compress-pdf-tool-free
+slug: compress-pdf-2
 name: compress-pdf-tool-free
 version: 1.0.0
 displayName: PDF压缩工具（免费版）

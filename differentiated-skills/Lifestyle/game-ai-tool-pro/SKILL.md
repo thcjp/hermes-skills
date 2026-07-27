@@ -1,6 +1,6 @@
 ---
 
-slug: game-ai-tool-pro
+slug: game-ai-3
 name: game-ai-tool-pro
 version: 1.0.0
 displayName: 游戏AI工具专业版

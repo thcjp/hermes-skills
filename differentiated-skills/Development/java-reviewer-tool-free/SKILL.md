@@ -1,6 +1,6 @@
 ---
 
-slug: java-reviewer-tool-free
+slug: java-reviewer-2
 name: java-reviewer-tool-free
 version: 1.0.0
 displayName: Java代码审查免费版

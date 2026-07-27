@@ -1,5 +1,5 @@
 ---
-slug: stagehand-browser-tool-free
+slug: stagehand-browser-2
 name: stagehand-browser-tool-free
 version: 1.0.0
 displayName: 浏览器自动化工具免费版

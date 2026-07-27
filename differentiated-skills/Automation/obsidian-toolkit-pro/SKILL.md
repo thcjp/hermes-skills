@@ -1,6 +1,6 @@
 ---
 
-slug: obsidian-toolkit-pro
+slug: obsidian-toolkit-2
 name: obsidian-toolkit-pro
 version: 1.0.0
 displayName: Obsidian工具箱(专业版)

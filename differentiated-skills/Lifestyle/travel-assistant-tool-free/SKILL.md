@@ -1,6 +1,6 @@
 ---
 
-slug: travel-assistant-tool-free
+slug: travel-assistant-2
 name: travel-assistant-tool-free
 version: 1.0.0
 displayName: 旅行规划助手免费版

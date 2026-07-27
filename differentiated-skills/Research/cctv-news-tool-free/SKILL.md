@@ -1,5 +1,5 @@
 ---
-slug: cctv-news-tool-free
+slug: cctv-news-2
 name: cctv-news-tool-free
 version: 1.0.1
 displayName: 央视新闻抓取(免费版)

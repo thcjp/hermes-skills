@@ -1,6 +1,6 @@
 ---
 
-slug: tarot-reader-tool-pro
+slug: tarot-reader-2
 name: tarot-reader-tool-pro
 version: 1.0.0
 displayName: 韦特塔罗占卜专业版

@@ -1,6 +1,6 @@
 ---
 
-slug: aws-cost-optimizer-tool-free
+slug: aws-cost-optimizer-2
 name: aws-cost-optimizer-tool-free
 version: 1.0.0
 displayName: AWS成本优化入门

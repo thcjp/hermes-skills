@@ -1,6 +1,6 @@
 ---
 
-slug: live-stream-script-tool-pro
+slug: live-stream-script-3
 name: live-stream-script-tool-pro
 version: 1.0.0
 displayName: 直播脚本生成专业版

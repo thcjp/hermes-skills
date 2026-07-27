@@ -1,6 +1,6 @@
 ---
 
-slug: free-weather-skill-tool-free
+slug: free-weather-skill-2
 name: free-weather-skill-tool-free
 version: 1.0.0
 displayName: 免费天气技能免费版

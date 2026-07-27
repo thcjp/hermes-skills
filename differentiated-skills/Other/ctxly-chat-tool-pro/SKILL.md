@@ -1,6 +1,6 @@
 ---
 
-slug: ctxly-chat-tool-pro
+slug: ctxly-chat-3
 name: ctxly-chat-tool-pro
 version: 1.0.0
 displayName: 匿名聊天(专业版)

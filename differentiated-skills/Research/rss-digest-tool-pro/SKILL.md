@@ -1,6 +1,6 @@
 ---
 
-slug: rss-digest-tool-pro
+slug: rss-digest-2
 name: rss-digest-tool-pro
 version: 1.0.0
 displayName: RSS摘要工具专业版

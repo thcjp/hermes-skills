@@ -1,6 +1,6 @@
 ---
 
-slug: social-sentiment-tool-pro
+slug: social-sentiment-3
 name: social-sentiment-tool-pro
 version: 1.0.0
 displayName: 社交情感分析专业版

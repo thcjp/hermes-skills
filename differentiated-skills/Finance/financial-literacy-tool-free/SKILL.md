@@ -1,6 +1,6 @@
 ---
 
-slug: financial-literacy-tool-free
+slug: financial-literacy-2
 name: financial-literacy-tool-free
 version: 1.0.0
 displayName: 金融素养学习工具

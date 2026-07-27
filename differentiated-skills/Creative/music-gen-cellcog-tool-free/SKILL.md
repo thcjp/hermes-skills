@@ -1,6 +1,6 @@
 ---
 
-slug: music-gen-cellcog-tool-free
+slug: music-gen-cellcog-2
 name: music-gen-cellcog-tool-free
 version: 1.0.0
 displayName: CellCog音乐生成免费版

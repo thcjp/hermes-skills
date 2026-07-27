@@ -1,5 +1,5 @@
 ---
-slug: block-monitor-tool-free
+slug: block-monitor-2
 name: block-monitor-tool-free
 version: 1.0.0
 displayName: 内容验证网关免费版

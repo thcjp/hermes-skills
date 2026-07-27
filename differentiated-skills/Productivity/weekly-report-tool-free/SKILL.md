@@ -1,5 +1,5 @@
 ---
-slug: weekly-report-tool-free
+slug: weekly-report-2
 name: weekly-report-tool-free
 version: 1.0.0
 displayName: 周报写作器基础版

@@ -1,6 +1,6 @@
 ---
 
-slug: company-search-tool-free
+slug: company-search-2
 name: company-search-tool-free
 version: 1.0.1
 displayName: 企业查询助手(免费版)

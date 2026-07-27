@@ -1,6 +1,6 @@
 ---
 
-slug: git-helper-tool-free
+slug: git-helper-3
 name: git-helper-tool-free
 version: 1.0.0
 displayName: Git助手免费版

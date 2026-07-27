@@ -1,6 +1,6 @@
 ---
 
-slug: elite-frontend-tool-free
+slug: elite-frontend-2
 name: elite-frontend-tool-free
 version: 1.0.0
 displayName: 精英前端设计-免费版

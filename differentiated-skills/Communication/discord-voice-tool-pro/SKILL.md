@@ -1,6 +1,6 @@
 ---
 
-slug: discord-voice-tool-pro
+slug: discord-voice-2
 name: discord-voice-tool-pro
 version: 1.0.0
 displayName: Discord语音工具专业版

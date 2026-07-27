@@ -1,6 +1,6 @@
 ---
 
-slug: feed-to-md-tool-pro
+slug: feed-to-md-2
 name: feed-to-md-tool-pro
 version: 1.0.0
 displayName: RSS转MD(专业版)

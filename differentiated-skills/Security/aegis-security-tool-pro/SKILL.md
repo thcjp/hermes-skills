@@ -1,6 +1,6 @@
 ---
 
-slug: aegis-security-tool-pro
+slug: aegis-security-2
 name: aegis-security-tool-pro
 version: 1.0.0
 displayName: 区块链安全扫描专业版

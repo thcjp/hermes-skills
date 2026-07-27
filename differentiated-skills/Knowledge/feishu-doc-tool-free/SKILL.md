@@ -1,6 +1,6 @@
 ---
 
-slug: feishu-doc-tool-free
+slug: feishu-doc-2
 name: feishu-doc-tool-free
 version: 1.0.0
 displayName: 飞书文档工具（免费版）

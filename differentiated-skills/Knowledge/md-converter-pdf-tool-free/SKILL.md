@@ -1,6 +1,6 @@
 ---
 
-slug: md-converter-pdf-tool-free
+slug: md-converter-pdf-2
 name: md-converter-pdf-tool-free
 version: 1.0.0
 displayName: Markdown转PDF（免费版）

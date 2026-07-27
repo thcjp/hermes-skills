@@ -1,5 +1,5 @@
 ---
-slug: solo-validate-tool-free
+slug: solo-validate-4
 name: solo-validate-tool-free
 version: 1.0.0
 displayName: 想法验证工具免费版

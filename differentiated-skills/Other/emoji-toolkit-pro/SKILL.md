@@ -1,6 +1,6 @@
 ---
 
-slug: emoji-toolkit-pro
+slug: emoji-toolkit-2
 name: emoji-toolkit-pro
 version: 1.0.0
 displayName: 表情符号工具箱(专业版)

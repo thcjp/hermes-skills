@@ -1,5 +1,5 @@
 ---
-slug: screen-monitor-tool-free
+slug: screen-monitor-4
 name: screen-monitor-tool-free
 version: 1.0.0
 displayName: 屏幕监控工具-免费版

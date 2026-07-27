@@ -1,6 +1,6 @@
 ---
 
-slug: brainz-calendar-tool-pro
+slug: brainz-calendar-3
 name: brainz-calendar-tool-pro
 version: 1.0.0
 displayName: Google 日历专业版

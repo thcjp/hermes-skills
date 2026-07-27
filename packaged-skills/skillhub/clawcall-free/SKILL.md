@@ -1,5 +1,5 @@
 ---
-slug: "clawcall-free"
+slug: clawcall-2
 name: "clawcall-free"
 version: "1.0.0"
 displayName: "语音通话服务-免费版"

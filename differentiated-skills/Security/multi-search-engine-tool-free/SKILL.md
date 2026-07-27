@@ -1,5 +1,5 @@
 ---
-slug: multi-search-engine-tool-free
+slug: multi-search-engine-4
 name: multi-search-engine-tool-free
 version: 1.0.0
 displayName: 多搜索引擎免费版

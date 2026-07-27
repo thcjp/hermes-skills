@@ -1,5 +1,5 @@
 ---
-slug: dns-lookup-tool-free
+slug: dns-lookup-4
 name: dns-lookup-tool-free
 version: 1.0.0
 displayName: DNS查询免费版

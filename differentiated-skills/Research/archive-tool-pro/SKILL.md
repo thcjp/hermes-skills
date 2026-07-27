@@ -1,6 +1,6 @@
 ---
 
-slug: archive-tool-pro
+slug: archive-2
 name: archive-tool-pro
 version: 1.0.0
 displayName: 内容归档工具-专业版

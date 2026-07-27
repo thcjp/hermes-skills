@@ -1,5 +1,5 @@
 ---
-slug: job-auto-apply-tool-free
+slug: job-auto-apply-2
 name: job-auto-apply-tool-free
 version: 1.0.0
 displayName: 求职自动申请

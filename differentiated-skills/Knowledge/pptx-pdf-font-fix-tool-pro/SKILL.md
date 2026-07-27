@@ -1,6 +1,6 @@
 ---
 
-slug: pptx-pdf-font-fix-tool-pro
+slug: pptx-pdf-font-fix-3
 name: pptx-pdf-font-fix-tool-pro
 version: 1.0.0
 displayName: PPT字体修复工具（专业版）

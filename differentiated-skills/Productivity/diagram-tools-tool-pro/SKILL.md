@@ -1,6 +1,6 @@
 ---
 
-slug: diagram-tools-tool-pro
+slug: diagram-tools-2
 name: diagram-tools-tool-pro
 version: 1.0.0
 displayName: 图表工具专业版

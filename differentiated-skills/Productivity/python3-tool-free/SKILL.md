@@ -1,5 +1,5 @@
 ---
-slug: python3-tool-free
+slug: python3-2
 name: python3-tool-free
 version: 1.0.0
 displayName: Python 环境工具基础版

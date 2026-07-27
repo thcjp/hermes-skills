@@ -1,6 +1,6 @@
 ---
 
-slug: solo-audit-tool-free
+slug: solo-audit-4
 name: solo-audit-tool-free
 version: 1.0.0
 displayName: 独立审计工具（免费版）

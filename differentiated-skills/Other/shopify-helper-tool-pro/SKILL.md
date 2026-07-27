@@ -1,6 +1,6 @@
 ---
 
-slug: shopify-helper-tool-pro
+slug: shopify-helper-2
 name: shopify-helper-tool-pro
 version: 1.0.0
 displayName: Shopify助手-专业版

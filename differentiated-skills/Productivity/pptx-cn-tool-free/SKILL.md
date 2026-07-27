@@ -1,5 +1,5 @@
 ---
-slug: pptx-cn-tool-free
+slug: pptx-cn-2
 name: pptx-cn-tool-free
 version: 1.0.0
 displayName: PPT 中文工具基础版

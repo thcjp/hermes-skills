@@ -1,6 +1,6 @@
 ---
 
-slug: web-browsing-tool-pro
+slug: web-browsing-3
 name: web-browsing-tool-pro
 version: 1.0.0
 displayName: 网页浏览助手专业版

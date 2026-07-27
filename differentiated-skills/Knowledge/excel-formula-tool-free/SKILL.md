@@ -1,6 +1,6 @@
 ---
 
-slug: excel-formula-tool-free
+slug: excel-formula-2
 name: excel-formula-tool-free
 version: 1.0.1
 displayName: Excel公式工具（免费版）

@@ -1,6 +1,6 @@
 ---
 
-slug: quant-data-quality-tool-pro
+slug: quant-data-quality-3
 name: quant-data-quality-tool-pro
 version: 1.0.0
 displayName: 数据质量检查专业版

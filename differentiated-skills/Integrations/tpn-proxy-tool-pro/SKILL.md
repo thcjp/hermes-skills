@@ -1,6 +1,6 @@
 ---
 
-slug: tpn-proxy-tool-pro
+slug: tpn-proxy-2
 name: tpn-proxy-tool-pro
 version: 1.0.0
 displayName: 代理网络工具专业版

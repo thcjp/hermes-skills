@@ -1,6 +1,6 @@
 ---
 
-slug: content-filter-tool-free
+slug: content-filter-2
 name: content-filter-tool-free
 version: 1.0.0
 displayName: 内容过滤工具

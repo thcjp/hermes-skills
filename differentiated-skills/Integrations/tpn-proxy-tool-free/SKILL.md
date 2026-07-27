@@ -1,6 +1,6 @@
 ---
 
-slug: tpn-proxy-tool-free
+slug: tpn-proxy-3
 name: tpn-proxy-tool-free
 version: 1.0.0
 displayName: 代理网络工具免费版

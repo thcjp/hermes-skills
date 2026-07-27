@@ -1,5 +1,5 @@
 ---
-slug: tardis-tool-free
+slug: tardis-2
 name: tardis-tool-free
 version: 1.0.1
 displayName: 生活事件追踪-免费版

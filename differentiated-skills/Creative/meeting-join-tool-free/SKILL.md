@@ -1,6 +1,6 @@
 ---
 
-slug: meeting-join-tool-free
+slug: meeting-join-2
 name: meeting-join-tool-free
 version: 1.0.0
 displayName: AI会议助手免费版

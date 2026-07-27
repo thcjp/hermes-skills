@@ -1,6 +1,6 @@
 ---
 
-slug: javascript-skills-tool-free
+slug: javascript-skills-2
 name: javascript-skills-tool-free
 version: 1.0.0
 displayName: JavaScript规范工具(免费版)

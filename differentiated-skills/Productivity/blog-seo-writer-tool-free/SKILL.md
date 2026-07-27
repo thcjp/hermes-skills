@@ -1,5 +1,5 @@
 ---
-slug: blog-seo-writer-tool-free
+slug: blog-seo-writer-4
 name: blog-seo-writer-tool-free
 version: 1.0.0
 displayName: SEO 博客写作基础版

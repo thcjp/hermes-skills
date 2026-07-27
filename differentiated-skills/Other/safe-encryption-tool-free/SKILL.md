@@ -1,5 +1,5 @@
 ---
-slug: safe-encryption-tool-free
+slug: safe-encryption-2
 name: safe-encryption-tool-free
 version: 1.0.0
 displayName: 安全加密工具-免费版

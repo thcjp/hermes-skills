@@ -1,6 +1,6 @@
 ---
 
-slug: chromecast-control-tool-pro
+slug: chromecast-control-2
 name: chromecast-control-tool-pro
 version: 1.0.0
 displayName: 投屏控制专业版

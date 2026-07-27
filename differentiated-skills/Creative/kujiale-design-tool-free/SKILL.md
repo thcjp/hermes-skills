@@ -1,6 +1,6 @@
 ---
 
-slug: kujiale-design-tool-free
+slug: kujiale-design-2
 name: kujiale-design-tool-free
 version: 1.0.0
 displayName: 酷家乐设计-免费版

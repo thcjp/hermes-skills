@@ -1,5 +1,5 @@
 ---
-slug: prod-improve-tool-free
+slug: prod-improve-2
 name: prod-improve-tool-free
 version: 1.0.0
 displayName: 效率追踪器基础版

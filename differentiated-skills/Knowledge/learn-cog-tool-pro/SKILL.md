@@ -1,6 +1,6 @@
 ---
 
-slug: learn-cog-tool-pro
+slug: learn-cog-2
 name: learn-cog-tool-pro
 version: 1.0.0
 displayName: 认知学习工具（专业版）

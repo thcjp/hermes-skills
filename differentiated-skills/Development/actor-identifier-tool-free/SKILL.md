@@ -1,6 +1,6 @@
 ---
 
-slug: actor-identifier-tool-free
+slug: actor-identifier-2
 name: actor-identifier-tool-free
 version: 1.0.0
 displayName: 仓库协作分析(免费版)

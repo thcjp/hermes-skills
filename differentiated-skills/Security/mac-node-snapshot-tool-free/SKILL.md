@@ -1,5 +1,5 @@
 ---
-slug: mac-node-snapshot-tool-free
+slug: mac-node-snapshot-2
 name: mac-node-snapshot-tool-free
 version: 1.0.0
 displayName: macOS截图工具免费版

@@ -1,6 +1,6 @@
 ---
 
-slug: tool-call-retry-tool-pro
+slug: tool-call-retry-3
 name: tool-call-retry-tool-pro
 version: 1.0.0
 displayName: 工具调用重试专业版

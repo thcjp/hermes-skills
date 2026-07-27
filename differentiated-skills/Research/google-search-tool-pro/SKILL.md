@@ -1,6 +1,6 @@
 ---
 
-slug: google-search-tool-pro
+slug: google-search-2
 name: google-search-tool-pro
 version: 1.0.0
 displayName: 谷歌搜索专业版

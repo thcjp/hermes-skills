@@ -1,5 +1,5 @@
 ---
-slug: monad-dev-tool-free
+slug: monad-dev-2
 name: monad-dev-tool-free
 version: 1.0.0
 displayName: Monad开发工具-免费版

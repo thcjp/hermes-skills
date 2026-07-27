@@ -1,6 +1,6 @@
 ---
 
-slug: azure-transcription-tool-free
+slug: azure-transcription-2
 name: azure-transcription-tool-free
 version: 1.0.0
 displayName: Azure语音转写免费版

@@ -1,5 +1,5 @@
 ---
-slug: plugin-arch-tool-free
+slug: plugin-arch-2
 name: plugin-arch-tool-free
 version: 1.0.0
 displayName: 插件架构工具-免费版

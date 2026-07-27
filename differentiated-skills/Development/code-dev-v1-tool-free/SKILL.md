@@ -1,6 +1,6 @@
 ---
 
-slug: code-dev-v1-tool-free
+slug: code-dev-v1-2
 name: code-dev-v1-tool-free
 version: 1.0.0
 displayName: 结构化开发工具免费版

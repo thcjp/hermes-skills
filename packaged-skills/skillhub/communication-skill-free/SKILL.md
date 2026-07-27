@@ -1,5 +1,5 @@
 ---
-slug: "communication-skill-free"
+slug: communication-skill-2
 name: "communication-skill-free"
 version: "1.0.0"
 displayName: "技能免费版"

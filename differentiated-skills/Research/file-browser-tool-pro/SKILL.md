@@ -1,6 +1,6 @@
 ---
 
-slug: file-browser-tool-pro
+slug: file-browser-3
 name: file-browser-tool-pro
 version: 1.0.0
 displayName: 文件浏览器(专业版)

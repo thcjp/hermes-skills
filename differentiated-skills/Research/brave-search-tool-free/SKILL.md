@@ -1,5 +1,5 @@
 ---
-slug: brave-search-tool-free
+slug: brave-search-4
 name: brave-search-tool-free
 version: 1.0.2
 displayName: Brave搜索工具-免费版

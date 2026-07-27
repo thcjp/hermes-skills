@@ -1,5 +1,5 @@
 ---
-slug: ai-news-tool-free
+slug: ai-news-2
 name: ai-news-tool-free
 version: 1.0.0
 displayName: AI新闻工具-免费版

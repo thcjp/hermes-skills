@@ -1,5 +1,5 @@
 ---
-slug: skill-writer-tool-free
+slug: skill-writer-2
 name: skill-writer-tool-free
 version: 1.0.0
 displayName: Skill编写工具免费版

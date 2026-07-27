@@ -1,6 +1,6 @@
 ---
 
-slug: logo-design-guide-tool-pro
+slug: logo-design-guide-2
 name: logo-design-guide-tool-pro
 version: 1.0.0
 displayName: Logo设计指南专业版

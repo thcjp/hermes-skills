@@ -1,6 +1,6 @@
 ---
 
-slug: learn-tool-free
+slug: learn-2
 name: learn-tool-free
 version: 1.0.1
 displayName: 学习助手（免费版）

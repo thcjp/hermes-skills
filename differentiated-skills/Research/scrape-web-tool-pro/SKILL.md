@@ -1,6 +1,6 @@
 ---
 
-slug: scrape-web-tool-pro
+slug: scrape-web-2
 name: scrape-web-tool-pro
 version: 1.0.0
 displayName: 网页抓取工具专业版

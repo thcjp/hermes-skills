@@ -1,5 +1,5 @@
 ---
-slug: note-taker-tool-free
+slug: note-taker-2
 name: note-taker-tool-free
 version: 1.0.0
 displayName: 笔记记录器基础版

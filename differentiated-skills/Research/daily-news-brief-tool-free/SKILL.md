@@ -1,5 +1,5 @@
 ---
-slug: daily-news-brief-tool-free
+slug: daily-news-brief-2
 name: daily-news-brief-tool-free
 version: 1.0.1
 displayName: 每日新闻简报(免费版)

@@ -1,6 +1,6 @@
 ---
 
-slug: ai-podcast-tool-pro
+slug: ai-podcast-2
 name: ai-podcast-tool-pro
 version: 1.0.0
 displayName: AI播客生成-专业版

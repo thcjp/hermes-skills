@@ -1,6 +1,6 @@
 ---
 
-slug: smart-cache-tool-pro
+slug: smart-cache-2
 name: smart-cache-tool-pro
 version: 1.0.0
 displayName: 智能缓存工具-专业版

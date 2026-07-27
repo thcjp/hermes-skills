@@ -1,6 +1,6 @@
 ---
 
-slug: minimalist-design-tool-free
+slug: minimalist-design-2
 name: minimalist-design-tool-free
 version: 1.0.0
 displayName: 极简设计系统免费版

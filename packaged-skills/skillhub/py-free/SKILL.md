@@ -1,5 +1,5 @@
 ---
-slug: "py-free"
+slug: py-free-tool
 name: "py-free"
 version: "1.0.0"
 displayName: "Python基础版"

@@ -1,5 +1,5 @@
 ---
-slug: read-github-tool-free
+slug: read-github-3
 name: read-github-tool-free
 version: 1.0.0
 displayName: 代码仓库阅读免费版

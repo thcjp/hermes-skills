@@ -1,5 +1,5 @@
 ---
-slug: azure-devops-tool-free
+slug: azure-devops-2
 name: azure-devops-tool-free
 version: 1.0.0
 displayName: Azure DevOps 基础版

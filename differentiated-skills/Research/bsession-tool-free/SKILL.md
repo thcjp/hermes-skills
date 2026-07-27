@@ -1,5 +1,5 @@
 ---
-slug: bsession-tool-free
+slug: bsession-4
 name: bsession-tool-free
 version: 1.0.0
 displayName: 浏览器会话(免费版)

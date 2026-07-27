@@ -1,6 +1,6 @@
 ---
 
-slug: merge-pdf-tool-pro
+slug: merge-pdf-3
 name: merge-pdf-tool-pro
 version: 1.0.0
 displayName: PDF合并工具（专业版）

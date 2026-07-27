@@ -1,6 +1,6 @@
 ---
 
-slug: k8s-devops-tool-free
+slug: k8s-devops-2
 name: k8s-devops-tool-free
 version: 1.0.2
 displayName: K8s清单生成入门

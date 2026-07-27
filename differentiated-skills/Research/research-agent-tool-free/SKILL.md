@@ -1,5 +1,5 @@
 ---
-slug: research-agent-tool-free
+slug: research-agent-2
 name: research-agent-tool-free
 version: 1.0.0
 displayName: 研究代理助手免费版

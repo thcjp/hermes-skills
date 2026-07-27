@@ -1,6 +1,6 @@
 ---
 
-slug: board-art-tool-free
+slug: board-art-2
 name: board-art-tool-free
 version: 1.0.0
 displayName: 画板艺术工具

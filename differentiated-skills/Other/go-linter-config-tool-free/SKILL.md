@@ -1,5 +1,5 @@
 ---
-slug: go-linter-config-tool-free
+slug: go-linter-config-2
 name: go-linter-config-tool-free
 version: 1.0.0
 displayName: Go Lint 配置工具

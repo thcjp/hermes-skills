@@ -1,6 +1,6 @@
 ---
 
-slug: job-auto-apply-tool-pro
+slug: job-auto-apply-3
 name: job-auto-apply-tool-pro
 version: 1.0.0
 displayName: 求职申请专业版

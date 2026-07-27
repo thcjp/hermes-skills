@@ -1,6 +1,6 @@
 ---
 
-slug: text-game-arcade-tool-free
+slug: text-game-arcade-2
 name: text-game-arcade-tool-free
 version: 1.0.0
 displayName: 文字游戏机免费版

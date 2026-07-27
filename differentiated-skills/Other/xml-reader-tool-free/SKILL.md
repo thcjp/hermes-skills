@@ -1,5 +1,5 @@
 ---
-slug: xml-reader-tool-free
+slug: xml-reader-2
 name: xml-reader-tool-free
 version: 1.0.0
 displayName: XML读取器免费版

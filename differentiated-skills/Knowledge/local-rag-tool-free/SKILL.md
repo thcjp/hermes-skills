@@ -1,6 +1,6 @@
 ---
 
-slug: local-rag-tool-free
+slug: local-rag-2
 name: local-rag-tool-free
 version: 1.0.0
 displayName: 本地文件检索（免费版）

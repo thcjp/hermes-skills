@@ -1,6 +1,6 @@
 ---
 
-slug: game-dev-tool-free
+slug: game-dev-2
 name: game-dev-tool-free
 version: 1.0.0
 displayName: 游戏开发助手免费版

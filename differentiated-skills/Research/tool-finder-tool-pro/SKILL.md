@@ -1,6 +1,6 @@
 ---
 
-slug: tool-finder-tool-pro
+slug: tool-finder-2
 name: tool-finder-tool-pro
 version: 1.0.0
 displayName: 工具发现引擎专业版

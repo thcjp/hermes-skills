@@ -1,6 +1,6 @@
 ---
 
-slug: dns-config-tool-free
+slug: dns-config-2
 name: dns-config-tool-free
 version: 1.0.0
 displayName: DNS配置工具免费版

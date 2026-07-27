@@ -1,6 +1,6 @@
 ---
 
-slug: security-scanner-tool-pro
+slug: security-scanner-2
 name: security-scanner-tool-pro
 version: 1.0.0
 displayName: 安全扫描器(专业版)

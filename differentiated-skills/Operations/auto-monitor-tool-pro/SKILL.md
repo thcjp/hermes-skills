@@ -1,6 +1,6 @@
 ---
 
-slug: auto-monitor-tool-pro
+slug: auto-monitor-2
 name: auto-monitor-tool-pro
 version: 1.0.0
 displayName: 系统监控专业版

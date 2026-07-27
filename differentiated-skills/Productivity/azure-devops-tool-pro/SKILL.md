@@ -1,6 +1,6 @@
 ---
 
-slug: azure-devops-tool-pro
+slug: azure-devops-3
 name: azure-devops-tool-pro
 version: 1.0.0
 displayName: Azure DevOps 专业版

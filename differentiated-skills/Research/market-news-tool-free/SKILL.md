@@ -1,5 +1,5 @@
 ---
-slug: market-news-tool-free
+slug: market-news-2
 name: market-news-tool-free
 version: 1.0.1
 displayName: 财经资讯助手免费版

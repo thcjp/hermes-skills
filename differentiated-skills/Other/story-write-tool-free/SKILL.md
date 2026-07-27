@@ -1,5 +1,5 @@
 ---
-slug: story-write-tool-free
+slug: story-write-2
 name: story-write-tool-free
 version: 1.0.1
 displayName: 长篇网文写作-免费版

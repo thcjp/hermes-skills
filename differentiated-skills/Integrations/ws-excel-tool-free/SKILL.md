@@ -1,6 +1,6 @@
 ---
 
-slug: ws-excel-tool-free
+slug: ws-excel-2
 name: ws-excel-tool-free
 version: 1.0.1
 displayName: Excel工具(免费版)

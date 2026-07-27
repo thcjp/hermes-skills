@@ -1,6 +1,6 @@
 ---
 
-slug: google-fonts-tool-pro
+slug: google-fonts-3
 name: google-fonts-tool-pro
 version: 1.0.0
 displayName: 谷歌字体工具专业版

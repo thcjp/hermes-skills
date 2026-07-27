@@ -1,6 +1,6 @@
 ---
 
-slug: encryption-tool-free
+slug: encryption-3
 name: encryption-tool-free
 version: 1.0.0
 displayName: 加密工具基础版

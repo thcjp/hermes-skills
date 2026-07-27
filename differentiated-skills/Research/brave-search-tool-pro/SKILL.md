@@ -1,6 +1,6 @@
 ---
 
-slug: brave-search-tool-pro
+slug: brave-search-2
 name: brave-search-tool-pro
 version: 1.0.0
 displayName: Brave搜索工具-专业版

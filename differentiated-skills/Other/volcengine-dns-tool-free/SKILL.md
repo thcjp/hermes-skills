@@ -1,5 +1,5 @@
 ---
-slug: volcengine-dns-tool-free
+slug: volcengine-dns-2
 name: volcengine-dns-tool-free
 version: 1.0.0
 displayName: 火山引擎DNS免费版

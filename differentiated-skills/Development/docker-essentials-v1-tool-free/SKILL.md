@@ -1,6 +1,6 @@
 ---
 
-slug: docker-essentials-v1-tool-free
+slug: docker-essentials-v1-2
 name: docker-essentials-v1-tool-free
 version: 1.0.0
 displayName: Docker V1基础工具免费版

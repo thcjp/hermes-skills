@@ -1,6 +1,6 @@
 ---
 
-slug: notion-pages-tool-pro
+slug: notion-pages-3
 name: notion-pages-tool-pro
 version: 1.0.0
 displayName: Notion 页面管理专业版

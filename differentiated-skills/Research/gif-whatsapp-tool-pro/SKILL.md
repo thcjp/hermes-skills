@@ -1,6 +1,6 @@
 ---
 
-slug: gif-whatsapp-tool-pro
+slug: gif-whatsapp-3
 name: gif-whatsapp-tool-pro
 version: 1.0.0
 displayName: WhatsApp表情专业版

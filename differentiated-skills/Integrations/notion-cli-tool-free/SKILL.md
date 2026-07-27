@@ -1,6 +1,6 @@
 ---
 
-slug: notion-cli-tool-free
+slug: notion-cli-2
 name: notion-cli-tool-free
 version: 1.0.0
 displayName: Notion命令行(免费版)

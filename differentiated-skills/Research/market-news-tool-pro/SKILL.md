@@ -1,6 +1,6 @@
 ---
 
-slug: market-news-tool-pro
+slug: market-news-3
 name: market-news-tool-pro
 version: 1.0.0
 displayName: 财经资讯助手专业版

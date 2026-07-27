@@ -1,5 +1,5 @@
 ---
-slug: shadcn-ui-tool-free
+slug: shadcn-ui-2
 name: shadcn-ui-tool-free
 version: 1.0.0
 displayName: shadcn UI工具-免费版

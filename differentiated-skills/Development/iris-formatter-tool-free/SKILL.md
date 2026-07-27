@@ -1,6 +1,6 @@
 ---
 
-slug: iris-formatter-tool-free
+slug: iris-formatter-2
 name: iris-formatter-tool-free
 version: 1.0.0
 displayName: IRIS代码格式化免费版

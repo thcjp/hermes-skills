@@ -1,5 +1,5 @@
 ---
-slug: file-browser-tool-free
+slug: file-browser-2
 name: file-browser-tool-free
 version: 1.0.0
 displayName: 文件浏览器(免费版)

@@ -1,6 +1,6 @@
 ---
 
-slug: trading-tool-free
+slug: trading-2
 name: trading-tool-free
 version: 1.0.0
 displayName: 交易分析入门工具

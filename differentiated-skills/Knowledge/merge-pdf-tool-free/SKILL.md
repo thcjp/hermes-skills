@@ -1,6 +1,6 @@
 ---
 
-slug: merge-pdf-tool-free
+slug: merge-pdf-2
 name: merge-pdf-tool-free
 version: 1.0.0
 displayName: PDF合并工具（免费版）

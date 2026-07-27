@@ -1,6 +1,6 @@
 ---
 
-slug: ai-image-gen-tool-pro
+slug: ai-image-gen-2
 name: ai-image-gen-tool-pro
 version: 1.0.0
 displayName: AI图像生成-专业版

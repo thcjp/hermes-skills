@@ -1,5 +1,5 @@
 ---
-slug: free-google-search-tool-free
+slug: free-google-search-2
 name: free-google-search-tool-free
 version: 1.0.0
 displayName: 谷歌搜索(免费版)

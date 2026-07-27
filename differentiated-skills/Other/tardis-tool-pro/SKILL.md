@@ -1,6 +1,6 @@
 ---
 
-slug: tardis-tool-pro
+slug: tardis-3
 name: tardis-tool-pro
 version: 1.0.0
 displayName: 生活事件追踪-专业版

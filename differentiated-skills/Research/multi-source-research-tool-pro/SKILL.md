@@ -1,6 +1,6 @@
 ---
 
-slug: multi-source-research-tool-pro
+slug: multi-source-research-3
 name: multi-source-research-tool-pro
 version: 1.0.0
 displayName: 多源研究助手专业版

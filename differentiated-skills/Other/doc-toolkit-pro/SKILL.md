@@ -1,6 +1,6 @@
 ---
 
-slug: doc-toolkit-pro
+slug: doc-toolkit-2
 name: doc-toolkit-pro
 version: 1.0.0
 displayName: 文档工具箱专业版

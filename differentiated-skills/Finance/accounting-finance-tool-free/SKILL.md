@@ -1,6 +1,6 @@
 ---
 
-slug: accounting-finance-tool-free
+slug: accounting-finance-2
 name: accounting-finance-tool-free
 version: 1.0.0
 displayName: 财务分析入门工具

@@ -1,6 +1,6 @@
 ---
 
-slug: screen-monitor-tool-pro
+slug: screen-monitor-2
 name: screen-monitor-tool-pro
 version: 1.0.0
 displayName: 屏幕监控工具-专业版

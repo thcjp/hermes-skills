@@ -1,6 +1,6 @@
 ---
 
-slug: knowledge-mgmt-tool-free
+slug: knowledge-mgmt-2
 name: knowledge-mgmt-tool-free
 version: 1.0.0
 displayName: 知识管理工具（免费版）

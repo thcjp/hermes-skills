@@ -1,6 +1,6 @@
 ---
 
-slug: timeline-digest-tool-free
+slug: timeline-digest-2
 name: timeline-digest-tool-free
 version: 1.0.0
 displayName: 时间线摘要工具-免费版

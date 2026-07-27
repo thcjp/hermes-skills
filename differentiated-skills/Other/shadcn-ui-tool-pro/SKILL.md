@@ -1,6 +1,6 @@
 ---
 
-slug: shadcn-ui-tool-pro
+slug: shadcn-ui-3
 name: shadcn-ui-tool-pro
 version: 1.0.0
 displayName: shadcn UI工具-专业版

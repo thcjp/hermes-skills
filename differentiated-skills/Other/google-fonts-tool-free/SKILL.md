@@ -1,5 +1,5 @@
 ---
-slug: google-fonts-tool-free
+slug: google-fonts-2
 name: google-fonts-tool-free
 version: 1.0.0
 displayName: 谷歌字体工具

@@ -1,5 +1,5 @@
 ---
-slug: verify-claims-tool-free
+slug: verify-claims-2
 name: verify-claims-tool-free
 version: 1.0.0
 displayName: 事实核查助手免费版

@@ -1,5 +1,5 @@
 ---
-slug: "cloud-free"
+slug: cloud-2
 name: "cloud-free"
 version: "1.0.0"
 displayName: "消费级云存储-免费版"

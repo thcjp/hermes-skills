@@ -1,6 +1,6 @@
 ---
 
-slug: universal-translate-tool-free
+slug: universal-translate-3
 name: universal-translate-tool-free
 version: 1.0.0
 displayName: 通用翻译工具(免费版)

@@ -1,6 +1,6 @@
 ---
 
-slug: jinn-node-tool-pro
+slug: jinn-node-2
 name: jinn-node-tool-pro
 version: 1.0.0
 displayName: 节点工作工具专业版

@@ -1,5 +1,5 @@
 ---
-slug: web-browsing-tool-free
+slug: web-browsing-2
 name: web-browsing-tool-free
 version: 1.0.0
 displayName: 网页浏览助手免费版

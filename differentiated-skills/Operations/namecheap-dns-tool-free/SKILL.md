@@ -1,6 +1,6 @@
 ---
 
-slug: namecheap-dns-tool-free
+slug: namecheap-dns-4
 name: namecheap-dns-tool-free
 version: 1.0.0
 displayName: DNS管理入门工具

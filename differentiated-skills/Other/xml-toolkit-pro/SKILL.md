@@ -1,6 +1,6 @@
 ---
 
-slug: xml-toolkit-pro
+slug: xml-toolkit-2
 name: xml-toolkit-pro
 version: 1.0.0
 displayName: XML处理工具专业版

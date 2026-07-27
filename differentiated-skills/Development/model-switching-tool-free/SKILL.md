@@ -1,6 +1,6 @@
 ---
 
-slug: model-switching-tool-free
+slug: model-switching-2
 name: model-switching-tool-free
 version: 1.0.0
 displayName: 模型切换工具(免费版)

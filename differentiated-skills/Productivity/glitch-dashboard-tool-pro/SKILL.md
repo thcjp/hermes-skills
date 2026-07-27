@@ -1,6 +1,6 @@
 ---
 
-slug: glitch-dashboard-tool-pro
+slug: glitch-dashboard-2
 name: glitch-dashboard-tool-pro
 version: 1.0.0
 displayName: 统一仪表盘专业版

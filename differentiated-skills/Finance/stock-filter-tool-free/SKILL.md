@@ -1,6 +1,6 @@
 ---
 
-slug: stock-filter-tool-free
+slug: stock-filter-2
 name: stock-filter-tool-free
 version: 1.0.0
 displayName: 股票筛选入门工具

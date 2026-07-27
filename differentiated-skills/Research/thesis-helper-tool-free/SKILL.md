@@ -1,5 +1,5 @@
 ---
-slug: thesis-helper-tool-free
+slug: thesis-helper-4
 name: thesis-helper-tool-free
 version: 1.0.0
 displayName: 论文写作助手免费版

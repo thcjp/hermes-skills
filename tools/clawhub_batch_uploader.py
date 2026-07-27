@@ -478,6 +478,26 @@ def upload_skill(skill_dir, slug, dry_run=False, skip_quality_gate=False):
                 print(f"  [WARNING] 营销关卡未通过({len(failed)}项): {', '.join(failed[:3])}")
         # SKILL.md不存在时跳过质量检查,后续上传命令会自然失败
 
+    # v3.4: 内容指纹去重预检 (防止相同内容以不同slug上传触发平台反垃圾系统)
+    try:
+        from content_dedup import check_content_dedup
+        skill_md_for_dedup = Path(skill_dir) / "SKILL.md"
+        if skill_md_for_dedup.exists():
+            content_for_dedup = skill_md_for_dedup.read_text(encoding="utf-8")
+            dedup_result = check_content_dedup(slug, content_for_dedup)
+            if dedup_result.get('duplicate'):
+                return {
+                    'success': False, 'slug': slug,
+                    'error': 'CONTENT_DEDUP_BLOCKED',
+                    'message': f"内容去重: {dedup_result['reason']}",
+                    'dedup_blocked': True,
+                    'existing_slug': dedup_result.get('existing_slug'),
+                }
+    except ImportError:
+        pass  # 去重模块不可用时不阻断(已有速率限制和安全预检)
+    except Exception as e:
+        print(f"  [WARN] 内容去重检查异常(不阻断): {e}")
+
     # v2.1: 提取营销参数
     category = get_clawhub_category(skill_dir)
     topics = get_clawhub_topics(skill_dir, slug)

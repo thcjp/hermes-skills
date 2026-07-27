@@ -1,5 +1,5 @@
 ---
-slug: browser-automation-tool-free
+slug: browser-automation-2
 name: browser-automation-tool-free
 version: 1.0.2
 displayName: 浏览器自动化工具-免费版

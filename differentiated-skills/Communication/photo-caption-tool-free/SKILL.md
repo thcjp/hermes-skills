@@ -1,6 +1,6 @@
 ---
 
-slug: photo-caption-tool-free
+slug: photo-caption-2
 name: photo-caption-tool-free
 version: 1.0.0
 displayName: 照片配文工具免费版

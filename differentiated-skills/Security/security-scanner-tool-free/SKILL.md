@@ -1,5 +1,5 @@
 ---
-slug: security-scanner-tool-free
+slug: security-scanner-4
 name: security-scanner-tool-free
 version: 1.0.0
 displayName: 安全扫描器(免费版)

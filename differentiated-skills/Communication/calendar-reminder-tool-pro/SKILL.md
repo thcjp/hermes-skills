@@ -1,6 +1,6 @@
 ---
 
-slug: calendar-reminder-tool-pro
+slug: calendar-reminder-2
 name: calendar-reminder-tool-pro
 version: 1.0.0
 displayName: 日历提醒工具专业版

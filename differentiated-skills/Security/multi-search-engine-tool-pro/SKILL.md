@@ -1,6 +1,6 @@
 ---
 
-slug: multi-search-engine-tool-pro
+slug: multi-search-engine-2
 name: multi-search-engine-tool-pro
 version: 1.0.0
 displayName: 多搜索引擎专业版

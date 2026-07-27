@@ -1,6 +1,6 @@
 ---
 
-slug: timer-alert-tool-free
+slug: timer-alert-2
 name: timer-alert-tool-free
 version: 1.0.0
 displayName: 定时提醒工具(免费版)

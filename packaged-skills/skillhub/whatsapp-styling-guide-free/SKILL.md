@@ -1,5 +1,5 @@
 ---
-slug: "whatsapp-styling-guide-free"
+slug: whatsapp-styling-guide-2
 name: "whatsapp-styling-guide-free"
 version: "1.0.0"
 displayName: "WhatsApp 排版入门"

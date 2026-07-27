@@ -1,5 +1,5 @@
 ---
-slug: port-transfer-tool-free
+slug: port-transfer-2
 name: port-transfer-tool-free
 version: 1.0.0
 displayName: 工具移植工具

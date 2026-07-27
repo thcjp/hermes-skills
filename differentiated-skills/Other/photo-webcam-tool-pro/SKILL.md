@@ -1,6 +1,6 @@
 ---
 
-slug: photo-webcam-tool-pro
+slug: photo-webcam-3
 name: photo-webcam-tool-pro
 version: 1.0.0
 displayName: 网络摄像头工具-专业版

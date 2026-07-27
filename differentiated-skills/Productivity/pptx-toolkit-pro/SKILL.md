@@ -1,6 +1,6 @@
 ---
 
-slug: pptx-toolkit-pro
+slug: pptx-toolkit-2
 name: pptx-toolkit-pro
 version: 1.0.0
 displayName: PPT 演示工具包专业版

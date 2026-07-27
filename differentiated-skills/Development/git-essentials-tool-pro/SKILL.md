@@ -1,6 +1,6 @@
 ---
 
-slug: git-essentials-tool-pro
+slug: git-essentials-2
 name: git-essentials-tool-pro
 version: 1.0.0
 displayName: Git基础工具专业版

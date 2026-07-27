@@ -1,0 +1,309 @@
+{
+  "cleanup_at": "2026-07-28T04:25:45.964419",
+  "total_flagged": 1097,
+  "updated": 1097,
+  "skipped": 0,
+  "errors": 0,
+  "sample_updates": [
+    {
+      "old_slug": "accounting-and-finance-free",
+      "new_slug": "accounting-and-finance-2",
+      "file_updated": true,
+      "score": 3.8
+    },
+    {
+      "old_slug": "accounting-finance-free",
+      "new_slug": "accounting-finance-2",
+      "file_updated": true,
+      "score": 0.0
+    },
+    {
+      "old_slug": "ace-music-paid",
+      "new_slug": "ace-music-2",
+      "file_updated": true,
+      "score": 3.0
+    },
+    {
+      "old_slug": "actor-identifier-free",
+      "new_slug": "actor-identifier-2",
+      "file_updated": true,
+      "score": 0.0
+    },
+    {
+      "old_slug": "ad-insight-hub-free",
+      "new_slug": "ad-insight-hub-2",
+      "file_updated": true,
+      "score": 3.0
+    },
+    {
+      "old_slug": "aegis-security-paid",
+      "new_slug": "aegis-security-2",
+      "file_updated": true,
+      "score": 3.9
+    },
+    {
+      "old_slug": "agent-commercial-contract-sk",
+      "new_slug": "agent-commercial-contract-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "agent-copilot-pro-sk",
+      "new_slug": "agent-copilot-pro-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "agent-framework-azure-ai-py-sk",
+      "new_slug": "agent-framework-azure-ai-py-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "agent-group-sk",
+      "new_slug": "agent-group-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "agent-knowledge-sk",
+      "new_slug": "agent-knowledge-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "agent-sk",
+      "new_slug": "agent-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "agent-telegram-sk",
+      "new_slug": "agent-telegram-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "agentic-security-audit-sk",
+      "new_slug": "agentic-security-audit-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "ai-agent-helper-sk",
+      "new_slug": "ai-agent-helper-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "ai-artist-workstation-sk",
+      "new_slug": "ai-artist-workstation-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "ai-finance-free",
+      "new_slug": "ai-finance-2",
+      "file_updated": true,
+      "score": 4.5
+    },
+    {
+      "old_slug": "ai-image-gen-paid",
+      "new_slug": "ai-image-gen-2",
+      "file_updated": true,
+      "score": 3.0
+    },
+    {
+      "old_slug": "ai-image-gen-sk",
+      "new_slug": "ai-image-gen-3",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "ai-image-prompt-free",
+      "new_slug": "ai-image-prompt-2",
+      "file_updated": true,
+      "score": 0.0
+    },
+    {
+      "old_slug": "ai-kujiale-design-sk",
+      "new_slug": "ai-kujiale-design-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "ai-news-free",
+      "new_slug": "ai-news-2",
+      "file_updated": true,
+      "score": 0.0
+    },
+    {
+      "old_slug": "ai-news-paid",
+      "new_slug": "ai-news-3",
+      "file_updated": false,
+      "score": 3.9
+    },
+    {
+      "old_slug": "ai-news-sk",
+      "new_slug": "ai-news-4",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "ai-podcast-paid",
+      "new_slug": "ai-podcast-2",
+      "file_updated": true,
+      "score": 3.0
+    },
+    {
+      "old_slug": "ai-podcast-sk",
+      "new_slug": "ai-podcast-3",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "ai-report-free",
+      "new_slug": "ai-report-2",
+      "file_updated": true,
+      "score": 4.5
+    },
+    {
+      "old_slug": "ai-video-studio-pro-sk",
+      "new_slug": "ai-video-studio-pro-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "aic-dashboard-sk",
+      "new_slug": "aic-dashboard-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "alephnet-node-sk",
+      "new_slug": "alephnet-node-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "alibaba-quark-scan-sk",
+      "new_slug": "alibaba-quark-scan-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "amap-jsapi-skill-sk",
+      "new_slug": "amap-jsapi-skill-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "amap-jsapi-tool-free",
+      "new_slug": "amap-jsapi-2",
+      "file_updated": true,
+      "score": 0.0
+    },
+    {
+      "old_slug": "analyze-sk",
+      "new_slug": "analyze-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "analyze-video-by-qwen-sk",
+      "new_slug": "analyze-video-by-qwen-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "anthropics-frontend-design-sk",
+      "new_slug": "anthropics-frontend-design-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "anthrovision-telegram-body-scan-sk",
+      "new_slug": "anthrovision-telegram-body-scan-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "anygen-diagram-generator-sk",
+      "new_slug": "anygen-diagram-generator-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "anygen-diagram-tool-free",
+      "new_slug": "anygen-diagram-2",
+      "file_updated": true,
+      "score": 0.0
+    },
+    {
+      "old_slug": "api-dev-free",
+      "new_slug": "api-dev-2",
+      "file_updated": true,
+      "score": 0.0
+    },
+    {
+      "old_slug": "api-development-sk",
+      "new_slug": "api-development-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "api-doc-generator-sk",
+      "new_slug": "api-doc-generator-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "api-doc-writer-sk",
+      "new_slug": "api-doc-writer-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "api-gateway-sk",
+      "new_slug": "api-gateway-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "api-generator-sk",
+      "new_slug": "api-generator-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "api-integration-sk",
+      "new_slug": "api-integration-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "api-test-runner-free",
+      "new_slug": "api-test-runner-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "apple-health-free",
+      "new_slug": "apple-health-2",
+      "file_updated": true,
+      "score": 0.0
+    },
+    {
+      "old_slug": "apple-health-skill-sk",
+      "new_slug": "apple-health-skill-2",
+      "file_updated": false,
+      "score": 0.0
+    },
+    {
+      "old_slug": "archive-paid",
+      "new_slug": "archive-2",
+      "file_updated": true,
+      "score": 3.8
+    }
+  ]
+}

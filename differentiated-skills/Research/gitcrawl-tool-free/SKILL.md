@@ -1,5 +1,5 @@
 ---
-slug: gitcrawl-tool-free
+slug: gitcrawl-4
 name: gitcrawl-tool-free
 version: 1.0.0
 displayName: 仓库归档搜索

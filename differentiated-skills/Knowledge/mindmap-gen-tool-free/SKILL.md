@@ -1,6 +1,6 @@
 ---
 
-slug: mindmap-gen-tool-free
+slug: mindmap-gen-2
 name: mindmap-gen-tool-free
 version: 1.0.0
 displayName: 思维导图生成（免费版）

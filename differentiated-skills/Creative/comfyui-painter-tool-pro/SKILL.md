@@ -1,6 +1,6 @@
 ---
 
-slug: comfyui-painter-tool-pro
+slug: comfyui-painter-3
 name: comfyui-painter-tool-pro
 version: 1.0.0
 displayName: ComfyUI绘画专业版

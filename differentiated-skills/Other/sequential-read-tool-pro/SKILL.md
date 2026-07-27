@@ -1,6 +1,6 @@
 ---
 
-slug: sequential-read-tool-pro
+slug: sequential-read-2
 name: sequential-read-tool-pro
 version: 1.0.0
 displayName: 顺序阅读工具-专业版

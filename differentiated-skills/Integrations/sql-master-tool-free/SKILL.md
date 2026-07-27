@@ -1,6 +1,6 @@
 ---
 
-slug: sql-master-tool-free
+slug: sql-master-2
 name: sql-master-tool-free
 version: 1.0.1
 displayName: SQL大师工具(免费版)

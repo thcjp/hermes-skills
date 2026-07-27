@@ -1,5 +1,5 @@
 ---
-slug: trade-assistant-tool-free
+slug: trade-assistant-2
 name: trade-assistant-tool-free
 version: 1.0.0
 displayName: 知识交换助手免费版

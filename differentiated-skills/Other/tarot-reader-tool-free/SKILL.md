@@ -1,5 +1,5 @@
 ---
-slug: tarot-reader-tool-free
+slug: tarot-reader-4
 name: tarot-reader-tool-free
 version: 1.0.1
 displayName: 韦特塔罗占卜免费版

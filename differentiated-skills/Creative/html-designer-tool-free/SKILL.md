@@ -1,6 +1,6 @@
 ---
 
-slug: html-designer-tool-free
+slug: html-designer-3
 name: html-designer-tool-free
 version: 1.0.0
 displayName: HTML设计工具免费版

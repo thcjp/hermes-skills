@@ -1,6 +1,6 @@
 ---
 
-slug: game-builder-tool-free
+slug: game-builder-2
 name: game-builder-tool-free
 version: 1.0.0
 displayName: 3D游戏构建器免费版

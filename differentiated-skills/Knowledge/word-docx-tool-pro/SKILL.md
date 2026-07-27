@@ -1,6 +1,6 @@
 ---
 
-slug: word-docx-tool-pro
+slug: word-docx-3
 name: word-docx-tool-pro
 version: 1.0.0
 displayName: Word文档工具（专业版）

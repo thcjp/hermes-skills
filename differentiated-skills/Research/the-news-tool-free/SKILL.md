@@ -1,5 +1,5 @@
 ---
-slug: the-news-tool-free
+slug: the-news-2
 name: the-news-tool-free
 version: 1.0.0
 displayName: 全球新闻速递免费版

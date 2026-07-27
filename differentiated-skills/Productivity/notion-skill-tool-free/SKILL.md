@@ -1,5 +1,5 @@
 ---
-slug: notion-skill-tool-free
+slug: notion-skill-2
 name: notion-skill-tool-free
 version: 1.0.0
 displayName: Notion 技能基础版

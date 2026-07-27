@@ -1,5 +1,5 @@
 ---
-slug: free-web-search-tool-free
+slug: free-web-search-4
 name: free-web-search-tool-free
 version: 1.0.0
 displayName: 免费网页搜索工具

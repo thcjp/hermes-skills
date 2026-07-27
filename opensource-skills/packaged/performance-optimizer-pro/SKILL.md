@@ -1,5 +1,5 @@
 ---
-slug: performance-optimizer-pro
+slug: performance-optimizer
 name: performance-optimizer-pro
 version: 1.0.1
 displayName: 性能优化专家

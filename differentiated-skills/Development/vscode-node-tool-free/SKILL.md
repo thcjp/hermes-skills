@@ -1,6 +1,6 @@
 ---
 
-slug: vscode-node-tool-free
+slug: vscode-node-2
 name: vscode-node-tool-free
 version: 1.0.0
 displayName: VSCode节点工具(免费版)

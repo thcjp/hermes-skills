@@ -1,6 +1,6 @@
 ---
 
-slug: password-generator-tool-pro
+slug: password-generator-2
 name: password-generator-tool-pro
 version: 1.0.0
 displayName: 密码生成器(专业版)

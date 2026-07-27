@@ -1,6 +1,6 @@
 ---
 
-slug: api-dev-tool-free
+slug: api-dev-2
 name: api-dev-tool-free
 version: 1.0.1
 displayName: API开发工具（免费版）

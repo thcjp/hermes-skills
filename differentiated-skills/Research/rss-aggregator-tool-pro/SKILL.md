@@ -1,6 +1,6 @@
 ---
 
-slug: rss-aggregator-tool-pro
+slug: rss-aggregator-2
 name: rss-aggregator-tool-pro
 version: 1.0.0
 displayName: RSS聚合工具专业版

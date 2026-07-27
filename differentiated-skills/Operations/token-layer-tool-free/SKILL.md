@@ -1,6 +1,6 @@
 ---
 
-slug: token-layer-tool-free
+slug: token-layer-2
 name: token-layer-tool-free
 version: 1.0.0
 displayName: 跨链代币入门工具

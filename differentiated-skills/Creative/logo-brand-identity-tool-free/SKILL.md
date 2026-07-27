@@ -1,6 +1,6 @@
 ---
 
-slug: logo-brand-identity-tool-free
+slug: logo-brand-identity-2
 name: logo-brand-identity-tool-free
 version: 1.0.0
 displayName: 品牌标识设计免费版

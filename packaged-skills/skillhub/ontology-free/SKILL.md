@@ -1,5 +1,5 @@
 ---
-slug: "ontology-free"
+slug: ontology-2
 name: "ontology-free"
 version: "1.0.0"
 displayName: "类型化知识图谱引擎"

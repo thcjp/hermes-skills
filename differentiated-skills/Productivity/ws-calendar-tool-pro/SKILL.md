@@ -1,6 +1,6 @@
 ---
 
-slug: ws-calendar-tool-pro
+slug: ws-calendar-3
 name: ws-calendar-tool-pro
 version: 1.0.0
 displayName: 日历同步工具专业版

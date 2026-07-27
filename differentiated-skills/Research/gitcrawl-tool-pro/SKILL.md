@@ -1,6 +1,6 @@
 ---
 
-slug: gitcrawl-tool-pro
+slug: gitcrawl-2
 name: gitcrawl-tool-pro
 version: 1.0.0
 displayName: 仓库归档专业版

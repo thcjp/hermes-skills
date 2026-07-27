@@ -1,5 +1,5 @@
 ---
-slug: v2ray-proxy-tool-free
+slug: v2ray-proxy-3
 name: v2ray-proxy-tool-free
 version: 1.1.0
 displayName: 网络连通性诊断工具(免费版)

@@ -1,6 +1,6 @@
 ---
 
-slug: knowledge-toolkit-pro
+slug: knowledge-toolkit-2
 name: knowledge-toolkit-pro
 version: 1.0.0
 displayName: 知识工具包（专业版）

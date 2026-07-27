@@ -1,6 +1,6 @@
 ---
 
-slug: yaml-toolkit-pro
+slug: yaml-toolkit-2
 name: yaml-toolkit-pro
 version: 1.0.0
 displayName: YAML处理工具专业版

@@ -1,5 +1,5 @@
 ---
-slug: sequential-read-tool-free
+slug: sequential-read-4
 name: sequential-read-tool-free
 version: 1.0.0
 displayName: 顺序阅读工具-免费版

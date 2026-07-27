@@ -1,5 +1,5 @@
 ---
-slug: search-assistant-tool-free
+slug: search-assistant-2
 name: search-assistant-tool-free
 version: 1.0.0
 displayName: 搜索助手免费版

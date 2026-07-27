@@ -1,6 +1,6 @@
 ---
 
-slug: docker-ctl-tool-free
+slug: docker-ctl-2
 name: docker-ctl-tool-free
 version: 1.0.0
 displayName: 容器检查入门工具

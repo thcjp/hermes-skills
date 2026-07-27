@@ -1,5 +1,5 @@
 ---
-slug: mac-system-tool-free
+slug: mac-system-2
 name: mac-system-tool-free
 version: 1.0.0
 displayName: Mac 系统工具

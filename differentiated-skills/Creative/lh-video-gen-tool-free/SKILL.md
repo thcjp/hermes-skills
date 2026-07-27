@@ -1,6 +1,6 @@
 ---
 
-slug: lh-video-gen-tool-free
+slug: lh-video-gen-3
 name: lh-video-gen-tool-free
 version: 1.0.0
 displayName: 竖版视频生成免费版

@@ -1,5 +1,5 @@
 ---
-slug: news-feed-tool-free
+slug: news-feed-4
 name: news-feed-tool-free
 version: 1.0.0
 displayName: RSS新闻订阅免费版

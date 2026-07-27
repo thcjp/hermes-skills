@@ -1,6 +1,6 @@
 ---
 
-slug: hugo-blog-tool-free
+slug: hugo-blog-2
 name: hugo-blog-tool-free
 version: 1.0.0
 displayName: Hugo博客发布免费版

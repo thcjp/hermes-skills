@@ -1,6 +1,6 @@
 ---
 
-slug: image-tool-pro
+slug: image-3
 name: image-tool-pro
 version: 1.0.0
 displayName: 图像处理专业版

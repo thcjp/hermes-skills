@@ -1,6 +1,6 @@
 ---
 
-slug: bsession-tool-pro
+slug: bsession-2
 name: bsession-tool-pro
 version: 1.0.0
 displayName: 浏览器会话(专业版)

@@ -1,6 +1,6 @@
 ---
 
-slug: docker-sandbox-tool-pro
+slug: docker-sandbox-3
 name: docker-sandbox-tool-pro
 version: 1.0.0
 displayName: Docker沙箱专业版

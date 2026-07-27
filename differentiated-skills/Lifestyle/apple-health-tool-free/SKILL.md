@@ -1,6 +1,6 @@
 ---
 
-slug: apple-health-tool-free
+slug: apple-health-2
 name: apple-health-tool-free
 version: 1.0.0
 displayName: 健康数据助手免费版

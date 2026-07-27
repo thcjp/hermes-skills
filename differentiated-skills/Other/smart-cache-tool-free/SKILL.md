@@ -1,5 +1,5 @@
 ---
-slug: smart-cache-tool-free
+slug: smart-cache-4
 name: smart-cache-tool-free
 version: 1.0.0
 displayName: 智能缓存工具-免费版

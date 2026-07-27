@@ -1,5 +1,5 @@
 ---
-slug: frontend-design-other-tool-free
+slug: frontend-design-other-2
 name: frontend-design-other-tool-free
 version: 1.0.0
 displayName: 前端设计工具

@@ -1,6 +1,6 @@
 ---
 
-slug: quark-scan-tool-free
+slug: quark-scan-2
 name: quark-scan-tool-free
 version: 1.0.0
 displayName: 夸克扫描-免费版

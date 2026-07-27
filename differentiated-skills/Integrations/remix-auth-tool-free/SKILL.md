@@ -1,6 +1,6 @@
 ---
 
-slug: remix-auth-tool-free
+slug: remix-auth-2
 name: remix-auth-tool-free
 version: 1.0.2
 displayName: Remix认证工具

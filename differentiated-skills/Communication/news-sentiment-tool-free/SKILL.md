@@ -1,6 +1,6 @@
 ---
 
-slug: news-sentiment-tool-free
+slug: news-sentiment-2
 name: news-sentiment-tool-free
 version: 1.0.0
 displayName: 舆情情绪分析免费版

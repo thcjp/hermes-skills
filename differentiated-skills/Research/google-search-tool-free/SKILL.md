@@ -1,5 +1,5 @@
 ---
-slug: google-search-tool-free
+slug: google-search-4
 name: google-search-tool-free
 version: 1.0.0
 displayName: 谷歌搜索工具

@@ -1,6 +1,6 @@
 ---
 
-slug: email-163-tool-free
+slug: email-163-2
 name: email-163-tool-free
 version: 1.0.0
 displayName: 163邮箱助手免费版

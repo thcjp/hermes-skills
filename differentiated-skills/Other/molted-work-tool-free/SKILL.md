@@ -1,5 +1,5 @@
 ---
-slug: molted-work-tool-free
+slug: molted-work-2
 name: molted-work-tool-free
 version: 1.0.0
 displayName: AI 工作工具

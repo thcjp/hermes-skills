@@ -1,5 +1,5 @@
 ---
-slug: pptx-v101-tool-free
+slug: pptx-v101-2
 name: pptx-v101-tool-free
 version: 1.0.0
 displayName: PPT 工具 v1.0 基础版

@@ -1,5 +1,5 @@
 ---
-slug: "audio-upload-aioz-stream-free"
+slug: audio-upload-aioz-stream-2
 name: "audio-upload-aioz-stream-free"
 version: "1.0.0"
 displayName: "AIOZ音频上传免费版"

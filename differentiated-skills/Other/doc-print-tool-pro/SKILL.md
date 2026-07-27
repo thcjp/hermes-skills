@@ -1,6 +1,6 @@
 ---
 
-slug: "doc-print-tool-pro"
+slug: doc-print
 name: "doc-print-tool-pro"
 version: "1.0.0"
 displayName: "文档凭证注册工具专业版"

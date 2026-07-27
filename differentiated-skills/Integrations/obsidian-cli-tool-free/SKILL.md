@@ -1,6 +1,6 @@
 ---
 
-slug: obsidian-cli-tool-free
+slug: obsidian-cli-2
 name: obsidian-cli-tool-free
 version: 1.0.0
 displayName: Obsidian CLI(免费版)

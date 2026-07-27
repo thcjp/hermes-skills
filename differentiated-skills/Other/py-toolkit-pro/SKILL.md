@@ -1,6 +1,6 @@
 ---
 
-slug: py-toolkit-pro
+slug: py-toolkit-2
 name: py-toolkit-pro
 version: 1.0.0
 displayName: Python工具包-专业版

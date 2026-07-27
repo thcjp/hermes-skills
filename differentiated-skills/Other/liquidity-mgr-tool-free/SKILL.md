@@ -1,5 +1,5 @@
 ---
-slug: liquidity-mgr-tool-free
+slug: liquidity-mgr-2
 name: liquidity-mgr-tool-free
 version: 1.0.1
 displayName: 流动性管理工具

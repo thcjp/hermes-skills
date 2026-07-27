@@ -1,6 +1,6 @@
 ---
 
-slug: video-translator-tool-free
+slug: video-translator-3
 name: video-translator-tool-free
 version: 1.0.0
 displayName: 视频翻译-免费版

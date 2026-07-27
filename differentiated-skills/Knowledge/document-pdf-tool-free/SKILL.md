@@ -1,6 +1,6 @@
 ---
 
-slug: document-pdf-tool-free
+slug: document-pdf-2
 name: document-pdf-tool-free
 version: 1.0.0
 displayName: PDF文档工具（免费版）

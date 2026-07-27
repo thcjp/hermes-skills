@@ -1,5 +1,5 @@
 ---
-slug: tool-call-retry-tool-free
+slug: tool-call-retry-2
 name: tool-call-retry-tool-free
 version: 1.0.0
 displayName: 工具调用重试免费版

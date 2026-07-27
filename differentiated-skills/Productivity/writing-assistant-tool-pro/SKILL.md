@@ -1,6 +1,6 @@
 ---
 
-slug: writing-assistant-tool-pro
+slug: writing-assistant-3
 name: writing-assistant-tool-pro
 version: 1.0.0
 displayName: 写作助手专业版

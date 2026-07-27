@@ -1,6 +1,6 @@
 ---
 
-slug: docs-toolkit-pro
+slug: docs-toolkit-2
 name: docs-toolkit-pro
 version: 1.0.0
 displayName: 文档导航工具包（专业版）

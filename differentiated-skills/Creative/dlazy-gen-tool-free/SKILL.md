@@ -1,6 +1,6 @@
 ---
 
-slug: dlazy-gen-tool-free
+slug: dlazy-gen-2
 name: dlazy-gen-tool-free
 version: 1.0.0
 displayName: 综合生成工具-免费版

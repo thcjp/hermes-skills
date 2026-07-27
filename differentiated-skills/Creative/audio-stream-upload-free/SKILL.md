@@ -1,5 +1,5 @@
 ---
-slug: audio-stream-upload-free
+slug: audio-stream-upload-2
 name: audio-stream-upload-free
 version: 1.0.1
 displayName: 音频流上传免费版

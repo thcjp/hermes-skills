@@ -1,6 +1,6 @@
 ---
 
-slug: pdf-processor-cn-tool-pro
+slug: pdf-processor-cn-3
 name: pdf-processor-cn-tool-pro
 version: 1.0.0
 displayName: 中文PDF处理器（专业版）

@@ -1,6 +1,6 @@
 ---
 
-slug: auto-updater-tool-free
+slug: auto-updater-2
 name: auto-updater-tool-free
 version: 1.0.0
 displayName: 自动更新工具-免费版

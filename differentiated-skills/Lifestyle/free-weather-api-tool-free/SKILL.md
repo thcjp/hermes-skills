@@ -1,6 +1,6 @@
 ---
 
-slug: free-weather-api-tool-free
+slug: free-weather-api-2
 name: free-weather-api-tool-free
 version: 1.0.1
 displayName: 天气查询免费版

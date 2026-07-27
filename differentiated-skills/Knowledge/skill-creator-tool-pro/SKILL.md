@@ -1,6 +1,6 @@
 ---
 
-slug: skill-creator-tool-pro
+slug: skill-creator-2
 name: skill-creator-tool-pro
 version: 1.0.0
 displayName: Skill创建工具（专业版）

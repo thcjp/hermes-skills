@@ -1,6 +1,6 @@
 ---
 
-slug: ui-ux-promax-tool-free
+slug: ui-ux-promax-2
 name: ui-ux-promax-tool-free
 version: 1.0.0
 displayName: UIUX设计助手(免费版)

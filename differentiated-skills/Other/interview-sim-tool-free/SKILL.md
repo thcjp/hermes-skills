@@ -1,5 +1,5 @@
 ---
-slug: interview-sim-tool-free
+slug: interview-sim-2
 name: interview-sim-tool-free
 version: 1.0.0
 displayName: 面试模拟工具

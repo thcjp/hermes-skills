@@ -1,5 +1,5 @@
 ---
-slug: meeting-note-tool-free
+slug: meeting-note-2
 name: meeting-note-tool-free
 version: 1.0.1
 displayName: 会议纪要基础版

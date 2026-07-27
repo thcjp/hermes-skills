@@ -1,5 +1,5 @@
 ---
-slug: smart-weekly-report-tool-free
+slug: smart-weekly-report-4
 name: smart-weekly-report-tool-free
 version: 1.0.0
 displayName: 智能周报基础版

@@ -1,6 +1,6 @@
 ---
 
-slug: vue-component-gen-tool-free
+slug: vue-component-gen-2
 name: vue-component-gen-tool-free
 version: 1.0.0
 displayName: Vue组件生成(免费版)

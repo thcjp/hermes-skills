@@ -1,5 +1,5 @@
 ---
-slug: rss-aggregator-tool-free
+slug: rss-aggregator-4
 name: rss-aggregator-tool-free
 version: 1.0.0
 displayName: RSS聚合工具免费版

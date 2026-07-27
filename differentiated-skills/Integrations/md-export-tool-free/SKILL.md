@@ -1,6 +1,6 @@
 ---
 
-slug: md-export-tool-free
+slug: md-export-2
 name: md-export-tool-free
 version: 1.0.0
 displayName: 文档导出工具免费版

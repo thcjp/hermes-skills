@@ -1,6 +1,6 @@
 ---
 
-slug: data-toolkit-pro
+slug: data-toolkit-2
 name: data-toolkit-pro
 version: 1.0.0
 displayName: 数据工具箱(专业版)

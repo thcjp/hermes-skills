@@ -1,6 +1,6 @@
 ---
 
-slug: game-theory-tool-pro
+slug: game-theory-2
 name: game-theory-tool-pro
 version: 1.0.0
 displayName: 博弈论分析专业版

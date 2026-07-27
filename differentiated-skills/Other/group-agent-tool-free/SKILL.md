@@ -1,5 +1,5 @@
 ---
-slug: group-agent-tool-free
+slug: group-agent-2
 name: group-agent-tool-free
 version: 1.0.0
 displayName: Agent群组工具免费版

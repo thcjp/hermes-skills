@@ -1,6 +1,6 @@
 ---
 
-slug: json-repair-tool-free
+slug: json-repair-2
 name: json-repair-tool-free
 version: 1.0.0
 displayName: JSON修复工具免费版

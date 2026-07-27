@@ -1,6 +1,6 @@
 ---
 
-slug: python-dataviz-tool-pro
+slug: python-dataviz-3
 name: python-dataviz-tool-pro
 version: 1.0.0
 displayName: Python数据可视化-专业版

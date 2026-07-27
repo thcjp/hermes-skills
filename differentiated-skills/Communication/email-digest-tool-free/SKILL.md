@@ -1,6 +1,6 @@
 ---
 
-slug: email-digest-tool-free
+slug: email-digest-2
 name: email-digest-tool-free
 version: 1.0.0
 displayName: 邮件日报免费版

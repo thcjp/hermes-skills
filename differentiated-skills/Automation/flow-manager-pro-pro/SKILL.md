@@ -1,6 +1,6 @@
 ---
 
-slug: flow-manager-pro-pro
+slug: flow-manager
 name: flow-manager-pro-pro
 version: 1.0.0
 displayName: 流程管理器(专业版)

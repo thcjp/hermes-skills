@@ -1,5 +1,5 @@
 ---
-slug: straker-verify-tool-free
+slug: straker-verify-2
 name: straker-verify-tool-free
 version: 1.0.1
 displayName: AI翻译验证(免费版)

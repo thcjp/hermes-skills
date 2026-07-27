@@ -1,6 +1,6 @@
 ---
 
-slug: tts-whatsapp-tool-free
+slug: tts-whatsapp-3
 name: tts-whatsapp-tool-free
 version: 1.0.0
 displayName: WhatsApp语音消息免费版

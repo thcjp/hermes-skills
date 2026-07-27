@@ -1,5 +1,5 @@
 ---
-slug: internet-search-tool-free
+slug: internet-search-5
 name: internet-search-tool-free
 version: 1.0.0
 displayName: 聚合搜索工具

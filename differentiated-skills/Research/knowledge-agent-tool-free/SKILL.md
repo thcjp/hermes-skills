@@ -1,5 +1,5 @@
 ---
-slug: knowledge-agent-tool-free
+slug: knowledge-agent-2
 name: knowledge-agent-tool-free
 version: 1.0.0
 displayName: 知识管理工具-免费版

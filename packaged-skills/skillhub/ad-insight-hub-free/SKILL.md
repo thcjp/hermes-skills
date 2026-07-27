@@ -1,5 +1,5 @@
 ---
-slug: "ad-insight-hub-free"
+slug: ad-insight-hub-2
 name: "ad-insight-hub-free"
 version: "1.0.0"
 displayName: "广告洞察中枢LITE"

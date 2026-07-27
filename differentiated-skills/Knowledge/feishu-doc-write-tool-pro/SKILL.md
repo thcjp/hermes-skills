@@ -1,6 +1,6 @@
 ---
 
-slug: feishu-doc-write-tool-pro
+slug: feishu-doc-write-3
 name: feishu-doc-write-tool-pro
 version: 1.0.0
 displayName: 飞书文档写入（专业版）

@@ -1,5 +1,5 @@
 ---
-slug: multi-search-tool-free
+slug: multi-search-2
 name: multi-search-tool-free
 version: 1.0.0
 displayName: 多搜索引擎工具免费版

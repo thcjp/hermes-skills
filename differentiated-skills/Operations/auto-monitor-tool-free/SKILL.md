@@ -1,6 +1,6 @@
 ---
 
-slug: auto-monitor-tool-free
+slug: auto-monitor-4
 name: auto-monitor-tool-free
 version: 1.0.2
 displayName: 系统监控入门工具

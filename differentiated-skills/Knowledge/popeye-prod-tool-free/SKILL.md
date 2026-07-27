@@ -1,6 +1,6 @@
 ---
 
-slug: popeye-prod-tool-free
+slug: popeye-prod-2
 name: popeye-prod-tool-free
 version: 1.0.2
 displayName: 生产力增强工具（免费版）

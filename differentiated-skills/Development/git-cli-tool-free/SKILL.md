@@ -1,6 +1,6 @@
 ---
 
-slug: git-cli-tool-free
+slug: git-cli-2
 name: git-cli-tool-free
 version: 1.0.0
 displayName: Git命令行助手免费版

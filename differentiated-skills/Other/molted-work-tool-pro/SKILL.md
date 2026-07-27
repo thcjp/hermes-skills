@@ -1,6 +1,6 @@
 ---
 
-slug: molted-work-tool-pro
+slug: molted-work-3
 name: molted-work-tool-pro
 version: 1.0.0
 displayName: AI 工作工具专业版

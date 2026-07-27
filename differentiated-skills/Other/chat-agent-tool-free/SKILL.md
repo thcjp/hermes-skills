@@ -1,6 +1,6 @@
 ---
 
-slug: chat-agent-tool-free
+slug: chat-agent-2
 name: chat-agent-tool-free
 version: 1.0.0
 displayName: 聊天Agent工具免费版

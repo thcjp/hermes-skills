@@ -1,6 +1,6 @@
 ---
 
-slug: learn-tool-pro
+slug: learn-3
 name: learn-tool-pro
 version: 1.0.0
 displayName: 学习助手（专业版）

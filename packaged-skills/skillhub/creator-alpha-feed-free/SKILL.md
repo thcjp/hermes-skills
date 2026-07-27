@@ -1,6 +1,6 @@
 ---
 
-slug: "creator-alpha-feed-free"
+slug: creator-alpha-feed-2
 name: "creator-alpha-feed-free"
 version: "1.0.0"
 displayName: "创作者AI日报(免费版)"

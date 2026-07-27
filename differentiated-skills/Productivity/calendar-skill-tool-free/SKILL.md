@@ -1,5 +1,5 @@
 ---
-slug: calendar-skill-tool-free
+slug: calendar-skill-2
 name: calendar-skill-tool-free
 version: 1.0.1
 displayName: 日历管理技能基础版

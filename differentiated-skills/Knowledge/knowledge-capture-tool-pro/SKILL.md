@@ -1,6 +1,6 @@
 ---
 
-slug: knowledge-capture-tool-pro
+slug: knowledge-capture-3
 name: knowledge-capture-tool-pro
 version: 1.0.0
 displayName: 知识捕获工具（专业版）

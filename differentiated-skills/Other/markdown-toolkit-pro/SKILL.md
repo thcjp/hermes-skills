@@ -1,6 +1,6 @@
 ---
 
-slug: markdown-toolkit-pro
+slug: markdown-toolkit-2
 name: markdown-toolkit-pro
 version: 1.0.0
 displayName: Markdown 工具箱专业版

@@ -1,6 +1,6 @@
 ---
 
-slug: weather-toolkit-pro
+slug: weather-toolkit-2
 name: weather-toolkit-pro
 version: 1.0.0
 displayName: 天气查询工具包专业版

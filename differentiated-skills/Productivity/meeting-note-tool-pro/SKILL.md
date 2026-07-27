@@ -1,6 +1,6 @@
 ---
 
-slug: meeting-note-tool-pro
+slug: meeting-note-3
 name: meeting-note-tool-pro
 version: 1.0.0
 displayName: 会议纪要专业版

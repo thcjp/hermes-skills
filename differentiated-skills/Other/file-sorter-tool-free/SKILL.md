@@ -1,5 +1,5 @@
 ---
-slug: file-sorter-tool-free
+slug: file-sorter-2
 name: file-sorter-tool-free
 version: 1.0.0
 displayName: 视觉文件整理免费版

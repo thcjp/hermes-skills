@@ -1,6 +1,6 @@
 ---
 
-slug: grok-image-tool-free
+slug: grok-image-2
 name: grok-image-tool-free
 version: 1.0.0
 displayName: Grok图片生成-免费版

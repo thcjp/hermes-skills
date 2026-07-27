@@ -1,6 +1,6 @@
 ---
 
-slug: dlazy-audio-tool-free
+slug: dlazy-audio-2
 name: dlazy-audio-tool-free
 version: 1.0.0
 displayName: 音频生成工具-免费版

@@ -1,6 +1,6 @@
 ---
 
-slug: code-runner-tool-free
+slug: code-runner-2
 name: code-runner-tool-free
 version: 1.0.0
 displayName: 代码执行工具免费版

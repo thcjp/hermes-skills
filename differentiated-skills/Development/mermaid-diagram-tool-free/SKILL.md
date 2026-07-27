@@ -1,6 +1,6 @@
 ---
 
-slug: mermaid-diagram-tool-free
+slug: mermaid-diagram-3
 name: mermaid-diagram-tool-free
 version: 1.0.0
 displayName: Mermaid图表工具(免费版)

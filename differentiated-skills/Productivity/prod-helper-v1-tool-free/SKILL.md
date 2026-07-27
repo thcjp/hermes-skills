@@ -1,5 +1,5 @@
 ---
-slug: prod-helper-v1-tool-free
+slug: prod-helper-v1-2
 name: prod-helper-v1-tool-free
 version: 1.0.0
 displayName: 效率助手 v1 基础版
