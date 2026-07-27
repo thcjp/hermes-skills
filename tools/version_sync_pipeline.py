@@ -702,6 +702,29 @@ def sync_to_skillhub(slug: str, skill_md: Path, new_version: str,
 
     skill_dir = skill_md.parent
 
+    # v3.0增强: 速率限制预检 (防止爆发式上传触发平台反垃圾系统)
+    # 根因: 2026-07-24单秒上传1097个skill导致账号被封禁
+    # 复用daily_sync.py的速率限制机制,不创建新的独立实现
+    try:
+        import sys as _sys
+        _tools_dir = os.path.dirname(os.path.abspath(__file__))
+        if _tools_dir not in _sys.path:
+            _sys.path.insert(0, _tools_dir)
+        from daily_sync import check_upload_rate_limit, record_upload
+        rate_check = check_upload_rate_limit('skillhub')
+        if not rate_check.get('allowed', True):
+            wait = rate_check.get('wait_seconds', 120)
+            result['status'] = 'rate_limited'
+            result['error'] = f"速率限制: {rate_check.get('reason', '未知')} (需等待{wait}秒)"
+            result['free_upload'] = {'status': 'rate_limited', 'error': result['error']}
+            record_platform_upload(skill_id, new_version, 'skillhub_free', slug,
+                                   'rate_limited', error=result['error'])
+            return result
+    except ImportError:
+        pass  # daily_sync不可用时跳过速率限制(向后兼容)
+    except Exception:
+        pass  # 速率限制异常不阻断上传(容错)
+
     # 检查内容长度(WAF限制)
     content = skill_md.read_text(encoding='utf-8', errors='replace')
     if len(content) > SKILLHUB_MAX_CONTENT:
@@ -724,6 +747,11 @@ def sync_to_skillhub(slug: str, skill_md: Path, new_version: str,
             result['free_upload'] = {'status': 'success', 'output': output[:200]}
             record_platform_upload(skill_id, new_version, 'skillhub_free', slug,
                                    'success', visibility='public', pricing='free')
+            # v3.0: 记录上传时间戳用于速率限制
+            try:
+                record_upload('skillhub', slug)
+            except Exception:
+                pass
         elif 'VERSION_EXISTS' in output:
             result['free_upload'] = {'status': 'version_exists', 'output': output[:200]}
             record_platform_upload(skill_id, new_version, 'skillhub_free', slug,
@@ -1130,60 +1158,27 @@ def sync_skill_to_all_platforms(slug: str, skip_github: bool = False,
         if free_status == 'success':
             print(f"  ✓ SkillHub同步成功")
 
-            # 8.4 审核通过 (pending → published) — v2.7修复: 之前缺少此步骤
-            # 根因: upload_skill仅上传skill, 但未调用approve, 导致skill停留在pending
-            print(f"  [5.4/7] 审核通过...")
+            # 8.4 完整发布流程 (approve → publish_to_community → star → DB更新)
+            # v2.8修复: 统一到platform_ops.post_upload_publish, 消除碎片化
+            # 原实现缺少star_skill和slug改名处理, 导致已发布skill搜索排名低、改名后DB不一致
+            print(f"  [5.4/7] 执行完整发布流程...")
             try:
-                from platform_ops import batch_approve
-                approve_result = batch_approve([slug], delay=0.1)
-                result['phases']['batch_approve'] = {
-                    'success': approve_result.get('success', False),
-                    'approved': slug in approve_result.get('approved', []),
-                }
-                if slug in approve_result.get('approved', []):
-                    print(f"  ✓ 审核通过 (pending → published)")
+                from platform_ops import post_upload_publish
+                publish_result = post_upload_publish(slug, skill_id=skill_id)
+                result['phases']['post_publish'] = publish_result
+                pub_ok = publish_result.get('community', {}).get('success', False)
+                if pub_ok:
+                    actual_slug = publish_result.get('db_update', {}).get('actual_slug', slug)
+                    print(f"  ✓ 发布流程完成 (approve→publish→star), slug={actual_slug}")
                 else:
-                    # approve可能因skill已在published状态而失败, 继续尝试publish
-                    print(f"  ⚠ 审核未通过(可能已published), 继续发布流程...")
-            except ImportError:
-                print(f"  ⚠ platform_ops模块不可用,跳过审核")
-                result['phases']['batch_approve'] = {'status': 'skipped', 'reason': 'module_unavailable'}
-
-            # 8.5 发布到社区 (publish-to-community, 设置visibility=public)
-            # 修复企业页可见性问题: published状态但visibility非public导致前台不可见
-            print(f"  [5.5/7] 发布到社区...")
-            try:
-                from platform_ops import publish_to_community
-                ptc_result = publish_to_community(slug)
-                result['phases']['publish_to_community'] = ptc_result
-                if ptc_result.get('success'):
-                    print(f"  ✓ 已发布到社区 (visibility=public)")
-                    # 更新DB的community_published状态
-                    try:
-                        conn = sqlite3.connect(str(DB_PATH))
-                        conn.execute("PRAGMA foreign_keys = ON")
-                        conn.execute("""
-                            UPDATE platform_uploads SET community_published = 1
-                            WHERE skill_id = ? AND platform = 'skillhub'
-                        """, (skill_id,))
-                        conn.execute("""
-                            UPDATE skills SET skillhub_sync_status = 'synced'
-                            WHERE id = ?
-                        """, (skill_id,))
-                        conn.commit()
-                        conn.close()
-                    except Exception:
-                        pass
-                else:
-                    err = ptc_result.get('error', '未知错误')
+                    err = publish_result.get('community', {}).get('error', '未知错误')
                     if 'expired' in err or '401' in err or '认证' in err:
-                        print(f"  ⚠ 社区发布跳过(认证过期): {err[:80]}")
+                        print(f"  ⚠ 发布流程跳过(认证过期): {err[:80]}")
                     else:
-                        print(f"  ⚠ 社区发布失败: {err[:80]}")
-                    result['phases']['publish_to_community'] = ptc_result
+                        print(f"  ⚠ 发布流程未完全成功: {err[:80]}")
             except ImportError:
-                print(f"  ⚠ platform_ops模块不可用,跳过社区发布")
-                result['phases']['publish_to_community'] = {'status': 'skipped', 'reason': 'module_unavailable'}
+                print(f"  ⚠ platform_ops模块不可用,跳过发布流程")
+                result['phases']['post_publish'] = {'status': 'skipped', 'reason': 'module_unavailable'}
         else:
             print(f"  ⚠ SkillHub: {free_status}")
     else:

@@ -939,7 +939,7 @@ def cmd_source_skills():
     return sources
 
 # ============ 统一平台操作API (P1-1: 平台操作固化) ============
-# 将散落在batch_approve_api.py、auto_publish.py等脚本中的操作统一为单一入口
+# 平台操作统一入口 (batch_approve_api.py已删除,功能合并到此)
 # 向后兼容: 现有脚本仍可独立运行
 
 def star_skill(slug: str) -> dict:
@@ -966,7 +966,7 @@ def star_skill(slug: str) -> dict:
         return {'success': False, 'slug': slug, 'error': result.get('error', 'unknown')}
 
 def batch_approve(slugs: list = None, delay: float = 0.3) -> dict:
-    """批量审核通过SkillHub pending skills (复用batch_approve_api逻辑)
+    """批量审核通过SkillHub pending skills (统一入口,原batch_approve_api已删除)
     
     API: POST /orgs/{ORG_ID}/admin/skills/{slug}/approve
     如果slugs为None, 自动获取所有pending skill
@@ -1157,13 +1157,15 @@ def get_platform_status(slug: str) -> dict:
     return platform_info
 
 def run_platform_pipeline(slug: str) -> dict:
-    """一键执行平台操作流水线: 查询状态 → 审核 → 收藏 → 标记发布
+    """一键执行平台操作流水线: 查询状态 → 审核 → 发布到社区 → 收藏 → DB更新
+    
+    v2.8修复: 原实现缺少publish_to_community步骤, 导致已审核skill前台不可见。
+    现在使用post_upload_publish统一入口, 确保完整发布流程。
     
     自动化流程:
     1. 查询平台状态
-    2. 如果pending, 自动approve
-    3. 如果published, 自动star
-    4. 更新本地DB
+    2. 如果需要操作(pending/未公开/未收藏), 调用post_upload_publish
+    3. 更新本地DB
     """
     result = {'slug': slug, 'timestamp': NOW, 'steps': {}}
     
@@ -1176,31 +1178,33 @@ def run_platform_pipeline(slug: str) -> dict:
         return result
     
     review_status = status.get('review_status', 'unknown')
+    front_visible = status.get('front_visible', False)
+    db_starred = status.get('db_starred', False)
     result['current_status'] = review_status
     
-    # Step 2: 如果pending, 审核通过
-    if review_status == 'pending':
-        print(f"  [{slug}] pending → approving...")
-        approve_result = batch_approve([slug])
-        result['steps']['approve'] = approve_result
-        if approve_result.get('success') and slug in approve_result.get('approved', []):
-            review_status = 'published'
-        else:
-            result['status'] = 'approve_failed'
-            return result
+    # Step 2: 判断是否需要执行发布流程
+    needs_publish = (
+        review_status == 'pending'          # 需要审核
+        or not front_visible                 # 前台不可见, 需要publish_to_community
+        or (review_status in ('published', 'approved', 'public_published') and not db_starred)  # 需要收藏
+    )
     
-    # Step 3: 如果published, 收藏
-    if review_status in ('published', 'approved', 'public_published'):
-        if not status.get('db_starred'):
-            print(f"  [{slug}] published → starring...")
-            star_result = star_skill(slug)
-            result['steps']['star'] = star_result
+    if needs_publish:
+        print(f"  [{slug}] 执行发布流程 (status={review_status}, visible={front_visible})...")
+        publish_result = post_upload_publish(slug)
+        result['steps']['publish'] = publish_result
+        pub_ok = publish_result.get('community', {}).get('success', False)
+        if pub_ok:
+            print(f"  ✓ 发布流程完成")
         else:
-            result['steps']['star'] = {'success': True, 'message': 'already starred'}
-    
-    # Step 4: 检查前台可见性
-    if not status.get('front_visible'):
-        result['steps']['visibility_warning'] = 'skill在前台不可见, 可能需要设置visibility=public'
+            err = publish_result.get('community', {}).get('error', '')
+            if 'expired' in err or '401' in err or '认证' in err:
+                print(f"  ⚠ 发布流程跳过(认证过期)")
+            else:
+                print(f"  ⚠ 发布流程未完全成功: {err[:60]}")
+    else:
+        result['steps']['publish'] = {'status': 'skipped', 'reason': 'already_complete'}
+        print(f"  [{slug}] 无需操作 (已发布+可见+已收藏)")
     
     result['status'] = 'completed'
     return result
@@ -1213,22 +1217,25 @@ _ADMIN_PUBLISHER_ID = 742  # SkillHub发布者Profile ID
 
 def publish_to_community(slug: str) -> dict:
     """将已上架skill发布到社区 (设置visibility=public)
-    
-    完整流程(v2.3增强):
+
+    v3.0安全增强: 移除-sk/-sk1/-sk2/-sk3自动改名逻辑
+      根因: 2026-07-24批量上传中, slug冲突时自动添加-sk后缀被平台识别为
+      "自动化绕过唯一性约束"的滥用行为, 导致136个-sk系列skill被封禁。
+
+    当前流程:
       1. 先尝试直接publish-to-community
       2. 如果409 slug_conflict:
-         a. unpublish-from-community (取消已有对外发布)
-         b. 依次尝试rename-slug到 xxx-sk, xxx-sk1, xxx-sk2
-         c. rename成功后publish-to-community
-    
+         a. unpublish-from-community (取消已有对外发布, 清除自身冲突)
+         b. 等待后重试publish-to-community
+         c. 若仍失败, 返回slug_conflict错误, 需人工介入选择有语义的唯一slug
+
     API:
       - POST /orgs/{ORG_ID}/admin/skills/{slug}/publish-to-community
       - POST /orgs/{ORG_ID}/admin/skills/{slug}/unpublish-from-community
-      - PUT  /orgs/{ORG_ID}/admin/skills/{slug}/rename-slug
-    
+
     参数:
         slug: skill slug
-    
+
     返回:
         {'success': bool, 'slug': str, 'message': str}
     """
@@ -1258,45 +1265,134 @@ def publish_to_community(slug: str) -> dict:
     _api_request('POST', unpub_url, headers, data=b'{}', timeout=15)
     time.sleep(0.2)
     
-    # 2b: 尝试多个后缀 (C2修复: 清理已有-sk*后缀避免畸形slug如 foo-sk-sk1)
-    # 先从输入slug中剥离已有的-sk/-sk1/-sk2/-sk3后缀, 得到干净的基础slug
-    base_slug = slug
-    for existing_suffix in ['-sk3', '-sk2', '-sk1', '-sk']:
-        if base_slug.endswith(existing_suffix) and len(base_slug) > len(existing_suffix):
-            base_slug = base_slug[:-len(existing_suffix)]
-            break
+    # 2b: v3.0安全增强 — 移除-sk自动改名, 改为重试发布
+    # 根因: -sk/-sk1/-sk2/-sk3自动改名被平台识别为"绕过唯一性约束"的滥用行为
+    #       导致136个-sk系列skill在2026-07-24被批量封禁
+    # 修复: unpublish后等待并重试publish, 若仍失败则返回slug_conflict需人工介入
+    time.sleep(1.0)  # 等待unpublish生效
 
-    current_slug = slug
-    for suffix in ['-sk', '-sk1', '-sk2', '-sk3']:
-        if current_slug.endswith(suffix):
-            continue
-        new_slug = base_slug + suffix  # 基于清理后的base_slug生成, 避免畸形叠加
-        rename_url = f"{_API_BASE}/orgs/{_ADMIN_ORG_ID}/admin/skills/{current_slug}/rename-slug"
-        rename_body = json.dumps({'newSlug': new_slug}).encode('utf-8')
-        rename_success, rename_result = _api_request('PUT', rename_url, headers, data=rename_body, timeout=15)
-        
-        if rename_success:
-            current_slug = new_slug  # 更新current_slug
-            time.sleep(0.2)
-            retry_url = f"{_API_BASE}/orgs/{_ADMIN_ORG_ID}/admin/skills/{new_slug}/publish-to-community"
-            retry_success, retry_result = _api_request('POST', retry_url, headers, data=body, timeout=30)
-            if retry_success:
-                _update_db_community_published(slug, new_slug)
-                return {'success': True, 'slug': new_slug, 'original_slug': slug,
-                        'message': f'slug冲突,已改名为{new_slug}并发布到社区'}
-            # publish失败,继续尝试下一个后缀(此时current_slug=new_slug)
-        # rename失败(409=已占用),继续尝试下一个后缀
-    
-    # C1修复增强: 如果rename成功过, current_slug可能已不同于原始slug
-    # 返回current_slug而非原始slug, 让调用方知道平台上的实际slug
-    if current_slug != slug:
-        return {'success': False, 'slug': current_slug, 'original_slug': slug,
-                'error': f'slug已改名为{current_slug}但发布到社区失败: {err_str}'}
-    return {'success': False, 'slug': slug, 'error': f'slug冲突且所有后缀(-sk/-sk1/-sk2/-sk3)均被占用: {err_str}'}
+    retry_url = f"{_API_BASE}/orgs/{_ADMIN_ORG_ID}/admin/skills/{slug}/publish-to-community"
+    retry_success, retry_result = _api_request('POST', retry_url, headers, data=body, timeout=30)
+
+    if retry_success:
+        _update_db_community_published(slug, slug)
+        return {'success': True, 'slug': slug, 'message': 'slug冲突已清除(unpublish后重试成功),已发布到社区'}
+
+    # 重试仍失败 — slug被其他skill占用, 需人工介入选择有语义的唯一slug
+    retry_err = str(retry_result.get('error', ''))
+    return {
+        'success': False, 'slug': slug,
+        'error': f'slug_conflict: slug "{slug}" 已被其他skill占用, 需人工介入选择唯一slug (原始: {err_str}; 重试: {retry_err})',
+        'error_type': 'slug_conflict',
+        'needs_manual_resolution': True,
+    }
+
+
+def post_upload_publish(slug: str, skill_id: int = None) -> dict:
+    """上传后的完整发布流程 (统一入口): approve → publish_to_community → star → DB更新
+
+    统一了三个碎片化实现:
+    - enterprise_uploader._post_upload_publish (API上传后)
+    - version_sync_pipeline (CLI上传后, 原实现缺star和slug改名处理)
+    - auto_publish.auto_flow (旧流程, 直接标记DB不调用API — 已废弃)
+
+    根因修复: 之前的upload仅上传skill, 但未调用:
+    1. batch_approve: 导致skill停留在pending状态, 未进入published
+    2. publish_to_community: 导致visibility=org_only, 前台不可见
+    3. star_skill: 导致搜索排名无star加分
+
+    这正是2022个skill "看起来已发布但前台不可见"的根因。
+
+    Args:
+        slug: skill slug (上传时使用的原始slug)
+        skill_id: 可选, SQLite中skills表的id。如未提供, 通过slug查询
+
+    Returns:
+        dict with approve, community, star, db_update
+    """
+    result = {'approve': {}, 'community': {}, 'star': {}, 'db_update': {}}
+
+    # Step 1: 审核通过 (pending → published)
+    time.sleep(0.5)
+    approve_result = batch_approve([slug], delay=0.1)
+    result['approve'] = {
+        'success': approve_result.get('success', False),
+        'approved': slug in approve_result.get('approved', []),
+    }
+
+    # Step 2: 发布到社区 (设置visibility=public, 前台可见)
+    time.sleep(0.3)
+    ptc_result = publish_to_community(slug)
+    result['community'] = ptc_result
+
+    # Step 3: 收藏 + DB更新 — 仅在社区发布成功时执行
+    if ptc_result.get('success'):
+        # C1修复: 使用 publish_to_community 返回的实际 slug (可能已改名)
+        actual_slug = ptc_result.get('slug', slug)
+        was_renamed = ptc_result.get('original_slug') is not None
+        time.sleep(0.2)
+        star_result = star_skill(actual_slug)
+        result['star'] = {
+            'success': star_result.get('success', False),
+            'message': star_result.get('message', ''),
+        }
+
+        # Step 4: 更新SQLite DB
+        try:
+            db_path = _Path(__file__).resolve().parent.parent / "skill-registry.db"
+            conn = sqlite3.connect(str(db_path))
+            conn.execute("PRAGMA foreign_keys = ON")
+
+            if skill_id is None:
+                row = conn.execute(
+                    "SELECT id FROM skills WHERE slug = ?", (slug,)
+                ).fetchone()
+                skill_id = row[0] if row else None
+
+            if skill_id is None:
+                result['db_update'] = {'error': f'skill {slug} 不在SQLite中, 跳过DB更新'}
+            else:
+                # 如果slug被改名, 更新skills表的slug字段
+                if was_renamed and actual_slug != slug:
+                    check = conn.execute(
+                        "SELECT id FROM skills WHERE slug = ?", (actual_slug,)
+                    ).fetchone()
+                    if check:
+                        conn.execute(
+                            "UPDATE skills SET skillhub_sync_status = 'synced' WHERE id = ?",
+                            (skill_id,))
+                        result['db_update'] = {
+                            'warning': f'新slug {actual_slug} 已存在, 保留原slug {slug}'
+                        }
+                    else:
+                        conn.execute(
+                            "UPDATE skills SET slug = ?, skillhub_sync_status = 'synced' WHERE id = ?",
+                            (actual_slug, skill_id))
+                else:
+                    conn.execute(
+                        "UPDATE skills SET skillhub_sync_status = 'synced' WHERE id = ?",
+                        (skill_id,))
+
+                conn.execute("""
+                    UPDATE platform_uploads SET community_published = 1, platform_slug = ?
+                    WHERE skill_id = ? AND platform = 'skillhub'
+                """, (actual_slug, skill_id))
+                conn.commit()
+                result['db_update'] = {'success': True, 'actual_slug': actual_slug}
+
+            conn.close()
+        except sqlite3.IntegrityError as e:
+            result['db_update'] = {'error': f'DB约束冲突(可能slug重复): {e}'}
+        except Exception as e:
+            result['db_update'] = {'error': f'DB更新异常: {e}'}
+    else:
+        result['warning'] = '社区发布失败, DB未更新community_published, 需手动修复'
+
+    return result
 
 
 def _update_db_community_published(original_slug: str, community_slug: str):
-    """更新本地DB中的社区发布状态"""
+    """更新本地JSON DB中的社区发布状态 (遗留兼容, 新代码应使用post_upload_publish)"""
     try:
         db = load_db()
         if original_slug in db['skills']:

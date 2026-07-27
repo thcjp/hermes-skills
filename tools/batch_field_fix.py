@@ -294,7 +294,14 @@ def batch_reupload(slugs: list, delay: float = 1.5):
 
 
 def generate_approval_js():
-    """生成批量审核通过的浏览器JS脚本"""
+    """[已废弃] 生成批量审核通过的浏览器JS脚本
+
+    请使用: python platform_ops.py batch-approve
+    统一入口直接通过API调用完成审核, 无需浏览器JS中转
+    """
+    print("⚠ 已废弃: 此命令已被 platform_ops.py batch-approve 替代")
+    print("  请使用: python platform_ops.py batch-approve")
+    print("  直接通过API调用完成审核, 无需浏览器JS中转\n")
     js_code = """// SkillHub 批量审核通过脚本 v2
 // 在 https://www.skillhub.cn/admin/skill-reviews 页面控制台执行
 (async function() {
@@ -404,7 +411,18 @@ def check_auth():
 
 
 def publish_org_only():
-    """将org_only skill切换为public对外发布"""
+    """[已废弃] 将org_only skill切换为public对外发布
+
+    请使用: python platform_ops.py batch-republish
+    统一入口: platform_ops.publish_to_community() 处理完整的发布流程
+    (approve → publish_to_community → star → DB更新)
+    """
+    print("⚠ 已废弃: 此命令已被 platform_ops.py batch-republish 替代")
+    print("  请使用: python platform_ops.py batch-republish")
+    print("  统一入口支持: approve → publish_to_community → star → DB更新")
+    print("  且自动处理slug冲突和改名逻辑\n")
+
+    # 向后兼容: 仍可执行, 但建议迁移
     cookies = load_cookies()
     if not cookies:
         print("错误：无认证cookie")
@@ -800,8 +818,8 @@ def main():
         print("  reupload-all-batch 全量DELETE+重传所有skill(带断点续传)")
         print("  reupload-deleted   重新上传被删除的skill")
         print("  reupload-rejected  重新上传38个被拒绝的skill")
-        print("  publish-org-only   4个org_only skill对外发布")
-        print("  gen-approve-js     生成批量审核通过JS脚本")
+        print("  publish-org-only   [已废弃] 请用 platform_ops.py batch-republish")
+        print("  gen-approve-js     [已废弃] 请用 platform_ops.py batch-approve")
         print("  test-metadata-patch <slug>  测试PATCH/PUT非破坏性元数据更新")
         print("  update-metadata-batch       批量非破坏性更新所有skill元数据(Phase 3)")
         return

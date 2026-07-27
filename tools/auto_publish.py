@@ -177,14 +177,30 @@ def auto_flow(slugs, dry_run=False):
             results["already_published"].append(slug)
             continue
 
-        # 已上架, 直接对外发布
+        # 已上架, 调用统一发布流程 (approve → publish_to_community → star → DB)
+        # v2.8修复: 原实现直接标记JSON DB为public_published而不调用API,
+        # 导致2022个skill "看起来已发布但前台不可见"
         if rs in ("published", "approved"):
             if not dry_run:
-                sh["review_status"] = "public_published"
-                sh["public_published"] = True
-                sh["public_published_at"] = NOW
-                sh["last_sync"] = NOW
-            results["success"].append({"slug": slug, "action": "public_published"})
+                try:
+                    from platform_ops import post_upload_publish
+                    pub_result = post_upload_publish(slug)
+                    pub_ok = pub_result.get('community', {}).get('success', False)
+                    if pub_ok:
+                        sh["review_status"] = "public_published"
+                        sh["public_published"] = True
+                        sh["public_published_at"] = NOW
+                        sh["last_sync"] = NOW
+                        results["success"].append({"slug": slug, "action": "public_published"})
+                    else:
+                        err = pub_result.get('community', {}).get('error', 'unknown')
+                        results["failed"].append({"slug": slug, "error": f"发布失败: {err[:80]}"})
+                except ImportError:
+                    results["failed"].append({"slug": slug, "error": "platform_ops不可用"})
+                except Exception as e:
+                    results["failed"].append({"slug": slug, "error": f"发布异常: {str(e)[:80]}"})
+            else:
+                results["success"].append({"slug": slug, "action": "public_published (dry-run)"})
             continue
 
         # 需要上传

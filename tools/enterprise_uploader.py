@@ -381,101 +381,21 @@ def parse_frontmatter(content: str) -> dict:
 
 
 def _post_upload_publish(slug: str) -> dict:
-    """上传成功后的完整发布流程: approve → publish_to_community → star
+    """上传成功后的完整发布流程 (委托到platform_ops.post_upload_publish统一入口)
 
-    根因修复: 之前的upload_skill仅上传skill, 但未调用:
-    1. batch_approve: 导致skill停留在pending状态, 未进入published
-    2. publish_to_community: 导致visibility=org_only, 前台不可见
-    3. star_skill: 导致搜索排名无star加分
-
-    这正是2022个skill "看起来已发布但前台不可见"的根因。
+    统一入口确保所有上传路径(CLI/API/旧流程)使用相同的发布流程:
+    approve → publish_to_community → star → DB更新
 
     Returns:
-        dict with approve_result, community_result, star_result
+        dict with approve, community, star, db_update
     """
-    result = {'approve': {}, 'community': {}, 'star': {}}
     try:
-        from platform_ops import batch_approve, publish_to_community, star_skill
-
-        # Step 1: 审核通过 (pending → published)
-        time.sleep(0.5)  # 等待skill进入pending状态
-        approve_result = batch_approve([slug], delay=0.1)
-        result['approve'] = {
-            'success': approve_result.get('success', False),
-            'approved': slug in approve_result.get('approved', []),
-        }
-
-        # Step 2: 发布到社区 (设置visibility=public, 前台可见)
-        time.sleep(0.3)
-        ptc_result = publish_to_community(slug)
-        result['community'] = ptc_result
-
-        # Step 3: 收藏 (提升搜索排名) + DB更新 — 仅在社区发布成功时执行
-        # C1修复: 使用 publish_to_community 返回的实际 slug (可能已改名)
-        if ptc_result.get('success'):
-            actual_slug = ptc_result.get('slug', slug)  # 改名后的新slug
-            was_renamed = ptc_result.get('original_slug') is not None
-            time.sleep(0.2)
-            star_result = star_skill(actual_slug)  # 使用实际slug, 非原始slug
-            result['star'] = {
-                'success': star_result.get('success', False),
-                'message': star_result.get('message', ''),
-            }
-
-            # Step 4: 更新SQLite DB — 门控在社区发布成功条件下(与version_sync_pipeline一致)
-            # C1修复增强: 添加错误日志, 避免IntegrityError被静默吞掉
-            try:
-                conn = sqlite3.connect(str(DB_PATH))
-                conn.execute("PRAGMA foreign_keys = ON")
-                # 如果slug被改名, 先更新skills表的slug字段
-                if was_renamed and actual_slug != slug:
-                    # 检查新slug是否已存在(避免UNIQUE约束冲突)
-                    check = conn.execute(
-                        "SELECT id FROM skills WHERE slug = ?", (actual_slug,)
-                    ).fetchone()
-                    if check:
-                        # 新slug已存在 — 仅更新sync_status, 不改slug
-                        conn.execute("""
-                            UPDATE skills SET skillhub_sync_status = 'synced'
-                            WHERE slug = ?
-                        """, (slug,))
-                        result['db_warning'] = f'新slug {actual_slug} 已存在, 保留原slug {slug}'
-                    else:
-                        conn.execute("""
-                            UPDATE skills SET slug = ?, skillhub_sync_status = 'synced'
-                            WHERE slug = ?
-                        """, (actual_slug, slug))
-                    # platform_uploads更新
-                    conn.execute("""
-                        UPDATE platform_uploads SET community_published = 1, platform_slug = ?
-                        WHERE skill_id = (SELECT id FROM skills WHERE slug = ?)
-                        AND platform = 'skillhub'
-                    """, (actual_slug, actual_slug if not check else slug))
-                else:
-                    conn.execute("""
-                        UPDATE platform_uploads SET community_published = 1
-                        WHERE skill_id = (SELECT id FROM skills WHERE slug = ?)
-                        AND platform = 'skillhub'
-                    """, (slug,))
-                    conn.execute("""
-                        UPDATE skills SET skillhub_sync_status = 'synced'
-                        WHERE slug = ?
-                    """, (slug,))
-                conn.commit()
-                conn.close()
-            except sqlite3.IntegrityError as e:
-                result['db_error'] = f'DB约束冲突(可能slug重复): {e}'
-            except Exception as e:
-                result['db_error'] = f'DB更新异常: {e}'
-        else:
-            # 社区发布失败时不标记community_published, 避免重蹈"已发布但不可见"的覆辙
-            result['warning'] = '社区发布失败, DB未更新community_published, 需手动修复'
-
+        from platform_ops import post_upload_publish
+        return post_upload_publish(slug)
     except ImportError:
-        result['error'] = 'platform_ops模块不可用,跳过发布流程'
+        return {'error': 'platform_ops模块不可用,跳过发布流程'}
     except Exception as e:
-        result['error'] = f'发布流程异常: {e}'
-    return result
+        return {'error': f'发布流程异常: {e}'}
 
 
 def upload_skill(slug: str, dry_run: bool = False, skip_gate: bool = False,
@@ -559,9 +479,30 @@ def upload_skill(slug: str, dry_run: bool = False, skip_gate: bool = False,
     # 3. 解析frontmatter
     content = skill_md.read_text(encoding='utf-8')
     fm = parse_frontmatter(content)
-    
+
     if not fm.get('slug'):
         return {'success': False, 'slug': slug, 'message': 'frontmatter解析失败'}
+
+    # 3.5 速率限制预检 (v3.0增强: 防止爆发式上传触发平台反垃圾系统)
+    # 根因: 2026-07-24单秒上传1097个skill导致账号被封禁
+    # 复用daily_sync.py的速率限制机制,不创建新的独立实现
+    try:
+        import sys as _sys
+        _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from daily_sync import check_upload_rate_limit, record_upload
+        rate_check = check_upload_rate_limit('skillhub')
+        if not rate_check.get('allowed', True):
+            wait = rate_check.get('wait_seconds', 120)
+            return {
+                'success': False, 'slug': slug,
+                'message': f"速率限制: {rate_check.get('reason', '未知')} (需等待{wait}秒)",
+                'rate_limited': True,
+                'rate_limit_status': rate_check,
+            }
+    except ImportError:
+        pass  # daily_sync不可用时跳过速率限制(向后兼容)
+    except Exception:
+        pass  # 速率限制异常不阻断上传(容错)
     
     # 4. 构建上传payload
     is_paid = gate['is_paid'] or is_paid_skill(fm.get('license', ''), fm.get('edition', ''))
@@ -688,6 +629,11 @@ def upload_skill(slug: str, dry_run: bool = False, skip_gate: bool = False,
     
     try:
         response_data = _send_request(body, headers)
+        # v3.0: 记录上传时间戳用于速率限制 (防止爆发式上传)
+        try:
+            record_upload('skillhub', slug)
+        except Exception:
+            pass  # 记录失败不影响上传结果
         # v2.7: 上传成功后执行完整发布流程(approve→publish_to_community→star)
         publish_result = {}
         if not skip_publish and not dry_run:
