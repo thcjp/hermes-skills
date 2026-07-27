@@ -2,7 +2,7 @@
 
 slug: company-search-tool-free
 name: company-search-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: 企业查询助手(免费版)
 summary: "企业查询免费版，支持公司基本信息、股东、法人、对外投资、工商变更查询.。企业查询助手免费版是面向个人用户的轻量企业信息查询工具。通过内置公用API Key开箱即用，支持查公司基本信息、法人、"
 license: MIT

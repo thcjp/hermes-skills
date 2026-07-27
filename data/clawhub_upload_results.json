@@ -1,53 +1,119 @@
 {
   "success": [
-    "bsession-free",
-    "calendar-skill-free",
-    "calendar-toolkit-free",
-    "cctv-news-free",
-    "cdn-toolkit-free"
+    "brave-search-tool-free",
+    "browser-agent-tool-free",
+    "browser-automation-tool-free",
+    "browser-cli-tool-free",
+    "calendar-skill-tool-free",
+    "cctv-news-tool-free",
+    "chat-agent-free",
+    "cheat-code-free",
+    "china-news-free",
+    "code-analyze-free",
+    "code-delegate-free",
+    "code-dev-v1-free",
+    "code-quality-free",
+    "code-runner-free",
+    "comm-skill-free",
+    "company-search-free",
+    "compress-pdf-free",
+    "content-filter-free",
+    "context-driven-dev-free",
+    "creative-officer-free",
+    "cron-precision-scheduler",
+    "css-free",
+    "css-toolkit-free",
+    "csv-analyzer-free",
+    "csv-free",
+    "csv-handler-free",
+    "ctxly-chat-free",
+    "cybersecurity-engine-free",
+    "daily-news-brief-free",
+    "daily-report-free",
+    "data-format-converter-free",
+    "diagram-tool-free",
+    "dlazy-gen-free",
+    "font-manager-free",
+    "go-to-market-tool-free",
+    "in-depth-research-tool-free",
+    "jinn-node-tool-free",
+    "knowledge-ontology-free",
+    "learn-cog-free",
+    "linear-api-free",
+    "linear-toolkit-free",
+    "liquidity-mgr-free",
+    "llm-assistant-hub-free",
+    "log-sanitizer-free",
+    "logo-brand-identity-free",
+    "logo-design-guide-free",
+    "longmemo-elite-free",
+    "mac-node-snapshot-tool-free",
+    "mac-system-tool-free",
+    "markdown-exporter-free",
+    "markdown-toolkit-free",
+    "market-news-tool-free",
+    "md-export-free",
+    "meeting-join-free",
+    "meeting-note-free",
+    "memo-quickstart-free",
+    "memory-compress-free",
+    "memory-distiller-free",
+    "memory-free",
+    "memory-orchestrator-free",
+    "memory-scan-free",
+    "merge-check-free",
+    "merge-pdf-free",
+    "mermaid-diagram-free",
+    "mindmap-gen-free",
+    "minimalist-design-free",
+    "miniprogram-dev-free",
+    "model-routing-free",
+    "model-switching-free"
   ],
   "failed": [
     {
-      "slug": "agent-browser-clawdbot",
-      "error": "QUALITY_GATE_BLOCKED"
-    },
-    {
-      "slug": "agentvibes-openclaw-skill",
-      "error": "QUALITY_GATE_BLOCKED"
-    },
-    {
-      "slug": "brainz-calendar-tool-free",
+      "slug": "china-news-tool-free",
       "error": "VERSION_EXISTS"
     },
     {
-      "slug": "brave-search-tool-free",
+      "slug": "comm-skill-tool-free",
       "error": "VERSION_EXISTS"
     },
     {
-      "slug": "browser-agent-tool-free",
+      "slug": "company-search-tool-free",
       "error": "VERSION_EXISTS"
     },
     {
-      "slug": "browser-automation-tool-free",
+      "slug": "ctxly-chat-tool-free",
       "error": "VERSION_EXISTS"
     },
     {
-      "slug": "browser-cli-tool-free",
+      "slug": "cybersecurity-engine-tool-free",
       "error": "VERSION_EXISTS"
     },
     {
-      "slug": "calendar-skill-tool-free",
+      "slug": "daily-news-brief-tool-free",
       "error": "VERSION_EXISTS"
     },
     {
-      "slug": "cctv-news-tool-free",
+      "slug": "daily-report-tool-free",
       "error": "VERSION_EXISTS"
     },
     {
-      "slug": "chat-agent-free",
-      "error": "ANTI_HALLUCINATION_BLOCKED"
+      "slug": "liquidity-mgr-tool-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "meeting-note-tool-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "miniprogram-dev-tool-free",
+      "error": "VERSION_EXISTS"
     }
   ],
-  "skipped": [],
-  "date": "2026-07-27T19:47:46.140315"
+  "skipped": [
+    "clawhub-jira-pat-skill"
+  ],
+  "date": "2026-07-27T23:52:46.266504"
 }

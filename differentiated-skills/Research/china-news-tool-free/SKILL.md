@@ -1,7 +1,7 @@
 ---
 slug: china-news-tool-free
 name: china-news-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: 中国新闻聚合(免费版)
 summary: "中国新闻聚合免费版，支持RSS订阅获取主流媒体新闻，智能分类生成简报.。中国新闻聚合助手免费版是面向个人用户的轻量新闻聚合工具。通过RSS订阅模式获取新浪、搜狐、网易等主流媒体内容，智能分类"
 license: MIT

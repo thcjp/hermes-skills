@@ -1,7 +1,7 @@
 ---
 slug: meeting-note-tool-free
 name: meeting-note-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: 会议纪要基础版
 summary: "整理探讨与决策型会议纪要,提取结论、共识、分歧与行动项,支持 Zettelkasten 连接。核心能力: 会议管理领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT

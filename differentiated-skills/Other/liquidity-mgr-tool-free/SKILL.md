@@ -1,7 +1,7 @@
 ---
 slug: liquidity-mgr-tool-free
 name: liquidity-mgr-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: 流动性管理工具
 summary: "面向个人用户的 Uniswap V2/V3/V4 流动性查询与基础管理工具.。面向个人用户的去中心化交易所流动性管理工具."
 license: MIT

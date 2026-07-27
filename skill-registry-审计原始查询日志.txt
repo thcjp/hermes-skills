@@ -1,0 +1,401 @@
+# skill-registry.db 数据质量审计报告
+# 数据库: d:\skills\skill-registry.db
+# 审计时间: 2026-07-27 21:45:07
+# 访问模式: 只读 (mode=ro)
+
+================================================================================
+  0. FTS 关联验证 (skills.id = skills_fts.rowid)
+================================================================================
+  skills 表总行数        : 3495
+  skills_fts 总行数      : 3495
+  按 s.id=f.rowid 关联数  : 3495
+  按 s.slug=f.slug 关联数 : 3495
+  -> 关联方式: s.id = f.rowid (完全匹配,采用此方式)
+
+================================================================================
+  1. 基本信息统计
+================================================================================
+
+----------------------------------------------------------------------
+  1.1 总 skill 数
+----------------------------------------------------------------------
+  总 skill 数: 3495
+
+----------------------------------------------------------------------
+  1.2 按 current_status 分布
+----------------------------------------------------------------------
+  local_only                 1691  (48.38%)
+  deleted_on_skillhub        1655  (47.35%)
+  synced_from_skillhub         96  (2.75%)
+  differentiated               32  (0.92%)
+  deleted                      17  (0.49%)
+  pending_upload                4  (0.11%)
+
+----------------------------------------------------------------------
+  1.3 按 source 分布
+----------------------------------------------------------------------
+  clawhub_differentiated           949  (27.15%)
+  differentiated                   790  (22.60%)
+  clawhub_download                 597  (17.08%)
+  skillhub_sync                    580  (16.60%)
+  clawhub                          298  (8.53%)
+  packaged                         166  (4.75%)
+  opensource_modified               39  (1.12%)
+  finance_differentiate             32  (0.92%)
+  original_creation                 23  (0.66%)
+  clawhub_downloaded                 8  (0.23%)
+  manual                             8  (0.23%)
+  hermes                             3  (0.09%)
+  e2e_test                           1  (0.03%)
+  opensource                         1  (0.03%)
+
+----------------------------------------------------------------------
+  1.4 按 category 分布
+----------------------------------------------------------------------
+  Development                           873  (24.98%)
+  Automation                            538  (15.39%)
+  Other                                 507  (14.51%)
+  Security                              241  (6.90%)
+  Creative                              238  (6.81%)
+  Research                              225  (6.44%)
+  Productivity                          200  (5.72%)
+  Finance                               195  (5.58%)
+  Operations                            182  (5.21%)
+  Knowledge                             108  (3.09%)
+  Agents                                 78  (2.23%)
+  Communication                          49  (1.40%)
+  Lifestyle                              31  (0.89%)
+  Integrations                           30  (0.86%)
+
+================================================================================
+  2. 字段完整性检查
+================================================================================
+
+----------------------------------------------------------------------
+  2.1 skills 表字段空值统计
+----------------------------------------------------------------------
+  检查项                                            数量          占比
+  slug 为空或NULL                                    0       0.00%
+  current_display_name 为空或NULL                    0       0.00%
+  summary 为空或NULL                               146       4.18%  <-- 风险
+  pricing_tier 为空或NULL                            0       0.00%
+  is_paid 为NULL                                   0       0.00%
+  content_hash 为空或NULL                          738      21.12%  <-- 风险
+  current_name 为空或NULL                            0       0.00%
+  category 为空或NULL                                0       0.00%
+  local_path 为空或NULL                              0       0.00%
+
+----------------------------------------------------------------------
+  2.2 description 为空或NULL (来自 skills_fts)
+----------------------------------------------------------------------
+  description 为空或NULL的skill数: 146  (4.18%)  <-- 风险
+  description 非空的skill数      : 3349  (95.82%)
+
+----------------------------------------------------------------------
+  2.3 tags 为空或NULL (来自 skills_fts)
+----------------------------------------------------------------------
+  tags 为空或NULL的skill数: 0  (0.00%)
+
+================================================================================
+  3. 质量风险检查
+================================================================================
+
+----------------------------------------------------------------------
+  3.1 description 包含模板套话的 skill
+----------------------------------------------------------------------
+  检测关键词: 本技能 / 本工具 / 帮助你 / 强大的 / 高效的 / 智能的 / 一键 / 轻松
+    含 "本技能" 的skill数: 0  (0.00%)
+    含 "本工具" 的skill数: 1  (0.03%)
+    含 "帮助你" 的skill数: 2  (0.06%)
+    含 "强大的" 的skill数: 0  (0.00%)
+    含 "高效的" 的skill数: 0  (0.00%)
+    含 "智能的" 的skill数: 0  (0.00%)
+    含 "一键" 的skill数: 30  (0.86%)
+    含 "轻松" 的skill数: 0  (0.00%)
+  >>> 至少命中一个模板套话关键词的 skill 总数: 33  (0.94%)  <-- 高风险(封禁风险)
+
+----------------------------------------------------------------------
+  3.2 description 长度异常 (长度<150 或 >280)
+----------------------------------------------------------------------
+  description 长度 < 150 的 skill 数: 3349  (95.82%)  <-- 风险
+  description 长度 > 280 的 skill 数: 0  (0.00%)
+  description 长度 150~280 (合规)   : 0  (0.00%)
+  description 为空                   : 146  (4.18%)
+
+----------------------------------------------------------------------
+  3.2b description 长度分布直方
+----------------------------------------------------------------------
+  空              146  ##
+  1-50          2169  ###############################
+  51-100        1180  ################
+  101-149          0  
+  150-200          0  
+  201-280          0  
+  281-400          0  
+  401+             0  
+
+----------------------------------------------------------------------
+  3.3 summary 长度 > 100 字符的 skill
+----------------------------------------------------------------------
+  summary 长度 > 100 的 skill 数: 0  (0.00%)
+  summary 为空的 skill 数        : 146  (4.18%)
+  summary 长度合规 (<=100)       : 3349  (95.82%)
+
+----------------------------------------------------------------------
+  3.4 slug 包含程序化后缀 (-v2,-v3,-plus,-max,-elite,-sk,-sk1,-sk2,-sk3)
+----------------------------------------------------------------------
+  检测后缀: -v2 / -v3 / -plus / -max / -elite / -sk / -sk1 / -sk2 / -sk3
+    slug 含 "-v2" 的skill数: 22
+    slug 含 "-v3" 的skill数: 4
+    slug 含 "-plus" 的skill数: 4
+    slug 含 "-max" 的skill数: 3
+    slug 含 "-elite" 的skill数: 3
+    slug 含 "-sk" 的skill数: 649
+    slug 含 "-sk1" 的skill数: 0
+    slug 含 "-sk2" 的skill数: 0
+    slug 含 "-sk3" 的skill数: 0
+  >>> slug 至少含一个程序化后缀的 skill 总数: 677  (19.37%)  <-- 高风险(封禁)
+
+----------------------------------------------------------------------
+  3.5 slug 长度 < 8 字符 (通用词抢占风险)
+----------------------------------------------------------------------
+  slug 长度 < 8 的 skill 数: 140  (4.01%)  <-- 风险
+  示例(最多30条):
+    id=152    slug=ui                   status=local_only
+    id=158    slug=ux                   status=local_only
+    id=191    slug=go                   status=local_only
+    id=251    slug=db                   status=local_only
+    id=444    slug=py                   status=local_only
+    id=76     slug=dns                  status=local_only
+    id=83     slug=gog                  status=local_only
+    id=184    slug=git                  status=local_only
+    id=207    slug=ssl                  status=local_only
+    id=215    slug=web                  status=local_only
+    id=231    slug=api                  status=local_only
+    id=238    slug=can                  status=synced_from_skillhub
+    id=243    slug=csv                  status=local_only
+    id=311    slug=sql                  status=local_only
+    id=321    slug=vue                  status=local_only
+    id=348    slug=pdf                  status=synced_from_skillhub
+    id=377    slug=aws                  status=synced_from_skillhub
+    id=382    slug=k8s                  status=local_only
+    id=395    slug=art                  status=synced_from_skillhub
+    id=406    slug=css                  status=local_only
+    id=412    slug=doc                  status=local_only
+    id=477    slug=xml                  status=local_only
+    id=582    slug=cdn                  status=synced_from_skillhub
+    id=598    slug=vpn                  status=deleted_on_skillhub
+    id=37     slug=cron                 status=local_only
+    id=136    slug=logo                 status=local_only
+    id=175    slug=code                 status=local_only
+    id=228    slug=test                 status=local_only
+    id=275    slug=json                 status=local_only
+    id=363    slug=game                 status=local_only
+
+================================================================================
+  4. 定价一致性检查
+================================================================================
+
+----------------------------------------------------------------------
+  4.1 is_paid=1 但 pricing_tier=L1 (矛盾)
+----------------------------------------------------------------------
+  is_paid=1 且 pricing_tier=L1 的 skill 数: 108  (3.09%)  <-- 矛盾风险
+  示例:
+    id=607    slug=evolution-engine-v2            tier=L1 is_paid=1 model=per_use
+    id=613    slug=memory-distiller-v2            tier=L1 is_paid=1 model=per_use
+    id=614    slug=memory-orchestrator-v2         tier=L1 is_paid=1 model=per_use
+    id=616    slug=multi-agent-dev-v2             tier=L1 is_paid=1 model=per_use
+    id=617    slug=netdisk-sync-pro               tier=L1 is_paid=1 model=per_use
+    id=618    slug=neurocache-pro                 tier=L1 is_paid=1 model=per_use
+    id=620    slug=productivity-boost             tier=L1 is_paid=1 model=per_use
+    id=621    slug=redis-cache-master             tier=L1 is_paid=1 model=per_use
+    id=631    slug=cron-assist                    tier=L1 is_paid=1 model=per_use
+    id=632    slug=cron-guard                     tier=L1 is_paid=1 model=per_use
+    id=634    slug=cron-scheduler-pro             tier=L1 is_paid=1 model=per_use
+    id=642    slug=notes-cli-toolkit              tier=L1 is_paid=1 model=per_use
+    id=644    slug=pcb-design-assistant           tier=L1 is_paid=1 model=per_use
+    id=649    slug=vault-sync-engine              tier=L1 is_paid=1 model=per_use
+    id=660    slug=aws-cloud-inspector            tier=L1 is_paid=1 model=per_use
+    id=662    slug=azure-cloud-inspector          tier=L1 is_paid=1 model=per_use
+    id=676    slug=memory-radar-paid              tier=L1 is_paid=1 model=per_use
+    id=680    slug=quick-context-saver            tier=L1 is_paid=1 model=per_use
+    id=702    slug=excel-ninja                    tier=L1 is_paid=1 model=per_use
+    id=724    slug=cron-scheduler-pro-paid        tier=L1 is_paid=1 model=per_use
+
+----------------------------------------------------------------------
+  4.2 is_paid=0 但 pricing_tier=L3/L4 (矛盾)
+----------------------------------------------------------------------
+  is_paid=0 且 pricing_tier=L3/L4 的 skill 数: 659  (18.86%)  <-- 矛盾风险
+  示例:
+    id=1      slug=admapix                        tier=L3 is_paid=0 model=per_use
+    id=2      slug=ai-agent-helper                tier=L3 is_paid=0 model=per_use
+    id=3      slug=aws-agentcore-langgraph        tier=L3 is_paid=0 model=per_use
+    id=5      slug=azure-infra                    tier=L3 is_paid=0 model=per_use
+    id=13     slug=neosoul-decision-agent         tier=L3 is_paid=0 model=per_use
+    id=14     slug=neural-memory-enhanced         tier=L3 is_paid=0 model=per_use
+    id=25     slug=afrexai-business-automation    tier=L3 is_paid=0 model=per_use
+    id=33     slug=browser-automation-cdp         tier=L3 is_paid=0 model=per_use
+    id=35     slug=cloud-infra-automation         tier=L3 is_paid=0 model=per_use
+    id=44     slug=kyaukyuai-linear-cli           tier=L3 is_paid=0 model=per_use
+    id=52     slug=automation-recipe-pack         tier=L3 is_paid=0 model=per_use
+    id=63     slug=ws-agent-browser               tier=L3 is_paid=0 model=per_use
+    id=64     slug=x-news-daily                   tier=L3 is_paid=0 model=per_use
+    id=65     slug=agent-telegram                 tier=L3 is_paid=0 model=per_use
+    id=66     slug=alephnet-node                  tier=L3 is_paid=0 model=per_use
+    id=74     slug=discord-communities            tier=L3 is_paid=0 model=per_use
+    id=77     slug=email-163-com                  tier=L3 is_paid=0 model=per_use
+    id=78     slug=email-daily-summary            tier=L3 is_paid=0 model=per_use
+    id=79     slug=email-gmail-outlook            tier=L3 is_paid=0 model=per_use
+    id=81     slug=feishu-card                    tier=L3 is_paid=0 model=per_use
+
+----------------------------------------------------------------------
+  4.3 pricing_tier 分布统计
+----------------------------------------------------------------------
+  L1               1147  (32.82%)
+  L2               1089  (31.16%)
+  L3               1018  (29.13%)
+  L4                237  (6.78%)
+  L5                  4  (0.11%)
+
+----------------------------------------------------------------------
+  4.4 is_paid 分布统计
+----------------------------------------------------------------------
+  0 (免费)           2270  (64.95%)
+  1 (付费)           1225  (35.05%)
+
+----------------------------------------------------------------------
+  4.5 is_paid x pricing_tier 交叉表
+----------------------------------------------------------------------
+  is_paid      pricing_tier          数量  占比
+  0            L1                  1039  29.73%
+  0            L2                   572  16.37%
+  0            L3                   659  18.86%  <-- 矛盾
+  1            L1                   108  3.09%  <-- 矛盾
+  1            L2                   517  14.79%
+  1            L3                   359  10.27%
+  1            L4                   237  6.78%
+  1            L5                     4  0.11%
+
+================================================================================
+  5. 重复内容检查
+================================================================================
+
+----------------------------------------------------------------------
+  5.1 相同 content_hash 的 skill 组数
+----------------------------------------------------------------------
+  存在重复 content_hash 的组数(去重后): 788
+  涉及重复 content_hash 的 skill 总行数 : 1576  (45.09%)
+  重复组示例(最多15组):
+  content_hash             数量  current_status列表
+  ff744902136357c3          2  local_only,deleted_on_skillhub
+  ff69ce5f28d4b982          2  local_only,deleted_on_skillhub
+  ff600fe843818b35          2  local_only,deleted_on_skillhub
+  ff03a45902f18f6d          2  local_only,deleted_on_skillhub
+  fedd272cdd1468ec          2  local_only,local_only
+  fec18d4be4ec08d5          2  deleted_on_skillhub,deleted_on_skillhub
+  fe739be090be2e5f          2  deleted_on_skillhub,deleted_on_skillhub
+  fe18ef439d017294          2  local_only,deleted_on_skillhub
+  fe13fa14554a0b87          2  local_only,deleted_on_skillhub
+  fd80fb00dbeb0228          2  local_only,deleted_on_skillhub
+  fd38af9df8eb66cb          2  local_only,deleted_on_skillhub
+  fd375be7803b1aaa          2  local_only,deleted_on_skillhub
+  fce5f7262ee3387b          2  local_only,deleted_on_skillhub
+  fafa85d642cc15a5          2  local_only,deleted_on_skillhub
+  faa3c4e88e8e7ae5          2  local_only,deleted_on_skillhub
+
+----------------------------------------------------------------------
+  5.1b pending 状态的 content_hash 重复 (不应有)
+----------------------------------------------------------------------
+  pending/draft 状态下重复 content_hash 的组数: 0
+
+----------------------------------------------------------------------
+  5.2 相同 slug 的 skill 数量
+----------------------------------------------------------------------
+  存在重复 slug 的组数: 0 (符合UNIQUE约束)
+
+----------------------------------------------------------------------
+  5.3 相同 current_display_name 重复检查 (营销命名冲突)
+----------------------------------------------------------------------
+  重复 display_name 组数: 1098
+  涉及重复 display_name 的 skill 行数: 2286  (65.41%)
+  重复组示例(最多15):
+    "Notion"  -> 9 个
+    "Calendar"  -> 8 个
+    "Figma"  -> 7 个
+    "Skill"  -> 6 个
+    "Kubernetes"  -> 6 个
+    "Linear"  -> 5 个
+    "进化引擎"  -> 4 个
+    "图表工具专业版"  -> 4 个
+    "Research"  -> 4 个
+    "Reminder"  -> 4 个
+    "Pdf"  -> 4 个
+    "JavaScript"  -> 4 个
+    "GitHub"  -> 4 个
+    "Frontend Design"  -> 4 个
+    "Discord"  -> 4 个
+
+================================================================================
+  6. 上传状态风险检查
+================================================================================
+
+----------------------------------------------------------------------
+  6.1 skillhub_sync_status 分布
+----------------------------------------------------------------------
+  pending_upload             1352  (38.68%)
+  synced                     1121  (32.07%)
+  not_applicable              878  (25.12%)
+  deleted                     144  (4.12%)
+  >>> skillhub_sync_status=pending_upload 的 skill 数: 1352  (38.68%)
+
+----------------------------------------------------------------------
+  6.2 clawhub_sync_status 分布
+----------------------------------------------------------------------
+  not_applicable             2507  (71.73%)
+  synced                      781  (22.35%)
+  pending                     207  (5.92%)
+  >>> clawhub_sync_status=pending 的 skill 数: 207  (5.92%)
+
+----------------------------------------------------------------------
+  6.3 其它平台同步状态分布
+----------------------------------------------------------------------
+  -- github_public_sync_status --
+    synced                     3411  (97.60%)
+    not_applicable               84  (2.40%)
+  -- github_private_sync_status --
+    synced                     2898  (82.92%)
+    not_applicable              597  (17.08%)
+
+----------------------------------------------------------------------
+  6.4 pending skill 质量信息完整性检查
+----------------------------------------------------------------------
+  处于 pending 上传状态的 skill 总数: 1439
+  其中 description 为空          : 54  (3.75%)
+  其中 summary 为空              : 54  (3.75%)
+  其中 pricing_tier 为空         : 0  (0.00%)
+  其中 is_paid 为NULL            : 0  (0.00%)
+  其中 content_hash 为空         : 634  (44.06%)
+  其中 tags 为空                 : 0  (0.00%)
+  其中 description 含模板套话    : 11  (0.76%)  <-- 封禁风险
+  其中定价矛盾 (is_paid/tier不一致): 224  (15.57%)  <-- 风险
+  >>> 完全合规(字段齐全+长度合规+无套话+无矛盾)的 pending skill: 0  (0.00%)
+  >>> 待修复后再上传的 pending skill: 1439  (100.00%)  <-- 需处理
+
+================================================================================
+  7. 封禁风险综合汇总 (Top 风险项)
+================================================================================
+  [风险1] description 含模板套话的 skill      : 33  (0.94%)
+  [风险2] slug 含程序化后缀的 skill           : 677  (19.37%)
+  [风险3] slug 长度<8 (通用词抢占) 的 skill   : 140  (4.01%)
+  [风险4] description 长度<150 的 skill       : 3349  (95.82%)
+  [风险5] description 长度>280 的 skill       : 0  (0.00%)
+  [风险6] summary 长度>100 的 skill           : 0  (0.00%)
+  [风险7] is_paid/tier 定价矛盾 的 skill      : 767  (21.95%)
+  [风险8] 重复 content_hash 组数              : 788
+  [风险9] pending 状态 content_hash 重复组数  : 0
+  [风险10] description 为空的 skill           : 146  (4.18%)
+  [风险11] pending skill 中含模板套话         : 11
+
+================================================================================
+  审计完成。报告已生成。
+================================================================================

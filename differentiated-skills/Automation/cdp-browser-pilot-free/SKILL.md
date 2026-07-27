@@ -4,7 +4,7 @@ slug: cdp-browser-pilot-free
 name: cdp-browser-pilot-free
 version: 1.0.1
 displayName: CDP浏览器领航(免费版)
-summary: "通过已登录的Edge/Chrome浏览器执行JS渲染页面自动化，含导航、点击、截图与数据提取.。CDP浏览器领航免费版帮助你通过已登录的Edge或Chrome浏览器，利用Chrome Dev"
+summary: "通过已登录的Edge/Chrome浏览器执行JS渲染页面自动化，含导航、点击、截图与数据提取.。CDP浏览器领航免费版协助通过已登录的Edge或Chrome浏览器，利用Chrome Dev"
 license: MIT
 edition: free
 description: "CDP浏览器领航免费版通过已登录的Edge或Chrome浏览器，利用Chrome DevTools Protocol执行JS渲染页面的自发化操作。解决web_fetch无法处置登录态与JS渲染的痛点，达成导航、点击、截图与基础数据提取。Use. 适用于需要cdp browser pilot相关能力的开发场景,提供结构化的工作流程和配置指引."
@@ -32,7 +32,7 @@ pricing_tier: free
 
 > **通过已登录的Edge/Chrome浏览器执行JS渲染页面自动化。导航、点击、截图、提取，一站式解决。**
 
-很多网站依赖JS渲染或需要登录态，web_fetch只能拿到空壳。本技能通过Chrome DevTools Protocol（CDP）连接你已登录的浏览器，执行真实的页面操作.
+很多网站依赖JS渲染或需要登录态，web_fetch只能拿到空壳。该技能通过Chrome DevTools Protocol（CDP）连接你已登录的浏览器，执行真实的页面操作.
 ## 适用场景
 
 优先用 `web_fetch`。以下情况才需要CDP自动化：
@@ -215,7 +215,7 @@ if (targetTab) {
 
 **处理**: 解析功能六：标签页管理（tabs）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能六：标签页管理（tabs）的响应数据,包含状态码、结果和日志.
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：通过已登录的、Edge、Chrome、浏览器执行、渲染页面自动化、含导航、截图与数据提取、CDP、浏览器领航免费版、帮助你通过已登录、浏览器、DevTools、Protocol、渲染页面的自动化、web、fetch、无法处理登录态与、渲染的痛点、实现导航、截图与基础数据提、Use、when、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数、据处理等.
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：通过已登录的、Edge、Chrome、浏览器执行、渲染页面自动化、含导航、截图与数据提取、CDP、浏览器领航免费版、协助通过已登录、浏览器、DevTools、Protocol、渲染页面的自动化、web、fetch、无法处理登录态与、渲染的痛点、实现导航、截图与基础数据提、Use、when、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数、据处理等.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
@@ -337,10 +337,10 @@ web_fetch只能获取静态HTML，无法处理JS渲染的页面（如动态加�
 | LLM API | API | 必需 | 由Agent平台内置LLM提供 |
 | Edge/Chrome | 浏览器 | 必需 | 系统自带或从官网安装 |
 | Node.js | 运行时 | 必需 | 从nodejs.org安装（用于CDP模块） |
-| cdp-automation.js | 模块 | 必需 | 随本技能提供 |
+| cdp-automation.js | 模块 | 必需 | 随该技能提供 |
 
 ### API Key 配置
-- 本技能基于Markdown指令，无需额外API Key
+- 该技能基于Markdown指令，无需额外API Key
 - 浏览器登录态由用户手动维护
 
 ### 可用性分类
@@ -352,7 +352,7 @@ web_fetch只能获取静态HTML，无法处理JS渲染的页面（如动态加�
 
 ## License与版权声明
 
-本技能基于原始开源作品改进，保留原始版权声明：
+该技能基于原始开源作品改进，保留原始版权声明：
 
 - 原始作品：Browser Automation (CDP)（browser-automation-cdp）
 - 原始license：MIT-0

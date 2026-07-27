@@ -3,8 +3,8 @@ slug: pptx-presentation-pro
 name: pptx-presentation-pro
 version: 1.0.1
 displayName: 演示文稿大师
-summary: "从大纲到专业PPT一键生成,布局模板图表母版全流程演示文稿处理。演示文稿大师全面处理PowerPoint演示文稿,核心功能包括从大纲生成PPT、读取编辑现有PPT、模板与母版应用、数据图表可"
-summary_zh: "从大纲到专业PPT一键生成,布局模板图表母版全流程演示文稿处理。演示文稿大师全面处理PowerPoint演示文稿,核心功能包括从大纲生成PPT、读取编辑现有PPT、模板与母版应用、数据图表可"
+summary: "从大纲到专业PPT快速生成,布局模板图表母版全流程演示文稿处理。演示文稿大师全面处理PowerPoint演示文稿,核心功能包括从大纲生成PPT、读取编辑现有PPT、模板与母版应用、数据图表可"
+summary_zh: "从大纲到专业PPT快速生成,布局模板图表母版全流程演示文稿处理。演示文稿大师全面处理PowerPoint演示文稿,核心功能包括从大纲生成PPT、读取编辑现有PPT、模板与母版应用、数据图表可"
 license: Proprietary
 description: 演示文稿大师全面处理PowerPoint演示文稿,核心功能包括从大纲生成PPT、读取编辑现有PPT、模板与母版应用、数据图表可视化、批量参数化生成。适用于商业汇报、产品发布、教学课件、培训演示、会议演讲场景。触发关键词:PPT、PowerPoint、演示文稿、幻灯片、pptx、演讲、汇报、课件、母版、幻灯片模板。
 tags:
@@ -30,7 +30,7 @@ category: "Automation"
 ## 快速开始
 
 1. 确认运行环境满足依赖说明中的要求
-2. 在AI Agent对话中调用本技能,提供必要的输入参数
+2. 在AI Agent对话中调用该技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
 
 > 详细的输入输出格式请参考下方章节说明。
@@ -46,7 +46,7 @@ category: "Automation"
 | 批量生成 | 参数化模板+多组数据 | 批量生成的系列演示文稿 |
 
 **不适用于**:
-- 复杂动画演示(如Keynote级动画效果,本工具动画有限)
+- 复杂动画演示(如Keynote级动画效果,该工具动画有限)
 - 交互式演示(如包含超链接跳转的复杂交互课件)
 - 视频编辑合成(请用remotion-video-studio)
 - 3D模型展示(PPT对3D支持有限)

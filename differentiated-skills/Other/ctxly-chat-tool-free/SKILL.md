@@ -1,7 +1,7 @@
 ---
 slug: ctxly-chat-tool-free
 name: ctxly-chat-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: 匿名聊天(免费版)
 summary: "面向 AI Agent,提供核心能力"
 license: "MIT"

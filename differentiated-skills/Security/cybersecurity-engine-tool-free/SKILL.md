@@ -1,7 +1,7 @@
 ---
 slug: cybersecurity-engine-tool-free
 name: cybersecurity-engine-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: 网络安全评估引擎免费版
 summary: 轻量级安全评估与威胁建模工具,提供安全态势检查、OWASP基础审计与漏洞管理,适合个人开发者快速安全自查.
 license: MIT

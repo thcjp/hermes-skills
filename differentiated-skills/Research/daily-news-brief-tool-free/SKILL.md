@@ -1,7 +1,7 @@
 ---
 slug: daily-news-brief-tool-free
 name: daily-news-brief-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: 每日新闻简报(免费版)
 summary: "每日新闻简报免费版，自动搜集国际时事、经济形势、科技发展新闻生成简报.。每日新闻简报助手免费版是面向个人用户的轻量新闻简报生成工具。聚焦"搜集-筛选-生成"三步流程，自动获取国际时事、经济形"
 license: MIT

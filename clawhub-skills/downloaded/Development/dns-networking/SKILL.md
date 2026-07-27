@@ -3,7 +3,7 @@ slug: dns-networking
 name: dns-networking
 version: "1.0.0"
 displayName: DNS & Networking
-summary: "调试DNS解析与网络连通,DNS故障/端口测试一键诊断(社区下载版)"
+summary: "调试DNS解析与网络连通,DNS故障/端口测试快速诊断(社区下载版)"
   failures, testing por...
 license: MIT
 description: |-

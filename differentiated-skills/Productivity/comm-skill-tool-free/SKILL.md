@@ -1,7 +1,7 @@
 ---
 slug: comm-skill-tool-free
 name: comm-skill-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: 沟通助手基础版
 summary: "帮助撰写情境感知的共情消息,综合对话历史与情感线索生成回复草稿。核心能力: 沟通协作领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT

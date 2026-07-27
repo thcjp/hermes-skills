@@ -3,7 +3,7 @@ slug: vue-component-generator
 name: vue-component-generator
 version: "1.0.0"
 displayName: Vue Component Genera
-summary: 生成 Vue 3 组件模板，支持 Composition API、Options API、TypeScript、SFC 单文件组件，一键生成完整
+summary: 生成 Vue 3 组件模板，支持 Composition API、Options API、TypeScript、SFC 单文件组件，快速生成完整
   Vue 组件代码。
 license: MIT
 description: |-
@@ -25,7 +25,7 @@ suggested_price: 29.9
 
 ## 功能
 
-* ⚡ 一键生成组件
+* ⚡ 快速生成组件
 * 📝 支持 TypeScript
 * 🎯 Composition API / Options API
 * 🎨 SCSS 样式支持
@@ -147,7 +147,7 @@ vue-component-generator Modal --api composition --scss
 
 ## 核心能力
 
-* ⚡ 一键生成组件
+* ⚡ 快速生成组件
 * 📝 支持 TypeScript
 * 🎯 Composition API / Options API
 * 🎨 SCSS 样式支持
