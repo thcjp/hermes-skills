@@ -1,20 +1,20 @@
 {
-  "validated_at": "2026-07-28T04:25:44.037860",
+  "validated_at": "2026-07-28T04:44:34.332392",
   "total_validated": 30,
   "pass_count": 30,
   "fail_count": 0,
   "tier_distribution": {
-    "L1": 11,
-    "L2": 2,
-    "L3": 8,
     "L4": 5,
-    "L5": 4
+    "L3": 9,
+    "L1": 10,
+    "L5": 4,
+    "L2": 2
   },
   "price_range_distribution": {
-    "9.9-29.9": 10,
+    "free": 10,
+    "9.9-29.9": 11,
     "30-99": 0,
-    "100-199": 9,
-    "free": 11
+    "100-199": 9
   },
   "all_pass": true,
   "results": [
@@ -43,7 +43,7 @@
       "price": null,
       "tier": "L1",
       "is_paid": 0,
-      "quality_score": 4.5,
+      "quality_score": 4.3,
       "workflow_state": "quality_passed",
       "issues": [],
       "passed": true
@@ -53,16 +53,6 @@
       "price": 99.9,
       "tier": "L4",
       "is_paid": 1,
-      "quality_score": 4.5,
-      "workflow_state": "quality_passed",
-      "issues": [],
-      "passed": true
-    },
-    {
-      "slug": "ai-report-free",
-      "price": null,
-      "tier": "L1",
-      "is_paid": 0,
       "quality_score": 4.5,
       "workflow_state": "quality_passed",
       "issues": [],
@@ -83,16 +73,6 @@
       "price": 99.9,
       "tier": "L4",
       "is_paid": 1,
-      "quality_score": 4.5,
-      "workflow_state": "quality_passed",
-      "issues": [],
-      "passed": true
-    },
-    {
-      "slug": "backtest-free",
-      "price": null,
-      "tier": "L1",
-      "is_paid": 0,
       "quality_score": 4.5,
       "workflow_state": "quality_passed",
       "issues": [],
@@ -123,7 +103,7 @@
       "price": null,
       "tier": "L1",
       "is_paid": 0,
-      "quality_score": 4.5,
+      "quality_score": 4.0,
       "workflow_state": "quality_passed",
       "issues": [],
       "passed": true
@@ -153,7 +133,7 @@
       "price": null,
       "tier": "L1",
       "is_paid": 0,
-      "quality_score": 4.5,
+      "quality_score": 4.0,
       "workflow_state": "quality_passed",
       "issues": [],
       "passed": true
@@ -193,7 +173,7 @@
       "price": null,
       "tier": "L1",
       "is_paid": 0,
-      "quality_score": 4.5,
+      "quality_score": 4.4,
       "workflow_state": "quality_passed",
       "issues": [],
       "passed": true
@@ -213,7 +193,7 @@
       "price": null,
       "tier": "L1",
       "is_paid": 0,
-      "quality_score": 4.5,
+      "quality_score": 4.3,
       "workflow_state": "quality_passed",
       "issues": [],
       "passed": true
@@ -233,7 +213,7 @@
       "price": null,
       "tier": "L1",
       "is_paid": 0,
-      "quality_score": 4.5,
+      "quality_score": 4.0,
       "workflow_state": "quality_passed",
       "issues": [],
       "passed": true
@@ -263,7 +243,7 @@
       "price": null,
       "tier": "L1",
       "is_paid": 0,
-      "quality_score": 4.5,
+      "quality_score": 4.2,
       "workflow_state": "quality_passed",
       "issues": [],
       "passed": true
@@ -299,6 +279,26 @@
       "passed": true
     },
     {
+      "slug": "valuation-model",
+      "price": 29.9,
+      "tier": "L3",
+      "is_paid": 1,
+      "quality_score": 4.3,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
+      "slug": "valuation-model-free",
+      "price": null,
+      "tier": "L1",
+      "is_paid": 0,
+      "quality_score": 4.2,
+      "workflow_state": "quality_passed",
+      "issues": [],
+      "passed": true
+    },
+    {
       "slug": "vegas-tunnel",
       "price": 29.9,
       "tier": "L3",
@@ -313,7 +313,7 @@
       "price": null,
       "tier": "L1",
       "is_paid": 0,
-      "quality_score": 4.5,
+      "quality_score": 4.0,
       "workflow_state": "quality_passed",
       "issues": [],
       "passed": true
