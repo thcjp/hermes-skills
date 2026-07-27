@@ -1130,6 +1130,25 @@ def sync_skill_to_all_platforms(slug: str, skip_github: bool = False,
         if free_status == 'success':
             print(f"  ✓ SkillHub同步成功")
 
+            # 8.4 审核通过 (pending → published) — v2.7修复: 之前缺少此步骤
+            # 根因: upload_skill仅上传skill, 但未调用approve, 导致skill停留在pending
+            print(f"  [5.4/7] 审核通过...")
+            try:
+                from platform_ops import batch_approve
+                approve_result = batch_approve([slug], delay=0.1)
+                result['phases']['batch_approve'] = {
+                    'success': approve_result.get('success', False),
+                    'approved': slug in approve_result.get('approved', []),
+                }
+                if slug in approve_result.get('approved', []):
+                    print(f"  ✓ 审核通过 (pending → published)")
+                else:
+                    # approve可能因skill已在published状态而失败, 继续尝试publish
+                    print(f"  ⚠ 审核未通过(可能已published), 继续发布流程...")
+            except ImportError:
+                print(f"  ⚠ platform_ops模块不可用,跳过审核")
+                result['phases']['batch_approve'] = {'status': 'skipped', 'reason': 'module_unavailable'}
+
             # 8.5 发布到社区 (publish-to-community, 设置visibility=public)
             # 修复企业页可见性问题: published状态但visibility非public导致前台不可见
             print(f"  [5.5/7] 发布到社区...")

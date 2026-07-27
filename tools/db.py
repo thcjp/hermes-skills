@@ -1370,39 +1370,36 @@ def backfill_sync_status():
     """)
     gh_public_synced_from_local = c.rowcount
 
-    # ====== 阶段5: SkillHub消缺 — packaged-skills/skillhub/目录的skill已上传 ======
-    # V58-V59完成1920/1920批量重传(100%)，packaged-skills/skillhub/目录的skill
-    # 都已通过enterprise_uploader上传到SkillHub
+    # ====== 阶段5: SkillHub消缺 — 仅基于实际platform_uploads记录标记 (C3修复) ======
+    # 之前基于目录路径(local_path LIKE '%packaged-skills%skillhub%')乐观假设已上传,
+    # 导致912个无实际上传记录的skill被标记为synced, 扩大了check_banned_skills的误判范围。
+    # 修复: 仅当platform_uploads表中存在success记录时才标记为synced
     c.execute("""
         UPDATE skills SET skillhub_sync_status = 'synced'
         WHERE skillhub_sync_status = 'unknown'
-        AND local_path LIKE '%packaged-skills%skillhub%'
+        AND EXISTS (
+            SELECT 1 FROM platform_uploads
+            WHERE skill_id = skills.id
+            AND platform = 'skillhub'
+            AND upload_status = 'success'
+        )
     """)
-    sh_synced_from_local = c.rowcount
+    sh_synced_from_uploads = c.rowcount
 
-    # enterprise-upload/目录的skill也已上传到SkillHub (付费版)
+    # 未有上传记录但本地文件存在的, 标记为pending_upload (需上传)
     c.execute("""
-        UPDATE skills SET skillhub_sync_status = 'synced'
+        UPDATE skills SET skillhub_sync_status = 'pending_upload'
         WHERE skillhub_sync_status = 'unknown'
-        AND local_path LIKE '%enterprise-upload%'
+        AND local_path IS NOT NULL AND local_path != ''
+        AND (skill_type != 'source' OR skill_type IS NULL)
+        AND NOT EXISTS (
+            SELECT 1 FROM platform_uploads
+            WHERE skill_id = skills.id
+            AND platform = 'skillhub'
+            AND upload_status = 'success'
+        )
     """)
-    sh_synced_from_enterprise = c.rowcount
-
-    # differentiated-skills/目录的skill也已上传 (差异化后的skill)
-    c.execute("""
-        UPDATE skills SET skillhub_sync_status = 'synced'
-        WHERE skillhub_sync_status = 'unknown'
-        AND local_path LIKE '%differentiated-skills%'
-    """)
-    sh_synced_from_diff = c.rowcount
-
-    # opensource-skills/目录的skill也已上传
-    c.execute("""
-        UPDATE skills SET skillhub_sync_status = 'synced'
-        WHERE skillhub_sync_status = 'unknown'
-        AND local_path LIKE '%opensource-skills%'
-    """)
-    sh_synced_from_opensource = c.rowcount
+    sh_pending_count = c.rowcount
 
     # ====== 阶段6: ClawHub消缺 — 未上传的free skill标记为pending ======
     # ClawHub只上传free skill，未上传的标记为pending(待上传)

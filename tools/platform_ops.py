@@ -986,6 +986,7 @@ def batch_approve(slugs: list = None, delay: float = 0.3) -> dict:
             return {'success': True, 'approved': 0, 'message': '无pending skill'}
         
         # 分页获取所有pending slug
+        # H2修复: reviewStatus=pending API过滤器可能不生效, 需客户端二次过滤
         slugs = []
         pages = (total // 100) + 1
         for page in range(1, pages + 1):
@@ -995,10 +996,15 @@ def batch_approve(slugs: list = None, delay: float = 0.3) -> dict:
                 break
             for sk in data.get('skills', []):
                 slug = sk.get('slug', '')
-                if slug:
+                # 客户端二次过滤: 仅保留reviewStatus确实为pending的skill
+                rs = sk.get('reviewStatus', sk.get('review_status', ''))
+                if slug and rs == 'pending':
                     slugs.append(slug)
+                elif slug and rs != 'pending':
+                    # API过滤器未生效, 返回了非pending的skill, 跳过
+                    pass
             if page % 5 == 0:
-                print(f"  已扫描 {page}/{pages} 页, 收集 {len(slugs)} 个")
+                print(f"  已扫描 {page}/{pages} 页, 收集 {len(slugs)} 个pending")
     
     if not slugs:
         return {'success': True, 'approved': 0, 'message': '无pending skill'}
@@ -1208,8 +1214,17 @@ _ADMIN_PUBLISHER_ID = 742  # SkillHub发布者Profile ID
 def publish_to_community(slug: str) -> dict:
     """将已上架skill发布到社区 (设置visibility=public)
     
-    API: POST /orgs/{ORG_ID}/admin/skills/{slug}/publish-to-community
-    复用auto_publish.py的社区发布逻辑, 但通过Python直接调用(无需浏览器JS)
+    完整流程(v2.3增强):
+      1. 先尝试直接publish-to-community
+      2. 如果409 slug_conflict:
+         a. unpublish-from-community (取消已有对外发布)
+         b. 依次尝试rename-slug到 xxx-sk, xxx-sk1, xxx-sk2
+         c. rename成功后publish-to-community
+    
+    API:
+      - POST /orgs/{ORG_ID}/admin/skills/{slug}/publish-to-community
+      - POST /orgs/{ORG_ID}/admin/skills/{slug}/unpublish-from-community
+      - PUT  /orgs/{ORG_ID}/admin/skills/{slug}/rename-slug
     
     参数:
         slug: skill slug
@@ -1221,50 +1236,385 @@ def publish_to_community(slug: str) -> dict:
     if not cookies and not headers:
         return {'success': False, 'slug': slug, 'error': '无认证凭证'}
     
-    url = f"{_API_BASE}/orgs/{_ADMIN_ORG_ID}/admin/skills/{slug}/publish-to-community"
-    body = json.dumps({'publisherProfileId': _ADMIN_PUBLISHER_ID}).encode('utf-8')
     if headers.get('Content-Type') is None:
         headers['Content-Type'] = 'application/json'
+    body = json.dumps({'publisherProfileId': _ADMIN_PUBLISHER_ID}).encode('utf-8')
     
+    # Step 1: 直接尝试publish
+    url = f"{_API_BASE}/orgs/{_ADMIN_ORG_ID}/admin/skills/{slug}/publish-to-community"
     success, result = _api_request('POST', url, headers, data=body, timeout=30)
     
     if success:
-        # 同步到本地DB
+        _update_db_community_published(slug, slug)
+        return {'success': True, 'slug': slug, 'message': '已发布到社区(visibility=public)'}
+    
+    # Step 2: slug冲突 → unpublish + rename + publish
+    err_str = str(result.get('error', ''))
+    if '409' not in err_str and 'slug' not in err_str.lower() and 'conflict' not in err_str.lower():
+        return {'success': False, 'slug': slug, 'error': err_str}
+    
+    # 2a: unpublish-from-community
+    unpub_url = f"{_API_BASE}/orgs/{_ADMIN_ORG_ID}/admin/skills/{slug}/unpublish-from-community"
+    _api_request('POST', unpub_url, headers, data=b'{}', timeout=15)
+    time.sleep(0.2)
+    
+    # 2b: 尝试多个后缀 (C2修复: 清理已有-sk*后缀避免畸形slug如 foo-sk-sk1)
+    # 先从输入slug中剥离已有的-sk/-sk1/-sk2/-sk3后缀, 得到干净的基础slug
+    base_slug = slug
+    for existing_suffix in ['-sk3', '-sk2', '-sk1', '-sk']:
+        if base_slug.endswith(existing_suffix) and len(base_slug) > len(existing_suffix):
+            base_slug = base_slug[:-len(existing_suffix)]
+            break
+
+    current_slug = slug
+    for suffix in ['-sk', '-sk1', '-sk2', '-sk3']:
+        if current_slug.endswith(suffix):
+            continue
+        new_slug = base_slug + suffix  # 基于清理后的base_slug生成, 避免畸形叠加
+        rename_url = f"{_API_BASE}/orgs/{_ADMIN_ORG_ID}/admin/skills/{current_slug}/rename-slug"
+        rename_body = json.dumps({'newSlug': new_slug}).encode('utf-8')
+        rename_success, rename_result = _api_request('PUT', rename_url, headers, data=rename_body, timeout=15)
+        
+        if rename_success:
+            current_slug = new_slug  # 更新current_slug
+            time.sleep(0.2)
+            retry_url = f"{_API_BASE}/orgs/{_ADMIN_ORG_ID}/admin/skills/{new_slug}/publish-to-community"
+            retry_success, retry_result = _api_request('POST', retry_url, headers, data=body, timeout=30)
+            if retry_success:
+                _update_db_community_published(slug, new_slug)
+                return {'success': True, 'slug': new_slug, 'original_slug': slug,
+                        'message': f'slug冲突,已改名为{new_slug}并发布到社区'}
+            # publish失败,继续尝试下一个后缀(此时current_slug=new_slug)
+        # rename失败(409=已占用),继续尝试下一个后缀
+    
+    return {'success': False, 'slug': slug, 'error': f'slug冲突且所有后缀(-sk/-sk1/-sk2/-sk3)均被占用: {err_str}'}
+
+
+def _update_db_community_published(original_slug: str, community_slug: str):
+    """更新本地DB中的社区发布状态"""
+    try:
         db = load_db()
-        if slug in db['skills']:
-            sh = db['skills'][slug].setdefault('skillhub', {})
+        if original_slug in db['skills']:
+            sh = db['skills'][original_slug].setdefault('skillhub', {})
             sh['review_status'] = 'public_published'
             sh['public_published'] = True
             sh['public_published_at'] = NOW
             sh['last_sync'] = NOW
-            db['skills'][slug].setdefault('lifecycle', {})['stage'] = 'public_published'
+            if community_slug != original_slug:
+                sh['community_slug'] = community_slug
+            db['skills'][original_slug].setdefault('lifecycle', {})['stage'] = 'public_published'
             save_db(db)
-        return {'success': True, 'slug': slug, 'message': '已发布到社区(visibility=public)'}
-    else:
-        # slug冲突时自动追加-sk后缀重试
-        err_str = str(result.get('error', ''))
-        if '409' in err_str or 'slug' in err_str.lower() or 'conflict' in err_str.lower():
-            new_slug = slug + '-sk'
-            rename_url = f"{_API_BASE}/orgs/{_ADMIN_ORG_ID}/admin/skills/{slug}/rename-slug"
-            rename_body = json.dumps({'newSlug': new_slug}).encode('utf-8')
-            rename_success, rename_result = _api_request('PUT', rename_url, headers, data=rename_body)
-            if rename_success:
-                retry_url = f"{_API_BASE}/orgs/{_ADMIN_ORG_ID}/admin/skills/{new_slug}/publish-to-community"
-                retry_success, retry_result = _api_request('POST', retry_url, headers, data=body)
-                if retry_success:
-                    db = load_db()
-                    if slug in db['skills']:
-                        sh = db['skills'][slug].setdefault('skillhub', {})
-                        sh['review_status'] = 'public_published'
-                        sh['public_published'] = True
-                        sh['community_slug'] = new_slug
-                        sh['public_published_at'] = NOW
-                        sh['last_sync'] = NOW
-                        save_db(db)
-                    return {'success': True, 'slug': new_slug, 'original_slug': slug,
-                            'message': f'slug冲突,已改名为{new_slug}并发布到社区'}
-            return {'success': False, 'slug': slug, 'error': f'slug冲突且重命名失败: {err_str}'}
-        return {'success': False, 'slug': slug, 'error': err_str}
+    except Exception:
+        pass
+
+def batch_republish_to_community(limit: int = 0, delay: float = 0.5) -> dict:
+    """批量重新发布到社区 — 修复"已发布但前台不可见"的2022个skill
+
+    根因: 之前的upload_skill未调用publish_to_community, 导致visibility=org_only
+    此函数扫描admin API中所有skill, 对非public的逐一重新发布
+
+    流程:
+      1. 分页获取所有admin skill
+      2. 筛选 visibility != 'public' 的skill
+      3. 对每个调用 publish_to_community(slug)
+      4. 记录结果到JSON + SQLite
+
+    参数:
+        limit: 最多处理多少个 (0=全部)
+        delay: 每个skill之间的延迟(秒)
+
+    返回:
+        {'total': N, 'processed': N, 'success': N, 'failed': N, 'already_public': N}
+    """
+    cookies, headers = _load_api_auth()
+    if not cookies and not headers:
+        return {'success': False, 'error': '无认证凭证'}
+
+    if headers.get('Content-Type') is None:
+        headers['Content-Type'] = 'application/json'
+
+    # 1. 分页获取所有skill
+    all_skills = []
+    page = 1
+    while True:
+        url = f"{_API_BASE}/orgs/{_ADMIN_ORG_ID}/admin/skills?page={page}&pageSize=100"
+        success, data = _api_request('GET', url, headers, timeout=30)
+        if not success:
+            print(f"获取admin skill列表失败: {data.get('error', '')}")
+            break
+        skills = data.get('skills', [])
+        if not skills:
+            break
+        all_skills.extend(skills)
+        total = data.get('total', 0)
+        if len(all_skills) >= total:
+            break
+        if page % 5 == 0:
+            print(f"  已扫描 {page} 页, {len(all_skills)}/{total}")
+        page += 1
+
+    print(f"\n总共获取 {len(all_skills)} 个skill")
+
+    # 2. 筛选非public的skill
+    needs_republish = []
+    already_public = 0
+    for sk in all_skills:
+        visibility = sk.get('visibility', '')
+        if visibility != 'public':
+            needs_republish.append(sk.get('slug', ''))
+        else:
+            already_public += 1
+
+    print(f"需要重新发布: {len(needs_republish)} 个")
+    print(f"已是public: {already_public} 个")
+
+    if limit > 0:
+        needs_republish = needs_republish[:limit]
+        print(f"限制处理: {len(needs_republish)} 个")
+
+    # 3. 批量发布
+    success_count = 0
+    failed_count = 0
+    renamed_count = 0
+    failed_list = []
+
+    for i, slug in enumerate(needs_republish, 1):
+        result = publish_to_community(slug)
+
+        if result.get('success'):
+            success_count += 1
+            if result.get('original_slug'):
+                renamed_count += 1
+                print(f"  [{i}/{len(needs_republish)}] {slug} → {result['slug']} ✓ (改名+发布)")
+            else:
+                print(f"  [{i}/{len(needs_republish)}] {slug} ✓")
+        else:
+            failed_count += 1
+            failed_list.append({'slug': slug, 'error': result.get('error', '')[:100]})
+            err = result.get('error', '')[:60]
+            print(f"  [{i}/{len(needs_republish)}] {slug} ✗ {err}")
+
+        if delay > 0 and i % 10 == 0:
+            time.sleep(delay)
+        elif i % 50 == 0:
+            print(f"  --- 进度: {i}/{len(needs_republish)} ---")
+
+    # 4. 汇总
+    summary = {
+        'total': len(all_skills),
+        'needs_republish': len(needs_republish),
+        'processed': len(needs_republish),
+        'success': success_count,
+        'failed': failed_count,
+        'renamed': renamed_count,
+        'already_public': already_public,
+        'failed_list': failed_list[:20],
+    }
+
+    print(f"\n=== 批量重新发布完成 ===")
+    print(f"总skill数: {summary['total']}")
+    print(f"需要重新发布: {summary['needs_republish']}")
+    print(f"✅ 成功: {success_count}")
+    print(f"✗ 失败: {failed_count}")
+    print(f"改名: {renamed_count}")
+    print(f"已是public: {already_public}")
+
+    return summary
+
+def check_banned_skills(limit: int = 0, use_admin_verify: bool = True) -> dict:
+    """检查被封禁的skill — 通过公开API检测404 + admin API交叉验证
+
+    H1修复: 之前仅凭公开API 404判定封禁, 但404可能意味着:
+      (a) 曾发布到社区后被封禁(真封禁)
+      (b) 仅上传到组织(visibility=org_only), 从未发布到公开社区(非封禁)
+      (c) 仍处于pending审核状态(非封禁)
+      (d) slug已被改名(非封禁, 需用新slug查询)
+
+    修复: 对404结果使用admin API交叉验证:
+      - admin API也404/不存在 → 确认 'banned'(真封禁)
+      - admin API存在但visibility != 'public' → 标记 'never_published'(非封禁)
+      - admin API存在且visibility == 'public' → 标记 'inconsistent'(异常,需人工排查)
+      - admin API存在且reviewStatus == 'pending' → 标记 'pending_review'(非封禁)
+
+    参数:
+        limit: 最多检查多少个 (0=全部)
+        use_admin_verify: 是否使用admin API交叉验证(需要认证)
+
+    返回:
+        {'checked': N, 'accessible': N, 'banned': N, 'never_published': N,
+         'banned_slugs': [...], 'never_published_slugs': [...]}
+    """
+    import sqlite3 as _sqlite3
+
+    DB_PATH = _Path(__file__).resolve().parent.parent / "skill-registry.db"
+
+    # 1. 从DB获取所有synced_from_skillhub的slug
+    conn = _sqlite3.connect(str(DB_PATH))
+    conn.execute("PRAGMA foreign_keys = ON")
+    rows = conn.execute("""
+        SELECT slug FROM skills 
+        WHERE current_status = 'synced_from_skillhub'
+        ORDER BY slug
+    """).fetchall()
+    conn.close()
+
+    all_slugs = [r[0] for r in rows]
+    if limit > 0:
+        all_slugs = all_slugs[:limit]
+
+    print(f"检查 {len(all_slugs)} 个skill的封禁状态...")
+
+    # 加载admin API认证(用于交叉验证)
+    admin_cookies, admin_headers = (None, None)
+    if use_admin_verify:
+        admin_cookies, admin_headers = _load_api_auth()
+        if not admin_cookies and not admin_headers:
+            print("⚠ 无admin认证凭证, 跳过交叉验证(仅使用公开API)")
+            use_admin_verify = False
+
+    # 2. 逐一检查公开API
+    accessible = 0
+    banned = 0
+    never_published = 0
+    pending_review = 0
+    inconsistent = 0
+    banned_slugs = []
+    never_published_slugs = []
+    error_slugs = []
+
+    # 无认证请求头
+    pub_headers = {'Accept': 'application/json', 'User-Agent': 'Mozilla/5.0'}
+
+    for i, slug in enumerate(all_slugs, 1):
+        url = f"{_API_BASE}/skills/{slug}"
+        try:
+            req = Request(url, headers=pub_headers)
+            with urlopen(req, timeout=10) as resp:
+                accessible += 1
+        except HTTPError as e:
+            if e.code == 404:
+                # 公开API返回404 — 需要admin API交叉验证
+                if use_admin_verify:
+                    admin_url = f"{_API_BASE}/orgs/{_ADMIN_ORG_ID}/admin/skills/{slug}"
+                    admin_success, admin_data = _api_request('GET', admin_url, admin_headers, timeout=15)
+
+                    if admin_success:
+                        # admin API能访问 — 非封禁
+                        visibility = admin_data.get('visibility', '')
+                        review_status = admin_data.get('reviewStatus', admin_data.get('review_status', ''))
+
+                        if visibility != 'public':
+                            # 从未发布到社区 — 非封禁
+                            never_published += 1
+                            never_published_slugs.append(slug)
+                            if i % 50 == 0:
+                                print(f"  [{i}/{len(all_slugs)}] {slug} — org_only (未发布到社区)")
+                        elif review_status == 'pending':
+                            # 仍在审核中 — 非封禁
+                            pending_review += 1
+                            if i % 50 == 0:
+                                print(f"  [{i}/{len(all_slugs)}] {slug} — pending (审核中)")
+                        else:
+                            # admin可见且public但公开API 404 — 异常
+                            inconsistent += 1
+                            error_slugs.append({'slug': slug, 'code': 'inconsistent',
+                                                'detail': f'admin: vis={visibility}, rs={review_status}'})
+                            if i % 50 == 0:
+                                print(f"  [{i}/{len(all_slugs)}] {slug} — ⚠ 状态不一致")
+                    else:
+                        # admin API也返回错误 — 确认封禁
+                        banned += 1
+                        banned_slugs.append(slug)
+                        if i % 50 == 0:
+                            print(f"  [{i}/{len(all_slugs)}] {slug} — ❌ 确认封禁(admin验证)")
+                else:
+                    # 无admin验证 — 按原逻辑标记为封禁(可能含误判)
+                    banned += 1
+                    banned_slugs.append(slug)
+                    if i % 50 == 0:
+                        print(f"  [{i}/{len(all_slugs)}] {slug} — ❌ 404 (未验证)")
+            else:
+                error_slugs.append({'slug': slug, 'code': e.code})
+                if i % 100 == 0:
+                    print(f"  [{i}/{len(all_slugs)}] {slug} — HTTP {e.code}")
+        except Exception as e:
+            error_slugs.append({'slug': slug, 'error': str(e)[:50]})
+            if i % 100 == 0:
+                print(f"  [{i}/{len(all_slugs)}] {slug} — Error: {str(e)[:50]}")
+
+        if i % 200 == 0:
+            print(f"  --- 进度: {i}/{len(all_slugs)} | 正常={accessible} 封禁={banned} 未发布={never_published} ---")
+
+    # 3. 更新DB — 仅将确认封禁的skill标记为deleted_on_skillhub
+    if banned_slugs:
+        conn = _sqlite3.connect(str(DB_PATH))
+        conn.execute("PRAGMA foreign_keys = ON")
+        for slug in banned_slugs:
+            conn.execute("""
+                UPDATE skills SET current_status = 'deleted_on_skillhub'
+                WHERE slug = ? AND current_status = 'synced_from_skillhub'
+            """, (slug,))
+        conn.commit()
+        conn.close()
+        print(f"\n已将 {len(banned_slugs)} 个确认封禁skill标记为 deleted_on_skillhub")
+
+    # never_published的skill保持synced_from_skillhub状态(它们没被封禁,只是没发布到社区)
+    # 但需要标记需要重新发布到社区
+    if never_published_slugs:
+        conn = _sqlite3.connect(str(DB_PATH))
+        conn.execute("PRAGMA foreign_keys = ON")
+        for slug in never_published_slugs:
+            conn.execute("""
+                UPDATE platform_uploads SET community_published = 0
+                WHERE skill_id = (SELECT id FROM skills WHERE slug = ?)
+                AND platform = 'skillhub'
+            """, (slug,))
+        conn.commit()
+        conn.close()
+        print(f"已将 {len(never_published_slugs)} 个未发布到社区的skill标记 community_published=0 (需重新发布)")
+
+    # 4. 分析封禁原因
+    print(f"\n=== 封禁原因分析 ===")
+    if banned_slugs:
+        # 检查被封禁skill的共性
+        has_special = [s for s in banned_slugs if '-' in s and len(s.split('-')) > 3]
+        has_suffix = [s for s in banned_slugs if s.endswith(('-sk', '-sk1', '-sk2', '-sk3'))]
+        has_free_pro = [s for s in banned_slugs if s.endswith(('-free', '-pro', '-tool-free', '-tool-pro'))]
+        short_slugs = [s for s in banned_slugs if len(s) <= 8]
+
+        print(f"  封禁总数: {len(banned_slugs)}")
+        print(f"  含-sk后缀(改名): {len(has_suffix)}")
+        print(f"  含-free/-pro后缀(派生): {len(has_free_pro)}")
+        print(f"  slug较短(<=8字符): {len(short_slugs)}")
+        print(f"  多段slug(>3段): {len(has_special)}")
+
+        if has_suffix:
+            print(f"\n  改名skill被封禁 (可能原因: slug冲突改名后又被占用)")
+            for s in has_suffix[:10]:
+                print(f"    - {s}")
+
+    if never_published > 0:
+        print(f"\n  未发布到社区(非封禁): {never_published}")
+        print(f"  → 这些skill需要通过 batch_republish_to_community 重新发布")
+
+    if pending_review > 0:
+        print(f"  仍在审核中(非封禁): {pending_review}")
+
+    if inconsistent > 0:
+        print(f"  ⚠ 状态不一致(需人工排查): {inconsistent}")
+
+    return {
+        'checked': len(all_slugs),
+        'accessible': accessible,
+        'banned': banned,
+        'never_published': never_published,
+        'pending_review': pending_review,
+        'inconsistent': inconsistent,
+        'banned_slugs': banned_slugs,
+        'never_published_slugs': never_published_slugs,
+        'error_slugs': error_slugs[:20],
+    }
+
 
 def auto_publish(slug: str) -> dict:
     """自动发布skill到社区 (统一入口: 查询→审核→社区发布→收藏)
@@ -1708,6 +2058,39 @@ def main():
         print(f"  成功: {r['success']}")
         print(f"  失败: {r['failed']}")
         print(f"  跳过: {r['skipped']}")
+    elif cmd == "batch-republish":
+        # 批量重新发布到社区 — 修复"已发布但前台不可见"的skill
+        limit = 0
+        for arg in sys.argv[2:]:
+            if arg.startswith('--limit='):
+                limit = int(arg.split('=')[1])
+        print(f"批量重新发布到社区 (limit={limit if limit > 0 else '全部'})")
+        r = batch_republish_to_community(limit=limit)
+        if r.get('success') is False:
+            print(f"❌ {r.get('error', '未知错误')}")
+        else:
+            print(f"\n=== 批量重新发布完成 ===")
+            print(f"  总skill数: {r.get('total', 0)}")
+            print(f"  需要重新发布: {r.get('needs_republish', 0)}")
+            print(f"  ✅ 成功: {r.get('success', 0)}")
+            print(f"  ❌ 失败: {r.get('failed', 0)}")
+            print(f"  改名: {r.get('renamed', 0)}")
+            print(f"  已是public: {r.get('already_public', 0)}")
+    elif cmd == "check-banned":
+        # 检查被封禁的skill — 通过公开API检测404
+        limit = 0
+        for arg in sys.argv[2:]:
+            if arg.startswith('--limit='):
+                limit = int(arg.split('=')[1])
+        r = check_banned_skills(limit=limit)
+        print(f"\n=== 封禁检查完成 ===")
+        print(f"  检查总数: {r.get('checked', 0)}")
+        print(f"  正常: {r.get('accessible', 0)}")
+        print(f"  封禁/404: {r.get('banned', 0)}")
+        if r.get('banned_slugs'):
+            print(f"  被封禁列表 (前20):")
+            for s in r['banned_slugs'][:20]:
+                print(f"    - {s}")
     else:
         print(f"未知命令: {cmd}")
         print(__doc__)

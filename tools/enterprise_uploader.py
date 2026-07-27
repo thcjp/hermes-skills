@@ -380,17 +380,106 @@ def parse_frontmatter(content: str) -> dict:
     return fields
 
 
+def _post_upload_publish(slug: str) -> dict:
+    """上传成功后的完整发布流程: approve → publish_to_community → star
+
+    根因修复: 之前的upload_skill仅上传skill, 但未调用:
+    1. batch_approve: 导致skill停留在pending状态, 未进入published
+    2. publish_to_community: 导致visibility=org_only, 前台不可见
+    3. star_skill: 导致搜索排名无star加分
+
+    这正是2022个skill "看起来已发布但前台不可见"的根因。
+
+    Returns:
+        dict with approve_result, community_result, star_result
+    """
+    result = {'approve': {}, 'community': {}, 'star': {}}
+    try:
+        from platform_ops import batch_approve, publish_to_community, star_skill
+
+        # Step 1: 审核通过 (pending → published)
+        time.sleep(0.5)  # 等待skill进入pending状态
+        approve_result = batch_approve([slug], delay=0.1)
+        result['approve'] = {
+            'success': approve_result.get('success', False),
+            'approved': slug in approve_result.get('approved', []),
+        }
+
+        # Step 2: 发布到社区 (设置visibility=public, 前台可见)
+        time.sleep(0.3)
+        ptc_result = publish_to_community(slug)
+        result['community'] = ptc_result
+
+        # Step 3: 收藏 (提升搜索排名) + DB更新 — 仅在社区发布成功时执行
+        # C1修复: 使用 publish_to_community 返回的实际 slug (可能已改名)
+        if ptc_result.get('success'):
+            actual_slug = ptc_result.get('slug', slug)  # 改名后的新slug
+            was_renamed = ptc_result.get('original_slug') is not None
+            time.sleep(0.2)
+            star_result = star_skill(actual_slug)  # 使用实际slug, 非原始slug
+            result['star'] = {
+                'success': star_result.get('success', False),
+                'message': star_result.get('message', ''),
+            }
+
+            # Step 4: 更新SQLite DB — 门控在社区发布成功条件下(与version_sync_pipeline一致)
+            try:
+                conn = sqlite3.connect(str(DB_PATH))
+                conn.execute("PRAGMA foreign_keys = ON")
+                # 如果slug被改名, 先更新skills表的slug字段
+                if was_renamed and actual_slug != slug:
+                    conn.execute("""
+                        UPDATE skills SET slug = ?, skillhub_sync_status = 'synced'
+                        WHERE slug = ?
+                    """, (actual_slug, slug))
+                    conn.execute("""
+                        UPDATE platform_uploads SET community_published = 1, platform_slug = ?
+                        WHERE skill_id = (SELECT id FROM skills WHERE slug = ?)
+                        AND platform = 'skillhub'
+                    """, (actual_slug, actual_slug))
+                else:
+                    conn.execute("""
+                        UPDATE platform_uploads SET community_published = 1
+                        WHERE skill_id = (SELECT id FROM skills WHERE slug = ?)
+                        AND platform = 'skillhub'
+                    """, (slug,))
+                    conn.execute("""
+                        UPDATE skills SET skillhub_sync_status = 'synced'
+                        WHERE slug = ?
+                    """, (slug,))
+                conn.commit()
+                conn.close()
+            except Exception:
+                pass
+        else:
+            # 社区发布失败时不标记community_published, 避免重蹈"已发布但不可见"的覆辙
+            result['warning'] = '社区发布失败, DB未更新community_published, 需手动修复'
+
+    except ImportError:
+        result['error'] = 'platform_ops模块不可用,跳过发布流程'
+    except Exception as e:
+        result['error'] = f'发布流程异常: {e}'
+    return result
+
+
 def upload_skill(slug: str, dry_run: bool = False, skip_gate: bool = False,
-                 skip_marketing: bool = False, skip_security: bool = False) -> dict:
+                 skip_marketing: bool = False, skip_security: bool = False,
+                 skip_publish: bool = False) -> dict:
     """上传单个skill到企业版SkillHub
-    
+
+    v2.7修复: 上传后自动执行完整发布流程(approve→publish_to_community→star)
+    之前的流程仅上传skill, 未调用approve和publish_to_community,
+    导致2022个skill停留在pending/visibility=org_only状态, 前台不可见。
+
     Args:
         slug: skill slug
         dry_run: 仅模拟，不实际上传
         skip_gate: 跳过门控检查（用于已发布skill的元数据修复重传）
         skip_marketing: 跳过营销关卡检查（用于批量场景）
         skip_security: 跳过安全预检（用于紧急场景, v2.6新增）
-    
+        skip_publish: 跳过上传后发布流程(approve+publish_to_community+star)
+                      用于version_sync_pipeline等自行管理发布流程的场景
+
     Returns:
         dict with keys: success, slug, message, response
     """
@@ -583,6 +672,13 @@ def upload_skill(slug: str, dry_run: bool = False, skip_gate: bool = False,
     
     try:
         response_data = _send_request(body, headers)
+        # v2.7: 上传成功后执行完整发布流程(approve→publish_to_community→star)
+        publish_result = {}
+        if not skip_publish and not dry_run:
+            print(f"  [{slug}] 上传成功, 执行发布流程...")
+            publish_result = _post_upload_publish(slug)
+            pub_ok = publish_result.get('community', {}).get('success', False)
+            print(f"  [{slug}] 发布{'✓' if pub_ok else '⚠'}: approve={publish_result.get('approve', {}).get('approved', False)}, community={pub_ok}")
         return {
             'success': True,
             'slug': slug,
@@ -591,6 +687,7 @@ def upload_skill(slug: str, dry_run: bool = False, skip_gate: bool = False,
             'score': gate['total_score'],
             'price': price,
             'is_paid': is_paid,
+            'publish_result': publish_result,
         }
     except HTTPError as e:
         error_body = e.read().decode('utf-8', errors='replace')
@@ -612,6 +709,11 @@ def upload_skill(slug: str, dry_run: bool = False, skip_gate: bool = False,
             retry_headers = _build_headers(retry_boundary, cookies)
             try:
                 response_data = _send_request(retry_body, retry_headers)
+                # v2.7: WAF重试上传成功后同样执行发布流程
+                publish_result = {}
+                if not skip_publish and not dry_run:
+                    print(f"  [{slug}] WAF重试上传成功, 执行发布流程...")
+                    publish_result = _post_upload_publish(slug)
                 return {
                     'success': True,
                     'slug': slug,
@@ -620,6 +722,7 @@ def upload_skill(slug: str, dry_run: bool = False, skip_gate: bool = False,
                     'score': gate['total_score'],
                     'price': price,
                     'is_paid': is_paid,
+                    'publish_result': publish_result,
                 }
             except HTTPError as e2:
                 error_body2 = e2.read().decode('utf-8', errors='replace')
@@ -633,6 +736,11 @@ def upload_skill(slug: str, dry_run: bool = False, skip_gate: bool = False,
                     retry2_headers = _build_headers(retry2_boundary, cookies)
                     try:
                         response_data = _send_request(retry2_body, retry2_headers)
+                        # v2.7: base64重试上传成功后同样执行发布流程
+                        publish_result = {}
+                        if not skip_publish and not dry_run:
+                            print(f"  [{slug}] base64重试上传成功, 执行发布流程...")
+                            publish_result = _post_upload_publish(slug)
                         return {
                             'success': True,
                             'slug': slug,
@@ -641,6 +749,7 @@ def upload_skill(slug: str, dry_run: bool = False, skip_gate: bool = False,
                             'score': gate['total_score'],
                             'price': price,
                             'is_paid': is_paid,
+                            'publish_result': publish_result,
                         }
                     except HTTPError as e3:
                         error_body3 = e3.read().decode('utf-8', errors='replace')
@@ -724,10 +833,12 @@ def cmd_list():
         print(f"认证cookie: 未配置 (请设置环境变量SKILLHUB_SESSION_COOKIE)")
 
 
-def cmd_upload(slug: str, dry_run: bool = False, skip_marketing: bool = False, skip_security: bool = False):
+def cmd_upload(slug: str, dry_run: bool = False, skip_marketing: bool = False, 
+               skip_security: bool = False, skip_publish: bool = False):
     """上传单个skill"""
     print(f"上传 {slug} 到企业版SkillHub (org: {ORG_ID})...")
-    result = upload_skill(slug, dry_run, skip_marketing=skip_marketing, skip_security=skip_security)
+    result = upload_skill(slug, dry_run, skip_marketing=skip_marketing, 
+                          skip_security=skip_security, skip_publish=skip_publish)
     
     if result['success']:
         print(f"  ✓ {result['message']}")
@@ -744,7 +855,8 @@ def cmd_upload(slug: str, dry_run: bool = False, skip_marketing: bool = False, s
     save_log(log_entry)
 
 
-def cmd_upload_all(dry_run: bool = False, delay: float = 2.0, skip_marketing: bool = False, skip_security: bool = False):
+def cmd_upload_all(dry_run: bool = False, delay: float = 2.0, skip_marketing: bool = False, 
+                   skip_security: bool = False, skip_publish: bool = False):
     """上传所有通过门控的skill"""
     print("=" * 80)
     print(f"批量上传到企业版SkillHub (org: {ORG_ID})")
@@ -798,7 +910,8 @@ def cmd_upload_all(dry_run: bool = False, delay: float = 2.0, skip_marketing: bo
         
         print(f"  [{i}/{len(all_slugs)}] {slug} (score={gate['total_score']}, price={gate['price']}元)...", end="")
         
-        result = upload_skill(slug, dry_run, skip_marketing=skip_marketing, skip_security=skip_security)
+        result = upload_skill(slug, dry_run, skip_marketing=skip_marketing, 
+                              skip_security=skip_security, skip_publish=skip_publish)
         
         if result['success']:
             print(f" ✓ {result['message']}")
@@ -862,25 +975,27 @@ def cmd_status():
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
-        print("Usage: python enterprise_uploader.py [list|upload <slug>|upload-all|status] [--skip-marketing] [--skip-security]")
+        print("Usage: python enterprise_uploader.py [list|upload <slug>|upload-all|status] [--skip-marketing] [--skip-security] [--skip-publish]")
         print("  质量门控: 评分门控 + 营销关卡 + 安全预检(critical阻断) + 防幻觉")
+        print("  v2.7: 上传后自动执行 approve→publish_to_community→star (用 --skip-publish 跳过)")
         sys.exit(1)
     
     cmd = sys.argv[1]
     skip_mkt = '--skip-marketing' in sys.argv
     skip_sec = '--skip-security' in sys.argv
+    skip_pub = '--skip-publish' in sys.argv
     
     if cmd == 'list':
         cmd_list()
     elif cmd == 'upload' and len(sys.argv) >= 3:
         dry = '--dry-run' in sys.argv
-        cmd_upload(sys.argv[2], dry, skip_marketing=skip_mkt, skip_security=skip_sec)
+        cmd_upload(sys.argv[2], dry, skip_marketing=skip_mkt, skip_security=skip_sec, skip_publish=skip_pub)
     elif cmd == 'upload-all':
         dry = '--dry-run' in sys.argv
-        cmd_upload_all(dry, skip_marketing=skip_mkt, skip_security=skip_sec)
+        cmd_upload_all(dry, skip_marketing=skip_mkt, skip_security=skip_sec, skip_publish=skip_pub)
     elif cmd == 'status':
         cmd_status()
     else:
         print(f"未知命令: {cmd}")
-        print("Usage: python enterprise_uploader.py [list|upload <slug>|upload-all|status] [--skip-marketing] [--skip-security]")
+        print("Usage: python enterprise_uploader.py [list|upload <slug>|upload-all|status] [--skip-marketing] [--skip-security] [--skip-publish]")
         sys.exit(1)

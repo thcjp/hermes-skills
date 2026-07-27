@@ -586,6 +586,9 @@ def main():
     parser.add_argument('--resume', action='store_true', help='Resume from checkpoint')
     parser.add_argument('--from-db', action='store_true', help='从DB查询待上传skill(替代JSON)')
     parser.add_argument('--skip-quality-gate', action='store_true', help='跳过质量门禁检查(紧急场景)')
+    # v3.0: 支持自定义上传间隔(秒), 默认2秒, daily_sync传入120(2分钟)以防止触发反垃圾系统
+    parser.add_argument('--delay', type=int, default=DELAY_BETWEEN_UPLOADS,
+                        help=f'Delay between uploads in seconds (default: {DELAY_BETWEEN_UPLOADS})')
     args = parser.parse_args()
 
     # Load dir_mapping (optional, fallback to ALT_DIRS search)
@@ -606,6 +609,7 @@ def main():
 
     print(f"Daily limit: {args.limit}")
     print(f"Dry run: {args.dry_run}")
+    print(f"Upload delay: {args.delay}s between uploads")
     print()
 
     # Load checkpoint for resume
@@ -721,7 +725,7 @@ def main():
 
         # Delay between uploads
         if not args.dry_run and i < len(to_upload) and not rate_limited:
-            time.sleep(DELAY_BETWEEN_UPLOADS)
+            time.sleep(args.delay)
 
     # Save final results
     save_json(CHECKPOINT_FILE, {
