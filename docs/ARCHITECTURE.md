@@ -8,8 +8,8 @@
 
 1. **收集** — 每日从 ClawHub、GitHub、开源社区发现并下载已被广泛使用的优秀 Skill
 2. **增强** — 对下载的 Skill 进行二次包装、差异化改造、质量优化
-3. **拆分** — 将增强后的 Skill 分为免费版和付费版
-4. **分发** — 上传到固定平台（SkillHub、ClawHub、GitHub 双仓库）
+3. **定价** — 为增强后的 Skill 设置单一 slug + edition/pricing_model 元数据（v3.0: 不再创建-free/-pro派生副本）
+4. **分发** — 上传到固定平台（ClawHub、GitHub 双仓库；SkillHub 账号当前已封禁，待申诉解封）
 
 ## 二、目录结构
 
@@ -60,21 +60,22 @@ d:\skills\
 └── README.md                   # 项目入口
 ```
 
-## 三、三轨模型
+## 三、单一Slug + Edition模型 (v3.0重构)
 
-每个产品 Skill 应该有三轨，数据库通过 `skills` 表的 `skill_type`、`source_slug`、`free_slug`、`paid_slug` 字段关联：
+v3.0安全增强后，每个产品 Skill 使用**单一 slug + edition/pricing_model 元数据**区分版本，不再创建-free/-pro独立slug。
 
-| 轨道 | skill_type | 目录 | 说明 |
-|------|-----------|------|------|
-| 源 | `source` | `clawhub-skills/downloaded/` | 从外部下载的原始 Skill |
-| 免费版 | `free` | `packaged-skills/skillhub/` | 增强后的免费版 |
-| 付费版 | `paid` | `enterprise-upload/` | 增强后的付费版 |
+> **根因**: 2026-07-24批量上传中，990+个-free/-pro派生skill被平台内容指纹系统识别为"近似重复内容"并批量封禁（封禁率93.4%）。详见 `data/reports/banned_skills_root_cause_analysis.md`。
 
-数据库关联字段：
-- `skills.source_slug` → 源 Skill 的 slug
-- `skills.free_slug` → 免费版的 slug
-- `skills.paid_slug` → 付费版的 slug
-- `skills.parent_slug` → 父 Skill 的 slug（免费版指向源，付费版指向免费版）
+| 字段 | 说明 | 示例 |
+|------|------|------|
+| `slug` | 唯一标识符（kebab-case） | `crypto-portfolio` |
+| `edition` | 版本类型 | `paid` / `free_merged`（历史遗留） |
+| `pricing_model` | 定价模式 | `per_call` / `monthly` / `free` / `freemium` |
+| `parent_slug` | 父Skill的slug（差异化派生时） | `crypto-portfolio` |
+
+历史遗留的-free/-pro slug通过 `clean_naming.py` 合并治理：
+- 免费版记录标记为 `current_status='deleted'`，`edition='free_merged'`
+- 付费版记录继承为唯一slug，`edition='paid'`
 
 ## 四、8 阶段流水线（唯一权威描述）
 
@@ -107,17 +108,25 @@ d:\skills\
 
 ## 六、平台策略（唯一权威描述）
 
-| 平台 | 免费版 | 付费版 | 上传方式 | 限流 |
-|------|--------|--------|----------|------|
-| SkillHub | CLI `skillhub publish` | 浏览器 | `skillhub publish` | WAF 5800 字符 |
-| ClawHub | 全部 | 10% 引流 | `npx clawhub publish` | 200/24h |
-| GitHub hermes-skills | 仅免费 | 不推送 | `git push` | 无 |
-| GitHub origin | 全部 | 全部 | `git push` | 无 |
+| 平台 | 状态 | 上传方式 | 限流 | 备注 |
+|------|------|----------|------|------|
+| SkillHub | **已封禁** | CLI `skillhub publish` | WAF 5800 字符 | 账号org-xxo535hs已被封禁(404/401)，待申诉解封 |
+| ClawHub | 活跃 | `clawhub publish` | 30/hour, 100/day, 2min间隔 | v3.0速率限制已集成到clawhub_batch_uploader |
+| GitHub hermes-skills | 活跃 | `git push` | 无 | 公开引流仓库 |
+| GitHub origin | 活跃 | `git push` | 无 | 私有备份仓库（URL已修正为hermes-skills.git） |
 
 ### GitHub 双仓库策略
 
-- **公开引流仓库** (`hermes-skills`)：`https://github.com/thcjp/hermes-skills`，仅推送免费 Skill
-- **私有备份仓库** (`origin`)：`https://github.com/thcjp/-.git`，推送全部 Skill + 项目代码
+- **公开引流仓库** (`hermes-skills`)：`https://github.com/thcjp/hermes-skills`，推送全部 Skill + 项目代码
+- **私有备份仓库** (`origin`)：与hermes-skills同URL（v3.0修正，原`-.git`URL已废弃）
+
+### SkillHub账号封禁状态
+
+- **组织**: 科创少年 (org-xxo535hs, orgId: 862)
+- **封禁时间**: 2026-07-24之后
+- **根因**: 单日爆发式上传1098个Skill + 990+个近似重复派生内容 + 136个-sk系列slug变异
+- **影响**: 1378/1476 (93.4%) Skill被封禁，组织公开API返回404，管理员API返回401
+- **申诉策略**: 详见 `data/reports/skillhub_account_ban_analysis_and_unban_strategy.md`
 
 ## 七、配置系统
 

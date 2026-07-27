@@ -176,6 +176,12 @@ def init_database():
     except sqlite3.OperationalError:
         pass
 
+    # v3.0: 内容指纹字段 (用于防重复内容检测, 防止近似重复内容触发平台反垃圾)
+    try:
+        c.execute("ALTER TABLE skills ADD COLUMN content_hash TEXT")
+    except sqlite3.OperationalError:
+        pass
+
     # 2. versions - 版本历史表
     c.execute("""
         CREATE TABLE IF NOT EXISTS versions (

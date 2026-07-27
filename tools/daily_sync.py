@@ -105,25 +105,30 @@ def check_upload_rate_limit(platform='skillhub'):
             'hourly_count': int,
             'daily_count': int,
             'seconds_since_last': float or None,
+            'wait_seconds': float or None,  # 需要等待的秒数(allowed=False时)
         }
     """
     _ensure_rate_limit_table()
     conn = sqlite3.connect(DB_PATH)
     now = datetime.now()
 
-    # 统计最近1小时的上传数
+    # 统计最近1小时的上传数 + 最早时间戳(用于计算wait_seconds)
     one_hour_ago = (now - timedelta(hours=1)).isoformat()
-    hourly_count = conn.execute(
-        "SELECT COUNT(*) FROM upload_rate_limits WHERE platform = ? AND upload_timestamp >= ?",
+    hourly_row = conn.execute(
+        "SELECT COUNT(*), MIN(upload_timestamp) FROM upload_rate_limits WHERE platform = ? AND upload_timestamp >= ?",
         (platform, one_hour_ago)
-    ).fetchone()[0]
+    ).fetchone()
+    hourly_count = hourly_row[0]
+    hourly_oldest = hourly_row[1]
 
-    # 统计最近24小时的上传数
+    # 统计最近24小时的上传数 + 最早时间戳
     one_day_ago = (now - timedelta(days=1)).isoformat()
-    daily_count = conn.execute(
-        "SELECT COUNT(*) FROM upload_rate_limits WHERE platform = ? AND upload_timestamp >= ?",
+    daily_row = conn.execute(
+        "SELECT COUNT(*), MIN(upload_timestamp) FROM upload_rate_limits WHERE platform = ? AND upload_timestamp >= ?",
         (platform, one_day_ago)
-    ).fetchone()[0]
+    ).fetchone()
+    daily_count = daily_row[0]
+    daily_oldest = daily_row[1]
 
     # 检查距离上次上传的时间
     last_upload = conn.execute(
@@ -143,22 +148,38 @@ def check_upload_rate_limit(platform='skillhub'):
 
     # 检查小时限制
     if hourly_count >= MAX_UPLOADS_PER_HOUR:
+        wait_seconds = 3600  # 默认1小时
+        if hourly_oldest:
+            try:
+                oldest_time = datetime.fromisoformat(hourly_oldest)
+                wait_seconds = max(0, (oldest_time + timedelta(hours=1) - now).total_seconds())
+            except (ValueError, TypeError):
+                pass
         return {
             'allowed': False,
             'reason': f'每小时上传限制已达上限 ({hourly_count}/{MAX_UPLOADS_PER_HOUR})',
             'hourly_count': hourly_count,
             'daily_count': daily_count,
             'seconds_since_last': seconds_since_last,
+            'wait_seconds': wait_seconds,
         }
 
     # 检查天限制
     if daily_count >= MAX_UPLOADS_PER_DAY:
+        wait_seconds = 86400  # 默认24小时
+        if daily_oldest:
+            try:
+                oldest_time = datetime.fromisoformat(daily_oldest)
+                wait_seconds = max(0, (oldest_time + timedelta(days=1) - now).total_seconds())
+            except (ValueError, TypeError):
+                pass
         return {
             'allowed': False,
             'reason': f'每日上传限制已达上限 ({daily_count}/{MAX_UPLOADS_PER_DAY})',
             'hourly_count': hourly_count,
             'daily_count': daily_count,
             'seconds_since_last': seconds_since_last,
+            'wait_seconds': wait_seconds,
         }
 
     # 检查最小间隔
@@ -170,6 +191,7 @@ def check_upload_rate_limit(platform='skillhub'):
             'hourly_count': hourly_count,
             'daily_count': daily_count,
             'seconds_since_last': seconds_since_last,
+            'wait_seconds': wait_time,
         }
 
     return {
@@ -178,6 +200,7 @@ def check_upload_rate_limit(platform='skillhub'):
         'hourly_count': hourly_count,
         'daily_count': daily_count,
         'seconds_since_last': seconds_since_last,
+        'wait_seconds': None,
     }
 
 
@@ -231,6 +254,10 @@ def wait_for_upload_slot(platform='skillhub', max_wait_seconds=7200):
         wait = max(min(wait, 300), 10)
         log(f"  速率限制: {check['reason']}, 等待 {wait:.0f} 秒后重试...")
         _time.sleep(wait)
+
+
+# 向后兼容别名 (v3.2: 部分调用方使用了wait_for_rate_limit名称)
+wait_for_rate_limit = wait_for_upload_slot
 
 
 def get_rate_limit_status(platform='skillhub'):

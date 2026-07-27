@@ -670,12 +670,13 @@ def main():
             continue
 
         # v3.0: 速率限制预检 (防止爆发式上传触发平台反垃圾系统)
-        # 复用daily_sync.py的速率限制机制,不创建新的独立实现
+        # v3.1: 改为等待重试而非直接退出, 复用daily_sync.py的wait_for_upload_slot
+        # v3.2: 修复函数名不匹配bug (wait_for_rate_limit→wait_for_upload_slot)
         try:
-            from daily_sync import check_upload_rate_limit
-            rate_check = check_upload_rate_limit('clawhub')
+            from daily_sync import wait_for_upload_slot
+            rate_check = wait_for_upload_slot('clawhub', max_wait_seconds=300)
             if not rate_check.get('allowed', True):
-                print(f"\n  [{i}/{len(to_upload)}] RATE LIMITED: {rate_check.get('reason', '未知')}")
+                print(f"\n  [{i}/{len(to_upload)}] RATE LIMITED (超时): {rate_check.get('reason', '未知')}")
                 rate_limited = True
                 break
         except ImportError:
@@ -788,7 +789,7 @@ def main():
     print(f"{'='*60}")
 
     if rate_limited:
-        print(f"\nRate limit reached. Try again after 24 hours.")
+        print(f"\nRate limit reached (wait timeout). Try again in a few minutes.")
         print(f"Run: python clawhub_batch_uploader.py --resume")
 
 
