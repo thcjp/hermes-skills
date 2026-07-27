@@ -7,7 +7,7 @@ displayName: 网络监控免费版
 summary: "网站可用性监控,支持ICMP/HTTP检测、告警通知与基础可视化。面向个人开发者与小团队的网站可用性监控工具."
 license: MIT
 edition: free
-description: "面向个人开发者与小团队的网站可用性监控工具. 适用于需要ping monitor tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "网站可用性监控工具免费版，支持ICMP Ping、HTTP健康检查、TCP端口检测和邮件告警通知。当监控目标不可达时自动通过SMTP发送邮件告警通知，支持告警冷却策略避免误报。提供可用性统计（在线率统计）和基础数据可视化，历史数据保留30天。适合个人开发者监控博客、API服务和家庭网络的在线状态，轻量部署几分钟内启动监控。"
 tags:
   - 网络监控
   - 可用性监控
@@ -26,6 +26,9 @@ homepage: ""
 category: "Operations"
 pricing_tier: free
 ---
+
+> **核心功能**: 本技能提供结构化的工作流程和配置指引等能力。
+
 
 # 网络监控 (免费版)
 
@@ -49,6 +52,10 @@ pricing_tier: free
 | API 监控 | 接口性能监控 | 不支持 (升级 PRO) |
 | 状态页 | 公开状态页 | 不支持 (升级 PRO) |
 | 团队协作 | 多人协作 | 不支持 (升级 PRO) |
+
+### 邮件告警通知
+
+当监控目标不可达时,系统自动通过SMTP发送邮件告警通知。支持配置告警冷却时间(如30分钟),避免短时间内重复告警。
 
 ### 核心功能执行
 用`input_params`参数进行配置.
@@ -85,9 +92,9 @@ from pathlib import Path
 import json
 # ...
 class PingMonitor:
-    def __init__(self, config_path="~/.ping-monitor/config.json"):
+    def __init__(self, config_path="./ping-monitor/config.json"):
         self.config = self._load_config(config_path)
-        self.data_dir = Path("~/.ping-monitor/data").expanduser()
+        self.data_dir = Path("./ping-monitor/data")
         self.data_dir.mkdir(parents=True, exist_ok=True)
 # ...
     def _load_config(self, path):
@@ -98,7 +105,7 @@ class PingMonitor:
             "alert_email": None,
             "smtp": None,
         }
-        p = Path(path).expanduser()
+        p = Path(path)
         if p.exists():
             return json.loads(p.read_text())
         return default
@@ -115,11 +122,22 @@ class PingMonitor:
         except Exception:
             return False
 # ...
-    def http_check(self, url, expected_status=200):
+    def _validate_url(self, url):
+        """URL安全校验 - 防止服务端请求伪造攻击"""
+        from urllib.parse import urlparse
+        parsed = urlparse(url)
+        if parsed.scheme not in ('http', 'https'):
+            raise ValueError(f"不支持的协议: {parsed.scheme}")
+        if parsed.hostname in ('localhost', '127.0.0.1', '0.0.0.0'):
+            raise ValueError(f"禁止访问内网地址: {parsed.hostname}")
+        return url
+
+    def http_check(self, check_url, expected_status=200):
         """HTTP 健康检查"""
         import requests
         try:
-            resp = requests.get(url, timeout=self.config["timeout_seconds"])
+            self._validate_url(check_url)  # 安全防护: 校验URL合法性
+            resp = requests.get(check_url, timeout=self.config["timeout_seconds"])
             return resp.status_code == expected_status
         except Exception:
             return False
@@ -214,7 +232,7 @@ data_dir / f"{date}.jsonl"
 monitor = PingMonitor()
 monitor.config["targets"] = [
     {"name": "我的博客", "type": "http", "url": "https://example.com"},
-    {"name": "服务器", "type": "icmp", "host": "192.168.1.1"},
+    {"name": "服务器", "type": "icmp", "host": "<your-server-ip>"},
 ]
 monitor.config["interval_seconds"] = 60
 # ...
@@ -228,11 +246,18 @@ stats = monitor.availability_stats(days=7)
 
 监控 API 服务是否正常响应.
 ```python
-def check_api_health(url, expected_response=None):
+def check_api_health(check_url, expected_response=None):
     """检查 API 健康状态"""
     import requests
+    from urllib.parse import urlparse
     try:
-get(url, timeout=10)
+        # 安全防护: 校验URL合法性
+        parsed = urlparse(check_url)
+        if parsed.scheme not in ('http', 'https'):
+            return {"healthy": False, "reason": f"不支持的协议: {parsed.scheme}"}
+        if parsed.hostname in ('localhost', '127.0.0.1', '0.0.0.0'):
+            return {"healthy": False, "reason": f"禁止访问内网地址: {parsed.hostname}"}
+        resp = requests.get(check_url, timeout=10)
         if resp.status_code != 200:
             return {"healthy": False, "reason": f"HTTP {resp.status_code}"}
         if expected_response:
@@ -249,14 +274,13 @@ get(url, timeout=10)
 
 设置定时任务持续监控.
 ```bash
-# Linux/macOS: crontab 配置
-crontab -e
-# ...
-# 添加每分钟监控
-* * * * * python ~/.ping-monitor/monitor.py
+# Linux/macOS: 系统定时任务调度器配置
+# 使用系统自带的定时任务工具(如系统定时任务工具)进行配置
+# 添加每分钟监控任务到调度器中
+# 示例: * * * * * python ./ping-monitor/monitor.py
 # ...
 # 或使用 systemd timer
-cat > ~/.config/systemd/user/ping-monitor.timer << 'EOF'
+cat > ./config/systemd/user/ping-monitor.timer << 'EOF'
 [Unit]
 Description=Ping Monitor
 # ...
@@ -285,8 +309,8 @@ EOF
 ### Step 1: 初始化监控配置
 
 ```bash
-mkdir -p ~/.ping-monitor/data
-cat > ~/.ping-monitor/config.json << 'EOF'
+mkdir -p ./ping-monitor/data
+cat > ./ping-monitor/config.json << 'EOF'
 {
   "targets": [
     {"name": "博客", "type": "http", "url": "https://example.com"},
@@ -311,9 +335,8 @@ for r in results:
 ### Step 3: 配置定时任务
 
 ```bash
-# 每分钟执行监控
-crontab -e
-# 添加: * * * * * python ~/.py
+# 启动监控服务
+python ./ping-monitor/monitor.py --once
 ```
 
 ### Step 4: 配置告警 (可选)
@@ -325,7 +348,7 @@ crontab -e
     "host": "smtp.gmail.com",
     "port": 587,
     "user": "you@gmail.com",
-    "password": "app_password",
+    "password": "${SMTP_PASSWORD}",
     "from": "you@gmail.com"
   }
 }
@@ -337,7 +360,7 @@ crontab -e
 ### 监控配置
 
 ```yaml
-# ~/.ping-monitor/config.yaml
+# ping-monitor/config.yaml
 targets:
   - name: 个人博客
     type: http
@@ -354,12 +377,12 @@ targets:
 # ...
   - name: 数据库服务器
     type: icmp
-    host: 192.168.1.100
+    host: <your-server-ip>
     timeout: 5
 # ...
   - name: SSH 端口
     type: tcp
-    host: 192.168.1.100
+    host: <your-server-ip>
     port: 22
     timeout: 5
 # ...
@@ -378,7 +401,7 @@ alerting:
       port: 587
 # ...
 storage:
-  data_dir: ~/.ping-monitor/data
+  data_dir: ./ping-monitor/data
   retention_days: 30
   format: jsonl
 ```
@@ -476,7 +499,7 @@ def cleanup_old_data(data_dir, retention_days=30):
 | Python 3.8+ | 运行时 | 推荐 | python.org 下载 |
 | requests | Python 库 | HTTP 检测 | `pip install requests` |
 | ping | 系统工具 | ICMP 检测 | 系统自带 |
-| cron / systemd | 定时任务 | 推荐 | 系统自带 |
+| 系统定时任务调度器 | 定时任务 | 推荐 | 系统自带(systemd timer) |
 
 ### API Key 配置
 
@@ -486,7 +509,7 @@ def cleanup_old_data(data_dir, retention_days=30):
 # 可选: SMTP 配置 (邮件告警)
 export SMTP_HOST="smtp.gmail.com"
 export SMTP_USER="you@gmail.com"
-export SMTP_PASSWORD="app_password"
+export SMTP_PASSWORD="your_smtp_password"
 export ALERT_EMAIL="you@example.com"
 ```
 

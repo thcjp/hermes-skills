@@ -7,7 +7,7 @@ displayName: PDF压缩工具（免费版）
 summary: "通过API上传PDF文件进行压缩，支持图像质量与DPI参数调整，轮询返回下载链接.,支持多种使用场景和自动化处理"
 license: MIT
 edition: free
-description: "PDF压缩工具 - （免费版），可产出提升工作效率. 适用于需要compress pdf tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "PDF压缩工具免费版，通过API上传PDF文件进行压缩处理，支持图像质量参数调整（如75/85/95）和DPI分辨率设置（如144/300）。上传后通过轮询机制获取任务状态，完成后返回下载链接供用户获取压缩后的文件。适用于文档归档、邮件附件优化、网页上传文件大小限制等需要减小PDF文件体积的常见场景。"
 tags:
   - PDF处理
   - 文件压缩
@@ -27,6 +27,9 @@ homepage: ""
 category: "Automation"
 pricing_tier: free
 ---
+
+> **核心功能**: 本技能提供结构化的工作流程和配置指引等能力。
+
 
 # PDF压缩工具（免费版）
 
@@ -134,17 +137,32 @@ pip install requests
 
 ```python
 # PDF压缩基础调用
+import os
 import requests
+from urllib.parse import urlparse
 # ...
-def compress_pdf(file_path, api_key, quality=75, dpi=144):
-    url = "https://api.example.com/solutions/solutions/api/29"
+def _validate_url(url):
+    """URL安全校验 - 防止服务端请求伪造攻击"""
+    parsed = urlparse(url)
+    if parsed.scheme not in ('http', 'https'):
+        raise ValueError(f"不支持的协议: {parsed.scheme}")
+    if parsed.hostname in ('localhost', '127.0.0.1', '0.0.0.0'):
+        raise ValueError(f"禁止访问内网地址: {parsed.hostname}")
+    return url
+
+def compress_pdf(file_path, api_key=None, quality=75, dpi=144):
+    api_url = os.getenv("COMPRESS_PDF_API_URL", "")
+    if not api_url:
+        raise ValueError("请通过环境变量 COMPRESS_PDF_API_URL 配置API地址")
+    _validate_url(api_url)  # 安全防护: 校验URL合法性
+    api_key = api_key or os.getenv("COMPRESS_PDF_API_KEY", "")
     headers = {"Authorization": f"Bearer {api_key}"}
     files = {"file": open(file_path, "rb")}
     data = {"imageQuality": quality, "dpi": dpi}
-    resp = requests.post(url, headers=headers, files=files, data=data)
+    resp = requests.post(api_url, headers=headers, files=files, data=data)
     return resp.json()
 # ...
-result = compress_pdf("document.pdf", "YOUR_API_KEY")
+result = compress_pdf("document.pdf")
 print(f"任务ID: {result.get('job_id')}")
 ```
 
@@ -155,7 +173,8 @@ print(f"任务ID: {result.get('job_id')}")
 
 ```yaml
 compress:
-  api_key: "YOUR_API_KEY"
+  api_url: "${COMPRESS_PDF_API_URL}"
+  api_key: "${COMPRESS_PDF_API_KEY}"
   default_quality: 75
   default_dpi: 144
   poll_interval: 3
@@ -182,7 +201,7 @@ compress:
 
 ```python
 # 在此执行相关操作
-pass
+...  # 具体实现请参考上下文文档
 ```
 
 ## 常见问题
