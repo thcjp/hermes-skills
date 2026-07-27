@@ -299,6 +299,9 @@ _DB_PATH = str(_PROJECT_ROOT / "skill-registry.db")
 _DEFAULT_SCAN_DIRS = [
     _PROJECT_ROOT / "packaged-skills" / "skillhub",
     _PROJECT_ROOT / "opensource-skills" / "packaged",
+    _PROJECT_ROOT / "differentiated-skills",
+    _PROJECT_ROOT / "clawhub-skills",
+    _PROJECT_ROOT / "enterprise-upload",
 ]
 
 
@@ -476,9 +479,9 @@ def scan_all(dirs=None, force=False, limit=None):
         if not scan_dir.exists():
             print(f"[SKIP] 目录不存在: {scan_dir}")
             continue
-        for sub in sorted(scan_dir.iterdir()):
-            if sub.is_dir() and (sub / "SKILL.md").exists():
-                all_skills.append(sub / "SKILL.md")
+        # 递归查找所有SKILL.md文件（支持多级嵌套目录）
+        for skill_md in sorted(scan_dir.rglob("SKILL.md")):
+            all_skills.append(skill_md)
 
     print(f"发现 {len(all_skills)} 个SKILL.md文件", flush=True)
 
