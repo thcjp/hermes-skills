@@ -669,6 +669,20 @@ def main():
             results['skipped'].append(slug)
             continue
 
+        # v3.0: 速率限制预检 (防止爆发式上传触发平台反垃圾系统)
+        # 复用daily_sync.py的速率限制机制,不创建新的独立实现
+        try:
+            from daily_sync import check_upload_rate_limit
+            rate_check = check_upload_rate_limit('clawhub')
+            if not rate_check.get('allowed', True):
+                print(f"\n  [{i}/{len(to_upload)}] RATE LIMITED: {rate_check.get('reason', '未知')}")
+                rate_limited = True
+                break
+        except ImportError:
+            pass  # daily_sync不可用时跳过速率限制(向后兼容)
+        except Exception:
+            pass  # 速率限制异常不阻断上传(容错)
+
         # Upload
         print(f"  [{i}/{len(to_upload)}] {slug}...", end="", flush=True)
         result = upload_skill(skill_dir, slug, args.dry_run, skip_quality_gate=args.skip_quality_gate)
@@ -681,6 +695,12 @@ def main():
             # v2.3: 更新DB状态
             if not args.dry_run:
                 update_db_clawhub_status(slug, 'synced', result.get('version'))
+                # v3.0: 记录上传到速率限制表
+                try:
+                    from daily_sync import record_upload
+                    record_upload('clawhub', slug)
+                except Exception:
+                    pass
         elif result.get('error') == 'VERSION_EXISTS':
             # Try incrementing version and retry
             print(f" VERSION_EXISTS, incrementing...", end="", flush=True)
@@ -695,6 +715,12 @@ def main():
                     # v2.3: 更新DB状态
                     if not args.dry_run:
                         update_db_clawhub_status(slug, 'synced', new_ver)
+                        # v3.0: 记录上传到速率限制表
+                        try:
+                            from daily_sync import record_upload
+                            record_upload('clawhub', slug)
+                        except Exception:
+                            pass
                 else:
                     print(f" FAIL: {result2.get('error', '')}")
                     fail_count += 1
