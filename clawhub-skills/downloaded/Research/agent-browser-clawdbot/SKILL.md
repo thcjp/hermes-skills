@@ -6,7 +6,7 @@ displayName: Agent Browser
 summary: "无头浏览器自动化CLI,为AI Agent优化,支持无障碍树快照与引用提取,精准网页操作"
   tree snapshots and ref...
 license: MIT
-description: |-
+description: |- 功能涵盖: clawdbot。
   Headless browser automation CLI optimized for AI agents with accessibility
   tree snapshots and ref。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
@@ -138,7 +138,7 @@ agent-browser pdf page.pdf
 
 ```bash
 agent-browser network route "**/ads/*" --abort           # Block
-agent-browser network route "**/api/*" --body '{"x":1}'  # Mock
+agent-browser network route "**/api/*" --body '{"x":1}'  # 实现说明:
 agent-browser network requests --filter api              # View
 ```
 
@@ -239,7 +239,7 @@ agent-browser CLI by [Vercel Labs](https://github.com/vercel-labs/agent-browser)
 - 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **分类**: MD+execute(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
 
 ## 核心能力

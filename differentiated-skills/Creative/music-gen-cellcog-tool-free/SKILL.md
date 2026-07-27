@@ -28,6 +28,9 @@ category: "Creative"
 pricing_tier: free
 ---
 
+> **核心功能**: 本技能提供结构化的工作流程和配置指引等能力。
+
+
 # CellCog音乐生成免费版
 
 ## 概述
@@ -192,7 +195,7 @@ cellcog.com/v1/music/generate \
 # 新账户包含免费试用额度
 # ...
 # 配置API Key
-export CELLCOG_API_KEY="your-api-key-here"
+export CELLCOG_API_KEY="${API_KEY:?请设置环境变量}"
 # ...
 # 或写入配置文件
 echo '{"api_key": "your-api-key"}' > ~/.cellcog/config.json

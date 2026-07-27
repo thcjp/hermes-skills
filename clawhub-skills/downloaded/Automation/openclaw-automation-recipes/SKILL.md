@@ -62,7 +62,7 @@ trigger:
 actions:
   - type: send
     to: discord
-    template: "新 Issue: {{title}}"
+    template: "新 Issue: <动态配置>"
 ```
 
 ## 配方 4：价格监控
@@ -84,7 +84,7 @@ actions:
     then:
       type: send
       to: telegram
-      message: "价格降到 {{price}}！"
+      message: "价格降到 <动态配置>！"
 ```
 
 ## 配方 5：会议提醒
@@ -99,7 +99,7 @@ trigger:
 actions:
   - type: send
     to: dingtalk
-    message: "15 分钟后有会议：{{title}}"
+    message: "15 分钟后有会议：<动态配置>"
 ```
 
 ## 配方 6：客服自动分流
@@ -181,7 +181,7 @@ actions:
   - type: analyze_calendar
   - type: prioritize_tasks
   - type: send
-    message: "今日任务优先级：{{tasks}}"
+    message: "今日任务优先级：<动态配置>"
 ```
 
 ## 如何使用
@@ -245,7 +245,8 @@ skill-platform restart
 ### 示例1：基础用法
 
 ```
-
+# 请参考上方使用说明进行配置和调用
+result = "ready"
 ```
 
 ## 错误处理

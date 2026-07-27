@@ -38,11 +38,22 @@ except ImportError:
     _DB_PATH = Path(r"d:\skills\skill-registry.db")
 
 # v2.6: 质量门禁集成(复用quality_gate统一函数, 不创建碎片化代码)
+# v3.2: 升级为autofix版本 — 上传前自动修复安全+幻觉问题, 减少审核拒绝率
 try:
-    from quality_gate import run_security_precheck, run_marketing_gate, run_anti_hallucination, run_rating_gate
+    from quality_gate import (
+        run_security_precheck_with_autofix as run_security_precheck,
+        run_marketing_gate,
+        run_anti_hallucination_with_autofix as run_anti_hallucination,
+        run_rating_gate,
+    )
     _QUALITY_GATE_AVAILABLE = True
 except ImportError:
-    _QUALITY_GATE_AVAILABLE = False
+    try:
+        # 向后兼容: 如果autofix版本不可用, 退回到原始版本
+        from quality_gate import run_security_precheck, run_marketing_gate, run_anti_hallucination, run_rating_gate
+        _QUALITY_GATE_AVAILABLE = True
+    except ImportError:
+        _QUALITY_GATE_AVAILABLE = False
 
 # ClawHub分类映射配置
 CATEGORY_MAP_FILE = Path(__file__).resolve().parent.parent / "data" / "category_mapping.json"

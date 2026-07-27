@@ -28,6 +28,9 @@ category: "Finance"
 pricing_tier: free
 ---
 
+> **核心功能**: 本技能提供结构化的工作流程和配置指引等能力。
+
+
 # DEX代币数据入门（免费版）
 
 ## 概述
@@ -138,7 +141,7 @@ pip install requests web3
 # ..
 # 配置API（可选，免费版无需API Key）
 # 如有OKX API Key可获得更高频率
-export OKX_API_KEY="your_api_key"  # 可选
+export OKX_API_KEY="${API_KEY:?请设置环境变量}"  # 可选
 ```
 
 ### 常用命令

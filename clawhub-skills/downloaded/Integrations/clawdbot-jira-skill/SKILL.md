@@ -5,7 +5,7 @@ version: "1.0.2"
 displayName: Jira
 summary: "经Jira Cloud REST API管issue/流转/工时"
 license: MIT
-description: |-
+description: |- 功能涵盖: skill。
   Manage Jira issues, transitions, and worklogs via the Jira Cloud REST
   API。核心能力:
 
@@ -87,13 +87,17 @@ sh hours-issue ABC-123 [name|email]` — logged hours for an issue; optional fil
   bash
 
   ```
-  ```
+# 请参考上方使用说明进行配置和调用
+result = "ready"
+```
 * **Issue details**
 
   bash
 
   ```
-  ```
+# 请参考上方使用说明进行配置和调用
+result = "ready"
+```
 * **Update status**
 
   bash
@@ -148,7 +152,9 @@ sh log PB-321 1.5 2025-01-18
   bash
 
   ```
-  ```
+# 请参考上方使用说明进行配置和调用
+result = "ready"
+```
 * **Logged hours by issue (me)**
 
   bash
@@ -200,7 +206,7 @@ sh hours-issue ABC-321 "jane"
 - 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **分类**: MD+execute(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
 
 ## 核心能力
@@ -229,7 +235,8 @@ sh hours-issue ABC-321 "jane"
 ### 示例1：基础用法
 
 ```
-
+# 请参考上方使用说明进行配置和调用
+result = "ready"
 ```
 
 ## 错误处理

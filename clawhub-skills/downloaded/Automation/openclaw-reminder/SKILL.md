@@ -19,6 +19,9 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
+> **核心功能**: 本技能提供化工作流场景等能力。
+
+
 
 # Reminder
 
@@ -26,7 +29,7 @@ Create one-time reminder tasks using Skill平台 cron.
 
 ## Usage
 
-When user says "remind me to XXX in 30 seconds" or "remind me at 3pm", I create a cron job that executes the task and returns the result when the time comes.
+When user says "remind me to <参数> in 30 seconds" or "remind me at 3pm", I create a cron job that executes the task and returns the result when the time comes.
 
 ## Parameter Configuration
 
@@ -109,7 +112,7 @@ User-specified task content must be sanitized before passing to cron:
 
 After creating the task, reply to user to confirm:
 
-* "OK, will remind you in X minutes/to do XXX"
+* "OK, will remind you in X minutes/to do <参数>"
 * Don't tell user the specific cron command
 
 ## Notes
@@ -135,7 +138,7 @@ After creating the task, reply to user to confirm:
 - 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **分类**: MD+execute(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
 
 ## 核心能力

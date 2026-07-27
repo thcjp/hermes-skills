@@ -1,7 +1,7 @@
 ---
 slug: brainz-calendar-tool-free
 name: brainz-calendar-tool-free
-version: 1.0.0
+version: 1.0.2
 displayName: Google 日历基础版
 summary: "通过 gcalcli 管理 Google 日历事件,支持创建、列出和删除日程,适合个人时间管理。核心能力: 日程管理领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT

@@ -1,7 +1,7 @@
 ---
 slug: brave-search-tool-free
 name: brave-search-tool-free
-version: 1.0.0
+version: 1.0.2
 displayName: Brave搜索工具-免费版
 summary: "基于Brave Search API的网页搜索与内容提取工具,无需浏览器,适合个人用户。基于 Brave Search API 的无头网页搜索与内容提取工具,无需启动浏览器,,提供核心能力"
 license: MIT

@@ -1,8 +1,12 @@
 {
-  "timestamp": "2026-07-27T06:21:28.383686",
+  "timestamp": "2026-07-27T19:47:46.140315",
   "uploaded_today": [
-    "diagram-tool-free"
+    "calendar-toolkit-free",
+    "cctv-news-free",
+    "calendar-skill-free",
+    "cdn-toolkit-free",
+    "bsession-free"
   ],
-  "total_success": 1,
-  "total_failed": 5
+  "total_success": 5,
+  "total_failed": 10
 }

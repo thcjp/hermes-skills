@@ -1,7 +1,7 @@
 ---
 slug: calendar-skill-tool-free
 name: calendar-skill-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: 日历管理技能基础版
 summary: 通过 porteden CLI 安全管理 Google 与 Outlook 日历,支持事件查询、创建与更新
 license: MIT

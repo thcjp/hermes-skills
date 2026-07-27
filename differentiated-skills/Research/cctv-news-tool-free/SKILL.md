@@ -1,7 +1,7 @@
 ---
 slug: cctv-news-tool-free
 name: cctv-news-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: 央视新闻抓取(免费版)
 summary: "央视新闻联播抓取免费版，支持按日期获取新闻标题与摘要，生成基础简报.。央视新闻抓取助手免费版是面向个人用户的轻量新闻联播内容抓取工具。聚焦"指定日期-抓取标题-生成简报"三步流程，快速获取新"
 license: MIT

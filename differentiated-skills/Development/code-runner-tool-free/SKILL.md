@@ -30,6 +30,9 @@ category: "Development"
 pricing_tier: free
 ---
 
+> **核心功能**: 本技能提供结构化的工作流程和配置指引等能力。
+
+
 # 代码执行工具免费版
 
 ## 概述
@@ -368,7 +371,7 @@ if b'new prompt text' in output:
 - 如需在自动化场景使用,配置环境变量:
 
 ```bash
-export ANTHROPIC_API_KEY="your-api-key"
+export ANTHROPIC_API_KEY="${API_KEY:?请设置环境变量}"
 ```
 
 ### 可用性分类

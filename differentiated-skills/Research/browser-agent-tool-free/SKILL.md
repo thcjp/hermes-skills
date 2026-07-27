@@ -1,7 +1,7 @@
 ---
 slug: browser-agent-tool-free
 name: browser-agent-tool-free
-version: 1.0.0
+version: 1.0.2
 displayName: 浏览器智能代理工具-免费版
 summary: "无头浏览器自动化CLI,支持可访问性树快照与确定性元素选择,适合个人开发者。无头浏览器自动化命令行工具,通过可访问性树快照(ref引用)实现确定性元素选择,"
 license: MIT

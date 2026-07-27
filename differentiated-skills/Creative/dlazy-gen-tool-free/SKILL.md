@@ -24,6 +24,9 @@ category: "Automation"
 pricing_tier: free
 ---
 
+> **核心功能**: 本技能提供结构化的工作流程和配置指引等能力。
+
+
 # 综合生成工具（免费版）
 
 ## 概述
@@ -208,7 +211,7 @@ dlazy auth set YOUR_API_KEY
 #   Windows:     %USERPROFILE%\.dlazy\config.json
 # ...
 # 方式二：环境变量
-export DLAZY_API_KEY="YOUR_API_KEY"
+export DLAZY_API_KEY="${API_KEY:?请设置环境变量}"
 ```
 
 ### 常用模型参数

@@ -28,6 +28,9 @@ category: "Automation"
 pricing_tier: free
 ---
 
+> **核心功能**: 本技能提供结构化的工作流程和配置指引等能力。
+
+
 # P2P通讯入门工具（免费版）
 
 ## 概述
@@ -143,7 +146,7 @@ python3 （请参考skill目录中的脚本文件） connect create
 ```bash
 # 连接管理
 python3 （请参考skill目录中的脚本文件） connect create
-python3 （请参考skill目录中的脚本文件） connect join --code OCEAN-XXXX-XXXX
+python3 （请参考skill目录中的脚本文件） connect join --code OCEAN-<参数>-<参数>
 python3 （请参考skill目录中的脚本文件） connect status
 # ...
 # 消息发送
@@ -156,7 +159,7 @@ python3 （请参考skill目录中的脚本文件） history clear
 # ...
 # 密钥管理
 python3 （请参考skill目录中的脚本文件） keys generate
-python3 （请参考skill目录中的脚本文件） keys share --peer OCEAN-XXXX
+python3 （请参考skill目录中的脚本文件） keys share --peer OCEAN-<参数>
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.

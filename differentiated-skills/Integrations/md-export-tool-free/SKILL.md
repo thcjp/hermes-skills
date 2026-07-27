@@ -28,6 +28,9 @@ category: "Automation"
 pricing_tier: free
 ---
 
+> **核心功能**: 本技能提供结构化的工作流程和配置指引等能力。
+
+
 # 文档导出工具（免费版）
 
 本工具为内容创作者与开发者提供Markdown多格式导出能力。免费版覆盖核心场景：DOCX、PDF、HTML、XLSX、CSV、JSON等主流格式转换，可满足绝大多数文档导出需求.

@@ -7,7 +7,7 @@ displayName: 中文PDF处理器（免费版）
 summary: "针对中文PDF优化的处理工具，支持中文OCR、版面分析、表格提取与智能分块.,支持多种使用场景和自动化处理"
 license: MIT
 edition: free
-description: "中文PDF处置器 - （免费版）. 适用于需要pdfcessor cn tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "中文PDF处置器 - （免费版）. 适用于需要pdfcessor cn tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性. 功能涵盖: processor。"
 tags:
   - PDF处理
   - 中文OCR
@@ -27,6 +27,9 @@ homepage: ""
 category: "Automation"
 pricing_tier: free
 ---
+
+> **核心功能**: 本技能提供结构化的工作流程和配置指引等能力。
+
 
 # 中文PDF处理器（免费版）
 
@@ -182,7 +185,7 @@ cn_pdf:
 
 ```python
 # 在此执行相关操作
-pass
+...  # 具体实现请参考上下文文档
 ```
 
 ## 常见问题

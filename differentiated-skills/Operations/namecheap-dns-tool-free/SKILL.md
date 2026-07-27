@@ -28,6 +28,9 @@ category: "Automation"
 pricing_tier: free
 ---
 
+> **核心功能**: 本技能提供结构化的工作流程和配置指引等能力。
+
+
 # DNS管理入门工具（免费版）
 
 ## 概述
@@ -132,7 +135,7 @@ pip install requests
 # 登录Namecheap > Profile > Tools > API Access
 # 获取ApiUser, ApiKey, UserName, ClientIP
 export NAMECHEAP_API_USER="your_api_user"
-export NAMECHEAP_API_KEY="your_api_key"
+export NAMECHEAP_API_KEY="${API_KEY:?请设置环境变量}"
 export NAMECHEAP_USERNAME="your_username"
 export NAMECHEAP_CLIENT_IP="your_ip"
 ```

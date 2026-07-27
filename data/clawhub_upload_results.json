@@ -1,29 +1,53 @@
 {
   "success": [
-    "diagram-tool-free"
+    "bsession-free",
+    "calendar-skill-free",
+    "calendar-toolkit-free",
+    "cctv-news-free",
+    "cdn-toolkit-free"
   ],
   "failed": [
     {
-      "slug": "actor-identifier-free",
-      "error": "ANTI_HALLUCINATION_BLOCKED"
-    },
-    {
-      "slug": "ai-image-prompt-free",
-      "error": "ANTI_HALLUCINATION_BLOCKED"
-    },
-    {
-      "slug": "auto-monitor-free",
-      "error": "ANTI_HALLUCINATION_BLOCKED"
-    },
-    {
-      "slug": "dlazy-gen-free",
+      "slug": "agent-browser-clawdbot",
       "error": "QUALITY_GATE_BLOCKED"
     },
     {
-      "slug": "font-manager-free",
-      "error": "RATE_LIMITED"
+      "slug": "agentvibes-openclaw-skill",
+      "error": "QUALITY_GATE_BLOCKED"
+    },
+    {
+      "slug": "brainz-calendar-tool-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "brave-search-tool-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "browser-agent-tool-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "browser-automation-tool-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "browser-cli-tool-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "calendar-skill-tool-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "cctv-news-tool-free",
+      "error": "VERSION_EXISTS"
+    },
+    {
+      "slug": "chat-agent-free",
+      "error": "ANTI_HALLUCINATION_BLOCKED"
     }
   ],
   "skipped": [],
-  "date": "2026-07-27T06:21:28.385686"
+  "date": "2026-07-27T19:47:46.140315"
 }

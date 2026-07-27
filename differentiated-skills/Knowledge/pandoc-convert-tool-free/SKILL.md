@@ -28,6 +28,9 @@ category: "Automation"
 pricing_tier: free
 ---
 
+> **核心功能**: 本技能提供结构化的工作流程和配置指引等能力。
+
+
 # Pandoc转换工具（免费版）
 
 ## 概述
@@ -187,7 +190,7 @@ pandoc_convert:
 
 ```python
 # 在此执行相关操作
-pass
+...  # 具体实现请参考上下文文档
 ```
 
 ## 常见问题

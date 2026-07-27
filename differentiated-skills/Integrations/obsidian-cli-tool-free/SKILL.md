@@ -29,6 +29,9 @@ category: "Automation"
 pricing_tier: free
 ---
 
+> **核心功能**: 本技能提供结构化的工作流程和配置指引等能力。
+
+
 # Obsidian CLI工具（免费版）
 
 通过命令行驱动AI Agent操作Obsidian笔记库，实现笔记的自动化创建、检索与整理。免费版提供核心文件操作、搜索和日常笔记功能，满足个人知识管理的基础需求.

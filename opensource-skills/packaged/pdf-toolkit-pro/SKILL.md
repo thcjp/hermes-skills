@@ -6,7 +6,7 @@ displayName: PDF工具箱Pro
 summary: "PDF全流程处理:提取合并拆分填表生成,文档数字化一站搞定。PDF工具箱Pro全面处理PDF文档,核心功能包括文本表格图片提取(含OCR)、文档合并拆分旋转、PDF表单自动填充、注释标记水印"
 summary_zh: "PDF全流程处理:提取合并拆分填表生成,文档数字化一站搞定。PDF工具箱Pro全面处理PDF文档,核心功能包括文本表格图片提取(含OCR)、文档合并拆分旋转、PDF表单自动填充、注释标记水印"
 license: Apache-2.0
-description: PDF工具箱Pro全面处理PDF文档,核心功能包括文本表格图片提取(含OCR)、文档合并拆分旋转、PDF表单自动填充、注释标记水印签名、以及从HTML/Markdown/代码生成PDF。适用于文档数字化、合同处理、报表归档、表单自动化、批量PDF处理场景。触发关键词:PDF、PDF处理、文本提取、表格提取、PDF合并、PDF拆分、填表、PDF注释、文档数字化、PDF生成。
+description: PDF工具箱Pro全面处理PDF文档,核心功能包括文本表格图片提取(含OCR)、文档合并拆分旋转、PDF表单自动填充、注释标记水印签名、以及从HTML/Markdown/代码生成PDF。适用于文档数字化、合同处理、报表归档、表单自动化、批量PDF处理场景。触发关键词:PDF、PDF处理、文本提取、表格提取、PDF合并、PDF拆分、填表、PDF注释、文档数字化、PDF生成。 功能涵盖: workflow, suite。
 tags:
   - PDF处理
   - 文档数字化
@@ -28,6 +28,9 @@ tools:
 pricing_rationale: 文件处理类, large市场, enterprise复杂度, daily频次, L2层 → 高频通用工具(平台类多功能)
 category: "Creative"
 ---
+
+> **核心功能**: 本技能提供PDF文档等能力。
+
 # PDF工具箱Pro
 
 全面处理 PDF 文档。从内容提取到文档生成,从合并拆分到表单填写,覆盖 PDF 全流程。

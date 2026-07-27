@@ -1,7 +1,7 @@
 ---
 slug: browser-cli-tool-free
 name: browser-cli-tool-free
-version: 1.0.0
+version: 1.0.1
 displayName: 浏览器CLI工具-免费版
 summary: "基于Playwright的浏览器自动化CLI,支持签到、填表、截图与信息抓取,适合个人用户。浏览器自动化命令行工具,提供导航、交互、信息获取与截图能力,"
 license: MIT

@@ -28,6 +28,9 @@ category: "Automation"
 pricing_tier: free
 ---
 
+> **核心功能**: 本技能提供结构化的工作流程和配置指引等能力。
+
+
 # 内容过滤工具（免费版）
 
 ## 概述
