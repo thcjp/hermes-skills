@@ -67,8 +67,8 @@ except ImportError:
 CANDIDATES_FILE = DATA_DIR / "discovery" / "candidates_unified.json"
 SKILLHUB_ROOT = Path(r"d:\skills\packaged-skills\skillhub")
 
-# slug 冲突后缀候选列表
-SLUG_CONFLICT_SUFFIXES = ['-v2', '-pro', '-v3', '-plus', '-v4', '-max', '-v5', '-elite']
+# v3.0: 移除-pro后缀(会创建近似重复slug触发平台反垃圾系统)
+SLUG_CONFLICT_SUFFIXES = ['-v2', '-v3', '-plus', '-v4', '-max', '-v5', '-elite']
 
 # 分类 -> (痛点, 方案) 映射, 用于 summary 生成
 CATEGORY_PAIN_SOLUTION_MAP: Dict[str, Tuple[str, str]] = {

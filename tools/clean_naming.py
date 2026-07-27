@@ -173,10 +173,13 @@ def analyze_pairs() -> Dict[str, Any]:
 def plan_merge_pairs(analysis: Dict) -> List[Dict[str, Any]]:
     """生成成对记录合并计划
     
+    v3.0安全增强: 停止生成-free派生slug,改为合并到单一slug
+    根因: -free/-pro派生skill被平台识别为近似重复内容,封禁率93.4%
+    
     策略:
-    - base slug 作为付费版slug (edition=paid)
-    - base-free 作为免费版slug (edition=free, parent_slug=base)
-    - 合并两条记录的metadata，保留pro版的pricing_model
+    - base slug 作为唯一slug (edition=paid, pricing_model保留)
+    - 免费版记录标记为待合并(deleted), 其metadata合并到付费版
+    - 不再创建新的 base-free slug
     - 删除原来的 -tool-free/-tool-pro 记录
     """
     plans = []
@@ -202,35 +205,33 @@ def plan_merge_pairs(analysis: Dict) -> List[Dict[str, Any]]:
         conn.close()
 
         if existing:
-            # base slug已被占用，使用 base-paid 和 base-free
+            # base slug已被占用，使用 base-paid
             paid_slug = f"{base_slug}-paid"
         else:
             paid_slug = base_slug
 
-        free_slug = f"{base_slug}-free"
+        # v3.0: 不再生成 free_slug, 免费版合并到付费版
+        # 保留原free slug用于引用(合并后删除)
+        old_free_slug = free_item['slug']
 
         # 标准化pricing
         paid_pricing, _ = normalize_pricing('pro', pro_item.get('pricing_model'))
-        free_pricing, _ = normalize_pricing('free', 'free')
 
         plan = {
             'base_slug': base_slug,
             'paid_slug': paid_slug,
-            'free_slug': free_slug,
             'old_pro_slug': pro_item['slug'],
-            'old_free_slug': free_item['slug'],
+            'old_free_slug': old_free_slug,
             'old_pro_id': pro_item['id'],
             'old_free_id': free_item['id'],
             'paid_pricing_model': paid_pricing,
-            'free_pricing_model': 'free',
             'paid_display_name': pro_item['current_display_name'],
-            'free_display_name': f"{free_item['current_display_name']}免费版"
-                                 if '免费' not in free_item['current_display_name']
-                                 else free_item['current_display_name'],
             'source': pro_item['source'],
             'source_slug': pro_item['source_slug'],
             'local_path': pro_item['local_path'],
-            'action': 'rename_pro_to_base' if not existing else 'rename_pro_to_paid',
+            'action': 'merge_free_into_paid' if not existing else 'rename_pro_to_paid',
+            # v3.0: 标记免费版需删除(合并到付费版后)
+            'free_action': 'delete_after_merge',
         }
         plans.append(plan)
 
@@ -355,24 +356,25 @@ def execute_merge_pairs(dry_run: bool = True) -> Dict[str, Any]:
                 parent_slug=None,
             )
 
-            # 2. 更新free记录为新slug (免费版)，设置parent_slug
+            # 2. v3.0: 免费版合并到付费版 — 标记为deleted,不再创建新-free slug
             db_module.update_skill_fields(
                 plan['old_free_id'],
-                slug=plan['free_slug'],
-                edition='free',
-                pricing_model='free',
-                current_display_name=plan['free_display_name'],
+                slug=plan['old_free_slug'],  # 保留原slug(不改名)
+                edition='free_merged',  # 标记为已合并
+                pricing_model=plan['paid_pricing_model'],  # 继承付费版定价
+                current_display_name=plan['paid_display_name'],  # 统一显示名
                 parent_slug=plan['paid_slug'],
+                current_status='deleted',  # 标记为已删除(合并到付费版)
             )
 
             # 3. 记录操作日志
-            for old_id, old_slug, new_slug in [
-                (plan['old_pro_id'], plan['old_pro_slug'], plan['paid_slug']),
-                (plan['old_free_id'], plan['old_free_slug'], plan['free_slug']),
+            for old_id, old_slug, new_slug, action_desc in [
+                (plan['old_pro_id'], plan['old_pro_slug'], plan['paid_slug'], 'Renamed to paid'),
+                (plan['old_free_id'], plan['old_free_slug'], plan['paid_slug'], 'Merged into paid (v3.0: no new -free slug)'),
             ]:
                 db_module.record_operation(
                     old_id, 'naming_governance',
-                    f'Renamed slug: {old_slug} → {new_slug}',
+                    f'{action_desc}: {old_slug} → {new_slug}',
                     operator='clean_naming.py',
                     after_state='renamed',
                 )
@@ -505,10 +507,10 @@ def cmd_dry_run(args):
     plans = plan_merge_pairs(analysis)
 
     print(f"\n合并计划预览 (前10个):")
-    print(f"{'Base Slug':<35} {'付费版slug':<35} {'免费版slug':<40}")
+    print(f"{'Base Slug':<35} {'付费版slug':<35} {'免费版处理':<40}")
     print("-" * 110)
     for plan in plans[:10]:
-        print(f"{plan['base_slug']:<35} {plan['paid_slug']:<35} {plan['free_slug']:<40}")
+        print(f"{plan['base_slug']:<35} {plan['paid_slug']:<35} {'→ merged into paid':<40}")
 
     # 显示字段修复预览
     field_issues = analyze_field_inconsistency()
@@ -578,7 +580,7 @@ def cmd_merge_pairs(args):
         print(f"预览: {result['total_pairs']} 组待合并")
         for plan in result['details'][:10]:
             print(f"  {plan['old_pro_slug']} → {plan['paid_slug']}")
-            print(f"  {plan['old_free_slug']} → {plan['free_slug']}")
+            print(f"  {plan['old_free_slug']} → merged into {plan['paid_slug']}")
     else:
         result = execute_merge_pairs(dry_run=False)
         print(f"合并完成: {result['executed']}/{result['total_pairs']}")

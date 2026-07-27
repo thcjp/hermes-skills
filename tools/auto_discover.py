@@ -436,10 +436,13 @@ def cmd_import(args):
         print(f"未在候选列表中找到: {args.slug}")
         return
 
-    # 生成符合命名规范的双版本信息
+    # v3.0安全增强: 停止生成-free派生slug,改为单一slug + edition/pricing_model元数据
+    # 根因: 2026-07-24批量上传中, 990个-free/-pro派生skill被平台内容指纹系统
+    #       识别为"批量生产的近似重复内容"并批量封禁(封禁率93.4%)
+    # 修复: 新导入的skill只生成一个slug(paid版), 免费版由平台原生定价机制承载
+    #       不再创建base_slug-free独立skill
     base_slug = args.slug
     paid_slug = base_slug
-    free_slug = f"{base_slug}-free"
 
     # 从候选数据提取信息
     display_name = target.get('display_name', base_slug)
@@ -450,7 +453,7 @@ def cmd_import(args):
     skill_type = target.get('skill_type', 'general')
     category = target.get('category', 'Productivity')
 
-    # 导入付费版到DB
+    # 导入到DB (v3.0: 仅生成单一skill,不再生成-free派生)
     from db import register_skill
     paid_skill_id = register_skill(
         slug=paid_slug,
@@ -473,35 +476,11 @@ def cmd_import(args):
         notes=f"Imported from discovery. Source: {source_platform}"
     )
 
-    # 导入免费版到DB
-    free_display_name = f"{display_name}免费版"
-    free_skill_id = register_skill(
-        slug=free_slug,
-        name=free_slug,
-        display_name=free_display_name,
-        version='1.0.0',
-        category=category,
-        source=source_platform,
-        local_path='',
-        source_slug=args.slug,
-        source_url=source_url,
-        source_author=source_author,
-        source_license=source_license,
-        skill_type=skill_type,
-        pricing_model='free',
-        is_differentiated=0,
-        edition='free',
-        parent_slug=paid_slug,
-        workflow_state='step1_read_original',
-        notes=f"Imported from discovery. Source: {source_platform}"
-    )
-
     print(f"✓ 导入成功: {args.slug}")
-    print(f"  付费版: slug={paid_slug}, skill_id={paid_skill_id}, workflow_state=step1_read_original")
-    print(f"  免费版: slug={free_slug}, skill_id={free_skill_id}, workflow_state=step1_read_original")
+    print(f"  slug={paid_slug}, skill_id={paid_skill_id}, workflow_state=step1_read_original")
     print(f"  来源: {source_platform}")
     print(f"  displayName: {display_name}")
-    print(f"\n注意: 下一步需要AI执行差异化改造，请参考NAMING_CONVENTION.md")
+    print(f"\n注意: v3.0已停止生成-free派生slug,由平台原生定价机制承载免费版")
     print(f"差异化改造完成后，使用以下命令上传:")
     print(f"  python update_mechanism.py generate {paid_slug}")
     print(f"  python update_mechanism.py upload {paid_slug}")

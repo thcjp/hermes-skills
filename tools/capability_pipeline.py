@@ -121,14 +121,17 @@ def find_source_skills() -> List[Dict[str, Any]]:
 
 
 def evaluate_existing_packaged(slug: str) -> Optional[Dict[str, Any]]:
-    """评估现有packaged版本的L2-Capability评分"""
-    # 检查付费版
+    """评估现有packaged版本的L2-Capability评分
+    
+    v3.0: 新导入的skill不再生成-free派生slug,但向后兼容已有-free版本
+    """
+    # 检查付费版(主版本)
     paid_path = PACKAGED_SKILLS_DIR / slug / 'SKILL.md'
     paid_result = None
     if paid_path.exists():
         paid_result = evaluate_capability(paid_path)
     
-    # 检查免费版
+    # v3.0: 向后兼容 — 仍检查已有的-free版本(历史遗留),但不再生成新的
     free_slug = slug + '-free'
     free_path = PACKAGED_SKILLS_DIR / free_slug / 'SKILL.md'
     free_result = None
@@ -137,7 +140,7 @@ def evaluate_existing_packaged(slug: str) -> Optional[Dict[str, Any]]:
     
     return {
         'paid': paid_result,
-        'free': free_result,
+        'free': free_result,  # v3.0: 历史遗留,新skill此值为None
     }
 
 
