@@ -1,0 +1,131 @@
+{
+  "decision_at": "2026-07-27T20:00:00",
+  "total": 20,
+  "free_count": 10,
+  "paid_only_count": 10,
+  "allocation_principle": "免费版选择普及型、教育型、基础工具型技能；仅付费版选择高价值、专业级、直接关联投资收益的技能",
+  "free_edition": [
+    {
+      "slug": "realtime-quote",
+      "display_name": "实时行情跟踪",
+      "direction": "a_stock",
+      "reason": "基础工具型：多提供商行情查询，功能相对简单，市场教育价值高"
+    },
+    {
+      "slug": "stock-radar",
+      "display_name": "选股雷达",
+      "direction": "a_stock",
+      "reason": "普及型：8维度评分+热门扫描，适合散户入门教育"
+    },
+    {
+      "slug": "fin-literacy",
+      "display_name": "金融知识问答",
+      "direction": "a_stock",
+      "reason": "教育型：多受众分层金融知识教育，天然适合免费传播"
+    },
+    {
+      "slug": "trade-alert",
+      "display_name": "交易告警通知",
+      "direction": "crypto",
+      "reason": "基础工具型：Telegram告警通知，功能简单易复制"
+    },
+    {
+      "slug": "ai-finance",
+      "display_name": "AI驱动金融分析",
+      "direction": "financial_analysis",
+      "reason": "教育型：自然语言量化研究入门，普及AI金融概念"
+    },
+    {
+      "slug": "multi-research",
+      "display_name": "多视角投研分析",
+      "direction": "a_stock",
+      "reason": "教育型：基本面/技术面/新闻/风险辩论，适合投研学习"
+    },
+    {
+      "slug": "report-viz",
+      "display_name": "财报可视化分析",
+      "direction": "financial_analysis",
+      "reason": "普及型：SVG迷你图+多格式输出，可视化教育价值高"
+    },
+    {
+      "slug": "vegas-tunnel",
+      "display_name": "维加斯通道交易",
+      "direction": "a_stock",
+      "reason": "教育型：EMA+斐波那契交易策略教学，适合技术分析入门"
+    },
+    {
+      "slug": "crypto-portfolio",
+      "display_name": "加密组合跟踪",
+      "direction": "crypto",
+      "reason": "基础工具型：多链钱包+CEX跟踪，功能直观易理解"
+    },
+    {
+      "slug": "valuation-model",
+      "display_name": "估值建模专家",
+      "direction": "financial_analysis",
+      "reason": "教育型：DCF/PE/PB/WACC估值教学，金融分析入门必备"
+    }
+  ],
+  "paid_only": [
+    {
+      "slug": "dex-token",
+      "display_name": "DEX代币分析",
+      "direction": "crypto",
+      "reason": "专业级：持币集群+顶级交易者分析，直接关联投资收益"
+    },
+    {
+      "slug": "stock-filter-skills-v2",
+      "display_name": "A股多条件筛选",
+      "direction": "a_stock",
+      "reason": "专业级：17个CLI+因子管理，功能复杂专业壁垒高"
+    },
+    {
+      "slug": "fin-terminal",
+      "display_name": "金融数据终端",
+      "direction": "financial_analysis",
+      "reason": "企业级：多资产数据聚合，参考Bloomberg Terminal"
+    },
+    {
+      "slug": "trade-bot",
+      "display_name": "加密交易机器人",
+      "direction": "crypto",
+      "reason": "专业级：策略开发+回测+实盘，直接关联交易收益"
+    },
+    {
+      "slug": "futures-quant",
+      "display_name": "期货量化系统",
+      "direction": "financial_analysis",
+      "reason": "企业级：CTP接口+多市场，专业壁垒极高"
+    },
+    {
+      "slug": "agent-research",
+      "display_name": "A股多Agent投研",
+      "direction": "a_stock",
+      "reason": "专业级：辩论决策+涨跌停适配，多Agent协作复杂度高"
+    },
+    {
+      "slug": "cross-market",
+      "display_name": "跨市场交易终端",
+      "direction": "crypto",
+      "reason": "专业级：8大券商API+纳秒行情，直接关联交易执行"
+    },
+    {
+      "slug": "ai-report",
+      "display_name": "AI财报分析",
+      "direction": "financial_analysis",
+      "reason": "专业级：F-score摘要+暴雷预警，直接关联投资决策"
+    },
+    {
+      "slug": "backtest",
+      "display_name": "策略回测引擎",
+      "direction": "financial_analysis",
+      "reason": "专业级：事件驱动+参数优化，量化交易核心工具"
+    },
+    {
+      "slug": "arb-engine",
+      "display_name": "加密套利引擎",
+      "direction": "crypto",
+      "reason": "专业级：三角套利+动态滑点补偿，直接关联套利收益"
+    }
+  ]
+}

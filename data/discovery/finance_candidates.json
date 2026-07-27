@@ -259,5 +259,40 @@
       "crypto": "okx-dex-token + test + Freqtrade → 代币分析+组合管理+套利",
       "financial_analysis": "accounting-and-finance + OpenBB + Investor-Agent → 估值建模+数据终端+AI财报"
     }
+  },
+  "final_20": {
+    "dedup_notes": "23个候选去重为20个。5个Web来源与GitHub来源重叠(Alpaca-MCP/Freqtrade-MCP/Investor-Agent/TradingAgents-Astock/OpenBB)，其中3个保留为独立差异化方向(同一源项目产出不同技能)，实际去除2个纯重复条目。",
+    "candidates": [
+      {"seq": 1, "name": "accounting-and-finance", "source": "clawhub", "direction": "financial_analysis", "planned_skill": "估值建模专家-DCF/PE/PB/WACC全链路", "edition": "paid"},
+      {"seq": 2, "name": "finance", "source": "clawhub", "direction": "a_stock", "planned_skill": "实时行情跟踪-多提供商回退", "edition": "free"},
+      {"seq": 3, "name": "finance-radar", "source": "clawhub", "direction": "a_stock", "planned_skill": "选股雷达-8维度评分+热门扫描", "edition": "free"},
+      {"seq": 4, "name": "finance-report-analyzer", "source": "clawhub", "direction": "financial_analysis", "planned_skill": "财报可视化分析-SVG迷你图+多格式输出", "edition": "paid"},
+      {"seq": 5, "name": "financial-literacy", "source": "clawhub", "direction": "a_stock", "planned_skill": "金融知识问答-多受众分层教育", "edition": "free"},
+      {"seq": 6, "name": "okx-dex-token", "source": "clawhub", "direction": "crypto", "planned_skill": "DEX代币分析-持币集群+顶级交易者", "edition": "paid"},
+      {"seq": 7, "name": "rho-telegram-alerts", "source": "clawhub", "direction": "crypto", "planned_skill": "交易告警通知-Telegram+风险预警", "edition": "free"},
+      {"seq": 8, "name": "stock-filter-skills", "source": "clawhub", "direction": "a_stock", "planned_skill": "A股多条件筛选-17个CLI+因子管理", "edition": "paid"},
+      {"seq": 9, "name": "t-trading", "source": "clawhub", "direction": "a_stock", "planned_skill": "维加斯通道交易-EMA+斐波那契+共振评分", "edition": "paid"},
+      {"seq": 10, "name": "test", "source": "clawhub", "direction": "crypto", "planned_skill": "加密组合跟踪-多链钱包+CEX+预测市场", "edition": "paid"},
+      {"seq": 11, "name": "OpenBB-finance/OpenBB", "source": "github", "direction": "financial_analysis", "planned_skill": "金融数据终端-多资产数据聚合", "edition": "paid"},
+      {"seq": 12, "name": "freqtrade/freqtrade", "source": "github", "direction": "crypto", "planned_skill": "加密交易机器人-策略开发+回测+实盘", "edition": "paid"},
+      {"seq": 13, "name": "vnpy/vnpy", "source": "github", "direction": "financial_analysis", "planned_skill": "期货量化系统-CTP接口+多市场", "edition": "paid"},
+      {"seq": 14, "name": "TradingAgents-Astock", "source": "github", "direction": "a_stock", "planned_skill": "A股多Agent投研-辩论决策+涨跌停适配", "edition": "paid"},
+      {"seq": 15, "name": "Alpaca-MCP", "source": "web", "direction": "crypto", "planned_skill": "跨市场交易终端-8大券商API+纳秒行情", "edition": "paid"},
+      {"seq": 16, "name": "Investor-Agent", "source": "web", "direction": "financial_analysis", "planned_skill": "AI财报分析-F-score摘要+暴雷预警", "edition": "paid"},
+      {"seq": 17, "name": "backtrader/backtrader", "source": "github", "direction": "financial_analysis", "planned_skill": "策略回测引擎-事件驱动+参数优化", "edition": "paid"},
+      {"seq": 18, "name": "Freqtrade-MCP", "source": "web", "direction": "crypto", "planned_skill": "加密套利引擎-三角套利+动态滑点补偿", "edition": "paid"},
+      {"seq": 19, "name": "OpenBB Platform + AI Agent", "source": "web", "direction": "financial_analysis", "planned_skill": "AI驱动金融分析-自然语言量化研究", "edition": "paid"},
+      {"seq": 20, "name": "TradingAgents-Astock (Web)", "source": "web", "direction": "a_stock", "planned_skill": "多视角投研分析-基本面/技术面/新闻/风险辩论", "edition": "free"}
+    ],
+    "direction_distribution": {
+      "a_stock": 8,
+      "crypto": 6,
+      "financial_analysis": 6
+    },
+    "edition_distribution": {
+      "free": 5,
+      "paid": 15
+    },
+    "note": "免费/收费分配为初筛建议，T2-009将根据差异化后的实际质量最终确定10免费+20付费的分配"
   }
 }

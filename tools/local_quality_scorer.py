@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-本地LLM质量评分器 (v1.0)
+本地LLM质量评分器 (v1.1)
 ========================
 5维度评测SKILL.md质量，产出0.0-5.0分数。
 
@@ -17,12 +17,18 @@ Usage:
   python local_quality_scorer.py <skill_dir_or_path>     # 评分单个skill
   python local_quality_scorer.py <skill_dir> --json       # JSON输出
   python local_quality_scorer.py --test                   # 自检
+  python local_quality_scorer.py scan-all                 # 批量扫描全部skill
+  python local_quality_scorer.py scan-all --dir <path>    # 扫描指定目录
+  python local_quality_scorer.py scan-all --force         # 强制重新扫描
+  python local_quality_scorer.py scan-all --limit 50      # 限制扫描数量
 """
 
 import json
 import os
 import sys
 import re
+import time
+import sqlite3
 from pathlib import Path
 from datetime import datetime
 
@@ -282,6 +288,308 @@ def _error_result(error_msg):
     }
 
 
+# ============ 批量扫描 (T1-005) ============
+
+# 项目根目录
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+_DB_PATH = str(_PROJECT_ROOT / "skill-registry.db")
+
+# 默认扫描目录
+_DEFAULT_SCAN_DIRS = [
+    _PROJECT_ROOT / "packaged-skills" / "skillhub",
+    _PROJECT_ROOT / "opensource-skills" / "packaged",
+]
+
+
+def _extract_slug_from_skill_md(skill_md_path):
+    """从SKILL.md的frontmatter中提取slug"""
+    try:
+        content = skill_md_path.read_text(encoding="utf-8")
+        if content.startswith("\ufeff"):
+            content = content[1:]
+        if content.startswith("---"):
+            parts = re.split(r"^---\s*$", content, maxsplit=2, flags=re.MULTILINE)
+            if len(parts) >= 3:
+                fm = parts[1]
+                m = re.search(r'^slug:\s*["\']?(.+?)["\']?\s*$', fm, re.MULTILINE)
+                if m:
+                    return m.group(1).strip()
+    except Exception:
+        pass
+    return None
+
+
+def _get_db_connection():
+    """获取DB连接"""
+    conn = sqlite3.connect(_DB_PATH)
+    conn.row_factory = sqlite3.Row
+    conn.execute("PRAGMA foreign_keys = ON")
+    return conn
+
+
+def _get_scored_slugs(conn):
+    """获取已有本地评分的slug集合（断点续扫）"""
+    c = conn.cursor()
+    c.execute("SELECT slug FROM skills WHERE local_quality_score > 0")
+    return {row["slug"] for row in c.fetchall()}
+
+
+def _write_score_to_db(conn, slug, score, feedback, dimensions):
+    """将评分写入DB"""
+    c = conn.cursor()
+    now = datetime.now().isoformat()
+
+    # 构造feedback摘要（截断到500字符避免DB字段过长）
+    feedback_short = feedback[:500] if feedback else ""
+
+    # 构造dimensions JSON
+    dims_json = json.dumps(dimensions, ensure_ascii=False) if dimensions else "{}"
+
+    c.execute("""
+        UPDATE skills
+        SET local_quality_score = ?,
+            local_score_feedback = ?,
+            local_score_at = ?,
+            updated_at = ?
+        WHERE slug = ?
+    """, (score, feedback_short, now, now, slug))
+
+    return c.rowcount > 0
+
+
+def _generate_scan_report(conn, scan_results):
+    """生成全量质量评分报告 (T1-007)"""
+    report_dir = _PROJECT_ROOT / "data" / "reports"
+    report_dir.mkdir(parents=True, exist_ok=True)
+    report_path = report_dir / "local_quality_scan.json"
+
+    # 从DB读取全部评分数据
+    c = conn.cursor()
+    c.execute("""
+        SELECT slug, local_quality_score, local_score_feedback, local_score_at
+        FROM skills
+        WHERE local_quality_score > 0
+        ORDER BY local_quality_score ASC
+    """)
+    db_rows = c.fetchall()
+
+    if not db_rows:
+        print("[WARN] DB中无评分数据，跳过报告生成")
+        return None
+
+    scores = [row["local_quality_score"] for row in db_rows]
+    avg_score = sum(scores) / len(scores) if scores else 0
+
+    # 评分分布
+    dist = {"0.0-2.0": 0, "2.0-3.0": 0, "3.0-3.5": 0, "3.5-4.0": 0, "4.0-4.5": 0, "4.5-5.0": 0}
+    for s in scores:
+        if s < 2.0:
+            dist["0.0-2.0"] += 1
+        elif s < 3.0:
+            dist["2.0-3.0"] += 1
+        elif s < 3.5:
+            dist["3.0-3.5"] += 1
+        elif s < 4.0:
+            dist["3.5-4.0"] += 1
+        elif s < 4.5:
+            dist["4.0-4.5"] += 1
+        else:
+            dist["4.5-5.0"] += 1
+
+    low_score_skills = []
+    for row in db_rows:
+        if row["local_quality_score"] <= SCORE_THRESHOLD:
+            # 从feedback中提取最弱维度
+            feedback = row["local_score_feedback"] or ""
+            weakest = ""
+            for dim in ["innovation", "usability", "completeness", "security", "accuracy"]:
+                if f"[{dim}]" in feedback:
+                    weakest = dim
+                    break
+            low_score_skills.append({
+                "slug": row["slug"],
+                "score": round(row["local_quality_score"], 2),
+                "weakest_dim": weakest,
+                "feedback": feedback[:200],
+            })
+
+    report = {
+        "scan_at": datetime.now().isoformat(),
+        "total_scored": len(db_rows),
+        "score_distribution": dist,
+        "low_score_count": len(low_score_skills),
+        "passed_count": len(db_rows) - len(low_score_skills),
+        "avg_score": round(avg_score, 2),
+        "low_score_skills": low_score_skills,
+        "scan_errors": [r for r in scan_results if r.get("error")],
+    }
+
+    with open(report_path, "w", encoding="utf-8") as f:
+        json.dump(report, f, ensure_ascii=False, indent=2)
+
+    print(f"\n报告已生成: {report_path}")
+    print(f"  总评分数: {len(db_rows)}")
+    print(f"  通过(>4.5): {len(db_rows) - len(low_score_skills)}")
+    print(f"  未通过(<=4.5): {len(low_score_skills)}")
+    print(f"  平均分: {avg_score:.2f}")
+    print(f"  评分分布: {dist}")
+
+    return report_path
+
+
+def _score_one_skill(args):
+    """线程池worker: 评分单个skill，返回结果dict（不写DB）"""
+    slug, skill_md_path = args
+    try:
+        result = score_skill(skill_md_path)
+        if result.get("error"):
+            return {"slug": slug, "error": result["error"]}
+        return {
+            "slug": slug,
+            "score": result["total_score"],
+            "feedback": result.get("feedback", ""),
+            "dimensions": result.get("dimensions", {}),
+            "passed": result.get("passed", False),
+        }
+    except Exception as e:
+        return {"slug": slug, "error": str(e)}
+
+
+def scan_all(dirs=None, force=False, limit=None):
+    """
+    批量扫描所有skill，评分并写入DB（并行版，5线程）。
+
+    参数:
+        dirs: 要扫描的目录列表（默认packaged-skills/skillhub + opensource-skills/packaged）
+        force: 强制重新扫描（不跳过已评分的）
+        limit: 限制扫描数量
+    """
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    import threading
+
+    scan_dirs = [Path(d) for d in (dirs or _DEFAULT_SCAN_DIRS)]
+
+    # 收集所有SKILL.md文件
+    all_skills = []
+    for scan_dir in scan_dirs:
+        if not scan_dir.exists():
+            print(f"[SKIP] 目录不存在: {scan_dir}")
+            continue
+        for sub in sorted(scan_dir.iterdir()):
+            if sub.is_dir() and (sub / "SKILL.md").exists():
+                all_skills.append(sub / "SKILL.md")
+
+    print(f"发现 {len(all_skills)} 个SKILL.md文件", flush=True)
+
+    # 连接DB
+    conn = _get_db_connection()
+
+    # 获取已评分的slug（断点续扫）
+    if not force:
+        scored_slugs = _get_scored_slugs(conn)
+        print(f"DB中已评分: {len(scored_slugs)} 个（将跳过）", flush=True)
+    else:
+        scored_slugs = set()
+        print("强制重新扫描模式", flush=True)
+
+    # 筛选需要扫描的skill
+    to_scan = []
+    for skill_md in all_skills:
+        slug = _extract_slug_from_skill_md(skill_md)
+        if not slug:
+            slug = skill_md.parent.name
+        if slug in scored_slugs and not force:
+            continue
+        to_scan.append((slug, skill_md))
+
+    if limit:
+        to_scan = to_scan[:limit]
+
+    print(f"待扫描: {len(to_scan)} 个", flush=True)
+    if not to_scan:
+        print("无待扫描skill，生成报告...", flush=True)
+        _generate_scan_report(conn, [])
+        conn.close()
+        return
+
+    # 加载并行配置
+    try:
+        config = _load_config()
+        max_workers = config.get("scan", {}).get("max_workers", 5)
+    except Exception:
+        max_workers = 5
+
+    print(f"并行线程数: {max_workers}", flush=True)
+
+    # 并行扫描
+    scan_results = []
+    success_count = 0
+    error_count = 0
+    completed_count = 0
+    db_lock = threading.Lock()
+    start_time = time.time()
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        # 提交所有任务
+        future_to_slug = {
+            executor.submit(_score_one_skill, item): item[0] for item in to_scan
+        }
+
+        for future in as_completed(future_to_slug):
+            slug = future_to_slug[future]
+            completed_count += 1
+
+            try:
+                result = future.result()
+            except Exception as e:
+                result = {"slug": slug, "error": str(e)}
+
+            if result.get("error"):
+                scan_results.append(result)
+                error_count += 1
+                print(f"  [{completed_count}/{len(to_scan)}] ERROR {slug}: {result['error']}", flush=True)
+            else:
+                score = result["score"]
+                feedback = result.get("feedback", "")
+                dimensions = result.get("dimensions", {})
+
+                # 线程安全地写DB
+                with db_lock:
+                    written = _write_score_to_db(conn, slug, score, feedback, dimensions)
+                    conn.commit()
+
+                if written:
+                    scan_results.append({"slug": slug, "score": score, "passed": result.get("passed", False)})
+                    success_count += 1
+                else:
+                    scan_results.append({"slug": slug, "error": "DB中无此slug记录"})
+                    error_count += 1
+
+                status = "PASS" if result.get("passed") else "FAIL"
+                print(f"  [{completed_count}/{len(to_scan)}] {status} {slug}: {score:.2f}", flush=True)
+
+            # 每10个打印进度
+            if completed_count % 10 == 0:
+                elapsed = time.time() - start_time
+                rate = completed_count / elapsed if elapsed > 0 else 0
+                remaining = (len(to_scan) - completed_count) / rate if rate > 0 else 0
+                print(f"  --- 进度: {completed_count}/{len(to_scan)} ({completed_count/len(to_scan)*100:.1f}%) "
+                      f"成功={success_count} 错误={error_count} "
+                      f"速率={rate:.1f}/s 预计剩余={remaining:.0f}s ---", flush=True)
+
+    elapsed_total = time.time() - start_time
+    print(f"\n{'='*60}", flush=True)
+    print(f"扫描完成: {len(to_scan)} 个", flush=True)
+    print(f"  成功: {success_count}", flush=True)
+    print(f"  错误: {error_count}", flush=True)
+    print(f"  耗时: {elapsed_total:.0f}秒 ({elapsed_total/60:.1f}分钟)", flush=True)
+
+    # 生成报告 (T1-007)
+    _generate_scan_report(conn, scan_results)
+
+    conn.close()
+
+
 # ============ CLI入口 ============
 
 
@@ -289,10 +597,41 @@ def main():
     if len(sys.argv) < 2:
         print("用法: python local_quality_scorer.py <skill_dir_or_path> [--json]")
         print("      python local_quality_scorer.py --test")
+        print("      python local_quality_scorer.py scan-all [--dir <path>] [--force] [--limit N]")
         sys.exit(1)
 
     if sys.argv[1] == "--test":
         _self_test()
+        return
+
+    # T1-005: 批量扫描命令
+    if sys.argv[1] == "scan-all":
+        force = "--force" in sys.argv
+        limit = None
+        custom_dirs = None
+
+        # 解析 --dir 参数
+        if "--dir" in sys.argv:
+            idx = sys.argv.index("--dir")
+            if idx + 1 < len(sys.argv):
+                dir_val = sys.argv[idx + 1]
+                # 支持相对路径（相对于项目根目录）
+                dir_path = Path(dir_val)
+                if not dir_path.is_absolute():
+                    dir_path = _PROJECT_ROOT / dir_val
+                custom_dirs = [dir_path]
+
+        # 解析 --limit 参数
+        if "--limit" in sys.argv:
+            idx = sys.argv.index("--limit")
+            if idx + 1 < len(sys.argv):
+                try:
+                    limit = int(sys.argv[idx + 1])
+                except ValueError:
+                    print(f"错误: --limit 参数需要整数, 得到: {sys.argv[idx + 1]}")
+                    sys.exit(1)
+
+        scan_all(dirs=custom_dirs, force=force, limit=limit)
         return
 
     skill_input = sys.argv[1]

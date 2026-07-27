@@ -1013,7 +1013,9 @@ _SKILL_FIELD_WHITELIST = frozenset({
     'source_license', 'local_path', 'current_status', 'is_differentiated',
     'differentiation_date', 'pricing_model', 'skill_type', 'notes',
     'edition', 'parent_slug', 'workflow_state', 'pricing_category',
-    'pricing_rationale', 'pricing_tier', 'is_paid', 'suggested_price'
+    'pricing_rationale', 'pricing_tier', 'is_paid', 'suggested_price',
+    # v1.6: 本地LLM质量评分字段 (T1-005)
+    'local_quality_score', 'local_score_feedback', 'local_score_at',
 })
 
 

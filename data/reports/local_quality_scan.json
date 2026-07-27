@@ -1,0 +1,36 @@
+{
+  "scan_at": "2026-07-27T11:47:35.467762",
+  "total_scored": 3,
+  "score_distribution": {
+    "0.0-2.0": 0,
+    "2.0-3.0": 0,
+    "3.0-3.5": 0,
+    "3.5-4.0": 3,
+    "4.0-4.5": 0,
+    "4.5-5.0": 0
+  },
+  "low_score_count": 3,
+  "passed_count": 0,
+  "avg_score": 3.83,
+  "low_score_skills": [
+    {
+      "slug": "accounting-finance",
+      "score": 3.8,
+      "weakest_dim": "innovation",
+      "feedback": "[completeness] 虽然功能列表详尽，但部分描述不够清晰，如‘Use when’部分描述过于简略，且部分功能描述未完全展开。 | [usability] 文档结构清晰，示例较为充分，frontmatter规范完整，但部分示例代码未提供运行环境说明，可能影响快速上手。 | [security] 无安全风险模式，依赖说明透明，无敏感信息泄露，但未明确提及API Key的安全存储和传输。 | "
+    },
+    {
+      "slug": "accounting-and-finance-free",
+      "score": 3.8,
+      "weakest_dim": "innovation",
+      "feedback": "[completeness] 功能描述完整，输入输出格式清晰，使用场景充分，功能列表详尽，但部分细节描述不够详细，如输入数据的具体格式要求 | [usability] 文档结构清晰，示例充分，frontmatter规范完整，但部分示例代码缺失，用户可能难以快速上手 | [innovation] 差异化亮点突出，独特价值明确，但非简单复制或模板化方面表现一般，需进一步创新 | 改进建议: 详细描述输"
+    },
+    {
+      "slug": "accounting-and-finance",
+      "score": 3.9,
+      "weakest_dim": "innovation",
+      "feedback": "[completeness] 功能列表详尽，使用场景充分，输入输出格式清晰，但缺少部分示例代码的完整输出结果描述 | [usability] 文档结构清晰，示例较为充分，frontmatter规范完整，但部分示例代码的输入输出格式描述不够详细 | [innovation] 差异化亮点突出，独特价值明确，但部分功能描述过于通用，缺乏具体创新点的详细说明 | 改进建议: 补充示例代码的完整输出结果描述"
+    }
+  ],
+  "scan_errors": []
+}
