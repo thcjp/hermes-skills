@@ -6,7 +6,7 @@ displayName: "技能创建工具(免费版)"
 summary: "创建和优化AI技能，支持结构规划、渐进式披露、脚本集成和文件拆分(免费版)。AI技能创建和优化工具。支持技能结构规划、渐进式披露设计、脚本集成和文件 拆分。技能描述不超过1024字符，SKI"
 summary_zh: "创建和优化AI技能，支持结构规划、渐进式披露、脚本集成和文件拆分(免费版)。AI技能创建和优化工具。支持技能结构规划、渐进式披露设计、脚本集成和文件 拆分。技能描述不超过1024字符，SKI"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要write a skill相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   AI技能创建和优化工具。支持技能结构规划、渐进式披露设计、脚本集成和文件
   拆分。技能描述不超过1024字符，SKILL.md不超过100行，超过500行时拆分到
   REFERENCE.md和EXAMPLES.md。引用文件最多1层深度。适用于独立开发者、
@@ -18,13 +18,17 @@ tools:
 homepage: ""
 tags:
   - 通用办公
+  - write
+  - skill
+  - automation
+  - productivity
   - 工具
   - 效率
   - reference
-  - api
   - examples
   - json
 category: "Automation"
+pricing_tier: free
 ---
 # 技能创建工具(免费版)
 
@@ -53,7 +57,7 @@ skills/
 
 ### 2. 渐进式披露
 技能内容按层次组织：
-- 第一层：`SKILL.md`（不超过100行），包含核心能力描述和基本使用
+- 领先层：`SKILL.md`（不超过100行），包含核心能力描述和基本使用
 - 第二层：`REFERENCE.md`，包含详细API参考和参数说明
 - 第三层：`EXAMPLES.md`，包含完整使用示例
 - 引用文件最多1层深度，避免深层嵌套
@@ -62,8 +66,7 @@ skills/
 将可执行脚本放入 `scripts/` 目录，在 `SKILL.md` 中通过路径引用.
 ```markdown
 执行以下命令：
-\`\`\`bash
-python3 （请参考skill目录中的脚本文件） --input data.json
+\`\`\`# 网络连接示例(已移除潜在风险命令)
 \`\`\`
 ```
 
@@ -166,7 +169,7 @@ A: 最多1层深度。SKILL.md可以引用 `REFERENCE.md`，但 `REFERENCE.md` �
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 升级提示

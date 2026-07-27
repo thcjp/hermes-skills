@@ -1,5 +1,4 @@
 ---
-
 slug: "skill-creator-free"
 name: "skill-creator-free"
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: "AI技能创建指南（免费版）"
 summary: "免费版AI Skill创建指南，支持基础SKILL.md结构与Progressive Disclosure设计"
 summary_zh: "免费版AI Skill创建指南，支持基础SKILL.md结构与Progressive Disclosure设计"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要skill creator相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   创建有效AI Skill的基础指南（免费版）.
   覆盖Core Principles、SKILL.md结构设计与Progressive Disclosure基础概念.
   免费版不含完整Bundled Resources规范、Skill Creation Process脚本集成与不应包含内容指南.
@@ -18,16 +17,19 @@ tools:
   - grep
 homepage: ""
 tags:
-  - bundled
+  - - bundled
+  - skill
+  - creator
+  - automation
+  - productivity
   - resources
   - body
   - progressive
   - disclosure
   - level
 category: "Automation"
-
+pricing_tier: free
 ---
-
 # AI技能创建指南（免费版）
 
 创建有效AI Skill的基础指南，覆盖Core Principles与SKILL.md结构设计.

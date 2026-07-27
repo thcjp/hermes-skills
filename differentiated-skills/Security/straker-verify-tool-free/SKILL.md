@@ -1,5 +1,4 @@
 ---
-
 slug: straker-verify-tool-free
 name: straker-verify-tool-free
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: AI翻译验证(免费版)
 summary: "100+语言AI翻译服务,支持项目创建、状态查询与文件下载,适合个人翻译需求,支持多种使用场景和自动化处理"
 license: MIT
 edition: free
-description: "核心能力:，可自发提升工作效率. 适用于需要straker verify tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要straker verify tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "核心能力:，可自发提升工作效率. 适用于需要straker verify tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要straker verify tool相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - 翻译
   - straker
@@ -27,7 +26,6 @@ category: "Security"
 pricing_tier: free
 
 ---
-
 # AI翻译验证(免费版)
 
 ## 概述
@@ -142,7 +140,7 @@ from pathlib import Path
 class TranslationClient:
     """AI翻译客户端"""
 # ...
-    BASE_URL = "https://api-verify.example.com"
+    BASE_URL = "${SERVER_URL:?请设置环境变量}"
 # ...
     def __init__(self, api_key=None):
         self.api_key = api_key or os.environ.get("TRANSLATE_API_KEY")
@@ -240,7 +238,7 @@ if __name__ == "__main__":
 
 ```bash
 # 设置API Key
-export TRANSLATE_API_KEY="your-api-key-here"
+export TRANSLATE_API_KEY=${API_KEY:?请设置环境变量}
 ```
 
 ### 支持的常用语言

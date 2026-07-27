@@ -1,5 +1,4 @@
 ---
-
 slug: thesis-helper-tool-free
 name: thesis-helper-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 论文写作助手免费版
 summary: "面向学生和研究者的论文辅助工具,提供大纲生成、文献综述框架、摘要撰写与引用格式转换。论文写作助手免费版,面向学生和个人研究者提供基础的论文写作辅助能力。支持论文大纲生成、文献综述框架搭建、摘"
 license: MIT
 edition: free
-description: "论文写作助手免费版,面向学生和个人研究者包含基础的论文写作辅助能力。兼容论文大纲产出、文献综述框架搭建、摘要撰写、引用格式变换等核心功能。Use. 适用于需要thesis helper tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要thesis helper tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "论文写作助手免费版,面向学生和个人研究者包含基础的论文写作辅助能力。兼容论文大纲产出、文献综述框架搭建、摘要撰写、引用格式变换等核心功能。Use. 适用于需要thesis helper tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要thesis helper tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 研究工具
   - thesis
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # 论文写作助手免费版
 
 ## 概述
@@ -158,33 +156,33 @@ thesis-helper defense --file my_thesis.docx
 
 小王是计算机专业本科生,正在准备毕业论文,需要从零开始构建论文框架.
 ```bash
-# 步骤1:生成论文大纲
+# 步骤说明:生成论文大纲
 thesis-helper outline \
   --topic "基于深度学习的图像识别算法研究" \
   --type undergraduate \
   --level 3
 # ...
-# 步骤2:搭建文献综述框架
+# 步骤说明:搭建文献综述框架
 thesis-helper literature \
   --topic "深度学习图像识别" \
   --method timeline
 # ...
-# 步骤3:撰写中文摘要
+# 步骤说明:撰写中文摘要
 thesis-helper abstract \
   --topic "基于卷积神经网络的图像识别算法优化" \
   --lang zh \
   --words 300
 # ...
-# 步骤4:转换参考文献格式为国标
+# 步骤说明:转换参考文献格式为国标
 thesis-helper cite \
   --batch references.txt \
   --from apa \
   --to gbt7714
 # ...
-# 步骤5:格式检查
+# 步骤说明:格式检查
 thesis-helper format --file thesis_draft.docx
 # ...
-# 步骤6:答辩准备
+# 步骤说明:答辩准备
 thesis-helper defense --file thesis_final.docx
 ```
 

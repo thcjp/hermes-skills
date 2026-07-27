@@ -1,15 +1,12 @@
----slug: "use-my-browser-free"
+---
+slug: "use-my-browser-free"
 name: "use-my-browser-free"
 version: 1.0.1
 displayName: "浏览器控制工具(免费版)"
-summary: "控制用户Chrome浏"
-summary_zh: "控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取(免费版)。控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取。通过浏览器扩展 桥接，直接操作用户已登录的浏览器"
+summary: "控制用户Chrome浏,提供核心能力"
+summary_zh: "控制用户Chrome浏,提供核心能力"
 license: "MIT"
-description: |-
-  控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取。通过浏览器扩展
-  桥接，直接操作用户已登录的浏览器会话，无需重新认证。支持页面文本提取、
-  元素查找、JavaScript执行、截图和标签页管理。适用于独立开发者、企业团队
-  和自动化工作流场景。不适用于无头浏览器或远程浏览器场景.
+description: "|- 控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取。通过浏览器扩展 桥接，直接操作用户已登录的浏览器会话，无需重新认证。兼容页面文本提取、 元素查找、JavaScript执行、截图和标签页管控。适用于独立开发者、企业团队 和自发化工作流场景。不适用于无头浏览器或远程浏览器场景.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
 tools:
   - read
   - exec
@@ -25,7 +22,10 @@ tags:
   - tmwd_text
   - tmwd_elements
   - max_chars
-category: "Automation"---# 浏览器控制工具(免费版)
+category: "Automation"
+pricing_tier: free
+---
+# 浏览器控制工具(免费版)
 
 控制用户Chrome浏览器进行页面读取、导航、表单填充和数据提取.
 ## 输入格式

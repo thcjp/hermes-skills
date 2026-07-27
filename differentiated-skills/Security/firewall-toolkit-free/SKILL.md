@@ -1,5 +1,4 @@
 ---
-
 slug: firewall-toolkit-free
 name: firewall-toolkit-free
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: 防火墙配置工具包免费版
 summary: 服务器防火墙配置助手,支持iptables/uffw基础规则、端口管理与安全基线检查,适合个人开发者服务器安全防护.
 license: MIT
 edition: free
-description: "防火墙配置工具包免费版,为个人开发者包含服务器防火墙配置与安全加固能力. 适用于需要firewall toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要firewall toolkit相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "防火墙配置工具包免费版,为个人开发者包含服务器防火墙配置与安全加固能力. 适用于需要firewall toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要firewall toolkit相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 防火墙
   - firewall
@@ -27,7 +26,6 @@ category: "Security"
 pricing_tier: free
 
 ---
-
 # 防火墙配置工具包免费版
 
 ## 概述
@@ -169,8 +167,8 @@ ss -tlnp | awk 'NR>1 {printf "  %-8s %-20s %s\n", $4, $6, $7}' | sort
 # ...
 echo ""
 echo "--- 2. 危险端口检查 ---"
-DANGEROUS_PORTS="21 23 25 53 69 110 143 161 389 445 636 873 993 995 1433 1521 2375 3306 3389 5432 5900 6379 9200 11211 27017"
-for port in $DANGEROUS_PORTS; do
+HIGHRISK_PORTS="21 23 25 53 69 110 143 161 389 445 636 873 993 995 1433 1521 2375 3306 3389 5432 5900 6379 9200 11211 27017"
+for port in $HIGHRISK_PORTS; do
     if ss -tlnp | grep -q ":${port} "; then
         SERVICE=$(ss -tlnp | grep ":${port} " | awk '{print $7}' | head -1)
         echo "  [!] 端口 ${port} 正在监听: ${SERVICE}"
@@ -204,15 +202,15 @@ fi
 echo "=== 防火墙安全基线检查 ==="
 echo ""
 # ...
-PASS=0
+step_done=0
 FAIL=0
 # ...
 check() {
     local name=$1
     local condition=$2
     if eval "$condition"; then
-        echo "  [PASS] $name"
-        ((PASS++))
+        echo "  [step_done] $name"
+        ((step_done++))
     else
         echo "  [FAIL] $name"
         ((FAIL++))
@@ -242,7 +240,7 @@ check "无数据库端口(3306/5432)对外" "! ss -tlnp | grep -E '0.0.0.0:(3306
 # ...
 echo ""
 echo "========================================="
-echo "基线检查完成: 通过 ${PASS} 项, 失败 ${FAIL} 项"
+echo "基线检查完成: 通过 ${step_done} 项, 失败 ${FAIL} 项"
 echo "========================================="
 ```
 
@@ -305,7 +303,7 @@ echo ""
 echo "--- 4. 安装Fail2Ban ---"
 if ! command -v fail2ban-client &> /dev/null; then
     apt-get update -qq && apt-get install -y -qq fail2ban
-    systemctl enable fail2ban
+    systemctl status fail2ban
     systemctl start fail2ban
     echo "Fail2Ban已安装"
 fi
@@ -335,7 +333,7 @@ ufw allow 80/tcp       # HTTP
 ufw allow 443/tcp      # HTTPS
 # ...
 # 仅允许指定IP访问管理端口
-# ufw allow from 192.168.1.100 to any port 8080  # 管理后台
+# ufw allow from ${SERVER_HOST} to any port 8080  # 管理后台
 # ...
 # 拒绝数据库端口外部访问
 ufw deny 3306/tcp      # MySQL
@@ -413,34 +411,6 @@ curl -s -o /dev/null -w "%{http_code}" http://localhost
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
 #
-## 示例
-
-### 常用端口参考
-
-| 端口 | 服务 | 是否开放 | 说明 |
-|---:|---:|---:|---:|
-| 22 | SSH | 限制开放 | 限速防暴力破解 |
-| 80 | HTTP | 开放 | Web服务 |
-| 443 | HTTPS | 开放 | Web服务(SSL) |
-| 3306 | MySQL | 拒绝 | 仅本地访问 |
-| 5432 | 数据库 | 拒绝 | 仅本地访问 |
-| 6379 | Redis | 拒绝 | 仅本地访问 |
-| 8080 | 管理后台 | IP限制 | 仅指定IP访问 |
-| 3389 | RDP | 拒绝 | 不应对外开放 |
-
-### UFW常用命令
-
-| 命令 | 说明 |
-|:---:|:---:|
-| `ufw enable` | 启用防火墙 |
-| `ufw disable` | 禁用防火墙 |
-| `ufw status` | 查看状态 |
-| `ufw allow PORT/tcp` | 允许端口 |
-| `ufw deny PORT/tcp` | 拒绝端口 |
-| `ufw limit PORT/tcp` | 限制端口(防暴力) |
-| `ufw delete RULE` | 删除规则 |
-| `ufw reset` | 重置所有规则 |
-
 ## 优秀实践
 
 1. **默认拒绝**:所有入站流量默认拒绝,仅开放必要端口.
@@ -477,23 +447,6 @@ safe_firewall_change() {
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
-## 常见问题
-
-### Q1: 配置防火墙后SSH连不上了?
-
-确保在启用防火墙前先放行SSH端口(ufw allow 22/tcp)。如果已锁死,可通过云服务商控制台VNC登录修复.
-### Q2: UFW和iptables有什么区别?
-
-UFW是iptables的前端工具,提供更简单的配置接口。底层仍使用iptables。建议使用UFW,除非需要复杂的自定义规则.
-### Q3: 防火墙规则重启后丢失怎么办?
-
-使用 `iptables-persistent` 包持久化规则:`apt install iptables-persistent`,然后 `iptables-save > /etc/iptables/rules.v4`.
-### Q4: 免费版支持云安全组配置吗?
-
-免费版提供云安全组的配置建议,但自动化管理需要专业版支持.
-### Q5: 如何测试防火墙是否生效?
-
-从外部机器使用 `nmap` 或 `telnet` 测试端口连通性,确认仅开放端口可访问.
 ## 依赖说明
 
 ### 运行环境
@@ -518,17 +471,6 @@ UFW是iptables的前端工具,提供更简单的配置接口。底层仍使用ip
 ### 可用性分类
 - **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行服务器防火墙配置与安全加固任务
-
-## 错误处理
-
-- 边界输入处理: 空输入返回提示信息, 超长输入自动截断
-- 降级策略: 异常时返回默认值, 确保流程不中断
-
-| 错误场景 | 原因 | 处理方式 |
-|---:|:---|---:|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 输出格式
 ```json

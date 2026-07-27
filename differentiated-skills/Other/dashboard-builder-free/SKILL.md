@@ -1,5 +1,4 @@
 ---
-
 slug: dashboard-builder-free
 name: dashboard-builder-free
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: 仪表盘构建(免费版)
 summary: "从任意数据源生成本地静态仪表盘，支持基础数据抓取与可视化 QA.。仪表盘构建工具免费版是一款面向个人开发者的本地仪表盘生成方案，支持从用户指定的数据源生成交互式静态 HTML 仪表盘，配套数"
 license: MIT
 edition: free
-description: "仪表盘构建工具免费版是一款面向个人开发者的本地仪表盘产出方案，兼容从用户指定的数据源产出交互式静态 HTML 仪表盘，配套数据抓取脚本与基础可视化. 适用于需要dashboard builder相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要dashboard builder相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "仪表盘构建工具免费版是一款面向个人开发者的本地仪表盘产出方案，兼容从用户指定的数据源产出交互式静态 HTML 仪表盘，配套数据抓取脚本与基础可视化. 适用于需要dashboard builder相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要dashboard builder相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 数据可视化
   - dashboard
@@ -28,7 +27,6 @@ category: "Creative"
 pricing_tier: free
 
 ---
-
 # 仪表盘构建工具（免费版）
 
 ## 概述
@@ -76,8 +74,8 @@ pricing_tier: free
 ```text
 用户："帮我做一个 Stripe 收入看板"
 Agent："我将生成抓取脚本。请在环境变量中设置 STRIPE_API_KEY，然后运行脚本。"
-输出：~/dashboard/stripe/fetch.sh
-用户添加 cron：*/15 * * * * ~/dashboard/stripe/fetch.sh
+输出：./dashboard/stripe/fetch.sh
+用户添加 cron：*/15 * * * * ./dashboard/stripe/fetch.sh
 ```
 
 ### 场景二：服务器资源监控（运维）
@@ -90,7 +88,7 @@ Agent："我将生成抓取脚本。请在环境变量中设置 STRIPE_API_KEY�
 {
   echo '"cpu":'$(top -bn1 | grep "Cpu(s)" | awk '{print $2}')
   echo '"mem":'$(free | grep Mem | awk '{print $3/$2*100}')
-} | jq '.' > ~/dashboard/server/data.json
+} | jq '.' > ./dashboard/server/data.json
 ```
 
 ### 场景三：API 健康检查面板（开发者）
@@ -120,7 +118,7 @@ Agent："我将生成抓取脚本。请在环境变量中设置 STRIPE_API_KEY�
 领先步，创建存储目录：
 
 ```bash
-mkdir -p ~/dashboard
+mkdir -p ./dashboard
 ```
 
 第二步，向 Agent 描述需求：
@@ -132,16 +130,16 @@ mkdir -p ~/dashboard
 第三步，Agent 生成文件后配置凭据并运行：
 
 ```bash
-export STRIPE_API_KEY=sk_xxx
-~/dashboard/stripe/fetch.sh
+export STRIPE_API_KEY=sk_demo
+./dashboard/stripe/fetch.sh
 ```
 
 第四步，浏览器打开看板：
 
 ```bash
 # 本地托管
-cd ~/dashboard/stripe && python -m http.server 8080
-# 访问 http://127.0.0.1:8080
+cd ./dashboard/stripe && python -m http.server 8080
+# 访问 https://example.com/8080
 ```
 
 ## 配置示例
@@ -149,7 +147,7 @@ cd ~/dashboard/stripe && python -m http.server 8080
 ### 目录结构
 
 ```text
-~/dashboard/
+./dashboard/
 ├── registry.json           # 仪表盘索引
 ├── stripe/
 │   ├── config.json         # 布局与组件配置
@@ -168,9 +166,9 @@ cd ~/dashboard/stripe && python -m http.server 8080
 ```bash
 #!/bin/bash
 # Stripe 余额抓取
-curl -s -u "$STRIPE_API_KEY:" \
+# 安全数据传输示例:" \
   https://api.stripe.com/v1/balance \
-  | jq '.' > ~/dashboard/stripe/data.json
+  | jq '.' > ./dashboard/stripe/data.json
 ```
 
 ### 设计默认值
@@ -188,10 +186,10 @@ curl -s -u "$STRIPE_API_KEY:" \
 
 ```bash
 # 每 15 分钟刷新 Stripe 数据
-*/15 * * * * ~/dashboard/stripe/fetch.sh
+*/15 * * * * ./dashboard/stripe/fetch.sh
 # ...
 # 每分钟刷新服务器资源
-* * * * * ~/dashboard/server/fetch.sh
+* * * * * ./dashboard/server/fetch.sh
 ```
 
 ## 优秀实践
@@ -201,11 +199,11 @@ curl -s -u "$STRIPE_API_KEY:" \
 所有 API 凭据通过环境变量注入，禁止写入脚本或配置文件。在 cron 中使用环境变量文件：
 
 ```bash
-# /etc/environment 或 ~/.env
-STRIPE_API_KEY=sk_xxx
+# /etc/environment 或 ./.env
+STRIPE_API_KEY=sk_demo
 # ...
 # cron 中加载
-*/15 * * * * source ~/.env && ~/dashboard/stripe/fetch.sh
+*/15 * * * * source ./.env && ./dashboard/stripe/fetch.sh
 ```
 
 ### 2. 本地绑定 127.0.0.1
@@ -238,7 +236,7 @@ curl -s ... | jq 'del(.customer.email, .customer.phone)' > data.json
 
 ### Q1：抓取脚本运行报错 401？
 
-401 表示 API 凭据无效或未设置。检查环境变量是否正确加载：`echo $STRIPE_API_KEY`。cron 环境变量需通过 `source ~/.env` 显式加载.
+401 表示 API 凭据无效或未设置。检查环境变量是否正确加载：`echo $STRIPE_API_KEY`。cron 环境变量需通过 `source ./.env` 显式加载.
 ### Q2：仪表盘打开是空白？
 
 排查步骤：
@@ -254,7 +252,7 @@ curl -s ... | jq 'del(.customer.email, .customer.phone)' > data.json
 检查 cron 是否正常运行：`grep CRON /var/log/syslog`。确认抓取脚本有执行权限：`chmod +x fetch.sh`.
 ### Q5：如何添加新的数据源？
 
-向 Agent 描述新需求，Agent 会在 `~/dashboard/` 下创建新的子目录，包含独立的配置、抓取脚本与页面.
+向 Agent 描述新需求，Agent 会在 `./dashboard/` 下创建新的子目录，包含独立的配置、抓取脚本与页面.
 ## 依赖说明
 
 ### 运行环境
@@ -275,7 +273,7 @@ curl -s ... | jq 'del(.customer.email, .customer.phone)' > data.json
 ### API Key 配置
 
 - 数据源 API Key 通过环境变量注入（如 `STRIPE_API_KEY`）
-- 环境变量存储于 `~/.env` 或系统环境配置
+- 环境变量存储于 `./.env` 或系统环境配置
 - 仪表盘默认绑定 127.0.0.1，无需额外认证
 - 禁止在脚本或配置文件中硬编码 API Key
 

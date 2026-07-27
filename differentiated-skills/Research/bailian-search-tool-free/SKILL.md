@@ -1,5 +1,4 @@
 ---
-
 slug: bailian-search-tool-free
 name: bailian-search-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 百炼搜索工具-免费版
 summary: "基于百炼API的AI优化网页搜索,返回多源简洁结果,适合个人开发者。基于百炼(阿里云模型工作室)WebSearch API 的 AI 优化网页搜索工具,"
 license: MIT
 edition: free
-description: "基于百炼(阿里云模型工作室)WebSearch API 的 AI 调优网页搜索工具,. 适用于需要bailian search tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要bailian search tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "基于百炼(阿里云模型工作室)WebSearch API 的 AI 调优网页搜索工具,. 适用于需要bailian search tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要bailian search tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 研究工具
   - bailian
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # 百炼搜索工具(免费版)
 
 ## 概述
@@ -177,7 +175,7 @@ echo "调研完成"
 
 ```bash
 # 百炼 API 配置(在 .env 或环境变量中)
-export DASHSCOPE_API_KEY="your-bailian-api-key"
+export DASHSCOPE_API_KEY=${API_KEY:?请设置环境变量}
 # ...
 # 可选:默认结果数量
 export BAILIAN_SEARCH_DEFAULT_COUNT=5

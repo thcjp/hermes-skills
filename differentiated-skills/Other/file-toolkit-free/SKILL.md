@@ -1,5 +1,4 @@
 ---
-
 slug: file-toolkit-free
 name: file-toolkit-free
 version: 1.0.1
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 文件工具箱（免费版）
 
 > **告别桌面混乱。智能命名规范、三级目录结构、自然语言检索。**
@@ -88,16 +86,16 @@ pricing_tier: free
 
 ```bash
 # 1. 分析桌面文件现状（仅预览，不移动）
-python3 （请参考skill目录中的脚本文件） analyze ~/Desktop
+python3 （请参考skill目录中的脚本文件） analyze ./Desktop
 # ...
 # 2. 生成命名规范建议
-python3 （请参考skill目录中的脚本文件） naming ~/Desktop --preview
+python3 （请参考skill目录中的脚本文件） naming ./Desktop --preview
 # ...
 # 3. 生成目录结构方案
-python3 （请参考skill目录中的脚本文件） structure ~/Desktop --preview
+python3 （请参考skill目录中的脚本文件） structure ./Desktop --preview
 # ...
 # 4. 确认后执行整理
-python3 （请参考skill目录中的脚本文件） organize ~/Desktop --execute
+python3 （请参考skill目录中的脚本文件） organize ./Desktop --execute
 ```
 
 ### 可复制模板
@@ -121,13 +119,13 @@ python3 （请参考skill目录中的脚本文件） organize ~/Desktop --execut
 # ...
 每周五下午执行：
 1. 分析桌面与下载文件夹现状
-   python3 （请参考skill目录中的脚本文件） analyze ~/Desktop ~/Downloads
+   python3 （请参考skill目录中的脚本文件） analyze ./Desktop ./Downloads
 # ...
 2. 预览整理方案
-   python3 （请参考skill目录中的脚本文件） organize ~/Desktop --preview
+   python3 （请参考skill目录中的脚本文件） organize ./Desktop --preview
 # ...
 3. 确认方案后执行
-   python3 （请参考skill目录中的脚本文件） organize ~/Desktop --execute
+   python3 （请参考skill目录中的脚本文件） organize ./Desktop --execute
 ```
 
 ---
@@ -226,13 +224,13 @@ python3 （请参考skill目录中的脚本文件） find "某个PDF合同 客�
 **解决方案**：
 ```bash
 # 分析桌面现状
-python3 （请参考skill目录中的脚本文件） analyze ~/Desktop
+python3 （请参考skill目录中的脚本文件） analyze ./Desktop
 # ...
 # 生成整理方案（预览模式）
-python3 （请参考skill目录中的脚本文件） organize ~/Desktop --preview
+python3 （请参考skill目录中的脚本文件） organize ./Desktop --preview
 # ...
 # 确认方案后执行
-python3 （请参考skill目录中的脚本文件） organize ~/Desktop --execute
+python3 （请参考skill目录中的脚本文件） organize ./Desktop --execute
 ```
 
 **效果**：桌面文件自动分类到对应目录，截图归入图片文件夹，文档归入工作文档，下载的资料归入参考资料。桌面只剩当前活跃项目的文件.
@@ -288,8 +286,8 @@ python3 （请参考skill目录中的脚本文件） find "关于某个客户的
   --help        显示帮助
 # ...
 示例：
-  python3 （请参考skill目录中的脚本文件） analyze ~/Desktop
-  python3 （请参考skill目录中的脚本文件） organize ~/Downloads --preview
+  python3 （请参考skill目录中的脚本文件） analyze ./Desktop
+  python3 （请参考skill目录中的脚本文件） organize ./Downloads --preview
   python3 （请参考skill目录中的脚本文件） find "上个月的合同 PDF"
 ```
 
@@ -324,7 +322,7 @@ structure:
 cleanup:
   desktop:
     keep_active_only: true
-    move_others_to: ~/Documents/DesktopArchive/
+    move_others_to: ./Documents/DesktopArchive/
   downloads:
     auto_classify: true
     delete_older_than: 90  # 天
@@ -337,7 +335,7 @@ cleanup:
 # project-config.yaml
 project:
   name: 官网改版项目
-  root: ~/Projects/website-redesign
+  root: ./Projects/website-redesign
 # ...
 naming:
   pattern: "{项目}_{类型}_{版本}"

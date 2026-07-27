@@ -1,5 +1,4 @@
 ---
-
 slug: glitch-dashboard-tool-free
 name: glitch-dashboard-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 统一仪表盘基础版
 summary: "统一 Web 仪表盘管理任务队列、监控系统指标与查看网络状态。核心能力: 运维监控领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT
 edition: free
-description: "核心能力: 运维监控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要glitch dashboard tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要glitch dashboard tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "核心能力: 运维监控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要glitch dashboard tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要glitch dashboard tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 仪表盘
   - glitch
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 统一仪表盘基础版
 
 ## 概述
@@ -126,7 +124,7 @@ CLI 快速状态检查
 
 ```bash
 dashboard start 3853
-# 然后打开 http://localhost:3853
+# 然后打开 http://${SERVER_HOST}:${SERVER_PORT}
 ```
 
 ### 场景 2: 快速状态检查

@@ -1,13 +1,12 @@
 ---
-
 slug: rust-toolkit-free
 name: rust-toolkit-free
 version: 1.0.1
 displayName: Rust工具包-免费版
-summary: "Rust开发优选实践助手,避免所有权、借用与生命周期常见陷阱,适合个人学习。Rust 开发优选实践助手免费版,面向个人开发者与学习者。核心能力:"
+summary: "Rust开发优选实践助手,避免所有权、借用与生命周期常见陷阱,适合个人学习。Rust 开发优选实践助手免费版,面向个人开发者与学习者。核心能力:,提供核心能力"
 license: MIT
 edition: free
-description: "Rust 开发优选实践助手免费版,面向个人开发者与学习者。核心能力:，可自发提升工作效率. 适用于需要rust toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要rust toolkit相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "Rust 开发优选实践助手免费版,面向个人开发者与学习者。核心能力:，可自发提升工作效率. 适用于需要rust toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要rust toolkit相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - Rust
   - rust
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # Rust 工具包 - 免费版
 
 ## 概述

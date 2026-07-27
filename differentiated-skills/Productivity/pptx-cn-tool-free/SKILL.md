@@ -1,5 +1,4 @@
 ---
-
 slug: pptx-cn-tool-free
 name: pptx-cn-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: PPT 中文工具基础版
 summary: "创建与编辑中文 PowerPoint 演示文稿,支持中文排版优化与本地化模板。核心能力: 文档处理领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT
 edition: free
-description: "核心能力: 文档处置领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要pptx cn tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要pptx cn tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "核心能力: 文档处置领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要pptx cn tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要pptx cn tool相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - PowerPoint
   - pptx
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # PPT 中文工具基础版
 
 ## 概述

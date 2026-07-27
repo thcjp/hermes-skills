@@ -1,12 +1,12 @@
----slug: photo-webcam-tool-free
+---
+slug: photo-webcam-tool-free
 name: photo-webcam-tool-free
 version: 1.0.0
 displayName: 网络摄像头工具-免费版
-summary: "网络摄像头快照获取工具"
-license: Proprietary
+summary: "网络摄像头快照获取工具,提供核心能力"
+license: "MIT"
 edition: free
-description: 网络摄像头快照获取工具免费版,面向个人用户，可自动提升工作效率
-  核心能力:
+description: "网络摄像头快照获取工具免费版,面向个人用户，可自发提升工作效率 核心能力:.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
 
   - 摄像头收藏列表管理
 
@@ -39,14 +39,16 @@ tags:
   - jpg
   - webcam
   - zugspitze
-  - foto-webcam
 tools:
   - read
   - exec
   - write
   - glob
 homepage: ""
-category: "Development"---# 网络摄像头工具 - 免费版
+category: "Development"
+pricing_tier: free
+---
+# 网络摄像头工具 - 免费版
 
 ## 概述
 
@@ -162,10 +164,9 @@ foto-webcam.eu/webcam/zugspitze/"
 ]
 ```
 
-### 获取第一张快照
+### 获取领先张快照
 
-```bash
-  --id 1 \
+```网络连接说明d 1 \
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -199,9 +200,10 @@ foto-webcam.eu/webcam/zugspitze/"
 ```bash
 # 在 favorites.json 中追加新条目
 # 如果来源不稳定,建议设置 image 字段为直接 JPG 链接
+echo "操作完成"
 ```
 
-## 最佳实践
+## 优秀实践
 
 1. **设置直接图片 URL**:对于不稳定的摄像头源,在 `image` 字段设置直接 JPG 链接,避免 HTML 解析失败
 2. **合理命名**:收藏条目的 `name` 字段使用清晰的中文或英文名称,便于识别
@@ -248,7 +250,7 @@ A: 默认保存为 JPG 格式。输出文件路径通过 `--out` 参数指定,�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **分类**: MD+执行方法(Markdown指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 获取网络摄像头快照,依赖 Python 脚本与网络请求
 - **限制**: 免费版不支持定时抓取、历史归档与多平台自动推送
 

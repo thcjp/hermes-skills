@@ -1,5 +1,4 @@
 ---
-
 slug: knowledge-agent-tool-free
 name: knowledge-agent-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 知识管理工具-免费版
 summary: "基于文件的知识捕获与检索工具,支持URL、视频、文章、社交内容收藏与搜索。基于文件的知识组织工具,实现快速捕获、后续检索与自动整理。支持 URL 收藏、视频/文章/论文摘要、社交帖子与研究笔"
 license: MIT
 edition: free
-description: "基于文件的知识组织工具,达成快速捕获、后续检索与自发整理。兼容 URL 收藏、视频/文章/论文摘要、社交帖子与研究笔记管控。Use when. 适用于需要knowledge agent tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要knowledge agent tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "基于文件的知识组织工具,达成快速捕获、后续检索与自发整理。兼容 URL 收藏、视频/文章/论文摘要、社交帖子与研究笔记管控。Use when. 适用于需要knowledge agent tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要knowledge agent tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 研究工具
   - knowledge
@@ -30,7 +29,6 @@ category: "Agents"
 pricing_tier: free
 
 ---
-
 # 知识管理工具(免费版)
 
 ## 概述
@@ -126,7 +124,7 @@ know add research \
 
 ### 1. 存储位置
 
-默认存储路径:`~/.knowledge-base/`(可通过环境变量 `KNOWLEDGE_DIR` 配置).
+默认存储路径:`./.knowledge-base/`(可通过环境变量 `KNOWLEDGE_DIR` 配置).
 ```text
 knowledge/
 ├── INDEX.md      # 自动维护的浏览索引
@@ -200,8 +198,8 @@ summary: "一行摘要"
 ### 配置文件
 
 ```bash
-# ~/.config/know/config
-KNOWLEDGE_DIR=~/.knowledge-base
+# ./.config/know/config
+KNOWLEDGE_DIR=./.knowledge-base
 DEFAULT_TAGS=personal
 INDEX_FORMAT=markdown
 ```
@@ -245,9 +243,9 @@ INDEX_FORMAT=markdown
 知识库是纯 Markdown 文件,直接备份目录即可:
 ```bash
 # 备份到云盘或版本控制
-cp -r ~/.knowledge-base/ /backup/knowledge-$(date +%Y%m%d)/
+cp -r ./.knowledge-base/ /backup/knowledge-$(date +%Y%m%d)/
 # 或纳入 Git 管理
-cd ~/.knowledge-base && git add . && git commit -m "知识库更新"
+cd ./.knowledge-base && git add . && git commit -m "知识库更新"
 ```
 
 ### Q2: 标签如何规范化?

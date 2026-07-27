@@ -1,5 +1,4 @@
 ---
-
 slug: calendar-skill-tool-free
 name: calendar-skill-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 日历管理技能基础版
 summary: 通过 porteden CLI 安全管理 Google 与 Outlook 日历,支持事件查询、创建与更新
 license: MIT
 edition: free
-description: "核心能力: 日程管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要calendar skill tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要calendar skill tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "核心能力: 日程管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要calendar skill tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要calendar skill tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 日历
   - calendar
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 日历管理技能基础版
 
 ## 概述
@@ -166,7 +164,7 @@ brew install porteden/tap/porteden
 # 登录
 porteden auth login
 # 或使用 API Key
-export PE_API_KEY="your-key"
+export PE_API_KEY=${API_KEY:?请设置环境变量}
 # 验证
 porteden auth status
 ```
@@ -207,7 +205,7 @@ brew install porteden/tap/porteden
 # 登录
 porteden auth login
 # 或使用 API Key
-export PE_API_KEY="your-key"
+export PE_API_KEY=${API_KEY:?请设置环境变量}
 # 验证
 porteden auth status
 ```

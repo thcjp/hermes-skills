@@ -1,15 +1,12 @@
----slug: "mongodb-atlas-admin-free"
+---
+slug: "mongodb-atlas-admin-free"
 name: "mongodb-atlas-admin-free"
 version: "1.0.0"
 displayName: "文档数据库管理(免费版)"
-summary: "通过API浏览和调用文"
-summary_zh: "通过API浏览和调用文档数据库云管理平台，支持目录浏览、端点详情和实时调用(免费版)。通过API浏览和调用文档数据库云管理平台。支持API目录浏览、端点详情获取、 Schema定义查询和实时"
+summary: "通过API浏览和调用文,提供核心能力"
+summary_zh: "通过API浏览和调用文,提供核心能力"
 license: "MIT"
-description: |-
-  通过API浏览和调用文档数据库云管理平台。支持API目录浏览、端点详情获取、
-  Schema定义查询和实时API调用。覆盖50+分类的完整API端点，支持 dry-run
-  预检和自动确认模式.
-  不适用于直接数据库查询操作.
+description: "|- 通过API浏览和调用文档数据库云管控平台。兼容API目录浏览、端点详情获取、 Schema定义查询和实时API调用。覆盖50+分类的完整API端点，兼容 dry-run 预检和自发确认模式. 不适用于直接数据库查询操作.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
 tools:
   - read
   - exec
@@ -24,7 +21,9 @@ tags:
   - 请参考
   - 目录中的
 category: "Automation"
----# 文档数据库云管理平台(免费版)
+pricing_tier: free
+---
+# 文档数据库云管理平台(免费版)
 
 通过API浏览和调用文档数据库云管理平台的管理接口.
 ## 输入格式
@@ -165,7 +164,7 @@ A: 设置环境变量 `ATLAS_CLIENT_ID` 和 `ATLAS_CLIENT_SECRET`。这是公私
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 升级提示

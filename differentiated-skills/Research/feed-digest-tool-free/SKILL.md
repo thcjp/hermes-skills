@@ -1,5 +1,4 @@
 ---
-
 slug: feed-digest-tool-free
 name: feed-digest-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 订阅摘要(免费版)
 summary: "订阅摘要免费版，支持RSS订阅获取、未读扫描、基础分类与摘要生成.。订阅摘要助手免费版是面向个人用户的轻量RSS订阅摘要工具。聚焦"获取-扫描-筛选-阅读"四步流程，从订阅源中筛选高价值内容"
 license: MIT
 edition: free
-description: "订阅摘要助手免费版是面向个人用户的轻量RSS订阅摘要工具。聚焦\"获取-扫描-筛选-阅读\"四步流程，从订阅源中筛选高价值内容产出摘要。Use. 适用于需要feed digest tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要feed digest tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "订阅摘要助手免费版是面向个人用户的轻量RSS订阅摘要工具。聚焦\"获取-扫描-筛选-阅读\"四步流程，从订阅源中筛选高价值内容产出摘要。Use. 适用于需要feed digest tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要feed digest tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 订阅摘要
   - feed
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 > **获取、扫描、筛选、阅读。四步完成订阅内容摘要。**
 
 无需复杂配置，通过 `feed` CLI 即可获取订阅源最新内容，智能筛选高价值条目，生成精炼摘要。免费版聚焦轻量场景，帮助用户应对信息过载.
@@ -212,7 +210,7 @@ print("\n=== 订阅源 ===")
 print(fetcher.get_feeds())
 # ...
 print("\n=== 某订阅源未读 ===")
-print(fetcher.get_entries(limit=20, feed_id="feed_id_xxx"))
+print(fetcher.get_entries(limit=20, feed_id="feed_id_demo"))
 ```
 
 ### 场景三：高价值内容筛选

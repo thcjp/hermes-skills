@@ -1,5 +1,4 @@
 ---
-
 slug: brainz-calendar-tool-free
 name: brainz-calendar-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: Google 日历基础版
 summary: "通过 gcalcli 管理 Google 日历事件,支持创建、列出和删除日程,适合个人时间管理。核心能力: 日程管理领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT
 edition: free
-description: "核心能力: 日程管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要brainz calendar tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要brainz calendar tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "核心能力: 日程管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要brainz calendar tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要brainz calendar tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 日历
   - brainz
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # Google 日历基础版
 
 ## 概述
@@ -162,7 +160,7 @@ gcalcli add --title "Team sync" --when "2026-02-04 10:00" --duration 30
 
 ```bash
 pip install gcalcli
-export GOOGLE_CALENDAR_API_KEY="your-api-key"
+export GOOGLE_CALENDAR_API_KEY=${API_KEY:?请设置环境变量}
 # 或使用 CalDAV
 export CALDAV_URL="https://your-caldav-server"
 export CALDAV_USER="username"
@@ -201,7 +199,7 @@ Agent 将自动:
 
 ```bash
 pip install gcalcli
-export GOOGLE_CALENDAR_API_KEY="your-api-key"
+export GOOGLE_CALENDAR_API_KEY=${API_KEY:?请设置环境变量}
 # 或使用 CalDAV
 export CALDAV_URL="https://your-caldav-server"
 export CALDAV_USER="username"

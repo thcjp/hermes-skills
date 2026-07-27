@@ -1,5 +1,4 @@
 ---
-
 slug: task-planner-tool-free
 name: task-planner-tool-free
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: 任务规划器基础版
 summary: "本地优先的任务规划工具,帮助拆解复杂任务、设定截止日期与管理子任务。核心能力: 任务管理领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT
 edition: free
-description: "核心能力: 任务管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要task planner tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要task planner tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "核心能力: 任务管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要task planner tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要task planner tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 任务规划
   - task
@@ -28,7 +27,6 @@ category: "Productivity"
 pricing_tier: free
 
 ---
-
 # 任务规划器基础版
 
 ## 概述

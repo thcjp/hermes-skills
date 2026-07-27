@@ -1,5 +1,4 @@
 ---
-
 slug: security-audit-tool-free
 name: security-audit-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 安全审计工具(免费版)
 summary: "扫描暴露凭据、开放端口、配置问题,支持自动修复常见安全问题,适合个人与小型团队,支持多种使用场景和自动化处理"
 license: MIT
 edition: free
-description: "核心能力:，可自发提升工作效率. 适用于需要security audit tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要security audit tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "核心能力:，可自发提升工作效率. 适用于需要security audit tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要security audit tool相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - 安全
   - security
@@ -27,7 +26,6 @@ category: "Security"
 pricing_tier: free
 
 ---
-
 # 安全审计工具(免费版)
 
 ## 概述
@@ -160,16 +158,42 @@ node （请参考skill目录中的脚本文件） --docker
 ### 审计脚本
 
 ```python
+# ...
+# ...
+# ...
+# ...
+# ...
+# ...
+# ...
+# ...
+# ...
+        # 检查.env文件
+# ...
+        # 扫描代码中的硬编码凭据
+# ...
+# ...
+# ...
+        # 检查CORS配置
+# ...
+# ...
+# ...
+# ...
+# ...
+        # 修复.env权限
+# ...
+        # 创建.gitignore
+# ...
+# ...
+# ...
+result = "操作完成"
 import os
 import re
 import json
 import subprocess
 from datetime import datetime
 from pathlib import Path
-# ...
 class SecurityAuditor:
     """安全审计工具"""
-# ...
     SECRET_PATTERNS = [
         (r"AKIA[0-9A-Z]{16}", "AWS Access Key", "CRITICAL"),
         (r"gh[pousr]_[A-Za-z0-9_]{36}", "GitHub Token", "CRITICAL"),
@@ -180,7 +204,6 @@ class SecurityAuditor:
         (r"secret\s*[:=]\s*['\"][^'\"]{16,}['\"]", "Secret", "HIGH"),
         (r"token\s*[:=]\s*['\"][^'\"]{20,}['\"]", "Token", "HIGH"),
     ]
-# ...
     HIGH_RISK_PORTS = {
         6379: "Redis",
         2375: "Docker API",
@@ -190,11 +213,9 @@ class SecurityAuditor:
         9200: "Elasticsearch",
         5601: "Kibana"
     }
-# ...
     def __init__(self):
         self.findings = []
         self.audit_time = datetime.now().isoformat()
-# ...
     def audit(self, full=False, fix=False, target="."):
         """执行安全审计"""
         if full or not any([full]):
@@ -203,17 +224,12 @@ class SecurityAuditor:
             self._check_configs(target)
             self._check_permissions(target)
             self._check_docker(target)
-# ...
         if fix:
             self._auto_fix()
-# ...
         return self._generate_report()
-# ...
     def _check_credentials(self, target):
         """检查凭据泄露"""
         target_path = Path(target)
-# ...
-        # 检查.env文件
         env_files = list(target_path.glob(".env*"))
         for env_file in env_files:
             if env_file.name == ".env.example":
@@ -225,8 +241,6 @@ class SecurityAuditor:
                 "file": str(env_file),
                 "fix": "确保.env文件已添加到.gitignore"
             })
-# ...
-        # 扫描代码中的硬编码凭据
         for filepath in target_path.rglob("*"):
             if filepath.suffix in {".js", ".ts", ".py", ".json", ".yaml", ".yml"}:
                 if any(skip in str(filepath) for skip in ["node_modules", ".git", "dist", "build"]):
@@ -246,8 +260,6 @@ class SecurityAuditor:
                                 "fix": f"移除硬编码{name},改用环境变量"
                             })
                 except Exception:
-                    pass
-# ...
     def _check_ports(self):
         """检查开放端口"""
         try:
@@ -264,13 +276,9 @@ class SecurityAuditor:
                             "fix": f"绑定到127.0.0.1或配置防火墙规则"
                         })
         except Exception:
-            pass
-# ...
     def _check_configs(self, target):
         """检查配置安全"""
         target_path = Path(target)
-# ...
-        # 检查CORS配置
 suffix in {".js", ".ts", ".json", ".yaml"}:
                     continue
                 try:
@@ -290,12 +298,9 @@ read_text(encoding='utf-8', errors='ignore')
                             "fix": "生产环境关闭调试模式"
                         })
                 except Exception:
-                    pass
-# ...
     def _check_permissions(self, target):
         """检查文件权限"""
         target_path = Path(target)
-# ...
         sensitive_files = [".env", ".env.local", ".env.production", "id_rsa", "config.json"]
         for filename in sensitive_files:
             filepath = target_path / filename
@@ -308,7 +313,6 @@ read_text(encoding='utf-8', errors='ignore')
                         "file": str(filepath),
                         "fix": f"执行: chmod 600 {filename}"
                     })
-# ...
     def _check_docker(self, target):
         """检查Docker安全"""
         dockerfile = Path(target) / "Dockerfile"
@@ -328,32 +332,24 @@ read_text(encoding='utf-8', errors='ignore')
                     "file": str(dockerfile),
                     "fix": "移除--privileged,使用--cap-add指定具体权限"
                 })
-# ...
     def _auto_fix(self):
         """自动修复常见问题"""
         fixes = []
-# ...
-        # 修复.env权限
         env_file = Path(".env")
         if env_file.exists():
             os.chmod(env_file, 0o600)
             fixes.append("已设置.env文件权限为600")
-# ...
-        # 创建.gitignore
         gitignore = Path(".gitignore")
         if not gitignore.exists():
             gitignore.write_text(".env\n.env.local\nnode_modules/\ndist/\n")
             fixes.append("已创建.gitignore文件")
-# ...
         return fixes
-# ...
     def _generate_report(self):
         """生成审计报告"""
         critical = sum(1 for f in self.findings if f["level"] == "CRITICAL")
         high = sum(1 for f in self.findings if f["level"] == "HIGH")
         medium = sum(1 for f in self.findings if f["level"] == "MEDIUM")
         info = sum(1 for f in self.findings if f["level"] == "INFO")
-# ...
         return {
             "audit_time": self.audit_time,
             "total_findings": len(self.findings),

@@ -1,5 +1,4 @@
 ---
-
 slug: tardis-tool-free
 name: tardis-tool-free
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: 生活事件追踪-免费版
 summary: "个人生活事件追踪工具,支持三种模式记录与回顾,适合个人时间管理。个人生活事件追踪工具免费版,面向个人用户的时间记录与回顾."
 license: MIT
 edition: free
-description: "个人生活事件追踪工具免费版,面向个人用户的时间记录与回顾，可自发提升工作效率. 适用于需要tardis tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要tardis tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "个人生活事件追踪工具免费版,面向个人用户的时间记录与回顾，可自发提升工作效率. 适用于需要tardis tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要tardis tool相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - 事件追踪
   - tardis
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 生活事件追踪 - 免费版
 
 ## 概述
@@ -183,7 +181,7 @@ python3 tardis.py timeline --period "2025-01" --category "学习"
 ```bash
 # 初始化数据存储
 python3 tardis.py init \
-  --storage "~/tardis-data" \
+  --storage "./tardis-data" \
   --format "json"
 ```
 
@@ -258,7 +256,7 @@ python3 tardis.py search \
 
 ### Q: 数据存储在哪里?
 
-A: 免费版数据存储在本地文件系统(默认 `~/tardis-data/`)。使用 JSON 格式,便于备份与迁移。不会上传到任何云端.
+A: 免费版数据存储在本地文件系统(默认 `./tardis-data/`)。使用 JSON 格式,便于备份与迁移。不会上传到任何云端.
 ### Q: 可以在手机上使用吗?
 
 A: 免费版是命令行工具,需要通过终端使用。可以通过 SSH 连接电脑使用,或使用 PRO 版的 Web 界面在手机浏览器访问.

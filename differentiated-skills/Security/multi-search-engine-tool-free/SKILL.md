@@ -1,5 +1,4 @@
 ---
-
 slug: multi-search-engine-tool-free
 name: multi-search-engine-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 多搜索引擎免费版
 summary: "多搜索引擎聚合查询工具,支持主流中文与国际搜索引擎,适合个人开发者快速信息检索.。多搜索引擎免费版,为个人用户提供多搜索引擎聚合查询能力."
 license: MIT
 edition: free
-description: "多搜索引擎免费版,为个人用户包含多搜索引擎聚合查询能力. 适用于需要multi search engine tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要multi search engine tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "多搜索引擎免费版,为个人用户包含多搜索引擎聚合查询能力. 适用于需要multi search engine tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要multi search engine tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 搜索
   - multi
@@ -27,7 +26,6 @@ category: "Security"
 pricing_tier: free
 
 ---
-
 # 多搜索引擎免费版
 
 ## 概述
@@ -432,24 +430,6 @@ QUERY='"exact match" site:stackoverflow.com'
 （请参考skill目录中的脚本文件） google "$QUERY"
 ```
 
-## 常见问题
-
-### Q1: 免费版支持多少个搜索引擎?
-
-免费版支持8个主流搜索引擎(4个中文+4个国际)。专业版支持16个引擎.
-### Q2: 搜索结果是直接返回内容吗?
-
-免费版生成搜索链接,需在浏览器中查看结果。直接获取搜索结果内容需要专业版API.
-### Q3: 如何添加自定义搜索引擎?
-
-在ENGINES字典中添加引擎配置,包含name、url和type字段.
-### Q4: 支持图片/视频搜索吗?
-
-免费版支持网页搜索。图片、视频等垂直搜索需要专业版支持.
-### 已知限制
-
-免费版为链接生成模式,无频率限制。如使用搜索API,需遵守各引擎的限速策略.
-- 当前为免费版本,如需完整功能请升级到付费版获取全部能力
 ## 依赖说明
 
 ### 运行环境

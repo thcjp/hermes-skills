@@ -1,5 +1,4 @@
 ---
-
 slug: doge-node-tool-free
 name: doge-node-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: DOGE节点免费版
 summary: "管理Dogecoin Core节点的状态查询与基础RPC操作，支持余额查看与交易记录检索.。DOGE节点免费版是一款面向Dogecoin全节点运维者的轻量级管理Skill，封装dogecoi"
 license: MIT
 edition: free
-description: "DOGE节点免费版是一款面向Dogecoin全节点运维者的轻量级管控Skill，封装dogecoin-cli命令并包含结构化的节点状态与钱包信息输出。核心能力：. 适用于需要doge node tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要doge node tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "DOGE节点免费版是一款面向Dogecoin全节点运维者的轻量级管控Skill，封装dogecoin-cli命令并包含结构化的节点状态与钱包信息输出。核心能力：. 适用于需要doge node tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要doge node tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - Dogecoin
   - doge
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # DOGE节点免费版（Doge Node Tool Free）
 
 ## 概述
@@ -149,7 +147,7 @@ pricing_tier: free
 ### 节点配置文件模板
 
 ```ini
-# ~/.dogecoin/dogecoin.conf
+# ./.dogecoin/dogecoin.conf
 server=1
 daemon=1
 listen=1
@@ -180,7 +178,7 @@ maxconnections=50
 ### 数据目录结构
 
 ```
-~/.dogecoin/
+./.dogecoin/
 ├── dogecoin.conf      # 配置文件
 ├── blocks/            # 区块数据
 ├── chainstate/        # 链状态

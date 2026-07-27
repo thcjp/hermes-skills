@@ -1,5 +1,4 @@
 ---
-
 slug: ws-calendar-tool-free
 name: ws-calendar-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 日历同步工具基础版
 summary: "日历管理与同步工具,支持创建事件、设置提醒与跨平台同步。核心能力: 日程管理领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT
 edition: free
-description: "核心能力: 日程管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要ws calendar tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要ws calendar tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "核心能力: 日程管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要ws calendar tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要ws calendar tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 日历
   - calendar
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 日历同步工具基础版
 
 ## 概述

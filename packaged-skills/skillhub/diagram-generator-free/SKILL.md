@@ -6,24 +6,27 @@ displayName: "Diagram基础版"
 summary: "通过MCP工具生成基础Mermaid流程图与Draw.io架构图,适合快速文档化。diagram-generator 基础客户端(免费版)。通过 mcp-diagram-generator"
 summary_zh: "通过MCP工具生成基础Mermaid流程图与Draw.io架构图,适合快速文档化。diagram-generator 基础客户端(免费版)。通过 mcp-diagram-generator"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要diagram generator相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   diagram-generator 基础客户端(免费版)。通过 mcp-diagram-generator MCP 服务器将自然语言意图转换为 JSON 规范,
   生成 Mermaid 流程图与 Draw.io 架构图两种基础能力。支持默认输出路径、交互式采集、基础质量校验.
 tags:
   - 研发工具
+  - diagram
+  - generator
+  - automation
+  - productivity
   - 工具
   - 效率
   - type
   - mermaid
   - json
-  - mcp
-  - node
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
 # Diagram Generator LITE
 
@@ -56,7 +59,7 @@ category: "Automation"
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力

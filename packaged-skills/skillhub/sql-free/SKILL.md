@@ -6,7 +6,7 @@ displayName: "SQL查询助手(免费版)"
 summary: "多数据库SQL查询、优化、schema设计与数据分析，支持MySQL/PostgreSQL/SQLite/SQLServer。免费版"
 summary_zh: "多数据库SQL查询、优化、schema设计与数据分析，支持MySQL/PostgreSQL/SQLite/SQLServer。免费版"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要sql相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   SQL查询与数据库操作辅助引擎（免费版），支持MySQL、PostgreSQL、SQLite、SQLServer.
   核心能力：
   - 自然语言转SQL查询（跨4种数据库方言）
@@ -20,16 +20,17 @@ tools:
 homepage: ""
 tags:
   - 数据存储
+  - sql
+  - automation
+  - productivity
+  - developer-tools
   - 工具
   - 效率
   - 创意
   - 图像
-  - sql
   - user_id
-  - month
-  - 查询
-  - mysql
 category: "Automation"
+pricing_tier: free
 ---
 # SQL查询助手(免费版)
 
@@ -61,7 +62,7 @@ SQL查询与数据库操作辅助引擎，支持MySQL、PostgreSQL、SQLite、SQ
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力

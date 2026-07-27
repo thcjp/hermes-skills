@@ -1,5 +1,4 @@
 ---
-
 slug: azure-devops-tool-free
 name: azure-devops-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: Azure DevOps 基础版
 summary: 管理 Azure DevOps 项目、仓库与分支,支持创建拉取请求和查看工作项,适合个人开发者日常使用
 license: MIT
 edition: free
-description: "核心能力: DevOps 工具链领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要azure devops tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要azure devops tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "核心能力: DevOps 工具链领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要azure devops tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要azure devops tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - DevOps
   - azure
@@ -28,7 +27,6 @@ category: "Operations"
 pricing_tier: free
 
 ---
-
 # Azure DevOps 基础版
 
 ## 概述

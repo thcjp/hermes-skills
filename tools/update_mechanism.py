@@ -50,6 +50,7 @@ import time
 from pathlib import Path
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Tuple
+from skill_core.parser import find_skill_md
 
 # ============================================================
 # 配置
@@ -471,31 +472,6 @@ def check_all_sources(specific_slug: str = None) -> Dict[str, Any]:
 # ============================================================
 # Payload 生成
 # ============================================================
-
-def find_skill_md(slug: str) -> Optional[Path]:
-    """查找skill的SKILL.md文件"""
-    search_dirs = [
-        PACKAGED_SKILLS_DIR / slug,
-        OPENSOURCE_SKILLS_DIR / slug,
-        DIFFERENTIATED_SKILLS_DIR,
-        ENTERPRISE_UPLOAD_DIR / slug,
-    ]
-
-    for d in search_dirs:
-        if d.is_dir():
-            md = d / "SKILL.md"
-            if md.exists():
-                return md
-
-    # 在差异化目录中按分类查找
-    if DIFFERENTIATED_SKILLS_DIR.is_dir():
-        for cat_dir in DIFFERENTIATED_SKILLS_DIR.iterdir():
-            if cat_dir.is_dir():
-                md = cat_dir / slug / "SKILL.md"
-                if md.exists():
-                    return md
-
-    return None
 
 def generate_payload(slug: str, version: str = None, is_paid: bool = False,
                      price: str = None, changelog: str = None) -> Dict[str, Any]:

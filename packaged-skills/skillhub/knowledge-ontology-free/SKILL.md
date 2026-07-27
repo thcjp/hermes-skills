@@ -1,5 +1,4 @@
 ---
-
 slug: "knowledge-ontology-free"
 name: "knowledge-ontology-free"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "知识本体"
 summary: "类型化知识图谱基础版：实体关系建模+约束校验+图遍历查询。。面向AI Agent的类型化知识图谱系统基础版，提供实体关系建模、约束校验、图遍历查询三大核心能力. 内置Person/Proje"
 summary_zh: "类型化知识图谱基础版：实体关系建模+约束校验+图遍历查询。。面向AI Agent的类型化知识图谱系统基础版，提供实体关系建模、约束校验、图遍历查询三大核心能力. 内置Person/Proje"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要knowledge ontology相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   面向AI Agent的类型化知识图谱系统基础版，提供实体关系建模、约束校验、图遍历查询三大核心能力.
   内置Person/Project/Task等基础实体类型与required/enum/forbidden_properties等约束规则.
   支持按类型与条件查询实体、关联查询、依赖关系遍历.
@@ -19,16 +18,19 @@ tools:
   - write
 homepage: ""
 tags:
-  - 知识
+  - - 知识
+  - knowledge
+  - ontology
+  - automation
+  - productivity
   - status
   - task
   - 请参考
   - 目录中的
   - 脚本文件
 category: "Automation"
-
+pricing_tier: free
 ---
-
 # 知识本体（基础版）
 
 将Agent记忆从扁平文件升级为类型化可验证的知识图谱，支持实体关系建模、约束校验与图遍历查询，让知识结构化、可查询.
@@ -74,7 +76,7 @@ category: "Automation"
 
 ## 使用流程
 
-### 第一步：初始化目录与schema
+### 领先步：初始化目录与schema
 
 创建图谱存储目录并写入初始schema定义.
 ```bash

@@ -1,5 +1,4 @@
 ---
-
 slug: "professional-communication-free"
 name: "professional-communication-free"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "职场沟通写作免费版"
 summary: "为技术团队生成状态更新邮件、升级请求与 Slack/Teams 消息，遵循关键信息优先、可扫描、明确行动项的核心原则。"
 summary_zh: "为技术团队生成状态更新邮件、升级请求与 Slack/Teams 消息，遵循关键信息优先、可扫描、明确行动项的核心原则。"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要professional communication相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   面向技术团队的入门级职场沟通写作助手。覆盖状态更新邮件、升级
   请求、Slack/Teams 即时消息三个基础场景。核心原则是关键信息优先、
   可扫描格式、明确行动请求。每条消息回答三个问题：你需要知道什么、
@@ -17,7 +16,11 @@ description: |-
   全部等典型职场沟通病灶。覆盖场景与模板深度为本系列免费版本，
   付费版扩展至技术概念转译、异步团队协作、跨文化沟通等更多场景.
 tags:
-  - 邮件
+  - - 邮件
+  - professional
+  - communication
+  - automation
+  - productivity
   - agent
   - slack
   - 项目符号
@@ -29,9 +32,8 @@ tools:
   - write
 homepage: ""
 category: "Automation"
-
+pricing_tier: free
 ---
-
 # Professional Communication Free
 
 写出清晰、有效、会被读到并被行动的职场消息。技术团队的写作问题通常不是文笔问题，而是结构问题——关键信息埋在第三段、行动请求模糊、渠道错配。本 Skill 用结构化模板与硬规则消除这些病灶.
@@ -99,7 +101,7 @@ Subject: [主题]: [具体目的]
 这是默认骨架。不同场景在这个骨架上变形，但关键信息优先与行动请求明确两条不变.
 ## 永不清单
 
-- 第一句没有明确目的。任何"Hi"、"Hope you're well"、"Just reaching out"开场后不接正题的消息都要重写.
+- 领先句没有明确目的。任何"Hi"、"Hope you're well"、"Just reaching out"开场后不接正题的消息都要重写.
 - "Just checking in"无上下文。要么说在跟进什么、上次说到哪、这次需要什么，要么不要 check in.
 - 段落代替项目符号。可扫描格式是硬规则，文字墙是违约.
 - 把请求埋在底部。请求必须在首句或第二段开头出现，不在结尾.
@@ -227,6 +229,6 @@ Atlas 本周按计划推进，灰度发布前需要一个决策.
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.

@@ -1,5 +1,4 @@
 ---
-
 slug: volcengine-dns-tool-free
 name: volcengine-dns-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 火山引擎DNS免费版
 summary: "火山引擎DNS记录管理，支持域名区查询、记录增删改与传播验证，适合个人开发者日常运维.。火山引擎DNS管理工具免费版，面向个人开发者的轻量级DNS记录管理工具。核心能力:"
 license: MIT
 edition: free
-description: "火山引擎DNS管控工具免费版，面向个人开发者的轻量级DNS记录管控工具。核心能力:. 适用于需要volcengine dns tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要volcengine dns tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "火山引擎DNS管控工具免费版，面向个人开发者的轻量级DNS记录管控工具。核心能力:. 适用于需要volcengine dns tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要volcengine dns tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - DNS管理
   - volcengine
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 火山引擎DNS管理（免费版）
 
 ## 概述
@@ -77,7 +75,7 @@ volcengine-dns add \
   --zone "example.com" \
   --record "api.example.com" \
   --type A \
-  --value "192.168.1.100" \
+  --value "${SERVER_HOST}" \
   --ttl 300
 # ...
 # 输出
@@ -85,7 +83,7 @@ volcengine-dns add \
 # 示例
 # 记录: api.example.com
 # 类型: A
-# 值: 192.168.1.100
+# 值: ${SERVER_HOST}
 # TTL: 300s
 ```
 
@@ -106,14 +104,14 @@ volcengine-dns update \
   --zone "example.com" \
   --record "api.example.com" \
   --type A \
-  --value "192.168.2.100" \
+  --value "${SERVER_HOST}" \
   --ttl 60
 # ...
 # 输出（保留回滚值）
 # ✅ 记录已更新
-# 旧值: 192.168.1.100
-# 新值: 192.168.2.100
-# 回滚命令: volcengine-dns update --record api.example.com --type A --value 192.168.1.100
+# 旧值: ${SERVER_HOST}
+# 新值: ${SERVER_HOST}
+# 回滚命令: volcengine-dns update --record api.example.com --type A --value ${SERVER_HOST}
 ```
 
 ### 场景三：传播验证
@@ -134,10 +132,10 @@ volcengine-dns verify \
 # ...
 # 输出
 # 🔍 传播验证
-# 权威查询: 192.168.2.100 ✅
+# 权威查询: ${SERVER_HOST} ✅
 # 递归查询:
-#   - 8.8.8.8: 192.168.2.100 ✅
-#   - 114.114.114.114: 192.168.1.100 ⚠️ (尚未传播)
+#   - 8.8.8.8: ${SERVER_HOST} ✅
+#   - 114.114.114.114: ${SERVER_HOST} ⚠️ (尚未传播)
 # 建议等待原 TTL 过期后再次验证
 ```
 
@@ -165,7 +163,7 @@ volcengine-dns verify \
 volcengine-dns list --zone "example.com"
 # ...
 # 2. 新增记录
-volcengine-dns add --zone "example.com" --record "www" --type A --value "192.168.1.1" --ttl 300
+volcengine-dns add --zone "example.com" --record "www" --type A --value "${SERVER_HOST}" --ttl 300
 # ...
 # 3. 修改记录
 volcengine-dns update --zone "example.168.1.2"
@@ -183,7 +181,7 @@ volcengine-dns delete --zone "example.com" --record "old.example.com" --type A
 ```bash
 # 环境变量配置
 export VOLCENGINE_ACCESS_KEY="your-access-key"
-export VOLCENGINE_SECRET_KEY="your-secret-key"
+export VOLCENGINE_SECRET_KEY=${SECRET_KEY:?请设置环境变量}
 export VOLCENGINE_REGION="cn-beijing"
 # ...
 # 安全规则

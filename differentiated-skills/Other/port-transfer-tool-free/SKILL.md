@@ -1,5 +1,4 @@
 ---
-
 slug: port-transfer-tool-free
 name: port-transfer-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 工具移植工具
 summary: "面向个人的 MCP工具配置跨环境移植工具，支持导入导出.。面向个人用户的 MCP工具配置跨环境移植工具."
 license: MIT
 edition: free
-description: "面向个人用户的 MCP工具配置跨环境移植工具，可处置提升工作效率. 适用于需要port transfer tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要port transfer tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "面向个人用户的 MCP工具配置跨环境移植工具，可处置提升工作效率. 适用于需要port transfer tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要port transfer tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 工具移植
   - port
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 工具移植工具（免费版）
 
 ## 概述
@@ -64,7 +62,7 @@ pricing_tier: free
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：面向个人的、MCP、工具配置跨环境移、植工具、支持导入导出、面向个人用户的等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：面向个人的、工具协议、工具配置跨环境移、植工具、支持导入导出、面向个人用户的等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 使用场景
 
 ### 场景一：导出可移植清单
@@ -78,7 +76,7 @@ pricing_tier: free
 {
   "format": "port-bundle-v1",
   "agents": [{"name": "search", "command": "npx", "args": ["-y", "search-server"]}],
-  "secrets": {"API_KEY": "{{PLACEHOLDER:API_KEY}}"}
+  "secrets": {"API_KEY": "$VAR"}
 }
 ```
 
@@ -148,7 +146,7 @@ A：能。清单为 JSON，路径用占位符，导入时按 OS 适配.
       "name": "search",
       "command": "npx",
       "args": ["-y", "search-server"],
-      "env": {"API_KEY": "{{PLACEHOLDER:SEARCH_API_KEY}}"}
+      "env": {"API_KEY": "$VAR"}
     },
     {
       "name": "filesystem",
@@ -157,7 +155,7 @@ A：能。清单为 JSON，路径用占位符，导入时按 OS 适配.
     }
   ],
   "secrets": {
-    "SEARCH_API_KEY": "{{PLACEHOLDER:SEARCH_API_KEY}}"
+    "SEARCH_API_KEY": "$VAR"
   }
 }
 ```
@@ -173,7 +171,7 @@ SEARCH_API_KEY=sk-real-key-placeholder
 
 ```text
 占位符替换流程:
-  1. 导出时敏感值 → {{PLACEHOLDER:KEY}}
+  1. 导出时敏感值 → $VAR
   2. 清单可安全分享（无真实密钥）
   3. 导入时读 .env 替换占位符
   4. 真实密钥仅存本地 .env

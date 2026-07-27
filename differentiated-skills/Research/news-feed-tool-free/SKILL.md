@@ -1,13 +1,12 @@
 ---
-
 slug: news-feed-tool-free
 name: news-feed-tool-free
 version: 1.0.0
 displayName: RSS新闻订阅免费版
-summary: "从主流国际RSS源获取最新新闻标题与摘要，零API密钥零依赖。RSS新闻订阅免费版，从BBC、Reuters、AP等主流国际媒体RSS源获取最新新闻标题与摘要。核心能力:"
+summary: "从主流国际RSS源获取最新新闻标题与摘要，零API密钥零依赖。RSS新闻订阅免费版，从BBC、Reuters、AP等主流国际媒体RSS源获取最新新闻标题与摘要。核心能力:,提供核心能力"
 license: MIT
 edition: free
-description: "RSS新闻订阅免费版，从BBC、Reuters、AP等主流国际媒体RSS源获取最新新闻标题与摘要。核心能力:，可自发提升工作效率. 适用于需要news feed tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要news feed tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "RSS新闻订阅免费版，从BBC、Reuters、AP等主流国际媒体RSS源获取最新新闻标题与摘要。核心能力:，可自发提升工作效率. 适用于需要news feed tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要news feed tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 新闻
   - news
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # RSS新闻订阅工具（免费版）
 
 ## 概述
@@ -137,7 +135,7 @@ python3 {baseDir}/（请参考skill目录中的脚本文件）
 # ...
 1. **Markets Rally on Fed Decision**
    - Published: 2026-07-18 09:00 GMT
-   - Summary: Global stocks surge after Federal Reserve...
+   - Summary: Global stocks 网络代理 after Federal Reserve...
    - Link: https://reuters.com/...
 ```
 

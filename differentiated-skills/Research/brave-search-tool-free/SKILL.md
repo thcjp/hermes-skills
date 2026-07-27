@@ -1,13 +1,12 @@
 ---
-
 slug: brave-search-tool-free
 name: brave-search-tool-free
 version: 1.0.0
 displayName: Brave搜索工具-免费版
-summary: "基于Brave Search API的网页搜索与内容提取工具,无需浏览器,适合个人用户。基于 Brave Search API 的无头网页搜索与内容提取工具,无需启动浏览器,"
+summary: "基于Brave Search API的网页搜索与内容提取工具,无需浏览器,适合个人用户。基于 Brave Search API 的无头网页搜索与内容提取工具,无需启动浏览器,,提供核心能力"
 license: MIT
 edition: free
-description: "基于 Brave Search API 的无头网页搜索与内容提取工具,无需启动浏览器,，可自发提升工作效率. 适用于需要brave search tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要brave search tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "基于 Brave Search API 的无头网页搜索与内容提取工具,无需启动浏览器,，可自发提升工作效率. 适用于需要brave search tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要brave search tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 研究工具
   - brave
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # Brave搜索工具(免费版)
 
 ## 概述
@@ -136,7 +134,7 @@ cd /path/to/brave-search-tool
 npm ci
 # ...
 # 配置 API Key
-export BRAVE_API_KEY="your-brave-api-key"
+export BRAVE_API_KEY=${API_KEY:?请设置环境变量}
 ```
 
 ### 2. 基础搜索
@@ -202,7 +200,7 @@ export BRAVE_API_KEY="your-brave-api-key"
 
 ```bash
 # Brave API Key(必需)
-export BRAVE_API_KEY="your-brave-api-key"
+export BRAVE_API_KEY=${API_KEY:?请设置环境变量}
 # ...
 # 可选:默认结果数量
 export BRAVE_SEARCH_DEFAULT_COUNT=5

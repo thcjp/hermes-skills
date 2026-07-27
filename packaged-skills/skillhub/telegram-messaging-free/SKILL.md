@@ -1,14 +1,12 @@
----slug: "telegram-messaging-free"
+---
+slug: "telegram-messaging-free"
 name: "telegram-messaging-free"
 version: "1.0.0"
 displayName: "Telegram 消息 LITE"
-summary: "Telegram Bo"
-summary_zh: "Telegram Bot API 基础消息发送与聊天信息查询。。Telegram Bot API 集成 Skill 免费版。支持发送文本消息与图片、获取机器人信息、 查询聊天基本信息与成员计"
+summary: "Telegram Bo,提供核心能力"
+summary_zh: "Telegram Bo,提供核心能力"
 license: "MIT"
-description: |-
-  Telegram Bot API 集成 Skill 免费版。支持发送文本消息与图片、获取机器人信息、
-  查询聊天基本信息与成员计数。所有写操作需用户确认后执行.
-  适用于基础消息通知、聊天信息查询等场景.
+description: "|- Telegram Bot API 集成 Skill 免费版。支持发送文本消息与图片、获取机器人信息、 查询聊天基本信息与成员计数。所有写操作需用户确认后执行. 适用于基础消息通知、聊天信息查询等场景.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处理,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
 tags:
   - 通用办公
   - Automation
@@ -16,16 +14,17 @@ tags:
   - 社交
   - 通信
   - token
-  - telegram
   - agent
   - bot
-  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
-category: "Communication"---# Telegram 消息 LITE
+category: "Communication"
+pricing_tier: free
+---
+# Telegram 消息 LITE
 
 Telegram Bot API 集成免费版。支持发送文本消息与图片、获取机器人信息、查询聊天基本信息。所有写操作需用户确认后执行.
 ## 输入格式
@@ -95,7 +94,7 @@ Telegram Bot API 集成免费版。支持发送文本消息与图片、获取机
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤.
 ## 认证配置
 
-Bot Token 通过 @BotFather 创建获取，配置在 `~/.skill-platform/skill-platform.json` 的 `channels.telegram.accounts.default.token` 字段。所有 API 调用自动注入 Bot Token，无需在调用参数中传递.
+Bot Token 通过 @BotFather 创建获取，配置在 `./.skill-platform/skill-platform.json` 的 `channels.telegram.accounts.default.token` 字段。所有 API 调用自动注入 Bot Token，无需在调用参数中传递.
 ### 验证连接
 
 ```
@@ -179,7 +178,7 @@ A：全局约 30 条/秒，单聊天约 1 条/秒。触发限制时返回 HTTP 4
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供决策能力 |
 
 ### API Key 配置
-- Bot Token 配置在 `~/.json` 的 `channels.telegram.accounts.default.token` 字段
+- Bot Token 配置在 `./.json` 的 `channels.telegram.accounts.default.token` 字段
 - 所有 Telegram API 调用自动注入该 Token，无需在调用参数中传递
 
 ### 可用性分类

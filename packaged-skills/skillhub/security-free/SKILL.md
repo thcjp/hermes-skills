@@ -6,7 +6,7 @@ displayName: "GoPlus安全扫描免费版"
 summary: "免费版GoPlus安全扫描，支持基础安全扫描与漏洞发现查看。。GoPlus安全扫描免费版，提供基础代码安全检查功能. 支持一次性安全扫描与漏洞发现详情查看. 适用于个人项目的安全自检与漏洞发"
 summary_zh: "免费版GoPlus安全扫描，支持基础安全扫描与漏洞发现查看。。GoPlus安全扫描免费版，提供基础代码安全检查功能. 支持一次性安全扫描与漏洞发现详情查看. 适用于个人项目的安全自检与漏洞发"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要security相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   GoPlus安全扫描免费版，提供基础代码安全检查功能.
   支持一次性安全扫描与漏洞发现详情查看.
   适用于个人项目的安全自检与漏洞发现.
@@ -16,15 +16,17 @@ tools:
 homepage: ""
 tags:
   - 安全合规
+  - security
+  - automation
+  - productivity
+  - developer-tools
   - 安全
   - 加密
   - 工具
   - 安全扫描
-  - api
   - goplus
-  - agent
-  - 代码扫描
 category: "Security"
+pricing_tier: free
 ---
 # GoPlus安全扫描（免费版）
 
@@ -56,7 +58,7 @@ category: "Security"
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力

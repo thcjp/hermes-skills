@@ -1,5 +1,4 @@
 ---
-
 slug: notion-toolkit-free
 name: notion-toolkit-free
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: Notion 工具包基础版
 summary: "通过 Notion API 创建和管理页面、数据库与块,支持搜索、查询与内容更新。核心能力: 知识管理领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT
 edition: free
-description: "核心能力: 知识管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要notion toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要notion toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "核心能力: 知识管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要notion toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要notion toolkit相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - Notion
   - notion
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # Notion 工具包基础版
 
 ## 概述
@@ -125,8 +123,8 @@ FREE 版本提供以下能力:
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
 ```bash
-curl -X POST "https://api.notion.com/v1/search" -H "Authorization: Bearer $NOTION_KEY" -H "Notion-Version: 2025-09-03" -d '{"query": "project"}'
-```
+# 安全数据传输示例" -H "Notion-Version: 2025-09-03" -d '{"query": "project"}'
+echo "操作完成"```
 
 ### 场景 2: 在数据库中创建页面
 
@@ -161,8 +159,8 @@ notion.com/v1/pages" -H "Authorization: Bearer $NOTION_KEY" -H "Notion-Version: 
 ### 2. 配置参数
 
 ```bash
-mkdir -p ~/.config/notion
-echo "ntn_your_key_here" > ~/.config/notion/api_key
+mkdir -p ./.config/notion
+echo "ntn_your_key_here" > ./.config/notion/api_key
 # Notion-Version: 2025-09-03
 # 需要将目标页面/数据库连接到你的 integration
 ```
@@ -198,7 +196,7 @@ Agent 将自动:
 ### 基础配置
 
 ```bash
-mkdir -p ~/.config/notion
+mkdir -p ./.config/notion
 config/notion/api_key
 # Notion-Version: 2025-09-03
 # 需要将目标页面/数据库连接到你的 integration

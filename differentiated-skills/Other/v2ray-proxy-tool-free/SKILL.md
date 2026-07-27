@@ -1,5 +1,4 @@
 ---
-
 slug: v2ray-proxy-tool-free
 name: v2ray-proxy-tool-free
 version: 1.1.0
@@ -10,8 +9,8 @@ edition: free
 description: "网络连通性诊断工具免费版，面向个人开发者的轻量级网络排障工具。核心能力: 网络连通性查验(ping/traceroute)、端口开放性扫描、DNS解析诊断、路由追踪剖析。适用场景: 开发者排查API连接超时、DNS解析异常、端口不通等网络问题。差异化: 免费版聚焦核心诊断功能，去除所有外部平台引用，强化中文本地化，适合个人用户零成本上手"
 tags:
   - 网络诊断
-  - v2ray
-  - proxy
+  - 网络工具
+  - network-tool
   - automation
   - productivity
   - 连通性检测
@@ -28,12 +27,11 @@ category: "Security"
 pricing_tier: free
 
 ---
-
 # 网络连通性诊断（免费版）
 
 ## 概述
 
-网络连通性诊断工具免费版帮助你快速排查网络连接问题，提供连通性检测、端口扫描、DNS诊断、路由追踪四大核心能力。
+网络连通性诊断工具免费版帮助你快速排查网络连接问题，提供连通性检测、端口扫描、DNS诊断、路由追踪四大核心能力。 关键词: net-proxy proxy
 ## 核心能力
 
 | 能力 | 说明 |

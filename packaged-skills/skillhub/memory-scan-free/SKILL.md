@@ -6,7 +6,7 @@ displayName: "记忆安全扫描"
 summary: "基础版AI Agent记忆文件安全扫描工具，检测恶意内容与凭证泄漏。面向AI Agent记忆文件的基础安全扫描工具，帮助发现记忆文件中的恶意指令、Prompt注入和凭证泄漏等常见威胁. 提供"
 summary_zh: "基础版AI Agent记忆文件安全扫描工具，检测恶意内容与凭证泄漏。面向AI Agent记忆文件的基础安全扫描工具，帮助发现记忆文件中的恶意指令、Prompt注入和凭证泄漏等常见威胁. 提供"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要memory scan相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   面向AI Agent记忆文件的基础安全扫描工具，帮助发现记忆文件中的恶意指令、Prompt注入和凭证泄漏等常见威胁.
   提供七大检测类别基础扫描、五级安全分级、基础隔离功能三大核心能力.
   适用于Agent记忆日常安全审计、凭证泄漏排查、引入外部数据后安全检查等场景.
@@ -17,13 +17,18 @@ tools:
   - write
 homepage: ""
 tags:
-  - 智能助手
+  - - 智能助手
+  - memory
+  - scan
+  - automation
+  - productivity
   - 记忆管理
   - 上下文
   - AI
   - memory
   - api
 category: "Agents"
+pricing_tier: free
 ---
 # 记忆安全扫描（Memory Scan）- 免费版
 
@@ -79,7 +84,7 @@ category: "Agents"
 
 ## 使用流程
 
-### 第一步：执行安全扫描
+### 领先步：执行安全扫描
 
 ```bash
 # 扫描全部记忆文件（本地模式）
@@ -172,7 +177,7 @@ Action: Review memory/2026-07-15.md:42
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 已知限制

@@ -1,5 +1,4 @@
 ---
-
 slug: use-my-browser-tool-free
 name: use-my-browser-tool-free
 version: 1.0.0
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # 真实浏览器控制免费版
 
 ## 概述
@@ -136,10 +134,10 @@ tmwd_newtab(url="https://example.com")
 当目标网站阻止脚本执行时,自动回退到内置浏览器.
 ```bash
 # 当 tmwd_exec 返回 csp_blocked: true 时,回退到内置浏览器
-# 步骤1:使用内置浏览器打开相同 URL
+# 步骤说明:使用内置浏览器打开相同 URL
 browser(action="open", profile="skill-platform", url="<same-url>")
 # ...
-# 步骤2:获取页面快照
+# 步骤说明:获取页面快照
 browser(action="snapshot", targetId=<targetId>)
 ```
 
@@ -154,16 +152,16 @@ browser(action="snapshot", targetId=<targetId>)
 
 小王需要从已登录的电商网站批量提取订单数据.
 ```bash
-# 步骤1:验证连接
+# 步骤说明:验证连接
 tmwd_status()
 # ...
-# 步骤2:切换到电商网站标签页
+# 步骤说明:切换到电商网站标签页
 tmwd_switch(pattern="shopping.example.com")
 # ...
-# 步骤3:导航到订单页面
-tmwd_navigate(url="https://shopping.example.com/orders")
+# 步骤说明:导航到订单页面
+tmwd_navigate(url="${SERVER_URL:?请设置环境变量}")
 # ...
-# 步骤4:提取订单列表
+# 步骤说明:提取订单列表
 tmwd_exec(code="var orders=document.querySelectorAll('.order-item'); var data=[]; orders.forEach(function(o){data.push({id:o.querySelector('.order-id').innerText,date:o.querySelector('.order-date').innerText,amount:o.querySelector('.order-amount').innerText})}); return data")
 ```
 
@@ -171,15 +169,15 @@ tmwd_exec(code="var orders=document.querySelectorAll('.order-item'); var data=[]
 
 小李需要批量填写相似的在线表单.
 ```bash
-# 步骤1:导航到表单页面
-tmwd_navigate(url="https://form.example.com/apply")
+# 步骤说明:导航到表单页面
+tmwd_navigate(url="${SERVER_URL:?请设置环境变量}")
 # ...
-# 步骤2:填写表单字段
+# 步骤说明:填写表单字段
 tmwd_exec(code="var f={'#username':'liming','#email':'liming@example.com','#phone':'13800138000'}; Object.keys(f).forEach(function(s){var e=document.querySelector(s); e.value=f[s]; e.dispatchEvent(new Event('input',{bubbles:true}))})")
 # ...
-# 步骤3:提交表单
+# 步骤说明:提交表单
 # ...
-# 步骤4:验证提交结果
+# 步骤说明:验证提交结果
 tmwd_text(max_chars=1000)
 ```
 
@@ -187,13 +185,13 @@ tmwd_text(max_chars=1000)
 
 小张需要将网页内容整理为结构化数据.
 ```bash
-# 步骤1:切换到目标页面
+# 步骤说明:切换到目标页面
 tmwd_switch(pattern="article.example.com")
 # ...
-# 步骤2:提取文章标题和内容
+# 步骤说明:提取文章标题和内容
 tmwd_exec(code="return {title:document.querySelector('h1').innerText,content:document.querySelector('.article-body').innerText}")
 # ...
-# 步骤3:提取所有链接
+# 步骤说明:提取所有链接
 from(document.querySelectorAll('a')).map(function(a){return {text:a.innerText,href:a.href}})")
 ```
 

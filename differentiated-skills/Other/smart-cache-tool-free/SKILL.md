@@ -1,5 +1,4 @@
 ---
-
 slug: smart-cache-tool-free
 name: smart-cache-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 智能缓存工具-免费版
 summary: "智能缓存管理工具,支持LRU/LFU策略与自动失效,适合个人项目性能优化。智能缓存管理工具免费版,面向个人开发者与小型项目."
 license: MIT
 edition: free
-description: "智能缓存管控工具免费版,面向个人开发者与小型项目. 适用于需要smart cache tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要smart cache tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "智能缓存管控工具免费版,面向个人开发者与小型项目. 适用于需要smart cache tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要smart cache tool相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - 缓存
   - smart
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 智能缓存工具 - 免费版
 
 ## 概述
@@ -268,7 +266,7 @@ SmartCache(
 # 函数结果缓存
 @cache.cached(prefix="api", ttl=60)
 def fetch_data(url):
-    return requests.get(url).json()
+    return requests.get(validated_url).json()
 # ...
 # 带条件缓存
 @cache.cached(prefix="search", condition=lambda r: r["count"] > 0)

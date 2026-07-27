@@ -1,5 +1,4 @@
 ---
-
 slug: safe-encryption-tool-free
 name: safe-encryption-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 安全加密工具-免费版
 summary: "基于SAFE CLI的文件加密解密工具,支持量子安全算法,适合个人数据保护。安全加密工具免费版,面向个人用户的文件加密与解密。核心能力:"
 license: MIT
 edition: free
-description: "安全加密工具免费版,面向个人用户的文件加密与解密。核心能力:，可自发提升工作效率. 适用于需要safe encryption tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要safe encryption tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "安全加密工具免费版,面向个人用户的文件加密与解密。核心能力:，可自发提升工作效率. 适用于需要safe encryption tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要safe encryption tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 加密
   - safe
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 安全加密工具 - 免费版
 
 ## 概述

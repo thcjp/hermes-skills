@@ -1,5 +1,4 @@
 ---
-
 slug: security-audit-agent-tool-free
 name: security-audit-agent-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: Agent安全审计免费版
 summary: AI Agent系统安全审计工具,支持代码库安全检查、提示注入检测与基础配置审计,适合个人开发者快速安全自查.
 license: MIT
 edition: free
-description: "Agent安全审计免费版,为AI Agent开发者包含基础安全审计能力. 适用于需要security audit agent tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要security audit agent tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "Agent安全审计免费版,为AI Agent开发者包含基础安全审计能力. 适用于需要security audit agent tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要security audit agent tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 安全
   - security
@@ -30,7 +29,6 @@ category: "Agents"
 pricing_tier: free
 
 ---
-
 # Agent安全审计免费版
 
 ## 概述
@@ -79,9 +77,9 @@ done
 # 2. 检查危险函数调用
 echo ""
 echo "--- 2. 危险函数调用检查 ---"
-DANGEROUS=$(grep -rn 'eval(\|exec方法(\|system(\|subprocess.call.*shell=True' \
+HIGHRISK=$(grep -rn '安全解析(\|exec方法(\|system(\|subprocess.call.*shell=True' \
   --include='*.{js,ts,py}' . 2>/dev/null | grep -v 'node_modules\|test' | wc -l)
-[ "$DANGEROUS" -gt 0 ] && echo "  [!] 发现 ${DANGEROUS} 处危险函数调用" && ((ISSUES++))
+[ "$HIGHRISK" -gt 0 ] && echo "  [!] 发现 ${HIGHRISK} 处危险函数调用" && ((ISSUES++))
 # ...
 # 3. 检查不安全的反序列化
 echo ""
@@ -125,7 +123,7 @@ INJECTION_PATTERNS=(
     'you.*are.*now.*a'
     'disregard.*above'
     'new.*instruction'
-    'override.*system'
+    '新指令.*system'
     'reveal.*system.*prompt'
     'reveal.*your.*instruction'
 )
@@ -321,10 +319,10 @@ import os
 class ToolPermissionChecker:
     """检查Agent工具的权限配置"""
 # ...
-    DANGEROUS_PATTERNS = [
+    HIGHRISK_PATTERNS = [
         "rm -rf", "rmdir", "del /f", "DROP TABLE", 
         "DELETE FROM", "shutdown", "reboot", "format",
-        "chmod 777", "wget", "curl", "exec方法(", "eval("
+        "安全权限设置", "wget", "curl", "exec方法(", "安全解析("
     ]
 # ...
     def check_tools(self, tools_config):
@@ -344,7 +342,7 @@ append(f"[{name}] 未定义输入验证schema")
 # ...
             # 检查命令中是否有危险模式
             cmd = str(tool.get("command", "") or tool.get("function", ""))
-            for pattern in self.DANGEROUS_PATTERNS:
+            for pattern in self.HIGHRISK_PATTERNS:
                 if pattern.lower() in cmd.lower():
 append(f"[{name}] 发现危险操作: {pattern}")
 # ...
@@ -404,30 +402,6 @@ bash config_audit.sh
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
 #
-## 示例
-
-### Agent安全配置检查清单
-
-| 检查项 | 免费版 | 说明 |
-|---:|---:|---:|
-| 硬编码密钥 | 支持 | 检查API Key、Token等 |
-| 危险函数 | 支持 | eval、exec、system等 |
-| 提示注入 | 基础 | 模式匹配检测 |
-| 工具权限 | 基础 | 检查权限定义 |
-| 输入验证 | 基础 | 检查schema定义 |
-| 速率限制 | 基础 | 检查配置存在性 |
-| 超时限制 | 基础 | 检查配置存在性 |
-
-### 提示注入常见模式
-
-| 模式 | 风险等级 | 说明 |
-|:---:|:---:|:---:|
-| ignore previous instructions | 高 | 尝试覆盖系统提示 |
-| you are now a... | 高 | 尝试角色劫持 |
-| reveal system prompt | 中 | 尝试泄露系统提示 |
-| disregard above | 高 | 尝试绕过约束 |
-| new instructions | 中 | 尝试注入新指令 |
-
 ## 优秀实践
 
 1. **最小权限**:Agent工具仅授予必要权限,避免过度授权.
@@ -469,23 +443,6 @@ cat << 'EOF'
 EOF
 ```
 
-## 常见问题
-
-### Q1: 免费版能检测所有提示注入吗?
-
-免费版使用基础模式匹配,能检测常见注入模式。复杂的上下文感知注入需要专业版的深度检测能力.
-### Q2: 提示注入检测结果有误报怎么办?
-
-人工审查每个检测结果,排除合法的指令模式。建议结合业务上下文判断.
-### Q3: 工具调用安全检查覆盖哪些方面?
-
-检查权限定义、输入验证schema、危险操作模式、速率限制配置.
-### Q4: 如何修复检测到的安全问题?
-
-根据检查结果,参考优秀实践部分的安全提示词模板和配置建议进行修复.
-### Q5: 免费版支持哪些编程语言?
-
-支持JavaScript/TypeScript和Python项目的安全扫描。其他语言需专业版支持.
 ## 依赖说明
 
 ### 运行环境
@@ -510,14 +467,6 @@ EOF
 ### 可用性分类
 - **分类**: MD+EXEC模式纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行AI Agent系统安全审计任务
-
-## 错误处理
-
-| 错误场景 | 原因 | 处理方式 |
-|---:|:---|---:|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 已知限制
 

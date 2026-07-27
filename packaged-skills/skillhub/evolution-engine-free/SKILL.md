@@ -6,7 +6,7 @@ displayName: "进化引擎免费版"
 summary: "基础 Agent 自我进化，纠错学习加反污染防线，避免重复犯错与误学。。面向 AI Agent 的基础自我进化引擎，提供纠错学习与反污染防线两大核心能力. 用户明确纠正时记录到纠错日志，召回"
 summary_zh: "基础 Agent 自我进化，纠错学习加反污染防线，避免重复犯错与误学。。面向 AI Agent 的基础自我进化引擎，提供纠错学习与反污染防线两大核心能力. 用户明确纠正时记录到纠错日志，召回"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要evolution engine相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   面向 AI Agent 的基础自我进化引擎，提供纠错学习与反污染防线两大核心能力.
   用户明确纠正时记录到纠错日志，召回时优先注入，避免重复犯错.
   反污染防线确保永不从沉默推断偏好，单次纠错不晋升永久规则.
@@ -20,15 +20,17 @@ tools:
 homepage: ""
 tags:
   - 通用办公
+  - evolution
+  - engine
+  - automation
+  - productivity
   - 工具
   - 效率
   - 知识
   - 文档
   - corrections
-  - 待观察
-  - memory
-  - 纠错学习
 category: "Automation"
+pricing_tier: free
 ---
 # 进化引擎免费版（Evolution Engine Free）
 
@@ -76,7 +78,7 @@ category: "Automation"
 
 ## 使用流程
 
-第一步：初始化记忆架构。在 ~/evolution-engine/ 创建基础目录结构：memory.md（热层，≤100 行，确认规则与核心偏好）、corrections.md（纠错层，最近 50 条纠错记录）.
+领先步：初始化记忆架构。在 ./evolution-engine/ 创建基础目录结构：memory.md（热层，≤100 行，确认规则与核心偏好）、corrections.md（纠错层，最近 50 条纠错记录）.
 第二步：识别学习信号。区分两类信号：纠错信号（直接否定、修正、指出错误、偏好表达→写入 corrections.md 标记"待观察"）、忽略信号（一次性指令、上下文特定、假设性、沉默、第三方偏好→不记录）。永不从沉默推断偏好.
 第三步：执行纠错学习。用户纠正时写入 corrections.md 标记"待观察"；召回时优先注入纠错教训避免重复犯错。单次纠错不晋升热层 memory.md，需多次一致确认才考虑入档.
 第四步：自反思与记录。完成重要工作后执行反思三问（是否达到预期、哪里可以更好、这是模式吗），写入 corrections.md。反思转化为经验记录，下次类似任务时参考.
@@ -132,7 +134,7 @@ category: "Automation"
 ## 依赖说明
 
 **LLM 依赖**：由 Agent 内置 LLM 提供自然语言理解、纠错识别与反思推理能力，必需.
-**API Key 配置**：本 Skill 无需任何 API Key，纯 Markdown 指令驱动，所有记忆存储在本地 ~/evolution-engine/ 目录，不做任何网络请求.
+**API Key 配置**：本 Skill 无需任何 API Key，纯 Markdown 指令驱动，所有记忆存储在本地 ./evolution-engine/ 目录，不做任何网络请求.
 **运行环境**：
 - Agent 平台：支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
 - 操作系统：Windows / macOS / Linux

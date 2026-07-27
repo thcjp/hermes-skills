@@ -1,17 +1,12 @@
----slug: "whatsapp-styling-guide-free"
+---
+slug: "whatsapp-styling-guide-free"
 name: "whatsapp-styling-guide-free"
 version: "1.0.0"
 displayName: "WhatsApp 排版入门"
-summary: "WhatsApp消息排"
-summary_zh: "WhatsApp消息排版基础指南,涵盖核心语法规则、禁用范式与基础通知模板。WhatsApp消息排版基础指南(免费版)。提供WhatsApp原生排版语法的核心规则说明、常见禁用范式与替代方案"
+summary: "WhatsApp消息排,提供核心能力"
+summary_zh: "WhatsApp消息排,提供核心能力"
 license: "MIT"
-description: |-
-  WhatsApp消息排版基础指南(免费版)。提供WhatsApp原生排版语法的核心规则说明、常见禁用范式与替代方案,
-  以及通知类基础消息模板。覆盖三大基础能力:核心语法参考(加粗/斜体/删除线/列表的写法与效果)、
-  基础禁用范式(井号标题/Markdown表格/双星号的替代方案)、基础通知模板(订单确认与物流更新).
-  适用于个人开发者编写WhatsApp通知消息、日常消息排版优化等基础场景.
-  如需完整模板库(客服/营销/公告)、风格规范、Markdown差异对照、内容类型排版建议等高级能力,
-  请升级至whatsapp-styling-guide付费版.
+description: "|- WhatsApp消息排版基础指南(免费版)。包含WhatsApp原生排版语法的核心规则说明、常见禁用范式与替代方案, 以及通知类基础消息模板。覆盖三大基础能力:核心语法参考(加粗/斜体/删除线/列表的写法与效果)、 基础禁用范式(井号标题/Markdown表格/双星号的替代方案)、基础通知模板(订单确认与物流更新). 适用于个人开发者编写WhatsApp通知消息、日常消息排版调优等基础场景. 如需完整模板库(客服/营销/公告)、风格规范、Markdown差异对照、内容类型排版建议等高级能力, 请升级至whatsapp-styling-guid..."
 tags:
   - 需求设计
   - UI设计
@@ -27,7 +22,10 @@ tools:
   - write
   - exec
 homepage: ""
-category: "Creative"---# WhatsApp 排版入门
+category: "Creative"
+pricing_tier: free
+---
+# WhatsApp 排版入门
 
 WhatsApp消息排版的基础参考指南。涵盖核心语法规则、常见禁用范式与替代方案,以及通知类基础模板。帮助快速掌握WhatsApp原生排版,写出干净自然的消息.
 ## 输入格式

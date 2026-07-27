@@ -1,5 +1,4 @@
 ---
-
 slug: archive-tool-free
 name: archive-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 内容归档工具-免费版
 summary: "智能内容快照工具,支持完整内容提取、语义标签与主动召回,适合个人用户。内容归档工具,将外部内容保存为智能快照,支持完整内容提取、语义标签、"
 license: MIT
 edition: free
-description: "内容归档工具,将外部内容保存为智能快照,兼容完整内容提取、语义标签、. 适用于需要archive tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要archive tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "内容归档工具,将外部内容保存为智能快照,兼容完整内容提取、语义标签、. 适用于需要archive tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要archive tool相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - 研究工具
   - archive
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # 内容归档工具(免费版)
 
 ## 概述
@@ -151,13 +149,13 @@ echo "操作完成"
 
 ```bash
 # 创建归档目录(首次使用)
-mkdir -p ~/archive/items ~/archive/projects
+mkdir -p ./archive/items ./archive/projects
 ```
 
 存储结构:
 
 ```text
-~/archive/
+./archive/
 ├── memory.md          # HOT 区:最近条目,不超过100行
 ├── index.md           # 主题/标签索引
 ├── items/             # 单个归档条目
@@ -274,7 +272,7 @@ project: my-project              # 所属项目
 ### Q6: 如何备份归档库?
 归档库是纯 Markdown 文件,直接备份目录或纳入 Git 管理即可:
 ```bash
-cd ~/archive && git add . && git commit -m "归档更新"
+cd ./archive && git add . && git commit -m "归档更新"
 ```
 
 ## 依赖说明

@@ -1,76 +1,40 @@
----slug: "hugo-blog-publisher-free"
-name: "hugo-blog-publisher-free"
-version: "1.0.0"
-displayName: "博客发布工具(免费版)"
-summary: "将Markdown文章"
-summary_zh: "将Markdown文章发布到静态站点生成器博客并推送到代码仓库(免费版)。将Markdown文章发布到静态站点生成器博客并推送到代码仓库。自动分析内容提取 标题、标签、分类，生成front"
-license: "MIT"
-description: |-
-  将Markdown文章发布到静态站点生成器博客并推送到代码仓库。自动分析内容提取
-  标题、标签、分类，生成front matter，创建标签分类映射文件，添加截断标记，
-  执行Git推送并返回部署链接.
-tools:
-  - read
-  - exec
-  - write
-homepage: ""
-tags:
-  - 研发工具
-  - 工具
-  - 效率
-  - 自动化
-  - 开发
-  - 代码
-  - 创意
-  - 图像
-  - 运维
-  - git
-  - index
-  - content
-  - front
-  - matter
-category: "Automation"---# 博客发布工具(免费版)
-
-将Markdown文章发布到静态站点生成器博客并推送到代码仓库.
-## 输入格式
-
-| 参数名 | 类型 | 必填 | 说明 |
-|---|---|---|---|
-| input | string | 是 | 博客发布工具(免费版)处理的输入数据或指令 |
-| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
-| callback_url | string | 否 | 异步处理完成后的回调通知URL |
-
-## 核心能力
-
-### 1. 自动内容分析
-从用户提供的文章内容中自动提取：
-- 标题：从front matter或内容中提取
-- 标签：根据内容主题自动判断（如AI → `["ai"]`）
-- 分类：根据内容类型判断（如技术文章 → `["tech"]`）
-
-### 2. Front Matter渲染
-```yaml
 ---
 title: "文章标题"
 date: 2026-07-21
 draft: false
-tags: ["tag1", "tag2"]
+tags:
+  - tag1
+  - tag2
+  - automation
+  - productivity
+  - developer-tools
 categories: ["tech"]
-description: "文章描述"
+description: "文章描述. 适用于需要相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
+pricing_tier: free
+version: "1.0.0"
+category: "Operations"
+license: "MIT"
+slug: hugo-blog-publisher-free
+name: hugo-blog-publisher-free
+displayName: "技能工具"
+summary: "提供核心功能的开发技能工具"
+tools:
+  - read
+  - exec
 ---
 ```
 
 规则：
 - `categories`：使用已有分类的小写英文slug，如 `tech`, `investment`, `ai`, `photo`
 - `tags`：使用小写英文slug，不用中文
-- `slug`：文件名使用小写英文，不用中文
+- `slug`：文件名使用小写英文，不用中文 关键词: hugo blog publisher
 
 ### 3. 标签分类映射（Taxonomy Branch Bundle）
 文章frontmatter用英文slug，页面展示用中文，通过 `_index.md` 实现：
 
 1. frontmatter中使用英文slug：
 ```yaml
-tags: ["ssg", "ssr"]
+tags: ["ssg", "网络代理"]
 categories: ["tech"]
 ```
 
@@ -88,7 +52,7 @@ title: "显示的中文名"
 ```
 
 ### 4. 截断标记与Git推送
-在第一段或导言后添加 `<!--more-->`，让列表页显示摘要.
+在领先段或导言后添加 `<!--more-->`，让列表页显示摘要.
 从博客目录自动检测git状态并推送：
 ```bash
 cd {博客路径}
@@ -135,6 +99,7 @@ content/posts/hugo-blog-deployment.md
 # ...
 # 2. 文件内容
 ```
+echo "操作完成"
 ```yaml
 ---
 title: "静态站点部署指南"
@@ -153,7 +118,7 @@ description: "如何将静态站点部署到生产环境"
 # ...
 首先确保本地环境已安装所有依赖...
 ```
-
+echo "操作完成"
 ```bash
 # 3. 如需新标签，创建映射
 content/tags/deployment/_index.md
@@ -161,7 +126,7 @@ content/tags/deployment/_index.md
 ---
 # ...
 # 4. Git推送
-cd ~/my-blog
+cd ./my-blog
 git add content/posts/hugo-blog-deployment.md
 git commit -m "新增：静态站点部署指南"
 git push
@@ -189,7 +154,7 @@ A: frontmatter中使用小写英文slug（如 `tech`, `ai`），页面展示通�
 ### Q2: 如何处理新标签没有中文映射的情况？
 A: 需要创建 `content/tags/<slug>/_index.md` 文件，内容为 `---\ntitle: "中文显示名"\n---`。例如标签 `docker` 创建文件后title设为 `"Docker"`.
 ### Q3: 截断标记 `<!--more-->` 应该放在哪里？
-A: 通常放在第一段结束后的空行，或导言和正文之间。列表页只显示截断标记之前的内容作为摘要.
+A: 通常放在领先段结束后的空行，或导言和正文之间。列表页只显示截断标记之前的内容作为摘要.
 ## 已知限制
 
 - 需要本地运行，必须能访问博客目录
@@ -215,7 +180,7 @@ A: 通常放在第一段结束后的空行，或导言和正文之间。列表�
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 升级提示

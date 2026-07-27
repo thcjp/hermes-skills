@@ -37,6 +37,7 @@ from project_config import PROJECT_ROOT
 from project_config import DB_PATH
 from project_config import TOOLS_DIR
 from project_config import CLAWHUB_DOWNLOADED_DIR
+from project_config import DATA_DIR  # 修复: SKILL_DATA_DIR → DATA_DIR
 # === End Phase 1 ===
 SKILLS_ROOT = PROJECT_ROOT
 SKILL_REGISTRY_DIR = TOOLS_DIR
@@ -56,6 +57,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 import db as db_module
+from skill_core.parser import find_skill_md
 
 # ============================================================
 # 配置
@@ -188,26 +190,6 @@ def get_skill_from_db(slug: str) -> Optional[Dict[str, Any]]:
     row = c.fetchone()
     conn.close()
     return dict(row) if row else None
-
-
-def find_skill_md(slug: str) -> Optional[Path]:
-    """在所有目录中查找skill的SKILL.md"""
-    search_dirs = [
-        PACKAGED_SKILLS_DIR / slug,
-        OPENSOURCE_SKILLS_DIR / slug,
-    ]
-    for d in search_dirs:
-        if d.is_dir():
-            md = d / "SKILL.md"
-            if md.exists():
-                return md
-    if DIFFERENTIATED_SKILLS_DIR.is_dir():
-        for cat_dir in DIFFERENTIATED_SKILLS_DIR.iterdir():
-            if cat_dir.is_dir():
-                md = cat_dir / slug / "SKILL.md"
-                if md.exists():
-                    return md
-    return None
 
 
 def find_skill_source(slug: str) -> str:
@@ -1474,7 +1456,7 @@ def cmd_scan():
         print(f"    hash: {item['old_hash']}... → {item['new_hash']}...")
 
     # 保存报告
-    report_path = SKILL_DATA_DIR / "reports" / "version_sync_scan_report.json"
+    report_path = DATA_DIR / "reports" / "version_sync_scan_report.json"
     with open(report_path, 'w', encoding='utf-8') as f:
         json.dump({'scan_time': NOW, 'changed': changed}, f, ensure_ascii=False, indent=2)
     print(f"\n报告已保存: {report_path}")
@@ -1633,7 +1615,7 @@ def cmd_report():
         'pending_change_list': [c['slug'] for c in changed[:50]],
     }
 
-    report_path = SKILL_DATA_DIR / "reports" / "version_sync_report.json"
+    report_path = DATA_DIR / "reports" / "version_sync_report.json"
     with open(report_path, 'w', encoding='utf-8') as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
 

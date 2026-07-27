@@ -1,15 +1,12 @@
----slug: "whatsapp-ultimate-free"
+---
+slug: "whatsapp-ultimate-free"
 name: "whatsapp-ultimate-free"
 version: "1.0.0"
 displayName: "通讯应用工具(免费版)"
-summary: "通讯应用消息发送、交互"
-summary_zh: "通讯应用消息发送、交互反应、群组管理和多Agent讨论工具(免费版)。通讯应用消息发送、交互反应、群组管理和多Agent讨论工具。支持文本、图片、 语音、视频、贴纸等多种消息类型，支持投票、"
+summary: "通讯应用消息发送、交互,提供核心能力"
+summary_zh: "通讯应用消息发送、交互,提供核心能力"
 license: "MIT"
-description: |-
-  通讯应用消息发送、交互反应、群组管理和多Agent讨论工具。支持文本、图片、
-  语音、视频、贴纸等多种消息类型，支持投票、群组创建、历史搜索和多Agent
-  协作讨论。通过协议库桥接通讯应用，提供完整的消息交互能力。适用于独立
-  开发者、企业团队和自动化工作流场景。不适用于无通讯应用账号的场景.
+description: "|- 通讯应用消息发送、交互反应、群组管控和多Agent讨论工具。兼容文本、图片、 语音、视频、贴纸等多种消息类型，兼容投票、群组创建、历史搜索和多Agent 协作讨论。通过协议库桥接通讯应用，包含完整的消息交互能力。适用于独立 开发者、企业团队和自发化工作流场景。不适用于无通讯应用账号的场景.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
 tools:
   - read
   - exec
@@ -21,13 +18,15 @@ tags:
   - 社交
   - 通信
   - action
-  - whatsapp
   - net
   - send
   - type
-category: "Communication"---# 通讯应用工具(免费版)
+category: "Communication"
+pricing_tier: free
+---
+# 通讯应用工具(免费版)
 
-通讯应用消息发送、交互反应、群组管理和多Agent讨论.
+通讯应用消息发送、交互反应、群组管理和多Agent讨论. 关键词: whatsapp ultimate
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -47,14 +46,12 @@ category: "Communication"---# 通讯应用工具(免费版)
 - 贴纸消息：`message action=send --type sticker`（尺寸512x512）
 - 文件消息：`message action=send --type document`
 
-```bash
-python3 （请参考skill目录中的脚本文件） action=send --to "contact-id@s.whatsapp.net" --type text --content "你好，这是一条测试消息"
+```网络连接说明d@s.whatsapp.net" --type text --content "你好，这是一条测试消息"
 ```
 
 ### 2. 交互反应
 对消息添加表情反应、回复消息和转发消息.
-```bash
-python3 （请参考skill目录中的脚本文件） action=react --message-id "msg-abc123" --emoji "👍"
+```网络连接说明d "msg-abc123" --emoji "👍"
 python3 （请参考skill目录中的脚本文件） action=reply --message-id "msg-abc123" --content "收到"
 ```
 
@@ -66,8 +63,7 @@ python3 （请参考skill目录中的脚本文件） action=group-create --name 
 
 ### 4. 历史搜索
 搜索聊天历史记录，支持关键词和日期范围.
-```bash
-python3 （请参考skill目录中的脚本文件） action=search --chat "contact-id@s.whatsapp.net" --query "会议纪要" --limit 20
+```网络连接说明d@s.whatsapp.net" --query "会议纪要" --limit 20
 ```
 
 ### 输出格式

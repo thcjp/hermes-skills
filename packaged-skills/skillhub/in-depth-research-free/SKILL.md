@@ -3,10 +3,10 @@ slug: "in-depth-research-free"
 name: "in-depth-research-free"
 version: 1.0.1
 displayName: "深度研究引擎(免费版)"
-summary: "多源深度调研，覆盖范围界定、多向量搜索、来源评估、迭代深化与结构化交付。免费版。系统化深度研究方法论（免费版），通过七步协议（Scope → Search → Evaluate → Deep"
+summary: "提供包含多源深度调研,覆盖范围界定、多向量搜索、来源评估、迭代深化与结构化交付.免费版.系统化深度研究方法论（免费版）,通过七步协议（Scope → Search → Evaluate → Deep"
 summary_zh: "多源深度调研，覆盖范围界定、多向量搜索、来源评估、迭代深化与结构化交付。免费版。系统化深度研究方法论（免费版），通过七步协议（Scope → Search → Evaluate → Deep"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要in depth research相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   系统化深度研究方法论（免费版），通过七步协议（Scope → Search → Evaluate → Deepen →
   Synthesize → Document → Deliver）实现多源调研。核心能力：
   - 研究范围界定与问题重构
@@ -21,15 +21,17 @@ tools:
 homepage: ""
 tags:
   - 信息检索
+  - depth
+  - research
+  - automation
+  - productivity
   - 搜索
   - 检索
   - 工具
-  - api
   - standard
   - key
-  - 深度研究
-  - 引擎
 category: "Knowledge"
+pricing_tier: free
 ---
 # 深度研究引擎(免费版)
 
@@ -61,7 +63,7 @@ category: "Knowledge"
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力

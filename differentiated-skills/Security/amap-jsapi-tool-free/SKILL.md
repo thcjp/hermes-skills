@@ -1,5 +1,4 @@
 ---
-
 slug: amap-jsapi-tool-free
 name: amap-jsapi-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 高德地图JSAPI免费版
 summary: 高德地图JSAPI v2.0开发助手,支持地图展示、标注点、地理编码与基础路径规划,适合个人开发者快速集成地图功能.
 license: MIT
 edition: free
-description: "高德地图JSAPI v2.0开发助手免费版,为个人开发者包含地图开发核心能力. 适用于需要amap jsapi tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要amap jsapi tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "高德地图JSAPI v2.0开发助手免费版,为个人开发者包含地图开发核心能力. 适用于需要amap jsapi tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要amap jsapi tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 地图开发
   - amap
@@ -28,7 +27,6 @@ category: "Development"
 pricing_tier: free
 
 ---
-
 # 高德地图JSAPI v2.0 开发助手免费版
 
 ## 概述
@@ -445,23 +443,6 @@ Map(containerId, { ...defaultOptions, ...options });
 }
 ```
 
-## 常见问题
-
-### Q1: 免费版API额度够用吗?
-
-个人项目每日5000次调用通常足够。如果需要更高额度,可升级专业版获取无限制调用.
-### Q2: 如何防止API Key被滥用?
-
-配置域名白名单,只允许指定域名使用Key。生产环境使用securityJsCode增强安全性.
-### Q3: 地图加载慢怎么办?
-
-使用按需加载插件(AMap.plugin),避免一次性加载所有功能。检查网络连接是否正常.
-### Q4: 支持哪些浏览器?
-
-支持现代浏览器(Chrome 70+, Firefox 65+, Safari 12+, Edge 79+)。WebGL渲染需要GPU支持.
-### Q5: 免费版支持3D地图吗?
-
-免费版支持3D视图模式(viewMode: '3D'),但高级3D效果(如建筑白模)需要专业版.
 ## 依赖说明
 
 ### 运行环境

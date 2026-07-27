@@ -711,36 +711,49 @@ def sync_platform_ratings(limit: int = 0, scrape_ai_rating: bool = True):
     
     可选: 从skill详情页抓取AI评分 (scrape_ai_rating=True)
     注意: 公开API不返回AI评分(3.3/3.6等), 需要从skill详情页获取
+    
+    v2.7增强: 两阶段同步
+    - 阶段1: INNER JOIN同步有platform_uploads记录的skill (使用platform_slug)
+    - 阶段2: LEFT JOIN ... IS NULL同步无平台记录的skill (使用DB slug直接查询)
+    - 阶段2中404的skill标记为not_found_on_platform, 避免重复查询
     """
     _ensure_rating_columns()
     
     conn = sqlite3.connect(str(DB_PATH))
     conn.row_factory = sqlite3.Row
+    now = datetime.now().isoformat()
     
-    # 获取已上传到SkillHub但尚未同步平台数据的skill列表
-    # v2.5修复: 添加last_platform_sync_at IS NULL过滤,避免重复同步
-    query = """
-        SELECT slug FROM skills 
-        WHERE skillhub_sync_status = 'synced'
-          AND (last_platform_sync_at IS NULL OR last_platform_sync_at = '')
-        ORDER BY slug
+    # ===== 阶段1: 有平台上传记录的skill (INNER JOIN, 使用platform_slug) =====
+    # v2.7: 添加current_status='synced_from_skillhub'过滤, 避免查询local_only/deleted skill
+    query_phase1 = """
+        SELECT s.slug as db_slug, 
+               pu.platform_slug
+        FROM skills s
+        INNER JOIN platform_uploads pu ON s.id = pu.skill_id 
+            AND pu.platform = 'skillhub' 
+            AND pu.upload_status = 'success'
+        WHERE s.skillhub_sync_status = 'synced'
+          AND s.current_status = 'synced_from_skillhub'
+          AND (s.last_platform_sync_at IS NULL OR s.last_platform_sync_at = '')
+        ORDER BY s.slug
     """
     if limit > 0:
-        query += f" LIMIT {limit}"
+        query_phase1 += f" LIMIT {limit}"
     
-    slugs = [r['slug'] for r in conn.execute(query).fetchall()]
-    print(f"需要同步 {len(slugs)} 个skill的平台数据 (AI评分抓取={'开启' if scrape_ai_rating else '关闭'})...")
+    rows = conn.execute(query_phase1).fetchall()
+    slug_map = {r['db_slug']: r['platform_slug'] for r in rows}
+    print(f"阶段1: 需要同步 {len(slug_map)} 个有平台记录的skill (AI评分抓取={'开启' if scrape_ai_rating else '关闭'})...")
     
     synced = 0
     failed = 0
     rating_found = 0
-    now = datetime.now().isoformat()
+    not_found = 0
     
-    for i, slug in enumerate(slugs):
+    for i, (db_slug, platform_slug) in enumerate(slug_map.items()):
         if (i + 1) % 50 == 0:
-            print(f"  进度: {i+1}/{len(slugs)} (成功{synced}, 失败{failed}, 评分{rating_found})")
+            print(f"  进度: {i+1}/{len(slug_map)} (成功{synced}, 失败{failed}, 评分{rating_found})")
         
-        url = f"{SKILLHUB_API_BASE}/skills/{slug}"
+        url = f"{SKILLHUB_API_BASE}/skills/{platform_slug}"
         data = fetch_json(url)
         
         if not data:
@@ -755,7 +768,6 @@ def sync_platform_ratings(limit: int = 0, scrape_ai_rating: bool = True):
         stars = safe_int(stats.get('stars', 0))
         comments = safe_int(stats.get('comments', 0))
         
-        # 安全报告状态
         keen_status = sec_reports.get('keen', {}).get('status', '')
         sanbu_status = sec_reports.get('sanbu', {}).get('status', '')
         ai_review = json.dumps({
@@ -765,14 +777,12 @@ def sync_platform_ratings(limit: int = 0, scrape_ai_rating: bool = True):
             'comments': comments,
         }, ensure_ascii=False) if keen_status or sanbu_status else None
         
-        # AI评分 (从网页抓取, SPA页面需headless browser)
         ai_rating = 0.0
         if scrape_ai_rating:
-            ai_rating = _scrape_ai_rating(slug)
+            ai_rating = _scrape_ai_rating(platform_slug)
             if ai_rating > 0:
                 rating_found += 1
         
-        # 更新DB: scrape_ai_rating=False时保留已有platform_rating, 不覆盖为0
         if scrape_ai_rating and ai_rating > 0:
             conn.execute("""
                 UPDATE skills SET 
@@ -783,9 +793,8 @@ def sync_platform_ratings(limit: int = 0, scrape_ai_rating: bool = True):
                     platform_ai_review = ?,
                     last_platform_sync_at = ?
                 WHERE slug = ?
-            """, (downloads, stars, ai_rating, comments, ai_review, now, slug))
+            """, (downloads, stars, ai_rating, comments, ai_review, now, db_slug))
         else:
-            # 批量模式: 只更新API可获取的数据, 保留已有platform_rating
             conn.execute("""
                 UPDATE skills SET 
                     platform_downloads = ?,
@@ -794,11 +803,103 @@ def sync_platform_ratings(limit: int = 0, scrape_ai_rating: bool = True):
                     platform_ai_review = ?,
                     last_platform_sync_at = ?
                 WHERE slug = ?
-            """, (downloads, stars, comments, ai_review, now, slug))
+            """, (downloads, stars, comments, ai_review, now, db_slug))
         synced += 1
     
     conn.commit()
-    print(f"\n同步完成: {synced} 成功, {failed} 失败, AI评分获取 {rating_found} 个")
+    print(f"阶段1完成: {synced} 成功, {failed} 失败, AI评分获取 {rating_found} 个")
+    
+    # ===== 阶段2: 无平台上传记录的skill (使用DB slug直接查询) =====
+    # v2.7新增: 处理1970个无platform_uploads/skillhub/success记录的skill
+    # 这些skill可能在上传跟踪系统建立前就已上传
+    remaining_limit = limit - synced if limit > 0 else 0
+    if limit > 0 and remaining_limit <= 0:
+        print(f"\n阶段2: 跳过 (limit已用完)")
+    else:
+        # v2.7: 添加current_status='synced_from_skillhub'过滤, 避免查询local_only/deleted skill
+        query_phase2 = """
+            SELECT s.slug as db_slug
+            FROM skills s
+            LEFT JOIN platform_uploads pu ON s.id = pu.skill_id 
+                AND pu.platform = 'skillhub' 
+                AND pu.upload_status = 'success'
+            WHERE s.skillhub_sync_status = 'synced'
+              AND s.current_status = 'synced_from_skillhub'
+              AND (s.last_platform_sync_at IS NULL OR s.last_platform_sync_at = '')
+              AND pu.id IS NULL
+            ORDER BY s.slug
+        """
+        if remaining_limit > 0:
+            query_phase2 += f" LIMIT {remaining_limit}"
+        
+        rows2 = conn.execute(query_phase2).fetchall()
+        phase2_slugs = [r['db_slug'] for r in rows2]
+        print(f"\n阶段2: 需要同步 {len(phase2_slugs)} 个无平台记录的skill (使用DB slug直接查询)...")
+        
+        phase2_synced = 0
+        phase2_failed = 0
+        phase2_not_found = 0
+        
+        for i, db_slug in enumerate(phase2_slugs):
+            if (i + 1) % 100 == 0:
+                print(f"  进度: {i+1}/{len(phase2_slugs)} (成功{phase2_synced}, 404未找到{phase2_not_found})")
+            
+            url = f"{SKILLHUB_API_BASE}/skills/{db_slug}"
+            data = fetch_json(url)
+            
+            if not data:
+                # API返回404或错误, 标记为not_found_on_platform避免重复查询
+                conn.execute("""
+                    UPDATE skills SET 
+                        last_platform_sync_at = ?
+                    WHERE slug = ?
+                """, (f"not_found_on_platform_{now}", db_slug))
+                phase2_not_found += 1
+                continue
+            
+            skill_data = data.get('skill', {})
+            if not skill_data:
+                conn.execute("""
+                    UPDATE skills SET 
+                        last_platform_sync_at = ?
+                    WHERE slug = ?
+                """, (f"not_found_on_platform_{now}", db_slug))
+                phase2_not_found += 1
+                continue
+            
+            stats = skill_data.get('stats', {})
+            sec_reports = data.get('securityReports', {})
+            
+            downloads = safe_int(stats.get('downloads', 0))
+            stars = safe_int(stats.get('stars', 0))
+            comments = safe_int(stats.get('comments', 0))
+            
+            keen_status = sec_reports.get('keen', {}).get('status', '')
+            sanbu_status = sec_reports.get('sanbu', {}).get('status', '')
+            ai_review = json.dumps({
+                'keen': keen_status,
+                'sanbu': sanbu_status,
+                'stars': stars,
+                'comments': comments,
+            }, ensure_ascii=False) if keen_status or sanbu_status else None
+            
+            conn.execute("""
+                UPDATE skills SET 
+                    platform_downloads = ?,
+                    platform_stars = ?,
+                    platform_rating_count = ?,
+                    platform_ai_review = ?,
+                    last_platform_sync_at = ?
+                WHERE slug = ?
+            """, (downloads, stars, comments, ai_review, now, db_slug))
+            phase2_synced += 1
+        
+        conn.commit()
+        print(f"阶段2完成: {phase2_synced} 成功, {phase2_not_found} 未找到(已标记), {phase2_failed} 失败")
+        synced += phase2_synced
+        not_found = phase2_not_found
+    
+    print(f"\n同步总计: {synced} 成功, {failed} 失败, {not_found} 未找到, AI评分获取 {rating_found} 个")
     
     # 输出统计
     rows = conn.execute("""

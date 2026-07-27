@@ -1057,7 +1057,7 @@ _SECURITY_RISK_PATTERNS = [
         'patterns': [
             r'(?:ignore|disregard)\s+(?:all\s+)?(?:previous|prior|above)\s+instructions',
             r'(?:system|assistant)[:：]\s*(?:you\s+are|act\s+as|forget)',
-            r'(?:new\s+instructions?|override|jailbreak|DAN)',
+            r'(?:new\s+instructions?|override|jailbreak|\bDAN\b)',
             r'(?:reveal|show|print|output)\s+(?:your|the)\s+(?:system\s+prompt|instructions?|rules?)',
             r'(?:pretend|simulate)\s+(?:you\s+(?:are|have\s+no)|to\s+be\s+(?:an?\s+)?(?:unrestricted|unlimited))',
         ],
@@ -1071,7 +1071,7 @@ _SECURITY_RISK_PATTERNS = [
         'patterns': [
             r'(?:crontab|/etc/cron\.|/etc/rc\.d|/etc/init\.d|systemctl\s+enable)',
             r'(?:HKLM|HKCU)\\Software\\Microsoft\\Windows\\CurrentVersion\\Run',
-            r'(?:schtasks|at\s+\d|taskschd)',
+            r'(?:schtasks|\bat\s+\d{1,2}:\d{2}|taskschd)',
             r'(?:~/.bashrc|~/.bash_profile|~/.profile|~/.zshrc).*(?:exec|eval|python|curl|wget)',
             r'(?:exec|eval|python|curl|wget).*(?:~/.bashrc|~/.bash_profile|~/.profile|~/.zshrc)',
             r'(?:LaunchAgent|LaunchDaemon|com\.apple\.loginitem)',
@@ -1422,6 +1422,21 @@ def run_full_quality_check(skill_md_path: Path,
     返回:
         统一质量检查结果, 包含L1/评分/安全/营销/防幻觉各层结果
     """
+    # v2.4修复: 文件不存在时提前返回错误, 避免后续函数异常
+    if not skill_md_path.exists():
+        return {
+            'skill': skill_md_path.parent.name if skill_md_path.parent != skill_md_path else 'unknown',
+            'path': str(skill_md_path),
+            'overall_passed': False,
+            'error': f'文件不存在: {skill_md_path}',
+            'total_checks': 0,
+            'passed_checks': 0,
+            'failed_checks': 0,
+            'checks': [],
+            'layers': {},
+            'checked_at': datetime.now().isoformat()
+        }
+
     # L1: 静态格式合规
     l1_result = run_quality_gate(skill_md_path)
     
@@ -1439,14 +1454,18 @@ def run_full_quality_check(skill_md_path: Path,
         skill_md_path, l2_report, l3_report, l4_report
     )
     
-    # 汇总
-    all_checks = (
-        l1_result.get('checks', []) +
-        rating_result.get('checks', []) +
-        security_result.get('checks', []) +
-        marketing_result.get('checks', []) +
-        anti_hallucination_result.get('checks', [])
-    )
+    # 汇总 (v2.7: 为每个check添加layer字段, 便于失败归因)
+    all_checks = []
+    for _layer_name, _result in [
+        ('L1_static', l1_result),
+        ('rating_gate', rating_result),
+        ('security_precheck', security_result),
+        ('marketing_gate', marketing_result),
+        ('anti_hallucination', anti_hallucination_result),
+    ]:
+        for _check in _result.get('checks', []):
+            _check['layer'] = _layer_name
+            all_checks.append(_check)
     
     total = len(all_checks)
     passed = sum(1 for c in all_checks if c.get('passed'))

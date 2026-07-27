@@ -6,7 +6,7 @@ displayName: "UI/UX设计指南免费版"
 summary: "免费版UI/UX设计指南，涵盖基础设计原则、配色与排版系统。。UI/UX设计指南免费版，提供基础设计原则与快速参考. 涵盖Mobile-First设计、配色系统、排版尺度与基础无障碍要求."
 summary_zh: "免费版UI/UX设计指南，涵盖基础设计原则、配色与排版系统。。UI/UX设计指南免费版，提供基础设计原则与快速参考. 涵盖Mobile-First设计、配色系统、排版尺度与基础无障碍要求."
 license: "MIT"
-description: |-
+description: "|-. 适用于需要ui ux design相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   UI/UX设计指南免费版，提供基础设计原则与快速参考.
   涵盖Mobile-First设计、配色系统、排版尺度与基础无障碍要求.
   适用于个人项目的界面设计指导.
@@ -17,15 +17,17 @@ tools:
 homepage: ""
 tags:
   - 创意设计
+  - design
+  - automation
+  - productivity
+  - developer-tools
   - 设计
   - UI/UX
   - 创意
   - mobile-first
   - 用户提供
-  - 返回结构
-  - 的处理结
-  - api
 category: "Creative"
+pricing_tier: free
 ---
 # UI/UX设计指南（免费版）
 
@@ -57,7 +59,7 @@ category: "Creative"
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力

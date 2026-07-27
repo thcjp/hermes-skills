@@ -1,12 +1,12 @@
----slug: stagehand-browser-tool-free
+---
+slug: stagehand-browser-tool-free
 name: stagehand-browser-tool-free
 version: 1.0.0
 displayName: 浏览器自动化工具免费版
-summary: "通过自然语言指令驱动本"
-license: Proprietary
+summary: "通过自然语言指令驱动本,提供核心能力"
+license: "MIT"
 edition: free
-description: 浏览器自动化工具免费版,面向个人用户提供基础的网页自动化能力。通过自然语言指令驱动本地 Chrome 浏览器,实现页面导航、元素操作、数据提取等核心功能。Use
-  when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+description: "浏览器自发化工具免费版,面向个人用户包含基础的网页自发化能力。通过自然语言指令驱动本地 Chrome 浏览器,达成页面导航、元素操作、数据提取等核心功能。Use when 需要数据剖析、报表产出、统计洞察、数据可视化时使用。不适用于实时流数据处置。Use when 需要数据剖析、报表产出、统计洞察、数据可视化时使用。不适用于实时流数据处置."
 tags:
   - 研究工具
   - 浏览器自动化
@@ -24,7 +24,10 @@ tools:
   - glob
   - grep
 homepage: ""
-category: "Knowledge"---# 浏览器自动化工具免费版
+category: "Knowledge"
+pricing_tier: free
+---
+# 浏览器自动化工具免费版
 
 ## 概述
 
@@ -100,19 +103,19 @@ browser screenshot
 
 小明是一名独立开发者,需要定期从技术博客网站采集最新文章标题和摘要,用于个人知识库建设.
 ```bash
-# 步骤1:导航到目标网站
+# 步骤说明:导航到目标网站
 browser navigate https://tech-blog.example.com
 # ...
-# 步骤2:提取文章列表
+# 步骤说明:提取文章列表
 browser extract "提取首页所有文章的标题和发布日期" '{"articles":[{"title":"string","date":"string"}]}'
 # ...
-# 步骤3:点击第一篇文章查看详情
-browser act "点击第一篇文章标题进入详情页"
+# 步骤说明:点击领先篇文章查看详情
+browser act "点击领先篇文章标题进入详情页"
 # ...
-# 步骤4:提取文章正文摘要
+# 步骤说明:提取文章正文摘要
 browser extract "提取文章正文前500字作为摘要"
 # ...
-# 步骤5:关闭浏览器
+# 步骤说明:关闭浏览器
 browser close
 ```
 
@@ -155,7 +158,7 @@ browser screenshot
 
 ## 快速开始
 
-### 第一步:环境准备
+### 领先步:环境准备
 
 确保本地已安装以下组件:
 
@@ -172,7 +175,7 @@ node --version
 
 ```bash
 # 进入工具目录,安装依赖
-cd ~/.skill-platform/workspace/skills/stagehand-browser-tool-free
+cd ./.skill-platform/workspace/skills/stagehand-browser-tool-free
 npm install
 # ...
 # 创建全局命令
@@ -236,7 +239,7 @@ CHROME_PATH=C:\Program Files\Google\Chrome\Application\chrome.exe
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 操作前先导航
 
@@ -337,7 +340,7 @@ browser extract "提取商品名称" '{"name":"string"}'
 免费版基于本地浏览器运行,无需额外 API Key。所有数据均在本地处理,保障隐私安全.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+执行方法(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于本地 Chrome 浏览器的自动化工具,通过自然语言指令驱动 Agent 执行网页操作任务
 - **适用规模**: 单用户、单浏览器实例、本地运行
 

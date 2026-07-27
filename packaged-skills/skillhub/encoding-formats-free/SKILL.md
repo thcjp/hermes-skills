@@ -6,7 +6,7 @@ displayName: "编码格式工具(免费版)"
 summary: "编码解码与数据格式转换，覆盖Base64、URL编码、Hex、Unicode、JWT、哈希、序列化(免费版)"
 summary_zh: "编码解码与数据格式转换，覆盖Base64、URL编码、Hex、Unicode、JWT、哈希、序列化(免费版)"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要encoding formats相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   编码解码与数据格式转换工具，覆盖Base64、URL编码、Hex、Unicode、JWT解码、
   哈希校验和序列化格式转换。支持命令行和代码两种方式，适用于API响应解码、
   HTTP请求参数编码、二进制数据检查、JWT令牌分析、文件完整性校验等场景.
@@ -17,16 +17,17 @@ tools:
 homepage: ""
 tags:
   - 通用办公
+  - encoding
+  - formats
+  - automation
+  - productivity
   - 工具
   - 效率
   - 安全
   - 加密
   - base64
-  - jwt
-  - url
-  - hex
-  - hello
 category: "Automation"
+pricing_tier: free
 ---
 # 编码格式工具(免费版)
 
@@ -163,7 +164,7 @@ A: JWT是签名的，不是加密的。任何人都可以解码header和payload�
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 升级提示

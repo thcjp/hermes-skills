@@ -1,13 +1,12 @@
 ---
-
 slug: multi-search-tool-free
 name: multi-search-tool-free
 version: 1.0.0
 displayName: 多搜索引擎工具免费版
-summary: "集成10个国内免费搜索引擎，通过统一入口快速搜索互联网最新信息。多搜索引擎工具免费版，集成10个国内可访问的免费搜索引擎，帮助用户通过统一入口快速搜索互联网信息。核心能力:"
+summary: "集成10个国内免费搜索引擎，通过统一入口快速搜索互联网最新信息。多搜索引擎工具免费版，集成10个国内可访问的免费搜索引擎，帮助用户通过统一入口快速搜索互联网信息。核心能力:,提供核心能力"
 license: MIT
 edition: free
-description: "多搜索引擎工具免费版，集成10个国内可访问的免费搜索引擎，帮助用户通过统一入口快速搜索互联网信息。核心能力:. 适用于需要multi search tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要multi search tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "多搜索引擎工具免费版，集成10个国内可访问的免费搜索引擎，帮助用户通过统一入口快速搜索互联网信息。核心能力:. 适用于需要multi search tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要multi search tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 搜索
   - multi
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # 多搜索引擎工具（免费版）
 
 ## 概述
@@ -193,8 +191,8 @@ Agent：
 
 ```bash
 # 创建个人搜索配置
-mkdir -p ~/multi-search
-cat > ~/multi-search/config.yaml << 'EOF'
+mkdir -p ./multi-search
+cat > ./multi-search/config.yaml << 'EOF'
 # 免费版搜索引擎配置
 edition: free
 version: "1.0.0"

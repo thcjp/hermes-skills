@@ -6,7 +6,7 @@ displayName: "上市策略引擎(免费版)"
 summary: "产品上市策略，覆盖市场定位、定价策略、渠道选择、发布计划与增长指标。免费版。产品上市（Go-to-Market）策略引擎（免费版），覆盖从市场定位到发布执行全流程. 支持SaaS、消费应用、"
 summary_zh: "产品上市策略，覆盖市场定位、定价策略、渠道选择、发布计划与增长指标。免费版。产品上市（Go-to-Market）策略引擎（免费版），覆盖从市场定位到发布执行全流程. 支持SaaS、消费应用、"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要go to market相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   产品上市（Go-to-Market）策略引擎（免费版），覆盖从市场定位到发布执行全流程.
   支持SaaS、消费应用、企业产品等多种类型。核心能力：
   - 市场定位与差异化（ICP定义+竞品分析+价值主张）
@@ -20,20 +20,17 @@ tools:
 homepage: ""
 tags:
   - 研发工具
+  - market
+  - automation
+  - productivity
+  - developer-tools
   - 工具
   - 效率
   - 自动化
   - 开发
   - 代码
-  - 创意
-  - 图像
-  - 写作
-  - api
-  - saas
-  - plg
-  - 消费应用
-  - 策略
 category: "Automation"
+pricing_tier: free
 ---
 # 上市策略引擎(免费版)
 
@@ -65,7 +62,7 @@ category: "Automation"
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力

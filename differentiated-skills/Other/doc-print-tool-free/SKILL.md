@@ -1,5 +1,4 @@
 ---
-
 slug: "doc-print-tool-free"
 name: "doc-print-tool-free"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "文档凭证注册工具"
 summary: "面向个人用户的文档凭证注册、检索与基础交换工具，支持快速登记与发现。。面向个人开发者与一人公司的文档凭证注册与发现工具. 核心能力: - 文档/服务凭证的快速注册与唯一标识签发 - 按关键词"
 license: "MIT"
 edition: "free"
-description: "|-. 适用于需要doc print tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要doc print tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "|-. 适用于需要doc print tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要doc print tool相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - 文档工具
   - doc
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 文档凭证注册工具（免费版）
 
 ## 概述
@@ -94,7 +92,7 @@ curl -X POST https://doc-print.example.com/v3/agents \
 {
   "handle": "my-tool",
   "name": "我的工具",
-  "api_key": "dp_live_xxxxxxxxxxxxxxxx",
+  "api_key": "dp_live_demo",
   "message": "凭证注册成功"
 }
 ```
@@ -147,7 +145,7 @@ example.com/v3/health
 
 ```json
 {
-  "api_key": "dp_live_xxx",
+  "api_key": "dp_live_demo",
   "handle": "my-tool",
   "base_url": "https://doc-print.example.com/v3"
 }
@@ -156,7 +154,7 @@ example.com/v3/health
 环境变量方式：
 
 ```bash
-export DOC_PRINT_API_KEY="dp_live_xxx"
+export DOC_PRINT_API_KEY=${API_KEY:?请设置环境变量}
 export DOC_PRINT_HANDLE="my-tool"
 ```
 

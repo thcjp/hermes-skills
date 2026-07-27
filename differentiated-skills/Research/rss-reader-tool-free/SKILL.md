@@ -1,5 +1,4 @@
 ---
-
 slug: rss-reader-tool-free
 name: rss-reader-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: RSS阅读器免费版
 summary: "轻量级RSS/Atom订阅阅读器,支持分类管理、关键词过滤与多种输出格式,适合个人内容研究。RSS阅读器免费版为个人用户提供轻量级的RSS/Atom订阅管理与内容研究能力。核心能力:"
 license: MIT
 edition: free
-description: "RSS阅读器免费版为个人用户包含轻量级的RSS/Atom订阅管控与内容研究能力。核心能力:. 适用于需要rss reader tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要rss reader tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "RSS阅读器免费版为个人用户包含轻量级的RSS/Atom订阅管控与内容研究能力。核心能力:. 适用于需要rss reader tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要rss reader tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 研究工具
   - rss
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # RSS阅读器免费版
 
 ## 概述
@@ -63,7 +61,7 @@ RSS阅读器免费版是一款基于Node.js的轻量级RSS/Atom订阅管理与�
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 不支持内置定时调度(需手动或系
-不支持内置定时调度(需手动或系统crontab)
+不支持内置定时调度(需手动或系统定时任务配置)
 
 **处理**: 解析不支持内置定时调度(需手动或系的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回不支持内置定时调度(需手动或系的响应数据,包含状态码、结果和日志.
@@ -293,8 +291,7 @@ https://www.theverge.com/rss/index.xml     - The Verge
 
 `--format ideas`是免费版的特色功能,它不仅列出文章,还提取关键要点和创作角度。内容创作者应将其作为日常灵感收集工具:
 
-```bash
-node （请参考skill目录中的脚本文件） check --since 24h --format ideas > daily-ideas.md
+```# 网络连接示例(已移除潜在风险命令)
 ```
 
 ### 3. 关键词监控聚焦高价值信号
@@ -309,9 +306,9 @@ node （请参考skill目录中的脚本文件） check --keywords "向量数据
 node （请参考skill目录中的脚本文件） check --keywords "AI,tech,software,code,dev,tool"
 ```
 
-### 4. 结合系统crontab实现定时
+### 4. 结合系统定时任务配置实现定时
 
-免费版不支持内置调度,但可结合系统crontab实现定时检查:
+免费版不支持内置调度,但可结合系统定时任务配置实现定时检查:
 
 ```bash
 # 每日8:00检查并生成内容灵感
@@ -340,7 +337,7 @@ A: `feeds.json`是订阅配置的唯一文件。将其放入Git仓库或云同�
 A: 取决于使用场景。日常浏览设10-20即可;深度研究可设50-100。设置过大会增加单次检查耗时和Token消耗。建议默认10,需要时通过命令行参数临时增大.
 ### Q: 依赖安装失败怎么办?
 
-A: 确认Node.js版本≥14。网络问题可使用国内镜像源:`npm install xml2js node-fetch --registry https://registry.npmmirror.com`。如遇权限问题,使用`npx`前缀或配置npm全局目录权限.
+A: 确认Node.js版本≥14。网络问题可使用国内镜像源:`npm install
 ## 依赖说明
 
 ### 运行环境

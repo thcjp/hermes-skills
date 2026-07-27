@@ -1,5 +1,4 @@
 ---
-
 slug: google-search-tool-free
 name: google-search-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 谷歌搜索工具
 summary: 基于 Google Custom Search Engine 的联网搜索工具，支持实时信息检索与结果结构化输出，适合个人研究与学习使用.
 license: MIT
 edition: free
-description: "基于 Google Custom Search Engine 的联网搜索工具，兼容实时信息检索与结果结构化输出，适合个人研究与学习使用。核心能力:. 适用于需要google search tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要google search tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "基于 Google Custom Search Engine 的联网搜索工具，兼容实时信息检索与结果结构化输出，适合个人研究与学习使用。核心能力:. 适用于需要google search tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要google search tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 搜索
   - google
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # 谷歌搜索工具（免费版）
 
 ## 概述

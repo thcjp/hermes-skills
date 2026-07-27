@@ -1,5 +1,4 @@
 ---
-
 slug: search-assistant-tool-free
 name: search-assistant-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 搜索助手免费版
 summary: "轻量级搜索任务分解与调度助手,支持子任务拆分与通用搜索代理调用,适合个人研究查询。搜索助手免费版为个人用户提供轻量级的搜索任务分解与调度能力."
 license: MIT
 edition: free
-description: "搜索助手免费版为个人用户包含轻量级的搜索任务分解与调度能力. 适用于需要search assistant tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要search assistant tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "搜索助手免费版为个人用户包含轻量级的搜索任务分解与调度能力. 适用于需要search assistant tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要search assistant tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 研究工具
   - search
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # 搜索助手免费版
 
 ## 概述

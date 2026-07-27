@@ -6,22 +6,25 @@ displayName: "News Sentiment免费版"
 summary: "扫描港股/美股/A股的公司公告与新闻报道,去噪后按-10至+10打分,输出情绪温度计与重大事件清单的基础舆情分析。"
 summary_zh: "扫描港股/美股/A股的公司公告与新闻报道,去噪后按-10至+10打分,输出情绪温度计与重大事件清单的基础舆情分析。"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要news sentiment scan相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   舆情监控与情绪分析技能免费版,扫描港股、美股、A股的公司公告与新闻报道,去噪后进行情绪打分(-10至+10),输出情绪温度计与重大事件清单。免费版聚焦基础信源采集与情绪评分,适合个人投资者快速了解个股舆情方向。券商研报深度加权、社交媒体(微博、雪球)采集、多标的横向对比等高级能力见付费版。基于Python脚本执行,通过自然语言指令驱动Agent完成任务.
 tags:
   - 通用办公
+  - news
+  - sentiment
+  - scan
+  - automation
   - Research
   - Finance
   - 新闻
   - 信息
   - 资讯
-  - agent
-  - python3
 tools:
   - read
   - exec
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
 ---
 # News Sentiment Scan 免费版
 
@@ -53,7 +56,7 @@ category: "Knowledge"
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力

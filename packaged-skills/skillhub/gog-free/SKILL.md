@@ -1,9 +1,10 @@
----slug: "gog-free"
+---
+slug: "gog-free"
 name: "gog-free"
 version: "1.0.0"
 displayName: "Gog(免费)"
-summary: "Google Work"
-summary_zh: "Google Workspace命令行工具基础版,覆盖Gmail搜索与Sheets读写。。Google Workspace 命令行工具的基础免费版。覆盖 Gmail 邮件搜索与 Sheets"
+summary: "Google Work,提供核心能力"
+summary_zh: "Google Work,提供核心能力"
 license: "MIT"
 description: |-
   Google Workspace 命令行工具的基础免费版。覆盖 Gmail 邮件搜索与 Sheets 表格读写两类核心操作,
@@ -20,17 +21,16 @@ tags:
   - 邮件
   - 知识
   - gmail
-  - gog
-  - sheets
-  - json
-  - auth
 tools:
   - read
   - exec
   - glob
   - grep
 homepage: ""
-category: "Automation"---# gog-free
+category: "Automation"
+pricing_tier: free
+---
+# gog-free
 
 `gog` 是 Google Workspace 的命令行工具。本免费版封装 Gmail 邮件搜索与 Sheets 表格读写两类基础操作,通过 OAuth 凭证鉴权,适合个人开发者轻量级使用.
 ## 输入格式
@@ -60,7 +60,7 @@ category: "Automation"---# gog-free
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
@@ -123,8 +123,7 @@ gog sheets get <sheetId> "Tab!A1:D10" --json
 
 向范围追加行:
 
-```bash
-gog sheets append <sheetId> "Tab!A:C" --values-json '[["x","y","z"]]' --insert INSERT_ROWS
+```网络连接说明nsert INSERT_ROWS
 ```
 
 ## 使用约定

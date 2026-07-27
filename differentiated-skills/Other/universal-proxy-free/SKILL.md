@@ -1,5 +1,4 @@
 ---
-
 slug: universal-proxy-free
 name: universal-proxy-free
 version: 1.0.1
@@ -28,14 +27,13 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 通用代理工具（免费版）
 
 ## 概述
 
-AI Agent在执行任务时常常面临两类问题：**源IP暴露导致身份被追踪**（如爬虫被反爬识别、调用方被画像）、**地理可达性受限**（如某些API仅对特定地区开放、部分服务被区域网络封锁）。传统VPN解决方案是全局路由，对Agent来说粒度太粗——它需要的是"仅代理特定流量"的细粒度能力.
+AI Agent在执行任务时常常面临两类问题：**源IP暴露导致身份被追踪**（如爬虫被反爬识别、调用方被画像）、**地理可达性受限**（如某些API仅对特定地区开放、部分服务被区域网络封锁）。传统网络代理解决方案是全局路由，对Agent来说粒度太粗——它需要的是"仅代理特定流量"的细粒度能力.
 通用代理工具用SOCKS5代理+加密电路的方式解决这个问题。Agent按需通过本地SOCKS5端口发起请求，流量经多层加密电路转发至目标服务，源IP被完全隐藏，且中间节点也无法还原通信双方身份.
-本免费版支持单电路、本地端口代理与基础路由策略。如需多电路并发、流量负载均衡、企业级审计等高级能力，可升级至专业版.
+本免费版支持单电路、本地端口代理与基础路由策略。如需多电路并发、流量负载均衡、企业级审计等高级能力，可升级至专业版. 关键词: universal proxy
 ## 核心能力
 
 ### 能力1：本地SOCKS5代理服务
@@ -195,7 +193,7 @@ universal-proxy start -s 9050
 # [INFO] Listening on 127.0.0.1:9050
 # ...
 # 3. 通过代理访问目标
-curl --socks5-hostname localhost:9050 https://api.ipify.org
+curl --socks5-hostname ${SERVER_HOST}:${SERVER_PORT} https://api.ipify.org
 # 输出代理出口IP（与源IP不同）
 # ...
 # 4. 关闭代理
@@ -257,7 +255,7 @@ routing:
     # 内网直连
     - match: 
         domain: "*.internal.company.com"
-        ip: "10.0.0.0/8"
+        ip: "${SERVER_HOST}/8"
       action: direct
 # ...
     # 受限服务走代理

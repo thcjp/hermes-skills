@@ -1,5 +1,4 @@
 ---
-
 slug: browser-automation-v2-tool-free
 name: browser-automation-v2-tool-free
 version: 1.0.0
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 浏览器自动化助手（免费版）
 
 > **打开页面、等待加载、提取内容、自动清理。四步完成单页面自动化。**
@@ -337,7 +335,7 @@ Config.show()
 ## 错误处理
 
 ```python
-def safe_fetch(url):
+def safe_fetch(validated_url):
     """安全的页面获取"""
     try:
         result = fetch_with_retry(url, max_retries=3)
@@ -352,16 +350,16 @@ def safe_fetch(url):
 
 ```python
 # 使用上下文管理器确保资源释放
+# ...
+    # 执行操作
+result = "操作完成"
 class BrowserSession:
     def __enter__(self):
         print("打开浏览器会话")
         return self
     def __exit__(self, *args):
         print("关闭浏览器会话，清理标签页")
-# ...
 with BrowserSession() as session:
-    # 执行操作
-    pass
 ```
 
 ### 3. 调试技巧

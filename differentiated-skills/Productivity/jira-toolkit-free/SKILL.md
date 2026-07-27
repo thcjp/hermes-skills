@@ -1,13 +1,12 @@
 ---
-
 slug: jira-toolkit-free
 name: jira-toolkit-free
 version: 1.0.1
 displayName: Jira 事务工具包基础版
-summary: 通过自然语言与 Jira 交互,支持 CLI 与 MCP server 双后端,管理事务的创建、查询与流转
+summary: 通过自然语言与 Jira 交互,支持 CLI 与 工具服务 双后端,管理事务的创建、查询与流转
 license: MIT
 edition: free
-description: "核心能力: 项目管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要jira toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要jira toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "核心能力: 项目管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要jira toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要jira toolkit相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - Jira
   - jira
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # Jira 事务工具包基础版
 
 ## 概述
@@ -79,11 +77,11 @@ FREE 版本提供以下能力:
 **输出**: 返回添加评论与查看当前 Sprin的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-### 自动检测 CLI 或 MCP 
-自动检测 CLI 或 MCP server 后端
+### 自动检测 CLI 或 工具 
+自动检测 CLI 或 工具服务 后端
 
-**处理**: 解析自动检测 CLI 或 MCP 的输入参数,完成核心逻辑,返回结构化响应.
-**输出**: 返回自动检测 CLI 或 MCP 的响应数据,包含状态码、结果和日志.
+**处理**: 解析自动检测 CLI 或 工具 的输入参数,完成核心逻辑,返回结构化响应.
+**输出**: 返回自动检测 CLI 或 工具 的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 功能详情
@@ -95,7 +93,7 @@ FREE 版本提供以下能力:
 - 使用 JQL 搜索事务
 - 变更事务状态与分配负责人
 - 添加评论与查看当前 Sprint
-- 自动检测 CLI 或 MCP server 后端
+- 自动检测 CLI 或 工具服务 后端
 
 **PRO 版本扩展功能预览:**
 
@@ -167,8 +165,8 @@ Agent: jira issue create -tBug -s"登录页面404" -b"用户反馈登录返回40
 # 依赖说明
 brew install ankitpokhrel/jira-cli/jira-cli
 jira init
-# 或使用 MCP server 后端
-# 在 MCP server 配置中添加 Atlassian 凭证
+# 或使用 工具服务 后端
+# 在 工具服务 配置中添加 Atlassian 凭证
 ```
 
 ### 3. 验证配置
@@ -205,8 +203,8 @@ Agent 将自动:
 # CLI 后端安装
 brew install ankitpokhrel/jira-cli/jira-cli
 jira init
-# 或使用 MCP server 后端
-# 在 MCP server 配置中添加 Atlassian 凭证
+# 或使用 工具服务 后端
+# 在 工具服务 配置中添加 Atlassian 凭证
 ```
 ### 可选配置
 
@@ -234,7 +232,7 @@ jira init
 ## 优秀实践
 
 1. **变更状态前先获取当前状态**
-2. **MCP工具 分配负责人需要 accountId 而非显示名**
+2. **扩展工具 分配负责人需要 accountId 而非显示名**
 3. **编辑描述前先展示原始内容**
 4. **批量修改前需获得明确批准**
 
@@ -249,9 +247,9 @@ jira init
 
 ## 常见问题
 
-### Q: CLI 和 MCP server 用哪个?
+### Q: CLI 和 工具服务 用哪个?
 
-A: 有 jira 命令用 CLI,有 Atlassian MCP工具用 MCP server,都没有则引导安装.
+A: 有 jira 命令用 CLI,有 Atlassian 扩展工具用 工具服务,都没有则引导安装.
 ### Q: 事务 key 格式?
 
 A: 遵循 [A-Z]+-[0-9]+ 格式,如 PROJ-123.

@@ -1,5 +1,4 @@
 ---
-
 slug: bom-vuln-intel-tool-free
 name: bom-vuln-intel-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 物料清单漏洞情报免费版
 summary: 软件物料清单(SBOM)生成与依赖漏洞检查工具,支持基础包扫描与OSV/GHSA查询,适合个人开发者日常使用.
 license: MIT
 edition: free
-description: "物料清单漏洞情报免费版,为个人开发者包含软件物料清单产出与依赖漏洞查验能力. 适用于需要bom vuln intel tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要bom vuln intel tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "物料清单漏洞情报免费版,为个人开发者包含软件物料清单产出与依赖漏洞查验能力. 适用于需要bom vuln intel tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要bom vuln intel tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 安全
   - bom
@@ -27,7 +26,6 @@ category: "Security"
 pricing_tier: free
 
 ---
-
 # 物料清单漏洞情报免费版
 
 ## 概述
@@ -447,23 +445,6 @@ safe_update() {
 }
 ```
 
-## 常见问题
-
-### Q1: 免费版支持哪些包管理器?
-
-免费版支持npm和pip两种生态。Go、Cargo、Maven等需要专业版支持.
-### Q2: OSV查询返回的漏洞一定准确吗?
-
-OSV匹配基于包名和版本号,可能存在误报。建议结合npm audit或pip-audit交叉验证.
-### Q3: 如何检查devDependencies?
-
-免费版默认检查dependencies。手动修改SBOM生成脚本可包含devDependencies.
-### Q4: 没有lock文件怎么办?
-
-建议先生成lock文件(npm install或pip freeze),再执行漏洞检查,结果更准确.
-### Q5: 免费版能监控漏洞吗?
-
-免费版为手动检查模式,不支持持续监控与告警。如需自动监控新漏洞,请使用专业版.
 ## 依赖说明
 
 ### 运行环境
@@ -503,32 +484,3 @@ OSV匹配基于包名和版本号,可能存在误报。建议结合npm audit或p
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
-
-## 示例
-
-### 基本用法
-
-**输出**：返回执行结果,包含操作状态和输出数据
-
-```text
-用户: 执行核心功能
-Skill: 正在执行核心功能...
-Skill: 执行完成,结果如下: 操作成功
-```bash
-# 在此执行相关操作
-echo "操作完成"
-```json
-{
-  "success": true,
-  "data": {
-    "result": "物料清单漏洞情报免费版处理结果",
-    "execution_time": "0.5s",
-    "metadata": {
-      "version": "1.0",
-      "processor": "bom vuln intel"
-    }
-  },
-  "execution_log": ["解析输入参数", "执行核心处理", "格式化输出结果"],
-  "error": null
-}
-```

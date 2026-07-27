@@ -134,7 +134,8 @@ def step_sync_ratings():
     log("=" * 50)
     log("阶段8: SYNC_RATINGS - 平台评分同步到DB")
     log("=" * 50)
-    run_script("market_monitor.py", ["sync-ratings", "--limit", "200"])
+    # v2.7: 添加--no-rating标志, 跳过AI评分网页抓取(非常慢), 仅同步基本统计数据
+    run_script("market_monitor.py", ["sync-ratings", "200", "--no-rating"])
 
 
 def step_check_low_ratings():

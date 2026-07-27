@@ -3,23 +3,23 @@ slug: "whatsapp-messaging-free"
 name: "whatsapp-messaging-free"
 version: "1.0.0"
 displayName: "WhatsApp 消息（免费版）"
-summary: "通过 WhatsApp Business API 发送文本与图片消息、查询手机号，满足基础触达需求。"
-summary_zh: "通过 WhatsApp Business API 发送文本与图片消息、查询手机号，满足基础触达需求。"
+summary: "通过 WhatsApp Business API 发送文本与图片消息、查询手机号，满足基础触达需求,提供核心能力"
+summary_zh: "通过 WhatsApp Business API 发送文本与图片消息、查询手机号，满足基础触达需求,提供核心能力"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要whatsapp messaging相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   通过 WhatsApp Business API 发送基础消息。免费版支持文本消息、图片消息与手机号查询.
   通过 ClawLink 托管的连接流程与凭据管理，无需自行配置 WhatsApp API 访问.
   适合个人或小团队的日常消息触达场景，不包含模板管理、交互按钮、媒体上传等进阶能力.
   受 24 小时客服窗口限制，窗口外无法发送自由文本消息.
 tags:
   - 研发工具
-  - Automation
-  - WhatsApp
+  - whatsapp
+  - messaging
+  - automation
+  - productivity
   - 社交
   - 通信
-  - whatsapp
   - 消息
-  - api
   - phone_number_id
   - clawlink
 tools:
@@ -28,6 +28,7 @@ tools:
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: free
 ---
 # WhatsApp（免费版）
 
@@ -100,7 +101,7 @@ clawlink_call_tool --tool "whatsapp_send_media" --params '{"phone_number": "+155
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力

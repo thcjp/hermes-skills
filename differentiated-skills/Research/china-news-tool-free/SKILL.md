@@ -1,5 +1,4 @@
 ---
-
 slug: china-news-tool-free
 name: china-news-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 中国新闻聚合(免费版)
 summary: "中国新闻聚合免费版，支持RSS订阅获取主流媒体新闻，智能分类生成简报.。中国新闻聚合助手免费版是面向个人用户的轻量新闻聚合工具。通过RSS订阅模式获取新浪、搜狐、网易等主流媒体内容，智能分类"
 license: MIT
 edition: free
-description: "中国新闻聚合助手免费版是面向个人用户的轻量新闻聚合工具。通过RSS订阅模式获取新浪、搜狐、网易等主流媒体内容，智能分类产出新闻简报。Use. 适用于需要china news tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要china news tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "中国新闻聚合助手免费版是面向个人用户的轻量新闻聚合工具。通过RSS订阅模式获取新浪、搜狐、网易等主流媒体内容，智能分类产出新闻简报。Use. 适用于需要china news tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要china news tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 中国新闻
   - china
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 > **RSS订阅、智能分类、生成简报。三步完成中国主流媒体新闻聚合。**
 
 无需复杂配置，通过RSS订阅即可获取主流媒体的最新新闻。免费版聚焦轻量场景，提供基础的新闻聚合与分类能力.
@@ -90,7 +88,7 @@ class RSSFetcher:
     def fetch_single(self, url, timeout=10):
         """获取单个RSS源"""
         try:
-            response = requests.get(url, timeout=timeout, headers=self.headers)
+            response = requests.get(validated_url, timeout=timeout, headers=self.headers)
             root = ET.fromstring(response.content)
             items = []
 # ...
@@ -344,7 +342,7 @@ sina.com.cn/tech/roll.xml',
 all_news = []
 for name, url in sources.items():
     try:
-        r = requests.get(url, timeout=10, headers={'User-Agent': 'Mozilla/5.0'})
+        r = requests.get(validated_url, timeout=10, headers={'User-Agent': 'Mozilla/5.0'})
         root = ET.fromstring(r.content)
 findall('.//item')[:10]:
 append({'title': title, 'source': name})
@@ -459,17 +457,6 @@ path.join(self.json")
 ### 错误场景3
 
 检查`error_code`并按照处理方式进行排查.
-## 常见问题
-### Q1：免费版支持浏览器自动化模式吗？
-不支持。免费版仅支持RSS订阅模式（轻量快速，无需浏览器）。如需使用浏览器模式获取更丰富的新闻内容（如网易、腾讯等无RSS源的站点），需升级至专业版.
-### Q2：RSS获取失败怎么办？
-可能原因：(1) 网络问题，稍后重试；(2) RSS源地址变更，需更新配置；(3) User-Agent被屏蔽，尝试更换UA；(4) 源站临时不可用。免费版会跳过失败源，继续获取其他源.
-### Q3：分类不准确怎么办？
-免费版使用基于关键词的简单分类。如遇分类不准的情况：(1) 检查关键词配置是否覆盖；(2) 调整关键词列表；(3) 升级专业版使用AI辅助分类（基于LLM的智能分类）.
-### Q4：可以定时自动执行吗？
-不支持。免费版需手动触发执行。如需定时自动执行（如每天早上8点自动获取并推送），需升级至专业版.
-### Q5：支持哪些媒体源？
-免费版默认支持：新浪（国内/国际/财经/科技）、搜狐、36氪、凤凰资讯。可通过修改配置文件添加其他支持RSS的媒体源.
 ## 依赖说明
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
@@ -507,15 +494,3 @@ path.join(self.json")
 - **优先技术支持**
 
 解锁全部高级能力请使用专业版：`china-news-tool-pro`
-
-## 示例
-
-### 基本用法
-
-**输出**：返回执行结果,包含操作状态和输出数据
-
-```text
-用户: 执行核心功能
-Skill: 正在执行核心功能...
-Skill: 执行完成,结果如下: 操作成功
-```

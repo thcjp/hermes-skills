@@ -1,5 +1,4 @@
 ---
-
 slug: zh-file-organizer-free
 name: zh-file-organizer-free
 version: 1.0.1
@@ -28,10 +27,9 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 中文文件整理器（免费版）
 
-> **专为中文用户设计。中文类型分类、中文路径兼容、中文目录命名。**
+> **专为中文用户设计。中文类型分类、中文路径兼容、中文目录命名。** 关键词: file organizer
 
 你是否遇到过这些问题：用国外文件整理工具，分类后目录名是英文的看不懂？中文文件名包含特殊字符导致工具报错？整理后的文件夹结构不符合中文认知习惯？
 
@@ -88,16 +86,16 @@ pricing_tier: free
 
 ```bash
 # 1. 预览整理方案（不实际移动文件）
-python3 （请参考skill目录中的脚本文件） 整理 ~/Downloads --预览
+python3 （请参考skill目录中的脚本文件） 整理 ./Downloads --预览
 # ...
 # 2. 确认方案后执行整理
-python3 （请参考skill目录中的脚本文件） 整理 ~/Downloads
+python3 （请参考skill目录中的脚本文件） 整理 ./Downloads
 # ...
 # 3. 按类型分类
-python3 （请参考skill目录中的脚本文件） 分类 ~/Desktop --预览
+python3 （请参考skill目录中的脚本文件） 分类 ./Desktop --预览
 # ...
 # 4. 查看统计
-python3 （请参考skill目录中的脚本文件） 统计 ~/Downloads
+python3 （请参考skill目录中的脚本文件） 统计 ./Downloads
 ```
 
 ### 可复制模板
@@ -135,13 +133,13 @@ Skill: 执行完成,结果如下: 操作成功
 # ...
 每周日执行中文文件整理：
 1. 预览整理方案
-   python3 （请参考skill目录中的脚本文件） 整理 ~/Downloads --预览
+   python3 （请参考skill目录中的脚本文件） 整理 ./Downloads --预览
 # ...
 2. 确认后执行
-   python3 （请参考skill目录中的脚本文件） 整理 ~/Downloads
+   python3 （请参考skill目录中的脚本文件） 整理 ./Downloads
 # ...
 3. 查看统计报告
-   python3 （请参考skill目录中的脚本文件） 统计 ~/Downloads
+   python3 （请参考skill目录中的脚本文件） 统计 ./Downloads
 ```
 
 ---
@@ -167,13 +165,13 @@ Skill: 执行完成,结果如下: 操作成功
 
 ```bash
 # 支持中文路径
-python3 （请参考skill目录中的脚本文件） 整理 "~/文档/工作文件"
+python3 （请参考skill目录中的脚本文件） 整理 "./文档/工作文件"
 # ...
 # 支持中文文件名
 python3 （请参考skill目录中的脚本文件） 整理 "D:\下载\新建文件夹"
 # ...
 # 支持空格与特殊字符
-python3 （请参考skill目录中的脚本文件） 整理 "~/Desktop/项目 (2026年)"
+python3 （请参考skill目录中的脚本文件） 整理 "./Desktop/项目 (2026年)"
 ```
 
 **兼容性保障**：
@@ -209,7 +207,7 @@ python3 （请参考skill目录中的脚本文件） 整理 "~/Desktop/项目 (2
 
 ```bash
 # 识别重复文件（基于文件名与大小）
-python3 （请参考skill目录中的脚本文件） 查重 ~/Downloads
+python3 （请参考skill目录中的脚本文件） 查重 ./Downloads
 # ...
 # 输出示例：
 # 发现 3 个重复文件：
@@ -241,13 +239,13 @@ python3 （请参考skill目录中的脚本文件） 查重 ~/Downloads
 **解决方案**：
 ```bash
 # 预览整理方案
-python3 （请参考skill目录中的脚本文件） 整理 ~/Downloads --预览
+python3 （请参考skill目录中的脚本文件） 整理 ./Downloads --预览
 # ...
 # 确认后执行
-python3 （请参考skill目录中的脚本文件） 整理 ~/Downloads
+python3 （请参考skill目录中的脚本文件） 整理 ./Downloads
 # ...
 # 查看中文统计报告
-python3 （请参考skill目录中的脚本文件） 统计 ~/Downloads
+python3 （请参考skill目录中的脚本文件） 统计 ./Downloads
 ```
 
 **效果**：下载文件夹按中文类型分类，图片归入"图片/"、文档归入"文档/"，中文目录名一目了然，5分钟完成整理.
@@ -257,10 +255,10 @@ python3 （请参考skill目录中的脚本文件） 统计 ~/Downloads
 **解决方案**：
 ```bash
 # 按类型分类桌面
-python3 （请参考skill目录中的脚本文件） 分类 ~/Desktop
+python3 （请参考skill目录中的脚本文件） 分类 ./Desktop
 # ...
 # 启用智能归类（按文件名关键词辅助分类）
-python3 （请参考skill目录中的脚本文件） 分类 ~/Desktop --智能归类
+python3 （请参考skill目录中的脚本文件） 分类 ./Desktop --智能归类
 ```
 
 **效果**：桌面文件自动归类到中文目录，截图归入"图片/截图/"、合同归入"文档/合同/"，符合中文认知习惯.
@@ -270,10 +268,10 @@ python3 （请参考skill目录中的脚本文件） 分类 ~/Desktop --智能�
 **解决方案**：
 ```bash
 # 整理项目目录
-python3 （请参考skill目录中的脚本文件） 整理 ~/Projects/我的项目 --预览
+python3 （请参考skill目录中的脚本文件） 整理 ./Projects/我的项目 --预览
 # ...
 # 确认后执行
-python3 （请参考skill目录中的脚本文件） 整理 ~/Projects/我的项目
+python3 （请参考skill目录中的脚本文件） 整理 ./Projects/我的项目
 ```
 
 **效果**：项目目录按类型中文分类，代码归入"代码/"、文档归入"文档/"，中文路径完善兼容.
@@ -310,10 +308,10 @@ python3 （请参考skill目录中的脚本文件） 整理 ~/Projects/我的项
   --help            显示帮助
 # ...
 示例：
-  python3 （请参考skill目录中的脚本文件） 整理 ~/Downloads --预览
-  python3 （请参考skill目录中的脚本文件） 分类 ~/Desktop --智能归类
-  python3 （请参考skill目录中的脚本文件） 统计 ~/Documents
-  python3 （请参考skill目录中的脚本文件） 查重 ~/Downloads
+  python3 （请参考skill目录中的脚本文件） 整理 ./Downloads --预览
+  python3 （请参考skill目录中的脚本文件） 分类 ./Desktop --智能归类
+  python3 （请参考skill目录中的脚本文件） 统计 ./Documents
+  python3 （请参考skill目录中的脚本文件） 查重 ./Downloads
 ```
 
 ### 输出示例
@@ -323,7 +321,7 @@ python3 （请参考skill目录中的脚本文件） 整理 ~/Projects/我的项
   文件整理统计报告
 ========================================
 # ...
-扫描目录：~/Downloads
+扫描目录：./Downloads
 文件总数：128个
 # ...
 按类型分布：
@@ -404,7 +402,7 @@ python3 （请参考skill目录中的脚本文件） 整理 ~/Projects/我的项
   预览优先: true
   生成报告: true
   撤销可用: true
-  日志文件: ~/文件整理日志.log
+  日志文件: ./文件整理日志.log
 # ...
   排除文件:
     - ".DS_Store"
@@ -430,25 +428,6 @@ python3 （请参考skill目录中的脚本文件） 整理 ~/Projects/我的项
 6. **保留操作日志**：整理后保留中文操作日志，便于撤销或审计.
 ---
 
-## 常见问题
-
-### Q1：中文文件名会乱码吗？
-
-不会。工具全程使用UTF-8编码，中文文件名、中文路径、中文目录名全链路兼容。在Windows、macOS、Linux上均正确处理中文字符.
-### Q2：整理会删除我的文件吗？
-
-不会。整理操作仅移动文件到对应中文分类目录，不删除任何文件。未识别类型的文件归入"其他/"目录.
-### Q3：智能归类准确吗？
-
-智能归类基于文件名关键词匹配，对包含明确关键词（如"合同"、"发票"、"截图"）的文件准确率约90%。对于文件名无明确关键词的文件，按扩展名归入对应大类.
-### Q4：支持哪些操作系统？
-
-支持Windows、macOS、Linux三大操作系统。路径格式自动适配（Windows用反斜杠、macOS/Linux用正斜杠），中文路径跨平台兼容.
-### 已知限制
-
-免费版支持六大中文类型分类、中文路径兼容、智能归类辅助、重复文件识别、预览与撤销。不支持内容感知分类、批量定时整理、多目录批量处理、整理报告导出、文件变更监控、团队规则共享等高级功能。解锁全部功能请使用专业版：zh-file-organizer-pro.
----
-- 当前为免费版本,如需完整功能请升级到付费版获取全部能力
 ## 依赖说明
 
 ### 运行环境

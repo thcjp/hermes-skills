@@ -1,5 +1,4 @@
 ---
-
 slug: web-learner-tool-free
 name: web-learner-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 自主学习助手免费版
 summary: "让 AI 自主上网搜索和学习,主动获取最新信息,整合互联网知识,适合个人知识获取。自主学习助手免费版,面向个人用户提供 AI 自主上网搜索和学习的能力。支持 Web 搜索、网页抓取、浏览器交"
 license: MIT
 edition: free
-description: "自主学习助手免费版,面向个人用户包含 AI 自主上网搜索和学习的能力。兼容 Web 搜索、网页抓取、浏览器交互等多种信息获取方式。Use. 适用于需要web learner tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要web learner tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "自主学习助手免费版,面向个人用户包含 AI 自主上网搜索和学习的能力。兼容 Web 搜索、网页抓取、浏览器交互等多种信息获取方式。Use. 适用于需要web learner tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要web learner tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 研究工具
   - web
@@ -29,7 +28,6 @@ category: "Development"
 pricing_tier: free
 
 ---
-
 # 自主学习助手免费版
 
 ## 概述
@@ -112,15 +110,15 @@ browser_screenshot()
 
 从多个来源获取信息,整合形成完整认知.
 ```bash
-# 步骤1:搜索获取概览
+# 步骤说明:搜索获取概览
 search_results = web_search("量子计算最新进展")
 # ...
-# 步骤2:抓取详细内容
+# 步骤说明:抓取详细内容
 for result in search_results[:3]:
     content = web_fetch(result.url)
     # 整合内容
 # ...
-# 步骤3:整合并总结
+# 步骤说明:整合并总结
 summary = summarize(all_content, language="zh")
 ```
 
@@ -135,15 +133,15 @@ summary = summarize(all_content, language="zh")
 
 小王想了解今天的科技新闻.
 ```bash
-# 步骤1:搜索最新新闻
+# 步骤说明:搜索最新新闻
 results = web_search("今日科技新闻", freshness="pd", country="CN")
 # ...
-# 步骤2:抓取新闻详情
+# 步骤说明:抓取新闻详情
 for news in results[:3]:
     article = web_fetch(news.url, format="markdown")
     # 提取关键信息
 # ...
-# 步骤3:总结呈现
+# 步骤说明:总结呈现
 # 用中文总结今天的科技新闻要点
 ```
 
@@ -151,13 +149,13 @@ for news in results[:3]:
 
 小李正在学习区块链技术,想获取最新的学习资料.
 ```bash
-# 步骤1:搜索学习资源
+# 步骤说明:搜索学习资源
 results = web_search("区块链入门教程 2026", country="CN")
 # ...
-# 步骤2:抓取教程内容
+# 步骤说明:抓取教程内容
 tutorial = web_fetch("https://tutorial.example.com/blockchain", format="markdown")
 # ...
-# 步骤3:整理学习要点
+# 步骤说明:整理学习要点
 # 提取核心概念、技术要点、实践步骤
 ```
 
@@ -165,14 +163,14 @@ tutorial = web_fetch("https://tutorial.example.com/blockchain", format="markdown
 
 小张需要查询今天的天气.
 ```bash
-# 步骤1:使用天气服务(首选)
+# 步骤说明:使用天气服务(首选)
 weather = web_fetch("https://wttr.in/Beijing?format=3")
 # ...
-# 步骤2:备选方案
+# 步骤说明:备选方案
 if not weather:
     weather = web_fetch("https://weather.com.cn/beijing")
 # ...
-# 步骤3:总结天气信息
+# 步骤说明:总结天气信息
 # 用中文呈现今天的天气情况
 ```
 
@@ -205,7 +203,7 @@ summary = summarize(content, language="zh")
 ```bash
 # 当 web_fetch 失败时,尝试浏览器
 try:
-    content = web_fetch(url)
+    content = web_fetch(validated_url)
 except:
     browser_start()
     browser_navigate(url)

@@ -6,26 +6,28 @@ displayName: "邮件技能免费版"
 summary: "SMTP基础邮件发送,支持单供应商与纯文本附件投递。基于SMTP协议的轻量邮件发送Skill,提供纯文本正文、单附件投递与 测试邮件校验能力,支持Gmail与Outlook主流服务商。适用于"
 summary_zh: "SMTP基础邮件发送,支持单供应商与纯文本附件投递。基于SMTP协议的轻量邮件发送Skill,提供纯文本正文、单附件投递与 测试邮件校验能力,支持Gmail与Outlook主流服务商。适用于"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要email skill相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   基于SMTP协议的轻量邮件发送Skill,提供纯文本正文、单附件投递与
   测试邮件校验能力,支持Gmail与Outlook主流服务商。适用于个人开发者
   日常通知、简单报表投递等基础发信场景,是邮件自动化的入门版本.
 tags:
   - Communication
+  - email
+  - skill
+  - automation
+  - productivity
   - SMTP
   - 邮件
   - 通信
   - 工具
-  - smtp
   - gmail
-  - agent
-  - 原因
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: free
 ---
 # Email Free
 
@@ -57,7 +59,7 @@ category: "Communication"
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力

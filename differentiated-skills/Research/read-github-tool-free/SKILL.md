@@ -1,21 +1,12 @@
----slug: read-github-tool-free
+---
+slug: read-github-tool-free
 name: read-github-tool-free
 version: 1.0.0
 displayName: 代码仓库阅读免费版
-summary: "通过MCP serve"
-license: Proprietary
+summary: "通过工具服务,提供核心能力"
+license: "MIT"
 edition: free
-description: '代码仓库阅读工具免费版，通过MCP server读取代码仓库的文档和代码，帮助用户快速理解开源项目。核心能力:
-
-  - 获取仓库完整文档（README等）
-
-  - 文档语义搜索
-
-  - 代码搜索（精确匹配）
-
-  - 获取文档中引用的外部URL内容
-
-  - URL自动转换（github。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。'
+description: "代码仓库阅读工具免费版，通过工具服务读取代码仓库的文档和代码，帮助用户快速理解开源项目。核心能力: - 获取仓库完整文档（README等） - 文档语义搜索 - 代码搜索（精确匹配） - 获取文档中引用的外部URL内容 - URL自发变换（github。Use when 需要文件处置、文档变换、格式互转、内容提取时使用。不适用于加密文件破解。"
 tags:
   - 开发
   - 代码阅读
@@ -27,18 +18,19 @@ tags:
   - repo
   - self
   - url
-  - react
-  - facebook
 tools:
   - read
   - exec
   - write
 homepage: ""
-category: "Development"---# 代码仓库阅读工具（免费版）
+category: "Development"
+pricing_tier: free
+---
+# 代码仓库阅读工具（免费版）
 
 ## 概述
 
-代码仓库阅读工具免费版通过 MCP server 帮助用户阅读和理解代码仓库的文档与代码。无需克隆整个仓库，通过 URL 转换和 MCP工具调用即可获取仓库文档、搜索代码和查找特定函数，大幅提升学习开源项目和进行技术选型的效率.
+代码仓库阅读工具免费版通过 工具服务 帮助用户阅读和理解代码仓库的文档与代码。无需克隆整个仓库，通过 URL 转换和 扩展工具调用即可获取仓库文档、搜索代码和查找特定函数，大幅提升学习开源项目和进行技术选型的效率.
 本版本聚焦单仓库的文档获取与代码搜索，适合个人开发者学习开源项目、查找 API 用法和进行技术选型。如需批量仓库分析、代码审计与 API 集成等高级能力，可升级至 PRO 版本.
 ## 核心能力
 
@@ -50,7 +42,7 @@ category: "Development"---# 代码仓库阅读工具（免费版）
 | 搜索文档 | 语义搜索仓库文档 | `search-docs owner/repo "query"` |
 | 搜索代码 | 精确匹配搜索代码 | `search-code owner/repo "function_name"` |
 | 获取URL内容 | 获取文档引用的外部URL | `fetch-url owner/repo "url"` |
-| 列出工具 | 列出可用MCP工具 | `list-tools owner/repo` |
+| 列出工具 | 列出可用扩展工具 | `list-tools owner/repo` |
 
 ### URL 转换规则
 
@@ -62,11 +54,11 @@ category: "Development"---# 代码仓库阅读工具（免费版）
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
 ```text
-owner/repo → gitmcp.io/owner/repo
+owner/repo → repo-service.example.com/owner/repo
 # ...
 示例：
-facebook/react → gitmcp.io/facebook/react
-karpathy/llm-council → gitmcp.io/karpathy/llm-council
+facebook/react → repo-service.example.com/facebook/react
+karpathy/llm-council → repo-service.example.com/karpathy/llm-council
 ```
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -77,7 +69,7 @@ karpathy/llm-council → gitmcp.io/karpathy/llm-council
 [支持] 文档语义搜索
 [支持] 代码精确匹配搜索
 [支持] 外部URL内容获取
-[支持] MCP工具列表查看
+[支持] 扩展工具列表查看
 [限制] 不支持批量多仓库分析
 [限制] 不支持跨仓库代码搜索
 [限制] 不支持代码审计与安全检查
@@ -107,7 +99,7 @@ karpathy/llm-council → gitmcp.io/karpathy/llm-council
 用户：帮我读一下 facebook/react 的文档
 # ...
 Agent 执行流程：
-1. 转换URL: facebook/react → gitmcp.io/facebook/react
+1. 转换URL: facebook/react → repo-service.example.com/facebook/react
 2. 调用 fetch-docs 获取完整文档
 3. 解析文档结构
 4. 输出项目概述、核心功能、使用方式
@@ -208,7 +200,7 @@ python3 （请参考skill目录中的脚本文件） search-code facebook/react 
 ### Step 4：列出可用工具
 
 ```bash
-# 查看仓库可用的MCP工具
+# 查看仓库可用的扩展工具
 python3 （请参考skill目录中的脚本文件） list-tools owner/repo
 ```
 
@@ -217,23 +209,23 @@ python3 （请参考skill目录中的脚本文件） list-tools owner/repo
 ### 脚本使用配置
 
 ```python
-# gitmcp.py - 核心脚本配置
+# repo_reader.py - 核心脚本配置
 import sys
 import json
 import requests
 # ...
-class GitMCPClient:
-    """MCP server客户端"""
+class RepoReaderClient:
+    """工具服务客户端"""
 # ...
     def __init__(self):
-        self.base_url = "https://gitmcp.io"
+        self.base_url = "${SERVER_URL}"
         self.timeout = 30
 # ...
     def list_tools(self, repo):
-        """列出仓库可用的MCP工具"""
+        """列出仓库可用的扩展工具"""
         url = f"{self.base_url}/{repo}"
         # 获取可用工具列表
-        tools = self._call_mcp(url, "list_tools")
+        tools = self._call_api(url, "list_tools")
         return tools
 # ...
     def fetch_docs(self, repo):
@@ -258,12 +250,12 @@ _generate_tool_name(repo, "code")
         return f"{repo_slug}_{suffix}"
 # ...
     def _call_tool(self, repo, tool_name, args):
-        """调用MCP工具"""
+        """调用扩展工具"""
         payload = {
             "tool": tool_name,
             "args": args
         }
-        response = requests.post(url, json=payload, timeout=self.timeout)
+        response = requests.post(safe_url, json=payload, timeout=self.timeout)
         return response.json()
 ```
 
@@ -289,7 +281,7 @@ limits:
 # URL转换
 url_mapping:
   source: "github.com"
-  target: "gitmcp.io"
+  target: "repo-service.example.com"
 # ...
 # 输出格式
 output:
@@ -298,13 +290,13 @@ output:
   include_code_blocks: true
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 先获取文档再搜索
 
 ```text
 # 推荐 - 先了解项目再深入
-第一步：帮我读一下 owner/repo 的文档
+领先步：帮我读一下 owner/repo 的文档
 第二步：在文档中搜索"authentication"相关内容
 第三步：搜索代码中"login"函数的实现
 # ...
@@ -348,7 +340,7 @@ python3 （请参考skill目录中的脚本文件） fetch-url owner/repo "https
 
 ### Q1：免费版支持哪些代码托管平台？
 
-免费版通过 gitmcp.io 服务访问代码仓库，主要支持代码仓库的文档和代码阅读。URL 转换仅针对代码仓库.
+免费版通过 repo-service.example.com 服务访问代码仓库，主要支持代码仓库的文档和代码阅读。URL 转换仅针对代码仓库.
 ### Q2：搜索代码是精确匹配还是模糊匹配？
 
 代码搜索（search-code）使用精确匹配，返回包含确切关键词的文件。文档搜索（search-docs）使用语义搜索，支持自然语言查询.
@@ -376,7 +368,7 @@ python3 （请参考skill目录中的脚本文件） fetch-url owner/repo "https
 
 - **Agent 平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **网络连接**: 需要可访问互联网以连接MCP server
+- **网络连接**: 需要可访问互联网以连接工具服务
 - **Python 版本**: 3.8 及以上
 
 ### 第三方依赖
@@ -384,27 +376,27 @@ python3 （请参考skill目录中的脚本文件） fetch-url owner/repo "https
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
-| MCP server | 服务 | 必需 | gitmcp.io免费提供 |
+| 工具服务 | 服务 | 必需 | repo-service.example.com免费提供 |
 | Python 3.8+ | 运行时 | 必需 | 系统包管理器安装 |
 | requests | Python 包 | 可选 | `pip install requests` |
 
 ### API Key 配置
 
-免费版通过公开的 MCP server 访问代码仓库，无需额外 API Key.
+免费版通过公开的 工具服务 访问代码仓库，无需额外 API Key.
 ```bash
 # 验证环境
 python3 --version
 python3 -c "import requests; print('requests就绪')" 2>/dev/null || echo "requests未安装（可选）"
 # ...
-# 验证MCP server连通性
-curl -s -o /dev/null -w "%{http_code}" https://gitmcp.io
+# 验证工具服务连通性
+curl -s -o /dev/null -w "%{http_code}" https://repo-service.example.com
 # 预期输出: 200
 ```
 
 ### 可用性分类
 
 - **分类**: MD+EXEC（纯 Markdown 指令 + Python 脚本执行）
-- **说明**: 通过 MCP server访问代码仓库的文档与代码，支持获取、搜索和内容提取
+- **说明**: 通过 工具服务访问代码仓库的文档与代码，支持获取、搜索和内容提取
 - **适用规模**: 个人开发者、轻量级代码阅读场景
 - **升级路径**: 可无缝升级至 read-github-tool-pro 获取批量仓库分析与代码审计能力
 

@@ -1,5 +1,4 @@
 ---
-
 slug: news-tool-free
 name: news-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 个性化新闻助手免费版
 summary: "学习用户兴趣偏好的个性化新闻简报工具，支持多源覆盖与本地记忆。个性化新闻助手免费版，通过学习用户兴趣、格式偏好和时间习惯，提供定制化新闻简报服务。核心能力:"
 license: MIT
 edition: free
-description: "个性化新闻助手免费版，通过学习用户兴趣、格式偏好和时间习惯，包含定制化新闻简报服务。核心能力:. 适用于需要news tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要news tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "个性化新闻助手免费版，通过学习用户兴趣、格式偏好和时间习惯，包含定制化新闻简报服务。核心能力:. 适用于需要news tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要news tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 新闻
   - news
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # 个性化新闻助手（免费版）
 
 ## 概述
@@ -54,7 +52,7 @@ pricing_tier: free
 ```text
 [支持] 单用户兴趣画像构建
 [支持] 3种输出格式（要点/叙述/标题）
-[支持] 本地记忆存储（~/news/目录）
+[支持] 本地记忆存储（./news/目录）
 [支持] 多源交叉验证（2个来源）
 [支持] 兴趣偏好动态调整建议
 [限制] 不支持多用户/多租户管理
@@ -108,7 +106,7 @@ Agent: 欢迎使用个性化新闻助手！为了提供精准的简报，请告�
 用户: 我关注AI编程工具、新能源电池技术、A股科技股。比例大概是
 50% AI、30% 新能源、20% 股市。喜欢要点列表，早上看.
 # ...
-Agent: 好的，已创建你的兴趣画像并保存到 ~/news/memory.md
+Agent: 好的，已创建你的兴趣画像并保存到 ./news/memory.md
 ```
 
 ### 场景二：每日早间简报
@@ -118,11 +116,11 @@ Agent: 好的，已创建你的兴趣画像并保存到 ~/news/memory.md
 用户：今日简报
 # ...
 Agent：
-1. 读取 ~/news/memory.md 获取用户偏好
+1. 读取 ./news/memory.md 获取用户偏好
 2. 搜索用户关注的3个领域最新新闻
 3. 按要点列表格式输出
 4. 控制在5-7条以内
-5. 记录至 ~/news/history.md
+5. 记录至 ./news/history.md
 ```
 
 示例输出：
@@ -178,10 +176,10 @@ Agent：
 
 ```bash
 # 创建新闻助手本地目录
-mkdir -p ~/news
+mkdir -p ./news
 # ...
 # 创建初始记忆文件
-cat > ~/news/memory.md << 'EOF'
+cat > ./news/memory.md << 'EOF'
 # 用户兴趣画像
 # ...
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -200,7 +198,7 @@ cat > ~/news/memory.md << 'EOF'
 EOF
 # ...
 # 创建历史记录文件
-cat > ~/news/history.md << 'EOF'
+cat > ./news/history.md << 'EOF'
 # 简报历史记录
 # ...
 ## 记录格式
@@ -210,7 +208,7 @@ cat > ~/news/history.md << 'EOF'
 EOF
 # ...
 # 创建信息源文件
-cat > ~/news/sources.md << 'EOF'
+cat > ./news/sources.md << 'EOF'
 # 可信信息源
 # ...
 ## 官方媒体（A级）
@@ -339,7 +337,7 @@ Agent: 这个消息目前有两个来源报道，但细节有差异：
 
 ### Q1：我的数据存储在哪里？安全吗？
 
-所有数据存储在本地 `~/news/` 目录下，包括：
+所有数据存储在本地 `./news/` 目录下，包括：
 - `memory.md` - 兴趣画像与偏好
 - `history.md` - 简报历史记录
 - `sources.md` - 可信信息源列表
@@ -378,7 +376,7 @@ Agent: 这个消息目前有两个来源报道，但细节有差异：
 - **Agent 平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 - **网络连接**: 需要可访问互联网以获取新闻
-- **本地存储**: 需要 `~/news/` 目录读写权限
+- **本地存储**: 需要 `./news/` 目录读写权限
 
 ### 依赖详情
 
@@ -394,7 +392,7 @@ Agent: 这个消息目前有两个来源报道，但细节有差异：
 免费版基于 Markdown 指令驱动，无需额外 API Key。所有新闻获取通过 Agent 内置搜索能力完成.
 ```bash
 # 验证本地目录可写
-mkdir -p ~/news && echo "ok" > ~/news/test && rm ~/news/test && echo "目录就绪"
+mkdir -p ./news && echo "ok" > ./news/test && rm ./news/test && echo "目录就绪"
 ```
 
 ### 可用性分类

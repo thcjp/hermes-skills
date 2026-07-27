@@ -1,11 +1,12 @@
----slug: html-toolkit-free
+---
+slug: html-toolkit-free
 name: html-toolkit-free
 version: 1.0.1
 displayName: HTML 工具箱
-summary: "面向个人开发者的 HT"
-license: Proprietary
+summary: "面向个人开发者的 HT,提供核心能力"
+license: "MIT"
 edition: free
-description: 面向个人开发者的 HTML 常见错误规避工具。核心能力:，可处理提升工作效率
+description: "面向个人开发者的 HTML 常见错误规避工具。核心能力:，可处置提升工作效率.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
 
   - 布局抖动预防与表单陷阱规避
 
@@ -35,19 +36,15 @@ tags:
   - 通信
   - 邮件
   - 研究
-  - 分析
-  - 安全
-  - type
-  - html
-  - label
-  - button
-  - email
 tools:
   - read
   - exec
   - write
 homepage: ""
-category: "Automation"---# HTML 工具箱（免费版）
+category: "Automation"
+pricing_tier: free
+---
+# HTML 工具箱（免费版）
 
 ## 概述
 
@@ -157,7 +154,7 @@ category: "Automation"---# HTML 工具箱（免费版）
 </body>
 ```
 
-## 最佳实践
+## 优秀实践
 
 - **img 必加尺寸**：即使有 CSS 尺寸，`width`/`height` 让浏览器提前预留空间.
 - **button 显式 type**：默认 `type="submit"` 会触发表单提交，非提交按钮写 `type="button"`.

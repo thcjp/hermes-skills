@@ -3,10 +3,10 @@ slug: "x-timeline-digest-free"
 name: "x-timeline-digest-free"
 version: "1.0.0"
 displayName: "X 时间线摘要免费版"
-summary: "使用 bird 读取 X/Twitter 时间线,增量去重后输出结构化 JSON,不含中文分类简报。基于 bird 命令行工具读取 X(Twitter)的 For You 与 Followi"
+summary: "提供包含使用 bird 读取 X/Twitter 时间线,增量去重后输出结构化 JSON,不含中文分类简报.基于 bird 命令行工具读取 X(Twitter)的 For You 与 Followi"
 summary_zh: "使用 bird 读取 X/Twitter 时间线,增量去重后输出结构化 JSON,不含中文分类简报。基于 bird 命令行工具读取 X(Twitter)的 For You 与 Followi"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要x timeline digest相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   基于 bird 命令行工具读取 X(Twitter)的 For You 与 Following 两条时间线,
   对推文进行增量过滤、ID 硬去重与近重复文本合并,
   输出结构化 JSON 负载.
@@ -14,19 +14,22 @@ description: |-
   仅提供基础的去重 JSON 数据供下游自行处理.
 tags:
   - 通用办公
+  - timeline
+  - digest
+  - automation
+  - productivity
   - Social Media
   - 工具
   - 效率
   - bird
   - following
-  - json
-  - you
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
 # X Timeline Digest Free
 
@@ -55,7 +58,7 @@ category: "Automation"
 | fetchLimitForYou | number | 100 | For You 拉取条数 |
 | fetchLimitFollowing | number | 60 | Following 拉取条数 |
 | similarityThreshold | number | 0.9 | 近重复相似度阈值 |
-| statePath | string | ~/.skill-platform/state/x-timeline-digest-free.json | 状态文件路径 |
+| statePath | string | ./.skill-platform/state/x-timeline-digest-free.json | 状态文件路径 |
 
 ---
 
@@ -87,7 +90,7 @@ category: "Automation"
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力

@@ -1,5 +1,4 @@
 ---
-
 slug: internet-search-tool-free
 name: internet-search-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 聚合搜索工具
 summary: 基于 SearXNG 的多引擎聚合搜索工具，支持分类路由与智能查询，聚合多个搜索引擎结果，适合个人日常信息检索.
 license: MIT
 edition: free
-description: "基于 SearXNG 的多引擎聚合搜索工具，兼容分类路由与智能查询，聚合多个搜索引擎结果，适合个人日常信息检索。核心能力:. 适用于需要internet search tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要internet search tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "基于 SearXNG 的多引擎聚合搜索工具，兼容分类路由与智能查询，聚合多个搜索引擎结果，适合个人日常信息检索。核心能力:. 适用于需要internet search tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要internet search tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 搜索
   - internet
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # 聚合搜索工具（免费版）
 
 ## 概述
@@ -145,7 +143,7 @@ export SEARXNG_URL=https://searx.be
 # ...
 # 方式二：自托管 SearXNG
 docker run -d -p 8080:8080 searxng/searxng
-export SEARXNG_URL=http://localhost:8080
+export SEARXNG_URL=http://${SERVER_HOST}:${SERVER_PORT}
 ```
 
 ### 执行首次搜索
@@ -162,7 +160,7 @@ internet_search("新闻关键词", category="news")
 
 ```bash
 # 测试 SearXNG 连通性
-curl http://localhost:8080/healthz
+curl https://${SERVER_HOST}:${SERVER_PORT}/healthz
 # ...
 # 执行测试搜索
 internet_search("test query", count=3)
@@ -250,7 +248,7 @@ internet_search("Bun runtime production experience", category="social")
 
 ```bash
 # 检查 SearXNG 状态
-curl http://localhost:8080/healthz
+curl https://${SERVER_HOST}:${SERVER_PORT}/healthz
 # ...
 # 尝试不同类别
 internet_search("query", category="general")
@@ -325,7 +323,7 @@ internet_search("query", cache=true)
 
 ```bash
 # 配置 SearXNG 实例地址
-export SEARXNG_URL=http://localhost:8080
+export SEARXNG_URL=http://${SERVER_HOST}:${SERVER_PORT}
 # 或使用公共实例
 ```
 

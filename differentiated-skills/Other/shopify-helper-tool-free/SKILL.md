@@ -1,5 +1,4 @@
 ---
-
 slug: shopify-helper-tool-free
 name: shopify-helper-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: Shopify助手-免费版
 summary: "Shopify建站助手,支持主题定制、产品管理与基础开发,适合个人卖家。Shopify 建站助手免费版,面向个人卖家与小型电商。核心能力:"
 license: MIT
 edition: free
-description: "Shopify 建站助手免费版,面向个人卖家与小型电商。核心能力:，可处置提升工作效率. 适用于需要shopify helper tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要shopify helper tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "Shopify 建站助手免费版,面向个人卖家与小型电商。核心能力:，可处置提升工作效率. 适用于需要shopify helper tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要shopify helper tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - Shopify
   - shopify
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # Shopify 助手 - 免费版
 
 ## 概述
@@ -102,31 +100,28 @@ Shopify 建站中的高频问题解决方案.
   <div class="product-gallery">
     {%- for media in product.media -%}
       <div class="product-image">
-        {{ media | image_url: width: 600 | image_tag:
-          loading: 'lazy',
-          alt: product.title
-        }}
+        $VAR
       </div>
     {%- endfor -%}
   </div>
 # ...
   <div class="product-info">
-    <h1>{{ product.title }}</h1>
+    <h1>$VAR</h1>
     <div class="price">
-      {{ product.price | money }}
+      $VAR
       {%- if product.compare_at_price > product.price -%}
         <span class="compare-price">
-          {{ product.compare_at_price | money }}
+          $VAR
         </span>
       {%- endif -%}
     </div>
 # ...
     <div class="description">
-      {{ product.description }}
+      $VAR
     </div>
 # ...
-    <form action="{{ routes.cart_add_url }}" method="post">
-      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+    <form action="$VAR" method="post">
+      <input type="hidden" name="id" value="$VAR">
       <button type="submit" class="btn-add-cart">加入购物车</button>
     </form>
   </div>
@@ -170,11 +165,11 @@ shopify theme list
 {%- endcomment -%}
 # ...
 <div class="collection-page">
-  <h1>{{ collection.title }}</h1>
+  <h1>$VAR</h1>
 # ...
   <div class="filters">
     <select onchange="window.location.href=this.value">
-      <option value="{{ collection.url }}">排序: 推荐</option>
+      <option value="$VAR">排序: 推荐</option>
 url }}?sort_by=price-ascending">价格升序</option>
 url }}?sort_by=price-descending">价格降序</option>
 url }}?sort_by=created-descending">最新上架</option>
@@ -184,10 +179,10 @@ url }}?sort_by=created-descending">最新上架</option>
   <div class="product-grid">
     {%- for product in collection.products -%}
       <div class="product-card">
-        <a href="{{ product.url }}">
+        <a href="$VAR">
 featured_image | image_url: width: 300 | image_tag: loading: 'lazy' }}
-          <h3>{{ product.title }}</h3>
-          <p class="price">{{ product.price | money }}</p>
+          <h3>$VAR</h3>
+          <p class="price">$VAR</p>
         </a>
       </div>
     {%- endfor -%}

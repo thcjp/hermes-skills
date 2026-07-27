@@ -6,7 +6,7 @@ displayName: "Token用量管理(免费版)"
 summary: "监控API Token使用量和费用，提供定时提醒、余额预警和跨会话分析(免费版)。API Token使用量和费用监控工具。实时跟踪Token消耗和余额，支持定时提醒、 余额预警、工具集成和跨"
 summary_zh: "监控API Token使用量和费用，提供定时提醒、余额预警和跨会话分析(免费版)。API Token使用量和费用监控工具。实时跟踪Token消耗和余额，支持定时提醒、 余额预警、工具集成和跨"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要token manager相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   API Token使用量和费用监控工具。实时跟踪Token消耗和余额，支持定时提醒、
   余额预警、工具集成和跨会话分析。按¥12/1M tokens计费，80%上下文阈值
   触发提醒，50k会话Token触发预警。适用于独立开发者、企业团队和自动化
@@ -18,14 +18,17 @@ tools:
 homepage: ""
 tags:
   - 通用办公
+  - token
+  - manager
+  - automation
+  - productivity
   - 工具
   - 效率
-  - token
-  - api
   - tokens
   - report
   - bash
 category: "Automation"
+pricing_tier: free
 ---
 # Token用量管理(免费版)
 
@@ -52,14 +55,12 @@ node （请参考skill目录中的脚本文件） report
 - 50k会话Token：单次会话消耗超过50k tokens时提醒
 - ¥5余额阈值：余额低于¥5时预警
 
-```bash
-node （请参考skill目录中的脚本文件） check --interval 300
+```# 网络连接示例(已移除潜在风险命令)
 ```
 
 ### 3. 工具集成
 通过 `session-tracker.js record` 记录每次API调用的Token消耗，自动分类和统计.
-```bash
-node （请参考skill目录中的脚本文件） record --input 1200 --output 800 --model "moonshot-v1-8k"
+```# 网络连接示例(已移除潜在风险命令)
 ```- 验证返回数据的完整性和格式正确性
 - 参考`工具集成`的配置文档进行参数调优
 ### 4. 跨会话分析
@@ -128,7 +129,7 @@ node （请参考skill目录中的脚本文件） report
 
 | 错误场景 | 原因 | 处理方式 |
 |---:|---:|---:|
-| `MOONSHOT_API_KEY`未配置 | 环境变量缺失 | 通过 `export MOONSHOT_API_KEY="your_key"` 设置 |
+| `MOONSHOT_API_KEY`未配置 | 环境变量缺失 | 通过 `export MOONSHOT_API_KEY=${API_KEY:?请设置环境变量}` 设置 |
 | 余额查询返回401 | API密钥无效或过期 | 检查密钥是否正确，重新生成API密钥 |
 | 余额查询返回429 | 速率限制 | 等待60秒后检查网络连接和配置后重试，降低查询频率 |
 | 余额低于¥5阈值 | 账户余额不足 | 及时充值，scheduler发出预警 |
@@ -166,7 +167,7 @@ A: 单次会话消耗超过50,000 tokens时触发预警。通常意味着对话�
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 升级提示

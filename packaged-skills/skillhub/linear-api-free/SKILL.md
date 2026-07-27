@@ -6,7 +6,7 @@ displayName: "Linear API引擎(免费版)"
 summary: "Linear问题跟踪与项目管理，通过GraphQL API操作Issue/Cycle/Project与工作流。免费版"
 summary_zh: "Linear问题跟踪与项目管理，通过GraphQL API操作Issue/Cycle/Project与工作流。免费版"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要linear api相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   Linear项目管理集成引擎（免费版），通过GraphQL API操作Linear实例。覆盖Issue管理、
   Cycle规划、Project跟踪与工作流自动化。核心能力：
   - Issue管理（创建/更新/查询/批量操作）
@@ -20,15 +20,16 @@ tools:
 homepage: ""
 tags:
   - 研发工具
-  - API
+  - linear
+  - automation
+  - productivity
   - 接口
   - 开发工具
-  - linear
-  - api
   - graphql
   - issue
   - https
 category: "Development"
+pricing_tier: free
 ---
 # Linear API引擎(免费版)
 
@@ -62,7 +63,7 @@ Linear项目管理集成引擎，通过GraphQL API操作Linear实例，覆盖Iss
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
@@ -73,7 +74,7 @@ export API_KEY="your_api_key_here"
 ```bash
 # 创建Issue
 curl -X POST "https://api.linear.app/graphql" \
-  -H "Authorization: YOUR_API_KEY" \
+  -H "Authorization: $PARAM" \
   -H "Content-Type: application/json" \
   -d '{
     "query": "mutation { issueCreate(input: { title: \"实现用户登录功能\", description: \"需要实现OAuth登录\", teamId: \"team-uuid\", priority: 2, assigneeId: \"user-uuid\" }) { success issue { id identifier title } } }"
@@ -81,7 +82,7 @@ curl -X POST "https://api.linear.app/graphql" \
 # ...
 # 查询Issue
 linear.app/graphql" \
-  -H "Authorization: YOUR_API_KEY" \
+  -H "Authorization: $PARAM" \
   -H "Content-Type: application/json" \
   -d '{
     "query": "{ issue(id: \"issue-uuid\") { identifier title description state { name } assignee { name } priority labels { nodes { name } } } }"
@@ -89,7 +90,7 @@ linear.app/graphql" \
 # ...
 # 更新Issue
 linear.app/graphql" \
-  -H "Authorization: YOUR_API_KEY" \
+  -H "Authorization: $PARAM" \
   -H "Content-Type: application/json" \
   -d '{
     "query": "mutation { issueUpdate(id: \"issue-uuid\", input: { title: \"更新后的标题\", priority: 3 }) { success issue { id title } } }"
@@ -100,7 +101,7 @@ linear.app/graphql" \
 ```bash
 # 获取当前活跃Cycle
 linear.app/graphql" \
-  -H "Authorization: YOUR_API_KEY" \
+  -H "Authorization: $PARAM" \
   -H "Content-Type: application/json" \
   -d '{
     "query": "{ team(id: \"team-uuid\") { cycles(filter: { active: { eq: true } }) { nodes { id name number startDate endDate } } } }"
@@ -108,7 +109,7 @@ linear.app/graphql" \
 # ...
 # 将Issue加入Cycle
 linear.app/graphql" \
-  -H "Authorization: YOUR_API_KEY" \
+  -H "Authorization: $PARAM" \
   -H "Content-Type: application/json" \
   -d '{
     "query": "mutation { issueUpdate(id: \"issue-uuid\", input: { cycleId: \"cycle-uuid\" }) { success } }"
@@ -116,7 +117,7 @@ linear.app/graphql" \
 # ...
 # 查询Project及其Issues
 linear.app/graphql" \
-  -H "Authorization: YOUR_API_KEY" \
+  -H "Authorization: $PARAM" \
   -H "Content-Type: application/json" \
   -d '{
     "query": "{ project(id: \"project-uuid\") { name description state { name } issues { nodes { identifier title state { name } assignee { name } } } } }"
@@ -130,7 +131,7 @@ linear.app/graphql" \
 ```bash
 # 获取团队的工作流状态
 linear.app/graphql" \
-  -H "Authorization: YOUR_API_KEY" \
+  -H "Authorization: $PARAM" \
   -H "Content-Type: application/json" \
   -d '{
     "query": "{ team(id: \"team-uuid\") { states { nodes { id name type } } } }"
@@ -138,7 +139,7 @@ linear.app/graphql" \
 # ...
 # 更新Issue状态
 linear.app/graphql" \
-  -H "Authorization: YOUR_API_KEY" \
+  -H "Authorization: $PARAM" \
   -H "Content-Type: application/json" \
   -d '{
     "query": "mutation { issueUpdate(id: \"issue-uuid\", input: { stateId: \"state-uuid\" }) { success issue { state { name } } } }"
@@ -146,7 +147,7 @@ linear.app/graphql" \
 # ...
 # 添加标签
 linear.app/graphql" \
-  -H "Authorization: YOUR_API_KEY" \
+  -H "Authorization: $PARAM" \
   -H "Content-Type: application/json" \
   -d '{
     "query": "mutation { issueUpdate(id: \"issue-uuid\", input: { labelIds: [\"label-uuid-1\", \"label-uuid-2\"] }) { success } }"
@@ -160,7 +161,7 @@ linear.app/graphql" \
 ```bash
 # 查询我的待办Issue
 linear.app/graphql" \
-  -H "Authorization: YOUR_API_KEY" \
+  -H "Authorization: $PARAM" \
   -H "Content-Type: application/json" \
   -d '{
     "query": "{ viewer { assignedIssues(filter: { state: { type: { eq: \"started\" } } } }) { nodes { identifier title priority state { name } team { key } } } }"
@@ -168,7 +169,7 @@ linear.app/graphql" \
 # ...
 # 批量查询多个团队Issue
 linear.app/graphql" \
-  -H "Authorization: YOUR_API_KEY" \
+  -H "Authorization: $PARAM" \
   -H "Content-Type: application/json" \
   -d '{
     "query": "{ teams { nodes { key name issues(filter: { priority: { gte: 2 } }) { nodes { identifier title priority state { name } } } } } }"
@@ -211,7 +212,7 @@ linear.app/graphql" \
 ### 示例1：查询当前Cycle进度
 ```bash
 curl -s -X POST "https://api.linear.app/graphql" \
-  -H "Authorization: YOUR_API_KEY" \
+  -H "Authorization: $PARAM" \
   -H "Content-Type: application/json" \
   -d '{
     "query": "{ team(id: \"team-uuid\") { cycles(filter: { active: { eq: true } }) { nodes { name number issues { nodes { identifier title state { name type } } } } } } }"
@@ -222,7 +223,7 @@ curl -s -X POST "https://api.linear.app/graphql" \
 
 | 错误场景 | 原因 | 处理方式 |
 |:---:|:---:|:---:|
-| `401 Unauthorized` | API Key无效或过期 | 在Linear Settings → API中重新生成Personal API Key，确认请求头使用 `Authorization: YOUR_API_KEY` 格式（无需Bearer前缀） |
+| `401 Unauthorized` | API Key无效或过期 | 在Linear Settings → API中重新生成Personal API Key，确认请求头使用 `Authorization: $PARAM` 格式（无需Bearer前缀） |
 | `400 Bad Request` "Parse error" | GraphQL语法错误 | 检查query字符串中的引号转义，确保mutation/query语法正确，使用JSON验证工具检查请求体格式 |
 | `404 Not Found` "Entity not found" | ID不存在或无权限 | 确认teamId/issueId/projectId为有效UUID，检查API Key关联的账户是否有目标团队的访问权限 |
 | `429 Too Many Requests` | 触发速率限制 | Linear API限制为每分钟1500请求（复杂度计算），减少批量操作的并发数，添加请求间隔，使用分页查询而非全量拉取 |
@@ -230,7 +231,7 @@ curl -s -X POST "https://api.linear.app/graphql" \
 ## 常见问题
 
 ### Q1: 如何获取Linear API Key？
-登录Linear，进入Settings → API → Personal API keys，点击"Create key"，输入标签名后复制Key。使用时放在请求头：`-H "Authorization: lin_api_xxxxx"`（注意：Linear API Key直接作为Authorization值，不需要"Bearer"前缀）。Key不会过期但可以随时撤销。建议为不同用途创建不同的Key（如自动化脚本用独立Key）.
+登录Linear，进入Settings → API → Personal API keys，点击"Create key"，输入标签名后复制Key。使用时放在请求头：`-H "Authorization: lin_api_key"`（注意：Linear API Key直接作为Authorization值，不需要"Bearer"前缀）。Key不会过期但可以随时撤销。建议为不同用途创建不同的Key（如自动化脚本用独立Key）.
 ### Q2: Linear的GraphQL API和REST API有什么区别？
 Linear主要使用GraphQL API（`https://api.linear.app/graphql`），所有操作通过POST请求发送query/mutation。优势：可以精确指定返回字段（避免over-fetching），单次请求可查询关联数据（Issue+Assignee+Team+Labels）。Linear没有独立的REST API文档，GraphQL是官方推荐方式。对于不熟悉GraphQL的用户，可以在Linear的API Playground（https://api.linear.app）交互式测试query.
 ### Q3: 如何处理GraphQL的分页查询？

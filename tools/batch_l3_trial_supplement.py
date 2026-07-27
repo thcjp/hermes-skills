@@ -19,6 +19,7 @@ sys.path.insert(0, str(SKILL_REGISTRY_DIR))
 
 from config import get_db_connection
 from agent_trial import import_trial_result
+from skill_core.parser import find_skill_md_multi  # 统一实现(v2.7迁移)
 
 SEARCH_DIRS = [
     Path(r"D:\skills\packaged-skills\skillhub"),
@@ -26,32 +27,6 @@ SEARCH_DIRS = [
     DIFFERENTIATED_DIR,
     Path(r"D:\skills\clawhub-skills\downloaded"),
 ]
-
-
-def find_skill_md_multi(slug, local_path=None):
-    """在多个目录中搜索SKILL.md"""
-    if local_path:
-        p = Path(local_path) / "SKILL.md"
-        if p.exists():
-            return p
-        p = Path(local_path)
-        if p.exists() and p.suffix == '.md':
-            return p
-    for search_dir in SEARCH_DIRS:
-        p = search_dir / slug / "SKILL.md"
-        if p.exists():
-            return p
-        for sub in search_dir.iterdir():
-            if sub.is_dir():
-                p = sub / slug / "SKILL.md"
-                if p.exists():
-                    return p
-                for sub2 in sub.iterdir():
-                    if sub2.is_dir():
-                        p = sub2 / slug / "SKILL.md"
-                        if p.exists():
-                            return p
-    return None
 
 
 def execute_trial(slug, skill_content):

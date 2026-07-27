@@ -1,13 +1,12 @@
 ---
-
 slug: frontend-design-other-tool-free
 name: frontend-design-other-tool-free
 version: 1.0.0
 displayName: 前端设计工具
-summary: "面向个人开发者的前端界面设计助手，产出有辨识度的高质量页面.。面向个人开发者与独立设计者的前端界面设计工具。核心能力:"
+summary: "面向个人开发者的前端界面设计助手，产出有辨识度的高质量页面.。面向个人开发者与独立设计者的前端界面设计工具。核心能力:,提供核心能力"
 license: MIT
 edition: free
-description: "面向个人开发者与独立设计者的前端界面设计工具。核心能力:，可自发提升工作效率. 适用于需要frontend design other tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要frontend design other tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "面向个人开发者与独立设计者的前端界面设计工具。核心能力:，可自发提升工作效率. 适用于需要frontend design other tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要frontend design other tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 前端设计
   - frontend
@@ -28,7 +27,6 @@ category: "Creative"
 pricing_tier: free
 
 ---
-
 # 前端设计工具（免费版）
 
 ## 概述

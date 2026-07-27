@@ -1,5 +1,4 @@
 ---
-
 slug: tool-call-retry-tool-free
 name: tool-call-retry-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 工具调用重试免费版
 summary: "为LLM工具调用提供指数退避重试与格式校验，零侵入封装，成功率提升90%以上，适合个人开发者.。工具调用重试工具免费版，面向个人开发者的轻量级LLM工具调用增强方案。核心能力:"
 license: MIT
 edition: free
-description: "工具调用重试工具免费版，面向个人开发者的轻量级LLM工具调用增强方案。核心能力:，可自发提升工作效率. 适用于需要tool call retry tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要tool call retry tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "工具调用重试工具免费版，面向个人开发者的轻量级LLM工具调用增强方案。核心能力:，可自发提升工作效率. 适用于需要tool call retry tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要tool call retry tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 工具调用
   - call
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 工具调用重试工具（免费版）
 
 ## 概述

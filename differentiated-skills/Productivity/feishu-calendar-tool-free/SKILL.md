@@ -1,5 +1,4 @@
 ---
-
 slug: feishu-calendar-tool-free
 name: feishu-calendar-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 飞书日历基础版
 summary: "管理飞书(Lark)日历,支持列出日历、搜索日程、检查安排与同步事件。核心能力: 日程管理领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT
 edition: free
-description: "核心能力: 日程管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要feishu calendar tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要feishu calendar tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "核心能力: 日程管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要feishu calendar tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要feishu calendar tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 飞书
   - feishu
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 飞书日历基础版
 
 ## 概述
@@ -125,7 +123,7 @@ FREE 版本提供以下能力:
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
 ```bash
-node skills/feishu-calendar/create.js --summary "Task: 完成周报" --desc "周五前提交" --start "2026-02-07T10:00:00+08:00" --end "2026-02-07T11:00:00+08:00" --attendees "ou_xxx"
+node skills/feishu-calendar/create.js --summary "Task: 完成周报" --desc "周五前提交" --start "2026-02-07T10:00:00+08:00" --end "2026-02-07T11:00:00+08:00" --attendees "ou_demo"
 ```
 
 ### 场景 2: 设置共享日历

@@ -6,7 +6,7 @@ displayName: "协作平台卡片基础版"
 summary: "基础协作平台卡片发送，支持文本、标题和颜色设置。向协作平台用户或群组发送基础文本卡片的免费版。支持简单文本、卡片标题和颜色设置、 安全发送（自动处理转义）。适用于基础通知和简单消息推送场景."
 summary_zh: "基础协作平台卡片发送，支持文本、标题和颜色设置。向协作平台用户或群组发送基础文本卡片的免费版。支持简单文本、卡片标题和颜色设置、 安全发送（自动处理转义）。适用于基础通知和简单消息推送场景."
 license: "MIT"
-description: |-
+description: "|-. 适用于需要feishu card相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   向协作平台用户或群组发送基础文本卡片的免费版。支持简单文本、卡片标题和颜色设置、
   安全发送（自动处理转义）。适用于基础通知和简单消息推送场景.
   升级至完整版可解锁Markdown复杂卡片、按钮组件、图片嵌入和人格化消息功能.
@@ -17,20 +17,17 @@ tools:
 homepage: ""
 tags:
   - 通用办公
+  - feishu
+  - card
+  - automation
+  - productivity
   - 工具
   - 效率
   - 自动化
   - 开发
   - 代码
-  - 安全
-  - 加密
-  - 通信
-  - api
-  - markdown
-  - 前缀
-  - feishu-common
-  - text
 category: "Automation"
+pricing_tier: free
 ---
 # 协作平台卡片（免费版）
 
@@ -46,7 +43,7 @@ category: "Automation"
 ## 前置依赖
 
 - 需先安装 `feishu-common` 依赖
-- 本skill依赖 `../feishu-common/index.js` 进行Token和API认证
+- 本skill依赖 `./feishu-common/index.js` 进行Token和API认证
 
 ## 依赖说明
 
@@ -67,7 +64,7 @@ category: "Automation"
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力

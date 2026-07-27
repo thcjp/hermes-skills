@@ -1,5 +1,4 @@
 ---
-
 slug: research-agent-tool-free
 name: research-agent-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 研究代理助手免费版
 summary: "开放式主题研究工具，构建可持续维护的Markdown研究文档，支持交互式探索。研究代理助手免费版，帮助用户围绕特定主题开展开放式研究，通过交互式对话逐步构建结构化研究文档。核心能力:"
 license: MIT
 edition: free
-description: "研究代理助手免费版，帮助用户围绕特定主题开展开放式研究，通过交互式对话逐步构建结构化研究文档。核心能力:，可自发提升工作效率. 适用于需要research agent tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要research agent tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "研究代理助手免费版，帮助用户围绕特定主题开展开放式研究，通过交互式对话逐步构建结构化研究文档。核心能力:，可自发提升工作效率. 适用于需要research agent tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要research agent tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 研究
   - research
@@ -30,7 +29,6 @@ category: "Agents"
 pricing_tier: free
 
 ---
-
 # 研究代理助手（免费版）
 ## 概述
 研究代理助手免费版是一款帮助用户围绕特定主题开展开放式研究的智能代理工具。核心理念是"对话是短暂的，文档才是重要的"。代理为每个研究主题创建独立的研究文件夹，通过交互式对话逐步搜索、综合和更新研究文档，最终形成结构化的知识沉淀.
@@ -47,7 +45,7 @@ pricing_tier: free
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
 ```text
-~/.research-agent/workspace/research/<topic-slug>/
+./.research-agent/workspace/research/<topic-slug>/
 ├── prompt.md          # 原始研究问题
 ├── research.md        # 主要研究发现
 ├── research.pdf       # PDF导出（可选）
@@ -91,7 +89,7 @@ pricing_tier: free
 用户：new research: 2026年主流前端框架性能对比
 # ...
 Agent 执行流程：
-1. 创建研究文件夹 ~/.research-agent/workspace/research/frontend-frameworks-comparison/
+1. 创建研究文件夹 ./.research-agent/workspace/research/frontend-frameworks-comparison/
 2. 创建 prompt.md 记录原始问题
 3. 创建 research.md 初始化研究结构
 4. 开始领先轮搜索与发现
@@ -246,16 +244,16 @@ export pdf
 echo "操作完成"
 ```bash
 # 创建研究工作区
-mkdir -p ~/.research-agent/workspace/research
+mkdir -p ./.research-agent/workspace/research
 # ...
 # 配置研究偏好
-cat > ~/.research-agent/config.yaml << 'EOF'
+cat > ./.research-agent/config.yaml << 'EOF'
 # 免费版研究代理配置
 edition: free
 version: "1.0.0"
 # ...
 workspace:
-  path: "~/.research-agent/workspace/research"
+  path: "./.research-agent/workspace/research"
   naming: "slug"  # 文件夹命名方式
 document:
   template: "default"
@@ -277,7 +275,7 @@ research:
 export:
   format: "pdf"
   tool: "pandoc"
-  output_path: "~/.research-agent/workspace/research"
+  output_path: "./.research-agent/workspace/research"
 # ...
 naming:
   slug_method: "kebab-case"
@@ -388,11 +386,12 @@ echo "操作完成"
 # - 优先更新现有章节，而非创建新章节
 # - 发现用要点列表，总结用叙述段落
 # - 尽可能链接到来源
+echo "操作完成"
 ```
 
 ## 常见问题
 ### Q1：研究文档保存在哪里？
-研究文档保存在 `~/.research-agent/workspace/research/<topic-slug>/` 目录下，每个研究主题独立文件夹.
+研究文档保存在 `./.research-agent/workspace/research/<topic-slug>/` 目录下，每个研究主题独立文件夹.
 ### Q2：免费版支持深度异步研究吗？
 免费版不支持深度异步研究模式。免费版仅支持交互式研究模式，即用户与 Agent 实时对话推进研究。如需深度异步研究，请升级至 PRO 版本.
 ### Q3：可以同时进行多个研究吗？
@@ -411,8 +410,8 @@ echo "操作完成"
 graduate
 # ...
 # Agent会：
-# 1. 将研究文档转化为 ~/specs/<project-name>.md
-# 2. 更新研究状态为 "Graduated → ~/specs/..."
+# 1. 将研究文档转化为 ./specs/<project-name>.md
+# 2. 更新研究状态为 "Graduated → ./specs/..."
 # 3. 保留原始研究文档作为参考
 ```
 
@@ -433,7 +432,7 @@ graduate
 - **Agent 平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 - **网络连接**: 需要可访问互联网以进行搜索研究
-- **本地存储**: 需要 `~/.research-agent/` 目录读写权限
+- **本地存储**: 需要 `./.research-agent/` 目录读写权限
 
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
@@ -449,7 +448,7 @@ graduate
 免费版基于 Markdown 指令驱动，无需额外 API Key.
 ```bash
 # 验证工作区可写
-mkdir -p ~/.research-agent/workspace/research && echo "ok"
+mkdir -p ./.research-agent/workspace/research && echo "ok"
 # ...
 # 验证PDF导出工具（可选）
 pandoc --version 2>/dev/null && echo "pandoc就绪" || echo "pandoc未安装（PDF导出不可用）"

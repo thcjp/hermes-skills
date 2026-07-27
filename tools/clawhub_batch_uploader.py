@@ -37,6 +37,13 @@ try:
 except ImportError:
     _DB_PATH = Path(r"d:\skills\skill-registry.db")
 
+# v2.6: 质量门禁集成(复用quality_gate统一函数, 不创建碎片化代码)
+try:
+    from quality_gate import run_security_precheck, run_marketing_gate, run_anti_hallucination, run_rating_gate
+    _QUALITY_GATE_AVAILABLE = True
+except ImportError:
+    _QUALITY_GATE_AVAILABLE = False
+
 # ClawHub分类映射配置
 CATEGORY_MAP_FILE = Path(__file__).resolve().parent.parent / "data" / "category_mapping.json"
 
@@ -403,16 +410,62 @@ def find_skill_dir(slug, dir_mapping):
     return None
 
 
-def upload_skill(skill_dir, slug, dry_run=False):
-    """Upload a single skill to ClawHub via CLI (v2.1: 增加营销参数)
+def upload_skill(skill_dir, slug, dry_run=False, skip_quality_gate=False):
+    """Upload a single skill to ClawHub via CLI (v2.6: 集成质量门禁)
     
     营销元素:
     - --categories: 分类(从SKILL.md推断,映射到ClawHub标准分类)
     - --topics: 话题标签(从frontmatter tags和slug提取)
     - --name: 显示名称(从frontmatter displayName获取)
+    
+    质量门禁 (v2.6新增):
+    - 安全预检(21项): critical阻断上传
+    - 营销关卡(7项): 检查营销数据质量
+    - 防幻觉(3项): 检测虚假实现
+    - 评分门控(2项): 检查平台历史评分
     """
     if dry_run:
         return {'success': True, 'slug': slug, 'message': 'DRY RUN', 'dry_run': True}
+
+    # v2.6: 质量门禁检查 (上传前)
+    if not skip_quality_gate and _QUALITY_GATE_AVAILABLE:
+        skill_md_path = Path(skill_dir) / "SKILL.md"
+        if skill_md_path.exists():
+            # 安全预检 — critical阻断
+            sec = run_security_precheck(skill_md_path)
+            critical_fails = [c for c in sec.get('checks', []) if not c.get('passed') and c.get('severity') == 'critical']
+            if critical_fails:
+                failed_names = [c['name'] for c in critical_fails]
+                return {'success': False, 'slug': slug,
+                        'error': 'QUALITY_GATE_BLOCKED',
+                        'message': f"安全预检未通过(critical): {', '.join(failed_names)}",
+                        'quality_gate': {'security': sec}}
+
+            # 评分门控 — 低评分阻断
+            rg = run_rating_gate(skill_md_path, slug)
+            if not rg.get('overall_passed', True):
+                failed = [c.get('name', '?') for c in rg.get('checks', []) if not c.get('passed')]
+                return {'success': False, 'slug': slug,
+                        'error': 'RATING_GATE_BLOCKED',
+                        'message': f"评分门控未通过: {', '.join(failed)}",
+                        'quality_gate': {'rating': rg}}
+
+            # 防幻觉检查
+            ah = run_anti_hallucination(skill_md_path)
+            if not ah.get('overall_passed', True):
+                failed = [c.get('name', '?') for c in ah.get('checks', []) if not c.get('passed')]
+                return {'success': False, 'slug': slug,
+                        'error': 'ANTI_HALLUCINATION_BLOCKED',
+                        'message': f"防幻觉检查未通过: {', '.join(failed)}",
+                        'quality_gate': {'anti_hallucination': ah}}
+
+            # 营销关卡 — 检查但不阻断(仅警告, ClawHub营销标准较宽松)
+            mg = run_marketing_gate(skill_md_path)
+            if not mg.get('overall_passed', True):
+                failed = [c.get('name', '?') for c in mg.get('checks', []) if not c.get('passed')]
+                # 营销关卡仅警告,不阻断ClawHub上传(ClawHub与SkillHub标准不同)
+                print(f"  [WARNING] 营销关卡未通过({len(failed)}项): {', '.join(failed[:3])}")
+        # SKILL.md不存在时跳过质量检查,后续上传命令会自然失败
 
     # v2.1: 提取营销参数
     category = get_clawhub_category(skill_dir)
@@ -527,11 +580,12 @@ def increment_version(skill_dir):
 
 def main():
     import argparse
-    parser = argparse.ArgumentParser(description='ClawHub Batch Uploader v2.3')
+    parser = argparse.ArgumentParser(description='ClawHub Batch Uploader v2.6 (含质量门禁)')
     parser.add_argument('--limit', type=int, default=DAILY_LIMIT, help='Max skills to upload')
     parser.add_argument('--dry-run', action='store_true', help='Dry run mode')
     parser.add_argument('--resume', action='store_true', help='Resume from checkpoint')
     parser.add_argument('--from-db', action='store_true', help='从DB查询待上传skill(替代JSON)')
+    parser.add_argument('--skip-quality-gate', action='store_true', help='跳过质量门禁检查(紧急场景)')
     args = parser.parse_args()
 
     # Load dir_mapping (optional, fallback to ALT_DIRS search)
@@ -566,6 +620,7 @@ def main():
     if args.from_db:
         prev_success = set()
         published = set()
+        prev_results = None  # 修复: 初始化prev_results避免NameError
     else:
         prev_results = load_json(RESULTS_FILE)
         if prev_results:
@@ -612,7 +667,7 @@ def main():
 
         # Upload
         print(f"  [{i}/{len(to_upload)}] {slug}...", end="", flush=True)
-        result = upload_skill(skill_dir, slug, args.dry_run)
+        result = upload_skill(skill_dir, slug, args.dry_run, skip_quality_gate=args.skip_quality_gate)
 
         if result['success']:
             print(f" OK ({result.get('version', '')})")
@@ -627,7 +682,7 @@ def main():
             print(f" VERSION_EXISTS, incrementing...", end="", flush=True)
             new_ver = increment_version(skill_dir)
             if new_ver:
-                result2 = upload_skill(skill_dir, slug, args.dry_run)
+                result2 = upload_skill(skill_dir, slug, args.dry_run, skip_quality_gate=args.skip_quality_gate)
                 if result2['success']:
                     print(f" OK (v{new_ver})")
                     success_count += 1

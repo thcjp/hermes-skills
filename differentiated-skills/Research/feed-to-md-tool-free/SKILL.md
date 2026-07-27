@@ -1,13 +1,13 @@
----slug: feed-to-md-tool-free
+---
+slug: feed-to-md-tool-free
 name: feed-to-md-tool-free
 version: 1.0.0
 displayName: RSS转MD(免费版)
-summary: "RSS转Markdow"
-license: Proprietary
+summary: "RSS转Markdow,提供核心能力"
+license: "MIT"
 edition: free
-description: "RSS转Markdown助手免费版是面向个人用户的轻量RSS内容转换工具。聚焦\"获取-解析-转换-保存\"四步流程，将RSS订阅内容转换为结构化Markdown文档。Use
-  when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。自动化生成专业文档，提升文档覆盖率。触发关键词：文档生成、转换、设计、机器学习"
-  when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
+description: "RSS转Markdown助手免费版是面向个人用户的轻量RSS内容变换工具。聚焦\"获取-解析-变换-保存\"四步流程，将RSS订阅内容变换为结构化Markdown文档。Use when 需要文件处置、文档变换、格式互转、内容提取时使用。不适用于加密文件破解。自发化产出专业文档，提升文档覆盖率。触发关键词：文档产出、变换、设计、机器学习"
+  when 需要文件处置、文档变换、格式互转、内容提取时使用。不适用于加密文件破解.
 tags:
   - RSS转换
   - Markdown
@@ -19,8 +19,6 @@ tags:
   - lines
   - append
   - get
-  - markdown
-  - feed_info
 tools:
   - read
   - exec
@@ -28,7 +26,9 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
----> **获取、解析、转换、保存。四步完成RSS到Markdown的转换。**
+pricing_tier: free
+---
+> **获取、解析、转换、保存。四步完成RSS到Markdown的转换。** 关键词: feed
 
 无需复杂配置，通过简单的脚本即可将RSS订阅内容转换为结构化的Markdown文档。免费版聚焦轻量场景，提供基础的转换能力.
 ## 概述
@@ -232,7 +232,7 @@ com/tech-feed-2.xml",
 ]
 # ...
 for url in tech_feeds:
-    xml = parser.fetch(url)
+    xml = parser.fetch(safe_url)
     if xml:
         feed = parser.parse(xml)
         if feed:
@@ -254,7 +254,7 @@ import requests
 import xml.etree.ElementTree as ET
 # ...
 url = "https://example.com/feed.xml"
-r = requests.get(url, timeout=10, headers={'User-Agent': 'Mozilla/5.0'})
+r = requests.get(safe_url, timeout=10, headers={'User-Agent': 'Mozilla/5.0'})
 root = ET.fromstring(r.content)
 channel = root.find('channel')
 # ...
@@ -317,14 +317,14 @@ ITEM_TEMPLATE = """
 """
 ```
 
-## 最佳实践
+## 优秀实践
 ## 错误处理
 ```python
 def safe_fetch_and_convert(url):
     """安全的获取与转换"""
     try:
         parser = RSSParser()
-        xml = parser.fetch(url)
+        xml = parser.fetch(safe_url)
         if not xml:
             return None
 # ...

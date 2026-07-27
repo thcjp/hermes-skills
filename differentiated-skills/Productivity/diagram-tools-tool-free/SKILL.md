@@ -1,5 +1,4 @@
 ---
-
 slug: diagram-tools-tool-free
 name: diagram-tools-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 图表工具基础版
 summary: "支持 Mermaid 和 Graphviz 生成流程图、思维导图、时序图等多种图表。核心能力: 可视化工具领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT
 edition: free
-description: "核心能力: 可视化工具领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要diagram tools tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要diagram tools tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "核心能力: 可视化工具领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要diagram tools tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要diagram tools tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 图表
   - diagram
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 图表工具基础版
 
 ## 概述

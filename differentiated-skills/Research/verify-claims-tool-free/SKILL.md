@@ -1,5 +1,4 @@
 ---
-
 slug: verify-claims-tool-free
 name: verify-claims-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 事实核查助手免费版
 summary: "多源交叉验证的事实核查工具,对接全球专业事实核查机构,适合个人信息鉴别。事实核查助手免费版,面向个人用户提供基础的事实核查能力。通过对接全球专业事实核查机构,对用户提供的声明进行多源交叉验证"
 license: MIT
 edition: free
-description: "事实核查助手免费版,面向个人用户包含基础的事实核查能力。通过对接全球专业事实核查机构,对用户包含的声明进行多源交叉验证。Use when. 适用于需要verify claims tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要verify claims tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "事实核查助手免费版,面向个人用户包含基础的事实核查能力。通过对接全球专业事实核查机构,对用户包含的声明进行多源交叉验证。Use when. 适用于需要verify claims tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要verify claims tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 研究工具
   - verify
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # 事实核查助手免费版
 
 ## 概述
@@ -142,13 +140,13 @@ verify-claims history --id "check_001"
 
 小王看到一条新闻:"某地发现外星人遗迹",想知道是否真实.
 ```bash
-# 步骤1:核查新闻声明
+# 步骤说明:核查新闻声明
 verify-claims check "某地发现外星人遗迹"
 # ...
-# 步骤2:指定核查区域
+# 步骤说明:指定核查区域
 verify-claims check "某地发现外星人遗迹" --region "china"
 # ...
-# 步骤3:获取详细结果
+# 步骤说明:获取详细结果
 verify-claims check "某地发现外星人遗迹" --verbose
 # ...
 # 输出示例:
@@ -165,13 +163,13 @@ verify-claims check "某地发现外星人遗迹" --verbose
 
 小李在社交媒体上看到一条病毒式传播的帖子,想核实其真实性.
 ```bash
-# 步骤1:提取帖子中的声明
+# 步骤说明:提取帖子中的声明
 verify-claims check "某公司CEO宣布公司将关闭所有线下门店"
 # ...
-# 步骤2:指定内容类型
+# 步骤说明:指定内容类型
 verify-claims check "某公司CEO宣布公司将关闭所有线下门店" --type "social_media"
 # ...
-# 步骤3:多角度核查
+# 步骤说明:多角度核查
 verify-claims check "某公司CEO宣布公司将关闭所有线下门店" --perspectives "company,industry,general"
 ```
 
@@ -179,13 +177,13 @@ verify-claims check "某公司CEO宣布公司将关闭所有线下门店" --pers
 
 小张是研究生,需要核实论文中引用的数据是否准确.
 ```bash
-# 步骤1:核查数据声明
+# 步骤说明:核查数据声明
 verify-claims check "全球气候变化导致海平面上升 3 米"
 # ...
-# 步骤2:指定学术核查源
+# 步骤说明:指定学术核查源
 verify-claims check "全球气候变化导致海平面上升 3 米" --sources "scientific"
 # ...
-# 步骤3:获取详细引用
+# 步骤说明:获取详细引用
 verify-claims check "全球气候变化导致海平面上升 3 米" --citations
 ```
 

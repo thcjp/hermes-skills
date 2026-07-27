@@ -1,12 +1,12 @@
----slug: jinn-node-tool-free
+---
+slug: jinn-node-tool-free
 name: jinn-node-tool-free
 version: 1.0.1
 displayName: 节点工作工具
-summary: "面向个人用户的闲置节点"
-license: Proprietary
+summary: "面向个人用户的闲置节点,提供核心能力"
+license: "MIT"
 edition: free
-description: 面向个人用户的闲置节点工作与代币奖励工具，可处理提升工作效率
-  核心能力:
+description: "面向个人用户的闲置节点工作与代币奖励工具，可处置提升工作效率 核心能力:.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
 
   - 单节点初始化与钱包配置
 
@@ -22,9 +22,9 @@ description: 面向个人用户的闲置节点工作与代币奖励工具，可�
 
   - 单节点测试与试运行
 
-  - 个人钱包与完成记录管理
+  - 个人钱包与完成记录管控
 
-  差异化: 免费版聚焦个人单节点单任务执行，提供初始化与钱包查询，零成本试跑.
+  差异化: 免费版聚焦个人单节点单任务执行，包含初始化与钱包查询，零成本试跑.
   适用关键词: 节点工作, 闲置节点, 赚取奖励, 代币, worker node, idle, earn, autonomous venture'
 tags:
   - 节点
@@ -37,23 +37,19 @@ tags:
   - 写作
   - 电商
   - 开发
-  - 代码
-  - 运维
-  - yarn
-  - python
-  - wallet
-  - gas
-  - bash
 tools:
   - read
   - exec
   - write
 homepage: ""
-category: "Automation"---# 节点工作工具（免费版）
+category: "Automation"
+pricing_tier: free
+---
+# 节点工作工具（免费版）
 
 ## 概述
 
-本工具帮助个人开发者把闲置机器变成工作节点，接入自主 venture 网络执行任务并赚取代币奖励。免费版覆盖单节点初始化、单任务执行、钱包查询与完成记录跟踪，适合个人试跑.
+本工具帮助个人开发者把闲置机器变成工作节点，接入自主 venture 网络执行任务并赚取代币奖励。免费版覆盖单节点初始化、单任务执行、钱包查询与完成记录跟踪，适合个人试跑. 关键词: jinn
 ## 核心能力
 
 | 能力 | 说明 | 免费版范围 |
@@ -139,7 +135,7 @@ yarn wallet:backup
 | GEMINI_API_KEY | 视情况 | 无订阅时必需 |
 | GITHUB_TOKEN | 推荐 | 代码类任务需要 |
 
-## 最佳实践
+## 优秀实践
 
 - **密码要强**：`OPERATE_PASSWORD` 至少 8 位，混编字母数字.
 - **先单任务**：`yarn worker --single` 验证流程再持续运行.

@@ -1,5 +1,4 @@
 ---
-
 slug: liquidity-mgr-tool-free
 name: liquidity-mgr-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 流动性管理工具
 summary: "面向个人用户的 Uniswap V2/V3/V4 流动性查询与基础管理工具.。面向个人用户的去中心化交易所流动性管理工具."
 license: MIT
 edition: free
-description: "面向个人用户的去中心化交易所流动性管控工具. 适用于需要liquidity mgr tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要liquidity mgr tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "面向个人用户的去中心化交易所流动性管控工具. 适用于需要liquidity mgr tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要liquidity mgr tool相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - 流动性
   - 无常损失
@@ -24,7 +23,6 @@ category: "Creative"
 pricing_tier: free
 
 ---
-
 # 流动性管理工具（免费版）
 
 ## 概述

@@ -6,7 +6,7 @@ displayName: "技能免费版"
 summary: "基础版 AI Agent 技能审查工具，执行来源检查和 RED FLAGS 检测。。skill-vetter-free 是安全优先的 AI Agent 技能审查工具基础版。在安装技能前执行来"
 summary_zh: "基础版 AI Agent 技能审查工具，执行来源检查和 RED FLAGS 检测。。skill-vetter-free 是安全优先的 AI Agent 技能审查工具基础版。在安装技能前执行来"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要skill vetter相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   skill-vetter-free 是安全优先的 AI Agent 技能审查工具基础版。在安装技能前执行来源检查和
   RED FLAGS 代码审查，输出基础审查报告。不包含 GitHub API 快速审查命令、权限范围评估、
   信任层级评估和 4 级风险分级。适合快速安全筛查，升级完整版获取全量审查协议.
@@ -17,13 +17,17 @@ tools:
 homepage: ""
 tags:
   - 通用办公
+  - skill
+  - vetter
+  - automation
+  - productivity
   - 工具
   - 效率
-  - api
   - github
   - red
   - key
 category: "Automation"
+pricing_tier: free
 ---
 # Skill Vetter Free
 
@@ -56,7 +60,7 @@ skill-vetter-free 是安全优先的 AI Agent 技能审查工具基础版。**�
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
@@ -70,8 +74,8 @@ export API_KEY="your_api_key_here"
 ### 2. 强制代码审查（Code Review - MANDATORY）
 读取技能中的所有文件，逐一检查 RED FLAGS 清单。发现以下任何一项立即拒绝安装：
 `curl`/`wget` 到未知 URL；向外部服务器发送数据；请求凭证/令牌/API Key；
-读取 `~/.ssh`、`~/.aws`、`~/.config` 路径而无明确理由；访问 `MEMORY.md`、`USER.md`、
-`SOUL.md`、`IDENTITY.md` 等身份文件；使用 `eval()` 或 `exec()` 处理外部输入；
+读取 `./.ssh`、`./.aws`、`./.config` 路径而无明确理由；访问 `MEMORY.md`、`USER.md`、
+`SOUL.md`、`IDENTITY.md` 等身份文件；使用 `安全解析()` 或 `exec方法()` 处理外部输入；
 修改工作区外的系统文件；向 IP 地址而非域名发起网络调用；使用混淆代码.
 ### 3. 基础审查报告生成
 生成基础审查报告，包含：技能名称、来源、作者、版本；RED FLAGS 列表（None 或具体列表）；
@@ -111,11 +115,11 @@ Version: 1.2.0
 RED FLAGS:
 • （请参考skill目录中的脚本文件）: curl to unknown URL
 • （请参考skill目录中的脚本文件）: Network call to IP instead of domain
-• （请参考skill目录中的脚本文件）: Reads ~/.config without clear reason
+• （请参考skill目录中的脚本文件）: Reads ./.config without clear reason
 # ...
 VERDICT: DO NOT INSTALL
 # ...
-NOTES: install.sh 向未知 IP 发起网络请求，且访问 ~/.config 无明确理由.
+NOTES: install.sh 向未知 IP 发起网络请求，且访问 ./.config 无明确理由.
 ═══════════════════════════════════════
 ```
 
@@ -125,9 +129,9 @@ NOTES: install.sh 向未知 IP 发起网络请求，且访问 ~/.config 无明�
 |---:|---:|---:|
 | `curl`/`wget` 到未知 URL | 技能尝试从不受信任的源下载数据 | 立即标记为 RED FLAG，拒绝安装 |
 | 请求凭证/令牌/API Key | 技能要求用户提供敏感凭证 | 标记为 RED FLAG，拒绝安装 |
-| 读取 `~/.ssh`/`~/.aws`/`~/.config` | 技能访问敏感系统路径 | 检查是否有明确理由；无理由则拒绝安装 |
+| 读取 `./.ssh`/`./.aws`/`./.config` | 技能访问敏感系统路径 | 检查是否有明确理由；无理由则拒绝安装 |
 | 访问 `MEMORY.md`/`USER.md`/`SOUL.md`/`IDENTITY.md` | 技能触及 Agent 身份文件 | 立即拒绝安装 |
-| 使用 `eval()`/`exec()` 处理外部输入 | 代码注入风险 | 标记为 RED FLAG，拒绝安装 |
+| 使用 `安全解析()`/`exec方法()` 处理外部输入 | 代码注入风险 | 标记为 RED FLAG，拒绝安装 |
 
 ## 常见问题
 

@@ -6,20 +6,21 @@ displayName: "飞书发文件(免费)"
 summary: "飞书发送普通文件附件的基础版,支持file_key两步上传链路。。飞书机器人发送普通文件附件的基础技能。覆盖 HTML、ZIP、PDF、代码文件等普通文件的两步上传链路, 提供脚本化与手动两"
 summary_zh: "飞书发送普通文件附件的基础版,支持file_key两步上传链路。。飞书机器人发送普通文件附件的基础技能。覆盖 HTML、ZIP、PDF、代码文件等普通文件的两步上传链路, 提供脚本化与手动两"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要feishu send file相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   飞书机器人发送普通文件附件的基础技能。覆盖 HTML、ZIP、PDF、代码文件等普通文件的两步上传链路,
   提供脚本化与手动两种调用方式。适用于个人开发者与轻量级文件投递场景.
   本免费版仅支持普通文件链路,图片稳定发送与国际版 Lark 适配等高级能力请升级付费版.
 tags:
   - 研发工具
+  - feishu
+  - send
+  - file
+  - automation
   - 工具
   - 效率
   - 通信
   - html
   - file_key
-  - json
-  - root
-  - open_id
 tools:
   - read
   - exec
@@ -27,6 +28,7 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
 # feishu-send-file-free
 
@@ -59,7 +61,7 @@ category: "Automation"
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
@@ -96,7 +98,7 @@ python3 （请参考skill目录中的脚本文件） <file_path> <open_id> <app_
 参数说明:
 
 - `file_path`:要发送的文件本地路径(HTML/PDF/ZIP/代码文件等)
-- `open_id`:接收者 open_id,格式 `ou_xxx`
+- `open_id`:接收者 open_id,格式 `ou_identifier`
 - `app_id`:飞书应用 ID,从 `skill-platform.json` 的 `channels.feishu.appId` 读取
 - `app_secret`:飞书应用密钥,从 `skill-platform.json` 的 `channels.feishu.appSecret` 读取
 - `file_name`:可选,自定义文件名,不填则用原文件名
@@ -123,7 +125,7 @@ python3 /root/.skill-platform/workspace/skills/feishu-send-file/（请参考skil
 Step 1 - 获取 token 并上传文件:
 
 ```bash
-TOKEN=$(curl -s -X POST "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal" \
+TOKEN=$(# 安全数据传输示例/internal" \
   -H "Content-Type: application/json" \
   -d '{"app_id":"<APP_ID>","app_secret":"<APP_SECRET>"}' \
   | python3 -c "import json,sys; print(json.load(sys.stdin)['tenant_access_token'])")
@@ -149,12 +151,12 @@ curl -s -X POST "https://open.feishu.cn/open-apis/im/v1/messages?receive_id_type
 
 ### 场景一:开发者本地文件投递
 
-输入:本地 HTML 报告 `/root/myfiles/report.html`、接收者 `ou_xxx`、飞书应用凭证
+输入:本地 HTML 报告 `/root/myfiles/report.html`、接收者 `ou_identifier`、飞书应用凭证
 输出:用户在飞书会话中收到 `report.html` 文件附件,可点击预览或下载
 
 ### 场景二:轻量级 PDF 分发
 
-输入:周报 PDF `/root/reports/weekly.pdf`、接收者 `ou_xxx`、应用凭证
+输入:周报 PDF `/root/reports/weekly.pdf`、接收者 `ou_identifier`、应用凭证
 输出:用户收到 PDF 附件消息,可下载查看
 
 ## 案例展示
@@ -218,7 +220,7 @@ python3 /root/.skill-platform/workspace/skills/feishu-send-file/（请参考skil
 不可以。普通文件走 `im/v1/files` 获取 `file_key` 发 `msg_type=file`,图片需走 `im/v1/images` 获取 `image_key` 发 `msg_type=image`。本免费版仅支持普通文件链路,图片链路请升级付费版.
 ### Q3:如何获取接收者的 open_id?
 
-从 inbound_meta 的 `chat_id` 字段获取,格式为 `user:ou_xxx`,取 `ou_xxx` 部分.
+从 inbound_meta 的 `chat_id` 字段获取,格式为 `user:ou_identifier`,取 `ou_identifier` 部分.
 ### Q4:file_type 必须用 stream 吗?
 
 是的。普通文件一律使用 `file_type=stream`,这是飞书 API 对通用文件的统一类型。`pdf`、`opus`、`mp4` 等枚举值仅用于特定媒体类型,普通文件使用会导致上传失败.

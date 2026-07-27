@@ -1,5 +1,4 @@
 ---
-
 slug: rss-feed-digest-tool-free
 name: rss-feed-digest-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: RSS聚合摘要免费版
 summary: 轻量级RSS/Atom聚合摘要工具,支持关键词过滤与Markdown输出,适合个人用户生成每日资讯摘要
 license: MIT
 edition: free
-description: "RSS聚合摘要免费版为个人用户包含轻量级的RSS/Atom订阅聚合与摘要产出能力。核心能力:. 适用于需要rss feed digest tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要rss feed digest tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "RSS聚合摘要免费版为个人用户包含轻量级的RSS/Atom订阅聚合与摘要产出能力。核心能力:. 适用于需要rss feed digest tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要rss feed digest tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 研究工具
   - rss
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # RSS聚合摘要免费版
 
 ## 概述
@@ -285,10 +283,10 @@ https://www.artificialintelligence-news.com/feed/
 Markdown格式的摘要可直接粘贴到笔记应用(如Obsidian、Notion),也方便AI助手进一步分析和总结.
 ### 5. 避免抓取过于频繁
 
-RSS源通常有更新频率限制。建议每日抓取1-2次,避免对源站点造成压力。免费版不支持定时调度,可结合系统crontab实现:
+RSS源通常有更新频率限制。建议每日抓取1-2次,避免对源站点造成压力。免费版不支持定时调度,可结合系统定时任务配置实现:
 
 ```bash
-# 每日8:00自动生成摘要(crontab配置)
+# 每日8:00自动生成摘要(定时任务配置配置)
 0 8 * * * cd /path/to/skill && python3 （请参考skill目录中的脚本文件） fetch --feed-file my-feeds.txt --hours 24 --output /reports/$(date +\%Y\%m\%d)-digest.md
 ```
 

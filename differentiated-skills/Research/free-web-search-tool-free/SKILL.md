@@ -1,5 +1,4 @@
 ---
-
 slug: free-web-search-tool-free
 name: free-web-search-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 免费网页搜索工具
 summary: 轻量级联网搜索工具，支持 Bing 与 DuckDuckGo 双引擎自动路由，中文环境优化，适合个人日常信息检索.
 license: MIT
 edition: free
-description: "轻量级联网搜索工具，兼容 Bing 与 DuckDuckGo 双引擎自发路由，中文环境调优，适合个人日常信息检索。核心能力:. 适用于需要free web search tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要free web search tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "轻量级联网搜索工具，兼容 Bing 与 DuckDuckGo 双引擎自发路由，中文环境调优，适合个人日常信息检索。核心能力:. 适用于需要free web search tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要free web search tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 搜索
   - web
@@ -29,7 +28,6 @@ category: "Development"
 pricing_tier: free
 
 ---
-
 # 免费网页搜索工具
 
 ## 概述

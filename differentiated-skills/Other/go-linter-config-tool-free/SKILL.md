@@ -1,13 +1,12 @@
 ---
-
 slug: go-linter-config-tool-free
 name: go-linter-config-tool-free
 version: 1.0.0
 displayName: Go Lint 配置工具
-summary: "面向个人 Go 项目的 golangci-lint 配置与排障工具，快速起步.。面向个人 Go 开发者的 golangci-lint 配置与排障工具。核心能力:"
+summary: "面向个人 Go 项目的 golangci-lint 配置与排障工具，快速起步.。面向个人 Go 开发者的 golangci-lint 配置与排障工具。核心能力:,提供核心能力"
 license: MIT
 edition: free
-description: "面向个人 Go 开发者的 golangci-lint 配置与排障工具。核心能力:，可处置提升工作效率. 适用于需要go linter config tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要go linter config tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "面向个人 Go 开发者的 golangci-lint 配置与排障工具。核心能力:，可处置提升工作效率. 适用于需要go linter config tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要go linter config tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - Go
   - linter
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # Go Lint 配置工具（免费版）
 
 ## 概述

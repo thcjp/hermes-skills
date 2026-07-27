@@ -1,5 +1,4 @@
 ---
-
 slug: ui-audit-tool-free
 name: ui-audit-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: UI审计工具免费版
 summary: "基于UX原则的界面审计，评估视觉层级、视觉风格与可访问性，生成结构化审计报告，适合个人设计师.。UI审计工具免费版，面向个人设计师与前端开发者的轻量级界面审计工具。核心能力:"
 license: MIT
 edition: free
-description: "UI审计工具免费版，面向个人设计师与前端开发者的轻量级界面审计工具。核心能力:，可产出提升工作效率. 适用于需要ui audit tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要ui audit tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "UI审计工具免费版，面向个人设计师与前端开发者的轻量级界面审计工具。核心能力:，可产出提升工作效率. 适用于需要ui audit tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要ui audit tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - UI审计
   - audit
@@ -28,7 +27,6 @@ category: "Creative"
 pricing_tier: free
 
 ---
-
 # UI审计工具（免费版）
 
 ## 概述
@@ -147,7 +145,7 @@ echo "操作完成"
 审计偏好示例：
 - 审计维度: 视觉层级 + 视觉风格 + 可访问性
 - 检查项数量: 每维度 6-10 个
-- 状态标注: pass / warn / fail / na
+- 状态标注: step_done / warn / fail / na
 - 对比度标准: WCAG AA (4.5:1)
 - 触控目标: 44px (Apple HIG)
 - 报告格式: JSON + 文字说明

@@ -1,5 +1,4 @@
 ---
-
 slug: trade-assistant-tool-free
 name: trade-assistant-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 知识交换助手免费版
 summary: "提供基础的知识交换协议与单次提案能力，支持Agent间知识共享，适合个人开发者实验.。知识交换助手免费版，面向个人开发者的轻量级Agent间知识交换工具。核心能力:"
 license: MIT
 edition: free
-description: "知识交换助手免费版，面向个人开发者的轻量级Agent间知识交换工具。核心能力:，可处置提升工作效率. 适用于需要trade assistant tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要trade assistant tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "知识交换助手免费版，面向个人开发者的轻量级Agent间知识交换工具。核心能力:，可处置提升工作效率. 适用于需要trade assistant tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要trade assistant tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 知识交换
   - trade
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 知识交换助手（免费版）
 
 ## 概述
@@ -79,8 +77,8 @@ curl -X POST https://exchange.example.com/auth/register \
 # 示例
 {
   "message": "API key created successfully",
-  "keyId": "trade_xxxxxxxxxxxxxxxx",
-  "apiKey": "trade_xxxxxxxxxxxxxxxx.yyyyyyyyyyyyyyyy",
+  "keyId": "trade_demo",
+  "apiKey": "trade_demo.yyyyyyyyyyyyyyyy",
   "permissions": "read",
   "note": "请安全保存此密钥，无法再次获取"
 }
@@ -154,7 +152,7 @@ example.com/auth/register \
   -H "Content-Type: application/json" \
 # ...
 # 2. 保存 API 密钥到环境变量
-export TRADE_API_KEY="trade_xxx.yyy"
+export TRADE_API_KEY=${API_KEY:?请设置环境变量}
 # ...
 # 3. 查看可交换知识
   -H "Authorization: Bearer $TRADE_API_KEY"
@@ -175,9 +173,9 @@ example.com/exchange/trade/abc123 \
 
 ```bash
 # 环境变量配置
-export TRADE_API_KEY="trade_xxxxxxxxxxxxxxxx.yyyyyyyyyyyyyyyy"
-export TRADE_EXCHANGE_URL="https://exchange.example.com/exchange/"
-export TRADE_AUTH_URL="https://exchange.example.com/auth/"
+export TRADE_API_KEY=${API_KEY:?请设置环境变量}
+export TRADE_EXCHANGE_URL="${SERVER_URL:?请设置环境变量}"
+export TRADE_AUTH_URL="${SERVER_URL:?请设置环境变量}"
 # ...
 # 权限说明
 # read  - 可查看目录与交易状态
@@ -239,7 +237,7 @@ A：可以，但建议保留来源信息，并在置信度允许范围内使用.
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown指令 + 命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过 curl 命令驱动知识交换流程
-- API Key通过环境变量配置: export API_KEY=your_key
+- API Key通过环境变量配置: export API_KEY=${API_KEY:?请设置环境变量}
 
 ## 错误处理
 

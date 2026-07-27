@@ -1,5 +1,4 @@
 ---
-
 slug: "jira-free"
 name: "jira-free"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "Jira集成引擎(免费版)"
 summary: "Jira问题跟踪、Sprint管理、项目看板与工作流自动化，支持REST API操作。免费版。Jira问题跟踪与项目管理集成引擎（免费版），通过REST API操作Jira实例. 覆盖问题管"
 summary_zh: "Jira问题跟踪、Sprint管理、项目看板与工作流自动化，支持REST API操作。免费版。Jira问题跟踪与项目管理集成引擎（免费版），通过REST API操作Jira实例. 覆盖问题管"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要jira相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   Jira问题跟踪与项目管理集成引擎（免费版），通过REST API操作Jira实例.
   覆盖问题管理、Sprint规划、看板操作与工作流自动化。核心能力：
   - 问题管理（创建/更新/查询/批量操作）
@@ -21,16 +20,19 @@ tools:
   - grep
 homepage: ""
 tags:
-  - 自动化
+  - - 自动化
+  - jira
+  - automation
+  - productivity
+  - developer-tools
   - api
   - sprint
   - rest
   - key
   - atlassian
 category: "Automation"
-
+pricing_tier: free
 ---
-
 # Jira集成引擎(免费版)
 
 Jira问题跟踪与项目管理集成引擎，通过REST API操作Jira实例，覆盖问题管理、Sprint规划与工作流自动化.
@@ -61,7 +63,7 @@ Jira问题跟踪与项目管理集成引擎，通过REST API操作Jira实例，�
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力

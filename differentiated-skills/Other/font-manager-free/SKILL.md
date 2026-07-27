@@ -1,5 +1,4 @@
 ---
-
 slug: font-manager-free
 name: font-manager-free
 version: 1.0.1
@@ -24,7 +23,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 字体管理器（免费版）
 
 > **网页字体排版指南。展示与正文字体区分、安全配对、字重渲染、行高行宽规范。**
@@ -376,65 +374,6 @@ python3 （请参考skill目录中的脚本文件） perf-optimize styles.css
 
 ---
 
-## 示例
-
-### 排版规范配置
-
-```yaml
-# typography-config.yaml
-typography:
-  heading_font: "Playfair Display"
-  body_font: "Source Sans Pro"
-# ...
-  scale_ratio: 1.25  # 字号比例（1.25或1.333）
-# ...
-  sizes:
-    h1: 2.5rem
-    h2: 2rem
-    h3: 1.5rem
-    body: 1rem
-    small: 0.875rem
-# ...
-  weights:
-    body: 400
-    strong: 700
-    heading: 700
-# ...
-  line_height:
-    body: 1.6
-    heading: 1.2
-# ...
-  max_width: 65ch
-# ...
-  letter_spacing:
-    uppercase: 0.05em
-# ...
-  font_display: swap
-```
-
-### 字体加载优化配置
-
-```yaml
-# font-loading.yaml
-loading:
-  strategy: swap  # swap/fallback/optional/mandatory
-  preload:
-    - name: "Inter"
-      weight: 400
-      url: "/fonts/inter-400.woff2"
-    - name: "Inter"
-      weight: 700
-      url: "/fonts/inter-700.woff2"
-# ...
-  subset:
-    enabled: true
-    languages: [latin, latin-ext]
-# ...
-  format: woff2  # 仅使用WOFF2
-```
-
----
-
 ## 优秀实践
 
 1. **展示字体仅用于标题**：24px以上的大字才用展示字体，正文一律用正文字体.
@@ -447,25 +386,6 @@ loading:
 8. **WOFF2优先**：仅提供WOFF2格式，通用支持且压缩率优秀.
 ---
 
-## 常见问题
-
-### Q1：如何判断一个字体是展示字体还是正文字体？
-
-展示字体通常装饰性强、有极端粗细对比、设计用于大字号展示。正文字体设计用于12-18px小字号长时间阅读。简单判断：如果字体看起来"花哨"或"有个性"，它很可能是展示字体.
-### Q2：两个相似字体配对为什么不好？
-
-两个太相似的字体配对，看起来像是你本想用一个字体但不小心用了两个，给人"错误"的感觉。要么用明显不同的字体形成对比，要么就用一个字体的不同字重.
-### Q3：为什么细字重在Windows上渲染差？
-
-Windows的字体渲染引擎（GDI/DirectWrite）对细字重的处理不如macOS的CoreText精细，100-300字重在Windows上容易显得模糊。建议正文使用400+字重确保跨平台一致.
-### Q4：font-display: swap具体解决什么问题？
-
-没有`font-display: swap`时，字体加载完成前文字不可见（FOIT，Flash of Invisible Text），用户看到空白页面。设置swap后，先用系统字体显示文字，字体加载完成后替换（FOUT，Flash of Unstyled Text），用户始终能看到内容.
-### 已知限制
-
-免费版支持字体使用分析、配对检查、排版参数建议、性能检查、系统字体栈推荐。不支持高级配对算法、字体子集化工具、设计系统集成、无障碍排版检查、多语言排版适配、字体CDN优化等高级功能。解锁全部功能请使用专业版：font-manager-pro.
----
-- 当前为免费版本,如需完整功能请升级到付费版获取全部能力
 ## 依赖说明
 
 ### 运行环境

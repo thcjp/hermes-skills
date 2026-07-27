@@ -6,27 +6,29 @@ displayName: "Discord 基础控制"
 summary: "通过discord工具控制机器人,收发消息、表情回应、读取与置顶消息等基础操作。discord-free 提供 Discord 机器人的基础控制能力,覆盖消息收发与编辑、 表情回应、消息读取"
 summary_zh: "通过discord工具控制机器人,收发消息、表情回应、读取与置顶消息等基础操作。discord-free 提供 Discord 机器人的基础控制能力,覆盖消息收发与编辑、 表情回应、消息读取"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要discord相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   discord-free 提供 Discord 机器人的基础控制能力,覆盖消息收发与编辑、
   表情回应、消息读取、置顶管理等常用操作。适合个人开发者与小型社区进行
   通知推送、简单互动与消息归档。投票、线程、审核、表情包上传、角色变更等
   高级能力需升级到付费版 discord.
 tags:
   - Communication
-  - Discord
+  - discord
+  - automation
+  - productivity
+  - developer-tools
   - 社交
   - 通信
   - channelid
-  - discord
   - sendmessage
   - channel
-  - react
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: free
 ---
 # Discord 基础控制
 
@@ -173,6 +175,6 @@ Discord 单频道置顶上限为 50 条,超出需先 `listPins` 取消旧置顶�
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.

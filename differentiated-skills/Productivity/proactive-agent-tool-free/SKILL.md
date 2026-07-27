@@ -1,5 +1,4 @@
 ---
-
 slug: proactive-agent-tool-free
 name: proactive-agent-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 主动型 Agent 基础版
 summary: "将 AI Agent 从任务跟随者转变为主动伙伴,支持记忆持久化与自我改进。核心能力: AI Agent领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT
 edition: free
-description: "核心能力: AI Agent领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要proactive agent tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要proactive agent tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "核心能力: AI Agent领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要proactive agent tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要proactive agent tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 主动型Agent
   - proactive
@@ -30,7 +29,6 @@ category: "Agents"
 pricing_tier: free
 
 ---
-
 # 主动型 Agent 基础版
 
 ## 概述

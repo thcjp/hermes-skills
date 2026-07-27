@@ -1,5 +1,4 @@
 ---
-
 slug: web-vuln-assess-tool-free
 name: web-vuln-assess-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: Web漏洞评估(免费版)
 summary: "OWASP对齐的Web应用漏洞评估,覆盖19类漏洞,含检查清单与修复指南,支持多种使用场景和自动化处理"
 license: MIT
 edition: free
-description: "核心能力:，可处置提升工作效率. 适用于需要web vuln assess tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要web vuln assess tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "核心能力:，可处置提升工作效率. 适用于需要web vuln assess tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要web vuln assess tool相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - 安全
   - web
@@ -29,7 +28,6 @@ category: "Development"
 pricing_tier: free
 
 ---
-
 # Web漏洞评估(免费版)
 
 ## 概述
@@ -52,7 +50,7 @@ Web漏洞评估免费版是一款面向Web应用的安全漏洞评估工具。�
 | 9 | 不安全通信 | MEDIUM | - |
 | 10 | 客户端漏洞 | MEDIUM | - |
 | 11 | 拒绝服务(DoS) | MEDIUM | - |
-| 12 | 服务端请求伪造(SSRF) | HIGH | A10:2021 |
+| 12 | 服务端请求伪造(网络代理F) | HIGH | A10:2021 |
 | 13 | 认证绕过 | CRITICAL | - |
 | 14 | 内容欺骗 | MEDIUM | - |
 | 15 | 业务逻辑缺陷 | HIGH | - |
@@ -124,7 +122,7 @@ CMS系统: WordPress
 # ...
 3. 生成报告:
    CRITICAL: 2 (SQL注入, 认证绕过)
-   HIGH: 3 (XSS, SSRF, 访问控制)
+   HIGH: 3 (XSS, 网络代理F, 访问控制)
    MEDIUM: 4 (配置错误, CORS, DoS, 内容欺骗)
 ```
 
@@ -227,7 +225,7 @@ class WebVulnAssessment:
                 "所有API端点是否有认证检查?",
                 "是否有授权验证(用户只能访问自己的数据)?",
                 "是否存在IDOR(不安全直接对象引用)?",
-                "是否有SSRF防护?",
+                "是否有网络代理F防护?",
                 "管理接口是否受到保护?"
             ]
         },
@@ -243,7 +241,7 @@ class WebVulnAssessment:
                 "是否使用API网关统一管理?"
             ]
         },
-        "ssrf": {
+        "网络代理f": {
             "name": "服务端请求伪造",
             "severity": "HIGH",
             "owasp": "A10:2021",
@@ -265,7 +263,7 @@ class WebVulnAssessment:
             "是否使用python-jose安全处理JWT?"
         ],
         "react": [
-            "是否避免使用dangerouslySetInnerHTML?",
+            "是否避免使用HIGHRISKlySetInnerHTML?",
             "是否对用户输入进行DOMPurify消毒?",
             "是否使用httpOnly Cookie存储令牌?",
             "是否配置CSP防止XSS?"
@@ -373,7 +371,7 @@ app_info = {
     "assessment_scope": [
         "injection", "authentication", "data_exposure",
         "misconfiguration", "access_control", "api_security",
-        "communication", "client_side", "ssrf", "business_logic"
+        "communication", "client_side", "网络代理f", "business_logic"
     ],
     "compliance_frameworks": ["owasp_top_10", "pci_dss"]
 }
@@ -394,7 +392,7 @@ app_info = {
 
 ```text
 领先优先: CRITICAL漏洞(注入、认证绕过、零日模式)
-第二优先: HIGH漏洞(XSS、SSRF、访问控制、API安全)
+第二优先: HIGH漏洞(XSS、网络代理F、访问控制、API安全)
 第三优先: MEDIUM漏洞(配置错误、CORS、DoS)
 第四优先: LOW漏洞(信息泄露、优秀实践)
 ```

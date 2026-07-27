@@ -1,5 +1,4 @@
 ---
-
 slug: domain-dns-manager-free
 name: domain-dns-manager-free
 version: 1.0.1
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 域名DNS管理免费版（Domain DNS Manager Free）
 
 ## 概述
@@ -150,16 +148,16 @@ curl -I https://example.com
 
 ```bash
 # Cloudflare Token（二选一）
-export CLOUDFLARE_API_TOKEN="your_token_here"
+export CLOUDFLARE_API_TOKEN="${KEY:?请设置环境变量}"_here"
 # 或
-export CF_API_TOKEN="your_token_here"
+export CF_API_TOKEN="${KEY:?请设置环境变量}"_here"
 # ...
 # DNSimple Token
-export DNSIMPLE_ACCESS_TOKEN="your_token_here"
+export DNSIMPLE_ACCESS_TOKEN=${ACCESS_TOKEN:?请设置环境变量}
 # ...
 # Namecheap API
 export NAMECHEAP_API_USER="your_username"
-export NAMECHEAP_API_KEY="your_api_key"
+export NAMECHEAP_API_KEY=${API_KEY:?请设置环境变量}
 ```
 
 ### DNS记录配置模板
@@ -245,7 +243,7 @@ A：在Cloudflare控制台或使用API：`cloudflare-ai-bots disable`。部分�
 - **DNSimple Token**：通过环境变量`DNSIMPLE_ACCESS_TOKEN`配置
 - **Namecheap API**：通过环境变量`NAMECHEAP_API_USER`与`NAMECHEAP_API_KEY`配置
 - **禁止**：在SKILL.md或脚本中硬编码API Token
-- **建议**：Token存储在`~/.env`或系统密钥管理器中
+- **建议**：Token存储在`./.env`或系统密钥管理器中
 
 ### 可用性分类
 - **分类**：MD+EXEC（Markdown指令驱动，API调用与验证需要exec命令行能力）

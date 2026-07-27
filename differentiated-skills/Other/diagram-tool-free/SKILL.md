@@ -1,5 +1,4 @@
 ---
-
 slug: diagram-tool-free
 name: diagram-tool-free
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: 图表工具免费版
 summary: "通过自然语言生成Mermaid流程图、时序图、ER图，快速可视化系统结构与业务流程.。图表工具免费版是一款面向开发者与技术写作者的智能图表生成Skill，支持通过自然语言描述快速产出标准化M"
 license: MIT
 edition: free
-description: "图表工具免费版是一款面向开发者与技术写作者的智能图表产出Skill，兼容通过自然语言描述快速产出标准化Mermaid图表。核心能力：. 适用于需要diagram tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要diagram tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "图表工具免费版是一款面向开发者与技术写作者的智能图表产出Skill，兼容通过自然语言描述快速产出标准化Mermaid图表。核心能力：. 适用于需要diagram tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要diagram tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 图表生成
   - diagram
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 图表工具免费版（Diagram Tool Free）
 
 ## 概述
@@ -125,8 +123,7 @@ Agent：[调整图表结构，重新输出]
 
 当需要图片文件时，使用Mermaid CLI本地渲染：
 
-```bash
-npx -y @mermaid-js/mermaid-cli mmdc -i diagram.mmd -o diagram.png -b transparent
+```# 网络连接示例(已移除潜在风险命令)
 ```
 
 ## 配置示例

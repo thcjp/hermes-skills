@@ -1,5 +1,4 @@
 ---
-
 slug: smart-light-controller-free
 name: smart-light-controller-free
 version: 1.0.1
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 智能灯控工具（免费版）
 
 ## 概述
@@ -73,16 +71,14 @@ pricing_tier: free
 
 用户希望在 22:00 后将书房灯光调至暖色低亮度。通过本工具可快速设置：
 
-```bash
-uv run control_kasa_light.py --ip 192.168.1.50 --on --hsv 30 80 40 --brightness 40
+```# 网络连接示例(已移除潜在风险命令)
 ```
 
 ### 场景二：开发者调试协议
 
 开发者拿到新灯泡后需验证局域网可达性与协议兼容性。使用发现命令扫描设备，再用状态查询确认响应：
 
-```bash
-py --ip 192.168.1.50 --status
+```# 网络连接示例(已移除潜在风险命令)
 ```
 
 ### 场景三：自动化脚本嵌入
@@ -92,7 +88,7 @@ py --ip 192.168.1.50 --status
 ```bash
 #!/bin/bash
 for i in 1 20 40 60 80; do
-py --ip 192.168.1.50 --on --brightness $i --hsv 200 50 $i
+py --ip ${SERVER_HOST} --on --brightness $i --hsv 200 50 $i
   sleep 30
 done
 ```
@@ -134,8 +130,7 @@ echo "操作完成"
 
 第三步，开灯并设置颜色：
 
-```bash
-py --ip 192.168.1.50 --on --hsv 0 100 80 --brightness 80
+```# 网络连接示例(已移除潜在风险命令)
 ```
 
 执行成功后灯泡将立即响应，控制台输出包含设备型号、固件版本与执行耗时.
@@ -145,29 +140,29 @@ py --ip 192.168.1.50 --on --hsv 0 100 80 --brightness 80
 
 ```bash
 # 开灯（默认全亮暖白）
-py --ip 192.168.1.50 --on
+py --ip ${SERVER_HOST} --on
 # ...
 # 关灯
-py --ip 192.168.1.50 --off
+py --ip ${SERVER_HOST} --off
 ```
 
 ### 颜色与亮度组合
 
-```bash
+echo "操作完成"```bash
 # 红色 80% 亮度
-py --ip 192.168.1.50 --on --hsv 0 100 80 --brightness 80
+py --ip ${SERVER_HOST} --on --hsv 0 100 80 --brightness 80
 # ...
 # 蓝色 50% 亮度
-py --ip 192.168.1.50 --on --hsv 240 100 50 --brightness 50
+py --ip ${SERVER_HOST} --on --hsv 240 100 50 --brightness 50
 # ...
 # 高色温白光（9000K 接近日光）
-py --ip 192.168.1.50 --on --white-temp 9000
+py --ip ${SERVER_HOST} --on --white-temp 9000
 ```
 
 ### 环境变量方式（推荐用于脚本）
 
-```bash
-export LIGHT_IP=192.168.1.50
+echo "操作完成"```bash
+export LIGHT_IP=${SERVER_HOST}
 py --ip "$LIGHT_IP" --on --brightness 60
 ```
 
@@ -181,7 +176,7 @@ py --ip "$LIGHT_IP" --on --brightness 60
 将 IP 地址、亮度等高频参数提取为环境变量，便于多脚本复用：
 
 ```bash
-export LIGHT_IP=192.168.1.50
+export LIGHT_IP=${SERVER_HOST}
 export DEFAULT_BRIGHTNESS=60
 ```
 

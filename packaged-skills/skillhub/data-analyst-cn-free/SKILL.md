@@ -6,7 +6,7 @@ displayName: "数据分析师(免费版)"
 summary: "基础数据清洗、描述统计与基础可视化代码生成，支持CSV与Excel读取。数据分析师免费版，提供基础的数据清洗与统计分析能力. 核心能力包括： - CSV与Excel数据读取（pd.read_"
 summary_zh: "基础数据清洗、描述统计与基础可视化代码生成，支持CSV与Excel读取。数据分析师免费版，提供基础的数据清洗与统计分析能力. 核心能力包括： - CSV与Excel数据读取（pd.read_"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要data analyst cn相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   数据分析师免费版，提供基础的数据清洗与统计分析能力.
   核心能力包括：
   - CSV与Excel数据读取（pd.read_csv、pd.read_excel）
@@ -17,16 +17,15 @@ description: |-
   高级功能（IQR异常值剔除、时间序列分析、高级图表、分析报告生成）为付费版专享.
 tags:
   - 信息检索
+  - analyst
+  - automation
+  - productivity
   - data-analysis
   - visualization
   - 数据处理
   - 数据分析
   - 工具
   - plt
-  - api
-  - python
-  - 为付费版
-  - 专享功能
 tools:
   - read
   - exec
@@ -34,6 +33,7 @@ tools:
   - glob
 homepage: ""
 category: "Research"
+pricing_tier: free
 ---
 # 数据分析师（免费版）
 
@@ -153,7 +153,7 @@ plt.rcParams['axes.unicode_minus'] = False
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 使用流程

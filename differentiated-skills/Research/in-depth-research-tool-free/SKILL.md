@@ -1,5 +1,4 @@
 ---
-
 slug: in-depth-research-tool-free
 name: in-depth-research-tool-free
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: 深度研究工具
 summary: 多源深度研究工具，支持系统性信息探索、来源评估与方法论追踪，生成结构化研究报告，适合个人研究与学习.
 license: MIT
 edition: free
-description: "多源深度研究工具，兼容系统性信息探索、来源评估与方法论追踪，产出结构化研究报告，适合个人研究与学习. 适用于需要in depth research tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要in depth research tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "多源深度研究工具，兼容系统性信息探索、来源评估与方法论追踪，产出结构化研究报告，适合个人研究与学习. 适用于需要in depth research tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要in depth research tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 研究
   - depth
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # 深度研究工具（免费版）
 
 ## 概述

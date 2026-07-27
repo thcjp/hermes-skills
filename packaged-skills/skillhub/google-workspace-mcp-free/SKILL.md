@@ -2,25 +2,23 @@
 slug: "google-workspace-mcp-free"
 name: "google-workspace-mcp-free"
 version: "1.0.0"
-displayName: "Workspace MCP免费版"
-summary: "免Google Cloud Console配置,OAuth登录即用Gmail/Calendar/Drive/Docs/Sheets的基础读取能力,覆盖邮件检索、日程查看、文件下载与文档表格读取。"
-summary_zh: "免Google Cloud Console配置,OAuth登录即用Gmail/Calendar/Drive/Docs/Sheets的基础读取能力,覆盖邮件检索、日程查看、文件下载与文档表格读取。"
+displayName: "Workspace 工具协议免费版"
+summary: "免Google Cloud Console配置,OAuth登录即用Gmail/Calendar/Drive/Docs/Sheets的基础读取能力,覆盖邮件检索、日程查看、文件下载与文档表格,提供."
+summary_zh: "免Google Cloud Console配置,OAuth登录即用Gmail/Calendar/Drive/Docs/Sheets的基础读取能力,覆盖邮件检索、日程查看、文件下载与文档表格,提供核心能力"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要google workspace mcp相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   通过 @presto-ai/google-workspace-mcp 以纯OAuth登录方式访问Google Workspace,跳过Cloud Console建项目、启用API、下载client_secret.json等繁琐步骤。免费版提供Gmail邮件搜索与读取、Calendar日程查看、Drive文件检索与下载、Docs文档检索与文本提取、Sheets表格区域读取等基础能力,适合个人开发者体验Google Workspace自动化办公。写入、发送、会议创建、Chat与Slides等高级能力见付费版.
 tags:
   - 通用办公
+  - google
+  - workspace
+  - mcp
+  - automation
   - Productivity
-  - Google
   - 工具
   - 效率
   - 通信
   - 邮件
-  - gmail
-  - mcporter
-  - google-workspace
-  - call
-  - server
 tools:
   - read
   - exec
@@ -28,16 +26,17 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
-# Google Workspace MCP 免费版
+# Google Workspace 工具协议 免费版
 
-通过 `@presto-ai/google-workspace-mcp` 以OAuth登录访问Google Workspace,无需在Google Cloud Console创建项目或下载client_secret.json。首次使用时弹出浏览器完成Google授权,凭证保存在 `~/.config/google-workspace-mcp/`.
+通过 `@presto-ai/google-workspace-mcp` 以OAuth登录访问Google Workspace,无需在Google Cloud Console创建项目或下载client_secret.json。首次使用时弹出浏览器完成Google授权,凭证保存在 `./.config/google-workspace-mcp/`.
 免费版聚焦基础读取场景,提供邮件检索、日程查看、文件下载与文档表格文本提取能力。所有工具通过同一OAuth凭证访问,无需为每个服务单独配置.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
 |---|---|---|---|
-| input | string | 是 | Workspace MCP免费版处理的输入数据或指令 |
+| input | string | 是 | Workspace 工具协议免费版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
@@ -60,7 +59,7 @@ category: "Automation"
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
@@ -97,7 +96,7 @@ npm install -g @presto-ai/google-workspace-mcp
 mcporter config add google-workspace --command "npx" --arg "-y" --arg "@presto-ai/google-workspace-mcp" --scope home
 ```
 
-首次调用任意工具会打开浏览器请求Google授权,完成后凭证写入 `~/.
+首次调用任意工具会打开浏览器请求Google授权,完成后凭证写入 `./.
 ## 常用命令
 
 ```bash
@@ -161,7 +160,7 @@ mcporter call --server google-workspace --tool "time.getCurrentDate"
 ## 异常处理
 
 - **OAuth令牌过期**: 工具返回401或未授权时,调用 `auth.refreshToken` 刷新; 仍失败则 `auth.clear` 后重新触发浏览器授权.
-- **首次授权浏览器未弹出**: 确认系统默认浏览器已设置且非headless环境; 远程SSH场景需本地授权后复制 `~/.config/google-workspace-mcp/` 目录.
+- **首次授权浏览器未弹出**: 确认系统默认浏览器已设置且非headless环境; 远程SSH场景需本地授权后复制 `./.config/google-workspace-mcp/` 目录.
 - **gmail.search 返回空**: 校验查询语法(如 `is:unread`、`from:`、`after:`),放宽时间或标签条件; Gmail查询不支持正则,仅支持其原生搜索运算符.
 - **drive.downloadFile 写入失败**: `localPath` 所在目录无写权限时更换到 `/tmp` 或用户目录; 文件过大受Google导出配额限制.
 - **sheets.getRange 范围超界**: 工作表名需与实际一致(默认 `Sheet1`),区域引用如 `Sheet1!A1:B10`; 超出已用区域返回空值而非报错.
@@ -177,7 +176,7 @@ mcporter call --server google-workspace --tool "time.getCurrentDate"
 **是否必须创建Google Cloud项目?**
 不需要。本技能通过托管OAuth绕过Cloud Console建项目、启用API等步骤,只需浏览器登录Google账号即可.
 **凭证存储在哪里? 如何切换账号?**
-凭证保存在 `~/.config/google-workspace-mcp/`。切换账号时执行 `auth.clear` 清除当前凭证,再次调用工具会触发新账号的浏览器授权.
+凭证保存在 `./.config/google-workspace-mcp/`。切换账号时执行 `auth.clear` 清除当前凭证,再次调用工具会触发新账号的浏览器授权.
 **免费版能发送邮件或创建会议吗?**
 不能。免费版仅提供读取类工具,发送邮件、创建/修改日程、文档写入等能力需升级到付费版.
 **支持Google Workspace企业账号吗?**

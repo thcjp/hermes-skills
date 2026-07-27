@@ -1,14 +1,12 @@
----slug: "java-free"
+---
+slug: "java-free"
 name: "java-free"
 version: "1.0.0"
 displayName: "Java基础版"
-summary: "编写健壮 Java 代"
-summary_zh: "编写健壮 Java 代码的基础能力，覆盖空指针防护、相等性判断与基础异常处理。。编写健壮 Java 代码的基础能力，覆盖空指针防护、相等性判断 与基础异常处理. 核心能力: - NullPo"
+summary: "编写健壮 Java 代,提供核心能力"
+summary_zh: "编写健壮 Java 代,提供核心能力"
 license: "MIT"
-description: |-
-  编写健壮 Java 代码的基础能力，覆盖空指针防护、相等性判断
-  与基础异常处理.
-  核心能力:
+description: "|- 编写健壮 Java 代码的基础能力，覆盖空指针防护、相等性判断 与基础异常处理. 核心能力:.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处理,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处理,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
 
   - NullPointerException 防护与 Optional 基础用法
 
@@ -41,7 +39,10 @@ tools:
   - write
   - exec
 homepage: ""
-category: "Automation"---# Java 基础版
+category: "Automation"
+pricing_tier: free
+---
+# Java 基础版
 
 ## 核心能力
 
@@ -113,7 +114,7 @@ category: "Automation"---# Java 基础版
       },
       {
         "item": "资源管理",
-        "status": "pass",
+        "status": "step_done",
         "score": 95,
         "comment": "已正确使用 try-with-resources"
       }

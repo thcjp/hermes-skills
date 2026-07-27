@@ -1,5 +1,4 @@
 ---
-
 slug: gif-whatsapp-tool-free
 name: gif-whatsapp-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: WhatsApp表情搜索
 summary: WhatsApp GIF 表情搜索发送工具，支持 Tenor/Giphy 搜索并自动转换为 MP4 格式发送，适合个人日常聊天使用.
 license: MIT
 edition: free
-description: "WhatsApp GIF 表情搜索发送工具，兼容 Tenor/Giphy 搜索并自发变换为 MP4 格式发送，适合个人日常聊天使用。核心能力:. 适用于需要gif whatsapp tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要gif whatsapp tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "WhatsApp GIF 表情搜索发送工具，兼容 Tenor/Giphy 搜索并自发变换为 MP4 格式发送，适合个人日常聊天使用。核心能力:. 适用于需要gif whatsapp tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要gif whatsapp tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - WhatsApp
   - gif
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # WhatsApp 表情搜索（免费版）
 
 ## 概述

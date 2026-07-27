@@ -6,7 +6,7 @@ displayName: "神经记忆增强系统"
 summary: "基于扩散激活的联想记忆系统，通过神经图谱实现基础持久化召回。生物学启发的联想记忆系统，采用扩散激活替代关键词检索。记忆以神经图谱形式组织， 神经元之间通过类型化突触连接，频繁共同访问的记忆自"
 summary_zh: "基于扩散激活的联想记忆系统，通过神经图谱实现基础持久化召回。生物学启发的联想记忆系统，采用扩散激活替代关键词检索。记忆以神经图谱形式组织， 神经元之间通过类型化突触连接，频繁共同访问的记忆自"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要neural memory enhanced相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   生物学启发的联想记忆系统，采用扩散激活替代关键词检索。记忆以神经图谱形式组织，
   神经元之间通过类型化突触连接，频繁共同访问的记忆自动强化连接，陈旧记忆自然衰减.
   基础能力涵盖扩散激活召回、结构化记忆存储、记忆生命周期管理.
@@ -19,15 +19,17 @@ tools:
 homepage: ""
 tags:
   - 智能助手
+  - neural
+  - memory
+  - enhanced
+  - automation
   - 记忆管理
   - 上下文
   - AI
   - depth
   - neural-memory
-  - nmem_remember
-  - agent
-  - 数据库
 category: "Agents"
+pricing_tier: free
 ---
 # 神经记忆增强系统（基础版）
 
@@ -87,9 +89,9 @@ category: "Agents"
 
 ## 使用流程
 
-### 第一步：初始化大脑环境
+### 领先步：初始化大脑环境
 
-执行 `nmem init` 创建默认大脑，生成 `~/.neuralmemory/` 目录结构。在工具配置文件中添加 neural-memory 服务端点，配置环境变量 `NEURALMEMORY_BRAIN` 指定当前活跃大脑。执行 `nmem stats` 验证大脑统计信息.
+执行 `nmem init` 创建默认大脑，生成 `./.neuralmemory/` 目录结构。在工具配置文件中添加 neural-memory 服务端点，配置环境变量 `NEURALMEMORY_BRAIN` 指定当前活跃大脑。执行 `nmem stats` 验证大脑统计信息.
 ### 第二步：会话启动时注入上下文
 
 会话开始时调用 `nmem_context` 获取最近活跃记忆，将其注入当前上下文。如果用户提及特定主题，立即调用 `nmem_recall` 以该主题为查询进行标准深度召回.
@@ -101,8 +103,8 @@ category: "Agents"
 
 | 错误类型 | 原因 | 处理方式 |
 |:-----|:-----|:-----|
-| 大脑未初始化 | `~/.neuralmemory/` 目录不存在或配置缺失 | 执行 `nmem init` 重新初始化，检查工具配置中 neural-memory 端点是否正确注册 |
-| SQLite数据库锁冲突 | 多个进程同时写入同一大脑的数据库文件 | 关闭重复的 Agent 实例，等待5秒后检查网络连接和配置后重试；若持续锁死，删除 `~/.neuralmemory/brains/<brain>.db-wal` 文件后重启 |
+| 大脑未初始化 | `./.neuralmemory/` 目录不存在或配置缺失 | 执行 `nmem init` 重新初始化，检查工具配置中 neural-memory 端点是否正确注册 |
+| SQLite数据库锁冲突 | 多个进程同时写入同一大脑的数据库文件 | 关闭重复的 Agent 实例，等待5秒后检查网络连接和配置后重试；若持续锁死，删除 `./.neuralmemory/brains/<brain>.db-wal` 文件后重启 |
 | 记忆衰减过度 | 90天以上未访问的记忆召回率显著下降 | 使用 depth=1 召回激活陈旧记忆，或重新调用 nmem_remember 强化该记忆 |
 
 ## 示例
@@ -155,7 +157,7 @@ nmem_recall(
 - **Agent平台**：支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
 - **操作系统**：Windows / macOS / Linux
 - **Python环境**：Python 3.8+（neural-memory 包依赖）
-- **本地存储**：可写的 `~/.neuralmemory/` 目录
+- **本地存储**：可写的 `./.neuralmemory/` 目录
 
 ### 依赖项
 

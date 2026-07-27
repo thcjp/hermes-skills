@@ -1,5 +1,4 @@
 ---
-
 slug: short-story-tool-free
 name: short-story-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 短篇网文写作-免费版
 summary: "短篇网文创作助手,支持故事构思、结构搭建与快速成文,适合个人创作。短篇网文创作助手免费版,面向个人作者与写作爱好者."
 license: MIT
 edition: free
-description: "短篇网文创作助手免费版,面向个人作者与写作爱好者，可自发提升工作效率. 适用于需要short story tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要short story tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "短篇网文创作助手免费版,面向个人作者与写作爱好者，可自发提升工作效率. 适用于需要short story tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要short story tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 短篇创作
   - short
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 短篇网文写作 - 免费版
 
 ## 概述

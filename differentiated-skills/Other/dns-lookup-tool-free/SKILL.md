@@ -1,5 +1,4 @@
 ---
-
 slug: dns-lookup-tool-free
 name: dns-lookup-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: DNS查询免费版
 summary: "使用dig工具解析域名A/AAAA/CNAME/MX记录，支持基础正反向查询与文档输出.。DNS查询免费版是一款面向运维与开发者的轻量级DNS诊断Skill，封装标准dig命令并提供结构化输"
 license: MIT
 edition: free
-description: "DNS查询免费版是一款面向运维与开发者的轻量级DNS诊断Skill，封装标准dig命令并包含结构化输出。核心能力：. 适用于需要dns lookup tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要dns lookup tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "DNS查询免费版是一款面向运维与开发者的轻量级DNS诊断Skill，封装标准dig命令并包含结构化输出。核心能力：. 适用于需要dns lookup tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要dns lookup tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - DNS查询
   - dns
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # DNS查询免费版（DNS Lookup Tool Free）
 
 ## 概述

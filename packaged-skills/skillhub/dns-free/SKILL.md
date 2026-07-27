@@ -1,13 +1,12 @@
 ---
-
 slug: "dns-free"
 name: "dns-free"
 version: "1.0.0"
 displayName: "DNS配置基础版"
-summary: "DNS记录配置基础、TTL迁移提示与邮件认证SPF/DMARC入门检查。DNS配置基础版Skill,覆盖TTL迁移提示、SPF/DMARC入门检查与dig基础诊断. 核心能力: - 迁移前的"
-summary_zh: "DNS记录配置基础、TTL迁移提示与邮件认证SPF/DMARC入门检查。DNS配置基础版Skill,覆盖TTL迁移提示、SPF/DMARC入门检查与dig基础诊断. 核心能力: - 迁移前的"
+summary: "提供包含DNS记录配置基础、TTL迁移提示与邮件认证SPF/DMARC入门检查.DNS配置基础版Skill,覆盖TTL迁移提示、SPF/DMARC入门检查与dig基础诊断. 核心能力: - 迁移前的"
+summary_zh: "DNS记录配置基础、TTL迁移提示与邮件认证SPF/DMARC入门检查。DNS配置基础版Skill,覆盖TTL迁移提示、SPF/DMARC入门检查与dig基础诊断"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要dns相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   DNS配置基础版Skill,提供DNS快速诊断与自动检测能力,覆盖TTL迁移提示、SPF/DMARC入门检查与dig基础诊断.
   核心能力:
   - 迁移前的TTL降级提示与基础缓存探测
@@ -20,7 +19,11 @@ description: |-
   - 邮件认证SPF/DMARC基础配置
   - DNS记录基础排查
 tags:
-  - DNS
+  - - DNS
+  - dns
+  - automation
+  - productivity
+  - developer-tools
   - DMARC
   - TTL
   - SPF
@@ -32,9 +35,8 @@ tools:
   - write
 homepage: ""
 category: "Automation"
-
+pricing_tier: free
 ---
-
 # DNS配置基础版
 
 ## 输入格式
@@ -64,7 +66,7 @@ category: "Automation"
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力

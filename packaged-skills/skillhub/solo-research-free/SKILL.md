@@ -6,7 +6,7 @@ displayName: "独立研究工具免费版"
 summary: "免费版研究工具，支持WebFetch内容获取与基础搜索策略。。独立研究工具免费版，提供基础的多策略搜索能力. 支持WebFetch内容获取与基础搜索回退策略. 适用于个人研究与技术调研场景."
 summary_zh: "免费版研究工具，支持WebFetch内容获取与基础搜索策略。。独立研究工具免费版，提供基础的多策略搜索能力. 支持WebFetch内容获取与基础搜索回退策略. 适用于个人研究与技术调研场景."
 license: "MIT"
-description: |-
+description: "|-. 适用于需要solo research相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   独立研究工具免费版，提供基础的多策略搜索能力.
   支持WebFetch内容获取与基础搜索回退策略.
   适用于个人研究与技术调研场景.
@@ -18,15 +18,17 @@ tools:
 homepage: ""
 tags:
   - 信息检索
+  - solo
+  - research
+  - automation
+  - productivity
   - 搜索
   - 检索
   - 工具
   - webfetch
-  - api
   - 内容获取
-  - url
-  - agent
 category: "Knowledge"
+pricing_tier: free
 ---
 # 独立研究工具（免费版）
 
@@ -58,7 +60,7 @@ category: "Knowledge"
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
@@ -139,7 +141,7 @@ Agent: 研究完成
 ## 常见问题
 
 ### Q1: 免费版与付费版有什么区别？
-A: 免费版提供WebFetch内容获取与基础回退策略。付费版额外提供GitHub Library Discovery、MCP web_search、Product Hunt Research、交叉验证与结构化结果输出等高级功能.
+A: 免费版提供WebFetch内容获取与基础回退策略。付费版额外提供GitHub Library Discovery、工具协议 web_search、Product Hunt Research、交叉验证与结构化结果输出等高级功能.
 ### Q2: 如何处理被阻止的内容？
 A: 使用回退策略：寻找替代URL、从搜索摘要提取关键信息、提示用户提供内容.
 ### Q3: 支持哪些搜索方式？
@@ -147,7 +149,7 @@ A: 免费版主要通过WebFetch直接获取指定URL的内容，支持基础的
 ## 已知限制
 
 - 不支持GitHub Library Discovery功能
-- 不支持MCP web_search网络搜索
+- 不支持工具协议 web_search网络搜索
 - 不支持Product Hunt产品调研
 - 不支持交叉验证与结构化结果输出
 

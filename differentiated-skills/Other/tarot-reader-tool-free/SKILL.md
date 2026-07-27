@@ -1,5 +1,4 @@
 ---
-
 slug: tarot-reader-tool-free
 name: tarot-reader-tool-free
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: 韦特塔罗占卜免费版
 summary: "基于经典韦特塔罗的占卜服务，支持单张牌与时间之流牌阵，温暖治愈风格，适合个人日常占卜.。韦特塔罗占卜免费版，面向个人用户的轻量级塔罗占卜服务。核心能力:"
 license: MIT
 edition: free
-description: "韦特塔罗占卜免费版，面向个人用户的轻量级塔罗占卜服务。核心能力:，可处置提升工作效率. 适用于需要tarot reader tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要tarot reader tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "韦特塔罗占卜免费版，面向个人用户的轻量级塔罗占卜服务。核心能力:，可处置提升工作效率. 适用于需要tarot reader tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要tarot reader tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 塔罗
   - tarot
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 韦特塔罗占卜（免费版）
 
 ## 概述

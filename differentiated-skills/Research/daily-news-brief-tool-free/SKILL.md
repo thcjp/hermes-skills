@@ -1,5 +1,4 @@
 ---
-
 slug: daily-news-brief-tool-free
 name: daily-news-brief-tool-free
 version: 1.0.0
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 > **搜集、筛选、生成。三步完成每日新闻简报。**
 
 无需复杂配置，通过简单的脚本即可自动搜集国际时事、经济形势、科技发展三大领域的新闻，生成统一格式的新闻简报。免费版聚焦轻量场景，提供基础的简报生成能力.
@@ -141,7 +139,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 # ...
 url = "https://news.cctv.com/world"
-r = requests.get(url, timeout=10, headers={'User-Agent': 'Mozilla/5.0'})
+r = requests.get(validated_url, timeout=10, headers={'User-Agent': 'Mozilla/5.0'})
 soup = BeautifulSoup(r.content, 'html.parser')
 # ...
 print(f"=== 国际新闻速递 {datetime.now().strftime('%Y-%m-%d')} ===\n")
@@ -154,19 +152,24 @@ PYEOF
 # 在此执行相关操作
 echo "操作完成"
 ```bash
-pip install requests beautifulsoup4
 # ...
+# ...
+# ...
+# ...
+# ...
+# ...
+# ...
+echo "操作完成"
+pip install requests beautifulsoup4
 cat > daily_brief.py << 'PYEOF'
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
-# ...
 SOURCES = {
     'international': ['https://news.cctv.com/world'],
     'economic': ['https://finance.sina.com.cn'],
     'technology': ['https://tech.sina.com.cn'],
 }
-# ...
 def collect():
     all_news = {}
     for cat, urls in SOURCES.items():
@@ -179,10 +182,8 @@ content, 'html.parser')
                     if title and 10 < len(title) < 100:
                         items.append({'title': title, 'url': link['href']})
             except:
-                pass
         all_news[cat] = items
     return all_news
-# ...
 def generate(news):
     lines = [f"# 每日新闻简报 | {datetime.now().strftime('%Y年%m月%d日')}\n"]
     for cat, items in news.items():
@@ -192,17 +193,14 @@ def generate(news):
             lines.append(f"{i}. {item['title']}")
         lines.append("")
     return "\n".join(lines)
-# ...
 if __name__ == "__main__":
     news = collect()
     brief = generate(news)
     print(brief)
-# ...
     with open(f"brief_{datetime.now().strftime('%Y%m%d')}.md", "w", encoding="utf-8") as f:
         f.write(brief)
     print("\n简报已保存")
 PYEOF
-# ...
 python3 daily_brief.py
 ```bash
 # 在此执行相关操作
@@ -329,7 +327,7 @@ path.join(self.json")
 检查`error_code`并按照处理方式进行排查.
 ## 常见问题
 ### Q1：免费版支持定时自动执行吗？
-不支持。免费版需手动触发执行。如需定时自动执行（如每天早上8点自动生成并推送简报），需升级至专业版，支持crontab调度与多渠道推送.
+不支持。免费版需手动触发执行。如需定时自动执行（如每天早上8点自动生成并推送简报），需升级至专业版，支持定时任务配置调度与多渠道推送.
 ### Q2：新闻搜集失败怎么办？
 可能原因：(1) 网络问题，稍后重试；(2) 源站结构变更，需更新解析逻辑；(3) User-Agent被屏蔽，尝试更换UA；(4) 源站临时不可用。免费版会跳过失败源，继续搜集其他源.
 ### Q3：筛选不准确怎么办？

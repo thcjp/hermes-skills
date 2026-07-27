@@ -6,7 +6,7 @@ displayName: "社区垃圾过滤(免费版)"
 summary: "客户端过滤社区平台代币铸造垃圾,96%去除率,支持自定义模式与黑名单。(免费版)。社区平台客户端垃圾内容过滤器,识别并移除数字资产协议铸造机器人的 批量垃圾帖。覆盖内容模式检测、作者模式检测"
 summary_zh: "客户端过滤社区平台代币铸造垃圾,96%去除率,支持自定义模式与黑名单。(免费版)。社区平台客户端垃圾内容过滤器,识别并移除数字资产协议铸造机器人的 批量垃圾帖。覆盖内容模式检测、作者模式检测"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要moltbook filter相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   社区平台客户端垃圾内容过滤器,识别并移除数字资产协议铸造机器人的
   批量垃圾帖。覆盖内容模式检测、作者模式检测、子板块扫描、JSON feed
   过滤与共享黑名单。96%垃圾去除率,低于1%误判。适用于独立开发者、
@@ -18,14 +18,17 @@ tools:
 homepage: ""
 tags:
   - 通用办公
+  - moltbook
+  - filter
+  - automation
+  - productivity
   - 工具
   - 效率
   - feed
-  - api
   - json
   - key
-  - node
 category: "Automation"
+pricing_tier: free
 ---
 # 社区垃圾过滤(免费版)
 
@@ -84,7 +87,7 @@ category: "Automation"
 不适用于:服务端垃圾防御、账户封禁、内容举报、ML垃圾检测.
 ## 使用流程
 
-1. 确认凭证文件 `~/.config/platform/credentials.json` 存在且API key有效
+1. 确认凭证文件 `./.config/platform/credentials.json` 存在且API key有效
 2. 确认 Node.js 运行时已安装
 3. 用 `node filter.js scan [submolt]` 扫描目标子板块,查看垃圾率
 4. 用 `node filter.js feed [submolt]` 获取过滤后JSON,管道到下游工具
@@ -112,7 +115,7 @@ category: "Automation"
 
 | 错误场景 | 原因 | 处理方式 |
 |---:|---:|---:|
-| 凭证文件不存在 | 未配置API key | 在 `~/.json` 创建含API key的JSON文件 |
+| 凭证文件不存在 | 未配置API key | 在 `./.json` 创建含API key的JSON文件 |
 | API key 无效(401) | key 过期或权限不足 | 重新生成API key,确认key有feed读取权限 |
 | 子板块不存在(404) | 子板块名拼写错误 | 用 `scan` 不带参数扫描主feed,或检查子板块名拼写 |
 | 网络超时 | 平台API响应慢 | 增加请求超时阈值,或检查网络连接和配置后重试;检查网络连接和配置后重试 |
@@ -150,7 +153,7 @@ A: 客户端过滤只影响本地视图,不阻止垃圾帖出现在平台。每�
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 升级提示

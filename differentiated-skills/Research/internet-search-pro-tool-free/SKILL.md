@@ -1,5 +1,4 @@
 ---
-
 slug: internet-search-pro-tool-free
 name: internet-search-pro-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 联网搜索助手
 summary: 智能联网搜索助手，帮你检索最新信息、新闻、实时数据，自动提取关键词并生成结构化摘要，适合个人日常信息查询.
 license: MIT
 edition: free
-description: "智能联网搜索助手，帮你检索最新信息、新闻、实时数据，自发提取关键词并产出结构化摘要，适合个人日常信息查询。核心能力:. 适用于需要internet search pro tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要internet search tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "智能联网搜索助手，帮你检索最新信息、新闻、实时数据，自发提取关键词并产出结构化摘要，适合个人日常信息查询。核心能力:. 适用于需要internet search pro tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要internet search tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 搜索
   - internet
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # 联网搜索助手（免费版）
 
 ## 概述

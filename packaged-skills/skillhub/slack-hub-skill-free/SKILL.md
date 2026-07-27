@@ -3,31 +3,32 @@ slug: "slack-hub-skill-free"
 name: "slack-hub-skill-free"
 version: "1.0.0"
 displayName: "Slack消息中枢LITE"
-summary: "Slack基础消息发送与公共频道列表，Bot Token直连Web API。面向团队协作场景的Slack基础消息集成技能（免费版）。通过Slack Bot Token直连Web API， 提"
-summary_zh: "Slack基础消息发送与公共频道列表，Bot Token直连Web API。面向团队协作场景的Slack基础消息集成技能（免费版）。通过Slack Bot Token直连Web API， 提"
+summary: "提供包含Slack基础消息发送与公共频道列表,Bot Token直连Web API.面向团队协作场景的Slack基础消息集成技能（免费版）.通过Slack Bot Token直连Web API, 提"
+summary_zh: "Slack基础消息发送与公共频道列表，Bot Token直连Web API。面向团队协作场景的Slack基础消息集成技能（免费版）。通过Slack Bot Token直连Web API"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要slack hub skill相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   面向团队协作场景的Slack基础消息集成技能（免费版）。通过Slack Bot Token直连Web API，
   提供频道消息发送与公共频道列表两大基础能力.
   支持频道ID寻址、基础消息格式化（粗体/斜体/代码块）、emoji语法.
   适用于发布通知、频道发现等基础场景.
 tags:
   - Communication
+  - slack
+  - hub
+  - skill
+  - automation
   - 消息API
-  - Slack
   - 社交
   - 通信
   - token
-  - slack
   - bot
-  - api
-  - 发送
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: free
 ---
 # Slack消息中枢 LITE（Slack Hub Skill Free）
 
@@ -59,7 +60,7 @@ category: "Communication"
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
@@ -100,7 +101,7 @@ export API_KEY="your_api_key_here"
 > 1. 访问 https://api.slack.com/apps 创建新App
 > 2. 配置 Bot Token Scopes：`chat:write`、`channels:read`
 > 3. 安装App到工作区，获取 `xoxb-` 开头的Bot Token
-> 4. 终端环境变量：`export SLACK_BOT_TOKEN="xoxb-你的Token"`
+> 4. 终端环境变量：`export SLACK_BOT_TOKEN="${SLACK_BOT_TOKEN:?请设置环境变量}"`
 > 5. 将Bot邀请到目标频道（`/invite @botname`）
 
 **安全红线**：永不接受/回显/存储来自聊天输入的Token；Token仅作为 `Authorization: Bearer` 请求头使用.

@@ -1,5 +1,4 @@
 ---
-
 slug: interview-sim-tool-free
 name: interview-sim-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 面试模拟工具
 summary: "面向个人的多岗位面试模拟工具，支持评分与改进建议. - 提供专业AI自动化处理能力,支持多种使用场景"
 license: MIT
 edition: free
-description: "面向个人求职者的多岗位面试模拟工具，可处置提升工作效率. 适用于需要interview sim tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要interview sim tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "面向个人求职者的多岗位面试模拟工具，可处置提升工作效率. 适用于需要interview sim tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要interview sim tool相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - 面试
   - interview
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 面试模拟工具（免费版）
 
 ## 概述

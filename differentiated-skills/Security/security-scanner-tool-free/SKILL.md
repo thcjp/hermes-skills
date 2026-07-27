@@ -1,5 +1,4 @@
 ---
-
 slug: security-scanner-tool-free
 name: security-scanner-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 安全扫描器(免费版)
 summary: "自动化安全扫描工具包,含端口扫描、漏洞检测、SSL分析,适合安全测试与评估,支持多种使用场景和自动化处理"
 license: MIT
 edition: free
-description: "核心能力:，可自发提升工作效率. 适用于需要security scanner tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要security scanner tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "核心能力:，可自发提升工作效率. 适用于需要security scanner tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要security scanner tool相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - 安全
   - security
@@ -27,7 +26,6 @@ category: "Security"
 pricing_tier: free
 
 ---
-
 # 安全扫描器(免费版)
 
 ## 概述
@@ -81,20 +79,20 @@ pricing_tier: free
 
 ```bash
 # 主机发现
-nmap -sn -T4 192.168.1.0/24
+nmap -sn -T4 ${SERVER_HOST}/24
 # ...
 # 快速端口扫描(前100个常用端口)
-nmap -F 192.168.1.1
+nmap -F ${SERVER_HOST}
 # ...
 # 服务版本识别
-nmap -sV -T4 192.168.1.1
+nmap -sV -T4 ${SERVER_HOST}
 ```
 
 ### 场景二:全端口深度扫描
 
 ```bash
 # 全65535端口+服务+脚本+OS探测
-nmap -p- -sV -sC -A -T4 192.168.1.1 -oN full_scan.txt
+nmap -p- -sV -sC -A -T4 ${SERVER_HOST} -oN full_scan.txt
 ```
 
 ### 场景三:Web漏洞扫描
@@ -251,7 +249,7 @@ _run_command(f"sslscan {self.target}")
 # ...
 # 示例
 if __name__ == "__main__":
-    scanner = SecurityScanner("192.168.1.1")
+    scanner = SecurityScanner("${SERVER_HOST}")
 # ...
     # 快速侦察
     scanner.quick_recon()
@@ -273,14 +271,14 @@ if __name__ == "__main__":
 
 | 参数 | 用途 | 示例 |
 |:---:|:---:|:---:|
-| `-sn` | 主机发现(不扫描端口) | `nmap -sn 192.168.1.0/24` |
-| `-sS` | SYN半开扫描 | `nmap -sS 192.168.1.1` |
-| `-sV` | 服务版本探测 | `nmap -sV 192.168.1.1` |
-| `-sC` | 默认脚本扫描 | `nmap -sC 192.168.1.1` |
-| `-A` | 全面探测(OS+版本+脚本) | `nmap -A 192.168.1.1` |
-| `-p-` | 全65535端口 | `nmap -p- 192.168.1.1` |
-| `-T4` | 加速扫描(0-5) | `nmap -T4 192.168.1.1` |
-| `--script vuln` | 漏洞检测脚本 | `nmap --script vuln 192.168.1.1` |
+| `-sn` | 主机发现(不扫描端口) | `nmap -sn ${SERVER_HOST}/24` |
+| `-sS` | SYN半开扫描 | `nmap -sS ${SERVER_HOST}` |
+| `-sV` | 服务版本探测 | `nmap -sV ${SERVER_HOST}` |
+| `-sC` | 默认脚本扫描 | `nmap -sC ${SERVER_HOST}` |
+| `-A` | 全面探测(OS+版本+脚本) | `nmap -A ${SERVER_HOST}` |
+| `-p-` | 全65535端口 | `nmap -p- ${SERVER_HOST}` |
+| `-T4` | 加速扫描(0-5) | `nmap -T4 ${SERVER_HOST}` |
+| `--script vuln` | 漏洞检测脚本 | `nmap --script vuln ${SERVER_HOST}` |
 
 ### Nuclei模板分类
 
@@ -300,35 +298,31 @@ nuclei -u target.com -t technologies/
 # 自定义模板
 nuclei -u target.com -t custom-templates/
 ```
-
 ## 优秀实践
-
 ### 1. 分阶段扫描
-
+echo "操作完成"
 ```bash
 # 阶段1:侦察(快速)
-nmap -sn -T4 192.168.1.0/24
+nmap -sn -T4 ${SERVER_HOST}/24
 # ...
 # 阶段2:端口扫描(中等)
-nmap -sV -sC -T4 192.168.1.1
+nmap -sV -sC -T4 ${SERVER_HOST}
 # ...
 # 阶段3:漏洞扫描(深度)
-nmap --script vuln 192.168.1.1
-nuclei -u http://192.168.1.1 -t cves/
+nmap --script vuln ${SERVER_HOST}
+nuclei -u http://${SERVER_HOST} -t cves/
 ```
-
 ### 2. 扫描结果保存
-
+echo "操作完成"
 ```bash
 # 保存为多种格式
-nmap -sV -oN scan.txt -oX scan.xml -oG scan.grep 192.168.1.1
+nmap -sV -oN scan.txt -oX scan.xml -oG scan.grep ${SERVER_HOST}
 # ...
 # Nuclei结果保存
 nuclei -u target.com -o results.txt -j -o results.json
 ```
-
 ### 3. 道德使用准则
-
+echo "操作完成"
 ```text
 安全扫描道德准则:
 1. 仅扫描授权目标

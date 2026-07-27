@@ -6,28 +6,29 @@ displayName: "Slack工作区管家LITE"
 summary: "Slack基础消息发送与频道列表，ClawLink OAuth托管连接。面向团队协作场景的Slack基础工作区管理技能（免费版）。通过ClawLink OAuth托管连接， 提供频道消息发送"
 summary_zh: "Slack基础消息发送与频道列表，ClawLink OAuth托管连接。面向团队协作场景的Slack基础工作区管理技能（免费版）。通过ClawLink OAuth托管连接， 提供频道消息发送"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要slack workspace相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   面向团队协作场景的Slack基础工作区管理技能（免费版）。通过ClawLink OAuth托管连接，
   提供频道消息发送、频道列表、用户列表三大基础能力.
   支持频道ID寻址、基础消息格式化、频道发现与用户查询.
   适用于通知发布、频道发现、成员查询等基础场景.
 tags:
   - Communication
+  - slack
+  - workspace
+  - automation
+  - productivity
   - 团队协作
-  - Slack
   - 社交
   - 通信
-  - slack
   - clawlink
   - 频道列表
-  - 频道
-  - 用户列表
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: free
 ---
 # Slack工作区管家 LITE（Slack Workspace Free）
 

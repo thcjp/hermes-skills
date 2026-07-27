@@ -1,5 +1,4 @@
 ---
-
 slug: search-v2-tool-free
 name: search-v2-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 搜索工具免费版
 summary: "轻量级LLM优化搜索工具,支持基础网页搜索与结果摘要,适合个人用户快速获取信息。搜索工具免费版为个人用户提供轻量级的LLM优化网页搜索能力."
 license: MIT
 edition: free
-description: "搜索工具免费版为个人用户包含轻量级的LLM调优网页搜索能力. 适用于需要search v2 tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要search v2 tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "搜索工具免费版为个人用户包含轻量级的LLM调优网页搜索能力. 适用于需要search v2 tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要search v2 tool相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - 研究工具
   - search
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # 搜索工具免费版
 
 ## 概述
@@ -193,7 +191,7 @@ pricing_tier: free
 将API Key添加到Agent配置中:
 
 ```json
-// ~/.claude/settings.json
+// ./.claude/settings.json
 {
   "env": {
     "TAVILY_API_KEY": "tvly-your-api-key-here"
@@ -204,7 +202,7 @@ pricing_tier: free
 或通过环境变量配置:
 
 ```bash
-export TAVILY_API_KEY="tvly-your-api-key-here"
+export TAVILY_API_KEY=${API_KEY:?请设置环境变量}
 ```
 
 ### 第三步:执行首次搜索
@@ -368,7 +366,7 @@ A: score范围0-1,越高越相关。一般规律:>0.9高度相关,0.7-0.9较相�
 
 - **Tavily API Key**: 必需,通过环境变量`TAVILY_API_KEY`配置
 - 获取方式:访问 https://tavily.com 注册,免费额度有限
-- 配置位置:`~/.claude/settings.json`的`env`字段,或系统环境变量
+- 配置位置:`./.claude/settings.json`的`env`字段,或系统环境变量
 - **LLM API**: 由Agent平台内置提供,无需额外配置
 
 ### 可用性分类

@@ -1,15 +1,12 @@
----slug: "pyx-scan-free"
+---
+slug: "pyx-scan-free"
 name: "pyx-scan-free"
 version: "1.0.0"
 displayName: "技能安全扫描(免费版)"
-summary: "AI技能安全检查工具，"
-summary_zh: "AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告(免费版)。AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告。评估维度 包括恶意指令、"
+summary: "AI技能安全检查工具，,提供核心能力"
+summary_zh: "AI技能安全检查工具，,提供核心能力"
 license: "MIT"
-description: |-
-  AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告。评估维度
-  包括恶意指令、数据泄露、权限滥用、供应链风险等。返回信任评分（0-10）、
-  风险评分（0-10）和置信度百分比。支持WebFetch和curl两种调用方式。适用于
-  独立开发者、企业团队和自动化工作流场景。不适用于非AI技能的安全扫描.
+description: "|- AI技能安全检查工具，通过Scanner API对技能进行安全评级和风险报告。评估维度 包括恶意指令、数据泄露、权限滥用、供应链风险等。返回信任评分（0-10）、 风险评分（0-10）和置信度百分比。兼容WebFetch和curl两种调用方式。适用于 独立开发者、企业团队和自发化工作流场景。不适用于非AI技能的安全扫描."
 tools:
   - read
   - exec
@@ -20,12 +17,14 @@ tags:
   - 工具
   - 效率
   - 安全
-  - api
   - owner
   - scanner
   - confidence
   - trust_score
-category: "Automation"---# 技能安全扫描(免费版)
+category: "Automation"
+pricing_tier: free
+---
+# 技能安全扫描(免费版)
 
 通过Scanner API对AI技能进行安全评级和风险报告.
 ## 输入格式
@@ -146,7 +145,7 @@ A: 支持已注册到Scanner平台的AI技能。技能需要以 `owner/name` 格
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 升级提示

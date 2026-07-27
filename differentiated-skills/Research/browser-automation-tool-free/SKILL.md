@@ -1,5 +1,4 @@
 ---
-
 slug: browser-automation-tool-free
 name: browser-automation-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 浏览器自动化工具-免费版
 summary: "通过自然语言驱动浏览器交互的CLI工具,支持本地Chrome,适合个人开发者快速自动化。通过自然语言指令驱动浏览器交互的命令行工具,用户可用自然语言描述动作,"
 license: MIT
 edition: free
-description: "通过自然语言指令驱动浏览器交互的命令行工具,用户可用自然语言描述动作,，可自发提升工作效率. 适用于需要browser automation tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要browser automation tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "通过自然语言指令驱动浏览器交互的命令行工具,用户可用自然语言描述动作,，可自发提升工作效率. 适用于需要browser automation tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要browser automation tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 研究工具
   - browser
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 浏览器自动化工具(免费版)
 
 ## 概述

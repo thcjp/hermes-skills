@@ -1,5 +1,4 @@
 ---
-
 slug: sequential-read-tool-free
 name: sequential-read-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 顺序阅读工具-免费版
 summary: "分段顺序阅读长篇文章,生成结构化反思笔记,适合个人学习与读书会。顺序阅读工具免费版,面向个人学习者的长文阅读助手."
 license: MIT
 edition: free
-description: "顺序阅读工具免费版,面向个人学习者的长文阅读助手，可自发提升工作效率. 适用于需要sequential read tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要sequential read tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "顺序阅读工具免费版,面向个人学习者的长文阅读助手，可自发提升工作效率. 适用于需要sequential read tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要sequential read tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 阅读
   - sequential
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 顺序阅读工具 - 免费版
 
 ## 概述

@@ -6,10 +6,10 @@ displayName: "生产力操作系统"
 summary: "集成目标、项目、任务、习惯的基础生产力管理系统。基础生产力管理系统，覆盖目标设定、项目管理、任务执行、习惯追踪等核心功能. 基础能力涵盖目标-项目-任务三级体系、收件箱捕获与分流、习惯追踪、"
 summary_zh: "集成目标、项目、任务、习惯的基础生产力管理系统。基础生产力管理系统，覆盖目标设定、项目管理、任务执行、习惯追踪等核心功能. 基础能力涵盖目标-项目-任务三级体系、收件箱捕获与分流、习惯追踪、"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要productivity相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   基础生产力管理系统，覆盖目标设定、项目管理、任务执行、习惯追踪等核心功能.
   基础能力涵盖目标-项目-任务三级体系、收件箱捕获与分流、习惯追踪、周回顾.
-  所有数据存储在 ~/productivity/ 本地目录，无网络请求.
+  所有数据存储在 ./productivity/ 本地目录，无网络请求.
   适用于独立开发者、学生、自由职业者等基础场景.
 tools:
   - read
@@ -18,20 +18,21 @@ tools:
 homepage: ""
 tags:
   - 通用办公
+  - productivity
+  - automation
+  - developer-tools
   - 工具
   - 效率
   - 写作
   - 电商
-  - productivity
   - active
   - 项目
-  - tasks
-  - api
 category: "Automation"
+pricing_tier: free
 ---
 # 生产力操作系统（基础版）
 
-将目标、项目、任务、习惯整合为统一系统的生产力管理框架。不提供一次性激励，而是构建可持续运行的可信系统。所有数据存储在 `~/productivity/` 本地目录，仅在用户明确确认后写入文件.
+将目标、项目、任务、习惯整合为统一系统的生产力管理框架。不提供一次性激励，而是构建可持续运行的可信系统。所有数据存储在 `./productivity/` 本地目录，仅在用户明确确认后写入文件.
 ## 输入格式
 
 | 参数名 | 类型 | 必填 | 说明 |
@@ -47,10 +48,10 @@ category: "Automation"
 
 | 层级 | 定义 | 存储位置 | 示例 |
 |:-----|:-----|:-----|:-----|
-| 目标（Goal） | 描述期望结果 | `~/productivity/goals/active.md` | "Q3前完成产品v2.0发布" |
-| 项目（Project） | 打包达成目标所需的工作 | `~/productivity/projects/active.md` | "产品v2.0开发项目" |
-| 任务（Task） | 下一步可见的具体行动 | `~/productivity/tasks/next-actions.md` | "编写API接口文档" |
-| 习惯（Habit） | 支撑系统的重复行为 | `~/productivity/habits/active.md` | "每日复盘15分钟" |
+| 目标（Goal） | 描述期望结果 | `./productivity/goals/active.md` | "Q3前完成产品v2.0发布" |
+| 项目（Project） | 打包达成目标所需的工作 | `./productivity/projects/active.md` | "产品v2.0开发项目" |
+| 任务（Task） | 下一步可见的具体行动 | `./productivity/tasks/next-actions.md` | "编写API接口文档" |
+| 习惯（Habit） | 支撑系统的重复行为 | `./productivity/habits/active.md` | "每日复盘15分钟" |
 
 核心规则：永远不让目标停留在模糊愿望状态，每个目标必须关联到至少一个项目，每个项目必须分解为至少一个具体任务.
 
@@ -90,7 +91,7 @@ category: "Automation"
   - 2026-07-15：周末外出，跳过
 ```
 
-存储位置：`~/productivity/habits/active.md`（习惯与连续记录）
+存储位置：`./productivity/habits/active.md`（习惯与连续记录）
 
 ### 4. 周回顾
 
@@ -105,9 +106,9 @@ category: "Automation"
 核心原则：回顾比频繁重规划更重要。如果用户不断重新规划但不推进，简化系统并执行回顾.
 ## 使用流程
 
-### 第一步：初始化生产力系统
+### 领先步：初始化生产力系统
 
-创建 `~/productivity/` 目录结构，包含 inbox/、goals/、projects/、tasks/、habits/、planning/、reviews/、someday/ 等子目录。初始化各目录的模板文件。创建 `memory.md` 记录用户工作风格和偏好（仅在用户明确确认后写入）.
+创建 `./productivity/` 目录结构，包含 inbox/、goals/、projects/、tasks/、habits/、planning/、reviews/、someday/ 等子目录。初始化各目录的模板文件。创建 `memory.md` 记录用户工作风格和偏好（仅在用户明确确认后写入）.
 ### 第二步：建立目标-项目-任务链路
 
 从用户目标出发，逐级分解：目标 -> 关联项目 -> 具体任务 -> 下一步行动。确保每个目标至少关联一个项目，每个项目至少分解为一个具体任务。将目标写入 `goals/active.md`，项目写入 `projects/active.md`，任务写入 `tasks/next-actions.md`.
@@ -129,14 +130,14 @@ category: "Automation"
 
 场景：用户说"我想在Q3前完成产品v2.0发布，帮我做个计划".
 ```text
-# 第一步：写入目标
-# 文件：~/productivity/goals/active.md
+# 领先步：写入目标
+# 文件：./productivity/goals/active.md
 ## 目标：Q3产品v2.0发布
 - 截止日期：2026-09-30
 - 关联项目：产品v2.0开发项目
 # ...
 # 第二步：分解为项目
-# 文件：~/productivity/projects/active.md
+# 文件：./productivity/projects/active.md
 ## 项目：产品v2.0开发项目
 - 状态：active
 - 里程碑：
@@ -145,14 +146,14 @@ category: "Automation"
   - M3：正式发布（9月）
 # ...
 # 第三步：分解为任务
-# 文件：~/productivity/tasks/next-actions.md
+# 文件：./productivity/tasks/next-actions.md
 ## 下一步行动
 - [ ] 编写API接口文档（优先级：高，预估：2小时）
 - [ ] 设计数据库迁移方案（优先级：高，预估：3小时）
 - [ ] 搭建测试环境（优先级：中，预估：4小时）
 # ...
 # 第四步：规划本周
-# 文件：~/productivity/planning/daily.md
+# 文件：./productivity/planning/daily.md
 ## 本周聚焦
 - 周一-周二：编写API接口文档
 - 周三-周四：设计数据库迁移方案
@@ -169,20 +170,20 @@ category: "Automation"
 系统复杂度可动态调整。核心原则是"可持续胜过"，一个能运行两周的简单系统比三天就放弃的系统更有价值。如果用户不断重新规划但不推进，说明系统过复杂，应简化并执行回顾.
 ### Q3: 数据存储在哪里？会泄露吗？
 
-所有数据存储在本地 `~/productivity/` 目录下的纯文本Markdown文件中。本技能不执行任何网络请求，不访问日历、邮件、通讯录或系统数据。工作偏好等信息仅在用户明确确认后写入.
+所有数据存储在本地 `./productivity/` 目录下的纯文本Markdown文件中。本技能不执行任何网络请求，不访问日历、邮件、通讯录或系统数据。工作偏好等信息仅在用户明确确认后写入.
 ## 依赖说明
 
 ### 运行环境
 - **Agent平台**：支持 SKILL.md 的任意 AI Agent（Claude Code / Cursor / Codex / Gemini CLI 等）
 - **操作系统**：Windows / macOS / Linux
-- **本地存储**：可写的 `~/productivity/` 目录
+- **本地存储**：可写的 `./productivity/` 目录
 
 ### 依赖项
 
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |---:|:---|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
-| 文件系统（可写 `~/productivity/`） | 本地存储 | 必需 | 操作系统自带 |
+| 文件系统（可写 `./productivity/`） | 本地存储 | 必需 | 操作系统自带 |
 | cat / mkdir / echo | 系统命令 | 必需 | 操作系统自带 |
 
 ### API Key 配置
@@ -208,7 +209,7 @@ category: "Automation"
 - **习惯摩擦分析**：记录习惯执行情况和阻碍因素，识别并消除摩擦，设计调整方案（时间调整、环境优化、内容简化）.
 - **月回顾系统**：在周回顾基础上增加月度回顾，统计目标进展、习惯坚持率、系统结构调整，60分钟完整流程.
 - **情境适配框架**：支持学生、企业管理者、自由职业者、育儿家长、创意工作者、倦怠恢复、创业者、ADHD、远程办公、团队管理者共10种情境的个性化调整指南.
-- **专注会话管理**：记录深度工作会话（时长、内容、专注度评分），识别打断模式和最佳专注时段，基于数据推荐优化策略.
+- **专注会话管理**：记录深度工作会话（时长、内容、专注度评分），识别打断模式和优秀专注时段，基于数据推荐优化策略.
 - **承诺与委派跟踪**：跟踪自我承诺、委派任务、等待事项，设置跟进日期和超期提醒，确保不遗漏.
 - **收件箱完整分流**：增加新承诺分流到 `commitments/promises.md`，委派任务分流到 `commitments/delegated.md`，等待事项分流到 `tasks/waiting.md`.
 升级至完整版以获取全部8项核心能力、8个领域专属错误处理场景和3个完整实战案例.

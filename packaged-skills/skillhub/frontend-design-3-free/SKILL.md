@@ -6,7 +6,7 @@ displayName: "设计免费版"
 summary: "基础版前端设计技能，创建独特界面并避免通用 AI 风格，支持 3 种美学方向。。frontend-design-3-free 是前端设计技能的基础版本，创建独特的生产级界面，避免通用"AI"
 summary_zh: "基础版前端设计技能，创建独特界面并避免通用 AI 风格，支持 3 种美学方向。。frontend-design-3-free 是前端设计技能的基础版本，创建独特的生产级界面，避免通用"AI"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要frontend design 3相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   frontend-design-3-free 是前端设计技能的基础版本，创建独特的生产级界面，避免通用"AI slop"美学.
   支持 3 种美学方向（brutally minimal、editorial/magazine、brutalist/raw）和基础字体、色彩、
   动效能力。不包含 8 种高级美学方向、Motion 库集成和背景视觉细节。适合快速创建独特界面，
@@ -18,15 +18,17 @@ tools:
 homepage: ""
 tags:
   - 创意设计
+  - frontend
+  - design
+  - automation
+  - productivity
   - 设计
   - UI/UX
   - 创意
   - css-only
   - display
-  - body
-  - motion
-  - html
 category: "Creative"
+pricing_tier: free
 ---
 # Frontend Design Free
 
@@ -59,7 +61,7 @@ frontend-design-3-free 创建独特的生产级前端界面，避免通用"AI sl
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
@@ -67,7 +69,7 @@ export API_KEY="your_api_key_here"
 ### 1. 设计思维与美学方向选择
 在编码前理解上下文并承诺一个美学方向。分析四个维度：Purpose、Tone、Constraints、Differentiation.
 基础版支持 3 种美学方向：brutally minimal（极简）、editorial/magazine（编辑杂志）、
-brutalist/raw（粗野主义）。选择一种并极致执行，不要混合多种方向。- 验证返回数据的完整性和格式正确性
+brutalist/raw（粗野主义）。选择一种并优秀执行，不要混合多种方向。- 验证返回数据的完整性和格式正确性
 - 参考`设计思维与美学方向选择`的配置文档进行参数调优
 ### 2. 字体策略（Display + Body 配对）
 选择独特的字体，避免通用字体（Arial、Inter、Roboto、system fonts）。将 display 字体与

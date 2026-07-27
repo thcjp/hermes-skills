@@ -1,5 +1,4 @@
 ---
-
 slug: report-builder-tool-free
 name: report-builder-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 报告汇总构建器基础版
 summary: "基于已有日报自动汇总生成周报和月报,遵循结果导向与闭环原则。核心能力: 工作汇报领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT
 edition: free
-description: "核心能力: 工作汇报领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要report builder tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要report builder tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "核心能力: 工作汇报领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要report builder tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要report builder tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 报告汇总
   - report
@@ -28,7 +27,6 @@ category: "Creative"
 pricing_tier: free
 
 ---
-
 # 报告汇总构建器基础版
 
 ## 概述

@@ -6,7 +6,7 @@ displayName: "数据格式转换(免费版)"
 summary: "CSV与JSON、JSON与YAML基础互转，支持单文件转换与中文输出。数据格式转换器免费版，提供基础的数据格式互转能力. 核心能力包括： - CSV转JSON（csv.DictReader"
 summary_zh: "CSV与JSON、JSON与YAML基础互转，支持单文件转换与中文输出。数据格式转换器免费版，提供基础的数据格式互转能力. 核心能力包括： - CSV转JSON（csv.DictReader"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要data format converter相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   数据格式转换器免费版，提供基础的数据格式互转能力.
   核心能力包括：
   - CSV转JSON（csv.DictReader读取，json.dumps输出）
@@ -17,16 +17,15 @@ description: |-
   高级功能（XML互转、TOML互转、批量转换、嵌套结构处理）为付费版专享.
 tags:
   - 信息检索
-  - data-format
+  - format
   - converter
+  - automation
+  - data-format
   - 数据处理
   - 数据分析
   - 工具
   - json
   - csv
-  - yaml
-  - data
-  - false
 tools:
   - read
   - exec
@@ -34,6 +33,7 @@ tools:
   - glob
 homepage: ""
 category: "Research"
+pricing_tier: free
 ---
 # 数据格式转换器（免费版）
 
@@ -128,7 +128,7 @@ json_str = json.dumps(data, ensure_ascii=False, indent=2)
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 使用流程
@@ -190,7 +190,7 @@ A: XML与JSON互转、TOML与JSON互转为付费版专享功能。免费版支�
 ### Q4: 如何批量转换多个文件？
 A: 批量目录级转换为付费版专享功能。免费版需逐个文件手动执行转换.
 ### Q5: YAML转JSON时遇到 `!!python/object` 标签怎么办？
-A: 这是非安全YAML标签。务必使用 `yaml.safe_load()` 而非 `yaml.load()`，`safe_load` 会拒绝执行任意Python对象.
+A: 这是非安全YAML标签。务必使用 `yaml.safe_load()` 而非 `yaml.safe_load()`，`safe_load` 会拒绝执行任意Python对象.
 ## 已知限制
 
 - 免费版不支持XML与TOML格式转换

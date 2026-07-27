@@ -1,5 +1,4 @@
 ---
-
 slug: parallel-research-tool-free
 name: parallel-research-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 并行研究助手免费版
 summary: "开放式主题研究工具，构建可持续维护的研究文档，支持交互式探索。并行研究助手免费版，帮助用户围绕特定主题开展开放式研究，构建可持续维护的Markdown研究文档。核心能力:"
 license: MIT
 edition: free
-description: "并行研究助手免费版，帮助用户围绕特定主题开展开放式研究，构建可持续维护的Markdown研究文档。核心能力:，可自发提升工作效率. 适用于需要parallel research tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要parallel research tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "并行研究助手免费版，帮助用户围绕特定主题开展开放式研究，构建可持续维护的Markdown研究文档。核心能力:，可自发提升工作效率. 适用于需要parallel research tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要parallel research tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 研究
   - parallel
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # 并行研究助手（免费版）
 
 ## 概述
@@ -50,7 +48,7 @@ pricing_tier: free
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
 ```text
-~/.research-workspace/research/<topic-slug>/
+./.research-workspace/research/<topic-slug>/
 ├── prompt.md          # 原始研究问题
 ├── research.md        # 主要研究发现
 ├── research.pdf       # PDF导出（可选）
@@ -96,7 +94,7 @@ pricing_tier: free
 用户：new research: 2026年主流AI编程框架对比
 # ...
 Agent 执行流程：
-1. 创建研究文件夹 ~/.research-workspace/research/ai-coding-frameworks/
+1. 创建研究文件夹 ./.research-workspace/research/ai-coding-frameworks/
 2. 创建 prompt.md 记录原始问题
 3. 创建 research.md 初始化研究结构
 4. 开始领先轮搜索与发现
@@ -247,16 +245,16 @@ export pdf
 
 ```bash
 # 创建研究工作区
-mkdir -p ~/.research-workspace/research
+mkdir -p ./.research-workspace/research
 # ...
 # 配置研究偏好
-cat > ~/.research-workspace/config.yaml << 'EOF'
+cat > ./.research-workspace/config.yaml << 'EOF'
 # 免费版研究配置
 edition: free
 version: "1.0.0"
 # ...
 workspace:
-  path: "~/.research-workspace/research"
+  path: "./.research-workspace/research"
   naming: "slug"  # 文件夹命名方式
 # ...
 document:
@@ -378,7 +376,7 @@ echo "操作完成"
 
 ### Q1：研究文档保存在哪里？
 
-研究文档保存在 `~/.research-workspace/research/<topic-slug>/` 目录下，每个研究主题独立文件夹.
+研究文档保存在 `./.research-workspace/research/<topic-slug>/` 目录下，每个研究主题独立文件夹.
 ### Q2：免费版支持深度异步研究吗？
 
 免费版不支持深度异步研究模式（需要 parallel-research CLI）。免费版仅支持交互式研究模式，即用户与 Agent 实时对话推进研究.
@@ -413,7 +411,7 @@ echo "操作完成"
 - **Agent 平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 - **网络连接**: 需要可访问互联网以进行搜索研究
-- **本地存储**: 需要 `~/.research-workspace/` 目录读写权限
+- **本地存储**: 需要 `./.research-workspace/` 目录读写权限
 
 ### 第三方依赖
 
@@ -431,7 +429,7 @@ echo "操作完成"
 免费版基于 Markdown 指令驱动，无需额外 API Key.
 ```bash
 # 验证工作区可写
-mkdir -p ~/.research-workspace/research && echo "ok"
+mkdir -p ./.research-workspace/research && echo "ok"
 # ...
 # 验证PDF导出工具（可选）
 pandoc --version 2>/dev/null && echo "pandoc就绪" || echo "pandoc未安装（PDF导出不可用）"

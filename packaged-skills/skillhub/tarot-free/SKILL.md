@@ -6,7 +6,7 @@ displayName: "免费版"
 summary: "基础版反思式塔罗抽取，支持单牌阵和基础语言校准，用于情感反思。。tarot-free 是反思式塔罗抽取技能的基础版本，用于情感支持和自我觉察。核心理念是"塔罗是镜子 而非预言"，采用 `pr"
 summary_zh: "基础版反思式塔罗抽取，支持单牌阵和基础语言校准，用于情感反思。。tarot-free 是反思式塔罗抽取技能的基础版本，用于情感支持和自我觉察。核心理念是"塔罗是镜子 而非预言"，采用 `pr"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要tarot相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   tarot-free 是反思式塔罗抽取技能的基础版本，用于情感支持和自我觉察。核心理念是"塔罗是镜子
   而非预言"，采用 `presence-first` 和 `non-clinical` 原则。支持 `Single-card spread`（单牌阵）抽取
   和基础语言校准，使用 22 张 `Major Arcana`（大阿卡纳牌）。不包含 `Three-card spread`（三牌阵）、
@@ -18,14 +18,17 @@ tools:
 homepage: ""
 tags:
   - 通用办公
+  - tarot
+  - automation
+  - productivity
+  - developer-tools
   - 工具
   - 效率
   - 张大阿卡
-  - api
   - 纳牌解读
   - 基础语言
-  - 语言校准
 category: "Automation"
+pricing_tier: free
 ---
 # Tarot Free
 
@@ -62,7 +65,7 @@ tarot-free 是反思式塔罗抽取基础版。塔罗在这里是镜子，不是
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力

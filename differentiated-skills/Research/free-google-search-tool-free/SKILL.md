@@ -1,5 +1,4 @@
 ---
-
 slug: free-google-search-tool-free
 name: free-google-search-tool-free
 version: 1.0.0
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 > **搜索、解析、筛选、导出。四步完成Google搜索与结果处理。**
 
 无需API Key，通过浏览器自动化方式即可执行Google搜索，解析结果，提取关键信息。免费版聚焦轻量场景，让免费搜索触手可及.
@@ -58,129 +56,7 @@ pricing_tier: free
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
-```python
-import subprocess
-import json
-# ..
-class GoogleSearcher:
-    """Google搜索器（免费版）"""
-# ..
-    def __init__(self, script_path="（请参考skill目录中的脚本文件）"):
-        self.script_path = script_path
-        self.runtime = self._detect_runtime()
-# ..
-    def _detect_runtime(self):
-        """检测JS运行时"""
-        for runtime in ["bun", "node"]:
-            result = subprocess.run(["which", runtime], capture_output=True)
-            if result.returncode == 0:
-                return runtime
-        return "node"
-# ..
-    def search(self, query, num_results=10, language="zh-CN", timeout=30):
-        """执行Google搜索"""
-        print(f"搜索：{query}（语言：{language}，结果数：{num_results}）")
-# ..
-        cmd = [
-            self.runtime, self.script_path,
-            "--query", query,
-            "--num", str(num_results),
-            "--lang", language,
-            "--timeout", str(timeout),
-            "--format", "json"
-        ]
-# ..
-        try:
-                cmd, capture_output=True, text=True,
-                timeout=timeout + 10, encoding="utf-8"
-            )
-# ..
-                return {"success": False, "error": result.stderr}
-# ..
-            results = json.loads(result.stdout)
-            return {"success": True, "results": results, "query": query}
-# ..
-        except subprocess.TimeoutExpired:
-            return {"success": False, "error": "搜索超时"}
-        except json.JSONDecodeError:
-            return {"success": False, "error": "解析失败"}
-        except Exception as e:
-            return {"success": False, "error": str(e)}
-# ..
-searcher = GoogleSearcher()
-result = searcher.search("人工智能最新进展", num_results=10)
-if result.get("success"):
-    print(f"找到 {len(result['results'])} 条结果")
-    for i, r in enumerate(result["results"][:3], 1):
-        print(f"\n{i}. {r.get('title', '')}")
-        print(f"   URL: {r.get('url', '')}")
-else:
-    print(f"搜索失败：{result.get('error')}")
-```
-
-**处理**: 解析浏览器自动化搜索的输入参数,完成核心逻辑,返回结构化响应.
-**输出**: 返回浏览器自动化搜索的响应数据,包含状态码、结果和日志.
-- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
-
-### 2. 搜索结果解析
-
-> 详细代码示例已移至 `references/detail.md`
-
-**处理**: 解析搜索结果解析的输入参数,完成核心逻辑,返回结构化响应.
-**输出**: 返回搜索结果解析的响应数据,包含状态码、结果和日志.
-### 3. 基础筛选
-
-**处理**: 解析基础筛选的输入参数,完成核心逻辑,返回结构化响应.
-**输出**: 返回基础筛选的响应数据,包含状态码、结果和日志.
-### 4. 结果导出
-
-**处理**: 解析结果导出的输入参数,完成核心逻辑,返回结构化响应.
-**输出**: 返回结果导出的响应数据,包含状态码、结果和日志.
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：谷歌搜索免费版、通过浏览器自动化、解析结果、基础摘要生成、谷歌搜索助手免费、版是面向个人用户、的轻量、搜索工具、方式执行搜索、API、Key、解析搜索结果、提取标题、与摘要、Use、when、SEO、关键词分析、排名提升、搜索流量优化时使、不适用于黑帽、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
-## 使用场景
-### 场景一：快速信息检索
-**场景描述**：搜索某个主题的快速信息.
-```python
-searcher = GoogleSearcher()
-parser = SearchResultParser()
-# ..
-result = searcher.search("Python 异步编程教程", num_results=5)
-if result.get("success"):
-    parsed = parser.parse_results(result["results"])
-    print(parser.format_results(parsed, "text"))
-```
-
-### 场景二：研究资料收集
-**场景描述**：为研究项目收集相关资料.
-```python
-searcher = GoogleSearcher()
-parser = SearchResultParser()
-filterer = ResultFilter()
-exporter = ResultExporter()
-# ..
-queries = ["机器学习入门", "深度学习教程", "神经网络原理"]
-all_results = []
-# ..
-for query in queries:
-    result = searcher.search(query, num_results=10)
-    if result.get("success"):
-        parsed = parser.parse_results(result["results"])
-        all_results.extend(parsed)
-# ..
-unique = filterer.deduplicate(all_results)
-print(f"共收集 {len(unique)} 条独特结果")
-# ..
-exporter.export_markdown(unique, query="机器学习研究资料")
-```
-
-### 场景三：学习参考
-**场景描述**：搜索特定技术问题的解决方案.
-```python
-searcher = GoogleSearcher()
-parser = SearchResultParser()
-filterer = ResultFilter()
-# ..
-result = searcher.search("Python 'ConnectionError' 解决方法 site:stackoverflow.com", num_results=5)
+```python 解决方法 site:stackoverflow.com", num_results=5)
 if result.get("success"):
     parsed = parser.parse_results(result["results"])
     so_results = filterer.filter_by_domain(parsed, ['stackoverflow.com'])
@@ -199,39 +75,41 @@ if result.get("success"):
 
 ### 30秒上手
 ```bash
-node （请参考skill目录中的脚本文件） "人工智能" --num 10 --format json
-# ..
-bun （请参考skill目录中的脚本文件） "人工智能" --num 10 --format json
+node search.js "人工智能" --num 10 --format json
+# (执行相关逻辑)
+bun search.js "人工智能" --num 10 --format json
 ```bash
-# 在此执行相关操作
-echo "操作完成"
+# 执行搜索并保存结果
+node search.js "query" --num 10 --format json > results.json
+cat results.json | python3 -m json.tool | head -50
 ```bash
 npm install playwright
 npx playwright install chromium
-# ..
+# (执行相关逻辑)
 node --version
-node -e "require('playwright')" && echo "Playwright已安装"
-# ..
-node （请参考skill目录中的脚本文件） "Python教程" --num 10 --format json > results.json
-# ..
+node脚本 "require('playwright')" && echo "Playwright已安装"
+# (执行相关逻辑)
+node search.js "Python教程" --num 10 --format json > results.json
+# (执行相关逻辑)
 cat results.json | python3 -m json.tool | head -50
-# ..
+# (执行相关逻辑)
 python3 export.py --input results.json --format markdown --output results.md
 ```bash
-# 在此执行相关操作
-echo "操作完成"
+# 执行搜索并保存结果
+node search.js "query" --num 10 --format json > results.json
+cat results.json | python3 -m json.tool | head -50
 ```python
 import os
-# ..
+# (执行相关逻辑)
 class GoogleSearchConfig:
     """谷歌搜索配置（免费版）"""
-    SCRIPT_PATH = os.getenv("GS_SCRIPT_PATH", "（请参考skill目录中的脚本文件）")
+    SCRIPT_PATH = os.getenv("GS_SCRIPT_PATH", "search.js")
     RUNTIME = os.getenv("GS_RUNTIME", "node")  # node 或 bun
     DEFAULT_NUM = int(os.getenv("GS_DEFAULT_NUM", "10"))
     DEFAULT_LANG = os.getenv("GS_DEFAULT_LANG", "zh-CN")
     TIMEOUT = int(os.getenv("GS_TIMEOUT", "30"))
     OUTPUT_DIR = os.getenv("GS_OUTPUT_DIR", "./output")
-# ..
+# (执行相关逻辑)
     @classmethod
     def show(cls):
         print("=== 谷歌搜索配置 ===")
@@ -240,11 +118,12 @@ class GoogleSearchConfig:
         print(f"默认结果数：{cls.DEFAULT_NUM}")
         print(f"默认语言：{cls.DEFAULT_LANG}")
         print(f"超时时间：{cls.TIMEOUT}s")
-# ..
+# (执行相关逻辑)
 GoogleSearchConfig.show()
 ```bash
-# 在此执行相关操作
-echo "操作完成"
+# 执行搜索并保存结果
+node search.js "query" --num 10 --format json > results.json
+cat results.json | python3 -m json.tool | head -50
 ```python
 SEARCH_PARAMS = {
     'num_results': 10,          # 结果数量
@@ -257,8 +136,9 @@ SEARCH_PARAMS = {
     'file_type': None,          # 文件类型：pdf/doc/xls
 }
 ```bash
-# 在此执行相关操作
-echo "操作完成"
+# 执行搜索并保存结果
+node search.js "query" --num 10 --format json > results.json
+cat results.json | python3 -m json.tool | head -50
 ```python
 SEARCH_OPERATORS = {
     'site:': '限定特定站点（如 site:stackoverflow.com）',
@@ -270,11 +150,12 @@ SEARCH_OPERATORS = {
     'OR': '或者（如 Python OR Java）',
     '.': '数字范围（如 2020.2024）',
 }
-# ..
+# (执行相关逻辑)
 query = "Python async site:stackoverflow.com -广告"
 ```bash
-# 在此执行相关操作
-echo "操作完成"
+# 执行搜索并保存结果
+node search.js "query" --num 10 --format json > results.json
+cat results.json | python3 -m json.tool | head -50
 ```python
 def optimize_results(results, query):
     """优化搜索结果"""
@@ -285,9 +166,7 @@ def optimize_results(results, query):
     sorted_results = filterer.sort_by_relevance(cleaned, query)
     return sorted_results
 ```
-
-## 错误处理
-
+操作完成
 ```python
 def safe_search(query, max_retries=2):
     """带重试的安全搜索"""
@@ -371,8 +250,9 @@ def safe_search(query, max_retries=2):
 Skill: 正在执行核心功能..
 Skill: 执行完成,结果如下: 操作成功
 ```bash
-# 在此执行相关操作
-echo "操作完成"
+# 执行搜索并保存结果
+node search.js "query" --num 10 --format json > results.json
+cat results.json | python3 -m json.tool | head -50
 ```json
 {
   "success": true,

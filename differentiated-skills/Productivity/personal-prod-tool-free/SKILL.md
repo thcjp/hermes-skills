@@ -1,5 +1,4 @@
 ---
-
 slug: personal-prod-tool-free
 name: personal-prod-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 个人效率顾问基础版
 summary: "个人效率与时间管理顾问,帮助诊断效率问题、建立任务系统与优化能量使用。核心能力: 效率管理领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT
 edition: free
-description: "核心能力: 效率管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要personal prod tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要personald tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "核心能力: 效率管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要personal prod tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要personald tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 个人效率
   - personal
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 个人效率顾问基础版
 
 ## 概述

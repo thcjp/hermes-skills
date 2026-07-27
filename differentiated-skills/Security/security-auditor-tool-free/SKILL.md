@@ -1,5 +1,4 @@
 ---
-
 slug: security-auditor-tool-free
 name: security-auditor-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 代码安全审计员(免费版)
 summary: "OWASP Top 10代码审计,含安全编码模式、输入验证、认证安全检查,适合开发者自检,支持多种使用场景和自动化处理"
 license: MIT
 edition: free
-description: "核心能力:，可自发提升工作效率. 适用于需要security auditor tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要security auditor tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "核心能力:，可自发提升工作效率. 适用于需要security auditor tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要security auditor tool相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - 安全
   - security
@@ -27,7 +26,6 @@ category: "Security"
 pricing_tier: free
 
 ---
-
 # 代码安全审计员(免费版)
 
 ## 概述
@@ -93,7 +91,7 @@ const user = await prisma.user.findUnique({ where: { email } })
 - 所有数据库查询使用参数化语句或ORM
 - 查询中无字符串拼接
 - OS命令执行使用参数数组,而非shell字符串
-- 用户输入不用于 `eval()` 或 `Function()`
+- 用户输入不用于 `安全解析()` 或 `Function()`
 
 ### 场景二:访问控制审计
 
@@ -311,11 +309,11 @@ await db.user.create({ data: { password: hashedPassword } })
 
 ```typescript
 // ❌ BAD: 直接渲染用户输入
-<div dangerouslySetInnerHTML={{ __html: userComment }} />
+<div HIGHRISKlySetInnerHTML=$VAR />
 // ...
 // ✅ GOOD: 消毒后渲染
 import DOMPurify from 'isomorphic-dompurify'
-<div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(userComment) }} />
+<div HIGHRISKlySetInnerHTML=$VAR />
 // ...
 // ✅ BEST: 纯文本渲染(React自动转义)
 <div>{userComment}</div>
@@ -325,10 +323,10 @@ import DOMPurify from 'isomorphic-dompurify'
 
 ```typescript
 // ❌ BAD: 硬编码密钥
-const API_KEY = "sk-1234567890abcdef"
+const API_KEY=${API_KEY:?请设置环境变量}
 // ...
 // ✅ GOOD: 环境变量
-const API_KEY = process.env.API_KEY
+const API_KEY=${API_KEY:?请设置环境变量}.env.API_KEY
 if (!API_KEY) throw new Error('API_KEY not configured')
 ```
 

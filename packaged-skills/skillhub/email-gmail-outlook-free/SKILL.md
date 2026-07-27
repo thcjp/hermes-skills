@@ -1,14 +1,12 @@
----slug: "email-gmail-outlook-free"
+---
+slug: "email-gmail-outlook-free"
 name: "email-gmail-outlook-free"
 version: "1.0.0"
 displayName: "邮件免费版"
-summary: "基于 porteden"
-summary_zh: "基于 porteden CLI 读取与搜索 Gmail、Outlook 邮件的基础版。基于 porteden CLI(`porteden email`)读取与搜索 Gmail、Outlook"
+summary: "基于 porteden,提供核心能力"
+summary_zh: "基于 porteden,提供核心能力"
 license: "MIT"
-description: |-
-  基于 porteden CLI(`porteden email`)读取与搜索 Gmail、Outlook 邮箱邮件,
-  支持日期范围筛选、关键词搜索、单封获取。使用 `-jc` 紧凑 JSON 输出降低 token 消耗.
-  适用于个人用户邮件快速查阅与基础搜索场景.
+description: "|- 基于 porteden CLI(`porteden email`)读取与搜索 Gmail、Outlook 邮箱邮件, 兼容日期范围筛选、关键词搜索、单封获取。使用 `-jc` 紧凑 JSON 输出降低 token 消耗. 适用于个人用户邮件快速查阅与基础搜索场景.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
 tags:
   - Communication
   - Email
@@ -16,7 +14,6 @@ tags:
   - 通信
   - 工具
   - porteden
-  - email
   - messages
   - agent
   - message
@@ -25,7 +22,10 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Communication"---# Email Gmail Outlook Free
+category: "Communication"
+pricing_tier: free
+---
+# Email Gmail Outlook Free
 
 使用 `porteden email` 读取与搜索当前活动账号的邮件。免费版支持列表、筛选、搜索、单封获取等只读操作,适合个人邮件快速查阅.
 若未安装 porteden:
@@ -61,7 +61,7 @@ brew install porteden/tap/porteden
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力

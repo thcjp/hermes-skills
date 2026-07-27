@@ -1,5 +1,4 @@
 ---
-
 slug: smart-weekly-report-tool-free
 name: smart-weekly-report-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 智能周报基础版
 summary: "自动生成周报草稿与待办清单,智能整理本周工作与下周计划。核心能力: 工作汇报领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT
 edition: free
-description: "核心能力: 工作汇报领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要smart weekly report tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要smart weekly report tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "核心能力: 工作汇报领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要smart weekly report tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要smart weekly report tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 周报
   - smart
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 智能周报基础版
 
 ## 概述

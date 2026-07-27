@@ -3,10 +3,10 @@ slug: "markdown-exporter-free"
 name: "markdown-exporter-free"
 version: "1.0.0"
 displayName: "Markdown导出工具(免费版)"
-summary: "Markdown转DOCX/PPTX/XLSX/PDF/HTML/IPYNB/CSV/JSON/XML多格式导出引擎。免费版"
-summary_zh: "Markdown转DOCX/PPTX/XLSX/PDF/HTML/IPYNB/CSV/JSON/XML多格式导出引擎。免费版"
+summary: "Markdown转DOCX/PPTX/XLSX/PDF/HTML/IPYNB/CSV/JSON/XML多格式导出引擎。免费版,提供核心能力"
+summary_zh: "Markdown转DOCX/PPTX/XLSX/PDF/HTML/IPYNB/CSV/JSON/XML多格式导出引擎。免费版,提供核心能力"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要markdown exporter相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   Markdown文本多格式导出引擎（免费版），支持将Markdown转换为DOCX、PDF、HTML、
   XLSX、CSV、JSON等常用格式。核心能力：
   - 文档格式转换（md_to_docx/md_to_pdf/md_to_html）
@@ -20,15 +20,17 @@ tools:
 homepage: ""
 tags:
   - 文档处理
-  - Markdown
+  - markdown
+  - exporter
+  - automation
+  - productivity
   - 文档
   - 工具
   - path
   - markdown-exporter
-  - markdown
   - input
-  - output
 category: "Development"
+pricing_tier: free
 ---
 # Markdown导出工具(免费版)
 
@@ -52,8 +54,8 @@ Markdown文本多格式导出引擎，支持将Markdown转换为DOCX、PDF、HTM
 |:-----|:-----|:-----|:-----|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
-### API Key 配置
-本Skill无需额外API Key（LLM能力由Agent平台内置提供）
+### API凭证 配置
+本Skill无需额外API凭证（LLM能力由Agent平台内置提供）
 
 ### 可用性分类
 - **分类**: MD+EXEC（）
@@ -132,7 +134,7 @@ md /path/output.zip --compress
 
 ### 示例1：Markdown转Word
 ```bash
-markdown-exporter md_to_docx /home/user/report.md /home/user/report.docx
+markdown-exporter md_to_docx /home/$USER/report.md /home/$USER/report.docx
 ```
 输入 `report.md` 包含标题、段落、列表和表格，输出 `report.docx` 保留格式结构.
 ## 错误处理

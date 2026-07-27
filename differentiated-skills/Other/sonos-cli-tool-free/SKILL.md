@@ -1,5 +1,4 @@
 ---
-
 slug: sonos-cli-tool-free
 name: sonos-cli-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: Sonos控制工具-免费版
 summary: "Sonos音箱命令行控制工具,支持播放控制、音量调节与分组管理,适合个人家庭使用。Sonos 音箱命令行控制工具免费版,面向个人家庭用户."
 license: MIT
 edition: free
-description: "Sonos 音箱命令行控制工具免费版,面向个人家庭用户，可自发提升工作效率. 适用于需要sonos cli tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要sonos cli tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "Sonos 音箱命令行控制工具免费版,面向个人家庭用户，可自发提升工作效率. 适用于需要sonos cli tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要sonos cli tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - Sonos
   - sonos
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # Sonos 控制工具 - 免费版
 
 ## 概述
@@ -98,9 +96,9 @@ sonos-cli discover
 # ...
 # 输出:
 # 发现 Sonos 设备:
-# 1. 客厅 (192.168.1.100) - Sonos Play:5
-# 2. 卧室 (192.168.1.101) - Sonos One
-# 3. 厨房 (192.168.1.102) - Sonos Beam
+# 1. 客厅 (${SERVER_HOST}) - Sonos Play:5
+# 2. 卧室 (${SERVER_HOST}) - Sonos One
+# 3. 厨房 (${SERVER_HOST}) - Sonos Beam
 # ...
 # 播放音乐
 sonos-cli play --room "客厅"
@@ -199,7 +197,7 @@ pip install soco-cli
 sonos-cli discover
 # ...
 # 手动指定 IP
-sonos-cli --ip 192.168.1.100 status
+sonos-cli --ip ${SERVER_HOST} status
 ```
 
 ### 领先次控制
@@ -236,12 +234,12 @@ sonos-cli status --room "客厅"
 ### 设备配置文件
 
 ```json
-// ~/.sonos-cli/config.json
+// ./.sonos-cli/config.json
 {
   "devices": [
-    {"name": "客厅", "ip": "192.168.1.100", "model": "Play:5"},
-    {"name": "卧室", "ip": "192.168.1.101", "model": "Sonos One"},
-    {"name": "厨房", "ip": "192.168.1.102", "model": "Sonos Beam"}
+    {"name": "客厅", "ip": "${SERVER_HOST}", "model": "Play:5"},
+    {"name": "卧室", "ip": "${SERVER_HOST}", "model": "Sonos One"},
+    {"name": "厨房", "ip": "${SERVER_HOST}", "model": "Sonos Beam"}
   ],
   "groups": [
     {"name": "楼下", "members": ["客厅", "厨房"]},

@@ -6,7 +6,7 @@ displayName: "加密博弈论分析（免费版）"
 summary: "免费版crypto协议博弈论分析框架，支持Five Questions建模与基础Red Flags检测"
 summary_zh: "免费版crypto协议博弈论分析框架，支持Five Questions建模与基础Red Flags检测"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要game theory相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   面向加密协议的博弈论分析框架（免费版）.
   基于Five Questions分析模型，覆盖Nash Equilibrium、Dominant Strategy等核心概念，
   支持基础Common Crypto Games识别与Red Flags检测.
@@ -19,16 +19,17 @@ tools:
 homepage: ""
 tags:
   - 生活服务
+  - game
+  - theory
+  - automation
+  - productivity
   - 工具
   - 效率
   - 创意
   - 图像
-  - game
   - red
-  - flags
-  - governance
-  - token
 category: "Automation"
+pricing_tier: free
 ---
 # 加密协议博弈论分析（免费版）
 

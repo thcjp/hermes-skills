@@ -1,5 +1,4 @@
 ---
-
 slug: azure-agent-framework-tool-free
 name: azure-agent-framework-tool-free
 version: 1.0.0
@@ -28,7 +27,6 @@ category: "Operations"
 pricing_tier: free
 
 ---
-
 # Azure智能体框架工具(免费版)
 
 ## 概述
@@ -202,15 +200,14 @@ pip install agent-framework-azure-ai --pre
 
 ### 2. 配置环境变量
 
-```bash
-export AZURE_AI_PROJECT_ENDPOINT="https://<project>.services.ai.azure.com/api/projects/<project-id>"
+```# 网络连接示例(已移除潜在风险命令)
 export AZURE_AI_MODEL_DEPLOYMENT_NAME="gpt-4o-mini"
 export BING_CONNECTION_ID="your-bing-connection-id"  # Web 搜索可选
 ```
 
 ### 3. 认证方式
 
-```python
+echo "操作完成"```python
 from azure.identity.aio import AzureCliCredential, DefaultAzureCredential
 # ...
 # 方式一:Azure CLI 认证(推荐本地开发)
@@ -224,7 +221,7 @@ credential = DefaultAzureCredential()
 
 ### 托管工具使用
 
-```python
+echo "操作完成"```python
 import asyncio
 from agent_framework import (
     HostedCodeInterpreterTool,
@@ -254,7 +251,7 @@ asyncio.run(main())
 
 ### 流式响应
 
-```python
+echo "操作完成"```python
 async def main():
     async with (
         AzureCliCredential() as credential,
@@ -272,7 +269,7 @@ async def main():
 
 ### 结构化输出
 
-```python
+echo "操作完成"```python
 from pydantic import BaseModel, ConfigDict
 # ...
 class WeatherResponse(BaseModel):

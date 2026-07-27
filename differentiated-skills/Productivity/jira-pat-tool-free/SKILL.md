@@ -1,5 +1,4 @@
 ---
-
 slug: jira-pat-tool-free
 name: jira-pat-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: Jira PAT 管理基础版
 summary: "使用个人访问令牌(PAT)管理自托管 Jira 实例的事务,适合 SSO/SAML 环境。核心能力: 项目管理领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT
 edition: free
-description: "核心能力: 项目管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要jira pat tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要jira pat tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "核心能力: 项目管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要jira pat tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要jira pat tool相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - Jira
   - jira
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # Jira PAT 管理基础版
 
 ## 概述
@@ -162,7 +160,7 @@ curl -s -H "Authorization: Bearer $JIRA_PAT" "$JIRA_URL/rest/api/2/search?jql=pr
 
 ```bash
 export JIRA_PAT="your-personal-access-token"
-export JIRA_URL="https://issues.example.com"
+export JIRA_URL="${SERVER_URL:?请设置环境变量}"
 # 验证连接
 curl -s -H "Authorization: Bearer $JIRA_PAT" "$JIRA_URL/rest/api/2/myself" | jq .displayName
 ```

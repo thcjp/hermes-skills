@@ -1,13 +1,13 @@
----slug: tool-finder-tool-free
+---
+slug: tool-finder-tool-free
 name: tool-finder-tool-free
 version: 1.0.0
 displayName: 工具发现引擎免费版
-summary: "统一搜索 SkillH"
-license: Proprietary
+summary: "统一搜索 SkillH,提供核心能力"
+license: "MIT"
 edition: free
-description: "工具发现引擎免费版,面向个人用户提供智能的技能和工具搜索能力。统一搜索 SkillHub 平台技能和 MCP server,支持评分排序、推荐等级、来源标识等功能。Use
-  when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。减少重复劳动，提升工作效率。触发关键词：自动化、性能优化、搜索、SEO、数据库"
-  when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段.
+description: "工具发现引擎免费版,面向个人用户包含技能和工具搜索能力。统一搜索 SkillHub 平台技能和 MCP server,兼容评分排序、推荐等级、来源标识等功能。Use when 需要SEO调优、关键词剖析、排名提升、搜索流量调优时使用。不适用于黑帽SEO手段。减少重复劳动，提升工作效率。触发关键词：自发化、性能调优、搜索、SEO、数据库"
+  when 需要SEO调优、关键词剖析、排名提升、搜索流量调优时使用。不适用于黑帽SEO手段.
 tags:
   - 研究工具
   - 工具发现
@@ -24,12 +24,14 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
----# 工具发现引擎免费版
+pricing_tier: free
+---
+# 工具发现引擎免费版
 
 ## 概述
 
 工具发现引擎免费版是一款面向个人用户的智能工具搜索工具。它统一搜索 SkillHub 平台的技能和 MCP server,通过名称匹配优先、评分排序、推荐等级等机制,帮助用户快速找到最合适的工具,并支持一键安装.
-本工具特别适合个人开发者和技术爱好者,在 SkillHub 平台中探索和发现新的技能与工具。免费版提供完整的搜索和安装能力,无需注册,开箱即用.
+本工具特别适合个人开发者和技术爱好者,在 SkillHub 平台中探索和发现新的技能与工具。免费版提供完整的搜索和安装能力,无需注册,开箱即用. 关键词: finder
 ## 核心能力
 
 ### 1. 统一搜索
@@ -44,13 +46,13 @@ category: "Knowledge"
 
 ```bash
 # 搜索技能
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "web search"
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "web search"
 # ...
 # 搜索 MCP server
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "github" --type mcp
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "github" --type mcp
 # ...
 # 搜索所有类型
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "database" --all
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "database" --all
 ```
 
 **处理**: 解析统一搜索的输入参数,完成核心逻辑,返回结构化响应.
@@ -62,10 +64,10 @@ category: "Knowledge"
 优先匹配工具名称,确保精准定位.
 ```bash
 # 精确名称搜索(知道工具名时)
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "browser-automation" --exact
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "browser-automation" --exact
 # ...
 # 模糊搜索(不知道确切名称时)
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "browser"
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "browser"
 ```
 
 **处理**: 解析名称匹配优先的输入参数,完成核心逻辑,返回结构化响应.
@@ -77,10 +79,10 @@ category: "Knowledge"
 按评分排序,并提供清晰的推荐等级.
 ```bash
 # 默认按评分排序
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "news"
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "news"
 # ...
 # 显示详细评分信息
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "news" --verbose
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "news" --verbose
 ```
 
 **推荐等级体系:**
@@ -100,7 +102,7 @@ category: "Knowledge"
 清晰区分搜索结果的来源平台.
 ```bash
 # 搜索结果显示来源
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "search" --verbose
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "search" --verbose
 # ...
 # 示例
 # tavily-search [SkillHub] ⭐⭐⭐⭐⭐ - Web search skill
@@ -116,10 +118,10 @@ category: "Knowledge"
 直接安装发现的工具.
 ```bash
 # 安装技能
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） install "tavily-search" --type skill
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） install "tavily-search" --type skill
 # ...
 # 安装 MCP server
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） install "github" --type mcp
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） install "github" --type mcp
 ```
 
 **处理**: 解析依赖说明的输入参数,完成核心逻辑,返回结构化响应.
@@ -133,14 +135,14 @@ category: "Knowledge"
 
 小王需要找一个网页搜索的技能,用于自动化信息采集.
 ```bash
-# 步骤1:搜索相关技能
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "web search" --type skill
+# 步骤说明:搜索相关技能
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "web search" --type skill
 # ...
-# 步骤2:查看详细评分
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "web search" --verbose
+# 步骤说明:查看详细评分
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "web search" --verbose
 # ...
-# 步骤3:安装推荐的技能
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） install "tavily-search" --type skill
+# 步骤说明:安装推荐的技能
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） install "tavily-search" --type skill
 ```
 
 ### 场景二:探索可用的 MCP server
@@ -148,10 +150,10 @@ category: "Knowledge"
 小李想了解有哪些 MCP server可以连接 GitHub.
 ```bash
 # 搜索 GitHub 相关 MCP
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "github" --type mcp
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "github" --type mcp
 # ...
 # 搜索代码托管相关 MCP
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "code hosting" --type mcp
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "code hosting" --type mcp
 ```
 
 ### 场景三:发现新工具
@@ -159,15 +161,15 @@ category: "Knowledge"
 小张想探索 SkillHub 平台有哪些实用工具.
 ```bash
 # 搜索热门工具
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "automation" --limit 10
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "automation" --limit 10
 # ...
 # 搜索特定类别
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "research" --type skill --limit 5
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "research" --type skill --limit 5
 ```
 
 ## 快速开始
 
-### 第一步:配置自动触发(可选)
+### 领先步:配置自动触发(可选)
 
 在 `AGENTS.md` 中添加自动触发配置:
 
@@ -180,29 +182,30 @@ category: "Knowledge"
 2. 不要直接使用平台搜索
 3. 搜索命令:
    ```bash
-   ~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "<关键词>" --type skill
+   ./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "<关键词>" --type skill
    ```
 4. 安装命令:
    ```bash
-   ~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） install <名称> --type skill
+   ./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） install <名称> --type skill
    ```
+echo "操作完成"
 ```
 
 ### 第二步:执行首次搜索
 
 ```bash
 # 搜索 Web 相关技能
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "web"
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "web"
 # ...
 # 查看 MCP server
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "" --type mcp --limit 10
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "" --type mcp --limit 10
 ```
 
 ### 第三步:安装工具
 
 ```bash
 # 安装找到的技能
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） install "target-skill" --type skill
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） install "target-skill" --type skill
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -225,7 +228,7 @@ category: "Knowledge"
   },
   "install": {
     "auto_confirm": false,
-    "install_dir": "~/.skill-platform/workspace/skills"
+    "install_dir": "./.skill-platform/workspace/skills"
   }
 }
 ```
@@ -244,46 +247,46 @@ category: "Knowledge"
 }
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 优先使用精确搜索
 
 ```bash
 # 知道工具名时,用精确搜索
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "exact-name" --exact
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "exact-name" --exact
 # ...
 # 不知道工具名时,用模糊搜索
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "function description"
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "function description"
 ```
 
 ### 2. 善用类型过滤
 
 ```bash
 # 只搜技能
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "keyword" --type skill
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "keyword" --type skill
 # ...
 # 只搜 MCP
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "keyword" --type mcp
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "keyword" --type mcp
 # ...
 # 搜全部(默认)
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "keyword"
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "keyword"
 ```
 
 ### 3. 合理设置结果数量
 
 ```bash
 # 快速浏览:少结果
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "keyword" --limit 5
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "keyword" --limit 5
 # ...
 # 深度探索:多结果
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "keyword" --limit 20
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "keyword" --limit 20
 ```
 
 ### 4. 使用 verbose 排查问题
 
 ```bash
 # 遇到问题时查看详细日志
-~/.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "keyword" --verbose
+./.skill-platform/workspace/skills/tool-finder-tool-free/（请参考skill目录中的脚本文件） search "keyword" --verbose
 ```
 
 ## 常见问题
@@ -348,7 +351,7 @@ npx @anthropic-ai/skillhub@latest login
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,通过 exec 执行 Shell 脚本)
+- **分类**: MD+执行方法(纯 Markdown 指令,通过 exec 执行 Shell 脚本)
 - **说明**: 基于命令行的工具发现引擎,通过自然语言指令驱动 Agent 搜索和安装技能与 MCP server
 - **适用规模**: 个人用户、单次搜索、本地运行
 

@@ -1,40 +1,18 @@
----slug: report-toolkit-free
+---
+slug: report-toolkit-free
 name: report-toolkit-free
 version: 1.0.1
 displayName: 报告工具包-免费版
 summary: "自定义定期报告生成工具"
-license: Proprietary
+license: "MIT"
 edition: free
-description: '自定义定期报告生成工具免费版,面向个人开发者与小型项目。核心能力:
-
-  - 自定义报告配置与数据源
-
-  - 定时调度(每日/每周/每月)
-
-  - 多格式输出(文本/Markdown/HTML)
-
-  - 多渠道交付(聊天/文件/邮件)
-
-  - 环境变量安全管理凭证
-
-  - 历史报告归档
-
-  适用场景:
-
-  - 个人项目数据周报
-
-  - 收入/支出定期汇总
-
-  - GitHub 活动统计报告
-
-  差异化:免费版提供基础报告生成能力'
+description: "自定义定期报告产出工具免费版,面向个人开发者与小型项目。核心能力: - 自定义报告配置与数据源 - 定时调度(每日/每周/每月) - 多格式输出(文本/Markdown/HTML) - 多渠道交付(聊天/文件/邮件) - 环境变量安全管控凭证 - 历史报告归档 适用场景: - 个人项目数据周报 - 收入/支出定期汇总 - GitHub 活动统计报告 差异化:免费版包含基础报告产出能力"
 tags:
   - 报告生成
   - 定时调度
   - 数据汇总
   - 工具
   - 效率
-  - api
   - report
   - delivery
   - file
@@ -44,11 +22,14 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Automation"---# 报告工具包 - 免费版
+category: "Automation"
+pricing_tier: free
+---
+# 报告工具包 - 免费版
 
 ## 概述
 
-报告工具包免费版是面向个人的自定义定期报告生成工具。用户定义数据源和报告格式,工具负责按计划生成报告并通过指定渠道交付。采用「用户定义数据,工具负责调度与格式化」的模型.
+报告工具包免费版是面向个人的自定义定期报告生成工具。用户定义数据源和报告格式,工具负责按计划生成报告并通过指定渠道交付。采用「用户定义数据,工具负责调度与格式化」的模型. 关键词: report toolkit
 ## 核心能力
 
 ### 1. 自定义数据源
@@ -108,7 +89,7 @@ API Key 等凭证通过环境变量引用,不存储在配置文件中.
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
 ```yaml
-# ~/report/weekly-revenue/config.md
+# ./report/weekly-revenue/config.md
 name: weekly-revenue
 schedule: "0 9 * * 1"  # 每周一 9 点
 sources:
@@ -121,13 +102,13 @@ delivery: file
 
 ```bash
 # 设置环境变量
-export STRIPE_API_KEY="your_api_key"
+export STRIPE_API_KEY=${STRIPE_API_KEY:?请设置环境变量}
 # ...
 # 手动触发报告
 ./report-cli run weekly-revenue
 # ...
 # 查看历史报告
-ls ~/report/weekly-revenue/generated/
+ls ./report/weekly-revenue/generated/
 # 2025-01-06.md  2025-01-13.md  2025-01-20.md
 ```
 
@@ -135,7 +116,7 @@ ls ~/report/weekly-revenue/generated/
 
 生成个人 GitHub 活动周报.
 ```yaml
-# ~/report/github-activity/config.md
+# ./report/github-activity/config.md
 name: github-activity
 schedule: "0 10 * * 1"  # 每周一 10 点
 sources:
@@ -152,7 +133,7 @@ delivery: chat
 
 每日生成磁盘使用情况报告.
 ```yaml
-# ~/report/disk-usage/config.md
+# ./report/disk-usage/config.md
 name: disk-usage
 schedule: "0 8 * * *"  # 每日 8 点
 sources:
@@ -185,18 +166,18 @@ delivery: file
 
 ```bash
 # 创建报告目录
-mkdir -p ~/report
+mkdir -p ./report
 # ...
 # 查看已有报告
-cat ~/report/memory.md 2>/dev/null || echo "暂无报告配置"
+cat ./report/memory.md 2>/dev/null || echo "暂无报告配置"
 ```
 
-### 创建第一个报告
+### 创建领先个报告
 
 ```bash
 # 创建报告配置
-mkdir -p ~/report/my-report
-cat > ~/report/my-report/config.md << 'EOF'
+mkdir -p ./report/my-report
+cat > ./report/my-report/config.md << 'EOF'
 name: my-report
 schedule: "0 9 * * *"  # 每日 9 点
 sources:
@@ -207,7 +188,7 @@ delivery: file
 EOF
 # ...
 # 设置 API Key
-export MY_API_KEY="your_key"
+export MY_API_KEY=${MY_API_KEY:?请设置环境变量}
 # ...
 # 手动运行
 ./report-cli run my-report
@@ -248,10 +229,10 @@ delivery: file             # 交付方式: chat, file, email
 | 渠道 | 配置 | 说明 |
 |---:|---:|---:|
 | chat | `delivery: chat` | 在对话中返回报告 |
-| file | `delivery: file` | 保存到 ~/report/{name}/generated/ |
+| file | `delivery: file` | 保存到 ./report/{name}/generated/ |
 | email | `delivery: email` | 通过 SMTP 发送邮件 |
 
-## 最佳实践
+## 优秀实践
 
 1. **凭证不落盘**:API Key 通过环境变量引用,配置文件中只写变量名
 2. **合理调度**:非紧急报告避开高峰时段,减少 API 调用压力
@@ -266,10 +247,10 @@ delivery: file             # 交付方式: chat, file, email
 A: 通过环境变量提供。在配置中写 `env: API_KEY_NAME`,实际值通过 `export API_KEY_NAME="value"` 设置。配置文件只记录变量名,不存储实际值.
 ### Q: 如何查看已有的报告?
 
-A: 运行 `./report-cli list` 查看所有报告配置。查看历史报告:`ls ~/report/{name}/generated/`。手动触发:`./report-cli run {name}`.
+A: 运行 `./report-cli list` 查看所有报告配置。查看历史报告:`ls ./report/{name}/generated/`。手动触发:`./report-cli run {name}`.
 ### Q: 报告生成失败怎么办?
 
-A: 检查以下几点:1) 环境变量是否正确设置;2) API 是否可达;3) 数据源 URL 是否正确;4) 查看错误日志 `~/report/{name}/logs/`。修复后手动重新运行.
+A: 检查以下几点:1) 环境变量是否正确设置;2) API 是否可达;3) 数据源 URL 是否正确;4) 查看错误日志 `./report/{name}/logs/`。修复后手动重新运行.
 ### Q: 可以暂停报告吗?
 
 A: 可以。运行 `./report-cli pause {name}` 暂停调度。恢复运行 `./report-cli resume {name}`。暂停期间不会生成报告.
@@ -299,7 +280,7 @@ A: 可以。运行 `./report-cli pause {name}` 暂停调度。恢复运行 `./re
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **分类**: MD+执行方法(Markdown指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 执行报告生成与交付
 - **限制**: 免费版最多 5 个报告配置,不支持多租户与高级模板
 

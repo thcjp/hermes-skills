@@ -6,7 +6,7 @@ displayName: "RSS AI 摘要 LITE"
 summary: "RSS抓取与LLM中文摘要生成,推送到飞书,SQLite去重,单次执行模式。RSS AI 阅读器(免费版)。自动抓取 RSS/Atom 订阅源,通过 ai-assistant 生成中文摘要,"
 summary_zh: "RSS抓取与LLM中文摘要生成,推送到飞书,SQLite去重,单次执行模式。RSS AI 阅读器(免费版)。自动抓取 RSS/Atom 订阅源,通过 ai-assistant 生成中文摘要,"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要rss ai reader相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   RSS AI 阅读器(免费版)。自动抓取 RSS/Atom 订阅源,通过 ai-assistant 生成中文摘要,
   推送到飞书群机器人 Webhook。基于 SQLite 存储实现条目去重,避免重复推送.
   覆盖三大基础能力:Feed 抓取(支持 RSS 2.0 与 Atom 1.0)、LLM 摘要生成(中文输出)、
@@ -16,20 +16,21 @@ description: |-
   请升级至 rss-ai-reader 付费版.
 tags:
   - 研发工具
+  - rss
+  - reader
+  - automation
+  - productivity
   - Research
-  - RSS
   - 订阅
   - 信息
   - feed
   - llm
-  - url
-  - webhook
-  - python
 tools:
   - read
   - exec
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
 ---
 # RSS AI 摘要 LITE
 
@@ -60,7 +61,7 @@ category: "Knowledge"
 - 飞书 Webhook URL 通过环境变量 FEISHU_WEBHOOK 注入
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
+- **分类**: MD+EXEC模式纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
 - **说明**: 基于 Markdown 的 AI Skill,通过自然语言指令驱动 Agent 执行 Python 脚本完成任务
 
 ## 核心能力
@@ -231,7 +232,7 @@ python main.yaml --once
 ### Q1: 免费版支持哪些推送渠道?
 A: 免费版仅支持飞书 Webhook 推送。如需 Telegram Bot、SMTP Email 推送或多渠道组合推送,需升级至 rss-ai-reader 付费版。飞书 Webhook 在飞书群设置中添加自定义机器人后即可获取.
 ### Q2: 免费版能定时自动执行吗?
-A: 不能。免费版仅支持 --once 单次执行模式,需手动运行或配合外部 cron 调度。如需程序内置的定时循环任务(schedule.interval 配置),需升级至付费版。免费版用户可通过系统 crontab 配合 --once 实现定时效果.
+A: 不能。免费版仅支持 --once 单次执行模式,需手动运行或配合外部 cron 调度。如需程序内置的定时循环任务(schedule.interval 配置),需升级至付费版。免费版用户可通过系统 计划任务配置 配合 --once 实现定时效果.
 ### Q3: SQLite 去重机制如何工作?
 A: 去重基于 feed URL 与条目 ID(或 GUID)的联合唯一键。每次抓取新条目时,先查询数据库中是否已存在该条目 ID,存在则跳过,不存在则生成摘要、推送并写入数据库。如需清理历史数据,可直接删除 rss_reader.db 文件,下次执行会自动重建.
 ### Q4: 免费版与付费版有什么区别?

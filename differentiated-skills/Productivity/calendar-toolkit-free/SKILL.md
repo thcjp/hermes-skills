@@ -1,5 +1,4 @@
 ---
-
 slug: calendar-toolkit-free
 name: calendar-toolkit-free
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: 日历管理工具包基础版
 summary: "日历管理与调度工具,支持创建事件、安排会议与跨平台同步,适合个人用户。核心能力: 日程管理领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT
 edition: free
-description: "核心能力: 日程管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要calendar toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要calendar toolkit相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "核心能力: 日程管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要calendar toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要calendar toolkit相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 日历管理
   - calendar
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 日历管理工具包基础版
 
 ## 概述

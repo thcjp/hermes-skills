@@ -1376,21 +1376,43 @@ def upload_to_clawhub(slug: str, skip_security: bool = False, dry_run: bool = Fa
         return {'success': False, 'slug': slug, 'error': 'DIR_NOT_FOUND',
                 'message': f'找不到skill目录: {slug}'}
     
-    # Step 2: 安全审核预检 (v2.1)
+    # Step 2: 安全审核预检 + 营销关卡 + 防幻觉 (v2.3增强: 与enterprise_uploader对齐)
     if not skip_security:
         try:
-            from quality_gate import run_security_precheck
+            from quality_gate import run_security_precheck, run_marketing_gate, run_anti_hallucination
             skill_md = skill_dir / "SKILL.md"
             if skill_md.exists():
+                # 2a: 安全预检(21项)
                 sec_result = run_security_precheck(skill_md)
                 if not sec_result.get('overall_passed', False):
                     failed_checks = [c for c in sec_result.get('checks', []) if not c.get('passed')]
-                    return {
-                        'success': False, 'slug': slug, 'error': 'SECURITY_PRECHECK_FAILED',
-                        'message': f'安全审核预检未通过({len(failed_checks)}项失败)',
-                        'failed_checks': failed_checks,
-                        'skill_dir': str(skill_dir)
-                    }
+                    critical_fails = [c for c in failed_checks if c.get('severity') == 'critical']
+                    if critical_fails:
+                        return {
+                            'success': False, 'slug': slug, 'error': 'SECURITY_PRECHECK_FAILED',
+                            'message': f'安全审核预检未通过({len(failed_checks)}项失败, {len(critical_fails)}项critical)',
+                            'failed_checks': failed_checks,
+                            'skill_dir': str(skill_dir)
+                        }
+
+                # 2b: 营销关卡(7项)
+                mkt_result = run_marketing_gate(skill_md)
+                if not mkt_result.get('overall_passed', False):
+                    mkt_failed = [c for c in mkt_result.get('checks', []) if not c.get('passed')]
+                    print(f"  ⚠ 营销关卡警告({len(mkt_failed)}项未通过): {[c['name'] for c in mkt_failed]}")
+
+                # 2c: 防幻觉检查(3项)
+                hall_result = run_anti_hallucination(skill_md)
+                if not hall_result.get('overall_passed', False):
+                    hall_failed = [c for c in hall_result.get('checks', []) if not c.get('passed')]
+                    high_fails = [c for c in hall_failed if c.get('severity') == 'high']
+                    if high_fails:
+                        return {
+                            'success': False, 'slug': slug, 'error': 'ANTI_HALLUCINATION_FAILED',
+                            'message': f'防幻觉检查未通过({len(high_fails)}项high级失败)',
+                            'failed_checks': high_fails,
+                            'skill_dir': str(skill_dir)
+                        }
         except ImportError:
             pass  # quality_gate不可用时跳过
     

@@ -1,5 +1,4 @@
 ---
-
 slug: quant-data-quality-tool-free
 name: quant-data-quality-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 数据质量检查基础版
 summary: "量化策略数据质量检查工具,检查数据完整性、准确性、一致性与时效性。核心能力: 数据质量领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT
 edition: free
-description: "核心能力: 数据质量领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要quant data quality tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要quant data quality tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "核心能力: 数据质量领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要quant data quality tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要quant data quality tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 数据质量
   - quant
@@ -29,7 +28,6 @@ category: "Research"
 pricing_tier: free
 
 ---
-
 # 数据质量检查基础版
 
 ## 概述

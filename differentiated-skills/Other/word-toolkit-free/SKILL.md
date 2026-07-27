@@ -1,5 +1,4 @@
 ---
-
 slug: word-toolkit-free
 name: word-toolkit-free
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: Word文档控制免费版
 summary: 通过osascript控制Word应用，支持文档操作、选区编辑、评论与导出，适合个人macOS用户.
 license: MIT
 edition: free
-description: "Word文档控制工具免费版，面向个人macOS用户的轻量级Word应用控制工具。核心能力:，可处置提升工作效率. 适用于需要word toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要word toolkit相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "Word文档控制工具免费版，面向个人macOS用户的轻量级Word应用控制工具。核心能力:，可处置提升工作效率. 适用于需要word toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要word toolkit相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - Word文档
   - word
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # Word文档控制工具（免费版）
 
 ## 概述
@@ -160,7 +158,7 @@ end tell'
 - 破坏性文档操作前需明确确认
 # ...
 # 内存目录结构
-~/word/
+./word/
 ├── memory.md             # 环境信息与安全默认值
 ├── incidents.md          # 可复用的故障与恢复步骤
 └── document-notes.md     # 文档备注与导出目标

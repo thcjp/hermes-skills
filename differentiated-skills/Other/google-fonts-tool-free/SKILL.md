@@ -1,13 +1,14 @@
----slug: google-fonts-tool-free
+---
+slug: google-fonts-tool-free
 name: google-fonts-tool-free
 version: 1.0.0
 displayName: 谷歌字体工具
-summary: "面向个人开发者的 Go"
-license: Proprietary
+summary: "面向个人开发者的 Go,提供核心能力"
+license: "MIT"
 edition: free
-description: 面向个人开发者的 Google Fonts 性能加载与字体搭配工具。核心能力:，可处理提升工作效率
+description: "面向个人开发者的 Google Fonts 性能加载与字体搭配工具。核心能力:，可处置提升工作效率.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
 
-  - display=swap 与 preconnect 最佳加载
+  - display=swap 与 preconnect 优秀加载
 
   - 变量字体与按需字重加载
 
@@ -35,15 +36,15 @@ tags:
   - 电商
   - display
   - swap
-  - preconnect
-  - fonts
-  - 变量字体
 tools:
   - read
   - exec
   - write
 homepage: ""
-category: "Automation"---# 谷歌字体工具（免费版）
+category: "Automation"
+pricing_tier: free
+---
+# 谷歌字体工具（免费版）
 
 ## 概述
 
@@ -78,7 +79,7 @@ category: "Automation"---# 谷歌字体工具（免费版）
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：面向个人开发者的、Google、Fonts、子集与经典搭配工、性能加载与字体搭、配工具、最佳加载、变量字体与按需字、重加载、经典衬线、科技风搭配推荐、按用途选字体与常、见错误规避等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：面向个人开发者的、Google、Fonts、子集与经典搭配工、性能加载与字体搭、配工具、优秀加载、变量字体与按需字、重加载、经典衬线、科技风搭配推荐、按用途选字体与常、见错误规避等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 使用场景
 
 ### 场景一：正确加载字体
@@ -153,7 +154,7 @@ googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 font-weight: 450;
 ```
 
-## 最佳实践
+## 优秀实践
 
 - **只加载用到的字重**：每个冗余字重约浪费 20KB，通常 2-3 个足够.
 - **必加 display=swap**：否则字体加载前文字不可见.

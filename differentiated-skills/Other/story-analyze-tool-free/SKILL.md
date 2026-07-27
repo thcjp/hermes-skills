@@ -1,5 +1,4 @@
 ---
-
 slug: story-analyze-tool-free
 name: story-analyze-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 网文拆文工具-免费版
 summary: "长篇网文结构拆解分析工具,支持大纲提取、节奏分析与人物关系梳理。长篇网文拆文分析工具免费版,面向网文作者与文学爱好者."
 license: MIT
 edition: free
-description: "长篇网文拆文剖析工具免费版,面向网文作者与文学爱好者. 适用于需要story analyze tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要story analyze tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "长篇网文拆文剖析工具免费版,面向网文作者与文学爱好者. 适用于需要story analyze tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要story analyze tool相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - 网文创作
   - story
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 网文拆文工具 - 免费版
 
 ## 概述

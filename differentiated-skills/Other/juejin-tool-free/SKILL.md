@@ -1,5 +1,4 @@
 ---
-
 slug: juejin-tool-free
 name: juejin-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 掘金工具
 summary: "面向个人用户的掘金社区只读与草稿发布工具，支持热门排行.。面向个人用户的掘金技术社区操作工具。核心能力:"
 license: MIT
 edition: free
-description: "面向个人用户的掘金技术社区操作工具。核心能力:，可处置提升工作效率. 适用于需要juejin tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要juejin tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "面向个人用户的掘金技术社区操作工具。核心能力:，可处置提升工作效率. 适用于需要juejin tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要juejin tool相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - 掘金
   - juejin
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 掘金工具（免费版）
 
 ## 概述
@@ -129,7 +127,7 @@ AI: 正在登录掘金账号并发布草稿...
 - **默认草稿**：发布默认只存草稿，避免误公开.
 - **路径要显式**：用户必须显式给 md 路径，AI 不代填.
 - **下载限 output**：下载结果只写 `./output/`，防越权.
-- **Cookie 及时清**：用完执行 `rm ~/.juejin_cookie.json` 撤销登录态.
+- **Cookie 及时清**：用完执行 `rm ./.juejin_cookie.json` 撤销登录态.
 - **别在共享环境登录**：Cookie 明文存本地，避免共享/CI 环境.
 ## 常见问题
 
@@ -222,7 +220,7 @@ POST https://api.juejin.cn/recommend_api/v1/article/recommend_cate_feed
 
 ### API Key 配置
 - 无需额外 API Key
-- 登录后掘金会话 Cookie 保存到 `~/.juejin_cookie.json`（权限 0600）
+- 登录后掘金会话 Cookie 保存到 `./.juejin_cookie.json`（权限 0600）
 
 ### 可用性分类
 - **分类**: MD+EXEC（Markdown 指令 + 命令行执行）

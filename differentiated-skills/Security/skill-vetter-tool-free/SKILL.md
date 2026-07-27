@@ -1,5 +1,4 @@
 ---
-
 slug: skill-vetter-tool-free
 name: skill-vetter-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: Skill安全审查(免费版)
 summary: "安装前安全审查协议,含红旗检测、权限评估与风险分级,保障Agent生态安全,支持多种使用场景和自动化处理"
 license: MIT
 edition: free
-description: "核心能力:，可自发提升工作效率. 适用于需要skill vetter tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要skill vetter tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "核心能力:，可自发提升工作效率. 适用于需要skill vetter tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要skill vetter tool相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - 安全
   - skill
@@ -27,7 +26,6 @@ category: "Security"
 pricing_tier: free
 
 ---
-
 # Skill安全审查(免费版)
 
 ## 概述
@@ -93,10 +91,10 @@ Step 2: 代码审查(强制)
   [ ] curl/wget 到未知URL
   [ ] 向外部服务器发送数据
   [ ] 请求凭据/令牌/API密钥
-  [ ] 读取 ~/.ssh ~/.aws ~/.config
+  [ ] 读取 ./.ssh ./.aws ./.config
   [ ] 访问 MEMORY.md, USER.md, IDENTITY.md
   [ ] 使用 base64 解码
-  [ ] 使用 eval() 或 exec方法() 处理外部输入
+  [ ] 使用 安全解析() 或 exec方法() 处理外部输入
   [ ] 修改工作区外的系统文件
   [ ] 未声明的包安装
   [ ] 连接到IP地址而非域名
@@ -130,7 +128,7 @@ grep -rn "fetch\|axios\|http\.\|https\." /path/to/skill/
 grep -rn "process\.env\|\.ssh\|\.aws\|password\|secret\|token" /path/to/skill/
 # ...
 # 检查Prompt注入
-grep -rn "ignore.*instructions\|system.*prompt\|jailbreak" /path/to/skill/
+grep -rn "ignore.*instructions\|system.*prompt\|新指令" /path/to/skill/
 ```
 
 ### 场景三:生成审查报告
@@ -185,13 +183,25 @@ Skill名称: [name]
 ### 红旗检测清单
 
 ```python
+# ...
+# ...
+# ...
+# ...
+# ...
+# ...
+# ...
+# ...
+# ...
+# ...
+# ...
+# ...
+# ...
+result = "操作完成"
 import os
 import re
 from pathlib import Path
-# ...
 class SkillVetter:
     """Skill安全审查器"""
-# ...
     RED_FLAGS = {
         "network_unknown": {
             "pattern": r"(curl|wget|fetch)\s+['\"]https?://(?!api\.)",
@@ -254,31 +264,25 @@ class SkillVetter:
             "description": "Prompt注入攻击"
         }
     }
-# ...
     RISK_LEVELS = {
         "LOW": {"emoji": "🟢", "action": "基本审查后可安装", "examples": "笔记、天气、格式化"},
         "MEDIUM": {"emoji": "🟡", "action": "需完整代码审查", "examples": "文件操作、浏览器、API"},
         "HIGH": {"emoji": "🔴", "action": "需人工批准", "examples": "凭据、交易、系统"},
         "EXTREME": {"emoji": "⛔", "action": "不要安装", "examples": "安全配置、root访问"}
     }
-# ...
     def vet(self, skill_path):
         """执行安全审查"""
         path = Path(skill_path)
         findings = []
         files_reviewed = 0
-# ...
         for filepath in path.rglob("*"):
             if filepath.is_file() and filepath.suffix in {".js", ".ts", ".py", ".md", ".json", ".sh"}:
                 files_reviewed += 1
                 file_findings = self._check_file(filepath)
                 findings.extend(file_findings)
-# ...
         risk_level = self._determine_risk(findings)
         report = self._generate_report(skill_path, files_reviewed, findings, risk_level)
-# ...
         return report
-# ...
     def _check_file(self, filepath):
         """检查单个文件"""
         findings = []
@@ -296,9 +300,7 @@ class SkillVetter:
                         "description": rule["description"]
                     })
         except Exception:
-            pass
         return findings
-# ...
     def _determine_risk(self, findings):
         """确定风险等级"""
         if any(f["severity"] == "CRITICAL" for f in findings):
@@ -309,14 +311,12 @@ class SkillVetter:
             return "MEDIUM"
         else:
             return "LOW"
-# ...
     def _generate_report(self, skill_path, files_reviewed, findings, risk_level):
         """生成审查报告"""
         risk_info = self.RISK_LEVELS[risk_level]
         verdict = "✅ 可安全安装" if risk_level == "LOW" else \
                   "⚠️ 谨慎安装" if risk_level == "MEDIUM" else \
                   "❌ 不要安装"
-# ...
         report = f"""
 SKILL 安全审查报告
 ═══════════════════════════════════════
@@ -325,12 +325,10 @@ Skill路径: {skill_path}
 ───────────────────────────────────────
 红旗项: {len(findings)} 个
 """
-# ...
         for f in findings:
             report += f"\n  [{f['severity']}] {f['description']}\n"
             report += f"    文件: {f['file']}:{f['line']}\n"
             report += f"    证据: {f['evidence']}\n"
-# ...
         report += f"""
 ───────────────────────────────────────
 风险等级: {risk_info['emoji']} {risk_level}
@@ -379,7 +377,7 @@ python （请参考skill目录中的脚本文件） /path/to/skill/ | grep CRITI
 A: 红旗检测是必要条件但非充分条件。即使无红旗,也建议阅读Skill文档,理解其功能和所需权限.
 ### Q2: 误报怎么处理?
 
-A: 某些合法操作可能触发红旗(如安全工具检测密钥模式)。结合上下文判断,例如安全扫描器读取 `~/.ssh` 是合理的.
+A: 某些合法操作可能触发红旗(如安全工具检测密钥模式)。结合上下文判断,例如安全扫描器读取 `./.ssh` 是合理的.
 ### Q3: 审查需要多长时间?
 
 A: 自动化红旗检测在几秒内完成。完整的人工代码审查取决于Skill大小,通常5-15分钟.

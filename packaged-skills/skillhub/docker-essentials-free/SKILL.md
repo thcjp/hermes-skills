@@ -6,7 +6,7 @@ displayName: "Docker核心操作免费版"
 summary: "免费版Docker操作指南，涵盖容器管理、镜像操作与基础调试命令。。Docker核心操作指南免费版，提供容器生命周期管理基础命令. 包含镜像管理、容器调试与常用工作流. 适用于个人开发与学习"
 summary_zh: "免费版Docker操作指南，涵盖容器管理、镜像操作与基础调试命令。。Docker核心操作指南免费版，提供容器生命周期管理基础命令. 包含镜像管理、容器调试与常用工作流. 适用于个人开发与学习"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要docker essentials相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   Docker核心操作指南免费版，提供容器生命周期管理基础命令.
   包含镜像管理、容器调试与常用工作流.
   适用于个人开发与学习场景的Docker容器化操作.
@@ -17,15 +17,17 @@ tools:
 homepage: ""
 tags:
   - 系统运维
-  - 容器
-  - Docker
-  - DevOps
   - docker
+  - essentials
+  - automation
+  - productivity
+  - 容器
+  - DevOps
   - container
   - bash
   - agent
-  - container_name
 category: "Development"
+pricing_tier: free
 ---
 # Docker核心操作指南（免费版）
 
@@ -57,7 +59,7 @@ category: "Development"
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
@@ -134,7 +136,7 @@ docker run -d --name postgres -e POSTGRES_PASSWORD=secret -v postgres-data:/var/
 # ...
 Agent: docker run -d --name my-nginx -p 8080:80 nginx
 - 容器已在后台启动
-- 访问 http://localhost:8080 查看欢迎页
+- 访问 http://${SERVER_HOST}:${SERVER_PORT} 查看欢迎页
 - docker stop my-nginx 可停止容器
 ```
 

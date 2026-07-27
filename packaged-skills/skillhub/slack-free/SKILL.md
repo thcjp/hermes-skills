@@ -6,7 +6,7 @@ displayName: "Slack 消息 LITE"
 summary: "通过slack工具发送与读取Slack消息,支持频道通知与历史消息查询。Slack 消息管理(免费版)。通过 slack 工具对 Slack 工作区进行基础消息操作,涵盖两大动作组: mes"
 summary_zh: "通过slack工具发送与读取Slack消息,支持频道通知与历史消息查询。Slack 消息管理(免费版)。通过 slack 工具对 Slack 工作区进行基础消息操作,涵盖两大动作组: mes"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要slack相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   Slack 消息管理(免费版)。通过 slack 工具对 Slack 工作区进行基础消息操作,涵盖两大动作组:
   messages(发送消息与读取消息)。工具使用已配置的 Bot Token 进行认证,支持 channel 与 user
   两种消息目标。适用于发送频道通知、读取频道历史等基础场景.
@@ -14,21 +14,22 @@ description: |-
   消息编辑与删除等高级能力,请升级至 slack 付费版.
 tags:
   - Communication
+  - slack
+  - automation
+  - productivity
+  - developer-tools
   - Collaboration
-  - Slack
   - 社交
   - 通信
   - bot
-  - slack
   - channelid
-  - channel
-  - user
 tools:
   - read
   - write
   - exec
 homepage: ""
 category: "Communication"
+pricing_tier: free
 ---
 # Slack 消息 LITE
 
@@ -52,7 +53,7 @@ category: "Communication"
 - Bot 需被邀请加入目标频道(``/invite @botname``),否则消息操作会报 not_in_channel 错误
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯 Markdown 指令,消息操作需要 exec 调用 slack 工具)
+- **分类**: MD+EXEC模式纯 Markdown 指令,消息操作需要 exec 调用 slack 工具)
 - **说明**: 基于 Markdown 的 AI Skill,通过自然语言指令驱动 Agent 执行 Slack 操作
 
 ## 核心能力

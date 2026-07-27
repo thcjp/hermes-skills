@@ -1,5 +1,4 @@
 ---
-
 slug: rss-fetcher-tool-free
 name: rss-fetcher-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: RSS采集器免费版
 summary: "轻量级RSS采集与管理工具,支持增量抓取、自动去重与标签提取,适合个人用户构建本地订阅库。RSS采集器免费版为个人用户提供轻量级的RSS订阅采集与本地管理能力。核心能力:"
 license: MIT
 edition: free
-description: "RSS采集器免费版为个人用户包含轻量级的RSS订阅采集与本地管控能力。核心能力:. 适用于需要rss fetcher tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要rss fetcher tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "RSS采集器免费版为个人用户包含轻量级的RSS订阅采集与本地管控能力。核心能力:. 适用于需要rss fetcher tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要rss fetcher tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 研究工具
   - rss
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # RSS采集器免费版
 
 ## 概述
@@ -323,7 +321,7 @@ ORDER BY count DESC;
 通过`source.py check`定期检查源健康状态,禁用或移除失效源。失效源会拖慢抓取速度(每次30秒超时).
 ### 4. SQLite单进程访问
 
-SQLite不支持并发写入。避免同时运行多个抓取进程。建议通过crontab定时单次执行:
+SQLite不支持并发写入。避免同时运行多个抓取进程。建议通过定时任务配置定时单次执行:
 
 ```bash
 # 每日6点和18点各抓取一次

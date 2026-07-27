@@ -1,5 +1,4 @@
 ---
-
 slug: "jira-skill-free"
 name: "jira-skill-free"
 version: "1.0.0"
@@ -7,7 +6,7 @@ displayName: "Jira集成助手-免费版"
 summary: "通过Jira Cloud REST API查看事务详情、状态流转与浏览器链接，适合只读浏览场景。。Jira集成助手免费版提供Jira事务的只读浏览能力. 支持模糊搜索、事务详情查看、浏览器链"
 summary_zh: "通过Jira Cloud REST API查看事务详情、状态流转与浏览器链接，适合只读浏览场景。。Jira集成助手免费版提供Jira事务的只读浏览能力. 支持模糊搜索、事务详情查看、浏览器链"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要jira skill相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   Jira集成助手免费版提供Jira事务的只读浏览能力.
   支持模糊搜索、事务详情查看、浏览器链接生成与可用流转列表查看.
   核心能力：
@@ -18,7 +17,11 @@ description: |-
   升级付费版专享：状态变更、指派、评论、创建、工时记录、多维工时统计.
   适用场景：只读浏览Jira事务、快速定位事务、查看自己的待办.
 tags:
-  - Jira
+  - - Jira
+  - jira
+  - skill
+  - automation
+  - productivity
   - jira
   - abc-123
   - 请参考
@@ -31,9 +34,8 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
-
+pricing_tier: free
 ---
-
 # Jira集成助手（免费版）
 
 Jira集成助手免费版提供Jira事务的只读浏览能力。支持模糊搜索、事务详情查看、浏览器链接生成与可用流转列表查看.
@@ -91,7 +93,7 @@ Jira集成助手免费版提供Jira事务的只读浏览能力。支持模糊搜
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力

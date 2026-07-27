@@ -1,5 +1,4 @@
 ---
-
 slug: monitor-toolkit-free
 name: monitor-toolkit-free
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: 监控工具包-免费版
 summary: "轻量级服务监控工具,支持HTTP/SSL/进程/磁盘检查,状态变更告警,适合个人项目。轻量级服务监控工具免费版,面向个人开发者与小型项目。核心能力:"
 license: MIT
 edition: free
-description: "轻量级服务监控工具免费版,面向个人开发者与小型项目。核心能力:. 适用于需要monitor toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要monitor toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "轻量级服务监控工具免费版,面向个人开发者与小型项目。核心能力:. 适用于需要monitor toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要monitor toolkit相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - 监控
   - monitor
@@ -27,7 +26,6 @@ category: "Operations"
 pricing_tier: free
 
 ---
-
 # 监控工具包 - 免费版
 
 ## 概述
@@ -82,7 +80,7 @@ pricing_tier: free
 
 ```bash
 # 创建监控配置
-cat > ~/monitor/monitors.json << 'EOF'
+cat > ./monitor/monitors.json << 'EOF'
 {
   "api_prod": {
     "description": "生产 API 健康检查",
@@ -152,10 +150,10 @@ df -h / | awk 'NR==2 {gsub(/%/,"",$5); if($5 > 80) print "警告: 根分区使�
 
 ```bash
 # 创建监控目录
-mkdir -p ~/monitor/logs
+mkdir -p ./monitor/logs
 # ...
 # 查看已有监控
-cat ~/monitor/monitors.json 2>/dev/null || echo "暂无监控配置"
+cat ./monitor/monitors.json 2>/dev/null || echo "暂无监控配置"
 ```
 
 ### 添加领先个监控

@@ -1,5 +1,4 @@
 ---
-
 slug: prod-helper-v1-tool-free
 name: prod-helper-v1-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 效率助手 v1 基础版
 summary: "个人效率助手,帮助记录想法、追踪进度、整理笔记与生成工作总结。核心能力: 效率管理领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT
 edition: free
-description: "核心能力: 效率管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要prod helper v1 tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要prod helper v1 tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "核心能力: 效率管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要prod helper v1 tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要prod helper v1 tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 效率助手
   - prod
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 效率助手 v1 基础版
 
 ## 概述

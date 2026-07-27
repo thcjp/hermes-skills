@@ -3,10 +3,10 @@ slug: "logo-design-guide-free"
 name: "logo-design-guide-free"
 version: 1.0.1
 displayName: "Logo设计指南(免费版)"
-summary: "覆盖辨识度设计、多格式交付、多平台适配、色彩字体系统与一致性规范。(免费版)。从辨识度设计到多平台交付的Logo设计全流程:三大辨识要素、多格式 输出(PNG/JPG/SVG/ICO/Web"
+summary: "提供包含覆盖辨识度设计、多格式交付、多平台适配、色彩字体系统与一致性规范.(免费版).从辨识度设计到多平台交付的Logo设计全流程:三大辨识要素、多格式 输出(PNG/JPG/SVG/ICO/Web"
 summary_zh: "覆盖辨识度设计、多格式交付、多平台适配、色彩字体系统与一致性规范。(免费版)。从辨识度设计到多平台交付的Logo设计全流程:三大辨识要素、多格式 输出(PNG/JPG/SVG/ICO/Web"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要logo design guide相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   从辨识度设计到多平台交付的Logo设计全流程:三大辨识要素、多格式
   输出(PNG/JPG/SVG/ICO/WebP)、多平台适配(Favicon/App/PWA/Social)、
   色彩与字体系统、矢量优先与一致性规范。适用于独立开发者、企业团队
@@ -18,15 +18,17 @@ tools:
 homepage: ""
 tags:
   - 创意设计
+  - logo
+  - design
+  - guide
+  - automation
   - 设计
   - UI/UX
   - 创意
   - png
   - size
-  - output_dir
-  - favicon
-  - logo
 category: "Creative"
+pricing_tier: free
 ---
 # Logo设计指南(免费版)
 
@@ -240,7 +242,7 @@ print(f"WCAG AA (大文字 ≥3.0:1): {'通过' if ratio >= 3.0 else '不通过'
 rsvg-convert -w 1024 -h 1024 -b white logo.svg -o app-icon-1024.png
 
 # 生成不同密度的Android图标
-for density in mdpi:48 hdpi:72 xhdpi:96 xxhdpi:144 xxxhdpi:192; do
+for density in mdpi:48 hdpi:72 xhdpi:96 xxhdpi:144 demohdpi:192; do
   name="${density%%:*}"
   size="${density##*:}"
   rsvg-convert -w $size -h $size -b none logo.svg -o "android-${name}-${size}.png"

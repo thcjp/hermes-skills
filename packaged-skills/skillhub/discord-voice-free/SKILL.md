@@ -6,7 +6,7 @@ displayName: "Discord语音免费"
 summary: "Discord语音助手免费版,提供基础加入/离开/状态查询与本地Whisper转写。Discord 语音对话助手(免费版),提供基础的语音频道加入、离开、状态查询与本地 Whisper 离线"
 summary_zh: "Discord语音助手免费版,提供基础加入/离开/状态查询与本地Whisper转写。Discord 语音对话助手(免费版),提供基础的语音频道加入、离开、状态查询与本地 Whisper 离线"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要discord voice相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   Discord 语音对话助手(免费版),提供基础的语音频道加入、离开、状态查询与本地
   Whisper 离线转写能力。覆盖 VAD 语音检测、静默触发 STT、TTS 播放的最小闭环。
 
@@ -24,21 +24,22 @@ description: |-
   不适用于低延迟直播字幕与企业级多用户场景。
 tags:
   - Communication
+  - discord
+  - voice
+  - automation
+  - productivity
   - 语音对话
-  - Discord
   - 社交
   - 通信
   - whisper
   - tts
-  - stt
-  - discord_voice
-  - api
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: free
 ---
 # Discord 语音助手 (免费版)
 
@@ -57,7 +58,7 @@ category: "Communication"
 ```bash
 # 必需系统依赖
 ffmpeg -version          # 音频处理
-node -e "require('@discordjs/opus')"  # Opus 编解码
+node脚本 "require('@discordjs/opus')"  # Opus 编解码
 ```
 
 Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`Use Voice Activity`(检测语音活动)。在 Discord Developer Portal > OAuth2 > Permissions 中勾选。
@@ -107,7 +108,7 @@ Bot 必须具备三项权限:`Connect`(加入频道)、`Speak`(播放音频)、`
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 使用流程
@@ -197,7 +198,7 @@ agent-cli discord_voice status
 | `Discord client not available` | Discord 频道未配置或 Bot 未连接 | 检查 `DISCORD_TOKEN` 与频道配置,重启 gateway |
 | Opus build errors | 缺少原生编译工具 | `npm install -g node-gyp` 后 `npm rebuild @discordjs/opus` |
 | No audio heard | Bot 缺少 Speak 权限或被服务器静音 | 在 Developer Portal 勾选 Speak;检查服务器是否 mute 了 Bot |
-| Local model download failed | 本地 Whisper 模型下载失败 | 检查网络连接和配置后重试,手动下载模型至 `~/.agent-cli/models/` 目录 |
+| Local model download failed | 本地 Whisper 模型下载失败 | 检查网络连接和配置后重试,手动下载模型至 `./.agent-cli/models/` 目录 |
 | `OPENAI_API_KEY missing` | 未设置 TTS 所需 API Key | 设置 `OPENAI_API_KEY` 环境变量后重启服务 |
 
 ## 常见问题

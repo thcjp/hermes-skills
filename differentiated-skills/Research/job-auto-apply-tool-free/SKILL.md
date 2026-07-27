@@ -1,38 +1,12 @@
----slug: job-auto-apply-tool-free
+---
+slug: job-auto-apply-tool-free
 name: job-auto-apply-tool-free
 version: 1.0.0
 displayName: 求职自动申请
-summary: "轻量级求职自动化工具，"
-license: Proprietary
+summary: "轻量级求职自动化工具，,提供核心能力"
+license: "MIT"
 edition: free
-description: '轻量级求职自动化工具，支持多平台职位搜索与申请提交，自动生成求职信，适合个人求职者提升效率.
-  核心能力:
-
-  - 跨多个招聘平台搜索职位
-
-  - 智能匹配职位与个人资料
-
-  - 自动生成定制化求职信
-
-  - 安全的试运行与确认模式
-
-  适用场景:
-
-  - 个人求职者批量投递简历
-
-  - 应届毕业生求职投递
-
-  - 跨行业转职申请
-
-  差异化:
-
-  - 免费版聚焦核心申请功能，操作简单
-
-  - 支持试运行模式，安全无风险
-
-  - 智能匹配，提高投递成功率
-
-  适用关键词: 求职申请, 自动投递, 职位搜索, 简历投递, 求职信生成'
+description: "轻量级求职自发化工具，兼容多平台职位搜索与申请提交，自发产出求职信，适合个人求职者提升效率. 核心能力: - 跨多个招聘平台搜索职位 - 智能匹配职位与个人资料 - 自发产出定制化求职信 - 安全的试运行与确认模式 适用场景: - 个人求职者成批投递简历 - 应届毕业生求职投递 - 跨行业转职申请 差异化: - 免费版聚焦核心申请功能，操作简单 - 兼容试运行模式，安全无风险 - 智能匹配，提高投递成功率 适用关键词: 求职申请, 自发投递, 职位搜索, 简历投递, 求职信产出"
 tags:
   - 求职
   - 自动化
@@ -44,19 +18,20 @@ tags:
   - json
   - 支持创建
   - 查询
-  - input_params
-  - python
 tools:
   - read
   - exec
   - glob
   - grep
 homepage: ""
-category: "Knowledge"---# 求职自动申请（免费版）
+category: "Knowledge"
+pricing_tier: free
+---
+# 求职自动申请（免费版）
 
 ## 概述
 
-求职自动申请免费版是一款面向个人求职者的自动化申请工具。支持跨 LinkedIn、Indeed 等主流招聘平台搜索职位，智能匹配职位要求与个人资料，自动生成定制化求职信，并提交申请。内置试运行模式和手动确认机制，确保投递安全可控.
+求职自动申请免费版是一款面向个人求职者的自动化申请工具。支持跨 LinkedIn、Indeed 等主流招聘平台搜索职位，智能匹配职位要求与个人资料，自动生成定制化求职信，并提交申请。内置试运行模式和手动确认机制，确保投递安全可控. 关键词: job auto apply
 ## 核心能力
 
 | 能力 | 说明 | 免费版支持 |
@@ -127,7 +102,7 @@ python job_search_apply.py \
   --dry-run
 # ...
 # 实际提交（需确认）
-  --profile ~/job_profile.json \
+  --profile ./job_profile.json \
   --title "Backend Engineer" \
   --platforms linkedin,indeed \
   --require-confirmation
@@ -177,10 +152,10 @@ python job_search_apply.py \
 
 ```bash
 # 复制资料模板
-cp profile_template.json ~/job_profile.json
+cp profile_template.json ./job_profile.json
 # ...
 # 编辑个人资料
-vim ~/job_profile.json
+vim ./job_profile.json
 ```
 
 ### 示例
@@ -190,7 +165,7 @@ vim ~/job_profile.json
   "full_name": "Jane Doe",
   "email": "jane@example.com",
   "phone": "+1234567890",
-  "resume_path": "~/Documents/resume.pdf",
+  "resume_path": "./Documents/resume.pdf",
   "linkedin_url": "https://linkedin.com/in/janedoe",
   "years_experience": 5,
   "authorized_to_work": true,
@@ -244,7 +219,7 @@ vim ~/job_profile.json
 7. 记录结果 → 保存投递记录
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 安全投递建议
 
@@ -322,7 +297,7 @@ py --check-platforms
 
 ```bash
 # 优化个人资料中的技能描述
-vim ~/job_profile.json
+vim ./job_profile.json
 # ...
 # 自定义求职信模板
 py --cover-letter-template custom_template.txt

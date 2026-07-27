@@ -1,13 +1,12 @@
 ---
-
 slug: file-sorter-tool-free
 name: file-sorter-tool-free
 version: 1.0.0
 displayName: 视觉文件整理免费版
-summary: "利用视觉模型识别文件内容并智能重命名归档，模拟人类整理流程，适合个人桌面清理.。视觉文件整理工具免费版，面向个人用户的轻量级文件整理助手。核心能力:"
+summary: "利用视觉模型识别文件内容并智能重命名归档，模拟人类整理流程，适合个人桌面清理.。视觉文件整理工具免费版，面向个人用户的轻量级文件整理助手。核心能力:,提供核心能力"
 license: MIT
 edition: free
-description: "视觉文件整理工具免费版，面向个人用户的轻量级文件整理助手。核心能力:，可自发提升工作效率. 适用于需要file sorter tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要file sorter tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "视觉文件整理工具免费版，面向个人用户的轻量级文件整理助手。核心能力:，可自发提升工作效率. 适用于需要file sorter tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要file sorter tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 文件整理
   - file
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 视觉文件整理工具（免费版）
 
 ## 概述
@@ -72,10 +70,10 @@ pricing_tier: free
 用户希望整理杂乱的下载文件夹.
 ```bash
 # 整理下载文件夹
-file-sorter organize --target ~/Downloads
+file-sorter organize --target ./Downloads
 # ...
 # 示例
-# 📂 扫描: ~/Downloads
+# 📂 扫描: ./Downloads
 # 📊 发现 28 个待处理文件
 # 🔍 视觉识别中...
 #
@@ -92,7 +90,7 @@ file-sorter organize --target ~/Downloads
 用户希望将桌面文件按内容归档.
 ```bash
 # 整理桌面
-file-sorter organize --target ~/Desktop --destination ~/Documents/Sorted/
+file-sorter organize --target ./Desktop --destination ./Documents/Sorted/
 # ...
 # 重命名规则示例：
 # 发票.pdf → [2026-07]_发票_某某科技.pdf
@@ -105,7 +103,7 @@ file-sorter organize --target ~/Desktop --destination ~/Documents/Sorted/
 用户希望将发票与收据统一归类至财务目录.
 ```bash
 # 仅整理财务类文件
-file-sorter organize --target ~/Downloads --filter "financial" --destination ~/Documents/Sorted/财务账单/
+file-sorter organize --target ./Downloads --filter "financial" --destination ./Documents/Sorted/财务账单/
 # ...
 # 输出
 # 📊 财务文件整理报告
@@ -138,13 +136,13 @@ file-sorter organize --target ~/Downloads --filter "financial" --destination ~/D
 file-sorter organize
 # ...
 # 2. 指定目标与归档目录
-file-sorter organize --target ~/Downloads --destination ~/Documents/Sorted/
+file-sorter organize --target ./Downloads --destination ./Documents/Sorted/
 # ...
 # 3. 仅整理特定类型
-file-sorter organize --target ~/Desktop --filter "financial"
+file-sorter organize --target ./Desktop --filter "financial"
 # ...
 # 4. 预览模式（不实际移动）
-file-sorter organize --target ~/Downloads --dry-run
+file-sorter organize --target ./Downloads --dry-run
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -159,7 +157,7 @@ file-sorter organize --target ~/Downloads --dry-run
 # 错误处理
 # ...
 # 归档目录结构
-~/Documents/Sorted/
+./Documents/Sorted/
 ├── 财务账单/
 ├── 工作文档/
 ├── 图片素材/

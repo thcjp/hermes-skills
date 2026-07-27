@@ -6,7 +6,7 @@ displayName: "卡片图渲染免费版"
 summary: "将短文案渲染为 PNG 海报,支持公众号配色与整行高亮,基础渲染能力。将用户提供的短文案渲染成 PNG 卡片图. 免费版仅支持 poster-3-4 文字海报模板, 内置公众号配色预设与整行"
 summary_zh: "将短文案渲染为 PNG 海报,支持公众号配色与整行高亮,基础渲染能力。将用户提供的短文案渲染成 PNG 卡片图. 免费版仅支持 poster-3-4 文字海报模板, 内置公众号配色预设与整行"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要z card image相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   将用户提供的短文案渲染成 PNG 卡片图.
   免费版仅支持 poster-3-4 文字海报模板,
   内置公众号配色预设与整行高亮能力,
@@ -14,21 +14,22 @@ description: |-
   不包含长文分页、X 风格长图、公众号封面与小红书配色.
 tags:
   - 需求设计
+  - card
+  - image
+  - automation
+  - productivity
   - Creative
   - 图像处理
   - AI绘图
   - 创意
   - 补充
-  - 用户提供
-  - 包含执行
-  - 状态码
-  - 结果数据
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
 # z-card-image Free
 
@@ -192,7 +193,7 @@ render_card.py 执行报错.
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力

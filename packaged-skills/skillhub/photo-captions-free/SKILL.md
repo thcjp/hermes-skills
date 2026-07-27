@@ -6,7 +6,7 @@ displayName: "摄影配文免费版"
 summary: "为摄影作品生成 Instagram、Flickr、X、Reddit、VSCO 五个主流平台的差异化配文，根据照片场景与器材适配各社区语调。"
 summary_zh: "为摄影作品生成 Instagram、Flickr、X、Reddit、VSCO 五个主流平台的差异化配文，根据照片场景与器材适配各社区语调。"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要photo captions相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   面向摄影爱好者的入门级多平台配文生成助手。当用户分享照片并附带
   拍摄背景（地点、机身、胶片、主体、氛围）时，输出适配 Instagram、
   Flickr、X、Reddit、VSCO 五个主流社区的差异化配文。每个平台拥有
@@ -16,21 +16,22 @@ description: |-
   颗粒度的器材呈现规则.
 tags:
   - 需求设计
+  - photo
+  - captions
+  - automation
+  - productivity
   - Photography
   - SocialMedia
   - 工具
   - 效率
   - 写作
-  - vsco
-  - reddit
-  - instagram
-  - flickr
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Automation"
+pricing_tier: free
 ---
 # Photo Captions Free
 
@@ -63,7 +64,7 @@ category: "Automation"
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力

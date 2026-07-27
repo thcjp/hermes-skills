@@ -1,5 +1,4 @@
 ---
-
 slug: write-toolkit-free
 name: write-toolkit-free
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: 写作工具免费版
 summary: "规划、起草、版本化与精炼写作内容，强制版本管理与质量审计，适合个人创作者.。写作工具免费版，面向个人创作者的轻量级写作流程管理工具."
 license: MIT
 edition: free
-description: "写作工具免费版，面向个人创作者的轻量级写作流程管控工具. 适用于需要write toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要write toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "写作工具免费版，面向个人创作者的轻量级写作流程管控工具. 适用于需要write toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要write toolkit相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - 写作
   - write
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 写作工具（免费版）
 
 ## 概述
@@ -72,7 +70,7 @@ pricing_tier: free
 从规划到交付的完整写作流程.
 ```bash
 # 1. 初始化工作区
-（请参考skill目录中的脚本文件） ~/writing
+（请参考skill目录中的脚本文件） ./writing
 # ...
 # 2. 创建新作品
 （请参考skill目录中的脚本文件） "async-programming-guide"
@@ -150,7 +148,7 @@ pricing_tier: free
 
 ```bash
 # 1. 初始化工作区
-（请参考skill目录中的脚本文件） ~/writing
+（请参考skill目录中的脚本文件） ./writing
 # ...
 # 2. 创建新作品（带 ID）
 （请参考skill目录中的脚本文件） "article-slug"

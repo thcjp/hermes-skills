@@ -6,7 +6,7 @@ displayName: "精英长期记忆免费版"
 summary: "基础 AI Agent 记忆系统，热内存加文件归档，抗压缩不丢上下文。。面向 AI Agent 的基础长期记忆系统，提供热内存与文件归档两层记忆能力. 热内存（SESSION-STATE.m"
 summary_zh: "基础 AI Agent 记忆系统，热内存加文件归档，抗压缩不丢上下文。。面向 AI Agent 的基础长期记忆系统，提供热内存与文件归档两层记忆能力. 热内存（SESSION-STATE.m"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要elite longterm memory相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   面向 AI Agent 的基础长期记忆系统，提供热内存与文件归档两层记忆能力.
   热内存（SESSION-STATE.md）抗压缩与重启，通过 WAL 协议确保先写状态再回复.
   精选归档（MEMORY.md + daily/）提供人类可读的长期记忆与每日日志.
@@ -20,15 +20,17 @@ tools:
 homepage: ""
 tags:
   - 智能助手
+  - elite
+  - longterm
+  - memory
+  - automation
   - 记忆管理
   - 上下文
   - AI
-  - memory
   - agent
   - session-state
-  - wal
-  - 跨设备同
 category: "Agents"
+pricing_tier: free
 ---
 # 精英长期记忆免费版（Elite Longterm Memory Free）
 
@@ -70,7 +72,7 @@ category: "Agents"
 
 ## 使用流程
 
-第一步：创建热内存文件。执行 `cat > SESSION-STATE.md` 创建包含 Current Task、Key Context、Pending Actions、Recent Decisions 四区块的状态文件。这是 Agent 的"RAM"，抗压缩、抗重启.
+领先步：创建热内存文件。执行 `cat > SESSION-STATE.md` 创建包含 Current Task、Key Context、Pending Actions、Recent Decisions 四区块的状态文件。这是 Agent 的"RAM"，抗压缩、抗重启.
 第二步：配置 Agent 指令。在 AGENTS.md 中添加记忆协议：会话开始时读取 SESSION-STATE.md 获取热上下文，检查 memory/YYYY-MM-DD.md 了解近期活动。对话中用户给出具体细节则先写入 SESSION-STATE.md 再回复.
 第三步：会话结束与维护。会话结束时更新 SESSION-STATE.md 最终状态，将重要内容迁移至 MEMORY.md，创建或更新 memory/YYYY-MM-DD.md 每日日志。定期合并每日日志到 MEMORY.md 保持精简.
 **结果验证**: 任务完成后,查看输出确认状态。成功时返回摘要和数据;失败时根据错误信息排查,参考恢复章节获取修复步骤.

@@ -6,7 +6,7 @@ displayName: "Discord社区免费"
 summary: "Discord社区只读查询助手,提供用户身份、公会列表与邀请解析基础能力。Discord 社区管理助手(免费版),基于 ClawLink OAuth 提供只读访问能力. 覆盖当前用户资料、公"
 summary_zh: "Discord社区只读查询助手,提供用户身份、公会列表与邀请解析基础能力。Discord 社区管理助手(免费版),基于 ClawLink OAuth 提供只读访问能力. 覆盖当前用户资料、公"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要discord communities相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   Discord 社区管理助手(免费版),基于 ClawLink OAuth 提供只读访问能力.
   覆盖当前用户资料、公会列表、成员信息、邀请解析与公钥查询等基础场景.
   核心能力:
@@ -21,21 +21,22 @@ description: |-
   不适用于商业应用权益核验与角色连接同步场景.
 tags:
   - Communication
+  - discord
+  - communities
+  - automation
+  - productivity
   - 社区运营
-  - Discord
   - 社交
   - 通信
   - scope
   - oauth2
-  - discord
-  - token
-  - bearer
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: free
 ---
 # Discord 社区管理 (免费版)
 
@@ -103,7 +104,7 @@ clawlink_list_tools({ integration: "discord" });
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 使用流程

@@ -1,5 +1,4 @@
 ---
-
 slug: plugin-arch-tool-free
 name: plugin-arch-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 插件架构工具-免费版
 summary: "UI插件架构安装工具,支持自定义视图注册与导航集成,适合个人项目扩展。UI 插件架构安装工具免费版,面向个人开发者与小型项目."
 license: MIT
 edition: free
-description: "UI 插件架构安装工具免费版,面向个人开发者与小型项目，可自发提升工作效率. 适用于需要plugin arch tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要plugin arch tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "UI 插件架构安装工具免费版,面向个人开发者与小型项目，可自发提升工作效率. 适用于需要plugin arch tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要plugin arch tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 插件架构
   - plugin
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 插件架构工具 - 免费版
 
 ## 概述

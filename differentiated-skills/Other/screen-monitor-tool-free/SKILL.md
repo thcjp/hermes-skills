@@ -1,5 +1,4 @@
 ---
-
 slug: screen-monitor-tool-free
 name: screen-monitor-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 屏幕监控工具-免费版
 summary: "双模式屏幕共享工具,支持单次截图与定时监控,适合个人使用与远程协助。屏幕监控工具免费版,面向个人用户的屏幕共享与分析."
 license: MIT
 edition: free
-description: "屏幕监控工具免费版,面向个人用户的屏幕共享与剖析. 适用于需要screen monitor tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要screen monitor tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "屏幕监控工具免费版,面向个人用户的屏幕共享与剖析. 适用于需要screen monitor tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要screen monitor tool相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - 屏幕截图
   - screen
@@ -27,7 +26,6 @@ category: "Operations"
 pricing_tier: free
 
 ---
-
 # 屏幕监控工具 - 免费版
 
 ## 概述
@@ -160,11 +158,11 @@ pip install Pillow pyautogui pytesseract
 
 ```bash
 # 截取全屏
-py --mode single --output ~/screenshot.png
+py --mode single --output ./screenshot.png
 # ...
 # 查看截图
-open ~/screenshot.png  # macOS
-xdg-open ~/screenshot.png  # Linux
+open ./screenshot.png  # macOS
+xdg-open ./screenshot.png  # Linux
 ```
 
 ## 示例

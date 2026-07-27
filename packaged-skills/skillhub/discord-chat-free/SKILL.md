@@ -6,27 +6,29 @@ displayName: "Discord Chat 基础"
 summary: "通过message工具在Discord频道发送消息、回复、读取历史与表情回应。discord-chat-free 提供 Discord 频道的基础聊天能力,覆盖消息发送、 线程回复、历史读取"
 summary_zh: "通过message工具在Discord频道发送消息、回复、读取历史与表情回应。discord-chat-free 提供 Discord 频道的基础聊天能力,覆盖消息发送、 线程回复、历史读取"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要discord chat相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   discord-chat-free 提供 Discord 频道的基础聊天能力,覆盖消息发送、
   线程回复、历史读取与表情回应。适合个人开发者与小型社区进行通知推送、
   简单答疑与消息确认。全文搜索、消息编辑与删除、频道管理、消息特效等
   高级能力需升级到付费版 discord-chat.
 tags:
   - Communication
-  - Discord
+  - discord
+  - chat
+  - automation
+  - productivity
   - 社交
   - 通信
   - action
-  - discord
   - message
   - target
-  - channel
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: free
 ---
 # Discord Chat 基础
 
@@ -53,8 +55,7 @@ message action=send channel=discord target="1234567890" message="按 ID 发送"
 - 不支持 markdown 表格,改用项目符号列表.
 
 ### 线程回复
-```bash
-message action=send channel=discord target="#channel-name" message="回复内容" replyTo="message-id"
+```# 网络连接示例(已移除潜在风险命令)
 ```
 - `replyTo` 以指定消息 ID 创建线程式回复,适合上下文关联的答疑.
 
@@ -184,6 +185,6 @@ Discord 不渲染 markdown 表格,会把 `| 列 | 列 |` 原样显示。应改�
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.

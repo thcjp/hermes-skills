@@ -1,5 +1,4 @@
 ---
-
 slug: gitcrawl-tool-free
 name: gitcrawl-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 仓库归档搜索
 summary: 轻量级代码仓库 issue/PR 归档搜索工具，支持本地缓存查询与新鲜度检测，适合个人开发者日常代码仓库管理.
 license: MIT
 edition: free
-description: "轻量级代码仓库 issue/PR 归档搜索工具，兼容本地缓存查询与新鲜度查验，适合个人开发者日常代码仓库管控。核心能力:. 适用于需要gitcrawl tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要gitcrawl tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "轻量级代码仓库 issue/PR 归档搜索工具，兼容本地缓存查询与新鲜度查验，适合个人开发者日常代码仓库管控。核心能力:. 适用于需要gitcrawl tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要gitcrawl tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 开发工具
   - gitcrawl
@@ -28,7 +27,6 @@ category: "Development"
 pricing_tier: free
 
 ---
-
 # 仓库归档搜索（免费版）
 
 ## 概述
@@ -158,7 +156,7 @@ gitcrawl neighbors owner/repo \
 # 参考官方文档进行安装
 # ...
 # 初始化本地归档
-gitcrawl init --storage ~/.gitcrawl/archive
+gitcrawl init --storage ./.gitcrawl/archive
 # ...
 # 验证安装
 gitcrawl doctor --json

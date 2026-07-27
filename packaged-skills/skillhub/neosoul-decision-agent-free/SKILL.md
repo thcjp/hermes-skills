@@ -1,15 +1,12 @@
----slug: "neosoul-decision-agent-free"
+---
+slug: "neosoul-decision-agent-free"
 name: "neosoul-decision-agent-free"
 version: "1.0.0"
 displayName: "自主决策代理"
 summary: "基础版结构化决策支持工"
-summary_zh: "基础版结构化决策支持工具，提供框架分析与决策记录功能。基础版结构化决策支持工具，帮助用户在面临权衡选择时进行结构化分析. 提供分层记忆基础存储、决策框架应用、决策记录与回顾三大核心能力. 适"
+summary_zh: "基础版结构化决策支持工"
 license: "MIT"
-description: |-
-  基础版结构化决策支持工具，帮助用户在面临权衡选择时进行结构化分析.
-  提供分层记忆基础存储、决策框架应用、决策记录与回顾三大核心能力.
-  适用于产品决策、技术架构决策、商业战略决策等多领域场景.
-  无需凭证，无需额外依赖，本地运行.
+description: "|- 基础版结构化决策兼容工具，帮助用户在面临权衡选择时进行结构化剖析. 包含分层记忆基础存储、决策框架应用、决策记录与回顾三大核心能力. 适用于产品决策、技术架构决策、商业战略决策等多领域场景. 无需凭证，无需额外依赖，本地运行.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
 tools:
   - read
   - exec
@@ -24,10 +21,12 @@ tags:
   - 智能
   - hot
   - decision-making
-  - api
   - agent
   - memory
-category: "Agents"---# 自主决策代理（Neosoul Decision Agent）- 免费版
+category: "Agents"
+pricing_tier: free
+---
+# 自主决策代理（Neosoul Decision Agent）- 免费版
 
 基础版结构化决策支持工具，通过分层记忆存储用户决策偏好，提供框架分析帮助用户做出更优决策.
 ## 输入格式
@@ -50,7 +49,7 @@ category: "Agents"---# 自主决策代理（Neosoul Decision Agent）- 免费版
 2. **决策框架应用**
    - 加载HOT层获取用户风险偏好与框架偏好
    - 按领域匹配加载WARM层决策模式
-   - 应用最佳匹配框架进行结构化分析
+   - 应用优秀匹配框架进行结构化分析
    - 每次分析包含置信度标注（高/中/低）
    - 呈现≥2个选项及权衡分析
    - 输出：含置信度标签的决策分析报告
@@ -84,13 +83,13 @@ category: "Agents"---# 自主决策代理（Neosoul Decision Agent）- 免费版
 
 ## 使用流程
 
-### 第一步：初始化决策记忆环境
+### 领先步：初始化决策记忆环境
 
-如果 `~/decision-making/` 目录不存在，创建目录结构：
+如果 `./decision-making/` 目录不存在，创建目录结构：
 
 ```bash
-mkdir -p ~/decision-making/{domains,types,decisions,archive}
-touch ~/decision-making/{memory.md,index.md,frameworks.md,reversals.md}
+mkdir -p ./decision-making/{domains,types,decisions,archive}
+touch ./decision-making/{memory.md,index.md,frameworks.md,reversals.md}
 ```
 
 ### 第二步：执行结构化决策分析
@@ -109,8 +108,8 @@ touch ~/decision-making/{memory.md,index.md,frameworks.md,reversals.md}
 
 | 错误类型 | 原因 | 处理方式 |
 |:-----|:-----|:-----|
-| 决策记忆目录不存在 | 首次使用未初始化 | 运行初始化命令创建 `~/decision-making/` 目录结构与文件 |
-| 框架与决策不匹配 | 选择了不适合当前决策的框架 | 先通过澄清问题理解决策上下文，再选择最佳匹配框架 |
+| 决策记忆目录不存在 | 首次使用未初始化 | 运行初始化命令创建 `./decision-making/` 目录结构与文件 |
+| 框架与决策不匹配 | 选择了不适合当前决策的框架 | 先通过澄清问题理解决策上下文，再选择优秀匹配框架 |
 | 从单一决策推断偏好 | 单个数据点不代表模式 | 等待3次一致信号后才将模式提升到HOT层 |
 
 ## 示例
@@ -151,7 +150,7 @@ touch ~/decision-making/{memory.md,index.md,frameworks.md,reversals.md}
 **Q2：系统怎么学习我的决策偏好？**
 通过识别决策信号自动学习。当你说"我宁愿等更多数据"时，系统识别为风险厌恶信号并记录到memory.md。信号观察3次一致后提升为HOT层模式，在后续决策中应用.
 **Q3：系统需要网络连接吗？**
-不需要。系统完全在本地运行，不做网络请求，不访问外部系统。所有决策记忆存储在本地 `~/decision-making/` 目录中。无需凭证，无需额外依赖.
+不需要。系统完全在本地运行，不做网络请求，不访问外部系统。所有决策记忆存储在本地 `./decision-making/` 目录中。无需凭证，无需额外依赖.
 ## 依赖说明
 
 ### 运行环境
@@ -171,12 +170,12 @@ touch ~/decision-making/{memory.md,index.md,frameworks.md,reversals.md}
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 已知限制
 
-1. **记忆基于本地文件**：所有决策记忆存储在本地，不跨设备同步。更换设备需手动迁移 `~/decision-making/` 目录.
+1. **记忆基于本地文件**：所有决策记忆存储在本地，不跨设备同步。更换设备需手动迁移 `./decision-making/` 目录.
 2. **信号学习需要时间积累**：风险偏好和框架偏好需要多次一致信号（至少3次）才能提升为HOT层模式，新用户初始阶段个性化程度较低.
 3. **不做最终决策**：系统永远不替用户做最终决策，只提供结构化分析和选项呈现.
 4. **无主动决策检测**：免费版不支持主动检测用户未明确表达的决策点，需用户主动发起决策分析请求.

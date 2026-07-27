@@ -1,11 +1,12 @@
----slug: monad-dev-tool-free
+---
+slug: monad-dev-tool-free
 name: monad-dev-tool-free
 version: 1.0.0
 displayName: Monad开发工具-免费版
-summary: "Monad区块链DAp"
-license: Proprietary
+summary: "Monad区块链DAp,提供核心能力"
+license: "MIT"
 edition: free
-description: Monad区块链DApp开发助手免费版,面向个人开发者与区块链爱好者。核心能力:，可生成提升工作效率
+description: "Monad区块链DApp开发助手免费版,面向个人开发者与区块链爱好者。核心能力:，可产出提升工作效率.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
 
   - Monad测试网合约部署与验证
 
@@ -37,20 +38,15 @@ tags:
   - 自动化
   - 开发
   - 代码
-  - 运维
-  - 监控
-  - 集成
-  - monad
-  - foundry
-  - 部署
-  - forge
-  - erc20
 tools:
   - read
   - exec
   - write
 homepage: ""
-category: "Automation"---# Monad 开发工具 - 免费版
+category: "Automation"
+pricing_tier: free
+---
+# Monad 开发工具 - 免费版
 
 ## 概述
 
@@ -191,7 +187,7 @@ devnads.com/v1/faucet \
   -d '{"chainId": 10143, "address": "0xYOUR_ADDRESS"}'
 ```
 
-### 创建第一个合约
+### 创建领先个合约
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -241,7 +237,7 @@ const config = createConfig({
 |:-----|:-----|:-----|
 | Testnet | 10143 | https://testnet-rpc.monad.xyz |
 
-## 最佳实践
+## 优秀实践
 
 1. **始终使用测试网**:免费版默认使用测试网,避免主网操作风险
 2. **钱包持久化**:生成的钱包必须保存私钥,建议写入 `.env` 并加入 `.gitignore`
@@ -289,7 +285,7 @@ A: 确认使用 `viem/chains` 中的 `monadTestnet`,不要自定义链配置。�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **分类**: MD+执行方法(Markdown指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 执行 Monad 区块链开发任务,包含合约部署与验证的命令行操作
 - **限制**: 免费版仅支持测试网操作,不支持主网部署与批量合约管理
 

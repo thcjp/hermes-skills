@@ -1,5 +1,4 @@
 ---
-
 slug: notion-skill-tool-free
 name: notion-skill-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: Notion 技能基础版
 summary: "通过 Notion API 操作页面与数据库,支持读取、创建、更新与架构管理。核心能力: 知识管理领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT
 edition: free
-description: "核心能力: 知识管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要notion skill tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要notion skill tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "核心能力: 知识管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要notion skill tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要notion skill tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - Notion
   - notion
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # Notion 技能基础版
 
 ## 概述
@@ -163,7 +161,7 @@ notion-cli db query <database_id> --filter '{"property":"Status","select":{"equa
 ### 2. 配置参数
 
 ```bash
-export NOTION_API_KEY=secret_xxx
+export NOTION_API_KEY=secret_demo
 export NOTION_PROFILE=personal  # 或 work
 # 需要将目标页面/数据库共享给你的 integration
 ```
@@ -199,7 +197,7 @@ Agent 将自动:
 ### 基础配置
 
 ```bash
-export NOTION_API_KEY=secret_xxx
+export NOTION_API_KEY=secret_demo
 export NOTION_PROFILE=personal  # 或 work
 # 需要将目标页面/数据库共享给你的 integration
 ```

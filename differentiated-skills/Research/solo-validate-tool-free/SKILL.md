@@ -1,5 +1,4 @@
 ---
-
 slug: solo-validate-tool-free
 name: solo-validate-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 想法验证工具免费版
 summary: "轻量级创业想法验证工具,支持S.E.E.D.维度检查与基础评分,适合个人创业者快速筛选想法。想法验证工具免费版为个人创业者提供轻量级的创业想法验证能力."
 license: MIT
 edition: free
-description: "想法验证工具免费版为个人创业者包含轻量级的创业想法验证能力. 适用于需要solo validate tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要solo validate tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "想法验证工具免费版为个人创业者包含轻量级的创业想法验证能力. 适用于需要solo validate tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要solo validate tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 研究工具
   - solo
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # 想法验证工具免费版
 
 ## 概述
@@ -319,7 +317,7 @@ D - 需求评分标准:
 # ...
 web + AI/ML     -> nextjs-supabase (或 nextjs-ai-agents)
 web + landing   -> astro-static
-web + 内容+SSR  -> astro-hybrid
+web + 内容+网络代理  -> astro-hybrid
 web (默认)      -> nextjs-supabase
 ios             -> ios-swift
 android         -> kotlin-android
@@ -345,7 +343,7 @@ serverless      -> cloudflare-workers
 # ...
 ## 目标用户与任务
 - ICP: {理想客户画像}
-- JTBD: {2-3个用户待完成的任务}
+- J已实现: {2-3个用户待完成的任务}
 # ...
 ## 功能需求
 1. {功能1} - 验收标准: {可衡量标准}

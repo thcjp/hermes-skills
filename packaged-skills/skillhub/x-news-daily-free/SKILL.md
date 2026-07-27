@@ -6,25 +6,27 @@ displayName: "X新闻免费版"
 summary: "抓取 X.com 关键词热门新闻 Top 10，生成基础中文海报。。X News Daily 免费版。抓取 X.com 上指定关键词的热门新闻 Top 10，自动将英文标题翻译为中文， 渲染"
 summary_zh: "抓取 X.com 关键词热门新闻 Top 10，生成基础中文海报。。X News Daily 免费版。抓取 X.com 上指定关键词的热门新闻 Top 10，自动将英文标题翻译为中文， 渲染"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要x news daily相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   X News Daily 免费版。抓取 X.com 上指定关键词的热门新闻 Top 10，自动将英文标题翻译为中文，
   渲染为基础 HTML 海报图片。支持 Headless Chrome 大视口截图方案.
   适用于每日新闻简报、关键词热搜查看等基础场景.
 tags:
   - 研发工具
+  - news
+  - daily
+  - automation
+  - productivity
   - Research
   - 新闻
   - 信息
   - 资讯
   - top
-  - html
-  - png
-  - chrome
 tools:
   - read
   - exec
 homepage: ""
 category: "Knowledge"
+pricing_tier: free
 ---
 # X News Daily LITE
 

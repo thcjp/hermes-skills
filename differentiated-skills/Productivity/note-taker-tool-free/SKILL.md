@@ -1,5 +1,4 @@
 ---
-
 slug: note-taker-tool-free
 name: note-taker-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 笔记记录器基础版
 summary: "命令行任务与笔记管理工具,支持添加、列表、完成、优先级与提醒功能。核心能力: 任务管理领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT
 edition: free
-description: "核心能力: 任务管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要note taker tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要note taker tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "核心能力: 任务管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要note taker tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要note taker tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 笔记
   - note
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 笔记记录器基础版
 
 ## 概述
@@ -168,7 +166,7 @@ note-taker export > backup.txt
 
 ```bash
 # 配置
-NOTE_TAKER_DIR=~/.local/share/note-taker
+NOTE_TAKER_DIR=./.local/share/note-taker
 # 数据格式: YYYY-MM-DD <content>
 # 历史记录: history.log
 ```
@@ -205,7 +203,7 @@ Agent 将自动:
 
 ```bash
 # 配置
-NOTE_TAKER_DIR=~/.local/share/note-taker
+NOTE_TAKER_DIR=./.local/share/note-taker
 # 数据格式: YYYY-MM-DD <content>
 # 历史记录: history.log
 ```
@@ -255,7 +253,7 @@ NOTE_TAKER_DIR=~/.local/share/note-taker
 A: Linux 和 macOS,需要 Bash 环境。Windows 可通过 WSL 使用.
 ### Q: 数据存储在哪里?
 
-A: 存储在 ~/.local/share/note-taker/data.log,可通过 NOTE_TAKER_DIR 自定义.
+A: 存储在 ./.local/share/note-taker/data.log,可通过 NOTE_TAKER_DIR 自定义.
 ### Q: 如何升级到 PRO 版本?
 
 A: 升级到 PRO 版本非常简单:

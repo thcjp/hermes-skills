@@ -6,7 +6,7 @@ displayName: "版本化写作工具（免费版）"
 summary: "免费版版本化写作工具，支持基础工作流与edit.sh版本控制。带版本控制的写作工具（免费版）. 遵循Request→Plan→Draft→Audit→Refine→Deliver基础工作流，"
 summary_zh: "免费版版本化写作工具，支持基础工作流与edit.sh版本控制。带版本控制的写作工具（免费版）. 遵循Request→Plan→Draft→Audit→Refine→Deliver基础工作流，"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要write相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   带版本控制的写作工具（免费版）.
   遵循Request→Plan→Draft→Audit→Refine→Deliver基础工作流，通过edit.sh脚本管理版本.
   支持depth基础配置。免费版不含完整参考文档库与质量审计深度能力.
@@ -18,13 +18,17 @@ tools:
 homepage: ""
 tags:
   - 通用办公
+  - write
+  - automation
+  - productivity
+  - developer-tools
   - 工具
   - 效率
   - 写作
   - 电商
   - audit
-  - piece
 category: "Automation"
+pricing_tier: free
 ---
 # 版本化写作工具（免费版）
 
@@ -95,7 +99,7 @@ Request → Plan → Draft → Audit → Refine → Deliver
 首次使用时创建工作空间：
 
 ```bash
-（请参考skill目录中的脚本文件） ~/writing
+（请参考skill目录中的脚本文件） ./writing
 ```
 
 创建标准项目结构，包含pieces目录、scripts目录、references目录与config.json配置文件.
@@ -111,7 +115,7 @@ Request → Plan → Draft → Audit → Refine → Deliver
 
 ## 使用流程
 
-1. **初始化工作空间**：首次使用运行`（请参考skill目录中的脚本文件） ~/writing`创建项目结构
+1. **初始化工作空间**：首次使用运行`（请参考skill目录中的脚本文件） ./writing`创建项目结构
 2. **创建新piece**：运行`（请参考skill目录中的脚本文件）`启动新写作piece并获取piece ID
 3. **Plan阶段**：制定写作计划，确定depth配置
 4. **Draft阶段**：委托sub-agents起草
@@ -127,7 +131,7 @@ Request → Plan → Draft → Audit → Refine → Deliver
 
 ```
 Step 1 - 初始化工作空间:
-  $ （请参考skill目录中的脚本文件） ~/writing
+  $ （请参考skill目录中的脚本文件） ./writing
   → 创建项目结构（pieces/、scripts/、references/、config.json）
 # ...
 Step 2 - 创建新piece:

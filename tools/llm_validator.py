@@ -54,47 +54,10 @@ from trace_llm_scorer import (
     read_skill_md, static_check, calculate_static_scores,
     save_trace_score, TRACE_EVAL_PROMPT
 )
+from skill_core.parser import find_skill_md
 
 
 # ============ Skill查找 ============
-
-def find_skill_md(slug: str) -> Optional[Path]:
-    """查找skill的SKILL.md路径
-    
-    查找顺序:
-      1. packaged-skills/skillhub/{slug}/SKILL.md
-      2. opensource-skills/packaged/{slug}/SKILL.md
-      3. DB中的local_path
-    """
-    # 1. packaged-skills
-    packaged_path = PACKAGED_SKILLS_DIR / slug / "SKILL.md"
-    if packaged_path.exists():
-        return packaged_path
-
-    # 2. opensource-skills
-    opensource_path = OPENSOURCE_SKILLS_DIR / slug / "SKILL.md"
-    if opensource_path.exists():
-        return opensource_path
-
-    # 3. DB查找
-    try:
-        conn = get_db_connection()
-        c = conn.cursor()
-        c.execute("SELECT local_path FROM skills WHERE slug = ? AND workflow_state != 'deprecated'", (slug,))
-        row = c.fetchone()
-        conn.close()
-        if row and row['local_path']:
-            p = Path(row['local_path'])
-            if p.name == 'SKILL.md' and p.exists():
-                return p
-            skill_md = p / 'SKILL.md'
-            if skill_md.exists():
-                return skill_md
-    except Exception:
-        pass
-
-    return None
-
 
 def get_skill_id(slug: str) -> Optional[int]:
     """从DB获取skill_id"""

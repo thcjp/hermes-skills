@@ -1,5 +1,4 @@
 ---
-
 slug: yaml-toolkit-free
 name: yaml-toolkit-free
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: YAML处理工具免费版
 summary: "解析、生成与校验YAML，正确处理缩进与多文档，适合个人开发者配置管理.。YAML处理工具免费版，面向个人开发者的轻量级YAML解析与生成工具。核心能力:"
 license: MIT
 edition: free
-description: "YAML处置工具免费版，面向个人开发者的轻量级YAML解析与产出工具。核心能力:. 适用于需要yaml toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要yaml toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "YAML处置工具免费版，面向个人开发者的轻量级YAML解析与产出工具。核心能力:. 适用于需要yaml toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要yaml toolkit相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - YAML
   - yaml
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # YAML处理工具（免费版）
 
 ## 概述
@@ -97,7 +95,7 @@ config = {
         'timeout': 30
     },
     'database': {
-        'url': 'localhost:5432',
+        'url': '${SERVER_HOST}:${SERVER_PORT}',
         'pool_size': 10
     }
 }
@@ -112,7 +110,7 @@ with open('config.yaml', 'w', encoding='utf-8') as f:
 #   port: 8080
 #   timeout: 30
 # database:
-#   url: localhost:5432
+#   url: ${SERVER_HOST}:${SERVER_PORT}
 #   pool_size: 10
 ```
 

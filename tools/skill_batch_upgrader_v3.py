@@ -47,6 +47,8 @@ from skill_batch_upgrader_v2 import (
 
 # A3修复: 从skill_core导入RESERVED_WORDS,消除本地重复硬编码
 from skill_core.rules import RESERVED_WORDS
+# 统一使用skill_core.parser的find_skill_md,消除本地重复实现
+from skill_core.parser import find_skill_md
 
 # v3.0新增: 夸大词替换映射
 EXAGGERATION_MAP = {
@@ -161,50 +163,6 @@ TRIGGER_TEMPLATES = {
     '监控运维': 'Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。',
     '电商': 'Use when 需要电商运营、商品管理、订单处理、支付集成时使用。不适用于虚假交易和刷单。',
 }
-
-
-def find_skill_md(slug: str) -> Path:
-    """查找skill的SKILL.md文件(优先搜索发布目录)
-    
-    搜索顺序:
-    1. packaged-skills/skillhub/{slug}/SKILL.md (发布版,最优先)
-    2. opensource-skills/packaged/{slug}/SKILL.md
-    3. enterprise-upload/{slug}/SKILL.md
-    4. differentiated-skills/*/{slug}/SKILL.md
-    5. 回退到数据库中的local_path
-    """
-    search_dirs = [
-        PACKAGED_SKILLS_DIR / slug,
-        OPENSOURCE_SKILLS_DIR / slug,
-        ENTERPRISE_UPLOAD_DIR / slug,
-    ]
-    for d in search_dirs:
-        md = d / "SKILL.md"
-        if md.exists():
-            return md
-    # 差异化目录按分类查找
-    if DIFFERENTIATED_DIR.is_dir():
-        for cat_dir in DIFFERENTIATED_DIR.iterdir():
-            if cat_dir.is_dir():
-                md = cat_dir / slug / "SKILL.md"
-                if md.exists():
-                    return md
-    # 回退到数据库local_path
-    try:
-        conn = sqlite3.connect(DB_PATH)
-        conn.row_factory = sqlite3.Row
-        c = conn.cursor()
-        c.execute("SELECT local_path FROM skills WHERE slug = ?", (slug,))
-        row = c.fetchone()
-        conn.close()
-        if row and row['local_path']:
-            p = Path(row['local_path'])
-            md = p / "SKILL.md" if p.is_dir() else p
-            if md.exists():
-                return md
-    except Exception:
-        pass
-    return None
 
 
 def check_name_folder_consistency(skill_md_path):

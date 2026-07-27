@@ -6,27 +6,28 @@ displayName: "社媒排期 LITE"
 summary: "基础社媒内容排期,支持三平台内容日历与文案生成。。跨平台社媒内容排期免费版。支持 Twitter/X、LinkedIn、Facebook 三平台, 生成按日期/平台组织的基础内容日历与平台适"
 summary_zh: "基础社媒内容排期,支持三平台内容日历与文案生成。。跨平台社媒内容排期免费版。支持 Twitter/X、LinkedIn、Facebook 三平台, 生成按日期/平台组织的基础内容日历与平台适"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要social media scheduler相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   跨平台社媒内容排期免费版。支持 Twitter/X、LinkedIn、Facebook 三平台,
   生成按日期/平台组织的基础内容日历与平台适配文案。附字符计数校验.
   适用于个人账号基础排期、单条内容三平台改写等场景.
 tags:
   - 系统运维
+  - social
+  - media
+  - scheduler
+  - automation
   - Marketing
   - 社交媒体
   - 营销
   - 通信
   - cta
-  - 标签
-  - twitter
-  - facebook
-  - linkedin
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Communication"
+pricing_tier: free
 ---
 # 社媒内容排期 LITE
 

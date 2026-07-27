@@ -1,5 +1,4 @@
 ---
-
 slug: xml-toolkit-free
 name: xml-toolkit-free
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: XML处理工具免费版
 summary: "解析、生成与转换XML，正确处理命名空间与编码，适合个人开发者日常XML任务.。XML处理工具免费版，面向个人开发者的轻量级XML解析与生成工具。核心能力:"
 license: MIT
 edition: free
-description: "XML处置工具免费版，面向个人开发者的轻量级XML解析与产出工具。核心能力:. 适用于需要xml toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要xml toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "XML处置工具免费版，面向个人开发者的轻量级XML解析与产出工具。核心能力:. 适用于需要xml toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要xml toolkit相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - XML
   - xml
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # XML处理工具（免费版）
 
 ## 概述

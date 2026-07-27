@@ -1,12 +1,12 @@
----slug: the-news-tool-free
+---
+slug: the-news-tool-free
 name: the-news-tool-free
 version: 1.0.0
 displayName: 全球新闻速递免费版
-summary: "覆盖 20 个国家的实"
-license: Proprietary
+summary: "覆盖 20 个国家的实,提供核心能力"
+license: "MIT"
 edition: free
-description: 全球新闻速递免费版,面向个人用户提供覆盖 20 个国家的实时头条新闻聚合能力。通过统一的公共 API 获取多语种新闻快照,支持实时查询和基础历史回溯。Use
-  when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策.
+description: "全球新闻速递免费版,面向个人用户包含覆盖 20 个国家的实时头条新闻聚合能力。通过统一的公共 API 获取多语种新闻快照,兼容实时查询和基础历史回溯。Use when 需要数据库操作、SQL查询、数据存储管控时使用。不适用于数据库架构设计决策。Use when 需要数据库操作、SQL查询、数据存储管控时使用。不适用于数据库架构设计决策."
 tags:
   - 研究工具
   - 新闻资讯
@@ -14,7 +14,6 @@ tags:
   - 搜索
   - 检索
   - 工具
-  - api
   - curl
   - https
   - www
@@ -25,7 +24,10 @@ tools:
   - glob
   - grep
 homepage: ""
-category: "Knowledge"---# 全球新闻速递免费版
+category: "Knowledge"
+pricing_tier: free
+---
+# 全球新闻速递免费版
 
 ## 概述
 
@@ -86,6 +88,7 @@ thehear.org/api/country-view/france?at=2026-07-17T08:00:00Z" | jq
 # 德语: germany, austria
 # 西班牙语: spain, mexico, argentina
 # 其他: italy, russia, india, brazil, israel, turkey
+echo "操作完成"
 ```
 
 **处理**: 解析多语种新闻覆盖的输入参数,完成核心逻辑,返回结构化响应.
@@ -148,7 +151,7 @@ done
 
 ## 快速开始
 
-### 第一步:验证 API 可用性
+### 领先步:验证 API 可用性
 
 ```bash
 # 测试 API 连通性
@@ -197,12 +200,12 @@ done
 ### 定时新闻推送
 
 ```bash
-# 配置 crontab 每日推送(crontab -e)
+# 配置 定时任务管理 每日推送(定时任务管理 -e)
 # 每天早上 8 点获取新闻
 0 8 * * * /path/to/news_fetch.sh >> /tmp/daily_news.log
 ```
 
-## 最佳实践
+## 优秀实践
 
 ### 1. 合理控制调用频率
 
@@ -278,7 +281,7 @@ thehear.at=$YESTERDAY" | jq
 免费版使用公共 API,无需额外 API Key 配置。直接通过 HTTP 请求即可获取新闻数据.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,通过 exec 执行 HTTP 请求获取新闻数据)
+- **分类**: MD+执行方法(纯 Markdown 指令,通过 exec 执行 HTTP 请求获取新闻数据)
 - **说明**: 基于公共新闻 API 的信息获取工具,通过自然语言指令驱动 Agent 查询和总结全球新闻
 - **适用规模**: 个人用户、轻量级查询、每日有限次数调用
 

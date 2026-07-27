@@ -6,7 +6,7 @@ displayName: "免费版"
 summary: "基础版文档解析技能，将 PDF 和图片转换为 Markdown，支持同步模式。。upstage-document-parse-free 是文档解析技能的基础版本，将 PDF 和图片转换为 M"
 summary_zh: "基础版文档解析技能，将 PDF 和图片转换为 Markdown，支持同步模式。。upstage-document-parse-free 是文档解析技能的基础版本，将 PDF 和图片转换为 M"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要upstage document parse相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   upstage-document-parse-free 是文档解析技能的基础版本，将 PDF 和图片转换为 Markdown 格式.
   支持同步模式解析（最多 100 页/50MB）和基础版面元素识别。不包含异步模式、enhanced 模式、
   force OCR 和跨页表格合并。适合快速解析标准文档，升级完整版获取全量解析能力.
@@ -17,13 +17,17 @@ tools:
 homepage: ""
 tags:
   - 文档处理
+  - upstage
+  - document
+  - parse
+  - automation
   - 工具
   - 效率
-  - api
   - ocr
   - pdf
   - markdown
 category: "Knowledge"
+pricing_tier: free
 ---
 # Document Parse Free
 
@@ -56,7 +60,7 @@ document-parse-free 将文档转换为 Markdown 格式。基础版支持 PDF 和
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
@@ -104,9 +108,7 @@ import os
 import requests
 # ...
 with open("report.pdf", "rb") as f:
-    response = requests.post(
-        "https://api.example.com/v1/document-digitization",
-        headers={"Authorization": f"Bearer {os.environ['DOCUMENT_PARSE_API_KEY']}"},
+    response = requests.post(safe_url, data=safe_data)']}"},
         files={"document": f},
         data={
             "model": "document-parse",

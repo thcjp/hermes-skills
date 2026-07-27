@@ -1,14 +1,12 @@
----slug: "py-free"
+---
+slug: "py-free"
 name: "py-free"
 version: "1.0.0"
 displayName: "Python基础版"
-summary: "编写可靠 Python"
-summary_zh: "编写可靠 Python 代码的基础能力，覆盖可变默认参数陷阱、import 规范与基础异常处理。。编写可靠 Python 代码的基础能力，覆盖可变默认参数陷阱、 import 规范与基础异常"
+summary: "编写可靠 Python,提供核心能力"
+summary_zh: "编写可靠 Python,提供核心能力"
 license: "MIT"
-description: |-
-  编写可靠 Python 代码的基础能力，覆盖可变默认参数陷阱、
-  import 规范与基础异常处理.
-  核心能力:
+description: "|- 编写可靠 Python 代码的基础能力，覆盖可变默认参数陷阱、 import 规范与基础异常处理. 核心能力:.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处理,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处理,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
 
   - 可变默认参数陷阱识别与修复
 
@@ -42,7 +40,10 @@ tools:
   - write
   - exec
 homepage: ""
-category: "Automation"---# Python 基础版
+category: "Automation"
+pricing_tier: free
+---
+# Python 基础版
 
 ## 核心能力
 
@@ -109,7 +110,7 @@ category: "Automation"---# Python 基础版
       },
       {
         "item": "import 规范",
-        "status": "pass",
+        "status": "step_done",
         "score": 95,
         "comment": "import 顺序符合 PEP 8"
       },

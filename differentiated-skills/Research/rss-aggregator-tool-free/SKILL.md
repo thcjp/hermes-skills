@@ -1,5 +1,4 @@
 ---
-
 slug: rss-aggregator-tool-free
 name: rss-aggregator-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: RSS聚合工具免费版
 summary: "自动读取RSS链接，抓取合并多源报道，去重历史推送，生成高密度Markdown简报。RSS聚合工具免费版，自动读取配置的RSS链接，抓取并合并多源报道，通过历史日志核对实现增量推送，生成高信"
 license: MIT
 edition: free
-description: "RSS聚合工具免费版，自发读取配置的RSS链接，抓取并合并多源报道，通过历史日志核对达成增量推送，产出高信息密度的纯文本简报。核心能力:. 适用于需要rss aggregator tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要rss aggregator tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "RSS聚合工具免费版，自发读取配置的RSS链接，抓取并合并多源报道，通过历史日志核对达成增量推送，产出高信息密度的纯文本简报。核心能力:. 适用于需要rss aggregator tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要rss aggregator tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - RSS
   - rss
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # RSS聚合工具（免费版）
 
 ## 概述
@@ -168,10 +166,10 @@ Agent：
 
 ```bash
 # 创建工作目录
-mkdir -p ~/rss-aggregator
+mkdir -p ./rss-aggregator
 # ...
 # 配置RSS链接列表
-cat > ~/rss-aggregator/feeds.txt << 'EOF'
+cat > ./rss-aggregator/feeds.txt << 'EOF'
 # AI资讯
 https://feeds.example.com/ai-news.xml
 https://feeds.example.com/tech-ai.xml
@@ -191,7 +189,7 @@ EOF
 
 ```bash
 # 创建历史推送日志（首次使用为空文件）
-touch ~/rss-aggregator/pushed_history.log
+touch ./rss-aggregator/pushed_history.log
 echo "历史日志已初始化"
 ```
 
@@ -205,7 +203,7 @@ echo "历史日志已初始化"
 
 ```bash
 # 查看已推送的文章
-cat ~/rss-aggregator/pushed_history.log
+cat ./rss-aggregator/pushed_history.log
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -272,7 +270,7 @@ formatting:
 # ...
 # 历史日志
 history:
-  file: "~/rss-aggregator/pushed_history.log"
+  file: "./rss-aggregator/pushed_history.log"
   format: "title|link|date"
   encoding: "utf-8"
 # ...
@@ -321,8 +319,8 @@ quality_filter:
 ```bash
 # 定期清理超过30天的历史记录
 # 保留最近30天的推送记录即可
-tail -n 1000 ~/rss-aggregator/pushed_history.log > ~/rss-aggregator/pushed_history.tmp
-mv ~/rss-aggregator/pushed_history.tmp ~/rss-aggregator/pushed_history.log
+tail -n 1000 ./rss-aggregator/pushed_history.log > ./rss-aggregator/pushed_history.tmp
+mv ./rss-aggregator/pushed_history.tmp ./rss-aggregator/pushed_history.log
 ```
 
 ### 3. 按领域分组配置
@@ -400,7 +398,7 @@ mv ~/rss-aggregator/pushed_history.tmp ~/rss-aggregator/pushed_history.log
 - **Agent 平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 - **网络连接**: 需要可访问互联网以获取RSS内容
-- **本地存储**: 需要 `~/rss-aggregator/` 目录读写权限
+- **本地存储**: 需要 `./rss-aggregator/` 目录读写权限
 
 ### 依赖详情
 
@@ -416,7 +414,7 @@ mv ~/rss-aggregator/pushed_history.tmp ~/rss-aggregator/pushed_history.log
 免费版基于 Markdown 指令驱动，无需额外 API Key。所有 RSS 源均为公开免费服务.
 ```bash
 # 验证工作区
-mkdir -p ~/rss-aggregator && echo "目录就绪"
+mkdir -p ./rss-aggregator && echo "目录就绪"
 log && echo "历史日志就绪"
 # ...
 # 验证RSS源连通性（示例）

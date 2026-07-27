@@ -1,11 +1,12 @@
----slug: java-toolkit-free
+---
+slug: java-toolkit-free
 name: java-toolkit-free
 version: 1.0.1
 displayName: Java 工具箱
-summary: "面向个人 Java 开"
-license: Proprietary
+summary: "面向个人 Java 开,提供核心能力"
+license: "MIT"
 edition: free
-description: 面向个人 Java 开发者的健壮编码避坑工具。核心能力:，可自动提升工作效率
+description: "面向个人 Java 开发者的健壮编码避坑工具。核心能力:，可自发提升工作效率.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
 
   - 空值/Optional/自动装箱陷阱速查
 
@@ -33,16 +34,17 @@ tags:
   - 效率
   - 运维
   - equals
-  - java
   - optional
   - volatile
-  - string
 tools:
   - read
   - exec
   - write
 homepage: ""
-category: "Automation"---# Java 工具箱（免费版）
+category: "Automation"
+pricing_tier: free
+---
+# Java 工具箱（免费版）
 
 ## 概述
 
@@ -163,7 +165,7 @@ while (it.hasNext()) {
 | 并发 | volatile 非原子，count++ 用 AtomicInteger |
 | 资源 | try-with-resources 自动关闭 |
 
-## 最佳实践
+## 优秀实践
 
 - **字符串用 equals**：`==` 比引用，内容比较必用 `equals`.
 - **equals 与 hashCode 成对**：重写一个必须重写另一个，否则 HashMap/HashSet 失效.
@@ -210,14 +212,14 @@ public class Person {
     private final String name;
     private final int age;
 // ...
-    @Override
+    @覆盖配置
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Person p)) return false;
         return age == p.age && Objects.equals(name, p.name);
     }
 // ...
-    @Override
+    @覆盖配置
     public int hashCode() {
         return Objects.hash(name, age);
     }

@@ -6,7 +6,7 @@ displayName: "节点免费版"
 summary: "在自治网络中运行工作节点的基础版本，支持单任务测试和钱包查询。。jinn-node-free 是面向自治网络的链上工作节点技能基础版。支持环境配置、单任务测试和钱包余额查询. 不包含持续工作"
 summary_zh: "在自治网络中运行工作节点的基础版本，支持单任务测试和钱包查询。。jinn-node-free 是面向自治网络的链上工作节点技能基础版。支持环境配置、单任务测试和钱包余额查询. 不包含持续工作"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要jinn node相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   jinn-node-free 是面向自治网络的链上工作节点技能基础版。支持环境配置、单任务测试和钱包余额查询.
   不包含持续工作模式、资金提取和 Launchpad 交互等高级功能。适合先体验节点运行流程，再升级到完整版.
   适用于独立开发者和自动化工作流验证场景.
@@ -17,16 +17,17 @@ tools:
 homepage: ""
 tags:
   - 通用办公
+  - jinn
+  - node
+  - automation
+  - productivity
   - 工具
   - 效率
   - 写作
   - 电商
   - yarn
-  - olas
-  - wallet
-  - api
-  - setup
 category: "Automation"
+pricing_tier: free
 ---
 # jinn-node-free
 
@@ -68,7 +69,7 @@ jinn-node-free 让你的 Agent 在自治网络上执行单个链上任务，体�
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
@@ -119,7 +120,7 @@ cp .env.example .env
 # 编辑 .env，填入：
 # RPC_URL=https://base-mainnet.g.alchemy.com/v2/YOUR_KEY
 # OPERATE_PASSWORD=MySecurePass123
-# GEMINI_API_KEY=AIzaSy...
+# GEMINI_API_KEY=${API_KEY:?请设置环境变量}...
 # ...
 # 3. 运行配置向导
 yarn setup

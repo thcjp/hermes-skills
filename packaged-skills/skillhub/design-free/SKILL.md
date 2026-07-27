@@ -6,7 +6,7 @@ displayName: "设计偏好基础版"
 summary: "基础视觉偏好学习,支持UI设计风格记忆,检测3次以上一致偏好后写入档案。设计偏好基础客户端（免费版）。通过观察用户在 UI 设计中的选择与反馈,自动提取视觉偏好模式. 支持两大偏好分类: A"
 summary_zh: "基础视觉偏好学习,支持UI设计风格记忆,检测3次以上一致偏好后写入档案。设计偏好基础客户端（免费版）。通过观察用户在 UI 设计中的选择与反馈,自动提取视觉偏好模式. 支持两大偏好分类: A"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要design相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   设计偏好基础客户端（免费版）。通过观察用户在 UI 设计中的选择与反馈,自动提取视觉偏好模式.
   支持两大偏好分类: Aesthetic（美学风格）与 Never（禁忌清单）。检测到 3 次以上一致偏好后
   自动确认写入偏好档案,保持条目精简紧凑。仅支持 UI 设计媒介,不包含按媒介细分、品牌专属偏好、
@@ -14,21 +14,22 @@ description: |-
   偏好、简单设计迭代场景.
 tags:
   - Creative
+  - design
+  - automation
+  - productivity
+  - developer-tools
   - 设计
   - 偏好学习
   - UI/UX
   - 创意
   - 分区
-  - 信号
-  - aesthetic
-  - never
-  - 媒介适配
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
 # Design LITE
 
@@ -95,7 +96,7 @@ category: "Creative"
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 偏好档案结构
@@ -210,7 +211,7 @@ export API_KEY="your_api_key_here"
 | preference_conflict | `Conflict: 圆角 vs 直角` | 同一维度出现矛盾偏好信号 | 保留两条记录并标注冲突,提示用户显式选择 |
 | entry_format_error | `Invalid entry format` | 偏好条目格式不符合规范 | 按 `- 属性: 具体描述` 格式重写后写入 |
 | archive_overflow | `Archive exceeds 20 entries` | 偏好条目超过 20 条上限 | 触发整理流程,合并相似条目 |
-| medium_not_supported | `Unsupported medium: xxx` | 媒介类型不在 UI 范围内 | 引导用户仅记录 UI 相关偏好,其他媒介需升级付费版 |
+| medium_not_supported | `Unsupported medium: placeholder` | 媒介类型不在 UI 范围内 | 引导用户仅记录 UI 相关偏好,其他媒介需升级付费版 |
 | signal_too_weak | `Signal strength below threshold` | 仅 1-2 次出现且反馈强度不足 | 标记为"待观察",不写入正式档案 |
 
 ## 常见问题

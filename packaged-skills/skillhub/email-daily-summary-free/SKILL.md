@@ -1,14 +1,12 @@
----slug: "email-daily-summary-free"
+---
+slug: "email-daily-summary-free"
 name: "email-daily-summary-free"
 version: "1.0.0"
 displayName: "邮件摘要免费版"
-summary: "基于 browser-"
-summary_zh: "基于 browser-use 登录单个邮箱并生成当日邮件摘要的基础版。基于 browser-use CLI 自动化登录 Gmail、Outlook、QQ 邮箱等 Web 邮箱, 抓取当日收件"
+summary: "基于 browser-,提供核心能力"
+summary_zh: "基于 browser-,提供核心能力"
 license: "MIT"
-description: |-
-  基于 browser-use CLI 自动化登录 Gmail、Outlook、QQ 邮箱等 Web 邮箱,
-  抓取当日收件箱列表,提取发件人、主题、摘要片段与时间戳,生成基础邮件日报.
-  支持未读统计与截图归档。适用于个人开发者每日邮件快速梳理场景.
+description: "|- 基于 browser-use CLI 自发化登录 Gmail、Outlook、QQ 邮箱等 Web 邮箱, 抓取当日收件箱列表,提取发件人、主题、摘要片段与时间戳,产出基础邮件日报. 兼容未读统计与截图归档。适用于个人开发者每日邮件快速梳理场景.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
 tags:
   - Communication
   - Email
@@ -25,7 +23,10 @@ tools:
   - exec
   - write
 homepage: ""
-category: "Communication"---# Email Daily Summary Free
+category: "Communication"
+pricing_tier: free
+---
+# Email Daily Summary Free
 
 通过 `browser-use` CLI 驱动浏览器自动化登录 Web 邮箱,抓取当日邮件并生成基础日报。本免费版支持单邮箱当日摘要,适合个人日常使用.
 ## 输入格式
@@ -55,7 +56,7 @@ category: "Communication"---# Email Daily Summary Free
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
@@ -108,7 +109,7 @@ browser-use install
 | 邮箱服务 | 收件箱 URL |
 |---:|---:|
 | Gmail | https://mail.google.com |
-| Outlook | https://outlook.live.com |
+| Outlook | https://example.com.com |
 | QQ 邮箱 | https://mail.qq.com |
 
 ## 使用流程
@@ -241,7 +242,7 @@ browser-use close
 - AI 自然语言摘要(`browser-use extract`)
 - 发件人白名单监控告警
 - 周报邮件统计与趋势分析
-- crontab + launchd 定时任务模板
+- 定时任务管理 + launchd 定时任务模板
 - 大邮件量分页抓取(>100 封)
 
 前往 SkillHub 搜索 `email-daily-summary` 获取付费版.

@@ -3,10 +3,10 @@ slug: "ui-audit-free"
 name: "ui-audit-free"
 version: 1.0.1
 displayName: "审计免费版"
-summary: "基础版 UI 审计工具，评估界面的视觉层级、视觉样式和无障碍性。。ui-audit-free 是自动化 UI 审计技能的基础版本，基于 Warp-Speed Decisioning 框架评估"
-summary_zh: "基础版 UI 审计工具，评估界面的视觉层级、视觉样式和无障碍性。。ui-audit-free 是自动化 UI 审计技能的基础版本，基于 Warp-Speed Decisioning 框架评估"
+summary: "基础版 UI 审计工具,评估界面的视觉层级、视觉样式和无障碍性.ui-audit-free 是自动化 UI 审计技能的基础版本,基于 Warp-Speed Decisioning 框架评估,提供."
+summary_zh: "基础版 UI 审计工具，评估界面的视觉层级、视觉样式和无障碍性。。ui-audit-free 是自动化 UI 审计技能的基础版本，基于 Warp-Speed Decisioning 框架评估,提供核心能力"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要ui audit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   ui-audit-free 是自动化 UI 审计技能的基础版本，基于 Warp-Speed Decisioning 框架评估界面设计.
   支持 3 大支柱决策流程和视觉层级、视觉样式、无障碍性三项必检项审计。不包含 12 类 UI 模式库
   匹配、Macro Bet 对齐分析和上下文检查项。适合快速设计评审，升级完整版获取全量审计能力.
@@ -17,15 +17,17 @@ tools:
 homepage: ""
 tags:
   - 安全合规
+  - audit
+  - automation
+  - productivity
+  - developer-tools
   - UI设计
   - 前端
   - 设计
   - label
   - status
-  - notes
-  - 不包含
-  - 审计
 category: "Creative"
+pricing_tier: free
 ---
 # UI Audit Free
 
@@ -64,14 +66,14 @@ ui-audit-free 基于 Warp-Speed Decisioning 框架，对界面进行基础 UX �
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
 
 ### 1. 基础框架引用与决策流程
 加载 `00-core-framework.md` 获取 3 支柱决策工作流。决策流程为三步权衡：
-institutional knowledge → user familiarity → research，通过 JTBD 支持度选择方案.
+institutional knowledge → user familiarity → research，通过 J已实现 支持度选择方案.
 基础版支持核心决策框架，不包含 `01-anchors.md` 和 `02-information-scaffold.md` 的完整内容.
 - 参考`基础框架引用与决策流程`的配置文档进行参数调优
 ### 2. 视觉样式审计（Spacing/Color/Elevation/Typography/Motion）
@@ -115,16 +117,16 @@ Onboarding 等上下文检查项，也不包含 macro_bets 对齐分析。- 验�
   "visual_hierarchy": {
     "title": "Visual Hierarchy",
     "checks": [
-      { "label": "标题区分度", "status": "pass", "notes": "H1 32px/H2 24px，层级清晰" },
+      { "label": "标题区分度", "status": "step_done", "notes": "H1 32px/H2 24px，层级清晰" },
       { "label": "主操作按钮清晰度", "status": "warn", "notes": "CTA 与背景对比度 3.2:1，低于 4.5:1 标准" },
-      { "label": "分组与邻近性", "status": "pass", "notes": "商品信息卡片间距 16px 一致" },
+      { "label": "分组与邻近性", "status": "step_done", "notes": "商品信息卡片间距 16px 一致" },
       { "label": "字体层级", "status": "fail", "notes": "正文使用 14px，低于 16px 推荐值" }
     ]
   },
   "accessibility": {
     "title": "Accessibility",
     "checks": [
-      { "label": "键盘可操作性", "status": "pass", "notes": "Tab 顺序符合视觉顺序" },
+      { "label": "键盘可操作性", "status": "step_done", "notes": "Tab 顺序符合视觉顺序" },
       { "label": "可见焦点", "status": "fail", "notes": "CTA 按钮无 focus 样式" },
       { "label": "色彩对比度", "status": "warn", "notes": "链接 #007bff = 3.2:1 未通过 4.5:1" },
       { "label": "触摸目标", "status": "fail", "notes": "移动端 CTA 高度 38px，低于 44px 标准" }

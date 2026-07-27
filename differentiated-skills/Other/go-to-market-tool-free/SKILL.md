@@ -1,5 +1,4 @@
 ---
-
 slug: go-to-market-tool-free
 name: go-to-market-tool-free
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: 上市策略工具
 summary: "面向个人开发者的产品上市（GTM）策略生成工具，七步快速成稿.。面向个人开发者与一人公司的产品上市（GTM）策略生成工具。核心能力:"
 license: MIT
 edition: free
-description: "面向个人开发者与一人公司的产品上市（GTM）策略产出工具。核心能力:. 适用于需要go to market tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要go to market tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "面向个人开发者与一人公司的产品上市（GTM）策略产出工具。核心能力:. 适用于需要go to market tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要go to market tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 市场策略
   - market
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 上市策略工具（免费版）
 
 ## 概述

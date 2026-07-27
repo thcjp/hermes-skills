@@ -49,6 +49,7 @@ sys.path.insert(0, str(SKILL_REGISTRY_DIR))
 
 from config import get_db_connection, PACKAGED_SKILLS_DIR, OPENSOURCE_SKILLS_DIR
 from trace_llm_scorer import read_skill_md
+from skill_core.parser import find_skill_md
 
 
 # ============ 常量 ============
@@ -98,35 +99,6 @@ FALSE_POSITIVE_KEYWORDS = [
 
 
 # ============ Skill查找 ============
-
-def find_skill_md(slug: str) -> Optional[Path]:
-    """查找skill的SKILL.md路径"""
-    packaged_path = PACKAGED_SKILLS_DIR / slug / "SKILL.md"
-    if packaged_path.exists():
-        return packaged_path
-
-    opensource_path = OPENSOURCE_SKILLS_DIR / slug / "SKILL.md"
-    if opensource_path.exists():
-        return opensource_path
-
-    try:
-        conn = get_db_connection()
-        c = conn.cursor()
-        c.execute("SELECT local_path FROM skills WHERE slug = ? AND workflow_state != 'deprecated'", (slug,))
-        row = c.fetchone()
-        conn.close()
-        if row and row['local_path']:
-            p = Path(row['local_path'])
-            if p.name == 'SKILL.md' and p.exists():
-                return p
-            skill_md = p / 'SKILL.md'
-            if skill_md.exists():
-                return skill_md
-    except Exception:
-        pass
-
-    return None
-
 
 def get_skill_id(slug: str) -> Optional[int]:
     """从DB获取skill_id"""

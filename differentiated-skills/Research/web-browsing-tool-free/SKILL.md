@@ -1,5 +1,4 @@
 ---
-
 slug: web-browsing-tool-free
 name: web-browsing-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 网页浏览助手免费版
 summary: "浏览和总结网站内容,从 URL 提取信息,搜索网络获取实时资讯,适合个人日常使用。网页浏览助手免费版,面向个人用户提供基础的网页浏览和信息提取能力。支持网站访问、内容总结、URL 内容提取、"
 license: MIT
 edition: free
-description: "网页浏览助手免费版,面向个人用户包含基础的网页浏览和信息提取能力。兼容网站访问、内容总结、URL 内容提取、网络搜索等核心功能。Use when. 适用于需要web browsing tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要web browsing tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "网页浏览助手免费版,面向个人用户包含基础的网页浏览和信息提取能力。兼容网站访问、内容总结、URL 内容提取、网络搜索等核心功能。Use when. 适用于需要web browsing tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要web browsing tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 研究工具
   - web
@@ -29,7 +28,6 @@ category: "Development"
 pricing_tier: free
 
 ---
-
 # 网页浏览助手免费版
 
 ## 概述
@@ -123,13 +121,13 @@ web-browsing extract "https://list.example.com" --selector ".item" --format json
 
 小王想快速了解某个网站的内容,无需逐页浏览.
 ```bash
-# 步骤1:访问网站并获取内容
+# 步骤说明:访问网站并获取内容
 web-browsing fetch "https://target-website.com"
 # ...
-# 步骤2:总结网站主要内容
+# 步骤说明:总结网站主要内容
 web-browsing summarize "https://target-website.com"
 # ...
-# 步骤3:提取特定信息
+# 步骤说明:提取特定信息
 web-browsing extract "https://target-website.com" --fields "title,author,date"
 ```
 
@@ -137,14 +135,14 @@ web-browsing extract "https://target-website.com" --fields "title,author,date"
 
 小李是学生,需要从多个网站收集特定主题的资料.
 ```bash
-# 步骤1:搜索相关内容
+# 步骤说明:搜索相关内容
 web-browsing search "深度学习优化算法" --limit 10
 # ...
-# 步骤2:访问搜索结果中的网页
+# 步骤说明:访问搜索结果中的网页
 web-browsing fetch "https://result1.example.com" --summarize
 web-browsing fetch "https://result2.example.com" --summarize
 # ...
-# 步骤3:提取结构化数据
+# 步骤说明:提取结构化数据
 web-browsing extract "https://paper.example.com" --fields "title,abstract,authors"
 ```
 
@@ -152,13 +150,13 @@ web-browsing extract "https://paper.example.com" --fields "title,abstract,author
 
 小张想快速了解今天的科技新闻.
 ```bash
-# 步骤1:搜索最新科技新闻
+# 步骤说明:搜索最新科技新闻
 web-browsing search "今日科技新闻" --freshness today
 # ...
-# 步骤2:访问新闻网站
+# 步骤说明:访问新闻网站
 web-browsing fetch "https://tech-news.example.com"
 # ...
-# 步骤3:总结新闻要点
+# 步骤说明:总结新闻要点
 web-browsing summarize "https://tech-news.example.com" --length short
 ```
 

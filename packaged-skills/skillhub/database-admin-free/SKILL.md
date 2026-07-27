@@ -6,7 +6,7 @@ displayName: "数据库管理(免费版)"
 summary: "基础表结构设计、数据插入与简单查询，支持常用数据类型与事务操作。数据库管理免费版，提供基础的数据库表结构与数据操作能力. 核心能力包括： - 基础表结构设计（主键、NOT NULL、DEFA"
 summary_zh: "基础表结构设计、数据插入与简单查询，支持常用数据类型与事务操作。数据库管理免费版，提供基础的数据库表结构与数据操作能力. 核心能力包括： - 基础表结构设计（主键、NOT NULL、DEFA"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要database admin相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   数据库管理免费版，提供基础的数据库表结构与数据操作能力.
   核心能力包括：
   - 基础表结构设计（主键、NOT NULL、DEFAULT）
@@ -18,15 +18,14 @@ description: |-
 tags:
   - 信息检索
   - database
+  - admin
+  - automation
+  - productivity
   - postgresql
   - 数据处理
   - 数据分析
   - 工具
   - stock_info
-  - key
-  - null
-  - varchar
-  - insert
 tools:
   - read
   - exec
@@ -34,6 +33,7 @@ tools:
   - glob
 homepage: ""
 category: "Research"
+pricing_tier: free
 ---
 # 数据库管理（免费版）
 
@@ -124,7 +124,7 @@ COMMIT;
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 使用流程

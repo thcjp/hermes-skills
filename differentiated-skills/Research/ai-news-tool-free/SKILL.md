@@ -1,5 +1,4 @@
 ---
-
 slug: ai-news-tool-free
 name: ai-news-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: AI新闻工具-免费版
 summary: "每日新闻获取工具,支持按日期查询、热点排行与详情阅读,适合个人用户。每日新闻获取工具,通过 API 获取每日新闻摘要与详情,支持按日期查询、"
 license: MIT
 edition: free
-description: "每日新闻获取工具,通过 API 获取每日新闻摘要与详情,兼容按日期查询、. 适用于需要ai news tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要ai news tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "每日新闻获取工具,通过 API 获取每日新闻摘要与详情,兼容按日期查询、. 适用于需要ai news tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要ai news tool相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - 研究工具
   - news
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # AI新闻工具(免费版)
 
 ## 概述
@@ -274,10 +272,10 @@ data.articles | sort_by(-.heat) | .[] | {title, heat}'
 TODAY=$(date +%Y-%m-%d)
 example.com/api/v1/daily?date=${TODAY}" | \
   jq -r '.data.heat) | .[0:5] | .[] | "[\(.heat)] \(.title)"' \
-  > ~/news-summary-${TODAY}.txt
+  > ./news-summary-${TODAY}.txt
 # ...
-echo "新闻摘要已保存到 ~/news-summary-${TODAY}.txt"
-cat ~/news-summary-${TODAY}.txt
+echo "新闻摘要已保存到 ./news-summary-${TODAY}.txt"
+cat ./news-summary-${TODAY}.txt
 ```
 
 ## 优秀实践
@@ -318,9 +316,9 @@ python -c "import re; print(re.sub(r'<[^>]+>', '', '<p>正文</p>'))"
 ```bash
 # 缓存当日新闻到本地
 TODAY=$(date +%Y-%m-%d)
-example.com/api/v1/daily?date=${TODAY}" > ~/news-cache-${TODAY}.json
+example.com/api/v1/daily?date=${TODAY}" > ./news-cache-${TODAY}.json
 # 后续从缓存读取
-jq '.data.articles' ~/news-cache-${TODAY}.json
+jq '.data.articles' ./news-cache-${TODAY}.json
 ```
 
 ## 依赖说明

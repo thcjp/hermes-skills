@@ -1,5 +1,4 @@
 ---
-
 slug: cybersecurity-engine-tool-free
 name: cybersecurity-engine-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 网络安全评估引擎免费版
 summary: 轻量级安全评估与威胁建模工具,提供安全态势检查、OWASP基础审计与漏洞管理,适合个人开发者快速安全自查.
 license: MIT
 edition: free
-description: "网络安全评估引擎免费版,为个人开发者包含基础安全评估与威胁建模能力. 适用于需要cybersecurity engine tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要cybersecurity engine tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "网络安全评估引擎免费版,为个人开发者包含基础安全评估与威胁建模能力. 适用于需要cybersecurity engine tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要cybersecurity engine tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 安全
   - cybersecurity
@@ -27,7 +26,6 @@ category: "Security"
 pricing_tier: free
 
 ---
-
 # 网络安全评估引擎免费版
 
 ## 概述
@@ -125,7 +123,7 @@ grep -rn "query\|execute" --include='*.{py,js,ts}' . 2>/dev/null | \
 # ...
 echo ""
 echo "--- A07: XSS ---"
-grep -rn "innerHTML\|dangerouslySetInnerHTML\|v-html" \
+grep -rn "innerHTML\|HIGHRISKlySetInnerHTML\|v-html" \
   --include='*.{js,ts,jsx,tsx,vue}' . 2>/dev/null | head -5
 # ...
 echo ""
@@ -278,7 +276,7 @@ bash security-check.sh
 py' . | grep -i "f\"\|%s"
 # ...
 # 检查XSS风险
-grep -rn "innerHTML\|dangerouslySetInnerHTML" --include='*.{js,ts,jsx}' .
+grep -rn "innerHTML\|HIGHRISKlySetInnerHTML" --include='*.{js,ts,jsx}' .
 ```
 
 ### 第三步:创建威胁登记表

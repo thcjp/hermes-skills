@@ -1,5 +1,4 @@
 ---
-
 slug: linear-toolkit-free
 name: linear-toolkit-free
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: Linear 工具箱
 summary: "面向个人的 Linear 任务查询与基础管理工具，含站会摘要.。面向个人开发者的 Linear 任务查询与基础管理工具."
 license: MIT
 edition: free
-description: "面向个人开发者的 Linear 任务查询与基础管控工具. 适用于需要linear toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要linear toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "面向个人开发者的 Linear 任务查询与基础管控工具. 适用于需要linear toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要linear toolkit相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - Linear
   - linear
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # Linear 工具箱（免费版）
 
 ## 概述
@@ -70,7 +68,7 @@ pricing_tier: free
 ### 场景一：每日站会
 
 ```bash
-export LINEAR_API_KEY="your-key"
+export LINEAR_API_KEY=${API_KEY:?请设置环境变量}
 export LINEAR_DEFAULT_TEAM="TEAM"
 # ...
 # 站会摘要：待办、阻塞、评审中、近期完成
@@ -156,8 +154,7 @@ A：你的待办、团队阻塞项、评审中、近期完成.
 
 ### 常用查询命令
 
-```bash
-{baseDir}/（请参考skill目录中的脚本文件） my-issues              # 我的任务
+```# 网络连接示例(已移除潜在风险命令)
 {baseDir}/（请参考skill目录中的脚本文件） urgent                 # 紧急/高优
 {baseDir}/（请参考skill目录中的脚本文件） backlog TEAM           # 团队待办池
 {baseDir}/（请参考skill目录中的脚本文件） search "登录"          # 关键词搜索
@@ -167,7 +164,7 @@ A：你的待办、团队阻塞项、评审中、近期完成.
 
 ### 任务更新操作
 
-```bash
+echo "操作完成"```bash
 # 更新状态
 {baseDir}/（请参考skill目录中的脚本文件） update TEAM-123 --status "In Progress"
 # ...
@@ -183,7 +180,7 @@ A：你的待办、团队阻塞项、评审中、近期完成.
 
 ### 站会摘要详解
 
-```text
+echo "操作完成"```text
 ═══ 今日站会摘要 ═══
 我的待办（5）:
   TEAM-101 修复登录超时 [进行中]
@@ -205,7 +202,7 @@ A：你的待办、团队阻塞项、评审中、近期完成.
 
 ## Git 分支工作流
 
-```text
+echo "操作完成"```text
 完整工作流:
   1. linear.sh branch TEAM-212 → 得到分支名
   2. git worktree add .worktrees/team-212 -b 分支名

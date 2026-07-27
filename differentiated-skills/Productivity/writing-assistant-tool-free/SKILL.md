@@ -1,5 +1,4 @@
 ---
-
 slug: writing-assistant-tool-free
 name: writing-assistant-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 写作助手基础版
 summary: "AI 写作团队负责人,协调研究、结构、风格与质量检查,产出高质量文档。核心能力: 内容创作领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT
 edition: free
-description: "核心能力: 内容创作领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要writing assistant tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要writing assistant tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "核心能力: 内容创作领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要writing assistant tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要writing assistant tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 写作
   - writing
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 写作助手基础版
 
 ## 概述

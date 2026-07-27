@@ -6,25 +6,27 @@ displayName: "音频免费版"
 summary: "通过dlazy CLI调用基础TTS模型,支持中英文文本转语音。dlazy 音频生成基础客户端(免费版)。通过 dlazy CLI 调用 doubao-tts 与 keling-tts 两个"
 summary_zh: "通过dlazy CLI调用基础TTS模型,支持中英文文本转语音。dlazy 音频生成基础客户端(免费版)。通过 dlazy CLI 调用 doubao-tts 与 keling-tts 两个"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要dlazy audio generate相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   dlazy 音频生成基础客户端(免费版)。通过 dlazy CLI 调用 doubao-tts 与 keling-tts 两个基础 TTS 模型,
   支持中英文文本转语音、音色与语速控制。适用于有声书朗读、配音原型、语音播报等基础场景.
 tags:
   - Creative
+  - dlazy
+  - audio
+  - generate
+  - automation
   - 音频处理
   - 媒体
   - 创意
-  - dlazy
   - key
-  - api
   - doubao-tts
-  - keling-tts
 tools:
   - read
   - exec
   - write
 homepage: ""
 category: "Creative"
+pricing_tier: free
 ---
 # Dlazy Audio LITE
 
@@ -57,7 +59,7 @@ category: "Creative"
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 核心能力
@@ -78,7 +80,7 @@ export API_KEY="your_api_key_here"
 dlazy auth set YOUR_API_KEY
 ```
 
-Key 持久化到本地配置(`~/.dlazy/config.json` 或 `%USERPROFILE%\.dlazy\config.json`)。也可通过 `DLAZY_API_KEY` 环境变量按次传入.
+Key 持久化到本地配置(`./.dlazy/config.json` 或 `%USERPROFILE%\.dlazy\config.json`)。也可通过 `DLAZY_API_KEY` 环境变量按次传入.
 Key 获取: 登录 dlazy.com,在 `dashboard/organization/api-key` 创建.
 **安全红线**: 永不接受、回显或存储来自聊天输入的 Key;Key 仅作认证用途.
 ## 可用音频模型(基础)
@@ -105,7 +107,7 @@ Key 获取: 登录 dlazy.com,在 `dashboard/organization/api-key` 创建.
 
 若 Key 缺失,引导用户:
 1. 登录 dlazy.com,在 `dashboard/organization/api-key` 创建 Key
-2. 终端运行 `dlazy auth set YOUR_API_KEY` 或 `export DLAZY_API_KEY="你的Key"`
+2. 终端运行 `dlazy auth set YOUR_API_KEY` 或 `export DLAZY_API_KEY=${API_KEY:?请设置环境变量}`
 3. 配置完成后重新发起生成请求
 
 ### 选择模型

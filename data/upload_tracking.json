@@ -1785,11 +1785,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "status": "uploaded",
+        "version": "1.0.1",
+        "last_sync": "2026-07-27T07:02:27.297068"
       },
       "is_source": false,
       "source_origin": {
@@ -5252,11 +5251,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "status": "uploaded",
+        "notes": "",
+        "version": "unknown",
+        "last_sync": "2026-07-27T07:02:38.271763"
       },
       "is_source": false,
       "source_origin": {
@@ -6835,11 +6834,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "status": "uploaded",
+        "notes": "",
+        "version": "unknown",
+        "last_sync": "2026-07-27T07:03:03.992104"
       },
       "is_source": false,
       "source_origin": {
@@ -10535,11 +10534,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "status": "uploaded",
+        "notes": "",
+        "version": "1.0.1",
+        "last_sync": "2026-07-27T07:03:21.165104"
       },
       "is_source": false,
       "source_origin": {
@@ -11255,11 +11254,11 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "uploaded": true,
+        "status": "uploaded",
+        "notes": "",
+        "version": "1.0.1",
+        "last_sync": "2026-07-27T07:03:38.028078"
       },
       "is_source": false,
       "source_origin": {
@@ -14347,10 +14346,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:03:53.615291",
         "notes": ""
       },
       "is_source": false,
@@ -15520,10 +15519,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.2",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:04:09.455587",
         "notes": ""
       },
       "is_source": false,
@@ -16811,10 +16810,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.2",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:04:26.214551",
         "notes": ""
       },
       "is_source": false,
@@ -18684,10 +18683,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:04:43.558691",
         "notes": ""
       },
       "is_source": false,
@@ -18920,10 +18919,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:04:59.137840",
         "notes": ""
       },
       "is_source": false,
@@ -19255,10 +19254,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:05:16.348915",
         "notes": ""
       },
       "is_source": false,
@@ -19572,10 +19571,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:05:36.011089",
         "notes": ""
       },
       "is_source": false,
@@ -20386,10 +20385,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:05:54.444116",
         "notes": ""
       },
       "is_source": false,
@@ -20630,10 +20629,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:06:11.228556",
         "notes": ""
       },
       "is_source": false,
@@ -20954,10 +20953,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:06:29.279330",
         "notes": ""
       },
       "is_source": false,
@@ -21198,10 +21197,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:06:45.870305",
         "notes": ""
       },
       "is_source": false,
@@ -21442,10 +21441,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:07:04.656034",
         "notes": ""
       },
       "is_source": false,
@@ -21604,10 +21603,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:07:22.356566",
         "notes": ""
       },
       "is_source": false,
@@ -21848,10 +21847,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:07:42.311102",
         "notes": ""
       },
       "is_source": false,
@@ -22674,10 +22673,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:07:58.487067",
         "notes": ""
       },
       "is_source": false,
@@ -22836,10 +22835,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:08:16.727337",
         "notes": ""
       },
       "is_source": false,
@@ -23985,10 +23984,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:08:34.444812",
         "notes": ""
       },
       "is_source": false,
@@ -24229,10 +24228,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:08:54.513863",
         "notes": ""
       },
       "is_source": false,
@@ -26163,10 +26162,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:09:11.440217",
         "notes": ""
       },
       "is_source": false,
@@ -30566,10 +30565,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:09:33.308046",
         "notes": ""
       },
       "is_source": false,
@@ -30978,10 +30977,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:09:56.147966",
         "notes": ""
       },
       "is_source": false,
@@ -34041,10 +34040,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:10:19.020271",
         "notes": ""
       },
       "is_source": false,
@@ -34126,10 +34125,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:10:39.632821",
         "notes": ""
       },
       "is_source": false,
@@ -34456,10 +34455,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:10:56.684670",
         "notes": ""
       },
       "is_source": false,
@@ -34541,10 +34540,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:11:12.125582",
         "notes": ""
       },
       "is_source": false,
@@ -34714,10 +34713,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:11:28.855190",
         "notes": ""
       },
       "is_source": false,
@@ -35522,10 +35521,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:11:44.251478",
         "notes": ""
       },
       "is_source": false,
@@ -35684,10 +35683,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:12:00.768735",
         "notes": ""
       },
       "is_source": false,
@@ -35920,10 +35919,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:12:17.785540",
         "notes": ""
       },
       "is_source": false,
@@ -36082,10 +36081,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:12:33.935322",
         "notes": ""
       },
       "is_source": false,
@@ -36482,10 +36481,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:12:50.969074",
         "notes": ""
       },
       "is_source": false,
@@ -36980,10 +36979,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:13:06.807175",
         "notes": ""
       },
       "is_source": false,
@@ -37319,10 +37318,10 @@
       },
       "clawhub": {
         "upload_eligible": true,
-        "uploaded": false,
-        "version": null,
-        "status": "not_uploaded",
-        "last_sync": "2026-07-22T13:41:58",
+        "uploaded": true,
+        "version": "1.0.1",
+        "status": "uploaded",
+        "last_sync": "2026-07-27T07:13:24.268278",
         "notes": ""
       },
       "is_source": false,
@@ -154167,12 +154166,13 @@
         "full_slug": "@org-xxo535hs/v2ray-proxy-tool-free"
       },
       "clawhub": {
-        "upload_eligible": true,
+        "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "blocked_vpn",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "block_reason": "VPN/翻墙关键词直接封禁(安全预检L1.5)"
       },
       "is_source": false,
       "source_origin": {
@@ -157374,12 +157374,13 @@
         "full_slug": "@org-xxo535hs/vpn-toolkit-free"
       },
       "clawhub": {
-        "upload_eligible": true,
+        "upload_eligible": false,
         "uploaded": false,
         "version": null,
-        "status": "not_uploaded",
+        "status": "blocked_vpn",
         "last_sync": "2026-07-22T13:41:58",
-        "notes": ""
+        "notes": "",
+        "block_reason": "VPN/翻墙关键词直接封禁(安全预检L1.5)"
       },
       "is_source": false,
       "source_origin": {

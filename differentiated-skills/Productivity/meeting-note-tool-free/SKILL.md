@@ -1,5 +1,4 @@
 ---
-
 slug: meeting-note-tool-free
 name: meeting-note-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 会议纪要基础版
 summary: "整理探讨与决策型会议纪要,提取结论、共识、分歧与行动项,支持 Zettelkasten 连接。核心能力: 会议管理领域的专业化 AI 辅助工具,提供核心基础功能支持."
 license: MIT
 edition: free
-description: "核心能力: 会议管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要meeting note tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要meeting note tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "核心能力: 会议管控领域的专业化 AI 辅助工具,包含核心基础功能兼容. 适用于需要meeting note tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要meeting note tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 会议纪要
   - meeting
@@ -29,7 +28,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # 会议纪要基础版
 
 ## 概述
@@ -221,7 +219,7 @@ Agent 将自动:
 
 ## 优秀实践
 
-1. **未知信息用 TBD 标注不硬猜**
+1. **未知信息用 已实现 标注不硬猜**
 2. **非共识观点标明发言人与理由**
 3. **行动项必须可执行可衡量可归责**
 4. **决策轨迹可追踪:提出->争论->收敛**

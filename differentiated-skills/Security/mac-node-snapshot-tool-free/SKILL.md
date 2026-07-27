@@ -1,5 +1,4 @@
 ---
-
 slug: mac-node-snapshot-tool-free
 name: mac-node-snapshot-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: macOS截图工具免费版
 summary: "macOS屏幕截图与录屏工具,支持全屏截图、区域截图与基础录屏,适合个人开发者快速捕获屏幕内容.。macOS截图工具免费版,为个人用户提供屏幕截图与基础录屏能力."
 license: MIT
 edition: free
-description: "macOS截图工具免费版,为个人用户包含屏幕截图与基础录屏能力. 适用于需要mac node snapshot tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要mac node snapshot tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "macOS截图工具免费版,为个人用户包含屏幕截图与基础录屏能力. 适用于需要mac node snapshot tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要mac node snapshot tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - macOS
   - mac
@@ -27,7 +26,6 @@ category: "Security"
 pricing_tier: free
 
 ---
-
 # macOS截图工具免费版
 
 ## 概述
@@ -288,7 +286,7 @@ which screencapture
 
 ```bash
 # 全屏截图到桌面
-screencapture ~/Desktop/screenshot.png
+screencapture ./Desktop/screenshot.png
 ```
 
 ### 第三步:复制到剪贴板

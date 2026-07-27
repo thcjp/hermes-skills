@@ -1,5 +1,4 @@
 ---
-
 slug: token-manager-tool-free
 name: token-manager-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: Token用量管理免费版
 summary: "监控LLM API的Token用量与费用，提供省钱建议与余额提醒，适合个人开发者日常使用.。Token用量管理工具免费版，面向个人开发者的轻量级LLM用量监控工具。核心能力:"
 license: MIT
 edition: free
-description: "Token用量管控工具免费版，面向个人开发者的轻量级LLM用量监控工具。核心能力:. 适用于需要token manager tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要token manager tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "Token用量管控工具免费版，面向个人开发者的轻量级LLM用量监控工具。核心能力:. 适用于需要token manager tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要token manager tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - Token管理
   - token
@@ -28,7 +27,6 @@ category: "Automation"
 pricing_tier: free
 
 ---
-
 # Token用量管理工具（免费版）
 
 ## 概述
@@ -122,7 +120,7 @@ node （请参考skill目录中的脚本文件） recommend
 
 ```bash
 # 1. 设置环境变量
-export MOONSHOT_API_KEY="your-api-key"
+export MOONSHOT_API_KEY=${API_KEY:?请设置环境变量}
 # ...
 # 2. 查看用量
 26 moonshot kimi-k2.5
@@ -138,9 +136,9 @@ node （请参考skill目录中的脚本文件） providers
 
 ```bash
 # 环境变量配置
-export MOONSHOT_API_KEY="your-kimi-key"        # Kimi/Moonshot
-export OPENAI_API_KEY="your-openai-key"        # OpenAI（可选）
-export ANTHROPIC_API_KEY="your-claude-key"     # Anthropic（可选）
+export MOONSHOT_API_KEY=${API_KEY:?请设置环境变量}        # Kimi/Moonshot
+export OPENAI_API_KEY=${OPENAI_API_KEY:?请设置环境变量}        # OpenAI（可选）
+export ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:?请设置环境变量}     # Anthropic（可选）
 # ...
 # 命令参数说明
 # report <输入tokens> <输出tokens> <上下文已用> <上下文上限> <推理状态> [余额] [提供商] [模型]

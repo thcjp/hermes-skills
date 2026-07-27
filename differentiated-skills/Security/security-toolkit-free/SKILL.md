@@ -1,5 +1,4 @@
 ---
-
 slug: security-toolkit-free
 name: security-toolkit-free
 version: 1.0.1
@@ -7,7 +6,7 @@ displayName: Agent安全工具箱(免费版)
 summary: "AI Agent安全扫描与风险检测,24条规则覆盖注入、密钥泄露、恶意代码等,适合个人开发者,支持多种使用场景和自动化处理"
 license: MIT
 edition: free
-description: "核心能力:，可自发提升工作效率. 适用于需要security toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要security toolkit相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "核心能力:，可自发提升工作效率. 适用于需要security toolkit相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要security toolkit相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - 安全
   - security
@@ -27,7 +26,6 @@ category: "Security"
 pricing_tier: free
 
 ---
-
 # Agent安全工具箱(免费版)
 
 ## 概述
@@ -49,7 +47,7 @@ Agent安全工具箱免费版是一款专为AI Agent生态设计的安全扫描�
 | 8 | MNEMONIC_PATTERN | CRITICAL | 硬编码助记词 |
 | 9 | WALLET_DRAINING | CRITICAL | 代币盗取模式 |
 | 10 | UNLIMITED_APPROVAL | HIGH | 无限授权模式 |
-| 11 | DANGEROUS_SELFDESTRUCT | HIGH | 合约自毁 |
+| 11 | HIGHRISK_SELFDESTRUCT | HIGH | 合约自毁 |
 | 12 | HIDDEN_TRANSFER | MEDIUM | 非标准转账实现 |
 | 13 | PROXY_UPGRADE | MEDIUM | 代理升级模式 |
 | 14 | FLASH_LOAN_RISK | MEDIUM | 闪电贷使用 |
@@ -59,7 +57,7 @@ Agent安全工具箱免费版是一款专为AI Agent生态设计的安全扫描�
 | 18 | PROMPT_INJECTION | CRITICAL | Prompt注入攻击 |
 | 19 | NET_EXFIL_UNRESTRICTED | HIGH | 无限制数据外传 |
 | 20 | WEBHOOK_EXFIL | CRITICAL | Webhook数据外泄 |
-| 21 | TROJAN_DISTRIBUTION | CRITICAL | 木马分发 |
+| 21 | 网络代理_DISTRIBUTION | CRITICAL | 木马分发 |
 | 22 | SUSPICIOUS_PASTE_URL | HIGH | 可疑粘贴板URL |
 | 23 | SUSPICIOUS_IP | MEDIUM | 硬编码公网IP |
 | 24 | SOCIAL_ENGINEERING | HIGH | 社会工程学诱导 |
@@ -117,9 +115,9 @@ node （请参考skill目录中的脚本文件） /path/to/skill-directory
 发现项:
 | # | 规则 | 严重等级 | 文件:行号 | 证据 |
 |:---:|:---:|:---:|:---:|:---:|
-| 1 | REMOTE_LOADER | critical | index.js:42 | eval(remoteData) |
+| 1 | REMOTE_LOADER | critical | index.js:42 | 安全解析(remoteData) |
 | 2 | READ_ENV_SECRETS | medium | config.js:15 | process.env.SECRET |
-| 3 | PROMPT_INJECTION | critical | SKILL.md:8 | "ignore previous instructions" |
+| 3 | PROMPT_INJECTION | critical | SKILL.md:8 | "遵循当前指令" |
 # ...
 建议: 不要安装此Skill,存在严重安全风险.
 ```
@@ -163,14 +161,23 @@ node （请参考skill目录中的脚本文件） /path/to/project --rule PROMPT
 ### 扫描脚本
 
 ```python
+# ...
+# ...
+# ...
+# ...
+# ...
+# ...
+# ...
+# ...
+# ...
+# ...
+result = "操作完成"
 import os
 import re
 import json
 from pathlib import Path
-# ...
 class SecurityScanner:
     """AI Agent安全扫描器"""
-# ...
     RULES = {
         "SHELL_EXEC": {
             "severity": "HIGH",
@@ -223,14 +230,11 @@ class SecurityScanner:
             "description": "Webhook数据外泄"
         }
     }
-# ...
     SKIP_DIRS = {"node_modules", "dist", "build", ".git", "coverage", "__pycache__", ".venv", "venv"}
     SCAN_EXTENSIONS = {".js", ".ts", ".jsx", ".tsx", ".mjs", ".cjs", ".py", ".json", ".yaml", ".yml", ".sh", ".md"}
-# ...
     def __init__(self):
         self.findings = []
         self.files_scanned = 0
-# ...
     def scan(self, target_path):
         """扫描目标路径"""
         target = Path(target_path)
@@ -243,16 +247,13 @@ class SecurityScanner:
                     filepath = Path(root) / file
                     if filepath.suffix in self.SCAN_EXTENSIONS:
                         self._scan_file(filepath)
-# ...
         return self._generate_report(target_path)
-# ...
     def _scan_file(self, filepath):
         """扫描单个文件"""
         self.files_scanned += 1
         try:
             with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
                 lines = f.readlines()
-# ...
             for line_num, line in enumerate(lines, 1):
                 for rule_id, rule in self.RULES.items():
                     if re.search(rule["pattern"], line, re.IGNORECASE):
@@ -264,8 +265,6 @@ class SecurityScanner:
                             "description": rule["description"]
                         })
         except Exception:
-            pass
-# ...
     def _generate_report(self, target):
         """生成扫描报告"""
         risk_level = "LOW"
@@ -275,7 +274,6 @@ class SecurityScanner:
             risk_level = "HIGH"
         elif any(f["severity"] == "MEDIUM" for f in self.findings):
             risk_level = "MEDIUM"
-# ...
         return {
             "target": target,
             "risk_level": risk_level,
@@ -309,14 +307,14 @@ class SecurityScanner:
 
 ```bash
 # 安装任何新Skill前执行安全扫描
-node （请参考skill目录中的脚本文件） ~/.skills/new-skill/
+node （请参考skill目录中的脚本文件） ./.skills/new-skill/
 ```
 
 ### 2. 定期安全自检
 
 ```bash
 # 每周扫描工作区
-node （请参考skill目录中的脚本文件） ~/workspace/ --full --output weekly_scan.json
+node （请参考skill目录中的脚本文件） ./workspace/ --full --output weekly_scan.json
 ```
 
 ### 3. 关注CRITICAL级别

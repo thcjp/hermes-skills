@@ -1,5 +1,4 @@
 ---
-
 slug: jellyfin-control-tool-free
 name: jellyfin-control-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 媒体服务器控制
 summary: 轻量级 Jellyfin 媒体服务器控制工具，支持内容搜索、播放控制与设备管理，适合个人家庭影音娱乐使用.
 license: MIT
 edition: free
-description: "轻量级 Jellyfin 媒体服务器控制工具，兼容内容搜索、播放控制与设备管控，适合个人家庭影音娱乐使用。核心能力:. 适用于需要jellyfin control tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要jellyfin control tool相关能力的开发场景,提供结构化的工作流程和配置指引."
+description: "轻量级 Jellyfin 媒体服务器控制工具，兼容内容搜索、播放控制与设备管控，适合个人家庭影音娱乐使用。核心能力:. 适用于需要jellyfin control tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要jellyfin control tool相关能力的开发场景,包含结构化的工作流程和配置指引."
 tags:
   - 媒体
   - jellyfin
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # 媒体服务器控制（免费版）
 
 ## 概述
@@ -174,10 +172,10 @@ js resume "Matrix" --device "Chromecast"
     "entries": {
       "jellyfin-control": {
         "env": {
-          "JF_URL": "http://192.168.1.50:8096",
+          "JF_URL": "http://${SERVER_HOST}:8096",
           "JF_API_KEY": "your-jellyfin-api-key",
           "JF_USER": "username",
-          "HA_URL": "http://192.168.1.138:8123",
+          "HA_URL": "http://${SERVER_HOST}:8123",
           "HA_TOKEN": "your-ha-long-lived-token",
           "HA_TV_ENTITY": "media_player.lg_webos_tv",
           "TV_MAC": "AA:BB:CC:DD:EE:FF"
@@ -285,10 +283,10 @@ js search "Star Wars"
 
 ```bash
 # 检查服务器状态
-curl http://YOUR_IP:8096/health
+curl https://YOUR_IP:8096/health
 # ...
 # 验证 API Key
-curl -H "X-Emby-item: YOUR_API_KEY" http://YOUR_IP:8096/System/Info
+# 安全数据传输示例" http://YOUR_IP:8096/System/Info
 # ...
 # 检查网络连通性
 ping YOUR_IP
@@ -316,10 +314,10 @@ echo "操作完成"
 
 ```bash
 # 检查 HA 服务状态
-curl http://HA_URL/api/
+curl https://HA_URL/api/
 # ...
 # 验证令牌
-curl -H "Authorization: Bearer YOUR_TOKEN" http://HA_URL/api/states
+# 安全数据传输示例" http://HA_URL/api/states
 ```
 
 ## 依赖说明

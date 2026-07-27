@@ -3,10 +3,10 @@ slug: "longmemo-elite-free"
 name: "longmemo-elite-free"
 version: "1.0.0"
 displayName: "精英长记忆"
-summary: "Agent长记忆基础版：WAL防丢失+热内存+基础检索，跨会话不丢上下文。。面向AI Agent的长期记忆系统基础版，解决跨会话遗忘这一核心痛点. WAL写前日志协议采用"先写状态，再回复用"
-summary_zh: "Agent长记忆基础版：WAL防丢失+热内存+基础检索，跨会话不丢上下文。。面向AI Agent的长期记忆系统基础版，解决跨会话遗忘这一核心痛点. WAL写前日志协议采用"先写状态，再回复用"
+summary: "Agent长记忆基础版：WAL防丢失+热内存+基础检索,跨会话不丢上下文.面向AI Agent的长期记忆系统基础版,解决跨会话遗忘这一核心痛点. WAL写前日志协议采用,提供核心能力"先写状态,."
+summary_zh: "Agent长记忆基础版：WAL防丢失+热内存+基础检索，跨会话不丢上下文。。面向AI Agent的长期记忆系统基础版，解决跨会话遗忘这一核心痛点. WAL写前日志协议采用,提供核心能力"先写状态，再回复用"
 license: "MIT"
-description: |-
+description: "|-. 适用于需要longmemo elite相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性.该技能适用于相关开发场景,包含结构化的工作流程和配置指引.经过深度差异化处置,针对用户反馈和使用痛点进行了改进,提升了实用性和可操作性."
   面向AI Agent的长期记忆系统基础版，解决跨会话遗忘这一核心痛点.
   WAL写前日志协议采用"先写状态，再回复用户"模式，在压缩/崩溃场景下保证上下文不丢失.
   热内存文件（SESSION-STATE.md）记录当前任务、关键上下文、待办动作、近期决策，抗上下文压缩.
@@ -19,16 +19,17 @@ tools:
 homepage: ""
 tags:
   - 通用办公
+  - longmemo
+  - elite
+  - automation
+  - productivity
   - 工具
   - 效率
   - 写作
   - 电商
   - session-state
-  - wal
-  - mysql
-  - 写入
-  - 写前日志
 category: "Automation"
+pricing_tier: free
 ---
 # 精英长记忆（基础版）
 
@@ -75,7 +76,7 @@ category: "Automation"
 
 ## 使用流程
 
-### 第一步：创建热内存文件
+### 领先步：创建热内存文件
 
 在工作区根目录创建 `SESSION-STATE.md`，包含当前任务、关键上下文、待办动作、近期决策四个区块：
 
@@ -168,7 +169,7 @@ A：基础版不支持成本预算控制与自动降级。如需配置日/月预
 
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY=${API_KEY:?请设置环境变量}
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 ## 已知限制

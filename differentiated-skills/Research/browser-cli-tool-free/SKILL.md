@@ -1,5 +1,4 @@
 ---
-
 slug: browser-cli-tool-free
 name: browser-cli-tool-free
 version: 1.0.0
@@ -7,7 +6,7 @@ displayName: 浏览器CLI工具-免费版
 summary: "基于Playwright的浏览器自动化CLI,支持签到、填表、截图与信息抓取,适合个人用户。浏览器自动化命令行工具,提供导航、交互、信息获取与截图能力,"
 license: MIT
 edition: free
-description: "浏览器自发化命令行工具,包含导航、交互、信息获取与截图能力,. 适用于需要browser cli tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要browser cli tool相关能力的开发场景,提供结构化的工作流程和配置指引. 该工具经过深度差异化处理,针对用户反馈和使用痛点进行了优化改进,提升了实用性和可操作性."
+description: "浏览器自发化命令行工具,包含导航、交互、信息获取与截图能力,. 适用于需要browser cli tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量. 适用于需要browser cli tool相关能力的开发场景,包含结构化的工作流程和配置指引. 该工具经过深度差异化处置,针对用户反馈和使用痛点进行了调优改进,提升了实用性和可操作性."
 tags:
   - 研究工具
   - browser
@@ -29,7 +28,6 @@ category: "Knowledge"
 pricing_tier: free
 
 ---
-
 # 浏览器CLI工具(免费版)
 
 ## 概述
@@ -125,8 +123,8 @@ agent-browser find role button click --name "提交"
 
 将签到脚本加入定时任务,实现每日自动签到.
 ```bash
-# 创建脚本 ~/.skill-platform/（请参考skill目录中的脚本文件）
-cat > ~/.skill-platform/（请参考skill目录中的脚本文件） << 'EOF'
+# 创建脚本 ./.skill-platform/（请参考skill目录中的脚本文件）
+cat > ./.skill-platform/（请参考skill目录中的脚本文件） << 'EOF'
 #!/bin/bash
 sleep 2
 agent-browser find role button click --name "签到"
@@ -134,11 +132,11 @@ agent-browser screenshot /tmp/checkin_$(date +%Y%m%d).png
 agent-browser close
 EOF
 # ...
-chmod +x ~/.skill-platform/（请参考skill目录中的脚本文件）
+chmod +x ./.skill-platform/（请参考skill目录中的脚本文件）
 # ...
-# 加入 crontab(每天 9:00 执行)
-# crontab -e
-# 0 9 * * * ~/.skill-platform/（请参考skill目录中的脚本文件）
+# 加入 计划任务配置(每天 9:00 执行)
+# 计划任务配置 -e
+# 0 9 * * * ./.skill-platform/（请参考skill目录中的脚本文件）
 ```
 
 ## 快速开始
