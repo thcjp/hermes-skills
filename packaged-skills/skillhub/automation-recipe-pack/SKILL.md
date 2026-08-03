@@ -1,35 +1,17 @@
 ---
-
-
-slug: automation-recipe-pack
 name: automation-recipe-pack
-version: 1.1.2
-displayName: 自动化配方
-summary: 10个实用自动化场景配
-summary_zh: 10个实用自动化场景配方，覆盖文件处理、数据转换、批量操作等高频任务，可自动化提升工作效率。10个实用自动化场景配方，覆盖文件处理、数据转换、批量操作等高频任务。适用于效率工具爱好者、自动化
-license: MIT
-description: 10个实用自动化场景配方，覆盖文件处理、数据转换、批量操作等高频任务。适用于效率工具爱好者、自动化新手，可自动化提升工作效率。支持批量处理、工作流优化、定时触发等场景。Use。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。 功能涵盖: recipe(食谱), pack。
-  when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工审美判断的任务。适用于开发者、团队和自动化集成场景。 功能涵盖: recipe(食谱),
-  pack。'
-tags:
-- Automation
-- 自动化
-- 工作流
-- 效率
-- agent
-- string
-- llm
+slug: automation-recipe-pack
+displayName: "自动化配方"
+version: "1.1.2"
+summary: "10个实用自动化场景配"
+description: "10个实用自动化场景配方，覆盖文件处理、数据转换、批量操作等高频任务。适用于效率工具爱好者、自动化新手，可自动化提升工作效率。支持批量处理、工作流优化、定时触发等场景。Use。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。 功能涵盖: recipe(食谱), pack。"
+license: "MIT"
 tools:
-- read
-- exec
-- write
-homepage: ''
-category: Automation
-homepage: "https://skillhub.cn/skill/"
-
-
+  - Read
+  - Write
+  - Edit
+  - Bash
 ---
-
 
 > **核心功能**: 本技能提供时使用等能力。
 
@@ -164,7 +146,7 @@ clean_and_convert('sales_raw.csv', 'sales_clean.json')
 | Agent平台 | 运行时 | 必需 | 支持SKILL.md的任意AI Agent |
 
 ### 运行环境
-- **Agent平台**: Claude Code / Cursor / Codex / Gemini CLI等
+- **Agent平台**:  Code / Cursor / Codex /  CLI等
 - **操作系统**: Windows / macOS / Linux
 
 ## 热门问题
@@ -289,3 +271,10 @@ A: [详细回答]
 2. **查看日志输出**: 定位具体错误行和异常类型
 3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
 4. **逐步调试**: 缩小问题范围,隔离故障模块
+
+## 依赖说明
+
+- LLM/API Key: 需要配置相应的API密钥
+- 网络连接: 需要访问外部服务
+- 文件系统: 需要读写文件权限
+- 运行时环境: 需要相应的命令行工具

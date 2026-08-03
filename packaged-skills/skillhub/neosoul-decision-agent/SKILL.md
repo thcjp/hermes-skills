@@ -1,411 +1,368 @@
 ---
+name: neosoul-decision-agent
 slug: neosoul-decision-agent
-name: "neosoul-decision-agent"
-version: 1.0.1
-displayName: "自主决策代理"
-summary: "具备自改进记忆的结构化"
-summary_zh: "具备自改进记忆的结构化决策支持系统，学习用户风险偏好与决策框架偏好。具备自改进记忆的结构化决策支持系统，帮助用户在面临权衡选择时做出更优决策. 通过分层记忆体系（HOT/WARM/RECOR"
+displayName: "Neosoul Decision Age"
+version: "1.0.0"
+summary: "带自改进记忆的结构化决策支持"
+description: "带自改进记忆的结构化决策支持。Structured decision support with self-improving memory。触发关键词: self-improving, decision, self, proactive, neosoul, support, agent, making。"
 license: "MIT"
-description: |-
-  具备自改进记忆的结构化决策支持系统，帮助用户在面临权衡选择时做出更优决策.
-  通过分层记忆体系（HOT/WARM/RECORD/COLD四级）学习用户的风险偏好、框架偏好与领域权重，
-  并在后续决策中应用学到的模式。提供决策信号自动识别、决策回顾、主动决策检测、置信度标注四大核心能力.
-  适用于产品决策、技术架构决策、商业战略决策、个人生活决策等多领域场景.
-  无需凭证，无需额外二进制依赖，本地运行.
 tools:
   - read
-  - exec
-  - write
-  - glob
-  - grep
-homepage: ""
-tags:
-  - 系统运维
-  - AI代理
-  - 自动化
-  - 智能
-  - hot
-  - domains
-  - memory
-  - 信号
-  - 更新
-category: "Agents"
-homepage: "https://skillhub.cn/skill/"
 ---
-# 自主决策代理（Neosoul Decision Agent）
 
-具备自改进记忆的结构化决策支持系统，通过分层记忆体系学习用户的风险偏好与决策框架偏好，在后续决策中应用学到的模式，帮助用户做出更优决策.
-## 输入规范
-| 参数名 | 类型 | 必填 | 说明 |
-|---|---|---|---|
-| input | string | 是 | 自主决策代理处理的输入数据或指令 |
-| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
-| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+# Self-Improving Proactive Decision Making Agent
 
-## 专业版专属特性
-| 能力 | 免费版 | 付费版 |
-|:-----|:-----|:-----|
-| 基础功能 | 支持 | 支持 |
-| 复杂工作流可视化编排 | 不支持 | 支持 |
-| 条件分支与异常重试 | 不支持 | 支持 |
-| 定时触发与事件驱动 | 不支持 | 支持 |
-| 执行日志与审计追踪 | 不支持 | 支持 |
-| 分布式任务调度与负载均衡 | 不支持 | 支持 |
+## When to Use
 
-## 能力速览
-1. **分层记忆体系（HOT/WARM/RECORD/COLD四级）**
-   - HOT层（memory.md，≤100行）：始终加载，存储风险偏好、框架偏好、关键规则
-   - WARM层（domains/与types/，每个≤200行）：按领域或类型匹配时加载，存储领域决策模式与类型决策模式
-   - RECORD层（decisions/，每个决策一个文件）：回顾请求时加载，存储决策回顾记录
-   - COLD层（archive/，无大小限制）：显式查询时加载，存储已完成或衰减的决策模式
-   - 信号观察3次后自动提升到HOT层，决策记录90天未使用自动归档到COLD层
-   - 输出：按层级组织的记忆文件，含行数统计与命名空间索引
+User faces a tradeoff with multiple options. User asks "should I" or "what do you think about". User is weighing risk vs. reward. User revisits a past decision to evaluate it. User wants to build better decision habits over time. You notice an implicit decision point the user hasn't articulated yet.
 
-2. **混合命名空间（领域x类型双维度）**
-   - 领域维度：domains/product.md（产品决策）、domains/tech.md（技术决策）、domains/business.md（商业决策）、domains/personal.md（个人决策）
-   - 类型维度：types/strategic.md（战略级，长周期高风险）、types/tactical.md（战术级，中周期中等风险）、types/operational.md（操作级，常规低风险）
-   - 两个维度可同时为单个决策提供信息：领域维度决定偏好格式，类型维度决定流程深度
-   - 冲突解决规则：领域特定偏好优先（产品>战略用于格式）、最近信号优先（同级别）、不确定时询问用户
-   - 输出：双维度交叉的决策模式匹配结果
+## Architecture
 
-3. **决策信号自动识别与学习**
-   - 风险偏好信号 → 更新memory.md："我宁愿等更多数据"、"最坏情况会怎样"、"我不想后悔这个"
-   - 框架偏好信号 → 更新memory.md+frameworks.md："给我优缺点分析"、"我喜欢结构化分析"、"给我你的优选建议"
-   - 领域权重信号 → 更新domains/{domain}.md："产品决策中质量总是胜过速度"、"技术决策中可逆性是关键"
-   - 结果反馈信号 → 更新reversals.md或决策记录："那个决定是对的"、"我们在那里犯了错"、"事后看来我们应该..."
-   - 忽略信号：假设性场景、一次性约束、第三方偏好
-   - 输出：自动更新的记忆文件，含信号来源与时间戳
+Decision memory lives in `~/decision-making/` with a mixed namespace structure (domain × type).
+If `~/decision-making/` does not exist, run `setup.md`.
 
-4. **决策回顾与认知偏差检测**
-   - 触发条件：用户说"那个决定是对的/错的/令人后悔"、重大决策30天后（心跳提示）、用户明确要求回顾
-   - 回顾内容：流程是否合理、结果是否符合预期、遗漏了哪些因素、是否存在认知偏差
-   - 认知偏差检测：沉没成本、锚定效应、确认偏差等
-   - 日志格式：DECISION/CONTEXT/FRAMEWORK USED/OUTCOME/QUALITY/LESSON/BIASES DETECTED
-   - 输出：结构化决策回顾记录，存储到decisions/YYYY-MM-DD-slug.md
-
-5. **主动决策检测**
-   - 检测多个选项正在讨论但没有明确路径的情况
-   - 检测用户对某个选择表达焦虑或犹豫不决
-   - 检测需要先清除设计决策才能继续的任务
-   - 检测 stated goal 与 stated constraint 冲突
-   - 检测正在重新审视先前决策但没有回顾的情况
-   - 主动呈现方式："我注意到你在权衡X与Y，要我运行结构化分析吗？我将基于你对[领域]决策的过往偏好使用[框架]。"
-   - 输出：主动决策提示，含推荐框架与历史偏好引用
-
-6. **置信度标注与透明度**
-   - 每次决策分析必须包含置信度标签：
-     - 高置信度：数据充分，框架匹配明确
-     - 中置信度：做了部分假设，用户应验证关键输入
-     - 低置信度：存在重大未知，仅作方向性参考
-   - 每次框架应用引用来源："使用决策矩阵（来自domains/product.md:12）"
-   - 每个假设明确陈述："假设预算灵活，如不正确请纠正"
-   - 输出：含置信度标签与来源引用的决策分析报告
-
-7. **优雅降级与安全边界**
-   - 上下文限制命中时：仅加载memory.md（HOT层）→ 按需加载相关领域或类型 → 告知用户已加载内容
-   - 安全边界：永不存储第三方敏感信息、永不从沉默中推断风险偏好、永不做最终决策、永不访问日历/邮件/外部系统、永不修改自身SKILL.md
-   - 输出：降级模式下的决策分析，含已加载内容说明
-
-### 输出格式
-
-完成响应以Markdown格式返回,包含任务状态(成功/失败)、解析摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。- 验证返回数据的完整性和格式正确性
-
-## 使用方法
-### 领先步：初始化决策记忆环境
-
-如果 `~/decision-making/` 目录不存在，运行初始化设置：
-
-```bash
-mkdir -p ~/decision-making/{domains,types,decisions,archive}
-touch ~/decision-making/{memory.md,index.md,heartbeat-state.md,frameworks.md,reversals.md}
-```
-
-初始化后目录结构：
 ```text
 ~/decision-making/
-├── memory.md              # HOT: 风险偏好+框架偏好+关键规则
-├── index.md               # 命名空间索引与行数统计
-├── heartbeat-state.md     # 心跳状态：上次运行、上次回顾的决策
-├── frameworks.md          # 活跃框架偏好注册表
-├── domains/               # 领域特定决策模式
-│   ├── product.md
-│   ├── tech.md
-│   ├── business.md
-│   └── personal.md
-├── types/                 # 决策类型模式（跨领域）
-│   ├── strategic.md
-│   ├── tactical.md
-│   └── operational.md
-├── decisions/             # 每个决策的回顾记录
-├── archive/               # 已完成/衰减的决策与模式
-└── reversals.md           # 推翻的决策日志与教训
+├── memory.md              # HOT: ≤100 lines, risk profile + framework prefs + key rules
+├── index.md               # Namespace index with line counts
+├── heartbeat-state.md     # Heartbeat state: last run, last reviewed decision
+├── frameworks.md          # Active framework preference registry
+├── domains/               # Domain-specific decision patterns
+│   ├── product.md         # Product / feature decisions
+│   ├── tech.md            # Tech / architecture decisions
+│   ├── business.md        # Business / strategy decisions
+│   └── personal.md        # Personal life decisions
+├── types/                 # Decision type patterns (cross-domain)
+│   ├── strategic.md       # Long-horizon, high-stakes
+│   ├── tactical.md        # Mid-range, moderate stakes
+│   └── operational.md     # Routine, low-stakes
+├── decisions/             # Per-decision retrospective records
+│   └── YYYY-MM-DD-slug.md # One file per major decision
+├── archive/               # Completed/decayed decisions and patterns
+└── reversals.md           # Log of overturned decisions + lessons
 ```
 
-### 第二步：识别决策信号并更新记忆
+## Quick Reference
 
-在日常交互中自动识别决策信号：
-- 风险偏好信号 → 更新memory.md
-- 框架偏好信号 → 更新memory.md + frameworks.md
-- 信号观察3次后自动提升为HOT层模式
+| Topic | File |
+| --- | --- |
+| Setup guide | `setup.md` |
+| Decision signals | `decision-signals.md` |
+| Framework registry | `decision-frameworks.md` |
+| Decision retrospective format | `decision-retrospective.md` |
+| Memory operations | `operations.md` |
+| Security boundaries | `boundaries.md` |
+| Heartbeat rules | `heartbeat-rules.md` |
+| Heartbeat state template | `heartbeat-state.md` |
+| Memory HOT template | `memory-template.md` |
+| Workspace heartbeat snippet | `HEARTBEAT.md` |
+| Scaling rules | `scaling.md` |
 
-### 第三步：执行结构化决策分析
+## Requirements
 
-当用户面临权衡选择时：
-1. 加载HOT层（memory.md）获取风险偏好与框架偏好
-2. 按领域或类型匹配加载WARM层
-3. 应用优选匹配框架进行结构化分析
-4. 标注置信度级别（高/中/低）
-5. 引用框架来源与历史模式
-6. 呈现≥2个选项及权衡分析
+* No credentials required
+* No extra binaries required
+* Optional: `Proactivity` skill for enhanced follow-through on pending decisions
 
-### 第四步：记录决策并触发回顾
+## Decision Signals
 
-决策做出后，创建决策记录到 `decisions/YYYY-MM-DD-slug.md`。在以下时机触发回顾：
-- 用户说"那个决定是对的/错的/令人后悔"
-- 重大决策30天后（心跳提示）
-- 用户明确要求回顾
+Learn automatically when you detect these patterns:
 
-回顾日志格式：
+**Risk profile signals** → update `memory.md`:
+
+* "I'd rather wait for more data"
+* "Let's just try it and see"
+* "Worst case, what happens?"
+* "I don't want to regret this"
+* "Speed matters more than perfection here"
+
+**Framework preference signals** → update `memory.md` + `frameworks.md`:
+
+* "Give me a pros/cons"
+* "I like structured analysis"
+* "Just give me your best recommendation"
+* "Walk me through the tradeoffs"
+* "What would you do in my position?"
+
+**Domain weight signals** → update `domains/{domain}.md`:
+
+* "For product decisions, quality always beats speed"
+* "In tech, reversibility is key"
+* "Business calls need to be fast — don't overthink"
+
+**Outcome feedback** → update `reversals.md` or decision record:
+
+* "That was the right call"
+* "We made a mistake there"
+* "I wish we'd considered X"
+* "In hindsight, we should have..."
+
+**Ignore** (don't log):
+
+* Hypothetical scenarios ("what if we had done X?")
+* One-time constraints ("just for this decision, ignore cost")
+* Third-party preferences ("my manager thinks...")
+
+## Decision Retrospective
+
+After a decision is made and results are observable, trigger a retrospective:
+
+1. **Was the process sound?** — Did we use the right framework for the context?
+2. **Was the outcome expected?** — Did the result match the prediction?
+3. **What was missed?** — Which factors weren't considered adequately?
+4. **Cognitive biases?** — Identify any bias that may have skewed the decision.
+
+**Log format:**
+
 ```text
-DECISION: [决策内容]
-CONTEXT: [类型/领域，风险级别]
-FRAMEWORK USED: [使用的分析框架]
-OUTCOME: [实际结果]
-QUALITY: [流程评级: 合理/有缺陷/未知]
-LESSON: [下次改进点]
-BIASES DETECTED: [沉没成本/锚定/确认偏差等，或无]
+DECISION: [what was decided]
+CONTEXT: [type/domain, stakes level]
+FRAMEWORK USED: [which analysis was applied]
+OUTCOME: [what actually happened]
+QUALITY: [process rating: sound / flawed / unknown]
+LESSON: [what to improve next time]
+BIASES DETECTED: [sunk cost / anchoring / confirmation / etc. or none]
 ```
 
-### 第五步：查询决策统计与模式
+**Retrospective triggers:**
 
-用户可随时查询决策统计信息：
-- "决策统计"：显示各层级文件数、回顾完成率、推翻记录数
-- "我的决策风格"：显示HOT层风险偏好与框架偏好
-- "过去决策中学到了什么"：显示reversals.md中最近10条
-- "[领域]决策模式"：加载domains/{domain}.md
-- "我的风险偏好是什么"：汇总memory.md中风险相关条目
+* User says "that decision was right/wrong/regrettable"
+* 30 days after a major logged decision (heartbeat prompt)
+* User explicitly asks to retrospect
 
-## 异常恢复流程
-| 错误类型 | 原因 | 处理方式 |
-|---:|---:|---:|
-| 决策记忆目录不存在 | 首次使用未初始化 | 运行初始化命令创建 `~/decision-making/` 目录结构与文件 |
-| memory.md超过100行限制 | HOT层积累过多条目 | 将低频访问的条目降级到WARM层（domains/或types/），保持HOT层精简 |
-| 框架与决策不匹配 | 选择了不适合当前决策类型的框架 | 先通过澄清问题理解决策上下文，再选择优选匹配框架 |
-| 从单一决策推断风险偏好 | 单个数据点不代表模式 | 等待3次一致信号后才将模式提升到HOT层 |
-| 上下文限制命中 | 加载了过多WARM层文件 | 降级为仅加载HOT层，按需加载领域或类型文件，告知用户已加载内容 |
-| 决策回顾缺失 | 重大决策后未触发回顾 | 30天后通过心跳提示触发回顾，或用户明确要求时触发 |
-| 偏好被显式推翻 | 用户改变了之前表达的偏好 | 归档旧偏好，在reversals.md记录推翻日志，更新对应层级文件 |
-| 领域与类型模式矛盾 | domains/与types/中的模式冲突 | 领域特定偏好优先（格式），最近信号优先（同级别），不确定时询问用户 |
+## Proactive Decision Detection
 
-## 使用范例
-### 示例一：产品功能优先级决策
+Don't wait for the user to ask. Surface a decision when you detect:
 
-**输入：** 用户说"我正在纠结是先做性能优化还是先做新功能，帮我分析一下"
+* Multiple options being discussed without a clear path forward
+* User expressing anxiety or indecision about a choice
+* A task that requires clearing a design decision first
+* A stated goal that conflicts with a stated constraint
+* A prior decision being revisited without a retrospective
 
-**执行过程：**
+When surfacing proactively:
+
 ```text
-[加载HOT层: memory.md]
-[检测到领域: product.md (产品决策)]
-[检测到类型: tactical.md (战术级，中周期中等风险)]
-[应用框架: 决策矩阵 (来自domains/product.md:12)]
-# ...
-决策分析：
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# ...
-选项A: 先做性能优化
-  优点: 提升用户体验留存、减少客诉、技术债务降低
-  缺点: 新功能延迟、短期增长放缓
-  风险: 低（可逆，可随时切换到新功能）
-# ...
-选项B: 先做新功能
-  优点: 增加获客渠道、满足已反馈用户、短期增长
-  缺点: 性能问题加剧、技术债务增加
-  风险: 中（性能恶化可能不可逆）
-# ...
-置信度: 中 — 假设当前性能问题尚未达到临界点
-# ...
-框架来源: 决策矩阵 (来自domains/product.md:12)
-历史模式: 你过去在产品决策中偏好"质量优于速度" (来自memory.md:8)
-# ...
-建议: 基于你的历史偏好，选项A(性能优化)更符合你的决策模式.
-但最终选择取决于你对短期增长与技术健康的权衡.
+"I notice you're weighing X vs Y — want me to run a structured analysis?
+I'll use [framework] 基于 your past preference for [domain] decisions."
 ```
 
-**后续操作：** 记录决策到 `decisions/2026-07-21-perf-vs-feature.md`，30天后触发回顾.
-### 示例二：技术架构选型决策
+## Quick Queries
 
-**输入：** 用户说"我在纠结用微服务还是单体架构，技术决策中可逆性对我来说很重要"
+| User says | Action |
+| --- | --- |
+| "Help me decide X" | Load HOT + domain/type files → apply best-fit framework |
+| "What frameworks do you recommend?" | Show `decision-frameworks.md` matches for context |
+| "Show my decision style" | Print HOT memory.md risk profile + framework prefs |
+| "What have I learned from past decisions?" | Show last 10 from `reversals.md` |
+| "Retrospect on [topic]" | Find decision record, fill in outcome + lessons |
+| "Show [domain] decision patterns" | Load `domains/{domain}.md` |
+| "Decision stats" | Show counts per tier + retrospective completion rate |
+| "What's my risk profile?" | Summarize risk-related entries in memory.md |
+| "Forget my [X] preference" | Remove from all tiers (confirm first) |
 
-**执行过程：**
+## Decision Stats
+
+On "decision stats" request, report:
+
 ```text
-[识别领域权重信号 → 更新domains/tech.md: "技术决策中可逆性是关键"]
-[加载HOT层 + domains/tech.md + types/strategic.md (战略级)]
-# ...
-决策分析：
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# ...
-选项A: 单体架构（先启动）
-  可逆性: 高 — 可后续拆分为微服务
-  速度: 快 — 单一代码库，无服务间通信
-  复杂度: 低 — 部署、监控、调试简单
-  风险: 低（高度可逆，符合你的偏好）
-# ...
-选项B: 微服务架构（直接上）
-  可逆性: 低 — 一旦拆分难以合并
-  速度: 慢 — 需要服务发现、API网关、分布式追踪
-  复杂度: 高 — 运维成本显著增加
-  风险: 中（不可逆性高，与你的偏好冲突）
-# ...
-置信度: 高 — 数据充分，框架匹配明确
-# ...
-框架来源: 可逆性决策框架 (来自domains/tech.md:5)
-历史模式: "技术决策中可逆性是关键" (刚记录到domains/tech.md:5)
-# ...
-建议: 基于你对可逆性的重视，选项A(单体架构)更符合你的决策偏好.
-可以先以单体启动，在需要时逐步拆分.
+⚖️ Decision Making Memory
+
+🔥 HOT (always loaded):
+  memory.md: X entries (risk profile + framework prefs)
+
+🌡️ WARM (load on context):
+  domains/: X files
+  types/: X files
+
+📋 Decision Records:
+  decisions/: X files
+  retrospectives completed: X / X
+
+🔄 Reversals logged: X
+❄️ Archive: X files
 ```
 
-**后续操作：** 信号已记录到domains/tech.md，决策记录到 `decisions/2026-07-21-monolith-vs-microservice.md`.
-## 常见用户疑问
-**Q1：系统会替我做决定吗？**
-不会。系统永远不会替用户做最终决策。分析和框架是系统提供的，选择始终是用户的。系统呈现选项而非指令，使用"你可以考虑"而非"你应该"。系统的角色是结构化分析，不是替代决策.
-**Q2：系统怎么学习我的决策偏好？**
-通过识别决策信号自动学习。当你说"我宁愿等更多数据"时，系统识别为风险厌恶信号并记录到memory.md。当你说"给我优缺点分析"时，系统识别为框架偏好信号。信号观察3次一致后自动提升为HOT层模式，在后续决策中应用。你也可以通过"忘记我的[X]偏好"来清除特定偏好.
-**Q3：决策回顾什么时候触发？**
-三个触发条件：(1) 你说"那个决定是对的/错的/令人后悔"时；(2) 重大决策记录30天后通过心跳提示自动触发；(3) 你明确要求回顾某个决策时。回顾会评估流程是否合理、结果是否符合预期、遗漏了哪些因素、是否存在认知偏差.
-**Q4：HOT层memory.md超过100行怎么办？**
-将低频访问的条目降级到WARM层（domains/或types/对应文件），保持HOT层精简高效。系统会在信号提升到HOT层时检查行数，超过100行时提示降级。你也可以通过"决策统计"查看各层级行数，手动管理记忆层级.
-**Q5：领域维度和类型维度冲突时怎么处理？**
-冲突解决规则：(1) 领域特定偏好优先（如产品领域偏好优先于战略类型用于格式选择）；(2) 最近信号优先（同级别冲突时以最近记录为准）；(3) 不确定时询问用户后再继续。两个维度都可以为单个决策提供信息，领域维度决定偏好格式，类型维度决定流程深度.
-**Q6：系统会不会从我的沉默中推断偏好？**
-不会。安全边界明确规定：永不从沉默中推断风险偏好。只有用户明确表达的信号才会被记录和学习。这避免了错误推断导致的偏差积累.
-**Q7：系统需要网络连接吗？**
-不需要。系统完全在本地运行，不做网络请求，不访问日历、邮件或外部系统。所有决策记忆存储在本地 `~/decision-making/` 目录中。无需凭证，无需额外二进制依赖.
-### Q1: 自主决策代理如何处理复杂的多因素决策问题？
-A: 自主决策代理通过其混合命名空间（领域x类型双维度）来处理复杂的多因素决策问题。它会根据决策的领域和类型，从相应的领域和类型文件中提取信息，结合用户的风险偏好和框架偏好，应用决策矩阵等工具，进行结构化分析，从而提供全面且深入的决策支持。
+## Common Traps
 
-### Q2: 如果我在使用过程中遇到了不熟悉的领域或类型，系统会如何反应？
-A: 如果遇到不熟悉的领域或类型，系统会自动加载相应的领域或类型文件，并尝试匹配最合适的决策框架。如果系统无法确定优选框架，它会提示用户，并建议用户提供更多信息或进行进一步的澄清。
+| Trap | Why It Fails | Better Move |
+| --- | --- | --- |
+| Picking a framework before understanding the decision | Wrong tool for the job | Ask clarifying questions first |
+| Inferring risk profile from one decision | Single data point, not a pattern | Wait for 3 consistent signals |
+| Presenting only one option | Removes user agency | Always show ≥2 options with tradeoffs |
+| High confidence with missing data | Misleads user | Always label confidence level |
+| Skipping retrospective after bad outcome | Loses the lesson | Always prompt for retrospective |
 
-### Q3: 自主决策代理如何确保决策的透明度和可信度？
-A: 自主决策代理通过置信度标注和透明度机制确保决策的透明度和可信度。每次决策分析都会包含置信度标签（高、中、低），并明确引用框架来源和历史模式。此外，所有假设都会明确陈述，确保用户了解决策背后的逻辑和限制。
+## Core Rules
 
-### Q4: 自主决策代理如何处理用户在决策过程中可能出现的认知偏差？
-A: 自主决策代理通过决策回顾和认知偏差检测来处理认知偏差。它会定期回顾决策，评估流程、结果和认知偏差，如沉没成本、锚定效应等，并提供改进建议，帮助用户避免或减少认知偏差的影响。
+### 1. Never Replace the User's Final Decision
 
-### Q5: 自主决策代理在处理决策信号时，如何避免误判或遗漏重要信息？
-A: 自主决策代理通过分层记忆体系和信号学习机制来避免误判或遗漏重要信息。信号观察3次后自动提升为HOT层模式，确保重要信号被充分学习。同时，系统会忽略假设性场景、一次性约束和第三方偏好等非决策性信号，确保决策信号的准确性和相关性。
+Analysis and frameworks are yours. The choice is always theirs.
+Present options, not instructions. Use "you might consider" not "you should".
 
-## 前置条件
-### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
-- **操作系统**: Windows / macOS / Linux
+### 2. Always Signal Confidence
 
-### 依赖项
-| 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:---:|:---:|:---:|:---:|
-| LLM API | API | 必需 | 由Agent内置LLM提供 |
+Every decision analysis must include a confidence tag:
 
-### API Key 配置
-需要配置对应API Key，详见上文环境配置章节
+* 🟢 High — sufficient data, clear framework match
+* 🟡 Medium — some assumptions made, user should verify key inputs
+* 🔴 Low — major unknowns, treat as directional only
 
-### 可用性分类
-- **分类**: MD+EXEC（）
+### 3. Tiered Memory
 
-**API Key配置方式**:
-```bash
-export API_KEY="${API_KEY:?请设置环境变量}"
+| Tier | Location | Size Limit | Behavior |
+| --- | --- | --- | --- |
+| HOT | memory.md | ≤100 lines | Always loaded — risk profile, framework prefs, key rules |
+| WARM | domains/, types/ | ≤200 lines each | Load on domain/type match |
+| RECORD | decisions/ | One file per decision | Load on retrospective request |
+| COLD | archive/ | Unlimited | Load on explicit query |
+
+### 4. Mixed Namespace (Domain × Type)
+
+```text
+HOT: memory.md (global risk profile + preferences)
+  ├── WARM Domain: domains/{product, tech, business, personal}.md
+  │     └── RECORD: decisions/YYYY-MM-DD-slug.md
+  └── WARM Type: types/{strategic, tactical, operational}.md
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
-## 功能边界
-1. **记忆基于本地文件**：所有决策记忆存储在本地 `~/decision-making/` 目录中，不跨设备同步。更换设备或清理文件系统会导致决策记忆丢失，需手动迁移 `~/decision-making/` 目录.
-2. **信号学习需要时间积累**：风险偏好和框架偏好需要多次一致信号（至少3次）才能提升为HOT层模式。新用户在初始阶段获得的个性化程度较低，需要交互积累.
-3. **不做最终决策**：系统永远不替用户做最终决策，只提供结构化分析和选项呈现。如果用户期望系统直接给出"应该选A"的指令，本系统无法满足，需用户自行权衡并决策.
-4. **不访问外部系统**：系统不访问日历、邮件、数据库或其他外部系统，无法获取实时数据来辅助决策。决策分析基于用户提供的输入和本地存储的历史模式.
-5. **回顾依赖用户反馈**：决策回顾需要用户主动提供结果反馈或等待30天心跳触发。如果用户不提供反馈，系统无法自动评估决策质量，回顾完成率可能较低.
 
-## 问题排查手册
-| 错误现象 | 可能原因 | 诊断步骤 | 解决方案 |
-|:---:|:---:|:---:|:---:|
-| 决策记忆目录不存在 | 首次使用未初始化 | 检查 `~/decision-making/` 目录是否存在 | 运行初始化命令创建目录结构与文件 |
-| memory.md超过100行限制 | HOT层积累过多条目 | 检查 `memory.md` 文件行数 | 将低频访问的条目降级到WARM层 |
-| 框架与决策不匹配 | 选择了不适合的框架 | 检查决策的领域和类型 | 选择合适的框架进行结构化分析 |
-| 从单一决策推断风险偏好 | 单个数据点不代表模式 | 检查是否有多次一致信号 | 等待3次一致信号后才提升为HOT层 |
-| 上下文限制命中 | 加载了过多WARM层文件 | 检查已加载的文件 | 降级为仅加载HOT层，按需加载领域或类型文件 |
+Both dimensions can inform a single decision. Domain wins for preference; Type wins for process depth.
 
-## 安全规范
-| 风险项 | 等级 | 防护措施 | 验证方法 |
-|:---:|:---:|:---:|:---:|
-| 第三方敏感信息泄露 | 高 | 永不存储第三方敏感信息 | 定期审计存储数据 |
-| 风险偏好推断错误 | 中 | 不从沉默中推断风险偏好 | 用户反馈验证 |
-| 最终决策替代 | 高 | 永不做最终决策 | 用户决策验证 |
-| 外部系统访问 | 高 | 不访问日历、邮件或外部系统 | 系统配置检查 |
-| 本地文件系统安全 | 中 | 限制对 `~/decision-making/` 目录的访问 | 文件系统权限设置 |
+### 示例
 
-## 技术创新
-| 场景 | 效率提升量化分析 |
-|:---:|:---:|
-| 产品决策 | 减少决策时间20%，提高决策质量15% |
-| 技术架构决策 | 减少决策时间30%，提高决策质量25% |
-| 商业战略决策 | 减少决策时间25%，提高决策质量20% |
-| 个人生活决策 | 减少决策时间15%，提高决策质量10% |
+* Signal observed 3x → promote pattern to HOT
+* Decision record unused 90 days → move to archive/
+* Preference explicitly reversed → archive old, log reversal in reversals.md
 
-| 对比项 | 自主决策代理 | 传统决策方法 |
-|:---:|:---:|:---:|
-| 决策速度 | 快速 | 慢 |
-| 决策质量 | 高 | 中 |
-| 决策透明度 | 高 | 低 |
-| 决策一致性 | 高 | 低 |
-| 决策可追溯性 | 高 | 低 |
+### 6. Conflict Resolution
 
-## 效率指标
-| 操作场景 | 手动耗时 | 自动化耗时 | 效率提升 |
-|----------|---------|-----------|---------|
-| 文件解析与提取 | 5-10分钟/个 | <5秒/个 | 60-120x |
-| 批量文件处理(100个) | 8-16小时 | <5分钟 | 96-192x |
-| API调用与响应解析 | 2-3分钟/次 | <1秒/次 | 120-180x |
-| 多接口数据聚合 | 15-30分钟 | <10秒 | 90-180x |
-| 命令执行与结果收集 | 3-5分钟/次 | <2秒/次 | 90-150x |
-| 重复任务批量执行 | 因任务而异 | 线性缩减 | 5-50x |
-| 错误排查与修复 | 10-30分钟 | <30秒 | 20-60x |
+When domain and type patterns contradict:
 
-## 差异分析
-| 对比维度 | 自主决策代理 | 传统手动方式 | 通用脚本工具 |
-|---------|------------|-------------|------------|
-| 自动化程度 | 全流程自动 | 完全手动 | 部分自动 |
-| 错误处理 | 内置错误恢复 | 依赖人工经验 | 基本try-catch |
-| 可复用性 | 参数化配置 | 一次性脚本 | 模板化 |
-| 安全合规 | 内置安全检查 | 无安全保障 | 无安全保障 |
-| 适用场景 | 具备自改进记忆的结构化 | 通用场景 | 通用场景 |
+1. Domain-specific preference wins (product > strategic for format)
+2. Most recent signal wins (same level)
+3. If ambiguous → ask user before proceeding
 
-## 错误应对策略
-针对自主决策代理使用中可能遇到的常见问题,提供以下排查方案:
+### 7. Transparency
 
-| 错误类型 | 原因分析 | 解决方案 |
-|---------|---------|---------|
-| API认证失败(401) | API密钥错误或过期 | 检查密钥配置,重新生成token |
-| 接口限流(429) | 请求频率超出限制 | 降低调用频率,启用重试退避策略 |
-| 响应超时(504) | 网络延迟或服务端负载过高 | 增加超时阈值,检查网络连接 |
-| 文件不存在 | 路径错误或文件未创建 | 检查路径拼写,确认文件已生成 |
-| 文件格式不支持 | 扩展名不在支持列表中 | 转换为支持的格式后重试 |
-| 权限不足 | 当前用户无读写权限 | 检查文件权限,以管理员身份运行 |
-| 命令执行失败 | 参数错误或环境依赖缺失 | 检查命令语法,确认依赖已安装 |
-| 进程超时 | 命令执行时间过长 | 增加超时设置,优化命令参数 |
-| 网络连接失败 | DNS解析失败或防火墙拦截 | 检查网络配置,确认代理设置 |
+* Every framework application → cite source: "Using Decision Matrix (from domains/product.md:12)"
+* Every assumption → state clearly: "Assuming budget is flexible — correct this if not"
+* Every confidence level → visible in output
 
-### 自主决策代理通用排查步骤
+### 8. Security Boundaries
 
-1. **检查输入参数**: 确认所有必填参数已提供且格式正确
-2. **查看日志输出**: 定位具体错误行和异常类型
-3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
-4. **逐步调试**: 缩小问题范围,隔离故障模块
+See `boundaries.md` — never store third-party sensitive info, never infer risk preferences from silence.
+
+### 9. Graceful Degradation
+
+If context limit hit:
+
+1. Load only memory.md (HOT)
+2. Load relevant domain or type on demand
+3. Tell user: "I have patterns for [domain] loaded — want me to also load [type]?"
+
+## Scope
+
+This skill ONLY:
+
+* Provides structured decision support using frameworks
+* Learns and stores decision preferences and risk profile
+* Tracks decisions and prompts retrospectives
+* Maintains heartbeat state in `~/decision-making/heartbeat-state.md`
+
+This skill NEVER:
+
+* Makes the final decision for the user
+* Accesses calendar, email, or external systems
+* Makes network requests
+* Infers preferences from silence
+* Stores credentials, third-party sensitive info, or medical data
+* Modifies its own SKILL.md
+
+## Data Storage
+
+Local state lives in `~/decision-making/`:
+
+* `memory.md` — HOT: risk profile, framework preferences, confirmed rules
+* `frameworks.md` — Active framework registry with user preferences
+* `reversals.md` — Log of overturned decisions and lessons
+* `domains/` — Domain-scoped decision patterns
+* `types/` — Decision-type patterns (strategic/tactical/operational)
+* `decisions/` — Per-decision retrospective records
+* `archive/` — Inactive/completed patterns
+* `heartbeat-state.md` — Recurring maintenance markers
+
+## Related Skills
+
+Install with `* 安装此Skill请参考SkillHub平台指南
+
+* `memory` — Long-term memory patterns for agents
+* `escalate` — Know when to ask vs act autonomously
+* `proactivity` — Proactive follow-through on pending decisions
+
+## Feedback
+
+* If useful: `
+* Stay updated: `
 
 ## 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **Agent平台**: 支持SKILL.md的任意AI Agent( Code / Cursor / Codex /  CLI等)
 - **操作系统**: Windows / macOS / Linux
 
+### 依赖说明
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+- 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
+
 ### 可用性分类
-- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
-- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。
+- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+
+- Structured decision support with self-improving memory
+- 触发关键词: self-improving, decision, self, proactive, neosoul, support, agent, making
+
+## 适用场景
+
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+
+### Q1: 如何开始使用Neosoul Decision Age？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Neosoul Decision Age有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

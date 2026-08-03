@@ -1,227 +1,292 @@
 ---
-slug: postgres-job-queue
 name: postgres-job-queue
-version: 1.0.1
-displayName: Postgres作业队列
-summary: 基于关系型数据库的作业队列,优先级调度/批量认领/进度跟踪。关系型数据库-based job queue with priority scheduling,
-  batch claiming,
-summary_zh: 基于关系型数据库的作业队列,优先级调度/批量认领/进度跟踪。关系型数据库-based job queue with priority scheduling,
-  batch claiming,
-license: MIT
-description: |-。基于关系型数据库的作业队列,优先级调度/批量认领/进度跟踪。关系型数据库-based job queue with priority。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。
-  scheduling, batch claiming,。支持自动化配置和灵活的参数设置，适覆盖多种使用场景，优化工作流程和效率。。基于关系型数据库的作业队列,优先级调度/批量认领/进度跟踪。关系型数据库-based
-  job queue with priority scheduling, batch claiming,'
-tags:
-- Integrations
-- 工具
-- 效率
-- queue
-- api
+slug: postgres-job-queue
+displayName: "Postgres Job Queue"
+version: "1.0.0"
+summary: "基于关系型数据库的作业队列,优先级/批量认领/进度跟踪"
+description: "基于关系型数据库的作业队列,优先级/批量认领/进度跟踪。关系型数据库-based job queue with priority scheduling, batch claiming,。触发关键词: based, priority, 关系型数据库, job, queue, postgres。提供专业能力支持,覆盖多场景工作流,支持自动化处理。"
+license: "MIT"
 tools:
-- read
-- exec
-- write
-homepage: ''
-category: Automation
-homepage: "https://skillhub.cn/skill/"
+  - read
 ---
-> **核心功能**: 本技能提供中文交互等能力。
-
-> **核心功能**: 本技能提供时使用、、工作流优化时使用、处理、工作流优化时使用、化流程、批量处理、工作流优化时使用、化工作流场景等能力。
 
 # Postgres Job Queue
 
-## 专业版专属特性
-| 能力 | 免费版 | 付费版 |
-|---|---|---|
-| 基础功能 | 支持 | 支持 |
-| Postgres Job Queue优先级调度 | 不支持 | 支持 |
-| 大数据集流式处理 | 不支持 | 支持 |
-| 多数据源关联查询 | 不支持 | 支持 |
-| 可视化图表自动生成 | 不支持 | 支持 |
-| 定时数据同步与增量更新 | 不支持 | 支持 |
+Production-ready job queue using 关系型数据库 with priority scheduling, batch claiming, and progress tracking.
 
-## 能力速览
+---
+
+## When to Use
+
+* Need job queue but want to avoid Redis/RabbitMQ dependencies
+* Jobs need priority-based scheduling
+* Long-running jobs need progress visibility
+* Jobs should survive service restarts
+
+---
+
+## Schema Design
+
+```sql
+CREATE TABLE jobs (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    job_type VARCHAR(50) NOT NULL,
+    priority INT NOT NULL DEFAULT 100,
+    status VARCHAR(20) NOT NULL DEFAULT 'pending',
+    data JSONB NOT NULL DEFAULT '{}',
+
+    -- Progress tracking
+    progress INT DEFAULT 0,
+    current_stage VARCHAR(100),
+    events_count INT DEFAULT 0,
+
+    -- Worker tracking
+    worker_id VARCHAR(100),
+    claimed_at TIMESTAMPTZ,
+
+    -- Timing
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    started_at TIMESTAMPTZ,
+    completed_at TIMESTAMPTZ,
+
+    -- Retry handling
+    attempts INT DEFAULT 0,
+    max_attempts INT DEFAULT 3,
+    last_error TEXT,
+
+    CONSTRAINT valid_status CHECK (
+        status IN ('pending', 'claimed', 'running', 'completed', 'failed', 'cancelled')
+    )
+);
+
+-- Critical: Partial index for fast claiming
+CREATE INDEX idx_jobs_claimable ON jobs (priority DESC, created_at ASC)
+    WHERE status = 'pending';
+CREATE INDEX idx_jobs_worker ON jobs (worker_id)
+    WHERE status IN ('claimed', 'running');
+```
+
+---
+
+## Batch Claiming with SKIP LOCKED
+
+```sql
+CREATE OR REPLACE FUNCTION claim_job_batch(
+    p_worker_id VARCHAR(100),
+    p_job_types VARCHAR(50)[],
+    p_batch_size INT DEFAULT 10
+) RETURNS SETOF jobs AS $$
+BEGIN
+    RETURN QUERY
+    WITH claimable AS (
+        SELECT id
+        FROM jobs
+        WHERE status = 'pending'
+          AND job_type = ANY(p_job_types)
+          AND attempts < max_attempts
+        ORDER BY priority DESC, created_at ASC
+        LIMIT p_batch_size
+        FOR UPDATE SKIP LOCKED  -- Critical: skip locked rows
+    ),
+    claimed AS (
+        UPDATE jobs
+        SET status = 'claimed',
+            worker_id = p_worker_id,
+            claimed_at = NOW(),
+            attempts = attempts + 1
+        WHERE id IN (SELECT id FROM claimable)
+        RETURNING *
+    )
+    SELECT * FROM claimed;
+END;
+$$ LANGUAGE plpgsql;
+```
+
+---
+
+## Go Implementation
+
+```go
+const (
+    PriorityExplicit   = 150  // User-requested
+    PriorityDiscovered = 100  // System-discovered
+    PriorityBackfill   = 30   // Background backfills
+)
+
+type JobQueue struct {
+    db       *pgx.Pool
+    workerID string
+}
+
+func (q *JobQueue) Claim(ctx context.Context, types []string, batchSize int) ([]Job, error) {
+    rows, err := q.db.Query(ctx,
+        "SELECT * FROM claim_job_batch($1, $2, $3)",
+        q.workerID, types, batchSize,
+    )
+    if err != nil {
+        return nil, err
+    }
+    defer rows.Close()
+
+    var jobs []Job
+    for rows.Next() {
+        var job Job
+        if err := rows.Scan(&job); err != nil {
+            return nil, err
+        }
+        jobs = append(jobs, job)
+    }
+    return jobs, nil
+}
+
+func (q *JobQueue) Complete(ctx context.Context, jobID uuid.UUID) error {
+    _, err := q.db.Exec(ctx, `
+        UPDATE jobs
+        SET status = 'completed',
+            progress = 100,
+            completed_at = NOW()
+        WHERE id = $1`,
+        jobID,
+    )
+    return err
+}
+
+func (q *JobQueue) Fail(ctx context.Context, jobID uuid.UUID, errMsg string) error {
+    _, err := q.db.Exec(ctx, `
+        UPDATE jobs
+        SET status = CASE
+                WHEN attempts >= max_attempts THEN 'failed'
+                ELSE 'pending'
+            END,
+            last_error = $2,
+            worker_id = NULL,
+            claimed_at = NULL
+        WHERE id = $1`,
+        jobID, errMsg,
+    )
+    return err
+}
+```
+
+---
+
+## Stale Job Recovery
+
+```go
+func (q *JobQueue) RecoverStaleJobs(ctx context.Context, timeout time.Duration) (int, error) {
+    result, err := q.db.Exec(ctx, `
+        UPDATE jobs
+        SET status = 'pending',
+            worker_id = NULL,
+            claimed_at = NULL
+        WHERE status IN ('claimed', 'running')
+          AND claimed_at < NOW() - $1::interval
+          AND attempts < max_attempts`,
+        timeout.String(),
+    )
+    if err != nil {
+        return 0, err
+    }
+    return int(result.RowsAffected()), nil
+}
+```
+
+---
+
+## Decision Tree
+
+| Scenario | Approach |
+| --- | --- |
+| Need guaranteed delivery | 关系型数据库 queue |
+| Need sub-ms latency | Use Redis instead |
+| < 1000 jobs/sec | 关系型数据库 is fine |
+| > 10000 jobs/sec | Add Redis layer |
+| Need strict ordering | Single worker per type |
+
+---
+
+## Related Skills
+
+* **Related:** service-layer-architecture — Service patterns for job handlers
+* **Related:** realtime/dual-stream-architecture — Event publishing from jobs
+
+---
+
+## NEVER Do
+
+* **NEVER use SELECT then UPDATE** — Race condition. Use SKIP LOCKED.
+* **NEVER claim without SKIP LOCKED** — Workers will deadlock.
+* **NEVER store large payloads** — Store references only.
+* **NEVER forget partial index** — Claiming is slow without it.
+
+## 依赖说明
+
+### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent( Code / Cursor / Codex /  CLI等)
+- **操作系统**: Windows / macOS / Linux
+
+### 依赖说明
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+- 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
+
+### 可用性分类
+- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+
 - 关系型数据库-based job queue with priority scheduling, batch claiming,
   and progress tracking
+- 触发关键词: based, priority, 关系型数据库, job, queue, postgres
 
-## 快速启动
-1. 确认运行环境满足依赖说明中的要求
-2. 在AI Agent对话中调用本技能,提供必要的输入参数
-3. 检查输出结果,根据需要进行后续处理
+## 适用场景
 
-> 详细的输入输出格式请参考下方章节说明。
-
-## 应用场景
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
-| 数据处理 | 数据源与处理规则 | 清洗结果与统计摘要 |
-| 任务调度 | 任务ID与触发条件 | 执行结果与调度日志 |
-| 基于关系型数据库的作 | 目标数据与配置参数 | 处理结果与执行状态 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
-## 操作步骤
+## 使用流程
+
 1. 确认运行环境满足依赖说明中的要求
 2. 根据适用场景选择合适的使用方式
 3. 执行操作并检查输出结果
 4. 如遇错误，参考错误处理章节
 
-## 输入规范
-| 参数名 | 类型 | 必填 | 说明 |
-|---:|---:|---:|---:|
-| content | string | 否 | 处理的内容输入 |
-| mode | string | 否 | 处理模式, 可选值: json/text/markdown |
-| style | string | 否 | 输出风格, 参考 `references/style.md` |
+## 示例
 
-## 返回格式
-```json
-{
-  "success": true,
-  "data": {
-    "result": "处理结果",
-    "status": "success",
-    "metadata": {
-    "metadata": {
-      "template_used": "reviewer",
-      "word_count": 0,
-      "style": "专业"
-    }
-  },
-  "error": null
-}
+### 示例1：基础用法
+
+```
+输入: 用户请求
+处理: 根据使用流程执行
+输出: 处理结果
 ```
 
-输出模板参考: `assets/output.json`
+## 错误处理
 
-## 异常处置
 | 错误场景 | 原因 | 处理方式 |
-|:---:|:---:|:---:|
+|---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
 
-## 前置条件
-### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
-- **操作系统**: Windows / macOS / Linux
+## 常见问题
 
-### 依赖说明(补充)
-| 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:------|------:|:------|:------|
-| LLM API | API | 必需 | 由Agent内置LLM提供 |
-
-### API Key 配置
-- 
-
-### 可用性分类
-- **分类**: MD+execute()
-- **说明**: 基于Markdown的AI Skill,
-
-**API Key配置方式**:
-```bash
-export API_KEY="${API_KEY:?请设置环境变量}"
-```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
-## 热门问题
 ### Q1: 如何开始使用Postgres Job Queue？
-A: 请参考使用流程和依赖说明章节，确保运行环境满足要求后调用本技能。
-## 使用约束
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Postgres Job Queue有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+
 - 需要API Key，无Key环境无法使用
-
-## 差异化分析
-### 效率提升量化分析
-| 操作步骤 | 手动耗时 | 自动化耗时 | 时间节约 | 准确率提升 |
-|---|---|---|---|---|
-| 数据导入 | 4小时 | 30分钟 | 3小时30分钟 | 5% |
-| 数据清洗 | 8小时 | 2小时 | 6小时 | 3% |
-| 数据分析 | 12小时 | 4小时 | 8小时 | 2% |
-| 数据导出 | 2小时 | 10分钟 | 1小时50分钟 | 4% |
-| 日志监控 | 24小时 | 4小时 | 20小时 | 6% |
-
-### 差异化对比
-| 对比维度 | 本技能 | 手动操作 | Python脚本 | 专业软件 |
-|---|---|---|---|---|
-| 简易性 | 高 | 低 | 中 | 高 |
-| 调度灵活性 | 高 | 低 | 中 | 高 |
-| 成本效益 | 高 | 低 | 中 | 高 |
-| 扩展性 | 高 | 低 | 中 | 高 |
-| 稳定性 | 高 | 低 | 中 | 高 |
-
-### 核心痛点解决
-| 痛点 | 描述 | 影响范围 | 解决方案 | 量化效果 |
-|---|---|---|---|---|
-| 重复劳动 | 手动处理大量数据导致效率低下 | 影响项目进度和团队效率 | 自动化处理，提高数据处理效率 | 时间节约30% |
-| 任务调度困难 | 手动调度任务耗时且易出错 | 影响任务执行和资源分配 | 优先级调度和批量认领，提高任务调度效率 | 准确率提升5% |
-| 进度跟踪困难 | 手动跟踪任务进度耗时且易遗漏 | 影响项目进度和资源分配 | 进度跟踪功能，实时监控任务执行状态 | 时间节约20% |
-
-## 常见问题FAQ
-
-### Q1: Postgres作业队列支持哪些数据库类型？
-A: Postgres作业队列基于数据库数据库，因此只支持数据库数据库。
-
-### Q2: 如何设置作业的优先级？
-A: 在创建作业时，可以通过`priority`参数设置作业的优先级，数值越大表示优先级越高。
-
-### Q3: 作业队列支持批量认领吗？
-A: 是的，作业队列支持批量认领功能，可以在`claim`方法中设置`batch_size`参数来指定认领的作业数量。
-
-### Q4: 作业队列如何进行进度跟踪？
-A: 作业队列通过查询作业的状态信息来跟踪进度，可以通过`status`方法获取作业的当前状态。
-
-### Q5: 作业队列如何处理失败的任务？
-A: 作业队列会自动重试失败的任务，可以在创建作业时设置重试次数和重试间隔。
-
-## 问题排查手册
-| 错误现象 | 可能原因 | 诊断步骤 | 解决方案 |
-|---|---|---|---|
-| 无法连接到数据库 | 数据库配置错误 | 检查数据库连接参数是否正确 | 修正数据库连接参数 |
-| 作业创建失败 | 作业数据格式错误 | 检查作业数据是否符合格式要求 | 修正作业数据格式 |
-| 作业执行失败 | 作业依赖问题 | 检查作业依赖的组件是否正常工作 | 解决依赖问题 |
-| 作业进度显示异常 | 数据库查询错误 | 检查数据库查询语句是否正确 | 修正数据库查询语句 |
-
-## 安全规范
-1. 数据库连接信息需妥善保管，避免泄露。
-2. 作业执行过程中，避免执行恶意代码或脚本。
-3. 定期备份数据库，防止数据丢失。
-4. 限制数据库访问权限，确保只有授权用户可以访问。
-5. 对作业数据进行加密，防止数据泄露。
-
-### 安全风险防范
-
-| 风险项 | 等级 | 防护措施 | 验证方法 |
-| --- | --- | --- | --- |
-| API密钥泄露 | 高 | 通过环境变量配置，禁止硬编码 | 定期检查代码和配置文件 |
-| 命令执行风险 | 高 | 仅执行白名单命令，避免拼接用户输入 | 使用沙箱环境测试 |
-| 网络通信安全 | 中 | 使用HTTPS协议，验证SSL证书 | 定期检查证书有效期 |
-| 敏感数据暴露 | 高 | 输出结果中不包含密钥、令牌等敏感信息 | 日志脱敏审查 |
-| 未授权访问 | 中 | 限制访问权限，实施认证机制 | 定期审计访问日志 |
-
-## 功能清单
-- **自动化执行**: 基于关系型数据库的作业队列,优先级调度/批量认领/进度跟踪。关系型数据库-based job queue with pr
-- **文件处理**: 支持多种文件格式的读取、解析和写入操作
-- **API集成**: 通过标准化接口调用外部服务并处理响应
-- **命令执行**: 在安全沙箱中执行系统命令并收集结果
-- **信息检索**: 快速搜索和过滤目标数据
-
-## 故障恢复流程
-针对Postgres作业队列使用中可能遇到的常见问题,提供以下排查方案:
-
-| 错误类型 | 原因分析 | 解决方案 |
-|---------|---------|---------|
-| API认证失败(401) | API密钥错误或过期 | 检查密钥配置,重新生成token |
-| 接口限流(429) | 请求频率超出限制 | 降低调用频率,启用重试退避策略 |
-| 响应超时(504) | 网络延迟或服务端负载过高 | 增加超时阈值,检查网络连接 |
-| 文件不存在 | 路径错误或文件未创建 | 检查路径拼写,确认文件已生成 |
-| 文件格式不支持 | 扩展名不在支持列表中 | 转换为支持的格式后重试 |
-| 权限不足 | 当前用户无读写权限 | 检查文件权限,以管理员身份运行 |
-| 命令执行失败 | 参数错误或环境依赖缺失 | 检查命令语法,确认依赖已安装 |
-| 进程超时 | 命令执行时间过长 | 增加超时设置,优化命令参数 |
-| 网络连接失败 | DNS解析失败或防火墙拦截 | 检查网络配置,确认代理设置 |
-
-### Postgres作业队列通用排查步骤
-
-1. **检查输入参数**: 确认所有必填参数已提供且格式正确
-2. **查看日志输出**: 定位具体错误行和异常类型
-3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
-4. **逐步调试**: 缩小问题范围,隔离故障模块

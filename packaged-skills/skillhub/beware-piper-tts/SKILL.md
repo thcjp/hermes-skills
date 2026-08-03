@@ -1,319 +1,139 @@
 ---
-
-
-slug: beware-piper-tts
 name: beware-piper-tts
-version: 1.0.2
-displayName: Piper语音合成
-summary: 本地Piper神经语音合成,支持多音色切换、批量分段、长文本合并与风格控制,零云端零密钥。基于 Piper 神经网络引擎的本地语音合成专业版。全部推理在本地完成,零云端调用、零
-  API 密
-summary_zh: 本地Piper神经语音合成,支持多音色切换、批量分段、长文本合并与风格控制,零云端零密钥。基于 Piper 神经网络引擎的本地语音合成专业版。全部推理在本地完成,零云端调用、零
-  API 密
-license: MIT
-description: |- 功能涵盖:。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。具备完整的输入输出规范。 功能涵盖: beware。
-  基于 Piper 神经网络引擎的本地语音合成专业版。全部推理在本地完成,零云端调用、零 API 密钥、零订阅费用.
-
-  核心能力:多音色切换、长文本自动分段与合并、批量生成、SSML 风格控制(语速/停顿/音高)、
-
-  WAV 与 MP3 双格式输出、跨平台部署(macOS Apple Silicon/Intel、...'
-tags:
-- 语音合成
-- mp3
-- piper
-- 请参考
-- 目录中的
-- 脚本文件
+slug: beware-piper-tts
+displayName: "Piper TTS"
+version: "1.0.1"
+summary: "用Piper本地文字转语音发语音消息"
+description: "用Piper本地文字转语音发语音消息。Local text-to-speech using Piper for voice message delivery。Use when。触发关键词: using, local, speech, text, piper, tts, beware。开箱即用,无需复杂配置,支持中文交互与结构化输出。"
+license: "MIT"
 tools:
-- read
-- exec
-- write
-homepage: ''
-category: Automation
-homepage: "https://skillhub.cn/skill/"
-
-
+  - read
 ---
 
+# Piper TTS
 
-> **核心功能**: 本技能提供中文交互、时使用、、工作流优化时使用等能力。
+Generate voice messages using , a fast local TTS engine. Zero cloud calls, zero cost, zero API keys.
 
-> **核心功能**: 本技能提供、SSML等能力。
+## Setup
 
-# Piper TTS Pro
+If Piper is not installed, run the setup script:
 
-基于 Piper 神经网络语音合成引擎的本地 TTS 专业版。所有推理在本地完成,无需 API Key、无需联网(首次下载音色后),生成速度约 0.5-1 秒/段.
-## 输入参数
-| 参数名 | 类型 | 必填 | 说明 |
-|---|---|---|---|
-| input | string | 是 | Piper TTS Pro处理的输入数据或指令 |
-| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
-| callback_url | string | 否 | 异步处理完成后的回调通知URL |
+```bash
+scripts/setup-piper.sh
+```
 
-## 付费版扩展能力
-| 能力 | 免费版 | 付费版 |
-|:-----|:-----|:-----|
-| 基础功能 | 支持 | 支持 |
-| 复杂工作流可视化编排 | 不支持 | 支持 |
-| 条件分支与异常重试 | 不支持 | 支持 |
-| 定时触发与事件驱动 | 不支持 | 支持 |
-| 执行日志与审计追踪 | 不支持 | 支持 |
-| 分布式任务调度与负载均衡 | 不支持 | 支持 |
+This installs `piper-tts` via pip and downloads a default voice (`en_US-kusal-medium`).
 
-## 安装与配置
+## Generating Voice Messages
+
+Use `scripts/piper-speak.sh` to generate and deliver voice:
+
+```bash
+scripts/piper-speak.sh "<text>" [voice]
+```
+
+* `text`: The text to speak (required)
+* `voice`: Piper voice name (default: `en_US-kusal-medium`)
+
+The script outputs an MP3 path. Include it in your reply as:
+
+```text
+[[audio_as_voice]]
+MEDIA:<path-to-mp3>
+```
+
+This delivers the audio as a native voice message on supported channels (Telegram, Discord, etc.).
+
+## 示例
+
+1. User asks: "Tell me a joke as audio"
+2. Run: `scripts/piper-speak.sh "Why do programmers prefer dark mode? Because light attracts bugs!"`
+3. Get MP3 path from output
+4. Reply with `[[audio_as_voice]]` + `MEDIA:<path>`
+
+## Available Voices
+
+After setup, download additional voices:
+
+```bash
+scripts/setup-piper.sh --voice en_US-ryan-high
+scripts/setup-piper.sh --voice en_GB-northern_english_male-medium
+```
+
+Popular voices:
+
+* `en_US-kusal-medium` — Clear male voice (default, recommended)
+* `en_US-ryan-high` — High quality US male
+* `en_US-hfc_male-medium` — US male
+* `en_GB-northern_english_male-medium` — British male
+* Browse all: <https://huggingface.co/rhasspy/piper-voices>
+
+## Important Notes
+
+* **Speed**: Local generation is ~0.5-1s. Much faster than cloud TTS.
+* **No API keys**: Works completely offline after setup.
+* **Platform**: macOS (Apple Silicon + Intel), Linux. Requires Python 3.9+.
+* **Do NOT** set `messages.tts.auto: "always"` in Skill平台 config — it makes every response slow. Keep TTS on-demand.
+
+## 依赖说明
+
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **Agent平台**: 支持SKILL.md的任意AI Agent( Code / Cursor / Codex /  CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖项
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|---:|---:|---:|---:|
+|:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
-本Skill基于Agent平台内置LLM,通常无需额外API Key配置
+- 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
 
 ### 可用性分类
-- **分类**: MD+EXEC（）
+- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
 
-**API Key配置方式**:
-```bash
-export API_KEY="${API_KEY:?请设置环境变量}"
-```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
-## 能力矩阵
-### 1. 单段语音合成
-将一段文本合成为语音消息并投递到支持的渠道(Telegram、Discord 等).
-```bash
-（请参考skill目录中的脚本文件） "Why do programmers prefer dark mode? Because light attracts bugs!" en_US-kusal-medium
-```
-脚本输出 MP3 路径,按以下格式封装即可作为原生语音消息投递:
-```text
-[[audio_as_voice]]
-MEDIA:/tmp/piper/out_20260720_103045.mp3
-```
+## 核心能力
 
-### 2. 多音色切换
-Piper 音色采用 `<语言>-<名称>-<质量>` 命名,质量分为 `low`/`medium`/`high`。专业版支持按段指定不同音色,适用于对话体、播客片段等内容生产.
-常用音色:
-- `en_US-kusal-medium` — 清晰男声,默认推荐
-- `en_US-ryan-high` — 高质量美式男声
-- `en_US-hfc_female-medium` — 美式女声
-- `en_GB-northern_english_male-medium` — 英式男声
-- `zh_CN-huayan-medium` — 中文女声
+- Local text-to-speech using Piper for voice message delivery
+- Use when
+  the user asks for voice res
+- 触发关键词: using, local, speech, text, piper, tts, beware
 
-### 3. 长文本分段与合并
-专业版自动按句号/段落切分超长文本,逐段合成后用 ffmpeg 拼接为单一 MP3,避免单次推理显存溢出与音质退化.
-```bash
-（请参考skill目录中的脚本文件） "$(cat article.txt)" en_US-ryan-high --max-chars 500
-```
+## 适用场景
 
-- 异常时参考错误处理章节进行恢复
-- 关键参数: `长文本分段与合并` 选项
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
 
-### 4. 批量生成
-一次处理多条文本,输出独立 MP3 文件列表,适用于内容矩阵生产.
-```bash
-（请参考skill目录中的脚本文件） prompts.txt en_US-kusal-medium ./outputs/
-```
+**不适用于**：需要人工判断的复杂决策场景
 
-- 异常时参考错误处理章节进行恢复
-- 关键参数: `批量生成` 选项
+## 使用流程
 
-### 5. 风格控制(SSML 子集)
-通过标记控制语速、停顿时长与段落边界:
-```text
-<rate=1.2>加快语速朗读</rate>
-<pause=500ms>在两段之间插入半秒停顿
-<pitch=+10%>提升音高
-```
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
 
-- 异常时参考错误处理章节进行恢复
-- 关键参数: `风格控制(ssml_子集)` 选项
+## 错误处理
 
-### 6. 双格式输出
-默认输出 MP3(适配语音消息渠道),可通过 `--format wav` 输出无损 WAV(适配后期混音工作流).
-
-## 适用范围
-| 场景 | 典型输入 | 输出内容 | 涉及能力 |
-|:---:|:---:|:---:|:---:|
-| 语音消息投递 | "把这段笑话读给我听" | MP3 路径 + 原生语音消息封装 | 单段合成 |
-| 有声内容生产 | 一篇 2000 字文章 | 分段合成并拼接的单 MP3 | 长文本分段+合并 |
-| 多角色对话体 | 两人对话脚本(含角色标记) | 按角色切换音色的合成音频 | 多音色切换 |
-| 内容矩阵批量出片 | 10 条产品卖点文案 | 10 个独立 MP3 文件路径列表 | 批量生成 |
-
-**不适用于**: 需要克隆特定真人音色的场景(Piper 仅提供预置音色),需要实时流式低延迟 TTS 的交互式语音助手场景.
-## 使用说明
-### 领先步:安装 Piper 与默认音色
-```bash
-（请参考skill目录中的脚本文件）
-# 自动安装 piper-tts、espeak-ng 检测、下载默认音色 en_US-kusal-medium
-```
-
-### 第二步:按需下载补充音色
-```bash
-（请参考skill目录中的脚本文件） --voice en_US-ryan-high
-（请参考skill目录中的脚本文件） --voice zh_CN-huayan-medium
-```
-
-### 第三步:合成并投递语音消息
-短文本直接调用 `piper-speak.sh`,从输出读取 MP3 路径,以 `[[audio_as_voice]]` + `MEDIA:<path>` 格式回传.
-长文本或批量场景改用 `piper-speak-long.sh` / `piper-batch.sh`,处理完成后汇总路径列表再回传.
-### 第四步:风格调优(可选)
-对语速/停顿不满意时,在文本中嵌入 SSML 子集标记重新合成,无需更换音色.
-
-## 案例展示
-
-### 案例1:语音笑话投递
-**场景**: 用户在 Telegram 中要求"讲个笑话,要语音版的".
-```bash
-# 变体实现(与上文代码相似度100.0%,此处为Piper TTS Pro的差异化处理路径)
-" en_US-kusal-medium
-```
-**输出**:
-```
-/tmp/piper/out_20260720_103045.mp3
-```
-**回传**:
-```text
-// 变体实现(与上文代码相似度100.0%,此处为Piper TTS Pro的差异化处理路径)
-[[audio_as_voice]]
-```
-该消息在 Telegram 中呈现为可播放的原生语音气泡,本地推理耗时约 0.7 秒.
-### 案例2:长文章转有声 MP3
-**场景**: 将一篇 3500 字技术文章转为可离线收听的 MP3.
-```bash
-# 自动按 500 字切分,逐段合成后拼接
-（请参考skill目录中的脚本文件） "$(cat ./llm-routing-article.md)" en_US-ryan-high --max-chars 500 --output ./llm-routing.mp3
-```
-**输出**:
-```
-[分段] 共 8 段,累计 3420 字
-[合成] 8/8 段完成,耗时 6.3s
-[合并] ./llm-routing.mp3 (4分12秒, 3.8MB)
-```
-最终 MP3 可直接导入播客应用或上传至内容平台.
-### 案例3:多角色对话合成
-**场景**: 为一段产品演示对话生成配音,A 角色用男声,B 角色用女声.
-```bash
-# 每行一句,以 [角色] 前缀标记音色
-（请参考skill目录中的脚本文件） ./dialogue.txt --A en_US-ryan-high --B en_US-hfc_female-medium --output demo.mp3
-```
-**dialogue.txt 内容**:
-```text
-[A] 欢迎使用我们的新功能,可以一句话讲清楚吗?
-[B] 当然,它能自动把你的书签变成行动清单.
-```
-脚本按行读取、按角色分配音色、逐句合成后拼接为单文件.
-## 异常应对
-| 错误场景 | 错误信息 | 原因分析 | 处理方式 |
-|:------|------:|:------|:------|
-| Piper 未安装 | `piper: command not found` | 未运行 setup 脚本或 pip 安装失败 | 执行 `（请参考skill目录中的脚本文件）`,确认 Python 3.9+ 可用 |
-| espeak-ng 缺失 | `espeak-ng not found, phonemize failed` | 系统未安装音素化器 | macOS `brew install espeak-ng`,Linux `apt install espeak-ng` |
-| 音色文件缺失 | `voice model not found: en_US-ryan-high` | 指定音色未下载 | 运行 `（请参考skill目录中的脚本文件） --voice en_US-ryan-high` 下载 |
-| 显存/内存不足 | `onnxruntime Run failed: Memory` | 单段文本过长或 high 质量音色显存占用高 | 降低单段字符数(`--max-chars 300`),或改用 medium 质量音色 |
-| ffmpeg 未安装 | `ffmpeg: command not found`(拼接阶段) | 系统缺少 ffmpeg | 安装 ffmpeg 后或改用 `--format wav` 跳过转码 |
-| 文本含非法字符 | `phonemize error: invalid character` | 文本含 Piper 不支持的 emoji 或控制字符 | 调用前用 `sed` 剔除 emoji 与控制字符 |
-| 输出目录不可写 | `permission denied: /tmp/piper/out.mp3` | 输出路径无写权限 | 显式指定 `--output` 到有权限的目录,如 `~/.piper-out/` |
-| 音色与语言不匹配 | 中文文本用 `en_US-*` 音色出现乱码朗读 | 音色语言与文本语言不一致 | 中文文本使用 `zh_CN-huayan-medium`,英文文本用 `en_*` 音色 |
-
-## 问答集成
-### Q1: 本地生成到底有多快?和云端 TTS 相比如何?
-A: Piper 在 Apple Silicon 上单段(约 50 字)合成约 0.5-0.7 秒,CPU 模式约 1-1.5 秒。云端 TTS 通常包含网络往返,总耗时 1-3 秒,且按字符计费。Piper 适合高频、批量、离线场景.
-### Q2: 支持中文语音吗?
-A: 支持。下载 `zh_CN-huayan-medium` 音色后可合成中文。注意中文音色的断句依赖标点,长文本建议用 `piper-speak-long.sh` 按句号切分,避免单段过长导致韵律生硬.
-### Q3: 如何让朗读听起来更自然?
-A: 三步调优:首选 `high` 质量音色(如 `en_US-ryan-high`);用 SSML 子集在长句中插入 `<pause=300ms>` 停顿;对专业术语用拼音/音标显式标注,避免错读.
-### Q4: 能否把每段合成的临时 WAV 也保留下来?
-A: 可以。`piper-speak-long.sh` 加 `--keep-segments` 参数会在输出目录保留所有分段 WAV,便于后期在 DAW 中人工混音后再合并.
-### Q5: 多次合成同一段文本结果是否一致?
-A: Piper 推理是确定性的,相同音色 + 相同文本 + 相同推理后端会产生相同音频。但不同 onnxruntime 版本间可能存在微小浮点差异,生产环境建议锁定版本.
-### Q6: 为什么不要开启 `messages.tts.auto: "always"`?
-A: 该配置会让 Agent 对每条回复都触发 TTS,导致响应明显变慢,且大量语音消息干扰阅读体验。专业版默认按需触发,仅在用户明确要求语音时合成.
-## 错误管理机制
 | 错误场景 | 原因 | 处理方式 |
-|---:|:---|---:|
-| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 请求重试；确认Agent平台LLM服务正常 |
-| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
-| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
-| 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
 
-## 功能边界
-- **音色为预置模型**: 不支持克隆任意真人音色,仅可使用已发布音色库
-- **长文本韵律**: 单段超过 500 字时韵律可能生硬,建议切分后合成再拼接
-- **情感表达有限**: Piper 为朗读型 TTS,不支持强情感(如哭泣、大笑)演绎
-- **Windows 原生支持弱**: 需经 WSL 运行,原生 Windows 下 espeak-ng 安装较繁琐
-- **首次下载音色需联网**: 音色文件约 60-250MB,下载后可完全离线使用
-- **多音色切换非实时**: 切换音色需重新加载模型,频繁切换会增加约 200ms/次开销
+## 常见问题
 
-## 创新优势
-### 效率提升量化分析
-| 操作步骤 | 手动耗时 | 自动化耗时 | 时间节约 | 准确率提升 |
-|:-------:|:-------:|:-------:|:-------:|:-------:|
-| 单段语音合成 | 30分钟 | 1秒 | 29分59秒 | 100% |
-| 长文本分段与合并 | 1小时 | 5分钟 | 54分钟 | 100% |
-| 批量生成 | 4小时 | 30分钟 | 3小时30分钟 | 100% |
-| 风格控制 | 20分钟 | 1分钟 | 19分钟 | 100% |
-| 双格式输出 | 10分钟 | 1分钟 | 9分钟 | 100% |
+### Q1: 如何开始使用Piper TTS？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
 
-### 差异化对比
-| 对比维度 | 本技能 | 手动操作 | Python脚本 | 专业软件 |
-|:-------:|:-------:|:-------:|:-------:|:-------:|
-| 语音合成速度 | 0.5-1秒/段 | 1分钟/段 | 10秒/段 | 1秒/段 |
-| 多音色支持 | 10种以上 | 1种 | 1种 | 10种以上 |
-| 长文本处理能力 | 自动分段合并 | 手动分段合并 | 需要额外脚本 | 自动分段合并 |
-| 批量生成能力 | 支持批量生成 | 手动生成 | 支持批量生成 | 支持批量生成 |
-| 风格控制 | 支持SSML风格控制 | 无 | 需要额外脚本 | 支持SSML风格控制 |
-| 输出格式 | WAV & MP3 | WAV & MP3 | WAV & MP3 | WAV & MP3 |
-| 跨平台部署 | macOS, Linux, Windows | macOS, Linux, Windows | macOS, Linux, Windows | macOS, Linux, Windows |
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
 
-### 核心痛点解决
-| 痛点 | 描述 | 影响范围 | 解决方案 | 量化效果 |
-|:----:|:----:|:----:|:----:|:----:|
-| 语音合成效率低 | 长文本语音合成耗时过长，影响工作效率 | 影响内容生产效率 | 自动分段合并，提高合成速度 | 时间节约54分钟 |
-| 多音色切换困难 | 手动切换音色繁琐，影响内容多样性 | 影响内容多样性 | 支持多音色切换，提高内容创作灵活性 | 提高内容创作效率 |
-| 批量生成限制 | 批量生成能力有限，无法满足大规模内容生产需求 | 影响大规模内容生产 | 支持批量生成，满足大规模内容生产需求 | 提高内容生产效率 |
+### Q3: Piper TTS有什么限制？
+A: 请参考已知限制章节了解具体限制。
 
-## 诊断与修复
-| 错误现象 | 可能原因 | 诊断步骤 | 解决方案 |
-|:-------:|:-------:|:-------:|:-------:|
-| 语音合成失败 | 文本格式错误 | 检查文本格式是否符合要求 | 修正文本格式 |
-| 音色加载失败 | 音色文件损坏 | 检查音色文件完整性 | 重新下载音色文件 |
-| 输出文件损坏 | 推理过程中出现错误 | 检查推理日志 | 修复推理代码或重新启动服务 |
-| 速度过慢 | 硬件资源不足 | 检查硬件资源使用情况 | 增加硬件资源或优化代码 |
-| 多音色切换异常 | 音色配置错误 | 检查音色配置文件 | 修正音色配置文件 |
+## 已知限制
 
-## 安全告示
-1. 确保音色文件来源安全可靠，避免下载恶意软件。
-2. 避免将API Key泄露到版本控制系统，确保安全。
-3. 定期更新软件，修复已知安全漏洞。
-4. 使用强密码保护账户，防止未授权访问。
-5. 避免在公共网络环境下进行语音合成操作，防止数据泄露。
-
-### 安全风险防范
-
-| 风险项 | 等级 | 防护措施 | 验证方法 |
-| --- | --- | --- | --- |
-| API密钥泄露 | 高 | 通过环境变量配置，禁止硬编码 | 定期检查代码和配置文件 |
-| 命令执行风险 | 高 | 仅执行白名单命令，避免拼接用户输入 | 使用沙箱环境测试 |
-| 网络通信安全 | 中 | 使用HTTPS协议，验证SSL证书 | 定期检查证书有效期 |
-| 敏感数据暴露 | 高 | 输出结果中不包含密钥、令牌等敏感信息 | 日志脱敏审查 |
-| 未授权访问 | 中 | 限制访问权限，实施认证机制 | 定期审计访问日志 |
-
-## 功能介绍
-- **自动化执行**: 本地Piper神经语音合成,支持多音色切换、批量分段、长文本合并与风格控制,零云端零密钥。基于 Piper 神经网络引擎
-- **文件处理**: 支持多种文件格式的读取、解析和写入操作
-- **API集成**: 通过标准化接口调用外部服务并处理响应
-- **命令执行**: 在安全沙箱中执行系统命令并收集结果
-
-## 技术支持
-### Q1: Piper语音合成支持哪些输入格式？
-
-A1: 本地Piper神经语音合成,支持多音色切换、批量分段、长文本合并与风格控制,零云端零密钥。基于 Piper 神经网络引擎的本地语音合成专业版。全部推理在本地完成。支持文本指令和结构化参数输入，具体格式参考使用流程章节。
-
-### Q2: 需要配置API Key吗？
-
-A2: 是的，部分功能需要配置对应平台的API Key。请在依赖说明章节查看具体要求，并通过环境变量安全配置。
-
-### Q3: 命令行执行失败怎么办？
-
-A3: 检查命令参数是否正确，确认运行环境支持exec能力。如遇权限问题，请参照错误处理章节排查。
+- 本地运行，不支持多设备同步

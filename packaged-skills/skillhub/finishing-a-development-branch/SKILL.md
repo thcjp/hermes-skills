@@ -1,30 +1,17 @@
 ---
-
-
-slug: finishing-a-development-branch
 name: finishing-a-development-branch
-version: 1.0.0
-displayName: finishing-a-developm
-summary: 手工操作效率低易出错。智能化自动处理，finishing a development branch场景效率提升3倍。
-license: Proprietary
-edition: pro
-description: |- 功能涵盖:。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。具备完整的输入输出规范。 功能涵盖: branch。
-  Use when implementation is complete, all tests pass, and you need to decide how
-  to integrate the work Use when 需要Development领域自动化处理、数据分析和流...'
-tags:
-- Development
-- automation
+slug: finishing-a-development-branch
+displayName: "finishing-a-developm"
+version: "1.0.0"
+summary: "手工操作效率低易出错。智能化自动处理，finishing a development branch场景效率提升3倍。"
+description: "|- 功能涵盖:。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。具备完整的输入输出规范。 功能涵盖: branch。"
+license: "Proprietary"
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-suggested_price: 19.9 CNY/per_use
-pricing_tier: L2-进阶级
-pricing_model: per_use
-
-
+  - Read
+  - Write
+  - Edit
+  - Bash
 ---
-
 
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 
@@ -205,3 +192,10 @@ A: finishing-a-developm采用按次计费的模式，每次使用需支付19.9�
 - 外部API服务可用性影响功能稳定性,建议实现重试和降级机制
 - 大文件处理可能消耗较多内存,建议对超大文件进行分块处理
 - 长时间运行的命令需设置超时,避免阻塞执行流程
+
+## 依赖说明
+
+- LLM/API Key: 需要配置相应的API密钥
+- 网络连接: 需要访问外部服务
+- 文件系统: 需要读写文件权限
+- 运行时环境: 需要相应的命令行工具

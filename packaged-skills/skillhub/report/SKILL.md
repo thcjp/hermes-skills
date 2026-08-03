@@ -1,375 +1,235 @@
 ---
-slug: report
 name: report
-version: 1.0.4
-displayName: 定制报表生成
-summary: 配置自定义周期性报表,
-summary_zh: 配置自定义周期性报表,用户定义数据源,自动处理调度与格式化投递。配置自定义周期性报表,用户定义数据源,自动处理调度与格式化投递。核心能力包括数据源用户驱动配置、YAML报表配置、Cron定时
-license: MIT
-description: 配置自定义周期性报表,。支持自动化配置和灵活的参数设置，适适用于多种业务场景，提高工作效率和质量。定制报表生成工具。支持自动化配置和灵活的参数设置，适用于多种工作场景，提升工作效率和准确性。定制报表生成是一款高效实用的工具。report支持多种配置选项。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。
+slug: report
+displayName: "Report"
+version: "1.0.3"
+summary: "配置自定义定期报告,用户定义数据源,技能负责调度与格式化,自动化报表生成"
+description: "配置自定义定期报告,用户定义数据源,技能负责调度与格式化,自动化报表生成。Configure custom recurring reports。User defines data sources, skill。触发关键词: custom, report, configure, recurring, reports。"
+license: "MIT"
 tools:
-- read
-- exec
-- write
-homepage: ''
-tags:
-- 通用办公
-- 工具
-- 效率
-- api
-- report
-- 报表
-- yaml
-- telegram
-category: Automation
-homepage: "https://skillhub.cn/skill/"
+  - read
 ---
-> **核心功能**: 本技能提供自动化配置和灵活的参数设置、多种配置选项等能力。
 
-# 定制报表生成
+# Report
 
-配置自定义周期性报表,用户定义数据源,自动处理调度与格式化投递.
-## 输入定义
-| 参数名 | 类型 | 必填 | 说明 |
-|---|---|---|---|
-| input | string | 是 | 定制报表生成处理的输入数据或指令 |
-| options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
-| callback_url | string | 否 | 异步处理完成后的回调通知URL |
-
-## 专业版增值服务
-| 能力 | 免费版 | 付费版 |
-|:-----|:-----|:-----|
-| 基础功能 | 支持 | 支持 |
-| 定制报表生成自动处理调度与格式化 | 不支持 | 支持 |
-| 复杂工作流可视化编排 | 不支持 | 支持 |
-| 条件分支与异常重试 | 不支持 | 支持 |
-| 定时触发与事件驱动 | 不支持 | 支持 |
-| 执行日志与审计追踪 | 不支持 | 支持 |
-
-## 数据存储结构
+## Data Storage
 
 ```text
 ~/report/
-├── memory.md               # 索引 + 偏好设置
+├── memory.md               # Index + preferences
 ├── {name}/
-│   ├── config.md           # 报表配置
-│   ├── data.jsonl          # 历史数据
-│   └── generated/          # 已生成的报表
+│   ├── config.md           # Report configuration
+│   ├── data.jsonl          # Historical data
+│   └── generated/          # Past reports
 ```
 
-首次使用前创建: `mkdir -p ~/report`
+Create on first use: `mkdir -p ~/report`
 
-## 环境要求
-### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
-- **操作系统**: Windows / macOS / Linux
+## Scope
 
-### 依赖项
-| 依赖项 | 类型 | 是否必需 | 获取方式 |
-|---:|---:|---:|---:|
-| LLM API | API | 必需 | 由Agent内置LLM提供 |
+This skill:
 
-### API Key 配置
-需要配置对应API Key，详见上文环境配置章节
+* ✅ Stores report configurations in ~/report/
+* ✅ Generates reports on schedule
+* ✅ Delivers via channels user configures
 
-### 可用性分类
-- **分类**: MD+EXEC（）
+**User-driven model:**
 
-**API Key配置方式**:
-```bash
-export API_KEY="${API_KEY:?请设置环境变量}"
-```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
-## 功能能力
-- **数据源用户驱动配置**: 用户指定追踪的数据内容,如需外部API则由用户提供凭证,凭证以环境变量引用存储而非明文值
-- **YAML报表配置**: 在 `~/report/{name}/config.md` 中以YAML格式定义报表名称、调度计划、数据源、格式与投递渠道
-- **Cron定时调度**: 支持每日 `0 9 * * *`、每周 `0 9 * * 1`、每月 `0 9 1 * *` 与按需触发四种调度频率
-- **多渠道投递**: 支持 `chat`(对话回复)、`telegram`(Telegram消息)、`file`(本地文件)、`email`(邮件)四种投递渠道
-- **报表管理**: 支持列表查看(读取 `~/report/memory.md`)、暂停报表(更新配置)、按需运行(立即生成)
-- **环境变量安全凭证**: 配置中引用环境变量名而非值,凭证不存储在配置文件中,确保安全性
-- **投递安全控制**: 外部投递(Telegram/webhook/email)将报表内容发送到设备外,用户需显式配置每个渠道并信任目标;`file` 投递保持本地存储
+* User defines WHAT data to include
+* User grants access to any needed sources
+* User provides API keys if external data needed
+* Skill handles SCHEDULING and FORMATTING
 
-## 适用范围
+This skill does NOT:
 
-本技能:
+* ❌ Access APIs without user-provided credentials
+* ❌ Pull data from sources user hasn't specified
+* ❌ Store credentials (user provides via environment)
 
-* 在 `~/report/` 目录存储报表配置
-* 按调度计划生成报表
-* 通过用户配置的渠道投递报表
+## Environment Variables
 
-**用户驱动模型:**
-
-* 用户定义包含哪些数据
-* 用户授予对所需数据源的访问权限
-* 用户在外部数据需要时提供API密钥
-* 技能处理调度和格式化
-
-本技能不会:
-
-* 在未提供用户凭证的情况下访问API
-* 从用户未指定的数据源拉取数据
-* 存储凭证(用户通过环境变量提供)
-
-## 环境变量
-
-**无固定要求。** 用户按需提供API密钥:
+**No fixed requirements.** User provides API keys as needed:
 
 ```bash
-export STRIPE_API_KEY="${API_KEY:?请设置环境变量}"
-export ANALYTICS_API_KEY="${API_KEY:?请设置环境变量}"
+export STRIPE_API_KEY="[REDACTED]"
+
+export GITHUB_TOKEN="[REDACTED]"
 ```
 
-配置中引用环境变量名,永不引用值.
-## 能力速查
-### 1. 用户定义数据源
+Config references env var name, never the value.
 
-创建报表时:
+## Delivery Security
 
-1. 用户指定要追踪的数据
-2. 如需外部API,用户提供凭证
-3. 凭证存储为环境变量引用,而非值
+External delivery (Telegram/webhook/email) sends report content off-device.
 
-示例:
+* User explicitly configures each channel
+* User responsible for trusting destination
+* `file` delivery stays local (~/report/{name}/generated/)
+
+## Quick Reference
+
+| Task | File |
+| --- | --- |
+| Configuration schema | `schema.md` |
+| Output formats | `formats.md` |
+| Delivery options | `delivery.md` |
+
+## Core Rules
+
+### 1. User Defines Data Sources
+
+When creating a report:
+
+1. User specifies what data to track
+2. If external API needed, user provides credentials
+3. Credentials stored as env var references, not values
+
+Example:
 
 ```text
-用户: "每周生成一次我的Stripe收入报表"
-助手: "我需要Stripe API访问权限。请在你的环境中设置 STRIPE_API_KEY。"
-用户: "已完成"
-配置存储为 "source": {"type": "api", "env": "STRIPE_API_KEY"}
+User: "Weekly report on my Stripe revenue"
+Agent: "I'll need Stripe API access. Please set
+        STRIPE_API_KEY in your environment."
+User: "Done"
+→ Config stored with "source": {"type": "api", "env": "STRIPE_API_KEY"}
 ```
 
-### 2. 报表配置
+### 2. Report Configuration
 
-在 `~/report/{name}/config.md` 中:
+In ~/report/{name}/config.md:
 
 ```yaml
 name: weekly-revenue
-schedule: "0 9 * * 1"  # 每周一上午9点
+schedule: "0 9 * * 1"  # Monday 9am
 sources:
   - type: api
-    env: STRIPE_API_KEY  # 用户提供
+    env: STRIPE_API_KEY  # User provides
 format: chat
 delivery: telegram
 ```
 
-### 3. 调度计划
+### 3. Scheduling
 
-| 频率 | Cron表达式 | 示例 |
-|:---:|:---:|:---:|
-| 每日 | `0 9 * * *` | 每天上午9点 |
-| 每周 | `0 9 * * 1` | 每周一上午9点 |
-| 每月 | `0 9 1 * *` | 每月1日上午9点 |
-| 按需 | - | 用户请求时 |
+| Frequency | Cron | Example |
+| --- | --- | --- |
+| Daily | `0 9 * * *` | 9am daily |
+| Weekly | `0 9 * * 1` | Monday 9am |
+| Monthly | `0 9 1 * *` | 1st of month |
+| On-demand | - | When user asks |
 
-### 4. 投递渠道
+### 4. Delivery Channels
 
-用户在 `config.md` 中配置:
+User configures in config.md:
 
-* `chat` — 在对话中回复
-* `telegram` — 发送到Telegram(用户提供chat ID)
-* `file` — 保存到 `~/report/{name}/generated/`
-* `email` — 通过用户配置的邮件发送
+* `chat` — Reply in conversation
+* `telegram` — Send to Telegram (user provides chat ID)
+* `file` — Save to ~/report/{name}/generated/
+* `email` — Send via user's configured mail
 
-### 5. 报表管理
-
-```text
-"列出我的报表" → 读取 ~/report/memory.md
-"暂停X报表"    → 更新配置
-"立即运行X"    → 按需生成
-```
-
-## 使用指南
-1. 执行 `mkdir -p ~/report` 创建数据存储目录
-2. 用户定义报表名称、数据源和所需凭证
-3. 用户在环境中设置所需的环境变量(如 `STRIPE_API_KEY`)
-4.md` 中创建YAML配置,指定 `schedule`、`sources`、`format` 和 `delivery`
-5. 根据调度计划自动生成报表,或用户请求按需运行
-6. 通过配置的投递渠道发送报表内容
-7. 使用"列出我的报表"查看所有报表,"暂停X报表"暂停,"立即运行X"按需生成
-
-## 用法示例
-### 示例1:创建每周收入报表
-
-```yaml
-# ~/report/weekly-revenue/config.md
-name: weekly-revenue
-schedule: "0 9 * * 1"
-sources:
-  - type: api
-    env: STRIPE_API_KEY
-    endpoint: "https://api.stripe.com/v1/charges"
-    params:
-      created.gte: "last_week_start"
-      created.lt: "today"
-format: chat
-delivery: telegram
-```
-
-输出:
-```text
-报表 weekly-revenue 已创建.
-调度: 每周一上午9点
-数据源: Stripe API (环境变量 STRIPE_API_KEY)
-投递: Telegram
-请在环境中设置 STRIPE_API_KEY 后生效.
-```
-
-### 示例2:每日站会摘要报表
-
-```yaml
-# ~/report/daily-standup/config.md
-name: daily-standup
-schedule: "0 8 * * 1-5"
-sources:
-  - type: api
-    env: PROJECT_API_TOKEN
-projectmgmt.com/v2/tasks"
-    params:
-      assignee: "current_user"
-      status: "in_progress"
-format: chat
-delivery: chat
-```
-
-### 示例3:月度文件报表
-
-```yaml
-# ~/report/monthly-summary/config.md
-name: monthly-summary
-schedule: "0 9 1 * *"
-sources:
-  - type: file
-    path: "~/projects/logs/"
-    pattern: "*.jsonl"
-format: markdown
-delivery: file
-```
-
-输出:
-```text
-报表 monthly-summary 已生成.
-保存位置: ~/report/monthly-summary/generated/2024-01-01-summary.md
-包含 3 个数据源的汇总分析.
-```
-
-### 示例4:管理报表
+### 5. Managing Reports
 
 ```text
-用户: "列出我的报表"
-助手: "当前报表:
-  1. weekly-revenue (每周一 9:00, Telegram投递, 活跃)
-  2. daily-standup (工作日 8:00, 对话投递, 活跃)
-  3. monthly-summary (每月1日 9:00, 文件投递, 已暂停)"
-# ...
-用户: "暂停daily-standup"
-助手: "已暂停 daily-standup 报表。下次调度将跳过执行。"
-# ...
-用户: "立即运行weekly-revenue"
-助手: "正在生成 weekly-revenue 报表...
-  已通过Telegram投递。本周收入总计 $12,450,较上周增长8.3%。"
+"List my reports" → Read ~/report/memory.md
+"Pause X report" → Update config
+"Run X now" → Generate on-demand
 ```
-
-## 异常处理架构
-| 错误场景 | 原因 | 处理方式 |
-|:------|------:|:------|
-| 环境变量未设置 | 用户未在环境中配置 `STRIPE_API_KEY` 等凭证 | 提示用户执行 `export STRIPE_API_KEY="..."` 设置环境变量,配置中仅引用变量名 |
-| Cron表达式无效 | `schedule` 字段格式错误(如 `0 9 *` 少字段) | 使用标准5字段Cron格式 `分 时 日 月 周`,参考调度计划表 |
-| 外部API认证失败 | API密钥过期或无效 | 检查环境变量值是否正确,确认API密钥未过期,重新生成密钥后更新环境变量 |
-| Telegram投递失败 | chat ID错误或Bot Token无效 | 确认Telegram Bot Token已配置,chat ID正确(负数表示群组),Bot已加入目标群组 |
-| 数据源不可达 | API端点宕机或网络超时 | 检查API端点URL是否正确,确认网络连通性,设置机制或切换备用端点 |
-| 配置文件格式错误 | `config.md` 中YAML缩进或语法错误 | 使用标准YAML缩进(空格而非Tab),验证 `name`、`schedule`、`sources`、`format`、`delivery` 字段完整性 |
-| 文件权限错误 | `~/report/` 目录无写入权限 | 执行 `chmod 755 ~/report` 修改权限,确认用户对目录有读写权限 |
-| 报表生成超时 | 数据源返回大量数据导致处理超时 | 在配置中添加分页参数限制单次拉取量,或缩小查询时间范围 |
-| 投递内容过大 | 报表内容超过投递渠道限制(如Telegram消息4096字符) | 切换为 `file` 投递生成本地文件,或启用摘要模式精简内容 |
-
-## 疑问解答
-### Q1: 如何添加新的数据源?
-A: 在 `config.md` 的 `sources` 数组中添加新条目。每个数据源需指定 `type`(api/file)、`env`(环境变量名,仅API类型)和 `endpoint`(API端点URL)。如需外部API访问,需先在环境中设置对应的环境变量,配置中仅引用变量名而非值.
-### Q2: Cron表达式的5个字段分别代表什么?
-A: 标准Cron格式为 `分 时 日 月 周`。例如 `0 9 * * 1` 表示每周一上午9点: 分(0)、时(9)、日(*任意)、月(*任意)、周(1=周一)。`0 9 1 * *` 表示每月1日9点。`0 8 * * 1-5` 表示工作日(周一至周五)8点.
-### Q3: 投递渠道有什么区别,如何选择?
-A: `chat` 在对话中直接回复,适合即时查看;`telegram` 发送到Telegram群组或用户,适合团队共享;`file` 保存到 `~/report/{name}/generated/` 本地目录,适合归档和审计;`email` 通过邮件发送,适合正式分发。外部投递(telegram/email)会将内容发送到设备外,需确保信任目标.
-### Q4: 凭证如何安全管理?
-A: 凭证以环境变量形式存储,配置文件中仅引用变量名(如 `STRIPE_API_KEY`),永不存储明文值。使用 `export VAR_NAME="value"` 在环境中设置。技能不会存储凭证值,也不会在日志或报表中暴露凭证。每次运行时从环境中读取.
-### Q5: 如何暂停或恢复报表?
-A: 使用"暂停X报表"命令,技能会更新 `config.md` 将报表标记为暂停状态,下次调度将跳过执行。恢复时使用"恢复X报表"命令。按需运行不受暂停状态影响,使用"立即运行X"可随时强制生成.
-### Q6: 报表历史数据存储在哪里?
-A: 历史数据存储在 `~/report/{name}/data.jsonl` 中,每次生成的报表保存在 `~/report/{name}/generated/` 目录。所有报表的索引和用户偏好存储在 `~/report/memory.md` 中。使用 `file` 投递渠道的报表会持久保存,其他渠道投递后也会在本地保留副本.
-### Q7: 如何修改已有报表的配置?
-A: 直接编辑 `~/report/{name}/config.md` 文件,修改 `schedule`、`sources`、`format` 或 `delivery` 字段。修改后下一次调度将使用新配置。也可通过对话指令如"将weekly-revenue改为每日9点"让技能自动更新配置文件.
-## 限制条件
-- 不支持实时流数据处理,仅支持定时或按需批量生成
-- 外部API访问依赖用户提供有效凭证,无凭证无法获取数据
-- Telegram投递受消息长度限制(4096字符),超长内容需切换file投递
-- Cron调度精度为分钟级,不支持秒级调度
-- 报表格式固定为chat/markdown,不支持自定义模板引擎
-
-## 差异化分析
-### 效率提升量化分析
-| 操作步骤 | 手动耗时 | 自动化耗时 | 时间节约 | 准确率提升 |
-| --- | --- | --- | --- | --- |
-| 数据收集 | 8小时 | 2小时 | 6小时 | 5% |
-| 数据处理 | 16小时 | 4小时 | 12小时 | 3% |
-| 报表生成 | 12小时 | 1小时 | 11小时 | 4% |
-| 报表格式化 | 4小时 | 0.5小时 | 3.5小时 | 2% |
-| 报表投递 | 2小时 | 0.5小时 | 1.5小时 | 1% |
-| 总计 | 42小时 | 8.5小时 | 33.5小时 | 15% |
-
-### 差异化对比
-| 对比维度 | 本技能 | 手动操作 | Python脚本 | 专业软件 |
-| --- | --- | --- | --- | --- |
-| 易用性 | 高 | 低 | 中 | 高 |
-| 定制性 | 高 | 低 | 中 | 高 |
-| 效率 | 高 | 低 | 中 | 高 |
-| 成本 | 低 | 高 | 中 | 高 |
-| 可靠性 | 高 | 低 | 中 | 高 |
-
-### 核心痛点解决
-| 痛点 | 描述 | 影响范围 | 解决方案 | 量化效果 |
-| --- | --- | --- | --- | --- |
-| 报表生成效率低 | 手动生成报表耗时较长，影响工作效率 | 影响工作效率，增加人力成本 | 使用本技能自动化生成报表 | 时间节约33.5小时 |
-| 报表格式不统一 | 不同报表格式不统一，影响数据可视化 | 影响数据可视化，降低决策效率 | 使用本技能统一报表格式 | 准确率提升15% |
-| 报表投递不及时 | 报表投递不及时，影响决策效率 | 影响决策效率，增加决策风险 | 使用本技能定时投递报表 | 时间节约1.5小时 |
-
-## 排障手册
-| 错误现象 | 可能原因 | 诊断步骤 | 解决方案 |
-| --- | --- | --- | --- |
-| 数据源无法访问 | 数据源配置错误或凭证过期 | 检查数据源配置和凭证 | 修正配置或更新凭证 |
-| 报表生成失败 | 数据处理错误或报表配置错误 | 检查数据处理过程和报表配置 | 修正数据处理过程或报表配置 |
-| 报表格式错误 | 报表配置错误或格式化工具问题 | 检查报表配置和格式化工具 | 修正配置或更换工具 |
-| 报表投递失败 | 投递渠道配置错误或网络问题 | 检查投递渠道配置和网络状态 | 修正配置或解决网络问题 |
-| 定时任务未执行 | Cron定时配置错误 | 检查Cron定时配置 | 修正配置 |
-
-## 安全遵循原则
-1. 数据源凭证安全：确保数据源凭证以环境变量形式存储，避免明文存储。
-2. 报表内容安全：对报表内容进行加密处理，防止敏感信息泄露。
-3. 报表投递安全：对投递渠道进行安全配置，防止未授权访问。
-4. API Key安全：妥善保管API Key，避免泄露到版本控制系统。
-5. 系统安全：定期更新系统补丁，防止安全漏洞。
-
-### 安全风险防范
-
-| 风险项 | 等级 | 防护措施 | 验证方法 |
-| --- | --- | --- | --- |
-| API密钥泄露 | 高 | 通过环境变量配置，禁止硬编码 | 定期检查代码和配置文件 |
-| 命令执行风险 | 高 | 仅执行白名单命令，避免拼接用户输入 | 使用沙箱环境测试 |
-| 网络通信安全 | 中 | 使用HTTPS协议，验证SSL证书 | 定期检查证书有效期 |
-| 敏感数据暴露 | 高 | 输出结果中不包含密钥、令牌等敏感信息 | 日志脱敏审查 |
-| 未授权访问 | 中 | 限制访问权限，实施认证机制 | 定期审计访问日志 |
-
-## 主要功能
-- **自动化执行**: 配置自定义周期性报表,
-- **文件处理**: 支持多种文件格式的读取、解析和写入操作
-- **API集成**: 通过标准化接口调用外部服务并处理响应
-- **命令执行**: 在安全沙箱中执行系统命令并收集结果
-- **信息检索**: 快速搜索和过滤目标数据
 
 ## 依赖说明
 
 ### 运行环境
-- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **Agent平台**: 支持SKILL.md的任意AI Agent( Code / Cursor / Codex /  CLI等)
 - **操作系统**: Windows / macOS / Linux
 
+### 依赖说明
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+- 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
+
 ### 可用性分类
-- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
-- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。
+- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+
+- Configure custom recurring reports
+- User defines data sources, skill
+  handles scheduling and forma
+- 触发关键词: custom, report, configure, recurring, reports
+
+## 适用场景
+
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 示例
+
+### 示例1：基础用法
+
+```
+输入: 用户请求
+处理: 根据使用流程执行
+输出: 处理结果
+```
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+
+### Q1: 如何开始使用Report？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Report有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力
+
+---
+## 边界条件与限制
+
+### 输入限制
+
+* **数据量限制**：Report技能能够处理的数据量受限于Agent平台的内存和存储资源。对于大规模数据源，可能需要分批处理或使用更强大的数据处理工具。
+* **数据格式限制**：技能目前支持JSON Lines (.jsonl) 格式的数据文件，对于其他格式的数据，需要用户进行转换。
+* **API调用限制**：对于需要API调用的数据源，技能的调用频率受到API提供商的限制，用户需要遵守这些限制。
+
+### 性能边界
+
+* **处理速度**：Report技能的执行速度取决于数据源的大小和复杂性，以及Agent平台的性能。
+* **并发处理**：技能不支持同时处理多个报告，每次只能处理一个报告。
+
+### 兼容性约束
+
+* **操作系统**：技能在Windows、macOS和Linux操作系统上运行，但可能存在特定版本的兼容性问题。
+* **Agent平台**：技能依赖于支持SKILL.md的AI Agent平台，不同平台的实现细节可能有所不同。
+* **外部API**：技能依赖于外部API提供的数据，如果API发生变更或不可用，技能的功能可能会受到影响。
+
+### 其他限制
+
+* **实时数据处理**：Report技能不适用于实时流数据处理，它更适合处理定期生成的数据。
+* **复杂逻辑处理**：技能不支持复杂的逻辑处理，对于需要复杂逻辑的场景，可能需要用户自行编写脚本或使用其他工具。

@@ -32,7 +32,7 @@ Usage:
 import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
-from project_config import DIFFERENTIATED_DIR, CLAWHUB_DOWNLOADED_DIR, OPENSOURCE_SKILLS_DIR, TOOLS_DIR, get_db_connection, PACKAGED_SKILLS_DIR, MAX_SKILL_MD_LINES, MIN_DESCRIPTION_LEN, MAX_DESCRIPTION_LEN  # V123 W2: 合并重复import
+from project_config import DIFFERENTIATED_DIR, CLAWHUB_DOWNLOADED_DIR, OPENSOURCE_SKILLS_DIR, TOOLS_DIR, get_db_connection, PACKAGED_SKILLS_DIR, MAX_SKILL_MD_LINES, MIN_DESCRIPTION_LEN, MAX_DESCRIPTION_LEN, HERMES_SKILLS_DIR  # V123 W2: 合并重复import; V186: 新增HERMES_SKILLS_DIR
 # === End Phase 1 ===
 
 
@@ -1038,16 +1038,37 @@ def run_l2_validation(slug: str) -> Dict[str, Any]:
 
 
 def find_original_skill_md(slug: str) -> Optional[Path]:
-    """查找原始skill的SKILL.md路径(不在输出目录packaged-skills/skillhub中查找)"""
+    """查找原始skill的SKILL.md路径(不在输出目录packaged-skills/skillhub中查找)
+    
+    V186: 增加source_slug/parent_slug回退搜索 — 差异化skill(如xxx-free)的源文件
+    存储在source_slug目录下(如xxx), 之前只按当前slug搜索导致28个skill找不到源文件。
+    """
+    # 收集所有候选slug: 当前slug + DB中的source_slug + parent_slug
+    candidate_slugs = [slug]
+    try:
+        conn = get_db_connection()
+        c = conn.cursor()
+        c.execute("SELECT source_slug, parent_slug FROM skills WHERE slug = ?", (slug,))
+        row = c.fetchone()
+        conn.close()
+        if row:
+            if row['source_slug'] and row['source_slug'] != slug:
+                candidate_slugs.append(row['source_slug'])
+            if row['parent_slug'] and row['parent_slug'] not in (slug, row['source_slug']):
+                candidate_slugs.append(row['parent_slug'])
+    except Exception:
+        pass  # DB查询失败时只用原始slug
+
     # 1. clawhub-skills/downloaded (原始下载)
     clawhub_root = CLAWHUB_DOWNLOADED_DIR
     if clawhub_root.exists():
         for category_dir in clawhub_root.iterdir():
             if not category_dir.is_dir():
                 continue
-            skill_path = category_dir / slug / "SKILL.md"
-            if skill_path.exists():
-                return skill_path
+            for s in candidate_slugs:
+                skill_path = category_dir / s / "SKILL.md"
+                if skill_path.exists():
+                    return skill_path
 
     # 2. differentiated-skills (差异化版本)
     diff_root = DIFFERENTIATED_DIR
@@ -1055,9 +1076,10 @@ def find_original_skill_md(slug: str) -> Optional[Path]:
         for category_dir in diff_root.iterdir():
             if not category_dir.is_dir():
                 continue
-            skill_path = category_dir / slug / "SKILL.md"
-            if skill_path.exists():
-                return skill_path
+            for s in candidate_slugs:
+                skill_path = category_dir / s / "SKILL.md"
+                if skill_path.exists():
+                    return skill_path
 
     # 3. opensource-skills/packaged (开源修改版)
     opensource_root = OPENSOURCE_SKILLS_DIR
@@ -1065,29 +1087,57 @@ def find_original_skill_md(slug: str) -> Optional[Path]:
         for category_dir in opensource_root.iterdir():
             if not category_dir.is_dir():
                 continue
-            skill_path = category_dir / slug / "SKILL.md"
-            if skill_path.exists():
-                return skill_path
+            for s in candidate_slugs:
+                skill_path = category_dir / s / "SKILL.md"
+                if skill_path.exists():
+                    return skill_path
 
-    # 4. DB查找local_path
+    # 4. DB查找local_path (当前slug + source_slug的local_path)
     try:
         conn = get_db_connection()
         c = conn.cursor()
+        # 先查当前slug
         c.execute("SELECT local_path FROM skills WHERE slug = ?", (slug,))
         row = c.fetchone()
-        conn.close()
         if row and row['local_path']:
             db_path = Path(row['local_path']) / "SKILL.md"
             if db_path.exists():
+                conn.close()
                 return db_path
+        # 再查source_slug的local_path
+        for s in candidate_slugs[1:]:
+            c.execute("SELECT local_path FROM skills WHERE slug = ?", (s,))
+            row2 = c.fetchone()
+            if row2 and row2['local_path']:
+                db_path = Path(row2['local_path']) / "SKILL.md"
+                if db_path.exists():
+                    conn.close()
+                    return db_path
+        conn.close()
     except Exception as e:
         print(f"[WARN] DB查找local_path失败,回退到下一策略: {e}")
 
-    # 5. 最后才查找 packaged-skills/skillhub (可能是之前生成的版本)
+    # 5. hermes-skills (V186: 新增 — 部分skill源文件存储在hermes-skills目录下)
+    hermes_root = HERMES_SKILLS_DIR
+    if hermes_root.exists():
+        for category_dir in hermes_root.iterdir():
+            if not category_dir.is_dir():
+                continue
+            # 搜索 category/free/, category/paid/, category/ 等子目录
+            for sub in [category_dir, category_dir / "free", category_dir / "paid"]:
+                if not sub.is_dir():
+                    continue
+                for s in candidate_slugs:
+                    skill_path = sub / s / "SKILL.md"
+                    if skill_path.exists():
+                        return skill_path
+
+    # 6. 最后才查找 packaged-skills/skillhub (可能是之前生成的版本)
     # 注意: 这可能导致覆盖问题, 仅作为最后手段
-    packaged_path = PACKAGED_SKILLS_DIR / slug / "SKILL.md"
-    if packaged_path.exists():
-        return packaged_path
+    for s in candidate_slugs:
+        packaged_path = PACKAGED_SKILLS_DIR / s / "SKILL.md"
+        if packaged_path.exists():
+            return packaged_path
 
     return None
 

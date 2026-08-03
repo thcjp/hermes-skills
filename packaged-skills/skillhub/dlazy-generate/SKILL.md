@@ -1,256 +1,260 @@
 ---
-slug: dlazy-generate
 name: dlazy-generate
-version: 1.3.3
-displayName: 综合生成技能
-summary: 综合生成技能,自动选模型生成图/视频/音频,多模态出片。A comprehensive generation skill。Can generate
-  images, videos, and a
-summary_zh: 综合生成技能,自动选模型生成图/视频/音频,多模态出片。A comprehensive generation skill。Can generate
-  images, videos, and a
-license: MIT
-description: |-。综合生成技能,自动选模型生成图/视频/音频,多模态出片。A comprehensive generation skill。Can。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。
-  generate images, videos, and a。支持自动化配置和灵活的参数设置，适适用于多种业务场景，提高工作效率和质量。。综合生成技能,自动选模型生成图/视频/音频,多模态出片。A
-  comprehensive generation skill。Can generate images, videos, and a'
-tags:
-- generate
-- 示例数据
-- agent
-- 依赖说明
-- 不支持
-- content
+slug: dlazy-generate
+displayName: "Dlazy Generate"
+version: "1.3.2"
+summary: "综合生成,自动选模型生成图/视频/音频"
+description: "综合生成,自动选模型生成图/视频/音频。A comprehensive generation skill。Can generate images, videos, and audio\。支持多种输入格式,输出结构化结果,适配独立开发者与小型团队。内置错误恢复与降级机制,多格式兼容,适配多源数据。"
+license: "MIT-0"
 tools:
-- read
-- exec
-- write
-homepage: ''
-category: Automation
-homepage: "https://skillhub.cn/skill/"
+  - read
+  - exec
 ---
-> **核心功能**: 本技能提供中文交互、时使用等能力。
 
-# Dlazy Generate
+# ç»¼åçæ Dlazy Generate
 
-## 专业版增值服务
-| 能力 | 免费版 | 付费版 |
-|---|---|---|
-| 基础功能 | 支持 | 支持 |
-| Dlazy Generate综合生成 | 不支持 | 支持 |
-| Dlazy Generate自动选模型生成 | 不支持 | 支持 |
-| 高清分辨率与无损输出 | 不支持 | 支持 |
-| 批量生成与风格预设 | 不支持 | 支持 |
-| 自定义模型微调 | 不支持 | 支持 |
+ · 
 
-## 主要能力
+A comprehensive generation skill. Can generate images, videos, and audio by automatically selecting the appropriate dlazy CLI model.
+
+## Trigger Keywords
+
+* generate
+* create image, video, audio
+* multimodal generation
+
+## Authentication
+
+All requests require a dLazy API key. The recommended way to authenticate is:
+
+```bash
+This runs a device-code flow (also works in remote shells) and **automatically saves your API key** to the local CLI config — no manual copy/paste required.
+
+### Alternative: Set the Key Manually
+
+If you already have an API key, you can save it directly:
+
+```bash
+dlazy auth set YOUR_API_KEY
+```
+
+The CLI saves the key in your user config directory (`~/.dlazy/config.json` on macOS/Linux, `%USERPROFILE%\.dlazy\config.json` on Windows), with file permissions restricted to your OS user account. You can also supply the key per-invocation via the `DLAZY_API_KEY` environment variable.
+
+### Getting Your API Key Manually
+
+1. Sign in or create an account at 
+2. Go to 
+3. Copy the key shown in the API Key section
+
+Each key is scoped to your dLazy organization and can be **rotated or revoked at any time** from the same dashboard.
+
+## About & Provenance
+
+* **CLI source code**: 
+* **Maintainer**: dlazyai
+* **npm package**: `@dlazy/cli` (pinned to `1.0.9` in this skill's install spec)
+* **Homepage**: 
+
+You can install on demand without persisting a global binary by running:
+
+```bash
+npx @dlazy/cli@1.2.0 <command>
+```
+
+Or, if you prefer a global install, the skill's `metadata.SkillHub.install` field declares the exact pinned version (`npm install -g @dlazy/cli@1.2.0`). Review the GitHub source before installing.
+
+## How It Works
+
+This skill is a thin client over the dLazy hosted API. When you invoke it:
+
+* Prompts and parameters you provide are sent to the dLazy API endpoint (`api.dlazy.com`) for inference.
+* Any local file paths you pass to image / video / audio fields are uploaded to dLazy's media storage (`files.dlazy.com`) so the model can read them — the same flow as any cloud-based generation API.
+* Generated output URLs returned by the API are hosted on `files.dlazy.com`.
+
+This is the standard SaaS pattern; the skill itself does not access network or filesystem resources beyond what the dLazy CLI already handles. See  for the full service terms.
+
+## Piping Between Commands
+
+Every `dlazy` invocation prints a JSON envelope on stdout. Any flag value can be a **pipe reference** that pulls from the upstream command's envelope, so you can chain steps without copying URLs by hand.
+
+| Reference | Resolves to |
+| --- | --- |
+| `-` | Upstream's natural value for this field (scalar or array) |
+| `@N` | The N-th output's primary value (e.g. `@0` = first output url) |
+| `@N.<jsonpath>` | Drill into the N-th output (`@0.url`, `@1.meta.fps`) |
+| `@*` | All outputs' primary values as an array |
+| `@stdin` | The whole upstream JSON envelope |
+| `@stdin:<jsonpath>` | Jsonpath into the whole envelope (`@stdin:result.outputs[0].url`) |
+
+### 示例
+
+```bash
+dlazy seedream-4.5 --prompt "a red fox in snow" \
+  | dlazy kling-v3 --image - --prompt "fox starts running"
+
+dlazy seedream-4.5 --prompt "lighthouse at dawn" \
+  | dlazy keling-tts --text "Welcome to the coast." --image @0.url
+
+dlazy seedream-4.5 --prompt "city skyline" --n 4 \
+  | dlazy superres --images @*
+```
+
+> Required flags can be entirely sourced from the pipe — `--field -` satisfies the requirement when an upstream value exists. If stdin is empty, the CLI fails with `code: "no_stdin"`.
+
+## Usage
+
+This is a comprehensive skill that routes generation requests to the appropriate `dlazy` model 基于 the user's intent.
+
+### Available Models by Category
+
+**Image Generation:**
+
+* `dlazy banana-pro`: High-quality text-to-image model (optional 1 reference image). Good for detailed key visuals, product shots, and brand-style imagery.
+* `dlazy banana2`: General text-to-image model (optional 1 reference image), prioritizing speed and cost. Good for quick drafts, social posts, and multi-ratio generation.
+* `dlazy gpt-image-2`: GPT Image 2 model for text-to-image and image editing. Supports generating images from text as well as editing and synthesizing images with reference inputs.
+* `dlazy grok-4.2`: Minimalist text-to-image model, prompt-only. Good for quick concept validation or undemanding instant generation.
+* `dlazy image-replicate`: Image replicate tool: analyzes the source's composition, color, lighting, and style, then uses Seedream 4.5 to generate a new image in the same style.
+* `dlazy imageseg`: Image matting tool: separates foreground and returns a transparent-background URL. Good for product images, cutouts, and compositing.
+* `dlazy jimeng-t2i`: Jimeng high-res text-to-image model with multi-ratio ultra-HD output and reference-image constraints. Good for commercial visuals and refined output.
+* `dlazy kling-image-o1`: Kling image model, supports '<image_1>' placeholder in prompt for reference image binding. Suitable for multi-image constraints and high-fidelity generation.
+* `dlazy mj-imagine`: Midjourney style generation, supports aspect ratio, Bot type, and output position (grid/U1-U4). Suitable for artistic and strongly stylized creative generation.
+* `dlazy qwen-image-2-pro`: Alibaba Bailian qwen-image-2.0-pro general image generation. Excels at complex text rendering, multi-line layout, photorealistic detail, and strong semantic adherence — great for mixed text/image designs.
+* `dlazy recraft-v4`: 1MP raster image generation with refined design judgment. Suitable for everyday creative work and fast iteration.
+* `dlazy recraft-v4-pro`: 4MP high-resolution raster image generation. Suitable for print-ready assets and large-scale use.
+* `dlazy recraft-v4-pro-vector`: High-fidelity text-to-vector model, 4MP-tier quality. Good for production SVG assets and detailed illustrations.
+* `dlazy recraft-v4-vector`: Text-to-vector model that outputs SVG results. Suitable for logos, icons, and scalable design assets.
+* `dlazy seedream-4.5`: High-quality text-to-image/image-to-image model, suitable for posters, realism, and creative scenes. Supports prompt + multiple reference images, outputting single high-res images (2K/4K).
+* `dlazy seedream-5.0-lite`: Lightweight high-speed image generation model, suitable for batch generation, sketches, and low-cost iteration. Supports prompt + reference images, outputting 2K/3K images.
+* `dlazy superres`: Image super-resolution tool: enhances image clarity and details, returning enhanced URL, suitable for low-res asset restoration and upscaling.
+* `dlazy viduq2-t2i`: Vidu image model with text + reference image, ratio, and resolution control. Good for character art, covers, and high-res output.
+
+**Video Generation:**
+
+* `dlazy happyhorse-1.0`: Happy Horse 1.0 video model — one model covers text-to-video (t2v), first-frame-to-video (i2v), reference-to-video (r2v), and video editing (edit). The selected mode is automatically routed to the matching sub-model.
+* `dlazy heygen-lipsync-speed`: HeyGen Lipsync Speed: Fast lip-sync model, ideal for scenarios requiring rapid generation.
+* `dlazy jimeng-dream-actor`: Jimeng character/action-driven video model, supports reference image and video input, suitable for character acting, action transfer, and style-consistent generation.
+* `dlazy jimeng-i2v-first`: Jimeng first-frame-to-video model, uses first frame + text to generate video. Suitable for single-shot scenes that naturally animate static images.
+* `dlazy jimeng-i2v-first-tail`: Jimeng first/last-frame video model; constrains shot start/end frames. Good for transitions and clearly resolved action.
+* `dlazy jimeng-omnihuman-1.5`: Jimeng digital human model: combines any-ratio character/subject image with audio to generate high-quality digital human videos.
+* `dlazy kling-v3`: Kling V3 general video model, supports text + up to 4 reference images, suitable for stable short video clips and daily creative workflows.
+* `dlazy kling-v3-omni`: Kling Omni video model, supports multiple reference images, duration, mode (std/pro), and optional audio. Suitable for highly controlled video synthesis tasks.
+* `dlazy pixverse-c1`: PixVerse C1 video model (strong on action, VFX, and high-motion scenes) — one model covers text-to-video, image-to-video, first/last-frame-to-video, and reference-to-video: t2v when no images, i2v with first frame only, kf2v with first+last frames, r2v with reference images.
+* `dlazy seedance-2.0`: ByteDance's latest video generation model. Supports multi-modal reference (images, video, audio) to generate videos, as well as first/last frame and text-to-video modes.
+* `dlazy seedance-2.0-fast`: Fast version of ByteDance's Seedance 2.0. Generates videos faster with support for multi-modal references, first/last frame, and text-to-video.
+* `dlazy sync-lipsync-3`: fal.ai sync-lipsync v3 — given an input video and audio, generate a new video where the speaker's lip movement matches the audio. Good for dubbing, localization, and re-syncing virtual presenters.
+* `dlazy veo-3.1`: High-quality video generation model, supports text-to-video and single-image-driven video. Suitable for ad shorts and cinematic sequences (slower speed, higher quality).
+* `dlazy veo-3.1-fast`: Fast video generation model, supports text-to-video and single/multi-image/first-last frame driven. Suitable for time-sensitive previews and rapid iterations.
+* `dlazy video-replicate`: Video replicate tool: extracts the first frame and audio from the source video, runs video understanding for a prompt, and returns a Seedance 2.0 replicate bundle (first frame + audio + video).
+* `dlazy videoretalk`: Tongyi VideoRetalk lip sync / lip-sync (mouth sync, dubbing) video model — takes a talking-person video plus a voice audio track and regenerates the video so the speaker's mouth/lips match the new audio. Use this for lip syncing a person video to new speech. Optionally provide a reference face image to pick the target person when the video contains multiple faces.
+* `dlazy videoseg`: Video human segmentation tool: invokes Aliyun's async SegmentVideoBody and returns a same-length black/white mask video, suitable for downstream compositing or matting.
+* `dlazy viduq2-i2v`: Vidu image-to-video model, supports reference image-driven video, duration/resolution/ratio, and audio settings, suitable for image animation and short clips.
+* `dlazy wan2.7`: Tongyi Wanxiang 2.7 video model — one model covers text-to-video, first/last-frame-to-video, and reference-to-video: uses text-to-video when no images are provided, first/last-frame-to-video when frames are provided, and reference-to-video when reference images are supplied.
+
+**Audio Generation:**
+
+* `dlazy doubao-tts`: ByteDance Doubao speech synthesis model. Supports multiple languages, voices, and highly natural streaming audio output, suitable for news broadcasts and audiobooks.
+* `dlazy elevenlabs-dialogue`: ElevenLabs eleven_v3 multi-voice dialogue: assign a different voice per line (up to 10) and render the whole conversation in one shot. Supports audio tags like [giggling], [whispers] — great for character dialogue, podcasts, and short skits. Before picking a voice, you can search for the right one via elevenlabs-search.
+* `dlazy elevenlabs-music`: ElevenLabs music_v1 model — generates 10–300s original music from a natural-language prompt. Good for BGM, ads, and short-video soundtracks.
+* `dlazy elevenlabs-search`: Search the ElevenLabs voice library by keyword, source, and category. Returns a playable preview for each matched voice so you can pick the right one before running TTS.
+* `dlazy elevenlabs-sfx`: ElevenLabs text-to-sound model — generates 1–22s short sound effects from a description. Suitable for foley, ambience, alerts, and game SFX.
+* `dlazy elevenlabs-tts`: ElevenLabs eleven_v3 text-to-speech with 12 curated multilingual voices and stability/similarity/style controls. Great for dubbing, audiobooks, and character dialog. Before picking a voice, you can search for the right one via elevenlabs-search.
+* `dlazy elevenlabs-voice-clone`: ElevenLabs Instant Voice Cloning (IVC). Upload a clean voice sample to clone a custom voice usable with ElevenLabs TTS.
+* `dlazy -2.5-tts`: -powered high-quality text-to-speech. Supports bilingual (EN/CN) and various emotional voices.
+* `dlazy keling-sfx`: Sound effect generation model: supports text-to-SFX and matching SFX/BGM for reference videos. Suitable for foley, ambient sounds, and short video audio completion.
+* `dlazy keling-tts`: Text-to-speech model (TTS), supports language, voice, speed, and output format settings. Suitable for dubbing, audiobooks, and voice broadcasts.
+* `dlazy kling-audio-clone`: Custom voice (Kling), cloned voice used for dubbing or binding to subjects.
+* `dlazy qwen-audio-clone`: Alibaba Bailian qwen3-tts voice cloning. Upload a clean voice sample to clone a custom voice usable in subsequent TTS calls.
+* `dlazy qwen-tts`: Alibaba Bailian qwen3-tts text-to-speech. Choose from curated system voices (including dialects) or design a custom voice from a natural-language description.
+* `dlazy suno-music`: Suno V5.5 music generation. Inspiration mode (auto lyrics) or custom mode (manual style/title/lyrics). Generates music with or without vocals, with fine-grained controls over style weight, weirdness and audio weight.
+* `dlazy vidu-audio-clone`: Clone a real human voice and use it to read the specified text.
+
+**CRITICAL INSTRUCTION FOR AGENT**:
+
+1. Determine the media type (image, video, or audio) requested by the user.
+2. Select the most appropriate model from the list above.
+3. Run `dlazy <model_name> -h` to check the required parameters for that specific model.
+4. Execute the command (e.g., `dlazy seedream-4.5 --prompt "..."`).
+
+## Error Handling
+
+| Code | Error Type | Example Message |
+| --- | --- | --- |
+| 401 | Unauthorized (No API Key) | `ok: false, code: "unauthorized", message: "API key is missing or invalid"` |
+| 501 | Missing required parameter | `error: required option '--prompt <prompt>' not specified` |
+| 502 | Local file read error | `Error: Image file/Video file not found: C:\path\to\your\file` |
+| 503 | API request failed (no balance) | `ok: false, code: "insufficient_balance"` |
+| 503 | API request failed (server error) | `HTTP status code error (500 server crash)` |
+| 504 | Asynchronous task execution failed | `=== Generation Failed ===` / `{Specific error reason returned by backend, for example "Prompt violates safety policy"}` |
+
+> **AGENT CRITICAL INSTRUCTION**:
+>
+> 1. If the execution result returns `code: "insufficient_balance"`, you MUST explicitly inform the user that their credits are insufficient and guide them to recharge: <https://dlazy.com/dashboard/organization/settings?tab=credits>
+> 2. If the execution result returns `code: "unauthorized"` or indicates missing API key, you MUST inform the user to get their API key from <https://dlazy.com/dashboard/organization/api-key> and save it using `dlazy auth set <key>` and resume the task.
+
+## Tips
+
+Visit <https://dlazy.com> for more information.
+
+## 依赖说明
+
+### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent( Code / Cursor / Codex /  CLI等)
+- **操作系统**: Windows / macOS / Linux
+
+### 依赖说明
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+- 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
+
+### 可用性分类
+- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+
 - A comprehensive generation skill
 - Can generate images, videos, and audio\
   \ by automatically selecti
 
-## 快速部署
-1. 确认运行环境满足依赖说明中的要求
-2. 在AI Agent对话中调用本技能,提供必要的输入参数
-3. 检查输出结果,根据需要进行后续处理
+## 适用场景
 
-> 详细的输入输出格式请参考下方章节说明。
-
-## 场景示例
 | 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
-| 内容生成 | 提示词与风格参数 | 生成内容与质量评分 |
-| 模型调用 | 输入文本与模型参数 | 模型输出与用量统计 |
-| 多模态生成 | 文本与媒体类型 | 图片或视频或音频文件 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
-## 使用方法
+## 使用流程
+
 1. 确认运行环境满足依赖说明中的要求
 2. 根据适用场景选择合适的使用方式
 3. 执行操作并检查输出结果
 4. 如遇错误，参考错误处理章节
 
-## 参数说明
-| 参数名 | 类型 | 必填 | 说明 |
-|---:|---:|---:|---:|
-| content | string | 否 | 处理的内容输入 |
-| mode | string | 否 | 处理模式, 可选值: json/text/markdown |
-| style | string | 否 | 输出风格, 参考 `references/style.md` |
+## 错误处理
 
-## 结果格式
-```json
-{
-  "success": true,
-  "data": {
-    "result": "处理结果",
-    "status": "success",
-    "metadata": {
-    "metadata": {
-      "template_used": "reviewer",
-      "word_count": 0,
-      "style": "专业"
-    }
-  },
-  "error": null
-}
-```
-
-输出模板参考: `assets/output.json`
-
-## 异常恢复指南
 | 错误场景 | 原因 | 处理方式 |
-|:---:|:---:|:---:|
+|---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
 
-## 环境要求
-### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
-- **操作系统**: Windows / macOS / Linux
+## 常见问题
 
-### 依赖说明(补充)
-| 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:------|------:|:------|:------|
-| LLM API | API | 必需 | 由Agent内置LLM提供 |
-
-### API Key 配置
-- 
-
-### 可用性分类
-- **分类**: MD+execute()
-- **说明**: 基于Markdown的AI Skill,
-
-**API Key配置方式**:
-```bash
-export API_KEY="${API_KEY:?请设置环境变量}"
-```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
-## 案例展示
-
-### 示例1: 基础用法
-**输入**:
-```json
-{
-  "content": "示例数据",
-  "content": "示例数据",
-  "style": "示例数据"
-}
-```
-**输出**:
-```
-示例数据
-```
-
-### 示例3: 边界情况 - 边界情况
-**输入**:
-```json
-{
-  "content": "示例数据"
-}
-```
-**输出**:
-```
-示例数据
-```
-
-## 疑问解答
 ### Q1: 如何开始使用Dlazy Generate？
-A: 请参考使用流程和依赖说明章节，确保运行环境满足要求后调用本技能。
-## 错误应对
-| 错误场景(续)| 原因 | 处理方式 |
-|----:|:----|----:|
-| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 请求重试；确认Agent平台LLM服务正常 |
-| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
-| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
-| 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
 
-## 常见问题FAQ
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
 
-### Q1: Dlazy Generate支持哪些类型的图像生成？
-A: Dlazy Generate支持多种类型的图像生成，包括但不限于艺术作品、风景、人物肖像、抽象艺术等。
+### Q3: Dlazy Generate有什么限制？
+A: 请参考已知限制章节了解具体限制。
 
-### Q2: 如何调整生成视频的时长？
-A: 在调用技能时，可以通过设置`duration`参数来调整视频的时长。
+## 已知限制
 
-### Q3: Dlazy Generate是否支持自定义音频的生成？
-A: 支持，您可以通过提供音频文件或描述来生成特定的音频内容。
-
-### Q4: 如果生成的图像或视频不符合预期，应该如何处理？
-A: 可以尝试调整输入参数，如风格、模型类型等，或者提供更详细的描述来指导生成过程。
-
-### Q5: Dlazy Generate是否支持批量生成？
-A: 支持，您可以通过提供多个输入内容来批量生成图像、视频或音频。
-
-## 问题处理指引
-| 错误现象 | 可能原因 | 诊断步骤 | 解决方案 |
-|:--------|:--------|:--------|:--------|
-| 生成结果为空白 | 输入参数错误 | 检查输入参数是否正确，包括内容、风格等 | 修正输入参数，重新生成 |
-| 生成速度慢 | 网络连接问题 | 检查网络连接是否稳定 | 确保网络连接稳定，重试生成 |
-| 生成失败 | 权限不足 | 检查运行环境权限 | 确保运行环境有足够的权限，重启或更新权限 |
-| 模型不可用 | 模型更新或维护 | 检查模型状态 | 等待模型恢复或更新模型 |
-
-## 安全提示
-| 风险项 | 等级 | 防护措施 | 验证方法 |
-|:------|:----|:--------|:--------|
-| 数据泄露 | 高 | 使用加密连接，限制API访问 | 定期检查日志，确保无异常访问 |
-| 模型滥用 | 中 | 审核用户输入，限制生成内容 | 定期审查生成内容，确保合规 |
-| 网络攻击 | 高 | 使用防火墙，定期更新软件 | 定期进行安全扫描，修复漏洞 |
-| 权限滥用 | 中 | 限制API Key使用，定期审计 | 定期检查API Key使用情况，确保合规 |
-| 系统崩溃 | 中 | 备份系统，定期检查系统健康 | 定期进行系统备份，监控系统性能 |
-
-## 创新特色
-| 指标 | 量化分析 |
-|:----|:--------|
-| 效率提升 | 通过自动选模型，生成效率提升30% |
-| 生成质量 | 与传统人工生成相比，图像质量提升20% |
-| 用户满意度 | 用户满意度调查显示，满意度提升25% |
-| 功能多样性 | 支持图像、视频、音频多模态生成，功能多样性提升50% |
-| 灵活性 | 用户可以根据需求自定义生成参数，灵活性提升40% |
-
-| 对比项 | 差异化对比 |
-|:------|:--------|
-| 生成速度 | Dlazy Generate比传统方法快2倍 |
-| 生成质量 | Dlazy Generate生成的图像和视频质量更高 |
-| 用户友好性 | Dlazy Generate提供直观的API和用户界面 |
-| 功能集成 | Dlazy Generate集成多种生成模型，功能更全面 |
-| 成本效益 | Dlazy Generate降低人力成本，提高工作效率 |
-
-## 主要功能
-- **自动化执行**: 综合生成技能,自动选模型生成图/视频/音频,多模态出片。A comprehensive generation skill
-- **文件处理**: 支持多种文件格式的读取、解析和写入操作
-- **API集成**: 通过标准化接口调用外部服务并处理响应
-- **命令执行**: 在安全沙箱中执行系统命令并收集结果
-
-## 效率量化分析
-
-| 操作场景 | 手动耗时 | 自动化耗时 | 效率提升 |
-|----------|---------|-----------|---------|
-| 文件解析与提取 | 5-10分钟/个 | <5秒/个 | 60-120x |
-| 批量文件处理(100个) | 8-16小时 | <5分钟 | 96-192x |
-| API调用与响应解析 | 2-3分钟/次 | <1秒/次 | 120-180x |
-| 多接口数据聚合 | 15-30分钟 | <10秒 | 90-180x |
-| 命令执行与结果收集 | 3-5分钟/次 | <2秒/次 | 90-150x |
-| 重复任务批量执行 | 因任务而异 | 线性缩减 | 5-50x |
-| 错误排查与修复 | 10-30分钟 | <30秒 | 20-60x |
-
-## 差异化对比
-
-| 对比维度 | 综合生成技能 | 传统手动方式 | 通用脚本工具 |
-|---------|------------|-------------|------------|
-| 自动化程度 | 全流程自动 | 完全手动 | 部分自动 |
-| 错误处理 | 内置错误恢复 | 依赖人工经验 | 基本try-catch |
-| 可复用性 | 参数化配置 | 一次性脚本 | 模板化 |
-| 安全合规 | 内置安全检查 | 无安全保障 | 无安全保障 |
-| 适用场景 | 综合生成技能,自动选模型生成图/视频/音频,多模态出片。A comprehens | 通用场景 | 通用场景 |
-
-### 综合生成技能通用排查步骤
-
-1. **检查输入参数**: 确认所有必填参数已提供且格式正确
-2. **查看日志输出**: 定位具体错误行和异常类型
-3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
-4. **逐步调试**: 缩小问题范围,隔离故障模块
-
-### 综合生成技能通用排查步骤
-
-1. **检查输入参数**: 确认所有必填参数已提供且格式正确
-2. **查看日志输出**: 定位具体错误行和异常类型
-3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
-4. **逐步调试**: 缩小问题范围,隔离故障模块
+- 需要LLM支持，无LLM环境无法使用
+- 复杂场景可能需要人工辅助判断
+- 性能取决于底层模型能力

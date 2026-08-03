@@ -1,253 +1,253 @@
 ---
+name: azure
 slug: azure
-name: "azure"
-version: 1.0.1
-displayName: "Azure云服务工具"
-summary: "用经实战检验的模式部署监控管理Azure服务,稳定上云。Deploy, monitor, and manage Azure services with battle-tested patte"
-summary_zh: "用经实战检验的模式部署监控管理Azure服务,稳定上云。Deploy, monitor, and manage Azure services with battle-tested patte"
+displayName: "Azure"
+version: "1.0.0"
+summary: "Azure服务部署监控管理,提供经过验证的最佳实践,解决云资源管理复杂度问题"
+description: "Azure服务部署监控管理,提供经过验证的最佳实践,解决云资源管理复杂度问题。Deploy, monitor, and manage Azure services with battle-tested patterns。触发关键词: azure, monitor, manage, deploy, services。"
 license: "MIT"
-description: |-
-  Deploy, monitor, and manage Azure services with battle-tested patterns。核心能力:
-
-  - 运维工具领域的专业化AI辅助工具
-
-  - 
-
-  - 
-
-  适用场景:
-
-  - 系统运维、监控告警、资源管理
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-tags:
-  - Operations
-  - Azure
-  - 云计算
-  - DevOps
-  - azure
-  - api
 tools:
   - read
-  - exec
-  - write
-homepage: ""
-category: "Operations"
-homepage: "https://skillhub.cn/skill/"
 ---
+
 # Azure
 
-## 付费版进阶功能
-| 能力 | 免费版 | 付费版 |
-|---|---|---|
-| 基础功能 | 支持 | 支持 |
-| Azure战检验的模式部署监控 | 不支持 | 支持 |
-| 多源数据聚合与去重 | 不支持 | 支持 |
-| 语义搜索与智能摘要 | 不支持 | 支持 |
-| 定时监控与变化推送 | 不支持 | 支持 |
-| 研究结论结构化导出 | 不支持 | 支持 |
+## Cost Traps
 
-## 主要能力
-- Deploy, monitor, and manage Azure services with battle-tested patterns
+* Stopped VMs still pay for attached disks and public IPs — deallocate fully with `az vm deallocate` not just stop from portal
+* Premium SSD default on VM creation — switch to Standard SSD for dev/test, saves 50%+
+* Log Analytics workspace retention defaults to 30 days free, then charges per GB — set data retention policy and daily cap before production
+* Bandwidth between regions is charged both ways — keep paired resources in same region, use Private Link for cross-region when needed
+* Cosmos DB charges for provisioned RU/s even when idle — use serverless for bursty workloads or autoscale with minimum RU setting
 
-## 快速指引
-1. 确认运行环境满足依赖说明中的要求
-2. 在AI Agent对话中调用本技能,提供必要的输入参数
-3. 检查输出结果,根据需要进行后续处理
+## Security Rules
 
-> 详细的输入输出格式请参考下方章节说明。
+* Resource Groups don't provide network isolation — NSGs and Private Endpoints do. RG is for management, not security boundary
+* Managed Identity eliminates secrets for Azure-to-Azure auth — use System Assigned for single-resource, User Assigned for shared identity
+* Key Vault soft-delete enabled by default (90 days) — can't reuse vault name until purged, plan naming accordingly
+* Azure AD conditional access policies don't apply to service principals — use App Registrations with certificate auth, not client secrets
+* Private Endpoints don't automatically update DNS — configure Private DNS Zone and link to VNet or resolution fails
 
-## 应用场景
-| 场景 | 输入 | 输出 |
-|:-----|:-----|:-----|
-| 场景1 用经实战检验的模式部署监控管理Azure服务 | 用户请求数据 | 结构化处理结果 |
+## Networking
 
-**不适用于**：需要人工判断的复杂决策场景
+* NSG rules evaluate by priority (lowest number first) — default rules at 65000+ always lose to custom rules
+* Application Gateway v2 requires dedicated subnet — at least /24 recommended for autoscaling
+* Azure Firewall premium SKU required for TLS inspection and IDPS — standard can't inspect encrypted traffic
+* VNet peering is non-transitive — hub-and-spoke requires routes in each spoke, or use Azure Virtual WAN
+* Service Endpoints expose entire service to VNet — Private Endpoints give private IP for specific resource instance
 
-## 请求格式
-| 参数名 | 类型 | 必填 | 说明 |
-|---:|---:|---:|---:|
-| content | string | 否 | azure处理的内容输入 |,  |
-| mode | string | 否 | 处理模式, 可选: json/text/markdown,  |
-| max_retries | integer | 否 | 单步最大重试次数, 默认: 2 |
-| skip_steps | array | 否 | 跳过的步骤编号(用于断点续传), 默认: [] |
+## Performance
 
-## 结果格式
-```json
-{
-  "success": true,
-  "data": {
-    "final_result": {
-      "azure_result": "azure_result_value",
-      "azure_metadata": "azure_metadata_value",
-      "azure_status": "azure_status_value"
-    },
-    "execution_log": [
-      {
-        "step": 1,
-        "name": "按流程执行",
-        "status": "completed",
-        "duration_ms": 1200,
-        "output_summary": "按流程执行"
-      },
-      {
-        "step": 2,
-        "name": "按流程执行",
-        "status": "completed",
-        "duration_ms": 3500,
-        "output_summary": "按流程执行"
-      },
-      {
-        "step": 3,
-        "name": "按流程执行",
-        "status": "completed",
-        "duration_ms": 2100,
-        "output_summary": "按流程执行"
-      },
-      {
-        "step": 4,
-        "name": "按流程执行",
-        "status": "completed",
-        "duration_ms": 800,
-        "output_summary": "按流程执行"
-      }
-    ],
-    "total_duration_ms": 7600,
-    "gates_passed": 3,
-    "gates_total": 3
-  },
-  "error": null
-}
-```
+* Azure Functions consumption plan has cold start — Premium plan with minimum instances for latency-sensitive
+* Cosmos DB partition key choice is permanent and determines scale — can't change without recreating container
+* App Service plan density: P1v3 handles ~10 slots, more causes resource contention — monitor CPU/memory per slot
+* Azure Cache for Redis Standard tier has no SLA for replication — use Premium for persistence and clustering
+* Blob storage hot tier for frequent access — cool has 30-day minimum, archive has 180-day and hours-long rehydration
 
-中间产物模板参考: `assets/azure_template`
+## Monitoring
 
-## 异常管理
-| 错误场景 | 原因 | 处理方式 |
-|:---:|:---:|:---:|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
+* Application Insights sampling kicks in at high volume — telemetry may miss intermittent errors, adjust `MaxTelemetryItemsPerSecond`
+* Azure Monitor alert rules charge per metric tracked — consolidate metrics in Log Analytics for complex alerts
+* Activity Log only shows control plane operations — diagnostic settings required for data plane (blob access, SQL queries)
+* Alert action groups have rate limits — 1 SMS per 5 min, 1 voice call per 5 min, 100 emails per hour per group
+* Log Analytics query timeout is 10 minutes — optimize queries with time filters first, then other predicates
 
-## 安装与配置
+## Infrastructure as Code
+
+* ARM templates fail silently on some property changes — use `what-if` deployment mode to preview changes
+* Terraform azurerm provider state contains secrets in plaintext — use remote backend with encryption (Azure Storage + customer key)
+* Bicep is ARM's replacement — transpiles to ARM, better tooling, use for new projects
+* Resource locks prevent accidental deletion but block some operations — CanNotDelete lock still allows modifications
+* Azure Policy evaluates on resource creation and updates — existing non-compliant resources need remediation task
+
+## Identity and Access
+
+* RBAC role assignments take up to 30 minutes to propagate — pipeline may fail immediately after assignment
+* Owner role can't manage role assignments if PIM requires approval — use separate User Access Administrator
+* Service principal secret expiration defaults to 1 year — set calendar reminder or use certificate with longer validity
+* Azure AD B2C is separate from Azure AD — different 租户, different APIs, different pricing
+
+## 依赖说明
+
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **Agent平台**: 支持SKILL.md的任意AI Agent( Code / Cursor / Codex /  CLI等)
 - **操作系统**: Windows / macOS / Linux
 
-### 依赖说明(补充)
+### 依赖说明
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:------|------:|:------|:------|
+|:-------|:-----|:---------|:---------|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 
 ### API Key 配置
-- 
+- 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
 
 ### 可用性分类
-- **分类**: MD+execute()
-- **说明**: 基于Markdown的AI Skill,
+- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
 
-**API Key配置方式**:
-```bash
-export API_KEY="${API_KEY:?请设置环境变量}"
+## 核心能力
+
+- Deploy, monitor, and manage Azure services with battle-tested patterns
+- 触发关键词: azure, monitor, manage, deploy, services
+
+## 详细功能列表
+
+### 详细功能列表
+
+- **自动化部署**: 支持自动化部署Azure服务，包括虚拟机、容器、数据库等。
+- **监控告警**: 提供实时监控和告警功能，支持自定义告警规则和通知方式。
+- **资源管理**: 支持资源分组、标签、策略等资源管理功能，简化资源管理流程。
+- **安全审计**: 提供安全审计日志，帮助用户跟踪和审计资源访问和操作。
+- **成本优化**: 提供成本分析工具，帮助用户优化资源使用和降低成本。
+
+**边界条件处理**:
+- 资源部署失败时，提供重试机制和错误日志。
+- 监控数据异常时，提供数据回溯和异常分析。
+- 资源管理操作失败时，提供回滚机制。
+
+## 输入输出参数说明
+
+### 输入输出参数说明
+
+| 参数名 | 类型 | 默认值 | 取值范围 | 说明 |
+|-------|-----|---------|---------|------|
+| azure_resource_type | String | - | - | 资源类型，如虚拟机、容器等 |
+| azure_resource_name | String | - | - | 资源名称 |
+| alert_rule | Object | - | - | 告警规则配置 |
+| resource_group | String | - | - | 资源组名称 |
+| tag | Object | - | - | 资源标签配置 |
+
+**参数类型说明**:
+- String: 字符串类型
+- Object: 对象类型，包含多个键值对
+
+**取值范围**:
+- 资源类型和资源名称的取值范围由Azure平台定义。
+
+## 错误码定义和处理方案
+
+### 错误码定义和处理方案
+
+| 错误码 | 描述 | 处理方案 |
+|-------|------|---------|
+| ERROR_DEPLOYMENT_FAILED | 资源部署失败 | 检查资源配置和依赖，重试部署 |
+| ERROR_MONITORING_FAILED | 监控数据异常 | 检查监控配置和数据源，回溯数据 |
+| ERROR_RESOURCE_MANAGEMENT_FAILED | 资源管理操作失败 | 检查资源配置和权限，回滚操作 |
+
+**错误码说明**:
+- ERROR_DEPLOYMENT_FAILED: 资源部署失败，可能由于资源配置错误或依赖问题导致。
+- ERROR_MONITORING_FAILED: 监控数据异常，可能由于监控配置错误或数据源问题导致。
+- ERROR_RESOURCE_MANAGEMENT_FAILED: 资源管理操作失败，可能由于资源配置错误或权限问题导致。
+
+## 技术示例
+
+### 技术示例
+
+```yaml
+# ARM模板示例
+resources:
+- type: Microsoft.Compute/virtualMachines
+  apiVersion: 2021-04-01
+  name: myVM
+  location: eastus
+  properties:
+    osProfile:
+      adminUsername: azureuser
+      adminPassword: azurepassword
+    storageProfile:
+      imageReference:
+        publisher: MicrosoftWindowsServer
+        offer: WindowsServerSemiAnnual
+        sku: 2019-Datacenter
+        version: 'latest'
+    networkProfile:
+      networkInterfaces:
+      - id: /subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.Network/networkInterfaces/{nic-name}
 ```
-配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
-## 问答合集
+
+## 常见问题
+
+### 常见问题
+
+#### Q1: 如何设置告警规则？
+A: 登录Azure门户，进入监控服务，创建新的告警规则，配置触发条件、通知条件和操作组。
+
+#### Q2: 如何查看监控数据？
+A: 登录Azure门户，进入监控服务，选择相应的资源，查看监控数据图表和日志。
+
+#### Q3: 如何优化资源使用降低成本？
+A: 使用Azure成本管理服务，分析资源使用情况，优化资源配置和策略。
+
+#### Q4: 如何处理资源部署失败？
+A: 检查资源配置和依赖，重试部署或联系技术支持。
+
+#### Q5: 如何查看资源使用情况？
+A: 登录Azure门户，进入资源组或资源，查看资源使用情况。
+
+## 安全架构说明
+
+### 安全架构说明
+
+Azure服务部署监控管理采用多层次的安全架构，包括以下方面：
+- **身份验证**: 使用Azure Active Directory进行身份验证，确保只有授权用户才能访问服务。
+- **授权**: 使用基于角色的访问控制（RBAC）进行授权，确保用户只能访问其有权访问的资源。
+- **数据加密**: 使用TLS加密数据传输，使用Azure Key Vault存储敏感数据。
+- **安全审计**: 记录所有操作日志，以便进行安全审计。
+
+## 技术亮点与差异化优势
+
+### 技术亮点与差异化优势
+
+Azure服务部署监控管理具有以下技术亮点和差异化优势：
+- **自动化部署**: 支持自动化部署Azure服务，提高部署效率。
+- **智能监控**: 提供智能监控和告警功能，帮助用户及时发现和解决问题。
+- **成本优化**: 提供成本分析工具，帮助用户优化资源使用和降低成本。
+- **安全可靠**: 采用多层次的安全架构，确保服务安全可靠。
+
+## 适用场景
+
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 示例
+
+### 示例1：基础用法
+
+```
+输入: 用户请求
+处理: 根据使用流程执行
+输出: 处理结果
+```
+
+## 错误处理
+
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+
 ### Q1: 如何开始使用Azure？
-A: 请参考使用流程和依赖说明章节，确保运行环境满足要求后调用本技能。
-## 错误恢复方案
-| 错误场景2 | 原因 | 处理方式 |
-|---:|:---|---:|
-| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 请求重试；确认Agent平台LLM服务正常 |
-| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
-| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
-| 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
 
-## 注意事项
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Azure有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+
 - 依赖云服务，需要网络连接
-- 需要有效的云服务凭证和配置好的CLI环境
-- 产生的云资源可能产生费用，使用前请确认计费方式
-- 不同区域的服务可用性和功能支持可能存在差异
-
-## 技术创新
-### 效率提升量化分析
-| 操作步骤 | 手动耗时 | 自动化耗时 | 时间节约 | 准确率提升 |
-|:-------|:-------|:-------|:-------|:-------|
-| 部署Azure资源 | 2小时 | 15分钟 | 1小时45分钟 | 95% |
-| 监控资源性能 | 4小时 | 1小时 | 3小时 | 98% |
-| 资源优化调整 | 6小时 | 30分钟 | 5小时30分钟 | 97% |
-| 故障告警处理 | 2小时 | 15分钟 | 1小时45分钟 | 95% |
-| 自动化报告生成 | 4小时 | 30分钟 | 3小时30分钟 | 98% |
-
-### 差异化对比
-| 对比维度 | 本技能 | 手动操作 | Python脚本 | 专业软件 |
-|:-------|:-------|:-------|:-------|:-------|
-| 操作便捷性 | 高 | 低 | 中 | 高 |
-| 功能全面性 | 高 | 低 | 中 | 高 |
-| 用户体验 | 高 | 低 | 中 | 高 |
-| 成本效益 | 高 | 低 | 中 | 高 |
-| 扩展性 | 高 | 低 | 中 | 高 |
-
-### 核心痛点解决
-| 痛点 | 描述 | 影响范围 | 解决方案 | 量化效果 |
-|:----|:----|:----|:----|:----|
-| 资源管理复杂 | Azure资源管理复杂，手动操作效率低 | 影响运维效率，增加成本 | 提供自动化工具，简化资源管理流程 | 提升效率50% |
-| 监控告警处理 | 监控告警处理繁琐，易遗漏 | 影响服务稳定性，增加维护成本 | 提供智能监控和告警系统 | 减少误报率30% |
-| 自动化程度低 | 运维自动化程度低，依赖人工操作 | 影响运维效率，增加人力成本 | 提供自动化工作流，减少人工干预 | 提升效率70% |
-
-## 常见问题FAQ
-
-### Q1: Azure云服务工具支持哪些Azure服务？
-A: Azure云服务工具支持Azure中的多种服务，包括虚拟机、虚拟网络、存储、数据库、Web应用等。
-
-### Q2: 如何配置Azure云服务工具的API Key？
-A: 在工具配置页面，输入API Key的值，并保存配置。
-
-### Q3: Azure云服务工具如何进行资源监控？
-A: 通过集成Azure Monitor API，工具可以实时监控资源性能，并生成可视化报告。
-
-### Q4: Azure云服务工具是否支持跨地域部署？
-A: 是的，Azure云服务工具支持跨地域部署，可以轻松管理不同地域的资源。
-
-### Q5: Azure云服务工具如何进行故障告警？
-A: 工具集成了Azure Monitor的告警功能，可以自动检测异常并推送告警信息。
-
-## 问题处理指引
-| 错误现象 | 可能原因 | 诊断步骤 | 解决方案 |
-|:-------|:-------|:-------|:-------|
-| 无法连接到Azure资源 | 网络问题或认证问题 | 检查网络连接和API Key | 修复网络问题或重新生成API Key |
-| 资源监控数据缺失 | 监控配置错误 | 检查监控配置和资源权限 | 修正监控配置或调整资源权限 |
-| 自动化工作流失败 | 依赖资源不可用 | 检查依赖资源状态 | 修复或等待资源可用 |
-| API调用超时 | 网络问题或服务端问题 | 检查网络连接和服务端状态 | 修复网络问题或联系服务端支持 |
-
-## 安全免责声明
-1. 确保API Key安全，避免泄露。
-2. 定期更新工具和依赖库，以修复安全漏洞。
-3. 使用强密码保护用户账户。
-4. 对敏感数据进行加密存储和传输。
-5. 定期进行安全审计，确保系统安全。
-
-### 安全风险防范
-
-| 风险项 | 等级 | 防护措施 | 验证方法 |
-| --- | --- | --- | --- |
-| API密钥泄露 | 高 | 通过环境变量配置，禁止硬编码 | 定期检查代码和配置文件 |
-| 命令执行风险 | 高 | 仅执行白名单命令，避免拼接用户输入 | 使用沙箱环境测试 |
-| 网络通信安全 | 中 | 使用HTTPS协议，验证SSL证书 | 定期检查证书有效期 |
-| 敏感数据暴露 | 高 | 输出结果中不包含密钥、令牌等敏感信息 | 日志脱敏审查 |
-| 未授权访问 | 中 | 限制访问权限，实施认证机制 | 定期审计访问日志 |
-
-## 功能介绍
-- **自动化执行**: 用经实战检验的模式部署监控管理Azure服务,稳定上云。Deploy, monitor, and manage Azur
-- **文件处理**: 支持多种文件格式的读取、解析和写入操作
-- **API集成**: 通过标准化接口调用外部服务并处理响应
-- **命令执行**: 在安全沙箱中执行系统命令并收集结果
-- **信息检索**: 快速搜索和过滤目标数据
-
-### Azure云服务工具通用排查步骤
-
-1. **检查输入参数**: 确认所有必填参数已提供且格式正确
-2. **查看日志输出**: 定位具体错误行和异常类型
-3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
-4. **逐步调试**: 缩小问题范围,隔离故障模块

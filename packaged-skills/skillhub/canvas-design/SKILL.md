@@ -2,16 +2,16 @@
 name: canvas-design
 slug: canvas-design
 displayName: "canvas-design"
-version: "1.0.4"
+version: "1.0.5"
 summary: "手工操作效率低易出错。智能化自动处理，canvas design场景效率提升3倍。"
-description: "手工操作效率低易出错。智能化自动处理，canvas design场景效率提升3倍。。> **核心功能**: 本技能提供、数据分析和流程编排时使用等能力。。适用于多种工作场景,提供专业的能力支持。提供专业能力支持,覆盖多场景工作流,支持自动化处理。支持多种输入格式,输出结构化结果,适配独立开发者与小型团队。"
+description: "手工操作效率低易出错。智能化自动处理，canvas design场景效率提升3倍。核心功能：自动化Development数据处理、结构化输入输出、批量操作与结果导出、内置错误恢复机制、多格式兼容与github来源验证。"
 license: "Proprietary"
 tools:
   - read
   - exec
 ---
 
-> **核心功能**: 本技能提供、数据分析和流程编排时使用等能力。
+> **核心功能**: 自动化Development数据处理、结构化输入输出、批量操作与结果导出、内置错误恢复机制、多格式兼容与github来源验证。
 
 # canvas-design
 

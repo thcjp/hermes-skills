@@ -1,0 +1,169 @@
+{
+  "slug": "tts-whatsapp-paid",
+  "started_at": "2026-08-03T20:54:25.331004",
+  "template_used": "direct_enhance",
+  "l1_result": {
+    "status": "PASS",
+    "passed": true,
+    "score": "15/15",
+    "details": {
+      "skill": "tts-whatsapp-paid",
+      "path": "d:\\skills\\packaged-skills\\skillhub\\tts-whatsapp-paid\\SKILL.md",
+      "overall_passed": true,
+      "total_checks": 15,
+      "passed_checks": 15,
+      "failed_checks": 0,
+      "checks": [
+        {
+          "name": "去标识化",
+          "passed": true,
+          "severity": "low",
+          "details": [
+            "无标识残留"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "slug==name==folder一致性",
+          "passed": true,
+          "severity": "high",
+          "details": [
+            "slug=name=folder='tts-whatsapp-paid'"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "slug为kebab-case",
+          "passed": true,
+          "severity": "high",
+          "details": [
+            "slug='tts-whatsapp-paid'"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "行数≤500",
+          "passed": true,
+          "severity": "high",
+          "details": [
+            "当前222行 (上限500)"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "frontmatter 8必需字段",
+          "passed": true,
+          "severity": "high",
+          "details": [
+            "8字段齐全: ['slug', 'name', 'version', 'displayName', 'summary', 'license', 'description', 'tools']"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "displayName≤20字符",
+          "passed": true,
+          "severity": "medium",
+          "details": [
+            "当前12字符: 'TTS WhatsApp' (上限20)"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "summary≤100字符",
+          "passed": true,
+          "severity": "medium",
+          "details": [
+            "当前37字符 (上限100)"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "description长度",
+          "passed": true,
+          "severity": "medium",
+          "details": [
+            "当前189字符 (建议150-280)"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "version格式",
+          "passed": true,
+          "severity": "high",
+          "details": [
+            "version='1.0.0'"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "tools为YAML数组",
+          "passed": true,
+          "severity": "low",
+          "details": [
+            "数组格式: ['read']"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "frontmatter无XML尖括号",
+          "passed": true,
+          "severity": "low",
+          "details": [
+            "无尖括号"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "无占位符",
+          "passed": true,
+          "severity": "medium",
+          "details": [
+            "无占位符"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "无夸大词",
+          "passed": true,
+          "severity": "medium",
+          "details": [
+            "无夸大词"
+          ],
+          "issue_count": 0
+        },
+        {
+          "name": "自动生成内容检测",
+          "passed": true,
+          "severity": "high",
+          "matched_markers": [],
+          "marker_count": 0,
+          "message": "内容为原创(未检测到自动生成标记)"
+        },
+        {
+          "name": "WAF内容长度",
+          "passed": true,
+          "severity": "info",
+          "content_length": 4877,
+          "waf_limit": 5800,
+          "message": "内容长度4877字符,合规(限制5800)"
+        }
+      ],
+      "checked_at": "2026-08-03T20:54:25.742609"
+    },
+    "duration_sec": 0.38
+  },
+  "dep_verify_result": {
+    "status": "SKIPPED"
+  },
+  "l2_result": {
+    "status": "SKIPPED"
+  },
+  "overall_passed": true,
+  "output_path": "d:\\skills\\packaged-skills\\skillhub\\tts-whatsapp-paid\\SKILL.md",
+  "errors": [],
+  "llm_generated": false,
+  "template_filled": false,
+  "all_placeholders_filled": true,
+  "completed_at": "2026-08-03T20:54:25.758925",
+  "total_duration_sec": 0.43
+}

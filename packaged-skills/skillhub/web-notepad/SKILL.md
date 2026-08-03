@@ -1,0 +1,523 @@
+---
+name: web-notepad
+slug: web-notepad
+displayName: "web-notepad"
+version: "1.0.0"
+summary: "经CLI与REST管表单/提交/用户/RBAC"
+description: "经CLI与REST管表单/提交/用户/RBAC。The skill appears to be a legitimate NetPad management tool, but it。触发关键词: legitimate, workflows, appears, build, mongodb, manage, data, forms,。"
+license: "MIT"
+tools:
+  - Read
+  - Write
+  - Edit
+  - Bash
+---
+
+# NetPad - Build forms, workflows and manage MongoDB data
+Manage forms, submissions, users, and RBAC via CLI and REST API.
+
+## Two Tools
+| Tool | Install | Purpose |
+| --- | --- | --- |
+| `netpad` CLI | `npm i -g @netpad/cli` | RBAC, marketplace, packages |
+| REST API | curl + API key | Forms, submissions, data |
+
+## Authentication
+```bash
+export NETPAD_API_KEY="[REDACTED]"  # Production
+export NETPAD_API_KEY="[REDACTED]"  # Test (can submit to drafts)
+```
+
+All requests use Bearer token:
+
+```bash
+curl -H "Authorization: Bearer $NETPAD_API_KEY" \
+  "https://www.netpad.io/api/v1/..."
+```
+
+---
+
+## Quick Reference
+| Task | Endpoint | Method |
+| --- | --- | --- |
+| List projects | `/projects` | GET |
+| List forms | `/forms` | GET |
+| Create form | `/forms` | POST |
+| Get form | `/forms/{formId}` | GET |
+| Update/publish form | `/forms/{formId}` | PATCH |
+| Delete form | `/forms/{formId}` | DELETE |
+| List submissions | `/forms/{formId}/submissions` | GET |
+| Create submission | `/forms/{formId}/submissions` | POST |
+| Get submission | `/forms/{formId}/submissions/{id}` | GET |
+| Delete submission | `/forms/{formId}/submissions/{id}` | DELETE |
+
+---
+
+## Projects
+Forms belong to projects. Get project ID before creating forms.
+
+```bash
+curl -H "Authorization: Bearer $NETPAD_API_KEY" \
+  "https://www.netpad.io/api/v1/projects" | jq '.data[] | {projectId, name}'
+```
+
+---
+
+## Forms
+### List Forms
+```bash
+curl -H "Authorization: Bearer $NETPAD_API_KEY" \
+  "https://www.netpad.io/api/v1/forms?status=published&pageSize=50"
+```
+
+### Create Form
+```bash
+curl -X POST -H "Authorization: Bearer $NETPAD_API_KEY" \
+  -H "Content-Type: application/json" \
+  "https://www.netpad.io/api/v1/forms" \
+  -d '{
+    "name": "Contact Form",
+    "description": "Simple contact form",
+    "projectId": "proj_",
+    "fields": [
+      {"path": "name", "label": "Name", "type": "text", "required": true},
+      {"path": "email", "label": "Email", "type": "email", "required": true},
+      {"path": "phone", "label": "Phone", "type": "phone"},
+      {"path": "message", "label": "Message", "type": "textarea"}
+    ]
+  }'
+```
+
+### Get Form Details
+```bash
+curl -H "Authorization: Bearer $NETPAD_API_KEY" \
+  "https://www.netpad.io/api/v1/forms/{formId}"
+```
+
+### Publish Form
+```bash
+curl -X PATCH -H "Authorization: Bearer $NETPAD_API_KEY" \
+  -H "Content-Type: application/json" \
+  "https://www.netpad.io/api/v1/forms/{formId}" \
+  -d '{"status": "published"}'
+```
+
+### Update Form Fields
+```bash
+curl -X PATCH -H "Authorization: Bearer $NETPAD_API_KEY" \
+  -H "Content-Type: application/json" \
+  "https://www.netpad.io/api/v1/forms/{formId}" \
+  -d '{
+    "fields": [
+      {"path": "name", "label": "Full Name", "type": "text", "required": true},
+      {"path": "email", "label": "Email Address", "type": "email", "required": true},
+      {"path": "company", "label": "Company", "type": "text"},
+      {"path": "role", "label": "Role", "type": "select", "options": [
+        {"value": "dev", "label": "Developer"},
+        {"value": "pm", "label": "Product Manager"},
+        {"value": "exec", "label": "Executive"}
+      ]}
+    ]
+  }'
+```
+
+### Delete Form
+```bash
+curl -X DELETE -H "Authorization: Bearer $NETPAD_API_KEY" \
+  "https://www.netpad.io/api/v1/forms/{formId}"
+```
+
+---
+
+## Submissions
+### Submit Data
+```bash
+curl -X POST -H "Authorization: Bearer $NETPAD_API_KEY" \
+  -H "Content-Type: application/json" \
+  "https://www.netpad.io/api/v1/forms/{formId}/submissions" \
+  -d '{
+    "data": {
+      "name": "John Doe",
+      "email": "john@example.com",
+      "message": "Hello from the API!"
+    }
+  }'
+```
+
+### List Submissions
+```bash
+curl -H "Authorization: Bearer $NETPAD_API_KEY" \
+  "https://www.netpad.io/api/v1/forms/{formId}/submissions?pageSize=50"
+
+curl -H "Authorization: Bearer $NETPAD_API_KEY" \
+  "https://www.netpad.startDate=2026-01-01T00:00:00Z"
+
+curl -H "Authorization: Bearer $NETPAD_API_KEY" \
+  "https://www.netpad.sortOrder=asc"
+```
+
+### Get Single Submission
+```bash
+curl -H "Authorization: Bearer $NETPAD_API_KEY" \
+  "https://www.netpad.io/api/v1/forms/{formId}/submissions/{submissionId}"
+```
+
+### Delete Submission
+```bash
+curl -X DELETE -H "Authorization: Bearer $NETPAD_API_KEY" \
+  "https://www.netpad.io/api/v1/forms/{formId}/submissions/{submissionId}"
+```
+
+---
+
+## Field Types
+| Type | Description | Validation |
+| --- | --- | --- |
+| `text` | Single line text | minLength, maxLength, pattern |
+| `email` | Email address | Built-in validation |
+| `phone` | Phone number | Built-in validation |
+| `number` | Numeric input | min, max |
+| `date` | Date picker | - |
+| `select` | Dropdown | options: [{value, label}] |
+| `checkbox` | Boolean | - |
+| `textarea` | Multi-line text | minLength, maxLength |
+| `file` | File upload | - |
+
+### Field Schema
+```json
+{
+  "path": "fieldName",
+  "label": "Display Label",
+  "type": "text",
+  "required": true,
+  "placeholder": "Hint text",
+  "helpText": "Additional guidance",
+  "options": [{"value": "a", "label": "Option A"}],
+  "validation": {
+    "minLength": 1,
+    "maxLength": 500,
+    "pattern": "^[A-Z].*",
+    "min": 0,
+    "max": 100
+  }
+}
+```
+
+---
+
+## Common Patterns
+### Create and Publish Form
+```bash
+RESULT=$(curl -s -X POST -H "Authorization: Bearer $NETPAD_API_KEY" \
+  -H "Content-Type: application/json" \
+  "https://www.netpad.io/api/v1/forms" \
+  -d '{"name":"Survey","projectId":"proj_","fields":[...]}')
+FORM_ID=$(echo $RESULT | jq -r '.data.id')
+
+curl -X PATCH -H "Authorization: Bearer $NETPAD_API_KEY" \
+  -H "Content-Type: application/json" \
+  "https://www.netpad.io/api/v1/forms/$FORM_ID" \
+  -d '{"status":"published"}'
+```
+
+### Export All Submissions
+```bash
+curl -H "Authorization: Bearer $NETPAD_API_KEY" \
+  "https://www.netpad.pageSize=1000" \
+  | jq '.data[].data'
+```
+
+### Bulk Submit
+```bash
+for row in $(cat data.json | jq -c '.[]'); do
+  curl -s -X POST -H "Authorization: Bearer $NETPAD_API_KEY" \
+    -H "Content-Type: application/json" \
+    "https://www.netpad.io/api/v1/forms/{formId}/submissions" \
+    -d "{\"data\":$row}"
+done
+```
+
+### Search Forms
+```bash
+curl -H "Authorization: Bearer $NETPAD_API_KEY" \
+  "https://www.netpad.io/api/v1/forms?search=contact&status=published"
+```
+
+---
+
+## Helper Script
+Use `scripts/netpad.sh` for common operations:
+
+```bash
+chmod +x scripts/netpad.sh
+
+./scripts/netpad.sh projects list
+./scripts/netpad.sh forms list published
+./scripts/netpad.sh forms create "Contact Form" proj_
+./scripts/netpad.sh forms publish frm_
+./scripts/netpad.sh submissions list frm_
+./scripts/netpad.sh submissions create frm_ '{"name":"John","email":"john@example.com"}'
+./scripts/netpad.sh submissions export frm_ > data.jsonl
+./scripts/netpad.sh submissions count frm_
+```
+
+---
+
+## Rate Limits
+| Limit | Value |
+| --- | --- |
+| Requests/hour | 1,000 |
+| Requests/day | 10,000 |
+
+Headers: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset`
+
+---
+
+## Response Format
+### Success
+```json
+{
+  "success": true,
+  "data": { ... },
+  "pagination": {"total": 100, "page": 1, "pageSize": 20, "hasMore": true},
+  "requestId": "uuid"
+}
+```
+
+### Error
+```json
+{
+  "success": false,
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "Description",
+    "details": {}
+  },
+  "requestId": "uuid"
+}
+```
+
+---
+
+## Environment Variables
+```bash
+export NETPAD_API_KEY="[REDACTED]"
+
+export NETPAD_BASE_URL="https://staging.netpad.io/api/v1"
+```
+
+---
+
+## NetPad CLI (@netpad/cli)
+Install: `npm i -g @netpad/cli`
+
+### Authentication
+```bash
+netpad login              # Opens browser
+netpad whoami             # Check auth status
+netpad logout             # Clear credentials
+```
+
+### Marketplace & Packages
+```bash
+netpad search "helpdesk"
+
+netpad install @netpad/helpdesk-app
+
+netpad list
+
+netpad create-app my-app
+
+netpad submit ./my-app
+```
+
+### RBAC - Users
+```bash
+netpad users list -o org_
+
+netpad users add user@example.com -o org_ --role member
+
+netpad users update user@example.com -o org_ --role admin
+
+netpad users remove user@example.com -o org_
+```
+
+### RBAC - Groups
+```bash
+netpad groups list -o org_
+
+netpad groups create "Engineering" -o org_
+
+netpad groups add-member grp_ user@example.com -o org_
+
+netpad groups delete grp_ -o org_
+```
+
+### RBAC - Roles
+```bash
+netpad roles list -o org_
+
+netpad roles create "Reviewer" -o org_ --base viewer --description "Can review submissions"
+
+netpad roles get role_ -o org_
+
+netpad roles delete role_ -o org_
+```
+
+### RBAC - Assignments
+```bash
+netpad assign user user@example.com role_ -o org_
+
+netpad assign group grp_ role_ -o org_
+
+netpad unassign user user@example.com role_ -o org_
+```
+
+### RBAC - Permissions
+```bash
+netpad permissions list -o org_
+
+netpad permissions check user@example.com -o org_
+```
+
+---
+
+## References
+* `references/api-endpoints.md` — Complete REST API endpoint docs
+* `references/cli-commands.md` — Full CLI command reference
+
+---
+
+## Author
+**Michael Lynn** — Principal Staff Developer Advocate at MongoDB
+
+* 🌐 Website: 
+* 🐙 GitHub: 
+* 💼 LinkedIn: 
+
+## 依赖说明
+### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent( Code / Cursor / Codex /  CLI等)
+- **操作系统**: Windows / macOS / Linux
+
+### 依赖说明
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:-------|:-----|:---------|:---------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+- 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
+
+### 可用性分类
+- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+
+## 核心能力
+- The skill appears to be a legitimate NetPad management tool, but it
+  gives an agent powerful delet
+- 触发关键词: legitimate, workflows, appears, build, mongodb, manage, data, forms,
+
+## 适用场景
+| 场景 | 输入 | 输出 |
+|------|------|------|
+| 基础使用 | 用户请求 | 处理结果 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 示例
+### 示例1：基础用法
+```
+
+```
+
+## 错误处理
+| 错误场景 | 原因 | 处理方式 |
+|---------|------|---------|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 常见问题
+### Q1: 如何开始使用Netpad？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 遇到错误怎么办？
+A: 请参考错误处理章节，按照表格中的处理方式操作。
+
+### Q3: Netpad有什么限制？
+A: 请参考已知限制章节了解具体限制。
+
+## 已知限制
+- 需要API Key，无Key环境无法使用
+
+---
+## 边界条件与限制
+
+### 输入限制
+- **API Key**: NetPad技能的使用需要有效的API Key，无Key环境无法使用。
+- **数据格式**: 在创建表单或提交数据时，必须遵守JSON格式要求。
+- **字段类型**: 支持的字段类型有限，包括文本、电子邮件、电话、数字、日期、下拉菜单、复选框、多行文本和文件上传。
+
+### 性能边界
+- **请求频率**: 每小时最多1,000个请求，每天最多10,000个请求。
+- **数据量**: 单个请求处理的数据量有限，特别是对于大型表单或大量提交。
+
+### 兼容性约束
+- **操作系统**: 支持Windows、macOS和Linux操作系统。
+- **LLM API**: 必须由支持SKILL.md的AI Agent提供LLM API。
+- **CLI工具**: `netpad` CLI工具需要全局安装，并且需要配置正确的API Key和基础URL。
+
+### 其他限制
+- **字段验证**: 部分字段类型（如文本、电子邮件、电话）具有内置验证规则，无法自定义。
+- **批量操作**: 批量提交数据或删除操作可能受到性能限制，建议分批次进行。
+- **角色权限**: RBAC功能可能受到组织级别的权限限制，具体权限由组织管理员配置。
+
+## 边界条件与限制
+
+### 输入限制
+- **API Key**: NetPad技能的使用需要有效的API Key，无Key环境无法使用。
+- **数据格式**: 在创建表单或提交数据时，必须遵守JSON格式要求。
+- **字段类型**: 支持的字段类型有限，包括文本、电子邮件、电话、数字、日期、下拉菜单、复选框、多行文本和文件上传。
+
+### 性能边界
+- **请求频率**: 每小时最多1,000个请求，每天最多10,000个请求。
+- **数据量**: 单个请求处理的数据量有限，特别是对于大型表单或大量提交。
+
+### 兼容性约束
+- **操作系统**: 支持Windows、macOS和Linux操作系统。
+- **LLM API**: 必须由支持SKILL.md的AI Agent提供LLM API。
+- **CLI工具**: `netpad` CLI工具需要全局安装，并且需要配置正确的API Key和基础URL。
+
+### 其他限制
+- **字段验证**: 部分字段类型（如文本、电子邮件、电话）具有内置验证规则，无法自定义。
+- **批量操作**: 批量提交数据或删除操作可能受到性能限制，建议分批次进行。
+- **角色权限**: RBAC功能可能受到组织级别的权限限制，具体权限由组织管理员配置。
+
+## 边界条件与限制
+
+### 输入限制
+- **API Key**: NetPad技能的使用需要有效的API Key，无Key环境无法使用。
+- **数据格式**: 在创建表单或提交数据时，必须遵守JSON格式要求。
+- **字段类型**: 支持的字段类型有限，包括文本、电子邮件、电话、数字、日期、下拉菜单、复选框、多行文本和文件上传。
+
+### 性能边界
+- **请求频率**: 每小时最多1,000个请求，每天最多10,000个请求。
+- **数据量**: 单个请求处理的数据量有限，特别是对于大型表单或大量提交。
+
+### 兼容性约束
+- **操作系统**: 支持Windows、macOS和Linux操作系统。
+- **LLM API**: 必须由支持SKILL.md的AI Agent提供LLM API。
+- **CLI工具**: `netpad` CLI工具需要全局安装，并且需要配置正确的API Key和基础URL。
+
+### 其他限制
+- **字段验证**: 部分字段类型（如文本、电子邮件、电话）具有内置验证规则，无法自定义。
+- **批量操作**: 批量提交数据或删除操作可能受到性能限制，建议分批次进行。
+- **角色权限**: RBAC功能可能受到组织级别的权限限制，具体权限由组织管理员配置。
+
+---
