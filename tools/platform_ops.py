@@ -31,6 +31,36 @@ API_BASE = "https://api.skillhub.cn/api/v1"
 COMMUNITY_PUBLISH_API = f"{API_BASE}/community/skills/publish"
 ORG_ADMIN_SKILLS_API = f"{API_BASE}/orgs/{ORG_ID}/admin/skills"
 
+# V186: publisherProfileId — 从API动态获取,有缓存
+_PUBLISHER_PROFILE_ID = None
+
+def _get_publisher_profile_id():
+    """从SkillHub API获取publisher profile ID (智创未来=1508)"""
+    global _PUBLISHER_PROFILE_ID
+    if _PUBLISHER_PROFILE_ID:
+        return _PUBLISHER_PROFILE_ID
+    try:
+        auth = _load_auth()
+        if not auth:
+            return None
+        url = f"{API_BASE}/orgs/{ORG_ID}/admin/publisher-profiles"
+        headers = {'Accept': 'application/json'}
+        if auth.startswith('BEARER:'):
+            headers['Authorization'] = f'Bearer {auth[7:]}'
+        else:
+            headers['Cookie'] = auth
+        req = Request(url, headers=headers, method='GET')
+        with urlopen(req, timeout=15) as resp:
+            data = json.loads(resp.read().decode('utf-8'))
+            profiles = data.get('profiles', [])
+            for p in profiles:
+                if p.get('auditStatus') == 'passed':
+                    _PUBLISHER_PROFILE_ID = p.get('id')
+                    return _PUBLISHER_PROFILE_ID
+    except Exception as e:
+        print(f"[WARN] 获取publisherProfileId失败: {e}")
+    return None
+
 # 认证 (与 enterprise_uploader.py load_cookies 一致)
 COOKIE_FILE = Path(os.environ.get(
     'SKILLHUB_COOKIE_FILE',
@@ -122,8 +152,10 @@ def post_upload_publish(slug: str) -> dict:
 
     # 2. Publish to community — 发布到社区
     try:
+        publisher_id = _get_publisher_profile_id()
+        publish_body = json.dumps({'publisherProfileId': publisher_id}).encode('utf-8') if publisher_id else b'{}'
         publish_url = f"{ORG_ADMIN_SKILLS_API}/{slug}/publish-to-community"
-        req = Request(publish_url, data=b'{}', headers=_build_headers(auth), method='POST')
+        req = Request(publish_url, data=publish_body, headers=_build_headers(auth), method='POST')
         with urlopen(req, timeout=15) as resp:
             resp_data = json.loads(resp.read().decode('utf-8'))
             result['community'] = {'success': True, 'message': '已发布到社区', 'data': resp_data}
