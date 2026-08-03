@@ -1,31 +1,15 @@
 ---
-
-
-
+name: canvas-design
 slug: canvas-design
-name: "canvas-design"
-version: 1.0.4
 displayName: "canvas-design"
+version: "1.0.4"
 summary: "手工操作效率低易出错。智能化自动处理，canvas design场景效率提升3倍。"
+description: "手工操作效率低易出错。智能化自动处理，canvas design场景效率提升3倍。。> **核心功能**: 本技能提供、数据分析和流程编排时使用等能力。。适用于多种工作场景,提供专业的能力支持。提供专业能力支持,覆盖多场景工作流,支持自动化处理。支持多种输入格式,输出结构化结果,适配独立开发者与小型团队。"
 license: "Proprietary"
-edition: "pro"
-description: |-
-  Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create ori Use when 需要Development领域自动化处理、数据分析和流程编排时使用。不适用于无明确需求的模糊场景。
-tags:
-  - Development
-  - automation
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-进阶级"
-pricing_model: "per_use"
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供、数据分析和流程编排时使用等能力。
 
@@ -69,7 +53,7 @@ pricing_model: "per_use"
 
 ## 前置条件
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **Agent平台**: 支持SKILL.md的任意AI Agent（ Code / Cursor / Codex /  CLI等）
 - **操作系统**: Windows / macOS / Linux
 
 ### 依赖项

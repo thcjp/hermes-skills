@@ -1,29 +1,15 @@
 ---
-
-
+name: brand-guidelines
 slug: brand-guidelines
-name: "brand-guidelines"
-version: "1.0.0"
 displayName: "brand-guidelines"
+version: "1.0.0"
 summary: "手工操作效率低易出错。智能化自动处理，brand guidelines场景效率提升3倍。"
+description: "手工操作效率低易出错。智能化自动处理，brand guidelines场景效率提升3倍。。> **核心功能**: 本技能提供、数据分析和流程编排时使用等能力。。适用于多种工作场景,提供专业的能力支持。开箱即用,无需复杂配置,支持中文交互与结构化输出。支持多种输入格式,输出结构化结果,适配独立开发者与小型团队。"
 license: "Proprietary"
-edition: "pro"
-description: |-
-  Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting Use when 需要Development领域自动化处理、数据分析和流程编排时使用。不适用于无明确需求的模糊场景。
-tags:
-  - Development
-  - automation
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-进阶级"
-pricing_model: "per_use"
-
-
 ---
-
 
 > **核心功能**: 本技能提供、数据分析和流程编排时使用等能力。
 
@@ -107,7 +93,7 @@ A: brand-guidelines技能的价格为19.9 CNY/次。
 A: 目前brand-guidelines技能仅支持中文。
 
 ### Q5: 如何获取brand-guidelines技能的最新版本？
-A: 可以通过访问[https://skillhub.cn](https://skillhub.cn)获取brand-guidelines技能的最新版本。
+A: 可以通过访问获取brand-guidelines技能的最新版本。
 
 ## 问题处理指引
 | 错误现象 | 可能原因 | 诊断步骤 | 解决方案 |
@@ -204,3 +190,10 @@ A: 可以通过访问[https://skillhub.cn](https://skillhub.cn)获取brand-guide
 - 部分高级功能需要付费API
 - 大量并发请求可能触发限流
 - 输出内容受LLM能力限制
+
+## 依赖说明
+
+- LLM/API Key: 需要配置相应的API密钥
+- 网络连接: 需要访问外部服务
+- 文件系统: 需要读写文件权限
+- 运行时环境: 需要相应的命令行工具

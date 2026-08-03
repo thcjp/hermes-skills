@@ -1,0 +1,213 @@
+================================================================================
+        垃圾 Skill 识别 - 数据库查询结果报告
+        数据库: d:\skills\skill-registry.db
+        执行日期: 2026-08-03
+================================================================================
+
+【数据库结构关键说明】
+1. skills 表共有 51 列 (3408 行)。相关列:
+   - slug, current_name (注意: 不是 'name'), current_status, source_slug,
+     parent_slug, local_path, skillhub_sync_status, current_score, grade, notes, summary
+   - skills 表【没有】 reason / deletion_reason 列。
+2. trace_llm 分值存储在 scores 表:
+   - scores.score_type='trace_llm' 的记录, 分值取 scores.total_score (范围 4~50, pass_threshold=42)
+   - 每个 skill 取 is_current=1 的最新分; 共 3301 个 skill 有当前 trace_llm 分。
+   - 393 个 deleted skill 没有当前 trace_llm 分记录。
+3. 删除原因实际存储在 operations 表的 details 字段 (operation_type 含 delete/garbage_cleanup 等)。
+4. body_missing / no_dir 两个标识【在全库中均不存在】(已搜索 operations/skills/scores/
+   workflow_states/skills_fts/sources/versions 全部文本列, 含变体, 0 匹配)。
+
+================================================================================
+查询1: current_status='deleted' 且 trace_llm < 30 的 skill
+  (trace_llm = scores.total_score, score_type='trace_llm', is_current=1)
+  字段: slug, name, trace_llm, source_slug, parent_slug, local_path
+================================================================================
+结果总数: 908 行
+trace_llm 范围: 18 ~ 20, 平均: 20.00
+  (注: 这些 deleted skill 的 trace_llm 几乎全部为 20, 即 "Auto-deleted: trace_llm=20" 阈值删除)
+
+【特征观察】
+  - 绝大多数 source_slug 为空 (NULL), 但 parent_slug 非空 => 多为差异化生成的 free/pro 版本
+  - local_path 多位于 d:\skills\differentiated-skills\ 下
+
+样本 (前 24 行, 按 trace_llm 升序):
+  slug                                  | name                    | trace_llm | source_slug | parent_slug            | local_path
+  performance-optimizer-pro             | (空)                    | 18        | (空)        | (空)                   | d:\skills\opensource-skills\packaged\performance-optimizer-pro
+  accounting-finance-tool-pro           | accounting-finance-tool-pro | 20     | (空)        | accounting-finance-tool| d:\skills\differentiated-skills\Finance\accounting-finance-tool-pro
+  ace-music-tool-free                   | ace-music-tool-free     | 20        | (空)        | ace-music-tool         | d:\skills\differentiated-skills\Creative\ace-music-tool-free
+  ace-music-tool-pro                    | ace-music-tool-pro      | 20        | (空)        | ace-music-tool         | d:\skills\differentiated-skills\Creative\ace-music-tool-pro
+  actor-identifier-tool-free            | actor-identifier-tool-free| 20      | (空)        | actor-identifier-tool  | d:\skills\differentiated-skills\Development\actor-identifier-tool-free
+  actor-identifier-tool-pro             | actor-identifier-tool-pro| 20       | (空)        | actor-identifier-tool  | d:\skills\differentiated-skills\Development\actor-identifier-tool-pro
+  agent-assistant-pro                   | agent-assistant-pro     | 20        | (空)        | agent-assistant        | d:\skills\differentiated-skills\Other\agent-assistant-pro
+  ai-finance-free                       | ai-finance-free         | 20        | (空)        | (空)                   | d:\skills\packaged-skills\skillhub\ai-finance-free
+  ai-image-gen-tool-free                | ai-image-gen-tool-free  | 20        | (空)        | ai-image-gen-tool      | d:\skills\differentiated-skills\Creative\ai-image-gen-tool-free
+  ai-image-gen-tool-pro                 | ai-image-gen-tool-pro   | 20        | (空)        | ai-image-gen-tool      | d:\skills\differentiated-skills\Creative\ai-image-gen-tool-pro
+  ai-image-prompt-tool-free             | ai-image-prompt-tool-free| 20       | (空)        | ai-image-prompt-tool   | d:\skills\differentiated-skills\Creative\ai-image-prompt-tool-free
+  ai-news-tool-free                     | ai-news-tool-free       | 20        | (空)        | ai-news-tool           | d:\skills\differentiated-skills\Research\ai-news-tool-free
+  ai-podcast-tool-free                  | ai-podcast-tool-free    | 20        | (空)        | ai-podcast-tool        | d:\skills\differentiated-skills\Creative\ai-podcast-tool-free
+  amap-jsapi-2                          | amap-jsapi-tool-free    | 20        | (空)        | amap-jsapi-tool        | d:\skills\differentiated-skills\Security\amap-jsapi-tool-free
+  amap-jsapi-tool-free                  | (空)                    | 20        | (空)        | (空)                   | d:\skills\differentiated-skills\Security\amap-jsapi-tool-free
+  api-dev-tool-free                     | api-dev-tool-free       | 20        | (空)        | api-dev-tool           | d:\skills\differentiated-skills\Knowledge\api-dev-tool-free
+  apple-health-tool-free                | apple-health-tool-free  | 20        | (空)        | apple-health-tool      | d:\skills\differentiated-skills\Lifestyle\apple-health-tool-free
+  apple-health-tool-pro                 | apple-health-tool-pro   | 20        | (空)        | apple-health-tool      | d:\skills\differentiated-skills\Lifestyle\apple-health-tool-pro
+  archive-tool-free                     | archive-tool-free       | 20        | (空)        | archive-tool           | d:\skills\differentiated-skills\Tools\archive-tool-free
+  audit                                 | audit                   | 20        | audit       | audit-toolkit          | d:\skills\differentiated-skills\Security\audit
+  audit-toolkit-pro                     | audit-toolkit-pro       | 20        | (空)        | audit-toolkit          | d:\skills\differentiated-skills\Security\audit-toolkit-pro
+  auto-file-organizer-pro               | auto-file-organizer-pro | 20        | (空)        | auto-file-organizer    | d:\skills\differentiated-skills\Tools\auto-file-organizer-pro
+  auto-monitor-4                        | auto-monitor-tool-free  | 20        | (空)        | auto-monitor-tool      | d:\skills\differentiated-skills\Tools\auto-monitor-tool-free
+  auto-updater-tool-free                | auto-updater-tool-free  | 20        | (空)        | auto-updater-tool      | d:\skills\differentiated-skills\Tools\auto-updater-tool-free
+
+完整 908 行结果见: d:\skills\query1_deleted_trace_llm_lt30.csv
+
+================================================================================
+查询2: current_status='deleted' 且 reason/deletion_reason 含 'body_missing' 或 'no_dir'
+================================================================================
+直接结果: 0 行 (无匹配)
+原因: skills 表无 reason/deletion_reason 列; 且 'body_missing' / 'no_dir' 标识在全库不存在。
+
+【补充】deleted skill 实际删除原因分布 (operations.details, 按操作类型):
+  operation_type        | 数量 | details(原因)
+  ----------------------+------+-----------------------------------------------------------
+  delete                | 197  | "Auto-deleted: trace_llm=20 or grade=C, score=X, source=..."
+                        |      |   (低分自动删除, score 范围 3.85~4.8, source 多为 differentiated)
+  garbage_cleanup       |  30  | "Hard deleted garbage skill: slug=..., id=..." (硬删除垃圾)
+                         (注: garbage_cleanup 总45条, 其中30条关联到现存 deleted skill, 其余已硬删除不在 skills 表)
+  orphan_governance     |   2  | "Marked as deprecated (round-1 orphan, source_slug=...)"
+  mark_not_found        |   1  | "SKILL.md file does not exist in filesystem" (skill_id=1850, slug=ai-video-director)
+  disk_cleanup          |   0  | (1条全局操作: "Cleaned disk files for 1628 deleted skills, preserved 437 source skills")
+
+  delete 操作 details 的具体分布 (top):
+    [51x] Auto-deleted: trace_llm=20 or grade=C, score=4.2,  source=differentiated
+    [28x] Auto-deleted: trace_llm=20 or grade=C, score=4.15, source=differentiated
+    [22x] Auto-deleted: trace_llm=20 or grade=C, score=4.05, source=differentiated
+    [17x] Auto-deleted: trace_llm=20 or grade=C, score=4.3,  source=differentiated
+    [14x] Auto-deleted: trace_llm=20 or grade=C, score=4.5,  source=differentiated
+    [13x] Auto-deleted: trace_llm=20 or grade=C, score=4.25, source=differentiated
+    ... 等
+
+结论: 当前数据库中删除原因均为 "trace_llm=20 低分自动删除" 或 "垃圾硬删除",
+      不存在 body_missing / no_dir 类型的删除标识。
+
+================================================================================
+查询3: trace_llm < 45 的所有 skill (不论 current_status)
+  字段: slug, name, trace_llm, current_status, skillhub_sync_status
+================================================================================
+结果总数: 2432 行
+
+【按 current_status 分布】
+  current_status        | count | min | max | avg
+  ----------------------+-------+-----+-----+------
+  deleted               |   915 |  18 |  43 | 20.16
+  deleted_on_skillhub   |   896 |   4 |  44 | 20.12
+  local_only            |   391 |  20 |  44 | 41.16
+  synced_from_skillhub  |    85 |  19 |  20 | 19.96
+  active                |    75 |  18 |  20 | 19.73
+  differentiated        |    64 |  19 |  20 | 19.93
+  updated               |     3 |  20 |  42 | 27.33
+  registered            |     3 |  20 |  20 | 20.00
+
+【按 skillhub_sync_status 分布】
+  pending_upload: 2280
+  unknown:        146
+  not_applicable:   6
+
+样本 (前 20 行, 按 trace_llm 升序):
+  slug                          | name                    | trace_llm | current_status       | skillhub_sync_status
+  google-workspace-mcp-free     | google-workspace-mcp-free|  4        | deleted_on_skillhub  | pending_upload
+  pg-mcp-skills                 | pg-mcp-skills-pro        |  4        | deleted_on_skillhub  | pending_upload
+  auth-security-architect       | auth-security-architect  | 17        | deleted_on_skillhub  | pending_upload
+  figma-studio-free             | figma-studio-free        | 17.5      | deleted_on_skillhub  | pending_upload
+  docx-document-master          | docx-document-master     | 18        | deleted_on_skillhub  | pending_upload
+  legal-assistant-pro           | legal-assistant-pro      | 18        | active               | pending_upload
+  performance-optimizer         | performance-optimizer-pro| 18        | active               | pending_upload
+  performance-optimizer-pro     | (空)                    | 18        | deleted              | unknown
+  persistent-memory-engine-free | persistent-memory-engine-free| 18     | active               | pending_upload
+  pptx-presentation             | pptx-presentation-pro    | 18        | active               | pending_upload
+  graph-query-tool-free         | graph-query-tool-free    | 18.5      | deleted_on_skillhub  | pending_upload
+  meta-agent-optimizer-free     | meta-agent-optimizer-free| 18.5      | deleted_on_skillhub  | pending_upload
+  multi-search-tool-pro         | multi-search-tool-pro    | 18.5      | deleted_on_skillhub  | pending_upload
+  password-generator-4          | password-generator-tool-free| 18.5   | deleted_on_skillhub  | pending_upload
+  password-generator-tool-free  | (空)                    | 18.5      | active               | unknown
+  reddit-research-tool-free     | reddit-research-tool-free| 18.5      | deleted_on_skillhub  | pending_upload
+  agent-chat                    | agent-chatroom           | 19        | synced_from_skillhub | pending_upload
+  api-dev-tool-pro              | api-dev-tool-pro         | 19        | deleted_on_skillhub  | pending_upload
+  aws-agent-orchestrator-pro    | aws-agent-orchestrator-pro| 19       | deleted_on_skillhub  | pending_upload
+  aws-cloud-inspector-pro       | aws-cloud-inspector-pro  | 19        | deleted_on_skillhub  | pending_upload
+
+完整 2432 行结果见: d:\skills\query3_trace_llm_lt45_all.csv
+
+================================================================================
+查询4: current_status 各值数量统计
+================================================================================
+  current_status        |  count | percent
+  ----------------------+--------+--------
+  deleted               |   1609 |  47.2%
+  deleted_on_skillhub   |    941 |  27.6%
+  local_only            |    531 |  15.6%
+  active                |    170 |   5.0%
+  synced_from_skillhub  |     87 |   2.6%
+  differentiated        |     64 |   1.9%
+  registered            |      3 |   0.1%
+  updated               |      3 |   0.1%
+  ----------------------+--------+--------
+  TOTAL                 |   3408 | 100.0%
+
+结论: deleted + deleted_on_skillhub 合计 2550 (74.8%), 即近 3/4 的 skill 处于删除状态。
+
+================================================================================
+查询5: 有 source_slug 但 current_status='deleted' 的 skill 数量,
+      及其中 parent_slug 非空的数量
+================================================================================
+  有 source_slug 且 deleted 的 skill 数量:     699
+    其中 parent_slug 非空的数量:               271  (占 38.8%)
+    其中 parent_slug 为空的数量:               428  (占 61.2%)
+
+样本 - parent_slug 非空 (前 15 条):
+  slug=ai-image-prompt-2         | source_slug=ai-image-generation-prompts-9142af54 | parent_slug=ai-image-prompt
+  slug=ai-news-2                 | source_slug=ai-news                              | parent_slug=ai-news-paid
+  slug=amap-jsapi-free           | source_slug=amap-jsapi-skill                     | parent_slug=amap-jsapi
+  slug=anygen-diagram-free       | source_slug=anygen-diagram-generator             | parent_slug=anygen-diagram
+  slug=api-dev-2                 | source_slug=api-development                      | parent_slug=api-dev
+  slug=apple-health-2            | source_slug=apple-health-skill                   | parent_slug=apple-health
+  slug=audio-stream-upload-2     | source_slug=audio-upload-aioz-stream             | parent_slug=audio-stream-upload
+  slug=audit                     | source_slug=audit                                | parent_slug=audit-toolkit
+  slug=auto-monitor-free         | source_slug=auto-monitor                         | parent_slug=auto-monitor-paid
+  slug=aws-cost-optimizer-2      | source_slug=sovereign-aws-cost-optimizer         | parent_slug=aws-cost-optimizer
+  slug=azure-agent-framework-free| source_slug=agent-framework-azure-ai-py          | parent_slug=azure-agent-framework
+  slug=azure-devops-2            | source_slug=azure-devops                         | parent_slug=azure-devops-paid
+  slug=azure-transcription-free  | source_slug=azure-ai-transcription-py            | parent_slug=azure-transcription
+  slug=azure-voicelive-2         | source_slug=azure-ai-voicelive-py                | parent_slug=azure-voicelive
+  slug=bailian-search-free       | source_slug=bailian-web-search                   | parent_slug=bailian-search
+
+样本 - 有 source_slug 但 parent_slug 为空 (前 12 条):
+  slug=agent-2                   | source_slug=agent-sk                  | parent_slug=(空) | local_path=/d/skills/packaged-skills/skillhub/agent...
+  slug=agent-commercial-contract-2| source_slug=agent-commercial-contract-sk | parent_slug=(空) | ...
+  slug=agent-copilot-pro-2       | source_slug=agent-copilot-pro-sk       | parent_slug=(空) | ...
+  slug=agent-group-2             | source_slug=agent-group-sk             | parent_slug=(空) | ...
+  slug=agent-knowledge-2         | source_slug=agent-knowledge-sk         | parent_slug=(空) | ...
+  slug=ai-artist-workstation-2   | source_slug=ai-artist-workstation-sk   | parent_slug=(空) | ...
+  slug=ai-image-gen-3            | source_slug=ai-image-gen-sk            | parent_slug=(空) | ...
+  slug=ai-news-4                 | source_slug=ai-news-sk                 | parent_slug=(空) | ...
+  slug=ai-podcast-3              | source_slug=ai-podcast-sk              | parent_slug=(空) | ...
+  slug=aic-dashboard-2           | source_slug=aic-dashboard-sk           | parent_slug=(空) | ...
+  slug=alephnet-node-2           | source_slug=alephnet-node-sk           | parent_slug=(空) | ...
+  slug=alibaba-quark-scan-2      | source_slug=alibaba-quark-scan-sk      | parent_slug=(空) | ...
+
+================================================================================
+【综合结论 - 垃圾 Skill 识别】
+1. 主要垃圾特征: trace_llm=20 (远低于 pass_threshold=42) 的自动删除 skill, 共 908 个
+   (查询1), 它们多为差异化生成的 free/pro 版本 (parent_slug 非空, source_slug 为空)。
+2. 全库 3408 个 skill 中, 2550 个 (74.8%) 处于 deleted/deleted_on_skillhub 状态 (查询4)。
+3. trace_llm<45 的 2432 个 skill 中, deleted(915)+deleted_on_skillhub(896)=1811 个已删除,
+   但仍有 75 个 active + 64 个 differentiated + 85 个 synced_from_skillhub + 391 local_only
+   等低分 skill 未被删除, 可作为进一步清理候选。
+4. body_missing / no_dir 删除标识在当前数据库中不存在; 实际删除原因为
+   "trace_llm=20 低分自动删除" 与 "垃圾硬删除"。
+5. 699 个有 source_slug 的 deleted skill 中, 271 个 (38.8%) 仍保留 parent_slug 关联,
+   说明其差异化父版本仍存在, 删除时未级联清理父子关系。
+
+================================================================================
+附: 完整结果文件
+  - d:\skills\query1_deleted_trace_llm_lt30.csv  (908 行, 查询1完整结果)
+  - d:\skills\query3_trace_llm_lt45_all.csv       (2432 行, 查询3完整结果)
+================================================================================

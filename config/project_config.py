@@ -151,6 +151,7 @@ LOCAL_QUALITY_PASS_THRESHOLD = 4.5
 LOCAL_QUALITY_GRADE_B = 3.5
 LOCAL_QUALITY_GRADE_C = 2.5
 DEFAULT_DEEPSEEK_ENDPOINT = "https://api.deepseek.com/v1/chat/completions"
+DEFAULT_SILICONFLOW_ENDPOINT = "https://api.siliconflow.cn/v1/chat/completions"
 CLAWHUB_DRY_RUN = False  # 非dry_run模式
 
 # ============ 平台统一配置 (pipeline使用) ============

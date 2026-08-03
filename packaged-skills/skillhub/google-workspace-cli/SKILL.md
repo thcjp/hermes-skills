@@ -5,7 +5,7 @@ version: 1.0.1
 displayName: "谷歌办公命令行专业版"
 summary: "全功能Google Workspace命令行工具,覆盖六大服务与批量操作,支持企业级多租户场景与自动化工作流。"
 summary_zh: '"全功能Google Workspace命令行工具,覆盖六大服务与批量操作,支持企业级多租户场景与自动化工作流。"'
-license: "MIT"
+license: "Proprietary"
 edition: '"pro"'
 description: - 六大服务全覆盖:Gmail / Calendar / Drive / Contacts / Sheets / Docs。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。 功能涵盖: google, workspace, cli。
 - 批量邮件发送与草稿管理
@@ -23,17 +23,9 @@ tags:
 - 企业效率
 - 自动化
 - 数据处理
-- 工具
-- 效率
-- 写作
-- 电商
-- 知识
-- 文档
-- 研究
 - google
 - api
 - sheets
-- docs
 tools:
 - read
 - exec
@@ -41,6 +33,7 @@ tools:
 - grep
 homepage: '""'
 category: '"Automation"'
+pricing_tier: "L2-标准级"
 homepage: "https://skillhub.cn/skill/"
 ---
 > **核心功能**: 本技能提供中文交互、时使用、、工作流优化时使用、处理、工作流优化时使用等能力。

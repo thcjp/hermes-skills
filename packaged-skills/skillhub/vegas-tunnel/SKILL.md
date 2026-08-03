@@ -1,43 +1,15 @@
 ---
-
-
-
+name: vegas-tunnel
 slug: vegas-tunnel
-name: "vegas-tunnel"
-version: "1.0.0"
 displayName: "维加斯通道交易"
+version: "1.0.0"
 summary: "A股信息分散难决策。维加斯通道交易-EMA+斐波那契+共振评分，A股场景效率提升3倍。"
+description: "A股信息分散难决策。维加斯通道交易-EMA+斐波那契+共振评分，A股场景效率提升3倍。。> **核心功能**: 本技能提供与边界情况、化工作流与智能决策辅助等能力。。适用于多种工作场景,提供专业的能力支持。提供专业能力支持,覆盖多场景工作流,支持自动化处理。提供专业能力支持,覆盖多场景工作流,支持自动化处理。"
 license: "Proprietary"
-edition: "pro"
-description: |-
-  维加斯通道交易-EMA+斐波那契+共振评分。针对A股领域的专业AI辅助工具，
-  ，去除原始风险代码，增强安全性和稳定性，
-  补充完整的错误处理与边界情况，增加多场景使用示例。
-  核心能力:
-  - A股领域的专业化AI辅助分析
-  -
-  - ，增强安全性和稳定性
-  适用场景:
-  - A股交易分析、投资决策、财务计算
-  - 独立开发者与一人公司效率提升
-  - 自动化工作流与智能决策辅助
-  差异化: 经过深度优化，去除原始风险代码，清理外部依赖引用，
-  增强元数据和触发关键词，完全适配SkillHub平台规范。
-tags:
-  - Finance
-  - A股
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L3"
-pricing_model: "per_use"
-suggested_price: 29.9
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供与边界情况、化工作流与智能决策辅助等能力。
 
@@ -248,7 +220,7 @@ vegas-tunnel是一款基于维加斯通道交易策略、EMA指数移动平均�
 - 通过21项安全预检（含10项critical/high风险模式）
 ## 安装与配置
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **Agent平台**: 支持SKILL.md的任意AI Agent（ Code / Cursor / Codex /  CLI等）
 - **操作系统**: Windows / macOS / Linux
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |

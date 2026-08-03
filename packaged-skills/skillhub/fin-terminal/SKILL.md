@@ -1,43 +1,15 @@
 ---
-
-
-
+name: fin-terminal
 slug: fin-terminal
-name: "fin-terminal"
-version: "1.0.0"
 displayName: "金融数据终端"
+version: "1.0.0"
 summary: "财务分析专业门槛高。金融数据终端-多资产数据聚合，财务分析场景效率提升3倍。"
+description: "|- 功能涵盖: fin,。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。具备完整的输入输出规范。 功能涵盖: terminal。"
 license: "Proprietary"
-edition: "pro"
-description: |- 功能涵盖: fin,。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。具备完整的输入输出规范。 功能涵盖: terminal。
-  金融数据终端-多资产数据聚合。针对财务分析领域的专业AI辅助工具，
-  ，去除原始风险代码，增强安全性和稳定性，
-  补充完整的错误处理与边界情况，增加多场景使用示例。
-  核心能力:
-  - 财务分析领域的专业化AI辅助分析
-  -
-  - ，增强安全性和稳定性
-  适用场景:
-  - 财务分析交易分析、投资决策、财务计算
-  - 独立开发者与一人公司效率提升
-  - 自动化工作流与智能决策辅助
-  差异化: 经过深度优化，去除原始风险代码，清理外部依赖引用，
-  增强元数据和触发关键词，完全适配SkillHub平台规范。
-tags:
-  - Finance
-  - 财务分析
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L5"
-pricing_model: "monthly"
-suggested_price: 199.0
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供中文交互、、报表生成、统计洞察、数据可视化时使用等能力。
 
@@ -139,6 +111,26 @@ suggested_price: 199.0
 - **传输加密**：使用TLS/SSL协议对数据传输进行加密。
 - **存储加密**：对存储的数据进行加密，防止数据泄露。
 - **日志脱敏**：对日志中的敏感信息进行脱敏处理。
+
+## 错误处理方案
+
+### 错误处理方案
+
+以下表格列出了金融数据终端可能遇到的错误类型、原因、处理方式和恢复策略。
+
+| 错误类型 | 原因 | 处理方式 | 恢复策略 |
+|---------|------|---------|---------|
+| API认证失败 | API密钥错误或过期 | 检查密钥配置，重新生成token | 无 |
+| 接口限流 | 请求频率超出限制 | 降低调用频率，启用重试退避策略 | 无 |
+| 响应超时 | 网络延迟或服务端负载过高 | 增加超时阈值，检查网络连接 | 无 |
+| 文件不存在 | 路径错误或文件未创建 | 检查路径拼写，确认文件已生成 | 无 |
+| 文件格式不支持 | 扩展名不在支持列表中 | 转换为支持的格式后重试 | 无 |
+| 权限不足 | 当前用户无读写权限 | 检查文件权限，以管理员身份运行 | 无 |
+| 命令执行失败 | 参数错误或环境依赖缺失 | 检查命令语法，确认依赖已安装 | 无 |
+| 进程超时 | 命令执行时间过长 | 增加超时设置，优化命令参数 | 无 |
+| 网络连接失败 | DNS解析失败或防火墙拦截 | 检查网络配置，确认代理设置 | 无 |
+
+
 ## 功能优势
 ### 功能1：金融数据终端-多资产数据聚合
 **解决痛点**：传统财务分析分析场景中，
@@ -152,6 +144,22 @@ suggested_price: 199.0
 - 验证，保证数据准确性与可追溯性
 **处理**：解析用户输入参数，执行金融数据终端核心处理逻辑，
 返回结构化结果与执行状态。
+
+## 功能边界条件
+
+### 功能边界条件
+
+以下表格列出了金融数据终端的5个具体边界场景，以及相应的处理方式。
+
+| 边界条件 | 场景描述 | 处理方式 |
+|---------|---------|---------|
+| 数据源中断 | 数据源服务不可用 | 自动切换到备用数据源，确保数据获取的连续性 |
+| 数据格式错误 | 接收到的数据格式不正确 | 自动进行数据清洗和格式化，确保数据的准确性 |
+| 并发请求过多 | 系统同时处理大量请求 | 自动进行负载均衡，确保系统的稳定性和响应速度 |
+| 数据更新延迟 | 数据更新速度慢于预期 | 提供数据延迟通知，并优化数据更新机制 |
+| 用户权限不足 | 用户尝试访问无权限的数据或功能 | 提供权限提示，并阻止非法访问 |
+
+
 ## 创新特色
 ### 效率提升量化分析
 | 操作步骤 | 手动耗时 | 自动化耗时 | 时间节约 | 准确率提升 |
@@ -186,6 +194,20 @@ A: 金融数据终端的数据来源包括国内外知名金融数据服务商�
 A: 金融数据终端采用月度订阅模式，定价为199元/月，提供L5级别的服务。
 ### Q5: 金融数据终端如何确保数据安全？
 A: 金融数据终端采用严格的数据加密和安全审计机制，确保用户数据的安全性和隐私保护。
+
+## 使用场景说明
+
+### 使用场景说明
+
+以下列出了金融数据终端的3个具体使用场景，以及相应的输入输出示例。
+
+| 场景 | 输入示例 | 输出示例 |
+|------|---------|---------|
+| 股票行情查询 | symbol: 'AAPL' | {'symbol': 'AAPL', 'timestamp': '2023-04-01T12:34:56', 'price': 150.25, 'volume': 1000000, 'change': 0.75, 'change_percent': 0.5} |
+| 历史数据查询 | symbol: 'AAPL', start_date: '2023-01-01', end_date: '2023-04-01' | {'symbol': 'AAPL', 'start_date': '2023-01-01', 'end_date': '2023-04-01', 'data': [...]} |
+| 财务数据查询 | symbol: 'AAPL' | {'symbol': 'AAPL', 'financial_data': {'revenue': 26000000000, 'profit': 6000000000, 'assets': 30000000000, 'liabilities': 20000000000}} |
+
+
 ## 量化创新效果对比
 ### 对比表格
 | 对比项 | 本技能 | 手工Excel画线分析 | 单EMA交叉策略 |
@@ -252,6 +274,20 @@ R^2 = 1 - \frac{\sum_{i=1}^{n} (\text{Actual}_i - \text{Predicted}_i)^2}{\sum_{i
 | content | string | 是 | 金融数据终端处理的内容输入 |
 | format | string | 否 | 输入格式, 可选值: json/text/markdown |
 | options | object | 否 | 高级配置参数, 如输出风格、批量大小等 |
+
+## 输入输出参数说明
+
+### 输入输出参数说明
+
+以下表格列出了金融数据终端的输入输出参数说明。
+
+| 参数名 | 类型 | 必填 | 默认值 | 取值范围 | 示例值 |
+|--------|------|------|------|----------|------|
+| content | string | 是 | 无 | 无 | 金融数据终端处理的内容输入 |
+| format | string | 否 | json | json/text/markdown | 输入格式 |
+| options | object | 否 | 无 | 无 | 高级配置参数，如输出风格、批量大小等 |
+
+
 ## 输出说明
 ```json
 {
@@ -284,7 +320,7 @@ R^2 = 1 - \frac{\sum_{i=1}^{n} (\text{Actual}_i - \text{Predicted}_i)^2}{\sum_{i
 - 通过21项安全预检（含10项critical/high风险模式）
 ## 依赖与配置
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **Agent平台**: 支持SKILL.md的任意AI Agent（ Code / Cursor / Codex /  CLI等）
 - **操作系统**: Windows / macOS / Linux
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
@@ -394,3 +430,138 @@ R(t) = \frac{1}{2} \left( \frac{\partial^2 V}{\partial x^2} + \frac{\partial^2 V
 - 已安装所需运行环境(参考依赖说明)
 - 已获取必要的API密钥或访问凭证(如适用)
 - 输入数据已准备就绪
+
+
+## 
+
+# Fin Terminal 代码示例
+
+本章节将提供一系列与Fin Terminal相关的代码示例，旨在帮助开发者更好地理解和使用Fin Terminal提供的功能。以下示例涵盖了Fin Terminal的基本操作、高级功能以及与常见编程语言的集成。
+
+## 1. Fin Terminal 基本操作
+
+以下是一个使用Python语言与Fin Terminal进行基本交互的示例：
+
+```python
+from fin_terminal.client import FinTerminalClient
+
+# 初始化Fin Terminal客户端
+client = FinTerminalClient(api_key='your_api_key')
+
+# 获取账户信息
+accounts = client.get_accounts()
+print(accounts)
+
+# 获取交易记录
+transactions = client.get_transactions(account_id='your_account_id')
+print(transactions)
+
+# 发送交易请求
+transaction_response = client.send_transaction(account_id='your_account_id', amount=100, currency='USD')
+print(transaction_response)
+```
+
+## 2. Fin Terminal 高级功能
+
+Fin Terminal 提供了一些高级功能，以下是一个使用JavaScript语言调用Fin Terminal高级功能的示例：
+
+```javascript
+const finTerminal = require('fin-terminal');
+
+// 初始化Fin Terminal客户端
+const client = new finTerminal.Client('your_api_key');
+
+// 获取账户信息
+client.getAccounts()
+  .then(accounts => {
+    console.log(accounts);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
+// 获取市场数据
+client.getMarketData('AAPL')
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
+// 设置价格警报
+client.setPriceAlert('AAPL', 150, 'above')
+  .then(alertId => {
+    console.log(`Price alert set for ${alertId}`);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+```
+
+## 3. Fin Terminal 与常见编程语言的集成
+
+以下是一个使用Java语言与Fin Terminal进行集成的示例：
+
+```java
+import com.fin_terminal.client.FinTerminalClient;
+import com.fin_terminal.client.model.Account;
+import com.fin_terminal.client.model.Transaction;
+
+public class FinTerminalExample {
+    public static void main(String[] args) {
+        FinTerminalClient client = new FinTerminalClient("your_api_key");
+
+        // 获取账户信息
+        Account[] accounts = client.getAccounts();
+        for (Account account : accounts) {
+            System.out.println(account);
+        }
+
+        // 获取交易记录
+        Transaction[] transactions = client.getTransactions("your_account_id");
+        for (Transaction transaction : transactions) {
+            System.out.println(transaction);
+        }
+
+        // 发送交易请求
+        TransactionResponse response = client.sendTransaction("your_account_id", 100, "USD");
+        System.out.println(response);
+    }
+}
+```
+
+以上代码示例展示了如何使用Fin Terminal进行基本操作、高级功能以及与其他编程语言的集成。开发者可以根据实际需求调整和扩展这些示例。
+
+
+## 
+
+## 故障排查指南
+
+| 错误现象 | 可能原因 | 诊断步骤 | 解决方案 |
+|---|---|---|---|
+| **无法连接到Fin Terminal** | 网络连接问题、终端配置错误 | 1. 检查网络连接是否稳定。 2. 检查Fin Terminal的IP地址和端口设置是否正确。 3. 尝试重启Fin Terminal。 | 1. 确保网络连接正常。 2. 重新配置终端的IP地址和端口。 3. 重启Fin Terminal后尝试重新连接。 |
+| **Fin Terminal运行缓慢** | 硬件资源不足、软件冲突、系统资源占用过高 | 1. 检查系统资源占用情况。 2. 检查是否有其他应用程序在后台运行并占用大量资源。 3. 检查Fin Terminal的硬件配置是否满足要求。 | 1. 关闭不必要的后台应用程序。 2. 升级硬件配置或优化系统设置。 3. 更新Fin Terminal至最新版本。 |
+| **数据传输错误或延迟** | 网络延迟、数据包丢失、终端软件故障 | 1. 检查网络连接质量，包括延迟和丢包率。 2. 检查Fin Terminal的数据传输日志，查找错误信息。 3. 尝试重新启动Fin Terminal或网络设备。 | 1. 优化网络连接，减少延迟和丢包。 2. 更新或修复Fin Terminal软件。 3. 重启网络设备或Fin Terminal。 |
+| **用户认证失败** | 用户名或密码错误、认证服务故障 | 1. 确认用户名和密码是否正确。 2. 检查认证服务器的状态和连接。 3. 尝试使用其他用户账户登录。 | 1. 重新输入正确的用户名和密码。 2. 联系认证服务提供商检查服务状态。 3. 如果其他账户也能登录，则可能是当前账户的问题。 |
+| **界面显示异常** | 显示驱动问题、软件版本不兼容、系统设置错误 | 1. 检查显示驱动是否更新到最新版本。 2. 确认Fin Terminal软件版本与操作系统兼容。 3. 检查系统显示设置是否正确。 | 1. 更新显示驱动程序。 2. 升级或降级Fin Terminal软件至兼容版本。 3. 重新设置系统显示参数。 |
+
+
+## 
+
+## 安全注意事项
+
+1. **用户身份验证**：确保所有用户在访问fin terminal时都必须通过强密码或双因素认证进行身份验证，以防止未授权访问。
+2. **数据加密**：对传输中的数据使用SSL/TLS等加密协议，确保数据在传输过程中的安全性。
+3. **定期更新**：及时更新fin terminal软件和依赖库，以修补已知的安全漏洞。
+4. **访问控制**：实施严格的访问控制策略，确保只有授权用户才能访问敏感功能或数据。
+5. **日志监控**：启用并定期检查系统日志，以便及时发现并响应潜在的安全威胁。
+
+### 安全风险防范
+| 风险项 | 等级 | 防护措施 | 验证方法 |
+|---|---|---|---|
+| 未授权访问 | 高 | 实施强密码策略和双因素认证 | 定期进行安全审计 |
+| 数据泄露 | 中 | 使用SSL/TLS加密数据传输 | 定期进行安全扫描 |
+| 软件漏洞 | 高 | 定期更新软件和依赖库 | 使用漏洞扫描工具 |
+| 内部威胁 | 中 | 实施严格的访问控制策略 | 定期进行员工安全培训 |
+| 日志篡改 | 中 | 实施日志加密和访问控制 | 定期检查日志文件完整性 |

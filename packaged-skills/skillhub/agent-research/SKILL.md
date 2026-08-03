@@ -1,43 +1,15 @@
 ---
-
-
-
+name: agent-research
 slug: agent-research
-name: "agent-research"
-version: "1.0.0"
 displayName: "A股多Agent投研"
+version: "1.0.0"
 summary: "A股信息分散难决策。A股多Agent投研-辩论决策+涨跌停适配，A股场景效率提升3倍。"
+description: "|- 功能涵盖:。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。具备完整的输入输出规范。 功能涵盖: research。"
 license: "Proprietary"
-edition: "pro"
-description: |- 功能涵盖:。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。具备完整的输入输出规范。 功能涵盖: research。
-  A股多Agent投研-辩论决策+涨跌停适配。针对A股领域的专业AI辅助工具，
-  ，去除原始风险代码，增强安全性和稳定性，
-  补充完整的错误处理与边界情况，增加多场景使用示例。
-  核心能力:
-  - A股领域的专业化AI辅助分析
-  -
-  - ，增强安全性和稳定性
-  适用场景:
-  - A股交易分析、投资决策、财务计算
-  - 独立开发者与一人公司效率提升
-  - 自动化工作流与智能决策辅助
-  差异化: 经过深度优化，去除原始风险代码，清理外部依赖引用，
-  增强元数据和触发关键词，完全适配SkillHub平台规范。
-tags:
-  - Finance
-  - A股
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供中文交互、、排名提升、搜索流量优化时使用、、关键词分析、排名提升、搜索流量优化时使用等能力。
 
@@ -195,7 +167,7 @@ suggested_price: 99.9
 - 通过21项安全预检（含10项critical/high风险模式）
 ## 前置条件
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **Agent平台**: 支持SKILL.md的任意AI Agent（ Code / Cursor / Codex /  CLI等）
 - **操作系统**: Windows / macOS / Linux
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |

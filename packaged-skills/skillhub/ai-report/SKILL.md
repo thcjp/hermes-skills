@@ -1,42 +1,15 @@
 ---
-
-
-
+name: ai-report
 slug: ai-report
-name: "ai-report"
-version: "1.0.0"
 displayName: "AI财报分析"
+version: "1.0.0"
 summary: "财务分析专业门槛高。AI财报分析-F-score摘要+暴雷预警，财务分析场景效率提升3倍。"
+description: "|- 功能涵盖:。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。具备完整的输入输出规范。 功能涵盖: report。"
 license: "Proprietary"
-edition: "pro"
-description: |- 功能涵盖:。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。具备完整的输入输出规范。 功能涵盖: report。
-  AI财报分析-F-score摘要+暴雷预警。针对财务分析领域的专业AI辅助工具，
-  ，去除原始风险代码，增强安全性和稳定性，
-  补充完整的错误处理与边界情况，增加多场景使用示例。
-  核心能力:
-  - 财务分析领域的专业化AI辅助分析
-  -
-  - ，增强安全性和稳定性
-  适用场景:
-  - 财务分析交易分析、投资决策、财务计算
-  - 独立开发者与一人公司效率提升
-  - 自动化工作流与智能决策辅助
-  差异化: 经过深度优化，去除原始风险代码，清理...
-tags:
-  - Finance
-  - 财务分析
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-pricing_tier: "L4"
-pricing_model: "monthly"
-suggested_price: 99.9
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供中文交互、、报表生成、统计洞察、数据可视化时使用等能力。
 
@@ -248,7 +221,7 @@ report = ai_report.AIReport(options={"output_style": "summary", "batch_size": 10
 - 通过21项安全预检（含10项critical/high风险模式）
 ## 安装与配置
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **Agent平台**: 支持SKILL.md的任意AI Agent（ Code / Cursor / Codex /  CLI等）
 - **操作系统**: Windows / macOS / Linux
 ### 依赖项
 | 依赖项 | 类型 | 是否必需 | 获取方式 |

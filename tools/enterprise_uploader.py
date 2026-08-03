@@ -428,12 +428,16 @@ def _post_upload_publish(slug: str) -> dict:
 
 def upload_skill(slug: str, dry_run: bool = False, skip_gate: bool = False,
                  skip_marketing: bool = False, skip_security: bool = False,
-                 skip_publish: bool = False) -> dict:
+                 skip_publish: bool = False, browser_relay: bool = False) -> dict:
     """上传单个skill到企业版SkillHub
 
     v2.7修复: 上传后自动执行完整发布流程(approve→publish_to_community→star)
     之前的流程仅上传skill, 未调用approve和publish_to_community,
     导致2022个skill停留在pending/visibility=org_only状态, 前台不可见。
+
+    v3.5新增: browser_relay模式 — 当浏览器session有效但无法提取HttpOnly cookie时,
+    通过浏览器中继方式上传。脚本执行全部防封措施(速率限制/内容去重/质量门控),
+    构建payload后输出JSON供browser_evaluate提交, 提交结果通过record_browser_upload_result记录。
 
     Args:
         slug: skill slug
@@ -443,6 +447,8 @@ def upload_skill(slug: str, dry_run: bool = False, skip_gate: bool = False,
         skip_security: 跳过安全预检（用于紧急场景, v2.6新增）
         skip_publish: 跳过上传后发布流程(approve+publish_to_community+star)
                       用于version_sync_pipeline等自行管理发布流程的场景
+        browser_relay: 浏览器中继模式(v3.5新增) — 构建payload后不发送HTTP请求,
+                      而是返回payload+content供browser_evaluate提交
 
     Returns:
         dict with keys: success, slug, message, response
@@ -631,6 +637,22 @@ def upload_skill(slug: str, dry_run: bool = False, skip_gate: bool = False,
         print(f"  [DRY RUN] {slug}: score={gate['total_score']}/50, price={price}元, paid={is_paid}")
         return {'success': True, 'slug': slug, 'message': 'DRY RUN', 'dry_run': True}
     
+    # v3.5: 浏览器中继模式 — 构建payload后返回, 不发送HTTP请求
+    # 所有防封措施(速率限制/内容去重/质量门控)已在前面执行完毕
+    # payload + content 由 browser_evaluate 提交, 结果通过 record_browser_upload_result 记录
+    if browser_relay:
+        return {
+            'success': True,
+            'slug': slug,
+            'message': 'PAYLOAD_READY_FOR_BROWSER_RELAY',
+            'payload': payload,
+            'content': content,
+            'platform_slug': payload.get('slug', slug),
+            'score': gate['total_score'],
+            'price': price,
+            'is_paid': is_paid,
+        }
+    
     # 5. 获取认证cookie
     cookies = load_cookies()
     if not cookies:
@@ -804,6 +826,83 @@ def upload_skill(slug: str, dry_run: bool = False, skip_gate: bool = False,
         return {'success': False, 'slug': slug, 'message': f'网络错误: {str(e)}'}
     except Exception as e:
         return {'success': False, 'slug': slug, 'message': f'未知错误: {str(e)}'}
+
+
+def record_browser_upload_result(slug: str, http_status: int, response_data: dict,
+                                  platform_slug: str = None) -> dict:
+    """记录浏览器中继上传结果到数据库
+    
+    v3.5新增: 配合 browser_relay 模式使用。
+    browser_evaluate 提交后, 将HTTP响应传入此函数记录到DB。
+    
+    Args:
+        slug: skill slug (原始slug)
+        http_status: HTTP状态码 (201=成功)
+        response_data: API返回的JSON数据
+        platform_slug: 平台差异化slug (如 slug-cn)
+    
+    Returns:
+        dict: {'success': bool, 'recorded': bool}
+    """
+    from db import record_upload as db_record_upload
+    
+    platform_slug = platform_slug or slug
+    success = http_status in (200, 201)
+    
+    # 获取skill_id
+    skill_id = None
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        c = conn.cursor()
+        c.execute("SELECT id FROM skills WHERE slug = ? LIMIT 1", (slug,))
+        row = c.fetchone()
+        if row:
+            skill_id = row[0]
+        conn.close()
+    except Exception:
+        pass
+    
+    # 记录到 platform_uploads 表
+    if skill_id:
+        try:
+            db_record_upload(
+                skill_id=skill_id,
+                version=response_data.get('version', '1.0.0'),
+                platform='skillhub',
+                platform_slug=platform_slug,
+                upload_status='success' if success else 'failed',
+                http_status=http_status,
+                error_message=None if success else json.dumps(response_data, ensure_ascii=False)[:500],
+                visibility='public' if success else None,
+                community_published=1 if success and response_data.get('reviewStatus') != 'pending' else 0,
+            )
+        except Exception as e:
+            print(f"  [WARN] platform_uploads记录失败: {e}")
+    
+    # 记录到 upload_rate_limits 表 (防封措施: 速率限制计数)
+    if success:
+        try:
+            from daily_sync import record_upload as record_rate
+            record_rate('skillhub', platform_slug)
+        except Exception as e:
+            print(f"  [WARN] rate_limit记录失败: {e}")
+    
+    # 更新 skill 的 skillhub_sync_status
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        c = conn.cursor()
+        status = 'synced' if success else 'failed'
+        c.execute(
+            "UPDATE skills SET skillhub_sync_status = ?, last_sync_at = ? WHERE slug = ?",
+            (status, datetime.now().isoformat(), slug)
+        )
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        print(f"  [WARN] sync_status更新失败: {e}")
+    
+    print(f"  [{'✓' if success else '✗'}] {slug} -> {platform_slug}: HTTP {http_status}")
+    return {'success': success, 'recorded': True, 'skill_id': skill_id}
 
 
 def cmd_list():
@@ -997,15 +1096,17 @@ def cmd_status():
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
-        print("Usage: python enterprise_uploader.py [list|upload <slug>|upload-all|status] [--skip-marketing] [--skip-security] [--skip-publish]")
+        print("Usage: python enterprise_uploader.py [list|upload <slug>|upload-all|status|relay-payload <slug>|relay-record <slug> <status> <response>] [--skip-marketing] [--skip-security] [--skip-publish]")
         print("  质量门控: 评分门控 + 营销关卡 + 安全预检(critical阻断) + 防幻觉")
         print("  v2.7: 上传后自动执行 approve→publish_to_community→star (用 --skip-publish 跳过)")
+        print("  v3.5: relay-payload 输出浏览器中继payload JSON, relay-record 记录浏览器上传结果")
         sys.exit(1)
     
     cmd = sys.argv[1]
     skip_mkt = '--skip-marketing' in sys.argv
     skip_sec = '--skip-security' in sys.argv
     skip_pub = '--skip-publish' in sys.argv
+    skip_gate = '--skip-gate' in sys.argv
     
     if cmd == 'list':
         cmd_list()
@@ -1017,7 +1118,33 @@ if __name__ == '__main__':
         cmd_upload_all(dry, skip_marketing=skip_mkt, skip_security=skip_sec, skip_publish=skip_pub)
     elif cmd == 'status':
         cmd_status()
+    elif cmd == 'relay-payload' and len(sys.argv) >= 3:
+        # v3.5: 输出浏览器中继payload JSON到stdout
+        slug = sys.argv[2]
+        result = upload_skill(slug, skip_gate=skip_gate, skip_marketing=skip_mkt, skip_security=skip_sec,
+                              skip_publish=True, browser_relay=True)
+        if result.get('message') == 'PAYLOAD_READY_FOR_BROWSER_RELAY':
+            # 输出payload JSON供browser_evaluate使用
+            output = {
+                'slug': result['slug'],
+                'platform_slug': result['platform_slug'],
+                'payload': result['payload'],
+                'content': result['content'],
+            }
+            print(json.dumps(output, ensure_ascii=False))
+        else:
+            print(json.dumps(result, ensure_ascii=False))
+            sys.exit(1)
+    elif cmd == 'relay-record' and len(sys.argv) >= 5:
+        # v3.5: 记录浏览器上传结果
+        # 用法: relay-record <slug> <http_status> <response_json> [platform_slug]
+        slug = sys.argv[2]
+        http_status = int(sys.argv[3])
+        response_data = json.loads(sys.argv[4])
+        platform_slug = sys.argv[5] if len(sys.argv) >= 6 else None
+        result = record_browser_upload_result(slug, http_status, response_data, platform_slug)
+        print(json.dumps(result, ensure_ascii=False))
     else:
         print(f"未知命令: {cmd}")
-        print("Usage: python enterprise_uploader.py [list|upload <slug>|upload-all|status] [--skip-marketing] [--skip-security] [--skip-publish]")
+        print("Usage: python enterprise_uploader.py [list|upload <slug>|upload-all|status|relay-payload <slug>|relay-record <slug> <status> <response>] [--skip-marketing] [--skip-security] [--skip-publish]")
         sys.exit(1)

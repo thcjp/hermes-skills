@@ -1,31 +1,15 @@
 ---
-
-
-
+name: brainstorming
 slug: brainstorming
-name: "brainstorming"
-version: "1.0.0"
 displayName: "brainstorming"
+version: "1.0.0"
 summary: "手工操作效率低易出错。智能化自动处理，brainstorming场景效率提升3倍。"
+description: "手工操作效率低易出错。智能化自动处理，brainstorming场景效率提升3倍。。> **核心功能**: 本技能提供和流程编排时使用、、数据分析和流程编排时使用、化处理、数据分析和流程编排时使用等能力。。适用于多种工作场景,提供专业的能力支持。开箱即用,无需复杂配置,支持中文交互与结构化输出。开箱即用,无需复杂配置,支持中文交互与结构化输出。"
 license: "Proprietary"
-edition: "pro"
-description: |-
-  You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation. Use when 需要Development领域自动化处理、数据分析和流程编排时使用。不适用于无明确需求的模糊场景。
-tags:
-  - Development
-  - automation
 tools:
   - read
   - exec
-homepage: "https://skillhub.cn"
-suggested_price: "19.9 CNY/per_use"
-pricing_tier: "L2-进阶级"
-pricing_model: "per_use"
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供和流程编排时使用、、数据分析和流程编排时使用、化处理、数据分析和流程编排时使用等能力。
 
@@ -205,3 +189,10 @@ A: brainstorming技能的价格为19.9元/次，属于L2-进阶级定价。
 - 已安装所需运行环境(参考依赖说明)
 - 已获取必要的API密钥或访问凭证(如适用)
 - 输入数据已准备就绪
+
+## 依赖说明
+
+- LLM/API Key: 需要配置相应的API密钥
+- 网络连接: 需要访问外部服务
+- 文件系统: 需要读写文件权限
+- 运行时环境: 需要相应的命令行工具

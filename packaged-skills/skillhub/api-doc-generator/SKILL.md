@@ -1,36 +1,17 @@
 ---
+name: api-doc-generator
 slug: api-doc-generator
-name: "api-doc-generator"
-version: 1.0.1
 displayName: "API文档生成器(专业版)"
+version: "1.0.1"
 summary: "企业级API文档平台，含代码扫描、多格式导出、版本管理、Mock联动与团队评审。API文档生成器专业版是面向研发团队的全功能API文档平台。在免费版的自然语言→OpenAPI+Markdo"
-summary_zh: "企业级API文档平台，含代码扫描、多格式导出、版本管理、Mock联动与团队评审。API文档生成器专业版是面向研发团队的全功能API文档平台。在免费版的自然语言→OpenAPI+Markdo"
+description: "|- 功能涵盖: doc, g。Use when 用户需要API文档生成器(专业版)相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。 功能涵盖: generator。"
 license: "MIT"
-edition: "pro"
-description: |- 功能涵盖: doc, g。Use when 用户需要API文档生成器(专业版)相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。 功能涵盖: generator。
-  API文档生成器专业版是面向研发团队的全功能API文档平台。在免费版的自然语言→OpenAPI+Markdown双产出基础上，解锁代码仓库自动扫描、多格式导出、文档版本管理、Mock服务器联动、团队评审协作、GraphQL Schema生成、自定义模板引擎、多语言文档八大高级能力，覆盖从代码到文档到 Mock再到评审的完整闭环
-tags:
-  - API文档
-  - OpenAPI
-  - 代码扫描
-  - 团队协作
-  - 文档治理
-  - API
-  - 接口
-  - 开发工具
-  - api
-  - spec
-  - api-doc
-  - openapi
-  - yaml
 tools:
   - read
   - exec
   - write
-homepage: ""
-category: "Development"
-homepage: "https://skillhub.cn/skill/"
 ---
+
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 # API文档生成器(专业版)
 ## 专业版专属特性
@@ -256,14 +237,14 @@ api-doc collab enable --reviewers @zhang,@li
 | 文档门户访问慢 | 单文件过大 | 启用分章节生成，按需加载 | 低 |
 ## 依赖与配置
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **Agent平台**: 支持SKILL.md的任意AI Agent（ Code / Cursor / Codex /  CLI等）
 - **操作系统**: Windows / macOS / Linux
 - **Node.js**: 18+（用于CLI工具）
 - **Git**: 已安装（用于版本管理与团队协作）
 ### 依赖说明(补充)
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |---:|:---|---:|---:|
-| LLM API | API | 必需 | 由Agent平台内置LLM提供（专业版路由GPT-4o） |
+| LLM API | API | 必需 | 由Agent平台内置LLM提供（专业版路由o） |
 | Node.js 18+ | 运行时 | 必需 | 从nodejs.org安装 |
 | Git | 工具 | 版本管理必需 | 系统自带或从git-scm.com安装 |
 | 中文字体 | 字体 | PDF导出必需 | 安装Noto Sans CJK |

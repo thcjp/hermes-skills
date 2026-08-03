@@ -1,32 +1,17 @@
 ---
-
-
-
-slug: ai-finance
 name: ai-finance
-version: 1.0.0
-displayName: AI驱动金融分析
-summary: 财务分析专业门槛高。AI驱动金融分析-自然语言量化研究，财务分析场景效率提升3倍。
-license: Proprietary
-edition: pro
-description: AI驱动金融分析-自然语言量化研究。针对财务分析领域的专业AI辅助工具，\n，去除原始风险代码，增强安全性和稳定性，\n补充完整的错误处理与边界情况，增加多场景使用示例。\n\。Use when 用户需要AI驱动金融分析相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。
-  \n核心能力:\n- 财务分析领域的专业化AI辅助分析\n- \n- ，增强安全性和稳定性\n\n适用场景:\n- 财务分析交易分析、投资决策、财务计算\n-\
-  \ 独立开发者与一人公司效率提升\n- 自动化工作流与智能决策辅助\n\n差异化: 经过深度优化，去除原始风险代码，清理外部依赖。专业付费版,包含高级功能。"
-tags:
-- Finance
-- 财务分析
+slug: ai-finance
+displayName: "AI驱动金融分析"
+version: "1.0.0"
+summary: "财务分析专业门槛高。AI驱动金融分析-自然语言量化研究，财务分析场景效率提升3倍。"
+description: "AI驱动金融分析-自然语言量化研究。针对财务分析领域的专业AI辅助工具，\n，去除原始风险代码，增强安全性和稳定性，\n补充完整的错误处理与边界情况，增加多场景使用示例。\n\。Use when 用户需要AI驱动金融分析相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。"
+license: "Proprietary"
 tools:
-- read
-- exec
-homepage: https://skillhub.cn
-pricing_tier: L3
-pricing_model: per_use
-suggested_price: 29.9
-
-
-
+  - Read
+  - Write
+  - Edit
+  - Bash
 ---
-
 
 > **核心功能**: 本技能提供相关功能时使用、与边界情况、化工作流场景等能力。
 
@@ -209,7 +194,7 @@ AI-finance可以与其他金融科技产品集成，例如：
 - 通过21项安全预检（含10项critical/high风险模式）
 ## 运行环境
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
+- **Agent平台**: 支持SKILL.md的任意AI Agent（ Code / Cursor / Codex /  CLI等）
 - **操作系统**: Windows / macOS / Linux
 
 ### 依赖项
@@ -245,7 +230,7 @@ AI-finance可以与其他金融科技产品集成，例如：
 ### 竞品对比分析
 | 对比维度 | 通用AI金融问答与分析 | 传统工具 |
 |----------|---------|---------|
-| ChatGPT+金融插件 | 通用工具，无金融垂直优化 | 基础API/界面 | 单点功能 | 通用安全 |
+| +金融插件 | 通用工具，无金融垂直优化 | 基础API/界面 | 单点功能 | 通用安全 |
 | Kimi金融 | 通用工具，无金融垂直优化 | 基础API/界面 | 单点功能 | 通用安全 |
 | 东方财富AI | 通用工具，无金融垂直优化 | 基础API/界面 | 单点功能 | 通用安全 |
 | **垂直领域** | 深度金融专业化，AI金融助手全场景覆盖 | 通用工具，无金融优化 |
