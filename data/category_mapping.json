@@ -1,0 +1,67 @@
+{
+  "platform_categories": {
+    "office-efficiency": "办公效率",
+    "content-creation": "内容创作",
+    "dev-programming": "开发编程",
+    "data-analysis": "数据分析",
+    "design-media": "设计多媒体",
+    "ai-agent": "AI Agent",
+    "knowledge-management": "知识管理",
+    "business-ops": "商业运营",
+    "education": "教育学习",
+    "professional": "行业专业",
+    "it-ops-security": "IT运维安全",
+    "life-service": "生活服务"
+  },
+  "local_to_platform": {
+    "Development": "dev-programming",
+    "Automation": "office-efficiency",
+    "Other": "office-efficiency",
+    "Creative": "content-creation",
+    "Security": "it-ops-security",
+    "Finance": "business-ops",
+    "Productivity": "office-efficiency",
+    "Operations": "it-ops-security",
+    "Research": "knowledge-management",
+    "Knowledge": "knowledge-management",
+    "Agents": "ai-agent",
+    "Communication": "office-efficiency",
+    "Integrations": "office-efficiency",
+    "Lifestyle": "life-service"
+  },
+  "platform_to_team": {
+    "office-efficiency": "通用办公",
+    "content-creation": "通用办公",
+    "dev-programming": "研发工具",
+    "data-analysis": "数据分析",
+    "design-media": "需求设计",
+    "ai-agent": "信息检索",
+    "knowledge-management": "信息检索",
+    "business-ops": "项目管理",
+    "education": "其他",
+    "professional": "其他",
+    "it-ops-security": "安全合规",
+    "life-service": "其他"
+  },
+  "local_to_clawhub": {
+    "Development": "dev",
+    "Automation": "automation",
+    "Other": "other",
+    "Creative": "creative",
+    "Security": "security",
+    "Finance": "productivity",
+    "Productivity": "productivity",
+    "Operations": "automation",
+    "Research": "research",
+    "Knowledge": "knowledge",
+    "Agents": "agents",
+    "Communication": "communication",
+    "Integrations": "integrations",
+    "Lifestyle": "lifestyle"
+  },
+  "clawhub_categories": [
+    "agents", "productivity", "research", "creative", "security",
+    "knowledge", "automation", "lifestyle", "communication", "integrations", "other"
+  ],
+  "subcategory_mapping": {}
+}

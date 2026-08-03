@@ -25,6 +25,8 @@ from urllib.error import URLError, HTTPError
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 # 添加PROJECT_ROOT到path,使config包可被import (脚本运行时cwd不在sys.path中)
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# V186: 添加config目录到path,使project_config可直接import (与clawhub_batch_uploader.py一致)
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "config"))
 from config import (
     DB_PATH, PACKAGED_SKILLS_DIR, OPENSOURCE_SKILLS_DIR, REPORT_DIR,
     DIFFERENTIATED_DIR, ENTERPRISE_UPLOAD_DIR,
@@ -42,11 +44,10 @@ except ImportError:
     _QUALITY_GATE_AVAILABLE = False
 
 # ============ 企业版配置 ============
-# V182: 切回ORG_ID=862(科创少年) — 之前被封的账号,用户重新登录后仍可在后台操作
-# org-xxo535hs / opc-laotian, API Key: sk-ent-250641b3...
-ORG_ID = 862
+# V186: 切换到ORG_ID=1436(智创未来) — org 862(科创少年)已被封
+ORG_ID = 1436
 API_BASE = "https://api.skillhub.cn/api/v1"
-ORG_SKILLS_API = f"{API_BASE}/community/skills/publish"  # V162: 改用社区发布端点(原/orgs/{ORG_ID}/skills返回401)
+ORG_SKILLS_API = f"{API_BASE}/community/skills/publish"  # V162: 社区发布端点(orgId从session cookie推断)
 
 # ============ 分类映射 ============
 CATEGORY_MAP_FILE = Path(__file__).parent.parent / "data" / "category_mapping.json"
