@@ -34,7 +34,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Gog
 
 Use `gog` for Gmail/Calendar/Drive/Contacts/Sheets/Docs. Requires OAuth setup.

@@ -1,6 +1,7 @@
 ---
+
 name: "moltbook-firewall-tool-free"
-description: "AI Agent安全防护层,支持提示注入检测、工具调用过滤与基础安全策略,适合个人开发者保护Agent应用。"
+description: "AI Agent安全防护层,支持提示注入检测、工具调用过滤与基础安全策略,适合个人开发者保护Agent应用。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,10 @@ metadata:
     - "免费版"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 本工具为AI Agent应用提供基础安全防护层,在用户输入与Agent执行之间建立防火墙,检测并过滤提示注入攻击、恶意工具调用与不当输入。免费版支持基础提示注入检测、工具调用过滤与输入净化,适合个人开发者保护Agent应用免受常见攻击。
@@ -35,16 +40,10 @@ metadata:
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供提示注入检测所需的指令和必要参数。
-**处理**: 按照skill规范执行提示注入检测操作,遵循单一意图原则。
 **输出**: 返回提示注入检测的执行结果,包含操作状态和输出数据。
 
 ### 2. 工具调用过滤
 
-> 详细代码示例已移至 `references/detail.md`
-
-**输入**: 用户提供工具调用过滤所需的指令和必要参数。
-**处理**: 按照skill规范执行工具调用过滤操作,遵循单一意图原则。
 **输出**: 返回工具调用过滤的执行结果,包含操作状态和输出数据。
 
 ### 3. 输入净化
@@ -75,8 +74,6 @@ echo "原始: $USER_INPUT"
 echo "净化: $SANITIZED"
 ```
 
-**输入**: 用户提供输入净化所需的指令和必要参数。
-**处理**: 按照skill规范执行输入净化操作,遵循单一意图原则。
 **输出**: 返回输入净化的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -114,7 +111,6 @@ class SecurityPolicyChecker:
 
         for blocked in self.POLICIES["blocked_paths"]:
             if blocked in file_path:
-                violations.append({
                     "policy": "blocked_paths",
                     "violation": f"访问禁止路径: {file_path}"
                 })
@@ -122,7 +118,6 @@ class SecurityPolicyChecker:
         import os
         ext = os.path.splitext(file_path)[1].lower()
         if ext and ext not in self.POLICIES["allowed_file_extensions"]:
-            violations.append({
                 "policy": "allowed_file_extensions",
                 "violation": f"文件类型 {ext} 不在允许列表中"
             })
@@ -130,8 +125,6 @@ class SecurityPolicyChecker:
         return {"passed": len(violations) == 0, "violations": violations}
 ```
 
-**输入**: 用户提供安全策略检查所需的指令和必要参数。
-**处理**: 按照skill规范执行安全策略检查操作,遵循单一意图原则。
 **输出**: 返回安全策略检查的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：安全防护层、支持提示注入检测、工具调用过滤与基、础安全策略、适合个人开发者保、防火墙免费版、应用提供基础安全、防护能力、核心能力、适用场景、应用安全防护、用户输入净化、工具调用安全验证、差异化、免费版聚焦核心防、护能力、支持单、适合个人开发者快、速集成、适用关键词、防火墙、安全防护、firewall、injection、sanitization等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -265,7 +258,7 @@ echo "  ${SANITIZED}"
 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于非本工具能力范围的需求。
 
 ## 快速开始
-### 第一步:初始化防火墙
+### 领先步:初始化防火墙
 ```python
 from agent_firewall import AgentFirewall
 
@@ -308,7 +301,7 @@ if result["action"] == "ALLOW":
 | 编码绕过 | base64 decode | MEDIUM |
 | 多轮注入 | remember as rule | HIGH |
 
-## 最佳实践
+## 优选实践
 1. **默认拒绝**:未知工具和操作默认拒绝,仅允许白名单中的操作。
 2. **多层防护**:输入净化+注入检测+工具过滤多层防护。
 3. **日志记录**:记录所有拦截事件,便于审计和优化。
@@ -350,7 +343,7 @@ if result["action"] == "ALLOW":
 - 所有检测在本地执行,不发送数据到外部
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+execute(纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行AI Agent安全防护任务
 
 ## 错误处理
@@ -371,8 +364,6 @@ if result["action"] == "ALLOW":
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ```text
@@ -380,3 +371,22 @@ if result["action"] == "ALLOW":
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

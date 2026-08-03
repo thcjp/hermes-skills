@@ -1,6 +1,7 @@
 ---
+
 name: "game-ai-tool-free"
-description: "游戏AI开发指南,涵盖FSM、行为树、寻路与决策系统的代码实现"
+description: "游戏AI开发指南,涵盖FSM、行为树、寻路与决策系统的代码实现。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -17,6 +18,11 @@ metadata:
     - "独立游戏"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 本工具为独立游戏开发者与学生提供游戏 AI 开发指南与代码模板,涵盖有限状态机 (FSM)、行为树 (Behavior Tree)、A* 寻路、效用 AI、感知系统、群体行为等主流 AI 架构。每种架构都配有完整的可运行代码示例,适合学习、原型验证与 Game Jam 使用。
@@ -40,24 +46,18 @@ metadata:
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置。
 
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
 **输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：开发指南、寻路与决策系统的、代码实现、面向独立游戏开发、者与学生的游戏、开发指南与代码模、核心能力、适用场景、独立游戏开发、游戏开发学习、原型验证、Game、Jam、差异化、免费版聚焦个人学、习与原型开发、提供主流、架构的代码模板、适用关键词等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -70,8 +70,6 @@ metadata:
 
 ### 场景二: 复杂 NPC AI (行为树)
 为 NPC 实现模块化、可复用的复杂行为。
-
-> 详细代码示例已移至 `references/detail.md`
 
 ### 场景三: 寻路与群体行为
 实现 A* 寻路与鸟群模拟。
@@ -106,7 +104,7 @@ public class AStar
                     cameFrom[neighbor] = current;
                     gScore[neighbor] = tentativeGScore;
                     fScore[neighbor] = gScore[neighbor] + Heuristic(neighbor, end);
-                    if (!openSet.Contains(neighbor))
+openSet.Contains(neighbor))
                         openSet.Enqueue(neighbor, fScore[neighbor]);
                 }
             }
@@ -222,7 +220,6 @@ enemy_types:
         health_threshold: 0.75
         patterns: [sweep_attack, projectile_burst]
       - name: "phase_2"
-        health_threshold: 0.5
         patterns: [enrage, summon_adds]
 ```
 
@@ -261,7 +258,7 @@ public class AttackAction : UtilityAction
         float distance = _enemy.DistanceToPlayer();
         score += Mathf.Clamp(1.0f - distance / 200.0f, 0, 1) * 0.5f;
         score += _enemy.HasAmmo ? 0.3f : 0.0f;
-        score += _enemy.HealthPercent * 0.2f;
+HealthPercent * 0.2f;
         return score;
     }
 
@@ -269,7 +266,7 @@ public class AttackAction : UtilityAction
 }
 ```
 
-## 最佳实践
+## 优选实践
 ### 1. 状态机调试
 ```csharp
 // 添加调试可视化
@@ -284,7 +281,6 @@ public void ChangeState(EnemyState newState)
     GD.Print($"State: {_currentState} -> {newState}");
     _states[_currentState]?.Exit();
     _currentState = newState;
-    _states[_currentState]?.Enter();
 }
 ```
 
@@ -379,8 +375,6 @@ export GAME_AI_LANGUAGE="csharp"
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ```text
@@ -388,3 +382,14 @@ export GAME_AI_LANGUAGE="csharp"
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

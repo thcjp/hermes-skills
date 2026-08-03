@@ -36,7 +36,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Discord Voice
 
 Real-time voice conversations in Discord voice channels. Join a voice channel, speak, and have your words transcribed, processed by ai-assistant, and spoken back.

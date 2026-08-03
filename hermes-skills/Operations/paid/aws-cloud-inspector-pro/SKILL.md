@@ -6,7 +6,7 @@ version: 1.0.0
 displayName: AWS云巡检专业版
 summary: 完整的AWS云巡检能力，含跨服务安全审计、Cost Explorer成本分析与CloudTrail变更管理，面向团队与企业云治理场景.
 license: Proprietary
-description: AWS云巡检专业版（aws-cloud-inspector-pro）面向团队与企业云治理场景，在免费版只读巡检能力之上，解锁跨服务安全审计、Cost。可分析提升工作效率
+description: "AWS云巡检专业版（aws-cloud-inspector-pro）面向团队与企业云治理场景，在免费版只读巡检能力之上，解锁跨服务安全审计、Cost。可分析提升工作效率。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。"
   Explorer成本分析与CloudTrail变更管理三大高级能力。它让企业能够在统一会话中完成安全态势扫描、成本分摊分析与资源变更追踪回滚.
   核心能力：AWS身份识别、跨服务资源清点、CloudWatch健康检查与日志查询、只读安全核查、跨服务安全态势扫描（CIS Benchmark对标）、AWS Config合规基线检查、Cost
   Explorer深度成本查询、按标签成本分摊、预算告警配置、CloudTrail资源变更追踪、变更回滚与审批流、Region/Profile自动适配、`--dry-run`预演机制、命名profile与凭证隔离、企业级场景指南与多角色用例.
@@ -39,14 +39,13 @@ homepage: ""
 # 定价元数据
 category: "Operations"
 
+
 ---
 
 # AWS云巡检专业版（aws-cloud-inspector-pro）
-
 本Skill在免费版只读巡检能力之上，解锁**安全审计、成本分析、变更管理**三大高级能力，面向团队与企业云治理场景.
 > 版本边界：本专业版包含免费版全部能力（资源清点、健康检查、基础安全核查、变更预演），并新增3项高级解锁能力。如仅需个人试用，可使用 `aws-cloud-inspector-free`.
 ## 使用流程
-
 ### Step 1：准备阶段
 确认运行环境满足依赖说明中的要求,准备好必要的输入参数.
 ### Step 2：执行阶段
@@ -54,10 +53,7 @@ category: "Operations"
 ### Step 3：验证阶段
 检查执行结果,如遇错误可查阅错误处理章节进行排查.
 ## 示例
-
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 
@@ -75,16 +71,14 @@ Skill: 执行完成,结果如下: 操作成功
 ```
 
 ## 一、快速开始（按时间分级）
-
 本工具属"中等工具"级别，完整上手目标 < 120秒.
 | 阶段 | 目标耗时 | 任务 |
 |:-----|:-----|:-----|
 | 环境检查 | < 30秒 | 确认AWS CLI已安装且凭证已配置 |
 | 身份确认 | < 30秒 | `aws sts get-caller-identity` 验证身份 |
-| 安全审计 | < 60秒 | 执行第一个跨服务安全扫描 |
+| 安全审计 | < 60秒 | 执行领先个跨服务安全扫描 |
 
 ### 1.1 环境检查（< 30秒）
-
 AWS CLI标准配置路径：
 - **Linux/macOS**：`~/.aws/config`（profile与region配置）、`~/.aws/credentials`（访问密钥）
 - **Windows**：`%USERPROFILE%\.aws\config`、`%USERPROFILE%\.aws\credentials`
@@ -95,26 +89,19 @@ aws configure list  # 查看当前profile与region
 ```
 
 ### 1.2 身份确认（< 30秒）
-
 ```bash
 aws sts get-caller-identity
-# 确认你正在操作正确的账号
 ```
 
-### 1.3 第一个安全审计（< 60秒）
-
+### 1.3 领先个安全审计（< 60秒）
 ```bash
-# 专业版独有：跨服务安全态势扫描
 aws configservice describe-config-rules \
   --query 'ConfigRules[].{Name:ConfigRuleName,State:ConfigRuleState}' \
   --output table
-# ...
-# 检查所有非合规资源
 aws configservice get-compliance-summary-by-config-rule --output table
 ```
 
 ## 二、安全规则（必须遵守）
-
 以下规则优先级最高，任何命令执行前必须先通过这些规则检查：
 
 1. **默认只读**：所有操作视为只读，除非用户显式请求变更**并**确认.
@@ -125,9 +112,7 @@ aws configservice get-compliance-summary-by-config-rule --output table
 6. **Profile隔离**：严格使用用户指定的profile，不跨profile操作.
 7. **变更审批留痕**（专业版独有）：所有变更操作必须通过CloudTrail留痕，关键变更需记录审批人与回滚方案.
 ## 三、Region与Profile处理
-
 ### 3.1 优先级链
-
 ```text
 用户显式指定 region/profile
     ↓ 未指定
@@ -139,7 +124,6 @@ aws configservice get-compliance-summary-by-config-rule --output table
 ```
 
 ### 3.2 AWS CLI路径说明
-
 本Skill在以下标准路径查找AWS配置：
 
 | 平台 | 配置文件路径 | 凭证文件路径 |
@@ -152,35 +136,24 @@ aws configservice get-compliance-summary-by-config-rule --output table
 [default]
 region = us-east-1
 output = json
-# ...
 [profile production]
 region = ap-northeast-1
 output = table
-# ...
 [profile audit]
 role_arn = arn:aws:iam::123456789012:role/AuditRole
 source_profile = default
 ```
 
-> 安全提示：本Skill永不读取或输出 `~/.aws/credentials` 文件内容，仅通过AWS CLI内部机制使用凭证。专业版支持IAM Role跨账号assume，审计场景推荐使用专属audit profile.
 ## 核心能力
 ### 4.1 跨服务安全审计
-
 **能力**：基于AWS Config与CIS Benchmark实现持续合规监控，跨服务扫描安全态势.
 **核心命令**：
 ```bash
-# 查看所有Config规则
 aws configservice describe-config-rules --output table
-# ...
-# 获取合规摘要
 aws configservice get-compliance-summary-by-config-rule
-# ...
-# 查询非合规资源详情
 aws configservice get-compliance-details-by-config-rule \
   --config-rule-name "root-account-mfa-enabled" \
   --compliance-types NON_COMPLIANT --output table
-# ...
-# 检查CloudTrail是否启用
 aws cloudtrail describe-trails --query 'trailList[].{Name:Name,MultiRegion:IsMultiRegionTrail}' --output table
 ```
 
@@ -200,30 +173,23 @@ aws cloudtrail describe-trails --query 'trailList[].{Name:Name,MultiRegion:IsMul
 **能力**：深度成本查询，支持按服务/标签/团队/项目多维分摊与预算告警.
 **核心命令**：
 ```bash
-# 查询本月按服务分摊的成本
 aws ce get-cost-and-usage \
   --time-period Start=2026-07-01,End=2026-07-31 \
   --granularity MONTHLY \
   --metrics BlendedCost \
   --group-by Type=DIMENSION,Key=SERVICE \
   --output table
-# ...
-# 按标签（团队）分摊成本
 aws ce get-cost-and-usage \
   --time-period Start=2026-07-01,End=2026-07-31 \
   --granularity MONTHLY \
   --metrics BlendedCost \
   --group-by Type=TAG,Key=Team \
   --output table
-# ...
-# 查询成本预测
 aws ce get-cost-forecast \
   --time-period Start=2026-08-01,End=2026-08-31 \
   --metric BLENDED_COST \
   --granularity MONTHLY \
   --output table
-# ...
-# 创建预算告警
 aws budgets create-budget \
   --account-id 123456789012 \
   --budget file://budget.json \
@@ -231,23 +197,17 @@ aws budgets create-budget \
 ```
 
 ### 4.3 CloudTrail变更管理
-
 **能力**：追踪所有资源变更事件，支持变更回滚与审批流.
 **核心命令**：
 ```bash
-# 查询最近1小时的API调用事件
 aws cloudtrail lookup-events \
   --start-time $(date -u -d '1 hour ago' +%Y-%m-%dT%H:%M:%S) \
   --end-time $(date -u +%Y-%m-%dT%H:%M:%S) \
   --query 'Events[].{Time:EventTime,Name:EventName,User:Username,Resource:Resources[0].ResourceName}' \
   --output table
-# ...
-# 按资源类型过滤变更
 aws cloudtrail lookup-events \
   --lookup-attributes AttributeKey=ResourceType,AttributeValue=AWS::EC2::Instance \
   --max-results 50 --output table
-# ...
-# 查询特定用户的所有操作
 aws cloudtrail lookup-events \
   --lookup-attributes AttributeKey=Username,AttributeValue=deploy-bot \
   --output table
@@ -255,15 +215,11 @@ aws cloudtrail lookup-events \
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：完整的、云巡检能力、含跨服务安全审计、成本分析与、面向团队与企业云、治理场景、云巡检专业版、inspector、pro、在免费版只读巡检、能力之上、解锁跨服务安全审、变更管理三大高级、它让企业能够在统、一会话中完成安全、态势扫描、成本分摊分析与资、源变更追踪回滚等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 快速开始
-
 1. 确认运行环境满足依赖说明中的要求
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
 
-> 详细的输入输出格式请参考下方章节说明。
-
 ## 五、任务指南（完整巡检矩阵）
-
 | 任务类型 | 推荐命令 | 操作属性 | 专业版能力 |
 |:------|------:|:------|:------|
 | 资源清点 | `list` / `describe` / `get` 类命令 | 只读 | ✅ |
@@ -275,29 +231,18 @@ aws cloudtrail lookup-events \
 | 资源变更 | 写/删除/终止类操作 | 写操作 | ⚠️ 需二次确认+留痕 |
 
 ## 六、真实场景示例
-
 ### 场景1：企业云安全态势季度审计
-
 **用户角色**：云安全工程师
 **目标**：季度合规审计，对标CIS Benchmark生成报告.
 ```bash
-# 步骤1：账号级安全摘要
 aws iam get-account-summary --query 'SummaryMap' --output table
-# ...
-# 步骤2：CloudTrail配置审计
 aws cloudtrail describe-trails \
   --query 'trailList[].{Name:Name,MultiRegion:IsMultiRegionTrail,Logging:IsLogging,KMS:KmsKeyId}' \
   --output table
-# ...
-# 步骤3：AWS Config规则合规状态
 aws configservice get-compliance-summary-by-config-rule --output table
-# ...
-# 步骤4：所有非合规资源清单
 aws configservice describe-compliance-by-config-rule \
   --query 'ComplianceByConfigRules[?Compliance.ComplianceType==`NON_COMPLIANT`].{Rule:ConfigRuleName,Type:Compliance.ComplianceType}' \
   --output table
-# ...
-# 步骤5：S3桶公开访问检查（全量）
 aws s3api list-buckets --query 'Buckets[].Name' --output text | tr '\t' '\n' | while read bucket; do
   echo "=== $bucket ==="
   aws s3api get-public-access-block --bucket $bucket 2>/dev/null || echo "未配置公开访问阻止"
@@ -305,35 +250,27 @@ done
 ```
 
 ### 场景2：按团队成本分摊与预算告警
-
 **用户角色**：FinOps工程师
 **目标**：按Team标签分摊本月成本，为超预算团队配置告警.
 ```bash
-# 步骤1：按Team标签查询本月成本
 aws ce get-cost-and-usage \
   --time-period Start=2026-07-01,End=2026-07-31 \
   --granularity MONTHLY \
   --metrics BlendedCost \
   --group-by Type=TAG,Key=Team \
   --output table
-# ...
-# 步骤2：按服务×团队二维分摊
 aws ce get-cost-and-usage \
   --time-period Start=2026-07-01,End=2026-07-31 \
   --granularity MONTHLY \
   --metrics BlendedCost \
   --group-by Type=DIMENSION,Key=SERVICE Type=TAG,Key=Team \
   --output table
-# ...
-# 步骤3：查询成本预测（下月）
 aws ce get-cost-forecast \
   --time-period Start=2026-08-01,End=2026-08-31 \
   --metric BLENDED_COST \
   --granularity MONTHLY \
   --query 'ForecastResultsList[].{Date:TimePeriod.Start,Amount:MeanValue}' \
   --output table
-# ...
-# 步骤4：创建预算告警（阈值80%）
 cat > budget.json << 'EOF'
 {
   "BudgetName": "team-alpha-monthly",
@@ -345,24 +282,18 @@ EOF
 ```
 
 ### 场景3：CloudTrail变更追踪与责任追溯
-
 **用户角色**：运维SRE
 **目标**：追踪某EC2实例被误终止的责任人与时间线.
 ```bash
-# 步骤1：查询该实例的所有变更事件
 aws cloudtrail lookup-events \
   --lookup-attributes AttributeKey=ResourceName,AttributeValue=i-1234567890abcdef0 \
   --query 'Events[].{Time:EventTime,Name:EventName,User:Username,IP:CloudTrailEvent}' \
   --output table
-# ...
-# 步骤2：查询终止操作的详情
 aws cloudtrail lookup-events \
   --lookup-attributes AttributeKey=EventName,AttributeValue=TerminateInstances \
   --start-time $(date -u -d '24 hours ago' +%Y-%m-%dT%H:%M:%S) \
   --end-time $(date -u +%Y-%m-%dT%H:%M:%S) \
   --output table
-# ...
-# 步骤3：定位操作人IP与时间
 aws cloudtrail lookup-events \
   --lookup-attributes AttributeKey=EventName,AttributeValue=TerminateInstances \
   --query 'Events[].{Time:EventTime,User:Username,Event:CloudTrailEvent}' \
@@ -370,34 +301,23 @@ aws cloudtrail lookup-events \
 ```
 
 ### 场景4：上线前安全评审
-
 **用户角色**：DevOps工程师
 **目标**：新服务上线前完成安全评审清单.
 ```bash
-# 检查1：IAM角色最小权限
 aws iam list-attached-role-policies --role-name MyServiceRole --output table
-# ...
-# 检查2：安全组入站规则
 aws ec2 describe-security-groups \
   --group-ids sg-12345678 \
   --query 'SecurityGroups[].{ID:GroupId,Inbound:IpPermissions[].{Port:FromPort,Cidr:IpRanges[].CidrIp}}' \
   --output table
-# ...
-# 检查3：S3桶加密配置
 aws s3api get-bucket-encryption --bucket my-bucket --output table
-# ...
-# 检查4：CloudWatch Logs保留期
 aws logs describe-log-groups \
   --query 'logGroups[].{Name:logGroupName,Retention:retentionInDays}' --output table
-# ...
-# 检查5：AWS Config规则合规
 aws configservice describe-compliance-by-config-rule \
-  --query 'ComplianceByConfigRules[?Compliance.ComplianceType==`NON_COMPLIANT`].ConfigRuleName' \
+Compliance.ConfigRuleName' \
   --output text
 ```
 
 ## 七、FAQ（常见问题）
-
 ### Q1：专业版与免费版的核心差异？
 A：专业版在免费版只读巡检能力之上，新增三项高级能力：(1) 跨服务安全审计（AWS Config + CIS Benchmark对标）；(2) Cost Explorer深度成本分析（按标签/团队/项目分摊 + 预算告警）；(3) CloudTrail变更管理（变更追踪 + 回滚 + 审批流）.
 ### Q2：安全审计需要什么IAM权限？
@@ -423,7 +343,6 @@ A：专业版定价¥49.9/月（行业工具类），通过SkillHub SkillPay发�
 ### Q12：变更审批流如何落地？
 A：专业版通过CloudTrail留痕 + 人工二次确认 + 回滚方案记录实现轻量审批流。如需复杂审批（多级审批、SLA），建议集成AWS Service Catalog或第三方ITSM工具.
 ## 八、故障排查表
-
 | 序号 | 问题 | 原因 | 修复方案 | 优先级 |
 |---:|:---|---:|---:|:---|
 | 1 | `Unable to locate credentials` | 未配置AWS凭证 | 运行 `aws configure` 或检查 `~/.aws/credentials` | P0 |
@@ -440,7 +359,6 @@ A：专业版通过CloudTrail留痕 + 人工二次确认 + 回滚方案记录实
 | 12 | 预算创建失败 | JSON格式错误或账户ID错误 | 校验budget.json格式，确认account-id正确 | P2 |
 
 ## 九、References（本地参考文档）
-
 以下参考文档为本地Markdown文件，与本SKILL.md同目录的 `references/` 子目录下：
 
 - [references/aws-cli-queries.md](references/aws-cli-queries.md) —— 常用AWS CLI只读查询命令模式与示例
@@ -451,7 +369,6 @@ A：专业版通过CloudTrail留痕 + 人工二次确认 + 回滚方案记录实
 - [references/change-management.md](references/change-management.md) —— CloudTrail变更追踪与回滚指南
 
 ## 十一、专业版特性
-
 本专业版相比免费版新增以下能力：
 
 - ✅ **跨服务安全审计**：基于AWS Config与CIS Benchmark实现持续合规监控，跨服务扫描安全态势，生成合规报告
@@ -462,16 +379,13 @@ A：专业版通过CloudTrail留痕 + 人工二次确认 + 回滚方案记录实
 - ✅ **优先支持**：专业版用户享受优先响应与专属支持通道
 
 ## 十二、定价
-
 | 版本 | 价格 | 功能 | 适用场景 |
 |:------:|--------|:-------|:------:|
 | 免费体验版 | ¥0 | 资源清点 + 健康检查 + 基础安全核查 + 变更预演 | 个人试用、日常巡检 |
 | 收费专业版 | ¥49.9/月 | 全功能 + 安全审计 + 成本分析 + 变更管理 + 企业级场景指南 + 优先支持 | 团队/企业云治理 |
 
 专业版通过SkillHub SkillPay发布.
-> 定价依据：行业工具类（垂直领域），参考Skill生产规范v1.1定价策略表。¥49.9/月对应AWS云治理垂直场景的专业溢价，覆盖安全审计、成本分析、变更管理三大企业刚需能力.
 ## License与版权声明
-
 本Skill基于原始作品改进，保留原始版权声明：
 
 - 原始作品：AWS Infra（aws-infra）
@@ -510,13 +424,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ## 已知限制
-
 - 本skill的能力范围受限于核心能力章节中定义的功能,不支持超出范围的操作
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**：支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**：Windows / macOS / Linux
@@ -533,7 +445,6 @@ SOFTWARE.
 - API Key通过环境变量配置: export API_KEY=your_key
 
 ## 错误处理
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
 |----|:--:|---:|----|:--:|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
@@ -541,7 +452,6 @@ SOFTWARE.
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
 
 ## FAQ
-
 **Q: 如何开始使用？**
 A: 建议先查看使用流程,按步骤操作即可.
 **Q: 遇到错误怎么办？**
@@ -562,3 +472,22 @@ A: 可查阅错误处理章节,按照表格中的处理方式进行排查.
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 完整的AWS云巡检能力，含跨服务安全审计、Cost Explorer成本分析与CloudTrail变更管理，面向团队与企
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

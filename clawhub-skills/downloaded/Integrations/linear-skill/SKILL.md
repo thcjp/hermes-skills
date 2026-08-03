@@ -19,59 +19,72 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # Linear Workflow Management
 
-Manage Linear issues and projects through the bundled CLI at `{baseDir}/scripts/linear-cli.js`.
+Linear provides a comprehensive solution for managing projects, issues, and tasks. This document outlines how to effectively use Linear through its Node CLI and official API.
 
-## Scope and Runtime Model
+## Overview
 
-- This skill runs `node {baseDir}/scripts/linear-cli.js ...`.
-- The CLI uses the official `@linear/sdk`.
-- Authentication is `LINEAR_API_KEY` from the local environment.
-- Expected API destination is Linear GraphQL (`https://api.linear.app/graphql`) through the official SDK.
+Linear is designed to streamline project management processes, making it easier to plan, track, and collaborate on tasks. The Linear skill integrates with the Linear API, allowing users to manage their projects and issues directly from the command line.
 
-## Prerequisites
+## Installation and Setup
 
-1. Node.js and npm are installed.
-2. Install script dependencies once:
-   - `cd {baseDir}/scripts && npm install`
-3. Set your API key:
-   - `export LINEAR_API_KEY="[REDACTED]"`
+### Prerequisites
 
-If dependencies or `LINEAR_API_KEY` are missing, stop and complete setup before issue/project operations.
+1. **Node.js and npm**: Ensure you have Node.js and npm installed on your system.
+2. **Linear API Key**: Obtain your Linear API key from your Linear account settings.
+
+### Installation Steps
+
+1. Clone the Linear skill repository to your local machine.
+2. Navigate to the repository directory and install dependencies:
+   ```bash
+   cd {baseDir}/scripts && npm install
+   ```
+3. Set your Linear API key in the local environment:
+   ```bash
+   export LINEAR_API_KEY="[REDACTED]"
+   ```
 
 ## Authentication and Credentials
 
-- Required credential: `LINEAR_API_KEY`.
-- Get it from `https://linear.app/settings/api`.
-- Use least-privilege access and a dedicated token for automation.
+- **Credential**: `LINEAR_API_KEY`
+- **Obtaining API Key**: Access your Linear account settings at `https://linear.app/settings/api` to generate a new API key.
+- **Access Level**: Use a least-privilege access token for automation to ensure security.
 
-## Required Workflow
+## Core Functionality
 
-1. Clarify intent and scope:
-   - Team/project, labels, cycle, assignee, due date, priority.
-2. Read current state first:
-   - List/get issues, projects, statuses, labels, users, cycles.
-3. Apply mutations second:
-   - Create/update issues, comments, projects, milestones, labels.
-4. Summarize exactly what changed:
-   - Mention IDs, states, assignees, blockers, and follow-up actions.
+### Commands Overview
 
-## Command Coverage
+- **Teams and Projects**: Manage teams and projects with commands like `teams`, `projects`, and `createProject`.
+- **Issues**: Create, update, and manage issues with `issues`, `createIssue`, and `updateIssue`.
+- **Comments**: Add comments to issues using `createComment`.
+- **States and Labels**: Manage states and labels with `states` and `labels`.
+- **Users**: Retrieve information about users with `user`.
 
-- Teams and projects:
-  `teams`, `projects`, `createProject`
-- Issues:
-  `issues`, `issue`, `createIssue`, `updateIssue`
-- Comments:
-  `createComment`
-- States and labels:
-  `states`, `labels`
-- User:
-  `user`
+### Workflow Steps
 
-## 示例
+1. **Clarify Intent and Scope**: Define the team/project, labels, cycle, assignee, due date, and priority.
+2. **Read Current State**: List or get issues, projects, statuses, labels, users, and cycles.
+3. **Apply Mutations**: Create or update issues, comments, projects, milestones, and labels.
+4. **Summarize Changes**: Document the changes made, including IDs, states, assignees, blockers, and follow-up actions.
+
+## Practical Workflows
+
+- **Triage Urgent Bugs**: List high-priority open issues, assign owners, move state to 'In Progress', and add triage comments.
+- **Sprint Planning**: Review cycle scope, create missing issues, set priorities and estimates, and align assignees.
+- **Release Prep**: Verify blockers, update project status, create milestone tasks, and add rollout comments.
+- **Documentation Cleanup**: Find stale docs/issue, open follow-up tasks, and link related records.
+
+## Safety and Operational Rules
+
+- **ID Management**: Never invent IDs; fetch and confirm before updates.
+- **Narrow Updates**: Prefer narrow updates over broad bulk edits.
+- **Bulk Edits**: Explain grouping logic before applying changes.
+- **Secrets**: Do not include secrets in issue comments or descriptions.
+- **API Scope**: Do not send data to endpoints outside Linear API scope.
+
+## Command Examples
 
 ```bash
 node {baseDir}/scripts/linear-cli.js teams
@@ -82,87 +95,25 @@ node {baseDir}/scripts/linear-cli.js createIssue "Title" "Description" "team-id"
 node {baseDir}/scripts/linear-cli.js updateIssue "issue-id" '{"stateId":"state-id"}'
 ```
 
-## Practical Workflows
+## Error Handling
 
-- Triage urgent bugs:
-  list high-priority open issues, assign owners, move state to `In Progress`, add triage comments.
-- Sprint planning:
-  review cycle scope, create missing issues, set priorities and estimates, align assignees.
-- Release prep:
-  verify blockers, update project status, create milestone tasks, add rollout comments.
-- Documentation cleanup:
-  find stale docs/issues, open follow-up tasks, link related records.
+### Common Errors
 
-## Safety and Operational Rules
+- **Configuration Errors**: Check the dependencies and ensure the `LINEAR_API_KEY` is set correctly.
+- **Runtime Errors**: Verify the runtime environment meets the requirements.
+- **Network Errors**: Check your network connection and try again.
 
-- Never invent IDs; fetch and confirm before updates.
-- Prefer narrow updates over broad bulk edits.
-- For bulk edits, explain grouping logic before applying changes.
-- Do not include secrets in issue comments or descriptions.
-- Do not send data to endpoints outside Linear API scope for this skill.
+### Troubleshooting
 
-## References
+- **Configuration Issues**: Review the setup instructions and ensure all prerequisites are met.
+- **Dependency Issues**: Reinstall dependencies or check for package compatibility.
+- **API Key Issues**: Ensure the API key is valid and has the necessary permissions.
 
-- `references/API.md` for priority values and workflow patterns.
+## Security Considerations
 
-## 依赖说明
+- **API Key Security**: Keep your API key secure and do not share it with unauthorized users.
+- **Least Privilege Access**: Use a dedicated token with the least privilege access for automation.
 
-### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
-- **操作系统**: Windows / macOS / Linux
+## Conclusion
 
-### 依赖说明
-| 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
-| LLM API | API | 必需 | 由Agent内置LLM提供 |
-
-### API Key 配置
-- 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
-
-### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
-- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
-
-## 核心能力
-
-- Manage Linear projects, issues, and tasks via the bundled Node CLI and
-  the official Linear API
-- 触发关键词: linear, tasks, manage, issues, projects, skill
-
-## 适用场景
-
-| 场景 | 输入 | 输出 |
-|------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
-
-**不适用于**：需要人工判断的复杂决策场景
-
-## 使用流程
-
-1. 确认运行环境满足依赖说明中的要求
-2. 根据适用场景选择合适的使用方式
-3. 执行操作并检查输出结果
-4. 如遇错误，参考错误处理章节
-
-## 错误处理
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
-
-## 常见问题
-
-### Q1: 如何开始使用Linear？
-A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
-
-### Q2: 遇到错误怎么办？
-A: 请参考错误处理章节，按照表格中的处理方式操作。
-
-### Q3: Linear有什么限制？
-A: 请参考已知限制章节了解具体限制。
-
-## 已知限制
-
-- 需要API Key，无Key环境无法使用
+Linear is a powerful tool for managing projects, issues, and tasks. By following this guide, users can effectively leverage the Linear skill to streamline their project management processes and enhance team collaboration.

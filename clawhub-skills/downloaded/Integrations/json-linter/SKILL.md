@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Json Linter
 
 A simple utility to recursively scan the workspace for `.json` files and validate their syntax using `JSON.parse()`.

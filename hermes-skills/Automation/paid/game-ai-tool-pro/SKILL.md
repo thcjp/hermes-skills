@@ -7,7 +7,7 @@ displayName: 游戏AI工具专业版
 summary: "企业级游戏AI平台,支持GOAP、机器学习、多AI协作与可视化调试。面向游戏工作室与商业项目的企业级游戏 AI 开发平台."
 license: Proprietary
 edition: pro
-description: 面向游戏工作室与商业项目的企业级游戏 AI 开发平台。可生成提升工作效率
+description: "面向游戏工作室与商业项目的企业级游戏 AI 开发平台。可生成提升工作效率。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
   核心能力: GOAP目标导向规划、强化学习集成、多AI协作、可视化调试器、性能分析、团队协作
 
   适用场景: 商业游戏开发、3A级AI系统、复杂战术AI、训练模拟、AI研究与原型
@@ -60,21 +60,21 @@ category: "Automation"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -104,7 +104,7 @@ category: "Automation"
 联系销售开通专业版,获取管理员凭证与租户 ID.
 ### Step 2: 配置凭证
 ```bash
-export GAME_AI_ADMIN_KEY="sk_pro_admin_xxx"
+export GAME_AI_ADMIN_KEY="sk_pro_admin_未指定"
 export GAME_AI_ORG_ID="org_your_id"
 export GAME_AI_EDITION="pro"
 ```
@@ -220,8 +220,8 @@ public class TeamStrategy
         return Type switch
         {
             StrategyType.FlankAttack => AssignFlankRoles(memberCount),
-            StrategyType.SuppressingFire => AssignSuppressRoles(memberCount),
-            StrategyType.Retreat => AssignRetreatRoles(memberCount),
+SuppressingFire => AssignSuppressRoles(memberCount),
+Retreat => AssignRetreatRoles(memberCount),
             _ => AssignDefaultRoles(memberCount),
         };
     }
@@ -252,7 +252,7 @@ public class SharedBlackboard
 }
 ```
 
-## 最佳实践
+## 优选实践
 ### 1. GOAP 性能优化
 ```csharp
 // 缓存规划结果,避免每帧重算
@@ -348,7 +348,6 @@ def create_ai_team_workflow(project_id):
     }
     resp = requests.post(
         f"{API_BASE}/projects/{project_id}/workflow",
-        headers=trainer.headers,
         json=payload,
         timeout=30,
     )
@@ -386,7 +385,7 @@ CPU 训练较慢,GPU 训练推荐 (NVIDIA RTX 3060+),专业版提供云端 GPU �
 
 ### API Key 配置
 ```bash
-export GAME_AI_ADMIN_KEY="sk_pro_admin_xxx"
+export GAME_AI_ADMIN_KEY="sk_pro_admin_未指定"
 export GAME_AI_ORG_ID="org_your_id"
 export GAME_AI_EDITION="pro"
 # ...
@@ -398,7 +397,7 @@ export DEBUGGER_LOG_LEVEL="debug"
 ```
 
 ### 可用性分类
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+execute(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 面向游戏工作室与商业项目,通过自然语言指令驱动 Agent 调用 Pro API,完成高级 AI 架构开发、模型训练、团队协作
 - **专业版特性**: GOAP、强化学习、多 AI 协作、可视化调试器、性能分析、商业授权
 - **兼容性**: 与免费版代码格式完全兼容,支持平滑升级
@@ -432,3 +431,14 @@ export DEBUGGER_LOG_LEVEL="debug"
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

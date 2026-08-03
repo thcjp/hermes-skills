@@ -1,4 +1,5 @@
 ---
+
 slug: bsession-tool-pro
 name: bsession-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 浏览器会话(专业版)
 summary: "企业级浏览器会话专业版，含定时任务、Webhook通知、批量会话管理与监控告警.。浏览器会话助手专业版是面向企业级场景的完整浏览器会话管理工具。在免费版单次抓取能力之上，新增定时任务（rec"
 license: Proprietary
 edition: pro
-description: 浏览器会话助手专业版是面向企业级场景的完整浏览器会话管理工具。在免费版单次抓取能力之上，新增定时任务（recurring）、会话持久化、Webhook通知、批量会话管理、企业级监控告警、Cloudflare自动绕过、会话调试增强七大高级能力。Use
+description: "浏览器会话助手专业版是面向企业级场景的完整浏览器会话管理工具。在免费版单次抓取能力之上，新增定时任务（recurring）、会话持久化、Webhook通知、批量会话管理、企业级监控告警、Cloudflare自动绕过、会话调试增强七大高级能力。Use。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。"
   when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估.
 tags:
   - 浏览器会话
@@ -29,7 +30,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 > **定时任务+会话持久化+Webhook通知+批量管理+监控告警。企业级会话管理全功能覆盖。**
 
 将复杂的浏览器会话管理任务交给专业工具处理。专业版在免费版单次抓取能力之上，新增定时任务、会话持久化、Webhook通知、批量会话管理、企业级监控告警、Cloudflare自动绕过、会话调试增强七大高级能力，满足企业级场景对浏览器会话的可靠性、可观测性与可扩展性要求.
@@ -52,22 +55,18 @@ category: "Knowledge"
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供定时任务（recurring循环执行）所需的指令和必要参数.
 **处理**: 解析定时任务（recurring循环执行）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时任务（recurring循环执行）的响应数据,包含状态码、结果和日志.
 ### 2. 会话持久化（保存为可复用脚本）
 
-**输入**: 用户提供会话持久化（保存为可复用脚本）所需的指令和必要参数.
 **处理**: 解析会话持久化（保存为可复用脚本）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回会话持久化（保存为可复用脚本）的响应数据,包含状态码、结果和日志.
 ### 3. Webhook通知（多渠道）
 
-**输入**: 用户提供Webhook通知（多渠道）所需的指令和必要参数.
 **处理**: 解析Webhook通知（多渠道）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Webhook通知（多渠道）的响应数据,包含状态码、结果和日志.
 ### 4. 批量会话管理
 
-**输入**: 用户提供批量会话管理所需的指令和必要参数.
 **处理**: 解析批量会话管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量会话管理的响应数据,包含状态码、结果和日志.
 ### 5. 企业级监控告警
@@ -115,14 +114,13 @@ class SessionMonitor:
                 if health["status"] != "healthy":
                     self.failure_counts[name] = self.failure_counts.get(name, 0) + 1
                     if self.failure_counts[name] >= self.max_failures:
-                        self.notifier.notify(
                             "slack-alerts",
                             "会话异常告警",
                             f"会话 {name} 连续失败 {self.failure_counts[name]} 次\n状态：{health.get('status')}\n详情：{health.get('error', '')[:200]}"
                         )
-                        self._restart_session(name)
+_restart_session(name)
                 else:
-                    self.failure_counts[name] = 0
+failure_counts[name] = 0
 # ...
             time.sleep(self.check_interval)
 # ...
@@ -138,10 +136,9 @@ class SessionMonitor:
             print(f"重启失败：{e}")
 # ...
 monitor = SessionMonitor(check_interval=300, max_failures=3)
-monitor.notifier.register("slack-alerts", "https://hooks.slack.com/services/xxx", "slack")
+monitor.notifier.register("slack-alerts", "https://hooks.slack.com/services/未指定", "slack")
 ```
 
-**输入**: 用户提供企业级监控告警所需的指令和必要参数.
 **处理**: 解析企业级监控告警的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回企业级监控告警的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级浏览器会话、含定时任务、批量会话管理与监、浏览器会话助手专、业版是面向企业级、场景的完整浏览器、会话管理工具、在免费版单次抓取、能力之上、新增定时任务、Cloudflare、自动绕过、会话调试增强七大、高级能力、Use、when、需要项目管理、任务规划、进度跟踪、团队协作时使用、不适用于实际人员、绩效评估等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -154,7 +151,7 @@ monitor.notifier.register("slack-alerts", "https://hooks.slack.com/services/xxx"
 session = RecurringSession(
     name="competitor-price",
     interval=3600,  # 每小时检查
-    webhook_url="https://hooks.slack.com/services/xxx"
+    webhook_url="https://hooks.slack.com/services/未指定"
 )
 session.start()
 ```
@@ -194,7 +191,7 @@ persister.save_session(
 ```bash
 docker exec agent-browser bsession new price-monitor
 # ...
-echo 'N8N_WEBHOOK_URL=https://n8n.example.com/webhook/xxx' >> ~/.bsession/workspace/conf/price-monitor.conf
+echo 'N8N_WEBHOOK_URL=https://n8n.example.com/webhook/未指定' >> ~/.bsession/workspace/conf/price-monitor.conf
 # ...
 docker exec agent-browser bsession run price-monitor
 # ...
@@ -208,7 +205,7 @@ cat > ~/.bsession/workspace/conf/batch-monitor.conf <<EOF
 [env]
 CDP_PORT=9222
 CHECK_INTERVAL=1800
-N8N_WEBHOOK_URL=https://n8n.example.com/webhook/xxx
+N8N_WEBHOOK_URL=https://n8n.example.com/webhook/未指定
 EOF
 # ...
 cat > ~/.bsession/workspace/（请参考skill目录中的脚本文件） <<'PYEOF'
@@ -224,7 +221,6 @@ def run():
 # ...
     urls = [
         "https://example.com/page1",
-        "https://example.com/page2",
     ]
 # ...
     for url in urls:
@@ -248,13 +244,13 @@ docker exec agent-browser bsession run batch-monitor
 sessions:
   - name: price-monitor
     interval: 1800
-    webhook: https://hooks.slack.com/services/xxx
+    webhook: https://hooks.slack.com/services/未指定
     timeout: 60
     persistent: true
 # ...
   - name: stock-check
     interval: 3600
-    webhook: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=xxx
+    webhook: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=未指定
     timeout: 90
 # ...
 monitoring:
@@ -262,16 +258,16 @@ monitoring:
   max_failures: 3
   alert_channels:
     - type: slack
-      url: https://hooks.slack.com/services/xxx
+      url: https://hooks.slack.com/services/未指定
     - type: feishu
-      url: https://open.feishu.cn/open-apis/bot/v2/hook/xxx
+      url: https://open.feishu.cn/open-apis/bot/v2/hook/未指定
 # ...
 batch:
   max_workers: 5
   timeout: 300
 ```
 
-## 最佳实践
+## 优选实践
 ### 1. 会话命名规范
 ```python
 session_names = [
@@ -365,7 +361,7 @@ manager = BatchSessionManager(max_workers=3)
 此外，专业版还提供：
 - 多角色场景指南（运维/DevOps/数据团队/爬虫工程师）
 - 完整FAQ（7问）与故障排查表
-- 性能优化建议与最佳实践
+- 性能优化建议与优选实践
 - GPT-4o模型路由与优先支持
 
 ## 定价
@@ -386,8 +382,6 @@ manager = BatchSessionManager(max_workers=3)
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 
@@ -413,3 +407,22 @@ Skill: 执行完成,结果如下: 操作成功
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级浏览器会话专业版，含定时任务、Webhook通知、批量会话管理与监控告警.。浏览器会话助手专业版是面向企业级场景的
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

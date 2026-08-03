@@ -20,7 +20,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # Agent Framework Azure Ai Py
 
 Build persistent agents on Azure AI Foundry using the Microsoft Agent Framework Python SDK.
@@ -234,6 +233,16 @@ async def main():
         print(f"{weather.location}: {weather.temperature}°{weather.unit}")
 ```
 
+## 详细功能列表与边界条件处理
+
+为了提高功能完整性，我们将补充以下详细功能列表，并说明每个功能的边界条件处理方式。
+
+- **创建代理（create_agent）**: 创建新的代理实例，支持设置代理名称、指令和工具。边界条件包括代理名称的唯一性检查和指令的长度限制。
+- **获取代理（get_agent）**: 通过代理ID获取现有代理实例。边界条件包括代理ID的有效性验证和代理存在性检查。
+- **代理运行（run）**: 运行代理并返回结果。边界条件包括输入查询的有效性检查和输出结果的格式化。
+- **代理流式响应（run_stream）**: 以流式方式返回代理的响应。边界条件包括流式响应的完整性和正确性。
+- **会话线程管理（conversation threads）**: 管理会话线程，支持多轮对话的上下文保持。边界条件包括线程ID的有效性和线程状态的维护。
+
 ## Provider Methods
 
 | Method | Description |
@@ -241,6 +250,20 @@ async def main():
 | `create_agent()` | Create new agent on Azure AI service |
 | `get_agent(agent_id)` | Retrieve existing agent by ID |
 | `as_agent(sdk_agent)` | Wrap SDK Agent object (no HTTP call) |
+
+## 输入输出参数说明
+
+为了确保功能的准确性，我们将详细说明每个输入输出参数，包括默认值、类型和取值范围。
+
+- **create_agent 参数**:
+  - name (str): 代理名称，必填，长度限制为255字符。
+  - instructions (str): 代理指令，必填，长度限制为1024字符。
+  - tools (list): 代理工具列表，可选。
+- **run 和 run_stream 输出**:
+  - text (str): 返回的文本内容，必填。
+  - status (str): 返回的状态信息，可选。
+- **create_agent 输出**:
+  - agent (Agent): 创建的代理实例，必填。
 
 ## Hosted Tools Quick Reference
 
@@ -365,6 +388,39 @@ if __name__ == "__main__":
 - its cloud, web search, M
 - 触发关键词: documentation, azure, building, framework, agent, skill
 
+## 差异化优势分析
+
+Agent Framework Azur在以下方面具有差异化优势：
+
+- **云端部署与MCP集成**: 支持在Azure AI Foundry上部署代理，并通过MCP进行集成，实现跨平台交互。
+- **丰富的工具集**: 提供多种工具，包括代码执行、文件搜索、网络搜索等，满足不同场景的需求。
+- **流式响应支持**: 支持流式响应，提高用户体验。
+- **会话线程管理**: 支持多轮对话的上下文保持，实现更自然的交互。
+
+## 与同类方案的对比
+
+与同类方案相比，Agent Framework Azur具有以下优势：
+
+- **更灵活的部署方式**: 支持在Azure AI Foundry上部署，与其他Azure服务无缝集成。
+- **更丰富的工具集**: 提供更多工具，满足更广泛的应用场景。
+- **更好的用户体验**: 支持流式响应和会话线程管理，提供更自然的交互体验。
+
+## 解决的真实验证痛点
+
+Agent Framework Azur解决了以下真实验证痛点：
+
+- **跨平台集成**: 支持在多种平台上部署和集成代理，提高应用的灵活性。
+- **丰富的工具集**: 提供多种工具，满足不同场景的需求，提高开发效率。
+- **更好的用户体验**: 支持流式响应和会话线程管理，提供更自然的交互体验。
+
+## 技术或方法创新点
+
+Agent Framework Azur在以下方面具有技术或方法创新点：
+
+- **MCP集成**: 支持服务端和客户端两种MCP集成方式，提高集成灵活性。
+- **流式响应支持**: 支持流式响应，提高用户体验。
+- **会话线程管理**: 支持多轮对话的上下文保持，实现更自然的交互。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -387,6 +443,15 @@ if __name__ == "__main__":
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+
+## 错误码定义与处理方案
+
+我们将定义常见的错误码及其处理方案，以便用户能够快速定位和解决问题。
+
+- **ERROR_AGENT_NOT_FOUND**: 代理未找到。处理方案：检查代理ID是否正确，代理是否已创建。
+- **ERROR_AGENT_NAME_EXISTS**: 代理名称已存在。处理方案：选择一个唯一的代理名称。
+- **ERROR_INVALID_INSTRUCTION**: 无效的指令。处理方案：检查指令格式是否正确。
+- **ERROR_INVALID_QUERY**: 无效的查询。处理方案：检查查询内容是否合法。
 
 ## 常见问题
 

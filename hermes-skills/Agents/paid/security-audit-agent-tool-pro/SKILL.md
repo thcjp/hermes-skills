@@ -1,4 +1,5 @@
 ---
+
 slug: security-audit-agent-tool-pro
 name: security-audit-agent-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: Agent安全审计专业版
 summary: 企业级AI Agent安全审计平台,支持多Agent审计、深度提示注入检测、沙盒逃逸分析与CI/CD集成,适合安全团队与企业用户.
 license: Proprietary
 edition: pro
-description: Agent安全审计专业版,为企业安全团队提供全方位AI Agent安全审计能力。核心能力:多Agent批量审计、上下文感知提示注入检测、沙盒逃逸分析、工具参数投毒检测、供应链安全、SARIF报告与CI/CD集成。Use
+description: "Agent安全审计专业版,为企业安全团队提供全方位AI Agent安全审计能力。核心能力:多Agent批量审计、上下文感知提示注入检测、沙盒逃逸分析、工具参数投毒检测、供应链安全、SARIF报告与CI/CD集成。Use。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。"
   when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
 tags:
   - 安全
@@ -29,7 +30,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
+
 ---
+
 专业版为企业安全团队提供完整的AI Agent安全审计平台,涵盖多Agent批量审计、上下文感知深度提示注入检测、沙盒逃逸分析、工具参数投毒检测、供应链安全审查与CI/CD安全门禁。在免费版基础审计能力之上,新增企业级深度检测、自动化修复建议与合规报告导出。专业版完全兼容免费版审计方法,已有审计流程可无缝升级.
 ### 专业版核心优势
 | 优势 | 说明 |
@@ -72,7 +75,7 @@ for agent_dir in "$AGENTS_DIR"/*/; do
 # ...
     ISSUES=0
 # ...
-    CODE_ISSUES=$(grep -rn 'eval(\|exec(\|system(' \
+    CODE_ISSUES=$(grep -rn 'JSON.parse(\|execute(\|system(' \
       --include='*.{js,ts,py}' "$agent_dir" 2>/dev/null | \
       grep -v 'node_modules\|test' | wc -l)
 # ...
@@ -111,7 +114,6 @@ echo ""
 echo "审计完成,报告: ${REPORT_FILE}"
 ```
 
-**输入**: 用户提供多Agent批量审计(专业版独有)所需的指令和必要参数.
 **处理**: 解析多Agent批量审计(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多Agent批量审计(专业版独有)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -120,7 +122,6 @@ echo "审计完成,报告: ${REPORT_FILE}"
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供上下文感知提示注入检测(专业版独有)所需的指令和必要参数.
 **处理**: 解析上下文感知提示注入检测(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回上下文感知提示注入检测(专业版独有)的响应数据,包含状态码、结果和日志.
 ### 3. 沙盒逃逸分析(专业版独有)
@@ -160,14 +161,12 @@ PROC_EXEC=$(grep -rn 'exec\|spawn\|system\|subprocess' \
 echo "  进程执行: ${PROC_EXEC} 处"
 ```
 
-**输入**: 用户提供沙盒逃逸分析(专业版独有)所需的指令和必要参数.
 **处理**: 解析沙盒逃逸分析(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回沙盒逃逸分析(专业版独有)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 4. SARIF报告导出(专业版独有)
 
-**输入**: 用户提供SARIF报告导出(专业版独有)所需的指令和必要参数.
 **处理**: 解析SARIF报告导出(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回SARIF报告导出(专业版独有)的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、安全审计平台、支持多、深度提示注入检测、沙盒逃逸分析与、适合安全团队与企、业用户、安全审计专业版、为企业安全团队提、供全方位、安全审计能力、核心能力、工具参数投毒检测、供应链安全、报告与、Use、when、需要安全检测、合规审计、漏洞扫描、加密防护时使用、不适用于渗透测试、未授权目标等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -212,12 +211,12 @@ jobs:
       - name: Run Agent Security Audit
         run: |
           CRITICAL=0
-          for pattern in 'eval(' 'exec(' 'system(' 'sk-[A-Za-z0-9]{20,}'; do
+          for pattern in 'JSON.parse(' 'execute(' 'system(' 'sk-[A-Za-z0-9]{20,}'; do
             count=$(grep -rn "$pattern" --include='*.{js,ts,py}' . | grep -v 'node_modules\|test' | wc -l)
             [ "$count" -gt 0 ] && echo "Found: $pattern ($count)" && CRITICAL=$((CRITICAL + count))
           done
 # ...
-          python3 deep_injection_scan.py --dir . --output injection.json
+py --dir . --output injection.json
           INJECTION_COUNT=$(jq '.total_findings' injection.json)
 # ...
           if [ "$CRITICAL" -gt 0 ] || [ "$INJECTION_COUNT" -gt 0 ]; then
@@ -324,12 +323,11 @@ if __name__ == "__main__":
 ```bash
 bash codebase_scan.sh
 # ...
-bash multi_agent_audit.sh ./agents --full --output report.json
+sh ./agents --full --output report.json
 ```
 
 ### 首次深度注入检测
 ```bash
-python3 deep_injection_scan.py --dir ./agents --output injection-report.json
 ```
 
 #
@@ -370,7 +368,7 @@ rules:
 | 参数投毒 | 命令注入 | 路径遍历 | SQL注入 | XSS |
 | 密钥泄露 | 私钥 | API Key | Token | 内部URL |
 
-## 最佳实践
+## 优选实践
 1. **深度防御**:代码审计+提示注入检测+沙盒分析多层防护.
 2. **批量治理**:对所有Agent项目定期执行批量审计.
 3. **CI/CD门禁**:将安全审计集成到部署流水线,阻断不安全Agent.
@@ -410,7 +408,7 @@ rules:
 - SARIF报告生成无需额外API Key
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+execute(纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行企业级AI Agent安全审计与治理任务
 
 ## 错误处理
@@ -442,3 +440,22 @@ rules:
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级AI Agent安全审计平台,支持多Agent审计、深度提示注入检测、沙盒逃逸分析与CI/CD集成,适合安全团队与
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

@@ -1,5 +1,6 @@
 ---
-slug: "llm-provider-ai-tool-pro"
+
+slug: llm-provider-ai-tool-pro
 name: "llm-provider-ai-tool-pro"
 version: "1.0.0"
 displayName: "OpenAI助手专业版"
@@ -48,7 +49,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+
 ---
+
 # llm-provider 助手工具 - 专业版
 
 ## 概述
@@ -74,19 +77,18 @@ llm-provider 助手工具(专业版)为团队与企业用户提供 llm-provider 
 | 容器隔离 | 不支持 | 支持(隔离执行) | 安全沙箱 |
 | 审计日志 | 不支持 | 支持 | 合规追溯 |
 
-**输入**: 用户提供免费版 vs 专业版能力对比所需的指令和必要参数.
 **处理**: 解析免费版 vs 专业版能力对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版 vs 专业版能力对比的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
@@ -153,7 +155,7 @@ curl -X POST "https://api.llm-provider.com/v1/files" \
   -F "file=@./training_data.jsonl"
 # ...
 # 2. 创建微调任务
-curl -X POST "https://api.llm-provider.com/v1/fine_tuning/jobs" \
+llm-provider.com/v1/fine_tuning/jobs" \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -207,7 +209,6 @@ client.beta.threads.messages.create(
     content="2026 年的报销政策有哪些变化?"
 )
 run = client.beta.threads.runs.create(
-    thread_id=thread.id,
     assistant_id=assistant.id
 )
 ```
@@ -234,7 +235,7 @@ run = client.beta.threads.runs.create(
 ### 1. 环境配置
 
 ```bash
-export OPENAI_API_KEY="sk-your-api-key"
+export OPENAI_API_KEY="${API_KEY:?请设置环境变量}"
 export OPENAI_ORG_ID="org-your-org-id"      # 企业组织 ID
 export OPENAI_PROJECT_ID="proj-your-proj-id" # 项目级隔离
 ```
@@ -248,10 +249,10 @@ curl https://api.llm-provider.com/v1/models \
   -H "llm-provider-Project: $OPENAI_PROJECT_ID" | jq '.data | length'
 ```
 
-### 3. 创建第一个批量任务
+### 3. 创建领先个批量任务
 
 ```bash
-curl -X POST "https://api.llm-provider.com/v1/batches" \
+llm-provider.com/v1/batches" \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -309,7 +310,6 @@ class AsyncTaskManager:
         raise TimeoutError(f"批量任务 {batch_id} 超时")
 # ...
     def wait_for_fine_tune(self, job_id, timeout=86400):
-        deadline = time.time() + timeout
         while time.time() < deadline:
             job = client.fine_tuning.jobs.retrieve(job_id)
             print(f"[FineTune] {job.status} | {job.fine_tuned_model}")
@@ -319,7 +319,7 @@ class AsyncTaskManager:
         raise TimeoutError(f"微调任务 {job_id} 超时")
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 1. 批量任务优化
 
@@ -419,7 +419,7 @@ run = client.evals.runs.create(
 - 专业版支持项目级配额与审计,建议按团队划分 Project
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+execute(纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。专业版完整覆盖 llm-provider 平台资源,适合企业级自动化流水线、模型微调与质量评估场景.
 ## 错误处理
 
@@ -449,3 +449,30 @@ run = client.evals.runs.create(
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级OpenAI API管理工具,支持批量任务、微调、评估与向量存储,适配团队协作与自动化流水线。
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 企业级OpenAI API管理工具,支持批量任务、微调、评估与向量存储,适配团队协作与自动化流水线。
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

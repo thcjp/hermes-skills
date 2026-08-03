@@ -33,7 +33,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Linear
 
 Manage issues, check project status, and stay on top of your team's work.

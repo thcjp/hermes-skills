@@ -1,5 +1,6 @@
 ---
-slug: "timer-alert-tool-pro"
+
+slug: timer-alert-tool-pro
 name: "timer-alert-tool-pro"
 version: "1.0.0"
 displayName: "定时提醒工具(专业版)"
@@ -7,7 +8,7 @@ summary: "定时提醒全能力版：循环定时、模板库、升级提醒、�
 license: "Proprietary"
 edition: "pro"
 description: |-
-  定时提醒工具（专业版）面向团队与企业用户，在免费版基础定时能力之上新增循环定时、提醒模板库、多级升级提醒、指定时间点触发、实时监控面板与定时器链。支持从简单提醒到复杂定时策略的完整工作流。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修.
+  定时提醒工具（专业版）面向团队与企业用户，在免费版基础定时能力之上新增循环定时、提醒模板库、多级升级提醒、指定时间点触发、实时监控面板与定时器链。支持从简单提醒到复杂定时策略的完整工作流。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
   - 沟通协作
   - 定时提醒
@@ -34,9 +35,10 @@ tools:
   - write
 homepage: ""
 category: "Automation"
----
-# 定时提醒工具（专业版）
 
+---
+
+# 定时提醒工具（专业版）
 ## 概述
 
 专业版是定时提醒能力的完整封装，在免费版的基础定时、番茄钟与多计时器之上，新增"循环定时"、"提醒模板库"、"多级升级提醒"、"定时器链"与"监控面板"五大高级模块。让团队能够编排复杂的定时策略，实现多级提醒升级与实时监控.
@@ -60,21 +62,21 @@ category: "Automation"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -153,7 +155,7 @@ bash background:true command:"node {baseDir}/timer-chain.js --config escalation.
 工作流需要按顺序执行：准备 5 分钟 → 工作 25 分钟 → 总结 5 分钟 → 休息 10 分钟。前一个完成后自动启动下一个.
 ```bash
 # 定时器链
-bash background:true command:"node {baseDir}/timer-chain.js --config workflow.json"
+js --config workflow.json"
 ```
 
 ```json
@@ -193,7 +195,6 @@ schedule_config = {
     }
 }
 ```
-
 ## 快速开始
 
 ### 120 秒上手
@@ -208,10 +209,10 @@ schedule_config = {
 
 ```bash
 # 每 15 分钟提醒一次
-bash background:true command:"node {baseDir}/timer-loop.js --interval 15m --message '站起来活动一下！'"
+js --interval 15m --message '站起来活动一下！'"
 # ...
 # 工作日每小时提醒
-bash background:true command:"node {baseDir}/timer-loop.js --interval 1h --message '整点检查' --weekdays-only"
+js --interval 1h --message '整点检查' --weekdays-only"
 ```
 
 ### 使用流程
@@ -225,8 +226,8 @@ bash background:true command:"node {baseDir}/timer-loop.js --interval 1h --messa
 ```bash
 # 使用预设模板
 bash background:true command:"node {baseDir}/timer-template.js --template pomodoro"
-bash background:true command:"node {baseDir}/timer-template.js --template standup"
-bash background:true command:"node {baseDir}/timer-template.js --template break-reminder"
+js --template standup"
+js --template break-reminder"
 ```
 
 ### 监控面板
@@ -298,23 +299,23 @@ escalation:
     - level: "info"
       delay: "0m"
       channels: ["system"]
-      message_template: "ℹ️ {{alert}}：{{detail}}"
+      message_template: "ℹ️ ："
     - level: "warning"
       delay: "5m"
       condition: "no_ack"
       channels: ["system", "sound"]
-      message_template: "⚠️ {{alert}}未确认：{{detail}}"
+      message_template: "⚠️ 未确认："
     - level: "urgent"
       delay: "10m"
       condition: "no_ack"
       channels: ["system", "sound", "webhook"]
-      message_template: "🔴 紧急：{{alert}} 10 分钟未处理！"
+      message_template: "🔴 紧急： 10 分钟未处理！"
       webhook_url: "${ALERT_WEBHOOK_URL}"
     - level: "critical"
       delay: "15m"
       condition: "no_ack"
       channels: ["system", "sound", "webhook", "email"]
-      message_template: "🚨 严重：{{alert}} 15 分钟未处理！已升级。"
+      message_template: "🚨 严重： 15 分钟未处理！已升级。"
       email_to: "ops@example.com"
   auto_ack_after: "30m"           # 30 分钟后自动确认
 ```
@@ -353,8 +354,7 @@ notification_channels:
 | 并行链 | 多个同时启动 | 多任务计时 |
 | 条件链 | 根据条件选择下一个 | 分支工作流 |
 | 循环链 | 链完成后从头开始 | 重复工作流 |
-
-## 最佳实践
+## 优选实践
 
 ### 1. 循环定时防疲劳
 
@@ -367,7 +367,7 @@ notification_channels:
 链中某一步失败时，`stop_on_error: false` 让链继续执行。每步记录执行结果，失败的步骤可在监控面板中重试。`auto_advance: true` 让链自动推进.
 ### 4. 模板复用
 
-将常用定时场景保存为模板（番茄钟、站会、休息提醒），下次一键启动。团队共享模板库确保一致性。自定义模板支持变量插值（`{{name}}`、`{{date}}`）.
+将常用定时场景保存为模板（番茄钟、站会、休息提醒），下次一键启动。团队共享模板库确保一致性。自定义模板支持变量插值（``、``）.
 ### 5. 监控面板使用
 
 监控面板实时显示所有定时器状态：运行中/已完成/失败/暂停。日志聚合查看历史记录。告警规则检测异常（如定时器意外终止）。建议在工作流编排时始终开启面板.
@@ -380,11 +380,10 @@ notification_channels:
 - 重要告警：系统+声音
 - 紧急告警：系统+声音+Webhook
 - 严重告警：全渠道（系统+声音+Webhook+邮件+推送）
-
 ## 常见问题
 
 ### Q1：循环定时器如何停止？
-A：`process action:kill sessionId:XXX` 终止循环定时器。或在配置中设置 `max_count` 限制循环次数。达到 `max_count` 后自动停止.
+A：`process action:kill sessionId:未指定` 终止循环定时器。或在配置中设置 `max_count` 限制循环次数。达到 `max_count` 后自动停止.
 ### Q2：升级提醒一直无人确认？
 A：配置 `auto_ack_after: "30m"` 在 30 分钟后自动确认，避免无限升级。Critical 级别通知全渠道后不再升级，仅保持告警状态.
 ### Q3：定时器链中途失败怎么办？
@@ -411,7 +410,6 @@ A：配置 `retry: 3` 与 `backoff: "exponential"` 自动重试 3 次，指数�
 - 跨会话持久化：重启后自动恢复
 - 通知渠道扩展：邮件/Webhook/推送/多渠道
 - 优先技术支持与迁移指南
-
 ## 与免费版兼容性
 
 | 方面 | 兼容性 |
@@ -457,8 +455,7 @@ A：配置 `retry: 3` 与 `backoff: "exponential"` 自动重试 3 次，指数�
 - **分类**：MD+EXEC（纯 Markdown 指令，需要 exec 命令行执行能力启动后台定时器与监控面板）
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务
 - **模型路由建议**：专业版推荐使用 Claude Sonnet 进行升级策略决策，Haiku 进行模板管理与监控
-- **数据存储**：定时器状态与历史日志可归档到 `PostgreSQL` 数据库做长期分析与审计
-
+- **数据存储**：定时器状态与历史日志可归档到 `数据库` 数据库做长期分析与审计
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
@@ -466,13 +463,11 @@ A：配置 `retry: 3` 与 `backoff: "exponential"` 自动重试 3 次，指数�
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
-
 ## 已知限制
 
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
-
 ## 输出格式
 ```json
 {
@@ -489,3 +484,13 @@ A：配置 `retry: 3` 与 `backoff: "exponential"` 自动重试 3 次，指数�
   "error": null
 }
 ```
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

@@ -225,7 +225,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 ## Protocol v2: Multi-Agent Discussions
 <why_this_matters>
 If you put multiple AI agents in one WhatsApp group, the naive default is everyone responds to everything. Five agents replying to one message means 5x the API spend per turn, plus echo loops where agents agree with each other forever. Protocol v2 introduces congestion control, conversation lifecycle, and budget-aware scheduling so agents know when to talk, when to stay quiet, and when to wrap up.

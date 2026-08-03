@@ -17,7 +17,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # China company search fengniao
 
 风鸟是一个以商业数据为核心的中国企业查询 skill，适合“查公司”“查法人”“查老板”“企业尽调”“合作方背景调查”“供应商风险筛查”等常见场景。通过 `discover` 发现所需工具，通过 `call` 获取结构化数据。

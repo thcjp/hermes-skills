@@ -1,4 +1,5 @@
 ---
+
 slug: rss-digest-tool-pro
 name: rss-digest-tool-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: RSS摘要工具专业版
 summary: "企业级RSS摘要生成与分发系统,支持批量源管理、定时调度、多租户配置与团队协作摘要分发。RSS摘要工具专业版为企业团队提供高阶RSS内容消化与分发能力。核心能力:"
 license: Proprietary
 edition: pro
-description: 'RSS摘要工具专业版为企业团队提供高阶RSS内容消化与分发能力。核心能力:
-
+description: "RSS摘要工具专业版为企业团队提供高阶RSS内容消化与分发能力。核心能力:。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
   - 批量订阅源管理与健康监控
 
   - 多主题并行摘要与定时调度
@@ -40,7 +40,7 @@ tags:
   - 检索
   - 工具
   - feed
-  - tenant
+  - workspace
   - rss
   - add
   - distribute
@@ -52,7 +52,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 # RSS摘要工具专业版
 
 ## 概述
@@ -77,7 +79,6 @@ RSS摘要工具专业版是企业级RSS内容消化与分发系统。在免费�
 | 多租户 | 不支持 | 租户隔离配置 |
 | 优先级支持 | 社区 | 专属技术支持 |
 
-**输入**: 用户提供免费版 vs 专业版能力对比所需的指令和必要参数.
 **处理**: 解析免费版 vs 专业版能力对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版 vs 专业版能力对比的响应数据,包含状态码、结果和日志.
 ### 专业版独有功能
@@ -90,12 +91,11 @@ RSS摘要工具专业版是企业级RSS内容消化与分发系统。在免费�
 6. **历史趋势分析**:摘要归档全文索引,支持关键词趋势可视化
 7. **多租户隔离**:不同租户独立配置与数据隔离
 
-**输入**: 用户提供专业版独有功能所需的指令和必要参数.
 **处理**: 解析专业版独有功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回专业版独有功能的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -190,20 +190,20 @@ feed digest weekly \
 内容服务商为不同客户提供定制化RSS摘要服务,各客户配置与数据相互隔离.
 ```bash
 # 创建租户
-feed tenant create --name "客户A" --config-dir /tenants/client-a/
-feed tenant create --name "客户B" --config-dir /tenants/client-b/
+feed workspace create --name "客户A" --config-dir /workspaces/client-a/
+feed workspace create --name "客户B" --config-dir /workspaces/client-b/
 # ...
 # 为租户A配置专属订阅源与摘要模板
-feed tenant exec client-a -- import tech-feeds.opml
-feed tenant exec client-a -- template set daily-brief --brand "客户A每日简报"
+feed workspace exec client-a -- import tech-feeds.opml
+feed workspace exec client-a -- template set daily-brief --brand "客户A每日简报"
 # ...
 # 为租户B配置不同主题
-feed tenant exec client-b -- import finance-feeds.opml
-feed tenant exec client-b -- template set market-digest --brand "客户B市场 digest"
+feed workspace exec client-b -- import finance-feeds.opml
+feed workspace exec client-b -- template set market-digest --brand "客户B市场 digest"
 # ...
 # 各租户独立调度
-feed tenant exec client-a -- schedule add --cron "0 9 * * *" --distribute "email:..."
-feed tenant exec client-b -- schedule add --cron "0 8 * * 1-5" --distribute "email:..."
+feed workspace exec client-a -- schedule add --cron "0 9 * * *" --distribute "email:..."
+feed workspace exec client-b -- schedule add --cron "0 8 * * 1-5" --distribute "email:..."
 ```
 
 ## 快速开始
@@ -227,7 +227,7 @@ feed pro enable --license-key "YOUR-PRO-KEY"
 # ...
 # 3. 验证升级
 feed pro status
-# 输出: Pro Edition Active | Tenant: default | Schedules: 0 | Templates: 3
+# 输出: Pro Edition Active | workspace: default | Schedules: 0 | Templates: 3
 ```
 
 ### 首次配置定时摘要
@@ -263,7 +263,7 @@ feed distribute add email \
 # IM Webhook分发(以企业通讯工具为例)
 feed distribute add webhook \
   --name "团队群通知" \
-  --url "https://im.example.com/webhook/xxx" \
+  --url "https://im.example.com/webhook/未指定" \
   --format card
 # ...
 # 文件归档
@@ -283,7 +283,7 @@ feed distribute add file \
 name: daily-brief
 displayName: 每日技术简报
 brand:
-  header: "# {{date}} 技术简报"
+  header: "#  技术简报"
   footer: "---\n由RSS摘要工具专业版自动生成"
 sections:
   - name: 重点推荐
@@ -307,7 +307,7 @@ filters:
 
 ```text
 config/
-├── tenants/
+├── workspaces/
 │   ├── client-a/
 │   │   ├── sources.opml        # 租户A订阅源
 │   │   ├── templates/          # 租户A摘要模板
@@ -315,7 +315,6 @@ config/
 │   ├── client-b/
 │   │   ├── sources.opml
 │   │   ├── templates/
-│   │   └── schedules.yaml
 │   └── default/                # 默认租户(兼容免费版)
 ├── global/
 │   ├── distribute.yaml         # 全局分发渠道
@@ -339,7 +338,7 @@ config/
 0 10 1 * *      -> 月度趋势回顾
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 1. 按业务线拆分主题树
 
@@ -384,13 +383,13 @@ feed schedule add --name "执行层详报" --template detailed-report --distribu
 A: 专业版完全兼容免费版,无需迁移。安装专业版后运行`feed pro enable`激活,原有订阅源、数据库、配置自动被专业版识别和使用。免费版的所有命令在专业版中继续可用.
 ### Q: 多租户模式下如何保证数据隔离?
 
-A: 每个租户拥有独立的配置目录(`config/tenants/<tenant_id>/`),包含各自的订阅源、模板、调度任务。数据库层面通过租户ID字段隔离,查询时自动附加租户过滤条件,确保租户间数据不可见.
+A: 每个租户拥有独立的配置目录(`config/workspaces/<workspace_id>/`),包含各自的订阅源、模板、调度任务。数据库层面通过租户ID字段隔离,查询时自动附加租户过滤条件,确保租户间数据不可见.
 ### Q: 定时调度任务失败如何排查?
 
 A: 运行`feed schedule logs <task-name>`查看任务执行日志。常见原因包括:订阅源URL失效、网络超时、分发渠道配置错误。专业版提供失败重试机制(默认3次,指数退避),并在重试耗尽后发送告警通知.
 ### Q: 自定义模板中的变量有哪些?
 
-A: 模板支持以下变量:`{{date}}`(当前日期)、`{{tenant_name}}`(租户名)、`{{theme}}`(主题名)、`{{entry_count}}`(条目数)、`{{brand_name}}`(品牌名)。模板字段定义参考`templates/`目录下的示例文件.
+A: 模板支持以下变量:``(当前日期)、``(租户名)、``(主题名)、``(条目数)、``(品牌名)。模板字段定义参考`templates/`目录下的示例文件.
 ### Q: 团队成员如何接收各自关注的摘要?
 
 A: 通过分发渠道的规则引擎实现。为每个成员配置订阅偏好(关注主题、关键词、频率),分发引擎根据偏好自动路由摘要至对应成员。支持"订阅即接收"模式,成员可自主管理关注列表.
@@ -414,7 +413,7 @@ A: 支持关键词搜索、时间范围过滤、主题过滤、趋势统计。�
 | SMTP服务 | 邮件服务 | 条件必需(邮件分发时) | 企业SMTP服务器 |
 | Webhook端点 | IM集成 | 条件必需(IM分发时) | 企业通讯工具Webhook URL |
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
-| WebFetch能力 | 网络抓取 | 推荐 | Agent内置或浏览器MCP工具 |
+| WebFetch能力 | 网络抓取 | 推荐 | Agent内置或浏览器工具 |
 
 ### API Key 配置
 
@@ -425,7 +424,7 @@ A: 支持关键词搜索、时间范围过滤、主题过滤、趋势统计。�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+execute(纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent调用`feed` CLI专业版完成企业级RSS摘要与分发任务。专业版在免费版基础上扩展批量操作、定时调度、团队协作与多租户能力,适合企业竞争情报监控、行业研究自动化与多租户内容服务场景.
 ## 错误处理
 
@@ -457,3 +456,30 @@ A: 支持关键词搜索、时间范围过滤、主题过滤、趋势统计。�
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级RSS摘要生成与分发系统,支持批量源管理、定时调度、多租户配置与团队协作摘要分发。RSS摘要工具专业版为企业团队提
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 企业级RSS摘要生成与分发系统,支持批量源管理、定时调度、多租户配置与团队协作摘要分发。RSS摘要工具专业版为企业团队提
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

@@ -1,6 +1,7 @@
 ---
+
 name: "azure-cloud-inspector-free"
-description: "面向日常巡检的Azure检查助手,默认只读,风险评分,暴露面发现,配置漂移检测。"
+description: "面向日常巡检的Azure检查助手,默认只读,风险评分,暴露面发现,配置漂移检测。Use when 用户需要azure-cloud-inspector-free相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -16,6 +17,10 @@ metadata:
     - "安全检查"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # Azure巡检员(免费版)
@@ -28,7 +33,7 @@ metadata:
 
 ### 30秒:确认身份
 ```bash
-az account show --query '{Subscription:name, Tenant:tenantId, User:user.name}' --output table
+az account show --query '{Subscription:name, workspace:workspaceId, User:user.name}' --output table
 ```
 未登录时运行: `az login --use-device-code`
 
@@ -37,7 +42,7 @@ az account show --query '{Subscription:name, Tenant:tenantId, User:user.name}' -
 # 1. 列出当前订阅所有资源组
 az group list --query '[].{Name:name, Location:location, Count:length(resources())}' --output table
 
-# 2. 巡检第一个资源组(替换 <RG>)
+# 2. 巡检领先个资源组(替换 <RG>)
 az group show -n <RG> --query '{Name:name, State:properties.provisioningState, Tags:tags}'
 az resource list -g <RG> --query '[].{Name:name, Type:type, Location:location}' --output table
 ```
@@ -71,7 +76,7 @@ az account list 多个订阅 → 询问用户选择
 直接使用
 ```
 
-结果为订阅范围时,明确说明使用的订阅。登录特定租户使用 `az login --tenant <tenant-id>`(tenant为Azure CLI标准参数)。
+结果为订阅范围时,明确说明使用的订阅。登录特定租户使用 `az login --workspace <workspace-id>`(workspace为Azure CLI标准参数)。
 
 ## 巡检任务模板(差异化)
 
@@ -87,7 +92,7 @@ echo "=== 资源清单 ==="
 az resource list -g "$RG" --query '[].{Name:name, Type:type, Location:location, Created:createdTime}' --output table
 
 echo "=== 资源数量统计 ==="
-az resource list -g "$RG" --query '[].type' -o tsv | sort | uniq -c | sort -rn
+type' -o tsv | sort | uniq -c | sort -rn
 ```
 
 ### 模板2:VM健康巡检
@@ -110,10 +115,10 @@ echo "=== 存储账户清单 ==="
 az storage account list --query '[].{Name:name, RG:resourceGroup, SKU:sku.name, TLS:minimumTlsVersion}' --output table
 
 echo "=== 公共Blob访问检查(应为false) ==="
-az storage account list --query '[].{Name:name, PublicAccess:allowBlobPublicAccess}' --output table
+{Name:name, PublicAccess:allowBlobPublicAccess}' --output table
 
 echo "=== HTTPS强制检查(应为true) ==="
-az storage account list --query '[].{Name:name, HTTPS:enableHttpsTrafficOnly}' --output table
+{Name:name, HTTPS:enableHttpsTrafficOnly}' --output table
 ```
 
 ## 五维风险评分模型(差异化核心)
@@ -258,7 +263,6 @@ echo "巡检报告已生成: $REPORT"
 
 ## 错误处理
 
-
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
 |------|----------|------|----------|--------|
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
@@ -315,11 +319,11 @@ A: 免费版需手动切换订阅(`az account set --subscription <id>`)分别巡
 
 ### API Key 配置
 - 通过 `az login` 认证,无需手动配置API Key
-- 服务主体认证需 `az login --service-principal -u <app-id> -p <password> --tenant <tenant>`
+- 服务主体认证需 `az login --service-principal -u <app-id> -p <password> --workspace <workspace>`
 - **绝不要**在聊天、日志或巡检报告中输出密钥、客户端密钥、令牌
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,需要命令行执行能力运行Azure CLI)
+- **分类**: MD+execute(纯Markdown指令,需要命令行执行能力运行Azure CLI)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent使用Azure CLI执行云资源巡检。需要Azure CLI和Azure账户。
 
 ## 已知限制
@@ -361,40 +365,30 @@ A: 免费版需手动切换订阅(`az account set --subscription <id>`)分别巡
 ### Azure巡检员免费版是一个以
 Azure巡检员免费版是一个以"日常巡检"为核心视角的Azure CLI辅助工具
 
-**输入**: 用户提供Azure巡检员免费版是一个以所需的指令和必要参数。
-**处理**: 按照skill规范执行Azure巡检员免费版是一个以操作,遵循单一意图原则。
 **输出**: 返回Azure巡检员免费版是一个以的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 针对云上资源"配置漂移无人察觉、公网暴露
 针对云上资源"配置漂移无人察觉、公网暴露面长期敞开、巡检脚本每次重写、风险等级无量化、巡检结论难分享"五大痛点,构建了风险评分模型、暴露面发现、配置漂移检测、巡检任务模板和巡检报告生成五大基础能力
 
-**输入**: 用户提供针对云上资源"配置漂移无人察觉、公网暴露所需的指令和必要参数。
-**处理**: 按照skill规范执行针对云上资源"配置漂移无人察觉、公网暴露操作,遵循单一意图原则。
 **输出**: 返回针对云上资源"配置漂移无人察觉、公网暴露的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心能力包括
 核心能力包括:默认只读查询保障安全
 
-**输入**: 用户提供核心能力包括所需的指令和必要参数。
-**处理**: 按照skill规范执行核心能力包括操作,遵循单一意图原则。
 **输出**: 返回核心能力包括的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 写操作与破坏性操作需双重确认
 写操作与破坏性操作需双重确认
 
-**输入**: 用户提供写操作与破坏性操作需双重确认所需的指令和必要参数。
-**处理**: 按照skill规范执行写操作与破坏性操作需双重确认操作,遵循单一意图原则。
 **输出**: 返回写操作与破坏性操作需双重确认的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 支持--dry-run与wha
 支持--dry-run与what-if预演
 
-**输入**: 用户提供支持--dry-run与wha所需的指令和必要参数。
-**处理**: 按照skill规范执行支持--dry-run与wha操作,遵循单一意图原则。
 **输出**: 返回支持--dry-run与wha的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -438,3 +432,11 @@ Azure巡检员免费版是一个以"日常巡检"为核心视角的Azure CLI辅�
 4. 对变更资源调用az resource show对比属性
 5. 输出漂移报告
 ```
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

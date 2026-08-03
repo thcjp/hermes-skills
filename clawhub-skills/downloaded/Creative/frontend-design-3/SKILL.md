@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Frontend Design
 
 Create distinctive, production-grade frontend interfaces that avoid generic "AI slop" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices.
@@ -166,3 +165,21 @@ A: 请参考已知限制章节了解具体限制。
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
 - 性能取决于底层模型能力
+
+---
+## 边界条件与限制
+
+### 输入限制
+- **输入格式**: 技能接受纯文本输入，包括Markdown格式，但不支持图片、视频等多媒体内容。
+- **内容长度**: 输入文本长度建议在100-5000字符之间，过长或过短的文本可能影响处理效果。
+- **敏感内容**: 输入中不应包含敏感信息，如个人隐私数据、商业机密等，技能将拒绝处理此类内容。
+
+### 性能边界
+- **处理速度**: 技能处理单个请求的平均响应时间约为几秒，对于复杂或长文本，处理时间可能更长。
+- **并发处理**: 技能支持一定程度的并发处理，但高并发情况下可能需要等待。
+
+### 兼容性约束
+- **浏览器兼容性**: 技能生成的代码主要针对现代浏览器，如Chrome、Firefox、Safari等，对旧版浏览器的支持可能有限。
+- **框架兼容性**: 技能生成的代码需要与所选前端框架兼容，如React、Vue等，不兼容的框架可能导致代码无法正常运行。
+- **设备兼容性**: 技能生成的界面设计需考虑不同设备的显示效果，如桌面、平板、手机等，确保在不同设备上均有良好体验。
+

@@ -1,5 +1,6 @@
 ---
-slug: "whatsapp-msg-tool-pro"
+
+slug: whatsapp-msg-tool-pro
 name: "whatsapp-msg-tool-pro"
 version: "1.0.0"
 displayName: "WhatsApp消息工具(专业版)"
@@ -7,7 +8,7 @@ summary: "WhatsApp消息全能力版：批量发送、历史回填、群组管�
 license: "Proprietary"
 edition: "pro"
 description: |-
-  WhatsApp 消息工具（专业版）面向团队与企业用户，在免费版基础消息能力之上新增批量操作引擎、历史回填、群组管理、持续同步与高级搜索。支持从消息发送到数据归档的完整工作流。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+  WhatsApp 消息工具（专业版）面向团队与企业用户，在免费版基础消息能力之上新增批量操作引擎、历史回填、群组管理、持续同步与高级搜索。支持从消息发送到数据归档的完整工作流。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
   - 沟通协作
   - 即时通讯
@@ -28,7 +29,9 @@ tools:
   - write
 homepage: ""
 category: "Communication"
+
 ---
+
 # WhatsApp 消息工具（专业版）
 
 ## 概述
@@ -53,21 +56,21 @@ category: "Communication"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -82,7 +85,7 @@ category: "Communication"
 python wa_batch_sender.py \
   --store ~/.wacli \
   --recipients "contacts.json" \
-  --message "您好 {{name}}，我们的产品已更新至 v2.1.0，新增实时协作功能。" \
+  --message "您好 ，我们的产品已更新至 v2.1.0，新增实时协作功能。" \
   --rate_limit 3 \
   --retry 3 \
   --dry_run false
@@ -96,7 +99,7 @@ batch_config = {
         {"phone": "+8613900139000", "name": "李四", "company": "B公司"},
         {"phone": "+8613700137000", "name": "王五", "company": "C公司"}
     ],
-    "message_template": "您好 {{name}}（{{company}}），\n\n产品已更新至 v2.1.0。\n新增功能：实时协作、自动保存。\n\n如有疑问请随时联系。",
+    "message_template": "您好 （），\n\n产品已更新至 v2.1.0。\n新增功能：实时协作、自动保存。\n\n如有疑问请随时联系。",
     "rate_limit_sec": 3,          # 每条间隔 3 秒
     "max_per_hour": 100,           # 每小时最多 100 条
     "retry_on_failure": 3,
@@ -205,11 +208,9 @@ sync_config = {
 ### 批量文件发送
 
 ```bash
-python wa_batch_sender.py \
   --store ~/.wacli \
-  --recipients "contacts.json" \
   --file "/path/to/report.pdf" \
-  --caption "{{name}}您好，这是您本月的使用报告。" \
+  --caption "您好，这是您本月的使用报告。" \
   --rate_limit 5 \
   --dry_run true
 ```
@@ -222,7 +223,6 @@ wacli messages search --regex "合同.*[0-9]{4}年" --limit 50 --json
 # ...
 # 多维度过滤
 wacli messages search \
-  --chat "8613800138000@s.whatsapp.net" \
   --after 2026-01-01 \
   --before 2026-07-31 \
   --from-me false \
@@ -342,7 +342,7 @@ wacli contacts resolve --input "contacts.json" --output "resolved.json"
 | 时段分析 | 消息量按小时分布 | 每周 | 热力图 |
 | 媒体统计 | 图片/文件/语音占比 | 每月 | 饼图数据 |
 
-## 最佳实践
+## 优选实践
 
 ### 1. 批量发送防封策略
 
@@ -378,7 +378,7 @@ A：索引构建时间取决于历史消息量。1 万条约需 5 分钟，10 �
 ### Q5：群组创建失败？
 A：WhatsApp 限制群组参与者数量（最多 1024 人）。首次创建建议不超过 50 人，后续逐步添加。确保所有手机号已激活 WhatsApp.
 ### Q6：多账号同时运行冲突？
-A：每个账号使用独立 `--store` 目录完全隔离。同一手机号只能在一个 CLI 实例中登录——第二个实例会挤掉第一个.
+A：每个账号使用独立 `--store` 目录完全隔离。同一手机号只能在一个 CLI 实例中登录——第二个实例会挤掉领先个.
 ### Q7：专业版与免费版命令是否兼容？
 A：完全兼容。专业版包含免费版所有 `send text`、`send file`、`messages search` 等命令，额外扩展批量、回填、群组与同步命令。免费版脚本无需修改即可在专业版运行.
 ### Q8：vCard 联系人怎么提取电话号码？
@@ -442,7 +442,7 @@ A：`contacts export --format json` 返回结构化数据，每个联系人包�
 - **分类**：MD+EXEC（纯 Markdown 指令，部分功能需要 exec 命令行执行能力）
 - **说明**：基于 Markdown 的 AI Skill，通过自然语言指令驱动 Agent 执行任务
 - **模型路由建议**：专业版推荐使用 Claude Sonnet 进行消息分析与决策，Haiku 进行批量消息生成
-- **数据存储**：历史消息与统计数据可归档到 `PostgreSQL` 数据库做长期分析与合规审计
+- **数据存储**：历史消息与统计数据可归档到 `数据库` 数据库做长期分析与合规审计
 - API Key通过环境变量配置: export API_KEY=your_key
 
 ## 错误处理
@@ -475,3 +475,14 @@ A：`contacts export --format json` 返回结构化数据，每个联系人包�
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

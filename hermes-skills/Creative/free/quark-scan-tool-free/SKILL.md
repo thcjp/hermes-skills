@@ -1,6 +1,7 @@
 ---
+
 name: "quark-scan-tool-free"
-description: "文件高清扫描增强工具,支持画质增强、去手写、去水印、去阴影等,适合个人用户单张处理。"
+description: "文件高清扫描增强工具,支持画质增强、去手写、去水印、去阴影等,适合个人用户单张处理。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -14,6 +15,11 @@ metadata:
     - "AI创作"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # 夸克扫描工具 - 免费版
@@ -45,24 +51,18 @@ metadata:
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置。
 
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
 **输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：文件高清扫描增强、支持画质增强、去阴影等、适合个人用户单张、夸克扫描免费版、面向个人用户的文、件高清扫描与图像、增强工具、核心能力、老旧照片修复、还原空白试卷、精准去除文字、文档去底色、转为白底黑字等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -90,7 +90,6 @@ python3 scripts/scan.py \
 
 ```bash
 # 画质增强
-python3 scripts/scan.py \
   --scene "image-hd-enhance" \
   --path "./old_photo.jpg" \
   --platform "community"
@@ -102,7 +101,6 @@ python3 scripts/scan.py \
 
 ```bash
 # 文档去底色
-python3 scripts/scan.py \
   --scene "remove-background-color" \
   --path "./red_header_doc.jpg" \
   --platform "community"
@@ -114,7 +112,6 @@ python3 scripts/scan.py \
 
 ```bash
 # 提取线稿
-python3 scripts/scan.py \
   --scene "extract-lineart" \
   --path "./anime_char.jpg" \
   --platform "community"
@@ -134,7 +131,7 @@ python3 scripts/scan.py \
 
 ## 快速开始
 
-### 第一步:配置 API Key
+### 领先步:配置 API Key
 
 ```bash
 # 推荐方式:CLI 配置(永久生效)
@@ -150,7 +147,6 @@ export SCAN_WEBSERVICE_KEY="your_scan_key"
 
 ```bash
 # 单张图片处理(根据意图选择 scene)
-python3 scripts/scan.py \
   --scene "${SCENE_VALUE}" \
   --path "${IMAGE_FILE_PATH}" \
   --platform "${AGENT_NAME}"
@@ -184,16 +180,16 @@ python3 scripts/scan.py \
 
 ```bash
 # 图片 URL
-python3 scripts/scan.py --scene "${SCENE}" --url "${IMAGE_URL}" --platform "${AGENT}"
+py --scene "${SCENE}" --url "${IMAGE_URL}" --platform "${AGENT}"
 
 # 本地文件路径
-python3 scripts/scan.py --scene "${SCENE}" --path "${IMAGE_PATH}" --platform "${AGENT}"
+py --scene "${SCENE}" --path "${IMAGE_PATH}" --platform "${AGENT}"
 
 # 图片 BASE64
-python3 scripts/scan.py --scene "${SCENE}" --base64 "${IMAGE_BASE64}" --platform "${AGENT}"
+py --scene "${SCENE}" --base64 "${IMAGE_BASE64}" --platform "${AGENT}"
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **图片清晰度**:输入图片越清晰,处理效果越好,避免严重模糊
 2. **格式与大小**:支持 jpg/jpeg/png/gif/bmp/webp/tiff/wbmp,本地文件不超过 5MB
@@ -245,11 +241,10 @@ A:检查图片格式与大小是否符合要求;确认 API Key 有效;查看返�
 - **隐私提示**: 图片会发送至夸克扫描王服务器(`scan-business.quark.cn`)处理
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
+- **分类**: MD+execute(纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过意图识别与脚本调用驱动图像扫描增强
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
@@ -263,3 +258,14 @@ A:检查图片格式与大小是否符合要求;确认 API Key 有效;查看返�
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

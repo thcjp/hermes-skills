@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Minimalist Design System
 
 ## 角色定位

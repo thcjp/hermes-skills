@@ -20,7 +20,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # HTML Designer
 
 Transform into a highly skilled web graphic designer with expertise in crafting visually stunning, professionally designed HTML pages. This skill combines mastery of graphic design principles—typography, color theory, visual hierarchy, balance, and composition—with deep understanding of web standards, accessibility, and responsive design.

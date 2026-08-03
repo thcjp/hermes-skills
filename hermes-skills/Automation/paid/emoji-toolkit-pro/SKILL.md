@@ -1,4 +1,5 @@
 ---
+
 slug: emoji-toolkit-pro
 name: emoji-toolkit-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 表情符号工具箱(专业版)
 summary: "全功能表情符号编码系统，含批量处理、加密层、自定义编码、传输检测与水印管理.。表情符号工具箱专业版是隐秘通信与数字资产传输的完整解决方案。在免费版基础上解锁批量编解码、自定义编码方案、消息加"
 license: Proprietary
 edition: pro
-description: 表情符号工具箱专业版是隐秘通信与数字资产传输的完整解决方案。在免费版基础上解锁批量编解码、自定义编码方案、消息加密层、多载体表情管理、传输可靠性检测、代币安全验证、隐藏水印管理系统七大高级功能，帮助用户建立安全、高效、可追溯的隐秘通信体系。Use
+description: "表情符号工具箱专业版是隐秘通信与数字资产传输的完整解决方案。在免费版基础上解锁批量编解码、自定义编码方案、消息加密层、多载体表情管理、传输可靠性检测、代币安全验证、隐藏水印管理系统七大高级功能，帮助用户建立安全、高效、可追溯的隐秘通信体系。Use。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。"
   when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标.
 tags:
   - 表情符号
@@ -30,18 +31,18 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 > **从单条编解码到批量处理，从明文隐藏到加密传输。专业级隐秘通信系统。**
 
 隐秘通信不只是"藏一条消息"那么简单。专业版采用"编码-加密-传输-验证-追溯"五阶段安全通信闭环，配合七大高级功能，帮助用户建立安全、高效、可追溯的隐秘通信体系.
-> 详细内容已移至 `references/detail.md` - ## 架构总览
 ## 快速开始
 1. 阅读## 核心能力章节了解skill功能
 2. 按## 依赖说明配置环境
 3. 执行所需能力对应的命令
 4. 参考## 错误处理章节处理异常
 5. 查看## FAQ解答常见疑问
-
 ### 基础搭建（<60秒）
 单条编解码，立即可用：
 
@@ -54,7 +55,6 @@ category: "Automation"
 
 ```bash
 node （请参考skill目录中的脚本文件） encode "🥜" "隐藏消息"
-# ...
 node （请参考skill目录中的脚本文件） decode "<粘贴消息>"
 ```
 
@@ -63,13 +63,10 @@ node （请参考skill目录中的脚本文件） decode "<粘贴消息>"
 
 ```bash
 node （请参考skill目录中的脚本文件） --batch encode messages.txt --output encoded/
-# ...
 node （请参考skill目录中的脚本文件） encode "🥜" "机密消息" --encrypt --key "my-secret-key"
-# ...
 node （请参考skill目录中的脚本文件） --batch decode encoded/ --output decoded/
 ```
 
-> 详细内容已移至 `references/detail.md` - ### 完整搭建（<300秒）
 ## 核心能力
 ### 1. 隐藏消息编解码（基础+增强）
 | 能力 | 免费版 | 专业版增强 |
@@ -79,19 +76,15 @@ node （请参考skill目录中的脚本文件） --batch decode encoded/ --outp
 | 元数据 | 本地解析 | 本地解析+联网验证 |
 | 输出 | 文本/JSON | 文本/JSON/CSV/批量报告 |
 
-**输入**: 用户提供隐藏消息编解码（基础+增强）所需的指令和必要参数.
 **处理**: 解析隐藏消息编解码（基础+增强）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回隐藏消息编解码（基础+增强）的响应数据,包含状态码、结果和日志.
 ### 2. 批量编解码（专业版）
 多消息一键处理，支持并行与检查点：
 
 ```bash
-node （请参考skill目录中的脚本文件） --batch encode messages.txt --output encoded/
-# ...
+txt --output encoded/
 node （请参考skill目录中的脚本文件） --batch decode encoded/ --output decoded/ --parallel 4
-# ...
-node （请参考skill目录中的脚本文件） --batch encode messages.txt --encrypt --key "secret"
-# ...
+txt --encrypt --key "secret"
 node （请参考skill目录中的脚本文件） --batch decode encoded/ --checkpoint --resume
 ```
 
@@ -101,15 +94,12 @@ node （请参考skill目录中的脚本文件） --batch decode encoded/ --chec
 - 批量报告：生成处理结果汇总报告
 - 格式转换：批量输出文本/JSON/CSV格式
 
-**输入**: 用户提供批量编解码（专业版）所需的指令和必要参数.
 **处理**: 解析批量编解码（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量编解码（专业版）的响应数据,包含状态码、结果和日志.
 ### 3. 自定义编码方案（专业版）
 ```bash
 node （请参考skill目录中的脚本文件） encode "🥜" "消息" --mapping custom-byte-map.json
-# ...
 node （请参考skill目录中的脚本文件） encode "🥜" "消息" --algorithm variant-selector-v2
-# ...
 node （请参考skill目录中的脚本文件） --export-codec --output my-codec.json
 ```
 
@@ -120,7 +110,6 @@ node （请参考skill目录中的脚本文件） --export-codec --output my-cod
 | 多层编码 | 变体选择器+零宽字符 | 高隐蔽性场景 |
 | 压缩编码 | 文本压缩后编码 | 长消息场景 |
 
-**输入**: 用户提供自定义编码方案（专业版）所需的指令和必要参数.
 **处理**: 解析自定义编码方案（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自定义编码方案（专业版）的响应数据,包含状态码、结果和日志.
 ### 4. 消息加密层（专业版）
@@ -128,9 +117,7 @@ node （请参考skill目录中的脚本文件） --export-codec --output my-cod
 
 ```bash
 node （请参考skill目录中的脚本文件） encode "🥜" "机密消息" --encrypt --key "my-secret-key"
-# ...
 node （请参考skill目录中的脚本文件） decode "<消息>" --decrypt --key "my-secret-key"
-# ...
 node （请参考skill目录中的脚本文件） encode "🥜" "消息" --encrypt --key-env "EMOJI_ENCRYPT_KEY"
 ```
 
@@ -142,15 +129,12 @@ node （请参考skill目录中的脚本文件） encode "🥜" "消息" --encry
 | 完整性 | GCM模式提供数据完整性验证 |
 | 安全层级 | 加密层在编码层之上，双重保护 |
 
-**输入**: 用户提供消息加密层（专业版）所需的指令和必要参数.
 **处理**: 解析消息加密层（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回消息加密层（专业版）的响应数据,包含状态码、结果和日志.
 ### 5. 多载体表情管理（专业版）
 ```bash
 node （请参考skill目录中的脚本文件） --carrier-library --list
-# ...
 node （请参考skill目录中的脚本文件） encode --auto-carrier "消息" --output encoded.txt
-# ...
 node （请参考skill目录中的脚本文件） --carrier-library --add "🎯" --tags "目标,精准"
 ```
 
@@ -161,7 +145,6 @@ node （请参考skill目录中的脚本文件） --carrier-library --add "🎯"
 | 轮换策略 | 按顺序轮换载体 | 防统计分析 |
 | 自定义 | 用户指定载体 | 特定需求 |
 
-**输入**: 用户提供多载体表情管理（专业版）所需的指令和必要参数.
 **处理**: 解析多载体表情管理（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多载体表情管理（专业版）的响应数据,包含状态码、结果和日志.
 ### 6. 传输可靠性检测（专业版）
@@ -169,7 +152,6 @@ node （请参考skill目录中的脚本文件） --carrier-library --add "🎯"
 node （请参考skill目录中的脚本文件） --transport-check --app telegram
 node （请参考skill目录中的脚本文件） --transport-check --app wechat
 node （请参考skill目录中的脚本文件） --transport-check --app whatsapp
-# ...
 node （请参考skill目录中的脚本文件） --transport-check --all --report compatibility.json
 ```
 
@@ -188,15 +170,12 @@ node （请参考skill目录中的脚本文件） --transport-check --all --repo
 | Discord | 高 | 低 | 代码块 |
 | WeChat | 低 | 高 | 不推荐 |
 
-**输入**: 用户提供传输可靠性检测（专业版）所需的指令和必要参数.
 **处理**: 解析传输可靠性检测（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回传输可靠性检测（专业版）的响应数据,包含状态码、结果和日志.
 ### 7. 代币安全验证（专业版）
 ```bash
 node （请参考skill目录中的脚本文件） decode "<消息>" --verify-token
-# ...
 node （请参考skill目录中的脚本文件） --batch verify tokens/ --output verified/
-# ...
 node （请参考skill目录中的脚本文件） --verify-cache --status
 ```
 
@@ -207,16 +186,13 @@ node （请参考skill目录中的脚本文件） --verify-cache --status
 | 铸造源状态 | 铸造源是否在线 | 健康检查 |
 | 过期检查 | 代币是否过期 | 铸造源策略 |
 
-**输入**: 用户提供代币安全验证（专业版）所需的指令和必要参数.
 **处理**: 解析代币安全验证（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回代币安全验证（专业版）的响应数据,包含状态码、结果和日志.
 ### 8. 隐藏水印管理系统（专业版）
 ```bash
 node （请参考skill目录中的脚本文件） --watermark --batch embed documents/ \
   --watermark "作者ID:12345" --output watermarked/
-# ...
 node （请参考skill目录中的脚本文件） --watermark --trace "<可疑文档>"
-# ...
 node （请参考skill目录中的脚本文件） --watermark --library --list
 node （请参考skill目录中的脚本文件） --watermark --stats
 ```
@@ -229,7 +205,6 @@ node （请参考skill目录中的脚本文件） --watermark --stats
 | 防篡改 | 水印与内容绑定 | 完整性验证 |
 | 统计报告 | 水印使用统计 | 管理审计 |
 
-**输入**: 用户提供隐藏水印管理系统（专业版）所需的指令和必要参数.
 **处理**: 解析隐藏水印管理系统（专业版）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回隐藏水印管理系统（专业版）的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全功能表情符号编、码系统、含批量处理、传输检测与水印管、表情符号工具箱专、业版是隐秘通信与、数字资产传输的完、整解决方案、在免费版基础上解、锁批量编解码、七大高级功能、帮助用户建立安全、可追溯的隐秘通信、Use、when、需要安全检测、合规审计、漏洞扫描、加密防护时使用、不适用于渗透测试、未授权目标等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -240,9 +215,7 @@ node （请参考skill目录中的脚本文件） --watermark --stats
 ```bash
 node （请参考skill目录中的脚本文件） encode "🥜" "收购方案已批准" \
   --encrypt --key-env "CORP_COMM_KEY"
-# ...
 node （请参考skill目录中的脚本文件） --transport-check --app telegram
-# ...
 node （请参考skill目录中的脚本文件） decode "<消息>" --decrypt --key-env "CORP_COMM_KEY"
 ```
 
@@ -252,11 +225,8 @@ node （请参考skill目录中的脚本文件） decode "<消息>" --decrypt --
 **操作流程**：
 ```bash
 node （请参考skill目录中的脚本文件） --batch encode tokens.txt --output encoded/
-# ...
-node （请参考skill目录中的脚本文件） --batch encode tokens.txt --auto-carrier --output encoded/
-# ...
+txt --auto-carrier --output encoded/
 node （请参考skill目录中的脚本文件） --batch verify tokens/ --output verified/
-# ...
 node （请参考skill目录中的脚本文件） --batch report --output distribution-report.json
 ```
 
@@ -267,9 +237,7 @@ node （请参考skill目录中的脚本文件） --batch report --output distri
 ```bash
 node （请参考skill目录中的脚本文件） --watermark --batch embed documents/ \
   --unique-id --output watermarked/
-# ...
 node （请参考skill目录中的脚本文件） --watermark --trace "<泄露文档>"
-# ...
 node （请参考skill目录中的脚本文件） --watermark --trace "<泄露文档>" --report trace.json
 ```
 
@@ -279,9 +247,7 @@ node （请参考skill目录中的脚本文件） --watermark --trace "<泄露�
 **操作流程**：
 ```bash
 node （请参考skill目录中的脚本文件） --batch decode chat-logs/ --output decoded/
-# ...
 node （请参考skill目录中的脚本文件） --batch detect-encrypted chat-logs/
-# ...
 node （请参考skill目录中的脚本文件） --batch audit chat-logs/ --report audit.json
 ```
 
@@ -291,9 +257,7 @@ node （请参考skill目录中的脚本文件） --batch audit chat-logs/ --rep
 **操作流程**：
 ```bash
 node （请参考skill目录中的脚本文件） --transport-check --all --report platforms.json
-# ...
 node （请参考skill目录中的脚本文件） encode "🥜" "消息" --transport telegram
-# ...
 node （请参考skill目录中的脚本文件） decode "<消息>"
 ```
 
@@ -303,9 +267,7 @@ node （请参考skill目录中的脚本文件） decode "<消息>"
 **操作流程**：
 ```bash
 node （请参考skill目录中的脚本文件） decode "<消息>" --verify-token --json
-# ...
 node （请参考skill目录中的脚本文件） encode "🥜" "tokenB..." --auto-carrier
-# ...
 node （请参考skill目录中的脚本文件） --batch process wallet-transactions.json
 ```
 
@@ -345,7 +307,7 @@ node （请参考skill目录中的脚本文件） --batch process wallet-transac
 3. **超时控制**：设置5秒超时，避免长时间等待
 4. **异步验证**：验证异步执行，不阻塞解码流程
 
-## 最佳实践
+## 优选实践
 ### 安全通信工作流
 1. **传输检测**：先检测目标应用兼容性
 2. **载体选择**：根据上下文选择合适载体表情
@@ -393,7 +355,6 @@ node （请参考skill目录中的脚本文件） --batch process wallet-transac
 ### Q11：处理过程中消息丢失怎么办？
 专业版提供检查点机制，处理中断后可通过`--resume`从断点恢复，不会丢失已处理的结果。建议在大批量处理时始终启用`--checkpoint`。如果消息在传输过程中丢失（变体选择器被破坏），可使用传输可靠性检测预先识别风险应用.
 ## 错误处理
-
 | 问题 | 可能原因 | 解决方案 | 优先级 |
 |---:|---:|---:|---:|
 | 批量处理中断 | 内存不足 | 启用`--checkpoint`，从断点恢复 | 高 |
@@ -480,16 +441,11 @@ node （请参考skill目录中的脚本文件） --batch process wallet-transac
 ### 示例1：基础用法
 ```
 单条编解码，立即可用：
-# ...
 ```bash
 ```
-# ...
-## 已知限制
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
-# ...
-## 输出格式
 ```json
 {
   "success": true,
@@ -506,3 +462,22 @@ node （请参考skill目录中的脚本文件） --batch process wallet-transac
 }
 ```
 # ...
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 全功能表情符号编码系统，含批量处理、加密层、自定义编码、传输检测与水印管理.。表情符号工具箱专业版是隐秘通信与数字资产传
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

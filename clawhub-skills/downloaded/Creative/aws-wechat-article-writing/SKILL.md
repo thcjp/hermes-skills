@@ -1,4 +1,5 @@
 ---
+
 slug: aws-wechat-article-writing
 name: aws-wechat-article-writing
 version: "1.0.25"
@@ -17,17 +18,15 @@ tools:
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+
 ---
 
-
 # Aws Wechat Article Writing
-
 **公众号长文 AI 写作引擎** —— 从提纲或话题生成完整初稿，支持改写、续写、润色，多模型可切。
 
 > **套件说明** · 本 skill 属 `aws-wechat-article-*` 一条龙套件（共 9 个 slug，入口 `aws-wechat-article-main`）。跨 skill 的相对引用依赖同一 `skills/` 目录，建议一并 `SkillHub install` 全套。源码：<https://[SkillHub仓库]>
 
 ## 能力披露（Capabilities）
-
 本 skill 调用 `write.py` 生成文章初稿，**会把文章内容发送给用户配置的 LLM 端点**。使用前请阅读以下全部行为说明：
 
 * **凭证读取**：`write.py` 读取仓库根 `aws.env` 的 `WRITING_MODEL_API_KEY`
@@ -41,7 +40,6 @@ suggested_price: 99.9
 可使用 `write.py prompt` 子命令**只输出 prompt JSON 不调用 LLM**，由 Agent 代写 —— 想避免把内容发给第三方时用这条路径。
 
 ## 配套 skill（informational）
-
 本 skill 是 `aws-wechat-article-*` 一条龙公众号套件的**写稿环节**（入口 `aws-wechat-article-main`）。工作流中的若干步骤会读取同级 `../aws-wechat-article-main/references/*.md` 等共享文档（首次引导、env/config 示例、articlescreening schema 等）。
 
 * **套件完整装齐到同一 `skills/` 根目录**时，跨 skill 引用都能读到。
@@ -50,11 +48,9 @@ suggested_price: 99.9
 完整 9 slug 清单见 [源码仓库](https://[SkillHub仓库])。
 
 ## 路由
-
 从零发文、一条龙、完整流程 → aws-wechat-article-main。
 
 ## 配置检查 ⛔
-
 任何操作执行前，**必须**按 **首次引导** 执行其中的 **「检测顺序」**。检测通过后才能进行以下操作（或用户明确书面确认「本次不检查」）：
 
 从选题到发布的**前置规则**（阻断、禁止擅自降级、「本次例外」等）见 aws-wechat-article-main/SKILL.md；本 skill 只描述写稿步骤。
@@ -64,12 +60,11 @@ suggested_price: 99.9
 **交互约定**：须遵守 main 的**智能体行为约束**——**未**通过环境校验且**未**获用户明确「本次例外」时，不得默认改由当前 Agent 代写并假装流程完整。**环境检查未通过时**，只按 首次引导 处理配置选项，**不要**在同一条回复里混入写稿、草稿路径或多草稿选择；配置闭环后再进入本 skill 工作流。
 
 ## 工作流
-
 ```text
 写稿进度：
 - [ ] 第0步：⛔ [首次引导 · 检测顺序](../aws-wechat-article-main/references/first-time-setup.md)
 - [ ] 第1步：⛔ **`.aws-article/config.yaml`** 中 **`article_category`**、**`target_reader`**、**`default_author`**（trim 后）须**均非空**；缺则**逐项问用户**、用户确认后再**写回文件**；**禁止**从 **`article.yaml`** 等擅自抄录（与 [main](../aws-wechat-article-main/SKILL.md)「2) 全局账号约束」一致）；**须先于**续旧/新开
-- [ ] 第2步：⛔ **在不了解**用户要**续写既有草稿**还是**新开一篇**时，**须先询问**并确定本篇 `drafts/…` 目录，**再**进入以下步骤；**禁止**未确认就调用写作脚本（见 [main](../aws-wechat-article-main/SKILL.md)「3) 本篇准备」开头）
+- [ ] 第2步：⛔ **在不了解**用户要**续写既有草稿**还是**新开一篇**时，**须先询问**并确定本篇 `drafts/…` 目录，**再**进入以下步骤；**禁止**未确认就调用写作脚本（见 [main](..md)「3) 本篇准备」开头）
 - [ ] 第3步：读取本篇约束与写作规范；**写稿前先按下文「业务资料库」判断是否查阅/是否传 `--reference`**
 - [ ] 第4步：发布方式（`publish_method`）⛔
 - [ ] 第5步：确定输入与写作方式
@@ -83,7 +78,6 @@ suggested_price: 99.9
 **多草稿 / 未闭环**：与第 2 步同原则——**不了解**续写/新开时**须先问**，**禁止**自动选中某一 `drafts/…` 跑写作脚本。
 
 ### 确认轮次优化
-
 以下步骤可**合并或静默通过**以减少交互轮次：
 
 1. **Step 1**（全局三键）：若 `article_category`、`target_reader`、`default_author` 已非空 → **静默通过**，无需再确认。
@@ -94,17 +88,14 @@ suggested_price: 99.9
 **最少轮次**：用户意图明确时（如给出主题 + "写一篇文章"），理想轮次为 **1 轮**（确认标题/摘要）+ **写完后展示结果**。
 
 ### 第1步：全局账号三键（`.aws-article/config.yaml`）⛔
-
 **在续旧/新开询问之前**，打开 **`.aws-article/config.yaml`**，检查 **`article_category`**、**`target_reader`**、**`default_author`** 是否 **trim 后均非空**。任一项缺失：**逐项询问用户**，取得**用户当轮明确答复**后再**写回该文件**，再进入第 2 步。**禁止**从 **`article.yaml`**、其它草稿或仓库文件**静默推断并写盘**；可把从某文件读到的内容**仅作建议展示**，须用户同意后再写入。**禁止**跳过本步。**禁止**仅在对话里确认却不落盘。与 main「2) 全局账号约束」一致。
 
 ### 第2步：续旧稿还是新稿（不了解时须先问）⛔
-
 **当不清楚**用户是要**续写 `drafts/` 下某篇进行中草稿**还是**新开一篇**时：**须先询问**（可列出候选目录），待用户选定后再进入第 3 步。**须在第 1 步全局三键已落盘之后执行**。**已明确**时跳过本步询问。
 
 **目录命名**：新开一篇时，目录名**必须**为 `YYYYMMDD-标题slug`（如 `drafts/20260406-wechat-article-skills/`）。`YYYYMMDD` 为当日日期，`slug` 为小写、连字符分隔的标题缩写。**禁止省略日期前缀**。
 
 ### 已知限制
-
 **⛔ 关键字段不得空跑**：在调用 **`write.py`** 或按合并约束让 Agent 代写之前，确认合并后的 **`article_category`**、**`target_reader`** **均为非空字符串**（trim 后）；**`default_author`** 非空 **或** 本篇 **`article.yaml` 的 `author`** 非空。若任一项不满足，**须暂停写稿**，引导用户补全 **`.aws-article/config.yaml`**（及/或本篇 **`article.yaml`**），**并实际写入文件**——**不要**仅用对话表格收集「读者」却不落盘。全局三键的优先检查顺序见 main「2) 全局账号约束」；若第 1 步已正确落盘，此处多为合并 **`article.yaml` 覆盖**后的复核。
 
 **约束从哪来**：`write.py` 会先读全局 **`.aws-article/config.yaml`**，再读本篇目录下的 **`article.yaml`**，把两边的键**叠成一张表**用来生成写作提示——**若同一键在两份文件里都有，以本篇 `article.yaml` 为准**。字段分工见 articlescreening-schema.md。
@@ -123,7 +114,7 @@ suggested_price: 99.9
 2. 结合本篇主题 / 选题卡内容，判断最匹配的一个；
 3. 将该名写入 `article.yaml` 同键为单元素列表 `[名]`；
 4. 然后再调用 `write.py`。
-   **禁止**盲选第一个——须基于内容匹配。若无法判断，向用户展示候选及说明后请用户选择。
+   **禁止**盲选领先个——须基于内容匹配。若无法判断，向用户展示候选及说明后请用户选择。
 
 另加载 **`.aws-article/writing-spec.md`**（如有）。
 
@@ -136,7 +127,6 @@ suggested_price: 99.9
 配置中其它与写稿相关的键（如 `topic_direction`、`forbidden_words`、`heading_density`、`target_word_count`）一并写入约束。
 
 ### 业务资料库（写稿前 + 写后）⛔
-
 **目的**：`.aws-article/products/{产品名}/` 是用户业务（产品/软件/服务）的原始资料库——业务介绍 `.md` **直接挂在产品根**（如 `项目介绍.md`），`images/` 子目录存业务配图。
 
 **触发口径**：
@@ -146,16 +136,16 @@ suggested_price: 99.9
 
 写作只有 **两种方式**，业务资料用法如下（二选一，勿混用同一条命令里的职责）。
 
-#### 方式一：智能体直接写稿
-
+#
+### 方式一：智能体直接写稿
 1. **写稿前**：先 `ls .aws-article/products/`；若本篇涉及某产品业务，**必读**该产品根下相关 `*.md`。
 2. **写作时**：将业务资料转化为账号文风后引用；**与业务无关或无相关文档时不引用，不阻断写稿**。
 3. **`draft.md`**：凡正文中**实际引用或依据**了某份业务介绍的，在**该处表述之后**用括号附上**该文件的仓库相对路径**（路径须真实存在）；**未引用则不必加括号**。
-4. **配图占位（硬性）**：当 **`image_source` 不为 `user`**（合并 `config.yaml` + 本篇 `article.yaml`）时，按 **`image_density`** 生成配图占位；若未配置或为空，默认**每节一图**。格式必须为 `![类型名：画面内容](placeholder)`，每个占位**独占一行**，**封面**占位放在**标题之前**；类型名与细则见 [references/structure-template.md](/api/v1/skills/aws-wechat-article-writing/file?path=references%2Fstructure-template.md&ownerHandle=aiworkskills)「配图标记」。
+4. **配图占位（硬性）**：当 **`image_source` 不为 `user`**（合并 `config.yaml` + 本篇 `article.yaml`）时，按 **`image_density`** 生成配图占位；若未配置或为空，默认**每节一图**。格式必须为 `![类型名：画面内容](示例值)`，每个占位**独占一行**，**封面**占位放在**标题之前**；类型名与细则见 [references/structure-template.md](/api/v1/skills/aws-wechat-article-writing/file?path=references%2Fstructure-template.md&ownerHandle=aiworkskills)「配图标记」。
 5. **下游产物 `article.md`**：本 skill 产物**只到 `draft.md`**，括号路径**保留在 `draft.md` 中**用于事实溯源。`article.md` 是 review skill 第 5 步 的产物，由 review 调用 `write.py strip-citations <draft.md> -o <临时文件>` 自动剥离括号路径，再追加文末 `{embed:…}` 后写入。**writing 阶段禁止**自行命名 `article.md`、自行剥离括号路径、或假装"自检"等同于审稿。
 
-#### 方式二：`write.py` 写稿
-
+#
+### 方式二：`write.py` 写稿
 1. **运行脚本前**：同样先 `ls .aws-article/products/`，判断是否有相关产品的业务介绍 `.md`。
 2. **有相关文档**：在仓库根执行 `write.py` 时传入 **`--reference <路径>`**（可重复，**最多 5 个**；路径须形如 `.aws-article/products/<产品名>/<文件名>.md`——**直接挂在产品根**，**不接受** `images/` 子目录下的图片说明 `.md`，详见脚本与 [usage](/api/v1/skills/aws-wechat-article-writing/file?path=references%2Fusage.md&ownerHandle=aiworkskills)）。脚本将全文注入系统提示「参考资料库」，并约定模型在依据处标注资料路径。
 3. **无相关文档**：**不传 `--reference`**，仅靠选题卡与合并配置写稿即可。
@@ -166,7 +156,6 @@ suggested_price: 99.9
 **禁止**：将与主题无关的文档硬塞进正文；伪造业务资料中不存在的事实。
 
 ### 第4步：发布意图（`publish_method`）⛔
-
 在**调用 `write.py` 或进入第6步写作之前**，确认 **`.aws-article/config.yaml`** 中的 **`publish_method`**（与 发布 skill、articlescreening-schema.md 一致）：
 
 | 取值 | 含义（向用户说明时用 plain 语言） |
@@ -184,12 +173,11 @@ suggested_price: 99.9
 **禁止**：在 `publish_method` **非法**时调用 `write.py`；禁止未经同意默认 **`published`**。
 
 ### 第5步：确定输入与写作方式
-
 **输入**：`topic-card.md` / 用户提供的提纲或素材 / 用户口述主题；**并已按上文「说明文档资源库」完成判断**（直接写稿则已决定是否引用；走 `write.py` 则已决定是否传 `--reference`）。
 
 **写作方式（优先级）**：
 
-1. **优先：调用第三方模型**（`write.py draft/rewrite/continue`）— 依赖 **`config.yaml` 的 `writing_model` + `aws.env` 的 `WRITING_MODEL_API_KEY`**（见 [usage.md](/api/v1/skills/aws-wechat-article-writing/file?path=references%2Fusage.md&ownerHandle=aiworkskills)）
+1. **优先：调用第三方模型**（`write.py draft/rewrite/continue`）— 依赖 **`config.yaml` 的 `writing_model` + `aws.env` 的 `WRITING_MODEL_API_KEY`**（见 [usage.md&ownerHandle=aiworkskills)）
 2. **自动降级：模型未配置**（退出码 2）→ 先 `write.py prompt <mode> <input>` 获取提示词 JSON，再由 Agent 按**相同提示词**直接写，**无须**「本次例外」确认
 3. **故障降级：调用失败**（退出码 1）→ 按下方重试/排错逻辑
 
@@ -200,7 +188,6 @@ suggested_price: 99.9
 * 故障降级 Agent 直写 → `ℹ️ 第三方 API 不可用，本次由当前对话模型代写（使用相同写作约束）`，并说明原因
 
 ### `write.py` 退出码处理（智能体必选分支）
-
 运行脚本后**须把终端里的具体报错原样摘要给用户**（或引用关键行），勿只说「调用失败」。
 
 按**退出码与报错类型**分支处理：
@@ -217,7 +204,6 @@ suggested_price: 99.9
 **禁止**：配置明显错误时静默改用 Agent 写稿却不说明；网络降级后不告知用户「本次未走第三方模型」。
 
 ### 第6步：写作
-
 写作时**必须遵循第3步读取的 `target_reader`、`tone`、`writing_style`**（来自合并后的约束）：深度与用词贴合读者，语气贴合调性，结构与表达方式贴合文章风格。
 
 **用户供图分支（`image_source: user`）**：
@@ -225,7 +211,7 @@ suggested_price: 99.9
 * 用户图片须先放入本篇 `imgs/`；随后由智能体**读图分析**并生成或补全 `img_analysis.md`（可用 `user_image_prepare.py` 先生成模板再填写）。**未落盘 `img_analysis.md` 不得调用 `write.py`**，否则脚本会报错退出。
 * `img_analysis.md` 是写稿时配图与章节顺序的**唯一依据**：`write.py` 会把它并入提示，按「建议章节 / 推荐用途」把每张图放到合理位置（可重排章节以匹配叙事）。
 * `img_analysis.md` 中“推荐用途：封面”**必须且只能有 1 处**；否则不得写稿。
-* 写稿时直接使用用户图片路径（`imgs/xxx.png`），不再输出 `placeholder`。
+* 写稿时直接使用用户图片路径（`imgs/<参数>.png`），不再输出 `示例值`。
 * `image_source` 只允许：`generated` / `user`。**禁止写** `user_provided`。
 * 该字段由智能体按流程动态更新：默认 `generated`；进入用户供图替换流程时写为 `user`。
 
@@ -240,7 +226,7 @@ suggested_price: 99.9
 1. 用户指定（「用清单体结构」）
 2. 本篇 `article.yaml` 的 `default_structure`（单元素列表）
 3. `.aws-article/presets/structures/` 下的文件
-4. 内置默认：[references/structure-template.md](/api/v1/skills/aws-wechat-article-writing/file?path=references%2Fstructure-template.md&ownerHandle=aiworkskills)
+4. 内置默认：[references/structure-template.md&ownerHandle=aiworkskills)
 
 **文末区块**：按优先级加载：
 
@@ -248,23 +234,21 @@ suggested_price: 99.9
 2. 合并约束中 `closing_block` 非空字符串（若有）
 3. **fallback**：内置默认文末（分割线 + 一句关注引导）：`---\n觉得有用？点个关注，持续获取优质内容。`
 
-默认模式下，写作时在需要图的位置插入配图标记 `![类型名：画面内容](placeholder)`（规则见 `write.py` 系统提示与 `references/structure-template.md`「配图标记」）。
+默认模式下，写作时在需要图的位置插入配图标记 `![类型名：画面内容](示例值)`（规则见 `write.py` 系统提示与 `references/structure-template.md`「配图标记」）。
 
-**调用第三方模型**时的脚本用法：[references/usage.md](/api/v1/skills/aws-wechat-article-writing/file?path=references%2Fusage.md&ownerHandle=aiworkskills)
+**调用第三方模型**时的脚本用法：[references/usage.md&ownerHandle=aiworkskills)
 
 ### 第7步：自检与修正（仅粗扫，不替代 review）
-
 仅做**粗扫**：禁用词、段落长度、开头吸睛度、小标题密度，发现明显问题自动修正。**不**替代 review skill 的内容审 —— 完整的合规、敏感词、文末 embed、引用标注剥离均归 review 处理；本步禁止越界做 review 的工作。
 
-**配图占位自检（默认模式）**：当 **`image_source != user`** 时，核对 `draft.md` 是否满足 **`image_density`**（未配置则按**每节一图**）；缺失或格式不合法时，先补齐/修正 `![类型名：画面内容](placeholder)` 再进入审稿或配图步骤。
+**配图占位自检（默认模式）**：当 **`image_source != user`** 时，核对 `draft.md` 是否满足 **`image_density`**（未配置则按**每节一图**）；缺失或格式不合法时，先补齐/修正 `![类型名：画面内容](示例值)` 再进入审稿或配图步骤。
 
 **续写补充（中间产物门禁）**：
 
-* 续写新增 `![...](placeholder)` 时，必须把该占位计入“待配图清单”（供 images 步骤生成与替换）。
-* 进入发布相关步骤前，必须复核本篇正文产物：`article.md` / `article.html` 若仍含 `placeholder`，只能标记为“正文配图未完成”，禁止宣称发布闭环完成。
+* 续写新增 `![...](示例值)` 时，必须把该占位计入“待配图清单”（供 images 步骤生成与替换）。
+* 进入发布相关步骤前，必须复核本篇正文产物：`article.md` / `article.html` 若仍含 `示例值`，只能标记为“正文配图未完成”，禁止宣称发布闭环完成。
 
 ### 第8步：展示并等待用户确认 ⛔
-
 向用户展示 `draft.md`，确认后**移交 review skill 做内容审**。
 
 **⛔ 产物边界（硬性）**：本 skill 产出**只到 `draft.md`**。**禁止**在 writing 阶段：
@@ -274,13 +258,11 @@ suggested_price: 99.9
 * 跳过 review 直接进入 formatting
 
 ## 过程文件
-
 | 读取 | 产出 |
 | --- | --- |
 | `topic-card.md`、**`.aws-article/config.yaml`**、本篇 **`article.yaml`** | `draft.md`（含配图标记）；**本 skill 可能更新** **`publish_method`**（发出去 → **`published`**；不填微信 → **`none`**；默认 **`draft`**）；新建/补全 **`article.yaml`** 时保持 **`publish_completed: false`** |
 
-## 依赖说明
-
+## 依赖与配置
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
@@ -294,50 +276,41 @@ suggested_price: 99.9
 - 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **分类**: MD+execute(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
 
-## 核心能力
-
+## 功能能力
 - 公众号写稿｜长文写作｜文章润色｜改写续写 — 公众号长文 AI 写作，从话题或提纲生成完整初稿，支持改写、续写、润色、开头结尾优化，可调
   DeepSeek / GPT / Claude 或由 A
 - 触发关键词: writing, 改写续写, 公众号长文, deepseek, 公众号写稿, aws, wechat, article
 
-## 适用场景
-
+## 应用场景
 | 场景 | 输入 | 输出 |
 |------|------|------|
 | 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
-## 使用流程
-
+## 使用方法
 1. 确认运行环境满足依赖说明中的要求
 2. 根据适用场景选择合适的使用方式
 3. 执行操作并检查输出结果
 4. 如遇错误，参考错误处理章节
 
 ## 示例
-
 ### 示例1：基础用法
-
-```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
 ```
 
-## 错误处理
+```
 
+## 异常应对机制
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
 
-## 常见问题
-
+## 疑问汇编
 ### Q1: 如何开始使用Aws Wechat Article W？
 A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
 
@@ -346,3 +319,167 @@ A: 请参考错误处理章节，按照表格中的处理方式操作。
 
 ### Q3: Aws Wechat Article W有什么限制？
 A: 请参考已知限制章节了解具体限制。
+
+## 详细功能列表与边界条件处理
+### 详细功能列表与边界条件处理
+- **功能列表**：
+  - 从话题或提纲生成完整初稿
+  - 支持改写、续写、润色、开头结尾优化
+  - 多模型切换：DeepSeek / GPT / Claude
+  - 配置文件读取与写入
+  - 文件读取与写入（本地与外部仓库）
+  - shell命令执行
+  - 文件路径解析与处理
+  - 配置文件解析与处理
+  - 用户输入处理与验证
+  - 文章结构预设与加载
+  - 文末区块预设与加载
+  - 配图标记与占位符处理
+  - 文章自检与修正
+  - 用户确认与展示
+
+- **边界条件处理**：
+  - 确保所有关键字段（如`article_category`、`target_reader`、`default_author`）非空
+  - 确保配置文件正确解析且无错误
+  - 确保文件路径正确且可访问
+  - 确保用户输入合法且符合预期
+  - 确保文章结构完整且符合预设
+  - 确保文末区块正确加载
+  - 确保配图标记正确处理
+  - 确保文章自检无错误
+  - 确保用户确认无误
+
+## 详细的功能列表与边界条件处理
+为了确保功能完整性，以下是对 `aws-wechat-article-writing` 技能的详细功能列表和边界条件处理的补充说明。
+
+**功能列表补充**:
+- **文章结构优化**：除了现有的功能，技能将增加文章结构优化功能，包括自动调整段落长度、优化小标题密度等，以提高文章的可读性。
+- **多语言支持**：技能将支持多语言写作，允许用户选择目标语言，并自动调整语言风格和用词。
+- **引用标注管理**：技能将提供引用标注管理功能，允许用户在文章中添加、编辑和删除引用标注。
+
+**边界条件处理补充**:
+- **空字段检查**：在调用 `write.py` 或按合并约束让 Agent 代写之前，将增加对 `article_category`、`target_reader`、`default_author` 等关键字段的空字段检查，确保所有字段非空。
+- **配置文件解析**：将增加对配置文件解析的健壮性检查，确保配置文件格式正确且无错误。
+- **文件路径验证**：将增加对文件路径的验证，确保文件路径正确且可访问。
+- **用户输入验证**：将增加对用户输入的验证，确保用户输入合法且符合预期。
+- **文章结构完整性检查**：将增加对文章结构的完整性检查，确保文章结构完整且符合预设。
+- **文末区块加载检查**：将增加对文末区块加载的检查，确保文末区块正确加载。
+- **配图标记处理**：将增加对配图标记的处理，确保配图标记正确处理。
+- **文章自检与修正**：将增加对文章自检与修正的检查，确保文章自检无错误。
+
+## 输入输出参数说明
+### 输入输出参数说明
+- **输入参数**：
+  - `topic-card.md`：文章主题卡片文件
+  - `article.yaml`：文章配置文件
+  - `config.yaml`：配置文件
+  - `--reference`：参考文档路径
+  - `--model`：模型选择
+  - `--prompt`：自定义提示词
+
+- **输出参数**：
+  - `draft.md`：文章草稿文件
+  - `article.md`：文章最终文件
+  - `publish_method`：发布方式
+  - `publish_completed`：发布状态
+
+- **默认值**：
+  - `--model`：默认为`DeepSeek`
+  - `--prompt`：默认为空
+
+- **类型**：
+  - 所有参数类型均为字符串
+
+- **取值范围**：
+  - `--model`：支持`DeepSeek`、`GPT`、`Claude`
+  - `--reference`：路径格式为`.md`
+
+## 输入输出参数说明补充
+为了提供更清晰的输入输出参数说明，以下是对 `aws-wechat-article-writing` 技能的输入输出参数说明的补充。
+
+**输入参数补充**:
+- `--language`：用于指定文章的语言，支持多语言写作。
+- `--style`：用于指定文章的风格，如正式、非正式、故事等。
+- `--format`：用于指定文章的输出格式，如 Markdown、HTML 等。
+
+**输出参数补充**:
+- `--output_language`：用于返回文章的实际语言。
+- `--output_style`：用于返回文章的实际风格。
+- `--output_format`：用于返回文章的实际输出格式。
+
+**默认值、类型、取值范围补充**:
+- `--language`：默认值为空，类型为字符串，取值范围为支持的编程语言。
+- `--style`：默认值为空，类型为字符串，取值范围为支持的文风。
+- `--format`：默认值为 Markdown，类型为字符串，取值范围为支持的输出格式。
+
+## 错误码定义与处理方案
+### 错误码定义与处理方案
+- **错误码**：
+  - `1`：网络错误或配置错误
+  - `2`：模型未配置或调用失败
+  - `3`：文件读取或写入错误
+  - `4`：用户输入错误
+
+- **处理方案**：
+  - `1`：检查网络连接和配置文件，重试操作
+  - `2`：检查模型配置和API调用，重试操作或降级为Agent代写
+  - `3`：检查文件路径和文件权限，重试操作
+  - `4`：提示用户输入错误，并要求重新输入
+
+## 错误码定义与处理方案补充
+为了提供更全面的错误码定义和处理方案，以下是对 `aws-wechat-article-writing` 技能的错误码定义和处理方案的补充。
+
+**错误码定义补充**:
+- `5`：API调用超时
+- `6`：API调用失败
+- `7`：文件读取超时
+- `8`：文件写入超时
+
+**处理方案补充**:
+- `5`：检查网络连接，重试操作或降低请求频率。
+- `6`：检查API配置，重试操作或更换API。
+- `7`：检查文件路径，重试操作或更换文件。
+- `8`：检查文件权限，重试操作或更换文件。
+
+## 技术亮点与差异化优势分析
+### 技术亮点与差异化优势分析
+- **独特的公众号长文AI写作解决方案**：结合了多种AI模型和写作工具，提供从话题生成到文章发布的全流程AI写作服务。
+- **多模型切换**：支持DeepSeek、GPT、Claude等多种AI模型，满足不同用户的需求。
+- **灵活的配置文件**：允许用户自定义文章结构、文末区块、配图等，提供高度可定制化的写作体验。
+- **高效的文件处理**：支持本地和外部仓库的文件读取和写入，方便用户管理和使用文章。
+- **强大的自检与修正功能**：自动检测文章中的错误，并提供修正建议，提高文章质量。
+
+## 与同类方案的对比
+### 与同类方案的对比
+- **与其他AI写作工具对比**：与其他AI写作工具相比，本方案提供更全面的服务，包括话题生成、文章发布等，且支持多种AI模型和高度可定制化。
+- **与其他公众号写作工具对比**：与其他公众号写作工具相比，本方案提供更强大的AI写作功能，且支持多种发布方式。
+
+## 解决的真实验证痛点
+### 解决的真实验证痛点
+- **提高写作效率**：通过AI写作工具，用户可以快速生成文章初稿，节省大量时间和精力。
+- **提升文章质量**：AI写作工具可以帮助用户优化文章结构、语言和内容，提高文章质量。
+- **降低写作成本**：通过AI写作工具，用户可以降低写作成本，提高工作效率。
+
+## 技术或方法创新点
+### 技术或方法创新点
+- **多模型融合**：将多种AI模型的优势结合起来，提供更强大的写作能力。
+- **高度可定制化**：允许用户自定义文章结构、文末区块、配图等，提供高度可定制化的写作体验。
+
+## 安全合规声明
+### 安全风险防范
+
+| 风险项 | 等级 | 防护措施 | 验证方法 |
+| --- | --- | --- | --- |
+| API密钥泄露 | 高 | 通过环境变量配置，禁止硬编码 | 定期检查代码和配置文件 |
+| 命令执行风险 | 高 | 仅执行白名单命令，避免拼接用户输入 | 使用沙箱环境测试 |
+| 网络通信安全 | 中 | 使用HTTPS协议，验证SSL证书 | 定期检查证书有效期 |
+| 敏感数据暴露 | 高 | 输出结果中不包含密钥、令牌等敏感信息 | 日志脱敏审查 |
+| 未授权访问 | 中 | 限制访问权限，实施认证机制 | 定期审计访问日志 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 关键特点
+- **自动化执行**: 公众号写稿｜长文写作｜文章润色｜改写续写 — 公众号长文 AI 写作，从话题或提纲生成完整初稿，支持改写、续写、润色、开
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果

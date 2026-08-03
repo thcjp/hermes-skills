@@ -1,5 +1,6 @@
 ---
-slug: "java-reviewer-tool-pro"
+
+slug: java-reviewer-tool-pro
 name: "java-reviewer-tool-pro"
 version: "1.0.0"
 displayName: "Java代码审查专业版"
@@ -7,7 +8,7 @@ summary: "企业级 Java 代码审查方案，支持批量审查、自定义规�
 license: "Proprietary"
 edition: "pro"
 description: |-
-  面向企业级 Java 开发团队的代码审查治理工具。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求.
+  面向企业级 Java 开发团队的代码审查治理工具。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。
 tags:
   - 开发工具
   - Java
@@ -28,7 +29,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+
 ---
+
 本工具面向企业级 Java 开发团队，提供代码审查的完整治理方案。在免费版 6 大维度审查、4 级严重程度、修复建议能力之上，专业版新增批量多文件审查、自定义规则引擎、HTML 结构化报告、需求一致性检查、OWASP 安全审计、CI/CD 质量门禁等能力。通过可配置的规则引擎与数据驱动的质量度量，帮助团队建立可量化、可追踪的代码质量体系.
 **版本兼容性说明**：专业版完全兼容免费版（`java-reviewer-tool-free`）的所有审查维度、规则与报告格式，可无缝升级.
 ## 核心能力
@@ -45,21 +48,21 @@ category: "Automation"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -72,65 +75,53 @@ category: "Automation"
 PROJECT_DIR=$1
 REPORT_DIR="reports/java-review-$(date +%Y%m%d)"
 mkdir -p "$REPORT_DIR"
-# ...
 echo "=== Java 批量代码审查 ==="
 echo "项目目录: $PROJECT_DIR"
 echo "报告目录: $REPORT_DIR"
 echo ""
-# ...
 JAVA_FILES=$(find "$PROJECT_DIR" -name "*.java" -not -path "*/test/*")
 FILE_COUNT=$(echo "$JAVA_FILES" | wc -l)
 echo "审查文件数: $FILE_COUNT"
-# ...
 TOTAL_ISSUES=0
 CRITICAL=0
 MAJOR=0
 MINOR=0
 SUGGESTION=0
-# ...
 cat > "$REPORT_DIR/summary.md" << 'EOF'
 EOF
-# ...
 echo "| 指标 | 数值 |" >> "$REPORT_DIR/summary.md"
 echo "| --- | --- |" >> "$REPORT_DIR/summary.md"
 echo "| 审查日期 | $(date) |" >> "$REPORT_DIR/summary.md"
 echo "| 审查范围 | $PROJECT_DIR |" >> "$REPORT_DIR/summary.md"
 echo "| 文件数量 | $FILE_COUNT |" >> "$REPORT_DIR/summary.md"
-# ...
 echo "$JAVA_FILES" | while read file; do
   REL_PATH=${file#$PROJECT_DIR/}
-# ...
   SQL_INJECTION=$(grep -n "String sql.*+.*\"" "$file" | head -5)
   if [ -n "$SQL_INJECTION" ]; then
     echo "[Critical] $REL_PATH: 可能的 SQL 注入" >> "$REPORT_DIR/issues.md"
     echo "$SQL_INJECTION" >> "$REPORT_DIR/issues.md"
   fi
-# ...
   HARDCODED_PWD=$(grep -in "password.*=.*\"\|secret.*=.*\"" "$file" | head -5)
   if [ -n "$HARDCODED_PWD" ]; then
     echo "[Critical] $REL_PATH: 硬编码密码/密钥" >> "$REPORT_DIR/issues.md"
     echo "$HARDCODED_PWD" >> "$REPORT_DIR/issues.md"
   fi
-# ...
   EMPTY_CATCH=$(awk '/catch.*\{/{flag=1;next}/\}/{if(flag && NR-prev<3) print FILENAME":"prev; flag=0}flag{prev=NR}' "$file")
   if [ -n "$EMPTY_CATCH" ]; then
     echo "[Major] $REL_PATH: 空 catch 块" >> "$REPORT_DIR/issues.md"
     echo "$EMPTY_CATCH" >> "$REPORT_DIR/issues.md"
   fi
-# ...
   UNCLOSED=$(grep -n "new FileInputStream\|new FileOutputStream\|getConnection" "$file" | grep -v "try.*(" | head -5)
   if [ -n "$UNCLOSED" ]; then
     echo "[Major] $REL_PATH: 资源可能未正确关闭" >> "$REPORT_DIR/issues.md"
     echo "$UNCLOSED" >> "$REPORT_DIR/issues.md"
   fi
-# ...
   LONG_METHODS=$(awk '/public|private|protected.*\(/{start=NR;name=$0}/^\}/{if(NR-start>50) print FILENAME":"start"-"NR" ("NR-start"行) "name; start=0}' "$file")
   if [ -n "$LONG_METHODS" ]; then
     echo "[Minor] $REL_PATH: 方法过长" >> "$REPORT_DIR/issues.md"
     echo "$LONG_METHODS" >> "$REPORT_DIR/issues.md"
   fi
 done
-# ...
 echo ""
 echo "=== 审查完成 ==="
 echo "报告位置: $REPORT_DIR/"
@@ -142,9 +133,7 @@ echo "报告位置: $REPORT_DIR/"
 version: "2.0"
 team: "后端开发组"
 updated: "2026-07-18"
-# ...
 extends: "default"
-# ...
 rules:
   naming:
     max_method_length: 40        # 比默认 50 更严格
@@ -154,7 +143,6 @@ rules:
       service: "Service"
       repository: "Repository"
       dto: "DTO"
-# ...
   security:
     owasp_top_10: true           # 启用 OWASP Top 10 检查
     forbidden_apis:              # 禁止使用的 API
@@ -165,7 +153,6 @@ rules:
       - "RequestMapping"
       - "PostMapping"
       - "GetMapping"
-# ...
   performance:
     warn_collection_init: true   # 集合未指定初始容量时告警
     warn_string_concat: true     # 循环内字符串拼接告警
@@ -196,7 +183,6 @@ name: Java 代码质量门禁
 on:
   pull_request:
     branches: [main, develop]
-# ...
 jobs:
   code-review:
     runs-on: ubuntu-latest
@@ -209,11 +195,9 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-# ...
       - name: 执行代码审查
         run: |
           （请参考skill目录中的脚本文件） src/
-# ...
       - name: 检查 Critical 问题数
         run: |
           CRITICAL_COUNT=$(grep -c "\[Critical\]" reports/java-review-*/issues.md || echo 0)
@@ -222,7 +206,6 @@ jobs:
             echo "::error::发现 $CRITICAL_COUNT 个 Critical 问题，阻止合并"
             exit 1
           fi
-# ...
       - name: 检查 Major 问题数
         run: |
           MAJOR_COUNT=$(grep -c "\[Major\]" reports/java-review-*/issues.md || echo 0)
@@ -230,14 +213,12 @@ jobs:
           if [ "$MAJOR_COUNT" -gt 5 ]; then
             echo "::warning::Major 问题数超过 5 个，建议修复后再合并"
           fi
-# ...
       - name: 上传审查报告
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: java-review-report
           path: reports/
-# ...
       - name: 评论审查结果
         if: always()
         uses: actions/github-script@v7
@@ -259,7 +240,6 @@ jobs:
 3. 执行所需能力对应的命令
 4. 参考## 错误处理章节处理异常
 5. 查看## FAQ解答常见疑问
-
 ### OWASP 安全审计检查清单
 | OWASP 类别 | 检查项 | 检测方法 |
 |:---------|:---------|:---------|
@@ -298,23 +278,21 @@ jobs:
 <body>
     <h1>Java 代码审查报告</h1>
     <div class="summary">
-        <p><strong>审查日期</strong>: {{date}}</p>
-        <p><strong>审查范围</strong>: {{scope}}</p>
-        <p><strong>文件数量</strong>: {{file_count}}</p>
-        <p><strong>问题总数</strong>: {{total_issues}}</p>
+        <p><strong>审查日期</strong>: </p>
+        <p><strong>审查范围</strong>: </p>
+        <p><strong>文件数量</strong>: </p>
+        <p><strong>问题总数</strong>: </p>
         <ul>
-            <li class="critical">Critical: {{critical_count}}</li>
-            <li class="major">Major: {{major_count}}</li>
-            <li class="minor">Minor: {{minor_count}}</li>
-            <li class="suggestion">Suggestion: {{suggestion_count}}</li>
+            <li class="critical">Critical: </li>
+            <li class="major">Major: </li>
+            <li class="minor">Minor: </li>
+            <li class="suggestion">Suggestion: </li>
         </ul>
     </div>
-# ...
     <h2>问题趋势</h2>
     <div class="chart">
         <!-- 历史趋势图表 -->
     </div>
-# ...
     <h2>问题详情</h2>
     <table>
         <tr>
@@ -328,13 +306,13 @@ jobs:
         </tr>
         {{#issues}}
         <tr>
-            <td>{{index}}</td>
-            <td class="{{severity}}">{{severity}}</td>
-            <td>{{file}}</td>
-            <td>{{line}}</td>
-            <td>{{dimension}}</td>
-            <td>{{description}}</td>
-            <td>{{rule_id}}</td>
+            <td></td>
+            <td class=""></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
         </tr>
         {{/issues}}
     </table>
@@ -346,18 +324,15 @@ jobs:
 ### 需求一致性检查
 ```text
 审查时提供需求文档，工具会检查代码实现与需求的一致性
-# ...
 输入：
 1. git diff 输出
 2. 需求文档（可选）
 3. 设计文档（可选）
-# ...
 一致性检查项：
 - 需求中的功能点是否都已实现
 - 代码改动是否超出需求范围
 - 接口设计是否与文档一致
 - 数据结构是否与设计匹配
-# ...
 输出：
 - [已实现] 用户注册接口（需求 3.1）
 - [已实现] 邮箱验证功能（需求 3.2）
@@ -369,23 +344,19 @@ jobs:
 ```bash
 #!/bin/bash
 echo "日期,Critical,Major,Minor,Suggestion,总文件数" > quality-trend.csv
-# ...
 for report in reports/java-review-*/summary.md; do
   date=$(echo $report | grep -o '[0-9]*' | head -1)
-# ...
   critical=$(grep -c "Critical:" "$report" 2>/dev/null || echo 0)
   major=$(grep -c "Major:" "$report" 2>/dev/null || echo 0)
   minor=$(grep -c "Minor:" "$report" 2>/dev/null || echo 0)
   suggestion=$(grep -c "Suggestion:" "$report" 2>/dev/null || echo 0)
   files=$(grep "文件数量" "$report" | grep -o '[0-9]*')
-# ...
   echo "$date,$critical,$major,$minor,$suggestion,$files" >> quality-trend.csv
 done
-# ...
 echo "趋势数据已保存到 quality-trend.csv"
 ```
 
-## 最佳实践
+## 优选实践
 1. **CI 强制门禁**：Critical 问题数为 0 才允许合并
 
 2. **规则版本管理**：规则配置纳入 Git 版本控制
@@ -426,7 +397,6 @@ severity_override:
 ### Q3：如何集成到 SonarQube？
 ```bash
 （请参考skill目录中的脚本文件） reports/java-review-latest/ > sonar-issues.json
-# ...
 [
   {
     "rule": "java:S2077",
@@ -450,19 +420,14 @@ severity_override:
 ### Q5：如何做安全审计？
 ```bash
 echo "=== OWASP 安全审计 ==="
-# ...
 echo "检查 SQL 注入..."
 grep -rn "String sql.*+.*\"" src/ --include="*.java"
-# ...
 echo "检查硬编码凭据..."
-grep -rn "password.*=.*\"\|secret.*=.*\"" src/ --include="*.java"
-# ...
+grep -rn "password.*=.*\"\|secret.*=.java"
 echo "检查明文传输..."
 grep -rn "http://" src/ --include="*.java" | grep -v "https://"
-# ...
 echo "检查反序列化..."
 grep -rn "ObjectInputStream\|readObject" src/ --include="*.java"
-# ...
 echo "检查依赖漏洞..."
 mvn dependency-check:check 2>/dev/null || echo "需要安装 dependency-check 插件"
 ```
@@ -470,10 +435,8 @@ mvn dependency-check:check 2>/dev/null || echo "需要安装 dependency-check �
 ### Q6：如何生成批量修复脚本？
 ```bash
 #!/bin/bash
-# ...
 find src/ -name "*.java" -exec sed -i \
   's/System\.out\.println(\(.*\))/logger.info(\1)/g' {} \;
-# ...
 find src/ -name "*.java" -exec grep -l "status == 1\|status == 0" {} \; | \
   while read f; do
     echo "建议在 $f 中提取状态常量"
@@ -507,7 +470,6 @@ find src/ -name "*.java" -exec grep -l "status == 1\|status == 0" {} \; | \
 - **说明**: 通过自然语言指令驱动 Agent 执行代码审查，专业版功能依赖构建工具和 CI/CD 平台
 
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -518,3 +480,14 @@ find src/ -name "*.java" -exec grep -l "status == 1\|status == 0" {} \; | \
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

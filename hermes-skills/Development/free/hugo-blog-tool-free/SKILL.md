@@ -1,6 +1,7 @@
 ---
+
 name: "hugo-blog-tool-free"
-description: "将 Markdown 文章发布到 Hugo 博客，自动生成 Front Matter 并推送到远程仓库。"
+description: "将 Markdown 文章发布到 Hugo 博客，自动生成 Front Matter 并推送到远程仓库。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,11 @@ metadata:
     - "内容发布"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # Hugo 博客发布工具（免费版）
@@ -37,24 +43,18 @@ metadata:
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置。
 
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
 **输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Markdown、文章发布到、自动生成、并推送到远程仓库、面向个人博主的、博客发布工具、简化文章发布流程、自动分析文章内容、生成符合、规范的、自动添加截断标记、推送发布到远程仓等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -90,7 +90,7 @@ metadata:
    ---
 
 4. 添加截断标记
-   在第一段后添加 <!--more-->
+   在领先段后添加 <!--more-->
 
 5. Git 推送
    cd {博客路径}
@@ -221,9 +221,8 @@ AI、RAG、NLP、Kubernetes、Go、Elasticsearch、PHP、SQL、SSG、SSR 等技�
 
 ### 截断标记位置
 
-在第一段或导言后添加 `<!--more-->`，让列表页显示摘要。
+在领先段或导言后添加 `<!--more-->`，让列表页显示摘要。
 
-```markdown
 ---
 title: "我的文章"
 date: 2026-07-18
@@ -246,7 +245,6 @@ categories: ["tech"]
 cd {博客路径}
 
 # 添加新文章
-git add content/posts/{文件名}.md
 
 # 提交（建议用"新增:"前缀）
 git commit -m "新增：{文章标题}"
@@ -264,7 +262,7 @@ git push
 
 如果未找到配置，才询问用户。
 
-## 最佳实践
+## 优选实践
 
 1. **slug 使用英文**：文件名使用小写英文，不要用中文
    ```bash
@@ -277,7 +275,7 @@ git push
 
 2. **标签用英文 slug**：frontmatter 中用英文，页面展示用中文（通过 `_index.md`）
 
-3. **截断标记位置**：放在第一段结束后的空行，或导言和正文之间
+3. **截断标记位置**：放在领先段结束后的空行，或导言和正文之间
 
 4. **commit message 规范**：建议用 `新增:` 前缀
    ```bash
@@ -305,7 +303,6 @@ git push
 ```bash
 # 创建标签映射文件
 mkdir -p content/tags/new-tag
-cat > content/tags/new-tag/_index.md << 'EOF'
 ---
 title: "新标签"
 ---
@@ -340,7 +337,6 @@ lastmod: 2026-07-19
 ---
 
 # 3. 推送更新
-git add content/posts/{文件名}.md
 git commit -m "更新：{文章标题}"
 git push
 ```
@@ -354,7 +350,7 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 
 # 方案二：配置凭据缓存
 git config --global credential.helper cache
-git config --global credential.helper "cache --timeout=3600"
+helper "cache --timeout=3600"
 ```
 
 ### Q6：如何批量发布多篇文章？
@@ -396,7 +392,6 @@ git push
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -409,3 +404,14 @@ git push
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

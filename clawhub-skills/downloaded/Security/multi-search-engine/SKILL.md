@@ -34,7 +34,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Multi Search Engine
 
 Integration of 16 search engines for web crawling without API keys.

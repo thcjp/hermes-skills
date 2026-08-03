@@ -1,4 +1,5 @@
 ---
+
 slug: rss-aggregator-tool-pro
 name: rss-aggregator-tool-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: RSS聚合工具专业版
 summary: "企业级RSS聚合平台，支持定时调度、多渠道推送、语义去重与API集成。RSS聚合工具专业版，面向企业用户提供定时自动调度、多渠道推送、语义级去重与API集成能力。核心能力:"
 license: Proprietary
 edition: pro
-description: 'RSS聚合工具专业版，面向企业用户提供定时自动调度、多渠道推送、语义级去重与API集成能力。核心能力:
-
+description: "RSS聚合工具专业版，面向企业用户提供定时自动调度、多渠道推送、语义级去重与API集成能力。核心能力:。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
   - 定时自动调度（cron表达式。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。Use
   when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。'
 tags:
@@ -31,7 +31,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 RSS聚合工具专业版在免费版增量推送的基础上，新增定时自动调度、多渠道推送、语义级去重与智能聚类、自定义输出模板、多领域自动分组、历史自动归档与全文检索和 REST API 集成等企业级能力，满足企业资讯分发、媒体采编和行业研究的深度需求.
 PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，原有 RSS 配置和历史日志均可无缝迁移.
 ## 核心能力
@@ -50,7 +52,6 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 | 导出格式 | 纯文本 | MD/PDF/HTML/Email |
 | 监控告警 | 不支持 | 源失效检测+告警 |
 
-**输入**: 用户提供能力矩阵所需的指令和必要参数.
 **处理**: 解析能力矩阵的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回能力矩阵的响应数据,包含状态码、结果和日志.
 ### PRO 专属能力详解
@@ -76,14 +77,13 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 [PRO] 多格式导出（Markdown/PDF/HTML/Email）
 ```
 
-**输入**: 用户提供PRO 专属能力详解所需的指令和必要参数.
 **处理**: 解析PRO 专属能力详解的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回PRO 专属能力详解的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -102,8 +102,8 @@ groups:
     name: "技术资讯"
     feeds:
       - "https://feeds.example.com/ai-news.xml"
-      - "https://feeds.example.com/tech-general.xml"
-      - "https://feeds.example.com/devops.xml"
+example.com/tech-general.xml"
+example.com/devops.xml"
     schedule:
       cron: "0 8 * * 1-5"
     recipients:
@@ -113,8 +113,8 @@ groups:
   finance:
     name: "财经资讯"
     feeds:
-      - "https://feeds.example.com/finance.xml"
-      - "https://feeds.example.com/market.xml"
+example.com/finance.xml"
+example.com/market.xml"
     schedule:
       cron: "0 7 * * 1-5"
     recipients:
@@ -124,8 +124,8 @@ groups:
   market:
     name: "市场资讯"
     feeds:
-      - "https://feeds.example.com/market-research.xml"
-      - "https://feeds.example.com/competitor.xml"
+example.com/market-research.xml"
+example.com/competitor.xml"
     schedule:
       cron: "0 9 * * 1-5"
     recipients:
@@ -240,30 +240,30 @@ EOF
 ## 示例
 ### 自定义输出模板
 ```markdown
-{{date}}
+
 # ...
 {{#each groups}}
 {{#each items}}
-标题： {{title}}
+标题： 
 # ...
-摘要： {{summary}}
+摘要： 
 # ...
 链接：
-{{#each links}}{{this}}
+{{#each links}}
 {{/each}}
 # ...
 {{/each}}
 {{/each}}
 # ...
-本简报由 {{company_name}} 资讯助手自动生成
-订阅管理：{{unsubscribe_link}}
+本简报由  资讯助手自动生成
+订阅管理：
 ```
 
 ### 语义去重配置
 
 ### REST API 集成
 
-## 最佳实践
+## 优选实践
 ### 1. 按部门配置推送组
 ```python
 DEPARTMENT_FEEDS = {
@@ -317,7 +317,6 @@ health_check:
 # ...
     - condition: "feed_empty_days >= 7"
       action: "flag_inactive"
-      notify: ["admin@company.com"]
 EOF
 ```
 
@@ -370,7 +369,7 @@ PRO 版本初始化时会自动检测免费版配置，RSS 链接和历史日志
 PRO 版本支持 API 集成与多渠道推送，需配置相关密钥：
 
 ```bash
-export RSS_AGG_PRO_API_KEY="your_api_key"
+export RSS_AGG_PRO_API_KEY="${API_KEY:?请设置环境变量}"
 # ...
 export SMTP_HOST="smtp.company.com"
 export SMTP_PORT="587"
@@ -383,7 +382,7 @@ export WECHAT_SECRET="your_secret"
 # ...
 export WEBHOOK_TOKEN="your_webhook_token"
 # ...
-export EMBEDDING_API_KEY="your_embedding_key"
+export EMBEDDING_API_KEY="${API_KEY:?请设置环境变量}"
 # ...
 cat > ~/rss-agg-pro/.env << 'EOF'
 RSS_AGG_PRO_API_KEY=your_api_key
@@ -417,3 +416,30 @@ EOF
 
 ## 已知限制
 - 需要API Key，无Key环境无法使用
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级RSS聚合平台，支持定时调度、多渠道推送、语义去重与API集成。RSS聚合工具专业版，面向企业用户提供定时自动调度
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 企业级RSS聚合平台，支持定时调度、多渠道推送、语义去重与API集成。RSS聚合工具专业版，面向企业用户提供定时自动调度
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

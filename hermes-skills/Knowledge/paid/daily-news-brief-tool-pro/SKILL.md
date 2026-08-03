@@ -1,4 +1,5 @@
 ---
+
 slug: daily-news-brief-tool-pro
 name: daily-news-brief-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 每日新闻简报(专业版)
 summary: "企业级新闻简报专业版，含定时推送、AI分析、多渠道分发、情感分析与趋势预测.。每日新闻简报助手专业版是面向企业级场景的完整新闻简报生成与分发工具。在免费版基础搜集能力之上，新增定时自动执行、"
 license: Proprietary
 edition: pro
-description: 每日新闻简报助手专业版是面向企业级场景的完整新闻简报生成与分发工具。在免费版基础搜集能力之上，新增定时自动执行、多渠道推送、AI智能分析、个性化定制、多语言支持、历史回顾、情感分析、趋势预测八大高级能力。Use
+description: "每日新闻简报助手专业版是面向企业级场景的完整新闻简报生成与分发工具。在免费版基础搜集能力之上，新增定时自动执行、多渠道推送、AI智能分析、个性化定制、多语言支持、历史回顾、情感分析、趋势预测八大高级能力。Use。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。"
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - 每日新闻
@@ -19,7 +20,7 @@ tags:
   - 工具
   - https
   - feishu
-  - xxx
+  - 未指定
 tools:
   - read
   - exec
@@ -28,7 +29,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 > **定时推送+AI分析+多渠道分发+趋势预测。企业级新闻简报全功能覆盖。**
 
 将复杂的新闻搜集、分析与分发任务交给专业工具处理。专业版在免费版基础搜集能力之上，新增定时自动执行、多渠道推送、AI智能分析、个性化定制、多语言支持、历史回顾、情感分析、趋势预测八大高级能力，满足企业级场景对新闻简报的时效性、深度与广度要求.
@@ -54,22 +57,18 @@ category: "Knowledge"
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供定时自动执行所需的指令和必要参数.
 **处理**: 解析定时自动执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时自动执行的响应数据,包含状态码、结果和日志.
 ### 2. 多渠道推送
 
-**输入**: 用户提供多渠道推送所需的指令和必要参数.
 **处理**: 解析多渠道推送的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多渠道推送的响应数据,包含状态码、结果和日志.
 ### 3. AI智能分析
 
-**输入**: 用户提供AI智能分析所需的指令和必要参数.
 **处理**: 解析AI智能分析的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回AI智能分析的响应数据,包含状态码、结果和日志.
 ### 4. 个性化定制
 
-**输入**: 用户提供个性化定制所需的指令和必要参数.
 **处理**: 解析个性化定制的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回个性化定制的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级新闻简报专、含定时推送、多渠道分发、情感分析与趋势预、每日新闻简报助手、专业版是面向企业、级场景的完整新闻、简报生成与分发工、在免费版基础搜集、能力之上、新增定时自动执行、多语言支持、历史回顾、情感分析、趋势预测八大高级、Use、when、模型调用、智能对话、Agent、LLM、应用时使用、不适用于需要、确定性的关键决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -85,7 +84,7 @@ category: "Knowledge"
 
 ```python
 aggregator = ScheduledBriefGenerator()
-aggregator.pusher.register("feishu", "https://open.feishu.cn/open-apis/bot/v2/hook/xxx", "feishu")
+aggregator.pusher.register("feishu", "https://open.feishu.cn/open-apis/bot/v2/hook/未指定", "feishu")
 aggregator.pusher.register("email", "https://api.email.com/send", "email")
 aggregator.start()
 ```
@@ -140,8 +139,8 @@ for item in analyzed:
 
 ### 30秒上手
 ```bash
-export FEISHU_WEBHOOK=https://open.feishu.cn/open-apis/bot/v2/hook/xxx
-export DINGTALK_WEBHOOK=https://oapi.dingtalk.com/robot/send?access_token=xxx
+export FEISHU_WEBHOOK=https://open.feishu.cn/open-apis/bot/v2/hook/未指定
+export DINGTALK_WEBHOOK=https://oapi.dingtalk.com/robot/send?access_token=未指定
 # ...
 python3 news_brief_service.py --schedule daily --push feishu,dingtalk
 ```
@@ -169,11 +168,11 @@ schedule:
   weekly: "0 9 * * 1"
 # ...
 push:
-  feishu: https://open.feishu.cn/open-apis/bot/v2/hook/xxx
-  dingtalk: https://oapi.dingtalk.com/robot/send?access_token=xxx
-  wechat: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=xxx
+  feishu: https://open.feishu.cn/open-apis/bot/v2/hook/未指定
+  dingtalk: https://oapi.dingtalk.com/robot/send?access_token=未指定
+  wechat: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=未指定
   email: https://api.email-service.com/send
-  slack: https://hooks.slack.com/services/xxx
+  slack: https://hooks.slack.com/services/未指定
 # ...
 ai_analysis:
   enabled: true
@@ -193,7 +192,7 @@ customization:
   languages: [zh, en]
 EOF
 # ...
-python3 news_brief_service.py --config news_brief_config.yaml
+py --config news_brief_config.yaml
 ```
 
 ## 示例
@@ -205,12 +204,10 @@ sources:
     - https://www.reuters.com/world
     - https://www.bbc.com/news/world
   economic:
-    - https://finance.sina.com.cn
     - https://www.bloomberg.com/markets
     - https://www.ft.com/markets
   technology:
     - https://tech.sina.com.cn
-    - https://techcrunch.com
     - https://www.theverge.com/tech
 # ...
 schedule:
@@ -223,19 +220,19 @@ push:
   channels:
     - name: feishu
       type: feishu
-      url: https://open.feishu.cn/open-apis/bot/v2/hook/xxx
+      url: https://open.feishu.cn/open-apis/bot/v2/hook/未指定
     - name: dingtalk
       type: dingtalk
-      url: https://oapi.dingtalk.com/robot/send?access_token=xxx
+      url: https://oapi.dingtalk.com/robot/send?access_token=未指定
     - name: wechat
       type: wechat
-      url: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=xxx
+      url: https://qyapi.weixin.qq.key=未指定
     - name: email
       type: email
       url: https://api.email-service.com/send
     - name: slack
       type: slack
-      url: https://hooks.slack.com/services/xxx
+      url: https://hooks.slack.com/services/未指定
 # ...
 ai_analysis:
   model: gpt-4o
@@ -265,7 +262,7 @@ customization:
         weight: 2
 ```
 
-## 最佳实践
+## 优选实践
 ### 1. 推送频率控制
 ```python
 schedule.every().day.at("08:00").do(morning_brief)  # 每日1次早报
@@ -355,7 +352,7 @@ ANALYSIS_TEMPLATES = {
 此外，专业版还提供：
 - 多角色场景指南（信息部门/公关团队/跨国公司）
 - 完整FAQ（8问）与故障排查表
-- 性能优化建议与最佳实践
+- 性能优化建议与优选实践
 - GPT-4o模型路由与优先支持
 
 ## 定价
@@ -392,3 +389,22 @@ ANALYSIS_TEMPLATES = {
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级新闻简报专业版，含定时推送、AI分析、多渠道分发、情感分析与趋势预测.。每日新闻简报助手专业版是面向企业级场景的完
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

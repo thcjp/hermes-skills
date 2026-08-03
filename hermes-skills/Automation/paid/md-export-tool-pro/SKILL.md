@@ -1,5 +1,6 @@
 ---
-slug: "md-export-tool-pro"
+
+slug: md-export-tool-pro
 name: "md-export-tool-pro"
 version: "1.0.0"
 displayName: "文档导出工具专业版"
@@ -32,7 +33,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 文档导出工具（专业版）
 
 专业版在免费版核心能力之上，新增批量并行转换、自定义样式表、PDF水印加密、REST API服务模式、模板云端同步、版本差异导出等高级能力，专为内容团队、企业文档平台与品牌规范场景设计.
@@ -56,21 +59,21 @@ category: "Automation"
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -204,11 +207,9 @@ markdown-exporter-pro md_to_pdf input.md output.pdf \
 ### 批量并行转换
 
 ```bash
-markdown-exporter-pro batch /docs/**/*.md \
   --output-dir /publish \
   --formats html,pdf,docx,xlsx \
   --parallel 8 \
-  --template /templates/corporate.docx \
   --style /styles/corporate.css \
   --watermark "公司机密" \
   --fail-on-error false \
@@ -252,13 +253,12 @@ markdown-exporter-pro template list
 
 ```bash
 # 对比两个版本，仅导出变更部分
-markdown-exporter-pro diff v1.2.md v1.3.md \
   --output changelog.pdf \
   --format pdf \
   --highlight-changes
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 1. 样式表分层管理
 
@@ -283,14 +283,13 @@ h1 { page-break-before: always; }
 nproc
 # ...
 # 设置并行度为CPU核数
-markdown-exporter-pro batch /docs/**/*.md --parallel $(nproc)
+md --parallel $(nproc)
 ```
 
 ### 3. PDF分发安全策略
 
 对外分发的PDF必须启用加密与水印，禁止修改与复制.
 ```bash
-markdown-exporter-pro md_to_pdf input.md output.pdf \
   --encrypt-password "$PDF_PASSWORD" \
   --watermark "$(date +%Y-%m-%d) $RECIPIENT" \
   --no-modify --no-copy
@@ -444,3 +443,14 @@ A：在CI/CD流水线中调用命令行或API，将构建产物中的Markdown自
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

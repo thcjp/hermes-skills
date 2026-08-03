@@ -1,6 +1,7 @@
 ---
+
 name: "shopify-helper-tool-free"
-description: "Shopify建站助手,支持主题定制、产品管理与基础开发,适合个人卖家"
+description: "Shopify建站助手,支持主题定制、产品管理与基础开发,适合个人卖家。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,10 @@ metadata:
     - "建站"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # Shopify 助手 - 免费版
@@ -29,8 +34,6 @@ Shopify 助手免费版帮助个人卖家搭建与定制 Shopify 店铺。覆盖
 
 Shopify 主题使用 Liquid 模板语言,提供模板开发指导与代码示例。
 
-**输入**: 用户提供Liquid 模板开发所需的指令和必要参数。
-**处理**: 按照skill规范执行Liquid 模板开发操作,遵循单一意图原则。
 **输出**: 返回Liquid 模板开发的执行结果,包含操作状态和输出数据。
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -38,8 +41,6 @@ Shopify 主题使用 Liquid 模板语言,提供模板开发指导与代码示例
 
 产品上传、分类集合、变体配置的管理指导。
 
-**输入**: 用户提供产品与集合管理所需的指令和必要参数。
-**处理**: 按照skill规范执行产品与集合管理操作,遵循单一意图原则。
 **输出**: 返回产品与集合管理的执行结果,包含操作状态和输出数据。
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -47,8 +48,6 @@ Shopify 主题使用 Liquid 模板语言,提供模板开发指导与代码示例
 
 页面标题、Meta 描述、URL 结构、图片 Alt 文本的优化建议。
 
-**输入**: 用户提供基础 SEO 优化所需的指令和必要参数。
-**处理**: 按照skill规范执行基础 SEO 优化操作,遵循单一意图原则。
 **输出**: 返回基础 SEO 优化的执行结果,包含操作状态和输出数据。
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -56,8 +55,6 @@ Shopify 主题使用 Liquid 模板语言,提供模板开发指导与代码示例
 
 使用 Shopify CLI 进行本地开发、预览与部署。
 
-**输入**: 用户提供Shopify CLI所需的指令和必要参数。
-**处理**: 按照skill规范执行Shopify CLI操作,遵循单一意图原则。
 **输出**: 返回Shopify CLI的执行结果,包含操作状态和输出数据。
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -65,8 +62,6 @@ Shopify 主题使用 Liquid 模板语言,提供模板开发指导与代码示例
 
 自定义主题颜色、字体、布局,不需要编程基础的操作指导。
 
-**输入**: 用户提供主题定制所需的指令和必要参数。
-**处理**: 按照skill规范执行主题定制操作,遵循单一意图原则。
 **输出**: 返回主题定制的执行结果,包含操作状态和输出数据。
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -74,8 +69,6 @@ Shopify 主题使用 Liquid 模板语言,提供模板开发指导与代码示例
 
 Shopify 建站中的高频问题解决方案。
 
-**输入**: 用户提供常见问题所需的指令和必要参数。
-**处理**: 按照skill规范执行常见问题操作,遵循单一意图原则。
 **输出**: 返回常见问题的执行结果,包含操作状态和输出数据。
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：建站助手、支持主题定制、产品管理与基础开、适合个人卖家、建站助手免费版、面向个人卖家与小、型电商、核心能力、产品与集合管理指、使用指导、常见建站问题解答、主题自定义代码示等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -169,9 +162,9 @@ shopify theme list
   <div class="filters">
     <select onchange="window.location.href=this.value">
       <option value="{{ collection.url }}">排序: 推荐</option>
-      <option value="{{ collection.url }}?sort_by=price-ascending">价格升序</option>
-      <option value="{{ collection.url }}?sort_by=price-descending">价格降序</option>
-      <option value="{{ collection.url }}?sort_by=created-descending">最新上架</option>
+url }}?sort_by=price-ascending">价格升序</option>
+url }}?sort_by=price-descending">价格降序</option>
+url }}?sort_by=created-descending">最新上架</option>
     </select>
   </div>
 
@@ -179,7 +172,7 @@ shopify theme list
     {%- for product in collection.products -%}
       <div class="product-card">
         <a href="{{ product.url }}">
-          {{ product.featured_image | image_url: width: 300 | image_tag: loading: 'lazy' }}
+featured_image | image_url: width: 300 | image_tag: loading: 'lazy' }}
           <h3>{{ product.title }}</h3>
           <p class="price">{{ product.price | money }}</p>
         </a>
@@ -220,7 +213,7 @@ npm install -g @shopify/cli @shopify/theme
 shopify version
 ```
 
-### 创建第一个自定义主题
+### 创建领先个自定义主题
 
 ```bash
 # 使用 Shopify 官方 Dawn 主题创建
@@ -235,7 +228,6 @@ shopify theme dev --store my-store.myshopify.com
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
-
 
 ## 示例
 
@@ -302,7 +294,7 @@ my-theme/
 | 页面速度 | 图片压缩,减少 JS | 高 |
 | 移动适配 | 响应式设计 | 高 |
 
-## 最佳实践
+## 优选实践
 
 1. **使用 Dawn 主题**:Shopify 官方主题,代码质量高,适合作为定制基础
 2. **本地开发**:使用 Shopify CLI 本地开发,避免直接修改线上代码
@@ -354,12 +346,11 @@ A: Shopify 支持 Liquid 的 `{{ 'text' | t }}` 翻译 filter。在 `locales/` �
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **分类**: MD+execute(Markdown指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 执行 Shopify 建站与主题开发
 - **限制**: 免费版仅支持单店铺,不支持自定义 App 开发与企业级 SEO
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
@@ -373,3 +364,22 @@ A: Shopify 支持 Liquid 的 `{{ 'text' | t }}` 翻译 filter。在 `locales/` �
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

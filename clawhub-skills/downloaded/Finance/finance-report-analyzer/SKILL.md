@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Finance Report Analyzer
 
 Generate financial analysis reports from uploaded Excel/PDF files with inline SVG sparkline trend charts and multi-format output.

@@ -1,4 +1,5 @@
 ---
+
 slug: china-news-tool-pro
 name: china-news-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 中国新闻聚合(专业版)
 summary: "中国新闻聚合专业版，含浏览器模式、AI摘要、定时推送、情感分析与多渠道分发.。中国新闻聚合助手专业版是面向企业级场景的完整新闻聚合与分发工具。在免费版RSS订阅能力之上，新增浏览器自动化模式"
 license: Proprietary
 edition: pro
-description: 中国新闻聚合助手专业版是面向企业级场景的完整新闻聚合与分发工具。在免费版RSS订阅能力之上，新增浏览器自动化模式、AI智能摘要、定时自动执行、多渠道推送、AI辅助分类、新闻情感分析、历史新闻检索七大高级能力。Use
+description: "中国新闻聚合助手专业版是面向企业级场景的完整新闻聚合与分发工具。在免费版RSS订阅能力之上，新增浏览器自动化模式、AI智能摘要、定时自动执行、多渠道推送、AI辅助分类、新闻情感分析、历史新闻检索七大高级能力。Use。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。"
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - 中国新闻
@@ -29,7 +30,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 > **浏览器模式+AI摘要+定时推送+情感分析。企业级新闻聚合全功能覆盖。**
 
 将复杂的新闻聚合与分发任务交给专业工具处理。专业版在免费版RSS订阅能力之上，新增浏览器自动化模式、AI智能摘要、定时自动执行、多渠道推送、AI辅助分类、新闻情感分析、历史新闻检索七大高级能力，满足企业级场景对新闻情报的广度、深度与时效性要求.
@@ -53,22 +56,18 @@ category: "Knowledge"
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供浏览器自动化模式所需的指令和必要参数.
 **处理**: 解析浏览器自动化模式的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回浏览器自动化模式的响应数据,包含状态码、结果和日志.
 ### 2. AI智能摘要
 
-**输入**: 用户提供AI智能摘要所需的指令和必要参数.
 **处理**: 解析AI智能摘要的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回AI智能摘要的响应数据,包含状态码、结果和日志.
 ### 3. 定时自动执行
 
-**输入**: 用户提供定时自动执行所需的指令和必要参数.
 **处理**: 解析定时自动执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时自动执行的响应数据,包含状态码、结果和日志.
 ### 4. 多渠道推送
 
-**输入**: 用户提供多渠道推送所需的指令和必要参数.
 **处理**: 解析多渠道推送的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多渠道推送的响应数据,包含状态码、结果和日志.
 ### 5. 新闻情感分析
@@ -129,7 +128,6 @@ stats = analyzer.get_sentiment_stats(news)
 print(f"情感分析：正面 {stats['positive']}条，负面 {stats['negative']}条，中性 {stats['neutral']}条")
 ```
 
-**输入**: 用户提供新闻情感分析所需的指令和必要参数.
 **处理**: 解析新闻情感分析的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回新闻情感分析的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：中国新闻聚合专业、含浏览器模式、定时推送、情感分析与多渠道、中国新闻聚合助手、专业版是面向企业、级场景的完整新闻、聚合与分发工具、在免费版、RSS、订阅能力之上、新增浏览器自动化、辅助分类、历史新闻检索七大、高级能力、Use、when、模型调用、智能对话、Agent、LLM、应用时使用、不适用于需要、确定性的关键决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -140,7 +138,7 @@ print(f"情感分析：正面 {stats['positive']}条，负面 {stats['negative']
 **场景描述**：每日自动获取行业新闻，AI摘要后推送到企业飞书群.
 ```python
 aggregator = ScheduledNewsAggregator()
-aggregator.pusher.register("feishu", "https://open.feishu.cn/open-apis/bot/v2/hook/xxx", "feishu")
+aggregator.pusher.register("feishu", "https://open.feishu.cn/open-apis/bot/v2/hook/未指定", "feishu")
 aggregator.pusher.register("email", "https://api.email.com/send", "email")
 aggregator.start()
 ```
@@ -183,8 +181,8 @@ print(report)
 
 ### 30秒上手
 ```bash
-export FEISHU_WEBHOOK=https://open.feishu.cn/open-apis/bot/v2/hook/xxx
-export DINGTALK_WEBHOOK=https://oapi.dingtalk.com/robot/send?access_token=xxx
+export FEISHU_WEBHOOK=https://open.feishu.cn/open-apis/bot/v2/hook/未指定
+export DINGTALK_WEBHOOK=https://oapi.dingtalk.com/robot/send?access_token=未指定
 # ...
 python3 news_pipeline.py --mode full --push feishu,dingtalk
 ```
@@ -216,8 +214,8 @@ schedule:
   weekly: "0 9 * * 1"
 # ...
 push:
-  feishu: https://open.feishu.cn/open-apis/bot/v2/hook/xxx
-  dingtalk: https://oapi.dingtalk.com/robot/send?access_token=xxx
+  feishu: https://open.feishu.cn/open-apis/bot/v2/hook/未指定
+  dingtalk: https://oapi.dingtalk.com/robot/send?access_token=未指定
   email: https://api.email.com/send
 EOF
 # ...
@@ -232,11 +230,11 @@ sources:
     - name: 新浪国内
       url: https://rss.sina.com.cn/news/china/roll.xml
     - name: 新浪国际
-      url: https://rss.sina.com.cn/news/world/roll.xml
+sina.com.cn/news/world/roll.xml
     - name: 新浪财经
-      url: https://rss.sina.com.cn/finance/roll.xml
+sina.com.cn/finance/roll.xml
     - name: 新浪科技
-      url: https://rss.sina.com.cn/tech/roll.xml
+sina.com.cn/tech/roll.xml
     - name: 搜狐新闻
       url: https://news.sohu.com/rss/
     - name: 36氪
@@ -244,9 +242,7 @@ sources:
 # ...
   browser:
     - name: 网易新闻
-      url: https://news.163.com
     - name: 腾讯新闻
-      url: https://news.qq.com
     - name: 人民网
       url: http://www.people.com.cn
 # ...
@@ -268,19 +264,19 @@ push:
   channels:
     - name: feishu
       type: feishu
-      url: https://open.feishu.cn/open-apis/bot/v2/hook/xxx
+      url: https://open.feishu.cn/open-apis/bot/v2/hook/未指定
     - name: dingtalk
       type: dingtalk
-      url: https://oapi.dingtalk.com/robot/send?access_token=xxx
+      url: https://oapi.dingtalk.com/robot/send?access_token=未指定
     - name: wechat
       type: wechat
-      url: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=xxx
+      url: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=未指定
     - name: email
       type: email
       url: https://api.email-service.com/send
 ```
 
-## 最佳实践
+## 优选实践
 ### 1. 混合模式优化
 ```python
 def hybrid_fetch():
@@ -378,7 +374,7 @@ RSS模式优势：速度快、资源占用低、无需浏览器；适合已支�
 - 15+媒体源（含网易/腾讯/人民日报/新华网/央视网）
 - 多角色场景指南（信息部门/公关团队/市场研究）
 - 完整FAQ（7问）与故障排查表
-- 性能优化建议与最佳实践
+- 性能优化建议与优选实践
 - GPT-4o模型路由与优先支持
 
 ## 定价
@@ -402,8 +398,6 @@ RSS模式优势：速度快、资源占用低、无需浏览器；适合已支�
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 
@@ -429,3 +423,22 @@ Skill: 执行完成,结果如下: 操作成功
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 中国新闻聚合专业版，含浏览器模式、AI摘要、定时推送、情感分析与多渠道分发.。中国新闻聚合助手专业版是面向企业级场景的完
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

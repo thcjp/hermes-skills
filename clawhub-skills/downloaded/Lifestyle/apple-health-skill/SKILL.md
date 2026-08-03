@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Apple Health Skill
 
 Chat with your Apple Health data using AI. Ask about your workouts, heart rate trends, activity rings, VO2 Max, and more. Powered by [Transition](https://www.transition.fun), which syncs with Apple Health to give AI agents access to your fitness data.

@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Java Development Manual
 
 ## 概述

@@ -16,7 +16,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # JIRA
 
 Natural language interaction with Jira. Supports multiple backends.

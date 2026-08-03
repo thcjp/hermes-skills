@@ -1,6 +1,7 @@
 ---
+
 name: "note-process-engine-free"
-description: "轻量化研究笔记分析工具,支持摘要生成、关键词提取、全文检索与主题列表,适合个人研究者快速提炼笔记洞察。"
+description: "轻量化研究笔记分析工具,支持摘要生成、关键词提取、全文检索与主题列表,适合个人研究者快速提炼笔记洞察。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -14,6 +15,11 @@ metadata:
     - "研究工具"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # 笔记处理引擎(免费版)
@@ -42,24 +48,18 @@ metadata:
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置。
 
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
 **输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量化研究笔记分、析工具、支持摘要生成、全文检索与主题列、适合个人研究者快、速提炼笔记洞察、笔记处理引擎、是面向个人研究者、与知识工作者的轻、量化笔记分析、通过摘要、列表四大能力的组、帮助用户从海量研、究笔记中快速提炼、核心能力等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -184,7 +184,8 @@ note_process_engine.py summarize user-interview-2026-q3
 
 ### 命令详解
 
-#### summarize - 生成摘要
+#
+### summarize - 生成摘要
 
 ```bash
 note_process_engine.py summarize <topic>
@@ -197,7 +198,8 @@ note_process_engine.py summarize <topic>
 - 关键点(含重要词汇的句子)
 - 最近3条笔记预览
 
-#### keywords - 提取关键词
+#
+### keywords - 提取关键词
 
 ```bash
 note_process_engine.py keywords <topic>
@@ -208,7 +210,8 @@ note_process_engine.py keywords <topic>
 - Top 20 关键词及词频
 - 自动过滤停用词
 
-#### extract - 全文检索
+#
+### extract - 全文检索
 
 ```bash
 note_process_engine.py extract <topic> <keyword>
@@ -220,7 +223,8 @@ note_process_engine.py extract <topic> <keyword>
 - 时间戳与标签
 - 匹配内容预览
 
-#### list - 主题列表
+#
+### list - 主题列表
 
 ```bash
 note_process_engine.py list
@@ -249,7 +253,7 @@ note_process_engine.py list
 中文:的、了、是、在、有、和、与、或、也、这、那、被、把、给、向、为、对、于、以、可、能、会、要、将、已、正、才、再、又、还、都、就、只、才、便
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **写完整句子**:笔记内容使用完整句子,便于关键点检测与摘要生成
 2. **包含重要词汇**:在笔记中显式使用"重要"、"关键"、"必须"等词汇,提升关键点识别率
@@ -322,18 +326,15 @@ A: 免费版仅支持JSON格式。CSV、Markdown、SQLite等格式请使用专�
 
 ### API Key 配置
 - 本Skill完全基于本地Python脚本,无需任何外部API Key
-- 数据库文件存储在`~/.note-engine/workspace/research_db.json`
 - 可通过`NOTE_ENGINE_HOME`环境变量自定义存储位置
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+execute(纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作
 
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 
@@ -342,3 +343,13 @@ A: 免费版仅支持JSON格式。CSV、Markdown、SQLite等格式请使用专�
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

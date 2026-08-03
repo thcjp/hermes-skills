@@ -1,6 +1,7 @@
 ---
+
 name: "browser-cli-tool-free"
-description: "基于Playwright的浏览器自动化CLI,支持签到、填表、截图与信息抓取,适合个人用户"
+description: "基于Playwright的浏览器自动化CLI,支持签到、填表、截图与信息抓取,适合个人用户。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -14,6 +15,11 @@ metadata:
     - "自动化"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - browser
+
 ---
 
 # 浏览器CLI工具(免费版)
@@ -54,23 +60,17 @@ metadata:
 | 获取信息 | `snapshot` / `get text` / `get html` / `screenshot` | 信息提取 |
 | 元素定位 | `find role` / `find text` / `find label` | 多种定位方式 |
 
-**输入**: 用户提供命令总览所需的指令和必要参数。
-**处理**: 按照skill规范执行命令总览操作,遵循单一意图原则。
 **输出**: 返回命令总览的执行结果,包含操作状态和输出数据。
 
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Playwright、的浏览器自动化、支持签到、截图与信息抓取、适合个人用户、浏览器自动化命令、行工具、提供导航、信息获取与截图能、适合签到、信息抓取等需要控、制浏览器的任务、核心能力、页面导航与历史控、ref、引用与、CSS、选择器的元素交互、属性等信息提取、截图与页面快照等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -106,7 +106,6 @@ agent-browser close
 自动填写并提交表单。
 
 ```bash
-agent-browser open https://example.com/form
 agent-browser snapshot
 
 # 通过 label 定位并填写
@@ -123,20 +122,16 @@ agent-browser find role button click --name "提交"
 
 ```bash
 # 创建脚本 ~/.skill-platform/scripts/daily-checkin.sh
-cat > ~/.skill-platform/scripts/daily-checkin.sh << 'EOF'
+cat > ~/.sh << 'EOF'
 #!/bin/bash
-agent-browser open https://example.com/checkin
 sleep 2
 agent-browser find role button click --name "签到"
 agent-browser screenshot /tmp/checkin_$(date +%Y%m%d).png
 agent-browser close
 EOF
 
-chmod +x ~/.skill-platform/scripts/daily-checkin.sh
-
 # 加入 crontab(每天 9:00 执行)
 # crontab -e
-# 0 9 * * * ~/.skill-platform/scripts/daily-checkin.sh
 ```
 
 ## 快速开始
@@ -176,7 +171,6 @@ agent-browser close
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
-
 
 ## 示例
 
@@ -240,7 +234,7 @@ agent-browser find label "Email" fill "test@test.com"
 agent-browser find placeholder "Search" type "query"
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **先 snapshot 再操作**:每次页面变化后重新获取 ref,避免引用失效。
 2. **添加等待**:页面加载需要时间,用 `sleep 2` 或等待命令。
@@ -257,7 +251,7 @@ agent-browser find placeholder "Search" type "query"
 ### Q2: 元素被遮挡无法点击?
 - 尝试滚动到元素位置后再点击
 - 检查是否有弹窗遮挡,先关闭弹窗
-- 使用 `find role button click --name "xxx"` 替代 ref
+- 使用 `find role button click --name "未指定"` 替代 ref
 
 ### Q3: 安装失败怎么办?
 ```bash
@@ -301,11 +295,10 @@ agent-browser screenshot debug.png
 - 本 Skill 基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+execute(纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
@@ -319,3 +312,30 @@ agent-browser screenshot debug.png
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

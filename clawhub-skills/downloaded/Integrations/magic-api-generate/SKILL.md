@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # magic-api-generate
 
 magic-api 是基于 Java 的接口快速开发框架，通过 Web UI 编写脚本自动生成 HTTP 接口，无需定义 Controller、Service、Dao、Mapper、XML、VO 等 Java 对象。

@@ -1,5 +1,6 @@
 ---
-slug: "docker-essentials-v1-tool-pro"
+
+slug: docker-essentials-v1-tool-pro
 name: "docker-essentials-v1-tool-pro"
 version: "1.0.0"
 displayName: "Docker V1迁移专业版"
@@ -42,7 +43,9 @@ tools:
   - write
 homepage: ""
 category: "Development"
+
 ---
+
 Docker V1迁移工具专业版为企业运维团队提供从V1到V2的完整迁移解决方案。在免费版V1命令支持之上,专业版新增自动兼容性深度扫描、批量Compose配置转换、Dockerfile现代化重构、渐进式迁移与回滚保障,帮助企业安全高效地完成Docker版本升级.
 专业版完全兼容免费版的所有V1命令,运维团队可从免费版无缝升级。专业版同时支持V1和V2双环境运行,确保迁移过程中业务不中断.
 ## 核心能力
@@ -50,12 +53,11 @@ Docker V1迁移工具专业版为企业运维团队提供从V1到V2的完整迁�
 自动扫描项目中的所有Docker配置,识别迁移风险点.
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供V1到V2兼容性深度扫描所需的指令和必要参数.
 **处理**: 解析V1到V2兼容性深度扫描的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回V1到V2兼容性深度扫描的响应数据,包含状态码、结果和日志.
 ### 2. 批量配置转换
 自动将V1 Compose文件和Dockerfile转换为V2格式.
-**输入**: 用户提供批量配置转换所需的指令和必要参数.
+
 **处理**: 解析批量配置转换的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量配置转换的响应数据,包含状态码、结果和日志.
 ### 3. Dockerfile现代化重构
@@ -90,19 +92,19 @@ class DockerfileModernizer:
             self.source_lines = f.readlines()
 # ...
     def _apply_best_practices(self):
-        """应用最佳实践"""
+        """应用优选实践"""
         for line in self.source_lines:
             stripped = line.strip()
 # ...
             if stripped.startswith('MAINTAINER '):
                 author = stripped.split(' ', 1)[1]
                 self.modernized.append(f'LABEL maintainer="{author}"\n')
-                self.changes.append("MAINTAINER -> LABEL maintainer")
+changes.append("MAINTAINER -> LABEL maintainer")
                 continue
 # ...
             if 'apt-get install' in stripped and '&&' not in stripped:
-                self.modernized.append(line)
-                self.changes.append("建议合并apt-get install指令")
+modernized.append(line)
+changes.append("建议合并apt-get install指令")
                 continue
 # ...
             self.modernized.append(line)
@@ -118,18 +120,16 @@ class DockerfileModernizer:
 # ...
     def _write(self):
         """写回文件"""
-        with open(self.path, 'w', encoding='utf-8') as f:
+path, 'w', encoding='utf-8') as f:
             f.writelines(self.modernized)
 ```
 
-**输入**: 用户提供Dockerfile现代化重构所需的指令和必要参数.
 **处理**: 解析Dockerfile现代化重构的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Dockerfile现代化重构的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 4. 渐进式迁移与回滚
 
-**输入**: 用户提供渐进式迁移与回滚所需的指令和必要参数.
 **处理**: 解析渐进式迁移与回滚的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回渐进式迁移与回滚的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、迁移工具、支持自动兼容性扫、批量迁移、配置转换与回滚保、面向企业运维团队、迁移专业工具、提供自动兼容性扫、核心能力、自动兼容性深度扫、迁移影响评估与报、流水线适配等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -314,11 +314,11 @@ verification:
   health_check: true
 ```
 
-## 最佳实践
+## 优选实践
 1. **先评估后迁移**:运行兼容性扫描,了解迁移风险
 
 ```bash
-python3 compatibility_scanner.py ./ > assessment.json
+py ./ > assessment.json
 ```
 
 2. **创建备份**:迁移前备份所有配置
@@ -409,8 +409,6 @@ rollback_service web
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ```text
@@ -435,3 +433,22 @@ Skill: 执行完成,结果如下: 操作成功
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级V1迁移工具,支持自动兼容性扫描、批量迁移、配置转换与回滚保障。。面向企业运维团队的Docker V1到V2迁移专
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

@@ -1,4 +1,5 @@
 ---
+
 slug: archive-tool-pro
 name: archive-tool-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: 内容归档工具-专业版
 summary: "企业级内容归档,支持团队共享、自动摘要、版本控制、全文检索与API访问。企业级内容归档工具,在免费版核心能力之上,提供团队共享归档库、AI 自动摘要、"
 license: Proprietary
 edition: pro
-description: '企业级内容归档工具,在免费版核心能力之上,提供团队共享归档库、AI 自动摘要、
-
+description: "企业级内容归档工具,在免费版核心能力之上,提供团队共享归档库、AI 自动摘要、。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
   版本控制、全文检索、API 访问、权限管理与监控统计能力。核心能力:
 
   - 免费版全部能力(完全兼容)
@@ -56,14 +56,13 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 # 内容归档工具(专业版)
-
 ## 概述
-
 本工具是企业级内容归档工具,在免费版核心能力之上,扩展了团队共享归档库、AI 自动摘要、版本控制、全文检索、API 访问、权限管理与监控统计能力,适合企业团队资料沉淀、研究机构档案管理、合规性内容留存与团队协作场景。专业版与免费版完全兼容:免费版的所有归档数据、工作流均可直接在专业版中使用.
 ### 免费版 vs 专业版对比
-
 | 能力 | 免费版 | 专业版 |
 |---|---|---|
 | 完整内容提取 | 支持 | 支持 |
@@ -80,9 +79,7 @@ category: "Knowledge"
 | 优先技术支持 | 不支持 | 支持 |
 
 ## 核心能力
-
 ### 1. 团队共享归档库(专业版新增)
-
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
 |:-----|:-----|:-----|:-----|
@@ -91,120 +88,73 @@ category: "Knowledge"
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
 ```bash
-# 初始化团队共享归档库
 archive pro init --shared /shared/archive --team "research-team"
-# ...
-# 推送本地归档到共享库
 archive pro sync --push
-# ...
-# 拉取团队最新归档
 archive pro sync --pull
-# ...
-# 查看团队成员与贡献
 archive pro team list
 archive pro team stats --member alice
 ```
 
-**输入**: 用户提供团队共享归档库(专业版新增)所需的指令和必要参数.
 **处理**: 解析团队共享归档库(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回团队共享归档库(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 2. AI 自动摘要与关键词提取(专业版新增)
-
 ```bash
-# 为归档条目自动生成摘要
 archive pro summarize --id 2026-02-16-pricing-strategy
-# ...
-# 批量生成摘要
 archive pro summarize --batch --tag pricing
-# ...
-# 提取关键词
 archive pro keywords --id 2026-02-16-pricing-strategy --top 10
-# ...
-# 生成项目综述
 archive pro digest --project my-project --length 800
 ```
 
-**输入**: 用户提供AI 自动摘要与关键词提取(专业版新增)所需的指令和必要参数.
 **处理**: 解析AI 自动摘要与关键词提取(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回AI 自动摘要与关键词提取(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 3. 版本控制与历史追溯(专业版新增)
-
 ```bash
-# 查看条目历史版本
 archive pro history --id 2026-02-16-pricing-strategy
-# ...
-# 回滚到历史版本
 archive pro rollback --id 2026-02-16-pricing-strategy --version 2
-# ...
-# 对比版本差异
 archive pro diff --id 2026-02-16-pricing-strategy --v1 1 --v2 3
-# ...
-# 查看变更日志
 archive pro changelog --project my-project
 ```
 
-**输入**: 用户提供版本控制与历史追溯(专业版新增)所需的指令和必要参数.
 **处理**: 解析版本控制与历史追溯(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回版本控制与历史追溯(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 4. 全文检索与高级筛选(专业版新增)
-
 ```bash
-# 全文检索
 archive pro search "定价策略" --full-text
-# ...
-# 高级筛选
 archive pro search --type article --tag pricing --from 2026-01 --to 2026-03
-# ...
-# 按作者检索
 archive pro search --author "张三"
-# ...
-# 按项目检索
 archive pro search --project my-project --sort relevance
 ```
 
-**输入**: 用户提供全文检索与高级筛选(专业版新增)所需的指令和必要参数.
 **处理**: 解析全文检索与高级筛选(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回全文检索与高级筛选(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 5. API 访问与第三方集成(专业版新增)
-
 ```bash
-# 启用 API 服务
 archive pro api start --port 8080
-# ...
-# 示例
 curl -s http://localhost:8080/api/search?q=定价
 curl -s http://localhost:8080/api/items/2026-02-16-pricing-strategy
 curl -s -X POST http://localhost:8080/api/items -d '{"url":"...","tags":["..."]}'
 ```
 
-**输入**: 用户提供API 访问与第三方集成(专业版新增)所需的指令和必要参数.
 **处理**: 解析API 访问与第三方集成(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回API 访问与第三方集成(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 6. 权限管理与操作审计(专业版新增)
-
 ```bash
-# 设置条目权限
 archive pro permission set --id 2026-02-16-pricing-strategy --team research --read --write
-# ...
-# 按项目设置权限
 archive pro permission set --project confidential --team core --read --write
 archive pro permission set --project confidential --team all --deny
-# ...
-# 查看操作日志
 archive pro audit log --limit 50 --member alice
 ```
 
-**输入**: 用户提供权限管理与操作审计(专业版新增)所需的指令和必要参数.
 **处理**: 解析权限管理与操作审计(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回权限管理与操作审计(专业版新增)的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级内容归档、支持团队共享、企业级内容归档工、在免费版核心能力、权限管理与监控统、计能力、核心能力、免费版全部能力、完全兼容、团队共享归档库与、归档版本控制与历等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -214,82 +164,55 @@ archive pro audit log --limit 50 --member alice
 - 不适用: 需要人工判断的复杂决策场景
 
 ### 场景一:企业合规性内容留存
-
 企业需要长期留存特定内容以满足合规要求,支持版本追溯与权限管控.
 ```bash
 #!/bin/bash
-# compliance-archive.sh - 合规性内容归档
 PROJECT="compliance-2026"
 DATE=$(date +%Y-%m-%d)
-# ...
-# 1. 归档合规相关内容(自动提取全文)
 archive add --url "$1" \
   --project "$PROJECT" \
   --why "合规留存:$(date +%Y-%m-%d)" \
   --tags "compliance,legal,$DATE" \
   --immutable                          # 标记为不可变
-# ...
-# 2. 自动生成摘要与关键词
 archive pro summarize --latest
 archive pro keywords --latest --top 10
-# ...
-# 3. 设置权限(仅合规团队可读)
 archive pro permission set --latest --team compliance --read
 archive pro permission set --latest --team all --deny
-# ...
-# 4. 记录审计日志
 archive pro audit log --action archive --project "$PROJECT"
-# ...
 echo "合规内容已归档(不可变),权限已设置"
 ```
 
 ### 场景二:团队研究资料协作
-
 研究团队共同维护一个项目归档库,成员各自贡献并共享.
 ```bash
 #!/bin/bash
-# team-research-archive.sh - 团队研究归档协作
 SHARED_ARCHIVE="/shared/research-archive"
 PROJECT="ai-agent-research"
-# ...
-# 1. 初始化共享归档库
 archive pro init --shared "$SHARED_ARCHIVE" --team "research-team"
-# ...
-# 2. 设置项目权限:研究团队可读写
 archive pro permission set --project "$PROJECT" --team research --read --write
-# ...
-# 3. 成员A:归档新资料
 archive add --url "https://example.com/paper" \
   --project "$PROJECT" \
   --why "AI智能体架构研究" \
   --tags "ai,agent,architecture"
 archive pro summarize --latest
 archive pro sync --push
-# ...
-# 4. 成员B:拉取最新归档
 archive pro sync --pull
 archive pro search "智能体架构" --project "$PROJECT"
-# ...
-# 5. 生成项目综述
 archive pro digest --project "$PROJECT" --length 1000 > "reports/${PROJECT}-digest.md"
-# ...
 echo "团队归档协作完成"
 archive pro team stats
 ```
 
 ### 场景三:第三方系统集成
-
 通过 API 将归档能力集成到现有系统(如 CMS、知识库、CRM).
 ```python
 #!/usr/bin/env python3
 """第三方系统归档集成示例"""
 import requests
 import json
-# ...
 ARCHIVE_API = "http://localhost:8080/api"
-API_KEY = "your-api-key"
+API_KEY = "${API_KEY:?请设置环境变量}"
 HEADERS = {"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}
-# ...
 def archive_content(url, project, why, tags):
     """归档内容到归档库"""
     response = requests.post(f"{ARCHIVE_API}/items", headers=HEADERS, json={
@@ -301,27 +224,22 @@ def archive_content(url, project, why, tags):
         "auto_keywords": True
     })
     return response.json()
-# ...
 def search_archive(query, project=None, limit=10):
     """全文检索归档库"""
     params = {"q": query, "limit": limit}
     if project:
         params["project"] = project
-    response = requests.get(f"{ARCHIVE_API}/search", headers=HEADERS, params=params)
+get(f"{ARCHIVE_API}/search", headers=HEADERS, params=params)
     return response.json()
-# ...
 def get_item_with_summary(item_id):
     """获取归档条目(含 AI 摘要)"""
-    response = requests.get(f"{ARCHIVE_API}/items/{item_id}", headers=HEADERS)
+get(f"{ARCHIVE_API}/items/{item_id}", headers=HEADERS)
     return response.json()
-# ...
-# 示例:归档一批研究资料
 research_urls = [
     {"url": "https://example.com/ai-paper-1", "why": "AI智能体基础理论", "tags": ["ai", "theory"]},
-    {"url": "https://example.com/ai-paper-2", "why": "多智能体协作", "tags": ["ai", "collaboration"]},
-    {"url": "https://example.com/ai-paper-3", "why": "智能体评估方法", "tags": ["ai", "evaluation"]},
+com/ai-paper-2", "why": "多智能体协作", "tags": ["ai", "collaboration"]},
+com/ai-paper-3", "why": "智能体评估方法", "tags": ["ai", "evaluation"]},
 ]
-# ...
 for item in research_urls:
     result = archive_content(
         url=item["url"],
@@ -330,8 +248,6 @@ for item in research_urls:
         tags=item["tags"]
     )
     print(f"[已归档] {item['url']} -> ID: {result['id']}")
-# ...
-# 全文检索
 results = search_archive("多智能体协作", project="ai-research")
 print(f"\n检索结果: {len(results['items'])} 条")
 for item in results["items"]:
@@ -339,20 +255,14 @@ for item in results["items"]:
 ```
 
 ## 快速开始
-
 1. 阅读## 核心能力章节了解skill功能
 2. 按## 依赖说明配置环境
 3. 执行所需能力对应的命令
 4. 参考## 错误处理章节处理异常
 5. 查看## FAQ解答常见疑问
-
 ### 依赖详情
-
 ```bash
-# 专业版初始化(保留免费版数据)
 archive pro init --migrate
-# ...
-# 配置团队共享
 archive pro config set shared.path /shared/archive
 archive pro config set team.name research-team
 archive pro config set ai.summarize true
@@ -360,42 +270,27 @@ archive pro config set api.enabled true
 ```
 
 ### 2. 团队协作工作流
-
 ```bash
-# 成员A:归档新内容
 archive add --url https://example.com/article --project research --why "研究用途"
 archive pro summarize --latest
 archive pro sync --push
-# ...
-# 成员B:拉取并检索
 archive pro sync --pull
 archive pro search "研究主题" --project research
-# ...
-# 生成项目综述
 archive pro digest --project research --length 800
 ```
 
 ### 3. 启用 API 访问
-
 ```bash
-# 启动 API 服务
 archive pro api start --port 8080 --auth token
-# ...
-# 生成 API Token
 archive pro api token create --name "integration" --scope "read,write"
-# ...
-# 验证 API
 curl -s -H "Authorization: Bearer <token>" http://localhost:8080/api/health
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
 #
 ## 配置示例
-
 ### 企业级配置文件
-
 ```yaml
-# ~/.archive/config.yaml
 edition: pro
 storage:
   local: ~/archive
@@ -433,27 +328,12 @@ audit:
 ```
 
 ### 监控统计示例
-
 ```bash
-# 归档库统计
 archive pro stats
-# 输出示例:
-# === 归档库统计 ===
-# 总条目数: 3456
-# 本月新增: 123
-# 按类型: article(2100), paper(800), video(300), post(256)
-# 按项目: research(1500), compliance(800), marketing(600)
-# 版本数: 5678(平均每条 1.6 版本)
-# 全文索引覆盖率: 98%
-# 团队成员: 8
-# 本月检索: 456 次
-# ...
-# 导出统计报告
 archive pro stats --export json > stats.json
 ```
 
-## 最佳实践
-
+## 优选实践
 ### 合规留存规范
 1. **不可变标记**:合规内容归档时标记 `--immutable`,防止篡改.
 2. **版本追溯**:启用版本控制,所有修改保留历史,可回滚.
@@ -471,13 +351,11 @@ archive pro stats --export json > stats.json
 3. **CORS 配置**:仅允许受信任的域名访问 API.
 4. ** webhook 通知**:归档/修改时通过 webhook 通知下游系统.
 ## 已知限制
-
 - 本skill的能力范围受限于核心能力章节中定义的功能,不支持超出范围的操作
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 
 ## 常见问题
-
 ### Q1: 专业版是否兼容免费版数据?
 完全兼容。免费版的所有归档条目、标签、索引均可直接在专业版中使用。专业版在原有数据之上扩展全文索引、版本历史等元数据.
 ### Q2: 如何从免费版升级?
@@ -500,9 +378,7 @@ archive pro immutable unlock --id <item-id> --admin
 ### Q5: API 如何鉴权?
 通过 Bearer Token 鉴权:
 ```bash
-# 创建 Token
 archive pro api token create --name "integration" --scope "read"
-# 使用 Token
 curl -H "Authorization: Bearer <token>" http://localhost:8080/api/search?q=test
 ```
 
@@ -513,7 +389,6 @@ curl -H "Authorization: Bearer <token>" http://localhost:8080/api/search?q=test
 - 模糊查询:`search "定价~2"`(允许2个字符差异)
 
 ## 与免费版的兼容性
-
 | 维度 | 兼容性 |
 |---:|---:|
 | 归档数据格式 | 100% 兼容(专业版可读取免费版归档) |
@@ -523,14 +398,12 @@ curl -H "Authorization: Bearer <token>" http://localhost:8080/api/search?q=test
 | 升级路径 | 平滑升级(保留全部历史数据) |
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent 平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 - **推荐内存**: >= 2GB(API 服务与全文检索场景建议 4GB+)
 
 ### 第三方依赖
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:---:|:---:|:---:|:---:|
 | archive(pro) | CLI 工具 | 必需 | 随 Skill 安装 |
@@ -548,12 +421,11 @@ curl -H "Authorization: Bearer <token>" http://localhost:8080/api/search?q=test
 - 团队共享:配置共享存储路径与访问凭证
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+execute(纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作
 - **版本**: 专业版(兼容免费版全部能力)
 
 ## 错误处理
-
 - 边界输入处理: 空输入返回提示信息, 超长输入自动截断
 - 降级策略: 异常时返回默认值, 确保流程不中断
 
@@ -564,10 +436,7 @@ curl -H "Authorization: Bearer <token>" http://localhost:8080/api/search?q=test
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 示例
-
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 
@@ -576,3 +445,22 @@ curl -H "Authorization: Bearer <token>" http://localhost:8080/api/search?q=test
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级内容归档,支持团队共享、自动摘要、版本控制、全文检索与API访问。企业级内容归档工具,在免费版核心能力之上,提供团
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

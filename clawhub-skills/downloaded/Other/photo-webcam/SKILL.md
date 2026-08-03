@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Photo Webcam
 
 Goal: Fetch a current image from a saved favorites list (number -> webcam page) and send it to the user.

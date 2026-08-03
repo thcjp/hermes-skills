@@ -35,7 +35,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Smart Cache
 
 High-performance caching with multiple eviction strategies.

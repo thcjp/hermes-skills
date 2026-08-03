@@ -35,7 +35,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # MongoDB Atlas
 
 Tool to browse OpenAPI specifications for MongoDB Atlas.

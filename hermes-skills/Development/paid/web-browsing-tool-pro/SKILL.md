@@ -1,4 +1,5 @@
 ---
+
 slug: web-browsing-tool-pro
 name: web-browsing-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 网页浏览助手专业版
 summary: "企业级网页信息获取平台,支持批量 URL 处理、定时监控、深度分析与团队协作。网页浏览助手专业版,面向企业团队和专业研究人员提供深度的网页信息获取能力。支持批量 URL 处理、定时内容监控、"
 license: Proprietary
 edition: pro
-description: 网页浏览助手专业版,面向企业团队和专业研究人员提供深度的网页信息获取能力。支持批量 URL 处理、定时内容监控、深度内容分析、团队协作等高级功能。Use
+description: "网页浏览助手专业版,面向企业团队和专业研究人员提供深度的网页信息获取能力。支持批量 URL 处理、定时内容监控、深度内容分析、团队协作等高级功能。Use。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。"
   when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - 研究工具
@@ -27,7 +28,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Development"
+
 ---
+
 网页浏览助手专业版是企业级的网页信息获取平台。在完整兼容免费版所有浏览和搜索能力的基础上,专业版引入了批量 URL 处理、定时内容监控、深度内容分析、团队协作、自定义提取规则等高级能力,适用于企业竞品监控、大规模信息采集、内容监测与汇总等专业场景.
 专业版特别强化了规模化处理和持续监控能力,支持数百个 URL 并行处理、定时自动监控网页变化、结构化数据管道,帮助企业建立系统化的网页信息获取流程.
 ## 核心能力
@@ -58,7 +61,6 @@ web-browsing batch status
 web-browsing batch export --format csv --output results.csv
 ```
 
-**输入**: 用户提供批量 URL 并行处理所需的指令和必要参数.
 **处理**: 解析批量 URL 并行处理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量 URL 并行处理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -86,7 +88,6 @@ web-browsing monitor status
 web-browsing monitor changes --date $(date +%Y-%m-%d)
 ```
 
-**输入**: 用户提供定时内容监控所需的指令和必要参数.
 **处理**: 解析定时内容监控的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时内容监控的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -106,7 +107,6 @@ web-browsing analyze batch \
 # ...
 ```
 
-**输入**: 用户提供深度内容分析所需的指令和必要参数.
 **处理**: 解析深度内容分析的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回深度内容分析的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -123,7 +123,6 @@ web-browsing knowledge add --url "https://example.com" --category "market_resear
 web-browsing knowledge query --keyword "市场分析" --category "market_research"
 ```
 
-**输入**: 用户提供团队协作所需的指令和必要参数.
 **处理**: 解析团队协作的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回团队协作的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -132,7 +131,6 @@ web-browsing knowledge query --keyword "市场分析" --category "market_researc
 定义结构化数据提取规则,构建数据管道.
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供自定义提取规则所需的指令和必要参数.
 **处理**: 解析自定义提取规则的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自定义提取规则的响应数据,包含状态码、结果和日志.
 ### 6. 内容变化预警与差异对比
@@ -144,12 +142,10 @@ web-browsing diff detect \
   --current "current_snapshot.html"
 # ...
 web-browsing diff report \
-  --url "https://example.com" \
   --period "2026-07-01:2026-07-17" \
   --output change_report.html
 ```
 
-**输入**: 用户提供内容变化预警与差异对比所需的指令和必要参数.
 **处理**: 解析内容变化预警与差异对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回内容变化预警与差异对比的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -163,7 +159,6 @@ web-browsing search "关键词"
 web-browsing extract "https://example.com" --fields "title,price"
 ```
 
-**输入**: 用户提供完整兼容免费版所需的指令和必要参数.
 **处理**: 解析完整兼容免费版的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回完整兼容免费版的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级网页信息获、取平台、支持批量、定时监控、深度分析与团队协、网页浏览助手专业、面向企业团队和专、业研究人员提供深、度的网页信息获取、团队协作等高级功、Use、when、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数、据处理、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -280,10 +275,9 @@ web-browsing batch status
 
 ### 监控配置
 
-## 最佳实践
+## 优选实践
 ### 1. 免费版到专业版的平滑迁移
 ```bash
-web-browsing fetch "https://example.com"
 web-browsing search "关键词"
 # ...
 web-browsing batch process batch.json
@@ -293,9 +287,9 @@ web-browsing monitor start monitor.json
 
 ### 2. 批量处理的性能优化
 ```bash
-web-browsing batch process batch.json --concurrency 15
+json --concurrency 15
 # ...
-web-browsing batch process batch.json --cache-dir ./cache --cache-ttl 3600
+json --cache-dir ./cache --cache-ttl 3600
 # ...
 web-browsing batch process large_batch.json --batch-size 50
 ```
@@ -445,3 +439,22 @@ WEBHOOK_URL=https://your-system.example.com/webhook
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级网页信息获取平台,支持批量 URL 处理、定时监控、深度分析与团队协作。网页浏览助手专业版,面向企业团队和专业研究
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

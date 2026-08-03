@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # SQL
 
 Master relational databases from the command line. Covers SQLite, PostgreSQL, MySQL, and SQL Server with battle-tested patterns for schema design, querying, migrations, and operations.
@@ -274,3 +273,25 @@ A: 请参考已知限制章节了解具体限制。
 ## 已知限制
 
 - 需要API Key，无Key环境无法使用
+
+---
+## 边界条件与限制
+
+### 输入限制
+- **查询长度限制**：某些数据库系统对SQL查询的长度有限制，例如MySQL的查询长度限制为1024字节。
+- **参数数量限制**：在执行参数化查询时，某些数据库系统对参数的数量有限制，例如PostgreSQL的参数数量限制为64。
+- **数据类型限制**：某些数据库系统对支持的数据类型有限制，例如SQLite不支持BLOB数据类型。
+
+### 性能边界
+- **查询性能**：对于复杂的查询，数据库的性能可能会受到影响，特别是在处理大量数据时。
+- **并发性能**：在高并发环境下，数据库的性能可能会下降，特别是在执行写操作时。
+
+### 兼容性约束
+- **数据库版本**：不同版本的数据库系统可能对SQL语法和功能的支持有所不同，需要确保使用的SQL语法在目标数据库版本中有效。
+- **操作系统兼容性**：某些数据库系统可能对操作系统的版本有限制，例如SQL Server要求Windows Server 2012或更高版本。
+
+### 其他限制
+- **权限限制**：执行某些操作可能需要特定的数据库权限，例如创建索引或修改表结构。
+- **存储限制**：数据库的存储空间可能会限制某些操作，例如创建大型表或索引。
+---
+

@@ -1,5 +1,6 @@
 ---
-slug: "vscode-node-tool-pro"
+
+slug: vscode-node-tool-pro
 name: "vscode-node-tool-pro"
 version: "1.0.0"
 displayName: "VSCode节点工具(专业版)"
@@ -45,7 +46,9 @@ tools:
   - grep
 homepage: ""
 category: "Development"
+
 ---
+
 # VSCode 节点工具(专业版)
 
 ## 概述
@@ -67,21 +70,21 @@ category: "Development"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -100,21 +103,17 @@ nodes invoke --node "team-vscode" \
 # ...
 # 2. 设置断点
 nodes invoke --node "team-vscode" \
-  --invokeCommand "vscode.debug.breakpoint" \
   --invokeParamsJson '{"path":"src/handler.ts","line":42,"condition":"userId === null"}'
 # ...
 # 3. 求值变量
 nodes invoke --node "team-vscode" \
-  --invokeCommand "vscode.debug.evaluate" \
   --invokeParamsJson '{"expression":"user?.profile?.email"}'
 # ...
 # 4. 获取堆栈
 nodes invoke --node "team-vscode" \
-  --invokeCommand "vscode.debug.stackTrace"
 # ...
 # 5. 获取变量
 nodes invoke --node "team-vscode" \
-  --invokeCommand "vscode.debug.variables" \
   --invokeParamsJson '{"frameId":1,"scope":"local"}'
 ```
 
@@ -124,18 +123,15 @@ nodes invoke --node "team-vscode" \
 ```bash
 # 1. 列举测试
 nodes invoke --node "team-vscode" \
-  --invokeCommand "vscode.test.list" \
   --invokeParamsJson '{"pattern":"**/*.test.ts"}'
 # ...
 # 2. 运行测试
 nodes invoke --node "team-vscode" \
-  --invokeCommand "vscode.test.run" \
   --invokeParamsJson '{"filter":"UserService"}' \
   --invokeTimeoutMs 120000 --timeoutMs 125000
 # ...
 # 3. 获取结果
 nodes invoke --node "team-vscode" \
-  --invokeCommand "vscode.test.results"
 ```
 
 返回示例:`{ passed: 42, failed: 3, skipped: 1, duration: 12345 }`
@@ -145,7 +141,6 @@ nodes invoke --node "team-vscode" \
 将复杂的多文件重构任务委托给 Cursor Agent 执行.
 ```bash
 nodes invoke --node "team-vscode" \
-  --invokeCommand "vscode.agent.run" \
   --invokeParamsJson '{
     "prompt": "为所有 API 端点添加错误处理,确保返回统一的错误响应格式,并补充对应的单元测试",
     "mode": "plan"
@@ -167,7 +162,7 @@ nodes invoke --node "team-vscode" \
 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:声明团队上下文
+### 领先步:声明团队上下文
 
 在对话中说明团队规模、节点配置与协作需求,例如:
 
@@ -258,7 +253,7 @@ bash （请参考skill目录中的脚本文件） "UserService"
 | Agent | `vscode.agent.*` | status, run, setup | Pro |
 | 工作区 | `vscode.workspace.*` | info | Pro |
 
-## 最佳实践
+## 优选实践
 
 1. **命令白名单最小化**:仅启用团队实际需要的命令,降低误操作风险.
 2. **写操作确认**:启用 `confirmWrites`,关键写操作需人工确认.
@@ -317,7 +312,7 @@ Pro 版完全兼容免费版的所有命令与调用模式。个人开发者可�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+execute(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于自然语言指令驱动 Agent 调用 `nodes invoke` 命令;需要预先安装 IDE 扩展、连接网关,并在团队场景配置安全策略与审计日志
 
 ## 错误处理
@@ -350,3 +345,14 @@ Pro 版完全兼容免费版的所有命令与调用模式。个人开发者可�
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

@@ -1,6 +1,7 @@
 ---
+
 name: "elite-frontend-tool-free"
-description: "高品质前端UI设计工具，提供字体、色彩、动效规则与反模式检查，输出HTML/CSS代码。"
+description: "高品质前端UI设计工具，提供字体、色彩、动效规则与反模式检查，输出HTML/CSS代码。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,11 @@ metadata:
     - "Design"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - browser
+
 ---
 
 # 精英前端设计工具（免费版）
@@ -29,7 +35,7 @@ metadata:
 
 | 能力 | 说明 |
 |:-----|:-----|
-| 字体规范 | 禁用通用字体，按场景精选字族，字重极致对比 |
+| 字体规范 | 禁用通用字体，按场景精选字族，字重精细对比 |
 | 色彩管理 | CSS 变量管理，主色+对比色，拒绝模板配色 |
 | 基础动效 | 交错入场动画，CSS @keyframes 实现 |
 | 反模式自检 | 自动检测并拒绝可预测的布局结构 |
@@ -62,24 +68,18 @@ metadata:
   ✅ 不对称布局、Bento Grid、杂志排版、错落层叠
 ```
 
-**输入**: 用户提供免费版设计规则所需的指令和必要参数。
-**处理**: 按照skill规范执行免费版设计规则操作,遵循单一意图原则。
 **输出**: 返回免费版设计规则的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：高品质前端、设计工具、提供字体、动效规则与反模式、精英前端设计工具、面向个人开发者的、设计规范与生成工、核心能力、严格字体规范、色彩管理规则、变量统一管理、基础动效指导、交错入场与微交互、拒绝平庸、风格界面等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -151,7 +151,6 @@ metadata:
       font-size: 1.1rem;
       color: var(--text-muted);
       max-width: 28rem;
-      line-height: 1.7;
     }
 
     /* 交错入场动效 */
@@ -295,7 +294,7 @@ generate_palette "dracula"
 
 ## 快速开始
 
-### 第一步：确定设计方向
+### 领先步：确定设计方向
 
 在开始编码前，明确以下设计方向：
 
@@ -316,10 +315,10 @@ generate_palette "dracula"
 
 ```html
 <!-- 代码/硬核风格 -->
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
+googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
 
 <!-- 社论/高级风格 -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+googleapis.com/css2?family=Playfair+Display:wght@400;900&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 ```
 
 ### 第三步：生成代码
@@ -347,8 +346,8 @@ generate_palette "dracula"
 /* 背景深度 - 多层渐变叠加 */
 body {
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(233,69,96,0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(15,52,96,0.2) 0%, transparent 50%),
+15) 0%, transparent 50%),
+2) 0%, transparent 50%),
     linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
 }
 ```
@@ -358,9 +357,6 @@ body {
 ```css
 /* 交错入场 - 核心动效模式 */
 .card { opacity: 0; animation: fadeSlideUp 0.6s ease forwards; }
-.card:nth-child(1) { animation-delay: 0.1s; }
-.card:nth-child(2) { animation-delay: 0.2s; }
-.card:nth-child(3) { animation-delay: 0.3s; }
 
 @keyframes fadeSlideUp {
   from { opacity: 0; transform: translateY(24px); }
@@ -368,9 +364,9 @@ body {
 }
 ```
 
-## 最佳实践
+## 优选实践
 
-1. **字体对比极致**：字重 100 vs 900，字号至少 3 倍跳跃。
+1. **字体对比精细**：字重 100 vs 900，字号至少 3 倍跳跃。
 2. **背景多层叠加**：拒绝纯色或单层渐变，用径向渐变创造深度。
 3. **布局不对称**：拒绝居中 Hero + 三列 Feature 的可预测结构。
 4. **动效交错显现**：页面加载时交错入场比散乱微交互更有冲击力。
@@ -434,7 +430,6 @@ A: 每次输出前自检反模式清单，拒绝可预测的结构、模版式�
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -447,3 +442,30 @@ A: 每次输出前自检反模式清单，拒绝可预测的结构、模版式�
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

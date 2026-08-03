@@ -1,5 +1,6 @@
 ---
-slug: "slack-hub-tool-pro"
+
+slug: slack-hub-tool-pro
 name: "slack-hub-tool-pro"
 version: "1.0.0"
 displayName: "Slack Hub工具专业版"
@@ -41,42 +42,44 @@ tools:
   - write
 homepage: ""
 category: "Communication"
+
 ---
+
 Slack Hub工具专业版是一款面向团队和企业的高级Slack集成工具。在免费版的消息发送与搜索能力之上，专业版新增批量消息发送、高级搜索过滤、智能限流处理、消息模板库、工作区频道深度管理、搜索结果导出等企业级功能，帮助团队实现Slack沟通的规模化与标准化.
 专业版完全兼容免费版的操作格式与配置，免费版用户可无缝升级.
 ## 核心能力
 ### 1. 批量消息发送与多频道分发
 支持向多个频道同时发送消息，按频道分组批量推送，并自动处理发送结果.
-**输入**: 用户提供批量消息发送与多频道分发所需的指令和必要参数.
+
 **处理**: 解析批量消息发送与多频道分发的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量消息发送与多频道分发的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 2. 高级搜索与结果过滤
 支持按时间范围、频道、用户、文件类型等多维度过滤搜索结果，并提供搜索结果排序与分页.
-**输入**: 用户提供高级搜索与结果过滤所需的指令和必要参数.
+
 **处理**: 解析高级搜索与结果过滤的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级搜索与结果过滤的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 3. 智能限流处理
 内置Slack API限流处理机制，自动识别`Retry-After`头部，智能调整请求频率，避免触发限流.
-**输入**: 用户提供智能限流处理所需的指令和必要参数.
+
 **处理**: 解析智能限流处理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回智能限流处理的响应数据,包含状态码、结果和日志.
 ### 4. 消息模板库
 提供常用消息模板管理，支持变量替换、分类存储与团队共享.
-**输入**: 用户提供消息模板库所需的指令和必要参数.
+
 **处理**: 解析消息模板库的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回消息模板库的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 5. 工作区频道深度管理
 列出频道详情、成员列表、创建时间、主题等信息，支持频道分类与标签管理.
-**输入**: 用户提供工作区频道深度管理所需的指令和必要参数.
+
 **处理**: 解析工作区频道深度管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回工作区频道深度管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 6. 搜索结果导出
 将搜索结果导出为CSV、JSON、Markdown等格式，便于归档与分析.
-**输入**: 用户提供搜索结果导出所需的指令和必要参数.
+
 **处理**: 解析搜索结果导出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回搜索结果导出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -93,14 +96,11 @@ Slack Hub工具专业版是一款面向团队和企业的高级Slack集成工具
 
 ```python
 import time
-# ...
 class BatchDistributor:
     """批量消息分发器"""
-# ...
     def __init__(self, slack_client):
         self.client = slack_client
         self.rate_limiter = RateLimiter()
-# ...
     def distribute(self, message, channels, template_vars=None):
         """
         向多个频道分发消息
@@ -110,11 +110,9 @@ class BatchDistributor:
         """
         if template_vars:
             message = self.apply_template(message, template_vars)
-# ...
         results = []
         for channel in channels:
             self.rate_limiter.wait_if_needed()
-# ...
             try:
                 result = self.client.send_message(
                     channel=channel,
@@ -129,35 +127,27 @@ class BatchDistributor:
                 wait_time = e.retry_after
                 print(f"限流，等待{wait_time}秒后重试 [{channel}]")
                 time.sleep(wait_time)
-                result = self.client.send_message(channel=channel, text=message)
-                results.append({
+client.send_message(channel=channel, text=message)
                     'channel': channel,
                     'status': 'success_after_retry',
-                    'timestamp': result.get('ts')
                 })
             except Exception as e:
-                results.append({
                     'channel': channel,
                     'status': 'failed',
                     'error': str(e)
                 })
-# ...
         return self.generate_report(results)
-# ...
 class RateLimiter:
     """智能限流器"""
-# ...
     def __init__(self, min_interval=1.0):
         self.min_interval = min_interval
         self.last_request = 0
-# ...
     def wait_if_needed(self):
         """必要时等待"""
         elapsed = time.time() - self.last_request
         if elapsed < self.min_interval:
             time.sleep(self.min_interval - elapsed)
         self.last_request = time.time()
-# ...
 distributor = BatchDistributor(slack_client)
 report = distributor.distribute(
     message="【系统维护通知】今晚22:00-24:00进行系统升级，届时服务暂停。",
@@ -169,7 +159,6 @@ report = distributor.distribute(
 ```python
 class AdvancedSearch:
     """高级搜索器"""
-# ...
     def search(self, query, filters=None):
         """
         高级搜索
@@ -177,26 +166,19 @@ class AdvancedSearch:
         :param filters: 过滤条件
         """
         filters = filters or {}
-# ...
         search_query = self.build_query(query, filters)
-# ...
         results = self.client.search_messages(
             query=search_query,
             count=filters.get('max_results', 50),
             page=filters.get('page', 1)
         )
-# ...
         filtered = self.apply_filters(results, filters)
-# ...
         if filters.get('sort_by'):
-            filtered = self.sort_results(filtered, filters['sort_by'])
-# ...
+sort_results(filtered, filters['sort_by'])
         return filtered
-# ...
     def build_query(self, query, filters):
         """构建高级查询"""
         parts = [query]
-# ...
         if filters.get('channel'):
             parts.append(f"in:#{filters['channel']}")
         if filters.get('from_user'):
@@ -209,18 +191,15 @@ class AdvancedSearch:
             parts.append("has:file")
         if filters.get('has_link'):
             parts.append("has:link")
-# ...
         return " ".join(parts)
-# ...
     def export_results(self, results, format='csv'):
         """导出搜索结果"""
         if format == 'csv':
             return self.export_csv(results)
         elif format == 'json':
-            return self.export_json(results)
+export_json(results)
         elif format == 'markdown':
-            return self.export_markdown(results)
-# ...
+export_markdown(results)
 searcher = AdvancedSearch()
 results = searcher.search(
     query="部署文档",
@@ -243,28 +222,22 @@ slack-hub-tool-pro template create \
   --name "上线通知" \
   --category "release" \
   --content "【上线通知】{project} v{version} 已部署到{environment}环境。变更内容：{changes}"
-# ...
 slack-hub-tool-pro template send \
   --name "上线通知" \
   --target "#engineering" \
   --vars '{"project":"Alpha","version":"2.1.0","environment":"生产","changes":"新增用户认证模块"}'
-# ...
 slack-hub-tool-pro template broadcast \
   --name "上线通知" \
   --targets "#engineering,#product,#support" \
-  --vars '{"project":"Alpha","version":"2.1.0","environment":"生产","changes":"新增用户认证模块"}'
+1.0","environment":"生产","changes":"新增用户认证模块"}'
 ```
-
 ## 不适用场景
-
 以下场景Slack Hub工具专业版不适合处理：
 
 - 逆向工程闭源API
 - API安全渗透测试
 - 非标准协议集成
-
 ## 触发条件
-
 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 1. 阅读## 核心能力章节了解skill功能
@@ -272,7 +245,6 @@ slack-hub-tool-pro template broadcast \
 3. 执行所需能力对应的命令
 4. 参考## 错误处理章节处理异常
 5. 查看## FAQ解答常见疑问
-
 ### 安装
 ```bash
 npx skillhub@latest install slack-hub-tool-pro
@@ -289,19 +261,16 @@ SLACK_APP_TOKEN=xapp-your-app-token-here
 slack-hub-tool-pro batch-send \
   --targets "#eng,#product,#support" \
   --message "重要通知：系统将于今晚维护"
-# ...
 slack-hub-tool-pro search \
   --query "部署文档" \
   --channel "engineering" \
   --after "2026-06-01" \
   --has-file \
   --sort-by timestamp
-# ...
 slack-hub-tool-pro search \
   --query "bug报告" \
   --export csv \
   --output bug_reports.csv
-# ...
 slack-hub-tool-pro channel-info --channel "C0123456789"
 ```
 
@@ -312,7 +281,6 @@ slack:
   bot_token: "${SLACK_BOT_TOKEN}"
   app_token: "${SLACK_APP_TOKEN}"
   default_channel: "#general"
-# ...
 pro:
   batch:
     enabled: true
@@ -332,7 +300,6 @@ pro:
       - csv
       - json
       - markdown
-# ...
   templates:
     enabled: true
     template_dir: "./templates"
@@ -348,8 +315,7 @@ pro:
     respect_retry_after: true   # 遵循Retry-After头部
     adaptive: true              # 自适应频率调整
 ```
-
-## 最佳实践
+## 优选实践
 ### 免费版 vs 专业版能力对比
 | 能力 | 免费版 | 专业版 |
 |:-----|:-----|:-----|
@@ -370,7 +336,6 @@ pro:
 ```python
 class ThrottleStrategy:
     """限流处理策略"""
-# ...
     def handle_request(self, api_call, max_retries=3):
         """处理API请求的限流"""
         for attempt in range(max_retries):
@@ -380,11 +345,10 @@ class ThrottleStrategy:
             except RateLimitError as e:
                 wait = e.headers.get('Retry-After', 1)
                 print(f"触发限流，第{attempt+1}次重试，等待{wait}秒")
-                time.sleep(float(wait))
             except Exception as e:
                 print(f"请求失败: {e}")
                 if attempt < max_retries - 1:
-                    time.sleep(2 ** attempt)  # 指数退避
+sleep(2 ** attempt)  # 指数退避
                 else:
                     raise
 ```
@@ -392,34 +356,25 @@ class ThrottleStrategy:
 ### 搜索优化技巧
 ```bash
 slack-hub-tool-pro search --query "部署 AND 文档"
-# ...
 slack-hub-tool-pro search --query "部署 -测试"
-# ...
 slack-hub-tool-pro search --query "\"生产环境部署\""
-# ...
 slack-hub-tool-pro search \
   --query "bug" \
   --after "2026-07-01" \
   --before "2026-07-15"
-# ...
 slack-hub-tool-pro search --query "方案" --from "alice"
-# ...
 slack-hub-tool-pro search --query "报告" --has-file
 ```
 
 ### 模板管理
 ```bash
 slack-hub-tool-pro template list
-# ...
 slack-hub-tool-pro template list --category "release"
-# ...
 slack-hub-tool-pro template update \
   --name "上线通知" \
   --content "更新后的模板内容: {project} {version}"
-# ...
 slack-hub-tool-pro template delete --name "过期模板"
 ```
-
 ## 常见问题
 ### Q: 专业版与免费版如何兼容？
 专业版完全兼容免费版的所有操作格式与配置。免费版的命令行参数可直接在专业版中使用，升级无需修改现有配置.
@@ -441,16 +396,13 @@ slack-hub-tool-pro template delete --name "过期模板"
 ### Q: 模板变量支持嵌套吗？
 ```python
 template = "{project} v{version} 部署到 {environment}"
-# ...
 template = "{user}在{date}提交了{count}个变更"
 ```
 
 ### Q: 频道详情包含哪些信息？
 ```bash
 slack-hub-tool-pro channel-info --channel "C0123456789"
-# ...
 ```
-
 ## 依赖说明
 ### 运行环境
 - **Agent 平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
@@ -474,7 +426,6 @@ slack-hub-tool-pro channel-info --channel "C0123456789"
 ```bash
 export SLACK_BOT_TOKEN="xoxb-your-bot-token-here"
 export SLACK_APP_TOKEN="xapp-your-app-token-here"
-# ...
 ```
 
 ### API 端点说明
@@ -483,8 +434,8 @@ export SLACK_APP_TOKEN="xapp-your-app-token-here"
 - `https://slack.com/api/search.messages` - 搜索消息
 - `https://slack.com/api/search.files` - 搜索文件
 - `https://slack.com/api/conversations.list` - 列出频道
-- `https://slack.com/api/conversations.info` - 频道详情
-- `https://slack.com/api/conversations.members` - 频道成员
+- `https://slack.info` - 频道详情
+- `https://slack.members` - 频道成员
 
 所有端点均实现了限流处理与自动重试机制.
 ### 可用性分类
@@ -493,25 +444,18 @@ export SLACK_APP_TOKEN="xapp-your-app-token-here"
 - **适用人群**: 企业团队、项目经理、运营团队、Slack管理员
 - **兼容性**: 完全兼容免费版操作格式与配置，支持无缝升级
 - **支持级别**: 优先技术支持，工作日24小时内响应
-
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
-
 ## 已知限制
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
-
 ## 示例
-
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 
@@ -520,7 +464,6 @@ export SLACK_APP_TOKEN="xapp-your-app-token-here"
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
 ```
-
 ## 输出格式
 ```json
 {
@@ -537,3 +480,20 @@ Skill: 执行完成,结果如下: 操作成功
   "error": null
 }
 ```
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+## 核心功能
+
+- **自动化执行**: 企业级Slack集成工具，支持批量消息发送、高级搜索、限流处理、消息模板与工作区深度管理。。Slack Hub工具（专业
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

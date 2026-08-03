@@ -33,7 +33,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Gitcrawl
 
 Use local GitHub issue/PR archives before live GitHub search. Check freshness first:

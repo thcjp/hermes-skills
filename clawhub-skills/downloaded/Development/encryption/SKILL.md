@@ -35,7 +35,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Encryption
 
 ## When to Use

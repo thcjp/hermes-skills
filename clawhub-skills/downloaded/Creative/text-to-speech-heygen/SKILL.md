@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Text to Speech
 
 Generate speech audio files from text using HeyGen's in-house Starfish TTS model via the v3 API. This skill is for standalone audio generation — separate from video creation.

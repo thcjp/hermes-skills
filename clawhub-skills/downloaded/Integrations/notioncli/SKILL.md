@@ -20,7 +20,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Notion
 
 A powerful CLI for the Notion API. Query databases, manage pages, add comments, and automate your workspace from the terminal. Built for AI agents and humans alike.

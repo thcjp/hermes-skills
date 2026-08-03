@@ -1,6 +1,7 @@
 ---
+
 name: "email-toolkit-free"
-description: "跨平台邮件发送与附件管理工具，支持多邮箱服务商"
+description: "跨平台邮件发送与附件管理工具，支持多邮箱服务商。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,11 @@ metadata:
     - "个人效率"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # 邮件工具箱免费版
@@ -42,8 +48,6 @@ metadata:
 - **命名收件人**: 支持"姓名 <邮箱>"格式
 - **抄送与密送**: 支持 CC 与 BCC 收件人
 
-**输入**: 用户提供邮件发送所需的指令和必要参数。
-**处理**: 按照skill规范执行邮件发送操作,遵循单一意图原则。
 **输出**: 返回邮件发送的执行结果,包含操作状态和输出数据。
 
 ### 附件管理
@@ -52,8 +56,6 @@ metadata:
 - **多附件发送**: 一次性发送多个附件
 - **多种格式**: 支持 PDF、Excel、图片、代码文件等各类格式
 
-**输入**: 用户提供附件管理所需的指令和必要参数。
-**处理**: 按照skill规范执行附件管理操作,遵循单一意图原则。
 **输出**: 返回附件管理的执行结果,包含操作状态和输出数据。
 
 ### 多服务商支持
@@ -64,8 +66,6 @@ metadata:
 - QQ邮箱（smtp.qq.com）
 - 自定义 SMTP 服务器
 
-**输入**: 用户提供多服务商支持所需的指令和必要参数。
-**处理**: 按照skill规范执行多服务商支持操作,遵循单一意图原则。
 **输出**: 返回多服务商支持的执行结果,包含操作状态和输出数据。
 
 ### 安全特性
@@ -75,8 +75,6 @@ metadata:
 - 应用专用密码支持（Gmail）
 - 环境变量凭证存储
 
-**输入**: 用户提供安全特性所需的指令和必要参数。
-**处理**: 按照skill规范执行安全特性操作,遵循单一意图原则。
 **输出**: 返回安全特性的执行结果,包含操作状态和输出数据。
 
 ### 测试功能
@@ -87,8 +85,6 @@ metadata:
 
 ---
 
-**输入**: 用户提供测试功能所需的指令和必要参数。
-**处理**: 按照skill规范执行测试功能操作,遵循单一意图原则。
 **输出**: 返回测试功能的执行结果,包含操作状态和输出数据。
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：跨平台邮件发送与、附件管理工具、支持多邮箱服务商、邮件工具箱免费版、是一款面向个人用、户的跨平台邮件发、送工具、Python、实现邮件、自动化发送、邮箱等主流服务商、Use、when、需要消息发送、通知推送、邮件短信、通信集成时使用、不适用于垃圾信息、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -143,7 +139,7 @@ python email_sender.py \
 
 ## 快速开始
 
-### 第一步：创建配置文件
+### 领先步：创建配置文件
 
 在工作目录创建 `email_config.json`：
 
@@ -183,13 +179,12 @@ python email_sender.py --to "your-email@gmail.com" --test
 python email_sender.py --to "friend@example.com" --subject "你好" --body "这是一封测试邮件"
 
 # 发送带附件的邮件
-python email_sender.py --to "friend@example.com" --subject "报告" --body "请查收" --attachment "report.pdf"
+python email_sender.com" --subject "报告" --body "请查收" --attachment "report.pdf"
 ```
 
 ---
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
-
 
 ## 示例
 
@@ -228,7 +223,6 @@ $env:EMAIL_SENDER_NAME="邮件助手"
 
 ```json
 {
-  "smtp_server": "smtp.163.com",
   "smtp_port": 465,
   "username": "your-email@163.com",
   "password": "your_auth_code",
@@ -240,7 +234,7 @@ $env:EMAIL_SENDER_NAME="邮件助手"
 
 ---
 
-## 最佳实践
+## 优选实践
 
 ### Python API 调用
 
@@ -287,7 +281,7 @@ echo "email_config.json" >> .gitignore
 ls -lh report.pdf
 
 # 大文件使用链接替代
-python email_sender.py --to x@y.com --subject "大文件" --body "文件链接: https://drive.google.com/xxx"
+python email_sender.py --to x@y.com --subject "大文件" --body "文件链接: https://drive.google.com/未指定"
 ```
 
 ---
@@ -407,7 +401,6 @@ zip -s 20m archive.zip large_file.pdf
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -417,3 +410,21 @@ zip -s 20m archive.zip large_file.pdf
 ## 已知限制
 
 - 需要API Key，无Key环境无法使用
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果

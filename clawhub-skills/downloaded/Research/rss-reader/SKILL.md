@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # RSS Reader
 
 Monitor any RSS/Atom feed for content ideas, competitor tracking, and industry news.

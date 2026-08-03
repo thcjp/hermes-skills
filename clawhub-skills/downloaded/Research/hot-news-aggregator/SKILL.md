@@ -17,7 +17,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # hot-news-aggregator
 
 聚合国内外社会、科技、军事新闻，自动筛选要点。

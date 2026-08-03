@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # Merge Check
 
 Predicts whether a GitHub PR will get merged by analyzing it against a comprehensive rejection vector taxonomy. Not a generic code quality tool — this answers: **"Will this PR get merged by the maintainer?"**

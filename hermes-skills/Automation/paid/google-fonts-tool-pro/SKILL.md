@@ -7,8 +7,7 @@ displayName: 谷歌字体工具专业版
 summary: "面向团队的自托管、子集化、合规与多字体系统治理工具.。面向团队与企业的 Google Fonts 自托管、子集化与字体系统治理专业工具。核心能力:"
 license: Proprietary
 edition: pro
-description: 面向团队与企业的 Google Fonts 自托管、子集化与字体系统治理专业工具。核心能力:。可自动提升工作效率
-
+description: "面向团队与企业的 Google Fonts 自托管、子集化与字体系统治理专业工具。核心能力:。可自动提升工作效率。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。"
   - GDPR 合规自托管与子集化
 
   - 字体系统（令牌、字阶、多语言）治理
@@ -49,6 +48,7 @@ homepage: ""
 # 定价元数据
 category: "Automation"
 
+
 ---
 
 # 谷歌字体工具（专业版）
@@ -68,21 +68,21 @@ category: "Automation"
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -177,7 +177,7 @@ curl -o inter.woff2 "https://gwfh.mranftl.com/api/fonts/inter?download=zip&subse
 }
 ```
 
-## 最佳实践
+## 优选实践
 
 - **GDPR 必自托管**：Google Fonts 会记录 IP，欧盟站点务必自托管.
 - **子集按语言**：CJK 字体按语言切片，latin 仅需时再加 latin-ext.
@@ -233,13 +233,13 @@ glyphhanger --spider https://example.com --subset=font.woff2
 
 ```html
 <!-- 1. 预加载 LCP 文字字体 -->
-<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+woff2" as="font" type="font/woff2" crossorigin>
 # ...
 <!-- 2. 关键 CSS 内联字体声明 -->
 <style>
   @font-face {
     font-family: 'Inter';
-    src: url('/fonts/inter-400.woff2') format('woff2');
+woff2') format('woff2');
     font-display: swap;
     unicode-range: U+0000-007F;  /* 仅 latin */
   }
@@ -328,3 +328,14 @@ glyphhanger --spider https://example.com --subset=font.woff2
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

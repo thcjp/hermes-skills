@@ -1,6 +1,7 @@
 ---
+
 name: "lifestyle-assistant-tool-free"
-description: "个人任务、沟通与日程管理助手,主动跟进待办、邮件摘要与会议安排"
+description: "个人任务、沟通与日程管理助手,主动跟进待办、邮件摘要与会议安排。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -16,6 +17,11 @@ metadata:
     - "沟通优化"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # 生活助手 (免费版)
@@ -44,24 +50,18 @@ metadata:
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置。
 
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
 **输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：个人任务、沟通与日程管理助、主动跟进待办、邮件摘要与会议安、面向个人用户的生、活与工作助理、聚焦任务捕获、沟通优化与日程管、核心能力、任务分解与跟进、邮件长文摘要、日程冲突检测、提醒推送、信息归档、适用场景、自由职业者日程管、个人事务跟进、邮件处理、会议准备、差异化、免费版专注单用户、日常任务管理、配置简单、适合个人使用、适用关键词、任务管理、日程安排、邮件摘要、待办清单等。
@@ -122,7 +122,7 @@ archive.parent.mkdir(parents=True, exist_ok=True)
 
 ### 场景三: 日程协调
 
-在安排会议前自动检查冲突并建议最佳时间。
+在安排会议前自动检查冲突并建议优选时间。
 
 ```text
 用户: "明天下午帮我安排一个 1 小时的产品评审"
@@ -185,7 +185,6 @@ ls -la ~/.assistant/tasks/
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
 
-
 ## 示例
 
 ### 任务管理模板
@@ -241,7 +240,6 @@ class TaskManager:
 def find_slot(existing_events, duration_min, work_hours=("09:00","18:00")):
     """在空闲时段寻找合适时间槽"""
     from datetime import datetime, timedelta
-    today = datetime.now().date()
     work_start = datetime.strptime(f"{today} {work_hours[0]}", "%Y-%m-%d %H:%M")
     work_end = datetime.strptime(f"{today} {work_hours[1]}", "%Y-%m-%d %H:%M")
     duration = timedelta(minutes=duration_min)
@@ -257,13 +255,11 @@ def find_slot(existing_events, duration_min, work_hours=("09:00","18:00")):
         cursor = max(cursor, datetime.fromisoformat(event["end"]))
     if work_end - cursor >= duration:
         slots.append({
-            "start": cursor.isoformat(),
-            "end": (cursor + duration).isoformat(),
         })
     return slots
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 1. 任务捕获原则
 
@@ -350,12 +346,11 @@ export ASSISTANT_WORK_HOURS="09:00-18:00"
 
 ### 可用性分类
 
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+execute(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 通过自然语言指令驱动 Agent 管理本地任务、邮件摘要与日程,所有数据保存在本地
 - **免费版限制**: 单用户、本地存储、无自动化工作流、每日邮件摘要 10 封
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
@@ -368,3 +363,14 @@ export ASSISTANT_WORK_HOURS="09:00-18:00"
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

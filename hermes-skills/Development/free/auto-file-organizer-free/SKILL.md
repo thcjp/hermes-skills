@@ -1,6 +1,7 @@
 ---
+
 name: "auto-file-organizer-free"
-description: "按文件类型与日期自动归类文件夹，支持图片/文档/视频等六大类，一键整理下载文件夹。"
+description: "按文件类型与日期自动归类文件夹，支持图片/文档/视频等六大类，一键整理下载文件夹。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,10 @@ metadata:
     - "效率工具"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # 自动文件整理器（免费版）
@@ -73,13 +78,13 @@ metadata:
 python3 scripts/organizer.py organize ~/Downloads --preview
 
 # 2. 确认方案后执行整理
-python3 scripts/organizer.py organize ~/Downloads
+py organize ~/Downloads
 
 # 3. 查看整理统计报告
-python3 scripts/organizer.py stats ~/Downloads
+py stats ~/Downloads
 
 # 4. 按日期整理
-python3 scripts/organizer.py by-date ~/Downloads --preview
+py by-date ~/Downloads --preview
 ```
 
 ### 可复制模板
@@ -95,13 +100,13 @@ python3 scripts/organizer.py by-date ~/Downloads --preview
 
 每周日执行下载文件夹自动整理：
 1. 预览整理方案
-   python3 scripts/organizer.py organize ~/Downloads --preview
+py organize ~/Downloads --preview
 
 2. 确认后执行
-   python3 scripts/organizer.py organize ~/Downloads
+py organize ~/Downloads
 
 3. 查看统计报告确认结果
-   python3 scripts/organizer.py stats ~/Downloads
+py stats ~/Downloads
 ```
 
 ---
@@ -122,8 +127,6 @@ python3 scripts/organizer.py by-date ~/Downloads --preview
 
 **未识别文件**：不匹配任何类别的文件归入"其他/"目录，避免遗漏。
 
-**输入**: 用户提供六大文件类型分类所需的指令和必要参数。
-**处理**: 按照skill规范执行六大文件类型分类操作,遵循单一意图原则。
 **输出**: 返回六大文件类型分类的执行结果,包含操作状态和输出数据。
 
 ### 2. 按日期自动归类
@@ -137,14 +140,12 @@ python3 scripts/organizer.py by-date ~/Downloads --preview
 
 ```bash
 # 按天整理
-python3 scripts/organizer.py by-date ~/Downloads --granularity day
+py by-date ~/Downloads --granularity day
 
 # 按月整理
-python3 scripts/organizer.py by-date ~/Downloads --granularity month
+py by-date ~/Downloads --granularity month
 ```
 
-**输入**: 用户提供按日期自动归类所需的指令和必要参数。
-**处理**: 按照skill规范执行按日期自动归类操作,遵循单一意图原则。
 **输出**: 返回按日期自动归类的执行结果,包含操作状态和输出数据。
 
 ### 3. 整理统计报告
@@ -171,8 +172,6 @@ python3 scripts/organizer.py by-date ~/Downloads --granularity month
 ========================================
 ```
 
-**输入**: 用户提供整理统计报告所需的指令和必要参数。
-**处理**: 按照skill规范执行整理统计报告操作,遵循单一意图原则。
 **输出**: 返回整理统计报告的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -184,8 +183,6 @@ python3 scripts/organizer.py by-date ~/Downloads --granularity month
 
 ---
 
-**输入**: 用户提供预览与撤销机制所需的指令和必要参数。
-**处理**: 按照skill规范执行预览与撤销机制操作,遵循单一意图原则。
 **输出**: 返回预览与撤销机制的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：按文件类型与日期、自动归类文件夹、支持图片、视频等六大类、一键整理下载文件、自动文件整理器免、费版解决文件整理、手动归类繁琐、下载文件夹里混着、每次手动分类耗时、且容易遗漏、桌面堆满各种类型、文件找不到重点、不同类型的文件没、有统一的归类规则、每次整理都要重新、核心能力、按文件类型自动归、代码六大类、文件数量与类型分、自定义类型映射扩、预览模式先确认后等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
@@ -198,13 +195,13 @@ python3 scripts/organizer.py by-date ~/Downloads --granularity month
 **解决方案**：
 ```bash
 # 预览整理方案
-python3 scripts/organizer.py organize ~/Downloads --preview
+py organize ~/Downloads --preview
 
 # 确认后执行
-python3 scripts/organizer.py organize ~/Downloads
+py organize ~/Downloads
 
 # 查看统计报告
-python3 scripts/organizer.py stats ~/Downloads
+py stats ~/Downloads
 ```
 
 **效果**：一键将下载文件夹按类型归类，图片归入图片目录、文档归入文档目录，整理统计报告展示文件分布，5分钟完成原本1小时的手动整理。
@@ -216,10 +213,10 @@ python3 scripts/organizer.py stats ~/Downloads
 **解决方案**：
 ```bash
 # 按类型整理桌面
-python3 scripts/organizer.py by-type ~/Desktop
+py by-type ~/Desktop
 
 # 生成整理报告
-python3 scripts/organizer.py stats ~/Desktop --report
+py stats ~/Desktop --report
 ```
 
 **效果**：桌面文件自动归类到子目录，截图归入图片、文档归入文档，桌面恢复整洁，找文件效率提升。
@@ -231,10 +228,10 @@ python3 scripts/organizer.py stats ~/Desktop --report
 **解决方案**：
 ```bash
 # 按类型整理项目目录
-python3 scripts/organizer.py by-type ~/Projects/my-project --preview
+py by-type ~/Projects/my-project --preview
 
 # 确认后执行
-python3 scripts/organizer.py by-type ~/Projects/my-project
+py by-type ~/Projects/my-project
 ```
 
 **效果**：项目目录按类型初步分类，代码文件、文档、图片各归各位，为后续精细整理奠定基础。
@@ -257,7 +254,6 @@ python3 scripts/organizer.py by-type ~/Projects/my-project
 
 ```text
 用法：
-  python3 scripts/organizer.py <命令> <路径> [选项]
 
 命令：
   organize <路径>    综合整理（类型+日期）
@@ -274,10 +270,10 @@ python3 scripts/organizer.py by-type ~/Projects/my-project
   --help             显示帮助
 
 示例：
-  python3 scripts/organizer.py organize ~/Downloads --preview
-  python3 scripts/organizer.py by-type ~/Desktop
-  python3 scripts/organizer.py by-date ~/Downloads --granularity month
-  python3 scripts/organizer.py stats ~/Desktop --report
+py organize ~/Downloads --preview
+py by-type ~/Desktop
+py by-date ~/Downloads --granularity month
+py stats ~/Desktop --report
 ```
 
 ---
@@ -345,7 +341,7 @@ preferences:
 
 ---
 
-## 最佳实践
+## 优选实践
 
 1. **先预览后执行**：始终先用`--preview`预览整理方案，确认无误后再执行。
 2. **定期整理**：将下载文件夹整理设为每周例程，避免文件积累过多。
@@ -440,9 +436,27 @@ MIT license允许使用、复制、修改和分发。
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

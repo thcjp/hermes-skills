@@ -33,7 +33,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Sonoscli
 
 Use `sonos` to control Sonos speakers on the local network.
@@ -129,3 +128,25 @@ A: 请参考已知限制章节了解具体限制。
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
 - 性能取决于底层模型能力
+
+---
+## 边界条件与限制
+
+### 输入限制
+- **设备发现**: 当网络环境复杂或存在防火墙时，`sonos discover`命令可能无法正常发现设备。此时，需要手动指定设备的IP地址，使用`--ip <speaker-ip>`参数。
+- **命令参数**: 某些命令如`sonos volume set`需要指定音量值，该值应在0到100之间，超出此范围将不会生效。
+
+### 性能边界
+- **并发处理**: Sonoscli在同一时间只能控制一个设备或一组设备。当需要同时控制多个设备时，需要依次执行命令。
+- **响应时间**: 命令执行响应时间受网络环境和设备性能影响，可能存在延迟。
+
+### 兼容性约束
+- **操作系统**: Sonoscli支持Windows、macOS和Linux操作系统，但不同操作系统的命令行工具版本可能存在差异。
+- **Sonos设备**: Sonoscli主要支持Sonos智能音箱，不支持其他品牌或型号的音频设备。
+- **SkillHub平台**: Sonoscli完全适配SkillHub平台规范，但在其他平台可能无法正常使用。
+
+### 其他限制
+- **外部API**: 使用Spotify搜索功能需要配置SPOTIFY_CLIENT_ID/SECRET，否则无法搜索Spotify内容。
+- **自动化限制**: Sonoscli不支持完全自动化，部分操作需要用户手动确认。
+---
+

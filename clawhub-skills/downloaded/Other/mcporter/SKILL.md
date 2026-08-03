@@ -33,7 +33,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Mcporter
 
 Use `mcporter` to work with MCP servers directly.

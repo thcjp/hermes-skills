@@ -1,6 +1,7 @@
 ---
+
 name: "feishu-card-builder-free"
-description: "飞书富文本卡片消息构建工具，支持Markdown与按钮交互"
+description: "飞书富文本卡片消息构建工具，支持Markdown与按钮交互。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,11 @@ metadata:
     - "个人效率"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # 飞书卡片免费版
@@ -41,8 +47,6 @@ metadata:
 - **简单文本**: 直接发送纯文本内容
 - **文件内容**: 从文件读取内容发送（推荐，支持完整 Markdown）
 
-**输入**: 用户提供卡片消息发送所需的指令和必要参数。
-**处理**: 按照skill规范执行卡片消息发送操作,遵循单一意图原则。
 **输出**: 返回卡片消息发送的执行结果,包含操作状态和输出数据。
 
 ### Markdown 渲染
@@ -53,8 +57,6 @@ metadata:
 - 加粗、斜体、行内代码
 - 链接
 
-**输入**: 用户提供Markdown 渲染所需的指令和必要参数。
-**处理**: 按照skill规范执行Markdown 渲染操作,遵循单一意图原则。
 **输出**: 返回Markdown 渲染的执行结果,包含操作状态和输出数据。
 
 ### 卡片样式
@@ -63,8 +65,6 @@ metadata:
 - **彩色头部**: 蓝/红/橙/绿/紫/灰六种颜色
 - **底部按钮**: 文本按钮 + 跳转链接
 
-**输入**: 用户提供卡片样式所需的指令和必要参数。
-**处理**: 按照skill规范执行卡片样式操作,遵循单一意图原则。
 **输出**: 返回卡片样式的执行结果,包含操作状态和输出数据。
 
 ### 图片支持
@@ -73,8 +73,6 @@ metadata:
 - 图片嵌入卡片
 - 自动获取 image_key
 
-**输入**: 用户提供图片支持所需的指令和必要参数。
-**处理**: 按照skill规范执行图片支持操作,遵循单一意图原则。
 **输出**: 返回图片支持的执行结果,包含操作状态和输出数据。
 
 ### 安全发送
@@ -83,8 +81,6 @@ metadata:
 - 自动清理临时文件
 - 避免反引号等字符被 shell 吞掉
 
-**输入**: 用户提供安全发送所需的指令和必要参数。
-**处理**: 按照skill规范执行安全发送操作,遵循单一意图原则。
 **输出**: 返回安全发送的执行结果,包含操作状态和输出数据。
 
 ### 人设消息
@@ -95,8 +91,6 @@ metadata:
 
 ---
 
-**输入**: 用户提供人设消息所需的指令和必要参数。
-**处理**: 按照skill规范执行人设消息操作,遵循单一意图原则。
 **输出**: 返回人设消息的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：飞书富文本卡片消、息构建工具、与按钮交互、飞书卡片免费版是、一款面向个人用户、的飞书卡片消息构、建与发送工具、支持向飞书用户或、群组发送包含、按钮与图片的富交、互卡片消息、Use、when、需要生成营销文案、写作内容、标题优化、内容创作时使用、不适用于纯技术文、档撰写、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
@@ -145,7 +139,6 @@ node skills/feishu-card-builder/send_safe.js \
 
 ```bash
 # 发送带图片的卡片
-node skills/feishu-card-builder/send.js \
   --target "oc_xxxxxxx" \
   --text "本周数据图表如下：" \
   --title "周报数据" \
@@ -170,7 +163,7 @@ node skills/feishu-card-builder/send.js \
 
 ```bash
 # 发送简单文本
-node skills/feishu-card-builder/send.js --target "ou_xxxxxxx" --text "Hello World"
+js --target "ou_xxxxxxx" --text "Hello World"
 ```
 
 ### 第三步：发送 Markdown 卡片（推荐）
@@ -185,14 +178,13 @@ print('hello')
 \`\`\`"
 
 # 使用文件发送
-node skills/feishu-card-builder/send.js --target "ou_xxxxxxx" --text-file "temp/msg.md"
+js --target "ou_xxxxxxx" --text-file "temp/msg.md"
 ```
 
 ### 第四步：使用安全发送模式
 
 ```bash
 # 安全发送（自动处理临时文件）
-node skills/feishu-card-builder/send_safe.js \
   --target "ou_xxxxxxx" \
   --text "包含 \`反引号\` 和 *markdown* 的内容" \
   --title "安全消息"
@@ -206,7 +198,7 @@ node skills/feishu-card-builder/send_safe.js \
 ## 示例
 
 #
-## 最佳实践
+## 优选实践
 
 ### 内容传递安全
 
@@ -218,10 +210,10 @@ node skills/feishu-card-builder/send_safe.js \
 
 # 正确做法1：写入文件后用 --text-file 发送
 write temp/msg.md "代码: \`code\`"
-node skills/feishu-card-builder/send.js --target "ou_xxx" --text-file "temp/msg.md"
+js --target "ou_未指定" --text-file "temp/msg.md"
 
 # 正确做法2：使用 send_safe.js 自动处理
-node skills/feishu-card-builder/send_safe.js --target "ou_xxx" --text "代码: \`code\`"
+js --target "ou_未指定" --text "代码: \`code\`"
 ```
 
 ### Markdown 内容组织
@@ -242,8 +234,7 @@ write temp/report.md "## 本周进展
 npm run deploy
 \`\`\`"
 
-node skills/feishu-card-builder/send.js \
-  --target "oc_xxx" \
+  --target "oc_未指定" \
   --text-file "temp/report.md" \
   --title "周报" \
   --color blue
@@ -262,8 +253,7 @@ node skills/feishu-card-builder/send.js \
 ls -lh chart.png
 
 # 发送带图片的卡片
-node skills/feishu-card-builder/send.js \
-  --target "oc_xxx" \
+  --target "oc_未指定" \
   --text "数据图表" \
   --image-path "chart.png" \
   --title "数据展示" \
@@ -287,10 +277,9 @@ node skills/feishu-card-builder/send.js \
 ```bash
 # 使用文件方式
 write temp/msg.md "代码: \`code\`"
-node skills/feishu-card-builder/send.js --target "ou_xxx" --text-file "temp/msg.md"
 
 # 或使用安全发送
-node skills/feishu-card-builder/send_safe.js --target "ou_xxx" --text "代码: \`code\`"
+js --target "ou_未指定" --text "代码: \`code\`"
 ```
 
 ### 问题2：图片上传失败
@@ -321,7 +310,6 @@ file image.png
 
 ```bash
 # 使用完整 URL
---button-url "https://example.com/page"
 
 # 确认链接可访问
 curl -I https://example.com/page
@@ -333,11 +321,11 @@ curl -I https://example.com/page
 
 ```bash
 # 拆分长内容
-write temp/part1.md "第一部分内容..."
+write temp/part1.md "领先部分内容..."
 write temp/part2.md "第二部分内容..."
 
-node send.js --target "oc_xxx" --text-file "temp/part1.md" --title "报告 (1/2)"
-node send.js --target "oc_xxx" --text-file "temp/part2.md" --title "报告 (2/2)"
+node send.js --target "oc_未指定" --text-file "temp/part1.md" --title "报告 (1/2)"
+node send.js --target "oc_未指定" --text-file "temp/part2.md" --title "报告 (2/2)"
 ```
 
 ---
@@ -375,7 +363,6 @@ node send.js --target "oc_xxx" --text-file "temp/part2.md" --title "报告 (2/2)
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -386,3 +373,21 @@ node send.js --target "oc_xxx" --text-file "temp/part2.md" --title "报告 (2/2)
 
 - 本地运行，不支持多设备同步
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果

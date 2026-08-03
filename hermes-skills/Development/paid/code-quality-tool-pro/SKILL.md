@@ -1,5 +1,6 @@
 ---
-slug: "code-quality-tool-pro"
+
+slug: code-quality-tool-pro
 name: "code-quality-tool-pro"
 version: "1.0.0"
 displayName: "代码质量检查专业版"
@@ -43,7 +44,9 @@ tools:
   - grep
 homepage: ""
 category: "Development"
+
 ---
+
 代码质量检查工具专业版为企业研发团队提供深度代码审计能力。在免费版基础能力之上,专业版新增 OWASP Top 10 漏洞扫描、全项目批量分析、自定义规则引擎、多格式报告输出和 CI/CD 流水线集成,满足企业级 DevSecOps 实践需求.
 专业版完全兼容免费版的配置文件和检查规则,企业用户可从免费版无缝升级,已有配置无需修改即可在专业版中使用.
 ## 核心能力
@@ -91,14 +94,12 @@ if [ -f "package.json" ]; then
 fi
 ```
 
-**输入**: 用户提供OWASP Top 10 深度安全扫描所需的指令和必要参数.
 **处理**: 解析OWASP Top 10 深度安全扫描的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回OWASP Top 10 深度安全扫描的响应数据,包含状态码、结果和日志.
 ### 2. 全项目批量审计
 支持对大型代码库进行批量扫描,自动识别项目结构并应用对应规则.
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供全项目批量审计所需的指令和必要参数.
 **处理**: 解析全项目批量审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回全项目批量审计的响应数据,包含状态码、结果和日志.
 ### 3. 自定义规则引擎
@@ -141,7 +142,6 @@ ci_cd:
   upload_artifact: true
 ```
 
-**输入**: 用户提供自定义规则引擎所需的指令和必要参数.
 **处理**: 解析自定义规则引擎的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自定义规则引擎的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -160,7 +160,6 @@ python audit.py --format html --output report.html
 python audit.py --format summary
 ```
 
-**输入**: 用户提供多格式报告输出所需的指令和必要参数.
 **处理**: 解析多格式报告输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多格式报告输出的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级代码质量审、自定义规则与、输出多格式报告、面向企业研发团队、的高级代码质量审、计工具、提供深度安全扫描、合规性检查、批量项目分析与、流水线集成、核心能力、安全漏洞深度扫描、全项目批量代码审、自定义规则引擎与、策略管理、多租户协同审查与等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -226,14 +225,14 @@ code_quality_scan:
 class CollaborativeReview:
     """多租户协同代码审查"""
 # ...
-    def __init__(self, tenant_id):
-        self.tenant_id = tenant_id
+    def __init__(self, workspace_id):
+        self.workspace_id = workspace_id
         self.reviews = {}
 # ...
     def assign_review(self, issue_id, reviewer, priority="normal"):
         """分配审查任务"""
         self.reviews[issue_id] = {
-            "tenant": self.tenant_id,
+            "workspace": self.workspace_id,
             "reviewer": reviewer,
             "priority": priority,
             "status": "assigned",
@@ -290,7 +289,7 @@ ci_cd:
 ## 配置示例
 ### 企业级完整配置
 
-## 最佳实践
+## 优选实践
 1. **分层扫描**:先运行快速扫描阻断关键问题,再进行深度审计
 2. **规则版本化**:将 `.codequality.yml` 纳入版本控制,确保团队规则一致
 3. **增量审计**:利用 Git diff 仅扫描变更文件,提升效率
@@ -298,7 +297,7 @@ ci_cd:
 5. **自动修复**:对低风险问题启用自动修复,减少人工干预
 
 ```bash
-echo "=== 第一层:快速阻断 ==="
+echo "=== 领先层:快速阻断 ==="
 python audit.py --quick --fail-on critical
 if [ $? -ne 0 ]; then exit 1; fi
 # ...
@@ -322,7 +321,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run Code Audit
-        run: python audit.py --format sarif --output report.sarif
+        run: python audit.sarif
       - uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: report.sarif
@@ -340,8 +339,8 @@ jobs:
 使用多租户配置,每个租户可以有独立的规则集:
 
 ```yaml
-multi_tenant:
-  tenants:
+multi_workspace:
+  workspaces:
     - id: team-frontend
       rules: [owasp_top10, xss_detection]
     - id: team-backend
@@ -404,8 +403,6 @@ external_services:
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ```text
@@ -413,3 +410,22 @@ external_services:
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级代码质量审计,支持OWASP Top 10、批量扫描、自定义规则与CI/CD集成,输出多格式报告。
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

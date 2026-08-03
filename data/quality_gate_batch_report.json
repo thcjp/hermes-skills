@@ -1,0 +1,361 @@
+{
+  "checked_at": "2026-08-02T04:10:37.895020",
+  "total": 357,
+  "passed": 319,
+  "failed": 38,
+  "errors": 0,
+  "failure_reason_frequency": {
+    "description长度": 23,
+    "行数≤500": 16,
+    "frontmatter 8必需字段": 6,
+    "无夸大词": 1,
+    "frontmatter无XML尖括号": 2,
+    "slug==name==folder一致性": 7,
+    "slug为kebab-case": 5,
+    "version格式": 5,
+    "summary≤100字符": 4,
+    "displayName≤20字符": 3,
+    "tools为YAML数组": 1
+  },
+  "failure_details": [
+    {
+      "slug": "aegis-security-tool-pro",
+      "issue": "L1_FAIL",
+      "failures": [
+        "description长度: ['当前133字符 (建议150-280)']"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "amap-jsapi-tool-free",
+      "issue": "L1_FAIL",
+      "failures": [
+        "行数≤500: ['当前501行 (上限500)']"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "chat-agent-tool-pro",
+      "issue": "L1_FAIL",
+      "failures": [
+        "description长度: ['当前148字符 (建议150-280)']"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "cheat-code-tool-pro",
+      "issue": "L1_FAIL",
+      "failures": [
+        "description长度: ['当前130字符 (建议150-280)']"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "china-news-tool-free",
+      "issue": "L1_FAIL",
+      "failures": [
+        "description长度: ['当前119字符 (建议150-280)']"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "cloud-architect-free",
+      "issue": "L1_FAIL",
+      "failures": [
+        "description长度: ['当前97字符 (建议150-280)']"
+      ],
+      "source": "packaged"
+    },
+    {
+      "slug": "cloudforge-automation-pro",
+      "issue": "L1_FAIL",
+      "failures": [
+        "行数≤500: ['当前532行 (上限500)']"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "code-analyze-tool-pro",
+      "issue": "L1_FAIL",
+      "failures": [
+        "description长度: ['当前128字符 (建议150-280)']"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "code-dev-v1-tool-pro",
+      "issue": "L1_FAIL",
+      "failures": [
+        "description长度: ['当前125字符 (建议150-280)']"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "code-quality-tool-free",
+      "issue": "L1_FAIL",
+      "failures": [
+        "description长度: ['当前124字符 (建议150-280)']"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "company-search-tool-free",
+      "issue": "L1_FAIL",
+      "failures": [
+        "行数≤500: ['当前503行 (上限500)']",
+        "frontmatter 8必需字段: [\"缺失: ['description']\"]",
+        "description长度: ['description缺失']"
+      ],
+      "source": "local"
+    },
+    {
+      "slug": "compress-pdf-tool-pro",
+      "issue": "L1_FAIL",
+      "failures": [
+        "无夸大词: [\"夸大词: '最佳'\"]"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "context-driven-dev-tool-free",
+      "issue": "L1_FAIL",
+      "failures": [
+        "description长度: ['当前141字符 (建议150-280)']"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "context-vault-manager-pro",
+      "issue": "L1_FAIL",
+      "failures": [
+        "行数≤500: ['当前507行 (上限500)']"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "creative-officer",
+      "issue": "L1_FAIL",
+      "failures": [
+        "行数≤500: ['当前503行 (上限500)']"
+      ],
+      "source": "clawhub_differentiated"
+    },
+    {
+      "slug": "creative-officer-tool-pro",
+      "issue": "L1_FAIL",
+      "failures": [
+        "行数≤500: ['当前503行 (上限500)']"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "cron-expert-pro",
+      "issue": "L1_FAIL",
+      "failures": [
+        "行数≤500: ['当前510行 (上限500)']"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "cron-mate-pro",
+      "issue": "L1_FAIL",
+      "failures": [
+        "行数≤500: ['当前516行 (上限500)']"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "cybersecurity-engine-tool-pro",
+      "issue": "L1_FAIL",
+      "failures": [
+        "行数≤500: ['当前546行 (上限500)']"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "daily-news-brief-tool-free",
+      "issue": "L1_FAIL",
+      "failures": [
+        "description长度: ['当前135字符 (建议150-280)']"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "doc-parse-tool-pro",
+      "issue": "L1_FAIL",
+      "failures": [
+        "description长度: ['当前130字符 (建议150-280)']"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "encryption-tool-free",
+      "issue": "L1_FAIL",
+      "failures": [
+        "行数≤500: ['当前501行 (上限500)']",
+        "frontmatter无XML尖括号: [\"含尖括号的行: ['> **核心功能**: 本技能提供中文交互、化工作流场景等能力。']\"]"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "frontend-design-anthropic",
+      "issue": "L1_FAIL",
+      "failures": [
+        "description长度: ['当前67字符 (建议150-280)']"
+      ],
+      "source": "clawhub_differentiated"
+    },
+    {
+      "slug": "git-essentials-tool-pro",
+      "issue": "L1_FAIL",
+      "failures": [
+        "description长度: ['当前119字符 (建议150-280)']"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "gitcrawl-tool-pro",
+      "issue": "L1_FAIL",
+      "failures": [
+        "description长度: ['当前125字符 (建议150-280)']"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "knowledge-graph-builder-pro",
+      "issue": "L1_FAIL",
+      "failures": [
+        "行数≤500: ['当前529行 (上限500)']"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "legal-assistant-pro",
+      "issue": "L1_FAIL",
+      "failures": [
+        "slug==name==folder一致性: [\"slug='' ≠ folder='legal-assistant-pro'\", \"name='' ≠ folder='legal-assistant-pro'\"]",
+        "slug为kebab-case: ['slug缺失']",
+        "行数≤500: ['当前521行 (上限500)']",
+        "frontmatter 8必需字段: [\"缺失: ['slug', 'name', 'version', 'description']\"]",
+        "description长度: ['description缺失']",
+        "version格式: ['version缺失']"
+      ],
+      "source": "opensource_modified"
+    },
+    {
+      "slug": "logo-brand-identity-2",
+      "issue": "L1_FAIL",
+      "failures": [
+        "description长度: ['当前111字符 (建议150-280)']"
+      ],
+      "source": "clawhub_differentiated"
+    },
+    {
+      "slug": "mcp-toolkit-builder",
+      "issue": "L1_FAIL",
+      "failures": [
+        "slug==name==folder一致性: [\"slug='connector-server-builder' ≠ folder='mcp-server-builder'\", \"name='connector-server-builder' ≠ folder='mcp-server-builder'\"]",
+        "summary≤100字符: ['当前101字符 (上限100)']"
+      ],
+      "source": "manual"
+    },
+    {
+      "slug": "memory-fortress-pro",
+      "issue": "L1_FAIL",
+      "failures": [
+        "行数≤500: ['当前524行 (上限500)']"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "model-routing-tool-pro",
+      "issue": "L1_FAIL",
+      "failures": [
+        "description长度: ['当前128字符 (建议150-280)']"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "model-switching-2",
+      "issue": "L1_FAIL",
+      "failures": [
+        "description长度: ['当前100字符 (建议150-280)']"
+      ],
+      "source": "clawhub_differentiated"
+    },
+    {
+      "slug": "pdf-toolkit-pro",
+      "issue": "L1_FAIL",
+      "failures": [
+        "slug==name==folder一致性: [\"slug='' ≠ folder='pdf-toolkit-pro'\", \"name='' ≠ folder='pdf-toolkit-pro'\"]",
+        "slug为kebab-case: ['slug缺失']",
+        "frontmatter 8必需字段: [\"缺失: ['slug', 'name', 'version', 'description']\"]",
+        "description长度: ['description缺失']",
+        "version格式: ['version缺失']"
+      ],
+      "source": "opensource"
+    },
+    {
+      "slug": "performance-optimizer",
+      "issue": "L1_FAIL",
+      "failures": [
+        "slug==name==folder一致性: [\"slug='' ≠ folder='performance-optimizer-pro'\", \"name='' ≠ folder='performance-optimizer-pro'\"]",
+        "slug为kebab-case: ['slug缺失']",
+        "行数≤500: ['当前533行 (上限500)']",
+        "frontmatter 8必需字段: [\"缺失: ['slug', 'name', 'version', 'displayName', 'summary', 'license', 'description']\"]",
+        "displayName≤20字符: ['displayName缺失']",
+        "summary≤100字符: ['summary缺失']",
+        "description长度: ['description缺失']",
+        "version格式: ['version缺失']"
+      ],
+      "source": "opensource_modified"
+    },
+    {
+      "slug": "pptx-presentation",
+      "issue": "L1_FAIL",
+      "failures": [
+        "slug==name==folder一致性: [\"slug='' ≠ folder='pptx-presentation-pro'\", \"name='' ≠ folder='pptx-presentation-pro'\"]",
+        "slug为kebab-case: ['slug缺失']",
+        "行数≤500: ['当前543行 (上限500)']",
+        "frontmatter 8必需字段: [\"缺失: ['slug', 'name', 'version', 'displayName', 'summary', 'license', 'description', 'tools']\"]",
+        "displayName≤20字符: ['displayName缺失']",
+        "summary≤100字符: ['summary缺失']",
+        "description长度: ['description缺失']",
+        "version格式: ['version缺失']",
+        "tools为YAML数组: ['tools字段缺失']"
+      ],
+      "source": "opensource_modified"
+    },
+    {
+      "slug": "react-video-composer",
+      "issue": "L1_FAIL",
+      "failures": [
+        "slug==name==folder一致性: [\"slug='' ≠ folder='remotion-video-studio'\", \"name='' ≠ folder='remotion-video-studio'\"]",
+        "slug为kebab-case: ['slug缺失']",
+        "frontmatter 8必需字段: [\"缺失: ['slug', 'name', 'version', 'description']\"]",
+        "displayName≤20字符: [\"当前21字符: 'Remotion Video Studio' (上限20)\"]",
+        "description长度: ['description缺失']",
+        "version格式: ['version缺失']"
+      ],
+      "source": "manual"
+    },
+    {
+      "slug": "timeline-digest-tool-free",
+      "issue": "L1_FAIL",
+      "failures": [
+        "行数≤500: ['当前501行 (上限500)']",
+        "frontmatter无XML尖括号: [\"含尖括号的行: ['> **核心功能**: 本技能提供化工作流场景等能力。']\"]"
+      ],
+      "source": "differentiated"
+    },
+    {
+      "slug": "协议适配层-server-builder",
+      "issue": "L1_FAIL",
+      "failures": [
+        "slug==name==folder一致性: [\"slug='connector-server-builder' ≠ folder='mcp-server-builder'\", \"name='connector-server-builder' ≠ folder='mcp-server-builder'\"]",
+        "summary≤100字符: ['当前101字符 (上限100)']"
+      ],
+      "source": "local"
+    }
+  ]
+}

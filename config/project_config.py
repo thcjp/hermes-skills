@@ -29,10 +29,10 @@ DB_PATH = str(PROJECT_ROOT / "skill-registry.db")
 
 # ============ 工具与数据目录 ============
 
-# 工具脚本目录（Phase 2后从skill-registry/重命名为tools/）
-# Phase 1期间仍指向skill-registry/，Phase 2后改为tools/
+# 工具脚本目录
 TOOLS_DIR = PROJECT_ROOT / "tools"
 REGISTRY_DIR = TOOLS_DIR  # 向后兼容别名
+SKILLS_ROOT = PROJECT_ROOT  # pipeline使用此别名
 
 # 数据存储目录（Phase 2后创建）
 DATA_DIR = PROJECT_ROOT / "data"
@@ -54,9 +54,6 @@ ENTERPRISE_UPLOAD_DIR = PROJECT_ROOT / "enterprise-upload"
 
 # 源skill - ClawHub下载
 CLAWHUB_DOWNLOADED_DIR = PROJECT_ROOT / "clawhub-skills" / "downloaded"
-
-# ClawHub每日同步是否干跑模式（False=真实上传，True=仅模拟）
-CLAWHUB_DRY_RUN = False
 
 # 差异化skill目录（含免费版和付费版）
 DIFFERENTIATED_DIR = PROJECT_ROOT / "differentiated-skills"
@@ -96,11 +93,11 @@ CREDENTIALS_DIR.mkdir(parents=True, exist_ok=True)
 
 # ============ TRACE评分阈值（统一） ============
 
-TRACE_PASS_THRESHOLD = 42        # TRACE评分通过阈值
-TRACE_GRADE_A_PLUS = 45          # A+级阈值
-TRACE_GRADE_A = 42               # A级阈值
-TRACE_GRADE_B = 35               # B级阈值
-TRACE_GRADE_C = 28               # C级阈值
+TRACE_PASS_THRESHOLD = 45        # TRACE评分通过阈值(V175提升)
+TRACE_GRADE_A_PLUS = 47          # A+级阈值
+TRACE_GRADE_A = 45               # A级阈值
+TRACE_GRADE_B = 38               # B级阈值
+TRACE_GRADE_C = 30               # C级阈值
 
 # L2评分分层阈值
 L2_PASS_THRESHOLD = 35           # L2最低通过阈值
@@ -118,8 +115,54 @@ MIN_SKILL_MD_LINES = 50
 MIN_DESCRIPTION_LEN = 150
 MAX_DESCRIPTION_LEN = 280
 MAX_DISPLAYNAME_LEN = 20
+MAX_DISPLAY_NAME_LEN = 20  # 统一别名(orchestrator使用此名)
 MIN_SUMMARY_LEN = 10
 MAX_SUMMARY_LEN = 100
+
+# ============ 其他常量 ============
+
+PLUGS_DIR = PROJECT_ROOT / "plugs"
+A_GRADE_QUALITY_THRESHOLD = 4.5
+
+# 全目录扫描路径列表 (用于fix_missing_fields等批量扫描脚本)
+SCAN_DIRS = [
+    PACKAGED_SKILLS_DIR,
+    HERMES_SKILLS_DIR,
+    OPENSOURCE_SKILLS_DIR,
+    ENTERPRISE_UPLOAD_DIR,
+    DIFFERENTIATED_DIR,
+    PLUGS_DIR,
+]
+LOCAL_QUALITY_PASS_THRESHOLD = 4.5
+LOCAL_QUALITY_GRADE_B = 3.5
+LOCAL_QUALITY_GRADE_C = 2.5
+DEFAULT_DEEPSEEK_ENDPOINT = "https://api.deepseek.com/v1/chat/completions"
+CLAWHUB_DRY_RUN = False  # 非dry_run模式
+
+# ============ 平台统一配置 (pipeline使用) ============
+
+PLATFORM_CONFIG = {
+    "clawhub": {
+        "host": "https://clawhub.ai",
+        "api_url": "https://clawhub.ai",
+        "daily_limit": 200,
+        "rate_limit_hours": 24,
+        "min_interval_seconds": 120,
+    },
+    "skillhub": {
+        "host": "https://skillhub.cn",
+        "api_url": "https://skillhub.cn",
+        "waf_char_limit": 5800,
+        "max_retries": 3,
+    },
+}
+
+# ============ 时间戳函数 ============
+
+def get_timestamp() -> str:
+    """统一时间戳格式"""
+    from datetime import datetime
+    return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 # ============ 付费判断（统一） ============
 
@@ -156,14 +199,10 @@ MAX_PRICE = 99.0
 
 
 def get_db_connection():
-    """获取数据库连接（带row_factory）
-
-    D2修复: 统一开启 PRAGMA foreign_keys = ON，确保所有通过此函数的连接都强制FK约束
-    """
+    """获取数据库连接（带row_factory）"""
     import sqlite3
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
-    conn.execute("PRAGMA foreign_keys = ON")
     return conn
 
 

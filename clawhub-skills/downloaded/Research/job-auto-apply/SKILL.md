@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Job Auto Apply
 
 Automate job searching and application submission across multiple job platforms using Clawdbot.

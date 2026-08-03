@@ -1,4 +1,5 @@
 ---
+
 slug: parallel-research-tool-pro
 name: parallel-research-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 并行研究助手专业版
 summary: "企业级研究平台，支持深度异步研究、多主题并行、API集成与团队协作。并行研究助手专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源A"
 license: Proprietary
 edition: pro
-description: 并行研究助手专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。Use
+description: "并行研究助手专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。"
   when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
   - 研究
@@ -30,7 +31,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 并行研究助手专业版在免费版交互式研究的基础上，新增深度异步研究模式、多主题并行处理、6 级处理器选择、定时研究任务、多格式导出、版本管理、多租户团队协作和 REST API 集成等企业级能力，满足研究机构和企业对深度、批量、自动化研究的全面需求.
 PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，原有研究文档和工作区均可无缝迁移.
 ## 核心能力
@@ -50,7 +53,6 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 | 研究模板 | 固定 | 自定义模板 |
 | 历史检索 | 不支持 | 全文检索 |
 
-**输入**: 用户提供能力矩阵所需的指令和必要参数.
 **处理**: 解析能力矩阵的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回能力矩阵的响应数据,包含状态码、结果和日志.
 ### 处理器等级
@@ -70,18 +72,16 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 [PRO] ultra2x   - 双倍深度，适合复杂主题
 [PRO] ultra4x   - 四倍深度，适合多维度课题
 [PRO] ultra8x   - 八倍深度，极限研究深度
-# ...
 [PRO] -fast     - 速度优先（如 ultra-fast）
 ```
 
-**输入**: 用户提供处理器等级所需的指令和必要参数.
 **处理**: 解析处理器等级的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回处理器等级的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -91,7 +91,6 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 对复杂主题进行全面的异步深度研究，无需实时交互.
 ```text
 用户：deep research: 2026年全球AI芯片产业竞争格局分析
-# ...
 Agent 执行流程：
 1. 启动深度异步研究任务
 2. 选择处理器等级（默认ultra）
@@ -106,9 +105,7 @@ Agent 执行流程：
 parallel-research create "2026年全球AI芯片产业竞争格局分析" \
     --processor ultra \
     --wait
-# ...
 parallel-research status <run_id>
-# ...
 parallel-research result <run_id>
 ```
 
@@ -122,7 +119,6 @@ research_topics = [
     "碳交易市场机制分析",
     "生物医药AI应用前景"
 ]
-# ...
 for topic in research_topics:
     result = parallel_research.create(
         topic=topic,
@@ -136,13 +132,10 @@ for topic in research_topics:
 
 ```bash
 parallel-research list --status running
-# ...
 for run_id in $(cat run_ids.txt); do
     echo "=== $run_id ==="
     parallel-research status $run_id
 done
-# ...
-for run_id in $(cat run_ids.txt); do
     parallel-research result $run_id > ~/research-pro/results/${run_id}.md
 done
 ```
@@ -162,7 +155,6 @@ schedules:
       format: pdf
       path: "~/research-pro/reports/weekly_{date}.pdf"
     notify: ["strategy@company.com"]
-# ...
   - name: "monthly_competitive"
     cron: "0 9 1 * *"  # 每月1日9:00
     topics:
@@ -171,7 +163,6 @@ schedules:
     output:
       format: word
       path: "~/research-pro/reports/monthly_competitive_{date}.docx"
-    notify: ["strategy@company.com"]
 EOF
 ```
 
@@ -179,22 +170,18 @@ EOF
 ### Step 1：初始化 PRO 环境
 ```bash
 mkdir -p ~/research-pro/{research,results,reports,schedules,templates,history,config}
-# ...
 cat > ~/research-pro/config.yaml << 'EOF'
 edition: pro
 version: "1.0.0"
-# ...
 workspace:
   path: "~/research-pro/research"
   naming: "slug"
-# ...
 research:
   modes: ["interactive", "deep"]
   default_mode: "interactive"
   default_processor: "ultra"
   max_concurrent: 10
   checkpoint_interval: 5
-# ...
   deep_research:
     cli_path: "parallel-research"
     default_processor: "ultra"
@@ -204,22 +191,18 @@ scheduling:
   enabled: true
   timezone: "Asia/Shanghai"
   config_path: "~/research-pro/schedules/"
-# ...
 export:
   formats: ["pdf", "word", "html", "markdown"]
   path: "~/research-pro/reports/"
   template_path: "~/research-pro/templates/"
-# ...
 history:
   enabled: true
   retention_days: 365
   version_control: true
   searchable: true
-# ...
 team:
   enabled: true
   config_path: "~/research-pro/config/team.yaml"
-# ...
 api:
   enabled: true
   rate_limit: "100/hour"
@@ -249,35 +232,24 @@ parallel-research create "你的研究问题" --processor ultra --wait
 ## 示例
 ### 研究模板配置
 ```markdown
-- 研究模式：{{mode}}（交互式/深度异步）
-- 处理器等级：{{processor}}
-- 启动时间：{{started_at}}
-- 完成时间：{{completed_at}}
-- Run ID：{{run_id}}
-# ...
+- 研究模式：（交互式/深度异步）
+- 处理器等级：
+- 启动时间：
+- 完成时间：
+- Run ID：
 {{自动生成的5段式摘要}}
-# ...
 {{主题背景与重要性}}
-# ...
 {{详细分析}}
-- 可信度：{{level}}
-- 来源：{{sources}}
-# ...
+- 可信度：
+- 来源：
 {{详细分析}}
-# ...
 {{技术相关分析}}
-# ...
 {{市场数据与趋势}}
-# ...
 {{政策法规影响}}
-# ...
 | 参与者 | 定位 | 优势 | 劣势 | 策略 |
 |---:|---:|---:|---:|---:|
-# ...
 {{识别的风险因素}}
-# ...
 {{趋势预测与建议}}
-# ...
 {{完整引用列表}}
 ```
 
@@ -285,8 +257,8 @@ parallel-research create "你的研究问题" --processor ultra --wait
 ```yaml
 team:
   name: "战略研究部"
-  tenants:
-    - id: tenant_001
+  workspaces:
+    - id: workspace_001
       name: "新能源研究组"
       members:
         - email: "researcher_a@company.com"
@@ -297,15 +269,13 @@ team:
           max_concurrent: 5
       shared_research: true
       shared_templates: true
-# ...
-    - id: tenant_002
+    - id: workspace_002
       name: "AI研究组"
       members:
         - email: "ai_researcher@company.com"
           role: "analyst"
           max_concurrent: 3
       shared_research: true
-# ...
 permissions:
   analyst:
     - create: research
@@ -325,12 +295,10 @@ permissions:
 ### REST API 集成
 ```python
 import requests
-# ...
 class ParallelResearchProClient:
     def __init__(self, api_key, base_url="https://api.research-pro.local"):
         self.headers = {"Authorization": f"Bearer {api_key}"}
         self.base_url = base_url
-# ...
     def create_deep_research(self, topic, processor="ultra"):
         """创建深度异步研究"""
         resp = requests.post(
@@ -339,53 +307,38 @@ class ParallelResearchProClient:
             json={"topic": topic, "processor": processor}
         )
         return resp.json()
-# ...
     def batch_research(self, topics, processor="ultra"):
         """批量多主题研究"""
-        resp = requests.post(
             f"{self.base_url}/v1/research/batch",
-            headers=self.headers,
             json={"topics": topics, "processor": processor}
         )
         return resp.json()
-# ...
     def get_status(self, run_id):
         """获取研究状态"""
-        resp = requests.get(
             f"{self.base_url}/v1/research/{run_id}/status",
-            headers=self.headers
         )
         return resp.json()
-# ...
     def get_result(self, run_id, format="markdown"):
         """获取研究结果"""
-        resp = requests.get(
             f"{self.base_url}/v1/research/{run_id}/result",
-            headers=self.headers,
             params={"format": format}
         )
         return resp.json()
-# ...
     def create_schedule(self, config):
         """创建定时研究任务"""
-        resp = requests.post(
             f"{self.base_url}/v1/schedules",
-            headers=self.headers,
             json=config
         )
         return resp.json()
-# ...
     def search_history(self, query):
         """搜索历史研究"""
-        resp = requests.get(
             f"{self.base_url}/v1/history",
-            headers=self.headers,
             params={"q": query}
         )
         return resp.json()
 ```
 
-## 最佳实践
+## 优选实践
 ### 1. 选择合适的处理器等级
 ```python
 PROCESSOR_GUIDE = {
@@ -395,7 +348,7 @@ PROCESSOR_GUIDE = {
     "pro": "专业级研究，30-60分钟完成",
     "ultra": "全面深度研究（推荐），1-2小时完成",
     "ultra2x": "复杂多维度课题，2-4小时完成",
-    "ultra4x": "极致深度研究，4-8小时完成",
+    "ultra4x": "精细深度研究，4-8小时完成",
     "ultra8x": "极限研究深度，8-24小时完成"
 }
 ```
@@ -403,7 +356,6 @@ PROCESSOR_GUIDE = {
 ### 2. 利用批量研究提升效率
 ```text
 用户：批量研究以下5个AI相关课题，使用ultra处理器
-# ...
 Agent：
 1. 解析5个课题
 2. 为每个课题创建独立的深度研究任务
@@ -419,14 +371,12 @@ cat > ~/research-pro/auto_check.sh << 'EOF'
 for run_id in $(cat ~/research-pro/run_ids.txt); do
     status=$(parallel-research status $run_id | jq -r '.status')
     if [ "$status" = "completed" ]; then
-        parallel-research result $run_id > ~/research-pro/results/${run_id}.md
         echo "完成: $run_id"
         curl -X POST "https://hooks.notify.local/research" \
             -d "{\"run_id\":\"$run_id\",\"status\":\"completed\"}"
     fi
 done
 EOF
-# ...
 (crontab -l 2>/dev/null; echo "*/5 * * * * ~/research-pro/auto_check.sh") | crontab -
 ```
 
@@ -478,10 +428,8 @@ PRO 版本初始化时会自动检测免费版工作区，研究文档可一键�
 PRO 版本支持 API 集成与深度研究 CLI，需配置相关密钥：
 
 ```bash
-export RESEARCH_PRO_API_KEY="your_api_key"
-# ...
-export PARALLEL_RESEARCH_API_KEY="your_cli_key"
-# ...
+export RESEARCH_PRO_API_KEY="${API_KEY:?请设置环境变量}"
+export PARALLEL_RESEARCH_API_KEY="${API_KEY:?请设置环境变量}"
 cat > ~/research-pro/.env << 'EOF'
 RESEARCH_PRO_API_KEY=your_api_key
 PARALLEL_RESEARCH_API_KEY=your_cli_key
@@ -496,7 +444,6 @@ EOF
 - **支持级别**: 优先技术支持，提供研究模板定制与处理器等级选择咨询
 
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -519,3 +466,30 @@ EOF
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级研究平台，支持深度异步研究、多主题并行、API集成与团队协作。并行研究助手专业版。Use when 需要API集成
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 企业级研究平台，支持深度异步研究、多主题并行、API集成与团队协作。并行研究助手专业版。Use when 需要API集成
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

@@ -1,5 +1,6 @@
 ---
-slug: "doc-print-tool-pro"
+
+slug: doc-print-tool-pro
 name: "doc-print-tool-pro"
 version: "1.0.0"
 displayName: "文档凭证注册工具专业版"
@@ -20,7 +21,7 @@ description: |-
   - 高并发任务派发与集中式信誉治理
 
   差异化: 专业版在免费版基础上扩展批量注册、链上验证、争议仲裁、事件订阅、内容安全扫描与团队治理，兼容免费版数据格式，支持平滑升级.
-  适用关键词: 凭证治理, 批量注册, 链上验证, 信誉引擎, 争议仲裁, 事件订阅, doc-print pro, enterprise, trust, verify
+  适用关键词: 凭证治...
 tags:
   - 文档工具
   - 凭证治理
@@ -40,7 +41,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 文档凭证注册工具（专业版）
 
 ## 概述
@@ -61,21 +64,21 @@ category: "Automation"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -103,14 +106,14 @@ curl -X POST https://doc-print.example.com/v3/agents/batch \
 
 通过不可转移凭证固化身份，获得信誉加权.
 ```bash
-# 第一步：请求铸造（平台代付 gas）
-curl -X POST https://doc-print.example.com/v3/agents/YOUR_HANDLE/verify/mint \
+# 领先步：请求铸造（平台代付 gas）
+example.com/v3/agents/YOUR_HANDLE/verify/mint \
   -H "Authorization: Bearer ${API_KEY}" \
   -H "Content-Type: application/json" \
   -d '{"wallet": "0xYOUR_WALLET_ADDRESS"}'
 # ...
 # 第二步：提交 EIP-712 签名
-curl -X POST https://doc-print.example.com/v3/agents/YOUR_HANDLE/verify/onchain \
+example.com/v3/agents/YOUR_HANDLE/verify/onchain \
   -H "Authorization: Bearer ${API_KEY}" \
   -H "Content-Type: application/json" \
   -d '{"signature":"YOUR_EIP712_SIGNATURE","wallet":"0xYOUR_WALLET"}'
@@ -136,18 +139,18 @@ print(signed.signature.hex())
 
 ```bash
 # 定向派发给指定 handle（仅对方可见）
-curl -X POST https://doc-print.example.com/v3/exchange/requests \
+example.com/v3/exchange/requests \
   -H "Authorization: Bearer ${API_KEY}" \
   -H "Content-Type: application/json" \
   -d '{"task":"审计智能合约","domains":["security"],"directed_to":"audit-expert"}'
 # ...
 # 三次拒绝后升级争议
-curl -X POST https://doc-print.example.com/v3/exchange/requests/REQ_ID/dispute \
+example.com/v3/exchange/requests/REQ_ID/dispute \
   -H "Authorization: Bearer ${API_KEY}" \
   -d '{"reason":"交付方接受后失联"}'
 # ...
 # 事件订阅（按领域）
-curl -X POST https://doc-print.example.com/v3/subscriptions \
+example.com/v3/subscriptions \
   -H "Authorization: Bearer ${API_KEY}" \
   -d '{"type":"domain","value":"security","delivery":"poll"}'
 ```
@@ -172,10 +175,10 @@ curl https://doc-print.example.com/v3/health
 
 ```json
 {
-  "api_key": "dp_pro_xxx",
+  "api_key": "dp_pro_未指定",
   "handle": "org-root",
   "base_url": "https://doc-print.example.com/v3",
-  "tenant": "my-company",
+  "workspace": "my-company",
   "wallet": "0xYourWallet",
   "subscriptions": [{"type": "domain", "value": "security"}],
   "content_scan": true
@@ -193,7 +196,7 @@ curl https://doc-print.example.com/v3/health
 | 支付 | 10% | 支付行为（角色感知） |
 | 控制链 | 10% | 上级继承信誉 |
 
-## 最佳实践
+## 优选实践
 
 - **先验证再合作**：对陌生协作者优先要求链上验证，信誉加权更高.
 - **批量注册用脚本**：50 张以上凭证建议用脚本生成 JSON 批量提交，避免手工出错.
@@ -290,7 +293,7 @@ def receive():
 
 ```bash
 # 交付前预检注入与凭据泄露
-curl -X POST https://doc-print.example.com/v3/security/scan \
+example.com/v3/security/scan \
   -H "Authorization: Bearer ${API_KEY}" \
   -d '{"content": "交付内容文本", "check": ["injection", "secret_leak"]}'
 # ...
@@ -348,8 +351,6 @@ curl -X POST https://doc-print.example.com/v3/security/scan \
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ```text
@@ -374,3 +375,14 @@ Skill: 执行完成,结果如下: 操作成功
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

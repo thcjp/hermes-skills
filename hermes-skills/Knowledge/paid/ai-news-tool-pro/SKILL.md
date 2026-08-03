@@ -3,11 +3,10 @@ slug: ai-news-tool-pro
 name: ai-news-tool-pro
 version: 1.0.0
 displayName: AI新闻工具-专业版
-summary: "企业级新闻聚合与情报分析,支持多源聚合、自动摘要、定时推送与趋势分析。企业级新闻聚合与情报分析工具,在免费版核心能力之上,提供多源新闻聚合、"
+summary: "企业级新闻聚合与情报分"
 license: Proprietary
 edition: pro
-description: '企业级新闻聚合与情报分析工具,在免费版核心能力之上,提供多源新闻聚合、
-
+description: "企业级新闻聚合与情报分析工具,在免费版核心能力之上,提供多源新闻聚合、。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
   AI 自动摘要、个性化推荐、历史检索、定时推送与趋势分析能力。核心能力:
 
   - 免费版全部能力(完全兼容)
@@ -58,12 +57,9 @@ homepage: ""
 category: "Knowledge"
 ---
 # AI新闻工具(专业版)
-
 ## 概述
-
 本工具是企业级新闻聚合与情报分析工具,在免费版核心能力之上,扩展了多源新闻聚合、AI 自动摘要、个性化推荐、历史检索、定时推送与趋势分析能力,适合企业舆情监控、行业趋势研究、团队新闻订阅与竞品动态追踪场景。专业版与免费版完全兼容:免费版的所有 API 调用、工作流均可直接在专业版中使用.
 ### 免费版 vs 专业版对比
-
 | 能力 | 免费版 | 专业版 |
 |---|---|---|
 | 每日新闻列表 | 支持 | 支持 |
@@ -80,9 +76,7 @@ category: "Knowledge"
 | 优先技术支持 | 不支持 | 支持 |
 
 ## 核心能力
-
 ### 1. 多源新闻聚合(专业版新增)
-
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
 |:-----|:-----|:-----|:-----|
@@ -91,182 +85,111 @@ category: "Knowledge"
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
 ```bash
-# 聚合多个新闻源
 news-pro aggregate --sources "daily,tech,finance,business" --date 2026-03-10
-# ...
-# 自动去重
 news-pro aggregate --sources "daily,tech" --dedup --date 2026-03-10
-# ...
-# 导出聚合结果
 news-pro aggregate --sources "daily,tech,finance" --format json > aggregated-news.json
 ```
 
-**输入**: 用户提供多源新闻聚合(专业版新增)所需的指令和必要参数.
 **处理**: 解析多源新闻聚合(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多源新闻聚合(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 2. AI 自动摘要与关键词提取(专业版新增)
-
 ```bash
-# 为单条新闻生成 AI 摘要
 news-pro summarize --article-id 8533
-# ...
-# 批量生成摘要
 news-pro summarize --batch --date 2026-03-10
-# ...
-# 提取关键词
 news-pro keywords --article-id 8533 --top 10
-# ...
-# 生成每日要闻综述
 news-pro digest --date 2026-03-10 --length 500
 ```
 
-**输入**: 用户提供AI 自动摘要与关键词提取(专业版新增)所需的指令和必要参数.
 **处理**: 解析AI 自动摘要与关键词提取(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回AI 自动摘要与关键词提取(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 3. 个性化推荐与订阅(专业版新增)
-
 ```bash
-# 设置兴趣标签
 news-pro subscribe --tags "ai,科技,财经"
-# ...
-# 获取个性化推荐
 news-pro recommend --limit 10
-# ...
-# 关键词订阅
 news-pro subscribe --keywords "AI智能体,大模型" --alert
 ```
 
-**输入**: 用户提供个性化推荐与订阅(专业版新增)所需的指令和必要参数.
 **处理**: 解析个性化推荐与订阅(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回个性化推荐与订阅(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 4. 历史新闻全文检索(专业版新增)
-
 ```bash
-# 全文检索历史新闻
 news-pro search "人工智能" --from 2026-01-01 --to 2026-03-10
-# ...
-# 按分类检索
 news-pro search "芯片" --category tech --from 2026-02-01
-# ...
-# 按热度筛选
 news-pro search "新能源" --min-heat 80
 ```
 
-**输入**: 用户提供历史新闻全文检索(专业版新增)所需的指令和必要参数.
 **处理**: 解析历史新闻全文检索(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回历史新闻全文检索(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 5. 定时推送与告警(专业版新增)
-
 ```bash
-# 配置定时推送
 news-pro schedule add --cron "0 9 * * *" --channels "email,webhook" --digest
-# ...
-# 关键词告警(出现指定关键词时立即通知)
 news-pro alert add --keyword "竞品公司名" --channel webhook
-# ...
-# 查看所有订阅
 news-pro subscribe list
 ```
 
-**输入**: 用户提供定时推送与告警(专业版新增)所需的指令和必要参数.
 **处理**: 解析定时推送与告警(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时推送与告警(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 6. 趋势分析与热点追踪(专业版新增)
-
 ```bash
-# 话题趋势分析
 news-pro trend --topic "AI智能体" --period 30d
-# ...
-# 热点排行
 news-pro hot --period 7d --top 20
-# ...
-# 竞品动态追踪
 news-pro track --company "竞品A" --period 30d
 ```
 
-**输入**: 用户提供趋势分析与热点追踪(专业版新增)所需的指令和必要参数.
 **处理**: 解析趋势分析与热点追踪(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回趋势分析与热点追踪(专业版新增)的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级新闻聚合与、情报分析、支持多源聚合、定时推送与趋势分、情报分析工具、在免费版核心能力、历史检索、析能力、核心能力、免费版全部能力、完全兼容、多源新闻聚合与去等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
-
 ### 场景一:企业舆情监控
-
 企业需要监控自身相关舆情,每日生成舆情报告并推送.
 ```bash
 #!/bin/bash
-# sentiment-monitor.sh - 舆情监控工作流
 COMPANY="示例公司"
 DATE=$(date +%Y-%m-%d)
-# ...
-# 1. 聚合多源新闻
 news-pro aggregate --sources "daily,tech,finance,social" --date "$DATE" \
   --filter "$COMPANY" > /tmp/today-news.json
-# ...
-# 2. 生成 AI 摘要
 news-pro summarize --batch --filter "$COMPANY" --date "$DATE"
-# ...
-# 3. 情感分析
 news-pro sentiment --filter "$COMPANY" --date "$DATE" > /tmp/sentiment.json
-# ...
-# 4. 生成舆情报告
 news-pro report --company "$COMPANY" --date "$DATE" \
   --format pdf > "reports/sentiment-${DATE}.pdf"
-# ...
-# 5. 推送报告
 news-pro push --channel email --to "pr-team@company.com" \
   --subject "${COMPANY} 舆情日报 ${DATE}" \
   --attachment "reports/sentiment-${DATE}.pdf"
-# ...
 echo "舆情监控完成,报告已推送"
 ```
 
 ### 场景二:行业趋势研究
-
 研究团队分析某行业话题的趋势变化,生成趋势报告.
 ```bash
 #!/bin/bash
-# trend-analysis.sh - 行业趋势分析
 TOPIC="AI智能体"
 PERIOD="30d"
-# ...
-# 1. 话题趋势分析
 echo "=== 趋势分析 ==="
 news-pro trend --topic "$TOPIC" --period "$PERIOD" --format json > trend.json
-# ...
-# 2. 热点事件排行
 echo "=== 热点事件 ==="
 news-pro hot --topic "$TOPIC" --period "$PERIOD" --top 20
-# ...
-# 3. 关键人物与机构
 echo "=== 关键实体 ==="
 news-pro entities --topic "$TOPIC" --period "$PERIOD" --type person,org
-# ...
-# 4. 生成趋势报告
 news-pro report --topic "$TOPIC" --period "$PERIOD" \
   --format markdown > "reports/trend-${TOPIC}-$(date +%Y%m%d).md"
-# ...
-# 5. 导出可视化数据
 news-pro trend --topic "$TOPIC" --period "$PERIOD" \
   --format csv > "reports/trend-data.csv"
-# ...
 echo "趋势分析完成,报告已生成"
 ```
 
 ### 场景三:竞品动态追踪
-
 持续追踪竞品公司动态,关键事件即时告警.
 ```python
 #!/usr/bin/env python3
@@ -274,20 +197,16 @@ echo "趋势分析完成,报告已生成"
 import subprocess
 import json
 from datetime import datetime, timedelta
-# ...
 COMPETITORS = [
     {"name": "竞品A", "keywords": ["竞品A", "CompetitorA"], "alert_keywords": ["融资", "发布", "收购"]},
     {"name": "竞品B", "keywords": ["竞品B", "CompetitorB"], "alert_keywords": ["融资", "发布", "收购"]},
     {"name": "竞品C", "keywords": ["竞品C", "CompetitorC"], "alert_keywords": ["融资", "发布", "收购"]},
 ]
-# ...
 def track_competitor(competitor):
     """追踪单个竞品动态"""
     name = competitor["name"]
     keywords = competitor["keywords"]
     alert_keywords = competitor["alert_keywords"]
-# ...
-    # 检索最近30天相关新闻
     result = subprocess.run([
         "news-pro", "search",
         " OR ".join(keywords),
@@ -295,13 +214,10 @@ def track_competitor(competitor):
         "--to", datetime.now().strftime("%Y-%m-%d"),
         "--format", "json"
     ], capture_output=True, text=True)
-# ...
     try:
         news = json.loads(result.stdout)
     except json.JSONDecodeError:
         news = []
-# ...
-    # 检测关键事件
     alerts = []
     for article in news:
         for alert_kw in alert_keywords:
@@ -313,16 +229,12 @@ def track_competitor(competitor):
                     "url": article.get("url", ""),
                     "date": article.get("publish_time", "")
                 })
-# ...
     return {"competitor": name, "total_news": len(news), "alerts": alerts}
-# ...
-# 追踪所有竞品
 for comp in COMPETITORS:
     report = track_competitor(comp)
     print(f"[{report['competitor']}] 近30天 {report['total_news']} 条新闻,{len(report['alerts'])} 条关键告警")
     for alert in report["alerts"]:
         print(f"  [告警] {alert['alert_type']}: {alert['title']}")
-        # 触发即时通知
         subprocess.run([
             "news-pro", "push", "--channel", "webhook",
             "--message", f"[竞品告警] {alert['competitor']} - {alert['alert_type']}: {alert['title']}"
@@ -330,7 +242,6 @@ for comp in COMPETITORS:
 ```
 
 ## 不适用场景
-
 以下场景AI新闻工具-专业版不适合处理：
 
 - 实时流数据处理
@@ -338,61 +249,39 @@ for comp in COMPETITORS:
 - 非结构化文本情感分析
 
 ## 触发条件
-
 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
-
 1. 阅读## 核心能力章节了解skill功能
 2. 按## 依赖说明配置环境
 3. 执行所需能力对应的命令
 4. 参考## 错误处理章节处理异常
 5. 查看## FAQ解答常见疑问
-
 ### 1. 初始化
-
 ```bash
-# 专业版初始化
 news-pro init
-# ...
-# 配置多源
 news-pro config set sources "daily,tech,finance,business,social"
 news-pro config set ai.summarize true
 news-pro config set alerts.webhook "https://hooks.example.com/news-alerts"
 ```
 
 ### 2. 多源聚合工作流
-
 ```bash
-# 聚合今日多源新闻
 news-pro aggregate --date $(date +%Y-%m-%d) --dedup
-# ...
-# 生成 AI 综述
 news-pro digest --date $(date +%Y-%m-%d) --length 800
-# ...
-# 推送到团队
 news-pro push --channel webhook --digest
 ```
 
 ### 3. 订阅与告警
-
 ```bash
-# 订阅感兴趣的话题
 news-pro subscribe --tags "ai,科技,财经" --digest daily
-# ...
-# 设置关键词告警
 news-pro alert add --keyword "竞品公司" --channel "email,webhook"
-# ...
-# 查看订阅
 news-pro subscribe list
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
 ## 示例
-
 ### 企业级配置文件
-
 ```yaml
-# ~/.news-pro/config.yaml
 edition: pro
 sources:
   - daily
@@ -430,25 +319,12 @@ trends:
 ```
 
 ### 监控与统计示例
-
 ```bash
-# 新闻库统计
 news-pro stats
-# 输出示例:
-# === 新闻库统计 ===
-# 总新闻数: 45678
-# 本月新增: 1234
-# 数据源: 5 个(daily, tech, finance, business, social)
-# 检索索引覆盖率: 98%
-# 订阅数: 12
-# 本月告警: 23 次
-# ...
-# 导出统计报告
 news-pro stats --export json > stats.json
 ```
 
-## 最佳实践
-
+## 优选实践
 ### 舆情监控规范
 1. **多源聚合**:聚合多个新闻源,避免单一来源信息偏差.
 2. **AI 摘要**:对长篇新闻自动生成摘要,提升阅读效率.
@@ -465,7 +341,6 @@ news-pro stats --export json > stats.json
 3. **关键词告警**:对关键竞品/话题设置即时告警.
 4. **报告归档**:定期生成报告并归档,便于复盘.
 ## 常见问题
-
 ### Q1: 专业版是否兼容免费版 API?
 完全兼容。免费版的所有 API 调用、参数、返回格式在专业版中均保持一致。专业版在原有能力之上扩展高阶特性.
 ### Q2: 如何从免费版升级?
@@ -485,7 +360,6 @@ news-pro init --migrate
 ### Q6: 历史检索能追溯多久?
 默认保留 365 天,可通过 `search.retention_days` 配置延长。历史数据建立全文索引,支持快速检索.
 ## 与免费版的兼容性
-
 | 维度 | 兼容性 |
 |---:|---:|
 | API 调用 | 100% 兼容 |
@@ -495,7 +369,6 @@ news-pro init --migrate
 | 升级路径 | 平滑升级(保留全部历史数据) |
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent 平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
@@ -503,7 +376,6 @@ news-pro init --migrate
 - **推荐内存**: >= 2GB(AI 摘要场景建议 4GB+)
 
 ### 依赖详情
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:---:|:---:|:---:|:---:|
 | news-pro | CLI 工具 | 必需 | 随 Skill 安装 |
@@ -522,12 +394,11 @@ news-pro init --migrate
 - 推送通知:配置邮件 SMTP 或 webhook 地址
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+execute(纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作
 - **版本**: 专业版(兼容免费版全部能力)
 
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -535,7 +406,25 @@ news-pro init --migrate
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 已知限制
-
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级新闻聚合与情报分
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

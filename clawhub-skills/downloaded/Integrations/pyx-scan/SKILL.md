@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Pyx Scan
 
 Verify whether an AI agent skill is safe before installing or using it by querying the PYX Scanner API.
@@ -265,3 +264,37 @@ A: 请参考已知限制章节了解具体限制。
 ## 已知限制
 
 - 需要API Key，无Key环境无法使用
+
+---
+## 边界条件与限制
+
+### 输入限制
+
+- **技能名称格式**: 用户输入的技能名称必须符合`owner/name`的格式，例如`anthropic/web-search`。
+- **空白字符**: 输入中不能包含多余的空白字符，否则系统会提示用户重新输入。
+- **非空字段**: `owner`和`name`字段在去除空白后不能为空，否则技能无法进行扫描。
+
+### 性能边界
+
+- **API调用频率**: 由于依赖PYX Scanner API，技能在短时间内频繁调用可能会导致API限流（429状态码），此时技能会返回“Rate limited. Try again shortly.”。
+- **响应时间**: API响应时间可能因网络状况和服务器负载而有所不同，技能会等待API响应，最长可能超过几秒钟。
+
+### 兼容性约束
+
+- **操作系统**: 技能支持Windows、macOS和Linux操作系统。
+- **Agent平台**: 技能支持任何支持SKILL.md的AI Agent，如Claude Code、Cursor、Codex和Gemini CLI等。
+- **LLM API**: 技能依赖于内置的LLM API，因此不支持不提供LLM API的Agent平台。
+
+### 数据安全
+
+- **敏感信息**: 技能不会存储或处理任何敏感信息，所有输入和输出都在内存中处理。
+- **API安全性**: 技能使用HTTPS协议与PYX Scanner API通信，确保数据传输的安全性。
+
+### 错误处理
+
+- **网络错误**: 如果无法连接到PYX Scanner API，技能会返回“Could not connect to PYX Scanner.”。
+- **API错误**: 如果PYX Scanner API返回5xx错误，技能会返回“PYX Scanner is temporarily unavailable.”。
+- **未知错误**: 如果发生未知错误，技能会返回“An unexpected error occurred. Please try again later.”。
+
+---
+

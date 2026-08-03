@@ -51,6 +51,7 @@ def check_slug_name_folder_consistency(skill_md_path: Path, fm: dict) -> dict:
     }
 
 
+# [V131 B4: 与skill_batch_upgrader_v3.check_line_count不同(签名相同但返回结构不同)]
 def check_line_count(skill_md_path: Path) -> dict:
     """检查: SKILL.md行数 <= 500"""
     content = skill_md_path.read_text(encoding='utf-8')
@@ -79,6 +80,7 @@ def check_required_frontmatter(fm: dict) -> dict:
     }
 
 
+# [V131 B4: 与skill_batch_upgrader_v3.check_display_name_length不同(本版接受fm:dict, 对方接受skill_md_path)]
 def check_display_name_length(fm: dict) -> dict:
     """检查: displayName <= 20字符"""
     fields = fm['fields']
@@ -99,6 +101,7 @@ def check_display_name_length(fm: dict) -> dict:
     }
 
 
+# [V131 B4: 与skill_batch_upgrader_v3.check_summary_length不同(本版接受fm:dict, 对方接受skill_md_path)]
 def check_summary_length(fm: dict) -> dict:
     """检查: summary <= 100字符"""
     fields = fm['fields']
@@ -119,8 +122,17 @@ def check_summary_length(fm: dict) -> dict:
     }
 
 
+# [V131 B4: 与skill_batch_upgrader_v3.check_tools_format不同(本版接受fm:dict, 对方接受skill_md_path)]
 def check_tools_format(fm: dict) -> dict:
-    """检查: tools为YAML数组格式"""
+    """检查: tools字段为YAML数组格式(非字符串)
+
+    参数:
+        fm: parse_frontmatter()返回的完整结果dict,需含'fields'键
+
+    返回:
+        {'name': str, 'passed': bool, 'severity': str, 'details': list, 'issue_count': int}
+        severity: low(通过) / medium(字符串格式) / high(字段缺失)
+    """
     fields = fm['fields']
     tools = fields.get('tools')
 
@@ -192,11 +204,25 @@ def check_no_placeholders(content: str, fm_raw: str = '') -> dict:
 
 
 def check_no_exaggeration(content: str) -> dict:
-    """检查: 无夸大词"""
+    """检查: 无夸大词
+
+    V155 R7: 添加标准技术术语白名单
+    "最佳实践"是标准技术文档术语,不应被标记为夸大词。
+    仅当"最佳"出现在非"最佳实践"上下文时才标记为夸大。
+    """
+    # V155 R7: 标准技术术语(包含夸大词但整体非夸大的复合词)
+    _TECHNICAL_EXCLUSIONS = ['最佳实践']
+
     issues = []
     for word in EXAGGERATION_WORDS:
         if word in content:
-            issues.append(f"夸大词: '{word}'")
+            # V155 R7: 检查所有出现位置,排除技术术语中的使用
+            temp = content
+            for exclusion in _TECHNICAL_EXCLUSIONS:
+                if word in exclusion:
+                    temp = temp.replace(exclusion, '')
+            if word in temp:
+                issues.append(f"夸大词: '{word}'")
 
     return {
         'name': '无夸大词',

@@ -35,7 +35,6 @@ pricing_model: "per_use"
 suggested_price: 9.9
 ---
 
-
 # Queue Task
 
 Use this skill for durable long-running queue jobs with resumable batches.
@@ -193,3 +192,27 @@ A: 请参考已知限制章节了解具体限制。
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
 - 性能取决于底层模型能力
+
+---
+## 边界条件与限制
+
+### 输入限制
+- **任务slug长度**: 任务slug的长度应不超过255个字符，以避免文件系统路径长度限制。
+- **批处理大小**: `BATCH_SIZE`参数应设置为一个合理的数值，过大可能导致内存消耗过高，过小则可能影响效率。
+- **锁文件时间戳**: `LOCK_STALE_MINUTES`参数设置过短可能导致任务频繁重启，设置过长则可能影响任务恢复速度。
+
+### 性能边界
+- **并发处理**: Queue Task技能不支持高并发处理，大量任务同时运行可能会导致性能下降。
+- **内存消耗**: 大型批处理任务可能会消耗大量内存，应确保运行环境有足够的内存资源。
+
+### 兼容性约束
+- **Python版本**: 必须使用Python 3.x版本，不支持Python 2.x。
+- **操作系统**: 支持Windows、macOS和Linux操作系统，但不保证所有Linux发行版都能正常工作。
+- **Skill平台**: 必须在支持SKILL.md的AI Agent上运行，如Claude Code、Cursor、Codex或Gemini CLI等。
+
+### 其他限制
+- **外部依赖**: 不支持安装额外的Python包，所有依赖都必须在技能包中提供。
+- **文件系统**: 不支持跨文件系统操作，所有任务文件必须位于同一文件系统中。
+- **网络连接**: 在某些操作中可能需要网络连接，如从外部API获取数据。
+---
+

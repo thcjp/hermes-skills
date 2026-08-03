@@ -19,63 +19,77 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # GitHub Trending Feed
 
-## 工作流程
+## Overview
 
-1. **抓取 Trending 页面**：获取 GitHub 热门仓库列表
-2. **获取仓库详情**：对每个仓库调用 GitHub REST API 获取 description、stars、language
-3. **返回 JSON**：agent 自行格式化为目标平台的消息
+The GitHub Trending Feed skill is a powerful tool for developers and teams looking to stay on top of the latest and most popular projects on GitHub. By integrating this skill into your workflow, you can receive real-time updates on trending repositories, enabling you to make informed decisions and stay ahead of the curve.
 
-## 使用方法
+## Features
 
-### 基础用法
+- **Real-time Trending Repositories**: Fetch the most popular repositories from GitHub as they appear on the Trending page.
+- **Language Filtering**: Filter repositories by programming language to focus on the projects that matter to you.
+- **Structured JSON Output**: Receive the repository details in a structured JSON format, making it easy to integrate with other tools and platforms.
+- **Automated Workflows**: Use the skill in conjunction with automation tools to create custom workflows that trigger when new trending repositories are identified.
+
+## Workflow
+
+1. **Fetch Trending Repositories**: The skill retrieves the list of trending repositories from GitHub.
+2. **Language Filtering (Optional)**: Apply language filters to narrow down the list to repositories in your preferred programming language.
+3. **JSON Output**: The skill returns the filtered list of repositories in a structured JSON format.
+4. **Integration**: Use the JSON output to integrate trending repositories into your application, dashboard, or notification system.
+
+## Usage
+
+### Basic Usage
 
 ```bash
 python3 ~/.skill-platform/workspace/skills/github-trending/scripts/fetch_trending.py
 ```
 
-### 语言过滤
+### Language Filtering
 
 ```bash
 python3 ~/.skill-platform/workspace/skills/github-trending/scripts/fetch_trending.py python
 python3 ~/.skill-platform/workspace/skills/github-trending/scripts/fetch_trending.py javascript
 ```
 
-### 输出格式
+### Output Format
 
-返回 JSON 数组，每个元素：
+The skill returns a JSON array with each element representing a repository:
 
 ```json
-{
-  "full_name": "owner/repo",
-  "description": "仓库描述",
-  "language": "Python",
-  "stars": 12345,
-  "url": "https://github.com/owner/repo"
-}
+[
+  {
+    "full_name": "owner/repo",
+    "description": "Repository description",
+    "language": "Python",
+    "stars": 12345,
+    "url": "https://github.com/owner/repo"
+  }
+  // ... more repositories
+]
 ```
 
-### Agent 使用建议
+## Agent Integration
 
-获取数据后，根据所在平台格式化输出：
+After fetching the data, you can format the output according to your platform:
 
-**飞书**：
+**Feishu (飞书)**:
 
 ```text
 📊 **GitHub Trending · 今日热榜**
 🔥 1. owner/repo - 描述 ⭐ 12345 | Python 🔗 https://github.com/owner/repo
 ```
 
-**Discord/Telegram**：
+**Discord/Telegram**:
 
 ```text
 📊 GitHub Trending 今日热榜
 1. owner/repo - 描述 ⭐ 12345 | Python | https://github.com/owner/repo
 ```
 
-**控制台**：
+**Console**:
 
 ```text
 1. owner/repo (⭐ 12345 | Python)
@@ -83,71 +97,72 @@ python3 ~/.skill-platform/workspace/skills/github-trending/scripts/fetch_trendin
    https://github.com/owner/repo
 ```
 
-## 注意事项
+## Considerations
 
-* GitHub API 有速率限制，高频使用建议配合缓存
-* 脚本自动处理 API 错误，失败时会返回 fallback 数据
-* 默认返回 9 个仓库，语言过滤时返回 10 个
+- **GitHub API Rate Limits**: Be mindful of the GitHub API rate limits to avoid being blocked. Consider implementing caching if you plan to fetch data frequently.
+- **Error Handling**: The skill automatically handles API errors and provides fallback data in case of failures.
+- **Default Output**: By default, the skill returns the top 9 repositories. When using language filtering, it returns the top 10 repositories.
 
-## 依赖说明
+## Dependencies
 
-### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
-- **操作系统**: Windows / macOS / Linux
+### Environment
 
-### 依赖说明
-| 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
-| LLM API | API | 必需 | 由Agent内置LLM提供 |
+- **Agent Platform**: Supports any SKILL.md AI Agent (Claude Code, Cursor, Codex, Gemini CLI, etc.).
+- **Operating System**: Windows, macOS, Linux.
 
-### API Key 配置
-- 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
+### Dependencies
 
-### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
-- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+| Dependency | Type | Required | Source |
+|------------|------|----------|--------|
+| LLM API | API | Required | Provided by the Agent's built-in LLM |
 
-## 核心能力
+### API Key Configuration
 
-- 获取 GitHub Trending 热门仓库列表
-- 当用户要求查看 GitHub 热榜、每日 GitHub trending、推送 GitHub
-  热门项目时使用
-- 支持可选语言过滤，返回结构化 J
-- 触发关键词: 当用户要求查, github, feed, trending, 热门仓库列表, 热榜, 获取, 每日
+- This skill uses Markdown instructions and does not require an additional API key unless specified for external APIs.
 
-## 适用场景
+### Usability Classification
 
-| 场景 | 输入 | 输出 |
-|------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+- **Category**: MD+EXEC (Markdown instructions with some exec command-line capabilities)
+- **Description**: A Markdown-based AI Skill that drives Agent tasks through natural language commands.
 
-**不适用于**：需要人工判断的复杂决策场景
+## Core Capabilities
 
-## 示例
+- Fetch GitHub Trending repositories list
+- View GitHub hotlists, daily trending, and GitHub trending projects
+- Optional language filtering
+- Structured JSON output
 
-### 示例1：基础用法
+## Use Cases
 
-```
-1. **抓取 Trending 页面**：获取 GitHub 热门仓库列表
-2. **获取仓库详情**：对每个仓库调用 GitHub REST API 获取 description、stars、language
-3. **返回 JSON**：agent 自行格式化为目标平台的消息
-```
+| Scenario | Input | Output |
+|----------|-------|--------|
+| Basic Use | User request | Processed result |
 
-## 错误处理
+**Not Suitable for**: Complex decision-making scenarios requiring human judgment.
 
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+## Examples
 
-## 常见问题
+### Example 1: Basic Usage
 
-### Q1: 如何开始使用GitHub Trending Feed？
-A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+1. Fetch the Trending page to get the GitHub trending repository list.
+2. Fetch repository details by calling the GitHub REST API for description, stars, and language.
+3. Return the JSON formatted message to the target platform.
 
-### Q2: 遇到错误怎么办？
-A: 请参考错误处理章节，按照表格中的处理方式操作。
+## Error Handling
 
-### Q3: GitHub Trending Feed有什么限制？
-A: 请参考已知限制章节了解具体限制。
+| Error Scenario | Reason | Resolution |
+|----------------|--------|------------|
+| Configuration Error | Missing or incorrectly formatted parameters | Check the dependency requirements in the documentation. |
+| Runtime Error | Inadequate runtime environment | Confirm that the runtime environment meets the requirements. |
+| Network Error | Connection timeout or unreachability | Check network connection and retry, or consider alternative solutions. |
+
+## Common Questions
+
+### Q1: How do I start using GitHub Trending Feed?
+A: Please refer to the Usage section to ensure your environment meets the requirements outlined in the Dependency section.
+
+### Q2: What should I do if I encounter an error?
+A: Refer to the Error Handling section for steps on how to resolve common issues.
+
+### Q3: What are the limitations of GitHub Trending Feed?
+A: Refer to the Known Limitations section for more information on the skill's constraints.

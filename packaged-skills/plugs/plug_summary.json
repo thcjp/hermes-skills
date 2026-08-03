@@ -1,0 +1,48 @@
+{
+  "created_at": "2026-07-29T07:22:18.973634",
+  "total_plugs": 3,
+  "plugs": [
+    {
+      "slug": "plug-ai-content-creation-workstation",
+      "display_name": "AI内容创作工作站",
+      "tagline": "从选题到爆款，4个AI技能组成的内容创作全链路",
+      "pricing": "月付￥299/月 | 年付￥2999/年 | 买断￥4999",
+      "member_count": 4,
+      "overall_score": 75.9,
+      "members": [
+        "topic-hunter",
+        "title-hook-factory",
+        "viral-prophet",
+        "drama-hit-producer"
+      ]
+    },
+    {
+      "slug": "plug-enterprise-security-suite",
+      "display_name": "企业安全开发套件",
+      "tagline": "认证、调试、反检测、密钥管理，4合1企业级安全工具箱",
+      "pricing": "月付￥499/月 | 年付￥4999/年 | 买断￥7999",
+      "member_count": 4,
+      "overall_score": 68.4,
+      "members": [
+        "auth-security-architect",
+        "debug-doctor",
+        "stealth-browser-assistant",
+        "key-vault-manager"
+      ]
+    },
+    {
+      "slug": "plug-intelligent-data-research",
+      "display_name": "智能数据研究工作站",
+      "tagline": "搜索、聚合、抓取、分析，4合1AI驱动数据研究平台",
+      "pricing": "月付￥399/月 | 年付￥3999/年 | 买断￥5999",
+      "member_count": 4,
+      "overall_score": 68.2,
+      "members": [
+        "internet-search-pro-2",
+        "google-search-4",
+        "free-web-search-4",
+        "web-crawler-engine"
+      ]
+    }
+  ]
+}

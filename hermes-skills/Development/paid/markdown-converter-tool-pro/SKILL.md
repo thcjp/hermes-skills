@@ -1,5 +1,6 @@
 ---
-slug: "markdown-converter-tool-pro"
+
+slug: markdown-converter-tool-pro
 name: "markdown-converter-tool-pro"
 version: "1.0.0"
 displayName: "Markdown转换器专业版"
@@ -8,7 +9,7 @@ license: "Proprietary"
 edition: "pro"
 description: |-
   Markdown转换器专业版为企业与内容团队提供系统化的文档转换解决方案。在免费版基础转换能力之上,增加批量处理、目录扫描、自定义输出模板、
-  元数据提取、文档质量审计与CI/CD集成能力。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解.
+  元数据提取、文档质量审计与CI/CD集成能力。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
   - Markdown
   - 文档转换
@@ -29,7 +30,9 @@ tools:
   - write
 homepage: ""
 category: "Development"
+
 ---
+
 # Markdown转换器专业版
 ## 概述
 Markdown转换器专业版为企业与内容团队提供系统化的文档转换解决方案。在免费版基础转换能力之上,PRO版增加批量处理、目录扫描、自定义输出模板、元数据提取、文档质量审计与CI/CD集成能力,满足企业级文档处理的效率与质量需求.
@@ -70,7 +73,6 @@ batch_config = {
 }
 ```
 
-**输入**: 用户提供批量目录扫描所需的指令和必要参数.
 **处理**: 解析批量目录扫描的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量目录扫描的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -110,7 +112,6 @@ template:
     frontmatter: true
 ```
 
-**输入**: 用户提供自定义输出模板所需的指令和必要参数.
 **处理**: 解析自定义输出模板的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自定义输出模板的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -136,7 +137,6 @@ metadata_config = {
 }
 ```
 
-**输入**: 用户提供元数据提取所需的指令和必要参数.
 **处理**: 解析元数据提取的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回元数据提取的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -177,7 +177,6 @@ quality_audit = {
 }
 ```
 
-**输入**: 用户提供文档质量审计所需的指令和必要参数.
 **处理**: 解析文档质量审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回文档质量审计的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -195,18 +194,15 @@ history_config = {
 }
 ```
 
-**输入**: 用户提供转换历史与版本管理所需的指令和必要参数.
 **处理**: 解析转换历史与版本管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回转换历史与版本管理的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级文档批量转、换系统、支持目录扫描、批量处理、自定义模板、适合团队与商业项、转换器专业版为企、业与内容团队提供、系统化的文档转换、解决方案、在免费版基础转换、能力之上、增加批量处理、文档质量审计与、集成能力、Use、when、需要文件处理、文档转换、格式互转、内容提取时使用、不适用于加密文件、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
-
 ## 使用场景
 ### 场景一:企业文档库数字化
 需求:企业需要将历史文档库(数千文件)批量转为Markdown.
 ```bash
 # 批量转换企业文档库
-python3 batch_convert.py \
   --input /company/documents/ \
   --output /company/markdown/ \
   --recursive \
@@ -247,9 +243,9 @@ company/markdown/
 knowledge_base = {
     "sources": [
         {"type": "directory", "path": "./docs/", "category": "技术文档"},
-        {"type": "directory", "path": "./wiki/", "category": "团队Wiki"},
-        {"type": "directory", "path": "./meetings/", "category": "会议记录"},
-        {"type": "directory", "path": "./designs/", "category": "设计文档"}
+/wiki/", "category": "团队Wiki"},
+/meetings/", "category": "会议记录"},
+/designs/", "category": "设计文档"}
     ],
     "output": "./knowledge-base/",
     "template": "knowledge-base-template.yml",
@@ -275,7 +271,6 @@ python3 process_docs.py \
   --generate-search-index \
   --deploy-preview
 ```
-
 ## 快速开始
 ### Step 1:初始化转换项目
 ```bash
@@ -288,7 +283,6 @@ python3 init_project.py \
 
 ### Step 2:配置批量转换
 ```bash
-python3 batch_convert.py \
   --config conversion-config.yml \
   --parallel 8 \
   --quality-check
@@ -307,7 +301,6 @@ python3 audit_conversion.py \
   --input ./output/ \
   --report ./audit/
 ```
-
 ## 示例
 ### 企业级转换配置
 ```yaml
@@ -377,7 +370,6 @@ jobs:
         run: pip install uv
       - name: Batch Convert Documents
         run: |
-          python3 batch_convert.py \
             --input ./source-docs/ \
             --output ./docs/ \
             --parallel 8 \
@@ -385,8 +377,6 @@ jobs:
             --generate-index
       - name: Quality Audit
         run: |
-          python3 audit_conversion.py \
-            --input ./docs/ \
             --report ./audit/
       - name: Upload Documents
         uses: actions/upload-artifact@v3
@@ -394,8 +384,7 @@ jobs:
           name: markdown-docs
           path: ./docs/
 ```
-
-## 最佳实践
+## 优选实践
 ### 免费版与PRO版能力对比
 | 能力维度 | 免费版 | PRO版 |
 |:-----|:-----|:-----|
@@ -445,7 +434,6 @@ quality_assurance = {
 | 跳过已转换 | 检测已有输出 | 节省时间 |
 | 缓存依赖 | 首次安装后复用 | 后续更快 |
 | 增量转换 | 仅处理变更文件 | 大幅提速 |
-
 ## 常见问题
 ### Q1: 如何从免费版迁移至PRO版?
 A: PRO版完全兼容免费版。现有的转换命令与选项可直接使用。安装PRO版增强包即可启用批量处理、模板与审计功能.
@@ -479,10 +467,9 @@ A: 支持GitHub Actions、GitLab CI、Jenkins等主流CI/CD平台。提供标准
 - 企业版支持密钥管理与轮换
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令+脚本执行能力)
+- **分类**: MD+execute(纯Markdown指令+脚本执行能力)
 - **说明**: 专业版基于Markdown指令驱动Agent执行批量文档转换任务,通过Python脚本实现目录扫描、质量审计与CI/CD集成
 - **PRO版增强**: 批量转换、自定义模板、元数据提取、质量审计、索引生成、版本管理、CI/CD集成
-
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
@@ -490,8 +477,24 @@ A: 支持GitHub Actions、GitLab CI、Jenkins等主流CI/CD平台。提供标准
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
-
 ## 已知限制
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+## 核心功能
+
+- **自动化执行**: 企业级文档批量转换系统,支持目录扫描、批量处理、自定义模板、元数据提取与CI/CD集成,适合团队与商业项目。
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

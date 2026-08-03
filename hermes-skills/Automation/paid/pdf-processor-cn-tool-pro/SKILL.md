@@ -1,4 +1,5 @@
 ---
+
 slug: pdf-processor-cn-tool-pro
 name: pdf-processor-cn-tool-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: 中文PDF处理器（专业版）
 summary: "针对中文PDF优化的处理工具，支持中文OCR、版面分析、表格提取与智能分块.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
-description: '中文PDF处理器 - （专业版）
-
+description: "中文PDF处理器 - （专业版）。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。"
   核心能力: 中文PDF, PDF解析, 中文OCR, 表格提取, 版面分析, 智能分块, 双栏识别
 
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
@@ -40,7 +40,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 中文PDF处理器（专业版）
 
 ## 概述
@@ -57,7 +59,6 @@ category: "Automation"
 ### 批量处理与并行执行
 批量处理与并行执行
 
-**输入**: 用户提供批量处理与并行执行所需的指令和必要参数.
 **处理**: 解析批量处理与并行执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量处理与并行执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -65,7 +66,6 @@ category: "Automation"
 ### 企业级安全与审计
 企业级安全与审计
 
-**输入**: 用户提供企业级安全与审计所需的指令和必要参数.
 **处理**: 解析企业级安全与审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回企业级安全与审计的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -73,7 +73,6 @@ category: "Automation"
 ### 高级配置与自定义策略
 高级配置与自定义策略
 
-**输入**: 用户提供高级配置与自定义策略所需的指令和必要参数.
 **处理**: 解析高级配置与自定义策略的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级配置与自定义策略的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -81,7 +80,6 @@ category: "Automation"
 ### 免费版完全兼容
 免费版完全兼容，无缝升级
 
-**输入**: 用户提供免费版完全兼容所需的指令和必要参数.
 **处理**: 解析免费版完全兼容的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版完全兼容的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -89,12 +87,10 @@ category: "Automation"
 ### 优先技术支持与问题响应
 优先技术支持与问题响应
 
-**输入**: 用户提供优先技术支持与问题响应所需的指令和必要参数.
 **处理**: 解析优先技术支持与问题响应的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回优先技术支持与问题响应的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**输入**: 用户提供专业版增强功能所需的指令和必要参数.
 **处理**: 解析专业版增强功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回专业版增强功能的响应数据,包含状态码、结果和日志.
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
@@ -188,7 +184,7 @@ class CNPDFProcessor:
     def extract_text(self, pdf_path: str) -> str:
         """提取中文文本（PRO 专属：版面保持）"""
         text_parts = []
-        with pdfplumber.open(pdf_path) as pdf:
+open(pdf_path) as pdf:
             for page in pdf.pages:
                 text = page.extract_text() or ""
                 text = self._fix_cn_text(text)
@@ -200,8 +196,7 @@ class CNPDFProcessor:
         """提取中文表格（PRO 专属：自动导出）"""
         import pandas as pd
         all_tables = []
-        with pdfplumber.open(pdf_path) as pdf:
-            for i, page in enumerate(pdf.pages):
+open(pdf_path) as pdf:
                 tables = page.extract_tables()
                 for j, table in enumerate(tables):
                     if table and len(table) > 1:
@@ -218,7 +213,7 @@ class CNPDFProcessor:
             output = Path(pdf_path).stem + "_tables.xlsx"
             with pd.ExcelWriter(output) as writer:
                 for idx, t in enumerate(all_tables):
-                    df = pd.DataFrame(t["data"])
+DataFrame(t["data"])
                     df.to_excel(writer, sheet_name=f"表{idx+1}", index=False)
         return all_tables
 # ...
@@ -264,7 +259,7 @@ class CNPDFProcessor:
             result["file"] = pdf_path
             results.append(result)
             # 导出文本
-            text = self.extract_text(pdf_path)
+extract_text(pdf_path)
             output_file = Path(output_dir) / (Path(pdf_path).stem + ".txt")
             output_file.write_text(text, encoding="utf-8")
         return results
@@ -272,7 +267,7 @@ class CNPDFProcessor:
     def _process_page(self, page, page_idx, reader):
         text = page.extract_text() or ""
         text = self._fix_cn_text(text)
-        tables = page.extract_tables() or []
+extract_tables() or []
         layout = self._detect_layout(page)
         return CNPDFPage(
             page_num=page_idx + 1,
@@ -388,9 +383,9 @@ cn_pdf:
 - 多租户隔离支持
 - 合规性检查内置
 
-## 最佳实践
+## 优选实践
 
-### 企业级最佳实践
+### 企业级优选实践
 
 1. **明确需求**：对于大批量任务，先规划分批策略与并行度
 2. **检查输入**：批量处理前先验证所有输入文件的有效性
@@ -479,3 +474,22 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 针对中文PDF优化的处理工具，支持中文OCR、版面分析、表格提取与智能分块.,支持多种使用场景和自动化处理
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

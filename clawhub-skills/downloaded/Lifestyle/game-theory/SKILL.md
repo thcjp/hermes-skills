@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Game Theory for Crypto
 
 Strategic analysis framework for understanding and designing incentive systems in web3.

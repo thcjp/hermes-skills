@@ -33,7 +33,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Free Ride - Unlimited free AI
 
 ## What This Skill Does

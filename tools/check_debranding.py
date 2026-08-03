@@ -3,22 +3,27 @@
 检查SKILL.md中是否包含禁止的标识词
 """
 
+# ============================================================
+# [状态标注 - 2026-08-02] 待迁移 (PENDING_MIGRATION)
+# ------------------------------------------------------------
+# 本模块当前被 quality_gate.py 导入 (line 126):
+#     from check_debranding import check_skill_md as check_debranding_only
+# 切勿删除。逻辑计划迁移至 skill_core/checks.py 统一管理,
+# 迁移完成前 quality_gate.py 仍依赖本文件的 check_skill_md 函数。
+# ============================================================
+
 # === Phase 1: 统一配置导入 ===
 import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
-from project_config import DB_PATH
-from project_config import DIFFERENTIATED_DIR
-from project_config import DATA_DIR
+from project_config import DIFFERENTIATED_DIR, DATA_DIR # V123 W2: 合并重复import
 # === End Phase 1 ===
 
 
 import re
 import sys
 from pathlib import Path
-import sqlite3
-from datetime import datetime
-import db
+from skill_core import db as db_module  # V116 W1: 统一db入口(替代import db)
 
 # 禁止的标识模式
 # 注意：不使用\b，因为Python 3的\w匹配Unicode含中文，导致\b在中英文边界处失效
@@ -158,6 +163,7 @@ def check_all_skills(directory, exclude_dirs=None):
     return results
 
 
+# [V131 B5: 与clean_naming/market_monitor.generate_report不同(各模块报告格式不同)]
 def generate_report(results, output_file=None):
     """生成报告"""
     total = len(results)
@@ -200,8 +206,7 @@ def generate_report(results, output_file=None):
 
 def update_database_with_check_results(results):
     """将检测结果更新到数据库 (R7-1收口: 使用db.record_operation替代裸SQL)"""
-    conn = sqlite3.connect(DB_PATH)
-    conn.execute("PRAGMA foreign_keys = ON")
+    conn = db_module.get_db()
     c = conn.cursor()
 
     debranding_pass_count = 0
@@ -225,9 +230,9 @@ def update_database_with_check_results(results):
         else:
             debranding_fail_count += 1
 
-        # R7-1收口: 使用db.record_operation替代裸INSERT INTO operations
+        # R7-1收口: 使用db_module.record_operation替代裸INSERT INTO operations
         conn.close()
-        db.record_operation(
+        db_module.record_operation(
             skill_id=skill_id,
             operation_type='debranding_check',
             details=f'Found {len(issues)} issues',
@@ -235,8 +240,7 @@ def update_database_with_check_results(results):
             operator='script',
         )
         # 重新打开连接用于下一次循环的查询
-        conn = sqlite3.connect(DB_PATH)
-        conn.execute("PRAGMA foreign_keys = ON")
+        conn = db_module.get_db()
         c = conn.cursor()
 
     conn.close()

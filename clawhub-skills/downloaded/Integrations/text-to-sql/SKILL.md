@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Text To Sql
 
 Use when (1) user describes what data they want in plain English and asks for the corresponding SQL query. (2) user says "write SQL for this", "convert to query", "how do I select", or "give me the SQL". (3) user provides a database schema or table descriptions and asks a question answerable by SQL.

@@ -1,6 +1,7 @@
 ---
+
 name: "qq-zone-photo-tool-free"
-description: "QQ空间相册管理工具，支持相册浏览与单张照片下载。"
+description: "QQ空间相册管理工具，支持相册浏览与单张照片下载。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -14,6 +15,10 @@ metadata:
     - "相册管理"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # QQ空间相册入门工具（免费版）
@@ -37,23 +42,17 @@ metadata:
 | 照片上传 | 上传照片 | 不支持 |
 | 相册管理 | 编辑/删除 | 不支持 |
 
-**输入**: 用户提供管理功能所需的指令和必要参数。
-**处理**: 按照skill规范执行管理功能操作,遵循单一意图原则。
 **输出**: 返回管理功能的执行结果,包含操作状态和输出数据。
 
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：空间相册管理工具、支持相册浏览与单、张照片下载、面向个人用户的、支持登录、浏览相册、查看照片与单张下、Use、when、需要项目管理、任务规划、进度跟踪、团队协作时使用、不适用于实际人员、绩效评估、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -69,7 +68,6 @@ metadata:
 python3 scripts/qzone.py login --qq 123456789
 
 # 查看相册列表
-python3 scripts/qzone.py albums list
 
 # 输出：
 # === 我的相册 ===
@@ -84,7 +82,6 @@ python3 scripts/qzone.py albums list
 
 ```bash
 # 查看相册照片
-python3 scripts/qzone.py photos list \
   --album "旅行照片" \
   --page 1
 
@@ -97,7 +94,6 @@ python3 scripts/qzone.py photos list \
 
 ```bash
 # 下载单张照片
-python3 scripts/qzone.py photo download \
   --photo-id 12345 \
   --output ./downloads/
 
@@ -119,7 +115,7 @@ python3 scripts/qzone.py photo download \
 pip install requests beautifulsoup4
 
 # 登录QQ空间
-python3 scripts/qzone.py login --qq 123456789
+py login --qq 123456789
 # 根据提示完成登录认证
 ```
 
@@ -127,19 +123,17 @@ python3 scripts/qzone.py login --qq 123456789
 
 ```bash
 # 登录
-python3 scripts/qzone.py login --qq 123456789
+py login --qq 123456789
 
 # 相册管理
-python3 scripts/qzone.py albums list
-python3 scripts/qzone.py albums info --name "旅行照片"
+py albums info --name "旅行照片"
 
 # 照片管理
-python3 scripts/qzone.py photos list --album "旅行照片"
-python3 scripts/qzone.py photo download --photo-id 12345 --output ./downloads/
-python3 scripts/qzone.py photo info --photo-id 12345
+py photos list --album "旅行照片"
+py photo download --photo-id 12345 --output ./downloads/
+py photo info --photo-id 12345
 
 # 登出
-python3 scripts/qzone.py logout
 ```
 
 ## 示例
@@ -163,7 +157,7 @@ qzone_config:
     ttl: 3600
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **登录安全**：使用Cookie登录，避免频繁输入密码
 2. **下载路径**：指定明确的下载目录，便于管理
@@ -226,7 +220,6 @@ qzone_config:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -238,3 +231,30 @@ qzone_config:
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

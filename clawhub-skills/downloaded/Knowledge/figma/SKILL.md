@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Figma
 
 Professional-grade Figma integration for design system analysis, asset export, and comprehensive design auditing.

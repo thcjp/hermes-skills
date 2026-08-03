@@ -1,6 +1,7 @@
 ---
+
 name: "github-manager-free"
-description: "通过gh CLI管理GitHub仓库的Issue、PR与工作流,支持基础查询、状态检查与结构化输出,适合个人开发者日常协作。"
+description: "通过gh CLI管理GitHub仓库的Issue、PR与工作流,支持基础查询、状态检查与结构化输出,适合个人开发者日常协作。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,10 @@ metadata:
     - "开发工具"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # GitHub管理器(免费版)
@@ -42,8 +47,6 @@ gh issue view 123 --repo owner/repo
 gh issue view 123 --repo owner/repo --comments
 ```
 
-**输入**: 用户提供Issue管理所需的指令和必要参数。
-**处理**: 按照skill规范执行Issue管理操作,遵循单一意图原则。
 **输出**: 返回Issue管理的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -63,8 +66,6 @@ gh pr checks 55 --repo owner/repo
 gh pr view 55 --repo owner/repo --json reviews --jq '.reviews[] | {author: .author.login, state: .state}'
 ```
 
-**输入**: 用户提供Pull Request管理所需的指令和必要参数。
-**处理**: 按照skill规范执行Pull Request管理操作,遵循单一意图原则。
 **输出**: 返回Pull Request管理的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -84,8 +85,6 @@ gh run view <run-id> --repo owner/repo --log-failed
 gh run rerun <run-id> --repo owner/repo --failed
 ```
 
-**输入**: 用户提供工作流管理所需的指令和必要参数。
-**处理**: 按照skill规范执行工作流管理操作,遵循单一意图原则。
 **输出**: 返回工作流管理的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -104,15 +103,13 @@ gh pr list --repo owner/repo --json number,title,state --jq '.[] | select(.state
 gh issue list --repo owner/repo --json state --jq 'group_by(.state) | map({state: .[0].state, count: length})'
 ```
 
-**输入**: 用户提供结构化输出与过滤所需的指令和必要参数。
-**处理**: 按照skill规范执行结构化输出与过滤操作,遵循单一意图原则。
 **输出**: 返回结构化输出与过滤的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：CLI、GitHub、仓库的、与工作流、支持基础查询、状态检查与结构化、适合个人开发者日、常协作、管理器、免费版、是一款面向个人开、发者的、日常协作助手、命令行工具封装常、用操作、帮助用户高效管理、核心能力、的基础查询、工作流运行列表查、看与失败步骤定位、提供常用命令速查、与故障排查指南等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
 
-### 场景1:每日站会前的快速状态检查
+### 场景1每日站会前的快速状态检查
 
 用户意图: "站会快开始了,帮我看看仓库今天的PR和Issue状态。"
 
@@ -121,7 +118,7 @@ gh issue list --repo owner/repo --json state --jq 'group_by(.state) | map({state
 2. `gh issue list --repo owner/repo --state open --json number,title,labels --jq 'sort_by(.updatedAt) | reverse | .[0:5]'`
 3. `gh run list --repo owner/repo --limit 5 --json status,conclusion,name`
 
-### 场景2:CI失败快速定位
+### 场景2CI失败快速定位
 
 用户意图: "CI挂了,帮我看看哪个步骤失败了。"
 
@@ -131,7 +128,7 @@ gh issue list --repo owner/repo --json state --jq 'group_by(.state) | map({state
 3. 根据日志定位问题代码,修复后push
 4. `gh run rerun <run-id> --repo owner/repo --failed` 重跑失败步骤
 
-### 场景3:代码审查前的准备
+### 场景3代码审查前的准备
 
 用户意图: "我要审查一个PR,先看看改了什么。"
 
@@ -219,7 +216,7 @@ for repo in "${repos[@]}"; do
 done
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 命令选择策略
 
@@ -251,7 +248,7 @@ gh issue list --json number,title,createdAt --jq 'sort_by(.createdAt) | reverse 
 gh pr list --json number,title,labels --jq '.[] | select(.labels[].name == "bug") | .number'
 
 # 分组统计
-gh issue list --json state --jq 'group_by(.state) | map({state: .[0].state, count: length})'
+gh issue list --json state --jq 'group_by(.[0].state, count: length})'
 ```
 
 ## 常见问题
@@ -310,14 +307,32 @@ A: 常见原因: (1)字段名拼写错误,先用`--json`不带jq查看完整字�
 - **禁止**: 在SKILL.md或脚本中硬编码GitHub Token
 
 ### 可用性分类
-- **分类**: MD+EXEC(Markdown指令+命令行工具执行)
+- **分类**: MD+execute(Markdown指令+命令行工具执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行gh命令
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

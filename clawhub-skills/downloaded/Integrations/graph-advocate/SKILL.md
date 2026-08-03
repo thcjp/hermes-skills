@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Graph Advocate
 
 Ask any blockchain data question in plain English. Get back **live data** — not just a recommendation.

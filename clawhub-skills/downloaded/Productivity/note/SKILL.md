@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Note
 
 Knowledge capture system. Remember everything, find anything.

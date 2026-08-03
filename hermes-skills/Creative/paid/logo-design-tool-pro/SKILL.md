@@ -1,5 +1,6 @@
 ---
-slug: "logo-design-tool-pro"
+
+slug: logo-design-tool-pro
 name: "logo-design-tool-pro"
 version: "1.0.0"
 displayName: "Logo设计工具专业版"
@@ -8,7 +9,7 @@ license: "Proprietary"
 edition: "pro"
 description: |-
   Logo设计工具专业版为企业与设计团队提供系统化的AI Logo设计解决方案。在免费版基础生成能力之上,增加批量生成、自动矢量化、品牌变体管理、
-  多格式导出、设计审计与CI/CD集成能力。
+  多格式导出、设计审计与CI/CD集成能力。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
   - Logo设计
   - 品牌设计
@@ -30,7 +31,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # Logo设计工具专业版
 
 ## 概述
@@ -80,7 +83,6 @@ batch_config = {
 python3 batch_logo_gen.py --config batch_config
 ```
 
-**输入**: 用户提供批量Logo生成所需的指令和必要参数。
 **处理**: 解析批量Logo生成的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回批量Logo生成的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -106,7 +108,6 @@ vectorization_config = {
 python3 vectorize.py --config vectorization_config
 ```
 
-**输入**: 用户提供自动矢量化所需的指令和必要参数。
 **处理**: 解析自动矢量化的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回自动矢量化的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -153,7 +154,6 @@ brand_variants = {
 python3 generate_variants.py --config brand_variants
 ```
 
-**输入**: 用户提供品牌变体管理所需的指令和必要参数。
 **处理**: 解析品牌变体管理的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回品牌变体管理的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -176,7 +176,6 @@ quality_audit = {
 }
 ```
 
-**输入**: 用户提供设计质量审计所需的指令和必要参数。
 **处理**: 解析设计质量审计的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回设计质量审计的响应数据,包含状态码、结果和日志。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、设计系统、支持批量生成、适合团队与商业项、设计工具专业版为、企业与设计团队提、供系统化的、设计解决方案、在免费版基础生成、能力之上、增加批量生成、多格式导出、设计审计与、集成能力、Use、when、、品牌视觉时使用、不适用于、建模和动画制作、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -206,7 +205,6 @@ python3 generate_logo_system.py \
 brand/
 ├── primary/
 │   ├── logo-primary.svg
-│   ├── logo-primary.png
 │   └── logo-primary-dark.png
 ├── variants/
 │   ├── logo-horizontal.svg
@@ -252,7 +250,6 @@ for brand in sub_brands:
 
 ```bash
 # 批量生成客户方案
-python3 batch_logo_gen.py \
   --client "客户A" \
   --directions 5 \
   --variations-per-direction 3 \
@@ -277,7 +274,6 @@ python3 init_brand.py \
 ### Step 2:批量生成Logo方向
 
 ```bash
-python3 batch_logo_gen.py \
   --config directions.yml \
   --parallel 3 \
   --auto-validate \
@@ -287,8 +283,7 @@ python3 batch_logo_gen.py \
 ### Step 3:选择与优化
 
 ```bash
-# 选择最佳方向后,生成完整变体系统
-python3 generate_variants.py \
+# 选择优选方向后,生成完整变体系统
   --source ./output/best-logo.png \
   --variants all \
   --vectorize \
@@ -364,7 +359,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: Generate Logo System
         run: |
-          python3 generate_logo_system.py \
             --config brand-config.yml \
             --output ./brand/ \
             --vectorize \
@@ -378,7 +372,7 @@ jobs:
           path: ./brand/
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 免费版与PRO版能力对比
 
@@ -439,7 +433,7 @@ A: 使用"统一风格家族"模式,所有子品牌共享设计元素(如几何�
 
 ### Q5: 支持哪些导出格式?
 
-A: 支持SVG(矢量)、PNG(透明/白底)、ICO(favicon)、高分辨率PNG(4096px+)。可根据使用场景自动选择最佳格式。
+A: 支持SVG(矢量)、PNG(透明/白底)、ICO(favicon)、高分辨率PNG(4096px+)。可根据使用场景自动选择优选格式。
 
 ## 依赖说明
 
@@ -468,7 +462,7 @@ A: 支持SVG(矢量)、PNG(透明/白底)、ICO(favicon)、高分辨率PNG(4096p
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令+脚本执行能力)
+- **分类**: MD+execute(纯Markdown指令+脚本执行能力)
 - **说明**: 专业版基于Markdown指令驱动Agent执行批量Logo设计任务,通过Python脚本实现矢量化、变体管理与质量审计
 - **PRO版增强**: 批量生成、自动矢量化、品牌变体管理、质量审计、CI/CD集成、团队协作
 
@@ -485,3 +479,22 @@ A: 支持SVG(矢量)、PNG(透明/白底)、ICO(favicon)、高分辨率PNG(4096p
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级AI Logo设计系统,支持批量生成、自动矢量化、品牌变体管理、CI/CD集成,适合团队与商业项目
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

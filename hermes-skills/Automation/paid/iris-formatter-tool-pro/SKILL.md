@@ -1,5 +1,6 @@
 ---
-slug: "iris-formatter-tool-pro"
+
+slug: iris-formatter-tool-pro
 name: "iris-formatter-tool-pro"
 version: "1.0.0"
 displayName: "IRIS代码格式化专业版"
@@ -42,7 +43,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+
 ---
+
 # IRIS 代码格式化工具（专业版）
 ## 概述
 本工具面向企业级 IRIS 开发团队，提供 ObjectScript 代码的批量审查与治理方案。在免费版基础规范检查能力之上，专业版新增批量多文件审查、自定义规范规则配置、结构化审查报告导出、SQL 格式与性能检查、陷阱深度分析与安全审计、代码复杂度与重复度分析等能力。通过可配置的规则引擎与自动化报告，帮助团队建立统一的代码质量标准.
@@ -60,21 +63,21 @@ category: "Automation"
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -84,57 +87,40 @@ category: "Automation"
 团队需要对整个模块的代码进行批量审查.
 ```bash
 #!/bin/bash
-# （请参考skill目录中的脚本文件） - 批量审查 IRIS 代码
 MODULE_DIR=$1
 REPORT_FILE="iris-review-report-$(date +%Y%m%d).md"
-# ...
 echo "# IRIS 代码审查报告" > "$REPORT_FILE"
 echo "**审查时间**: $(date)" >> "$REPORT_FILE"
 echo "**审查范围**: $MODULE_DIR" >> "$REPORT_FILE"
 echo "" >> "$REPORT_FILE"
-# ...
-# 统计文件数
 FILE_COUNT=$(find "$MODULE_DIR" -name "*.cls" -o -name "*.mac" -o -name "*.inc" | wc -l)
 echo "**文件数量**: $FILE_COUNT" >> "$REPORT_FILE"
 echo "" >> "$REPORT_FILE"
-# ...
 echo "=== 开始批量审查 $FILE_COUNT 个文件 ==="
-# ...
-# 批量审查
 TOTAL_ISSUES=0
 CRITICAL_COUNT=0
 WARNING_COUNT=0
-# ...
 find "$MODULE_DIR" -name "*.cls" -o -name "*.mac" | while read file; do
   echo "审查: $file"
-# ...
-  # 检查命名规范
   ISSUES=$(grep -n "yonghu\|dingdan\|zhifu" "$file" | wc -l)
   if [ "$ISSUES" -gt 0 ]; then
     echo "- [严重] $file: 发现拼音命名" >> "$REPORT_FILE"
   fi
-# ...
-  # 检查锁规范
   LOCK_ISSUES=$(grep -n "l +\^" "$file" | grep -v ":3\|:5\|:10" | wc -l)
   if [ "$LOCK_ISSUES" -gt 0 ]; then
     echo "- [警告] $file: 锁未设置超时" >> "$REPORT_FILE"
   fi
-# ...
-  # 检查事务规范
   TS_COUNT=$(grep -c "ts\b" "$file")
   TC_COUNT=$(grep -c "tc\b" "$file")
   TRO_COUNT=$(grep -c "tro\b" "$file")
   if [ "$TS_COUNT" -ne "$((TC_COUNT + TRO_COUNT))" ]; then
     echo "- [严重] $file: 事务不闭合 (ts:$TS_COUNT tc:$TC_COUNT tro:$TRO_COUNT)" >> "$REPORT_FILE"
   fi
-# ...
-  # 检查后置表达式格式
   POSTFIX_ISSUES=$(grep -n ") && (\|) || (" "$file" | wc -l)
   if [ "$POSTFIX_ISSUES" -gt 0 ]; then
     echo "- [严重] $file: 后置表达式格式错误（括号与&&间有空格）" >> "$REPORT_FILE"
   fi
 done
-# ...
 echo "" >> "$REPORT_FILE"
 echo "## 审查完成" >> "$REPORT_FILE"
 echo "详细报告: $REPORT_FILE"
@@ -143,9 +129,7 @@ echo "详细报告: $REPORT_FILE"
 ### 场景二：自定义规范规则配置
 团队需要根据项目特点自定义规范规则.
 ```yaml
-# .iris-rules.yml - 自定义规范规则配置
 rules:
-  # 命名规范
   naming:
     variable_case: lowerCamelCase
     method_case: UpperCamelCase
@@ -154,22 +138,17 @@ rules:
     max_method_length: 30
     forbidden_prefixes: ["is", "arr", "str"]
     required_boolean_suffix: "Flag"
-# ...
-  # 锁规范
   lock:
     require_timeout: true
     default_timeout: 3
     require_paired: true
     forbid_table_global_lock: true
     require_subscript: true
-# ...
-  # 事务规范
   transaction:
     require_closure: true
     forbid_cross_method: true
     require_blank_line: true
     max_distance: 20  # ts/tc/tro 之间最大行数
-  # 格式规范
   format:
     indent: "tab"
     space_around_operator: true
@@ -178,23 +157,17 @@ rules:
     full_spell_commands: ["for", "while", "if", "elseif", "else", "continue"]
     max_line_length: 120
     max_method_lines: 50
-# ...
-  # SQL 规范
   sql:
     fields_per_line: 5
     indent_after_newline: 3
     comma_at_end: true
     command_case: "lower"
-# ...
-  # 陷阱规范
   trap:
     require_error_handler: true
     default_trap_name: "Error"
     require_zt_reset: true
     require_tl_check: true
     require_lock_release: true
-# ...
-# 严重程度映射
 severity:
   naming_pinyin: critical
   naming_case: warning
@@ -210,20 +183,14 @@ severity:
 团队需要分析代码的复杂度和重复度，识别需要重构的代码.
 ```bash
 #!/bin/bash
-# （请参考skill目录中的脚本文件） - 代码复杂度分析
 TARGET=$1
-# ...
 echo "=== IRIS 代码复杂度分析 ==="
 echo "目标: $TARGET"
 echo ""
-# ...
-# 方法行数统计
 echo "## 方法行数统计（超过 50 行需重构）"
 echo "| 文件 | 方法 | 行数 | 状态 |"
 echo "| --- | --- | --- | --- |"
-# ...
 find "$TARGET" -name "*.cls" | while read file; do
-  # 提取方法及其行数
   awk '
     /ClassMethod|Method/ {
       method_name = $0
@@ -247,11 +214,9 @@ find "$TARGET" -name "*.cls" | while read file; do
     }
   ' "$file"
 done
-# ...
 echo ""
 echo "## 重复代码检测"
-# 查找重复的代码块（5 行以上相同）
-find "$TARGET" -name "*.cls" -exec cat {} \; | \
+cls" -exec cat {} \; | \
   awk 'BEGIN{block=""} {
     block = block $0 "\n"
     if (NF == 0) {
@@ -269,7 +234,6 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
 3. 执行所需能力对应的命令
 4. 参考## 错误处理章节处理异常
 5. 查看## FAQ解答常见疑问
-
 ### HTML 报告模板
 ```html
 <!-- 生成结构化 HTML 审查报告 -->
@@ -294,22 +258,21 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
     <table>
         <tr>
             <th>审查时间</th>
-            <td>{{date}}</td>
+            <td></td>
         </tr>
         <tr>
             <th>审查范围</th>
-            <td>{{scope}}</td>
+            <td></td>
         </tr>
         <tr>
             <th>文件数量</th>
-            <td>{{file_count}}</td>
+            <td></td>
         </tr>
         <tr>
             <th>问题总数</th>
-            <td>{{total_issues}}</td>
+            <td></td>
         </tr>
     </table>
-# ...
     <h2>问题详情</h2>
     <table>
         <tr>
@@ -322,12 +285,12 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
         </tr>
         {{#issues}}
         <tr>
-            <td>{{index}}</td>
-            <td class="{{severity}}">{{severity_label}}</td>
-            <td>{{file}}</td>
-            <td>{{line}}</td>
-            <td>{{description}}</td>
-            <td>{{rule}}</td>
+            <td></td>
+            <td class=""></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
         </tr>
         {{/issues}}
     </table>
@@ -343,7 +306,6 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
 // 3. 逗号在行末
 // 4. 每行不超过 120 字符
 // 5. SQL 命令统一小写
-# ...
 // 正确格式
 &sql(
    select id, name, age, email, phone
@@ -351,7 +313,6 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
          from user_table
          where id = :userId
 )
-# ...
 // 错误格式
 &sql(SELECT ID,NAME,AGE,EMAIL,PHONE,ADDRESS,STATUS FROM USER_TABLE WHERE ID=:userId)
 // 问题：字段过多、命令大写、单行过长
@@ -361,37 +322,24 @@ find "$TARGET" -name "*.cls" -exec cat {} \; | \
 ## 示例
 ### 审查规则配置文件
 ```yaml
-# team-iris-standards.yml
 version: "2.0"
 team: "后端开发组"
 updated: "2026-07-18"
-# ...
-# 继承基础规则
 extends: "default"
-# ...
-# 团队自定义覆盖
 overrides:
   naming:
-    # 团队特有前缀要求
     service_prefix: "Svc"
     controller_prefix: "Ctrl"
     dao_prefix: "DAO"
-# ...
   format:
-    # 团队约定的方法最大行数
     max_method_lines: 40  # 比默认 50 更严格
   sql:
-    # 禁止在循环内写 SQL
     forbid_sql_in_loop: true
-    # 必须使用参数化查询
     require_parameterized: true
-# ...
-# 排除规则
 excludes:
   - "**/test/**"
   - "**/legacy/**"
   - "**/*.inc"  # include 文件单独审查
-# 报告配置
 report:
   format: ["markdown", "html"]
   output_dir: "reports/"
@@ -399,7 +347,7 @@ report:
   max_suggestions: 5
 ```
 
-## 最佳实践
+## 优选实践
 1. **批量审查定期执行**：每周对整个模块执行批量审查
 
 2. **自定义规则版本管理**：规则配置纳入 Git 版本控制
@@ -429,8 +377,6 @@ report:
 
 ### Q2：自定义规则和内置规则冲突怎么办？
 ```yaml
-# 自定义规则会覆盖同名的内置规则
-# 使用 extends 继承基础规则后，用 overrides 覆盖
 extends: "default"
 overrides:
   format:
@@ -439,7 +385,6 @@ overrides:
 
 ### Q3：如何排除特定文件不被审查？
 ```yaml
-# 在规则配置中设置排除
 excludes:
   - "**/legacy/**"      # 排除 legacy 目录
   - "**/*_old.cls"      # 排除旧文件
@@ -448,7 +393,6 @@ excludes:
 
 ### Q4：如何将审查集成到 CI/CD？
 ```yaml
-# .gitlab-ci.yml
 iris-code-review:
   stage: quality
   script:
@@ -467,7 +411,6 @@ iris-code-review:
 
 ### Q5：如何统计代码质量趋势？
 ```bash
-# 从历史报告中提取统计数据
 for report in reports/iris-review-report-*.md; do
   date=$(echo $report | grep -o '[0-9]*' | head -1)
   critical=$(grep -c "\[严重\]" "$report")
@@ -478,7 +421,6 @@ done | sort
 
 ### Q6：如何处理跨文件的代码重复？
 ```bash
-# 检测跨文件重复代码
 find src/ -name "*.cls" -exec cat {} \; | \
   grep -v "^\s*//\|^\s*#" | \
   awk 'length > 20' | \
@@ -514,7 +456,6 @@ find src/ -name "*.cls" -exec cat {} \; | \
 - **说明**: 通过自然语言指令驱动 Agent 执行批量代码审查与格式化，专业版功能依赖命令行脚本和 CI/CD 平台
 
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -542,3 +483,14 @@ find src/ -name "*.cls" -exec cat {} \; | \
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

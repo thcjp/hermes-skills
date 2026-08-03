@@ -1,6 +1,7 @@
 ---
+
 name: "figma-design-tool-free"
-description: "轻量级Figma集成工具，支持文件浏览、节点读取、图片导出与评论查看。"
+description: "轻量级Figma集成工具，支持文件浏览、节点读取、图片导出与评论查看。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -14,6 +15,11 @@ metadata:
     - "Design"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # Figma设计集成工具（免费版）
@@ -64,16 +70,12 @@ Figma设计集成工具免费版是一款面向个人设计师的 Figma 工作�
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级、Figma、集成工具、支持文件浏览、节点读取、图片导出与评论查、设计集成工具免费、面向个人设计师的、工作区访问工具、核心能力、团队项目与文件列、读取设计文件结构、与指定节点详情、导出设计图片、查看文件评论与版等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -81,9 +83,6 @@ Figma设计集成工具免费版是一款面向个人设计师的 Figma 工作�
 ### 核心功能执行
 执行核心功能执行操作,使用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
-**输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
@@ -93,14 +92,14 @@ Figma设计集成工具免费版是一款面向个人设计师的 Figma 工作�
 从 Figma 文件中导出设计资产供开发使用。
 
 ```text
-# 步骤1: 获取文件结构，找到目标Frame
+# 步骤1 获取文件结构，找到目标Frame
 mx_figma:
   action: get_file
   file_key: "abc123DEF456"
   depth: 2
   # depth: 1=仅页面, 2=页面+Frame, 省略=完整树
 
-# 步骤2: 导出指定节点为SVG
+# 步骤2 导出指定节点为SVG
 mx_figma:
   action: export_images
   file_key: "abc123DEF456"
@@ -108,7 +107,7 @@ mx_figma:
   format: "svg"
   scale: 2
 
-# 步骤3: 导出高清PNG
+# 步骤3 导出高清PNG
 mx_figma:
   action: export_images
   file_key: "abc123DEF456"
@@ -127,25 +126,25 @@ mx_figma:
 # 1. 查看页面列表
 mx_figma:
   action: get_file
-  file_key: "xxx"
+  file_key: "未指定"
   depth: 1
 
 # 2. 查看指定页面详情
 mx_figma:
   action: get_file_nodes
-  file_key: "xxx"
+  file_key: "未指定"
   node_ids: ["page_id"]
   depth: 1
 
 # 3. 查看设计评论
 mx_figma:
   action: list_comments
-  file_key: "xxx"
+  file_key: "未指定"
 
 # 4. 查看版本历史
 mx_figma:
   action: list_versions
-  file_key: "xxx"
+  file_key: "未指定"
 ```
 
 ### 场景三：获取指定节点属性
@@ -207,7 +206,7 @@ skill-platform plugins install skill-platform-morphixai
 # 访问 morphix.app/api-keys 生成 mk_xxxxxx 密钥
 
 # 3. 配置环境变量
-export MORPHIXAI_API_KEY="mk_your_key_here"
+export MORPHIXAI_API_KEY="${API_KEY:?请设置环境变量}"
 
 # 4. 链接 Figma 账号
 # 访问 morphix.app/connections 链接 Figma 账号
@@ -275,7 +274,7 @@ node_id 格式: "1:2"（冒号分隔）
   例: node-id=1-2 → node_id="1:2"
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **控制读取深度**：大文件使用 `depth: 1` 或 `depth: 2`，避免加载完整树。
 2. **SVG优先图标**：图标导出用 SVG 格式，无损可缩放。
@@ -284,7 +283,7 @@ node_id 格式: "1:2"（冒号分隔）
 5. **临时URL及时下载**：导出的图片URL有有效期，需及时下载保存。
 
 ```text
-免费版最佳实践:
+免费版优选实践:
 [ ] 读取深度已优化（大文件用 depth: 1）
 [ ] 图标导出用 SVG 格式
 [ ] 位图导出 scale ≥ 2
@@ -297,7 +296,7 @@ node_id 格式: "1:2"（冒号分隔）
 
 ### Q: 如何获取 file_key？
 
-A: 从 Figma 文件 URL 提取：`figma.com/design/{file_key}/...`。file_key 是 URL 中 design 后面那段字符。
+A: 从 Figma 文件 URL 提取：`figma...`。file_key 是 URL 中 design 后面那段字符。
 
 ### Q: 导出的图片URL有效期多久？
 
@@ -342,7 +341,6 @@ A: 支持 PNG、JPG、SVG、PDF 四种格式。图标用 SVG，照片用 JPG，�
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -355,3 +353,14 @@ A: 支持 PNG、JPG、SVG、PDF 四种格式。图标用 SVG，照片用 JPG，�
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

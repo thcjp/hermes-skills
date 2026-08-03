@@ -177,7 +177,6 @@ python -m src.main --i-have-consent -r /path/to/repo -o report.md
 - 纯架构设计决策
 - 运维部署管理
 
-
 ## Unacceptable Use Cases (the skill must refuse these)
 
 - Performance reviews, promotion / compensation / PIP decisions.

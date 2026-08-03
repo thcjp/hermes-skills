@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Json Repair Kit
 
 A utility to repair broken or "loose" JSON files (like those with trailing commas, single quotes, or unquoted keys) by parsing them as JavaScript objects and re-serializing as valid JSON.
@@ -119,3 +118,19 @@ A: 请参考已知限制章节了解具体限制。
 ## 已知限制
 
 - 需要API Key，无Key环境无法使用
+
+---
+## 边界条件与限制
+
+Json Repair Kit技能在处理畸形JSON文件时存在一些边界条件和限制，以下是一些需要注意的方面：
+
+- **文件大小限制**：由于Node.js的`eval`函数和`vm.runInNewContext`的使用，处理非常大的JSON文件可能会导致性能问题或内存溢出。建议文件大小不超过100MB。
+- **复杂度限制**：对于包含大量嵌套或复杂结构的JSON文件，技能可能无法完全修复所有问题，尤其是当这些问题超出了JavaScript对象字面量的语法限制时。
+- **兼容性限制**：Json Repair Kit依赖于Node.js的`eval`函数，因此可能不支持所有JavaScript语法和特性。此外，某些特定的JSON格式（如使用JavaScript特定的日期格式）可能无法正确修复。
+- **输入文件类型限制**：技能仅支持JSON文件，不支持其他文件类型，如XML、CSV等。
+- **输出文件格式限制**：技能输出文件格式固定为JSON，不支持其他格式如YAML、XML等。
+- **网络依赖限制**：技能在处理过程中不涉及网络请求，因此不受网络连接稳定性影响。
+- **安全性限制**：虽然技能使用`vm.runInNewContext`来限制代码执行环境，但仍然存在一定安全风险，特别是在处理不受信任的输入文件时。
+
+---
+

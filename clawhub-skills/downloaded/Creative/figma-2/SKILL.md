@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Figma
 
 通过 `mx_figma` 工具访问 Figma 工作区：浏览项目文件、读取设计结构、导出图片、管理评论、查看组件库/组件集/样式、获取设计变量（Design Token）。

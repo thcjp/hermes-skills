@@ -221,6 +221,10 @@ def record_upload(platform, slug=None):
     conn.close()
 
 
+# V128 Y1: 别名 — pipeline使用record_rate_limit_upload名称
+record_rate_limit_upload = record_upload
+
+
 def wait_for_upload_slot(platform='skillhub', max_wait_seconds=7200):
     """等待直到允许上传(遵守速率限制)
 

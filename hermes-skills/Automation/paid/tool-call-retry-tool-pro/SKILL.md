@@ -1,4 +1,5 @@
 ---
+
 slug: tool-call-retry-tool-pro
 name: tool-call-retry-tool-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: 工具调用重试专业版
 summary: "自定义错误修复、持久化幂等、退避策略可配与全链路监控，适合企业级Agent执行链路.。工具调用重试工具专业版，面向企业级Agent执行链路的高阶工具调用增强方案。核心能力:"
 license: Proprietary
 edition: pro
-description: '工具调用重试工具专业版，面向企业级Agent执行链路的高阶工具调用增强方案。核心能力:
-
+description: "工具调用重试工具专业版，面向企业级Agent执行链路的高阶工具调用增强方案。核心能力:。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
   - 自定义错误处理函数，支持参数自动修复后重试
 
   - 持久化幂等性键，跨进程/跨实例去重
@@ -47,7 +47,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 工具调用重试工具（专业版）
 
 ## 概述
@@ -68,21 +70,21 @@ category: "Automation"
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -116,7 +118,6 @@ const result = await skills.toolCallRetry({
 
 分布式部署的 Agent 需要跨实例的幂等保证.
 ```typescript
-const result = await skills.toolCallRetry({
   toolFn: processOrder,
   args: { orderId: "order-456" },
   idempotencyKey: "order-process-456",
@@ -174,7 +175,6 @@ const results = await skills.toolCallBatch({
 
 ```typescript
 // 1. 高级用法（错误自动修复）
-const result = await skills.toolCallRetry({
   toolFn: yourToolFunction,
   args: { key: "value" },
   errorHandlerFn: async (error, attempt) => {
@@ -186,7 +186,6 @@ const result = await skills.toolCallRetry({
 });
 // ...
 // 2. 自定义退避策略
-const result = await skills.toolCallRetry({
   toolFn: yourToolFunction,
   args: { key: "value" },
   backoff: "linear-jitter",
@@ -195,7 +194,6 @@ const result = await skills.toolCallRetry({
 });
 // ...
 // 3. 持久化幂等
-const result = await skills.toolCallRetry({
   toolFn: yourToolFunction,
   args: { key: "value" },
   idempotencyKey: "unique-key",
@@ -248,7 +246,7 @@ error_handler:
 | fixed | 固定间隔 | 已知恢复时间 |
 | custom | 自定义函数 | 专业场景 |
 
-## 最佳实践
+## 优选实践
 
 * 对可修复的错误（如参数格式）启用 errorHandler，自动修复后重试.
 * 对不可恢复的错误（如权限不足）在 errorHandler 中返回 `{ abort: true }`.
@@ -324,3 +322,14 @@ A：专业版支持输出 OpenTelemetry 格式的 span，便于与 Jaeger/Zipkin
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

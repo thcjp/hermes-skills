@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 9.9
 ---
 
-
 # Go Linter Configuration
 
 Configure and troubleshoot golangci-lint for Go projects. This skill helps handle import resolution issues, type-checking problems, and optimize configurations for both local and CI environments.
@@ -255,3 +254,25 @@ A: 请参考已知限制章节了解具体限制。
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
 - 性能取决于底层模型能力
+
+---
+## 边界条件与限制
+
+### 输入限制
+- **项目规模**: 对于大型项目，golangci-lint的运行时间可能会较长，因为需要检查的文件数量和复杂性增加。
+- **文件类型**: golangci-lint主要针对Go代码文件（.go），对于其他类型的文件（如Markdown、配置文件等）可能不会提供有效的检查。
+- **配置文件**: `.golangci.yml`配置文件中定义的规则和设置需要正确无误，否则可能导致linter无法正常运行或产生错误。
+
+### 性能边界
+- **运行时间**: 对于包含大量文件的Go项目，golangci-lint的运行时间可能会超过预期，特别是在资源受限的环境中。
+- **内存使用**: 大型项目在运行golangci-lint时可能会消耗较多的内存资源。
+
+### 兼容性约束
+- **Go版本**: golangci-lint需要与Go编译器兼容，因此需要确保Go环境版本与linter版本相匹配。
+- **操作系统**: 虽然golangci-lint在多种操作系统上运行良好，但在某些特定版本的操作系统上可能存在兼容性问题。
+
+### 其他限制
+- **外部依赖**: golangci-lint依赖于一些外部库和工具，如`go vet`、`go fmt`等，如果这些工具不可用或配置不正确，可能会影响linter的功能。
+- **CI/CD环境**: 在CI/CD环境中，golangci-lint的配置和运行可能需要根据具体的环境进行调整，以确保其正常工作。
+---
+

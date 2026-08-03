@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # AWS Cost Optimizer
 
 Analyzes AWS infrastructure for cost savings. Right-sizing, Reserved Instances, Savings Plans, unused resources.

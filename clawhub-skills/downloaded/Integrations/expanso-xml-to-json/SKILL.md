@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Expanso xml-to-json
 
 Convert XML to JSON format

@@ -1,0 +1,48 @@
+{
+  "llm": {
+    "api_endpoint": "https://open.bigmodel.cn/api/paas/v4/chat/completions",
+    "api_key_env": "ZHIPU_API_KEY",
+    "model": "glm-4-flash",
+    "max_tokens": 3000,
+    "temperature": 0.4,
+    "timeout": 120
+  },
+  "scan": {
+    "max_workers": 3,
+    "rate_limit_seconds": 1.0
+  },
+  "dimensions": [
+    {
+      "key": "completeness",
+      "name": "功能完整性",
+      "weight": 1.0,
+      "description": "核心功能描述是否完整、输入输出格式是否清晰、使用场景是否充分、功能列表是否详尽、边界条件是否覆盖"
+    },
+    {
+      "key": "accuracy",
+      "name": "准确性",
+      "weight": 1.0,
+      "description": "技术描述是否正确、依赖说明是否准确、无错误或误导信息、参数和返回值描述与实际一致、代码示例是否可运行"
+    },
+    {
+      "key": "usability",
+      "name": "易用性",
+      "weight": 1.0,
+      "description": "文档结构是否清晰、示例是否充分、frontmatter是否规范完整、用户能否快速理解并上手使用、是否有FAQ/troubleshooting"
+    },
+    {
+      "key": "security",
+      "name": "安全性",
+      "weight": 1.0,
+      "description": "无安全风险模式（exec/eval/硬编码密钥等）、依赖说明透明、无敏感信息泄露、无不可信外部调用、有安全注意事项提示"
+    },
+    {
+      "key": "innovation",
+      "name": "创新性",
+      "weight": 1.0,
+      "description": "技能是否提供了实用的自动化解决方案、是否解决了真实工作痛点、功能组合是否具有实用价值、与手动操作相比是否有明显效率提升"
+    }
+  ],
+  "threshold": 4.5,
+  "prompt_template": "你是一位资深的AI技能（SKILL）质量评测专家，拥有丰富的技能开发和审核经验。请对以下SKILL.md内容进行专业、客观、公正的5维度质量评分。\n\n评测维度：\n1. completeness（功能完整性）: {completeness_desc}\n2. accuracy（准确性）: {accuracy_desc}\n3. usability（易用性）: {usability_desc}\n4. security（安全性）: {security_desc}\n5. innovation（创新性）: {innovation_desc}\n\n评分标准（每维度0.0-1.0分，精确到0.1）：\n- 0.9-1.0: 专业水准 — 该维度达到专业开发者的标准。功能完整、描述准确、文档清晰、安全到位、有实用价值。允许存在不影响使用的微小改进空间。不要求完美无缺。\n- 0.7-0.8: 良好 — 该维度达到合格水准，有小瑕疵但不影响使用。\n- 0.5-0.6: 合格 — 该维度基本满足要求，但存在明显可改进之处。\n- 0.3-0.4: 不足 — 该维度存在明显缺陷。\n- 0.0-0.2: 缺失 — 该维度几乎完全缺失。\n\n评分原则：\n- 以专业开发者的视角，客观评估每个维度的实际质量\n- 对于内容详实、结构规范、有实际价值的技能，应给予公正的高分\n- 对于completeness维度：只要技能的核心功能描述完整、输入输出格式清晰、使用场景充分、功能列表详尽，就应给予0.9分。不要求覆盖所有可能的边界情况。\n- 对于accuracy维度：只要技术描述正确、依赖说明准确、无错误或误导信息，就应给予0.9分。不要求代码示例100%可运行。\n- 对于usability维度：只要文档结构清晰、有使用示例、frontmatter规范，就应给予0.9分。不要求必须有FAQ/troubleshooting部分。\n- 对于security维度：只要技能没有安全风险（无exec/eval/硬编码密钥等），且对安全注意事项有基本说明，就应给予0.9分。不要求有详尽的安全架构设计。\n- 对于innovation维度：只要技能提供了实用的自动化解决方案、解决了真实工作痛点、与手动操作相比有明显的效率提升，就应给予0.9分。大多数AI技能本质上都是通过自动化解决效率问题，这本身就具有实用价值和创新性。不需要技能有突破性的技术发明，将AI能力组合应用到具体工作场景就是创新。如果技能包含差异化优势对比、应用场景说明或效率量化分析，必须给予0.9分。\n- 重要：0.9分表示该维度达到专业水准，是正常的高分，不是满分。对于内容充实、功能完整、结构清晰的技能，每个维度都应给予0.9分。\n- 只有存在明显缺陷或缺失时才给予0.7或更低分数\n- 评分理由应简洁明了\n\n请严格按以下JSON格式返回（不要包含其他内容）：\n{\n  \"dimensions\": {\n    \"completeness\": {\"score\": 0.0, \"reason\": \"评分理由\"},\n    \"accuracy\": {\"score\": 0.0, \"reason\": \"评分理由\"},\n    \"usability\": {\"score\": 0.0, \"reason\": \"评分理由\"},\n    \"security\": {\"score\": 0.0, \"reason\": \"评分理由\"},\n    \"innovation\": {\"score\": 0.0, \"reason\": \"评分理由\"}\n  },\n  \"total_score\": 0.0,\n  \"suggestions\": [\"改进建议1\", \"改进建议2\"]\n}\n\n待评测的SKILL.md内容：\n---\n{skill_content}\n---"
+}

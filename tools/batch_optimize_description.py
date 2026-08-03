@@ -19,70 +19,74 @@
 
 import re
 import sys
-import os
 import json
 import argparse
 from pathlib import Path
 from datetime import datetime
 
-# 项目根目录
-PROJECT_ROOT = Path(__file__).parent.parent
+# V111 W3: chicken-and-egg修复(TD-104) — 重构导入顺序:
+# Step 1: 添加config dir(bootstrap, 必须用Path(__file__), 无法用project_config)
+_config_dir = str(Path(__file__).resolve().parent.parent / "config")
+if _config_dir not in sys.path:
+    sys.path.insert(0, _config_dir)
+# Step 2: 先导入project_config(获得TOOLS_DIR)
+from project_config import PROJECT_ROOT, OPENSOURCE_SKILLS_DIR, REPORT_DIR, TOOLS_DIR  # V106 W3: 统一导入; V107 W10: REPORT_DIR; V111 W3: 新增TOOLS_DIR
+# Step 3: 使用TOOLS_DIR添加tools dir到path(替代本地Path(__file__).resolve().parent)
+if str(TOOLS_DIR) not in sys.path:
+    sys.path.insert(0, str(TOOLS_DIR))
+# Step 4: 导入skill_core(此时使用project_config.TOOLS_DIR)
+from skill_core.parser import parse_frontmatter
+
+# 项目根目录 (V106 W3: 从project_config导入)
 SKILLS_BASE = PROJECT_ROOT / "differentiated-skills"
 
-# 也检查opensource-skills/packaged
-OPENSOURCE_BASE = PROJECT_ROOT / "opensource-skills" / "packaged"
-
-# 日志目录
-REPORT_DIR = PROJECT_ROOT / "data" / "reports"
-
-
-def parse_frontmatter(content: str) -> dict:
-    """解析SKILL.md的frontmatter"""
-    if content.startswith('\ufeff'):
-        content = content[1:]
-    if not content.startswith('---'):
-        return {'fields': {}, 'body': content, 'raw': content}
-    
-    parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
-    if len(parts) < 3:
-        return {'fields': {}, 'body': content, 'raw': content}
-    
-    fm_text = parts[1]
-    body = parts[2]
-    
-    fields = {}
-    # 解析YAML字段(简单解析，不支持嵌套)
-    current_key = None
-    current_value = []
-    for line in fm_text.split('\n'):
-        # 匹配 key: value 格式
-        m = re.match(r'^([a-zA-Z_]+):\s*(.*)$', line)
-        if m:
-            if current_key:
-                fields[current_key] = '\n'.join(current_value).strip()
-            current_key = m.group(1)
-            current_value = [m.group(2)]
-        elif current_key and line.strip():
-            current_value.append(line)
-    
-    if current_key:
-        fields[current_key] = '\n'.join(current_value).strip()
-    
-    # 清理字段值
-    for k, v in fields.items():
-        v = v.strip()
-        if v.startswith('"') and v.endswith('"'):
-            v = v[1:-1]
-        elif v.startswith("'") and v.endswith("'"):
-            v = v[1:-1]
-        fields[k] = v
-    
-    return {'fields': fields, 'body': body, 'raw': content, 'fm_text': fm_text}
+# V107 W10: REPORT_DIR从project_config导入 (统一路径构造)
 
 
 def get_field(fields: dict, name: str, default: str = '') -> str:
     """安全获取字段值"""
     return fields.get(name, default) or default
+
+# [V135 F1] 模块级常量: 从extract_keywords_from_body提取(TD-252)
+_KEYWORD_MAP = {
+    'API设计': ['api', '接口', 'rest', 'graphql', 'grpc', 'openapi'],
+    '代码生成': ['代码生成', 'generate', 'codegen', 'scaffold'],
+    '代码审查': ['code review', '代码审查', '代码review'],
+    '数据分析': ['数据分析', 'data analysis', 'analytics'],
+    '文档生成': ['文档', 'document', 'doc', '文档生成'],
+    '自动化': ['自动化', 'automation', 'automate', 'auto'],
+    '测试': ['测试', 'test', 'testing', 'qa', 'tdd'],
+    '安全': ['安全', 'security', 'vulnerability', '漏洞'],
+    '性能优化': ['性能', 'performance', 'optimization', '优化'],
+    '部署': ['部署', 'deploy', 'deployment', 'ci/cd'],
+    '监控': ['监控', 'monitor', 'observability'],
+    '搜索': ['搜索', 'search', 'query'],
+    '转换': ['转换', 'convert', 'transform', '迁移'],
+    '翻译': ['翻译', 'translate', 'translation'],
+    '写作': ['写作', 'writing', 'write', 'copywriting'],
+    '设计': ['设计', 'design', 'ui', 'ux'],
+    '项目管理': ['项目管理', 'project management', 'task'],
+    '品牌': ['品牌', 'brand', 'branding'],
+    '营销': ['营销', 'marketing', 'campaign'],
+    'SEO': ['seo', '搜索引擎优化'],
+    '视频': ['视频', 'video', '视频制作'],
+    '图片': ['图片', 'image', 'photo', '图片处理'],
+    'PDF': ['pdf', '文档处理'],
+    'Excel': ['excel', 'spreadsheet', '表格'],
+    'PPT': ['ppt', 'presentation', '演示'],
+    '数据库': ['数据库', 'database', 'sql', 'db'],
+    '机器学习': ['机器学习', 'machine learning', 'ml', 'ai', 'model'],
+    '自然语言': ['nlp', '自然语言', 'text analysis'],
+    '爬虫': ['爬虫', 'scraper', 'crawl', 'spider'],
+    '邮件': ['邮件', 'email', 'mail'],
+    '社交媒体': ['社交媒体', 'social media', 'social'],
+    '电商': ['电商', 'ecommerce', 'shop'],
+    '财务': ['财务', 'finance', 'accounting'],
+    '法律': ['法律', 'legal', 'law'],
+    '教育': ['教育', 'education', 'learning', 'teach'],
+    '健康': ['健康', 'health', 'medical'],
+}
+
 
 
 def extract_keywords_from_body(body: str, max_keywords: int = 8) -> list:
@@ -90,44 +94,7 @@ def extract_keywords_from_body(body: str, max_keywords: int = 8) -> list:
     body_lower = body[:3000].lower()
     
     # 预定义关键词库
-    keyword_map = {
-        'API设计': ['api', '接口', 'rest', 'graphql', 'grpc', 'openapi'],
-        '代码生成': ['代码生成', 'generate', 'codegen', 'scaffold'],
-        '代码审查': ['code review', '代码审查', '代码review'],
-        '数据分析': ['数据分析', 'data analysis', 'analytics'],
-        '文档生成': ['文档', 'document', 'doc', '文档生成'],
-        '自动化': ['自动化', 'automation', 'automate', 'auto'],
-        '测试': ['测试', 'test', 'testing', 'qa', 'tdd'],
-        '安全': ['安全', 'security', 'vulnerability', '漏洞'],
-        '性能优化': ['性能', 'performance', 'optimization', '优化'],
-        '部署': ['部署', 'deploy', 'deployment', 'ci/cd'],
-        '监控': ['监控', 'monitor', 'observability'],
-        '搜索': ['搜索', 'search', 'query'],
-        '转换': ['转换', 'convert', 'transform', '迁移'],
-        '翻译': ['翻译', 'translate', 'translation'],
-        '写作': ['写作', 'writing', 'write', 'copywriting'],
-        '设计': ['设计', 'design', 'ui', 'ux'],
-        '项目管理': ['项目管理', 'project management', 'task'],
-        '品牌': ['品牌', 'brand', 'branding'],
-        '营销': ['营销', 'marketing', 'campaign'],
-        'SEO': ['seo', '搜索引擎优化'],
-        '视频': ['视频', 'video', '视频制作'],
-        '图片': ['图片', 'image', 'photo', '图片处理'],
-        'PDF': ['pdf', '文档处理'],
-        'Excel': ['excel', 'spreadsheet', '表格'],
-        'PPT': ['ppt', 'presentation', '演示'],
-        '数据库': ['数据库', 'database', 'sql', 'db'],
-        '机器学习': ['机器学习', 'machine learning', 'ml', 'ai', 'model'],
-        '自然语言': ['nlp', '自然语言', 'text analysis'],
-        '爬虫': ['爬虫', 'scraper', 'crawl', 'spider'],
-        '邮件': ['邮件', 'email', 'mail'],
-        '社交媒体': ['社交媒体', 'social media', 'social'],
-        '电商': ['电商', 'ecommerce', 'shop'],
-        '财务': ['财务', 'finance', 'accounting'],
-        '法律': ['法律', 'legal', 'law'],
-        '教育': ['教育', 'education', 'learning', 'teach'],
-        '健康': ['健康', 'health', 'medical'],
-    }
+    keyword_map = _KEYWORD_MAP  # [V135 F1] 已提取为模块级常量
     
     found = []
     for kw_name, patterns in keyword_map.items():
@@ -192,7 +159,7 @@ def expand_description(fields: dict, body: str) -> str:
     current_desc = get_field(fields, 'description', '')
     
     # 如果当前description已经够长，不需要扩展
-    if len(current_desc) >= 150:
+    if len(current_desc) >= MIN_DESCRIPTION_LEN:
         return current_desc
     
     # 提取关键词
@@ -274,7 +241,7 @@ def expand_description(fields: dict, body: str) -> str:
     desc = desc.lstrip('。.')
     
     # 截断到280字符（在句号处截断）
-    if len(desc) > 280:
+    if len(desc) > MAX_DESCRIPTION_LEN:
         for i in range(280, 200, -1):
             if i < len(desc) and desc[i] in '。.，,；;':
                 desc = desc[:i + 1]
@@ -283,7 +250,7 @@ def expand_description(fields: dict, body: str) -> str:
             desc = desc[:277] + '...'
     
     # 如果仍然太短(<150)，补充通用价值主张
-    if len(desc) < 150:
+    if len(desc) < MIN_DESCRIPTION_LEN:
         extra_values = [
             '降低专业门槛，让非专业人员也能快速上手',
             '提供结构化方法论与最佳实践',
@@ -297,7 +264,7 @@ def expand_description(fields: dict, body: str) -> str:
                     break
     
     # 最终截断
-    if len(desc) > 280:
+    if len(desc) > MAX_DESCRIPTION_LEN:
         desc = desc[:277] + '...'
     
     return desc
@@ -358,6 +325,7 @@ def update_skill_md(file_path: Path, new_description: str) -> bool:
     return True
 
 
+# [V131 B5: 与deduplicate_blocks.process_skill不同(本版优化description, 对方处理去重)]
 def process_skill(skill_dir: Path, dry_run: bool = False) -> dict:
     """处理单个skill"""
     skill_md = skill_dir / "SKILL.md"
@@ -372,7 +340,7 @@ def process_skill(skill_dir: Path, dry_run: bool = False) -> dict:
     current_desc = get_field(fields, 'description', '')
     desc_len = len(current_desc)
     
-    if desc_len >= 150:
+    if desc_len >= MIN_DESCRIPTION_LEN:
         return {
             'status': 'ok',
             'slug': get_field(fields, 'slug', skill_dir.name),
@@ -431,8 +399,8 @@ def main():
                         skill_dirs.append(skill_dir)
     
     # opensource-skills/packaged/{skill-name}/
-    if OPENSOURCE_BASE.exists() and not args.category:
-        for skill_dir in OPENSOURCE_BASE.iterdir():
+    if OPENSOURCE_SKILLS_DIR.exists() and not args.category:
+        for skill_dir in OPENSOURCE_SKILLS_DIR.iterdir():
             if skill_dir.is_dir() and (skill_dir / "SKILL.md").exists():
                 skill_dirs.append(skill_dir)
     

@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # Dogecoin Node
 
 This skill is designed to fully automate the integration and operation of a Dogecoin Core full node and CLI over RPC, enabling blockchain tools and wallet management for various use cases, including tipping functionality using SQLite.
@@ -226,7 +225,6 @@ chmod +x ~/.skill-platform/workspace/archive/health/doge_health_check.sh
 Once your node is set up and syncing, you can enable the tipping feature. This allows you to send Dogecoin tips, maintain a user wallet database, and log transactions.
 
 ### Tipping Script Setup:
-
 
 ```bash
 mkdir -p ~/.skill-platform/workspace/archive/tipping/

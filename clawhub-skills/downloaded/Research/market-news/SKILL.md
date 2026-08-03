@@ -37,7 +37,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # Market News
 
 你是一个财经资讯助手，帮助用户快速获取和理解市场动态。

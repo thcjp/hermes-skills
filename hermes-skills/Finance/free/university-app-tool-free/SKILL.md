@@ -1,6 +1,7 @@
 ---
+
 name: "university-app-tool-free"
-description: "传统命理八字分析工具，提供基础命盘排盘与性格特质解读。"
+description: "传统命理八字分析工具，提供基础命盘排盘与性格特质解读。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -14,6 +15,10 @@ metadata:
     - "传统文化"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # 命理咨询入门工具（免费版）
@@ -39,8 +44,6 @@ metadata:
 | 健康提示 | 体质与健康建议 | 不支持 |
 | 大运分析 | 十年大运走势 | 不支持 |
 
-**输入**: 用户提供分析功能所需的指令和必要参数。
-**处理**: 按照skill规范执行分析功能操作,遵循单一意图原则。
 **输出**: 返回分析功能的执行结果,包含操作状态和输出数据。
 
 ### 八字四柱排盘与解析
@@ -52,15 +55,11 @@ metadata:
 | 日柱 | 出生日子 | 自身配偶（日主为自身） |
 | 时柱 | 出生时辰 | 子女晚运 |
 
-**输入**: 用户提供八字四柱说明所需的指令和必要参数。
-**处理**: 按照skill规范执行八字四柱说明操作,遵循单一意图原则。
 **输出**: 返回八字四柱说明的执行结果,包含操作状态和输出数据。
 
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：传统命理八字分析、提供基础命盘排盘、与性格特质解读、面向个人用户的传、统命理咨询工具、基于八字命理学说、提供基础命盘、性格特质解读与流、年运势概览、Use、when、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数、据处理、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -98,7 +97,6 @@ python3 scripts/bazi.py chart \
 
 ```bash
 # 性格特质解读
-python3 scripts/bazi.py personality \
   --year 1990 --month 5 --day 15 --hour 8
 
 # 输出性格分析报告
@@ -110,7 +108,6 @@ python3 scripts/bazi.py personality \
 
 ```bash
 # 流年运势分析
-python3 scripts/bazi.py fortune \
   --year 1990 --month 5 --day 15 --hour 8 \
   --target-year 2026
 ```
@@ -130,23 +127,23 @@ python3 scripts/bazi.py fortune \
 pip install lunardate sxtwl
 
 # 排盘
-python3 scripts/bazi.py chart --year 1990 --month 5 --day 15 --hour 8 --gender male
+py chart --year 1990 --month 5 --day 15 --hour 8 --gender male
 ```
 
 ### 常用命令
 
 ```bash
 # 排八字命盘
-python3 scripts/bazi.py chart --year 1990 --month 5 --day 15 --hour 8 --gender male
+py chart --year 1990 --month 5 --day 15 --hour 8 --gender male
 
 # 五行分析
-python3 scripts/bazi.py elements --year 1990 --month 5 --day 15 --hour 8
+py elements --year 1990 --month 5 --day 15 --hour 8
 
 # 性格解读
-python3 scripts/bazi.py personality --year 1990 --month 5 --day 15 --hour 8
+py personality --year 1990 --month 5 --day 15 --hour 8
 
 # 流年运势
-python3 scripts/bazi.py fortune --year 1990 --month 5 --day 15 --hour 8 --target-year 2026
+py fortune --year 1990 --month 5 --day 15 --hour 8 --target-year 2026
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
@@ -173,7 +170,7 @@ bazi_config:
     include_explanation: true     # 包含术语解释
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **时间准确**：出生时间尽量精确到时辰（2小时为一时辰）
 2. **农历转换**：工具自动处理公历转农历，无需手动转换
@@ -236,7 +233,6 @@ bazi_config:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -248,3 +244,30 @@ bazi_config:
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

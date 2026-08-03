@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Monad Development
 
 For questions not covered here, fetch <https://docs.monad.xyz/llms.txt>

@@ -1,4 +1,5 @@
 ---
+
 slug: email-multi-provider-pro
 name: email-multi-provider-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 多邮箱管理专业版
 summary: "企业级Gmail与Outlook统一管理，批量操作与多账户隔离。多邮箱管理专业版面向企业用户与高效能个人用户。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于"
 license: Proprietary
 edition: pro
-description: 多邮箱管理专业版面向企业用户与高效能个人用户。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use
+description: "多邮箱管理专业版面向企业用户与高效能个人用户。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
   when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - 沟通协作
@@ -28,7 +29,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+
 ---
+
 # 多邮箱管理专业版
 **版本**: 1.0.0
 **适用对象**: 企业用户、团队管理者、客服与运营人员
@@ -36,12 +39,10 @@ category: "Communication"
 **兼容性**: 完全兼容免费版（email-multi-provider-free）全部命令与配置，可直接升级
 
 ---
-
 ## 概述
 多邮箱管理专业版是一款面向企业级场景的跨邮箱平台深度管理工具。在免费版提供的 Gmail、Outlook 与 Exchange 邮箱读取、搜索、发送等基础能力之上，专业版引入批量邮件处理引擎、多账户 Profile 隔离、高级过滤策略、邮件模板系统、操作审计日志与团队协作共享等高级特性，满足企业在批量响应、合规审计、团队协作与多部门管理等复杂场景下的需求.
 专业版向下完全兼容免费版，现有 `porteden email` 命令与配置无需修改即可平滑升级。新增的企业级功能通过扩展命令与 Profile 机制实现，不影响既有工作流.
 ---
-
 ## 核心能力
 ### 批量操作引擎
 - **批量发送**: 一次性向多个收件人发送邮件，支持收件人列表
@@ -50,7 +51,6 @@ category: "Communication"
 - **批量删除/归档**: 按过滤条件批量处理
 - **批量标记**: 批量标记已读、添加标签、设置重要性
 
-**输入**: 用户提供批量操作引擎所需的指令和必要参数.
 **处理**: 解析批量操作引擎的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量操作引擎的响应数据,包含状态码、结果和日志.
 ### 多账户 Profile 隔离
@@ -60,7 +60,6 @@ category: "Communication"
 - 账户健康状态监控
 - 账户权限与作用域管理
 
-**输入**: 用户提供多账户 Profile 隔离所需的指令和必要参数.
 **处理**: 解析多账户 Profile 隔离的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多账户 Profile 隔离的响应数据,包含状态码、结果和日志.
 ### 高级过滤策略
@@ -70,7 +69,6 @@ category: "Communication"
 - 过滤结果导出（CSV/JSON）
 - 规则模板复用
 
-**输入**: 用户提供高级过滤策略所需的指令和必要参数.
 **处理**: 解析高级过滤策略的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级过滤策略的响应数据,包含状态码、结果和日志.
 ### 邮件模板系统
@@ -79,7 +77,6 @@ category: "Communication"
 - 变量插值与条件渲染
 - 模板共享与版本控制
 
-**输入**: 用户提供邮件模板系统所需的指令和必要参数.
 **处理**: 解析邮件模板系统的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回邮件模板系统的响应数据,包含状态码、结果和日志.
 ### 审计与合规
@@ -89,7 +86,6 @@ category: "Communication"
 - 敏感邮件标记与保护
 - 数据保留策略
 
-**输入**: 用户提供审计与合规所需的指令和必要参数.
 **处理**: 解析审计与合规的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回审计与合规的响应数据,包含状态码、结果和日志.
 ### 团队协作
@@ -100,7 +96,6 @@ category: "Communication"
 
 ---
 
-**输入**: 用户提供团队协作所需的指令和必要参数.
 **处理**: 解析团队协作的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回团队协作的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
@@ -109,7 +104,6 @@ category: "Communication"
 ### 场景一：客服团队批量响应邮件
 客服团队需要批量回复100封咨询邮件，使用模板进行个性化响应.
 **准备收件人列表** `customers.csv`:
-
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
 |---|---|---|---|
@@ -127,8 +121,8 @@ customer3@example.com,T003,王五,物流跟踪
 **创建响应模板** `templates/reply.html`:
 
 ```html
-<p>尊敬的 {{name}}：</p>
-<p>您的工单 {{ticket_id}}（{{issue}}）已收到，我们将在24小时内处理。</p>
+<p>尊敬的 ：</p>
+<p>您的工单 （）已收到，我们将在24小时内处理。</p>
 <p>感谢您的耐心等待。</p>
 <p>客服团队</p>
 ```
@@ -141,16 +135,14 @@ porteden email batch-send \
   --profile support \
   --recipients customers.csv \
   --template templates/reply.html \
-  --subject "工单 {{ticket_id}} 处理通知" \
+  --subject "工单  处理通知" \
   --rate-limit 10 \
   --dry-run
 # ...
 # 正式发送
 porteden email batch-send \
   --profile support \
-  --recipients customers.csv \
-  --template templates/reply.html \
-  --subject "工单 {{ticket_id}} 处理通知" \
+  --subject "工单  处理通知" \
   --rate-limit 10 \
   --log batch_send.log
 ```
@@ -218,14 +210,12 @@ porteden email audit-log \
 ```
 
 ---
-
 ## 快速开始
 1. 阅读## 核心能力章节了解skill功能
 2. 按## 依赖说明配置环境
 3. 执行所需能力对应的命令
 4. 参考## 错误处理章节处理异常
 5. 查看## FAQ解答常见疑问
-
 ### 从免费版升级
 专业版完全兼容免费版，现有命令与配置无需修改：
 
@@ -271,7 +261,6 @@ porteden profile health-check --all
 ```
 
 ---
-
 ## 示例
 ### 批量操作配置
 ```json
@@ -326,19 +315,18 @@ porteden profile health-check --all
 ```
 
 ---
-
-## 最佳实践
+## 优选实践
 ### 批量操作安全
 ```bash
 # 始终先试运行
-porteden email batch-send --recipients list.csv --template tpl.html --dry-run
+csv --template tpl.html --dry-run
 # ...
 # 控制速率与重试
-porteden email batch-send --recipients list.csv --template tpl.html \
+csv --template tpl.html \
   --rate-limit 10 --retry 3 --retry-delay 60
 # ...
 # 记录失败用例
-porteden email batch-send --recipients list.csv --template tpl.html \
+csv --template tpl.html \
   --log batch.log --on-failure log
 ```
 
@@ -371,7 +359,6 @@ porteden email audit-export \
 ```
 
 ---
-
 ## 免费版与专业版对比
 | 能力 | 免费版 | 专业版 |
 |:-----|:-----|:-----|
@@ -388,7 +375,6 @@ porteden email audit-export \
 | 技术支持 | 社区支持 | 优先支持 |
 
 ---
-
 ## 常见问题
 ### 已知限制
 ```text
@@ -399,7 +385,7 @@ Error: Rate limit exceeded
 
 ```bash
 # 降低速率
-porteden email batch-send --recipients list.csv --template tpl.html --rate-limit 5
+csv --template tpl.html --rate-limit 5
 ```
 
 ### 问题2：Profile 切换失败
@@ -444,7 +430,6 @@ porteden team update --member agent1@company.com --role editor
 ```
 
 ---
-
 ## 命令参考速查
 | 命令 | 功能 | 专业版独有 |
 |---:|---:|---:|
@@ -464,7 +449,6 @@ porteden team update --member agent1@company.com --role editor
 | `team` | 团队协作 | ✅ |
 
 ---
-
 ## 依赖说明
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
@@ -491,11 +475,26 @@ porteden team update --member agent1@company.com --role editor
 ### 可用性分类
 - **分类**: MD+EXEC（纯Markdown指令，部分功能需要 exec 命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行 porteden CLI 命令，支持批量处理、多账户隔离与审计合规
-
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+## 核心功能
+
+- **自动化执行**: 企业级Gmail与Outlook统一管理，批量操作与多账户隔离。多邮箱管理专业版面向企业用户与高效能个人用户。Use w
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

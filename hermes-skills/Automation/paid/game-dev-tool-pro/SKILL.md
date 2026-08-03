@@ -7,7 +7,7 @@ displayName: 游戏开发助手专业版
 summary: "企业级游戏开发平台,支持团队协作、资产管理、数据分析与商业化。面向游戏工作室与商业项目的企业级游戏开发平台."
 license: Proprietary
 edition: pro
-description: 面向游戏工作室与商业项目的企业级游戏开发平台。可自动提升工作效率
+description: "面向游戏工作室与商业项目的企业级游戏开发平台。可自动提升工作效率。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
   核心能力: 团队协作、资产管理、数据分析、CI/CD、商业化支持、多平台发布
 
   适用场景: 商业游戏开发、工作室运营、多人协作项目、数据分析驱动迭代
@@ -57,21 +57,21 @@ category: "Automation"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -170,7 +170,7 @@ pipeline:
 联系销售开通专业版,获取管理员凭证与租户 ID.
 ### Step 2: 配置凭证
 ```bash
-export GAME_DEV_ADMIN_KEY="sk_pro_admin_xxx"
+export GAME_DEV_ADMIN_KEY="sk_pro_admin_未指定"
 export GAME_DEV_ORG_ID="org_your_id"
 export GAME_DEV_EDITION="pro"
 ```
@@ -226,14 +226,13 @@ def generate_analytics_report(game_id, period):
     }
     resp = requests.post(
         f"{API_BASE}/analytics/report",
-        headers=studio.headers,
         json=payload,
         timeout=300,
     )
     return resp.json()
 ```
 
-## 最佳实践
+## 优选实践
 ### 1. 团队协作规范
 ```python
 COLLABORATION_GUIDELINES = {
@@ -262,12 +261,12 @@ def data_driven_iteration(game_id):
 # ...
     decisions = []
     for insight in analysis["insights"]:
-        if "流失" in insight and "第一关" in insight:
-            decisions.append({"action": "降低第一关难度", "priority": "high"})
+        if "流失" in insight and "领先关" in insight:
+            decisions.append({"action": "降低领先关难度", "priority": "high"})
         if "首充" in insight and "转化率" in insight:
-            decisions.append({"action": "优化首充礼包", "priority": "medium"})
+append({"action": "优化首充礼包", "priority": "medium"})
         if "留存" in insight:
-            decisions.append({"action": "增加留存活动", "priority": "high"})
+append({"action": "增加留存活动", "priority": "high"})
 # ...
     return sorted(decisions, key=lambda x: {"high": 0, "medium": 1, "low": 2}[x["priority"]])
 ```
@@ -297,7 +296,6 @@ def multi_platform_release(game_id, platforms):
     }
     resp = requests.post(
         f"{API_BASE}/release/multi-platform",
-        headers=studio.headers,
         json=payload,
         timeout=300,
     )
@@ -322,7 +320,6 @@ def design_monetization(game_id, model):
     }
     resp = requests.post(
         f"{API_BASE}/monetization/design",
-        headers=studio.headers,
         json=payload,
         timeout=120,
     )
@@ -360,7 +357,7 @@ def design_monetization(game_id, model):
 
 ### API Key 配置
 ```bash
-export GAME_DEV_ADMIN_KEY="sk_pro_admin_xxx"
+export GAME_DEV_ADMIN_KEY="sk_pro_admin_未指定"
 export GAME_DEV_ORG_ID="org_your_id"
 export GAME_DEV_EDITION="pro"
 # ...
@@ -371,11 +368,11 @@ export AWS_SECRET_ACCESS_KEY="..."
 export BIGQUERY_PROJECT="game-analytics"
 export BIGQUERY_KEY_FILE="/etc/game-dev/bigquery.json"
 # ...
-export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
+export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/未指定"
 ```
 
 ### 可用性分类
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+execute(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 面向游戏工作室与商业项目,通过自然语言指令驱动 Agent 调用 Pro API,完成团队协作、资产管理、数据分析、CI/CD、商业化等企业级场景
 - **专业版特性**: 团队协作、资产管理、数据分析、CI/CD、商业化、多平台发布、优先支持
 - **兼容性**: 与免费版开发流程完全兼容,支持平滑升级
@@ -396,8 +393,6 @@ export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 
@@ -423,3 +418,14 @@ Skill: 执行完成,结果如下: 操作成功
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

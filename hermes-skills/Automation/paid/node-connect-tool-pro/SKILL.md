@@ -1,5 +1,6 @@
 ---
-slug: "node-connect-tool-pro"
+
+slug: node-connect-tool-pro
 name: "node-connect-tool-pro"
 version: "1.0.0"
 displayName: "节点连接工具(专业版)"
@@ -47,7 +48,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 节点连接工具(专业版)
 
 ## 概述
@@ -70,21 +73,21 @@ category: "Automation"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -97,8 +100,6 @@ category: "Automation"
 ```bash
 # 标准检查 + 尾网检查
 skill-platform config get gateway.bind
-skill-platform config get gateway.tailscale.mode
-skill-platform config get gateway.auth.allowTailscale
 skill-platform qr --json
 tailscale status --json
 ```
@@ -116,7 +117,6 @@ tailscale status --json
 ```bash
 # 检查公共URL配置
 skill-platform config get plugins.entries.device-pair.config.publicUrl
-skill-platform config get gateway.remote.url
 # ...
 # 远程模式QR
 skill-platform qr --remote --json
@@ -190,7 +190,7 @@ set -euo pipefail
 echo "=== 拓扑识别 ==="
 echo "gateway.mode: $(skill-platform config get gateway.mode)"
 echo "gateway.bind: $(skill-platform config get gateway.bind)"
-echo "tailscale.mode: $(skill-platform config get gateway.tailscale.mode)"
+echo "tailscale.tailscale.mode)"
 echo "remote.url: $(skill-platform config get gateway.remote.url)"
 echo "publicUrl: $(skill-platform config get plugins.entries.device-pair.config.publicUrl)"
 # ...
@@ -287,7 +287,7 @@ done
 | Tailscale | `gateway.auth.allowTailscale=true` | 尾网内信任 |
 | 混合 | token + allowTailscale | 兼容多场景 |
 
-## 最佳实践
+## 优选实践
 
 ### 1. 拓扑优先,跨网络不混淆
 
@@ -302,8 +302,8 @@ done
 
 ```bash
 # 完整远程配置检查
-skill-platform config get gateway.remote.url         # 必须设置
-skill-platform config get gateway.auth.mode          # 必须与远程一致
+remote.url         # 必须设置
+auth.mode          # 必须与远程一致
 skill-platform qr --remote --json                    # 必须能生成
 ```
 
@@ -316,7 +316,6 @@ Tailscale Serve/Funnel 的鉴权链路较复杂:
 tailscale status
 # ...
 # 确认鉴权模式
-skill-platform config get gateway.auth.allowTailscale
 # ...
 # 对Serve模式,allowTailscale必须与预期流程匹配
 # 对Funnel模式(公网暴露),建议额外启用令牌鉴权
@@ -336,7 +335,7 @@ skill-platform config get gateway.auth.allowTailscale
 ```bash
 # 启用审计日志
 skill-platform config set audit.enabled true
-skill-platform config set audit.log-path /var/log/node-connect-audit.log
+log-path /var/log/node-connect-audit.log
 # ...
 # 查询连接历史
 skill-platform audit query --device dev-002 --since 2026-07-01
@@ -382,7 +381,6 @@ skill-platform nodes migrate --node dev-001 --gateway gw-west
 默认保留90天。可在配置中调整:
 
 ```bash
-skill-platform config set audit.retention-days 180
 ```
 
 合规要求更长的场景,建议定期导出到外部归档系统.
@@ -416,7 +414,7 @@ skill-platform config set audit.retention-days 180
 - 远程网关若使用反向代理,需按代理服务文档配置SSL证书与访问控制.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+execute(纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。PRO版面向团队与运维,提供全拓扑诊断、批量配对、审计日志与自动修复能力,完全兼容免费版本地与局域网诊断流程.
 ## 错误处理
 
@@ -432,3 +430,14 @@ skill-platform config set audit.retention-days 180
 - API调用依赖第三方服务的可用性与稳定性
 - 免费版有调用次数限制与并发限制
 - 不支持自定义认证与OAuth2.0流程
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

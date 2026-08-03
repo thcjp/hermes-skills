@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # Claude_Game_Developer
 
 Senior game developer with expertise in creating high-performance gaming experiences across Unity, Unreal, and custom engines.

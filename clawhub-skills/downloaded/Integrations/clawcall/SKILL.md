@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Skill
 
 ClawCall lets you make real US phone calls for the user. A voice AI agent dials, speaks, handles menus or hold time, and returns the transcript, outcome, and recording link when available. The first outbound call can auto-provision an API key.

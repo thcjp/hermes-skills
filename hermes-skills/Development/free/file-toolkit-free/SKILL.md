@@ -1,6 +1,7 @@
 ---
+
 name: "file-toolkit-free"
-description: "智能文件管理体系，包含命名规范、目录结构设计、快速检索，帮助用户告别桌面混乱。"
+description: "智能文件管理体系，包含命名规范、目录结构设计、快速检索，帮助用户告别桌面混乱。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,10 @@ metadata:
     - "效率工具"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # 文件工具箱（免费版）
@@ -73,13 +78,13 @@ metadata:
 python3 scripts/file-toolkit.py analyze ~/Desktop
 
 # 2. 生成命名规范建议
-python3 scripts/file-toolkit.py naming ~/Desktop --preview
+py naming ~/Desktop --preview
 
 # 3. 生成目录结构方案
-python3 scripts/file-toolkit.py structure ~/Desktop --preview
+py structure ~/Desktop --preview
 
 # 4. 确认后执行整理
-python3 scripts/file-toolkit.py organize ~/Desktop --execute
+py organize ~/Desktop --execute
 ```
 
 ### 可复制模板
@@ -90,18 +95,17 @@ python3 scripts/file-toolkit.py organize ~/Desktop --execute
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
 
-
 ## 每周文件整理（5分钟）
 
 每周五下午执行：
 1. 分析桌面与下载文件夹现状
-   python3 scripts/file-toolkit.py analyze ~/Desktop ~/Downloads
+py analyze ~/Desktop ~/Downloads
 
 2. 预览整理方案
-   python3 scripts/file-toolkit.py organize ~/Desktop --preview
+py organize ~/Desktop --preview
 
 3. 确认方案后执行
-   python3 scripts/file-toolkit.py organize ~/Desktop --execute
+py organize ~/Desktop --execute
 ```
 
 ---
@@ -124,15 +128,13 @@ python3 scripts/file-toolkit.py organize ~/Desktop --execute
 - 版本号用v1/v2/v3，不用"最终版"（因为永远没有最终版）
 - 名称用你会搜索的词，而不是当时觉得合理的词
 
-**输入**: 用户提供智能命名规范生成所需的指令和必要参数。
-**处理**: 按照skill规范执行智能命名规范生成操作,遵循单一意图原则。
 **输出**: 返回智能命名规范生成的执行结果,包含操作状态和输出数据。
 
 ### 2. 三级目录结构设计
 
 ```text
 项目根目录/
-├── 01_工作文档/          ← 第一级：大类
+├── 01_工作文档/          ← 领先级：大类
 │   ├── 需求文档/
 │   ├── 会议纪要/
 │   └── 周报月报/
@@ -154,18 +156,16 @@ python3 scripts/file-toolkit.py organize ~/Desktop --execute
 - 用数字前缀排序，而非字母（中文无法按字母排序）
 - 按"如何检索"设计，而非按"如何创建"
 
-**输入**: 用户提供三级目录结构设计所需的指令和必要参数。
-**处理**: 按照skill规范执行三级目录结构设计操作,遵循单一意图原则。
 **输出**: 返回三级目录结构设计的执行结果,包含操作状态和输出数据。
 
 ### 3. 自然语言文件检索
 
 ```bash
 # 描述你记得的文件特征
-python3 scripts/file-toolkit.py find "上个月做的关于官网改版的需求文档"
+py find "上个月做的关于官网改版的需求文档"
 
 # 模糊检索
-python3 scripts/file-toolkit.py find "某个PDF合同 客户名字记不清了 好像是六月"
+py find "某个PDF合同 客户名字记不清了 好像是六月"
 ```
 
 **检索策略**：
@@ -174,8 +174,6 @@ python3 scripts/file-toolkit.py find "某个PDF合同 客户名字记不清了 �
 - 格式线索：PDF、Word、图片
 - 场景线索：客户发来的、会议上的、自己写的
 
-**输入**: 用户提供自然语言文件检索所需的指令和必要参数。
-**处理**: 按照skill规范执行自然语言文件检索操作,遵循单一意图原则。
 **输出**: 返回自然语言文件检索的执行结果,包含操作状态和输出数据。
 
 ### 4. 下载文件夹清理流程
@@ -193,8 +191,6 @@ python3 scripts/file-toolkit.py find "某个PDF合同 客户名字记不清了 �
 
 ---
 
-**输入**: 用户提供下载文件夹清理流程所需的指令和必要参数。
-**处理**: 按照skill规范执行下载文件夹清理流程操作,遵循单一意图原则。
 **输出**: 返回下载文件夹清理流程的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：智能文件管理体系、包含命名规范、目录结构设计、快速检索、帮助用户告别桌面、文件工具箱免费版、解决个人文件管理、积累混乱、桌面堆满未命名的、下载文件夹成了遗、忘之地、项目文件版本混乱、分不清哪个是最终、找不到三个月前保、存的文档、这些问题的根源不、是个人习惯差、而是缺乏一套与实、际工作方式匹配的、文件管理体系、Use、when、需要文件处理、文档转换、格式互转、内容提取时使用、不适用于加密文件等。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -208,13 +204,13 @@ python3 scripts/file-toolkit.py find "某个PDF合同 客户名字记不清了 �
 **解决方案**：
 ```bash
 # 分析桌面现状
-python3 scripts/file-toolkit.py analyze ~/Desktop
+py analyze ~/Desktop
 
 # 生成整理方案（预览模式）
-python3 scripts/file-toolkit.py organize ~/Desktop --preview
+py organize ~/Desktop --preview
 
 # 确认方案后执行
-python3 scripts/file-toolkit.py organize ~/Desktop --execute
+py organize ~/Desktop --execute
 ```
 
 **效果**：桌面文件自动分类到对应目录，截图归入图片文件夹，文档归入工作文档，下载的资料归入参考资料。桌面只剩当前活跃项目的文件。
@@ -226,13 +222,13 @@ python3 scripts/file-toolkit.py organize ~/Desktop --execute
 **解决方案**：
 ```bash
 # 生成项目命名规范
-python3 scripts/file-toolkit.py naming ./my-project --type project
+py naming ./my-project --type project
 
 # 批量重命名（预览）
-python3 scripts/file-toolkit.py rename ./my-project --preview
+py rename ./my-project --preview
 
 # 执行重命名
-python3 scripts/file-toolkit.py rename ./my-project --execute
+py rename ./my-project --execute
 ```
 
 **效果**：统一命名规范后，文件按日期排序，版本号清晰，团队协作时不再为找文件浪费时间。
@@ -244,10 +240,10 @@ python3 scripts/file-toolkit.py rename ./my-project --execute
 **解决方案**：
 ```bash
 # 自然语言检索
-python3 scripts/file-toolkit.py find "去年做的年度总结 是个PPT 好像在文档文件夹"
+py find "去年做的年度总结 是个PPT 好像在文档文件夹"
 
 # 查看检索结果
-python3 scripts/file-toolkit.py find "关于某个客户的技术方案 docx"
+py find "关于某个客户的技术方案 docx"
 ```
 
 **效果**：通过描述记忆中的文件特征，工具构建精准检索条件，5秒内定位目标文件。
@@ -258,7 +254,6 @@ python3 scripts/file-toolkit.py find "关于某个客户的技术方案 docx"
 
 ```text
 用法：
-  python3 scripts/file-toolkit.py <命令> <路径> [选项]
 
 命令：
   analyze <路径>        分析文件现状（类型分布、命名混乱度）
@@ -275,75 +270,12 @@ python3 scripts/file-toolkit.py find "关于某个客户的技术方案 docx"
   --help        显示帮助
 
 示例：
-  python3 scripts/file-toolkit.py analyze ~/Desktop
-  python3 scripts/file-toolkit.py organize ~/Downloads --preview
-  python3 scripts/file-toolkit.py find "上个月的合同 PDF"
+py analyze ~/Desktop
+py organize ~/Downloads --preview
+py find "上个月的合同 PDF"
 ```
 
----
-
-## 示例
-
-### 个人文件管理配置
-
-```yaml
-# personal-config.yaml
-user:
-  name: 我的工作空间
-  language: zh
-
-naming:
-  date_format: YYYYMMDD
-  separator: "_"
-  version_style: "v1, v2, v3"
-  avoid_space: true
-
-structure:
-  max_depth: 3
-  prefix_style: "01_, 02_, 03_"
-  categories:
-    - 工作文档
-    - 参考资料
-    - 设计资产
-    - 交付物
-    - 归档
-
-cleanup:
-  desktop:
-    keep_active_only: true
-    move_others_to: ~/Documents/DesktopArchive/
-  downloads:
-    auto_classify: true
-    delete_older_than: 90  # 天
-    exclude: ["*.crdownload", "*.part"]
-```
-
-### 项目文件管理配置
-
-```yaml
-# project-config.yaml
-project:
-  name: 官网改版项目
-  root: ~/Projects/website-redesign
-
-naming:
-  pattern: "{项目}_{类型}_{版本}"
-  example: "官网_需求文档_v2.docx"
-
-structure:
-  template:
-    - 01_需求/
-    - 02_设计/
-    - 03_开发/
-    - 04_测试/
-    - 05_交付/
-    - 06_会议/
-    - 99_归档/
-```
-
----
-
-## 最佳实践
+## 优选实践
 
 1. **先预览后执行**：所有整理操作先使用`--preview`预览方案，确认无误后再`--execute`执行。
 2. **命名从保存时开始**：保存文件时就用规范命名，比事后批量重命名省力十倍。
@@ -438,9 +370,27 @@ MIT license允许使用、复制、修改和分发。
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

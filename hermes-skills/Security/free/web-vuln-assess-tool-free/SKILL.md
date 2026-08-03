@@ -1,6 +1,6 @@
 ---
 name: "web-vuln-assess-tool-free"
-description: "OWASP对齐的Web应用漏洞评估,覆盖19类漏洞,含检查清单与修复指南"
+description: "OWASP对齐的Web应用漏洞评估,覆盖19类漏洞,含检查清单与修复指南。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,8 +15,10 @@ metadata:
     - "OWASP"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
 ---
-
 # Web漏洞评估(免费版)
 
 ## 概述
@@ -49,8 +51,6 @@ Web漏洞评估免费版是一款面向Web应用的安全漏洞评估工具。�
 | 18 | IoT漏洞 | HIGH | - |
 | 19 | 其他漏洞 | MEDIUM | - |
 
-**输入**: 用户提供个漏洞类别所需的指令和必要参数。
-**处理**: 按照skill规范执行个漏洞类别操作,遵循单一意图原则。
 **输出**: 返回个漏洞类别的执行结果,包含操作状态和输出数据。
 
 ### 支持的技术栈
@@ -59,13 +59,11 @@ Web漏洞评估免费版是一款面向Web应用的安全漏洞评估工具。�
 后端语言: PHP, Node.js, Python, Java, .NET, Ruby
 前端框架: React, Angular, Vue
 CMS系统: WordPress
-数据库: MySQL, `PostgreSQL`, MongoDB, Redis
+数据库: MySQL, `数据库`, MongoDB, Redis
 基础设施: Docker, Kubernetes, Nginx, Apache
 云平台: AWS, Azure
 ```
 
-**输入**: 用户提供支持的技术栈所需的指令和必要参数。
-**处理**: 按照skill规范执行支持的技术栈操作,遵循单一意图原则。
 **输出**: 返回支持的技术栈的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -82,8 +80,6 @@ CMS系统: WordPress
 | 修复脚本 | 不支持 | 自动生成测试脚本 |
 | 批量评估 | 不支持 | 多应用批量 |
 
-**输入**: 用户提供免费版与专业版对比所需的指令和必要参数。
-**处理**: 按照skill规范执行免费版与专业版对比操作,遵循单一意图原则。
 **输出**: 返回免费版与专业版对比的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：对齐的、Web、应用漏洞评估、类漏洞、含检查清单与修复、核心能力、Top、种技术栈、安全检查清单与修、复建议、按严重程度排序的、评估报告等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
@@ -98,7 +94,7 @@ CMS系统: WordPress
 1. 确定应用信息:
    - 应用名称: ShopFast 电商平台
    - 应用类型: Web Application
-   - 技术栈: Python, React, `PostgreSQL`, Docker, AWS
+   - 技术栈: Python, React, `数据库`, Docker, AWS
    - 部署环境: Cloud (AWS)
    - 评估范围: 全部19类漏洞
 
@@ -263,7 +259,7 @@ class WebVulnAssessment:
             "是否使用httpOnly Cookie存储令牌?",
             "是否配置CSP防止XSS?"
         ],
-        "postgresql": [
+        "数据库": [
             "是否使用参数化查询(防SQL注入)?",
             "是否配置连接加密(sslmode=require)?",
             "是否设置最小权限数据库用户?",
@@ -361,7 +357,7 @@ Web漏洞评估报告
 app_info = {
     "name": "ShopFast电商平台",
     "type": "E-commerce Platform",
-    "technology_stack": ["python", "react", "postgresql", "redis", "docker", "aws"],
+    "technology_stack": ["python", "react", "数据库", "redis", "docker", "aws"],
     "deployment_environment": "Cloud (AWS)",
     "assessment_scope": [
         "injection", "authentication", "data_exposure",
@@ -381,21 +377,21 @@ app_info = {
 | GDPR | 个人数据保护 | 面向欧洲用户 |
 | HIPAA | 医疗数据保护 | 医疗健康应用 |
 
-## 最佳实践
+## 优选实践
 
 ### 1. 评估优先级
 
 ```text
-第一优先: CRITICAL漏洞(注入、认证绕过、零日模式)
+领先优先: CRITICAL漏洞(注入、认证绕过、零日模式)
 第二优先: HIGH漏洞(XSS、SSRF、访问控制、API安全)
 第三优先: MEDIUM漏洞(配置错误、CORS、DoS)
-第四优先: LOW漏洞(信息泄露、最佳实践)
+第四优先: LOW漏洞(信息泄露、优选实践)
 ```
 
 ### 2. 技术栈特定检查
 
 ```bash
-# Python/React/`PostgreSQL`/Docker/AWS 技术栈
+# Python/React/`数据库`/Docker/AWS 技术栈
 # 每种技术有其特定的安全检查项
 # 评估时需覆盖技术栈相关的所有检查项
 ```
@@ -452,14 +448,32 @@ A: 免费版提供手动检查清单。专业版提供API驱动的自动化评�
 - 可选配置外部漏洞评估API Key(如需API自动化评估)
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+execute(纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行Web漏洞评估任务
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

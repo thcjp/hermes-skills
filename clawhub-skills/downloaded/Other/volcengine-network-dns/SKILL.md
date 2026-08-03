@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Volcengine Network Dns
 
 Manage DNS records with strict change scoping and verification steps.
@@ -115,3 +114,35 @@ A: 请参考已知限制章节了解具体限制。
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
 - 性能取决于底层模型能力
+
+---
+## 边界条件与限制
+
+Volcengine Network D技能在执行DNS记录管理操作时，存在以下边界条件和限制：
+
+- **输入限制**：输入的域名必须符合DNS标准格式，且不能包含非法字符。记录类型（如A、CNAME、MX等）必须被Volcengine Network D支持。
+
+- **性能边界**：单个操作的处理时间取决于网络延迟和Volcengine Network D的后端服务性能。在高并发环境下，可能存在队列等待时间。
+
+- **兼容性约束**：Volcengine Network D仅在支持SKILL.md的AI Agent上运行，如Claude Code、Cursor、Codex、Gemini CLI等。不支持在非SKILL.md环境的Agent上运行。
+
+- **记录数量限制**：每个域名下的DNS记录数量可能受到Volcengine Network D服务提供商的限制。
+
+- **TTL限制**：设置的TTL值必须符合Volcengine Network D的TTL范围要求，超出范围可能导致操作失败。
+
+- **API调用频率限制**：频繁的API调用可能触发频率限制，导致操作被拒绝。请合理规划调用频率。
+
+- **数据存储限制**：Volcengine Network D的数据存储空间有限，请确保操作不会超出存储限制。
+
+- **操作权限限制**：执行操作需要具备相应的权限，如域名管理员权限。
+
+- **地域限制**：Volcengine Network D的服务可能存在地域限制，请确保操作符合地域要求。
+
+- **依赖性限制**：Volcengine Network D依赖于LLM API，无LLM环境无法使用。
+
+- **复杂场景限制**：对于复杂的DNS场景，可能需要人工辅助判断和操作。
+
+- **安全性限制**：请确保输入数据的安全性，避免敏感信息泄露。
+
+---
+

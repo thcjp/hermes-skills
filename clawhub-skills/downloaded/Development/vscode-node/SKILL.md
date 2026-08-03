@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # VS Code Node
 
 Control a VS Code or Cursor IDE remotely through the Skill平台 Node protocol.

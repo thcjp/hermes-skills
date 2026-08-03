@@ -156,6 +156,88 @@ def check_debranding(skill_md_path: Path) -> dict:
     }
 
 
+# ============ 自动生成内容检测 + WAF长度检查 (V186新增) ============
+# 根因: 大量skill是自动生成模板,内容与slug无关,被平台当成垃圾内容
+# 解决: 在质量门控阶段检测并阻断自动生成内容,防止上传到平台
+
+# SkillHub WAF内容长度限制
+SKILLHUB_WAF_MAX_CONTENT = 5800
+
+# 自动生成模板的标记性短语(出现任意一个即判定为自动生成)
+AUTO_GEN_MARKERS = [
+    '本技能提供',
+    '功能总览',
+    '功能1：',
+    '功能1:',
+    '核心功能',
+    '自动化处理流程',
+    '减少人工干预与重复劳动',
+    '结构化输入输出',
+    '内置错误恢复机制',
+    '多格式兼容',
+    '适用于需要专业工具支持的开发',
+    '部分高级功能需要付费API',
+    '大量并发请求可能触发限流',
+    '输出内容受LLM能力限制',
+]
+
+
+def check_auto_generated_content(content: str) -> dict:
+    """检查14: 自动生成内容检测
+
+    检测SKILL.md是否为自动生成模板(非原创内容)。
+    自动生成模板通常包含通用化描述,与skill实际功能无关,
+    上传到平台会被当成垃圾内容,导致封号。
+
+    Returns:
+        dict with passed=True(原创) or passed=False(自动生成)
+    """
+    matched_markers = []
+    for marker in AUTO_GEN_MARKERS:
+        if marker in content:
+            matched_markers.append(marker)
+
+    is_auto_generated = len(matched_markers) >= 2  # 2个以上标记判定为自动生成
+
+    return {
+        'name': '自动生成内容检测',
+        'passed': not is_auto_generated,
+        'severity': 'high',
+        'matched_markers': matched_markers,
+        'marker_count': len(matched_markers),
+        'message': (
+            f'检测到{len(matched_markers)}个自动生成标记: {", ".join(matched_markers[:3])}'
+            if is_auto_generated else '内容为原创(未检测到自动生成标记)'
+        ),
+    }
+
+
+def check_content_length_waf(content: str) -> dict:
+    """检查15: SkillHub WAF内容长度检查
+
+    SkillHub WAF限制单次上传内容不超过5800字符。
+    超过限制的skill会被WAF拦截,无法上传。
+
+    Returns:
+        dict with passed=True(合规) or passed=False(超长)
+    """
+    content_len = len(content)
+    is_over_limit = content_len > SKILLHUB_WAF_MAX_CONTENT
+
+    return {
+        'name': 'WAF内容长度',
+        'passed': not is_over_limit,
+        'severity': 'medium' if is_over_limit else 'info',
+        'content_length': content_len,
+        'waf_limit': SKILLHUB_WAF_MAX_CONTENT,
+        'message': (
+            f'内容长度{content_len}字符,超过WAF限制{SKILLHUB_WAF_MAX_CONTENT}'
+            if is_over_limit else
+            f'内容长度{content_len}字符,合规(限制{SKILLHUB_WAF_MAX_CONTENT})'
+        ),
+    }
+
+
 # ============ 主检查函数 ============
 
 def run_quality_gate(skill_md_path: Path) -> dict:
@@ -195,6 +277,10 @@ def run_quality_gate(skill_md_path: Path) -> dict:
         check_no_xml_brackets(fm),
         check_no_placeholders(content, fm['raw']),
         check_no_exaggeration(content),
+        # V186新增: 自动生成内容检测 + WAF长度检查
+        # 根因: 自动生成模板被平台当成垃圾内容,导致封号
+        check_auto_generated_content(content),
+        check_content_length_waf(content),
     ]
 
     # 任一high级fail则总体fail

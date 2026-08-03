@@ -17,7 +17,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Generate Mindmap
 
 把内容提炼成放射状知识结构，一条命令导出多种格式。核心特色：

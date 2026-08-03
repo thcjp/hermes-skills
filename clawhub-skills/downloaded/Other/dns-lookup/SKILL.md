@@ -33,7 +33,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Dns Lookup
 
 Resolve hostnames to IP addresses using `dig`. Provided by the `bind-utils` package.

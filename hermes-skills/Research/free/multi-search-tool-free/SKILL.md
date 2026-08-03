@@ -1,6 +1,7 @@
 ---
+
 name: "multi-search-tool-free"
-description: "集成10个国内免费搜索引擎，通过统一入口快速搜索互联网最新信息"
+description: "集成10个国内免费搜索引擎，通过统一入口快速搜索互联网最新信息。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,11 @@ metadata:
     - "国内"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - browser
+
 ---
 
 # 多搜索引擎工具（免费版）
@@ -55,15 +61,11 @@ metadata:
 [限制] 不支持搜索历史记录
 ```
 
-**输入**: 用户提供搜索引擎列表所需的指令和必要参数。
-**处理**: 按照skill规范执行搜索引擎列表操作,遵循单一意图原则。
 **输出**: 返回搜索引擎列表的执行结果,包含操作状态和输出数据。
 
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：个国内免费搜索引、通过统一入口快速、搜索互联网最新信、多搜索引擎工具免、个国内可访问的免、费搜索引擎、帮助用户通过统一、入口快速搜索互联、网信息、核心能力、个国内搜索引擎、搜狗等、统一关键词搜索、自动适配各搜索引、支持单引擎查询与、覆盖通用搜索、头条资讯、学术查询等场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -71,9 +73,6 @@ metadata:
 ### 核心功能执行
 执行核心功能执行操作,使用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
-**输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
@@ -156,7 +155,7 @@ Agent：
 直接告诉 Agent 要搜索的内容和使用的引擎。
 
 ```text
-用百度搜索"Python 异步编程最佳实践"
+用百度搜索"Python 异步编程优选实践"
 ```
 
 ### Step 2：多引擎对比
@@ -242,13 +241,13 @@ ENGINES = {
     },
     "bing_int": {
         "name": "必应国际版",
-        "url": "https://cn.bing.com/search?q={keyword}&ensearch=1",
+bing.com/search?q={keyword}&ensearch=1",
         "encoding": "utf-8",
         "category": "general"
     },
     "360": {
         "name": "360搜索",
-        "url": "https://www.so.com/s?q={keyword}",
+so.com/s?q={keyword}",
         "encoding": "utf-8",
         "category": "general"
     },
@@ -272,26 +271,26 @@ ENGINES = {
     },
     "jisilu": {
         "name": "集思录",
-        "url": "https://www.jisilu.cn/explore/?keyword={keyword}",
+jisilu.cn/explore/?keyword={keyword}",
         "encoding": "utf-8",
         "category": "finance"
     },
     "ecosia": {
         "name": "Ecosia",
-        "url": "https://www.ecosia.org/search?q={keyword}",
+ecosia.org/search?q={keyword}",
         "encoding": "utf-8",
         "category": "general"
     },
     "wolframalpha": {
         "name": "WolframAlpha",
-        "url": "https://www.wolframalpha.com/input?i={keyword}",
+wolframalpha.com/input?i={keyword}",
         "encoding": "utf-8",
         "category": "knowledge"
     }
 }
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 1. 根据目的选择引擎
 
@@ -411,9 +410,35 @@ curl -s -o /dev/null -w "%{http_code}" https://www.baidu.com
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

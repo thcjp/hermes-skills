@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Productivity Tracker
 
 Track, categorize, and analyze your work and life activities to improve efficiency and maintain balance.

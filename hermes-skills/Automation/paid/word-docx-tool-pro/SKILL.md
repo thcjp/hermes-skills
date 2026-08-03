@@ -7,8 +7,7 @@ displayName: Word文档工具（专业版）
 summary: "创建、读取、编辑Word文档，支持格式化、模板、目录生成与批量操作.,支持多种使用场景和自动化处理。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: pro
-description: Word文档工具 - （专业版）。可生成提升工作效率
-
+description: "Word文档工具 - （专业版）。可生成提升工作效率。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
   核心能力: Word文档, docx, 文档创建, 文档编辑, 模板应用, 目录生成, 批量创建
 
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
@@ -60,7 +59,6 @@ Word创建、Word读取、内容编辑、格式化、模板应用、目录生成
 ### 批量处理与并行执行
 批量处理与并行执行
 
-**输入**: 用户提供批量处理与并行执行所需的指令和必要参数.
 **处理**: 解析批量处理与并行执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量处理与并行执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -68,7 +66,6 @@ Word创建、Word读取、内容编辑、格式化、模板应用、目录生成
 ### 企业级安全与审计
 企业级安全与审计
 
-**输入**: 用户提供企业级安全与审计所需的指令和必要参数.
 **处理**: 解析企业级安全与审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回企业级安全与审计的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -76,7 +73,6 @@ Word创建、Word读取、内容编辑、格式化、模板应用、目录生成
 ### 高级配置与自定义策略
 高级配置与自定义策略
 
-**输入**: 用户提供高级配置与自定义策略所需的指令和必要参数.
 **处理**: 解析高级配置与自定义策略的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级配置与自定义策略的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -84,7 +80,6 @@ Word创建、Word读取、内容编辑、格式化、模板应用、目录生成
 ### 免费版完全兼容
 免费版完全兼容，无缝升级
 
-**输入**: 用户提供免费版完全兼容所需的指令和必要参数.
 **处理**: 解析免费版完全兼容的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版完全兼容的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -92,12 +87,10 @@ Word创建、Word读取、内容编辑、格式化、模板应用、目录生成
 ### 优先技术支持与问题响应
 优先技术支持与问题响应
 
-**输入**: 用户提供优先技术支持与问题响应所需的指令和必要参数.
 **处理**: 解析优先技术支持与问题响应的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回优先技术支持与问题响应的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**输入**: 用户提供专业版增强功能所需的指令和必要参数.
 **处理**: 解析专业版增强功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回专业版增强功能的响应数据,包含状态码、结果和日志.
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
@@ -191,8 +184,7 @@ class WordDocxEngine:
             self.doc.add_heading(section.heading, level=section.level)
             if section.content:
                 self.doc.add_paragraph(section.content)
-            if section.table:
-                self._add_table(section.table)
+_add_table(section.table)
         self.doc.save(output_path)
         return output_path
 # ...
@@ -214,7 +206,6 @@ class WordDocxEngine:
             result["paragraphs"].append(para_data)
             if "Heading" in (para.style.name if para.style else ""):
                 result["headings"].append({
-                    "text": para.text,
                     "level": para.style.name.replace("Heading ", "")
                 })
         for table in doc.tables:
@@ -236,19 +227,14 @@ class WordDocxEngine:
                       output_path: str) -> str:
         """应用模板（PRO 专属：邮件合并）"""
         doc = Document(template_path)
-        for para in doc.paragraphs:
             for key, value in data.items():
-                placeholder = f"{{{{{key}}}}}"
+                placeholder = f"{{{}}}"
                 if placeholder in para.text:
                     para.text = para.text.replace(placeholder, str(value))
-        for table in doc.tables:
-            for row in table.rows:
                 for cell in row.cells:
                     for para in cell.paragraphs:
-                        for key, value in data.items():
-                            placeholder = f"{{{{{key}}}}}"
-                            if placeholder in para.text:
-                                para.text = para.text.replace(placeholder, str(value))
+                            placeholder = f"{{{}}}"
+text = para.text.replace(placeholder, str(value))
         doc.save(output_path)
         return output_path
 # ...
@@ -271,15 +257,11 @@ class WordDocxEngine:
                                level=content_config.get("level", 1))
         elif content_config.get("type") == "paragraph":
             para = self.doc.add_paragraph(content_config["text"])
-            if content_config.get("bold"):
-                para.runs[0].bold = True
-            if content_config.get("italic"):
-                para.runs[0].italic = True
-            if content_config.get("font_size"):
-                para.runs[0].font.size = Pt(content_config["font_size"])
-        elif content_config.get("type") == "table":
+runs[0].italic = True
+runs[0].font.size = Pt(content_config["font_size"])
+get("type") == "table":
             self._add_table(content_config)
-        elif content_config.get("type") == "image":
+get("type") == "image":
             self.doc.add_picture(content_config["path"],
                                width=Inches(content_config.get("width", 6)))
 # ...
@@ -387,9 +369,9 @@ word_docx:
 - 多租户隔离支持
 - 合规性检查内置
 
-## 最佳实践
+## 优选实践
 
-### 企业级最佳实践
+### 企业级优选实践
 
 1. **明确需求**：对于大批量任务，先规划分批策略与并行度
 2. **检查输入**：批量处理前先验证所有输入文件的有效性
@@ -473,3 +455,22 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 创建、读取、编辑Word文档，支持格式化、模板、目录生成与批量操作.,支持多种使用场景和自动化处理。提供高效自动化处理能
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

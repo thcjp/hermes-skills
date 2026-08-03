@@ -19,34 +19,38 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Slack
 
 ## Overview
 
-Use `slack` to react, manage pins, send/edit/delete messages, and fetch member info. The tool uses the bot token configured for Clawdbot.
+The `slack` skill provides a comprehensive set of functionalities to control Slack from Clawdbot, including message reactions, message management, pinning/unpinning messages, and retrieving member information. This skill is ideal for automating workflows and enhancing team communication.
 
-## Inputs to collect
+## Inputs to Collect
 
-* `channelId` and `messageId` (Slack message timestamp, e.g. `1712023032.1234`).
-* For reactions, an `emoji` (Unicode or `:name:`).
-* For message sends, a `to` target (`channel:<id>` or `user:<id>`) and `content`.
+To use the `slack` skill, you need to provide the following inputs:
 
-Message context lines include `slack message id` and `channel` fields you can reuse directly.
+- `channelId`: The ID of the Slack channel where the action should be performed.
+- `messageId`: The ID of the Slack message to be targeted (e.g., a message timestamp).
+- `emoji`: An emoji to react to a message (in Unicode format or using Slack emoji names).
+- `to`: The target for sending messages, specified as `channel:<id>` or `user:<id>`.
+- `content`: The content of the message to be sent, edited, or deleted.
+- `userId`: The ID of the Slack user whose information you want to retrieve.
 
 ## Actions
 
-### Action groups
+### Action Groups
 
-| Action group | Default | Notes |
-| --- | --- | --- |
-| reactions | enabled | React + list reactions |
-| messages | enabled | Read/send/edit/delete |
-| pins | enabled | Pin/unpin/list |
-| memberInfo | enabled | Member info |
-| emojiList | enabled | Custom emoji list |
+The `slack` skill offers the following action groups:
 
-### React to a message
+- `reactions`: Manage reactions to messages.
+- `messages`: Read, send, edit, and delete messages.
+- `pins`: Pin and unpin messages.
+- `memberInfo`: Retrieve information about Slack members.
+- `emojiList`: List custom emoji in Slack.
+
+### React to a Message
+
+To react to a message, provide the `channelId`, `messageId`, and `emoji`. Here's an example:
 
 ```json
 {
@@ -57,17 +61,9 @@ Message context lines include `slack message id` and `channel` fields you can re
 }
 ```
 
-### List reactions
+### Send a Message
 
-```json
-{
-  "action": "reactions",
-  "channelId": "C123",
-  "messageId": "1712023032.1234"
-}
-```
-
-### Send a message
+To send a message, specify the `to` target and `content`. Here's an example:
 
 ```json
 {
@@ -77,38 +73,9 @@ Message context lines include `slack message id` and `channel` fields you can re
 }
 ```
 
-### Edit a message
+### Pin a Message
 
-```json
-{
-  "action": "editMessage",
-  "channelId": "C123",
-  "messageId": "1712023032.1234",
-  "content": "Updated text"
-}
-```
-
-### Delete a message
-
-```json
-{
-  "action": "deleteMessage",
-  "channelId": "C123",
-  "messageId": "1712023032.1234"
-}
-```
-
-### Read recent messages
-
-```json
-{
-  "action": "readMessages",
-  "channelId": "C123",
-  "limit": 20
-}
-```
-
-### Pin a message
+To pin a message, provide the `channelId` and `messageId`. Here's an example:
 
 ```json
 {
@@ -118,17 +85,9 @@ Message context lines include `slack message id` and `channel` fields you can re
 }
 ```
 
-### Unpin a message
+### List Pinned Items
 
-```json
-{
-  "action": "unpinMessage",
-  "channelId": "C123",
-  "messageId": "1712023032.1234"
-}
-```
-
-### List pinned items
+To list pinned items in a channel, provide the `channelId`. Here's an example:
 
 ```json
 {
@@ -137,7 +96,9 @@ Message context lines include `slack message id` and `channel` fields you can re
 }
 ```
 
-### Member info
+### Retrieve Member Information
+
+To retrieve information about a Slack member, provide the `userId`. Here's an example:
 
 ```json
 {
@@ -146,7 +107,9 @@ Message context lines include `slack message id` and `channel` fields you can re
 }
 ```
 
-### Emoji list
+### List Custom Emoji
+
+To list custom emoji in Slack, use the `emojiList` action. Here's an example:
 
 ```json
 {
@@ -154,79 +117,96 @@ Message context lines include `slack message id` and `channel` fields you can re
 }
 ```
 
-## Ideas to try
+## Ideas to Try
 
-* React with ✅ to mark completed tasks.
-* Pin key decisions or weekly status updates.
+- Use the `react` action to mark completed tasks with a checkmark emoji.
+- Pin important decisions or weekly status updates for easy reference.
 
-## 依赖说明
+## Dependency Requirements
 
-### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
-- **操作系统**: Windows / macOS / Linux
+### Runtime Environment
 
-### 依赖说明
-| 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
-| LLM API | API | 必需 | 由Agent内置LLM提供 |
+- **Agent Platform**: Any AI Agent that supports SKILL.md, such as Claude Code, Cursor, Codex, or Gemini CLI.
+- **Operating System**: Windows, macOS, or Linux.
 
-### API Key 配置
-- 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
+### Dependencies
 
-### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
-- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+| Dependency | Type | Required | Source |
+|:-----------|:-----|:---------|:-------|
+| LLM API | API | Required | Provided by the Agent's built-in LLM |
 
-## 核心能力
+### API Key Configuration
 
-Use `slack` to react, manage pins, send/edit/delete messages, and fetch member info. The tool uses the bot token configured for Clawdbot.
+- The `slack` skill uses Markdown instructions and does not require an additional API key unless specified for external APIs.
 
-## 适用场景
+### Usability Classification
 
-| 场景 | 输入 | 输出 |
-|------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+- **Category**: MD+EXEC (Markdown instructions with some exec command-line execution capabilities)
+- **Description**: A Markdown-based AI Skill that drives Agent execution through natural language instructions.
 
-**不适用于**：需要人工判断的复杂决策场景
+## Core Capabilities
 
-## 使用流程
+- React to messages
+- Manage pins
+- Send, edit, and delete messages
+- Fetch member information
 
-1. 确认运行环境满足依赖说明中的要求
-2. 根据适用场景选择合适的使用方式
-3. 执行操作并检查输出结果
-4. 如遇错误，参考错误处理章节
+## Use Cases
 
-## 示例
+| Scenario | Input | Output |
+|:--------|:------|:-------|
+| Message reaction | Channel ID, Message ID, Emoji | Reaction added to the message |
+| Message management | Channel ID, Message ID, Content | Message sent, edited, or deleted |
+| Pinning | Channel ID, Message ID | Message pinned or unpinned |
+| Member information retrieval | User ID | Member information retrieved |
 
-### 示例1：基础用法
+**Not applicable for**: Complex decision scenarios requiring human judgment.
 
+## Usage Process
+
+1. Confirm that the runtime environment meets the requirements outlined in the dependency section.
+2. Choose the appropriate usage method based on the applicable scenarios.
+3. Execute the operation and verify the output result.
+4. In case of errors, refer to the troubleshooting section.
+
+## Examples
+
+### Example 1: React to a Message
+
+```plaintext
+Input: User requests to react to a message with a checkmark emoji.
+Process: The `slack` skill adds a checkmark emoji as a reaction to the specified message.
+Output: The message now has a checkmark emoji as a reaction.
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
-```
 
-## 错误处理
+## Error Handling
 
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| Error Scenario | Reason | Resolution |
+|:---------------|:-------|:-----------|
+| Configuration error | Missing or incorrectly formatted parameters | Check the dependency requirements and configuration instructions. |
+| Runtime error | Incompatible runtime environment | Confirm that the runtime environment meets the requirements. |
+| Network error | Connection timeout or unreachability | Check the network connection and try again. Consider alternative domestic solutions if necessary. |
 
-## 常见问题
+## Common Questions
 
-### Q1: 如何开始使用Slack？
-A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+### Q1: How do I start using Slack?
 
-### Q2: 遇到错误怎么办？
-A: 请参考错误处理章节，按照表格中的处理方式操作。
+A: Please refer to the usage process section to ensure that the environment meets the dependency requirements.
 
-### Q3: Slack有什么限制？
-A: 请参考已知限制章节了解具体限制。
+### Q2: What should I do if I encounter an error?
 
-## 已知限制
+A: Refer to the error handling section for instructions on how to resolve common issues.
 
-- 需要LLM支持，无LLM环境无法使用
-- 复杂场景可能需要人工辅助判断
-- 性能取决于底层模型能力
+### Q3: What are the limitations of Slack?
+
+A: Refer to the known limitations section for information about the skill's capabilities and restrictions.
+
+## Known Limitations
+
+- Requires LLM support, which is not available without an LLM environment.
+- Complex scenarios may require human judgment.
+- Performance depends on the underlying model capabilities.
+
+## Conclusion
+
+The `slack` skill offers a robust set of functionalities to enhance team communication and streamline workflows through Clawdbot. By providing detailed documentation and actionable examples, this skill empowers users to automate Slack interactions efficiently and effectively.

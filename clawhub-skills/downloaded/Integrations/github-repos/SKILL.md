@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # GitHub
 
 Access GitHub via the GitHub API with OAuth authentication. Manage repositories, issues, pull requests, commits, branches, releases, and workflows.
@@ -378,3 +377,30 @@ A: 请参考已知限制章节了解具体限制。
 ## 已知限制
 
 - 需要API Key，无Key环境无法使用
+
+---
+## 边界条件与限制
+
+### 输入限制
+- **用户身份验证**: 用户必须使用具有GitHub账户的用户身份进行验证，否则无法访问任何GitHub资源。
+- **OAuth权限**: 用户需要授予足够的OAuth权限（如repo、read:repo、write:repo等），以执行特定的操作。
+- **仓库格式**: 仓库名称必须遵循`owner/repo`的格式，其中`owner`是GitHub用户名或组织名，`repo`是仓库名称。
+
+### 性能边界
+- **API速率限制**: GitHub API对每个用户都有速率限制。如果超出限制，可能会收到`403 Forbidden`错误。
+- **数据量限制**: 对于某些操作，如列出仓库或问题，返回的数据量可能会很大。在这种情况下，可能需要分页处理。
+
+### 兼容性约束
+- **技能平台版本**: 该技能需要与支持SKILL.md的AI Agent和Skill平台版本兼容。
+- **GitHub API版本**: 该技能依赖于GitHub API，因此需要与GitHub API的当前版本兼容。
+
+### 工作流限制
+- **自动化流程**: 由于安全考虑，某些工作流操作（如删除分支）可能需要用户手动确认。
+- **社区下载版**: 该技能仅适用于GitHub社区下载版，可能不支持企业版的高级功能。
+
+### 其他限制
+- **资源访问**: 用户只能访问他们有权限访问的GitHub资源。
+- **操作确认**: 所有写操作都需要用户确认，以防止误操作。
+
+---
+

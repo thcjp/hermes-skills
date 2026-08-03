@@ -1,5 +1,6 @@
 ---
-slug: "encryption-tool-pro"
+
+slug: encryption-tool-pro
 name: "encryption-tool-pro"
 version: "1.0.0"
 displayName: "加密工具专业版"
@@ -46,7 +47,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 加密工具专业版为企业安全团队提供高级加密管理能力。在免费版基础加密能力之上,专业版新增KMS密钥管理集成、自动密钥轮换、合规性审计、批量文件加密和深度代码安全扫描,满足企业级数据保护和合规要求.
 专业版完全兼容免费版的所有加密命令和配置,安全团队可从免费版无缝升级,已有加密脚本无需修改即可在专业版中使用.
 ## 核心能力
@@ -54,17 +57,14 @@ category: "Automation"
 集成主流密钥管理服务,实现企业级密钥生命周期管理.
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供KMS/Vault密钥管理集成所需的指令和必要参数.
 **处理**: 解析KMS/Vault密钥管理集成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回KMS/Vault密钥管理集成的响应数据,包含状态码、结果和日志.
 ### 2. 自动密钥轮换
 
-**输入**: 用户提供自动密钥轮换所需的指令和必要参数.
 **处理**: 解析自动密钥轮换的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自动密钥轮换的响应数据,包含状态码、结果和日志.
 ### 3. 合规性审计
 
-**输入**: 用户提供合规性审计所需的指令和必要参数.
 **处理**: 解析合规性审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回合规性审计的响应数据,包含状态码、结果和日志.
 ### 4. 批量文件加密
@@ -130,14 +130,12 @@ done
 echo -e "\n批量加密完成"
 ```
 
-**输入**: 用户提供批量文件加密所需的指令和必要参数.
 **处理**: 解析批量文件加密的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量文件加密的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 5. 深度代码安全扫描
 
-**输入**: 用户提供深度代码安全扫描所需的指令和必要参数.
 **处理**: 解析深度代码安全扫描的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回深度代码安全扫描的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级加密管理、合规审计、批量加密与深度代、面向企业安全团队、的高级加密管理工、核心能力、自动密钥轮换与版、本管理、GDPR、PCI、DSS、批量文件加密与解、深度代码加密审计、信封加密与密钥派等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -159,8 +157,8 @@ echo "代码审计报告: crypto-audit.json"
 # ...
 echo -e "\n阶段2: 合规性检查..."
 python3 compliance_auditor.py --template "等保2.0" --output compliance-report.json
-python3 compliance_auditor.py --template "GDPR" --output gdpr-report.json
-python3 compliance_auditor.py --template "PCI-DSS" --output pci-report.json
+py --template "GDPR" --output gdpr-report.json
+py --template "PCI-DSS" --output pci-report.json
 # ...
 echo -e "\n阶段3: 密钥管理审计..."
 python3 key_rotation_check.py --kms-config .kms/keys.json
@@ -296,7 +294,7 @@ ci_cd:
   artifact_retention: 90
 ```
 
-## 最佳实践
+## 优选实践
 1. **信封加密**:使用主密钥加密数据密钥,数据密钥加密实际数据
 
 2. **密钥分离**:加密密钥、签名密钥、备份密钥必须分离
@@ -338,9 +336,9 @@ rotation_manager.rotate_all_keys()
 不会。轮换后旧版本密钥保留用于解密旧数据,新数据使用新版本密钥加密。系统自动处理版本兼容.
 ### Q4:如何生成合规报告?
 ```bash
-python3 compliance_auditor.py --all-templates --format html --output reports/
+py --all-templates --format html --output reports/
 # ...
-python3 compliance_auditor.py --template "等保2.0" --format pdf
+py --template "等保2.0" --format pdf
 ```
 
 ## 依赖说明
@@ -392,8 +390,6 @@ export ALIYUN_KMS_ACCESS_KEY_SECRET="${KMS_SECRET}"
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ```text
@@ -401,3 +397,22 @@ export ALIYUN_KMS_ACCESS_KEY_SECRET="${KMS_SECRET}"
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级加密管理,支持KMS集成、密钥轮换、合规审计、批量加密与深度代码安全扫描。。面向企业安全团队的高级加密管理工具,提
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

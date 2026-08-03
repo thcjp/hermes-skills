@@ -1,4 +1,5 @@
 ---
+
 slug: data-toolkit-pro
 name: data-toolkit-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 数据工具箱(专业版)
 summary: "全功能数据工程平台，覆盖统计检验、质量监控、工作流自动化与高级可视化.。数据工具箱专业版是一款面向数据团队的全功能数据工程平台，在免费版基础数据处理能力上扩展统计检验、数据质量监控、工作流自"
 license: Proprietary
 edition: pro
-description: 数据工具箱专业版是一款面向数据团队的全功能数据工程平台，在免费版基础数据处理能力上扩展统计检验、数据质量监控、工作流自动化、高级可视化、数据血缘追踪与多源连接优化等能力。Use
+description: "数据工具箱专业版是一款面向数据团队的全功能数据工程平台，在免费版基础数据处理能力上扩展统计检验、数据质量监控、工作流自动化、高级可视化、数据血缘追踪与多源连接优化等能力。Use。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。"
   when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - 数据分析
@@ -28,7 +29,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Research"
+
 ---
+
 # 数据工具箱（专业版）
 
 ## 概述
@@ -49,21 +52,21 @@ category: "Research"
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -89,7 +92,7 @@ if p_normal > 0.05:
     test_name = "独立样本 t 检验"
 else:
     # 非正态：使用 Mann-Whitney U 检验
-    t_stat, p_value = stats.mannwhitneyu(treatment, control)
+mannwhitneyu(treatment, control)
     test_name = "Mann-Whitney U 检验"
 # ...
 print(f"检验方法: {test_name}")
@@ -168,7 +171,7 @@ report.revenue
 
 ### 120 秒上手
 
-第一步，安装依赖：
+领先步，安装依赖：
 
 ```bash
 pip install pandas scipy matplotlib plotly
@@ -268,7 +271,7 @@ fig = go.Figure(data=[go.Sankey(
 fig.write_html('user_flow_sankey.html')
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 1. 统计检验前置假设验证
 
@@ -302,7 +305,7 @@ fig.write_html('user_flow_sankey.html')
 ### Q5：多源 JOIN 性能差？
 
 避免跨源全量 JOIN。策略：小表（<1GB）拉取到本地 JOIN；大表在数据库端完成 JOIN 后拉取结果；频繁查询的 JOIN 结果缓存 5 分钟.
-### Q6：`PostgreSQL` 查询如何优化？
+### Q6：`数据库` 查询如何优化？
 
 使用 `EXPLAIN ANALYZE` 查看执行计划。常见优化：为 JOIN/WHERE 字段添加索引、使用分区表加速时间范围查询、避免子查询嵌套过深、使用 CTE 提升可读性与性能.
 ### Q7：质量评分如何设定阈值？
@@ -333,7 +336,7 @@ Plotly 生成的 HTML 文件自带渲染引擎，可直接分享给他人用浏�
 | scipy | Python 库 | 统计检验必需 | `pip install scipy` | 1.10+ |
 | matplotlib | Python 库 | 基础可视化必需 | `pip install matplotlib` | 3.7+ |
 | plotly | Python 库 | 高级可视化必需 | `pip install plotly` | 5.18+ |
-| psql | 数据库客户端 | 数据库源推荐 | `apt install postgresql-client` | 12+ |
+| psql | 数据库客户端 | 数据库源推荐 | `apt install 数据库-client` | 12+ |
 | LLM API | API | 必需 | 由 Agent 平台内置 LLM 提供 | 不限 |
 
 ### API Key 配置
@@ -383,3 +386,14 @@ Plotly 生成的 HTML 文件自带渲染引擎，可直接分享给他人用浏�
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

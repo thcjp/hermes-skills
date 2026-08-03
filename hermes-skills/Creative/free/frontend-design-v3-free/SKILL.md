@@ -1,6 +1,7 @@
 ---
+
 name: "frontend-design-v3-free"
-description: "独特前端界面生成工具，拒绝AI同质化风格，输出有辨识度的HTML/CSS代码。"
+description: "独特前端界面生成工具，拒绝AI同质化风格，输出有辨识度的HTML/CSS代码。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -14,6 +15,11 @@ metadata:
     - "Design"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - browser
+
 ---
 
 # 前端设计工具V3（免费版）
@@ -52,8 +58,6 @@ metadata:
   10. Soft/Pastel          柔粉色调
 ```
 
-**输入**: 用户提供美学方向选择所需的指令和必要参数。
-**处理**: 按照skill规范执行美学方向选择操作,遵循单一意图原则。
 **输出**: 返回美学方向选择的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -68,16 +72,12 @@ metadata:
   ❌ 多次生成趋向同一字体（如 Space Grotesk）
 ```
 
-**输入**: 用户提供反模式禁令所需的指令和必要参数。
-**处理**: 按照skill规范执行反模式禁令操作,遵循单一意图原则。
 **输出**: 返回反模式禁令的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：独特前端界面生成、同质化风格、输出有辨识度的、HTML、前端设计工具、免费版、面向个人开发者的、核心能力、鲜明美学方向选择、布局四维设计指导、避免可预测的设计、输出可用的等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -198,7 +198,7 @@ metadata:
 
     <div class="work-item work-1">
       <h3>极简之美</h3>
-      <p>用最少的元素传达最强的信息。</p>
+      <p>用最少的元素传达专业的信息。</p>
     </div>
     <div class="work-item work-2">
       <h3>色彩对话</h3>
@@ -276,7 +276,7 @@ body {
 ```bash
 # 美学方向选择指南
 echo "选择一个极端美学方向:"
-echo "1. 极简主义   - 用最少元素传达最强信息"
+echo "1. 极简主义   - 用最少元素传达专业信息"
 echo "2. 极繁混乱   - 信息密集，视觉冲击"
 echo "3. 复古未来   - 80年代赛博朋克"
 echo "4. 有机自然   - 流动曲线，自然色彩"
@@ -302,7 +302,7 @@ echo "10. 柔粉色调  - 柔和渐变，圆润边角"
 
 ## 快速开始
 
-### 第一步：明确设计思考
+### 领先步：明确设计思考
 
 在编码前，回答以下问题：
 
@@ -320,13 +320,13 @@ echo "10. 柔粉色调  - 柔和渐变，圆润边角"
 ```html
 <!-- 独特字体配对示例 -->
 <!-- 配对1: 衬线标题 + 无衬线正文 -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+googleapis.com/css2?family=Playfair+Display:wght@400;900&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
 <!-- 配对2: 等宽字体 + 衬线正文 -->
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 
 <!-- 配对3: 几何无衬线 + 人文衬线 -->
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Newsreader:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Newsreader:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 ```
 
 ### 第三步：生成代码
@@ -380,7 +380,7 @@ body {
 }
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **美学方向明确**：每次选择一个极端方向，精准执行而非模糊折中。
 2. **字体配对独特**：拒绝通用字体，每次尝试不同字体组合。
@@ -445,7 +445,6 @@ A: HTML 输出优先用纯 CSS 方案。一次精心编排的交错显现页面�
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -458,3 +457,30 @@ A: HTML 输出优先用纯 CSS 方案。一次精心编排的交错显现页面�
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

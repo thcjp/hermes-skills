@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Flexible Database Design â SQLite flexible schema & knowledge base skill
 
 一套可复用的「软 Schema」设计方法：主干硬、尾巴软，三层演进。用户安装后，Agent 可据此指导其**真正构建**出灵活数据库。

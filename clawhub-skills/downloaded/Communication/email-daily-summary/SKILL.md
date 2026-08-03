@@ -21,7 +21,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Automatically logs into email accounts (Gmail, Outlook, QQ Mail, etc.) and generates daily email summaries. Use when the user wants to get a summary of their emails, check important messages, or create daily email digests.
 
 这个技能帮助你自动登录邮箱，获取邮件内容，并生成每日邮件总结。
@@ -375,3 +374,25 @@ A: 请参考已知限制章节了解具体限制。
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
 - 性能取决于底层模型能力
+
+---
+## 边界条件与限制
+
+### 输入限制
+- **邮箱登录状态**：技能要求邮箱已登录，否则无法自动获取邮件内容。
+- **邮件数量**：由于性能限制，技能可能无法处理邮箱中大量邮件的摘要生成。
+- **邮件内容复杂度**：对于包含大量图片、附件或特殊格式的邮件，摘要生成可能不够准确。
+
+### 性能边界
+- **响应时间**：技能处理邮件摘要的速度受网络和服务器性能影响，可能存在延迟。
+- **并发处理**：技能同时处理多个邮箱账户的能力有限，过多并发请求可能导致性能下降。
+
+### 兼容性约束
+- **浏览器兼容性**：技能依赖于浏览器操作，部分老旧浏览器可能不支持。
+- **操作系统兼容性**：技能在Windows、macOS和Linux操作系统上测试过，但未在其他操作系统上保证兼容性。
+
+### 其他限制
+- **邮件类型**：技能不适用于垃圾邮件或群发邮件，仅处理个人邮件。
+- **外部API依赖**：技能可能依赖外部API服务，若外部API服务不稳定，可能会影响技能的可用性。
+---
+

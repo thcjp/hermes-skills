@@ -1,0 +1,274 @@
+---
+slug: "finance-accounting"
+name: "finance-accounting"
+version: 1.0.1
+displayName: "财务"
+summary: "财务会计文书处理综合技"
+summary_zh: "财务会计文书处理综合技能包 - 包含记账、对账、税务、报表等核心功能。财务会计文书处理综合技能包 - 包含记账、对账、税务、报表等核心功能 核心能力: - 金融工具领域的专业化AI辅助工具"
+license: "MIT"
+description: |-
+  财务会计文书处理综合技能包 - 包含记账、对账、税务、报表等核心功能
+
+  核心能力:
+
+  - 金融工具领域的专业化AI辅助工具
+
+  - 
+
+  - 
+
+  适用场景:
+
+  - 交易分析、投资决策、财务计算
+
+  - 独立开发者与一人公司效率提升
+
+  - 自动化工作流与智能决策辅助
+tags:
+  - Finance
+  - 金融
+  - 财务
+  - 数据
+  - finance
+  - python
+  - bash
+  - output
+  - reconcile
+tools:
+  - read
+  - exec
+  - write
+homepage: ""
+category: "Finance"
+---
+
+# Finance Accounting
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| Finance Accounting财务会计文书处理 | 不支持 | 支持 |
+| DCF估值建模与敏感性分析 | 不支持 | 支持 |
+| 财务舞弊识别(Beneish M-Score) | 不支持 | 支持 |
+| 批量财报处理与自动化报告 | 不支持 | 支持 |
+| 行业基准对比与跨期趋势分析 | 不支持 | 支持 |
+
+## 核心能力
+
+### 1. 基础记账模块
+* **流水账记录**: 收入、支出、转账记录
+* **科目管理**: 会计科目设置和分类
+* **凭证生成**: 自动生成会计凭证
+* **余额计算**: 实时计算账户余额
+
+### 2. 对账模块
+* **银行对账**: 自动匹配银行流水
+* **往来对账**: 客户/供应商对账
+* **差异处理**: 自动识别和处理差异
+* **对账报告**: 生成对账报告
+
+### 3. 税务模块
+* **增值税计算**: 自动计算增值税
+* **所得税预缴**: 个人所得税/企业所得税
+* **税务申报**: 生成税务申报表
+* **税务规划**: 税务优化建议
+
+### 4. 报表模块
+* **资产负债表**: 自动生成资产负债表
+* **利润表**: 生成利润表
+* **现金流量表**: 现金流量分析
+* **自定义报表**: 按需生成报表
+
+### 5. 文档生成
+* **发票生成**: 自动生成电子发票
+* **对账单**: 客户对账单
+* **税务报告**: 税务申报文档
+* **审计报告**: 审计所需文档
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
+## 适用场景
+
+| 场景 | 输入 | 输出 |
+|:-----|:-----|:-----|
+| 基础记账 | 收支类型、金额、科目、日期 | 会计凭证与账户余额 |
+| 银行对账 | 银行流水CSV文件 | 对账匹配结果与差异报告 |
+| 税务计算 | 申报期间与税种类型 | 增值税/所得税申报表 |
+| 财务报表 | 报表类型与会计期间 | 资产负债表/利润表/现金流量表 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+
+### 基本记账
+
+```bash
+python finance.py record --type income --amount 1000 --category "销售收入" --date "2026-02-28"
+# ...
+python finance.py record --type expense --amount 500 --category "办公用品" --date "2026-02-28"
+# ...
+python finance.py balance
+```
+
+### 对账处理
+
+```bash
+python finance.py reconcile import --file bank_statement.csv
+# ...
+python finance.py reconcile auto
+# ...
+python finance.py reconcile report --output reconciliation_report.pdf
+```
+
+### 税务计算
+
+```bash
+python finance.py tax vat --period 2026-02
+# ...
+python finance.py tax report --type vat --period 2026-02 --output vat_report.xlsx
+# ...
+python finance.py tax plan --year 2026
+```
+
+### 报表生成
+
+```bash
+python finance.py report balance-sheet --period 2026-02 --output balance_sheet.pdf
+# ...
+python finance.py report income-statement --period 2026-02 --output income_statement.pdf
+# ...
+python finance.py report cash-flow --period 2026-02 --output cash_flow.pdf
+```
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|---:|---:|---:|---:|
+| content | string | 否 | 处理的内容输入 |
+| mode | string | 否 | 处理模式, 可选值: json/text/markdown |
+| style | string | 否 | 输出风格, 参考 `references/style.md` |
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "处理结果",
+    "status": "success",
+    "metadata": {
+    "metadata": {
+      "template_used": "reviewer",
+      "word_count": 0,
+      "style": "专业"
+    }
+  },
+  "error": null
+}
+```
+
+输出模板参考: `assets/output.json`
+
+## 异常处理
+
+| 错误场景 | 原因 | 处理方式 |
+|:---:|:---:|:---:|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 
+
+## 依赖说明
+
+### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **操作系统**: Windows / macOS / Linux
+
+### 依赖说明(补充)
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:------|------:|:------|:------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+- 
+
+### 可用性分类
+- **分类**: MD+EXEC()
+- **说明**: 基于Markdown的AI Skill,
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
+## 案例展示
+
+### 示例1：基础用法
+
+```
+### 基本记账(补充)
+# ...
+```bash
+python finance.py record --type income --amount 1000 --category "销售收入" --date "2026-02-28"
+
+python finance.py record --type expense --amount 500 --category "办公用品" --date "2026-02-28"
+
+python finance.py balance
+```
+# ...
+### 对账处理(补充)
+# ...
+```bash
+
+python finance.py reconcile auto
+
+```
+# ...
+### 税务计算(补充)
+# ...
+```bash
+python finance.py tax vat --period 2026-02
+
+python finance.p
+```
+# ...
+## 常见问题
+# ...
+### Q: 如何使用此Skill?
+A: 请参考使用流程章节
+# ...
+### Q: 如何使用此Skill?(补充)
+A: 请参考使用流程章节
+# ...
+# ...
+## 错误处理
+# ...
+# ...
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 请求重试；确认Agent平台LLM服务正常 |
+| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
+| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
+| 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
+# ...
+## 已知限制
+# ...
+### 数据安全
+# ...
+* 财务数据加密存储
+* 访问权限控制
+* 操作日志记录
+# ...
+### 合规性
+# ...
+* 符合会计准则
+* 遵守税务法规
+* 审计追踪
+# ...

@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Figma
 
 Access Figma via the Figma API with OAuth authentication. Read files, manage comments, extract design tokens, download images, and create webhooks for file event notifications.

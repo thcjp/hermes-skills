@@ -18,7 +18,6 @@ pricing_model: "per_use"
 suggested_price: 9.9
 ---
 
-
 # Multi Search Engine æç®å½åç
 
 集成 10 个免费搜索引擎。

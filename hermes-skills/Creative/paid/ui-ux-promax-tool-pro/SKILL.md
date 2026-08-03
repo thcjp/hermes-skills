@@ -1,4 +1,5 @@
 ---
+
 slug: ui-ux-promax-tool-pro
 name: ui-ux-promax-tool-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: UIUX设计助手(专业版)
 summary: "面向团队的企业级UI/UX设计工程平台,含完整设计系统、UX流程、可访问性审查与脚本生成.。UI/UX设计助手专业版为团队与企业提供端到端UI/UX设计工程能力,涵盖完整设计系统、用户体验流"
 license: Proprietary
 edition: pro
-description: 'UI/UX设计助手专业版为团队与企业提供端到端UI/UX设计工程能力,涵盖完整设计系统、用户体验流程、WCAG AA可访问性审查与设计系统脚本生成。核心能力:
-
+description: "UI/UX设计助手专业版为团队与企业提供端到端UI/UX设计工程能力,涵盖完整设计系统、用户体验流程、WCAG AA可访问性审查与设计系统脚本生成。核心能力:。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。"
   - 完整设计系统(颜色/排版/间距/圆角/阴影/动效令牌)
 
   - 用户体验流程图与关键路径设计
@@ -47,7 +47,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Creative"
+
 ---
+
 # UI/UX 设计助手(专业版)
 
 ## 概述
@@ -69,21 +71,21 @@ category: "Creative"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -230,7 +232,6 @@ def audit_html(file_path):
             continue
         if 'aria-label=' not in tag and 'id=' not in tag:
             issues.append({
-                'rule': 'WCAG 1.3.1',
                 'level': 'A',
                 'file': str(file_path),
                 'issue': '输入框缺少 label 关联',
@@ -244,17 +245,14 @@ def audit_html(file_path):
             'level': 'A',
             'file': str(file_path),
             'issue': '按钮无可访问文本',
-            'snippet': match.group()[:80]
         })
 # .
     # 4. 颜色对比度(简化检查:内联样式)
     for match in re.finditer(r'style="[^"]*color:\s*(#[0-9a-fA-F]{3,6})[^"]*background[^"]*:\s*(#[0-9a-fA-F]{3,6})', content):
         issues.append({
-            'rule': 'WCAG 1.4.3',
             'level': 'AA',
             'file': str(file_path),
             'issue': '内联颜色需人工验证对比度 ≥ 4.5:1',
-            'snippet': match.group()[:80]
         })
 # .
     return issues
@@ -308,7 +306,7 @@ if __name__ == '__main__':
 、品牌视觉时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:声明团队上下文
+### 领先步:声明团队上下文
 
 在对话中说明团队、产品与设计目标,例如:
 
@@ -362,19 +360,16 @@ for category, items in tokens.items():
             for shade, color in value.items():
                 css_lines.append(f"  --{category}-{name}-{shade}: {color};")
         else:
-            css_lines.append(f"  --{category}-{name}: {value};")
+append(f"  --{category}-{name}: {value};")
 css_lines.append("}")
 Path("dist/tokens.css").write_text("\n".join(css_lines), encoding='utf-8')
 # .
 # iOS Swift
 swift_lines = ["import UIKit", "", "enum DesignTokens {"]
-for category, items in tokens.items():
-    for name, value in items.items():
         if isinstance(value, dict):
-            for shade, color in value.items():
                 swift_lines.append(f"    static let {category}{name}{shade} = UIColor(hex: \"{color}\")")
         else:
-            swift_lines.append(f"    static let {category}{name} = \"{value}\"")
+append(f"    static let {category}{name} = \"{value}\"")
 swift_lines.append("}")
 Path("dist/Tokens.swift").write_text("\n".join(swift_lines), encoding='utf-8')
 # .
@@ -409,7 +404,7 @@ print("令牌已导出: dist/tokens.css, dist/Tokens.swift, dist/tokens.json")
 - Loading 状态用 aria-busy 通知屏幕阅读器
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **令牌覆盖全维度**:颜色、排版、间距、圆角、阴影、动效、z-index 都应令牌化,禁止硬编码.
 2. **WCAG AA 内建**:组件默认合规,而非作为可选附加项;对比度、键盘、屏幕阅读器全覆盖.
@@ -468,7 +463,7 @@ Pro 版完全兼容免费版的所有设计建议与令牌。个人开发者可�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+execute(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于自然语言指令驱动 Agent 输出企业级设计工程方案;Python 脚本与 CI 集成需在仓库中落地并由本地或 CI 执行
 
 ## 错误处理
@@ -484,3 +479,14 @@ Pro 版完全兼容免费版的所有设计建议与令牌。个人开发者可�
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

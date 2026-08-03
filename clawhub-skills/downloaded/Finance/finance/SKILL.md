@@ -18,8 +18,6 @@ pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
 ---
-
-
 # finance
 
 This skill helps you fetch **latest quotes** and **historical series** for:
@@ -51,52 +49,6 @@ Use this skill when the user asks:
 * If the user needs high-frequency or many symbols, recommend adding a paid provider later.
 
 See `providers.md` for details and symbol formats.
-
----
-
-These scripts are intended to be run from a terminal. The agent should:
-
-1. ensure dependencies installed
-2. run the scripts
-3. summarize results cleanly
-
-Install:
-
-* `python -m venv .venv && source .venv/bin/activate` (or Windows equivalent)
-* `pip install -r requirements.txt`
-
-## Commands
-
-### 1) Latest quote (stock/ETF/index)
-
-Examples:
-
-* `python scripts/market_quote.py AAPL`
-* `python scripts/market_quote.py ^GSPC`
-* `python scripts/market_quote.py VOO`
-
-### 2) Latest FX rate
-
-Examples:
-
-* `python scripts/market_quote.py USD/ZAR`
-* `python scripts/market_quote.py EURUSD`
-* `python scripts/market_quote.py GBP-JPY`
-
-### 3) Historical series (CSV to stdout)
-
-Examples:
-
-* `python scripts/market_series.py AAPL --days 30`
-* `python scripts/market_series.py USD/ZAR --days 30`
-
-### 4) Watchlist summary (local file)
-
-* Add tickers: `python scripts/market_watchlist.py add AAPL MSFT USD/ZAR`
-* Remove: `python scripts/market_watchlist.py remove MSFT`
-* Show summary: `python scripts/market_watchlist.py summary`
-
----
 
 * For quotes: price, change %, timestamp/source, and any caveats (like “FX updates daily”).
 * For series: confirm date range, number of points, and show a small preview (first/last few rows).
@@ -181,3 +133,32 @@ A: 请参考已知限制章节了解具体限制。
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
 - 性能取决于底层模型能力
+
+---
+## 边界条件与限制
+
+### 输入限制
+- **股票/ETF/指数代码**：输入的股票、ETF或指数代码必须符合格式要求，例如AAPL、^GSPC、VOO等。
+- **外汇对代码**：外汇对代码必须符合格式要求，例如USD/ZAR、EURUSD、GBP-JPY等。
+- **加密货币代码**：支持的加密货币代码取决于所选提供商，且可能存在变动。
+
+### 性能边界
+- **查询频率**：由于缓存机制，频繁的查询可能会触发缓存刷新，影响性能。建议用户合理控制查询频率。
+- **数据量**：对于大量股票、ETF、指数或外汇对的查询，可能会增加查询时间，建议分批次进行。
+
+### 兼容性约束
+- **操作系统**：目前finance技能支持Windows、macOS和Linux操作系统。
+- **Python版本**：需要Python 3.6或更高版本。
+- **LLM支持**：需要LLM支持，无LLM环境无法使用。
+
+### 缓存策略
+- **缓存时间**：默认缓存时间为24小时，但可根据需要调整。
+- **缓存刷新**：频繁的查询可能会触发缓存刷新，影响性能。
+
+### 提供商回退
+- **Yahoo Finance**：作为默认股票/ETF/指数数据提供商，Yahoo Finance可能存在访问限制或数据延迟。
+- **ExchangeRate-API**：作为默认外汇数据提供商，ExchangeRate-API提供每日更新，但可能存在访问限制。
+
+### 付费服务
+- 对于高频或大量数据的查询，建议使用付费服务以避免访问限制和数据延迟。
+---

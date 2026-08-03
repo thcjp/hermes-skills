@@ -1,5 +1,6 @@
 ---
-slug: "ziptax-tool-pro"
+
+slug: ziptax-tool-pro
 name: "ziptax-tool-pro"
 version: "1.0.0"
 displayName: "销售税查询(专业版)"
@@ -45,7 +46,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+
 ---
+
 # 销售税查询工具(专业版)
 ## 概述
 `ziptax-tool-pro` 是面向团队与企业的端到端销售税工程平台。它在免费版基础查询能力之上,扩展了批量并行查询、本地缓存与增量刷新、税务合规报告、企业级 API 封装与 CI/CD 集成能力,帮助团队构建可审计、可扩展、高可用的销售税计算体系.
@@ -64,21 +67,21 @@ category: "Automation"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -88,14 +91,12 @@ category: "Automation"
 为电商订单批量计算销售税,支持高并发.
 ```python
 #!/usr/bin/env python3
-# （请参考skill目录中的脚本文件） — 批量地址销售税查询
 import asyncio
 import aiohttp
 import json
 import csv
 from pathlib import Path
 from typing import List, Dict
-# ...
 API_URL = "https://api.zip-tax.com/request/v60"
 API_KEY = ""  # 从环境变量读取
 CONCURRENCY = 10  # 并发数
@@ -115,37 +116,27 @@ async def lookup_one(session: aiohttp.ClientSession, address: str) -> Dict:
             return {"address": address, "rate": None, "status": f"error: {data}"}
     except Exception as e:
         return {"address": address, "rate": None, "status": f"exception: {e}"}
-# ...
 async def batch_lookup(addresses: List[str], output_file: str):
     """批量查询地址税率"""
     semaphore = asyncio.Semaphore(CONCURRENCY)
-# ...
     async with aiohttp.ClientSession() as session:
         async def limited_lookup(addr):
             async with semaphore:
                 return await lookup_one(session, addr)
-# ...
         results = await asyncio.gather(*[limited_lookup(a) for a in addresses])
-# ...
-    # 写入 CSV 报告
     with open(output_file, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=["address", "rate", "rate_percent", "status"])
         writer.writeheader()
         writer.writerows(results)
-# ...
-    # 汇总
     success = sum(1 for r in results if r["status"] == "success")
     print(f"批量查询完成: {success}/{len(results)} 成功")
     print(f"报告: {output_file}")
-# ...
 if __name__ == "__main__":
     import os
     API_KEY = os.environ.get("ZIPTAX_API_KEY", "")
     if not API_KEY:
         print("错误:未设置 ZIPTAX_API_KEY")
         exit(1)
-# ...
-    # 从文件读取地址列表
     addresses = Path("input/addresses.txt").read_text(encoding="utf-8").splitlines()
     asyncio.run(batch_lookup(addresses, "reports/tax-rates.csv"))
 ```
@@ -154,23 +145,19 @@ if __name__ == "__main__":
 通过本地缓存减少 API 调用,降低成本并提升性能.
 ```python
 #!/usr/bin/env python3
-# （请参考skill目录中的脚本文件） — 带本地缓存的税率查询
 import json
 import time
 import hashlib
 import os
 from pathlib import Path
 import requests
-# ...
 CACHE_DIR = Path("cache/taxrates")
 CACHE_TTL = 7 * 24 * 3600  # 7 天缓存
-API_URL = "https://api.zip-tax.com/request/v60"
+zip-tax.com/request/v60"
 API_KEY = os.environ.get("ZIPTAX_API_KEY", "")
-# ...
 def cache_key(query: str) -> str:
     """生成缓存键"""
     return hashlib.sha256(query.encode()).hexdigest()[:16]
-# ...
 def get_cached(key: str):
     """读取缓存"""
     cache_file = CACHE_DIR / f"{key}.json"
@@ -179,30 +166,22 @@ def get_cached(key: str):
         if time.time() - data["cached_at"] < CACHE_TTL:
             return data["result"]
     return None
-# ...
 def set_cached(key: str, result):
     """写入缓存"""
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    cache_file = CACHE_DIR / f"{key}.json"
     cache_file.write_text(json.dumps({
         "cached_at": time.time(),
         "result": result
     }, ensure_ascii=False, indent=2), encoding="utf-8")
-# ...
 def lookup_with_cache(query: str, query_type: str = "postalcode") -> dict:
     """带缓存的查询"""
     key = cache_key(f"{query_type}:{query}")
-# ...
-    # 1. 尝试缓存
     cached = get_cached(key)
     if cached:
         return {**cached, "source": "cache"}
-# ...
-    # 2. 调用 API
     params = {query_type: query}
     resp = requests.get(API_URL, params=params, headers={"X-API-KEY": API_KEY})
     data = resp.json()
-# ...
     if data.get("metadata", {}).get("response", {}).get("code") == 100:
         result = {
             "rate": data["taxSummaries"][0]["rate"],
@@ -213,9 +192,7 @@ def lookup_with_cache(query: str, query_type: str = "postalcode") -> dict:
         }
         set_cached(key, result)
         return {**result, "source": "api"}
-# ...
     return {"error": data, "source": "api"}
-# ...
 if __name__ == "__main__":
     result = lookup_with_cache("92618", "postalcode")
     print(json.dumps(result, indent=2, ensure_ascii=False))
@@ -225,23 +202,18 @@ if __name__ == "__main__":
 为审计生成本地税率快照与合规报告.
 ```python
 #!/usr/bin/env python3
-# （请参考skill目录中的脚本文件） — 税务合规报告生成
 import json
 import csv
 from datetime import datetime, date
 from pathlib import Path
 from cached_lookup import lookup_with_cache
-# ...
 REPORT_DIR = Path("reports/compliance")
 REPORT_DIR.mkdir(parents=True, exist_ok=True)
-# ...
-# 示例
 KEY_JURISDICTIONS = [
     {"state": "CA", "postalcode": "92618", "name": "Irvine, CA"},
     {"state": "NY", "postalcode": "10001", "name": "New York, NY"},
     {"state": "TX", "postalcode": "75001", "name": "Dallas, TX"},
 ]
-# ...
 def generate_report():
     """生成合规报告"""
     today = date.today().isoformat()
@@ -249,7 +221,6 @@ def generate_report():
     snapshot_file = REPORT_DIR / f"snapshot-{today}.json"
     report_data = []
     snapshot = {"report_date": today, "generated_at": datetime.now().isoformat(), "jurisdictions": []}
-# ...
     for j in KEY_JURISDICTIONS:
         result = lookup_with_cache(j["postalcode"], "postalcode")
         if "rate" in result:
@@ -269,26 +240,19 @@ def generate_report():
                 "rate": result["rate"],
                 "base_rates": result.get("base_rates", [])
             })
-# ...
-    # CSV 报告(供审计)
     with open(report_file, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=report_data[0].keys())
+DictWriter(f, fieldnames=report_data[0].keys())
         writer.writeheader()
         writer.writerows(report_data)
-# ...
-    # JSON 快照(供历史对比)
     snapshot_file.write_text(json.dumps(snapshot, indent=2, ensure_ascii=False), encoding="utf-8")
-# ...
     print(f"合规报告: {report_file}")
     print(f"税率快照: {snapshot_file}")
     print(f"覆盖税区: {len(report_data)}")
-# ...
 if __name__ == "__main__":
     generate_report()
 ```
 
 ## 不适用场景
-
 以下场景销售税查询(专业版)不适合处理：
 
 - 逆向工程闭源API
@@ -296,10 +260,9 @@ if __name__ == "__main__":
 - 非标准协议集成
 
 ## 触发条件
-
 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
-### 第一步:声明企业上下文
+### 领先步:声明企业上下文
 在对话中说明团队规模、业务场景与合规需求,例如:
 
 ```
@@ -312,19 +275,10 @@ if __name__ == "__main__":
 工具会输出批量查询脚本、缓存方案、合规报告模板与 CI 集成 YAML.
 ### 第三步:落地与持续运行
 ```bash
-# 依赖说明
 pip install aiohttp requests
-# ...
-# 配置 API Key
-export ZIPTAX_API_KEY="your-key"
-# ...
-# 批量查询
+export ZIPTAX_API_KEY="${API_KEY:?请设置环境变量}"
 python3 （请参考skill目录中的脚本文件）
-# ...
-# 生成合规报告
 python3 （请参考skill目录中的脚本文件）
-# ...
-# 查看 CI 集成
 cat .github/workflows/taxrate-sync.yml
 ```
 
@@ -332,13 +286,11 @@ cat .github/workflows/taxrate-sync.yml
 ## 配置示例
 ### CI/CD 税率同步流水线
 ```yaml
-# .github/workflows/taxrate-sync.yml
 name: Daily Tax Rate Sync
 on:
   schedule:
     - cron: '0 6 * * *'  # 每天早上6点
   workflow_dispatch:
-# ...
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -347,23 +299,19 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
       - run: pip install requests aiohttp
-# ...
       - name: 同步税率并生成报告
         env:
           ZIPTAX_API_KEY: ${{ secrets.ZIPTAX_API_KEY }}
         run: python3 （请参考skill目录中的脚本文件）
-# ...
       - name: 检测异常波动
         run: python3 （请参考skill目录中的脚本文件） reports/compliance/ || (echo "税率异常" && exit 1)
-# ...
       - name: 提交报告
         run: |
           git config user.name "Tax Sync Bot"
-          git config user.email "bot@example.com"
+email "bot@example.com"
           git add reports/compliance/
           git commit -m "chore: daily tax rate sync [skip ci]" || true
           git push
-# ...
       - name: 失败告警
         if: failure()
         uses: slackapi/slack-github-action@v1
@@ -405,7 +353,6 @@ export class TaxClient {
         const resp = await fetch(`${this.apiUrl}?${params}`, {
           headers: { 'X-API-KEY': this.apiKey }
         });
-        data = await resp.json();
         if (data.metadata?.response?.code === 100) break;
         throw new Error(`API error: ${data.metadata?.response?.message}`);
       } catch (err) {
@@ -435,14 +382,14 @@ export class TaxClient {
   }
 // ...
   private async setCache(query: string, type: string, result: TaxRateResult): Promise<void> {
-    const key = Buffer.from(`${type}:${query}`).toString('base64').slice(0, 16);
+toString('base64').slice(0, 16);
     await fs.mkdir(this.cacheDir, { recursive: true });
     await fs.writeFile(path.join(this.cacheDir, `${key}.json`), JSON.stringify(result));
   }
 }
 ```
 
-## 最佳实践
+## 优选实践
 1. **缓存优先**:税率短期不变,本地缓存可降低 90%+ API 调用,显著降低成本.
 2. **批量并行**:多地址查询用并发(10-20),总耗时大幅缩短,但需注意 API 限流.
 3. **重试与退避**:网络抖动时指数退避重试,避免雪崩.
@@ -491,11 +438,10 @@ Pro 版完全兼容免费版的所有查询接口与 CLI 封装。个人开发�
 - **CI 集成**:在 CI 平台(如 GitHub Actions)的 Secrets 中配置 `ZIPTAX_API_KEY`
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+execute(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于自然语言指令驱动 Agent 调用 zip-tax.com API;批量脚本、缓存与 CI 集成需在仓库中落地并由本地或 CI 执行;需要预先注册并配置 API Key
 
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -507,10 +453,7 @@ Pro 版完全兼容免费版的所有查询接口与 CLI 封装。个人开发�
 - 本地运行，不支持多设备同步
 
 ## 示例
-
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 
@@ -536,3 +479,14 @@ Skill: 执行完成,结果如下: 操作成功
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

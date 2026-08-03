@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Internet Search
 
 Queries a self-hosted SearXNG instance aggregating multiple search engines.

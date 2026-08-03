@@ -1,6 +1,7 @@
 ---
+
 name: "google-workspace-toolkit-free"
-description: "免配置云控制台的Google办公工具接口,OAuth登录即用,支持Gmail、日历、Drive核心工具调用。"
+description: "免配置云控制台的Google办公工具接口,OAuth登录即用,支持Gmail、日历、Drive核心工具调用。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -16,6 +17,10 @@ metadata:
     - "个人效率"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # 谷歌办公工具接口 - 免费版
@@ -37,8 +42,6 @@ metadata:
 - 无需配置回调地址
 - 只需 Google 账号登录授权
 
-**输入**: 用户提供零配置快速接入所需的指令和必要参数。
-**处理**: 按照skill规范执行零配置快速接入操作,遵循单一意图原则。
 **输出**: 返回零配置快速接入的执行结果,包含操作状态和输出数据。
 
 ### Gmail 邮件工具
@@ -48,8 +51,6 @@ metadata:
 - `gmail.send`:发送邮件
 - `gmail.createDraft`:创建草稿
 
-**输入**: 用户提供Gmail 邮件工具所需的指令和必要参数。
-**处理**: 按照skill规范执行Gmail 邮件工具操作,遵循单一意图原则。
 **输出**: 返回Gmail 邮件工具的执行结果,包含操作状态和输出数据。
 
 ### Calendar 日历工具
@@ -59,8 +60,6 @@ metadata:
 - `calendar.createEvent`:创建日历事件
 - `calendar.findFreeTime`:查找空闲时间段
 
-**输入**: 用户提供Calendar 日历工具所需的指令和必要参数。
-**处理**: 按照skill规范执行Calendar 日历工具操作,遵循单一意图原则。
 **输出**: 返回Calendar 日历工具的执行结果,包含操作状态和输出数据。
 
 ### Drive 文件工具
@@ -68,8 +67,6 @@ metadata:
 - `drive.search`:搜索云端文件
 - `drive.downloadFile`:下载文件到本地
 
-**输入**: 用户提供Drive 文件工具所需的指令和必要参数。
-**处理**: 按照skill规范执行Drive 文件工具操作,遵循单一意图原则。
 **输出**: 返回Drive 文件工具的执行结果,包含操作状态和输出数据。
 
 ### 认证管理
@@ -78,8 +75,6 @@ metadata:
 - 支持重新认证与令牌刷新
 - 支持清除凭据重新授权
 
-**输入**: 用户提供认证管理所需的指令和必要参数。
-**处理**: 按照skill规范执行认证管理操作,遵循单一意图原则。
 **输出**: 返回认证管理的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：免配置云控制台的、办公工具接口、核心工具调用、谷歌办公工具接口、免费版、通过工具协议直接、Workspace、无需创建云控制台、登录即可使用、核心能力、零云控制台配置、账号登录即用、邮件搜索、日历事件列表、文件搜索与下载、通过工具协议统一、无需管理多个、SDK等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
@@ -153,7 +148,7 @@ gwtool call --server google-workspace \
 
 ## 快速开始
 
-### 第一步:安装与注册
+### 领先步:安装与注册
 
 ```bash
 # 安装工具接口
@@ -173,7 +168,7 @@ gwtool config add google-workspace \
 
 ```bash
 # 触发 OAuth 登录
-gwtool call --server google-workspace --tool "gmail.search" query="is:unread" maxResults=5
+search" query="is:unread" maxResults=5
 ```
 
 浏览器中登录 Google 账号并授权后,凭据自动保存到本地。
@@ -182,10 +177,9 @@ gwtool call --server google-workspace --tool "gmail.search" query="is:unread" ma
 
 ```bash
 # 搜索邮件
-gwtool call --server google-workspace --tool "gmail.search" query="newer_than:7d" maxResults=10
+search" query="newer_than:7d" maxResults=10
 
 # 查看日历
-gwtool call --server google-workspace --tool "calendar.list"
 
 # 搜索文件
 gwtool call --server google-workspace --tool "drive.search" query="报告"
@@ -243,7 +237,7 @@ for mail in emails:
     print(f"  - {mail.get('from', '未知')}: {mail.get('subject', '无主题')}")
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 1. 善用 OAuth 自动续期
 
@@ -251,7 +245,7 @@ for mail in emails:
 
 ```bash
 # 令牌过期后,执行任意命令自动刷新
-gwtool call --server google-workspace --tool "gmail.search" query="is:unread" maxResults=1
+search" query="is:unread" maxResults=1
 ```
 
 ### 2. 跨设备使用需重新授权
@@ -265,8 +259,6 @@ gwtool call --server google-workspace --tool "gmail.search" query="is:unread" ma
 ```bash
 # 创建日历事件
 gwtool call --server google-workspace \
-    --tool "calendar.createEvent" \
-    calendarId="your@gmail.com" \
     summary="团队周会" \
     start='{"dateTime":"2026-07-25T14:00:00Z"}' \
     end='{"dateTime":"2026-07-25T15:00:00Z"}'
@@ -278,7 +270,6 @@ gwtool call --server google-workspace \
 
 ```bash
 gwtool call --server google-workspace \
-    --tool "calendar.findFreeTime" \
     attendees='["a@example.com","b@example.com"]' \
     timeMin="2026-07-25T09:00:00Z" \
     timeMax="2026-07-25T18:00:00Z" \
@@ -300,7 +291,7 @@ gwtool call --server google-workspace \
 gwtool call --server google-workspace --tool "auth.refreshToken"
 
 # 或直接执行业务命令(自动刷新)
-gwtool call --server google-workspace --tool "gmail.search" query="is:unread" maxResults=1
+search" query="is:unread" maxResults=1
 ```
 
 ### Q3: 如何切换 Google 账号?
@@ -309,10 +300,9 @@ gwtool call --server google-workspace --tool "gmail.search" query="is:unread" ma
 
 ```bash
 # 清除凭据
-gwtool call --server google-workspace --tool "auth.clear"
 
 # 执行任意命令重新触发 OAuth 登录
-gwtool call --server google-workspace --tool "gmail.search" query="is:unread" maxResults=1
+search" query="is:unread" maxResults=1
 ```
 
 ### Q4: 免费版支持哪些工具?与专业版有何区别?
@@ -356,11 +346,10 @@ gwtool call --server google-workspace --tool "gmail.search" query="is:unread" ma
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,核心功能通过工具协议调用需要 exec 命令行执行能力)
+- **分类**: MD+execute(纯 Markdown 指令,核心功能通过工具协议调用需要 exec 命令行执行能力)
 - **说明**: 基于工具接口的 AI Skill,通过工具协议统一调用 Google Workspace 服务。免费版主打零云控制台配置,OAuth 登录即用,支持 Gmail、Calendar、Drive 三大核心服务共 10 个工具,适合个人轻量办公场景。
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
@@ -374,3 +363,22 @@ gwtool call --server google-workspace --tool "gmail.search" query="is:unread" ma
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

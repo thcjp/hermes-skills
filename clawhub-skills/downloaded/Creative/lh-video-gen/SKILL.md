@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # LH Video Gen
 
 从视频脚本 Markdown 文件一键生成竖版短视频（9:16）。
@@ -87,8 +86,6 @@ python3 generate.py <脚本路径> [选项]
 ## 脚本格式
 
 用 `---` 分隔各段，每段包含 `**口播**`、`**字幕**`、`**画面**` 字段：
-
-```markdown
 
 ---
 

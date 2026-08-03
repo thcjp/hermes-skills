@@ -1,5 +1,5 @@
 ---
-slug: "sql-master-tool-pro"
+slug: sql-master-tool-pro
 name: "sql-master-tool-pro"
 version: "1.0.0"
 displayName: "SQL大师工具(专业版)"
@@ -24,7 +24,7 @@ tags:
   - pro
   - schema
   - python
-  - postgresql
+  - 数据库
   - mydb
 tools:
   - read
@@ -39,7 +39,7 @@ category: "Automation"
 ## 概述
 
 当数据库从"单机开发"走向"企业生产"，对Schema演进管理、备份策略、多环境同步与高可用的要求显著提升：需要版本化迁移工具避免手工ALTER的混乱、需要增量压缩备份降低存储成本、需要多环境Schema对比防止结构漂移、需要主从复制与读写分离保障可用性。专业版针对这些场景提供完整解决方案，使数据库运维从"手动操作"升级为"可追溯、可恢复、可观测"的工程化能力.
-同时内置多数据库Schema对比引擎，能在 `PostgreSQL`、MySQL、SQLite间自动识别结构差异并生成同步脚本，显著降低多环境维护成本.
+同时内置多数据库Schema对比引擎，能在 `数据库`、MySQL、SQLite间自动识别结构差异并生成同步脚本，显著降低多环境维护成本.
 ## 核心能力
 
 | 能力分类 | 免费版 | 专业版 |
@@ -55,21 +55,21 @@ category: "Automation"
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -82,7 +82,7 @@ category: "Automation"
 ```python
 from sql_master_tool import ProFeatures
 # ...
-pro = ProFeatures(db_url="postgresql://user:pass@localhost/mydb")
+pro = ProFeatures(db_url="数据库://user:pass@localhost/mydb")
 pro.migrations.add("005_add_orders_shipping", up_sql="""
     ALTER TABLE orders ADD COLUMN shipping_address TEXT;
     CREATE INDEX idx_orders_shipping ON orders(shipping_address);
@@ -112,8 +112,8 @@ pro.backup_strategy(
 对比开发与生产环境的Schema差异，生成同步脚本，防止环境间结构漂移.
 ```python
 diff = pro.schema_compare(
-    source="postgresql://dev-host/dev_db",
-    target="postgresql://prod-host/prod_db"
+    source="数据库://dev-host/dev_db",
+    target="数据库://prod-host/prod_db"
 )
 # 输出：3张表新增、1张表字段差异、2个索引缺失
 diff.generate_sync_script("sync_to_prod.sql")
@@ -124,8 +124,8 @@ diff.generate_sync_script("sync_to_prod.sql")
 配置主从复制与读写分离，写操作走主库，只读查询自动分流到副本，提升整体吞吐与可用性.
 ```python
 pro.high_availability(
-    master="postgresql://master-host:5432/mydb",
-    replicas=["postgresql://replica-1:5432/mydb", "postgresql://replica-2:5432/mydb"],
+    master="数据库://master-host:5432/mydb",
+    replicas=["数据库://replica-1:5432/mydb", "数据库://replica-2:5432/mydb"],
     read_split=0.8,
     failover="auto",           # 自动故障切换
     health_check_interval=10   # 10秒健康检查
@@ -145,12 +145,12 @@ pro.pitr_recovery(
 
 ## 快速开始
 
-### 第一步：启用专业版功能
+### 领先步：启用专业版功能
 
 ```python
 from sql_master_tool import ProFeatures
 # ...
-pro = ProFeatures(db_url="postgresql://user:pass@localhost/mydb")
+pro = ProFeatures(db_url="数据库://user:pass@localhost/mydb")
 pro.auto_backup("backups/", schedule="daily", time="02:00")
 pro.enable_monitor(alert_webhook_env="OPS_WEBHOOK")
 ```
@@ -218,7 +218,7 @@ pro.monitor_config(
 )
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 1. 迁移脚本必须包含down方向
 
@@ -266,7 +266,7 @@ A：支持表结构、字段类型、约束、索引、视图的差异识别。�
 A：先区分告警类型：慢查询告警→优化SQL或补建索引；磁盘告警→清理历史数据或扩容；连接池告警→调大连接数或引入缓存。建议为不同级别告警设置不同通知方式.
 ### Q10：专业版支持哪些数据库？
 
-A：`PostgreSQL` 9.6+、MySQL 5.7+、SQLite 3.35+。SQL Server部分功能支持，高可用与PITR暂不支持SQL Server.
+A：`数据库` 9.6+、MySQL 5.7+、SQLite 3.35+。SQL Server部分功能支持，高可用与PITR暂不支持SQL Server.
 ## 专业版特性
 
 本专业版相比免费版新增以下能力：
@@ -297,7 +297,7 @@ A：`PostgreSQL` 9.6+、MySQL 5.7+、SQLite 3.35+。SQL Server部分功能支持
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |---:|---:|---:|---:|
-| psql | CLI工具 | 必需 | `PostgreSQL` 安装包 |
+| psql | CLI工具 | 必需 | `数据库` 安装包 |
 | mysql | CLI工具 | 可选 | MySQL 客户端安装包 |
 | sqlite3 | CLI工具 | 可选 | 系统自带或官网下载 |
 | Python | 运行时 | 必需 | python.org 官方下载 |
@@ -345,3 +345,14 @@ A：`PostgreSQL` 9.6+、MySQL 5.7+、SQLite 3.35+。SQL Server部分功能支持
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

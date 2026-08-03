@@ -1,5 +1,5 @@
 ---
-slug: "sql-query-tool-pro"
+slug: sql-query-tool-pro
 name: "sql-query-tool-pro"
 version: "1.0.0"
 displayName: "SQL查询工具(专业版)"
@@ -19,7 +19,7 @@ tags:
   - pro
   - sql
   - python
-  - postgresql
+  - 数据库
   - 自动转换
 tools:
   - read
@@ -34,7 +34,7 @@ category: "Automation"
 ## 概述
 
 当数据库查询从"个人探查"走向"团队协作"与"生产环境"，对查询治理、性能保障与跨库兼容性的要求显著提升：需要自动采集慢查询、缓存高频查询结果、在多数据库间平滑迁移SQL、建立性能基线防止回归。专业版针对这些场景提供完整解决方案，使SQL查询从"手动调试"升级为"可观测、可治理、可回归"的工程化能力.
-同时内置跨数据库SQL自动转换引擎，同一份业务SQL可在 `PostgreSQL`、MySQL、SQL Server、SQLite间自动适配语法差异，显著降低多数据库平台的维护成本.
+同时内置跨数据库SQL自动转换引擎，同一份业务SQL可在 `数据库`、MySQL、SQL Server、SQLite间自动适配语法差异，显著降低多数据库平台的维护成本.
 ## 核心能力
 
 | 能力分类 | 免费版 | 专业版 |
@@ -49,21 +49,21 @@ category: "Automation"
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -97,7 +97,7 @@ print(pro.cache.metrics())
 
 ### 场景三：跨数据库SQL迁移（DBA视角）
 
-将一份 `PostgreSQL` 业务SQL自动转换为MySQL与SQL Server语法，覆盖LIMIT、UPSERT、日期函数、JSON操作等差异点.
+将一份 `数据库` 业务SQL自动转换为MySQL与SQL Server语法，覆盖LIMIT、UPSERT、日期函数、JSON操作等差异点.
 ```python
 pg_sql = """
 SELECT id, metadata->>'source' AS source, created_at
@@ -107,7 +107,7 @@ ORDER BY created_at DESC
 LIMIT 100
 """
 # ...
-mysql_sql = pro.translate_sql(pg_sql, from_dialect="postgresql", to_dialect="mysql")
+mysql_sql = pro.translate_sql(pg_sql, from_dialect="数据库", to_dialect="mysql")
 # 自动转换为：DATE_SUB(NOW(), INTERVAL 7 DAY)、JSON_UNQUOTE(JSON_EXTRACT(...))
 ```
 
@@ -125,15 +125,15 @@ pro.benchmark.compare(baseline="v1.2", current="v1.3")
 对只读查询自动路由到只读副本，写操作走主库，提升整体吞吐.
 ```python
 pro.enable_read_write_split(
-    master="postgresql://master-host:5432/mydb",
-    replicas=["postgresql://replica-1:5432/mydb", "postgresql://replica-2:5432/mydb"],
+    master="数据库://master-host:5432/mydb",
+    replicas=["数据库://replica-1:5432/mydb", "数据库://replica-2:5432/mydb"],
     read_ratio=0.8  # 80%读请求分流到副本
 )
 ```
 
 ## 快速开始
 
-### 第一步：启用专业版功能
+### 领先步：启用专业版功能
 
 ```python
 from sql_query_tool import ProFeatures
@@ -153,7 +153,7 @@ pro.benchmark.capture_baseline(name="v1.0", query_dir="queries/")
 ### 第三步：跨库SQL转换
 
 ```python
-translated = pro.translate_sql(source_sql, from_dialect="postgresql", to_dialect="mysql")
+translated = pro.translate_sql(source_sql, from_dialect="数据库", to_dialect="mysql")
 ```
 
 完整上手时间约120秒.
@@ -165,7 +165,7 @@ translated = pro.translate_sql(source_sql, from_dialect="postgresql", to_dialect
 from sql_query_tool import ConnectionPool
 # ...
 pool = ConnectionPool(
-    "postgresql://user:pass@localhost:5432/mydb",
+    "数据库://user:pass@localhost:5432/mydb",
     max_connections=20,
     idle_timeout=300,        # 空闲连接5分钟回收
     health_check=True,       # 启用健康检查
@@ -199,7 +199,7 @@ pro.slow_query_alert(
 )
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 1. 缓存键设计避免脏读
 
@@ -237,7 +237,7 @@ A：(1) 检查缓存键是否包含过多变化参数，导致键爆炸；(2) �
 A：这是典型的高频慢查询。先通过`pro.slow_query_report`查看调用链定位来源应用，再针对性优化：补建索引、改写SQL、或对结果启用缓存.
 ### Q3：跨库转换后JSON查询报错？
 
-A：不同数据库JSON函数差异较大。`PostgreSQL`用`->>`、`@>`，MySQL用`JSON_EXTRACT`、`JSON_CONTAINS`，SQL Server用`JSON_VALUE`。专业版转换引擎覆盖常见场景，复杂嵌套JSON建议人工适配.
+A：不同数据库JSON函数差异较大。`数据库`用`->>`、`@>`，MySQL用`JSON_EXTRACT`、`JSON_CONTAINS`，SQL Server用`JSON_VALUE`。专业版转换引擎覆盖常见场景，复杂嵌套JSON建议人工适配.
 ### Q4：基准测试结果波动很大如何稳定？
 
 A：(1) 测试前执行`ANALYZE`更新统计信息；(2) 预热数据到缓存；(3) 关闭其他并发进程；(4) 每个查询跑3次取中位数；(5) 排除首次冷启动结果.
@@ -258,7 +258,7 @@ A：不支持。存储过程与数据库方言深度绑定，无法自动转换�
 A：专业版支持表事件驱动的缓存失效。当某表发生INSERT/UPDATE/DELETE时，自动失效依赖该表的所有缓存条目，可通过`pro.cache.register_dependency`注册依赖关系.
 ### Q10：专业版支持哪些数据库？
 
-A：`PostgreSQL` 9.6+、MySQL 5.7+、SQL Server 2016+、SQLite 3.35+。对更低版本仅保证基础查询能力，高级特性可能不可用.
+A：`数据库` 9.6+、MySQL 5.7+、SQL Server 2016+、SQLite 3.35+。对更低版本仅保证基础查询能力，高级特性可能不可用.
 ## 专业版特性
 
 本专业版相比免费版新增以下能力：
@@ -289,12 +289,12 @@ A：`PostgreSQL` 9.6+、MySQL 5.7+、SQL Server 2016+、SQLite 3.35+。对更低
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |---:|---:|---:|---:|
 | sqlite3 | CLI工具 | 必需 | 系统自带或官网下载 |
-| psql | CLI工具 | 可选 | `PostgreSQL` 安装包 |
+| psql | CLI工具 | 可选 | `数据库` 安装包 |
 | mysql | CLI工具 | 可选 | MySQL 客户端安装包 |
 | sqlcmd | CLI工具 | 可选 | SQL Server 工具包 |
 | Python | 运行时 | 必需 | python.org 官方下载 |
 | redis | Python包 | 可选 | `pip install redis`（分布式缓存） |
-| psycopg2 | Python包 | 可选 | `pip install psycopg2`（`PostgreSQL`驱动） |
+| psycopg2 | Python包 | 可选 | `pip install psycopg2`（`数据库`驱动） |
 
 ### API Key 配置
 - **数据库连接凭证**: 通过环境变量或配置文件注入，禁止硬编码
@@ -323,8 +323,6 @@ A：`PostgreSQL` 9.6+、MySQL 5.7+、SQL Server 2016+、SQLite 3.35+。对更低
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ```text
@@ -349,3 +347,14 @@ Skill: 执行完成,结果如下: 操作成功
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

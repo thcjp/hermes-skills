@@ -1,5 +1,6 @@
 ---
-slug: "music-gen-cellcog-tool-pro"
+
+slug: music-gen-cellcog-tool-pro
 name: "music-gen-cellcog-tool-pro"
 version: "1.0.0"
 displayName: "CellCog音乐生成专业版"
@@ -8,7 +9,7 @@ license: "Proprietary"
 edition: "pro"
 description: |-
   CellCog音乐生成专业版为企业与内容团队提供系统化的AI音乐生成解决方案。在免费版基础生成能力之上,增加批量生成、高质量音频输出、版权资产管理、
-  音乐库管理与CI/CD集成能力。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
+  音乐库管理与CI/CD集成能力。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
   - 音乐生成
   - CellCog
@@ -28,7 +29,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 CellCog音乐生成专业版为企业与内容团队提供系统化的AI音乐生成解决方案。在免费版基础生成能力之上,PRO版增加批量生成、高质量音频输出、版权资产管理、音乐库管理与CI/CD集成能力,满足商业级音乐生产的效率与合规需求.
 PRO版完全兼容免费版,可直接继承免费版的API Key与配置,并在此基础上扩展为完整的音乐生产系统.
 ## 核心能力
@@ -36,7 +39,6 @@ PRO版完全兼容免费版,可直接继承免费版的API Key与配置,并在�
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供批量音乐生成所需的指令和必要参数.
 **处理**: 解析批量音乐生成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量音乐生成的响应数据,包含状态码、结果和日志.
 ### 高质量音频输出
@@ -70,7 +72,6 @@ curl -X POST https://api.cellcog.com/v1/music/generate \
   -o epic-music.flac
 ```
 
-**输入**: 用户提供高质量音频输出所需的指令和必要参数.
 **处理**: 解析高质量音频输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高质量音频输出的响应数据,包含状态码、结果和日志.
 ### 版权资产管理
@@ -107,7 +108,6 @@ license_manager = {
 }
 ```
 
-**输入**: 用户提供版权资产管理所需的指令和必要参数.
 **处理**: 解析版权资产管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回版权资产管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -154,14 +154,12 @@ music_library = {
 }
 ```
 
-**输入**: 用户提供音乐库管理所需的指令和必要参数.
 **处理**: 解析音乐库管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回音乐库管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 音乐质量审计
 
-**输入**: 用户提供音乐质量审计所需的指令和必要参数.
 **处理**: 解析音乐质量审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回音乐质量审计的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：CellCog、引擎的企业级音乐、生成系统、支持批量生成、版权管理、高质量输出与、适合团队与商业项、音乐生成专业版为、企业与内容团队提、供系统化的、音乐生成解决方案、在免费版基础生成、能力之上、增加批量生成、高质量音频输出、版权资产管理、音乐库管理与、集成能力、Use、when、需要视频处理、音频编辑、媒体转换、配音生成时使用、不适用于版权受保、护的媒体内容处理、适用于独立开发者、企业团队和自动化、工作流场景等.
@@ -231,7 +229,6 @@ for scene in game_scenes:
 ## 快速开始
 ### Step 1:初始化音乐资产管理
 ```bash
-python3 init_music_library.py \
   --brand "MyBrand" \
   --output ./music-library/ \
   --license-tracking \
@@ -240,7 +237,6 @@ python3 init_music_library.py \
 
 ### Step 2:配置批量生成
 ```bash
-python3 batch_music_gen.py \
   --config music-tasks.yml \
   --parallel 5 \
   --format flac \
@@ -292,7 +288,6 @@ jobs:
         env:
           CELLCOG_API_KEY: ${{ secrets.CELLSOG_API_KEY }}
         run: |
-          python3 batch_music_gen.py \
             --config music-tasks/config.yml \
             --parallel 5 \
             --format flac \
@@ -301,7 +296,6 @@ jobs:
             --quality-check
       - name: License Audit
         run: |
-          python3 license_audit.py \
             --library ./music-library/ \
             --report ./audit/
       - name: Upload Music
@@ -311,7 +305,7 @@ jobs:
           path: ./music-library/
 ```
 
-## 最佳实践
+## 优选实践
 ### 免费版与PRO版能力对比
 | 能力维度 | 免费版 | PRO版 |
 |---:|---:|---:|
@@ -336,7 +330,7 @@ jobs:
 | 高品质存档 | FLAC | 48000Hz | 24bit | 无损压缩,节省空间 |
 | 工作室制作 | AIFF | 96000Hz | 32bit | 工作室标准 |
 
-### 版权管理最佳实践
+### 版权管理优选实践
 ```python
 license_workflow = {
     "generation": {
@@ -383,7 +377,7 @@ A: 支持GitHub Actions、GitLab CI、Jenkins等主流平台。提供标准CLI�
 | requests | Python库 | 必需 | pip install requests |
 | pydub | 音频处理 | 推荐 | pip install pydub |
 | librosa | 音频分析 | 推荐 | pip install librosa |
-| 数据库 | 存储 | 推荐 | `SQLite`/`PostgreSQL` |
+| 数据库 | 存储 | 推荐 | `SQLite`/`数据库` |
 
 ### API Key 配置
 - 需要配置CellCog API Key
@@ -393,7 +387,7 @@ A: 支持GitHub Actions、GitLab CI、Jenkins等主流平台。提供标准CLI�
 - 企业版支持多账户管理与并发控制
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令+脚本执行能力)
+- **分类**: MD+execute(纯Markdown指令+脚本执行能力)
 - **说明**: 专业版基于Markdown指令驱动Agent执行批量音乐生成任务,通过Python脚本实现批量调度、版权管理与CI/CD集成
 - **PRO版增强**: 批量生成、高质量输出、版权管理、音乐库管理、质量审计、CI/CD集成、团队协作
 
@@ -424,3 +418,22 @@ A: 支持GitHub Actions、GitLab CI、Jenkins等主流平台。提供标准CLI�
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于CellCog AI引擎的企业级音乐生成系统,支持批量生成、版权管理、高质量输出与CI/CD集成,适合团队与商业项目
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

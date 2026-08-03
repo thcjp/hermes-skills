@@ -1,6 +1,6 @@
 ---
 name: "python-dataviz-tool-free"
-description: "使用matplotlib/seaborn/plotly创建专业图表,支持柱状图、折线图、散点图与热力图"
+description: "使用matplotlib/seaborn/plotly创建专业图表,支持柱状图、折线图、散点图与热力图。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,8 +15,11 @@ metadata:
     - "matplotlib"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
 ---
-
 # Python 数据可视化 - 免费版
 
 ## 概述
@@ -29,8 +32,6 @@ Python 数据可视化工具免费版使用 matplotlib、seaborn、plotly 三大
 
 全控制静态图表,支持多面板、自定义样式、标注注释,导出 PNG/SVG/PDF。
 
-**输入**: 用户提供matplotlib 静态图表所需的指令和必要参数。
-**处理**: 按照skill规范执行matplotlib 静态图表操作,遵循单一意图原则。
 **输出**: 返回matplotlib 静态图表的执行结果,包含操作状态和输出数据。
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -38,8 +39,6 @@ Python 数据可视化工具免费版使用 matplotlib、seaborn、plotly 三大
 
 内置美观默认样式,支持分布图、分类图、关系图、矩阵图等统计可视化。
 
-**输入**: 用户提供seaborn 统计可视化所需的指令和必要参数。
-**处理**: 按照skill规范执行seaborn 统计可视化操作,遵循单一意图原则。
 **输出**: 返回seaborn 统计可视化的执行结果,包含操作状态和输出数据。
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -47,8 +46,6 @@ Python 数据可视化工具免费版使用 matplotlib、seaborn、plotly 三大
 
 支持悬停提示、缩放、平移,可导出 HTML 交互式页面。
 
-**输入**: 用户提供plotly 交互式图表所需的指令和必要参数。
-**处理**: 按照skill规范执行plotly 交互式图表操作,遵循单一意图原则。
 **输出**: 返回plotly 交互式图表的执行结果,包含操作状态和输出数据。
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -56,8 +53,6 @@ Python 数据可视化工具免费版使用 matplotlib、seaborn、plotly 三大
 
 灵活的多面板布局,支持 2x2、3x3 等网格排列。
 
-**输入**: 用户提供多子图布局所需的指令和必要参数。
-**处理**: 按照skill规范执行多子图布局操作,遵循单一意图原则。
 **输出**: 返回多子图布局的执行结果,包含操作状态和输出数据。
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -65,8 +60,6 @@ Python 数据可视化工具免费版使用 matplotlib、seaborn、plotly 三大
 
 支持 CSV 文件、Python 字典、NumPy 数组、pandas DataFrame。
 
-**输入**: 用户提供多数据源支持所需的指令和必要参数。
-**处理**: 按照skill规范执行多数据源支持操作,遵循单一意图原则。
 **输出**: 返回多数据源支持的执行结果,包含操作状态和输出数据。
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：创建专业图表、支持柱状图、折线图、散点图与热力图、数据可视化工具免、面向个人开发者与、数据分析师、核心能力、小提琴、KDE、多子图布局与样式等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -167,7 +160,7 @@ source .venv/bin/activate  # Linux/macOS
 pip install matplotlib seaborn plotly pandas numpy
 ```
 
-### 创建第一个图表
+### 创建领先个图表
 
 ```python
 import matplotlib.pyplot as plt
@@ -237,7 +230,7 @@ plt.savefig('chart.pdf', bbox_inches='tight')
 plt.savefig('chart.png', dpi=300, transparent=True)
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **DPI 设置**:出版级图表用 300 DPI,网页用 72-150 DPI
 2. **figure 大小**:宽高比建议 10:6 或 12:8(英寸)
@@ -292,12 +285,11 @@ A: 使用 `plt.subplots(rows, cols)` 创建多子图。例如 `fig, axes = plt.s
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **分类**: MD+execute(Markdown指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 生成 Python 可视化代码并执行
 - **限制**: 免费版不支持交互式仪表盘、大数据可视化与实时数据流图表
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
@@ -316,8 +308,6 @@ A: 使用 `plt.subplots(rows, cols)` 创建多子图。例如 `fig, axes = plt.s
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ```text
@@ -325,3 +315,22 @@ A: 使用 `plt.subplots(rows, cols)` 创建多子图。例如 `fig, axes = plt.s
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

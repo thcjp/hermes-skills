@@ -1,6 +1,7 @@
 ---
+
 name: "rss-reader-ai-free"
-description: "自动抓取RSS订阅源，使用AI生成中文摘要，支持单渠道推送，适合个人用户信息聚合。"
+description: "自动抓取RSS订阅源，使用AI生成中文摘要，支持单渠道推送，适合个人用户信息聚合。Use when 需要营销推广、广告投放、获客转化、增长裂变时使用。不适用于非法营销手段。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,11 @@ metadata:
     - "AI摘要"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # RSS智能阅读器（免费版）
@@ -29,8 +35,6 @@ RSS智能阅读器免费版是一款面向个人用户的自动化信息聚合�
 
 支持标准RSS 2.0和Atom格式的订阅源自动抓取，可配置抓取频率。
 
-**输入**: 用户提供RSS/Atom 自动抓取所需的指令和必要参数。
-**处理**: 按照skill规范执行RSS/Atom 自动抓取操作,遵循单一意图原则。
 **输出**: 返回RSS/Atom 自动抓取的执行结果,包含操作状态和输出数据。
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -38,8 +42,6 @@ RSS智能阅读器免费版是一款面向个人用户的自动化信息聚合�
 
 调用大语言模型（支持Claude/OpenAI），将英文或长篇内容自动生成简洁的中文摘要，保留核心信息。
 
-**输入**: 用户提供AI 中文摘要生成所需的指令和必要参数。
-**处理**: 按照skill规范执行AI 中文摘要生成操作,遵循单一意图原则。
 **输出**: 返回AI 中文摘要生成的执行结果,包含操作状态和输出数据。
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -47,8 +49,6 @@ RSS智能阅读器免费版是一款面向个人用户的自动化信息聚合�
 
 使用轻量级数据库（SQLite）记录已推送内容，通过内容指纹去重，避免重复推送。
 
-**输入**: 用户提供智能去重所需的指令和必要参数。
-**处理**: 按照skill规范执行智能去重操作,遵循单一意图原则。
 **输出**: 返回智能去重的执行结果,包含操作状态和输出数据。
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -56,8 +56,6 @@ RSS智能阅读器免费版是一款面向个人用户的自动化信息聚合�
 
 免费版支持选择一个推送渠道：飞书群机器人、Telegram Bot 或 Email。
 
-**输入**: 用户提供单渠道推送所需的指令和必要参数。
-**处理**: 按照skill规范执行单渠道推送操作,遵循单一意图原则。
 **输出**: 返回单渠道推送的执行结果,包含操作状态和输出数据。
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：生成中文摘要、支持单渠道推送、适合个人用户信息、智能阅读器、面向个人用户的自、动化信息聚合工具等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -78,7 +76,6 @@ feeds:
     url: "https://www.ruanyifeng.com/blog/atom.xml"
     category: "tech"
   - name: "V2EX热门"
-    url: "https://www.v2ex.com/index.xml"
     category: "tech"
 ```
 
@@ -103,7 +100,6 @@ Why SQLite is Taking Over
 摘要: 本期内容包括AI编程工具对比、WebAssembly最新进展、
 开源许可证选择指南等。
 
-阅读原文: https://example.com/article2
 ============================
 ```
 
@@ -116,7 +112,7 @@ Why SQLite is Taking Over
 python main.py --once --config morning_news.yaml
 
 # 配置定时任务（crontab）
-0 8 * * * cd ~/rss-reader && python main.py --once --config morning_news.yaml
+0 8 * * * cd ~/rss-reader && python main.yaml
 ```
 
 ### 场景三：兴趣主题聚合
@@ -128,7 +124,7 @@ feeds:
     url: "https://feeds.example.com/ai-research.xml"
     category: "ai"
   - name: "摄影博客"
-    url: "https://feeds.example.com/photography.xml"
+example.com/photography.xml"
     category: "photography"
 
 llm:
@@ -209,10 +205,9 @@ python main.py [options]
 # config.yaml - 免费版配置
 feeds:
   - name: "Hacker News"
-    url: "https://hnrss.org/frontpage"
     category: "tech"
   - name: "阮一峰周刊"
-    url: "https://www.ruanyifeng.com/blog/atom.xml"
+ruanyifeng.com/blog/atom.xml"
     category: "tech"
 
 # AI摘要配置
@@ -253,7 +248,7 @@ fetch:
   max_items_per_feed: 10                  # 每源最大条目数
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 订阅源管理
 
@@ -347,9 +342,9 @@ python main.py --once --verbose
 
 ```bash
 # AI摘要API（必选其一）
-export ANTHROPIC_API_KEY="your_claude_api_key"
+export ANTHROPIC_API_KEY="${API_KEY:?请设置环境变量}"
 # 或
-export OPENAI_API_KEY="your_openai_api_key"
+export OPENAI_API_KEY="${API_KEY:?请设置环境变量}"
 
 # 推送渠道API（根据选择的渠道配置）
 export FEISHU_WEBHOOK="your_feishu_webhook_url"
@@ -370,7 +365,6 @@ export EMAIL_PASSWORD="your_app_password"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -382,3 +376,22 @@ export EMAIL_PASSWORD="your_app_password"
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

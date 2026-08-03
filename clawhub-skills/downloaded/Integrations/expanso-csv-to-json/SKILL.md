@@ -35,7 +35,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # Expanso csv-to-json
 
 "Convert CSV data to JSON array of objects"
@@ -144,3 +143,19 @@ A: 请参考已知限制章节了解具体限制。
 ## 已知限制
 
 - 需要API Key，无Key环境无法使用
+
+---
+## 边界条件与限制
+
+Expanso csv-to-json技能在使用过程中存在以下边界条件和限制：
+
+- **输入数据格式限制**：技能仅支持标准的CSV格式输入，不支持Excel或其他格式的数据转换。
+- **数据大小限制**：由于性能和资源限制，技能可能无法处理非常大的CSV文件。建议单个文件的大小不超过10MB。
+- **字段数量限制**：CSV文件中的字段数量不应超过1000个，以避免性能问题。
+- **字符编码限制**：技能默认处理UTF-8编码的CSV文件，不支持其他编码格式。
+- **兼容性限制**：技能可能不兼容某些老旧的Expanso版本，请确保Expanso Edge CLI或MCP平台更新到最新版本。
+- **网络限制**：当使用Expanso Cloud部署时，需要确保网络连接稳定，否则可能导致部署失败或运行时错误。
+- **API Key限制**：虽然技能本身无需额外API Key，但在使用外部API进行数据转换时，可能需要配置相应的API Key。
+
+---
+

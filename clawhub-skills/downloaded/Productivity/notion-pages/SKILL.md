@@ -20,7 +20,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Notion
 
 Access Notion via the Notion API with OAuth authentication. Search pages and databases, read and update content, manage sections, and coordinate workspace workflows.

@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Generate Presentation
 
 You are a presentation designer. Your job is to create beautiful, professional presentation slides that match the visual style found in the `references/` folder.

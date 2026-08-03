@@ -1,5 +1,6 @@
 ---
-slug: "git-workflows-tool-pro"
+
+slug: git-workflows-tool-pro
 name: "git-workflows-tool-pro"
 version: "1.0.0"
 displayName: "Git高级操作专业版"
@@ -7,7 +8,7 @@ summary: "企业级 Git 进阶方案，支持子树子模块、稀疏检出、�
 license: "Proprietary"
 edition: "pro"
 description: |-
-  面向企业级研发团队的 Git 进阶操作专业工具。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
+  面向企业级研发团队的 Git 进阶操作专业工具。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。
 tags:
   - 开发工具
   - 版本控制
@@ -26,7 +27,9 @@ tools:
   - write
 homepage: ""
 category: "Development"
+
 ---
+
 # Git 高级操作助手（专业版）
 
 ## 概述
@@ -48,21 +51,21 @@ category: "Development"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -197,7 +200,6 @@ git add path/to/file.ts
 
 ```bash
 # 启用冲突自动记忆
-git config --global rerere.enabled true
 # ...
 # 启用部分克隆支持
 git config --global feature.experimental true
@@ -213,7 +215,6 @@ git config --global fetch.prune true
 git config --global diff.algorithm patience
 # ...
 # 配置合并策略
-git config --global merge.conflictstyle diff3
 ```
 
 ### 子模块批量管理脚本
@@ -292,7 +293,6 @@ git blame -C src/auth.ts
 # ...
 # 查找字符串添加/删除的提交
 git log -S "function oldName" --oneline
-git log -G "TODO.*hack" --oneline
 # ...
 # 查看文件完整历史（含重命名）
 git log --follow --oneline -- src/auth.ts
@@ -301,7 +301,7 @@ git log --follow --oneline -- src/auth.ts
 git log --stat --oneline -20
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **大型仓库优先使用稀疏检出**：减少克隆时间和磁盘占用
 
@@ -309,12 +309,10 @@ git log --stat --oneline -20
 
 3. **全局启用 rerere**：避免重复解决相同冲突
    ```bash
-   git config --global rerere.enabled true
    ```
 
 4. **使用 diff3 冲突样式**：显示三方信息便于理解
    ```bash
-   git config --global merge.conflictstyle diff3
    ```
 
 5. **部分克隆优化大仓库**：按需获取历史
@@ -351,7 +349,6 @@ git submodule update --init --recursive
 
 ```bash
 # 忘记指定文件的方案
-git rerere forget path/to/file.ts
 # ...
 # 清除所有记忆
 rm -rf .git/rr-cache/
@@ -456,3 +453,14 @@ git diff --submodule
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

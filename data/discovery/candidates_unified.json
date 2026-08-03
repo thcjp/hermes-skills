@@ -1,171 +1,57 @@
 {
-  "generated_at": "2026-07-25T18:10:08.162753",
-  "total_count": 11,
+  "generated_at": "2026-07-29T10:47:46.055056",
+  "total_count": 3,
   "candidates": [
     {
-      "source": "hermes",
-      "source_id": ".trae",
-      "name": ".Trae",
-      "description": "Hermes 社区 skill: .trae",
-      "category": "Other",
-      "content_preview": "slug: .trae\nrepo: thcjp/hermes-skills\nurl: https://github.com/thcjp/hermes-skills/tree/main/.trae",
-      "url": "https://github.com/thcjp/hermes-skills/tree/main/.trae",
-      "metadata": {
-        "source_repo": "thcjp/hermes-skills",
-        "source_platform": "hermes",
-        "original_slug": ".trae"
-      },
-      "discovered_at": "2026-07-25T18:10:08.016931"
-    },
-    {
-      "source": "hermes",
-      "source_id": "clawhub-skills",
-      "name": "Clawhub Skills",
-      "description": "Hermes 社区 skill: clawhub-skills",
-      "category": "Other",
-      "content_preview": "slug: clawhub-skills\nrepo: thcjp/hermes-skills\nurl: https://github.com/thcjp/hermes-skills/tree/main/clawhub-skills",
-      "url": "https://github.com/thcjp/hermes-skills/tree/main/clawhub-skills",
-      "metadata": {
-        "source_repo": "thcjp/hermes-skills",
-        "source_platform": "hermes",
-        "original_slug": "clawhub-skills"
-      },
-      "discovered_at": "2026-07-25T18:10:08.016931"
-    },
-    {
-      "source": "hermes",
-      "source_id": "config",
-      "name": "Config",
-      "description": "Hermes 社区 skill: config",
-      "category": "Other",
-      "content_preview": "slug: config\nrepo: thcjp/hermes-skills\nurl: https://github.com/thcjp/hermes-skills/tree/main/config",
-      "url": "https://github.com/thcjp/hermes-skills/tree/main/config",
-      "metadata": {
-        "source_repo": "thcjp/hermes-skills",
-        "source_platform": "hermes",
-        "original_slug": "config"
-      },
-      "discovered_at": "2026-07-25T18:10:08.016931"
-    },
-    {
-      "source": "hermes",
-      "source_id": "differentiated-skills",
-      "name": "Differentiated Skills",
-      "description": "Hermes 社区 skill: differentiated-skills",
-      "category": "Other",
-      "content_preview": "slug: differentiated-skills\nrepo: thcjp/hermes-skills\nurl: https://github.com/thcjp/hermes-skills/tree/main/differentiated-skills",
-      "url": "https://github.com/thcjp/hermes-skills/tree/main/differentiated-skills",
-      "metadata": {
-        "source_repo": "thcjp/hermes-skills",
-        "source_platform": "hermes",
-        "original_slug": "differentiated-skills"
-      },
-      "discovered_at": "2026-07-25T18:10:08.016931"
-    },
-    {
-      "source": "hermes",
-      "source_id": "docs",
-      "name": "Docs",
-      "description": "Hermes 社区 skill: docs",
-      "category": "Knowledge",
-      "content_preview": "slug: docs\nrepo: thcjp/hermes-skills\nurl: https://github.com/thcjp/hermes-skills/tree/main/docs",
-      "url": "https://github.com/thcjp/hermes-skills/tree/main/docs",
-      "metadata": {
-        "source_repo": "thcjp/hermes-skills",
-        "source_platform": "hermes",
-        "original_slug": "docs"
-      },
-      "discovered_at": "2026-07-25T18:10:08.016931"
-    },
-    {
-      "source": "hermes",
-      "source_id": "enterprise-upload",
-      "name": "Enterprise Upload",
-      "description": "Hermes 社区 skill: enterprise-upload",
-      "category": "Other",
-      "content_preview": "slug: enterprise-upload\nrepo: thcjp/hermes-skills\nurl: https://github.com/thcjp/hermes-skills/tree/main/enterprise-upload",
-      "url": "https://github.com/thcjp/hermes-skills/tree/main/enterprise-upload",
-      "metadata": {
-        "source_repo": "thcjp/hermes-skills",
-        "source_platform": "hermes",
-        "original_slug": "enterprise-upload"
-      },
-      "discovered_at": "2026-07-25T18:10:08.016931"
-    },
-    {
-      "source": "hermes",
-      "source_id": "hermes-skills",
-      "name": "Hermes Skills",
-      "description": "Hermes 社区 skill: hermes-skills",
-      "category": "Other",
-      "content_preview": "slug: hermes-skills\nrepo: thcjp/hermes-skills\nurl: https://github.com/thcjp/hermes-skills/tree/main/hermes-skills",
-      "url": "https://github.com/thcjp/hermes-skills/tree/main/hermes-skills",
-      "metadata": {
-        "source_repo": "thcjp/hermes-skills",
-        "source_platform": "hermes",
-        "original_slug": "hermes-skills"
-      },
-      "discovered_at": "2026-07-25T18:10:08.016931"
-    },
-    {
-      "source": "hermes",
-      "source_id": "opensource-skills",
-      "name": "Opensource Skills",
-      "description": "Hermes 社区 skill: opensource-skills",
-      "category": "Other",
-      "content_preview": "slug: opensource-skills\nrepo: thcjp/hermes-skills\nurl: https://github.com/thcjp/hermes-skills/tree/main/opensource-skills",
-      "url": "https://github.com/thcjp/hermes-skills/tree/main/opensource-skills",
-      "metadata": {
-        "source_repo": "thcjp/hermes-skills",
-        "source_platform": "hermes",
-        "original_slug": "opensource-skills"
-      },
-      "discovered_at": "2026-07-25T18:10:08.016931"
-    },
-    {
-      "source": "hermes",
-      "source_id": "packaged-skills",
-      "name": "Packaged Skills",
-      "description": "Hermes 社区 skill: packaged-skills",
+      "source": "github",
+      "source_id": "receiving-code-review",
+      "name": "receiving-code-review",
+      "description": "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation",
       "category": "Development",
-      "content_preview": "slug: packaged-skills\nrepo: thcjp/hermes-skills\nurl: https://github.com/thcjp/hermes-skills/tree/main/packaged-skills",
-      "url": "https://github.com/thcjp/hermes-skills/tree/main/packaged-skills",
+      "content_preview": "---\nname: receiving-code-review\ndescription: Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation\n---\n\n# Code Review Reception\n\n## Overview\n\nCode review requires technical evaluation, not emotional performance.\n\n**Core principle:** Verify before implementing. Ask before assuming. Technical correctness over social com",
+      "url": "https://github.com/obra/superpowers/tree/main/skills/receiving-code-review",
       "metadata": {
-        "source_repo": "thcjp/hermes-skills",
-        "source_platform": "hermes",
-        "original_slug": "packaged-skills"
+        "source_repo": "obra/superpowers",
+        "source_platform": "github",
+        "original_slug": "receiving-code-review",
+        "license": "MIT",
+        "source_path": "skills/receiving-code-review/SKILL.md"
       },
-      "discovered_at": "2026-07-25T18:10:08.016931"
+      "discovered_at": "2026-07-29T10:47:46.050460"
     },
     {
-      "source": "hermes",
-      "source_id": "tools",
-      "name": "Tools",
-      "description": "Hermes 社区 skill: tools",
-      "category": "Other",
-      "content_preview": "slug: tools\nrepo: thcjp/hermes-skills\nurl: https://github.com/thcjp/hermes-skills/tree/main/tools",
-      "url": "https://github.com/thcjp/hermes-skills/tree/main/tools",
+      "source": "github",
+      "source_id": "writing-plans",
+      "name": "writing-plans",
+      "description": "Use when you have a spec or requirements for a multi-step task, before touching code",
+      "category": "Development",
+      "content_preview": "---\nname: writing-plans\ndescription: Use when you have a spec or requirements for a multi-step task, before touching code\n---\n\n# Writing Plans\n\n## Overview\n\nWrite comprehensive implementation plans assuming the engineer has zero context for our codebase and questionable taste. Document everything they need to know: which files to touch for each task, code, testing, docs they might need to check, how to test it. Give them the whole plan as bite-sized tasks. DRY. YAGNI. TDD. Frequent commits.\n\nAss",
+      "url": "https://github.com/obra/superpowers/tree/main/skills/writing-plans",
       "metadata": {
-        "source_repo": "thcjp/hermes-skills",
-        "source_platform": "hermes",
-        "original_slug": "tools"
+        "source_repo": "obra/superpowers",
+        "source_platform": "github",
+        "original_slug": "writing-plans",
+        "license": "MIT",
+        "source_path": "skills/writing-plans/SKILL.md"
       },
-      "discovered_at": "2026-07-25T18:10:08.016931"
+      "discovered_at": "2026-07-29T10:47:46.052978"
     },
     {
-      "source": "hermes",
-      "source_id": "密钥",
-      "name": "密钥",
-      "description": "Hermes 社区 skill: 密钥",
-      "category": "Other",
-      "content_preview": "slug: 密钥\nrepo: thcjp/hermes-skills\nurl: https://github.com/thcjp/hermes-skills/tree/main/%E5%AF%86%E9%92%A5",
-      "url": "https://github.com/thcjp/hermes-skills/tree/main/%E5%AF%86%E9%92%A5",
+      "source": "github",
+      "source_id": "observability-and-instrumentation",
+      "name": "observability-and-instrumentation",
+      "description": "Instruments code so production behavior is visible and diagnosable. Use when adding logging, metrics, tracing, or alerting. Use when shipping any feature that runs in production and you need evidence it works. Use when production issues are reported but you can't tell what happened from the available data.",
+      "category": "Development",
+      "content_preview": "---\nname: observability-and-instrumentation\ndescription: Instruments code so production behavior is visible and diagnosable. Use when adding logging, metrics, tracing, or alerting. Use when shipping any feature that runs in production and you need evidence it works. Use when production issues are reported but you can't tell what happened from the available data.\n---\n\n# Observability and Instrumentation\n\n## Overview\n\nCode you can't observe is code you can't operate. Observability is the ability t",
+      "url": "https://github.com/addyosmani/agent-skills/tree/main/skills/observability-and-instrumentation",
       "metadata": {
-        "source_repo": "thcjp/hermes-skills",
-        "source_platform": "hermes",
-        "original_slug": "密钥"
+        "source_repo": "addyosmani/agent-skills",
+        "source_platform": "github",
+        "original_slug": "observability-and-instrumentation",
+        "license": "MIT",
+        "source_path": "skills/observability-and-instrumentation/SKILL.md"
       },
-      "discovered_at": "2026-07-25T18:10:08.016931"
+      "discovered_at": "2026-07-29T10:47:46.055056"
     }
   ]
 }

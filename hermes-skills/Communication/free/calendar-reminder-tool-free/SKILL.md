@@ -1,6 +1,7 @@
 ---
+
 name: "calendar-reminder-tool-free"
-description: "每晚自动扫描明日日历并通过飞书发送提醒，上午提前2小时、下午统一12点通知，适合个人单日历。"
+description: "每晚自动扫描明日日历并通过飞书发送提醒，上午提前2小时、下午统一12点通知，适合个人单日历。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -16,6 +17,11 @@ metadata:
     - "定时任务"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # 日历提醒工具 免费版
@@ -41,24 +47,18 @@ metadata:
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置。
 
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
 **输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：每晚自动扫描明日、日历并通过飞书发、送提醒、上午提前、下午统一、点通知、适合个人单日历、面向个人用户的日、历日程自动提醒工、核心能力、每晚定时扫描明日、按时段分类提醒、飞书消息通知、扫描完成汇报、适用场景、个人日程提醒、工作日历管理、会议防遗漏、每日日程预览、差异化、免费版聚焦单个日、历扫描与基础提醒、不含多日历聚合与、智能调度、适用关键词、calendar、reminder、定时扫描、会议通知等。
@@ -148,11 +148,9 @@ skill-platform cron add \
 4. 手动运行一次验证。
 
 ```bash
-python3 ~/.skill-platform/workspace/skills/calendar-reminder/calendar_reminder.py
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
-
 
 ## 示例
 
@@ -195,7 +193,7 @@ skill-platform cron get --name "calendar-daily-scan"
 skill-platform cron remove --name "calendar-daily-scan"
 ```
 
-## 最佳实践
+## 优选实践
 
 - **open_id 准确**：确保飞书 open_id 正确，可通过飞书管理后台查询。错误的 open_id 会导致提醒无法送达。
 - **时区一致**：脚本使用 Asia/Shanghai 时区，若你在其他时区，修改 `SCAN_CONFIG.timezone`。
@@ -252,7 +250,6 @@ skill-platform cron get --name "calendar-daily-scan"
 随时运行以下命令手动触发：
 
 ```bash
-python3 ~/.skill-platform/workspace/skills/calendar-reminder/calendar_reminder.py
 ```
 
 ## 依赖说明
@@ -295,7 +292,6 @@ export OUTLOOK_EMAIL="your_work_email@company.com"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -307,3 +303,14 @@ export OUTLOOK_EMAIL="your_work_email@company.com"
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

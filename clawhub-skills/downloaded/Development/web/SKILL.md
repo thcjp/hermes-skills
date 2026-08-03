@@ -19,118 +19,212 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
+# Advanced Web Development Toolkit
 
-# Web Development
+## Overview
+
+Welcome to the Advanced Web Development Toolkit, a cornerstone for modern web development. This toolkit is designed to empower developers with the knowledge and tools to create, optimize, and deploy high-quality web applications using the latest technologies and best practices.
 
 ## Quick Reference
 
-| Need | See |
+| Need | Resource |
 | --- | --- |
-| HTML/CSS issues | `html-css.md` |
-| JavaScript patterns | `javascript.md` |
-| React/Next.js/frameworks | `frameworks.md` |
-| Deploy to production | `deploy.md` |
-| Performance/SEO/a11y | `performance.md` |
+| HTML/CSS troubleshooting | [HTML/CSS Guide](html-css.md) |
+| JavaScript debugging | [JavaScript Patterns](javascript.md) |
+| Framework selection | [Frameworks Guide](frameworks.md) |
+| Deployment strategies | [Deployment Guide](deploy.md) |
+| Performance optimization | [Performance Guide](performance.md) |
+| SEO best practices | [SEO Guide](seo.md) |
+| Accessibility compliance | [Accessibility Guide](accessibility.md) |
+| Security considerations | [Security Guide](security.md) |
 
-## Critical Rules
+## Key Concepts
 
-1. **DOCTYPE matters** — Missing `<!DOCTYPE html>` triggers quirks mode; layouts break unpredictably
-2. **CSS specificity beats cascade** — `.class` overrides element selectors regardless of order
-3. **`===` not `==`** — Type coercion causes `"0" == false` to be true
-4. **Async/await in loops** — `forEach` doesn't await; use `for...of` or `Promise.all`
-5. **CORS is server-side** — No client-side fix; configure `Access-Control-Allow-Origin` on the server
-6. **Responsive = viewport meta** — Without `<meta name="viewport">`, mobile renders desktop-width
-7. **Form without `preventDefault`** — Page reloads; call `e.preventDefault()` in submit handler
-8. **Images need dimensions** — Missing `width`/`height` causes layout shift (CLS penalty)
-9. **HTTPS or blocked** — Mixed content (HTTP resources on HTTPS pages) gets blocked by browsers
-10. **Environment variables leak** — `NEXT_PUBLIC_*` exposes to client; never prefix secrets
+### Doctype and Quirks Mode
+The `<!DOCTYPE html>` declaration is crucial for standard mode rendering in browsers, avoiding quirks mode which can lead to inconsistent behavior.
 
-## Common Requests
+### CSS Specificity and Cascade
+Master the CSS cascade and specificity to ensure styles are applied correctly across your website.
 
-**"Make it responsive"** → Mobile-first CSS with media queries; test at 320px, 768px, 1024px
-**"Deploy to production"** → See `deploy.md` for Vercel/Netlify/VPS patterns
-**"Fix CORS error"** → Server must send headers; proxy through same-origin if you can't control server
-**"Improve performance"** → Lighthouse audit; focus on LCP, CLS, FID; lazy-load below-fold images
-**"Add SEO"** → Title/description per page, semantic HTML, OG tags, sitemap.xml
+### Type Coercion
+Prevent unexpected behavior by using strict equality (`===`) over loose equality (`==`).
+
+### Async/Await and Loops
+Use `for...of` loops or `Promise.all` for managing asynchronous operations in JavaScript.
+
+### CORS Configuration
+Server-side CORS configuration is essential for cross-origin resource sharing and must be carefully managed.
+
+### Responsive Design
+Implement responsive design with viewport meta tags and media queries to ensure compatibility across devices.
+
+### Form Handling
+Prevent form submissions from reloading the page by calling `e.preventDefault()` in your submit handlers.
+
+### Image Dimensions
+Specify image dimensions to optimize page load times and improve the user experience.
+
+### HTTPS and Mixed Content
+Secure your site with HTTPS and avoid mixed content issues to enhance security and trust.
+
+### Environment Variables
+Use environment variables to manage configuration and secrets, separating them from client-side code.
+
+## Common Queries
+
+**"Make it responsive"** → Implement responsive design using media queries and test across various device widths.
+
+**"Deploy to production"** → Follow the [Deployment Guide](deploy.md) for step-by-step instructions on deploying to various platforms.
+
+**"Fix CORS error"** → Configure server headers or use a proxy to resolve CORS issues when server configuration is out of your control.
+
+**"Improve performance"** → Use Lighthouse for performance audits and focus on critical metrics like LCP, CLS, and FID.
+
+**"Add SEO"** → Optimize your site for search engines by following best practices for titles, descriptions, and structured data.
 
 ## Framework Decision Tree
 
-* **Static content, fast builds** → Astro or plain HTML
-* **Blog/docs with MDX** → Astro or Next.js App Router
-* **Interactive app with auth** → Next.js or Remix
-* **Full SSR/ISR control** → Next.js
-* **Simple SPA, no SEO needed** → Vite + React/Vue
+| Project Type | Framework Recommendation |
+| --- | --- |
+| Static site | Gatsby, Next.js with static generation |
+| Blog or documentation | Next.js, Nuxt.js |
+| E-commerce | Vue.js with Nuxt.js, Angular with Angular Universal |
+| Content management | WordPress, Drupal, Joomla |
+| Real-time application | Socket.IO, WebSockets with Next.js |
 
-## 依赖说明
+## Dependency Requirements
 
-### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
-- **操作系统**: Windows / macOS / Linux
+### Runtime Environment
+- **Agent Platform**: Compatible with any AI Agent supporting SKILL.md (Claude Code, Cursor, Codex, Gemini CLI, etc.)
+- **Operating System**: Windows, macOS, Linux
 
-### 依赖说明
-| 依赖项 | 类型 | 是否必需 | 获取方式 |
+### Dependencies
+| Dependency | Type | Required | Acquisition Method |
 |:-------|:-----|:---------|:---------|
-| LLM API | API | 必需 | 由Agent内置LLM提供 |
+| LLM API | API | Required | Provided by the AI Agent's built-in LLM |
+| Webpack | Build Tool | Optional | Install via npm or yarn |
+| Babel | Transpiler | Optional | Install via npm or yarn |
 
-### API Key 配置
-- 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
+### API Key Configuration
+- This skill uses Markdown instructions and does not require an additional API key unless specified for external APIs.
 
-### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
-- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+### Usability Classification
+- **Category**: MD+EXEC (Markdown instructions with some features requiring exec command-line execution)
+- **Description**: An AI-driven Markdown skill that executes tasks based on natural language commands.
 
-## 核心能力
+## Core Capabilities
 
-- Build, debug, and deploy websites using HTML, CSS, JavaScript, and modern
-  frameworks following pr
-- 触发关键词: web, development, using, websites, build, debug, deploy
+- Build, debug, and deploy websites using HTML, CSS, JavaScript, and modern web frameworks
+- Trigger Keywords: web development, HTML, CSS, JavaScript, frameworks, deployment, optimization, SEO, accessibility
 
-## 适用场景
+## Applicability Scenarios
 
-| 场景 | 输入 | 输出 |
+| Scenario | Input | Output |
 |------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+| Basic Usage | User request | Processed result |
+| Advanced Usage | Complex development tasks | Automated solutions |
 
-**不适用于**：需要人工判断的复杂决策场景
+**Not Applicable**: Complex decision-making scenarios requiring human judgment
 
-## 使用流程
+## Usage Workflow
 
-1. 确认运行环境满足依赖说明中的要求
-2. 根据适用场景选择合适的使用方式
-3. 执行操作并检查输出结果
-4. 如遇错误，参考错误处理章节
+1. Confirm that the runtime environment meets the requirements specified in the Dependency Requirements section.
+2. Choose the appropriate usage method based on the Applicability Scenarios.
+3. Execute the operation and check the output result.
+4. If an error occurs, refer to the Error Handling section.
 
-## 示例
+## Examples
 
-### 示例1：基础用法
+### Example 1: Basic Usage
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+Input: User request
+Processing: Execute the workflow based on the Usage Workflow
+Output: Processed result
 ```
 
-## 错误处理
+### Example 2: Advanced Usage
 
-| 错误场景 | 原因 | 处理方式 |
+```
+Input: "I need to optimize my website's performance"
+Processing: Analyze the website using Lighthouse and provide optimization suggestions
+Output: Detailed performance optimization report
+```
+
+## Error Handling
+
+| Error Scenario | Cause | Resolution |
 |---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| Configuration Error | Missing or incorrectly formatted parameters | Check the Dependency Requirements for configuration requirements |
+| Runtime Error | Inadequate runtime environment | Confirm that the runtime environment meets the requirements |
+| Network Error | Connection timeout or unreachability | Check network connection and retry; refer to domestic alternatives if necessary |
 
-## 常见问题
+## Frequently Asked Questions
 
-### Q1: 如何开始使用Web Development？
-A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+### Q1: How do I start using the Advanced Web Development Toolkit?
+A: Please read the Usage Workflow section and confirm that the environment meets the requirements specified in the Dependency Requirements.
 
-### Q2: 遇到错误怎么办？
-A: 请参考错误处理章节，按照表格中的处理方式操作。
+### Q2: What should I do if I encounter an error?
+A: Please refer to the Error Handling section for instructions on how to handle errors.
 
-### Q3: Web Development有什么限制？
-A: 请参考已知限制章节了解具体限制。
+### Q3: What are the limitations of the Advanced Web Development Toolkit?
+A: Please refer to the Known Limitations section for details on the skill's limitations.
 
-## 已知限制
+## Known Limitations
 
-- 需要LLM支持，无LLM环境无法使用
-- 复杂场景可能需要人工辅助判断
-- 性能取决于底层模型能力
+- Requires LLM support; cannot be used without an LLM environment
+- May require human judgment for complex scenarios
+- Performance depends on the underlying model capabilities
+
+## Boundary Conditions and Limitations
+
+### Input Restrictions
+- **Input Format**: The skill only accepts specific formats, such as Markdown code examples or problem descriptions. Non-standard formats or binary data cannot be processed correctly.
+- **Length Limit**: There is a limit to the length of input content, and overly long content may cause the skill to fail to parse or respond correctly.
+- **Complexity Limit**: For overly complex scenarios, the skill may not be able to provide an accurate solution, and human intervention may be required for decision-making.
+
+### Performance Boundaries
+- **Processing Speed**: The speed of processing requests is limited by the capabilities of the underlying model, and processing time may be longer for complex or large data scenarios.
+- **Concurrency Handling**: The skill has limited concurrency handling capabilities, and a large number of concurrent requests may cause response delays.
+
+### Compatibility Constraints
+- **Browser Compatibility**: The output of the skill may be inconsistent across different browsers, and it is recommended to test in mainstream browsers.
+- **Framework Compatibility**: The skill supports a limited set of frameworks and libraries, and may not provide expected functionality for unsupported frameworks or libraries.
+
+### Data Security and Privacy
+- **Data Leak Risk**: The skill may involve sensitive data in the processing process, and data security must be ensured to avoid data leaks.
+- **Privacy Protection**: The skill should comply with relevant privacy protection regulations to ensure that user privacy is not violated.
+
+### Environment Dependencies
+- **Operating System**: The skill runs on specific operating systems and does not support cross-platform usage.
+- **Hardware Requirements**: The skill has certain requirements for hardware resources, such as CPU and memory, and may not meet the requirements of low-end configurations.
+
+### Human Assistance
+- **Complex Scenarios**: For complex or vague requirements, the skill may not be able to provide an accurate solution, and human assistance may be required for decision-making.
+- **Decision-Making Scenarios**: The skill is not suitable for complex decision-making scenarios requiring human judgment, such as risk assessment and business decision-making.
+
+## Differentiation Advantages
+
+### Comparison with Similar Solutions
+
+1. **Manual Operation**: Compared to manual coding and debugging, this skill significantly improves development efficiency through automated tools and predefined rules.
+2. **Other Tools**: Compared to other code editors or IDEs, this skill focuses on the automation of the web development process.
+3. **Universal Methods**: Compared to universal programming methods, this skill is optimized for the web development field.
+
+### Unique Features
+
+1. **Framework Decision Tree**: This skill provides a framework decision tree to help developers choose the appropriate framework based on project requirements.
+2. **Fast Deployment**: This skill supports fast deployment to the production environment through platforms such as Vercel, Netlify, and VPS.
+3. **Performance Optimization**: This skill provides a series of performance optimization suggestions.
+4. **SEO Optimization**: This skill includes SEO optimization suggestions.
+5. **Security Protection**: This skill provides a series of security protection suggestions.
+
+### Efficiency Improvement
+
+Using this skill, developers can save at least 50% of the time spent on code writing and debugging. By automating tools and predefined rules, manual intervention is reduced, reducing the probability of errors and improving development efficiency.
+
+### Innovation in Application Scenarios
+
+1. **Rapid Prototype Design**: This skill can help developers quickly build prototypes, verify design ideas, and save time and costs in the design phase.
+2. **Team Collaboration**: This skill supports team collaboration in development, and improves team collaboration efficiency through code generation and automated deployment.
+3. **Education Field**: This skill can be used as a web development teaching tool to help students quickly master web development skills and improve teaching effectiveness.

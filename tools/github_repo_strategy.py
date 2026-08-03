@@ -2,152 +2,78 @@
 """
 GitHub 仓库策略配置 (固化的策略定义)
 ===================================
-本文件定义了项目的GitHub双仓库策略, 所有自动化脚本应引用此配置。
+V119 W1 (TD-142): 改为从 platform_config re-export, 消除本地硬编码副本。
+V128 Y5: config/github_repo_strategy.py 是另一个向后兼容入口(无人导入)。
+本文件是实际使用的入口,被version_sync_pipeline.py等模块导入。
+
+本文件保留向后兼容的别名导出(PUBLIC_REMOTE等无GITHUB_前缀的名称),
+供 version_sync_pipeline.py 等已使用这些名称的模块导入。
 
 策略模型:
-  1. hermes-skills (公开引流仓库)
-     - URL: https://github.com/thcjp/hermes-skills
-     - git remote: hermes-skills
-     - 可见性: public
-     - 推送内容: 仅免费skill (pricing=free, pricing_tier=L1/L2, license=MIT/Apache-2.0)
-     - 目的: 社区影响力、品牌建设、引流到SkillHub付费版
-     - 不推送: 付费skill (pricing_tier=L3/L4, license=Proprietary)
-
-  2. origin (私有备份仓库)
-     - URL: https://github.com/thcjp/-.git
-     - git remote: origin
-     - 可见性: private (建议在GitHub设置中改为private)
-     - 推送内容: 全部skill (免费+付费) + 项目代码 + 数据库 + 脚本
-     - 目的: 项目完整备份, 灾难恢复
-     - 不推送: 无 (全部推送)
-
-判定规则 (按优先级):
-  1. pricing 字段 = 'free' → 免费 → 推送到hermes-skills
-  2. pricing_tier in (L1-入门级, L2-标准级) → 免费 → 推送到hermes-skills
-  3. license in (MIT, Apache-2.0) → 免费 → 推送到hermes-skills
-  4. 以上都不满足 → 付费 → 仅推送到origin (私有备份)
+  1. hermes-skills (公开引流仓库) - 仅免费skill
+  2. origin (私有备份仓库) - 全部skill + 项目代码
 
 使用方式:
   from github_repo_strategy import is_free_skill, PUBLIC_REMOTE, PRIVATE_REMOTE
 """
 
-# ============================================================
-# 仓库配置
-# ============================================================
+# V119 W1: 从 platform_config 统一导入, 消除本地硬编码副本
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
 
-# 公开引流仓库
-PUBLIC_REMOTE = "hermes-skills"
-PUBLIC_REPO_URL = "https://github.com/thcjp/hermes-skills"
-PUBLIC_REPO_VISIBILITY = "public"
-
-# 私有备份仓库
-PRIVATE_REMOTE = "origin"
-PRIVATE_REPO_URL = "https://github.com/thcjp/-.git"
-PRIVATE_REPO_VISIBILITY = "private"  # 建议在GitHub设置中改为private
-
-# 分支
-GITHUB_BRANCH = "main"
+from platform_config import (
+    GITHUB_PUBLIC_REMOTE, GITHUB_PUBLIC_REPO_URL, GITHUB_PUBLIC_VISIBILITY,
+    GITHUB_PRIVATE_REMOTE, GITHUB_PRIVATE_REPO_URL, GITHUB_PRIVATE_VISIBILITY,
+    is_free_skill,
+    GITHUB_BRANCH,  # [V131 B1] re-export: version_sync_pipeline从此模块导入GITHUB_BRANCH
+)
 
 # ============================================================
-# 免费/付费判定规则
+# 向后兼容别名 (无 GITHUB_ 前缀的短名称)
 # ============================================================
 
-FREE_PRICING_VALUES = {"free", "Free", "FREE"}
-FREE_PRICING_TIERS = {"L1-入门级", "L2-标准级"}
-FREE_LICENSES = {"MIT", "Apache-2.0"}
-PAID_PRICING_TIERS = {"L3-专业级", "L4-企业级"}
-PAID_LICENSES = {"Proprietary", "Commercial"}
+PUBLIC_REMOTE = GITHUB_PUBLIC_REMOTE
+PUBLIC_REPO_URL = GITHUB_PUBLIC_REPO_URL
+PUBLIC_REPO_VISIBILITY = GITHUB_PUBLIC_VISIBILITY
 
-
-def is_free_skill(pricing: str = "", pricing_tier: str = "", license_val: str = "") -> bool:
-    """判断skill是否为免费skill
-
-    Args:
-        pricing: frontmatter中的pricing字段值
-        pricing_tier: frontmatter中的pricing_tier字段值
-        license_val: frontmatter中的license字段值
-
-    Returns:
-        True if free skill (可以推送到公开引流仓库)
-        False if paid skill (仅推送到私有备份仓库)
-    """
-    if pricing and pricing.lower() in FREE_PRICING_VALUES:
-        return True
-    if pricing_tier and pricing_tier in FREE_PRICING_TIERS:
-        return True
-    if license_val and license_val in FREE_LICENSES:
-        return True
-    return False
-
-
-def get_push_strategy(pricing: str = "", pricing_tier: str = "", license_val: str = "") -> dict:
-    """获取推送策略
-
-    Returns:
-        {
-            'is_free': bool,
-            'push_to_public': bool,  # 是否推送到hermes-skills
-            'push_to_private': bool, # 是否推送到origin
-            'visibility': str,       # public/private
-        }
-    """
-    free = is_free_skill(pricing, pricing_tier, license_val)
-    return {
-        'is_free': free,
-        'push_to_public': free,
-        'push_to_private': True,  # 所有skill都推送到私有备份
-        'visibility': 'public' if free else 'private',
-    }
+PRIVATE_REMOTE = GITHUB_PRIVATE_REMOTE
+PRIVATE_REPO_URL = GITHUB_PRIVATE_REPO_URL
+PRIVATE_REPO_VISIBILITY = GITHUB_PRIVATE_VISIBILITY
 
 
 # ============================================================
-# 文件判定辅助函数
+# 文件判定辅助函数 (本文件独有, platform_config 未定义)
 # ============================================================
 
 def is_free_skill_from_file(skill_md_path) -> bool:
-    """从SKILL.md文件读取frontmatter并判断是否为免费skill"""
-    import re
+    """从SKILL.md文件读取frontmatter并判断是否为免费skill
+
+    V127 X8: 使用skill_core.parser.parse_frontmatter替代手动解析(TD-197)
+    """
     from pathlib import Path
+    from skill_core.parser import parse_frontmatter  # V127 X8: 统一frontmatter解析
 
     if isinstance(skill_md_path, str):
         skill_md_path = Path(skill_md_path)
 
     try:
         content = skill_md_path.read_text(encoding='utf-8', errors='replace')
-        if content.startswith('\ufeff'):
-            content = content[1:]
-        if not content.startswith('---'):
-            return False
+        result = parse_frontmatter(content)
+        metadata = result['fields']
 
-        parts = content.split('---', 2)
-        if len(parts) < 3:
-            return False
-
-        fm_text = parts[1].strip()
-        pricing = ""
-        pricing_tier = ""
-        license_val = ""
-
-        for line in fm_text.split('\n'):
-            if ':' in line and not line.startswith(' '):
-                key, _, val = line.partition(':')
-                key = key.strip()
-                val = val.strip().strip('"').strip("'")
-                if key == 'pricing':
-                    pricing = val
-                elif key == 'pricing_tier':
-                    pricing_tier = val
-                elif key == 'license':
-                    license_val = val
+        pricing = metadata.get('pricing', '')
+        pricing_tier = metadata.get('pricing_tier', '')
+        license_val = metadata.get('license', '')
 
         return is_free_skill(pricing, pricing_tier, license_val)
-    except Exception:
+    except Exception:  # [V130 A1] 宽泛捕获: 文件读取和frontmatter解析可能因编码/格式等多种原因失败
         return False
 
 
 if __name__ == "__main__":
     # 自测
-    print("GitHub 仓库策略配置")
+    print("GitHub 仓库策略配置 (re-export from platform_config)")
     print("=" * 60)
     print(f"公开引流仓库: {PUBLIC_REPO_URL} (remote: {PUBLIC_REMOTE})")
     print(f"私有备份仓库: {PRIVATE_REPO_URL} (remote: {PRIVATE_REMOTE})")

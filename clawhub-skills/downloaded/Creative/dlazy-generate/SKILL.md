@@ -18,7 +18,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # ç»¼åçæ Dlazy Generate
 
 [English](/api/v1/skills/dlazy-generate/file?path=SKILL.md&ownerHandle=dlazyai) · [中文](/api/v1/skills/dlazy-generate/file?path=SKILL-cn.md&ownerHandle=dlazyai)

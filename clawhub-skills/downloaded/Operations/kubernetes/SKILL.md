@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # Kubernetes Agent Swarm
 
 A multi-agent system for Kubernetes and OpenShift platform operations. Seven specialized agents work together as a coordinated swarm.
@@ -228,3 +227,34 @@ A: 请参考已知限制章节了解具体限制。
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
 - 性能取决于底层模型能力
+
+---
+## 边界条件与限制
+
+### 输入限制
+
+- **指令长度**：单个指令的长度不应超过256个字符，以确保能够正确解析和执行。
+- **指令复杂度**：避免使用过于复杂的命令组合，以减少执行错误的可能性。
+- **参数数量**：单个指令中包含的参数数量应控制在5个以内，以避免混淆和错误。
+
+### 性能边界
+
+- **并发处理**：技能同时处理多个任务的能力受限于宿主机器的性能和资源。
+- **响应时间**：对于高负载情况，技能的响应时间可能会增加，建议在高峰时段预留额外的处理时间。
+
+### 兼容性约束
+
+- **Kubernetes版本**：技能需要与特定版本的Kubernetes集群兼容，请确保集群版本在技能支持的范围内。
+- **OpenShift版本**：如果使用OpenShift，技能需要与特定版本的OpenShift兼容。
+- **CLI工具**：技能依赖于`kubectl`和`oc`等CLI工具，确保这些工具安装并配置正确。
+
+### 安全限制
+
+- **权限限制**：技能中的Agent执行的操作受到Kubernetes RBAC（Role-Based Access Control）策略的限制。
+- **敏感操作**：涉及删除生产资源、修改集群策略等敏感操作需要人工审核和批准。
+
+### 其他限制
+
+- **外部API**：技能可能需要访问外部API，如镜像仓库、日志服务等，确保这些服务可用且访问权限正确配置。
+- **日志记录**：技能的操作日志记录在宿主机器上，确保日志存储空间充足。
+

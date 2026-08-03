@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # Photo Captions
 
 When the user shares a photo with context (location, camera, lens, film stock, subject, mood), generate captions for all platforms below in one response. Each platform has a distinct voice and format.
@@ -215,3 +214,25 @@ A: 请参考已知限制章节了解具体限制。
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
 - 性能取决于底层模型能力
+
+---
+## 边界条件与限制
+
+### 输入限制
+- **图片内容**: 该技能仅适用于用户分享的图片内容，不适用于版权受保护的媒体内容处理。
+- **图片信息**: 图片内容需包含足够的信息，如拍摄地点、相机、镜头、胶片类型、主题、情绪等，以便生成针对性的文案。
+- **用户指定**: 用户需明确指定所需生成的平台，若未指定，则默认生成所有支持平台的文案。
+
+### 性能边界
+- **处理速度**: 该技能的响应速度取决于底层模型能力和运行环境，对于复杂的图片内容，处理时间可能较长。
+- **输出长度**: 每个平台的文案长度受限于平台特性，如Instagram的标签数量限制为5个。
+
+### 兼容性约束
+- **操作系统**: 该技能支持Windows、macOS和Linux操作系统。
+- **Agent平台**: 该技能支持SKILL.md的任意AI Agent，如Claude Code、Cursor、Codex、Gemini CLI等。
+- **LLM支持**: 该技能需要LLM支持，无LLM环境无法使用。
+
+### 其他限制
+- **复杂场景**: 对于需要人工判断的复杂决策场景，该技能无法替代人工判断。
+- **语言支持**: 该技能目前仅支持英文，未来可能支持更多语言。
+

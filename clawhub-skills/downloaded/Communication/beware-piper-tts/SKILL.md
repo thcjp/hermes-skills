@@ -20,7 +20,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Piper TTS
 
 Generate voice messages using [Piper](https://github.com/rhasspy/piper), a fast local TTS engine. Zero cloud calls, zero cost, zero API keys.

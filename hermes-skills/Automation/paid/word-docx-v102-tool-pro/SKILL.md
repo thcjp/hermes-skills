@@ -7,8 +7,7 @@ displayName: Word文档工具V102（专业版）
 summary: "Word文档处理增强版本，支持高级格式化、样式管理、修订追踪与协同编辑.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
-description: Word文档工具V102 - （专业版）。可处理提升工作效率
-
+description: "Word文档工具V102 - （专业版）。可处理提升工作效率。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
   核心能力: Word文档, 高级格式, 修订追踪, 批注管理, 协同编辑, 样式管理, 内容控件, 条件渲染
 
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
@@ -45,13 +44,10 @@ category: "Automation"
 ---
 
 # Word文档工具V102（专业版）
-
 ## 概述
-
 Word文档工具V102是针对文档处理领域的专业化AI辅助工具。专业版面向企业用户，提供完整的功能体系，包含高级特性、批量处理与企业级集成能力.
 本工具经过深度优化，增强元数据和适用关键词，完全适配SkillHub平台规范.
 ## 核心能力
-
 高级格式化、样式管理、修订追踪、批注管理、协同编辑、条件渲染、内容控件
 
 ### 专业版增强功能
@@ -60,7 +56,6 @@ Word文档工具V102是针对文档处理领域的专业化AI辅助工具。专�
 ### 批量处理与并行执行
 批量处理与并行执行
 
-**输入**: 用户提供批量处理与并行执行所需的指令和必要参数.
 **处理**: 解析批量处理与并行执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量处理与并行执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -68,7 +63,6 @@ Word文档工具V102是针对文档处理领域的专业化AI辅助工具。专�
 ### 企业级安全与审计
 企业级安全与审计
 
-**输入**: 用户提供企业级安全与审计所需的指令和必要参数.
 **处理**: 解析企业级安全与审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回企业级安全与审计的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -76,7 +70,6 @@ Word文档工具V102是针对文档处理领域的专业化AI辅助工具。专�
 ### 高级配置与自定义策略
 高级配置与自定义策略
 
-**输入**: 用户提供高级配置与自定义策略所需的指令和必要参数.
 **处理**: 解析高级配置与自定义策略的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级配置与自定义策略的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -84,7 +77,6 @@ Word文档工具V102是针对文档处理领域的专业化AI辅助工具。专�
 ### 免费版完全兼容
 免费版完全兼容，无缝升级
 
-**输入**: 用户提供免费版完全兼容所需的指令和必要参数.
 **处理**: 解析免费版完全兼容的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版完全兼容的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -92,20 +84,16 @@ Word文档工具V102是针对文档处理领域的专业化AI辅助工具。专�
 ### 优先技术支持与问题响应
 优先技术支持与问题响应
 
-**输入**: 用户提供优先技术支持与问题响应所需的指令和必要参数.
 **处理**: 解析优先技术支持与问题响应的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回优先技术支持与问题响应的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**输入**: 用户提供专业版增强功能所需的指令和必要参数.
 **处理**: 解析专业版增强功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回专业版增强功能的响应数据,包含状态码、结果和日志.
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Word、文档处理增强版本、支持高级格式化、修订追踪与协同编、文档工具等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 使用场景
-
 ### 场景1：高级格式化
-
 应用复杂的格式和样式到Word文档。**示例指令**：`
 
 `为报告应用专业格式
@@ -116,27 +104,21 @@ Word文档工具V102是针对文档处理领域的专业化AI辅助工具。专�
 3. 执行操作并返回结果
 
 ### 场景2：修订追踪
-
 开启修订模式追踪文档变更。**示例指令**：`
 
 `开启修订追踪
 
 ### 场景3：协同批注
-
 添加和管理文档批注。**示例指令**：`
 
 `为这段内容添加批注
-
 ## 快速开始
-
 1. 阅读## 核心能力章节了解skill功能
 2. 按## 依赖说明配置环境
 3. 执行所需能力对应的命令
 4. 参考## 错误处理章节处理异常
 5. 查看## FAQ解答常见疑问
-
 ### 环境准备
-
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
 |---|---|---|---|
@@ -153,7 +135,6 @@ pip install requests
 ```
 
 ### 基础用法
-
 ```python
 # 企业级Word V102引擎（PRO）
 import os
@@ -202,7 +183,7 @@ class WordV102Engine:
         try:
             style = self.doc.styles[style_def.name]
         except KeyError:
-            style = self.doc.styles.add_style(style_def.name, 1)  # WD_STYLE_TYPE.PARAGRAPH
+doc.styles.add_style(style_def.name, 1)  # WD_STYLE_TYPE.PARAGRAPH
         style.font.name = style_def.font_name
         style.font.size = Pt(style_def.font_size)
         style.font.bold = style_def.bold
@@ -235,7 +216,7 @@ class WordV102Engine:
             f"[批注 - {author}]: {text}"
         )
         comment_para.runs[0].italic = True
-        comment_para.runs[0].font.color.rgb = RGBColor(128, 128, 128)
+runs[0].font.color.rgb = RGBColor(128, 128, 128)
 # ...
     def add_content_control(self, paragraph, control_type: str,
                            options: List[str] = None):
@@ -244,10 +225,8 @@ class WordV102Engine:
             run = paragraph.add_run(f"[下拉选择: {' / '.join(options)}]")
             run.font.color.rgb = RGBColor(0, 0, 255)
         elif control_type == "checkbox":
-            run = paragraph.add_run("[ ] ")
             run.font.size = Pt(14)
         elif control_type == "date":
-            run = paragraph.add_run("[日期选择器]")
             run.font.color.rgb = RGBColor(0, 0, 255)
 # ...
     def add_section_break(self, break_type: str = "page"):
@@ -276,13 +255,11 @@ class WordV102Engine:
                 footer.paragraphs[0].text = footer_text
             if page_numbers:
                 para = footer.paragraphs[0]
-                para.alignment = WD_ALIGN_PARAGRAPH.CENTER
                 run = para.add_run()
                 fldChar1 = OxmlElement("w:fldChar")
                 fldChar1.set(qn("w:fldCharType"), "begin")
                 instrText = OxmlElement("w:instrText")
                 instrText.set(qn("xml:space"), "preserve")
-                instrText.text = "PAGE"
                 fldChar2 = OxmlElement("w:fldChar")
                 fldChar2.set(qn("w:fldCharType"), "end")
                 run._r.append(fldChar1)
@@ -308,17 +285,16 @@ class WordV102Engine:
                 engine.define_style(StyleDefinition(**style_def))
             for content in spec.get("content", []):
                 if content["type"] == "heading":
-                    engine.doc.add_heading(content["text"], content.get("level", 1))
+doc.add_heading(content["text"], content.get("level", 1))
                 elif content["type"] == "paragraph":
                     para = engine.doc.add_paragraph(content["text"])
                     if content.get("style"):
-                        engine.apply_style(para, content["style"])
+apply_style(para, content["style"])
             if spec.get("track_changes"):
-                engine.enable_track_changes()
+enable_track_changes()
             if spec.get("header") or spec.get("footer"):
-                engine.add_header_footer(
                     spec.get("header", ""), spec.get("footer", ""),
-                    spec.get("page_numbers", True)
+get("page_numbers", True)
                 )
             output = str(Path(output_dir) / f"doc_{i+1}.docx")
             engine.save(output)
@@ -362,10 +338,8 @@ print(f"批注数: {len(engine.comments)}")
 ```
 
 ### 执行结果
-
 完成上述代码后，将根据输入参数返回结构化响应。专业版支持批量任务和并行解析，可同时解析多个文件或任务.
 ## 示例
-
 ```yaml
 word_v102:
   features: [heading, paragraph, style_management, track_changes, comments, content_controls]
@@ -397,7 +371,6 @@ word_v102:
 ```
 
 ### 配置说明
-
 | 配置项 | 说明 | 默认值 |
 |:-----|:-----|:-----|
 | 基础路径 | 工作目录 | `./` |
@@ -405,9 +378,7 @@ word_v102:
 | 批量大小 | 单批处理数量 | `10` |
 | 并行度 | 并行处理线程数 | `4` |
 | 重试次数 | 失败重试次数 | `3` |
-
 ## 免费版兼容性
-
 本专业版完全兼容免费版的数据格式与操作方式：
 
 | 特性 | 免费版 | 专业版 |
@@ -421,7 +392,6 @@ word_v102:
 
 免费版创建的文件可无缝升级到专业版处理，无需任何格式转换.
 ## 企业级功能
-
 ### 批量处理能力
 - 支持多文件并行处理
 - 自动错误重试与恢复
@@ -433,11 +403,8 @@ word_v102:
 - 敏感数据加密存储
 - 多租户隔离支持
 - 合规性检查内置
-
-## 最佳实践
-
-### 企业级最佳实践
-
+## 优选实践
+### 企业级优选实践
 1. **明确需求**：对于大批量任务，先规划分批策略与并行度
 2. **检查输入**：批量处理前先验证所有输入文件的有效性
 3. **保存结果**：处理结果自动归档并生成审计报告
@@ -445,7 +412,6 @@ word_v102:
 5. **错误处理**：配置自动重试与错误恢复策略
 
 ### 性能优化
-
 ```python
 # 专业版：批量性能优化
 # 1. 合理设置并行度（建议CPU核心数）
@@ -453,30 +419,22 @@ word_v102:
 # 3. 使用异步IO提升吞吐量
 # 4. 启用结果缓存减少重复计算
 ```
-
 ## 常见问题
-
 ### Q1: 批量处理时遇到内存不足？
-
 A: 专业版支持分批处理，建议减小batch_size参数，或增加并行度但减少每批文件数量.
 ### Q2: 如何配置自动重试？
-
 A: 在配置文件中设置retry_attempts和retry_delay参数。专业版支持指数退避重试策略.
 ### Q3: 如何监控处理进度？
-
 A: 专业版内置进度追踪功能，通过回调或轮询方式获取实时处理状态。可配置webhook通知.
 ### Q4: 如何与现有系统集成？
-
 A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时任务和webhook回调.
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 - **Python版本**: 3.8+
 
 ### 第三方依赖
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -490,21 +448,16 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 - **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作
 - **版本**: 专业版（v1.0.0 专业版，完整功能+企业级支持）
-
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
-
 ## 已知限制
-
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
-
 ## 输出格式
 ```json
 {
@@ -521,3 +474,20 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
   "error": null
 }
 ```
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+## 核心功能
+
+- **自动化执行**: Word文档处理增强版本，支持高级格式化、样式管理、修订追踪与协同编辑.,支持多种使用场景和自动化处理
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

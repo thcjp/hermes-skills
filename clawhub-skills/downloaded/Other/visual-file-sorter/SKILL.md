@@ -32,7 +32,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # è§è§ç³»æä»¶åç±»å¤§å¸ (Visual File Sorter)
 
 ## 🎯 核心目标

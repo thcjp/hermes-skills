@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 9.9
 ---
 
-
 # CDN
 
 ## When to Use

@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Search
 
 Search the web and get relevant results optimized for LLM consumption.

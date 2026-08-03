@@ -1,5 +1,6 @@
 ---
-slug: "email-163-tool-pro"
+
+slug: email-163-tool-pro
 name: "email-163-tool-pro"
 version: "1.0.0"
 displayName: "163邮箱助手专业版"
@@ -34,28 +35,25 @@ tools:
   - write
 homepage: ""
 category: "Communication"
+
 ---
+
 # 163邮箱助手专业版
 **版本**: 1.0.0
 **适用对象**: 企业用户、团队管理者、运维与运营人员
 **核心定位**: 企业级163邮箱批量管理与自动化处理平台
 **兼容性**: 完全兼容免费版（email-163-tool-free）全部命令与配置，可直接升级
 
----
-
 ## 概述
 163邮箱助手专业版是一款面向企业级场景的网易163邮箱深度管理工具。在免费版提供的邮件收发、搜索与文件夹管理能力之上，专业版引入批量操作引擎、邮件模板系统、定时任务调度、归档审计日志与多账户统一管理等高级特性，满足企业在批量通知、合规归档、自动化处理与多部门协作等复杂场景下的需求.
 专业版向下完全兼容免费版，已有配置文件与命令无需修改即可平滑升级。新增的企业级功能通过扩展命令实现，不影响既有工作流.
----
-
 ## 核心能力
 ### 批量操作引擎
 - **批量发送**: 一次性向数百个收件人发送邮件，支持收件人列表文件
-- **变量替换**: 邮件模板中支持 `{{name}}`、`{{date}}` 等变量插值
+- **变量替换**: 邮件模板中支持 ``、`` 等变量插值
 - **批量删除/移动**: 按搜索结果批量处理邮件
 - **批量标记**: 批量标记已读、加星标、归类
 
-**输入**: 用户提供批量操作引擎所需的指令和必要参数.
 **处理**: 解析批量操作引擎的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量操作引擎的响应数据,包含状态码、结果和日志.
 ### 高级搜索与过滤
@@ -64,7 +62,6 @@ category: "Communication"
 - 搜索结果导出为 CSV/JSON
 - 搜索结果分页与排序
 
-**输入**: 用户提供高级搜索与过滤所需的指令和必要参数.
 **处理**: 解析高级搜索与过滤的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级搜索与过滤的响应数据,包含状态码、结果和日志.
 ### 邮件模板系统
@@ -73,7 +70,6 @@ category: "Communication"
 - 变量插值与条件渲染
 - 模板版本控制
 
-**输入**: 用户提供邮件模板系统所需的指令和必要参数.
 **处理**: 解析邮件模板系统的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回邮件模板系统的响应数据,包含状态码、结果和日志.
 ### 定时任务调度
@@ -82,7 +78,6 @@ category: "Communication"
 - 任务队列管理与状态监控
 - 任务执行日志
 
-**输入**: 用户提供定时任务调度所需的指令和必要参数.
 **处理**: 解析定时任务调度的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时任务调度的响应数据,包含状态码、结果和日志.
 ### 归档与审计
@@ -91,7 +86,6 @@ category: "Communication"
 - 归档邮件全文检索
 - 合规导出报告
 
-**输入**: 用户提供归档与审计所需的指令和必要参数.
 **处理**: 解析归档与审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回归档与审计的响应数据,包含状态码、结果和日志.
 ### 多账户管理
@@ -100,9 +94,6 @@ category: "Communication"
 - 账户间邮件转发与同步
 - 账户健康状态监控
 
----
-
-**输入**: 用户提供多账户管理所需的指令和必要参数.
 **处理**: 解析多账户管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多账户管理的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
@@ -129,8 +120,8 @@ wangwu@company.com,王五,财务部,2026年7月
 **创建邮件模板** `template/salary_notice.html`:
 
 ```html
-<h1>工资单通知 - {{salary_month}}</h1>
-<p>尊敬的 {{name}}（{{department}}）：</p>
+<h1>工资单通知 - </h1>
+<p>尊敬的 （）：</p>
 <p>您本月工资单已生成，请登录企业系统查看详情。</p>
 <p>如有疑问，请联系财务部。</p>
 ```
@@ -141,7 +132,7 @@ wangwu@company.com,王五,财务部,2026年7月
 email-163-tool batch-send \
   --recipients recipients.csv \
   --template template/salary_notice.html \
-  --subject "{{name}} - 工资单通知 {{salary_month}}" \
+  --subject " - 工资单通知 " \
   --rate-limit 10 \
   --dry-run
 ```
@@ -154,12 +145,10 @@ email-163-tool batch-send \
    模板: template/salary_notice.html
    发送速率: 10 封/分钟
    模式: 试运行（dry-run）
-# ...
 [1/500] ✅ zhangsan@company.com - 张三 - 技术部
 [2/500] ✅ lisi@company.com - 李四 - 市场部
 [3/500] ✅ wangwu@company.com - 王五 - 财务部
 ...
-# ...
 📊 试运行完成: 500 封邮件预览成功，0 个错误
 💡 移除 --dry-run 参数以实际发送
 ```
@@ -167,7 +156,6 @@ email-163-tool batch-send \
 ### 场景二：邮件归档与合规审计
 财务部门需要将所有与发票相关的邮件归档保存，并生成审计报告.
 ```bash
-# 搜索所有发票相关邮件并归档
 email-163-tool search-archive \
   --from "invoice@" \
   --subject "发票" \
@@ -175,8 +163,6 @@ email-163-tool search-archive \
   --before "2026-07-18" \
   --archive-folder "财务归档/2026年上半年" \
   --export audit_report.csv
-# ...
-# 查看归档审计日志
 email-163-tool audit-log --action archive --since "2026-07-01"
 ```
 
@@ -185,7 +171,6 @@ email-163-tool audit-log --action archive --since "2026-07-01"
 ```text
 📜 审计日志 - 归档操作
 时间范围: 2026-07-01 至 2026-07-18
-# ...
 2026-07-18 10:30:15 | ARCHIVE | 邮件ID: 234 | 主题: 7月发票 | 来源: invoice@vendor.com -> 财务归档/2026年上半年
 2026-07-18 10:30:16 | ARCHIVE | 邮件ID: 235 | 主题: 6月发票 | 来源: invoice@vendor.com -> 财务归档/2026年上半年
 ...
@@ -195,24 +180,16 @@ email-163-tool audit-log --action archive --since "2026-07-01"
 ### 场景三：定时自动清理与汇总
 设置每周一自动清理垃圾邮件，并汇总上周未读重要邮件.
 ```bash
-# 创建定时任务
 email-163-tool schedule create \
   --name "weekly-cleanup" \
   --cron "0 9 * * 1" \
   --actions "search --folder 垃圾邮件 --all | delete --batch" \
   --notify "admin@company.com"
-# ...
-# 查看所有定时任务
 email-163-tool schedule list
-# ...
-# 查看任务执行历史
 email-163-tool schedule history --name "weekly-cleanup"
 ```
 
----
-
 ## 不适用场景
-
 以下场景163邮箱助手专业版不适合处理：
 
 - 垃圾信息群发
@@ -220,7 +197,6 @@ email-163-tool schedule history --name "weekly-cleanup"
 - 电话语音交互
 
 ## 触发条件
-
 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 1. 阅读## 核心能力章节了解skill功能
@@ -228,14 +204,10 @@ email-163-tool schedule history --name "weekly-cleanup"
 3. 执行所需能力对应的命令
 4. 参考## 错误处理章节处理异常
 5. 查看## FAQ解答常见疑问
-
 ### 从免费版升级
 专业版完全兼容免费版，无需修改现有配置：
 
 ```bash
-# 现有配置文件可直接使用
-# ~/.config/email-163-tool/config.json
-# 验证升级后的基础功能
 email-163-tool read --count 5
 email-163-tool send --to test@example.com --subject "升级测试" --body "专业版已就绪"
 ```
@@ -283,8 +255,6 @@ email-163-tool send --to test@example.com --subject "升级测试" --body "专�
 
 ```bash
 mkdir -p ~/.config/email-163-tool/accounts
-# ...
-# 创建账户配置
 cat > ~/.config/email-163-tool/accounts/finance.json << 'EOF'
 {
   "name": "财务部邮箱",
@@ -292,12 +262,8 @@ cat > ~/.config/email-163-tool/accounts/finance.json << 'EOF'
   "password": "finance_auth_code"
 }
 EOF
-# ...
-# 列出所有账户
 email-163-tool accounts list
 ```
-
----
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
 ## 示例
@@ -360,32 +326,20 @@ email-163-tool accounts list
 }
 ```
 
----
-
-## 最佳实践
+## 优选实践
 ### 批量发送安全规范
 ```bash
-# 始终先试运行，确认无误后正式发送
 email-163-tool batch-send --recipients list.csv --template tpl.html --dry-run
-# ...
-# 已知限制
-email-163-tool batch-send --recipients list.csv --template tpl.html --rate-limit 10
-# ...
-# 失败重试与日志记录
-email-163-tool batch-send --recipients list.csv --template tpl.html \
+csv --template tpl.html --rate-limit 10
+csv --template tpl.html \
   --retry 3 --retry-delay 60 --log batch_send.log
 ```
 
 ### 邮件模板管理
 ```bash
-# 创建模板
 email-163-tool template create --name "月度报告" --file templates/monthly.html
-# ...
-# 预览模板渲染效果
 email-163-tool template preview --name "月度报告" \
   --data '{"name":"张三","month":"2026年7月"}'
-# ...
-# 列出所有模板
 email-163-tool template list
 ```
 
@@ -397,15 +351,9 @@ email-163-tool template list
 
 ### 多账户安全
 ```bash
-# 为每个账户使用独立授权码
-# 定期轮换授权码
 email-163-tool accounts rotate-key --account finance
-# ...
-# 监控账户健康状态
 email-163-tool accounts health-check
 ```
-
----
 
 ## 免费版与专业版对比
 | 能力 | 免费版 | 专业版 |
@@ -422,10 +370,7 @@ email-163-tool accounts health-check
 | 搜索结果导出 | ❌ | ✅（CSV/JSON） |
 | 技术支持 | 社区支持 | 优先支持 |
 
----
-
 ## 已知限制
-
 - 本skill的能力范围受限于核心能力章节中定义的功能,不支持超出范围的操作
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
@@ -438,10 +383,9 @@ Error: Rate limit exceeded
 
 **解决**: 降低发送速率，163邮箱对发送频率有严格限制。建议 `--rate-limit` 设置为 5-10 封/分钟，并启用失败重试机制.
 ### 问题2：模板变量未替换
-**解决**: 确保变量名与 CSV 列名完全一致（区分大小写），模板中使用 `{{variable}}` 语法：
+**解决**: 确保变量名与 CSV 列名完全一致（区分大小写），模板中使用 `` 语法：
 
 ```bash
-# 验证模板变量
 email-163-tool template validate --name "通知" --data sample.json
 ```
 
@@ -449,10 +393,7 @@ email-163-tool template validate --name "通知" --data sample.json
 **解决**: 检查时区配置与 cron 表达式格式：
 
 ```bash
-# 验证 cron 表达式
 email-163-tool schedule validate --cron "0 9 * * 1"
-# ...
-# 检查任务状态
 email-163-tool schedule status --name "weekly-cleanup"
 ```
 
@@ -460,10 +401,7 @@ email-163-tool schedule status --name "weekly-cleanup"
 **解决**: 确保各账户配置文件格式正确，授权码有效：
 
 ```bash
-# 验证所有账户配置
 email-163-tool accounts validate --all
-# ...
-# 测试单个账户连接
 email-163-tool accounts test --account finance
 ```
 
@@ -471,14 +409,9 @@ email-163-tool accounts test --account finance
 **解决**: 定期清理过期归档，或调整保留期限：
 
 ```bash
-# 清理超过保留期的归档邮件
 email-163-tool archive clean --expired
-# ...
-# 查看归档空间使用情况
 email-163-tool archive stats
 ```
-
----
 
 ## 命令参考速查
 | 命令 | 功能 | 专业版独有 |
@@ -494,8 +427,6 @@ email-163-tool archive stats
 | `accounts` | 多账户管理 | ✅ |
 | `archive` | 归档管理 | ✅ |
 | `export` | 结果导出 | ✅ |
-
----
 
 ## 依赖说明
 ### 运行环境
@@ -526,9 +457,27 @@ email-163-tool archive stats
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作，企业级功能通过扩展命令行工具完成，支持批量处理与定时调度
 
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级163邮箱管理，支持批量收发、高级搜索、定时任务与邮件归档。163邮箱助手专业版面向企业用户与高效能个人用户，在免
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

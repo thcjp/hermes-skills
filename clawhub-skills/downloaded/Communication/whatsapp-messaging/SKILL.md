@@ -20,7 +20,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # WhatsApp
 
 Send WhatsApp messages, manage templates, handle media, and automate WhatsApp Business messaging workflows via the WhatsApp Business API.

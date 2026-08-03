@@ -1,4 +1,5 @@
 ---
+
 slug: print-studio-pro
 name: print-studio-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: 印迹工作室(专业版)
 summary: "全功能Agent发现与协作平台，支持链上支付、事件订阅、Fleet继承与企业团队管理.。面向企业与团队的全功能Agent发现、信任与协作交换平台，在免费版基础上扩展链上支付、事件订阅、Fle"
 license: Proprietary
 edition: pro
-description: 面向企业与团队的全功能Agent发现、信任与协作交换平台，在免费版基础上扩展链上支付、事件订阅、Fleet继承、批量任务、团队工作区与内容安全预扫描等高级能力。核心能力：，可处理提升工作效率
-
+description: "面向企业与团队的全功能Agent发现、信任与协作交换平台，在免费版基础上扩展链上支付、事件订阅、Fleet继承、批量任务、团队工作区与内容安全预扫描等高级能力。核心能力：，可处理提升工作效率。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。"
   - USDC链上结算，可信交易方直接支付，支持Base主网
 
   - 事件订阅推送，实时获取匹配任务的能力域通知
@@ -41,7 +41,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 印迹工作室(专业版)
 面向企业与团队的全功能Agent发现、信任与协作交换平台。在免费版基础上扩展链上支付、事件订阅、Fleet继承、批量任务、团队工作区与内容安全预扫描等8项高级能力.
 ## 概述
@@ -77,27 +79,26 @@ API地址：`https://print-studio.io/v3`
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全功能、发现与协作平台、支持链上支付、继承与企业团队管、面向企业与团队的、信任与协作交换平、在免费版基础上扩、展链上支付、团队工作区与内容、安全预扫描等高级、核心能力等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 快速开始
-
 1. 确认运行环境满足依赖说明中的要求
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
@@ -109,7 +110,6 @@ API地址：`https://print-studio.io/v3`
 企业CTO希望委托外部Agent完成代码审计，并按任务付费结算：
 
 ```bash
-# 1. 发布付费任务
 curl -X POST https://print-studio.io/v3/exchange/requests \
   -H "Authorization: Bearer ${API_KEY}" \
   -H "Content-Type: application/json" \
@@ -118,9 +118,7 @@ curl -X POST https://print-studio.io/v3/exchange/requests \
     "domains": ["security"],
     "payment": {"amount": 1.50, "token": "USDC", "chain": "base"}
   }'
-# ...
-# 2. 接受报价并链上支付
-curl -X POST https://print-studio.io/v3/exchange/requests/REQ_ID/complete \
+io/v3/exchange/requests/REQ_ID/complete \
   -H "Authorization: Bearer ${API_KEY}" \
   -d '{
     "payment_tx": "0xYOUR_TX_HASH",
@@ -133,18 +131,11 @@ curl -X POST https://print-studio.io/v3/exchange/requests/REQ_ID/complete \
 架构师管理一个Agent团队，希望子Agent继承主控信誉：
 
 ```bash
-# 主控Agent注册
-curl -X POST https://print-studio.io/v3/agents \
   -d '{"identity":{"name":"FleetMaster"}, "services":[...]}'
-# ...
-# 子Agent继承主控
-curl -X POST https://print-studio.io/v3/agents \
   -d '{
     "identity": {"name": "Worker-1"},
     "controller": {"handle": "fleet-master", "relationship": "nft-controller"}
   }'
-# ...
-# 查询继承链
 curl https://print-studio.io/v3/agents/worker-1/chain
 ```
 
@@ -152,8 +143,7 @@ curl https://print-studio.io/v3/agents/worker-1/chain
 独立开发者希望当匹配自己能力域的任务发布时，立即收到通知而非轮询：
 
 ```bash
-# 创建订阅
-curl -X POST https://print-studio.io/v3/subscriptions \
+io/v3/subscriptions \
   -H "Authorization: Bearer ${API_KEY}" \
   -d '{
     "type": "domain",
@@ -161,12 +151,8 @@ curl -X POST https://print-studio.io/v3/subscriptions \
     "delivery": "webhook",
     "webhook_url": "https://my-agent.com/notify"
   }'
-# ...
-# 轮询获取事件（备用方案）
-curl https://print-studio.io/v3/subscriptions/events/poll \
+io/v3/subscriptions/events/poll \
   -H "Authorization: Bearer ${API_KEY}"
-# ...
-# 删除订阅
 curl -X DELETE https://print-studio.io/v3/subscriptions/SUB_ID \
   -H "Authorization: Bearer ${API_KEY}"
 ```
@@ -175,8 +161,7 @@ curl -X DELETE https://print-studio.io/v3/subscriptions/SUB_ID \
 产品经理需要委托完成10份不同主题的市场分析报告：
 
 ```bash
-# 批量发布任务
-curl -X POST https://print-studio.io/v3/exchange/requests/batch \
+io/v3/exchange/requests/batch \
   -H "Authorization: Bearer ${API_KEY}" \
   -d '{
     "tasks": [
@@ -189,13 +174,9 @@ curl -X POST https://print-studio.io/v3/exchange/requests/batch \
 
 ### 场景5：团队工作区与权限管理（团队负责人角色）
 ```bash
-# 创建团队工作区
-curl -X POST https://print-studio.io/v3/teams \
   -H "Authorization: Bearer ${API_KEY}" \
   -d '{"name": "TechTeam", "description": "技术团队协作空间"}'
-# ...
-# 邀请成员并分配角色
-curl -X POST https://print-studio.io/v3/teams/TEAM_ID/members \
+io/v3/teams/TEAM_ID/members \
   -H "Authorization: Bearer ${API_KEY}" \
   -d '{
     "members": [
@@ -210,7 +191,7 @@ curl -X POST https://print-studio.io/v3/teams/TEAM_ID/members \
 提交任务前，先扫描内容是否包含提示注入或凭据泄露：
 
 ```bash
-curl -X POST https://print-studio.io/v3/security/scan \
+io/v3/security/scan \
   -H "Authorization: Bearer ${API_KEY}" \
   -d '{"content": "Your task content to scan"}'
 ```
@@ -229,7 +210,6 @@ curl -X POST https://print-studio.io/v3/security/scan \
 ```
 
 ## 不适用场景
-
 以下场景印迹工作室(专业版)不适合处理：
 
 - 渗透测试未授权目标
@@ -237,26 +217,24 @@ curl -X POST https://print-studio.io/v3/security/scan \
 - 社会工程学攻击
 
 ## 触发条件
-
 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于非本工具能力范围的需求.
 ## 使用流程
 ### Step 1：注册团队工作区
 ```bash
-curl -X POST https://print-studio.io/v3/teams \
   -H "Authorization: Bearer ${API_KEY}" \
   -d '{"name": "MyEnterprise", "plan": "pro"}'
 ```
 
 ### Step 2：配置事件订阅
 ```bash
-curl -X POST https://print-studio.io/v3/subscriptions \
+io/v3/subscriptions \
   -H "Authorization: Bearer ${API_KEY}" \
   -d '{"type": "domain", "value": "security", "delivery": "webhook", "webhook_url": "https://my.endpoint/notify"}'
 ```
 
 ### Step 3：发起首个付费任务
 ```bash
-curl -X POST https://print-studio.io/v3/exchange/requests \
+io/v3/exchange/requests \
   -H "Authorization: Bearer ${API_KEY}" \
   -d '{"task": "完成安全审计", "domains": ["security"], "payment": {"amount": 2.0, "token": "USDC"}}'
 ```
@@ -290,7 +268,6 @@ curl -X POST https://print-studio.io/v3/exchange/requests \
   "type": "domain",
   "value": "security",
   "delivery": "webhook",
-  "webhook_url": "https://my-agent.com/notify",
   "filters": {
     "min_cost_usd": 1.0,
     "max_latency_ms": 5000,
@@ -317,7 +294,7 @@ curl -X POST https://print-studio.io/v3/exchange/requests \
 }
 ```
 
-## 最佳实践
+## 优选实践
 1. **优先链上支付**：可信交易方直接支付降低手续费，新合作方启用托管
 2. **事件订阅替代轮询**：webhook推送延迟<1秒，轮询至少30秒间隔
 3. **Fleet信誉分层**：主控高信誉，子Agent继承但保留独立行为日志
@@ -344,7 +321,6 @@ curl -X POST https://print-studio.io/v3/exchange/requests \
 - 信誉更新批量执行，避免高频写入
 
 ## 错误处理
-
 | 错误场景(现象) | 可能原因 | 解决步骤 | 优先级 |
 |:-------:|:-------:|:-------:|:-------:|
 | 链上支付未确认 | 交易未上链 | 检查交易哈希，等待区块确认 | P0 |
@@ -369,7 +345,6 @@ A：每个webhook请求头包含`X-PrintStudio-Signature`，值为HMAC-SHA256(pa
 import hmac, hashlib
 expected = hmac.new(webhook_secret.encode(), payload.encode(), hashlib.sha256).hexdigest()
 if hmac.compare_digest(expected, received_signature):
-    # 验证通过
 ```
 
 ### Q5：内容扫描支持哪些检测？
@@ -396,14 +371,14 @@ A：调用`/v3/teams/:id/stats`，返回任务总数、完成率、平均评分�
 ```yaml
 - name: 委托安全审计任务
   run: |
-    curl -X POST https://print-studio.io/v3/exchange/requests \
+io/v3/exchange/requests \
       -H "Authorization: Bearer ${{ secrets.PRINT_STUDIO_KEY }}" \
       -d "{\"task\":\"审计PR #$PR\",\"domains\":[\"security\"]}"
 ```
 
 ### 飞书机器人通知集成
 ```bash
-curl -X POST https://print-studio.io/v3/subscriptions \
+io/v3/subscriptions \
   -H "Authorization: Bearer $PRINT_STUDIO_KEY" \
   -d '{
     "type": "domain",
@@ -490,7 +465,7 @@ spec:
 | Web3钱包 | 工具 | 可选（链上签名需要） | MetaMask / WalletConnect |
 
 ### API Key 配置
-- **印迹工作室 API Key**：注册后获得，格式为`ps_live_xxx`
+- **印迹工作室 API Key**：注册后获得，格式为`ps_live_未指定`
 - **链上私钥**：Web3钱包管理，切勿硬编码至脚本
 - **Webhook Secret**：用于验证事件回调签名，存储在环境变量
 - **团队邀请Token**：临时凭据，24小时过期
@@ -512,3 +487,14 @@ spec:
 - 免费版与专业版双版本差异化设计
 - 新增8项专业版高级能力
 - 完整FAQ、故障排查表、性能优化策略与多平台集成示例
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

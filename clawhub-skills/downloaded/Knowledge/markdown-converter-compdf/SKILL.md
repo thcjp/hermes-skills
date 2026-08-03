@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Markdown convert
 
 Process PDF files through ComPDF Cloud REST API. Supports 50+ document processing operations.

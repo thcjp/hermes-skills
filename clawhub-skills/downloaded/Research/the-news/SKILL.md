@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # The News
 
 This is a global news skill for latest news, breaking news, world news, current events, and news headlines. It gives agents a live multi-source news snapshot and a searchable headline archive across 20 countries via a public API.

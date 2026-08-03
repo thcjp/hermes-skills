@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Note Taker
 
 A productivity and task management tool. Add items, manage a to-do list, set priorities, track daily and weekly views, set reminders, view statistics, clear completed tasks, and export data — all from the command line with persistent local storage.
@@ -191,3 +190,36 @@ A: 请参考已知限制章节了解具体限制。
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
 - 性能取决于底层模型能力
+
+---
+## 边界条件与限制
+
+Note Taker技能在设计和使用过程中存在一些边界条件和限制，以下列出了一些具体的情况：
+
+### 输入限制
+
+- **文本长度限制**：Note Taker技能对于输入的文本长度有限制，过长的文本可能会导致处理错误或响应延迟。
+- **格式要求**：输入文本应遵循一定的格式规范，如使用正确的命令格式和参数，否则可能导致技能无法正确解析。
+
+### 性能边界
+
+- **并发处理能力**：Note Taker技能在处理大量并发请求时，可能会出现响应速度下降的情况。
+- **数据处理能力**：对于需要大量数据处理和分析的任务，Note Taker技能的响应时间可能会受到影响。
+
+### 兼容性约束
+
+- **操作系统兼容性**：Note Taker技能主要支持Linux和macOS操作系统，Windows用户可能需要额外配置。
+- **终端兼容性**：Note Taker技能依赖于终端环境，不支持在图形界面环境中直接使用。
+
+### 功能限制
+
+- **复杂决策支持**：Note Taker技能不适用于需要人工判断的复杂决策场景，如风险评估、战略规划等。
+- **外部API依赖**：Note Taker技能依赖于LLM API，无LLM环境无法使用。
+
+### 数据存储限制
+
+- **本地存储容量**：Note Taker技能的数据存储依赖于本地文件系统，存储容量受限于系统配置。
+- **数据安全性**：Note Taker技能不提供数据加密功能，用户需自行确保数据安全性。
+
+---
+

@@ -18,7 +18,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # UI / UX
 
 Searchable design database with CLI for generating complete design systems from natural language queries.

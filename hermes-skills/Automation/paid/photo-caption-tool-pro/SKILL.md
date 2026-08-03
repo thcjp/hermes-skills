@@ -1,6 +1,6 @@
 ---
 
-slug: "photo-caption-tool-pro"
+slug: photo-caption-tool-pro
 name: "photo-caption-tool-pro"
 version: "1.0.0"
 displayName: "照片配文工具专业版"
@@ -24,6 +24,7 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+
 
 ---
 
@@ -72,7 +73,6 @@ category: "Automation"
 | Substack | 叙事性、散文感 | 2-4句内嵌配文 | 无标签 |
 | Pinterest | 描述性、可搜索 | 标题+描述(SEO优化) | 关键词替代标签 |
 
-**输入**: 用户提供一、13 个平台全覆盖(专业版独有 10 个平台)所需的指令和必要参数.
 **处理**: 解析一、13 个平台全覆盖(专业版独有 10 个平台)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回一、13 个平台全覆盖(专业版独有 10 个平台)的响应数据,包含状态码、结果和日志.
 ### 二、批量配文生成(专业版独有)
@@ -81,7 +81,6 @@ category: "Automation"
 - 批量导出配文清单
 - 按平台分组输出
 
-**输入**: 用户提供二、批量配文生成(专业版独有)所需的指令和必要参数.
 **处理**: 解析二、批量配文生成(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回二、批量配文生成(专业版独有)的响应数据,包含状态码、结果和日志.
 ### 三、品牌风格定制(专业版独有)
@@ -90,7 +89,6 @@ category: "Automation"
 - 保存品牌风格配置
 - 多品牌快速切换
 
-**输入**: 用户提供三、品牌风格定制(专业版独有)所需的指令和必要参数.
 **处理**: 解析三、品牌风格定制(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回三、品牌风格定制(专业版独有)的响应数据,包含状态码、结果和日志.
 ### 四、编辑分析(专业版独有)
@@ -99,7 +97,6 @@ category: "Automation"
 - 提供编辑改进建议
 - 作为独立章节输出
 
-**输入**: 用户提供四、编辑分析(专业版独有)所需的指令和必要参数.
 **处理**: 解析四、编辑分析(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回四、编辑分析(专业版独有)的响应数据,包含状态码、结果和日志.
 ### 五、多语言完整支持(专业版独有)
@@ -108,7 +105,6 @@ category: "Automation"
 - 地点相关的语言选择
 - 多语言批量生成
 
-**输入**: 用户提供五、多语言完整支持(专业版独有)所需的指令和必要参数.
 **处理**: 解析五、多语言完整支持(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回五、多语言完整支持(专业版独有)的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：全平台照片配文生、成工具、个社交平台、提供批量配文、品牌风格定制与编、辑分析能力、照片配文工具专业、面向专业摄影师与、内容创作者提供、个社交平台的配文、生成能力、支持批量处理、品牌风格定制与照、片编辑分析、核心能力、批量照片配文生成、品牌风格与语气定、照片编辑分析、多语言配文支持、平台原生格式严格等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -139,9 +135,7 @@ category: "Automation"
 
 ```text
 The road ends where the sky turns orange. Dust and heat in the air.
-# ...
 Canon EOS 1V · Tri-X 400
-# ...
 ```
 
 **Flickr**:
@@ -169,9 +163,7 @@ Canon EOS 1V · Tri-X 400
 
 ```text
 **Amboy, California**
-# ...
 Drove out to the desert to clear my head and the sky did this thing where it just kept getting more intense. Ten minutes of light worth sitting in the dust for. The Tri-X grain feels right for a place this dry and quiet.
-# ...
 #film photography #desert #route 66 #mojave #analog photography #road trip #canon eos 1v #tri x 400 #american west #sunset
 ```
 
@@ -200,8 +192,7 @@ Camera: Canon EOS 1V · Lens: 50mm · Film: Tri-X 400
 
 ```text
 Title: Desert road at dusk, Amboy California [Canon EOS 1V, Tri-X 400]
-# ...
-Comment: Shot this on Route 66 last weekend. The light changed fast, maybe a ten minute window. Tri-X 400 at box speed, developed in HC-110. The desert just keeps going out there.
+Comment: Shot this on Route 66 last weekend. The light changed fast, maybe a ten minute window. The desert just keeps going out there.
 Posted to r/analog
 ```
 
@@ -244,13 +235,11 @@ Edit Analysis:
 摄影师完成一个城市街拍系列(5张照片),需批量生成配文.
 ```text
 请为以下5张照片批量生成 Instagram 配文,保持系列风格统一:
-# ...
 照片1:武康路梧桐树下光影,Leica M6, Portra 400
 照片2:外滩夜景反光,Leica M6, Portra 400
 照片3:弄堂里老人下棋,Leica M6, Portra 400
 照片4:雨后街道水洼倒影,Leica M6, Portra 400
 照片5:咖啡馆窗边阅读的人,Leica M6, Portra 400
-# ...
 系列主题:上海日常
 统一风格:安静、观察式、不煽情
 ```
@@ -264,14 +253,13 @@ Edit Analysis:
 禁用词:amazing, stunning, perfect
 标签策略:固定使用 #analogco #filmlife,其余按内容选2个
 语言:中英双语
-# ...
 请为以下产品照生成配文:
 照片内容:皮质相机包放在木桌上,自然光
 器材: Hasselblad 500C/M, Kodak Portra 160
 ```
 
 ## 快速开始
-### 第一步:提供照片信息
+### 领先步:提供照片信息
 ```text
 照片内容: [详细描述]
 地点: [拍摄地点]
@@ -284,7 +272,6 @@ Edit Analysis:
 ### 第二步:指定目标平台
 ```text
 请为这张照片生成所有平台的配文.
-# ...
 请为这张照片生成 Instagram、Flickr、500px、Reddit 的配文.
 ```
 
@@ -316,19 +303,16 @@ brand:
 系列主题: [系列名称]
 统一风格: [风格描述]
 平台: [目标平台,如 Instagram]
-# ...
 照片1:
   内容: [描述]
   地点: [地点]
   器材: [器材]
   氛围: [氛围]
-# ...
 照片2:
   内容: [描述]
   地点: [地点]
   器材: [器材]
   氛围: [氛围]
-# ...
 [更多照片...]
 ```
 
@@ -341,46 +325,39 @@ Instagram:
   - 空行
   - 恰好5个标签
   - 禁止使用破折号(—)
-# ...
 Flickr:
   - 标题(纯文本,无markdown)
   - 破折号
   - 1-3句故事/背景
   - 器材信息
-# ...
 X (Twitter):
   - 280字符以内
   - 单行强表达
   - 器材自然融入末尾
-# ...
 Glass:
   - 1-3句
   - 器材单独一行,用中点(·)分隔
   - 无标签,无互动诱饵
-# ...
 Tumblr:
   - 粗体地点作为标题
   - 2-4句叙事/反思
   - 器材行
   - 8-12个标签(标签内用空格)
-# ...
 500px:
   - 标题行
   - 1-3句技术/条件描述
   - 完整器材细节
-# ...
 VSCO:
   - 最多1行
   - 有时只需一个词或短语
   - 无标签,无器材(除非胶片型号)
-# ...
 Pinterest:
   - 标题(5-10词,关键词丰富)
   - 描述(2-3句,含自然关键词)
   - 无标签,用关键词替代
 ```
 
-## 最佳实践
+## 优选实践
 ### 1. 全平台发布保持内容差异化
 同一张照片在不同平台应有差异化表达,避免跨平台复制粘贴:
 
@@ -425,7 +402,6 @@ Pinterest 是发现引擎,配文需融入可搜索关键词:
 
 ```text
 [主题/氛围] — [地点]  或  [风格] [主题], [地点]
-# ...
 "Desert Road at Dusk, Amboy California"
 "Film Photography, Mojave Desert Landscape"
 ```
@@ -435,7 +411,6 @@ Reddit 社区反感营销腔与自我推销,配文需真实、谦虚:
 
 ```text
 [地点或主题] [器材方括号]
-# ...
 "Bombay Beach [Canon EOS 1V, Tri-X 400]"
 ```
 
@@ -449,7 +424,6 @@ Reddit 社区反感营销腔与自我推销,配文需真实、谦虚:
 
 ```text
 请使用 brand_a.yaml 的品牌风格为这张照片生成配文.
-# ...
 请使用 brand_b.yaml 的品牌风格为这张照片生成配文.
 ```
 
@@ -462,9 +436,7 @@ Reddit 社区反感营销腔与自我推销,配文需真实、谦虚:
 ```text
 Instagram (中文):
 公路尽头是橘红色的天...
-# ...
 Instagram (English):
-The road ends where the sky turns orange...
 ```
 
 ### Q6: 免费版用户升级后使用方式有变化吗?
@@ -492,7 +464,6 @@ The road ends where the sky turns orange...
 - **分类**: MD(纯 Markdown 指令,无需 exec 命令行执行能力)
 - **说明**: 基于自然语言的 AI Skill,通过指令驱动 Agent 为照片生成 13 个社交平台适配的配文内容。专业版完全兼容免费版三大平台配文能力,额外解锁 Flickr、Glass、Tumblr、Bluesky、Threads、500px、Reddit、VSCO、Substack、Pinterest 共 10 个专业平台,并提供批量配文生成、品牌风格定制与照片编辑分析能力,适合专业摄影师与内容创作者的规模化内容生产.
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -503,3 +474,22 @@ The road ends where the sky turns orange...
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 全平台照片配文生成工具,支持13个社交平台,提供批量配文、品牌风格定制与编辑分析能力。。照片配文工具专业版,面向专业摄影
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

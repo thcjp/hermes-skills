@@ -17,7 +17,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Free Web Search
 
 基于 Playwright 的 Bing 国内版 / DuckDuckGo 搜索工具。专注于**搜索 + 可选正文抓取**两件事，无副作用。

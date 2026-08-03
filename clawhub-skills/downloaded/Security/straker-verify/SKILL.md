@@ -37,7 +37,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Straker Verify - AI Translation & Human Review
 
 Professional translation, quality evaluation, and human verification services by [Straker.ai](https://straker.ai).

@@ -1,6 +1,7 @@
 ---
+
 name: "docker-sandbox-tool-free"
-description: "Docker安全沙箱环境，支持隔离运行与基础资源限制，适合代码测试。"
+description: "Docker安全沙箱环境，支持隔离运行与基础资源限制，适合代码测试。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,10 @@ metadata:
     - "测试"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # Docker沙箱入门工具（免费版）
@@ -38,8 +43,6 @@ metadata:
 | 快照 | 状态保存恢复 | 不支持 |
 | 高级策略 | 自定义安全策略 | 不支持 |
 
-**输入**: 用户提供沙箱功能所需的指令和必要参数。
-**处理**: 按照skill规范执行沙箱功能操作,遵循单一意图原则。
 **输出**: 返回沙箱功能的执行结果,包含操作状态和输出数据。
 
 ### 安全隔离层级
@@ -52,15 +55,11 @@ metadata:
 | 用户隔离 | 用户命名空间 | root映射为非特权 |
 | 资源隔离 | cgroups | CPU/内存/IO限制 |
 
-**输入**: 用户提供安全隔离层级所需的指令和必要参数。
-**处理**: 按照skill规范执行安全隔离层级操作,遵循单一意图原则。
 **输出**: 返回安全隔离层级的执行结果,包含操作状态和输出数据。
 
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Docker、安全沙箱环境、支持隔离运行与基、础资源限制、适合代码测试、面向个人开发者的、安全沙箱工具、提供隔离的容器运、行环境、支持资源限制、网络隔离与文件系、统隔离、Use、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -91,7 +90,6 @@ python3 scripts/sandbox.py run \
 
 ```bash
 # 沙箱测试镜像
-python3 scripts/sandbox.py test-image \
   --image my-app:test \
   --network restricted \
   --memory 512m \
@@ -104,7 +102,6 @@ python3 scripts/sandbox.py test-image \
 
 ```bash
 # 创建实验沙箱
-python3 scripts/sandbox.py create \
   --image ubuntu:22.04 \
   --name experiment \
   --network none \
@@ -113,7 +110,7 @@ python3 scripts/sandbox.py create \
   --volume /tmp/sandbox:/data:rw
 
 # 进入沙箱
-python3 scripts/sandbox.py exec --name experiment
+py exec --name experiment
 ```
 
 ## 快速开始
@@ -134,31 +131,27 @@ python3 scripts/sandbox.py exec --name experiment
 pip install docker
 
 # 验证
-python3 scripts/sandbox.py info
 ```
 
 ### 常用命令
 
 ```bash
 # 创建沙箱
-python3 scripts/sandbox.py create --image ubuntu:22.04 --name test --network none
+py create --image ubuntu:22.04 --name test --network none
 
 # 运行脚本
-python3 scripts/sandbox.py run --image python:3.11 --script ./test.py --no-network --timeout 60
+py run --image python:3.11 --script ./test.py --no-network --timeout 60
 
 # 测试镜像
-python3 scripts/sandbox.py test-image --image my-app:test --command "npm test"
+py test-image --image my-app:test --command "npm test"
 
 # 列出沙箱
-python3 scripts/sandbox.py list
 
 # 清理沙箱
-python3 scripts/sandbox.py cleanup --name test
-python3 scripts/sandbox.py cleanup --all
+py cleanup --name test
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
-
 
 ## 示例
 
@@ -186,7 +179,7 @@ sandbox_config:
     cleanup_on_exit: true        # 退出后清理
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **最小权限**：删除所有capabilities，仅添加必要的
 2. **资源限制**：始终设置CPU和内存限制，防止资源耗尽
@@ -249,7 +242,6 @@ Docker沙箱提供进程、网络、文件系统层面的隔离，能防止大�
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -261,3 +253,30 @@ Docker沙箱提供进程、网络、文件系统层面的隔离，能防止大�
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

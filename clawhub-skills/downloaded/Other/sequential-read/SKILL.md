@@ -37,7 +37,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Sequential Read
 
 Read prose (novels, non-fiction, articles) by ingesting content in semantic chunks and building structured reflections iteratively. The output captures how your perspective developed over the course of reading — predictions that were wrong, questions that got answered, opinions that shifted — not just a retroactive summary.

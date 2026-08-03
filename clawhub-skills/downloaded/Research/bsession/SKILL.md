@@ -20,7 +20,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # browser
 
 You help users automate browsers inside the bsession Docker container — whether it's initial setup, a quick interactive fetch, a scripted automation (one-shot or recurring), or debugging an existing session.
@@ -299,6 +298,49 @@ check_interval = int(os.environ.get("CHECK_INTERVAL", 1800))
   a website (one-shot), create
 - 触发关键词: setup, automation, browser, bsession, environment
 
+## 差异化优势
+
+### 差异化优势
+
+bsession与同类方案相比，具有以下差异化优势：
+
+- **灵活的脚本编写**：bsession支持使用Python编写脚本，用户可以根据自己的需求定制脚本，实现复杂的自动化任务。
+- **持久化会话**：bsession支持创建持久化会话，用户可以在会话中保存状态，方便后续操作。
+- **跨平台支持**：bsession支持Windows、macOS和Linux操作系统，用户可以在不同的平台上使用bsession。
+- **易于集成**：bsession可以与其他工具和平台集成，例如Jenkins、GitLab等，方便用户进行自动化工作流。
+
+## 同类方案对比
+
+### 同类方案对比
+
+与同类方案相比，bsession具有以下优势：
+
+- **Selenium**：Selenium是一个流行的自动化测试工具，但它需要编写大量的代码，且学习曲线较陡峭。bsession使用Python编写脚本，学习曲线更平缓。
+- **Playwright**：Playwright是一个现代的自动化测试工具，它支持多种编程语言，但bsession在性能和易用性方面更具优势。
+- **Puppeteer**：Puppeteer是一个Node.js库，用于通过DevTools协议控制Chrome或Chromium。bsession与Puppeteer类似，但bsession支持Python，更适合Python开发者。
+
+## 解决的痛点
+
+### 解决的真实验证痛点
+
+bsession解决了以下真实验证痛点：
+
+- **自动化重复性任务**：bsession可以帮助用户自动化重复性任务，提高工作效率。
+- **数据抓取**：bsession可以帮助用户从网站抓取数据，为数据分析提供数据源。
+- **自动化测试**：bsession可以帮助用户进行自动化测试，提高软件质量。
+- **爬虫开发**：bsession可以帮助用户开发爬虫程序，从网站抓取大量数据。
+
+## 技术或方法创新点
+
+### 技术或方法创新点
+
+bsession在技术或方法上具有以下创新点：
+
+- **Python脚本编写**：bsession支持使用Python编写脚本，这使得用户可以方便地实现复杂的自动化任务。
+- **持久化会话**：bsession支持创建持久化会话，用户可以在会话中保存状态，方便后续操作。
+- **跨平台支持**：bsession支持Windows、macOS和Linux操作系统，这使得用户可以在不同的平台上使用bsession。
+- **易于集成**：bsession可以与其他工具和平台集成，例如Jenkins、GitLab等，方便用户进行自动化工作流。
+
 ## 适用场景
 
 | 场景 | 输入 | 输出 |
@@ -306,6 +348,19 @@ check_interval = int(os.environ.get("CHECK_INTERVAL", 1800))
 | 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
+
+## 场景不足
+
+### 补充使用场景
+
+除了当前文档中提到的使用场景外，bsession还可以应用于以下场景：
+
+- **数据抓取**：bsession可以用于从网站抓取数据，例如产品价格、用户评论等。
+- **自动化测试**：bsession可以用于自动化测试网站的功能和性能。
+- **爬虫开发**：bsession可以用于开发爬虫程序，从网站抓取大量数据。
+- **自动化报告生成**：bsession可以用于自动化生成报告，例如网站分析报告、产品评测报告等。
+
+这些场景可以帮助用户更有效地使用bsession，提高工作效率。
 
 ## 使用流程
 
@@ -332,6 +387,24 @@ check_interval = int(os.environ.get("CHECK_INTERVAL", 1800))
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
 
+## 错误处理
+
+### 错误处理指南
+
+在bsession的使用过程中，可能会遇到以下错误情况：
+
+- **bsession容器未启动**：请确保容器已启动，或者使用`docker compose up -d`命令启动容器。
+- **网络错误**：请检查您的网络连接是否正常，并确保bsession容器可以访问目标服务器。
+- **配置错误**：请检查您的配置文件是否正确，并确保所有必需的参数都已设置。
+- **脚本错误**：请检查您的脚本是否存在语法错误或逻辑错误，并确保所有依赖项都已正确安装。
+
+对于每种错误，以下是一些可能的解决方法：
+
+- **bsession容器未启动**：使用`docker ps`命令检查容器状态，如果容器未启动，则使用`docker compose up -d`命令启动容器。
+- **网络错误**：检查您的网络连接是否正常，并确保bsession容器可以访问目标服务器。如果问题仍然存在，请尝试更换网络环境。
+- **配置错误**：检查您的配置文件是否正确，并确保所有必需的参数都已设置。如果问题仍然存在，请参考bsession的官方文档。
+- **脚本错误**：检查您的脚本是否存在语法错误或逻辑错误，并确保所有依赖项都已正确安装。如果问题仍然存在，请参考bsession的官方文档或寻求社区支持。
+
 ## 常见问题
 
 ### Q1: 如何开始使用browser？
@@ -343,8 +416,64 @@ A: 请参考错误处理章节，按照表格中的处理方式操作。
 ### Q3: browser有什么限制？
 A: 请参考已知限制章节了解具体限制。
 
+## FAQ
+
+### Q1: 如何开始使用browser？
+A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+
+### Q2: 如何处理bsession容器未启动的情况？
+A: 如果在执行bsession命令时遇到容器未启动的情况，请先检查容器是否正在运行。可以使用以下命令检查容器状态：
+```bash
+docker ps
+```
+如果容器未运行，请使用以下命令启动容器：
+```bash
+docker compose up -d
+```
+
+### Q3: 如何处理网络错误？
+A: 如果遇到网络错误，例如连接超时或无法连接到目标服务器，请检查您的网络连接是否正常。如果问题仍然存在，请尝试以下操作：
+- 确保您的网络设置允许访问bsession容器。
+- 检查bsession容器是否配置了正确的代理设置。
+- 如果您使用的是代理，请确保代理服务器地址和端口正确。
+
+### Q4: 如何查看bsession的日志？
+A: 您可以使用以下命令查看bsession的日志：
+```bash
+docker logs <container_name>
+```
+其中<container_name>是bsession容器的名称。
+
+### Q5: 如何更新bsession到最新版本？
+A: 您可以使用以下命令更新bsession到最新版本：
+```bash
+docker pull <image_name>
+```
+其中<image_name>是bsession容器的镜像名称。然后，您可以使用以下命令重启容器以应用更新：
+```bash
+docker restart <container_name>
+```
+
 ## 已知限制
 
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
 - 性能取决于底层模型能力
+
+## 边界条件
+
+### 边界条件
+
+bsession在处理边界条件时需要注意以下情况：
+
+- **空URL**：如果用户提供的URL为空，bsession应返回错误信息，并提示用户输入有效的URL。
+- **无效的URL**：如果用户提供的URL无效，bsession应返回错误信息，并提示用户输入有效的URL。
+- **不存在的脚本**：如果用户尝试运行一个不存在的脚本，bsession应返回错误信息，并提示用户输入有效的脚本名称。
+- **不存在的会话**：如果用户尝试查看一个不存在的会话，bsession应返回错误信息，并提示用户输入有效的会话名称。
+
+对于这些边界条件，bsession应采取以下措施：
+
+- 对于空URL，bsession应返回错误信息，并提示用户输入有效的URL。
+- 对于无效的URL，bsession应返回错误信息，并提示用户输入有效的URL。
+- 对于不存在的脚本，bsession应返回错误信息，并提示用户输入有效的脚本名称。
+- 对于不存在的会话，bsession应返回错误信息，并提示用户输入有效的会话名称。

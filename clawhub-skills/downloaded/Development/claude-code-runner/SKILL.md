@@ -18,28 +18,29 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
-# ai-assistant Code Runner
+# AI-Assistant Code Runner
 
 ## Overview
 
-A wrapper skill for running ai-assistant Code programmatically in non-interactive environments. Uses PTY (pseudo-terminal) to handle TTY-required operations and automatically responds to confirmation prompts.
+The AI-Assistant Code Runner is a sophisticated tool that enables developers to execute programming tasks using AI-Assistant Code in environments where interactive TTY sessions are not available. It is particularly useful for automating tasks in non-interactive contexts such as CI/CD pipelines, background jobs, and containerized applications.
 
 ## Features
 
-* **PTY-based execution**: Works in non-TTY environments (containers, CI/CD, background processes)
-* **Auto-respond to prompts**: Automatically answers "Do you want to..." confirmations
-* **User switching**: Runs as specified non-root user
-* **File synchronization**: Copies project to temp directory, executes, syncs changes back
-* **Timeout handling**: Configurable timeout with proper cleanup
-* **Output capture**: Captures and returns full stdout/stderr
+* **PTY-based Execution**: The AI-Assistant Code Runner uses PTY to simulate a TTY session, allowing for the execution of tasks that require TTY interaction in non-TTY environments.
+* **Auto-Confirmation**: The tool can automatically respond to confirmation prompts, reducing manual intervention and streamlining the execution process.
+* **User Switching**: It supports running tasks as a specified non-root user, enhancing security and access control.
+* **File Synchronization**: The AI-Assistant Code Runner copies projects to a temporary directory, executes the task, and then syncs any changes back to the original directory.
+* **Timeout Handling**: Tasks can be configured with a timeout, ensuring that resources are not tied up indefinitely.
+* **Output Capture**: It captures and returns the full stdout and stderr output, providing comprehensive feedback on the task execution.
 
 ## Installation
 
-```bash
-git clone https://github.com/lhl09120/ai-assistant-code-runner-en.git
+To install the AI-Assistant Code Runner, follow these steps:
 
-chmod +x ai-assistant-code-runner-en/scripts/run_claude.py
+```bash
+git clone https://github.com/lhl09120/ai-assistant-code-runner.git
+cd ai-assistant-code-runner
+chmod +x scripts/run_claude.py
 ```
 
 ## Usage
@@ -47,7 +48,7 @@ chmod +x ai-assistant-code-runner-en/scripts/run_claude.py
 ### Basic Usage
 
 ```python
-from claude_code_runner import run_claude_code
+from ai_assistant_code_runner import run_claude_code
 
 result = run_claude_code(
     workdir='/path/to/project',
@@ -59,7 +60,7 @@ result = run_claude_code(
 print(result)
 ```
 
-### Via Command Line
+### Command Line
 
 ```bash
 python3 scripts/run_claude.py /path/to/project "Your task description here"
@@ -85,27 +86,27 @@ result = run_claude_code(
 
 ### `run_claude_code(workdir, prompt, user='lighthouse', timeout=300)`
 
-Execute a ai-assistant Code task in a PTY environment.
+This function executes a task using AI-Assistant Code in a PTY environment.
 
 **Parameters:**
 
-* `workdir` (str): Working directory containing the project
-* `prompt` (str): Natural language task description
-* `user` (str): User to run as (default: 'lighthouse')
-* `timeout` (int): Timeout in seconds (default: 300)
+* `workdir` (str): The path to the working directory containing the project.
+* `prompt` (str): The natural language description of the task to be executed.
+* `user` (str): The user under which the task should be run (default: 'lighthouse').
+* `timeout` (int): The maximum time allowed for the task to complete (default: 300 seconds).
 
 **Returns:**
 
-* `str`: Combined stdout and stderr output
+* `str`: The combined stdout and stderr output from the task execution.
 
 **Behavior:**
 
-1. Copies project to temporary directory
-2. Changes ownership to specified user
-3. Executes ai-assistant Code via PTY
-4. Auto-responds to confirmation prompts
-5. Syncs changes back to original directory
-6. Cleans up temporary files
+1. Copies the project to a temporary directory.
+2. Changes ownership to the specified user.
+3. Executes AI-Assistant Code via PTY.
+4. Auto-responds to confirmation prompts.
+5. Syncs changes back to the original directory.
+6. Cleans up temporary files.
 
 ## Use Cases
 
@@ -127,7 +128,7 @@ result = run_claude_code(
 )
 ```
 
-### 核心能力
+### 3. Core Capabilities
 
 ```python
 result = run_claude_code(
@@ -154,7 +155,7 @@ result = run_claude_code(
 ## Requirements
 
 * Python 3.8+
-* ai-assistant Code installed and in PATH
+* AI-Assistant Code installed and in PATH
 * Unix-like environment (Linux/macOS)
 * Root or sudo access (for user switching)
 
@@ -184,9 +185,9 @@ Ensure the script is run with sufficient privileges to:
 * Change file ownership
 * Switch to target user
 
-### ai-assistant Code not found
+### AI-Assistant Code not found
 
-Make sure ai-assistant Code is installed and in the system PATH:
+Make sure AI-Assistant Code is installed and in the system PATH:
 
 ```bash
 which ai-assistant
@@ -213,7 +214,7 @@ if b'new prompt text' in output:
 
 * Requires Unix-like environment (uses PTY)
 * Requires root/sudo for user switching
-* ai-assistant Code must be installed separately
+* AI-Assistant Code must be installed separately
 * May not handle all edge cases of interactive prompts
 
 ## License
@@ -239,53 +240,57 @@ See LICENSE file for full details.
 ### v1.0.0 (2026-02-27)
 
 * Initial release
-* PTY-based ai-assistant Code execution
+* PTY-based AI-Assistant Code execution
 * Auto-response to confirmation prompts
 * File synchronization
 * User switching support
 
-## 依赖说明
+## Dependencies
 
-### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(ai-assistant Code / Cursor / Codex / Gemini CLI等)
-- **操作系统**: Windows / macOS / Linux
+### Operating System
 
-### 依赖说明
-| 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
-| LLM API | API | 必需 | 由Agent内置LLM提供 |
+- **Agent Platform**: Supports any SKILL.md compatible AI Agent (AI-Assistant Code / Cursor / Codex / Gemini CLI, etc.)
+- **Operating System**: Windows / macOS / Linux
 
-### API Key 配置
-- 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
+### Dependencies
 
-### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
-- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+| Dependency | Type | Required | Acquisition Method |
+|:-----------|:-----|:---------|:------------------|
+| LLM API | API | Required | Provided by the integrated LLM of the Agent |
 
-## 使用流程
+### API Key Configuration
 
-1. 确认运行环境满足依赖说明中的要求
-2. 根据适用场景选择合适的使用方式
-3. 执行操作并检查输出结果
-4. 如遇错误，参考错误处理章节
+- This Skill uses Markdown instructions and does not require an additional API key (unless explicitly stated for external APIs).
 
-## 示例
+### Availability Classification
 
-### 示例1：基础用法
+- **Classification**: MD+EXEC (Pure Markdown instructions, some functions require exec command-line execution capabilities)
+- **Description**: An AI Skill based on Markdown that drives Agent execution with natural language instructions.
+
+## Usage Process
+
+1. Confirm that the environment meets the requirements specified in the Dependency section.
+2. Choose the appropriate usage method based on the application scenario.
+3. Execute the operation and check the output results.
+4. If an error occurs, refer to the Troubleshooting section for guidance.
+
+## Examples
+
+### Example 1: Basic Usage
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+Input: User request
+Processing: Execute according to the usage process
+Output: Processing result
 ```
 
-## 常见问题
+## Common Questions
 
-### Q1: 如何开始使用Claude Code Runner？
-A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+### Q1: How do I start using Claude Code Runner?
+A: Please refer to the Usage Process section and ensure that the environment meets the requirements.
 
-### Q2: 遇到错误怎么办？
-A: 请参考错误处理章节，按照表格中的处理方式操作。
+### Q2: What should I do if I encounter an error?
+A: Refer to the Troubleshooting section for troubleshooting steps.
 
-### Q3: ai-assistant Code Runner有什么限制？
-A: 请参考已知限制章节了解具体限制。
+### Q3: What are the limitations of Claude Code Runner?
+A: Refer to the Limitations section to understand the specific restrictions.

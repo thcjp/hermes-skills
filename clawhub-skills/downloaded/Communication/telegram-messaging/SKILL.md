@@ -20,7 +20,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Telegram
 
 Send messages, manage chats, handle files, and automate Telegram bot workflows via the Telegram Bot API.

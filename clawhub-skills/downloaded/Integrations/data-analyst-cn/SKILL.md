@@ -17,7 +17,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Data Analyst Cn
 
 快速进行数据清洗、统计分析和可视化。

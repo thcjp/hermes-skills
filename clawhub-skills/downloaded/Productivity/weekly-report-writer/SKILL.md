@@ -17,7 +17,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # weekly-report-writer
 
 目标：把零散工作信息整理成可直接提交的周报，突出结果、风险和下周计划。

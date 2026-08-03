@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Java Code Reviewer
 
 ## 快速开始
@@ -113,7 +112,6 @@ suggested_price: 99.9
 ```text
 **系统输出**：
 ```
-
 
 ## 概述
 

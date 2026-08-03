@@ -1,4 +1,5 @@
 ---
+
 slug: news-feed-tool-pro
 name: news-feed-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: RSS新闻订阅专业版
 summary: "企业级RSS新闻平台，支持50+国内外源、定时获取、全文抓取与API集成。RSS新闻订阅工具专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆"
 license: Proprietary
 edition: pro
-description: RSS新闻订阅工具专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。Use
+description: "RSS新闻订阅工具专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。"
   when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
   - 新闻
@@ -29,7 +30,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 RSS新闻订阅工具专业版在免费版 7 个国际 RSS 源的基础上，新增 50+ 国内外 RSS 源、定时自动获取、全文内容抓取、多源去重与主题聚类、多格式导出和 REST API 集成等企业级能力，满足企业新闻监控、媒体采编和行业情报收集的深度需求.
 PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，原有 RSS 源配置均可无缝迁移.
 ## 核心能力
@@ -49,7 +52,6 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 | 历史检索 | 不支持 | 90天历史检索 |
 | 多语言 | 英文为主 | 中/英/日/韩多语言 |
 
-**输入**: 用户提供能力矩阵所需的指令和必要参数.
 **处理**: 解析能力矩阵的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回能力矩阵的响应数据,包含状态码、结果和日志.
 ### PRO 专属 RSS 源
@@ -63,21 +65,20 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 ```text
 [PRO] 国内媒体：新华社、央视新闻、澎湃新闻、36氪、IT之家
 [PRO] 国内科技：机器之心、量子位、InfoQ、CSDN
-[PRO] 国内财经：财联社、证券时报、第一财经
+[PRO] 国内财经：财联社、证券时报、领先财经
 [PRO] 国际科技：TechCrunch、The Verge、Ars Technica、Hacker News
 [PRO] 国际财经：Bloomberg、Financial Times、Wall Street Journal
 [PRO] 多语言源：日经新闻(Nikkei)、韩联社(Yonhap)、德国之声(DW)
 [PRO] 行业垂直：自定义行业RSS源
 ```
 
-**输入**: 用户提供PRO 专属 RSS 源所需的指令和必要参数.
 **处理**: 解析PRO 专属 RSS 源的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回PRO 专属 RSS 源的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -125,7 +126,6 @@ schedules:
     output:
       format: markdown
       path: "~/news-feed-pro/reports/intl_morning_{date}.md"
-# ...
   - name: "tech_noon"
     cron: "0 12 * * 1-5"
     sources: [36kr, jiqizhixin, ithome, baijia]
@@ -136,7 +136,6 @@ schedules:
       format: pdf
       path: "~/news-feed-pro/reports/tech_noon_{date}.pdf"
       email_to: ["editor@media.local"]
-# ...
   - name: "comprehensive_evening"
     cron: "0 18 * * 1-5"
     sources: all
@@ -154,7 +153,6 @@ EOF
 用户需要获取新闻全文而不仅仅是标题摘要.
 ```text
 用户：获取BBC关于"AI监管"的新闻全文并生成摘要
-# ...
 Agent 执行流程：
 1. 从BBC RSS源获取匹配"AI监管"的新闻
 2. 逐条抓取新闻全文
@@ -170,23 +168,19 @@ Agent 执行流程：
 监管要求，包括透明度义务、人类监督和定期审计。法案将于2026年底
 生效，违规企业最高面临全球营业额6%的罚款.
 **全文链接**: https://bbc.com/news/...
-# ...
 **来源**: Reuters | **时间**: 2026-07-18 10:00 GMT
 **智能摘要**: 美国国会正在讨论联邦层面的AI监管框架，
 可能参考欧盟法案但更注重创新平衡。两党在关键条款上
 存在分歧，预计秋季推出草案.
 **全文链接**: https://reuters.com/...
 ```
-
 ## 快速开始
 ### Step 1：初始化 PRO 环境
 ```bash
 mkdir -p ~/news-feed-pro/{config,schedules,reports,exports,history,custom_feeds}
-# ...
 cat > ~/news-feed-pro/config.yaml << 'EOF'
 edition: pro
 version: "1.0.0"
-# ...
 feeds:
   international:
     - bbc
@@ -216,43 +210,35 @@ feeds:
     - nikkei
     - yonhap
     - dw_de
-# ...
 custom_feeds:
   enabled: true
   config_path: "~/news-feed-pro/custom_feeds/feeds.yaml"
-# ...
 fetching:
   default_limit: 10
   max_limit: 50
   timeout_seconds: 30
   full_text: false
   concurrent_fetches: 10
-# ...
 processing:
   deduplicate: true
   similarity_threshold: 0.85
   cluster_topics: false
   auto_summarize: false
   summary_max_words: 200
-# ...
 scheduling:
   enabled: true
   timezone: "Asia/Shanghai"
   config_path: "~/news-feed-pro/schedules/"
-# ...
 export:
   formats: ["markdown", "pdf", "email", "webhook"]
   path: "~/news-feed-pro/exports/"
-# ...
 history:
   enabled: true
   retention_days: 90
   searchable: true
-# ...
 api:
   enabled: true
   rate_limit: "200/hour"
-# ...
 languages: ["zh-CN", "en-US", "ja-JP", "ko-KR", "de-DE"]
 EOF
 ```
@@ -265,13 +251,11 @@ custom_feeds:
     category: "corporate"
     language: "zh-CN"
     tier: "A"
-# ...
   - name: "行业研究报告"
     url: "https://research.industry.local/feed.xml"
     category: "research"
     language: "en-US"
     tier: "A"
-# ...
   - name: "技术团队博客"
     url: "https://tech.company.com/feed"
     category: "tech"
@@ -297,22 +281,18 @@ class FullTextFetcher:
         self.timeout = 30
         self.user_agent = "NewsFeedPro/1.0"
         self.respect_robots_txt = True
-# ...
     def fetch_full_text(self, url):
         """抓取新闻全文"""
         try:
             if not self._allowed_by_robots(url):
                 return None, "Blocked by robots.txt"
-# ...
             html = self._fetch_url(url)
             if not html:
                 return None, "Fetch failed"
-# ...
             article = self._extract_article(html)
             return article, "Success"
         except Exception as e:
             return None, str(e)
-# ...
     def generate_summary(self, article, max_words=200):
         """生成智能摘要"""
         prompt = f"请用{max_words}字以内总结以下新闻的核心内容：\n{article}"
@@ -326,36 +306,29 @@ class TopicClusterer:
     def __init__(self):
         self.vectorizer = TextVectorizer()
         self.clusterer = KMeansClusterer()
-# ...
     def cluster_articles(self, articles, n_clusters=None):
         """对新闻文章进行主题聚类"""
         vectors = [self.vectorizer.encode(a['title'] + a['summary'])
                    for a in articles]
-# ...
         if n_clusters is None:
             n_clusters = min(len(articles) // 3, 10)
-# ...
         labels = self.clusterer.fit_predict(vectors, n_clusters)
-# ...
         clusters = {}
         for article, label in zip(articles, labels):
             cluster_name = f"主题{label + 1}"
             if cluster_name not in clusters:
                 clusters[cluster_name] = []
             clusters[cluster_name].append(article)
-# ...
         return clusters
 ```
 
 ### REST API 集成
 ```python
 import requests
-# ...
 class NewsFeedProClient:
     def __init__(self, api_key, base_url="https://api.news-feed-pro.local"):
         self.headers = {"Authorization": f"Bearer {api_key}"}
         self.base_url = base_url
-# ...
     def fetch_news(self, sources=None, topic=None, limit=10):
         """获取新闻"""
         params = {"limit": limit}
@@ -369,36 +342,26 @@ class NewsFeedProClient:
             params=params
         )
         return resp.json()
-# ...
     def fetch_full_text(self, url):
         """获取新闻全文"""
-        resp = requests.post(
             f"{self.base_url}/v1/fulltext",
-            headers=self.headers,
             json={"url": url}
         )
         return resp.json()
-# ...
     def create_schedule(self, config):
         """创建定时获取任务"""
-        resp = requests.post(
             f"{self.base_url}/v1/schedules",
-            headers=self.headers,
             json=config
         )
         return resp.json()
-# ...
     def add_custom_feed(self, name, url, category):
         """添加自定义RSS源"""
-        resp = requests.post(
             f"{self.base_url}/v1/feeds",
-            headers=self.headers,
             json={"name": name, "url": url, "category": category}
         )
         return resp.json()
 ```
-
-## 最佳实践
+## 优选实践
 ### 1. 按场景配置 RSS 源组合
 ```python
 SOURCE_PRESETS = {
@@ -428,7 +391,6 @@ EOF
 ### 3. 利用全文抓取获取深度信息
 ```text
 用户：获取今天BBC和Reuters所有AI相关新闻的全文摘要
-# ...
 Agent：
 1. 从BBC和Reuters RSS获取AI相关新闻
 2. 逐条抓取全文
@@ -439,14 +401,12 @@ Agent：
 ### 4. 利用主题聚类发现热点
 ```text
 用户：对今天所有新闻进行主题聚类，发现热点话题
-# ...
 Agent：
 1. 获取所有源的今日新闻
 2. 文本向量化
 3. 自动聚类
 4. 按聚类输出热点主题
 ```
-
 ## 常见问题
 ### Q1：PRO 版本如何获取国内 RSS 源？
 PRO 版本内置了新华社、央视新闻、澎湃新闻等国内主流媒体的 RSS 源配置，直接在配置中启用即可.
@@ -485,13 +445,10 @@ PRO 版本完全兼容免费版的 `news.py` 脚本，同时提供增强版的 `
 PRO 版本支持 API 集成，需配置相关密钥：
 
 ```bash
-export NEWS_FEED_PRO_API_KEY="your_api_key"
-# ...
+export NEWS_FEED_PRO_API_KEY="${API_KEY:?请设置环境变量}"
 export HTTP_PROXY="http://127.0.0.1:7890"
 export HTTPS_PROXY="http://127.0.0.1:7890"
-# ...
-export LLM_API_KEY="your_llm_key"
-# ...
+export LLM_API_KEY="${API_KEY:?请设置环境变量}"
 cat > ~/news-feed-pro/.env << 'EOF'
 NEWS_FEED_PRO_API_KEY=your_api_key
 HTTP_PROXY=http://127.0.0.1:7890
@@ -507,11 +464,33 @@ EOF
 - **兼容性**: 与 news-feed-tool-free 完全兼容，支持配置迁移与平滑升级
 - **特殊优势**: 免费版脚本完全兼容，PRO增强脚本提供高级功能
 - **支持级别**: 优先技术支持，提供自定义 RSS 源接入与全文抓取规则定制服务
-
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+## 核心功能
+
+- **自动化执行**: 企业级RSS新闻平台，支持50+国内外源、定时获取、全文抓取与API集成。RSS新闻订阅工具专业版。Use when 需
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+## 核心功能
+
+- **自动化执行**: 企业级RSS新闻平台，支持50+国内外源、定时获取、全文抓取与API集成。RSS新闻订阅工具专业版。Use when 需
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

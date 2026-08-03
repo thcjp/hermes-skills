@@ -1,0 +1,202 @@
+---
+slug: game-asset-generation-cellcog
+name: "game-asset-generation-cellcog"
+version: 1.0.15
+displayName: "游戏"
+summary: "CellCog驱动的AI游戏资产生成,角色一致美术与精灵。AI game asset generation and game development powered by CellCog。C"
+summary_zh: "CellCog驱动的AI游戏资产生成,角色一致美术与精灵。AI game asset generation and game development powered by CellCog。C"
+license: "MIT"
+description: |-
+  AI game asset generation and game development powered by CellCog。Character-consistent
+  art, sprit。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。
+tags:
+  - game
+  - style
+  - 依赖说明
+  - agent
+  - 不支持
+tools:
+  - read
+  - exec
+  - write
+homepage: ""
+category: "Automation"
+
+---
+# Game Asset Generatio
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| Game Asset Generatio动的AI游戏资产生成 | 不支持 | 支持 |
+| 复杂工作流可视化编排 | 不支持 | 支持 |
+| 条件分支与异常重试 | 不支持 | 支持 |
+| 定时触发与事件驱动 | 不支持 | 支持 |
+| 执行日志与审计追踪 | 不支持 | 支持 |
+
+## 核心能力
+
+- AI game asset generation and game development powered by CellCog
+- Character-consistent
+  art, sprit
+
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
+## 适用场景
+
+| 场景 | 输入 | 输出 |
+|:-----|:-----|:-----|
+| 内容生成 | 提示词与风格参数 | 生成内容与质量评分 |
+| CellCog驱动的 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 角色一致美术与精灵 | 目标数据与配置参数 | 处理结果与执行状态 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|---:|---:|---:|---:|
+| content | string | 否 | 处理的内容输入 |
+| mode | string | 否 | 处理模式, 可选值: json/text/markdown |
+| style | string | 否 | 输出风格, 参考 `references/style.md` |
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    "result": "处理结果",
+    "status": "success",
+    "metadata": {
+    "metadata": {
+      "template_used": "reviewer",
+      "word_count": 0,
+      "style": "专业"
+    }
+  },
+  "error": null
+}
+```
+
+输出模板参考: `assets/output.json`
+
+## 异常处理
+
+| 错误场景 | 原因 | 处理方式 |
+|:---:|:---:|:---:|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 
+
+## 依赖说明
+
+### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **操作系统**: Windows / macOS / Linux
+
+### 依赖说明(补充)
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:------|------:|:------|:------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+- 
+
+### 可用性分类
+- **分类**: MD+EXEC()
+- **说明**: 基于Markdown的AI Skill,
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
+## 案例展示
+
+**Full character design:**
+
+> "Design an enemy type for my metroidvania:
+>
+> Concept: Shadow creatures that emerge from walls
+> Behavior: Ambush predator, retreats when hit
+>
+> Need:
+>
+> * Concept art showing the creature emerging from shadow
+> * Idle animation frames (lurking)
+> * Attack animation frames
+> * Death/dissolve animation
+>
+> Style: Dark, fluid, unsettling but not gory (Teen rating)"
+
+**Complete tileset:**
+
+> "Create a complete tileset for a beach/tropical level:
+>
+> Style: Bright, colorful, 32x32 pixel tiles
+>
+> Include:
+>
+> * Sand (multiple variations)
+> * Water (shallow, deep, animated waves)
+> * Palm trees and tropical plants
+> * Rocks and cliffs
+> * Beach items (shells, starfish, umbrellas)
+> * Wooden platforms/bridges
+>
+> Should work for a platformer game."
+
+**Game concept:**
+
+> "Design a game concept: 'Wizard's Delivery Service'
+>
+> Pitch: You're a wizard who delivers magical packages across a fantasy kingdom
+> Genre: Cozy adventure / time management
+> Platform: PC and Switch
+>
+> I need:
+>
+> * Core gameplay loop
+> * Progression systems
+> * Character concepts for the wizard and NPCs
+> * 3 sample delivery missions
+> * Art style moodboard
+>
+> Vibe: Studio Ghibli meets Overcooked"
+
+---
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+## 常见问题
+
+### Q1: 如何开始使用Game Asset Generatio？
+A: 请参考使用流程和依赖说明章节，确保运行环境满足要求后调用本技能。
+## 错误处理
+
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 请求重试；确认Agent平台LLM服务正常 |
+| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
+| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
+| 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
+

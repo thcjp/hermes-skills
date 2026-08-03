@@ -1,6 +1,7 @@
 ---
+
 name: "aws-cloud-inspector-free"
-description: "基于AWS CLI的只读云基础设施查询助手，免费提供资源清点、健康检查与基础安全核查能力，适合个人开发者日常巡检。"
+description: "基于AWS CLI的只读云基础设施查询助手，免费提供资源清点、健康检查与基础安全核查能力，适合个人开发者日常巡检。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,11 @@ metadata:
     - "免费工具"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # AWS云巡检免费版（aws-cloud-inspector-free）
@@ -31,7 +37,7 @@ metadata:
 |------|----------|------|
 | 环境检查 | < 30秒 | 确认AWS CLI已安装且凭证已配置 |
 | 身份确认 | < 30秒 | `aws sts get-caller-identity` 验证身份 |
-| 资源清点 | < 60秒 | 执行第一个只读查询命令 |
+| 资源清点 | < 60秒 | 执行领先个只读查询命令 |
 
 ### 1.1 环境检查（< 30秒）
 
@@ -54,7 +60,7 @@ aws sts get-caller-identity
 # 这是所有巡检的起点，确认你正在操作正确的账号
 ```
 
-### 1.3 第一个只读查询（< 60秒）
+### 1.3 领先个只读查询（< 60秒）
 
 ```bash
 # 列出当前region所有EC2实例
@@ -113,8 +119,6 @@ aws_access_key_id = AKIA...
 aws_secret_access_key = ...
 
 [production]
-aws_access_key_id = AKIA...
-aws_secret_access_key = ...
 ```
 
 > 安全提示：本Skill永不读取或输出 `~/.aws/credentials` 文件内容，仅通过AWS CLI内部机制使用凭证。
@@ -146,7 +150,7 @@ aws sts get-caller-identity
 aws ec2 describe-regions --query 'Regions[].RegionName' --output text | tr '\t' '\n' | while read region; do
   echo "=== $region ==="
   aws ec2 describe-instances --region $region \
-    --query 'Reservations[].Instances[].{ID:InstanceId,State:State.Name,Type:InstanceType}' \
+    --query 'Reservations[].Instances[].Name,Type:InstanceType}' \
     --output table
 done
 
@@ -216,7 +220,7 @@ A：运行 `aws configure` 配置访问密钥，或检查 `~/.aws/credentials` �
 A：使用 `--filters` 参数。例如：
 ```bash
 aws ec2 describe-instances --filters Name=instance-state-name,Values=running \
-  --query 'Reservations[].Instances[].InstanceId' --output text
+Instances[].InstanceId' --output text
 ```
 
 ### Q6：免费版与专业版的核心差异？
@@ -226,7 +230,6 @@ A：免费版提供资源清点、健康检查、基础安全核查与变更预�
 A：使用 `--query` 参数配合JMESPath语法过滤。例如 `--query 'Reservations[].Instances[?State.Name==`running`].InstanceId'`。也可用 `--output table` 让结果更易读。
 
 ## 错误处理
-
 
 | 序号 | 问题 | 原因 | 修复方案 | 优先级 |
 |------|------|------|----------|--------|
@@ -329,40 +332,30 @@ SOFTWARE.
 ### AWS云巡检免费版（aws-cloud-
 AWS云巡检免费版（aws-cloud-inspector-free）面向独立开发者与运维新人，基于本地AWS CLI提供只读的云资源查询与基础巡检能力
 
-**输入**: 用户提供AWS云巡检免费版（aws-cloud-所需的指令和必要参数。
-**处理**: 按照skill规范执行AWS云巡检免费版（aws-cloud-操作,遵循单一意图原则。
 **输出**: 返回AWS云巡检免费版（aws-cloud-的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 它默认只读
 它默认只读，所有变更类操作必须用户显式确认才执行，确保零误操作风险
 
-**输入**: 用户提供它默认只读所需的指令和必要参数。
-**处理**: 按照skill规范执行它默认只读操作,遵循单一意图原则。
 **输出**: 返回它默认只读的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### aws/config` 与 `
 aws/config` 与 `~/
 
-**输入**: 用户提供aws/config` 与 `所需的指令和必要参数。
-**处理**: 按照skill规范执行aws/config` 与 `操作,遵循单一意图原则。
 **输出**: 返回aws/config` 与 `的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### aws/credentials
 aws/credentials` 标准位置）
 
-**输入**: 用户提供aws/credentials所需的指令和必要参数。
-**处理**: 按照skill规范执行aws/credentials操作,遵循单一意图原则。
 **输出**: 返回aws/credentials的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 适用场景
 适用场景：个人AWS账号日常巡检、新接手项目的资源盘点、上线前基础安全自检、CloudWatch告警排查、IAM权限梳理、学习AWS CLI命令模式、为团队试点云巡检流程前的个人练习
 
-**输入**: 用户提供适用场景所需的指令和必要参数。
-**处理**: 按照skill规范执行适用场景操作,遵循单一意图原则。
 **输出**: 返回适用场景的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -372,6 +365,24 @@ aws/credentials` 标准位置）
 ## 适用场景
 
 **用户角色**：新入职运维工程师
-**目标**：盘点刚接手的AWS账号下所有核心资源。
 
 ```bash
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

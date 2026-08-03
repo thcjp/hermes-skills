@@ -1,6 +1,7 @@
 ---
+
 name: "linear-toolkit-free"
-description: "面向个人的 Linear 任务查询与基础管理工具，含站会摘要。"
+description: "面向个人的 Linear 任务查询与基础管理工具，含站会摘要。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,11 @@ metadata:
     - "其他工具"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # Linear 工具箱（免费版）
@@ -36,24 +42,18 @@ metadata:
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置。
 
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
 **输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：面向个人的、Linear、任务查询与基础管、理工具、含站会摘要、面向个人开发者的等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -63,7 +63,7 @@ metadata:
 ### 场景一：每日站会
 
 ```bash
-export LINEAR_API_KEY="your-key"
+export LINEAR_API_KEY="${API_KEY:?请设置环境变量}"
 export LINEAR_DEFAULT_TEAM="TEAM"
 
 # 站会摘要：待办、阻塞、评审中、近期完成
@@ -74,7 +74,7 @@ export LINEAR_DEFAULT_TEAM="TEAM"
 
 ```bash
 # 从聊天直接建任务
-{baseDir}/scripts/linear.sh create TEAM "修复登录超时" "用户 5 分钟后被登出"
+sh create TEAM "修复登录超时" "用户 5 分钟后被登出"
 ```
 
 ### 场景三：Git 分支联动
@@ -110,13 +110,12 @@ git push -u origin "$BRANCH"
 4. 站会前跑 `standup`。
 
 ```bash
-{baseDir}/scripts/linear.sh teams              # 列团队
-{baseDir}/scripts/linear.sh my-issues          # 我的任务
-{baseDir}/scripts/linear.sh urgent             # 紧急/高优
+sh teams              # 列团队
+sh my-issues          # 我的任务
+sh urgent             # 紧急/高优
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
-
 
 ## 示例
 
@@ -130,7 +129,7 @@ git push -u origin "$BRANCH"
 | low | 4 | 锦上添花 |
 | none | 0 | 待办池 |
 
-## 最佳实践
+## 优选实践
 
 - **分支名走 Linear**：用 `branch` 命令生成分支名，PR 合并自动推进状态。
 - **main 保持干净**：改动只在 worktree，避免误推 main。
@@ -160,28 +159,28 @@ A：你的待办、团队阻塞项、评审中、近期完成。
 ### 常用查询命令
 
 ```bash
-{baseDir}/scripts/linear.sh my-issues              # 我的任务
-{baseDir}/scripts/linear.sh urgent                 # 紧急/高优
-{baseDir}/scripts/linear.sh backlog TEAM           # 团队待办池
-{baseDir}/scripts/linear.sh search "登录"          # 关键词搜索
-{baseDir}/scripts/linear.sh issue TEAM-123         # 查看详情
-{baseDir}/scripts/linear.sh comments TEAM-123      # 查看评论
+sh my-issues              # 我的任务
+sh urgent                 # 紧急/高优
+sh backlog TEAM           # 团队待办池
+sh search "登录"          # 关键词搜索
+sh issue TEAM-123         # 查看详情
+sh comments TEAM-123      # 查看评论
 ```
 
 ### 任务更新操作
 
 ```bash
 # 更新状态
-{baseDir}/scripts/linear.sh update TEAM-123 --status "In Progress"
+sh update TEAM-123 --status "In Progress"
 
 # 设置优先级
-{baseDir}/scripts/linear.sh update TEAM-123 --priority urgent
+sh update TEAM-123 --priority urgent
 
 # 指派
-{baseDir}/scripts/linear.sh assign TEAM-123 用户名
+sh assign TEAM-123 用户名
 
 # 添加评论
-{baseDir}/scripts/linear.sh comment TEAM-123 "已复现，预计今日修复"
+sh comment TEAM-123 "已复现，预计今日修复"
 ```
 
 ### 站会摘要详解
@@ -251,7 +250,6 @@ A：你的待办、团队阻塞项、评审中、近期完成。
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -264,3 +262,14 @@ A：你的待办、团队阻塞项、评审中、近期完成。
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

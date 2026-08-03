@@ -33,7 +33,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # grok_image_generate
 
 使用 Grok Imagine 生成图片的技能。

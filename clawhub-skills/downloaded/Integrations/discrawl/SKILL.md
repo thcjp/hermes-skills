@@ -33,7 +33,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Discrawl
 
 Use local Discord archive data before live Discord APIs. Check freshness for recent/current questions:
@@ -133,3 +132,31 @@ A: 请参考已知限制章节了解具体限制。
 ## 已知限制
 
 - 需要API Key，无Key环境无法使用
+
+---
+## 边界条件与限制
+
+### 输入限制
+- **命令行参数长度**：Discrawl 对命令行参数长度有限制，超过限制的参数可能导致命令执行失败。
+- **查询复杂性**：复杂的查询语句可能会超出Discrawl的处理能力，导致查询失败或响应时间过长。
+
+### 性能边界
+- **数据量限制**：Discrawl 对处理的数据量有限制，对于非常大的数据集，可能需要分批次处理。
+- **响应时间**：在高峰时段，Discrawl 的响应时间可能会因为负载增加而变长。
+
+### 兼容性约束
+- **操作系统**：Discrawl 仅支持 Windows、macOS 和 Linux 操作系统。
+- **Agent平台**：Discrawl 仅支持 SKILL.md 的 Claude Code、Cursor、Codex 和 Gemini CLI 等AI Agent。
+- **Discord版本**：Discrawl 需要与Discord客户端版本兼容，不兼容的版本可能导致功能受限或无法使用。
+
+### 安全限制
+- **用户权限**：执行敏感操作（如同步数据）需要具备相应的用户权限。
+- **数据访问**：Discrawl 仅能访问本地Discord归档数据，无法访问用户的实时数据。
+
+### 其他限制
+- **外部API**：Discrawl 需要访问外部API时，必须配置有效的API Key。
+- **Git-share snapshots**：Git-share snapshots中不得包含敏感信息或`@me`私信记录。
+- **SQL查询**：仅支持read-only SQL查询，禁止执行写操作。
+
+---
+

@@ -26,38 +26,20 @@ import re
 import json
 import argparse
 from pathlib import Path
-from typing import Dict, List, Tuple, Any
+from typing import List, Tuple
 
-SKILL_REGISTRY_DIR = Path(__file__).parent
-sys.path.insert(0, str(SKILL_REGISTRY_DIR))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "config"))
+from project_config import TOOLS_DIR, PACKAGED_SKILLS_DIR
+sys.path.insert(0, str(TOOLS_DIR))
 
-from config import PACKAGED_SKILLS_DIR
-from skill_core.parser import parse_frontmatter as _parse_fm
+from skill_core.parser import parse_frontmatter, extract_section
+from skill_core.rules import PLACEHOLDER_PATTERNS, MAX_DISPLAY_NAME_LEN, MAX_SUMMARY_LEN  # v1.3: 统一占位符检测模式+displayName长度阈值; MAX_SUMMARY_LEN
+from skill_core.rules import TEMPLATE_PHRASES, NON_CAPABILITY_HEADINGS, PASS, FAIL, WARN, ACTION_VERBS  # V104 W1/W2/W3: 统一常量; V134 E6: ACTION_VERBS统一(消除内联重复)
 
-# 验证结果状态
-PASS = 'PASS'
-FAIL = 'FAIL'
-WARN = 'WARN'
+# V104 W1/W2/W3: TEMPLATE_PHRASES/NON_CAPABILITY_HEADINGS/PASS/FAIL/WARN已统一到skill_core.rules
 
-# 模板套话特征
-TEMPLATE_PHRASES = [
-    '本Skill基于Markdown指令',
-    '通过自然语言指令驱动Agent执行任务',
-    '纯Markdown指令,部分功能需要exec命令行执行能力',
-    '需要LLM支持，无LLM环境无法使用',
-    '复杂场景可能需要人工辅助判断',
-    '性能取决于底层模型能力',
-    '请先阅读使用流程章节',
-    '请参考错误处理章节',
-    '请参考已知限制章节了解具体限制',
-]
-
-# 通用占位符
-PLACEHOLDER_PATTERNS = [
-    r'\[TODO\b', r'\[PLACEHOLDER\b', r'\[FIXME\b', r'\[XXX\b',
-    r'\[your.*?\]', r'\[insert.*?\]', r'\[add.*?\]',
-    r'<your.*?>', r'<insert.*?>',
-]
+# 通用占位符 (v1.3: 已统一为 from skill_core.rules import PLACEHOLDER_PATTERNS)
+# 原本地定义已移除，使用规范源
 
 # 必需章节
 REQUIRED_SECTIONS = {
@@ -65,18 +47,6 @@ REQUIRED_SECTIONS = {
     '核心能力': '## 核心能力',
     '错误处理': '## 错误处理',
 }
-
-
-def extract_section(content: str, section_name: str) -> str:
-    """提取##章节内容 (支持章节名变体匹配)"""
-    if section_name == '核心能力':
-        pattern = r'##\s+核心(?:能力|功能|规则|概念|原则|工作流|操作)\s*\n(.*?)(?=\n## |\Z)'
-    elif section_name == '错误处理':
-        pattern = r'##\s+(?:错误|异常)处理\s*\n(.*?)(?=\n## |\Z)'
-    else:
-        pattern = rf'## {re.escape(section_name)}\s*\n(.*?)(?=\n## |\Z)'
-    match = re.search(pattern, content, re.DOTALL)
-    return match.group(1).strip() if match else ''
 
 
 def check_l3_structure(content: str, fm_data: dict) -> Tuple[str, List[str]]:
@@ -91,12 +61,12 @@ def check_l3_structure(content: str, fm_data: dict) -> Tuple[str, List[str]]:
     
     # 检查displayName长度
     display_name = fm_data.get('displayName', '')
-    if len(display_name) > 20:
-        errors.append(f"displayName过长({len(display_name)}字符),应<=20: {display_name}")
+    if len(display_name) > MAX_DISPLAY_NAME_LEN:
+        errors.append(f"displayName过长({len(display_name)}字符),应<={MAX_DISPLAY_NAME_LEN}: {display_name}")
     
     # 检查summary长度
     summary = fm_data.get('summary', '')
-    if len(summary) > 100:
+    if len(summary) > MAX_SUMMARY_LEN:
         errors.append(f"summary过长({len(summary)}字符),应<=100")
     
     # 检查必需章节
@@ -117,15 +87,7 @@ def check_l3_actionable(content: str) -> Tuple[str, List[str]]:
     """L3-2: 能力可执行性检查 - 每个###能力点是否有足够详细的操作指令"""
     errors = []
     
-    # 非能力点标题(元信息/补充说明),不检查可执行性
-    NON_CAPABILITY_HEADINGS = [
-        '能力覆盖范围', '技术细节', '处理流程', '输入输出规范',
-        '能力参数', '适用场景', '能力概览', '功能概览',
-        '输出格式', '脚本获取', '命令参数说明', '输出说明', '输入说明',
-        '源能力映射', '领域术语',
-        '能力边界', '功能边界', '工作流程', '工作原理',
-        '设计理念', '使用说明', '注意事项',
-    ]
+    # V104 W2: NON_CAPABILITY_HEADINGS已从skill_core.rules导入(模块级)
     
     # 提取核心能力章节
     cap_content = extract_section(content, '核心能力')
@@ -166,16 +128,7 @@ def check_l3_actionable(content: str) -> Tuple[str, List[str]]:
         has_code_block = '```' in cap_content[start:end]  # 检查原始内容中的代码块
         has_numbered = bool(re.search(r'^\d+\.', section_content, re.MULTILINE))
         has_bullets = bool(re.search(r'^[-*]\s', section_content, re.MULTILINE))
-        has_action_verb = any(v in section_content for v in [
-            '创建', '删除', '修改', '查询', '执行', '配置', '安装', '运行',
-            '启动', '停止', '导入', '导出', '解析', '转换', '生成', '提取',
-            '检查', '验证', '分析', '处理', '发送', '接收', '保存', '加载',
-            'create', 'delete', 'update', 'query', 'execute', 'config',
-            'install', 'run', 'start', 'stop', 'import', 'export',
-            'parse', 'convert', 'generate', 'extract', 'check', 'verify',
-            'analyze', 'process', 'send', 'receive', 'save', 'load',
-            'use', 'call', 'set', 'get', 'add', 'remove', 'apply',
-        ])
+        has_action_verb = any(v in section_content for v in ACTION_VERBS)  # [V134 E6] 统一使用skill_core.rules.ACTION_VERBS(消除55元素内联重复)
         
         detail_indicators = sum([has_code_ref, has_table, has_code_block, has_numbered, has_bullets, has_action_verb])
         if detail_indicators < 2:
@@ -202,18 +155,41 @@ def check_l3_scenario_coverage(content: str, fm_data: dict) -> Tuple[str, List[s
     h3_titles = re.findall(r'^###\s+(.+)$', cap_no_code, re.MULTILINE)
     
     # 检查description中提到的关键功能是否在核心能力中有对应
-    # 提取description中的名词短语（简单启发式）
-    desc_keywords = re.findall(r'[\u4e00-\u9fff]{2,8}|[A-Za-z]{3,20}', combined)
+    # V148 T4: 优化关键词提取 — 使用滑动窗口方法处理中文,
+    # 对>4字符的中文序列提取4字符窗口进行部分匹配,避免句子片段误报;
+    # 使用百分比阈值(>50%缺失才报错)替代绝对计数,适应不同长度description
+    _STOPWORDS = {'这是一个', '用于', '它是', '可以', '通过', '包括', '方面',
+                  '提供', '帮助', '自动', '检测', '这是', '它的', '能够',
+                  '用于验证', '完整的', '这是一个用于', '帮助开发者',
+                  'the', 'and', 'for', 'with', 'from', 'this', 'that',
+                  'will', 'can', 'has', 'have', 'are', 'not',
+                  'but', 'all', 'any', 'was', 'were', 'been', 'into'}
+    desc_keywords_raw = re.findall(r'[\u4e00-\u9fff]{4,8}|[A-Za-z]{4,20}', combined)
+    desc_keywords = [kw for kw in desc_keywords_raw
+                    if kw not in _STOPWORDS and kw.lower() not in _STOPWORDS]
     cap_text = ' '.join(h3_titles).lower()
-    
+    cap_content_lower = cap_content.lower()
+
     missing_keywords = []
     for kw in desc_keywords:
-        if len(kw) >= 3 and kw.lower() not in cap_text and kw not in ['the', 'and', 'for', 'with', 'from', 'this', 'that']:
-            # 检查是否在核心能力正文中出现
-            if kw.lower() not in cap_content.lower():
-                missing_keywords.append(kw)
-    
-    if len(missing_keywords) > 5:
+        if len(kw) >= 4:
+            # V148 T4: 对中文关键词使用滑动窗口部分匹配
+            if re.fullmatch(r'[\u4e00-\u9fff]+', kw) and len(kw) > 4:
+                # 提取4字符滑动窗口,只要有一个窗口匹配就视为通过
+                windows = [kw[i:i+4] for i in range(len(kw) - 3)]
+                found = any(w.lower() in cap_text or w.lower() in cap_content_lower
+                           for w in windows)
+                if not found:
+                    missing_keywords.append(kw)
+            else:
+                # 英文关键词或正好4字符的中文词:直接匹配
+                if kw.lower() not in cap_text and kw.lower() not in cap_content_lower:
+                    missing_keywords.append(kw)
+
+    # V148 T4: 使用百分比阈值 — >50%的关键词缺失才报错(替代绝对计数>5)
+    total_keywords = len(desc_keywords)
+    missing_ratio = len(missing_keywords) / total_keywords if total_keywords > 0 else 0
+    if missing_ratio > 0.5 and len(missing_keywords) > 5:
         errors.append(f"description中的关键词在核心能力中未出现: {missing_keywords[:5]}...")
     
     return (FAIL if errors else PASS, errors)
@@ -343,11 +319,11 @@ def check_l3_substance(content: str) -> Tuple[str, List[str]]:
         if phrase in content:
             errors.append(f"包含模板套话: '{phrase[:30]}...'")
     
-    # 检查占位符
-    for pattern in PLACEHOLDER_PATTERNS:
+    # 检查占位符 (v1.3: PLACEHOLDER_PATTERNS为元组列表(regex, desc))
+    for pattern, desc in PLACEHOLDER_PATTERNS:
         matches = re.findall(pattern, content, re.IGNORECASE)
         if matches:
-            errors.append(f"包含占位符: {matches[:3]}")
+            errors.append(f"包含占位符({desc}): {matches[:3]}")
     
     # 检查"触发关键词"
     if '触发关键词' in content:
@@ -391,12 +367,6 @@ def check_l3_substance(content: str) -> Tuple[str, List[str]]:
     return (FAIL if errors else PASS, errors)
 
 
-def parse_frontmatter(content: str) -> dict:
-    """解析frontmatter - 使用skill_core.parser统一解析"""
-    result = _parse_fm(content)
-    return result.get('fields', {})
-
-
 def check_l3_function(slug: str) -> dict:
     """对单个skill执行L3功能验证"""
     skill_path = PACKAGED_SKILLS_DIR / slug / 'SKILL.md'
@@ -411,7 +381,7 @@ def check_l3_function(slug: str) -> dict:
         }
     
     content = skill_path.read_text(encoding='utf-8')
-    fm_data = parse_frontmatter(content)
+    fm_data = parse_frontmatter(content)['fields']
     
     # 执行所有检查
     checks = {}

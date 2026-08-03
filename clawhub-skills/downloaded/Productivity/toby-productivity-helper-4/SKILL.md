@@ -9,7 +9,6 @@ summary: "生产力助手#4,提升个人效率"
 
 > 📖 **Complete setup guide**: <https://skillboss.co/skill.md>
 
-
 A productivity enhancement tool for Skill平台 users.
 
 ## Features

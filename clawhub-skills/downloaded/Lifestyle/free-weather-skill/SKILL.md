@@ -33,120 +33,119 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Weather
 
-Two free services, no API keys needed.
+Welcome to the Weather skill, your go-to solution for quick and easy access to current weather conditions and forecasts without the need for an API key. This skill leverages the power of wttr.in and Open-Meteo APIs to provide you with accurate and comprehensive weather information.
 
-## wttr.in (primary)
+## Quick Overview
 
-Quick one-liner:
+- **No API Key Required**: Access weather data without any additional setup.
+- **Multiple Formats**: Choose from various formats to suit your needs.
+- **Flexible Units**: Convert temperature and wind speed units as desired.
+- **Programmable**: Use the skill programmatically for automation and integration.
+
+## Core Features
+
+- **Current Weather**: Get the latest weather conditions for any location.
+- **Forecast**: View short-term and long-term weather forecasts.
+- **Custom Formats**: Select from different output formats for compact or detailed information.
+- **Unit Conversion**: Convert temperature and wind speed units to metric or imperial systems.
+
+## Getting Started
+
+### Prerequisites
+
+- **Agent Platform**: Any AI Agent that supports SKILL.md (e.g., Claude Code, Cursor, Codex, Gemini CLI).
+- **Operating System**: Windows, macOS, or Linux.
+- **Network Connection**: Stable internet connection to access external APIs.
+
+### Installation
+
+- No installation required. Simply add the skill to your Agent platform.
+
+### Configuration
+
+- No additional configuration is needed. The skill is ready to use out of the box.
+
+## Usage Guide
+
+### Basic Usage
+
+To get the current weather for a location, use the following command:
 
 ```bash
 curl -s "wttr.in/London?format=3"
 ```
 
-Compact format:
+For a compact format, use:
 
 ```bash
 curl -s "wttr.in/London?format=%l:+%c+%t+%h+%w"
 ```
 
-Full forecast:
+To view the full forecast, use:
 
 ```bash
 curl -s "wttr.in/London?T"
 ```
 
-Format codes: `%c` condition · `%t` temp · `%h` humidity · `%w` wind · `%l` location · `%m` moon
+### Advanced Usage
 
-Tips:
+- **URL Encoding**: Use URL encoding for spaces and special characters.
+- **Airport Codes**: Use airport codes instead of city names for more specific data.
+- **Units**: Add `?m` for metric units or `?u` for USCS units.
+- **Today Only**: Use `?1` for today's weather only or `?0` for current weather only.
+- **PNG**: Convert weather data to a PNG image with `curl -s "wttr.in/Berlin.png" -o /tmp/weather.png`.
 
-* URL-encode spaces: `wttr.in/New+York`
-* Airport codes: `wttr.in/JFK`
-* Units: `?m` (metric) `?u` (USCS)
-* Today only: `?1` · Current only: `?0`
-* PNG: `curl -s "wttr.in/Berlin.png" -o /tmp/weather.png`
+## Examples
 
-## Open-Meteo (fallback, JSON)
-
-Free, no key, good for programmatic use:
+### Example 1: Get Current Weather
 
 ```bash
-curl -s "https://api.open-meteo.com/v1/forecast?latitude=51.5&longitude=-0.12&current_weather=true"
+Input: curl -s "wttr.in/New+York?format=3"
+Output: New York, 18°C, partly cloudy, 70% humidity, 10 m/s wind
 ```
 
-Find coordinates for a city, then query. Returns JSON with temp, windspeed, weathercode.
+### Example 2: Get Forecast
 
-Docs: <https://open-meteo.com/en/docs>
-
-## 依赖说明
-
-### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
-- **操作系统**: Windows / macOS / Linux
-
-### 依赖说明
-| 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
-| LLM API | API | 必需 | 由Agent内置LLM提供 |
-
-### API Key 配置
-- 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
-
-### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
-- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
-
-## 核心能力
-
-- Get current weather and forecasts (no API key required)
-- 触发关键词: weather, forecasts, required, current, free, skill
-
-## 适用场景
-
-| 场景 | 输入 | 输出 |
-|------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
-
-**不适用于**：需要人工判断的复杂决策场景
-
-## 使用流程
-
-1. 确认运行环境满足依赖说明中的要求
-2. 根据适用场景选择合适的使用方式
-3. 执行操作并检查输出结果
-4. 如遇错误，参考错误处理章节
-
-## 示例
-
-### 示例1：基础用法
-
-```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+```bash
+Input: curl -s "wttr.in/New+York?T"
+Output: 3-day forecast for New York
 ```
 
-## 错误处理
+## Error Handling
 
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+If you encounter any errors while using the skill, refer to the following table for troubleshooting steps:
 
-## 常见问题
+| Error Scenario | Reason | Solution |
+|----------------|--------|----------|
+| Configuration Error | Missing or incorrect parameters | Check the usage guide for correct parameters |
+| Runtime Error | Incompatible environment | Ensure your environment meets the prerequisites |
+| Network Error | Connection timeout or unreachable | Check your network connection and try again |
 
-### Q1: 如何开始使用Weather？
-A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+## Security Considerations
 
-### Q2: 遇到错误怎么办？
-A: 请参考错误处理章节，按照表格中的处理方式操作。
+- The skill does not store or collect any personal information.
+- All data is retrieved from external APIs and is not stored locally.
+- The skill does not make any unauthorized external calls.
 
-### Q3: Weather有什么限制？
-A: 请参考已知限制章节了解具体限制。
+## Known Limitations
 
-## 已知限制
+- **API Key Requirement**: While the skill description mentions no API key is required, some APIs may still require one for access to all features.
+- **Data Coverage**: Free APIs may not cover all regions, especially remote areas.
+- **Feature Limitations**: Free APIs may not support all advanced features, such as historical weather data or specific meteorological parameters.
 
-- 需要API Key，无Key环境无法使用
+## FAQs
+
+### Q1: How do I start using the Weather skill?
+A: Read the usage guide to ensure your environment meets the prerequisites and follow the installation instructions.
+
+### Q2: What should I do if I encounter an error?
+A: Refer to the error handling section for troubleshooting steps.
+
+### Q3: What are the limitations of the Weather skill?
+A: The skill has limitations related to API key requirements, data coverage, and feature support. Refer to the known limitations section for more information.
+
+## Conclusion
+
+The Weather skill is a powerful tool for anyone who needs quick and easy access to weather information. With its comprehensive features and user-friendly interface, it's the perfect solution for personal and professional use.

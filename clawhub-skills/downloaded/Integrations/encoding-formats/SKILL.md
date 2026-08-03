@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Encoding & Formats
 
 Encode, decode, and inspect data in common formats. Covers Base64, URL encoding, hex, Unicode, JWTs, hashing, checksums, and serialization formats.

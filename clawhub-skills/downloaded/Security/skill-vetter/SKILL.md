@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Skill Vetter
 
 Security-first vetting protocol for AI agent skills. **Never install a skill without vetting it first.**

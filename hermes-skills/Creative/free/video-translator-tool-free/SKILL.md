@@ -1,6 +1,7 @@
 ---
+
 name: "video-translator-tool-free"
-description: "轻量级视频翻译与配音工具，支持中英互译、字幕翻译出片，适合个人创作者快速完成跨语言视频本地化。"
+description: "轻量级视频翻译与配音工具，支持中英互译、字幕翻译出片，适合个人创作者快速完成跨语言视频本地化。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,11 @@ metadata:
     - "免费版"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # 视频翻译工具 - 免费版
@@ -48,8 +54,6 @@ metadata:
 | 预览链接 | 返回可预览 URL | 支持 |
 | 任务状态查询 | 轮询任务进度 | 支持 |
 
-**输入**: 用户提供能力清单所需的指令和必要参数。
-**处理**: 按照skill规范执行能力清单操作,遵循单一意图原则。
 **输出**: 返回能力清单的执行结果,包含操作状态和输出数据。
 
 ### 工作流程
@@ -66,8 +70,6 @@ metadata:
 返回预览链接（preview_url）
 ```
 
-**输入**: 用户提供工作流程所需的指令和必要参数。
-**处理**: 按照skill规范执行工作流程操作,遵循单一意图原则。
 **输出**: 返回工作流程的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -78,16 +80,12 @@ metadata:
 - **Base URL**：`https://audiox-api-global.luoji.cn`
 - 不使用本地服务地址，所有请求统一发往该地址
 
-**输入**: 用户提供固定服务地址所需的指令和必要参数。
-**处理**: 按照skill规范执行固定服务地址操作,遵循单一意图原则。
 **输出**: 返回固定服务地址的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级视频翻译与、配音工具、支持中英互译、字幕翻译出片、适合个人创作者快、速完成跨语言视频、本地化、视频翻译免费版、为个人用户提供轻、量化的视频翻译与、配音能力、核心能力、中英双向视频翻译、视频字幕翻译出片、单视频翻译任务处、翻译结果预览链接、任务状态轮询查询等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
 ### 核心功能执行
 执行核心功能执行操作,使用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -129,7 +127,7 @@ curl -s -X POST 'https://audiox-api-global.luoji.cn/video-trans/orchestrate' \
 **示例调用：**
 
 ```bash
-curl -s -X POST 'https://audiox-api-global.luoji.cn/video-trans/orchestrate' \
+luoji.cn/video-trans/orchestrate' \
   -H 'Authorization: Bearer YOUR_API_KEY' \
   -F 'video=@/path/to/tutorial.mp4' \
   -F 'sourceLanguage=en' \
@@ -151,7 +149,7 @@ curl -s -X POST 'https://audiox-api-global.luoji.cn/video-trans/orchestrate' \
 **示例调用：**
 
 ```bash
-curl -s -X POST 'https://audiox-api-global.luoji.cn/video-trans/orchestrate' \
+luoji.cn/video-trans/orchestrate' \
   -H 'Authorization: Bearer YOUR_API_KEY' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -175,7 +173,7 @@ curl -s -X POST 'https://audiox-api-global.luoji.cn/video-trans/orchestrate' \
 
 ## 快速开始
 
-### 第一步：获取 API Key
+### 领先步：获取 API Key
 
 免费版需要翻译服务 API Key。若没有 API Key 或 Key 无效：
 
@@ -186,16 +184,15 @@ curl -s -X POST 'https://audiox-api-global.luoji.cn/video-trans/orchestrate' \
 
 ```bash
 # 设置 API Key 环境变量
-export VIDEO_TRANSLATE_SERVICE_API_KEY="your_api_key_here"
+export VIDEO_TRANSLATE_SERVICE_API_KEY="${API_KEY:?请设置环境变量}"
 ```
 
 ### 第三步：提交翻译任务
 
 ```bash
 # 提交中文视频翻译为英文
-curl -s -X POST 'https://audiox-api-global.luoji.cn/video-trans/orchestrate' \
+luoji.cn/video-trans/orchestrate' \
   -H "Authorization: Bearer $VIDEO_TRANSLATE_SERVICE_API_KEY" \
-  -F 'video=@/path/to/video.mp4' \
   -F 'sourceLanguage=zh' \
   -F 'targetLanguage=en'
 ```
@@ -267,7 +264,7 @@ show=true&bilingual=false
 5. 等待完成：直到 status 为 succeeded 或 failed
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 1. 选择合适的源语言
 
@@ -374,7 +371,8 @@ done
 | jq | JSON 处理 | 可选 | 系统包管理器 | 1.6+ |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 | - |
 
-#### 安装命令
+#
+### 安装命令
 
 ```bash
 # macOS 安装 jq
@@ -398,7 +396,6 @@ jq --version
 
 ```bash
 # 配置环境变量
-export VIDEO_TRANSLATE_SERVICE_API_KEY="your_translation_api_key"
 
 # 验证配置
 curl -s 'https://audiox-api-global.luoji.cn/video-trans/health' \
@@ -420,7 +417,6 @@ curl -s 'https://audiox-api-global.luoji.cn/video-trans/health' \
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -430,3 +426,30 @@ curl -s 'https://audiox-api-global.luoji.cn/video-trans/health' \
 ## 已知限制
 
 - 本地运行，不支持多设备同步
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

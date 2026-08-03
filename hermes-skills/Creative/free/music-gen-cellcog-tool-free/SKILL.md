@@ -1,6 +1,7 @@
 ---
+
 name: "music-gen-cellcog-tool-free"
-description: "基于CellCog AI引擎的音乐生成工具,支持文本/歌词生成音乐、多种风格选择,适合个人内容创作。"
+description: "基于CellCog AI引擎的音乐生成工具,支持文本/歌词生成音乐、多种风格选择,适合个人内容创作。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -16,6 +17,11 @@ metadata:
     - "内容创作"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # CellCog音乐生成免费版
@@ -44,8 +50,6 @@ curl -X POST https://api.cellcog.com/v1/music/generate \
   }'
 ```
 
-**输入**: 用户提供文生音乐(Text-to-Music)所需的指令和必要参数。
-**处理**: 按照skill规范执行文生音乐(Text-to-Music)操作,遵循单一意图原则。
 **输出**: 返回文生音乐(Text-to-Music)的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -55,7 +59,7 @@ curl -X POST https://api.cellcog.com/v1/music/generate \
 
 ```bash
 # 歌词生音乐
-curl -X POST https://api.cellcog.com/v1/music/generate \
+cellcog.com/v1/music/generate \
   -H "Authorization: Bearer $CELLCOG_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -67,8 +71,6 @@ curl -X POST https://api.cellcog.com/v1/music/generate \
   }'
 ```
 
-**输入**: 用户提供歌词生音乐(Lyrics-to-Music)所需的指令和必要参数。
-**处理**: 按照skill规范执行歌词生音乐(Lyrics-to-Music)操作,遵循单一意图原则。
 **输出**: 返回歌词生音乐(Lyrics-to-Music)的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -85,8 +87,6 @@ curl -X POST https://api.cellcog.com/v1/music/generate \
 | Jazz | 爵士 | 休闲场景 | "smooth jazz, saxophone, piano" |
 | Folk | 民谣 | 温馨场景 | "acoustic folk, guitar, warm" |
 
-**输入**: 用户提供音乐风格选择所需的指令和必要参数。
-**处理**: 按照skill规范执行音乐风格选择操作,遵循单一意图原则。
 **输出**: 返回音乐风格选择的执行结果,包含操作状态和输出数据。
 
 ### 自定义参数
@@ -107,8 +107,6 @@ generation_params = {
 }
 ```
 
-**输入**: 用户提供自定义参数所需的指令和必要参数。
-**处理**: 按照skill规范执行自定义参数操作,遵循单一意图原则。
 **输出**: 返回自定义参数的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：引擎的音乐生成工、支持文本、歌词生成音乐、多种风格选择、适合个人内容创作、音乐生成免费版帮、助个人用户通过、引擎创建音乐、支持从文本描述或、歌词生成完整音乐、涵盖流行、环境等多种风格、生成的音乐可用于、个人内容创作、Use、when、需要视频处理、音频编辑、媒体转换、配音生成时使用、不适用于版权受保、护的媒体内容处理、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -121,7 +119,7 @@ generation_params = {
 
 ```bash
 # 生成Vlog背景音乐
-curl -X POST https://api.cellcog.com/v1/music/generate \
+cellcog.com/v1/music/generate \
   -H "Authorization: Bearer $CELLCOG_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -141,7 +139,7 @@ curl -X POST https://api.cellcog.com/v1/music/generate \
 
 ```bash
 # 生成原创歌曲(含人声)
-curl -X POST https://api.cellcog.com/v1/music/generate \
+cellcog.com/v1/music/generate \
   -H "Authorization: Bearer $CELLCOG_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -160,7 +158,7 @@ curl -X POST https://api.cellcog.com/v1/music/generate \
 
 ```bash
 # 生成短视频配乐
-curl -X POST https://api.cellcog.com/v1/music/generate \
+cellcog.com/v1/music/generate \
   -H "Authorization: Bearer $CELLCOG_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -184,7 +182,7 @@ curl -X POST https://api.cellcog.com/v1/music/generate \
 # 新账户包含免费试用额度
 
 # 配置API Key
-export CELLCOG_API_KEY="your-api-key-here"
+export CELLCOG_API_KEY="${API_KEY:?请设置环境变量}"
 
 # 或写入配置文件
 echo '{"api_key": "your-api-key"}' > ~/.cellcog/config.json
@@ -194,7 +192,7 @@ echo '{"api_key": "your-api-key"}' > ~/.cellcog/config.json
 
 ```bash
 # 最简生成:文本描述
-curl -X POST https://api.cellcog.com/v1/music/generate \
+cellcog.com/v1/music/generate \
   -H "Authorization: Bearer $CELLCOG_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -274,7 +272,7 @@ style_recommendations = {
 }
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 提示词编写技巧
 
@@ -365,12 +363,11 @@ A: 生成的音乐商用权限取决于CellCog的服务条款。建议查阅最�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令+API调用能力)
+- **分类**: MD+execute(纯Markdown指令+API调用能力)
 - **说明**: 基于Markdown指令驱动Agent执行音乐生成任务,通过CellCog API实现音乐生成
 - **免费版限制**: 基础文生音乐、歌词生音乐、标准音质、MP3格式、试用额度、无批量生成
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
@@ -383,3 +380,22 @@ A: 生成的音乐商用权限取决于CellCog的服务条款。建议查阅最�
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

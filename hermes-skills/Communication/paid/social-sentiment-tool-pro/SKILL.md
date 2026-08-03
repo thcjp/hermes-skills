@@ -1,4 +1,5 @@
 ---
+
 slug: social-sentiment-tool-pro
 name: social-sentiment-tool-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: 社交情感分析专业版
 summary: "企业级社交情感分析系统,支持多平台采集、LLM增强分析、病毒传播检测、竞品对比与定时监控告警。社交情感分析专业版为企业团队提供高阶社交媒体情感监控与分析能力。核心能力:"
 license: Proprietary
 edition: pro
-description: '社交情感分析专业版为企业团队提供高阶社交媒体情感监控与分析能力。核心能力:
-
+description: "社交情感分析专业版为企业团队提供高阶社交媒体情感监控与分析能力。核心能力:。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
   - 多平台社交数据批量采集(Twitter/Reddit/Instagram等)
 
   - LLM增强情感分析(准确率85-95%)
@@ -48,7 +48,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+
 ---
+
 # 社交情感分析专业版
 ## 概述
 社交情感分析专业版是企业级社交媒体情感监控与分析系统。在免费版单平台采集、词典法分类、基础主题提取的基础上,专业版扩展了多平台社交数据批量采集(Twitter/Reddit/Instagram等)、LLM增强情感分析(准确率85-95%)、病毒式传播内容检测、竞品情感对比分析、定时监控与负面舆情告警、可视化报告生成等企业级能力.
@@ -70,7 +72,6 @@ category: "Communication"
 | 可视化 | 不支持 | 图表+HTML报告 |
 | 情感趋势 | 基础时间统计 | 趋势预测与异常检测 |
 
-**输入**: 用户提供免费版 vs 专业版能力对比所需的指令和必要参数.
 **处理**: 解析免费版 vs 专业版能力对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版 vs 专业版能力对比的响应数据,包含状态码、结果和日志.
 ### 专业版独有功能
@@ -81,12 +82,11 @@ category: "Communication"
 5. **定时监控告警**:配置定时监控任务,负面舆情突增时自动告警
 6. **可视化报告**:生成含图表的HTML/PDF报告,便于分享与汇报
 
-**输入**: 用户提供专业版独有功能所需的指令和必要参数.
 **处理**: 解析专业版独有功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回专业版独有功能的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -102,22 +102,17 @@ category: "Communication"
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
 ```bash
-# 多平台数据采集
 python （请参考skill目录中的脚本文件） collect \
   --brand "YourBrand" \
   --platforms twitter reddit instagram \
   --days 30 \
   --output /data/brand-mentions/
-# ...
-# LLM增强情感分析
 python （请参考skill目录中的脚本文件） analyze \
   --data /data/brand-mentions/ \
   --engine llm \
   --extract-themes \
   --detect-viral \
   --output /reports/brand-sentiment.json
-# ...
-# 生成可视化报告
 python （请参考skill目录中的脚本文件） report \
   --data /reports/brand-sentiment.json \
   --format html \
@@ -129,21 +124,17 @@ python （请参考skill目录中的脚本文件） report \
 
 ```text
 品牌情感报告 | YourBrand | 2026-07-18
-# ...
 情感得分: 72/100 | 总提及: 14,832
 正面: 58% | 负面: 24% | 中性: 18%
-# ...
 平台分布:
   Twitter:  8,234条 (正面 55% | 负面 26%)
   Reddit:   4,102条 (正面 62% | 负面 20%)
   Instagram: 2,496条 (正面 61% | 负面 25%)
-# ...
 主题分析:
   产品性能: 2,034条 (正面 19% | 负面 81%) [需关注]
   用户体验: 1,856条 (正面 72% | 负面 28%) [优势]
   客户服务: 1,432条 (正面 45% | 负面 55%) [需改进]
   定价策略:   892条 (正面 38% | 负面 62%) [需关注]
-# ...
 病毒式传播内容 (Top 10):
   1. [负面] "品牌X又出bug了,气死了!" - 12.3K点赞, 3.4K转发
   2. [正面] "用了品牌X一个月,效率提升50%" - 8.7K点赞, 2.1K转发
@@ -153,21 +144,16 @@ python （请参考skill目录中的脚本文件） report \
 ### 场景二:竞品情感对比分析
 市场团队需要将自身品牌与3个竞品的情感得分进行对比,识别相对位置.
 ```bash
-# 批量采集竞品数据
 python （请参考skill目录中的脚本文件） collect \
   --brands "OurBrand" "CompetitorA" "CompetitorB" "CompetitorC" \
   --platforms twitter reddit \
   --days 30 \
   --output /data/competitive/
-# ...
-# 对比分析
 python （请参考skill目录中的脚本文件） compare \
   --data /data/competitive/ \
   --engine llm \
   --output /reports/competitive-comparison.json \
   --format html
-# ...
-# 生成对比报告
 python （请参考skill目录中的脚本文件） report \
   --data /reports/competitive-comparison.json \
   --template comparison \
@@ -178,14 +164,12 @@ python （请参考skill目录中的脚本文件） report \
 
 ```text
 竞品情感对比 | 最近30天
-# ...
 品牌          | 情感得分 | 总提及  | 正面% | 负面% | 趋势
 -------------|---------|---------|-------|-------|------
 OurBrand     |   72    | 14,832  |  58%  |  24%  |  +5
 CompetitorA  |   68    | 22,104  |  55%  |  27%  |  -3
 CompetitorB  |   45    |  8,732  |  42%  |  38%  |  -8
 CompetitorC  |   81    | 11,256  |  63%  |  19%  |  +2
-# ...
 优势主题: 用户体验(72%正面,领先竞品)
 劣势主题: 定价策略(38%正面,落后CompetitorC的62%)
 ```
@@ -193,7 +177,6 @@ CompetitorC  |   81    | 11,256  |  63%  |  19%  |  +2
 ### 场景三:负面舆情实时告警
 公关团队需要监控负面舆情,在负面提及突增时立即收到告警.
 ```bash
-# 配置定时监控任务
 python （请参考skill目录中的脚本文件） schedule add \
   --name "品牌负面舆情监控" \
   --cron "0 */4 * * *" \
@@ -204,11 +187,7 @@ python （请参考skill目录中的脚本文件） schedule add \
   --alert-on-viral true \
   --distribute "webhook:https://im.example.com/hook/pr-alerts" \
   --archive /reports/sentinel/
-# ...
-# 查看监控任务
 python （请参考skill目录中的脚本文件） schedule list
-# ...
-# 查看告警历史
 python （请参考skill目录中的脚本文件） alerts --last 7d
 ```
 
@@ -216,22 +195,18 @@ python （请参考skill目录中的脚本文件） alerts --last 7d
 
 ```text
 [舆情告警] YourBrand负面提及突增
-# ...
 时间: 2026-07-18 14:00
 窗口: 最近4小时
 负面占比: 42% (阈值35%)
 总提及: 342条 (较上4小时+156%)
-# ...
 病毒式传播:
   "品牌X客服态度太差了,避雷!" - 5.2K点赞,1.1K转发
   建议立即响应,避免进一步扩散
-# ...
 主题: 客户服务 (负面 78%)
 建议: 启动客服应急响应流程
 ```
 
 ## 不适用场景
-
 以下场景社交情感分析专业版不适合处理：
 
 - 实时流数据处理
@@ -239,7 +214,6 @@ python （请参考skill目录中的脚本文件） alerts --last 7d
 - 非结构化文本情感分析
 
 ## 触发条件
-
 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 1. 阅读## 核心能力章节了解skill功能
@@ -247,32 +221,21 @@ python （请参考skill目录中的脚本文件） alerts --last 7d
 3. 执行所需能力对应的命令
 4. 参考## 错误处理章节处理异常
 5. 查看## FAQ解答常见疑问
-
 ### 从免费版升级
 专业版完全兼容免费版,升级步骤:
 
 ```bash
-# 依赖说明
 pip3 install pandas httpx matplotlib jinja2
-# ...
-# 2. 验证免费版CSV数据可用
 python （请参考skill目录中的脚本文件） analyze --data existing.csv --engine dict
-# 输出与免费版词典法一致,确认兼容
-# 3. 使用LLM增强分析
-python （请参考skill目录中的脚本文件） analyze --data existing.csv --engine llm
 ```
 
 ### 首次多平台采集
 ```bash
-# 配置平台API凭证
-# config/credentials.yaml
 twitter:
   bearer_token: "${TWITTER_BEARER_TOKEN}"
 reddit:
   client_id: "${REDDIT_CLIENT_ID}"
   client_secret: "${REDDIT_CLIENT_SECRET}"
-# ...
-# 执行采集
 python （请参考skill目录中的脚本文件） collect \
   --brand "YourBrand" \
   --platforms twitter reddit \
@@ -282,15 +245,12 @@ python （请参考skill目录中的脚本文件） collect \
 
 ### 首次LLM增强分析
 ```bash
-# LLM增强情感分析
 python （请参考skill目录中的脚本文件） analyze \
   --data /data/mentions/ \
   --engine llm \
   --extract-themes \
   --detect-viral \
   --output /reports/analysis.json
-# ...
-# 对比词典法与LLM法结果
 python （请参考skill目录中的脚本文件） analyze --data /data/mentions/ --engine dict --output /reports/dict.json
 python （请参考skill目录中的脚本文件） analyze --data /data/mentions/ --engine llm --output /reports/llm.json
 python （请参考skill目录中的脚本文件） compare-engines --dict /reports/dict.json --llm /reports/llm.json
@@ -299,7 +259,6 @@ python （请参考skill目录中的脚本文件） compare-engines --dict /repo
 ## 示例
 ### 多平台采集配置
 ```yaml
-# config/collect.yaml
 platforms:
   twitter:
     enabled: true
@@ -308,17 +267,14 @@ platforms:
       - '"YourBrand" AND (love OR amazing)'
       - '"YourBrand" AND (hate OR terrible OR bad)'
     max_results: 10000
-# ...
   reddit:
     enabled: true
     subreddits: ["products", "reviews", "YourBrand"]
     queries: ["YourBrand"]
     max_results: 5000
-# ...
   instagram:
     enabled: false  # 需额外配置
     queries: ["#YourBrand"]
-# ...
 collection:
   default_days: 30
   batch_size: 100
@@ -328,10 +284,8 @@ collection:
 
 ### LLM分析配置
 ```yaml
-# config/analysis.yaml
 engine: llm
 model: "claude-sonnet"
-# ...
 sentiment:
   categories: [positive, negative, neutral, mixed]
   confidence_threshold: 0.7
@@ -353,7 +307,6 @@ viral_detection:
 
 ### 定时监控与告警配置
 ```yaml
-# config/schedules.yaml
 schedules:
   - name: "品牌情感监控(4小时)"
     cron: "0 */4 * * *"
@@ -370,7 +323,6 @@ schedules:
         - webhook:https://im.example.com/hook/pr-alerts
         - email:pr@corp.com
     archive: /reports/sentinel/
-# ...
   - name: "竞品周度对比"
     cron: "0 9 * * 1"
     brands: ["OurBrand", "CompetitorA", "CompetitorB"]
@@ -382,33 +334,27 @@ schedules:
 
 ### 可视化报告模板
 ```yaml
-# templates/corporate-report.yaml
 name: corporate-report
 displayName: 企业情感分析报告
 sections:
   - name: 执行摘要
     type: summary
     fields: [score, total_mentions, sentiment_distribution]
-# ...
   - name: 平台分布
     type: platform_breakdown
     chart: bar
-# ...
   - name: 主题分析
     type: theme_analysis
     chart: heatmap
     fields: [theme, sentiment_ratio, mention_count]
-# ...
   - name: 病毒内容
     type: viral_list
     limit: 10
     fields: [text, platform, engagement, sentiment]
-# ...
   - name: 趋势图
     type: trend
     chart: line
     timeframe: 30d
-# ...
   - name: 建议
     type: recommendations
     source: llm
@@ -420,15 +366,12 @@ charts:
     neutral: "#94a3b8"
 ```
 
-## 最佳实践
+## 优选实践
 ### 1. 多平台采集要覆盖用户群
 不同平台的用户画像不同。Twitter偏技术/媒体,Reddit偏深度讨论,Instagram偏视觉/生活方式。根据品牌用户群选择采集平台,确保覆盖面:
 
 ```bash
-# 技术产品:Twitter + Reddit
 --platforms twitter reddit
-# ...
-# 消费品:Twitter + Instagram + Reddit
 --platforms twitter instagram reddit
 ```
 
@@ -436,10 +379,7 @@ charts:
 LLM分析能理解上下文、反讽和复合表达,准确率显著高于词典法。对于重要决策,始终使用LLM引擎:
 
 ```bash
-# 重要报告用LLM
 python （请参考skill目录中的脚本文件） analyze --engine llm
-# ...
-# 快速预览可用词典法
 python （请参考skill目录中的脚本文件） analyze --engine dict
 ```
 
@@ -447,7 +387,6 @@ python （请参考skill目录中的脚本文件） analyze --engine dict
 病毒式负面内容的影响随时间指数增长。配置实时告警,在负面病毒内容出现后立即响应:
 
 ```bash
-# 配置病毒内容告警
 --alert-on-viral true --distribute "webhook:..."
 ```
 
@@ -455,7 +394,6 @@ python （请参考skill目录中的脚本文件） analyze --engine dict
 绝对情感得分受品牌规模影响。关注与竞品的相对位置(排名变化)比绝对分数更有意义:
 
 ```bash
-# 定期竞品对比
 python （请参考skill目录中的脚本文件） compare --brands "OurBrand" "CompetitorA" ...
 ```
 
@@ -463,7 +401,6 @@ python （请参考skill目录中的脚本文件） compare --brands "OurBrand" 
 单次分析是快照,趋势分析更有价值。拉长监控时间窗口(至少30天),观察情感变化趋势,识别异常波动:
 
 ```bash
-# 30天趋势分析
 python （请参考skill目录中的脚本文件） analyze --data /data/30d/ --trend --anomaly-detect
 ```
 
@@ -512,12 +449,38 @@ A: 所有定时监控结果自动归档至指定目录,按日期组织。归档�
 - **LLM API**: 由Agent平台内置提供,用于LLM增强情感分析与主题建模
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行Python脚本)
+- **分类**: MD+execute(纯Markdown指令,核心功能需要exec命令行执行Python脚本)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent调用Python脚本完成企业级社交媒体情感监控与分析任务。专业版在免费版基础上扩展多平台采集、LLM增强分析、病毒检测、竞品对比与定时告警能力,适合企业品牌口碑全面监控、竞品情感对比分析与负面舆情实时告警场景.
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级社交情感分析系统,支持多平台采集、LLM增强分析、病毒传播检测、竞品对比与定时监控告警。社交情感分析专业版为企业团
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 企业级社交情感分析系统,支持多平台采集、LLM增强分析、病毒传播检测、竞品对比与定时监控告警。社交情感分析专业版为企业团
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

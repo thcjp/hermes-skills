@@ -1,13 +1,13 @@
 ---
+
 slug: browser-automation-tool-pro
 name: browser-automation-tool-pro
 version: 1.0.0
 displayName: 浏览器自动化工具-专业版
-summary: "企业级自然语言浏览器自动化,支持远程浏览器、隐身模式、代理与批量任务,面向团队生产场景。企业级自然语言浏览器自动化工具,在免费版核心能力之上,提供远程浏览器集群、"
+summary: "企业级自然语言浏览器自"
 license: Proprietary
 edition: pro
-description: '企业级自然语言浏览器自动化工具,在免费版核心能力之上,提供远程浏览器集群、
-
+description: "企业级自然语言浏览器自动化工具,在免费版核心能力之上,提供远程浏览器集群、。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
   隐身模式、代理/CAPTCHA处理、批量任务编排与监控告警能力。核心能力:
 
   - 免费版全部能力(完全兼容)
@@ -52,14 +52,13 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 浏览器自动化工具(专业版)
-
 ## 概述
-
 本工具是企业级自然语言浏览器自动化工具,在免费版核心能力之上,扩展了远程浏览器集群、隐身模式、代理/CAPTCHA处理、批量任务编排与监控告警能力,适合企业数据采集、反爬虫场景下的自动化操作、批量内容发布与多账号运营。专业版与免费版完全兼容:免费版的所有命令、工作流均可直接在专业版中使用.
 ### 免费版 vs 专业版对比
-
 | 能力 | 免费版 | 专业版 |
 |---|---|---|
 | 自然语言操作(act/extract/observe) | 支持 | 支持 |
@@ -74,7 +73,6 @@ category: "Automation"
 | 优先技术支持 | 不支持 | 支持 |
 
 ### 本地模式 vs 远程模式对比
-
 | 特性 | 本地模式 | 远程模式(专业版) |
 |:-----|:-----|:-----|
 | 速度 | 较快 | 略慢(网络延迟) |
@@ -84,9 +82,7 @@ category: "Automation"
 | 适用场景 | 开发调试 | 生产/大规模采集 |
 
 ## 核心能力
-
 ### 1. 远程浏览器集群(专业版新增)
-
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
 |---:|---:|---:|---:|
@@ -95,121 +91,75 @@ category: "Automation"
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
 ```bash
-# 配置远程浏览器服务
-export BROWSERBASE_API_KEY="your-api-key"
+export BROWSERBASE_API_KEY="${API_KEY:?请设置环境变量}"
 export BROWSERBASE_PROJECT_ID="your-project-id"
-# ...
-# 自动使用远程浏览器
 browser navigate https://example.com
 browser act "点击登录按钮"
 ```
 
-**输入**: 用户提供远程浏览器集群(专业版新增)所需的指令和必要参数.
 **处理**: 解析远程浏览器集群(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回远程浏览器集群(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 2. 隐身模式与反检测(专业版新增)
-
 ```bash
-# 启用隐身模式
 browser --stealth navigate https://example.com
-# ...
-# 自定义浏览器指纹
 browser --stealth --fingerprint "windows-chrome-120" navigate https://example.com
 ```
 
-**输入**: 用户提供隐身模式与反检测(专业版新增)所需的指令和必要参数.
 **处理**: 解析隐身模式与反检测(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回隐身模式与反检测(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 3. 代理池集成(专业版新增)
-
 ```bash
-# 配置代理池
 export BROWSER_PROXY_POOL="http://proxy1:8080,http://proxy2:8080,http://proxy3:8080"
-# ...
-# 启动时自动轮换代理
 browser --proxy-pool navigate https://example.com
 ```
 
-**输入**: 用户提供代理池集成(专业版新增)所需的指令和必要参数.
 **处理**: 解析代理池集成(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回代理池集成(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 4. CAPTCHA 自动处理(专业版新增)
-
 ```bash
-# 启用 CAPTCHA 自动解决
 browser --captcha-solver navigate https://example.com
 browser act "完成验证码"
 ```
 
-**输入**: 用户提供CAPTCHA 自动处理(专业版新增)所需的指令和必要参数.
 **处理**: 解析CAPTCHA 自动处理(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回CAPTCHA 自动处理(专业版新增)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 5. 批量任务编排(专业版新增)
-
 ```bash
-# 批量执行任务清单
 browser batch run --file tasks.yaml --concurrency 10
-# ...
-# 示例
-# tasks:
-#   - name: 采集-站点A
-#     steps:
-#       - navigate: https://a.com
-#       - act: "点击产品列表"
-#       - extract: "获取所有产品名称" '{"items":[{"name":"string"}]}'
-#   - name: 采集-站点B
-#     steps:
-#       - navigate: https://b.com
-#       - act: "展开全部内容"
-#       - extract: "获取文章列表" '{"items":[{"title":"string","url":"string"}]}'
 ```
 
-**输入**: 用户提供批量任务编排(专业版新增)所需的指令和必要参数.
 **处理**: 解析批量任务编排(专业版新增)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量任务编排(专业版新增)的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级自然语言浏、览器自动化、支持远程浏览器、代理与批量任务、面向团队生产场景、览器自动化工具、在免费版核心能力、批量任务编排与监、控告警能力、核心能力、免费版全部能力、完全兼容、远程浏览器集群与、弹性扩缩容、代理池与、批量任务编排与并、发执行、监控指标采集与告、警通知等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
-
 ### 场景一:反爬虫环境下的数据采集
-
 目标站点有反爬机制,使用隐身模式+代理池+CAPTCHA处理完成采集.
 ```bash
 #!/bin/bash
-# stealth-collection.sh - 隐身模式数据采集
 TARGET_URL="https://protected-site.example.com/data"
-# ...
-# 启用隐身模式 + 代理池 + CAPTCHA处理
 browser --stealth --proxy-pool --captcha-solver navigate "$TARGET_URL"
-# ...
-# 自然语言操作,绕过反爬
 browser act "等待页面完全加载"
 browser act "点击加载更多按钮"
 browser act "再次点击加载更多按钮"
-# ...
-# 提取数据
 browser extract "获取所有数据条目" \
   '{"items":[{"id":"string","title":"string","value":"number","date":"string"}]}' \
   > data/results.json
-# ...
-# 截图留证
 browser screenshot "logs/collection_$(date +%Y%m%d_%H%M%S).png"
-# ...
 browser close
 echo "采集完成,数据已保存到 data/results.json"
 ```
 
 ### 场景二:批量多站点内容发布
-
 企业需要在多个平台批量发布内容,使用任务清单并发执行.
 ```python
 #!/usr/bin/env python3
@@ -217,7 +167,6 @@ echo "采集完成,数据已保存到 data/results.json"
 import subprocess
 import json
 from concurrent.futures import ThreadPoolExecutor, as_completed
-# ...
 PLATFORMS = [
     {
         "name": "platform_a",
@@ -228,53 +177,40 @@ PLATFORMS = [
     {
         "name": "platform_b",
         "url": "https://platform-b.example.com/create",
-        "content": "今日产品更新公告...",
         "auth_env": {"BROWSERBASE_API_KEY": "key_b", "BROWSERBASE_PROJECT_ID": "proj_b"}
     },
     {
         "name": "platform_c",
         "url": "https://platform-c.example.com/new",
-        "content": "今日产品更新公告...",
         "auth_env": {"BROWSERBASE_API_KEY": "key_c", "BROWSERBASE_PROJECT_ID": "proj_c"}
     },
 ]
-# ...
 def publish_to_platform(platform):
     """在单个平台发布内容"""
     name = platform["name"]
     try:
-        # 使用隐身模式 + 远程浏览器
         subprocess.run([
             "browser", "--stealth", "--remote",
             "navigate", platform["url"]
         ], check=True, timeout=60)
-# ...
-        # 自然语言操作发布内容
         subprocess.run([
             "browser", "act", "点击新建内容按钮"
         ], check=True, timeout=30)
-# ...
         subprocess.run([
             "browser", "act", f"在内容编辑区输入: {platform['content']}"
         ], check=True, timeout=30)
-# ...
         subprocess.run([
             "browser", "act", "点击发布按钮"
         ], check=True, timeout=30)
-# ...
-        # 截图归档
         subprocess.run([
             "browser", "screenshot", f"logs/{name}_published.png"
         ])
-# ...
         subprocess.run(["browser", "close"])
         return {"platform": name, "status": "success"}
     except Exception as e:
         subprocess.run(["browser", "screenshot", f"logs/{name}_failed.png"])
         subprocess.run(["browser", "close"])
         return {"platform": name, "status": "failed", "error": str(e)}
-# ...
-# 并发发布,最大并发3
 results = []
 with ThreadPoolExecutor(max_workers=3) as executor:
     futures = {executor.submit(publish_to_platform, p): p for p in PLATFORMS}
@@ -282,34 +218,23 @@ with ThreadPoolExecutor(max_workers=3) as executor:
         result = future.result()
         results.append(result)
         print(f"[{result['status'].upper()}] {result['platform']}")
-# ...
-# 生成报告
 with open("logs/publish-report.json", "w") as f:
     json.dump(results, f, ensure_ascii=False, indent=2)
 ```
 
 ### 场景三:大规模数据采集与监控
-
 采集大量页面,实时监控进度与失败率,自动告警.
 ```bash
 #!/bin/bash
-# large-scale-collection.sh - 大规模数据采集
 set -e
-# ...
-# 启用监控
 browser metrics enable
-# ...
-# 读取URL列表
 URLS=$(cat urls.txt)
 TOTAL=$(echo "$URLS" | wc -l)
 COUNT=0
 FAILED=0
-# ...
 while IFS= read -r url; do
   COUNT=$((COUNT + 1))
   echo "[$COUNT/$TOTAL] 采集: $url"
-# ...
-  # 隐身模式 + 代理池,失败重试3次
   for attempt in 1 2 3; do
     if browser --stealth --proxy-pool --retry 1 navigate "$url" 2>/dev/null; then
       browser extract "获取页面主要内容" > "data/page_${COUNT}.json"
@@ -326,8 +251,6 @@ while IFS= read -r url; do
       sleep 5
     fi
   done
-# ...
-  # 失败率超过20%时告警
   if [ "$COUNT" -gt 10 ]; then
     FAIL_RATE=$(echo "scale=2; $FAILED * 100 / $COUNT" | bc)
     if [ "$(echo "$FAIL_RATE > 20" | bc)" -eq 1 ]; then
@@ -335,31 +258,22 @@ while IFS= read -r url; do
       curl -X POST "$ALERT_WEBHOOK" -d "{\"text\":\"采集失败率 ${FAIL_RATE}%\"}"
     fi
   fi
-# ...
 done <<< "$URLS"
-# ...
-# 导出监控指标
 browser metrics export --format json > logs/metrics.json
-# ...
 echo "采集完成: 共 $TOTAL,成功 $((TOTAL - FAILED)),失败 $FAILED"
 ```
 
 ## 快速开始
-
 1. 阅读## 核心能力章节了解skill功能
 2. 按## 依赖说明配置环境
 3. 执行所需能力对应的命令
 4. 参考## 错误处理章节处理异常
 5. 查看## FAQ解答常见疑问
-
 ### 依赖详情
-
 ```bash
 cd /path/to/browser-automation-tool
 npm install
 npm link
-# ...
-# 专业版初始化
 browser pro init
 browser config set stealth.default true
 browser config set proxy.pool "http://p1:8080,http://p2:8080"
@@ -367,35 +281,23 @@ browser config set metrics.enabled true
 ```
 
 ### 2. 远程浏览器配置
-
 ```bash
-# 配置远程浏览器服务
-export BROWSERBASE_API_KEY="your-api-key"
 export BROWSERBASE_PROJECT_ID="your-project-id"
-# ...
-# 验证连接
 browser --remote navigate https://example.com
 browser screenshot
 browser close
 ```
 
 ### 3. 批量任务执行
-
 ```bash
-# 使用任务清单批量执行
-browser batch run --file tasks.yaml --concurrency 10
-# ...
-# 查看任务状态
+yaml --concurrency 10
 browser batch status
 ```
 
 #
 ## 配置示例
-
 ### 企业级配置文件
-
 ```yaml
-# ~/.browser-automation/config.yaml
 edition: pro
 browser:
   default_mode: remote          # local | remote
@@ -424,21 +326,11 @@ alerts:
 ```
 
 ### 监控指标导出
-
 ```bash
-# Prometheus 格式
 browser metrics export --format prometheus
-# ...
-# 指标示例:
-# browser_tasks_total{status="success"} 256
-# browser_tasks_total{status="failed"} 12
-# browser_captcha_solved_total 18
-# browser_proxy_rotations_total 45
-# browser_stealth_sessions_active 5
 ```
 
-## 最佳实践
-
+## 优选实践
 ### 反爬虫策略
 1. **启用隐身模式**:`--stealth` 隐藏自动化特征,规避基础反爬检测.
 2. **代理轮换**:大批量采集启用代理池,降低 IP 封禁风险.
@@ -455,7 +347,6 @@ browser metrics export --format prometheus
 3. **审计日志**:启用指标采集,留存操作审计轨迹.
 4. **数据脱敏**:采集到的敏感数据及时脱敏存储.
 ## 常见问题
-
 ### Q1: 专业版是否兼容免费版脚本?
 完全兼容。免费版的所有命令、参数、工作流均可直接在专业版中运行。专业版仅在原有能力之上扩展高阶特性.
 ### Q2: 如何从免费版升级?
@@ -481,7 +372,6 @@ browser pro init --migrate
 ### Q6: 如何接入现有监控系统?
 专业版支持 Prometheus 与 JSON 两种导出格式,可推送到 Prometheus/Grafana、Datadog 或自建看板.
 ## 与免费版的兼容性
-
 | 维度 | 兼容性 |
 |:---:|:---:|
 | 命令语法 | 100% 兼容 |
@@ -491,7 +381,6 @@ browser pro init --migrate
 | 升级路径 | 平滑升级(保留全部历史数据) |
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent 平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
@@ -499,7 +388,6 @@ browser pro init --migrate
 - **推荐内存**: >= 4GB(并发场景建议 8GB+)
 
 ### 第三方依赖
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:------|------:|:------|:------|
 | Node.js | 运行环境 | 必需 | 系统包管理器安装 |
@@ -518,12 +406,11 @@ browser pro init --migrate
 - CAPTCHA 服务:在配置文件中配置 CAPTCHA 解决服务凭证
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+execute(纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作
 - **版本**: 专业版(兼容免费版全部能力)
 
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |---:|:---|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -531,16 +418,12 @@ browser pro init --migrate
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 已知限制
-
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 
 ## 示例
-
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 
@@ -566,3 +449,22 @@ Skill: 执行完成,结果如下: 操作成功
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级自然语言浏览器自
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

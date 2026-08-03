@@ -1,6 +1,5 @@
 ---
-
-slug: "diagram-gen-tool-pro"
+slug: diagram-gen-tool-pro
 name: "diagram-gen-tool-pro"
 version: "1.0.0"
 displayName: "图表生成工具-专业版"
@@ -9,7 +8,7 @@ license: "Proprietary"
 edition: "pro"
 description: |-
   图表生成工具专业版，面向团队的全格式图表生成与管理平台。核心能力：
-  - 三大格式全覆盖：Draw。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
+  - 三大格式全覆盖：Draw。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。不适用于需要人工创意判断的任务.
 tags: Diagram,工作流,type,node,mermaid,children
 tools:
   - read
@@ -19,13 +18,12 @@ homepage: ""
 category: "Automation"
 
 ---
-
 # 图表生成工具（专业版）
 
 ## 概述
 
 图表生成工具专业版是全格式图表生成与管理平台，覆盖 Draw.io、Mermaid、Excalidraw 三大格式，支持网络拓扑、系统架构、流程图、泳道图、UML、ER图、思维导图和白板草图共八种图表类型。通过 JSON 规范驱动生成，结合质量门禁自动校验，确保输出质量.
-本版本与免费版完全兼容——免费版的 Mermaid 图表可直接在专业版中编辑和扩展。专业版新增 Draw.io 和 Excalidraw 格式支持，并通过 MCP工具实现自动化生成.
+本版本与免费版完全兼容——免费版的 Mermaid 图表可直接在专业版中编辑和扩展。专业版新增 Draw.io 和 Excalidraw 格式支持，并通过 工具实现自动化生成.
 ## 核心能力
 
 ### 格式与类型对比
@@ -41,7 +39,6 @@ category: "Automation"
 | 思维导图 | 不支持 | 支持 | Mermaid | 自动 |
 | 白板草图 | 不支持 | 支持 | Excalidraw | 自动 |
 
-**输入**: 用户提供格式与类型对比所需的指令和必要参数.
 **处理**: 解析格式与类型对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回格式与类型对比的响应数据,包含状态码、结果和日志.
 ### 核心能力(补充)
@@ -74,17 +71,16 @@ category: "Automation"
   - 批量图表生成
   - 自定义模板与 Playbook
   - 配置管理与路径定制
-  - MCP工具集成
+  - 工具集成
 ```
 
-**输入**: 用户提供核心能力所需的指令和必要参数.
 **处理**: 解析核心能力的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心能力的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -145,7 +141,7 @@ category: "Automation"
 ```
 
 ```bash
-# 通过 MCP工具 生成
+# 通过 工具 生成
 # 调用 mcp__mcp-diagram-generator__generate_diagram
 # 传入上述 JSON 规范
 # ...
@@ -281,14 +277,14 @@ for r in results:
 
 ## 快速开始
 
-### 第一步：配置 MCP工具
+### 领先步：配置 工具
 
 ```json
 {
-  "mcpServers": {
-    "mcp-diagram-generator": {
+  "protocolServers": {
+    "协议适配层-diagram-generator": {
       "command": "npx",
-      "args": ["-y", "mcp-diagram-generator"]
+      "args": ["-y", "协议适配层-diagram-generator"]
     }
   }
 }
@@ -297,14 +293,14 @@ for r in results:
 ### 第二步：初始化配置
 
 ```text
-# 调用 MCP工具 初始化默认配置
+# 调用 工具 初始化默认配置
 mcp__mcp-diagram-generator__init_config
 # ...
 # 查看当前配置
 mcp__mcp-diagram-generator__get_config
 ```
 
-### 第三步：生成第一张图表
+### 第三步：生成领先张图表
 
 ```json
 {
@@ -370,7 +366,7 @@ auto_fix:
   白板/手绘/非正式              → playbook-excalidraw
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **格式匹配场景**：文档内嵌用 Mermaid，复杂架构用 Draw.io，协作白板用 Excalidraw.
 2. **JSON 规范先行**：先构建 JSON 规范再调用生成器，便于调试和复用.
@@ -379,7 +375,7 @@ auto_fix:
 5. **质量门禁必过**：生成前验证 JSON 规范，避免生成失败.
 ```text
 专业版检查清单:
-[ ] MCP工具已配置并可用
+[ ] 工具已配置并可用
 [ ] JSON 规范通过质量门禁
 [ ] 格式选择符合使用场景
 [ ] 输出路径已配置
@@ -391,9 +387,9 @@ auto_fix:
 
 ## 常见问题
 
-### Q: MCP工具不可用怎么办？
+### Q: 工具不可用怎么办？
 
-A: 检查 MCP工具配置是否正确，重启 Agent 环境后重试。首次使用会自动创建 `.diagram-config.json` 和默认输出目录.
+A: 检查 工具配置是否正确，重启 Agent 环境后重试。首次使用会自动创建 `.diagram-config.json` 和默认输出目录.
 ### Q: JSON 规范校验失败怎么办？
 
 A: 检查以下几点：elements 是否为数组、ID 是否唯一、边的 source/target 是否指向存在的节点、边是否在顶层而非 children 内.
@@ -414,23 +410,23 @@ A: 可以。Draw.io 支持 `style` 对象自定义填充色、边框、圆角等
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
-- **Node.js**: 16+（MCP工具运行需要）
+- **Node.js**: 16+（工具运行需要）
 
 ### 依赖详情
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
 | Node.js 16+ | 运行时 | 必需 | nodejs.org 官方下载 |
-| mcp-diagram-generator | MCP工具 | 必需 | `npx -y mcp-diagram-generator` |
+| 协议适配层-diagram-generator | 工具 | 必需 | `npx -y 协议适配层-diagram-generator` |
 | Draw.io Desktop | 工具 | 可选 | drawio.com 下载（查看 .drawio） |
 | Excalidraw | 工具 | 可选 | excalidraw.com（查看 .excalidraw） |
 
 ### API Key 配置
 - 本Skill采用纯Markdown指令驱动，无需额外API Key
-- MCP工具通过本地 npx 运行，无需远程认证
+- 工具通过本地 npx 运行，无需远程认证
 
 ### 可用性分类
-- **分类**: MD+EXEC+MCP（Markdown指令 + 命令行 + MCP工具集成）
+- **分类**: MD+EXEC+协议适配层（Markdown指令 + 命令行 + 工具集成）
 - **说明**: 企业级AI Skill，支持全格式图表生成、批量操作与质量门禁
 - **适用规模**: 团队与企业级，支持多格式多类型批量生成
 - **兼容性**: 与免费版完全兼容，Mermaid 图表可无缝编辑扩展
@@ -465,3 +461,30 @@ A: 可以。Draw.io 支持 `style` 对象自定义填充色、边框、圆角等
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 全格式图表生成引擎，支持Draw.io/Mermaid/Excalidraw，覆盖8种图表类型与批量生成。
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 全格式图表生成引擎，支持Draw.io/Mermaid/Excalidraw，覆盖8种图表类型与批量生成。
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

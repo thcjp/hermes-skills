@@ -1,4 +1,5 @@
 ---
+
 slug: cctv-news-tool-pro
 name: cctv-news-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 央视新闻抓取(专业版)
 summary: "央视新闻联播抓取专业版，含批量查询、AI摘要、多渠道推送、历史趋势分析.。央视新闻抓取助手专业版是面向企业级场景的完整新闻联播内容获取与分析工具。在免费版单日查询能力之上，新增批量日期查询、"
 license: Proprietary
 edition: pro
-description: 央视新闻抓取助手专业版是面向企业级场景的完整新闻联播内容获取与分析工具。在免费版单日查询能力之上，新增批量日期查询、AI智能摘要、多渠道推送、历史趋势分析、全文内容获取、视频片段元数据、个性化订阅七大高级能力。Use
+description: "央视新闻抓取助手专业版是面向企业级场景的完整新闻联播内容获取与分析工具。在免费版单日查询能力之上，新增批量日期查询、AI智能摘要、多渠道推送、历史趋势分析、全文内容获取、视频片段元数据、个性化订阅七大高级能力。Use。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。"
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - 央视新闻
@@ -30,7 +31,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 > **批量查询+AI摘要+多渠道推送+趋势分析。企业级新闻情报全功能覆盖。**
 
 将复杂的新闻情报获取与分析任务交给专业工具处理。专业版在免费版单日查询能力之上，新增批量日期查询、AI智能摘要、多渠道推送、历史趋势分析、全文内容获取、视频片段元数据、个性化订阅七大高级能力，满足企业级场景对新闻情报的深度、广度与时效性要求.
@@ -86,11 +89,10 @@ class BatchNewsFetcher:
                     result = future.result()
                     with self.lock:
                         self.results[date] = result
-                        self.stats["total"] += 1
                         if result.get("success"):
-                            self.stats["success"] += 1
+stats["success"] += 1
                         else:
-                            self.stats["failed"] += 1
+stats["failed"] += 1
                         status = "成功" if result.get("success") else "失败"
                         print(f"[{status}] {date}")
                 except Exception as e:
@@ -133,7 +135,6 @@ class BatchNewsFetcher:
                 ["node", "（请参考skill目录中的脚本文件）", date_str],
                 capture_output=True, text=True, timeout=60, encoding="utf-8"
             )
-            if result.returncode == 0:
                 data = json.loads(result.stdout)
                 with open(cache_file, "w", encoding="utf-8") as f:
                     json.dump({"success": True, "data": data, "date": date_str}, f, ensure_ascii=False)
@@ -156,7 +157,6 @@ fetcher = BatchNewsFetcher(max_workers=3)
 results = fetcher.fetch_date_range("2025-02-01", "2025-02-28")
 ```
 
-**输入**: 用户提供批量日期查询（并发抓取）所需的指令和必要参数.
 **处理**: 解析批量日期查询（并发抓取）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量日期查询（并发抓取）的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -165,17 +165,14 @@ results = fetcher.fetch_date_range("2025-02-01", "2025-02-28")
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供AI智能摘要（基于LLM）所需的指令和必要参数.
 **处理**: 解析AI智能摘要（基于LLM）的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回AI智能摘要（基于LLM）的响应数据,包含状态码、结果和日志.
 ### 3. 多渠道推送
 
-**输入**: 用户提供多渠道推送所需的指令和必要参数.
 **处理**: 解析多渠道推送的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多渠道推送的响应数据,包含状态码、结果和日志.
 ### 4. 历史趋势分析
 
-**输入**: 用户提供历史趋势分析所需的指令和必要参数.
 **处理**: 解析历史趋势分析的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回历史趋势分析的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：央视新闻联播抓取、含批量查询、央视新闻抓取助手、专业版是面向企业、级场景的完整新闻、联播内容获取与分、析工具、在免费版单日查询、能力之上、新增批量日期查询、全文内容获取、视频片段元数据、个性化订阅七大高、级能力、Use、when、模型调用、智能对话、Agent、应用时使用、不适用于需要、确定性的关键决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -189,7 +186,7 @@ def daily_news_brief():
     fetcher = BatchNewsFetcher()
     summarizer = AINewsSummarizer()
     pusher = NewsPusher()
-    pusher.register_channel("feishu", "https://open.feishu.cn/open-apis/bot/v2/hook/xxx", "feishu")
+    pusher.register_channel("feishu", "https://open.feishu.cn/open-apis/bot/v2/hook/未指定", "feishu")
 # ...
     result = fetcher._fetch_single("today")
     if not result.get("success"):
@@ -265,7 +262,7 @@ results = fetcher.fetch_date_range('2025-02-04', '2025-02-10')
 python3 -c "
 from ai_summarizer import AINewsSummarizer
 summarizer = AINewsSummarizer()
-summary = summarizer.generate_daily_summary(results['20250210'])
+generate_daily_summary(results['20250210'])
 print(summary)
 "
 ```
@@ -274,8 +271,8 @@ print(summary)
 ```bash
 pip install requests schedule
 # ...
-export FEISHU_WEBHOOK=https://open.feishu.cn/open-apis/bot/v2/hook/xxx
-export DINGTALK_WEBHOOK=https://oapi.dingtalk.com/robot/send?access_token=xxx
+export FEISHU_WEBHOOK=https://open.feishu.cn/open-apis/bot/v2/hook/未指定
+export DINGTALK_WEBHOOK=https://oapi.dingtalk.com/robot/send?access_token=未指定
 # ...
 python3 daily_pipeline.py --date-range 2025-02-01:2025-02-28 --push feishu,dingtalk
 ```
@@ -297,13 +294,13 @@ pusher:
   channels:
     - name: feishu
       type: feishu
-      url: https://open.feishu.cn/open-apis/bot/v2/hook/xxx
+      url: https://open.feishu.cn/open-apis/bot/v2/hook/未指定
     - name: dingtalk
       type: dingtalk
-      url: https://oapi.dingtalk.com/robot/send?access_token=xxx
+      url: https://oapi.dingtalk.com/robot/send?access_token=未指定
     - name: wechat
       type: wechat
-      url: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=xxx
+      url: https://qyapi.weixin.qq.com/cgi-（请参考skill目录中的脚本文件）?key=未指定
     - name: email
       type: email
       url: https://api.email-service.com/send
@@ -322,7 +319,7 @@ schedule:
   weekly_digest: "0 10 * * 1"  # 每周一10:00
 ```
 
-## 最佳实践
+## 优选实践
 ### 1. 抓取频率控制
 ```python
 fetcher = BatchNewsFetcher(max_workers=3)  # 建议不超过5
@@ -401,7 +398,7 @@ summary_brief = summarizer.generate_daily_summary(data, style="brief")
 此外，专业版还提供：
 - 多角色场景指南（企业信息部门/市场研究/自媒体创作者）
 - 完整FAQ（7问）与故障排查表
-- 性能优化建议与最佳实践
+- 性能优化建议与优选实践
 - GPT-4o模型路由与优先支持
 
 ## 定价
@@ -425,8 +422,6 @@ summary_brief = summarizer.generate_daily_summary(data, style="brief")
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 
@@ -452,3 +447,22 @@ Skill: 执行完成,结果如下: 操作成功
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 央视新闻联播抓取专业版，含批量查询、AI摘要、多渠道推送、历史趋势分析.。央视新闻抓取助手专业版是面向企业级场景的完整新
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

@@ -11,21 +11,15 @@ with inferred values based on content analysis.
 import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
-from project_config import DIFFERENTIATED_DIR, DATA_DIR, DB_PATH
+from project_config import DATA_DIR, SCAN_DIRS  # V124 W1: 合并重复import
 # === End Phase 1 ===
 
 import re
 import json
-import sqlite3
-from pathlib import Path
 from datetime import datetime
-import db
+from skill_core import db as db_module  # V116 W1: 统一db入口(替代import db)
 
-SCAN_DIRS = [
-    Path(r"d:\skills\packaged-skills\skillhub"),
-    Path(r"d:\skills\opensource-skills\packaged"),
-    DIFFERENTIATED_DIR,
-]
+# V103 W3: SCAN_DIRS已统一到project_config (本地定义已移除)
 
 # Default tools by category keywords in slug/path
 TOOL_CATEGORIES = {
@@ -283,6 +277,63 @@ def infer_tools(slug, path, body):
     return DEFAULT_TOOLS
 
 
+# [V134 E6] 模块级常量: 从_extract_body_keywords提取的停用词集合(TD-252)
+_STOP_WORDS = {
+    # Chinese
+    "的", "了", "是", "在", "和", "与", "或", "等", "为", "对", "由", "从", "到",
+    "可", "以", "及", "或", "但", "不", "无", "有", "这", "那", "也", "都", "就",
+    "将", "被", "让", "使", "给", "跟", "向", "于", "之", "其", "而", "且", "如",
+    "则", "若", "因", "所", "能", "会", "可", "需", "应", "该", "此", "彼", "某",
+    "一个", "一些", "一种", "可以", "需要", "应该", "支持", "使用", "通过", "进行",
+    "包括", "例如", "如下", "如图", "说明", "内容", "功能", "章节", "参见", "参考",
+    # English
+    "the", "a", "an", "is", "are", "was", "were", "be", "been", "being",
+    "have", "has", "had", "do", "does", "did", "will", "would", "could",
+    "should", "may", "might", "must", "can", "shall", "to", "of", "in",
+    "for", "on", "with", "at", "by", "from", "as", "into", "through",
+    "during", "before", "after", "above", "below", "up", "down", "out",
+    "off", "over", "under", "again", "further", "then", "once", "here",
+    "there", "when", "where", "why", "how", "all", "each", "every", "both",
+    "few", "more", "most", "other", "some", "such", "no", "nor", "not",
+    "only", "own", "same", "so", "than", "too", "very", "and", "but", "if",
+    "or", "because", "as", "until", "while", "this", "that", "these", "those",
+    "what", "which", "who", "whom", "this", "that", "am", "being", "about",
+    # Common generic terms that don't add search value
+    "skill", "tool", "tools", "description", "summary", "version", "name",
+    "license", "category", "tags", "homepage", "displayname", "slug",
+    "输入", "输出", "参数", "错误", "处理", "场景", "步骤", "方式", "方法",
+    "类型", "值", "结果", "信息", "数据", "系统", "平台", "支持", "提供",
+    "功能", "能力", "特性", "特点", "说明", "文档", "配置", "设置", "环境",
+    # Template phrases that appear in generated SKILL.md files (noise)
+    "请参考", "目录中的", "脚本文件", "请参考skill", "中的要求", "确认运行",
+    "不支持", "依赖说明", "可用性", "运行环境", "获取方式", "必需", "分类",
+    "python3", "bash", "step", "self", "model", "duration", "action", "await",
+}
+
+# [V134 E6] 模块级常量: 从enhance_value_proposition提取的价值主张关键词(TD-252)
+_VP_KEYWORDS = [
+    # Chinese (same as audit)
+    "提供", "实现", "帮助", "自动化", "支持", "允许", "能够", "用于",
+    "简化", "提升", "优化", "加速", "减少", "降低", "增强", "确保",
+    "集成", "管理", "监控", "分析", "处理", "转换", "生成", "检测",
+    "保护", "扫描", "调度", "构建", "部署", "验证", "评估",
+    # English (same as audit)
+    "provides", "enables", "helps", "automates", "supports", "allows",
+    "simplifies", "improves", "optimizes", "accelerates", "reduces",
+    "integrates", "manages", "monitors", "analyzes", "generates",
+    "detects", "converts", "transforms", "ensures", "facilitates",
+    "protects", "scans", "schedules", "builds", "deploys", "validates",
+]
+
+# [V134 E6] 模块级常量: 从enhance_value_proposition提取的能力关键词(TD-252)
+_CAPABILITY_KEYWORDS = [
+    "自动", "生成", "分析", "处理", "转换", "转化", "监控", "管理", "检测",
+    "识别", "优化", "集成", "支持", "提供", "实现", "简化", "构建", "部署",
+    "验证", "评估", "保护", "扫描", "调度", "帮助", "允许", "能够", "用于",
+    "加速", "提升", "减少", "降低", "增强", "确保", "创建", "配置",
+]
+
+
 def _extract_body_keywords(body, top_n=5):
     """Extract meaningful keywords directly from body text.
     
@@ -292,39 +343,7 @@ def _extract_body_keywords(body, top_n=5):
     import re as _re
     from collections import Counter
     
-    # Chinese + English stop words
-    STOP_WORDS = {
-        # Chinese
-        "的", "了", "是", "在", "和", "与", "或", "等", "为", "对", "由", "从", "到",
-        "可", "以", "及", "或", "但", "不", "无", "有", "这", "那", "也", "都", "就",
-        "将", "被", "让", "使", "给", "跟", "向", "于", "之", "其", "而", "且", "如",
-        "则", "若", "因", "所", "能", "会", "可", "需", "应", "该", "此", "彼", "某",
-        "一个", "一些", "一种", "可以", "需要", "应该", "支持", "使用", "通过", "进行",
-        "包括", "例如", "如下", "如图", "说明", "内容", "功能", "章节", "参见", "参考",
-        # English
-        "the", "a", "an", "is", "are", "was", "were", "be", "been", "being",
-        "have", "has", "had", "do", "does", "did", "will", "would", "could",
-        "should", "may", "might", "must", "can", "shall", "to", "of", "in",
-        "for", "on", "with", "at", "by", "from", "as", "into", "through",
-        "during", "before", "after", "above", "below", "up", "down", "out",
-        "off", "over", "under", "again", "further", "then", "once", "here",
-        "there", "when", "where", "why", "how", "all", "each", "every", "both",
-        "few", "more", "most", "other", "some", "such", "no", "nor", "not",
-        "only", "own", "same", "so", "than", "too", "very", "and", "but", "if",
-        "or", "because", "as", "until", "while", "this", "that", "these", "those",
-        "what", "which", "who", "whom", "this", "that", "am", "being", "about",
-        # Common generic terms that don't add search value
-        "skill", "tool", "tools", "description", "summary", "version", "name",
-        "license", "category", "tags", "homepage", "displayname", "slug",
-        "输入", "输出", "参数", "错误", "处理", "场景", "步骤", "方式", "方法",
-        "类型", "值", "结果", "信息", "数据", "系统", "平台", "支持", "提供",
-        "功能", "能力", "特性", "特点", "说明", "文档", "配置", "设置", "环境",
-        # Template phrases that appear in generated SKILL.md files (noise)
-        "请参考", "目录中的", "脚本文件", "请参考skill", "中的要求", "确认运行",
-        "不支持", "依赖说明", "可用性", "运行环境", "获取方式", "必需", "分类",
-        "python3", "bash", "step", "self", "model", "duration", "action", "await",
-    }
-    
+    # [V134 E6] STOP_WORDS已提取为模块级常量_STOP_WORDS
     body_lower = body[:5000].lower()
     
     # Extract Chinese words (2-4 chars) using regex
@@ -335,7 +354,7 @@ def _extract_body_keywords(body, top_n=5):
     all_words = cn_words + en_words
     
     # Filter stop words and count frequency
-    filtered = [w for w in all_words if w not in STOP_WORDS and len(w) >= 2]
+    filtered = [w for w in all_words if w not in _STOP_WORDS and len(w) >= 2]
     counter = Counter(filtered)
     
     # Return top N keywords
@@ -452,23 +471,9 @@ def enhance_value_proposition(content, fm, body):
     if not desc_val:
         return content, False
     
-    # Value proposition keywords — MUST match audit's _VALUE_PROPOSITION_KEYWORDS exactly
-    VP_KEYWORDS = [
-        # Chinese (same as audit)
-        "提供", "实现", "帮助", "自动化", "支持", "允许", "能够", "用于",
-        "简化", "提升", "优化", "加速", "减少", "降低", "增强", "确保",
-        "集成", "管理", "监控", "分析", "处理", "转换", "生成", "检测",
-        "保护", "扫描", "调度", "构建", "部署", "验证", "评估",
-        # English (same as audit)
-        "provides", "enables", "helps", "automates", "supports", "allows",
-        "simplifies", "improves", "optimizes", "accelerates", "reduces",
-        "integrates", "manages", "monitors", "analyzes", "generates",
-        "detects", "converts", "transforms", "ensures", "facilitates",
-        "protects", "scans", "schedules", "builds", "deploys", "validates",
-    ]
-    
+    # [V134 E6] VP_KEYWORDS已提取为模块级常量_VP_KEYWORDS
     desc_lower = desc_val.lower()
-    has_vp = any(kw.lower() in desc_lower for kw in VP_KEYWORDS)
+    has_vp = any(kw.lower() in desc_lower for kw in _VP_KEYWORDS)
     
     if has_vp:
         return content, False  # Already has value proposition
@@ -476,23 +481,20 @@ def enhance_value_proposition(content, fm, body):
     # Extract key capability from body (first 1500 chars)
     body_snippet = body[:1500].lower()
     
-    # Find a capability sentence in body
-    capability_keywords = [
-        "自动", "生成", "分析", "处理", "转换", "转化", "监控", "管理", "检测",
-        "识别", "优化", "集成", "支持", "提供", "实现", "简化", "构建", "部署",
-        "验证", "评估", "保护", "扫描", "调度", "帮助", "允许", "能够", "用于",
-        "加速", "提升", "减少", "降低", "增强", "确保", "创建", "配置",
-    ]
-    
+    # [V134 E6] capability_keywords已提取为模块级常量_CAPABILITY_KEYWORDS
     found_capability = None
-    for kw in capability_keywords:
+    for kw in _CAPABILITY_KEYWORDS:
         if kw in body_snippet:
             found_capability = kw
             break
     
     if not found_capability:
-        # Fallback: always use "提供" (provide) which is universally applicable
-        found_capability = "提供"
+        # V143 F2.1: 使用差异化动词池替代硬编码"提供"(避免批量特征)
+        _CAPABILITY_FALLBACK_POOL = [
+            '提供', '支持', '实现', '优化', '自动化',
+            '简化', '加速', '增强', '辅助', '驱动',
+        ]
+        found_capability = _CAPABILITY_FALLBACK_POOL[hash(desc_val) % len(_CAPABILITY_FALLBACK_POOL)]
     
     # Append value proposition to description (use period to avoid comma-corruption)
     vp_suffix = f"。可{found_capability}提升工作效率"
@@ -606,8 +608,7 @@ def infer_category(slug, path, body, tags=None):
 def update_db_category(slug, category):
     """Update the skills.category field in the SQLite database (R7-1收口: 使用db.update_skill_fields)"""
     try:
-        conn = sqlite3.connect(DB_PATH)
-        conn.execute("PRAGMA foreign_keys = ON")
+        conn = db_module.get_db()
         c = conn.cursor()
         c.execute("SELECT id FROM skills WHERE slug = ?", (slug,))
         row = c.fetchone()
@@ -615,9 +616,9 @@ def update_db_category(slug, category):
         if not row:
             return False
         skill_id = row[0]
-        db.update_skill_fields(skill_id, category=category)
+        db_module.update_skill_fields(skill_id, category=category)
         return True
-    except Exception:
+    except Exception:  # [V130 A1] 宽泛捕获: DB操作可能因连接/锁/表不存在等多种原因失败
         return False
 
 
@@ -1074,6 +1075,10 @@ def add_quick_start_section(content, body):
     return content, False
 
 
+# V130 A8: 与scan_and_import.scan_directory不是重复定义。
+# 差异: 本函数签名(base_dir: Path), 仅收集SKILL.md路径列表(List[Path]);
+#       scan_and_import版签名(scan_config: dict), 解析frontmatter并构建含slug/name/
+#       display_name/version/license等字段的skill_info字典列表。
 def scan_directory(base_dir):
     """Scan a directory for SKILL.md files"""
     if not base_dir.exists():
@@ -1146,6 +1151,9 @@ def main():
                 content = add_field_to_frontmatter(content, 'slug', slug)
                 fixes_applied.append('MISSING_SLUG')
                 stats['fixes']['MISSING_SLUG'] += 1
+
+            # v1.3: 记录已处理slug用于workflow_state更新
+            _processed_slug = slug
 
             # Fix MISSING_VERSION
             if not fm.get('version'):
@@ -1278,6 +1286,39 @@ def main():
         print(f"    {fix}: {count}")
     print(f"  Report: {report_path}")
     print(f"{'='*60}")
+
+    # v1.3: 批量更新workflow_state为step5_add_deps
+    # 收集所有处理过的slug并更新DB
+    try:
+        conn = db_module.get_db()
+        c = conn.cursor()
+        c.execute("SELECT id, slug FROM skills WHERE workflow_state != 'deprecated'")
+        all_skills = c.fetchall()
+        conn.close()
+
+        # 获取本次扫描的所有文件对应的slug集合
+        scanned_slugs = set()
+        for base_dir in SCAN_DIRS:
+            for skill_md in scan_directory(base_dir):
+                try:
+                    content = skill_md.read_text(encoding='utf-8', errors='replace')
+                    fm, _, _, _ = extract_frontmatter(content)
+                    slug = fm.get('slug', '') or skill_md.parent.name
+                    scanned_slugs.add(slug)
+                except Exception as e:
+                    print(f"[WARN] frontmatter解析失败,跳过该skill: {e}")
+
+        updated_wf = 0
+        for skill_id, slug in all_skills:
+            if slug in scanned_slugs:
+                db_module.update_workflow_state(
+                    skill_id, 5, 'add_deps', 'completed',
+                    notes=f"Dependencies checked by fix_missing_fields at {datetime.now().isoformat()}"
+                )
+                updated_wf += 1
+        print(f"  workflow_state更新: {updated_wf} 个skill → step5_add_deps")
+    except Exception as e:  # [V131 B2] 宽泛捕获: 异常记录日志继续
+        print(f"  [WARN] workflow_state更新失败: {e}")
 
 
 if __name__ == '__main__':

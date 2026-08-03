@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Self-Integration
 
 Connect to any external app and perform actions on it. Uses the [Membrane](https://getmembrane.com) API.

@@ -33,7 +33,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Self-Improving Proactive Decision Making Agent
 
 ## When to Use

@@ -17,7 +17,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # å¤¸åæ«æç - æä»¶æ«æå¢å¼º Alibaba-Quark-Scan
 
 > **隐私与数据流向提示**
@@ -49,7 +48,6 @@ skill-platform config set skills.entries.alibaba-quark-scan.env.SCAN_WEBSERVICE_
 * **严禁幻觉，禁止伪造请求和响应，不得沿用上一次的场景、参数进行假设**
 * **必须严格按照本指南指定的固定格式执行，不允许自行修改命令**
 * **强制独立意图识别：严禁参考对话历史或沿用上次场景；必须针对当前指令独立分析，不得继承任何前序状态或假设**
-
 
 第一步：**输入处理**
 

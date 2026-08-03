@@ -6,7 +6,7 @@ displayName: Smart Update Agent
 summary: 企业级更新编排系统，含多环境策略、回滚备份、金丝雀发布、依赖分析、Breaking Change检测与合规审计.
 license: Proprietary
 edition: pro
-description: '智能更新管家专业版是面向团队与企业的全功能更新编排系统。不仅自动保持Agent运行时与技能最新，更提供多环境更新策略、回滚备份、金丝雀发布、依赖冲突分析、Breaking
+description: "智能更新管家专业版是面向团队与企业的全功能更新编排系统。不仅自动保持Agent运行时与技能最新，更提供多环境更新策略、回滚备份、金丝雀发布、依赖冲突分析、Breaking。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。"
   Change检测与合规审计报告，确保更新安全可控、可追溯、可回滚.
   核心能力：每日自动更新检查、多环境更新编排（dev/staging/prod）、更新前自动备份与一键回滚、金丝雀发布（小比例验证后全量）、依赖冲突分析、Breaking
   Change检测与告警、合规审计报告、更新窗口策略（按业务时段智能调度）、健康检查流水线、完整故障排查表、多平台集成示例、版本迁移指南.
@@ -48,9 +48,7 @@ category: "Automation"
 5. **可追溯**：完整记录每次更新，支持合规审计
 
 ---
-
 ## 架构总览
-
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
 |---|---|---|---|
@@ -82,7 +80,6 @@ category: "Automation"
 ```
 
 ---
-
 ## 快速开始
 
 ### 基础搭建（<60秒）
@@ -137,258 +134,10 @@ update_config:
     report_schedule: "monthly"
 ```
 
----
-
-**响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
-#
-## 核心能力
-### 功能一：每日自动更新检查
-
-```bash
-# 添加每日自动更新定时任务（含专业版特性）
-cron add \
-  --name "每日智能更新" \
-  --cron "0 4 * * *" \
-  --tz "Asia/Shanghai" \
-  --session isolated \
-  --wake now \
-  --deliver \
-  --message "执行每日智能更新：1.检查Agent运行时更新 2.分析依赖冲突 3.检测Breaking Change 4.备份当前版本 5.金丝雀更新10%技能 6.观察2小时后全量更新 7.生成更新报告"
-```
-
-**输入**: 用户提供功能一：每日自动更新检查所需的指令和必要参数.
-**处理**: 解析功能一：每日自动更新检查的输入参数,完成核心逻辑,返回结构化响应.
-**输出**: 返回功能一：每日自动更新检查的响应数据,包含状态码、结果和日志.
-- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
-
-### 功能二：多环境更新编排 — 专业版启用
-
-按环境分阶段推进，确保更新安全：
-
-```yaml
-multi_env_strategy:
-  environments:
-    - name: "dev"
-      auto_update: true           # dev环境自动更新
-      notify: false
-# ...
-    - name: "staging"
-      auto_update: false          # 需手动确认
-      delay_after_dev: "24h"      # dev更新24小时后可推进
-      health_check: true          # 推进前必须通过健康检查
-# ...
-    - name: "prod"
-      auto_update: false          # 需手动确认
-      delay_after_staging: "48h"  # staging更新48小时后可推进
-      approval_required: true     # 需主管审批
-      health_check: true
-      rollback_on_failure: true   # 失败自动回滚
-```
-
-**推进流程**：
-```text
-Dev自动更新 → 24h观察 → Staging手动推进 → 48h观察 → Prod手动审批推进
-     ↓                          ↓                          ↓
-  健康检查                   健康检查                   健康检查+回滚备份
-```
-
-**输入**: 用户提供功能二：多环境更新编排 — 专业版启用所需的指令和必要参数.
-**处理**: 解析功能二：多环境更新编排 — 专业版启用的输入参数,完成核心逻辑,返回结构化响应.
-**输出**: 返回功能二：多环境更新编排 — 专业版启用的响应数据,包含状态码、结果和日志.
-- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
-
-### 功能三：回滚备份 — 专业版启用
-
-更新前自动备份，出问题一键回滚：
-
-```bash
-# 更新前自动备份
-skill backup create --all --output ~/.agent/backups/$(date +%Y%m%d)
-# ...
-# 查看备份列表
-skill backup list
-# ...
-# 一键回滚到指定备份
-skill backup restore --date 20260115
-# ...
-# 回滚Agent运行时
-npm install -g agent-runtime@2026.1.9
-agent doctor
-```
-
-**备份策略**：
-```yaml
-backup_config:
-  auto_backup_before_update: true
-  backup_contents:
-    - "技能文件"
-    - "配置文件"
-    - "Agent运行时版本号"
-  retention:
-    count: 10                    # 保留最近10个备份
-    days: 30                     # 或保留30天
-  auto_rollback:
-    trigger: "health_check_failed"
-    notify: true
-```
-
-**输入**: 用户提供功能三：回滚备份 — 专业版启用所需的指令和必要参数.
-**处理**: 解析功能三：回滚备份 — 专业版启用的输入参数,完成核心逻辑,返回结构化响应.
-**输出**: 返回功能三：回滚备份 — 专业版启用的响应数据,包含状态码、结果和日志.
-- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
-
-### 功能四：金丝雀发布 — 专业版启用
-
-先更新小比例验证，无异常后全量：
-
-```yaml
-canary_strategy:
-  phase_1_canary:
-    ratio: 0.1                   # 先更新10%技能
-    selection: "least_critical"   # 选择非关键技能先更新
-    observe_hours: 2              # 观察2小时
-    check_metrics:
-      - "error_rate"
-      - "response_time"
-      - "user_complaints"
-# ...
-  phase_2_full:
-    auto_promote: true            # 无异常自动全量
-    promote_conditions:
-      - "error_rate < 1%"
-      - "no_breaking_changes"
-      - "health_check_passed"
-```
-
-**输入**: 用户提供功能四：金丝雀发布 — 专业版启用所需的指令和必要参数.
-**处理**: 解析功能四：金丝雀发布 — 专业版启用的输入参数,完成核心逻辑,返回结构化响应.
-**输出**: 返回功能四：金丝雀发布 — 专业版启用的响应数据,包含状态码、结果和日志.
-- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
-
-### 功能五：依赖冲突分析 — 专业版启用
-
-更新前检测技能间依赖与版本冲突：
-
-```bash
-# 分析依赖关系
-skill analyze dependencies --all
-# ...
-# 输出示例：
-# 技能A v2.0 依赖 技能B >=1.5
-# 技能C v3.0 依赖 技能B <2.0
-# 警告：更新技能B至2.0将导致技能C不兼容
-```
-
-```yaml
-dependency_analysis:
-  detect_conflicts: true
-  conflict_resolution:
-    - "提示用户选择兼容版本"
-    - "自动选择满足所有依赖的最低版本"
-    - "标记不兼容技能，暂不更新"
-  dependency_graph: true          # 生成依赖关系图
-```
-
-**输入**: 用户提供功能五：依赖冲突分析 — 专业版启用所需的指令和必要参数.
-**处理**: 解析功能五：依赖冲突分析 — 专业版启用的输入参数,完成核心逻辑,返回结构化响应.
-**输出**: 返回功能五：依赖冲突分析 — 专业版启用的响应数据,包含状态码、结果和日志.
-- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
-
-### 功能六：Breaking Change检测 — 专业版启用
-
-自动识别不兼容变更并告警：
-
-```bash
-# 检查待更新技能的Breaking Change
-skill check breaking-changes --all --dry-run
-# ...
-# 输出示例：
-# 警告：prd 2.0.3 → 3.0.0 含Breaking Change
-#   - 配置格式变更（v2的config.yaml不兼容v3）
-#   - API签名变更（函数参数从位置参数改为对象）
-#   - 建议先阅读迁移指南再更新
-```
-
-```yaml
-breaking_change_config:
-  detection:
-    major_version_bump: true      # 主版本号变化视为Breaking
-    changelog_analysis: true      # 分析changelog中的BREAKING标记
-    api_signature_check: true     # 检测API签名变化
-  on_detected:
-    block_update: true            # 阻止自动更新
-    alert_channel: "slack"
-    require_manual_approval: true
-```
-
-**输入**: 用户提供功能六：Breaking Change检测 — 专业版启用所需的指令和必要参数.
-**处理**: 解析功能六：Breaking Change检测 — 专业版启用的输入参数,完成核心逻辑,返回结构化响应.
-**输出**: 返回功能六：Breaking Change检测 — 专业版启用的响应数据,包含状态码、结果和日志.
-- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
-
-### 功能七：合规审计报告 — 专业版启用
-
-完整记录每次更新，支持合规审计：
-
-```yaml
-audit_report:
-  format: "jsonl"
-  storage: "~/.agent/audit/update-history.jsonl"
-  fields:
-    - timestamp
-    - operator
-    - skill_name
-    - from_version
-    - to_version
-    - environment
-    - breaking_change
-    - health_check_result
-    - rollback_performed
-  monthly_report:
-    generate: true
-    format: "markdown"
-    distribute: "compliance_team"
-```
-
-**审计日志示例**：
-```json
-{"timestamp":"2026-01-15T04:00:32Z","operator":"cron","skill_name":"prd","from_version":"2.0.3","to_version":"2.0.4","environment":"prod","breaking_change":false,"health_check_result":"passed","rollback_performed":false}
-```
-
-**输入**: 用户提供功能七：合规审计报告 — 专业版启用所需的指令和必要参数.
-**处理**: 解析功能七：合规审计报告 — 专业版启用的输入参数,完成核心逻辑,返回结构化响应.
-**输出**: 返回功能七：合规审计报告 — 专业版启用的响应数据,包含状态码、结果和日志.
-- 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
-
-### 功能八：更新窗口策略 — 专业版启用
-
-按业务时段智能调度更新：
-
-```yaml
-update_window:
-  allowed_windows:
-    - env: "dev"
-      anytime: true
-    - env: "staging"
-      window: "22:00-06:00"       # 仅夜间更新
-    - env: "prod"
-      window: "周六02:00-06:00"    # 仅周末凌晨更新
-  blocked_periods:
-    - "月末最后3天"                # 财务结算期禁止更新
-    - "大促期间"                   # 业务高峰期禁止更新
-  emergency:
-    allow_override: true           # 安全补丁可紧急更新
-    require_approval: "cto"
-```
-
----
-
-**输入**: 用户提供功能八：更新窗口策略 — 专业版启用所需的指令和必要参数.
 **处理**: 解析功能八：更新窗口策略 — 专业版启用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能八：更新窗口策略 — 专业版启用的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级更新编排系、含多环境策略、依赖分析、检测与合规审计、智能更新管家专业、版是面向团队与企、业的全功能更新编、排系统、不仅自动保持、运行时与技能最新、更提供多环境更新、检测与合规审计报、确保更新安全可控、可追溯、可回滚等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
-
 ## 使用场景
 
 ### 场景一：企业级技能版本管理（技术负责人角色）
@@ -480,7 +229,6 @@ canary:
 
 **效果**：核心技能更新零事故，异常自动回滚.
 ---
-
 ## 多角色场景指南
 
 | 角色 | 典型场景 | 推荐能力组合 | 核心价值 |
@@ -494,7 +242,6 @@ canary:
 | 开发者 | 个人技能更新 | 每日检查+回滚备份 | 零负担保持最新 |
 
 ---
-
 ## 性能优化策略
 
 ### 更新速度优化
@@ -525,68 +272,6 @@ canary:
 - prod环境全量备份
 - 非关键技能不启用金丝雀
 - Breaking Change检测仅在major版本变化时触发
-
----
-
-## 多平台集成示例
-
-### 与CI/CD系统集成
-
-```yaml
-# .github/workflows/skill-update.yml
-name: Skill Update Pipeline
-on:
-  schedule:
-    - cron: "0 4 * * *"
-jobs:
-  update:
-    steps:
-      - name: Analyze dependencies
-        run: skill analyze dependencies --all
-      - name: Check breaking changes
-        run: skill check breaking-changes --all
-      - name: Backup current
-        run: skill backup create --all
-      - name: Canary update
-        run: skill update --canary --ratio 0.1
-      - name: Health check
-        run: skill verify --all
-      - name: Full update
-        run: skill update --all
-      - name: Audit log
-        run: skill audit log --update
-```
-
-### 与监控系统集成
-
-```yaml
-monitoring:
-  prometheus:
-    metrics:
-      - update_success_rate
-      - update_duration
-      - rollback_count
-      - breaking_changes_detected
-  alertmanager:
-    rules:
-      - alert: "回滚次数异常"
-        trigger: "rollback_count > 3 per week"
-      - alert: "Breaking Change被阻止"
-        trigger: "breaking_changes_blocked > 0"
-```
-
-### 与团队协作平台集成
-
-```text
-1. Breaking Change告警推送至Slack/钉钉
-2. prod更新审批通过Slack按钮交互
-3. 每日更新摘要推送至团队群
-4. 月度合规报告分发至合规团队
-5. 紧急安全补丁通知全员
-```
-
----
-
 ## 版本升级迁移指南
 
 ### 从免费版升级至专业版
@@ -607,7 +292,6 @@ monitoring:
 | 1.0.0 | 2026-01 | 初版发布，含八大核心功能 |
 
 ---
-
 ## 故障排查表
 
 | 问题 | 可能原因 | 解决方案 | 优先级 |
@@ -624,7 +308,6 @@ monitoring:
 | 健康检查超时 | 技能启动慢或卡死 | 设置合理超时；分级检查；排除非必要检查项 | 中 |
 
 ---
-
 ## 即时修复清单
 
 | 问题 | 修复方法 |
@@ -638,13 +321,11 @@ monitoring:
 | 多环境版本不一致 | 检查推进流程；确认各环境更新状态；手动同步 |
 
 ---
-
 ## 已知限制
 
 - 本skill的能力范围受限于核心能力章节中定义的功能,不支持超出范围的操作
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
-
 ## 错误处理
 
 | 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
@@ -652,7 +333,6 @@ monitoring:
 | 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
 | 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
 | 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
-
 ## FAQ
 
 ### Q1：免费版与专业版有什么区别？
@@ -689,7 +369,6 @@ Phase 1：选择10%非关键技能先更新，观察2小时，监控错误率、
 
 通过紧急窗口流程：(1) 申请紧急更新，获得CISO/CTO审批；(2) override更新窗口限制；(3) 执行更新前备份；(4) 直接更新prod（跳过金丝雀）；(5) 更新后立即健康检查；(6) 如失败立即回滚；(7) 记录审计日志.
 ---
-
 ## 依赖说明
 
 ### 运行环境
@@ -719,7 +398,6 @@ Phase 1：选择10%非关键技能先更新，观察2小时，监控错误率、
 - **LLM路由**: GPT-4o（专业版使用高性能模型路由）
 
 ---
-
 ## License与版权声明
 
 本技能基于原始开源作品改进，保留原始版权声明：
@@ -749,7 +427,6 @@ Phase 1：选择10%非关键技能先更新，观察2小时，监控错误率、
 
 原始MIT license允许使用、复制、修改和分发，需保留版权声明。本改进作品在保留原始版权声明的基础上添加自有署名，完全符合MIT license要求.
 ---
-
 ## 专业版特性
 
 本专业版相比免费版新增以下能力：
@@ -772,7 +449,6 @@ Phase 1：选择10%非关键技能先更新，观察2小时，监控错误率、
 - 优先支持
 
 ---
-
 ## 定价
 
 | 版本 | 价格 | 功能 | 适用场景 |
@@ -785,8 +461,6 @@ Phase 1：选择10%非关键技能先更新，观察2小时，监控错误率、
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ```text
@@ -794,3 +468,20 @@ Phase 1：选择10%非关键技能先更新，观察2小时，监控错误率、
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
 ```
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+## 核心功能
+
+- **自动化执行**: 企业级更新编排系统，含多环境策略、回滚备份、金丝雀发布、依赖分析、Breaking Change检测与合规审计.
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

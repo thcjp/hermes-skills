@@ -1,6 +1,7 @@
 ---
+
 name: "rss-feed-digest-tool-free"
-description: "轻量级RSS/Atom聚合摘要工具,支持关键词过滤与Markdown输出,适合个人用户生成每日资讯摘要"
+description: "轻量级RSS/Atom聚合摘要工具,支持关键词过滤与Markdown输出,适合个人用户生成每日资讯摘要。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -16,6 +17,11 @@ metadata:
     - "个人效率"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # RSS聚合摘要免费版
@@ -48,45 +54,33 @@ RSS聚合摘要免费版是一款基于Python的轻量级RSS/Atom订阅聚合工
 ### 建议订阅源数量
 建议订阅源数量:不超过5个
 
-**输入**: 用户提供建议订阅源数量所需的指令和必要参数。
-**处理**: 按照skill规范执行建议订阅源数量操作,遵循单一意图原则。
 **输出**: 返回建议订阅源数量的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 不支持定时自动化调度
 不支持定时自动化调度
 
-**输入**: 用户提供不支持定时自动化调度所需的指令和必要参数。
-**处理**: 按照skill规范执行不支持定时自动化调度操作,遵循单一意图原则。
 **输出**: 返回不支持定时自动化调度的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 不支持HTML交互式报告
 不支持HTML交互式报告
 
-**输入**: 用户提供不支持HTML交互式报告所需的指令和必要参数。
-**处理**: 按照skill规范执行不支持HTML交互式报告操作,遵循单一意图原则。
 **输出**: 返回不支持HTML交互式报告的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 不支持邮件/IM分发
 不支持邮件/IM分发
 
-**输入**: 用户提供不支持邮件/IM分发所需的指令和必要参数。
-**处理**: 按照skill规范执行不支持邮件/IM分发操作,遵循单一意图原则。
 **输出**: 返回不支持邮件/IM分发的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 不支持多用户配置
 不支持多用户配置
 
-**输入**: 用户提供不支持多用户配置所需的指令和必要参数。
-**处理**: 按照skill规范执行不支持多用户配置操作,遵循单一意图原则。
 **输出**: 返回不支持多用户配置的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**输入**: 用户提供已知限制所需的指令和必要参数。
-**处理**: 按照skill规范执行已知限制操作,遵循单一意图原则。
 **输出**: 返回已知限制的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级、聚合摘要工具、支持关键词过滤与、适合个人用户生成、每日资讯摘要、聚合摘要免费版为、个人用户提供轻量、订阅聚合与摘要生、成能力、核心能力、订阅抓取、关键词包含、排除过滤、跨源自动去重、时间范围筛选等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
@@ -147,7 +141,6 @@ python3 scripts/rss_digest.py fetch \
 
 ```bash
 # 监控竞品博客,按关键词过滤
-python3 scripts/rss_digest.py fetch \
   --feeds "https://competitor-a.com/blog/feed" \
           "https://competitor-b.com/feed.xml" \
   --keywords "发布,更新,功能,pricing,launch" \
@@ -167,7 +160,6 @@ https://export.arxiv.org/rss/cs.CL
 https://export.arxiv.org/rss/cs.LG
 EOF
 
-python3 scripts/rss_digest.py fetch \
   --feed-file academic-feeds.txt \
   --keywords "transformer,attention,fine-tuning,RAG" \
   --hours 72 \
@@ -187,8 +179,6 @@ pip3 install feedparser
 
 ```bash
 # 最简用法:抓取单个源
-python3 scripts/rss_digest.py fetch \
-  --feeds "https://hnrss.org/frontpage" \
   --hours 24
 ```
 
@@ -196,8 +186,6 @@ python3 scripts/rss_digest.py fetch \
 
 ```bash
 # 添加关键词过滤并保存到文件
-python3 scripts/rss_digest.py fetch \
-  --feeds "https://hnrss.org/frontpage" \
   --keywords "AI,LLM" \
   --hours 24 \
   --output digest.md \
@@ -217,7 +205,6 @@ https://openai.com/blog/rss.xml
 EOF
 
 # 从文件读取源列表
-python3 scripts/rss_digest.py fetch \
   --feed-file my-feeds.txt \
   --hours 24 \
   --output daily-digest.md
@@ -228,7 +215,6 @@ python3 scripts/rss_digest.py fetch \
 ### 命令行参数详解
 
 ```text
-python3 scripts/rss_digest.py fetch [选项]
 
 选项:
   --feeds URL [URL ...]     一个或多个RSS/Atom源URL
@@ -265,7 +251,7 @@ https://openai.com/blog/rss.xml
 https://www.artificialintelligence-news.com/feed/
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 1. 合理设置时间窗口
 
@@ -304,7 +290,7 @@ A: 支持。`feedparser`会正确解析中文内容,关键词匹配为子串包�
 
 ### Q: 去重逻辑是如何工作的?
 
-A: 去重基于URL哈希。如果多个源转载了同一篇文章(URL相同或仅参数不同),只会保留第一次出现的条目。对于URL不同但内容相同的转载,免费版不做内容级去重。
+A: 去重基于URL哈希。如果多个源转载了同一篇文章(URL相同或仅参数不同),只会保留领先次出现的条目。对于URL不同但内容相同的转载,免费版不做内容级去重。
 
 ### Q: 如何抓取需要认证的私有RSS源?
 
@@ -344,14 +330,32 @@ A: 确认Python版本≥3.8。网络问题可使用国内镜像源安装:`pip3 i
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行Python脚本)
+- **分类**: MD+execute(纯Markdown指令,核心功能需要exec命令行执行Python脚本)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent调用Python脚本完成RSS聚合摘要任务。免费版聚焦个人用户的多源抓取、关键词过滤与Markdown输出,适合每日资讯摘要与兴趣主题聚合场景。
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

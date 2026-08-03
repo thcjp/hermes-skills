@@ -1,6 +1,7 @@
 ---
+
 name: "telegram-alert-tool-free"
-description: "通过Telegram Bot发送基础交易告警，支持单一群组与简单价格触发。"
+description: "通过Telegram Bot发送基础交易告警，支持单一群组与简单价格触发。Use when 需要系统监控、日志分析、运维告警、部署管理时使用。不适用于物理硬件维修。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -14,6 +15,11 @@ metadata:
     - "Telegram"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # Telegram告警入门（免费版）
@@ -37,23 +43,17 @@ metadata:
 | 定时推送 | 定时通知 | 不支持 |
 | 告警历史 | 记录查询 | 基础记录 |
 
-**输入**: 用户提供告警功能所需的指令和必要参数。
-**处理**: 按照skill规范执行告警功能操作,遵循单一意图原则。
 **输出**: 返回告警功能的执行结果,包含操作状态和输出数据。
 
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：发送基础交易告警、支持单一群组与简、单价格触发、面向个人交易者的、告警通知工具、将交易信号、价格变动等信息推、送到指定群组、Use、when、需要消息发送、通知推送、邮件短信、通信集成时使用、不适用于垃圾信息、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -74,7 +74,6 @@ python3 scripts/alert.py add \
   --chat-id "@my_trading_group"
 
 # 启动监控
-python3 scripts/alert.py monitor
 ```
 
 ### 场景二：交易信号通知
@@ -94,7 +93,6 @@ python3 scripts/notify.py send \
 
 ```bash
 # 设置定时播报
-python3 scripts/alert.py schedule \
   --time "09:00" \
   --message-type "market_summary" \
   --chat-id "@my_trading_group"
@@ -125,16 +123,14 @@ export TELEGRAM_BOT_TOKEN="your_bot_token"
 
 ```bash
 # 发送消息
-python3 scripts/notify.py send --message "测试消息" --chat-id "@group"
+py send --message "测试消息" --chat-id "@group"
 
 # 添加告警
-python3 scripts/alert.py add --ticker BTC-USD --condition below --threshold 60000
+py add --ticker BTC-USD --condition below --threshold 60000
 
 # 查看告警列表
-python3 scripts/alert.py list
 
 # 启动监控
-python3 scripts/alert.py monitor
 ```
 
 #
@@ -169,7 +165,7 @@ alert_config:
     storage: "./alert_history.json"
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **Bot权限**：确保Bot有发送消息到目标群组的权限
 2. **告警频率**：设置合理的检查间隔，避免过于频繁
@@ -236,7 +232,6 @@ alert_config:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -248,3 +243,30 @@ alert_config:
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

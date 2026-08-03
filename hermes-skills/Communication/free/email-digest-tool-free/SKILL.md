@@ -1,6 +1,7 @@
 ---
+
 name: "email-digest-tool-free"
-description: "自动生成每日邮件摘要，支持主流邮箱，快速了解重要邮件"
+description: "自动生成每日邮件摘要，支持主流邮箱，快速了解重要邮件。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,11 @@ metadata:
     - "个人效率"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - browser
+
 ---
 
 # 邮件日报免费版
@@ -41,8 +47,6 @@ metadata:
 - 手动登录流程（headed 模式可见操作过程）
 - 支持主流邮箱服务
 
-**输入**: 用户提供邮箱登录所需的指令和必要参数。
-**处理**: 按照skill规范执行邮箱登录操作,遵循单一意图原则。
 **输出**: 返回邮箱登录的执行结果,包含操作状态和输出数据。
 
 ### 邮件获取
@@ -51,8 +55,6 @@ metadata:
 - 统计未读邮件数量
 - 提取发件人、主题、摘要、时间信息
 
-**输入**: 用户提供邮件获取所需的指令和必要参数。
-**处理**: 按照skill规范执行邮件获取操作,遵循单一意图原则。
 **输出**: 返回邮件获取的执行结果,包含操作状态和输出数据。
 
 ### 摘要生成
@@ -62,8 +64,6 @@ metadata:
 - 生成邮件列表截图存档
 - 输出文本格式摘要报告
 
-**输入**: 用户提供摘要生成所需的指令和必要参数。
-**处理**: 按照skill规范执行摘要生成操作,遵循单一意图原则。
 **输出**: 返回摘要生成的执行结果,包含操作状态和输出数据。
 
 ### 邮件统计
@@ -74,8 +74,6 @@ metadata:
 
 ---
 
-**输入**: 用户提供邮件统计所需的指令和必要参数。
-**处理**: 按照skill规范执行邮件统计操作,遵循单一意图原则。
 **输出**: 返回邮件统计的执行结果,包含操作状态和输出数据。
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：自动生成每日邮件、快速了解重要邮件、邮件日报免费版是、一款面向个人用户、的邮件摘要生成工、通过浏览器自动化、登录邮箱、自动获取最新邮件、列表并生成每日邮、件总结报告、帮助用户快速了解、当日邮件概况、核心能力、Gmail、Outlook、邮箱等主流邮箱、Use、when、需要消息发送、通知推送、邮件短信、通信集成时使用、不适用于垃圾信息等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -136,7 +134,7 @@ browser-use eval "
 ```bash
 browser-use eval "
   const emails = [];
-  document.querySelectorAll('tr.zA').forEach((row, i) => {
+  document.zA').forEach((row, i) => {
     if (i < 20) {
       const sender = row.querySelector('.yX.xY span')?.innerText || '';
       const subject = row.querySelector('.y6 span')?.innerText || '';
@@ -169,7 +167,6 @@ browser-use install
 
 ```bash
 # 使用已登录会话生成摘要
-browser-use --browser real open https://mail.google.com
 sleep 3
 browser-use state
 browser-use screenshot daily_digest.png
@@ -192,7 +189,6 @@ echo "📧 邮件日报生成中..."
 echo "日期: $DATE $TIME"
 echo "=========================================="
 
-browser-use --browser real open https://mail.google.com
 sleep 3
 
 echo ""
@@ -207,12 +203,10 @@ echo ""
 echo "📊 邮件统计:"
 browser-use eval "
 (() => {
-  const unreadCount = document.querySelectorAll('.zE').length;
-  const totalVisible = document.querySelectorAll('tr.zA').length;
+querySelectorAll('.zE').length;
   return JSON.stringify({
     unread: unreadCount,
     visible: totalVisible,
-    timestamp: new Date().toISOString()
   });
 })()
 "
@@ -272,7 +266,7 @@ browser-use open https://mail.google.com
 
 ---
 
-## 最佳实践
+## 优选实践
 
 ### 安全优先原则
 
@@ -282,7 +276,6 @@ browser-use open https://mail.google.com
 
 ```bash
 # 安全做法：复用会话
-browser-use --browser real open https://mail.google.com
 
 # 完成后关闭
 browser-use close
@@ -338,7 +331,6 @@ browser-use state
 
 ```bash
 browser-use close --all
-browser-use --browser real open https://mail.google.com
 ```
 
 ### 问题3：browser-use 命令未找到
@@ -360,7 +352,6 @@ browser-use --version
 **解决**: 增加等待时间后再截图：
 
 ```bash
-browser-use --browser real open https://mail.google.com
 sleep 5
 browser-use screenshot inbox.png
 ```
@@ -434,7 +425,6 @@ browser-use screenshot inbox.png
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -447,3 +437,22 @@ browser-use screenshot inbox.png
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

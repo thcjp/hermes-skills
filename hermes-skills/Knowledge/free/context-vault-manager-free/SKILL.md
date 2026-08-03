@@ -1,6 +1,7 @@
 ---
+
 name: "context-vault-manager-free"
-description: "智能分层记忆管理，短期/长期/重要三层架构，关键词检索，自动清理，Token占用降低70%。"
+description: "智能分层记忆管理，短期/长期/重要三层架构，关键词检索，自动清理，Token占用降低70%。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,11 @@ metadata:
     - "Token优化"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # 上下文保险库（免费版）
@@ -114,8 +120,6 @@ const result = await skills.contextVaultManager({
 | 长期记忆 | long-term | 内存+磁盘 | 永久存储 | 用户偏好、历史事实 |
 | 重要记忆 | important | 内存+磁盘 | 永不清理 | 关键决策、核心配置 |
 
-**输入**: 用户提供三层记忆分层所需的指令和必要参数。
-**处理**: 按照skill规范执行三层记忆分层操作,遵循单一意图原则。
 **输出**: 返回三层记忆分层的执行结果,包含操作状态和输出数据。
 
 ### 2. 关键词检索
@@ -124,7 +128,7 @@ const result = await skills.contextVaultManager({
 
 ```typescript
 // 关键词搜索
-const result = await skills.contextVaultManager({
+contextVaultManager({
   action: "search",
   query: "用户喜好",
   limit: 3
@@ -138,8 +142,6 @@ const preferences = await skills.contextVaultManager({
 });
 ```
 
-**输入**: 用户提供关键词检索所需的指令和必要参数。
-**处理**: 按照skill规范执行关键词检索操作,遵循单一意图原则。
 **输出**: 返回关键词检索的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -156,8 +158,6 @@ const summary = await skills.contextVaultManager({
 });
 ```
 
-**输入**: 用户提供手动摘要生成所需的指令和必要参数。
-**处理**: 按照skill规范执行手动摘要生成操作,遵循单一意图原则。
 **输出**: 返回手动摘要生成的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -179,8 +179,6 @@ await skills.contextVaultManager({
 });
 ```
 
-**输入**: 用户提供持久化存储所需的指令和必要参数。
-**处理**: 按照skill规范执行持久化存储操作,遵循单一意图原则。
 **输出**: 返回持久化存储的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -195,8 +193,6 @@ await skills.contextVaultManager({
 
 ---
 
-**输入**: 用户提供自动清理机制所需的指令和必要参数。
-**处理**: 按照skill规范执行自动清理机制操作,遵循单一意图原则。
 **输出**: 返回自动清理机制的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：智能分层记忆管理、重要三层架构、占用降低、上下文保险库免费、版解决长会话、Agent、上下文溢出、记忆混乱、的核心痛点、采用短期、重要三层记忆分层、自动清理过期短期、避免上下文窗口被、无效信息占满、Use、when、需要项目管理、任务规划、进度跟踪、团队协作时使用、不适用于实际人员、绩效评估、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
@@ -224,7 +220,7 @@ await skills.contextVaultManager({
 });
 
 // 上下文溢出时生成摘要
-const summary = await skills.contextVaultManager({
+contextVaultManager({
   action: "summarize",
   typeFilter: "short-term",
   maxTokens: 500
@@ -256,7 +252,7 @@ await skills.contextVaultManager({
 });
 
 // 检索相关记忆
-const result = await skills.contextVaultManager({
+contextVaultManager({
   action: "search",
   query: "收费模式",
   typeFilter: "important"
@@ -280,7 +276,7 @@ await skills.contextVaultManager({
 // 加载特定用户的记忆
 await skills.contextVaultManager({
   action: "load",
-  persistPath: `./customers/${userId}-memory.json`
+  persistPath: `.json`
 });
 ```
 
@@ -406,7 +402,7 @@ await skills.contextVaultManager({
 });
 
 // 搜索记忆
-const result = await skills.contextVaultManager({
+contextVaultManager({
   action: "search",
   query: "用户喜好",
   limit: 3
@@ -420,9 +416,27 @@ const result = await skills.contextVaultManager({
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

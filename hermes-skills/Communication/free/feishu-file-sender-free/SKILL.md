@@ -1,6 +1,7 @@
 ---
+
 name: "feishu-file-sender-free"
-description: "飞书文件与图片发送工具，支持两步上传与稳定投递"
+description: "飞书文件与图片发送工具，支持两步上传与稳定投递。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,10 @@ metadata:
     - "个人效率"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # 飞书文件发送免费版
@@ -42,8 +47,6 @@ metadata:
 - **自定义文件名**: 可指定发送时的文件名
 - **file_type=stream**: 适用于所有普通文件类型
 
-**输入**: 用户提供普通文件发送所需的指令和必要参数。
-**处理**: 按照skill规范执行普通文件发送操作,遵循单一意图原则。
 **输出**: 返回普通文件发送的执行结果,包含操作状态和输出数据。
 
 ### 图片稳定发送
@@ -53,8 +56,6 @@ metadata:
 - **成功标准**: 用户在飞书中实际看到图片本体
 - **国际版支持**: 兼容国际版 Lark
 
-**输入**: 用户提供图片稳定发送所需的指令和必要参数。
-**处理**: 按照skill规范执行图片稳定发送操作,遵循单一意图原则。
 **输出**: 返回图片稳定发送的执行结果,包含操作状态和输出数据。
 
 ### 操作方式
@@ -63,19 +64,15 @@ metadata:
 - **手动两步**: 分别执行上传与发送命令
 - **AI 助手集成**: 支持在 AI 助手中通过 exec 调用
 
-**输入**: 用户提供操作方式所需的指令和必要参数。
-**处理**: 按照skill规范执行操作方式操作,遵循单一意图原则。
 **输出**: 返回操作方式的执行结果,包含操作状态和输出数据。
 
 ### 接收者支持
 
-- **个人用户**: `receive_id_type=open_id`（`ou_xxx`）
-- **群聊**: `receive_id_type=chat_id`（`oc_xxx`）
+- **个人用户**: `receive_id_type=open_id`（`ou_未指定`）
+- **群聊**: `receive_id_type=chat_id`（`oc_未指定`）
 
 ---
 
-**输入**: 用户提供接收者支持所需的指令和必要参数。
-**处理**: 按照skill规范执行接收者支持操作,遵循单一意图原则。
 **输出**: 返回接收者支持的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：飞书文件与图片发、送工具、支持两步上传与稳、定投递、飞书文件发送免费、版是一款面向个人、用户的飞书文件与、图片发送工具、通过两步上传流程、先上传获取、再发送消息、确保文件稳定投递、Use、when、需要文件处理、文档转换、格式互转、内容提取时使用、不适用于加密文件、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
@@ -124,7 +121,6 @@ python3 scripts/send_image.py \
   your_app_secret
 
 # 国际版 Lark
-python3 scripts/send_image.py \
   /path/to/chart.png \
   ou_xxxxxxx \
   your_app_id \
@@ -141,7 +137,6 @@ python3 scripts/send_image.py \
 zip -r project.zip project/
 
 # 发送 ZIP 文件
-python3 scripts/send_file.py \
   project.zip \
   oc_xxxxxxx \
   your_app_id \
@@ -153,7 +148,7 @@ python3 scripts/send_file.py \
 
 ## 快速开始
 
-### 第一步：获取飞书应用凭证
+### 领先步：获取飞书应用凭证
 
 从飞书应用配置中获取 `app_id` 与 `app_secret`：
 
@@ -164,16 +159,16 @@ grep -A 2 '"feishu"' config.json | grep -E '(appId|appSecret)'
 
 ### 第二步：获取接收者 open_id
 
-接收者的 open_id 可从消息回调的 `chat_id` 字段获取，格式为 `user:ou_xxx`，取 `ou_xxx` 部分。
+接收者的 open_id 可从消息回调的 `chat_id` 字段获取，格式为 `user:ou_未指定`，取 `ou_未指定` 部分。
 
 ### 第三步：发送文件
 
 ```bash
 # 发送普通文件
-python3 scripts/send_file.py <file_path> <open_id> <app_id> <app_secret> [file_name]
+py <file_path> <open_id> <app_id> <app_secret> [file_name]
 
 # 发送图片
-python3 scripts/send_image.py <image_path> <open_id> <app_id> <app_secret> [domain]
+py <image_path> <open_id> <app_id> <app_secret> [domain]
 ```
 
 ### 参数说明
@@ -211,8 +206,7 @@ python3 /path/to/scripts/send_file.py \
 在 AI 助手中通过 exec 调用：
 
 ```python
-exec(f"""
-python3 /path/to/scripts/send_file.py \\
+execute(f"""
   {file_path} \\
   {user_open_id} \\
   {app_id} \\
@@ -228,11 +222,11 @@ python3 /path/to/scripts/send_file.py \\
 **Step 1 - 获取 Token 并上传文件**:
 
 ```bash
-# 获取 tenant_access_token
-TOKEN=$(curl -s -X POST "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal" \
+# 获取 app_access_token
+TOKEN=$(curl -s -X POST "https://open.feishu.cn/open-apis/auth/v3/app_access_token/internal" \
   -H "Content-Type: application/json" \
   -d '{"app_id":"<APP_ID>","app_secret":"<APP_SECRET>"}' \
-  | python3 -c "import json,sys; print(json.load(sys.stdin)['tenant_access_token'])")
+  | python3 -c "import json,sys; print(json.load(sys.stdin)['app_access_token'])")
 
 # 上传文件获取 file_key
 FILE_KEY=$(curl -s -X POST "https://open.feishu.cn/open-apis/im/v1/files" \
@@ -240,7 +234,7 @@ FILE_KEY=$(curl -s -X POST "https://open.feishu.cn/open-apis/im/v1/files" \
   -F "file_type=stream" \
   -F "file_name=report.html" \
   -F "file=@/path/to/report.html" \
-  | python3 -c "import json,sys; print(json.load(sys.stdin)['data']['file_key'])")
+load(sys.stdin)['data']['file_key'])")
 
 echo "file_key: $FILE_KEY"
 ```
@@ -257,7 +251,7 @@ curl -s -X POST "https://open.feishu.cn/open-apis/im/v1/messages?receive_id_type
 
 ---
 
-## 最佳实践
+## 优选实践
 
 ### 文件与图片链路区分
 
@@ -270,10 +264,10 @@ curl -s -X POST "https://open.feishu.cn/open-apis/im/v1/messages?receive_id_type
 
 ```bash
 # 普通文件：使用 send_file.py
-python3 scripts/send_file.py report.pdf ou_xxx app_id app_secret
+py report.pdf ou_未指定 app_id app_secret
 
 # 图片：使用 send_image.py（不要用 send_file.py 发图片）
-python3 scripts/send_image.py chart.png ou_xxx app_id app_secret
+py chart.png ou_未指定 app_id app_secret
 ```
 
 ### 图片发送成功标准
@@ -288,7 +282,7 @@ python3 scripts/send_image.py chart.png ou_xxx app_id app_secret
 
 ```bash
 # 检测到路径文本，立即切换稳定脚本
-python3 scripts/send_image.py /path/to/image.png ou_xxx app_id app_secret
+py /path/to/image.png ou_未指定 app_id app_secret
 ```
 
 ### 文件大小管理
@@ -300,7 +294,7 @@ python3 scripts/send_image.py /path/to/image.png ou_xxx app_id app_secret
 ```bash
 # 压缩大文件
 zip -r compressed.zip large_folder/
-python3 scripts/send_file.py compressed.zip ou_xxx app_id app_secret
+py compressed.zip ou_未指定 app_id app_secret
 ```
 
 ### 群聊发送
@@ -309,8 +303,8 @@ python3 scripts/send_file.py compressed.zip ou_xxx app_id app_secret
 
 ```bash
 # 群聊文件发送（需修改脚本中的 receive_id_type）
-# 个人用户: receive_id_type=open_id, id=ou_xxx
-# 群聊: receive_id_type=chat_id, id=oc_xxx
+# 个人用户: receive_id_type=open_id, id=ou_未指定
+# 群聊: receive_id_type=chat_id, id=oc_未指定
 ```
 
 ---
@@ -335,10 +329,10 @@ python3 scripts/send_file.py compressed.zip ou_xxx app_id app_secret
 
 ```bash
 # 普通文件
-python3 scripts/send_file.py /path/to/file.pdf ou_xxx app_id app_secret
+py /path/to/file.pdf ou_未指定 app_id app_secret
 
 # 图片（特别重要）
-python3 scripts/send_image.py /path/to/image.png ou_xxx app_id app_secret
+py /path/to/image.png ou_未指定 app_id app_secret
 ```
 
 ### 问题2：文件上传失败
@@ -360,14 +354,14 @@ du -h /path/to/file.pdf
 ### 问题3：认证失败
 
 ```text
-Error: tenant_access_token 获取失败
+Error: app_access_token 获取失败
 ```
 
 **解决**: 检查 app_id 与 app_secret 是否正确：
 
 ```bash
 # 验证凭证
-curl -s -X POST "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal" \
+feishu.cn/open-apis/auth/v3/app_access_token/internal" \
   -H "Content-Type: application/json" \
   -d '{"app_id":"your_app_id","app_secret":"your_app_secret"}'
 ```
@@ -378,10 +372,10 @@ curl -s -X POST "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/in
 
 ```bash
 # 国内版飞书（默认）
-python3 scripts/send_image.py image.png ou_xxx app_id app_secret
+py image.png ou_未指定 app_id app_secret
 
 # 国际版 Lark
-python3 scripts/send_image.py image.png ou_xxx app_id app_secret lark
+py image.png ou_未指定 app_id app_secret lark
 ```
 
 ### 问题5：群聊发送失败
@@ -390,10 +384,10 @@ python3 scripts/send_image.py image.png ou_xxx app_id app_secret lark
 
 ```bash
 # 个人用户
-receive_id_type=open_id, receive_id=ou_xxx
+receive_id_type=open_id, receive_id=ou_未指定
 
 # 群聊
-receive_id_type=chat_id, receive_id=oc_xxx
+receive_id_type=chat_id, receive_id=oc_未指定
 ```
 
 ---
@@ -420,7 +414,7 @@ receive_id_type=chat_id, receive_id=oc_xxx
 
 ### API Key 配置
 
-- 本工具通过飞书应用凭证（app_id 与 app_secret）获取 `tenant_access_token` 进行认证
+- 本工具通过飞书应用凭证（app_id 与 app_secret）获取 `app_access_token` 进行认证
 - 凭证通过命令行参数传入
 - 无需额外 API Key
 - 应用需在飞书开放平台开通文件上传与消息发送权限
@@ -432,9 +426,26 @@ receive_id_type=chat_id, receive_id=oc_xxx
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果

@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # llm-provider
 
 Access llm-provider's platform API with API key authentication. Manage files, assistants, vector stores, batches, fine-tuning jobs, and model resources. Generate chat completions, images, audio, and video.
@@ -429,3 +428,26 @@ A: 请参考已知限制章节了解具体限制。
 
 - 需要API Key，无Key环境无法使用
 - 性能取决于底层模型能力
+
+---
+## 边界条件与限制 (Boundary Conditions)
+
+### 输入限制
+- **模型参数**: 使用模型时，必须使用`openai_list_models`返回的模型ID，且参数需符合API规范。
+- **文件大小**: 上传文件时，文件大小不能超过API规定的限制，通常为100MB。
+- **请求频率**: API请求频率受到限制，超过限制可能导致`RateLimitError`，需要等待一段时间后重试。
+
+### 性能边界
+- **响应时间**: API响应时间受网络状况和服务器负载影响，通常在几秒到几十秒之间。
+- **并发处理**: API支持并发请求，但高并发情况下可能会影响响应时间。
+
+### 兼容性约束
+- **操作系统**: API支持所有主流操作系统。
+- **编程语言**: API支持所有主流编程语言，但需要使用HTTP客户端库进行请求。
+- **网络环境**: API需要通过互联网访问，需要确保网络连接稳定。
+
+### 其他限制
+- **异步操作**: 批量、微调、视频生成等异步操作需要通过轮询API获取状态，直到操作完成。
+- **资源权限**: 用户只能访问其所属组织内的资源，无法访问其他组织的资源。
+- **安全性**: API调用需要使用API密钥进行身份验证，确保安全性。
+

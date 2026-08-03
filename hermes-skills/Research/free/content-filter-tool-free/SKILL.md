@@ -1,6 +1,7 @@
 ---
+
 name: "content-filter-tool-free"
-description: "面向个人的信息流内容过滤工具，关键词与作者过滤。"
+description: "面向个人的信息流内容过滤工具，关键词与作者过滤。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,11 @@ metadata:
     - "其他工具"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # 内容过滤工具（免费版）
@@ -36,24 +42,18 @@ metadata:
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置。
 
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
 **输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：面向个人的信息流、内容过滤工具、关键词与作者过滤、面向个人用户的信、息流内容过滤工具等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -65,30 +65,28 @@ metadata:
 ```bash
 # 添加关键词过滤规则
 {baseDir}/scripts/filter.sh add-keyword "广告"
-{baseDir}/scripts/filter.sh add-keyword --regex "(?i)加微信"
+sh add-keyword --regex "(?i)加微信"
 
 # 查看规则
-{baseDir}/scripts/filter.sh list
 ```
 
 ### 场景二：作者屏蔽与白名单
 
 ```bash
 # 屏蔽作者
-{baseDir}/scripts/filter.sh block-author "spam-user"
+sh block-author "spam-user"
 
 # 加白名单（优先于屏蔽）
-{baseDir}/scripts/filter.sh whitelist-author "friend"
+sh whitelist-author "friend"
 ```
 
 ### 场景三：查看过滤后内容
 
 ```bash
 # 拉取并过滤信息流
-{baseDir}/scripts/filter.sh feed --apply
 
 # 查看被过滤项（调试用）
-{baseDir}/scripts/filter.sh feed --show-blocked
+sh feed --show-blocked
 ```
 
 ## 不适用场景
@@ -112,7 +110,6 @@ metadata:
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
 
-
 ## 示例
 
 规则配置（`filter-rules.json`）：
@@ -127,7 +124,7 @@ metadata:
 }
 ```
 
-## 最佳实践
+## 优选实践
 
 - **白名单优先**：白名单优先于屏蔽，避免误伤关注作者。
 - **正则控范围**：正则别写太宽，避免误杀正常内容。
@@ -158,26 +155,24 @@ A：免费版支持基础时间范围，复杂调度为专业版能力。
 
 ```bash
 # 普通关键词
-{baseDir}/scripts/filter.sh add-keyword "广告"
 
 # 正则匹配（大小写不敏感）
-{baseDir}/scripts/filter.sh add-keyword --regex "(?i)加微信|加v|加vx"
 
 # 匹配微信号变体
-{baseDir}/scripts/filter.sh add-keyword --regex "vx[: ]?\\d{6,}|微信[: ]?\\d{6,}"
+sh add-keyword --regex "vx[: ]?\\d{6,}|微信[: ]?\\d{6,}"
 ```
 
 ### 作者管理策略
 
 ```bash
 # 屏蔽作者
-{baseDir}/scripts/filter.sh block-author "spam-user"
+sh block-author "spam-user"
 
 # 白名单（优先于屏蔽）
-{baseDir}/scripts/filter.sh whitelist-author "friend"
+sh whitelist-author "friend"
 
 # 批量屏蔽
-{baseDir}/scripts/filter.sh block-author --file blocklist.txt
+sh block-author --file blocklist.txt
 ```
 
 ```text
@@ -192,10 +187,9 @@ A：免费版支持基础时间范围，复杂调度为专业版能力。
 
 ```bash
 # 查看被过滤项（调试误杀）
-{baseDir}/scripts/filter.sh feed --show-blocked
+sh feed --show-blocked
 
 # 命中规则追踪
-{baseDir}/scripts/filter.sh feed --trace
 ```
 
 ```text
@@ -255,7 +249,6 @@ A：免费版支持基础时间范围，复杂调度为专业版能力。
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -268,3 +261,14 @@ A：免费版支持基础时间范围，复杂调度为专业版能力。
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

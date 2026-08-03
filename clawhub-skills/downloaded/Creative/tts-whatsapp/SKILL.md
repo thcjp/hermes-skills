@@ -38,7 +38,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # TTS WhatsApp
 
 Send high-quality text-to-speech voice messages on WhatsApp with automatic delivery. Supports 40+ languages, personal messages, and group broadcasts.
@@ -228,3 +227,25 @@ A: 请参考已知限制章节了解具体限制。
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
 - 性能取决于底层模型能力
+
+---
+## 边界条件与限制
+
+### 输入限制
+- **消息长度**：由于WhatsApp的消息长度限制，生成的TTS语音消息文本长度不应超过4000个字符。
+- **语言支持**：虽然支持40多种语言，但某些特定语言可能没有可用的语音模型，导致无法生成语音消息。
+- **目标限制**：一次只能向一个WhatsApp号码或一个WhatsApp群组发送消息。
+
+### 性能边界
+- **并发发送**：同时向多个目标发送消息时，性能可能会受到影响，因为每个消息都需要单独处理。
+- **网络延迟**：网络延迟可能会影响消息的发送时间，尤其是在网络条件不佳的情况下。
+
+### 兼容性约束
+- **WhatsApp版本**：需要使用支持发送语音消息的WhatsApp客户端，且客户端版本需更新至最新。
+- **操作系统**：目前仅支持Windows、macOS和Linux操作系统。
+
+### 其他限制
+- **隐私保护**：由于技能使用WhatsApp发送消息，用户需确保遵守WhatsApp的隐私政策。
+- **法律法规**：使用该技能发送消息需遵守相关国家的法律法规，不得用于发送违法信息。
+---
+

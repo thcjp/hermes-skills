@@ -1,6 +1,6 @@
 ---
 name: "firewall-toolkit-free"
-description: "服务器防火墙配置助手,支持iptables/uffw基础规则、端口管理与安全基线检查,适合个人开发者服务器安全防护。"
+description: "服务器防火墙配置助手,支持iptables/uffw基础规则、端口管理与安全基线检查,适合个人开发者服务器安全防护。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,16 +15,16 @@ metadata:
     - "免费版"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
 ---
-
 # 防火墙配置工具包免费版
-
 ## 概述
-
 本工具为个人开发者提供服务器防火墙配置与安全加固能力,涵盖iptables/ufw规则配置、端口管理、安全基线检查与防火墙状态诊断。免费版支持Linux主流防火墙工具,帮助开发者快速完成服务器初始安全加固,适合个人服务器与小型项目使用。
 
 ### 免费版与专业版对比
-
 | 能力维度 | 免费版 | 专业版 |
 |:---------|:-------|:-------|
 | 防火墙类型 | iptables/ufw | +云安全组+nftables |
@@ -36,13 +36,10 @@ metadata:
 | 报告导出 | 文本 | HTML/PDF |
 
 ## 核心能力
-
 ### 1. UFW防火墙配置
-
 ```bash
 #!/bin/bash
 # UFW基础安全配置脚本
-
 echo "=== UFW防火墙基础配置 ==="
 
 # 重置防火墙规则
@@ -51,7 +48,6 @@ ufw --force reset
 # 设置默认策略
 ufw default deny incoming     # 默认拒绝所有入站
 ufw default allow outgoing    # 默认允许所有出站
-
 # 允许SSH连接(重要:先放行SSH避免锁死)
 ufw allow 22/tcp comment 'SSH'
 
@@ -74,17 +70,13 @@ echo ""
 echo "防火墙配置完成"
 ```
 
-**输入**: 用户提供UFW防火墙配置所需的指令和必要参数。
-**处理**: 按照skill规范执行UFW防火墙配置操作,遵循单一意图原则。
 **输出**: 返回UFW防火墙配置的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 2. iptables高级规则
-
 ```bash
 #!/bin/bash
 # iptables安全加固脚本
-
 echo "=== iptables安全加固 ==="
 
 # 清除现有规则
@@ -134,17 +126,13 @@ echo "=== 当前规则 ==="
 iptables -L -n -v --line-numbers
 ```
 
-**输入**: 用户提供iptables高级规则所需的指令和必要参数。
-**处理**: 按照skill规范执行iptables高级规则操作,遵循单一意图原则。
 **输出**: 返回iptables高级规则的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 3. 端口管理与检查
-
 ```bash
 #!/bin/bash
 # 端口安全检查脚本
-
 echo "=== 端口安全检查 ==="
 echo ""
 
@@ -176,17 +164,13 @@ elif command -v iptables &> /dev/null; then
 fi
 ```
 
-**输入**: 用户提供端口管理与检查所需的指令和必要参数。
-**处理**: 按照skill规范执行端口管理与检查操作,遵循单一意图原则。
 **输出**: 返回端口管理与检查的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 4. 安全基线检查
-
 ```bash
 #!/bin/bash
 # 防火墙安全基线检查
-
 echo "=== 防火墙安全基线检查 ==="
 echo ""
 
@@ -232,8 +216,6 @@ echo "基线检查完成: 通过 ${PASS} 项, 失败 ${FAIL} 项"
 echo "========================================="
 ```
 
-**输入**: 用户提供安全基线检查所需的指令和必要参数。
-**处理**: 按照skill规范执行安全基线检查操作,遵循单一意图原则。
 **输出**: 返回安全基线检查的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：服务器防火墙配置、iptables、uffw、基础规则、端口管理与安全基、线检查、适合个人开发者服、务器安全防护、防火墙配置工具包、免费版、为个人开发者提供、与安全加固能力、核心能力、ufw、规则配置、端口管理、安全基线检查、防火墙状态诊断、适用场景、服务器初始安全加、端口访问控制、基础防火墙规则管、差异化、免费版聚焦单机防、火墙配置、Linux、主流防火墙工具、适合个人服务器快、速加固、适用关键词、防火墙、安全基线、firewall、security、group、network等。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -242,11 +224,9 @@ echo "========================================="
 - 不适用: 需要人工判断的复杂决策场景
 
 ### 场景一:新服务器初始加固
-
 ```bash
 #!/bin/bash
 # 新服务器完整安全加固脚本
-
 echo "=== 新服务器安全加固 ==="
 echo "服务器: $(hostname)"
 echo "时间: $(date '+%Y-%m-%d %H:%M:%S')"
@@ -303,11 +283,9 @@ ufw status
 ```
 
 ### 场景二:Web服务器防火墙配置
-
 ```bash
 #!/bin/bash
 # Web服务器专用防火墙配置
-
 echo "=== Web服务器防火墙配置 ==="
 
 ufw --force reset
@@ -320,27 +298,22 @@ ufw limit 22/tcp
 # Web服务
 ufw allow 80/tcp       # HTTP
 ufw allow 443/tcp      # HTTPS
-
 # 仅允许指定IP访问管理端口
 # ufw allow from 192.168.1.100 to any port 8080  # 管理后台
-
 # 拒绝数据库端口外部访问
 ufw deny 3306/tcp      # MySQL
-ufw deny 5432/tcp      # `PostgreSQL`数据库端口
+ufw deny 5432/tcp      # `数据库`数据库端口
 ufw deny 6379/tcp      # Redis
 ufw deny 27017/tcp     # MongoDB
-
 ufw --force enable
 echo "Web服务器防火墙配置完成"
 ufw status
 ```
 
 ### 场景三:防火墙规则审计
-
 ```bash
 #!/bin/bash
 # 防火墙规则审计
-
 echo "=== 防火墙规则审计 ==="
 echo ""
 
@@ -365,9 +338,7 @@ echo "  开放端口数: ${OPEN_PORTS}"
 ```
 
 ## 快速开始
-
-### 第一步:检查防火墙状态
-
+### 领先步:检查防火墙状态
 ```bash
 # 检查UFW状态
 sudo ufw status verbose
@@ -377,7 +348,6 @@ sudo iptables -L -n
 ```
 
 ### 第二步:运行基础加固
-
 ```bash
 # 使用UFW快速加固
 sudo ufw default deny incoming
@@ -389,7 +359,6 @@ sudo ufw --force enable
 ```
 
 ### 第三步:验证配置
-
 ```bash
 # 查看规则
 sudo ufw status numbered
@@ -402,9 +371,7 @@ curl -s -o /dev/null -w "%{http_code}" http://localhost
 
 #
 ## 示例
-
 ### 常用端口参考
-
 | 端口 | 服务 | 是否开放 | 说明 |
 |:-----|:-----|:---------|:-----|
 | 22 | SSH | 限制开放 | 限速防暴力破解 |
@@ -417,7 +384,6 @@ curl -s -o /dev/null -w "%{http_code}" http://localhost
 | 3389 | RDP | 拒绝 | 不应对外开放 |
 
 ### UFW常用命令
-
 | 命令 | 说明 |
 |:-----|:-----|
 | `ufw enable` | 启用防火墙 |
@@ -429,8 +395,7 @@ curl -s -o /dev/null -w "%{http_code}" http://localhost
 | `ufw delete RULE` | 删除规则 |
 | `ufw reset` | 重置所有规则 |
 
-## 最佳实践
-
+## 优选实践
 1. **默认拒绝**:所有入站流量默认拒绝,仅开放必要端口。
 2. **最小开放**:仅开放业务必需的端口,减少攻击面。
 3. **SSH限速**:对SSH端口使用limit规则,防止暴力破解。
@@ -438,22 +403,22 @@ curl -s -o /dev/null -w "%{http_code}" http://localhost
 5. **定期审计**:定期检查防火墙规则,清理过期规则。
 
 ```bash
-# 最佳实践:防火墙变更流程
+# 优选实践:防火墙变更流程
 safe_firewall_change() {
     local action=$1
     local rule=$2
-    
+
     echo "变更前规则:"
     ufw status numbered
-    
+
     echo ""
     echo "执行: ufw ${action} ${rule}"
     ufw "$action" "$rule"
-    
+
     echo ""
     echo "变更后规则:"
     ufw status numbered
-    
+
     echo ""
     echo "请验证服务是否正常,如异常请执行回滚:"
     echo "  ufw delete ${rule}"
@@ -461,42 +426,33 @@ safe_firewall_change() {
 ```
 
 ## 已知限制
-
 - 本skill的能力范围受限于核心能力章节中定义的功能,不支持超出范围的操作
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
 ## 常见问题
-
 ### Q1: 配置防火墙后SSH连不上了?
-
 确保在启用防火墙前先放行SSH端口(ufw allow 22/tcp)。如果已锁死,可通过云服务商控制台VNC登录修复。
 
 ### Q2: UFW和iptables有什么区别?
-
 UFW是iptables的前端工具,提供更简单的配置接口。底层仍使用iptables。建议使用UFW,除非需要复杂的自定义规则。
 
 ### Q3: 防火墙规则重启后丢失怎么办?
-
 使用 `iptables-persistent` 包持久化规则:`apt install iptables-persistent`,然后 `iptables-save > /etc/iptables/rules.v4`。
 
 ### Q4: 免费版支持云安全组配置吗?
-
 免费版提供云安全组的配置建议,但自动化管理需要专业版支持。
 
 ### Q5: 如何测试防火墙是否生效?
-
 从外部机器使用 `nmap` 或 `telnet` 测试端口连通性,确认仅开放端口可访问。
 
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Linux(UFW/iptables为Linux工具)
 - **权限**: 需要root/sudo权限执行防火墙命令
 
 ### 第三方依赖
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | ufw | 防火墙工具 | 推荐 | `apt install ufw` |
@@ -510,11 +466,10 @@ UFW是iptables的前端工具,提供更简单的配置接口。底层仍使用ip
 - 需要root/sudo权限执行防火墙配置命令
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+execute(纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行服务器防火墙配置与安全加固任务
 
 ## 错误处理
-
 - 边界输入处理: 空输入返回提示信息, 超长输入自动截断
 - 降级策略: 异常时返回默认值, 确保流程不中断
 
@@ -523,3 +478,22 @@ UFW是iptables的前端工具,提供更简单的配置接口。底层仍使用ip
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

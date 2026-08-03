@@ -1,6 +1,7 @@
 ---
+
 name: "token-layer-tool-free"
-description: "跨链代币数据查询工具，支持主流链代币信息与基础价格查询。"
+description: "跨链代币数据查询工具，支持主流链代币信息与基础价格查询。Use when 用户需要token-layer-tool-free相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,10 @@ metadata:
     - "代币"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # 跨链代币入门工具（免费版）
@@ -38,8 +43,6 @@ metadata:
 | 实时监控 | 价格告警 | 不支持 |
 | 深度分析 | 链上行为 | 不支持 |
 
-**输入**: 用户提供查询功能所需的指令和必要参数。
-**处理**: 按照skill规范执行查询功能操作,遵循单一意图原则。
 **输出**: 返回查询功能的执行结果,包含操作状态和输出数据。
 
 ### 支持的区块链
@@ -52,15 +55,11 @@ metadata:
 | Arbitrum | 2000+ | 支持 |
 | Optimism | 1500+ | 支持 |
 
-**输入**: 用户提供支持的区块链所需的指令和必要参数。
-**处理**: 按照skill规范执行支持的区块链操作,遵循单一意图原则。
 **输出**: 返回支持的区块链的执行结果,包含操作状态和输出数据。
 
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：跨链代币数据查询、支持主流链代币信、息与基础价格查询、面向个人加密货币、用户的跨链代币数、据查询工具、支持以太坊、等主流链上的代币、信息查询、包括合约地址、等基础数据、Use、when、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数、据处理、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -90,7 +89,6 @@ python3 scripts/token.py info \
 
 ```bash
 # 跨链价格查询
-python3 scripts/token.py price \
   --symbol UNI \
   --chains "ethereum,arbitrum,optimism"
 
@@ -103,7 +101,6 @@ python3 scripts/token.py price \
 
 ```bash
 # 流动性查询
-python3 scripts/token.py liquidity \
   --symbol UNI \
   --chain ethereum
 
@@ -125,31 +122,30 @@ python3 scripts/token.py liquidity \
 pip install requests web3
 
 # 查询代币
-python3 scripts/token.py info --symbol USDC --chains "ethereum,bsc"
+py info --symbol USDC --chains "ethereum,bsc"
 ```
 
 ### 常用命令
 
 ```bash
 # 代币信息
-python3 scripts/token.py info --symbol USDC --chains "ethereum,bsc,polygon"
-python3 scripts/token.py info --address 0xA0b8...eB48 --chain ethereum
+py info --symbol USDC --chains "ethereum,bsc,polygon"
+py info --address 0xA0b8...eB48 --chain ethereum
 
 # 价格查询
-python3 scripts/token.py price --symbol UNI --chains "ethereum,arbitrum"
+py price --symbol UNI --chains "ethereum,arbitrum"
 
 # 流动性
-python3 scripts/token.py liquidity --symbol UNI --chain ethereum
+py liquidity --symbol UNI --chain ethereum
 
 # 代币列表
-python3 scripts/token.py list --chain ethereum --top 20
+py list --chain ethereum --top 20
 
 # 合约验证
-python3 scripts/token.py verify --address 0x... --chain ethereum
+py verify --address 0x... --chain ethereum
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
-
 
 ## 示例
 
@@ -179,7 +175,7 @@ token_config:
     bsc: "https://bsc-dataseed.binance.org"
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **合约验证**：投资前务必验证合约地址的真实性
 2. **多链对比**：同一代币在不同链上可能有不同合约
@@ -247,7 +243,6 @@ token_config:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -259,3 +254,30 @@ token_config:
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

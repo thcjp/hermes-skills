@@ -1,6 +1,7 @@
 ---
+
 name: "git-workflow-cn-tool-free"
-description: "Git 分支管理、冲突解决与提交规范助手，覆盖个人开发者日常版本控制场景。"
+description: "Git 分支管理、冲突解决与提交规范助手，覆盖个人开发者日常版本控制场景。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,11 @@ metadata:
     - "工作流"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # Git 工作流助手（免费版）
@@ -36,24 +42,18 @@ metadata:
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置。
 
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
 **输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：冲突解决与提交规、范助手、覆盖个人开发者日、常版本控制场景、面向独立开发者的、工作流辅助工具、聚焦分支管理、范三大核心能力、分支创建、合并的标准化操作、合并冲突识别与基、础解决策略、提交规范生成、命令速查与撤销回、滚操作等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -149,17 +149,14 @@ git commit -m "fix(payment): 修复支付金额计算精度丢失问题
 ```bash
 # 初始化身份信息
 git config --global user.name "Your Name"
-git config --global user.email "email@example.com"
+email "email@example.com"
 
 # 设置默认分支名
 git config --global init.defaultBranch main
 
 # 配置常用别名
 git config --global alias.co checkout
-git config --global alias.br branch
-git config --global alias.ci commit
-git config --global alias.st status
-git config --global alias.lg "log --graph --oneline --all"
+lg "log --graph --oneline --all"
 ```
 
 ### 常用命令速查
@@ -237,7 +234,7 @@ git stash drop stash@{0}           # 删除指定暂存
 git stash clear                    # 清空所有暂存
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **提交前先拉取**：避免不必要的冲突
    ```bash
@@ -323,7 +320,6 @@ git clean -fd                     # 删除未追踪文件和目录
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -336,3 +332,14 @@ git clean -fd                     # 删除未追踪文件和目录
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

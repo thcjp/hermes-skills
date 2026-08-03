@@ -35,7 +35,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Git Helper
 
 Common git operations as a skill. Provides convenient wrappers for frequently used git commands including status, pull, push, branch management, and log viewing.
@@ -129,3 +128,19 @@ A: 请参考已知限制章节了解具体限制。
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
 - 性能取决于底层模型能力
+
+---
+## 边界条件与限制
+
+Git Helper技能在执行过程中存在一些边界条件和限制，以下是该技能可能遇到的具体情况：
+
+- **输入限制**：Git Helper技能接受基于Markdown的指令，对于非Markdown格式的输入，技能可能无法正确解析或执行。
+- **性能边界**：由于技能基于命令行执行，执行速度可能受到系统资源（如CPU、内存）的限制。在高负载或资源受限的环境中，执行时间可能会增加。
+- **兼容性约束**：Git Helper技能主要针对支持SKILL.md的AI Agent，如Claude Code、Cursor、Codex、Gemini CLI等。在不支持SKILL.md的Agent上，技能可能无法正常工作。
+- **命令行环境**：Git Helper技能依赖于命令行环境，因此需要确保系统已安装并配置了Git。在某些环境中，如Windows的Git Bash或WSL，可能需要额外的配置才能正常使用。
+- **权限限制**：执行某些Git操作（如push）可能需要具有相应的文件系统权限。如果技能在无权限的环境中执行，可能会遇到错误。
+- **网络依赖**：某些操作（如pull）可能需要网络连接。在网络不稳定或不可用的情况下，这些操作可能会失败。
+- **外部依赖**：Git Helper技能可能依赖于外部工具或服务，如LLM API。如果这些外部服务不可用或出现故障，技能的功能可能会受到影响。
+
+---
+

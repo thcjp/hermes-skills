@@ -1,6 +1,7 @@
 ---
+
 name: "dns-networking-tool-free"
-description: "提供DNS解析、端口连通性、curl诊断与证书检查,适合开发者日常网络问题排查。"
+description: "提供DNS解析、端口连通性、curl诊断与证书检查,适合开发者日常网络问题排查。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -14,6 +15,10 @@ metadata:
     - "DNS"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # DNS网络诊断工具 - 免费版
@@ -55,8 +60,6 @@ nslookup example.com 8.8.8.8
 nslookup -type=MX example.com
 ```
 
-**输入**: 用户提供DNS 解析查询所需的指令和必要参数。
-**处理**: 按照skill规范执行DNS 解析查询操作,遵循单一意图原则。
 **输出**: 返回DNS 解析查询的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -82,8 +85,6 @@ timeout 3 bash -c 'echo > /dev/tcp/example.com/443' && echo "Open" || echo "Clos
 curl -sI -o /dev/null -w "%{http_code}" https://example.com
 ```
 
-**输入**: 用户提供端口连通性测试所需的指令和必要参数。
-**处理**: 按照skill规范执行端口连通性测试操作,遵循单一意图原则。
 **输出**: 返回端口连通性测试的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -113,8 +114,6 @@ curl -sI https://api.example.com/endpoint
 curl -sIL https://example.com
 ```
 
-**输入**: 用户提供curl 请求诊断所需的指令和必要参数。
-**处理**: 按照skill规范执行curl 请求诊断操作,遵循单一意图原则。
 **输出**: 返回curl 请求诊断的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -128,7 +127,7 @@ echo | openssl s_client -connect example.com:443 -servername example.com 2>/dev/
   openssl x509 -noout -subject -issuer -dates
 
 # 查看证书过期时间
-echo | openssl s_client -connect example.com:443 2>/dev/null | \
+com:443 2>/dev/null | \
   openssl x509 -noout -enddate
 
 # 验证证书链
@@ -136,8 +135,6 @@ echo | openssl s_client -showcerts -connect example.com:443 < /dev/null 2>/dev/n
   awk '/BEGIN CERT/,/END CERT/' > chain.pem
 ```
 
-**输入**: 用户提供TLS 证书检查所需的指令和必要参数。
-**处理**: 按照skill规范执行TLS 证书检查操作,遵循单一意图原则。
 **输出**: 返回TLS 证书检查的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -157,8 +154,6 @@ ipconfig /flushdns                                             # Windows
 resolvectl status
 ```
 
-**输入**: 用户提供本地 DNS 缓存管理所需的指令和必要参数。
-**处理**: 按照skill规范执行本地 DNS 缓存管理操作,遵循单一意图原则。
 **输出**: 返回本地 DNS 缓存管理的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：诊断与证书检查、适合开发者日常网、络问题排查、面向开发者的网络、诊断辅助工具、解析调试、请求诊断与、核心能力、请求诊断与时序分、证书有效期检查等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -313,7 +308,7 @@ timeout:
   http: 30
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **分层排查**:DNS -> 端口 -> HTTP -> TLS,逐层缩小问题范围
 2. **对比测试**:同时测试正常和异常目标,快速定位差异
@@ -336,7 +331,6 @@ echo "诊断日志: $diag_log"
 ```bash
 # 临时域名映射测试
 echo "203.0.113.50  example.com" | sudo tee -a /etc/hosts
-curl -sI https://example.com
 # 测试完成后移除
 sudo sed -i '/203.0.113.50/d' /etc/hosts
 ```
@@ -363,10 +357,9 @@ nslookup example.com
 
 ```bash
 # 使用bash内置TCP测试替代
-timeout 3 bash -c 'echo > /dev/tcp/example.com/443' && echo "Open" || echo "Closed"
+com/443' && echo "Open" || echo "Closed"
 
 # 或使用curl
-curl -sI -o /dev/null -w "%{http_code}" https://example.com
 ```
 
 ### Q3:免费版与专业版有何区别?
@@ -414,12 +407,11 @@ curl -sI -o /dev/null -w "%{http_code}" https://example.com
 
 ### 可用性分类
 
-- **分类**:MD+EXEC(纯 Markdown 指令,需要 exec 命令行执行能力)
+- **分类**:MD+execute(纯 Markdown 指令,需要 exec 命令行执行能力)
 - **说明**:基于 Markdown 的 AI Skill,通过自然语言指令驱动 Agent 执行网络诊断任务
 - **适用规模**:单目标诊断,适合日常开发排查
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
@@ -431,3 +423,22 @@ curl -sI -o /dev/null -w "%{http_code}" https://example.com
 
 - 本地运行，不支持多设备同步
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

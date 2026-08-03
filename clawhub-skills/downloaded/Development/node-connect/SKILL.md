@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # node-connect
 
 Goal: find the one real route from node -> gateway, verify Skill平台 is advertising that route, then fix pairing/auth.

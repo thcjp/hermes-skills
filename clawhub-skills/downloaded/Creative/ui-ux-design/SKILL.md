@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # UI/UX Design Guide
 
 **Name:** ui-ux-design

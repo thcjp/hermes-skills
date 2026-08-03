@@ -1,6 +1,7 @@
 ---
+
 name: "markdown-converter-tool-free"
-description: "将PDF、Word、Excel、PPT等文件转换为Markdown格式,支持基础OCR与文档结构保留,适合个人使用。"
+description: "将PDF、Word、Excel、PPT等文件转换为Markdown格式,支持基础OCR与文档结构保留,适合个人使用。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -16,6 +17,11 @@ metadata:
     - "生产力"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - browser
+
 ---
 
 # Markdown转换器免费版
@@ -37,8 +43,6 @@ Markdown转换器免费版帮助个人用户将各类文档文件转换为Markdo
 | 媒体 | 图片(EXIF+OCR)、音频(EXIF+转录) | 媒体元数据与内容 |
 | 其他 | ZIP(遍历内容)、YouTube URL、EPub | 特殊格式支持 |
 
-**输入**: 用户提供支持的格式所需的指令和必要参数。
-**处理**: 按照skill规范执行支持的格式操作,遵循单一意图原则。
 **输出**: 返回支持的格式的执行结果,包含操作状态和输出数据。
 
 ### 文档结构保留
@@ -52,16 +56,12 @@ Markdown转换器免费版帮助个人用户将各类文档文件转换为Markdo
 - 图片引用
 - 代码块
 
-**输入**: 用户提供文档结构保留所需的指令和必要参数。
-**处理**: 按照skill规范执行文档结构保留操作,遵循单一意图原则。
 **输出**: 返回文档结构保留的执行结果,包含操作状态和输出数据。
 
 ### 基础OCR
 
 对图片进行OCR文字识别,提取图片中的文字内容并转为Markdown。
 
-**输入**: 用户提供基础OCR所需的指令和必要参数。
-**处理**: 按照skill规范执行基础OCR操作,遵循单一意图原则。
 **输出**: 返回基础OCR的执行结果,包含操作状态和输出数据。
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -133,10 +133,8 @@ powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 uvx markitdown input.pdf
 
 # 指定输出文件
-uvx markitdown input.pdf -o output.md
 
 # 重定向输出
-uvx markitdown input.docx > output.md
 ```
 
 ### Step 3:检查结果
@@ -174,10 +172,8 @@ uvx markitdown [输入文件] [选项]
 
 ```bash
 # PDF转Markdown
-uvx markitdown report.pdf -o report.md
 
 # Word转Markdown
-uvx markitdown document.docx -o document.md
 
 # Excel转Markdown(表格保留)
 uvx markitdown spreadsheet.xlsx > spreadsheet.md
@@ -198,7 +194,7 @@ uvx markitdown archive.zip -o archive.md
 cat document | uvx markitdown -x .pdf > output.md
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 格式选择指南
 
@@ -241,7 +237,6 @@ uvx markitdown --use-plugins input.docx -o output.md
 A: 使用`-c`选项指定字符集:
 
 ```bash
-uvx markitdown input.pdf -c UTF-8 -o output.md
 ```
 
 ### Q2: PDF转换效果不好?
@@ -249,7 +244,7 @@ uvx markitdown input.pdf -c UTF-8 -o output.md
 A: 对于扫描版PDF或复杂排版的PDF,使用`-d`选项启用文档智能服务:
 
 ```bash
-uvx markitdown scan.pdf -d -e "https://your-resource.cognitiveservices.azure.com/"
+uvx markitdown scan.cognitiveservices.azure.com/"
 ```
 
 ### Q3: 免费版支持批量转换吗?
@@ -262,7 +257,7 @@ A: 免费版输出标准Markdown格式。如需自定义输出模板、元数据
 
 ### Q5: 转换后的表格格式不对?
 
-A: 确保源文件的表格结构清晰。复杂合并单元格可能无法完美保留。建议在转换后手动检查并调整表格格式。
+A: 确保源文件的表格结构清晰。复杂合并单元格可能无法完善保留。建议在转换后手动检查并调整表格格式。
 
 ## 依赖说明
 
@@ -288,12 +283,11 @@ A: 确保源文件的表格结构清晰。复杂合并单元格可能无法完�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令+命令行执行能力)
+- **分类**: MD+execute(纯Markdown指令+命令行执行能力)
 - **说明**: 基于Markdown指令驱动Agent执行文档转换任务,通过uvx运行markitdown工具
 - **免费版限制**: 单文件转换、基础OCR、无批量处理、无自定义模板
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
@@ -307,3 +301,22 @@ A: 确保源文件的表格结构清晰。复杂合并单元格可能无法完�
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

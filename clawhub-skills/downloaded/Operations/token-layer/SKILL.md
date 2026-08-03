@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Token Layer
 
 Censorship resistant crosschain public token infrastructure. Launch once, trade everywhere.

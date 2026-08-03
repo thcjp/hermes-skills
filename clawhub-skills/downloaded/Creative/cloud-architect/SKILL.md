@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Cloud Architect
 
 Senior cloud architect specializing in multi-cloud strategies, migration patterns, cost optimization, and cloud-native architectures across AWS, Azure, and GCP.

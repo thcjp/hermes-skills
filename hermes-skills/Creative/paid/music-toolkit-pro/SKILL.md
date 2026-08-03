@@ -7,7 +7,7 @@ displayName: 音乐工具箱专业版
 summary: "专业音乐制作平台,支持AI编曲、多轨录音、母带处理与商业授权。面向音乐工作室、独立音乐人与商业项目的专业音乐制作平台."
 license: Proprietary
 edition: pro
-description: 面向音乐工作室、独立音乐人与商业项目的专业音乐制作平台。可生成提升工作效率
+description: "面向音乐工作室、独立音乐人与商业项目的专业音乐制作平台。可生成提升工作效率。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
   核心能力: AI编曲、多轨录音、母带处理、专业音色库、商业授权、协作创作
 
   适用场景: 商业音乐制作、影视配乐、游戏音效、专辑制作、音乐工作室运营
@@ -62,21 +62,21 @@ category: "Creative"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -87,14 +87,11 @@ category: "Creative"
 ```python
 import os
 import requests
-# ...
 API_BASE = "https://api.music-toolkit-pro.local/v1"
 ADMIN_KEY = os.environ["MUSIC_ADMIN_KEY"]
-# ...
 class FilmScoringStudio:
     def __init__(self, admin_key):
         self.headers = {"X-API-Key": admin_key, "X-Edition": "pro"}
-# ...
     def create_score(self, project_info, scenes):
         """创建影视配乐项目"""
         payload = {
@@ -120,7 +117,6 @@ class FilmScoringStudio:
             timeout=600,
         )
         return resp.json()
-# ...
     def ai_arrange(self, melody_midi, style, instruments):
         """AI 智能编曲"""
         payload = {
@@ -130,16 +126,12 @@ class FilmScoringStudio:
             "arrangement_complexity": "professional",
             "reference_tracks": ["epic_orchestral_001"],
         }
-        resp = requests.post(
             f"{API_BASE}/ai/arrange",
-            headers=self.headers,
             json=payload,
             timeout=300,
         )
         return resp.json()
-# ...
 studio = FilmScoringStudio(ADMIN_KEY)
-# 为电影创建配乐
 score = studio.create_score(
     project_info={"title": "时空之旅", "duration_min": 120, "genre": "scifi"},
     scenes=[
@@ -169,7 +161,6 @@ def multitrack_recording(project_id, tracks):
         timeout=300,
     )
     return resp.json()
-# ...
 def professional_mixing(project_id, settings):
     """专业混音"""
     payload = {
@@ -187,7 +178,6 @@ def professional_mixing(project_id, settings):
     }
     resp = requests.post(
         f"{API_BASE}/mixing/professional",
-        headers=studio.headers,
         json=payload,
         timeout=600,
     )
@@ -218,12 +208,10 @@ def master_audio(project_id, target_platforms):
     }
     resp = requests.post(
         f"{API_BASE}/mastering/process",
-        headers=studio.headers,
         json=payload,
         timeout=600,
     )
     return resp.json()
-# ...
 def distribute_to_platforms(project_id, metadata):
     """发行到流媒体平台"""
     payload = {
@@ -235,7 +223,6 @@ def distribute_to_platforms(project_id, metadata):
     }
     resp = requests.post(
         f"{API_BASE}/distribution/submit",
-        headers=studio.headers,
         json=payload,
         timeout=120,
     )
@@ -243,7 +230,6 @@ def distribute_to_platforms(project_id, metadata):
 ```
 
 ## 不适用场景
-
 以下场景音乐工具箱专业版不适合处理：
 
 - 版权受保护的媒体内容处理
@@ -251,14 +237,13 @@ def distribute_to_platforms(project_id, metadata):
 - 专业影视后期
 
 ## 触发条件
-
 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 ### Step 1: 申请专业版账户
 联系销售开通专业版,获取管理员凭证与租户 ID.
 ### Step 2: 配置凭证
 ```bash
-export MUSIC_ADMIN_KEY="sk_pro_admin_xxx"
+export MUSIC_ADMIN_KEY="sk_pro_admin_未指定"
 export MUSIC_ORG_ID="org_your_id"
 export MUSIC_EDITION="pro"
 ```
@@ -273,7 +258,6 @@ curl -X POST -H "X-API-Key: $MUSIC_ADMIN_KEY" \
 
 ### Step 4: 上传音色库
 ```bash
-# 上传专业音色库
 curl -X POST -H "X-API-Key: $MUSIC_ADMIN_KEY" \
   -F "file=@orchestra_samples.zip" \
   "https://api.music-toolkit-pro.local/v1/soundlibraries/upload"
@@ -283,55 +267,46 @@ curl -X POST -H "X-API-Key: $MUSIC_ADMIN_KEY" \
 ## 示例
 ### 企业级配置
 ```yaml
-# /etc/music-toolkit/pro.yaml
 edition: pro
 api:
   base_url: https://api.music-toolkit-pro.local/v1
   admin_key: ${MUSIC_ADMIN_KEY}
   org_id: ${MUSIC_ORG_ID}
   timeout: 600
-# ...
 studio:
   sample_rate: 96000
   bit_depth: 32
   channels: [stereo, 5.1_surround, 7.1_surround]
   format: [wav, flac, aiff]
-# ...
 ai_arrangement:
   enabled: true
   styles: [orchestral, electronic, jazz, rock, pop, world]
   complexity: professional
   reference_matching: true
-# ...
 sound_libraries:
   storage: s3
   size_gb: 50
   categories: [orchestra, drums, synths, world, vocals]
   customization: true
-# ...
 mixing:
   ai_assist: true
   automation: full
   plugins: [waves, fabfilter, izotope]
-# ...
 mastering:
   loudness_targets:
     spotify: -14
     apple_music: -16
     youtube: -14
   formats: [wav_24bit, ddpi, dsd]
-# ...
 collaboration:
   multi_user: true
   version_control: true
   real_time_editing: true
   cloud_storage: true
-# ...
 distribution:
   platforms: [spotify, apple_music, youtube_music, netease, qq_music, amazon]
   territories: worldwide
   royalty_tracking: true
-# ...
 licensing:
   commercial_use: true
   sync_licensing: true
@@ -342,32 +317,22 @@ licensing:
 ```python
 def ai_arrangement_workflow(melody_midi, brief):
     """AI 编曲完整工作流"""
-    # 1. 分析旋律
     analysis = analyze_melody(melody_midi)
-# ...
-    # 2. AI 编曲
     arrangement = studio.ai_arrange(
         melody_midi=melody_midi,
         style=brief["style"],
         instruments=brief["instruments"],
     )
-# ...
-    # 3. 生成多轨 MIDI
     tracks = arrangement["tracks"]
     for track in tracks:
         export_midi(track, f"track_{track['name']}.mid")
-# ...
-    # 4. 渲染音频 (使用专业音色)
     render_audio(tracks, sound_library="orchestra_pro")
-# ...
     return arrangement
-# ...
 def analyze_melody(midi_file):
     """分析旋律特征"""
     payload = {"midi": midi_file}
     resp = requests.post(
         f"{API_BASE}/analysis/melody",
-        headers=studio.headers,
         json=payload,
         timeout=120,
     )
@@ -391,14 +356,13 @@ def create_collaboration_session(project_id, collaborators):
     }
     resp = requests.post(
         f"{API_BASE}/collaboration/sessions",
-        headers=studio.headers,
         json=payload,
         timeout=60,
     )
     return resp.json()
 ```
 
-## 最佳实践
+## 优选实践
 ### 1. 母带处理规范
 ```python
 MASTERING_STANDARDS = {
@@ -434,17 +398,14 @@ def create_version(project_id, description):
     }
     resp = requests.post(
         f"{API_BASE}/projects/{project_id}/versions",
-        headers=studio.headers,
         json=payload,
         timeout=30,
     )
     return resp.json()
-# ...
 def compare_versions(project_id, v1, v2):
     """对比版本差异"""
     resp = requests.get(
         f"{API_BASE}/projects/{project_id}/versions/diff",
-        headers=studio.headers,
         params={"v1": v1, "v2": v2},
         timeout=60,
     )
@@ -455,7 +416,7 @@ def compare_versions(project_id, v1, v2):
 ### Q1: 专业版与免费版文件兼容吗?
 完全兼容。专业版在免费版文件格式上扩展,升级后现有作品无缝迁移.
 ### Q2: AI 编曲质量如何?
-专业版 AI 编曲接近商业编曲水准,但仍建议人工最终调整以达到最佳效果.
+专业版 AI 编曲接近商业编曲水准,但仍建议人工最终调整以达到优选效果.
 ### Q3: 商业授权范围?
 专业版允许商业用途,包括影视配乐、游戏音效、广告音乐、专辑发行等.
 ### Q4: 支持哪些发行平台?
@@ -482,29 +443,23 @@ def compare_versions(project_id, v1, v2):
 
 ### API Key 配置
 ```bash
-# 专业版凭证
-export MUSIC_ADMIN_KEY="sk_pro_admin_xxx"
+export MUSIC_ADMIN_KEY="sk_pro_admin_未指定"
 export MUSIC_ORG_ID="org_your_id"
 export MUSIC_EDITION="pro"
-# ...
-# 可选: 云存储
 export S3_BUCKET="music-assets"
 export AWS_ACCESS_KEY_ID="..."
 export AWS_SECRET_ACCESS_KEY="..."
-# ...
-# 可选: 发行平台
 export SPOTIFY_DISTRIBUTOR_KEY="..."
 export APPLE_MUSIC_API_KEY="..."
 ```
 
 ### 可用性分类
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+execute(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 面向音乐工作室与商业项目,通过自然语言指令驱动 Agent 调用 Pro API,完成专业音乐制作
 - **专业版特性**: AI 编曲、多轨录音、母带处理、专业音色库、商业授权、协作创作、发行支持
 - **兼容性**: 与免费版文件格式完全兼容,支持平滑升级
 
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -532,3 +487,14 @@ export APPLE_MUSIC_API_KEY="..."
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

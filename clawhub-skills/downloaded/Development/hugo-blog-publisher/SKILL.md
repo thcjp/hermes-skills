@@ -36,7 +36,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Hugo Blog Publisher
 
 将 Markdown 文章发布到 Hugo 博客并推送到 GitHub。

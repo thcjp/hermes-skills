@@ -6,16 +6,14 @@
 所有脚本从此模块导入平台配置，消除散乱定义。
 """
 
-import os
 from project_config import PROJECT_ROOT
 
 # ============ SkillHub 配置 ============
 
-# SkillHub CLI 实际是 Python 脚本 (非 npm 包)，Windows 兼容路径
-SKILLHUB_CLI_PATH = os.path.expanduser(r"~\.skillhub\skills_store_cli.py")
-SKILLHUB_API_URL = "https://api.skillhub.ai"
+SKILLHUB_CLI_PATH = "skillhub"  # CLI命令名
+SKILLHUB_API_URL = "https://skillhub.cn"
 SKILLHUB_WAF_CHAR_LIMIT = 5800  # WAF请求体字符限制
-SKILLHUB_PUBLISH_COMMAND = f'python "{SKILLHUB_CLI_PATH}" publish'  # 发布命令模板
+SKILLHUB_PUBLISH_COMMAND = "skillhub publish"  # 发布命令模板
 SKILLHUB_CREDENTIALS_FILE = PROJECT_ROOT / ".credentials" / "skillhub.json"
 SKILLHUB_MAX_RETRIES = 3
 
@@ -28,7 +26,7 @@ SKILLHUB_STATUSES = {
 # ============ ClawHub 配置 ============
 
 CLAWHUB_CLI_PATH = "npx clawhub"
-CLAWHUB_API_URL = "https://clawhub.ai/api"  # 修复: api.clawhub.dev DNS无法解析，使用clawhub.ai
+CLAWHUB_API_URL = "https://clawhub.ai"
 CLAWHUB_DAILY_UPLOAD_LIMIT = 200  # 每24小时上传限制
 CLAWHUB_RATE_LIMIT_HOURS = 24
 CLAWHUB_TOKEN_FILE = PROJECT_ROOT / ".credentials" / "clawhub_token.json"
@@ -44,7 +42,7 @@ GITHUB_PUBLIC_VISIBILITY = "public"
 
 # 私有备份仓库（全部skill + 项目代码）
 GITHUB_PRIVATE_REMOTE = "origin"
-GITHUB_PRIVATE_REPO_URL = "https://github.com/thcjp/-.git"
+GITHUB_PRIVATE_REPO_URL = "https://github.com/thcjp/hermes-skills.git"
 GITHUB_PRIVATE_VISIBILITY = "private"
 
 # 分支
@@ -57,15 +55,14 @@ FREE_LICENSES = {"MIT", "Apache-2.0"}
 PAID_PRICING_TIERS = {"L3-专业级", "L4-企业级"}
 PAID_LICENSES = {"Proprietary", "Commercial"}
 
-# GitHub Git 远程仓库配置（供推送使用）
+# 统一的GitHub仓库列表（供auto_discover.py和github_scanner.py使用）
 GITHUB_REPOS = [
     {
         "name": GITHUB_PUBLIC_REMOTE,
         "url": GITHUB_PUBLIC_REPO_URL,
         "visibility": GITHUB_PUBLIC_VISIBILITY,
         "push_free": True,
-        "push_paid": True,  # 付费skill也推送到公开引流仓库（与clawhub付费版一致）
-        "paid_strategy": "clawhub_aligned",  # 付费版与clawhub保持一致
+        "push_paid": False,
     },
     {
         "name": GITHUB_PRIVATE_REMOTE,
@@ -74,26 +71,6 @@ GITHUB_REPOS = [
         "push_free": True,
         "push_paid": True,
     },
-]
-
-# GitHub 扫描仓库列表（供 auto_discover.py 和 multi_source_discover.py 发现新 skill 使用）
-GITHUB_SCAN_REPOS = [
-    {"owner": "anthropics", "repo": "skills", "license": "Apache-2.0"},
-    {"owner": "obra", "repo": "superpowers", "license": "MIT"},
-    {"owner": "addyosmani", "repo": "agent-skills", "license": "MIT"},
-    {"owner": "ComposioHQ", "repo": "awesome-claude-skills", "license": "mixed"},
-    {"owner": "VoltAgent", "repo": "awesome-openclaw-skills", "license": "mixed"},
-    # 高星 AI Agent / LLM 项目仓库（可能包含可提取的 skill 或 tool）
-    {"owner": "humanlayer", "repo": "12-factor-agents", "license": "MIT"},
-    {"owner": "langchain-ai", "repo": "langgraph", "license": "MIT"},
-    {"owner": "crewAIInc", "repo": "crewAI", "license": "MIT"},
-    {"owner": "microsoft", "repo": "autogen", "license": "MIT"},
-    {"owner": "openai", "repo": "openai-agents-python", "license": "MIT"},
-    {"owner": "ollama", "repo": "ollama", "license": "MIT"},
-    {"owner": "vllm-project", "repo": "vllm", "license": "Apache-2.0"},
-    {"owner": "huggingface", "repo": "transformers", "license": "Apache-2.0"},
-    {"owner": "ggerganov", "repo": "llama.cpp", "license": "MIT"},
-    {"owner": "run-llama", "repo": "llama_index", "license": "MIT"},
 ]
 
 

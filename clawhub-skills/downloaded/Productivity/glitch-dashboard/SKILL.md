@@ -20,7 +20,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Dashboard
 
 Unified web terminal for task management, queue processing, and system monitoring.
@@ -159,3 +158,25 @@ A: 请参考已知限制章节了解具体限制。
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
 - 性能取决于底层模型能力
+
+---
+## 边界条件与限制
+
+### 输入限制
+- **任务队列长度**：Dashboard能够处理的任务队列长度有一定的限制，超过此限制可能导致队列处理延迟或失败。
+- **系统监控指标**：Dashboard支持的系统监控指标类型有限，不支持所有可能的系统性能指标。
+- **ZeroTier状态查询**：Dashboard仅支持ZeroTier网络连接状态的查询，不支持其他ZeroTier相关配置或操作。
+
+### 性能边界
+- **响应时间**：Dashboard的响应时间受限于服务器性能和网络延迟，可能无法保证在所有情况下都能达到实时监控的效果。
+- **数据刷新频率**：Dashboard的数据刷新频率为每3秒自动刷新一次，对于需要更高频率监控的场景，可能需要手动刷新或使用其他工具。
+
+### 兼容性约束
+- **浏览器兼容性**：Dashboard需要在支持HTML5、CSS3和JavaScript的现代浏览器中运行，不支持旧版浏览器。
+- **操作系统兼容性**：Dashboard在Windows、macOS和Linux操作系统上均能运行，但某些特定功能可能因操作系统差异而受限。
+
+### 其他限制
+- **外部API调用**：Dashboard依赖于外部API进行部分功能实现，如LLM API，因此可能受到外部API的限制或中断影响。
+- **技能版本限制**：Dashboard可能需要特定版本的依赖技能才能正常运行，使用旧版本技能可能导致功能缺失或错误。
+---
+

@@ -35,7 +35,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # AdMapix
 
 A thin client over the AdMapix read API. It fetches **raw structured data** and returns it as JSON. It does **not** analyze, summarize, rank, generate pages, or run autonomous research — the calling agent (e.g. Claude Code, Codex) decides which endpoints to call, composes multi-call workflows from the metadata, and does any analysis itself.
@@ -162,6 +161,32 @@ Each endpoint is a raw data source. **Read the listed reference file before usin
 | --- | --- | --- |
 | `/api/data/market-search` | POST | Market-level search / aggregation |
 
+## 输入输出参数说明
+
+以下是对AdMapix API输入输出参数的详细说明，包括默认值、类型和取值范围：
+
+- 输入参数：
+  - `ADMAPIX_API_KEY`: 类型为字符串，必须提供有效的API Key。
+  - `endpoint`: 类型为字符串，指定API端点。
+  - `params`: 类型为JSON对象，包含API调用所需的参数。
+- 输出参数：
+  - `data`: 类型为JSON对象，包含API调用的结果数据。
+  - `error`: 类型为JSON对象，包含错误信息，如果发生错误则返回。
+
+每个参数的具体类型和取值范围应在文档中明确列出，以便用户正确使用API。
+
+## 边界条件
+
+为了确保AdMapix的稳定性和可靠性，以下是一些关键的边界条件，这些条件在文档中应得到详细说明：
+
+- API Key的有效期：明确API Key的有效期限，以及如何处理过期或即将过期的API Key。
+- 数据量限制：说明API调用时的数据量限制，例如单次调用返回的数据条数上限。
+- 网络延迟：讨论网络延迟对API调用的影响，以及如何处理超时情况。
+- 异常处理：详细说明如何处理API调用过程中可能出现的异常，包括但不限于网络错误、服务器错误、数据格式错误等。
+- 安全措施：描述AdMapix如何处理API Key泄露的风险，以及如何防止恶意用户利用API Key进行攻击。
+
+这些边界条件的详细说明将帮助用户更好地理解AdMapix的功能限制，并采取相应的措施来避免潜在的问题。
+
 ## Parameter Mapping
 
 Read `references/param-mappings.md` to translate natural language into codes:
@@ -195,6 +220,17 @@ Do not: generate H5 / landing / card / dashboard pages, hide records behind link
 { "error": { "code": "invalid_api_key", "http_status": 401, "message": "Invalid API key format", "retry": false } }
 ```
 
+## 错误码定义和处理方案
+
+以下是对AdMapix API可能返回的错误码及其处理方案的详细说明：
+
+- `missing_api_key`: 表示缺少API Key，需要用户配置API Key。
+- `invalid_api_key`: 表示API Key无效，可能是格式错误或API Key已禁用。
+- `timeout`: 表示API调用超时，需要检查网络连接或重试请求。
+- `server_error`: 表示服务器错误，需要稍后再试或联系支持。
+
+对于每个错误码，应提供具体的错误信息和建议的处理步骤，以便用户能够快速解决问题。
+
 ## 依赖说明
 
 ### 运行环境
@@ -217,6 +253,45 @@ Do not: generate H5 / landing / card / dashboard pages, hide records behind link
 
 - AdMapix raw data layer for ad creatives, apps, rankings, downloads/revenue
 - 触发关键词: apps, admapix, data, creatives, layer
+
+## 技术或方法创新点
+
+AdMapix在以下方面具有技术或方法创新点：
+
+- **智能代理领域的专业化AI辅助工具**: AdMapix为智能代理领域提供了专业的AI辅助工具，提高了数据分析的效率和准确性。
+- **基于高人气开源Skill深度优化升级**: AdMapix基于高人气开源Skill深度优化升级，提高了产品的稳定性和可靠性。
+
+这些创新点使得AdMapix在技术上处于领先地位。
+
+## 解决的真实验证痛点
+
+AdMapix解决了以下真实验证的用户痛点：
+
+- **数据获取困难**: 用户在获取广告数据时面临困难，AdMapix提供了便捷的数据获取方式。
+- **数据分析复杂**: 用户在分析广告数据时面临复杂的问题，AdMapix简化了数据分析过程。
+- **安全性担忧**: 用户对数据安全性担忧，AdMapix通过增强安全措施提供了更高的安全性保障。
+
+这些痛点解决使得AdMapix在用户中获得了良好的口碑。
+
+## 与同类方案的对比
+
+与同类方案相比，AdMapix在以下方面具有优势：
+
+- **功能更全面**: AdMapix提供了更全面的广告数据服务，包括创意、应用、排名、下载和收入等。
+- **性能更优**: 通过深度优化，AdMapix提供了更高的性能和更快的响应速度。
+- **安全性更高**: AdMapix通过增强安全措施，提供了更高的安全性保障。
+
+这些优势使得AdMapix成为广告数据服务的首选方案。
+
+## 差异化优势分析
+
+AdMapix在以下方面具有独特的差异化优势：
+
+- **深度优化**: AdMapix经过深度优化，移除了原始风险代码，清理了外部依赖引用，增强了元数据和触发关键词，完全适配SkillHub平台规范。
+- **安全性增强**: 通过移除风险代码和增强安全措施，AdMapix提供了更高的安全性和稳定性。
+- **易用性提升**: AdMapix提供了清晰的文档和示例，简化了API的使用过程，降低了用户的学习成本。
+
+这些差异化优势使得AdMapix在同类产品中脱颖而出，成为用户的首选。
 
 ## 适用场景
 

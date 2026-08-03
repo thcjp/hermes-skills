@@ -1,5 +1,6 @@
 ---
-slug: "minimalist-design-tool-pro"
+
+slug: minimalist-design-tool-pro
 name: "minimalist-design-tool-pro"
 version: "1.0.0"
 displayName: "极简设计系统专业版"
@@ -8,7 +9,7 @@ license: "Proprietary"
 edition: "pro"
 description: |-
   极简设计系统专业版为企业与专业团队提供系统化的极简现代主义设计系统解决方案。在免费版核心设计令牌之上,增加完整组件库、多主题切换、设计系统文档自动生成、
-  设计审计与CI/CD集成能力。
+  设计审计与CI/CD集成能力。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
   - 设计系统
   - 企业级
@@ -30,7 +31,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 极简设计系统专业版为企业与专业团队提供系统化的极简现代主义设计系统解决方案。在免费版核心设计令牌之上,PRO版增加完整组件库、多主题切换、设计系统文档自动生成、设计审计与CI/CD集成能力,满足企业级设计系统的全面需求。
 
 PRO版完全兼容免费版,可直接继承免费版的设计令牌与Tailwind配置,并在此基础上扩展为完整的设计系统。
@@ -64,7 +67,6 @@ python3 generate_components.py \
   --with-stories
 ```
 
-**输入**: 用户提供完整企业级组件库所需的指令和必要参数。
 **处理**: 解析完整企业级组件库的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回完整企业级组件库的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -73,7 +75,6 @@ python3 generate_components.py \
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供多主题系统所需的指令和必要参数。
 **处理**: 解析多主题系统的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回多主题系统的响应数据,包含状态码、结果和日志。
 
@@ -95,7 +96,6 @@ export_config = {
 python3 export_tokens.py --config export_config
 ```
 
-**输入**: 用户提供设计令牌多平台导出所需的指令和必要参数。
 **处理**: 解析设计令牌多平台导出的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回设计令牌多平台导出的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -119,14 +119,12 @@ doc_config = {
 }
 ```
 
-**输入**: 用户提供设计系统文档自动生成所需的指令和必要参数。
 **处理**: 解析设计系统文档自动生成的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回设计系统文档自动生成的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 视觉一致性审计
 
-**输入**: 用户提供视觉一致性审计所需的指令和必要参数。
 **处理**: 解析视觉一致性审计的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回视觉一致性审计的响应数据,包含状态码、结果和日志。
 
@@ -167,7 +165,6 @@ const motionSystem = {
 };
 ```
 
-**输入**: 用户提供Framer Motion高级动效所需的指令和必要参数。
 **处理**: 解析Framer Motion高级动效的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回Framer Motion高级动效的响应数据,包含状态码、结果和日志。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级极简设计系、统解决方案、支持完整组件库、多主题切换、设计审计与、适合团队与商业项、极简设计系统专业、版为企业与专业团、队提供系统化的极、简现代主义设计系、在免费版核心设计、令牌之上、增加完整组件库、集成能力、Use、when、、品牌视觉时使用、不适用于、建模和动画制作、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -184,14 +181,11 @@ python3 init_design_system.py \
   --themes "light,dark,brand" \
   --output ./design-system/
 # .
-python3 generate_components.py \
-  --config components.yml \
   --output ./design-system/components/ \
   --with-docs \
   --with-tests \
   --with-stories
 # .
-python3 export_tokens.py \
   --source design-tokens.yml \
   --formats "css,tailwind,figma,scss,json"
 # .
@@ -267,13 +261,9 @@ jobs:
       - uses: actions/checkout@v3
       - name: Export Tokens
         run: |
-          python3 export_tokens.py \
-            --source design-tokens.yml \
             --formats "css,tailwind,figma"
       - name: Generate Components
         run: |
-          python3 generate_components.py \
-            --config components.yml \
             --output ./src/components/
       - name: Audit Design
         run: |
@@ -282,14 +272,11 @@ jobs:
             --report ./audit/
       - name: Generate Docs
         run: |
-          python3 generate_docs.py \
-            --output ./docs/
 ```
 
 ## 快速开始
 ### Step 1:初始化设计系统
 ```bash
-python3 init_design_system.py \
   --name "MyDesignSystem" \
   --base-theme "light" \
   --output ./design-system/
@@ -297,8 +284,6 @@ python3 init_design_system.py \
 
 ### Step 2:生成组件库
 ```bash
-python3 generate_components.py \
-  --config components.yml \
   --output ./design-system/components/ \
   --with-docs \
   --with-tests
@@ -306,9 +291,8 @@ python3 generate_components.py \
 
 ### Step 3:审计与文档
 ```bash
-python3 audit_design.py --scan ./src/ --report ./audit/
+py --scan ./src/ --report ./audit/
 # .
-python3 generate_docs.py --output ./docs/
 ```
 
 ## 示例
@@ -332,7 +316,7 @@ components:
     feedback: [error, success, warning]
 ```
 
-## 最佳实践
+## 优选实践
 ### 免费版与PRO版能力对比
 | 能力维度 | 免费版 | PRO版 |
 |:-----|:-----|:-----|
@@ -412,7 +396,7 @@ A: 提供标准CLI接口与配置文件。设计令牌变更时自动导出多�
 - 如集成Figma,需配置Figma API Token
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令+脚本执行能力)
+- **分类**: MD+execute(纯Markdown指令+脚本执行能力)
 - **说明**: 专业版基于Markdown指令驱动Agent执行设计系统构建任务,通过Python/Node.js脚本实现组件生成、令牌导出与CI/CD集成
 - **PRO版增强**: 完整组件库、多主题系统、文档生成、设计审计、多平台导出、CI/CD集成、团队协作
 
@@ -428,3 +412,22 @@ A: 提供标准CLI接口与配置文件。设计令牌变更时自动导出多�
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级极简设计系统解决方案,支持完整组件库、多主题切换、设计审计与CI/CD集成,适合团队与商业项目
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

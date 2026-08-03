@@ -7,8 +7,7 @@ displayName: Skill创建工具（专业版）
 summary: "{meta.summary} - 提供专业AI自动化处理能力,支持多种使用场景。提供高效自动化处理能力,适用于多种业务场景"
 license: Proprietary
 edition: pro
-description: Skill创建工具 - （专业版）。可生成提升工作效率
-
+description: "Skill创建工具 - （专业版）。可生成提升工作效率。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
   核心能力: Skill创建, SKILL.md, 技能创建, 模板生成, 结构验证, 触发词优化, skill creator
 
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
@@ -46,7 +45,6 @@ category: "Automation"
 ---
 
 # Skill创建工具（专业版）
-
 ## 概述
 
 Skill创建工具是针对开发工具领域的专业化AI辅助工具。专业版面向企业用户，提供完整的功能体系，包含高级特性、批量处理与企业级集成能力.
@@ -61,7 +59,6 @@ Skill模板生成、SKILL.md创建、元数据管理、结构验证、触发词�
 ### 批量处理与并行执行
 批量处理与并行执行
 
-**输入**: 用户提供批量处理与并行执行所需的指令和必要参数.
 **处理**: 解析批量处理与并行执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量处理与并行执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -69,7 +66,6 @@ Skill模板生成、SKILL.md创建、元数据管理、结构验证、触发词�
 ### 企业级安全与审计
 企业级安全与审计
 
-**输入**: 用户提供企业级安全与审计所需的指令和必要参数.
 **处理**: 解析企业级安全与审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回企业级安全与审计的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -77,7 +73,6 @@ Skill模板生成、SKILL.md创建、元数据管理、结构验证、触发词�
 ### 高级配置与自定义策略
 高级配置与自定义策略
 
-**输入**: 用户提供高级配置与自定义策略所需的指令和必要参数.
 **处理**: 解析高级配置与自定义策略的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级配置与自定义策略的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -85,7 +80,6 @@ Skill模板生成、SKILL.md创建、元数据管理、结构验证、触发词�
 ### 免费版完全兼容
 免费版完全兼容，无缝升级
 
-**输入**: 用户提供免费版完全兼容所需的指令和必要参数.
 **处理**: 解析免费版完全兼容的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版完全兼容的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -93,12 +87,10 @@ Skill模板生成、SKILL.md创建、元数据管理、结构验证、触发词�
 ### 优先技术支持与问题响应
 优先技术支持与问题响应
 
-**输入**: 用户提供优先技术支持与问题响应所需的指令和必要参数.
 **处理**: 解析优先技术支持与问题响应的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回优先技术支持与问题响应的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**输入**: 用户提供专业版增强功能所需的指令和必要参数.
 **处理**: 解析专业版增强功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回专业版增强功能的响应数据,包含状态码、结果和日志.
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
@@ -127,11 +119,9 @@ Skill模板生成、SKILL.md创建、元数据管理、结构验证、触发词�
 优化Skill的触发词和元数据。**示例指令**：`
 
 `优化这个Skill的触发词
-
 ## 快速开始
 
 ### 环境准备
-
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
 |---|---|---|---|
@@ -211,13 +201,12 @@ class SkillCreatorEngine:
         for field_name in self.REQUIRED_FIELDS:
             if field_name not in fm:
                 result.errors.append(f"缺少必需字段: {field_name}")
-                result.valid = False
         # 验证内容部分
         required_sections = ["## 概述", "## 核心能力", "## 使用场景",
                            "## 快速开始", "## 依赖说明"]
         for section in required_sections:
             if section not in content:
-                result.warnings.append(f"缺少推荐章节: {section}")
+warnings.append(f"缺少推荐章节: {section}")
         # 计算评分
         total_checks = len(self.REQUIRED_FIELDS) + len(required_sections)
         passed = total_checks - len(result.errors) - len(result.warnings)
@@ -227,7 +216,7 @@ class SkillCreatorEngine:
     def optimize_triggers(self, skill_path: str,
                          additional_keywords: List[str] = None) -> dict:
         """优化触发词（PRO 专属）"""
-        content = Path(skill_path).read_text(encoding="utf-8")
+read_text(encoding="utf-8")
         existing = set()
         trigger_match = re.search(r"适用关键词[:\s]*(.+)", content)
         if trigger_match:
@@ -256,7 +245,7 @@ class SkillCreatorEngine:
                     "warnings": result.warnings
                 })
             else:
-                results.append({"skill": d, "valid": False,
+append({"skill": d, "valid": False,
                                "errors": ["SKILL.md不存在"]})
         return results
 # ...
@@ -285,22 +274,6 @@ class SkillCreatorEngine:
     def _generate_skillmd(self, meta: SkillMetadata, template: str) -> str:
         tag_str = NL.join(f"- {t}" for t in meta.tags)
         return f"""
----
-slug: {meta.slug}
-name: {meta.name}
-version: "{meta.version}"
-displayName: {meta.display_name}
-summary: {meta.summary}
-license: {meta.license}
-edition: {meta.edition}
-description: |-
-  {meta.description}
-tags:
-{tag_str}
-tools:
-1. read
-2. exec
----
 # ...
 # {meta.display_name}
 # ...
@@ -335,7 +308,6 @@ python3 --version
         result = set(triggers)
         for key, values in expansions.items():
             if key.lower() in str(triggers).lower():
-                result.update(values)
         return result
 # ...
     def _extract_tags(self, description: str) -> List[str]:
@@ -361,7 +333,6 @@ print(f"验证: {'通过' if result.valid else '失败'}, 评分: {result.score}
 完成上述代码后，将根据输入参数返回结构化响应。专业版支持批量任务和并行解析，可同时解析多个文件或任务.
 - **API Key**：本skill无需额外API Key配置
 - **可用性分类**：MD+EXEC（纯Markdown指令,部分功能需exec命令行执行）
-
 ## 示例
 
 ```yaml
@@ -401,7 +372,6 @@ skill_creator:
 | 批量大小 | 单批处理数量 | `10` |
 | 并行度 | 并行处理线程数 | `4` |
 | 重试次数 | 失败重试次数 | `3` |
-
 ## 免费版兼容性
 
 本专业版完全兼容免费版的数据格式与操作方式：
@@ -429,10 +399,9 @@ skill_creator:
 - 敏感数据加密存储
 - 多租户隔离支持
 - 合规性检查内置
+## 优选实践
 
-## 最佳实践
-
-### 企业级最佳实践
+### 企业级优选实践
 
 1. **明确需求**：对于大批量任务，先规划分批策略与并行度
 2. **检查输入**：批量处理前先验证所有输入文件的有效性
@@ -449,7 +418,6 @@ skill_creator:
 # 3. 使用异步IO提升吞吐量
 # 4. 启用结果缓存减少重复计算
 ```
-
 ## 常见问题
 
 ### Q1: 批量处理时遇到内存不足？
@@ -484,7 +452,6 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 - **分类**: MD+EXEC（纯Markdown指令，部分功能需要exec命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作
 - **版本**: 专业版（v1.0.0 专业版，完整功能+企业级支持）
-
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
@@ -492,13 +459,11 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
-
 ## 已知限制
 
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
-
 ## 输出格式
 ```json
 {
@@ -515,3 +480,20 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
   "error": null
 }
 ```
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+## 核心功能
+
+- **自动化执行**: {meta.summary} - 提供专业AI自动化处理能力,支持多种使用场景。提供高效自动化处理能力,适用于多种业务场
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

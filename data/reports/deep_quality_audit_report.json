@@ -1,238 +1,1098 @@
 {
-  "audit_date": "2026-07-24T21:46:46.479109",
-  "total_skills": 2097,
-  "fix_mode": false,
-  "fix_all": false,
-  "by_severity": {
-    "critical": 0,
-    "warning": 0,
-    "info": 0,
-    "ok": 2097
-  },
-  "by_source": {
-    "packaged": {
-      "critical": 0,
-      "warning": 0,
-      "info": 0,
-      "ok": 995
-    },
-    "differentiated/Agents": {
-      "critical": 0,
-      "warning": 0,
-      "info": 0,
-      "ok": 72
-    },
-    "differentiated/Automation": {
-      "critical": 0,
-      "warning": 0,
-      "info": 0,
-      "ok": 92
-    },
-    "differentiated/Communication": {
-      "critical": 0,
-      "warning": 0,
-      "info": 0,
-      "ok": 54
-    },
-    "differentiated/Creative": {
-      "critical": 0,
-      "warning": 0,
-      "info": 0,
-      "ok": 116
-    },
-    "differentiated/Development": {
-      "critical": 0,
-      "warning": 0,
-      "info": 0,
-      "ok": 89
-    },
-    "differentiated/Finance": {
-      "critical": 0,
-      "warning": 0,
-      "info": 0,
-      "ok": 21
-    },
-    "differentiated/Integrations": {
-      "critical": 0,
-      "warning": 0,
-      "info": 0,
-      "ok": 113
-    },
-    "differentiated/Knowledge": {
-      "critical": 0,
-      "warning": 0,
-      "info": 0,
-      "ok": 64
-    },
-    "differentiated/Lifestyle": {
-      "critical": 0,
-      "warning": 0,
-      "info": 0,
-      "ok": 36
-    },
-    "differentiated/Operations": {
-      "critical": 0,
-      "warning": 0,
-      "info": 0,
-      "ok": 27
-    },
-    "differentiated/Other": {
-      "critical": 0,
-      "warning": 0,
-      "info": 0,
-      "ok": 180
-    },
-    "differentiated/Productivity": {
-      "critical": 0,
-      "warning": 0,
-      "info": 0,
-      "ok": 78
-    },
-    "differentiated/Research": {
-      "critical": 0,
-      "warning": 0,
-      "info": 0,
-      "ok": 114
-    },
-    "differentiated/Security": {
-      "critical": 0,
-      "warning": 0,
-      "info": 0,
-      "ok": 46
-    }
-  },
-  "critical_issues": [],
-  "warning_issues": [],
-  "info_issues": [],
-  "functional_quality": {
-    "grade_distribution": {
-      "A": 2097,
-      "B": 0,
-      "C": 0,
-      "D": 0,
-      "F": 0
-    },
-    "avg_score": 93.7,
-    "total_with_issues": 0,
-    "issues_detail": []
-  },
+  "timestamp": "2026-08-01T11:15:29.589170",
+  "tool": "structural_audit_converted",
   "sellability": {
-    "grade_distribution": {
-      "A": 2097,
-      "B": 0,
-      "C": 0,
-      "D": 0
-    },
-    "avg_score": 90.4,
-    "total_below_b": 0,
-    "below_b_detail": [],
-    "total_b_grade": 0,
-    "b_grade_detail": []
-  },
-  "content_authenticity": {
-    "grade_distribution": {
-      "A": 2097,
-      "B": 0,
-      "C": 0,
-      "D": 0,
-      "F": 0
-    },
-    "avg_score": 100.0,
-    "total_with_issues": 0,
-    "total_template_fills": 0,
-    "issues_detail": []
-  },
-  "semantic_audit": {
-    "enabled": true,
-    "l7a_available_count": 2097,
-    "grade_distribution": {
-      "A": 2097,
-      "B": 0,
-      "C": 0,
-      "D": 0,
-      "F": 0,
-      "N/A": 0
-    },
-    "avg_score": 100.0,
-    "total_template_blocks": 0,
-    "total_with_issues": 0,
-    "issues_detail": []
+    "total": 1144,
+    "a_grade": 1028,
+    "b_grade": 116,
+    "b_grade_detail": [
+      {
+        "slug": "afrexai-knowledge-management-free",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(9处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "algorithmic-art",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "alpha-feed-creator",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现tenant烙印(2处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "analytics-dashboard",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "api-and-interface-design",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "api-connect-hub",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现tenant烙印(7处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "api-magic-gen",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "api-scaffold-gen",
+        "score": 3.5,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(3处)",
+          "发现Mock代码(3处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "api-toolkit",
+        "score": 3.5,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现tenant烙印(1处)",
+          "发现Mock代码(36处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "azure-cli-toolkit",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "文件较长(524行)",
+          "发现tenant烙印(4处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "azure-cloud-architect",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现tenant烙印(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "azure-cloud-architect-free",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现tenant烙印(2处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "azure-gateway-cli",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现tenant烙印(5处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "brainstorming",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "brand-guidelines",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "calendar-reminder",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现tenant烙印(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "calendar-reminder-free",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现tenant烙印(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "canvas-design",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "ci-cd-and-automation",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "code-quality-paid",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现tenant烙印(6处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "code-review-and-quality",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "code-simplification",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "context-engineering",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "data-analyst-chinese",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(5处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "data-analyst-expert",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(3处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "database-admin-free",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(2处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "db-admin-console",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(9处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "db-connector",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(3处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "db-schema-designer",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(17处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "debugging-and-error-recovery",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "deprecation-and-migration",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "dispatching-parallel-agents",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "dlazy-audio",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现narrato烙印(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "dlazy-audio-generate",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现narrato烙印(2处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "doc-coauthoring",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "docker-essentials-free",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "documentation-and-adrs",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "docx",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "doubt-driven-development",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "executing-plans",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "feishu-file-sender",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "文件较长(574行)",
+          "发现tenant烙印(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "feishu-send-file",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现tenant烙印(4处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "feishu-send-file-free",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现tenant烙印(2处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "finishing-a-development-branch",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "format-converter",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(5处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "frontend-ui-engineering",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "gateway-manager",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现tenant烙印(4处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "git-workflow-and-versioning",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "golang-toolkit",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "文件较长(522行)",
+          "发现GitHub源仓库引用(2处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "graincrawl",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "html-designer-paid",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现tenant烙印(5处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "idea-refine",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "in-depth-research",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(4处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "in-depth-research-free",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(4处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "incremental-implementation",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "internal-comms",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "interview-me",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "memory-compress-free",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(2处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "memory-free",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "notion-api-toolkit",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "notion-cli",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "observability-and-instrumentation",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "performance-optimization",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "pg-job-queue",
+        "score": 2.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(8处)",
+          "发现tenant烙印(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "planning-and-task-breakdown",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "postgres-job-queue",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(2处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "postgres-mcp-skills",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "pptx",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "receiving-code-review",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "requesting-code-review",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "rss-ai-reader-free",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "security-and-hardening",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "shipping-and-launch",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "skill-vetter",
+        "score": 4.2,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现exec调用(2处)",
+          "发现eval调用(2处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "slack-crawler",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(7处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "slack-gif-creator",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "smart-crawler",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "source-driven-development",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "spec-driven-development",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "sql-free",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(10处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "sql-gen",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(6处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "sql-generator",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "sql-master",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(10处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "sql-query",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(11处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "sqlite-lite-manager",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现tenant烙印(5处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "sqlite-manager",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现tenant烙印(8处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "systematic-debugging",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "task-queue-manager",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "text2sql-engine",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "theme-factory",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "trade-alert",
+        "score": 4.2,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现exec调用(1处)",
+          "发现eval调用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "using-agent-skills",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "using-git-worktrees",
+        "score": 3.5,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)",
+          "发现Fallback代码(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "using-superpowers",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "verification-before-completion",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "vulnerability-scanner",
+        "score": 4.0,
+        "factors": [
+          "缺少必需字段 tools",
+          "缺少使用说明/快速开始章节",
+          "发现exec调用(1处)",
+          "发现eval调用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "web-artifacts-builder",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "webapp-testing",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "writing-skills",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "xlsx",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "plug-enterprise-security-suite",
+        "score": 3.5,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(4处)",
+          "发现Fallback代码(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "plug-intelligent-data-research",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "发现PostgreSQL烙印(应移除)(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "api-design-architect",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "文件较长(835行)",
+          "发现GitHub源仓库引用(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "auth-security-architect",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "文件较长(1160行)",
+          "发现PostgreSQL烙印(应移除)(3处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "brainstorm-facilitator",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "文件较长(714行)",
+          "发现PostgreSQL烙印(应移除)(4处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "clickhouse-analytics",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "文件较长(609行)",
+          "发现PostgreSQL烙印(应移除)(2处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "compliance-manager",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "文件较长(836行)",
+          "发现PostgreSQL烙印(应移除)(2处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "debug-doctor",
+        "score": 3.5,
+        "factors": [
+          "缺少必需字段 tools",
+          "文件较长(1173行)",
+          "发现PostgreSQL烙印(应移除)(2处)",
+          "发现Mock代码(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "duckdb-analytics-engine",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "文件较长(1135行)",
+          "发现PostgreSQL烙印(应移除)(6处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "lead-research-hunter",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "文件较长(591行)",
+          "发现PostgreSQL烙印(应移除)(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "mcp-server-builder",
+        "score": 3.5,
+        "factors": [
+          "缺少必需字段 tools",
+          "文件较长(913行)",
+          "发现PostgreSQL烙印(应移除)(1处)",
+          "发现Mock代码(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "nextjs-fullstack-guide",
+        "score": 3.5,
+        "factors": [
+          "缺少必需字段 tools",
+          "文件较长(1048行)",
+          "发现PostgreSQL烙印(应移除)(1处)",
+          "发现Fallback代码(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "plan-architect",
+        "score": 3.5,
+        "factors": [
+          "缺少必需字段 tools",
+          "文件较长(1247行)",
+          "发现PostgreSQL烙印(应移除)(14处)",
+          "发现Mock代码(6处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "security-hardening-shield",
+        "score": 3.5,
+        "factors": [
+          "缺少必需字段 tools",
+          "文件较长(1124行)",
+          "发现PostgreSQL烙印(应移除)(1处)",
+          "发现Mock代码(1处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "stripe-payment-integrator",
+        "score": 3.8,
+        "factors": [
+          "缺少必需字段 tools",
+          "文件较长(1099行)",
+          "发现PostgreSQL烙印(应移除)(2处)"
+        ],
+        "source": ""
+      },
+      {
+        "slug": "geo-rank-architect",
+        "score": 4.3,
+        "factors": [
+          "缺少必需字段 tools",
+          "缺少安全章节",
+          "发现Fallback代码(1处)"
+        ],
+        "source": ""
+      }
+    ]
   },
   "executability_audit": {
-    "enabled": true,
-    "l7b_available_count": 2097,
-    "grade_distribution": {
-      "A": 2097,
-      "B": 0,
-      "C": 0,
-      "D": 0,
-      "F": 0,
-      "N/A": 0
-    },
-    "avg_score": 100.0,
-    "executable_count": 2097,
-    "pass_rate": "100%",
-    "check_distribution": {
-      "L7B_NO_CODE": 0,
-      "L7B_BROKEN_REF": 0,
-      "L7B_VAGUE_TASK": 0,
-      "L7B_MISSING_INPUT": 0,
-      "L7B_NO_OUTPUT": 0,
-      "L7B_CONTRADICTION": 0
-    },
-    "total_with_issues": 0,
-    "issues_detail": []
+    "issues_detail": [],
+    "total_issues": 0
   },
-  "security_audit": {
-    "enabled": true,
-    "l8_available_count": 2097,
-    "grade_distribution": {
-      "A": 2097,
-      "B": 0,
-      "C": 0,
-      "D": 0,
-      "F": 0,
-      "N/A": 0
-    },
-    "avg_score": 100.0,
-    "passed_count": 2097,
-    "failed_count": 0,
-    "pass_rate": "100%",
-    "category_distribution": {
-      "EXTERNAL_URL": 0,
-      "INJECTED_MARKETING_TEXT": 0,
-      "API_KEY_EXPOSURE": 0,
-      "SLUG_CONTENT_MISMATCH": 0,
-      "DUPLICATE_YAML_FIELDS": 0,
-      "TAG_MISMATCH": 0,
-      "GARBLED_TEXT": 0,
-      "DEPENDENCY_CONTRADICTION": 0
-    },
-    "total_with_issues": 0,
-    "issues_detail": []
+  "content_authenticity": {
+    "issues_detail": [],
+    "total_issues": 0
   },
-  "visibility_audit": {
-    "enabled": true,
-    "l9_available_count": 2097,
-    "grade_distribution": {
-      "A": 2097,
-      "B": 0,
-      "C": 0,
-      "D": 0,
-      "N/A": 0
-    },
-    "avg_score": 100.0,
-    "passed_count": 2097,
-    "failed_count": 0,
-    "pass_rate": "100%",
-    "category_distribution": {
-      "INVALID_CATEGORY": 0,
-      "INSUFFICIENT_SUMMARY": 0,
-      "MISSING_VALUE_PROPOSITION": 0,
-      "MISSING_QUICK_START": 0,
-      "MISSING_OR_IRRELEVANT_TAGS": 0
-    },
-    "total_with_issues": 0,
-    "issues_detail": []
+  "semantic_audit": {
+    "issues_detail": [],
+    "total_issues": 0
   }
 }

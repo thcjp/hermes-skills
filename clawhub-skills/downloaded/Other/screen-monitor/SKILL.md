@@ -17,7 +17,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Screen Monitor
 
 This skill provides two ways for the agent to see and interact with your screen.

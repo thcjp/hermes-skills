@@ -16,7 +16,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # News Sentiment Scan
 
 舆情监控与情绪分析技能，扫描多渠道信息源并进行情绪打分。

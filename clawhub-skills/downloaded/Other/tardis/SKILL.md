@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # TARDIS
 
 Life event tracker with three modes, milestone notifications, and tamper-evident verification.

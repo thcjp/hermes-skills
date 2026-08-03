@@ -33,7 +33,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Notion
 
 This skill lets the agent work with **Notion pages and databases** using the official Notion API.

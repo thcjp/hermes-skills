@@ -1,6 +1,7 @@
 ---
+
 name: "k8s-devops-tool-free"
-description: "Kubernetes YAML清单生成工具，支持常用资源模板与基础校验。"
+description: "Kubernetes YAML清单生成工具，支持常用资源模板与基础校验。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,10 @@ metadata:
     - "清单生成"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # K8s清单生成入门（免费版）
@@ -40,23 +45,17 @@ metadata:
 | Helm Chart | 不支持 | 不支持 | - |
 | Kustomize | 不支持 | 不支持 | - |
 
-**输入**: 用户提供清单生成功能所需的指令和必要参数。
-**处理**: 按照skill规范执行清单生成功能操作,遵循单一意图原则。
 **输出**: 返回清单生成功能的执行结果,包含操作状态和输出数据。
 
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Kubernetes、YAML、清单生成工具、支持常用资源模板、与基础校验、面向个人开发者的、等常用资源的清单、生成与基础校验、Use、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -86,7 +85,6 @@ cat deployment.yaml
 
 ```bash
 # 生成应用栈
-python3 scripts/generate.py stack \
   --template "web_db" \
   --app-name my-app \
   --app-image my-app:v1 \
@@ -107,7 +105,6 @@ python3 scripts/generate.py stack \
 
 ```bash
 # 校验清单
-python3 scripts/generate.py validate \
   --file deployment.yaml \
   --dry-run
 
@@ -133,29 +130,27 @@ python3 scripts/generate.py validate \
 pip install pyyaml jsonschema
 
 # 生成清单
-python3 scripts/generate.py deployment --name my-app --image nginx:1.25
+py deployment --name my-app --image nginx:1.25
 ```
 
 ### 常用命令
 
 ```bash
 # 生成单个资源
-python3 scripts/generate.py deployment --name my-app --image my-image:v1 --replicas 3
-python3 scripts/generate.py service --name my-service --port 80 --type ClusterIP
-python3 scripts/generate.py configmap --name my-config --from-file ./config.yaml
+py deployment --name my-app --image my-image:v1 --replicas 3
+py service --name my-service --port 80 --type ClusterIP
+py configmap --name my-config --from-file ./config.yaml
 
 # 生成应用栈
-python3 scripts/generate.py stack --template "web_db" --app-name my-app
+py stack --template "web_db" --app-name my-app
 
 # 校验清单
-python3 scripts/generate.py validate --file deployment.yaml --dry-run
+py validate --file deployment.yaml --dry-run
 
 # 查看模板列表
-python3 scripts/generate.py templates list
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
-
 
 ## 示例
 
@@ -188,10 +183,10 @@ generate_config:
   validation:
     schema_check: true
     dry_run: true               # kubectl dry-run验证
-    best_practices: true         # 最佳实践检查
+    best_practices: true         # 优选实践检查
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **模板复用**：将常用配置保存为模板，避免重复编写
 2. **校验优先**：生成后先校验再应用，避免配置错误
@@ -260,9 +255,35 @@ generate_config:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

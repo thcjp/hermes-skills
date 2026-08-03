@@ -33,31 +33,22 @@
 import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
-from project_config import PROJECT_ROOT
-from project_config import DB_PATH
-from project_config import TOOLS_DIR
-from project_config import CLAWHUB_DOWNLOADED_DIR
-from project_config import DATA_DIR  # 修复: SKILL_DATA_DIR → DATA_DIR
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))  # V118 W4: 模块级添加TOOLS_DIR,替代11处函数级sys.path.insert
+from project_config import SKILLS_ROOT, TOOLS_DIR, DATA_DIR, get_timestamp, PLATFORM_CONFIG, PACKAGED_SKILLS_DIR, OPENSOURCE_SKILLS_DIR, DIFFERENTIATED_DIR # V123 W2: 合并重复import
 # === End Phase 1 ===
-SKILLS_ROOT = PROJECT_ROOT
-SKILL_REGISTRY_DIR = TOOLS_DIR
+DIFFERENTIATED_SKILLS_DIR = DIFFERENTIATED_DIR  # V103 W3: backward compat alias
 
 
 import argparse
-import hashlib
 import json
-import os
 import re
-import sqlite3
+import shutil
 import subprocess
-import sys
-import time
-from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional  # V121 W6: 移除未使用的 import time 与 Tuple
 
-import db as db_module
-from skill_core.parser import find_skill_md
+from skill_core import db as db_module  # V116 W1: 统一db入口(替代import db)
+from skill_core.parser import find_skill_md, parse_frontmatter  # V128 Y4: 别名已统一移除
 
 # ============================================================
 # 配置
@@ -65,119 +56,92 @@ from skill_core.parser import find_skill_md
 
 # DB_PATH imported from config
 # SKILLS_ROOT = PROJECT_ROOT (imported from config)
-# SKILL_REGISTRY_DIR = TOOLS_DIR (imported from config)
-PACKAGED_SKILLS_DIR = SKILLS_ROOT / "packaged-skills" / "skillhub"
-OPENSOURCE_SKILLS_DIR = SKILLS_ROOT / "opensource-skills" / "packaged"
-DIFFERENTIATED_SKILLS_DIR = SKILLS_ROOT / "differentiated-skills"
+# TOOLS_DIR = TOOLS_DIR (imported from config)
+# V103 W3: PACKAGED_SKILLS_DIR/OPENSOURCE_SKILLS_DIR/DIFFERENTIATED_DIR imported from project_config
 # CLAWHUB_DOWNLOADED_DIR imported from config
 
 # GitHub 仓库配置 (双仓库策略)
-# 1. hermes-skills: 公开引流仓库, 仅推送免费skill (MIT license, pricing=free/L1-L2)
-PUBLIC_REMOTE = "hermes-skills"  # git remote name for https://github.com/thcjp/hermes-skills.git
-PUBLIC_REPO_URL = "https://github.com/thcjp/hermes-skills"
-# 2. origin: 私有备份仓库, 推送全部skill (免费+付费) + 项目代码
-PRIVATE_REMOTE = "origin"  # git remote name for https://github.com/thcjp/-.git
-PRIVATE_REPO_URL = "https://github.com/thcjp/-.git"
-GITHUB_BRANCH = "main"
-# 免费skill判定: pricing=free 或 pricing_tier in (L1-入门级, L2-标准级) 或 license=MIT
-FREE_PRICING_TIERS = {"L1-入门级", "L2-标准级"}
-FREE_LICENSES = {"MIT", "Apache-2.0"}
+# V107 W3: GitHub仓库常量从github_repo_strategy导入 (消除重复定义)
+from github_repo_strategy import PUBLIC_REMOTE, PRIVATE_REMOTE, GITHUB_BRANCH
+# V100 W4: FREE_PRICING_TIERS/FREE_LICENSES已移除, 统一使用github_repo_strategy中的定义
 
-# SkillHub 配置
-SKILLHUB_CLI = "skillhub"
+# SkillHub 配置 — 使用skills_store_cli.py(原始CLI工具)
+SKILLHUB_CLI = "python"
+SKILLHUB_CLI_ARGS = [str(Path.home() / ".skillhub" / "skills_store_cli.py"), "publish"]
 SKILLHUB_MAX_CONTENT = 5800  # WAF限制
 
 # ClawHub 配置
-CLAWHUB_UPLOADER = SKILL_REGISTRY_DIR / "clawhub_batch_uploader.py"
+CLAWHUB_UPLOADER = TOOLS_DIR / "clawhub_batch_uploader.py"
 
 # 扫描目录配置: (目录路径, 来源标签)
-SCAN_DIRS = [
+# V103 W3: 重命名SCAN_DIRS→SCAN_DIRS_LABELED以避免与project_config.SCAN_DIRS命名冲突 (本结构含标签)
+SCAN_DIRS_LABELED = [
     (PACKAGED_SKILLS_DIR, "packaged"),
     (OPENSOURCE_SKILLS_DIR, "opensource"),
     (DIFFERENTIATED_SKILLS_DIR, "differentiated"),
 ]
 
-NOW = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+NOW = get_timestamp()  # V101 W4: 统一时间戳
 
 # ============================================================
 # 数据库操作
 # ============================================================
 
-def get_db():
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
-    conn.execute("PRAGMA foreign_keys = ON")
-    return conn
+# V117 W1: compute_file_hash通过db_module访问
 
 
-def compute_file_hash(file_path: Path) -> str:
-    h = hashlib.sha256()
-    with open(file_path, 'rb') as f:
-        for chunk in iter(lambda: f.read(8192), b''):
-            h.update(chunk)
-    return h.hexdigest()
+# V116 W4: parse_frontmatter wrapper已消除, 调用方直接使用parse_frontmatter结果
+# 原wrapper仅做了 result['fields'], result['body'] 的解包, 无附加逻辑
 
 
-def parse_frontmatter(content: str) -> Tuple[Dict[str, Any], str]:
-    if content.startswith('\ufeff'):
-        content = content[1:]
-    if not content.startswith('---'):
-        return {}, content
-    parts = content.split('---', 2)
-    if len(parts) < 3:
-        return {}, content
-    fm_text = parts[1].strip()
-    body = parts[2].strip()
-    metadata = {}
-    current_key = None
-    current_list = []
-    for line in fm_text.split('\n'):
-        if line.startswith('  - '):
-            if current_key:
-                current_list.append(line[4:].strip())
-            continue
-        if line.startswith('  '):
-            if current_key:
-                if not isinstance(metadata.get(current_key), list):
-                    metadata[current_key] = []
-                metadata[current_key].append(line.strip())
-            continue
-        if ':' in line:
-            if current_key and current_list:
-                metadata[current_key] = current_list
-                current_list = []
-            key, _, val = line.partition(':')
-            key = key.strip()
-            val = val.strip().strip('"').strip("'")
-            if val and val not in ('|-', '|'):
-                metadata[key] = val
-            else:
-                current_key = key
-    if current_key and current_list:
-        metadata[current_key] = current_list
-    return metadata, body
+def increment_version(version: str, level: str = 'patch') -> str:
+    """递增版本号(支持patch/minor/major三种策略) (V141 D3扩展)
 
+    V129 Z3 (TD-212): 本函数与 clawhub_batch_uploader.increment_version 同名但职责不同。
+    本函数为【字符串级纯函数】: 接收 version 字符串, 仅做版本号递增的纯变换, 无文件 I/O;
+    clawhub_batch_uploader.increment_version 为【文件级适配器】: 接收 skill_dir 路径, 直接读写 SKILL.md。
+    本模块的文件写入由 update_version_in_file(skill_md, new_version) 单独负责, 职责已分离, 两者不可合并。
 
-def increment_version(version: str) -> str:
-    """递增patch版本号: 1.0.0 → 1.0.1"""
+    V141 D3 (TD-290): 扩展level参数, 支持:
+      - 'patch': 1.0.0 → 1.0.1 (默认, 向后兼容)
+      - 'minor': 1.0.0 → 1.1.0
+      - 'major': 1.0.0 → 2.0.0
+
+    Args:
+        version: 当前版本号字符串(如"1.0.0")
+        level: 递增级别('patch'/'minor'/'major')
+
+    Returns:
+        递增后的版本号字符串
+    """
     parts = version.split('.')
     if len(parts) == 3:
         try:
             major, minor, patch = int(parts[0]), int(parts[1]), int(parts[2])
-            return f"{major}.{minor}.{patch + 1}"
-        except ValueError:
-            pass
+            if level == 'major':
+                return f"{major + 1}.0.0"
+            elif level == 'minor':
+                return f"{major}.{minor + 1}.0"
+            else:  # patch (默认, 向后兼容)
+                return f"{major}.{minor}.{patch + 1}"
+        except ValueError as e:  # [V132 C2] 有意降级: 3段版本号解析失败,尝试2段  V144: 添加警告日志
+            print(f"[WARN] 3段版本号解析失败,尝试2段: {e}")
     elif len(parts) == 2:
         try:
             major, minor = int(parts[0]), int(parts[1])
-            return f"{major}.{minor + 1}.0"
-        except ValueError:
-            pass
+            if level == 'major':
+                return f"{major + 1}.0.0"
+            elif level == 'minor':
+                return f"{major}.{minor + 1}.0"
+            else:  # patch
+                return f"{major}.{minor + 1}.0"
+        except ValueError as e:  # [V132 C2] 有意降级: 2段版本号解析失败,使用默认递增  V144: 添加警告日志
+            print(f"[WARN] 2段版本号解析失败,使用默认递增: {e}")
     return f"{version}.1" if version else "1.0.1"
 
 
 def get_skill_from_db(slug: str) -> Optional[Dict[str, Any]]:
-    conn = get_db()
+    conn = db_module.get_db()
     c = conn.cursor()
     c.execute("""
         SELECT s.*,
@@ -205,32 +169,15 @@ def find_skill_source(slug: str) -> str:
     return "unknown"
 
 
+# [V131 B5: 与platform_config.is_free_skill不同(本版查DB判断, 对方查配置常量)]
 def is_free_skill(skill_md: Path) -> bool:
-    """判断skill是否为免费skill (可以推送到公开引流仓库)
-    
-    判定规则:
-    1. pricing 字段 = 'free' → 免费
-    2. pricing_tier in FREE_PRICING_TIERS (L1-入门级, L2-标准级) → 免费
-    3. license in FREE_LICENSES (MIT, Apache-2.0) → 免费
-    4. 以上都不满足 → 付费 (不推送到公开仓库)
+    """V127 X8: 委托到github_repo_strategy.is_free_skill_from_file(TD-197)
+
+    消除重复的文件读取+frontmatter解析逻辑。
+    保留原签名(skill_md: Path → bool)兼容现有调用方。
     """
-    try:
-        content = skill_md.read_text(encoding='utf-8', errors='replace')
-        metadata, _ = parse_frontmatter(content)
-        
-        pricing = metadata.get('pricing', '').lower()
-        pricing_tier = metadata.get('pricing_tier', '')
-        license_val = metadata.get('license', '')
-        
-        if pricing == 'free':
-            return True
-        if pricing_tier in FREE_PRICING_TIERS:
-            return True
-        if license_val in FREE_LICENSES:
-            return True
-        return False
-    except Exception:
-        return False
+    from github_repo_strategy import is_free_skill_from_file
+    return is_free_skill_from_file(skill_md)
 
 
 def update_version_in_file(skill_md: Path, new_version: str) -> bool:
@@ -267,7 +214,13 @@ def record_platform_upload(skill_id: int, version: str, platform: str,
                            platform_slug: str, status: str,
                            http_status: int = None, error: str = None,
                            visibility: str = None, pricing: str = None):
-    """记录平台上传结果"""
+    """记录平台上传结果
+
+    V129 Z4 (TD-213): 本函数为【委托适配器】, 已委托到 db.record_platform_upload (db_module)。
+    因签名与 db.py 原版不同(参数名 status/error/pricing vs upload_status/error_message/pricing_on_platform,
+    且本函数省略 operator/operation_type/operation_details, 由本包装器内部填充 version_sync_pipeline 上下文),
+    故保留此薄包装层做参数映射与上下文注入, 不直接合并签名。真正的 DB 写入逻辑唯一存在于 db.record_platform_upload。
+    """
     db_module.record_platform_upload(
         skill_id, version, platform, platform_slug, status,
         http_status=http_status, error_message=error, visibility=visibility,
@@ -285,14 +238,14 @@ def scan_all_changes() -> List[Dict[str, Any]]:
     """扫描所有目录,检测SKILL.md文件变更"""
     changed_skills = []
 
-    for scan_dir, source_label in SCAN_DIRS:
+    for scan_dir, source_label in SCAN_DIRS_LABELED:
         if not scan_dir.exists():
             continue
         for skill_md in scan_dir.rglob("SKILL.md"):
             if skill_md.parent.name.startswith('.'):
                 continue
             slug = skill_md.parent.name
-            current_hash = compute_file_hash(skill_md)
+            current_hash = db_module.compute_file_hash(skill_md)
 
             # 查询数据库
             db_skill = get_skill_from_db(slug)
@@ -300,7 +253,7 @@ def scan_all_changes() -> List[Dict[str, Any]]:
                 # 不在数据库中的skill,跳过
                 continue
 
-            last_hash = db_skill.get('last_hash', '')
+            last_hash = db_skill.get('last_hash') or ''
             if last_hash and current_hash != last_hash:
                 changed_skills.append({
                     'slug': slug,
@@ -335,7 +288,6 @@ def increment_skill_version(slug: str, skill_md: Path, current_version: str) -> 
 def run_quality_check(skill_md: Path) -> Dict[str, Any]:
     """运行L1质量门禁检查"""
     try:
-        sys.path.insert(0, str(SKILL_REGISTRY_DIR))
         from quality_gate import run_quality_gate
         result = run_quality_gate(skill_md)
         return {
@@ -344,16 +296,12 @@ def run_quality_check(skill_md: Path) -> Dict[str, Any]:
             'failed_checks': [c['name'] for c in result.get('checks', []) if not c['passed']],
         }
     except ImportError:
-        # quality_gate模块不可用时,执行基本检查
-        content = skill_md.read_text(encoding='utf-8')
-        has_frontmatter = content.startswith('---')
-        has_version = 'version:' in content[:500]
-        has_slug = 'slug:' in content[:500]
-        passed = has_frontmatter and has_version and has_slug
+        # V156: fail-safe — quality_gate模块不可用时阻断,不允许降级为基本检查
         return {
-            'passed': passed,
-            'score': 'basic_check',
-            'failed_checks': [] if passed else ['missing_frontmatter_or_fields'],
+            'passed': False,
+            'score': 'blocked',
+            'failed_checks': ['module_unavailable'],
+            'note': 'quality_gate.run_quality_gate不可用 — L1质量门禁阻断(fail-safe)',
         }
 
 
@@ -368,7 +316,6 @@ def run_content_quality_gate(skill_md: Path) -> Dict[str, Any]:
     - 输入格式表非空
     """
     try:
-        sys.path.insert(0, str(SKILL_REGISTRY_DIR))
         from skill_batch_upgrader_v3 import run_content_quality_check
         result = run_content_quality_check(skill_md)
         failed_checks = [c['name'] for c in result.get('checks', []) if not c['passed']]
@@ -379,16 +326,17 @@ def run_content_quality_gate(skill_md: Path) -> Dict[str, Any]:
             'fail_count': result.get('fail_count', 0),
         }
     except ImportError:
+        # PRR V146: 模块不可用时阻断(fail-safe), 不允许跳过
         return {
-            'passed': True,
-            'score': 'skipped',
-            'failed_checks': [],
-            'note': 'skill_batch_upgrader_v3 not available, content quality check skipped',
+            'passed': False,
+            'score': 'blocked',
+            'failed_checks': ['module_unavailable'],
+            'note': 'skill_batch_upgrader_v3不可用 — 内容质量检查阻断(fail-safe)',
         }
 
 
 def run_marketing_gate_check(skill_md: Path) -> Dict[str, Any]:
-    """营销关卡检查(v2.0新增)
+    """营销关卡检查(v2.0新增, V150 T5: 使用autofix版本)
     
     在L1.5内容质量检查通过后，检查营销数据质量:
     - displayName中文化且≤20字符
@@ -398,50 +346,70 @@ def run_marketing_gate_check(skill_md: Path) -> Dict[str, Any]:
     - categoryIds正确映射
     - pricing合理性
     - license合规
+
+    V150 T5: 优先使用run_marketing_gate_with_autofix,自动修复
+    displayName/summary/description/tags/pricing等可修复问题。
     """
     try:
-        sys.path.insert(0, str(SKILL_REGISTRY_DIR))
-        from quality_gate import run_marketing_gate
-        result = run_marketing_gate(skill_md)
+        # V150 T5: 优先使用autofix版本
+        try:
+            from quality_gate import run_marketing_gate_with_autofix
+            result = run_marketing_gate_with_autofix(skill_md)
+        except ImportError:
+            from quality_gate import run_marketing_gate
+            result = run_marketing_gate(skill_md)
         failed_checks = [c['name'] for c in result.get('checks', []) if not c['passed']]
+        auto_fix_info = result.get('auto_fix', {})
         return {
             'passed': result.get('overall_passed', False),
             'score': f"{result.get('passed_checks', 0)}/{result.get('total_checks', 0)}",
             'failed_checks': failed_checks,
+            'auto_fix_applied': auto_fix_info.get('fixes', []) if auto_fix_info.get('fixed') else [],
         }
     except ImportError:
+        # PRR V146: 模块不可用时阻断(fail-safe), 不允许跳过
         return {
-            'passed': True,
-            'score': 'skipped',
-            'failed_checks': [],
-            'note': 'quality_gate.run_marketing_gate not available, skipped',
+            'passed': False,
+            'score': 'blocked',
+            'failed_checks': ['module_unavailable'],
+            'note': 'quality_gate.run_marketing_gate不可用 — 营销关卡阻断(fail-safe)',
         }
 
 
 def run_anti_hallucination_check(skill_md: Path) -> Dict[str, Any]:
-    """防幻觉机制检查(v2.0新增)
-    
+    """防幻觉机制检查(v2.0新增, V150 T4: 使用autofix版本)
+
     检查AI虚假实现和需求理解偏差:
     - 交叉验证(需L2/L3/L4报告, 无报告时跳过, 不阻止)
     - 需求理解偏差: description声明 vs body实际内容
     - 虚假实现检测: 无占位符/无模板/无空代码块
+
+    V150 T4: 优先使用run_anti_hallucination_with_autofix,自动修复
+    占位符等可修复问题,不可修复的问题仍会阻断。
     """
     try:
-        sys.path.insert(0, str(SKILL_REGISTRY_DIR))
-        from quality_gate import run_anti_hallucination
-        result = run_anti_hallucination(skill_md)
+        # V150 T4: 优先使用autofix版本
+        try:
+            from quality_gate import run_anti_hallucination_with_autofix
+            result = run_anti_hallucination_with_autofix(skill_md)
+        except ImportError:
+            from quality_gate import run_anti_hallucination
+            result = run_anti_hallucination(skill_md)
         failed_checks = [c['name'] for c in result.get('checks', []) if not c['passed']]
+        auto_fix_info = result.get('auto_fix', {})
         return {
             'passed': result.get('overall_passed', False),
             'score': f"{result.get('passed_checks', 0)}/{result.get('total_checks', 0)}",
             'failed_checks': failed_checks,
+            'auto_fix_applied': auto_fix_info.get('fixes', []) if auto_fix_info.get('fixed') else [],
         }
     except ImportError:
+        # PRR V146: 模块不可用时阻断(fail-safe), 不允许跳过
         return {
-            'passed': True,
-            'score': 'skipped',
-            'failed_checks': [],
-            'note': 'quality_gate.run_anti_hallucination not available, skipped',
+            'passed': False,
+            'score': 'blocked',
+            'failed_checks': ['module_unavailable'],
+            'note': 'quality_gate.run_anti_hallucination不可用 — 防幻觉检查阻断(fail-safe)',
         }
 
 
@@ -457,7 +425,6 @@ def run_rating_gate_check(skill_md: Path, slug: str = None) -> Dict[str, Any]:
     → 阻断上传(rating_gate) → 触发升级(upgrade_single_skill) → 升级通过 → 允许重传
     """
     try:
-        sys.path.insert(0, str(SKILL_REGISTRY_DIR))
         from quality_gate import run_rating_gate
         result = run_rating_gate(skill_md, slug)
         failed_checks = [c['name'] for c in result.get('checks', []) if not c['passed']]
@@ -467,11 +434,12 @@ def run_rating_gate_check(skill_md: Path, slug: str = None) -> Dict[str, Any]:
             'failed_checks': failed_checks,
         }
     except ImportError:
+        # PRR V146: 模块不可用时阻断(fail-safe), 不允许跳过
         return {
-            'passed': True,
-            'score': 'skipped',
-            'failed_checks': [],
-            'note': 'quality_gate.run_rating_gate not available, skipped',
+            'passed': False,
+            'score': 'blocked',
+            'failed_checks': ['module_unavailable'],
+            'note': 'quality_gate.run_rating_gate不可用 — 评分门控阻断(fail-safe)',
         }
 
 
@@ -484,7 +452,7 @@ def run_l2_check(slug: str) -> Dict[str, Any]:
     - 如果不存在, 标记为pending, 生成AI执行指引
     """
     import json as _json
-    l2_final_path = SKILL_REGISTRY_DIR / f'l2_final_report_{slug}.json'
+    l2_final_path = TOOLS_DIR / f'l2_final_report_{slug}.json'
     
     if not l2_final_path.exists():
         return {
@@ -508,7 +476,7 @@ def run_l2_check(slug: str) -> Dict[str, Any]:
             'trace_grade': l2_final.get('trace_grade', 'D'),
             'failed_checks': [] if l2_passed else [f'TRACE评分{trace_total}/50未通过(阈值35)'],
         }
-    except Exception as e:
+    except Exception as e:  # [V131 B2] 宽泛捕获: 异常时返回错误/默认值
         return {
             'passed': False,
             'status': 'error',
@@ -525,7 +493,7 @@ def run_l3_check(slug: str) -> Dict[str, Any]:
     - 如果不存在, 标记为pending, 生成AI执行指引
     """
     import json as _json
-    l3_final_path = SKILL_REGISTRY_DIR / f'l3_final_report_{slug}.json'
+    l3_final_path = TOOLS_DIR / f'l3_final_report_{slug}.json'
     
     if not l3_final_path.exists():
         return {
@@ -549,7 +517,7 @@ def run_l3_check(slug: str) -> Dict[str, Any]:
             'grade': l3_final.get('l3_grade', 'D'),
             'failed_checks': [] if l3_passed else [f'L3试运行评分{l3_score}/100未通过(阈值70)'],
         }
-    except Exception as e:
+    except Exception as e:  # [V131 B2] 宽泛捕获: 异常时返回错误/默认值
         return {
             'passed': False,
             'status': 'error',
@@ -671,7 +639,7 @@ def sync_to_github(slug: str, skill_md: Path, new_version: str,
             record_platform_upload(skill_id, new_version, 'github_public', slug,
                                    'timeout', error='git operation timed out')
         return result
-    except Exception as e:
+    except Exception as e:  # [V131 B2] 宽泛捕获: 异常更新状态/计数继续
         result['status'] = 'error'
         result['error'] = str(e)
         if skill_id:
@@ -684,11 +652,74 @@ def sync_to_github(slug: str, skill_md: Path, new_version: str,
 # Phase 5: SYNC_SKILLHUB - SkillHub同步
 # ============================================================
 
+def _skillhub_cli_fallback(slug: str, skill_dir: Path, skill_id: int,
+                            new_version: str) -> Dict[str, Any]:
+    """SkillHub CLI上传fallback — V139 S4
+
+    仅当API通道(enterprise_uploader)不可用时使用。
+    缺WAF重试, 不推荐生产环境使用。
+
+    Args:
+        slug: skill slug
+        skill_dir: skill目录路径
+        skill_id: 数据库skill ID
+        new_version: 新版本号
+
+    Returns:
+        dict: {'status': 'success'|'failed'|'rate_limited'|...}
+    """
+    try:
+        # V160 R2修复: 使用list-based subprocess消除shell=True(命令注入风险) + 添加速率限制
+        from daily_sync import check_upload_rate_limit  # V128 Y1
+        rate_check = check_upload_rate_limit('skillhub')
+        if not rate_check.get('allowed', False):  # V161: fail-safe默认False
+            record_platform_upload(skill_id, new_version, 'skillhub_free', slug,
+                                   'rate_limited', error='RATE_LIMITED')
+            return {'status': 'rate_limited', 'output': rate_check.get('reason', '')[:200]}
+
+        cli_cmd = [SKILLHUB_CLI] + SKILLHUB_CLI_ARGS + [str(skill_dir),
+                   '--changelog', f'Auto-sync v{new_version}']
+        cli_result = subprocess.run(
+            cli_cmd, capture_output=True, text=True, timeout=60
+        )
+        output = cli_result.stdout + cli_result.stderr
+
+        if cli_result.returncode == 0:
+            record_platform_upload(skill_id, new_version, 'skillhub_free', slug,
+                                   'success', visibility='public', pricing='free')
+            try:
+                from daily_sync import record_rate_limit_upload  # V128 Y1
+                record_rate_limit_upload('skillhub', slug)
+            except Exception as e:  # [V131 B2] 宽泛捕获
+                print(f"  [WARN] record_upload失败,速率限制计数可能不准: {e}")
+            return {'status': 'success', 'output': output[:200]}
+        elif 'VERSION_EXISTS' in output:
+            record_platform_upload(skill_id, new_version, 'skillhub_free', slug,
+                                   'version_exists', error='VERSION_EXISTS')
+            return {'status': 'version_exists', 'output': output[:200]}
+        elif '429' in output:
+            record_platform_upload(skill_id, new_version, 'skillhub_free', slug,
+                                   'rate_limited', error='RATE_LIMITED')
+            return {'status': 'rate_limited', 'output': output[:200]}
+        else:
+            record_platform_upload(skill_id, new_version, 'skillhub_free', slug,
+                                   'failed', error=output[:200])
+            return {'status': 'failed', 'output': output[:200]}
+    except subprocess.TimeoutExpired:
+        record_platform_upload(skill_id, new_version, 'skillhub_free', slug,
+                               'timeout', error='CLI timeout')
+        return {'status': 'timeout'}
+    except Exception as e:  # [V131 B2] 宽泛捕获
+        record_platform_upload(skill_id, new_version, 'skillhub_free', slug,
+                               'error', error=str(e))
+        return {'status': 'error', 'error': str(e)}
+
+
 def sync_to_skillhub(slug: str, skill_md: Path, new_version: str,
                      skill_id: int, is_paid: bool = False) -> Dict[str, Any]:
     """同步skill到SkillHub
 
-    免费版: 通过skillhub CLI上传
+    V139 S4: 统一上传通道 — API优先(enterprise_uploader含WAF重试), CLI fallback
     付费版: 生成payload文件(需浏览器session认证上传)
     """
     result = {
@@ -706,13 +737,9 @@ def sync_to_skillhub(slug: str, skill_md: Path, new_version: str,
     # 根因: 2026-07-24单秒上传1097个skill导致账号被封禁
     # 复用daily_sync.py的速率限制机制,不创建新的独立实现
     try:
-        import sys as _sys
-        _tools_dir = os.path.dirname(os.path.abspath(__file__))
-        if _tools_dir not in _sys.path:
-            _sys.path.insert(0, _tools_dir)
-        from daily_sync import check_upload_rate_limit, record_upload
+        from daily_sync import check_upload_rate_limit, record_rate_limit_upload  # V128 Y1: 重命名
         rate_check = check_upload_rate_limit('skillhub')
-        if not rate_check.get('allowed', True):
+        if not rate_check.get('allowed', False):  # V161: fail-safe默认False
             wait = rate_check.get('wait_seconds', 120)
             result['status'] = 'rate_limited'
             result['error'] = f"速率限制: {rate_check.get('reason', '未知')} (需等待{wait}秒)"
@@ -726,7 +753,7 @@ def sync_to_skillhub(slug: str, skill_md: Path, new_version: str,
         result['error'] = '速率限制模块不可用,已阻止上传以防爆发式触发反垃圾系统'
         result['free_upload'] = {'status': 'rate_limited', 'error': result['error']}
         return result
-    except Exception as e:
+    except Exception as e:  # [V131 B2] 宽泛捕获: 异常处理(非静默pass)
         # v3.3: 失败安全(fail-safe) — 速率限制异常时阻止上传
         result['status'] = 'rate_limited'
         result['error'] = f'速率限制检查异常,已阻止上传: {e}'
@@ -743,69 +770,134 @@ def sync_to_skillhub(slug: str, skill_md: Path, new_version: str,
                                'blocked_content_too_long', error=result['error'])
         return result
 
+    # V186: 自动生成内容检测 (防止上传自动生成模板被平台当成垃圾内容)
+    # 根因: 大量skill是自动生成模板,内容与slug无关,被平台当成垃圾导致封号
+    try:
+        from quality_gate import check_auto_generated_content
+        auto_gen_result = check_auto_generated_content(content)
+        if not auto_gen_result['passed']:
+            result['status'] = 'blocked_auto_generated'
+            result['error'] = f"自动生成内容阻断: {auto_gen_result['message']}"
+            result['free_upload'] = {'status': 'blocked_auto_generated', 'error': result['error']}
+            record_platform_upload(skill_id, new_version, 'skillhub', slug,
+                                   'blocked_auto_generated', error=result['error'])
+            return result
+    except ImportError:
+        # quality_gate不可用时,使用内联检测(不依赖外部模块)
+        auto_gen_markers = ['本技能提供', '功能总览', '功能1：', '功能1:', '核心功能',
+                           '自动化处理流程', '减少人工干预与重复劳动', '结构化输入输出']
+        matched = [m for m in auto_gen_markers if m in content]
+        if len(matched) >= 2:
+            result['status'] = 'blocked_auto_generated'
+            result['error'] = f'自动生成内容阻断: 检测到{len(matched)}个标记: {", ".join(matched[:3])}'
+            result['free_upload'] = {'status': 'blocked_auto_generated', 'error': result['error']}
+            record_platform_upload(skill_id, new_version, 'skillhub', slug,
+                                   'blocked_auto_generated', error=result['error'])
+            return result
+
     # v3.4: 内容指纹去重预检 (防止相同内容以不同slug上传触发平台反垃圾系统)
     # 根因: 2026-07-24批量上传中大量近似重复内容被封禁(93.4%封禁率)
+    # V155 R1修复: 使用check_approximate_dedup替代check_content_dedup
+    # 原因: check_content_dedup仅做SHA-256精确匹配,无法检测近似重复
+    # V155 R2修复: Exception分支改为fail-safe阻断(原为WARN跳过)
     try:
-        import sys as _sys
-        _tools_dir = os.path.dirname(os.path.abspath(__file__))
-        if _tools_dir not in _sys.path:
-            _sys.path.insert(0, _tools_dir)
-        from content_dedup import check_content_dedup
-        dedup_result = check_content_dedup(slug, content)
-        if dedup_result.get('duplicate'):
+        from content_dedup import check_approximate_dedup
+        dedup_result = check_approximate_dedup(slug, content)
+        if dedup_result.get('exact_duplicate') or dedup_result.get('approximate_duplicate'):
             result['status'] = 'dedup_blocked'
-            result['error'] = f"内容去重: {dedup_result['reason']}"
+            result['error'] = f"内容去重阻断: {dedup_result.get('reason', '')}"
             result['free_upload'] = {'status': 'dedup_blocked', 'error': result['error']}
             record_platform_upload(skill_id, new_version, 'skillhub', slug,
                                    'dedup_blocked', error=result['error'])
             return result
     except ImportError:
-        pass  # 去重模块不可用时不阻断
-    except Exception as e:
-        print(f"[WARN] 内容去重检查异常(不阻断): {e}")
+        # V138 S2: fail-safe — 去重模块不可用时阻断上传(非pass放行)
+        # 根因: 2026-07-24封禁事件中990个近似重复skill被放行
+        result['status'] = 'dedup_blocked'
+        result['error'] = '内容去重模块不可用,已阻断上传(fail-safe)'
+        result['free_upload'] = {'status': 'dedup_blocked', 'error': result['error']}
+        record_platform_upload(skill_id, new_version, 'skillhub', slug,
+                               'dedup_blocked', error=result['error'])
+        return result
+    except Exception as e:  # V155 R2: fail-safe — 异常时阻断上传(原为WARN跳过)
+        result['status'] = 'dedup_blocked'
+        result['error'] = f'内容去重检查异常,已阻断上传(fail-safe): {e}'
+        result['free_upload'] = {'status': 'dedup_blocked', 'error': result['error']}
+        record_platform_upload(skill_id, new_version, 'skillhub', slug,
+                               'dedup_blocked', error=result['error'])
+        return result
 
-    # 免费版上传 - 通过CLI
+    # V139 S4: 统一上传通道 — API优先(复用enterprise_uploader的WAF重试), CLI fallback
+    # enterprise_uploader.upload_skill 内部完成: 门控+速率+去重+WAF重试+认证
+    # skip_publish=True: _sync_to_platforms自行管理发布流程(approve→publish→star)
     try:
-        cli_cmd = f'skillhub publish "{skill_dir}" --changelog "Auto-sync v{new_version}"'
-        cli_result = subprocess.run(
-            cli_cmd, shell=True, capture_output=True, text=True, timeout=60
-        )
-        output = cli_result.stdout + cli_result.stderr
+        from skillhub_adapter import should_use_api  # V139 S4: 统一上传通道
+        use_api = should_use_api()
+        print(f"  [DEBUG] skillhub_adapter found, use_api={use_api}")
+    except ImportError:
+        # skillhub_adapter不可用时,直接检查enterprise_uploader是否可用
+        # enterprise_uploader使用企业API Key认证(从credentials.json加载),不依赖skh_ token
+        try:
+            from enterprise_uploader import upload_skill as _check_eu
+            use_api = True
+            print(f"  [DEBUG] enterprise_uploader found, use_api=True")
+        except ImportError as e:
+            use_api = False  # enterprise_uploader也不可用时走CLI路径
+            print(f"  [DEBUG] enterprise_uploader import failed: {e}, use_api=False")
 
-        if cli_result.returncode == 0:
-            result['free_upload'] = {'status': 'success', 'output': output[:200]}
-            record_platform_upload(skill_id, new_version, 'skillhub_free', slug,
-                                   'success', visibility='public', pricing='free')
-            # v3.0: 记录上传时间戳用于速率限制
-            # v3.4: record_upload失败时记录警告(非静默pass),避免速率限制计数偏少
-            try:
-                record_upload('skillhub', slug)
-            except Exception as e:
-                print(f"  [WARN] record_upload失败,速率限制计数可能不准: {e}")
-        elif 'VERSION_EXISTS' in output:
-            result['free_upload'] = {'status': 'version_exists', 'output': output[:200]}
-            record_platform_upload(skill_id, new_version, 'skillhub_free', slug,
-                                   'version_exists', error='VERSION_EXISTS')
-        elif '429' in output:
-            result['free_upload'] = {'status': 'rate_limited', 'output': output[:200]}
-            record_platform_upload(skill_id, new_version, 'skillhub_free', slug,
-                                   'rate_limited', error='RATE_LIMITED')
-        else:
-            result['free_upload'] = {'status': 'failed', 'output': output[:200]}
-            record_platform_upload(skill_id, new_version, 'skillhub_free', slug,
-                                   'failed', error=output[:200])
-    except subprocess.TimeoutExpired:
-        result['free_upload'] = {'status': 'timeout'}
-        record_platform_upload(skill_id, new_version, 'skillhub_free', slug,
-                               'timeout', error='CLI timeout')
-    except Exception as e:
-        result['free_upload'] = {'status': 'error', 'error': str(e)}
-        record_platform_upload(skill_id, new_version, 'skillhub_free', slug,
-                               'error', error=str(e))
+    if use_api:
+        try:
+            from enterprise_uploader import upload_skill as _eu_upload
+            # skip_gate=True: 管道已运行质量门禁,跳过enterprise_uploader的重复检查
+            # skip_marketing/skip_security: 管道已检查,跳过enterprise_uploader的重复检查
+            eu_result = _eu_upload(slug, skip_publish=True, skip_gate=True,
+                                   skip_marketing=True, skip_security=True)
+
+            if eu_result.get('success'):
+                result['free_upload'] = {
+                    'status': 'success',
+                    'output': eu_result.get('message', 'API upload success')[:200],
+                }
+                record_platform_upload(skill_id, new_version, 'skillhub_free', slug,
+                                       'success', visibility='public', pricing='free')
+                # record_rate_limit_upload已由enterprise_uploader._upload_with_waf_retry调用
+            elif eu_result.get('rate_limited'):
+                result['free_upload'] = {
+                    'status': 'rate_limited',
+                    'error': eu_result.get('message', ''),
+                }
+                record_platform_upload(skill_id, new_version, 'skillhub_free', slug,
+                                       'rate_limited', error=eu_result.get('message', ''))
+            elif eu_result.get('dedup_blocked'):
+                result['free_upload'] = {
+                    'status': 'dedup_blocked',
+                    'error': eu_result.get('message', ''),
+                }
+                record_platform_upload(skill_id, new_version, 'skillhub_free', slug,
+                                       'dedup_blocked', error=eu_result.get('message', ''))
+            else:
+                result['free_upload'] = {
+                    'status': 'failed',
+                    'error': eu_result.get('message', 'unknown error')[:200],
+                }
+                record_platform_upload(skill_id, new_version, 'skillhub_free', slug,
+                                       'failed', error=eu_result.get('message', '')[:200])
+        except ImportError:
+            # API不可用时降级到CLI
+            result['free_upload'] = _skillhub_cli_fallback(
+                slug, skill_dir, skill_id, new_version
+            )
+    else:
+        # CLI fallback路径(UPLOAD_CHANNEL='cli')
+        result['free_upload'] = _skillhub_cli_fallback(
+            slug, skill_dir, skill_id, new_version
+        )
 
     # 付费版: 生成payload文件
     if is_paid:
-        metadata, body = parse_frontmatter(content)
+        _result = parse_frontmatter(content)  # V122 W6: 统一别名
+        metadata = _result['fields']
+        body = _result['body']
         payload = {
             'slug': slug,
             'version': new_version,
@@ -861,9 +953,73 @@ def sync_to_clawhub(slug: str, skill_md: Path, new_version: str,
     skill_dir = skill_md.parent
     changelog = f'Auto-sync v{new_version}'
 
+    # v3.0增强: 速率限制预检 (防止爆发式上传触发平台反垃圾系统)
+    # M4.1: 与sync_to_skillhub防封措施统一, 复用daily_sync.py的速率限制机制
+    # 根因: 2026-07-24单秒上传1097个skill导致账号被封禁
+    try:
+        from daily_sync import check_upload_rate_limit, record_rate_limit_upload  # V128 Y1: 重命名
+        rate_check = check_upload_rate_limit('clawhub')
+        if not rate_check.get('allowed', False):  # V161: fail-safe默认False
+            wait = rate_check.get('wait_seconds', 120)
+            result['status'] = 'rate_limited'
+            result['error'] = f"速率限制: {rate_check.get('reason', '未知')} (需等待{wait}秒)"
+            record_platform_upload(skill_id, new_version, 'clawhub', slug,
+                                   'rate_limited', error=result['error'])
+            return result
+    except ImportError:
+        # v3.3: 失败安全(fail-safe) — daily_sync不可用时阻止上传
+        result['status'] = 'rate_limited'
+        result['error'] = '速率限制模块不可用,已阻止上传以防爆发式触发反垃圾系统'
+        return result
+    except Exception as e:  # [V131 B2] 宽泛捕获: 异常处理(非静默pass)
+        # v3.3: 失败安全(fail-safe) — 速率限制异常时阻止上传
+        result['status'] = 'rate_limited'
+        result['error'] = f'速率限制检查异常,已阻止上传: {e}'
+        return result
+
+    # V186: 自动生成内容检测 (与sync_to_skillhub统一,防止上传垃圾内容)
+    content = skill_md.read_text(encoding='utf-8', errors='replace')
+    auto_gen_markers = ['本技能提供', '功能总览', '功能1：', '功能1:', '核心功能',
+                       '自动化处理流程', '减少人工干预与重复劳动', '结构化输入输出']
+    matched = [m for m in auto_gen_markers if m in content]
+    if len(matched) >= 2:
+        result['status'] = 'blocked_auto_generated'
+        result['error'] = f'自动生成内容阻断: 检测到{len(matched)}个标记: {", ".join(matched[:3])}'
+        record_platform_upload(skill_id, new_version, 'clawhub', slug,
+                               'blocked_auto_generated', error=result['error'])
+        return result
+
+    # v3.4: 内容指纹去重预检 (防止相同内容以不同slug上传触发平台反垃圾系统)
+    # M4.1: 与sync_to_skillhub防封措施统一
+    # 根因: 2026-07-24批量上传中大量近似重复内容被封禁(93.4%封禁率)
+    # V155 R1修复: 使用check_approximate_dedup替代check_content_dedup(与sync_to_skillhub统一)
+    # V155 R3修复: ImportError和Exception均改为fail-safe阻断(原为WARN跳过)
+    content = skill_md.read_text(encoding='utf-8', errors='replace')
+    try:
+        from content_dedup import check_approximate_dedup
+        dedup_result = check_approximate_dedup(slug, content)
+        if dedup_result.get('exact_duplicate') or dedup_result.get('approximate_duplicate'):
+            result['status'] = 'dedup_blocked'
+            result['error'] = f"内容去重阻断: {dedup_result.get('reason', '')}"
+            record_platform_upload(skill_id, new_version, 'clawhub', slug,
+                                   'dedup_blocked', error=result['error'])
+            return result
+    except ImportError:
+        # V155 R3: fail-safe — 去重模块不可用时阻断上传(原为WARN跳过)
+        result['status'] = 'dedup_blocked'
+        result['error'] = '内容去重模块不可用,已阻断上传(fail-safe)'
+        record_platform_upload(skill_id, new_version, 'clawhub', slug,
+                               'dedup_blocked', error=result['error'])
+        return result
+    except Exception as e:  # V155 R3: fail-safe — 异常时阻断上传(原为WARN跳过)
+        result['status'] = 'dedup_blocked'
+        result['error'] = f'内容去重检查异常,已阻断上传(fail-safe): {e}'
+        record_platform_upload(skill_id, new_version, 'clawhub', slug,
+                               'dedup_blocked', error=result['error'])
+        return result
+
     # v2.2: 提取营销参数(复用clawhub_batch_uploader的函数, 避免重复实现)
     try:
-        sys.path.insert(0, str(SKILL_REGISTRY_DIR))
         from clawhub_batch_uploader import get_clawhub_category, get_clawhub_topics, get_display_name
         category = get_clawhub_category(skill_dir)
         topics = get_clawhub_topics(skill_dir, slug)
@@ -875,27 +1031,30 @@ def sync_to_clawhub(slug: str, skill_md: Path, new_version: str,
         result['marketing_warning'] = 'clawhub_batch_uploader不可用, 营销参数缺失'
 
     # 构建上传命令(含营销参数)
+    # V160 R3修复: 使用list-based subprocess消除shell=True(命令注入风险), 移除嵌入式引号
+    # 原因: shell=True+字符串拼接有命令注入风险, 且嵌入式引号在list模式下会被当作字面字符
+    # Windows修复: shutil.which解析npx完整路径(避免WinError 2)
+    npx_cmd = shutil.which('npx') or 'npx'
     cmd_parts = [
-        'npx', 'clawhub',
-        '--registry', '"https://clawhub.ai"',
-        'publish', f'"{skill_dir}"',
-        '--changelog', f'"{changelog}"',
-        '--categories', f'"{category}"',
-        '--topics', f'"{",".join(topics)}"',
-        '--slug', f'"{slug}"',
+        npx_cmd, 'clawhub',
+        '--registry', PLATFORM_CONFIG["clawhub"]["host"],
+        'publish', str(skill_dir),
+        '--changelog', changelog,
+        '--categories', category,
+        '--topics', ",".join(topics),
+        '--slug', slug,
         '--json',
     ]
     if display_name:
-        cmd_parts.extend(['--name', f'"{display_name}"'])
+        cmd_parts.extend(['--name', display_name])
 
-    cmd_str = ' '.join(cmd_parts)
     result['marketing'] = {'category': category, 'topics': topics[:5], 'name': display_name}
 
     try:
         proc = subprocess.run(
-            cmd_str,
+            cmd_parts,
             capture_output=True, text=True, timeout=120,
-            cwd=str(SKILLS_ROOT), shell=True
+            cwd=str(SKILLS_ROOT)
         )
         output = proc.stdout + proc.stderr
 
@@ -903,12 +1062,21 @@ def sync_to_clawhub(slug: str, skill_md: Path, new_version: str,
         json_result = None
         try:
             json_result = json.loads(proc.stdout.strip())
-        except (json.JSONDecodeError, ValueError):
-            pass
+        except (json.JSONDecodeError, ValueError) as e:  # V144: 添加警告日志(保留降级行为)
+            print(f"[WARN] 子进程stdout JSON解析失败: {e}")
 
         if proc.returncode == 0:
             result['status'] = 'success'
             result['output'] = output[:200]
+            # V95 V2: 成功上传后同步更新DB的current_version字段
+            try:
+                conn = db_module.get_db()
+                conn.execute("PRAGMA busy_timeout = 10000")
+                conn.execute("UPDATE skills SET current_version = ? WHERE slug = ?", (new_version, slug))
+                conn.commit()
+                conn.close()
+            except Exception as e:  # [V131 B2] 宽泛捕获: 异常记录日志继续
+                print(f"  [WARN] current_version更新失败: {e}")
             if json_result:
                 result['clawhub_data'] = {
                     'slug': json_result.get('slug', slug),
@@ -917,6 +1085,13 @@ def sync_to_clawhub(slug: str, skill_md: Path, new_version: str,
                 }
             record_platform_upload(skill_id, new_version, 'clawhub', slug,
                                    'success', visibility='public', pricing='free')
+            # v3.0: 记录上传时间戳用于速率限制
+            # M4.1: 与sync_to_skillhub统一, 记录clawhub上传以供下次速率限制计数
+            # v3.4: record_upload失败时记录警告(非静默pass),避免速率限制计数偏少
+            try:
+                record_rate_limit_upload('clawhub', slug)  # V128 Y1: 重命名
+            except Exception as e:  # [V131 B2] 宽泛捕获: 异常记录日志继续
+                print(f"  [WARN] record_upload失败,速率限制计数可能不准: {e}")
         elif 'Rate limit' in output or 'rate limit' in output:
             result['status'] = 'rate_limited'
             result['output'] = output[:200]
@@ -936,7 +1111,7 @@ def sync_to_clawhub(slug: str, skill_md: Path, new_version: str,
         result['status'] = 'timeout'
         record_platform_upload(skill_id, new_version, 'clawhub', slug,
                                'timeout', error='Uploader timeout')
-    except Exception as e:
+    except Exception as e:  # [V131 B2] 宽泛捕获: 异常更新状态/计数继续
         result['status'] = 'error'
         result['error'] = str(e)
         record_platform_upload(skill_id, new_version, 'clawhub', slug,
@@ -949,6 +1124,250 @@ def sync_to_clawhub(slug: str, skill_md: Path, new_version: str,
 # Phase 7: 端到端同步
 # ============================================================
 
+def _run_sync_quality_gates(skill_md, slug, skill_id, new_version,
+                            skip_content_quality, skip_security, skip_marketing,
+                            skip_l2, skip_l3, skip_local_quality=False):
+    """运行同步流程的8个质量门禁序列
+
+    [V134 E4] 从sync_skill_to_all_platforms拆分出的质量门禁逻辑
+
+    Returns:
+        (passed, phases, block_status): passed=是否全部通过,
+            phases=门禁结果字典, block_status=失败时的状态字符串(成功时为'')
+    """
+    phases = {}
+
+    # 5. 质量门禁
+    print(f"  [3/7] 质量门禁检查...")
+    qc = run_quality_check(skill_md)
+    phases['quality_check'] = qc
+    if not qc['passed']:
+        print(f"  ✗ 质量门禁未通过: {qc['failed_checks']}")
+        record_platform_upload(skill_id, new_version, 'quality_gate', slug,
+                               'blocked', error=str(qc['failed_checks']))
+        return (False, phases, 'blocked_by_quality_gate')
+    print(f"  ✓ 质量门禁通过 ({qc['score']})")
+
+    # 5.1 L1.5内容质量门禁(v3.1新增)
+    if not skip_content_quality:
+        print(f"  [3.5/7] 内容质量门禁检查...")
+        cq = run_content_quality_gate(skill_md)
+        phases['content_quality'] = cq
+        if not cq['passed']:
+            print(f"  ✗ 内容质量门禁未通过: {cq['failed_checks']}")
+            record_platform_upload(skill_id, new_version, 'content_quality_gate', slug,
+                                   'blocked', error=str(cq['failed_checks']))
+            return (False, phases, 'blocked_by_content_quality')
+        print(f"  ✓ 内容质量门禁通过 ({cq['score']})")
+    else:
+        phases['content_quality'] = {'status': 'skipped'}
+
+    # 5.1.5 安全预检(v2.2新增 — 科恩实验室+云鼎实验室高风险模式检测)
+    if not skip_security:
+        print(f"  [3.55/7] 安全预检检查...")
+        try:
+            from quality_gate import run_security_precheck
+            sec = run_security_precheck(skill_md)
+            phases['security_precheck'] = sec
+            if not sec.get('overall_passed', False):
+                failed_checks = [c['name'] for c in sec.get('checks', []) if not c.get('passed')]
+                # PRR P1-1: critical+high阻断, medium仅警告
+                blocking_checks = [c for c in sec.get('checks', []) if not c.get('passed') and c.get('severity') in ('critical', 'high')]
+                if blocking_checks:
+                    print(f"  ✗ 安全预检未通过(严重/高风险): {failed_checks}")
+                    record_platform_upload(skill_id, new_version, 'security_precheck', slug,
+                                           'blocked', error=str(failed_checks))
+                    return (False, phases, 'blocked_by_security_precheck')
+                else:
+                    # 中风险不阻断,仅警告
+                    print(f"  ⚠ 安全预检有风险提示(非阻断): {failed_checks}")
+            else:
+                print(f"  ✓ 安全预检通过 ({sec.get('passed_checks', 0)}/{sec.get('total_checks', 0)})")
+        except ImportError:
+            # PRR V146: 安全预检模块不可用时阻断(fail-safe), 不允许跳过
+            print(f"  ✗ 安全预检模块不可用 — 同步已阻断(fail-safe)")
+            phases['security_precheck'] = {'status': 'blocked', 'reason': 'module_unavailable'}
+            record_platform_upload(skill_id, new_version, 'security_precheck', slug,
+                                   'blocked', error='security_precheck_module_unavailable')
+            return (False, phases, 'blocked_by_security_precheck_unavailable')
+    else:
+        phases['security_precheck'] = {'status': 'skipped'}
+
+    # 5.1.8 评分门控(v2.3新增 — 流程固化: 低于4.5分阻断上传)
+    print(f"  [3.58/7] 评分门控检查...")
+    rg = run_rating_gate_check(skill_md, slug)
+    phases['rating_gate'] = rg
+    if not rg['passed']:
+        print(f"  ✗ 评分门控未通过: {rg['failed_checks']}")
+        record_platform_upload(skill_id, new_version, 'rating_gate', slug,
+                               'blocked', error=str(rg['failed_checks']))
+        return (False, phases, 'blocked_by_rating_gate')
+    print(f"  ✓ 评分门控通过 ({rg['score']})")
+
+    # 5.1.9 本地质量评分门控 (V156新增 — local_quality_score)
+    if skip_local_quality:
+        print(f"  [3.59/7] 本地质量评分检查... [SKIP]")
+        phases['local_quality_score'] = {'status': 'skipped'}
+    else:
+        print(f"  [3.59/7] 本地质量评分检查...")
+        try:
+            import local_quality_scorer
+            from project_config import LOCAL_QUALITY_PASS_THRESHOLD
+            lq_result = local_quality_scorer.score_skill(skill_md)
+            lq_score = lq_result.get('total_score', 0.0)
+            phases['local_quality_score'] = {
+                'passed': lq_score >= LOCAL_QUALITY_PASS_THRESHOLD,
+                'score': lq_score,
+                'threshold': LOCAL_QUALITY_PASS_THRESHOLD,
+            }
+            if lq_score < LOCAL_QUALITY_PASS_THRESHOLD:
+                print(f"  ✗ 本地质量评分未通过: {lq_score}/{LOCAL_QUALITY_PASS_THRESHOLD}")
+                record_platform_upload(skill_id, new_version, 'local_quality_score', slug,
+                                       'blocked', error=f'score {lq_score} < threshold {LOCAL_QUALITY_PASS_THRESHOLD}')
+                return (False, phases, 'blocked_by_local_quality_score')
+            print(f"  ✓ 本地质量评分通过 ({lq_score}/{LOCAL_QUALITY_PASS_THRESHOLD})")
+        except ImportError:
+            # fail-safe: local_quality_scorer模块不可用时阻断
+            print(f"  ✗ 本地质量评分模块不可用 — 同步已阻断(fail-safe)")
+            phases['local_quality_score'] = {'status': 'blocked', 'reason': 'module_unavailable'}
+            record_platform_upload(skill_id, new_version, 'local_quality_score', slug,
+                                   'blocked', error='local_quality_scorer_module_unavailable')
+            return (False, phases, 'blocked_by_local_quality_score_unavailable')
+        except Exception as e:
+            print(f"  ✗ 本地质量评分异常: {e}")
+            phases['local_quality_score'] = {'status': 'error', 'error': str(e)}
+            record_platform_upload(skill_id, new_version, 'local_quality_score', slug,
+                                   'blocked', error=str(e))
+            return (False, phases, 'blocked_by_local_quality_score')
+
+    # 5.2 营销关卡检查(v2.0新增)
+    if not skip_marketing:
+        print(f"  [3.6/7] 营销关卡检查...")
+        mg = run_marketing_gate_check(skill_md)
+        phases['marketing_gate'] = mg
+        if not mg['passed']:
+            print(f"  ✗ 营销关卡未通过: {mg['failed_checks']}")
+            record_platform_upload(skill_id, new_version, 'marketing_gate', slug,
+                                   'blocked', error=str(mg['failed_checks']))
+            return (False, phases, 'blocked_by_marketing_gate')
+        print(f"  ✓ 营销关卡通过 ({mg['score']})")
+    else:
+        phases['marketing_gate'] = {'status': 'skipped'}
+
+    # 5.3 防幻觉机制检查(v2.0新增)
+    print(f"  [3.7/7] 防幻觉机制检查...")
+    ah = run_anti_hallucination_check(skill_md)
+    phases['anti_hallucination'] = ah
+    if not ah['passed']:
+        print(f"  ✗ 防幻觉机制未通过: {ah['failed_checks']}")
+        record_platform_upload(skill_id, new_version, 'anti_hallucination', slug,
+                               'blocked', error=str(ah['failed_checks']))
+        return (False, phases, 'blocked_by_anti_hallucination')
+    print(f"  ✓ 防幻觉机制通过 ({ah['score']})")
+
+    # 5.4 L2 LLM验证检查(v2.0新增)
+    if not skip_l2:
+        print(f"  [3.8/7] L2 LLM验证检查...")
+        l2 = run_l2_check(slug)
+        phases['l2_validation'] = l2
+        if l2['passed'] is False:
+            print(f"  ✗ L2验证未通过: {l2['failed_checks']}")
+            record_platform_upload(skill_id, new_version, 'l2_validation', slug,
+                                   'blocked', error=str(l2['failed_checks']))
+            return (False, phases, 'blocked_by_l2_validation')
+        elif l2['passed'] is None:
+            print(f"  ⚠ L2验证待AI执行: {l2['guide']}")
+            record_platform_upload(skill_id, new_version, 'l2_validation', slug,
+                                   'pending', error=l2['note'])
+            return (False, phases, 'blocked_by_l2_pending')
+        print(f"  ✓ L2验证通过 (TRACE {l2.get('trace_total', '?')}/50, 等级{l2.get('trace_grade', '?')})")
+    else:
+        phases['l2_validation'] = {'status': 'skipped'}
+
+    # 5.5 L3 Agent试用检查(v2.0新增)
+    if not skip_l3:
+        print(f"  [3.9/7] L3 Agent试用检查...")
+        l3 = run_l3_check(slug)
+        phases['l3_trial'] = l3
+        if l3['passed'] is False:
+            print(f"  ✗ L3试用未通过: {l3['failed_checks']}")
+            record_platform_upload(skill_id, new_version, 'l3_trial', slug,
+                                   'blocked', error=str(l3['failed_checks']))
+            return (False, phases, 'blocked_by_l3_trial')
+        elif l3['passed'] is None:
+            print(f"  ⚠ L3试用待AI执行: {l3['guide']}")
+            record_platform_upload(skill_id, new_version, 'l3_trial', slug,
+                                   'pending', error=l3['note'])
+            return (False, phases, 'blocked_by_l3_pending')
+        print(f"  ✓ L3试用通过 (评分{l3.get('score', '?')}/100, 等级{l3.get('grade', '?')})")
+    else:
+        phases['l3_trial'] = {'status': 'skipped'}
+
+    return (True, phases, '')
+
+
+def _sync_to_platforms(slug, skill_md, new_version, changelog, source, skill_id, db_skill,
+                       skip_github, skip_skillhub, skip_clawhub, dry_run=False):
+    """执行多平台同步 — 直接调用各平台同步函数
+
+    修复: 移除platform_registry/pre_upload_checks依赖(模块未提交到git),
+    回归直接调用模式。速率限制和去重检查已在各sync_to_*函数内部实现。
+
+    Returns:
+        phases: 各平台同步结果字典
+    """
+    phases = {}
+
+    # dry_run模式下跳过所有实际上传
+    if dry_run:
+        for name, skipped in [('github', skip_github), ('skillhub', skip_skillhub), ('clawhub', skip_clawhub)]:
+            phases[name] = {'status': 'dry_run'} if not skipped else {'status': 'skipped'}
+        return phases
+
+    # GitHub
+    if skip_github:
+        phases['github'] = {'status': 'skipped'}
+    else:
+        print(f"  [4/7] 同步到GitHub...")
+        gh_result = sync_to_github(slug, skill_md, new_version, changelog, source, skill_id)
+        phases['github'] = gh_result
+        if gh_result['status'] == 'success':
+            print(f"  ✓ GitHub同步成功")
+        elif gh_result['status'] == 'no_changes':
+            print(f"  ℹ GitHub: 无需提交的变更")
+        else:
+            print(f"  ⚠ GitHub同步: {gh_result['status']} - {gh_result.get('error', '')}")
+
+    # SkillHub
+    if skip_skillhub:
+        phases['skillhub'] = {'status': 'skipped'}
+    else:
+        print(f"  [5/7] 同步到SkillHub...")
+        is_paid = bool(db_skill.get('is_paid', False))
+        sh_result = sync_to_skillhub(slug, skill_md, new_version, skill_id, is_paid)
+        phases['skillhub'] = sh_result
+        free_upload = sh_result.get('free_upload') or {}
+        free_status = free_upload.get('status', 'unknown')
+        if free_status == 'success':
+            print(f"  ✓ SkillHub同步成功")
+        else:
+            print(f"  ⚠ SkillHub: {free_status}")
+
+    # ClawHub
+    if skip_clawhub:
+        phases['clawhub'] = {'status': 'skipped'}
+    else:
+        print(f"  [6/7] 同步到ClawHub...")
+        ch_result = sync_to_clawhub(slug, skill_md, new_version, skill_id)
+        phases['clawhub'] = ch_result
+        if ch_result['status'] == 'success':
+            print(f"  ✓ ClawHub同步成功")
+        else:
+            print(f"  ⚠ ClawHub: {ch_result['status']} - {ch_result.get('error', '')[:100]}")
+
+    return phases
+
+
 def sync_skill_to_all_platforms(slug: str, skip_github: bool = False,
                                 skip_skillhub: bool = False,
                                 skip_clawhub: bool = False,
@@ -957,8 +1376,13 @@ def sync_skill_to_all_platforms(slug: str, skip_github: bool = False,
                                 skip_marketing: bool = False,
                                 skip_l2: bool = False,
                                 skip_l3: bool = False,
-                                force: bool = False) -> Dict[str, Any]:
+                                skip_local_quality: bool = False,
+                                force: bool = False,
+                                dry_run: bool = False) -> Dict[str, Any]:
     """端到端同步单个skill到所有平台
+
+    [V134 E4] 拆分为_run_sync_quality_gates + _sync_to_platforms两个helper函数
+    [V155 R4] 新增dry_run参数: 模拟模式下执行全部质量门禁和预检查,仅跳过实际上传
 
     流程(v2.2): 检测变更 → 版本递增 → L1质量门禁 → L1.5内容质量 → 安全预检 → 营销关卡 → 防幻觉 → L2验证 → L3试运行 → GitHub → SkillHub → ClawHub
     
@@ -998,8 +1422,8 @@ def sync_skill_to_all_platforms(slug: str, skip_github: bool = False,
 
     skill_id = db_skill['id']
     current_version = db_skill.get('current_version', '1.0.0')
-    current_hash = compute_file_hash(skill_md)
-    last_hash = db_skill.get('last_hash', '')
+    current_hash = db_module.compute_file_hash(skill_md)
+    last_hash = db_skill.get('last_hash') or ''
 
     # 3. 检测变更
     changed = (last_hash != current_hash) if last_hash else force
@@ -1008,7 +1432,8 @@ def sync_skill_to_all_platforms(slug: str, skip_github: bool = False,
         print(f"  ℹ 无变更,跳过同步 (hash一致)")
         return result
 
-    print(f"  ✓ 检测到变更: {last_hash[:8]}... → {current_hash[:8]}...")
+    old_hash_display = last_hash[:8] + '...' if last_hash else '(none)'
+    print(f"  ✓ 检测到变更: {old_hash_display} → {current_hash[:8]}...")
 
     # 4. 版本递增
     new_version = increment_version(current_version)
@@ -1019,212 +1444,30 @@ def sync_skill_to_all_platforms(slug: str, skip_github: bool = False,
         print(f"  ✓ 版本递增: {current_version} → {new_version}")
 
     # 重新计算hash(版本号已更新)
-    new_hash = compute_file_hash(skill_md)
+    new_hash = db_module.compute_file_hash(skill_md)
     content = skill_md.read_text(encoding='utf-8')
     line_count = content.count('\n') + 1
     changelog = f'Auto-sync: content updated, version {current_version} → {new_version}'
 
     # 5. 质量门禁
-    print(f"  [3/7] 质量门禁检查...")
-    qc = run_quality_check(skill_md)
-    result['phases']['quality_check'] = qc
-    if not qc['passed']:
-        print(f"  ✗ 质量门禁未通过: {qc['failed_checks']}")
-        result['status'] = 'blocked_by_quality_gate'
-        record_platform_upload(skill_id, new_version, 'quality_gate', slug,
-                               'blocked', error=str(qc['failed_checks']))
+    passed, gate_phases, block_status = _run_sync_quality_gates(
+        skill_md, slug, skill_id, new_version,
+        skip_content_quality, skip_security, skip_marketing, skip_l2, skip_l3,
+        skip_local_quality=skip_local_quality)
+    result['phases'].update(gate_phases)
+    if not passed:
+        result['status'] = block_status
         return result
-    print(f"  ✓ 质量门禁通过 ({qc['score']})")
-
-    # 5.1 L1.5内容质量门禁(v3.1新增)
-    if not skip_content_quality:
-        print(f"  [3.5/7] 内容质量门禁检查...")
-        cq = run_content_quality_gate(skill_md)
-        result['phases']['content_quality'] = cq
-        if not cq['passed']:
-            print(f"  ✗ 内容质量门禁未通过: {cq['failed_checks']}")
-            result['status'] = 'blocked_by_content_quality'
-            record_platform_upload(skill_id, new_version, 'content_quality_gate', slug,
-                                   'blocked', error=str(cq['failed_checks']))
-            return result
-        print(f"  ✓ 内容质量门禁通过 ({cq['score']})")
-    else:
-        result['phases']['content_quality'] = {'status': 'skipped'}
-
-    # 5.1.5 安全预检(v2.2新增 — 科恩实验室+云鼎实验室高风险模式检测)
-    if not skip_security:
-        print(f"  [3.55/7] 安全预检检查...")
-        try:
-            from quality_gate import run_security_precheck
-            sec = run_security_precheck(skill_md)
-            result['phases']['security_precheck'] = sec
-            if not sec.get('overall_passed', False):
-                failed_checks = [c['name'] for c in sec.get('checks', []) if not c.get('passed')]
-                critical_checks = [c for c in sec.get('checks', []) if not c.get('passed') and c.get('severity') == 'critical']
-                if critical_checks:
-                    print(f"  ✗ 安全预检未通过(严重风险): {failed_checks}")
-                    result['status'] = 'blocked_by_security_precheck'
-                    record_platform_upload(skill_id, new_version, 'security_precheck', slug,
-                                           'blocked', error=str(failed_checks))
-                    return result
-                else:
-                    # 高/中风险不阻断,仅警告
-                    print(f"  ⚠ 安全预检有风险提示(非阻断): {failed_checks}")
-            else:
-                print(f"  ✓ 安全预检通过 ({sec.get('passed_checks', 0)}/{sec.get('total_checks', 0)})")
-        except ImportError:
-            print(f"  ⚠ 安全预检模块不可用,跳过检查")
-            result['phases']['security_precheck'] = {'status': 'skipped', 'reason': 'module_unavailable'}
-    else:
-        result['phases']['security_precheck'] = {'status': 'skipped'}
-
-    # 5.1.8 评分门控(v2.3新增 — 流程固化: 低于4.5分阻断上传)
-    print(f"  [3.58/7] 评分门控检查...")
-    rg = run_rating_gate_check(skill_md, slug)
-    result['phases']['rating_gate'] = rg
-    if not rg['passed']:
-        print(f"  ✗ 评分门控未通过: {rg['failed_checks']}")
-        result['status'] = 'blocked_by_rating_gate'
-        record_platform_upload(skill_id, new_version, 'rating_gate', slug,
-                               'blocked', error=str(rg['failed_checks']))
-        return result
-    print(f"  ✓ 评分门控通过 ({rg['score']})")
-
-    # 5.2 营销关卡检查(v2.0新增)
-    if not skip_marketing:
-        print(f"  [3.6/7] 营销关卡检查...")
-        mg = run_marketing_gate_check(skill_md)
-        result['phases']['marketing_gate'] = mg
-        if not mg['passed']:
-            print(f"  ✗ 营销关卡未通过: {mg['failed_checks']}")
-            result['status'] = 'blocked_by_marketing_gate'
-            record_platform_upload(skill_id, new_version, 'marketing_gate', slug,
-                                   'blocked', error=str(mg['failed_checks']))
-            return result
-        print(f"  ✓ 营销关卡通过 ({mg['score']})")
-    else:
-        result['phases']['marketing_gate'] = {'status': 'skipped'}
-
-    # 5.3 防幻觉机制检查(v2.0新增)
-    print(f"  [3.7/7] 防幻觉机制检查...")
-    ah = run_anti_hallucination_check(skill_md)
-    result['phases']['anti_hallucination'] = ah
-    if not ah['passed']:
-        print(f"  ✗ 防幻觉机制未通过: {ah['failed_checks']}")
-        result['status'] = 'blocked_by_anti_hallucination'
-        record_platform_upload(skill_id, new_version, 'anti_hallucination', slug,
-                               'blocked', error=str(ah['failed_checks']))
-        return result
-    print(f"  ✓ 防幻觉机制通过 ({ah['score']})")
-
-    # 5.4 L2 LLM验证检查(v2.0新增)
-    if not skip_l2:
-        print(f"  [3.8/7] L2 LLM验证检查...")
-        l2 = run_l2_check(slug)
-        result['phases']['l2_validation'] = l2
-        if l2['passed'] is False:
-            print(f"  ✗ L2验证未通过: {l2['failed_checks']}")
-            result['status'] = 'blocked_by_l2_validation'
-            record_platform_upload(skill_id, new_version, 'l2_validation', slug,
-                                   'blocked', error=str(l2['failed_checks']))
-            return result
-        elif l2['passed'] is None:
-            print(f"  ⚠ L2验证待AI执行: {l2['guide']}")
-            result['status'] = 'blocked_by_l2_pending'
-            record_platform_upload(skill_id, new_version, 'l2_validation', slug,
-                                   'pending', error=l2['note'])
-            return result
-        print(f"  ✓ L2验证通过 (TRACE {l2.get('trace_total', '?')}/50, 等级{l2.get('trace_grade', '?')})")
-    else:
-        result['phases']['l2_validation'] = {'status': 'skipped'}
-
-    # 5.5 L3 Agent试用检查(v2.0新增)
-    if not skip_l3:
-        print(f"  [3.9/7] L3 Agent试用检查...")
-        l3 = run_l3_check(slug)
-        result['phases']['l3_trial'] = l3
-        if l3['passed'] is False:
-            print(f"  ✗ L3试用未通过: {l3['failed_checks']}")
-            result['status'] = 'blocked_by_l3_trial'
-            record_platform_upload(skill_id, new_version, 'l3_trial', slug,
-                                   'blocked', error=str(l3['failed_checks']))
-            return result
-        elif l3['passed'] is None:
-            print(f"  ⚠ L3试用待AI执行: {l3['guide']}")
-            result['status'] = 'blocked_by_l3_pending'
-            record_platform_upload(skill_id, new_version, 'l3_trial', slug,
-                                   'pending', error=l3['note'])
-            return result
-        print(f"  ✓ L3试用通过 (评分{l3.get('score', '?')}/100, 等级{l3.get('grade', '?')})")
-    else:
-        result['phases']['l3_trial'] = {'status': 'skipped'}
 
     # 6. 记录新版本
     record_version(skill_id, new_version, new_hash, changelog,
                    skill_md.stat().st_size, line_count)
 
-    # 7. GitHub同步
-    if not skip_github:
-        print(f"  [4/7] 同步到GitHub...")
-        gh_result = sync_to_github(slug, skill_md, new_version, changelog, source, skill_id)
-        result['phases']['github'] = gh_result
-        if gh_result['status'] == 'success':
-            print(f"  ✓ GitHub同步成功")
-        elif gh_result['status'] == 'no_changes':
-            print(f"  ℹ GitHub: 无需提交的变更")
-        else:
-            print(f"  ⚠ GitHub同步: {gh_result['status']} - {gh_result.get('error', '')}")
-    else:
-        result['phases']['github'] = {'status': 'skipped'}
-
-    # 8. SkillHub同步
-    if not skip_skillhub:
-        print(f"  [5/7] 同步到SkillHub...")
-        is_paid = bool(db_skill.get('is_paid', False))
-        sh_result = sync_to_skillhub(slug, skill_md, new_version, skill_id, is_paid)
-        result['phases']['skillhub'] = sh_result
-        free_upload = sh_result.get('free_upload') or {}
-        free_status = free_upload.get('status', 'unknown')
-        if free_status == 'success':
-            print(f"  ✓ SkillHub同步成功")
-
-            # 8.4 完整发布流程 (approve → publish_to_community → star → DB更新)
-            # v2.8修复: 统一到platform_ops.post_upload_publish, 消除碎片化
-            # 原实现缺少star_skill和slug改名处理, 导致已发布skill搜索排名低、改名后DB不一致
-            print(f"  [5.4/7] 执行完整发布流程...")
-            try:
-                from platform_ops import post_upload_publish
-                publish_result = post_upload_publish(slug, skill_id=skill_id)
-                result['phases']['post_publish'] = publish_result
-                pub_ok = publish_result.get('community', {}).get('success', False)
-                if pub_ok:
-                    actual_slug = publish_result.get('db_update', {}).get('actual_slug', slug)
-                    print(f"  ✓ 发布流程完成 (approve→publish→star), slug={actual_slug}")
-                else:
-                    err = publish_result.get('community', {}).get('error', '未知错误')
-                    if 'expired' in err or '401' in err or '认证' in err:
-                        print(f"  ⚠ 发布流程跳过(认证过期): {err[:80]}")
-                    else:
-                        print(f"  ⚠ 发布流程未完全成功: {err[:80]}")
-            except ImportError:
-                print(f"  ⚠ platform_ops模块不可用,跳过发布流程")
-                result['phases']['post_publish'] = {'status': 'skipped', 'reason': 'module_unavailable'}
-        else:
-            print(f"  ⚠ SkillHub: {free_status}")
-    else:
-        result['phases']['skillhub'] = {'status': 'skipped'}
-
-    # 9. ClawHub同步
-    if not skip_clawhub:
-        print(f"  [6/7] 同步到ClawHub...")
-        ch_result = sync_to_clawhub(slug, skill_md, new_version, skill_id)
-        result['phases']['clawhub'] = ch_result
-        if ch_result['status'] == 'success':
-            print(f"  ✓ ClawHub同步成功")
-        else:
-            print(f"  ⚠ ClawHub: {ch_result['status']}")
-    else:
-        result['phases']['clawhub'] = {'status': 'skipped'}
+    # 7-9. 三平台同步
+    platform_phases = _sync_to_platforms(
+        slug, skill_md, new_version, changelog, source, skill_id, db_skill,
+        skip_github, skip_skillhub, skip_clawhub, dry_run=dry_run)
+    result['phases'].update(platform_phases)
 
     # 10. 汇总
     all_statuses = []
@@ -1232,7 +1475,13 @@ def sync_skill_to_all_platforms(slug: str, skip_github: bool = False,
         phase_result = result['phases'].get(phase, {})
         all_statuses.append(phase_result.get('status', 'unknown'))
 
-    if all(s == 'success' for s in all_statuses):
+    # V155 R4: dry_run模式下'dry_run'状态视为通过
+    if dry_run:
+        if all(s in ('dry_run', 'success') for s in all_statuses):
+            result['status'] = 'dry_run_passed'
+        else:
+            result['status'] = 'dry_run_failed'
+    elif all(s == 'success' for s in all_statuses):
         result['status'] = 'all_success'
     elif any(s == 'success' for s in all_statuses):
         result['status'] = 'partial_success'
@@ -1249,8 +1498,13 @@ def sync_all_changed_skills(skip_github: bool = False,
                              skip_security: bool = False,
                              skip_marketing: bool = False,
                              skip_l2: bool = True,
-                             skip_l3: bool = True) -> Dict[str, Any]:
-    """同步所有变更的skill(批量模式默认跳过L2/L3,因需AI执行)"""
+                             skip_l3: bool = True,
+                             skip_local_quality: bool = True,
+                             dry_run: bool = False) -> Dict[str, Any]:
+    """同步所有变更的skill(批量模式默认跳过L2/L3,因需AI执行)
+
+    V155 R4: 新增dry_run参数,传递给每个skill的同步调用
+    """
     print("扫描变更...")
     changed = scan_all_changes()
     print(f"发现 {len(changed)} 个变更skill")
@@ -1261,6 +1515,7 @@ def sync_all_changed_skills(skip_github: bool = False,
         'synced': [],
         'failed': [],
         'skipped': [],
+        'dry_run': dry_run,
     }
 
     for i, item in enumerate(changed, 1):
@@ -1274,8 +1529,11 @@ def sync_all_changed_skills(skip_github: bool = False,
             skip_marketing=skip_marketing,
             skip_l2=skip_l2,
             skip_l3=skip_l3,
+            skip_local_quality=skip_local_quality,
+            dry_run=dry_run,
         )
-        if sync_result.get('status') in ('all_success', 'partial_success'):
+        # V155 R4: dry_run模式下'dry_run_passed'视为已同步
+        if sync_result.get('status') in ('all_success', 'partial_success', 'dry_run_passed'):
             results['synced'].append(sync_result)
         elif sync_result.get('status') == 'no_changes':
             results['skipped'].append(sync_result)
@@ -1329,9 +1587,8 @@ def upgrade_single_skill(slug: str, skip_platforms: bool = False,
 
     # === Step 1: 查找SKILL.md ===
     print(f"\n[1/6] 查找SKILL.md...")
-    sys.path.insert(0, str(SKILL_REGISTRY_DIR))
     try:
-        from skill_batch_upgrader_v3 import find_skill_md, run_content_quality_check, auto_fix_content, auto_fix
+        from skill_batch_upgrader_v3 import run_content_quality_check, auto_fix_content, auto_fix
     except ImportError as e:
         result['error'] = f'skill_batch_upgrader_v3导入失败: {e}'
         print(f"  ✗ 导入失败: {e}")
@@ -1417,13 +1674,14 @@ def upgrade_single_skill(slug: str, skip_platforms: bool = False,
         sec = run_security_precheck(skill_md)
         result['phases']['security_precheck'] = sec
         if not sec.get('overall_passed', False):
-            critical_checks = [c for c in sec.get('checks', []) if not c.get('passed') and c.get('severity') == 'critical']
-            if critical_checks:
-                failed_names = [c['name'] for c in critical_checks]
-                print(f"  ✗ 安全预检发现严重风险: {failed_names}")
+            # PRR P1-1: critical+high阻断, medium仅警告
+            blocking_checks = [c for c in sec.get('checks', []) if not c.get('passed') and c.get('severity') in ('critical', 'high')]
+            if blocking_checks:
+                failed_names = [c['name'] for c in blocking_checks]
+                print(f"  ✗ 安全预检发现严重/高风险: {failed_names}")
                 if not force_sync:
                     result['status'] = 'blocked_by_security_precheck'
-                    result['error'] = f'安全预检严重风险(不可强制跳过): {failed_names}'
+                    result['error'] = f'安全预检严重/高风险(不可强制跳过): {failed_names}'
                     return result
             else:
                 non_critical = [c['name'] for c in sec.get('checks', []) if not c.get('passed')]
@@ -1431,8 +1689,12 @@ def upgrade_single_skill(slug: str, skip_platforms: bool = False,
         else:
             print(f"  ✓ 安全预检通过 ({sec.get('passed_checks', 0)}/{sec.get('total_checks', 0)})")
     except ImportError:
-        print(f"  ⚠ 安全预检模块不可用,跳过检查")
-        result['phases']['security_precheck'] = {'status': 'skipped', 'reason': 'module_unavailable'}
+        # PRR V146: 安全预检模块不可用时阻断(fail-safe), 不允许跳过
+        print(f"  ✗ 安全预检模块不可用 — 同步已阻断(fail-safe)")
+        result['phases']['security_precheck'] = {'status': 'blocked', 'reason': 'module_unavailable'}
+        result['status'] = 'blocked_by_security_precheck_unavailable'
+        result['error'] = '安全预检模块不可用(fail-safe阻断)'
+        return result
 
     # === Step 5.5: 营销关卡检查(v2.0新增) ===
     print(f"\n[5.5/6] 营销关卡检查...")
@@ -1480,7 +1742,7 @@ def upgrade_single_skill(slug: str, skip_platforms: bool = False,
         result['status'] = sync_result.get('status', 'unknown')
 
     # 保存升级报告
-    report_path = SKILL_REGISTRY_DIR / f"upgrade_{slug}_{NOW.replace(':', '')}.json"
+    report_path = TOOLS_DIR / f"upgrade_{slug}_{NOW.replace(':', '')}.json"
     with open(report_path, 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
     print(f"\n升级报告已保存: {report_path}")
@@ -1509,15 +1771,17 @@ def cmd_scan():
 def cmd_sync(slug: str, skip_github: bool = False, skip_skillhub: bool = False,
              skip_clawhub: bool = False, skip_security: bool = False,
              skip_marketing: bool = False,
-             skip_l2: bool = False, skip_l3: bool = False, force: bool = False):
+             skip_l2: bool = False, skip_l3: bool = False, force: bool = False,
+             dry_run: bool = False, skip_local_quality: bool = False):
     """同步单个skill"""
     result = sync_skill_to_all_platforms(
         slug, skip_github=skip_github, skip_skillhub=skip_skillhub,
         skip_clawhub=skip_clawhub, skip_security=skip_security, skip_marketing=skip_marketing,
-        skip_l2=skip_l2, skip_l3=skip_l3, force=force
+        skip_l2=skip_l2, skip_l3=skip_l3, skip_local_quality=skip_local_quality,
+        force=force, dry_run=dry_run
     )
     # 保存结果
-    result_path = SKILL_REGISTRY_DIR / f"version_sync_{slug}_{NOW.replace(':', '')}.json"
+    result_path = TOOLS_DIR / f"version_sync_{slug}_{NOW.replace(':', '')}.json"
     with open(result_path, 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
     print(f"\n同步结果已保存: {result_path}")
@@ -1526,13 +1790,14 @@ def cmd_sync(slug: str, skip_github: bool = False, skip_skillhub: bool = False,
 def cmd_sync_all(skip_github: bool = False, skip_skillhub: bool = False,
                  skip_clawhub: bool = False, skip_security: bool = False,
                  skip_marketing: bool = False,
-                 skip_l2: bool = True, skip_l3: bool = True):
+                 skip_l2: bool = True, skip_l3: bool = True, dry_run: bool = False):
     """同步所有变更skill(批量模式默认跳过L2/L3,因需AI执行)"""
     results = sync_all_changed_skills(
         skip_github=skip_github, skip_skillhub=skip_skillhub, skip_clawhub=skip_clawhub,
-        skip_security=skip_security, skip_marketing=skip_marketing, skip_l2=skip_l2, skip_l3=skip_l3
+        skip_security=skip_security, skip_marketing=skip_marketing, skip_l2=skip_l2, skip_l3=skip_l3,
+        dry_run=dry_run
     )
-    result_path = SKILL_REGISTRY_DIR / f"version_sync_all_{NOW.replace(':', '')}.json"
+    result_path = TOOLS_DIR / f"version_sync_all_{NOW.replace(':', '')}.json"
     with open(result_path, 'w', encoding='utf-8') as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
     print(f"\n同步报告已保存: {result_path}")
@@ -1577,7 +1842,7 @@ def cmd_upgrade(slug: str, skip_platforms: bool = False, force: bool = False):
 
 def cmd_status():
     """查看同步状态"""
-    conn = get_db()
+    conn = db_module.get_db()
     c = conn.cursor()
 
     # 各平台最近同步状态
@@ -1620,7 +1885,7 @@ def cmd_status():
 
 def cmd_report():
     """生成同步报告"""
-    conn = get_db()
+    conn = db_module.get_db()
     c = conn.cursor()
 
     # 统计各平台同步情况
@@ -1697,7 +1962,9 @@ def main():
     sync_parser.add_argument('--skip-marketing', action='store_true', help='跳过营销关卡检查')
     sync_parser.add_argument('--skip-l2', action='store_true', help='跳过L2 LLM验证(需L2报告)')
     sync_parser.add_argument('--skip-l3', action='store_true', help='跳过L3 Agent试用(需L3报告)')
+    sync_parser.add_argument('--skip-local-quality', action='store_true', help='跳过本地LLM质量评分(批量场景)')
     sync_parser.add_argument('--force', action='store_true', help='强制同步(即使无变更)')
+    sync_parser.add_argument('--dry-run', action='store_true', help='V155: 模拟模式,执行全部质量检查但跳过实际上传')
 
     sync_all_parser = sub.add_parser('sync-all', help='同步所有变更skill(批量模式默认跳过L2/L3)')
     sync_all_parser.add_argument('--skip-github', action='store_true')
@@ -1707,6 +1974,7 @@ def main():
     sync_all_parser.add_argument('--skip-marketing', action='store_true', help='跳过营销关卡')
     sync_all_parser.add_argument('--no-skip-l2', action='store_true', help='不跳过L2验证(默认跳过)')
     sync_all_parser.add_argument('--no-skip-l3', action='store_true', help='不跳过L3试用(默认跳过)')
+    sync_all_parser.add_argument('--dry-run', action='store_true', help='V155: 模拟模式,执行全部质量检查但跳过实际上传')
 
     gh_parser = sub.add_parser('sync-github', help='仅同步到GitHub')
     gh_parser.add_argument('slug', help='skill slug')
@@ -1722,11 +1990,13 @@ def main():
         cmd_scan()
     elif args.command == 'sync':
         cmd_sync(args.slug, args.skip_github, args.skip_skillhub, args.skip_clawhub,
-                 args.skip_security, args.skip_marketing, args.skip_l2, args.skip_l3, args.force)
+                 args.skip_security, args.skip_marketing, args.skip_l2, args.skip_l3, args.force,
+                 dry_run=args.dry_run, skip_local_quality=args.skip_local_quality)
     elif args.command == 'sync-all':
         cmd_sync_all(args.skip_github, args.skip_skillhub, args.skip_clawhub,
                      args.skip_security, args.skip_marketing,
-                     skip_l2=not args.no_skip_l2, skip_l3=not args.no_skip_l3)
+                     skip_l2=not args.no_skip_l2, skip_l3=not args.no_skip_l3,
+                     dry_run=args.dry_run)
     elif args.command == 'sync-github':
         cmd_sync_github(args.slug)
     elif args.command == 'status':

@@ -1,5 +1,5 @@
 ---
-slug: "ws-excel-tool-pro"
+slug: ws-excel-tool-pro
 name: "ws-excel-tool-pro"
 version: "1.0.0"
 displayName: "Excel工具(专业版)"
@@ -7,7 +7,7 @@ summary: "Excel 全能力版：多表合并、透视表、图表、大数据处�
 license: "Proprietary"
 edition: "pro"
 description: |-
-  Excel 工具（专业版）面向数据分析师与团队，在免费版基础读写之上新增多表合并、数据透视表、图表生成、大数据处理、自动化流水线与数据库联动六大模块。支持从 `PostgreSQL` 等数据库直接导入导出，处理百万行级数据不溢出。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
+  Excel 工具（专业版）面向数据分析师与团队，在免费版基础读写之上新增多表合并、数据透视表、图表生成、大数据处理、自动化流水线与数据库联动六大模块。支持从 `数据库` 等数据库直接导入导出，处理百万行级数据不溢出。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - 数据分析
   - Excel
@@ -31,7 +31,7 @@ category: "Automation"
 
 ## 概述
 
-专业版是 Excel 处理能力的完整封装，在免费版基础读写之上补齐了"多表合并、透视表、图表、大数据、自动化、数据库联动"六大模块。AI Agent 不仅能读写 Excel，还能做交叉分析、生成可视化图表、处理百万行级数据，并与 `PostgreSQL` 等数据库双向同步.
+专业版是 Excel 处理能力的完整封装，在免费版基础读写之上补齐了"多表合并、透视表、图表、大数据、自动化、数据库联动"六大模块。AI Agent 不仅能读写 Excel，还能做交叉分析、生成可视化图表、处理百万行级数据，并与 `数据库` 等数据库双向同步.
 本版本面向需要"批量处理 + 自动化报表 + 数据库联动"的数据分析师与团队.
 ## 核心能力
 
@@ -46,35 +46,35 @@ category: "Automation"
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Excel、全能力版、自动化流水线与数、专业版、面向数据分析师与、在免费版基础读写、之上新增多表合并、数据透视表、据库联动六大模块、支持从、PostgreSQL、等数据库直接导入、处理百万行级数据、不溢出、Use、when、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Excel、全能力版、自动化流水线与数、专业版、面向数据分析师与、在免费版基础读写、之上新增多表合并、数据透视表、据库联动六大模块、支持从、数据库、等数据库直接导入、处理百万行级数据、不溢出、Use、when、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 使用场景
 
 ### 场景一：月度销售报表自动化（运营视角）
-每月初自动生成销售报表。Agent 依次：① 从 `PostgreSQL` 读取当月销售数据；② 按区域做透视表；③ 生成柱状图与饼图；④ 追加合计行与格式；⑤ 邮件分发给管理层.
+每月初自动生成销售报表。Agent 依次：① 从 `数据库` 读取当月销售数据；② 按区域做透视表；③ 生成柱状图与饼图；④ 追加合计行与格式；⑤ 邮件分发给管理层.
 ### 场景二：多源数据合并（分析师视角）
 合并 5 个分公司的销售 Excel。Agent 用 pandas concat 合并，按 `门店 ID` 做 VLOOKUP 匹配主数据，输出合并后的总表.
 ### 场景三：大数据量处理（开发者视角）
 处理 200 万行的交易记录。Agent 用分块读取（`chunksize=50000`），流式聚合，避免内存溢出，输出统计结果.
 ### 场景四：数据库双向同步（运维视角）
-把 `PostgreSQL` 中的客户表导出为 Excel 供业务方查看，业务方修改后再导入回数据库。Agent 用 SQLAlchemy 实现双向同步，支持增量更新.
+把 `数据库` 中的客户表导出为 Excel 供业务方查看，业务方修改后再导入回数据库。Agent 用 SQLAlchemy 实现双向同步，支持增量更新.
 ### 场景五：自动化报表流水线（架构师视角）
 搭建每日定时报表流水线。Agent 配置 cron 任务：① 凌晨拉取数据；② 生成 Excel；③ 上传到云盘；④ 邮件通知。全流程无人值守.
 ### 场景六：图表化分析（产品视角）
@@ -196,14 +196,14 @@ final = pd.concat(results).groupby(level=0).sum()
 final.to_excel('aggregated.xlsx')
 ```
 
-### 数据库联动（`PostgreSQL`）
+### 数据库联动（`数据库`）
 
 ```python
 import pandas as pd
 from sqlalchemy import create_engine
 # ...
-# 连接 `PostgreSQL`
-engine = create_engine('postgresql://user:pass@host:5432/dbname')
+# 连接 `数据库`
+engine = create_engine('数据库://user:pass@host:5432/dbname')
 # ...
 # 从数据库导出到 Excel
 df = pd.read_sql('SELECT * FROM sales WHERE month = 7', engine)
@@ -225,7 +225,7 @@ from email import encoders
 from sqlalchemy import create_engine
 # ...
 def generate_report():
-    engine = create_engine('postgresql://user:pass@host:5432/dbname')
+    engine = create_engine('数据库://user:pass@host:5432/dbname')
     df = pd.read_sql('SELECT * FROM sales WHERE date >= CURRENT_DATE - 7', engine)
     pivot = pd.pivot_table(df, values='金额', index='区域', aggfunc='sum')
     pivot.to_excel('weekly_report.xlsx')
@@ -253,7 +253,7 @@ generate_report()
 send_email('boss@company.com', '周度销售报表', 'weekly_report.xlsx')
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 1. 多表合并策略
 | 场景 | 方法 | 注意事项 |
@@ -290,7 +290,7 @@ send_email('boss@company.com', '周度销售报表', 'weekly_report.xlsx')
 - 增量同步：按时间戳或 ID，适合大表
 - 用 `if_exists='append'` 追加，`'replace'` 替换
 - 同步前做数据校验（行数、校验和）
-- `PostgreSQL` 用 `COPY` 命令批量导入更快
+- `数据库` 用 `COPY` 命令批量导入更快
 
 ### 6. 自动化流水线设计
 - 幂等性：同一输入应产出同一输出
@@ -308,19 +308,19 @@ A：某些分组无数据时会返回 NaN。用 `fill_value=0` 填充，或后�
 ### Q3：图表中文显示乱码？
 A：matplotlib 默认字体不支持中文。设置中文字体：`plt.rcParams['font.sans-serif'] = ['SimHei']`（Windows）或 `['Arial Unicode MS']`（macOS）.
 ### Q4：200 万行 Excel 读取太慢？
-A：① 用 `read_only=True` 模式；② 用 `chunksize` 分块；③ 考虑先转为 CSV 或 Parquet 再处理；④ 终极方案：直接从 `PostgreSQL` 读取，跳过 Excel.
-### Q5：`PostgreSQL` 导入 Excel 数据报类型错误？
+A：① 用 `read_only=True` 模式；② 用 `chunksize` 分块；③ 考虑先转为 CSV 或 Parquet 再处理；④ 完整方案：直接从 `数据库` 读取，跳过 Excel.
+### Q5：`数据库` 导入 Excel 数据报类型错误？
 A：检查 Excel 列的数据类型是否与数据库 schema 一致。日期用 `pd.to_datetime` 转换，数字用 `astype` 转换，空值用 `fillna` 或 `None`.
 ### Q6：自动化流水线如何定时执行？
 A：Linux 用 cron，Windows 用任务计划器，或 Python 用 `schedule`/`APScheduler` 库。建议配合日志与告警.
 ### Q7：图表嵌入后位置错乱？
 A：`ws.add_image(img, 'H2')` 的锚点是单元格。调整锚点到合适位置，或用 `img.anchor = 'H2'` 明确指定.
 ### Q8：增量同步怎么实现？
-A：维护一个 `last_sync_id` 或 `last_sync_time`，每次只读取大于该值的数据。同步完成后更新游标。`PostgreSQL` 可用 `WHERE id > :last_id` 或 `WHERE updated_at > :last_time`.
+A：维护一个 `last_sync_id` 或 `last_sync_time`，每次只读取大于该值的数据。同步完成后更新游标。`数据库` 可用 `WHERE id > :last_id` 或 `WHERE updated_at > :last_time`.
 ### Q9：邮件发送附件失败？
 A：检查：① SMTP 服务器与端口；② 发件人凭证；③ 附件路径正确；④ 文件未被打占用。建议用 `with open` 确保文件句柄释放.
 ### Q10：如何保证数据一致性？
-A：① 同步前做行数校验；② 关键字段做 checksum；③ 用事务（`PostgreSQL` 的 BEGIN/COMMIT）；④ 保留同步日志便于回溯.
+A：① 同步前做行数校验；② 关键字段做 checksum；③ 用事务（`数据库` 的 BEGIN/COMMIT）；④ 保留同步日志便于回溯.
 ## 专业版特性
 
 本专业版相比免费版新增以下能力：
@@ -329,7 +329,7 @@ A：① 同步前做行数校验；② 关键字段做 checksum；③ 用事务�
 - 图表生成：柱状图、折线图、饼图、散点图嵌入 xlsx
 - 大数据处理：分块读取、流式聚合、内存优化（百万行级）
 - 自动化流水线：定时任务、批处理、邮件分发、告警
-- 数据库联动：`PostgreSQL`/MySQL/SQLite 双向同步与增量更新
+- 数据库联动：`数据库`/MySQL/SQLite 双向同步与增量更新
 - 多角色场景指南：运营/分析师/开发者/运维/架构师/产品六视角
 - 完整性能基线与故障排查表
 - 优先技术支持与版本升级迁移指南
@@ -358,12 +358,12 @@ A：① 同步前做行数校验；② 关键字段做 checksum；③ 用事务�
 | pandas | Python 库 | 必需 | `pip install pandas` |
 | matplotlib | Python 库 | 图表必需 | `pip install matplotlib` |
 | SQLAlchemy | Python 库 | 数据库联动必需 | `pip install sqlalchemy` |
-| psycopg2-binary | Python 库 | `PostgreSQL` 必需 | `pip install psycopg2-binary` |
+| psycopg2-binary | Python 库 | `数据库` 必需 | `pip install psycopg2-binary` |
 | PyMySQL | Python 库 | MySQL 可选 | `pip install pymysql` |
 | schedule | Python 库 | 自动化可选 | `pip install schedule` |
 
 ### API Key 配置
-- **数据库连接串**：`PostgreSQL` 通过环境变量 `DATABASE_URL` 注入（格式：`postgresql://user:pass@host:5432/dbname`）
+- **数据库连接串**：`数据库` 通过环境变量 `DATABASE_URL` 注入（格式：`数据库://user:pass@host:5432/dbname`）
 - **SMTP 凭证**：邮件分发需要 SMTP 用户名与密码，通过环境变量 `SMTP_USER`/`SMTP_PASS` 注入
 - **禁止**：在 SKILL.md 或脚本中硬编码数据库密码或 SMTP 凭证
 - **数据文件路径**：由用户提供，Agent 通过 exec 执行 Python 脚本处理
@@ -404,3 +404,14 @@ A：① 同步前做行数校验；② 关键字段做 checksum；③ 用事务�
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

@@ -1,4 +1,5 @@
 ---
+
 slug: volcengine-dns-tool-pro
 name: volcengine-dns-tool-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: 火山引擎DNS专业版
 summary: "批量记录操作、变更计划、自动回滚与传播监控，适合运维团队与企业级DNS治理.。火山引擎DNS管理工具专业版，面向运维团队与企业的高阶DNS治理平台。核心能力:"
 license: Proprietary
 edition: pro
-description: '火山引擎DNS管理工具专业版，面向运维团队与企业的高阶DNS治理平台。核心能力:
-
+description: "火山引擎DNS管理工具专业版，面向运维团队与企业的高阶DNS治理平台。核心能力:。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
   - 批量记录操作与变更计划
 
   - 自动回滚与变更窗口管理
@@ -50,7 +50,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 火山引擎DNS管理（专业版）
 
 ## 概述
@@ -71,21 +73,21 @@ category: "Automation"
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -204,13 +206,12 @@ volcengine-dns-pro init --workspace ~/volcengine-dns-pro
 # ...
 # 2. 配置认证
 export VOLCENGINE_ACCESS_KEY="your-access-key"
-export VOLCENGINE_SECRET_KEY="your-secret-key"
+export VOLCENGINE_SECRET_KEY="${API_KEY:?请设置环境变量}"
 # ...
 # 3. 批量查询
 volcengine-dns-pro batch list --zones "example.com,example2.com"
 # ...
 # 4. 执行变更计划
-volcengine-dns-pro batch update --file migration-plan.yaml --auto-verify
 # ...
 # 5. 全球传播监控
 volcengine-dns-pro monitor start --record "api.example.com" --type A --expected "10.0.1.100"
@@ -270,7 +271,7 @@ report:
 | 蓝绿切换 | 双记录并存，逐步切换流量 | 高可用切换 |
 | 定时变更 | 指定时间自动执行 | 计划任务 |
 
-## 最佳实践
+## 优选实践
 
 * 批量变更前务必先用 `--dry-run` 预览.
 * 启用自动验证与自动回滚，降低变更风险.
@@ -339,8 +340,6 @@ A：专业版支持导出 JSON 格式的 DNS 配置，便于与 CMDB 等资产�
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ```text
@@ -365,3 +364,14 @@ Skill: 执行完成,结果如下: 操作成功
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

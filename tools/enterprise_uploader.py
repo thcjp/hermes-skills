@@ -23,6 +23,8 @@ from urllib.request import urlopen, Request
 from urllib.error import URLError, HTTPError
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# 添加PROJECT_ROOT到path,使config包可被import (脚本运行时cwd不在sys.path中)
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import (
     DB_PATH, PACKAGED_SKILLS_DIR, OPENSOURCE_SKILLS_DIR, REPORT_DIR,
     DIFFERENTIATED_DIR, ENTERPRISE_UPLOAD_DIR,
@@ -40,7 +42,9 @@ except ImportError:
     _QUALITY_GATE_AVAILABLE = False
 
 # ============ 企业版配置 ============
-ORG_ID = 862
+# V181: 修正ORG_ID为用户当前登录组织(1436=智创未来/zcwl)
+# 原ORG_ID=862导致API返回403 "organization mismatch"
+ORG_ID = 1436
 API_BASE = "https://api.skillhub.cn/api/v1"
 ORG_SKILLS_API = f"{API_BASE}/orgs/{ORG_ID}/skills"
 
@@ -295,8 +299,19 @@ UPLOAD_LOG = REPORT_DIR / "enterprise_upload_log.json"
 
 
 def load_cookies():
-    """加载认证凭证：优先使用API Key，其次使用cookie"""
-    # 优先: 从SkillHub CLI凭证文件加载org API Key
+    """加载认证凭证：优先环境变量(允许覆盖),其次cookie文件,最后CLI凭证文件"""
+    # 1. 环境变量(最高优先级 — 允许运行时覆盖过期凭证)
+    env_cookies = os.environ.get('SKILLHUB_SESSION_COOKIE', '')
+    if env_cookies:
+        return env_cookies
+
+    # 2. cookie文件(浏览器session)
+    if COOKIE_FILE.exists():
+        cookies = COOKIE_FILE.read_text(encoding='utf-8-sig').strip()
+        if cookies:
+            return cookies
+
+    # 3. CLI凭证文件(sk-ent- API Key — 可能权限不足)
     cli_creds = Path(os.path.expanduser('~')) / '.skillhub' / 'credentials.json'
     if cli_creds.exists():
         try:
@@ -310,17 +325,6 @@ def load_cookies():
                         return f'BEARER:{api_key}'
         except Exception as e:
             print(f"  [WARN] API key加载失败: {e}")
-
-    # 其次: 从cookie文件加载(使用utf-8-sig自动去除BOM)
-    if COOKIE_FILE.exists():
-        cookies = COOKIE_FILE.read_text(encoding='utf-8-sig').strip()
-        if cookies:
-            return cookies
-    
-    # 最后: 从环境变量获取
-    env_cookies = os.environ.get('SKILLHUB_SESSION_COOKIE', '')
-    if env_cookies:
-        return env_cookies
     
     return None
 

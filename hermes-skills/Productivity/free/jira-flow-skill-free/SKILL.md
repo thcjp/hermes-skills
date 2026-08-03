@@ -1,6 +1,7 @@
 ---
+
 name: "jira-flow-skill-free"
-description: "通过Jira Cloud REST API管理任务、状态流转与工时记录，适合个人开发者日常追踪。"
+description: "通过Jira Cloud REST API管理任务、状态流转与工时记录，适合个人开发者日常追踪。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -14,6 +15,11 @@ metadata:
     - "效率提升"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # Jira Flow Skill（免费版）
@@ -46,24 +52,18 @@ Jira Flow Skill 将 Jira Cloud REST API 封装为简洁的命令行调用，让�
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置。
 
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
 **输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Jira、Cloud、REST、API、管理任务、状态流转与工时记、适合个人开发者日、常追踪、Flow、Skill、是面向个人开发者、与小型团队的、任务管理辅助工具、通过命令行脚本驱、完成日常事务流转、核心能力、任务检索与详情查、状态流转与分配、工时记录与统计、评论与创建任务、覆盖一名开发者日、常所需的、Use、when、需要项目管理、任务规划、进度跟踪、团队协作时使用、不适用于实际人员、绩效评估等。
@@ -133,31 +133,29 @@ bash {baseDir}/scripts/jira.sh my 5
 
 ```bash
 # 检索任务
-bash {baseDir}/scripts/jira.sh search "登录超时" 10
 
 # 查看任务详情
-bash {baseDir}/scripts/jira.sh issue ABC-123
 
 # 更新状态（自动校验流转）
-bash {baseDir}/scripts/jira.sh status ABC-123 "In Progress"
+sh status ABC-123 "In Progress"
 
 # 分配给自己
-bash {baseDir}/scripts/jira.sh assign-me ABC-123
+sh assign-me ABC-123
 
 # 添加评论
-bash {baseDir}/scripts/jira.sh comment ABC-123 "已修复并部署到预发"
+sh comment ABC-123 "已修复并部署到预发"
 
 # 创建任务
-bash {baseDir}/scripts/jira.sh create "修复登录超时" "用户登录5分钟后被登出"
+sh create "修复登录超时" "用户登录5分钟后被登出"
 
 # 记录工时
-bash {baseDir}/scripts/jira.sh log ABC-123 2.5 2025-01-18
+sh log ABC-123 2.5 2025-01-18
 
 # 工时统计（按时间区间）
-bash {baseDir}/scripts/jira.sh hours 2025-01-01 2025-01-07
+sh hours 2025-01-01 2025-01-07
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 1. 使用 JIRA_BOARD 限定项目范围
 
@@ -255,15 +253,25 @@ Worklog 命令使用 Jira 的 worklog/updated + worklog/list 组合接口，在�
 本改进作品在原始作品基础上进行了深度差异化改造，包括但不限于：
 
 - 完全重写中文化文档与使用指南
-- 新增场景化最佳实践与故障排查
+- 新增场景化优选实践与故障排查
 - 完善依赖说明与配置示例
 - 增加免费版/专业版分层策略
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

@@ -1,4 +1,5 @@
 ---
+
 slug: resume-assistant-tool-pro
 name: resume-assistant-tool-pro
 version: 1.0.0
@@ -6,14 +7,11 @@ displayName: 简历助手工具(专业版)
 summary: "求职全流程套件,含岗位定制、JD分析、5格式导出、4模板与详细评分.。简历助手工具(专业版)面向求职者与招聘方,提供完整的简历润色、岗位定制、多格式导出与专业评分能力。核心能力:"
 license: Proprietary
 edition: pro
-description: '简历助手工具(专业版)面向求职者与招聘方,提供完整的简历润色、岗位定制、多格式导出与专业评分能力。核心能力:
-
+description: "简历助手工具(专业版)面向求职者与招聘方,提供完整的简历润色、岗位定制、多格式导出与专业评分能力。核心能力:。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
   - 4大命令:润色 / 岗位定制 / 多格式导出 / 详细评分
-
   - 5种导出格式:Word / Markdown / HTML / LaTeX / PDF
 
   - 4种专业模板:professional / modern / minimal / academic
-
   - JD分析与关键词优化,匹配度从62%提升至89%
 
   - 100分制详细评分与岗位匹配度评估
@@ -21,7 +19,6 @@ description: '简历助手工具(专业版)面向求职者与招聘方,提供完
   适用场景:
 
   - 针对具体岗位定制简历
-
   - 多格式投递(在...'
 tags:
   - Development
@@ -44,9 +41,10 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
----
-# 简历助手工具(专业版)
 
+---
+
+# 简历助手工具(专业版)
 ## 概述
 
 简历助手工具(专业版)面向求职者与招聘方,在兼容免费版润色与基础评分的基础上,扩展了岗位定制、多格式导出(Word/HTML/LaTeX/PDF)、4种专业模板与JD分析能力.
@@ -67,21 +65,21 @@ category: "Automation"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -144,7 +142,6 @@ JD拆解:
 | HTML | 自包含,4种配色主题 | 在线作品集 |
 | LaTeX | XeLaTeX+CJK支持 | 学术申请 |
 | PDF | A4优化,多转换方法 | 正式投递 |
-
 | 模板 | 风格 | 适用 |
 |:---:|:---:|:---:|
 | professional | 海军蓝、衬线标题、经典边框 | 金融/咨询/法律/医疗 |
@@ -193,7 +190,6 @@ JD拆解:
 4. 优化技能分组(20分钟)
 5. 导出PDF投递(5分钟)
 ```
-
 ## 不适用场景
 
 以下场景简历助手工具(专业版)不适合处理：
@@ -201,7 +197,6 @@ JD拆解:
 - 加密文件破解
 - 损坏文件修复
 - 物理介质数据恢复
-
 ## 触发条件
 
 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于非本工具能力范围的需求.
@@ -251,7 +246,8 @@ JD拆解:
 
 ### 3. 集成方式
 
-#### 自然语言(推荐)
+#
+### 自然语言(推荐)
 
 ```text
 "针对这个岗位定制简历: [JD]"
@@ -259,7 +255,8 @@ JD拆解:
 "评估并告诉我与高级前端岗位的匹配度"
 ```
 
-#### REST API
+#
+### REST API
 
 ```bash
 curl -X POST https://your-agent-api.com/skills/resume-assistant/customize \
@@ -270,16 +267,16 @@ curl -X POST https://your-agent-api.com/skills/resume-assistant/customize \
     "language": "zh"
   }'
 # ...
-curl -X POST https://your-agent-api.com/skills/resume-assistant/export \
+com/skills/resume-assistant/export \
   -H "Content-Type: application/json" \
   -d '{
-    "resume_content": "简历内容...",
     "format": "pdf",
     "template": "modern"
   }'
 ```
 
-#### LangChain集成
+#
+### LangChain集成
 
 ```python
 from langchain.tools import Tool
@@ -297,7 +294,6 @@ resume_tools = [
     Tool(
         name="resume_export",
         description="导出简历为Word/Markdown/HTML/LaTeX/PDF",
-        func=lambda input: agent.run_skill(
             "resume-assistant", "export",
             {"resume_content": input, "format": "pdf", "template": "modern"}
         )
@@ -354,8 +350,7 @@ templates/
 \end{itemize}
 \end{document}
 ```
-
-## 最佳实践
+## 优选实践
 
 ### 1. 每个岗位单独定制
 
@@ -406,7 +401,6 @@ Markdown转换到所有其他格式都干净,建议:
 - 定制版本与原版差异
 - 面试反馈与改进点
 - 最终结果
-
 ## 常见问题
 
 ### Q1:PRO版与免费版如何共存?
@@ -453,7 +447,7 @@ Markdown转换到所有其他格式都干净,建议:
 - 若通过REST API集成,需按所在Agent平台配置访问令牌.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+execute(纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。PRO版面向求职全流程,提供岗位定制、多格式导出、多模板与详细评分能力,完全兼容免费版润色与基础评分.
 ## 错误处理
 
@@ -462,13 +456,11 @@ Markdown转换到所有其他格式都干净,建议:
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
-
 ## 已知限制
 
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
-
 ## 输出格式
 ```json
 {
@@ -485,3 +477,13 @@ Markdown转换到所有其他格式都干净,建议:
   "error": null
 }
 ```
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

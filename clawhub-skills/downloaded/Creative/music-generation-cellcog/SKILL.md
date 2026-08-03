@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Music Generation Cellcog
 
 Music generation — 5 seconds to 10 minutes. Instrumental and vocal tracks with high-quality AI vocals.

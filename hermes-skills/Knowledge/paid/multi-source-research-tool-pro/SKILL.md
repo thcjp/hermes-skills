@@ -1,4 +1,5 @@
 ---
+
 slug: multi-source-research-tool-pro
 name: multi-source-research-tool-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: 多源研究助手专业版
 summary: "企业级多源研究平台，支持批量研究、语义去重、自定义数据源与团队协作。多源研究助手专业版，面向研究机构和企业用户提供企业级多源数据采集与分析能力。核心能力:"
 license: Proprietary
 edition: pro
-description: '多源研究助手专业版，面向研究机构和企业用户提供企业级多源数据采集与分析能力。核心能力:
-
+description: "多源研究助手专业版，面向研究机构和企业用户提供企业级多源数据采集与分析能力。核心能力:。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
   - 批量多主题并行研究。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。Use
   when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。'
 tags:
@@ -32,7 +32,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 # 多源研究助手（专业版）
 ## 概述
 多源研究助手专业版在免费版四大数据源的基础上，新增自定义数据源接入、批量多主题并行研究、语义级去重排序、多格式导出、研究历史版本管理和多租户团队协作等企业级能力，满足研究机构和企业的深度调研需求.
@@ -52,7 +54,6 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 | 自定义数据源 | 不支持 | 支持自定义接入 |
 | 定时研究 | 不支持 | 支持 cron 调度 |
 
-**输入**: 用户提供能力矩阵所需的指令和必要参数.
 **处理**: 解析能力矩阵的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回能力矩阵的响应数据,包含状态码、结果和日志.
 ### PRO 专属能力详解
@@ -77,14 +78,13 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 [PRO] 引用管理与文献格式化
 ```
 
-**输入**: 用户提供PRO 专属能力详解所需的指令和必要参数.
 **处理**: 解析PRO 专属能力详解的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回PRO 专属能力详解的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -99,7 +99,6 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 3. 充电桩基础设施建设
 4. 车规级芯片供应链
 5. 换电模式 vs 充电模式
-# ...
 Agent 执行流程：
 1. 解析5个研究课题
 2. 为每个课题分配并行研究任务
@@ -111,8 +110,6 @@ Agent 执行流程：
 示例输出：
 
 ```markdown
-## 批量研究报告：新能源汽车产业全景调研
-### 课题执行概览
 | 课题 | 数据源数 | 原始条目 | 去重后 | A级条目 |
 |---:|---:|---:|---:|---:|
 | 固态电池技术进展 | 4类12源 | 45 | 28 | 15 |
@@ -120,19 +117,14 @@ Agent 执行流程：
 | 充电桩基础设施 | 4类8源 | 32 | 20 | 10 |
 | 车规级芯片供应链 | 4类11源 | 42 | 26 | 14 |
 | 换电vs充电模式 | 4类9源 | 35 | 22 | 11 |
-# ...
-### 跨课题关联分析
 - 固态电池 ↔ 车规级芯片：芯片需求影响电池管理系统设计
 - 充电桩 ↔ 换电模式：基础设施建设策略直接影响模式选择
-# ...
-### 各课题核心发现
 [详见各子报告]
 ```
 
 ### 场景二：尽职调查信息收集
 投资机构对目标公司进行全面的信息收集和风险评估.
 ```python
-# due_diligence.py - 尽职调查配置
 research_config = {
     "topic": "XX公司尽职调查",
     "subtopics": [
@@ -164,7 +156,6 @@ research_config = {
 ### 场景三：定时行业研究
 企业战略部门需要定期跟踪某个行业的发展动态.
 ```bash
-# 配置每周行业研究任务
 cat > ~/research-pro/schedules/weekly_industry.yaml << 'EOF'
 schedule:
   name: "新能源汽车行业周报"
@@ -185,14 +176,10 @@ EOF
 ## 快速开始
 ### Step 1：初始化 PRO 环境
 ```bash
-# 创建 PRO 版本工作目录
 mkdir -p ~/research-pro/{config,templates,reports,history,schedules,exports}
-# ...
-# 初始化配置文件
 cat > ~/research-pro/config.yaml << 'EOF'
 edition: pro
 version: "1.0.0"
-# ...
 sources:
   web_search:
     engines: [baidu, bing, google, sogou, duckduckgo]
@@ -209,7 +196,6 @@ sources:
   custom:
     enabled: true
     config_path: "~/research-pro/config/custom_sources.yaml"
-# ...
 processing:
   deduplication: semantic
   similarity_threshold: 0.85
@@ -220,18 +206,15 @@ processing:
       credibility: 0.30
       recency: 0.20
       authority: 0.15
-# ...
 output:
   formats: ["markdown", "pdf", "word", "html", "bibtex"]
   template_path: "~/research-pro/templates/"
   export_path: "~/research-pro/exports/"
-# ...
 history:
   enabled: true
   retention_days: 365
   version_control: true
   path: "~/research-pro/history/"
-# ...
 team:
   enabled: true
   config_path: "~/research-pro/config/team.yaml"
@@ -240,7 +223,6 @@ EOF
 
 ### Step 2：配置自定义数据源
 ```yaml
-# custom_sources.yaml - 自定义数据源
 custom_sources:
   - name: "行业数据库"
     type: "api"
@@ -250,20 +232,17 @@ custom_sources:
       token: "${INDUSTRY_DATA_TOKEN}"
     query_format: "json"
     response_format: "json"
-# ...
   - name: "企业征信查询"
     type: "api"
-    url: "https://api.credit-query.local/v2"
+credit-query.local/v2"
     auth:
       type: "api_key"
       key: "${CREDIT_API_KEY}"
       header: "X-API-Key"
-# ...
   - name: "行业报告RSS"
     type: "rss"
     url: "https://feeds.industry-reports.local/latest"
     update_interval: "1h"
-# ...
   - name: "内部知识库"
     type: "database"
     config:
@@ -276,7 +255,6 @@ custom_sources:
 ### Step 3：执行首次批量研究
 ```text
 用户：执行首次批量研究，覆盖我的5个关注课题
-# ...
 Agent：
 1. 读取研究偏好配置
 2. 解析课题列表
@@ -289,11 +267,10 @@ Agent：
 ## 示例
 ### 多租户团队配置
 ```yaml
-# team.yaml - 团队协作配置
 team:
   name: "战略研究部"
-  tenants:
-    - id: tenant_001
+  workspaces:
+    - id: workspace_001
       name: "新能源研究组"
       members:
         - email: "researcher_a@company.com"
@@ -304,15 +281,13 @@ team:
           topics: ["自动驾驶", "芯片"]
       shared_reports: true
       shared_history: true
-# ...
-    - id: tenant_002
+    - id: workspace_002
       name: "生物医药研究组"
       members:
         - email: "bio_a@company.com"
           role: "lead"
           topics: ["创新药", "基因编辑"]
       shared_reports: true
-# ...
 permissions:
   analyst:
     - read: own_topics
@@ -331,52 +306,28 @@ permissions:
 
 ### 研究报告模板
 ```markdown
-# {{topic}} 深度研究报告
-## 报告元信息
-- 研究团队：{{team}}
-- 生成时间：{{datetime}}
-- 数据源覆盖：{{sources}}
-- 数据采集时间范围：{{period}}
-# ...
-## 执行摘要
+- 研究团队：
+- 生成时间：
+- 数据源覆盖：
+- 数据采集时间范围：
 {{自动生成的3-5句话摘要}}
-# ...
-## 核心发现
 {{按智能排序的关键发现，每条含可信度标注}}
-# ...
-## 详细分析
-### 技术维度
 {{技术相关发现与分析}}
-# ...
-### 市场维度
 {{市场数据与竞争格局}}
-# ...
-### 政策维度
 {{相关政策法规梳理}}
-# ...
-## 跨课题关联
 {{如为批量研究，展示课题间关联分析}}
-# ...
-## 风险提示
 {{识别的风险因素与不确定性}}
-# ...
-## 数据来源
 {{完整数据源清单与可信度评级}}
-# ...
-## 引用文献
 {{BibTeX格式引用列表}}
 ```
 
 ### REST API 集成
 ```python
-# api_client.py - PRO 版本 API 客户端
 import requests
-# ...
 class ResearchProClient:
     def __init__(self, api_key, base_url="https://api.research-pro.local"):
         self.headers = {"Authorization": f"Bearer {api_key}"}
         self.base_url = base_url
-# ...
     def create_research(self, topics, sources=None):
         """创建批量研究任务"""
         resp = requests.post(
@@ -385,29 +336,22 @@ class ResearchProClient:
             json={"topics": topics, "sources": sources or "all"}
         )
         return resp.json()
-# ...
     def get_research_status(self, research_id):
         """查询研究状态"""
-        resp = requests.get(
             f"{self.base_url}/v1/research/{research_id}/status",
-            headers=self.headers
         )
         return resp.json()
-# ...
     def export_report(self, research_id, format="pdf"):
         """导出研究报告"""
-        resp = requests.post(
             f"{self.base_url}/v1/research/{research_id}/export",
-            headers=self.headers,
             json={"format": format}
         )
         return resp.content
 ```
 
-## 最佳实践
+## 优选实践
 ### 1. 建立研究课题矩阵
 ```python
-# 推荐的研究课题组织方式
 research_matrix = {
     "industry": {
         "primary": ["新能源汽车", "人工智能", "生物医药"],
@@ -424,7 +368,6 @@ research_matrix = {
 ### 2. 利用语义去重提升质量
 ```text
 用户：对上次研究的"固态电池"课题执行语义去重，合并重复信息
-# ...
 Agent：
 1. 加载历史研究数据
 2. 使用向量化模型计算内容相似度
@@ -436,12 +379,7 @@ Agent：
 为不同类型的研究创建标准化模板，确保报告一致性.
 ### 4. 利用版本管理追踪研究演进
 ```bash
-# 查看研究历史版本
 ls ~/research-pro/history/solid-state-battery/
-# 2026-07-01_v1.md
-# 2026-07-08_v2.md
-# 2026-07-15_v3.md
-# 对比两个版本差异
 diff ~/research-pro/history/solid-state-battery/2026-07-01_v1.md \
      ~/research-pro/history/solid-state-battery/2026-07-15_v3.md
 ```
@@ -483,14 +421,9 @@ PRO 版本初始化时会自动检测免费版配置，研究偏好可一键迁�
 PRO 版本支持 API 集成与自定义数据源，需配置相关密钥：
 
 ```bash
-# 配置 API 认证
-export RESEARCH_PRO_API_KEY="your_api_key"
-# ...
-# 自定义数据源密钥（按需配置）
+export RESEARCH_PRO_API_KEY="${API_KEY:?请设置环境变量}"
 export INDUSTRY_DATA_TOKEN="your_industry_token"
-export CREDIT_API_KEY="your_credit_key"
-# ...
-# 或写入配置文件
+export CREDIT_API_KEY="${API_KEY:?请设置环境变量}"
 cat > ~/research-pro/.env << 'EOF'
 RESEARCH_PRO_API_KEY=your_api_key
 INDUSTRY_DATA_TOKEN=your_industry_token
@@ -506,7 +439,6 @@ EOF
 - **支持级别**: 优先技术支持，提供自定义数据源接入与研究报告模板定制服务
 
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -515,3 +447,30 @@ EOF
 
 ## 已知限制
 - 需要API Key，无Key环境无法使用
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级多源研究平台，支持批量研究、语义去重、自定义数据源与团队协作。多源研究助手专业版，面向研究机构和企业用户提供企业级
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 企业级多源研究平台，支持批量研究、语义去重、自定义数据源与团队协作。多源研究助手专业版，面向研究机构和企业用户提供企业级
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

@@ -1,5 +1,6 @@
 ---
-slug: "doc-parse-tool-pro"
+
+slug: doc-parse-tool-pro
 name: "doc-parse-tool-pro"
 version: "1.0.0"
 displayName: "文档解析工具（专业版）"
@@ -40,7 +41,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 文档解析工具（专业版）
 
 ## 概述
@@ -57,7 +60,6 @@ category: "Automation"
 ### 批量处理与并行执行
 批量处理与并行执行
 
-**输入**: 用户提供批量处理与并行执行所需的指令和必要参数.
 **处理**: 解析批量处理与并行执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量处理与并行执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -65,7 +67,6 @@ category: "Automation"
 ### 企业级安全与审计
 企业级安全与审计
 
-**输入**: 用户提供企业级安全与审计所需的指令和必要参数.
 **处理**: 解析企业级安全与审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回企业级安全与审计的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -73,7 +74,6 @@ category: "Automation"
 ### 高级配置与自定义策略
 高级配置与自定义策略
 
-**输入**: 用户提供高级配置与自定义策略所需的指令和必要参数.
 **处理**: 解析高级配置与自定义策略的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级配置与自定义策略的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -81,7 +81,6 @@ category: "Automation"
 ### 免费版完全兼容
 免费版完全兼容，无缝升级
 
-**输入**: 用户提供免费版完全兼容所需的指令和必要参数.
 **处理**: 解析免费版完全兼容的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版完全兼容的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -89,12 +88,10 @@ category: "Automation"
 ### 优先技术支持与问题响应
 优先技术支持与问题响应
 
-**输入**: 用户提供优先技术支持与问题响应所需的指令和必要参数.
 **处理**: 解析优先技术支持与问题响应的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回优先技术支持与问题响应的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**输入**: 用户提供专业版增强功能所需的指令和必要参数.
 **处理**: 解析专业版增强功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回专业版增强功能的响应数据,包含状态码、结果和日志.
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
@@ -190,7 +187,7 @@ class DocumentParseEngine:
         if ext == ".pdf":
             result = self._parse_pdf(file_path, options)
         elif ext in [".png", ".jpg", ".jpeg", ".tiff", ".bmp"]:
-            result = self._parse_image(file_path, options)
+_parse_image(file_path, options)
         return result
 # ...
     def batch_parse(self, file_paths: List[str],
@@ -199,7 +196,6 @@ class DocumentParseEngine:
         Path(output_dir).mkdir(exist_ok=True)
         results = []
         for file_path in file_paths:
-            result = self.parse(file_path)
             output_file = Path(output_dir) / (Path(file_path).stem + ".json")
             self._export_result(result, str(output_file))
             results.append(result)
@@ -207,7 +203,7 @@ class DocumentParseEngine:
 # ...
     def extract_tables(self, file_path: str) -> List[dict]:
         """表格提取（PRO 专属）"""
-        result = self.parse(file_path, {"tables_only": True})
+parse(file_path, {"tables_only": True})
         return result.tables
 # ...
     def ocr_image(self, image_path: str, lang: str = "chi_sim") -> str:
@@ -222,7 +218,6 @@ class DocumentParseEngine:
 # ...
     def analyze_layout(self, file_path: str) -> dict:
         """版面分析（PRO 专属）"""
-        result = self.parse(file_path)
         layout = {
             "total_pages": max((e.page for e in result.elements), default=0),
             "element_counts": {},
@@ -237,7 +232,7 @@ class DocumentParseEngine:
                 layout["text_blocks"] += 1
             elif elem.element_type == "table":
                 layout["table_count"] += 1
-            elif elem.element_type == "image":
+element_type == "image":
                 layout["image_count"] += 1
         return layout
 # ...
@@ -258,28 +253,26 @@ class DocumentParseEngine:
                             element_type="text", content=text,
                             page=i, confidence=0.9
                         ))
-                        result.full_text += text + NL
+full_text += text + NL
                     tables = page.extract_tables() or []
                     for table in tables:
-                        result.tables.append({
                             "page": i, "data": table
                         })
-                        result.elements.append(ParsedElement(
+elements.append(ParsedElement(
                             element_type="table", content=str(table),
-                            page=i, confidence=0.8
                         ))
         except ImportError:
             from pypdf import PdfReader
             reader = PdfReader(file_path)
             for i, page in enumerate(reader.pages, 1):
-                text = page.extract_text() or ""
-                result.elements.append(ParsedElement(
+extract_text() or ""
+elements.append(ParsedElement(
                     element_type="text", content=text, page=i
                 ))
-                result.full_text += text + NL
+full_text += text + NL
         result.metadata = {
             "format": "pdf",
-            "pages": max((e.page for e in result.elements), default=0),
+            "pages": max((e.elements), default=0),
             "elements": len(result.elements)
         }
         return result
@@ -390,9 +383,9 @@ doc_parse:
 - 多租户隔离支持
 - 合规性检查内置
 
-## 最佳实践
+## 优选实践
 
-### 企业级最佳实践
+### 企业级优选实践
 
 1. **明确需求**：对于大批量任务，先规划分批策略与并行度
 2. **检查输入**：批量处理前先验证所有输入文件的有效性
@@ -479,3 +472,22 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 通用文档解析工具，支持PDF、图片、扫描件的结构化信息提取与OCR识别。。文档解析工具 - （专业版） 核心能力: 文档
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

@@ -7,7 +7,7 @@ displayName: 个人健康管家专业版
 summary: "企业级健康管家,支持慢病管理、医生共享、AI诊断与穿戴设备同步。面向家庭、慢病患者与健康机构的企业级健康管家平台."
 license: Proprietary
 edition: pro
-description: 面向家庭、慢病患者与健康机构的企业级健康管家平台。可生成提升工作效率
+description: "面向家庭、慢病患者与健康机构的企业级健康管家平台。可生成提升工作效率。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
   核心能力: 慢病管理、医生数据共享、AI辅助诊断、穿戴设备同步、家庭多成员管理
 
   适用场景: 慢病管理、家庭健康关怀、术后康复、企业员工健康、医疗机构
@@ -64,21 +64,21 @@ category: "Automation"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -139,7 +139,7 @@ def ai_diagnosis(patient_id, symptoms):
 联系销售开通专业版,获取管理员凭证与租户 ID.
 ### Step 2: 配置凭证
 ```bash
-export HEALTH_ADMIN_KEY="sk_pro_admin_xxx"
+export HEALTH_ADMIN_KEY="sk_pro_admin_未指定"
 export HEALTH_ORG_ID="org_your_id"
 export HEALTH_EDITION="pro"
 ```
@@ -265,14 +265,13 @@ def configure_emergency_alerts(patient_id):
     }
     resp = requests.post(
         f"{API_BASE}/alerts/emergency",
-        headers=self.headers,
         json=payload,
         timeout=30,
     )
     return resp.json()
 ```
 
-## 最佳实践
+## 优选实践
 ### 1. 用药管理
 ```python
 def medication_reminder(patient_id, medication):
@@ -286,7 +285,6 @@ def medication_reminder(patient_id, medication):
     }
     resp = requests.post(
         f"{API_BASE}/medications/reminder",
-        headers=self.headers,
         json=payload,
         timeout=30,
     )
@@ -308,7 +306,6 @@ def secure_health_data_sharing(patient_id, recipient, scope):
     }
     resp = requests.post(
         f"{API_BASE}/sharing/secure",
-        headers=self.headers,
         json=payload,
         timeout=30,
     )
@@ -330,7 +327,6 @@ def setup_family_health(family_members):
     }
     resp = requests.post(
         f"{API_BASE}/family/setup",
-        headers=self.headers,
         json=payload,
         timeout=60,
     )
@@ -367,7 +363,7 @@ Apple Watch、Fitbit、Garmin、华为手环、小米手环、欧姆龙血压计
 
 ### API Key 配置
 ```bash
-export HEALTH_ADMIN_KEY="sk_pro_admin_xxx"
+export HEALTH_ADMIN_KEY="sk_pro_admin_未指定"
 export HEALTH_ORG_ID="org_your_id"
 export HEALTH_EDITION="pro"
 # ...
@@ -382,7 +378,7 @@ export EMERGENCY_SMS_API="https://sms-api.example.com"
 ```
 
 ### 可用性分类
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+execute(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 面向家庭、慢病患者与医疗场景,通过自然语言指令驱动 Agent 调用 Pro API,完成慢病管理、医疗协作等企业级场景
 - **专业版特性**: 慢病管理、医生共享、AI 诊断、穿戴设备、家庭管理、医疗报告、异常预警、用药管理
 - **兼容性**: 与免费版数据格式完全兼容,支持平滑升级
@@ -403,8 +399,6 @@ export EMERGENCY_SMS_API="https://sms-api.example.com"
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 
@@ -430,3 +424,14 @@ Skill: 执行完成,结果如下: 操作成功
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

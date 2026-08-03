@@ -1,6 +1,7 @@
 ---
+
 name: "calendar-reminder-free"
-description: "每晚22点扫描明日Outlook日历,基础飞书提醒,支持手动运行与cron注册。"
+description: "每晚22点扫描明日Outlook日历,基础飞书提醒,支持手动运行与cron注册。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: MIT
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -13,6 +14,11 @@ metadata:
     - "Automation"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # Calendar Reminder Free 日历提醒(免费版)
@@ -26,27 +32,17 @@ Calendar Reminder Free 是日历提醒 Skill 的免费版本,提供基础的每�
 ### 1. 每晚 22:00 扫描明日日历
 在每晚 22:00(Asia/Shanghai 时区)自动拉取明日 Outlook 日历的全部日程,包括会议主题、开始时间、结束时间、组织者、地点等基础字段。扫描完成后立即发送一条汇报消息到飞书。
 
-**输入**: 用户提供每晚 22:00 扫描明日日历所需的指令和必要参数。
-**输出**: 返回每晚 22:00 扫描明日日历的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
-- 参考`每晚 22:00 扫描明日日历`相关配置参数进行设置
 ### 2. 上下午差异化提醒
 - **上午日程(开始时间 < 12:00)**:提前 2 小时飞书提醒。
 - **下午日程(开始时间 >= 12:00)**:当天 12:00 统一汇总提醒。
 
-**处理**: 按照skill规范执行上下午差异化提醒操作,遵循单一意图原则。
 **输出**: 返回上下午差异化提醒的执行结果,包含操作状态和输出数据。
 
 ### 3. Cron 定时任务注册
 通过 `skill-platform cron add` 命令注册每日扫描任务,任务持久化在 skill-platform 中。
 
-**输入**: 用户提供Cron 定时任务注册所需的指令和必要参数。
-**处理**: 按照skill规范执行Cron 定时任务注册操作,遵循单一意图原则。
-**输出**: 返回Cron 定时任务注册的执行结果,包含操作状态和输出数据。- 验证执行结果，确认输出符合预期格式
-- 参考`Cron 定时任务注册`相关配置参数进行设置
 ### 输出格式
 
-执行结果以Markdown格式返回,包含操作状态(成功/失败)、处理摘要和具体输出数据。失败时返回错误码和错误信息,便于定位问题。- 验证执行结果，确认输出符合预期格式
-- 参考`输出格式`相关配置参数进行设置
 #
 ## 依赖说明
 
@@ -65,10 +61,9 @@ Calendar Reminder Free 是日历提醒 Skill 的免费版本,提供基础的每�
 ### 可用性分类
 - **分类**: MD+EXEC（）
 
-
 **API Key配置方式**:
 ```bash
-export API_KEY="your_api_key_here"
+export API_KEY="${API_KEY:?请设置环境变量}"
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统。
 ## 适用场景
@@ -117,7 +112,6 @@ skill-platform cron add \
 ### 步骤四：手动验证
 
 ```bash
-python3 ~/.skill-platform/workspace/skills/calendar-reminder/calendar_reminder.py
 ```
 
 检查飞书是否收到扫描汇报消息。
@@ -149,7 +143,6 @@ python3 ~/.skill-platform/workspace/skills/calendar-reminder/calendar_reminder.p
 
 ## 异常处理
 
-
 ### 1. owa_calendar.py 调用失败
 
 **原因**: `owa-outlook` skill 未安装或 Outlook 凭据过期。
@@ -160,7 +153,7 @@ python3 ~/.skill-platform/workspace/skills/calendar-reminder/calendar_reminder.p
 
 **原因**: open_id 格式错误或机器人 token 过期。
 
-**处理**: 检查 target 是否以 `user:` 前缀开头;若返回 token 错误码,重新获取 tenant_access_token;建议对飞书 API 失败做 3 次执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令。
+**处理**: 检查 target 是否以 `user:` 前缀开头;若返回 token 错误码,重新获取 app_access_token;建议对飞书 API 失败做 3 次执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令。
 
 ### 3. zoneinfo 模块导入失败
 
@@ -200,7 +193,6 @@ python3 ~/.skill-platform/workspace/skills/calendar-reminder/calendar_reminder.p
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接，执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令请求；确认Agent平台LLM服务正常 |
@@ -228,3 +220,21 @@ python3 ~/.skill-platform/workspace/skills/calendar-reminder/calendar_reminder.p
 - **扫描结果增强汇报**:标注重点会议、组织者、会议链接
 
 请访问 skill 商城升级到 `calendar-reminder` 付费版获取完整能力。
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果

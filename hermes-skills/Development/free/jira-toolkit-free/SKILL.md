@@ -1,21 +1,23 @@
 ---
 name: "jira-toolkit-free"
-description: "通过自然语言与 Jira 交互,支持 CLI 与 MCP server 双后端,管理事务的创建、查询与流转"
+description: "通过自然语言与 Jira 交互,支持 CLI 与 protocol server 双后端,管理事务的创建、查询与流转。Use when 需要文本翻译、多语言转换、本地化处理时使用。不适用于专业医学法律翻译认证。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
 metadata:
   displayName: "Jira 事务工具包基础版"
   version: "1.0.0"
-  summary: "通过自然语言与 Jira 交互,支持 CLI 与 MCP server 双后端,管理事务的创建、查询与流转"
+  summary: "通过自然语言与 Jira 交互,支持 CLI 与 protocol server 双后端,管理事务的创建、查询与流转"
   tags:
     - "Jira"
     - "事务管理"
     - "敏捷开发"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
 ---
-
 # Jira 事务工具包基础版
 
 ## 概述
@@ -42,41 +44,31 @@ FREE 版本提供以下能力:
 ### 查看、创建与更新 Jira 事
 查看、创建与更新 Jira 事务
 
-**输入**: 用户提供查看、创建与更新 Jira 事所需的指令和必要参数。
-**处理**: 按照skill规范执行查看、创建与更新 Jira 事操作,遵循单一意图原则。
 **输出**: 返回查看、创建与更新 Jira 事的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 使用 JQL 搜索事务
 使用 JQL 搜索事务
 
-**输入**: 用户提供使用 JQL 搜索事务所需的指令和必要参数。
-**处理**: 按照skill规范执行使用 JQL 搜索事务操作,遵循单一意图原则。
 **输出**: 返回使用 JQL 搜索事务的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 变更事务状态与分配负责人
 变更事务状态与分配负责人
 
-**输入**: 用户提供变更事务状态与分配负责人所需的指令和必要参数。
-**处理**: 按照skill规范执行变更事务状态与分配负责人操作,遵循单一意图原则。
 **输出**: 返回变更事务状态与分配负责人的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 添加评论与查看当前 Sprin
 添加评论与查看当前 Sprint
 
-**输入**: 用户提供添加评论与查看当前 Sprin所需的指令和必要参数。
-**处理**: 按照skill规范执行添加评论与查看当前 Sprin操作,遵循单一意图原则。
 **输出**: 返回添加评论与查看当前 Sprin的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-### 自动检测 CLI 或 MCP 
-自动检测 CLI 或 MCP server 后端
+### 自动检测 CLI 或 协议适配层 
+自动检测 CLI 或 protocol server 后端
 
-**输入**: 用户提供自动检测 CLI 或 MCP 所需的指令和必要参数。
-**处理**: 按照skill规范执行自动检测 CLI 或 MCP 操作,遵循单一意图原则。
-**输出**: 返回自动检测 CLI 或 MCP 的执行结果,包含操作状态和输出数据。
+**输出**: 返回自动检测 CLI 或 协议适配层 的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 功能详情
@@ -89,7 +81,7 @@ FREE 版本提供以下能力:
 - 使用 JQL 搜索事务
 - 变更事务状态与分配负责人
 - 添加评论与查看当前 Sprint
-- 自动检测 CLI 或 MCP server 后端
+- 自动检测 CLI 或 protocol server 后端
 
 **PRO 版本扩展功能预览:**
 
@@ -100,8 +92,6 @@ FREE 版本提供以下能力:
 - 多项目事务关联与依赖追踪
 - 与 Git/CI 集成的事务自动关闭
 
-**输入**: 用户提供功能详情所需的指令和必要参数。
-**处理**: 按照skill规范执行功能详情操作,遵循单一意图原则。
 **输出**: 返回功能详情的执行结果,包含操作状态和输出数据。
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：通过自然语言与、双后端、管理事务的创建、查询与流转、项目管理领域的专、辅助工具、提供核心基础功能等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -157,8 +147,8 @@ Agent: jira issue create -tBug -s"登录页面404" -b"用户反馈登录返回40
 # 依赖说明
 brew install ankitpokhrel/jira-cli/jira-cli
 jira init
-# 或使用 MCP server 后端
-# 在 MCP server 配置中添加 Atlassian 凭证
+# 或使用 protocol server 后端
+# 在 protocol server 配置中添加 Atlassian 凭证
 ```
 
 ### 3. 验证配置
@@ -196,8 +186,8 @@ Agent 将自动:
 # CLI 后端安装
 brew install ankitpokhrel/jira-cli/jira-cli
 jira init
-# 或使用 MCP server 后端
-# 在 MCP server 配置中添加 Atlassian 凭证
+# 或使用 protocol server 后端
+# 在 protocol server 配置中添加 Atlassian 凭证
 ```
 ### 可选配置
 
@@ -222,10 +212,10 @@ jira init
 | cache_enabled | bool | true | 启用结果缓存 |
 | timeout | int | 30 | 操作超时时间(秒) |
 
-## 最佳实践
+## 优选实践
 
 1. **变更状态前先获取当前状态**
-2. **MCP工具 分配负责人需要 accountId 而非显示名**
+2. **工具 分配负责人需要 accountId 而非显示名**
 3. **编辑描述前先展示原始内容**
 4. **批量修改前需获得明确批准**
 
@@ -240,9 +230,9 @@ jira init
 
 ## 常见问题
 
-### Q: CLI 和 MCP server 用哪个?
+### Q: CLI 和 protocol server 用哪个?
 
-A: 有 jira 命令用 CLI,有 Atlassian MCP工具用 MCP server,都没有则引导安装。
+A: 有 jira 命令用 CLI,有 Atlassian 工具用 protocol server,都没有则引导安装。
 
 ### Q: 事务 key 格式?
 
@@ -297,7 +287,7 @@ FREE 版本支持单一 API Key 配置,满足个人使用需求:
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+execute(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于 Markdown 的 AI Skill,通过自然语言指令驱动 Agent 执行任务
 - **FREE 特性**: 支持单次执行、基础配置与社区支持
 - **安全等级**: 基础,数据本地存储,建议定期备份
@@ -316,9 +306,19 @@ FREE 版本支持单一 API Key 配置,满足个人使用需求:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

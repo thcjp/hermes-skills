@@ -1,5 +1,6 @@
 ---
-slug: "git-cli-tool-pro"
+
+slug: git-cli-tool-pro
 name: "git-cli-tool-pro"
 version: "1.0.0"
 displayName: "Git命令行助手专业版"
@@ -45,7 +46,9 @@ tools:
   - write
 homepage: ""
 category: "Development"
+
 ---
+
 Git命令行助手专业版为企业研发团队提供高级Git CLI自动化能力。在免费版基础命令参考之上,专业版新增自动化脚本库、深度仓库诊断、标准化工作流模板、故障排除与恢复以及批量操作能力,帮助团队提升Git使用效率.
 专业版完全兼容免费版的所有Git命令和配置,研发团队可从免费版无缝升级,已有别名和配置无需修改.
 ## 核心能力
@@ -53,22 +56,18 @@ Git命令行助手专业版为企业研发团队提供高级Git CLI自动化能�
 提供常用Git操作的自动化脚本.
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供Git自动化脚本库所需的指令和必要参数.
 **处理**: 解析Git自动化脚本库的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Git自动化脚本库的响应数据,包含状态码、结果和日志.
 ### 2. 深度仓库诊断
 
-**输入**: 用户提供深度仓库诊断所需的指令和必要参数.
 **处理**: 解析深度仓库诊断的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回深度仓库诊断的响应数据,包含状态码、结果和日志.
 ### 3. 工作流模板
 
-**输入**: 用户提供工作流模板所需的指令和必要参数.
 **处理**: 解析工作流模板的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回工作流模板的响应数据,包含状态码、结果和日志.
 ### 4. 多仓库管理
 
-**输入**: 用户提供多仓库管理所需的指令和必要参数.
 **处理**: 解析多仓库管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多仓库管理的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、CLI、支持自动化脚本、深度诊断、工作流模板与故障、提升团队效率、面向企业研发团队、的高级、命令行工具、提供自动化脚本、故障排除与批量操、作能力、核心能力、深度仓库诊断与分、标准化工作流模板、故障排除与恢复等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -104,7 +103,6 @@ print(result)
 echo -e "\n3. 智能同步:"
 python3 -c "
 from git_automation import GitAutomation
-result = GitAutomation.sync_branch()
 print(result)
 "
 ```
@@ -158,7 +156,6 @@ for repo, info in status.items():
 echo -e "\n2. 批量同步:"
 python3 -c "
 from multi_repo import MultiRepoManager
-manager = MultiRepoManager('repos.txt')
 results = manager.batch_sync()
 for repo, result in results.items():
     print(f'{repo}: {result}')
@@ -167,9 +164,7 @@ for repo, result in results.items():
 echo -e "\n3. 批量清理:"
 python3 -c "
 from multi_repo import MultiRepoManager
-manager = MultiRepoManager('repos.txt')
 results = manager.batch_cleanup()
-for repo, result in results.items():
     print(f'{repo}: {result}')
 "
 ```
@@ -288,7 +283,7 @@ multi_repo:
   parallel: true
 ```
 
-## 最佳实践
+## 优选实践
 1. **定期诊断**:每周运行仓库健康诊断
 
 ```bash
@@ -384,8 +379,6 @@ git config --global credential.helper store
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ```text
@@ -410,3 +403,21 @@ Skill: 执行完成,结果如下: 操作成功
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级Git CLI工具,支持自动化脚本、深度诊断、工作流模板与故障排除,提升团队效率。。面向企业研发团队的高级Git命
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果

@@ -34,28 +34,119 @@ try:
     _wal_init_conn.execute("PRAGMA journal_mode = WAL")
     _wal_init_conn.execute("PRAGMA busy_timeout = 5000")
     _wal_init_conn.close()
-except Exception:
-    pass  # 数据库可能正在被其他进程初始化
+except Exception as e:
+    print(f"[WARN] WAL初始化失败(可能其他进程正在初始化): {e}")
 
 # v2.4: 带重试的连接辅助函数 (强化已有流程,不创建碎片化代码)
 def _get_db_connection(timeout=30):
-    """创建带WAL+busy_timeout的数据库连接,解决并发锁问题"""
-    conn = sqlite3.connect(DB_PATH, timeout=timeout)
-    conn.execute("PRAGMA foreign_keys = ON")
-    conn.execute("PRAGMA busy_timeout = 5000")
-    return conn
+    """创建带WAL+busy_timeout的数据库连接,解决并发锁问题
+
+    V121 W1: 对齐 skill_core.db.get_db() 的全部PRAGMA设置
+    (row_factory, foreign_keys, busy_timeout, journal_mode=WAL)
+    R75.2 统一化: 委托 skill_core.db.get_db() 消除并行DB连接实现
+    """
+    from skill_core.db import get_db
+    return get_db(timeout=timeout)
 
 
-def init_database():
-    """初始化数据库，创建所有表"""
-    conn = sqlite3.connect(DB_PATH)
+# v1.3: Schema版本管理常量
+SCHEMA_VERSION_BASELINE = 1  # 基线版本(含25个ALTER TABLE合并)
+
+
+def _column_exists(cursor, table_name, column_name):
+    """检查表中是否存在指定列 (v1.3: 显式检查替代try/except模式)
+
+    参数:
+        cursor: 数据库游标
+        table_name: 表名
+        column_name: 列名
+
+    返回:
+        bool: 列是否存在
+    """
+    cursor.execute(f"PRAGMA table_info({table_name})")
+    columns = [row[1] for row in cursor.fetchall()]
+    return column_name in columns
+
+
+def _add_column_if_missing(cursor, table_name, column_name, column_def):
+    """安全添加列 (v1.3: 显式检查替代try/except, 统一迁移模式)
+
+    参数:
+        cursor: 数据库游标
+        table_name: 表名
+        column_name: 列名
+        column_def: 列定义 (如 "TEXT DEFAULT 'unknown'")
+    """
+    if not _column_exists(cursor, table_name, column_name):
+        cursor.execute(f"ALTER TABLE {table_name} ADD COLUMN {column_name} {column_def}")
+
+
+def migrate_schema(target_version=None):
+    """数据库schema迁移框架 (v1.3)
+
+    当前仅记录版本,不执行新迁移。
+    未来版本可通过在此函数中添加迁移步骤实现版本化schema升级。
+
+    参数:
+        target_version: 目标版本号 (None则迁移到最新)
+
+    返回:
+        current_version: 当前数据库schema版本
+    """
+    conn = _get_db_connection()  # V121 W1: sqlite3.connect→_get_db_connection()
     c = conn.cursor()
 
-    # 启用外键约束（v1.1修复：之前未启用）
-    c.execute("PRAGMA foreign_keys = ON")
+    # 确保schema_version表存在
+    c.execute("""
+        CREATE TABLE IF NOT EXISTS schema_version (
+            version INTEGER PRIMARY KEY,
+            applied_at TEXT NOT NULL,
+            description TEXT
+        )
+    """)
 
-    # 1. skills 主表 - 每个skill一行
-    # v1.1新增: edition, parent_slug, current_score, workflow_state 字段
+    # 获取当前版本
+    c.execute("SELECT MAX(version) FROM schema_version")
+    row = c.fetchone()
+    current_version = row[0] if row and row[0] else 0
+
+    if target_version is None:
+        target_version = SCHEMA_VERSION_BASELINE
+
+    if current_version >= target_version:
+        conn.close()
+        return current_version
+
+    # 未来迁移步骤在此添加:
+    # if current_version < 2:
+    #     ... migration to v2 ...
+    #     c.execute("INSERT INTO schema_version (version, applied_at, description) VALUES (2, ?, 'description')",
+    #               (datetime.now().isoformat(),))
+
+    conn.commit()
+    conn.close()
+    return target_version
+
+
+def _create_schema_version_table(c):
+    """创建schema_version表并记录基线版本"""
+    c.execute("""
+        CREATE TABLE IF NOT EXISTS schema_version (
+            version INTEGER PRIMARY KEY,
+            applied_at TEXT NOT NULL,
+            description TEXT
+        )
+    """)
+    c.execute(
+        "INSERT OR IGNORE INTO schema_version (version, applied_at, description) VALUES (?, ?, ?)",
+        (SCHEMA_VERSION_BASELINE, datetime.now().isoformat(),
+         "baseline: 25 ALTER TABLEs consolidated to explicit column checks + simhash column added")
+    )
+
+
+def _create_skills_table(c):
+    """创建skills主表并执行列迁移"""
     c.execute("""
         CREATE TABLE IF NOT EXISTS skills (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -86,103 +177,42 @@ def init_database():
             pricing_category TEXT,
             pricing_rationale TEXT,
             pricing_tier TEXT,
-            is_paid INTEGER DEFAULT 0
+            is_paid INTEGER DEFAULT 0,
+            simhash INTEGER DEFAULT 0
         )
     """)
-
-    # 迁移：为已存在的数据库添加新列（如果不存在）
-    try:
-        c.execute("ALTER TABLE skills ADD COLUMN edition TEXT")
-    except sqlite3.OperationalError:
-        pass  # 列已存在
-    try:
-        c.execute("ALTER TABLE skills ADD COLUMN parent_slug TEXT")
-    except sqlite3.OperationalError:
-        pass
-    try:
-        c.execute("ALTER TABLE skills ADD COLUMN current_score INTEGER DEFAULT 0")
-    except sqlite3.OperationalError:
-        pass
-    try:
-        c.execute("ALTER TABLE skills ADD COLUMN workflow_state TEXT DEFAULT 'step1_read_original'")
-    except sqlite3.OperationalError:
-        pass
-    try:
-        c.execute("ALTER TABLE skills ADD COLUMN suggested_price REAL")
-    except sqlite3.OperationalError:
-        pass
-    try:
-        c.execute("ALTER TABLE skills ADD COLUMN pricing_category TEXT")
-    except sqlite3.OperationalError:
-        pass
-    try:
-        c.execute("ALTER TABLE skills ADD COLUMN pricing_rationale TEXT")
-    except sqlite3.OperationalError:
-        pass
-    try:
-        c.execute("ALTER TABLE skills ADD COLUMN pricing_tier TEXT")
-    except sqlite3.OperationalError:
-        pass
-    try:
-        c.execute("ALTER TABLE skills ADD COLUMN is_paid INTEGER DEFAULT 0")
-    except sqlite3.OperationalError:
-        pass
+    # v1.3: 迁移 - 为已存在的数据库添加新列 (显式检查替代try/except)
+    _add_column_if_missing(c, "skills", "edition", "TEXT")
+    _add_column_if_missing(c, "skills", "parent_slug", "TEXT")
+    _add_column_if_missing(c, "skills", "current_score", "INTEGER DEFAULT 0")
+    _add_column_if_missing(c, "skills", "workflow_state", "TEXT DEFAULT 'step1_read_original'")
+    _add_column_if_missing(c, "skills", "suggested_price", "REAL")
+    _add_column_if_missing(c, "skills", "pricing_category", "TEXT")
+    _add_column_if_missing(c, "skills", "pricing_rationale", "TEXT")
+    _add_column_if_missing(c, "skills", "pricing_tier", "TEXT")
+    _add_column_if_missing(c, "skills", "is_paid", "INTEGER DEFAULT 0")
     # v1.4: 三轨关联字段
-    try:
-        c.execute("ALTER TABLE skills ADD COLUMN summary TEXT")
-    except sqlite3.OperationalError:
-        pass
-    try:
-        c.execute("ALTER TABLE skills ADD COLUMN free_slug TEXT")
-    except sqlite3.OperationalError:
-        pass
-    try:
-        c.execute("ALTER TABLE skills ADD COLUMN paid_slug TEXT")
-    except sqlite3.OperationalError:
-        pass
+    _add_column_if_missing(c, "skills", "summary", "TEXT")
+    _add_column_if_missing(c, "skills", "free_slug", "TEXT")
+    _add_column_if_missing(c, "skills", "paid_slug", "TEXT")
     # v1.5: 四平台同步状态字段 (P0-3a)
-    try:
-        c.execute("ALTER TABLE skills ADD COLUMN skillhub_sync_status TEXT DEFAULT 'unknown'")
-    except sqlite3.OperationalError:
-        pass
-    try:
-        c.execute("ALTER TABLE skills ADD COLUMN clawhub_sync_status TEXT DEFAULT 'unknown'")
-    except sqlite3.OperationalError:
-        pass
-    try:
-        c.execute("ALTER TABLE skills ADD COLUMN github_public_sync_status TEXT DEFAULT 'unknown'")
-    except sqlite3.OperationalError:
-        pass
-    try:
-        c.execute("ALTER TABLE skills ADD COLUMN github_private_sync_status TEXT DEFAULT 'unknown'")
-    except sqlite3.OperationalError:
-        pass
-    try:
-        c.execute("ALTER TABLE skills ADD COLUMN last_sync_at TEXT")
-    except sqlite3.OperationalError:
-        pass
-
+    _add_column_if_missing(c, "skills", "skillhub_sync_status", "TEXT DEFAULT 'unknown'")
+    _add_column_if_missing(c, "skills", "clawhub_sync_status", "TEXT DEFAULT 'unknown'")
+    _add_column_if_missing(c, "skills", "github_public_sync_status", "TEXT DEFAULT 'unknown'")
+    _add_column_if_missing(c, "skills", "github_private_sync_status", "TEXT DEFAULT 'unknown'")
+    _add_column_if_missing(c, "skills", "last_sync_at", "TEXT")
     # v1.6: 本地LLM质量评分字段 (T1-004)
-    try:
-        c.execute("ALTER TABLE skills ADD COLUMN local_quality_score REAL DEFAULT 0.0")
-    except sqlite3.OperationalError:
-        pass
-    try:
-        c.execute("ALTER TABLE skills ADD COLUMN local_score_feedback TEXT DEFAULT ''")
-    except sqlite3.OperationalError:
-        pass
-    try:
-        c.execute("ALTER TABLE skills ADD COLUMN local_score_at TEXT")
-    except sqlite3.OperationalError:
-        pass
+    _add_column_if_missing(c, "skills", "local_quality_score", "REAL DEFAULT 0.0")
+    _add_column_if_missing(c, "skills", "local_score_feedback", "TEXT DEFAULT ''")
+    _add_column_if_missing(c, "skills", "local_score_at", "TEXT")
+    # v3.0: 内容指纹字段 (用于防重复内容检测)
+    _add_column_if_missing(c, "skills", "content_hash", "TEXT")
+    # v1.3: SimHash指纹列 (原由content_dedup.py动态添加,现纳入正式schema)
+    _add_column_if_missing(c, "skills", "simhash", "INTEGER DEFAULT 0")
 
-    # v3.0: 内容指纹字段 (用于防重复内容检测, 防止近似重复内容触发平台反垃圾)
-    try:
-        c.execute("ALTER TABLE skills ADD COLUMN content_hash TEXT")
-    except sqlite3.OperationalError:
-        pass
 
-    # 2. versions - 版本历史表
+def _create_versions_table(c):
+    """创建versions版本历史表"""
     c.execute("""
         CREATE TABLE IF NOT EXISTS versions (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -198,7 +228,9 @@ def init_database():
         )
     """)
 
-    # 3. operations - 操作历史表
+
+def _create_operations_table(c):
+    """创建operations操作历史表"""
     c.execute("""
         CREATE TABLE IF NOT EXISTS operations (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -213,7 +245,9 @@ def init_database():
         )
     """)
 
-    # 4. platform_uploads - 平台上传状态
+
+def _create_platform_uploads_table(c):
+    """创建platform_uploads表并执行列迁移"""
     c.execute("""
         CREATE TABLE IF NOT EXISTS platform_uploads (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -230,20 +264,12 @@ def init_database():
             FOREIGN KEY (skill_id) REFERENCES skills(id)
         )
     """)
+    _add_column_if_missing(c, "platform_uploads", "community_published", "INTEGER DEFAULT 0")
+    _add_column_if_missing(c, "platform_uploads", "download_ready", "TEXT")
 
-    # 迁移：为已存在的 platform_uploads 表添加可见性追踪字段（v1.3新增）
-    # community_published: 是否已发布到社区 (0=未发布, 1=已发布)
-    # download_ready: 下载就绪时间戳 (ISO格式, NULL表示尚未就绪)
-    try:
-        c.execute("ALTER TABLE platform_uploads ADD COLUMN community_published INTEGER DEFAULT 0")
-    except sqlite3.OperationalError:
-        pass  # 列已存在
-    try:
-        c.execute("ALTER TABLE platform_uploads ADD COLUMN download_ready TEXT")
-    except sqlite3.OperationalError:
-        pass  # 列已存在
 
-    # 5. pricing - 收费策略表
+def _create_pricing_tables(c):
+    """创建pricing和pricing_history表"""
     c.execute("""
         CREATE TABLE IF NOT EXISTS pricing (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -258,9 +284,24 @@ def init_database():
             FOREIGN KEY (skill_id) REFERENCES skills(id)
         )
     """)
+    c.execute("""
+        CREATE TABLE IF NOT EXISTS pricing_history (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            slug TEXT NOT NULL,
+            platform TEXT,
+            old_price REAL,
+            new_price REAL,
+            old_model TEXT,
+            new_model TEXT,
+            changed_at TEXT NOT NULL,
+            changed_by TEXT,
+            change_reason TEXT
+        )
+    """)
 
-    # 6. sources - 来源信息表
-    # D1+D3修复: 增加 skill_id 字段关联 skills 表，消除发现→入库数据断链
+
+def _create_sources_table(c):
+    """创建sources表并执行列迁移和索引"""
     c.execute("""
         CREATE TABLE IF NOT EXISTS sources (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -277,18 +318,13 @@ def init_database():
             FOREIGN KEY (skill_id) REFERENCES skills(id)
         )
     """)
-
-    # D3迁移: 为已存在的 sources 表添加 skill_id 列
-    try:
-        c.execute("ALTER TABLE sources ADD COLUMN skill_id INTEGER")
-    except sqlite3.OperationalError:
-        pass  # 列已存在
-
-    # D3: 创建 sources.skill_id 索引
+    _add_column_if_missing(c, "sources", "skill_id", "INTEGER")
     c.execute("CREATE INDEX IF NOT EXISTS idx_sources_skill ON sources(skill_id)")
     c.execute("CREATE INDEX IF NOT EXISTS idx_sources_original_slug ON sources(original_slug)")
 
-    # 7. dependencies - skill间依赖关系
+
+def _create_dependencies_table(c):
+    """创建dependencies依赖关系表"""
     c.execute("""
         CREATE TABLE IF NOT EXISTS dependencies (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -300,7 +336,9 @@ def init_database():
         )
     """)
 
-    # 8. scores - 八大维度评分持久化（v1.1新增，修复评分无持久化问题）
+
+def _create_scores_table(c):
+    """创建scores评分表并执行列迁移和索引"""
     c.execute("""
         CREATE TABLE IF NOT EXISTS scores (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -324,17 +362,12 @@ def init_database():
             FOREIGN KEY (skill_id) REFERENCES skills(id)
         )
     """)
-
-    # D5迁移: 为已存在的 scores 表添加 is_current 列（保护评分历史）
-    try:
-        c.execute("ALTER TABLE scores ADD COLUMN is_current INTEGER DEFAULT 1")
-    except sqlite3.OperationalError:
-        pass  # 列已存在
-
-    # D5: 创建 scores 历史索引（按 skill_id+score_type+is_current 查询最新评分）
+    _add_column_if_missing(c, "scores", "is_current", "INTEGER DEFAULT 1")
     c.execute("CREATE INDEX IF NOT EXISTS idx_scores_current ON scores(skill_id, score_type, is_current)")
 
-    # 9. workflow_states - 10步工作流状态追踪（v1.1新增，修复工作流无状态机问题）
+
+def _create_workflow_states_table(c):
+    """创建workflow_states工作流状态表"""
     c.execute("""
         CREATE TABLE IF NOT EXISTS workflow_states (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -351,14 +384,69 @@ def init_database():
         )
     """)
 
-    # 10. skills_fts - 全文搜索（虚拟表）
+
+def _create_plug_members_table(c):
+    """创建plug_members表 (V140 C1: Plug-成员关系跟踪)"""
+    c.execute("""
+        CREATE TABLE IF NOT EXISTS plug_members (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            plug_slug TEXT NOT NULL,
+            member_slug TEXT NOT NULL,
+            member_version TEXT NOT NULL DEFAULT '1.0.0',
+            member_role TEXT,
+            recorded_at TEXT NOT NULL,
+            UNIQUE(plug_slug, member_slug)
+        )
+    """)
+    c.execute("""
+        CREATE INDEX IF NOT EXISTS idx_plug_members_plug
+        ON plug_members(plug_slug)
+    """)
+    c.execute("""
+        CREATE INDEX IF NOT EXISTS idx_plug_members_member
+        ON plug_members(member_slug)
+    """)
+
+
+def _create_upgrade_tracking_table(c):
+    """创建upgrade_tracking表 (V141 D2: 替代JSON存储, SQLite权威源)"""
+    c.execute("""
+        CREATE TABLE IF NOT EXISTS upgrade_tracking (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            skill_id INTEGER NOT NULL,
+            slug TEXT NOT NULL,
+            source_version TEXT,
+            local_version TEXT,
+            content_hash TEXT,
+            needs_upgrade INTEGER DEFAULT 0,
+            upgrade_reason TEXT,
+            last_checked TEXT,
+            last_upgraded TEXT,
+            FOREIGN KEY (skill_id) REFERENCES skills(id),
+            UNIQUE(slug)
+        )
+    """)
+    c.execute("""
+        CREATE INDEX IF NOT EXISTS idx_upgrade_tracking_slug
+        ON upgrade_tracking(slug)
+    """)
+    c.execute("""
+        CREATE INDEX IF NOT EXISTS idx_upgrade_needs_upgrade
+        ON upgrade_tracking(needs_upgrade)
+    """)
+
+
+def _create_fts_table(c):
+    """创建skills_fts全文搜索虚拟表"""
     c.execute("""
         CREATE VIRTUAL TABLE IF NOT EXISTS skills_fts USING fts5(
             slug, name, display_name, description, tags, category
         )
     """)
 
-    # 创建索引
+
+def _create_all_indexes(c):
+    """创建所有索引"""
     c.execute("CREATE INDEX IF NOT EXISTS idx_skills_slug ON skills(slug)")
     c.execute("CREATE INDEX IF NOT EXISTS idx_skills_status ON skills(current_status)")
     c.execute("CREATE INDEX IF NOT EXISTS idx_skills_source ON skills(source)")
@@ -375,13 +463,14 @@ def init_database():
     c.execute("CREATE INDEX IF NOT EXISTS idx_skills_parent_slug ON skills(parent_slug)")
     c.execute("CREATE INDEX IF NOT EXISTS idx_skills_free_slug ON skills(free_slug)")
     c.execute("CREATE INDEX IF NOT EXISTS idx_skills_paid_slug ON skills(paid_slug)")
-    # v1.5: 四平台同步状态索引 (P0-3a)
     c.execute("CREATE INDEX IF NOT EXISTS idx_skills_skillhub_sync ON skills(skillhub_sync_status)")
     c.execute("CREATE INDEX IF NOT EXISTS idx_skills_clawhub_sync ON skills(clawhub_sync_status)")
     c.execute("CREATE INDEX IF NOT EXISTS idx_skills_gh_public_sync ON skills(github_public_sync_status)")
     c.execute("CREATE INDEX IF NOT EXISTS idx_skills_gh_private_sync ON skills(github_private_sync_status)")
 
-    # v1.5: 更新 v_skill_lifecycle 视图 (P0-3a — 修复WHERE子句+添加sync_status列)
+
+def _create_views(c):
+    """创建v_skill_lifecycle和v_three_track_overview视图"""
     c.execute("DROP VIEW IF EXISTS v_skill_lifecycle")
     c.execute("""
         CREATE VIEW v_skill_lifecycle AS
@@ -418,12 +507,10 @@ def init_database():
         FROM skills s
         LEFT JOIN latest_uploads sh ON sh.skill_id = s.id AND sh.platform = 'skillhub' AND sh.rn = 1
         LEFT JOIN latest_uploads ch ON ch.skill_id = s.id AND ch.platform = 'clawhub' AND ch.rn = 1
-        LEFT JOIN latest_uploads gh_pub ON gh_pub.skill_id = s.id AND gh_pub.platform = 'github_public' AND gh_pub.rn = 1
+        LEFT JOIN latest_uploads gh_pub ON gh_pub.skill_id = s.id AND gh.platform = 'github_public' AND gh.rn = 1
         LEFT JOIN latest_uploads gh_pri ON gh_pri.skill_id = s.id AND gh_pri.platform = 'github_private' AND gh_pri.rn = 1
         WHERE s.current_status IN ('synced_from_skillhub', 'local_only', 'deleted_on_skillhub', 'active', 'updated', 'stale')
     """)
-
-    # v1.5: 更新 v_three_track_overview 视图 (修复WHERE子句)
     c.execute("DROP VIEW IF EXISTS v_three_track_overview")
     c.execute("""
         CREATE VIEW v_three_track_overview AS
@@ -451,7 +538,32 @@ def init_database():
         ORDER BY s.source_slug, s.skill_type
     """)
 
-    # D3: 回填 sources.skill_id（将已有发现记录关联到skills表）
+
+def init_database():
+    """初始化数据库，创建所有表
+
+    [V133 D2] 重构: 370行→~30行, 拆分为13个_helper函数(TD-244)
+    """
+    conn = _get_db_connection()
+    c = conn.cursor()
+
+    _create_schema_version_table(c)
+    _create_skills_table(c)
+    _create_versions_table(c)
+    _create_operations_table(c)
+    _create_platform_uploads_table(c)
+    _create_pricing_tables(c)
+    _create_sources_table(c)
+    _create_dependencies_table(c)
+    _create_scores_table(c)
+    _create_workflow_states_table(c)
+    _create_plug_members_table(c)
+    _create_upgrade_tracking_table(c)
+    _create_fts_table(c)
+    _create_all_indexes(c)
+    _create_views(c)
+
+    # D3: 回填 sources.skill_id
     backfill_source_skill_id(c)
 
     conn.commit()
@@ -560,8 +672,8 @@ def backfill_source_skill_id(c):
         print(f"  [backfill] sources.skill_id 回填 {total_matched} 条 (source_slug:{matched_source_slug} slug:{matched_slug} -free:{matched_free} -pro:{matched_pro} normalized:{matched_normalized})")
 
 
-def compute_file_hash(file_path):
-    """计算文件SHA256"""
+def compute_file_hash(file_path: Path) -> str:
+    """计算文件SHA256 (V105 W2: 统一签名,其他文件import此实现)"""
     h = hashlib.sha256()
     with open(file_path, 'rb') as f:
         for chunk in iter(lambda: f.read(8192), b''):
@@ -570,59 +682,27 @@ def compute_file_hash(file_path):
 
 
 def parse_skill_md(skill_md_path):
-    """解析SKILL.md的frontmatter"""
-    content = Path(skill_md_path).read_text(encoding='utf-8')
-    if content.startswith('\ufeff'):
-        content = content[1:]
+    """解析SKILL.md的frontmatter (v1.3: 内部统一调用skill_core.parser.parse_frontmatter_from_file)
 
-    if not content.startswith('---'):
-        return None, content
+    返回: (metadata_dict, body_str)
 
-    parts = content.split('---', 2)
-    if len(parts) < 3:
-        return None, content
-
-    frontmatter_text = parts[1].strip()
-    body = parts[2].strip()
-
-    metadata = {}
-    current_key = None
-    current_list = []
-
-    for line in frontmatter_text.split('\n'):
-        if line.startswith('  - '):
-            if current_key:
-                current_list.append(line[4:].strip())
-            continue
-        if line.startswith('  '):
-            if current_key:
-                if not isinstance(metadata.get(current_key), list):
-                    metadata[current_key] = []
-                metadata[current_key].append(line.strip())
-            continue
-        if ':' in line:
-            if current_key and current_list:
-                metadata[current_key] = current_list
-                current_list = []
-            key, _, val = line.partition(':')
-            key = key.strip()
-            val = val.strip().strip('"').strip("'")
-            if val and val != '|-' and val != '|':
-                metadata[key] = val
-            else:
-                current_key = key
-
-    if current_key and current_list:
-        metadata[current_key] = current_list
-
-    return metadata, body
+    V128 Y3: 此函数与l2_capability_checker.parse_skill_md_content和
+    skill_batch_upgrader_v2.parse_skill_md_tuple不是重复定义。
+    三者均委托skill_core.parser,但签名/返回类型不同:
+    - 本函数: 路径输入→(dict, body), 用于DB操作
+    - parse_skill_md_content: 内容输入→Dict含chapters, 用于L2检查
+    - parse_skill_md_tuple: 内容输入→(raw_str, body_str), 用于批量升级
+    """
+    from skill_core.parser import parse_frontmatter_from_file
+    result = parse_frontmatter_from_file(Path(skill_md_path))
+    return result['fields'], result['body']
 
 
 def register_skill(slug, name, display_name, version, category, source, local_path,
                    source_slug=None, source_url=None, source_author=None,
                    source_license=None, skill_type=None, pricing_model=None,
                    is_differentiated=0, notes=None, edition=None, parent_slug=None,
-                   workflow_state=None):
+                   content_hash=None, workflow_state=None):
     """注册或更新一个skill
 
     v1.1新增参数：
@@ -631,13 +711,18 @@ def register_skill(slug, name, display_name, version, category, source, local_pa
     v1.2新增参数：
         workflow_state: 工作流状态 (默认'step1_read_original')
                        可选值: step1_read_original...completed, deprecated
+    v1.3新增参数：
+        content_hash: SKILL.md内容的SHA-256哈希(前16位)，用于内容去重
     """
-    conn = sqlite3.connect(DB_PATH)
+    conn = _get_db_connection()  # V121 W1: sqlite3.connect→_get_db_connection()
     c = conn.cursor()
-    c.execute("PRAGMA foreign_keys = ON")
+    # V122 W1: 冗余PRAGMA已清理(_get_db_connection已设置)
 
     now = datetime.now().isoformat()
     wf_state = workflow_state or 'step1_read_original'
+    # v1.3: pricing_model默认为'per_call' (防止NULL值)
+    if pricing_model is None:
+        pricing_model = 'per_call'
 
     # 检查是否已存在
     c.execute("SELECT id FROM skills WHERE slug = ?", (slug,))
@@ -652,13 +737,14 @@ def register_skill(slug, name, display_name, version, category, source, local_pa
                 source_slug = ?, source_url = ?, source_author = ?, source_license = ?,
                 skill_type = ?, pricing_model = ?, is_differentiated = ?,
                 edition = ?, parent_slug = ?,
+                content_hash = ?,
                 workflow_state = ?,
                 updated_at = ?, notes = ?
             WHERE id = ?
         """, (name, display_name, version, category, source, local_path,
               source_slug, source_url, source_author, source_license,
               skill_type, pricing_model, is_differentiated,
-              edition, parent_slug, wf_state, now, notes, skill_id))
+              edition, parent_slug, content_hash, wf_state, now, notes, skill_id))
     else:
         c.execute("""
             INSERT INTO skills (
@@ -666,12 +752,12 @@ def register_skill(slug, name, display_name, version, category, source, local_pa
                 category, source, source_slug, source_url, source_author, source_license,
                 local_path, created_at, updated_at, current_status,
                 is_differentiated, pricing_model, skill_type, notes,
-                edition, parent_slug, workflow_state
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                edition, parent_slug, content_hash, workflow_state
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (slug, name, display_name, version, category, source,
               source_slug, source_url, source_author, source_license,
               local_path, now, now, 'registered', is_differentiated,
-              pricing_model, skill_type, notes, edition, parent_slug, wf_state))
+              pricing_model, skill_type, notes, edition, parent_slug, content_hash, wf_state))
         skill_id = c.lastrowid
 
     # 记录版本
@@ -694,39 +780,26 @@ def register_skill(slug, name, display_name, version, category, source, local_pa
 def record_score(skill_id, score_type, quality, practicality, simplicity, cost,
                  performance, debranding, compliance, differentiation,
                  reviewer='system', notes=None):
-    """记录八大维度评分（v1.1新增，修复评分无持久化问题）
+    """记录八大维度评分（v1.3: 改为save_score的兼容wrapper）
+
+    保留向后兼容: 内部调用save_score, 补充is_current历史保护。
+    新代码应直接调用save_score()。
 
     参数：
         skill_id: skill ID
         score_type: 'baseline'（改造前基线）或 'final'（改造后最终）
         quality..differentiation: 八大维度分数（0-6分）
     """
-    conn = sqlite3.connect(DB_PATH)
-    c = conn.cursor()
-    c.execute("PRAGMA foreign_keys = ON")
-
-    now = datetime.now().isoformat()
     total = quality + practicality + simplicity + cost + performance + debranding + compliance + differentiation
-    is_pass = 1 if total >= 40 else 0
-
-    c.execute("""
-        INSERT INTO scores (
-            skill_id, scored_at, score_type,
-            quality_score, practicality_score, simplicity_score, cost_score,
-            performance_score, debranding_score, compliance_score, differentiation_score,
-            total_score, pass_threshold, is_pass, reviewer, notes
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    """, (skill_id, now, score_type, quality, practicality, simplicity, cost,
-          performance, debranding, compliance, differentiation,
-          total, 40, is_pass, reviewer, notes))
-
-    # 更新skills表的current_score
-    c.execute("UPDATE skills SET current_score = ?, updated_at = ? WHERE id = ?",
-              (total, now, skill_id))
-
-    conn.commit()
-    conn.close()
-    return total, is_pass
+    return save_score(
+        skill_id=skill_id,
+        score_type=score_type,
+        total_score=total,
+        quality=quality, practicality=practicality, simplicity=simplicity,
+        cost=cost, performance=performance, debranding=debranding,
+        compliance=compliance, differentiation=differentiation,
+        reviewer=reviewer, notes=notes,
+    )
 
 
 def save_score(skill_id, score_type, total_score,
@@ -734,11 +807,13 @@ def save_score(skill_id, score_type, total_score,
                performance=0, debranding=0, differentiation=0,
                compliance=0, cost=0,
                reviewer='system', notes=None, is_pass=None,
-               pass_threshold=40):
+               pass_threshold=40, grade=None):
     """保存评分记录（支持is_current历史保护机制）
 
     D5修复延续: 标记同类型旧记录为is_current=0，插入新记录is_current=1。
     替代: 各模块中的 UPDATE scores SET is_current=0 + INSERT INTO scores 裸SQL。
+
+    V153 R1修复: 新增grade参数, 支持持久化评分等级(A/B/C/D)到skills表。
 
     参数：
         skill_id: skill ID
@@ -749,10 +824,11 @@ def save_score(skill_id, score_type, total_score,
         notes: 评分备注（JSON字符串或普通文本）
         is_pass: 是否通过（None则自动按pass_threshold判定）
         pass_threshold: 通过阈值（默认40）
+        grade: 评分等级(A/B/C/D), 提供时写入skills表grade列
     """
-    conn = sqlite3.connect(DB_PATH)
+    conn = _get_db_connection()  # V121 W1: sqlite3.connect→_get_db_connection()
     c = conn.cursor()
-    c.execute("PRAGMA foreign_keys = ON")
+    # V122 W1: 冗余PRAGMA已清理(_get_db_connection已设置)
 
     now = datetime.now().isoformat()
 
@@ -783,6 +859,16 @@ def save_score(skill_id, score_type, total_score,
     c.execute("UPDATE skills SET current_score = ?, updated_at = ? WHERE id = ?",
               (total_score, now, skill_id))
 
+    # V153 R1: 持久化grade到skills表(如果调用方提供了grade)
+    # 自动检查skills表是否有grade列, 缺失则ALTER TABLE添加(fail-safe)
+    if grade is not None:
+        c.execute("PRAGMA table_info(skills)")
+        existing_columns = [row[1] for row in c.fetchall()]
+        if 'grade' not in existing_columns:
+            c.execute("ALTER TABLE skills ADD COLUMN grade TEXT")
+        c.execute("UPDATE skills SET grade = ?, updated_at = ? WHERE id = ?",
+                  (grade, now, skill_id))
+
     conn.commit()
     conn.close()
     return total_score, is_pass
@@ -798,9 +884,9 @@ def update_workflow_state(skill_id, step_number, step_name, status, result_data=
         status: 'pending', 'in_progress', 'completed', 'failed', 'retry'
         result_data: 步骤结果数据（JSON字符串）
     """
-    conn = sqlite3.connect(DB_PATH)
+    conn = _get_db_connection()  # V121 W1: sqlite3.connect→_get_db_connection()
     c = conn.cursor()
-    c.execute("PRAGMA foreign_keys = ON")
+    # V122 W1: 冗余PRAGMA已清理(_get_db_connection已设置)
 
     now = datetime.now().isoformat()
 
@@ -846,6 +932,79 @@ def update_workflow_state(skill_id, step_number, step_name, status, result_data=
     conn.close()
 
 
+# ============ v1.3: workflow_state标准化 ============
+
+# 非标准workflow_state值 → 标准workflow_state值 映射表
+_WORKFLOW_STATE_MAPPING = {
+    'unknown': 'step1_read_original',          # 未开始
+    'deleted_by_sync': 'deprecated',            # 已同步删除
+    'local_file_missing_clawhub': 'step1_read_original',  # 需重新读取
+    'uploaded_approved': 'step10_completed',    # 已上传已审核=完成
+    'completed': 'step10_completed',            # 完成
+    'quality_passed': 'step7_validate',        # 质检通过=验证完成
+    'plug_registered': 'step6_phase_package',   # Plug已注册=包装完成
+    'uploaded': 'step9_platform_upload',        # 已上传
+}
+
+# 标准workflow_state值集合
+STANDARD_WORKFLOW_STATES = frozenset([
+    'step1_read_original', 'step2_auto_differentiate', 'step3_auto_dedup',
+    'step4_auto_price', 'step5_add_deps', 'step6_phase_package',
+    'step7_validate', 'step8_optimize', 'step9_platform_upload',
+    'step10_completed', 'deprecated',
+])
+
+
+def normalize_workflow_state(state: str) -> str:
+    """将非标准workflow_state值映射为标准值 (v1.3新增)
+
+    参数:
+        state: 原始workflow_state值
+
+    返回:
+        标准化的workflow_state值 (如果已是标准值则原样返回)
+    """
+    if not state:
+        return 'step1_read_original'
+    if state in STANDARD_WORKFLOW_STATES:
+        return state
+    return _WORKFLOW_STATE_MAPPING.get(state, 'step1_read_original')
+
+
+def backfill_workflow_states() -> dict:
+    """批量回填非标准workflow_state值 (v1.3新增)
+
+    将所有非标准workflow_state值映射为标准值。
+
+    返回:
+        {'total_updated': int, 'details': {old_state: count, ...}}
+    """
+    conn = _get_db_connection()  # V121 W1: sqlite3.connect→_get_db_connection()
+    c = conn.cursor()
+
+    # 查询非标准值
+    c.execute("SELECT workflow_state, COUNT(*) FROM skills GROUP BY workflow_state")
+    state_counts = {row[0]: row[1] for row in c.fetchall()}
+
+    details = {}
+    total_updated = 0
+
+    for old_state, count in state_counts.items():
+        new_state = normalize_workflow_state(old_state)
+        if new_state != old_state:
+            c.execute(
+                "UPDATE skills SET workflow_state = ?, updated_at = ? WHERE workflow_state = ?",
+                (new_state, datetime.now().isoformat(), old_state)
+            )
+            details[old_state] = {'new_state': new_state, 'count': count}
+            total_updated += count
+
+    conn.commit()
+    conn.close()
+
+    return {'total_updated': total_updated, 'details': details}
+
+
 def record_upload(skill_id, version, platform, platform_slug, upload_status,
                   http_status=None, error_message=None, visibility=None,
                   pricing_on_platform=None, community_published=0,
@@ -856,9 +1015,9 @@ def record_upload(skill_id, version, platform, platform_slug, upload_status,
         community_published: 是否已发布到社区 (0=未发布, 1=已发布, 默认0)
         download_ready: 下载就绪时间戳 (ISO格式字符串, None表示尚未就绪)
     """
-    conn = sqlite3.connect(DB_PATH)
+    conn = _get_db_connection()  # V121 W1: sqlite3.connect→_get_db_connection()
     c = conn.cursor()
-    c.execute("PRAGMA foreign_keys = ON")
+    # V122 W1: 冗余PRAGMA已清理(_get_db_connection已设置)
     now = datetime.now().isoformat()
 
     c.execute("""
@@ -896,9 +1055,9 @@ def record_source(source_type, source_name, source_url, source_author,
         notes: 备注（JSON字符串或文本）
         skill_id: 关联的skill ID（可选，D3修复后支持外键关联）
     """
-    conn = sqlite3.connect(DB_PATH)
+    conn = _get_db_connection()  # V121 W1: sqlite3.connect→_get_db_connection()
     c = conn.cursor()
-    c.execute("PRAGMA foreign_keys = ON")
+    # V122 W1: 冗余PRAGMA已清理(_get_db_connection已设置)
     now = datetime.now().isoformat()
 
     c.execute("""
@@ -925,9 +1084,9 @@ def record_operation(skill_id, operation_type, details, before_state=None, after
         after_state: 操作后状态
         operator: 操作者标识（默认 'system'，多平台同步等场景可传 'version_sync_pipeline'）
     """
-    conn = sqlite3.connect(DB_PATH)
+    conn = _get_db_connection()  # V121 W1: sqlite3.connect→_get_db_connection()
     c = conn.cursor()
-    c.execute("PRAGMA foreign_keys = ON")
+    # V122 W1: 冗余PRAGMA已清理(_get_db_connection已设置)
     now = datetime.now().isoformat()
 
     c.execute("""
@@ -943,31 +1102,38 @@ def insert_skill(slug, name, display_name, version, category, source, local_path
                  current_status='registered', source_slug=None, source_url=None,
                  source_author=None, source_license=None, skill_type=None,
                  pricing_model=None, is_differentiated=0, differentiation_date=None,
-                 notes=None, edition=None, parent_slug=None, workflow_state=None):
+                 notes=None, edition=None, parent_slug=None,
+                 content_hash=None, workflow_state=None):
     """仅插入skill记录（不含版本和操作记录）
 
     用于基线导入、自动差异化等需要单独控制版本记录内容（如content_hash）的场景。
     替代: INSERT INTO skills
     返回: skill_id
+
+    v1.3新增参数：
+        content_hash: SKILL.md内容的SHA-256哈希(前16位)，用于内容去重
     """
-    conn = sqlite3.connect(DB_PATH)
+    conn = _get_db_connection()  # V121 W1: sqlite3.connect→_get_db_connection()
     c = conn.cursor()
-    c.execute("PRAGMA foreign_keys = ON")
+    # V122 W1: 冗余PRAGMA已清理(_get_db_connection已设置)
     now = datetime.now().isoformat()
     wf_state = workflow_state or 'step1_read_original'
+    # v1.3: pricing_model默认为'per_call' (防止NULL值)
+    if pricing_model is None:
+        pricing_model = 'per_call'
     c.execute("""
         INSERT INTO skills (
             slug, current_name, current_display_name, current_version,
             category, source, source_slug, source_url, source_author, source_license,
             local_path, created_at, updated_at, current_status,
             is_differentiated, differentiation_date, pricing_model, skill_type, notes,
-            edition, parent_slug, workflow_state
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            edition, parent_slug, content_hash, workflow_state
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     """, (slug, name, display_name, version, category, source,
           source_slug, source_url, source_author, source_license,
           local_path, now, now, current_status,
           is_differentiated, differentiation_date, pricing_model, skill_type, notes,
-          edition, parent_slug, wf_state))
+          edition, parent_slug, content_hash, wf_state))
     conn.commit()
     skill_id = c.lastrowid
     conn.close()
@@ -982,9 +1148,9 @@ def add_version(skill_id, version, changelog=None, content_hash=None,
     替代: INSERT INTO versions
     返回: version_id
     """
-    conn = sqlite3.connect(DB_PATH)
+    conn = _get_db_connection()  # V121 W1: sqlite3.connect→_get_db_connection()
     c = conn.cursor()
-    c.execute("PRAGMA foreign_keys = ON")
+    # V122 W1: 冗余PRAGMA已清理(_get_db_connection已设置)
     now = datetime.now().isoformat()
     c.execute("""
         INSERT INTO versions (skill_id, version, created_at, changelog, content_hash,
@@ -1003,9 +1169,9 @@ def update_version_hash(version_id, content_hash):
     用于回填hash基线（update_baseline_hashes场景）。
     替代: UPDATE versions SET content_hash WHERE id = ?
     """
-    conn = sqlite3.connect(DB_PATH)
+    conn = _get_db_connection()  # V121 W1: sqlite3.connect→_get_db_connection()
     c = conn.cursor()
-    c.execute("PRAGMA foreign_keys = ON")
+    # V122 W1: 冗余PRAGMA已清理(_get_db_connection已设置)
     c.execute("UPDATE versions SET content_hash = ? WHERE id = ?",
               (content_hash, version_id))
     conn.commit()
@@ -1020,6 +1186,8 @@ _SKILL_FIELD_WHITELIST = frozenset({
     'differentiation_date', 'pricing_model', 'skill_type', 'notes',
     'edition', 'parent_slug', 'workflow_state', 'pricing_category',
     'pricing_rationale', 'pricing_tier', 'is_paid', 'suggested_price',
+    'content_hash',  # v1.3: 内容指纹(用于防重复内容检测)
+    'simhash',  # v1.3: SimHash指纹(内容近似去重)
     # v1.6: 本地LLM质量评分字段 (T1-005)
     'local_quality_score', 'local_score_feedback', 'local_score_at',
 })
@@ -1035,9 +1203,9 @@ def update_skill_fields(skill_id, **fields):
     updates = {k: v for k, v in fields.items() if k in _SKILL_FIELD_WHITELIST}
     if not updates:
         return
-    conn = sqlite3.connect(DB_PATH)
+    conn = _get_db_connection()  # V121 W1: sqlite3.connect→_get_db_connection()
     c = conn.cursor()
-    c.execute("PRAGMA foreign_keys = ON")
+    # V122 W1: 冗余PRAGMA已清理(_get_db_connection已设置)
     now = datetime.now().isoformat()
     updates['updated_at'] = now
     set_clause = ', '.join(f'{k} = ?' for k in updates.keys())
@@ -1055,6 +1223,10 @@ def record_platform_upload(skill_id, version, platform, platform_slug, upload_st
 
     用于版本同步流水线等多平台同步场景，需要自定义操作记录中的operator和operation_type。
     替代: INSERT INTO platform_uploads + INSERT INTO operations
+
+    V129 Z4 (TD-213): 本函数为【唯一 DB 写入实现】(canonical)。
+    version_sync_pipeline.record_platform_upload 是对本函数的委托适配器(参数名映射 + 上下文注入),
+    实际写入逻辑全部在此处, 不要在别处复制 DB 写入代码。
     """
     import time as _time
     for attempt in range(3):
@@ -1083,8 +1255,8 @@ def record_platform_upload(skill_id, version, platform, platform_slug, upload_st
         except sqlite3.OperationalError as e:
             try:
                 conn.close()
-            except Exception:
-                pass
+            except Exception as e:
+                print(f"[WARN] 数据库连接关闭失败(不影响重试): {e}")
             if "locked" in str(e) and attempt < 2:
                 _time.sleep(1)
                 continue
@@ -1094,9 +1266,9 @@ def record_platform_upload(skill_id, version, platform, platform_slug, upload_st
 def set_pricing(skill_id, edition, price_model, price_amount, price_currency,
                 trial_limits, pro_features):
     """设置收费策略（新建记录）"""
-    conn = sqlite3.connect(DB_PATH)
+    conn = _get_db_connection()  # V121 W1: sqlite3.connect→_get_db_connection()
     c = conn.cursor()
-    c.execute("PRAGMA foreign_keys = ON")
+    # V122 W1: 冗余PRAGMA已清理(_get_db_connection已设置)
     now = datetime.now().isoformat()
 
     c.execute("""
@@ -1112,9 +1284,9 @@ def set_pricing(skill_id, edition, price_model, price_amount, price_currency,
 
 def update_pricing(skill_id, edition, price_model, price_amount, price_currency='CNY'):
     """更新收费策略（已存在记录）"""
-    conn = sqlite3.connect(DB_PATH)
+    conn = _get_db_connection()  # V121 W1: sqlite3.connect→_get_db_connection()
     c = conn.cursor()
-    c.execute("PRAGMA foreign_keys = ON")
+    # V122 W1: 冗余PRAGMA已清理(_get_db_connection已设置)
 
     c.execute("""
         UPDATE pricing
@@ -1128,10 +1300,9 @@ def update_pricing(skill_id, edition, price_model, price_amount, price_currency=
 
 def get_skill_status(slug):
     """获取skill状态"""
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
+    conn = _get_db_connection()  # V121 W1: sqlite3.connect→_get_db_connection()
+    # V122 W1: 冗余PRAGMA已清理(_get_db_connection已设置)
     c = conn.cursor()
-    c.execute("PRAGMA foreign_keys = ON")
 
     c.execute("SELECT * FROM skills WHERE slug = ?", (slug,))
     skill = c.fetchone()
@@ -1165,10 +1336,9 @@ def get_skill_status(slug):
 
 def list_all_skills():
     """列出所有skill"""
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
+    conn = _get_db_connection()  # V121 W1: sqlite3.connect→_get_db_connection()
+    # V122 W1: 冗余PRAGMA已清理(_get_db_connection已设置)
     c = conn.cursor()
-    c.execute("PRAGMA foreign_keys = ON")
 
     c.execute("""
         SELECT s.*,
@@ -1186,10 +1356,9 @@ def list_all_skills():
 
 def get_skills_needing_work():
     """获取需要优化或上传的skill"""
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
+    conn = _get_db_connection()  # V121 W1: sqlite3.connect→_get_db_connection()
+    # V122 W1: 冗余PRAGMA已清理(_get_db_connection已设置)
     c = conn.cursor()
-    c.execute("PRAGMA foreign_keys = ON")
 
     # 未差异化的
     c.execute("""
@@ -1216,25 +1385,9 @@ def get_skills_needing_work():
 # v1.5: 四平台同步机制函数 (P0-3b/c/d, P1-3)
 # ============================================================
 
-def backfill_sync_status():
-    """P0-3b + P0-4: 从 platform_uploads + upload_tracking.json 回填四平台同步状态
-
-    两阶段回填:
-    阶段1 (P0-3b): 从 platform_uploads 表回填 (已有逻辑)
-    阶段2 (P0-4): 从 upload_tracking.json 直接回填 sync_status (消除unknown)
-
-    幂等操作：可重复执行，每次都基于最新数据重新计算。
-    同步状态值: synced / failed / not_applicable / unknown
-    """
-    import os
-    conn = sqlite3.connect(DB_PATH)
-    c = conn.cursor()
-    c.execute("PRAGMA foreign_keys = ON")
-    now = datetime.now().isoformat()
-
-    # ====== 阶段1: 从 platform_uploads 回填 (优先级最高) ======
-
-    # 回填 skillhub_sync_status
+def _backfill_skillhub_status(c):
+    """SkillHub同步状态回填 (阶段1+2+5) — 返回计数dict"""
+    # ====== 阶段1: 从 platform_uploads 回填 skillhub_sync_status ======
     c.execute("""
         UPDATE skills SET skillhub_sync_status = CASE
             WHEN EXISTS(
@@ -1250,66 +1403,13 @@ def backfill_sync_status():
         END
     """)
 
-    # 回填 clawhub_sync_status
-    c.execute("""
-        UPDATE skills SET clawhub_sync_status = CASE
-            WHEN EXISTS(
-                SELECT 1 FROM platform_uploads
-                WHERE skill_id = skills.id AND platform = 'clawhub' AND upload_status = 'success'
-            ) THEN 'synced'
-            WHEN EXISTS(
-                SELECT 1 FROM platform_uploads
-                WHERE skill_id = skills.id AND platform = 'clawhub' AND upload_status = 'failed'
-            ) THEN 'failed'
-            WHEN skill_type = 'source' THEN 'not_applicable'
-            WHEN is_paid = 1 THEN 'not_applicable'
-            ELSE 'unknown'
-        END
-    """)
-
-    # 回填 github_public_sync_status (hermes-skills 公开引流)
-    c.execute("""
-        UPDATE skills SET github_public_sync_status = CASE
-            WHEN EXISTS(
-                SELECT 1 FROM platform_uploads
-                WHERE skill_id = skills.id AND platform IN ('github_public', 'github') AND upload_status = 'success'
-            ) THEN 'synced'
-            WHEN EXISTS(
-                SELECT 1 FROM platform_uploads
-                WHERE skill_id = skills.id AND platform IN ('github_public', 'github') AND upload_status = 'failed'
-            ) THEN 'failed'
-            WHEN skill_type = 'source' THEN 'not_applicable'
-            ELSE 'unknown'
-        END
-    """)
-
-    # 回填 github_private_sync_status (origin 私有备份)
-    c.execute("""
-        UPDATE skills SET github_private_sync_status = CASE
-            WHEN EXISTS(
-                SELECT 1 FROM platform_uploads
-                WHERE skill_id = skills.id AND platform = 'github_private' AND upload_status = 'success'
-            ) THEN 'synced'
-            WHEN EXISTS(
-                SELECT 1 FROM platform_uploads
-                WHERE skill_id = skills.id AND platform = 'github_private' AND upload_status = 'failed'
-            ) THEN 'failed'
-            WHEN skill_type = 'source' THEN 'not_applicable'
-            ELSE 'unknown'
-        END
-    """)
-
-    # ====== 阶段2: 从 upload_tracking.json 直接回填 (P0-4 消缺unknown) ======
-
-    json_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'upload_tracking.json')
+    # ====== 阶段2: 从 upload_tracking.json 回填 skillhub ======
+    # V95 V5: 统一入口, 委托daily_sync (消除直接json.load)
+    from daily_sync import read_upload_tracking
+    tracking = read_upload_tracking()
     json_synced_sh = 0
-    json_synced_ch = 0
-    json_synced_gh_pub = 0
 
-    if os.path.exists(json_path):
-        with open(json_path, 'r', encoding='utf-8') as f:
-            tracking = json.load(f)
-
+    if tracking:
         # JSON结构: {"metadata": {...}, "stats": {...}, "skills": {slug: {...}}, "last_updated": "..."}
         skills_data = tracking.get('skills', tracking)
 
@@ -1336,45 +1436,6 @@ def backfill_sync_status():
                 c.execute("UPDATE skills SET skillhub_sync_status = 'failed' WHERE id = ? AND skillhub_sync_status = 'unknown'", (skill_id,))
             elif sh_rs == 'deleted':
                 c.execute("UPDATE skills SET skillhub_sync_status = 'not_applicable' WHERE id = ? AND skillhub_sync_status = 'unknown'", (skill_id,))
-
-            # ClawHub: JSON中clawhub.status=published → synced
-            ch = data.get('clawhub', {})
-            ch_st = ch.get('status', '')
-            if ch_st == 'published':
-                c.execute("UPDATE skills SET clawhub_sync_status = 'synced' WHERE id = ? AND clawhub_sync_status = 'unknown'", (skill_id,))
-                if c.rowcount > 0:
-                    json_synced_ch += 1
-            elif ch_st in ('withdrawn', 'not_eligible', 'not_applicable'):
-                c.execute("UPDATE skills SET clawhub_sync_status = 'not_applicable' WHERE id = ? AND clawhub_sync_status = 'unknown'", (skill_id,))
-
-            # GitHub公开: JSON中hermes.github_published=true → synced
-            hermes = data.get('hermes', {})
-            if hermes.get('github_published'):
-                c.execute("UPDATE skills SET github_public_sync_status = 'synced' WHERE id = ? AND github_public_sync_status = 'unknown'", (skill_id,))
-                if c.rowcount > 0:
-                    json_synced_gh_pub += 1
-
-    # ====== 阶段3: GitHub私有消缺 — 所有非source skill都在origin仓库中 ======
-    # origin仓库是项目主仓库，所有skill文件都push到origin
-    # 因此所有非source skill的github_private_sync_status应该是synced
-    c.execute("""
-        UPDATE skills SET github_private_sync_status = 'synced'
-        WHERE github_private_sync_status = 'unknown'
-        AND (skill_type != 'source' OR skill_type IS NULL)
-        AND local_path IS NOT NULL AND local_path != ''
-    """)
-    gh_private_synced = c.rowcount
-
-    # ====== 阶段4: GitHub公开消缺 — 所有非source skill都在hermes-skills仓库中 ======
-    # hermes-skills推送所有skill(免费+付费)，因此所有非source skill的
-    # github_public_sync_status也应该是synced (与github_private相同逻辑)
-    c.execute("""
-        UPDATE skills SET github_public_sync_status = 'synced'
-        WHERE github_public_sync_status = 'unknown'
-        AND (skill_type != 'source' OR skill_type IS NULL)
-        AND local_path IS NOT NULL AND local_path != ''
-    """)
-    gh_public_synced_from_local = c.rowcount
 
     # ====== 阶段5: SkillHub消缺 — 仅基于实际platform_uploads记录标记 (C3修复) ======
     # 之前基于目录路径(local_path LIKE '%packaged-skills%skillhub%')乐观假设已上传,
@@ -1407,6 +1468,60 @@ def backfill_sync_status():
     """)
     sh_pending_count = c.rowcount
 
+    return {'json_synced_sh': json_synced_sh}
+
+
+def _backfill_clawhub_status(c):
+    """ClawHub同步状态回填 (阶段1+2+6) — 返回计数dict"""
+    # ====== 阶段1: 从 platform_uploads 回填 clawhub_sync_status ======
+    c.execute("""
+        UPDATE skills SET clawhub_sync_status = CASE
+            WHEN EXISTS(
+                SELECT 1 FROM platform_uploads
+                WHERE skill_id = skills.id AND platform = 'clawhub' AND upload_status = 'success'
+            ) THEN 'synced'
+            WHEN EXISTS(
+                SELECT 1 FROM platform_uploads
+                WHERE skill_id = skills.id AND platform = 'clawhub' AND upload_status = 'failed'
+            ) THEN 'failed'
+            WHEN skill_type = 'source' THEN 'not_applicable'
+            WHEN is_paid = 1 THEN 'not_applicable'
+            ELSE 'unknown'
+        END
+    """)
+
+    # ====== 阶段2: 从 upload_tracking.json 回填 clawhub ======
+    # V95 V5: 统一入口, 委托daily_sync (消除直接json.load)
+    from daily_sync import read_upload_tracking
+    tracking = read_upload_tracking()
+    json_synced_ch = 0
+
+    if tracking:
+        # JSON结构: {"metadata": {...}, "stats": {...}, "skills": {slug: {...}}, "last_updated": "..."}
+        skills_data = tracking.get('skills', tracking)
+
+        for slug, data in skills_data.items():
+            if not isinstance(data, dict):
+                continue
+            if data.get('is_source'):
+                continue
+
+            c.execute("SELECT id FROM skills WHERE slug = ?", (slug,))
+            row = c.fetchone()
+            if not row:
+                continue
+            skill_id = row[0]
+
+            # ClawHub: JSON中clawhub.status=published → synced
+            ch = data.get('clawhub', {})
+            ch_st = ch.get('status', '')
+            if ch_st == 'published':
+                c.execute("UPDATE skills SET clawhub_sync_status = 'synced' WHERE id = ? AND clawhub_sync_status = 'unknown'", (skill_id,))
+                if c.rowcount > 0:
+                    json_synced_ch += 1
+            elif ch_st in ('withdrawn', 'not_eligible', 'not_applicable'):
+                c.execute("UPDATE skills SET clawhub_sync_status = 'not_applicable' WHERE id = ? AND clawhub_sync_status = 'unknown'", (skill_id,))
+
     # ====== 阶段6: ClawHub消缺 — 未上传的free skill标记为pending ======
     # ClawHub只上传free skill，未上传的标记为pending(待上传)
     c.execute("""
@@ -1418,6 +1533,104 @@ def backfill_sync_status():
     """)
     ch_pending_count = c.rowcount
 
+    return {'json_synced_ch': json_synced_ch}
+
+
+def _backfill_github_public_status(c):
+    """GitHub公开同步状态回填 (阶段1+2+4) — 返回计数dict"""
+    # ====== 阶段1: 从 platform_uploads 回填 github_public_sync_status (hermes-skills 公开引流) ======
+    c.execute("""
+        UPDATE skills SET github_public_sync_status = CASE
+            WHEN EXISTS(
+                SELECT 1 FROM platform_uploads
+                WHERE skill_id = skills.id AND platform IN ('github_public', 'github') AND upload_status = 'success'
+            ) THEN 'synced'
+            WHEN EXISTS(
+                SELECT 1 FROM platform_uploads
+                WHERE skill_id = skills.id AND platform IN ('github_public', 'github') AND upload_status = 'failed'
+            ) THEN 'failed'
+            WHEN skill_type = 'source' THEN 'not_applicable'
+            ELSE 'unknown'
+        END
+    """)
+
+    # ====== 阶段2: 从 upload_tracking.json 回填 github_public ======
+    # V95 V5: 统一入口, 委托daily_sync (消除直接json.load)
+    from daily_sync import read_upload_tracking
+    tracking = read_upload_tracking()
+    json_synced_gh_pub = 0
+
+    if tracking:
+        # JSON结构: {"metadata": {...}, "stats": {...}, "skills": {slug: {...}}, "last_updated": "..."}
+        skills_data = tracking.get('skills', tracking)
+
+        for slug, data in skills_data.items():
+            if not isinstance(data, dict):
+                continue
+            if data.get('is_source'):
+                continue
+
+            c.execute("SELECT id FROM skills WHERE slug = ?", (slug,))
+            row = c.fetchone()
+            if not row:
+                continue
+            skill_id = row[0]
+
+            # GitHub公开: JSON中hermes.github_published=true → synced
+            hermes = data.get('hermes', {})
+            if hermes.get('github_published'):
+                c.execute("UPDATE skills SET github_public_sync_status = 'synced' WHERE id = ? AND github_public_sync_status = 'unknown'", (skill_id,))
+                if c.rowcount > 0:
+                    json_synced_gh_pub += 1
+
+    # ====== 阶段4: GitHub公开消缺 — 所有非source skill都在hermes-skills仓库中 ======
+    # hermes-skills推送所有skill(免费+付费)，因此所有非source skill的
+    # github_public_sync_status也应该是synced (与github_private相同逻辑)
+    c.execute("""
+        UPDATE skills SET github_public_sync_status = 'synced'
+        WHERE github_public_sync_status = 'unknown'
+        AND (skill_type != 'source' OR skill_type IS NULL)
+        AND local_path IS NOT NULL AND local_path != ''
+    """)
+    gh_public_synced_from_local = c.rowcount
+
+    return {'json_synced_gh_pub': json_synced_gh_pub}
+
+
+def _backfill_github_private_status(c):
+    """GitHub私有同步状态回填 (阶段1+3) — 返回计数dict"""
+    # ====== 阶段1: 从 platform_uploads 回填 github_private_sync_status (origin 私有备份) ======
+    c.execute("""
+        UPDATE skills SET github_private_sync_status = CASE
+            WHEN EXISTS(
+                SELECT 1 FROM platform_uploads
+                WHERE skill_id = skills.id AND platform = 'github_private' AND upload_status = 'success'
+            ) THEN 'synced'
+            WHEN EXISTS(
+                SELECT 1 FROM platform_uploads
+                WHERE skill_id = skills.id AND platform = 'github_private' AND upload_status = 'failed'
+            ) THEN 'failed'
+            WHEN skill_type = 'source' THEN 'not_applicable'
+            ELSE 'unknown'
+        END
+    """)
+
+    # ====== 阶段3: GitHub私有消缺 — 所有非source skill都在origin仓库中 ======
+    # origin仓库是项目主仓库，所有skill文件都push到origin
+    # 因此所有非source skill的github_private_sync_status应该是synced
+    c.execute("""
+        UPDATE skills SET github_private_sync_status = 'synced'
+        WHERE github_private_sync_status = 'unknown'
+        AND (skill_type != 'source' OR skill_type IS NULL)
+        AND local_path IS NOT NULL AND local_path != ''
+    """)
+    gh_private_synced = c.rowcount
+
+    return {'gh_private_synced': gh_private_synced}
+
+
+def _backfill_source_skill_cleanup(c):
+    """源skill目录+源skill全平台消缺 (阶段6b + source cleanup) — 返回计数dict"""
     # ====== 阶段6b: 源skill目录消缺 — clawhub-skills/downloaded/中的是源skill ======
     # local_path在clawhub-skills/downloaded/目录下的skill是源skill(从ClawHub下载)
     # 即使skill_type不是'source'，也应标记为not_applicable
@@ -1445,6 +1658,36 @@ def backfill_sync_status():
              OR github_public_sync_status = 'unknown' OR github_private_sync_status = 'unknown')
     """)
     source_na = c.rowcount
+
+    return {'source_dir_na': source_dir_na, 'source_na': source_na}
+
+
+def backfill_sync_status():
+    """P0-3b + P0-4: 从 platform_uploads + upload_tracking.json 回填四平台同步状态 [V134 E5]
+
+    两阶段回填:
+    阶段1 (P0-3b): 从 platform_uploads 表回填 (已有逻辑)
+    阶段2 (P0-4): 从 upload_tracking.json 直接回填 sync_status (消除unknown)
+
+    幂等操作：可重复执行，每次都基于最新数据重新计算。
+    同步状态值: synced / failed / not_applicable / unknown
+
+    [V134 E5] 拆分为5个helper函数 + 主函数:
+      _backfill_skillhub_status / _backfill_clawhub_status
+      _backfill_github_public_status / _backfill_github_private_status
+      _backfill_source_skill_cleanup
+    """
+    conn = _get_db_connection()  # V121 W1: sqlite3.connect→_get_db_connection()
+    c = conn.cursor()
+    # V122 W1: 冗余PRAGMA已清理(_get_db_connection已设置)
+    now = datetime.now().isoformat()
+
+    # ====== 调用5个平台helper ======
+    sh_counts = _backfill_skillhub_status(c)
+    ch_counts = _backfill_clawhub_status(c)
+    gh_pub_counts = _backfill_github_public_status(c)
+    gh_pri_counts = _backfill_github_private_status(c)
+    src_counts = _backfill_source_skill_cleanup(c)
 
     # 更新 last_sync_at
     c.execute("""
@@ -1478,12 +1721,12 @@ def backfill_sync_status():
         'github_public_unknown': row[5],
         'github_private_synced': row[6],
         'github_private_unknown': row[7],
-        'json_synced_sh': json_synced_sh,
-        'json_synced_ch': json_synced_ch,
-        'json_synced_gh_pub': json_synced_gh_pub,
-        'gh_private_synced': gh_private_synced,
-        'source_na': source_na,
-        'source_dir_na': source_dir_na,
+        'json_synced_sh': sh_counts['json_synced_sh'],
+        'json_synced_ch': ch_counts['json_synced_ch'],
+        'json_synced_gh_pub': gh_pub_counts['json_synced_gh_pub'],
+        'gh_private_synced': gh_pri_counts['gh_private_synced'],
+        'source_na': src_counts['source_na'],
+        'source_dir_na': src_counts['source_dir_na'],
     }
     print(f"backfill_sync_status 完成: {result}")
     return result
@@ -1497,9 +1740,9 @@ def migrate_github_to_dual_repo():
 
     幂等操作：仅更新 platform='github' 的记录，已迁移的记录不受影响。
     """
-    conn = sqlite3.connect(DB_PATH)
+    conn = _get_db_connection()  # V121 W1: sqlite3.connect→_get_db_connection()
     c = conn.cursor()
-    c.execute("PRAGMA foreign_keys = ON")
+    # V122 W1: 冗余PRAGMA已清理(_get_db_connection已设置)
 
     # 统计迁移前
     c.execute("SELECT COUNT(*) FROM platform_uploads WHERE platform = 'github'")
@@ -1542,21 +1785,19 @@ def sync_hermes_from_json():
 
     幂等操作：先检查是否已有记录，避免重复插入。
     """
-    import os
-    json_path = os.path.join(os.path.dirname(DB_PATH), 'data', 'upload_tracking.json')
-    if not os.path.exists(json_path):
-        print(f"sync_hermes_from_json: JSON文件不存在: {json_path}")
+    # V95 V5: 统一入口, 委托daily_sync (消除直接json.load)
+    from daily_sync import read_upload_tracking
+    tracking = read_upload_tracking()
+    if not tracking or not tracking.get('skills'):
+        print(f"sync_hermes_from_json: upload_tracking.json为空或不存在")
         return {'synced': 0, 'error': 'json_not_found'}
-
-    with open(json_path, 'r', encoding='utf-8') as f:
-        tracking = json.load(f)
 
     # JSON结构: {"metadata": {...}, "stats": {...}, "skills": {slug: {...}}, "last_updated": "..."}
     skills_data = tracking.get('skills', tracking)
 
-    conn = sqlite3.connect(DB_PATH)
+    conn = _get_db_connection()  # V121 W1: sqlite3.connect→_get_db_connection()
     c = conn.cursor()
-    c.execute("PRAGMA foreign_keys = ON")
+    # V122 W1: 冗余PRAGMA已清理(_get_db_connection已设置)
 
     synced_count = 0
     skipped_count = 0
@@ -1638,9 +1879,9 @@ def backfill_three_track_association():
 
     幂等操作：仅更新 free_slug/paid_slug 为 NULL 的记录。
     """
-    conn = sqlite3.connect(DB_PATH)
+    conn = _get_db_connection()  # V121 W1: sqlite3.connect→_get_db_connection()
     c = conn.cursor()
-    c.execute("PRAGMA foreign_keys = ON")
+    # V122 W1: 冗余PRAGMA已清理(_get_db_connection已设置)
 
     # 1. 通过 parent_slug 回填
     # 付费版 → 免费版: free_slug = parent_slug (如果 parent_slug 指向一个免费版)
@@ -1711,13 +1952,11 @@ def backfill_three_track_association():
     free_via_naming = c.rowcount
 
     # 5. 从 upload_tracking.json 的 pair_slug 回填
-    import os
-    json_path = os.path.join(os.path.dirname(DB_PATH), 'data', 'upload_tracking.json')
+    # V95 V5: 统一入口, 委托daily_sync (消除直接json.load)
+    from daily_sync import read_upload_tracking
+    tracking = read_upload_tracking()
     json_synced = 0
-    if os.path.exists(json_path):
-        with open(json_path, 'r', encoding='utf-8') as f:
-            tracking = json.load(f)
-
+    if tracking:
         # JSON结构: {"metadata": {...}, "stats": {...}, "skills": {slug: {...}}, "last_updated": "..."}
         skills_data = tracking.get('skills', tracking)
 
@@ -1767,10 +2006,9 @@ def backfill_three_track_association():
 
 def get_sync_status_summary():
     """查询四平台同步状态概览"""
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
+    conn = _get_db_connection()  # V121 W1: sqlite3.connect→_get_db_connection()
+    # V122 W1: 冗余PRAGMA已清理(_get_db_connection已设置)
     c = conn.cursor()
-    c.execute("PRAGMA foreign_keys = ON")
 
     c.execute("""
         SELECT
@@ -1803,5 +2041,6 @@ def get_sync_status_summary():
 
 if __name__ == '__main__':
     init_database()
+    migrate_schema()  # v1.3: 执行schema迁移检查
     print("Database schema created successfully.")
     print(f"Location: {DB_PATH}")

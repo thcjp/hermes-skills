@@ -1,6 +1,7 @@
 ---
+
 name: "pipedrive-toolkit-free"
-description: "管理Pipedrive销售数据的免费工具，支持商机、联系人、组织的查询与搜索"
+description: "管理Pipedrive销售数据的免费工具，支持商机、联系人、组织的查询与搜索。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,11 @@ metadata:
     - "集成工具"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # Pipedrive工具（免费版）
@@ -48,24 +54,18 @@ Pipedrive是一款专注于销售流程管理的CRM工具，但在命令行集�
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置。
 
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
 **输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Pipedrive、销售数据的免费工、支持商机、联系人、组织的查询与搜索、工具免费版是一款、面向销售数据管理、的命令行辅助、Skill、Agent、能够通过、API、中的商机、组织和活动数据、实现销售信息的快、速检索和展示、核心能力、商机列表与搜索、联系人查询、组织查询、活动列表、管道与阶段查看、当前用户信息、Use、when、模型调用、智能对话、LLM、应用时使用、不适用于需要、确定性的关键决策等。
@@ -96,7 +96,7 @@ Pipedrive是一款专注于销售流程管理的CRM工具，但在命令行集�
 
 ```bash
 # 设置API代理服务的API Key
-export MATON_API_KEY="your_api_key_here"
+export MATON_API_KEY="${API_KEY:?请设置环境变量}"
 ```
 
 ### 60秒上手
@@ -113,16 +113,16 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 # 2. 搜索联系人
 python -c "
 import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/persons/search?term=john')
-req.add_header('Authorization', f'Bearer {os.environ[\"MATON_API_KEY\"]}')
+req = urllib.request.maton.ai/pipedrive/api/v1/persons/search?term=john')
+req.environ[\"MATON_API_KEY\"]}')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 "
 
 # 3. 查看管道列表
 python -c "
 import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/pipelines')
-req.add_header('Authorization', f'Bearer {os.environ[\"MATON_API_KEY\"]}')
+req = urllib.request.maton.ai/pipedrive/api/v1/pipelines')
+req.environ[\"MATON_API_KEY\"]}')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 "
 ```
@@ -144,8 +144,8 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 # 列出所有商机
 python -c "
 import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/deals')
-req.add_header('Authorization', f'Bearer {os.environ[\"MATON_API_KEY\"]}')
+req = urllib.request.maton.ai/pipedrive/api/v1/deals')
+req.environ[\"MATON_API_KEY\"]}')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 "
 
@@ -153,24 +153,24 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 # status: open, won, lost, deleted, all_not_deleted
 python -c "
 import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/deals?status=open&limit=50')
-req.add_header('Authorization', f'Bearer {os.environ[\"MATON_API_KEY\"]}')
+req = urllib.request.maton.status=open&limit=50')
+req.environ[\"MATON_API_KEY\"]}')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 "
 
 # 查看指定商机详情
 python -c "
 import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/deals/123')
-req.add_header('Authorization', f'Bearer {os.environ[\"MATON_API_KEY\"]}')
+req = urllib.request.maton.ai/pipedrive/api/v1/deals/123')
+req.environ[\"MATON_API_KEY\"]}')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 "
 
 # 搜索商机
 python -c "
 import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/deals/search?term=enterprise')
-req.add_header('Authorization', f'Bearer {os.environ[\"MATON_API_KEY\"]}')
+req = urllib.request.maton.ai/pipedrive/api/v1/deals/search?term=enterprise')
+req.environ[\"MATON_API_KEY\"]}')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 "
 ```
@@ -181,24 +181,24 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 # 列出联系人
 python -c "
 import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/persons?limit=50')
-req.add_header('Authorization', f'Bearer {os.environ[\"MATON_API_KEY\"]}')
+req = urllib.request.maton.ai/pipedrive/api/v1/persons?limit=50')
+req.environ[\"MATON_API_KEY\"]}')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 "
 
 # 查看联系人详情
 python -c "
 import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/persons/123')
-req.add_header('Authorization', f'Bearer {os.environ[\"MATON_API_KEY\"]}')
+req = urllib.request.maton.ai/pipedrive/api/v1/persons/123')
+req.environ[\"MATON_API_KEY\"]}')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 "
 
 # 搜索联系人
 python -c "
 import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/persons/search?term=john')
-req.add_header('Authorization', f'Bearer {os.environ[\"MATON_API_KEY\"]}')
+req = urllib.request.maton.term=john')
+req.environ[\"MATON_API_KEY\"]}')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 "
 ```
@@ -209,16 +209,16 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 # 列出组织
 python -c "
 import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/organizations')
-req.add_header('Authorization', f'Bearer {os.environ[\"MATON_API_KEY\"]}')
+req = urllib.request.maton.ai/pipedrive/api/v1/organizations')
+req.environ[\"MATON_API_KEY\"]}')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 "
 
 # 查看组织详情
 python -c "
 import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/organizations/456')
-req.add_header('Authorization', f'Bearer {os.environ[\"MATON_API_KEY\"]}')
+req = urllib.request.maton.ai/pipedrive/api/v1/organizations/456')
+req.environ[\"MATON_API_KEY\"]}')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 "
 ```
@@ -229,24 +229,24 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 # 列出活动
 python -c "
 import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/activities')
-req.add_header('Authorization', f'Bearer {os.environ[\"MATON_API_KEY\"]}')
+req = urllib.request.maton.ai/pipedrive/api/v1/activities')
+req.environ[\"MATON_API_KEY\"]}')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 "
 
 # 按类型过滤活动
 python -c "
 import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/activities?type=call')
-req.add_header('Authorization', f'Bearer {os.environ[\"MATON_API_KEY\"]}')
+req = urllib.request.maton.ai/pipedrive/api/v1/activities?type=call')
+req.environ[\"MATON_API_KEY\"]}')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 "
 
 # 按完成状态过滤
 python -c "
 import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/activities?done=0')
-req.add_header('Authorization', f'Bearer {os.environ[\"MATON_API_KEY\"]}')
+req = urllib.request.maton.done=0')
+req.environ[\"MATON_API_KEY\"]}')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 "
 ```
@@ -257,16 +257,16 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 # 列出所有管道
 python -c "
 import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/pipelines')
-req.add_header('Authorization', f'Bearer {os.environ[\"MATON_API_KEY\"]}')
+req = urllib.request.maton.ai/pipedrive/api/v1/pipelines')
+req.environ[\"MATON_API_KEY\"]}')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 "
 
 # 列出阶段（按管道过滤）
 python -c "
 import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/stages?pipeline_id=1')
-req.add_header('Authorization', f'Bearer {os.environ[\"MATON_API_KEY\"]}')
+req = urllib.request.maton.ai/pipedrive/api/v1/stages?pipeline_id=1')
+req.environ[\"MATON_API_KEY\"]}')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 "
 ```
@@ -277,8 +277,8 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 # 使用start和limit参数分页
 python -c "
 import urllib.request, os, json
-req = urllib.request.Request('https://api.maton.ai/pipedrive/api/v1/deals?start=0&limit=50&sort=add_time%20DESC')
-req.add_header('Authorization', f'Bearer {os.environ[\"MATON_API_KEY\"]}')
+req = urllib.request.maton.start=0&limit=50&sort=add_time%20DESC')
+req.environ[\"MATON_API_KEY\"]}')
 print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 "
 ```
@@ -297,7 +297,7 @@ print(json.dumps(json.load(urllib.request.urlopen(req)), indent=2))
 | `limit` | 所有列表 | 每页数量（默认100） |
 | `sort` | 所有列表 | 排序字段和方向（如`add_time DESC`） |
 
-## 最佳实践
+## 优选实践
 
 1. **使用status过滤提高效率**：查询商机时优先用`status=open`过滤，避免返回大量已关闭数据。
 2. **善用搜索功能**：通过`/search?term=关键词`快速定位特定商机或联系人，比遍历列表更高效。
@@ -374,9 +374,19 @@ URL中包含`fields[]`或`sort[]`等括号时，使用`curl -g`禁用通配符�
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

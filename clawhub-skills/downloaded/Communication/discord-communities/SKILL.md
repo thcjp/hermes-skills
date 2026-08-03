@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Discord
 
 Work with Discord from chat — manage guilds, channels, messages, members, roles, and application commands.

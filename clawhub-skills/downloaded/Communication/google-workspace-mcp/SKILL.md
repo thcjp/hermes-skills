@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Google Workspace (No Cloud Console)
 
 **Why this skill?** Traditional Google API access requires creating a project in Google Cloud Console, enabling APIs, creating OAuth credentials, and downloading client_secret.json. This skill skips ALL of that.

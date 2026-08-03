@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # China News
 
 中国新闻资讯聚合工具，通过浏览器自动化和RSS订阅获取各大新闻网站内容，生成分类新闻报告。

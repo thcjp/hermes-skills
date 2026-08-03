@@ -1,4 +1,5 @@
 ---
+
 slug: jellyfin-control-tool-pro
 name: jellyfin-control-tool-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: 媒体控制专业版
 summary: 企业级 Jellyfin 媒体服务器管理工具，支持多设备、多用户、定时播放、媒体库自动化与播放统计，适合家庭影院与小型机构.
 license: Proprietary
 edition: pro
-description: '企业级 Jellyfin 媒体服务器管理工具，支持多设备、多用户、定时播放、媒体库自动化与播放统计，适合家庭影院与小型机构。核心能力:
-
+description: "企业级 Jellyfin 媒体服务器管理工具，支持多设备、多用户、定时播放、媒体库自动化与播放统计，适合家庭影院与小型机构。核心能力:。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。"
   - 多设备同时管理与控制
 
   - 多用户配置与权限管理
@@ -54,7 +54,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 # 媒体控制专业版
 ## 概述
 媒体控制专业版是面向多设备家庭和小型机构的进阶 Jellyfin 管理工具。在免费版基础控制能力之上，新增多设备管理、多用户配置、定时播放、媒体库自动化与播放统计等高级功能，支持复杂的家庭影院场景。与免费版完全兼容，已有配置可无缝升级.
@@ -77,47 +79,39 @@ category: "Knowledge"
 | API 接口 | 否 | REST API |
 | 优先支持 | 社区 | 优先响应 |
 
-**输入**: 用户提供功能对比所需的指令和必要参数.
 **处理**: 解析功能对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能对比的响应数据,包含状态码、结果和日志.
 ### PRO 版独有功能
-#### 1. 多设备管理
+#
+### 1. 多设备管理
 ```bash
-# 同时控制多个设备
 node skills/jellyfin-control/cli.js multi-device \
   --devices "living_room,bedroom,kitchen" \
   --action play \
   --content "playlist_name"
-# ...
-# 同步播放（多房间音频）
-node skills/jellyfin-control/cli.js sync-play \
   --devices "living_room,bedroom" \
   --content "music_playlist"
 ```
 
-#### 2. 多用户配置
+#
+### 2. 多用户配置
 ```bash
-# 添加用户
 python （请参考skill目录中的脚本文件） add \
   --name="Alice" \
   --permissions="play,search" \
   --library-filter="movies,tvshows"
-# ...
-# 切换用户
-node skills/jellyfin-control/cli.js switch-user "Alice"
+js switch-user "Alice"
 ```
 
-#### 3. 定时播放
+#
+### 3. 定时播放
 ```bash
-# 定时播放（闹钟模式）
 python （请参考skill目录中的脚本文件） \
   --content "morning_playlist" \
   --cron="0 7 * * 1-5" \
   --device "bedroom" \
   --volume 30 \
   --fade-in 60
-# ...
-# 就寝模式
 python （请参考skill目录中的脚本文件） \
   --content "sleep_sounds" \
   --cron="0 22 * * *" \
@@ -126,23 +120,22 @@ python （请参考skill目录中的脚本文件） \
   --fade-out 300
 ```
 
-#### 4. 媒体库自动扫描
+#
+### 4. 媒体库自动扫描
 ```bash
-# 配置自动扫描
 python （请参考skill目录中的脚本文件） \
   --schedule="0 3 * * *" \
   --libraries "movies,tvshows,music" \
   --notify=true
 ```
 
-**输入**: 用户提供PRO 版独有功能所需的指令和必要参数.
 **处理**: 解析PRO 版独有功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回PRO 版独有功能的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -151,14 +144,9 @@ python （请参考skill目录中的脚本文件） \
 ### 场景一：多房间同步播放
 家庭聚会时，需要多个房间同步播放音乐.
 ```bash
-# 同步播放音乐到多个房间
-node skills/jellyfin-control/cli.js sync-play \
   --devices "living_room,bedroom,kitchen" \
   --content "party_playlist" \
   --sync-mode precise
-# ...
-# 调整各房间音量
-node skills/jellyfin-control/cli.js multi-volume \
   --devices "living_room:50,bedroom:40,kitchen:30"
 ```
 
@@ -166,7 +154,6 @@ node skills/jellyfin-control/cli.js multi-volume \
 ### 场景二：定时播放闹钟
 工作日早晨自动播放音乐唤醒.
 ```bash
-# 配置工作日闹钟
 python （请参考skill目录中的脚本文件） \
   --content "morning_classical" \
   --cron="0 7 * * 1-5" \
@@ -175,8 +162,6 @@ python （请参考skill目录中的脚本文件） \
   --fade-in 120 \
   --fade-out 600 \
   --auto-off 30
-# ...
-# 周末延迟播放
 python （请参考skill目录中的脚本文件） \
   --content "weekend_jazz" \
   --cron="0 9 * * 6,0" \
@@ -187,7 +172,6 @@ python （请参考skill目录中的脚本文件） \
 ### 场景三：媒体库自动整理
 定期扫描整理媒体库，保持元数据更新.
 ```bash
-# 配置媒体库自动扫描
 python （请参考skill目录中的脚本文件） \
   --schedule="0 3 * * *" \
   --libraries "movies,tvshows,music" \
@@ -195,8 +179,6 @@ python （请参考skill目录中的脚本文件） \
   --fix-metadata \
   --download-images \
   --notify-email=admin@family.com
-# ...
-# 生成媒体库报告
 python （请参考skill目录中的脚本文件） \
   --output=library_report.md \
   --include-stats \
@@ -204,7 +186,6 @@ python （请参考skill目录中的脚本文件） \
 ```
 
 ## 不适用场景
-
 以下场景媒体控制专业版不适合处理：
 
 - 实时流数据处理
@@ -212,7 +193,6 @@ python （请参考skill目录中的脚本文件） \
 - 非结构化文本情感分析
 
 ## 触发条件
-
 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 1. 阅读## 核心能力章节了解skill功能
@@ -220,16 +200,10 @@ python （请参考skill目录中的脚本文件） \
 3. 执行所需能力对应的命令
 4. 参考## 错误处理章节处理异常
 5. 查看## FAQ解答常见疑问
-
 ### 从免费版升级
 ```bash
-# 依赖说明
 npm install node-cron winston
 pip install apscheduler
-# ...
-# 验证升级
-node skills/jellyfin-control/cli.js --version
-# 输出: jellyfin-control-tool-pro v1.0.0
 ```
 
 ### 配置多设备
@@ -268,23 +242,17 @@ node skills/jellyfin-control/cli.js --version
 
 ### 首次多设备控制
 ```bash
-# 列出所有设备
-node skills/jellyfin-control/cli.js devices list
-# ...
-# 控制指定设备
-node skills/jellyfin-control/cli.js tv play "Movie" --device "living_room"
+js tv play "Movie" --device "living_room"
 ```
 
 #
 ## 示例
 ### 企业级配置文件
 ```yaml
-# config.yaml - PRO 版配置
 jellyfin:
   url: http://192.168.1.50:8096
   api_key: ${JF_API_KEY}
   admin_user: admin
-# ...
 devices:
   living_room:
     backend: homeassistant
@@ -301,7 +269,6 @@ devices:
     backend: androidtv
     adb_device: 192.168.1.102:5555
     mac: 77:88:99:AA:BB:CC
-# ...
 users:
   - name: Alice
     permissions: [play, search, control]
@@ -309,17 +276,14 @@ users:
   - name: Bob
     permissions: [play, search]
     library_filter: [movies, music]
-# ...
 schedule:
   timezone: Asia/Shanghai
   storage: ./schedules
-# ...
 library:
   auto_scan: true
   scan_cron: "0 3 * * *"
   fix_metadata: true
   download_images: true
-# ...
 analytics:
   enabled: true
   track_history: true
@@ -329,14 +293,9 @@ analytics:
 
 ### API 服务模式
 ```bash
-# 启动 REST API 服务
 python （请参考skill目录中的脚本文件） --port 8000
-# ...
-# 播放控制
 curl -X POST http://localhost:8000/play \
   -d '{"content": "Movie", "device": "living_room"}'
-# ...
-# 定时播放
 curl -X POST http://localhost:8000/schedule \
   -d '{"content": "morning_music", "cron": "0 7 * * 1-5"}'
 ```
@@ -353,31 +312,23 @@ curl -X POST http://localhost:8000/schedule \
 | `--auto-off` | 整数 | 0 | 自动关机分钟 |
 | `--cron` | 字符串 | 无 | 定时表达式 |
 
-## 最佳实践
+## 优选实践
 ### 多设备同步优化
 ```bash
-# 使用精确同步模式
-node skills/jellyfin-control/cli.js sync-play \
   --devices "living_room,bedroom" \
   --sync-mode precise \
   --buffer 1000
-# ...
-# 独立音量控制
-node skills/jellyfin-control/cli.js multi-volume \
   --devices "living_room:50,bedroom:30"
 ```
 
 ### 定时播放配置
 ```bash
-# 工作日闹钟
 python （请参考skill目录中的脚本文件） \
   --content "morning_playlist" \
   --cron="0 7 * * 1-5" \
   --device "bedroom" \
   --fade-in 120 \
   --auto-off 30
-# ...
-# 就寝模式
 python （请参考skill目录中的脚本文件） \
   --content "sleep_sounds" \
   --cron="0 22 * * *" \
@@ -389,13 +340,10 @@ python （请参考skill目录中的脚本文件） \
 
 ### 媒体库管理
 ```bash
-# 扫描并修复元数据
 python （请参考skill目录中的脚本文件） \
   --scan-type full \
   --fix-metadata \
   --download-images
-# ...
-# 生成媒体库报告
 python （请参考skill目录中的脚本文件） \
   --output=report.md \
   --include-duplicates \
@@ -405,49 +353,29 @@ python （请参考skill目录中的脚本文件） \
 ## 常见问题
 ### 多设备同步延迟
 ```bash
-# 使用精确同步模式
-node skills/jellyfin-control/cli.js sync-play --sync-mode precise
-# ...
-# 增加缓冲
-node skills/jellyfin-control/cli.js sync-play --buffer 2000
-# ...
-# 检查网络延迟
+js sync-play --sync-mode precise
+js sync-play --buffer 2000
 ping each_device_ip
 ```
 
 ### 定时播放不执行
 ```bash
-# 检查定时任务
 python （请参考skill目录中的脚本文件） --list
-# ...
-# 查看任务日志
 cat ./logs/scheduled_play.log
-# ...
-# 手动触发测试
 python （请参考skill目录中的脚本文件） --run-now --task-id=task_001
 ```
 
 ### 媒体库扫描失败
 ```bash
-# 检查权限
 ls -la /media/library
-# ...
-# 手动触发扫描
 python （请参考skill目录中的脚本文件） --scan-now
-# ...
-# 查看扫描日志
 cat ./logs/library_scan.log
 ```
 
 ### 多用户权限问题
 ```bash
-# 检查用户配置
 python （请参考skill目录中的脚本文件） list
-# ...
-# 验证权限
 python （请参考skill目录中的脚本文件） check-permissions --user=Alice
-# ...
-# 重置用户权限
 python （请参考skill目录中的脚本文件） reset --user=Alice
 ```
 
@@ -476,16 +404,9 @@ python （请参考skill目录中的脚本文件） reset --user=Alice
 
 ### API Key 配置
 ```bash
-# Jellyfin API Key（必需）
 JF_API_KEY=your_jellyfin_api_key
-# ...
-# Home Assistant 令牌（如使用 HA）
 HA_TOKEN=your_ha_long_lived_token
-# ...
-# WebOS 配对密钥（如使用 WebOS 直连）
 TV_CLIENT_KEY=your_webos_client_key
-# ...
-# 如需启用通知
 export SMTP_HOST=smtp.provider.com
 export SMTP_PORT=587
 export SMTP_USER=notify@family.com
@@ -500,7 +421,6 @@ export SMTP_PASSWORD=your_password
 - **支持方式**：优先响应技术工单
 
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -528,3 +448,30 @@ export SMTP_PASSWORD=your_password
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级 Jellyfin 媒体服务器管理工具，支持多设备、多用户、定时播放、媒体库自动化与播放统计，适合家庭影院与小型机
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 企业级 Jellyfin 媒体服务器管理工具，支持多设备、多用户、定时播放、媒体库自动化与播放统计，适合家庭影院与小型机
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

@@ -35,7 +35,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Translate
 
 Master accurate translation that preserves meaning, formatting, and cultural context.

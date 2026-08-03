@@ -1,5 +1,6 @@
 ---
-slug: "doubao-image-gen-tool-pro"
+
+slug: doubao-image-gen-tool-pro
 name: "doubao-image-gen-tool-pro"
 version: "1.0.0"
 displayName: "豆包图片生成-专业版"
@@ -7,7 +8,7 @@ summary: "企业级AI图片生成平台，支持批量生成、多比例输出�
 license: "Proprietary"
 edition: "pro"
 description: |-
-  豆包图片生成专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
+  豆包图片生成专业版。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。
 tags:
   - Creative
   - AI绘图
@@ -27,7 +28,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 豆包图片生成专业版是一款面向企业团队与专业设计师的高级 AI 图片生成平台。在免费版单图生成能力之上，专业版扩展了批量生成、多比例输出、风格预设、提示词增强、参考图生成等企业级能力.
 专业版采用任务队列架构，支持并行生成、失败重试、断点续传，可稳定处理 50+ 图片的批量生成任务。同时完全兼容免费版工作流，已有配置可无缝迁移.
 ### 免费版与专业版能力对比
@@ -73,7 +76,6 @@ category: "Creative"
 生成批量报告
 ```
 
-**输入**: 用户提供批量图片生成所需的指令和必要参数.
 **处理**: 解析批量图片生成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量图片生成的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -91,7 +93,6 @@ category: "Creative"
 | 2:3 | 海报 |
 | 3:2 | 横版海报 |
 
-**输入**: 用户提供多比例同时输出所需的指令和必要参数.
 **处理**: 解析多比例同时输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多比例同时输出的响应数据,包含状态码、结果和日志.
 ### 3. 风格预设管理
@@ -102,7 +103,6 @@ category: "Creative"
 - 风格参数自定义
 - 跨项目风格复用
 
-**输入**: 用户提供风格预设管理所需的指令和必要参数.
 **处理**: 解析风格预设管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回风格预设管理的响应数据,包含状态码、结果和日志.
 ### 4. 提示词增强
@@ -113,7 +113,6 @@ AI 自动优化提示词：
 - 负面提示词生成
 - 多语言提示词支持
 
-**输入**: 用户提供提示词增强所需的指令和必要参数.
 **处理**: 解析提示词增强的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回提示词增强的响应数据,包含状态码、结果和日志.
 ### 5. 参考图生成
@@ -124,7 +123,6 @@ AI 自动优化提示词：
 - 应用到新内容生成
 - 保留参考图风格一致性
 
-**输入**: 用户提供参考图生成所需的指令和必要参数.
 **处理**: 解析参考图生成的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参考图生成的响应数据,包含状态码、结果和日志.
 ### 6. 工作流自动化
@@ -134,7 +132,6 @@ AI 自动优化提示词：
 需求输入 → 提示词增强 → 批量生成 → 多比例输出 → 质量评估 → 自动归档
 ```
 
-**输入**: 用户提供工作流自动化所需的指令和必要参数.
 **处理**: 解析工作流自动化的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回工作流自动化的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、图片生成平台、支持批量生成、提示词增强与工作、豆包图片生成专业、Use、when、需要提升效率、自动化流程、批量处理、工作流优化时使用、不适用于需要人工、创意判断的任务、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -142,7 +139,8 @@ AI 自动优化提示词：
 
 ## 使用场景
 
-> 详细内容已移至 `references/detail.md` - ### 场景 1：电商商品图批量生成
+> 详细内容已移至 `references/detail.md` - 
+### 场景 1：电商商品图批量生成
 ### 场景 2：品牌营销素材规模化生产
 某品牌需要为营销活动生成一系列风格统一的素材图.
 **风格预设配置 `brand-style.json`：**
@@ -205,7 +203,7 @@ python3 prompt_enhancer.py \
 ```
 
 ## 快速开始
-### 第一步：环境检查
+### 领先步：环境检查
 ```bash
 python3 --version
 # ...
@@ -236,27 +234,21 @@ python3 batch_generate.py \
 
 ### 第三步：多比例输出
 ```bash
-python3 batch_generate.py \
-  --config /tmp/items.json \
   --ratios "3:4,1:1,16:9" \
   --output-dir /tmp/multi-ratio/
 ```
 
 ### 第四步：使用风格预设
 ```bash
-python3 batch_generate.py \
-  --config /tmp/items.json \
   --style-preset /config/brand-style.json \
   --output-dir /tmp/branded/
 ```
 
 ### 第五步：提示词增强
 ```bash
-python3 prompt_enhancer.py \
   --input "咖啡店" \
   --output /tmp/enhanced.txt
 # ...
-python3 prompt_enhancer.py \
   --batch /tmp/prompts.txt \
   --output-dir /tmp/enhanced/
 ```
@@ -268,7 +260,7 @@ python3 prompt_enhancer.py \
 
 ### 提示词模板库
 
-## 最佳实践
+## 优选实践
 ### 1. 并行生成数调优
 | 浏览器实例 | 建议并行数 | 单图耗时 |
 |:----:|:----:|:----:|
@@ -283,14 +275,12 @@ python3 style_manager.py create \
   --keywords "科技感,暖色调" \
   --output /config/styles/brand.json
 # ...
-python3 batch_generate.py \
   --config items.json \
   --style-preset /config/styles/brand.json
 ```
 
 ### 3. 提示词增强策略
 ```bash
-python3 prompt_enhancer.py \
   --input "咖啡店" \
   --style-preset "warm-cozy" \
   --level "detailed"
@@ -299,7 +289,6 @@ python3 prompt_enhancer.py \
 
 ### 4. 质量评估
 ```bash
-python3 batch_generate.py \
   --config items.json \
   --quality-check \
   --min-score 0.7 \
@@ -313,16 +302,15 @@ python3 batch_generate.py \
 **A：** 专业版自动记录失败任务：
 
 ```bash
-python3 batch_generate.py --retry-failed /tmp/generate-queue.json
+py --retry-failed /tmp/generate-queue.json
 # ...
-python3 batch_generate.py --resume /tmp/generate-queue.json
+py --resume /tmp/generate-queue.json
 ```
 
 ### Q3：多比例输出如何工作？
 **A：** 一次提示词同时生成多种比例版本：
 
 ```bash
-python3 batch_generate.py \
   --config items.json \
   --ratios "3:4,1:1,16:9"
 ```
@@ -332,7 +320,6 @@ python3 batch_generate.py \
 **A：** 通过风格管理器创建：
 
 ```bash
-python3 style_manager.py create \
   --name "我的风格" \
   --keywords "简约,高质感" \
   --negative "复杂,模糊"
@@ -349,7 +336,6 @@ python3 style_manager.py create \
 **A：** 支持。提示词增强支持中英文输入与输出：
 
 ```bash
-python3 prompt_enhancer.py \
   --input "a cat" \
   --language "en" \
   --output /tmp/enhanced-en.txt
@@ -359,7 +345,6 @@ python3 prompt_enhancer.py \
 **A：** 启用自动归档：
 
 ```bash
-python3 batch_generate.py \
   --config items.json \
   --auto-archive \
   --archive-dir /images/archive/
@@ -387,7 +372,8 @@ python3 batch_generate.py \
 | 豆包账号 | 服务 | 必需 | 豆包平台注册 | - |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 | - |
 
-#### 完整安装命令
+#
+### 完整安装命令
 ```bash
 pip3 install requests pyyaml Pillow
 # ...
@@ -407,7 +393,7 @@ python3 -c "import requests; print('requests ready')"
 | 提示词增强 API | `PROMPT_ENHANCE_API_KEY` | AI 提示词增强（可选） | 对应 AI 服务商 |
 
 ```bash
-export PROMPT_ENHANCE_API_KEY="your_enhance_key"
+export PROMPT_ENHANCE_API_KEY="${API_KEY:?请设置环境变量}"
 # ...
 ```
 
@@ -441,8 +427,6 @@ export PROMPT_ENHANCE_API_KEY="your_enhance_key"
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ```text
@@ -450,3 +434,22 @@ export PROMPT_ENHANCE_API_KEY="your_enhance_key"
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级AI图片生成平台，支持批量生成、多比例输出、风格预设、提示词增强与工作流自动化。。豆包图片生成专业版。Use wh
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

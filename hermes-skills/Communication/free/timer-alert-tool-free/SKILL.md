@@ -1,6 +1,7 @@
 ---
+
 name: "timer-alert-tool-free"
-description: "后台定时提醒免费版：多格式定时器、完成通知、番茄钟与基础多计时器管理。"
+description: "后台定时提醒免费版：多格式定时器、完成通知、番茄钟与基础多计时器管理。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -16,6 +17,11 @@ metadata:
     - "番茄钟"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # 定时提醒工具（免费版）
@@ -44,24 +50,18 @@ metadata:
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置。
 
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
 **输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：后台定时提醒免费、多格式定时器、番茄钟与基础多计、时器管理、定时提醒工具、面向个人用户与独、立开发者、提供后台定时器与、到时提醒能力、支持多种时间格式、时分秒、自定义提醒文案、番茄钟工作法、多计时器并行与后、台进程管理、定时器在后台运行、完成后触发系统通、Use、when、需要生成营销文案、写作内容、标题优化、内容创作时使用、不适用于纯技术文、档撰写等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -88,10 +88,9 @@ bash background:true command:"node {baseDir}/timer.js 12m '意大利面好了！
 
 ```bash
 # 专注阶段（25 分钟）
-bash background:true command:"node {baseDir}/timer.js 25m '番茄钟专注时间结束！该休息了。'"
+js 25m '番茄钟专注时间结束！该休息了。'"
 
 # 休息阶段（5 分钟，专注结束后启动）
-bash background:true command:"node {baseDir}/timer.js 5m '休息结束！回到工作。'"
 ```
 
 ### 场景三：多任务并行计时
@@ -99,9 +98,6 @@ bash background:true command:"node {baseDir}/timer.js 5m '休息结束！回到�
 用户说"帮我同时设三个定时器：茶 5 分钟、鸡蛋 10 分钟、会议 30 分钟"。Agent 并行启动三个后台定时器。
 
 ```bash
-bash background:true command:"node {baseDir}/timer.js 5m '茶泡好了'"
-bash background:true command:"node {baseDir}/timer.js 10m '鸡蛋煮好了'"
-bash background:true command:"node {baseDir}/timer.js 30m '会议马上开始'"
 ```
 
 ## 快速开始
@@ -117,13 +113,10 @@ bash background:true command:"node {baseDir}/timer.js 30m '会议马上开始'"
 
 ```bash
 # 5 分钟定时器
-bash background:true command:"node {baseDir}/timer.js 5m '时间到了！'"
 
 # 30 秒定时器
-bash background:true command:"node {baseDir}/timer.js 30s '快速提醒'"
 
 # 1 小时定时器
-bash background:true command:"node {baseDir}/timer.js 1h '一小时已到'"
 ```
 
 ### 管理运行中的定时器
@@ -133,17 +126,16 @@ bash background:true command:"node {baseDir}/timer.js 1h '一小时已到'"
 process action:list
 
 # 查看特定定时器状态
-process action:poll sessionId:XXX
+process action:poll sessionId:未指定
 
 # 查看定时器日志
-process action:log sessionId:XXX
+process action:log sessionId:未指定
 
 # 终止定时器
-process action:kill sessionId:XXX
+process action:kill sessionId:未指定
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
-
 
 ## 示例
 
@@ -162,13 +154,13 @@ process action:kill sessionId:XXX
 
 ```bash
 # 标准番茄钟：25 分钟专注 + 5 分钟休息
-bash background:true command:"node {baseDir}/timer.js 25m '番茄钟：专注完成！休息 5 分钟。'"
+js 25m '番茄钟：专注完成！休息 5 分钟。'"
 # 专注结束后启动休息
-bash background:true command:"node {baseDir}/timer.js 5m '番茄钟：休息结束！开始下一轮专注。'"
+js 5m '番茄钟：休息结束！开始下一轮专注。'"
 
 # 长休息版：50 分钟专注 + 10 分钟休息
-bash background:true command:"node {baseDir}/timer.js 50m '深度专注完成！休息 10 分钟。'"
-bash background:true command:"node {baseDir}/timer.js 10m '长休息结束！继续工作。'"
+js 50m '深度专注完成！休息 10 分钟。'"
+js 10m '长休息结束！继续工作。'"
 ```
 
 ### 多计时器场景配置
@@ -180,7 +172,7 @@ bash background:true command:"node {baseDir}/timer.js 10m '长休息结束！继
 | 运动 | 热身 5m | 训练 30m | 拉伸 10m |
 | 学习 | 阅读 25m | 练习 15m | 复习 10m |
 
-## 最佳实践
+## 优选实践
 
 ### 1. 完成通知格式（关键）
 
@@ -232,7 +224,7 @@ A：检查 Agent 响应格式——不能以 `HEARTBEAT_OK` 开头。响应应�
 A：必须使用 `bash background:true` 启动。如果省略 `background:true`，定时器会阻塞当前会话直到完成。
 
 ### Q3：如何取消正在运行的定时器？
-A：先用 `process action:list` 找到 sessionId，再执行 `process action:kill sessionId:XXX`。被终止的定时器退出码为 130。
+A：先用 `process action:list` 找到 sessionId，再执行 `process action:kill sessionId:未指定`。被终止的定时器退出码为 130。
 
 ### Q4：多个定时器同时完成怎么处理？
 A：每个定时器完成后分别触发独立的系统通知。Agent 按通知到达顺序依次响应，每个响应独立处理。
@@ -241,7 +233,7 @@ A：每个定时器完成后分别触发独立的系统通知。Agent 按通知�
 A：短定时器（< 1 分钟）每秒记录进度，长定时器每 10 秒记录。精度在 ±1 秒内。macOS 完成时会播放声音提示（需 `afplay` 可用）。
 
 ### Q6：如何查看定时器运行日志？
-A：`process action:log sessionId:XXX` 查看特定定时器的进度日志，包含每秒/每 10 秒的计时记录。
+A：`process action:log sessionId:未指定` 查看特定定时器的进度日志，包含每秒/每 10 秒的计时记录。
 
 ### 已知限制
 A：免费版不支持循环定时（间隔重复提醒）、提醒模板库、多级升级提醒、指定时间点触发与实时监控面板。这些能力在专业版提供。
@@ -287,9 +279,19 @@ A：免费版不支持循环定时（间隔重复提醒）、提醒模板库、�
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

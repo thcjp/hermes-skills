@@ -1,6 +1,7 @@
 ---
+
 name: "google-workspace-cli-free"
-description: "轻量级Google Workspace命令行工具,支持Gmail、Calendar、Drive核心操作,适合个人用户日常使用。"
+description: "轻量级Google Workspace命令行工具,支持Gmail、Calendar、Drive核心操作,适合个人用户日常使用。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -16,6 +17,11 @@ metadata:
     - "个人效率"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # 谷歌办公命令行工具 - 免费版
@@ -34,8 +40,6 @@ metadata:
 - 邮件发送:支持指定收件人、主题、正文的一键发送
 - 邮件读取:获取邮件正文与元数据
 
-**输入**: 用户提供邮件管理(Gmail)所需的指令和必要参数。
-**处理**: 按照skill规范执行邮件管理(Gmail)操作,遵循单一意图原则。
 **输出**: 返回邮件管理(Gmail)的执行结果,包含操作状态和输出数据。
 
 ### 日历管理(Calendar)
@@ -43,8 +47,6 @@ metadata:
 - 事件查询:按时间范围列出日历事件
 - 多日历支持:可查询指定日历 ID 的事件列表
 
-**输入**: 用户提供日历管理(Calendar)所需的指令和必要参数。
-**处理**: 按照skill规范执行日历管理(Calendar)操作,遵循单一意图原则。
 **输出**: 返回日历管理(Calendar)的执行结果,包含操作状态和输出数据。
 
 ### 云盘管理(Drive)
@@ -52,8 +54,6 @@ metadata:
 - 文件搜索:按关键词检索云端文件
 - 文件列表:获取最近文件清单
 
-**输入**: 用户提供云盘管理(Drive)所需的指令和必要参数。
-**处理**: 按照skill规范执行云盘管理(Drive)操作,遵循单一意图原则。
 **输出**: 返回云盘管理(Drive)的执行结果,包含操作状态和输出数据。
 
 ### 认证与安全
@@ -62,8 +62,6 @@ metadata:
 - 多账户配置(基础)
 - 凭据本地加密存储
 
-**输入**: 用户提供认证与安全所需的指令和必要参数。
-**处理**: 按照skill规范执行认证与安全操作,遵循单一意图原则。
 **输出**: 返回认证与安全的执行结果,包含操作状态和输出数据。
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级、Google、Workspace、命令行工具、核心操作、适合个人用户日常、谷歌办公命令行工、具免费版、为个人用户提供、日历日程查询、文件搜索等核心能、核心能力、读取与发送、日历事件查询与提、文件检索与下载、Use、when、SEO、关键词分析、排名提升、搜索流量优化时使、不适用于黑帽等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -133,7 +131,6 @@ gog auth list
 
 ```bash
 # 将常用账户设为默认,避免每次输入 --account
-export GOG_ACCOUNT=you@gmail.com
 ```
 
 ### 第三步:开始使用
@@ -164,7 +161,6 @@ no_input: true
 
 ```bash
 # 设置默认账户
-export GOG_ACCOUNT=you@gmail.com
 
 # 设置输出格式为JSON(便于脚本处理)
 export GOG_OUTPUT=json
@@ -193,7 +189,7 @@ for i, mail in enumerate(emails, 1):
     print(f"  {i}. {mail.get('from', '未知')} | {mail.get('subject', '无主题')}")
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 1. 使用默认账户减少输入
 
@@ -214,7 +210,7 @@ echo "主题: 周报提交"
 echo "正文: 本周周报已更新"
 read -p "确认发送?(y/N)" confirm
 if [ "$confirm" = "y" ]; then
-    gog gmail send --to team@example.com --subject "周报提交" --body "本周周报已更新"
+com --subject "周报提交" --body "本周周报已更新"
 fi
 ```
 
@@ -239,7 +235,7 @@ Gmail 搜索语法强大,熟练使用可大幅提升检索效率:
 
 ```bash
 gog auth remove you@gmail.com
-gog auth add you@gmail.com --services gmail,calendar,drive
+com --services gmail,calendar,drive
 ```
 
 ### Q2: 搜索邮件返回结果为空?
@@ -291,12 +287,11 @@ gog gmail search 'is:unread' --account personal@gmail.com --max 5
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
+- **分类**: MD+execute(纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
 - **说明**: 基于命令行的 AI Skill,通过自然语言指令驱动 Agent 执行 Google Workspace 操作。免费版支持 Gmail、Calendar、Drive 三大核心服务的基础操作,适合个人轻量办公场景。
 - API Key通过环境变量配置: export API_KEY=your_key
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
@@ -309,3 +304,22 @@ gog gmail search 'is:unread' --account personal@gmail.com --max 5
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # WhatsApp Styler
 
 This skill defines the strict formatting rules for WhatsApp to ensure the user sees clean, styled text without raw markdown symbols.
@@ -118,3 +117,24 @@ A: 请参考已知限制章节了解具体限制。
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
 - 性能取决于底层模型能力
+
+---
+## 边界条件与限制
+
+### 输入限制
+- **消息长度**: WhatsApp Styler技能能够处理的消息长度受限于WhatsApp平台的限制，通常为2,000字符。
+- **格式复杂性**: 对于过于复杂的Markdown格式，技能可能无法正确解析或应用格式规则。
+
+### 性能边界
+- **并发处理**: WhatsApp Styler技能在处理大量并发请求时，性能可能会受到影响，建议在高峰时段适当限制并发量。
+- **响应时间**: 在网络条件良好且系统负载较低的情况下，技能的响应时间通常在几毫秒到几十毫秒之间。
+
+### 兼容性约束
+- **平台兼容性**: WhatsApp Styler技能目前仅支持与支持SKILL.md格式的AI Agent集成，如Claude Code、Cursor、Codex、Gemini CLI等。
+- **操作系统兼容性**: 技能的运行环境要求操作系统为Windows、macOS或Linux，且需满足依赖说明中的最低版本要求。
+
+### 其他限制
+- **外部API限制**: 如果技能中使用了外部API，将受到API提供商的限制，如调用频率限制、可用性保证等。
+- **隐私和安全**: 技能处理的消息内容应遵守相关隐私和安全法规，不得包含敏感信息。
+---
+

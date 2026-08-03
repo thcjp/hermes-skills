@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 9.9
 ---
 
-
 # Domain Dns Ops
 
 This skill is a thin router: use `~/Projects/manager` as truth, run the repo scripts, follow the checklists.

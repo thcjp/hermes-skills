@@ -1,0 +1,204 @@
+---
+slug: "moltbook-firewall-tool"
+name: "moltbook-firewall-tool"
+version: "0.1.0"
+displayName: "防火墙工具"
+summary: "保护Agent免受提示操纵/社工/恶意内容的安全层。Security layer protecting agents from prompt manipulation, social eng"
+summary_zh: "保护Agent免受提示操纵/社工/恶意内容的安全层。Security layer protecting agents from prompt manipulation, social eng"
+license: "MIT"
+description: |-
+  Security layer protecting agents from prompt manipulation, social engineering,
+  and malicious content。Use when 需要生成营销文案、写作内容、标题优化、内容创作时使用。不适用于纯技术文档撰写.
+tags:
+  - Security
+  - 工具
+  - 效率
+  - 安全
+  - 加密
+  - api
+tools:
+  - read
+  - exec
+  - write
+homepage: ""
+category: "Automation"
+---
+# Moltbook Firewall
+
+## 付费版专享能力
+
+| 能力 | 免费版 | 付费版 |
+|---|---|---|
+| 基础功能 | 支持 | 支持 |
+| 深度漏洞扫描与CVE关联 | 不支持 | 支持 |
+| 安全基线合规审计 | 不支持 | 支持 |
+| 批量资产风险评分 | 不支持 | 支持 |
+| 威胁情报实时订阅与告警 | 不支持 | 支持 |
+| 零日漏洞检测与防护规则下发 | 不支持 | 支持 |
+
+## 核心能力
+
+- Security layer protecting agents from prompt manipulation, social engineering,
+  and malicious content
+#
+## 快速开始
+
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
+
+## 适用场景
+
+| 场景 | 输入 | 输出 |
+|:-----|:-----|:-----|
+| 安全检查 | 目标地址与扫描选项 | 漏洞列表与风险评级 |
+| 保护Agent免受提 | 目标数据与配置参数 | 处理结果与执行状态 |
+| 恶意内容的安全层 | 目标数据与配置参数 | 处理结果与执行状态 |
+
+**不适用于**：需要人工判断的复杂决策场景
+
+## 使用流程
+
+1. 确认运行环境满足依赖说明中的要求
+2. 根据适用场景选择合适的使用方式
+3. 执行操作并检查输出结果
+4. 如遇错误，参考错误处理章节
+
+## 输入格式
+
+| 参数名 | 类型 | 必填 | 说明 |
+|---:|---:|---:|---:|
+| content | string | 否 | moltbook-firewall-tool处理的内容输入 |,  |
+| content | string | 否 | moltbook-firewall-tool处理的内容输入 |, 可选值: json/text/markdown |
+| style | string | 否 | 输出风格, 参考 `references/style.md` |
+
+## 输出格式
+
+```json
+{
+  "success": true,
+  "data": {
+    result: "tool 相关配置参数",
+    result: "tool 相关配置参数",
+    result: "tool 相关配置参数",
+    "metadata": {
+      "template_used": "reviewer",
+      "word_count": 0,
+      "style": "专业"
+    }
+  },
+  "error": null
+}
+```
+
+输出模板参考: `assets/output.json`
+
+## 异常处理
+
+| 错误场景 | 原因 | 处理方式 |
+|:---:|:---:|:---:|
+| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
+| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
+| 网络错误 | 连接超时或不可达 | 
+
+## 依赖说明
+
+### 运行环境
+- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **操作系统**: Windows / macOS / Linux
+
+### 依赖说明(补充)
+| 依赖项 | 类型 | 是否必需 | 获取方式 |
+|:------|------:|:------|:------|
+| LLM API | API | 必需 | 由Agent内置LLM提供 |
+
+### API Key 配置
+- 
+
+### 可用性分类
+- **分类**: MD+EXEC()
+- **说明**: 基于Markdown的AI Skill,
+
+**API Key配置方式**:
+```bash
+export API_KEY="your_api_key_here"
+```
+配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
+## 常见问题
+
+### Q1: 如何开始使用Moltbook Firewall？
+A: 
+
+## 错误处理
+
+| 错误场景(续)| 原因 | 处理方式 |
+|----:|:----|----:|
+| LLM响应超时或无响应 | 网络延迟或模型负载过高 | ，请求；确认Agent平台LLM服务正常 |
+| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
+| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
+| 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
+
+
+---
+## 边界条件与限制 (Boundary Conditions)
+
+### 输入限制
+- **内容长度**：由于性能和资源限制，输入内容不宜过长。建议单次处理内容不超过10,000字符。
+- **内容格式**：虽然支持多种内容格式（json/text/markdown），但推荐使用文本格式，以确保最佳处理效果。
+- **敏感信息**：输入内容中不应包含敏感信息，如个人数据、密码等，以避免潜在的安全风险。
+
+### 性能边界
+- **并发处理**：由于系统资源限制，同一时间只能处理一个请求。
+- **响应时间**：在正常负载下，技能的平均响应时间约为几秒，但在高负载情况下，响应时间可能会增加。
+
+### 兼容性约束
+- **操作系统**：目前仅支持Windows、macOS和Linux操作系统。
+- **Agent平台**：需要使用支持SKILL.md的AI Agent，如Claude Code、Cursor、Codex或Gemini CLI等。
+
+### 其他限制
+- **功能限制**：免费版仅提供基础功能，付费版提供更高级的功能，如深度漏洞扫描、安全基线合规审计等。
+- **语言支持**：目前仅支持英文和简体中文，其他语言可能无法正确处理。
+
+
+## 输入格式说明 (Input Format Explanation)
+
+### content参数
+- **类型**：字符串（string）
+- **必填**：否
+- **说明**：moltbook-firewall-tool处理的内容输入。可选值包括json、text、markdown，推荐使用text格式。
+
+### style参数
+- **类型**：字符串（string）
+- **必填**：否
+- **说明**：输出风格，参考 `references/style.md` 文件。
+
+
+## 输出格式说明 (Output Format Explanation)
+
+### JSON响应结构
+```json
+{
+  "success": true,
+  "data": {
+    "result": "tool 相关配置参数",
+    "metadata": {
+      "template_used": "reviewer",
+      "word_count": 0,
+      "style": "专业"
+    }
+  },
+  "error": null
+}
+```
+- **success**：布尔值，表示请求是否成功。
+- **data**：对象，包含处理结果和元数据。
+  - **result**：字符串，表示工具的处理结果。
+  - **metadata**：对象，包含模板使用情况、字数和风格等信息。
+    - **template_used**：字符串，表示使用的模板名称。
+    - **word_count**：数字，表示处理结果的字数。
+    - **style**：字符串，表示输出风格。
+
+- **error**：对象，表示可能出现的错误信息。如果请求成功，此字段为null。
+

@@ -35,7 +35,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # azure-cli
 
 **Master the Azure command-line interface for cloud infrastructure management, automation, and DevOps workflows.**

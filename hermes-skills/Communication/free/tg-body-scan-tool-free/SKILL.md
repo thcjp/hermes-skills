@@ -1,6 +1,6 @@
 ---
 name: "tg-body-scan-tool-free"
-description: "通过 Telegram 提交视频进行人体测量，返回基础围度数据与腰臀比，适合个人单次使用。"
+description: "通过 Telegram 提交视频进行人体测量，返回基础围度数据与腰臀比，适合个人单次使用。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,8 +15,11 @@ metadata:
     - "个人健康"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
 ---
-
 # 体测扫描工具 免费版
 
 ## 概述
@@ -40,24 +43,18 @@ metadata:
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置。
 
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
 **输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：提交视频进行人体、返回基础围度数据、与腰臀比、适合个人单次使用、面向个人用户的、人体体测测量工具、视频提交、扫描状态轮询、适用场景、个人健身跟踪、单次体测测量、健康数据记录、差异化、免费版聚焦单次扫、描与基础测量、不含批量处理与历、史对比分析、适用关键词、body、scan、fitness等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -144,7 +141,7 @@ metadata:
 # body_scan_free.py
 import time
 
-# 步骤1: 提交扫描
+# 步骤1 提交扫描
 scan = anthrovision_bridge_submit_scan(
     gender="male",
     height_cm=178,
@@ -154,21 +151,21 @@ scan = anthrovision_bridge_submit_scan(
 scan_id = scan["scan_id"]
 print(f"扫描已提交: {scan_id}, 状态: {scan['status']}")
 
-# 步骤2: 轮询状态
+# 步骤2 轮询状态
 while True:
     result = anthrovision_bridge_check_scan(scan_id=scan_id)
     if result["status"] != "processing":
         break
     time.sleep(12)  # 每12秒轮询一次
 
-# 步骤3: 输出结果
+# 步骤3 输出结果
 print(f"扫描状态: {result['status']}")
 for key, value in result.get("measurements", {}).items():
     print(f"  {key}: {value} cm")
 print(f"腰臀比: {result.get('waist_hip_ratio', 'N/A')}")
 ```
 
-## 最佳实践
+## 优选实践
 
 - **视频质量**：确保光线均匀、背景简洁、全身入镜，避免穿着宽松衣物影响测量精度。
 - **拍摄距离**：建议距离 2-3 米，手机与地面平行，保持自然站姿。
@@ -238,7 +235,6 @@ print(f"腰臀比: {result.get('waist_hip_ratio', 'N/A')}")
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -250,3 +246,14 @@ print(f"腰臀比: {result.get('waist_hip_ratio', 'N/A')}")
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

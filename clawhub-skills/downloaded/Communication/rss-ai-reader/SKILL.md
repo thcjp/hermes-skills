@@ -16,7 +16,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Rss Ai Reader
 
 自动抓取 RSS 订阅 → LLM 生成中文摘要 → 推送到 IM

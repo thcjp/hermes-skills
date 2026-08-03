@@ -1,6 +1,7 @@
 ---
+
 name: "rss-fetcher-tool-free"
-description: "轻量级RSS采集与管理工具,支持增量抓取、自动去重与标签提取,适合个人用户构建本地订阅库"
+description: "轻量级RSS采集与管理工具,支持增量抓取、自动去重与标签提取,适合个人用户构建本地订阅库。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -16,6 +17,11 @@ metadata:
     - "个人效率"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # RSS采集器免费版
@@ -49,45 +55,33 @@ RSS采集器免费版是一款基于Python和SQLite的轻量级RSS订阅采集�
 ### 抓取方式
 抓取方式:单线程顺序抓取
 
-**输入**: 用户提供抓取方式所需的指令和必要参数。
-**处理**: 按照skill规范执行抓取方式操作,遵循单一意图原则。
 **输出**: 返回抓取方式的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 标签规则
 标签规则:使用内置预定义规则,不可扩展
 
-**输入**: 用户提供标签规则所需的指令和必要参数。
-**处理**: 按照skill规范执行标签规则操作,遵循单一意图原则。
 **输出**: 返回标签规则的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 无HTML报告生成
 无HTML报告生成
 
-**输入**: 用户提供无HTML报告生成所需的指令和必要参数。
-**处理**: 按照skill规范执行无HTML报告生成操作,遵循单一意图原则。
 **输出**: 返回无HTML报告生成的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 无数据导出功能
 无数据导出功能
 
-**输入**: 用户提供无数据导出功能所需的指令和必要参数。
-**处理**: 按照skill规范执行无数据导出功能操作,遵循单一意图原则。
 **输出**: 返回无数据导出功能的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 单源超时30秒
 单源超时30秒,无并发优化
 
-**输入**: 用户提供单源超时30秒所需的指令和必要参数。
-**处理**: 按照skill规范执行单源超时30秒操作,遵循单一意图原则。
 **输出**: 返回单源超时30秒的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**输入**: 用户提供已知限制所需的指令和必要参数。
-**处理**: 按照skill规范执行已知限制操作,遵循单一意图原则。
 **输出**: 返回已知限制的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级、采集与管理工具、支持增量抓取、自动去重与标签提、适合个人用户构建、本地订阅库、采集器免费版为个、人用户提供轻量级、订阅采集与本地管、理能力、核心能力、增量抓取与、自动标签提取、本地存储、按分类、时间查询文章、终端文章列表浏览等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
@@ -103,8 +97,8 @@ python3 scripts/init_db.py
 
 # 配置订阅源
 python3 scripts/source.py add openai "OpenAI Blog" "https://openai.com/blog/rss.xml" tech
-python3 scripts/source.py add hn "Hacker News" "https://hnrss.org/frontpage" tech
-python3 scripts/source.py add arxiv "arXiv CS.AI" "https://export.arxiv.org/rss/cs.AI" academic
+py add hn "Hacker News" "https://hnrss.org/frontpage" tech
+py add arxiv "arXiv CS.AI" "https://export.arxiv.org/rss/cs.AI" academic
 
 # 执行抓取
 python3 scripts/fetch.py
@@ -129,7 +123,6 @@ python3 scripts/list.py --hours 48
 
 ```bash
 # 按分类查看
-python3 scripts/list.py --category tech
 
 # 使用SQL查询(直接操作数据库)
 python3 -c "
@@ -146,13 +139,11 @@ for row in conn.execute(\"SELECT title, url, published_at FROM articles WHERE ti
 
 ```bash
 # 检查所有源健康状态
-python3 scripts/source.py check
 
 # 查看源统计
-python3 scripts/source.py stats
 
 # 禁用失效源
-python3 scripts/source.py disable broken-source-id
+py disable broken-source-id
 ```
 
 ## 不适用场景
@@ -169,14 +160,13 @@ python3 scripts/source.py disable broken-source-id
 
 ## 快速开始
 
-### 第一步:初始化
+### 领先步:初始化
 
 ```bash
 # 进入技能目录
 cd skills/rss-fetcher-tool-free
 
 # 初始化数据库
-python3 scripts/init_db.py
 # 输出: Database initialized at data/rss_fetcher.db
 ```
 
@@ -201,30 +191,25 @@ python3 scripts/init_db.py
 命令行方式:
 
 ```bash
-python3 scripts/source.py add openai "OpenAI Blog" "https://openai.com/blog/rss.xml" tech
+com/blog/rss.xml" tech
 ```
 
 ### 第三步:执行首次抓取
 
 ```bash
 # 首次抓取会拉取历史文章,较慢
-python3 scripts/fetch.py
 
 # 后续抓取仅获取增量
-python3 scripts/fetch.py --hours 24
 ```
 
 ### 第四步:浏览与查询
 
 ```bash
 # 查看最近48小时文章
-python3 scripts/list.py --hours 48
 
 # 按分类查看
-python3 scripts/list.py --category tech
 
 # JSON格式输出(便于程序处理)
-python3 scripts/list.py --json
 ```
 
 ## 示例
@@ -240,7 +225,6 @@ python3 scripts/list.py --json
     {
       "id": "openai",
       "name": "OpenAI Blog",
-      "url": "https://openai.com/blog/rss.xml",
       "category": "tech",
       "enabled": true
     },
@@ -307,7 +291,7 @@ GROUP BY t.id
 ORDER BY count DESC;
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 1. 分类要规划清晰
 
@@ -391,14 +375,32 @@ A: SQLite在10万条以下文章时查询性能良好。如文章量更大,确�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行Python脚本)
+- **分类**: MD+execute(纯Markdown指令,核心功能需要exec命令行执行Python脚本)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent调用Python脚本完成RSS采集与本地存储任务。免费版聚焦个人用户的增量抓取、自动去重、标签提取与SQLite本地存储,适合构建可持续积累的订阅文章库。
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

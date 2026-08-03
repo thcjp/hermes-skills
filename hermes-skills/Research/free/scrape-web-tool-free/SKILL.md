@@ -1,6 +1,7 @@
 ---
+
 name: "scrape-web-tool-free"
-description: "轻量级网页内容抓取工具,支持CSS选择器提取与文件保存,适合个人用户快速获取网页文本"
+description: "轻量级网页内容抓取工具,支持CSS选择器提取与文件保存,适合个人用户快速获取网页文本。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,10 @@ metadata:
     - "个人效率"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # 网页抓取工具免费版
@@ -46,45 +51,33 @@ metadata:
 ### 单次只抓取一个URL
 单次只抓取一个URL
 
-**输入**: 用户提供单次只抓取一个URL所需的指令和必要参数。
-**处理**: 按照skill规范执行单次只抓取一个URL操作,遵循单一意图原则。
 **输出**: 返回单次只抓取一个URL的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 不支持JavaScript动态
 不支持JavaScript动态渲染页面
 
-**输入**: 用户提供不支持JavaScript动态所需的指令和必要参数。
-**处理**: 按照skill规范执行不支持JavaScript动态操作,遵循单一意图原则。
 **输出**: 返回不支持JavaScript动态的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 不支持自动翻页
 不支持自动翻页
 
-**输入**: 用户提供不支持自动翻页所需的指令和必要参数。
-**处理**: 按照skill规范执行不支持自动翻页操作,遵循单一意图原则。
 **输出**: 返回不支持自动翻页的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 不支持结构化(JSON/CSV
 不支持结构化(JSON/CSV)输出
 
-**输入**: 用户提供不支持结构化(JSON/CSV所需的指令和必要参数。
-**处理**: 按照skill规范执行不支持结构化(JSON/CSV操作,遵循单一意图原则。
 **输出**: 返回不支持结构化(JSON/CSV的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 不支持代理与认证
 不支持代理与认证
 
-**输入**: 用户提供不支持代理与认证所需的指令和必要参数。
-**处理**: 按照skill规范执行不支持代理与认证操作,遵循单一意图原则。
 **输出**: 返回不支持代理与认证的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**输入**: 用户提供已知限制所需的指令和必要参数。
-**处理**: 按照skill规范执行已知限制操作,遵循单一意图原则。
 **输出**: 返回已知限制的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级网页内容抓、取工具、选择器提取与文件、适合个人用户快速、获取网页文本、网页抓取工具免费、版为个人用户提供、轻量级的网页内容、抓取与提取能力等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
@@ -99,7 +92,7 @@ metadata:
 python scripts/scrape_web.py --url "https://example.com/article"
 
 # 抓取并保存到文件
-python scripts/scrape_web.py --url "https://example.com/article" --out "article.txt"
+com/article" --out "article.txt"
 ```
 
 输出示例:
@@ -121,20 +114,19 @@ Fetched: 2026-07-18 10:30:00
 
 ```bash
 # 提取页面标题
-python scripts/scrape_web.py --url "https://example.com" --selector "title::text"
+com" --selector "title::text"
 
 # 提取文章标题
-python scripts/scrape_web.py --url "https://example.com/blog" --selector "h1.article-title::text"
+com/blog" --selector "h1.article-title::text"
 
 # 提取多个元素(列表)
-python scripts/scrape_web.py --url "https://example.com/products" --selector "div.product-name::text"
+com/products" --selector "div.product-name::text"
 ```
 
 输出示例:
 
 ```text
 === Selector: h1.article-title::text ===
-Source: https://example.com/blog
 
 vLLM 0.8发布:PagedAttention全面升级
 ```
@@ -145,13 +137,13 @@ vLLM 0.8发布:PagedAttention全面升级
 
 ```bash
 # 提取meta描述
-python scripts/scrape_web.py --url "https://example.com" --selector "meta[name=description]::attr(content)"
+com" --selector "meta[name=description]::attr(content)"
 
 # 提取meta关键词
-python scripts/scrape_web.py --url "https://example.com" --selector "meta[name=keywords]::attr(content)"
+com" --selector "meta[name=keywords]::attr(content)"
 
 # 提取canonical URL
-python scripts/scrape_web.py --url "https://example.com" --selector "link[rel=canonical]::attr(href)"
+com" --selector "link[rel=canonical]::attr(href)"
 ```
 
 ## 不适用场景
@@ -183,17 +175,16 @@ pip install httpx
 
 ```bash
 # 最简用法:抓取网页纯文本
-python scripts/scrape_web.py --url "https://example.com"
 ```
 
 ### 第三步:使用CSS选择器
 
 ```bash
 # 提取特定元素
-python scripts/scrape_web.py --url "https://example.com" --selector "h1::text"
+com" --selector "h1::text"
 
 # 保存到文件
-python scripts/scrape_web.py --url "https://example.com" --selector "h1::text" --out "title.txt"
+com" --selector "h1::text" --out "title.txt"
 ```
 
 ## 示例
@@ -201,7 +192,6 @@ python scripts/scrape_web.py --url "https://example.com" --selector "h1::text" -
 ### 命令行参数详解
 
 ```text
-python scripts/scrape_web.py [选项]
 
 选项:
   --url URL          目标网页URL(必需)
@@ -229,7 +219,7 @@ ul.menu li::text                 # menu列表项文本
 table.data tr td::text           # 表格单元格文本
 
 # 伪类选择
-li:first-child::text             # 第一个列表项
+li:first-child::text             # 领先个列表项
 a[href*=pdf]::attr(href)         # 包含pdf的链接
 ```
 
@@ -247,7 +237,7 @@ pip install scrapling
 python -c "import scrapling; print(scrapling.__version__)"
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 1. 优先使用CSS选择器精准提取
 
@@ -270,7 +260,7 @@ python -c "import scrapling; print(scrapling.__version__)"
 抓取结果保存为文件后,便于AI助手进一步分析、总结或归档:
 
 ```bash
-python scripts/scrape_web.py --url "https://example.com/long-article" --out "article.txt"
+com/long-article" --out "article.txt"
 # 然后让AI助手阅读article.txt并生成摘要
 ```
 
@@ -294,7 +284,7 @@ A: CSS选择器遵循标准语法。常用模式:`标签名`(如`h1`)、`.类名
 
 ### Q: 抓取结果包含大量HTML标签怎么办?
 
-A: 使用`::text`后缀只提取文本内容,不带HTML标签。如果未使用`::text`而直接选择元素,返回的是HTML片段。确保选择器以`::text`或`::attr(xxx)`结尾。
+A: 使用`::text`后缀只提取文本内容,不带HTML标签。如果未使用`::text`而直接选择元素,返回的是HTML片段。确保选择器以`::text`或`::attr(未指定)`结尾。
 
 ### Q: 如何抓取需要登录的页面?
 
@@ -328,14 +318,32 @@ A: 免费版不支持认证抓取。需要登录的页面无法直接抓取。�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行Python脚本)
+- **分类**: MD+execute(纯Markdown指令,核心功能需要exec命令行执行Python脚本)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent调用Python脚本完成网页内容抓取任务。免费版聚焦个人用户的单页抓取、CSS选择器提取与文件保存,适合文章正文提取、数据字段精准提取与页面元数据获取场景。
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

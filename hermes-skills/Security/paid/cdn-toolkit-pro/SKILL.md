@@ -1,4 +1,5 @@
 ---
+
 slug: cdn-toolkit-pro
 name: cdn-toolkit-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: CDN配置工具包专业版
 summary: 企业级CDN管理平台,支持多CDN智能调度、边缘计算、高级WAF防护、实时监控与DDoS防护,适合企业级内容分发需求.
 license: Proprietary
 edition: pro
-description: 'CDN配置工具包专业版,为企业提供全方位内容分发网络管理能力.
+description: "CDN配置工具包专业版,为企业提供全方位内容分发网络管理能力。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
   核心能力:多CDN智能调度、Edge Workers边缘计算、高级WAF与DDoS防护、实时性能监控、缓存预热与刷新、SARIF报告.
   适用场景:全球内容分发、高并发活动保障、企业级安全防护、边缘计算应用.
   差异化:专业版兼容免费版配置方法,新增企业级多CDN管理与边缘计算能力,满足规模化分发需求.
@@ -29,7 +30,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Security"
+
 ---
+
 专业版为企业提供完整的CDN管理与优化平台,在免费版基础配置能力之上,新增多CDN智能调度、Edge Workers边缘计算、高级WAF与DDoS防护、实时性能监控与告警、缓存预热与批量刷新、SARIF合规报告等企业级功能。专业版完全兼容免费版配置方法,已有CDN配置可无缝升级,适合全球内容分发与高并发场景.
 ### 专业版核心优势
 | 优势 | 说明 |
@@ -48,7 +51,6 @@ category: "Security"
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供多CDN智能调度(专业版独有)所需的指令和必要参数.
 **处理**: 解析多CDN智能调度(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多CDN智能调度(专业版独有)的响应数据,包含状态码、结果和日志.
 ### 2. Edge Workers边缘计算(专业版独有)
@@ -82,7 +84,7 @@ export default {
         // 在边缘修改响应
         const modifiedResponse = new Response(response.body, response);
         modifiedResponse.headers.set('X-AB-Variant', variant);
-        modifiedResponse.headers.set('X-Edge-Location', request.cf?.colo || 'unknown');
+headers.set('X-Edge-Location', request.cf?.colo || 'unknown');
 // ...
         return modifiedResponse;
     }
@@ -108,9 +110,8 @@ export default {
 // ...
         // 仅缓存成功响应
         if (response.status === 200) {
-            response = new Response(response.body, response);
-            response.headers.set('X-Cache-Status', 'MISS');
-            response.headers.set('Cache-Control', 'public, max-age=300');
+headers.set('X-Cache-Status', 'MISS');
+headers.set('Cache-Control', 'public, max-age=300');
 // ...
             // 异步写入缓存
             const event = new Request(request.url, { method: 'GET' });
@@ -122,7 +123,6 @@ export default {
 };
 ```
 
-**输入**: 用户提供Edge Workers边缘计算(专业版独有)所需的指令和必要参数.
 **处理**: 解析Edge Workers边缘计算(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Edge Workers边缘计算(专业版独有)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -147,7 +147,7 @@ curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/rulesets"
         }]
     }' | jq '.success'
 # ...
-curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/rulesets" \
+cloudflare.com/client/v4/zones/${ZONE_ID}/rulesets" \
     -H "Authorization: Bearer ${API_TOKEN}" \
     -H "Content-Type: application/json" \
     -d '{
@@ -155,7 +155,7 @@ curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/rulesets"
         "kind": "zone",
         "phase": "http_ratelimit",
         "rules": [{
-            "expression": "(http.request.uri.path contains \"/api/\")",
+request.uri.path contains \"/api/\")",
             "action": "block",
             "ratelimit": {
                 "characteristics": ["ip.src", "http.request.headers[\"x-api-key\"]"],
@@ -172,7 +172,7 @@ curl -s -X PATCH "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/ddos_pro
     -H "Content-Type: application/json" \
     -d '{"sensitivity_level":"high"}' | jq '.success'
 # ...
-curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/bot_management" \
+cloudflare.com/client/v4/zones/${ZONE_ID}/bot_management" \
     -H "Authorization: Bearer ${API_TOKEN}" \
     -H "Content-Type: application/json" \
     -d '{
@@ -181,14 +181,12 @@ curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/bot_manag
     }' | jq '.success'
 ```
 
-**输入**: 用户提供高级WAF与DDoS防护(专业版独有)所需的指令和必要参数.
 **处理**: 解析高级WAF与DDoS防护(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级WAF与DDoS防护(专业版独有)的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 4. 实时监控与告警(专业版独有)
 
-**输入**: 用户提供实时监控与告警(专业版独有)所需的指令和必要参数.
 **处理**: 解析实时监控与告警(专业版独有)的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回实时监控与告警(专业版独有)的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、CDN、管理平台、支持多、智能调度、边缘计算、WAF、实时监控与、DDoS、适合企业级内容分、发需求、配置工具包专业版、为企业提供全方位、内容分发网络管理、核心能力、Edge、Workers、实时性能监控、缓存预热与刷新、SARIF、适用场景、全球内容分发、高并发活动保障、企业级安全防护、边缘计算应用、差异化、专业版兼容免费版、配置方法、新增企业级多、管理与边缘计算能、满足规模化分发需、适用关键词、multi、computing等.
@@ -203,7 +201,7 @@ aliyun cdn AddCdnDomain --DomainName cn.example.com \
     --CdnType web --Sources '[{"content":"origin.example.com","type":"domain","priority":"20"}]'
 # ...
 echo "配置全球区CDN(Cloudflare)..."
-curl -s -X POST "https://api.cloudflare.com/client/v4/zones" \
+cloudflare.com/client/v4/zones" \
     -H "Authorization: Bearer ${CF_TOKEN}" \
     -d '{"name":"example.com","account":{"id":"ACCOUNT_ID"}}'
 # ...
@@ -277,8 +275,6 @@ if __name__ == "__main__":
     guard.pre_event_setup()
     guard.warmup_cache([
         "https://example.com/",
-        "https://example.com/products",
-        "https://example.com/api/catalog"
     ])
     import json
     print(json.dumps(guard.generate_report(), indent=2, ensure_ascii=False))
@@ -291,20 +287,17 @@ ZONE_ID="你的ZONE_ID"
 API_TOKEN="你的API_TOKEN"
 # ...
 echo "=== 批量URL刷新 ==="
-curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/purge_cache" \
+cloudflare.com/client/v4/zones/${ZONE_ID}/purge_cache" \
     -H "Authorization: Bearer ${API_TOKEN}" \
     -H "Content-Type: application/json" \
     -d '{
         "files": [
-            "https://example.com/index.html",
-            "https://example.com/style.css",
-            "https://example.com/app.js"
         ]
     }' | jq '.success'
 # ...
 # curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/purge_cache" \
 echo "=== 按前缀刷新 ==="
-curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/purge_cache" \
+cloudflare.com/client/v4/zones/${ZONE_ID}/purge_cache" \
     -H "Authorization: Bearer ${API_TOKEN}" \
     -H "Content-Type: application/json" \
     -d '{
@@ -313,9 +306,6 @@ curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/purge_cac
 # ...
 echo "=== 缓存预热 ==="
 URLS=(
-    "https://example.com/"
-    "https://example.com/products"
-    "https://example.com/about"
 )
 for url in "${URLS[@]}"; do
     STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$url")
@@ -348,7 +338,7 @@ done
 ### 首次多CDN配置
 ```bash
 python3 multi_cdn_router.py --region cn --provider alicdn
-python3 multi_cdn_router.py --region global --provider cloudflare
+py --region global --provider cloudflare
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -367,7 +357,7 @@ python3 multi_cdn_router.py --region global --provider cloudflare
 | 批量刷新 | 单URL | 批量+前缀 | 缓存管理 |
 | 告警推送 | 不支持 | 支持 | 实时告警 |
 
-## 最佳实践
+## 优选实践
 1. **多CDN冗余**:部署至少两个CDN,故障自动切换.
 2. **边缘计算**:将逻辑下沉到边缘,减少回源.
 3. **缓存预热**:上线前主动预热关键页面缓存.
@@ -415,7 +405,7 @@ python3 multi_cdn_router.py --region global --provider cloudflare
 - 阿里云需配置AccessKey ID和Secret
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+execute(纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行企业级CDN管理与优化任务
 - API Key通过环境变量配置: export API_KEY=your_key
 
@@ -443,3 +433,22 @@ python3 multi_cdn_router.py --region global --provider cloudflare
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级CDN管理平台,支持多CDN智能调度、边缘计算、高级WAF防护、实时监控与DDoS防护,适合企业级内容分发需求.
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

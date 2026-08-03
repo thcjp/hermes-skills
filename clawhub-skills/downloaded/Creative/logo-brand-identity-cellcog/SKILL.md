@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # Logo Brand Identity Cellcog
 
 **Other tools make logos. CellCog builds brands.** #1 on DeepResearch Bench (Apr 2026) for deep strategic reasoning + the widest modality coverage in AI.

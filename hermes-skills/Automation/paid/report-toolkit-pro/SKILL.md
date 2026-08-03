@@ -6,8 +6,7 @@ displayName: 报告工具包-专业版
 summary: "企业级报告平台,支持多租户、高级模板、数据可视化与多渠道自动交付。企业级报告生成与管理工具专业版,面向团队与商业应用。核心能力:"
 license: Proprietary
 edition: pro
-description: '企业级报告生成与管理工具专业版,面向团队与商业应用。核心能力:
-
+description: "企业级报告生成与管理工具专业版,面向团队与商业应用。核心能力:。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
   - 多租户报告管理与权限隔离
 
   - 高级报告模板与品牌定制
@@ -69,56 +68,56 @@ category: "Automation"
 ### 1. 多租户管理
 
 支持多租户隔离,每个租户独立管理报告配置、数据源与交付渠道,权限严格隔离.
-**输入**: 用户提供多租户管理所需的指令和必要参数.
+
 **处理**: 解析多租户管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多租户管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 2. 高级报告模板
 
 内置企业级报告模板,支持品牌定制(Logo、颜色、字体),使用 Jinja2 模板引擎动态填充.
-**输入**: 用户提供高级报告模板所需的指令和必要参数.
+
 **处理**: 解析高级报告模板的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级报告模板的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 3. 数据可视化嵌入
 
 报告中嵌入 matplotlib/plotly 图表,支持交互式图表与静态图片混合排版.
-**输入**: 用户提供数据可视化嵌入所需的指令和必要参数.
+
 **处理**: 解析数据可视化嵌入的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回数据可视化嵌入的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 4. 多渠道自动交付
 
 支持邮件、钉钉、飞书、Slack、企业微信、Webhook 等多渠道自动推送,按租户配置.
-**输入**: 用户提供多渠道自动交付所需的指令和必要参数.
+
 **处理**: 解析多渠道自动交付的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多渠道自动交付的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 5. 报告审批与版本
 
 报告发布前支持审批流程,版本管理支持回溯历史版本.
-**输入**: 用户提供报告审批与版本所需的指令和必要参数.
+
 **处理**: 解析报告审批与版本的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回报告审批与版本的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 6. 实时与定时混合
 
 支持定时生成报告,也支持实时查询按需生成,满足不同场景需求.
-**输入**: 用户提供实时与定时混合所需的指令和必要参数.
+
 **处理**: 解析实时与定时混合的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回实时与定时混合的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 7. 专业格式输出
 
 支持 PDF、Excel、PowerPoint 专业格式输出,保留排版与样式.
-**输入**: 用户提供专业格式输出所需的指令和必要参数.
+
 **处理**: 解析专业格式输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回专业格式输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 8. API 接口
 
 提供 RESTful API,支持第三方系统触发报告生成与查询结果.
-**输入**: 用户提供API 接口所需的指令和必要参数.
+
 **处理**: 解析API 接口的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回API 接口的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
@@ -179,7 +178,7 @@ category: "Automation"
 # 生成报告
 ./report-pro-cli generate \
   --template monthly_report \
-  --tenant "sales-dept" \
+  --workspace "sales-dept" \
   --period "2025-01" \
   --format pdf \
   --deliver "email,dingtalk"
@@ -199,26 +198,26 @@ category: "Automation"
 为不同客户/部门管理独立报告.
 ```bash
 # 创建租户
-./report-pro-cli tenant create \
+./report-pro-cli workspace create \
   --name "客户A" \
   --admin "admin@a.com" \
   --brand-color "#e63946"
 # ...
-./report-pro-cli tenant create \
+./report-pro-cli workspace create \
   --name "客户B" \
   --admin "admin@b.com" \
   --brand-color "#2a9d8f"
 # ...
 # 为租户配置报告
 ./report-pro-cli report create \
-  --tenant "客户A" \
+  --workspace "客户A" \
   --name "weekly-summary" \
   --schedule "0 9 * * 1" \
   --template "corporate-weekly" \
   --deliver "email"
 # ...
 # 列出租户报告
-./report-pro-cli report list --tenant "客户A"
+./report-pro-cli report list --workspace "客户A"
 ```
 
 ### 场景三:报告审批流程
@@ -265,7 +264,7 @@ category: "Automation"
 ./report-pro-cli upgrade --from free
 # ...
 # 迁移已有报告
-./report-pro-cli migrate --source ~/report --tenant "default"
+./report-pro-cli migrate --source ~/report --workspace "default"
 ```
 
 ### 配置交付渠道
@@ -295,7 +294,7 @@ export SLACK_WEBHOOK_URL="https://hooks.slack.com/..."
 ```json
 {
   "version": "2.0",
-  "tenant": {
+  "workspace": {
     "id": "company-a",
     "name": "客户A",
     "branding": {
@@ -343,7 +342,7 @@ export SLACK_WEBHOOK_URL="https://hooks.slack.com/..."
 | 版本管理 | 不支持 | 支持 |
 | 技术支持 | 社区 | 优先工单 + SLA |
 
-## 最佳实践
+## 优选实践
 
 1. **模板复用**:创建通用报告模板,不同租户通过变量注入差异化内容
 2. **数据缓存**:对计算密集型数据源使用缓存,避免每次生成报告都全量查询
@@ -374,7 +373,7 @@ A: 调用 `POST /api/reports/{name}/generate` 接口,传入参数(period、forma
 - **Agent平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
 - **操作系统**: Windows / macOS / Linux
 - **Python**: 3.10+
-- **数据库**: PostgreSQL/MySQL(数据源与配置存储)
+- **数据库**: 数据库/MySQL(数据源与配置存储)
 
 ### 依赖详情
 
@@ -402,7 +401,7 @@ A: 调用 `POST /api/reports/{name}/generate` 接口,传入参数(period、forma
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **分类**: MD+execute(Markdown指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 执行企业级报告生成与管理
 - **兼容性**: 完全兼容免费版报告配置格式
 - **支持**: 优先工单支持,SLA 保障响应时间
@@ -418,3 +417,22 @@ A: 调用 `POST /api/reports/{name}/generate` 接口,传入参数(period、forma
 ## 已知限制
 
 - 需要API Key，无Key环境无法使用
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级报告平台,支持多租户、高级模板、数据可视化与多渠道自动交付。企业级报告生成与管理工具专业版,面向团队与商业应用。核
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

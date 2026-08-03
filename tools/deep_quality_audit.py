@@ -83,32 +83,35 @@ Layer 9 (可见性质量预检 Visibility Quality):
 import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
-from project_config import DIFFERENTIATED_DIR
+from project_config import DIFFERENTIATED_DIR, PACKAGED_SKILLS_DIR, TOOLS_DIR, PLATFORM_CONFIG, L3_PASS_THRESHOLD, L2_MANUAL_REVIEW_THRESHOLD, L4_GRADE_B, L4_GRADE_C, L4_GRADE_D, L5_GRADE_A, L5_GRADE_B, L5_GRADE_D, L6_GRADE_A, L6_GRADE_B, L6_GRADE_C, L8_GRADE_A, L8_GRADE_B  # V110 W6; V118 W5; V118 W8; V121 W3: 新增评分等级阈值常量
 # === End Phase 1 ===
+
+# 导入统一解析层(skill_core)
+# V110 W6: Path(__file__).resolve().parent → TOOLS_DIR (统一从project_config导入)
+if str(TOOLS_DIR) not in _sys.path:
+    _sys.path.insert(0, str(TOOLS_DIR))
+from skill_core.parser import parse_frontmatter, split_frontmatter  # V126 W6: 新增split_frontmatter(TD-186)
+from skill_core.rules import PLACEHOLDER_PATTERNS as REAL_PLACEHOLDER_PATTERNS  # v1.3: 统一占位符检测模式
+from skill_core import db as db_module
 
 
 import json
-import os
 import re
 import sys
 from pathlib import Path
 from datetime import datetime
 
-# 从 config.py 导入统一配置（与 automated_review_system.py 保持一致的风格）
-# config.py 定义了 PACKAGED_SKILLS_DIR / REGISTRY_DIR / MAX_SUMMARY_LEN / MAX_DISPLAYNAME_LEN 等常量
-import config as _cfg
+# 从 project_config 导入统一配置
+import project_config as _cfg
+# V121 W6: 移除重复的 PACKAGED_SKILLS_DIR 导入 (已在 L86 通过 project_config 导入)
 
 # ============ 路径配置 ============
-# 优先使用 config.py 中的常量，回退到原始字符串路径
-PACKAGED_DIR = getattr(_cfg, 'PACKAGED_SKILLS_DIR', Path(r"D:\skills\packaged-skills\skillhub"))
-# DIFFERENTIATED_DIR imported from config
-REGISTRY_DIR = getattr(_cfg, 'REGISTRY_DIR', _cfg.TOOLS_DIR)
-REPORT_PATH = _cfg.DATA_DIR / "reports" / "deep_quality_audit_report.json"
+# V111 W1: 删除REGISTRY_DIR=_cfg.TOOLS_DIR别名(TD-108), TOOLS_DIR已在line 86直接导入
+REPORT_PATH = _cfg.REPORT_DIR / "deep_quality_audit_report.json"  # V110 W4: 统一从project_config.REPORT_DIR构造
 
 # ============ 阈值常量 ============
-# 从 config.py 导入统一阈值，确保与其他脚本一致
-MAX_SUMMARY_LENGTH = getattr(_cfg, 'MAX_SUMMARY_LEN', 100)       # summary 最大字符数
-MAX_DISPLAYNAME_LENGTH = getattr(_cfg, 'MAX_DISPLAYNAME_LEN', 20) # displayName 最大字符数
+MAX_SUMMARY_LENGTH = _cfg.MAX_SUMMARY_LEN       # summary 最大字符数
+MAX_DISPLAYNAME_LENGTH = _cfg.MAX_DISPLAY_NAME_LEN # V119 W4: displayName 最大字符数 (PEP8重命名)
 MIN_CONTENT_LENGTH = 500       # 内容最小字符数
 VERSION_REGEX = r'^\d+\.\d+\.\d+$'  # 合规版本格式 x.y.z
 
@@ -142,144 +145,25 @@ INFO_CHECKS = [
 ]
 
 
-def parse_frontmatter(content: str) -> dict:
-    """解析 YAML frontmatter，支持多行块标量 (|-, |, >-, >)
+# V130 A4: 与template_cleanup.collect_skill_files是重复定义, 已统一。
+# 两者签名/逻辑/返回类型完全一致(均扫描PACKAGED_SKILLS_DIR+DIFFERENTIATED_DIR, 返回(Path,source)列表)。
+# 本模块改为从template_cleanup导入。
+from template_cleanup import collect_skill_files
 
-    使用正则分割 --- 分隔符，与 automated_review_system.py 保持一致的逻辑。
+
+# ============ check_skill 子检查函数 (V137 I1 拆分) ============
+
+
+def _check_skill_read_content(skill_path, dir_name, source, issues):  # [V137 I1]
+    """读取文件内容并做基础校验（读取失败/空内容提前返回）。
+
+    返回 (content, early_return)：early_return 为 None 表示正常，否则为应直接返回的结果字典。
     """
-    if content.startswith('\ufeff'):
-        content = content[1:]
-    if not content.startswith('---'):
-        return {}
-    parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
-    if len(parts) < 3:
-        return {}
-    fm_text = parts[1].strip()
-    fm = {}
-    current_key = None
-    block_key = None
-    block_lines = []
-    fm_lines = fm_text.split('\n')
-    i = 0
-    while i < len(fm_lines):
-        line = fm_lines[i]
-        line_stripped = line.rstrip()
-        if not line_stripped:
-            if block_key:
-                block_lines.append('')
-            i += 1
-            continue
-        if block_key and (line.startswith('  ') or line.startswith('\t')):
-            block_lines.append(line.strip())
-            i += 1
-            continue
-        if block_key:
-            fm[block_key] = '\n'.join(block_lines).strip()
-            block_key = None
-            block_lines = []
-        if line.startswith('  - '):
-            val = line[4:].strip()
-            if val.startswith('"') and val.endswith('"'):
-                val = val[1:-1]
-            if current_key:
-                if current_key not in fm:
-                    fm[current_key] = []
-                fm[current_key].append(val)
-        elif line.startswith('- ') and current_key:
-            val = line[2:].strip()
-            if val.startswith('"') and val.endswith('"'):
-                val = val[1:-1]
-            if current_key not in fm:
-                fm[current_key] = []
-            fm[current_key].append(val)
-        elif ':' in line:
-            key, _, val = line.partition(':')
-            key = key.strip()
-            val = val.strip()
-            if val.startswith('"') and val.endswith('"'):
-                val = val[1:-1]
-            if val in ('|-', '|', '>-', '>'):
-                block_key = key
-                block_lines = []
-                fm[key] = ''
-            elif val:
-                fm[key] = val
-            else:
-                current_key = key
-                fm[key] = []
-        i += 1
-    if block_key:
-        fm[block_key] = '\n'.join(block_lines).strip()
-    return fm
-
-
-def split_frontmatter_body(content: str):
-    """将文件内容分割为 frontmatter 文本和正文文本"""
-    if content.startswith('\ufeff'):
-        content = content[1:]
-    if not content.startswith('---'):
-        return '', content
-    parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
-    if len(parts) < 3:
-        return '', content
-    return parts[1], parts[2]
-
-
-def collect_skill_files():
-    """收集所有需要审计的 SKILL.md 文件路径
-
-    Returns:
-        list of (Path, source_str) 元组
-    """
-    files = []
-
-    # 扫描 packaged-skills/skillhub
-    if PACKAGED_DIR.exists():
-        for skill_dir in sorted(PACKAGED_DIR.iterdir()):
-            if not skill_dir.is_dir():
-                continue
-            skill_md = skill_dir / "SKILL.md"
-            if skill_md.exists():
-                files.append((skill_md, "packaged"))
-
-    # 扫描 differentiated-skills (按类别子目录)
-    if DIFFERENTIATED_DIR.exists():
-        for cat_dir in sorted(DIFFERENTIATED_DIR.iterdir()):
-            if not cat_dir.is_dir():
-                continue
-            for skill_dir in sorted(cat_dir.iterdir()):
-                if not skill_dir.is_dir():
-                    continue
-                skill_md = skill_dir / "SKILL.md"
-                if skill_md.exists():
-                    source = f"differentiated/{cat_dir.name}"
-                    files.append((skill_md, source))
-
-    return files
-
-
-def check_skill(skill_path: Path, source: str, enable_l7: bool = True, enable_l7b: bool = True, enable_l8: bool = True, enable_l9: bool = True):
-    """对单个 SKILL.md 执行全部质量检查
-
-    Returns:
-        dict: {
-            slug, source, severity, issues, body_length, version,
-            dir_name, frontmatter
-        }
-    """
-    dir_name = skill_path.parent.name
-    issues = {
-        "critical": [],
-        "warning": [],
-        "info": [],
-    }
-
-    # 读取文件内容
     try:
         content = skill_path.read_text(encoding='utf-8', errors='replace')
-    except Exception as e:
+    except Exception as e:  # [V131 B2] 宽泛捕获: 异常收集错误继续批量处理
         issues["critical"].append(f"读取文件失败: {e}")
-        return {
+        return "", {
             "slug": dir_name,
             "source": source,
             "severity": "critical",
@@ -291,14 +175,9 @@ def check_skill(skill_path: Path, source: str, enable_l7: bool = True, enable_l7
             "_content": "",
         }
 
-    body_length = len(content)
-
-    # === critical 检查 ===
-
-    # 空内容检查
     if not content.strip():
         issues["critical"].append("EMPTY_CONTENT: 文件内容为空")
-        return {
+        return content, {
             "slug": dir_name,
             "source": source,
             "severity": "critical",
@@ -310,8 +189,12 @@ def check_skill(skill_path: Path, source: str, enable_l7: bool = True, enable_l7
             "_content": content,
         }
 
-    # frontmatter 解析
-    fm = parse_frontmatter(content)
+    return content, None
+
+
+def _check_skill_frontmatter_critical(content, dir_name, issues):  # [V137 I1]
+    """解析 frontmatter 并执行 critical 级别检查。返回 (fm, slug, version)。"""
+    fm = parse_frontmatter(content)['fields']
 
     # frontmatter 解析失败检查
     if not fm:
@@ -339,8 +222,11 @@ def check_skill(skill_path: Path, source: str, enable_l7: bool = True, enable_l7
             f"SLUG_DIRNAME_MISMATCH: slug='{slug}' 与目录名='{dir_name}' 不匹配"
         )
 
-    # === warning 检查 ===
+    return fm, slug, version
 
+
+def _check_skill_warning_checks(fm, version, issues):  # [V137 I1]
+    """执行 warning 级别检查。"""
     # summary 超过 100 字符
     summary = str(fm.get('summary', '')).strip()
     if summary and len(summary) > MAX_SUMMARY_LENGTH:
@@ -376,8 +262,9 @@ def check_skill(skill_path: Path, source: str, enable_l7: bool = True, enable_l7
             f"INVALID_VERSION_FORMAT: 版本 '{version}' 不符合 x.y.z 格式"
         )
 
-    # === info 检查 ===
 
+def _check_skill_info_checks(fm, body_length, body_text, issues):  # [V137 I1]
+    """执行 info 级别检查。"""
     # 缺少 homepage 字段
     homepage = str(fm.get('homepage', '')).strip()
     if not homepage:
@@ -395,16 +282,19 @@ def check_skill(skill_path: Path, source: str, enable_l7: bool = True, enable_l7
         )
 
     # 缺少依赖说明 section
-    _, body_text = split_frontmatter_body(content)
     if not re.search(r'##\s*依赖说明|##\s*Dependencies|##\s*Dependency', body_text, re.IGNORECASE):
         issues["info"].append("MISSING_DEP_SECTION: 缺少依赖说明 section")
 
+
+def _check_skill_layer_checks(content, body_text, fm, slug, dir_name, skill_path, enable_l7, enable_l7b, enable_l8, enable_l9):  # [V137 I1]
+    """执行 Layer 4-9 功能性检查，返回各层结果字典。"""
     # === functional 检查 (Layer 4) ===
     func_result = check_functional_quality(body_text)
-    functional_issues = func_result["issues"]
 
     # === sellability 评估 (Layer 5) ===
-    sell_result = check_sellability(body_text, fm, func_result["score"])
+    # v1.3: 从DB读取local_quality_score作为基础分
+    _lqs = _get_local_quality_score(slug)
+    sell_result = check_sellability(body_text, fm, func_result["score"], local_quality_score=_lqs)
 
     # === content authenticity 检查 (Layer 6) ===
     auth_result = check_content_authenticity(body_text)
@@ -417,7 +307,7 @@ def check_skill(skill_path: Path, source: str, enable_l7: bool = True, enable_l7
 
     # === 安全审计 (Layer 8) ===
     if enable_l8:
-        fm_text_raw, _ = split_frontmatter_body(content)
+        fm_text_raw, _ = split_frontmatter(content)  # V126 W6
         l8_result = check_security_quality(
             content=content, fm=fm, fm_text=fm_text_raw,
             body_text=body_text, slug=slug, dir_name=dir_name
@@ -437,7 +327,19 @@ def check_skill(skill_path: Path, source: str, enable_l7: bool = True, enable_l7
             "passed": False, "check_results": {},
         }
 
-    # 确定最终严重级别
+    return {
+        "func_result": func_result,
+        "sell_result": sell_result,
+        "auth_result": auth_result,
+        "l7_result": l7_result,
+        "l7b_result": l7b_result,
+        "l8_result": l8_result,
+        "l9_result": l9_result,
+    }
+
+
+def _check_skill_determine_severity(issues):  # [V137 I1]
+    """根据 issues 确定最终严重级别与展示用 issues 列表。返回 (severity, all_issues)。"""
     if issues["critical"]:
         severity = "critical"
         all_issues = issues["critical"]
@@ -450,6 +352,18 @@ def check_skill(skill_path: Path, source: str, enable_l7: bool = True, enable_l7
     else:
         severity = "ok"
         all_issues = []
+    return severity, all_issues
+
+
+def _check_skill_build_result(slug, source, severity, all_issues, body_length, version, dir_name, fm, layer_results, enable_l8, enable_l9, content, issues):  # [V137 I1]
+    """构建 check_skill 的最终返回字典。"""
+    func_result = layer_results["func_result"]
+    sell_result = layer_results["sell_result"]
+    auth_result = layer_results["auth_result"]
+    l7_result = layer_results["l7_result"]
+    l7b_result = layer_results["l7b_result"]
+    l8_result = layer_results["l8_result"]
+    l9_result = layer_results["l9_result"]
 
     return {
         "slug": slug,
@@ -463,7 +377,7 @@ def check_skill(skill_path: Path, source: str, enable_l7: bool = True, enable_l7
         "functional": {
             "score": func_result["score"],
             "grade": func_result["grade"],
-            "issues": functional_issues,
+            "issues": func_result["issues"],
         },
         "sellability": {
             "score": sell_result["score"],
@@ -517,6 +431,55 @@ def check_skill(skill_path: Path, source: str, enable_l7: bool = True, enable_l7
     }
 
 
+def check_skill(skill_path: Path, source: str, enable_l7: bool = True, enable_l7b: bool = True, enable_l8: bool = True, enable_l9: bool = True):
+    """对单个 SKILL.md 执行全部质量检查
+
+    Returns:
+        dict: {
+            slug, source, severity, issues, body_length, version,
+            dir_name, frontmatter
+        }
+    """
+    dir_name = skill_path.parent.name
+    issues = {
+        "critical": [],
+        "warning": [],
+        "info": [],
+    }
+
+    # 读取文件内容并做基础校验（读取失败/空内容会提前返回）
+    content, early_return = _check_skill_read_content(skill_path, dir_name, source, issues)
+    if early_return is not None:
+        return early_return
+
+    body_length = len(content)
+    _, body_text = split_frontmatter(content)  # V126 W6
+
+    # === critical 检查（frontmatter 解析与缺失字段） ===
+    fm, slug, version = _check_skill_frontmatter_critical(content, dir_name, issues)
+
+    # === warning 检查 ===
+    _check_skill_warning_checks(fm, version, issues)
+
+    # === info 检查 ===
+    _check_skill_info_checks(fm, body_length, body_text, issues)
+
+    # === Layer 4-9 功能性检查 ===
+    layer_results = _check_skill_layer_checks(
+        content, body_text, fm, slug, dir_name, skill_path,
+        enable_l7, enable_l7b, enable_l8, enable_l9
+    )
+
+    # 确定最终严重级别
+    severity, all_issues = _check_skill_determine_severity(issues)
+
+    # 构建并返回结果
+    return _check_skill_build_result(
+        slug, source, severity, all_issues, body_length, version, dir_name, fm,
+        layer_results, enable_l8, enable_l9, content, issues
+    )
+
+
 # ============ 功能质量检查 (Layer 4: Functional Quality) ============
 # 从格式检查升级为功能验证 - 判断skill是否真能完成任务
 
@@ -531,18 +494,8 @@ FUNCTIONAL_CHECKS = [
     "NO_INPUT_OUTPUT",        # 无输入输出说明
 ]
 
-# 真实placeholder模式 (非模板变量)
-# TODO/FIXME仅在行首(可带注释符号)匹配，避免误报函数名/状态名/命令中的"todo"
-REAL_PLACEHOLDER_PATTERNS = [
-    (r"(?m)^[\s/#*;]*TODO[:\s]", "TODO标记"),
-    (r"(?m)^[\s/#*;]*FIXME[:\s]", "FIXME标记"),
-    (r"待补充", "待补充"),
-    (r"待完善", "待完善"),
-    (r"lorem ipsum", "Lorem Ipsum"),
-    (r"placeholder\s+content", "占位内容"),
-    (r"replace[_ ]this", "替换占位"),
-    (r"示例文本内容", "示例占位"),
-]
+# 真实placeholder模式 (v1.3: 已统一为 from skill_core.rules import PLACEHOLDER_PATTERNS as REAL_PLACEHOLDER_PATTERNS)
+# 原本地定义已移除，使用规范源(已合并差异模式)
 
 def check_functional_quality(body_text: str) -> dict:
     """功能质量检查 - 判断skill正文是否包含可执行指令
@@ -630,10 +583,10 @@ def check_functional_quality(body_text: str) -> dict:
             break
 
     # 评级
-    if score >= 70: grade = "A"
-    elif score >= 50: grade = "B"
-    elif score >= 30: grade = "C"
-    elif score >= 10: grade = "D"
+    if score >= L3_PASS_THRESHOLD: grade = "A"
+    elif score >= L4_GRADE_B: grade = "B"  # V121 W3: L4功能质量评级
+    elif score >= L4_GRADE_C: grade = "C"
+    elif score >= L4_GRADE_D: grade = "D"
     else: grade = "F"
 
     return {"issues": issues, "score": max(0, score), "grade": grade}
@@ -642,57 +595,87 @@ def check_functional_quality(body_text: str) -> dict:
 # ============ 可销售性评估 (Layer 5: Sellability) ============
 # 从买家角度评估skill价值
 
-def check_sellability(body_text: str, fm: dict, functional_score: int) -> dict:
+def _get_local_quality_score(slug: str) -> float:
+    """v1.3: 从DB读取local_quality_score (0.0-5.0)"""
+    if not slug:
+        return 0.0
+    try:
+        conn = db_module.get_db()
+        c = conn.cursor()
+        c.execute("SELECT local_quality_score FROM skills WHERE slug = ?", (slug,))
+        row = c.fetchone()
+        conn.close()
+        if row and row[0] is not None:
+            return float(row[0])
+    except Exception as e:
+        print(f"[WARN] DB读取local_quality_score失败,返回0.0: {e}")
+    return 0.0
+
+
+def check_sellability(body_text: str, fm: dict, functional_score: int,
+                      local_quality_score: float = 0.0) -> dict:
     """可销售性评估 - 从买家角度评估skill价值
+
+    v1.3: 融合local_quality_score作为基础分(60%权重)
+    sellability = local_quality_score_normalized × 0.6 + sellability_specific × 0.4
 
     Returns:
         dict: {score: 0-100, grade: A/B/C/D, factors: [...]}
     """
     body_len = len(body_text.strip())
-    score = 0
+    specific_score = 0
     factors = []
 
     # 1. 内容深度 (0-25分)
-    if body_len > 8000: score += 25; factors.append("内容充实(>8K字符)")
-    elif body_len > 4000: score += 20; factors.append("内容较充实(>4K字符)")
-    elif body_len > 2000: score += 15; factors.append("内容中等(>2K字符)")
-    else: score += 5; factors.append("内容偏少(<2K字符)")
+    if body_len > 8000: specific_score += 25; factors.append("内容充实(>8K字符)")
+    elif body_len > 4000: specific_score += 20; factors.append("内容较充实(>4K字符)")
+    elif body_len > 2000: specific_score += 15; factors.append("内容中等(>2K字符)")
+    else: specific_score += 5; factors.append("内容偏少(<2K字符)")
 
     # 2. 功能完整 (0-20分) - 基于功能质量得分
     func_pct = functional_score * 20 // 100
-    score += func_pct
-    if functional_score >= 70: factors.append("功能完整(A级)")
-    elif functional_score >= 50: factors.append("功能较完整(B级)")
+    specific_score += func_pct
+    if functional_score >= L3_PASS_THRESHOLD: factors.append("功能完整(A级)")
+    elif functional_score >= L4_GRADE_B: factors.append("功能较完整(B级)")
 
     # 3. 技术深度 (0-20分)
     code_blocks = body_text.count("```") // 2
-    if code_blocks >= 5: score += 15; factors.append(f"代码丰富({code_blocks}块)")
-    elif code_blocks >= 2: score += 10; factors.append(f"有代码示例({code_blocks}块)")
-    elif code_blocks >= 1: score += 5
+    if code_blocks >= 5: specific_score += 15; factors.append(f"代码丰富({code_blocks}块)")
+    elif code_blocks >= 2: specific_score += 10; factors.append(f"有代码示例({code_blocks}块)")
+    elif code_blocks >= 1: specific_score += 5
 
     if re.search(r'API|HTTP|JSON|REST|SDK', body_text):
-        score += 5; factors.append("含技术规格")
+        specific_score += 5; factors.append("含技术规格")
 
     # 4. 用户体验 (0-20分)
     if re.search(r'步骤|Step|用法|Usage', body_text, re.IGNORECASE):
-        score += 10; factors.append("有使用步骤")
+        specific_score += 10; factors.append("有使用步骤")
     if re.search(r'示例|Example|Demo', body_text, re.IGNORECASE):
-        score += 5; factors.append("有示例")
+        specific_score += 5; factors.append("有示例")
     if re.search(r'错误|Error|异常', body_text, re.IGNORECASE):
-        score += 5; factors.append("有错误处理")
+        specific_score += 5; factors.append("有错误处理")
 
     # 5. 专业性 (0-15分)
     if re.search(r'##\s*依赖说明', body_text, re.IGNORECASE):
-        score += 5; factors.append("有依赖说明")
+        specific_score += 5; factors.append("有依赖说明")
     if fm.get('license'):
-        score += 5
+        specific_score += 5
     if fm.get('tags'):
-        score += 5
+        specific_score += 5
+
+    # v1.3: 融合local_quality_score (0-5 → 0-100)
+    local_normalized = local_quality_score * 20.0  # 0-5 → 0-100
+    if local_quality_score > 0:
+        score = int(local_normalized * 0.6 + specific_score * 0.4)
+        factors.append(f"融合local_quality_score={local_quality_score:.2f}(60%权重)")
+    else:
+        # 无local_quality_score时回退到纯specific_score (向后兼容)
+        score = specific_score
 
     # 评级
-    if score >= 70: grade = "A"
-    elif score >= 50: grade = "B"
-    elif score >= 30: grade = "C"
+    if score >= L3_PASS_THRESHOLD: grade = "A"
+    elif score >= L4_GRADE_B: grade = "B"  # V121 W3: 可销售性评级(使用L4阈值)
+    elif score >= L4_GRADE_C: grade = "C"
     else: grade = "D"
 
     return {"score": min(100, score), "grade": grade, "factors": factors}
@@ -731,8 +714,8 @@ EMPTY_SECTION_REGEX = re.compile(
     re.MULTILINE
 )
 
-# "已知限制" 空白检测 (只有破折号或空行)
-EMPTY_LIMITATIONS_REGEX = re.compile(
+# "已知限制" 空白检测 (只有破折号或空行) — [V132 C1b] 检测用(与template_cleanup的CLEANUP版不同)
+EMPTY_LIMITATIONS_DETECT_REGEX = re.compile(
     r'##\s*(?:已知限制|Limitations)\s*\n((?:[\s\-|]*\n){0,5})\s*(?:##|\Z)',
     re.MULTILINE
 )
@@ -743,8 +726,8 @@ EMPTY_FAQ_REGEX = re.compile(
     re.MULTILINE
 )
 
-# "案例展示" 占位检测 (输入: 用户请求 / 处理: 根据使用流程执行 / 输出: 处理结果)
-PLACEHOLDER_CASE_REGEX = re.compile(
+# "案例展示" 占位检测 — [V132 C1c] 检测用(与template_cleanup的CLEANUP版不同)
+PLACEHOLDER_CASE_DETECT_REGEX = re.compile(
     r'输入[:：]\s*(?:用户请求|示例数据|示例内容)\s*\n.*?处理[:：]\s*(?:根据使用流程执行|示例处理)\s*\n.*?输出[:：]\s*(?:处理结果|示例输出|建议优化)',
     re.DOTALL
 )
@@ -810,7 +793,7 @@ def check_content_authenticity(body_text: str) -> dict:
             issues.append(f"EMPTY_SECTIONS: {empty_count}个段落内容为空或过短")
 
     # 3. 检测"已知限制"空白
-    if EMPTY_LIMITATIONS_REGEX.search(body_text):
+    if EMPTY_LIMITATIONS_DETECT_REGEX.search(body_text):
         empty_count += 1
         issues.append("EMPTY_LIMITATIONS: 已知限制段落为空")
 
@@ -822,7 +805,7 @@ def check_content_authenticity(body_text: str) -> dict:
             issues.append(f"EMPTY_FAQ: {len(faq_empty)}个FAQ答案为空")
 
     # 5. 检测"案例展示"占位
-    if PLACEHOLDER_CASE_REGEX.search(body_text):
+    if PLACEHOLDER_CASE_DETECT_REGEX.search(body_text):
         template_count += 1
         issues.append("PLACEHOLDER_CASE: 案例展示为占位符内容")
 
@@ -845,10 +828,10 @@ def check_content_authenticity(body_text: str) -> dict:
     score = max(0, 100 - penalty)
 
     # 评级
-    if score >= 85: grade = "A"
-    elif score >= 65: grade = "B"
-    elif score >= 40: grade = "C"
-    elif score >= 20: grade = "D"
+    if score >= L5_GRADE_A: grade = "A"  # V121 W3: 内容真实性评级(使用L5阈值)
+    elif score >= L5_GRADE_B: grade = "B"
+    elif score >= L2_MANUAL_REVIEW_THRESHOLD: grade = "C"
+    elif score >= L5_GRADE_D: grade = "D"
     else: grade = "F"
 
     return {
@@ -880,7 +863,7 @@ CATEGORY_TAGS_MAP = {
     "packaged": ["通用工具"],
 }
 
-DEFAULT_HOMEPAGE = "https://skillhub.cn"
+DEFAULT_HOMEPAGE = PLATFORM_CONFIG['skillhub']['page_base']  # V118 W8 (TD-140): 从PLATFORM_CONFIG读取网站基址
 
 # 默认依赖说明模板
 DEFAULT_DEP_SECTION = """
@@ -992,7 +975,7 @@ def fix_info_issues(skill_path: Path, result: dict) -> list:
     elif has_short_issue:
         # 依赖说明已添加，如果内容仍然太短，添加基础概述
         if len(content) < MIN_CONTENT_LENGTH:
-            _, body = split_frontmatter_body(content)
+            _, body = split_frontmatter(content)  # V126 W6
             if not re.search(r'##\s*概述', body):
                 overview = "\n## 概述\n\n本Skill提供专业功能，通过自然语言指令驱动Agent完成操作。\n"
                 # 在 body 的开头插入概述
@@ -1158,7 +1141,7 @@ def _load_embedding_model():
         }
     except ImportError:
         _model_load_error = "scikit-learn not installed (pip install scikit-learn)"
-    except Exception as e:
+    except Exception as e:  # [V131 B2] 宽泛捕获: 异常更新状态/计数继续
         _model_load_error = f"model load error: {e}"
     return _vectorizer, _model_load_error
 
@@ -1259,8 +1242,6 @@ def check_semantic_quality(body_text: str, enable_l7a: bool = True) -> dict:
         return result
 
     # 使用 TF-IDF 向量化文本块和模板模式
-    import numpy as np
-    from scipy.sparse import vstack
 
     vectorizer = model["model"]
     cosine_fn = model["cosine_fn"]
@@ -1354,6 +1335,172 @@ def check_semantic_quality(body_text: str, enable_l7a: bool = True) -> dict:
 # L7b: 使用 LLM 模拟执行 skill 任务,检测"声称能做但实际无法完成"的问题
 # 接口设计: 接收 skill 正文文本,返回可执行性评估结果
 
+def _check_llm_code_blocks(body_text: str, result: dict) -> bool:
+    """[V137 I13] 检查1: 是否有代码块 (L7B_NO_CODE)
+
+    返回 has_code 供后续检查4/5复用。
+    """
+    code_blocks = re.findall(r'```(\w+)?', body_text)
+    has_code = len(code_blocks) > 0
+    if has_code:
+        result["checks_passed"] += 1
+    else:
+        # 没有代码块但声称有脚本
+        if re.search(r'scripts?/', body_text) or re.search(r'执行.*脚本', body_text):
+            result["issues"].append("L7B_NO_CODE: 声称有脚本但正文中无代码块")
+            result["checks_failed"] += 1
+            result["executable"] = False
+        else:
+            result["checks_passed"] += 1  # 纯描述性skill也可以
+    return has_code
+
+
+def _check_llm_script_refs(body_text: str, skill_path, result: dict) -> None:
+    """[V137 I13] 检查2: 脚本引用是否存在 (L7B_BROKEN_REF)"""
+    # 提取所有脚本/文件路径引用: scripts/xxx.py, bin/xxx, ./xxx.sh
+    # 以及代码块中 python scripts/xxx.py 或 ./bin/xxx 形式的引用
+    # 先去除 shebang 行 (#!/usr/bin/env, #!/bin/bash 等),避免误报 bin/env 等系统路径
+    body_for_refs = re.sub(r'(?m)^[\s]*#!.*$', '', body_text)
+    ref_patterns = [
+        r'(?:\./)?(?:scripts?|bin)/[\w./-]+',  # scripts/ 或 bin/ 路径
+        r'\./[\w-]+\.sh',                       # ./xxx.sh
+    ]
+    script_refs = set()
+    for pattern in ref_patterns:
+        for m in re.finditer(pattern, body_for_refs):
+            ref = m.group(0)
+            # 标准化: 去除 ./
+            if ref.startswith('./'):
+                ref = ref[2:]
+            # 去除尾部 . 或 /
+            ref = ref.rstrip('./')
+            if ref:
+                script_refs.add(ref)
+
+    if not script_refs:
+        # 没有引用任何脚本,不是错误
+        result["checks_passed"] += 1
+    else:
+        # 检查引用的脚本/文件是否实际存在于 skill 目录中
+        broken_refs = []
+        skill_dir = None
+        if skill_path is not None:
+            # skill_path 可能是 SKILL.md 文件路径或 skill 目录路径
+            try:
+                if skill_path.is_file():
+                    skill_dir = skill_path.parent
+                elif skill_path.is_dir():
+                    skill_dir = skill_path
+                else:
+                    # 路径不存在: 如果以 .md 结尾则视为文件路径,取父目录
+                    skill_dir = skill_path.parent if skill_path.suffix == '.md' else skill_path
+            except Exception:  # [V130 A1] 宽泛捕获: 路径判断可能因路径无效/权限等多种原因失败
+                skill_dir = None
+
+        if skill_dir is not None:
+            for ref in sorted(script_refs):
+                expected_path = skill_dir / ref
+                if not expected_path.exists():
+                    broken_refs.append((ref, expected_path))
+
+        if broken_refs:
+            for ref, expected_path in broken_refs:
+                result["issues"].append({
+                    "code": "L7B_BROKEN_REF",
+                    "message": f"引用了不存在的脚本/文件: {ref} (路径: {expected_path})"
+                })
+            result["checks_failed"] += 1
+        else:
+            # 所有引用的脚本都存在 (或无法验证文件系统时跳过)
+            result["checks_passed"] += 1
+
+
+def _check_llm_task_vagueness(body_text: str, result: dict) -> None:
+    """[V137 I13] 检查3: 任务描述是否具体 (L7B_VAGUE_TASK)"""
+    vague_patterns = [
+        r'按照skill规范执行.*操作',
+        r'处理用户输入并返回结果',
+        r'执行.*操作.*处理.*结果',
+    ]
+    vague_count = 0
+    for pattern in vague_patterns:
+        vague_count += len(re.findall(pattern, body_text))
+    if vague_count > 3:
+        result["issues"].append(f"L7B_VAGUE_TASK: 检测到 {vague_count} 处模糊任务描述")
+        result["checks_failed"] += 1
+    else:
+        result["checks_passed"] += 1
+
+
+def _check_llm_input_docs(body_text: str, has_code: bool, result: dict) -> None:
+    """[V137 I13] 检查4: 输入参数说明 (L7B_MISSING_INPUT)"""
+    has_input_section = bool(re.search(r'##\s*(?:输入|参数|输入格式|参数说明)', body_text))
+    has_input_table = bool(re.search(r'\|\s*参数名?\s*\|.*\|\s*类型\s*\|.*\|\s*必填', body_text))
+    if has_input_section or has_input_table:
+        result["checks_passed"] += 1
+    else:
+        # 如果有代码块,检查是否有参数说明
+        if has_code:
+            result["issues"].append("L7B_MISSING_INPUT: 有代码但缺少输入参数说明")
+            result["checks_failed"] += 1
+        else:
+            result["checks_passed"] += 1
+
+
+def _check_llm_output_docs(body_text: str, has_code: bool, result: dict) -> None:
+    """[V137 I13] 检查5: 输出格式说明 (L7B_NO_OUTPUT)"""
+    has_output_section = bool(re.search(r'##\s*(?:输出|输出格式|返回值|返回结果)', body_text))
+    has_output_example = bool(re.search(r'(?:输出|返回|结果).*[:：]\s*\n', body_text))
+    if has_output_section or has_output_example:
+        result["checks_passed"] += 1
+    else:
+        if has_code:
+            result["issues"].append("L7B_NO_OUTPUT: 有代码但缺少输出格式说明")
+            result["checks_failed"] += 1
+        else:
+            result["checks_passed"] += 1
+
+
+def _check_llm_contradictions(body_text: str, result: dict) -> None:
+    """[V137 I13] 检查6: 内容自相矛盾检测 (L7B_CONTRADICTION)"""
+    # 检查是否同时声称"免费"和"付费"
+    has_free_claim = bool(re.search(r'永久免费|完全免费|免费使用', body_text))
+    has_paid_claim = bool(re.search(r'付费版|Proprietary|suggested_price', body_text))
+    if has_free_claim and has_paid_claim:
+        result["issues"].append("L7B_CONTRADICTION: 同时存在免费和付费表述,内容自相矛盾")
+        result["checks_failed"] += 1
+    else:
+        result["checks_passed"] += 1
+
+
+def _compute_llm_score(result: dict) -> None:
+    """[V137 I13] 根据检查结果计算评分 (l7b_score / l7b_grade)"""
+    total_checks = result["checks_passed"] + result["checks_failed"]
+    if total_checks > 0:
+        pass_rate = result["checks_passed"] / total_checks
+    else:
+        pass_rate = 1.0
+
+    if not result["executable"]:
+        result["l7b_score"] = 20
+        result["l7b_grade"] = "F"
+    elif pass_rate == 1.0:
+        result["l7b_score"] = 100
+        result["l7b_grade"] = "A"
+    elif pass_rate >= 0.8:
+        result["l7b_score"] = 80
+        result["l7b_grade"] = "B"
+    elif pass_rate >= 0.6:
+        result["l7b_score"] = 60
+        result["l7b_grade"] = "C"
+    elif pass_rate >= 0.4:
+        result["l7b_score"] = 40
+        result["l7b_grade"] = "D"
+    else:
+        result["l7b_score"] = 15
+        result["l7b_grade"] = "F"
+
+
 def check_llm_executability(body_text: str, skill_slug: str = "", enable_l7b: bool = True, skill_path: Path = None) -> dict:
     """Layer 7b: LLM 深度审查 - 可执行性验证
 
@@ -1399,154 +1546,15 @@ def check_llm_executability(body_text: str, skill_slug: str = "", enable_l7b: bo
         return result
 
     # === 静态可执行性检查 (不依赖 LLM,基于规则) ===
-
-    # 检查1: 是否有代码块
-    code_blocks = re.findall(r'```(\w+)?', body_text)
-    has_code = len(code_blocks) > 0
-    if has_code:
-        result["checks_passed"] += 1
-    else:
-        # 没有代码块但声称有脚本
-        if re.search(r'scripts?/', body_text) or re.search(r'执行.*脚本', body_text):
-            result["issues"].append("L7B_NO_CODE: 声称有脚本但正文中无代码块")
-            result["checks_failed"] += 1
-            result["executable"] = False
-        else:
-            result["checks_passed"] += 1  # 纯描述性skill也可以
-
-    # 检查2: 脚本引用是否存在 (L7B_BROKEN_REF)
-    # 提取所有脚本/文件路径引用: scripts/xxx.py, bin/xxx, ./xxx.sh
-    # 以及代码块中 python scripts/xxx.py 或 ./bin/xxx 形式的引用
-    # 先去除 shebang 行 (#!/usr/bin/env, #!/bin/bash 等),避免误报 bin/env 等系统路径
-    body_for_refs = re.sub(r'(?m)^[\s]*#!.*$', '', body_text)
-    ref_patterns = [
-        r'(?:\./)?(?:scripts?|bin)/[\w./-]+',  # scripts/ 或 bin/ 路径
-        r'\./[\w-]+\.sh',                       # ./xxx.sh
-    ]
-    script_refs = set()
-    for pattern in ref_patterns:
-        for m in re.finditer(pattern, body_for_refs):
-            ref = m.group(0)
-            # 标准化: 去除 ./
-            if ref.startswith('./'):
-                ref = ref[2:]
-            # 去除尾部 . 或 /
-            ref = ref.rstrip('./')
-            if ref:
-                script_refs.add(ref)
-
-    if not script_refs:
-        # 没有引用任何脚本,不是错误
-        result["checks_passed"] += 1
-    else:
-        # 检查引用的脚本/文件是否实际存在于 skill 目录中
-        broken_refs = []
-        skill_dir = None
-        if skill_path is not None:
-            # skill_path 可能是 SKILL.md 文件路径或 skill 目录路径
-            try:
-                if skill_path.is_file():
-                    skill_dir = skill_path.parent
-                elif skill_path.is_dir():
-                    skill_dir = skill_path
-                else:
-                    # 路径不存在: 如果以 .md 结尾则视为文件路径,取父目录
-                    skill_dir = skill_path.parent if skill_path.suffix == '.md' else skill_path
-            except Exception:
-                skill_dir = None
-
-        if skill_dir is not None:
-            for ref in sorted(script_refs):
-                expected_path = skill_dir / ref
-                if not expected_path.exists():
-                    broken_refs.append((ref, expected_path))
-
-        if broken_refs:
-            for ref, expected_path in broken_refs:
-                result["issues"].append({
-                    "code": "L7B_BROKEN_REF",
-                    "message": f"引用了不存在的脚本/文件: {ref} (路径: {expected_path})"
-                })
-            result["checks_failed"] += 1
-        else:
-            # 所有引用的脚本都存在 (或无法验证文件系统时跳过)
-            result["checks_passed"] += 1
-
-    # 检查3: 任务描述是否具体
-    vague_patterns = [
-        r'按照skill规范执行.*操作',
-        r'处理用户输入并返回结果',
-        r'执行.*操作.*处理.*结果',
-    ]
-    vague_count = 0
-    for pattern in vague_patterns:
-        vague_count += len(re.findall(pattern, body_text))
-    if vague_count > 3:
-        result["issues"].append(f"L7B_VAGUE_TASK: 检测到 {vague_count} 处模糊任务描述")
-        result["checks_failed"] += 1
-    else:
-        result["checks_passed"] += 1
-
-    # 检查4: 输入参数说明
-    has_input_section = bool(re.search(r'##\s*(?:输入|参数|输入格式|参数说明)', body_text))
-    has_input_table = bool(re.search(r'\|\s*参数名?\s*\|.*\|\s*类型\s*\|.*\|\s*必填', body_text))
-    if has_input_section or has_input_table:
-        result["checks_passed"] += 1
-    else:
-        # 如果有代码块,检查是否有参数说明
-        if has_code:
-            result["issues"].append("L7B_MISSING_INPUT: 有代码但缺少输入参数说明")
-            result["checks_failed"] += 1
-        else:
-            result["checks_passed"] += 1
-
-    # 检查5: 输出格式说明
-    has_output_section = bool(re.search(r'##\s*(?:输出|输出格式|返回值|返回结果)', body_text))
-    has_output_example = bool(re.search(r'(?:输出|返回|结果).*[:：]\s*\n', body_text))
-    if has_output_section or has_output_example:
-        result["checks_passed"] += 1
-    else:
-        if has_code:
-            result["issues"].append("L7B_NO_OUTPUT: 有代码但缺少输出格式说明")
-            result["checks_failed"] += 1
-        else:
-            result["checks_passed"] += 1
-
-    # 检查6: 内容自相矛盾检测
-    # 检查是否同时声称"免费"和"付费"
-    has_free_claim = bool(re.search(r'永久免费|完全免费|免费使用', body_text))
-    has_paid_claim = bool(re.search(r'付费版|Proprietary|suggested_price', body_text))
-    if has_free_claim and has_paid_claim:
-        result["issues"].append("L7B_CONTRADICTION: 同时存在免费和付费表述,内容自相矛盾")
-        result["checks_failed"] += 1
-    else:
-        result["checks_passed"] += 1
+    has_code = _check_llm_code_blocks(body_text, result)   # 检查1: 是否有代码块
+    _check_llm_script_refs(body_text, skill_path, result)  # 检查2: 脚本引用是否存在 (L7B_BROKEN_REF)
+    _check_llm_task_vagueness(body_text, result)           # 检查3: 任务描述是否具体
+    _check_llm_input_docs(body_text, has_code, result)     # 检查4: 输入参数说明
+    _check_llm_output_docs(body_text, has_code, result)    # 检查5: 输出格式说明
+    _check_llm_contradictions(body_text, result)           # 检查6: 内容自相矛盾检测
 
     # === 评分 ===
-    total_checks = result["checks_passed"] + result["checks_failed"]
-    if total_checks > 0:
-        pass_rate = result["checks_passed"] / total_checks
-    else:
-        pass_rate = 1.0
-
-    if not result["executable"]:
-        result["l7b_score"] = 20
-        result["l7b_grade"] = "F"
-    elif pass_rate == 1.0:
-        result["l7b_score"] = 100
-        result["l7b_grade"] = "A"
-    elif pass_rate >= 0.8:
-        result["l7b_score"] = 80
-        result["l7b_grade"] = "B"
-    elif pass_rate >= 0.6:
-        result["l7b_score"] = 60
-        result["l7b_grade"] = "C"
-    elif pass_rate >= 0.4:
-        result["l7b_score"] = 40
-        result["l7b_grade"] = "D"
-    else:
-        result["l7b_score"] = 15
-        result["l7b_grade"] = "F"
+    _compute_llm_score(result)
 
     return result
 
@@ -1630,6 +1638,253 @@ _URL_DOMAIN_REGEX = re.compile(
 )
 
 
+def _check_security_external_urls(fm_text):
+    """[V136 G2] EXTERNAL_URL检查 - frontmatter中的非白名单外部URL域名"""
+    url_domains = _URL_DOMAIN_REGEX.findall(fm_text)
+    external_urls = []
+    for domain in url_domains:
+        domain_lower = domain.lower()
+        is_allowed = any(
+            domain_lower == a or domain_lower.endswith('.' + a)
+            for a in _EXTERNAL_URL_ALLOWLIST
+        )
+        if not is_allowed and domain not in external_urls:
+            external_urls.append(domain)
+    issues = []
+    count = 0
+    if external_urls:
+        count = len(external_urls)
+        issues.append({
+            "category": "EXTERNAL_URL",
+            "severity": "high",
+            "message": f"frontmatter中发现 {len(external_urls)} 个外部URL域名 (非白名单)",
+            "evidence": ", ".join(external_urls[:5]),
+        })
+    return issues, count
+
+
+def _check_security_injected_marketing(content):
+    """[V136 G2] INJECTED_MARKETING_TEXT检查 - 注入的无关营销模板文本"""
+    marketing_hits = []
+    count = 0
+    for pattern, desc in _INJECTED_MARKETING_PATTERNS:
+        matches = re.findall(pattern, content)
+        if matches:
+            marketing_hits.append(desc)
+            count += len(matches)
+    issues = []
+    if marketing_hits:
+        issues.append({
+            "category": "INJECTED_MARKETING_TEXT",
+            "severity": "high",
+            "message": f"发现注入营销模板文本: {'; '.join(marketing_hits)}",
+            "evidence": marketing_hits[0],
+        })
+    return issues, count
+
+
+def _check_security_api_key_exposure(content, slug):
+    """[V136 G2] API_KEY_EXPOSURE检查 - API密钥格式和Authorization头模式"""
+    # 安全类skill合法地讨论密钥模式作为功能文档,加入白名单豁免
+    _API_KEY_WHITELIST = {
+        "security-audit",  # 安全审计skill合法文档化AKIA等密钥检测模式
+    }
+    api_key_hits = []
+    count = 0
+    if slug not in _API_KEY_WHITELIST:
+        for pattern, desc in _API_KEY_EXPOSURE_PATTERNS:
+            matches = re.findall(pattern, content)
+            if matches:
+                api_key_hits.append(desc)
+                count += len(matches)
+    issues = []
+    if api_key_hits:
+        issues.append({
+            "category": "API_KEY_EXPOSURE",
+            "severity": "medium",
+            "message": f"发现API密钥暴露模式: {'; '.join(api_key_hits)}",
+            "evidence": api_key_hits[0],
+        })
+    return issues, count
+
+
+def _check_security_slug_mismatch(fm, body_text, slug):
+    """[V136 G2] SLUG_CONTENT_MISMATCH检查 - slug关键词与内容不匹配"""
+    # 启发式: slug关键词应出现在description/body/name/displayName中
+    # 过滤停用词,避免对通用词(and/free/pro等)的误报
+    description = str(fm.get('description', '')).strip()
+    issues = []
+    count = 0
+    if slug and description and len(slug) > 3:
+        slug_words = [w for w in slug.split('-')
+                      if len(w) > 2 and w.lower() not in _SLUG_STOPWORDS]
+        if slug_words:
+            # 在description, body_text, name, displayName中搜索
+            name_val = str(fm.get('name', '')).lower()
+            display_val = str(fm.get('displayName', '')).lower()
+            search_text = (description + ' ' + body_text[:3000] +
+                           ' ' + name_val + ' ' + display_val).lower()
+            matched_words = [w for w in slug_words if w.lower() in search_text]
+            # 如果没有任何slug关键词出现在搜索文本中,标记为不匹配
+            if not matched_words:
+                count = 1
+                issues.append({
+                    "category": "SLUG_CONTENT_MISMATCH",
+                    "severity": "medium",
+                    "message": f"slug关键词 {slug_words} 均未出现在description/body中",
+                    "evidence": f"slug='{slug}', desc前50字符='{description[:50]}'",
+                })
+    return issues, count
+
+
+def _check_security_duplicate_yaml(fm_text):
+    """[V136 G2] DUPLICATE_YAML_FIELDS检查 - frontmatter重复顶层键"""
+    # 检查frontmatter原始文本中的重复顶层键
+    issues = []
+    count = 0
+    if fm_text:
+        # 匹配行首的 key: 模式 (非缩进行)
+        fm_keys = re.findall(r'^([a-zA-Z_][a-zA-Z0-9_]*)\s*:', fm_text, re.MULTILINE)
+        key_counts = {}
+        for key in fm_keys:
+            key_counts[key] = key_counts.get(key, 0) + 1
+        duplicates = {k: v for k, v in key_counts.items() if v > 1}
+        if duplicates:
+            count = sum(duplicates.values())
+            issues.append({
+                "category": "DUPLICATE_YAML_FIELDS",
+                "severity": "medium",
+                "message": f"frontmatter存在重复字段: {dict(duplicates)}",
+                "evidence": f"重复字段: {', '.join(f'{k}({v}次)' for k, v in duplicates.items())}",
+            })
+    return issues, count
+
+
+def _check_security_tag_mismatch(fm, body_text):
+    """[V136 G2] TAG_MISMATCH检查 - tags字段与内容不匹配"""
+    # 启发式: tags为逗号分隔字符串时,检查是否与内容相关
+    description = str(fm.get('description', '')).strip()
+    tags_val = fm.get('tags', None)
+    issues = []
+    count = 0
+    if tags_val and isinstance(tags_val, str):
+        tag_words = [t.strip().strip("'\"") for t in tags_val.split(',') if t.strip()]
+        tag_words = [t for t in tag_words if len(t) > 1]
+        if tag_words:
+            search_text = (description + ' ' + body_text[:2000]).lower()
+            matched_tags = [t for t in tag_words if t.lower() in search_text]
+            # 如果超过一半的tag词未在内容中出现,标记为不匹配
+            unmatched = len(tag_words) - len(matched_tags)
+            if unmatched > len(tag_words) / 2:
+                count = 1
+                issues.append({
+                    "category": "TAG_MISMATCH",
+                    "severity": "low",
+                    "message": f"tags字段与内容不匹配: {tag_words} (匹配{len(matched_tags)}/{len(tag_words)})",
+                    "evidence": f"未匹配tags: {[t for t in tag_words if t.lower() not in search_text]}",
+                })
+    return issues, count
+
+
+def _check_security_garbled_text(content):
+    """[V136 G2] GARBLED_TEXT检查 - 乱码/编码错误文本"""
+    garbled_hits = []
+    count = 0
+    for pattern, desc in _GARBLED_TEXT_PATTERNS:
+        matches = re.findall(pattern, content)
+        if matches:
+            garbled_hits.append(desc)
+            count += len(matches)
+    issues = []
+    if garbled_hits:
+        issues.append({
+            "category": "GARBLED_TEXT",
+            "severity": "low",
+            "message": f"发现乱码/编码错误文本: {'; '.join(garbled_hits)}",
+            "evidence": garbled_hits[0],
+        })
+    return issues, count
+
+
+def _check_security_dependency_contradiction(body_text):
+    """[V136 G2] DEPENDENCY_CONTRADICTION检查 - 依赖说明与已知限制矛盾"""
+    # 检查"需要API Key"和"无需API Key"同时出现
+    # 使用负向后顾(?<![无不])排除"无需"中的"需"导致的误报
+    # 使用负向后顾(?<!非)排除"非API Key"的否定表述
+    # 使用[^。；\n]避免跨句匹配,排除"回报要求...API密钥"等误报
+    # 排除可选/高级功能场景(如需/若需/可选/专业版/外部/脚本等)以减少误报
+    # 使用负向前瞻(?!\s*[吗呢])排除FAQ问句"需要API Key吗？"的误报
+    _OPTIONAL_INDICATORS = re.compile(
+        r'(?:如需|若需|可选|专业版|高级功能|额外配置|云端|云服务|外部服务|外部API|外部|批量|企业版|付费|Pro版|增强|升级|对应服务|对应|各自平台|各自|自定义|CDN|短信|推送|更高|专业|批量扫描|官方API|兼容API|外部写作|TTS|图像生成|云向量|云浏览器|OpenAI|Deepgram|ElevenLabs|百度|模型|目标API|脚本|被守护|可能|如使用|若使用)',
+        re.IGNORECASE
+    )
+    # FAQ问句行模式: 以Q/### Q/问开头,或包含问号
+    _QA_LINE_PATTERN = re.compile(r'^(?:#{1,6}\s*)?(?:Q\d*[：:]|问[：:]|.*？\s*$)', re.MULTILINE)
+    needs_api_key = False
+    for m in re.finditer(
+        r'(?<![无不])(?:需要|需|要求)[^。；\n]{0,10}(?<!非)(?:API\s*Key|API密钥|API\s*key|api[_-]?key)(?!\s*[吗呢])',
+        body_text, re.IGNORECASE
+    ):
+        # 排除FAQ问句行: 如果匹配所在行是Q&A问句,跳过
+        line_start = body_text.rfind('\n', 0, m.start()) + 1
+        line_end = body_text.find('\n', m.end())
+        if line_end == -1:
+            line_end = len(body_text)
+        line_text = body_text[line_start:line_end]
+        if _QA_LINE_PATTERN.match(line_text.strip()):
+            continue
+        # 检查匹配前的50字符上下文和匹配文本本身是否包含可选/外部功能指示词
+        context_start = max(0, m.start() - 50)
+        context = body_text[context_start:m.end()]
+        if not _OPTIONAL_INDICATORS.search(context):
+            needs_api_key = True
+            break
+    no_api_key = bool(re.search(
+        r'(?:无需|不需要|无须|无需额外).{0,10}(?:API|密钥|API\s*Key)',
+        body_text, re.IGNORECASE
+    ))
+    issues = []
+    count = 0
+    if needs_api_key and no_api_key:
+        count = 1
+        issues.append({
+            "category": "DEPENDENCY_CONTRADICTION",
+            "severity": "low",
+            "message": "依赖说明与已知限制矛盾: 同时出现'需要API Key'和'无需API Key'表述",
+            "evidence": "body中同时存在需要/无需API Key的矛盾表述",
+        })
+    return issues, count
+
+
+def _compute_security_grade(issues):
+    """[V136 G2] 安全审计评分与评级计算"""
+    # 基础分100, 每个high问题扣25, medium扣15, low扣10
+    penalty = 0
+    for issue in issues:
+        sev = issue["severity"]
+        if sev == "high":
+            penalty += 25
+        elif sev == "medium":
+            penalty += 15
+        elif sev == "low":
+            penalty += 10
+    score = max(0, 100 - penalty)
+
+    # 评级
+    if score >= L8_GRADE_A:  # V121 W3: L8安全审计评级
+        grade = "A"
+    elif score >= L3_PASS_THRESHOLD:
+        grade = "B"
+    elif score >= L8_GRADE_B:
+        grade = "C"
+    elif score >= L6_GRADE_C:  # V121 W3: L8无GRADE_C常量,使用L6_GRADE_C(同值30)
+        grade = "D"
+    else:
+        grade = "F"
+    passed = len(issues) == 0
+    return score, grade, passed
+
+
 def check_security_quality(content: str, fm: dict, fm_text: str, body_text: str,
                            slug: str, dir_name: str) -> dict:
     """Layer 8: 安全审计 - 检测8类安全审核失败模式
@@ -1675,209 +1930,53 @@ def check_security_quality(content: str, fm: dict, fm_text: str, body_text: str,
 
     # === 1. EXTERNAL_URL 检查 ===
     # 只检查frontmatter中的URL (body中的API端点文档是合法的)
-    url_domains = _URL_DOMAIN_REGEX.findall(fm_text)
-    external_urls = []
-    for domain in url_domains:
-        domain_lower = domain.lower()
-        is_allowed = any(
-            domain_lower == a or domain_lower.endswith('.' + a)
-            for a in _EXTERNAL_URL_ALLOWLIST
-        )
-        if not is_allowed and domain not in external_urls:
-            external_urls.append(domain)
-    if external_urls:
-        category_counts["EXTERNAL_URL"] = len(external_urls)
-        issues.append({
-            "category": "EXTERNAL_URL",
-            "severity": "high",
-            "message": f"frontmatter中发现 {len(external_urls)} 个外部URL域名 (非白名单)",
-            "evidence": ", ".join(external_urls[:5]),
-        })
+    _iss, _cnt = _check_security_external_urls(fm_text)
+    issues.extend(_iss)
+    category_counts["EXTERNAL_URL"] = _cnt
 
     # === 2. INJECTED_MARKETING_TEXT 检查 ===
-    marketing_hits = []
-    for pattern, desc in _INJECTED_MARKETING_PATTERNS:
-        matches = re.findall(pattern, content)
-        if matches:
-            marketing_hits.append(desc)
-            category_counts["INJECTED_MARKETING_TEXT"] += len(matches)
-    if marketing_hits:
-        issues.append({
-            "category": "INJECTED_MARKETING_TEXT",
-            "severity": "high",
-            "message": f"发现注入营销模板文本: {'; '.join(marketing_hits)}",
-            "evidence": marketing_hits[0],
-        })
+    _iss, _cnt = _check_security_injected_marketing(content)
+    issues.extend(_iss)
+    category_counts["INJECTED_MARKETING_TEXT"] = _cnt
 
     # === 3. API_KEY_EXPOSURE 检查 ===
     # 安全类skill合法地讨论密钥模式作为功能文档,加入白名单豁免
-    _API_KEY_WHITELIST = {
-        "security-audit",  # 安全审计skill合法文档化AKIA等密钥检测模式
-    }
-    api_key_hits = []
-    if slug not in _API_KEY_WHITELIST:
-        for pattern, desc in _API_KEY_EXPOSURE_PATTERNS:
-            matches = re.findall(pattern, content)
-            if matches:
-                api_key_hits.append(desc)
-                category_counts["API_KEY_EXPOSURE"] += len(matches)
-    if api_key_hits:
-        issues.append({
-            "category": "API_KEY_EXPOSURE",
-            "severity": "medium",
-            "message": f"发现API密钥暴露模式: {'; '.join(api_key_hits)}",
-            "evidence": api_key_hits[0],
-        })
+    _iss, _cnt = _check_security_api_key_exposure(content, slug)
+    issues.extend(_iss)
+    category_counts["API_KEY_EXPOSURE"] = _cnt
 
     # === 4. SLUG_CONTENT_MISMATCH 检查 ===
     # 启发式: slug关键词应出现在description/body/name/displayName中
     # 过滤停用词,避免对通用词(and/free/pro等)的误报
-    description = str(fm.get('description', '')).strip()
-    if slug and description and len(slug) > 3:
-        slug_words = [w for w in slug.split('-')
-                      if len(w) > 2 and w.lower() not in _SLUG_STOPWORDS]
-        if slug_words:
-            # 在description, body_text, name, displayName中搜索
-            name_val = str(fm.get('name', '')).lower()
-            display_val = str(fm.get('displayName', '')).lower()
-            search_text = (description + ' ' + body_text[:3000] +
-                           ' ' + name_val + ' ' + display_val).lower()
-            matched_words = [w for w in slug_words if w.lower() in search_text]
-            # 如果没有任何slug关键词出现在搜索文本中,标记为不匹配
-            if not matched_words:
-                category_counts["SLUG_CONTENT_MISMATCH"] = 1
-                issues.append({
-                    "category": "SLUG_CONTENT_MISMATCH",
-                    "severity": "medium",
-                    "message": f"slug关键词 {slug_words} 均未出现在description/body中",
-                    "evidence": f"slug='{slug}', desc前50字符='{description[:50]}'",
-                })
+    _iss, _cnt = _check_security_slug_mismatch(fm, body_text, slug)
+    issues.extend(_iss)
+    category_counts["SLUG_CONTENT_MISMATCH"] = _cnt
 
     # === 5. DUPLICATE_YAML_FIELDS 检查 ===
     # 检查frontmatter原始文本中的重复顶层键
-    if fm_text:
-        # 匹配行首的 key: 模式 (非缩进行)
-        fm_keys = re.findall(r'^([a-zA-Z_][a-zA-Z0-9_]*)\s*:', fm_text, re.MULTILINE)
-        key_counts = {}
-        for key in fm_keys:
-            key_counts[key] = key_counts.get(key, 0) + 1
-        duplicates = {k: v for k, v in key_counts.items() if v > 1}
-        if duplicates:
-            dup_count = sum(duplicates.values())
-            category_counts["DUPLICATE_YAML_FIELDS"] = dup_count
-            issues.append({
-                "category": "DUPLICATE_YAML_FIELDS",
-                "severity": "medium",
-                "message": f"frontmatter存在重复字段: {dict(duplicates)}",
-                "evidence": f"重复字段: {', '.join(f'{k}({v}次)' for k, v in duplicates.items())}",
-            })
+    _iss, _cnt = _check_security_duplicate_yaml(fm_text)
+    issues.extend(_iss)
+    category_counts["DUPLICATE_YAML_FIELDS"] = _cnt
 
     # === 6. TAG_MISMATCH 检查 ===
     # 启发式: tags为逗号分隔字符串时,检查是否与内容相关
-    tags_val = fm.get('tags', None)
-    if tags_val and isinstance(tags_val, str):
-        tag_words = [t.strip().strip("'\"") for t in tags_val.split(',') if t.strip()]
-        tag_words = [t for t in tag_words if len(t) > 1]
-        if tag_words:
-            search_text = (description + ' ' + body_text[:2000]).lower()
-            matched_tags = [t for t in tag_words if t.lower() in search_text]
-            # 如果超过一半的tag词未在内容中出现,标记为不匹配
-            unmatched = len(tag_words) - len(matched_tags)
-            if unmatched > len(tag_words) / 2:
-                category_counts["TAG_MISMATCH"] = 1
-                issues.append({
-                    "category": "TAG_MISMATCH",
-                    "severity": "low",
-                    "message": f"tags字段与内容不匹配: {tag_words} (匹配{len(matched_tags)}/{len(tag_words)})",
-                    "evidence": f"未匹配tags: {[t for t in tag_words if t.lower() not in search_text]}",
-                })
+    _iss, _cnt = _check_security_tag_mismatch(fm, body_text)
+    issues.extend(_iss)
+    category_counts["TAG_MISMATCH"] = _cnt
 
     # === 7. GARBLED_TEXT 检查 ===
-    garbled_hits = []
-    for pattern, desc in _GARBLED_TEXT_PATTERNS:
-        matches = re.findall(pattern, content)
-        if matches:
-            garbled_hits.append(desc)
-            category_counts["GARBLED_TEXT"] += len(matches)
-    if garbled_hits:
-        issues.append({
-            "category": "GARBLED_TEXT",
-            "severity": "low",
-            "message": f"发现乱码/编码错误文本: {'; '.join(garbled_hits)}",
-            "evidence": garbled_hits[0],
-        })
+    _iss, _cnt = _check_security_garbled_text(content)
+    issues.extend(_iss)
+    category_counts["GARBLED_TEXT"] = _cnt
 
     # === 8. DEPENDENCY_CONTRADICTION 检查 ===
     # 检查"需要API Key"和"无需API Key"同时出现
-    # 使用负向后顾(?<![无不])排除"无需"中的"需"导致的误报
-    # 使用负向后顾(?<!非)排除"非API Key"的否定表述
-    # 使用[^。；\n]避免跨句匹配,排除"回报要求...API密钥"等误报
-    # 排除可选/高级功能场景(如需/若需/可选/专业版/外部/脚本等)以减少误报
-    # 使用负向前瞻(?!\s*[吗呢])排除FAQ问句"需要API Key吗？"的误报
-    _OPTIONAL_INDICATORS = re.compile(
-        r'(?:如需|若需|可选|专业版|高级功能|额外配置|云端|云服务|外部服务|外部API|外部|批量|企业版|付费|Pro版|增强|升级|对应服务|对应|各自平台|各自|自定义|CDN|短信|推送|更高|专业|批量扫描|官方API|兼容API|外部写作|TTS|图像生成|云向量|云浏览器|OpenAI|Deepgram|ElevenLabs|百度|模型|目标API|脚本|被守护|可能|如使用|若使用)',
-        re.IGNORECASE
-    )
-    # FAQ问句行模式: 以Q/### Q/问开头,或包含问号
-    _QA_LINE_PATTERN = re.compile(r'^(?:#{1,6}\s*)?(?:Q\d*[：:]|问[：:]|.*？\s*$)', re.MULTILINE)
-    needs_api_key = False
-    for m in re.finditer(
-        r'(?<![无不])(?:需要|需|要求)[^。；\n]{0,10}(?<!非)(?:API\s*Key|API密钥|API\s*key|api[_-]?key)(?!\s*[吗呢])',
-        body_text, re.IGNORECASE
-    ):
-        # 排除FAQ问句行: 如果匹配所在行是Q&A问句,跳过
-        line_start = body_text.rfind('\n', 0, m.start()) + 1
-        line_end = body_text.find('\n', m.end())
-        if line_end == -1:
-            line_end = len(body_text)
-        line_text = body_text[line_start:line_end]
-        if _QA_LINE_PATTERN.match(line_text.strip()):
-            continue
-        # 检查匹配前的50字符上下文和匹配文本本身是否包含可选/外部功能指示词
-        context_start = max(0, m.start() - 50)
-        context = body_text[context_start:m.end()]
-        if not _OPTIONAL_INDICATORS.search(context):
-            needs_api_key = True
-            break
-    no_api_key = bool(re.search(
-        r'(?:无需|不需要|无须|无需额外).{0,10}(?:API|密钥|API\s*Key)',
-        body_text, re.IGNORECASE
-    ))
-    if needs_api_key and no_api_key:
-        category_counts["DEPENDENCY_CONTRADICTION"] = 1
-        issues.append({
-            "category": "DEPENDENCY_CONTRADICTION",
-            "severity": "low",
-            "message": "依赖说明与已知限制矛盾: 同时出现'需要API Key'和'无需API Key'表述",
-            "evidence": "body中同时存在需要/无需API Key的矛盾表述",
-        })
+    _iss, _cnt = _check_security_dependency_contradiction(body_text)
+    issues.extend(_iss)
+    category_counts["DEPENDENCY_CONTRADICTION"] = _cnt
 
     # === 评分 ===
-    # 基础分100, 每个high问题扣25, medium扣15, low扣10
-    penalty = 0
-    for issue in issues:
-        sev = issue["severity"]
-        if sev == "high":
-            penalty += 25
-        elif sev == "medium":
-            penalty += 15
-        elif sev == "low":
-            penalty += 10
-    score = max(0, 100 - penalty)
-
-    # 评级
-    if score >= 90:
-        grade = "A"
-    elif score >= 70:
-        grade = "B"
-    elif score >= 50:
-        grade = "C"
-    elif score >= 30:
-        grade = "D"
-    else:
-        grade = "F"
-
-    passed = len(issues) == 0
+    score, grade, passed = _compute_security_grade(issues)
 
     return {
         "issues": issues,
@@ -2077,11 +2176,11 @@ def check_visibility_quality(fm: dict, body_text: str) -> dict:
     score = max(0, 100 - penalty)
 
     # 评级 A(90+) / B(70+) / C(50+) / D(<50)
-    if score >= 90:
+    if score >= L6_GRADE_A:  # V121 W3: L9可见性评级(无L9常量,使用L6同值阈值)
         grade = "A"
-    elif score >= 70:
+    elif score >= L3_PASS_THRESHOLD:
         grade = "B"
-    elif score >= 50:
+    elif score >= L6_GRADE_B:
         grade = "C"
     else:
         grade = "D"
@@ -2094,6 +2193,463 @@ def check_visibility_quality(fm: dict, body_text: str) -> dict:
         "grade": grade,
         "passed": passed,
         "check_results": check_results,
+    }
+
+
+# ============ E12: 对抗式安全审计 (Adversarial Security Audit) ============
+# 模拟攻击者视角，在现有check_security_quality()和source_security_scan之上
+# 构建对抗维度检测，尝试绕过现有安全检查的攻击模式
+
+# --- 对抗维度1: Prompt注入攻击模式 ---
+_PROMPT_INJECTION_PATTERNS = [
+    (r'(?i)ignore\s+(?:all\s+)?(?:previous|prior|above)\s+instructions', "指令覆写攻击(ignore previous)"),
+    (r'(?i)system\s*[:：]\s*(?:you\s+are|act\s+as|forget)', "系统提示覆写(system: you are)"),
+    (r'(?i)forget\s+(?:all\s+)?(?:previous|prior|above|your\s+instructions)', "记忆清除攻击(forget all)"),
+    (r'(?i)you\s+are\s+now\s+(?:a\s+)?(?:different|new|jailbroken|unrestricted)', "角色覆写攻击(you are now)"),
+    (r'(?i)(?:disregard|override|bypass)\s+(?:all\s+)?(?:safety|security|content)\s+(?:filter|check|policy|rule)', "安全绕过攻击(bypass safety)"),
+    (r'(?i)pretend\s+(?:you\s+are|to\s+be)\s+(?:an?\s+)?(?:unrestricted|unfiltered|unlimited)\s+(?:AI|assistant|model)', "伪装攻击(pretend unrestricted)"),
+    (r'(?i)<!--\s*.*?(?:ignore|bypass|skip|override).*?-->', "HTML注释隐藏指令(<!-- ignore -->)"),
+    (r'(?i)\[INST\].*?(?:ignore|override|bypass).*?\[/INST\]', "LLM标记注入([INST] ignore [/INST])"),
+    (r'(?i)NEW\s+INSTRUCTIONS?\s*[:：]', "新指令注入(NEW INSTRUCTIONS:)"),
+    (r'(?i){{(?:system|jailbreak|override)}}', "模板变量注入({{system}})"),
+]
+
+# --- 对抗维度2: 数据外泄风险模式 ---
+_DATA_EXFILTRATION_PATTERNS = [
+    (r'(?i)curl\s+(?:-X\s+POST\s+)?https?://(?!localhost|127\.0\.0\.1|skillhub\.cn|github\.com|pypi\.org|npmjs\.com)', "curl外发到非白名单域名"),
+    (r'(?i)wget\s+(?:--post-data|--post-file)\s+', "wget POST数据外发"),
+    (r'(?i)requests\.(?:post|put)\s*\(\s*[\'"]https?://(?!localhost|127\.0\.0\.1)', "Python requests.post外发"),
+    (r'(?i)(?:fetch|axios|http\.post)\s*\(\s*[\'"]https?://(?!localhost|127\.0\.0\.1)', "JS fetch/axios外发"),
+    (r'(?i)os\.environ(?:\.get\(|\[)\s*[\'"](?:API_KEY|SECRET|TOKEN|PASSWORD|PRIVATE_KEY)', "环境变量读取敏感信息"),
+    (r'(?i)process\.env\.(?:API_KEY|SECRET|TOKEN|PASSWORD|PRIVATE_KEY)', "Node.js环境变量读取"),
+    (r'(?i)base64\.b64(?:decode|encode)\s*\(.{20,}\)', "Base64编解码大量数据(可能用于数据混淆外发)"),
+    (r'(?i)(?:open|read_file|cat)\s*\(\s*[\'"]/(?:etc/passwd|proc/self/environ|root/\.ssh)', "敏感系统文件读取"),
+    (r'(?i)(?:socket|connect)\s*\(\s*[\'"]\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}[\'"]', "直接IP socket连接"),
+    (r'(?i)(?:subprocess|os\.system|os\.popen)\s*\(\s*[\'"](?:nc|netcat|ncat)', "netcat反向连接"),
+]
+
+# --- 对抗维度3: 权限提升风险模式 ---
+_PRIVILEGE_ESCALATION_PATTERNS = [
+    (r'(?i)(?:sudo|su\s+-)\s+', "sudo/su权限提升"),
+    (r'(?i)chmod\s+[0-7]{3,4}\s+/(?:etc|usr|bin|root|var)', "系统目录权限修改"),
+    (r'(?i)chown\s+\S+\s+/(?:etc|usr|bin|root)', "系统目录属主修改"),
+    (r'(?i)(?:useradd|usermod|adduser)\s+', "用户创建/修改"),
+    (r'(?i)(?:write|append)\s*\(\s*[\'"]/(?:etc/passwd|etc/shadow|etc/sudoers)', "系统认证文件写入"),
+    (r'(?i)(?:crontab\s+-[elr]|systemctl\s+enable|systemctl\s+start)', "持久化/自启动"),
+    (r'(?i)(?:registry|regedit|reg\s+add)\s+', "Windows注册表修改"),
+    (r'(?i)(?:netsh|firewall\s+(?:add|set))\s+', "防火墙规则修改"),
+    (r'(?i)(?:docker\s+exec|kubectl\s+exec)\s+.*?(?:--privileged|--net=host)', "容器特权模式"),
+    (r'(?i)(?:setuid|setgid|SUID)', "SUID/SGID权限位设置"),
+]
+
+# --- 对抗维度4: 供应链风险模式 ---
+_SUPPLY_CHAIN_PATTERNS = [
+    # Typosquatting: 常见包名的拼写错误
+    (r'(?i)(?:pip\s+install|import)\s+(?:reqeusts|requets|requestes)\b', "Typosquatting: reqeusts (非requests)"),
+    (r'(?i)(?:pip\s+install|import)\s+(?:numpi|numpy2|nump)\b', "Typosquatting: numpi (非numpy)"),
+    (r'(?i)(?:pip\s+install|import)\s+(?:djang0|django2|djangoo)\b', "Typosquatting: djang0 (非django)"),
+    (r'(?i)(?:npm\s+install|require)\s+[\'"](?:lodahsh|lodahs|lowdash)\b', "Typosquatting: lodahsh (非lodash)"),
+    (r'(?i)(?:npm\s+install|require)\s+[\'"](?:exprss|expres|expresss)\b', "Typosquatting: exprss (非express)"),
+    # 非官方源
+    (r'(?i)pip\s+install\s+--index-url\s+(?!https://pypi\.org)', "非官方PyPI源"),
+    (r'(?i)npm\s+install\s+--registry\s+(?!https://registry\.npmjs\.org)', "非官方npm源"),
+    # 已知漏洞包版本
+    (r'(?i)install\s+(?:log4j\s+2\.(?:0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16)\b)', "log4j已知漏洞版本(<2.17)"),
+    (r'(?i)install\s+(?:openssl\s+1\.(?:0|1)\.\d)', "OpenSSL已知漏洞版本(1.x)"),
+    (r'(?i)install\s+(?:jackson-databind\s+2\.(?:0|1|2|3|4|5|6|7|8|9)\.\d)', "jackson-databind已知漏洞版本(<2.10)"),
+]
+
+# --- 对抗维度5: 对抗样本检测模式 ---
+_ADVERSARIAL_SAMPLE_PATTERNS = [
+    # 关键词堆砌: 同一行超过5个技术关键词
+    (r'(?:^|\n)[^\n]*(?:automation|pipeline|optimize|enhance|streamline|orchestrate|integrate|leverage|synergize|scalable|robust|seamless){5,}', "关键词堆砌(5+流行技术词)"),
+    # 过度优化的summary: 恰好100字符(利用边界值)
+    (r'summary:\s*.{95,100}\n', "summary边界值优化(95-100字符)"),
+    # 模板填充检测: 高度重复的句式结构
+    (r'(?:本skill|本工具|本模块).{0,20}(?:提供|支持|实现).{0,20}(?:自动化|智能化|高效).{0,20}(?:处理|分析|管理)', "模板化句式结构"),
+    # 分数操纵: 包含评分关键词但不提供实际功能
+    (r'(?i)(?:comprehensive|complete|full-featured|production-ready|enterprise-grade|industry-standard)\s+(?:solution|tool|system)\s+(?:that|which)\s+(?:provides|offers|enables)', "评分操纵: 空洞的形容词堆砌"),
+    # 隐藏文本: 不可见字符或零宽字符
+    (r'[\u200b-\u200f\u2028-\u202f\u2060-\u206f]', "零宽/不可见字符(可能用于隐藏指令)"),
+    # Unicode同形字攻击: 用相似Unicode字符替换ASCII
+    (r'[\u0430-\u044f\u0391-\u03a9](?=[a-zA-Z])', "Unicode同形字(西里尔/希腊字母混入拉丁文本)"),
+]
+
+
+def _scan_adversarial_dimension(patterns, content, severity_fn, attack_label, attack_suffix):
+    """[V134 E2] 扫描单个对抗维度的通用检测逻辑
+
+    封装5个对抗维度检测中重复的模式匹配循环, 统一findings构造和攻击路径生成。
+
+    Args:
+        patterns: (pattern, desc) 元组列表 — 对抗模式正则及描述
+        content: 待检测的完整内容
+        severity_fn: 接受desc参数并返回severity字符串('critical'/'high'/'medium'/'low')的函数
+        attack_label: 攻击路径前缀标签 (如"Prompt注入")
+        attack_suffix: 攻击路径后缀描述 (如"攻击者可覆写AI代理指令")
+
+    Returns:
+        tuple: (findings, attack_paths)
+            - findings: 检测结果列表, 每项含pattern_desc/match_count/evidence/severity
+            - attack_paths: 攻击路径描述字符串列表
+    """
+    findings = []
+    attack_paths = []
+    for pattern, desc in patterns:
+        matches = re.findall(pattern, content)
+        if matches:
+            findings.append({
+                'pattern_desc': desc,
+                'match_count': len(matches),
+                'evidence': matches[0][:100] if matches else '',
+                'severity': severity_fn(desc),
+            })
+            attack_paths.append(
+                f"{attack_label}: {desc} (匹配{len(matches)}次) — {attack_suffix}"
+            )
+    return findings, attack_paths
+
+
+def _compute_adversarial_risk_rating(base_audit, source_scan, dimensions):
+    """[V134 E2] 综合对抗风险评级与评分计算
+
+    汇总基础审计、源安全扫描和5个对抗维度的风险级别, 确定整体风险等级和评分。
+
+    Args:
+        base_audit: check_security_quality()返回的基础审计结果
+        source_scan: source_security_scan.scan_content()返回的源扫描结果
+        dimensions: 5个对抗维度的检测结果字典
+
+    Returns:
+        tuple: (overall_risk_level, overall_passed, overall_score)
+    """
+    # 收集所有维度和非维度的风险级别
+    all_risk_levels = []
+
+    # 基础审计结果
+    if not base_audit.get('passed', False):  # V161: fail-safe默认False(原True为fail-open)
+        all_risk_levels.append(base_audit.get('grade', 'F') if base_audit.get('grade') else 'medium')
+
+    # 源安全扫描结果
+    if not source_scan.get('passed', False):  # V161: fail-safe默认False
+        all_risk_levels.append(source_scan.get('risk_level', 'medium'))
+
+    # 对抗维度结果
+    for dim_name, dim_result in dimensions.items():
+        if not dim_result['passed']:
+            all_risk_levels.append(dim_result['risk_level'])
+
+    # 确定整体风险级别
+    if not all_risk_levels:
+        overall_risk_level = 'safe'
+    elif 'critical' in all_risk_levels:
+        overall_risk_level = 'critical'
+    elif 'high' in all_risk_levels:
+        overall_risk_level = 'high'
+    elif 'medium' in all_risk_levels:
+        overall_risk_level = 'medium'
+    else:
+        overall_risk_level = 'low'
+
+    overall_passed = overall_risk_level in ('safe', 'low')
+
+    # 计算对抗审计评分 (100=最安全, 0=最危险)
+    total_findings = sum(
+        len(dim['findings']) for dim in dimensions.values()
+    )
+    critical_findings = sum(
+        1 for dim in dimensions.values()
+        for f in dim['findings'] if f.get('severity') == 'critical'
+    )
+    high_findings = sum(
+        1 for dim in dimensions.values()
+        for f in dim['findings'] if f.get('severity') == 'high'
+    )
+    medium_findings = sum(
+        1 for dim in dimensions.values()
+        for f in dim['findings'] if f.get('severity') == 'medium'
+    )
+    low_findings = total_findings - critical_findings - high_findings - medium_findings
+
+    score = 100
+    score -= critical_findings * 25  # critical: -25/个
+    score -= high_findings * 15      # high: -15/个
+    score -= medium_findings * 8     # medium: -8/个
+    score -= low_findings * 3        # low: -3/个
+    # 基础审计未通过也扣分
+    if not base_audit.get('passed', False):  # V161: fail-safe默认False
+        score -= 10
+    if not source_scan.get('passed', False):  # V161: fail-safe默认False
+        score -= 5
+    score = max(0, min(100, score))
+
+    return overall_risk_level, overall_passed, score
+
+
+def _generate_mitigation_suggestions(dimensions):
+    """[V134 E2] 根据对抗维度检测结果生成缓解建议
+
+    Args:
+        dimensions: 5个对抗维度的检测结果字典
+
+    Returns:
+        list: 缓解建议字符串列表
+    """
+    mitigation_suggestions = []
+    if dimensions['prompt_injection']['findings']:
+        mitigation_suggestions.append(
+            "移除所有prompt注入模式(如'ignore previous instructions'); "
+            "如需提供使用说明, 使用标准文档格式而非指令覆写"
+        )
+    if dimensions['data_exfiltration']['findings']:
+        mitigation_suggestions.append(
+            "移除所有数据外泄路径(如curl/wget到外部域名); "
+            "如需网络通信, 仅使用白名单域名并添加用途说明"
+        )
+    if dimensions['privilege_escalation']['findings']:
+        mitigation_suggestions.append(
+            "移除所有权限提升操作(如sudo/chmod系统目录); "
+            "如需文件操作, 仅操作用户目录并声明权限范围"
+        )
+    if dimensions['supply_chain']['findings']:
+        mitigation_suggestions.append(
+            "修正所有供应链风险(如typosquatting包名); "
+            "仅使用官方源安装依赖, 验证包名拼写正确"
+        )
+    if dimensions['adversarial_sample']['findings']:
+        mitigation_suggestions.append(
+            "移除对抗样本特征(如零宽字符/Unicode同形字); "
+            "确保内容为真实功能描述而非评分操纵"
+        )
+    if not mitigation_suggestions:
+        mitigation_suggestions.append("未发现对抗安全风险, 无需额外缓解措施")
+    return mitigation_suggestions
+
+
+def adversarial_security_audit(
+    content: str,
+    fm: dict = None,
+    fm_text: str = '',
+    body_text: str = '',
+    slug: str = '',
+    dir_name: str = '',
+    use_agent: bool = True,
+) -> dict:
+    """E12: 对抗式安全审计 — 模拟攻击者视角的安全检测 [V134 E2]
+
+    在现有check_security_quality()(L8)和source_security_scan之上构建对抗视角,
+    尝试发现可能绕过常规安全检查的攻击模式。
+
+    [V134 E2] 重构: 将5个对抗维度的重复检测逻辑提取为_scan_adversarial_dimension(),
+    综合风险评级提取为_compute_adversarial_risk_rating(), 缓解建议生成提取为
+    _generate_mitigation_suggestions(), 主函数简化为流程编排。
+
+    复用关系(非重复实现):
+    - 复用check_security_quality()的基础安全审计作为Layer 0
+    - 复用source_security_scan.scan_content()的21项安全检查作为Layer 1
+    - 复用E13的generate_agent_prompt()生成AI驱动对抗分析prompt
+    - E12自身提供5个对抗维度的检测能力(Layer 2)
+
+    5个审计维度:
+    1. Prompt注入攻击检测: SKILL.md内容是否包含恶意prompt注入
+    2. 数据外泄风险检测: 是否包含敏感信息泄露路径
+    3. 权限提升风险检测: 是否尝试获取超出声明的权限
+    4. 供应链风险检测: 依赖项是否包含已知漏洞包
+    5. 对抗样本检测: 内容是否经过对抗性优化以绕过质量检查
+
+    Args:
+        content: 完整文件内容 (frontmatter + body)
+        fm: 解析后的frontmatter字典 (可选, 为None时自动解析)
+        fm_text: frontmatter原始文本 (可选, 为空时自动提取)
+        body_text: 正文文本 (可选, 为空时自动提取)
+        slug: skill slug
+        dir_name: 目录名
+        use_agent: 是否生成AI代理prompt用于深度对抗分析
+
+    Returns:
+        dict: {
+            'overall_risk_level': str,       # safe/low/medium/high/critical
+            'overall_passed': bool,          # 是否通过对抗审计
+            'overall_score': int,            # 0-100 (100=最安全)
+            'base_audit': dict,              # check_security_quality()结果
+            'source_scan': dict,              # source_security_scan.scan_content()结果
+            'dimensions': dict,               # 5个对抗维度的检测结果
+            'attack_paths': list,             # 发现的攻击路径
+            'mitigation_suggestions': list,  # 缓解建议
+            'agent_prompt': str,             # AI代理prompt (use_agent=True时)
+            'audited_at': str,                # 审计时间
+        }
+    """
+    # === 0. 自动解析frontmatter (如果未传入) ===
+    if fm is None or not fm_text or not body_text:
+        if content.startswith('---'):
+            parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
+            fm_text = parts[1] if len(parts) > 1 else ''
+            body_text = parts[2].strip() if len(parts) > 2 else ''
+            if fm is None:
+                fm = parse_frontmatter(content)['fields']
+        else:
+            fm_text = ''
+            body_text = content
+            if fm is None:
+                fm = {}
+
+    # === 1. Layer 0: 复用check_security_quality()基础安全审计 ===
+    base_audit = check_security_quality(
+        content, fm or {}, fm_text, body_text, slug, dir_name
+    )
+
+    # === 2. Layer 1: 复用source_security_scan.scan_content() ===
+    source_scan = {'passed': True, 'risk_level': 'safe', 'checks': [], 'action': 'SAFE'}
+    try:
+        from source_security_scan import scan_content
+        source_scan = scan_content(content)
+    except ImportError:
+        # source_security_scan不可用时, 仅依赖base_audit (真实降级, 非mock)
+        source_scan = {
+            'passed': True, 'risk_level': 'safe', 'action': 'SAFE',
+            'checks': [], 'error': 'source_security_scan模块不可用',
+        }
+
+    # === 3. Layer 2: 5个对抗维度检测 (复用_scan_adversarial_dimension) ===
+    all_attack_paths = []
+
+    # --- 维度1: Prompt注入攻击检测 ---
+    findings, paths = _scan_adversarial_dimension(
+        _PROMPT_INJECTION_PATTERNS, content, lambda desc: 'critical',
+        'Prompt注入', '攻击者可覆写AI代理指令'
+    )
+    all_attack_paths.extend(paths)
+    dimensions = {
+        'prompt_injection': {
+            'findings': findings,
+            'risk_level': 'critical' if findings else 'safe',
+            'passed': len(findings) == 0,
+        },
+    }
+
+    # --- 维度2: 数据外泄风险检测 ---
+    findings, paths = _scan_adversarial_dimension(
+        _DATA_EXFILTRATION_PATTERNS, content,
+        lambda desc: 'critical' if ('passwd' in desc.lower() or 'environ' in desc.lower()
+                                     or 'netcat' in desc.lower() or 'socket' in desc.lower()) else 'high',
+        '数据外泄', '可能泄露敏感信息到外部'
+    )
+    all_attack_paths.extend(paths)
+    dimensions['data_exfiltration'] = {
+        'findings': findings,
+        'risk_level': 'critical' if any(f['severity'] == 'critical' for f in findings)
+                      else ('high' if findings else 'safe'),
+        'passed': len(findings) == 0,
+    }
+
+    # --- 维度3: 权限提升风险检测 ---
+    findings, paths = _scan_adversarial_dimension(
+        _PRIVILEGE_ESCALATION_PATTERNS, content, lambda desc: 'high',
+        '权限提升', '尝试获取超出声明的权限'
+    )
+    all_attack_paths.extend(paths)
+    dimensions['privilege_escalation'] = {
+        'findings': findings,
+        'risk_level': 'high' if findings else 'safe',
+        'passed': len(findings) == 0,
+    }
+
+    # --- 维度4: 供应链风险检测 ---
+    findings, paths = _scan_adversarial_dimension(
+        _SUPPLY_CHAIN_PATTERNS, content, lambda desc: 'high',
+        '供应链风险', '依赖项可能包含已知漏洞'
+    )
+    all_attack_paths.extend(paths)
+    dimensions['supply_chain'] = {
+        'findings': findings,
+        'risk_level': 'high' if findings else 'safe',
+        'passed': len(findings) == 0,
+    }
+
+    # --- 维度5: 对抗样本检测 ---
+    findings, paths = _scan_adversarial_dimension(
+        _ADVERSARIAL_SAMPLE_PATTERNS, content,
+        lambda desc: 'critical' if ('零宽' in desc or 'Unicode' in desc or '同形' in desc)
+                      else ('medium' if ('堆砌' in desc or '操纵' in desc) else 'low'),
+        '对抗样本', '内容可能经过对抗性优化'
+    )
+    all_attack_paths.extend(paths)
+    dimensions['adversarial_sample'] = {
+        'findings': findings,
+        'risk_level': 'critical' if any(f['severity'] == 'critical' for f in findings)
+                      else ('medium' if findings else 'safe'),
+        'passed': len(findings) == 0,
+    }
+
+    # === 4. 综合风险评级 ===
+    overall_risk_level, overall_passed, score = _compute_adversarial_risk_rating(
+        base_audit, source_scan, dimensions
+    )
+
+    # === 5. 缓解建议 ===
+    mitigation_suggestions = _generate_mitigation_suggestions(dimensions)
+
+    # === 6. AI代理prompt (可选) ===
+    agent_prompt = ''
+    if use_agent:
+        try:
+            from llm_validator import generate_agent_prompt, validate_agent_prompt
+
+            skill_data = {
+                'slug': slug or dir_name or 'unknown',
+                'name': fm.get('name', slug) if fm else slug,
+                'skill_content': content,
+            }
+            context = {
+                'adversarial_audit': True,
+                'dimensions': {k: v['risk_level'] for k, v in dimensions.items()},
+                'attack_paths': all_attack_paths,
+                'base_audit_passed': base_audit.get('passed', False),
+                'source_scan_passed': source_scan.get('passed', False),
+            }
+            agent_prompt = generate_agent_prompt('analyze', skill_data, context)
+
+            # F-08: prompt质量校验
+            validation = validate_agent_prompt(agent_prompt)
+            if not validation['valid']:
+                agent_prompt += f"\n\n# 注意: prompt校验发现以下问题: {validation['issues']}"
+        except ImportError:
+            # llm_validator不可用时, 不生成AI代理prompt (真实降级, 非mock)
+            agent_prompt = ''
+
+    # === 7. 输出报告 ===
+    return {
+        'overall_risk_level': overall_risk_level,
+        'overall_passed': overall_passed,
+        'overall_score': score,
+        'base_audit': {
+            'passed': base_audit.get('passed', False),
+            'score': base_audit.get('score', 0),
+            'grade': base_audit.get('grade', 'F'),
+            'issues_count': len(base_audit.get('issues', [])),
+        },
+        'source_scan': {
+            'passed': source_scan.get('passed', False),
+            'risk_level': source_scan.get('risk_level', 'unknown'),
+            'action': source_scan.get('action', 'UNKNOWN'),
+            'failed_checks': source_scan.get('failed_checks', 0),
+        },
+        'dimensions': dimensions,
+        'attack_paths': all_attack_paths,
+        'mitigation_suggestions': mitigation_suggestions,
+        'agent_prompt': agent_prompt,
+        'summary': (
+            f"对抗审计: {'通过' if overall_passed else '未通过'} "
+            f"(风险={overall_risk_level}, 评分={score}/100, "
+            f"攻击路径={len(all_attack_paths)}条, "
+            f"维度: 注入={dimensions['prompt_injection']['risk_level']}, "
+            f"外泄={dimensions['data_exfiltration']['risk_level']}, "
+            f"提权={dimensions['privilege_escalation']['risk_level']}, "
+            f"供应链={dimensions['supply_chain']['risk_level']}, "
+            f"对抗={dimensions['adversarial_sample']['risk_level']})"
+        ),
+        'audited_at': datetime.now().isoformat(),
     }
 
 

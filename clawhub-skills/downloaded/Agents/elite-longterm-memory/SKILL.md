@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Elite Longterm Memory
 
 **The ultimate memory system for AI agents.** Combines 6 proven approaches into one bulletproof architecture.

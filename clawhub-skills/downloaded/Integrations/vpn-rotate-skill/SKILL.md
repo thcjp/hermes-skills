@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Vpn Rotate Skill
 
 Rotate VPN servers to bypass API rate limits. Works with any OpenVPN-compatible VPN.
@@ -47,7 +46,6 @@ If you prefer manual setup:
 sudo apt install openvpn
 
 mkdir -p ~/.vpn/servers
-
 
 echo "your_username" > ~/.vpn/creds.txt
 echo "your_password" >> ~/.vpn/creds.txt

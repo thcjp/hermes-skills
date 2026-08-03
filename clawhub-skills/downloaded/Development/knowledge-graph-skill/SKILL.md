@@ -21,7 +21,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Knowledge Graph
 
 Personal KG stored as JSON, queried via CLI scripts. Produces a compact KGML summary for session context.

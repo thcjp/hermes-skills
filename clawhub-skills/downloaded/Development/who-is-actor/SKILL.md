@@ -265,7 +265,6 @@ Because this is an instruction-only skill (no executable code), safety guarantee
 - 小规模数据手动分析
 - 非结构化文本情感分析
 
-
 ## Core Principles
 
 ## Workflow

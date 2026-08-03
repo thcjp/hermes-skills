@@ -1,5 +1,6 @@
 ---
-slug: "hugo-blog-tool-pro"
+
+slug: hugo-blog-tool-pro
 name: "hugo-blog-tool-pro"
 version: "1.0.0"
 displayName: "Hugo博客发布专业版"
@@ -47,7 +48,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+
 ---
+
 本工具面向专业博主与内容团队，提供 Hugo 博客的站点级管理与自动化运营方案。在免费版单篇文章发布能力之上，专业版新增批量发布与定时调度、多语言站点管理、SEO 优化（结构化数据、站点地图）、CI/CD 自动化部署、文章系列管理与交叉引用、图片资源自动优化等能力。通过工具链集成与流程自动化，帮助团队高效运营专业级博客站点.
 **版本兼容性说明**：专业版完全兼容免费版（`hugo-blog-tool-free`）的所有 Front Matter 规范与发布流程，可无缝升级.
 ## 核心能力
@@ -64,21 +67,21 @@ category: "Automation"
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -91,9 +94,7 @@ category: "Automation"
 SERIES_NAME="go-concurrency-series"
 BLOG_DIR="${BLOG_DIR:-~/blog}"
 POSTS_DIR="$BLOG_DIR/content/posts"
-# ...
 echo "=== 批量发布系列：$SERIES_NAME ==="
-# ...
 declare -a POSTS=(
   "go-goroutine-basics"
   "go-channel-patterns"
@@ -101,11 +102,9 @@ declare -a POSTS=(
   "go-worker-pool"
   "go-concurrency-best-practices"
 )
-# ...
 for i in "${!POSTS[@]}"; do
   SLUG="${POSTS[$i]}"
   CHAPTER=$((i + 1))
-# ...
   cat > "$POSTS_DIR/$SLUG.md" << FRONTMATTER
 title: "$(echo $SLUG | tr '-' ' ' | sed 's/\b\(.\)/\u\1/g')"
 date: 2026-07-18
@@ -118,15 +117,12 @@ description: "Go 并发编程系列第 $CHAPTER 篇"
 aliases:
   - /posts/$SERIES_NAME-$CHAPTER/
 FRONTMATTER
-# ...
   echo "  [$CHAPTER/${#POSTS[@]}] $SLUG 已准备"
 done
-# ...
 cd "$BLOG_DIR"
 git add content/posts/
 git commit -m "新增：Go 并发编程系列（5 篇）"
 git push
-# ...
 echo "=== 系列发布完成 ==="
 ```
 
@@ -136,7 +132,6 @@ echo "=== 系列发布完成 ==="
 cat > hugo.toml << 'EOF'
 defaultContentLanguage = "zh"
 defaultContentLanguageInSubdir = true
-# ...
 [languages]
   [languages.zh]
     weight = 1
@@ -146,24 +141,19 @@ defaultContentLanguageInSubdir = true
     weight = 2
     title = "Tech Blog"
     languageName = "English"
-# ...
 EOF
-# ...
 create_bilingual_post() {
   local slug=$1
   local zh_title=$2
   local en_title=$3
-# ...
   mkdir -p "content/zh/posts/$slug"
   mkdir -p "content/en/posts/$slug"
-# ...
   cat > "content/zh/posts/$slug/_index.md" << EOF
 title: "$zh_title"
 date: 2026-07-18
 draft: false
 tags: ["tech"]
 EOF
-# ...
   cat > "content/en/posts/$slug/_index.md" << EOF
 title: "$en_title"
 date: 2026-07-18
@@ -184,7 +174,6 @@ on:
       - 'content/**'
       - 'static/**'
       - 'hugo.toml'
-# ...
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
@@ -193,35 +182,28 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: true
-# ...
       - name: 安装 Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
           extended: true
-# ...
       - name: 安装图片优化工具
         run: |
           sudo apt-get install -y jpegoptim optipng
           npm install -g imagemin-cli
-# ...
       - name: 优化图片
         run: |
           find static/images -name "*.jpg" -exec jpegoptim --max=80 {} \;
-          find static/images -name "*.png" -exec optipng -o7 {} \;
-# ...
+png" -exec optipng -o7 {} \;
       - name: 构建站点
         run: hugo --minify --gc
-# ...
       - name: 生成站点地图
         run: hugo --renderToMemory --templateMetrics
-# ...
       - name: 部署到 GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-# ...
       - name: 通知部署结果
         if: always()
         uses: slackapi/slack-github-action@v1
@@ -232,7 +214,6 @@ jobs:
 ```
 
 ## 不适用场景
-
 以下场景Hugo博客发布专业版不适合处理：
 
 - 专业医学法律翻译认证
@@ -240,7 +221,6 @@ jobs:
 - 文学创作翻译
 
 ## 触发条件
-
 需要文本翻译、多语言转换、本地化处理时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 1. 阅读## 核心能力章节了解skill功能
@@ -248,7 +228,6 @@ jobs:
 3. 执行所需能力对应的命令
 4. 参考## 错误处理章节处理异常
 5. 查看## FAQ解答常见疑问
-
 ### SEO 优化 Front Matter
 ```yaml
 title: "Go 并发编程完全指南"
@@ -260,23 +239,18 @@ tags: ["go", "programming", "concurrency"]
 categories: ["tech"]
 series: ["go-concurrency"]
 series_weight: 1
-# ...
 keywords: ["Go 并发", "goroutine", "channel", "Go 教程"]
-# ...
 images:
   - /images/go-concurrency-cover.png
-# ...
 schema:
   type: "TechArticle"
   author:
     name: "作者名"
   publisher:
     name: "博客名称"
-# ...
 aliases:
   - /posts/go-concurrency-guide/
   - /posts/2025/go-concurrency/
-# ...
 readingTime: true
 toc: true
 ```
@@ -285,29 +259,23 @@ toc: true
 ```bash
 #!/bin/bash
 IMAGE_DIR="static/images"
-# ...
 echo "=== 图片优化 ==="
-# ...
 find "$IMAGE_DIR" -name "*.jpg" -o -name "*.jpeg" | while read f; do
   jpegoptim --max=80 --strip-all "$f"
   echo "  优化: $f"
 done
-# ...
-find "$IMAGE_DIR" -name "*.png" | while read f; do
+png" | while read f; do
   optipng -o7 "$f"
   echo "  优化: $f"
 done
-# ...
-find "$IMAGE_DIR" -name "*.jpg" -o -name "*.png" | while read f; do
+jpg" -o -name "*.png" | while read f; do
   cwebp -q 80 "$f" -o "${f%.*}.webp"
   echo "  WebP: ${f%.*}.webp"
 done
-# ...
-find "$IMAGE_DIR" -name "*.jpg" | while read f; do
+jpg" | while read f; do
   convert "$f" -resize 300x300^ -gravity center -extent 300x300 "${f%.*}-thumb.jpg"
   echo "  缩略图: ${f%.*}-thumb.jpg"
 done
-# ...
 echo "=== 优化完成 ==="
 ```
 
@@ -332,9 +300,9 @@ series_weight: 2
         <a href="{{ .RelPermalink }}">上一篇：{{ .Title }}</a>
       {{ end }}
     {{ end }}
-    {{ range where .Site.RegularPages "Params.series" "intersect" $series }}
+    {{ range where .Site.series" "intersect" $series }}
       {{ if eq .Params.series_weight (add $weight 1) }}
-        <a href="{{ .RelPermalink }}">下一篇：{{ .Title }}</a>
+RelPermalink }}">下一篇：{{ .Title }}</a>
       {{ end }}
     {{ end }}
   </nav>
@@ -351,20 +319,17 @@ series_weight: 2
   disableJSON = false
   disableSVG = false
   disableXML = false
-# ...
 [build]
   writeStats = true
-# ...
 [imaging]
   quality = 75
   resampleFilter = "Lanczos"
   hint = "photo"
-# ...
 [markup.goldmark.renderer]
   unsafe = true
 ```
 
-## 最佳实践
+## 优选实践
 1. **批量发布用脚本**：系列文章通过脚本统一发布，保持一致性
 
 2. **多语言同步管理**：中英文文章保持相同的 slug 和日期
@@ -415,18 +380,15 @@ title: "Go"
 ```markdown
 <!-- 使用 ref 短码引用其他文章 -->
 {{< ref "posts/getting-started.md" >}}
-# ...
 <!-- 多语言引用 -->
 {{< relref "posts/getting-started.md" >}}
-# ...
 <!-- 系列内引用 -->
-参见 [本系列第一篇]({{< ref "posts/go-goroutine-basics.md" >}})
+参见 [本系列领先篇]({{< ref "posts/go-goroutine-basics.md" >}})
 ```
 
 ### Q4：如何生成站点地图？
 ```bash
 hugo --minify
-# ...
 [sitemap]
   changeFreq = "weekly"
   priority = 0.5
@@ -437,7 +399,6 @@ hugo --minify
 ```toml
 [params]
   cdnURL = "https://cdn.example.com"
-# ...
 <img src="{{ .Site.Params.cdnURL }}/images/{{ .Params.cover }}">
 ```
 
@@ -480,7 +441,6 @@ hugo --minify
 - **说明**: 通过自然语言指令驱动 Agent 执行博客管理流程，专业版功能依赖 Hugo CLI、图片优化工具和 CI/CD 平台
 
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -508,3 +468,14 @@ hugo --minify
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

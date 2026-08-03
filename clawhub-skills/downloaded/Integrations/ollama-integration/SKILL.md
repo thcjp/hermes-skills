@@ -19,81 +19,149 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # Ollama Integration
 
----\nname: ollama-integration\ndescription: Ollama local model integration for AI assistance\ntype: skill\nversion: 1.0.0\nauthor: Skill平台\nlicense: MIT\n---\n\n# Ollama Integration\n\nThis skill provides integration with local Ollama models for AI assistance.\n\n## Features\n\n- List available Ollama models\n- Run models with custom prompts\n- Automatic model discovery\n- Local AI processing\n\n## Usage\n\n
+## Introduction
 
-## 依赖说明
+Welcome to the Ollama Integration skill, designed to enhance your AI experience by integrating local Ollama models into your workflows. This skill empowers you with the ability to run models with custom prompts and automatically discover available models, making it a versatile tool for a variety of AI applications.
 
-### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
-- **操作系统**: Windows / macOS / Linux
+## Features
 
-### 依赖说明
-| 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
-| LLM API | API | 必需 | 由Agent内置LLM提供 |
+The Ollama Integration skill offers the following key features:
 
-### API Key 配置
-- 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
+- **List Available Ollama Models**: Quickly identify and list all available Ollama models for integration.
+- **Custom Prompts**: Utilize custom prompts to interact with AI models, enabling personalized AI assistance.
+- **Automatic Model Discovery**: Automatically detect and integrate new Ollama models as they become available.
+- **Local AI Processing**: Process AI tasks locally, ensuring privacy and efficiency.
 
-### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
-- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
+## Usage
 
-## 核心能力
+### Prerequisites
 
-- Integrate and run local Ollama AI models with custom prompts for AI
-  assistance and automatic mode
-- 触发关键词: local, ollama, models, integration, integrate
+- **Agent Platform**: Compatible with any AI Agent supported by SKILL.md, including Claude Code, Cursor, Codex, and Gemini CLI.
+- **Operating System**: Windows, macOS, or Linux.
+- **LLM API**: Provided by the Agent's built-in LLM.
 
-## 适用场景
+### API Key Configuration
 
-| 场景 | 输入 | 输出 |
-|------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+The Ollama Integration skill uses Markdown instructions and does not require an additional API key unless specified for external APIs.
 
-**不适用于**：需要人工判断的复杂决策场景
+### Usability Classification
 
-## 使用流程
+- **Category**: MD+EXEC (uses Markdown instructions with some exec command-line capabilities).
+- **Description**: A Markdown-based AI Skill that drives Agent execution through natural language commands.
 
-1. 确认运行环境满足依赖说明中的要求
-2. 根据适用场景选择合适的使用方式
-3. 执行操作并检查输出结果
-4. 如遇错误，参考错误处理章节
+## Core Capabilities
 
-## 示例
+- **Integration and Execution of Local Ollama AI Models**: Integrate and run local Ollama AI models with custom prompts for AI assistance and automatic mode.
+- **Trigger Keywords**: local, ollama, models, integration, integrate
 
-### 示例1：基础用法
+## Appropriate Scenarios
+
+| Scenario | Input | Output |
+|----------|-------|--------|
+| Basic Use | User request | Processed result |
+
+**Not Appropriate For**: Complex decision-making scenarios that require human judgment.
+
+## Implementation Process
+
+1. **Ensure Prerequisites**: Confirm that the environment meets the requirements outlined in the Dependency section.
+2. **Select Appropriate Usage Method**: Choose the suitable method based on the applicable scenario.
+3. **Execute Operation and Check Output**: Perform the operation and review the output result.
+4. **Troubleshooting**: Refer to the Error Handling section if errors occur.
+
+## Examples
+
+### Example 1: Basic Usage
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+Input: User requests a task
+Process: Execute the task according to the implementation process
+Output: Processed result
 ```
 
-## 错误处理
+## Error Handling
 
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+| Error Scenario | Cause | Resolution |
+|----------------|-------|------------|
+| Configuration Error | Missing or incorrectly formatted parameters | Check the configuration requirements in the Dependency section. |
+| Runtime Error | Inadequate runtime environment | Confirm that the runtime environment meets the requirements. |
+| Network Error | Connection timeout or unreachability | Check network connections and retry; consider domestic alternatives. |
 
-## 常见问题
+## Common Questions
 
-### Q1: 如何开始使用Ollama Integration？
-A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+### Q1: How do I start using Ollama Integration?
+A: Please refer to the Implementation Process section to ensure that your environment meets the dependency requirements.
 
-### Q2: 遇到错误怎么办？
-A: 请参考错误处理章节，按照表格中的处理方式操作。
+### Q2: What should I do if I encounter an error?
+A: Refer to the Error Handling section for troubleshooting steps.
 
-### Q3: Ollama Integration有什么限制？
-A: 请参考已知限制章节了解具体限制。
+### Q3: What are the limitations of Ollama Integration?
+A: Please refer to the Known Limitations section for more information.
 
-## 已知限制
+## Known Limitations
 
-- 需要API Key，无Key环境无法使用
-- 性能取决于底层模型能力
-- 本地运行，不支持多设备同步
+- **API Key Requirement**: This skill requires an API key for certain external API access.
+- **Performance**: Performance depends on the underlying model capabilities.
+- **Local Execution**: Supports local execution only; does not support multi-device synchronization.
+
+## Boundary Conditions and Limitations
+
+### Input Restrictions
+
+- **Model Compatibility**: This skill supports only Ollama AI models that are compatible with the skill. Incompatible models may not work as expected.
+- **Data Format**: Input data must follow the format required by Ollama models. Incorrect or improperly formatted data may lead to processing errors or incorrect outputs.
+- **Character Limit**: There is a character limit for custom prompts; prompts exceeding this limit may not be processed correctly.
+
+### Performance Boundaries
+
+- **Concurrency**: Only one Ollama model request can be processed by a single Agent instance at a time. To handle multiple requests simultaneously, multiple Agent instances must be started.
+- **Computational Resources**: Ollama model processing depends on underlying computational resources. Processing speed may be affected in resource-constrained environments.
+
+### Compatibility Constraints
+
+- **Operating System**: Supported on Windows, macOS, and Linux.
+- **Agent Platform**: Compatible with SKILL.md-compatible AI Agents, such as Claude Code, Cursor, Codex, and Gemini CLI.
+- **LLM API**: Requires LLM API provided by the Agent's built-in LLM.
+
+### Other Limitations
+
+- **API Key**: While this skill uses Markdown instructions and does not require an additional API key, external API access may require an API key in some cases.
+- **Multi-device Synchronization**: Locally executed models do not support multi-device synchronization; the same model can only be run on one device at a time.
+
+## Examples
+
+### Example 2: Model Compatibility Check
+
+```
+Input: User requests to use an incompatible model
+Process: Report an error message indicating model incompatibility
+Output: Error message prompt
+```
+
+### Example 3: Data Format Error
+
+```
+Input: User provides data that does not match the required format
+Process: Report an error message indicating data format error
+Output: Error message prompt
+```
+
+### Example 4: Resource Constraints
+
+```
+Input: User requests to process a large amount of data
+Process: Report resource constraints, suggest reducing data volume or waiting for resource release
+Output: Resource constraint prompt
+```
+
+## Important Notes
+
+- When using Ollama Integration, ensure that you follow all model usage guidelines and best practices.
+- When handling sensitive or confidential data, ensure data security and comply with relevant laws and regulations.
+- For issues not covered in the documentation, please seek technical support through official channels.
+
+## Conclusion
+
+The Ollama Integration skill is a powerful tool for integrating local Ollama AI models into your workflows. With its comprehensive features and ease of use, it is well-suited for a wide range of AI applications. Whether you need AI model invocation, intelligent dialogue, agent orchestration, or LLM applications, Ollama Integration can help you achieve your goals efficiently and effectively.

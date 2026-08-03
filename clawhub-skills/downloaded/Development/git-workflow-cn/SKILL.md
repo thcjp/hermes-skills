@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Git Workflow Cn
 
 Git 分支管理、冲突解决、提交规范，提升团队协作效率。

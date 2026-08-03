@@ -35,7 +35,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # ai-assistant Code Delegate
 
 Delegate programming tasks to local ai-assistant Code CLI.

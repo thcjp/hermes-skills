@@ -1,5 +1,6 @@
 ---
-slug: "dns-config-tool-pro"
+
+slug: dns-config-tool-pro
 name: "dns-config-tool-pro"
 version: "1.0.0"
 displayName: "DNS配置工具专业版"
@@ -43,7 +44,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # DNS 配置工具(专业版)
 
 ## 概述
@@ -67,21 +70,21 @@ DNS 配置工具专业版是一款面向企业运维与基础设施团队的 DNS
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -163,7 +166,6 @@ for domain in $(cat domains.txt); do
 done
 # ...
 # 2. 导出所有域名当前记录
-for domain in $(cat domains.txt); do
   dig +nocmd +noall +answer $domain ANY > "records-$domain.txt"
   dig +nocmd +noall +answer _dmarc.$domain TXT >> "records-$domain.txt"
 done
@@ -171,13 +173,11 @@ done
 # 3. 在新服务商预配置所有记录(不切换 NS)
 # ...
 # 4. 迁移当日:切换 NS 记录
-for domain in $(cat domains.txt); do
   # 在域名注册商处更新 NS 为新服务商
   echo "切换 $domain 的 NS 记录..."
 done
 # ...
 # 5. 多解析器验证
-for domain in $(cat domains.txt); do
   echo "验证 $domain:"
   dig @8.8.8.8 $domain +short
   dig @1.1.1.1 $domain +short
@@ -200,7 +200,7 @@ done
 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:评估当前架构
+### 领先步:评估当前架构
 
 ```bash
 # 检查现有 CAA 配置
@@ -238,16 +238,12 @@ done
 
 ```bash
 # 仅允许 Let's Encrypt 签发常规证书
-example.com. CAA 0 issue "letsencrypt.org"
 # ...
 # 通配符证书单独授权
-example.com. CAA 0 issuewild "letsencrypt.org"
 # ...
 # 异常签发事件通知
-example.com. CAA 0 iodef "mailto:security@example.com"
 # ...
 # 多 CA 授权(如同时用 Let's Encrypt 和 ZeroSSL)
-example.com. CAA 0 issue "letsencrypt.org"
 example.com. CAA 0 issue "sectigo.com"
 # ...
 # 完全禁止签发(紧急锁定)
@@ -326,7 +322,7 @@ acme.sh --issue --dns dns_cf \
 - [ ] 归档迁移记录与决策文档
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **CAA 必配原则**: 安全敏感域名务必配置 CAA 记录,限制仅授权 CA 可签发证书。未配置 CAA 时任何 CA 都可签发,存在证书滥用风险。配置 `iodef` 字段以便异常签发时收到通知.
 2. **Cloudflare 代理按服务类型区分**: Web 流量用橙云获得 CDN 和防护;非 HTTP 服务(SSH/邮件/游戏)必须用灰云,否则橙云会中断连接。混合架构中明确标注每条记录的代理状态.
@@ -399,7 +395,7 @@ Pro 版提供迁移检查清单和脚本模板。批量操作可编写脚本循�
 - **ACME 账户**: certbot/acme.sh 首次使用会自动创建 Let's Encrypt ACME 账户,无需手动配置 Key.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令 + 部分功能需 `exec` 执行 dig/certbot 等命令)
+- **分类**: MD+execute(纯 Markdown 指令 + 部分功能需 `exec` 执行 dig/certbot 等命令)
 - **说明**: 以自然语言指令驱动 Agent 指导 DNS 高级配置、证书签发与批量迁移
 - **适用规模**: 企业级、多域名架构、安全合规场景
 - **兼容性**: 与 `dns-config-tool-free` 配置原则完全兼容,可平滑升级
@@ -423,8 +419,6 @@ Pro 版提供迁移检查清单和脚本模板。批量操作可编写脚本循�
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 
@@ -450,3 +444,14 @@ Skill: 执行完成,结果如下: 操作成功
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

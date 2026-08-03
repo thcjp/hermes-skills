@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Finance Radar
 
 Stock & crypto intelligence via Yahoo Finance. Charges 0.001 USDT/call via SkillPay.
@@ -131,3 +130,26 @@ A: 请参考已知限制章节了解具体限制。
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
 - 性能取决于底层模型能力
+
+---
+## 边界条件与限制
+
+### 输入限制
+- **股票与加密货币代码**：输入的股票和加密货币代码必须符合Yahoo Finance的数据格式，例如“AAPL”或“BTC-USD”。
+- **批量分析**：批量分析时，一次最多分析50个股票或加密货币代码。
+- **数据时效性**：由于依赖于Yahoo Finance数据，分析结果可能存在一定的时间延迟。
+
+### 性能边界
+- **分析深度**：由于数据来源和计算能力限制，分析结果可能无法像专业金融分析软件那样深入。
+- **并发处理**：同一时间只能处理一个分析任务，无法并行执行多个分析。
+
+### 兼容性约束
+- **操作系统**：目前仅在Windows、macOS和Linux操作系统上支持。
+- **Agent平台**：仅支持SKILL.md的AI Agent，如Claude Code、Cursor、Codex、Gemini CLI等。
+- **LLM支持**：需要底层LLM的支持，无LLM环境无法使用。
+
+### 其他限制
+- **实时数据处理**：不适用于实时流数据处理。
+- **复杂决策场景**：不适用于需要人工判断的复杂决策场景。
+- **API调用频率**：SkillPay API调用频率有限制，超过限制可能导致服务中断。
+

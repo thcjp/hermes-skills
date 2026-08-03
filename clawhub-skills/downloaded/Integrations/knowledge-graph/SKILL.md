@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # Knowledge Graph
 
 Use the bundled Python script to safely update `life/areas/**`.

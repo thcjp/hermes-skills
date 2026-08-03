@@ -34,7 +34,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Firewall
 
 ## Critical First Steps

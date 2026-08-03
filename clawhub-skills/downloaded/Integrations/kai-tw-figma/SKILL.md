@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # Figma
 
 This skill allows the agent to interact with Figma files via the REST API.

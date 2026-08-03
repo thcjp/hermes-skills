@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Web Browsing
 
 This skill enables browsing websites, extracting content from URLs, and searching the web for information.

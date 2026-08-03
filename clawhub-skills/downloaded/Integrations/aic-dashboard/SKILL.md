@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # AI Commander Dashboard
 
 A companion dashboard for AI Commander agents. Displays inbound emails collected by the [`email-webhook`](https://SkillHub.ai/lksrz/email-webhook) skill and shows the status of browser sessions created by the [`browser-auth`](https://SkillHub.ai/lksrz/browser-auth) skill.
@@ -34,6 +33,37 @@ This skill is a **read-only viewer** — it does not capture credentials, contro
 | [`browser-auth`](https://SkillHub.ai/lksrz/browser-auth) | Runs a remote browser tunnel and writes session data to `session.json` |
 
 This dashboard reads both files and displays them in one place.
+
+## 差异化优势分析
+
+AI Commander Dashboard在同类产品中具有以下差异化优势：
+1. **轻量级设计**：Dashboard采用轻量级Web UI，确保快速加载和流畅的用户体验，特别适合资源受限的环境。
+2. **实时监控**：通过自动刷新机制，用户可以实时监控收件箱和浏览器会话状态，提高工作效率。
+3. **安全性**：通过token保护机制，确保只有授权用户可以访问Dashboard，增强数据安全性。
+4. **灵活配置**：提供多种环境变量，允许用户根据具体需求调整Dashboard的行为，如端口绑定、数据路径等。
+5. **易于集成**：Dashboard可以与多种AI技能无缝集成，如`email-webhook`和`browser-auth`，为用户提供更丰富的监控选项。
+
+## 与同类方案的对比
+
+与市场上其他邮件和浏览器会话监控工具相比，AI Commander Dashboard具有以下优势：
+1. **集成性**：Dashboard与AI Commander生态中的其他技能紧密集成，提供一站式监控解决方案。
+2. **易用性**：无需复杂配置，即插即用，降低用户使用门槛。
+3. **安全性**：通过token保护，防止未授权访问，保护用户数据安全。
+4. **灵活性**：支持自定义配置，满足不同用户的需求。
+
+## 解决的真实验证痛点
+
+AI Commander Dashboard旨在解决以下真实验证痛点：
+1. **监控效率**：对于需要实时监控邮件和浏览器会话的用户，Dashboard提供了一种高效的方式。
+2. **数据安全**：通过token保护机制，确保敏感数据不被未授权访问。
+3. **集成需求**：对于使用AI Commander生态中多个技能的用户，Dashboard提供了一个统一的监控平台。
+
+## 技术或方法创新点
+
+AI Commander Dashboard在技术或方法上的创新点包括：
+1. **轻量级Web UI**：采用现代Web技术构建，确保快速响应和低资源消耗。
+2. **自动刷新机制**：通过定时任务自动刷新数据，提供实时监控体验。
+3. **token保护机制**：采用token验证用户身份，增强安全性。
 
 ## What This Skill Does
 

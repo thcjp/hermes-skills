@@ -1,4 +1,5 @@
 ---
+
 slug: health-toolkit-pro
 name: health-toolkit-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 健康管理工具箱专业版
 summary: "企业级健康管理平台,支持多用户、设备同步、AI建议与医疗级报告。面向家庭、企业健康关怀与医疗机构的健康管理平台."
 license: Proprietary
 edition: pro
-description: '面向家庭、企业健康关怀与医疗机构的健康管理平台.
+description: "面向家庭、企业健康关怀与医疗机构的健康管理平台。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。"
   核心能力: 多用户管理、可穿戴设备同步、AI个性化建议、医疗级报告、异常预警、专业分析
 
   适用场景: 家庭健康管理、企业员工健康关怀、健身工作室会员管理、慢病管理
@@ -41,7 +42,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 专业版面向家庭、企业健康关怀项目与医疗机构,在免费版个人健康管理之上,扩展多用户管理、可穿戴设备同步、AI 个性化建议、医疗级报告、异常预警、专业分析等企业级能力。支持家庭多成员管理、企业员工健康关怀、健身工作室会员跟踪、慢病管理等场景.
 专业版与免费版数据格式完全兼容,个人用户升级后历史数据无缝迁移.
 ## 核心能力
@@ -62,21 +65,21 @@ category: "Automation"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -115,9 +118,7 @@ class DeviceSyncManager:
 # ...
     def sync_now(self, device_id):
         """立即同步"""
-        resp = requests.post(
             f"{API_BASE}/devices/{device_id}/sync",
-            headers=self.headers,
             timeout=60,
         )
         return resp.json()
@@ -129,9 +130,7 @@ class DeviceSyncManager:
             "start": start_date,
             "end": end_date,
         }
-        resp = requests.post(
             f"{API_BASE}/devices/{device_id}/sync-history",
-            headers=self.headers,
             json=payload,
             timeout=300,
         )
@@ -190,7 +189,7 @@ def generate_ai_advice(member_id):
 联系销售开通专业版,获取管理员凭证与租户 ID.
 ### Step 2: 配置凭证
 ```bash
-export HEALTH_ADMIN_KEY="sk_pro_admin_xxx"
+export HEALTH_ADMIN_KEY="sk_pro_admin_未指定"
 export HEALTH_ORG_ID="org_your_id"
 export HEALTH_EDITION="pro"
 ```
@@ -231,7 +230,6 @@ def configure_alerts(member_id, thresholds):
     }
     resp = requests.post(
         f"{API_BASE}/alerts/configure",
-        headers=manager.headers,
         json=payload,
         timeout=30,
     )
@@ -271,7 +269,6 @@ def generate_medical_report(member_id, period, share_with_doctor=True):
     }
     resp = requests.post(
         f"{API_BASE}/reports/medical",
-        headers=manager.headers,
         json=payload,
         timeout=300,
     )
@@ -296,7 +293,6 @@ def setup_chronic_disease_tracking(member_id, condition, medications):
     }
     resp = requests.post(
         f"{API_BASE}/chronic/setup",
-        headers=manager.headers,
         json=payload,
         timeout=60,
     )
@@ -307,7 +303,7 @@ setup_chronic_disease_tracking("m001", "diabetes", [
 ])
 ```
 
-## 最佳实践
+## 优选实践
 ### 1. 多成员数据隔离
 ```python
 def with_member_context(member_id, func):
@@ -335,7 +331,7 @@ def encrypt_health_data(data, key):
 # ...
 def decrypt_health_data(encrypted, key):
     """解密健康数据"""
-    from cryptography.fernet import Fernet
+fernet import Fernet
     f = Fernet(key)
     return json.loads(f.decrypt(encrypted).decode())
 ```
@@ -355,7 +351,6 @@ def schedule_monthly_reports():
     }
     resp = requests.post(
         f"{API_BASE}/schedules",
-        headers=manager.headers,
         json=payload,
         timeout=30,
     )
@@ -392,7 +387,7 @@ Apple Watch、Fitbit、Garmin、华为手环、小米手环等主流设备.
 
 ### API Key 配置
 ```bash
-export HEALTH_ADMIN_KEY="sk_pro_admin_xxx"
+export HEALTH_ADMIN_KEY="sk_pro_admin_未指定"
 export HEALTH_ORG_ID="org_your_id"
 export HEALTH_EDITION="pro"
 # ...
@@ -405,7 +400,7 @@ export ALERT_SMS_API="https://sms-api.example.com"
 ```
 
 ### 可用性分类
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+execute(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 面向家庭、企业与医疗机构,通过自然语言指令驱动 Agent 调用 Pro API,完成多用户健康管理与专业分析
 - **专业版特性**: 多用户管理、设备同步、AI 建议、医疗报告、异常预警、慢病管理、数据加密
 - **兼容性**: 与免费版数据格式完全兼容,支持平滑升级
@@ -426,8 +421,6 @@ export ALERT_SMS_API="https://sms-api.example.com"
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 
@@ -453,3 +446,14 @@ Skill: 执行完成,结果如下: 操作成功
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

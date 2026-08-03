@@ -1,4 +1,5 @@
 ---
+
 slug: research-agent-tool-pro
 name: research-agent-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 研究代理助手专业版
 summary: "企业级研究代理平台，支持深度异步研究、多主题并行、定时任务与API集成。研究代理助手专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭"
 license: Proprietary
 edition: pro
-description: 研究代理助手专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。Use
+description: "研究代理助手专业版。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。"
   when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
   - 研究
@@ -30,7 +31,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Agents"
+
 ---
+
 研究代理助手专业版在免费版交互式研究的基础上，新增深度异步研究模式、多主题并行处理、定时研究任务、多格式导出、版本管理、多租户团队协作和 REST API 集成等企业级能力，满足研究机构和企业对深度、批量、自动化研究的全面需求.
 PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，原有研究文档和工作区均可无缝迁移.
 ## 核心能力
@@ -50,7 +53,6 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 | 历史检索 | 不支持 | 全文检索 |
 | 研究毕业 | 基础 | 自动转化为项目spec |
 
-**输入**: 用户提供能力矩阵所需的指令和必要参数.
 **处理**: 解析能力矩阵的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回能力矩阵的响应数据,包含状态码、结果和日志.
 ### PRO 专属能力详解
@@ -76,14 +78,13 @@ PRO 版本与免费版完全兼容，用户可随时从免费版平滑升级，�
 [PRO] 研究质量评估报告
 ```
 
-**输入**: 用户提供PRO 专属能力详解所需的指令和必要参数.
 **处理**: 解析PRO 专属能力详解的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回PRO 专属能力详解的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -184,7 +185,6 @@ schedules:
       format: word
       path: "~/research-agent-pro/reports/monthly_competitive_{date}.docx"
     notify:
-      - "strategy@company.com"
       - "ceo@company.com"
 EOF
 ```
@@ -214,20 +214,20 @@ research-agent list --status running
 ## 示例
 ### 研究模板配置
 ```markdown
-- 研究模式：{{mode}}
-- 启动时间：{{started_at}}
-- 完成时间：{{completed_at}}
-- Run ID：{{run_id}}
-- 研究人员：{{researcher}}
+- 研究模式：
+- 启动时间：
+- 完成时间：
+- Run ID：
+- 研究人员：
 # ...
 {{自动生成的5段式摘要}}
 # ...
 {{主题背景与重要性}}
 # ...
 {{详细分析}}
-- 可信度：{{level}}
-- 来源：{{sources}}
-- 发现日期：{{date}}
+- 可信度：
+- 来源：
+- 发现日期：
 # ...
 {{识别的风险因素与不确定性}}
 # ...
@@ -242,8 +242,8 @@ research-agent list --status running
 ```yaml
 team:
   name: "战略研究部"
-  tenants:
-    - id: tenant_001
+  workspaces:
+    - id: workspace_001
       name: "新能源研究组"
       members:
         - email: "researcher_a@company.com"
@@ -257,7 +257,7 @@ team:
       shared_research: true
       shared_templates: true
 # ...
-    - id: tenant_002
+    - id: workspace_002
       name: "AI研究组"
       members:
         - email: "ai_researcher@company.com"
@@ -279,12 +279,12 @@ permissions:
     - modes: ["interactive", "deep"]
   admin:
     - all: true
-    - manage: tenants
+    - manage: workspaces
 ```
 
 ### REST API 集成
 
-## 最佳实践
+## 优选实践
 ### 1. 选择合适的研究模式
 ```python
 MODE_GUIDE = {
@@ -319,7 +319,6 @@ Agent：
 ```bash
 cat > ~/research-agent-pro/auto_check.sh << 'EOF'
 #!/bin/bash
-for run_id in $(cat ~/research-agent-pro/run_ids.txt); do
     status=$(research-agent status $run_id | jq -r '.status')
     if [ "$status" = "completed" ]; then
         research-agent result $run_id > ~/research-agent-pro/results/${run_id}.md
@@ -394,7 +393,7 @@ PRO 版本初始化时会自动检测免费版工作区，研究文档可一键�
 PRO 版本支持 API 集成与深度研究 CLI，需配置相关密钥：
 
 ```bash
-export RESEARCH_AGENT_PRO_API_KEY="your_api_key"
+export RESEARCH_AGENT_PRO_API_KEY="${API_KEY:?请设置环境变量}"
 # ...
 export RESEARCH_AGENT_CLI_KEY="your_cli_key"
 # ...
@@ -435,3 +434,30 @@ EOF
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级研究代理平台，支持深度异步研究、多主题并行、定时任务与API集成。研究代理助手专业版。Use when 需要API
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 企业级研究代理平台，支持深度异步研究、多主题并行、定时任务与API集成。研究代理助手专业版。Use when 需要API
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

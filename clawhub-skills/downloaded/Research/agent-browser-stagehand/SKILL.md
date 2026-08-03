@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Agent Browser - Stagehand
 
 Automate browser interactions using Stagehand CLI with Claude.

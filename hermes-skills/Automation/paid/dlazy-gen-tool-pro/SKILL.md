@@ -1,6 +1,6 @@
 ---
 
-slug: "dlazy-gen-tool-pro"
+slug: dlazy-gen-tool-pro
 name: "dlazy-gen-tool-pro"
 version: "1.0.0"
 displayName: "综合生成工具-专业版"
@@ -10,7 +10,7 @@ edition: "pro"
 description: |-
   综合生成工具专业版，面向专业团队的全模态AI生成平台。核心能力：
   - 40+ 模型全覆盖（图片、视频、音频三大模态）
-  - 高质量图片生成（seedream-4。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理.
+  - 高质量图片生成（seedream-4。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。
 tags: 工作流,prompt,dlazy,ratio
 tools:
   - read
@@ -40,7 +40,6 @@ category: "Automation"
 | 音频生成 | 不支持 | 15个 | doubao-tts, suno-music, elevenlabs-dialogue |
 | 管道链接 | 不支持 | 支持 | 多步骤串联 |
 
-**输入**: 用户提供模态覆盖对比所需的指令和必要参数.
 **处理**: 解析模态覆盖对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回模态覆盖对比的响应数据,包含状态码、结果和日志.
 ### 核心能力(补充)
@@ -61,7 +60,7 @@ category: "Automation"
   - 轻量级: seedream-5.0-lite
 # ...
 视频生成（17个模型）:
-  - 文生视频: veo-3.1, seedance-2.0, kling-v3, pixverse-c1, wan2.7
+  - 文生视频: veo-3.1, seedance-2.7
   - 图生视频: jimeng-i2v-first, viduq2-i2v, kling-v3-omni
   - 首尾帧: jimeng-i2v-first-tail
   - 数字人: jimeng-omnihuman-1.5, jimeng-dream-actor
@@ -79,14 +78,13 @@ category: "Automation"
   - 矢量图输出（SVG）
 ```
 
-**输入**: 用户提供核心能力所需的指令和必要参数.
 **处理**: 解析核心能力的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心能力的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -97,19 +95,19 @@ category: "Automation"
 
 从文案到视频广告的完整制作流程.
 ```bash
-# 步骤1: 生成产品主视觉图
+# 步骤1 生成产品主视觉图
 dlazy seedream-4.5 \
   --prompt "高端无线耳机产品图，深色背景，戏剧性灯光，超写实" \
   --ratio "16:9" \
   --quality "4K"
 # ...
-# 步骤2: 图片转视频（图生视频）
+# 步骤2 图片转视频（图生视频）
 dlazy kling-v3 \
   --image @0.url \
   --prompt "耳机缓缓旋转，光影流动，产品展示动效" \
   --duration 5
 # ...
-# 步骤3: 生成背景音乐
+# 步骤3 生成背景音乐
 dlazy suno-music \
   --mode "custom" \
   --style "electronic ambient premium" \
@@ -117,7 +115,7 @@ dlazy suno-music \
   --instrumental true \
   --duration 5
 # ...
-# 步骤4: 生成配音旁白
+# 步骤4 生成配音旁白
 dlazy doubao-tts \
   --text "全新无线耳机，聆听非凡。" \
   --voice "male-magnetic"
@@ -182,7 +180,7 @@ class VideoBatchProducer:
                     output = json.loads(result.stdout)
                     steps.append({"step": step["type"], "output": output})
                 except:
-                    steps.append({"step": step["type"], "error": "failed"})
+append({"step": step["type"], "error": "failed"})
             results.append({"scenario": scenario, "steps": steps})
         return results
 # ...
@@ -192,7 +190,6 @@ class VideoBatchProducer:
             cmd += ["--prompt", step["prompt"].format(**scenario),
                     "--ratio", step["ratio"]]
         elif step["type"] == "video":
-            cmd += ["--prompt", step["prompt"].format(**scenario),
                     "--duration", str(step["duration"])]
         elif step["type"] == "audio":
             cmd += ["--text", step["text"].format(**scenario)]
@@ -248,7 +245,7 @@ npm install -g @dlazy/cli@latest
 dlazy auth set YOUR_API_KEY
 ```
 
-### 第二步：生成第一段视频
+### 第二步：生成领先段视频
 
 ```bash
 # 文生视频
@@ -268,7 +265,7 @@ dlazy kling-v3 \
 ```bash
 # 文生图 → 图生视频 → 自动串联
 dlazy seedream-4.5 --prompt "山间日出，云海翻涌" \
-  | dlazy kling-v3 --image @0.url --prompt "云海流动，太阳升起" --duration 5
+url --prompt "云海流动，太阳升起" --duration 5
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
@@ -315,15 +312,15 @@ dlazy seedance-2.0 \
 # 多步骤管道链接
 dlazy seedream-4.5 --prompt "城市夜景" --n 4 \
   | dlazy superres --images @* \
-  | dlazy kling-v3 --image @0.url --prompt "城市灯火流动"
+url --prompt "城市灯火流动"
 # ...
 # 管道引用说明:
-# @0.url  = 上游第一个输出的URL
+# @0.url  = 上游领先个输出的URL
 # @*      = 上游所有输出数组
 # -       = 上游自然值（单值场景）
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **模型分级使用**：草稿用 lite 模型，成品用 pro 模型，控制成本.
 2. **管道调试**：先用 `--dry-run` 测试管道，确认引用正确再正式执行.
@@ -331,7 +328,7 @@ dlazy seedream-4.5 --prompt "城市夜景" --n 4 \
 4. **参考图引导**：图生视频提供高质量参考图，效果更好.
 5. **批量并行**：批量任务可并行执行，提升效率.
 ```text
-专业版最佳实践:
+专业版优选实践:
 [ ] 模型分级使用（草稿lite / 成品pro）
 [ ] 管道引用已用 --dry-run 测试
 [ ] 视频时长已优化（控制成本）
@@ -414,3 +411,30 @@ A: 视频生成的消耗显著高于图片。建议先用图片确认创意方�
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 全模态生成引擎，覆盖40+模型，支持图片/视频/音频生成与管道链接批量工作流。。综合生成工具专业版，面向专业团队的全模态
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 全模态生成引擎，覆盖40+模型，支持图片/视频/音频生成与管道链接批量工作流。。综合生成工具专业版，面向专业团队的全模态
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

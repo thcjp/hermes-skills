@@ -1,4 +1,5 @@
 ---
+
 slug: security-toolkit-pro
 name: security-toolkit-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: Agent安全工具箱(专业版)
 summary: "企业级AI Agent安全平台,含行动评估、8项自动巡检、信任注册表、6维健康评分与HTML报告,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
-description: 核心能力:，可自动提升工作效率
-
+description: "核心能力:，可自动提升工作效率。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。"
   - 24条规则+自定义规则安全扫描引擎
 
   - 运行时行动安全评估(ALLOW/DENY/CONFIRM决策)
@@ -51,7 +51,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Security"
+
 ---
+
 # Agent安全工具箱(专业版)
 ## 概述
 Agent安全工具箱专业版是一款面向企业用户的AI Agent安全治理平台。在免费版24条静态扫描规则基础上,增加了运行时行动安全评估、8项自动化安全巡检、Skill信任注册表、6维度健康评分与可视化HTML报告等企业级功能。支持3级保护策略(strict/balanced/permissive),全面保障企业AI Agent生态安全。与免费版完全兼容,扫描规则和报告格式可无缝复用.
@@ -68,7 +70,6 @@ Agent安全工具箱专业版是一款面向企业用户的AI Agent安全治理�
 | 审计日志 | 事件追踪 | 不支持 | JSONL格式审计日志 |
 | 批量扫描 | 多目录扫描 | 单目录 | 多目录批量+并行 |
 
-**输入**: 用户提供功能矩阵所需的指令和必要参数.
 **处理**: 解析功能矩阵的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回功能矩阵的响应数据,包含状态码、结果和日志.
 ### 六大子命令
@@ -92,14 +93,13 @@ Agent安全工具箱专业版是一款面向企业用户的AI Agent安全治理�
 └──────────────┴────────────────────────────────────┘
 ```
 
-**输入**: 用户提供六大子命令所需的指令和必要参数.
 **处理**: 解析六大子命令的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回六大子命令的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -108,34 +108,18 @@ Agent安全工具箱专业版是一款面向企业用户的AI Agent安全治理�
 ### 场景一:企业安全健康检查
 执行全面的6维度安全健康检查,生成可视化报告.
 ```bash
-# 运行健康检查
 node （请参考skill目录中的脚本文件）
-# ...
-# 输出:
-# 安全健康评分: 78/100 (Tier A - 健康)
-# 代码安全: 85/100
-# 凭证安全: 80/100
-# 网络暴露: 75/100
-# 运行时防护: 60/100
-# Web3安全: N/A
-# 配置态势: 90/100
-# HTML报告: /tmp/health-check-20260718.html
 ```
 
 ### 场景二:运行时行动安全评估
 在Agent执行操作前,评估操作安全性.
 ```bash
-# 评估网络请求
 node （请参考skill目录中的脚本文件） --type network_request \
   --url "https://api.example.com" \
   --method POST \
   --body '{"data": "sensitive"}'
-# ...
-# 评估命令执行
 node （请参考skill目录中的脚本文件） --type exec_command \
   --command "rm -rf /tmp/cache"
-# ...
-# 评估Web3交易
 node （请参考skill目录中的脚本文件） --type web3_tx \
   --chain-id 1 \
   --from 0x1234... \
@@ -145,37 +129,19 @@ node （请参考skill目录中的脚本文件） --type web3_tx \
 
 ### 场景三:8项自动化安全巡检
 ```bash
-# 执行完整巡检
 node （请参考skill目录中的脚本文件） run
-# ...
-# 巡检项目:
-# [1] Skill/插件完整性 - 检测篡改或未注册的Skill
-# [2] 密钥泄露扫描 - 检测工作区中的明文密钥
-# [3] 网络暴露面 - 检测危险端口和防火墙配置
-# [4] 定时任务审计 - 检测可疑的cron作业
-# [5] 文件系统变更 - 检测24小时内的可疑修改
-# [6] 审计日志分析 - 分析攻击模式
-# [7] 环境与配置 - 验证安全配置
-# [8] 信任注册表健康 - 检查过期或过度授权的记录
 ```
 
 ### 场景四:信任等级管理
 ```bash
-# 注册信任Skill
 node （请参考skill目录中的脚本文件） attest \
   --id my-skill \
   --source /path/to/skill \
   --version 1.0.0 \
   --trust-level trusted \
   --preset read_only
-# ...
-# 查询信任记录
 node （请参考skill目录中的脚本文件） lookup --source /path/to/skill
-# ...
-# 撤销信任
 node （请参考skill目录中的脚本文件） revoke --source /path/to/skill --reason "安全违规"
-# ...
-# 列出所有信任记录
 node （请参考skill目录中的脚本文件） list
 ```
 
@@ -185,34 +151,28 @@ node （请参考skill目录中的脚本文件） list
 3. 执行所需能力对应的命令
 4. 参考## 错误处理章节处理异常
 5. 查看## FAQ解答常见疑问
-
 ### 行动评估引擎
 ```python
 import json
 import re
 from enum import Enum
-# ...
 class Decision(Enum):
     ALLOW = "ALLOW"
     DENY = "DENY"
     CONFIRM = "CONFIRM"
-# ...
 class ActionEvaluator:
     """运行时行动安全评估引擎"""
-# ...
     WEBHOOK_DOMAINS = [
         "discord.com/api/webhooks",
         "hooks.slack.com",
         "webhook.site",
         "pipedream.net"
     ]
-# ...
     DANGEROUS_COMMANDS = [
         "rm -rf /", "rm -rf ~", "mkfs", "dd if=",
         ":(){ :|:& };:", "chmod -R 777 /",
         "curl.*|.*bash", "wget.*|.*sh"
     ]
-# ...
     SENSITIVE_PATTERNS = [
         (r"0x[a-fA-F0-9]{64}", "私钥"),
         (r"-----BEGIN.*PRIVATE KEY-----", "PEM私钥"),
@@ -220,99 +180,69 @@ class ActionEvaluator:
         (r"gh[pousr]_[A-Za-z0-9_]{36}", "GitHub令牌"),
         (r"sk-[A-Za-z0-9]{48}", "OpenAI密钥"),
     ]
-# ...
     def evaluate(self, action_type, **params):
         """评估行动安全性"""
         if action_type == "network_request":
             return self._eval_network(params)
         elif action_type == "exec_command":
-            return self._eval_command(params)
+_eval_command(params)
         elif action_type == "read_file":
-            return self._eval_file_read(params)
+_eval_file_read(params)
         elif action_type == "write_file":
-            return self._eval_file_write(params)
+_eval_file_write(params)
         elif action_type == "secret_access":
-            return self._eval_secret(params)
+_eval_secret(params)
         elif action_type == "web3_tx":
-            return self._eval_web3(params)
         else:
             return Decision.CONFIRM, "未知操作类型,需确认"
-# ...
     def _eval_network(self, params):
         """评估网络请求"""
         url = params.get("url", "")
         body = params.get("body", "")
-# ...
-        # 检查Webhook域名
         for domain in self.WEBHOOK_DOMAINS:
             if domain in url:
-                return Decision.DENY, f"检测到Webhook外泄域名: {domain}"
-# ...
-        # 检查请求体中的密钥
+DENY, f"检测到Webhook外泄域名: {domain}"
         for pattern, name in self.SENSITIVE_PATTERNS:
             if re.search(pattern, body):
-                return Decision.DENY, f"请求体包含{name},禁止传输"
-# ...
-        # 检查高风险TLD
+DENY, f"请求体包含{name},禁止传输"
         high_risk_tlds = [".zip", ".mov", ".xyz", ".top"]
         for tld in high_risk_tlds:
             if tld in url:
-                return Decision.CONFIRM, f"高风险TLD: {tld}"
-# ...
-        return Decision.ALLOW, "网络请求安全"
-# ...
+CONFIRM, f"高风险TLD: {tld}"
     def _eval_command(self, params):
         """评估命令执行"""
         command = params.get("command", "")
-# ...
         for dangerous in self.DANGEROUS_COMMANDS:
             if re.search(dangerous, command, re.IGNORECASE):
-                return Decision.DENY, f"危险命令: {dangerous}"
-# ...
+DENY, f"危险命令: {dangerous}"
         sensitive_paths = ["/etc/shadow", "/etc/passwd", "~/.ssh", "~/.gnupg"]
         for path in sensitive_paths:
             if path in command:
-                return Decision.CONFIRM, f"访问敏感路径: {path}"
-# ...
-        return Decision.ALLOW, "命令执行安全"
-# ...
+CONFIRM, f"访问敏感路径: {path}"
     def _eval_secret(self, params):
         """评估密钥访问"""
         secret_name = params.get("name", "").upper()
-# ...
         if "PRIVATE_KEY" in secret_name or "MNEMONIC" in secret_name:
-            return Decision.DENY, "禁止访问私钥或助记词"
         elif "API_SECRET" in secret_name or "TOKEN" in secret_name:
-            return Decision.CONFIRM, "访问API密钥需确认"
+CONFIRM, "访问API密钥需确认"
         else:
-            return Decision.ALLOW, "密钥访问安全"
-# ...
     def _eval_web3(self, params):
         """评估Web3交易"""
         value = params.get("value", 0)
         data = params.get("data", "")
-# ...
-        # 检查无限授权
         if "0x095ea7b3" in data:  # approve function
             approve_value = data[-64:] if len(data) >= 64 else ""
             if approve_value == "f" * 64:
-                return Decision.CONFIRM, "检测到无限授权,需确认"
-# ...
-        # 检查大额转账
+CONFIRM, "检测到无限授权,需确认"
         if value > 10**18:  # > 1 ETH
-            return Decision.CONFIRM, f"大额转账: {value / 10**18} ETH"
-# ...
-        return Decision.ALLOW, "Web3交易安全"
-# ...
+CONFIRM, f"大额转账: {value / 10**18} ETH"
 class TrustRegistry:
     """Skill信任注册表"""
-# ...
     TRUST_LEVELS = {
         "untrusted": {"description": "默认,需完整审查", "capabilities": "none"},
         "restricted": {"description": "受限信任", "capabilities": "limited"},
         "trusted": {"description": "完全信任", "capabilities": "full"}
     }
-# ...
     PRESETS = {
         "none": {"exec": "deny", "network": [], "filesystem": []},
         "read_only": {"exec": "deny", "network": [], "filesystem": ["read"]},
@@ -322,10 +252,8 @@ class TrustRegistry:
             "filesystem": ["read"]
         }
     }
-# ...
     def __init__(self):
         self.registry = {}
-# ...
     def attest(self, skill_id, source, version, hash_val, trust_level, preset):
         """注册信任记录"""
         self.registry[skill_id] = {
@@ -338,14 +266,12 @@ class TrustRegistry:
             "attested_at": datetime.now().isoformat()
         }
         return f"已注册: {skill_id} (信任级别: {trust_level})"
-# ...
     def lookup(self, source):
         """查询信任记录"""
         for skill_id, record in self.registry.items():
             if record["source"] == source:
                 return record
         return None
-# ...
     def revoke(self, source, reason):
         """撤销信任"""
         for skill_id, record in list(self.registry.items()):
@@ -360,7 +286,6 @@ class TrustRegistry:
 ```python
 class HealthCheckup:
     """6维度安全健康检查"""
-# ...
     DIMENSIONS = {
         "code_safety": {"weight": 0.25, "base": 100},
         "credential_safety": {"weight": 0.25, "base": 0},
@@ -369,38 +294,22 @@ class HealthCheckup:
         "web3_safety": {"weight": 0.15, "base": 0},
         "config_posture": {"weight": 0.15, "base": 0}
     }
-# ...
     def run_checkup(self):
         """执行6维度健康检查"""
         scores = {}
-# ...
-        # 维度1: 代码安全
         scores["code_safety"] = self._check_code_safety()
-# ...
-        # 维度2: 凭证安全
         scores["credential_safety"] = self._check_credentials()
-# ...
-        # 维度3: 网络暴露
         scores["network_exposure"] = self._check_network()
-# ...
-        # 维度4: 运行时防护
         scores["runtime_protection"] = self._check_runtime()
-# ...
-        # 维度5: Web3安全(可选)
         scores["web3_safety"] = self._check_web3()
-# ...
-        # 维度6: 配置态势
         scores["config_posture"] = self._check_config()
-# ...
         composite = self._calculate_composite(scores)
         tier = self._get_tier(composite)
-# ...
         return {
             "composite_score": composite,
             "tier": tier,
             "dimensions": scores
         }
-# ...
     def _calculate_composite(self, scores):
         """计算综合评分"""
         total = 0
@@ -408,7 +317,6 @@ class HealthCheckup:
             if score is not None:
                 total += score * self.DIMENSIONS[dim]["weight"]
         return round(total)
-# ...
     def _get_tier(self, score):
         """获取等级"""
         if score >= 90: return {"grade": "S", "label": "JACKED", "mascot": "肌肉龙虾"}
@@ -463,7 +371,7 @@ class HealthCheckup:
 }
 ```
 
-## 最佳实践
+## 优选实践
 ### 1. 保护级别选择
 | 级别 | 适用场景 | 建议 |
 |---:|---:|---:|
@@ -473,23 +381,15 @@ class HealthCheckup:
 
 ### 2. 信任生命周期管理
 ```bash
-# 依赖说明
 node （请参考skill目录中的脚本文件） /path/to/new-skill/
 node （请参考skill目录中的脚本文件） attest --id new-skill --trust-level restricted
-# ...
-# 定期验证:每月检查完整性
 node （请参考skill目录中的脚本文件） run
-# ...
-# 发现问题:立即撤销
 node （请参考skill目录中的脚本文件） revoke --source /path/to/skill --reason "检测到恶意行为"
 ```
 
 ### 3. 健康检查频率
 ```bash
-# 每周健康检查
 node （请参考skill目录中的脚本文件）
-# ...
-# 每日巡检
 node （请参考skill目录中的脚本文件） setup --schedule "0 3 * * *"
 ```
 
@@ -522,11 +422,10 @@ A: 使用 `patrol setup` 配置定时任务,支持 cron 表达式。巡检结果
 - 可选配置 `GOPLUS_API_KEY` 和 `GOPLUS_API_SECRET` 以增强Web3安全检测
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+execute(纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行企业级安全治理任务
 
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -537,3 +436,30 @@ A: 使用 `patrol setup` 配置定时任务,支持 cron 表达式。巡检结果
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级AI Agent安全平台,含行动评估、8项自动巡检、信任注册表、6维健康评分与HTML报告,支持多种使用场景和自动
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 企业级AI Agent安全平台,含行动评估、8项自动巡检、信任注册表、6维健康评分与HTML报告,支持多种使用场景和自动
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

@@ -34,7 +34,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # Java
 
 ## Quick Reference

@@ -1,5 +1,6 @@
 ---
-slug: "javascript-sdk-tool-pro"
+
+slug: javascript-sdk-tool-pro
 name: "javascript-sdk-tool-pro"
 version: "1.0.0"
 displayName: "JS SDK工具专业版"
@@ -12,7 +13,7 @@ description: |-
   - 流式响应与实时进度更新
   - 会话管理与有状态执行
   - 工具构建器 API（自定义工具/应用工具/代理工具）
-  - 服务器代理集成（Next
+  - 服务器代理集成（Next。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。
 tags:
   - 开发工具
   - JavaScript
@@ -34,7 +35,9 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+
 ---
+
 本工具面向企业级 AI 应用开发团队，提供智能体构建、流式响应、会话管理、工具构建器与服务器代理集成的完整方案。在免费版基础应用调用与文件上传能力之上，专业版新增 Agent SDK、流式响应处理、有状态会话、自定义工具构建、多框架代理集成、人工审批工作流等能力。通过丰富的 API 与类型安全支持，帮助团队构建生产级 AI 智能体应用.
 **版本兼容性说明**：专业版完全兼容免费版（`javascript-sdk-tool-free`）的所有基础调用、认证配置与文件上传能力，可无缝升级.
 ## 核心能力
@@ -51,21 +54,21 @@ category: "Automation"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -212,7 +215,6 @@ const response4 = await agent.sendMessage('比较这两张图片', {
 
 ### 技能（Skills）配置
 ```typescript
-const agent = client.agent({
     core_app: { ref: 'claude-sonnet@latest' },
     skills: [
         {
@@ -232,12 +234,12 @@ const agent = client.agent({
 });
 // ...
 // 智能体会自动参考技能内容进行回答
-const response = await agent.sendMessage('帮我审查这段代码');
+sendMessage('帮我审查这段代码');
 ```
 
 ### 完整类型定义
 
-## 最佳实践
+## 优选实践
 1. **前端用代理模式**：永远不要在前端暴露 API Key
 
 2. **流式响应用 SSE**：提升用户体验
@@ -273,11 +275,9 @@ function useAgent() {
     const send = useCallback(async (text: string) => {
         setLoading(true);
         try {
-            const agent = client.agent({
                 core_app: { ref: 'claude-sonnet@latest' }
             });
 // ...
-            const response = await agent.sendMessage(text, {
                 onMessage: (msg) => {
                     if (msg.content) {
                         setMessages(prev => [...prev, {
@@ -298,14 +298,11 @@ function useAgent() {
 
 ### Q2：如何处理工具执行错误？
 ```typescript
-const response = await agent.sendMessage('执行任务', {
+sendMessage('执行任务', {
     onToolCall: async (call) => {
         try {
-            const result = await executeTool(call.name, call.args);
-            agent.submitToolResult(call.id, result);
         } catch (error) {
             // 工具执行失败也返回结果
-            agent.submitToolResult(call.id, {
                 error: `工具执行失败: ${error.message}`
             });
         }
@@ -447,3 +444,14 @@ const result = await limiter.execute(() =>
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

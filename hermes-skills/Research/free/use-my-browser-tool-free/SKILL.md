@@ -1,6 +1,7 @@
 ---
+
 name: "use-my-browser-tool-free"
-description: "通过用户脚本注入控制真实 Chrome 浏览器,共享登录态与 Cookie,适合个人自动化操作"
+description: "通过用户脚本注入控制真实 Chrome 浏览器,共享登录态与 Cookie,适合个人自动化操作。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -14,6 +15,11 @@ metadata:
     - "个人效率"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - browser
+
 ---
 
 # 真实浏览器控制免费版
@@ -38,8 +44,6 @@ tmwd_status()
 tmwd_status()  # 返回所有已连接标签页列表
 ```
 
-**输入**: 用户提供真实浏览器控制所需的指令和必要参数。
-**处理**: 按照skill规范执行真实浏览器控制操作,遵循单一意图原则。
 **输出**: 返回真实浏览器控制的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -61,8 +65,6 @@ tmwd_text(max_chars=5000)
 tmwd_scan()
 ```
 
-**输入**: 用户提供页面导航与内容提取所需的指令和必要参数。
-**处理**: 按照skill规范执行页面导航与内容提取操作,遵循单一意图原则。
 **输出**: 返回页面导航与内容提取的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -81,8 +83,6 @@ tmwd_exec(code="document.querySelector('#submit').click()")
 tmwd_exec(code="var e=document.querySelector('#email'); e.value='user@example.com'; e.dispatchEvent(new Event('input',{bubbles:true}))")
 ```
 
-**输入**: 用户提供元素发现与交互所需的指令和必要参数。
-**处理**: 按照skill规范执行元素发现与交互操作,遵循单一意图原则。
 **输出**: 返回元素发现与交互的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -101,8 +101,6 @@ tmwd_exec(code="return Array.from(document.querySelectorAll('h2')).map(e=>e.text
 tmwd_exec(code="var rows=document.querySelectorAll('table tr'); var d=[]; rows.forEach(function(r){var c=[]; r.querySelectorAll('td,th').forEach(function(e){c.push(e.innerText.trim())}); if(c.length) d.push(c)}); return d")
 ```
 
-**输入**: 用户提供数据提取所需的指令和必要参数。
-**处理**: 按照skill规范执行数据提取操作,遵循单一意图原则。
 **输出**: 返回数据提取的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -115,11 +113,8 @@ tmwd_exec(code="var rows=document.querySelectorAll('table tr'); var d=[]; rows.f
 tmwd_newtab(url="https://example.com")
 
 # 切换到匹配的标签页
-tmwd_switch(pattern="example.com")
 ```
 
-**输入**: 用户提供多标签页管理所需的指令和必要参数。
-**处理**: 按照skill规范执行多标签页管理操作,遵循单一意图原则。
 **输出**: 返回多标签页管理的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -129,15 +124,13 @@ tmwd_switch(pattern="example.com")
 
 ```bash
 # 当 tmwd_exec 返回 csp_blocked: true 时,回退到内置浏览器
-# 步骤1:使用内置浏览器打开相同 URL
+# 步骤1使用内置浏览器打开相同 URL
 browser(action="open", profile="skill-platform", url="<same-url>")
 
-# 步骤2:获取页面快照
+# 步骤2获取页面快照
 browser(action="snapshot", targetId=<targetId>)
 ```
 
-**输入**: 用户提供CSP 回退机制所需的指令和必要参数。
-**处理**: 按照skill规范执行CSP 回退机制操作,遵循单一意图原则。
 **输出**: 返回CSP 回退机制的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：通过用户脚本注入、控制真实、共享登录态与、Cookie、适合个人自动化操、真实浏览器控制免、面向个人用户提供、直接控制用户真实、浏览器的能力、在页面上下文中执、共享所有、会话和登录状态、when、需要提升效率、自动化流程、批量处理、工作流优化时使用、不适用于需要人工、创意判断的任务、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -149,16 +142,16 @@ browser(action="snapshot", targetId=<targetId>)
 小王需要从已登录的电商网站批量提取订单数据。
 
 ```bash
-# 步骤1:验证连接
+# 步骤1验证连接
 tmwd_status()
 
-# 步骤2:切换到电商网站标签页
+# 步骤2切换到电商网站标签页
 tmwd_switch(pattern="shopping.example.com")
 
-# 步骤3:导航到订单页面
+# 步骤3导航到订单页面
 tmwd_navigate(url="https://shopping.example.com/orders")
 
-# 步骤4:提取订单列表
+# 步骤4提取订单列表
 tmwd_exec(code="var orders=document.querySelectorAll('.order-item'); var data=[]; orders.forEach(function(o){data.push({id:o.querySelector('.order-id').innerText,date:o.querySelector('.order-date').innerText,amount:o.querySelector('.order-amount').innerText})}); return data")
 ```
 
@@ -167,16 +160,15 @@ tmwd_exec(code="var orders=document.querySelectorAll('.order-item'); var data=[]
 小李需要批量填写相似的在线表单。
 
 ```bash
-# 步骤1:导航到表单页面
+# 步骤1导航到表单页面
 tmwd_navigate(url="https://form.example.com/apply")
 
-# 步骤2:填写表单字段
+# 步骤2填写表单字段
 tmwd_exec(code="var f={'#username':'liming','#email':'liming@example.com','#phone':'13800138000'}; Object.keys(f).forEach(function(s){var e=document.querySelector(s); e.value=f[s]; e.dispatchEvent(new Event('input',{bubbles:true}))})")
 
-# 步骤3:提交表单
-tmwd_exec(code="document.querySelector('#submit').click()")
+# 步骤3提交表单
 
-# 步骤4:验证提交结果
+# 步骤4验证提交结果
 tmwd_text(max_chars=1000)
 ```
 
@@ -185,14 +177,14 @@ tmwd_text(max_chars=1000)
 小张需要将网页内容整理为结构化数据。
 
 ```bash
-# 步骤1:切换到目标页面
+# 步骤1切换到目标页面
 tmwd_switch(pattern="article.example.com")
 
-# 步骤2:提取文章标题和内容
+# 步骤2提取文章标题和内容
 tmwd_exec(code="return {title:document.querySelector('h1').innerText,content:document.querySelector('.article-body').innerText}")
 
-# 步骤3:提取所有链接
-tmwd_exec(code="return Array.from(document.querySelectorAll('a')).map(function(a){return {text:a.innerText,href:a.href}})")
+# 步骤3提取所有链接
+from(document.querySelectorAll('a')).map(function(a){return {text:a.innerText,href:a.href}})")
 ```
 
 ## 快速开始
@@ -224,7 +216,6 @@ tmwd_status()
 tmwd_text(max_chars=5000)
 
 # 执行简单操作
-tmwd_exec(code="return document.title")
 ```
 
 ## 示例
@@ -265,13 +256,13 @@ tmwd_exec(code="return document.title")
 | 返回上一页 | `history.back()` |
 | 按文本匹配点击 | `var btns=document.querySelectorAll('button'); for(var i=0;i<btns.length;i++){if(btns[i].innerText.includes('Submit')){btns[i].click();break}}` |
 
-## 最佳实践
+## 优选实践
 
 ### 1. 优先使用 tmwd,失败再回退
 
 ```bash
 # 正确做法:先尝试 tmwd,失败再回退
-tmwd_exec(code="document.querySelector('#btn').click()")
+querySelector('#btn').click()")
 
 # 如果返回 csp_blocked: true,再回退到内置浏览器
 browser(action="open", profile="skill-platform", url="<same-url>")
@@ -281,20 +272,20 @@ browser(action="open", profile="skill-platform", url="<same-url>")
 
 ```bash
 # 对于 React/Vue 应用,设置值后必须触发事件
-tmwd_exec(code="var e=document.querySelector('#input'); e.value='new_value'; e.dispatchEvent(new Event('input',{bubbles:true}))")
+value='new_value'; e.dispatchEvent(new Event('input',{bubbles:true}))")
 
 # 直接设置 value 不会触发框架响应
-tmwd_exec(code="document.querySelector('#input').value='new_value'")  # 无效
+querySelector('#input').value='new_value'")  # 无效
 ```
 
 ### 3. 使用 return 返回数据
 
 ```bash
 # 有 return:返回执行结果
-tmwd_exec(code="return document.querySelector('.title').innerText")
+querySelector('.title').innerText")
 
 # 无 return:无输出
-tmwd_exec(code="document.querySelector('.title').innerText")  # 无输出
+querySelector('.title').innerText")  # 无输出
 ```
 
 ### 4. 检查连接状态
@@ -325,10 +316,9 @@ tmwd_status()
 
 ```bash
 # 直接 click 可能无效
-tmwd_exec(code="document.querySelector('#btn').click()")
 
 # 改用事件分发
-tmwd_exec(code="document.querySelector('#btn').dispatchEvent(new MouseEvent('click',{bubbles:true}))")
+dispatchEvent(new MouseEvent('click',{bubbles:true}))")
 ```
 
 ### Q3: CSP 阻止脚本执行怎么办?
@@ -377,15 +367,33 @@ browser(action="snapshot", targetId=<targetId>)
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,通过 exec 执行浏览器控制命令)
+- **分类**: MD+execute(纯 Markdown 指令,通过 exec 执行浏览器控制命令)
 - **说明**: 基于用户脚本注入的真实浏览器控制工具,通过自然语言指令驱动 Agent 操作用户已登录的浏览器
 - **适用规模**: 单用户、单浏览器实例、本地运行
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

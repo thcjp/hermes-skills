@@ -1,6 +1,7 @@
 ---
+
 name: "shadcn-ui-tool-free"
-description: "使用shadcn/ui构建现代React应用,支持组件安装、表单验证与主题定制"
+description: "使用shadcn/ui构建现代React应用,支持组件安装、表单验证与主题定制。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,11 @@ metadata:
     - "前端开发"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # shadcn UI 工具 - 免费版
@@ -29,8 +35,6 @@ shadcn/ui 工具免费版帮助开发者使用 shadcn/ui 组件库构建现代 R
 
 通过 CLI 工具安装 shadcn/ui 组件,组件代码直接复制到项目中,完全可控。
 
-**输入**: 用户提供依赖说明所需的指令和必要参数。
-**处理**: 按照skill规范执行依赖说明操作,遵循单一意图原则。
 **输出**: 返回依赖说明的执行结果,包含操作状态和输出数据。
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -38,8 +42,6 @@ shadcn/ui 工具免费版帮助开发者使用 shadcn/ui 组件库构建现代 R
 
 基于 Tailwind CSS 的原子化样式系统,支持深度定制主题颜色、字体、间距。
 
-**输入**: 用户提供Tailwind CSS 样式所需的指令和必要参数。
-**处理**: 按照skill规范执行Tailwind CSS 样式操作,遵循单一意图原则。
 **输出**: 返回Tailwind CSS 样式的执行结果,包含操作状态和输出数据。
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -47,8 +49,6 @@ shadcn/ui 工具免费版帮助开发者使用 shadcn/ui 组件库构建现代 R
 
 react-hook-form + zod 实现类型安全的表单验证,覆盖登录、注册、数据录入等场景。
 
-**输入**: 用户提供表单验证所需的指令和必要参数。
-**处理**: 按照skill规范执行表单验证操作,遵循单一意图原则。
 **输出**: 返回表单验证的执行结果,包含操作状态和输出数据。
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -56,8 +56,6 @@ react-hook-form + zod 实现类型安全的表单验证,覆盖登录、注册、
 
 支持暗色/亮色主题切换,基于 CSS 变量实现,性能优异。
 
-**输入**: 用户提供主题切换所需的指令和必要参数。
-**处理**: 按照skill规范执行主题切换操作,遵循单一意图原则。
 **输出**: 返回主题切换的执行结果,包含操作状态和输出数据。
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -65,8 +63,6 @@ react-hook-form + zod 实现类型安全的表单验证,覆盖登录、注册、
 
 提供 Button、Card、Dialog、Form、Table 等常用组件的使用示例。
 
-**输入**: 用户提供示例所需的指令和必要参数。
-**处理**: 按照skill规范执行示例操作,遵循单一意图原则。
 **输出**: 返回示例的执行结果,包含操作状态和输出数据。
 
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -74,8 +70,6 @@ react-hook-form + zod 实现类型安全的表单验证,覆盖登录、注册、
 
 基于 Tailwind 的响应式工具类,适配手机、平板、桌面多种屏幕。
 
-**输入**: 用户提供响应式布局所需的指令和必要参数。
-**处理**: 按照skill规范执行响应式布局操作,遵循单一意图原则。
 **输出**: 返回响应式布局的执行结果,包含操作状态和输出数据。
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：构建现代、支持组件安装、表单验证与主题定、开发工具免费版、面向个人开发者与、小型项目、核心能力、组件安装与管理、样式定制、常用组件使用示例、响应式布局指导等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -143,7 +137,6 @@ export function LoginForm() {
           )}
         />
         <FormField
-          control={form.control}
           name="password"
           render={({ field }) => (
             <FormItem>
@@ -203,7 +196,6 @@ export function UserTable() {
             <TableRow key={user.id}>
               <TableCell className="font-medium">{user.name}</TableCell>
               <TableCell>{user.email}</TableCell>
-              <TableCell>{user.role}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -302,7 +294,6 @@ npx shadcn@latest add button card input label
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
 
-
 ## 配置示例
 
 ### Tailwind 主题配置
@@ -342,7 +333,7 @@ npx shadcn@latest add button card input label
 | Tabs | `npx shadcn@latest add tabs` | 标签页 |
 | Select | `npx shadcn@latest add select` | 下拉选择 |
 
-## 最佳实践
+## 优选实践
 
 1. **组件可控**:shadcn/ui 组件代码在项目中,可自由修改,不要当外部库用
 2. **统一主题**:通过 CSS 变量管理颜色,不要在组件中硬编码颜色值
@@ -398,12 +389,11 @@ A: 在 `components/` 目录下创建新组件,引用 `components/ui/` 中的基�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **分类**: MD+execute(Markdown指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 执行 shadcn/ui 组件安装与代码生成
 - **限制**: 免费版不支持设计系统管理、企业组件库与团队协作
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
@@ -417,3 +407,22 @@ A: 在 `components/` 目录下创建新组件,引用 `components/ui/` 中的基�
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

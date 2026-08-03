@@ -35,7 +35,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # Expanso json-to-yaml
 
 Convert JSON to YAML format

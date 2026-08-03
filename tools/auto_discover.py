@@ -19,33 +19,24 @@ Skill 自动发现系统
 import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
-from project_config import PROJECT_ROOT
-from project_config import DB_PATH
-from project_config import CLAWHUB_DOWNLOADED_DIR
-from project_config import DISCOVERY_DIR
+from project_config import TOOLS_DIR, CLAWHUB_DOWNLOADED_DIR, DISCOVERY_DIR, PLATFORM_CONFIG # V123 W2: 合并重复import
 from platform_config import GITHUB_SCAN_REPOS
 # === End Phase 1 ===
-SKILLS_ROOT = PROJECT_ROOT
 
 
 import argparse
 import json
-import sqlite3
-import urllib.request
-import urllib.error
-import os
 import sys
-import subprocess
-import re
+import hashlib
 from pathlib import Path
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Set
 
 # 导入统一解析层
-_sys_path = os.path.dirname(os.path.abspath(__file__))
-if _sys_path not in sys.path:
-    sys.path.insert(0, _sys_path)
-from skill_core.parser import parse_frontmatter as _parse_fm
+if str(TOOLS_DIR) not in sys.path:
+    sys.path.insert(0, str(TOOLS_DIR))
+from skill_core.parser import parse_frontmatter
+from skill_core import db as db_module  # V117 W4: 统一db入口
 
 # ============================================================
 # 配置
@@ -57,9 +48,9 @@ from skill_core.parser import parse_frontmatter as _parse_fm
 # DISCOVERY_DIR imported from config
 CANDIDATES_FILE = DISCOVERY_DIR / "candidates.json"
 
-# ClawHub API (修复: 使用clawhub.ai/api/v1，原api.clawhub.dev DNS无法解析)
-CLAWHUB_API_BASE = "https://clawhub.ai/api/v1"
-CLAWHUB_MIRROR = "https://mirror-cn.clawhub.com/api/v1"
+# ClawHub API (v1.3: 从PLATFORM_CONFIG统一读取)
+CLAWHUB_API_BASE = PLATFORM_CONFIG['clawhub']['api_base']
+CLAWHUB_MIRROR = PLATFORM_CONFIG['clawhub']['mirror']
 
 # GitHub 来源仓库
 # GITHUB_REPOS imported from config
@@ -75,50 +66,42 @@ CLAWHUB_CATEGORIES = [
 # 数据库操作
 # ============================================================
 
-def get_db():
-    conn = sqlite3.connect(DB_PATH)
-    conn.execute("PRAGMA foreign_keys = ON")
-    conn.row_factory = sqlite3.Row
-    return conn
-
 def get_existing_source_slugs() -> Set[str]:
-    """获取本地DB中所有已有的source_slug"""
-    conn = get_db()
-    c = conn.cursor()
-    c.execute("""
-        SELECT DISTINCT source_slug FROM skills
-        WHERE source_slug IS NOT NULL AND source_slug != ''
-    """)
-    slugs = {row[0] for row in c.fetchall()}
-    conn.close()
-    return slugs
+    """获取本地DB中所有已有的source_slug
+
+    V126 W4: 委托到 skill_core.db.get_existing_source_slugs_from_db(TD-184)
+    V129 Z10 (TD-219): 复核确认 — 已委托到 skill_core.db, 无重复实现。
+    github_scanner.get_existing_source_slugs 同样委托到同一入口, 二者均为薄包装,
+    不合并(保留各自模块入口)。
+    """
+    return db_module.get_existing_source_slugs_from_db()
 
 def get_existing_display_names() -> Set[str]:
-    """获取本地DB中所有已有的display_name"""
-    conn = get_db()
-    c = conn.cursor()
-    c.execute("""
-        SELECT DISTINCT current_display_name FROM skills
-        WHERE current_display_name IS NOT NULL AND current_display_name != ''
-    """)
-    names = {row[0].lower() for row in c.fetchall()}
-    conn.close()
-    return names
+    """获取本地DB中所有已有的display_name
+
+    V128 Y7: 委托到skill_core.db.get_existing_display_names_from_db(TD-207)
+    """
+    return db_module.get_existing_display_names_from_db()
 
 def get_existing_slugs() -> Set[str]:
-    """获取本地DB中所有已有的slug"""
-    conn = get_db()
-    c = conn.cursor()
-    c.execute("SELECT DISTINCT slug FROM skills")
-    slugs = {row[0] for row in c.fetchall()}
-    conn.close()
-    return slugs
+    """获取本地DB中所有已有的slug
+
+    V126 W4: 委托到 skill_core.db.get_existing_slugs_from_db(TD-184)
+    """
+    return db_module.get_existing_slugs_from_db()
 
 # ============================================================
 # ClawHub 扫描器
 # ============================================================
 
 def fetch_url(url: str, timeout: int = 15) -> Optional[str]:
+    """安全获取URL内容
+
+    V129 Z9 (TD-218): 本函数与 update_mechanism.fetch_url 同名但实现不同。
+    本版本面向 ClawHub JSON API: 请求头额外带 'Accept: application/json', 仅用宽泛 except 兜底;
+    update_mechanism.fetch_url 为通用 URL 抓取(无 Accept 头, 细分 HTTPError/URLError/Exception 三段捕获)。
+    请求头与异常处理行为有差异, 不合并。
+    """
     try:
         req = urllib.request.Request(url, headers={
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
@@ -126,7 +109,7 @@ def fetch_url(url: str, timeout: int = 15) -> Optional[str]:
         })
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             return resp.read().decode('utf-8', errors='replace')
-    except Exception:
+    except Exception:  # [V130 A1] 宽泛捕获: HTTP请求可能因网络/超时/解码等多种原因失败
         return None
 
 def scan_clawhub_category(category: str, limit: int = 50) -> List[Dict[str, Any]]:
@@ -196,18 +179,18 @@ def scan_clawhub_local() -> List[Dict[str, Any]]:
             # 解析SKILL.md获取基本信息
             try:
                 content = skill_md.read_text(encoding='utf-8')
-                metadata = parse_frontmatter(content)
+                metadata = parse_frontmatter(content)['fields']
                 skills.append({
                     'source_slug': slug,
                     'source_platform': 'clawhub',
-                    'source_url': f"https://clawhub.ai/skills/{slug}",
+                    'source_url': f"{PLATFORM_CONFIG['clawhub']['host']}/skills/{slug}",
                     'display_name': metadata.get('displayName', slug),
                     'summary': metadata.get('summary', ''),
                     'category': category_dir.name,
                     'local_path': str(skill_dir),
                     'content': content[:500],
                 })
-            except Exception:
+            except Exception:  # [V130 A1] 宽泛捕获: 文件读取和frontmatter解析可能因编码/格式等多种原因失败
                 continue
 
     return skills
@@ -241,7 +224,7 @@ def scan_github_repo(owner: str, repo: str) -> List[Dict[str, Any]]:
                 skill_content = fetch_url(skill_md_url)
 
             if skill_content and len(skill_content) > 50:
-                metadata = parse_frontmatter(skill_content)
+                metadata = parse_frontmatter(skill_content)['fields']
                 skills.append({
                     'source_slug': item['name'],
                     'source_platform': 'github',
@@ -272,6 +255,7 @@ def scan_github_all() -> List[Dict[str, Any]]:
 # 去重比对
 # ============================================================
 
+# [V131 B5: 与github_scanner.deduplicate不同(本版处理发现技能去重, 对方处理GitHub扫描结果)]
 def deduplicate(discovered_skills: List[Dict[str, Any]]) -> Dict[str, Any]:
     """去重比对，分离新skill和已存在skill
     
@@ -282,16 +266,16 @@ def deduplicate(discovered_skills: List[Dict[str, Any]]) -> Dict[str, Any]:
     existing_names = get_existing_display_names()
     
     # v3.3: 加载已有content_hash集合,用于内容去重
+    # V153 R8修复: content_hash加载失败时raise(fail-safe),原为跳过去重(fail-open)
+    # 原因: existing_content_hashes为空时,所有候选都会被视为"新内容",去重失效
     existing_content_hashes = set()
     try:
-        import sqlite3
-        from config.project_config import DB_PATH
-        conn = sqlite3.connect(str(DB_PATH))
+        conn = db_module.get_db()
         for row in conn.execute("SELECT content_hash FROM skills WHERE content_hash IS NOT NULL AND content_hash != ''"):
             existing_content_hashes.add(row[0])
         conn.close()
-    except Exception:
-        pass  # content_hash不可用时跳过内容去重(向后兼容)
+    except Exception as e:
+        raise RuntimeError(f"content_hash加载失败 — 内容去重不可用,阻断(fail-safe): {e}")
 
     result = {
         'dedup_time': datetime.now().isoformat(),
@@ -340,13 +324,13 @@ def deduplicate(discovered_skills: List[Dict[str, Any]]) -> Dict[str, Any]:
 # 工具函数
 # ============================================================
 
-def parse_frontmatter(content: str) -> Dict[str, Any]:
-    """解析YAML frontmatter - 使用skill_core.parser统一解析"""
-    result = _parse_fm(content)
-    return result.get('fields', {})
-
 def ensure_dir():
-    """确保发现目录存在"""
+    """确保发现目录存在
+
+    V128 Y8: 评估结论 — 此函数仅为1行DISCOVERY_DIR.mkdir()调用,
+    不适合作为通用工具迁移到skill_core.utils(非通用函数)。
+    保留在auto_discover.py中作为本地辅助函数。
+    """
     DISCOVERY_DIR.mkdir(parents=True, exist_ok=True)
 
 # ============================================================
@@ -479,8 +463,19 @@ def cmd_import(args):
     category = target.get('category', 'Productivity')
 
     # 导入到DB (v3.0: 仅生成单一skill,不再生成-free派生)
-    from db import register_skill
-    paid_skill_id = register_skill(
+    # V117 W4: register_skill统一通过db_module访问
+
+    # v1.3: 计算content_hash (从源内容计算SHA-256前16位)
+    source_content = target.get('content', '')
+    if not source_content and target.get('local_path'):
+        # 如果有本地路径,读取完整SKILL.md内容
+        try:
+            source_content = Path(target['local_path']).joinpath('SKILL.md').read_text(encoding='utf-8')
+        except Exception:  # [V130 A1] 宽泛捕获: 文件读取可能因路径/编码等多种原因失败
+            source_content = ''
+    content_hash = hashlib.sha256(source_content.encode('utf-8')).hexdigest()[:16] if source_content else None
+
+    paid_skill_id = db_module.register_skill(
         slug=paid_slug,
         name=paid_slug,
         display_name=display_name,
@@ -497,9 +492,21 @@ def cmd_import(args):
         is_differentiated=0,
         edition='paid',
         parent_slug=None,
+        content_hash=content_hash,
         workflow_state='step1_read_original',
         notes=f"Imported from discovery. Source: {source_platform}"
     )
+
+    # v1.3: 填充simhash (接入去重管道)
+    # V153 R9修复: simhash填充失败时记录警告(非阻断,但标记需人工复查)
+    if source_content:
+        try:
+            from content_dedup import update_simhash
+            update_simhash(paid_slug, source_content)
+        except ImportError as e:
+            print(f"[WARN] content_dedup模块不可用,simhash未填充(近似去重对该skill失效): {e}")
+        except Exception as e:
+            print(f"[WARN] simhash填充失败(近似去重对该skill失效,需人工复查): {e}")
 
     print(f"✓ 导入成功: {args.slug}")
     print(f"  slug={paid_slug}, skill_id={paid_skill_id}, workflow_state=step1_read_original")

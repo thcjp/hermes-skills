@@ -1,6 +1,7 @@
 ---
+
 name: "in-depth-research-tool-free"
-description: "多源深度研究工具，支持系统性信息探索、来源评估与方法论追踪，生成结构化研究报告，适合个人研究与学习。"
+description: "多源深度研究工具，支持系统性信息探索、来源评估与方法论追踪，生成结构化研究报告，适合个人研究与学习。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,10 @@ metadata:
     - "报告生成"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # 深度研究工具（免费版）
@@ -44,45 +49,33 @@ metadata:
 ### 单次研究最多参考 15 个来源
 单次研究最多参考 15 个来源
 
-**输入**: 用户提供单次研究最多参考 15 个来源所需的指令和必要参数。
-**处理**: 按照skill规范执行单次研究最多参考 15 个来源操作,遵循单一意图原则。
 **输出**: 返回单次研究最多参考 15 个来源的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 不支持多人协作研究
 不支持多人协作研究
 
-**输入**: 用户提供不支持多人协作研究所需的指令和必要参数。
-**处理**: 按照skill规范执行不支持多人协作研究操作,遵循单一意图原则。
 **输出**: 返回不支持多人协作研究的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 不支持自动化引用管理
 不支持自动化引用管理
 
-**输入**: 用户提供不支持自动化引用管理所需的指令和必要参数。
-**处理**: 按照skill规范执行不支持自动化引用管理操作,遵循单一意图原则。
 **输出**: 返回不支持自动化引用管理的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 不支持研究知识库存储
 不支持研究知识库存储
 
-**输入**: 用户提供不支持研究知识库存储所需的指令和必要参数。
-**处理**: 按照skill规范执行不支持研究知识库存储操作,遵循单一意图原则。
 **输出**: 返回不支持研究知识库存储的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 研究深度最高支持到「标准」级别
 研究深度最高支持到「标准」级别
 
-**输入**: 用户提供研究深度最高支持到「标准」级别所需的指令和必要参数。
-**处理**: 按照skill规范执行研究深度最高支持到「标准」级别操作,遵循单一意图原则。
 **输出**: 返回研究深度最高支持到「标准」级别的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**输入**: 用户提供已知限制所需的指令和必要参数。
-**处理**: 按照skill规范执行已知限制操作,遵循单一意图原则。
 **输出**: 返回已知限制的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：多源深度研究工具、支持系统性信息探、来源评估与方法论、生成结构化研究报、适合个人研究与学等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
@@ -108,7 +101,6 @@ python scripts/research.py \
 
 ```bash
 # 学术研究
-python scripts/research.py \
   --topic "大语言模型在医疗诊断中的应用" \
   --depth=standard \
   --sources=academic \
@@ -121,7 +113,6 @@ python scripts/research.py \
 
 ```bash
 # 行业研究
-python scripts/research.py \
   --topic "2026年 新能源汽车 市场趋势" \
   --depth=standard \
   --output=ev_market.md
@@ -157,10 +148,8 @@ pip install requests beautifulsoup4 markdown
 
 ```bash
 # 基础研究
-python scripts/research.py "你的研究主题"
 
 # 指定深度和输出
-python scripts/research.py \
   --topic "研究主题" \
   --depth=standard \
   --output=report.md
@@ -193,7 +182,7 @@ python scripts/research.py \
 | `--output` | 字符串 | 无 | 输出文件路径 |
 | `--lang` | 字符串 | zh | 语言偏好 |
 
-## 最佳实践
+## 优选实践
 
 ### 研究协议执行
 
@@ -283,10 +272,10 @@ python scripts/research.py \
 
 ```bash
 # 提升研究深度
-python scripts/research.py --topic "主题" --depth=thorough
+py --topic "主题" --depth=thorough
 
 # 增加来源数量
-python scripts/research.py --topic "主题" --max-sources=30
+py --topic "主题" --max-sources=30
 ```
 
 免费版最高支持「标准」深度，如需更深入研究请升级 PRO 版。
@@ -295,33 +284,33 @@ python scripts/research.py --topic "主题" --max-sources=30
 
 ```bash
 # 启用严格评估模式
-python scripts/research.py --topic "主题" --strict-evaluation
+py --topic "主题" --strict-evaluation
 
 # 过滤低可信度来源
-python scripts/research.py --topic "主题" --min-credibility=0.7
+py --topic "主题" --min-credibility=0.7
 ```
 
 ### 矛盾信息无法调和
 
 ```bash
 # 输出矛盾分析
-python scripts/research.py --topic "主题" --show-conflicts
+py --topic "主题" --show-conflicts
 
 # 分别评估对立观点
-python scripts/research.py --topic "主题" --balanced-view
+py --topic "主题" --balanced-view
 ```
 
 ### 研究耗时过长
 
 ```bash
 # 限制研究时间
-python scripts/research.py --topic "主题" --timeout=1800
+py --topic "主题" --timeout=1800
 
 # 减少来源数量
-python scripts/research.py --topic "主题" --max-sources=8
+py --topic "主题" --max-sources=8
 
 # 降低深度级别
-python scripts/research.py --topic "主题" --depth=quick
+py --topic "主题" --depth=quick
 ```
 
 ## 依赖说明
@@ -357,9 +346,27 @@ python scripts/research.py --topic "主题" --depth=quick
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

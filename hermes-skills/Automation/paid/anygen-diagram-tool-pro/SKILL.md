@@ -1,5 +1,5 @@
 ---
-slug: "anygen-diagram-tool-pro"
+slug: anygen-diagram-tool-pro
 name: "anygen-diagram-tool-pro"
 version: "1.0.0"
 displayName: "AnyGen图表生成-专业版"
@@ -67,21 +67,21 @@ AnyGen图表生成专业版是一款面向企业团队与专业用户的高级�
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -184,12 +184,12 @@ python3 （请参考skill目录中的脚本文件） \
 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:配置企业 API Key
+### 领先步:配置企业 API Key
 
 ```bash
 # 企业版认证
-anygen auth login --api-key sk-pro-xxx
-export ANYGEN_API_KEY=sk-pro-xxx
+anygen auth login --api-key sk-pro-未指定
+export ANYGEN_API_KEY=sk-pro-未指定
 export ANYGEN_EDITION=pro
 ```
 
@@ -219,7 +219,7 @@ python3 （请参考skill目录中的脚本文件） \
 
 ```bash
 # 环境变量
-ANYGEN_API_KEY=sk-pro-xxx
+ANYGEN_API_KEY=sk-pro-未指定
 ANYGEN_EDITION=pro
 ANYGEN_MAX_BATCH=50
 ANYGEN_DEFAULT_FORMAT=svg
@@ -248,7 +248,7 @@ ANYGEN_TEAM_REPO=git@team:diagrams-repo
 | PDF | 印刷、归档 | 适合正式文档 |
 | Markdown | 文档源码、Git | 文本格式,可版本控制 |
 
-## 最佳实践
+## 优选实践
 
 1. **模板先行**:建立团队统一的图表模板(颜色/字体/风格),确保视觉一致性
 2. **描述规范化**:图表描述使用规范结构(节点+关系+层级),提升生成准确度
@@ -296,7 +296,7 @@ A:可以。通过 API 可集成到文档构建流水线,实现 PRD/Markdown 文�
 - **认证方式**: 支持 API Key、浏览器授权两种方式
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
+- **分类**: MD+execute(纯 Markdown 指令,核心功能需要 exec 命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,支持批量生成、自定义模板、团队协作等企业级图表生产场景
 
 ## 错误处理
@@ -315,8 +315,6 @@ A:可以。通过 API 可集成到文档构建流水线,实现 PRD/Markdown 文�
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ```text
@@ -324,3 +322,14 @@ A:可以。通过 API 可集成到文档构建流水线,实现 PRD/Markdown 文�
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

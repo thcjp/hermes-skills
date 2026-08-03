@@ -7,32 +7,25 @@ displayName: Shopify助手-专业版
 summary: "企业级Shopify开发平台,支持多店铺管理、自定义App开发、Headless电商与高级SEO。企业级 Shopify 开发工具专业版,面向电商团队与代运营机构。核心能力:"
 license: Proprietary
 edition: pro
-description: 企业级 Shopify 开发工具专业版,面向电商团队与代运营机构。核心能力:。可自动提升工作效率
-
+description: "企业级 Shopify 开发工具专业版,面向电商团队与代运营机构。核心能力:。可自动提升工作效率。Use when 需要电商运营、商品管理、订单处理、支付集成时使用。不适用于虚假交易和刷单。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
   - 多店铺统一管理与部署
-
   - Shopify App 自定义开发
 
   - Headless 电商(Storefront API)
-
   - 企业级 SEO 与结构化数据
 
   - 性能优化与 Core Web Vitals
-
   - A/B 测试与转化率优化
 
   - 团队协作与代码审查
-
   - CI/CD 与自动化部署
 
   适用场景:
 
   - 多品牌电商矩阵管理
-
   - 企业级 Shopify Plus 运营
 
   - Headless 电商开发
-
   - 代运营团队多客...'
 tags:
   - Shopify
@@ -60,7 +53,6 @@ category: "Automation"
 ---
 
 # Shopify 助手 - 专业版
-
 ## 概述
 
 Shopify 助手专业版是企业级 Shopify 开发平台,在免费版主题开发能力之上扩展多店铺管理、自定义 App 开发、Headless 电商、企业级 SEO 与转化率优化。适合多品牌电商矩阵、Shopify Plus 运营与代运营团队.
@@ -70,56 +62,56 @@ Shopify 助手专业版是企业级 Shopify 开发平台,在免费版主题开�
 ### 1. 多店铺管理
 
 统一管理多个 Shopify 店铺,批量部署主题与配置,支持环境隔离.
-**输入**: 用户提供多店铺管理所需的指令和必要参数.
+
 **处理**: 解析多店铺管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多店铺管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 2. Shopify App 开发
 
 开发自定义 Shopify App,扩展后台功能、添加 Webhook、集成第三方服务.
-**输入**: 用户提供Shopify App 开发所需的指令和必要参数.
+
 **处理**: 解析Shopify App 开发的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Shopify App 开发的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 3. Headless 电商
 
 使用 Shopify Storefront API + Next.js 构建 Headless 电商,前端完全自定义.
-**输入**: 用户提供Headless 电商所需的指令和必要参数.
+
 **处理**: 解析Headless 电商的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回Headless 电商的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 4. 企业级 SEO
 
 结构化数据(JSON-LD)、站点地图优化、页面速度优化、Core Web Vitals 达标.
-**输入**: 用户提供企业级 SEO所需的指令和必要参数.
+
 **处理**: 解析企业级 SEO的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回企业级 SEO的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 5. 性能优化
 
 图片懒加载、CSS/JS 压缩、CDN 配置、LCP/CLS/FID 指标优化.
-**输入**: 用户提供性能优化所需的指令和必要参数.
+
 **处理**: 解析性能优化的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回性能优化的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 6. A/B 测试
 
 页面元素 A/B 测试,转化漏斗分析,数据驱动的优化决策.
-**输入**: 用户提供A/B 测试所需的指令和必要参数.
+
 **处理**: 解析A/B 测试的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回A/B 测试的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 7. 团队协作
 
 多开发者协作开发,代码审查,主题版本管理.
-**输入**: 用户提供团队协作所需的指令和必要参数.
+
 **处理**: 解析团队协作的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回团队协作的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 ### 8. CI/CD 自动化
 
 GitHub Actions/GitLab CI 集成,自动测试、构建、部署到多店铺.
-**输入**: 用户提供CI/CD 自动化所需的指令和必要参数.
+
 **处理**: 解析CI/CD 自动化的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回CI/CD 自动化的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
@@ -204,7 +196,6 @@ export async function getProducts() {
 // ...
 // 获取单个产品
 export async function getProduct(handle: string) {
-  const { data } = await client.query({
     data: `query getProduct($handle: String!) {
       productByHandle(handle: $handle) {
         id
@@ -264,7 +255,7 @@ Shopify.Webhooks.Registry.addHandler("ORDERS_CREATE", {
 // 自定义接口: 批量更新产品
 app.post("/api/products/batch-update", async (req, res) => {
   const session = await Shopify.Utils.loadCurrentSession(req, res);
-  const client = new Shopify.Clients.Rest(session.shop, session.accessToken);
+Clients.Rest(session.shop, session.accessToken);
 // ...
   const results = await Promise.all(
     req.body.products.map((product) =>
@@ -307,7 +298,6 @@ app.post("/api/products/batch-update", async (req, res) => {
   --minify-assets \
   --defer-scripts
 ```
-
 ## 不适用场景
 
 以下场景Shopify助手-专业版不适合处理：
@@ -315,7 +305,6 @@ app.post("/api/products/batch-update", async (req, res) => {
 - 无明确技术栈的模糊需求
 - 纯架构设计决策
 - 运维部署管理
-
 ## 触发条件
 
 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于非本工具能力范围的需求.
@@ -367,7 +356,6 @@ npm install -g @shopify-pro/cli
   "stores": [
     {
       "name": "品牌A",
-      "domain": "brand-a.myshopify.com",
       "apiToken": "${BRAND_A_TOKEN}",
       "storefrontToken": "${BRAND_A_STOREFRONT_TOKEN}",
       "theme": "themes/brand-a",
@@ -412,8 +400,7 @@ npm install -g @shopify-pro/cli
 | CI/CD | 不支持 | 自动化部署 |
 | 团队协作 | 单人 | 代码审查 + 版本管理 |
 | 技术支持 | 社区 | 优先工单 + SLA |
-
-## 最佳实践
+## 优选实践
 
 1. **Headless 按需使用**:Headless 提供最大灵活性但复杂度高,标准需求用 Liquid 主题即可
 2. **多店铺配置隔离**:每个店铺独立配置文件,API Token 通过环境变量管理
@@ -422,7 +409,6 @@ npm install -g @shopify-pro/cli
 5. **结构化数据**:产品页面必须有 JSON-LD 结构化数据,提升搜索结果展示
 6. **A/B 测试数据驱动**:所有页面改动通过 A/B 测试验证,不凭直觉决策
 7. **渐进式迁移**:从 Liquid 主题迁移到 Headless 时,逐页面迁移,保持线上稳定
-
 ## 常见问题
 
 ### Q: Headless 电商和传统 Shopify 主题有什么区别?
@@ -470,11 +456,10 @@ A: 1) 使用 Lighthouse CI 在每次部署时检测;2) 接入真实用户监控(
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(Markdown指令 + 命令行执行)
+- **分类**: MD+execute(Markdown指令 + 命令行执行)
 - **说明**: 通过自然语言指令驱动 Agent 执行企业级 Shopify 开发与管理
 - **兼容性**: 完全兼容免费版主题代码
 - **支持**: 优先工单支持,SLA 保障响应时间
-
 ## 错误处理
 
 | 错误场景 | 原因 | 处理方式 |
@@ -482,7 +467,23 @@ A: 1) 使用 Lighthouse CI 在每次部署时检测;2) 接入真实用户监控(
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
-
 ## 已知限制
 
 - 需要API Key，无Key环境无法使用
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+## 核心功能
+
+- **自动化执行**: 企业级Shopify开发平台,支持多店铺管理、自定义App开发、Headless电商与高级SEO。企业级 Shopify
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

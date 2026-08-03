@@ -17,7 +17,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # File Auto Organizer
 
 自动整理文件夹，按类型/日期归类文件，告别凌乱桌面！

@@ -1,5 +1,6 @@
 ---
-slug: "typescript-skills-tool-pro"
+
+slug: typescript-skills-tool-pro
 name: "typescript-skills-tool-pro"
 version: "1.0.0"
 displayName: "TS编码规范工具(专业版)"
@@ -48,7 +49,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # TypeScript 编码规范工具(专业版)
 
 ## 概述
@@ -69,21 +72,21 @@ category: "Automation"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -206,11 +209,11 @@ jobs:
       - name: ESLint 检查(零警告)
         run: npx eslint . --max-warnings=0
       - name: 导入顺序检查
-        run: npx eslint . --rule 'import/order: error'
+ --rule 'import/order: error'
       - name: 命名约定检查
-        run: npx eslint . --rule '@typescript-eslint/naming-convention: error'
+ --rule '@typescript-eslint/naming-convention: error'
       - name: 复杂度门禁
-        run: npx eslint . --rule 'sonarjs/cognitive-complexity: [error, 15]'
+ --rule 'sonarjs/cognitive-complexity: [error, 15]'
       - name: 类型覆盖率门禁
         run: npx type-coverage --strict --at-least 95
       - name: 上传报告
@@ -234,7 +237,7 @@ jobs:
 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 
-### 第一步:声明团队上下文
+### 领先步:声明团队上下文
 
 在对话中说明团队规模、项目结构与规范现状,例如:
 
@@ -316,7 +319,7 @@ OUTPUT="docs/styleguide.md"
 echo "规范文档已生成:$OUTPUT"
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **采用分层 ESLint 配置**:共享基线 + 子包覆盖,降低维护成本,保证一致性.
 2. **CI 门禁零警告策略**:`--max-warnings=0` 阻断所有警告进入主分支,强制即时修复.
@@ -377,7 +380,7 @@ Pro 版完全兼容免费版的所有规范建议。个人开发者可继续使�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+execute(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于自然语言指令驱动 Agent 输出企业级规范方案;CI 集成与审查脚本需在仓库中落地并由 CI 运行器执行
 
 ## 错误处理
@@ -410,3 +413,14 @@ Pro 版完全兼容免费版的所有规范建议。个人开发者可继续使�
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

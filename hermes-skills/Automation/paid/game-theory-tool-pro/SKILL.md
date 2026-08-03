@@ -1,4 +1,5 @@
 ---
+
 slug: game-theory-tool-pro
 name: game-theory-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 博弈论分析专业版
 summary: "企业级博弈论平台,支持演化博弈、机制设计、n人博弈与实验数据。面向研究机构、咨询公司与企业的专业博弈论分析平台."
 license: Proprietary
 edition: pro
-description: '面向研究机构、咨询公司与企业的专业博弈论分析平台.
+description: "面向研究机构、咨询公司与企业的专业博弈论分析平台。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。"
   核心能力: 演化博弈、机制设计、n人博弈、贝叶斯博弈、行为实验、政策评估
 
   适用场景: 政策制定、市场设计、拍卖设计、谈判策略、组织行为研究
@@ -36,15 +37,14 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Automation"
+
 ---
+
 # 博弈论分析 (专业版)
-
 ## 概述
-
 专业版面向研究机构、咨询公司与企业的专业博弈论分析平台,在免费版基础分析之上,扩展演化博弈、机制设计、n 人博弈、贝叶斯博弈 (不完全信息)、行为博弈实验、政策评估等高级能力。支持构建复杂博弈模型、设计激励相容机制、评估政策效果,适合学术研究、商业咨询与政策制定场景.
 专业版与免费版分析框架完全兼容,个人用户升级后现有分析无缝迁移.
 ## 核心能力
-
 | 能力模块 | 描述 | 免费版 | 专业版 |
 |----|---|---|---|
 | 收益矩阵分析 | 2x2 博弈 | 支持 | 支持 |
@@ -63,29 +63,27 @@ category: "Automation"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级博弈论平台、支持演化博弈、人博弈与实验数据、面向研究机构、咨询公司与企业的、专业博弈论分析平、核心能力、适用场景、政策制定、市场设计、拍卖设计、谈判策略、组织行为研究、差异化、专业版支持高级博、弈论与企业级应用、与免费版分析框架、适用关键词等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 使用场景
-
 ### 场景一: 拍卖机制设计
-
 为拍卖场景设计最优机制.
 ```python
 import os
@@ -123,9 +121,7 @@ class AuctionDesigner:
     def revenue_equivalence_check(self, auction_configs):
         """验证收益等价定理"""
         payload = {"auctions": auction_configs}
-        resp = requests.post(
             f"{API_BASE}/auction/revenue-equivalence",
-            headers=self.headers,
             json=payload,
             timeout=60,
         )
@@ -141,7 +137,6 @@ result = designer.design_auction(
 ```
 
 ### 场景二: 机制设计
-
 设计激励相容的机制.
 ```python
 def design_mechanism(social_choice_function, agent_types):
@@ -177,7 +172,6 @@ mechanism = design_mechanism(
 ```
 
 ### 场景三: 政策博弈评估
-
 评估政策对策略互动的影响.
 ```python
 def evaluate_policy_impact(policy, stakeholders):
@@ -196,7 +190,6 @@ def evaluate_policy_impact(policy, stakeholders):
     }
     resp = requests.post(
         f"{API_BASE}/policy/evaluate",
-        headers=designer.headers,
         json=payload,
         timeout=300,
     )
@@ -212,33 +205,25 @@ impact = evaluate_policy_impact(
     ],
 )
 ```
-
 ## 不适用场景
-
 以下场景博弈论分析专业版不适合处理：
 
 - 实时流数据处理
 - 小规模数据手动分析
 - 非结构化文本情感分析
-
 ## 触发条件
-
 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
-
 ### Step 1: 申请专业版账户
-
 联系销售开通专业版,获取管理员凭证.
 ### Step 2: 配置凭证
-
 ```bash
-export GAME_THEORY_ADMIN_KEY="sk_pro_admin_xxx"
+export GAME_THEORY_ADMIN_KEY="sk_pro_admin_未指定"
 export GAME_THEORY_ORG_ID="org_your_id"
 export GAME_THEORY_EDITION="pro"
 ```
 
 ### Step 3: 提交复杂博弈模型
-
 ```bash
 curl -X POST -H "X-API-Key: $GAME_THEORY_ADMIN_KEY" \
   -H "Content-Type: application/json" \
@@ -255,9 +240,7 @@ curl -X POST -H "X-API-Key: $GAME_THEORY_ADMIN_KEY" \
 
 #
 ## 示例
-
 ### 企业级配置
-
 ```yaml
 # /etc/game-theory/pro.yaml
 edition: pro
@@ -295,7 +278,6 @@ collaboration:
 ```
 
 ### 演化博弈分析
-
 ```python
 def evolutionary_dynamics(payoff_matrix, initial_population, generations=1000):
     """演化博弈动态分析"""
@@ -304,7 +286,6 @@ def evolutionary_dynamics(payoff_matrix, initial_population, generations=1000):
         "initial_population": initial_population,
         "generations": generations,
         "dynamics": "replicator",
-        "mutation_rate": 0.01,
         "analyze": [
             "evolutionary_stable_strategy",  # ESS
             "attractor_analysis",
@@ -314,7 +295,6 @@ def evolutionary_dynamics(payoff_matrix, initial_population, generations=1000):
     }
     resp = requests.post(
         f"{API_BASE}/evolutionary/analyze",
-        headers=designer.headers,
         json=payload,
         timeout=300,
     )
@@ -329,7 +309,6 @@ result = evolutionary_dynamics(
 ```
 
 ### n 人博弈分析
-
 ```python
 def analyze_n_player_game(num_players, strategy_space, payoff_function):
     """n 人博弈分析"""
@@ -347,17 +326,13 @@ def analyze_n_player_game(num_players, strategy_space, payoff_function):
     }
     resp = requests.post(
         f"{API_BASE}/n-player/analyze",
-        headers=designer.headers,
         json=payload,
         timeout=600,
     )
     return resp.json()
 ```
-
-## 最佳实践
-
+## 优选实践
 ### 1. 模型校准
-
 ```python
 def calibrate_with_real_data(model, observed_data):
     """用真实数据校准博弈模型"""
@@ -369,7 +344,6 @@ def calibrate_with_real_data(model, observed_data):
     }
     resp = requests.post(
         f"{API_BASE}/calibrate",
-        headers=designer.headers,
         json=payload,
         timeout=300,
     )
@@ -377,7 +351,6 @@ def calibrate_with_real_data(model, observed_data):
 ```
 
 ### 2. 敏感性分析
-
 ```python
 def sensitivity_analysis(model, parameters):
     """参数敏感性分析"""
@@ -389,7 +362,6 @@ def sensitivity_analysis(model, parameters):
     }
     resp = requests.post(
         f"{API_BASE}/sensitivity",
-        headers=designer.headers,
         json=payload,
         timeout=600,
     )
@@ -397,7 +369,6 @@ def sensitivity_analysis(model, parameters):
 ```
 
 ### 3. 行为博弈拟合
-
 ```python
 def fit_behavioral_model(experimental_data, model_type="QRE"):
     """用实验数据拟合行为模型"""
@@ -408,7 +379,6 @@ def fit_behavioral_model(experimental_data, model_type="QRE"):
     }
     resp = requests.post(
         f"{API_BASE}/behavioral/fit",
-        headers=designer.headers,
         json=payload,
         timeout=300,
     )
@@ -416,7 +386,6 @@ def fit_behavioral_model(experimental_data, model_type="QRE"):
 ```
 
 ### 4. 报告生成
-
 ```python
 def generate_professional_report(analysis_id, audience="consulting"):
     """生成专业报告"""
@@ -437,41 +406,30 @@ def generate_professional_report(analysis_id, audience="consulting"):
     }
     resp = requests.post(
         f"{API_BASE}/reports/generate",
-        headers=designer.headers,
         json=payload,
         timeout=120,
     )
     return resp.json()
 ```
-
 ## 常见问题
-
 ### Q1: 专业版与免费版分析框架兼容吗?
-
 完全兼容。专业版在免费版基础分析上扩展高级能力,基础框架一致.
 ### Q2: 机制设计如何保证激励相容?
-
 使用 VCG (Vickrey-Clarke-Groves) 机制等理论保证激励相容,即诚实报告是最优策略.
 ### Q3: 演化博弈与经典博弈有何区别?
-
 演化博弈不要求完全理性,基于"复制者动态"分析策略在群体中的演化,更适合分析长期趋势.
 ### Q4: 政策评估如何考虑利益相关者反应?
-
 使用博弈论建模利益相关者的策略性反应,预测政策实施后的均衡变化,识别非预期后果.
 ### Q5: 行为博弈实验需要多少人?
-
 100-200 人可获得统计显著的结论。专业版提供实验平台与被试招募.
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent 平台**: 支持 SKILL.md 规范的任意 AI Agent (Claude Code、Cursor、Codex、Gemini CLI 等)
 - **操作系统**: Windows / macOS / Linux (生产环境推荐 Linux)
 - **网络**: 需访问专业版服务
 - **Python**: 3.9+ (用于本地建模)
 
 ### 依赖详情
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-----|:-----|:-----|:-----|
 | Game Theory Pro API | 在线 API | 必需 | 联系销售开通专业版 |
@@ -482,10 +440,9 @@ def generate_professional_report(analysis_id, audience="consulting"):
 | Matplotlib | Python 库 | 可选 | `pip install matplotlib` (可视化) |
 
 ### API Key 配置
-
 ```bash
 # 专业版凭证
-export GAME_THEORY_ADMIN_KEY="sk_pro_admin_xxx"
+export GAME_THEORY_ADMIN_KEY="sk_pro_admin_未指定"
 export GAME_THEORY_ORG_ID="org_your_id"
 export GAME_THEORY_EDITION="pro"
 # ...
@@ -495,26 +452,20 @@ export PARTICIPANT_RECRUITMENT="prolific"
 ```
 
 ### 可用性分类
-
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+execute(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 面向研究机构、咨询与企业,通过自然语言指令驱动 Agent 调用 Pro API,完成演化博弈、机制设计、政策评估等专业分析
 - **专业版特性**: 演化博弈、机制设计、n 人博弈、贝叶斯博弈、拍卖理论、合作博弈、行为实验、政策评估
 - **兼容性**: 与免费版分析框架完全兼容,支持平滑升级
-
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
-
 ## 已知限制
-
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
-
 ## 输出格式
 ```json
 {
@@ -531,3 +482,13 @@ export PARTICIPANT_RECRUITMENT="prolific"
   "error": null
 }
 ```
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

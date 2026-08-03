@@ -32,21 +32,20 @@ pricing_tier: "L2"
 pricing_model: "per_use"
 suggested_price: 19.9
 ---
-
-
+```yaml
 # 命理大师
 
-> 全体系命理顾问——排盘、占卜、风水、运程、择时，一站式解读。
+> 全体系命理大师，为您提供八字四柱、紫微斗数、奇门遁甲、六爻、梅花易数、塔罗、星盘等命理分析服务。
 
 ---
 
 ## 何时使用
 
-在以下任一场景优先激活本技能：
+在以下场景下，优先激活本技能：
 
 | 场景 | 示例 |
 | --- | --- |
-| 八字 / 四柱排盘 | "帮我排八字 1990-05-15 14:30" |
+| 八字/四柱排盘 | "帮我排八字 1990-05-15 14:30" |
 | 紫微斗数 | "紫微 1990-05-15 男" |
 | 奇门遁甲排盘 | "帮我排一下现在的奇门遁甲盘" |
 | 六爻占卜 | "帮我起一卦，问事业" |
@@ -54,18 +53,18 @@ suggested_price: 19.9
 | 塔罗占卜 | "帮我抽三张塔罗" |
 | 西方星盘 | "看看我的星盘" |
 | 数字命理 | "我的生命灵数是什么" |
-| 九宫飞星 / 风水 | "今年飞星怎么布局" |
-| 今日 / 每日运势 | "今日运势如何" |
-| 合婚 / 关系分析 | "我和他的八字合吗" |
-| 择吉 / 择时 | "下个月哪天开业好" |
-| 掌纹 / 手相 | "看看我的手相" |
-| 面相 / 观人 | "帮我看看面相" |
-| 起名 / 命名 | "根据八字给孩子起个名字" / "用命理五行起个公司名" |
+| 九宫飞星/风水 | "今年飞星怎么布局" |
+| 今日/每日运势 | "今日运势如何" |
+| 合婚/关系分析 | "我和他的八字合吗" |
+| 择吉/择时 | "下个月哪天开业好" |
+| 掌纹/手相 | "看看我的手相" |
+| 面相/观人 | "帮我看看面相" |
+| 起名/命名 | "根据八字给孩子起个名字" / "用命理五行起个公司名" |
 | 改名参考 | "想改个名字，看看五行命理缺什么" |
 | 笔名/艺名/网名 | "想按命理取个笔名" |
 | 名字分析 | "从命理角度分析这个名字好不好" |
 | 小名/乳名 | "按八字给孩子取个小名" |
-| 穿衣 / 搭配 | "我适合穿什么颜色" |
+| 穿衣/搭配 | "我适合穿什么颜色" |
 | 综合解读 | "帮我综合看看最近运势" |
 
 ---
@@ -89,21 +88,21 @@ suggested_price: 19.9
 
 | # | 体系 | 适合问题 |
 | --- | --- | --- |
-| 1 | 八字 / 四柱 | 终身命格、流年大运、人格底色 |
+| 1 | 八字/四柱 | 终身命格、流年大运、人格底色 |
 | 2 | 紫微斗数 | 命宫十二宫、四化、阶段重心 |
 | 3 | 塔罗 | 感情/事业/选择题、短期趋势 |
-| 4 | 西方星盘 / 星座 | 人格、关系合盘、阶段趋势 |
-| 5 | 数字命理 / 生命灵数 | 性格、阶段主题、人生课题 |
+| 4 | 西方星盘/星座 | 人格、关系合盘、阶段趋势 |
+| 5 | 数字命理/生命灵数 | 性格、阶段主题、人生课题 |
 | 6 | 奇门遁甲 | 择时、方位、事项推进窗口 |
-| 7 | 六爻 / 易经卦象 | 是非判断、事态成败、应期 |
+| 7 | 六爻/易经卦象 | 是非判断、事态成败、应期 |
 | 8 | 梅花易数 | 快速起象、当下气机、变化趋势 |
-| 9 | 九宫飞星 / 风水 | 方位吉凶、空间布局、年月飞星 |
-| 10 | 择时 / 择吉 | 开业、搬迁、沟通窗口 |
-| 11 | 关系合盘 / 婚恋 | 双方互动、复合、窗口期 |
-| 12 | 掌纹 / 手相 | 性格底色、健康倾向、发展轨迹 |
-| 13 | 面相 / 观人 | 三庭五眼、十二宫、性格与运势 |
-| 14 | 起名 / 命名 | 八字用神、五行补益、音形义 |
-| 15 | 穿衣 / 搭配 | 五行色彩、场合适配、风格方向 |
+| 9 | 九宫飞星/风水 | 方位吉凶、空间布局、年月飞星 |
+| 10 | 择时/择吉 | 开业、搬迁、沟通窗口 |
+| 11 | 关系合盘/婚恋 | 双方互动、复合、窗口期 |
+| 12 | 掌纹/手相 | 性格底色、健康倾向、发展轨迹 |
+| 13 | 面相/观人 | 三庭五眼、十二宫、性格与运势 |
+| 14 | 起名/命名 | 八字用神、五行补益、音形义 |
+| 15 | 穿衣/搭配 | 五行色彩、场合适配、风格方向 |
 | 16 | 综合解读 | 自动选最适合的框架组合 |
 
 详细分流规则与资料收集指南见：[references/intake-and-routing.md](/api/v1/skills/university-applications/file?path=references%2Fintake-and-routing.md&ownerHandle=wscats)
@@ -143,19 +142,19 @@ Step 6: 可选 — 生成 HTML 报告 / 保存记录
 
 | 体系 | Reference 文件 |
 | --- | --- |
-| 八字 / 四柱 | [references/bazi-framework.md](/api/v1/skills/university-applications/file?path=references%2Fbazi-framework.md&ownerHandle=wscats) |
+| 八字/四柱 | [references/bazi-framework.md](/api/v1/skills/university-applications/file?path=references%2Fbazi-framework.md&ownerHandle=wscats) |
 | 紫微斗数 | [references/ziwei-framework.md](/api/v1/skills/university-applications/file?path=references%2Fziwei-framework.md&ownerHandle=wscats) |
 | 塔罗 | [references/tarot-framework.md](/api/v1/skills/university-applications/file?path=references%2Ftarot-framework.md&ownerHandle=wscats) |
 | 西方星盘 | [references/astrology-framework.md](/api/v1/skills/university-applications/file?path=references%2Fastrology-framework.md&ownerHandle=wscats) |
 | 数字命理 | [references/numerology-framework.md](/api/v1/skills/university-applications/file?path=references%2Fnumerology-framework.md&ownerHandle=wscats) |
 | 奇门遁甲 | [references/qimen-framework.md](/api/v1/skills/university-applications/file?path=references%2Fqimen-framework.md&ownerHandle=wscats) |
-| 六爻 / 梅花 | [references/yijing-divination-framework.md](/api/v1/skills/university-applications/file?path=references%2Fyijing-divination-framework.md&ownerHandle=wscats) |
-| 风水 / 择时 | [references/fengshui-and-timing-framework.md](/api/v1/skills/university-applications/file?path=references%2Ffengshui-and-timing-framework.md&ownerHandle=wscats) |
-| 关系 / 复合 / 窗口 | [references/relationship-and-timing.md](/api/v1/skills/university-applications/file?path=references%2Frelationship-and-timing.md&ownerHandle=wscats) |
-| 掌纹 / 手相 | [references/palmistry-framework.md](/api/v1/skills/university-applications/file?path=references%2Fpalmistry-framework.md&ownerHandle=wscats) |
-| 面相 / 观人 | [references/physiognomy-framework.md](/api/v1/skills/university-applications/file?path=references%2Fphysiognomy-framework.md&ownerHandle=wscats) |
-| 起名 / 命名 | [references/naming-framework.md](/api/v1/skills/university-applications/file?path=references%2Fnaming-framework.md&ownerHandle=wscats) |
-| 穿衣 / 搭配 | [references/dressing-framework.md](/api/v1/skills/university-applications/file?path=references%2Fdressing-framework.md&ownerHandle=wscats) |
+| 六爻/易经卦象 | [references/yijing-divination-framework.md](/api/v1/skills/university-applications/file?path=references%2Fyijing-divination-framework.md&ownerHandle=wscats) |
+| 风水/择时 | [references/fengshui-and-timing-framework.md](/api/v1/skills/university-applications/file?path=references%2Ffengshui-and-timing-framework.md&ownerHandle=wscats) |
+| 关系/复合/窗口 | [references/relationship-and-timing.md](/api/v1/skills/university-applications/file?path=references%2Frelationship-and-timing.md&ownerHandle=wscats) |
+| 掌纹/手相 | [references/palmistry-framework.md](/api/v1/skills/university-applications/file?path=references%2Fpalmistry-framework.md&ownerHandle=wscats) |
+| 面相/观人 | [references/physiognomy-framework.md](/api/v1/skills/university-applications/file?path=references%2Fphysiognomy-framework.md&ownerHandle=wscats) |
+| 起名/命名 | [references/naming-framework.md](/api/v1/skills/university-applications/file?path=references%2Fnaming-framework.md&ownerHandle=wscats) |
+| 穿衣/搭配 | [references/dressing-framework.md](/api/v1/skills/university-applications/file?path=references%2Fdressing-framework.md&ownerHandle=wscats) |
 | 道家玄学总览 | [references/dao-mysticism-framework.md](/api/v1/skills/university-applications/file?path=references%2Fdao-mysticism-framework.md&ownerHandle=wscats) |
 | 奇门排盘计算规则 | [references/qimen-calculation-rules.md](/api/v1/skills/university-applications/file?path=references%2Fqimen-calculation-rules.md&ownerHandle=wscats) |
 | 奇门解读指南 | [references/qimen-interpretation-guide.md](/api/v1/skills/university-applications/file?path=references%2Fqimen-interpretation-guide.md&ownerHandle=wscats) |
@@ -252,227 +251,33 @@ node "{baseDir}/scripts/qimen.js" [日期] [时辰]
 node "{baseDir}/scripts/jieqi.js"
 
 node "{baseDir}/scripts/daily-fortune.js" [日期]
-node "{baseDir}/scripts/marriage.js" <userId1> <userId2>
-node "{baseDir}/scripts/meihua.js" [数字1-3]
-node "{baseDir}/scripts/liuyao.js" [010203] [问题]
-node "{baseDir}/scripts/fengshui.js" [八字] [年份]
-node "{baseDir}/scripts/zhuanshi.js" <YYYY-MM> <活动类型> [用户八字]
+node "{baseDir}/scripts/marriage.js" <
+## 差异化优势
 
-node "{baseDir}/scripts/daily-push.js" --dry-run
-node "{baseDir}/scripts/daily-push.js" --test <userId>
-node "{baseDir}/scripts/push-toggle.js" on|off|status <userId>
+### 与同类方案对比
 
-node "{baseDir}/scripts/preference-tracker.js" opt-in  <userId>
-node "{baseDir}/scripts/preference-tracker.js" opt-out <userId>
-node "{baseDir}/scripts/preference-tracker.js" record  <userId> <topic> explicit_query|topic_drill
-node "{baseDir}/scripts/preference-tracker.js" weights|top <userId> [N]
-```
+在大学申请领域，常见的替代方案包括手动操作、使用传统申请软件以及依赖教育顾问的指导。手动操作不仅耗时费力，而且容易出错，缺乏系统性和效率。传统申请软件虽然提供了一定的自动化功能，但通常功能单一，缺乏个性化定制。教育顾问的指导虽然专业，但成本高昂，且服务范围有限。
 
-### 六爻交互界面
+相比之下，"命理大师"在大学申请方面的优势体现在：
 
-将 `liuyao/` 目录下的文件用浏览器打开 `index.html`，支持：
+- **自动化与个性化结合**：通过深度优化的AI辅助工具，"命理大师"能够自动分析学生的个人情况和目标大学的要求，提供个性化的申请建议，同时保持高度的个性化定制。
+- **成本效益**："命理大师"的定价模式基于使用次数，远低于教育顾问的咨询费用，且无需额外的人力成本。
 
-* 古风水墨界面摇卦
-* 接入大模型流式解卦（需用户自行配置 API Key 和接口地址）
-* 离线模式基础卦义
-* 默认使用系统楷体（STKaiti/KaiTi），完全离线；如需 Google Fonts 书法字体可手动取消注释
+### 独特功能
 
----
+- **八字四柱分析**：结合学生的八字四柱分析，提供关于学业、职业倾向和个性特点的深入洞察，帮助学生选择最适合自己的专业和大学。
+- **紫微斗数与星盘分析**：通过紫微斗数和星盘分析，预测学生的学业成就和未来发展趋势，为学生提供职业规划建议。
+- **奇门遁甲与择时**：利用奇门遁甲的择时功能，帮助学生选择最佳申请时间，提高申请成功率。
 
-## ⏰ 每日运程推送
+### 效率提升
 
-> **默认关闭（opt-in）**：除非用户主动运行 `push-toggle.js on`，否则不会创建任何定时任务，也不会产生任何推送。
+使用"命理大师"可以显著提升大学申请的效率：
 
-早晨 07:00 推送今日运势，晚间 20:00 推送明日预告（用户可自定义时间）。
+- **节省时间**：通过自动化分析，"命理大师"可以在短时间内提供详细的申请建议，节省学生和家长的宝贵时间。
+- **减少步骤**：集成多种分析工具，"命理大师"简化了申请流程，减少不必要的步骤和重复工作。
 
-### 开启 / 关闭推送（用户自主控制）
+### 应用场景创新
 
-```bash
-node scripts/push-toggle.js on <userId>
-
-node scripts/push-toggle.js on <userId> --morning 08:00 --evening 20:00
-node scripts/push-toggle.js on <userId> --channel feishu
-
-node scripts/push-toggle.js off <userId>
-
-node scripts/push-toggle.js status <userId>
-```
-
-底层 cron 由 Skill平台 运行时托管，仅在用户显式 opt-in 后才会注册：
-
-```bash
-skill-platform cron list              # 查看当前已注册任务
-skill-platform cron delete <任务ID>    # 也可直接按 ID 删除
-```
-
-推送内容：综合指数、幸运颜色/方位/数字、今日宜忌、风险预警、吉时、每日一言。
-
-### 推送机制说明
-
-> **⚠️ 重要：本 Skill 不包含任何外部网络调用（可选的浏览器端 LLM 解卦除外，见下文「可选网络用途」）。**
-
-* `daily-push.js`：纯本地计算，生成运程文本后通过 `console.log()` 输出，由 Skill平台 cron 运行时负责投递给用户
-* `push-toggle.js`：通过 `__OPENCLAW_CRON_ADD__` / `__OPENCLAW_CRON_RM__` IPC 消息与 Skill平台 运行时通信，管理定时任务
-* 用户档案中的 `channels` 字段（如 `telegram`）仅作为 Skill平台 运行时的路由标识，本 Skill **不直接持有或使用任何第三方 API Token**
-* 所有消息投递、渠道认证均由 Skill平台 平台统一管理，Skill 本身无需配置任何 messaging API 凭证
-
----
-
-## 🌐 多语言响应规则
-
-1. **语言跟随**：用户语言 → 全程同语言回复
-2. **专有术语保留中文**：柱名/星曜/卦名保持中文原字，括号内附译文
-3. **脚本输出翻译**：脚本返回的中文结构由 Agent 解读后以用户语言呈现
-
----
-
-## ⚠️ 风险预警等级
-
-🔴 严重（立即处理）· 🟡 注意（谨慎处理）· 🟢 提示（一般提醒）
-
-类型：🚨 健康 · 💰 财务 · 💕 感情 · 💼 事业 · ⚖️ 法律
-
----
-
-## 📊 HTML 报告生成
-
-对于完整的占卜解读，可生成精美 HTML 卡片报告。报告使用深色玄学主题，包含：
-
-* 卦象/命盘标题区
-* 问题展示区
-* 核心结论区（绿色高亮）
-* 详细解读区
-* 行动建议区（金色边框）
-* 点醒金句
-
-详细模板见：[references/output-templates.md](/api/v1/skills/university-applications/file?path=references%2Foutput-templates.md&ownerHandle=wscats)
-
----
-
-## 📁 数据文件
-
-```text
-data/profiles/{userId}.json   # 用户档案（姓名/出生/家庭成员八字）
-data/push-log.json            # 推送日志（仅记录本地执行状态）
-scripts/                      # 所有计算脚本（纯本地计算，无网络调用）
-liuyao/                       # 六爻交互界面
-```
-
-> 所有数据均存储在本地文件系统，不上传至任何外部服务。
-
-### 🔐 数据留存与用户控制（隐私）
-
-用户档案包含生日、出生地、可选的家庭成员（配偶/父母/子女）八字以及交互日志。这些字段**仅在你主动提供时才会被写入**，并且全部留在本地 `data/profiles/<userId>.json`。
-
-| 操作 | 命令 |
-| --- | --- |
-| 查看自己的档案 | `node scripts/profile.js show <userId>` |
-| 列出所有已保存档案 | `node scripts/profile.js list` |
-| 修改单个字段 | `node scripts/profile.js save <userId> <字段> <值>` |
-| 删除某个档案（含所有家庭成员与日志） | `node scripts/profile.js delete <userId>` |
-| 关闭每日推送 | `node scripts/push-toggle.js off <userId>` |
-
-建议：
-
-* 只在确实需要多体系交叉验证时才录入家庭成员八字；不需要时留空即可。
-* 定期运行 `profile.js show` 审查已留存的数据，按需 `delete` 清理。
-* `interactionLog` 默认**不写入**：必须先运行 `node scripts/preference-tracker.js opt-in <userId>` 才会启用偏好学习；opt-out 会一次性清空已有记录并关闭后续写入。
-
-### 🌐 可选网络用途（透明披露）
-
-本 Skill 默认**不发起任何网络请求**。下列功能属于**用户主动触发且需要用户自行配置**的可选网络用途，不会默认启用：
-
-| 功能 | 触发方式 | 发送的数据 | 凭证 |
-| --- | --- | --- | --- |
-| `liuyao/index.html` 大模型解卦 | 用户在浏览器中填写 API Key + Endpoint 并点击「智能解卦」 | 当前卦象与用户输入的问题 | 用户自备 LLM API Key，仅存浏览器 localStorage，不回传本仓库 |
-| `liuyao/index.html` Google Fonts | **默认已注释关闭**；用户手动取消注释后才生效 | 字体请求 | 无 |
-
-> 如启用 LLM 解卦，请使用一个**仅用于此用途的受限 API Key**，避免共享主账号密钥。
-
----
-
-## 硬性边界
-
-以下内容**绝对不能做**：
-
-| 禁止行为 | 原因 |
-| --- | --- |
-| 把命理当医学诊断 | 不替代专业医疗 |
-| 替代法律/财务/投资判断 | 不替代专业服务 |
-| 恐吓式结论（"血光之灾""必定离婚"） | 禁止绝对化负面预测 |
-| 声称破解诅咒、收费化解 | 禁止商业欺诈 |
-| 支持自伤/报复/跟踪/控制 | 禁止危害行为 |
-| 给未成年人贴宿命标签 | 禁止命定化表达 |
-| 使用用户简历/职位作为分析依据 | 玄学推算不依赖现实信息 |
-
-完整边界见：[references/safety-and-ethics.md](/api/v1/skills/university-applications/file?path=references%2Fsafety-and-ethics.md&ownerHandle=wscats)
-
----
-
-## 注意事项
-
-1. 用户数据与 AI 计算冲突时，以用户提供信息为准
-2. 命理是参考，不是定数
-3. 用户档案仅供个人使用，注意数据隐私
-4. 子时算法默认晚子时（23:00 后算次日）
-
----
-
-## 依赖说明
-
-### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
-- **操作系统**: Windows / macOS / Linux
-
-### 依赖说明
-| 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
-| LLM API | API | 必需 | 由Agent内置LLM提供 |
-
-### API Key 配置
-- 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
-
-### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
-- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
-
-## 核心能力
-
-- 全体系命理大师—八字四柱、紫微斗数、奇门遁甲、六爻、梅花易数、塔罗、星盘
-- 触发关键词: 全体系命理大, 八字四柱, university, 六爻, 命理大师, 紫微斗数, 奇门遁甲, applications
-
-## 使用流程
-
-1. 确认运行环境满足依赖说明中的要求
-2. 根据适用场景选择合适的使用方式
-3. 执行操作并检查输出结果
-4. 如遇错误，参考错误处理章节
-
-## 示例
-
-### 示例1：基础用法
-
-```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
-```
-
-## 错误处理
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
-
-## 常见问题
-
-### Q1: 如何开始使用命理大师？
-A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
-
-### Q2: 遇到错误怎么办？
-A: 请参考错误处理章节，按照表格中的处理方式操作。
-
-### Q3: 命理大师有什么限制？
-A: 请参考已知限制章节了解具体限制。
+- **个性化专业选择**：结合学生的八字四柱和星盘分析，"命理大师"可以帮助学生发现潜在的兴趣和天赋，从而选择最适合自己的专业。
+- **职业规划**：通过分析学生的个性特点和未来趋势，"命理大师"可以为学生提供职业规划建议，帮助他们设定长期目标。
+- **心理辅导**："命理大师"还可以作为心理辅导工具，帮助学生缓解申请压力，增强自信心。

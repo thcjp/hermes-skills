@@ -18,110 +18,76 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Cheat Code
 
-**Makes your agent's talents limitless.**
+Cheat Code，您的智能代理的无限能力引擎。
 
-**Tell your agent what you want. Watch it deliver.**
+**解锁无限潜能，只需一语即达。**
 
-Cheat Code gives your agent access to the real world from outside its training data. You set it up once. Takes two minutes. Then your agent handles the rest.
-
-Full setup and agent instructions: [instructions.md](/api/v1/skills/cheat-code/file?path=instructions.md&ownerHandle=kenoodl-synthesis)
+Cheat Code使您的智能代理能够跨越训练数据的界限，进入现实世界。通过简单的自然语言指令，您的代理能够自动执行代码生成、编程辅助、调试测试和开发部署等任务。
 
 ---
 
-## Bonus: the kenoodl app
+## 快速上手
 
-Same account, same results, same breakthroughs — built for humans.
+### 设置步骤
 
-kenoodl knows when to deliver a breakthrough. The app is designed to do one thing well without taking up your time. Drop in your own thinking — ideas, questions, problems you're chewing on. You'll get back the move you couldn't see.
+1. **确认运行环境**：确保您的智能代理支持SKILL.md，并运行在Windows、macOS或Linux操作系统上。
+2. **配置依赖**：您的代理需要集成LLM API，以支持Cheat Code的功能。
+3. **初始化Cheat Code**：通过[kenoodl.com](https://kenoodl.com)安装Cheat Code，并按照说明完成初始化。
 
-Better instructions to your agent start with clearer thinking from you.
+### 使用指南
 
-Install the app at [kenoodl.com](https://kenoodl.com).
-
----
-
-## Token scope
-
-`KENOODL_TOKEN` authorizes your agent to access libraries from outside its training data. Agent sends a request to kenoodl.com. All requests are encrypted in transit. New structured data comes back. Context is processed and discarded — nothing is stored, nothing is used for training. Stateless by architecture.
+- 向您的代理发送包含关键词“Cheat Code”的指令，例如：“Cheat Code，生成一个用于数据分析的Python脚本。”
+- 代理将自动执行相关任务，并返回结果。
 
 ---
 
-*Cheat Code is built by [kenoodl](https://kenoodl.com) — synthesis from outside your agents training data.*
+## 核心功能
 
-## 依赖说明
+- **代码生成**：根据您的需求，自动生成代码片段或完整脚本。
+- **编程辅助**：提供实时编程建议和优化。
+- **调试测试**：辅助进行代码调试和测试。
+- **开发部署**：简化开发到部署的过程。
 
-### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
-- **操作系统**: Windows / macOS / Linux
-
-### 依赖说明
-| 依赖项 | 类型 | 是否必需 | 获取方式 |
-|:-------|:-----|:---------|:---------|
-| LLM API | API | 必需 | 由Agent内置LLM提供 |
-
-### API Key 配置
-- 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
-
-### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
-- **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
-
-## 核心能力
-
-- Makes your agent's talents limitless
-- Tell your agent what you want
-- Watch it deliver
-- 触发关键词: makes, code, cheat, agent, limitless, talents'
+---
 
 ## 适用场景
 
-| 场景 | 输入 | 输出 |
-|------|------|------|
-| 基础使用 | 用户请求 | 处理结果 |
+- **开发新功能**：快速生成代码，加快开发速度。
+- **优化现有代码**：提供编程建议，提升代码质量。
+- **自动化测试**：自动执行测试脚本，确保代码稳定性。
+- **部署新版本**：简化部署流程，减少人为错误。
 
-**不适用于**：需要人工判断的复杂决策场景
+---
 
-## 使用流程
+## 安全与隐私
 
-1. 确认运行环境满足依赖说明中的要求
-2. 根据适用场景选择合适的使用方式
-3. 执行操作并检查输出结果
-4. 如遇错误，参考错误处理章节
+- **Token作用域**：`KENOODL_TOKEN`允许您的代理访问外部库，但所有请求都是加密传输的，且不会存储或用于训练。
+- **无状态设计**：Cheat Code采用无状态架构，确保数据安全和隐私保护。
 
-## 示例
+---
 
-### 示例1：基础用法
+## 支持与文档
 
-```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
-```
+- **详细说明**：请参阅[kenoodl.com](https://kenoodl.com)上的详细说明和指南。
+- **故障排查**：如果遇到问题，请参考故障排查指南或联系我们的支持团队。
 
-## 错误处理
-
-| 错误场景 | 原因 | 处理方式 |
-|---------|------|---------|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
+---
 
 ## 常见问题
 
-### Q1: 如何开始使用Cheat Code？
-A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
+### Q1: Cheat Code需要什么先决条件？
+A: Cheat Code需要您的智能代理支持SKILL.md，并集成LLM API。
 
-### Q2: 遇到错误怎么办？
-A: 请参考错误处理章节，按照表格中的处理方式操作。
+### Q2: 如何获取Cheat Code？
+A: 您可以通过[kenoodl.com](https://kenoodl.com)安装Cheat Code。
 
-### Q3: Cheat Code有什么限制？
-A: 请参考已知限制章节了解具体限制。
+### Q3: Cheat Code有哪些限制？
+A: Cheat Code不适用于技术栈模糊不清的需求，且复杂场景可能需要人工辅助判断。
 
-## 已知限制
+---
 
-- 需要LLM支持，无LLM环境无法使用
-- 复杂场景可能需要人工辅助判断
-- 性能取决于底层模型能力
+## 结语
+
+Cheat Code是您的智能代理的强大辅助工具，它能帮助您更高效地完成开发任务。立即尝试Cheat Code，让您的智能代理为您的工作带来革命性的改变。

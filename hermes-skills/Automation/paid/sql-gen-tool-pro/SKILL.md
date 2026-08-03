@@ -1,5 +1,5 @@
 ---
-slug: "sql-gen-tool-pro"
+slug: sql-gen-tool-pro
 name: "sql-gen-tool-pro"
 version: "1.0.0"
 displayName: "SQL生成器(专业版)"
@@ -50,21 +50,21 @@ category: "Automation"
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -77,7 +77,7 @@ category: "Automation"
 ```python
 from sql_gen_tool import ProFeatures
 # ...
-pro = ProFeatures(db_url="postgresql://user:pass@localhost/mydb")
+pro = ProFeatures(db_url="数据库://user:pass@localhost/mydb")
 pro.connect_schema()  # 自动读取所有表结构
 # ...
 sql = pro.generate("查询最近30天消费超1000元的用户及其订单明细")
@@ -137,12 +137,12 @@ pro.regression_test(baseline_dir="generated_sql/v1.2/")
 
 ## 快速开始
 
-### 第一步：连接数据库感知Schema
+### 领先步：连接数据库感知Schema
 
 ```python
 from sql_gen_tool import ProFeatures
 # ...
-pro = ProFeatures(db_url="postgresql://user:pass@localhost/mydb")
+pro = ProFeatures(db_url="数据库://user:pass@localhost/mydb")
 pro.connect_schema()  # 自动读取表结构
 ```
 
@@ -170,7 +170,7 @@ pro.configure(
     schema_refresh="on-demand",      # 按需刷新Schema
     include_views=True,              # 包含视图
     include_indexes=True,            # 包含索引信息
-    dialect="postgresql"             # 指定数据库方言
+    dialect="数据库"             # 指定数据库方言
 )
 ```
 
@@ -197,7 +197,7 @@ pro.regression_config(
 )
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 1. Schema变更后刷新感知缓存
 
@@ -225,7 +225,7 @@ if result.failed_count > 0:
 
 ### Q1：Schema感知连接失败怎么办？
 
-A：(1) 检查数据库连接字符串与网络连通性；(2) 确认账号有`information_schema`读取权限；(3) 对 `PostgreSQL` 需要访问`pg_catalog`。可降级为手动提供Schema.
+A：(1) 检查数据库连接字符串与网络连通性；(2) 确认账号有`information_schema`读取权限；(3) 对 `数据库` 需要访问`pg_catalog`。可降级为手动提供Schema.
 ### Q2：多表JOIN生成准确率如何保证？
 
 A：专业版通过Schema感知获取真实外键关系与字段语义，对有显式外键约束的表JOIN准确率可达95%+；对无外键约束的表需在描述中指明关联字段.
@@ -234,7 +234,7 @@ A：专业版通过Schema感知获取真实外键关系与字段语义，对有�
 A：会。每个索引都会增加写入开销。专业版优化建议会标注"读写比"评估，对写多读少的表会谨慎推荐索引，建议结合业务负载综合决策.
 ### Q4：迁移脚本支持哪些数据库？
 
-A：支持 `PostgreSQL`、MySQL、SQL Server、SQLite四类数据库的迁移脚本生成。不同方言的ALTER TABLE语法差异已内置适配.
+A：支持 `数据库`、MySQL、SQL Server、SQLite四类数据库的迁移脚本生成。不同方言的ALTER TABLE语法差异已内置适配.
 ### Q5：批量生成的SQL如何版本管理？
 
 A：专业版自动为每次批量生成创建版本快照，支持`pro.version_diff(v1, v2)`对比两个版本的差异，便于追踪变更.
@@ -282,7 +282,7 @@ A：专业版支持将生成历史与迁移脚本纳入Git管理，团队成员�
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |---:|---:|---:|---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
-| psycopg2 | Python包 | 可选 | `pip install psycopg2`（`PostgreSQL`驱动） |
+| psycopg2 | Python包 | 可选 | `pip install psycopg2`（`数据库`驱动） |
 | pymysql | Python包 | 可选 | `pip install pymysql`（MySQL驱动） |
 | pyodbc | Python包 | 可选 | `pip install pyodbc`（SQL Server驱动） |
 | sqlparse | Python包 | 可选 | `pip install sqlparse`（SQL格式化） |
@@ -308,3 +308,14 @@ A：专业版支持将生成历史与迁移脚本纳入Git管理，团队成员�
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

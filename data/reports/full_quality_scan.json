@@ -1,0 +1,2636 @@
+{
+  "total": 2043,
+  "pass": 1676,
+  "fail": 367,
+  "pass_rate": 82.0,
+  "issues_distribution": {
+    "含占位符": 233,
+    "缺章节:已知限制": 50,
+    "frontmatter含保留词": 40,
+    "含Mock/TODO": 19,
+    "缺章节:适用场景": 18,
+    "缺slug": 10,
+    "缺version": 10,
+    "缺description": 8,
+    "缺章节:FAQ": 5,
+    "缺tools": 5,
+    "缺章节:核心能力": 4,
+    "缺displayName": 2,
+    "缺summary": 2,
+    "缺license": 2,
+    "SKILL.md不存在": 2,
+    "缺章节:使用流程": 1
+  },
+  "fail_skills": [
+    {
+      "slug": "agent-assistant-free",
+      "score": 45.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "agent-assistant-pro",
+      "score": 45,
+      "issues": [
+        "含占位符: 能力1"
+      ]
+    },
+    {
+      "slug": "agent-browser-assistant",
+      "score": 50,
+      "issues": [
+        "含占位符: 能力1"
+      ]
+    },
+    {
+      "slug": "agent-chat",
+      "score": 45,
+      "issues": [
+        "缺章节: 核心能力"
+      ]
+    },
+    {
+      "slug": "agent-research",
+      "score": 46,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "agentvibes-content-skill",
+      "score": 46.5,
+      "issues": [
+        "含占位符: 场景2"
+      ]
+    },
+    {
+      "slug": "agentvibes-skill",
+      "score": 48,
+      "issues": [
+        "含占位符: 场景2"
+      ]
+    },
+    {
+      "slug": "ai-finance",
+      "score": 46,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "ai-finance-2",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "ai-finance-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "ai-image-gen-free",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: gemini"
+      ]
+    },
+    {
+      "slug": "ai-image-gen-tool-free",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: gemini"
+      ]
+    },
+    {
+      "slug": "ai-image-gen-tool-pro",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: gemini"
+      ]
+    },
+    {
+      "slug": "ai-kujiale-design",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "ai-report",
+      "score": 46,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "ai-report-2",
+      "score": 46,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "ai-report-free",
+      "score": 46,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "alephnet-node-manager",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景2"
+      ]
+    },
+    {
+      "slug": "alephnet-node-manager-free",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "api-dev-tool-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "api-dev-tool-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制",
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "api-doc-generator",
+      "score": 50,
+      "issues": [
+        "含Mock/TODO: mock"
+      ]
+    },
+    {
+      "slug": "api-generator",
+      "score": 50,
+      "issues": [
+        "含Mock/TODO: mock"
+      ]
+    },
+    {
+      "slug": "api-generator-free",
+      "score": 48,
+      "issues": [
+        "含Mock/TODO: Mock"
+      ]
+    },
+    {
+      "slug": "api-scaffold-gen-free",
+      "score": 48.5,
+      "issues": [
+        "含Mock/TODO: Mock"
+      ]
+    },
+    {
+      "slug": "api-toolkit",
+      "score": 50,
+      "issues": [
+        "含Mock/TODO: mock"
+      ]
+    },
+    {
+      "slug": "api-toolkit-free",
+      "score": 50,
+      "issues": [
+        "含Mock/TODO: mock"
+      ]
+    },
+    {
+      "slug": "audio-stream-upload-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "audio-upload-aioz-stream-free",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "auth-security-architect",
+      "score": 47.5,
+      "issues": [
+        "缺slug",
+        "缺version",
+        "缺description",
+        "缺章节: 核心能力,适用场景"
+      ]
+    },
+    {
+      "slug": "automation-recipe-book",
+      "score": 46,
+      "issues": [
+        "含Mock/TODO: mock"
+      ]
+    },
+    {
+      "slug": "aws-agent-orchestrator-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 能力3"
+      ]
+    },
+    {
+      "slug": "aws-agent-orchestrator-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制",
+        "含占位符: 能力3",
+        "含Mock/TODO: Mock"
+      ]
+    },
+    {
+      "slug": "aws-agentcore-langgraph",
+      "score": 50,
+      "issues": [
+        "含Mock/TODO: Mock"
+      ]
+    },
+    {
+      "slug": "aws-cloud-inspector-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "aws-cloud-inspector-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制",
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "aws-graph-agent",
+      "score": 50,
+      "issues": [
+        "含Mock/TODO: mock"
+      ]
+    },
+    {
+      "slug": "aws-infra",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "aws-wechat-article-writing",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "azure-ai-voicelive-py",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "azure-cloud-automator",
+      "score": 50,
+      "issues": [
+        "缺章节: FAQ"
+      ]
+    },
+    {
+      "slug": "azure-gateway-cli-free",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: openai"
+      ]
+    },
+    {
+      "slug": "backtest",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "backtest-2",
+      "score": 46,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "backtest-free",
+      "score": 46,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "baoyu-md-formatter",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "batchops-commander-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "bilibili-toolkit",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "book-painter",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "brand-guidelines",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: anthropic"
+      ]
+    },
+    {
+      "slug": "browser-automation-v2",
+      "score": 45,
+      "issues": [
+        "缺章节: 核心能力"
+      ]
+    },
+    {
+      "slug": "c-suite-advisor",
+      "score": 47.5,
+      "issues": [
+        "缺slug",
+        "缺version",
+        "缺description"
+      ]
+    },
+    {
+      "slug": "can-bus-toolkit",
+      "score": 46,
+      "issues": [
+        "含占位符: 能力2"
+      ]
+    },
+    {
+      "slug": "canvas-art-designer",
+      "score": 50,
+      "issues": [
+        "缺章节: FAQ"
+      ]
+    },
+    {
+      "slug": "canvas-json-handler",
+      "score": 46,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "cdp-browser-pilot-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "chart-gen-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "chart-gen-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "chat-agent-tool-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 能力1"
+      ]
+    },
+    {
+      "slug": "chat-agent-tool-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 能力1"
+      ]
+    },
+    {
+      "slug": "chat-toolkit-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "chat-toolkit-pro",
+      "score": 45.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "claude-api",
+      "score": 46,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "claude-code-delegate-2",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "claude-code-delegate-free",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "cloud-2",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "cloud-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "cloud-storage-manager-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "cloud-storage-manager-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "cloudflare-edge-developer",
+      "score": 50,
+      "issues": [
+        "缺章节: FAQ"
+      ]
+    },
+    {
+      "slug": "cloudforge-automation-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "code-analysis-toolkit",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "code-delegate-tool-free",
+      "score": 45.5,
+      "issues": [
+        "frontmatter含保留词: claude",
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "code-dev-toolkit",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "code-dev-toolkit-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "code-dev-v1-tool-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "code-review-sentinel",
+      "score": 50,
+      "issues": [
+        "含Mock/TODO: mock"
+      ]
+    },
+    {
+      "slug": "company-search-2",
+      "score": 48,
+      "issues": [
+        "含占位符: 场景2"
+      ]
+    },
+    {
+      "slug": "company-search-tool-free",
+      "score": 47.5,
+      "issues": [
+        "含占位符: 场景2"
+      ]
+    },
+    {
+      "slug": "competitive-ad-spy",
+      "score": 47.5,
+      "issues": [
+        "缺slug",
+        "缺version",
+        "缺description"
+      ]
+    },
+    {
+      "slug": "compress-pdf-tool-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "compress-pdf-tool-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "content-filter-2",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "content-filter-tool-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "context-driven-dev-tool-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "context-driven-dev-tool-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "context-vault-manager-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "contract-agent-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 能力1"
+      ]
+    },
+    {
+      "slug": "contract-agent-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 能力1"
+      ]
+    },
+    {
+      "slug": "cron-mate-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "cross-market",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "csv-insight-miner",
+      "score": 47.5,
+      "issues": [
+        "缺slug",
+        "缺version",
+        "缺description"
+      ]
+    },
+    {
+      "slug": "csv-json-converter",
+      "score": 50,
+      "issues": [
+        "含占位符: 能力1"
+      ]
+    },
+    {
+      "slug": "dashboard-analytics-tool",
+      "score": 46.5,
+      "issues": [
+        "含占位符: 能力1"
+      ]
+    },
+    {
+      "slug": "data-format-converter-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "db-schema-designer-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "debug-doctor",
+      "score": 47.5,
+      "issues": [
+        "缺slug",
+        "缺version",
+        "缺description"
+      ]
+    },
+    {
+      "slug": "deepseek-assistant-free",
+      "score": 45.5,
+      "issues": [
+        "含占位符: 场景2"
+      ]
+    },
+    {
+      "slug": "dlazy-gen",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "dlazy-gen-tool-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "doc-parse-3",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "doc-parse-tool-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "docs-toolkit-2",
+      "score": 46,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "docs-toolkit-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "docs-toolkit-pro",
+      "score": 46,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "document-pdf-tool-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "document-pdf-tool-pro",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "docx-document-master",
+      "score": 47.5,
+      "issues": [
+        "缺slug",
+        "缺version",
+        "缺description",
+        "缺章节: 适用场景"
+      ]
+    },
+    {
+      "slug": "domain-dns-manager-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "doubao-image-gen-2",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "doubt-driven-development",
+      "score": 46.5,
+      "issues": [
+        "缺章节: 适用场景"
+      ]
+    },
+    {
+      "slug": "email-163",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "email-163-tool-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "evolution-engine-v2-2",
+      "score": 50,
+      "issues": [
+        "含占位符: 能力3"
+      ]
+    },
+    {
+      "slug": "evolve-loop-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "excel-formula-tool-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "excel-formula-tool-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制",
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "excel-ninja-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "feedstream-monitor-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "feishu-card-builder",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "feishu-doc-tool-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "feishu-doc-tool-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "feishu-doc-write-tool-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "feishu-doc-write-tool-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "feishu-file-sender-free",
+      "score": 47,
+      "issues": [
+        "缺slug",
+        "缺displayName",
+        "缺version",
+        "缺summary"
+      ]
+    },
+    {
+      "slug": "figma-design-3",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "figma-design-tool-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "figma-studio",
+      "score": 50,
+      "issues": [
+        "含占位符: 能力1"
+      ]
+    },
+    {
+      "slug": "figma-studio-free",
+      "score": 45.5,
+      "issues": [
+        "缺slug",
+        "缺displayName",
+        "缺version",
+        "缺summary",
+        "缺license"
+      ]
+    },
+    {
+      "slug": "figma-toolkit-2",
+      "score": 46,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "figma-toolkit-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "figma-toolkit-pro",
+      "score": 46,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "figma-tw-designer",
+      "score": 48,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "file-compressor-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "file-compressor-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "fin-literacy-2",
+      "score": 46,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "fin-literacy-free",
+      "score": 46,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "fin-terminal",
+      "score": 46.5,
+      "issues": [
+        "缺章节: 适用场景"
+      ]
+    },
+    {
+      "slug": "finance-radar-paid",
+      "score": 48.5,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "finance-radar-tool-pro",
+      "score": 48.5,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "finance-toolkit-free",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "financial-literacy-paid",
+      "score": 50,
+      "issues": [
+        "含Mock/TODO: mock"
+      ]
+    },
+    {
+      "slug": "financial-literacy-tool-pro",
+      "score": 50,
+      "issues": [
+        "含Mock/TODO: mock"
+      ]
+    },
+    {
+      "slug": "flow-control-hub-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "flowforge-builder-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "focus-flow-optimizer-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "font-manager-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景2"
+      ]
+    },
+    {
+      "slug": "free-resource-finder",
+      "score": 46,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "free-resource-finder-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "free-web-search-tool-pro",
+      "score": 48.5,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "frontend-design-anthropic",
+      "score": 48.5,
+      "issues": [
+        "frontmatter含保留词: anthropic"
+      ]
+    },
+    {
+      "slug": "game-asset-gen",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "game-asset-gen-tool-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "github-api-toolkit",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "github-api-toolkit-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "github-manager-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "golang-toolkit",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "google-workspace-mcp-free",
+      "score": 50,
+      "issues": [
+        "SKILL.md不存在"
+      ]
+    },
+    {
+      "slug": "graph-knowledge-base",
+      "score": 48,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "graph-query-tool-free",
+      "score": 48.5,
+      "issues": [
+        "缺tools"
+      ]
+    },
+    {
+      "slug": "grok-image",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "grok-image-tool-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "grok-image-tool-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "group-agent-tool-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 能力1"
+      ]
+    },
+    {
+      "slug": "html-toolkit-2",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "html-toolkit-pro",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "humanizer-tool-pro",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "infinite-memory-vault-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 能力3"
+      ]
+    },
+    {
+      "slug": "internal-comms",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "java-toolkit-2",
+      "score": 50,
+      "issues": [
+        "含Mock/TODO: Mock"
+      ]
+    },
+    {
+      "slug": "java-toolkit-pro",
+      "score": 50,
+      "issues": [
+        "含Mock/TODO: Mock"
+      ]
+    },
+    {
+      "slug": "javascript-sdk-tool-free",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "jira-integration-skill",
+      "score": 46.5,
+      "issues": [
+        "含占位符: 能力1"
+      ]
+    },
+    {
+      "slug": "jira-pat-manager",
+      "score": 46.5,
+      "issues": [
+        "含占位符: 能力1"
+      ]
+    },
+    {
+      "slug": "json-beautifier",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "json-beautifier-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "json-lint",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "json-lint-2",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "json-lint-tool-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "json-lint-tool-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "json-parse-engine",
+      "score": 46,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "json-parse-engine-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "json-repair",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "json-repair-tool-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "json-repair-tool-pro",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "json-validator",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制",
+        "含占位符: 能力1"
+      ]
+    },
+    {
+      "slug": "key-vault-manager-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "knowledge-capture-tool-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "knowledge-capture-tool-pro",
+      "score": 46,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "knowledge-graph-builder-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "knowledge-mgmt-tool-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "knowledge-mgmt-tool-pro",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "knowledge-toolkit-2",
+      "score": 46,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "knowledge-toolkit-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "knowledge-toolkit-pro",
+      "score": 46,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "learn-cog-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "learn-cog-tool-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "learn-cog-tool-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "learn-tool-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "learn-tool-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "legal-assistant-pro",
+      "score": 47.5,
+      "issues": [
+        "缺slug",
+        "缺version",
+        "缺description",
+        "缺章节: 适用场景"
+      ]
+    },
+    {
+      "slug": "linear-pilot-ai-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "linear-pilot-ai-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "linear-project-manager",
+      "score": 46.5,
+      "issues": [
+        "含占位符: 能力1"
+      ]
+    },
+    {
+      "slug": "linear-workflow-skill",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制",
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "local-rag-tool-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景2"
+      ]
+    },
+    {
+      "slug": "local-rag-tool-pro",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景2"
+      ]
+    },
+    {
+      "slug": "macro-sentinel-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "md-converter-pdf-tool-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "md-converter-pdf-tool-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "memory-fortress-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "merge-pdf-tool-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "merge-pdf-tool-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "meta-agent-optimizer-free",
+      "score": 45,
+      "issues": [
+        "缺license"
+      ]
+    },
+    {
+      "slug": "mindmap-gen-tool-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "mindmap-gen-tool-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "model-switching",
+      "score": 48.5,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "model-switching-tool-free",
+      "score": 48.5,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "model-switching-tool-pro",
+      "score": 48.5,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "multi-search-tool-pro",
+      "score": 48.5,
+      "issues": [
+        "缺tools"
+      ]
+    },
+    {
+      "slug": "nano-pdf-tool-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "nano-pdf-tool-pro",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "neural-context-engine-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "neural-memory-enhanced-2",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "neural-memory-enhanced-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "node-connect-tool-free",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "obsidian-essentials-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "obsidian-essentials-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制",
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "openai-whisper",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: openai"
+      ]
+    },
+    {
+      "slug": "openai-whisper-1-0-0",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: openai"
+      ]
+    },
+    {
+      "slug": "openai-whisper-3",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: openai"
+      ]
+    },
+    {
+      "slug": "openai-whisper-v1",
+      "score": 46,
+      "issues": [
+        "frontmatter含保留词: openai",
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "pandoc-convert-tool-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "pandoc-convert-tool-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制",
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "paper-parse-tool-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "paper-parse-tool-pro",
+      "score": 46,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "password-gen-pro-2",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "password-gen-pro-tool-free",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "password-generator-4",
+      "score": 48.5,
+      "issues": [
+        "缺tools"
+      ]
+    },
+    {
+      "slug": "password-generator-tool-free",
+      "score": 48.5,
+      "issues": [
+        "缺tools"
+      ]
+    },
+    {
+      "slug": "pdf-processor-cn-tool-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "pdf-processor-cn-tool-pro",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "pdf-toolkit-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "pdf-toolkit-pro",
+      "score": 47.5,
+      "issues": [
+        "缺slug",
+        "缺version",
+        "缺description"
+      ]
+    },
+    {
+      "slug": "performance-optimizer",
+      "score": 46.5,
+      "issues": [
+        "缺章节: 适用场景,FAQ"
+      ]
+    },
+    {
+      "slug": "performance-optimizer-pro",
+      "score": 46.5,
+      "issues": [
+        "缺章节: 适用场景,FAQ"
+      ]
+    },
+    {
+      "slug": "pg-mcp-skills",
+      "score": 50,
+      "issues": [
+        "SKILL.md不存在"
+      ]
+    },
+    {
+      "slug": "plug-ai-content-creation-workstation",
+      "score": 48,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "plug-bundle-agent-copilot-pro",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "plug-bundle-claude",
+      "score": 46,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "plug-bundle-google-search",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "plug-bundle-linear-toolkit-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "plug-bundle-live-stream-script-tool-free",
+      "score": 46,
+      "issues": [
+        "缺章节: 核心能力"
+      ]
+    },
+    {
+      "slug": "plug-enterprise-security-suite",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "plug-intelligent-data-research",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "popeye-prod-tool-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "popeye-prod-tool-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "pptx-pdf-font-fix-tool-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "pptx-pdf-font-fix-tool-pro",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "presentation-gen-tool-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "presentation-gen-tool-pro",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "print-studio-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "prompt-architect-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "py-toolkit-free",
+      "score": 50,
+      "issues": [
+        "含Mock/TODO: mock"
+      ]
+    },
+    {
+      "slug": "python-toolkit",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "python-toolkit-free",
+      "score": 50,
+      "issues": [
+        "含Mock/TODO: mock"
+      ]
+    },
+    {
+      "slug": "pyx-scanner-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景2"
+      ]
+    },
+    {
+      "slug": "quick-context-saver-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "reddit-research-tool-free",
+      "score": 48.5,
+      "issues": [
+        "缺tools"
+      ]
+    },
+    {
+      "slug": "redis-context-cache-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "remix-auth",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "remix-auth-tool-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "remix-auth-tool-pro",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "repo-manager",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "repo-manager-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "screen-monitor-3",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "secure-api-toolkit",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "secure-api-toolkit-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "security-audit-agent-2",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "security-audit-agent-tool-free",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "self-integration-paid",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "self-integration-tool-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "self-integration-tool-pro",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "shadcn-ui-4",
+      "score": 46.5,
+      "issues": [
+        "缺章节: 适用场景"
+      ]
+    },
+    {
+      "slug": "skill-creator-3",
+      "score": 46.5,
+      "issues": [
+        "frontmatter含保留词: claude",
+        "缺章节: 适用场景"
+      ]
+    },
+    {
+      "slug": "skill-creator-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "skill-creator-tool-free",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "skill-creator-tool-pro",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "slack-api-toolkit",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "slack-api-toolkit-free",
+      "score": 45.5,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "slack-crawler",
+      "score": 46,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "slack-crawler-free",
+      "score": 48.5,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "slacrawl-2",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "solo-audit-4",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "solo-audit-tool-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "solo-audit-tool-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "solo-workflow-engine-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "solo-workflow-engine-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "soul-decision-engine-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "sql-gen-tool-free",
+      "score": 45.5,
+      "issues": [
+        "含Mock/TODO: 模拟数据"
+      ]
+    },
+    {
+      "slug": "stock-filter-skills-v2",
+      "score": 48,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "stock-radar-2",
+      "score": 46,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "stock-radar-free",
+      "score": 46,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "story-long-write-2",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "swarm-coder-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "tailwindcss-toolkit",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "tardis-4",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "tarot-reader-3",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "telegram-alert-2",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "telegram-alert-tool-free",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "telegram-bot-builder-2",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "tg-body-scan",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "tg-body-scan-tool-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "tg-body-scan-tool-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "tg-bot-builder",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "tmux-session-tool-free",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "token-economist-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "token-manager-3",
+      "score": 46.5,
+      "issues": [
+        "缺章节: 适用场景"
+      ]
+    },
+    {
+      "slug": "total-recall-ai-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "trade-alert",
+      "score": 46.5,
+      "issues": [
+        "缺章节: 适用场景"
+      ]
+    },
+    {
+      "slug": "trending-feed-skill-free",
+      "score": 48.5,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "typescript-skills-3",
+      "score": 46.5,
+      "issues": [
+        "缺章节: 适用场景"
+      ]
+    },
+    {
+      "slug": "ui-ux-2",
+      "score": 46.5,
+      "issues": [
+        "缺章节: 适用场景"
+      ]
+    },
+    {
+      "slug": "ui-ux-promax-plus-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "ui-ux-promax-plus-pro",
+      "score": 48.5,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "ui-ux-promax-v2-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "ui-ux-toolkit-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "universal-proxy-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 能力1"
+      ]
+    },
+    {
+      "slug": "ux-design-2",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "ux-design-tool-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "vault-master-pro-2",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "vault-sync-engine-2",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "vegas-tunnel",
+      "score": 46.5,
+      "issues": [
+        "缺章节: 适用场景"
+      ]
+    },
+    {
+      "slug": "vegas-tunnel-2",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "vegas-tunnel-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "verify-claims-4",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "video-toolkit-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "visual-file-sorter-2",
+      "score": 46.5,
+      "issues": [
+        "缺章节: 适用场景",
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "volcengine-network-dns-2",
+      "score": 46.5,
+      "issues": [
+        "缺章节: 适用场景"
+      ]
+    },
+    {
+      "slug": "vpn-rotate-skill-2",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "vue-toolkit",
+      "score": 46,
+      "issues": [
+        "含Mock/TODO: mock"
+      ]
+    },
+    {
+      "slug": "web-artifacts-builder",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: claude"
+      ]
+    },
+    {
+      "slug": "web-learner-4",
+      "score": 46,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "wechat-article-writer-2",
+      "score": 46,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "wenxiang-2d5-banner",
+      "score": 50,
+      "issues": [
+        "frontmatter含保留词: gemini"
+      ]
+    },
+    {
+      "slug": "whatsapp-messaging-2",
+      "score": 45,
+      "issues": [
+        "缺章节: 使用流程"
+      ]
+    },
+    {
+      "slug": "whatsapp-msg-manager-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "whatsapp-ultimate-2",
+      "score": 46.5,
+      "issues": [
+        "缺章节: 适用场景"
+      ]
+    },
+    {
+      "slug": "word-docx-tool-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "word-docx-tool-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "word-docx-v1-tool-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "word-docx-v1-tool-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "word-docx-v102-tool-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "word-docx-v102-tool-pro",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    },
+    {
+      "slug": "workflow-catalyst-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "workflow-catalyst-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制",
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "workflow-essentials-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "workflow-essentials-pro",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制",
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "workflow-lite-2",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "workflow-orchestrator-2",
+      "score": 46,
+      "issues": [
+        "缺章节: 已知限制"
+      ]
+    },
+    {
+      "slug": "workflow-splitter",
+      "score": 46,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "workflow-splitter-free",
+      "score": 45,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "workflow-symphony-2",
+      "score": 50,
+      "issues": [
+        "含占位符: 步骤1"
+      ]
+    },
+    {
+      "slug": "write-a-skill-2",
+      "score": 46.5,
+      "issues": [
+        "缺章节: 适用场景"
+      ]
+    },
+    {
+      "slug": "xlsx-handler-free",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景2"
+      ]
+    },
+    {
+      "slug": "xml-json-converter",
+      "score": 50,
+      "issues": [
+        "含占位符: 能力1"
+      ]
+    },
+    {
+      "slug": "zhuchenggong-doubao-image-gen-2",
+      "score": 50,
+      "issues": [
+        "含占位符: 场景1"
+      ]
+    }
+  ]
+}

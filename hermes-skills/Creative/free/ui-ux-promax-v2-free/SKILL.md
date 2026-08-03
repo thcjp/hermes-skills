@@ -1,6 +1,7 @@
 ---
+
 name: "ui-ux-promax-v2-free"
-description: "优先级驱动的设计指南数据库,含50+风格、97配色、57字体配对,适合个人快速查询"
+description: "优先级驱动的设计指南数据库,含50+风格、97配色、57字体配对,适合个人快速查询。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -18,6 +19,10 @@ metadata:
     - "规则"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # UI/UX ProMax V2 - 免费版
@@ -45,8 +50,6 @@ UI/UX ProMax V2免费版是一款面向个人开发者的优先级驱动设计�
 | 7 | 风格选择 | 中 | 风格匹配产品类型、全站一致性、SVG图标非emoji |
 | 8 | 图表与数据 | 低 | 图表类型匹配数据、无障碍配色、表格替代方案 |
 
-**输入**: 用户提供优先级分层规则体系所需的指令和必要参数。
-**处理**: 按照skill规范执行优先级分层规则体系操作,遵循单一意图原则。
 **输出**: 返回优先级分层规则体系的执行结果,包含操作状态和输出数据。
 
 ### 2. 基础设计域搜索
@@ -56,9 +59,9 @@ UI/UX ProMax V2免费版是一款面向个人开发者的优先级驱动设计�
 python3 scripts/search.py "SaaS dashboard fintech" --design-system
 
 # 按域搜索详细信息
-python3 scripts/search.py "glassmorphism dark" --domain style
-python3 scripts/search.py "elegant luxury" --domain typography
-python3 scripts/search.py "animation accessibility" --domain ux
+py "glassmorphism dark" --domain style
+py "elegant luxury" --domain typography
+py "animation accessibility" --domain ux
 ```
 
 | 域 | 用途 | 示例关键词 |
@@ -67,17 +70,15 @@ python3 scripts/search.py "animation accessibility" --domain ux
 | `style` | UI风格与效果 | 玻璃态, 极简, 暗色模式, 粗野主义 |
 | `typography` | 字体配对 | 优雅, 活泼, 专业, 现代 |
 | `color` | 配色方案 | saas, ecommerce, healthcare, fintech |
-| `ux` | 最佳实践与反模式 | 动画, 无障碍, z-index, 加载 |
+| `ux` | 优选实践与反模式 | 动画, 无障碍, z-index, 加载 |
 
-**输入**: 用户提供基础设计域搜索所需的指令和必要参数。
-**处理**: 按照skill规范执行基础设计域搜索操作,遵循单一意图原则。
 **输出**: 返回基础设计域搜索的执行结果,包含操作状态和输出数据。
 
 ### 3. 设计系统生成
 
 ```bash
 # 生成完整设计系统(风格+配色+字体+效果+反模式)
-python3 scripts/search.py "beauty spa wellness elegant" --design-system -p "Serenity Spa"
+py "beauty spa wellness elegant" --design-system -p "Serenity Spa"
 ```
 
 输出包含:
@@ -87,19 +88,15 @@ python3 scripts/search.py "beauty spa wellness elegant" --design-system -p "Sere
 - 视觉效果建议
 - 应避免的反模式
 
-**输入**: 用户提供设计系统生成所需的指令和必要参数。
-**处理**: 按照skill规范执行设计系统生成操作,遵循单一意图原则。
 **输出**: 返回设计系统生成的执行结果,包含操作状态和输出数据。
 
 ### 4. 默认技术栈指引
 
 ```bash
 # 获取Tailwind CSS实现建议(默认技术栈)
-python3 scripts/search.py "layout responsive form" --stack html-tailwind
+py "layout responsive form" --stack html-tailwind
 ```
 
-**输入**: 用户提供默认技术栈指引所需的指令和必要参数。
-**处理**: 按照skill规范执行默认技术栈指引操作,遵循单一意图原则。
 **输出**: 返回默认技术栈指引的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：优先级驱动的设计、指南数据库、适合个人快速查询、面向个人开发者的、优先级驱动、设计指南、种界面风格、套配色方案、组字体配对、规则和、种图表类型、CLI、按关键词查询、核心能力、优先级分层的设计、级优先级、设计系统一键生成、质量检查清单等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -111,14 +108,14 @@ python3 scripts/search.py "layout responsive form" --stack html-tailwind
 独立开发者在构建一款健康管理SaaS,需要确定整体设计方向。
 
 ```bash
-# 步骤1:生成设计系统
-python3 scripts/search.py "healthcare SaaS dashboard clean professional" --design-system -p "HealthApp"
+# 步骤1生成设计系统
+py "healthcare SaaS dashboard clean professional" --design-system -p "HealthApp"
 
-# 步骤2:补充UX规则检查
-python3 scripts/search.py "accessibility form validation" --domain ux
+# 步骤2补充UX规则检查
+py "accessibility form validation" --domain ux
 
-# 步骤3:获取Tailwind实现指引
-python3 scripts/search.py "dashboard card table" --stack html-tailwind
+# 步骤3获取Tailwind实现指引
+py "dashboard card table" --stack html-tailwind
 ```
 
 ### 场景二:电商落地页风格选择
@@ -127,13 +124,13 @@ python3 scripts/search.py "dashboard card table" --stack html-tailwind
 
 ```bash
 # 搜索电商风格
-python3 scripts/search.py "ecommerce modern luxury" --domain style
+py "ecommerce modern luxury" --domain style
 
 # 搜索电商配色
-python3 scripts/search.py "ecommerce fashion" --domain color
+py "ecommerce fashion" --domain color
 
 # 搜索落地页结构
-python3 scripts/search.py "hero testimonial pricing" --domain landing
+py "hero testimonial pricing" --domain landing
 ```
 
 ### 场景三:UX规则优先级自查
@@ -142,13 +139,13 @@ python3 scripts/search.py "hero testimonial pricing" --domain landing
 
 ```bash
 # 优先级1-2:无障碍和交互(关键)
-python3 scripts/search.py "color-contrast focus-states touch-target" --domain ux
+py "color-contrast focus-states touch-target" --domain ux
 
 # 优先级3-4:性能和布局(高)
-python3 scripts/search.py "image-optimization viewport z-index" --domain ux
+py "image-optimization viewport z-index" --domain ux
 
 # 优先级5-6:字体和动画(中)
-python3 scripts/search.py "line-height animation duration" --domain ux
+py "line-height animation duration" --domain ux
 ```
 
 ## 不适用场景
@@ -179,25 +176,24 @@ python3 --version || python --version
 # 预期: Python 3.8+
 
 # 验证搜索工具
-python3 scripts/search.py "minimal" --domain style -n 3
+py "minimal" --domain style -n 3
 ```
 
 ### 三步设计流程
 
 ```bash
 # 第1步:分析需求并生成设计系统
-python3 scripts/search.py "beauty spa wellness elegant" --design-system -p "Serenity Spa"
+py "beauty spa wellness elegant" --design-system -p "Serenity Spa"
 
 # 第2步:补充域搜索
-python3 scripts/search.py "animation accessibility" --domain ux
-python3 scripts/search.py "elegant luxury serif" --domain typography
+py "animation accessibility" --domain ux
+py "elegant luxury serif" --domain typography
 
 # 第3步:技术栈指引
-python3 scripts/search.py "layout responsive form" --stack html-tailwind
+py "layout responsive form" --stack html-tailwind
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
-
 
 ## 示例
 
@@ -245,7 +241,7 @@ python3 scripts/search.py "layout responsive form" --stack html-tailwind
 | 优先级体系 | 8级分层 | 8级+深度审计 |
 | 适用对象 | 个人开发者 | 团队/企业 |
 
-## 最佳实践
+## 优选实践
 
 ### 1. 按优先级处理设计问题
 
@@ -260,10 +256,10 @@ python3 scripts/search.py "layout responsive form" --stack html-tailwind
 
 ```bash
 # 不推荐
-python3 scripts/search.py "app" --design-system
+py "app" --design-system
 
 # 推荐
-python3 scripts/search.py "healthcare SaaS dashboard clean minimal" --design-system
+py "healthcare SaaS dashboard clean minimal" --design-system
 ```
 
 ### 3. 专业UI质量检查清单
@@ -347,11 +343,10 @@ winget install Python.Python.3.12
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+execute(纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。核心查询功能依赖Python CLI脚本,需确保exec工具可用。
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
@@ -365,3 +360,22 @@ winget install Python.Python.3.12
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

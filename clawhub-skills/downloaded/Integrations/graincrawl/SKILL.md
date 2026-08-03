@@ -34,7 +34,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Graincrawl
 
 Use local Granola archive data first. Check freshness for recent/current questions:

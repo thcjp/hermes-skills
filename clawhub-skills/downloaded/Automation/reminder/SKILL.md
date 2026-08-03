@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Reminder
 
 A lightweight personal secretary for Skill平台:

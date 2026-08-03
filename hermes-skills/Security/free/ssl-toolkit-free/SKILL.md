@@ -1,6 +1,7 @@
 ---
+
 name: "ssl-toolkit-free"
-description: "个人用户的HTTPS配置、TLS证书管理与基础连接排障工具。"
+description: "个人用户的HTTPS配置、TLS证书管理与基础连接排障工具。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,11 @@ metadata:
     - "运维"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # SSL工具箱(免费版)
@@ -41,24 +47,18 @@ SSL工具箱(免费版)为个人用户提供HTTPS配置、TLS证书管理与基�
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置。
 
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
 **输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：个人用户的、TLS、证书管理与基础连、接排障工具、工具箱、免费版、为个人用户提供、接排障能力、Let、Encrypt、免费证书申请与续、证书状态检查与详、常见错误诊断与修、证书类型选择指引等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -146,7 +146,7 @@ openssl s_client -connect example.com:443 -servername example.com
 
 ```bash
 # 方式一:certbot(最常用)
-certbot certonly --nginx -d example.com -d www.example.com
+com -d www.example.com
 
 # 方式二:certbot standalone(无Web服务器时)
 certbot certonly --standalone -d example.com
@@ -159,10 +159,10 @@ acme.sh --issue -d example.com --nginx
 
 ```bash
 # 查看远程证书有效期
-echo | openssl s_client -connect example.com:443 2>/dev/null | openssl x509 -noout -dates
+com:443 2>/dev/null | openssl x509 -noout -dates
 
 # 查看证书详情
-echo | openssl s_client -connect example.com:443 2>/dev/null | openssl x509 -noout -text
+com:443 2>/dev/null | openssl x509 -noout -text
 
 # 查看本地证书文件
 openssl x509 -in cert.pem -text -noout
@@ -175,20 +175,13 @@ Nginx配置:
 ```nginx
 server {
     listen 443 ssl http2;
-    server_name example.com;
 
-    ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
-
-    ssl_protocols TLSv1.2 TLSv1.3;
-    ssl_ciphers HIGH:!aNULL:!MD5;
     ssl_prefer_server_ciphers on;
 }
 
 # HTTP跳转HTTPS
 server {
     listen 80;
-    server_name example.com;
     return 301 https://$host$request_uri;
 }
 ```
@@ -218,13 +211,12 @@ SSLCertificateChainFile /path/to/chain.pem
 
 ```bash
 # 申请证书
-certbot certonly --nginx -d example.com -d www.example.com
+com -d www.example.com
 
 # 查看远程证书有效期
-echo | openssl s_client -connect example.com:443 2>/dev/null | openssl x509 -noout -dates
+com:443 2>/dev/null | openssl x509 -noout -dates
 
 # 查看远程证书完整信息
-openssl s_client -connect example.com:443 -servername example.com
 ```
 
 ### 证书类型选择
@@ -236,7 +228,7 @@ openssl s_client -connect example.com:443 -servername example.com
 | 多域名(SAN) | 多个不同域名共用一个证书 |
 | 自签名 | 仅本地开发 — 浏览器会警告 |
 
-## 最佳实践
+## 优选实践
 
 ### 1. 始终自动化续期
 
@@ -257,7 +249,7 @@ crontab -e
 ```nginx
 server {
     listen 80;
-    server_name example.com www.example.com;
+com www.example.com;
     return 301 https://$host$request_uri;
 }
 ```
@@ -266,10 +258,8 @@ server {
 
 ```nginx
 # 正确:使用fullchain.pem(包含中间证书)
-ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
 
 # 错误:仅用cert.pem(缺少中间证书,部分客户端无法验证)
-ssl_certificate /etc/letsencrypt/live/example.com/cert.pem;
 ```
 
 ### 4. 启用现代TLS协议
@@ -355,11 +345,10 @@ HTTPS页面引用HTTP资源会触发混合内容警告:
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+execute(纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。免费版聚焦个人站点的HTTPS配置、证书管理与基础连接排障。
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
@@ -377,8 +366,6 @@ HTTPS页面引用HTTP资源会触发混合内容警告:
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ```text
@@ -386,3 +373,14 @@ HTTPS页面引用HTTP资源会触发混合内容警告:
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Validate
 
 Validate a startup idea end-to-end: search KB, run Manifest alignment, S.E.E.D. niche check, Devil's Advocate inversion, STREAM 6-layer analysis, pick stack, generate PRD.

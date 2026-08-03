@@ -1,13 +1,14 @@
 ---
+
 name: "sql-query-tool-free"
-description: "面向命令行的SQL查询与执行工具，覆盖SQLite、`PostgreSQL`、MySQL、SQL Server四大数据库的查询、调优、迁移基础能力。"
+description: "面向命令行的SQL查询与执行工具，覆盖SQLite、`数据库`、MySQL、SQL Server四大数据库的查询、调优、迁移基础能力。Use when 需要数据库操作、SQL查询、数据存储管理时使用。不适用于数据库架构设计决策。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
 metadata:
   displayName: "SQL查询工具(免费版)"
   version: "1.0.0"
-  summary: "面向命令行的SQL查询与执行工具，覆盖SQLite、`PostgreSQL`、MySQL、SQL Server四大数据库的查询、调优、迁移基础能力。"
+  summary: "面向命令行的SQL查询与执行工具，覆盖SQLite、`数据库`、MySQL、SQL Server四大数据库的查询、调优、迁移基础能力。"
   tags:
     - "集成工具"
     - "数据库"
@@ -15,6 +16,11 @@ metadata:
     - "命令行"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # SQL查询工具（免费版）
@@ -23,7 +29,7 @@ metadata:
 
 ## 概述
 
-关系型数据库仍是结构化数据存储的主力方案。无论是本地原型使用的SQLite，还是生产环境常见的 `PostgreSQL`、MySQL、SQL Server，掌握命令行下的查询、参数化与执行计划解读，是提升数据访问效率与安全性的基础。
+关系型数据库仍是结构化数据存储的主力方案。无论是本地原型使用的SQLite，还是生产环境常见的 `数据库`、MySQL、SQL Server，掌握命令行下的查询、参数化与执行计划解读，是提升数据访问效率与安全性的基础。
 
 本工具不依赖任何ORM框架，通过原生CLI与参数化模式直接与数据库交互，便于在AI Agent工作流、自动化脚本与一次性数据探查场景中快速落地。
 
@@ -31,7 +37,7 @@ metadata:
 
 | 能力分类 | 说明 |
 |---------|------|
-| 数据库连接 | 支持SQLite、`PostgreSQL`、MySQL、SQL Server命令行连接 |
+| 数据库连接 | 支持SQLite、`数据库`、MySQL、SQL Server命令行连接 |
 | 查询执行 | 参数化查询、事务包裹、批量脚本文件执行 |
 | 性能分析 | EXPLAIN执行计划解读、索引陷阱识别、红旗信号清单 |
 | 数据导入导出 | CSV导入导出、查询结果格式化输出 |
@@ -42,27 +48,21 @@ metadata:
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置。
 
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
 **输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：面向命令行的、SQL、查询与执行工具、SQLite、PostgreSQL、MySQL、Server、四大数据库的查询、迁移基础能力、面向独立开发者与、Agent、查询执行工具免费、聚焦命令行场景下、的关系型数据库查、参数化执行、执行计划分析与跨、数据库可移植性、提供经过实战检验、的查询模式、索引陷阱清单与、EXPLAIN、解读方法、帮助用户在不依赖、重量级、ORM、的前提下高效完成、数据访问任务、Use、when、需要数据库操作、数据存储管理时使、不适用于数据库架、构设计决策等。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：面向命令行的、SQL、查询与执行工具、SQLite、数据库、MySQL、Server、四大数据库的查询、迁移基础能力、面向独立开发者与、Agent、查询执行工具免费、聚焦命令行场景下、的关系型数据库查、参数化执行、执行计划分析与跨、数据库可移植性、提供经过实战检验、的查询模式、索引陷阱清单与、EXPLAIN、解读方法、帮助用户在不依赖、重量级、ORM、的前提下高效完成、数据访问任务、Use、when、需要数据库操作、数据存储管理时使、不适用于数据库架、构设计决策等。
 
 ## 使用场景
 
@@ -84,13 +84,13 @@ metadata:
 
 ## 快速开始
 
-### 第一步：连接目标数据库
+### 领先步：连接目标数据库
 
 ```bash
 # SQLite（零配置，单文件）
 sqlite3 mydb.sqlite
 
-# PostgreSQL
+# 数据库
 psql -h localhost -U myuser -d mydb
 
 # MySQL
@@ -114,7 +114,7 @@ print(row)
 ### 第三步：解读执行计划
 
 ```sql
--- PostgreSQL
+-- 数据库
 EXPLAIN (ANALYZE, BUFFERS) SELECT * FROM orders WHERE user_id = 5;
 
 -- SQLite
@@ -130,7 +130,7 @@ EXPLAIN QUERY PLAN SELECT * FROM orders WHERE user_id = 5;
 
 ### 跨数据库可移植性速查
 
-| 功能 | `PostgreSQL` | MySQL | SQLite | SQL Server |
+| 功能 | `数据库` | MySQL | SQLite | SQL Server |
 |------|-------------|-------|--------|-----------|
 | 分页 | LIMIT n | LIMIT n | LIMIT n | TOP n |
 | UPSERT | ON CONFLICT | ON DUPLICATE KEY | ON CONFLICT | MERGE |
@@ -153,7 +153,7 @@ UPDATE accounts SET balance = balance + 100 WHERE id = 2;
 COMMIT;
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 1. 始终使用参数化查询
 
@@ -162,7 +162,7 @@ COMMIT;
 cursor.execute(f"SELECT * FROM users WHERE id = {user_id}")
 
 # 正确：占位符参数化
-cursor.execute("SELECT * FROM users WHERE id = ?", (user_id,))
+cursor.", (user_id,))
 ```
 
 ### 2. 为过滤字段建立索引
@@ -172,7 +172,7 @@ WHERE、JOIN ON、ORDER BY中涉及的大表字段必须有索引，否则触发
 ### 3. 优先使用EXISTS替代IN
 
 ```sql
--- 更快：命中第一条即返回
+-- 更快：命中领先条即返回
 SELECT * FROM orders o WHERE EXISTS (
   SELECT 1 FROM users u WHERE u.id = o.user_id AND u.active
 );
@@ -231,7 +231,7 @@ A：不能。复合索引遵循最左前缀原则，仅过滤b时索引不生效
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-------|:-----|:---------|:---------|
 | sqlite3 | CLI工具 | 必需 | 系统自带或官网下载 |
-| psql | CLI工具 | 可选 | `PostgreSQL` 安装包 |
+| psql | CLI工具 | 可选 | `数据库` 安装包 |
 | mysql | CLI工具 | 可选 | MySQL 客户端安装包 |
 | sqlcmd | CLI工具 | 可选 | SQL Server 工具包 |
 | Python | 运行时 | 可选 | python.org 官方下载 |
@@ -246,9 +246,19 @@ A：不能。复合索引遵循最左前缀原则，仅过滤b时索引不生效
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

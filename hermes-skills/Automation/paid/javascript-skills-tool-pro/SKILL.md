@@ -1,5 +1,5 @@
 ---
-slug: "javascript-skills-tool-pro"
+slug: javascript-skills-tool-pro
 name: "javascript-skills-tool-pro"
 version: "1.0.0"
 displayName: "JavaScript规范工具(专业版)"
@@ -9,7 +9,7 @@ edition: "pro"
 description: |-
   JavaScript规范工具(专业版)面向团队与企业,提供全量JavaScript代码风格规范、性能优化策略、安全审查清单与CI/CD自动化集成方案。核心能力:
   - 覆盖28+全量风格规则,含迭代器、生成器、标准库等进阶主题
-  - 完整异步并发模型与错误链路最佳实践
+  - 完整异步并发模型与错误链路优选实践
   - 团队级Lint规则定制与预提交钩子集成
   - 性能优化与安全审查清单
   - TypeScript深度兼容与混用规范
@@ -48,14 +48,11 @@ homepage: ""
 category: "Automation"
 ---
 # JavaScript规范工具(专业版)
-
 ## 概述
-
 JavaScript规范工具(专业版)面向团队与企业级前端工程,在兼容免费版核心规则集的基础上,扩展了全量风格规则、性能优化策略、安全审查清单、异步并发模型、TypeScript深度兼容以及CI/CD自动化集成方案.
 当你在请求中提及 JavaScript、前端规范、性能优化、安全审查、CI/CD 集成等关键词时,本工具会自动激活,输出符合企业级交付标准的代码、审查报告与流水线配置.
 本版本完全兼容 `javascript-skills-tool-free` 的所有核心规则,可平滑升级,历史项目无需重构.
 ## 核心能力
-
 | 能力模块 | 说明 | 与免费版差异 |
 |----|---|------|
 | 全量风格规则 | 28+规则,含迭代器、生成器、标准库等进阶主题 | 免费版仅核心规则集 |
@@ -68,29 +65,27 @@ JavaScript规范工具(专业版)面向团队与企业级前端工程,在兼容�
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：面向团队与企业的、JavaScript、规范套件、含性能优化、安全审查与、规范工具、专业版、面向团队与企业、提供全量、代码风格规范、性能优化策略、安全审查清单与、自动化集成方案、核心能力、完整异步并发模型、与错误链路最佳实、团队级、Lint、规则定制与预提交、钩子集成、性能优化与安全审、查清单、深度兼容与混用规等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：面向团队与企业的、JavaScript、规范套件、含性能优化、安全审查与、规范工具、专业版、面向团队与企业、提供全量、代码风格规范、性能优化策略、安全审查清单与、自动化集成方案、核心能力、完整异步并发模型、与错误链路优选实、团队级、Lint、规则定制与预提交、钩子集成、性能优化与安全审、查清单、深度兼容与混用规等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 使用场景
-
 ### 场景一:企业级前端工程规范统一
-
 团队需要为多个前端项目统一规范,并接入CI门禁。工具输出完整的规则配置与流水线模板.
 ```yaml
 # .github/workflows/lint.yml 企业级Lint流水线
@@ -116,7 +111,6 @@ jobs:
 ```
 
 ### 场景二:性能敏感场景的代码优化
-
 某仪表盘页面滚动卡顿,工具分析后给出符合规范的重构方案.
 ```javascript
 // 优化前:每次滚动都创建新闭包并触发重排
@@ -144,7 +138,6 @@ list.addEventListener('scroll', () => {
 ```
 
 ### 场景三:安全合规审查
-
 金融项目要求对所有用户输入做防XSS处理,工具输出符合规范的安全工具函数.
 ```javascript
 const ESCAPE_MAP = {
@@ -176,7 +169,6 @@ export { escapeHtml, safeMerge };
 ```
 
 ## 不适用场景
-
 以下场景JavaScript规范工具(专业版)不适合处理：
 
 - 实际人员绩效评估
@@ -184,18 +176,14 @@ export { escapeHtml, safeMerge };
 - 合同法务审核
 
 ## 触发条件
-
 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
-
 1. 阅读## 核心能力章节了解skill功能
 2. 按## 依赖说明配置环境
 3. 执行所需能力对应的命令
 4. 参考## 错误处理章节处理异常
 5. 查看## FAQ解答常见疑问
-
 ### 1. 平滑升级
-
 如果你已使用免费版,直接替换Skill文件即可。核心规则完全兼容,新增能力按需启用.
 ```bash
 # 项目根目录初始化企业级配置
@@ -204,7 +192,6 @@ npm i -D prettier eslint-config-prettier eslint-plugin-security eslint-plugin-im
 ```
 
 ### 2. 接入预提交钩子
-
 ```bash
 npm i -D husky lint-staged
 npx husky init
@@ -225,7 +212,6 @@ echo 'npx lint-staged' > .husky/pre-commit
 ```
 
 ### 3. 团队规则分级
-
 ```javascript
 // .eslintrc.enterprise.js 企业级规则分级
 module.exports = {
@@ -264,9 +250,7 @@ module.exports = {
 ```
 
 ## 示例
-
 ### 全量Prettier企业配置
-
 ```json
 {
   "singleQuote": true,
@@ -286,7 +270,6 @@ module.exports = {
 ```
 
 ### 自定义ESLint规则开发
-
 ```javascript
 // eslint-plugin-enterprise/rules/no-magic-number.js 自定义规则
 module.exports = {
@@ -308,7 +291,7 @@ module.exports = {
         if (typeof node.value === 'number' && !ignored.includes(node.value)) {
           context.report({
             node,
-            message: '魔法数字 {{value}} 应提取为命名常量',
+            message: '魔法数字  应提取为命名常量',
             data: { value: node.value },
           });
         }
@@ -318,10 +301,8 @@ module.exports = {
 };
 ```
 
-## 最佳实践
-
+## 优选实践
 ### 1. 异步并发模型
-
 使用 `Promise.all` 并发独立任务,`Promise.allSettled` 收集全部结果.
 ```javascript
 async function loadDashboard() {
@@ -346,7 +327,6 @@ async function importAll(sources) {
 ```
 
 ### 2. 自定义错误与错误链路
-
 只抛出 `Error` 子类,保留原始错误上下文.
 ```javascript
 class ValidationError extends Error {
@@ -374,7 +354,6 @@ async function updateUser(id, payload) {
 ```
 
 ### 3. 性能优化清单
-
 | 场景 | 反模式 | 推荐做法 |
 |:-----|:-----|:-----|
 | 高频事件 | 直接操作DOM | `requestAnimationFrame` + 节流/防抖 |
@@ -384,10 +363,9 @@ async function updateUser(id, payload) {
 | 打包体积 | 全量引入 | Tree-shaking + 动态导入 |
 
 ### 4. 安全审查清单
-
 ```javascript
 // 禁止:eval 与 Function 构造器
-// eval('userInput');          // ❌
+// JSON.parse('userInput');          // ❌
 // new Function('return ' + code)();  // ❌
 // ...
 // 禁止:innerHTML 直接拼接用户输入
@@ -399,7 +377,6 @@ el.innerHTML = sanitize(userInput);  // ✅ 经消毒库处理
 ```
 
 ### 5. TypeScript深度兼容
-
 ```typescript
 // 类型导入与运行时导入分离
 import type { UserDTO } from './types';
@@ -420,7 +397,6 @@ function parseResponse(raw: unknown): UserDTO {
 ```
 
 ### 6. 团队迁移指南
-
 | 阶段 | 动作 | 验收标准 |
 |---:|---:|---:|
 | 1. 基线评估 | 运行 `eslint . --max-warnings=9999` 统计现状 | 输出问题清单与分类 |
@@ -430,36 +406,26 @@ function parseResponse(raw: unknown): UserDTO {
 | 5. 持续治理 | 每月复盘告警与豁免 | 豁免清单收敛 |
 
 ## 常见问题
-
 ### Q1:PRO版与免费版如何共存?
-
 两者规则完全兼容,PRO版包含免费版全部能力。建议团队统一使用PRO版,个人项目可继续使用免费版。迁移时直接替换Skill文件,无需改动业务代码.
 ### Q2:如何为已有项目渐进式接入?
-
 参考"团队迁移指南"五阶段方案。先用警告级跑通全量扫描,统计问题分布;再按模块逐步提升为阻断级,避免一次性阻塞所有提交.
 ### Q3:PRO版是否支持Monorepo?
-
 支持。建议在根目录放置基础配置,各子包通过 `extends` 继承并按需覆盖。配合 `eslint-plugin-import` 的 `no-extraneous-dependencies` 规则可强制依赖边界.
 ### Q4:性能优化建议是否覆盖框架场景?
-
 工具提供框架无关的性能原则(事件循环、合成层、内存)。对React/Vue等框架,工具会结合其渲染模型给出符合规范的写法,但深度框架调优建议结合对应专用工具.
 ### Q5:安全审查覆盖哪些漏洞?
-
 覆盖常见前端漏洞:XSS、原型污染、不安全反序列化、敏感信息硬编码、危险动态执行、依赖审计。不覆盖服务端安全,如需服务端审查请配合后端专用工具.
 ### Q6:自定义规则开发支持哪些能力?
-
 支持标准的ESLint规则开发模式,可访问AST节点、配置schema、提供自动修复建议。详见"配置示例"中的自定义规则模板.
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
 - **Node.js版本**: 建议 20 LTS 及以上(用于支持最新ESLint与原生ES模块)
 - **包管理器**: npm / pnpm / yarn 任一(推荐 pnpm 用于Monorepo)
 
 ### 依赖详情
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -474,15 +440,12 @@ function parseResponse(raw: unknown): UserDTO {
 | Node.js | 运行时 | 推荐 | nodejs.org 下载 |
 
 ### API Key 配置
-
 - 本skill基于Markdown指令规范,无需额外API Key(除内容中明确标注的外部API).
 - 若CI/CD流水线需上传覆盖率或安全扫描结果,请按对应服务(Codecov / Snyk 等)文档配置令牌环境变量.
 ### 可用性分类
-
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+execute(纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。PRO版面向团队与企业,提供全量规则、性能优化、安全审查与CI/CD集成方案,完全兼容免费版核心规则.
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -490,7 +453,6 @@ function parseResponse(raw: unknown): UserDTO {
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 已知限制
-
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
@@ -511,3 +473,14 @@ function parseResponse(raw: unknown): UserDTO {
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

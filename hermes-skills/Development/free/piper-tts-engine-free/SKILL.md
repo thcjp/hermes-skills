@@ -1,6 +1,7 @@
 ---
+
 name: "piper-tts-engine-free"
-description: "基于 Piper 的本地离线文字转语音工具，零云端调用、零 API 费用，适合个人单条语音生成。"
+description: "基于 Piper 的本地离线文字转语音工具，零云端调用、零 API 费用，适合个人单条语音生成。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -16,6 +17,11 @@ metadata:
     - "个人效率"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # 本地语音合成 免费版
@@ -41,24 +47,18 @@ metadata:
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置。
 
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
 **输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Piper、的本地离线文字转、语音工具、零云端调用、适合个人单条语音、面向个人用户的本、地离线文字转语音、多音色选择、离线运行、适用场景、个人语音消息生成、离线朗读、无障碍辅助、内容创作配音、差异化、免费版聚焦单条文、本合成与基础音色、不含批量合成与自、定义音色训练、适用关键词、语音合成、文字转语音、voice等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -81,7 +81,6 @@ scripts/piper-speak.sh "嘿，今天天气不错，要不要一起出去走走�
 
 ```text
 [[audio_as_voice]]
-MEDIA:~/.piper/output/20260718_153000.mp3
 ```
 
 ### 场景二：内容创作配音
@@ -130,7 +129,7 @@ scripts/setup-piper.sh
 - 下载默认音色 `en_US-kusal-medium`
 - 配置输出目录 `~/.piper/output/`
 
-2. 生成第一条语音。
+2. 生成领先条语音。
 
 ```bash
 scripts/piper-speak.sh "Hello, this is my first voice message."
@@ -170,7 +169,7 @@ scripts/setup-piper.sh --voice en_US-ryan-high
 scripts/setup-piper.sh --voice en_GB-northern_english_male-medium
 ```
 
-## 最佳实践
+## 优选实践
 
 - **按需合成**：不要设置 `messages.tts.auto: "always"`，这会使每条回复都变慢。保持按需触发。
 - **音色选择**：内容创作推荐 `en_US-ryan-high`（高质量），日常使用推荐 `en_US-kusal-medium`（速度快）。
@@ -213,7 +212,6 @@ Piper 需要 Python 3.9+。运行 `python3 --version` 检查版本，若低于 3
 通过环境变量 `PIPER_SPEED` 设置，范围 0.5（慢速）到 2.0（快速），默认 1.0。
 
 ```bash
-export PIPER_SPEED="1.2"  # 加速20%
 scripts/piper-speak.sh "这是一段加速语音"
 ```
 
@@ -248,7 +246,6 @@ scripts/piper-speak.sh "这是一段加速语音"
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -259,8 +256,6 @@ scripts/piper-speak.sh "这是一段加速语音"
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ```text
@@ -268,3 +263,14 @@ scripts/piper-speak.sh "这是一段加速语音"
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

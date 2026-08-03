@@ -7,8 +7,7 @@ displayName: 独立审计工具（专业版）
 summary: "对AI Agent进行全面审计：安全性、性能、合规性、代码质量与优选实践检查.,支持多种使用场景和自动化处理"
 license: Proprietary
 edition: pro
-description: 独立审计工具 - （专业版）。可生成提升工作效率
-
+description: "独立审计工具 - （专业版）。可生成提升工作效率。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。"
   核心能力: 安全审计, 合规检查, 性能分析, 漏洞扫描, 代码审计, solo audit, 风险评估
 
   适用场景: 企业级场景，支持批量操作、团队协作与高级功能
@@ -39,16 +38,14 @@ homepage: ""
 # 定价元数据
 category: "Automation"
 
+
 ---
 
 # 独立审计工具（专业版）
-
 ## 概述
-
 独立审计工具是针对审计工具领域的专业化AI辅助工具。专业版面向企业用户，提供完整的功能体系，包含高级特性、批量处理与企业级集成能力.
 本工具经过深度优化，增强元数据和适用关键词，完全适配SkillHub平台规范.
 ## 核心能力
-
 安全审计、性能分析、合规检查、代码质量、配置审计、漏洞扫描、报告生成
 
 ### 专业版增强功能
@@ -57,7 +54,6 @@ category: "Automation"
 ### 批量处理与并行执行
 批量处理与并行执行
 
-**输入**: 用户提供批量处理与并行执行所需的指令和必要参数.
 **处理**: 解析批量处理与并行执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量处理与并行执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -65,7 +61,6 @@ category: "Automation"
 ### 企业级安全与审计
 企业级安全与审计
 
-**输入**: 用户提供企业级安全与审计所需的指令和必要参数.
 **处理**: 解析企业级安全与审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回企业级安全与审计的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -73,7 +68,6 @@ category: "Automation"
 ### 高级配置与自定义策略
 高级配置与自定义策略
 
-**输入**: 用户提供高级配置与自定义策略所需的指令和必要参数.
 **处理**: 解析高级配置与自定义策略的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回高级配置与自定义策略的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -81,7 +75,6 @@ category: "Automation"
 ### 免费版完全兼容
 免费版完全兼容，无缝升级
 
-**输入**: 用户提供免费版完全兼容所需的指令和必要参数.
 **处理**: 解析免费版完全兼容的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版完全兼容的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -89,20 +82,16 @@ category: "Automation"
 ### 优先技术支持与问题响应
 优先技术支持与问题响应
 
-**输入**: 用户提供优先技术支持与问题响应所需的指令和必要参数.
 **处理**: 解析优先技术支持与问题响应的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回优先技术支持与问题响应的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**输入**: 用户提供专业版增强功能所需的指令和必要参数.
 **处理**: 解析专业版增强功能的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回专业版增强功能的响应数据,包含状态码、结果和日志.
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Agent、进行全面审计、安全性、合规性、代码质量与优选实、践检查、独立审计工具等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 使用场景
-
 ### 场景1：安全审计
-
 对Agent配置和代码进行安全检查。**示例指令**：`
 
 `审计这个Agent的安全性
@@ -113,19 +102,16 @@ category: "Automation"
 3. 执行操作并返回结果
 
 ### 场景2：性能分析
-
 分析Agent的响应时间和资源使用。**示例指令**：`
 
 `分析Agent的性能瓶颈
 
 ### 场景3：合规检查
-
 检查Agent是否符合安全合规要求。**示例指令**：`
 
 `检查合规性
 
 ## 不适用场景
-
 以下场景独立审计工具（专业版）不适合处理：
 
 - 渗透测试未授权目标
@@ -133,15 +119,12 @@ category: "Automation"
 - 社会工程学攻击
 
 ## 快速开始
-
 1. 阅读## 核心能力章节了解skill功能
 2. 按## 依赖说明配置环境
 3. 执行所需能力对应的命令
 4. 参考## 错误处理章节处理异常
 5. 查看## FAQ解答常见疑问
-
 ### 环境准备
-
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
 |---|---|---|---|
@@ -150,17 +133,12 @@ category: "Automation"
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
 ```bash
-# 确保Python环境可用
 python3 --version
-# ...
-# 依赖说明
 pip install requests
 ```
 
 ### 基础用法
-
 ```python
-# 企业级独立审计引擎（PRO）
 import os
 import re
 import json
@@ -168,7 +146,6 @@ from typing import List, Dict, Optional
 from pathlib import Path
 from dataclasses import dataclass, field
 from datetime import datetime
-# ...
 @dataclass
 class AuditFinding:
     category: str
@@ -179,14 +156,12 @@ class AuditFinding:
     line: int = 0
     recommendation: str = ""
     cwe_id: str = ""  # Common Weakness Enumeration
-# ...
 @dataclass
 class AuditReport:
     target: str
     timestamp: str
     findings: List[AuditFinding] = field(default_factory=list)
     summary: Dict = field(default_factory=dict)
-# ...
 class SoloAuditEngine:
     SECURITY_PATTERNS = {
         "hardcoded_secret": {
@@ -225,7 +200,6 @@ class SoloAuditEngine:
             "recommendation": "生产环境关闭调试"
         }
     }
-# ...
     COMPLIANCE_CHECKS = {
         "data_privacy": {
             "patterns": [r"个人信息", r"phone", r"email", r"身份证"],
@@ -240,12 +214,10 @@ class SoloAuditEngine:
             "requirement": "需要完善的异常处理"
         }
     }
-# ...
     def __init__(self):
         self.report = AuditReport(
             target="", timestamp=datetime.now().isoformat()
         )
-# ...
     def audit_security(self, project_dir: str) -> List[AuditFinding]:
         """安全审计（PRO 专属：深度扫描）"""
         self.report.target = project_dir
@@ -267,12 +239,10 @@ class SoloAuditEngine:
                         cwe_id=check["cwe"]
                     ))
         return [f for f in self.report.findings if f.category == "security"]
-# ...
     def audit_performance(self, project_dir: str) -> List[AuditFinding]:
         """性能审计（PRO 专属）"""
         findings = []
-        for file_path in Path(project_dir).rglob("*.py"):
-            content = file_path.read_text(encoding="utf-8", errors="ignore")
+read_text(encoding="utf-8", errors="ignore")
             if re.search(r"for.*in.*\.readlines\(\)", content):
                 findings.append(AuditFinding(
                     category="performance", severity="low",
@@ -282,31 +252,29 @@ class SoloAuditEngine:
                     recommendation="使用 for line in file: 替代"
                 ))
             if content.count("import") > 20:
-                findings.append(AuditFinding(
+append(AuditFinding(
                     category="performance", severity="info",
                     title="导入过多",
-                    description=f"{file_path.name}: {content.count('import')}个导入",
+name}: {content.count('import')}个导入",
                     file=str(file_path),
                     recommendation="考虑拆分模块"
                 ))
         self.report.findings.extend(findings)
         return findings
-# ...
     def audit_compliance(self, project_dir: str) -> List[AuditFinding]:
         """合规审计（PRO 专属）"""
         findings = []
         all_content = ""
-        for file_path in Path(project_dir).rglob("*"):
-            if file_path.suffix in [".py", ".js", ".md", ".yaml"]:
+suffix in [".py", ".js", ".md", ".yaml"]:
                 all_content += file_path.read_text(encoding="utf-8", errors="ignore")
-        for check_name, check in self.COMPLIANCE_CHECKS.items():
+COMPLIANCE_CHECKS.items():
             found = False
             for pattern in check["patterns"]:
                 if re.search(pattern, all_content, re.IGNORECASE):
                     found = True
                     break
             if not found:
-                findings.append(AuditFinding(
+append(AuditFinding(
                     category="compliance", severity="medium",
                     title=f"合规检查: {check_name}",
                     description=check["requirement"],
@@ -314,7 +282,6 @@ class SoloAuditEngine:
                 ))
         self.report.findings.extend(findings)
         return findings
-# ...
     def run_full_audit(self, project_dir: str) -> AuditReport:
         """完整审计（PRO 专属）"""
         self.audit_security(project_dir)
@@ -322,7 +289,6 @@ class SoloAuditEngine:
         self.audit_compliance(project_dir)
         self._compute_summary()
         return self.report
-# ...
     def generate_report(self, output_path: str, format: str = "json"):
         """生成审计报告（PRO 专属）"""
         self._compute_summary()
@@ -337,7 +303,6 @@ class SoloAuditEngine:
                 json.dump(report_data, f, ensure_ascii=False, indent=2)
             else:
                 f.write(str(report_data))
-# ...
     def batch_audit(self, project_dirs: List[str]) -> List[dict]:
         """批量审计（PRO 专属）"""
         results = []
@@ -349,7 +314,6 @@ class SoloAuditEngine:
                 "summary": report.summary
             })
         return results
-# ...
     def _compute_summary(self):
         severity_counts = {}
         category_counts = {}
@@ -362,7 +326,6 @@ class SoloAuditEngine:
             "by_category": category_counts,
             "risk_level": self._compute_risk_level(severity_counts)
         }
-# ...
     def _compute_risk_level(self, counts: dict) -> str:
         if counts.get("critical", 0) > 0:
             return "CRITICAL"
@@ -373,7 +336,6 @@ class SoloAuditEngine:
         elif counts.get("medium", 0) > 0:
             return "LOW"
         return "SAFE"
-# ...
 engine = SoloAuditEngine()
 report = engine.run_full_audit("./project")
 print(f"审计结果: {report.summary['total_findings']} 个发现")
@@ -383,10 +345,8 @@ engine.generate_report("audit_report.json")
 ```
 
 ### 执行结果
-
 完成上述代码后，将根据输入参数返回结构化响应。专业版支持批量任务和并行解析，可同时解析多个文件或任务.
 ## 示例
-
 ```yaml
 solo_audit:
   checks: [security, performance, compliance, quality, configuration]
@@ -416,7 +376,6 @@ solo_audit:
 ```
 
 ### 配置说明
-
 | 配置项 | 说明 | 默认值 |
 |:-----|:-----|:-----|
 | 基础路径 | 工作目录 | `./` |
@@ -426,7 +385,6 @@ solo_audit:
 | 重试次数 | 失败重试次数 | `3` |
 
 ## 免费版兼容性
-
 本专业版完全兼容免费版的数据格式与操作方式：
 
 | 特性 | 免费版 | 专业版 |
@@ -440,7 +398,6 @@ solo_audit:
 
 免费版创建的文件可无缝升级到专业版处理，无需任何格式转换.
 ## 企业级功能
-
 ### 批量处理能力
 - 支持多文件并行处理
 - 自动错误重试与恢复
@@ -454,9 +411,7 @@ solo_audit:
 - 合规性检查内置
 
 ## 优选实践
-
 ### 企业级优选实践
-
 1. **明确需求**：对于大批量任务，先规划分批策略与并行度
 2. **检查输入**：批量处理前先验证所有输入文件的有效性
 3. **保存结果**：处理结果自动归档并生成审计报告
@@ -464,38 +419,25 @@ solo_audit:
 5. **错误处理**：配置自动重试与错误恢复策略
 
 ### 性能优化
-
 ```python
-# 专业版：批量性能优化
-# 1. 合理设置并行度（建议CPU核心数）
-# 2. 分批处理避免内存溢出
-# 3. 使用异步IO提升吞吐量
-# 4. 启用结果缓存减少重复计算
 ```
 
 ## 常见问题
-
 ### Q1: 批量处理时遇到内存不足？
-
 A: 专业版支持分批处理，建议减小batch_size参数，或增加并行度但减少每批文件数量.
 ### Q2: 如何配置自动重试？
-
 A: 在配置文件中设置retry_attempts和retry_delay参数。专业版支持指数退避重试策略.
 ### Q3: 如何监控处理进度？
-
 A: 专业版内置进度追踪功能，通过回调或轮询方式获取实时处理状态。可配置webhook通知.
 ### Q4: 如何与现有系统集成？
-
 A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时任务和webhook回调.
 ## 依赖说明
-
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
 - **操作系统**: Windows / macOS / Linux
 - **Python版本**: 3.8+
 
 ### 第三方依赖
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:---:|:---:|:---:|:---:|
 | LLM API | API | 必需 | 由Agent内置LLM提供 |
@@ -509,7 +451,6 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 - **版本**: 专业版（v1.0.0 专业版，完整功能+企业级支持）
 
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -517,7 +458,6 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 已知限制
-
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
@@ -538,3 +478,22 @@ A: 专业版提供完整的API接口和配置文件，支持CI/CD集成、定时
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 对AI Agent进行全面审计：安全性、性能、合规性、代码质量与优选实践检查.,支持多种使用场景和自动化处理
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

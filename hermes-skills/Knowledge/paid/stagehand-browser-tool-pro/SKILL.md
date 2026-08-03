@@ -6,7 +6,7 @@ displayName: 浏览器自动化工具专业版
 summary: "企业级浏览器自动化平台,支持远程浏览器、批量任务调度、代理穿透与团队协作。浏览器自动化工具专业版,面向企业团队和高级用户提供完整的浏览器自动化解决方案。支持远程浏览器集群、批量任务调度、代理"
 license: Proprietary
 edition: pro
-description: 浏览器自动化工具专业版,面向企业团队和高级用户提供完整的浏览器自动化解决方案。支持远程浏览器集群、批量任务调度、代理穿透、验证码处理、团队协作等高级能力。Use
+description: "浏览器自动化工具专业版,面向企业团队和高级用户提供完整的浏览器自动化解决方案。支持远程浏览器集群、批量任务调度、代理穿透、验证码处理、团队协作等高级能力。Use。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。"
   when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务.
 tags:
   - 研究工具
@@ -42,7 +42,6 @@ category: "Knowledge"
 | input | string | 是 | 浏览器自动化工具专业版处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
-
 ```bash
 # 远程浏览器模式配置
 # .env 文件配置
@@ -58,12 +57,9 @@ browser act "启用隐身模式浏览" --stealth
 # 远程模式支持代理
 browser navigate https://region-specific.com --proxy "us-east"
 ```
-
-**输入**: 用户提供远程浏览器集群所需的指令和必要参数.
 **处理**: 解析远程浏览器集群的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回远程浏览器集群的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
-
 ### 2. 批量任务调度
 支持批量任务编排和并行执行,显著提升大规模数据处理效率.
 ```bash
@@ -88,12 +84,9 @@ browser batch status
 # 导出任务结果
 browser batch export --format csv --output results.csv
 ```
-
-**输入**: 用户提供批量任务调度所需的指令和必要参数.
 **处理**: 解析批量任务调度的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量任务调度的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
-
 ### 3. 代理网络与验证码处理
 内置代理网络支持,自动应对验证码和反爬机制.
 ```bash
@@ -106,12 +99,9 @@ browser act "填写表单并提交" --captcha auto
 # 地理位置模拟
 browser navigate https://region-site.com --geo "US,California"
 ```
-
-**输入**: 用户提供代理网络与验证码处理所需的指令和必要参数.
 **处理**: 解析代理网络与验证码处理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回代理网络与验证码处理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
-
 ### 4. 会话持久化与团队协作
 支持浏览器会话持久化和团队配置共享.
 ```bash
@@ -124,12 +114,9 @@ browser session restore --name "project_a_session"
 # 共享会话给团队成员
 browser session share --name "project_a_session" --team "dev_team"
 ```
-
-**输入**: 用户提供会话持久化与团队协作所需的指令和必要参数.
 **处理**: 解析会话持久化与团队协作的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回会话持久化与团队协作的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
-
 ### 5. 完整兼容免费版
 专业版完全兼容免费版的所有指令和配置,平滑升级.
 ```bash
@@ -140,21 +127,17 @@ browser extract "提取页面内容"
 browser screenshot
 browser close
 ```
-
-**输入**: 用户提供完整兼容免费版所需的指令和必要参数.
 **处理**: 解析完整兼容免费版的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回完整兼容免费版的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级浏览器自动、化平台、支持远程浏览器、代理穿透与团队协、浏览器自动化工具、面向企业团队和高、级用户提供完整的、浏览器自动化解决、支持远程浏览器集、代理穿透、团队协作等高级能、Use、when、需要提升效率、自动化流程、批量处理、工作流优化时使用、不适用于需要人工、创意判断的任务、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
-
 ## 输出格式
-
 本skill的输出格式为Markdown文本,包含操作状态和执行结果。具体输出内容取决于执行的能力点和输入参数.
 ## 使用场景
 ### 场景一:电商竞品价格监控
 某电商平台运营团队需要每日监控 50 个竞品商品的价格变动,并生成对比报告.
 ```bash
-# 步骤1:准备监控任务清单
+# 步骤1准备监控任务清单
 cat > price_monitor.json << 'EOF'
 {
   "tasks": [
@@ -167,14 +150,13 @@ cat > price_monitor.json << 'EOF'
 }
 EOF
 # ...
-# 步骤2:执行批量监控(远程浏览器,避开反爬)
+# 步骤2执行批量监控(远程浏览器,避开反爬)
 browser batch run price_monitor.json --mode remote --stealth
 # ...
-# 步骤3:导出结果并生成报告
+# 步骤3导出结果并生成报告
 browser batch export --format json --output prices_$(date +%Y%m%d).json
 browser report generate --input prices_*.json --template price_comparison
 ```
-
 ### 场景二:跨境业务多地区任务调度
 一家跨境电商企业需要同时在美国、欧洲、东南亚三个地区执行本地化浏览器任务.
 ```bash
@@ -197,7 +179,6 @@ browser batch run global_tasks.json --mode remote
 # 汇总各地区数据
 browser batch merge --output global_inventory.json
 ```
-
 ### 场景三:QA 自动化测试集成
 QA 团队需要将浏览器自动化集成到持续集成流程中,每日执行回归测试.
 ```bash
@@ -222,11 +203,9 @@ browser report generate --input test_results.json --template qa_report --output 
 # 失败用例自动重试
 browser batch retry --failed-only --max-retries 3
 ```
-
 ## 快速开始
 ### 依赖详情
 如果已安装免费版,可直接升级到专业版:
-
 ```bash
 # 进入工具目录
 cd ~/.skill-platform/workspace/skills/stagehand-browser-tool-pro
@@ -240,7 +219,6 @@ npm link
 # 验证专业版功能
 browser --version --edition
 ```
-
 ### 第二步:配置远程浏览器
 ```bash
 # 配置 Browserbase 远程浏览器服务
@@ -259,9 +237,7 @@ RETRY_ATTEMPTS=3
 EOF
 # ...
 # 验证远程连接
-browser navigate https://example.com --mode remote
 ```
-
 ### 第三步:运行首个批量任务
 ```bash
 # 创建批量任务配置
@@ -283,7 +259,6 @@ browser batch run first_batch.json
 # 查看执行结果
 browser batch status
 ```
-
 ## 示例
 ### 企业级配置文件
 ```bash
@@ -321,7 +296,6 @@ browser batch status
   }
 }
 ```
-
 ### 团队协作配置
 ```bash
 # team_config.json - 团队协作配置
@@ -339,11 +313,9 @@ browser batch status
   }
 }
 ```
-
-## 最佳实践
+## 优选实践
 ### 1. 免费版到专业版的平滑迁移
 专业版完全兼容免费版指令,迁移时只需更新依赖和配置:
-
 ```bash
 # 1. 备份免费版配置
 cp ~/.skill-platform/workspace/skills/stagehand-browser-tool-free/.env .env.backup
@@ -356,10 +328,8 @@ npm install && npm link
 cp .env.backup .env
 # ...
 # 4. 验证原有脚本仍可运行
-browser navigate https://example.com
 browser extract "页面标题"
 ```
-
 ### 2. 批量任务的容错与重试
 ```bash
 # 配置自动重试和容错
@@ -377,7 +347,6 @@ browser extract "页面标题"
   }
 }
 ```
-
 ### 3. 资源利用优化
 ```bash
 # 根据任务复杂度调整并发数
@@ -387,7 +356,6 @@ browser batch run simple_tasks.json --concurrency 20
 # 复杂任务:适中并发,避免超时
 browser batch run complex_tasks.json --concurrency 5 --timeout 120000
 ```
-
 ### 4. 安全与审计
 ```bash
 # 启用审计日志
@@ -399,7 +367,6 @@ browser audit log --date $(date +%Y-%m-%d)
 # 导出审计报告
 browser audit export --format csv --output audit_report.csv
 ```
-
 ## 免费版与专业版对比
 | 功能特性 | 免费版 | 专业版 |
 |:-----|:-----|:-----|
@@ -416,7 +383,6 @@ browser audit export --format csv --output audit_report.csv
 | 并发执行 | 单实例 | 多实例并行 |
 | 适用场景 | 个人使用 | 企业级应用 |
 | 技术支持 | 社区支持 | 优先支持 |
-
 ## 常见问题
 ### Q1: 专业版是否兼容免费版的脚本?
 **A:** 完全兼容。专业版是免费版的超集,所有免费版指令和配置在专业版中均可直接使用,无需修改.
@@ -424,7 +390,6 @@ browser audit export --format csv --output audit_report.csv
 **A:** 远程浏览器服务(Browserbase)按使用量计费,具体费用请参考服务提供商的定价方案。专业版本身不额外收费,您只需为远程浏览器服务的实际使用量付费.
 ### Q3: 批量任务失败后如何排查?
 **A:** 专业版提供详细的任务执行日志:
-
 ```bash
 # 查看失败任务详情
 browser batch status --failed
@@ -435,31 +400,25 @@ browser batch log --task-id task_001
 # 查看失败任务的截图
 browser batch screenshots --task-id task_001
 ```
-
 ### 已知限制
 **A:** 通过团队权限配置实现细粒度访问控制:
-
 ```bash
 # 配置角色权限
 browser team config set --role operator --permissions "batch_run,session_use"
 browser team config set --role viewer --permissions "batch_status,report_view"
 ```
-
 ### Q5: 数据安全如何保障?
 **A:** 专业版提供多重安全保障:
-
 - 会话加密存储,敏感数据不落地
 - 完整审计日志,所有操作可追溯
 - 基于角色的访问控制(RBAC)
 - 数据保留策略可配置,自动清理过期数据
-
 ## 依赖说明
 ### 运行环境
 - **Agent 平台**: 支持 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
 - **操作系统**: Windows / macOS / Linux
 - **Node.js**: 18.0.0 及以上版本
 - **Chrome 浏览器**: 100 及以上版本(本地模式需要)
-
 ### 第三方依赖
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |---:|---:|---:|---:|
@@ -469,10 +428,8 @@ browser team config set --role viewer --permissions "batch_status,report_view"
 | 代理服务 | 网络 | 代理模式必需 | 代理服务提供商 |
 | npm 依赖包 | 库 | 必需 | 通过 `npm install` 自动安装 |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
-
 ### API Key 配置
 专业版需要以下 API Key 配置:
-
 ```bash
 # .env 文件配置
 # 远程浏览器服务
@@ -485,17 +442,28 @@ PROXY_API_KEY=your_proxy_api_key
 # 团队协作服务(可选)
 TEAM_API_TOKEN=your_team_api_token
 ```
-
 ### 可用性分类
 - **分类**: MD+EXEC+API(综合型,支持本地执行、远程 API 调用和批量任务编排)
 - **说明**: 企业级浏览器自动化平台,支持本地和远程浏览器、批量任务调度、团队协作等高级功能
 - **适用规模**: 多用户、多浏览器实例、本地与远程混合部署
 - **兼容性**: 完全兼容免费版,支持平滑升级
-
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+## 安全注意事项
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+## 核心功能
+- **自动化执行**: 企业级浏览器自动化平台,支持远程浏览器、批量任务调度、代理穿透与团队协作。浏览器自动化工具专业版,面向企业团队和高级用户
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

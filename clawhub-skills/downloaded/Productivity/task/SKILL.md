@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # Task
 
 Route task-related requests to `tasker_cmd` (raw args only, no leading `tasker`).

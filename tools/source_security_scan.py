@@ -49,7 +49,6 @@
 
 import argparse
 import json
-import os
 import re
 import sys
 from datetime import datetime
@@ -57,7 +56,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 # 复用 quality_gate.py 的安全模式定义
-_sys_path = os.path.dirname(os.path.abspath(__file__))
+_sys_path = str(Path(__file__).resolve().parent)  # Phase 1: sys.path设置
 if _sys_path not in sys.path:
     sys.path.insert(0, _sys_path)
 
@@ -68,9 +67,13 @@ from quality_gate import (
     _check_vpn_keywords,
 )
 
-# 路径常量
-DATA_DIR = Path(__file__).resolve().parent.parent / "data"
-CANDIDATES_FILE = DATA_DIR / "discovery" / "candidates_unified.json"
+# 路径常量 (V110 W5: 从project_config统一导入,移除本地Path构造)
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import DATA_DIR, DISCOVERY_DIR  # V110 W5: 统一从project_config导入
+from skill_core.utils import load_json, save_json  # V115 W2: 统一JSON工具(消除本地重复)
+CANDIDATES_FILE = DISCOVERY_DIR / "candidates_unified.json"  # V110 W5: 统一从project_config.DISCOVERY_DIR构造
 SCAN_RESULTS_FILE = DATA_DIR / "source_security_scan_results.json"
 
 # 风险级别 → 处理策略
@@ -173,6 +176,238 @@ def scan_content(content: str) -> Dict[str, Any]:
     }
 
 
+# [V136 G8] auto_fix_risks 拆分出的修复助手函数: 按风险类别分组,各自自包含(所需数据通过参数传入)。
+# [V136 G8]
+def _fix_command_injection(content: str, name: str) -> Tuple[str, Optional[Dict]]:
+    """[V136 G8] 修复exec/os.system命令执行与eval代码注入风险"""
+    fix = None
+    if 'exec命令执行' in name:
+        # 替换exec/os.system为安全描述
+        content = re.sub(
+            r'\bexec\s*\(', '# [安全修复] exec调用已移除: ',
+            content
+        )
+        content = re.sub(
+            r'os\.system\s*\(', '# [安全修复] os.system调用已移除: ',
+            content
+        )
+        fix = {
+            'risk': name,
+            'action': 'exec/os.system调用替换为注释',
+            'severity': 'critical',
+        }
+    elif 'eval/代码注入' in name:
+        content = re.sub(
+            r'\beval\s*\(', '# [安全修复] eval调用已移除: ',
+            content
+        )
+        fix = {
+            'risk': name,
+            'action': 'eval调用替换为注释',
+            'severity': 'critical',
+        }
+    return content, fix
+
+
+# [V136 G8]
+def _fix_hardcoded_secrets(content: str, name: str) -> Tuple[str, Optional[Dict]]:
+    """[V136 G8] 修复API密钥明文硬编码,替换为环境变量引用"""
+    # 替换明文密钥为环境变量引用
+    content = re.sub(
+        r'(API_KEY|API_SECRET|SECRET_KEY|ACCESS_TOKEN|PRIVATE_KEY)\s*=\s*["\'][^"\']+["\']',
+        r'\1 = os.getenv("\1")  # [安全修复] 明文密钥已替换为环境变量',
+        content
+    )
+    content = re.sub(
+        r'export\s+(API_KEY|API_SECRET|SECRET_KEY|ACCESS_TOKEN)\s*=\s*["\'][^"\']+["\']',
+        r'export \1="${\1:?请设置环境变量}"  # [安全修复]',
+        content
+    )
+    fix = {
+        'risk': name,
+        'action': '明文密钥替换为环境变量引用',
+        'severity': 'critical',
+    }
+    return content, fix
+
+
+# [V136 G8]
+def _fix_insecure_network(content: str, name: str) -> Tuple[str, Optional[Dict]]:
+    """[V136 G8] 修复不安全HTTP通信与硬编码服务器地址"""
+    fix = None
+    if 'HTTP不安全通信' in name:
+        # http:// → https://
+        count = len(re.findall(r'http://', content))
+        content = content.replace('http://', 'https://')
+        if count > 0:
+            fix = {
+                'risk': name,
+                'action': f'{count}处http://替换为https://',
+                'severity': 'medium',
+            }
+    elif '硬编码服务器地址' in name:
+        # 替换硬编码IP为环境变量
+        content = re.sub(
+            r'(SERVER|ENDPOINT|HOST|URL)\s*=\s*["\']https?://\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}[^"\']*["\']',
+            r'\1 = os.getenv("\1_URL", "")  # [安全修复] 硬编码IP替换为环境变量',
+            content
+        )
+        fix = {
+            'risk': name,
+            'action': '硬编码IP替换为环境变量',
+            'severity': 'medium',
+        }
+    return content, fix
+
+
+# [V136 G8]
+def _fix_sensitive_paths(content: str, name: str) -> Tuple[str, Optional[Dict]]:
+    """[V136 G8] 修复敏感信息泄露,将敏感路径替换为通配符"""
+    # 替换敏感路径为通配符 (使用lambda避免re.sub的\U转义问题)
+    content = re.sub(
+        r'C:\\Users\\[a-zA-Z]+',
+        lambda m: r'C:\Users\<username>',
+        content
+    )
+    content = re.sub(
+        r'/home/[a-z]+/',
+        lambda m: '/home/<user>/',
+        content
+    )
+    content = re.sub(
+        r'/Users/[a-zA-Z]+/',
+        lambda m: '/Users/<user>/',
+        content
+    )
+    fix = {
+        'risk': name,
+        'action': '敏感路径替换为通配符',
+        'severity': 'medium',
+    }
+    return content, fix
+
+
+# [V136 G8]
+def _fix_blocked_keywords(content: str, name: str) -> Tuple[str, Optional[Dict]]:
+    """[V136 G8] 修复VPN/翻墙等直接封禁关键词,替换为安全注释"""
+    # VPN关键词: 添加安全注释包裹
+    for kw in _VPN_BLOCKED_KEYWORDS:
+        if kw.lower() in content.lower():
+            content = re.sub(
+                re.escape(kw), f'<!-- [安全修复] 移除VPN关键词: {kw} -->',
+                content, flags=re.IGNORECASE
+            )
+    fix = {
+        'risk': name,
+        'action': 'VPN关键词替换为安全注释',
+        'severity': 'critical',
+    }
+    return content, fix
+
+
+# [V136 G8]
+def _fix_malicious_payloads(content: str, name: str) -> Tuple[str, Optional[Dict]]:
+    """[V136 G8] 修复反向Shell与加密货币挖矿等恶意载荷"""
+    fix = None
+    if '反向Shell' in name:
+        # 反向Shell: 完全移除相关行
+        lines = content.split('\n')
+        filtered = []
+        for line in lines:
+            if re.search(r'(?:bash|sh|nc|ncat)\s+.*(?:-i|/dev/tcp/)', line):
+                filtered.append(f'# [安全修复] 反向Shell代码已移除')
+            else:
+                filtered.append(line)
+        content = '\n'.join(filtered)
+        fix = {
+            'risk': name,
+            'action': '反向Shell代码行移除',
+            'severity': 'critical',
+        }
+    elif '加密货币挖矿' in name:
+        # 挖矿地址: 完全移除
+        content = re.sub(
+            r'(?:xmrig|stratum\+tcp|cryptonight|coinhive)[^\n]*',
+            '# [安全修复] 挖矿相关内容已移除',
+            content, flags=re.IGNORECASE
+        )
+        fix = {
+            'risk': name,
+            'action': '挖矿相关内容移除',
+            'severity': 'critical',
+        }
+    return content, fix
+
+
+# [V136 G8]
+def _fix_data_risks(content: str, name: str) -> Tuple[str, Optional[Dict]]:
+    """[V136 G8] 修复SSRF服务端请求伪造与数据外泄风险"""
+    fix = None
+    if 'SSRF' in name:
+        # SSRF: 添加URL校验注释
+        content = re.sub(
+            r'requests\.(get|post)\s*\(\s*(user|input|url)',
+            r'# [安全修复] SSRF风险: requests.\1(user_input) 需URL白名单校验\n# requests.\1(',
+            content
+        )
+        fix = {
+            'risk': name,
+            'action': 'SSRF风险代码添加安全注释',
+            'severity': 'critical',
+        }
+    elif '数据外泄' in name:
+        # 数据外泄: 移除读取敏感文件并上传的代码
+        content = re.sub(
+            r'(?:cat|type|Get-Content)\s+(?:/etc/passwd|/etc/shadow|\.env|\.ssh/id_rsa)',
+            '# [安全修复] 敏感文件读取已移除',
+            content, flags=re.IGNORECASE
+        )
+        fix = {
+            'risk': name,
+            'action': '敏感文件读取代码移除',
+            'severity': 'critical',
+        }
+    return content, fix
+
+
+# [V136 G8]
+def _fix_unsafe_libs(content: str, name: str) -> Tuple[str, Optional[Dict]]:
+    """[V136 G8] 修复不安全反序列化与依赖混淆/供应链风险"""
+    fix = None
+    if '不安全反序列化' in name:
+        # pickle.loads → json.loads
+        content = content.replace('pickle.loads', 'json.loads')
+        content = content.replace('pickle.load', 'json.load')
+        content = re.sub(
+            r'yaml\.load\s*\((?!.*Loader)',
+            'yaml.safe_load(',
+            content
+        )
+        fix = {
+            'risk': name,
+            'action': 'pickle.loads→json.loads, yaml.load→yaml.safe_load',
+            'severity': 'critical',
+        }
+    elif '依赖混淆' in name:
+        # http源 → https源
+        content = re.sub(
+            r'pip\s+install\s+(?:--index-url|--extra-index-url)\s+["\']http://',
+            'pip install --index-url https://',
+            content
+        )
+        content = re.sub(
+            r'npm\s+install\s+.*--registry\s+["\']http://',
+            'npm install --registry https://',
+            content
+        )
+        fix = {
+            'risk': name,
+            'action': 'http依赖源替换为https',
+            'severity': 'high',
+        }
+    return content, fix
+
+
 def auto_fix_risks(content: str, scan_result: Dict[str, Any]) -> Tuple[str, List[Dict]]:
     """根据扫描结果自动修复风险模式
 
@@ -204,204 +439,35 @@ def auto_fix_risks(content: str, scan_result: Dict[str, Any]) -> Tuple[str, List
         name = check.get('name', '').replace('安全审核: ', '')
         details = check.get('details', [])
 
-        # 根据风险类型执行修复
-        if 'exec命令执行' in name:
-            # 替换exec/os.system为安全描述
-            fixed_content = re.sub(
-                r'\bexec\s*\(', '# [安全修复] exec调用已移除: ',
-                fixed_content
-            )
-            fixed_content = re.sub(
-                r'os\.system\s*\(', '# [安全修复] os.system调用已移除: ',
-                fixed_content
-            )
-            fixes.append({
-                'risk': name,
-                'action': 'exec/os.system调用替换为注释',
-                'severity': 'critical',
-            })
-
-        elif 'eval/代码注入' in name:
-            fixed_content = re.sub(
-                r'\beval\s*\(', '# [安全修复] eval调用已移除: ',
-                fixed_content
-            )
-            fixes.append({
-                'risk': name,
-                'action': 'eval调用替换为注释',
-                'severity': 'critical',
-            })
-
+        # 根据风险类型分派到对应的修复助手函数 [V136 G8]
+        if 'exec命令执行' in name or 'eval/代码注入' in name:
+            fixed_content, fix = _fix_command_injection(fixed_content, name)
         elif 'API密钥' in name:
-            # 替换明文密钥为环境变量引用
-            fixed_content = re.sub(
-                r'(API_KEY|API_SECRET|SECRET_KEY|ACCESS_TOKEN|PRIVATE_KEY)\s*=\s*["\'][^"\']+["\']',
-                r'\1 = os.getenv("\1")  # [安全修复] 明文密钥已替换为环境变量',
-                fixed_content
-            )
-            fixed_content = re.sub(
-                r'export\s+(API_KEY|API_SECRET|SECRET_KEY|ACCESS_TOKEN)\s*=\s*["\'][^"\']+["\']',
-                r'export \1="${\1:?请设置环境变量}"  # [安全修复]',
-                fixed_content
-            )
-            fixes.append({
-                'risk': name,
-                'action': '明文密钥替换为环境变量引用',
-                'severity': 'critical',
-            })
-
-        elif 'HTTP不安全通信' in name:
-            # http:// → https://
-            count = len(re.findall(r'http://', fixed_content))
-            fixed_content = fixed_content.replace('http://', 'https://')
-            if count > 0:
-                fixes.append({
-                    'risk': name,
-                    'action': f'{count}处http://替换为https://',
-                    'severity': 'medium',
-                })
-
-        elif '硬编码服务器地址' in name:
-            # 替换硬编码IP为环境变量
-            fixed_content = re.sub(
-                r'(SERVER|ENDPOINT|HOST|URL)\s*=\s*["\']https?://\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}[^"\']*["\']',
-                r'\1 = os.getenv("\1_URL", "")  # [安全修复] 硬编码IP替换为环境变量',
-                fixed_content
-            )
-            fixes.append({
-                'risk': name,
-                'action': '硬编码IP替换为环境变量',
-                'severity': 'medium',
-            })
-
+            fixed_content, fix = _fix_hardcoded_secrets(fixed_content, name)
+        elif 'HTTP不安全通信' in name or '硬编码服务器地址' in name:
+            fixed_content, fix = _fix_insecure_network(fixed_content, name)
         elif '敏感信息泄露' in name:
-            # 替换敏感路径为通配符 (使用lambda避免re.sub的\U转义问题)
-            fixed_content = re.sub(
-                r'C:\\Users\\[a-zA-Z]+',
-                lambda m: r'C:\Users\<username>',
-                fixed_content
-            )
-            fixed_content = re.sub(
-                r'/home/[a-z]+/',
-                lambda m: '/home/<user>/',
-                fixed_content
-            )
-            fixed_content = re.sub(
-                r'/Users/[a-zA-Z]+/',
-                lambda m: '/Users/<user>/',
-                fixed_content
-            )
-            fixes.append({
-                'risk': name,
-                'action': '敏感路径替换为通配符',
-                'severity': 'medium',
-            })
-
+            fixed_content, fix = _fix_sensitive_paths(fixed_content, name)
         elif 'VPN' in name or '翻墙' in name:
-            # VPN关键词: 添加安全注释包裹
-            for kw in _VPN_BLOCKED_KEYWORDS:
-                if kw.lower() in fixed_content.lower():
-                    fixed_content = re.sub(
-                        re.escape(kw), f'<!-- [安全修复] 移除VPN关键词: {kw} -->',
-                        fixed_content, flags=re.IGNORECASE
-                    )
-            fixes.append({
-                'risk': name,
-                'action': 'VPN关键词替换为安全注释',
-                'severity': 'critical',
-            })
+            fixed_content, fix = _fix_blocked_keywords(fixed_content, name)
+        elif '反向Shell' in name or '加密货币挖矿' in name:
+            fixed_content, fix = _fix_malicious_payloads(fixed_content, name)
+        elif 'SSRF' in name or '数据外泄' in name:
+            fixed_content, fix = _fix_data_risks(fixed_content, name)
+        elif '不安全反序列化' in name or '依赖混淆' in name:
+            fixed_content, fix = _fix_unsafe_libs(fixed_content, name)
+        else:
+            fix = None
 
-        elif '反向Shell' in name:
-            # 反向Shell: 完全移除相关行
-            lines = fixed_content.split('\n')
-            filtered = []
-            for line in lines:
-                if re.search(r'(?:bash|sh|nc|ncat)\s+.*(?:-i|/dev/tcp/)', line):
-                    filtered.append(f'# [安全修复] 反向Shell代码已移除')
-                else:
-                    filtered.append(line)
-            fixed_content = '\n'.join(filtered)
-            fixes.append({
-                'risk': name,
-                'action': '反向Shell代码行移除',
-                'severity': 'critical',
-            })
-
-        elif '加密货币挖矿' in name:
-            # 挖矿地址: 完全移除
-            fixed_content = re.sub(
-                r'(?:xmrig|stratum\+tcp|cryptonight|coinhive)[^\n]*',
-                '# [安全修复] 挖矿相关内容已移除',
-                fixed_content, flags=re.IGNORECASE
-            )
-            fixes.append({
-                'risk': name,
-                'action': '挖矿相关内容移除',
-                'severity': 'critical',
-            })
-
-        elif 'SSRF' in name:
-            # SSRF: 添加URL校验注释
-            fixed_content = re.sub(
-                r'requests\.(get|post)\s*\(\s*(user|input|url)',
-                r'# [安全修复] SSRF风险: requests.\1(user_input) 需URL白名单校验\n# requests.\1(',
-                fixed_content
-            )
-            fixes.append({
-                'risk': name,
-                'action': 'SSRF风险代码添加安全注释',
-                'severity': 'critical',
-            })
-
-        elif '数据外泄' in name:
-            # 数据外泄: 移除读取敏感文件并上传的代码
-            fixed_content = re.sub(
-                r'(?:cat|type|Get-Content)\s+(?:/etc/passwd|/etc/shadow|\.env|\.ssh/id_rsa)',
-                '# [安全修复] 敏感文件读取已移除',
-                fixed_content, flags=re.IGNORECASE
-            )
-            fixes.append({
-                'risk': name,
-                'action': '敏感文件读取代码移除',
-                'severity': 'critical',
-            })
-
-        elif '不安全反序列化' in name:
-            # pickle.loads → json.loads
-            fixed_content = fixed_content.replace('pickle.loads', 'json.loads')
-            fixed_content = fixed_content.replace('pickle.load', 'json.load')
-            fixed_content = re.sub(
-                r'yaml\.load\s*\((?!.*Loader)',
-                'yaml.safe_load(',
-                fixed_content
-            )
-            fixes.append({
-                'risk': name,
-                'action': 'pickle.loads→json.loads, yaml.load→yaml.safe_load',
-                'severity': 'critical',
-            })
-
-        elif '依赖混淆' in name:
-            # http源 → https源
-            fixed_content = re.sub(
-                r'pip\s+install\s+(?:--index-url|--extra-index-url)\s+["\']http://',
-                'pip install --index-url https://',
-                fixed_content
-            )
-            fixed_content = re.sub(
-                r'npm\s+install\s+.*--registry\s+["\']http://',
-                'npm install --registry https://',
-                fixed_content
-            )
-            fixes.append({
-                'risk': name,
-                'action': 'http依赖源替换为https',
-                'severity': 'high',
-            })
+        if fix:
+            fixes.append(fix)
 
     return fixed_content, fixes
 
 
+# V130 A6: 与auto_differentiate.load_candidates不是重复定义。
+# 差异: 本函数无别名映射(直接按source过滤), 文件不存在时返回[]; auto_differentiate版含
+#       SOURCE_ALIAS_MAP简写映射, 文件不存在时sys.exit(1)终止。
 def load_candidates(source_filter: Optional[str] = None) -> List[Dict[str, Any]]:
     """从 candidates_unified.json 加载候选 skill 列表"""
     if not CANDIDATES_FILE.exists():
@@ -581,17 +647,7 @@ def get_blocked_candidates(scan_results: Optional[Dict] = None) -> List[Dict]:
     ]
 
 
-def load_json(path: Path) -> Dict:
-    if not path.exists():
-        return {}
-    with open(path, 'r', encoding='utf-8') as f:
-        return json.load(f)
-
-
-def save_json(path: Path, data: Dict):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+# V115 W2: load_json/save_json已统一到skill_core.utils
 
 
 def main():

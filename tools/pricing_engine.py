@@ -24,21 +24,23 @@ Usage:
 
 import json
 import re
-import sqlite3
 import sys
-import os
 from pathlib import Path
-from datetime import datetime
-from typing import Dict, List, Tuple, Optional
 
-# 导入统一配置（修复U-21硬编码路径、U-07事务保护、U-08备份机制）
-_sys_path = os.path.dirname(os.path.abspath(__file__))
-if _sys_path not in sys.path:
-    sys.path.insert(0, _sys_path)
-from config import (
-    DB_PATH, PACKAGED_SKILLS_DIR, OPENSOURCE_SKILLS_DIR, REPORT_DIR,
-    BACKUP_DIR, create_backup, is_paid_skill, BATCH_BACKUP_ENABLED
+# === Phase 1: 统一配置导入 ===
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
+from project_config import (
+    BACKUP_DIR, create_backup, BATCH_BACKUP_ENABLED, TOOLS_DIR,
 )
+# === End Phase 1 ===
+
+if str(TOOLS_DIR) not in _sys.path:
+    _sys.path.insert(0, str(TOOLS_DIR))  # V115 W3: Phase 1标准化
+
+# v1.3: 导入db模块用于workflow_state更新
+from skill_core import db as db_module  # V116 W1: 统一db入口(替代import db)
 
 # ============ 定价矩阵 ============
 
@@ -135,8 +137,8 @@ DAILY_USE_KEYWORDS = ['文案', '写作', '翻译', '文件', '转换', '格式'
 RARE_USE_KEYWORDS = ['安全', '审计', '合规', '迁移', '部署', '监控', '灾备', '恢复']
 
 
-def categorize_skill(slug, display_name, summary, description, body):
-    """根据关键词分类skill"""
+def categorize_skill(slug, display_name, summary, description, body=''):
+    """根据关键词分类skill (v1.3: body参数可选,供skill_batch_upgrader_v3复用)"""
     all_text = f"{slug} {display_name} {summary} {description} {body[:500]}".lower()
     scores = {}
     for cat, keywords in MARKETING_KEYWORDS.items():
@@ -206,6 +208,12 @@ def assess_frequency(category, slug, display_name, summary):
     
     return 'monthly'
 
+# [V135 F1] 模块级常量: 从calculate_price提取(TD-252)
+_PRICE_POINTS = [0.99, 1.9, 2.9, 3.9, 4.9, 5.9, 6.9, 7.9, 8.9, 9.9, 
+               12.0, 15.0, 19.0, 19.9, 25.0, 29.0, 39.0, 49.0, 69.0, 99.0,
+               129.0, 159.0, 199.0]
+
+
 
 def calculate_price(skill_md_path):
     """计算单个skill的最优定价"""
@@ -244,7 +252,7 @@ def calculate_price(skill_md_path):
 
     # 检查license字段判断付费意图
     license_match = re.search(r'^license:\s*["\']?(.+?)["\']?\s*$', fm, re.MULTILINE)
-    license_val = license_match.group(1).strip() if license_match else ''
+    license_val = license_match.group(1).strip() if license_match else 'MIT'
 
     # 判断是否为付费skill
     # 1. edition明确标注pro/paid/enterprise → 付费
@@ -263,7 +271,7 @@ def calculate_price(skill_md_path):
     elif license_val and any(ol in license_val.lower() for ol in OPEN_LICENSES):
         is_paid_intent = False
     else:
-        # 默认：有Proprietary license倾向则付费
+        # 默认：license未匹配到付费/开源协议，默认MIT(开源免费)
         is_paid_intent = False
 
     # 确定edition显示值
@@ -297,9 +305,7 @@ def calculate_price(skill_md_path):
     else:
         # 四舍五入到合理的价格点
         # v2.0: 新增129/159/199高价位,支持金融量化等高价值类别
-        price_points = [0.99, 1.9, 2.9, 3.9, 4.9, 5.9, 6.9, 7.9, 8.9, 9.9, 
-                       12.0, 15.0, 19.0, 19.9, 25.0, 29.0, 39.0, 49.0, 69.0, 99.0,
-                       129.0, 159.0, 199.0]
+        price_points = _PRICE_POINTS  # [V135 F1] 已提取为模块级常量
         
         # 找到最接近的价格点
         final_price = min(price_points, key=lambda x: abs(x - raw_price))
@@ -361,8 +367,8 @@ def cmd_price(skill_dir):
 def cmd_price_all():
     """计算所有packaged skill的定价"""
     skills_dirs = [
-        Path(r"d:\skills\packaged-skills\skillhub"),
-        Path(r"d:\skills\opensource-skills\packaged"),
+        PACKAGED_SKILLS_DIR,
+        OPENSOURCE_SKILLS_DIR,
     ]
     
     all_results = []
@@ -525,7 +531,7 @@ def cmd_apply():
             new_content = f"---\n{fm.strip()}\n---\n{body.lstrip()}"
             skill_md.write_text(new_content, encoding='utf-8')
             updated += 1
-        except Exception as e:
+        except Exception as e:  # [V131 B2] 宽泛捕获: 异常记录日志继续
             print(f"  写入失败 {slug}: {e}")
             failed += 1
             # 回滚：从备份恢复
@@ -534,7 +540,7 @@ def cmd_apply():
                 try:
                     shutil.copy2(backups[slug], skill_md)
                     print(f"  已从备份恢复 {slug}")
-                except Exception:
+                except Exception:  # [V130 A1] 宽泛捕获: 文件恢复可能因权限/路径/磁盘等多种原因失败
                     print(f"  警告：恢复失败 {slug}")
     
     print(f"已更新 {updated} 个SKILL.md的定价字段, 跳过 {skipped} 个, 失败 {failed} 个")
@@ -556,8 +562,7 @@ def cmd_update_db():
     with open(pricing_report, 'r', encoding='utf-8') as f:
         all_results = json.load(f)
     
-    conn = sqlite3.connect(DB_PATH)
-    conn.execute("PRAGMA foreign_keys = ON")
+    conn = db_module.get_db()
     c = conn.cursor()
     
     # 确保列存在
@@ -574,6 +579,7 @@ def cmd_update_db():
     
     # 使用事务保护（修复U-07：全部成功才提交）
     updated = 0
+    priced_skills = []  # v1.3: 收集已定价skill用于workflow_state更新
     try:
         for result in all_results:
             c.execute("""
@@ -586,14 +592,32 @@ def cmd_update_db():
             
             if c.rowcount > 0:
                 updated += 1
+                priced_skills.append((result['slug'], result['final_price'], result['tier']))
         
         conn.commit()
         print(f"已更新 {updated} 个skill的定价信息")
-    except Exception as e:
+    except Exception as e:  # [V131 B2] 宽泛捕获: DB事务异常回滚
         conn.rollback()
         print(f"数据库更新失败，已回滚: {e}")
     finally:
         conn.close()
+    
+    # v1.3: 定价成功后批量更新workflow_state为step4_auto_price
+    for slug, price, tier in priced_skills:
+        try:
+            conn2 = db_module.get_db()
+            c2 = conn2.cursor()
+            c2.execute("SELECT id FROM skills WHERE slug = ?", (slug,))
+            skill_row = c2.fetchone()
+            conn2.close()
+            if skill_row:
+                db_module.update_workflow_state(
+                    skill_row[0], 4, 'auto_price', 'completed',
+                    notes=f"Priced at {price} ({tier})"
+                )
+        except Exception as e:
+            # [V129 Z6] 记录异常而非静默pass
+            print(f"  [WARN] workflow_state更新失败({slug}): {e}")
 
 
 def main():

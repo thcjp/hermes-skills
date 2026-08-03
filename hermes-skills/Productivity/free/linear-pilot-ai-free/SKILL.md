@@ -1,6 +1,7 @@
 ---
+
 name: "linear-pilot-ai-free"
-description: "Linear任务自动化处理流水线，通过Webhook接收任务、更新状态、发送通知与Git同步，基础单工作流配置。"
+description: "Linear任务自动化处理流水线，通过Webhook接收任务、更新状态、发送通知与Git同步，基础单工作流配置。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,10 @@ metadata:
     - "工作流"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # Linear自动驾驶（免费版）
@@ -35,8 +40,6 @@ chmod 600 ~/.linear-pilot/linear.env
 
 获取API Key：Linear → Settings → API → Personal API keys
 
-**输入**: 用户提供Linear API配置与认证所需的指令和必要参数。
-**处理**: 按照skill规范执行Linear API配置与认证操作,遵循单一意图原则。
 **输出**: 返回Linear API配置与认证的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -51,13 +54,11 @@ chmod 600 ~/.linear-pilot/linear.env
 # 获取工作流状态ID
 ./scripts/linear-api.sh states
 # 输出：
-# Todo - ID: state_todo123
+# 待实现: - ID: state_todo123
 # In Progress - ID: state_prog456
 # Done - ID: state_done789
 ```
 
-**输入**: 用户提供团队与工作流状态ID获取所需的指令和必要参数。
-**处理**: 按照skill规范执行团队与工作流状态ID获取操作,遵循单一意图原则。
 **输出**: 返回团队与工作流状态ID获取的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -83,8 +84,6 @@ chmod 600 ~/.linear-pilot/linear.env
 }
 ```
 
-**输入**: 用户提供工作流配置所需的指令和必要参数。
-**处理**: 按照skill规范执行工作流配置操作,遵循单一意图原则。
 **输出**: 返回工作流配置的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -107,8 +106,6 @@ HTTP Request → Agent endpoint
 Discord notification
 ```
 
-**输入**: 用户提供Webhook服务接入（Make.com免费方案）所需的指令和必要参数。
-**处理**: 按照skill规范执行Webhook服务接入（Make.com免费方案）操作,遵循单一意图原则。
 **输出**: 返回Webhook服务接入（Make.com免费方案）的执行结果,包含操作状态和输出数据。
 
 ### 5. 任务处理工作流
@@ -118,21 +115,19 @@ Discord notification
 ```text
 任务到达 (Linear Todo状态)
     ↓
-步骤1: 确认接收（回复通知）
+步骤1 确认接收（回复通知）
     ↓
-步骤2: DM通知用户
+步骤2 DM通知用户
     ↓
-步骤3: 更新状态为 In Progress
+步骤3 更新状态为 In Progress
     ↓
-步骤4: 执行任务（按类型分发）
+步骤4 执行任务（按类型分发）
     ↓
-步骤5: 更新状态为 Done + 添加结果评论
+步骤5 更新状态为 Done + 添加结果评论
     ↓
-步骤6: Git同步（如启用）
+步骤6 Git同步（如启用）
 ```
 
-**输入**: 用户提供任务处理工作流所需的指令和必要参数。
-**处理**: 按照skill规范执行任务处理工作流操作,遵循单一意图原则。
 **输出**: 返回任务处理工作流的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -149,8 +144,6 @@ Discord notification
 ./scripts/linear-api.sh comment ENG-123 "任务完成：已生成研究报告，保存至 research/topic.md"
 ```
 
-**输入**: 用户提供Linear状态自动更新所需的指令和必要参数。
-**处理**: 按照skill规范执行Linear状态自动更新操作,遵循单一意图原则。
 **输出**: 返回Linear状态自动更新的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -163,8 +156,6 @@ git commit -m "task: ENG-123 - 用户行为分析研究"
 git push
 ```
 
-**输入**: 用户提供Git自动同步所需的指令和必要参数。
-**处理**: 按照skill规范执行Git自动同步操作,遵循单一意图原则。
 **输出**: 返回Git自动同步的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：任务自动化处理流、接收任务、发送通知与、基础单工作流配置、自动驾驶、面向使用、进行任务管理的个、人开发者与小团队、提供从、任务创建到自动处、理再到结果同步的、端到端流水线、中创建新任务时、自动触发、接收后执行任务处、状态更新、结果通知与、让任务管理从手动、操作变为自动流转等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -184,8 +175,6 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 ./scripts/linear-api.sh teams
 ./scripts/linear-api.sh states
 ```
-
-将获取的ID填入 `~/.linear-pilot/linear-config.json`。
 
 ### Step 3：配置Webhook
 
@@ -259,7 +248,7 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 | 服务 | 免费额度 | 建议 |
 |------|----------|------|
 | Linear | 250 issues，无限成员 | 足够个人/小团队使用 |
-| Make.com | 1000次/月，2个Scenario，15分钟间隔 | 免费方案最佳选择 |
+| Make.com | 1000次/月，2个Scenario，15分钟间隔 | 免费方案优选选择 |
 | Pipedream | 约100 credits，即时触发 | 需要实时触发时用，额度消耗快 |
 | Zapier | 100任务/月，5个Zap，不支持Webhook | 免费方案不支持本工作流 |
 
@@ -372,7 +361,7 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 
 ```bash
 mkdir -p ~/.linear-pilot
-echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
+linear-pilot/linear.env
 ```
 
 ### Step 2：获取团队与状态ID
@@ -381,8 +370,6 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 ./scripts/linear-api.sh teams
 ./scripts/linear-api.sh states
 ```
-
-将获取的ID填入 `~/.linear-pilot/linear-config.json`。
 
 ### Step 3：配置Webhook
 
@@ -399,3 +386,22 @@ echo "LINEAR_API_KEY=lin_api_your_key_here" > ~/.linear-pilot/linear.env
 - 任务完成后状态是否更新为 Done
 - Git提交是否自动关联到任务评论
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

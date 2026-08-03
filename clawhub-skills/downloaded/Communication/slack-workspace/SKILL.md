@@ -20,7 +20,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Slack
 
 Manage Slack workspaces — send messages, manage channels, search conversations, handle files, create reminders, and automate team communication via the Slack API.

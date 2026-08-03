@@ -7,8 +7,7 @@ displayName: 智能灯控(专业版)
 summary: "全功能智能灯控方案，支持多灯同步、灯光秀、场景预设与定时计划.。智能灯控专业版是一款面向局域网智能灯泡的全功能控制方案，兼容 TP-Link Kasa 协议设备，覆盖单灯控制、多灯同步、灯光"
 license: Proprietary
 edition: pro
-description: 智能灯控专业版是一款面向局域网智能灯泡的全功能控制方案，兼容 TP-Link Kasa 协议设备，覆盖单灯控制、多灯同步、灯光秀编排、场景预设、定时计划与日出日落联动等完整能力。核心能力：。可自动提升工作效率
-
+description: "智能灯控专业版是一款面向局域网智能灯泡的全功能控制方案，兼容 TP-Link Kasa 协议设备，覆盖单灯控制、多灯同步、灯光秀编排、场景预设、定时计划与日出日落联动等完整能力。核心能力：。可自动提升工作效率。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。"
   - 多灯批量同步控制，支持分组与级联编排
 
   - 灯光秀序列引擎，支持渐变、闪烁、节拍同步等过渡效果
@@ -42,6 +41,7 @@ homepage: ""
 # 定价元数据
 category: "Automation"
 
+
 ---
 
 # 智能灯控工具（专业版）
@@ -65,21 +65,21 @@ category: "Automation"
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -161,7 +161,7 @@ uv run light_schedule.py --rule sunrise-wake --offset -30 --duration 20 \
 
 ### 120 秒上手
 
-第一步，安装依赖：
+领先步，安装依赖：
 
 ```bash
 uv pip install python-kasa>=0.10.2 astral>=3.2
@@ -173,7 +173,7 @@ uv pip install python-kasa>=0.10.2 astral>=3.2
 uv run light_registry.py --discover --save devices.json
 ```
 
-第三步，创建第一个场景并应用：
+第三步，创建领先个场景并应用：
 
 ```bash
 uv run light_scene.py --create evening --template warm-dim
@@ -183,7 +183,7 @@ uv run light_scene.py --apply evening
 第四步，设置定时计划：
 
 ```bash
-uv run light_schedule.py --add "0 22 * * *" --scene evening
+py --add "0 22 * * *" --scene evening
 ```
 
 ## 示例
@@ -208,10 +208,10 @@ uv run light_show.py --ip 192.168.1.50 \
 
 ```bash
 # 日落时自动开灯
-uv run light_schedule.py --rule sunset-on --offset 0 --scene evening
+py --rule sunset-on --offset 0 --scene evening
 # ...
 # 日出前 30 分钟渐亮唤醒
-uv run light_schedule.py --rule sunrise-wake --offset -30 --duration 20
+py --rule sunrise-wake --offset -30 --duration 20
 ```
 
 ### 设备健康监控
@@ -221,14 +221,14 @@ uv run light_schedule.py --rule sunrise-wake --offset -30 --duration 20
 uv run light_monitor.py --interval 60 --alert-webhook https://your-hook.example/notify
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 1. 并行指令优化
 
 多灯控制时启用并行调度，将延迟从串行的 N×200ms 降至并行的 200ms+N×10ms：
 
 ```bash
-uv run control_multi.py --ips 192.168.1.50,192.168.1.51,192.168.1.52 \
+py --ips 192.168.1.50,192.168.1.51,192.168.1.52 \
   --on --parallel --max-concurrency 5
 ```
 
@@ -246,7 +246,7 @@ git commit -m "feat: 新增观影模式场景"
 当某盏灯泡连续 3 次无响应时，自动触发熔断跳过该设备，避免阻塞整批指令。熔断后每 5 分钟尝试一次恢复探测：
 
 ```bash
-uv run control_multi.py --ips 192.168.1.50,192.168.1.51 \
+py --ips 192.168.1.50,192.168.1.51 \
   --on --circuit-breaker --threshold 3 --recovery-interval 300
 ```
 
@@ -396,3 +396,14 @@ uv run light_stats.py --range 30d --output usage-report.html
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

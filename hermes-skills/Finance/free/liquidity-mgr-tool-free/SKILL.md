@@ -1,6 +1,7 @@
 ---
+
 name: "liquidity-mgr-tool-free"
-description: "面向个人用户的 Uniswap V2/V3/V4 流动性查询与基础管理工具。"
+description: "面向个人用户的 Uniswap V2/V3/V4 流动性查询与基础管理工具。Use when 用户需要liquidity-mgr-tool-free相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,11 @@ metadata:
     - "其他工具"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # 流动性管理工具（免费版）
@@ -36,24 +42,18 @@ metadata:
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置。
 
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
 **输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：面向个人用户的、Uniswap、流动性查询与基础、管理工具、面向个人用户的去、中心化交易所流动、性管理工具等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -67,14 +67,13 @@ metadata:
 {baseDir}/scripts/liq.sh positions --version v3 --address 0xYOUR
 
 # 查询池子信息
-{baseDir}/scripts/liq.sh pool --version v3 --pool 0xPOOL
+sh pool --version v3 --pool 0xPOOL
 ```
 
 ### 场景二：添加流动性
 
 ```bash
 # V3 集中流动性
-{baseDir}/scripts/liq.sh add \
   --version v3 \
   --token0 WETH \
   --token1 USDC \
@@ -118,7 +117,6 @@ print(f"无常损失近似: {il:.2%}")
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
 
-
 ## 示例
 
 V2/V3/V4 费率对照：
@@ -129,7 +127,7 @@ V2/V3/V4 费率对照：
 | V3 | 0.01% / 0.05% / 0.3% / 1% |
 | V4 | 自定义（Hook 可调） |
 
-## 最佳实践
+## 优选实践
 
 - **区间别太窄**：V3 区间过窄易被套利踢出，赚不到手续费。
 - **费率按波动选**：稳定币对 0.05%，主流对 0.3%，长尾 1%。
@@ -199,13 +197,13 @@ print(f"IL: {impermanent_loss(4):.2%}")   # IL: -20.00%
 
 ```bash
 # 查询头寸详情
-{baseDir}/scripts/liq.sh position --id 12345
+sh position --id 12345
 
 # 查看收益
-{baseDir}/scripts/liq.sh earnings --id 12345
+sh earnings --id 12345
 
 # 检查区间偏离
-{baseDir}/scripts/liq.sh deviation --id 12345
+sh deviation --id 12345
 ```
 
 ## V2/V3/V4 对比
@@ -251,7 +249,6 @@ print(f"IL: {impermanent_loss(4):.2%}")   # IL: -20.00%
 - **说明**: 通过自然语言指令驱动 Agent 调用合约管理流动性
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|

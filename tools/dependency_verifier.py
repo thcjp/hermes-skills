@@ -37,17 +37,21 @@ import json
 import argparse
 import subprocess
 import re
+import shutil  # V160 R5: 用于shutil.which解析npm路径(消除shell=True)
 from pathlib import Path
 from datetime import datetime
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List
 from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
 
 # 确保能导入skill_registry模块
-SKILL_REGISTRY_DIR = Path(__file__).parent
-sys.path.insert(0, str(SKILL_REGISTRY_DIR))
+_config_dir = str(Path(__file__).resolve().parent.parent / "config")
+if _config_dir not in sys.path:
+    sys.path.insert(0, _config_dir)
+from project_config import TOOLS_DIR
+sys.path.insert(0, str(TOOLS_DIR))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "config"))
 
-from config import get_db_connection, PACKAGED_SKILLS_DIR, OPENSOURCE_SKILLS_DIR
 from trace_llm_scorer import read_skill_md
 from skill_core.parser import find_skill_md
 
@@ -100,17 +104,11 @@ FALSE_POSITIVE_KEYWORDS = [
 
 # ============ Skill查找 ============
 
-def get_skill_id(slug: str) -> Optional[int]:
-    """从DB获取skill_id"""
-    try:
-        conn = get_db_connection()
-        c = conn.cursor()
-        c.execute("SELECT id FROM skills WHERE slug = ? AND workflow_state != 'deprecated'", (slug,))
-        row = c.fetchone()
-        conn.close()
-        return row['id'] if row else None
-    except Exception:
-        return None
+# V130 A5: 与llm_validator.get_skill_id是重复定义, 已统一。
+# 两者签名/逻辑/返回类型完全一致(均查skills表slug且workflow_state!=deprecated, 返回id或None)。
+# 本模块改为从llm_validator导入。
+if str(TOOLS_DIR) not in sys.path:
+    sys.path.insert(0, str(TOOLS_DIR))
 
 
 # ============ 依赖提取(增强版) ============
@@ -261,7 +259,7 @@ def verify_api_endpoint(url: str) -> Dict[str, Any]:
             'status': 'unreachable',
             'details': f'URL不可达: {str(e.reason)}'
         }
-    except Exception as e:
+    except Exception as e:  # [V131 B2] 宽泛捕获: 异常时返回错误/默认值
         return {
             'verified': False,
             'status': 'error',
@@ -272,10 +270,18 @@ def verify_api_endpoint(url: str) -> Dict[str, Any]:
 def verify_npm_package(package: str) -> Dict[str, Any]:
     """验证npm包存在性"""
     try:
+        # V160 R5修复: 移除shell=True(命令注入风险), 使用shutil.which解析npm完整路径
+        # 原因: shell=True+list在Windows上会将参数传给cmd.exe, package中的特殊字符可能被解释
+        npm_path = shutil.which('npm')
+        if not npm_path:
+            return {
+                'verified': False,
+                'status': 'not_found',
+                'details': 'npm命令不可用(未在PATH中找到)'
+            }
         result = subprocess.run(
-            ['npm', 'view', package, 'version'],
-            capture_output=True, text=True, timeout=SUBPROCESS_TIMEOUT,
-            shell=True
+            [npm_path, 'view', package, 'version'],
+            capture_output=True, text=True, timeout=SUBPROCESS_TIMEOUT
         )
         if result.returncode == 0 and result.stdout.strip():
             return {
@@ -296,7 +302,7 @@ def verify_npm_package(package: str) -> Dict[str, Any]:
             'status': 'timeout',
             'details': f'npm view超时({SUBPROCESS_TIMEOUT}秒)'
         }
-    except Exception as e:
+    except Exception as e:  # [V131 B2] 宽泛捕获: 异常时返回错误/默认值
         return {
             'verified': False,
             'status': 'error',
@@ -332,7 +338,7 @@ def verify_pypi_package(package: str) -> Dict[str, Any]:
             'status': 'timeout',
             'details': f'pip index versions超时({SUBPROCESS_TIMEOUT}秒)'
         }
-    except Exception as e:
+    except Exception as e:  # [V131 B2] 宽泛捕获: 异常时返回错误/默认值
         return {
             'verified': False,
             'status': 'error',
@@ -404,6 +410,7 @@ def verify_dependency(dep: Dict[str, Any]) -> Dict[str, Any]:
 
 # ============ 主验证流程 ============
 
+# [V131 B5: 与generate_skill.run_dependency_verification不同(本版有output_json/output_file参数)]
 def run_dependency_verification(slug: str, output_json: bool = False, output_file: str = None) -> Dict[str, Any]:
     """运行依赖验证"""
     result = {
@@ -457,7 +464,7 @@ def run_dependency_verification(slug: str, output_json: bool = False, output_fil
     if output_file:
         report_path = Path(output_file)
     else:
-        report_path = SKILL_REGISTRY_DIR / f'dep_verification_report_{slug}.json'
+        report_path = TOOLS_DIR / f'dep_verification_report_{slug}.json'
 
     with open(report_path, 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=2)

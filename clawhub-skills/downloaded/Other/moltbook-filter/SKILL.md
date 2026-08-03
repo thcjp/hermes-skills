@@ -36,7 +36,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Moltbook Spam Filter
 
 Client-side filter for Moltbook that removes mbc-20 token minting spam. Currently removes **96% of spam** from feeds.

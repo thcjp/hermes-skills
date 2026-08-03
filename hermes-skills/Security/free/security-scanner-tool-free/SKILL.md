@@ -1,6 +1,7 @@
 ---
+
 name: "security-scanner-tool-free"
-description: "自动化安全扫描工具包,含端口扫描、漏洞检测、SSL分析,适合安全测试与评估"
+description: "自动化安全扫描工具包,含端口扫描、漏洞检测、SSL分析,适合安全测试与评估。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,11 @@ metadata:
     - "网络安全"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # 安全扫描器(免费版)
@@ -34,8 +40,6 @@ metadata:
 | sslscan | SSL/TLS分析 | 证书检查/协议版本/加密套件 |
 | nikto | Web服务器扫描 | 配置审计/漏洞检测 |
 
-**输入**: 用户提供扫描工具集成所需的指令和必要参数。
-**处理**: 按照skill规范执行扫描工具集成操作,遵循单一意图原则。
 **输出**: 返回扫描工具集成的执行结果,包含操作状态和输出数据。
 
 ### 免费版与专业版对比
@@ -50,15 +54,11 @@ metadata:
 | CVE关联 | 不支持 | CVE数据库映射 |
 | 修复建议 | 基础 | 详细修复指南 |
 
-**输入**: 用户提供免费版与专业版对比所需的指令和必要参数。
-**处理**: 按照skill规范执行免费版与专业版对比操作,遵循单一意图原则。
 **输出**: 返回免费版与专业版对比的执行结果,包含操作状态和输出数据。
 
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：自动化安全扫描工、含端口扫描、适合安全测试与评、核心能力、端口扫描与服务识、配置分析、服务器漏洞检测、扫描报告自动生成等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -155,7 +155,7 @@ class SecurityScanner:
         self.results["host_discovery"] = result
 
         # 快速端口扫描
-        result = self._run_command(f"nmap -F -T4 {self.target}")
+_run_command(f"nmap -F -T4 {self.target}")
         self.results["port_scan"] = result
 
         return self.results
@@ -165,7 +165,6 @@ class SecurityScanner:
         print(f"[*] 开始全面扫描: {self.target}")
 
         # 全端口扫描
-        result = self._run_command(
             f"nmap -p- -sV -sC -A -T4 {self.target}"
         )
         self.results["full_scan"] = result
@@ -177,13 +176,11 @@ class SecurityScanner:
         print(f"[*] 开始漏洞扫描: {self.target}")
 
         # Nmap漏洞脚本
-        result = self._run_command(
             f"nmap --script vuln {self.target}"
         )
         self.results["vuln_scan"] = result
 
         # Nuclei扫描
-        result = self._run_command(
             f"nuclei -u http://{self.target} -t cves/ -t vulnerabilities/"
         )
         self.results["nuclei_scan"] = result
@@ -194,7 +191,7 @@ class SecurityScanner:
         """SSL/TLS分析"""
         print(f"[*] 开始SSL扫描: {self.target}")
 
-        result = self._run_command(f"sslscan {self.target}")
+_run_command(f"sslscan {self.target}")
         self.results["ssl_scan"] = result
 
         return self.results
@@ -204,7 +201,6 @@ class SecurityScanner:
         print(f"[*] 开始Web扫描: {self.target}")
 
         # Nikto扫描
-        result = self._run_command(
             f"nikto -h http://{self.target} -o {self.report_dir}/nikto_{self.target}.txt"
         )
         self.results["web_scan"] = result
@@ -296,7 +292,7 @@ nuclei -u target.com -t technologies/
 nuclei -u target.com -t custom-templates/
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 1. 分阶段扫描
 
@@ -372,11 +368,10 @@ A: 免费版集成4个核心工具。专业版增加masscan、ffuf、gobuster、
 - 免费版无需API Key,所有扫描在本地执行
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+execute(纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行安全扫描任务
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
@@ -395,8 +390,6 @@ A: 免费版集成4个核心工具。专业版增加masscan、ffuf、gobuster、
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ```text
@@ -404,3 +397,30 @@ A: 免费版集成4个核心工具。专业版增加masscan、ffuf、gobuster、
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

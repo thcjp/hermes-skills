@@ -1,5 +1,6 @@
 ---
-slug: "frontend-design-ai-provider-pro"
+
+slug: frontend-design-ai-provider-pro
 name: "frontend-design-ai-provider-pro"
 version: "1.0.0"
 displayName: "前端设计-专业版"
@@ -41,7 +42,9 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+
 ---
+
 # 前端设计工具 - 专业版
 
 ## 概述
@@ -72,7 +75,6 @@ category: "Creative"
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -80,7 +82,6 @@ category: "Creative"
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
@@ -88,7 +89,6 @@ category: "Creative"
 ### 结果处理与输出
 用`output_format`参数进行配置。
 
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应。
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志。
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -224,7 +224,7 @@ python3 （请参考skill目录中的脚本文件） \
 
 ## 快速开始
 
-### 第一步:启用专业版功能
+### 领先步:启用专业版功能
 
 ```bash
 export FRONTEND_DESIGN_EDITION="pro"
@@ -246,7 +246,6 @@ python3 （请参考skill目录中的脚本文件） \
 
 ```bash
 python3 （请参考skill目录中的脚本文件） \
-  --config components.yaml \
   --output ./src/components/ \
   --storybook
 ```
@@ -286,7 +285,7 @@ FRONTEND_DESIGN_DEFAULT_BREAKPOINTS=sm,md,lg,xl
 /* 2xl: 1536px - 大桌面 */
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **Tokens 先行**:先定义 Design Tokens(颜色/字体/间距/圆角/阴影),再构建组件
 2. **组件原子化**:从最小粒度组件(Button/Input)开始,组合出复杂组件
@@ -339,7 +338,7 @@ A:可以。支持导入现有 Figma Tokens 或 Style Dictionary 配置,生成兼
 - **安全建议**: License 通过环境变量配置,避免写入代码仓库
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+execute(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,支持设计系统生成、组件库批量产出、多端适配等企业级前端设计场景
 
 ## 错误处理
@@ -359,8 +358,6 @@ A:可以。支持导入现有 Figma Tokens 或 Style Dictionary 配置,生成兼
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 
@@ -386,3 +383,14 @@ Skill: 执行完成,结果如下: 操作成功
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

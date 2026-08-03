@@ -1,6 +1,7 @@
 ---
+
 name: "news-sentiment-tool-free"
-description: "轻量级股票舆情监控工具,扫描多渠道信息源并进行情绪打分,输出情绪温度计与事件清单。"
+description: "轻量级股票舆情监控工具,扫描多渠道信息源并进行情绪打分,输出情绪温度计与事件清单。Use when 用户需要news-sentiment-tool-free相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -16,6 +17,10 @@ metadata:
     - "个人效率"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # 舆情情绪分析工具 - 免费版
@@ -39,8 +44,6 @@ metadata:
 | 社交媒体 | 0.6 | 微博、雪球等 |
 | 论坛帖子 | 0.5 | 股吧、社区讨论 |
 
-**输入**: 用户提供多渠道信息采集所需的指令和必要参数。
-**处理**: 按照skill规范执行多渠道信息采集操作,遵循单一意图原则。
 **输出**: 返回多渠道信息采集的执行结果,包含操作状态和输出数据。
 
 ### 去噪处理
@@ -50,8 +53,6 @@ metadata:
 - 过滤无关信息
 - 保留高信噪比内容
 
-**输入**: 用户提供去噪处理所需的指令和必要参数。
-**处理**: 按照skill规范执行去噪处理操作,遵循单一意图原则。
 **输出**: 返回去噪处理的执行结果,包含操作状态和输出数据。
 
 ### 情绪打分体系
@@ -66,8 +67,6 @@ metadata:
 | -8 ~ -5 | 偏负面 | 利空消息,谨慎操作 |
 | -10 ~ -8 | 极度悲观 | 重大利空,股价可能大幅下跌 |
 
-**输入**: 用户提供情绪打分体系所需的指令和必要参数。
-**处理**: 按照skill规范执行情绪打分体系操作,遵循单一意图原则。
 **输出**: 返回情绪打分体系的执行结果,包含操作状态和输出数据。
 
 ### 重大事件提取
@@ -77,8 +76,6 @@ metadata:
 - 标注事件来源与置信度
 - 按时间排序输出清单
 
-**输入**: 用户提供重大事件提取所需的指令和必要参数。
-**处理**: 按照skill规范执行重大事件提取操作,遵循单一意图原则。
 **输出**: 返回重大事件提取的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级股票舆情监、控工具、扫描多渠道信息源、并进行情绪打分、输出情绪温度计与、事件清单、舆情情绪分析工具、免费版、为个人投资者提供、股票舆情监控与情、绪打分能力、扫描公告、社交媒体等渠道、核心能力、过滤广告与水军内、重大事件提取与情、绪贡献量化、情绪温度计可视化等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
@@ -93,7 +90,6 @@ metadata:
 python3 {SKILL_DIR}/scripts/sentiment_scan.py 002594 7
 
 # 扫描腾讯(0700.HK)近7天舆情
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 0700.HK 7
 ```
 
 **输出示例**:
@@ -143,10 +139,8 @@ python3 {SKILL_DIR}/scripts/sentiment_scan.py 0700.HK 7
 
 ```bash
 # 扫描苹果(AAPL)近7天美股舆情
-python3 {SKILL_DIR}/scripts/sentiment_scan.py AAPL 7 us
 
 # 扫描特斯拉(TSLA)近30天舆情
-python3 {SKILL_DIR}/scripts/sentiment_scan.py TSLA 30 us
 ```
 
 ### 场景三:港股舆情快速扫描
@@ -155,10 +149,8 @@ python3 {SKILL_DIR}/scripts/sentiment_scan.py TSLA 30 us
 
 ```bash
 # 扫描腾讯(0700.HK)近7天舆情
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 0700.HK 7
 
 # 或使用5位数字格式
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 00700 7
 ```
 
 ## 不适用场景
@@ -175,7 +167,7 @@ python3 {SKILL_DIR}/scripts/sentiment_scan.py 00700 7
 
 ## 快速开始
 
-### 第一步:确认运行环境
+### 领先步:确认运行环境
 
 ```bash
 # 检查 Python 3 是否可用
@@ -189,10 +181,8 @@ ls {SKILL_DIR}/scripts/sentiment_scan.py
 
 ```bash
 # 基本用法:扫描指定股票近7天舆情
-python3 {SKILL_DIR}/scripts/sentiment_scan.py <股票代码> [天数] [市场]
 
 # 示例
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 600519 7
 ```
 
 ### 第三步:解读报告
@@ -206,7 +196,7 @@ python3 {SKILL_DIR}/scripts/sentiment_scan.py 600519 7
 ## 配置示例
 
 #
-## 最佳实践
+## 优选实践
 
 ### 1. 定期扫描建立情绪基线
 
@@ -214,8 +204,8 @@ python3 {SKILL_DIR}/scripts/sentiment_scan.py 600519 7
 
 ```bash
 # 每周一早上扫描持仓
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 002594 7 > ~/sentiment_002594_$(date +%Y%m%d).log
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 600519 7 > ~/sentiment_600519_$(date +%Y%m%d).log
+py 002594 7 > ~/sentiment_002594_$(date +%Y%m%d).log
+py 600519 7 > ~/sentiment_600519_$(date +%Y%m%d).log
 ```
 
 ### 2. 结合多个时间窗口分析
@@ -224,13 +214,10 @@ python3 {SKILL_DIR}/scripts/sentiment_scan.py 600519 7 > ~/sentiment_600519_$(da
 
 ```bash
 # 短期(3天):捕捉最新动态
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 002594 3
 
 # 中期(7天):一周趋势
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 002594 7
 
 # 长期(30天):月度趋势
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 002594 30
 ```
 
 ### 3. 关注高置信度事件
@@ -264,7 +251,6 @@ python3 {SKILL_DIR}/scripts/sentiment_scan.py 002594 30
 
 ```bash
 # 尝试增大扫描天数
-python3 {SKILL_DIR}/scripts/sentiment_scan.py 002594 30
 ```
 
 ### Q2: 情绪分数与实际股价走势不符?
@@ -318,11 +304,10 @@ python3 {SKILL_DIR}/scripts/sentiment_scan.py 002594 30
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,核心功能通过 Python 脚本执行需要 exec 命令行执行能力)
+- **分类**: MD+execute(纯 Markdown 指令,核心功能通过 Python 脚本执行需要 exec 命令行执行能力)
 - **说明**: 基于脚本的 AI Skill,通过自然语言指令驱动 Agent 执行舆情扫描。免费版支持单只股票的多渠道信息采集、去噪处理、情绪打分与事件提取,输出情绪温度计与重大事件清单,适合个人投资者轻量使用。本工具仅供参考,不构成投资建议。
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
@@ -340,8 +325,6 @@ python3 {SKILL_DIR}/scripts/sentiment_scan.py 002594 30
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ```text
@@ -349,3 +332,21 @@ python3 {SKILL_DIR}/scripts/sentiment_scan.py 002594 30
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果

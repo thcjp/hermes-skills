@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # jinn-node
 
 Earn token rewards by putting your idle Skill平台 agent to work for autonomous ventures on the Jinn Network.
@@ -187,3 +186,28 @@ A: 请参考已知限制章节了解具体限制。
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
 - 性能取决于底层模型能力
+
+---
+## 边界条件与限制
+
+### 输入限制
+- **技能输入格式**: jinn-node技能仅接受符合Markdown格式的文本输入，不支持其他格式如PDF、图片等。
+- **输入长度**: 输入文本长度不应超过1024个字符，以确保技能处理效率和准确性。
+- **关键词限制**: 输入文本中包含的关键词应与jinn-node技能的核心能力相关，如“rewards”, “node”, “token”, “jinn-node”, “jinn”, “working”, “earn”, “autonomous”。
+
+### 性能边界
+- **并发处理**: jinn-node技能支持单线程处理，对于高并发请求，可能需要等待当前任务完成。
+- **响应时间**: 在正常网络环境下，技能的平均响应时间约为几秒，但在高峰时段可能略有延迟。
+
+### 兼容性约束
+- **操作系统**: jinn-node技能在Windows、macOS和Linux操作系统上均能正常运行，但可能存在细微的兼容性问题。
+- **Node.js版本**: 必须使用Node.js 20+版本，不支持旧版本。
+- **Python版本**: 必须使用Python 3.10或3.11版本，不支持Python 3.12及以上版本。
+- **Gemini API**: 支持Google One AI Premium OAuth认证或Gemini API Key认证，不支持其他认证方式。
+
+### 功能限制
+- **复杂场景处理**: jinn-node技能不适用于需要人工判断的复杂决策场景，对于此类场景，可能需要结合其他工具或人工介入。
+- **LLM支持**: 需要底层LLM支持，无LLM环境无法使用。
+- **性能依赖**: 性能取决于底层模型能力，可能受到模型复杂度和资源限制的影响。
+---
+

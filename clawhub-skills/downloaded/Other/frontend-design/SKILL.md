@@ -19,7 +19,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # Frontend Design
 
 Approach this as the design lead at a small studio known for giving every client a visual identity that could not be mistaken for anyone else's. This client has already rejected proposals that felt templated, and is paying for a distinctive point of view: make deliberate, opinionated choices about palette, typography, and layout that are specific to this brief, and take one real aesthetic risk you can justify.
@@ -168,3 +167,26 @@ A: 请参考已知限制章节了解具体限制。
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
 - 性能取决于底层模型能力
+
+---
+## 边界条件与限制
+
+### 输入限制
+- **输入格式**: 输入必须符合Markdown格式，否则技能可能无法正确解析。
+- **内容类型**: 输入内容应与前端设计相关，如UI设计、品牌视觉等，不适用于3D建模和动画制作。
+- **长度限制**: 输入内容长度不宜过长，建议控制在1000字符以内，以确保技能能够高效处理。
+
+### 性能边界
+- **响应时间**: 在正常网络环境下，技能的响应时间通常在几秒之内。
+- **并发处理**: 单个技能实例同时处理的输入数量有限，超过限制可能导致处理失败。
+
+### 兼容性约束
+- **操作系统**: 支持Windows、macOS和Linux操作系统。
+- **浏览器**: 需要支持JavaScript的浏览器，如Chrome、Firefox、Safari等。
+- **Agent平台**: 支持SKILL.md的任意AI Agent，如Claude Code、Cursor、Codex、Gemini CLI等。
+
+### 其他限制
+- **人工判断**: 对于需要人工判断的复杂决策场景，技能可能无法提供满意的解决方案。
+- **外部依赖**: 部分功能可能需要外部API支持，如LLM API，确保网络连接稳定。
+- **模型能力**: 技能的性能取决于底层模型的能力，对于复杂或未经验证的设计需求，可能需要人工辅助。
+

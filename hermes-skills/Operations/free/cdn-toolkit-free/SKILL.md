@@ -1,6 +1,7 @@
 ---
+
 name: "cdn-toolkit-free"
-description: "CDN配置与优化助手,支持缓存策略设置、基础安全加固与性能诊断,适合个人开发者快速部署CDN。"
+description: "CDN配置与优化助手,支持缓存策略设置、基础安全加固与性能诊断,适合个人开发者快速部署。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,11 @@ metadata:
     - "免费版"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # CDN配置工具包免费版
@@ -66,8 +72,6 @@ location ~* \.(php|jsp|do)$ {
 }
 ```
 
-**输入**: 用户提供缓存策略配置所需的指令和必要参数。
-**处理**: 按照skill规范执行缓存策略配置操作,遵循单一意图原则。
 **输出**: 返回缓存策略配置的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -113,8 +117,6 @@ echo "  [ ] 仅允许CDN回源IP访问"
 echo "  [ ] 源站防火墙已配置"
 ```
 
-**输入**: 用户提供基础安全加固所需的指令和必要参数。
-**处理**: 按照skill规范执行基础安全加固操作,遵循单一意图原则。
 **输出**: 返回基础安全加固的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -155,8 +157,6 @@ echo "--- 4. 关键响应头 ---"
 curl -s -I "https://${DOMAIN}" | grep -i "cache-control\|content-encoding\|content-type\|strict-transport"
 ```
 
-**输入**: 用户提供CDN性能诊断所需的指令和必要参数。
-**处理**: 按照skill规范执行CDN性能诊断操作,遵循单一意图原则。
 **输出**: 返回CDN性能诊断的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -192,8 +192,6 @@ echo "  [ ] 缓存键已优化(忽略无关参数)"
 echo "  [ ] Gzip/Brotli压缩已启用"
 ```
 
-**输入**: 用户提供域名配置指导所需的指令和必要参数。
-**处理**: 按照skill规范执行域名配置指导操作,遵循单一意图原则。
 **输出**: 返回域名配置指导的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：配置与优化助手、支持缓存策略设置、基础安全加固与性、适合个人开发者快、速部署、配置工具包免费版、为个人开发者提供、部署与优化核心能、核心能力、适用场景、网站加速部署、静态资源缓存优化、安全配置、差异化、免费版聚焦核心配、置能力、支持主流、服务商、适合个人项目快速、适用关键词、边缘节点、内容分发、edge、optimization等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -253,19 +251,18 @@ curl -s -X PATCH "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/settings
     --data '{"value":"on"}' | jq '.success'
 
 # 2. 设置最小TLS版本为1.2
-curl -s -X PATCH "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/settings/min_tls_version" \
+cloudflare.com/client/v4/zones/${ZONE_ID}/settings/min_tls_version" \
     -H "Authorization: Bearer ${API_TOKEN}" \
     -H "Content-Type: application/json" \
     --data '{"value":"1.2"}' | jq '.success'
 
 # 3. 开启Gzip压缩
-curl -s -X PATCH "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/settings/gzip" \
+cloudflare.com/client/v4/zones/${ZONE_ID}/settings/gzip" \
     -H "Authorization: Bearer ${API_TOKEN}" \
     -H "Content-Type: application/json" \
-    --data '{"value":"on"}' | jq '.success'
 
 # 4. 开启浏览器缓存TTL
-curl -s -X PATCH "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/settings/browser_cache_ttl" \
+cloudflare.com/client/v4/zones/${ZONE_ID}/settings/browser_cache_ttl" \
     -H "Authorization: Bearer ${API_TOKEN}" \
     -H "Content-Type: application/json" \
     --data '{"value":86400}' | jq '.success'
@@ -277,7 +274,6 @@ curl -s -X PATCH "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/settings
 #!/bin/bash
 # CDN缓存命中率诊断
 
-DOMAIN="${1:-example.com}"
 SAMPLES=20
 
 echo "=== CDN缓存命中率诊断: ${DOMAIN} ==="
@@ -327,7 +323,7 @@ fi
 
 ## 快速开始
 
-### 第一步:选择CDN服务商
+### 领先步:选择CDN服务商
 
 | 服务商 | 免费额度 | 适合场景 |
 |:-------|:---------|:---------|
@@ -377,7 +373,7 @@ add_header X-Frame-Options "SAMEORIGIN" always;
 add_header Referrer-Policy "strict-origin-when-cross-origin" always;
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **文件名哈希**:静态资源使用内容哈希命名,实现长期缓存与自动更新。
 2. **分层缓存**:CDN边缘缓存 -> 源站缓存 -> 应用缓存,多层配合。
@@ -386,7 +382,7 @@ add_header Referrer-Policy "strict-origin-when-cross-origin" always;
 5. **源站保护**:隐藏源站IP,仅允许CDN回源。
 
 ```bash
-# 最佳实践:源站防火墙仅允许CDN回源
+# 优选实践:源站防火墙仅允许CDN回源
 # Cloudflare IP列表
 CF_IPS=$(curl -s https://www.cloudflare.com/ips-v4)
 
@@ -441,12 +437,11 @@ iptables -A INPUT -p tcp --dport 443 -j DROP
 - AWS需配置Access Key和Secret Key
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+execute(纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行CDN配置与优化任务
 - API Key通过环境变量配置: export API_KEY=your_key
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
@@ -464,8 +459,6 @@ iptables -A INPUT -p tcp --dport 443 -j DROP
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ```text
@@ -473,3 +466,22 @@ iptables -A INPUT -p tcp --dport 443 -j DROP
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

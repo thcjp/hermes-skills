@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Sql Generator
 
 SQL生成器。自然语言转SQL、SQL解释、性能优化、建表语句、测试数据生成、数据库迁移、SQL速查表。SQL generator from natural language, explainer, optimizer, DDL creator, mock data, migration scripts, cheatsheet. SQL、数据库、MySQL。
@@ -119,3 +118,29 @@ Run `sql-generator help` to see all available commands.
 ## 已知限制
 
 - 需要API Key，无Key环境无法使用
+
+---
+## 边界条件与限制
+
+### 输入限制
+- **自然语言描述的复杂性**：SQL Generator能够处理较为简单的自然语言描述，但对于过于复杂或模糊的自然语言输入，其生成SQL的能力可能会受限。
+- **SQL语法支持范围**：该工具可能不支持所有SQL语法，特别是某些特定数据库或特定版本的SQL扩展。
+- **数据类型识别**：对于自然语言中描述的数据类型，工具可能无法完全准确地识别，需要用户提供更精确的数据类型信息。
+
+### 性能边界
+- **处理时间**：对于非常长的SQL查询或大量的数据，生成SQL的过程可能会变得缓慢。
+- **资源消耗**：在处理大量数据或复杂查询时，可能会对系统资源（如CPU和内存）造成较大压力。
+
+### 兼容性约束
+- **数据库类型**：SQL Generator可能不支持所有类型的数据库，如某些新兴的NoSQL数据库。
+- **数据库版本**：某些数据库功能可能在旧版本中不可用，这可能会限制SQL Generator的功能。
+
+### 输出限制
+- **SQL语句长度**：生成的SQL语句长度可能超过某些数据库的长度限制。
+- **性能优化建议**：生成的SQL性能优化建议可能不适用于所有数据库环境。
+
+### 其他限制
+- **外部API依赖**：SQL Generator可能依赖于外部API，如LLM API，如果这些API不可用或访问受限，可能会影响工具的使用。
+- **自动化工作流集成**：与自动化工作流集成时，可能需要额外的配置和调整，以确保工具能够无缝工作。
+---
+

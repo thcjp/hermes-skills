@@ -19,31 +19,31 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
+# PDF处理专家指南
 
-# Pdf
+## 概述
 
-## Overview
+本指南全面介绍了PDF处理专家工具箱，这是一套功能强大的Python库和命令行工具，旨在满足各种PDF处理需求。从文本提取和PDF创建到合并、分割、旋转和水印添加，本工具箱为用户提供了一个全面的工作平台，适用于文档处理、转换和自动化工作流。
 
-This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.
+## 快速入门
 
-## Quick Start
+要开始使用PDF处理专家，首先确保安装了所有必要的Python库和命令行工具。以下是一个简单的示例，演示如何使用pypdf库提取PDF文本：
 
 ```python
-from pypdf import PdfReader, PdfWriter
+from pypdf import PdfReader
 
 reader = PdfReader("document.pdf")
-print(f"Pages: {len(reader.pages)}")
-
 text = ""
 for page in reader.pages:
     text += page.extract_text()
+print(text)
 ```
 
-## Python Libraries
+## Python库
 
-### pypdf - Basic Operations
+### pypdf - 基本操作
 
-#### Merge PDFs
+#### 合并PDF
 
 ```python
 from pypdf import PdfWriter, PdfReader
@@ -58,7 +58,7 @@ with open("merged.pdf", "wb") as output:
     writer.write(output)
 ```
 
-#### Split PDF
+#### 分割PDF
 
 ```python
 reader = PdfReader("input.pdf")
@@ -69,7 +69,7 @@ for i, page in enumerate(reader.pages):
         writer.write(output)
 ```
 
-#### Extract Metadata
+#### 提取元数据
 
 ```python
 reader = PdfReader("document.pdf")
@@ -80,7 +80,7 @@ print(f"Subject: {meta.subject}")
 print(f"Creator: {meta.creator}")
 ```
 
-#### Rotate Pages
+#### 旋转页面
 
 ```python
 reader = PdfReader("input.pdf")
@@ -94,9 +94,9 @@ with open("rotated.pdf", "wb") as output:
     writer.write(output)
 ```
 
-### pdfplumber - Text and Table Extraction
+### pdfplumber - 文本和表格提取
 
-#### Extract Text with Layout
+#### 使用布局提取文本
 
 ```python
 import pdfplumber
@@ -107,7 +107,7 @@ with pdfplumber.open("document.pdf") as pdf:
         print(text)
 ```
 
-#### Extract Tables
+#### 提取表格
 
 ```python
 with pdfplumber.open("document.pdf") as pdf:
@@ -119,7 +119,7 @@ with pdfplumber.open("document.pdf") as pdf:
                 print(row)
 ```
 
-#### Advanced Table Extraction
+#### 高级表格提取
 
 ```python
 import pandas as pd
@@ -138,9 +138,9 @@ if all_tables:
     combined_df.to_excel("extracted_tables.xlsx", index=False)
 ```
 
-### reportlab - Create PDFs
+### reportlab - 创建PDF
 
-#### Basic PDF Creation
+#### 基本PDF创建
 
 ```python
 from reportlab.lib.pagesizes import letter
@@ -157,7 +157,7 @@ c.line(100, height - 140, 400, height - 140)
 c.save()
 ```
 
-#### Create PDF with Multiple Pages
+#### 创建多页PDF
 
 ```python
 from reportlab.lib.pagesizes import letter
@@ -182,7 +182,7 @@ story.append(Paragraph("Content for page 2", styles['Normal']))
 doc.build(story)
 ```
 
-## Command-Line Tools
+## 命令行工具
 
 ### pdftotext (poppler-utils)
 
@@ -217,9 +217,9 @@ pdftk input.pdf burst
 pdftk input.pdf rotate 1east output rotated.pdf
 ```
 
-## Common Tasks
+## 常见任务
 
-### Extract Text from Scanned PDFs
+### 从扫描的PDF中提取文本
 
 ```python
 import pytesseract
@@ -236,7 +236,7 @@ for i, image in enumerate(images):
 print(text)
 ```
 
-### Add Watermark
+### 添加水印
 
 ```python
 from pypdf import PdfReader, PdfWriter
@@ -254,14 +254,13 @@ with open("watermarked.pdf", "wb") as output:
     writer.write(output)
 ```
 
-### Extract Images
+### 提取图像
 
 ```bash
 pdfimages -j input.pdf output_prefix
-
 ```
 
-### Password Protection
+### 密码保护
 
 ```python
 from pypdf import PdfReader, PdfWriter
@@ -278,25 +277,25 @@ with open("encrypted.pdf", "wb") as output:
     writer.write(output)
 ```
 
-## Quick Reference
+## 快速参考
 
-| Task | Best Tool | Command/Code |
+| 任务 | 最佳工具 | 命令/代码 |
 | --- | --- | --- |
-| Merge PDFs | pypdf | `writer.add_page(page)` |
-| Split PDFs | pypdf | One page per file |
-| Extract text | pdfplumber | `page.extract_text()` |
-| Extract tables | pdfplumber | `page.extract_tables()` |
-| Create PDFs | reportlab | Canvas or Platypus |
-| Command line merge | qpdf | `qpdf --empty --pages ...` |
-| OCR scanned PDFs | pytesseract | Convert to image first |
-| Fill PDF forms | pdf-lib or pypdf (see forms.md) | See forms.md |
+| 合并PDF | pypdf | `writer.add_page(page)` |
+| 分割PDF | pypdf | One page per file |
+| 提取文本 | pdfplumber | `page.extract_text()` |
+| 提取表格 | pdfplumber | `page.extract_tables()` |
+| 创建PDF | reportlab | Canvas or Platypus |
+| 命令行合并 | qpdf | `qpdf --empty --pages ...` |
+| OCR扫描PDF | pytesseract | Convert to image first |
+| 填写PDF表单 | pdf-lib or pypdf (see forms.md) | See forms.md |
 
-## Next Steps
+## 下一步操作
 
-* For advanced pypdfium2 usage, see reference.md
-* For JavaScript libraries (pdf-lib), see reference.md
-* If you need to fill out a PDF form, follow the instructions in forms.md
-* For troubleshooting guides, see reference.md
+* 了解pypdfium2的高级用法，请参阅reference.md。
+* 了解JavaScript库（pdf-lib），请参阅reference.md。
+* 如需填写PDF表单，请参阅forms.md。
+* 如需故障排除指南，请参阅reference.md。
 
 ## 依赖说明
 
@@ -318,7 +317,7 @@ with open("encrypted.pdf", "wb") as output:
 
 ## 核心能力
 
-This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.
+本指南涵盖了使用Python库和命令行工具进行PDF处理的必要操作，包括文本提取、PDF创建、合并、分割、旋转、水印添加等。
 
 ## 适用场景
 
@@ -332,7 +331,6 @@ This guide covers essential PDF processing operations using Python libraries and
 
 ### 示例1：基础用法
 
-```
 ```python
 from pypdf import PdfReader, PdfWriter
 
@@ -342,7 +340,7 @@ print(f"Pages: {len(reader.pages)}")
 text = ""
 for page in reader.pages:
     text += page.extract_text()
-```
+print(text)
 ```
 
 ## 错误处理
@@ -355,13 +353,13 @@ for page in reader.pages:
 
 ## 常见问题
 
-### Q1: 如何开始使用Pdf？
+### Q1: 如何开始使用PDF处理专家？
 A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
 
 ### Q2: 遇到错误怎么办？
 A: 请参考错误处理章节，按照表格中的处理方式操作。
 
-### Q3: Pdf有什么限制？
+### Q3: PDF处理专家有什么限制？
 A: 请参考已知限制章节了解具体限制。
 
 ## 已知限制
@@ -369,3 +367,25 @@ A: 请参考已知限制章节了解具体限制。
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
 - 性能取决于底层模型能力
+
+## 边界条件与限制
+
+### 输入限制
+- **文件格式**：本技能仅支持PDF文件处理，不支持其他格式的文件。
+- **文件大小**：由于性能限制，建议处理的PDF文件大小不超过100MB。
+- **内容复杂度**：对于包含大量复杂图形或嵌套结构的PDF文件，处理效果可能不理想。
+- **加密文件**：不支持解密加密的PDF文件，无法提取文本或修改内容。
+
+### 性能边界
+- **处理速度**：处理大量或复杂的PDF文件时，处理速度可能较慢。
+- **并发处理**：不支持同时处理多个PDF文件，每次只能处理一个文件。
+
+### 兼容性约束
+- **操作系统**：支持Windows、macOS和Linux操作系统。
+- **Python版本**：需要Python 3.6或更高版本。
+- **依赖库**：需要安装pypdf、pdfplumber、reportlab、poppler-utils、qpdf和pdftk等依赖库。
+
+### 其他限制
+- **文本提取**：对于扫描的PDF文件，提取文本的准确性可能受限于OCR技术。
+- **表格提取**：复杂或设计独特的表格可能无法正确提取。
+- **图像处理**：不支持修改PDF中的图像内容，仅能提取图像文件。

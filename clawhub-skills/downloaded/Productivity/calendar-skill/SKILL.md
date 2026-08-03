@@ -18,7 +18,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # Calendar
 
 Use `porteden calendar` to list, search, and read calendar events in the active account. **Use `-jc` flags** for AI-optimized output.

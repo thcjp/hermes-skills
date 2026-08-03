@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Excel Studio
 Professional Excel spreadsheet generator with full formatting, charts, formulas, and multi-sheet support.
 

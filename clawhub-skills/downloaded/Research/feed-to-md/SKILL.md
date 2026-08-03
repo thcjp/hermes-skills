@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Feed To Md
 
 Use this skill when the task is to convert an RSS/Atom feed URL into Markdown.

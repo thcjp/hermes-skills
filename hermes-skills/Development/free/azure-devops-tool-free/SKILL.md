@@ -1,6 +1,7 @@
 ---
+
 name: "azure-devops-tool-free"
-description: "管理 Azure DevOps 项目、仓库与分支,支持创建拉取请求和查看工作项,适合个人开发者日常使用"
+description: "管理 Azure DevOps 项目、仓库与分支,支持创建拉取请求和查看工作项,适合个人开发者日常使用。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -14,6 +15,11 @@ metadata:
     - "代码协作"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # Azure DevOps 基础版
@@ -42,40 +48,30 @@ FREE 版本提供以下能力:
 ### 列出组织下所有项目及描述
 列出组织下所有项目及描述
 
-**输入**: 用户提供列出组织下所有项目及描述所需的指令和必要参数。
-**处理**: 按照skill规范执行列出组织下所有项目及描述操作,遵循单一意图原则。
 **输出**: 返回列出组织下所有项目及描述的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 查看指定项目中的 Git 仓库
 查看指定项目中的 Git 仓库列表
 
-**输入**: 用户提供查看指定项目中的 Git 仓库所需的指令和必要参数。
-**处理**: 按照skill规范执行查看指定项目中的 Git 仓库操作,遵循单一意图原则。
 **输出**: 返回查看指定项目中的 Git 仓库的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 浏览仓库分支并获取仓库 ID
 浏览仓库分支并获取仓库 ID
 
-**输入**: 用户提供浏览仓库分支并获取仓库 ID所需的指令和必要参数。
-**处理**: 按照skill规范执行浏览仓库分支并获取仓库 ID操作,遵循单一意图原则。
 **输出**: 返回浏览仓库分支并获取仓库 ID的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 创建拉取请求并填写标题与描述
 创建拉取请求并填写标题与描述
 
-**输入**: 用户提供创建拉取请求并填写标题与描述所需的指令和必要参数。
-**处理**: 按照skill规范执行创建拉取请求并填写标题与描述操作,遵循单一意图原则。
 **输出**: 返回创建拉取请求并填写标题与描述的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 查看当前项目的拉取请求列表
 查看当前项目的拉取请求列表
 
-**输入**: 用户提供查看当前项目的拉取请求列表所需的指令和必要参数。
-**处理**: 按照skill规范执行查看当前项目的拉取请求列表操作,遵循单一意图原则。
 **输出**: 返回查看当前项目的拉取请求列表的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -100,8 +96,6 @@ FREE 版本提供以下能力:
 - 工作项看板导出为 Excel/CSV 供离线分析
 - 智能 PR 模板生成与代码规范联动检查
 
-**输入**: 用户提供功能详情所需的指令和必要参数。
-**处理**: 按照skill规范执行功能详情操作,遵循单一意图原则。
 **输出**: 返回功能详情的执行结果,包含操作状态和输出数据。
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Azure、仓库与分支、支持创建拉取请求、和查看工作项、适合个人开发者日、常使用、工具链领域的专业、辅助工具、提供核心基础功能等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -153,7 +147,7 @@ curl -s -u ":${AZURE_DEVOPS_PAT}" -H "Content-Type: application/json" -X POST -d
 ```bash
 export AZURE_DEVOPS_PAT="your-personal-access-token"
 export AZURE_DEVOPS_ORG="YourOrganizationName"
-curl -s -u ":${AZURE_DEVOPS_PAT}" "https://dev.azure.com/${AZURE_DEVOPS_ORG}/_apis/projects?api-version=7.1" | jq ".count"
+azure.api-version=7.1" | jq ".count"
 ```
 
 ### 3. 验证配置
@@ -190,7 +184,7 @@ Agent 将自动:
 ```bash
 export AZURE_DEVOPS_PAT="your-personal-access-token"
 export AZURE_DEVOPS_ORG="YourOrganizationName"
-curl -s -u ":${AZURE_DEVOPS_PAT}" "https://dev.azure.com/${AZURE_DEVOPS_ORG}/_apis/projects?api-version=7.1" | jq ".count"
+azure.api-version=7.1" | jq ".count"
 ```
 ### 可选配置
 
@@ -215,7 +209,7 @@ curl -s -u ":${AZURE_DEVOPS_PAT}" "https://dev.azure.com/${AZURE_DEVOPS_ORG}/_ap
 | cache_enabled | bool | true | 启用结果缓存 |
 | timeout | int | 30 | 操作超时时间(秒) |
 
-## 最佳实践
+## 优选实践
 
 1. **PAT 权限仅授予所需范围,避免全权限令牌**
 2. **API 版本统一使用 7.1 确保接口行为一致**
@@ -290,7 +284,7 @@ FREE 版本支持单一 API Key 配置,满足个人使用需求:
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+execute(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于 Markdown 的 AI Skill,通过自然语言指令驱动 Agent 执行任务
 - **FREE 特性**: 支持单次执行、基础配置与社区支持
 - **安全等级**: 基础,数据本地存储,建议定期备份
@@ -309,9 +303,19 @@ FREE 版本支持单一 API Key 配置,满足个人使用需求:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

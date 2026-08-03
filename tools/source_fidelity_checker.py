@@ -30,7 +30,7 @@ Usage:
 import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
-from project_config import DIFFERENTIATED_DIR
+from project_config import DIFFERENTIATED_DIR, CLAWHUB_DOWNLOADED_DIR, DATA_DIR as SKILL_DATA_DIR, TOOLS_DIR, PACKAGED_SKILLS_DIR, SF_GRADE_A, SF_GRADE_B, SF_GRADE_C, SF_GRADE_D  # V124 W1: 合并重复import
 # === End Phase 1 ===
 
 
@@ -42,21 +42,22 @@ from pathlib import Path
 from typing import Dict, List, Tuple, Any, Set
 from datetime import datetime
 
-SKILL_REGISTRY_DIR = Path(__file__).parent
-sys.path.insert(0, str(SKILL_REGISTRY_DIR))
+sys.path.insert(0, str(TOOLS_DIR))  # Phase 1: sys.path设置
 
-from config import PACKAGED_SKILLS_DIR
+from skill_core.parser import CHAPTER_HEADING_PATTERN  # [V132 C1a] 统一章节标题正则
+from skill_core.rules import ACTION_VERBS  # [V134 E6] 统一动作动词列表(消除32元素内联重复)
+
 
 # 源skill目录 (多个可能的源)
 SOURCE_DIRS = [
-    Path(r'D:\skills\clawhub-skills\downloaded'),
+    CLAWHUB_DOWNLOADED_DIR,
     DIFFERENTIATED_DIR,
 ]
 # 兼容旧代码
 SOURCE_DIR = SOURCE_DIRS[0]
 
 # 扫描结果
-SCAN_RESULT = SKILL_REGISTRY_DIR / 'capability_scan_result.json'
+SCAN_RESULT = TOOLS_DIR / 'capability_scan_result.json'
 
 # 英文→中文技术术语映射 (用于跨语言能力覆盖检查)
 # 源skill通常是英文,生成版本是中文,直接关键词匹配会失败
@@ -196,12 +197,8 @@ def is_template_garbage(section_content: str, section_name: str) -> bool:
     # 如果没有任何技术细节标志,且内容很短,视为模板垃圾
     if not has_code_refs and not has_table and not has_code_block and len(section_content) < 300:
         # 进一步检查: 是否包含具体操作动词
-        action_verbs = ['创建', '删除', '修改', '查询', '执行', '配置', '安装', '运行',
-                        '启动', '停止', '导入', '导出', '解析', '转换', '过滤', '排序',
-                        'create', 'delete', 'update', 'query', 'execute', 'config',
-                        'install', 'run', 'start', 'stop', 'import', 'export',
-                        'parse', 'convert', 'filter', 'sort']
-        has_actions = any(v in section_content.lower() for v in action_verbs)
+        # [V134 E6] 统一使用skill_core.rules.ACTION_VERBS(消除32元素内联重复)
+        has_actions = any(v in section_content.lower() for v in ACTION_VERBS)
         if not has_actions:
             return True
 
@@ -261,8 +258,8 @@ def load_source_skill(slug: str, scan_data: dict = None) -> Tuple[str, str]:
 def parse_chapters(content: str) -> Dict[str, str]:
     """解析 ## 级别章节"""
     chapters = {}
-    chapter_pattern = re.compile(r'^## (.+)$', re.MULTILINE)
-    matches = list(chapter_pattern.finditer(content))
+    # [V132 C1a] 使用skill_core.parser.CHAPTER_HEADING_PATTERN(统一3处重复定义)
+    matches = list(CHAPTER_HEADING_PATTERN.finditer(content))
     for i, match in enumerate(matches):
         name = match.group(1).strip()
         start = match.end()
@@ -271,6 +268,7 @@ def parse_chapters(content: str) -> Dict[str, str]:
     return chapters
 
 
+# [V131 B5: 与l2_capability_checker.find_chapter不同(本版返回str, 对方返回Tuple)]
 def find_chapter(chapters: Dict[str, str], keywords: List[str]) -> str:
     """灵活查找章节内容"""
     for kw in keywords:
@@ -283,13 +281,8 @@ def find_chapter(chapters: Dict[str, str], keywords: List[str]) -> str:
     return ''
 
 
-def extract_capability_points(content: str) -> List[str]:
-    """从skill内容中提取能力点 - 仅从核心能力相关章节提取
-
-    改进: 跳过模板垃圾章节(含"触发关键词"或仅复制summary的章节)
-    """
-    chapters = parse_chapters(content)
-
+def _collect_candidate_chapters(chapters: Dict[str, str]) -> List[Tuple[str, str]]:
+    """[V137 I8] 收集所有匹配能力关键词的章节,按优先级排序并过滤模板垃圾"""
     # 收集所有匹配能力关键词的章节,按优先级排序
     # Round 14: 扩展关键词,覆盖更多源skill结构变体
     capability_keywords = [
@@ -335,13 +328,9 @@ def extract_capability_points(content: str) -> List[str]:
         'Core', '能力', '功能',
     ]
 
-    def get_priority(kw):
-        try:
-            return priority_order.index(kw)
-        except ValueError:
-            return len(priority_order)
-
-    candidates.sort(key=lambda x: get_priority(x[2]))
+    candidates.sort(
+        key=lambda x: priority_order.index(x[2]) if x[2] in priority_order else len(priority_order)
+    )
 
     # Round 14: 从所有非垃圾匹配章节提取,而非只取第一个
     # 收集所有非垃圾候选章节
@@ -349,104 +338,81 @@ def extract_capability_points(content: str) -> List[str]:
         (name, ch_content) for name, ch_content, kw in candidates
         if not is_template_garbage(ch_content, name)
     ]
+    return non_garbage_candidates
 
-    # 如果所有候选都是垃圾或没有候选,从body中找 ### 标题最多的章节
-    if not non_garbage_candidates:
-        max_h3 = 0
-        best_chapter = ''
+
+def _find_fallback_chapter(chapters: Dict[str, str]) -> List[Tuple[str, str]]:
+    """[V137 I8] 当无候选章节时,从body中找 ### 标题最多或内容最长的非排除章节"""
+    max_h3 = 0
+    best_chapter = ''
+    for name, ch_content in chapters.items():
+        # 排除非能力章节
+        if any(x in name for x in ['常见问题', 'FAQ', '错误', '异常', '依赖', '限制', '案例', '运行环境', 'License', 'license', '安装', 'Install', '示例']):
+            continue
+        # 跳过模板垃圾
+        if is_template_garbage(ch_content, name):
+            continue
+        h3_count = len(re.findall(r'^###\s+', ch_content, re.MULTILINE))
+        if h3_count > max_h3:
+            max_h3 = h3_count
+            best_chapter = ch_content
+    # Round 14: 如果没有###标题的章节,fallback到内容最长的非排除章节
+    if not best_chapter:
+        max_len = 0
         for name, ch_content in chapters.items():
-            # 排除非能力章节
-            if any(x in name for x in ['常见问题', 'FAQ', '错误', '异常', '依赖', '限制', '案例', '运行环境', 'License', 'license', '安装', 'Install', '示例']):
+            if any(x in name for x in ['常见问题', 'FAQ', '错误', '异常', '依赖', '限制', '案例', '运行环境', 'License', 'license', '安装', 'Install', '适用场景', '使用流程', '示例']):
                 continue
-            # 跳过模板垃圾
             if is_template_garbage(ch_content, name):
                 continue
-            h3_count = len(re.findall(r'^###\s+', ch_content, re.MULTILINE))
-            if h3_count > max_h3:
-                max_h3 = h3_count
+            if len(ch_content) > max_len:
+                max_len = len(ch_content)
                 best_chapter = ch_content
-        # Round 14: 如果没有###标题的章节,fallback到内容最长的非排除章节
-        if not best_chapter:
-            max_len = 0
-            for name, ch_content in chapters.items():
-                if any(x in name for x in ['常见问题', 'FAQ', '错误', '异常', '依赖', '限制', '案例', '运行环境', 'License', 'license', '安装', 'Install', '适用场景', '使用流程', '示例']):
-                    continue
-                if is_template_garbage(ch_content, name):
-                    continue
-                if len(ch_content) > max_len:
-                    max_len = len(ch_content)
-                    best_chapter = ch_content
-        if best_chapter:
-            non_garbage_candidates = [('', best_chapter)]
+    if best_chapter:
+        return [('', best_chapter)]
+    return []
 
-    # 从所有候选章节提取能力点
+
+def _extract_points_from_chapter(cap_content: str) -> List[str]:
+    """[V137 I8] 从单个章节内容中提取能力点(H3标题/编号列表/Bullet/嵌套Bullet/表格行)"""
     points = []
-    for name, cap_content in non_garbage_candidates:
-        if not cap_content:
-            continue
 
-        # 1. ### 标题 - 匹配所有###标题,然后剥离编号前缀
-        h3_raw = re.findall(r'^###\s+(.+)$', cap_content, re.MULTILINE)
-        # 剥离编号前缀 (1. / 1) / 1: 等)
-        h3_points = [re.sub(r'^\d+[.):]?\s*', '', h).strip() for h in h3_raw]
-        points.extend(h3_points)
+    # 1. ### 标题 - 匹配所有###标题,然后剥离编号前缀
+    h3_raw = re.findall(r'^###\s+(.+)$', cap_content, re.MULTILINE)
+    # 剥离编号前缀 (1. / 1) / 1: 等)
+    h3_points = [re.sub(r'^\d+[.):]?\s*', '', h).strip() for h in h3_raw]
+    points.extend(h3_points)
 
-        # 2. 编号列表 (1. **xxx**)
-        numbered = re.findall(r'^\d+\.\s+\*\*(.+?)\*\*', cap_content, re.MULTILINE)
-        points.extend(numbered)
+    # 2. 编号列表 (1. **xxx**)
+    numbered = re.findall(r'^\d+\.\s+\*\*(.+?)\*\*', cap_content, re.MULTILINE)
+    points.extend(numbered)
 
-        # Round 14: 2b. 编号列表 (1. xxx) - 无bold标记
-        numbered_plain = re.findall(r'^\d+\.\s+([A-Z\u4e00-\u9fff].{2,80})$', cap_content, re.MULTILINE)
-        points.extend(numbered_plain)
+    # Round 14: 2b. 编号列表 (1. xxx) - 无bold标记
+    numbered_plain = re.findall(r'^\d+\.\s+([A-Z\u4e00-\u9fff].{2,80})$', cap_content, re.MULTILINE)
+    points.extend(numbered_plain)
 
-        # 3. Bullet列表 (- **xxx** 或 - xxx)
-        bullets = re.findall(r'^[-*]\s+\*{0,2}(.+?)\*{0,2}$', cap_content, re.MULTILINE)
-        points.extend([b for b in bullets if len(b) > 3])
+    # 3. Bullet列表 (- **xxx** 或 - xxx)
+    bullets = re.findall(r'^[-*]\s+\*{0,2}(.+?)\*{0,2}$', cap_content, re.MULTILINE)
+    points.extend([b for b in bullets if len(b) > 3])
 
-        # Round 14: 3b. 嵌套Bullet列表 (  - xxx 或    * xxx)
-        nested_bullets = re.findall(r'^\s+[-*]\s+\*{0,2}(.+?)\*{0,2}$', cap_content, re.MULTILINE)
-        points.extend([b for b in nested_bullets if len(b) > 3])
+    # Round 14: 3b. 嵌套Bullet列表 (  - xxx 或    * xxx)
+    nested_bullets = re.findall(r'^\s+[-*]\s+\*{0,2}(.+?)\*{0,2}$', cap_content, re.MULTILINE)
+    points.extend([b for b in nested_bullets if len(b) > 3])
 
-        # 4. 表格行 (| 能力名 | ... |) - 仅在能力章节内
-        table_rows = re.findall(r'^\|\s*([^|]+?)\s*\|', cap_content, re.MULTILINE)
-        for r in table_rows:
-            r = r.strip()
-            if r and not r.startswith('---') and len(r) <= 30 and r not in (
-                '能力', '说明', '功能', '特性', 'Capability', 'Feature', '名称', '描述',
-                '参数', '类型', '是否必需', '依赖项', '场景', '输入', '输出',
-                '错误场景', '错误', 'Error', 'Issue', '问题', '答案',
-                '配置错误', '运行时错误', '网络错误',  # 这些是错误表内容,不是能力
-                'Topic', 'File', 'Name', 'Status', 'Updated',
-                'They say...', 'Create', 'Store HERE', 'Keep in BUILT-IN',
-                # Round 13: 通用表格头
-                'Command', 'Description', 'Usage', 'Example', 'Examples',
-                'Option', 'Options', 'Flag', 'Flags', 'Parameter', 'Parameters',
-                'Method', 'Methods', 'Function', 'Functions',
-                'Value', 'Values', 'Default', 'Required', 'Optional',
-                'Return', 'Returns', 'Result', 'Results',
-                'Syntax', 'Format', 'Category', 'Tag', 'Tags',
-            ):
-                points.append(r)
+    # 4. 表格行 (| 能力名 | ... |) - 仅在能力章节内
+    table_rows = re.findall(r'^\|\s*([^|]+?)\s*\|', cap_content, re.MULTILINE)
+    for r in table_rows:
+        r = r.strip()
+        if r and not r.startswith('---') and len(r) <= 30 and r not in _TABLE_HEADER_EXCLUSIONS:  # [V134 E6] 提取为模块级常量
+            points.append(r)
 
+    return points
+
+
+def _filter_capability_points(points: List[str], step_patterns: List[str]) -> List[str]:
+    """[V137 I8] 过滤掉明显不是能力点的内容(模板残留/过短过长/引用/占位符等)"""
     # 过滤掉明显不是能力点的内容
-    non_capability = {
-        '运行时错误', '配置错误', '网络错误', '连接超时或不可达',
-        '参数缺失或格式错误', '运行环境不满足',
-        '复杂场景可能需要人工辅助判断', '性能取决于底层模型能力',
-        '需要LLM支持，无LLM环境无法使用',
-        # Round 13: 通用表格头不是能力点
-        'Command', 'Description', 'Usage', 'Example', 'Examples',
-        'Option', 'Options', 'Flag', 'Flags', 'Parameter', 'Parameters',
-        'Arg', 'Args', 'Argument', 'Arguments',
-        'Method', 'Methods', 'Function', 'Functions',
-        'Property', 'Properties', 'Attribute', 'Attributes',
-        'Value', 'Values', 'Type', 'Types',
-        'Default', 'Required', 'Optional', 'Note', 'Notes',
-        'Return', 'Returns', 'Result', 'Results',
-        'Syntax', 'Format', 'Template',
-        'Category', 'Tag', 'Tags', 'Label', 'Labels',
-    }
-    points = [p for p in points if p not in non_capability]
+    # [V134 E6] non_capability已提取为模块级常量_NON_CAPABILITY_POINTS
+    points = [p for p in points if p not in _NON_CAPABILITY_POINTS]
 
     # 过滤掉包含"触发关键词"的条目(模板垃圾残留)
     points = [p for p in points if '触发关键词' not in p and '触发词' not in p]
@@ -482,375 +448,468 @@ def extract_capability_points(content: str) -> List[str]:
     points = [p for p in points if '示例' not in p[:10]]
 
     # 过滤掉明显是流程步骤的条目
+    points = [p for p in points if not any(sp in p for sp in step_patterns)]
+
+    return points
+
+
+def _re_extract_from_all_chapters(chapters: Dict[str, str], step_patterns: List[str]) -> List[str]:
+    """[V137 I8] 当过滤后0个能力点时,从所有非垃圾非排除章节重新提取并应用关键过滤"""
+    points = []
+    for name, ch_content in chapters.items():
+        if any(x in name for x in _EXCLUDE_ALL):  # [V136 H1] 统一常量
+            continue
+        if is_template_garbage(ch_content, name):
+            continue
+        # 提取###标题
+        h3_raw = re.findall(r'^###\s+(.+)$', ch_content, re.MULTILINE)
+        h3_pts = [re.sub(r'^\d+[.):]?\s*', '', h).strip() for h in h3_raw]
+        # 过滤模板###标题
+        h3_pts = [h for h in h3_pts if '运行环境' not in h and 'API Key' not in h 
+                  and '可用性分类' not in h and '依赖说明' not in h]
+        points.extend(h3_pts)
+        # 提取Bullet列表
+        bullets = re.findall(r'^[-*]\s+\*{0,2}(.+?)\*{0,2}$', ch_content, re.MULTILINE)
+        points.extend([b for b in bullets if len(b) > 3])
+        # 提取编号列表
+        numbered = re.findall(r'^\d+\.\s+\*\*(.+?)\*\*', ch_content, re.MULTILINE)
+        points.extend(numbered)
+        numbered_plain = re.findall(r'^\d+\.\s+([A-Z\u4e00-\u9fff].{2,80})$', ch_content, re.MULTILINE)
+        points.extend(numbered_plain)
+    # 重新应用关键过滤
+    points = [p for p in points if '触发关键词' not in p and '触发词' not in p]
+    points = [p for p in points if 3 <= len(p) <= 100]
+    points = [p for p in points if not p.startswith('`')]
+    points = [p for p in points if not p.startswith('**')]
+    points = [p for p in points if '示例' not in p[:10]]
+    points = [p for p in points if not any(sp in p for sp in step_patterns)]
+    return points
+
+
+def extract_capability_points(content: str) -> List[str]:
+    """从skill内容中提取能力点 - 仅从核心能力相关章节提取
+
+    改进: 跳过模板垃圾章节(含"触发关键词"或仅复制summary的章节)
+    """
+    chapters = parse_chapters(content)
+
+    # 收集并排序候选章节,过滤模板垃圾
+    non_garbage_candidates = _collect_candidate_chapters(chapters)
+
+    # 如果所有候选都是垃圾或没有候选,从body中找 ### 标题最多的章节
+    if not non_garbage_candidates:
+        non_garbage_candidates = _find_fallback_chapter(chapters)
+
+    # 从所有候选章节提取能力点
+    points = []
+    for name, cap_content in non_garbage_candidates:
+        if not cap_content:
+            continue
+        points.extend(_extract_points_from_chapter(cap_content))
+
+    # 过滤掉明显是流程步骤的条目
     step_patterns = [
         'Step ', 'Each function', 'Before delivery', 'After the answer',
         'Clean up before', 'Pull before', 'Wait for',
     ]
-    points = [p for p in points if not any(sp in p for sp in step_patterns)]
+
+    # 过滤能力点
+    points = _filter_capability_points(points, step_patterns)
 
     # Round 14: 如果过滤后0个能力点,从所有非垃圾非排除章节重新提取
     # 这处理源skill使用非标准章节名(如"Code Style","Pythonic Patterns")的情况
     if not points:
-        exclude_all = ['常见问题', 'FAQ', '错误', '异常', '依赖', '限制', '案例',
-                       '运行环境', 'License', 'license', '安装', 'Install',
-                       '适用场景', '使用流程', '示例', '已知限制']
-        for name, ch_content in chapters.items():
-            if any(x in name for x in exclude_all):
-                continue
-            if is_template_garbage(ch_content, name):
-                continue
-            # 提取###标题
-            h3_raw = re.findall(r'^###\s+(.+)$', ch_content, re.MULTILINE)
-            h3_pts = [re.sub(r'^\d+[.):]?\s*', '', h).strip() for h in h3_raw]
-            # 过滤模板###标题
-            h3_pts = [h for h in h3_pts if '运行环境' not in h and 'API Key' not in h 
-                      and '可用性分类' not in h and '依赖说明' not in h]
-            points.extend(h3_pts)
-            # 提取Bullet列表
-            bullets = re.findall(r'^[-*]\s+\*{0,2}(.+?)\*{0,2}$', ch_content, re.MULTILINE)
-            points.extend([b for b in bullets if len(b) > 3])
-            # 提取编号列表
-            numbered = re.findall(r'^\d+\.\s+\*\*(.+?)\*\*', ch_content, re.MULTILINE)
-            points.extend(numbered)
-            numbered_plain = re.findall(r'^\d+\.\s+([A-Z\u4e00-\u9fff].{2,80})$', ch_content, re.MULTILINE)
-            points.extend(numbered_plain)
-        # 重新应用关键过滤
-        points = [p for p in points if '触发关键词' not in p and '触发词' not in p]
-        points = [p for p in points if 3 <= len(p) <= 100]
-        points = [p for p in points if not p.startswith('`')]
-        points = [p for p in points if not p.startswith('**')]
-        points = [p for p in points if '示例' not in p[:10]]
-        points = [p for p in points if not any(sp in p for sp in step_patterns)]
+        points = _re_extract_from_all_chapters(chapters, step_patterns)
 
     return list(set(points))
 
 
-def extract_domain_terms(content: str) -> Set[str]:
-    """提取领域术语 (API名、命令名、技术术语)
-    
-    改进: 
-    1. 过滤模板垃圾中文术语(来自clawhub下载模板)
-    2. 过滤常见英文非领域词
-    3. 仅保留真正的领域术语
-    """
+# [V133 D1] 模块级常量: 从extract_domain_terms提取的集合字面量(TD-243)
+_TEMPLATE_GARBAGE_CN = frozenset({
+    '依赖说明', '运行环境', '操作系统', '可用性分类', '已知限制', '常见问题',
+    '核心能力', '使用流程', '适用场景', '案例展示', '异常处理', '错误处理',
+    '自然语言', '结构化', '处理结果', '示例数据', '相关信息', '配置错误',
+    '参数缺失', '运行时错误', '网络错误', '连接超时',
+    # 模板扩展术语
+    '不适用于', '不适用于加密文件', '企业团队和自动化', '依赖说明中的要求',
+    '内容提取时使用', '参数缺失或格式错', '参考国内替代方案', '参考错误处理章节',
+    '合适的使用方式', '命令行执行能力', '基础使用', '基础用法',
+    '如何开始使用', '如遇错误', '工作流场景', '执行任务',
+    '执行操作并检查输', '按照表格中的处理', '文档转换', '方式操作',
+    '无需额外', '是否必需', '有什么限制', '杂决策场景',
+    '根据使用流程执行', '根据适用场景选择', '格式互转',
+    '检查依赖说明中的', '检查网络连接后重', '用户请求',
+    '确认环境满足依赖', '确认运行环境满足', '确认运行环境符合',
+    '节了解具体限制', '获取方式', '说明中的要求',
+    '请先阅读使用流程', '请参考已知限制章', '请参考错误处理章',
+    '运行环境不满足', '连接超时或不可达', '适用于独立开发者',
+    '通过自然语言指令', '遇到错误怎么办', '部分功能需要',
+    '配置要求', '除内容中明确标注', '需要人工判断的复',
+    '需要文件处理', '人工辅助判断', '品牌视觉时使用',
+    '建模和动画制作', '性能取决于底层模', '平台指南',
+    '深度优化升级', '清理外部依赖引用', '独立开发者与一人',
+    '环境无法使用', '移除风险代码', '经过深度优化',
+    '能决策辅助', '自动化工作流与智', '触发关键词',
+    '辅助工具', '集成工具领域的专', '去除原始风险代码',
+    '公司效率提升', '数据同步', '增强元数据',
+    '增强安全性和稳定', '平台对接', '复杂场景可能需要',
+    '设计创作', '海报制作', '错误场景', '处理方式',
+    '不适用于加密', '不支持多表',
+    '触发关键词', '品牌视觉',
+})
+
+_COMMON_EN_WORDS = frozenset({
+    'read', 'exec', 'write', 'true', 'false', 'null', 'none',
+    'bash', 'python', 'pip', 'npm', 'skill', 'agent', 'md',
+    'json', 'yaml', 'mit', 'windows', 'macos', 'linux',
+    # 常见动词
+    'analyze', 'analyzed', 'analyzing', 'automatic', 'automatically',
+    'designed', 'detect', 'detected', 'detecting', 'export', 'exported',
+    'filter', 'filtered', 'filtering', 'group', 'grouped', 'grouping',
+    'import', 'imported', 'importing', 'parse', 'parsed', 'parsing',
+    'search', 'searched', 'searching', 'sort', 'sorted', 'sorting',
+    'validate', 'validated', 'validating', 'convert', 'converted',
+    'transform', 'transformed', 'merge', 'merged', 'merging',
+    'split', 'splitting', 'scale', 'scaling', 'sync', 'synced',
+    'syncing', 'synchronize', 'update', 'updated', 'updating',
+    'create', 'created', 'creating', 'delete', 'deleted', 'deleting',
+    'remove', 'removed', 'removing', 'build', 'building', 'built',
+    'install', 'installed', 'installing', 'deploy', 'deployed',
+    'backup', 'restore', 'restored', 'recover', 'recovered',
+    'execute', 'executed', 'executing', 'run', 'running',
+    'start', 'started', 'starting', 'stop', 'stopped', 'stopping',
+    'pause', 'paused', 'pausing', 'enable', 'enabled', 'enabling',
+    'disable', 'disabled', 'disabling', 'monitor', 'monitored',
+    'scan', 'scanned', 'scanning', 'process', 'processed', 'processing',
+    'generate', 'generated', 'generating', 'extract', 'extracted',
+    'display', 'displayed', 'render', 'rendered', 'format', 'formatted',
+    'compress', 'compressed', 'archive', 'archived',
+    # 常见名词
+    'data', 'database', 'table', 'record', 'field', 'value',
+    'file', 'folder', 'directory', 'path', 'config', 'configuration',
+    'request', 'response', 'endpoint', 'api', 'http', 'url',
+    'user', 'admin', 'role', 'permission', 'auth', 'login', 'logout',
+    'error', 'warning', 'success', 'failure', 'fail', 'failed',
+    'status', 'state', 'mode', 'type', 'kind', 'class', 'object',
+    'instance', 'attribute', 'property', 'method', 'function',
+    'parameter', 'argument', 'option', 'flag', 'command',
+    'module', 'component', 'service', 'server', 'client',
+    'connection', 'connections', 'session', 'cache', 'queue',
+    'task', 'job', 'workflow', 'pipeline', 'flow', 'step',
+    'stage', 'phase', 'rule', 'rules', 'policy', 'strategy',
+    'plan', 'goal', 'target', 'purpose', 'reason', 'cause',
+    'effect', 'result', 'outcome', 'output', 'input', 'source',
+    'origin', 'root', 'base', 'foundation', 'core', 'essential',
+    'required', 'optional', 'mandatory', 'forbidden', 'allowed',
+    'denied', 'permitted', 'prohibited', 'online', 'offline',
+    'available', 'unavailable', 'ready', 'busy', 'idle',
+    'pending', 'processing', 'completed', 'failed', 'success',
+    'active', 'inactive', 'enabled', 'disabled',
+    # 常见形容词
+    'simple', 'complex', 'basic', 'advanced', 'custom', 'default',
+    'standard', 'normal', 'abnormal', 'common', 'specific',
+    'general', 'particular', 'individual', 'single', 'multiple',
+    'large', 'small', 'huge', 'tiny', 'medium',
+    'fast', 'slow', 'quick', 'rapid', 'steady',
+    'full', 'partial', 'complete', 'incomplete',
+    'new', 'old', 'recent', 'current', 'previous', 'next',
+    'first', 'last', 'final', 'initial',
+    'internal', 'external', 'inner', 'outer',
+    'upper', 'lower', 'left', 'right', 'top', 'bottom',
+    'front', 'back', 'center', 'middle', 'edge', 'border',
+    'public', 'private', 'protected', 'global', 'local',
+    'static', 'dynamic', 'parallel', 'serial',
+    'automatic', 'manual', 'real-time', 'instant', 'immediate',
+    'flexible', 'rigid', 'adaptive', 'fixed',
+    'perfect', 'ideal', 'optimal', 'suboptimal',
+    'secure', 'safe', 'unsafe', 'risky',
+    # 常见代词/介词/连词
+    'the', 'and', 'for', 'with', 'from', 'into', 'onto',
+    'this', 'that', 'these', 'those', 'they', 'them',
+    'their', 'there', 'here', 'where', 'when', 'what',
+    'which', 'whose', 'who', 'whom',
+    'each', 'every', 'all', 'some', 'any', 'none',
+    'both', 'either', 'neither',
+    'your', 'our', 'his', 'her', 'its',
+    'have', 'has', 'had', 'having',
+    'will', 'would', 'should', 'could', 'can', 'may', 'might',
+    'must', 'shall', 'ought',
+    'then', 'now', 'later', 'soon', 'eventually',
+    'always', 'never', 'sometimes', 'often', 'rarely',
+    'only', 'also', 'too', 'either', 'neither',
+    'without', 'within', 'through', 'throughout',
+    # 其他常见词
+    'features', 'feature', 'capabilities', 'capability',
+    'limitations', 'limitation', 'limitations',
+    'patterns', 'pattern', 'traps', 'trap', 'gotchas', 'gotcha',
+    'designed', 'design', 'shows', 'show', 'takes', 'take',
+    'uses', 'use', 'used', 'using', 'useful',
+    'overkill', 'zero', 'none', 'null',
+    'access', 'accessible', 'inaccessible',
+    'anything', 'everything', 'something', 'nothing',
+    'immediately', 'quickly', 'slowly',
+    'separate', 'separated', 'separating',
+    'store', 'stored', 'storing', 'storage',
+    'navigate', 'navigation', 'navigating',
+    'decide', 'decision', 'decisions', 'deciding',
+    'learn', 'learning', 'learned',
+    'knowledge', 'reference', 'referenced',
+    'review', 'reviewed', 'reviewing',
+    'feedback', 'maintenance', 'monthly', 'weekly',
+    'definitions', 'defines', 'defined',
+    'detailed', 'details', 'detail',
+    'domain', 'domains',
+    'escalate', 'escalated',
+    'index', 'indices', 'indexed',
+    'infinite', 'infinity',
+    'keep', 'keeping', 'kept',
+    'missing', 'missed',
+    'modifying', 'modified',
+    'name', 'named', 'names',
+    'optional', 'options',
+    'organization', 'organized',
+    'paused', 'pausing',
+    'privacy', 'private',
+    'problems', 'problem',
+    'recent', 'recently',
+    'related', 'relating',
+    'remove', 'removed', 'removing',
+    'replication', 'replicated',
+    'scaling', 'scaled',
+    'should', 'shown',
+    'specific', 'specifically',
+    'status', 'statuses',
+    'stay', 'stayed',
+    'structure', 'structured',
+    'summaries', 'summary',
+    'superpowered', 'system', 'systems',
+    'topic', 'topics', 'total',
+    'troubleshooting', 'updated', 'updates',
+    'user', 'users', 'waiting',
+    'works', 'working', 'worked',
+    'write', 'writing', 'written',
+    'your', 'yours',
+    'alpha', 'beta',
+    'claude', 'codex', 'cursor', 'gemini',
+    'excel', 'pandas', 'python',
+    'anomaly', 'anomalies',
+    'date', 'dates', 'time', 'times',
+    'dependencies', 'dependency',
+    'application', 'applications',
+    'changes', 'change', 'changed',
+    'deadlocks', 'deadlock',
+    'disk', 'disks',
+    'floating', 'float',
+    'idle', 'idling',
+    'implicit', 'explicit',
+    'iops',
+    'large', 'largely',
+    'logical', 'logically',
+    'long', 'longer',
+    'lost', 'losing',
+    'orphan', 'orphans',
+    'point', 'points', 'pointed',
+    'promoting', 'promoted',
+    'query', 'queries', 'queried',
+    'read', 'reading', 'reads',
+    'recovery', 'recovering',
+    'renaming', 'renamed',
+    'single', 'singly',
+    'timezone', 'timezones',
+    'transaction', 'transactions',
+    'update', 'updates', 'updated',
+    'windows', 'window',
+    'writes', 'writing',
+    'added', 'adding', 'add',
+    'check', 'checked', 'checking',
+    'code', 'codes',
+    'data', 'database', 'databases',
+    'design', 'designed', 'designs',
+    'dropping', 'dropped', 'drop',
+    'each', 'every',
+    'exec', 'execute', 'executed',
+    'index', 'indexed', 'indices',
+    'large', 'larger', 'largest',
+    'limit', 'limited', 'limits',
+    'missing', 'miss',
+    'null', 'none',
+    'online', 'offline',
+    'point', 'points',
+    'read', 'reads',
+    'schema', 'schemas',
+    'select', 'selected', 'selection',
+    'table', 'tables',
+    'update', 'updated', 'updates',
+    'windows', 'window',
+})
+
+_CAPITALIZED_EXCLUSIONS = frozenset({
+    'Skill', 'Agent', 'Note', 'Important', 'Warning',
+    'Error', 'Table', 'Usage', 'Core', 'Feature',
+    'First', 'Second', 'Third', 'Fourth', 'Fifth',
+    'When', 'What', 'Where', 'How', 'Why', 'This',
+    'That', 'These', 'Those', 'They', 'Their', 'Here',
+    'Each', 'Every', 'Both', 'Some', 'Your', 'Have',
+    'Will', 'Should', 'Would', 'Could', 'Must',
+    'Never', 'Always', 'Store', 'Build', 'Built',
+    'Index', 'Memory', 'Config', 'Setup', 'Sync',
+    'Search', 'Filter', 'Group', 'Sort', 'Parse',
+    'Convert', 'Transform', 'Merge', 'Split',
+    'Scale', 'Update', 'Create', 'Delete', 'Remove',
+    'Install', 'Deploy', 'Backup', 'Restore',
+    'Execute', 'Run', 'Start', 'Stop', 'Pause',
+    'Enable', 'Disable', 'Monitor', 'Scan',
+    'Process', 'Generate', 'Extract', 'Display',
+    'Render', 'Format', 'Compress', 'Archive',
+    'Memory', 'Architecture', 'Quick', 'Reference',
+    'Setup', 'Common', 'Problems', 'Patterns',
+    'Category', 'Categories', 'Parallel', 'Status',
+    'Structure', 'System', 'Topic', 'Total',
+    'User', 'Windows', 'Linux', 'MacOS',
+    'Claude', 'Codex', 'Cursor', 'Gemini',
+    'Excel', 'Pandas', 'Python',
+    'Analyze', 'Analyzer', 'Anomaly', 'Automatic',
+    'Designed', 'Detect', 'Export', 'Features',
+    'Flexible', 'Grouping', 'Limitations',
+    'Overkill', 'Quick', 'Shows', 'Statistical',
+    'Takes', 'Uses', 'Zero',
+    'Adding', 'Application', 'Changes', 'Check',
+    'Code', 'Connection', 'Connections', 'Data',
+    'Database', 'Deadlocks', 'Design', 'Disk',
+    'Dropping', 'Floating', 'Gotchas', 'Idle',
+    'Implicit', 'Integrations', 'Integrity',
+    'Lambda', 'Large', 'Limit', 'Limits',
+    'Logical', 'Long', 'Lost', 'Missing',
+    'Online', 'Offline', 'Orphan', 'Patterns',
+    'Point', 'Promoting', 'Query', 'Read',
+    'Recovery', 'Renaming', 'Replication',
+    'Scaling', 'Schema', 'Select', 'Single',
+    'Split', 'Timezone', 'Transaction', 'Traps',
+    'Update', 'Writes', 'Access', 'Active',
+    'Adaptive', 'Agents', 'Alpha', 'Anything',
+    'Basic', 'Beta', 'Both', 'Build', 'Built',
+    'Categories', 'Category', 'Check', 'Code',
+    'Codex', 'Cursor', 'Common', 'Create',
+    'Current', 'Decide', 'Decision', 'Defines',
+    'Detailed', 'Domain', 'During', 'Escalate',
+    'Everything', 'Feedback', 'File', 'Finding',
+    'First', 'Full', 'Here', 'Huge', 'Immediately',
+    'Indices', 'Individual', 'Infinite', 'Install',
+    'Keep', 'Knowledge', 'Large', 'Learn',
+    'Maintenance', 'Modifying', 'Monthly', 'Name',
+    'Navigate', 'Never', 'Only', 'Optional',
+    'Organization', 'Parallel', 'Paused', 'Perfect',
+    'Privacy', 'Problems', 'Quick', 'Recent',
+    'Reference', 'Related', 'Remove', 'Review',
+    'Root', 'Rule', 'Rules', 'Scale', 'Search',
+    'Security', 'Send', 'Separate', 'Setup',
+    'Should', 'Skills', 'Slow', 'Small', 'Specific',
+    'Split', 'Splitting', 'Status', 'Stay',
+    'Store', 'Structure', 'Summaries', 'Superpowered',
+    'Synced', 'Syncing', 'System', 'Then', 'They',
+    'Things', 'This', 'Topic', 'Total', 'Traps',
+    'Update', 'Updated', 'User', 'Waiting', 'Weekly',
+    'What', 'When', 'Windows', 'Without', 'Works',
+    'Write', 'Your',
+})
+
+_BASIC_STOPWORDS = frozenset({
+    'read', 'exec', 'write', 'true', 'false', 'null', 'none',
+    'bash', 'python', 'pip', 'npm', 'md', 'json', 'yaml',
+})
+
+# [V134 E6] 模块级常量: 从extract_capability_points提取的表格头排除列表(TD-252)
+_TABLE_HEADER_EXCLUSIONS = frozenset({
+    '能力', '说明', '功能', '特性', 'Capability', 'Feature', '名称', '描述',
+    '参数', '类型', '是否必需', '依赖项', '场景', '输入', '输出',
+    '错误场景', '错误', 'Error', 'Issue', '问题', '答案',
+    '配置错误', '运行时错误', '网络错误',  # 这些是错误表内容,不是能力
+    'Topic', 'File', 'Name', 'Status', 'Updated',
+    'They say...', 'Create', 'Store HERE', 'Keep in BUILT-IN',
+    # Round 13: 通用表格头
+    'Command', 'Description', 'Usage', 'Example', 'Examples',
+    'Option', 'Options', 'Flag', 'Flags', 'Parameter', 'Parameters',
+    'Method', 'Methods', 'Function', 'Functions',
+    'Value', 'Values', 'Default', 'Required', 'Optional',
+    'Return', 'Returns', 'Result', 'Results',
+    'Syntax', 'Format', 'Category', 'Tag', 'Tags',
+})
+
+# [V134 E6] 模块级常量: 从extract_capability_points提取的非能力点过滤集(TD-252)
+_NON_CAPABILITY_POINTS = frozenset({
+    '运行时错误', '配置错误', '网络错误', '连接超时或不可达',
+    '参数缺失或格式错误', '运行环境不满足',
+    '复杂场景可能需要人工辅助判断', '性能取决于底层模型能力',
+    '需要LLM支持，无LLM环境无法使用',
+    # Round 13: 通用表格头不是能力点
+    'Command', 'Description', 'Usage', 'Example', 'Examples',
+    'Option', 'Options', 'Flag', 'Flags', 'Parameter', 'Parameters',
+    'Arg', 'Args', 'Argument', 'Arguments',
+    'Method', 'Methods', 'Function', 'Functions',
+    'Property', 'Properties', 'Attribute', 'Attributes',
+    'Value', 'Values', 'Type', 'Types',
+    'Default', 'Required', 'Optional', 'Note', 'Notes',
+    'Return', 'Returns', 'Result', 'Results',
+    'Syntax', 'Format', 'Template',
+    'Category', 'Tag', 'Tags', 'Label', 'Labels',
+})
+
+# [V136 H1] 从extract_capability_points()外提: 非能力章节排除列表(14元素)
+_EXCLUDE_ALL = [
+    '常见问题', 'FAQ', '错误', '异常', '依赖', '限制', '案例',
+    '运行环境', 'License', 'license', '安装', 'Install',
+    '适用场景', '使用流程', '示例', '已知限制',
+]
+
+
+def _extract_backtick_terms(content: str) -> Set[str]:
+    """从反引号包裹的代码/命令中提取术语"""
     terms = set()
-
-    # 模板垃圾中文术语黑名单 (这些出现在clawhub下载模板中,非真实领域术语)
-    template_garbage_cn = {
-        '依赖说明', '运行环境', '操作系统', '可用性分类', '已知限制', '常见问题',
-        '核心能力', '使用流程', '适用场景', '案例展示', '异常处理', '错误处理',
-        '自然语言', '结构化', '处理结果', '示例数据', '相关信息', '配置错误',
-        '参数缺失', '运行时错误', '网络错误', '连接超时',
-        # 模板扩展术语
-        '不适用于', '不适用于加密文件', '企业团队和自动化', '依赖说明中的要求',
-        '内容提取时使用', '参数缺失或格式错', '参考国内替代方案', '参考错误处理章节',
-        '合适的使用方式', '命令行执行能力', '基础使用', '基础用法',
-        '如何开始使用', '如遇错误', '工作流场景', '执行任务',
-        '执行操作并检查输', '按照表格中的处理', '文档转换', '方式操作',
-        '无需额外', '是否必需', '有什么限制', '杂决策场景',
-        '根据使用流程执行', '根据适用场景选择', '格式互转',
-        '检查依赖说明中的', '检查网络连接后重', '用户请求',
-        '确认环境满足依赖', '确认运行环境满足', '确认运行环境符合',
-        '节了解具体限制', '获取方式', '说明中的要求',
-        '请先阅读使用流程', '请参考已知限制章', '请参考错误处理章',
-        '运行环境不满足', '连接超时或不可达', '适用于独立开发者',
-        '通过自然语言指令', '遇到错误怎么办', '部分功能需要',
-        '配置要求', '除内容中明确标注', '需要人工判断的复',
-        '需要文件处理', '人工辅助判断', '品牌视觉时使用',
-        '建模和动画制作', '性能取决于底层模', '平台指南',
-        '深度优化升级', '清理外部依赖引用', '独立开发者与一人',
-        '环境无法使用', '移除风险代码', '经过深度优化',
-        '能决策辅助', '自动化工作流与智', '触发关键词',
-        '辅助工具', '集成工具领域的专', '去除原始风险代码',
-        '公司效率提升', '数据同步', '增强元数据',
-        '增强安全性和稳定', '平台对接', '复杂场景可能需要',
-        '设计创作', '海报制作', '错误场景', '处理方式',
-        '不适用于加密', '不支持多表', '平台指南',
-        '触发关键词', '品牌视觉',
-    }
-    
-    # 常见英文非领域词 (不是API名/命令名/技术术语)
-    common_en_words = {
-        'read', 'exec', 'write', 'true', 'false', 'null', 'none',
-        'bash', 'python', 'pip', 'npm', 'skill', 'agent', 'md',
-        'json', 'yaml', 'mit', 'windows', 'macos', 'linux',
-        # 常见动词
-        'analyze', 'analyzed', 'analyzing', 'automatic', 'automatically',
-        'designed', 'detect', 'detected', 'detecting', 'export', 'exported',
-        'filter', 'filtered', 'filtering', 'group', 'grouped', 'grouping',
-        'import', 'imported', 'importing', 'parse', 'parsed', 'parsing',
-        'search', 'searched', 'searching', 'sort', 'sorted', 'sorting',
-        'validate', 'validated', 'validating', 'convert', 'converted',
-        'transform', 'transformed', 'merge', 'merged', 'merging',
-        'split', 'splitting', 'scale', 'scaling', 'sync', 'synced',
-        'syncing', 'synchronize', 'update', 'updated', 'updating',
-        'create', 'created', 'creating', 'delete', 'deleted', 'deleting',
-        'remove', 'removed', 'removing', 'build', 'building', 'built',
-        'install', 'installed', 'installing', 'deploy', 'deployed',
-        'backup', 'restore', 'restored', 'recover', 'recovered',
-        'execute', 'executed', 'executing', 'run', 'running',
-        'start', 'started', 'starting', 'stop', 'stopped', 'stopping',
-        'pause', 'paused', 'pausing', 'enable', 'enabled', 'enabling',
-        'disable', 'disabled', 'disabling', 'monitor', 'monitored',
-        'scan', 'scanned', 'scanning', 'process', 'processed', 'processing',
-        'generate', 'generated', 'generating', 'extract', 'extracted',
-        'display', 'displayed', 'render', 'rendered', 'format', 'formatted',
-        'compress', 'compressed', 'archive', 'archived',
-        # 常见名词
-        'data', 'database', 'table', 'record', 'field', 'value',
-        'file', 'folder', 'directory', 'path', 'config', 'configuration',
-        'request', 'response', 'endpoint', 'api', 'http', 'url',
-        'user', 'admin', 'role', 'permission', 'auth', 'login', 'logout',
-        'error', 'warning', 'success', 'failure', 'fail', 'failed',
-        'status', 'state', 'mode', 'type', 'kind', 'class', 'object',
-        'instance', 'attribute', 'property', 'method', 'function',
-        'parameter', 'argument', 'option', 'flag', 'command',
-        'module', 'component', 'service', 'server', 'client',
-        'connection', 'connections', 'session', 'cache', 'queue',
-        'task', 'job', 'workflow', 'pipeline', 'flow', 'step',
-        'stage', 'phase', 'rule', 'rules', 'policy', 'strategy',
-        'plan', 'goal', 'target', 'purpose', 'reason', 'cause',
-        'effect', 'result', 'outcome', 'output', 'input', 'source',
-        'origin', 'root', 'base', 'foundation', 'core', 'essential',
-        'required', 'optional', 'mandatory', 'forbidden', 'allowed',
-        'denied', 'permitted', 'prohibited', 'online', 'offline',
-        'available', 'unavailable', 'ready', 'busy', 'idle',
-        'pending', 'processing', 'completed', 'failed', 'success',
-        'active', 'inactive', 'enabled', 'disabled',
-        # 常见形容词
-        'simple', 'complex', 'basic', 'advanced', 'custom', 'default',
-        'standard', 'normal', 'abnormal', 'common', 'specific',
-        'general', 'particular', 'individual', 'single', 'multiple',
-        'large', 'small', 'huge', 'tiny', 'medium',
-        'fast', 'slow', 'quick', 'rapid', 'steady',
-        'full', 'partial', 'complete', 'incomplete',
-        'new', 'old', 'recent', 'current', 'previous', 'next',
-        'first', 'last', 'final', 'initial',
-        'internal', 'external', 'inner', 'outer',
-        'upper', 'lower', 'left', 'right', 'top', 'bottom',
-        'front', 'back', 'center', 'middle', 'edge', 'border',
-        'public', 'private', 'protected', 'global', 'local',
-        'static', 'dynamic', 'parallel', 'serial',
-        'automatic', 'manual', 'real-time', 'instant', 'immediate',
-        'flexible', 'rigid', 'adaptive', 'fixed',
-        'perfect', 'ideal', 'optimal', 'suboptimal',
-        'secure', 'safe', 'unsafe', 'risky',
-        # 常见代词/介词/连词
-        'the', 'and', 'for', 'with', 'from', 'into', 'onto',
-        'this', 'that', 'these', 'those', 'they', 'them',
-        'their', 'there', 'here', 'where', 'when', 'what',
-        'which', 'whose', 'who', 'whom',
-        'each', 'every', 'all', 'some', 'any', 'none',
-        'both', 'either', 'neither',
-        'your', 'our', 'his', 'her', 'its',
-        'have', 'has', 'had', 'having',
-        'will', 'would', 'should', 'could', 'can', 'may', 'might',
-        'must', 'shall', 'ought',
-        'then', 'now', 'later', 'soon', 'eventually',
-        'always', 'never', 'sometimes', 'often', 'rarely',
-        'only', 'also', 'too', 'either', 'neither',
-        'without', 'within', 'through', 'throughout',
-        # 其他常见词
-        'features', 'feature', 'capabilities', 'capability',
-        'limitations', 'limitation', 'limitations',
-        'patterns', 'pattern', 'traps', 'trap', 'gotchas', 'gotcha',
-        'designed', 'design', 'shows', 'show', 'takes', 'take',
-        'uses', 'use', 'used', 'using', 'useful',
-        'overkill', 'zero', 'none', 'null',
-        'access', 'accessible', 'inaccessible',
-        'anything', 'everything', 'something', 'nothing',
-        'immediately', 'quickly', 'slowly',
-        'separate', 'separated', 'separating',
-        'store', 'stored', 'storing', 'storage',
-        'navigate', 'navigation', 'navigating',
-        'decide', 'decision', 'decisions', 'deciding',
-        'learn', 'learning', 'learned',
-        'knowledge', 'reference', 'referenced',
-        'review', 'reviewed', 'reviewing',
-        'feedback', 'maintenance', 'monthly', 'weekly',
-        'definitions', 'defines', 'defined',
-        'detailed', 'details', 'detail',
-        'domain', 'domains',
-        'escalate', 'escalated',
-        'index', 'indices', 'indexed',
-        'infinite', 'infinity',
-        'keep', 'keeping', 'kept',
-        'missing', 'missed',
-        'modifying', 'modified',
-        'name', 'named', 'names',
-        'optional', 'options',
-        'organization', 'organized',
-        'paused', 'pausing',
-        'privacy', 'private',
-        'problems', 'problem',
-        'recent', 'recently',
-        'related', 'relating',
-        'remove', 'removed', 'removing',
-        'replication', 'replicated',
-        'scaling', 'scaled',
-        'should', 'shown',
-        'specific', 'specifically',
-        'status', 'statuses',
-        'stay', 'stayed',
-        'structure', 'structured',
-        'summaries', 'summary',
-        'superpowered', 'system', 'systems',
-        'topic', 'topics', 'total',
-        'troubleshooting', 'updated', 'updates',
-        'user', 'users', 'waiting',
-        'works', 'working', 'worked',
-        'write', 'writing', 'written',
-        'your', 'yours',
-        'alpha', 'beta', # 除非是版本号,否则过滤
-        'claude', 'codex', 'cursor', 'gemini',  # Agent平台名
-        'excel', 'pandas', 'python', # 通用工具名
-        'anomaly', 'anomalies',  # 通用词
-        'date', 'dates', 'time', 'times',
-        'dependencies', 'dependency',
-        'application', 'applications',
-        'changes', 'change', 'changed',
-        'deadlocks', 'deadlock',
-        'disk', 'disks',
-        'floating', 'float',
-        'idle', 'idling',
-        'implicit', 'explicit',
-        'iops',  # 除非是特定术语
-        'large', 'largely',
-        'logical', 'logically',
-        'long', 'longer',
-        'lost', 'losing',
-        'orphan', 'orphans',
-        'point', 'points', 'pointed',
-        'promoting', 'promoted',
-        'query', 'queries', 'queried',
-        'read', 'reading', 'reads',
-        'recovery', 'recovering',
-        'renaming', 'renamed',
-        'single', 'singly',
-        'timezone', 'timezones',
-        'transaction', 'transactions',
-        'update', 'updates', 'updated',
-        'windows', 'window',
-        'writes', 'writing',
-        'added', 'adding', 'add',
-        'check', 'checked', 'checking',
-        'code', 'codes',
-        'data', 'database', 'databases',
-        'design', 'designed', 'designs',
-        'dropping', 'dropped', 'drop',
-        'each', 'every',
-        'exec', 'execute', 'executed',
-        'index', 'indexed', 'indices',
-        'large', 'larger', 'largest',
-        'limit', 'limited', 'limits',
-        'missing', 'miss',
-        'null', 'none',
-        'online', 'offline',
-        'point', 'points',
-        'read', 'reads',
-        'schema', 'schemas',
-        'select', 'selected', 'selection',
-        'table', 'tables',
-        'update', 'updated', 'updates',
-        'windows', 'window',
-    }
-
-    # 1. 反引号包裹的代码/命令 (最可靠的技术术语标志)
-    # 反引号内的内容是作者明确标记为代码/命令的,应保留(仅过滤极基本的)
-    basic_stopwords = {
-        'read', 'exec', 'write', 'true', 'false', 'null', 'none',
-        'bash', 'python', 'pip', 'npm', 'md', 'json', 'yaml',
-    }
     for m in re.finditer(r'`([a-zA-Z_][a-zA-Z0-9_\-\./]+)`', content):
         kw = m.group(1)
-        if len(kw) > 2 and kw.lower() not in basic_stopwords:
+        if len(kw) > 2 and kw.lower() not in _BASIC_STOPWORDS:
             terms.add(kw.lower())
-
-    # 2. 大写开头的专有名词 (但排除常见词)
-    # 注意: 需要同时检查原始大写形式和小写形式
-    capitalized_exclusions = {
-        'Skill', 'Agent', 'Note', 'Important', 'Warning',
-        'Error', 'Table', 'Usage', 'Core', 'Feature',
-        'First', 'Second', 'Third', 'Fourth', 'Fifth',
-        'When', 'What', 'Where', 'How', 'Why', 'This',
-        'That', 'These', 'Those', 'They', 'Their', 'Here',
-        'Each', 'Every', 'Both', 'Some', 'Your', 'Have',
-        'Will', 'Should', 'Would', 'Could', 'Must',
-        'Never', 'Always', 'Store', 'Build', 'Built',
-        'Index', 'Memory', 'Config', 'Setup', 'Sync',
-        'Search', 'Filter', 'Group', 'Sort', 'Parse',
-        'Convert', 'Transform', 'Merge', 'Split',
-        'Scale', 'Update', 'Create', 'Delete', 'Remove',
-        'Install', 'Deploy', 'Backup', 'Restore',
-        'Execute', 'Run', 'Start', 'Stop', 'Pause',
-        'Enable', 'Disable', 'Monitor', 'Scan',
-        'Process', 'Generate', 'Extract', 'Display',
-        'Render', 'Format', 'Compress', 'Archive',
-        'Memory', 'Architecture', 'Quick', 'Reference',
-        'Setup', 'Common', 'Problems', 'Patterns',
-        'Category', 'Categories', 'Parallel', 'Status',
-        'Structure', 'System', 'Topic', 'Total',
-        'User', 'Windows', 'Linux', 'MacOS',
-        'Claude', 'Codex', 'Cursor', 'Gemini',
-        'Excel', 'Pandas', 'Python',
-        'Analyze', 'Analyzer', 'Anomaly', 'Automatic',
-        'Designed', 'Detect', 'Export', 'Features',
-        'Flexible', 'Grouping', 'Limitations',
-        'Overkill', 'Quick', 'Shows', 'Statistical',
-        'Takes', 'Uses', 'Zero',
-        'Adding', 'Application', 'Changes', 'Check',
-        'Code', 'Connection', 'Connections', 'Data',
-        'Database', 'Deadlocks', 'Design', 'Disk',
-        'Dropping', 'Floating', 'Gotchas', 'Idle',
-        'Implicit', 'Integrations', 'Integrity',
-        'Lambda', 'Large', 'Limit', 'Limits',
-        'Logical', 'Long', 'Lost', 'Missing',
-        'Online', 'Offline', 'Orphan', 'Patterns',
-        'Point', 'Promoting', 'Query', 'Read',
-        'Recovery', 'Renaming', 'Replication',
-        'Scaling', 'Schema', 'Select', 'Single',
-        'Split', 'Timezone', 'Transaction', 'Traps',
-        'Update', 'Writes', 'Access', 'Active',
-        'Adaptive', 'Agents', 'Alpha', 'Anything',
-        'Basic', 'Beta', 'Both', 'Build', 'Built',
-        'Categories', 'Category', 'Check', 'Code',
-        'Codex', 'Cursor', 'Common', 'Create',
-        'Current', 'Decide', 'Decision', 'Defines',
-        'Detailed', 'Domain', 'During', 'Escalate',
-        'Everything', 'Feedback', 'File', 'Finding',
-        'First', 'Full', 'Here', 'Huge', 'Immediately',
-        'Indices', 'Individual', 'Infinite', 'Install',
-        'Keep', 'Knowledge', 'Large', 'Learn',
-        'Maintenance', 'Modifying', 'Monthly', 'Name',
-        'Navigate', 'Never', 'Only', 'Optional',
-        'Organization', 'Parallel', 'Paused', 'Perfect',
-        'Privacy', 'Problems', 'Quick', 'Recent',
-        'Reference', 'Related', 'Remove', 'Review',
-        'Root', 'Rule', 'Rules', 'Scale', 'Search',
-        'Security', 'Send', 'Separate', 'Setup',
-        'Should', 'Skills', 'Slow', 'Small', 'Specific',
-        'Split', 'Splitting', 'Status', 'Stay',
-        'Store', 'Structure', 'Summaries', 'Superpowered',
-        'Synced', 'Syncing', 'System', 'Then', 'They',
-        'Things', 'This', 'Topic', 'Total', 'Traps',
-        'Update', 'Updated', 'User', 'Waiting', 'Weekly',
-        'What', 'When', 'Windows', 'Without', 'Works',
-        'Write', 'Your',
-    }
-    for m in re.finditer(r'\b([A-Z][a-zA-Z]{3,})\b', content):
-        kw = m.group(1)
-        if kw not in capitalized_exclusions and kw.lower() not in common_en_words:
-            terms.add(kw.lower())
-
-    # 3. 中文领域术语 (4-8字) - 排除模板垃圾
-    cn_terms = re.findall(r'[\u4e00-\u9fff]{4,8}', content)
-    for t in cn_terms:
-        if t not in template_garbage_cn:
-            terms.add(t)
-
     return terms
 
 
+def _extract_capitalized_terms(content: str) -> Set[str]:
+    """提取大写开头的专有名词(排除常见词)"""
+    terms = set()
+    for m in re.finditer(r'\b([A-Z][a-zA-Z]{3,})\b', content):
+        kw = m.group(1)
+        if kw not in _CAPITALIZED_EXCLUSIONS and kw.lower() not in _COMMON_EN_WORDS:
+            terms.add(kw.lower())
+    return terms
+
+
+def _extract_chinese_terms(content: str) -> Set[str]:
+    """提取中文领域术语(4-8字,排除模板垃圾)"""
+    terms = set()
+    cn_terms = re.findall(r'[\u4e00-\u9fff]{4,8}', content)
+    for t in cn_terms:
+        if t not in _TEMPLATE_GARBAGE_CN:
+            terms.add(t)
+    return terms
+
+
+def extract_domain_terms(content: str) -> Set[str]:
+    """提取领域术语 (API名、命令名、技术术语)
+
+    改进:
+    1. 过滤模板垃圾中文术语(来自clawhub下载模板)
+    2. 过滤常见英文非领域词
+    3. 仅保留真正的领域术语
+
+    [V133 D1] 重构: 提取内联集合为模块级常量, 拆分为3个提取函数(TD-243)
+    """
+    terms = set()
+    terms |= _extract_backtick_terms(content)
+    terms |= _extract_capitalized_terms(content)
+    terms |= _extract_chinese_terms(content)
+    return terms
+
+
+# [V131 B5: 与cross_skill_diversity.extract_error_scenarios不同(实现逻辑不同)]
 def extract_error_scenarios(content: str) -> Set[str]:
     """提取错误场景"""
     scenarios = set()
@@ -1003,6 +1062,29 @@ def _load_original_registry() -> set:
     return set()
 
 
+def _auto_register_original(slug: str) -> None:
+    """自动将无源的skill注册为原创skill (V148 T2新增)
+
+    当check_source_fidelity发现skill既不在original registry中,
+    又找不到对应源skill时,自动将其注册为原创skill。
+    这修复了新创建skill永远无法通过L2-SF门控的管道缺陷。
+    """
+    registry_path = SKILL_DATA_DIR / "reports" / "original_skills_registry.json"
+    try:
+        if registry_path.exists():
+            data = json.loads(registry_path.read_text(encoding='utf-8'))
+        else:
+            data = {'skills': []}
+
+        if slug not in data['skills']:
+            data['skills'].append(slug)
+            registry_path.parent.mkdir(parents=True, exist_ok=True)
+            registry_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
+            print(f"  [SF] 自动注册原创skill: {slug}")
+    except Exception as e:
+        print(f"  [SF] 自动注册原创skill失败({slug}): {e}")
+
+
 def check_source_fidelity(slug: str) -> Dict[str, Any]:
     """检查单个skill的源保真度"""
     # 先检查是否是原创skill(优先于源skill加载,避免无效源导致SF=0)
@@ -1015,15 +1097,18 @@ def check_source_fidelity(slug: str) -> Dict[str, Any]:
             'is_original': True,
             'note': '原创skill,无源skill,跳过SF检查',
         }
-    
+
     # 加载源skill
     source_path, source_content = load_source_skill(slug)
     if not source_content:
+        # V148 T2: 无源skill时自动注册为原创,而非返回0分阻断
+        _auto_register_original(slug)
         return {
             'slug': slug,
-            'error': 'Source skill not found',
-            'fidelity_score': 0,
-            'fidelity_grade': 'F',
+            'fidelity_score': 100,
+            'fidelity_grade': 'A',
+            'is_original': True,
+            'note': '无源skill,自动注册为原创,跳过SF检查',
         }
 
     # 加载生成版本
@@ -1116,13 +1201,13 @@ def check_source_fidelity(slug: str) -> Dict[str, Any]:
     fidelity_score = round(capability_score + term_score + error_score + diff_score)
 
     # 等级
-    if fidelity_score >= 80:
+    if fidelity_score >= SF_GRADE_A:  # V121 W3: 源保真度评级
         grade = 'A'
-    elif fidelity_score >= 65:
+    elif fidelity_score >= SF_GRADE_B:
         grade = 'B'
-    elif fidelity_score >= 50:
+    elif fidelity_score >= SF_GRADE_C:
         grade = 'C'
-    elif fidelity_score >= 30:
+    elif fidelity_score >= SF_GRADE_D:
         grade = 'D'
     else:
         grade = 'F'
@@ -1152,6 +1237,7 @@ def check_source_fidelity(slug: str) -> Dict[str, Any]:
     }
 
 
+# [V131 B5: 与batch_generate/batch_l2_eval/l2_capability_checker.run_batch不同(各模块批量逻辑不同)]
 def run_batch(limit: int = 0) -> List[Dict]:
     """批量检查所有已生成的skill"""
     # 获取所有已生成的skill

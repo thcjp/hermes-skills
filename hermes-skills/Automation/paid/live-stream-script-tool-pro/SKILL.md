@@ -7,7 +7,7 @@ displayName: 直播脚本生成专业版
 summary: "企业级直播运营平台,支持团队协作、数据分析、A/B测试与多语言。面向直播机构、MCN 与品牌方的企业级直播运营平台."
 license: Proprietary
 edition: pro
-description: 面向直播机构、MCN 与品牌方的企业级直播运营平台。可生成提升工作效率
+description: "面向直播机构、MCN 与品牌方的企业级直播运营平台。可生成提升工作效率。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
   核心能力: 团队协作、数据分析、A/B测试、模板库、多语言、批量生成、商业授权
 
   适用场景: 直播机构运营、MCN管理、品牌直播、跨境电商、内容工厂
@@ -62,21 +62,21 @@ category: "Automation"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -88,14 +88,11 @@ category: "Automation"
 import os
 import requests
 from datetime import datetime
-# ...
 API_BASE = "https://api.live-stream-pro.local/v1"
 ADMIN_KEY = os.environ["LIVE_STREAM_ADMIN_KEY"]
-# ...
 class MCNManager:
     def __init__(self, admin_key):
         self.headers = {"X-API-Key": admin_key, "X-Edition": "pro"}
-# ...
     def create_streamer(self, name, category, level):
         """创建主播档案"""
         payload = {
@@ -115,7 +112,6 @@ class MCNManager:
             timeout=30,
         )
         return resp.json()
-# ...
     def batch_generate_scripts(self, streamer_ids, template, products):
         """批量生成脚本"""
         payload = {
@@ -124,25 +120,18 @@ class MCNManager:
             "products": products,
             "personalize": True,
         }
-        resp = requests.post(
             f"{API_BASE}/（请参考skill目录中的脚本文件）",
-            headers=self.headers,
             json=payload,
             timeout=300,
         )
         return resp.json()
-# ...
     def streamer_matrix(self):
         """主播矩阵概览"""
-        resp = requests.get(
             f"{API_BASE}/streamers/matrix",
-            headers=self.headers,
             timeout=60,
         )
         return resp.json()
-# ...
 mcn = MCNManager(ADMIN_KEY)
-# 批量为 10 个主播生成脚本
 scripts = mcn.batch_generate_scripts(
     streamer_ids=["s001", "s002", "s003"],
     template="ecommerce_beauty",
@@ -175,24 +164,6 @@ def analyze_script_performance(script_id, live_data):
         timeout=120,
     )
     return resp.json()
-# ...
-# 示例
-# {
-#   "overall_performance": {
-#     "viewer_retention": 0.65,
-#     "interaction_rate": 0.08,
-#     "conversion_rate": 0.03,
-#     "gmv": 156000,
-#   },
-#   "segment_analysis": [
-#     {"section": "opening", "retention": 0.95, "note": "开场效果良好"},
-#     {"section": "main_product", "retention": 0.45, "note": "主推环节流失严重"},
-#   ],
-#   "optimization": [
-#     "主推环节节奏过慢,建议缩短 5 分钟",
-#     "互动环节参与度低,建议增加抽奖",
-#   ]
-# }
 ```
 
 ### 场景三: A/B 测试
@@ -214,7 +185,6 @@ def create_ab_test(name, variants, target_metric):
         timeout=60,
     )
     return resp.json()
-# ...
 def ab_test_result(test_id):
     """获取 A/B 测试结果"""
     resp = requests.get(
@@ -223,8 +193,6 @@ def ab_test_result(test_id):
         timeout=60,
     )
     return resp.json()
-# ...
-# 创建脚本 A/B 测试
 test = create_ab_test(
     name="开场白优化测试",
     variants=[
@@ -236,7 +204,6 @@ test = create_ab_test(
 ```
 
 ## 不适用场景
-
 以下场景直播脚本生成专业版不适合处理：
 
 - 实时流数据处理
@@ -244,14 +211,13 @@ test = create_ab_test(
 - 非结构化文本情感分析
 
 ## 触发条件
-
 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 ### Step 1: 申请专业版账户
 联系销售开通专业版,获取管理员凭证与租户 ID.
 ### Step 2: 配置凭证
 ```bash
-export LIVE_STREAM_ADMIN_KEY="sk_pro_admin_xxx"
+export LIVE_STREAM_ADMIN_KEY="sk_pro_admin_未指定"
 export LIVE_STREAM_ORG_ID="org_your_id"
 export LIVE_STREAM_EDITION="pro"
 ```
@@ -279,42 +245,35 @@ curl -X POST -H "X-API-Key: $LIVE_STREAM_ADMIN_KEY" \
 ## 配置示例
 ### 企业级配置
 ```yaml
-# /etc/live-stream/pro.yaml
 edition: pro
 api:
   base_url: https://api.live-stream-pro.local/v1
   admin_key: ${LIVE_STREAM_ADMIN_KEY}
   org_id: ${LIVE_STREAM_ORG_ID}
   timeout: 300
-# ...
 team:
   max_streamers: 100
   roles: [admin, script_writer, analyst, reviewer]
   collaboration: realtime
   version_control: true
-# ...
 templates:
   library: 500+
   categories: [ecommerce, knowledge, entertainment, gaming, music]
   customization: high
   versioning: true
-# ...
 analytics:
   metrics: [retention, interaction, conversion, gmv, follower_growth]
   real_time: true
   dashboards: [streamer, category, overall]
   export: [csv, excel, pdf]
-# ...
 ab_testing:
   max_concurrent: 20
   significance_level: 0.05
   auto_conclude: true
-# ...
 localization:
   languages: [zh, en, ja, ko, vi, th]
   cultural_adaptation: true
   translation_memory: true
-# ...
 automation:
   schedule_generation: true
   performance_alerts: true
@@ -366,7 +325,7 @@ def render_analytics_dashboard(period="week"):
     return resp.json()
 ```
 
-## 最佳实践
+## 优选实践
 ### 1. 团队协作工作流
 ```python
 def create_collaboration_workflow(project_id):
@@ -471,28 +430,22 @@ def adapt_to_platform(script_id, target_platform):
 
 ### API Key 配置
 ```bash
-# 专业版凭证
-export LIVE_STREAM_ADMIN_KEY="sk_pro_admin_xxx"
+export LIVE_STREAM_ADMIN_KEY="sk_pro_admin_未指定"
 export LIVE_STREAM_ORG_ID="org_your_id"
 export LIVE_STREAM_EDITION="pro"
-# ...
-# 可选: 平台数据接入
 export DOUYIN_API_KEY="..."
 export TAOBAO_API_KEY="..."
 export KUAISHOU_API_KEY="..."
-# ...
-# 可选: 通知
-export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
+export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/未指定"
 ```
 
 ### 可用性分类
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+execute(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 面向直播机构、MCN 与品牌方,通过自然语言指令驱动 Agent 调用 Pro API,完成团队协作、数据分析、A/B 测试等企业级场景
 - **专业版特性**: 团队协作、数据分析、A/B 测试、模板库、多语言、批量生成、多主播管理、商业授权
 - **兼容性**: 与免费版脚本格式完全兼容,支持平滑升级
 
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -505,10 +458,7 @@ export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
 - 执行效率受模型能力与网络环境影响
 
 ## 示例
-
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 
@@ -534,3 +484,14 @@ Skill: 执行完成,结果如下: 操作成功
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

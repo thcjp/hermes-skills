@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Upstage Document Parse
 
 Convert documents into structured HTML/Markdown. Recognizes layout elements such as tables, images, equations, and charts with bounding box coordinates.
@@ -200,3 +199,21 @@ A: 请参考已知限制章节了解具体限制。
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
 - 性能取决于底层模型能力
+
+---
+## 边界条件与限制
+
+Upstage Document Parse 技能的边界条件与限制如下：
+
+- **输入文件大小限制**：同步模式下的最大文件大小为50MB，异步模式下为50MB，但异步模式支持处理更多的页面数（最多1000页）。
+- **页面数量限制**：同步模式下最多支持100页，异步模式下最多支持1000页。
+- **格式兼容性**：虽然技能支持多种格式，但某些格式可能不如其他格式解析效果理想，例如PDF的解析可能不如DOCX或DOCXX。
+- **OCR识别能力**：OCR识别的准确性受输入图像质量影响，对于扫描质量较差的文档，OCR识别可能不准确。
+- **性能限制**：技能的性能受限于底层模型和服务器资源，处理大量或复杂的文档可能需要较长时间。
+- **API调用频率限制**：频繁的API调用可能导致服务拒绝或超时，请合理规划调用频率。
+- **语言支持**：技能主要支持英语，对于其他语言的文档，解析效果可能不佳。
+- **加密文件**：技能不支持加密文件的解析，请确保输入文件未加密。
+- **自定义格式**：技能不支持自定义输出格式，只能输出Markdown或HTML格式。
+
+---
+

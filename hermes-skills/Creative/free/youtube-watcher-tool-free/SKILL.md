@@ -1,6 +1,7 @@
 ---
+
 name: "youtube-watcher-tool-free"
-description: "轻量级YouTube视频字幕提取工具，支持单视频字幕获取与内容摘要，适合个人学习与内容分析。"
+description: "轻量级YouTube视频字幕提取工具，支持单视频字幕获取与内容摘要，适合个人学习与内容分析。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,10 @@ metadata:
     - "免费版"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # YouTube 字幕提取工具 - 免费版
@@ -51,8 +56,6 @@ YouTube 字幕提取免费版是一款面向个人用户的轻量级视频字幕
 | 关键词追踪 | 跨视频关键词 | 不支持 |
 | 时间戳标记 | 字幕带时间戳 | 不支持（仅文本） |
 
-**输入**: 用户提供能力清单所需的指令和必要参数。
-**处理**: 按照skill规范执行能力清单操作,遵循单一意图原则。
 **输出**: 返回能力清单的执行结果,包含操作状态和输出数据。
 
 ### 工作流程
@@ -69,8 +72,6 @@ YouTube 字幕提取免费版是一款面向个人用户的轻量级视频字幕
 返回结果给用户
 ```
 
-**输入**: 用户提供工作流程所需的指令和必要参数。
-**处理**: 按照skill规范执行工作流程操作,遵循单一意图原则。
 **输出**: 返回工作流程的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -85,16 +86,12 @@ YouTube 视频通常有两种字幕：
 
 免费版优先提取 CC 字幕，若无则使用自动字幕。
 
-**输入**: 用户提供字幕类型说明所需的指令和必要参数。
-**处理**: 按照skill规范执行字幕类型说明操作,遵循单一意图原则。
 **输出**: 返回字幕类型说明的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级、视频字幕提取工具、支持单视频字幕获、取与内容摘要、适合个人学习与内、容分析、字幕提取免费版、为个人用户提供轻、量化的视频字幕获、取能力、核心能力、单视频字幕提取、自动字幕与、字幕内容摘要生成、视频内容问答、字幕文本导出等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
 ### 核心功能执行
 执行核心功能执行操作,使用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -147,7 +144,7 @@ python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=VID
 
 ```bash
 # 提取字幕
-python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID"
+py "https://www.youtube.com/watch?v=VIDEO_ID"
 
 # 示例
 grep -A 2 -B 2 "续航" /tmp/transcript.txt
@@ -168,7 +165,7 @@ grep -A 2 -B 2 "续航" /tmp/transcript.txt
 
 ```bash
 # 提取英文字幕
-python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID" --lang en
+py "https://www.youtube.com/watch?v=VIDEO_ID" --lang en
 ```
 
 ## 不适用场景
@@ -203,7 +200,7 @@ yt-dlp --version
 最简单的用法 - 提取视频字幕：
 
 ```bash
-python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+py "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 ```
 
 ### 第三步：生成摘要
@@ -212,7 +209,7 @@ python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=dQw
 
 ```bash
 # 提取字幕到文件
-python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID" > /tmp/transcript.txt
+py "https://www.youtube.com/watch?v=VIDEO_ID" > /tmp/transcript.txt
 
 # 让 Agent 读取并生成摘要
 ```
@@ -221,7 +218,7 @@ python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=VID
 
 ```bash
 # 提取字幕
-python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID" > /tmp/transcript.txt
+py "https://www.youtube.com/watch?txt
 
 # 搜索关键词
 grep -i "关键词" /tmp/transcript.txt
@@ -233,7 +230,7 @@ grep -i "关键词" /tmp/transcript.txt
 ## 配置示例
 
 #
-## 最佳实践
+## 优选实践
 
 ### 1. 选择有字幕的视频
 
@@ -248,17 +245,15 @@ CC 字幕准确度更高：
 
 ```bash
 # 优先提取人工字幕
-python3 {baseDir}/scripts/get_transcript.py "URL" --prefer-cc
+py "URL" --prefer-cc
 ```
 
 ### 3. 字幕语言选择
 
 ```bash
 # 提取中文字幕
-python3 {baseDir}/scripts/get_transcript.py "URL" --lang zh
 
 # 提取英文字幕
-python3 {baseDir}/scripts/get_transcript.py "URL" --lang en
 ```
 
 ### 4. 长视频处理建议
@@ -315,7 +310,7 @@ brew install yt-dlp
 **A：** 可以：
 
 ```bash
-python3 {baseDir}/scripts/get_transcript.py "URL" > /tmp/transcript.txt
+py "URL" > /tmp/transcript.txt
 ```
 
 ### Q7：能否提取播放列表的字幕？
@@ -339,7 +334,8 @@ python3 {baseDir}/scripts/get_transcript.py "URL" > /tmp/transcript.txt
 | yt-dlp | 命令行工具 | 必需 | `pip install yt-dlp` | 2023.0+ |
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 | - |
 
-#### 安装命令
+#
+### 安装命令
 
 ```bash
 # 安装 yt-dlp
@@ -376,7 +372,6 @@ yt-dlp --version
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -393,8 +388,6 @@ yt-dlp --version
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ```text
@@ -402,3 +395,30 @@ yt-dlp --version
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

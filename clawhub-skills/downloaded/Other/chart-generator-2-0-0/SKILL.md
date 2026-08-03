@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Chart Generator 2.0.0
 
 数据可视化图表生成器，通过 `scripts/chart.sh` 生成ASCII图表或HTML文件。

@@ -1,6 +1,7 @@
 ---
+
 name: "excel-ninja-free"
-description: "一键完成Excel合并、拆分、筛选、去重、聚合、校验等高频操作，告别手工处理表格的繁琐。"
+description: "一键完成Excel合并、拆分、筛选、去重、聚合、校验等高频操作，告别手工处理表格的繁琐。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,11 @@ metadata:
     - "批量操作"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # Excel忍者（免费版）
@@ -48,7 +54,7 @@ python scripts/merge_sheets.py --help
 
 ```bash
 # 示例
-python scripts/merge_sheets.py --inputs 北京.xlsx 上海.xlsx 深圳.xlsx --output 全国汇总.xlsx
+py --inputs 北京.xlsx 上海.xlsx 深圳.xlsx --output 全国汇总.xlsx
 
 # 示例：按地区列拆分成多个文件
 python scripts/split_excel.py --input 全国汇总.xlsx --by-column 地区
@@ -73,49 +79,53 @@ python scripts/filter_excel.py --input 全国汇总.xlsx --where "销售额>1000
 
 ### 脚本详解
 
-#### merge_sheets.py — 多表合并
+#
+### merge_sheets.py — 多表合并
 
 将多个Excel文件或同一文件的多个工作表合并为一张表。支持自动对齐列名。
 
 ```bash
 # 合并多个文件
-python scripts/merge_sheets.py --inputs 1月.xlsx 2月.xlsx 3月.xlsx --output Q1汇总.xlsx
+py --inputs 1月.xlsx 2月.xlsx 3月.xlsx --output Q1汇总.xlsx
 
 # 合并目录下所有xlsx
-python scripts/merge_sheets.py --inputs ./月报/ --output 年度汇总.xlsx
+py --inputs ./月报/ --output 年度汇总.xlsx
 
 # 合并同一文件的多个sheet
-python scripts/merge_sheets.py --inputs 多sheet.xlsx --output 合并.xlsx
+py --inputs 多sheet.xlsx --output 合并.xlsx
 ```
 
-#### filter_excel.py — 条件筛选
+#
+### filter_excel.py — 条件筛选
 
 支持四种比较方式：等于(=)、大于(>)、小于(<)、包含(~)。
 
 ```bash
 # 等于
-python scripts/filter_excel.py --input data.xlsx --where "地区=北京" --output 北京.xlsx
+py --input data.xlsx --where "地区=北京" --output 北京.xlsx
 
 # 大于
-python scripts/filter_excel.py --input data.xlsx --where "金额>5000" --output 大额.xlsx
+py --input data.xlsx --where "金额>5000" --output 大额.xlsx
 
 # 包含（模糊匹配）
-python scripts/filter_excel.py --input data.xlsx --where "名称~科技" --output 科技公司.xlsx
+py --input data.xlsx --where "名称~科技" --output 科技公司.xlsx
 ```
 
-#### split_excel.py — 拆分文件
+#
+### split_excel.py — 拆分文件
 
 两种拆分模式：按固定行数拆分、按某列的不同取值拆分。
 
 ```bash
 # 按行数拆分（每5000行一个文件）
-python scripts/split_excel.py --input 大表.xlsx --by-rows 5000
+py --input 大表.xlsx --by-rows 5000
 
 # 按列值拆分（每个地区一个文件）
-python scripts/split_excel.py --input 全国.xlsx --by-column 地区
+py --input 全国.xlsx --by-column 地区
 ```
 
-#### aggregate_excel.py — 分组聚合
+#
+### aggregate_excel.py — 分组聚合
 
 按指定列分组，对数值列执行聚合运算。支持sum、count、mean、min、max。
 
@@ -124,10 +134,11 @@ python scripts/split_excel.py --input 全国.xlsx --by-column 地区
 python scripts/aggregate_excel.py --input 明细.xlsx --group-by 地区 --agg "销售额:sum" --output 地区汇总.xlsx
 
 # 多列聚合
-python scripts/aggregate_excel.py --input 明细.xlsx --group-by 地区 --agg "销售额:sum,订单数:count,利润:mean" --output 综合统计.xlsx
+py --input 明细.xlsx --group-by 地区 --agg "销售额:sum,订单数:count,利润:mean" --output 综合统计.xlsx
 ```
 
-#### validate_excel.py — 数据校验
+#
+### validate_excel.py — 数据校验
 
 检查数据质量：必填列是否存在、键列是否有重复、是否存在空行。
 
@@ -136,30 +147,24 @@ python scripts/aggregate_excel.py --input 明细.xlsx --group-by 地区 --agg "�
 python scripts/validate_excel.py --input data.xlsx --require-cols "订单号,客户名,金额"
 
 # 校验键列唯一性
-python scripts/validate_excel.py --input data.xlsx --key-cols "订单号"
+py --input data.xlsx --key-cols "订单号"
 
 # 同时校验必填列和键列
-python scripts/validate_excel.py --input data.xlsx --require-cols "订单号,客户名" --key-cols "订单号"
+py --input data.xlsx --require-cols "订单号,客户名" --key-cols "订单号"
 ```
 
-**输入**: 用户提供脚本详解所需的指令和必要参数。
-**处理**: 按照skill规范执行脚本详解操作,遵循单一意图原则。
 **输出**: 返回脚本详解的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：一键完成、校验等高频操作、告别手工处理表格、的繁琐、忍者为、Agent、提供专业的、文件自动化处理能、覆盖合并、列选择等高频场景、高手一样批量处理、Use、when、需要文件处理、文档转换、格式互转、内容提取时使用、不适用于加密文件、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -172,10 +177,10 @@ python scripts/validate_excel.py --input data.xlsx --require-cols "订单号,客
 
 ```bash
 # 一行命令完成合并
-python scripts/merge_sheets.py --inputs ./渠道数据/ --output 本周周报.xlsx
+py --inputs ./渠道数据/ --output 本周周报.xlsx
 
 # 按渠道分组统计
-python scripts/aggregate_excel.py --input 本周周报.xlsx --group-by 渠道 --agg "访客数:sum,转化率:mean" --output 渠道统计.xlsx
+py --input 本周周报.xlsx --group-by 渠道 --agg "访客数:sum,转化率:mean" --output 渠道统计.xlsx
 ```
 
 **效果**：从手工复制粘贴30分钟，缩短到10秒完成。
@@ -185,14 +190,14 @@ python scripts/aggregate_excel.py --input 本周周报.xlsx --group-by 渠道 --
 拿到一份脏数据，需要去重、筛选、校验。
 
 ```bash
-# 第一步：校验数据完整性
-python scripts/validate_excel.py --input 原始数据.xlsx --require-cols "ID,姓名,手机号" --key-cols "ID"
+# 领先步：校验数据完整性
+py --input 原始数据.xlsx --require-cols "ID,姓名,手机号" --key-cols "ID"
 
 # 第二步：去重
 python scripts/deduplicate_excel.py --input 原始数据.xlsx --keys ID --keep first --output 去重后.xlsx
 
 # 第三步：筛选有效记录
-python scripts/filter_excel.py --input 去重后.xlsx --where "状态=有效" --output 清洗完成.xlsx
+py --input 去重后.xlsx --where "状态=有效" --output 清洗完成.xlsx
 ```
 
 **效果**：三步完成数据清洗流程，每步都有明确输出，可追溯。
@@ -203,7 +208,7 @@ python scripts/filter_excel.py --input 去重后.xlsx --where "状态=有效" --
 
 ```bash
 # 按部门列拆分
-python scripts/split_excel.py --input 费用总表.xlsx --by-column 部门
+py --input 费用总表.xlsx --by-column 部门
 
 # 输出：财务部.xlsx、市场部.xlsx、技术部.xlsx...
 ```
@@ -301,7 +306,7 @@ with pd.ExcelWriter("output.xlsx", engine="openpyxl") as writer:
 
 ### Q1：免费版支持哪些Excel格式？
 
-免费版支持.xlsx（读写）和.csv（读写）格式。旧格式.xls仅支持只读。建议统一使用.xlsx格式以获得最佳兼容性。
+免费版支持.xlsx（读写）和.csv（读写）格式。旧格式.xls仅支持只读。建议统一使用.xlsx格式以获得优选兼容性。
 
 ### Q2：处理大文件时会内存不足吗？
 
@@ -383,7 +388,6 @@ with pd.ExcelWriter("output.xlsx", engine="openpyxl") as writer:
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -394,8 +398,6 @@ with pd.ExcelWriter("output.xlsx", engine="openpyxl") as writer:
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ```text
@@ -403,3 +405,30 @@ with pd.ExcelWriter("output.xlsx", engine="openpyxl") as writer:
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

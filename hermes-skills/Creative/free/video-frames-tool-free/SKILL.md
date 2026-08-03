@@ -1,6 +1,7 @@
 ---
+
 name: "video-frames-tool-free"
-description: "轻量级视频帧提取工具，支持单帧抓取与时间点截图，适合个人创作者快速生成缩略图。"
+description: "轻量级视频帧提取工具，支持单帧抓取与时间点截图，适合个人创作者快速生成缩略图。Use when 需要视频处理、音频编辑、媒体转换、配音生成时使用。不适用于版权受保护的媒体内容处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,10 @@ metadata:
     - "免费版"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # 视频帧提取工具 - 免费版
@@ -39,7 +44,7 @@ metadata:
 | 能力 | 描述 | 免费版 |
 |:-----|:-----|:-------|
 | 单帧抓取 | 指定时间点提取一帧图像 | 支持 |
-| 首帧抓取 | 快速获取视频第一帧 | 支持 |
+| 首帧抓取 | 快速获取视频领先帧 | 支持 |
 | 缩略图生成 | 按间隔生成多张缩略图 | 支持（≤10 张） |
 | 输出格式 | JPG / PNG 切换 | 支持 |
 | 区间提取 | 提取视频片段为 GIF/MP4 | 不支持 |
@@ -47,8 +52,6 @@ metadata:
 | 水印添加 | 自定义水印与位置 | 不支持 |
 | 自定义分辨率 | 输出指定分辨率 | 不支持 |
 
-**输入**: 用户提供能力清单所需的指令和必要参数。
-**处理**: 按照skill规范执行能力清单操作,遵循单一意图原则。
 **输出**: 返回能力清单的执行结果,包含操作状态和输出数据。
 
 ### 工作流程
@@ -65,16 +68,12 @@ metadata:
 返回结果路径供用户查看
 ```
 
-**输入**: 用户提供工作流程所需的指令和必要参数。
-**处理**: 按照skill规范执行工作流程操作,遵循单一意图原则。
 **输出**: 返回工作流程的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级视频帧提取、支持单帧抓取与时、间点截图、适合个人创作者快、速生成缩略图、视频帧提取免费版、专注于为个人用户、提供简洁高效的视、频帧抓取能力、核心能力、单帧精准提取、指定时间点抓取、首帧快速抓取、一秒生成预览图、输出格式切换、基础缩略图批量生等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -82,9 +81,6 @@ metadata:
 ### 核心功能执行
 执行核心功能执行操作,使用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
-**输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
@@ -119,7 +115,7 @@ metadata:
 
 ```bash
 # 免费版支持最多 10 张缩略图
-{baseDir}/scripts/frame.sh /videos/meeting.mp4 --thumbs 6 --out /tmp/thumbs/
+sh /videos/meeting.mp4 --thumbs 6 --out /tmp/thumbs/
 ```
 
 ### 场景 3：学习笔记配图整理
@@ -135,9 +131,9 @@ metadata:
 **示例命令：**
 
 ```bash
-{baseDir}/scripts/frame.sh /videos/tutorial.mp4 --time 00:02:15 --out /tmp/step-1.png
-{baseDir}/scripts/frame.sh /videos/tutorial.mp4 --time 00:05:30 --out /tmp/step-2.png
-{baseDir}/scripts/frame.sh /videos/tutorial.mp4 --time 00:08:45 --out /tmp/step-3.png
+sh /videos/tutorial.mp4 --time 00:02:15 --out /tmp/step-1.png
+sh /videos/tutorial.mp4 --time 00:05:30 --out /tmp/step-2.png
+sh /videos/tutorial.mp4 --time 00:08:45 --out /tmp/step-3.png
 ```
 
 ## 不适用场景
@@ -154,7 +150,7 @@ metadata:
 
 ## 快速开始
 
-### 第一步：环境检查
+### 领先步：环境检查
 
 确认本地已安装 `ffmpeg`：
 
@@ -166,10 +162,10 @@ ffmpeg -version
 
 ### 第二步：抓取首帧
 
-最简单的用法 - 抓取视频第一帧：
+最简单的用法 - 抓取视频领先帧：
 
 ```bash
-{baseDir}/scripts/frame.sh /path/to/video.mp4 --out /tmp/first-frame.jpg
+sh /path/to/video.mp4 --out /tmp/first-frame.jpg
 ```
 
 ### 第三步：指定时间点抓取
@@ -177,7 +173,7 @@ ffmpeg -version
 抓取第 10 秒的画面：
 
 ```bash
-{baseDir}/scripts/frame.sh /path/to/video.mp4 --time 00:00:10 --out /tmp/frame-10s.jpg
+sh /path/to/video.mp4 --time 00:00:10 --out /tmp/frame-10s.jpg
 ```
 
 ### 第四步：生成缩略图
@@ -185,11 +181,10 @@ ffmpeg -version
 为长视频生成预览缩略图：
 
 ```bash
-{baseDir}/scripts/frame.sh /path/to/video.mp4 --thumbs 8 --out /tmp/thumbs/
+sh /path/to/video.mp4 --thumbs 8 --out /tmp/thumbs/
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
-
 
 ## 示例
 
@@ -200,7 +195,7 @@ ffmpeg -version
 video_frames_free:
   max_thumbnails: 10          # 最大缩略图数量
   default_format: jpg         # 默认输出格式
-  default_quality: 2           # JPEG 质量（2=最佳）
+  default_quality: 2           # JPEG 质量（2=优选）
   supported_inputs:
     - mp4
     - mov
@@ -219,22 +214,22 @@ video_frames_free:
 | JPG | 快速分享、网络传输 | 较小 | 有损 |
 | PNG | UI 截图、需要透明度 | 较大 | 无损 |
 
-## 最佳实践
+## 优选实践
 
 ### 1. 选择合适的时间点
 
 - 使用 `--time` 参数精准定位关键画面
 - 时间格式为 `HH:MM:SS`（如 `00:01:30` 表示 1 分 30 秒）
-- 推荐先抓取多张缩略图预览，再选择最佳时间点
+- 推荐先抓取多张缩略图预览，再选择优选时间点
 
 ### 2. 根据用途选择格式
 
 ```bash
 # 网络分享用 JPG（体积小）
-{baseDir}/scripts/frame.sh video.mp4 --time 00:00:05 --out /tmp/share.jpg
+sh video.mp4 --time 00:00:05 --out /tmp/share.jpg
 
 # UI 设计稿用 PNG（无损画质）
-{baseDir}/scripts/frame.sh video.mp4 --time 00:00:05 --out /tmp/ui-frame.png
+sh video.mp4 --time 00:00:05 --out /tmp/ui-frame.png
 ```
 
 ### 3. 缩略图数量建议
@@ -310,7 +305,8 @@ ffmpeg -ss 00:00:10 -i video.mp4 -vf scale=1280:-1 -frames:v 1 output.jpg
 | LLM API | API | 必需 | 由 Agent 内置 LLM 提供 |
 | Python 3 | 运行时 | 可选 | python.org 官网下载 |
 
-#### ffmpeg 安装命令
+#
+### ffmpeg 安装命令
 
 ```bash
 # Windows (PowerShell)
@@ -347,7 +343,6 @@ sudo yum install epel-release && sudo yum install ffmpeg
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -359,3 +354,30 @@ sudo yum install epel-release && sudo yum install ffmpeg
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

@@ -1,5 +1,6 @@
 ---
-slug: "self-integration-tool-pro"
+
+slug: self-integration-tool-pro
 name: "self-integration-tool-pro"
 version: "1.0.0"
 displayName: "自集成工具Pro"
@@ -7,7 +8,7 @@ summary: "企业级外部应用集成方案，含自定义连接器、批量动�
 license: "Proprietary"
 edition: "pro"
 description: |-
-  自集成工具（专业版）为团队与企业提供完整的外部应用集成治理方案，支持连接任意外部应用并编排自动化工作流。核心能力：自定义连接器构建（自然语言驱动）、批量动作执行、多步骤工作流编排、操作审计日志、连接健康监控与自动重连、Agent辅助连接器开发、MCP工具集成适配。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
+  自集成工具（专业版）为团队与企业提供完整的外部应用集成治理方案，支持连接任意外部应用并编排自动化工作流。核心能力：自定义连接器构建（自然语言驱动）、批量动作执行、多步骤工作流编排、操作审计日志、连接健康监控与自动重连、Agent辅助连接器开发、工具集成适配。Use when 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于逆向工程闭源API.
 tags:
   - 集成工具
   - 自动化
@@ -24,7 +25,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 自集成工具（专业版）
 
 ## 概述
@@ -44,25 +47,25 @@ category: "Automation"
 | 操作审计日志 | 全量操作留痕与导出 | 是 |
 | 连接健康监控 | 自动检测与重连 | 是 |
 | Agent辅助开发 | Agent会话驱动连接器开发 | 是 |
-| MCP工具集成适配 | 为MCP端点提供统一连接层 | 是 |
+| 工具集成适配 | 为协议端点提供统一连接层 | 是 |
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -188,23 +191,23 @@ curl -X POST "https://api.integration-gateway.com/actions/batch" \
 
 ```bash
 # 创建会话
-curl -X POST https://api.integration-gateway.com/agent/sessions \
+integration-gateway.com/agent/sessions \
   -H "Authorization: Bearer $INTEGRATION_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"prompt": "为Jira（https://company.atlassian.net）构建连接器，支持创建Issue与查询项目"}'
 # ...
 # 轮询状态（state为idle或status为completed即完成）
-curl "https://api.integration-gateway.com/agent/sessions/sess_xyz?wait=true&timeout=30" \
+curl "https://api.integration-gateway.wait=true&timeout=30" \
   -H "Authorization: Bearer $INTEGRATION_TOKEN"
 # ...
 # 发送后续指令（如需调整）
-curl -X POST https://api.integration-gateway.com/agent/sessions/sess_xyz/message \
+integration-gateway.com/agent/sessions/sess_xyz/message \
   -H "Authorization: Bearer $INTEGRATION_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"input": "创建Issue时需要支持指定优先级字段"}'
 # ...
 # 中止会话（如需）
-curl -X POST https://api.integration-gateway.com/agent/sessions/sess_xyz/interrupt \
+integration-gateway.com/agent/sessions/sess_xyz/interrupt \
   -H "Authorization: Bearer $INTEGRATION_TOKEN"
 ```
 
@@ -278,7 +281,7 @@ workflow:
 3. **结果缓存**：幂等查询动作的结果可缓存（专业版支持配置）
 4. **增量轮询**：Agent会话采用长轮询，减少请求次数
 
-## 最佳实践
+## 优选实践
 
 1. **连接器命名规范**：按"应用-环境"命名，便于多环境管理
 2. **工作流幂等设计**：关键步骤设计为幂等，避免重试导致重复
@@ -309,8 +312,8 @@ A：专业版不限制连接数量。每个连接独立管理，按应用维度�
 A：不会。入参记录哈希值而非原值，连接凭据由网关托管不记录。日志仅记录操作者、时间、动作、状态等元数据.
 ### Q6：Agent会话构建连接器失败怎么办？
 A：可通过会话消息补充信息（如API文档链接、认证方式说明）让Agent重新尝试。也可中止会话后用更详细的prompt重新开始.
-### Q7：如何对接MCP工具生态？
-A：专业版提供MCP端点集成适配，MCP工具通过本工具建立连接并执行动作。配置MCP server时指定本工具的网关地址与Token，MCP端点即可操作任意外部应用.
+### Q7：如何对接工具生态？
+A：专业版提供协议端点集成适配，工具通过本工具建立连接并执行动作。配置protocol server时指定本工具的网关地址与Token，协议端点即可操作任意外部应用.
 ### Q8：工作流支持定时触发吗？
 A：支持。工作流触发器可配置为cron表达式定时触发，适合定期同步等场景.
 ## 故障排查
@@ -386,3 +389,14 @@ A：支持。工作流触发器可配置为cron表达式定时触发，适合定
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

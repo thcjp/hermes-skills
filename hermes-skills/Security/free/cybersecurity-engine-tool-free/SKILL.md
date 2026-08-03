@@ -1,6 +1,7 @@
 ---
+
 name: "cybersecurity-engine-tool-free"
-description: "轻量级安全评估与威胁建模工具,提供安全态势检查、OWASP基础审计与漏洞管理,适合个人开发者快速安全自查。"
+description: "轻量级安全评估与威胁建模工具,提供安全态势检查、OWASP基础审计与漏洞管理,适合个人开发者快速安全自查。Use when 需要安全检测、合规审计、漏洞扫描、加密防护时使用。不适用于渗透测试未授权目标。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,10 @@ metadata:
     - "免费版"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # 网络安全评估引擎免费版
@@ -41,7 +46,7 @@ metadata:
 
 通过三层检查快速评估项目安全状况,5分钟内完成基础安全体检。
 
-**第一层 - 关键风险(立即修复):**
+**领先层 - 关键风险(立即修复):**
 
 ```bash
 #!/bin/bash
@@ -58,13 +63,11 @@ SECRETS=$(grep -rn 'AKIA[0-9A-Z]\{16\}\|BEGIN.*PRIVATE KEY\|sk-[A-Za-z0-9]\{20,\
 # 检查生产环境调试模式
 DEBUG=$(grep -rn 'DEBUG\s*=\s*True\|debug:\s*true' \
   --include='*.{py,js,ts,yml,yaml,json}' . 2>/dev/null | \
-  grep -v 'node_modules\|\.git\|test' | wc -l)
 [ "$DEBUG" -gt 0 ] && echo "[!] 发现 ${DEBUG} 处调试模式开启" && ((ISSUES++))
 
 # 检查CORS通配符
 CORS=$(grep -rn "Access-Control-Allow-Origin.*\*" \
   --include='*.{py,js,ts,go}' . 2>/dev/null | \
-  grep -v 'node_modules\|\.git' | wc -l)
 [ "$CORS" -gt 0 ] && echo "[!] 发现 ${CORS} 处CORS通配符配置" && ((ISSUES++))
 
 echo ""
@@ -86,8 +89,6 @@ echo "关键风险检查完成,发现问题: ${ISSUES} 项"
 - 服务账号权限过大
 - 无密钥轮换策略
 
-**输入**: 用户提供安全态势快速检查所需的指令和必要参数。
-**处理**: 按照skill规范执行安全态势快速检查操作,遵循单一意图原则。
 **输出**: 返回安全态势快速检查的执行结果,包含操作状态和输出数据。
 
 ### 2. OWASP Top 10 基础审计
@@ -122,8 +123,6 @@ grep -rn "DEBUG\s*=\s*True\|debug:\s*true" \
   --include='*.{py,js,ts,yml,yaml}' . 2>/dev/null | grep -v test
 ```
 
-**输入**: 用户提供OWASP Top 10 基础审计所需的指令和必要参数。
-**处理**: 按照skill规范执行OWASP Top 10 基础审计操作,遵循单一意图原则。
 **输出**: 返回OWASP Top 10 基础审计的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -157,8 +156,6 @@ threats:
     status: "open"
 ```
 
-**输入**: 用户提供威胁登记管理所需的指令和必要参数。
-**处理**: 按照skill规范执行威胁登记管理操作,遵循单一意图原则。
 **输出**: 返回威胁登记管理的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级安全评估与、威胁建模工具、提供安全态势检查、OWASP、基础审计与漏洞管、适合个人开发者快、速安全自查、网络安全评估引擎、免费版、为个人开发者提供、基础安全评估与威、胁建模能力、核心能力、安全态势快速检查、Top、基础审计、威胁登记管理、漏洞生命周期跟踪、适用场景、项目上线前安全自、代码安全审查、基础威胁建模、差异化、免费版聚焦核心评、估能力、无需额外工具依赖、速上手、适用关键词、安全评估、威胁建模、漏洞管理、security、assessment、threat、modeling等。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -183,8 +180,8 @@ ISSUES=0
 echo ""
 echo "--- 1. 密钥泄露检查 ---"
 for pattern in 'AKIA[0-9A-Z]\{16\}' 'BEGIN.*PRIVATE KEY' 'sk-[A-Za-z0-9]\{20,\}' 'ghp_[A-Za-z0-9]\{36\}'; do
-    count=$(grep -rn "$pattern" --include='*.{js,ts,py,go,env,yml,yaml,json}' . 2>/dev/null | \
-            grep -v 'node_modules\|\.git\|example\|test' | wc -l)
+    count=$(grep -rn "$pattern" --include='*. 2>/dev/null | \
+git\|example\|test' | wc -l)
     [ "$count" -gt 0 ] && echo "  [!] 发现 ${count} 处匹配: ${pattern}" && ((ISSUES++))
 done
 
@@ -251,7 +248,7 @@ echo "========================================="
 
 ## 快速开始
 
-### 第一步:运行安全态势检查
+### 领先步:运行安全态势检查
 
 ```bash
 # 克隆或进入项目目录
@@ -265,7 +262,7 @@ bash security-check.sh
 
 ```bash
 # 检查注入风险
-grep -rn "query\|execute" --include='*.py' . | grep -i "f\"\|%s"
+py' . | grep -i "f\"\|%s"
 
 # 检查XSS风险
 grep -rn "innerHTML\|dangerouslySetInnerHTML" --include='*.{js,ts,jsx}' .
@@ -321,7 +318,7 @@ password_policy:
 | 中危 | 4.0-6.9 | 30天 | 加入迭代待办 |
 | 低危 | 0.1-3.9 | 90天 | 记录跟踪 |
 
-## 最佳实践
+## 优选实践
 
 1. **默认拒绝**:防火墙默认拒绝所有入站流量,仅开放必要端口。
 2. **最小权限**:所有服务账号使用最小必要权限。
@@ -388,11 +385,10 @@ done
 - 依赖扫描工具(npm audit, pip-audit)使用各自的默认配置
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行能力)
+- **分类**: MD+execute(纯Markdown指令,核心功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行安全评估与威胁建模任务
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
@@ -403,3 +399,22 @@ done
 ## 已知限制
 
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

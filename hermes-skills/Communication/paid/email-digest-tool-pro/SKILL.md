@@ -1,5 +1,6 @@
 ---
-slug: "email-digest-tool-pro"
+
+slug: email-digest-tool-pro
 name: "email-digest-tool-pro"
 version: "1.0.0"
 displayName: "邮件日报专业版"
@@ -7,7 +8,7 @@ summary: "多邮箱AI智能摘要与定时报告，企业级邮件监控与分�
 license: "Proprietary"
 edition: "pro"
 description: |-
-  邮件日报专业版面向企业用户与高效能个人用户。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发.
+  邮件日报专业版面向企业用户与高效能个人用户。Use when 需要消息发送、通知推送、邮件短信、通信集成时使用。不适用于垃圾信息群发。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。
 tags:
   - 沟通协作
   - 邮件管理
@@ -27,20 +28,17 @@ tools:
   - write
 homepage: ""
 category: "Communication"
+
 ---
+
 # 邮件日报专业版
 **版本**: 1.0.0
 **适用对象**: 企业管理者、团队负责人、运维与运营人员
 **核心定位**: 企业级多邮箱智能摘要与监控平台
 **兼容性**: 完全兼容免费版（email-digest-tool-free）全部功能，可直接升级
-
----
-
 ## 概述
 邮件日报专业版是一款面向企业级场景的多邮箱智能摘要与监控工具。在免费版提供的单邮箱摘要生成能力之上，专业版引入多邮箱账户聚合、AI 智能摘要、定时报告推送、邮件智能分类、关键邮件告警与历史趋势分析等高级特性，帮助企业管理者与团队负责人在一个视图中掌握所有邮箱动态，实现邮件的智能化管理与 proactive 监控.
 专业版向下完全兼容免费版，现有浏览器自动化流程无需修改即可平滑升级。新增的企业级功能通过扩展命令实现，支持多渠道报告推送与自定义告警规则.
----
-
 ## 核心能力
 ### 多邮箱聚合
 - 统一汇总 Gmail、Outlook、QQ邮箱、163邮箱等多个账户
@@ -48,7 +46,6 @@ category: "Communication"
 - 按账户分组展示与统一视图切换
 - 多账户健康状态监控
 
-**输入**: 用户提供多邮箱聚合所需的指令和必要参数.
 **处理**: 解析多邮箱聚合的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多邮箱聚合的响应数据,包含状态码、结果和日志.
 ### AI 智能摘要
@@ -57,7 +54,6 @@ category: "Communication"
 - 风险邮件识别与提示
 - 摘要自然语言生成（支持中文）
 
-**输入**: 用户提供AI 智能摘要所需的指令和必要参数.
 **处理**: 解析AI 智能摘要的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回AI 智能摘要的响应数据,包含状态码、结果和日志.
 ### 定时报告推送
@@ -66,7 +62,6 @@ category: "Communication"
 - 多渠道推送（邮件、飞书、钉钉、Slack、Webhook）
 - 报告格式自定义（文本/HTML/Markdown）
 
-**输入**: 用户提供定时报告推送所需的指令和必要参数.
 **处理**: 解析定时报告推送的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时报告推送的响应数据,包含状态码、结果和日志.
 ### 智能分类与标签
@@ -75,7 +70,6 @@ category: "Communication"
 - 优先级自动排序
 - 分类统计与占比分析
 
-**输入**: 用户提供智能分类与标签所需的指令和必要参数.
 **处理**: 解析智能分类与标签的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回智能分类与标签的响应数据,包含状态码、结果和日志.
 ### 告警通知
@@ -84,7 +78,6 @@ category: "Communication"
 - 告警渠道配置（邮件/即时通讯）
 - 告警级别与静默策略
 
-**输入**: 用户提供告警通知所需的指令和必要参数.
 **处理**: 解析告警通知的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回告警通知的响应数据,包含状态码、结果和日志.
 ### 趋势分析
@@ -93,9 +86,6 @@ category: "Communication"
 - 响应时间统计分析
 - 历史报告归档与检索
 
----
-
-**输入**: 用户提供趋势分析所需的指令和必要参数.
 **处理**: 解析趋势分析的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回趋势分析的响应数据,包含状态码、结果和日志.
 **技术参数**：使用`input_params`和`output_format`参数控制执行行为,支持`json`/`text`/`csv`输出格式.
@@ -122,7 +112,7 @@ email-digest-tool aggregate \
 email-digest-tool aggregate \
   --accounts gmail,outlook \
   --push feishu \
-  --webhook "https://open.feishu.cn/open-apis/bot/v2/hook/xxx"
+  --webhook "https://open.feishu.cn/open-apis/bot/v2/hook/未指定"
 ```
 
 输出报告示例：
@@ -168,7 +158,7 @@ email-digest-tool schedule create \
   --accounts gmail,outlook \
   --format markdown \
   --push feishu \
-  --webhook "https://open.feishu.cn/open-apis/bot/v2/hook/xxx" \
+feishu.cn/open-apis/bot/v2/hook/未指定" \
   --timezone "Asia/Shanghai"
 # ...
 # 查看所有定时任务
@@ -186,7 +176,7 @@ email-digest-tool alert create \
   --name "ceo-alert" \
   --condition "from:ceo@company.com" \
   --channel feishu \
-  --webhook "https://open.feishu.cn/open-apis/bot/v2/hook/xxx" \
+feishu.cn/open-apis/bot/v2/hook/未指定" \
   --priority critical
 # ...
 email-digest-tool alert create \
@@ -202,16 +192,12 @@ email-digest-tool alert start --all
 # 查看告警历史
 email-digest-tool alert log --since "2026-07-01"
 ```
-
----
-
 ## 快速开始
 1. 阅读## 核心能力章节了解skill功能
 2. 按## 依赖说明配置环境
 3. 执行所需能力对应的命令
 4. 参考## 错误处理章节处理异常
 5. 查看## FAQ解答常见疑问
-
 ### 从免费版升级
 专业版完全兼容免费版，现有浏览器自动化流程可直接使用：
 
@@ -252,13 +238,13 @@ email-digest-tool aggregate --accounts gmail --format html
 {
   "push_channels": {
     "feishu": {
-      "webhook": "https://open.feishu.cn/open-apis/bot/v2/hook/xxx"
+      "webhook": "https://open.feishu.cn/open-apis/bot/v2/hook/未指定"
     },
     "dingtalk": {
-      "webhook": "https://oapi.dingtalk.com/robot/send?access_token=xxx"
+      "webhook": "https://oapi.dingtalk.com/robot/send?access_token=未指定"
     },
     "slack": {
-      "webhook": "https://hooks.slack.com/services/xxx"
+      "webhook": "https://hooks.slack.com/services/未指定"
     },
     "email": {
       "smtp_server": "smtp.company.com",
@@ -269,8 +255,6 @@ email-digest-tool aggregate --accounts gmail --format html
   }
 }
 ```
-
----
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
 ## 示例
@@ -347,10 +331,7 @@ email-digest-tool aggregate --accounts gmail --format html
   ]
 }
 ```
-
----
-
-## 最佳实践
+## 优选实践
 ### 多邮箱管理策略
 ```bash
 # 按角色分组管理邮箱
@@ -382,9 +363,6 @@ email-digest-tool archive --since "2026-01-01" --dir reports/archive/
 # 检索历史报告
 email-digest-tool archive search --keyword "董事会" --since "2026-01-01"
 ```
-
----
-
 ## 免费版与专业版对比
 | 能力 | 免费版 | 专业版 |
 |:-----|:-----|:-----|
@@ -400,9 +378,6 @@ email-digest-tool archive search --keyword "董事会" --since "2026-01-01"
 | 报告归档 | ❌ | ✅（可检索） |
 | 推送渠道 | 截图 | 邮件/飞书/钉钉/Slack |
 | 技术支持 | 社区支持 | 优先支持 |
-
----
-
 ## 常见问题
 ### 问题1：多邮箱聚合时部分账户失败
 **解决**: 检查对应账户的浏览器登录状态，确保会话有效：
@@ -412,7 +387,6 @@ email-digest-tool archive search --keyword "董事会" --since "2026-01-01"
 email-digest-tool accounts health-check
 # ...
 # 重新登录失效账户
-browser-use --browser real open https://mail.google.com
 ```
 
 ### 问题2：AI 摘要质量不佳
@@ -455,9 +429,6 @@ email-digest-tool alert update --name "unread-alert" --threshold 100
 # 格式转换
 email-digest-tool convert --input report.html --format markdown
 ```
-
----
-
 ## 命令参考速查
 | 命令 | 功能 | 专业版独有 |
 |---:|---:|---:|
@@ -469,9 +440,6 @@ email-digest-tool convert --input report.html --format markdown
 | `accounts` | 多账户管理 | ✅ |
 | `config` | 配置管理 | ✅ |
 | `convert` | 格式转换 | ✅ |
-
----
-
 ## 依赖说明
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
@@ -500,16 +468,30 @@ email-digest-tool convert --input report.html --format markdown
 ### 可用性分类
 - **分类**: MD+EXEC（纯Markdown指令，部分功能需要 exec 命令行执行能力）
 - **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent执行浏览器自动化与多渠道推送任务，支持定时调度与告警监控
-
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |:------|------:|:------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
-
 ## 已知限制
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+## 核心功能
+
+- **自动化执行**: 多邮箱AI智能摘要与定时报告，企业级邮件监控与分类方案。邮件日报专业版面向企业用户与高效能个人用户。Use when 需
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

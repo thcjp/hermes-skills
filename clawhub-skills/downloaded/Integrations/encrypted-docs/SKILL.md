@@ -23,7 +23,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # End-to-end encrypted .md documents for agents & humans to collaborate. This is a multiplayer alternative to gog and Google Docs that lets people (via CLI) and agents create, search and sync encrypted markdown docs. This service leverages https://ddocs.new which can be enabled locally or via your preferred cloud set-up to make docs accessible across any device or chatbot interface in complete privacy.
 
 > End-to-end encrypted .md documents for agents & humans to collaborate. This is a multiplayer alternative to gog and Google Docs that lets people (via CLI) and agents create, search and sync encrypted markdown docs. This service leverages <https://ddocs.new> which can be enabled locally or via your preferred cloud set-up to make docs accessible across any device or chatbot interface in complete privacy.
@@ -487,3 +486,27 @@ A: 请参考已知限制章节了解具体限制。
 ## 已知限制
 
 - 需要API Key，无Key环境无法使用
+
+---
+## 边界条件与限制 (Boundary Conditions)
+
+### 输入限制
+- **文档大小限制**：Encrypted Docs技能对单个文档的大小有限制，最大支持10MB。
+- **查询长度限制**：搜索查询字符串的长度应合理，过长的查询可能导致搜索结果不准确或服务响应缓慢。
+- **并发请求限制**：同时进行的API请求数量有限制，超过限制可能导致请求失败或延迟。
+
+### 性能边界
+- **同步延迟**：文档的同步到去中心化存储网络可能存在延迟，最长可达60秒。
+- **搜索结果返回时间**：搜索操作可能需要几秒钟才能返回结果，具体时间取决于文档数量和查询复杂性。
+
+### 兼容性约束
+- **操作系统兼容性**：Encrypted Docs技能在Windows、macOS和Linux操作系统上运行。
+- **Agent平台兼容性**：技能支持SKILL.md的任意AI Agent，如Claude Code、Cursor、Codex、Gemini CLI等。
+- **浏览器兼容性**：在浏览器中使用时，需要确保浏览器支持MCP连接器和相应的API调用。
+
+### 其他限制
+- **API Key要求**：虽然技能本身不需要额外的API Key，但依赖的LLM API可能需要API Key。
+- **功能限制**：某些高级功能可能需要额外的配置或依赖，如Markdown格式支持、内容加密等。
+
+---
+

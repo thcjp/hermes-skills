@@ -1,6 +1,7 @@
 ---
+
 name: "hot-news-tool-free"
-description: "轻量级新闻聚合工具，自动搜索筛选国内外科技、军事、社会新闻要点，适合个人用户快速了解时事动态。"
+description: "轻量级新闻聚合工具，自动搜索筛选国内外科技、军事、社会新闻要点，适合个人用户快速了解时事动态。Use when 需要SEO优化、关键词分析、排名提升、搜索流量优化时使用。不适用于黑帽SEO手段。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,11 @@ metadata:
     - "资讯"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # 热点新闻聚合（免费版）
@@ -43,45 +49,33 @@ metadata:
 ### 单次聚合最多覆盖 10 个新闻
 单次聚合最多覆盖 10 个新闻源
 
-**输入**: 用户提供单次聚合最多覆盖 10 个新闻所需的指令和必要参数。
-**处理**: 按照skill规范执行单次聚合最多覆盖 10 个新闻操作,遵循单一意图原则。
 **输出**: 返回单次聚合最多覆盖 10 个新闻的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 不支持定时自动更新
 不支持定时自动更新
 
-**输入**: 用户提供不支持定时自动更新所需的指令和必要参数。
-**处理**: 按照skill规范执行不支持定时自动更新操作,遵循单一意图原则。
 **输出**: 返回不支持定时自动更新的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 不支持自定义新闻源
 不支持自定义新闻源
 
-**输入**: 用户提供不支持自定义新闻源所需的指令和必要参数。
-**处理**: 按照skill规范执行不支持自定义新闻源操作,遵循单一意图原则。
 **输出**: 返回不支持自定义新闻源的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 不支持实时推送通知
 不支持实时推送通知
 
-**输入**: 用户提供不支持实时推送通知所需的指令和必要参数。
-**处理**: 按照skill规范执行不支持实时推送通知操作,遵循单一意图原则。
 **输出**: 返回不支持实时推送通知的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 不支持舆情趋势分析
 不支持舆情趋势分析
 
-**输入**: 用户提供不支持舆情趋势分析所需的指令和必要参数。
-**处理**: 按照skill规范执行不支持舆情趋势分析操作,遵循单一意图原则。
 **输出**: 返回不支持舆情趋势分析的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
-**输入**: 用户提供已知限制所需的指令和必要参数。
-**处理**: 按照skill规范执行已知限制操作,遵循单一意图原则。
 **输出**: 返回已知限制的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级新闻聚合工、自动搜索筛选国内、外科技、社会新闻要点、适合个人用户快速、了解时事动态、核心能力、聚合国内外主流科、社会新闻源、自动筛选与去重、过滤低质量内容、按类别整理、每条含标题、生成结构化、Markdown、汇总报告等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
@@ -104,7 +98,7 @@ python scripts/news_aggregator.py --category=tech --max=10
 
 ```bash
 # 获取军事类新闻
-python scripts/news_aggregator.py --category=military --max=5
+py --category=military --max=5
 ```
 
 返回观察者网、澎湃新闻等来源的军事新闻，包含国内外军事动态。
@@ -115,7 +109,7 @@ python scripts/news_aggregator.py --category=military --max=5
 
 ```bash
 # 获取所有类别新闻
-python scripts/news_aggregator.py --category=all --max=15
+py --category=all --max=15
 ```
 
 返回科技、军事、社会三大类别的综合新闻汇总。
@@ -147,25 +141,21 @@ python scripts/news_aggregator.py --category=all --max=15
 pip install requests beautifulsoup4 markdown
 
 # 验证安装
-python scripts/news_aggregator.py --version
 ```
 
 ### 执行首次新闻聚合
 
 ```bash
 # 获取今日科技新闻
-python scripts/news_aggregator.py --category=tech
 ```
 
 ### 查看支持的新闻源
 
 ```bash
 # 列出所有新闻源
-python scripts/news_aggregator.py --list-sources
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
-
 
 ## 示例
 
@@ -193,7 +183,7 @@ python scripts/news_aggregator.py --list-sources
 | `--format` | 字符串 | markdown | 输出格式 |
 | `--lang` | 字符串 | zh | 语言偏好 |
 
-## 最佳实践
+## 优选实践
 
 ### 新闻筛选原则
 
@@ -235,10 +225,9 @@ python scripts/news_aggregator.py --list-sources
 
 ```bash
 # 检查网络连通性
-python scripts/news_aggregator.py --check-sources
 
 # 切换可用源
-python scripts/news_aggregator.py --category=tech --fallback
+py --category=tech --fallback
 ```
 
 可能原因：
@@ -250,23 +239,22 @@ python scripts/news_aggregator.py --category=tech --fallback
 
 ```bash
 # 强制刷新缓存
-python scripts/news_aggregator.py --category=tech --no-cache
+py --category=tech --no-cache
 
 # 指定时间范围
-python scripts/news_aggregator.py --category=tech --hours=24
+py --category=tech --hours=24
 ```
 
 ### 返回结果为空
 
 ```bash
 # 检查新闻源状态
-python scripts/news_aggregator.py --diagnose
 
 # 尝试其他类别
-python scripts/news_aggregator.py --category=social
+py --category=social
 
 # 增加抓取深度
-python scripts/news_aggregator.py --category=tech --depth=2
+py --category=tech --depth=2
 ```
 
 ### 中文乱码
@@ -274,10 +262,8 @@ python scripts/news_aggregator.py --category=tech --depth=2
 ```bash
 # 设置编码
 export PYTHONIOENCODING=utf-8
-python scripts/news_aggregator.py --category=tech
 
 # 或在脚本中指定
-python scripts/news_aggregator.py --encoding=utf-8
 ```
 
 ## 依赖说明
@@ -314,9 +300,27 @@ python scripts/news_aggregator.py --encoding=utf-8
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

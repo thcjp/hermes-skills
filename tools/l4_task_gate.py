@@ -34,47 +34,24 @@ import re
 import json
 import argparse
 from pathlib import Path
-from typing import Dict, List, Tuple, Any
+from typing import List, Tuple
 
-SKILL_REGISTRY_DIR = Path(__file__).parent
-sys.path.insert(0, str(SKILL_REGISTRY_DIR))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "config"))
+from project_config import TOOLS_DIR, PACKAGED_SKILLS_DIR
+sys.path.insert(0, str(TOOLS_DIR))
 
-from config import PACKAGED_SKILLS_DIR
-from skill_core.parser import parse_frontmatter as _parse_fm
-
-# 验证结果状态
-PASS = 'PASS'
-FAIL = 'FAIL'
-WARN = 'WARN'
-
-# 非能力点标题(元信息/补充说明),不检查任务映射和输出标准
-NON_CAPABILITY_HEADINGS = [
-    '能力覆盖范围', '技术细节', '处理流程', '输入输出规范',
-    '能力参数', '适用场景', '能力概览', '功能概览',
-    '输出格式', '脚本获取', '命令参数说明', '输出说明', '输入说明',
-    '源能力映射', '领域术语',
-]
-
-
-def parse_frontmatter(content: str) -> dict:
-    """解析frontmatter - 使用skill_core.parser统一解析"""
-    result = _parse_fm(content)
-    return result.get('fields', {})
-
-
-def extract_section(content: str, section_name: str) -> str:
-    """提取## 级别章节内容 (支持章节名变体匹配)"""
-    # 核心能力章节的变体匹配
-    if section_name == '核心能力':
-        # 匹配 "核心能力", "核心功能", "核心规则", "核心概念", "核心原则", "核心工作流", "核心操作"
-        pattern = r'##\s+核心(?:能力|功能|规则|概念|原则|工作流|操作)\s*\n(.*?)(?=\n## |\Z)'
-    elif section_name == '错误处理':
-        # 匹配 "错误处理", "异常处理"
-        pattern = r'##\s+(?:错误|异常)处理\s*\n(.*?)(?=\n## |\Z)'
-    else:
-        pattern = rf'## {re.escape(section_name)}\s*\n(.*?)(?=\n## |\Z)'
-    match = re.search(pattern, content, re.DOTALL)
-    return match.group(1).strip() if match else ''
+from skill_core.parser import parse_frontmatter, extract_section
+from skill_core.rules import (  # V135 F3: 统一checker/fixer共享常量
+    NON_CAPABILITY_HEADINGS, PASS, FAIL, WARN, ACTION_VERBS, VAGUE_SOLUTIONS,  # V104 W2/W3 + V134 E6
+    CAPABILITY_INPUT_KEYWORDS, CAPABILITY_PROCESS_KEYWORDS, CAPABILITY_OUTPUT_KEYWORDS,  # L4-1/L4-5
+    USAGE_SECTION_NAMES, STANDARD_CMD_PARAMS, INSTALL_INFO_KEYWORDS,  # L4-2/L4-5/L4-6
+    ERROR_SOLUTION_KEYWORDS, TABLE_HEADER_SCENARIO_KEYWORDS, TABLE_HEADER_SOLUTION_KEYWORDS,  # L4-3
+    LLM_MENTION_KEYWORDS, LLM_SPECIFIC_KEYWORDS,  # L4-4
+    API_MENTION_KEYWORDS, API_ACQUISITION_KEYWORDS, API_CONFIG_KEYWORDS,  # L4-4
+    ENV_MENTION_KEYWORDS, ENV_SPECIFIC_KEYWORDS,  # L4-4
+    FAQ_KEYWORDS, LIMITATIONS_KEYWORDS, UPGRADE_KEYWORDS, NON_TASK_KEYWORDS,  # L4-6
+    OUTPUT_FORMAT_KEYWORDS, RESULT_HANDLING_KEYWORDS,  # L4-5
+)
 
 
 def extract_h3_titles(section_content: str) -> List[str]:
@@ -105,9 +82,8 @@ def check_l4_task_mapping(content: str, fm_data: dict) -> Tuple[str, List[str]]:
         return (FAIL, [f"核心能力仅{len(capability_titles)}个能力点###标题,需要>=3个用户任务"])
     
     # 检查标题是否是有效任务（非"概述"、"简介"等非任务标题）
-    non_task_keywords = ['概述', '简介', '总结', '说明', '备注', '注意', '概览', 'Overview', 'Summary']
     for title in capability_titles:
-        is_non_task = any(kw.lower() in title.lower() for kw in non_task_keywords)
+        is_non_task = any(kw.lower() in title.lower() for kw in NON_TASK_KEYWORDS)  # [V135 F3] 统一常量
         if is_non_task:
             errors.append(f"核心能力标题'{title}'不是可执行任务(含'概述/简介'等)")
     
@@ -123,23 +99,13 @@ def check_l4_task_mapping(content: str, fm_data: dict) -> Tuple[str, List[str]]:
         section = cap_content[start:end].strip()
         
         # 检查是否有输入/触发条件描述
-        has_input = any(kw in section.lower() for kw in [
-            '输入', '参数', '触发', '当', '如果', '用户', '请求', '提供',
-            'input', 'param', 'trigger', 'when', 'if', 'user', 'request',
-        ])
+        has_input = any(kw in section.lower() for kw in CAPABILITY_INPUT_KEYWORDS)  # [V135 F3] 统一常量
         
         # 检查是否有输出/结果描述
-        has_output = any(kw in section.lower() for kw in [
-            '输出', '返回', '结果', '生成', '创建', '保存', '导出',
-            'output', 'return', 'result', 'generate', 'create', 'save', 'export',
-        ])
+        has_output = any(kw in section.lower() for kw in CAPABILITY_OUTPUT_KEYWORDS)  # [V135 F3] 统一常量
         
         # 检查是否有处理/执行描述
-        has_process = any(kw in section.lower() for kw in [
-            '执行', '处理', '调用', '运行', '分析', '解析', '转换', '检查',
-            '匹配', '搜索', '过滤', '排序', '发送', '接收',
-            'execute', 'process', 'call', 'run', 'analyze', 'parse',
-        ])
+        has_process = any(kw in section.lower() for kw in CAPABILITY_PROCESS_KEYWORDS)  # [V135 F3] 统一常量
         
         if not has_input and not has_output:
             errors.append(f"能力'{title}'缺少输入/输出描述,Agent无法理解任务流程")
@@ -181,11 +147,7 @@ def check_l4_command_executability(content: str, fm_data: dict) -> Tuple[str, Li
         script_name = Path(script).name if '/' in script or '\\' in script else script
         
         # 检查是否有scripts目录说明或安装说明
-        has_install_info = any(kw in content for kw in [
-            'scripts/', 'scripts\\', 'scripts目录', 'scripts folder',
-            '安装', 'Install', '获取', '下载', 'clone', 'npm install',
-            'pip install', '脚本目录', 'script directory',
-        ])
+        has_install_info = any(kw in content for kw in INSTALL_INFO_KEYWORDS)  # [V135 F3] 统一常量
         
         # 检查脚本是否在代码块中给出了完整调用示例
         script_in_codeblock = bool(re.search(
@@ -204,7 +166,7 @@ def check_l4_command_executability(content: str, fm_data: dict) -> Tuple[str, Li
         for param in set(params):
             # 检查参数是否在skill内容中有解释
             # 排除常见标准参数
-            if param in ['--help', '-h', '--version', '-v']:
+            if param in STANDARD_CMD_PARAMS:  # [V135 F3] 统一常量
                 continue
             # 检查参数是否在代码块外有解释
             content_outside_blocks = re.sub(r'```[\s\S]*?```', '', content)
@@ -245,8 +207,8 @@ def check_l4_error_recovery(content: str, fm_data: dict) -> Tuple[str, List[str]
         
         # 检查表头是否包含必要列
         header = lines[0].lower()
-        has_scenario = any(kw in header for kw in ['场景', '错误', '问题', 'error', 'scenario'])
-        has_solution = any(kw in header for kw in ['处理', '解决', '修复', '方式', 'solution', 'fix'])
+        has_scenario = any(kw in header for kw in TABLE_HEADER_SCENARIO_KEYWORDS)  # [V135 F3] 统一常量
+        has_solution = any(kw in header for kw in TABLE_HEADER_SOLUTION_KEYWORDS)  # [V135 F3] 统一常量
         
         if not has_scenario:
             errors.append("错误处理表格缺少'错误场景'列")
@@ -256,13 +218,8 @@ def check_l4_error_recovery(content: str, fm_data: dict) -> Tuple[str, List[str]
         # 检查每个错误处理条目是否有具体可执行的恢复步骤
         # 注意: "检查"和"确认"在中文中是动作动词(如"检查输入格式"),不是空话
         # 真正的空话是仅有"重试"/"稍后"等无具体对象的词
-        vague_solutions = ['重试', '稍后', '联系', '确保', '建议', 'retry', 'try again']
-        action_verbs = ['执行', '运行', '配置', '安装', '修改', '删除', '创建', '重启', '切换',
-                       '压缩', '转换', '清理', '更新', '替换', '导入', '导出', '设置',
-                       '检查', '确认', '提供', '补充', '参考', '验证', '排查', '恢复',
-                       'execute', 'run', 'config', 'install', 'modify', 'delete', 'create',
-                       'restart', 'switch', 'compress', 'convert', 'clean', 'update', 'replace',
-                       'check', 'verify', 'provide', 'validate']
+        vague_solutions = VAGUE_SOLUTIONS  # [V134 E6] 统一使用skill_core.rules.VAGUE_SOLUTIONS
+        action_verbs = ACTION_VERBS  # [V134 E6] 统一使用skill_core.rules.ACTION_VERBS
         
         data_rows = lines[1:]  # 跳过表头
         vague_count = 0
@@ -301,7 +258,7 @@ def check_l4_error_recovery(content: str, fm_data: dict) -> Tuple[str, List[str]
                 idx = err_content.find(item)
                 item_context = err_content[idx:idx+300]
             
-            has_solution = any(kw in item_context for kw in ['处理', '解决', '修复', '方式', '应', '需', '可'])
+            has_solution = any(kw in item_context for kw in ERROR_SOLUTION_KEYWORDS)  # [V135 F3] 统一常量
             if not has_solution:
                 errors.append(f"错误条目'{item[:30]}'缺少处理方式描述")
     
@@ -323,45 +280,36 @@ def check_l4_dependency_closure(content: str, fm_data: dict) -> Tuple[str, List[
         return (FAIL, ["缺少## 依赖说明章节"])
     
     # 检查LLM依赖描述是否具体
-    has_llm_mention = any(kw in dep_content for kw in ['LLM', 'llm', 'AI', 'Agent', '大模型'])
-    if has_llm_mention:
+    has_llm_mention = any(kw in dep_content for kw in LLM_MENTION_KEYWORDS)  # [V135 F3] 统一常量
+    # V148 T3: 检测否定语义(如"无需LLM"、"不依赖AI"等),避免误报
+    has_no_llm = any(neg in dep_content for neg in ['无需', '不需要', '不依赖', '不使用', '无需LLM', 'no LLM', 'without LLM']) \
+                 and any(kw in dep_content for kw in LLM_MENTION_KEYWORDS)
+    if has_llm_mention and not has_no_llm:
         # LLM依赖是否具体(不只是"需要LLM支持")
-        llm_specific = any(kw in dep_content for kw in [
-            'Claude', 'GPT', 'Gemini', 'Qwen', 'GLM', 'DeepSeek',
-            '推理', '理解', '生成', '分析能力', '自然语言',
-            'Agent内置', 'Agent平台', 'reasoning', 'understanding',
-        ])
+        llm_specific = any(kw in dep_content for kw in LLM_SPECIFIC_KEYWORDS)  # [V135 F3] 统一常量
         if not llm_specific:
             errors.append("LLM依赖描述过于笼统(仅说'需要LLM'),未说明需要什么能力")
     
     # 检查API Key获取说明
-    has_api_mention = any(kw in dep_content for kw in ['API Key', 'API密钥', 'api_key', 'apikey'])
+    has_api_mention = any(kw in dep_content for kw in API_MENTION_KEYWORDS)  # [V135 F3] 统一常量
     has_no_api = '无需' in dep_content and ('API' in dep_content or 'Key' in dep_content or '密钥' in dep_content)
     
     if has_api_mention and not has_no_api:
         # API Key是否给出获取步骤
-        has_acquisition = any(kw in dep_content for kw in [
-            '获取', '申请', '注册', '登录', '访问', '官网', '后台', '控制台',
-            'https://', 'http://', '链接', '地址',
-        ])
+        has_acquisition = any(kw in dep_content for kw in API_ACQUISITION_KEYWORDS)  # [V135 F3] 统一常量
         if not has_acquisition:
             errors.append("声明需要API Key但未给出获取步骤(官网链接/注册流程)")
         
         # API Key是否说明配置方式
-        has_config = any(kw in dep_content for kw in [
-            '环境变量', 'env', 'export', '配置文件', 'config',
-        ])
+        has_config = any(kw in dep_content for kw in API_CONFIG_KEYWORDS)  # [V135 F3] 统一常量
         if not has_config:
             errors.append("声明需要API Key但未说明配置方式(环境变量/配置文件)")
     
     # 检查运行环境是否明确
-    has_env = any(kw in dep_content for kw in ['运行环境', '操作系统', 'Windows', 'macOS', 'Linux', 'Agent平台'])
+    has_env = any(kw in dep_content for kw in ENV_MENTION_KEYWORDS)  # [V135 F3] 统一常量
     if has_env:
         # 是否有具体平台要求
-        env_specific = any(kw in dep_content for kw in [
-            'Windows', 'macOS', 'Linux', 'Claude Code', 'Cursor', 'Codex',
-            'Gemini CLI', 'TRAE', 'Agent',
-        ])
+        env_specific = any(kw in dep_content for kw in ENV_SPECIFIC_KEYWORDS)  # [V135 F3] 统一常量
         if not env_specific:
             errors.append("运行环境描述过于笼统,未指定具体支持的平台")
     
@@ -383,18 +331,14 @@ def check_l4_output_clarity(content: str, fm_data: dict) -> Tuple[str, List[str]
         return (FAIL, ["无法找到## 核心能力章节"])
     
     # 检查整个skill是否有输出格式说明
-    output_format_keywords = ['JSON', 'CSV', 'Markdown', 'markdown', '文本', '表格', 'JSON格式',
-                              '格式输出', '输出格式', '返回格式', '输出结果', '返回结果',
-                              'output format', '返回值', '输出内容']
-    has_output_format = any(kw in content for kw in output_format_keywords)
+    has_output_format = any(kw in content for kw in OUTPUT_FORMAT_KEYWORDS)  # [V135 F3] 统一常量
     
     if not has_output_format:
         errors.append("skill未说明输出格式(JSON/CSV/Markdown/文本),Agent无法判断输出标准")
     
     # 检查使用流程/使用规范中是否有结果处理说明
-    usage_sections = ['使用流程', '使用规范', '使用方法', '使用指南', '快速开始', 'Quick Start']
     usage_content = ''
-    for sec in usage_sections:
+    for sec in USAGE_SECTION_NAMES:  # [V135 F3] 统一常量
         c = extract_section(content, sec)
         if c:
             usage_content = c
@@ -402,10 +346,7 @@ def check_l4_output_clarity(content: str, fm_data: dict) -> Tuple[str, List[str]
     
     if usage_content:
         # 检查是否有结果处理/输出处理说明
-        has_result_handling = any(kw in usage_content for kw in [
-            '结果', '输出', '返回', '保存', '导出', '处理完成', '执行完成',
-            'result', 'output', 'return', 'save', 'export',
-        ])
+        has_result_handling = any(kw in usage_content for kw in RESULT_HANDLING_KEYWORDS)  # [V135 F3] 统一常量
         if not has_result_handling:
             errors.append("使用流程中未说明结果处理方式,用户不知道执行后会得到什么")
     
@@ -423,10 +364,7 @@ def check_l4_output_clarity(content: str, fm_data: dict) -> Tuple[str, List[str]
         section = cap_content[start:end].strip()
         
         # 检查该能力是否有输出描述
-        has_output = any(kw in section.lower() for kw in [
-            '输出', '返回', '结果', '生成', '创建', '保存', '导出', '显示',
-            'output', 'return', 'result', 'generate', 'create', 'save', 'export',
-        ])
+        has_output = any(kw in section.lower() for kw in CAPABILITY_OUTPUT_KEYWORDS)  # [V135 F3] 统一常量
         
         if not has_output:
             no_output_count += 1
@@ -455,9 +393,8 @@ def check_l4_user_experience(content: str, fm_data: dict) -> Tuple[str, List[str
     is_free = slug.endswith('-free')
     
     # 检查使用流程是否线性（有"第一步"、"第二步"或编号步骤）
-    usage_sections = ['使用流程', '使用规范', '使用方法', '使用指南', '快速开始', 'Quick Start']
     usage_content = ''
-    for sec in usage_sections:
+    for sec in USAGE_SECTION_NAMES:  # [V135 F3] 统一常量
         c = extract_section(content, sec)
         if c:
             usage_content = c
@@ -473,18 +410,18 @@ def check_l4_user_experience(content: str, fm_data: dict) -> Tuple[str, List[str
             errors.append("使用流程非线性(缺少'第一步/第二步'或编号步骤),用户可能不知道执行顺序")
     
     # 检查FAQ
-    has_faq = any(kw in content for kw in ['## FAQ', '## 常见问题', '## Frequently Asked', '### FAQ'])
+    has_faq = any(kw in content for kw in FAQ_KEYWORDS)  # [V135 F3] 统一常量
     if not has_faq:
         errors.append("缺少FAQ章节,用户常见疑问无法自助解决")
     
     # -free版本检查升级提示
     if is_free:
-        has_upgrade = any(kw in content for kw in ['升级', '完整版', '付费版', '高级版', 'Upgrade', 'upgrade'])
+        has_upgrade = any(kw in content for kw in UPGRADE_KEYWORDS)  # [V135 F3] 统一常量
         if not has_upgrade:
             errors.append("免费版缺少升级提示,用户不知道有完整版可用")
     
     # 检查已知限制
-    has_limitations = any(kw in content for kw in ['## 已知限制', '## 限制', '## Limitations', '## 限制说明'])
+    has_limitations = any(kw in content for kw in LIMITATIONS_KEYWORDS)  # [V135 F3] 统一常量
     if not has_limitations:
         errors.append("缺少已知限制章节,用户可能误用skill能力范围")
     
@@ -506,7 +443,7 @@ def check_l4_task_gate(slug: str) -> dict:
         }
     
     content = skill_path.read_text(encoding='utf-8')
-    fm_data = parse_frontmatter(content)
+    fm_data = parse_frontmatter(content)['fields']
     
     # 执行所有检查
     checks = {}

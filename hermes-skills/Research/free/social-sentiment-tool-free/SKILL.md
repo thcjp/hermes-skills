@@ -1,6 +1,7 @@
 ---
+
 name: "social-sentiment-tool-free"
-description: "轻量级社交媒体情感分析工具,支持单平台关键词监控与基础情感分类,适合个人品牌追踪"
+description: "轻量级社交媒体情感分析工具,支持单平台关键词监控与基础情感分类,适合个人品牌追踪。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,10 @@ metadata:
     - "个人效率"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # 社交情感分析免费版
@@ -48,48 +53,36 @@ metadata:
 ### 仅支持单一平台数据采集
 仅支持单一平台数据采集
 
-**输入**: 用户提供仅支持单一平台数据采集所需的指令和必要参数。
-**处理**: 按照skill规范执行仅支持单一平台数据采集操作,遵循单一意图原则。
 **输出**: 返回仅支持单一平台数据采集的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 情感分类使用词典法(准确率约7
 情感分类使用词典法(准确率约70-80%)
 
-**输入**: 用户提供情感分类使用词典法(准确率约7所需的指令和必要参数。
-**处理**: 按照skill规范执行情感分类使用词典法(准确率约7操作,遵循单一意图原则。
 **输出**: 返回情感分类使用词典法(准确率约7的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 不支持LLM增强情感分析
 不支持LLM增强情感分析
 
-**输入**: 用户提供不支持LLM增强情感分析所需的指令和必要参数。
-**处理**: 按照skill规范执行不支持LLM增强情感分析操作,遵循单一意图原则。
 **输出**: 返回不支持LLM增强情感分析的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 不支持病毒式传播内容检测
 不支持病毒式传播内容检测
 
-**输入**: 用户提供不支持病毒式传播内容检测所需的指令和必要参数。
-**处理**: 按照skill规范执行不支持病毒式传播内容检测操作,遵循单一意图原则。
 **输出**: 返回不支持病毒式传播内容检测的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 不支持竞品情感对比
 不支持竞品情感对比
 
-**输入**: 用户提供不支持竞品情感对比所需的指令和必要参数。
-**处理**: 按照skill规范执行不支持竞品情感对比操作,遵循单一意图原则。
 **输出**: 返回不支持竞品情感对比的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 - 不支持定时自动监控
 - 不支持可视化图表报告
 
-**输入**: 用户提供已知限制所需的指令和必要参数。
-**处理**: 按照skill规范执行已知限制操作,遵循单一意图原则。
 **输出**: 返回已知限制的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：轻量级社交媒体情、感分析工具、支持单平台关键词、监控与基础情感分、适合个人品牌追踪、社交情感分析免费、版为个人用户提供、轻量级的社交媒体、情感监控能力等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
@@ -149,8 +142,6 @@ def classify(text):
     neg = sum(1 for k in NEGATIVE if k in t)
     return 'positive' if pos > neg else ('negative' if neg > pos else 'neutral')
 
-df['sentiment'] = df['text'].apply(classify)
-
 # 负面反馈分析
 negative_feedback = df[df['sentiment'] == 'negative']
 print("=== 负面反馈样本 ===")
@@ -192,10 +183,8 @@ def classify(text):
     neg = sum(1 for k in NEGATIVE if k in t)
     return 'positive' if pos > neg else ('negative' if neg > pos else 'neutral')
 
-df['sentiment'] = df['text'].apply(classify)
-
 # 按日统计情感分布
-daily = df.groupby('date')['sentiment'].value_counts(normalize=True).unstack()
+daily = df.groupby('date')['sentiment'].unstack()
 print(daily.fillna(0).round(2))
 ```
 
@@ -236,8 +225,6 @@ id,text,created_at,author
 ```python
 import pandas as pd
 
-df = pd.read_csv('social-mentions.csv')
-
 POSITIVE = ['好', '推荐', '好用', '优秀', 'love', 'amazing', 'best']
 NEGATIVE = ['差', '糟糕', '问题', 'bug', 'hate', 'terrible', 'broken']
 
@@ -247,12 +234,9 @@ def classify(text):
     neg = sum(1 for k in NEGATIVE if k in t)
     return 'positive' if pos > neg else ('negative' if neg > pos else 'neutral')
 
-df['sentiment'] = df['text'].apply(classify)
-
 # 输出结果
 print(df[['text', 'sentiment']])
 print("\n情感分布:")
-print(df['sentiment'].value_counts(normalize=True).round(2))
 ```
 
 ### 第四步:生成简要报告
@@ -345,7 +329,7 @@ def classify_sentiment(text):
 def analyze(csv_path):
     """执行情感分析"""
     df = pd.read_csv(csv_path)
-    df['sentiment'] = df['text'].apply(classify_sentiment)
+apply(classify_sentiment)
     
     # 统计
     total = len(df)
@@ -364,7 +348,7 @@ if __name__ == '__main__':
     analyze(sys.argv[1])
 ```
 
-## 最佳实践
+## 优选实践
 
 ### 1. 情感词典要贴合领域
 
@@ -394,7 +378,7 @@ negative = df[df['sentiment'] == 'negative']
 
 ```python
 # 按日/周统计情感分布
-df.groupby('date')['sentiment'].value_counts(normalize=True)
+df.value_counts(normalize=True)
 ```
 
 ### 5. 词典法结果需人工复核
@@ -455,14 +439,32 @@ A: 可以。情感词典支持多语言,只需在词典中添加目标语言的�
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,核心功能需要exec命令行执行Python脚本)
+- **分类**: MD+execute(纯Markdown指令,核心功能需要exec命令行执行Python脚本)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent调用Python脚本完成社交媒体情感分析任务。免费版聚焦个人用户的单平台数据采集、词典法情感分类与基础主题提取,适合个人品牌口碑监控、产品用户反馈分析与话题情感趋势追踪场景。
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

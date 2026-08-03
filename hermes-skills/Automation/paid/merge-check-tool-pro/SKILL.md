@@ -1,5 +1,6 @@
 ---
-slug: "merge-check-tool-pro"
+
+slug: merge-check-tool-pro
 name: "merge-check-tool-pro"
 version: "1.0.0"
 displayName: "合并检查工具(专业版)"
@@ -39,7 +40,9 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+
 ---
+
 # 合并检查工具(专业版)
 
 ## 概述
@@ -61,21 +64,21 @@ category: "Automation"
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -275,7 +278,7 @@ bash （请参考skill目录中的脚本文件） owner/repo --months 6 --format
 | 阻断 | 30-49 | 阻断合并,要求处理 |
 | 严重 | <30 | 阻断并通知维护者 |
 
-## 最佳实践
+## 优选实践
 
 ### 1. 维护者每日队列分流
 
@@ -290,15 +293,18 @@ echo "## 每日PR分流 - $(date +%Y-%m-%d)"
 echo ""
 # ...
 # 高概率可合并
-echo "### 可合并(评分≥80)"
+echo "
+### 可合并(评分≥80)"
 bash （请参考skill目录中的脚本文件） "$REPO" --state open --min-score 80 --format list
 # ...
 # 需关注(评分50-79)
-echo "### 需关注(评分50-79)"
+echo "
+### 需关注(评分50-79)"
 bash （请参考skill目录中的脚本文件） "$REPO" --state open --score-range 50-79 --format list
 # ...
 # 需介入(评分<50)
-echo "### 需介入(评分<50)"
+echo "
+### 需介入(评分<50)"
 bash （请参考skill目录中的脚本文件） "$REPO" --state open --max-score 49 --format list
 ```
 
@@ -354,7 +360,7 @@ jobs:
       - name: 检查合并性
         id: check
         run: |
-          SCORE=$(bash （请参考skill目录中的脚本文件） ${{ github.repository }}#${{ github.event.pull_request.number }} | jq -r '.merge_score')
+          SCORE=$(bash （请参考skill目录中的脚本文件） ${{ github.event.pull_request.number }} | jq -r '.merge_score')
           echo "score=$SCORE" >> $GITHUB_OUTPUT
       - name: 低分预警
         if: steps.check.outputs.score < 30
@@ -421,7 +427,7 @@ jobs:
 - 通知渠道(Slack/飞书)的 webhook URL 需配置为仓库Secret.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+execute(纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。PRO版面向团队与维护者,提供批量分析、历史趋势、CI/CD门禁与自定义规则能力,完全兼容免费版单PR分析.
 ## 错误处理
 
@@ -436,3 +442,14 @@ jobs:
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

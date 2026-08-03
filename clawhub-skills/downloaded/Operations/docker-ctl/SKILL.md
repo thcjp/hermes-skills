@@ -35,7 +35,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # Docker Ctl
 
 Inspect containers, logs, and images via podman. On Bazzite/Fedora, podman is the default container runtime and is always available.

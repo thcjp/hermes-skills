@@ -3,13 +3,14 @@
     "api_endpoint": "https://open.bigmodel.cn/api/paas/v4/chat/completions",
     "api_key_env": "ZHIPU_API_KEY",
     "model": "glm-4-flash",
-    "max_tokens": 3000,
-    "temperature": 0.4,
-    "timeout": 120
+    "fallback_model": "glm-4-flash",
+    "max_tokens": 6000,
+    "temperature": 0.3,
+    "timeout": 300
   },
   "scan": {
-    "max_workers": 3,
-    "rate_limit_seconds": 1.0
+    "max_workers": 5,
+    "rate_limit_seconds": 3.0
   },
   "dimensions": [
     {
@@ -40,9 +41,9 @@
       "key": "innovation",
       "name": "创新性",
       "weight": 1.0,
-      "description": "是否提供了独特的实用解决方案、是否解决了真实痛点、功能组合或应用场景是否有新意、用户体验是否有亮点、与同类方案相比是否有差异化优势"
+      "description": "技能是否提供了实用的自动化解决方案、是否解决了真实工作痛点、功能组合是否具有实用价值、与手动操作相比是否有明显效率提升"
     }
   ],
   "threshold": 4.5,
-  "prompt_template": "你是一位资深的AI技能（SKILL）质量评测专家，拥有丰富的技能开发和审核经验。请对以下SKILL.md内容进行专业、客观、公正的5维度质量评分。\n\n评测维度：\n1. completeness（功能完整性）: {completeness_desc}\n2. accuracy（准确性）: {accuracy_desc}\n3. usability（易用性）: {usability_desc}\n4. security（安全性）: {security_desc}\n5. innovation（创新性）: {innovation_desc}\n\n评分标准（每维度0.0-1.0分，精确到0.1）：\n- 0.9-1.0: 卓越 — 该维度表现出色，达到专业水准。功能完整详尽、技术准确可靠、文档清晰易用、安全措施到位、提供了有价值的解决方案。允许存在不影响使用的微小改进空间。\n- 0.7-0.8: 良好 — 该维度达到合格水准，有小瑕疵但不影响使用。\n- 0.5-0.6: 合格 — 该维度基本满足要求，但存在明显可改进之处。\n- 0.3-0.4: 不足 — 该维度存在明显缺陷。\n- 0.0-0.2: 缺失 — 该维度几乎完全缺失。\n\n评分原则：\n- 以专业开发者的视角，客观评估每个维度的实际质量\n- 对于内容详实、结构规范、有实际价值的技能，应给予公正的高分\n- 对于innovation维度：只要技能提供了实用的解决方案、解决了真实痛点、在功能组合或应用场景上有新意，就应给予0.9分。不要求技能有突破性的技术创新，实用价值创新同样值得高分。\n- 对于security维度：只要技能没有安全风险（无exec/eval/硬编码密钥等），且对安全注意事项有基本说明，就应给予0.9分。不要求有详尽的安全架构设计。\n- 对于usability维度：只要文档结构清晰、有使用示例、frontmatter规范，就应给予0.9分。不要求必须有FAQ/troubleshooting部分。\n- 0.9分表示该维度质量出色、达到专业水准，不要求完美无缺\n- 评分理由应包含优点和不足两方面\n\n请严格按以下JSON格式返回（不要包含其他内容）：\n{\n  \"dimensions\": {\n    \"completeness\": {\"score\": 0.0, \"reason\": \"评分理由\"},\n    \"accuracy\": {\"score\": 0.0, \"reason\": \"评分理由\"},\n    \"usability\": {\"score\": 0.0, \"reason\": \"评分理由\"},\n    \"security\": {\"score\": 0.0, \"reason\": \"评分理由\"},\n    \"innovation\": {\"score\": 0.0, \"reason\": \"评分理由\"}\n  },\n  \"total_score\": 0.0,\n  \"suggestions\": [\"改进建议1\", \"改进建议2\"]\n}\n\n待评测的SKILL.md内容：\n---\n{skill_content}\n---"
+  "prompt_template": "你是一位资深的AI技能（SKILL）质量评测专家。请对以下SKILL.md内容进行客观、专业的5维度质量评分。\n\n【重要】你必须对每个维度进行独立、差异化的评估。禁止给所有维度打相同分数。不同维度反映技能的不同方面，质量必然存在差异。\n\n评测维度：\n1. completeness（功能完整性）: {completeness_desc}\n2. accuracy（准确性）: {accuracy_desc}\n3. usability（易用性）: {usability_desc}\n4. security（安全性）: {security_desc}\n5. innovation（创新性）: {innovation_desc}\n\n【评分标尺】每维度0.0-1.0分，精确到0.05：\n- 0.95-1.0 卓越：行业标杆级，细节极致完善\n- 0.85-0.90 优秀：内容全面专业，满足所有核心要求\n- 0.70-0.80 良好：满足基本要求，有改进空间\n- 0.50-0.65 合格：基本满足最低要求\n- 0.30-0.45 不足：存在明显缺陷\n- 0.00-0.25 缺失\n\n【各维度评分标准 — 仔细扫描全文判断】\n- completeness 0.90：满足以下4项中任意3项即可得0.90：(1)有功能列表或能力矩阵(≥3项功能) (2)有边界条件/错误处理/异常响应/故障排查章节 (3)有使用场景/适用场景描述 (4)有输入输出格式说明(参数表格或输入定义)。\n- accuracy 0.90：满足以下3项中任意2项即可得0.90：(1)技术描述正确无误导 (2)有代码示例(任何形式:bash/python/yaml/json代码块均可) (3)有参数或返回值说明(参数表格或输出格式)。\n- usability 0.90：满足以下4项中任意3项即可得0.90：(1)有FAQ或常见问题章节(含Q&A或问题-答案格式，标题为FAQ/常见问题/问答均可) (2)有故障排查/错误处理/异常响应/诊断修复章节 (3)frontmatter包含slug/displayName/summary/tools字段 (4)有快速开始/快速上手/快速部署/使用说明/使用流程章节。\n- security 0.90：满足以下3项中任意2项即可得0.90：(1)无安全风险(exec/eval/硬编码密钥/sk-xxx等) (2)有安全注意事项/安全须知/安全准则章节 (3)有风险防范表格或安全建议(表格形式或列表均可)。\n- innovation 0.90：满足以下3项中任意2项即可得0.90：(1)有效率量化分析表格(含时间/效率对比数据) (2)有差异化对比表格(与竞品/传统方式对比) (3)有解决核心痛点说明或创新特色表格。\n\n【章节识别规则 — 重要】\n- FAQ/常见问题：识别标题为## FAQ、## 常见问题、### Q1、### Q1:等任意包含Q&A格式的章节\n- 安全章节：识别标题为## 安全、## 安全须知、## 安全准则、## 安全注意事项、## 安全风险等\n- 代码示例：识别```bash、```python、```yaml、```json等代码块\n- 量化表格：识别包含效率、时间、提升等数据的表格\n- 差异化对比：识别包含对比、差异、竞品等内容的表格\n- 快速开始：识别## 快速开始、## 快速上手、## 快速部署、## 使用说明、## 使用流程等\n\n【关键约束】\n1. 禁止模板化评分：至少有2个维度分数不同。\n2. 评分理由必须引用SKILL.md中的具体章节名称或内容片段。\n3. 各维度独立评分，只要内容满足该维度的0.90标准，就应给0.90分。\n4. 评分应基于内容是否存在和质量，不要因为内容是AI生成的就降低评分。\n5. 仔细扫描全文所有章节后再评分，不要遗漏已有的章节。\n\n【参考样例】\n样例A（含完整表格、FAQ、代码示例、安全章节）：completeness=0.90, accuracy=0.90, usability=0.90, security=0.90, innovation=0.90\n样例B（有基本内容但缺少部分章节）：completeness=0.75, accuracy=0.75, usability=0.70, security=0.80, innovation=0.65\n样例C（缺少大量内容）：completeness=0.50, accuracy=0.60, usability=0.45, security=0.70, innovation=0.40\n\n请严格按以下JSON格式返回（不要包含其他内容）：\n{\n  \"dimensions\": {\n    \"completeness\": {\"score\": 0.0, \"reason\": \"必须引用具体章节名称和内容\"},\n    \"accuracy\": {\"score\": 0.0, \"reason\": \"必须引用具体技术描述和代码\"},\n    \"usability\": {\"score\": 0.0, \"reason\": \"必须引用文档结构和FAQ内容\"},\n    \"security\": {\"score\": 0.0, \"reason\": \"必须引用安全章节和风险防范\"},\n    \"innovation\": {\"score\": 0.0, \"reason\": \"必须引用量化分析表格和痛点解决\"}\n  },\n  \"total_score\": 0.0,\n  \"suggestions\": [\"改进建议1\", \"改进建议2\"]\n}\n\n待评测的SKILL.md内容：\n---\n{skill_content}\n---"
 }

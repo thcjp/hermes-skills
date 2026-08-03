@@ -119,11 +119,9 @@ Output: Structured Documentation
 - 损坏文件修复
 - 物理介质数据恢复
 
-
 ## 触发条件
 
 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于非本工具能力范围的需求。
-
 
 ## Configuration
 

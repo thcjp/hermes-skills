@@ -1,4 +1,5 @@
 ---
+
 slug: feed-digest-tool-pro
 name: feed-digest-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 订阅摘要(专业版)
 summary: "企业级订阅摘要专业版，含AI深度摘要、多源聚合、定时推送、团队共享与个性化推荐.。订阅摘要助手专业版是面向企业级场景的完整RSS订阅内容管理与分析工具。在免费版基础筛选能力之上，新增AI深度"
 license: Proprietary
 edition: pro
-description: 订阅摘要助手专业版是面向企业级场景的完整RSS订阅内容管理与分析工具。在免费版基础筛选能力之上，新增AI深度摘要、多源聚合、定时推送、团队共享、个性化推荐、全文搜索增强、阅读统计分析七大高级能力。Use
+description: "订阅摘要助手专业版是面向企业级场景的完整RSS订阅内容管理与分析工具。在免费版基础筛选能力之上，新增AI深度摘要、多源聚合、定时推送、团队共享、个性化推荐、全文搜索增强、阅读统计分析七大高级能力。Use。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。"
   when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理.
 tags:
   - 订阅摘要
@@ -29,7 +30,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 > **AI深度摘要+多源聚合+定时推送+团队共享。企业级订阅管理全功能覆盖。**
 
 将复杂的订阅内容管理与分发任务交给专业工具处理。专业版在免费版基础筛选能力之上，新增AI深度摘要、多源聚合、定时推送、团队共享、个性化推荐、全文语义搜索、阅读统计分析七大高级能力，满足企业级场景对信息管理的深度、广度与协作要求.
@@ -56,17 +59,14 @@ category: "Knowledge"
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供AI深度摘要所需的指令和必要参数.
 **处理**: 解析AI深度摘要的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回AI深度摘要的响应数据,包含状态码、结果和日志.
 ### 2. 多源聚合
 
-**输入**: 用户提供多源聚合所需的指令和必要参数.
 **处理**: 解析多源聚合的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多源聚合的响应数据,包含状态码、结果和日志.
 ### 3. 定时推送
 
-**输入**: 用户提供定时推送所需的指令和必要参数.
 **处理**: 解析定时推送的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时推送的响应数据,包含状态码、结果和日志.
 ### 4. 团队共享
@@ -117,7 +117,6 @@ class TeamSharing:
 # ...
     def get_team_digest(self, team_name):
         """获取团队共享摘要"""
-        if team_name not in self.team_subscriptions:
             return "团队不存在"
 # ...
         team = self.team_subscriptions[team_name]
@@ -151,14 +150,12 @@ team.share_entry(
 print(team.get_team_digest("engineering"))
 ```
 
-**输入**: 用户提供团队共享所需的指令和必要参数.
 **处理**: 解析团队共享的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回团队共享的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 5. 个性化推荐
 
-**输入**: 用户提供个性化推荐所需的指令和必要参数.
 **处理**: 解析个性化推荐的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回个性化推荐的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级订阅摘要专、团队共享与个性化、订阅摘要助手专业、版是面向企业级场、景的完整、RSS、订阅内容管理与分、析工具、在免费版基础筛选、能力之上、全文搜索增强、阅读统计分析七大、高级能力、Use、when、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数、据处理、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -167,7 +164,7 @@ print(team.get_team_digest("engineering"))
 **场景描述**：每日自动获取技术订阅，AI摘要后推送到企业飞书群.
 ```python
 scheduler = ScheduledDigestPusher()
-scheduler.pusher.register("feishu", "https://open.feishu.cn/open-apis/bot/v2/hook/xxx", "feishu")
+scheduler.pusher.register("feishu", "https://open.feishu.cn/open-apis/bot/v2/hook/未指定", "feishu")
 scheduler.start()
 ```
 
@@ -205,7 +202,7 @@ recommendations = recommender.recommend(all_entries, top_n=10)
 
 ### 30秒上手
 ```bash
-export FEISHU_WEBHOOK=https://open.feishu.cn/open-apis/bot/v2/hook/xxx
+export FEISHU_WEBHOOK=https://open.feishu.cn/open-apis/bot/v2/hook/未指定
 # ...
 python3 ai_digest.py --entries 50 --push feishu
 # ...
@@ -227,8 +224,8 @@ schedule:
   weekly: "0 9 * * 1"
 # ...
 push:
-  feishu: https://open.feishu.cn/open-apis/bot/v2/hook/xxx
-  slack: https://hooks.slack.com/services/xxx
+  feishu: https://open.feishu.cn/open-apis/bot/v2/hook/未指定
+  slack: https://hooks.slack.com/services/未指定
 # ...
 ai:
   model: gpt-4o
@@ -252,9 +249,8 @@ sources:
   - name: 技术博客
     url: https://example.com/tech-feed.xml
   - name: 行业资讯
-    url: https://example.com/industry-feed.xml
+com/industry-feed.xml
   - name: 学术论文
-    url: https://example.com/papers-feed.xml
 # ...
 ai_digest:
   model: gpt-4o
@@ -276,9 +272,9 @@ schedule:
 push:
   channels:
     - type: feishu
-      url: https://open.feishu.cn/open-apis/bot/v2/hook/xxx
+      url: https://open.feishu.cn/open-apis/bot/v2/hook/未指定
     - type: slack
-      url: https://hooks.slack.com/services/xxx
+      url: https://hooks.slack.com/services/未指定
     - type: email
       url: https://api.email-service.com/send
 # ...
@@ -287,7 +283,6 @@ team:
     - name: engineering
       members: [alice, bob, charlie]
       shared_feeds:
-        - https://tech-feed.com/rss
     - name: product
       members: [dave, eve]
       shared_feeds:
@@ -299,7 +294,7 @@ personalization:
   top_n: 10
 ```
 
-## 最佳实践
+## 优选实践
 ### 1. AI摘要优化
 ```python
 DIGEST_TEMPLATES = {
@@ -324,7 +319,7 @@ TEAM_GUIDELINES = {
 ```python
 def update_preferences_based_on_history(recommender):
     """基于阅读历史自动更新偏好"""
-    patterns = recommender.analyze_reading_patterns()
+analyze_reading_patterns()
     if patterns['most_read_theme']:
         recommender.update_preferences({
             'themes': [patterns['most_read_theme']]
@@ -390,7 +385,7 @@ def update_preferences_based_on_history(recommender):
 此外，专业版还提供：
 - 多角色场景指南（知识管理/研发团队/个人用户）
 - 完整FAQ（7问）与故障排查表
-- 性能优化建议与最佳实践
+- 性能优化建议与优选实践
 - GPT-4o模型路由与优先支持
 
 ## 定价
@@ -414,8 +409,6 @@ def update_preferences_based_on_history(recommender):
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 
@@ -441,3 +434,22 @@ Skill: 执行完成,结果如下: 操作成功
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级订阅摘要专业版，含AI深度摘要、多源聚合、定时推送、团队共享与个性化推荐.。订阅摘要助手专业版是面向企业级场景的完
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

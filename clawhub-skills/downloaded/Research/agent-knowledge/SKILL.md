@@ -18,8 +18,6 @@ pricing_tier: "L2"
 pricing_model: "per_use"
 suggested_price: 19.9
 ---
-
-
 # Agent Knowledge Capture
 
 File-based knowledge organization. Capture fast, search later, clean up automatically.
@@ -84,16 +82,6 @@ know config                   # Show active config paths
 ## Data Model (frontmatter)
 
 ```yaml
----
-type: url|extract|post|research
-title: "Entry title"
-source_url: "https://..."
-source_kind: url|video|article|paper|post|research
-tags: ["tag1", "tag2"]
-added: "2026-02-26"
-added_by: "agent-name"
-summary: "One-line summary"
----
 ```
 
 ## QMD Integration

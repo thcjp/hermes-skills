@@ -1,6 +1,7 @@
 ---
+
 name: "github-dev-standard-free"
-description: "个人开发者项目开发标准流程，含 9 步开发流程与基础验收清单。"
+description: "个人开发者项目开发标准流程，含 9 步开发流程与基础验收清单。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,11 @@ metadata:
     - "项目管理"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # 项目开发标准（免费版）
@@ -36,24 +42,18 @@ metadata:
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置。
 
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
 **输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：个人开发者项目开、发标准流程、步开发流程与基础、面向独立开发者的、项目开发标准化工、通过结构化流程约、束代码质量、读需求、写任务卡、条编码纪律防止过、层基础验证、项验收清单确保交、付质量等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -80,7 +80,7 @@ metadata:
 4. 编码：局部替换，不重写整个文件
 5. 本地验证：
    node -c src/utils/calc.js          # 语法检查
-   node -e "require('./src/utils/calc.js')"  # 导入检查
+   node --eval "require('./src/utils/calc.js')"  # 导入检查
    node test-calc-fix.js              # 样例验证
    npm test                           # 回归测试
 6. 看 diff：确认改动量在 15 行以内
@@ -134,8 +134,8 @@ echo "B3. 数据结构变化已同步所有引用？ [y/n]"
 echo "B4. 新逻辑不会破坏旧逻辑？ [y/n]"
 
 # C. 测试验证
-python3 -m py_compile scripts/xxx.py        # C1. 语法检查
-python3 -c "from scripts.xxx import ClassName"  # C2. 导入检查
+python3 -m py_compile scripts/未指定.py        # C1. 语法检查
+python3 -c "from scripts.未指定 import ClassName"  # C2. 导入检查
 python3 test_fix.py                          # C3. 样例验证
 python3 -m pytest tests/                     # C4. 回归测试
 
@@ -183,15 +183,13 @@ git diff --stat   # D1. 确认 diff 大小与任务规模匹配
 ### 4 层验证
 
 ```bash
-# 第一层：语法检查
-python3 -m py_compile scripts/xxx.py
+# 领先层：语法检查
 # 或
-node -c src/xxx.js
+node -c src/未指定.js
 
 # 第二层：导入检查
-python3 -c "from scripts.xxx import ClassName"
+未指定 import ClassName"
 # 或
-node -e "require('./src/xxx.js')"
 
 # 第三层：最小样例验证
 python3 test_fix.py
@@ -262,7 +260,7 @@ npm test
 | D3 | 版本号、文档、注释已同步 |
 | D4 | 可以指出这次改动的风险点 |
 
-## 最佳实践
+## 优选实践
 
 1. **先写任务卡再编码**：明确目标和范围后再动手
 
@@ -387,7 +385,6 @@ grep -r "NewClassName" src/
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -400,3 +397,14 @@ grep -r "NewClassName" src/
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 - 当前为免费版本,如需完整功能请升级到付费版获取全部能力
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

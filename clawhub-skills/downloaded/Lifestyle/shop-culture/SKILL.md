@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Agentic Commerce â Lifestyle, Wellness, & Gifts
 
 The **Agentic Commerce** shopping skill [For the Cult](https://forthecult.store). This skill gives agents everything they need to **browse products, place orders, and track shipments** using the public REST API. The store sells quality lifestyle, wellness, and smart home products — from coffee and apparel to tech gadgets and pet goods — and accepts **multi-chain payments** across 8+ blockchains plus **x402 checkout** with USDC on Solana. No account or API key required.

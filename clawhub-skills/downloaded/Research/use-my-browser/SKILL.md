@@ -35,7 +35,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Use My Browser
 
 Operate the user's real Chrome browser through Tampermonkey script injection. The agent runs JavaScript directly in the page context — sharing all cookies, sessions, and login state.
@@ -219,3 +218,30 @@ A: 请参考已知限制章节了解具体限制。
 ## 已知限制
 
 - 需要API Key，无Key环境无法使用
+
+---
+## 边界条件与限制
+
+### 输入限制
+- **URL格式**：输入的URL必须符合有效的HTTP或HTTPS格式。
+- **字符长度**：URL和JavaScript代码片段的长度不能超过Tampermonkey脚本的最大限制。
+- **特殊字符**：输入中不应包含可能导致脚本执行错误的特殊字符。
+
+### 性能边界
+- **并发执行**：同时处理多个tab或复杂的JavaScript执行可能受到性能限制。
+- **响应时间**：网络延迟或页面加载时间可能会影响技能的响应速度。
+
+### 兼容性约束
+- **浏览器兼容性**：技能主要针对Chrome浏览器，可能不完全兼容其他浏览器。
+- **用户脚本兼容性**：技能依赖于Tampermonkey用户脚本，因此需要用户在Chrome中安装Tampermonkey插件。
+
+### 安全限制
+- **跨域访问**：由于同源策略，技能无法访问不同域的iframe内容。
+- **CSP限制**：某些网站可能通过内容安全策略(CSP)阻止JavaScript执行，这可能导致技能无法正常工作。
+
+### 其他限制
+- **登录状态**：技能依赖于用户的登录状态，如果用户未登录，某些操作可能无法执行。
+- **页面刷新**：页面刷新可能导致技能的连接中断，需要重新连接。
+
+---
+

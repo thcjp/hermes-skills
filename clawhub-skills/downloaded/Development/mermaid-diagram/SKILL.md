@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Mermaid Diagram
 
 Generate valid Mermaid diagram code from text descriptions.

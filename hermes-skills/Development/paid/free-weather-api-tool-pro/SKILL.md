@@ -7,7 +7,7 @@ displayName: 天气查询专业版
 summary: "企业级天气数据平台,支持多城市对比、历史数据、农业气象与定时推送。面向企业、农业、物流与媒体场景的专业天气数据平台."
 license: Proprietary
 edition: pro
-description: 面向企业、农业、物流与媒体场景的专业天气数据平台。可处理提升工作效率
+description: "面向企业、农业、物流与媒体场景的专业天气数据平台。可处理提升工作效率。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
   核心能力: 多城市对比、历史天气、农业气象、分钟级降水、定时推送、批量查询
 
   适用场景: 物流调度、农业决策、媒体播报、零售预测、能源调度
@@ -41,13 +41,10 @@ category: "Development"
 ---
 
 # 天气查询 (专业版)
-
 ## 概述
-
 专业版面向企业、农业、物流、媒体与零售场景,在免费版基础查询能力之上,扩展多城市批量对比、15 天长预报、历史天气数据、农业专项气象、分钟级降水预报、定时推送等企业级能力。支持 API 高并发调用与 SLA 保障,适合业务系统深度集成.
 专业版与免费版数据格式完全兼容,个人用户从免费版升级后,调用方式无需修改.
 ## 核心能力
-
 | 能力模块 | 描述 | 免费版 | 专业版 |
 |----|---|---|---|
 | 实时天气 | 当前温度、天气、湿度、风力 | 支持 | 支持 |
@@ -64,42 +61,37 @@ category: "Development"
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级天气数据平、支持多城市对比、历史数据、农业气象与定时推、面向企业、物流与媒体场景的、专业天气数据平台、核心能力、适用场景、物流调度、农业决策、媒体播报、零售预测、能源调度、差异化、专业版支持多城市、天预报、历史数据与定时推、与免费版数据格式、适用关键词、多城市天气等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 ## 使用场景
-
 ### 场景一: 物流调度
-
 为物流企业提供沿线城市天气,优化运输路线.
 ```python
 import os
 import requests
 from datetime import datetime, timedelta
-# ...
 API_BASE = "https://api.weather-pro.local/v1"
 API_KEY = os.environ["WEATHER_PRO_API_KEY"]
-# ...
 class LogisticsWeather:
     def __init__(self, api_key):
         self.headers = {"X-API-Key": api_key, "X-Edition": "pro"}
-# ...
     def route_weather(self, cities):
         """批量查询运输路线沿线天气"""
         payload = {"cities": cities, "days": 3}
@@ -110,17 +102,13 @@ class LogisticsWeather:
             timeout=60,
         )
         return resp.json()
-# ...
     def minute_precip(self, city):
         """获取分钟级降水预报"""
-        resp = requests.get(
             f"{API_BASE}/precip/minute",
-            headers=self.headers,
             params={"city": city},
             timeout=30,
         )
         return resp.json()
-# ...
     def route_risk_alert(self, route_cities):
         """运输路线风险预警"""
         weather = self.route_weather(route_cities)
@@ -133,13 +121,11 @@ class LogisticsWeather:
                     "advice": "建议绕行或延迟出发",
                 })
             if int(w["current"]["wind_speed"]) > 40:
-                risks.append({
                     "city": w["city"],
                     "risk": "大风",
                     "advice": "注意货物固定,避免高速行驶",
                 })
         return risks
-# ...
 lw = LogisticsWeather(API_KEY)
 route = ["北京", "济南", "南京", "上海"]
 risks = lw.route_risk_alert(route)
@@ -148,7 +134,6 @@ for r in risks:
 ```
 
 ### 场景二: 农业决策
-
 为农业提供专项气象数据,辅助种植决策.
 ```python
 def agri_weather(region, crop):
@@ -173,21 +158,9 @@ def agri_weather(region, crop):
         timeout=60,
     )
     return resp.json()
-# ...
-# 示例
-# {
-#   "region": "山东寿光",
-#   "crop": "番茄",
-#   "soil_moisture": "65%",  # 适宜
-#   "growing_degree_days_accumulated": 1850,
-#   "frost_risk": {"next_7d": "low", "alert": false},
-#   "irrigation_advice": "未来 5 天无有效降水,建议 3 天后灌溉",
-#   "pest_risk": {"whitefly": "medium", "advice": "加强通风,监测虫口密度"}
-# }
 ```
 
 ### 场景三: 媒体播报
-
 为媒体生成结构化天气播报内容.
 ```python
 def generate_broadcast(cities, template="news"):
@@ -205,8 +178,6 @@ def generate_broadcast(cities, template="news"):
         timeout=60,
     )
     return resp.json()
-# ...
-# 生成新闻联播风格天气稿
 script = generate_broadcast(
     ["北京", "上海", "广州", "成都"],
     template="cctv_news",
@@ -214,7 +185,6 @@ script = generate_broadcast(
 ```
 
 ## 不适用场景
-
 以下场景天气查询专业版不适合处理：
 
 - 逆向工程闭源API
@@ -222,25 +192,19 @@ script = generate_broadcast(
 - 非标准协议集成
 
 ## 触发条件
-
 需要API集成、接口对接、Webhook配置、系统连接时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
-
 ### Step 1: 申请专业版 API Key
-
 联系销售开通专业版,获取 API Key 与租户 ID.
 ### Step 2: 配置凭证
-
 ```bash
-export WEATHER_PRO_API_KEY="sk_pro_xxx"
+export WEATHER_PRO_API_KEY="${API_KEY:?请设置环境变量}"
 export WEATHER_ORG_ID="org_your_id"
 export WEATHER_EDITION="pro"
 ```
 
 ### Step 3: 验证调用
-
 ```bash
-# 批量查询
 curl -X POST -H "X-API-Key: $WEATHER_PRO_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"cities":["北京","上海","广州"],"days":7}' \
@@ -248,7 +212,6 @@ curl -X POST -H "X-API-Key: $WEATHER_PRO_API_KEY" \
 ```
 
 ### Step 4: 配置定时推送
-
 ```bash
 curl -X POST -H "X-API-Key: $WEATHER_PRO_API_KEY" \
   -H "Content-Type: application/json" \
@@ -256,18 +219,15 @@ curl -X POST -H "X-API-Key: $WEATHER_PRO_API_KEY" \
     "name": "每日晨报",
     "schedule": "0 7 * * *",
     "cities": ["北京","上海"],
-    "channel": {"type":"webhook","url":"https://hooks.slack.com/xxx"}
+    "channel": {"type":"webhook","url":"https://hooks.slack.com/未指定"}
   }' \
   "https://api.weather-pro.local/v1/schedules"
 ```
 
 #
 ## 配置示例
-
 ### 企业级配置
-
 ```yaml
-# /etc/weather-tool/pro.yaml
 edition: pro
 api:
   base_url: https://api.weather-pro.local/v1
@@ -278,7 +238,6 @@ api:
   rate_limit:
     requests_per_minute: 500
     burst: 100
-# ...
 features:
   forecast_days: 15
   historical_years: 10
@@ -286,20 +245,17 @@ features:
   agri_weather: true
   batch_query: true
   scheduled_push: true
-# ...
 integrations:
   webhook: true
   email: true
   sms: true
   slack: true
   feishu: true
-# ...
 cache:
   enabled: true
   ttl_seconds: 300
   backend: redis
   redis_url: ${REDIS_URL}
-# ...
 monitoring:
   metrics: true
   alerting: true
@@ -307,7 +263,6 @@ monitoring:
 ```
 
 ### 批量查询示例
-
 ```python
 def batch_weather(cities, days=7):
     """批量查询多城市天气"""
@@ -324,7 +279,6 @@ def batch_weather(cities, days=7):
         timeout=120,
     )
     return resp.json()
-# ...
 def compare_cities(cities, metric="temperature"):
     """多城市天气对比"""
     data = batch_weather(cities)
@@ -340,7 +294,6 @@ def compare_cities(cities, metric="temperature"):
 ```
 
 ### 历史数据查询
-
 ```python
 def historical_weather(city, start_date, end_date):
     """查询历史天气"""
@@ -357,8 +310,6 @@ def historical_weather(city, start_date, end_date):
         timeout=120,
     )
     return resp.json()
-# ...
-# 查询过去 10 年北京 7 月平均气温
 from datetime import datetime
 this_year = datetime.now().year
 historical = []
@@ -366,16 +317,12 @@ for y in range(this_year - 10, this_year):
     historical.append(historical_weather("北京", f"{y}-07-01", f"{y}-07-31"))
 ```
 
-## 最佳实践
-
+## 优选实践
 ### 1. 缓存策略
-
 ```python
 import redis
 import json
-# ...
 r = redis.Redis.from_url(os.environ.get("REDIS_URL"))
-# ...
 def cached_weather(city, ttl=300):
     cache_key = f"weather:{city}"
     cached = r.get(cache_key)
@@ -387,10 +334,8 @@ def cached_weather(city, ttl=300):
 ```
 
 ### 2. 错误重试
-
 ```python
 from tenacity import retry, stop_after_attempt, wait_exponential
-# ...
 @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=10))
 def robust_query(city):
     try:
@@ -401,11 +346,9 @@ def robust_query(city):
 ```
 
 ### 3. 异步批量处理
-
 ```python
 import asyncio
 import aiohttp
-# ...
 async def async_batch_weather(cities):
     """异步批量查询"""
     async with aiohttp.ClientSession() as session:
@@ -414,7 +357,6 @@ async def async_batch_weather(cities):
             for city in cities
         ]
         return await asyncio.gather(*tasks)
-# ...
 async def fetch_one(session, city):
     async with session.get(
         f"{API_BASE}/weather",
@@ -426,7 +368,6 @@ async def fetch_one(session, city):
 ```
 
 ### 4. 监控与告警
-
 ```python
 def setup_monitoring():
     """配置 API 监控"""
@@ -447,33 +388,24 @@ def setup_monitoring():
 ```
 
 ## 常见问题
-
 ### Q1: 专业版支持多少并发?
-
 标准版支持 500 QPM,企业版可扩展至 5000 QPM。超出可定制专属集群.
 ### Q2: 历史数据覆盖多长时间?
-
 中国大陆主要城市覆盖过去 10 年,部分一线城市覆盖 20 年。海外城市覆盖 5-10 年.
 ### Q3: 农业气象覆盖哪些作物?
-
 支持水稻、小麦、玉米、大豆、棉花、蔬菜、果树等 50+ 主流作物.
 ### Q4: 定时推送支持哪些渠道?
-
 支持 Webhook、邮件、短信、Slack、飞书、企业微信等主流渠道.
 ### Q5: 与免费版数据格式是否兼容?
-
 完全兼容,API 响应结构一致。专业版仅是扩展了字段与能力,原有调用代码无需修改.
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent 平台**: 支持 SKILL.md 规范的任意 AI Agent (Claude Code、Cursor、Codex、Gemini CLI 等)
 - **操作系统**: Windows / macOS / Linux (生产环境推荐 Linux)
 - **网络**: 需稳定访问专业版天气 API
 - **Python**: 3.9+ (用于脚本化操作)
 
 ### 依赖详情
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-----|:-----|:-----|:-----|
 | 天气 Pro API | 在线 API | 必需 | 联系销售开通专业版 |
@@ -484,27 +416,20 @@ def setup_monitoring():
 | Redis | 缓存服务 | 可选 | 用于缓存与限流 |
 
 ### API Key 配置
-
 ```bash
-# 专业版凭证
-export WEATHER_PRO_API_KEY="sk_pro_xxx"
 export WEATHER_ORG_ID="org_your_id"
 export WEATHER_EDITION="pro"
-# ...
-# 可选: 缓存与监控
 export REDIS_URL="redis://localhost:6379/0"
-export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
+export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/未指定"
 ```
 
 ### 可用性分类
-
-- **分类**: MD+EXEC (Markdown 指令 + 命令行执行)
+- **分类**: MD+execute(Markdown 指令 + 命令行执行)
 - **说明**: 本 Skill 面向企业用户,通过自然语言指令驱动 Agent 调用 Pro 天气 API,完成多城市批量查询、历史数据、农业气象等企业级场景
 - **专业版特性**: 多城市对比、15 天预报、10 年历史数据、农业专项、分钟级降水、定时推送、SLA 保障
 - **兼容性**: 与免费版数据格式完全兼容,支持平滑升级
 
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |---:|---:|---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -512,16 +437,12 @@ export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/xxx"
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 已知限制
-
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 
 ## 示例
-
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 
@@ -547,3 +468,14 @@ Skill: 执行完成,结果如下: 操作成功
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

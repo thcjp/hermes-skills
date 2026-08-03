@@ -1,4 +1,5 @@
 ---
+
 slug: discord-voice-tool-pro
 name: discord-voice-tool-pro
 version: 1.0.0
@@ -6,8 +7,7 @@ displayName: Discord语音工具专业版
 summary: "企业级 Discord 语音 AI 对话,支持多服务商、流式转写、自动重连与批量频道管理.。面向企业与社区运营团队的 Discord 语音 AI 全功能对话工具。核心能力:"
 license: Proprietary
 edition: pro
-description: 面向企业与社区运营团队的 Discord 语音 AI 全功能对话工具。核心能力:，可自动提升工作效率
-
+description: "面向企业与社区运营团队的 Discord 语音 AI 全功能对话工具。核心能力:，可自动提升工作效率。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
   - 多 STT/TTS 服务商切换(OpenAI/Deepgram/ElevenLabs/本地)
 
   - Deepgram 流式实时转写(延迟降低约 1 秒)
@@ -47,7 +47,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Communication"
+
 ---
+
 # Discord 语音工具(专业版)
 
 ## 概述
@@ -72,21 +74,21 @@ Discord 语音工具专业版是一款面向企业与社区运营团队的 Disco
 
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置.
-**输入**: 用户提供结果处理与输出所需的指令和必要参数.
+
 **处理**: 解析结果处理与输出的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果处理与输出的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
@@ -204,11 +206,11 @@ platform install discord-voice
             apiKey: process.env.OPENAI_API_KEY
           },
           deepgram: {
-            apiKey: process.env.DEEPGRAM_API_KEY,
+env.DEEPGRAM_API_KEY,
             model: "nova-2"
           },
           elevenlabs: {
-            apiKey: process.env.ELEVENLABS_API_KEY,
+env.ELEVENLABS_API_KEY,
             voiceId: "21m00Tcm4TlvDq8ikWAM",
             modelId: "eleven_multilingual_v2"
           }
@@ -234,7 +236,8 @@ discord_voice status
 
 ### 服务商配置
 
-#### OpenAI(Whisper + TTS)
+#
+### OpenAI(Whisper + TTS)
 
 ```json5
 {
@@ -246,7 +249,8 @@ discord_voice status
 }
 ```
 
-#### Deepgram(STT,支持流式)
+#
+### Deepgram(STT,支持流式)
 
 ```json5
 {
@@ -257,7 +261,8 @@ discord_voice status
 }
 ```
 
-#### ElevenLabs(TTS)
+#
+### ElevenLabs(TTS)
 
 ```json5
 {
@@ -323,7 +328,7 @@ discord_voice status
 | `ELEVENLABS_API_KEY` | ElevenLabs API Key(TTS) |
 | `DEEPGRAM_API_KEY` | Deepgram API Key(STT) |
 
-## 最佳实践
+## 优选实践
 
 1. **服务商选型策略**: 按场景选服务商。追求低延迟用 Deepgram 流式 STT + ElevenLabs TTS(自然度高);追求成本控制用本地 Whisper + 本地 Kokoro(零 API 成本);平衡选择用 OpenAI Whisper + OpenAI TTS。可按频道配置不同服务商组合.
 2. **流式 STT 优先启用**: 使用 Deepgram 时务必开启 `streamingSTT: true`。流式模式端到端延迟降低约 1 秒,并提供实时中间结果,对话体验显著优于批量模式。流式失败会自动回退批量,无需额外处理.
@@ -393,7 +398,7 @@ Pro 版审计日志记录:会话开始/结束时间、频道 ID、参与者列�
 - **本地方案**: 使用本地 Whisper/Kokoro 时基础LLM由Agent平台提供,与免费版一致.
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令 + 部分功能需 `exec` 执行能力)
+- **分类**: MD+execute(纯 Markdown 指令 + 部分功能需 `exec` 执行能力)
 - **说明**: 以自然语言指令驱动 Agent 调用语音工具,多服务商处理音频,支持流式与自动重连
 - **适用规模**: 企业级、多频道、高并发实时语音场景
 - **兼容性**: 与 `discord-voice-tool-free` 配置兼容,可平滑升级
@@ -427,3 +432,14 @@ Pro 版审计日志记录:会话开始/结束时间、频道 ID、参与者列�
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

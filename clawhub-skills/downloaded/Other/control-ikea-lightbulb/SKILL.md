@@ -18,7 +18,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Control Ikea Lightbulb
 
 This skill provides a lightweight Python script to control a local smart bulb (supports TP-Link Kasa-compatible bulbs via python-kasa). It is intended for local LAN devices that do not require cloud credentials; control is by IP address.

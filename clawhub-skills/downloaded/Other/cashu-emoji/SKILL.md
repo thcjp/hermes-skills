@@ -35,7 +35,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Cashu Emoji Tokens (Variation Selector encoding)
 
 This skill helps agents **decode** Cashu tokens received as emoji (and **encode** tokens for sending), and it also supports **general hidden messages inside emojis**.

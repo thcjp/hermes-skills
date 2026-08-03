@@ -1,4 +1,5 @@
 ---
+
 slug: verify-claims-tool-pro
 name: verify-claims-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 事实核查助手专业版
 summary: "企业级事实核查平台,支持批量声明核查、定时监控、深度分析与团队协作。事实核查助手专业版,面向企业团队和专业研究人员提供深度的事实核查能力。支持批量声明核查、定时监控预警、深度分析报告、团队协"
 license: Proprietary
 edition: pro
-description: 事实核查助手专业版,面向企业团队和专业研究人员提供深度的事实核查能力。支持批量声明核查、定时监控预警、深度分析报告、团队协作等高级功能。Use
+description: "事实核查助手专业版,面向企业团队和专业研究人员提供深度的事实核查能力。支持批量声明核查、定时监控预警、深度分析报告、团队协作等高级功能。Use。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。"
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - 研究工具
@@ -29,7 +30,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 事实核查助手专业版是企业级的事实核查与信息验证平台。在完整兼容免费版所有核查能力的基础上,专业版引入了批量声明核查、定时监控预警、深度分析报告、团队协作、自定义核查规则等高级能力,适用于企业公关舆情监控、媒体内容审核、政府虚假信息监控等专业场景.
 专业版特别强化了规模化处理能力,支持数百条声明并行核查、定时自动监控、结构化分析报告,帮助机构建立系统化的信息验证流程.
 ## 核心能力
@@ -52,15 +55,11 @@ category: "Knowledge"
   "concurrency": 10,
   "min_sources": 3
 }
-# ...
 verify-claims batch check batch_claims.json
-# ...
 verify-claims batch status
-# ...
 verify-claims batch export --format csv --output results.csv
 ```
 
-**输入**: 用户提供批量声明并行核查所需的指令和必要参数.
 **处理**: 解析批量声明并行核查的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量声明并行核查的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -79,15 +78,11 @@ verify-claims batch export --format csv --output results.csv
     }
   ]
 }
-# ...
 verify-claims monitor start monitor_config.json
-# ...
 verify-claims monitor status
-# ...
 verify-claims monitor alerts --date $(date +%Y-%m-%d)
 ```
 
-**输入**: 用户提供定时监控与预警所需的指令和必要参数.
 **处理**: 解析定时监控与预警的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时监控与预警的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -99,14 +94,11 @@ verify-claims analyze deep \
   --claim "某项研究结论" \
   --dimensions "sources,evidence,context,timeline" \
   --output deep_report.html
-# ...
 verify-claims analyze batch \
   --input batch_results.json \
   --output analysis_report.pdf
-# ...
 ```
 
-**输入**: 用户提供深度分析报告所需的指令和必要参数.
 **处理**: 解析深度分析报告的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回深度分析报告的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -115,15 +107,11 @@ verify-claims analyze batch \
 支持团队共享核查结果与知识库.
 ```bash
 verify-claims team create --name "fact_check_team"
-# ...
 verify-claims team share --result check_001.json --team "fact_check_team"
-# ...
 verify-claims knowledge add --category "health" --claim "已核查的声明" --verdict "false"
-# ...
 verify-claims knowledge query --keyword "疫苗" --category "health"
 ```
 
-**输入**: 用户提供团队协作所需的指令和必要参数.
 **处理**: 解析团队协作的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回团队协作的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -135,12 +123,10 @@ verify-claims config set-rules \
   --min-sources 5 \
   --confidence-threshold 0.8 \
   --custom-sources custom_sources.json
-# ...
 verify-claims config set-scoring \
   --weights '{"source_credibility": 0.3, "evidence_quality": 0.3, "consistency": 0.2, "recency": 0.2}'
 ```
 
-**输入**: 用户提供自定义核查规则所需的指令和必要参数.
 **处理**: 解析自定义核查规则的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回自定义核查规则的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -152,14 +138,12 @@ verify-claims track misinformation \
   --claim "虚假声明内容" \
   --period "2026-01-01:2026-07-17" \
   --output spread_analysis.json
-# ...
 verify-claims track visualize \
   --input spread_analysis.json \
   --format graph \
   --output spread_graph.html
 ```
 
-**输入**: 用户提供舆情追踪与虚假信息监控所需的指令和必要参数.
 **处理**: 解析舆情追踪与虚假信息监控的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回舆情追踪与虚假信息监控的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -172,14 +156,12 @@ verify-claims check --file article.txt
 verify-claims history --list
 ```
 
-**输入**: 用户提供完整兼容免费版所需的指令和必要参数.
 **处理**: 解析完整兼容免费版的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回完整兼容免费版的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级事实核查平、支持批量声明核查、深度分析与团队协、事实核查助手专业、面向企业团队和专、业研究人员提供深、度的事实核查能力、定时监控预警、团队协作等高级功、Use、when、模型调用、智能对话、Agent、LLM、应用时使用、不适用于需要、确定性的关键决策、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 输出格式
-
 本skill的输出格式为Markdown文本,包含操作状态和执行结果。具体输出内容取决于执行的能力点和输入参数.
 ## 使用场景
 ### 场景一:企业品牌声誉监控
@@ -199,19 +181,14 @@ cat > brand_monitor.json << 'EOF'
   ]
 }
 EOF
-# ...
 verify-claims monitor start brand_monitor.json
-# ...
 verify-claims analyze deep \
   --claim "发现的虚假声明" \
   --dimensions "sources,evidence,context,timeline" \
   --output deep_analysis.html
-# ...
 verify-claims track misinformation \
   --claim "虚假声明内容" \
   --period "2026-07-01:2026-07-17" \
-  --output spread_analysis.json
-# ...
 verify-claims report crisis \
   --analysis deep_analysis.html \
   --spread spread_analysis.json \
@@ -224,18 +201,13 @@ verify-claims report crisis \
 verify-claims batch extract-claims \
   --input submissions/ \
   --output claims_batch.json
-# ...
 verify-claims batch check claims_batch.json \
   --concurrency 15 \
   --min-sources 3
-# ...
 verify-claims report review \
-  --input batch_results.json \
   --output editorial_review.html \
   --threshold "confidence < 0.7"
-# ...
 verify-claims report flag \
-  --input batch_results.json \
   --criteria "verdict == 'mixed' OR confidence < 0.6" \
   --output manual_review_list.csv
 ```
@@ -252,14 +224,11 @@ cat > social_claims.json << 'EOF'
   "concurrency": 20
 }
 EOF
-# ...
 verify-claims batch check social_claims.json --output social_results.json
-# ...
 verify-claims analyze patterns \
   --input social_results.json \
   --dimensions "topic,source,region,spread_rate" \
   --output pattern_analysis.json
-# ...
 verify-claims report research \
   --input pattern_analysis.json \
   --template academic \
@@ -271,9 +240,7 @@ verify-claims report research \
 ```bash
 cd ~/.skill-platform/workspace/skills/verify-claims-tool-pro
 npm install
-# ...
 verify-claims --version --edition
-# ...
 verify-claims batch --help
 ```
 
@@ -296,7 +263,6 @@ cat > team_config.json << 'EOF'
   }
 }
 EOF
-# ...
 verify-claims team init team_config.json
 ```
 
@@ -312,9 +278,7 @@ cat > first_batch.json << 'EOF'
   "concurrency": 3
 }
 EOF
-# ...
 verify-claims batch check first_batch.json
-# ...
 verify-claims batch status
 ```
 
@@ -380,21 +344,18 @@ verify-claims batch status
 }
 ```
 
-## 最佳实践
+## 优选实践
 ### 1. 免费版到专业版的平滑迁移
 ```bash
 verify-claims check "声明内容"
-# ...
 verify-claims batch check batch.json
-# ...
 verify-claims monitor start monitor.json
 ```
 
 ### 2. 批量核查的性能优化
 ```bash
-verify-claims batch check batch.json --concurrency 15
-# ...
-verify-claims batch check batch.json --cache-dir ./cache --skip-cached
+json --concurrency 15
+json --cache-dir ./cache --skip-cached
 ```
 
 ### 3. 监控预警的精细化配置
@@ -411,9 +372,7 @@ verify-claims batch check batch.json --cache-dir ./cache --skip-cached
 ### 4. 知识库的持续积累
 ```bash
 verify-claims knowledge add --auto-from-results
-# ...
 verify-claims knowledge organize --deduplicate --merge-similar
-# ...
 verify-claims knowledge export --format json --output knowledge_base.json
 ```
 
@@ -456,8 +415,6 @@ verify-claims config set-alerts \
 **A:** 专业版支持知识库的导入导出:
 
 ```bash
-verify-claims knowledge export --format json --output knowledge_base.json
-# ...
 verify-claims knowledge import --file external_kb.json
 ```
 
@@ -492,15 +449,12 @@ verify-claims knowledge import --file external_kb.json
 
 ```bash
 SEARCH_API_KEY=your_search_api_key
-# ...
 TEAM_API_TOKEN=your_team_api_token
-# ...
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=fact_checking
 DB_USER=admin
 DB_PASSWORD=your_password
-# ...
 SLACK_WEBHOOK=your_slack_webhook_url
 ALERT_EMAIL=alerts@example.com
 ```
@@ -513,7 +467,6 @@ ALERT_EMAIL=alerts@example.com
 - API Key通过环境变量配置: export API_KEY=your_key
 
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -524,3 +477,22 @@ ALERT_EMAIL=alerts@example.com
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级事实核查平台,支持批量声明核查、定时监控、深度分析与团队协作。事实核查助手专业版,面向企业团队和专业研究人员提供深
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

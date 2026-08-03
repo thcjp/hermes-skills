@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # DNS & Networking
 
 Debug DNS resolution, network connectivity, and HTTP issues. Covers dig/nslookup, port testing, firewall rules, curl diagnostics, /etc/hosts, proxy configuration, and certificate troubleshooting.

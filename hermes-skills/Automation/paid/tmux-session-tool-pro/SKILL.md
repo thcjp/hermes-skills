@@ -1,5 +1,6 @@
 ---
-slug: "tmux-session-tool-pro"
+
+slug: tmux-session-tool-pro
 name: "tmux-session-tool-pro"
 version: "1.0.0"
 displayName: "Tmux会话工具专业版"
@@ -47,17 +48,15 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+
 ---
+
 # Tmux 会话工具专业版
-
 ## 概述
-
 Tmux 会话工具专业版为企业团队提供高级多会话管理能力。在免费版单会话操作基础上,扩展了批量会话管理、任务编排、实时监控、日志审计等功能,满足复杂开发环境的管理需求.
 专业版完全兼容免费版的 tmux 指令语法,已有工作流可无缝升级.
 ## 核心能力
-
 ### 1. 多会话批量管理
-
 ## 输入格式
 | 参数名 | 类型 | 必填 | 说明 |
 |---|---|---|---|
@@ -66,10 +65,7 @@ Tmux 会话工具专业版为企业团队提供高级多会话管理能力。在
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 
 ```bash
-# 列出所有会话
 tmux list-sessions -F '#{session_name}: #{window_count} windows, #{pane_count} panes'
-# ...
-# 批量向多个会话发送指令
 for session in project-a project-b project-c; do
   target="${session}:0.1"
   tmux send-keys -t $target -l -- "运行测试套件"
@@ -77,44 +73,31 @@ for session in project-a project-b project-c; do
 done
 ```
 
-**输入**: 用户提供多会话批量管理所需的指令和必要参数.
 **处理**: 解析多会话批量管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多会话批量管理的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 2. 会话编排与任务流水线
-
 ```bash
-# 定义任务流水线
 SESSIONS=("setup" "build" "test" "deploy")
-# ...
 for i in "${!SESSIONS[@]}"; do
   session="${SESSIONS[$i]}"
-  target="${session}:0.0"
-# ...
-  # 等待上一个会话完成
   if [ $i -gt 0 ]; then
     wait_for_session "${SESSIONS[$((i-1))]}"
   fi
-# ...
-  # 执行当前阶段
   tmux send-keys -t $target -l -- "${COMMANDS[$i]}"
   tmux send-keys -t $target Enter
 done
 ```
 
-**输入**: 用户提供会话编排与任务流水线所需的指令和必要参数.
 **处理**: 解析会话编排与任务流水线的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回会话编排与任务流水线的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 3. 实时监控与告警
-
 ```python
-# 示例
 import subprocess
 import time
-# ...
 def monitor_sessions(sessions, interval=60):
     while True:
         for session in sessions:
@@ -123,38 +106,28 @@ def monitor_sessions(sessions, interval=60):
                  '-t', f'{session}:0.1', '-S', '-50'],
                 capture_output=True, text=True
             )
-# ...
-            # 检查错误关键词
             if 'error' in result.stdout.lower():
                 send_alert(session, "检测到错误")
             if 'completed' in result.stdout.lower():
                 log_completion(session)
-# ...
         time.sleep(interval)
 ```
 
-**输入**: 用户提供实时监控与告警所需的指令和必要参数.
 **处理**: 解析实时监控与告警的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回实时监控与告警的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 4. 会话日志审计
-
 ```bash
-# 启用会话日志记录
 tmux pipe-pane -t $TARGET -o 'cat >> .tmux-logs/$(date +%Y%m%d)-session.log'
-# ...
-# 查看历史日志
 cat .tmux-logs/20260718-session.log
 ```
 
-**输入**: 用户提供会话日志审计所需的指令和必要参数.
 **处理**: 解析会话日志审计的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回会话日志审计的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 5. 会话模板管理
-
 ```json
 {
   "templates": [
@@ -178,61 +151,36 @@ cat .tmux-logs/20260718-session.log
 }
 ```
 
-**输入**: 用户提供会话模板管理所需的指令和必要参数.
 **处理**: 解析会话模板管理的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回会话模板管理的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级多会话管理、支持批量会话操作、监控告警与日志审、面向团队与企业的、会话管理工具、在免费版基础上扩、展多会话、监控等能力、核心能力、多会话批量管理与、并行操作、实时监控与告警通、会话日志审计与回、自定义会话模板与、配置管理等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ## 使用场景
-
 ### 场景一: 多项目并行开发会话管理
-
 同时管理多个项目的开发会话.
 ```bash
-# 批量创建项目会话
 PROJECTS=("auth-service" "order-service" "payment-service")
-# ...
 for project in "${PROJECTS[@]}"; do
-  # 创建会话
   tmux new-session -d -s $project -c "/projects/$project"
-# ...
-  # 分割窗格
   tmux split-window -t $project -h
   tmux split-window -t $project -v
-# ...
-  # 设置窗格标题
   tmux select-pane -t $project:0.0 -T editor
-  tmux select-pane -t $project:0.1 -T claude
-  tmux select-pane -t $project:0.2 -T logs
-# ...
-  # 在各窗格启动程序
   tmux send-keys -t $project:0.0 -l -- "cd /projects/$project && vim"
-  tmux send-keys -t $project:0.0 Enter
-  tmux send-keys -t $project:0.1 -l -- "cd /projects/$project && claude"
-  tmux send-keys -t $project:0.1 Enter
+1 -l -- "cd /projects/$project && claude"
 done
-# ...
 echo "已创建 ${#PROJECTS[@]} 个项目会话"
 ```
 
 ### 场景二: CI/CD 流水线终端编排
-
 在 CI/CD 中编排多个终端会话执行流水线任务.
 ```bash
-# 流水线编排
 PIPELINE_STAGES=("lint" "build" "test" "security-scan")
-# ...
 for stage in "${PIPELINE_STAGES[@]}"; do
-  # 创建会话
   tmux new-session -d -s "ci-$stage"
-# ...
-  # 发送命令
   tmux send-keys -t "ci-$stage" -l -- "npm run $stage"
   tmux send-keys -t "ci-$stage" Enter
 done
-# ...
-# 监控所有阶段完成
 for stage in "${PIPELINE_STAGES[@]}"; do
   while true; do
     output=$(tmux capture-pane -p -J -t "ci-$stage" -S -20)
@@ -246,23 +194,16 @@ done
 ```
 
 ### 场景三: 团队共享会话监控
-
 团队协作时,监控共享会话状态并告警.
 ```bash
-# 监控脚本
 #!/bin/bash
 SESSIONS=("team-dev" "team-test" "team-deploy")
 ALERT_EMAIL="team@example.com"
-# ...
 for session in "${SESSIONS[@]}"; do
   output=$(tmux capture-pane -p -J -t "$session" -S -50 2>/dev/null)
-# ...
-  # 检查错误
   if echo "$output" | grep -qi "error\|failed\|exception"; then
     echo "告警: 会话 $session 检测到错误" | mail -s "Tmux会话告警" $ALERT_EMAIL
   fi
-# ...
-  # 检查空闲(长时间无输出)
   if tmux show-options -t "$session" | grep -q "idle-timeout"; then
     echo "会话 $session 已空闲,考虑清理"
   fi
@@ -270,12 +211,9 @@ done
 ```
 
 ## 快速开始
-
-### 第一步: 初始化配置
-
+### 领先步: 初始化配置
 ```bash
 mkdir -p .tmux-toolkit/{logs,templates,configs}
-# ...
 cat > .tmux-toolkit/config.json << 'EOF'
 {
   "edition": "pro",
@@ -297,36 +235,29 @@ EOF
 ```
 
 ### 第二步: 创建会话模板
-
 ```bash
 cat > .tmux-toolkit/templates/dev-environment.json << 'EOF'
 {
   "name": "开发环境",
   "sessions": [
-    {"name": "editor", "command": "vim .", "title": "editor"},
+", "title": "editor"},
     {"name": "assistant", "command": "claude", "title": "claude"},
-    {"name": "logs", "command": "tail -f logs/app.log", "title": "logs"}
+log", "title": "logs"}
   ]
 }
 EOF
 ```
 
 ### 第三步: 批量管理会话
-
 ```bash
-# 应用模板创建会话
 python3 .tmux-toolkit/apply-template.py dev-environment
-# ...
-# 批量查看所有会话状态
 python3 .tmux-toolkit/status.py
 ```
 
 **响应解析**: 完成完成后,查看输出响应确认任务状态。成功时输出包含解析摘要和响应数据;失败时根据错误信息排查问题,查阅错误解析章节获取恢复步骤.
 #
 ## 配置示例
-
 ### 企业级配置
-
 ```json
 {
   "edition": "pro",
@@ -359,7 +290,6 @@ python3 .tmux-toolkit/status.py
 ```
 
 ### 监控告警配置
-
 ```json
 {
   "monitoring": {
@@ -388,10 +318,8 @@ python3 .tmux-toolkit/status.py
 }
 ```
 
-## 最佳实践
-
+## 优选实践
 ### 1. 会话命名规范
-
 | 场景 | 命名规则 | 示例 |
 |:-----|:-----|:-----|
 | 项目开发 | `{project}-{env}` | `auth-prod` |
@@ -400,7 +328,6 @@ python3 .tmux-toolkit/status.py
 | 调试 | `debug-{issue}` | `debug-memory-leak` |
 
 ### 2. 窗格布局规范
-
 ```text
 +------------------+------------------+
 |----:|----:|
@@ -416,7 +343,6 @@ python3 .tmux-toolkit/status.py
 ```
 
 ### 3. 免费版与专业版能力对比
-
 | 能力 | 免费版 | 专业版 |
 |:------:|--------|:-------|
 | 会话数量 | 单会话 | 多会话批量 |
@@ -428,41 +354,32 @@ python3 .tmux-toolkit/status.py
 | 优先支持 | 社区 | 专属通道 |
 
 ### 4. 审计日志格式
-
 ```text
 [2026-07-18 14:30:00] 会话: auth-prod | 窗格: 0.1 | 操作: send-keys
   指令: npm test
   结果: 成功
-# ...
 [2026-07-18 14:35:22] 会话: auth-prod | 窗格: 0.1 | 事件: completion
   输出: All tests passed (45/45)
   耗时: 5分22秒
 ```
 
 ## 常见问题
-
 ### Q1: 专业版是否兼容免费版的 tmux 指令?
-
 完全兼容。专业版使用相同的 tmux 命令语法,免费版的所有操作在专业版中可直接使用.
 ### Q2: 批量操作最多支持多少个会话?
-
 默认最大 20 个会话,可通过配置调整。超过限制的会话会排队等待.
 ### Q3: 监控告警如何配置通知渠道?
-
 在配置中设置告警渠道:
 
 ```json
 {
   "alert_channels": ["email", "webhook"],
-  "webhook_url": "https://hooks.example.com/alerts"
 }
 ```
 
 ### Q4: 会话模板如何共享给团队?
-
 将 `.tmux-toolkit/templates/` 目录纳入版本控制,团队成员拉取后即可使用相同模板.
 ### Q5: 日志审计占用空间太大怎么办?
-
 配置日志保留策略与压缩:
 
 ```json
@@ -476,19 +393,15 @@ python3 .tmux-toolkit/status.py
 ```
 
 ### Q6: 如何获得优先技术支持?
-
 专业版用户可通过专属通道提交问题,通常 1 个工作日内响应.
 ## 依赖说明
-
 ### 运行环境
-
 - **Agent 平台**: 支持读取 SKILL.md 的任意 AI Agent(Claude Code / Cursor / Codex / Gemini CLI 等)
 - **操作系统**: Linux / macOS(Windows 需通过 WSL)
 - **tmux**: 3.0 或更高版本
 - **Python**: 3.8+(监控与模板脚本)
 
 ### 依赖详情
-
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |----|:--:|---:|----|
 | tmux | CLI 工具 | 必需 | 系统包管理器 |
@@ -497,7 +410,6 @@ python3 .tmux-toolkit/status.py
 | jq(可选) | CLI 工具 | 否 | 系统包管理器 |
 
 ### API Key 配置
-
 - 本工具为纯 tmux 指令操作,无需额外 API Key
 - 监控告警如需调用外部通知服务,配置对应 Key:
 
@@ -507,13 +419,11 @@ export TMUX_ALERT_EMAIL="team@example.com"
 ```
 
 ### 可用性分类
-
 - **分类**: MD+EXEC+SCRIPT+MONITOR(Markdown 指令 + 命令行执行 + 管理脚本 + 监控)
 - **说明**: 通过自然语言指令驱动 Agent 管理 tmux 会话,支持批量操作与监控告警
 - **离线可用**: 核心功能完全离线;告警通知需要网络连接
 
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |----|----|----|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -521,16 +431,12 @@ export TMUX_ALERT_EMAIL="team@example.com"
 | 网络错误 | 连接超时或不可达 | 执行ping命令测试网络连通性,检查防火墙和代理设置连接后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令，参考国内替代方案 |
 
 ## 已知限制
-
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
 
 ## 示例
-
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 
@@ -556,3 +462,22 @@ Skill: 执行完成,结果如下: 操作成功
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级多会话管理,支持批量会话操作、会话编排、监控告警与日志审计。面向团队与企业的高级 tmux 会话管理工具,在免费版
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

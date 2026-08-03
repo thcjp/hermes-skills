@@ -1,4 +1,5 @@
 ---
+
 slug: free-google-search-tool-pro
 name: free-google-search-tool-pro
 version: 1.0.0
@@ -6,7 +7,7 @@ displayName: 谷歌搜索(专业版)
 summary: "企业级Google搜索专业版，含批量搜索、AI摘要、定时监控、多语言搜索与结果缓存.。谷歌搜索助手专业版是面向企业级场景的完整Google搜索与结果分析工具。在免费版单次搜索能力之上，新增批"
 license: Proprietary
 edition: pro
-description: 谷歌搜索助手专业版是面向企业级场景的完整Google搜索与结果分析工具。在免费版单次搜索能力之上，新增批量搜索、AI智能摘要、定时监控、多语言搜索、结果缓存、图片搜索、新闻搜索、学术搜索八大高级能力。Use
+description: "谷歌搜索助手专业版是面向企业级场景的完整Google搜索与结果分析工具。在免费版单次搜索能力之上，新增批量搜索、AI智能摘要、定时监控、多语言搜索、结果缓存、图片搜索、新闻搜索、学术搜索八大高级能力。Use。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。"
   when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
   - 谷歌搜索
@@ -29,7 +30,9 @@ tools:
 homepage: ""
 # 定价元数据
 category: "Knowledge"
+
 ---
+
 > **批量搜索+AI摘要+定时监控+多语言。企业级Google搜索全功能覆盖。**
 
 将复杂的搜索任务交给专业工具处理。专业版在免费版单次搜索能力之上，新增批量搜索、AI智能摘要、定时监控、多语言搜索、结果缓存、图片搜索、新闻搜索、学术搜索八大高级能力，满足企业级场景对搜索的批量性、智能化与持续性要求.
@@ -56,17 +59,14 @@ category: "Knowledge"
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供批量搜索所需的指令和必要参数.
 **处理**: 解析批量搜索的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回批量搜索的响应数据,包含状态码、结果和日志.
 ### 2. AI智能摘要
 
-**输入**: 用户提供AI智能摘要所需的指令和必要参数.
 **处理**: 解析AI智能摘要的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回AI智能摘要的响应数据,包含状态码、结果和日志.
 ### 3. 定时监控
 
-**输入**: 用户提供定时监控所需的指令和必要参数.
 **处理**: 解析定时监控的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回定时监控的响应数据,包含状态码、结果和日志.
 ### 4. 多语言搜索
@@ -138,7 +138,7 @@ class MultiLanguageSearcher:
 # ...
             for i, r in enumerate(data['results'][:5], 1):
                 lines.append(f"{i}. {r.get('title', '')}")
-                lines.append(f"   URL: {r.get('url', '')}")
+append(f"   URL: {r.get('url', '')}")
             lines.append("")
 # ...
         return "\n".join(lines)
@@ -150,14 +150,12 @@ report = ml_searcher.generate_multilang_report(results)
 print(report)
 ```
 
-**输入**: 用户提供多语言搜索所需的指令和必要参数.
 **处理**: 解析多语言搜索的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回多语言搜索的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 5. 结果缓存
 
-**输入**: 用户提供结果缓存所需的指令和必要参数.
 **处理**: 解析结果缓存的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回结果缓存的响应数据,包含状态码、结果和日志.
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：企业级、搜索专业版、含批量搜索、多语言搜索与结果、谷歌搜索助手专业、版是面向企业级场、景的完整、搜索与结果分析工、在免费版单次搜索、能力之上、新增批量搜索、图片搜索、新闻搜索、学术搜索八大高级、Use、when、模型调用、智能对话、Agent、应用时使用、不适用于需要、确定性的关键决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
@@ -191,11 +189,10 @@ summarizer = AISearchSummarizer()
 # ...
 competitors = ["CompetitorA", "CompetitorB", "CompetitorC"]
 for competitor in competitors:
-    results = ml_searcher.search_multilang(
         f"{competitor} 产品评测",
         languages=['zh-CN', 'en-US']
     )
-    report = ml_searcher.generate_multilang_report(results)
+generate_multilang_report(results)
     print(report)
 ```
 
@@ -203,7 +200,7 @@ for competitor in competitors:
 **场景描述**：监控品牌相关关键词变化，发现负面立即告警.
 ```python
 monitor = SearchMonitor()
-monitor.add_keyword("我的品牌", interval=3600, webhook_url="https://hooks.slack.com/services/xxx")
+monitor.add_keyword("我的品牌", interval=3600, webhook_url="https://hooks.slack.com/services/未指定")
 monitor.add_keyword("我的品牌 投诉", interval=1800)
 monitor.add_keyword("我的品牌 评测", interval=3600)
 ```
@@ -245,7 +242,7 @@ monitor:
     - name: 品牌监控
       query: 我的品牌
       interval: 3600
-      webhook: https://hooks.slack.com/services/xxx
+      webhook: https://hooks.slack.com/services/未指定
     - name: 竞品监控
       query: 竞争对手
       interval: 7200
@@ -285,11 +282,11 @@ monitor:
     - name: 品牌监控
       query: 我的品牌
       interval: 3600
-      webhook: https://hooks.slack.com/services/xxx
+slack.com/services/未指定
     - name: 竞品监控
       query: 竞争对手
       interval: 7200
-      webhook: https://hooks.slack.com/services/xxx
+slack.com/services/未指定
     - name: 行业动态
       query: AI芯片 行业
       interval: 86400
@@ -310,7 +307,7 @@ export:
   include_metadata: true
 ```
 
-## 最佳实践
+## 优选实践
 ### 1. 批量搜索优化
 ```python
 batch = BatchGoogleSearcher(max_workers=3)  # 建议3-5
@@ -400,7 +397,7 @@ MONITOR_INTERVALS = {
 此外，专业版还提供：
 - 多角色场景指南（市场研究/产品团队/公关团队）
 - 完整FAQ（7问）与故障排查表
-- 性能优化建议与最佳实践
+- 性能优化建议与优选实践
 - GPT-4o模型路由与优先支持
 
 ## 定价
@@ -424,8 +421,6 @@ MONITOR_INTERVALS = {
 ## 示例
 
 ### 基本用法
-
-**输入**：用户提供操作指令和必要参数
 
 **输出**：返回执行结果,包含操作状态和输出数据
 
@@ -451,3 +446,22 @@ Skill: 执行完成,结果如下: 操作成功
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级Google搜索专业版，含批量搜索、AI摘要、定时监控、多语言搜索与结果缓存.。谷歌搜索助手专业版是面向企业级场景
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

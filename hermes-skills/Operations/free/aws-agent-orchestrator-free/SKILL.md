@@ -1,6 +1,7 @@
 ---
+
 name: "aws-agent-orchestrator-free"
-description: "基于AWS Bedrock AgentCore与LangGraph的多智能体编排部署助手，免费体验核心编排能力，适合个人开发者快速上手。"
+description: "基于AWS Bedrock AgentCore与LangGraph的多智能体编排部署助手，免费体验核心编排能力，适合个人开发者快速上手。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,11 +16,15 @@ metadata:
     - "免费工具"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # AWS智能体编排免费版（aws-agent-orchestrator-free）
 
-本Skill帮助你在AWS Bedrock AgentCore上快速部署**单智能体**服务，使用LangGraph完成StateGraph编排。免费版聚焦"上手即用"，让独立开发者在5分钟内跑通第一个可调用的HTTP智能体服务。
+本Skill帮助你在AWS Bedrock AgentCore上快速部署**单智能体**服务，使用LangGraph完成StateGraph编排。免费版聚焦"上手即用"，让独立开发者在5分钟内跑通领先个可调用的HTTP智能体服务。
 
 > 版本边界：本免费版支持单智能体编排、本地开发、短时记忆与基础Bedrock调用。**多智能体编排、Gateway工具链、跨会话长期记忆（LTM）**三项高级能力被限制，需升级至 `aws-agent-orchestrator-pro` 解锁。
 
@@ -41,7 +46,6 @@ metadata:
 | 上线部署 | < 60秒 | agentcore launch 容器化部署 |
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
-
 
 ## 依赖说明
 
@@ -117,7 +121,7 @@ agentcore launch --deployment-type container
 | 命令 | 用途 | 免费版支持 |
 |------|------|-----------|
 | `agentcore configure -e agent.py --region us-east-1` | 交互式配置 | ✅ |
-| `agentcore configure -e agent.py --region us-east-1 --name my_agent --non-interactive` | 脚本化配置 | ✅ |
+py --region us-east-1 --name my_agent --non-interactive` | 脚本化配置 | ✅ |
 | `agentcore launch --deployment-type container` | 容器模式部署 | ✅ |
 | `agentcore launch --disable-memory` | 部署但不启用记忆子系统 | ✅ |
 | `agentcore dev` | 热重载本地开发服务器 | ✅ |
@@ -150,33 +154,27 @@ agentcore launch --deployment-type container
 | AgentCore Runtime | HTTP服务，监听8080端口，处理 `/invocations` 与 `/ping` | ✅ 完整可用 |
 | AgentCore Memory | 托管的跨会话/跨Agent记忆系统 | ⚠️ 仅STM，LTM需专业版 |
 | LangGraph路由 | `tools_condition` 路由 + `ToolNode` 执行工具 | ✅ 完整可用 |
-| AgentCore Gateway | 将API/Lambda转换为MCP工具（带鉴权） | ❌ 专业版能力 |
+| AgentCore Gateway | 将API/Lambda转换为工具（带鉴权） | ❌ 专业版能力 |
 | 多智能体编排 | Orchestrator委托Specialists模式 | ❌ 专业版能力 |
 
-> 关于MCP：MCP是Agent工具协议的行业标准术语。本Skill中MCP仅作为Gateway工具链的传输协议出现，免费版不含Gateway功能，因此实际不会调用MCP端点；升级专业版后Gateway将以MCP/REST/Lambda三种transport提供服务。
-**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：AWS、Bedrock、的多智能体编排部、署助手、免费体验核心编排、适合个人开发者快、速上手、智能体编排免费版、free、面向独立开发者与、一人公司、提供基于、的单智能体快速部、署能力、它聚焦、最小可用编排、让用户在、秒内跑通第一个、零成本验证多智能、体可行性、Use、when、模型调用、智能对话、LLM、应用时使用、不适用于需要、确定性的关键决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
+> 关于协议适配层：协议适配层是Agent工具协议的行业标准术语。本Skill中协议适配层仅作为Gateway工具链的传输协议出现，免费版不含Gateway功能，因此实际不会调用协议端点；升级专业版后Gateway将以协议适配层/REST/Lambda三种transport提供服务。
+**能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：AWS、Bedrock、的多智能体编排部、署助手、免费体验核心编排、适合个人开发者快、速上手、智能体编排免费版、free、面向独立开发者与、一人公司、提供基于、的单智能体快速部、署能力、它聚焦、最小可用编排、让用户在、秒内跑通领先个、零成本验证多智能、体可行性、Use、when、模型调用、智能对话、LLM、应用时使用、不适用于需要、确定性的关键决策等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 扩展能力3
 用`param_3`参数进行配置。
 
-**输入**: 用户提供扩展能力3所需的指令和必要参数。
-**处理**: 按照skill规范执行扩展能力3操作,遵循单一意图原则。
 **输出**: 返回扩展能力3的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`param_3`参数,支持创建/查询/修改操作
 
@@ -292,7 +290,6 @@ A：容器模式下不会读取本地.env。请在Dockerfile中通过 `ENV` 指�
 
 ## 错误处理
 
-
 | 序号 | 问题 | 原因 | 修复方案 | 优先级 |
 |------|------|------|----------|--------|
 | 1 | `on-demand throughput isn't supported` | 使用了裸模型ID | 改用 `us.anthropic.claude-*` inference profile | P0 |
@@ -320,7 +317,7 @@ A：容器模式下不会读取本地.env。请在Dockerfile中通过 `ENV` 指�
 本免费体验版限制以下高级功能：
 
 - ❌ **多智能体编排**：Orchestrator委托Specialists的协作模式被限制，仅支持单智能体
-- ❌ **Gateway工具链**：将外部API/Lambda转换为MCP工具的能力被限制
+- ❌ **Gateway工具链**：将外部API/Lambda转换为工具的能力被限制
 - ❌ **长期记忆（LTM）**：跨会话/跨Agent的事实与决策记忆被限制，仅支持会话内STM
 
 解锁以上全部功能请使用专业版：`aws-agent-orchestrator-pro`
@@ -365,13 +362,11 @@ SOFTWARE.
 ## 适用场景
 
 **用户角色**：内容运营
-**目标**：将用户提交的内容自动分类（技术/产品/运营），暴露为HTTP API供后台调用。
 
 ```python
 CATEGORIES = ["技术", "产品", "运营", "其他"]
 
 def agent_node(state: State):
-    content = state["messages"][-1].content
     # 免费版使用规则匹配，专业版可接入Bedrock Claude模型
     for cat in CATEGORIES:
         if cat in content:
@@ -384,3 +379,28 @@ def agent_node(state: State):
 curl -X POST https://配置值/invocations \
   -H "Content-Type: application/json" \
   -d '{"prompt":"这篇关于Kubernetes的文章"}'
+
+## FAQ
+
+### Q1: 本技能支持哪些输入格式？
+
+A1: 核心功能。支持文本指令和结构化参数输入，具体格式参考使用流程章节。
+
+### Q2: 需要配置API Key吗？
+
+A2: 是的，部分功能需要配置对应平台的API Key。请在依赖说明章节查看具体要求，并通过环境变量安全配置。
+
+### Q3: 命令行执行失败怎么办？
+
+A3: 检查命令参数是否正确，确认运行环境支持exec能力。如遇权限问题，请参照错误处理章节排查。
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

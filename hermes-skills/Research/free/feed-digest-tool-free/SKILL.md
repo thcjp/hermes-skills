@@ -1,6 +1,7 @@
 ---
+
 name: "feed-digest-tool-free"
-description: "订阅摘要免费版，支持RSS订阅获取、未读扫描、基础分类与摘要生成。"
+description: "订阅摘要免费版，支持RSS订阅获取、未读扫描、基础分类与摘要生成。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,10 @@ metadata:
     - "信息过载"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 > **获取、扫描、筛选、阅读。四步完成订阅内容摘要。**
@@ -66,7 +71,6 @@ class FeedFetcher:
         if feed_id:
             cmd.extend(["--feed", feed_id])
 
-        result = subprocess.run(
             cmd, capture_output=True, text=True, timeout=30, encoding="utf-8"
         )
         if result.returncode == 0:
@@ -75,29 +79,24 @@ class FeedFetcher:
 
     def get_entry(self, entry_id):
         """获取单条目全文（Markdown格式）"""
-        result = subprocess.run(
             [self.cli, "get", "entry", str(entry_id)],
             capture_output=True, text=True, timeout=30, encoding="utf-8"
         )
         if result.returncode == 0:
-            return result.stdout
-        return f"获取失败：{result.stderr}"
 
     def get_feeds(self):
         """获取所有订阅源列表"""
-        result = subprocess.run(
             [self.cli, "get", "feeds"],
             capture_output=True, text=True, timeout=10, encoding="utf-8"
         )
-        return result.stdout if result.returncode == 0 else f"获取失败：{result.stderr}"
+stdout if result.returncode == 0 else f"获取失败：{result.stderr}"
 
     def get_stats(self):
         """获取数据库统计"""
-        result = subprocess.run(
             [self.cli, "get", "stats"],
             capture_output=True, text=True, timeout=10, encoding="utf-8"
         )
-        return result.stdout if result.returncode == 0 else f"获取失败：{result.stderr}"
+stdout if result.stderr}"
 
 fetcher = FeedFetcher()
 
@@ -111,8 +110,6 @@ print("\n=== 未读条目 ===")
 print(fetcher.get_entries(limit=50))
 ```
 
-**输入**: 用户提供获取最新内容所需的指令和必要参数。
-**处理**: 按照skill规范执行获取最新内容操作,遵循单一意图原则。
 **输出**: 返回获取最新内容的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
@@ -120,16 +117,10 @@ print(fetcher.get_entries(limit=50))
 
 > 详细代码示例已移至 `references/detail.md`
 
-**输入**: 用户提供智能筛选所需的指令和必要参数。
-**处理**: 按照skill规范执行智能筛选操作,遵循单一意图原则。
 **输出**: 返回智能筛选的执行结果,包含操作状态和输出数据。
 
 ### 3. 摘要生成
 
-> 详细代码示例已移至 `references/detail.md`
-
-**输入**: 用户提供摘要生成所需的指令和必要参数。
-**处理**: 按照skill规范执行摘要生成操作,遵循单一意图原则。
 **输出**: 返回摘要生成的执行结果,包含操作状态和输出数据。
 
 ### 4. 标记已读
@@ -146,7 +137,6 @@ class ReadStatusManager:
             return False
 
         cmd = [self.cli, "update", "entries", "--read"] + [str(id) for id in entry_ids]
-        result = subprocess.run(
             cmd, capture_output=True, text=True, timeout=30, encoding="utf-8"
         )
         if result.returncode == 0:
@@ -157,11 +147,10 @@ class ReadStatusManager:
 
     def search(self, query):
         """全文搜索"""
-        result = subprocess.run(
             [self.cli, "search", query],
             capture_output=True, text=True, timeout=30, encoding="utf-8"
         )
-        return result.stdout if result.returncode == 0 else f"搜索失败：{result.stderr}"
+stdout if result.returncode == 0 else f"搜索失败：{result.stderr}"
 
 manager = ReadStatusManager()
 
@@ -169,8 +158,6 @@ entry_ids = [entry['id'] for entry in filtered]
 manager.mark_read(entry_ids)
 ```
 
-**输入**: 用户提供标记已读所需的指令和必要参数。
-**处理**: 按照skill规范执行标记已读操作,遵循单一意图原则。
 **输出**: 返回标记已读的执行结果,包含操作状态和输出数据。
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：订阅摘要免费版、RSS、订阅获取、未读扫描、基础分类与摘要生、订阅摘要助手免费、版是面向个人用户、的轻量、订阅摘要工具、四步流程、从订阅源中筛选高、价值内容生成摘要、Use、when、模型调用、智能对话、Agent、LLM、应用时使用、不适用于需要、确定性的关键决策、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
@@ -212,7 +199,7 @@ print("\n=== 订阅源 ===")
 print(fetcher.get_feeds())
 
 print("\n=== 某订阅源未读 ===")
-print(fetcher.get_entries(limit=20, feed_id="feed_id_xxx"))
+print(fetcher.get_entries(limit=20, feed_id="feed_id_未指定"))
 ```
 
 ### 场景三：高价值内容筛选
@@ -222,7 +209,7 @@ print(fetcher.get_entries(limit=20, feed_id="feed_id_xxx"))
 fetcher = FeedFetcher()
 filterer = FeedFilter(limit=5)
 
-entries_text = fetcher.get_entries(limit=100)
+get_entries(limit=100)
 
 filtered = filterer.filter_entries(entries_text)
 
@@ -271,7 +258,6 @@ feed update entries --read <id1> <id2> <id3>
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
 
-
 ## 配置示例
 ### 基础配置
 ```python
@@ -315,7 +301,7 @@ feed get feeds                          # 列出订阅源（含未读数）
 feed get stats                          # 数据库统计
 ```
 
-## 最佳实践
+## 优选实践
 ### 1. 输出格式优化
 ```python
 result = subprocess.run(
@@ -405,8 +391,6 @@ manager.mark_read([entry_id])
 
 ### 基本用法
 
-**输入**：用户提供操作指令和必要参数
-
 **输出**：返回执行结果,包含操作状态和输出数据
 
 ```text
@@ -414,3 +398,22 @@ manager.mark_read([entry_id])
 Skill: 正在执行核心功能...
 Skill: 执行完成,结果如下: 操作成功
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

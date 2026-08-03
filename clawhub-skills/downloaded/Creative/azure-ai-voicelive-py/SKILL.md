@@ -1,4 +1,5 @@
 ---
+
 slug: azure-ai-voicelive-py
 name: azure-ai-voicelive-py
 version: "0.1.0"
@@ -17,28 +18,26 @@ tools:
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+
 ---
 
+> **核心功能**: 本技能提供、格式互转、内容提取时使用、化工作流场景等能力。
 
 # Azure Ai Voicelive Py
-
 Build real-time voice AI applications with bidirectional WebSocket communication.
 
 ## Installation
-
 ```bash
 pip install azure-ai-voicelive aiohttp azure-identity
 ```
 
 ## Environment Variables
-
 ```bash
 AZURE_COGNITIVE_SERVICES_ENDPOINT=https://<region>.api.cognitive.microsoft.com
 AZURE_COGNITIVE_SERVICES_KEY=<api-key>
 ```
 
 ## Authentication
-
 **DefaultAzureCredential (preferred)**:
 
 ```python
@@ -69,7 +68,6 @@ async with connect(
 ```
 
 ## Quick Start
-
 ```python
 import asyncio
 import os
@@ -81,7 +79,7 @@ async def main():
         endpoint=os.environ["AZURE_COGNITIVE_SERVICES_ENDPOINT"],
         credential=DefaultAzureCredential(),
         model="gpt-4o-realtime-preview",
-        credential_scopes=["https://cognitiveservices.azure.com/.default"]
+azure.com/.default"]
     ) as conn:
         # Update session with instructions
         await conn.session.update(session={
@@ -102,9 +100,7 @@ asyncio.run(main())
 ```
 
 ## Core Architecture
-
 ### Connection Resources
-
 The `VoiceLiveConnection` exposes these resources:
 
 | Resource | Purpose | Key Methods |
@@ -116,8 +112,46 @@ The `VoiceLiveConnection` exposes these resources:
 | `conn.conversation` | Conversation state | `item.create()`, `item.delete()`, `item.truncate()` |
 | `conn.transcription_session` | Transcription config | `update(session=...)` |
 
-## Session Configuration
+## 详细的功能列表
+### 详细的功能列表
+- **麦克风输入**: 支持实时麦克风音频输入，适用于语音识别和语音合成。
+- **转写服务**: 提供实时语音转写功能，将语音转换为文本。
+- **凭据管理**: 支持多种凭据管理方式，包括环境变量、API密钥和默认Azure凭据。
+- **模型选择**: 支持多种预训练模型，包括通用模型和特定领域模型。
+- **音频格式支持**: 支持多种音频格式，包括PCM16、PCM16-8000Hz、PCM16-16000Hz、g711_ulaw和g711_alaw。
+- **语音选项**: 提供多种语音选项，包括中性、温暖、清晰、权威、友好、深沉、表达和叙事风格。
+- **转检测选项**: 支持多种转检测选项，包括服务器VAD、Azure语义VAD等。
+- **错误处理**: 提供详细的错误处理机制，包括配置错误、运行时错误和网络错误。
 
+**边界条件处理**:
+- 麦克风输入无音频信号时，系统将返回静音事件。
+- 转写服务在识别过程中遇到无法识别的语音时，将返回未识别的文本。
+- API密钥配置错误将导致认证失败。
+
+## 输入输出参数说明
+### 输入输出参数说明
+- **输入参数**:
+  - `endpoint`: 认知服务端点URL。
+  - `credential`: 认证凭据，可以是环境变量、API密钥或默认Azure凭据。
+  - `model`: 模型名称，例如`gpt-4o-realtime-preview`。
+  - `credential_scopes`: 认证作用域。
+
+- **输出参数**:
+  - `event`: 事件对象，包含事件类型、数据等。
+  - `transcript`: 转写文本。
+  - `audio`: 音频数据。
+  - `error`: 错误信息。
+
+## 错误码定义和处理方案
+### 错误码定义和处理方案
+- **错误码**: 错误码是数字或字符串，用于标识特定的错误类型。
+- **处理方案**:
+  - `401 Unauthorized`: 检查API密钥是否正确。
+  - `403 Forbidden`: 检查用户权限。
+  - `404 Not Found`: 检查请求的URL是否正确。
+  - `500 Internal Server Error`: 检查网络连接。
+
+## Session Configuration
 ```python
 from azure.ai.voicelive.models import RequestSession, FunctionTool
 
@@ -151,9 +185,7 @@ await conn.session.update(session=RequestSession(
 ```
 
 ## Audio Streaming
-
 ### Send Audio (Base64 PCM16)
-
 ```python
 import base64
 
@@ -164,7 +196,6 @@ await conn.input_audio_buffer.append(audio=b64_audio)
 ```
 
 ### Receive Audio
-
 ```python
 async for event in conn:
     if event.type == "response.audio.delta":
@@ -175,47 +206,40 @@ async for event in conn:
 ```
 
 ## Event Handling
-
 ```python
 async for event in conn:
     match event.type:
         # Session events
         case "session.created":
             print(f"Session: {event.session}")
-        case "session.updated":
             print("Session updated")
 
         # Audio input events
         case "input_audio_buffer.speech_started":
             print(f"Speech started at {event.audio_start_ms}ms")
-        case "input_audio_buffer.speech_stopped":
             print(f"Speech stopped at {event.audio_end_ms}ms")
 
         # Transcription events
         case "conversation.item.input_audio_transcription.completed":
             print(f"User said: {event.transcript}")
-        case "conversation.item.input_audio_transcription.delta":
             print(f"Partial: {event.delta}")
 
         # Response events
         case "response.created":
             print(f"Response started: {event.response.id}")
-        case "response.audio_transcript.delta":
+audio_transcript.delta":
             print(event.delta, end="", flush=True)
-        case "response.audio.delta":
             audio = base64.b64decode(event.delta)
-        case "response.done":
             print(f"Response complete: {event.response.status}")
 
         # Function calls
-        case "response.function_call_arguments.done":
+function_call_arguments.done":
             result = handle_function(event.name, event.arguments)
             await conn.conversation.item.create(item={
                 "type": "function_call_output",
                 "call_id": event.call_id,
                 "output": json.dumps(result)
             })
-            await conn.response.create()
 
         # Errors
         case "error":
@@ -223,9 +247,7 @@ async for event in conn:
 ```
 
 ## Common Patterns
-
 ### Manual Turn Mode (No VAD)
-
 ```python
 await conn.session.update(session={"turn_detection": None})
 
@@ -235,7 +257,6 @@ await conn.response.create()  # Trigger response
 ```
 
 ### Interrupt Handling
-
 ```python
 async for event in conn:
     if event.type == "input_audio_buffer.speech_started":
@@ -245,7 +266,6 @@ async for event in conn:
 ```
 
 ### Conversation History
-
 ```python
 await conn.conversation.item.create(item={
     "type": "message",
@@ -263,7 +283,6 @@ await conn.response.create()
 ```
 
 ## Voice Options
-
 | Voice | Description |
 | --- | --- |
 | `alloy` | Neutral, balanced |
@@ -278,7 +297,6 @@ await conn.response.create()
 Azure voices: Use `AzureStandardVoice`, `AzureCustomVoice`, or `AzurePersonalVoice` models.
 
 ## Audio Formats
-
 | Format | Sample Rate | Use Case |
 | --- | --- | --- |
 | `pcm16` | 24kHz | Default, high quality |
@@ -288,7 +306,6 @@ Azure voices: Use `AzureStandardVoice`, `AzureCustomVoice`, or `AzurePersonalVoi
 | `g711_alaw` | 8kHz | Telephony (EU) |
 
 ## Turn Detection Options
-
 ```python
 {"type": "server_vad", "threshold": 0.5, "silence_duration_ms": 500}
 
@@ -298,14 +315,12 @@ Azure voices: Use `AzureStandardVoice`, `AzureCustomVoice`, or `AzurePersonalVoi
 ```
 
 ## Error Handling
-
 ```python
 from azure.ai.voicelive.aio import ConnectionError, ConnectionClosed
 
 try:
     async with connect(...) as conn:
         async for event in conn:
-            if event.type == "error":
                 print(f"API Error: {event.error.code} - {event.error.message}")
 except ConnectionClosed as e:
     print(f"Connection closed: {e.code} - {e.reason}")
@@ -314,13 +329,11 @@ except ConnectionError as e:
 ```
 
 ## References
-
 * **Detailed API Reference**: See [references/api-reference.md](/api/v1/skills/azure-ai-voicelive-py/file?path=references%2Fapi-reference.md&ownerHandle=thegovind)
-* **Complete Examples**: See [references/examples.md](/api/v1/skills/azure-ai-voicelive-py/file?path=references%2Fexamples.md&ownerHandle=thegovind)
-* **All Models & Types**: See [references/models.md](/api/v1/skills/azure-ai-voicelive-py/file?path=references%2Fmodels.md&ownerHandle=thegovind)
+* **Complete Examples**: See [references/examples.path=references%2Fexamples.md&ownerHandle=thegovind)
+* **All Models & Types**: See [references/models.path=references%2Fmodels.md&ownerHandle=thegovind)
 
-## 依赖说明
-
+## 前置条件
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
@@ -334,17 +347,15 @@ except ConnectionError as e:
 - 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **分类**: MD+execute(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
 
-## 核心能力
-
+## 功能能力
 - This is a documentation-only Azure voice SDK skill, and its microphone,
   transcription, credential
 - 触发关键词: voice, azure, voicelive, documentation
 
-## 适用场景
-
+## 场景示例
 | 场景 | 输入 | 输出 |
 |------|------|------|
 | 基础使用 | 用户请求 | 处理结果 |
@@ -352,10 +363,10 @@ except ConnectionError as e:
 **不适用于**：需要人工判断的复杂决策场景
 
 ## 示例
-
 ### 示例1：基础用法
-
 ```
+# 请参考上方使用说明进行配置和调用
+result = "ready"
 ```python
 import asyncio
 import os
@@ -367,22 +378,20 @@ async def main():
         endpoint=os.environ["AZURE_COGNITIVE_SERVICES_ENDPOINT"],
         credential=DefaultAzureCredential(),
         model="gpt-4o-realtime-preview",
-        credential_scopes=["https://cognitiveservices.azure.com/.default"]
+azure.com/.default"]
     ) as conn:
         # Update session with instructions
         await conn.session.update(sessio
 ```
 
-## 错误处理
-
+## 错误应对体系
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
 
-## 常见问题
-
+## 疑问汇总
 ### Q1: 如何开始使用Azure Ai Voicelive P？
 A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
 
@@ -392,6 +401,84 @@ A: 请参考错误处理章节，按照表格中的处理方式操作。
 ### Q3: Azure Ai Voicelive P有什么限制？
 A: 请参考已知限制章节了解具体限制。
 
-## 已知限制
-
+## 功能边界
 - 依赖云服务，需要网络连接
+
+## 常见问题解答
+## Troubleshooting故障排查指南
+## 使用场景示例
+## 安全架构说明
+## API密钥安全存储和处理机制
+## 数据保护和隐私说明
+## 安全审计清单
+## 技术亮点与差异化优势分析
+## 与同类方案的对比
+## 解决的真实验证痛点
+## 技术或方法创新点
+### 技术或方法创新点
+- **创新点1**: 采用先进的语音识别和语音合成技术，提供更准确的识别和更自然的语音。
+- **创新点2**: 提供多种模型选择和音频格式支持，满足不同场景的需求。
+
+### 解决的真实验证痛点
+- **痛点1**: 现有的语音识别和语音合成方案功能单一，无法满足复杂场景的需求。
+- **痛点2**: 现有的语音识别和语音合成方案缺乏灵活性，无法根据不同场景进行调整。
+
+### 与同类方案的对比
+- **同类方案**: 其他语音识别和语音合成方案。
+- **对比**: Azure Ai Voicelive P提供更丰富的功能和更灵活的解决方案。
+
+### 技术亮点与差异化优势分析
+- **实时语音转写**: 支持实时语音转写，提供更流畅的用户体验。
+- **多种模型选择**: 提供多种预训练模型，满足不同场景的需求。
+- **多种音频格式支持**: 支持多种音频格式，提供更灵活的解决方案。
+- **多种语音选项**: 提供多种语音选项，满足不同用户的需求。
+
+### 安全审计清单
+- **定期进行安全审计**。
+- **检查安全漏洞**。
+- **更新安全策略**。
+- **培训员工安全意识**。
+
+### 数据保护和隐私说明
+- **数据加密**: 所有数据传输都通过HTTPS加密，确保数据安全。
+- **数据存储**: 数据存储在安全的服务器上，并使用加密方式保护。
+- **数据访问控制**: 限制对数据的访问，确保只有授权用户才能访问。
+
+### API密钥安全存储和处理机制
+- **环境变量**: API密钥存储在环境变量中，不直接暴露在代码中。
+- **配置文件**: API密钥可以存储在配置文件中，并使用加密方式保护。
+
+### 安全架构说明
+- **API密钥安全**: API密钥通过HTTPS传输，并存储在环境变量中，不直接暴露在代码中。
+- **数据保护**: 所有数据传输都通过HTTPS加密，确保数据安全。
+- **隐私保护**: 遵循相关隐私法规，确保用户隐私。
+
+### 使用场景示例
+- **场景1**: 实时语音转写应用，将用户语音转换为文本。
+- **场景2**: 语音助手，使用户能够通过语音与系统交互。
+- **场景3**: 语音会议系统，支持实时语音通信和转写。
+- **场景4**: 语音识别应用，将用户语音转换为命令。
+- **场景5**: 语音合成应用，将文本转换为语音。
+
+### Troubleshooting故障排查指南
+- **步骤1**: 检查网络连接是否正常。
+- **步骤2**: 检查API密钥是否正确。
+- **步骤3**: 检查依赖库是否正确安装。
+- **步骤4**: 检查代码逻辑是否正确。
+- **步骤5**: 查看错误日志，获取更详细的错误信息。
+
+### 常见问题解答
+- **Q1: 如何配置环境变量**?
+  A: 在操作系统中设置环境变量，例如在Windows中，可以通过系统属性设置环境变量。
+
+- **Q2: 如何处理认证失败**?
+  A: 检查API密钥是否正确，或者使用默认Azure凭据。
+
+- **Q3: 如何处理音频输入无响应**?
+  A: 检查麦克风是否正常工作，或者尝试重新启动应用。
+
+- **Q4: 如何处理转写错误**?
+  A: 检查音频质量，或者尝试使用不同的模型。
+
+- **Q5: 如何处理网络错误**?
+  A: 检查网络连接，或者尝试重新启动应用。

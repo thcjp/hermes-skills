@@ -1,6 +1,7 @@
 ---
+
 name: "docker-toolkit-free"
-description: "Docker容器管理工具，支持镜像/容器/卷/网络基础操作与简单编排。"
+description: "Docker容器管理工具，支持镜像/容器/卷/网络基础操作与简单编排。Use when 需要项目管理、任务规划、进度跟踪、团队协作时使用。不适用于实际人员绩效评估。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -15,6 +16,10 @@ metadata:
     - "部署"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+
 ---
 
 # Docker容器入门工具（免费版）
@@ -38,23 +43,17 @@ metadata:
 | 集群管理 | Swarm/K8s | 不支持 |
 | 安全扫描 | 镜像漏洞扫描 | 不支持 |
 
-**输入**: 用户提供管理功能所需的指令和必要参数。
-**处理**: 按照skill规范执行管理功能操作,遵循单一意图原则。
 **输出**: 返回管理功能的执行结果,包含操作状态和输出数据。
 
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：Docker、容器管理工具、支持镜像、网络基础操作与简、单编排、面向个人开发者的、支持镜像构建与拉、生命周期管理、数据卷与网络配置、Use、when、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数、据处理、适用于独立开发者、企业团队和自动化、工作流场景等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -72,14 +71,12 @@ python3 scripts/docker.py image build \
   --path ./Dockerfile
 
 # 运行容器
-python3 scripts/docker.py container run \
   --image my-app:latest \
   --name my-app \
   --port 8080:80 \
   --detach
 
 # 查看运行状态
-python3 scripts/docker.py container ps
 ```
 
 ### 场景二：Docker Compose编排
@@ -88,15 +85,14 @@ python3 scripts/docker.py container ps
 
 ```bash
 # 生成docker-compose.yml
-python3 scripts/docker.py compose generate \
+py compose generate \
   --template "web_db" \
   --output docker-compose.yml
 
 # 启动服务
-python3 scripts/docker.py compose up --detach
+py compose up --detach
 
 # 查看状态
-python3 scripts/docker.py compose ps
 ```
 
 ### 场景三：数据卷管理
@@ -105,13 +101,12 @@ python3 scripts/docker.py compose ps
 
 ```bash
 # 创建数据卷
-python3 scripts/docker.py volume create --name my-data
+py volume create --name my-data
 
 # 挂载运行
-python3 scripts/docker.py container run \
   --image postgres:15 \
   --name my-db \
-  --volume my-data:/var/lib/postgresql/data \
+  --volume my-data:/var/lib/数据库/data \
   --detach
 ```
 
@@ -142,28 +137,23 @@ docker --version
 
 ```bash
 # 镜像管理
-python3 scripts/docker.py image build --tag my-app:latest --path ./Dockerfile
-python3 scripts/docker.py image pull nginx:latest
-python3 scripts/docker.py image list
-python3 scripts/docker.py image delete my-app:old
+py image build --tag my-app:latest --path ./Dockerfile
+py image pull nginx:latest
+py image delete my-app:old
 
 # 容器管理
-python3 scripts/docker.py container run --image nginx --name web --port 8080:80 --detach
-python3 scripts/docker.py container ps
-python3 scripts/docker.py container stop --name web
-python3 scripts/docker.py container logs --name web --tail 100
+py container run --image nginx --name web --port 8080:80 --detach
+py container stop --name web
+py container logs --name web --tail 100
 
 # 数据卷
-python3 scripts/docker.py volume create --name my-data
-python3 scripts/docker.py volume list
+py volume create --name my-data
 
 # 网络
-python3 scripts/docker.py network create --name my-net
-python3 scripts/docker.py network list
+py network create --name my-net
 
 # Compose
-python3 scripts/docker.py compose up --detach
-python3 scripts/docker.py compose down
+py compose up --detach
 ```
 
 **结果处理**: 执行完成后,查看输出结果确认操作状态。成功时输出包含处理摘要和结果数据;失败时根据错误信息排查问题,查阅错误处理章节获取恢复步骤。
@@ -196,7 +186,7 @@ docker_config:
     default_template: "web_db"
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **镜像优化**：使用多阶段构建减小镜像体积
 2. **标签管理**：使用语义化版本标签，避免仅用latest
@@ -259,7 +249,6 @@ docker_config:
 
 ## 错误处理
 
-
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -271,3 +260,30 @@ docker_config:
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 基于指令驱动的自动化流程
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

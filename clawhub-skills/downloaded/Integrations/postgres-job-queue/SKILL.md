@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Postgres Job Queue
 
 Production-ready job queue using PostgreSQL with priority scheduling, batch claiming, and progress tracking.

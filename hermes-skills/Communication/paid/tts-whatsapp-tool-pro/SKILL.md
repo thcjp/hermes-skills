@@ -1,5 +1,6 @@
 ---
-slug: "tts-whatsapp-tool-pro"
+
+slug: tts-whatsapp-tool-pro
 name: "tts-whatsapp-tool-pro"
 version: "1.0.0"
 displayName: "WhatsApp语音消息专业版"
@@ -42,7 +43,9 @@ tools:
   - write
 homepage: ""
 category: "Communication"
+
 ---
+
 # WhatsApp 语音消息工具 - 专业版
 ## 概述
 WhatsApp 语音消息工具(专业版)在免费版(`tts-whatsapp-tool-free`)单条消息发送能力之上,新增群组广播、批量发送、定时发送、消息模板与 API 服务化等企业级能力。适合需要大规模语音消息触达的企业与团队.
@@ -66,19 +69,18 @@ WhatsApp 语音消息工具(专业版)在免费版(`tts-whatsapp-tool-free`)单�
 | API 服务 | 不支持 | FastAPI | 远程调用 |
 | CRM 集成 | 不支持 | 联系人管理 | 客户运营 |
 
-**输入**: 用户提供免费版 vs 专业版对比所需的指令和必要参数.
 **处理**: 解析免费版 vs 专业版对比的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回免费版 vs 专业版对比的响应数据,包含状态码、结果和日志.
 ### 核心功能执行
 用`input_params`参数进行配置.
-**输入**: 用户提供核心功能执行所需的指令和必要参数.
+
 **处理**: 解析核心功能执行的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回核心功能执行的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置.
-**输入**: 用户提供参数配置与调用所需的指令和必要参数.
+
 **处理**: 解析参数配置与调用的输入参数,完成核心逻辑,返回结构化响应.
 **输出**: 返回参数配置与调用的响应数据,包含状态码、结果和日志.
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
@@ -87,13 +89,10 @@ WhatsApp 语音消息工具(专业版)在免费版(`tts-whatsapp-tool-free`)单�
 ### 场景一:群组广播
 发送语音消息到 WhatsApp 群组.
 ```bash
-# 发送到群组(使用群组 ID)
 tts-whatsapp "各位同事,明天上午十点有团队会议,请准时参加。" \
     --lang zh_CN \
     --voice zh_CN-huayan-medium \
     --target "120363257357161211@g.us"
-# ...
-# 群组通知(多语言版本)
 tts-whatsapp "Team, reminder: meeting tomorrow at 10 AM." \
     --lang en_US \
     --target "group-id@g.us"
@@ -105,18 +104,14 @@ tts-whatsapp "Team, reminder: meeting tomorrow at 10 AM." \
 import csv
 import subprocess
 import os
-# ...
 class BatchWhatsAppSender:
     """批量 WhatsApp 语音发送器"""
-# ...
     def __init__(self, default_lang="zh_CN", voice="zh_CN-huayan-medium"):
         self.default_lang = default_lang
         self.voice = voice
         self.results = []
-# ...
     def send_from_csv(self, csv_path, template):
         """从 CSV 批量发送
-# ...
         Args:
             csv_path: 联系人 CSV 文件路径
             template: 消息模板,用 {name} 等占位符
@@ -124,15 +119,10 @@ class BatchWhatsAppSender:
         with open(csv_path, "r", encoding="utf-8") as f:
             readers = csv.DictReader(f)
             for row in readers:
-                # 变量替换
                 message = template.format(**row)
                 target = row["phone"]
-# ...
-                # 根据联系人语言选择
                 lang = row.get("language", self.default_lang)
                 voice = row.get("voice", self.voice)
-# ...
-                # 发送
                 result = self.send_one(message, target, lang, voice)
                 self.results.append({
                     "name": row.get("name", ""),
@@ -140,9 +130,7 @@ class BatchWhatsAppSender:
                     "status": "success" if result else "failed",
                     "message": message[:50]
                 })
-# ...
         self.generate_report()
-# ...
     def send_one(self, text, target, lang, voice):
         """发送单条"""
         try:
@@ -158,24 +146,18 @@ class BatchWhatsAppSender:
         except Exception as e:
             print(f"发送失败 {target}: {e}")
             return False
-# ...
     def generate_report(self):
         """生成发送报告"""
         success = sum(1 for r in self.results if r["status"] == "success")
         failed = len(self.results) - success
-# ...
         print(f"\n发送报告")
         print(f"成功: {success}")
         print(f"失败: {failed}")
         print(f"总计: {len(self.results)}")
-# ...
-        # 保存详细报告
         with open("send_report.csv", "w", encoding="utf-8") as f:
             f.write("name,phone,status,message\n")
             for r in self.results:
                 f.write(f"{r['name']},{r['phone']},{r['status']},{r['message']}\n")
-# ...
-# 使用
 sender = BatchWhatsAppSender()
 sender.send_from_csv(
     "contacts.csv",
@@ -184,7 +166,6 @@ sender.send_from_csv(
 ```
 
 ```csv
-# contacts.csv
 name,phone,language,event,time
 张三,+8613800138000,zh_CN,产品评审会,2026-07-20 14:00
 李四,+8613800138001,zh_CN,产品评审会,2026-07-20 14:00
@@ -197,34 +178,28 @@ John,+15555550123,en_US,Product Review,2026-07-20 14:00
 import schedule
 import time
 import subprocess
-# ...
 class ScheduledSender:
     """定时语音消息发送器"""
-# ...
     def __init__(self):
         self.jobs = []
-# ...
     def add_daily(self, time_str, message, target, lang="zh_CN"):
         """添加每日定时任务"""
         schedule.every().day.at(time_str).do(
             self._send, message=message, target=target, lang=lang
         )
         self.jobs.append({"type": "daily", "time": time_str, "target": target})
-# ...
     def add_weekly(self, day, time_str, message, target, lang="zh_CN"):
         """添加每周定时任务"""
         getattr(schedule.every(), day).at(time_str).do(
             self._send, message=message, target=target, lang=lang
         )
         self.jobs.append({"type": "weekly", "day": day, "time": time_str})
-# ...
     def _send(self, message, target, lang):
         """执行发送"""
         cmd = ["tts-whatsapp", message, "--lang", lang, "--target", target]
-        result = subprocess.run(cmd, capture_output=True, text=True)
+run(cmd, capture_output=True, text=True)
         status = "成功" if result.returncode == 0 else "失败"
         print(f"[{time.strftime('%H:%M:%S')}] {status}: {message[:30]}")
-# ...
     def run(self):
         """启动调度器"""
         print(f"已加载 {len(self.jobs)} 个定时任务")
@@ -233,17 +208,10 @@ class ScheduledSender:
         while True:
             schedule.run_pending()
             time.sleep(60)
-# ...
-# 使用
 scheduler = ScheduledSender()
-# ...
-# 每天早上 9 点发送提醒
 scheduler.add_daily("09:00", "早上好!记得查看今日待办事项。", "+8613800138000")
-# ...
-# 每周一发送周报提醒
 scheduler.add_weekly("monday", "10:00",
     "各位同事,请记得提交本周工作周报。", "group-id@g.us")
-# ...
 scheduler.run()
 ```
 
@@ -253,9 +221,7 @@ scheduler.run()
 from fastapi import FastAPI, BackgroundTasks
 from fastapi.responses import JSONResponse
 import subprocess
-# ...
 app = FastAPI(title="WhatsApp TTS 服务", version="1.0.0")
-# ...
 @app.post("/api/v1/send")
 async def send_voice(
     text: str,
@@ -271,13 +237,10 @@ async def send_voice(
            "--quality", quality, "--speed", str(speed)]
     if voice:
         cmd.extend(["--voice", voice])
-# ...
-    result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
-# ...
+run(cmd, capture_output=True, text=True, timeout=30)
     if result.returncode == 0:
         return JSONResponse({"status": "success", "target": target})
     return JSONResponse({"status": "failed", "error": result.stderr}, status_code=500)
-# ...
 @app.post("/api/v1/broadcast")
 async def broadcast(
     text: str,
@@ -292,10 +255,8 @@ async def broadcast(
                 ["tts-whatsapp", text, "--lang", lang, "--target", target],
                 capture_output=True, timeout=30
             )
-# ...
     background_tasks.add_task(send_batch)
     return {"status": "accepted", "count": len(targets)}
-# ...
 @app.post("/api/v1/schedule")
 async def schedule_send(
     text: str,
@@ -304,18 +265,14 @@ async def schedule_send(
     lang: str = "zh_CN"
 ):
     """定时发送(需配合调度器)"""
-    # 写入调度队列
     with open("schedule_queue.json", "a", encoding="utf-8") as f:
         import json
         json.dump({"text": text, "target": target, "time": send_at, "lang": lang}, f)
         f.write("\n")
     return {"status": "scheduled", "send_at": send_at}
-# ...
-# 启动: uvicorn server:app --host 0.0.0.0 --port 8000
 ```
 
 ## 不适用场景
-
 以下场景WhatsApp语音消息专业版不适合处理：
 
 - 需要人工创意判断的任务
@@ -323,7 +280,6 @@ async def schedule_send(
 - 人际沟通协调
 
 ## 触发条件
-
 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于非本工具能力范围的需求.
 ## 快速开始
 1. 阅读## 核心能力章节了解skill功能
@@ -331,19 +287,15 @@ async def schedule_send(
 3. 执行所需能力对应的命令
 4. 参考## 错误处理章节处理异常
 5. 查看## FAQ解答常见疑问
-
 ### 依赖详情
 ```bash
-# 基础依赖(同免费版)
 pip3 install piper-tts
 brew install ffmpeg  # 或 apt install ffmpeg
-# 专业版额外依赖
 pip3 install schedule fastapi uvicorn
 ```
 
 ### 2. 配置联系人
 ```csv
-# contacts.csv
 name,phone,language,voice
 张三,+8613800138000,zh_CN,zh_CN-huayan-medium
 李四,+8613800138001,zh_CN,zh_CN-huayan-medium
@@ -360,7 +312,6 @@ python batch_sender.py --contacts contacts.csv \
 ## 示例
 ### 批量发送配置
 ```yaml
-# broadcast-config.yaml
 broadcast:
   contacts_file: "contacts.csv"
   template: "你好 {name},{message}"
@@ -376,14 +327,12 @@ broadcast:
 
 ### 定时任务配置
 ```yaml
-# schedule-config.yaml
 schedules:
   - name: "每日提醒"
     time: "09:00"
     message: "早上好!记得查看今日待办。"
     target: "+8613800138000"
     lang: "zh_CN"
-# ...
   - name: "周报提醒"
     day: "monday"
     time: "10:00"
@@ -402,7 +351,7 @@ schedules:
 | `{date}` | 日期 | 2026-07-20 |
 | 自定义 | CSV 任意字段 | 任何列名 |
 
-## 最佳实践
+## 优选实践
 ### 1. 群发优化
 - **频率控制**:每条间隔 2-5 秒,避免被限制
 - **并发控制**:建议 3 并发,避免过载
@@ -411,7 +360,6 @@ schedules:
 
 ### 2. 个性化策略
 ```python
-# 根据联系人属性选择语言与语音
 def get_personalized_settings(contact):
     lang = contact.get("language", "zh_CN")
     voice_map = {
@@ -446,7 +394,6 @@ def generate_daily_report():
         "failed": sum(1 for r in results if r["status"] == "failed"),
         "success_rate": f"{success/total*100:.1f}%"
     }
-    # 发送报告到管理员
     send_report_notification(report)
 ```
 
@@ -498,10 +445,9 @@ def generate_daily_report():
 - 企业部署建议通过密钥管理服务统一托管认证凭据
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需exec命令行执行)
+- **分类**: MD+execute(纯Markdown指令,部分功能需exec命令行执行)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent完成操作。专业版支持群发广播、定时发送与 API 服务化,适合企业级语音消息触达场景.
 ## 错误处理
-
 | 错误场景 | 原因 | 处理方式 |
 |:---:|:---:|:---:|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
@@ -524,3 +470,30 @@ def generate_daily_report():
   "error": null
 }
 ```
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
+
+## 核心功能
+
+- **自动化执行**: 企业级WhatsApp语音消息工具,支持群发广播、定时发送、批量处理与消息模板,适配团队协作。。面向团队与企业用户的 W
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据
+
+## 核心功能
+
+- **自动化执行**: 企业级WhatsApp语音消息工具,支持群发广播、定时发送、批量处理与消息模板,适配团队协作。。面向团队与企业用户的 W
+- **文件处理**: 支持多种文件格式的读取、解析和写入操作
+- **API集成**: 通过标准化接口调用外部服务并处理响应
+- **命令执行**: 在安全沙箱中执行系统命令并收集结果
+- **信息检索**: 快速搜索和过滤目标数据

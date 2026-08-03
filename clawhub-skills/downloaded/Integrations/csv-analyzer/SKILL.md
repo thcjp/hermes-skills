@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Csv Analyzer
 
 Analyze CSV files with simple commands. Get instant statistics, filter data, detect anomalies, and export results — all without pandas or heavy dependencies.

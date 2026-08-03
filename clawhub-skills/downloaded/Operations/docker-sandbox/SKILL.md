@@ -18,7 +18,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Docker Sandbox
 
 Run agents and commands in **isolated VM environments** using Docker Desktop's sandbox feature. Each sandbox gets its own lightweight VM with filesystem isolation, network proxy controls, and workspace mounting via virtiofs.

@@ -19,7 +19,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # Namecheap DNS
 
 Safe wrapper around the Namecheap API for DNS operations. **Prevents accidental record wipeout** by always fetching existing records first and merging changes.

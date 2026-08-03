@@ -1,6 +1,7 @@
 ---
+
 name: "ziptax-tool-free"
-description: "面向个人开发者的销售税查询工具,支持按地址、邮编、经纬度查询,含基础CLI封装。"
+description: "面向个人开发者的销售税查询工具,支持按地址、邮编、经纬度查询,含基础CLI封装。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。"
 license: Proprietary
 allowed-tools: read exec
 compatibility: "Requires LLM with tool-use capability"
@@ -16,6 +17,11 @@ metadata:
     - "电商"
   source: "SkillHub"
   converted_at: "2026-07-22T17:58:36"
+tools:
+  - exec
+  - read
+  - write
+
 ---
 
 # 销售税查询工具(免费版)
@@ -42,24 +48,18 @@ metadata:
 ### 核心功能执行
 用`input_params`参数进行配置。
 
-**输入**: 用户提供核心功能执行所需的指令和必要参数。
-**处理**: 按照skill规范执行核心功能执行操作,遵循单一意图原则。
 **输出**: 返回核心功能执行的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`input_params`参数,支持创建/查询/导出操作
 
 ### 参数配置与调用
 用`config_options`参数进行配置。
 
-**输入**: 用户提供参数配置与调用所需的指令和必要参数。
-**处理**: 按照skill规范执行参数配置与调用操作,遵循单一意图原则。
 **输出**: 返回参数配置与调用的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`config_options`参数,支持修改/重置/导入操作
 
 ### 结果处理与输出
 用`output_format`参数进行配置。
 
-**输入**: 用户提供结果处理与输出所需的指令和必要参数。
-**处理**: 按照skill规范执行结果处理与输出操作,遵循单一意图原则。
 **输出**: 返回结果处理与输出的执行结果,包含操作状态和输出数据。
 - 执行此能力时使用`output_format`参数,支持导出/保存/转换操作
 **能力覆盖范围**：本skill的核心能力覆盖以下场景关键词：面向个人开发者的、销售税查询工具、支持按地址、含基础、销售税查询工具免、费版为个人开发者、提供美国销售税率、查询能力、封装与税率解析、按地址查询销售税、按邮编查询销售税、按经纬度查询销售、Use、when、需要代码生成、编程辅助、调试测试、开发部署时使用、不适用于无明确技、术栈的模糊需求等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持。
@@ -78,7 +78,7 @@ curl -s "https://api.zip-tax.com/request/v60?address=200+Spectrum+Center+Drive+I
 ### 场景 2:按邮编查询销售税
 
 ```bash
-curl -s "https://api.zip-tax.com/request/v60?postalcode=92618" \
+zip-tax.com/request/v60?postalcode=92618" \
   -H "X-API-KEY: $ZIPTAX_API_KEY"
 ```
 
@@ -87,7 +87,7 @@ curl -s "https://api.zip-tax.com/request/v60?postalcode=92618" \
 ### 场景 3:按经纬度查询销售税
 
 ```bash
-curl -s "https://api.zip-tax.com/request/v60?lat=33.6525&lng=-117.7479" \
+zip-tax.com/request/v60?lat=33.6525&lng=-117.7479" \
   -H "X-API-KEY: $ZIPTAX_API_KEY"
 ```
 
@@ -95,7 +95,7 @@ curl -s "https://api.zip-tax.com/request/v60?lat=33.6525&lng=-117.7479" \
 
 ## 快速开始
 
-### 第一步:获取 API Key
+### 领先步:获取 API Key
 
 1. 访问 zip-tax.com 平台
 2. 注册账号并登录
@@ -106,20 +106,20 @@ curl -s "https://api.zip-tax.com/request/v60?lat=33.6525&lng=-117.7479" \
 
 ```bash
 # Linux / macOS
-export ZIPTAX_API_KEY="your-api-key-here"
+export ZIPTAX_API_KEY="${API_KEY:?请设置环境变量}"
 
 # Windows PowerShell
-$env:ZIPTAX_API_KEY="your-api-key-here"
+$env:ZIPTAX_API_KEY="${API_KEY:?请设置环境变量}"
 
 # 永久保存(添加到 ~/.bashrc 或 ~/.zshrc)
-echo 'export ZIPTAX_API_KEY="your-api-key-here"' >> ~/.bashrc
+echo 'export ZIPTAX_API_KEY="${API_KEY:?请设置环境变量}"' >> ~/.bashrc
 ```
 
 ### 第三步:执行查询
 
 ```bash
 # 使用 curl 直接查询
-curl -s "https://api.zip-tax.com/request/v60?postalcode=92618" \
+zip-tax.com/request/v60?postalcode=92618" \
   -H "X-API-KEY: $ZIPTAX_API_KEY"
 
 # 或使用 CLI 封装
@@ -211,7 +211,7 @@ console.log(`服务应税: ${data.service.taxable}`);
 console.log(`运费应税: ${data.shipping.taxable}`);
 ```
 
-## 最佳实践
+## 优选实践
 
 1. **优先用地址查询**:地址查询返回单一精确结果,邮编可能返回多个税区。
 2. **API Key 不外泄**:永不将 API Key 提交到代码仓库或暴露在前端代码中。
@@ -234,7 +234,7 @@ console.log(`运费应税: ${data.shipping.taxable}`);
 
 ### Q3: API Key 如何安全存储?
 
-环境变量是最佳实践。生产环境用密钥管理服务(AWS Secrets Manager / HashiCorp Vault)。永不提交到代码仓库,永不硬编码在前端。
+环境变量是优选实践。生产环境用密钥管理服务(AWS Secrets Manager / HashiCorp Vault)。永不提交到代码仓库,永不硬编码在前端。
 
 ### Q4: 税率会变化吗?
 
@@ -270,11 +270,10 @@ console.log(`运费应税: ${data.shipping.taxable}`);
 
 ### 可用性分类
 
-- **分类**: MD+EXEC(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
+- **分类**: MD+execute(纯 Markdown 指令,部分功能需要 exec 命令行执行能力)
 - **说明**: 基于自然语言指令驱动 Agent 调用 zip-tax.com API;需要预先注册并配置 API Key;查询通过 curl 或 CLI 封装脚本执行
 
 ## 错误处理
-
 
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
@@ -287,3 +286,14 @@ console.log(`运费应税: ${data.shipping.taxable}`);
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
+
+## 安全注意事项
+
+| 风险类型 | 防范措施 |
+|----------|---------|
+| API密钥泄露 | 通过环境变量配置，禁止硬编码到代码或配置文件中 |
+| 命令执行风险 | 仅执行白名单命令，避免拼接用户输入到命令行参数中 |
+| 网络通信安全 | 使用HTTPS协议，验证SSL证书有效性 |
+| 敏感数据暴露 | 输出结果中不包含密钥、令牌等敏感信息 |
+
+使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。

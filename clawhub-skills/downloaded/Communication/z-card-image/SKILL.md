@@ -20,7 +20,6 @@ pricing_model: "monthly"
 suggested_price: 99.9
 ---
 
-
 # z-card-image
 
 将用户提供的文案渲染成 PNG 卡片图。

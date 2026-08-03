@@ -33,7 +33,6 @@ pricing_model: "per_use"
 suggested_price: 19.9
 ---
 
-
 # Notion
 
 Use the Notion API to create/read/update pages, data sources (databases), and blocks.

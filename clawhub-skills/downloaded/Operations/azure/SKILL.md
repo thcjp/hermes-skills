@@ -33,7 +33,6 @@ pricing_model: "per_use"
 suggested_price: 29.9
 ---
 
-
 # Azure
 
 ## Cost Traps
@@ -113,6 +112,120 @@ suggested_price: 29.9
 
 - Deploy, monitor, and manage Azure services with battle-tested patterns
 - 触发关键词: azure, monitor, manage, deploy, services
+
+## 详细功能列表
+
+### 详细功能列表
+
+- **自动化部署**: 支持自动化部署Azure服务，包括虚拟机、容器、数据库等。
+- **监控告警**: 提供实时监控和告警功能，支持自定义告警规则和通知方式。
+- **资源管理**: 支持资源分组、标签、策略等资源管理功能，简化资源管理流程。
+- **安全审计**: 提供安全审计日志，帮助用户跟踪和审计资源访问和操作。
+- **成本优化**: 提供成本分析工具，帮助用户优化资源使用和降低成本。
+
+**边界条件处理**:
+- 资源部署失败时，提供重试机制和错误日志。
+- 监控数据异常时，提供数据回溯和异常分析。
+- 资源管理操作失败时，提供回滚机制。
+
+## 输入输出参数说明
+
+### 输入输出参数说明
+
+| 参数名 | 类型 | 默认值 | 取值范围 | 说明 |
+|-------|-----|---------|---------|------|
+| azure_resource_type | String | - | - | 资源类型，如虚拟机、容器等 |
+| azure_resource_name | String | - | - | 资源名称 |
+| alert_rule | Object | - | - | 告警规则配置 |
+| resource_group | String | - | - | 资源组名称 |
+| tag | Object | - | - | 资源标签配置 |
+
+**参数类型说明**:
+- String: 字符串类型
+- Object: 对象类型，包含多个键值对
+
+**取值范围**:
+- 资源类型和资源名称的取值范围由Azure平台定义。
+
+## 错误码定义和处理方案
+
+### 错误码定义和处理方案
+
+| 错误码 | 描述 | 处理方案 |
+|-------|------|---------|
+| ERROR_DEPLOYMENT_FAILED | 资源部署失败 | 检查资源配置和依赖，重试部署 |
+| ERROR_MONITORING_FAILED | 监控数据异常 | 检查监控配置和数据源，回溯数据 |
+| ERROR_RESOURCE_MANAGEMENT_FAILED | 资源管理操作失败 | 检查资源配置和权限，回滚操作 |
+
+**错误码说明**:
+- ERROR_DEPLOYMENT_FAILED: 资源部署失败，可能由于资源配置错误或依赖问题导致。
+- ERROR_MONITORING_FAILED: 监控数据异常，可能由于监控配置错误或数据源问题导致。
+- ERROR_RESOURCE_MANAGEMENT_FAILED: 资源管理操作失败，可能由于资源配置错误或权限问题导致。
+
+## 技术示例
+
+### 技术示例
+
+```yaml
+# ARM模板示例
+resources:
+- type: Microsoft.Compute/virtualMachines
+  apiVersion: 2021-04-01
+  name: myVM
+  location: eastus
+  properties:
+    osProfile:
+      adminUsername: azureuser
+      adminPassword: azurepassword
+    storageProfile:
+      imageReference:
+        publisher: MicrosoftWindowsServer
+        offer: WindowsServerSemiAnnual
+        sku: 2019-Datacenter
+        version: 'latest'
+    networkProfile:
+      networkInterfaces:
+      - id: /subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.Network/networkInterfaces/{nic-name}
+```
+
+## 常见问题
+
+### 常见问题
+
+#### Q1: 如何设置告警规则？
+A: 登录Azure门户，进入监控服务，创建新的告警规则，配置触发条件、通知条件和操作组。
+
+#### Q2: 如何查看监控数据？
+A: 登录Azure门户，进入监控服务，选择相应的资源，查看监控数据图表和日志。
+
+#### Q3: 如何优化资源使用降低成本？
+A: 使用Azure成本管理服务，分析资源使用情况，优化资源配置和策略。
+
+#### Q4: 如何处理资源部署失败？
+A: 检查资源配置和依赖，重试部署或联系技术支持。
+
+#### Q5: 如何查看资源使用情况？
+A: 登录Azure门户，进入资源组或资源，查看资源使用情况。
+
+## 安全架构说明
+
+### 安全架构说明
+
+Azure服务部署监控管理采用多层次的安全架构，包括以下方面：
+- **身份验证**: 使用Azure Active Directory进行身份验证，确保只有授权用户才能访问服务。
+- **授权**: 使用基于角色的访问控制（RBAC）进行授权，确保用户只能访问其有权访问的资源。
+- **数据加密**: 使用TLS加密数据传输，使用Azure Key Vault存储敏感数据。
+- **安全审计**: 记录所有操作日志，以便进行安全审计。
+
+## 技术亮点与差异化优势
+
+### 技术亮点与差异化优势
+
+Azure服务部署监控管理具有以下技术亮点和差异化优势：
+- **自动化部署**: 支持自动化部署Azure服务，提高部署效率。
+- **智能监控**: 提供智能监控和告警功能，帮助用户及时发现和解决问题。
+- **成本优化**: 提供成本分析工具，帮助用户优化资源使用和降低成本。
+- **安全可靠**: 采用多层次的安全架构，确保服务安全可靠。
 
 ## 适用场景
 
