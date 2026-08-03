@@ -1,6 +1,4 @@
 ---
-
-
 slug: markdown
 name: "markdown"
 version: 1.0.2
@@ -39,11 +37,8 @@ tools:
   - write
 homepage: ""
 category: "Development"
-
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
-
 > **核心功能**: 本技能提供化工作流与智能决策辅助等能力。
 
 # Markdown

@@ -1,5 +1,6 @@
 ---
 
+
 slug: azure-ai-voicelive-py
 name: "azure-ai-voicelive-py"
 version: 0.1.1
@@ -30,8 +31,11 @@ tools:
   - write
 homepage: ""
 category: "Operations"
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 # Azure VoiceLive 实时语音AI开发
 

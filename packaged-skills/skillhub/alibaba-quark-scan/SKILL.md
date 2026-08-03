@@ -1,5 +1,6 @@
 ---
 
+
 slug: alibaba-quark-scan
 name: alibaba-quark-scan
 version: 1.0.19
@@ -37,8 +38,11 @@ tags:
 - 的处理结
 - 包含执行
 category: Automation
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供中文交互等能力。
 

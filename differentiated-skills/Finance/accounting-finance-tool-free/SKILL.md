@@ -1,5 +1,4 @@
 ---
-
 slug: accounting-finance-tool-free
 name: accounting-finance-tool-free
 version: 1.0.0
@@ -28,9 +27,8 @@ tools:
 homepage: ''
 category: Finance
 pricing_tier: free
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # 财务分析入门工具（免费版）
 
 ## 功能说明

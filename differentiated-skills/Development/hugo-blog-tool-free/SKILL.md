@@ -1,5 +1,6 @@
 ---
 
+
 slug: hugo-blog-tool-free
 name: hugo-blog-tool-free
 version: 1.0.0
@@ -28,8 +29,11 @@ tools:
 homepage: ''
 category: Automation
 pricing_tier: free
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供标准化的、为符合、化流程等能力。
 

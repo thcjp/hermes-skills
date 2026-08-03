@@ -1,5 +1,4 @@
 ---
-
 slug: agent-group
 name: "agent-group"
 version: 1.0.4
@@ -41,9 +40,8 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供化工作流与智能决策辅助等能力。
 
 # Agent Group

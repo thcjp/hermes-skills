@@ -1,5 +1,4 @@
 ---
-
 slug: email-digest
 name: email-digest
 version: 1.0.1
@@ -28,9 +27,8 @@ tools:
 - write
 homepage: ''
 category: Communication
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互、化流程场景等能力。
 
 ## 疑问解答

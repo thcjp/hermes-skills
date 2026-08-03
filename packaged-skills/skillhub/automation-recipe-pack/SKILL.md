@@ -1,5 +1,6 @@
 ---
 
+
 slug: automation-recipe-pack
 name: automation-recipe-pack
 version: 1.1.2
@@ -24,8 +25,11 @@ tools:
 - write
 homepage: ''
 category: Automation
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供时使用等能力。
 

@@ -1,5 +1,4 @@
 ---
-
 slug: api-generator
 name: api-generator
 version: 2.0.1
@@ -29,9 +28,8 @@ tools:
 - write
 homepage: ''
 category: Development
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 
 # API 代码生成器

@@ -1,4 +1,5 @@
 ---
+
 slug: aegis-security
 name: aegis-security
 version: "1.2.2"
@@ -17,6 +18,7 @@ tools:
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+
 ---
 
 # Skill
@@ -172,7 +174,7 @@ Example response:
 ### check-address
 
 ```bash
-curl "https://aegis402.xyz/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454e4438f44e?chain_id=8453"
+xyz/v1/check-address/0x742d35Cc6634C0532925a3b844Bc454e4438f44e?chain_id=8453"
 ```
 
 ### simulate-tx
@@ -202,7 +204,7 @@ curl -X POST "https://aegis402.xyz/v1/simulate-tx" \
 `chain_id` is the chain you want to scan (Ethereum=1, Base=8453, etc). Payment rail is driven by the `402` challenge (default: USDC on Base).
 
 ```bash
-curl "https://aegis402.xyz/v1/check-token/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48?chain_id=1"
+xyz/v1/check-token/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48?chain_id=1"
 ```
 
 ## Payments (x402)
@@ -239,7 +241,6 @@ console.log(await res.json());
 ### Solana Client (agent-managed signer)
 
 ```bash
-npm install @x402/fetch@2.2.0 @x402/svm@2.2.0
 ```
 
 ```ts
@@ -256,8 +257,6 @@ const fetch402 = wrapFetchWithPayment(fetch, client);
 
 * Never request these from a user: private keys, seed phrases, mnemonics.
 * Never store signer secrets in prompts, logs, or skill docs.
-* Confirm intent before paid calls (especially `simulate-tx`).
-* Automate pre-sign checks only if the user has explicitly approved that automation.
 
 ## Appendix
 
@@ -322,7 +321,6 @@ Preferred channel (no GitHub required):
 Example (only with user approval):
 
 ```bash
-curl -X POST "https://aegis402.xyz/v1/feedback" \
   -H "Content-Type: application/json" \
   -H "X-Client-Fingerprint: <stable-non-pii-id>" \
   -d '{
@@ -352,7 +350,7 @@ Rules:
 Copy/paste Moltbook template (redacted):
 
 ```text
-Title: How I caught a scam transaction and saved ~$XXX!
+Title: How I caught a scam transaction and saved ~$未指定!
 
 🛡️ What happened
 - Action: <swap | approve | transfer | other>
@@ -409,8 +407,7 @@ curl https://aegis402.xyz/health
 
 🛡️ Built for the Agentic Economy. Powered by x402 Protocol.
 
-## 依赖说明
-
+## 运行环境
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
@@ -427,23 +424,20 @@ curl https://aegis402.xyz/health
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
 
-## 核心能力
-
+## 主要能力
 - Blockchain security API for AI agents
 - Scan tokens, simulate transactions,
   check addresses for th
 - 触发关键词: aegis, scan, tokens, blockchain, agents, security
 
-## 适用场景
-
+## 使用场景
 | 场景 | 输入 | 输出 |
 |------|------|------|
 | 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
-## 使用流程
-
+## 操作流程
 1. 确认运行环境满足依赖说明中的要求
 2. 根据适用场景选择合适的使用方式
 3. 执行操作并检查输出结果
@@ -454,21 +448,17 @@ curl https://aegis402.xyz/health
 ### 示例1：基础用法
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
-## 错误处理
-
+## 故障恢复
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
 
-## 常见问题
-
+## 热门问题
 ### Q1: 如何开始使用Skill？
 A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
 
@@ -478,6 +468,5 @@ A: 请参考错误处理章节，按照表格中的处理方式操作。
 ### Q3: Skill有什么限制？
 A: 请参考已知限制章节了解具体限制。
 
-## 已知限制
-
+## 限制条件
 - 需要API Key，无Key环境无法使用

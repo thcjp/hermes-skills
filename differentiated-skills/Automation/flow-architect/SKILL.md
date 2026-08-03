@@ -1,5 +1,4 @@
 ---
-
 slug: flow-architect
 name: flow-architect
 version: 1.0.1
@@ -25,9 +24,8 @@ tools:
 homepage: ''
 category: Automation
 pricing_tier: free
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供化工作流场景等能力。
 设计并执行跨平台自动化工作流，替代重复性人工操作。核心信条：**先用YAML声明，再干跑验证，最后放量执行；每个工作流必须有幂等键。**
 ## 四大痛点与对策
@@ -476,3 +474,13 @@ A：YAML声明式DSL可逐分支单测，dry-run时强制覆盖每个分支至�
 | 可复用性 | 参数化配置 | 一次性脚本 | 模板化 |
 | 安全合规 | 内置安全检查 | 无安全保障 | 无安全保障 |
 | 适用场景 | 解决复杂分支难调试、字段映射错位、重复触发、API限流四大痛点，YAML DSL | 通用场景 | 通用场景 |
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

@@ -1,5 +1,6 @@
 ---
 
+
 slug: analyze-video-by-qwen
 name: "analyze-video-by-qwen"
 version: 1.0.2
@@ -29,8 +30,11 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供中文交互、时使用等能力。
 

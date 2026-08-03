@@ -1,5 +1,4 @@
 ---
-
 slug: node-connect
 name: "node-connect"
 version: 1.0.1
@@ -22,9 +21,8 @@ tools:
   - write
 homepage: ""
 category: "Automation"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # node-connect
 
 ## 付费版进阶功能

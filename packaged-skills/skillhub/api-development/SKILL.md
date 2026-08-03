@@ -1,5 +1,4 @@
 ---
-
 slug: api-development
 name: "api-development"
 version: 1.0.1
@@ -23,9 +22,8 @@ tools:
   - write
 homepage: ""
 category: "Development"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # api-development
 
 ## 专业版增强能力

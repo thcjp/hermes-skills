@@ -1,5 +1,4 @@
 ---
-
 slug: graincrawl
 name: "graincrawl"
 version: 1.0.2
@@ -28,9 +27,8 @@ tools:
 - grep
 homepage: '""'
 category: '"Automation"'
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互、、排名提升、搜索流量优化时使用、、关键词分析、排名提升、搜索流量优化时使用、化工作流场景等能力。
 
 > **核心功能**: 本技能提供化工作流与智能决策辅助等能力。

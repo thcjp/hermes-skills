@@ -1,5 +1,4 @@
 ---
-
 slug: finance-accounting
 name: finance-accounting
 version: 1.0.1
@@ -27,9 +26,8 @@ tools:
 - write
 homepage: ''
 category: Finance
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互、、报表生成、统计洞察、数据可视化时使用、综合技能包、化工作流场景等能力。
 
 # Finance Accounting

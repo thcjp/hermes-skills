@@ -1,5 +1,4 @@
 ---
-
 slug: agent-browser-stagehand
 name: agent-browser-stagehand
 version: "1.0.3"
@@ -29,9 +28,8 @@ tools:
 - grep
 homepage: ''
 category: Agents
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供、本地化处理时使用、时使用、化工作流场景等能力。
 
 # Agent Browser Stageh

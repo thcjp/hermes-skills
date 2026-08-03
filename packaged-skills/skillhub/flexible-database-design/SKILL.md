@@ -1,5 +1,4 @@
 ---
-
 slug: flexible-database-design
 name: "flexible-database-design"
 version: 1.0.1
@@ -30,9 +29,8 @@ tools:
   - glob
 homepage: ""
 category: "Research"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # Flexible Database De
 
 ## 付费版扩展能力

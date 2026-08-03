@@ -1,5 +1,4 @@
 ---
-
 slug: figma-2
 name: figma-2
 version: 0.1.2
@@ -22,9 +21,8 @@ tools:
 - write
 homepage: ''
 category: Automation
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置、时使用、、工作流优化时使用、处理、工作流优化时使用、化配置和灵活的参数设置等能力。
 
 > **核心功能**: 本技能提供化工作流场景等能力。

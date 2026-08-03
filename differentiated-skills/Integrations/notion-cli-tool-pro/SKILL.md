@@ -1,5 +1,4 @@
 ---
-
 slug: notion-cli-tool-pro
 name: notion-cli-tool-pro
 version: 1.0.0
@@ -26,9 +25,8 @@ tools:
 homepage: ''
 category: Automation
 pricing_tier: L2-标准级
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供了实用性等能力。
 一个面向团队与企业的全功能Notion操作Skill,在免费版基础上扩展了多工作空间管理、文件上传、Schema管理、页面移动、批量操作、模板管理、自定义输出与审计日志等高级能力,适合规模化使用场景.
 ## 简介
@@ -418,3 +416,13 @@ A3: 检查命令参数是否正确，确认运行环境支持exec能力。如遇
 2. **查看日志输出**: 定位具体错误行和异常类型
 3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
 4. **逐步调试**: 缩小问题范围,隔离故障模块
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

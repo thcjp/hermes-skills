@@ -1,5 +1,4 @@
 ---
-
 slug: file-organizer-zh
 name: file-organizer-zh
 version: 1.0.1
@@ -20,10 +19,8 @@ tools:
 - write
 homepage: ''
 category: Automation
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
-
 > **核心功能**: 本技能提供中文交互、、格式互转、内容提取时使用、分类（中文版）\n\n核心能力:\n\n-、化工作流场景等能力。
 
 # File Organizer

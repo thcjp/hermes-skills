@@ -1,5 +1,6 @@
 ---
 
+
 slug: chart
 name: "chart"
 version: 1.0.1
@@ -29,8 +30,11 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 # Chart — 本地图表生成引擎
 

@@ -1,6 +1,4 @@
 ---
-
-
 slug: meeting-note
 name: "meeting-note"
 version: 1.0.1
@@ -23,11 +21,8 @@ tools:
   - write
 homepage: ""
 category: "Automation"
-
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
-
 # Meeting Note
 
 ## 专业版增强能力

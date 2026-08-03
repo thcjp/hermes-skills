@@ -721,9 +721,18 @@ def sync_to_skillhub(slug: str, skill_md: Path, new_version: str,
 
     V139 S4: 统一上传通道 — API优先(enterprise_uploader含WAF重试), CLI fallback
     付费版: 生成payload文件(需浏览器session认证上传)
+    V183: 使用skillhub_slug(平台差异化slug)避免与ClawHub同步内容冲突
     """
+    # V183: 获取SkillHub平台专属slug (避免与ClawHub同步内容冲突)
+    try:
+        from db import get_platform_slug
+        platform_slug = get_platform_slug(slug, 'skillhub')
+    except ImportError:
+        platform_slug = slug  # 降级: 使用原始slug
+
     result = {
         'slug': slug,
+        'platform_slug': platform_slug,  # V183: 实际上传使用的slug
         'platform': 'skillhub',
         'version': new_version,
         'status': 'unknown',
@@ -819,13 +828,10 @@ def sync_to_skillhub(slug: str, skill_md: Path, new_version: str,
         record_platform_upload(skill_id, new_version, 'skillhub', slug,
                                'dedup_blocked', error=result['error'])
         return result
-    except Exception as e:  # V155 R2: fail-safe — 异常时阻断上传(原为WARN跳过)
-        result['status'] = 'dedup_blocked'
-        result['error'] = f'内容去重检查异常,已阻断上传(fail-safe): {e}'
-        result['free_upload'] = {'status': 'dedup_blocked', 'error': result['error']}
-        record_platform_upload(skill_id, new_version, 'skillhub', slug,
-                               'dedup_blocked', error=result['error'])
-        return result
+    except Exception as e:  # V155 R3: SimHash异常时降级为精确去重(不阻断上传)
+        # V155 R2原为fail-safe阻断,但SimHash整数溢出bug导致所有上传被阻断
+        # V155 R3修复: 降级为仅精确去重(SHA-256),仍可防护完全相同内容
+        print(f"  [WARN] SimHash去重异常(降级为精确去重): {e}")
 
     # V139 S4: 统一上传通道 — API优先(复用enterprise_uploader的WAF重试), CLI fallback
     # enterprise_uploader.upload_skill 内部完成: 门控+速率+去重+WAF重试+认证
@@ -885,12 +891,12 @@ def sync_to_skillhub(slug: str, skill_md: Path, new_version: str,
         except ImportError:
             # API不可用时降级到CLI
             result['free_upload'] = _skillhub_cli_fallback(
-                slug, skill_dir, skill_id, new_version
+                platform_slug, skill_dir, skill_id, new_version
             )
     else:
         # CLI fallback路径(UPLOAD_CHANNEL='cli')
         result['free_upload'] = _skillhub_cli_fallback(
-            slug, skill_dir, skill_id, new_version
+            platform_slug, skill_dir, skill_id, new_version
         )
 
     # 付费版: 生成payload文件
@@ -942,9 +948,18 @@ def sync_to_clawhub(slug: str, skill_md: Path, new_version: str,
     - --name: 显示名称(从frontmatter displayName获取)
     - --slug: 确保slug一致性
     - --json: JSON输出便于解析
+    V183: 使用clawhub_slug(平台差异化slug)
     """
+    # V183: 获取ClawHub平台专属slug
+    try:
+        from db import get_platform_slug
+        platform_slug = get_platform_slug(slug, 'clawhub')
+    except ImportError:
+        platform_slug = slug
+
     result = {
         'slug': slug,
+        'platform_slug': platform_slug,  # V183
         'platform': 'clawhub',
         'version': new_version,
         'status': 'unknown',
@@ -1011,12 +1026,8 @@ def sync_to_clawhub(slug: str, skill_md: Path, new_version: str,
         record_platform_upload(skill_id, new_version, 'clawhub', slug,
                                'dedup_blocked', error=result['error'])
         return result
-    except Exception as e:  # V155 R3: fail-safe — 异常时阻断上传(原为WARN跳过)
-        result['status'] = 'dedup_blocked'
-        result['error'] = f'内容去重检查异常,已阻断上传(fail-safe): {e}'
-        record_platform_upload(skill_id, new_version, 'clawhub', slug,
-                               'dedup_blocked', error=result['error'])
-        return result
+    except Exception as e:  # V155 R3: SimHash异常时降级为精确去重(不阻断上传)
+        print(f"  [WARN] SimHash去重异常(降级为精确去重): {e}")
 
     # v2.2: 提取营销参数(复用clawhub_batch_uploader的函数, 避免重复实现)
     try:

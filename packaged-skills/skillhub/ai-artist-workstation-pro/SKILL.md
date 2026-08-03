@@ -1,5 +1,6 @@
 ---
 
+
 slug: ai-artist-workstation-pro
 name: ai-artist-workstation-pro
 version: 1.0.1
@@ -43,8 +44,11 @@ tools:
 - exec
 - write
 category: Automation
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 

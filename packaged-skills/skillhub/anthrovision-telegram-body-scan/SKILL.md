@@ -1,5 +1,6 @@
 ---
 
+
 slug: anthrovision-telegram-body-scan
 name: "anthrovision-telegram-body-scan"
 version: 1.0.5
@@ -29,8 +30,11 @@ tools:
   - write
 homepage: ""
 category: "Communication"
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供、身体成分变化监测等能力。
 

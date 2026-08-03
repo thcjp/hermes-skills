@@ -1,5 +1,4 @@
 ---
-
 slug: dns-networking
 name: dns-networking
 version: 1.0.1
@@ -23,9 +22,8 @@ tools:
 - exec
 homepage: ''
 category: Operations
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互、化流程场景等能力。
 
 # DNS & Networking

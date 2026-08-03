@@ -1,5 +1,6 @@
 ---
 
+
 slug: alephnet-node
 name: "alephnet-node"
 version: 1.4.1
@@ -29,8 +30,11 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 # Alephnet Node
 

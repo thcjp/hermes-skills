@@ -1,14 +1,16 @@
 ---
 
+
+
 slug: wenxiang-2d5-banner
 name: "wenxiang-2d5-banner"
 version: 1.0.1
 displayName: "2.5D横幅生成工具"
-summary: "用Nano Banana Pro(Gemini 3 Pro Image)生成编辑图片。Generate/edit images with Nano Banana Pro (Gemini 3"
+summary: "用Nano Banana Pro(ai-model 3 Pro Image)生成编辑图片。Generate/edit images with Nano Banana Pro (ai-model 3"
 summary_zh: "用Nano Banana Pro(Gemini 3 Pro Image)生成编辑图片。Generate/edit images with Nano Banana Pro (Gemini 3"
 license: "MIT"
 description: |-
-  Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image)。Use\
+  Generate/edit images with Nano Banana Pro (ai-model 3 Pro Image)。Use\
   \ for image create/modify reque。Use when 用户需要Wenxiang 2d5 Banner相关功能时使用。不适用于超出本技能能力范围的复杂需求.
 tags:
   - image
@@ -22,8 +24,12 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+homepage: "https://skillhub.cn/skill/"
+
+
 
 ---
+
 
 # Wenxiang 2d5 Banner
 
@@ -38,11 +44,11 @@ category: "Automation"
 | 商用版权授权 | 不支持 | 支持 |
 
 ## 能力清单
-- Generate/edit images with Nano Banana Pro (Gemini 3 Pro Image)
+- Generate/edit images with Nano Banana Pro (ai-model 3 Pro Image)
 - Use\
   \ for image create/modify reque
 
-## 快速上手
+## 快速掌握
 1. 确认运行环境满足依赖说明中的要求
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
@@ -57,12 +63,6 @@ category: "Automation"
 | 用Nano Bana | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
-
-## 使用指南
-1. 确认运行环境满足依赖说明中的要求
-2. 根据适用场景选择合适的使用方式
-3. 执行操作并检查输出结果
-4. 如遇错误，参考错误处理章节
 
 ## 参数说明
 | 参数名 | 类型 | 必填 | 说明 |
@@ -85,7 +85,7 @@ category: "Automation"
 
 ## 前置条件
 ### 运行环境
-- **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
+- **Agent平台**: 支持SKILL.md的任意AI Agent(ai-assistant Code / Cursor / Codex / ai-model CLI等)
 - **操作系统**: Windows / macOS / Linux
 
 ### 依赖说明(补充)
@@ -122,7 +122,7 @@ uv run ~/.codex/skills/nano-banana-pro/（请参考skill目录中的脚本文件
 ## 热门问题
 ### Q1: 如何开始使用Wenxiang 2d5 Banner？
 A: 请参考使用流程和依赖说明章节，确保运行环境满足要求后调用本技能。
-## 错误处理机制
+## 异常管理机制
 | 错误场景(续)| 原因 | 处理方式 |
 |----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 请求重试；确认Agent平台LLM服务正常 |
@@ -157,9 +157,6 @@ A: 请参考使用流程和依赖说明章节，确保运行环境满足要求�
 | 设计成本高 | 传统设计需要专业软件和设计师，成本较高 | 广泛应用于中小企业 | 提供免费或低成本的设计工具，降低设计门槛 | 设计成本降低40% |
 
 ## 常见问题FAQ
-
-### Q1: 如何开始使用Wenxiang 2d5 Banner？
-A: 请确保您的运行环境满足依赖说明中的要求，然后在AI Agent对话中调用本技能，提供必要的输入参数。
 
 ### Q2: 付费版与免费版有什么区别？
 A: 付费版提供更多高级功能，如Wenxiang 2d5 Banner生成编辑、高清分辨率与无损输出、批量生成与风格预设、自定义模型微调以及商用版权授权。
@@ -198,8 +195,8 @@ A: 检查依赖说明中的配置要求，确认运行环境符合依赖说明�
 | 敏感数据暴露 | 高 | 输出结果中不包含密钥、令牌等敏感信息 | 日志脱敏审查 |
 | 未授权访问 | 中 | 限制访问权限，实施认证机制 | 定期审计访问日志 |
 
-## 功能概览
-- **自动化执行**: 用Nano Banana Pro(Gemini 3 Pro Image)生成编辑图片。Generate/edit ima
+## 功能清单
+- **自动化执行**: 用Nano Banana Pro(ai-model 3 Pro Image)生成编辑图片。Generate/edit ima
 - **文件处理**: 支持多种文件格式的读取、解析和写入操作
 - **API集成**: 通过标准化接口调用外部服务并处理响应
 - **命令执行**: 在安全沙箱中执行系统命令并收集结果

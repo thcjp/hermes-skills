@@ -1,5 +1,4 @@
 ---
-
 slug: agent-chat
 name: "agent-chat"
 version: 0.1.1
@@ -25,9 +24,8 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # Agent Chat
 
 ## 付费版进阶功能

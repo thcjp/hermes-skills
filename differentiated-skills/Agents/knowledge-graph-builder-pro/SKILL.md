@@ -1,5 +1,4 @@
 ---
-
 slug: knowledge-graph-builder-pro
 name: knowledge-graph-builder-pro
 version: 1.0.0
@@ -27,9 +26,8 @@ tools:
 homepage: ''
 category: Creative
 pricing_tier: L2-标准级
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供时使用等能力。
 # 知识图谱构建器（专业版）
 永远不丢失关系。永远可视化网络。查询无极限，变更可追溯，跨技能可通信.

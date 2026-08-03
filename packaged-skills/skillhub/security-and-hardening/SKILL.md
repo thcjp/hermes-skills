@@ -1,5 +1,6 @@
 ---
 
+
 slug: security-and-hardening
 name: security-and-hardening
 version: 1.0.0
@@ -21,7 +22,9 @@ suggested_price: 29.9 CNY/per_use
 pricing_tier: L3-专业级
 pricing_model: per_use
 
+
 ---
+
 
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 

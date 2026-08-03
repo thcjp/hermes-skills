@@ -1,5 +1,6 @@
 ---
 
+
 slug: archive
 name: "archive"
 version: 1.0.1
@@ -29,8 +30,11 @@ tags:
   - archive
   - items
 category: "Automation"
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 # 智能内容归档
 

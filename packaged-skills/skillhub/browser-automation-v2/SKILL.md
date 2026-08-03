@@ -1,5 +1,4 @@
 ---
-
 slug: browser-automation-v2
 name: browser-automation-v2
 version: 2.0.1
@@ -27,9 +26,8 @@ tools:
 - write
 homepage: ''
 category: Automation
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互、时使用等能力。
 
 # Browser Automation V

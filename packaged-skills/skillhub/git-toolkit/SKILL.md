@@ -1,5 +1,6 @@
 ---
 
+
 slug: git-toolkit
 name: git-toolkit
 version: 1.0.1
@@ -38,8 +39,11 @@ tools:
 - write
 homepage: '""'
 category: '"Development"'
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **功能说明**: 本技能涵盖 toolkit 等核心能力。
 

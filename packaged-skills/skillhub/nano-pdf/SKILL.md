@@ -1,5 +1,4 @@
 ---
-
 slug: nano-pdf
 name: "nano-pdf"
 version: 1.0.1
@@ -37,9 +36,8 @@ tools:
   - write
 homepage: ""
 category: "Automation"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供、信息整理等能力。
 
 # Nano Pdf

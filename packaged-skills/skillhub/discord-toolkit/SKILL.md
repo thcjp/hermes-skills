@@ -37,9 +37,8 @@ tools:
   - write
 homepage: ""
 category: "Communication"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互等能力。
 
 # Discord工具箱专业版

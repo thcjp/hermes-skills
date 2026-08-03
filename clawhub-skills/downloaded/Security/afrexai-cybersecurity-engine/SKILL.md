@@ -1,4 +1,6 @@
 ---
+
+
 slug: afrexai-cybersecurity-engine
 name: afrexai-cybersecurity-engine
 version: "1.0.0"
@@ -17,21 +19,16 @@ tools:
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+
+
 ---
 
+
 Complete methodology for security assessment, threat modeling, vulnerability management, incident response, and security program design. No tools required — pure agent knowledge that works with any codebase, infrastructure, or organization.
-
-## Phase 1: Security Posture Assessment
-
-### Quick Health Check (5 minutes)
-> 详细内容已移至 `references/detail.md`
-
-### Full Assessment Brief
 
 ## Phase 2: Threat Modeling (STRIDE+)
 
 ### Step 1 — Decompose the System
-> 详细内容已移至 `references/detail.md`
 
 ### Step 2 — STRIDE Analysis Per Component
 For EACH component crossing a trust boundary:
@@ -56,13 +53,11 @@ For EACH component crossing a trust boundary:
 ## Phase 3: Application Security (OWASP Top 10 + Beyond)
 
 ### A01: Broken Access Control
-> 详细内容已移至 `references/detail.md`
 
 ### A02: Cryptographic Failures
 **Decision tree:**
 
 ### A03: Injection
-> 详细内容已移至 `references/detail.md`
 
 ### A04: Insecure Design
 **Secure design checklist:**
@@ -87,13 +82,6 @@ For EACH component crossing a trust boundary:
 | A08: Data Integrity | Can unsigned data modify app behavior? | Sign all serialized data, verify checksums, SRI for CDN |
 | A09: Logging Gaps | Do you log auth events, access changes, failures? | Structured logging, SIEM integration, alert on anomalies |
 | A10: SSRF | Can user input trigger server-side requests? | Allowlist URLs, block internal IPs, no redirects to internal |
-
-## Phase 4: Infrastructure Security
-### Network Security Baseline
-
-### Container Security
-
-### Cloud Security (AWS/GCP/Azure Universal)
 
 ## Phase 5: Vulnerability Management Program
 ### Vulnerability Lifecycle
@@ -137,32 +125,6 @@ Discovery → Triage → Prioritize → Remediate → Verify → Close
 | SEV-4 | Low-risk finding, policy violation, failed attack | Next business day | Assigned engineer |
 
 ### Communication Templates
-> 详细内容已移至 `references/detail.md`
-
-## Phase 7: Security Headers & Browser Security
-### Required HTTP Headers
-```text
-Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
-X-Content-Type-Options: nosniff
-X-Frame-Options: DENY
-Referrer-Policy: strict-origin-when-cross-origin
-Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
-Cross-Origin-Opener-Policy: same-origin
-Cross-Origin-Resource-Policy: same-origin
-X-XSS-Protection: 0  # Disabled — CSP handles this; old header can cause issues
-```
-
-### Cookie Security
-```text
-Set-Cookie: session=<token>;
-  Secure;                    # HTTPS only
-  HttpOnly;                  # No JavaScript access
-  SameSite=Lax;              # CSRF protection (Strict if no cross-site navigation needed)
-  Path=/;                    # Scope appropriately
-  Max-Age=3600;              # 1 hour (adjust per use case)
-  Domain=.yourdomain.com;    # Explicit domain
-```
 
 ## Phase 8: Authentication & Authorization Deep Dive
 ### Password Policy (NIST 800-63B aligned)
@@ -179,27 +141,12 @@ Set-Cookie: session=<token>;
 * Set minimal scopes (principle of least privilege)
 * Register exact redirect URIs (no wildcards)
 
-## Phase 9: Security Program Design
-
-### Building a Security Program from Scratch
-> 详细内容已移至 `references/detail.md`
-
-### Security Metrics Dashboard
-
 ## Phase 10: Penetration Testing Methodology
 ### Reconnaissance
 
 ### Testing Phases
-> 详细内容已移至 `references/detail.md`
 
 ### Penetration Test Report Template
-
-## Phase 11: Supply Chain Security
-### Dependency Security
-> 详细代码示例已移至 `references/detail.md`
-
-## Phase 12: Security Scoring Rubric
-> 详细内容已移至 `references/detail.md`
 
 ## Common Mistakes
 1. **Security through obscurity** — hiding admin panel at /secret-admin is not security
@@ -238,7 +185,7 @@ Set-Cookie: session=<token>;
 "Supply chain security review" → Dependency audit (Phase 11)
 ```
 
-## 依赖说明
+## 运行环境
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
@@ -255,19 +202,19 @@ Set-Cookie: session=<token>;
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
 
-## 核心能力
+## 能力矩阵
 - Complete cybersecurity assessment, threat modeling, and hardening system
 - Use when conducting sec
 - 触发关键词: assessment, engine, threat, complete, cybersecurity, modeling, afrexai
 
-## 适用场景
+## 应用场景
 | 场景 | 输入 | 输出 |
 |------|------|------|
 | 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
-## 使用流程
+## 使用指南
 1. 确认运行环境满足依赖说明中的要求
 2. 根据适用场景选择合适的使用方式
 3. 执行操作并检查输出结果
@@ -276,19 +223,17 @@ Set-Cookie: session=<token>;
 ## 示例
 ### 示例1：基础用法
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
-## 错误处理
+## 异常恢复指南
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
 
-## 常见问题
+## 热门问题
 ### Q1: 如何开始使用Cybersecurity Engine？
 A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
 
@@ -298,5 +243,5 @@ A: 请参考错误处理章节，按照表格中的处理方式操作。
 ### Q3: Cybersecurity Engine有什么限制？
 A: 请参考已知限制章节了解具体限制。
 
-## 已知限制
+## 功能边界
 - 性能取决于底层模型能力

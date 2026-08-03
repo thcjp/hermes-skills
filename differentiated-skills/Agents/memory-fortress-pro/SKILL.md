@@ -1,5 +1,4 @@
 ---
-
 slug: memory-fortress-pro
 name: memory-fortress-pro
 version: 1.0.0
@@ -29,9 +28,8 @@ edition: pro
 homepage: ''
 category: Agents
 pricing_tier: L2-标准级
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # 记忆堡垒（专业版）
 > **AI Agent的完整记忆系统。六层架构全启用，向量搜索+自动提取+云备份，记忆永不丢失。**
 永远不丢失上下文。永远不忘记决策。永远不重复犯错.

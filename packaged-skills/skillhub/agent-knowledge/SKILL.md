@@ -1,5 +1,4 @@
 ---
-
 slug: agent-knowledge
 name: "agent-knowledge"
 version: 1.0.1
@@ -25,9 +24,8 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # Agent Knowledge
 
 ## 专业版专属特性

@@ -1,5 +1,7 @@
 ---
 
+
+
 slug: dispatching-parallel-agents
 name: dispatching-parallel-agents
 version: 1.0.0
@@ -21,7 +23,10 @@ suggested_price: 19.9 CNY/per_use
 pricing_tier: L2-进阶级
 pricing_model: per_use
 
+
+
 ---
+
 
 > **核心功能**: 本技能提供时使用、、工作流优化时使用等能力。
 

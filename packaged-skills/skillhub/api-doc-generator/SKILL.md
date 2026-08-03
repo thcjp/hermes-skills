@@ -1,5 +1,4 @@
 ---
-
 slug: api-doc-generator
 name: "api-doc-generator"
 version: 1.0.1
@@ -30,9 +29,8 @@ tools:
   - write
 homepage: ""
 category: "Development"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 # API文档生成器(专业版)
 ## 专业版专属特性

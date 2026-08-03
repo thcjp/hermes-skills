@@ -1,19 +1,19 @@
 {
-  "audit_date": "2026-08-03T10:40:09.189700",
-  "total_skills": 563,
+  "audit_date": "2026-08-03T13:56:57.374096",
+  "total_skills": 553,
   "fix_mode": false,
-  "fix_all": false,
+  "fix_all": true,
   "by_severity": {
     "critical": 0,
     "warning": 1,
-    "info": 560,
+    "info": 550,
     "ok": 2
   },
   "by_source": {
     "packaged": {
       "critical": 0,
       "warning": 0,
-      "info": 477,
+      "info": 467,
       "ok": 2
     },
     "differentiated": {
@@ -33,7 +33,7 @@
         "MISSING_LICENSE: 缺少 license 字段",
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 12570,
+      "body_length": 12567,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 95,
@@ -118,12 +118,12 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_TAGS: 缺少 tags 字段"
       ],
-      "body_length": 10227,
+      "body_length": 9308,
       "version": "1.0.3",
       "functional_grade": "A",
       "functional_score": 100,
       "sellability_grade": "A",
-      "sellability_score": 89,
+      "sellability_score": 87,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -173,7 +173,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 12445,
+      "body_length": 12343,
       "version": "1.0.3",
       "functional_grade": "A",
       "functional_score": 95,
@@ -189,8 +189,8 @@
       "security_grade": "B",
       "security_score": 75,
       "security_passed": false,
-      "visibility_grade": "C",
-      "visibility_score": 65,
+      "visibility_grade": "A",
+      "visibility_score": 80,
       "visibility_passed": false
     },
     {
@@ -258,12 +258,12 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 10174,
+      "body_length": 8837,
       "version": "1.2.3",
       "functional_grade": "A",
-      "functional_score": 85,
+      "functional_score": 95,
       "sellability_grade": "A",
-      "sellability_score": 92,
+      "sellability_score": 93,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -271,11 +271,11 @@
       "executability_grade": "A",
       "executability_score": 100,
       "executable": true,
-      "security_grade": "A",
-      "security_score": 100,
-      "security_passed": true,
-      "visibility_grade": "C",
-      "visibility_score": 60,
+      "security_grade": "B",
+      "security_score": 75,
+      "security_passed": false,
+      "visibility_grade": "A",
+      "visibility_score": 80,
       "visibility_passed": false
     },
     {
@@ -369,7 +369,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6788,
+      "body_length": 6115,
       "version": "1.0.3",
       "functional_grade": "A",
       "functional_score": 85,
@@ -386,8 +386,8 @@
       "security_score": 100,
       "security_passed": true,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "agent-bom-vulnerability-intel",
@@ -397,7 +397,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 6736,
+      "body_length": 6420,
       "version": "1.0.3",
       "functional_grade": "A",
       "functional_score": 80,
@@ -410,11 +410,11 @@
       "executability_grade": "C",
       "executability_score": 60,
       "executable": true,
-      "security_grade": "A",
-      "security_score": 100,
-      "security_passed": true,
-      "visibility_grade": "C",
-      "visibility_score": 60,
+      "security_grade": "B",
+      "security_score": 75,
+      "security_passed": false,
+      "visibility_grade": "A",
+      "visibility_score": 80,
       "visibility_passed": false
     },
     {
@@ -425,7 +425,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 12064,
+      "body_length": 10914,
       "version": "1.0.4",
       "functional_grade": "A",
       "functional_score": 90,
@@ -453,7 +453,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 7539,
+      "body_length": 7357,
       "version": "1.0.3",
       "functional_grade": "A",
       "functional_score": 90,
@@ -480,12 +480,12 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 7654,
+      "body_length": 6515,
       "version": "1.0.3",
       "functional_grade": "A",
-      "functional_score": 80,
+      "functional_score": 75,
       "sellability_grade": "A",
-      "sellability_score": 92,
+      "sellability_score": 91,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -497,8 +497,8 @@
       "security_score": 75,
       "security_passed": false,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "agent-chat",
@@ -507,7 +507,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6467,
+      "body_length": 6247,
       "version": "0.1.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -535,7 +535,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 6088,
+      "body_length": 5341,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 80,
@@ -552,8 +552,8 @@
       "security_score": 100,
       "security_passed": true,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "agent-framework-azure-ai-py",
@@ -562,7 +562,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 8168,
+      "body_length": 7872,
       "version": "0.1.1",
       "functional_grade": "A",
       "functional_score": 90,
@@ -579,8 +579,8 @@
       "security_score": 100,
       "security_passed": true,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "agent-group",
@@ -589,7 +589,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5304,
+      "body_length": 4854,
       "version": "1.0.4",
       "functional_grade": "A",
       "functional_score": 85,
@@ -616,12 +616,12 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5802,
+      "body_length": 5052,
       "version": "1.0.1",
       "functional_grade": "A",
-      "functional_score": 85,
+      "functional_score": 75,
       "sellability_grade": "A",
-      "sellability_score": 92,
+      "sellability_score": 91,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -699,12 +699,12 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 5403,
+      "body_length": 5065,
       "version": "1.0.1",
       "functional_grade": "A",
-      "functional_score": 80,
+      "functional_score": 70,
       "sellability_grade": "A",
-      "sellability_score": 90,
+      "sellability_score": 89,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -727,7 +727,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 9496,
+      "body_length": 9193,
       "version": "4.6.7",
       "functional_grade": "A",
       "functional_score": 90,
@@ -830,33 +830,6 @@
       "visibility_passed": false
     },
     {
-      "slug": "ai-finance-free",
-      "source": "packaged",
-      "severity": "info",
-      "issues": [
-        "MISSING_DEP_SECTION: 缺少依赖说明 section"
-      ],
-      "body_length": 8049,
-      "version": "1.0.0",
-      "functional_grade": "A",
-      "functional_score": 85,
-      "sellability_grade": "A",
-      "sellability_score": 92,
-      "authenticity_grade": "A",
-      "authenticity_score": 100,
-      "semantic_grade": "N/A",
-      "semantic_score": -1,
-      "executability_grade": "A",
-      "executability_score": 100,
-      "executable": true,
-      "security_grade": "B",
-      "security_score": 75,
-      "security_passed": false,
-      "visibility_grade": "D",
-      "visibility_score": 30,
-      "visibility_passed": false
-    },
-    {
       "slug": "ai-image-gen",
       "source": "packaged",
       "severity": "info",
@@ -919,7 +892,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6558,
+      "body_length": 5915,
       "version": "1.0.2",
       "functional_grade": "A",
       "functional_score": 90,
@@ -1139,7 +1112,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 7219,
+      "body_length": 6802,
       "version": "1.1.2",
       "functional_grade": "A",
       "functional_score": 75,
@@ -1167,7 +1140,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_TAGS: 缺少 tags 字段"
       ],
-      "body_length": 5966,
+      "body_length": 5963,
       "version": "1.0.0",
       "functional_grade": "A",
       "functional_score": 95,
@@ -1333,7 +1306,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5964,
+      "body_length": 5960,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -1580,7 +1553,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5176,
+      "body_length": 4937,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -1608,7 +1581,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 6216,
+      "body_length": 6014,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 80,
@@ -1625,8 +1598,8 @@
       "security_score": 100,
       "security_passed": true,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "audio-upload-aioz-stream",
@@ -1663,7 +1636,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 7685,
+      "body_length": 6799,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -1680,8 +1653,8 @@
       "security_score": 75,
       "security_passed": false,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "auto-monitor",
@@ -1690,7 +1663,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5650,
+      "body_length": 4983,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -1718,12 +1691,12 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_TAGS: 缺少 tags 字段"
       ],
-      "body_length": 8549,
+      "body_length": 7831,
       "version": "1.0.0",
       "functional_grade": "A",
-      "functional_score": 100,
+      "functional_score": 95,
       "sellability_grade": "A",
-      "sellability_score": 95,
+      "sellability_score": 93,
       "authenticity_grade": "A",
       "authenticity_score": 97,
       "semantic_grade": "N/A",
@@ -1735,7 +1708,7 @@
       "security_score": 100,
       "security_passed": true,
       "visibility_grade": "D",
-      "visibility_score": 15,
+      "visibility_score": 35,
       "visibility_passed": false
     },
     {
@@ -1745,7 +1718,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6651,
+      "body_length": 6240,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -1762,8 +1735,8 @@
       "security_score": 100,
       "security_passed": true,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "automation-recipe-pack",
@@ -1773,7 +1746,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 8112,
+      "body_length": 7100,
       "version": "1.1.2",
       "functional_grade": "A",
       "functional_score": 90,
@@ -1800,7 +1773,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 7057,
+      "body_length": 6322,
       "version": "1.0.3",
       "functional_grade": "A",
       "functional_score": 85,
@@ -1911,7 +1884,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5986,
+      "body_length": 5689,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -1994,7 +1967,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6811,
+      "body_length": 6538,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 95,
@@ -2050,7 +2023,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 7349,
+      "body_length": 6907,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 90,
@@ -2133,7 +2106,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6012,
+      "body_length": 5272,
       "version": "1.0.5",
       "functional_grade": "A",
       "functional_score": 85,
@@ -2160,7 +2133,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5269,
+      "body_length": 4957,
       "version": "1.117.4",
       "functional_grade": "A",
       "functional_score": 85,
@@ -2272,7 +2245,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 6601,
+      "body_length": 6069,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 90,
@@ -2327,7 +2300,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6223,
+      "body_length": 5917,
       "version": "1.0.2",
       "functional_grade": "A",
       "functional_score": 85,
@@ -2410,7 +2383,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 5854,
+      "body_length": 5415,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 80,
@@ -2464,12 +2437,12 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5107,
+      "body_length": 4491,
       "version": "1.0.2",
       "functional_grade": "A",
-      "functional_score": 85,
+      "functional_score": 70,
       "sellability_grade": "A",
-      "sellability_score": 92,
+      "sellability_score": 89,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -2491,7 +2464,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6036,
+      "body_length": 6035,
       "version": "1.0.2",
       "functional_grade": "A",
       "functional_score": 90,
@@ -2508,8 +2481,8 @@
       "security_score": 75,
       "security_passed": false,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "browser-automation-v2",
@@ -2518,7 +2491,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6692,
+      "body_length": 6550,
       "version": "2.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -2545,7 +2518,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5943,
+      "body_length": 5780,
       "version": "0.1.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -2573,7 +2546,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 6399,
+      "body_length": 5903,
       "version": "1.2.1",
       "functional_grade": "A",
       "functional_score": 80,
@@ -2601,12 +2574,12 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 8959,
+      "body_length": 7129,
       "version": "1.0.1",
       "functional_grade": "A",
-      "functional_score": 90,
+      "functional_score": 80,
       "sellability_grade": "A",
-      "sellability_score": 92,
+      "sellability_score": 90,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -2657,12 +2630,12 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 5526,
+      "body_length": 5211,
       "version": "1.0.5",
       "functional_grade": "A",
-      "functional_score": 80,
+      "functional_score": 70,
       "sellability_grade": "A",
-      "sellability_score": 90,
+      "sellability_score": 89,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -2739,7 +2712,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6936,
+      "body_length": 6436,
       "version": "0.1.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -2766,7 +2739,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 4652,
+      "body_length": 4426,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 80,
@@ -2793,7 +2766,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 10227,
+      "body_length": 9211,
       "version": "1.0.2",
       "functional_grade": "A",
       "functional_score": 85,
@@ -2810,8 +2783,8 @@
       "security_score": 75,
       "security_passed": false,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "chart",
@@ -2875,7 +2848,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6697,
+      "body_length": 6221,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 80,
@@ -2892,8 +2865,8 @@
       "security_score": 75,
       "security_passed": false,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "chat",
@@ -2984,7 +2957,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6686,
+      "body_length": 6444,
       "version": "1.0.4",
       "functional_grade": "A",
       "functional_score": 85,
@@ -3121,7 +3094,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6954,
+      "body_length": 6810,
       "version": "0.1.1",
       "functional_grade": "A",
       "functional_score": 90,
@@ -3287,7 +3260,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 15475,
+      "body_length": 13952,
       "version": "0.1.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -3303,8 +3276,8 @@
       "security_grade": "A",
       "security_score": 100,
       "security_passed": true,
-      "visibility_grade": "A",
-      "visibility_score": 85,
+      "visibility_grade": "C",
+      "visibility_score": 65,
       "visibility_passed": false
     },
     {
@@ -3370,7 +3343,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5940,
+      "body_length": 5810,
       "version": "1.0.5",
       "functional_grade": "A",
       "functional_score": 85,
@@ -3589,7 +3562,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 16070,
+      "body_length": 15726,
       "version": "2.0.1",
       "functional_grade": "A",
       "functional_score": 90,
@@ -3605,8 +3578,8 @@
       "security_grade": "A",
       "security_score": 100,
       "security_passed": true,
-      "visibility_grade": "C",
-      "visibility_score": 65,
+      "visibility_grade": "A",
+      "visibility_score": 85,
       "visibility_passed": false
     },
     {
@@ -3699,7 +3672,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 5449,
+      "body_length": 5451,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 80,
@@ -3716,8 +3689,8 @@
       "security_score": 75,
       "security_passed": false,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "context-engineering",
@@ -3753,7 +3726,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5981,
+      "body_length": 5661,
       "version": "1.0.2",
       "functional_grade": "A",
       "functional_score": 85,
@@ -3837,7 +3810,7 @@
         "MISSING_TAGS: 缺少 tags 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 11364,
+      "body_length": 10852,
       "version": "1.0.2",
       "functional_grade": "A",
       "functional_score": 90,
@@ -3893,7 +3866,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 8151,
+      "body_length": 7551,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 90,
@@ -3936,33 +3909,6 @@
       "security_grade": "B",
       "security_score": 75,
       "security_passed": false,
-      "visibility_grade": "D",
-      "visibility_score": 30,
-      "visibility_passed": false
-    },
-    {
-      "slug": "crypto-portfolio-free",
-      "source": "packaged",
-      "severity": "info",
-      "issues": [
-        "MISSING_DEP_SECTION: 缺少依赖说明 section"
-      ],
-      "body_length": 8957,
-      "version": "1.0.0",
-      "functional_grade": "A",
-      "functional_score": 90,
-      "sellability_grade": "A",
-      "sellability_score": 88,
-      "authenticity_grade": "A",
-      "authenticity_score": 100,
-      "semantic_grade": "N/A",
-      "semantic_score": -1,
-      "executability_grade": "A",
-      "executability_score": 100,
-      "executable": true,
-      "security_grade": "A",
-      "security_score": 100,
-      "security_passed": true,
       "visibility_grade": "D",
       "visibility_score": 30,
       "visibility_passed": false
@@ -4113,7 +4059,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6682,
+      "body_length": 5962,
       "version": "1.0.2",
       "functional_grade": "A",
       "functional_score": 90,
@@ -4167,12 +4113,12 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5081,
+      "body_length": 4728,
       "version": "1.0.1",
       "functional_grade": "A",
-      "functional_score": 85,
+      "functional_score": 80,
       "sellability_grade": "A",
-      "sellability_score": 90,
+      "sellability_score": 88,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -4194,7 +4140,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5864,
+      "body_length": 5417,
       "version": "1.0.2",
       "functional_grade": "A",
       "functional_score": 85,
@@ -4276,7 +4222,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6378,
+      "body_length": 6165,
       "version": "1.0.2",
       "functional_grade": "A",
       "functional_score": 85,
@@ -4663,12 +4609,12 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 7228,
+      "body_length": 6070,
       "version": "1.0.3",
       "functional_grade": "A",
       "functional_score": 85,
       "sellability_grade": "A",
-      "sellability_score": 90,
+      "sellability_score": 88,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -4857,7 +4803,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 6351,
+      "body_length": 5973,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 80,
@@ -4874,8 +4820,8 @@
       "security_score": 75,
       "security_passed": false,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "dispatching-parallel-agents",
@@ -4994,7 +4940,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6600,
+      "body_length": 5486,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -5157,7 +5103,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6303,
+      "body_length": 6054,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 95,
@@ -5238,7 +5184,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6803,
+      "body_length": 5963,
       "version": "1.0.6",
       "functional_grade": "A",
       "functional_score": 75,
@@ -5255,8 +5201,8 @@
       "security_score": 75,
       "security_passed": false,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "domain-dns-ops",
@@ -5265,7 +5211,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5500,
+      "body_length": 4838,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 75,
@@ -5292,7 +5238,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5336,
+      "body_length": 5050,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 95,
@@ -5308,8 +5254,8 @@
       "security_grade": "B",
       "security_score": 75,
       "security_passed": false,
-      "visibility_grade": "B",
-      "visibility_score": 75,
+      "visibility_grade": "D",
+      "visibility_score": 55,
       "visibility_passed": false
     },
     {
@@ -5346,12 +5292,12 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5630,
+      "body_length": 4905,
       "version": "1.0.1",
-      "functional_grade": "A",
-      "functional_score": 75,
+      "functional_grade": "C",
+      "functional_score": 65,
       "sellability_grade": "A",
-      "sellability_score": 91,
+      "sellability_score": 88,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -5363,8 +5309,8 @@
       "security_score": 75,
       "security_passed": false,
       "visibility_grade": "A",
-      "visibility_score": 80,
-      "visibility_passed": false
+      "visibility_score": 100,
+      "visibility_passed": true
     },
     {
       "slug": "elite-longterm-memory",
@@ -5623,7 +5569,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5360,
+      "body_length": 5145,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -5763,7 +5709,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 5857,
+      "body_length": 5717,
       "version": "1.0.3",
       "functional_grade": "A",
       "functional_score": 80,
@@ -5780,8 +5726,8 @@
       "security_score": 75,
       "security_passed": false,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "executing-plans",
@@ -5844,12 +5790,12 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6939,
+      "body_length": 6408,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
       "sellability_grade": "A",
-      "sellability_score": 92,
+      "sellability_score": 90,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -5871,12 +5817,12 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6475,
+      "body_length": 6032,
       "version": "1.0.1",
       "functional_grade": "A",
-      "functional_score": 85,
+      "functional_score": 75,
       "sellability_grade": "A",
-      "sellability_score": 90,
+      "sellability_score": 89,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -5898,7 +5844,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6129,
+      "body_length": 5994,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -5915,8 +5861,8 @@
       "security_score": 75,
       "security_passed": false,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "expanso-xml-to-json",
@@ -5980,7 +5926,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5819,
+      "body_length": 5685,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -6007,7 +5953,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5751,
+      "body_length": 5406,
       "version": "1.2.1",
       "functional_grade": "A",
       "functional_score": 75,
@@ -6089,7 +6035,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 8213,
+      "body_length": 7896,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 90,
@@ -6101,33 +6047,6 @@
       "semantic_score": -1,
       "executability_grade": "B",
       "executability_score": 80,
-      "executable": true,
-      "security_grade": "B",
-      "security_score": 75,
-      "security_passed": false,
-      "visibility_grade": "A",
-      "visibility_score": 80,
-      "visibility_passed": false
-    },
-    {
-      "slug": "feishu-file-sender",
-      "source": "packaged",
-      "severity": "info",
-      "issues": [
-        "MISSING_HOMEPAGE: 缺少 homepage 字段"
-      ],
-      "body_length": 9964,
-      "version": "1.0.1",
-      "functional_grade": "A",
-      "functional_score": 95,
-      "sellability_grade": "A",
-      "sellability_score": 91,
-      "authenticity_grade": "A",
-      "authenticity_score": 100,
-      "semantic_grade": "N/A",
-      "semantic_score": -1,
-      "executability_grade": "A",
-      "executability_score": 100,
       "executable": true,
       "security_grade": "B",
       "security_score": 75,
@@ -6171,7 +6090,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6442,
+      "body_length": 5671,
       "version": "0.1.2",
       "functional_grade": "A",
       "functional_score": 85,
@@ -6226,7 +6145,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 4993,
+      "body_length": 4779,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 90,
@@ -6281,33 +6200,6 @@
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
       "body_length": 11940,
-      "version": "1.0.0",
-      "functional_grade": "A",
-      "functional_score": 90,
-      "sellability_grade": "A",
-      "sellability_score": 94,
-      "authenticity_grade": "A",
-      "authenticity_score": 100,
-      "semantic_grade": "N/A",
-      "semantic_score": -1,
-      "executability_grade": "A",
-      "executability_score": 100,
-      "executable": true,
-      "security_grade": "B",
-      "security_score": 75,
-      "security_passed": false,
-      "visibility_grade": "D",
-      "visibility_score": 30,
-      "visibility_passed": false
-    },
-    {
-      "slug": "fin-literacy-free",
-      "source": "packaged",
-      "severity": "info",
-      "issues": [
-        "MISSING_DEP_SECTION: 缺少依赖说明 section"
-      ],
-      "body_length": 11241,
       "version": "1.0.0",
       "functional_grade": "A",
       "functional_score": 90,
@@ -6389,7 +6281,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 8450,
+      "body_length": 7469,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 95,
@@ -6405,8 +6297,8 @@
       "security_grade": "B",
       "security_score": 75,
       "security_passed": false,
-      "visibility_grade": "B",
-      "visibility_score": 75,
+      "visibility_grade": "D",
+      "visibility_score": 55,
       "visibility_passed": false
     },
     {
@@ -6443,7 +6335,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 7831,
+      "body_length": 7085,
       "version": "1.2.1",
       "functional_grade": "A",
       "functional_score": 95,
@@ -6460,8 +6352,8 @@
       "security_score": 75,
       "security_passed": false,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "finishing-a-development-branch",
@@ -6498,7 +6390,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 5448,
+      "body_length": 5365,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 80,
@@ -6525,7 +6417,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5786,
+      "body_length": 5469,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -6579,7 +6471,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6725,
+      "body_length": 6407,
       "version": "0.0.2",
       "functional_grade": "A",
       "functional_score": 75,
@@ -6660,7 +6552,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 11602,
+      "body_length": 11027,
       "version": "1.1.1",
       "functional_grade": "A",
       "functional_score": 95,
@@ -6769,7 +6661,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 12058,
+      "body_length": 11927,
       "version": "2.0.1",
       "functional_grade": "A",
       "functional_score": 75,
@@ -6786,8 +6678,8 @@
       "security_score": 100,
       "security_passed": true,
       "visibility_grade": "A",
-      "visibility_score": 80,
-      "visibility_passed": false
+      "visibility_score": 100,
+      "visibility_passed": true
     },
     {
       "slug": "game-ai",
@@ -6797,7 +6689,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 13865,
+      "body_length": 13600,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 90,
@@ -6813,8 +6705,8 @@
       "security_grade": "B",
       "security_score": 75,
       "security_passed": false,
-      "visibility_grade": "A",
-      "visibility_score": 85,
+      "visibility_grade": "C",
+      "visibility_score": 65,
       "visibility_passed": false
     },
     {
@@ -6824,7 +6716,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6852,
+      "body_length": 6642,
       "version": "1.0.15",
       "functional_grade": "A",
       "functional_score": 85,
@@ -6851,7 +6743,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6951,
+      "body_length": 6394,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -6934,7 +6826,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 6998,
+      "body_length": 6235,
       "version": "1.0.4",
       "functional_grade": "A",
       "functional_score": 70,
@@ -6988,7 +6880,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6917,
+      "body_length": 6119,
       "version": "1.3.1",
       "functional_grade": "A",
       "functional_score": 90,
@@ -7208,7 +7100,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 5937,
+      "body_length": 5551,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 70,
@@ -7262,7 +7154,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6238,
+      "body_length": 5685,
       "version": "2.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -7344,7 +7236,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6582,
+      "body_length": 5942,
       "version": "2026.2.19",
       "functional_grade": "A",
       "functional_score": 95,
@@ -7372,12 +7264,12 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 5927,
+      "body_length": 5397,
       "version": "1.0.3",
       "functional_grade": "A",
-      "functional_score": 80,
+      "functional_score": 70,
       "sellability_grade": "A",
-      "sellability_score": 90,
+      "sellability_score": 89,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -7389,8 +7281,8 @@
       "security_score": 100,
       "security_passed": true,
       "visibility_grade": "A",
-      "visibility_score": 80,
-      "visibility_passed": false
+      "visibility_score": 100,
+      "visibility_passed": true
     },
     {
       "slug": "go-linter-configuration",
@@ -7400,7 +7292,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 6261,
+      "body_length": 5841,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 80,
@@ -7539,7 +7431,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6695,
+      "body_length": 6477,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 90,
@@ -7621,7 +7513,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 7165,
+      "body_length": 6996,
       "version": "2.9.2",
       "functional_grade": "A",
       "functional_score": 85,
@@ -7648,7 +7540,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 7856,
+      "body_length": 7029,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -7759,7 +7651,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 7909,
+      "body_length": 6960,
       "version": "2.0.2",
       "functional_grade": "A",
       "functional_score": 80,
@@ -7776,8 +7668,8 @@
       "security_score": 75,
       "security_passed": false,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "html-designer",
@@ -7841,7 +7733,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6049,
+      "body_length": 5669,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -7895,7 +7787,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5552,
+      "body_length": 5096,
       "version": "1.0.5",
       "functional_grade": "A",
       "functional_score": 75,
@@ -8004,12 +7896,12 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 4863,
+      "body_length": 4496,
       "version": "0.3.5",
       "functional_grade": "A",
-      "functional_score": 85,
+      "functional_score": 80,
       "sellability_grade": "A",
-      "sellability_score": 92,
+      "sellability_score": 90,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -8058,7 +7950,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 8229,
+      "body_length": 8079,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -8140,7 +8032,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5616,
+      "body_length": 4949,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 90,
@@ -8195,12 +8087,12 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 5919,
+      "body_length": 5617,
       "version": "1.0.4",
       "functional_grade": "A",
-      "functional_score": 80,
+      "functional_score": 70,
       "sellability_grade": "A",
-      "sellability_score": 90,
+      "sellability_score": 89,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -8333,7 +8225,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 7046,
+      "body_length": 6724,
       "version": "1.0.3",
       "functional_grade": "A",
       "functional_score": 85,
@@ -8443,12 +8335,12 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6457,
+      "body_length": 5936,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
       "sellability_grade": "A",
-      "sellability_score": 92,
+      "sellability_score": 90,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -8471,12 +8363,12 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 6210,
+      "body_length": 5410,
       "version": "1.0.1",
-      "functional_grade": "C",
-      "functional_score": 65,
+      "functional_grade": "A",
+      "functional_score": 80,
       "sellability_grade": "A",
-      "sellability_score": 88,
+      "sellability_score": 90,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -8498,7 +8390,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 9538,
+      "body_length": 8994,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 100,
@@ -8552,7 +8444,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6437,
+      "body_length": 5670,
       "version": "2.1.1",
       "functional_grade": "A",
       "functional_score": 95,
@@ -8580,12 +8472,12 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 6683,
+      "body_length": 6018,
       "version": "1.0.1",
       "functional_grade": "A",
-      "functional_score": 85,
+      "functional_score": 75,
       "sellability_grade": "A",
-      "sellability_score": 90,
+      "sellability_score": 89,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -8689,7 +8581,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 7556,
+      "body_length": 7015,
       "version": "1.0.2",
       "functional_grade": "A",
       "functional_score": 85,
@@ -8716,7 +8608,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5943,
+      "body_length": 5272,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 95,
@@ -8743,7 +8635,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6848,
+      "body_length": 6543,
       "version": "0.1.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -8826,7 +8718,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 5904,
+      "body_length": 5585,
       "version": "1.0.3",
       "functional_grade": "A",
       "functional_score": 80,
@@ -8910,7 +8802,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 5310,
+      "body_length": 5239,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 80,
@@ -8966,12 +8858,12 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 8751,
+      "body_length": 7870,
       "version": "1.0.2",
       "functional_grade": "A",
-      "functional_score": 90,
+      "functional_score": 85,
       "sellability_grade": "A",
-      "sellability_score": 92,
+      "sellability_score": 90,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -8993,7 +8885,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 7542,
+      "body_length": 7295,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 95,
@@ -9020,7 +8912,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 4143,
+      "body_length": 3917,
       "version": "2.0.1",
       "functional_grade": "A",
       "functional_score": 80,
@@ -9047,12 +8939,12 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5583,
+      "body_length": 5013,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
       "sellability_grade": "A",
-      "sellability_score": 92,
+      "sellability_score": 90,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -9064,8 +8956,8 @@
       "security_score": 75,
       "security_passed": false,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "logo",
@@ -9155,7 +9047,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 7153,
+      "body_length": 7020,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 95,
@@ -9183,7 +9075,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 5546,
+      "body_length": 5408,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 80,
@@ -9346,12 +9238,12 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 4875,
+      "body_length": 4595,
       "version": "1.0.1",
       "functional_grade": "A",
-      "functional_score": 75,
+      "functional_score": 70,
       "sellability_grade": "A",
-      "sellability_score": 91,
+      "sellability_score": 89,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -9362,8 +9254,8 @@
       "security_grade": "A",
       "security_score": 100,
       "security_passed": true,
-      "visibility_grade": "D",
-      "visibility_score": 55,
+      "visibility_grade": "B",
+      "visibility_score": 75,
       "visibility_passed": false
     },
     {
@@ -9623,7 +9515,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6576,
+      "body_length": 5896,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -9677,7 +9569,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6246,
+      "body_length": 5948,
       "version": "1.28.19",
       "functional_grade": "A",
       "functional_score": 85,
@@ -9816,7 +9708,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 7026,
+      "body_length": 6782,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 90,
@@ -9843,7 +9735,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6084,
+      "body_length": 5799,
       "version": "1.0.2",
       "functional_grade": "A",
       "functional_score": 75,
@@ -9898,7 +9790,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5570,
+      "body_length": 5200,
       "version": "1.0.3",
       "functional_grade": "A",
       "functional_score": 75,
@@ -9959,33 +9851,6 @@
       "functional_score": 85,
       "sellability_grade": "A",
       "sellability_score": 90,
-      "authenticity_grade": "A",
-      "authenticity_score": 100,
-      "semantic_grade": "N/A",
-      "semantic_score": -1,
-      "executability_grade": "A",
-      "executability_score": 100,
-      "executable": true,
-      "security_grade": "B",
-      "security_score": 75,
-      "security_passed": false,
-      "visibility_grade": "D",
-      "visibility_score": 30,
-      "visibility_passed": false
-    },
-    {
-      "slug": "multi-research-free",
-      "source": "packaged",
-      "severity": "info",
-      "issues": [
-        "MISSING_DEP_SECTION: 缺少依赖说明 section"
-      ],
-      "body_length": 10512,
-      "version": "1.0.0",
-      "functional_grade": "A",
-      "functional_score": 90,
-      "sellability_grade": "A",
-      "sellability_score": 94,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -10062,12 +9927,12 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 4840,
+      "body_length": 4516,
       "version": "1.0.1",
       "functional_grade": "A",
-      "functional_score": 75,
+      "functional_score": 70,
       "sellability_grade": "A",
-      "sellability_score": 91,
+      "sellability_score": 89,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -10143,7 +10008,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6548,
+      "body_length": 6445,
       "version": "1.0.12",
       "functional_grade": "A",
       "functional_score": 85,
@@ -10171,7 +10036,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 9946,
+      "body_length": 9556,
       "version": "1.1.1",
       "functional_grade": "A",
       "functional_score": 95,
@@ -10188,8 +10053,8 @@
       "security_score": 75,
       "security_passed": false,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "nano-pdf",
@@ -10198,7 +10063,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5082,
+      "body_length": 4678,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 95,
@@ -10418,7 +10283,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6040,
+      "body_length": 5761,
       "version": "1.0.2",
       "functional_grade": "A",
       "functional_score": 85,
@@ -10435,8 +10300,8 @@
       "security_score": 100,
       "security_passed": true,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "note",
@@ -10446,7 +10311,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 5417,
+      "body_length": 5315,
       "version": "2.1.1",
       "functional_grade": "A",
       "functional_score": 80,
@@ -10474,7 +10339,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 5163,
+      "body_length": 4993,
       "version": "2.0.2",
       "functional_grade": "A",
       "functional_score": 80,
@@ -10501,7 +10366,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 10237,
+      "body_length": 10086,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 100,
@@ -10518,8 +10383,8 @@
       "security_score": 75,
       "security_passed": false,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "notion-cli",
@@ -10636,12 +10501,12 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6581,
+      "body_length": 5316,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
       "sellability_grade": "A",
-      "sellability_score": 92,
+      "sellability_score": 90,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -10691,7 +10556,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 9423,
+      "body_length": 9240,
       "version": "1.0.7",
       "functional_grade": "A",
       "functional_score": 95,
@@ -10704,12 +10569,12 @@
       "executability_grade": "B",
       "executability_score": 80,
       "executable": true,
-      "security_grade": "A",
-      "security_score": 100,
-      "security_passed": true,
-      "visibility_grade": "C",
-      "visibility_score": 60,
-      "visibility_passed": false
+      "security_grade": "B",
+      "security_score": 75,
+      "security_passed": false,
+      "visibility_grade": "A",
+      "visibility_score": 100,
+      "visibility_passed": true
     },
     {
       "slug": "openai-whisper-1-0-0",
@@ -10718,7 +10583,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 7858,
+      "body_length": 6759,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -10800,7 +10665,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 7208,
+      "body_length": 6991,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 95,
@@ -10817,8 +10682,8 @@
       "security_score": 100,
       "security_passed": true,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "password-generator",
@@ -10828,7 +10693,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 5579,
+      "body_length": 5114,
       "version": "1.1.1",
       "functional_grade": "A",
       "functional_score": 80,
@@ -10909,7 +10774,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 10383,
+      "body_length": 9900,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 90,
@@ -10964,7 +10829,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6838,
+      "body_length": 6603,
       "version": "1.0.7",
       "functional_grade": "A",
       "functional_score": 85,
@@ -11209,7 +11074,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6850,
+      "body_length": 6752,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -11236,7 +11101,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6260,
+      "body_length": 6056,
       "version": "1.0.2",
       "functional_grade": "A",
       "functional_score": 85,
@@ -11263,7 +11128,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6457,
+      "body_length": 6242,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -11449,33 +11314,6 @@
       "visibility_passed": false
     },
     {
-      "slug": "realtime-quote-free",
-      "source": "packaged",
-      "severity": "info",
-      "issues": [
-        "MISSING_DEP_SECTION: 缺少依赖说明 section"
-      ],
-      "body_length": 9045,
-      "version": "1.0.0",
-      "functional_grade": "A",
-      "functional_score": 90,
-      "sellability_grade": "A",
-      "sellability_score": 94,
-      "authenticity_grade": "A",
-      "authenticity_score": 100,
-      "semantic_grade": "N/A",
-      "semantic_score": -1,
-      "executability_grade": "A",
-      "executability_score": 100,
-      "executable": true,
-      "security_grade": "B",
-      "security_score": 75,
-      "security_passed": false,
-      "visibility_grade": "D",
-      "visibility_score": 50,
-      "visibility_passed": false
-    },
-    {
       "slug": "receiving-code-review",
       "source": "packaged",
       "severity": "info",
@@ -11558,33 +11396,6 @@
       "visibility_passed": false
     },
     {
-      "slug": "report-viz-free",
-      "source": "packaged",
-      "severity": "info",
-      "issues": [
-        "MISSING_DEP_SECTION: 缺少依赖说明 section"
-      ],
-      "body_length": 9977,
-      "version": "1.0.0",
-      "functional_grade": "A",
-      "functional_score": 90,
-      "sellability_grade": "A",
-      "sellability_score": 94,
-      "authenticity_grade": "A",
-      "authenticity_score": 100,
-      "semantic_grade": "N/A",
-      "semantic_score": -1,
-      "executability_grade": "A",
-      "executability_score": 100,
-      "executable": true,
-      "security_grade": "B",
-      "security_score": 75,
-      "security_passed": false,
-      "visibility_grade": "D",
-      "visibility_score": 30,
-      "visibility_passed": false
-    },
-    {
       "slug": "requesting-code-review",
       "source": "packaged",
       "severity": "info",
@@ -11618,7 +11429,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6630,
+      "body_length": 6423,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -11838,12 +11649,12 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 5497,
+      "body_length": 4756,
       "version": "1.4.2",
       "functional_grade": "A",
-      "functional_score": 80,
+      "functional_score": 75,
       "sellability_grade": "A",
-      "sellability_score": 90,
+      "sellability_score": 85,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -11948,7 +11759,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 5743,
+      "body_length": 5193,
       "version": "1.0.3",
       "functional_grade": "A",
       "functional_score": 80,
@@ -12020,33 +11831,6 @@
       "security_passed": false,
       "visibility_grade": "D",
       "visibility_score": 30,
-      "visibility_passed": false
-    },
-    {
-      "slug": "stock-radar-free",
-      "source": "packaged",
-      "severity": "info",
-      "issues": [
-        "MISSING_DEP_SECTION: 缺少依赖说明 section"
-      ],
-      "body_length": 9418,
-      "version": "1.0.0",
-      "functional_grade": "A",
-      "functional_score": 75,
-      "sellability_grade": "A",
-      "sellability_score": 93,
-      "authenticity_grade": "A",
-      "authenticity_score": 100,
-      "semantic_grade": "N/A",
-      "semantic_score": -1,
-      "executability_grade": "A",
-      "executability_score": 100,
-      "executable": true,
-      "security_grade": "B",
-      "security_score": 75,
-      "security_passed": false,
-      "visibility_grade": "D",
-      "visibility_score": 35,
       "visibility_passed": false
     },
     {
@@ -12139,12 +11923,12 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6929,
+      "body_length": 6040,
       "version": "0.1.1",
-      "functional_grade": "A",
-      "functional_score": 75,
+      "functional_grade": "C",
+      "functional_score": 65,
       "sellability_grade": "A",
-      "sellability_score": 91,
+      "sellability_score": 90,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -12193,12 +11977,12 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 8809,
+      "body_length": 7511,
       "version": "1.0.1",
       "functional_grade": "A",
-      "functional_score": 95,
+      "functional_score": 80,
       "sellability_grade": "A",
-      "sellability_score": 95,
+      "sellability_score": 92,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -12248,7 +12032,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_TAGS: 缺少 tags 字段"
       ],
-      "body_length": 12343,
+      "body_length": 11873,
       "version": "1.0.0",
       "functional_grade": "A",
       "functional_score": 95,
@@ -12275,7 +12059,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5941,
+      "body_length": 5942,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -12292,8 +12076,8 @@
       "security_score": 75,
       "security_passed": false,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "trade-alert",
@@ -12622,33 +12406,6 @@
       "visibility_passed": false
     },
     {
-      "slug": "valuation-model-free",
-      "source": "packaged",
-      "severity": "info",
-      "issues": [
-        "MISSING_DEP_SECTION: 缺少依赖说明 section"
-      ],
-      "body_length": 6617,
-      "version": "1.0.0",
-      "functional_grade": "A",
-      "functional_score": 80,
-      "sellability_grade": "A",
-      "sellability_score": 88,
-      "authenticity_grade": "A",
-      "authenticity_score": 100,
-      "semantic_grade": "N/A",
-      "semantic_score": -1,
-      "executability_grade": "B",
-      "executability_score": 80,
-      "executable": true,
-      "security_grade": "B",
-      "security_score": 75,
-      "security_passed": false,
-      "visibility_grade": "B",
-      "visibility_score": 75,
-      "visibility_passed": false
-    },
-    {
       "slug": "vegas-tunnel",
       "source": "packaged",
       "severity": "info",
@@ -12673,33 +12430,6 @@
       "security_passed": true,
       "visibility_grade": "D",
       "visibility_score": 30,
-      "visibility_passed": false
-    },
-    {
-      "slug": "vegas-tunnel-free",
-      "source": "packaged",
-      "severity": "info",
-      "issues": [
-        "MISSING_DEP_SECTION: 缺少依赖说明 section"
-      ],
-      "body_length": 12350,
-      "version": "1.0.0",
-      "functional_grade": "A",
-      "functional_score": 90,
-      "sellability_grade": "A",
-      "sellability_score": 90,
-      "authenticity_grade": "A",
-      "authenticity_score": 100,
-      "semantic_grade": "N/A",
-      "semantic_score": -1,
-      "executability_grade": "A",
-      "executability_score": 100,
-      "executable": true,
-      "security_grade": "A",
-      "security_score": 100,
-      "security_passed": true,
-      "visibility_grade": "D",
-      "visibility_score": 40,
       "visibility_passed": false
     },
     {
@@ -12765,12 +12495,12 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 5579,
+      "body_length": 5128,
       "version": "1.0.1",
       "functional_grade": "A",
-      "functional_score": 70,
+      "functional_score": 80,
       "sellability_grade": "A",
-      "sellability_score": 89,
+      "sellability_score": 90,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -12792,7 +12522,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5835,
+      "body_length": 5236,
       "version": "1.0.2",
       "functional_grade": "A",
       "functional_score": 85,
@@ -12819,7 +12549,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 6585,
+      "body_length": 5461,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -12847,7 +12577,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 5889,
+      "body_length": 5785,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 80,
@@ -12864,8 +12594,8 @@
       "security_score": 75,
       "security_passed": false,
       "visibility_grade": "A",
-      "visibility_score": 80,
-      "visibility_passed": false
+      "visibility_score": 100,
+      "visibility_passed": true
     },
     {
       "slug": "web-artifacts-builder",
@@ -12929,12 +12659,12 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 7716,
+      "body_length": 6914,
       "version": "1.0.1",
       "functional_grade": "A",
-      "functional_score": 80,
+      "functional_score": 70,
       "sellability_grade": "A",
-      "sellability_score": 90,
+      "sellability_score": 89,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -12957,7 +12687,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 5978,
+      "body_length": 5744,
       "version": "1.0.3",
       "functional_grade": "A",
       "functional_score": 80,
@@ -12974,8 +12704,8 @@
       "security_score": 75,
       "security_passed": false,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "work",
@@ -13120,7 +12850,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 5376,
+      "body_length": 5083,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 75,
@@ -13137,8 +12867,8 @@
       "security_score": 75,
       "security_passed": false,
       "visibility_grade": "A",
-      "visibility_score": 100,
-      "visibility_passed": true
+      "visibility_score": 80,
+      "visibility_passed": false
     },
     {
       "slug": "ad-creative-intel-pro",
@@ -13532,7 +13262,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 10898,
+      "body_length": 8720,
       "version": "1.0.0",
       "functional_grade": "A",
       "functional_score": 100,
@@ -13587,7 +13317,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 11628,
+      "body_length": 10756,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 90,
@@ -13643,7 +13373,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 12736,
+      "body_length": 10605,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 95,
@@ -13808,7 +13538,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 13075,
+      "body_length": 13072,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 95,
@@ -13890,7 +13620,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 14064,
+      "body_length": 13807,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 95,
@@ -13946,7 +13676,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 14315,
+      "body_length": 13924,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 85,
@@ -14002,7 +13732,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 10761,
+      "body_length": 10758,
       "version": "1.0.1",
       "functional_grade": "A",
       "functional_score": 90,
@@ -14030,12 +13760,12 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 10187,
+      "body_length": 8536,
       "version": "1.0.1",
       "functional_grade": "A",
-      "functional_score": 95,
+      "functional_score": 90,
       "sellability_grade": "A",
-      "sellability_score": 89,
+      "sellability_score": 87,
       "authenticity_grade": "A",
       "authenticity_score": 100,
       "semantic_grade": "N/A",
@@ -14046,8 +13776,8 @@
       "security_grade": "A",
       "security_score": 100,
       "security_passed": true,
-      "visibility_grade": "C",
-      "visibility_score": 60,
+      "visibility_grade": "A",
+      "visibility_score": 80,
       "visibility_passed": false
     },
     {
@@ -14168,7 +13898,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 10463,
+      "body_length": 10460,
       "version": "1.0.0",
       "functional_grade": "A",
       "functional_score": 80,
@@ -14723,7 +14453,7 @@
       "issues": [
         "MISSING_HOMEPAGE: 缺少 homepage 字段"
       ],
-      "body_length": 11655,
+      "body_length": 11652,
       "version": "1.0.0",
       "functional_grade": "A",
       "functional_score": 95,
@@ -14751,7 +14481,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 10256,
+      "body_length": 10251,
       "version": "1.0.0",
       "functional_grade": "A",
       "functional_score": 90,
@@ -14835,7 +14565,7 @@
         "MISSING_HOMEPAGE: 缺少 homepage 字段",
         "MISSING_DEP_SECTION: 缺少依赖说明 section"
       ],
-      "body_length": 14475,
+      "body_length": 14511,
       "version": "1.0.0",
       "functional_grade": "A",
       "functional_score": 90,
@@ -15438,29 +15168,20 @@
   ],
   "functional_quality": {
     "grade_distribution": {
-      "A": 557,
+      "A": 546,
       "B": 0,
-      "C": 6,
+      "C": 7,
       "D": 0,
       "F": 0
     },
-    "avg_score": 87.6,
-    "total_with_issues": 58,
+    "avg_score": 87.4,
+    "total_with_issues": 64,
     "issues_detail": [
-      {
-        "slug": "aegis-security",
-        "source": "packaged",
-        "grade": "A",
-        "score": 85,
-        "issues": [
-          "NO_TASK_DEFINITION: 无任务定义section"
-        ]
-      },
       {
         "slug": "agent-browser-stagehand",
         "source": "packaged",
         "grade": "A",
-        "score": 80,
+        "score": 75,
         "issues": [
           "NO_TASK_DEFINITION: 无任务定义section"
         ]
@@ -15472,6 +15193,24 @@
         "score": 80,
         "issues": [
           "NO_TASK_DEFINITION: 无任务定义section"
+        ]
+      },
+      {
+        "slug": "agent-knowledge",
+        "source": "packaged",
+        "grade": "A",
+        "score": 75,
+        "issues": [
+          "NO_USAGE_GUIDE: 无使用指南section"
+        ]
+      },
+      {
+        "slug": "agentic-security-audit",
+        "source": "packaged",
+        "grade": "A",
+        "score": 70,
+        "issues": [
+          "NO_USAGE_GUIDE: 无使用指南section"
         ]
       },
       {
@@ -15535,6 +15274,24 @@
         "score": 65,
         "issues": [
           "REAL_PLACEHOLDER: 检测到占位符-未替换链接"
+        ]
+      },
+      {
+        "slug": "brave-search",
+        "source": "packaged",
+        "grade": "A",
+        "score": 70,
+        "issues": [
+          "NO_TASK_DEFINITION: 无任务定义section"
+        ]
+      },
+      {
+        "slug": "calendar-skill",
+        "source": "packaged",
+        "grade": "A",
+        "score": 70,
+        "issues": [
+          "NO_USAGE_GUIDE: 无使用指南section"
         ]
       },
       {
@@ -15640,10 +15397,20 @@
       {
         "slug": "elite-frontend-design",
         "source": "packaged",
+        "grade": "C",
+        "score": 65,
+        "issues": [
+          "NO_USAGE_GUIDE: 无使用指南section",
+          "NO_TASK_DEFINITION: 无任务定义section"
+        ]
+      },
+      {
+        "slug": "expanso-json-validate",
+        "source": "packaged",
         "grade": "A",
         "score": 75,
         "issues": [
-          "NO_TASK_DEFINITION: 无任务定义section"
+          "NO_USAGE_GUIDE: 无使用指南section"
         ]
       },
       {
@@ -15710,6 +15477,15 @@
         ]
       },
       {
+        "slug": "go",
+        "source": "packaged",
+        "grade": "A",
+        "score": 70,
+        "issues": [
+          "NO_USAGE_GUIDE: 无使用指南section"
+        ]
+      },
+      {
         "slug": "go-security-vulnerability",
         "source": "packaged",
         "grade": "A",
@@ -15773,12 +15549,21 @@
         ]
       },
       {
-        "slug": "json-canvas",
+        "slug": "javascript",
         "source": "packaged",
-        "grade": "C",
-        "score": 65,
+        "grade": "A",
+        "score": 70,
         "issues": [
-          "REAL_PLACEHOLDER: 检测到占位符-未替换链接"
+          "NO_USAGE_GUIDE: 无使用指南section"
+        ]
+      },
+      {
+        "slug": "json-repair-kit",
+        "source": "packaged",
+        "grade": "A",
+        "score": 75,
+        "issues": [
+          "NO_TASK_DEFINITION: 无任务定义section"
         ]
       },
       {
@@ -15803,7 +15588,7 @@
         "slug": "market-news",
         "source": "packaged",
         "grade": "A",
-        "score": 75,
+        "score": 70,
         "issues": [
           "NO_TASK_DEFINITION: 无任务定义section"
         ]
@@ -15830,7 +15615,7 @@
         "slug": "music",
         "source": "packaged",
         "grade": "A",
-        "score": 75,
+        "score": 70,
         "issues": [
           "NO_TASK_DEFINITION: 无任务定义section"
         ]
@@ -15873,21 +15658,22 @@
         ]
       },
       {
-        "slug": "stock-radar-free",
+        "slug": "telegram-chat-manager",
         "source": "packaged",
-        "grade": "A",
-        "score": 75,
+        "grade": "C",
+        "score": 65,
         "issues": [
-          "REAL_PLACEHOLDER: 检测到占位符-未替换链接"
+          "NO_USAGE_GUIDE: 无使用指南section",
+          "NO_TASK_DEFINITION: 无任务定义section"
         ]
       },
       {
-        "slug": "telegram-chat-manager",
+        "slug": "text-rpg-arcade-v3",
         "source": "packaged",
         "grade": "A",
-        "score": 75,
+        "score": 80,
         "issues": [
-          "NO_TASK_DEFINITION: 无任务定义section"
+          "NO_USAGE_GUIDE: 无使用指南section"
         ]
       },
       {
@@ -15900,12 +15686,12 @@
         ]
       },
       {
-        "slug": "vpn",
+        "slug": "word",
         "source": "packaged",
         "grade": "A",
         "score": 70,
         "issues": [
-          "NO_TASK_DEFINITION: 无任务定义section"
+          "NO_USAGE_GUIDE: 无使用指南section"
         ]
       },
       {
@@ -15975,12 +15761,12 @@
   },
   "sellability": {
     "grade_distribution": {
-      "A": 563,
+      "A": 553,
       "B": 0,
       "C": 0,
       "D": 0
     },
-    "avg_score": 91.3,
+    "avg_score": 91.2,
     "total_below_b": 0,
     "below_b_detail": [],
     "total_b_grade": 0,
@@ -15988,7 +15774,7 @@
   },
   "content_authenticity": {
     "grade_distribution": {
-      "A": 563,
+      "A": 553,
       "B": 0,
       "C": 0,
       "D": 0,
@@ -16008,11 +15794,11 @@
       "C": 0,
       "D": 0,
       "F": 0,
-      "N/A": 563
+      "N/A": 553
     },
     "avg_score": 0,
     "total_template_blocks": 0,
-    "total_with_issues": 563,
+    "total_with_issues": 553,
     "issues_detail": [
       {
         "slug": "accounting-and-finance",
@@ -16286,16 +16072,6 @@
       },
       {
         "slug": "ai-finance",
-        "source": "packaged",
-        "grade": "N/A",
-        "score": -1,
-        "template_block_count": 0,
-        "issues": [
-          "L7A_MODEL_UNAVAILABLE: scikit-learn not installed (pip install scikit-learn)"
-        ]
-      },
-      {
-        "slug": "ai-finance-free",
         "source": "packaged",
         "grade": "N/A",
         "score": -1,
@@ -17013,32 +16789,42 @@
         "issues": [
           "L7A_MODEL_UNAVAILABLE: scikit-learn not installed (pip install scikit-learn)"
         ]
+      },
+      {
+        "slug": "chart",
+        "source": "packaged",
+        "grade": "N/A",
+        "score": -1,
+        "template_block_count": 0,
+        "issues": [
+          "L7A_MODEL_UNAVAILABLE: scikit-learn not installed (pip install scikit-learn)"
+        ]
       }
     ]
   },
   "executability_audit": {
     "enabled": true,
-    "l7b_available_count": 563,
+    "l7b_available_count": 553,
     "grade_distribution": {
-      "A": 261,
-      "B": 251,
+      "A": 252,
+      "B": 250,
       "C": 49,
       "D": 2,
       "F": 0,
       "N/A": 0
     },
-    "avg_score": 87.4,
-    "executable_count": 563,
+    "avg_score": 87.2,
+    "executable_count": 553,
     "pass_rate": "100%",
     "check_distribution": {
       "L7B_NO_CODE": 0,
       "L7B_BROKEN_REF": 2,
       "L7B_VAGUE_TASK": 0,
       "L7B_MISSING_INPUT": 97,
-      "L7B_NO_OUTPUT": 254,
+      "L7B_NO_OUTPUT": 253,
       "L7B_CONTRADICTION": 2
     },
-    "total_with_issues": 302,
+    "total_with_issues": 301,
     "issues_detail": [
       {
         "slug": "ace-music",
@@ -20044,18 +19830,6 @@
         ]
       },
       {
-        "slug": "valuation-model-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 80,
-        "executable": true,
-        "checks_passed": 5,
-        "checks_failed": 1,
-        "issues": [
-          "L7B_NO_OUTPUT: 有代码但缺少输出格式说明"
-        ]
-      },
-      {
         "slug": "verification-before-completion",
         "source": "packaged",
         "grade": "B",
@@ -20727,22 +20501,22 @@
   },
   "security_audit": {
     "enabled": true,
-    "l8_available_count": 563,
+    "l8_available_count": 553,
     "grade_distribution": {
-      "A": 225,
-      "B": 337,
+      "A": 220,
+      "B": 332,
       "C": 1,
       "D": 0,
       "F": 0,
       "N/A": 0
     },
-    "avg_score": 85.0,
-    "passed_count": 225,
-    "failed_count": 338,
+    "avg_score": 84.9,
+    "passed_count": 220,
+    "failed_count": 333,
     "pass_rate": "39%",
     "category_distribution": {
       "EXTERNAL_URL": 0,
-      "INJECTED_MARKETING_TEXT": 338,
+      "INJECTED_MARKETING_TEXT": 333,
       "API_KEY_EXPOSURE": 0,
       "SLUG_CONTENT_MISMATCH": 0,
       "DUPLICATE_YAML_FIELDS": 0,
@@ -20750,7 +20524,7 @@
       "GARBLED_TEXT": 0,
       "DEPENDENCY_CONTRADICTION": 1
     },
-    "total_with_issues": 338,
+    "total_with_issues": 333,
     "issues_detail": [
       {
         "slug": "accounting-and-finance",
@@ -20884,6 +20658,31 @@
         ]
       },
       {
+        "slug": "aegis-security",
+        "source": "packaged",
+        "grade": "B",
+        "score": 75,
+        "passed": false,
+        "category_counts": {
+          "EXTERNAL_URL": 0,
+          "INJECTED_MARKETING_TEXT": 1,
+          "API_KEY_EXPOSURE": 0,
+          "SLUG_CONTENT_MISMATCH": 0,
+          "DUPLICATE_YAML_FIELDS": 0,
+          "TAG_MISMATCH": 0,
+          "GARBLED_TEXT": 0,
+          "DEPENDENCY_CONTRADICTION": 0
+        },
+        "issues": [
+          {
+            "category": "INJECTED_MARKETING_TEXT",
+            "severity": "high",
+            "message": "发现注入营销模板文本: 适用场景模板注入",
+            "evidence": "适用场景模板注入"
+          }
+        ]
+      },
+      {
         "slug": "aegis-security-free",
         "source": "packaged",
         "grade": "B",
@@ -20935,6 +20734,31 @@
       },
       {
         "slug": "afrexai-knowledge-management",
+        "source": "packaged",
+        "grade": "B",
+        "score": 75,
+        "passed": false,
+        "category_counts": {
+          "EXTERNAL_URL": 0,
+          "INJECTED_MARKETING_TEXT": 1,
+          "API_KEY_EXPOSURE": 0,
+          "SLUG_CONTENT_MISMATCH": 0,
+          "DUPLICATE_YAML_FIELDS": 0,
+          "TAG_MISMATCH": 0,
+          "GARBLED_TEXT": 0,
+          "DEPENDENCY_CONTRADICTION": 0
+        },
+        "issues": [
+          {
+            "category": "INJECTED_MARKETING_TEXT",
+            "severity": "high",
+            "message": "发现注入营销模板文本: 适用场景模板注入",
+            "evidence": "适用场景模板注入"
+          }
+        ]
+      },
+      {
+        "slug": "agent-bom-vulnerability-intel",
         "source": "packaged",
         "grade": "B",
         "score": 75,
@@ -21060,31 +20884,6 @@
       },
       {
         "slug": "ai-finance",
-        "source": "packaged",
-        "grade": "B",
-        "score": 75,
-        "passed": false,
-        "category_counts": {
-          "EXTERNAL_URL": 0,
-          "INJECTED_MARKETING_TEXT": 1,
-          "API_KEY_EXPOSURE": 0,
-          "SLUG_CONTENT_MISMATCH": 0,
-          "DUPLICATE_YAML_FIELDS": 0,
-          "TAG_MISMATCH": 0,
-          "GARBLED_TEXT": 0,
-          "DEPENDENCY_CONTRADICTION": 0
-        },
-        "issues": [
-          {
-            "category": "INJECTED_MARKETING_TEXT",
-            "severity": "high",
-            "message": "发现注入营销模板文本: 适用场景模板注入",
-            "evidence": "适用场景模板注入"
-          }
-        ]
-      },
-      {
-        "slug": "ai-finance-free",
         "source": "packaged",
         "grade": "B",
         "score": 75,
@@ -23959,31 +23758,6 @@
         ]
       },
       {
-        "slug": "feishu-file-sender",
-        "source": "packaged",
-        "grade": "B",
-        "score": 75,
-        "passed": false,
-        "category_counts": {
-          "EXTERNAL_URL": 0,
-          "INJECTED_MARKETING_TEXT": 1,
-          "API_KEY_EXPOSURE": 0,
-          "SLUG_CONTENT_MISMATCH": 0,
-          "DUPLICATE_YAML_FIELDS": 0,
-          "TAG_MISMATCH": 0,
-          "GARBLED_TEXT": 0,
-          "DEPENDENCY_CONTRADICTION": 0
-        },
-        "issues": [
-          {
-            "category": "INJECTED_MARKETING_TEXT",
-            "severity": "high",
-            "message": "发现注入营销模板文本: 适用场景模板注入",
-            "evidence": "适用场景模板注入"
-          }
-        ]
-      },
-      {
         "slug": "file",
         "source": "packaged",
         "grade": "B",
@@ -24035,31 +23809,6 @@
       },
       {
         "slug": "fin-literacy",
-        "source": "packaged",
-        "grade": "B",
-        "score": 75,
-        "passed": false,
-        "category_counts": {
-          "EXTERNAL_URL": 0,
-          "INJECTED_MARKETING_TEXT": 1,
-          "API_KEY_EXPOSURE": 0,
-          "SLUG_CONTENT_MISMATCH": 0,
-          "DUPLICATE_YAML_FIELDS": 0,
-          "TAG_MISMATCH": 0,
-          "GARBLED_TEXT": 0,
-          "DEPENDENCY_CONTRADICTION": 0
-        },
-        "issues": [
-          {
-            "category": "INJECTED_MARKETING_TEXT",
-            "severity": "high",
-            "message": "发现注入营销模板文本: 适用场景模板注入",
-            "evidence": "适用场景模板注入"
-          }
-        ]
-      },
-      {
-        "slug": "fin-literacy-free",
         "source": "packaged",
         "grade": "B",
         "score": 75,
@@ -26259,31 +26008,6 @@
         ]
       },
       {
-        "slug": "multi-research-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 75,
-        "passed": false,
-        "category_counts": {
-          "EXTERNAL_URL": 0,
-          "INJECTED_MARKETING_TEXT": 1,
-          "API_KEY_EXPOSURE": 0,
-          "SLUG_CONTENT_MISMATCH": 0,
-          "DUPLICATE_YAML_FIELDS": 0,
-          "TAG_MISMATCH": 0,
-          "GARBLED_TEXT": 0,
-          "DEPENDENCY_CONTRADICTION": 0
-        },
-        "issues": [
-          {
-            "category": "INJECTED_MARKETING_TEXT",
-            "severity": "high",
-            "message": "发现注入营销模板文本: 适用场景模板注入",
-            "evidence": "适用场景模板注入"
-          }
-        ]
-      },
-      {
         "slug": "multi-source-research",
         "source": "packaged",
         "grade": "B",
@@ -26535,6 +26259,31 @@
       },
       {
         "slug": "okx-dex-token",
+        "source": "packaged",
+        "grade": "B",
+        "score": 75,
+        "passed": false,
+        "category_counts": {
+          "EXTERNAL_URL": 0,
+          "INJECTED_MARKETING_TEXT": 1,
+          "API_KEY_EXPOSURE": 0,
+          "SLUG_CONTENT_MISMATCH": 0,
+          "DUPLICATE_YAML_FIELDS": 0,
+          "TAG_MISMATCH": 0,
+          "GARBLED_TEXT": 0,
+          "DEPENDENCY_CONTRADICTION": 0
+        },
+        "issues": [
+          {
+            "category": "INJECTED_MARKETING_TEXT",
+            "severity": "high",
+            "message": "发现注入营销模板文本: 适用场景模板注入",
+            "evidence": "适用场景模板注入"
+          }
+        ]
+      },
+      {
+        "slug": "openai-ai",
         "source": "packaged",
         "grade": "B",
         "score": 75,
@@ -27034,57 +26783,7 @@
         ]
       },
       {
-        "slug": "realtime-quote-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 75,
-        "passed": false,
-        "category_counts": {
-          "EXTERNAL_URL": 0,
-          "INJECTED_MARKETING_TEXT": 1,
-          "API_KEY_EXPOSURE": 0,
-          "SLUG_CONTENT_MISMATCH": 0,
-          "DUPLICATE_YAML_FIELDS": 0,
-          "TAG_MISMATCH": 0,
-          "GARBLED_TEXT": 0,
-          "DEPENDENCY_CONTRADICTION": 0
-        },
-        "issues": [
-          {
-            "category": "INJECTED_MARKETING_TEXT",
-            "severity": "high",
-            "message": "发现注入营销模板文本: 适用场景模板注入",
-            "evidence": "适用场景模板注入"
-          }
-        ]
-      },
-      {
         "slug": "report-viz",
-        "source": "packaged",
-        "grade": "B",
-        "score": 75,
-        "passed": false,
-        "category_counts": {
-          "EXTERNAL_URL": 0,
-          "INJECTED_MARKETING_TEXT": 1,
-          "API_KEY_EXPOSURE": 0,
-          "SLUG_CONTENT_MISMATCH": 0,
-          "DUPLICATE_YAML_FIELDS": 0,
-          "TAG_MISMATCH": 0,
-          "GARBLED_TEXT": 0,
-          "DEPENDENCY_CONTRADICTION": 0
-        },
-        "issues": [
-          {
-            "category": "INJECTED_MARKETING_TEXT",
-            "severity": "high",
-            "message": "发现注入营销模板文本: 适用场景模板注入",
-            "evidence": "适用场景模板注入"
-          }
-        ]
-      },
-      {
-        "slug": "report-viz-free",
         "source": "packaged",
         "grade": "B",
         "score": 75,
@@ -27360,31 +27059,6 @@
       },
       {
         "slug": "stock-radar",
-        "source": "packaged",
-        "grade": "B",
-        "score": 75,
-        "passed": false,
-        "category_counts": {
-          "EXTERNAL_URL": 0,
-          "INJECTED_MARKETING_TEXT": 1,
-          "API_KEY_EXPOSURE": 0,
-          "SLUG_CONTENT_MISMATCH": 0,
-          "DUPLICATE_YAML_FIELDS": 0,
-          "TAG_MISMATCH": 0,
-          "GARBLED_TEXT": 0,
-          "DEPENDENCY_CONTRADICTION": 0
-        },
-        "issues": [
-          {
-            "category": "INJECTED_MARKETING_TEXT",
-            "severity": "high",
-            "message": "发现注入营销模板文本: 适用场景模板注入",
-            "evidence": "适用场景模板注入"
-          }
-        ]
-      },
-      {
-        "slug": "stock-radar-free",
         "source": "packaged",
         "grade": "B",
         "score": 75,
@@ -27685,31 +27359,6 @@
       },
       {
         "slug": "valuation-model",
-        "source": "packaged",
-        "grade": "B",
-        "score": 75,
-        "passed": false,
-        "category_counts": {
-          "EXTERNAL_URL": 0,
-          "INJECTED_MARKETING_TEXT": 1,
-          "API_KEY_EXPOSURE": 0,
-          "SLUG_CONTENT_MISMATCH": 0,
-          "DUPLICATE_YAML_FIELDS": 0,
-          "TAG_MISMATCH": 0,
-          "GARBLED_TEXT": 0,
-          "DEPENDENCY_CONTRADICTION": 0
-        },
-        "issues": [
-          {
-            "category": "INJECTED_MARKETING_TEXT",
-            "severity": "high",
-            "message": "发现注入营销模板文本: 适用场景模板注入",
-            "evidence": "适用场景模板注入"
-          }
-        ]
-      },
-      {
-        "slug": "valuation-model-free",
         "source": "packaged",
         "grade": "B",
         "score": 75,
@@ -29212,26 +28861,26 @@
   },
   "visibility_audit": {
     "enabled": true,
-    "l9_available_count": 563,
+    "l9_available_count": 553,
     "grade_distribution": {
-      "A": 403,
-      "B": 12,
-      "C": 26,
-      "D": 122,
+      "A": 407,
+      "B": 10,
+      "C": 21,
+      "D": 115,
       "N/A": 0
     },
     "avg_score": 73.6,
-    "passed_count": 73,
-    "failed_count": 490,
-    "pass_rate": "12%",
+    "passed_count": 53,
+    "failed_count": 500,
+    "pass_rate": "9%",
     "category_distribution": {
-      "INVALID_CATEGORY": 84,
-      "INSUFFICIENT_SUMMARY": 113,
-      "MISSING_VALUE_PROPOSITION": 7,
-      "MISSING_QUICK_START": 462,
-      "MISSING_OR_IRRELEVANT_TAGS": 37
+      "INVALID_CATEGORY": 75,
+      "INSUFFICIENT_SUMMARY": 106,
+      "MISSING_VALUE_PROPOSITION": 1,
+      "MISSING_QUICK_START": 477,
+      "MISSING_OR_IRRELEVANT_TAGS": 34
     },
-    "total_with_issues": 490,
+    "total_with_issues": 500,
     "issues_detail": [
       {
         "slug": "accounting-and-finance",
@@ -29320,15 +28969,15 @@
       {
         "slug": "actor-identifier",
         "source": "packaged",
-        "grade": "C",
-        "score": 65,
+        "grade": "A",
+        "score": 80,
         "passed": false,
         "check_results": {
           "category_valid": true,
           "summary_sufficient": true,
           "value_proposition": true,
           "quick_start_section": false,
-          "tags_relevant": false
+          "tags_relevant": true
         },
         "issues": [
           {
@@ -29336,12 +28985,6 @@
             "severity": "medium",
             "message": "缺少'快速开始'或'Quick Start'章节",
             "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
-          },
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配5/12)",
-            "evidence": "未匹配tags: ['仓库分析', '企业开发', '团队协作', '研发效能', '隐私保护', '工具', '效率']"
           }
         ]
       },
@@ -29410,23 +29053,17 @@
       {
         "slug": "aegis-security",
         "source": "packaged",
-        "grade": "C",
-        "score": 60,
+        "grade": "A",
+        "score": 80,
         "passed": false,
         "check_results": {
           "category_valid": true,
           "summary_sufficient": true,
-          "value_proposition": false,
+          "value_proposition": true,
           "quick_start_section": false,
           "tags_relevant": true
         },
         "issues": [
-          {
-            "category": "MISSING_VALUE_PROPOSITION",
-            "severity": "medium",
-            "message": "description 缺少清晰的价值命题关键词",
-            "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          },
           {
             "category": "MISSING_QUICK_START",
             "severity": "medium",
@@ -29514,25 +29151,41 @@
         ]
       },
       {
-        "slug": "agent-bom-vulnerability-intel",
+        "slug": "agent",
         "source": "packaged",
-        "grade": "C",
-        "score": 60,
+        "grade": "A",
+        "score": 80,
         "passed": false,
         "check_results": {
           "category_valid": true,
           "summary_sufficient": true,
-          "value_proposition": false,
+          "value_proposition": true,
           "quick_start_section": false,
           "tags_relevant": true
         },
         "issues": [
           {
-            "category": "MISSING_VALUE_PROPOSITION",
+            "category": "MISSING_QUICK_START",
             "severity": "medium",
-            "message": "description 缺少清晰的价值命题关键词",
-            "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          },
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
+        "slug": "agent-bom-vulnerability-intel",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
           {
             "category": "MISSING_QUICK_START",
             "severity": "medium",
@@ -29586,7 +29239,73 @@
         ]
       },
       {
+        "slug": "agent-browser-stagehand",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
         "slug": "agent-chat",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
+        "slug": "agent-commercial-contract",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
+        "slug": "agent-framework-azure-ai-py",
         "source": "packaged",
         "grade": "A",
         "score": 80,
@@ -29803,40 +29522,6 @@
       },
       {
         "slug": "ai-finance",
-        "source": "packaged",
-        "grade": "D",
-        "score": 30,
-        "passed": false,
-        "check_results": {
-          "category_valid": false,
-          "summary_sufficient": false,
-          "value_proposition": true,
-          "quick_start_section": false,
-          "tags_relevant": true
-        },
-        "issues": [
-          {
-            "category": "INVALID_CATEGORY",
-            "severity": "high",
-            "message": "category 字段为空或缺失",
-            "evidence": "frontmatter中未找到category字段"
-          },
-          {
-            "category": "INSUFFICIENT_SUMMARY",
-            "severity": "high",
-            "message": "summary 长度 41 不足50字符",
-            "evidence": "当前summary: '财务分析专业门槛高。AI驱动金融分析-自然语言量化研究，财务分析场景效率提升3倍。'"
-          },
-          {
-            "category": "MISSING_QUICK_START",
-            "severity": "medium",
-            "message": "缺少'快速开始'或'Quick Start'章节",
-            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
-          }
-        ]
-      },
-      {
-        "slug": "ai-finance-free",
         "source": "packaged",
         "grade": "D",
         "score": 30,
@@ -30416,7 +30101,51 @@
         ]
       },
       {
+        "slug": "assistant",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
         "slug": "audio-upload-aioz-stream",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
+        "slug": "audit",
         "source": "packaged",
         "grade": "A",
         "score": 80,
@@ -30469,12 +30198,12 @@
         "slug": "auto-updater",
         "source": "packaged",
         "grade": "D",
-        "score": 15,
+        "score": 35,
         "passed": false,
         "check_results": {
           "category_valid": false,
           "summary_sufficient": false,
-          "value_proposition": false,
+          "value_proposition": true,
           "quick_start_section": true,
           "tags_relevant": false
         },
@@ -30492,16 +30221,32 @@
             "evidence": "当前summary: '每日自动检查更新SkillHub与技能'"
           },
           {
-            "category": "MISSING_VALUE_PROPOSITION",
-            "severity": "medium",
-            "message": "description 缺少清晰的价值命题关键词",
-            "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          },
-          {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
             "message": "tags 字段为空或缺失",
             "evidence": "tags有助于平台搜索和分类发现"
+          }
+        ]
+      },
+      {
+        "slug": "auto-workflow",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
           }
         ]
       },
@@ -31054,6 +30799,28 @@
         ]
       },
       {
+        "slug": "browser-automation",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
         "slug": "browser-automation-v2",
         "source": "packaged",
         "grade": "A",
@@ -31292,6 +31059,28 @@
         ]
       },
       {
+        "slug": "cdn",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
         "slug": "chart",
         "source": "packaged",
         "grade": "A",
@@ -31315,6 +31104,28 @@
       },
       {
         "slug": "chart-craft",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
+        "slug": "chart-generator-2-0-0",
         "source": "packaged",
         "grade": "A",
         "score": 80,
@@ -31666,17 +31477,23 @@
       {
         "slug": "cloud-architect",
         "source": "packaged",
-        "grade": "A",
-        "score": 85,
+        "grade": "C",
+        "score": 65,
         "passed": false,
         "check_results": {
           "category_valid": true,
           "summary_sufficient": true,
           "value_proposition": true,
-          "quick_start_section": true,
+          "quick_start_section": false,
           "tags_relevant": false
         },
         "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          },
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
@@ -31898,23 +31715,17 @@
       {
         "slug": "comfyui-painter",
         "source": "packaged",
-        "grade": "C",
-        "score": 65,
+        "grade": "A",
+        "score": 85,
         "passed": false,
         "check_results": {
           "category_valid": true,
           "summary_sufficient": true,
           "value_proposition": true,
-          "quick_start_section": false,
+          "quick_start_section": true,
           "tags_relevant": false
         },
         "issues": [
-          {
-            "category": "MISSING_QUICK_START",
-            "severity": "medium",
-            "message": "缺少'快速开始'或'Quick Start'章节",
-            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
-          },
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
@@ -31968,25 +31779,41 @@
         ]
       },
       {
-        "slug": "context-driven-development",
+        "slug": "compress",
         "source": "packaged",
-        "grade": "C",
-        "score": 65,
+        "grade": "A",
+        "score": 80,
         "passed": false,
         "check_results": {
           "category_valid": true,
           "summary_sufficient": true,
-          "value_proposition": false,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
+        "slug": "context-driven-development",
+        "source": "packaged",
+        "grade": "A",
+        "score": 85,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
           "quick_start_section": true,
           "tags_relevant": false
         },
         "issues": [
-          {
-            "category": "MISSING_VALUE_PROPOSITION",
-            "severity": "medium",
-            "message": "description 缺少清晰的价值命题关键词",
-            "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          },
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
@@ -32205,40 +32032,6 @@
       },
       {
         "slug": "crypto-portfolio",
-        "source": "packaged",
-        "grade": "D",
-        "score": 30,
-        "passed": false,
-        "check_results": {
-          "category_valid": false,
-          "summary_sufficient": false,
-          "value_proposition": true,
-          "quick_start_section": false,
-          "tags_relevant": true
-        },
-        "issues": [
-          {
-            "category": "INVALID_CATEGORY",
-            "severity": "high",
-            "message": "category 字段为空或缺失",
-            "evidence": "frontmatter中未找到category字段"
-          },
-          {
-            "category": "INSUFFICIENT_SUMMARY",
-            "severity": "high",
-            "message": "summary 长度 45 不足50字符",
-            "evidence": "当前summary: '加密市场波动大难把控。加密组合跟踪-多链钱包+CEX+预测市场，加密货币场景效率提升3倍。'"
-          },
-          {
-            "category": "MISSING_QUICK_START",
-            "severity": "medium",
-            "message": "缺少'快速开始'或'Quick Start'章节",
-            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
-          }
-        ]
-      },
-      {
-        "slug": "crypto-portfolio-free",
         "source": "packaged",
         "grade": "D",
         "score": 30,
@@ -32970,6 +32763,28 @@
         ]
       },
       {
+        "slug": "discrawl",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
         "slug": "dispatching-parallel-agents",
         "source": "packaged",
         "grade": "D",
@@ -33270,6 +33085,28 @@
         ]
       },
       {
+        "slug": "dogecoin-node",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
         "slug": "domain-dns-ops",
         "source": "packaged",
         "grade": "A",
@@ -33294,14 +33131,14 @@
       {
         "slug": "doubao-chat",
         "source": "packaged",
-        "grade": "B",
-        "score": 75,
+        "grade": "D",
+        "score": 55,
         "passed": false,
         "check_results": {
           "category_valid": true,
           "summary_sufficient": false,
           "value_proposition": true,
-          "quick_start_section": true,
+          "quick_start_section": false,
           "tags_relevant": true
         },
         "issues": [
@@ -33310,6 +33147,12 @@
             "severity": "high",
             "message": "summary 长度 10 不足50字符",
             "evidence": "当前summary: '豆包大模型对话（免费'"
+          },
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
           }
         ]
       },
@@ -33333,28 +33176,6 @@
             "message": "category 字段为空或缺失",
             "evidence": "frontmatter中未找到category字段"
           },
-          {
-            "category": "MISSING_QUICK_START",
-            "severity": "medium",
-            "message": "缺少'快速开始'或'Quick Start'章节",
-            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
-          }
-        ]
-      },
-      {
-        "slug": "elite-frontend-design",
-        "source": "packaged",
-        "grade": "A",
-        "score": 80,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": false,
-          "tags_relevant": true
-        },
-        "issues": [
           {
             "category": "MISSING_QUICK_START",
             "severity": "medium",
@@ -33674,6 +33495,28 @@
         ]
       },
       {
+        "slug": "excel-xlsx",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
         "slug": "executing-plans",
         "source": "packaged",
         "grade": "D",
@@ -33725,6 +33568,28 @@
       },
       {
         "slug": "expanso-json-validate",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
+        "slug": "expanso-log-sanitize",
         "source": "packaged",
         "grade": "A",
         "score": 80,
@@ -33863,28 +33728,6 @@
       },
       {
         "slug": "feishu-doc-write",
-        "source": "packaged",
-        "grade": "A",
-        "score": 80,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": false,
-          "tags_relevant": true
-        },
-        "issues": [
-          {
-            "category": "MISSING_QUICK_START",
-            "severity": "medium",
-            "message": "缺少'快速开始'或'Quick Start'章节",
-            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
-          }
-        ]
-      },
-      {
-        "slug": "feishu-file-sender",
         "source": "packaged",
         "grade": "A",
         "score": 80,
@@ -34062,40 +33905,6 @@
         ]
       },
       {
-        "slug": "fin-literacy-free",
-        "source": "packaged",
-        "grade": "D",
-        "score": 30,
-        "passed": false,
-        "check_results": {
-          "category_valid": false,
-          "summary_sufficient": false,
-          "value_proposition": true,
-          "quick_start_section": false,
-          "tags_relevant": true
-        },
-        "issues": [
-          {
-            "category": "INVALID_CATEGORY",
-            "severity": "high",
-            "message": "category 字段为空或缺失",
-            "evidence": "frontmatter中未找到category字段"
-          },
-          {
-            "category": "INSUFFICIENT_SUMMARY",
-            "severity": "high",
-            "message": "summary 长度 36 不足50字符",
-            "evidence": "当前summary: 'A股信息分散难决策。金融知识问答-多受众分层教育，A股场景效率提升3倍。'"
-          },
-          {
-            "category": "MISSING_QUICK_START",
-            "severity": "medium",
-            "message": "缺少'快速开始'或'Quick Start'章节",
-            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
-          }
-        ]
-      },
-      {
         "slug": "fin-terminal",
         "source": "packaged",
         "grade": "D",
@@ -34132,14 +33941,14 @@
       {
         "slug": "finance-accounting",
         "source": "packaged",
-        "grade": "B",
-        "score": 75,
+        "grade": "D",
+        "score": 55,
         "passed": false,
         "check_results": {
           "category_valid": true,
           "summary_sufficient": false,
           "value_proposition": true,
-          "quick_start_section": true,
+          "quick_start_section": false,
           "tags_relevant": true
         },
         "issues": [
@@ -34148,11 +33957,39 @@
             "severity": "high",
             "message": "summary 长度 11 不足50字符",
             "evidence": "当前summary: '财务会计文书处理综合技'"
+          },
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
           }
         ]
       },
       {
         "slug": "finance-radar",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
+        "slug": "finance-report-analyzer",
         "source": "packaged",
         "grade": "A",
         "score": 80,
@@ -34418,17 +34255,17 @@
         ]
       },
       {
-        "slug": "game",
+        "slug": "game-ai",
         "source": "packaged",
-        "grade": "A",
-        "score": 80,
+        "grade": "C",
+        "score": 65,
         "passed": false,
         "check_results": {
           "category_valid": true,
           "summary_sufficient": true,
           "value_proposition": true,
           "quick_start_section": false,
-          "tags_relevant": true
+          "tags_relevant": false
         },
         "issues": [
           {
@@ -34436,23 +34273,7 @@
             "severity": "medium",
             "message": "缺少'快速开始'或'Quick Start'章节",
             "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
-          }
-        ]
-      },
-      {
-        "slug": "game-ai",
-        "source": "packaged",
-        "grade": "A",
-        "score": 85,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
+          },
           {
             "category": "MISSING_OR_IRRELEVANT_TAGS",
             "severity": "low",
@@ -34822,28 +34643,6 @@
         ]
       },
       {
-        "slug": "go",
-        "source": "packaged",
-        "grade": "A",
-        "score": 80,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": false,
-          "tags_relevant": true
-        },
-        "issues": [
-          {
-            "category": "MISSING_QUICK_START",
-            "severity": "medium",
-            "message": "缺少'快速开始'或'Quick Start'章节",
-            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
-          }
-        ]
-      },
-      {
         "slug": "go-linter-configuration",
         "source": "packaged",
         "grade": "A",
@@ -35055,6 +34854,28 @@
       },
       {
         "slug": "html",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
+        "slug": "html-coder",
         "source": "packaged",
         "grade": "A",
         "score": 80,
@@ -36128,6 +35949,28 @@
         ]
       },
       {
+        "slug": "local-file-rag-basic",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
         "slug": "logo-brand-identity-cellcog",
         "source": "packaged",
         "grade": "A",
@@ -36306,14 +36149,14 @@
       {
         "slug": "market-news",
         "source": "packaged",
-        "grade": "D",
-        "score": 55,
+        "grade": "B",
+        "score": 75,
         "passed": false,
         "check_results": {
           "category_valid": true,
           "summary_sufficient": false,
           "value_proposition": true,
-          "quick_start_section": false,
+          "quick_start_section": true,
           "tags_relevant": true
         },
         "issues": [
@@ -36322,12 +36165,6 @@
             "severity": "high",
             "message": "summary 长度 11 不足50字符",
             "evidence": "当前summary: '自动搜索和总结最新财经'"
-          },
-          {
-            "category": "MISSING_QUICK_START",
-            "severity": "medium",
-            "message": "缺少'快速开始'或'Quick Start'章节",
-            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
           }
         ]
       },
@@ -36792,40 +36629,6 @@
         ]
       },
       {
-        "slug": "multi-research-free",
-        "source": "packaged",
-        "grade": "D",
-        "score": 30,
-        "passed": false,
-        "check_results": {
-          "category_valid": false,
-          "summary_sufficient": false,
-          "value_proposition": true,
-          "quick_start_section": false,
-          "tags_relevant": true
-        },
-        "issues": [
-          {
-            "category": "INVALID_CATEGORY",
-            "severity": "high",
-            "message": "category 字段为空或缺失",
-            "evidence": "frontmatter中未找到category字段"
-          },
-          {
-            "category": "INSUFFICIENT_SUMMARY",
-            "severity": "high",
-            "message": "summary 长度 45 不足50字符",
-            "evidence": "当前summary: 'A股信息分散难决策。多视角投研分析-基本面/技术面/新闻/风险辩论，A股场景效率提升3倍。'"
-          },
-          {
-            "category": "MISSING_QUICK_START",
-            "severity": "medium",
-            "message": "缺少'快速开始'或'Quick Start'章节",
-            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
-          }
-        ]
-      },
-      {
         "slug": "multi-source-research",
         "source": "packaged",
         "grade": "A",
@@ -36893,6 +36696,28 @@
       },
       {
         "slug": "music-generation-cellcog",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
+        "slug": "namecheap-dns",
         "source": "packaged",
         "grade": "A",
         "score": 80,
@@ -37096,6 +36921,28 @@
         ]
       },
       {
+        "slug": "notcrawl",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
         "slug": "note",
         "source": "packaged",
         "grade": "A",
@@ -37119,6 +36966,28 @@
       },
       {
         "slug": "note-taker",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
+        "slug": "notion",
         "source": "packaged",
         "grade": "A",
         "score": 80,
@@ -37278,34 +37147,6 @@
         ]
       },
       {
-        "slug": "openai-ai",
-        "source": "packaged",
-        "grade": "C",
-        "score": 60,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": false,
-          "quick_start_section": false,
-          "tags_relevant": true
-        },
-        "issues": [
-          {
-            "category": "MISSING_VALUE_PROPOSITION",
-            "severity": "medium",
-            "message": "description 缺少清晰的价值命题关键词",
-            "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          },
-          {
-            "category": "MISSING_QUICK_START",
-            "severity": "medium",
-            "message": "缺少'快速开始'或'Quick Start'章节",
-            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
-          }
-        ]
-      },
-      {
         "slug": "openai-whisper-1-0-0",
         "source": "packaged",
         "grade": "A",
@@ -37351,6 +37192,28 @@
       },
       {
         "slug": "pandoc-document-converter",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
+        "slug": "paper-parse",
         "source": "packaged",
         "grade": "A",
         "score": 80,
@@ -37894,34 +37757,6 @@
         ]
       },
       {
-        "slug": "realtime-quote-free",
-        "source": "packaged",
-        "grade": "D",
-        "score": 50,
-        "passed": false,
-        "check_results": {
-          "category_valid": false,
-          "summary_sufficient": false,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": true
-        },
-        "issues": [
-          {
-            "category": "INVALID_CATEGORY",
-            "severity": "high",
-            "message": "category 'data-analysis' 不在14个有效分类中",
-            "evidence": "有效分类: Agents, Automation, Communication, Creative, Development, Finance, Integrations, Knowledge, Lifestyle, Operations, Other, Productivity, Research, Security"
-          },
-          {
-            "category": "INSUFFICIENT_SUMMARY",
-            "severity": "high",
-            "message": "summary 长度 49 不足50字符",
-            "evidence": "当前summary: '实时行情工具，支持多市场数据获取、实时价格监控、行情推送与历史数据查询，适用于金融交易与分析场景。'"
-          }
-        ]
-      },
-      {
         "slug": "receiving-code-review",
         "source": "packaged",
         "grade": "D",
@@ -38008,40 +37843,6 @@
             "severity": "high",
             "message": "summary 长度 44 不足50字符",
             "evidence": "当前summary: '财务分析专业门槛高。财报可视化分析-SVG迷你图+多格式输出，财务分析场景效率提升3倍。'"
-          },
-          {
-            "category": "MISSING_QUICK_START",
-            "severity": "medium",
-            "message": "缺少'快速开始'或'Quick Start'章节",
-            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
-          }
-        ]
-      },
-      {
-        "slug": "report-viz-free",
-        "source": "packaged",
-        "grade": "D",
-        "score": 30,
-        "passed": false,
-        "check_results": {
-          "category_valid": false,
-          "summary_sufficient": false,
-          "value_proposition": true,
-          "quick_start_section": false,
-          "tags_relevant": true
-        },
-        "issues": [
-          {
-            "category": "INVALID_CATEGORY",
-            "severity": "high",
-            "message": "category 'data-analysis' 不在14个有效分类中",
-            "evidence": "有效分类: Agents, Automation, Communication, Creative, Development, Finance, Integrations, Knowledge, Lifestyle, Operations, Other, Productivity, Research, Security"
-          },
-          {
-            "category": "INSUFFICIENT_SUMMARY",
-            "severity": "high",
-            "message": "summary 长度 47 不足50字符",
-            "evidence": "当前summary: '报告可视化工具，支持多维度数据分析、图表自动生成、报告模板定制与导出，助力高效数据呈现与决策。'"
           },
           {
             "category": "MISSING_QUICK_START",
@@ -38460,40 +38261,6 @@
         ]
       },
       {
-        "slug": "stock-radar-free",
-        "source": "packaged",
-        "grade": "D",
-        "score": 35,
-        "passed": false,
-        "check_results": {
-          "category_valid": false,
-          "summary_sufficient": false,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "INVALID_CATEGORY",
-            "severity": "high",
-            "message": "category 'data-analysis' 不在14个有效分类中",
-            "evidence": "有效分类: Agents, Automation, Communication, Creative, Development, Finance, Integrations, Knowledge, Lifestyle, Operations, Other, Productivity, Research, Security"
-          },
-          {
-            "category": "INSUFFICIENT_SUMMARY",
-            "severity": "high",
-            "message": "summary 长度 45 不足50字符",
-            "evidence": "当前summary: '股票雷达工具，提供智能选股、异动监控、技术指标扫描与风险预警，助力投资者快速发现市场机会。'"
-          },
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配0/5)",
-            "evidence": "未匹配tags: ['股票雷达', '智能选股', '异动监控', '技术指标', '免费']"
-          }
-        ]
-      },
-      {
         "slug": "systematic-debugging",
         "source": "packaged",
         "grade": "D",
@@ -38702,6 +38469,28 @@
             "severity": "low",
             "message": "tags 字段为空或缺失",
             "evidence": "tags有助于平台搜索和分类发现"
+          }
+        ]
+      },
+      {
+        "slug": "tool",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
           }
         ]
       },
@@ -39026,28 +38815,6 @@
         ]
       },
       {
-        "slug": "valuation-model-free",
-        "source": "packaged",
-        "grade": "B",
-        "score": 75,
-        "passed": false,
-        "check_results": {
-          "category_valid": false,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": true,
-          "tags_relevant": true
-        },
-        "issues": [
-          {
-            "category": "INVALID_CATEGORY",
-            "severity": "high",
-            "message": "category 'data-analysis' 不在14个有效分类中",
-            "evidence": "有效分类: Agents, Automation, Communication, Creative, Development, Finance, Integrations, Knowledge, Lifestyle, Operations, Other, Productivity, Research, Security"
-          }
-        ]
-      },
-      {
         "slug": "vegas-tunnel",
         "source": "packaged",
         "grade": "D",
@@ -39078,40 +38845,6 @@
             "severity": "medium",
             "message": "缺少'快速开始'或'Quick Start'章节",
             "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
-          }
-        ]
-      },
-      {
-        "slug": "vegas-tunnel-free",
-        "source": "packaged",
-        "grade": "D",
-        "score": 40,
-        "passed": false,
-        "check_results": {
-          "category_valid": false,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": false,
-          "tags_relevant": false
-        },
-        "issues": [
-          {
-            "category": "INVALID_CATEGORY",
-            "severity": "high",
-            "message": "category 'data-analysis' 不在14个有效分类中",
-            "evidence": "有效分类: Agents, Automation, Communication, Creative, Development, Finance, Integrations, Knowledge, Lifestyle, Operations, Other, Productivity, Research, Security"
-          },
-          {
-            "category": "MISSING_QUICK_START",
-            "severity": "medium",
-            "message": "缺少'快速开始'或'Quick Start'章节",
-            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
-          },
-          {
-            "category": "MISSING_OR_IRRELEVANT_TAGS",
-            "severity": "low",
-            "message": "tags 与内容相关性不足 (匹配1/5)",
-            "evidence": "未匹配tags: ['交易工具', '技术分析', '风险控制', '免费']"
           }
         ]
       },
@@ -39226,28 +38959,6 @@
         ]
       },
       {
-        "slug": "web",
-        "source": "packaged",
-        "grade": "A",
-        "score": 80,
-        "passed": false,
-        "check_results": {
-          "category_valid": true,
-          "summary_sufficient": true,
-          "value_proposition": true,
-          "quick_start_section": false,
-          "tags_relevant": true
-        },
-        "issues": [
-          {
-            "category": "MISSING_QUICK_START",
-            "severity": "medium",
-            "message": "缺少'快速开始'或'Quick Start'章节",
-            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
-          }
-        ]
-      },
-      {
         "slug": "web-artifacts-builder",
         "source": "packaged",
         "grade": "D",
@@ -39305,6 +39016,28 @@
       },
       {
         "slug": "word",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
+        "slug": "word-docx",
         "source": "packaged",
         "grade": "A",
         "score": 80,
@@ -39451,6 +39184,28 @@
       },
       {
         "slug": "xml",
+        "source": "packaged",
+        "grade": "A",
+        "score": 80,
+        "passed": false,
+        "check_results": {
+          "category_valid": true,
+          "summary_sufficient": true,
+          "value_proposition": true,
+          "quick_start_section": false,
+          "tags_relevant": true
+        },
+        "issues": [
+          {
+            "category": "MISSING_QUICK_START",
+            "severity": "medium",
+            "message": "缺少'快速开始'或'Quick Start'章节",
+            "evidence": "正文未找到 ## 快速开始 / ## Quick Start 等章节标题"
+          }
+        ]
+      },
+      {
+        "slug": "yaml",
         "source": "packaged",
         "grade": "A",
         "score": 80,
@@ -40190,23 +39945,17 @@
       {
         "slug": "linear-workflow-bot",
         "source": "differentiated",
-        "grade": "C",
-        "score": 60,
+        "grade": "A",
+        "score": 80,
         "passed": false,
         "check_results": {
           "category_valid": true,
           "summary_sufficient": true,
-          "value_proposition": false,
+          "value_proposition": true,
           "quick_start_section": false,
           "tags_relevant": true
         },
         "issues": [
-          {
-            "category": "MISSING_VALUE_PROPOSITION",
-            "severity": "medium",
-            "message": "description 缺少清晰的价值命题关键词",
-            "evidence": "未检测到价值表达关键词 (如: 提供/实现/帮助/automates/enables等)"
-          },
           {
             "category": "MISSING_QUICK_START",
             "severity": "medium",

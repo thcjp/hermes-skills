@@ -1,5 +1,4 @@
 ---
-
 slug: learn
 name: "learn"
 version: 1.0.3
@@ -38,9 +37,8 @@ tools:
   - write
 homepage: ""
 category: "Automation"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供、信息整理、化工作流与智能决策辅助等能力。
 
 # Learn
@@ -267,3 +265,13 @@ A: 您可以随时向系统反馈学习中的问题，系统会提供相应的�
 - 已安装所需运行环境(参考依赖说明)
 - 已获取必要的API密钥或访问凭证(如适用)
 - 输入数据已准备就绪
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

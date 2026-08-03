@@ -1,5 +1,4 @@
 ---
-
 slug: java-code-reviewer
 name: java-code-reviewer
 version: 1.0.1
@@ -24,9 +23,8 @@ tools:
 - grep
 homepage: ''
 category: Development
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互、化流程场景、识别用户需求并匹配优选处理策略等能力。
 
 # Java Code Reviewer

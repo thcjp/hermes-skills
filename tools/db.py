@@ -209,6 +209,9 @@ def _create_skills_table(c):
     _add_column_if_missing(c, "skills", "content_hash", "TEXT")
     # v1.3: SimHash指纹列 (原由content_dedup.py动态添加,现纳入正式schema)
     _add_column_if_missing(c, "skills", "simhash", "INTEGER DEFAULT 0")
+    # V183: 平台差异化slug字段 (避免SkillHub同步ClawHub时slug冲突)
+    _add_column_if_missing(c, "skills", "clawhub_slug", "TEXT")
+    _add_column_if_missing(c, "skills", "skillhub_slug", "TEXT")
 
 
 def _create_versions_table(c):
@@ -1190,6 +1193,8 @@ _SKILL_FIELD_WHITELIST = frozenset({
     'simhash',  # v1.3: SimHash指纹(内容近似去重)
     # v1.6: 本地LLM质量评分字段 (T1-005)
     'local_quality_score', 'local_score_feedback', 'local_score_at',
+    # V183: 平台差异化slug字段
+    'clawhub_slug', 'skillhub_slug',
 })
 
 
@@ -1213,6 +1218,80 @@ def update_skill_fields(skill_id, **fields):
     c.execute(f"UPDATE skills SET {set_clause} WHERE id = ?", values)
     conn.commit()
     conn.close()
+
+
+# ============ V183: 平台差异化slug管理 ============
+
+def get_platform_slug(slug: str, platform: str) -> str:
+    """获取skill在指定平台的slug (V183新增)
+
+    优先使用skills表中存储的平台专属slug,无则返回原始slug。
+
+    Args:
+        slug: skill的原始slug
+        platform: 'clawhub' 或 'skillhub'
+
+    Returns:
+        该平台的slug (如果已设置), 否则返回原始slug
+    """
+    column = 'clawhub_slug' if platform == 'clawhub' else 'skillhub_slug'
+    conn = _get_db_connection()
+    c = conn.cursor()
+    try:
+        c.execute(f"SELECT {column} FROM skills WHERE slug = ?", (slug,))
+        row = c.fetchone()
+        if row and row[0]:
+            return row[0]
+    except Exception:
+        pass
+    finally:
+        conn.close()
+    return slug
+
+
+def populate_platform_slugs():
+    """为所有active skill填充平台差异化slug (V183新增)
+
+    策略:
+    - ClawHub: 使用原始slug (ClawHub是源平台,slug不变)
+    - SkillHub: {slug}-cn (添加-cn后缀,避免与ClawHub同步内容冲突)
+      注: -cn不在封禁模式列表中(-free/-pro/-sk/-tool-free等已封禁)
+
+    幂等操作: 已设置的slug不会被覆盖。
+    """
+    conn = _get_db_connection()
+    c = conn.cursor()
+    # 查找未设置平台slug的active skill
+    c.execute("""
+        SELECT id, slug, clawhub_slug, skillhub_slug
+        FROM skills
+        WHERE current_status = 'active'
+        AND (clawhub_slug IS NULL OR skillhub_slug IS NULL)
+    """)
+    rows = c.fetchall()
+    updated = 0
+    for row in rows:
+        skill_id, slug, ch_slug, sk_slug = row
+        updates = {}
+        if not ch_slug:
+            updates['clawhub_slug'] = slug  # ClawHub: 原始slug
+        if not sk_slug:
+            # SkillHub: 添加-cn后缀 (避免封禁模式)
+            # 但如果slug已经以-cn结尾,不重复添加
+            if not slug.endswith('-cn'):
+                updates['skillhub_slug'] = slug + '-cn'
+            else:
+                updates['skillhub_slug'] = slug
+        if updates:
+            updates['updated_at'] = datetime.now().isoformat()
+            set_clause = ', '.join(f'{k} = ?' for k in updates.keys())
+            values = list(updates.values()) + [skill_id]
+            c.execute(f"UPDATE skills SET {set_clause} WHERE id = ?", values)
+            updated += 1
+    conn.commit()
+    conn.close()
+    print(f"[V183] 平台slug填充完成: {updated}/{len(rows)} 个skill已更新")
+    return updated
 
 
 def record_platform_upload(skill_id, version, platform, platform_slug, upload_status,

@@ -28,6 +28,7 @@ tools:
 homepage: ''
 category: Automation
 pricing_tier: L2-标准级
+homepage: "https://skillhub.cn/skill/"
 
 ---
 

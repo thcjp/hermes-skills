@@ -9,8 +9,10 @@ description: 对任意输入做结构化分析,数据/代码/文本/决策/可�
 license: MIT
 tools:
 - - read
+homepage: "https://skillhub.cn/skill/"
+tags:
+  - 通用工具
 ---
-
 > **核心功能**: 本技能提供中文交互、、报表生成、统计洞察、数据可视化时使用、化工作流场景等能力。
 
 # Analyze

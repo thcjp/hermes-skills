@@ -1,5 +1,4 @@
 ---
-
 slug: notion-cli
 name: notion-cli
 version: 1.0.1
@@ -26,9 +25,8 @@ tools:
 - grep
 homepage: ''
 category: Automation
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供时使用、、工作流优化时使用等能力。
 
 > **核心功能**: 本技能提供中文交互等能力。

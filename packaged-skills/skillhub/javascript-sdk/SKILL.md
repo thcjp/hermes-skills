@@ -23,8 +23,8 @@ tools:
 - write
 homepage: ''
 category: Automation
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供化工作流场景等能力。
 
 # Javascript Sdk

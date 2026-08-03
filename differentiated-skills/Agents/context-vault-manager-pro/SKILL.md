@@ -1,5 +1,4 @@
 ---
-
 slug: context-vault-manager-pro
 name: context-vault-manager-pro
 version: 1.0.0
@@ -29,9 +28,8 @@ homepage: ""
 # 定价元数据
 category: "Agents"
 pricing_tier: L2-标准级
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # 上下文保险库（专业版）
 > **智能分层记忆的完整方案。语义检索、向量数据库、多项目隔离，RAG准确率提升40%。**
 你的RAG应用是否因为关键词检索不准而召回无关记忆？多项目Agent是否记忆混淆？大规模记忆库是否难以管理？长会话是否仍然上下文溢出？

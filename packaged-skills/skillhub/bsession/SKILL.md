@@ -1,5 +1,4 @@
 ---
-
 slug: bsession
 name: "bsession"
 version: 0.1.1
@@ -22,9 +21,8 @@ tools:
   - write
 homepage: ""
 category: "Automation"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供时使用、、工作流优化时使用、处理、工作流优化时使用、化流程、批量处理、工作流优化时使用等能力。
 
 # browser

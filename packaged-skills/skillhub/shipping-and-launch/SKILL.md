@@ -1,5 +1,6 @@
 ---
 
+
 slug: shipping-and-launch
 name: "shipping-and-launch"
 version: "1.0.0"
@@ -20,7 +21,9 @@ suggested_price: "29.9 CNY/per_use"
 pricing_tier: "L3-专业级"
 pricing_model: "per_use"
 
+
 ---
+
 
 > **核心功能**: 本技能提供、数据分析和流程编排时使用等能力。
 

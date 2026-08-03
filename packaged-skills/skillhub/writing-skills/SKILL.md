@@ -1,5 +1,7 @@
 ---
 
+
+
 slug: writing-skills
 name: "writing-skills"
 version: "1.0.0"
@@ -20,7 +22,10 @@ suggested_price: "19.9 CNY/per_use"
 pricing_tier: "L2-进阶级"
 pricing_model: "per_use"
 
+
+
 ---
+
 
 > **核心功能**: 本技能提供和流程编排时使用、、数据分析和流程编排时使用、化处理、数据分析和流程编排时使用等能力。
 

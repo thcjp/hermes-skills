@@ -1,5 +1,6 @@
 ---
 
+
 slug: chat-toolkit-pro
 name: chat-toolkit-pro
 version: 1.0.0
@@ -28,8 +29,11 @@ tools:
 homepage: ''
 category: Automation
 pricing_tier: L2-标准级
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 # 沟通偏好工具箱(专业版)
 面向团队与企业的全功能沟通偏好管理工具，在免费版基础上扩展多用户共享、版本历史、跨设备同步、偏好分析、场景化切换与跨Agent迁移等6项高级能力.

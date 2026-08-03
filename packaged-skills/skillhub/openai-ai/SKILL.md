@@ -1,5 +1,4 @@
 ---
-
 slug: openai-ai
 name: "openai-ai"
 version: 1.0.7
@@ -23,9 +22,8 @@ tools:
   - write
 homepage: ""
 category: "Automation"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # llm-provider
 
 ## 专业版专属特性

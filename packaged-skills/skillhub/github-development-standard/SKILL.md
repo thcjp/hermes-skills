@@ -1,5 +1,4 @@
 ---
-
 slug: github-development-standard
 name: "github-development-standard"
 version: 2.0.1
@@ -29,9 +28,8 @@ tools:
 - write
 homepage: '""'
 category: '"Development"'
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置、中文交互、化配置和灵活的参数设置、化工作流场景等能力。
 
 > **功能说明**: 本技能涵盖 standard 等核心能力。

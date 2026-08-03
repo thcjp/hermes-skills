@@ -1,5 +1,6 @@
 ---
 
+
 slug: bilibili-all-in-one
 name: "bilibili-all-in-one"
 version: 1.0.25
@@ -33,8 +34,11 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 # Bilibili All In One 全功能工具箱
 

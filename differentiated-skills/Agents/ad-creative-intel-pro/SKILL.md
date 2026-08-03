@@ -1,5 +1,4 @@
 ---
-
 slug: ad-creative-intel-pro
 name: ad-creative-intel-pro
 version: 1.0.0
@@ -24,9 +23,8 @@ tools:
 homepage: '""'
 category: '"Agents"'
 pricing_tier: L2-标准级
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供提升工作效率等能力。
 
 # 广告情报专业版（Ad Creative Intel Pro）

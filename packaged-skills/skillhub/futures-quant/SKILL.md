@@ -1,5 +1,7 @@
 ---
 
+
+
 slug: futures-quant
 name: "futures-quant"
 version: "1.0.0"
@@ -34,7 +36,10 @@ pricing_tier: "L5"
 pricing_model: "monthly"
 suggested_price: 199.0
 
+
+
 ---
+
 
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 

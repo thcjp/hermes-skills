@@ -1,5 +1,4 @@
 ---
-
 slug: dashboard-toolkit
 name: dashboard-toolkit
 version: 1.7.3
@@ -20,9 +19,8 @@ tools:
 - write
 homepage: ''
 category: Automation
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供、运维告警、部署管理时使用、时使用、化工作流场景等能力。
 
 # SkillHub-dashboard

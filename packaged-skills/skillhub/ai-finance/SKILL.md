@@ -1,5 +1,7 @@
 ---
 
+
+
 slug: ai-finance
 name: ai-finance
 version: 1.0.0
@@ -21,7 +23,10 @@ pricing_tier: L3
 pricing_model: per_use
 suggested_price: 29.9
 
+
+
 ---
+
 
 > **核心功能**: 本技能提供相关功能时使用、与边界情况、化工作流场景等能力。
 

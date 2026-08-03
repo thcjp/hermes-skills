@@ -1,5 +1,4 @@
 ---
-
 slug: knowledge-capture
 name: "knowledge-capture"
 version: 0.1.1
@@ -40,9 +39,8 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供、信息整理、化工作流与智能决策辅助等能力。
 
 # Knowledge Capture

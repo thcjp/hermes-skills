@@ -1,5 +1,4 @@
 ---
-
 slug: cctv-news-fetcher
 name: "cctv-news-fetcher"
 version: 1.0.1
@@ -36,9 +35,8 @@ tools:
   - exec
 homepage: ""
 category: "Knowledge"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供、信息收集、化工作流与智能决策辅助等能力。
 
 # CCTV News Fetcher

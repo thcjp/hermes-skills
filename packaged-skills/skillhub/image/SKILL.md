@@ -1,5 +1,4 @@
 ---
-
 slug: image
 name: image
 version: 1.0.5
@@ -23,9 +22,8 @@ tools:
 - write
 homepage: ''
 category: Creative
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 
 # Image

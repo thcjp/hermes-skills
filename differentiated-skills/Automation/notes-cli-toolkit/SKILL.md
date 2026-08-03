@@ -1,5 +1,4 @@
 ---
-
 slug: notes-cli-toolkit
 name: notes-cli-toolkit
 version: 1.0.1
@@ -26,9 +25,8 @@ tools:
 homepage: ''
 category: Automation
 pricing_tier: free
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 
 > **核心功能**: 本技能提供结构化的工作流程和配置指引等能力。

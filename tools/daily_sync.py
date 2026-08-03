@@ -51,10 +51,11 @@ from platform_config import GITHUB_REPOS
 
 # ============ 速率限制常量 (v3.0: 防止触发SkillHub反垃圾系统) ============
 # 根因: 2026-07-24单日爆发式上传1098个技能(同一微秒时间戳)触发平台反垃圾清理
-MAX_UPLOADS_PER_HOUR = 30        # 每小时最多上传30个技能
-MAX_UPLOADS_PER_DAY = 100        # 每天最多上传100个技能
-MIN_INTERVAL_SECONDS = 120       # 两次上传最少间隔2分钟(120秒)
-CLAWHUB_UPLOAD_DELAY = 120       # ClawHub上传间隔(秒), v3.0: 从2秒提升到2分钟
+# V182: 对齐skillhub.md文档的防封配置(max_per_hour=10, max_per_day=20)
+MAX_UPLOADS_PER_HOUR = 10         # 每小时最多上传10个技能(原30→10,对齐文档)
+MAX_UPLOADS_PER_DAY = 20          # 每天最多上传20个技能(原100→20,对齐文档)
+MIN_INTERVAL_SECONDS = 120        # 两次上传最少间隔2分钟(120秒)
+CLAWHUB_UPLOAD_DELAY = 120        # ClawHub上传间隔(秒), v3.0: 从2秒提升到2分钟
 
 
 def log(msg):

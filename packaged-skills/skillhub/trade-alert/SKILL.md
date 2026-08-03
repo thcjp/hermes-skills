@@ -1,5 +1,7 @@
 ---
 
+
+
 slug: trade-alert
 name: trade-alert
 version: 1.0.0
@@ -27,7 +29,10 @@ pricing_tier: L2
 pricing_model: per_use
 suggested_price: 19.9
 
+
+
 ---
+
 
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 > **核心功能**: 本技能提供与边界情况等能力。

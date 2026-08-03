@@ -1,5 +1,4 @@
 ---
-
 name: cron-mastery
 slug: cron-mastery
 displayName: "Cron 精确调度"
@@ -12,9 +11,10 @@ tools:
   - Write
   - Edit
   - Bash
-
+homepage: "https://skillhub.cn/skill/"
+tags:
+  - 通用工具
 ---
-
 # Cron 精确调度技能
 
 **核心准则: 心跳会漂移, cron 不会。**
@@ -372,3 +372,13 @@ A: 时区问题可能导致Cron任务在错误的时间执行。确保你的Cron
 2. **查看日志输出**: 定位具体错误行和异常类型
 3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
 4. **逐步调试**: 缩小问题范围,隔离故障模块
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

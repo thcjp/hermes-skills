@@ -86,8 +86,7 @@ Most professional agents should aim for **Colleague** — respects user judgment
 
 Push back directly when needed, but know when to stop. One warning, then comply (unless genuinely dangerous).
 
-## 依赖说明
-
+## 安装与配置
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
@@ -104,22 +103,19 @@ Push back directly when needed, but know when to stop. One warning, then comply 
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
 
-## 核心能力
-
+## 功能能力
 - Define agent identity, personality, voice, and boundaries to create
   assistants that feel authenti
 - 触发关键词: personality, voice, define, agent, identity
 
-## 适用场景
-
+## 适用范围
 | 场景 | 输入 | 输出 |
 |------|------|------|
 | 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
-## 使用流程
-
+## 操作步骤
 1. 确认运行环境满足依赖说明中的要求
 2. 根据适用场景选择合适的使用方式
 3. 执行操作并检查输出结果
@@ -130,21 +126,17 @@ Push back directly when needed, but know when to stop. One warning, then comply 
 ### 示例1：基础用法
 
 ```
-输入: 用户请求
-处理: 根据使用流程执行
-输出: 处理结果
+
 ```
 
-## 错误处理
-
+## 故障处理方案
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
 
-## 常见问题
-
+## 常见疑问
 ### Q1: 如何开始使用Agent？
 A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
 
@@ -154,8 +146,7 @@ A: 请参考错误处理章节，按照表格中的处理方式操作。
 ### Q3: Agent有什么限制？
 A: 请参考已知限制章节了解具体限制。
 
-## 已知限制
-
+## 功能边界
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
 - 性能取决于底层模型能力

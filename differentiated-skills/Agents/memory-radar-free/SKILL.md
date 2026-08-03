@@ -1,5 +1,4 @@
 ---
-
 slug: memory-radar-free
 name: memory-radar-free
 version: 1.0.0
@@ -28,9 +27,8 @@ tools:
 homepage: '""'
 category: '"Agents"'
 pricing_tier: free
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # 记忆雷达（免费版）
 
 > **Agent记忆的隐形威胁雷达。五级安全评级，本地模式零数据外泄。**

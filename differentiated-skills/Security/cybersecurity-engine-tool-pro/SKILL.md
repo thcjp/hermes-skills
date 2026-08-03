@@ -1,5 +1,4 @@
 ---
-
 slug: cybersecurity-engine-tool-pro
 name: cybersecurity-engine-tool-pro
 version: 1.0.0
@@ -26,9 +25,8 @@ tools:
 homepage: ''
 category: Security
 pricing_tier: L2-标准级
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供化工作流场景等能力。
 # 网络安全评估引擎专业版
 ## 技能简介

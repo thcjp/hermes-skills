@@ -1,5 +1,4 @@
 ---
-
 slug: longmemo-elite
 name: longmemo-elite
 version: 2.0.0
@@ -29,9 +28,8 @@ tools:
 homepage: ''
 category: Agents
 pricing_tier: free
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供规范流程和配置说明、化工作流场景等能力。
 
 # 精英长记忆（LongMemo Elite）

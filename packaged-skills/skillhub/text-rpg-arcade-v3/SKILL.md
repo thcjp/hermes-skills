@@ -1,5 +1,4 @@
 ---
-
 slug: text-rpg-arcade-v3
 name: "text-rpg-arcade-v3"
 version: "1.0.1"
@@ -21,9 +20,8 @@ tools:
   - exec
 homepage: ""
 category: "Automation"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供提升工作效率等能力。
 
 # Text Game Arcade Uni

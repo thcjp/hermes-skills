@@ -1,5 +1,4 @@
 ---
-
 slug: api-doc-writer
 name: api-doc-writer
 version: 1.0.2
@@ -30,9 +29,8 @@ tools:
 - write
 homepage: ''
 category: Development
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 
 > **核心功能**: 本技能提供接口文档模板生成、RESTful规范、安全建议等核心能力,内置异常处理与错误处理机制。

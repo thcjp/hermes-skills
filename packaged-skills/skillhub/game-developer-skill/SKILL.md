@@ -1,5 +1,4 @@
 ---
-
 slug: game-developer-skill
 name: "game-developer-skill"
 version: 1.0.1
@@ -21,9 +20,8 @@ tools:
   - write
 homepage: ""
 category: "Automation"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # Game Developer Skill
 
 ## 专业版增强能力

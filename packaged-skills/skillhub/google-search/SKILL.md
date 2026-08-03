@@ -1,5 +1,4 @@
 ---
-
 slug: google-search
 name: google-search
 version: 1.0.1
@@ -26,9 +25,8 @@ tools:
 - grep
 homepage: ''
 category: Knowledge
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互、、排名提升、搜索流量优化时使用、、关键词分析、排名提升、搜索流量优化时使用、化工作流场景等能力。
 
 # google-search

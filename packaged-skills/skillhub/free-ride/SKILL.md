@@ -1,5 +1,4 @@
 ---
-
 slug: free-ride
 name: "free-ride"
 version: 1.0.12
@@ -29,10 +28,8 @@ tools:
 - write
 homepage: '""'
 category: '"Automation"'
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
-
 > **核心功能**: 本技能提供化工作流场景等能力。
 
 # Free Ride

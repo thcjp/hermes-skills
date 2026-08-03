@@ -1,5 +1,4 @@
 ---
-
 slug: cron-guard
 name: cron-guard
 version: 1.0.1
@@ -25,9 +24,8 @@ tools:
 homepage: ""
 category: "Automation"
 pricing_tier: free
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # 定时守护
 
 cron 作业的失败很少是"逻辑 bug",多半是 shell 引用炸了、环境漂移了、管道误报了。本技能用"脚本优先 + 确定环境 + 静默成功"三原则,把这些无聊但致命的坑堵死.
@@ -318,3 +316,13 @@ A3: 检查命令参数是否正确，确认运行环境支持exec能力。如遇
 4. **逐步调试**: 缩小问题范围,隔离故障模块
 
 ## 常见疑问速答
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

@@ -1,6 +1,4 @@
 ---
-
-
 slug: pdf-toolkit-pro
 name: pdf-toolkit-pro
 version: 1.0.0
@@ -31,11 +29,8 @@ tools:
 homepage: ''
 category: Automation
 pricing_tier: L2-标准级
-
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
-
 > **核心功能**: 本技能提供工作流程和配置参考等能力。
 # PDF工具包（专业版）
 ## 简介

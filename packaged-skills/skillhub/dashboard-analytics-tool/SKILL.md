@@ -1,5 +1,6 @@
 ---
 
+
 name: "dashboard-analytics-tool"
 slug: dashboard-analytics-tool
 displayName: "仪表盘分析工具"
@@ -23,8 +24,11 @@ tags:
 - dashboard
 - analytics
 category: '"Automation"'
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供中文交互、化流程场景等能力。
 
@@ -44,13 +48,6 @@ category: '"Automation"'
 - Dashboard Analytics Tool 实时监控
 - Dashboard Analytics Tool 错误重试
 - Dashboard Analytics Tool 多格式支持
-
-## 部署指引
-1. 确认运行环境满足依赖说明中的要求
-2. 在AI Agent对话中调用本技能,提供必要的输入参数
-3. 检查输出结果,根据需要进行后续处理
-
-> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用范围
 - 用户说"Dashboard Analytics Tool 扩展能力9" → 执行API调用
@@ -118,10 +115,6 @@ export API_KEY="${API_KEY:?请设置环境变量}"
 ### 示例1: 基础用法
 **输入**: 示例数据
 **输出**: 示例数据
-
-## 疑问解答
-### Q: 如何使用此Skill?
-A: 请参考使用流程章节
 
 ## 错误应对体系
 | 错误场景(续)| 原因 | 处理方式 |

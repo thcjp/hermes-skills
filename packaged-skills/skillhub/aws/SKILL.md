@@ -1,5 +1,4 @@
 ---
-
 slug: aws
 name: "aws"
 version: 1.0.3
@@ -40,9 +39,8 @@ tools:
   - write
 homepage: ""
 category: "Operations"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # Aws
 
 ## 专业版增值服务

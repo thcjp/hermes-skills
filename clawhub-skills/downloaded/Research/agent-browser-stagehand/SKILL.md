@@ -1,4 +1,5 @@
 ---
+
 slug: agent-browser-stagehand
 name: agent-browser-stagehand
 version: "1.0.0"
@@ -17,7 +18,9 @@ tools:
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+
 ---
+
 
 # Agent Browser - Stagehand
 
@@ -86,10 +89,9 @@ browser close
 * **Browserbase fails**: Verify API key and project ID are set
 
 For detailed examples, see [EXAMPLES.md](/api/v1/skills/agent-browser-stagehand/file?path=EXAMPLES.md&ownerHandle=peytoncasper).
-For API reference, see [REFERENCE.md](/api/v1/skills/agent-browser-stagehand/file?path=REFERENCE.md&ownerHandle=peytoncasper).
+For API reference, see [REFERENCE.path=REFERENCE.
 
-## 依赖说明
-
+## 环境要求
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
 - **操作系统**: Windows / macOS / Linux
@@ -106,29 +108,25 @@ For API reference, see [REFERENCE.md](/api/v1/skills/agent-browser-stagehand/fil
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
 
-## 核心能力
-
+## 功能能力
 - Automate web browser interactions using natural language via CLI commands
 - Use when the user asks
 - 触发关键词: interactions, using, stagehand, browser, natural, agent, automate
 
-## 适用场景
-
+## 典型场景
 | 场景 | 输入 | 输出 |
 |------|------|------|
 | 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
-## 使用流程
-
+## 使用说明
 1. 确认运行环境满足依赖说明中的要求
 2. 根据适用场景选择合适的使用方式
 3. 执行操作并检查输出结果
 4. 如遇错误，参考错误处理章节
 
-## 常见问题
-
+## 热门问题
 ### Q1: 如何开始使用Agent Browser Stageh？
 A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
 
@@ -138,8 +136,7 @@ A: 请参考错误处理章节，按照表格中的处理方式操作。
 ### Q3: Agent Browser Stageh有什么限制？
 A: 请参考已知限制章节了解具体限制。
 
-## 已知限制
-
+## 注意事项
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
 - 性能取决于底层模型能力

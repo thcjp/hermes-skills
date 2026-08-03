@@ -1,5 +1,4 @@
 ---
-
 slug: note
 name: "note"
 version: 2.1.1
@@ -25,9 +24,8 @@ tools:
   - grep
 homepage: ""
 category: "Automation"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # Note
 
 ## 付费版扩展能力
@@ -234,3 +232,13 @@ A: Note支持API集成，可以与其他工具进行数据交互和功能扩展�
 2. **查看日志输出**: 定位具体错误行和异常类型
 3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
 4. **逐步调试**: 缩小问题范围,隔离故障模块
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

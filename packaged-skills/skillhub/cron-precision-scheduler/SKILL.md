@@ -1,5 +1,6 @@
 ---
 
+
 name: cron-precision-scheduler
 slug: cron-precision-scheduler
 displayName: "Cron 精确调度"
@@ -12,8 +13,13 @@ tools:
   - Write
   - Edit
   - Bash
+homepage: "https://skillhub.cn/skill/"
+tags:
+  - 通用工具
+
 
 ---
+
 
 # Cron 精确调度技能
 

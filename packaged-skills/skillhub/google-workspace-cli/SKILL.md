@@ -1,5 +1,4 @@
 ---
-
 slug: google-workspace-cli
 name: google-workspace-cli
 version: 1.0.1
@@ -42,9 +41,8 @@ tools:
 - grep
 homepage: '""'
 category: '"Automation"'
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互、时使用、、工作流优化时使用、处理、工作流优化时使用等能力。
 
 # 谷歌办公命令行专业版

@@ -1,5 +1,4 @@
 ---
-
 slug: agent
 name: "agent"
 version: "1.0.3"
@@ -26,9 +25,8 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # Agent
 
 ## 专业版增强能力

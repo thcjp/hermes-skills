@@ -55,6 +55,9 @@ except ImportError:
     except ImportError:
         _QUALITY_GATE_AVAILABLE = False
 
+# v2.7: ClawHub CLI版本兼容标志(None=未检测, True/False=检测结果)
+_CLAWHUB_SUPPORTS_CATEGORIES = None
+
 # ClawHub分类映射配置
 CATEGORY_MAP_FILE = Path(__file__).resolve().parent.parent / "data" / "category_mapping.json"
 
@@ -484,20 +487,40 @@ def upload_skill(skill_dir, slug, dry_run=False, skip_quality_gate=False):
     display_name = get_display_name(skill_dir)
     
     # 构建上传命令(含营销参数) — v2.4: 修复npx→clawhub, 正确引用含空格参数
+    # v2.7: 增加CLI版本兼容检测,不支持--categories/--topics时自动降级
     def _quote_arg(arg):
         """Windows shell引用: 含空格的参数加双引号"""
         if ' ' in str(arg):
             return f'"{arg}"'
         return str(arg)
     
+    # v2.7: 检测CLI是否支持--categories/--topics参数
+    # npx可能解析到旧版CLI(v0.9.0),不支持这些参数
+    global _CLAWHUB_SUPPORTS_CATEGORIES
+    if _CLAWHUB_SUPPORTS_CATEGORIES is None:
+        try:
+            ver_result = subprocess.run(
+                'npx clawhub publish --help',
+                capture_output=True, text=True, timeout=30, shell=True,
+                cwd=r"D:\skills"
+            )
+            help_text = ver_result.stdout + ver_result.stderr
+            _CLAWHUB_SUPPORTS_CATEGORIES = '--categories' in help_text
+            if not _CLAWHUB_SUPPORTS_CATEGORIES:
+                print(f"  [INFO] clawhub CLI不支持--categories/--topics,降级为基础参数")
+        except:
+            _CLAWHUB_SUPPORTS_CATEGORIES = False
+    
     cmd_parts = [
-        'npx', 'clawhub',  # 使用npx调用最新版CLI(v0.23.1+), 全局安装的v0.9.0不支持--categories/--topics
+        'npx', 'clawhub',
         '--registry', REGISTRY,
         'publish', _quote_arg(skill_dir),
         '--changelog', _quote_arg(CHANGELOG),
-        '--categories', category,
-        '--topics', ','.join(topics),
     ]
+    # v2.7: 仅当CLI支持时才添加营销参数
+    if _CLAWHUB_SUPPORTS_CATEGORIES:
+        cmd_parts.extend(['--categories', category])
+        cmd_parts.extend(['--topics', ','.join(topics)])
     if display_name:
         cmd_parts.extend(['--name', _quote_arg(display_name)])
     

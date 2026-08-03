@@ -1,5 +1,4 @@
 ---
-
 slug: evolution-engine
 name: evolution-engine
 version: "1.0.0"
@@ -29,9 +28,8 @@ tags:
 - archive
 - 次确认晋
 category: '"Automation"'
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # 进化引擎（Evolution Engine）
 
 **让 Agent 越用越好，而非每次从零开始。** 直击四大自我进化顽疾：重复犯错、从沉默误学、记忆压缩丢失、进化无法衡量。通过自反思、纠错学习、反污染防线，让每次交互都积累可复用经验.
@@ -284,3 +282,13 @@ A: 压缩操作不会对现有的记忆条目造成永久性影响。系统会�
 2. **查看日志输出**: 定位具体错误行和异常类型
 3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
 4. **逐步调试**: 缩小问题范围,隔离故障模块
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

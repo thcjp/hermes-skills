@@ -1,5 +1,6 @@
 ---
 
+
 slug: ai-podcast
 name: "ai-podcast"
 version: 1.0.12
@@ -28,8 +29,11 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供多语言生成、、本地化处理时使用、时使用等能力。
 

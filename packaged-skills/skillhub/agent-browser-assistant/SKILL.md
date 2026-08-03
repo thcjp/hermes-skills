@@ -1,5 +1,6 @@
 ---
 
+
 name: agent-browser-assistant
 slug: agent-browser-assistant
 displayName: "浏览器代理助手"
@@ -28,8 +29,11 @@ tags:
 - api
 - browser
 category: '"Agents"'
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 

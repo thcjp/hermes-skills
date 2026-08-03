@@ -1,5 +1,6 @@
 ---
 
+
 slug: cloud-storage-manager-pro
 name: cloud-storage-manager-pro
 version: 1.0.0
@@ -29,8 +30,11 @@ tools:
 homepage: ''
 category: Operations
 pricing_tier: L2-标准级
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供结构化的工作流程和配置指引等能力。
 

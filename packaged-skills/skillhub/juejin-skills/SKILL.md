@@ -1,5 +1,4 @@
 ---
-
 slug: juejin-skills
 name: juejin-skills
 version: 1.0.9
@@ -27,10 +26,8 @@ tools:
 - write
 homepage: ''
 category: Automation
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
-
 > **核心功能**: 本技能提供中文交互、时使用、化工作流场景等能力。
 
 # 掘金技能集

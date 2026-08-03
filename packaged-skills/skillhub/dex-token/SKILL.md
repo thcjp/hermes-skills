@@ -1,5 +1,7 @@
 ---
 
+
+
 slug: dex-token
 name: "dex-token"
 version: "1.0.0"
@@ -31,7 +33,10 @@ pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
 
+
+
 ---
+
 
 > **核心功能**: 本技能提供中文交互、相关功能时使用、化工作流场景等能力。
 

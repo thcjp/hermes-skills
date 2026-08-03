@@ -1,5 +1,6 @@
 ---
 
+
 name: "jira-integration-skill"
 slug: jira-integration-skill
 displayName: "Jira集成技能"
@@ -24,8 +25,11 @@ tags:
 - jira
 - api
 category: '"Automation"'
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 

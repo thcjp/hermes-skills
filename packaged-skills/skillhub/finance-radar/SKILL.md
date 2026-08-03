@@ -1,5 +1,4 @@
 ---
-
 slug: finance-radar
 name: "finance-radar"
 version: 1.1.1
@@ -24,9 +23,8 @@ tools:
 homepage: '""'
 license: "MIT"
 category: '"Finance"'
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 
 # Finance Radar

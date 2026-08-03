@@ -1,5 +1,4 @@
 ---
-
 slug: context-vault-manager-free
 name: context-vault-manager-free
 version: 1.0.1
@@ -29,9 +28,8 @@ tools:
 homepage: '""'
 category: '"Agents"'
 pricing_tier: free
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **功能说明**: 本技能涵盖 manager 等核心能力。
 
 # 上下文保险库（免费版）

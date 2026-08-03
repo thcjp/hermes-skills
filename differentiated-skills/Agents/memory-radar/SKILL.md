@@ -1,5 +1,4 @@
 ---
-
 slug: memory-radar
 name: memory-radar
 version: 1.0.0
@@ -29,9 +28,8 @@ tools:
 homepage: ''
 category: Agents
 pricing_tier: free
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 
 # 记忆雷达（Memory Radar）

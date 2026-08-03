@@ -1,5 +1,4 @@
 ---
-
 slug: aws-graph-agent
 name: aws-graph-agent
 version: 1.0.0
@@ -26,9 +25,8 @@ tools:
 homepage: ''
 category: Operations
 pricing_tier: free
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供完整工作流程和配置指南、化工作流场景等能力。
 
 # AWS图代理（AWS Graph Agent）
@@ -411,3 +409,13 @@ A：Lambda 函数必须从 `bedrockAgentCoreToolName` 参数中去除 `___` 前�
 - 生成结果受模型能力影响,不同模型输出质量可能有差异
 - 文件格式兼容性受底层库限制,部分特殊格式可能不被支持
 - 不同操作系统的命令行参数可能存在差异,需做平台适配
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

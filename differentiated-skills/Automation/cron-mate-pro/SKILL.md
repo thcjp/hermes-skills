@@ -26,6 +26,7 @@ tools:
 homepage: ''
 category: Automation
 pricing_tier: L2-标准级
+homepage: "https://skillhub.cn/skill/"
 ---
 # cron表达式助手（专业版）
 > **企业级cron表达式工具。高级语法+时区转换+冲突检测+优化建议+执行预览，全功能覆盖。**

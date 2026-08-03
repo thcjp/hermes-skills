@@ -1,6 +1,4 @@
 ---
-
-
 slug: markdown-converter-compdf
 name: markdown-converter-compdf
 version: 1.2.1
@@ -25,11 +23,8 @@ tools:
 - write
 homepage: ''
 category: Development
-
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
-
 > **核心功能**: 本技能提供中文交互、、格式互转、内容提取时使用、化工作流场景等能力。
 
 # Markdown convert

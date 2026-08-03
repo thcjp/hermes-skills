@@ -1,5 +1,4 @@
 ---
-
 slug: cron-scheduler-pro
 name: cron-scheduler-pro
 version: 1.0.1
@@ -26,9 +25,8 @@ tools:
 homepage: '""'
 category: '"Automation"'
 pricing_tier: L2-标准级
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **功能说明**: 本技能涵盖 scheduler 等核心能力。
 # 定时调度专家
 把"每两小时检查一次收件箱"这种模糊意图，变成可信任、可审计、可预览的执行契约。本技能解决五个核心痛点：**时区漂移**（"9点"到底是哪个时区）、**任务漏跑**（调度器没跑或跑了不知道）、**一次性任务堆积**（提醒完了任务不清理）、**并发死锁**（add 后立刻 update 导致锁冲突）、**失败无感知**（任务挂了没人知道）.
@@ -411,3 +409,13 @@ A2: 是的，部分功能需要配置对应平台的API Key。请在依赖说明
 ### Q3: 命令行执行失败怎么办？
 
 A3: 检查命令参数是否正确，确认运行环境支持exec能力。如遇权限问题，请参照错误处理章节排查。
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

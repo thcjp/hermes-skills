@@ -1,5 +1,4 @@
 ---
-
 slug: daily-news-brief
 name: daily-news-brief
 version: 1.0.2
@@ -23,10 +22,8 @@ tools:
 - exec
 homepage: ''
 category: Knowledge
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
-
 > **核心功能**: 本技能提供化工作流场景等能力。
 
 # Daily News Brief

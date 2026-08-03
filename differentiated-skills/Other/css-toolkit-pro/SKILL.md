@@ -1,5 +1,4 @@
 ---
-
 slug: css-toolkit-pro
 name: css-toolkit-pro
 version: 1.0.0
@@ -27,9 +26,8 @@ tools:
 homepage: ''
 category: Automation
 pricing_tier: L2-标准级
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # CSS 工具箱（专业版）
 ## 技能简介
 专业版是一份面向前端工程团队的全功能 CSS 知识体系，覆盖从基础陷阱到高级工程化的完整链路。在免费版陷阱速查基础上，新增性能优化、无障碍设计、设计系统架构、滚动行为深度指南与跨浏览器兼容矩阵，适合中大型项目的 CSS 架构设计、性能治理与团队规范制定.

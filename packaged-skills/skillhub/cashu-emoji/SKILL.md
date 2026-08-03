@@ -1,5 +1,4 @@
 ---
-
 slug: cashu-emoji
 name: "cashu-emoji"
 version: 0.1.1
@@ -37,9 +36,8 @@ tools:
   - write
 homepage: ""
 category: "Automation"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供化工作流与智能决策辅助等能力。
 
 # Cashu Emoji

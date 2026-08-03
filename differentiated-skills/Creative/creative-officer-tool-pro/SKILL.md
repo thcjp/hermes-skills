@@ -1,5 +1,4 @@
 ---
-
 slug: creative-officer-tool-pro
 name: creative-officer-tool-pro
 version: 1.0.0
@@ -25,9 +24,8 @@ tools:
 homepage: ''
 category: Automation
 pricing_tier: L2-标准级
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供化工作流场景等能力。
 # 创意总监专业版
 ## 简介

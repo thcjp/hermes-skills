@@ -1,5 +1,4 @@
 ---
-
 slug: company-search-fengniao
 name: company-search-fengniao
 version: 1.0.3
@@ -24,10 +23,8 @@ tools:
 - grep
 homepage: ''
 category: Knowledge
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
-
 > **核心功能**: 本技能提供化工作流场景等能力。
 
 # Company Search Fengn

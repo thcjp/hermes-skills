@@ -1,5 +1,4 @@
 ---
-
 slug: context-compressor-pro
 name: context-compressor-pro
 version: 1.0.0
@@ -29,9 +28,8 @@ tools:
 homepage: ''
 category: Agents
 pricing_tier: L2-标准级
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供结构化的工作流程和配置指引等能力。
 # 上下文压缩器（专业版）
 你的Agent的记忆库是否已经膨胀到无法管理？团队协作的日志是否堆积如山？关键决策是否被冗余信息淹没？Token成本是否随对话量线性飙升？

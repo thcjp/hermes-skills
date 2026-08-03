@@ -1,5 +1,4 @@
 ---
-
 slug: daily-report-writer
 name: "daily-report-writer"
 version: 1.0.1
@@ -28,9 +27,8 @@ tools:
 - write
 homepage: '""'
 category: '"Automation"'
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置、中文交互、工作流程和效率等能力。
 
 # Daily Report Writer

@@ -1,5 +1,4 @@
 ---
-
 slug: office-productivity-hub
 name: office-productivity-hub
 version: 1.0.1
@@ -26,9 +25,8 @@ tools:
 homepage: ''
 category: Automation
 pricing_tier: L2-标准级
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供化工作流场景等能力。
 # 办公效率中枢
 把繁琐的日常办公工作自动化。覆盖文档、数据、邮件、日程、报表五大场景，每个场景都内建失败隔离、格式保真与合规检查.
@@ -485,3 +483,13 @@ A1: 解决批量炸裂、格式丢失、PII泄露、模板难复用痛点，让�
 A2: 是的，部分功能需要配置对应平台的API Key。请在依赖说明章节查看具体要求，并通过环境变量安全配置。
 ### Q3: 命令行执行失败怎么办？
 A3: 检查命令参数是否正确，确认运行环境支持exec能力。如遇权限问题，请参照错误处理章节排查。
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

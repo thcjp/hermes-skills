@@ -1,5 +1,6 @@
 ---
 
+
 name: "agentvibes-content-skill"
 slug: agentvibes-content-skill
 displayName: "AgentVibes内容技能"
@@ -27,8 +28,11 @@ tags:
 - content
 - llm
 category: '"Agents"'
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供化流程场景等能力。
 

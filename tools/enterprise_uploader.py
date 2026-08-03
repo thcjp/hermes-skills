@@ -42,9 +42,9 @@ except ImportError:
     _QUALITY_GATE_AVAILABLE = False
 
 # ============ 企业版配置 ============
-# V181: 修正ORG_ID为用户当前登录组织(1436=智创未来/zcwl)
-# 原ORG_ID=862导致API返回403 "organization mismatch"
-ORG_ID = 1436
+# V182: 切回ORG_ID=862(科创少年) — 之前被封的账号,用户重新登录后仍可在后台操作
+# org-xxo535hs / opc-laotian, API Key: sk-ent-250641b3...
+ORG_ID = 862
 API_BASE = "https://api.skillhub.cn/api/v1"
 ORG_SKILLS_API = f"{API_BASE}/community/skills/publish"  # V162: 改用社区发布端点(原/orgs/{ORG_ID}/skills返回401)
 
@@ -299,11 +299,24 @@ UPLOAD_LOG = REPORT_DIR / "enterprise_upload_log.json"
 
 
 def load_cookies():
-    """加载认证凭证：优先环境变量(允许覆盖),其次cookie文件,最后CLI凭证文件"""
+    """加载认证凭证：优先环境变量(允许覆盖),其次cookie文件,最后CLI凭证文件
+    
+    V182: 增加bt_商户token支持(通过环境变量SKILLHUB_MERCHANT_TOKEN传入)
+    认证优先级:
+    1. SKILLHUB_SESSION_COOKIE 环境变量(浏览器session)
+    2. SKILLHUB_MERCHANT_TOKEN 环境变量(bt_商户token)
+    3. cookie文件(浏览器session)
+    4. CLI凭证文件(sk-ent- API Key — 仅verify有效,发布可能401)
+    """
     # 1. 环境变量(最高优先级 — 允许运行时覆盖过期凭证)
     env_cookies = os.environ.get('SKILLHUB_SESSION_COOKIE', '')
     if env_cookies:
         return env_cookies
+
+    # 1.5 bt_商户token (V182新增)
+    env_merchant = os.environ.get('SKILLHUB_MERCHANT_TOKEN', '')
+    if env_merchant:
+        return f'BEARER:{env_merchant}'
 
     # 2. cookie文件(浏览器session)
     if COOKIE_FILE.exists():

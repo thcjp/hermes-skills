@@ -1,5 +1,4 @@
 ---
-
 slug: json-toolkit
 name: json-toolkit
 version: 1.0.1
@@ -29,9 +28,8 @@ tools:
 - write
 homepage: ''
 category: Automation
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供完整的配置选项和详细的使用说明等能力。
 
 > **核心功能**: 本技能提供中文交互等能力。

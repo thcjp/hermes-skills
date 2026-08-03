@@ -1,5 +1,4 @@
 ---
-
 slug: multi-search-engine
 name: "multi-search-engine"
 version: 2.1.4
@@ -40,10 +39,8 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
-
 > **核心功能**: 本技能提供化工作流与智能决策辅助等能力。
 
 # Multi Search Engine
@@ -316,3 +313,13 @@ A: 可以尝试使用不同的关键词或组合关键词，或者调整搜索�
 - 已安装所需运行环境(参考依赖说明)
 - 已获取必要的API密钥或访问凭证(如适用)
 - 输入数据已准备就绪
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

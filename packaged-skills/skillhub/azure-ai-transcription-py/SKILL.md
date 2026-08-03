@@ -1,5 +1,6 @@
 ---
 
+
 slug: azure-ai-transcription-py
 name: "azure-ai-transcription-py"
 version: 0.1.1
@@ -30,8 +31,11 @@ tools:
   - write
 homepage: ""
 category: "Operations"
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 # Azure Ai Transcription Py
 

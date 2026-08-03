@@ -1,5 +1,4 @@
 ---
-
 slug: logo-design
 name: logo-design
 version: 1.0.1
@@ -31,9 +30,8 @@ tools:
 - write
 homepage: ''
 category: Creative
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互、系统化的AI、能力之上等能力。
 
 # Logo设计工具专业版

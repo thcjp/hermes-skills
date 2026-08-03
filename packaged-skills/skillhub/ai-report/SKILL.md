@@ -1,5 +1,7 @@
 ---
 
+
+
 slug: ai-report
 name: "ai-report"
 version: "1.0.0"
@@ -31,7 +33,10 @@ pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
 
+
+
 ---
+
 
 > **核心功能**: 本技能提供中文交互、、报表生成、统计洞察、数据可视化时使用等能力。
 

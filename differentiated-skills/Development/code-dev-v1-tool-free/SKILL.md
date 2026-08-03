@@ -1,5 +1,6 @@
 ---
 
+
 slug: code-dev-v1-tool-free
 name: code-dev-v1-tool-free
 version: 1.0.0
@@ -30,8 +31,11 @@ tools:
 homepage: ''
 category: Development
 pricing_tier: free
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供结构化的工作流程和配置指引等能力。
 

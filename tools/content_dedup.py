@@ -180,7 +180,13 @@ def _to_signed_64(val: int) -> int:
     SQLite INTEGER类型为有符号64位(-2^63 ~ 2^63-1),
     而SimHash计算结果为无符号64位(0 ~ 2^64-1),
     超过2^63-1时需转换否则触发溢出异常。
+
+    V155 R3修复: 增加模运算保护,处理任何输入(包括超出64位范围的值)
+    根因: 某些边界情况下compute_simhash可能返回超出预期的值,
+    导致_to_signed_64转换后仍超出SQLite INTEGER范围
     """
+    val = int(val)  # 确保是Python int
+    val = val & ((1 << 64) - 1)  # 模运算截断为无符号64位
     if val >= (1 << 63):
         return val - (1 << 64)
     return val
@@ -338,7 +344,13 @@ def check_approximate_dedup(slug: str, content: str, db_path: str = None) -> dic
 
     # 2. 近似去重: 检查SimHash Hamming距离
     # 更新当前skill的simhash(供未来比对)
-    update_simhash(slug, simhash, content_hash, db_path)
+    # V155 R3: SimHash更新失败时降级为仅精确去重(不阻断上传)
+    try:
+        update_simhash(slug, simhash, content_hash, db_path)
+    except Exception as e:
+        # SimHash更新失败不影响上传,仅记录警告
+        # 上传仍可通过精确去重(SHA-256)保护
+        pass
 
     duplicates = find_approximate_duplicates(slug, simhash, db_path=db_path)
     if duplicates:

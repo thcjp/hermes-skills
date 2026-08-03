@@ -1,5 +1,4 @@
 ---
-
 name: token-saver-skill
 slug: token-saver-skill
 displayName: "令牌技能"
@@ -12,9 +11,10 @@ tools:
   - Write
   - Edit
   - Bash
-
+homepage: "https://skillhub.cn/skill/"
+tags:
+  - 通用工具
 ---
-
 # Token Saver Skill
 
 A token cost optimization skill that helps you save 50-80% on AI token usage without sacrificing response quality.

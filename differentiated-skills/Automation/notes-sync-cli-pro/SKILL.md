@@ -1,5 +1,4 @@
 ---
-
 slug: notes-sync-cli-pro
 name: notes-sync-cli-pro
 version: 1.0.0
@@ -27,9 +26,8 @@ tools:
 homepage: ''
 category: Automation
 pricing_tier: L2-标准级
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # 笔记同步CLI（专业版）
 > **企业级Markdown笔记库管理。批量操作+多Vault+模板系统+Git同步+LLM智能整理，知识工作者的完整命令行工具。**
 ## 参数说明

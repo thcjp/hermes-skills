@@ -1,5 +1,4 @@
 ---
-
 slug: markdown-exporter
 name: markdown-exporter
 version: 3.6.11
@@ -24,9 +23,8 @@ tags:
 - input
 - output
 category: Development
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置、时使用、、工作流优化时使用、处理、工作流优化时使用、化配置和灵活的参数设置等能力。
 
 # Markdown导出工具
@@ -327,3 +325,13 @@ Markdown表格导出为JSON时，每行变为一个JSON对象，表头为键名�
 | 命令执行失败 | 参数错误或环境依赖缺失 | 检查命令语法,确认依赖已安装 |
 | 进程超时 | 命令执行时间过长 | 增加超时设置,优化命令参数 |
 | 网络连接失败 | DNS解析失败或防火墙拦截 | 检查网络配置,确认代理设置 |
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

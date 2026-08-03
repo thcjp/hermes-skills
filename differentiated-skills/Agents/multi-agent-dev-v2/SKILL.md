@@ -1,5 +1,4 @@
 ---
-
 slug: multi-agent-dev-v2
 name: multi-agent-dev-v2
 version: 1.0.1
@@ -28,9 +27,8 @@ tools:
 homepage: '""'
 category: '"Agents"'
 pricing_tier: free
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供结构化流程和配置指引、化工作流场景等能力。
 # 多代理开发
 通过为每个任务派发新鲜子代理执行实现计划,并在每步后进行两阶段评审(先规格合规,后代码质量),实现高质量快速迭代.
@@ -433,3 +431,13 @@ A3: 检查命令参数是否正确，确认运行环境支持exec能力。如遇
 - **API集成**: 通过标准化接口调用外部服务并处理响应
 - **命令执行**: 在安全沙箱中执行系统命令并收集结果
 - **信息检索**: 快速搜索和过滤目标数据
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

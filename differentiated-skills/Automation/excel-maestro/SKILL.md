@@ -25,6 +25,7 @@ tools:
 homepage: ''
 category: Automation
 pricing_tier: free
+homepage: "https://skillhub.cn/skill/"
 ---
 > **核心功能**: 本技能提供中文交互、工作流程和配置参考、化工作流场景等能力。
 # Excel大师
@@ -489,3 +490,13 @@ A3: 检查命令参数是否正确，确认运行环境支持exec能力。如遇
 | 命令执行失败 | 参数错误或环境依赖缺失 | 检查命令语法,确认依赖已安装 |
 | 进程超时 | 命令执行时间过长 | 增加超时设置,优化命令参数 |
 | 网络连接失败 | DNS解析失败或防火墙拦截 | 检查网络配置,确认代理设置 |
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

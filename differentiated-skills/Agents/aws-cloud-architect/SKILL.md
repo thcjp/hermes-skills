@@ -1,5 +1,4 @@
 ---
-
 slug: aws-cloud-architect
 name: aws-cloud-architect
 version: 2.0.0
@@ -27,9 +26,8 @@ tools:
 homepage: ''
 category: Operations
 pricing_tier: free
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互、了实用性、化工作流场景等能力。
 
 # AWS云架构师（AWS Cloud Architect）
@@ -378,3 +376,13 @@ A：确认 Cost Explorer 已在 AWS Console 中启用。时间格式为 `YYYY-MM
 - **API集成**: 通过标准化接口调用外部服务并处理响应
 - **命令执行**: 在安全沙箱中执行系统命令并收集结果
 - **信息检索**: 快速搜索和过滤目标数据
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

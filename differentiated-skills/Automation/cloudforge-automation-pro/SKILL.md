@@ -1,5 +1,4 @@
 ---
-
 slug: cloudforge-automation-pro
 name: cloudforge-automation-pro
 version: 1.0.0
@@ -27,9 +26,8 @@ tools:
 homepage: ''
 category: Operations
 pricing_tier: L2-标准级
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供结构化的工作流程和配置指引等能力。
 # 云锻造自动化（专业版）
 企业级云基础设施需要跨云管理、自动化配置、合规审计与灾备保障。专业版通过Terraform+Ansible+CloudFormation三工具集成与七大高级能力，确保云基础设施安全、合规、高效、可恢复.
@@ -485,3 +483,12 @@ A3: 检查命令参数是否正确，确认运行环境支持exec能力。如遇
 2. **查看日志输出**: 定位具体错误行和异常类型
 3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
 4. **逐步调试**: 缩小问题范围,隔离故障模块
+
+## 安装与配置
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

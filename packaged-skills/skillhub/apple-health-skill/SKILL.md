@@ -1,4 +1,6 @@
 ---
+
+
 slug: apple-health-skill
 name: apple-health-skill
 version: 1.0.1
@@ -30,7 +32,11 @@ tags:
 - health_api_key
 - tsb
 category: Automation
+homepage: "https://skillhub.cn/skill/"
+
+
 ---
+
 
 > **核心功能**: 本技能提供中文交互等能力。
 

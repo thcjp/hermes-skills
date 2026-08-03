@@ -1,5 +1,4 @@
 ---
-
 slug: photo-captions
 name: photo-captions
 version: 1.2.6
@@ -26,9 +25,8 @@ tools:
 - write
 homepage: ''
 category: Automation
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置、时使用、、工作流优化时使用、处理、工作流优化时使用等能力。
 
 # Photo Captions
@@ -373,3 +371,13 @@ Pinterest 是发现引擎，关键词决定被搜到的概率。选词逻辑：�
 - **API集成**: 通过标准化接口调用外部服务并处理响应
 - **命令执行**: 在安全沙箱中执行系统命令并收集结果
 - **信息检索**: 快速搜索和过滤目标数据
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

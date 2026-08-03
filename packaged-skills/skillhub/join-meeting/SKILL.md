@@ -1,5 +1,4 @@
 ---
-
 slug: join-meeting
 name: join-meeting
 version: 1.1.16
@@ -25,9 +24,8 @@ tags:
 - 事件
 - voice
 category: Automation
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # 智能会议机器人
 
 会议机器人，支持会议感知、系统状态管理、生命周期、语音状态与TTS事件处理.
@@ -344,3 +342,13 @@ A3: 检查命令参数是否正确，确认运行环境支持exec能力。如遇
 2. **查看日志输出**: 定位具体错误行和异常类型
 3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
 4. **逐步调试**: 缩小问题范围,隔离故障模块
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

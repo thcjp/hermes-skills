@@ -1,5 +1,4 @@
 ---
-
 slug: firewall
 name: "firewall"
 version: 1.0.1
@@ -38,9 +37,8 @@ tools:
   - write
 homepage: ""
 category: "Automation"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供化工作流与智能决策辅助等能力。
 
 # Firewall
@@ -251,3 +249,13 @@ A: 利用云提供商提供的防火墙服务，通过API或管理控制台配�
 | 可复用性 | 参数化配置 | 一次性脚本 | 模板化 |
 | 安全合规 | 内置安全检查 | 无安全保障 | 无安全保障 |
 | 适用场景 | 按安全优选实践配置服务器与云防火墙,封堵风险。Configure firewal | 通用场景 | 通用场景 |
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

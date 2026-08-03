@@ -1,6 +1,4 @@
 ---
-
-
 slug: manage-liquidity
 name: "manage-liquidity"
 version: 0.1.1
@@ -24,11 +22,8 @@ tools:
   - write
 homepage: ""
 category: "Creative"
-
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
-
 > **核心功能**: 本技能提供工具相关功能时使用等能力。
 
 # Manage Liquidity

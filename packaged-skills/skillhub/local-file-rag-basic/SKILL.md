@@ -1,5 +1,4 @@
 ---
-
 slug: local-file-rag-basic
 name: "local-file-rag-basic"
 version: 1.0.1
@@ -27,9 +26,8 @@ tools:
 - write
 homepage: '""'
 category: '"Automation"'
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互、、格式互转、内容提取时使用、领域的专业化AI辅助工具'']、化工作流场景等能力。
 
 # local-file-rag-basic

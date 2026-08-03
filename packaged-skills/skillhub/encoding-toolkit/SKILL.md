@@ -1,5 +1,4 @@
 ---
-
 slug: encoding-toolkit
 name: encoding-toolkit
 version: 1.0.1
@@ -29,9 +28,8 @@ tools:
 - grep
 homepage: ''
 category: Automation
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供策略与多角色场景指南等能力。
 
 # 编解码工具箱专业版

@@ -1,5 +1,4 @@
 ---
-
 slug: communication-skill
 name: "communication-skill"
 version: 0.1.1
@@ -33,9 +32,8 @@ tools:
   - exec
 homepage: ""
 category: "Automation"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # Communication Crafter Pro
 ## 输入定义
 | 参数名 | 类型 | 必填 | 说明 |

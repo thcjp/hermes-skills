@@ -1,5 +1,4 @@
 ---
-
 slug: china-news
 name: china-news
 version: 1.0.4
@@ -24,9 +23,8 @@ tools:
 - exec
 homepage: ''
 category: Knowledge
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供化工作流场景等能力。
 
 # China News

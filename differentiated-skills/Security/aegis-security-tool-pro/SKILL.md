@@ -1,5 +1,4 @@
 ---
-
 slug: aegis-security-tool-pro
 name: aegis-security-tool-pro
 version: 1.0.0
@@ -26,9 +25,8 @@ tools:
 homepage: ''
 category: Security
 pricing_tier: L2-标准级
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 # 区块链安全扫描专业版
 ## 总览

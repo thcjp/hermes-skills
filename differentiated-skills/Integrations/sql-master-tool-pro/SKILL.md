@@ -1,5 +1,4 @@
 ---
-
 slug: sql-master-tool-pro
 name: sql-master-tool-pro
 version: 1.0.0
@@ -29,9 +28,8 @@ tools:
 homepage: ''
 category: Automation
 pricing_tier: L2-标准级
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供工作流程和配置参考等能力。
 
 # SQL大师工具（专业版）
@@ -407,3 +405,13 @@ A3: 检查命令参数是否正确，确认运行环境支持exec能力。如遇
 - 已安装所需运行环境(参考依赖说明)
 - 已获取必要的API密钥或访问凭证(如适用)
 - 输入数据已准备就绪
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

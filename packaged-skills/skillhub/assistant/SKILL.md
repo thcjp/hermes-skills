@@ -1,5 +1,6 @@
 ---
 
+
 slug: assistant
 name: "assistant"
 version: 1.0.1
@@ -38,8 +39,11 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供、习惯养成、化工作流与智能决策辅助等能力。
 

@@ -1,5 +1,4 @@
 ---
-
 slug: doubao-chat
 name: "doubao-chat"
 version: 1.0.1
@@ -29,9 +28,8 @@ tools:
 - write
 homepage: '""'
 category: '"Automation"'
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置、联网搜索）、时使用、、工作流优化时使用、处理、工作流优化时使用等能力。
 
 # Doubao Chat

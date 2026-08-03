@@ -1,5 +1,6 @@
 ---
 
+
 slug: beware-piper-tts
 name: beware-piper-tts
 version: 1.0.2
@@ -28,8 +29,11 @@ tools:
 - write
 homepage: ''
 category: Automation
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供中文交互、时使用、、工作流优化时使用等能力。
 

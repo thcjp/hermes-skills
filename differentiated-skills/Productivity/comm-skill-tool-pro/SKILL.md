@@ -1,5 +1,6 @@
 ---
 
+
 slug: comm-skill-tool-pro
 name: comm-skill-tool-pro
 version: 1.0.0
@@ -28,8 +29,11 @@ tools:
 homepage: ''
 category: Automation
 pricing_tier: L2-标准级
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供化工作流场景等能力。
 

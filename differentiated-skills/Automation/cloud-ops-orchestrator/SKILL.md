@@ -1,5 +1,4 @@
 ---
-
 slug: cloud-ops-orchestrator
 name: cloud-ops-orchestrator
 version: 1.0.1
@@ -24,9 +23,8 @@ tools:
 homepage: ''
 category: Operations
 pricing_tier: free
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供化工作流场景等能力。
 
 > **核心功能**: 本技能提供结构化的工作流程和配置指引等能力。

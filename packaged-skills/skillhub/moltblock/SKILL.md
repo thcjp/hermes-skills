@@ -24,6 +24,7 @@ tools:
   - write
 homepage: ""
 category: "Automation"
+homepage: "https://skillhub.cn/skill/"
 ---
 # Skill
 
@@ -283,3 +284,13 @@ A: 是的，所有API调用都需要通过API Key进行认证，以确保安全�
 | 可复用性 | 参数化配置 | 一次性脚本 | 模板化 |
 | 安全合规 | 内置安全检查 | 无安全保障 | 无安全保障 |
 | 适用场景 | AI产物验证门禁,策略检查拦截危险模式。Verification gating  | 通用场景 | 通用场景 |
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

@@ -1,5 +1,4 @@
 ---
-
 slug: cron-assist
 name: cron-assist
 version: 1.0.1
@@ -26,9 +25,8 @@ tools:
 homepage: '""'
 category: '"Automation"'
 pricing_tier: free
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 
 > **功能说明**: 本技能涵盖 assist 等核心能力。

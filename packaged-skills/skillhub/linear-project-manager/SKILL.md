@@ -1,5 +1,6 @@
 ---
 
+
 name: linear-project-manager
 slug: linear-project-manager
 displayName: "Linear项目管理"
@@ -24,8 +25,11 @@ tags:
 - api
 - project
 category: '"Automation"'
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供中文交互、化流程场景等能力。
 

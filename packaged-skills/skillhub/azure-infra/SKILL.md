@@ -1,5 +1,6 @@
 ---
 
+
 slug: azure-infra
 name: "azure-infra"
 version: 1.0.1
@@ -32,8 +33,11 @@ tools:
   - write
 homepage: ""
 category: "Operations"
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 # Azure Infra
 

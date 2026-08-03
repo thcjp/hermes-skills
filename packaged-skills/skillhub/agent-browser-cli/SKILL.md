@@ -1,5 +1,4 @@
 ---
-
 slug: agent-browser-cli
 name: agent-browser-cli
 version: "1.0.3"
@@ -26,9 +25,8 @@ tools:
 - grep
 homepage: ''
 category: Agents
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互、批量处理和实时预览、时使用、、工作流优化时使用、和实时预览等能力。
 
 # Agent Browser CLI
@@ -325,3 +323,13 @@ A: agent-browser-cli支持Chromium和Firefox浏览器引擎，可以通过配置
 | 可复用性 | 参数化配置 | 一次性脚本 | 模板化 |
 | 安全合规 | 内置安全检查 | 无安全保障 | 无安全保障 |
 | 适用场景 | 使用 agent-browser CLI 进行浏览器自动化。用于签到、填表、截图 | 通用场景 | 通用场景 |
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

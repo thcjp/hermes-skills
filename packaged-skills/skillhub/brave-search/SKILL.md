@@ -1,5 +1,4 @@
 ---
-
 slug: brave-search
 name: brave-search
 version: 1.0.2
@@ -28,9 +27,8 @@ tools:
 - grep
 homepage: ''
 category: Knowledge
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供化工作流场景等能力。
 
 > **核心功能**: 本技能提供、信息收集、、报表生成、统计洞察、数据可视化时使用、化工作流与智能决策辅助等能力。

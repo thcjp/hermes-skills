@@ -1,5 +1,6 @@
 ---
 
+
 slug: cloud-architect-free
 name: "cloud-architect-free"
 version: "1.0.0"
@@ -32,8 +33,11 @@ tools:
   - write
 homepage: ""
 category: "Operations"
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供化工作流场景等能力。
 

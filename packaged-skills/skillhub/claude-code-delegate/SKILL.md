@@ -1,5 +1,4 @@
 ---
-
 slug: claude-code-delegate
 name: claude-code-delegate
 version: 0.1.2
@@ -26,9 +25,8 @@ tags:
 - api
 - 写入保护
 category: Development
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置、多种配置选项、化配置和灵活的参数设置等能力。
 
 # 代码委派助手
@@ -368,3 +366,13 @@ A: 编写者存在上下文偏见,可能基于自身假设而非实际代码行�
 | 可复用性 | 参数化配置 | 一次性脚本 | 模板化 |
 | 安全合规 | 内置安全检查 | 无安全保障 | 无安全保障 |
 | 适用场景 | 将编程任务委派给本地A | 通用场景 | 通用场景 |
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

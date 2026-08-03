@@ -1,5 +1,6 @@
 ---
 
+
 slug: blog-writer
 name: blog-writer
 version: 0.1.1
@@ -25,8 +26,11 @@ tags:
 - 处理逻辑
 - 返回结构
 category: Automation
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供提升工作效率、化工作流场景等能力。
 

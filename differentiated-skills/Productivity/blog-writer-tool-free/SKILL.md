@@ -1,5 +1,4 @@
 ---
-
 slug: blog-writer-tool-free
 name: blog-writer-tool-free
 version: 1.0.0
@@ -28,9 +27,8 @@ tools:
 homepage: ''
 category: Automation
 pricing_tier: free
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # 博客写作助手基础版
 
 ## 技能简介
@@ -360,3 +358,13 @@ A: FREE 版本所有数据本地存储,不上传云端,确保隐私安全。建�
 - 输入数据已准备就绪
 
 ## 问题解答汇总
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

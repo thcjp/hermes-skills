@@ -1,5 +1,4 @@
 ---
-
 slug: gateway-manager
 name: gateway-manager
 version: 1.0.1
@@ -31,9 +30,8 @@ tools:
 - write
 homepage: '""'
 category: '"Automation"'
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置、时使用、、工作流优化时使用、处理、工作流优化时使用等能力。
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 # API网关管理器(专业版)

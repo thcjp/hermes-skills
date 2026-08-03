@@ -1,5 +1,6 @@
 ---
 
+
 slug: csv-processor-pro
 name: csv-processor-pro
 version: 1.0.0
@@ -29,8 +30,11 @@ tools:
 homepage: ''
 category: Automation
 pricing_tier: L2-标准级
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 面向专业数据工程师与数据治理团队的全功能 CSV 清洗平台，在免费版基础上解锁流式处理、自定义规则、Schema 校验与数据质量评分.
 ## 能力总览

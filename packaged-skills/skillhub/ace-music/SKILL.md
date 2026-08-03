@@ -1,5 +1,4 @@
 ---
-
 name: ace-music
 slug: ace-music
 displayName: 音乐
@@ -10,9 +9,10 @@ description: 经ACE Music免费API用ACE-Step 1.5生成AI音乐。Generate AI mu
 license: MIT
 tools:
 - - read
-
+homepage: "https://skillhub.cn/skill/"
+tags:
+  - 通用工具
 ---
-
 > **核心功能**: 本技能提供中文交互等能力。
 
 > **核心功能**: 本技能提供时使用、化工作流场景等能力。

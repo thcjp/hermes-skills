@@ -1,5 +1,6 @@
 ---
 
+
 slug: ai-image-gen
 name: "ai-image-gen"
 version: 1.1.1
@@ -33,8 +34,11 @@ tools:
   - write
 homepage: ""
 category: "Creative"
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供专业版、与编辑等能力。
 

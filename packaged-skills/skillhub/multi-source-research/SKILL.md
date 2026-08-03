@@ -1,5 +1,4 @@
 ---
-
 slug: multi-source-research
 name: multi-source-research
 version: 1.0.1
@@ -24,9 +23,8 @@ tools:
 - grep
 homepage: ''
 category: Knowledge
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # Multi Source Researc
 
 ## 付费版扩展能力

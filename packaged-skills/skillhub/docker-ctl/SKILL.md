@@ -1,6 +1,4 @@
 ---
-
-
 slug: docker-ctl
 name: "docker-ctl"
 version: 1.0.1
@@ -39,11 +37,8 @@ tools:
   - write
 homepage: ""
 category: "Development"
-
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
-
 > **核心功能**: 本技能提供、运维告警、部署管理时使用、时使用、化工作流与智能决策辅助等能力。
 
 # Docker Ctl

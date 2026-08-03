@@ -1,5 +1,4 @@
 ---
-
 slug: agent-framework-azure-ai-py
 name: "agent-framework-azure-ai-py"
 version: 0.1.1
@@ -26,9 +25,8 @@ tools:
   - write
 homepage: ""
 category: "Operations"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # Agent Framework Azur
 
 ## 专业版增强能力

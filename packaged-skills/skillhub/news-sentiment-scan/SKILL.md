@@ -1,5 +1,4 @@
 ---
-
 slug: news-sentiment-scan
 name: "news-sentiment-scan"
 version: 1.0.1
@@ -23,9 +22,8 @@ tools:
   - exec
 homepage: ""
 category: "Knowledge"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # News Sentiment Scan
 
 舆情监控与情绪分析技能,扫描多渠道信息源并进行情绪打分。覆盖港股、美股、A股市场,采集公司公告、新闻报道、券商研报与社交媒体讨论,经去噪处理后输出情绪温度计与重大事件清单.
@@ -333,3 +331,13 @@ A: 是的，新闻情感分析结果可以实时更新。我们的系统设计�
 2. **查看日志输出**: 定位具体错误行和异常类型
 3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
 4. **逐步调试**: 缩小问题范围,隔离故障模块
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

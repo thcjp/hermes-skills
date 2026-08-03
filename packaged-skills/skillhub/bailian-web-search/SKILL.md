@@ -1,5 +1,4 @@
 ---
-
 slug: bailian-web-search
 name: "bailian-web-search"
 version: 1.0.5
@@ -25,9 +24,8 @@ tools:
   - glob
 homepage: ""
 category: "Development"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # Bailian Web Search
 
 ## 专业版增强能力

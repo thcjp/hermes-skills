@@ -1,5 +1,4 @@
 ---
-
 slug: password-generator
 name: password-generator
 version: 1.1.1
@@ -22,9 +21,8 @@ tools:
 - write
 homepage: ''
 category: Automation
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置等能力。
 
 # Password Generator
@@ -231,3 +229,13 @@ A: 您可以在调用技能时指定排除规则，例如排除某些字符或�
 - **文件处理**: 支持多种文件格式的读取、解析和写入操作
 - **API集成**: 通过标准化接口调用外部服务并处理响应
 - **命令执行**: 在安全沙箱中执行系统命令并收集结果
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

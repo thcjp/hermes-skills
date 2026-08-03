@@ -1,5 +1,4 @@
 ---
-
 slug: doubao-image-gen-tool-pro
 name: doubao-image-gen-tool-pro
 version: 1.0.0
@@ -28,9 +27,8 @@ tools:
 homepage: ''
 category: Creative
 pricing_tier: L2-标准级
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供规范流程和配置指南等能力。
 
 > **核心功能**: 本技能提供时使用、、工作流优化时使用、处理、工作流优化时使用等能力。
@@ -264,3 +262,13 @@ A: 向后兼容。但建议及时更新到最新版本以获取新功能和修�
 4. **逐步调试**: 缩小问题范围,隔离故障模块
 
 ## 热门问答
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

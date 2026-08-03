@@ -1,5 +1,6 @@
 ---
 
+
 slug: aws-agentcore-langgraph
 name: "aws-agentcore-langgraph"
 version: 1.0.3
@@ -31,8 +32,11 @@ tools:
   - write
 homepage: ""
 category: "Operations"
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供从本地开发到生产部署的完整等能力。
 

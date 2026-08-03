@@ -1,5 +1,4 @@
 ---
-
 slug: cron-expert-pro
 name: cron-expert-pro
 version: 1.0.0
@@ -27,9 +26,8 @@ tools:
 homepage: ''
 category: Automation
 pricing_tier: L2-标准级
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供结构化的工作流程和配置指引等能力。
 # cron优秀实践专家（专业版）
 > **企业级定时系统治理。高级调度+遗留迁移+并发控制+清理工规则+完整陷阱库，方法论全覆盖。**

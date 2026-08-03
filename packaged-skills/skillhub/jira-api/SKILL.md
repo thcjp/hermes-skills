@@ -1,6 +1,4 @@
 ---
-
-
 slug: jira-api
 name: jira-api
 version: 1.0.9
@@ -29,11 +27,8 @@ tools:
 - write
 homepage: ''
 category: Development
-
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
-
 > **核心功能**: 本技能提供化工作流场景等能力。
 
 # Jira

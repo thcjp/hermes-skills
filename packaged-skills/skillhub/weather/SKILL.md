@@ -1,5 +1,4 @@
 ---
-
 slug: weather
 name: weather
 version: 1.0.1
@@ -25,9 +24,8 @@ tools:
 - write
 homepage: ''
 category: Automation
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供化工作流场景等能力。
 
 > **核心功能**: 本技能提供时使用、、习惯养成、、工作流优化时使用、处理、工作流优化时使用、化工作流与智能决策辅助等能力。

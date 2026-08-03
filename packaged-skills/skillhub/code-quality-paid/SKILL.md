@@ -1,5 +1,4 @@
 ---
-
 slug: code-quality-paid
 name: code-quality-paid
 version: 1.0.1
@@ -35,9 +34,8 @@ tools:
 - grep
 homepage: ''
 category: Development
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供化工作流场景等能力。
 > **核心功能**: 本技能提供中文交互等能力。
 > **核心功能**: 本技能提供代码审计等能力。

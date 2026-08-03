@@ -1,5 +1,4 @@
 ---
-
 slug: internet-search
 name: "internet-search"
 version: 0.3.5
@@ -23,9 +22,8 @@ tools:
   - grep
 homepage: ""
 category: "Knowledge"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # Internet Search
 
 ## 专业版增强能力

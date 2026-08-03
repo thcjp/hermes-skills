@@ -1,5 +1,4 @@
 ---
-
 slug: dns-lookup
 name: "dns-lookup"
 version: 1.0.1
@@ -27,9 +26,8 @@ tools:
 - write
 homepage: '""'
 category: '"Automation"'
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 
 # Dns Lookup

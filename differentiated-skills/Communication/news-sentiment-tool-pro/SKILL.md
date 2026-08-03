@@ -1,5 +1,4 @@
 ---
-
 slug: news-sentiment-tool-pro
 name: news-sentiment-tool-pro
 version: 1.0.0
@@ -26,9 +25,8 @@ tools:
 homepage: ''
 category: Knowledge
 pricing_tier: L2-标准级
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供规范流程和配置说明、化工作流场景等能力。
 
 舆情情绪分析工具专业版是一款面向专业投资者与企业用户的企业级舆情监控解决方案。在完全兼容免费版单股扫描能力的基础上,专业版解锁了批量多股票扫描、自定义权重配置、结构化报告导出、历史趋势对比分析、异常情绪实时预警等高级能力.
@@ -444,3 +442,13 @@ csv 7 --format csv --output report.csv
 3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
 4. **逐步调试**: 缩小问题范围,隔离故障模块
 ## 问题解答汇总
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

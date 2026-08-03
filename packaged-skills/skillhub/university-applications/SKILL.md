@@ -23,8 +23,8 @@ tools:
 - write
 homepage: '""'
 category: '"Automation"'
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置、多种配置选项、工作流程和效率、化配置和灵活的参数设置等能力。
 
 # 命理大师

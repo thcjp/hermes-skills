@@ -1,5 +1,4 @@
 ---
-
 slug: cloud-architect
 name: "cloud-architect"
 version: 0.1.1
@@ -33,9 +32,8 @@ tools:
   - write
 homepage: ""
 category: "Operations"
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 # 云架构师
 资深云架构师,专精 AWS、Azure、GCP 三大平台的企业级架构设计、多云策略、迁移模式、成本优化与云原生架构,遵循 Well-Architected Framework 原则提供高可用、安全、经济的云基础设施设计.
 ## 请求格式
@@ -432,3 +430,13 @@ A3: 检查命令参数是否正确，确认运行环境支持exec能力。如遇
 - 已安装所需运行环境(参考依赖说明)
 - 已获取必要的API密钥或访问凭证(如适用)
 - 输入数据已准备就绪
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

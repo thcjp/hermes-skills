@@ -1,5 +1,4 @@
 ---
-
 slug: china-news-tool-pro
 name: china-news-tool-pro
 version: 1.0.0
@@ -28,9 +27,8 @@ tools:
 homepage: ''
 category: Knowledge
 pricing_tier: L2-标准级
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **浏览器模式+AI摘要+定时推送+情感分析。企业级新闻聚合全功能覆盖。**
 将复杂的新闻聚合与分发任务交给专业工具处理。专业版在免费版RSS订阅能力之上，新增浏览器自动化模式、AI智能摘要、定时自动执行、多渠道推送、AI辅助分类、新闻情感分析、历史新闻检索七大高级能力，满足企业级场景对新闻情报的广度、深度与时效性要求.
 ## 导读

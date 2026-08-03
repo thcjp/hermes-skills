@@ -1,5 +1,6 @@
 ---
 
+
 slug: chromecast-control-tool-free
 name: chromecast-control-tool-free
 version: 1.0.0
@@ -28,8 +29,11 @@ tools:
 homepage: ''
 category: Automation
 pricing_tier: free
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供中文交互等能力。
 

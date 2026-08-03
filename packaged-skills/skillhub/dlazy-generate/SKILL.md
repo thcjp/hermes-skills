@@ -1,5 +1,4 @@
 ---
-
 slug: dlazy-generate
 name: dlazy-generate
 version: 1.3.3
@@ -25,10 +24,8 @@ tools:
 - write
 homepage: ''
 category: Automation
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
-
 > **核心功能**: 本技能提供中文交互、时使用等能力。
 
 # Dlazy Generate

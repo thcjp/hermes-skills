@@ -1,5 +1,4 @@
 ---
-
 slug: knowledge-ontology
 name: knowledge-ontology
 version: 2.0.0
@@ -24,9 +23,8 @@ tools:
 homepage: ''
 category: Agents
 pricing_tier: free
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
 > **核心功能**: 本技能提供化工作流场景等能力。
 
 # 知识本体（Knowledge Ontology）
@@ -398,3 +396,13 @@ A3: 检查命令参数是否正确，确认运行环境支持exec能力。如遇
 1. **检查环境**: 确认运行时和依赖已安装
 2. **执行命令**: 使用正确的参数格式执行
 3. **查看输出**: 检查命令输出和退出码
+
+## 依赖说明
+
+### 运行环境
+- **Agent 平台**: 支持SKILL.md的任意AI Agent
+- **操作系统**: Windows / macOS / Linux
+
+### 可用性分类
+- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
+- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

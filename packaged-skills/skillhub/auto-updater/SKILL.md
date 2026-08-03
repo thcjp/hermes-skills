@@ -1,5 +1,4 @@
 ---
-
 name: auto-updater
 slug: auto-updater
 displayName: "每日自动检查更新"
@@ -12,9 +11,10 @@ tools:
   - Write
   - Edit
   - Bash
-
+homepage: "https://skillhub.cn/skill/"
+tags:
+  - 通用工具
 ---
-
 # Auto-Updater Skill
 
 Keep your SkillHub and skills up to date automatically with daily update checks.

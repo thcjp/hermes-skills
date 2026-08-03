@@ -30,6 +30,7 @@ tools:
 homepage: ''
 category: Automation
 pricing_tier: free
+homepage: "https://skillhub.cn/skill/"
 
 ---
 

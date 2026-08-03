@@ -1,4 +1,5 @@
 ---
+
 slug: agent-browser-cli
 name: agent-browser-cli
 version: "1.0.0"
@@ -7,7 +8,7 @@ summary: 使用 agent-browser CLI 进行浏览器自动化。用于签到、填�
   (2) 需要签到、填表、点击按钮 (...
 license: MIT
 description: |-
-  使用 agent-browser CLI 进行浏览器自动化。用于签到、填表、截图、信息抓取等需要控制浏览器的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。
+  使用 agent-browser CLI 进行浏览器自动化。用于签到、填表、截图、信息抓取等需要控制浏览器的任务。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。
 tags:
 - Research
 - Automation
@@ -17,14 +18,14 @@ tools:
 pricing_tier: "L4"
 pricing_model: "monthly"
 suggested_price: 99.9
+
 ---
 
 # Agent Browser CLI
 
 Vercel 出品的浏览器自动化 CLI，基于 Playwright，比标准浏览器工具更快更灵活。
 
-## 快速开始
-
+## 系统准备
 ```bash
 agent-browser open <url>     # 打开网页
 agent-browser snapshot       # 获取页面可访问性树
@@ -141,16 +142,13 @@ agent-browser close
 3. **保持浏览器开启** - 多个操作可以在同一浏览器会话中完成
 4. **完成后关闭** - 用 `agent-browser close` 释放资源
 
-## 依赖说明
-
+## 环境要求
 如果 agent-browser 未安装：
 
 ```bash
 npm install -g agent-browser
 agent-browser install
 ```
-
-## 依赖说明
 
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
@@ -168,8 +166,7 @@ agent-browser install
 - **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
 
-## 核心能力
-
+## 能力矩阵
 - 使用 agent-browser CLI 进行浏览器自动化
 - 用于签到、填表、截图、信息抓取等需要控制浏览器的任务
 - 触发条件：(1) 用户要求自动化浏览器操作
@@ -192,24 +189,21 @@ Agent Browser CLI 解决了多个真实验证痛点，包括：1) 自动化重�
 
 Agent Browser CLI 的技术或方法创新点包括：1) 结合 Playwright 和 CLI 的优势，提供更强大的自动化能力；2) 引入 ref 引用机制，简化元素定位过程；3) 支持多种等待机制，提高自动化脚本的健壮性；4) 提供丰富的截图功能，方便问题排查。
 
-## 适用场景
-
+## 应用场景
 | 场景 | 输入 | 输出 |
 |------|------|------|
 | 基础使用 | 用户请求 | 处理结果 |
 
 **不适用于**：需要人工判断的复杂决策场景
 
-## 错误处理
-
+## 异常管理机制
 | 错误场景 | 原因 | 处理方式 |
 |---------|------|---------|
 | 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
 | 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
 | 网络错误 | 连接超时或不可达 | 检查网络连接后重试，参考国内替代方案 |
 
-## 常见问题
-
+## 常见问题集
 ### Q1: 如何开始使用Agent Browser CLI？
 A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
 

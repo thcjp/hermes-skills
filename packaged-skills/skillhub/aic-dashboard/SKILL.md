@@ -1,5 +1,6 @@
 ---
 
+
 slug: aic-dashboard
 name: aic-dashboard
 version: 1.8.1
@@ -33,8 +34,11 @@ tools:
 - write
 homepage: ''
 category: Automation
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 

@@ -1,5 +1,4 @@
 ---
-
 slug: free-web-search
 name: free-web-search
 version: 8.1.1
@@ -24,10 +23,8 @@ tools:
 - glob
 homepage: ''
 category: Development
-
+homepage: "https://skillhub.cn/skill/"
 ---
-
-
 > **核心功能**: 本技能提供、排名提升、搜索流量优化时使用、、关键词分析、排名提升、搜索流量优化时使用、化工作流场景等能力。
 
 # Free Web Search

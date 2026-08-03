@@ -1,5 +1,6 @@
 ---
 
+
 slug: dashboard-builder-pro
 name: dashboard-builder-pro
 version: 1.0.0
@@ -27,8 +28,11 @@ tools:
 homepage: ''
 category: Creative
 pricing_tier: L2-标准级
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 

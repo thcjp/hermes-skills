@@ -1,5 +1,6 @@
 ---
 
+
 slug: agent-telegram
 name: "agent-telegram"
 version: 1.0.1
@@ -33,8 +34,11 @@ tools:
   - grep
 homepage: ""
 category: "Agents"
+homepage: "https://skillhub.cn/skill/"
+
 
 ---
+
 
 # Agent Telegram
 

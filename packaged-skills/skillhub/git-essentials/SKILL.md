@@ -1,5 +1,4 @@
 ---
-
 name: git-essentials
 slug: git-essentials
 displayName: "Git版本管理工具"
@@ -9,9 +8,10 @@ description: "Git版本控制必备命令与团队协作工作流技能，系统
 license: "MIT"
 tools:
   - read
-
+homepage: "https://skillhub.cn/skill/"
+tags:
+  - 通用工具
 ---
-
 ## 热门问题
 ### Q1: 如何解决合并冲突？
 A: 执行 `git status` 列出冲突文件，打开文件查找 `<<<<<<<`、`=======`、`>>>>>>>` 标记，手动保留所需内容并删除标记，随后 `git add <文件>` 标记已解决，最后 `git commit` 完成合并。也可使用 `git merge --abort` 放弃本次合并。
