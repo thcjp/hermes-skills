@@ -1,6 +1,5 @@
 ---
 
-
 slug: openai-ai
 name: "openai-ai"
 version: 1.0.7
@@ -8,7 +7,7 @@ displayName: "llm-provider AI工具"
 summary: "管OpenAI文件/助手/向量库/批次/微调/模型资源。Manage llm-provider files, assistants, vector stores, batches, fine"
 summary_zh: "管OpenAI文件/助手/向量库/批次/微调/模型资源。Manage llm-provider files, assistants, vector stores, batches, fine"
 license: "MIT"
-description: |- 功能涵盖: openai。
+description: |- 功能涵盖:。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。
   Manage llm-provider files, assistants, vector stores, batches, fine-tuning
   jobs, and model resources vi。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
 tags:
@@ -25,9 +24,7 @@ tools:
 homepage: ""
 category: "Automation"
 
-
 ---
-
 
 # llm-provider
 
@@ -44,13 +41,6 @@ category: "Automation"
 ## 能力清单
 - Manage llm-provider files, assistants, vector stores, batches, fine-tuning
   jobs, and model resources vi
-
-## 快速部署
-1. 确认运行环境满足依赖说明中的要求
-2. 在AI Agent对话中调用本技能,提供必要的输入参数
-3. 检查输出结果,根据需要进行后续处理
-
-> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用范围
 | 场景 | 输入 | 输出 |
@@ -253,9 +243,6 @@ clawlink_call_tool --tool "openai_create_image" \
   }'
 ```
 
-## 问题集锦
-### Q1: 如何开始使用OpenAI？
-A: 请参考使用流程和依赖说明章节，确保运行环境满足要求后调用本技能。
 ## 能力边界
 - 需要API Key，无Key环境无法使用
 -
@@ -295,14 +282,13 @@ A: llm-provider AI工具提供错误处理机制，如`RateLimitError`和`authen
 | 安全性 | 提升安全性等级 | 提供多种安全措施，保障数据安全和模型调用安全 |
 | 可扩展性 | 提升系统可扩展性 | 支持分布式任务调度和负载均衡，适应大规模应用需求 |
 
-## 功能特性
+## 功能特色
 - **自动化执行**: 管OpenAI文件/助手/向量库/批次/微调/模型资源。Manage llm-provider files, assis
 - **文件处理**: 支持多种文件格式的读取、解析和写入操作
 - **API集成**: 通过标准化接口调用外部服务并处理响应
 - **命令执行**: 在安全沙箱中执行系统命令并收集结果
 
-## 效率量化分析
-
+## 效能分析
 | 操作场景 | 手动耗时 | 自动化耗时 | 效率提升 |
 |----------|---------|-----------|---------|
 | 文件解析与提取 | 5-10分钟/个 | <5秒/个 | 60-120x |
@@ -313,8 +299,7 @@ A: llm-provider AI工具提供错误处理机制，如`RateLimitError`和`authen
 | 重复任务批量执行 | 因任务而异 | 线性缩减 | 5-50x |
 | 错误排查与修复 | 10-30分钟 | <30秒 | 20-60x |
 
-## 差异化对比
-
+## 差异分析
 | 对比维度 | llm-provider AI工具 | 传统手动方式 | 通用脚本工具 |
 |---------|------------|-------------|------------|
 | 自动化程度 | 全流程自动 | 完全手动 | 部分自动 |
@@ -323,7 +308,7 @@ A: llm-provider AI工具提供错误处理机制，如`RateLimitError`和`authen
 | 安全合规 | 内置安全检查 | 无安全保障 | 无安全保障 |
 | 适用场景 | 管OpenAI文件/助手/向量库/批次/微调/模型资源。Manage llm-p | 通用场景 | 通用场景 |
 
-## 错误应对
+## 故障应对方案
 针对llm-provider AI工具使用中可能遇到的常见问题,提供以下排查方案:
 
 | 错误类型 | 原因分析 | 解决方案 |
@@ -345,7 +330,7 @@ A: llm-provider AI工具提供错误处理机制，如`RateLimitError`和`authen
 3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
 4. **逐步调试**: 缩小问题范围,隔离故障模块
 
-## 快速上手
+## 快速入门指引
 1. **配置API密钥**: 在环境变量中设置对应的API Key
 2. **初始化连接**: 使用提供的凭证建立API连接
 3. **调用接口**: 传入必要参数执行API调用
@@ -361,10 +346,3 @@ A: llm-provider AI工具提供错误处理机制，如`RateLimitError`和`authen
 - 已安装所需运行环境(参考依赖说明)
 - 已获取必要的API密钥或访问凭证(如适用)
 - 输入数据已准备就绪
-
-### llm-provider AI工具通用排查步骤
-
-1. **检查输入参数**: 确认所有必填参数已提供且格式正确
-2. **查看日志输出**: 定位具体错误行和异常类型
-3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
-4. **逐步调试**: 缩小问题范围,隔离故障模块

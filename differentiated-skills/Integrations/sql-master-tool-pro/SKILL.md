@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: sql-master-tool-pro
 name: sql-master-tool-pro
 version: 1.0.0
@@ -32,10 +30,7 @@ homepage: ''
 category: Automation
 pricing_tier: L2-标准级
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供工作流程和配置参考等能力。
 

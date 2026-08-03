@@ -1,4 +1,5 @@
 ---
+
 slug: notion
 name: "notion"
 version: 1.0.1
@@ -31,6 +32,7 @@ tools:
 - grep
 homepage: '""'
 category: '"Automation"'
+
 ---
 
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
@@ -55,7 +57,7 @@ category: '"Automation"'
 - **搜索功能**：按标题和内容搜索用户有权限访问的页面和数据库
 - **批量操作**：支持单次请求批量创建最多100个块、批量查询数据库条目（分页获取）
 
-## 快速入门
+## 初学指南
 1. 确认运行环境满足依赖说明中的要求
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
@@ -241,13 +243,6 @@ category: '"Automation"'
 - `query_db` 默认返回10条，最大100条，通过 `start_cursor` 分页获取
 - 避免频繁API调用，Notion API限制每秒3次请求
 
-## 异常响应
-| 错误场景 | 原因 | 处理方式 |
-|:---:|:---:|:---:|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 检查网络连接与代理设置 |
-
 ## 安装与配置
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
@@ -272,7 +267,7 @@ export NOTION_TOKEN="secret_your_integration_token_here"
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
 
-## 问答汇总
+## 问答速查
 ### Q1: 如何开始使用Notion API？
 A: 首先在 https://notion.so/my-integrations 创建Internal Integration，获取Token（`secret_` 开头）。然后在Notion中打开要操作的页面或数据库，点击右上角"..." → "Connections" → 搜索并添加你的Integration。最后将Token设置为环境变量 `NOTION_TOKEN`，即可通过 `create_page`、`query_db`、`append_blocks` 等操作管理Notion内容。
 
@@ -285,7 +280,7 @@ A: Notion的富文本通过 `rich_text` 数组实现，每个元素可指定不�
 ### Q4: 数据库查询的筛选语法是怎样的？
 A: 筛选使用 `filter` 对象，支持 `and`/`or` 组合条件。单属性筛选：`{"property": "Status", "select": {"equals": "进行中"}}`。多属性组合：`{"and": [{"property": "Status", "select": {"equals": "进行中"}}, {"property": "Priority", "select": {"equals": "高"}}]}`。每种属性类型有不同的筛选操作符：select支持 `equals`/`does_not_equal`，date支持 `before`/`after`/`on_or_before`，text支持 `contains`/`starts_with`。
 
-## 错误处理机制
+## 错误管理机制
 | 错误场景(续)| 原因 | 处理方式 |
 |----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 重试请求；确认Agent平台LLM服务正常 |
@@ -338,7 +333,7 @@ A: 筛选使用 `filter` 对象，支持 `and`/`or` 组合条件。单属性筛�
 | 块内容无法追加 | 页面ID错误或权限问题 | 检查页面ID和权限 | 确保页面ID正确且具有追加内容的权限 |
 | 自动化任务失败 | 依赖的服务不可用或配置错误 | 检查依赖服务状态和配置 | 修复依赖服务或调整配置 |
 
-## 安全准则
+## 安全实践准则
 1. 确保Notion API Token安全，避免泄露给未授权人员。
 2. 定期检查API调用日志，及时发现异常调用行为。
 3. 对敏感数据进行加密处理，防止数据泄露。
@@ -362,8 +357,7 @@ A: 筛选使用 `filter` 对象，支持 `and`/`or` 组合条件。单属性筛�
 - **命令执行**: 在安全沙箱中执行系统命令并收集结果
 - **信息检索**: 快速搜索和过滤目标数据
 
-## FAQ
-
+## 指南中心
 ### Q1: "Notion笔记工具"支持哪些输入格式？
 
 A1: "Notion API创建管理页面/数据库/块。Notion API for creating and managing pages, databases,。支持文本指令和结构化参数输入，具体格式参考使用流程章节。

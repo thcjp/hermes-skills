@@ -42,7 +42,7 @@ category: Automation
 - Compress text semantically with iterative validation, anchor checksums,
   and verified information
 
-## 快速入门
+## 零基础入门
 1. 确认运行环境满足依赖说明中的要求
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
@@ -132,10 +132,10 @@ category: Automation
 export API_KEY="${API_KEY:?请设置环境变量}"
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
-## 问题集锦
+## 疑问汇总集
 ### Q1: 如何开始使用Compress？
 A: 请参考使用流程和依赖说明章节，确保运行环境满足要求后调用本技能。
-## 错误处理机制
+## 错误应对体系
 | 错误场景 | 原因 | 处理方式 |
 |:------|------:|:------|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 请求重试；确认Agent平台LLM服务正常 |
@@ -225,7 +225,7 @@ A: Compress技能支持Windows、macOS和Linux操作系统，需要在Agent平�
 | 敏感数据暴露 | 高 | 输出结果中不包含密钥、令牌等敏感信息 | 日志脱敏审查 |
 | 未授权访问 | 中 | 限制访问权限，实施认证机制 | 定期审计访问日志 |
 
-## 功能特性
+## 功能特点
 - **自动化执行**: 语义压缩文本,迭代校验+锚点校验和,信息无损瘦身。Compress text semantically with ite
 - **文件处理**: 支持多种文件格式的读取、解析和写入操作
 - **API集成**: 通过标准化接口调用外部服务并处理响应

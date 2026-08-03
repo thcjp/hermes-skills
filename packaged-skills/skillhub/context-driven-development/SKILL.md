@@ -1,6 +1,5 @@
 ---
 
-
 slug: context-driven-development
 name: "context-driven-development"
 version: 1.0.1
@@ -8,8 +7,7 @@ displayName: Context-Driven Devel
 summary: "Integrate project context with code parallelly, using structured documents to accumulate knowledge."
 summary_zh: "将项目上下文与代码并行整合，使用结构化文档积累知识。"
 license: "MIT"
-description: |-
-  Integrate project context with code parallelly, using structured documents to accumulate knowledge. Suitable for code generation, programming assistance, debugging, testing, and development deployment. Not applicable to ambiguous requirements without a clear technical stack. S...
+description: Integrate project context with code parallelly, using structured documents to accumulate knowledge. Suitable for code generation, programming assistance, debugging, testing, and development deployment. Not applicable to ambiguous requirements without a clear technical stack. S。可提供提升工作效率
 tags:
   - Knowledge
   - Context Management
@@ -24,9 +22,7 @@ tools:
 homepage: "https://example.com/context-driven-development"
 category: "Agents"
 
-
 ---
-
 
 # Core Features
 
@@ -193,15 +189,6 @@ A: No, the skill is not suitable for ambiguous requirements without a clear tech
 ### Q5: How can I get support for the skill?
 A: You can get support by contacting the skill's support team at support@example.com.
 
-## Troubleshooting Guide
-
-| Error Phenomenon | Possible Cause | Diagnostic Steps | Solution |
-|---|---|---|---|
-| Skill not responding | Network issues | Check network connection | Retry operation or check network connection |
-| Incorrect output | Incorrect input format | Check input format | Correct input format and retry |
-| Skill not working as expected | Insufficient permissions | Check permissions | Provide appropriate permissions |
-| Skill not working at all | Incorrect API key configuration | Check API key configuration | Correct API key configuration and retry |
-
 ## Best Practices
 
 1. Use the skill regularly to maintain code quality and identify potential issues early.
@@ -262,16 +249,6 @@ A: You can get support by contacting the skill's support team at support@example
 
 The Context-Driven Development skill uses a combination of static code analysis, dependency vulnerability detection, and structured context document management to provide comprehensive code analysis and project management capabilities. The skill leverages machine learning algorithms to identify potential issues and suggest improvements, ensuring code quality and security.
 
-## 错误处理方案
-
-| Error Code | Reason | Handling Method | Recovery Strategy |
-|---|---|---|---|
-| 1006 | Ambiguous Requirements | Refine project requirements | Update project requirements and retry |
-| 1007 | Incompatible Code | Code Refactoring | Refactor incompatible code and retry |
-| 1008 | Large Codebase | Optimize Analysis | Optimize analysis settings and retry |
-| 1009 | Missing Dependencies | Dependency Installation | Install missing dependencies and retry |
-| 1010 | Outdated Dependencies | Dependency Upgrade | Upgrade outdated dependencies and retry |
-
 ## 创新亮点
 ### 效率提升量化分析表格
 
@@ -293,36 +270,13 @@ The Context-Driven Development skill uses a combination of static code analysis,
 | 部署效率 | 手动操作，易出错，耗时 | 自动化部署，快速高效，减少错误 |
 | 代码复用 | 代码复用率低，开发效率低 | 代码结构清晰，易于复用，提高开发效率 |
 
-## FAQ
-
-**Q1：Context-Driven Development如何帮助提高代码质量？**
-
-A1：Context-Driven Development通过自动化分析代码，可以快速发现潜在的问题，如代码风格不一致、注释缺失、代码复杂度高等，从而帮助开发者及时修复问题，提高代码质量。
-
-**Q2：Context-Driven Development如何实现文档的实时更新？**
-
-A2：Context-Driven Development利用代码分析结果，自动生成项目文档，当代码发生变化时，文档也会自动更新，确保文档与代码保持一致。
-
-**Q3：Context-Driven Development如何提高安全漏洞的检测效率？**
-
-A3：Context-Driven Development通过自动化扫描项目依赖，可以快速发现潜在的安全漏洞，并提供修复建议，从而提高安全漏洞的检测效率。
-
-**Q4：Context-Driven Development如何实现自动化部署？**
-
-A4：Context-Driven Development可以将部署流程集成到CI/CD管道中，实现自动化部署，提高部署效率，减少人工操作，降低出错率。
-
-**Q5：Context-Driven Development是否适用于大型项目？**
-
-A5：是的，Context-Driven Development适用于大型项目。它能够处理大量代码，并提供全面的分析和优化建议，帮助开发者更好地管理大型项目。
-
-## 功能概览
+## 功能一览
 - **自动化执行**: Integrate project context with code parallelly, using struct
 - **文件处理**: 支持多种文件格式的读取、解析和写入操作
 - **API集成**: 通过标准化接口调用外部服务并处理响应
 - **命令执行**: 在安全沙箱中执行系统命令并收集结果
 
-## 效率量化分析
-
+## 性能评估
 | 操作场景 | 手动耗时 | 自动化耗时 | 效率提升 |
 |----------|---------|-----------|---------|
 | 文件解析与提取 | 5-10分钟/个 | <5秒/个 | 60-120x |
@@ -333,8 +287,7 @@ A5：是的，Context-Driven Development适用于大型项目。它能够处理�
 | 重复任务批量执行 | 因任务而异 | 线性缩减 | 5-50x |
 | 错误排查与修复 | 10-30分钟 | <30秒 | 20-60x |
 
-## 差异化对比
-
+## 优势对比
 | 对比维度 | Context-Driven Devel | 传统手动方式 | 通用脚本工具 |
 |---------|------------|-------------|------------|
 | 自动化程度 | 全流程自动 | 完全手动 | 部分自动 |

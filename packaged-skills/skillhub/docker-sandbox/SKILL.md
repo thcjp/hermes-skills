@@ -1,6 +1,5 @@
 ---
 
-
 slug: docker-sandbox
 name: docker-sandbox
 version: 1.0.1
@@ -29,9 +28,7 @@ tools:
 homepage: ''
 category: Development
 
-
 ---
-
 
 > **核心功能**: 本技能提供化工作流场景等能力。
 
@@ -50,13 +47,6 @@ category: Development
 ## 功能能力
 - Create and manage Docker sandboxed VM environments for safe agent execution
 - Use when running unt
-
-## 开始使用
-1. 确认运行环境满足依赖说明中的要求
-2. 在AI Agent对话中调用本技能,提供必要的输入参数
-3. 检查输出结果,根据需要进行后续处理
-
-> 详细的输入输出格式请参考下方章节说明。
 
 ## 典型场景
 | 场景 | 输入 | 输出 |
@@ -182,10 +172,10 @@ docker sandbox exec -w /path/to/workspace my-sandbox bash -c "ls -la"
 result = "ready"
 ```
 
-## 问答汇总
+## 问答速查
 ### Q1: 如何开始使用Docker Sandbox？
 A: 请参考使用流程和依赖说明章节，确保运行环境满足要求后调用本技能。
-## 错误恢复
+## 异常恢复指引
 | 错误场景(续)| 原因 | 处理方式 |
 |----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 请求重试；确认Agent平台LLM服务正常 |
@@ -257,13 +247,6 @@ A: 如果Docker沙箱环境工具出现故障，可以尝试重启沙箱环境�
 - **API集成**: 通过标准化接口调用外部服务并处理响应
 - **命令执行**: 在安全沙箱中执行系统命令并收集结果
 - **信息检索**: 快速搜索和过滤目标数据
-
-### Docker沙箱环境工具通用排查步骤
-
-1. **检查输入参数**: 确认所有必填参数已提供且格式正确
-2. **查看日志输出**: 定位具体错误行和异常类型
-3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
-4. **逐步调试**: 缩小问题范围,隔离故障模块
 
 ### Docker沙箱环境工具通用排查步骤
 

@@ -1,6 +1,5 @@
 ---
 
-
 slug: linear-cli-pro
 name: linear-cli-pro
 version: 1.0.1
@@ -29,9 +28,7 @@ homepage: ''
 category: Automation
 pricing_tier: L2-标准级
 
-
 ---
-
 
 > **核心功能**: 本技能提供化工作流场景等能力。
 

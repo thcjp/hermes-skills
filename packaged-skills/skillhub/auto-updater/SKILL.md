@@ -5,7 +5,7 @@ slug: auto-updater
 displayName: "每日自动检查更新"
 version: "1.0.0"
 summary: "每日自动检查更新SkillHub与技能"
-description: "每日自动检查更新SkillHub与技能。Automatically update  and all installed skills once daily。触发关键词: automatically, auto-updater, auto, , installed, updater, update,。"
+description: 每日自动检查更新SkillHub与技能。Automatically update  and all installed skills once daily。触发关键词: automatically, auto-updater, auto, , installed, updater, update,。可辅助提升工作效率
 license: "MIT"
 tools:
   - Read
@@ -14,7 +14,6 @@ tools:
   - Bash
 
 ---
-
 
 # Auto-Updater Skill
 
@@ -218,16 +217,6 @@ SkillHub cron add \
 result = "ready"
 ```
 
-## 问答汇总
-### Q1: 如何开始使用Auto-Updater Skill？
-A: 请先阅读使用流程章节，确认环境满足依赖说明中的要求。
-
-### Q2: 遇到错误怎么办？
-A: 请参考错误处理章节，按照表格中的处理方式操作。
-
-### Q3: Auto-Updater Skill有什么限制？
-A: 请参考已知限制章节了解具体限制。
-
 ## 注意事项
 - 需要LLM支持，无LLM环境无法使用
 - 复杂场景可能需要人工辅助判断
@@ -276,7 +265,7 @@ A: 如果更新过程中技能有冲突，SkillHub会停止更新并提示冲突
 ### Q5: 如何查看更新日志？
 A: 可以通过SkillHub命令行工具查看更新日志，或者查看SkillHub的日志文件。
 
-## 安全声明
+## 安全保证
 1. 确保SkillHub和技能更新来源可靠，避免恶意软件感染。
 2. 更新过程中，确保SkillHub和技能的权限设置正确，避免权限问题导致更新失败。
 3. 定期检查SkillHub和技能的更新日志，及时发现并处理潜在的安全问题。
@@ -292,23 +281,6 @@ A: 可以通过SkillHub命令行工具查看更新日志，或者查看SkillHub�
 | 网络通信安全 | 中 | 使用HTTPS协议，验证SSL证书 | 定期检查证书有效期 |
 | 敏感数据暴露 | 高 | 输出结果中不包含密钥、令牌等敏感信息 | 日志脱敏审查 |
 | 未授权访问 | 中 | 限制访问权限，实施认证机制 | 定期审计访问日志 |
-
-## 边界条件与错误处理
-
-### 边界条件
-| 边界场景 | 触发条件 | 处理方式 | 预期结果 |
-| --- | --- | --- | --- |
-| 网络中断 | 检查更新时网络中断 | 重试更新操作 | 更新成功或通知用户网络问题 |
-| SkillHub版本过旧 | 检查更新时发现SkillHub版本过旧 | 提示用户升级SkillHub | 用户升级后继续更新 |
-| 没有可用的更新 | 检查更新时没有发现可用的更新 | 提示用户没有可用的更新 | 用户确认后继续执行其他任务 |
-
-### 错误处理方案
-| 错误码 | 原因 | 处理方式 | 恢复策略 |
-| --- | --- | --- | --- |
-| 401 | 权限不足 | 确认权限设置，重新尝试 | 用户解决权限问题后重试 |
-| 500 | 服务器错误 | 等待一段时间后重试 | 确认服务器状态后重试 |
-| 404 | 资源未找到 | 检查更新源，确认资源地址 | 修正资源地址后重试 |
-| 503 | 服务不可用 | 等待一段时间后重试 | 确认服务状态后重试 |
 
 ## 输入格式 (参数表格: 参数名|类型|必填|默认值|说明)
 
@@ -368,7 +340,7 @@ SkillHub config set auto-updater custom-config '{"update_channel": "beta", "upda
 - **API集成**: 通过标准化接口调用外部服务并处理响应
 - **命令执行**: 在安全沙箱中执行系统命令并收集结果
 
-## 快速部署
+## 上线流程
 1. **配置API密钥**: 在环境变量中设置对应的API Key
 2. **初始化连接**: 使用提供的凭证建立API连接
 3. **调用接口**: 传入必要参数执行API调用
@@ -378,12 +350,6 @@ SkillHub config set auto-updater custom-config '{"update_channel": "beta", "upda
 1. **检查环境**: 确认运行时和依赖已安装
 2. **执行命令**: 使用正确的参数格式执行
 3. **查看输出**: 检查命令输出和退出码
-
-### 前置条件
-
-- 已安装所需运行环境(参考依赖说明)
-- 已获取必要的API密钥或访问凭证(如适用)
-- 输入数据已准备就绪
 
 ### 前置条件
 
