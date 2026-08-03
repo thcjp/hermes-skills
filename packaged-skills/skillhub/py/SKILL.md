@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: py
 name: py
 version: 1.0.2
@@ -28,10 +26,7 @@ tags:
 - none
 category: Automation
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置、多种配置选项等能力。
 

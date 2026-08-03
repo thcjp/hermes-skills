@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: archive
 name: "archive"
 version: 1.0.1
@@ -32,10 +30,7 @@ tags:
   - items
 category: "Automation"
 
-
-
 ---
-
 
 # 智能内容归档
 

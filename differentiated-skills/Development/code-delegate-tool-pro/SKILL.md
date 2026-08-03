@@ -31,7 +31,6 @@ homepage: ''
 category: Development
 pricing_tier: L2-标准级
 
-
 ---
 
 > **核心功能**: 本技能提供中文交互等能力。

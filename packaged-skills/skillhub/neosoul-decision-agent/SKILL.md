@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: neosoul-decision-agent
 name: "neosoul-decision-agent"
 version: 1.0.1
@@ -35,11 +32,7 @@ tags:
   - 更新
 category: "Agents"
 
-
-
-
 ---
-
 
 # 自主决策代理（Neosoul Decision Agent）
 

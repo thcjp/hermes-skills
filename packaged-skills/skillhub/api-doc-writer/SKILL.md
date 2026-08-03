@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: api-doc-writer
 name: api-doc-writer
 version: 1.0.2
@@ -33,10 +31,7 @@ tools:
 homepage: ''
 category: Development
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 

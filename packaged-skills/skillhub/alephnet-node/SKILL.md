@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: alephnet-node
 name: "alephnet-node"
 version: 1.4.1
@@ -32,10 +30,7 @@ tools:
 homepage: ""
 category: "Automation"
 
-
-
 ---
-
 
 # Alephnet Node
 

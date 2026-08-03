@@ -145,10 +145,17 @@ INFO_CHECKS = [
 ]
 
 
-# V130 A4: 与template_cleanup.collect_skill_files是重复定义, 已统一。
-# 两者签名/逻辑/返回类型完全一致(均扫描PACKAGED_SKILLS_DIR+DIFFERENTIATED_DIR, 返回(Path,source)列表)。
-# 本模块改为从template_cleanup导入。
-from template_cleanup import collect_skill_files
+# V130 A4: 原从template_cleanup导入, 该模块已删除, 现内联实现
+def collect_skill_files():
+    """扫描PACKAGED_SKILLS_DIR + DIFFERENTIATED_DIR, 返回(Path, source)列表"""
+    results = []
+    for skill_dir in [PACKAGED_SKILLS_DIR, DIFFERENTIATED_DIR]:
+        if not skill_dir.exists():
+            continue
+        source = 'packaged' if 'packaged' in str(skill_dir) else 'differentiated'
+        for skill_md in skill_dir.rglob('SKILL.md'):
+            results.append((skill_md, source))
+    return results
 
 
 # ============ check_skill 子检查函数 (V137 I1 拆分) ============

@@ -1,6 +1,5 @@
 ---
 
-
 slug: afrexai-knowledge-management
 name: afrexai-knowledge-management
 version: 1.0.1
@@ -29,9 +28,7 @@ tags:
 - 用户提供
 category: Automation
 
-
 ---
-
 
 > **核心功能**: 本技能提供中文交互等能力。
 

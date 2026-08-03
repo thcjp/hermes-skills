@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: moltbook-filter
 name: moltbook-filter
 version: 1.0.2
@@ -28,10 +26,7 @@ tags:
 - node
 category: Automation
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供中文交互、时使用、、工作流优化时使用、处理、工作流优化时使用等能力。
 
@@ -98,8 +93,7 @@ export API_KEY="${API_KEY:?请设置环境变量}"
 
 ### 4. JSON Feed 过滤
 - `node filter.js feed [submolt]` 返回移除垃圾的JSON
-- 适合管道到其他工具:`node filter.js feed agents | jq '.posts[] | {title, author: .author.name}'`
-- 输出结构与原API一致,可直接替换原feed消费
+- 适合管道到其他工具:`node filter.js feed agents | jq '.posts[] | {title, - 输出结构与原API一致,可直接替换原feed消费
 
 ### 5. 客户端过滤架构
 - 仅读取API,不修改平台内容(只读调用)

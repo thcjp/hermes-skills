@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: cloud
 name: "cloud"
 version: 1.0.1
@@ -32,10 +30,7 @@ tools:
 homepage: ""
 category: "Operations"
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供、备份策略、等能力。
 

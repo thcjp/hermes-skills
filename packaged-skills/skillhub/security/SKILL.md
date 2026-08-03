@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: security
 name: security
 version: 1.0.13
@@ -28,10 +26,7 @@ tags:
 - critical
 category: Security
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供时使用、、工作流优化时使用、处理、工作流优化时使用、化配置和灵活的参数设置等能力。
 

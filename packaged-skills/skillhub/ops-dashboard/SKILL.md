@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: ops-dashboard
 name: ops-dashboard
 version: 1.0.1
@@ -26,11 +23,7 @@ tools:
 homepage: ''
 category: Automation
 
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置、工作流程和效率等能力。
 # 运维看板(专业版)

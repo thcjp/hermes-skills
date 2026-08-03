@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: rust
 name: rust
 version: 1.0.2
@@ -29,10 +27,7 @@ tags:
 - 错误处理
 category: Automation
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 

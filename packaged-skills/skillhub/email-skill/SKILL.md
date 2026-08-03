@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: email-skill
 name: email-skill
 version: 0.1.1
@@ -32,10 +30,7 @@ tools:
 homepage: ''
 category: Communication
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供化工作流场景等能力。
 

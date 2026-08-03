@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: memo-quickstart
 name: memo-quickstart
 version: 1.0.0
@@ -30,11 +27,9 @@ homepage: ''
 category: Creative
 pricing_tier: free
 
-
-
-
 ---
 
+> **核心功能**: 本技能提供、报表生成、统计洞察、数据可视化时使用等能力。
 
 > **核心功能**: 本技能提供中文交互、完整工作流程和配置指南、化工作流场景等能力。
 

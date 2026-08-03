@@ -1,6 +1,5 @@
 ---
 
-
 slug: data-format-converter
 name: "data-format-converter"
 version: 1.0.1
@@ -8,7 +7,7 @@ displayName: "数据格式转换器"
 summary: "在CSV、JSON、X"
 summary_zh: "在CSV、JSON、XML、YAML、TOML格式间高效互转，支持批量处理与嵌套结构处理。数据格式转换器——在CSV、JSON、XML、YAML、TOML等主流数据格式间高效转换. 核心能力"
 license: "MIT"
-description: |- 功能涵盖: format。 功能涵盖: c。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。
+description: |- 功能涵盖: format。 功能涵盖: c。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。 功能涵盖: converter。
   数据格式转换器——在CSV、JSON、XML、YAML、TOML等主流数据格式间高效转换.
   核心能力包括：
   - CSV与JSON互转（支持嵌套结构展开与扁平化）
@@ -38,10 +37,9 @@ tools:
 homepage: ""
 category: "Research"
 
-
-
 ---
 
+> **核心功能**: 本技能提供中文交互、、报表生成、统计洞察、数据可视化时使用等能力。
 
 > **核心功能**: 本技能提供表数组与嵌套表）等能力。
 

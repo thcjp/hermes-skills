@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: elite-longterm-memory
 name: elite-longterm-memory
 version: 1.2.4
@@ -28,10 +26,7 @@ tags:
 - 结果数据
 category: Agents
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置、工作流程和效率、化配置和灵活的参数设置等能力。
 

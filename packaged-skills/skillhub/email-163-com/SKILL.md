@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: email-163-com
 name: "email-163-com"
 version: 1.0.6
@@ -43,10 +41,7 @@ tools:
 homepage: '""'
 category: '"Communication"'
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 

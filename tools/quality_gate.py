@@ -1734,6 +1734,102 @@ def auto_fix_hallucination(skill_md_path: Path) -> dict:
     }
 
 
+def auto_fix_debranding(skill_md_path: Path) -> dict:
+    """自动修复去标识化检查发现的问题 (V147 R5 — 增强现有管道, 不创建新文件)
+
+    复用 check_debranding.py 的 FORBIDDEN_PATTERNS 检测逻辑,
+    对检测到的问题进行自动修复:
+    1. 平台/项目烙印词 → 移除或替换为通用表述
+    2. 溯源词 (based on / forked from / inspired by 等) → 删除包含该词的整行
+    3. GitHub/原仓库URL → 移除
+    4. 原作者署名 (author: / created by) → 移除
+
+    Returns:
+        dict: {
+            'fixed': bool,
+            'fixes': list,
+            'unfixable': list,
+        }
+    """
+    import re as _re
+
+    if not skill_md_path.exists():
+        return {'fixed': False, 'fixes': [], 'unfixable': []}
+
+    content = skill_md_path.read_text(encoding='utf-8', errors='replace')
+    if content.startswith('\ufeff'):
+        content = content[1:]
+
+    original = content
+    fixes = []
+    unfixable = []
+
+    # --- 1. 平台/项目烙印词 → 移除 ---
+    branding_patterns = [
+        (_re.compile(r'(?<![A-Za-z0-9_])(clawhub|clawsec|clawdbot|openclaw)(?![A-Za-z0-9_])', _re.IGNORECASE), ''),
+        (_re.compile(r'(?<![A-Za-z0-9_])(clawhut|clawhob|clawhvb)(?![A-Za-z0-9_])', _re.IGNORECASE), ''),
+        (_re.compile(r'(?<![A-Za-z0-9_])(fishclaw|narrato|dailyhot|novel_bridge|totalreclaw|kyaukyuai)(?![A-Za-z0-9_])', _re.IGNORECASE), ''),
+        (_re.compile(r'xianyu', _re.IGNORECASE), ''),
+        (_re.compile(r'老田和小甜甜'), ''),
+    ]
+    for pattern, replacement in branding_patterns:
+        matches = pattern.findall(content)
+        if matches:
+            content = pattern.sub(replacement, content)
+            fixes.append(f'平台/项目烙印词移除 ({", ".join(set(matches))})')
+
+    # --- 2. 溯源词 → 删除包含该词的整行 ---
+    tracing_line_patterns = [
+        _re.compile(r'^[^\n]*?(?i:based on)[^\n]*\n', _re.MULTILINE),
+        _re.compile(r'^[^\n]*?(?i:forked from)[^\n]*\n', _re.MULTILINE),
+        _re.compile(r'^[^\n]*?(?i:inspired by)[^\n]*\n', _re.MULTILINE),
+        _re.compile(r'^[^\n]*?(?i:adapted from)[^\n]*\n', _re.MULTILINE),
+        _re.compile(r'^[^\n]*?(?i:modified from)[^\n]*\n', _re.MULTILINE),
+        _re.compile(r'^[^\n]*?(?i:original:)[^\n]*\n', _re.MULTILINE),
+    ]
+    for pattern in tracing_line_patterns:
+        matches = pattern.findall(content)
+        if matches:
+            content = pattern.sub('', content)
+            fixes.append(f'溯源词行删除 ({len(matches)}行)')
+
+    # --- 3. GitHub/原仓库URL → 移除 ---
+    url_patterns = [
+        (_re.compile(r'https?://github\.com/\S+'), ''),
+        (_re.compile(r'https?://\S*(?:clawhub|openclaw|narrato|fishclaw)\S*', _re.IGNORECASE), ''),
+    ]
+    for pattern, replacement in url_patterns:
+        matches = pattern.findall(content)
+        if matches:
+            content = pattern.sub(replacement, content)
+            fixes.append(f'仓库URL移除 ({len(matches)}处)')
+
+    # --- 4. 原作者署名 → 移除 ---
+    author_patterns = [
+        (_re.compile(r'(?i)author:\s*\S+[^\n]*\n', _re.MULTILINE), ''),
+        (_re.compile(r'(?i)created by\s+\w+[^\n]*\n', _re.MULTILINE), ''),
+    ]
+    for pattern, replacement in author_patterns:
+        matches = pattern.findall(content)
+        if matches:
+            content = pattern.sub(replacement, content)
+            fixes.append(f'原作者署名移除 ({len(matches)}处)')
+
+    # --- 5. 清理因移除产生的多余空行 ---
+    content = _re.sub(r'\n{3,}', '\n\n', content)
+
+    # 写入修复后的内容
+    fixed = content != original
+    if fixed:
+        skill_md_path.write_text(content, encoding='utf-8')
+
+    return {
+        'fixed': fixed,
+        'fixes': fixes,
+        'unfixable': unfixable,
+    }
+
+
 def run_anti_hallucination_with_autofix(skill_md_path: Path, l2_report: dict = None,
                                         l3_report: dict = None, l4_report: dict = None) -> dict:
     """防幻觉检查 + 自动修复 (v3.2新增 — 增强现有管道)

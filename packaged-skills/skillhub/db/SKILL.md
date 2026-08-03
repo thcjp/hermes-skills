@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: db
 name: db
 version: 1.0.1
@@ -33,11 +30,7 @@ tools:
 homepage: ''
 category: Automation
 
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供时使用、化工作流场景等能力。
 

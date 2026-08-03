@@ -1,6 +1,5 @@
 ---
 
-
 slug: azure-ai-transcription-py
 name: "azure-ai-transcription-py"
 version: 0.1.1
@@ -32,9 +31,7 @@ tools:
 homepage: ""
 category: "Operations"
 
-
 ---
-
 
 # Azure Ai Transcription Py
 

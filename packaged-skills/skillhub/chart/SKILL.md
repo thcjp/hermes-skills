@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: chart
 name: "chart"
 version: 1.0.1
@@ -32,11 +30,7 @@ tools:
 homepage: ""
 category: "Automation"
 
-
-
-
 ---
-
 
 # Chart — 本地图表生成引擎
 

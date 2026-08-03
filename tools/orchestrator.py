@@ -411,9 +411,7 @@ def phase_enhance(dry_run: bool = False) -> Dict[str, Any]:
     print(f"  [修复链] 对 {len(fix_targets)} 个skill执行自动修复 (安全→幻觉→合规→内容→价值主张)...")
 
     # 懒加载修复函数 (函数内导入, 避免循环依赖)
-    from quality_gate import auto_fix_security_issues, auto_fix_hallucination
-    # auto_fix_debranding 未实现, 使用None标记跳过
-    auto_fix_debranding = None
+    from quality_gate import auto_fix_security_issues, auto_fix_hallucination, auto_fix_debranding
     from skill_batch_upgrader_v3 import auto_fix, auto_fix_content
     from fix_missing_fields import enhance_value_proposition, extract_frontmatter
 
@@ -521,12 +519,11 @@ def phase_enhance(dry_run: bool = False) -> Dict[str, Any]:
             fix_results.append({"slug": slug, "fix_type": "value_proposition", "changes": [], "error": str(e)})
 
         # 6. V147 R5: 去标识化修复 (项目烙印/平台烙印/溯源词/URL/署名 → 移除)
-        if auto_fix_debranding is not None:
-            try:
-                res = auto_fix_debranding(skill_md_path)
-                fix_results.append({"slug": slug, "fix_type": "debranding", "changes": res.get("fixes", [])})
-            except Exception as e:  # [V131 B2] 宽泛捕获: 异常收集错误继续批量处理
-                fix_results.append({"slug": slug, "fix_type": "debranding", "changes": [], "error": str(e)})
+        try:
+            res = auto_fix_debranding(skill_md_path)
+            fix_results.append({"slug": slug, "fix_type": "debranding", "changes": res.get("fixes", [])})
+        except Exception as e:  # [V131 B2] 宽泛捕获: 异常收集错误继续批量处理
+            fix_results.append({"slug": slug, "fix_type": "debranding", "changes": [], "error": str(e)})
 
     result["fix_results"] = fix_results
     result["fix_total"] = len(fix_results)

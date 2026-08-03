@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: knowledge-ontology
 name: knowledge-ontology
 version: 2.0.0
@@ -28,11 +25,7 @@ homepage: ''
 category: Agents
 pricing_tier: free
 
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供化工作流场景等能力。
 

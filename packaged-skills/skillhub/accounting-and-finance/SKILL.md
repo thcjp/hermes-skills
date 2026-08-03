@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: accounting-and-finance
 name: accounting-and-finance
 version: 1.0.3
@@ -34,11 +31,7 @@ homepage: null
 category: Finance
 pricing_tier: free
 
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供中文交互、共26项)、、化工作流场景等能力。
 > **核心功能**: 本技能提供师、基金经理、财务顾问等能力。

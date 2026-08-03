@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: llm-assistant-hub
 name: llm-assistant-hub
 version: 1.0.0
@@ -32,11 +29,7 @@ homepage: ''
 category: Agents
 pricing_tier: free
 
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供工作流程和配置参考、化工作流场景等能力。
 

@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: upstage-document-parse
 name: upstage-document-parse
 version: 1.0.6
@@ -31,11 +28,7 @@ tags:
 - document-parse
 category: Knowledge
 
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 

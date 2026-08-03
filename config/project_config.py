@@ -107,6 +107,20 @@ L2_MANUAL_REVIEW_THRESHOLD = 40  # L2需AI手动优化的阈值
 # L3评分阈值
 L3_PASS_THRESHOLD = 70           # L3试运行通过阈值（百分制）
 
+# L4-L8评分等级阈值 (V121 W3: 新增评分等级阈值常量)
+L4_GRADE_B = 80                  # L4功能质量B级
+L4_GRADE_C = 60                  # L4功能质量C级
+L4_GRADE_D = 40                  # L4功能质量D级
+L4_PASS_THRESHOLD = 60           # L4功能质量通过阈值(Coze门控使用)
+L5_GRADE_A = 90                  # L5内容真实性A级
+L5_GRADE_B = 75                  # L5内容真实性B级
+L5_GRADE_D = 40                  # L5内容真实性D级
+L6_GRADE_A = 80                  # L6可见性A级
+L6_GRADE_B = 60                  # L6可见性B级
+L6_GRADE_C = 30                  # L6可见性C级
+L8_GRADE_A = 80                  # L8安全审计A级
+L8_GRADE_B = 60                  # L8安全审计B级
+
 # ============ 门控阈值 ============
 
 MIN_TRACE_SCORE = TRACE_PASS_THRESHOLD
@@ -152,6 +166,7 @@ PLATFORM_CONFIG = {
     "skillhub": {
         "host": "https://skillhub.cn",
         "api_url": "https://skillhub.cn",
+        "page_base": "https://skillhub.cn/skill/",  # skill页面基址
         "waf_char_limit": 5800,
         "max_retries": 3,
     },

@@ -1,6 +1,5 @@
 ---
 
-
 slug: photo-captions
 name: photo-captions
 version: 1.2.6
@@ -28,9 +27,7 @@ tools:
 homepage: ''
 category: Automation
 
-
 ---
-
 
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置、时使用、、工作流优化时使用、处理、工作流优化时使用等能力。
 

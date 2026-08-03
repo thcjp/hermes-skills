@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: join-meeting
 name: join-meeting
 version: 1.1.16
@@ -28,10 +26,7 @@ tags:
 - voice
 category: Automation
 
-
-
 ---
-
 
 # 智能会议机器人
 

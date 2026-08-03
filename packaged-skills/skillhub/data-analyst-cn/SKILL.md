@@ -1,6 +1,5 @@
 ---
 
-
 slug: data-analyst-cn
 name: data-analyst-cn
 version: 1.0.24
@@ -33,9 +32,7 @@ tools:
 homepage: ''
 category: Research
 
-
 ---
-
 
 # 数据分析师
 

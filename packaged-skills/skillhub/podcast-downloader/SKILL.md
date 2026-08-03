@@ -1,6 +1,5 @@
 ---
 
-
 name: podcast-downloader
 slug: podcast-downloader
 displayName: 播客下载器
@@ -15,9 +14,7 @@ tools:
 - Edit
 - Bash
 
-
 ---
-
 
 > **核心功能**: 本技能提供多种输入格式等能力。
 

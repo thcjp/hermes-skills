@@ -1,7 +1,5 @@
 ---
 
-
-
 name: git-essentials
 slug: git-essentials
 displayName: "Git版本管理工具"
@@ -12,10 +10,7 @@ license: "MIT"
 tools:
   - read
 
-
-
 ---
-
 
 ## 热门问题
 ### Q1: 如何解决合并冲突？

@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: csv
 name: "csv"
 version: 1.0.1
@@ -35,11 +32,7 @@ tools:
 homepage: ""
 category: "Automation"
 
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供：UTF-8等能力。
 

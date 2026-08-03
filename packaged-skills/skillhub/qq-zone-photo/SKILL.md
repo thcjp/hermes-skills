@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: qq-zone-photo
 name: qq-zone-photo
 version: 1.0.4
@@ -27,10 +25,7 @@ tags:
 - json
 category: Automation
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置等能力。
 

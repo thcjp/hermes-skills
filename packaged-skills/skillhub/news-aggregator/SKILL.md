@@ -1,6 +1,5 @@
 ---
 
-
 slug: news-aggregator
 name: "news-aggregator"
 version: 1.0.4
@@ -25,9 +24,7 @@ tags:
   - api
 category: "Knowledge"
 
-
 ---
-
 
 > **核心功能**: 本技能提供提升工作效率等能力。
 

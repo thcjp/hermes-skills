@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: finance-radar
 name: "finance-radar"
 version: 1.1.1
@@ -27,10 +25,7 @@ homepage: '""'
 license: "MIT"
 category: '"Finance"'
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 

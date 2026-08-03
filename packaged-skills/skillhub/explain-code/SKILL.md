@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: explain-code
 name: "explain-code"
 version: 1.0.1
@@ -34,10 +32,7 @@ tools:
 homepage: '""'
 category: '"Development"'
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置、化配置和灵活的参数设置等能力。
 

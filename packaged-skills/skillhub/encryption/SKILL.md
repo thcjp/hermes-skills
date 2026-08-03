@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: encryption
 name: "encryption"
 version: 1.0.1
@@ -43,10 +41,7 @@ tools:
 homepage: ""
 category: "Automation"
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供化工作流与智能决策辅助等能力。
 

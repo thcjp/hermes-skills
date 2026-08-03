@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: dns
 name: "dns"
 version: 1.0.1
@@ -36,11 +34,7 @@ tools:
 homepage: ""
 category: "Automation"
 
-
-
-
 ---
-
 
 # DNS配置专家
 

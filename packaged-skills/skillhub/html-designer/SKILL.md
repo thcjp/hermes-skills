@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: html-designer
 name: "html-designer"
 version: 1.0.1
@@ -26,11 +24,7 @@ tools:
 homepage: ""
 category: "Creative"
 
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供提升工作效率等能力。
 

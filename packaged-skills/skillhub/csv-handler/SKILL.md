@@ -1,6 +1,5 @@
 ---
 
-
 slug: csv-handler
 name: "csv-handler"
 version: 2.1.1
@@ -35,9 +34,7 @@ tools:
 homepage: '""'
 category: '"Automation"'
 
-
 ---
-
 
 > **核心功能**: 本技能提供中文交互等能力。
 

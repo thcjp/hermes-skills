@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: sql
 name: sql
 version: 1.0.2
@@ -31,10 +29,7 @@ tags:
 - 设计与规
 category: Automation
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供时使用、化工作流场景等能力。
 

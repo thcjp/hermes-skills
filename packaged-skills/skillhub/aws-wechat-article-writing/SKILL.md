@@ -1,6 +1,5 @@
 ---
 
-
 slug: aws-wechat-article-writing
 name: "aws-wechat-article-writing"
 version: 1.0.26
@@ -32,9 +31,7 @@ tools:
 homepage: ""
 category: "Operations"
 
-
 ---
-
 
 > **核心功能**: 本技能提供等环节等能力。
 

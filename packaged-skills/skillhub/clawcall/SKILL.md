@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: clawcall
 name: clawcall
 version: 1.0.13
@@ -36,10 +34,9 @@ tools:
 homepage: ''
 category: Automation
 
-
-
 ---
 
+> **核心功能**: 本技能提供结构化输出和错误处理机制等能力。
 
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 

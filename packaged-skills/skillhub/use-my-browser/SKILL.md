@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: use-my-browser
 name: use-my-browser
 version: 1.0.1
@@ -27,10 +25,7 @@ tags:
 - 包含执行
 category: Automation
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置、多种应用场景、多种配置选项、时使用、、工作流优化时使用等能力。
 

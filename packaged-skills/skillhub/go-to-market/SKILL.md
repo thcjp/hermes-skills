@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: go-to-market
 name: go-to-market
 version: 0.1.1
@@ -25,10 +23,7 @@ tags:
 - 和执行日
 category: Automation
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供时使用、提升工作效率、、工作流优化时使用、处理、工作流优化时使用、化流程、批量处理、工作流优化时使用等能力。
 

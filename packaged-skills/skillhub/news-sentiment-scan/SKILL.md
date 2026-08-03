@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: news-sentiment-scan
 name: "news-sentiment-scan"
 version: 1.0.1
@@ -27,11 +24,7 @@ tools:
 homepage: ""
 category: "Knowledge"
 
-
-
-
 ---
-
 
 # News Sentiment Scan
 

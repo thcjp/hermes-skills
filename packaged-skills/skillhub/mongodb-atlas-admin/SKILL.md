@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: mongodb-atlas-admin
 name: mongodb-atlas-admin
 version: 1.0.1
@@ -26,10 +24,7 @@ tags:
 - node
 category: Automation
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置、多种应用场景、多种配置选项、时使用等能力。
 

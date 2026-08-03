@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: cron-guard
 name: cron-guard
 version: 1.0.1
@@ -29,11 +26,7 @@ homepage: ""
 category: "Automation"
 pricing_tier: free
 
-
-
-
 ---
-
 
 # 定时守护
 

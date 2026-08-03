@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: blog-writer-tool-pro
 name: blog-writer-tool-pro
 version: 1.0.0
@@ -31,10 +29,9 @@ homepage: ''
 category: Automation
 pricing_tier: L2-标准级
 
-
-
 ---
 
+> **核心功能**: 本技能提供化工作流场景等能力。
 
 > **核心功能**: 本技能提供规范流程和配置说明等能力。
 

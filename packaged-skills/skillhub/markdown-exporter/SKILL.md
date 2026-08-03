@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: markdown-exporter
 name: markdown-exporter
 version: 3.6.11
@@ -28,11 +25,7 @@ tags:
 - output
 category: Development
 
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置、时使用、、工作流优化时使用、处理、工作流优化时使用、化配置和灵活的参数设置等能力。
 

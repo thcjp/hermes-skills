@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: github-manager
 name: "github-manager"
 version: 1.0.1
@@ -39,11 +36,7 @@ tools:
 homepage: ""
 category: "Development"
 
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供等高级能力等能力。
 # GitHub管理器(专业版)

@@ -46,7 +46,7 @@ except ImportError:
 # 原ORG_ID=862导致API返回403 "organization mismatch"
 ORG_ID = 1436
 API_BASE = "https://api.skillhub.cn/api/v1"
-ORG_SKILLS_API = f"{API_BASE}/orgs/{ORG_ID}/skills"
+ORG_SKILLS_API = f"{API_BASE}/community/skills/publish"  # V162: 改用社区发布端点(原/orgs/{ORG_ID}/skills返回401)
 
 # ============ 分类映射 ============
 CATEGORY_MAP_FILE = Path(__file__).parent.parent / "data" / "category_mapping.json"
@@ -335,14 +335,25 @@ def get_gate_status(slug: str) -> dict:
     conn.execute("PRAGMA foreign_keys = ON")
     c = conn.cursor()
     
-    # 获取评分
+    # 获取评分 — 优先trace_llm评分(TRACE_PASS_THRESHOLD=45是TRACE评分阈值)
+    # 修复: 原查询取最新非baseline评分,可能取到local_quality(0-5分制)与TRACE阈值(45)比较导致误判
     c.execute("""
         SELECT sc.total_score, sc.is_pass, sc.score_type
         FROM scores sc JOIN skills s ON sc.skill_id = s.id
-        WHERE s.slug = ? AND sc.score_type != 'baseline'
+        WHERE s.slug = ? AND sc.score_type = 'trace_llm' AND sc.is_current = 1
         ORDER BY sc.scored_at DESC LIMIT 1
     """, (slug,))
     score_row = c.fetchone()
+    
+    if not score_row:
+        # 回退: 取最新非baseline评分(兼容旧数据)
+        c.execute("""
+            SELECT sc.total_score, sc.is_pass, sc.score_type
+            FROM scores sc JOIN skills s ON sc.skill_id = s.id
+            WHERE s.slug = ? AND sc.score_type != 'baseline'
+            ORDER BY sc.scored_at DESC LIMIT 1
+        """, (slug,))
+        score_row = c.fetchone()
     
     # 获取定价
     c.execute("""

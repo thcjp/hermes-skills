@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: decision-architect
 name: decision-architect
 version: 2.0.0
@@ -33,11 +30,7 @@ homepage: ''
 category: Agents
 pricing_tier: free
 
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供工作流程和配置参考、了实用性、化工作流场景等能力。
 

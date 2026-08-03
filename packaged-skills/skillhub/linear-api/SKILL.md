@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: linear-api
 name: linear-api
 version: 1.0.7
@@ -31,10 +29,7 @@ tags:
 - 返回结构
 category: Development
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供化工作流场景等能力。
 

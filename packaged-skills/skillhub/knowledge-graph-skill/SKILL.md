@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: knowledge-graph-skill
 name: knowledge-graph-skill
 version: 1.1.2
@@ -26,10 +24,7 @@ tags:
 - kgml
 category: Automation
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置、工作流程和效率、时使用等能力。
 

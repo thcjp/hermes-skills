@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: git-cli
 name: git-cli
 version: 1.0.2
@@ -30,10 +28,7 @@ tools:
 homepage: ''
 category: Development
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 

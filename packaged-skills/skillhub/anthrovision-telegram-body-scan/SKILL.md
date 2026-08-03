@@ -1,6 +1,5 @@
 ---
 
-
 slug: anthrovision-telegram-body-scan
 name: "anthrovision-telegram-body-scan"
 version: 1.0.5
@@ -31,9 +30,7 @@ tools:
 homepage: ""
 category: "Communication"
 
-
 ---
-
 
 > **核心功能**: 本技能提供、身体成分变化监测等能力。
 

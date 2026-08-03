@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: discord
 name: "discord"
 version: 1.0.2
@@ -34,11 +31,7 @@ tools:
 homepage: ""
 category: "Communication"
 
-
-
-
 ---
-
 
 # Discord 全能控制
 

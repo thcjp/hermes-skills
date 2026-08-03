@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: elite-longterm-memory-local
 name: elite-longterm-memory-local
 version: 1.1.1
@@ -26,10 +24,7 @@ tags:
 - ollama
 category: Agents
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置、时使用、、工作流优化时使用、处理、工作流优化时使用、化配置和灵活的参数设置等能力。
 

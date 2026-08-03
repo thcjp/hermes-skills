@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: design
 name: design
 version: 1.0.1
@@ -31,10 +29,7 @@ tools:
 homepage: ''
 category: Creative
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供化工作流场景等能力。
 

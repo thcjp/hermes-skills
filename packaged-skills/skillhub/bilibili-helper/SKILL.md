@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: bilibili-helper
 name: bilibili-helper
 version: 1.0.1
@@ -39,10 +37,7 @@ tools:
 homepage: ''
 category: Creative
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供中文交互等能力。
 

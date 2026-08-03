@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: docker-essentials
 name: docker-essentials
 version: 1.0.1
@@ -32,11 +29,7 @@ tags:
 - run
 category: Development
 
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供中文交互、化工作流场景等能力。
 

@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: memory-compress
 name: memory-compress
 version: 1.2.2
@@ -31,10 +29,7 @@ tags:
 - compressed
 category: Agents
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供化工作流场景等能力。
 

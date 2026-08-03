@@ -10,10 +10,9 @@ license: "MIT"
 tools:
   - read
 
-
-
-
 ---
+
+> **核心功能**: 本技能提供提升工作效率等能力。
 
 # AdMapix
 

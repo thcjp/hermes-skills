@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: dns-networking
 name: dns-networking
 version: 1.0.1
@@ -27,11 +24,7 @@ tools:
 homepage: ''
 category: Operations
 
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供中文交互、化流程场景等能力。
 

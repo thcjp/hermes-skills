@@ -331,7 +331,7 @@ REMAINING_FILE = DATA_DIR / "clawhub_remaining.json"
 CHECKPOINT_FILE = DATA_DIR / "clawhub_upload_checkpoint.json"
 PUBLISHED_SLUGS_FILE = DATA_DIR / "clawhub_published_slugs.json"
 
-REGISTRY = "https://clawhub.ai"
+REGISTRY = "https://mirror-cn.clawhub.com"  # 使用中国镜像(原https://clawhub.ai网络超时)
 DAILY_LIMIT = 200
 DELAY_BETWEEN_UPLOADS = 2  # seconds
 CHANGELOG = "v2.3 quality enhancement - security audit + marketing packaging + slug-content validation"
@@ -491,7 +491,7 @@ def upload_skill(skill_dir, slug, dry_run=False, skip_quality_gate=False):
         return str(arg)
     
     cmd_parts = [
-        'clawhub',
+        'npx', 'clawhub',  # 使用npx调用最新版CLI(v0.23.1+), 全局安装的v0.9.0不支持--categories/--topics
         '--registry', REGISTRY,
         'publish', _quote_arg(skill_dir),
         '--changelog', _quote_arg(CHANGELOG),

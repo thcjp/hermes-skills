@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: aws-cloud-architect
 name: aws-cloud-architect
 version: 2.0.0
@@ -31,11 +28,7 @@ homepage: ''
 category: Operations
 pricing_tier: free
 
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供中文交互、了实用性、化工作流场景等能力。
 

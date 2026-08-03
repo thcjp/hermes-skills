@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: multi-agent-dev
 name: multi-agent-dev
 version: "1.0.0"
@@ -31,10 +29,7 @@ tags:
 - 规格评审
 category: '"Agents"'
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置、化配置和灵活的参数设置等能力。
 

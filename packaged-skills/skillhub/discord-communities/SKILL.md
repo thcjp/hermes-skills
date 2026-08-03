@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: discord-communities
 name: discord-communities
 version: 1.0.7
@@ -35,11 +32,7 @@ tools:
 homepage: ''
 category: Communication
 
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供中文交互、时使用、化工作流场景等能力。
 

@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: azure-infra
 name: "azure-infra"
 version: 1.0.1
@@ -36,11 +33,7 @@ tools:
 homepage: ""
 category: "Operations"
 
-
-
-
 ---
-
 
 # Azure Infra
 

@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: tarot
 name: "tarot"
 version: 1.0.1
@@ -30,11 +27,7 @@ tags:
 - keywords
 category: '"Automation"'
 
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供时使用、、工作流优化时使用、处理、工作流优化时使用等能力。
 

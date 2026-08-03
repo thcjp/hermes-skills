@@ -7,7 +7,7 @@ displayName: "加密协议博弈论分析"
 summary: "面向crypto协议、DeFi机制和治理系统的博弈论分析框架，识别Nash Equilibrium与MEV风险"
 summary_zh: "面向crypto协议、DeFi机制和治理系统的博弈论分析框架，识别Nash Equilibrium与MEV风险"
 license: "MIT"
-description: |- 功能涵盖: theory。 功能涵盖:。Use when 用户需要加密协议博弈论分析相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。
+description: |- 功能涵盖: theory。 功能涵盖:。Use when 用户需要加密协议博弈论分析相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。提供结构化输出和错误处理机制。支持多场景应用和灵活配置。 功能涵盖: game。
   面向加密协议、DeFi机制和治理系统的博弈论分析框架.
   基于Five Questions分析模型，覆盖Nash Equilibrium、Dominant Strategy、Mechanism Design等核心概念，
   支持MEV Game、Liquidity Game、Governance Game等常见crypto博弈场景分析，
@@ -32,8 +32,9 @@ tags:
   - 解决方案
 category: "Automation"
 
-
 ---
+
+> **核心功能**: 本技能提供中文交互、相关功能时使用、化工作流场景等能力。
 
 # 加密协议博弈论分析
 

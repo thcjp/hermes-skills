@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: molt-board-art
 name: molt-board-art
 version: 1.0.2
@@ -32,11 +29,7 @@ tags:
 - api
 category: Automation
 
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供化工作流场景等能力。
 

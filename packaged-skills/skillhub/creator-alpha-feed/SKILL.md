@@ -1,8 +1,5 @@
 ---
 
-
-
-
 slug: creator-alpha-feed
 name: creator-alpha-feed
 version: 1.0.9
@@ -25,11 +22,7 @@ tools:
 homepage: ''
 category: Automation
 
-
-
-
 ---
-
 
 > **核心功能**: 本技能提供自动化配置和灵活的参数设置、时使用、、工作流优化时使用、处理、工作流优化时使用、化配置和灵活的参数设置等能力。
 

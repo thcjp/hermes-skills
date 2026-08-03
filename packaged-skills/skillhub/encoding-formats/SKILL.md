@@ -1,7 +1,5 @@
 ---
 
-
-
 slug: encoding-formats
 name: encoding-formats
 version: 1.0.1
@@ -31,10 +29,7 @@ tags:
 - jwt
 category: Automation
 
-
-
 ---
-
 
 > **核心功能**: 本技能提供中文交互、、报表生成、统计洞察、数据可视化时使用、化工作流场景等能力。
 
