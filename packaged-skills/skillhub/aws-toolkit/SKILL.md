@@ -4,7 +4,7 @@ slug: aws-toolkit
 displayName: "Aws"
 version: "1.0.2"
 summary: "AWS架构设计、部署、成本优化,规避资源浪费与安全陷阱,降低云上运维成本"
-description: "AWS架构设计、部署、成本优化,规避资源浪费与安全陷阱,降低云上运维成本。Architect, deploy, and optimize AWS infrastructure avoiding cost explosions。触发关键词: web, deploy, architect, avoiding, aws, optimize, infrastructure, amazon。"
+description: "AWS架构设计、部署、成本优化,规避资源浪费与安全陷阱,降低云上运维成本。Architect, deploy, and optimize AWS infrastructure avoiding cost explosions。触发关键词: web, deploy, architect, avoiding, aws, optimize, infrastructure, amazon。 功能涵盖: toolkit。"
 license: "MIT"
 tools:
   - read
@@ -246,7 +246,7 @@ Install with `* 安装此Skill请参考SkillHub平台指南
 - 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **分类**: MD+execute(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
 
 ## 核心能力

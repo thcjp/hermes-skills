@@ -1136,6 +1136,55 @@ if __name__ == '__main__':
         else:
             print(json.dumps(result, ensure_ascii=False))
             sys.exit(1)
+    elif cmd == 'relay-serve' and len(sys.argv) >= 3:
+        # V186: 批量生成payload并启动带CORS的HTTP服务器供浏览器fetch
+        # 用法: relay-serve <slug1,slug2,...> [--skip-marketing] [--skip-security] [--skip-gate]
+        slugs = sys.argv[2].split(',')
+        import http.server
+        import socketserver
+        import tempfile
+        tmpdir = tempfile.mkdtemp(prefix='skillhub_relay_')
+        
+        # Generate payloads
+        payloads = {}
+        for slug in slugs:
+            slug = slug.strip()
+            if not slug:
+                continue
+            result = upload_skill(slug, skip_gate=skip_gate, skip_marketing=skip_mkt, 
+                                  skip_security=skip_sec, skip_publish=True, browser_relay=True)
+            if result.get('message') == 'PAYLOAD_READY_FOR_BROWSER_RELAY':
+                payloads[slug] = {
+                    'slug': result['slug'],
+                    'platform_slug': result['platform_slug'],
+                    'payload': result['payload'],
+                    'content': result['content'],
+                }
+                print(f"  ✓ {slug} payload ready")
+            else:
+                print(f"  ✗ {slug}: {result.get('message', 'unknown error')}")
+        
+        # Save to file
+        payload_file = os.path.join(tmpdir, 'payloads.json')
+        with open(payload_file, 'w', encoding='utf-8') as f:
+            json.dump(payloads, f, ensure_ascii=False)
+        
+        print(f"\n{len(payloads)} payloads saved to {payload_file}")
+        print(f"Starting CORS HTTP server on http://127.0.0.1:8766/")
+        
+        # Start HTTP server with CORS
+        os.chdir(tmpdir)
+        class CORSHandler(http.server.SimpleHTTPRequestHandler):
+            def end_headers(self):
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.send_header('Access-Control-Allow-Methods', 'GET, OPTIONS')
+                super().end_headers()
+            def do_OPTIONS(self):
+                self.send_response(200)
+                self.end_headers()
+        
+        with socketserver.TCPServer(("127.0.0.1", 8766), CORSHandler) as httpd:
+            httpd.serve_forever()
     elif cmd == 'relay-record' and len(sys.argv) >= 5:
         # v3.5: 记录浏览器上传结果
         # 用法: relay-record <slug> <http_status> <response_json> [platform_slug]
@@ -1147,5 +1196,5 @@ if __name__ == '__main__':
         print(json.dumps(result, ensure_ascii=False))
     else:
         print(f"未知命令: {cmd}")
-        print("Usage: python enterprise_uploader.py [list|upload <slug>|upload-all|status|relay-payload <slug>|relay-record <slug> <status> <response>] [--skip-marketing] [--skip-security] [--skip-publish]")
+        print("Usage: python enterprise_uploader.py [list|upload <slug>|upload-all|status|relay-payload <slug>|relay-serve <slugs>|relay-record <slug> <status> <response>] [--skip-marketing] [--skip-security] [--skip-publish]")
         sys.exit(1)
