@@ -10,6 +10,9 @@ tools:
   - read
 ---
 
+> **核心功能**: 本技能提供自动化处理、专业的能力支持、专业能力支持、化处理等能力。
+
+
 # aws-agentcore-langgraph
 
 Multi-agent systems on AWS Bedrock AgentCore with LangGraph orchestration. Source: <

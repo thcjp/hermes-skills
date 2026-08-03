@@ -1,8 +1,26 @@
 {
   "success": [
-    "-jira-skill"
+    "ai-finance-2",
+    "ai-report-2",
+    "auto-monitor",
+    "auto-updater",
+    "auto-workflow",
+    "automation-recipe-pack",
+    "aws",
+    "aws-agentcore-langgraph",
+    "aws-agentcore-langgraph-free",
+    "aws-cloud-architect"
   ],
-  "failed": [],
-  "skipped": [],
-  "date": "2026-08-03T10:26:45.202573"
+  "failed": [
+    {
+      "slug": "agentvibes-openclaw-skill",
+      "error": "UNKNOWN",
+      "message": "Topic \"openclaw\" is reserved by ClawHub (reset in 20s)\nError: Topic \"openclaw\" i"
+    }
+  ],
+  "skipped": [
+    "-jira-skill",
+    "agent-browser-"
+  ],
+  "date": "2026-08-03T21:59:50.734964"
 }

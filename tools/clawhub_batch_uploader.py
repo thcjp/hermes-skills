@@ -334,7 +334,7 @@ REMAINING_FILE = DATA_DIR / "clawhub_remaining.json"
 CHECKPOINT_FILE = DATA_DIR / "clawhub_upload_checkpoint.json"
 PUBLISHED_SLUGS_FILE = DATA_DIR / "clawhub_published_slugs.json"
 
-REGISTRY = "https://mirror-cn.clawhub.com"  # 使用中国镜像(原https://clawhub.ai网络超时)
+REGISTRY = "https://clawhub.ai"  # V186: 镜像站不支持认证(token invalid), 改用主站
 DAILY_LIMIT = 200
 DELAY_BETWEEN_UPLOADS = 2  # seconds
 CHANGELOG = "v2.3 quality enhancement - security audit + marketing packaging + slug-content validation"

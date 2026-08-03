@@ -11,6 +11,9 @@ tools:
   - exec
 ---
 
+> **核心功能**: 本技能提供多种输入格式等能力。
+
+
 # Auto Workflow
 
 把重复任务自动化的能力。
@@ -72,7 +75,7 @@ tools:
 - 本Skill基于Markdown指令,无需额外API Key(除内容中明确标注的外部API)
 
 ### 可用性分类
-- **分类**: MD+EXEC(纯Markdown指令,部分功能需要exec命令行执行能力)
+- **分类**: MD+execute(纯Markdown指令,部分功能需要exec命令行执行能力)
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行任务
 
 ## 核心能力
