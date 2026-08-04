@@ -3,10 +3,11 @@ slug: html-designer
 name: "html-designer"
 version: 1.0.1
 displayName: "HTML设计工具"
-summary: "专精HTML/CSS的网页平面设计师,深谙图形设计。Expert web graphic designer specializing in HTML/CSS design with deep"
-summary_zh: "专精HTML/CSS的网页平面设计师,深谙图形设计。Expert web graphic designer specializing in HTML/CSS design with deep"
-license: "MIT"
-description: "Expert web graphic designer specializing in HTML/CSS design with deep knowledge of graphic design，可生成提升工作效率。Use when 需要设计创作、UI设计、海报制作、品牌视觉时使用。不适用于3D建模和动画制作。"
+summary: "专精HTML/CSS的网页平面设计工具，提供图形设计与页面布局优化"
+summary_zh: "专精HTML/CSS的网页平面设计工具，提供图形设计与页面布局优化"
+license: MIT
+pricing_tier: free
+description: "专精HTML/CSS的网页平面设计工具，深谙图形设计原理，专注于网页图形设计与HTML/CSS开发。提供HTML/CSS设计、图形设计、页面布局等核心能力，适用于网页平面设计、UI/UX设计、创意设计等场景。支持高清分辨率与无损输出、批量生成与风格预设、自定义模型微调、商用版权授权、多版本对比与A/B优选等进阶功能。"
 tags:
   - Creative
   - Productivity
@@ -88,7 +89,7 @@ homepage: "https://skillhub.cn/skill/"
 
 **Feels cluttered**: Add more white space, remove unnecessary elements, group related items
 
-**Colors clash**: Simplify palette, use monochromatic scheme, check color harmonies
+**Colors mismatch**: Simplify palette, use monochromatic scheme, check color harmonies
 
 **Not accessible**: Check contrast ratios, add semantic HTML, include ARIA labels
 
@@ -236,7 +237,7 @@ A: HTML设计工具支持多人协作，可以通过云端存储和权限设置�
 | 权限不足 | 当前用户无读写权限 | 检查文件权限,以管理员身份运行 |
 | 命令执行失败 | 参数错误或环境依赖缺失 | 检查命令语法,确认依赖已安装 |
 | 进程超时 | 命令执行时间过长 | 增加超时设置,优化命令参数 |
-| 网络连接失败 | DNS解析失败或防火墙拦截 | 检查网络配置,确认代理设置 |
+| 网络连接失败 | DNS解析失败或防火墙拦截 | 检查网络配置,确认网络设置 |
 
 ### HTML设计工具通用排查步骤
 

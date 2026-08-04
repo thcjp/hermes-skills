@@ -1,6 +1,6 @@
 ---
-slug: knowledge-ontology
-name: knowledge-ontology
+slug: knowledge-ontology-cn
+name: knowledge-ontology-cn
 version: 2.0.0
 displayName: 知识本体
 summary: 类型化知识图谱：约束校验+模式演进+图遍历规划，让Agent记忆结构化可验证。。面向AI Agent的类型化知识图谱系统，提供实体关系建模、约束校验、模式演进、图遍历规划能力。在需要结构

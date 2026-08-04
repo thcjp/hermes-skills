@@ -3,13 +3,11 @@ slug: image
 name: image
 version: 1.0.5
 displayName: 图像
-summary: 创建/检查/处理/优化图像与视觉资产,格式选择可靠。Create, inspect, process, and optimize image files
-  and visual assets
-summary_zh: 创建/检查/处理/优化图像与视觉资产,格式选择可靠。Create, inspect, process, and optimize image
-  files and visual assets
+summary: 创建、检查、处理和优化图像与视觉资产，提供可靠的格式选择
+summary_zh: 创建、检查、处理和优化图像与视觉资产，提供可靠的格式选择
 license: MIT
-description: Create, inspect, process, and optimize image files and visual assets。Use when 用户需要图像相关功能时使用。不适用于超出本技能能力范围的复杂需求。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。
-  with reliable format choice,。Use when 需要文件处理、文档转换、格式互转、内容提取时使用。不适用于加密文件破解。适用于个人开发者、团队协作和自动化流程场景。'
+pricing_tier: free
+description: 图像创建、检查、处理，覆盖图像与视觉资产，包含格式选择能力，适用于优化图像与视觉资产、格式选择等场景。支持高清分辨率与无损输出、批量生成与风格预设、自定义模型微调、商用版权授权、多版本对比与A/B优选等进阶能力，满足专业图像处理需求。不适用于需要人工判断的复杂决策场景，适用于个人开发者、团队协作和企业流程场景。
 tags:
 - agent
 - api

@@ -1,6 +1,6 @@
 ---
-slug: longmemo-elite
-name: longmemo-elite
+slug: longmemo-elite-cn
+name: longmemo-elite-cn
 version: 2.0.0
 displayName: 精英长记忆
 summary: 解决Agent金鱼记忆：WAL防丢失+混合检索+成本预算+自动卫生，跨会话不丢上下文。。面向AI Agent的精英级长期记忆系统，解决跨会话遗忘、检索不准、成本失控三大痛点。提供WAL写前日

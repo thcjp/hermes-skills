@@ -1,30 +1,16 @@
 ---
+
+
 slug: encryption
 name: "encryption"
 version: 1.0.1
 displayName: "加密文件"
-summary: "加密文件/管密钥/审代码加密实践,守住密码安全。Encrypt files, secure passwords, manage keys, and audit code for crypto"
-summary_zh: "加密文件/管密钥/审代码加密实践,守住密码安全。Encrypt files, secure passwords, manage keys, and audit code for crypto"
+summary: "加密文件、管理密钥、审计代码加密实践，守住密码安全"
+summary_zh: "加密文件、管理密钥、审计代码加密实践，守住密码安全"
 license: "MIT"
+pricing_tier: free
 description: |-
-  Encrypt files, secure passwords, manage keys, and audit code for cryptographic
-  best practices。核心能力:
-
-  - 开发工具领域的专业化AI辅助工具
-
-  - 
-
-  - 
-
-  适用场景:
-
-  - 代码审查、开发规范、项目管理
-
-  - 独立开发者与一人公司效率提升
-
-  - 自动化工作流与智能决策辅助
-
-  差异化:经过深度优化,去除原始风险代码,清理外部依赖引用,增强元数据和触...
+  文件加密、密码安全、密钥管理、代码加密审计工具。提供文件加密、密码哈希验证、密钥轮换管理、代码加密实践审查等功能。覆盖文件加密、密码安全、密钥管理，不适用于非加密相关的系统配置和网络管理。适用于安全开发、数据保护、合规审计等场景，帮助开发者建立完善的加密安全实践，确保数据在传输与存储过程中的完整性与安全性。
 tags:
   - Development
   - 工具
@@ -40,7 +26,11 @@ tools:
 homepage: ""
 category: "Automation"
 homepage: "https://skillhub.cn/skill/"
+
+
 ---
+
+
 > **核心功能**: 本技能提供化工作流与智能决策辅助等能力。
 
 # Encryption
@@ -243,13 +233,3 @@ A: 定期进行安全审计，检查加密文件的使用情况、密钥管理�
 2. **查看日志输出**: 定位具体错误行和异常类型
 3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
 4. **逐步调试**: 缩小问题范围,隔离故障模块
-
-## 依赖说明
-
-### 运行环境
-- **Agent 平台**: 支持SKILL.md的任意AI Agent
-- **操作系统**: Windows / macOS / Linux
-
-### 可用性分类
-- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
-- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

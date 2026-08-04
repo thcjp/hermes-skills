@@ -339,9 +339,292 @@ def cmd_status():
     conn.close()
 
 
+def _find_npx():
+    """查找npx可执行文件路径 (Windows兼容)"""
+    import shutil
+    npx = shutil.which('npx')
+    if npx:
+        return npx
+    # 常见路径回退
+    for p in [
+        r'C:\Program Files\nodejs\npx.cmd',
+        r'C:\Program Files\nodejs\npx',
+        r'C:\nodejs\npx.cmd',
+    ]:
+        if Path(p).exists():
+            return p
+    return 'npx'
+
+
+def _update_skillhub_skill_in_db(c, slug, downloads, stars):
+    """更新单个SkillHub技能数据到DB (内部辅助函数)
+
+    Returns:
+        bool: True=已更新, False=未找到
+    """
+    c.execute(
+        "SELECT id FROM skills WHERE skillhub_slug = ? OR slug = ?",
+        (slug, slug)
+    )
+    row = c.fetchone()
+    if row:
+        skill_id = row[0]
+        c.execute("""
+            UPDATE skills
+            SET platform_downloads = ?,
+                platform_stars = ?,
+                skillhub_sync_status = 'synced',
+                last_platform_sync_at = datetime('now', 'localtime'),
+                current_status = CASE
+                    WHEN current_status = 'deleted_on_skillhub' THEN current_status
+                    ELSE 'published_skillhub'
+                END
+            WHERE id = ?
+        """, (downloads, stars, skill_id))
+        return True
+    return False
+
+
+def sync_skillhub_data(from_file=None) -> dict:
+    """同步SkillHub平台数据到本地DB
+
+    从SkillHub admin API获取所有已发布技能的最新数据(下载数、星标数、可见性等),
+    更新到本地DB的skills表。支持分页获取全部技能。
+
+    当cookie文件过期时, 可通过 from_file 参数传入浏览器导出的JSON数据文件。
+
+    使用方式:
+        python platform_ops.py sync-skillhub                  # 从API同步
+        python platform_ops.py sync-skillhub --from-file <p>  # 从文件同步
+
+    Args:
+        from_file: 可选, 从JSON文件读取平台数据(绕过API认证)
+
+    Returns:
+        dict with total_synced, updated, not_found, errors
+    """
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+
+    total_synced = 0
+    updated = 0
+    not_found = 0
+    errors = 0
+
+    if from_file:
+        # 从文件读取平台数据 (浏览器导出)
+        file_path = Path(from_file)
+        if not file_path.exists():
+            print(f"ERROR: 文件不存在: {from_file}")
+            conn.close()
+            return {'error': '文件不存在', 'total_synced': 0}
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                all_skills = json.load(f)
+            print(f"从文件加载 {len(all_skills)} 条平台数据: {from_file}")
+        except Exception as e:
+            print(f"ERROR: 读取文件失败: {e}")
+            conn.close()
+            return {'error': str(e), 'total_synced': 0}
+
+        for skill in all_skills:
+            slug = skill.get('slug', '')
+            downloads = skill.get('downloads', 0)
+            stars = skill.get('stars', 0)
+            if not slug:
+                continue
+            if _update_skillhub_skill_in_db(c, slug, downloads, stars):
+                updated += 1
+            else:
+                not_found += 1
+                if not_found <= 10:
+                    print(f"  WARN: 平台技能 '{slug}' 在本地DB中未找到")
+            total_synced += 1
+    else:
+        # 从API同步
+        auth = _load_auth()
+        if not auth:
+            print("ERROR: 无认证信息, 请使用 --from-file 从浏览器导出的数据同步")
+            conn.close()
+            return {'error': '无认证信息', 'total_synced': 0}
+
+        page = 1
+        while True:
+            url = f"{ORG_ADMIN_SKILLS_API}?page={page}&pageSize=100"
+            try:
+                req = Request(url, headers=_build_headers(auth), method='GET')
+                with urlopen(req, timeout=30) as resp:
+                    data = json.loads(resp.read().decode('utf-8'))
+            except Exception as e:
+                print(f"ERROR: 获取第{page}页失败: {e}")
+                errors += 1
+                break
+
+            skills = data.get('skills', [])
+            total = data.get('total', 0)
+            if not skills:
+                break
+
+            for skill in skills:
+                slug = skill.get('slug', '')
+                downloads = skill.get('downloads', 0)
+                stars = skill.get('stars', 0)
+                if not slug:
+                    continue
+                if _update_skillhub_skill_in_db(c, slug, downloads, stars):
+                    updated += 1
+                else:
+                    not_found += 1
+                    if not_found <= 10:
+                        print(f"  WARN: 平台技能 '{slug}' 在本地DB中未找到")
+                total_synced += 1
+
+            print(f"  第{page}页: {len(skills)}个技能, 累计{total_synced}/{total}")
+            if total_synced >= total or len(skills) < 100:
+                break
+            page += 1
+
+    # 记录操作日志
+    c.execute("""
+        INSERT INTO operations (operation_type, operation_date, operator, details, after_state)
+        VALUES ('sync_skillhub_data', datetime('now', 'localtime'), 'platform_ops', ?, 'completed')
+    """, (f'total={total_synced}, updated={updated}, not_found={not_found}, errors={errors}',))
+    conn.commit()
+    conn.close()
+
+    print(f"\nSkillHub同步完成: 共{total_synced}个技能, 更新{updated}个, 未找到{not_found}个, 错误{errors}个")
+    return {
+        'total_synced': total_synced,
+        'updated': updated,
+        'not_found': not_found,
+        'errors': errors,
+    }
+
+
+def sync_clawhub_data() -> dict:
+    """同步ClawHub平台数据到本地DB
+
+    通过ClawHub CLI (npx clawhub inspect) 验证已发布技能状态,
+    更新到本地DB的skills表。inspect命令无需认证。
+
+    使用方式:
+        python platform_ops.py sync-clawhub
+
+    Returns:
+        dict with total_synced, updated, errors
+    """
+    import subprocess
+
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+
+    # 查询DB中标记为clawhub synced的技能
+    c.execute(
+        "SELECT id, slug, clawhub_slug FROM skills WHERE clawhub_sync_status = 'synced'"
+    )
+    db_skills = c.fetchall()
+
+    if not db_skills:
+        print("DB中无ClawHub已同步技能")
+        conn.close()
+        return {'total_synced': 0, 'updated': 0, 'errors': 0}
+
+    print(f"DB中ClawHub已同步技能: {len(db_skills)}个, 开始验证...")
+
+    total_synced = 0
+    updated = 0
+    not_found = 0
+    errors = 0
+    npx_cmd = _find_npx()
+
+    for skill_id, db_slug, clawhub_slug in db_skills:
+        inspect_slug = clawhub_slug or db_slug
+        if not inspect_slug:
+            continue
+
+        try:
+            result = subprocess.run(
+                [npx_cmd, 'clawhub', 'inspect', inspect_slug],
+                capture_output=True, text=True, timeout=30,
+                cwd=str(Path(__file__).resolve().parent.parent),
+                shell=True
+            )
+        except Exception as e:
+            print(f"  ERROR: {inspect_slug} 检查失败: {e}")
+            errors += 1
+            total_synced += 1
+            continue
+
+        if result.returncode == 0:
+            # 技能存在且可访问
+            c.execute("""
+                UPDATE skills
+                SET clawhub_sync_status = 'synced',
+                    last_platform_sync_at = datetime('now', 'localtime')
+                WHERE id = ?
+            """, (skill_id,))
+            updated += 1
+            print(f"  OK: {inspect_slug}")
+        else:
+            # 技能可能已删除或不可访问
+            stderr = result.stderr.strip()[:100] if result.stderr else ''
+            if 'not found' in stderr.lower() or '404' in stderr:
+                c.execute("""
+                    UPDATE skills
+                    SET clawhub_sync_status = 'deleted_on_clawhub',
+                        last_platform_sync_at = datetime('now', 'localtime')
+                    WHERE id = ?
+                """, (skill_id,))
+                not_found += 1
+                print(f"  DELETED: {inspect_slug}")
+            else:
+                errors += 1
+                print(f"  ERROR: {inspect_slug} - {stderr}")
+
+        total_synced += 1
+
+    c.execute("""
+        INSERT INTO operations (operation_type, operation_date, operator, details, after_state)
+        VALUES ('sync_clawhub_data', datetime('now', 'localtime'), 'platform_ops', ?, 'completed')
+    """, (f'total={total_synced}, updated={updated}, not_found={not_found}, errors={errors}',))
+    conn.commit()
+    conn.close()
+
+    print(f"\nClawHub同步完成: 共{total_synced}个技能, 正常{updated}个, 已删除{not_found}个, 错误{errors}个")
+    return {
+        'total_synced': total_synced,
+        'updated': updated,
+        'not_found': not_found,
+        'errors': errors,
+    }
+
+
+def sync_all_platform_data():
+    """同步所有平台数据到本地DB (SkillHub + ClawHub)"""
+    print("=" * 50)
+    print("同步SkillHub平台数据")
+    print("=" * 50)
+    sh_result = sync_skillhub_data()
+
+    print()
+    print("=" * 50)
+    print("同步ClawHub平台数据")
+    print("=" * 50)
+    ch_result = sync_clawhub_data()
+
+    print()
+    print("=" * 50)
+    print("平台数据同步汇总")
+    print("=" * 50)
+    print(f"  SkillHub: {sh_result.get('updated', 0)}个已更新")
+    print(f"  ClawHub:  {ch_result.get('updated', 0)}个已更新")
+
+    return {'skillhub': sh_result, 'clawhub': ch_result}
+
+
 if __name__ == '__main__':
     if len(sys.argv) < 2:
-        print("Usage: python platform_ops.py [check-banned|publish <slug>|status]")
+        print("Usage: python platform_ops.py [check-banned|publish <slug>|status|sync-skillhub|sync-clawhub|sync-data]")
         sys.exit(1)
 
     cmd = sys.argv[1]
@@ -353,7 +636,16 @@ if __name__ == '__main__':
         print(json.dumps(result, ensure_ascii=False, indent=2))
     elif cmd == 'status':
         cmd_status()
+    elif cmd == 'sync-skillhub':
+        from_file = None
+        if len(sys.argv) >= 4 and sys.argv[2] == '--from-file':
+            from_file = sys.argv[3]
+        sync_skillhub_data(from_file=from_file)
+    elif cmd == 'sync-clawhub':
+        sync_clawhub_data()
+    elif cmd == 'sync-data':
+        sync_all_platform_data()
     else:
         print(f"未知命令: {cmd}")
-        print("Usage: python platform_ops.py [check-banned|publish <slug>|status]")
+        print("Usage: python platform_ops.py [check-banned|publish <slug>|status|sync-skillhub|sync-clawhub|sync-data]")
         sys.exit(1)

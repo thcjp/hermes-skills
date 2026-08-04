@@ -1,28 +1,22 @@
 ---
+
 slug: game
 name: "game"
 version: 2.0.1
 displayName: "游戏"
-summary: "AI Agent即时游戏设计引擎,一句话概念即得可玩游戏。The instant game design engine for AI agents。Describe any game con"
-summary_zh: "AI Agent即时游戏设计引擎,一句话概念即得可玩游戏。The instant game design engine for AI agents。Describe any game con"
+summary: "AI即时游戏设计引擎，一句话概念生成可玩游戏"
+summary_zh: "AI即时游戏设计引擎，一句话概念生成可玩游戏"
 license: "MIT"
+pricing_tier: free
 description: |-
-  The instant game design engine for AI agents。Describe any game concept
-  in one sentence and get a。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策.
+  AI即时游戏设计引擎，输入一句话游戏概念即可生成游戏。覆盖游戏概念描述、游戏原型开发、游戏系统设计、游戏关卡设计、游戏素材制作等完整开发流程。提供自动化游戏设计工具，缩短游戏开发周期，加快原型迭代速度，降低开发成本，提升市场反应速度与盈利能力。适用于游戏开发团队快速验证创意，不适用于需要人工判断的复杂决策场景。
 tags:
   - Lifestyle
-  - 工具
-  - 效率
-  - 自动化
-  - 生活
-  - 健康
-  - 创意
-  - 图像
-  - 开发
-  - canvas
-  - ctx
   - 游戏
-  - playing
+  - 创意
+  - canvas
+  - 自动化
+  - 互动娱乐
 tools:
   - read
   - exec
@@ -30,7 +24,9 @@ tools:
 homepage: ""
 category: "Automation"
 homepage: "https://skillhub.cn/skill/"
+
 ---
+
 ## 疑问汇总
 ### Q1: 如何开始使用Game？
 A: 用一句话描述你想要的游戏即可。例如"做一个太空射击游戏，玩家控制飞船消灭陨石，有计分和生命值"。系统会生成一个完整的、可直接在浏览器中运行的单文件 HTML 游戏。你也可以提供更详细的需求（如视觉风格、操作方式、游戏规则），生成的游戏会更加精确。
@@ -444,13 +440,3 @@ A: 是的，Game生成的代码是开源的，用户可以根据需要修改和�
 2. **查看日志输出**: 定位具体错误行和异常类型
 3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
 4. **逐步调试**: 缩小问题范围,隔离故障模块
-
-## 依赖说明
-
-### 运行环境
-- **Agent 平台**: 支持SKILL.md的任意AI Agent
-- **操作系统**: Windows / macOS / Linux
-
-### 可用性分类
-- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
-- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

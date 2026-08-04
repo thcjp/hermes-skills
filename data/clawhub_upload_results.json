@@ -1,26 +1,57 @@
 {
-  "success": [
-    "ai-finance-2",
-    "ai-report-2",
-    "auto-monitor",
-    "auto-updater",
-    "auto-workflow",
-    "automation-recipe-pack",
-    "aws",
-    "aws-agentcore-langgraph",
-    "aws-agentcore-langgraph-free",
-    "aws-cloud-architect"
-  ],
+  "success": [],
   "failed": [
     {
-      "slug": "agentvibes-openclaw-skill",
+      "slug": "seo-audit-master",
       "error": "UNKNOWN",
-      "message": "Topic \"openclaw\" is reserved by ClawHub (reset in 20s)\nError: Topic \"openclaw\" i"
+      "message": "Uncaught Error: Uploaded file does not match its skill upload ticket\n    at hand"
+    },
+    {
+      "slug": "cron-mastery",
+      "error": "UNKNOWN",
+      "message": "Uncaught Error: Uploaded file does not match its skill upload ticket\n    at hand"
+    },
+    {
+      "slug": "decision-architect",
+      "error": "UNKNOWN",
+      "message": "Uncaught Error: Uploaded file does not match its skill upload ticket\n    at hand"
+    },
+    {
+      "slug": "knowledge-ontology",
+      "error": "UNKNOWN",
+      "message": "Uncaught Error: Uploaded file does not match its skill upload ticket\n    at hand"
+    },
+    {
+      "slug": "llm-assistant-hub",
+      "error": "UNKNOWN",
+      "message": "Uncaught Error: Uploaded file does not match its skill upload ticket\n    at hand"
+    },
+    {
+      "slug": "longmemo-elite",
+      "error": "UNKNOWN",
+      "message": "Uncaught Error: Uploaded file does not match its skill upload ticket\n    at hand"
+    },
+    {
+      "slug": "memo-quickstart",
+      "error": "UNKNOWN",
+      "message": "Uncaught Error: Uploaded file does not match its skill upload ticket\n    at hand"
+    },
+    {
+      "slug": "memory-radar",
+      "error": "UNKNOWN",
+      "message": "Uncaught Error: Uploaded file does not match its skill upload ticket\n    at hand"
+    },
+    {
+      "slug": "multi-agent-dev-v2",
+      "error": "UNKNOWN",
+      "message": "Uncaught Error: Uploaded file does not match its skill upload ticket\n    at hand"
+    },
+    {
+      "slug": "persistent-memory-engine",
+      "error": "UNKNOWN",
+      "message": "Uncaught Error: Uploaded file does not match its skill upload ticket\n    at hand"
     }
   ],
-  "skipped": [
-    "-jira-skill",
-    "agent-browser-"
-  ],
-  "date": "2026-08-03T21:59:50.734964"
+  "skipped": [],
+  "date": "2026-08-04T23:17:55.597169"
 }

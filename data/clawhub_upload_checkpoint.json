@@ -1,17 +1,6 @@
 {
-  "timestamp": "2026-08-03T21:59:50.733050",
-  "uploaded_today": [
-    "automation-recipe-pack",
-    "aws",
-    "auto-updater",
-    "aws-cloud-architect",
-    "ai-finance-2",
-    "auto-monitor",
-    "auto-workflow",
-    "aws-agentcore-langgraph",
-    "aws-agentcore-langgraph-free",
-    "ai-report-2"
-  ],
-  "total_success": 10,
-  "total_failed": 1
+  "timestamp": "2026-08-04T23:17:55.596656",
+  "uploaded_today": [],
+  "total_success": 0,
+  "total_failed": 10
 }

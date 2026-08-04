@@ -1,6 +1,6 @@
 ---
-slug: llm-assistant-hub
-name: llm-assistant-hub
+slug: llm-assistant-hub-cn
+name: llm-assistant-hub-cn
 version: 1.0.0
 displayName: LLM助手中枢
 summary: 分层分析分块,聚焦检索锚定,假设检测框架,结构化压缩,差异化比对。。针对商业、法律等高风险长文档的长上下文推理优化器。提供分层分析（L0扫描→L1深度→L2聚焦）、文档分块处理、假设检测框架

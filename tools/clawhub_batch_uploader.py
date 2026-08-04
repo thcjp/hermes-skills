@@ -292,8 +292,13 @@ def update_db_clawhub_status(slug, status='synced', version=None):
             return False
 
 
-def get_pending_slugs_from_db(limit=0):
+def get_pending_slugs_from_db(limit=0, min_score=0, exclude_downloaded=True):
     """从DB查询待上传ClawHub的skill (有本地文件的pending状态)
+    
+    Args:
+        limit: 限制数量 (0=全部)
+        min_score: trace_llm最低分数过滤 (0=不过滤)
+        exclude_downloaded: 排除从ClawHub下载的skill (clawhub-skills/downloaded路径)
     
     Returns:
         list of slug strings
@@ -301,24 +306,40 @@ def get_pending_slugs_from_db(limit=0):
     conn = sqlite3.connect(str(_DB_PATH))
     conn.row_factory = sqlite3.Row
     
-    query = """
-        SELECT slug, local_path FROM skills 
-        WHERE clawhub_sync_status = 'pending'
-        AND local_path IS NOT NULL AND local_path != ''
-        ORDER BY slug
-    """
+    if min_score > 0:
+        query = """
+            SELECT s.slug, s.local_path FROM skills s
+            LEFT JOIN scores sc ON s.id = sc.skill_id AND sc.is_current = 1 AND sc.score_type = 'trace_llm'
+            WHERE s.clawhub_sync_status IN ('pending', 'pending_upload')
+            AND s.local_path IS NOT NULL AND s.local_path != ''
+            AND sc.total_score >= ?
+            ORDER BY sc.total_score DESC
+        """
+        params = (min_score,)
+    else:
+        query = """
+            SELECT slug, local_path FROM skills 
+            WHERE clawhub_sync_status IN ('pending', 'pending_upload')
+            AND local_path IS NOT NULL AND local_path != ''
+            ORDER BY slug
+        """
+        params = ()
+    
     if limit > 0:
         query += f" LIMIT {limit}"
     
-    rows = conn.execute(query).fetchall()
+    rows = conn.execute(query, params).fetchall()
     conn.close()
     
-    # 过滤: 只返回本地文件确实存在的
+    # 过滤: 只返回本地文件确实存在的, 且排除downloaded目录
     valid_slugs = []
     for r in rows:
         local_path = r["local_path"]
         if local_path.startswith("/d/"):
             local_path = "d:" + local_path[2:]
+        # 排除从ClawHub下载的skill (这些是别人的skill, 不应重新上传)
+        if exclude_downloaded and 'clawhub-skills' in local_path and 'downloaded' in local_path:
+            continue
         skill_md = Path(local_path) / "SKILL.md"
         if skill_md.exists():
             valid_slugs.append(r["slug"])
@@ -634,6 +655,7 @@ def main():
     parser.add_argument('--resume', action='store_true', help='Resume from checkpoint')
     parser.add_argument('--from-db', action='store_true', help='从DB查询待上传skill(替代JSON)')
     parser.add_argument('--skip-quality-gate', action='store_true', help='跳过质量门禁检查(紧急场景)')
+    parser.add_argument('--min-score', type=int, default=0, help='trace_llm最低分数过滤(0=不过滤)')
     # v3.0: 支持自定义上传间隔(秒), 默认2秒, daily_sync传入120(2分钟)以防止触发反垃圾系统
     parser.add_argument('--delay', type=int, default=DELAY_BETWEEN_UPLOADS,
                         help=f'Delay between uploads in seconds (default: {DELAY_BETWEEN_UPLOADS})')
@@ -645,7 +667,7 @@ def main():
 
     # v2.3: 从DB获取待上传slugs, 或从JSON获取
     if args.from_db:
-        all_slugs = get_pending_slugs_from_db(limit=0)  # 获取全部, 主循环处理limit
+        all_slugs = get_pending_slugs_from_db(limit=0, min_score=args.min_score)  # 获取全部, 主循环处理limit
         print(f"[DB模式] 从数据库查询到 {len(all_slugs)} 个待上传skill")
     else:
         remaining_data = load_json(REMAINING_FILE)

@@ -1,6 +1,6 @@
 ---
-slug: persistent-memory-engine
-name: persistent-memory-engine
+slug: persistent-memory-engine-cn
+name: persistent-memory-engine-cn
 version: 1.0.0
 displayName: 持久记忆引擎
 summary: 解决跨会话遗忘、检索不准、记忆膨胀冲突的无限分层持久记忆引擎。面向 AI Agent 的无限分层持久记忆系统，直击跨会话遗忘、检索不准、记忆膨胀、新旧冲突四大痛点。适用于长周期项目记忆、人脉

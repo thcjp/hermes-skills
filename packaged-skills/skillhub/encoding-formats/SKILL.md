@@ -1,4 +1,6 @@
 ---
+
+
 slug: encoding-formats
 name: encoding-formats
 version: 1.0.1
@@ -6,10 +8,8 @@ displayName: 编码格式工具
 summary: 编码解码与数据格式转换
 summary_zh: 编码解码与数据格式转换，覆盖Base64、URL编码、Hex、Unicode、JWT、哈希、序列化。编码解码与数据格式转换工具，覆盖Base64、URL编码、Hex、Unicode、JWT解
 license: MIT
-description: 编码解码与数据格式转换工具，覆盖Base64、URL编码、Hex、Unicode、JWT解码、。Use when 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于实时流数据处理。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。输出结果可直接使用，减少二次加工成本。 功能涵盖: encoding, formats。
-  哈希校验和序列化格式转换。支持命令行和代码两种方式，适用于API响应解码、
-
-  HTTP请求参数编码、二进制数据检查、JWT令牌分析、文件完整性校验等场景。Use when 需要数据分析、报表生成、统计洞察、数据可视化需求。不适用于流式数据处理。'
+pricing_tier: free
+description: encoding与formats编码解码工具，覆盖Base64、URL编码、Hex、Unicode、JWT、哈希校验和序列化格式转换。适用于API响应解码、HTTP请求参数编码、二进制数据检查、JWT令牌分析、文件完整性校验等开发场景。提供命令行和代码两种调用方式，支持编码解码与格式检查，满足日常开发中的编码解码需求，输出结果可直接使用。
 tools:
 - read
 - exec
@@ -28,7 +28,11 @@ tags:
 - jwt
 category: Automation
 homepage: "https://skillhub.cn/skill/"
+
+
 ---
+
+
 > **核心功能**: 本技能提供中文交互、、报表生成、统计洞察、数据可视化时使用、化工作流场景等能力。
 
 # 编码格式工具
@@ -340,13 +344,3 @@ A: 使用 `file -bi filename` 检测文件编码。对于字符串，尝试UTF-8
 2. **查看日志输出**: 定位具体错误行和异常类型
 3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
 4. **逐步调试**: 缩小问题范围,隔离故障模块
-
-## 依赖说明
-
-### 运行环境
-- **Agent 平台**: 支持SKILL.md的任意AI Agent
-- **操作系统**: Windows / macOS / Linux
-
-### 可用性分类
-- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
-- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。

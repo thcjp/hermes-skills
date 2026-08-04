@@ -1,6 +1,6 @@
 ---
-slug: memory-radar
-name: memory-radar
+slug: memory-radar-cn
+name: memory-radar-cn
 version: 1.0.0
 displayName: 记忆雷达
 summary: 解决Prompt注入难检、凭证泄漏被动、误报高、跨文件威胁关联难的记忆安全雷达。面向AI Agent记忆文件的安全扫描系统，解决Prompt注入检测难、凭证泄漏被动发现、扫描误报高、跨文件威
