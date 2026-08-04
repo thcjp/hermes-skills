@@ -1,14 +1,25 @@
 ---
+slug: theme-stylist-cn
 name: theme-stylist
-|
+description: "Theme Stylist主题样式设计工具，提供幻灯片美化，文档排版，报告配色与HTML落地页制作功能。支持主题定制，色彩应用，字体应用与CSS主题提取。适用于商务演示美化，营销页面设计，品牌视觉规范等设计与排版场景。涵盖CSS变量管理，响应式设计，主题选择器，内容调性匹配等样式定制能力。内置配色方案推荐引擎，含字体搭配优化，布局适配，视觉风格统一。"
+category: Automation
 tools:
   - exec
   - read
   - write
   - browser
 license: MIT
-summary: "Theme Stylist专业技能工具"
-displayName: "Theme Stylist"
+pricing_tier: L2-标准级
+tags:
+  - 主题样式
+  - 幻灯片美化
+  - 配色方案
+  - 文档排版
+  - HTML落地页
+  - CSS主题
+  - 响应式设计
+summary: "主题样式工具，支持幻灯片美化与报告配色和HTML页面生成"
+displayName: "主题样式师"
 ---
 |---|
 | 幻灯片美化 | PPT 文件 + 内容调性 | 应用主题的 PPT + 配色方案 + 字体规范 |

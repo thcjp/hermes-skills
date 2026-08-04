@@ -1,12 +1,23 @@
 ---
+slug: twitter-viral-optimizer-cn
 name: twitter-viral-optimizer
-|
+description: "社交媒体内容传播优化工具，提供推文重写，发布时机规划，话题标签策略与内容分析功能。支持A/B测试方案设计，互动预测，账号诊断与发布日历制定。适用于产品发布推广，个人品牌建设，社媒矩阵运营等社交媒体营销场景。涵盖算法评分，评分卡制作，钩子优化，互动诱导，媒体建议等内容运营能力。内置多平台算法因子分析引擎，含标签策略组合，发布时间窗口推荐。"
+category: Automation
 tools:
   - exec
   - read
 license: MIT
-summary: "Twitter Viral Optimizer专业技能工具"
-displayName: "Twitter Viral Optimizer"
+pricing_tier: L2-标准级
+tags:
+  - 社媒优化
+  - 推文重写
+  - 发布时机
+  - 话题标签
+  - 内容传播
+  - A/B测试
+  - 互动预测
+summary: "社媒爆款优化器，支持推文重写与发布时机规划和标签策略"
+displayName: "社媒爆款优化器"
 ---
 |---|
 | 推文/微博重写 | 草稿内容 + 目标受众 + 平台 | 3-5 个重写版本 + 评分卡 + A/B 测试建议 |

@@ -1,13 +1,24 @@
 ---
+slug: web-artifact-studio-cn
 name: web-artifact-studio
-|
+description: "Web交互式工件制作工具，提供数据仪表盘，表单工作流，单页应用与交互式演示构建功能。支持组件展示，状态管理，路由配置与技术选型。适用于产品原型验证，数据可视化展示，内部工具开发等前端工件生产场景。涵盖项目搭建，交付模式选择，TypeScript类型安全等工程化能力。内置React 18与shadcn/ui组件库，含Tailwind样式，响应式布局，无障碍适配。"
+category: Development
 license: MIT
+pricing_tier: L3-专业级
+tags:
+  - Web工件
+  - 数据仪表盘
+  - React组件
+  - 表单工作流
+  - 单页应用
+  - 交互式演示
+  - TypeScript
 tools:
   - Read
   - Write
   - Edit
-summary: "Web Artifact Studio专业技能工具"
-displayName: "Web Artifact Studio"
+summary: "Web构件工作室，支持数据仪表盘与表单工作流和单页应用生成"
+displayName: "Web构件工作室"
 
 ---
 

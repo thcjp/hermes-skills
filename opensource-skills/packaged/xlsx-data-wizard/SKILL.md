@@ -1,13 +1,24 @@
 ---
+slug: xlsx-data-wizard-cn
 name: xlsx-data-wizard
-|
+description: "Excel数据处理向导，提供数据报表，模板填充，批量处理与图表可视化功能。支持条件格式，数据透视表，格式美化与文件分析。适用于财务报表，销售数据统计，库存管理，月度季度报告等Excel数据场景。涵盖结构识别，数据读取，数据写入，问题诊断等表格操作能力。内置openpyxl引擎，含单元格格式控制，多Sheet操作，数据校验，密码保护。"
+category: Research
 license: MIT
+pricing_tier: L2-标准级
+tags:
+  - Excel处理
+  - 数据报表
+  - 图表可视化
+  - 模板填充
+  - 批量合并
+  - 条件格式
+  - 数据透视表
 tools:
   - Read
   - Write
   - Edit
-summary: "Xlsx Data Wizard专业技能工具"
-displayName: "Xlsx Data Wizard"
+summary: "Excel数据向导，支持报表生成与模板填充和图表可视化处理"
+displayName: "Excel数据向导"
 ---
 |---|
 | 数据报表生成 | 数据源(JSON/CSV/DB)+ 模板 | 格式化的 Excel 报表 + 图表 |

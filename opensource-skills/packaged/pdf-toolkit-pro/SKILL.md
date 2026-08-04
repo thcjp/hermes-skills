@@ -1,14 +1,24 @@
 ---
-
+slug: pdf-workflow-suite-cn
 name: pdf-toolkit-pro
-|
+description: "PDF文档处理工具，提供内容提取，文档合并，文档拆分，表单填写与PDF制作功能。支持页面级操作，元数据读取，加密解密与注释标记。适用于报表自动化，文档归档，发票批量处理等企业级文档管理场景。涵盖文本提取，表格识别，图片导出，书签目录，页眉页脚水印等PDF操作能力。内置PyMuPDF与ReportLab双引擎，含中文排版，表格渲染，批量水印添加。"
+category: Creative
 license: MIT
+pricing_tier: L2-标准级
+tags:
+  - PDF处理
+  - 文档合并
+  - 表单填写
+  - 内容提取
+  - 报表生成
+  - 文档拆分
+  - OCR识别
 tools:
   - Read
   - Write
   - Edit
-summary: Pdf Workflow Suite专业技能工具。可生成提升工作效率
-displayName: "Pdf Workflow Suite"
+summary: "PDF工作流套件，提供文档提取、合并拆分、表单填写与报表生成"
+displayName: "PDF工作流套件"
 
 ---
 

@@ -22,6 +22,7 @@ from urllib.error import HTTPError, URLError
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "config"))
 
 from config import DB_PATH, REPORT_DIR
 

@@ -620,7 +620,7 @@ def upload_skill(slug: str, dry_run: bool = False, skip_gate: bool = False,
         'tags': tags_list,
         'categoryIds': [team_category_id],  # API必需: 团队分类数字ID数组
         'category': platform_category,       # 保留作为备份，不影响功能
-        'iconUrl': CATEGORY_ICONS.get(platform_category, DEFAULT_ICON),
+        'iconUrl': DEFAULT_ICON,  # V186: API要求http/https URL, 不接受data URI
         'subCategories': subcategories,
         'changelog': changelog,
         'tools': fm.get('tools', ['read', 'exec']),

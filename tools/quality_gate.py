@@ -1,5 +1,5 @@
 """
-Skill质量门禁脚本 (v2.2 — 安全检测增强: 科恩实验室+云鼎实验室特有模式)
+Skill质量门禁脚本 (v3.3 — TRACE对齐: 可靠性+适用性+有效性门控)
 
 集成现有check_debranding.py + skill_core/checks.py的9项检查
 任一检查fail则总体fail, 阻止上传
@@ -25,7 +25,13 @@ v2.2新增 (科恩实验室+云鼎实验室特有检测):
   - 依赖混淆/供应链风险 (云鼎特有)
   安全预检从11项扩展到21项
 
-L1检查项 (13项):
+v3.3新增 (TRACE对齐门控 — 反推SkillHub TRACE评测系统):
+  - 可靠性门控 (run_reliability_gate): 5项 — 错误处理/边界条件/输入验证/输出规范/失败策略
+  - 适用性门控 (run_adaptability_gate): 5项 — 使用场景/配置选项/多格式/自定义/跨平台
+  - 有效性门控 (run_effectiveness_gate): 5项 — 工作流/成功标准/输出示例/性能/集成
+  - 防幻觉正则修正: 中文顿号(、)加入排除字符集, 避免过度捕获
+
+L1检查项 (15项):
   1. 去标识化检测 (复用check_debranding.check_skill_md)
   2. slug==name==folder 一致性 (skill_core.checks)
   3. slug为kebab-case格式 (skill_core.checks)
@@ -75,9 +81,29 @@ L1检查项 (13项):
  41. license合规(free=MIT, paid=Proprietary)
 
 防幻觉机制 (3项):
- 42. 交叉验证: L2 TRACE vs L3 Agent vs L4-L9审计评分一致性
- 43. 需求理解偏差: description声明 vs body实际内容
- 44. 虚假实现检测: 无占位符/无模板/无空代码块
+  42. 交叉验证: L2 TRACE vs L3 Agent vs L4-L9审计评分一致性
+  43. 需求理解偏差: description声明 vs body实际内容
+  44. 虚假实现检测: 无占位符/无模板/无空代码块
+
+TRACE对齐门控 (15项, v3.3新增):
+  --- 可靠性 (5项, 对齐TRACE Reliability) ---
+  45. 错误处理/异常处理模式 (weight: 0.3)
+  46. 边界条件/边缘情况说明 (weight: 0.25)
+  47. 输入验证/参数校验 (weight: 0.2)
+  48. 输出格式/返回值说明 (weight: 0.15)
+  49. 失败处理/回退策略 (weight: 0.1)
+  --- 适用性 (5项, 对齐TRACE Adaptability) ---
+  50. 多使用场景 (weight: 0.3)
+  51. 配置选项/参数说明 (weight: 0.25)
+  52. 多格式/兼容性支持 (weight: 0.2)
+  53. 自定义/扩展性 (weight: 0.15)
+  54. 跨平台/多端支持 (weight: 0.1)
+  --- 有效性 (5项, 对齐TRACE Effectiveness) ---
+  55. 明确的工作流/步骤 (weight: 0.3)
+  56. 成功标准/验证方法 (weight: 0.25)
+  57. 输出示例/使用样例 (weight: 0.2)
+  58. 性能/效率考量 (weight: 0.15)
+  59. 集成/对接模式 (weight: 0.1)
 
 用法:
   python quality_gate.py <SKILL.md路径>
@@ -85,8 +111,8 @@ L1检查项 (13项):
   python quality_gate.py <path> --json  # 输出JSON报告
   python quality_gate.py <path> --marketing  # 仅营销关卡
   python quality_gate.py <path> --anti-hallucination  # 仅防幻觉检查
-  python quality_gate.py <path> --security  # 仅安全预检(21项)
-  python quality_gate.py <path> --full  # 完整质量检查(L1+安全+营销+防幻觉)
+  python quality_gate.py <path> --security  # 仅安全预检(22项)
+  python quality_gate.py <path> --full  # 完整质量检查(L1+评分+安全+营销+防幻觉+TRACE)
 """
 
 import sys
@@ -759,7 +785,8 @@ def _check_requirement_deviation(skill_md_path: Path, fm: dict) -> dict:
     claimed_features = []
     
     for kw in action_keywords:
-        pattern = rf'{kw}([^\s，。,;.]+)'
+        # v3.3修正: 添加 、 (中文顿号)到排除字符集, 避免过度捕获
+        pattern = rf'{kw}([^\s，。、,;.]+)'
         matches = re.findall(pattern, description)
         for m in matches:
             if len(m) > 2 and m not in claimed_features:
@@ -1616,7 +1643,8 @@ def auto_fix_hallucination(skill_md_path: Path) -> dict:
         action_keywords = ['支持', '提供', '实现', '生成', '转换', '分析', '优化', '管理', '处理', '检测', '修复', '批量', '自动']
         claimed_features = []
         for kw in action_keywords:
-            pattern = rf'{kw}([^\s，。,;.]+)'
+            # v3.3修正: 添加 、 (中文顿号)到排除字符集
+            pattern = rf'{kw}([^\s，。、,;.]+)'
             matches = re.findall(pattern, description)
             for m in matches:
                 if len(m) > 2 and m not in claimed_features:
@@ -2109,6 +2137,288 @@ def run_local_scoring(skill_md_path: Path) -> dict:
         }
 
 
+# ============ TRACE对齐质量门控 (v3.3新增 — 反推SkillHub TRACE评测系统) ============
+# 根因: SkillHub TRACE 5维度评测中, Reliability(4.1)、Adaptability(4.2)、Effectiveness(4.33)
+# 是我们skill得分最低的3个维度, 而本地quality_gate.py缺少对应检测项
+# 解决: 新增3个门控函数, 分别对应TRACE的R/A/E维度, 补齐检测空白
+
+# --- Reliability (可靠性) 检测关键词 ---
+_RELIABILITY_PATTERNS = {
+    'error_handling': {
+        'keywords': ['异常处理', '错误处理', 'try', 'except', 'catch', '错误码', '失败重试', '容错', 'fallback', '降级'],
+        'description': '缺少错误处理/异常处理相关内容',
+        'weight': 0.3,
+    },
+    'edge_cases': {
+        'keywords': ['边界', '边缘', '空值', 'null', '异常输入', '极端', '特殊情况', 'edge case', '边界条件', '非法输入'],
+        'description': '缺少边界条件/边缘情况说明',
+        'weight': 0.25,
+    },
+    'input_validation': {
+        'keywords': ['参数校验', '输入验证', '参数检查', '格式验证', '合法性', '必填', '可选参数', '参数说明', '约束'],
+        'description': '缺少输入验证/参数校验说明',
+        'weight': 0.2,
+    },
+    'output_specification': {
+        'keywords': ['输出格式', '返回值', '返回结果', '输出结构', '响应格式', '输出示例', 'result', 'output'],
+        'description': '缺少输出格式/返回值说明',
+        'weight': 0.15,
+    },
+    'failure_strategy': {
+        'keywords': ['失败', '回退', '降级', '重试', '超时', 'timeout', '默认值', '兜底', '恢复'],
+        'description': '缺少失败处理/回退策略说明',
+        'weight': 0.1,
+    },
+}
+
+
+def run_reliability_gate(skill_md_path: Path) -> dict:
+    """可靠性门控 (v3.3新增 — 对齐SkillHub TRACE Reliability维度)
+
+    检测SKILL.md中是否包含可靠性相关内容:
+    1. 错误处理/异常处理模式 (weight: 0.3)
+    2. 边界条件/边缘情况说明 (weight: 0.25)
+    3. 输入验证/参数校验 (weight: 0.2)
+    4. 输出格式/返回值说明 (weight: 0.15)
+    5. 失败处理/回退策略 (weight: 0.1)
+
+    根因: TRACE评测中Reliability平均仅4.1分(最低), twitter-viral-optimizer仅3.5分
+    """
+    if not skill_md_path.exists():
+        return {'skill': skill_md_path.parent.name, 'overall_passed': False, 'error': f'文件不存在: {skill_md_path}', 'checks': [], 'checked_at': datetime.now().isoformat()}
+
+    content = skill_md_path.read_text(encoding='utf-8')
+    body = content
+    if content.startswith('---'):
+        parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
+        body = parts[2] if len(parts) > 2 else ''
+
+    body_lower = body.lower()
+    checks = []
+    total_score = 0.0
+
+    for check_name, config in _RELIABILITY_PATTERNS.items():
+        matched = []
+        for kw in config['keywords']:
+            if kw.lower() in body_lower:
+                matched.append(kw)
+
+        score = config['weight'] if matched else 0.0
+        total_score += score
+
+        checks.append({
+            'name': f'可靠性: {check_name}',
+            'passed': len(matched) > 0,
+            'severity': 'medium' if not matched else 'info',
+            'details': [
+                f'匹配关键词: {", ".join(matched[:5])}' if matched else config['description'],
+                f'权重: {config["weight"]}, 得分: {score:.2f}',
+            ],
+            'matched_keywords': matched,
+        })
+
+    # 可靠性维度得分 (0-5分制, total_score最高1.0 → x5)
+    reliability_score = round(total_score * 5, 2)
+    overall_passed = reliability_score >= 3.0  # 至少覆盖60%的可靠性维度
+
+    return {
+        'skill': skill_md_path.parent.name,
+        'path': str(skill_md_path),
+        'overall_passed': overall_passed,
+        'total_checks': len(checks),
+        'passed_checks': sum(1 for c in checks if c['passed']),
+        'failed_checks': sum(1 for c in checks if not c['passed']),
+        'checks': checks,
+        'gate_type': 'reliability',
+        'reliability_score': reliability_score,
+        'checked_at': datetime.now().isoformat(),
+    }
+
+
+# --- Adaptability (适用性) 检测关键词 ---
+_ADAPTABILITY_PATTERNS = {
+    'use_case_diversity': {
+        'keywords': ['使用场景', '应用场景', '适用场景', '使用案例', 'use case', '场景1', '场景2', '场景一', '场景二'],
+        'description': '缺少多使用场景说明',
+        'weight': 0.3,
+    },
+    'configuration_options': {
+        'keywords': ['配置', '参数', '选项', '设置', '自定义配置', '可配置', 'config', 'option'],
+        'description': '缺少配置选项/参数说明',
+        'weight': 0.25,
+    },
+    'multi_format_support': {
+        'keywords': ['多格式', '格式支持', '兼容', 'JSON', 'CSV', 'XML', 'YAML', 'Markdown', 'PDF', 'Excel', '多种格式'],
+        'description': '缺少多格式/兼容性说明',
+        'weight': 0.2,
+    },
+    'customization_points': {
+        'keywords': ['自定义', '扩展', '灵活', '可定制', '可扩展', '插件', '模块化', 'custom', 'extend'],
+        'description': '缺少自定义/扩展性说明',
+        'weight': 0.15,
+    },
+    'multi_platform': {
+        'keywords': ['跨平台', '多平台', 'Windows', 'Linux', 'macOS', '浏览器', '移动端', '桌面端', '命令行'],
+        'description': '缺少跨平台/多端支持说明',
+        'weight': 0.1,
+    },
+}
+
+
+def run_adaptability_gate(skill_md_path: Path) -> dict:
+    """适用性门控 (v3.3新增 — 对齐SkillHub TRACE Adaptability维度)
+
+    检测SKILL.md中是否包含适用性相关内容:
+    1. 多使用场景 (weight: 0.3)
+    2. 配置选项/参数说明 (weight: 0.25)
+    3. 多格式/兼容性支持 (weight: 0.2)
+    4. 自定义/扩展性 (weight: 0.15)
+    5. 跨平台/多端支持 (weight: 0.1)
+
+    根因: TRACE评测中Adaptability平均4.2分, xlsx/theme仅4.0分
+    """
+    if not skill_md_path.exists():
+        return {'skill': skill_md_path.parent.name, 'overall_passed': False, 'error': f'文件不存在: {skill_md_path}', 'checks': [], 'checked_at': datetime.now().isoformat()}
+
+    content = skill_md_path.read_text(encoding='utf-8')
+    body = content
+    if content.startswith('---'):
+        parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
+        body = parts[2] if len(parts) > 2 else ''
+
+    body_lower = body.lower()
+    checks = []
+    total_score = 0.0
+
+    for check_name, config in _ADAPTABILITY_PATTERNS.items():
+        matched = []
+        for kw in config['keywords']:
+            if kw.lower() in body_lower:
+                matched.append(kw)
+
+        score = config['weight'] if matched else 0.0
+        total_score += score
+
+        checks.append({
+            'name': f'适用性: {check_name}',
+            'passed': len(matched) > 0,
+            'severity': 'medium' if not matched else 'info',
+            'details': [
+                f'匹配关键词: {", ".join(matched[:5])}' if matched else config['description'],
+                f'权重: {config["weight"]}, 得分: {score:.2f}',
+            ],
+            'matched_keywords': matched,
+        })
+
+    adaptability_score = round(total_score * 5, 2)
+    overall_passed = adaptability_score >= 3.0
+
+    return {
+        'skill': skill_md_path.parent.name,
+        'path': str(skill_md_path),
+        'overall_passed': overall_passed,
+        'total_checks': len(checks),
+        'passed_checks': sum(1 for c in checks if c['passed']),
+        'failed_checks': sum(1 for c in checks if not c['passed']),
+        'checks': checks,
+        'gate_type': 'adaptability',
+        'adaptability_score': adaptability_score,
+        'checked_at': datetime.now().isoformat(),
+    }
+
+
+# --- Effectiveness (有效性) 检测关键词 ---
+_EFFECTIVENESS_PATTERNS = {
+    'workflow_steps': {
+        'keywords': ['步骤', '流程', '工作流', 'workflow', 'step', '第一步', '第二步', '1.', '2.', '3.'],
+        'description': '缺少明确的工作流/步骤说明',
+        'weight': 0.3,
+    },
+    'success_criteria': {
+        'keywords': ['成功', '效果', '验证', '测试', '检查', '确认', 'success', '验证标准', '预期结果', '效果评估'],
+        'description': '缺少成功标准/验证方法说明',
+        'weight': 0.25,
+    },
+    'output_examples': {
+        'keywords': ['示例', '样例', '例子', 'example', 'demo', '输出样例', '示例输出', '样例数据'],
+        'description': '缺少输出示例/使用样例',
+        'weight': 0.2,
+    },
+    'performance_consideration': {
+        'keywords': ['性能', '效率', '优化', '快速', '并发', '批量', '缓存', '延迟', '吞吐', 'performance'],
+        'description': '缺少性能/效率考量说明',
+        'weight': 0.15,
+    },
+    'integration_patterns': {
+        'keywords': ['集成', '对接', 'API', '接口', 'webhook', '回调', '联动', 'integration', 'connect'],
+        'description': '缺少集成/对接模式说明',
+        'weight': 0.1,
+    },
+}
+
+
+def run_effectiveness_gate(skill_md_path: Path) -> dict:
+    """有效性门控 (v3.3新增 — 对齐SkillHub TRACE Effectiveness维度)
+
+    检测SKILL.md中是否包含有效性相关内容:
+    1. 明确的工作流/步骤 (weight: 0.3)
+    2. 成功标准/验证方法 (weight: 0.25)
+    3. 输出示例/使用样例 (weight: 0.2)
+    4. 性能/效率考量 (weight: 0.15)
+    5. 集成/对接模式 (weight: 0.1)
+
+    根因: TRACE评测中Effectiveness平均4.33分, 需要提升
+    """
+    if not skill_md_path.exists():
+        return {'skill': skill_md_path.parent.name, 'overall_passed': False, 'error': f'文件不存在: {skill_md_path}', 'checks': [], 'checked_at': datetime.now().isoformat()}
+
+    content = skill_md_path.read_text(encoding='utf-8')
+    body = content
+    if content.startswith('---'):
+        parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
+        body = parts[2] if len(parts) > 2 else ''
+
+    body_lower = body.lower()
+    checks = []
+    total_score = 0.0
+
+    for check_name, config in _EFFECTIVENESS_PATTERNS.items():
+        matched = []
+        for kw in config['keywords']:
+            if kw.lower() in body_lower:
+                matched.append(kw)
+
+        score = config['weight'] if matched else 0.0
+        total_score += score
+
+        checks.append({
+            'name': f'有效性: {check_name}',
+            'passed': len(matched) > 0,
+            'severity': 'medium' if not matched else 'info',
+            'details': [
+                f'匹配关键词: {", ".join(matched[:5])}' if matched else config['description'],
+                f'权重: {config["weight"]}, 得分: {score:.2f}',
+            ],
+            'matched_keywords': matched,
+        })
+
+    effectiveness_score = round(total_score * 5, 2)
+    overall_passed = effectiveness_score >= 3.0
+
+    return {
+        'skill': skill_md_path.parent.name,
+        'path': str(skill_md_path),
+        'overall_passed': overall_passed,
+        'total_checks': len(checks),
+        'passed_checks': sum(1 for c in checks if c['passed']),
+        'failed_checks': sum(1 for c in checks if not c['passed']),
+        'checks': checks,
+        'gate_type': 'effectiveness',
+        'effectiveness_score': effectiveness_score,
+        'checked_at': datetime.now().isoformat(),
+    }
+
+
 # ============ 统一质量检查入口 (v2.4增强: +本地LLM质量评分) ============
 
 def run_full_quality_check(skill_md_path: Path,
@@ -2119,16 +2429,17 @@ def run_full_quality_check(skill_md_path: Path,
                             slug: str = None,
                             include_local_score: bool = True,
                             enable_autofix: bool = True) -> dict:
-    """统一质量检查入口 (v2.4增强: +本地LLM质量评分; v3.2: +自动修复)
+    """统一质量检查入口 (v2.4增强: +本地LLM质量评分; v3.2: +自动修复; v3.3: +TRACE对齐门控)
     
     执行完整质量检查链路:
-    L1(13项) → 评分门控(2项) → 安全预检(21项) → 营销关卡(7项) → 防幻觉(3项)
+    L1(15项) → 评分门控(2项) → 安全预检(22项) → 营销关卡(7项) → 防幻觉(3项) → TRACE对齐(15项)
     可选: L2/L3报告检查
     可选: 本地LLM质量评分(5维度, 阈值4.5)
     
     v2.3新增: 评分门控 — 检查平台历史评分,低于4.5分阻断上传
     v2.4新增: 本地LLM质量评分 — 5维度评测,低于4.5分阻断上传
     v3.2新增: 自动修复 — enable_autofix=True时, 安全预检和防幻觉检查前自动修复可修复的问题
+    v3.3新增: TRACE对齐门控 — 可靠性(5项)+适用性(5项)+有效性(5项), 补齐SkillHub TRACE评测空白
     
     参数:
         skill_md_path: SKILL.md文件路径
@@ -2140,8 +2451,9 @@ def run_full_quality_check(skill_md_path: Path,
         include_local_score: 是否执行本地LLM质量评分 (v2.4新增, 默认True)
     
     返回:
-        统一质量检查结果, 包含L1/评分/安全/营销/防幻觉各层结果
+        统一质量检查结果, 包含L1/评分/安全/营销/防幻觉/TRACE各层结果
         v2.4新增: local_score(0.0-5.0), local_score_feedback, local_score_dimensions
+        v3.3新增: trace_scores {reliability, adaptability, effectiveness}
     """
     # v2.4修复: 文件不存在时提前返回错误, 避免后续函数异常
     if not skill_md_path.exists():
@@ -2183,6 +2495,11 @@ def run_full_quality_check(skill_md_path: Path,
             skill_md_path, l2_report, l3_report, l4_report
         )
     
+    # TRACE对齐门控 (v3.3新增 — 可靠性+适用性+有效性)
+    reliability_result = run_reliability_gate(skill_md_path)
+    adaptability_result = run_adaptability_gate(skill_md_path)
+    effectiveness_result = run_effectiveness_gate(skill_md_path)
+    
     # 本地LLM质量评分 (v2.4新增 — 5维度评测, 阈值4.5)
     local_score_result = run_local_scoring(skill_md_path) if include_local_score else None
     
@@ -2194,6 +2511,9 @@ def run_full_quality_check(skill_md_path: Path,
         ('security_precheck', security_result),
         ('marketing_gate', marketing_result),
         ('anti_hallucination', anti_hallucination_result),
+        ('trace_reliability', reliability_result),
+        ('trace_adaptability', adaptability_result),
+        ('trace_effectiveness', effectiveness_result),
     ]:
         for _check in _result.get('checks', []):
             _check['layer'] = _layer_name
@@ -2249,8 +2569,25 @@ def run_full_quality_check(skill_md_path: Path,
                 'passed': anti_hallucination_result.get('overall_passed', False),
                 'score': f"{anti_hallucination_result.get('passed_checks', 0)}/{anti_hallucination_result.get('total_checks', 0)}",
             },
+            'trace_reliability': {
+                'passed': reliability_result.get('overall_passed', False),
+                'score': f"{reliability_result.get('reliability_score', 0):.2f}/5.0",
+            },
+            'trace_adaptability': {
+                'passed': adaptability_result.get('overall_passed', False),
+                'score': f"{adaptability_result.get('adaptability_score', 0):.2f}/5.0",
+            },
+            'trace_effectiveness': {
+                'passed': effectiveness_result.get('overall_passed', False),
+                'score': f"{effectiveness_result.get('effectiveness_score', 0):.2f}/5.0",
+            },
         },
         'all_checks': all_checks,
+        'trace_scores': {
+            'reliability': reliability_result.get('reliability_score', 0),
+            'adaptability': adaptability_result.get('adaptability_score', 0),
+            'effectiveness': effectiveness_result.get('effectiveness_score', 0),
+        },
         'checked_at': datetime.now().isoformat()
     }
     
