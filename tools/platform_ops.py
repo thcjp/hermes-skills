@@ -883,8 +883,10 @@ def reconcile_sync_status(platform: str = None, dry_run: bool = False) -> dict:
         # current_status但不创建platform_uploads记录,导致reconcile无法通过platform_uploads
         # 反推sync_status. 这些skill的current_status已准确反映平台状态,可直接用于修复.
         # 修复规则:
-        # 1. current_status为published/pending_review且sync_status仍为pending_upload → synced
-        # 2. current_status为deleted/deleted_on_skillhub且sync_status仍为pending_upload → not_applicable
+        # 1. current_status为published/pending_review且sync_status仍为pending_upload/waf_blocked → synced
+        #    (waf_blocked的published skill说明V198修复后已成功上传,旧waf_blocked状态已过期)
+        # 2. current_status为deleted/deleted_on_skillhub且sync_status仍为pending_upload/waf_blocked/failed → not_applicable
+        #    (已删除的skill不需要上传,任何上传相关状态都是过期的)
         cs_synced = 0
         cs_not_applicable = 0
         if plat == 'skillhub':
@@ -892,7 +894,7 @@ def reconcile_sync_status(platform: str = None, dry_run: bool = False) -> dict:
                 UPDATE skills
                 SET skillhub_sync_status = 'synced', last_sync_at = ?
                 WHERE current_status IN ('published_skillhub', 'pending_review_skillhub')
-                AND skillhub_sync_status = 'pending_upload'
+                AND skillhub_sync_status IN ('pending_upload', 'waf_blocked')
             """, (datetime.now().isoformat(),))
             cs_synced = c.rowcount
 
@@ -900,7 +902,7 @@ def reconcile_sync_status(platform: str = None, dry_run: bool = False) -> dict:
                 UPDATE skills
                 SET skillhub_sync_status = 'not_applicable'
                 WHERE current_status IN ('deleted', 'deleted_on_skillhub')
-                AND skillhub_sync_status = 'pending_upload'
+                AND skillhub_sync_status IN ('pending_upload', 'waf_blocked', 'failed')
             """)
             cs_not_applicable = c.rowcount
 
