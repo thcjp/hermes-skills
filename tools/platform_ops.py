@@ -202,8 +202,19 @@ def post_upload_publish(slug: str) -> dict:
     except Exception as e:
         result['approve'] = {'success': False, 'message': str(e)}
 
-    # 2. Publish to community — 发布到社区
+    # 2. Publish to community — 发布到社区 (V200: 先unpublish-from-community重置内部状态)
     try:
+        # V200根因修复: 先调用unpublish-from-community重置skill内部社区发布状态
+        # 根因: 直接调用publish-to-community会返回409 skill_not_publishable("已对外发布")
+        # 因为skill内部社区发布状态卡在部分发布态, 需先unpublish重置
+        unpublish_url = f"{ORG_ADMIN_SKILLS_API}/{slug}/unpublish-from-community"
+        unpublish_req = Request(unpublish_url, data=b'{}', headers=_build_headers(auth), method='POST')
+        try:
+            with urlopen(unpublish_req, timeout=15) as resp:
+                resp.read()
+        except (HTTPError, Exception):
+            pass  # unpublish-from-community失败不影响后续publish-to-community
+
         publisher_id = _get_publisher_profile_id()
         publish_body = json.dumps({'publisherProfileId': publisher_id}).encode('utf-8') if publisher_id else b'{}'
         publish_url = f"{ORG_ADMIN_SKILLS_API}/{slug}/publish-to-community"
