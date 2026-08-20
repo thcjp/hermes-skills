@@ -1625,9 +1625,10 @@ async function startUpload(){
         apprOk=ar.status===200||ar.status===201||ar.status===400;
       }catch(e){}
       try{
-        // V200: 先unpublish-from-community重置内部状态, 再publish-to-community
-        // 根因: 直接调用publish-to-community会返回409 skill_not_publishable("已对外发布")
-        // 因为skill内部社区发布状态卡在部分发布态, 需先unpublish重置
+        // V200: 三步发布流程 online→unpublish→publish
+        // 根因1: skill社区发布状态卡在部分发布态 → 先unpublish-from-community重置
+        // 根因2: skill被offline_by_admin → 先online恢复published状态
+        await fetch(`${adminApi}/${slug}/online`,{method:'POST',credentials:'include'});
         await fetch(`${adminApi}/${slug}/unpublish-from-community`,{method:'POST',credentials:'include'});
         const body=JSON.stringify({publisherProfileId:pubId});
         const cr=await fetch(`${adminApi}/${slug}/publish-to-community`,{method:'POST',headers:{'Content-Type':'application/json'},body:body,credentials:'include'});
@@ -1860,9 +1861,10 @@ async function startPublish(){
       if(!approveOk&&ar.status===400){approveOk=true}
       row.cells[2].innerHTML=approveOk?'<span class="ok">✓</span>':'<span class="fail">✗ '+ar.status+'</span>';
     }catch(e){row.cells[2].innerHTML='<span class="fail">✗</span>'}
-    // 2. Publish to community (V200: 先unpublish-from-community重置内部状态)
+    // 2. Publish to community (V200: online→unpublish→publish 三步流程)
     try{
-      // V200根因修复: 先unpublish-from-community重置, 解决409 skill_not_publishable
+      // V200根因修复: online(确保published) → unpublish-from-community(重置社区状态) → publish-to-community
+      await fetch(`${meta.community_endpoint}/${slug}/online`,{method:'POST',credentials:'include'});
       await fetch(`${meta.community_endpoint}/${slug}/unpublish-from-community`,{method:'POST',credentials:'include'});
       const body=JSON.stringify({publisherProfileId:meta.publisher_profile_id});
       const cr=await fetch(`${meta.community_endpoint}/${slug}/publish-to-community`,{

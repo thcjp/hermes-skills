@@ -202,19 +202,32 @@ def post_upload_publish(slug: str) -> dict:
     except Exception as e:
         result['approve'] = {'success': False, 'message': str(e)}
 
-    # 2. Publish to community — 发布到社区 (V200: 先unpublish-from-community重置内部状态)
+    # 2. Publish to community — 发布到社区 (V200: online→unpublish→publish 三步流程)
     try:
-        # V200根因修复: 先调用unpublish-from-community重置skill内部社区发布状态
-        # 根因: 直接调用publish-to-community会返回409 skill_not_publishable("已对外发布")
-        # 因为skill内部社区发布状态卡在部分发布态, 需先unpublish重置
+        # V200根因修复: 完整的三步发布流程, 解决publish-to-community 409问题
+        # 根因1: skill内部社区发布状态卡在部分发布态 → 先unpublish-from-community重置
+        # 根因2: skill被offline_by_admin → 先online恢复published状态
+        # 三步流程: online(确保published) → unpublish-from-community(重置社区状态) → publish-to-community
+
+        # Step 1: online — 确保skill处于published状态 (处理offline_by_admin边缘情况)
+        online_url = f"{ORG_ADMIN_SKILLS_API}/{slug}/online"
+        online_req = Request(online_url, data=b'{}', headers=_build_headers(auth), method='POST')
+        try:
+            with urlopen(online_req, timeout=15) as resp:
+                resp.read()
+        except (HTTPError, Exception):
+            pass  # online失败(已在线/状态冲突)不影响后续步骤
+
+        # Step 2: unpublish-from-community — 重置内部社区发布状态
         unpublish_url = f"{ORG_ADMIN_SKILLS_API}/{slug}/unpublish-from-community"
         unpublish_req = Request(unpublish_url, data=b'{}', headers=_build_headers(auth), method='POST')
         try:
             with urlopen(unpublish_req, timeout=15) as resp:
                 resp.read()
         except (HTTPError, Exception):
-            pass  # unpublish-from-community失败不影响后续publish-to-community
+            pass  # unpublish-from-community失败(从未发布过)不影响后续步骤
 
+        # Step 3: publish-to-community — 发布到社区
         publisher_id = _get_publisher_profile_id()
         publish_body = json.dumps({'publisherProfileId': publisher_id}).encode('utf-8') if publisher_id else b'{}'
         publish_url = f"{ORG_ADMIN_SKILLS_API}/{slug}/publish-to-community"
