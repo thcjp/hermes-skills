@@ -9,6 +9,36 @@ V126 W5: 新增 extract_source_license, 统一 auto_differentiate/finance_differ
 import re
 from pathlib import Path
 
+# V195: 尝试导入PyYAML(支持嵌套字典解析, 如hermes-skills的metadata块)
+try:
+    import yaml as _yaml
+    _HAS_YAML = True
+except ImportError:
+    _HAS_YAML = False
+
+
+def _normalize_yaml_value(val):
+    """V195: 将PyYAML返回的值统一为str或list[str](与简单解析器行为一致)
+
+    PyYAML safe_load返回原生Python类型(bool/int/float/list/dict)，
+    而下游代码(quality_gate/enterprise_uploader等)期望标量字段为str、
+    列表字段为list[str]。此函数统一类型，避免破坏性变更。
+    """
+    if val is None:
+        return ''
+    if isinstance(val, bool):
+        return 'true' if val else 'false'
+    if isinstance(val, (int, float)):
+        return str(val)
+    if isinstance(val, str):
+        return val
+    if isinstance(val, list):
+        return [str(item) if not isinstance(item, str) else item for item in val]
+    if isinstance(val, dict):
+        return val  # 保持dict, 由调用方扁平化处理
+    return str(val)
+
+
 # [V132 C1a] 章节标题正则(统一3处重复定义: generate_skill, l2_capability_checker, source_fidelity_checker)
 CHAPTER_HEADING_PATTERN = re.compile(r'^## (.+)$', re.MULTILINE)
 
@@ -39,10 +69,12 @@ def parse_frontmatter(content: str) -> dict:
 
     返回: {'raw': 原始frontmatter文本, 'fields': {字段名: 值}, 'body': 正文}
 
-    支持三种值模式:
+    V195: 优先使用PyYAML解析(支持嵌套metadata字典), 降级到简单解析器
+    支持值模式:
         - 普通键值对: key: value
         - 块标量: key: |-  (多行文本)
         - 列表: key: \n  - item1 \n  - item2
+        - 嵌套字典: metadata: \n  version: "1.0.1" (V195新增, 需PyYAML)
     """
     # 去BOM
     if content.startswith('\ufeff'):
@@ -56,7 +88,25 @@ def parse_frontmatter(content: str) -> dict:
     raw = fm_match.group(1)
     body = content[fm_match.end():]
 
-    # 简单YAML解析(不依赖yaml库, 避免环境问题)
+    # V195: 优先使用PyYAML解析(支持嵌套字典, 如hermes-skills的metadata块)
+    if _HAS_YAML:
+        try:
+            parsed = _yaml.safe_load(raw)
+            if isinstance(parsed, dict):
+                fields = {}
+                for k, v in parsed.items():
+                    fields[k] = _normalize_yaml_value(v)
+                # V195: 扁平化嵌套metadata字典到顶层(兼容hermes-skills格式)
+                _meta = fields.pop('metadata', None)
+                if isinstance(_meta, dict):
+                    for _k, _v in _meta.items():
+                        if _k not in fields:  # 不覆盖已有的顶层字段
+                            fields[_k] = _normalize_yaml_value(_v)
+                return {'raw': raw, 'fields': fields, 'body': body}
+        except Exception:
+            pass  # 降级到简单解析器
+
+    # 降级: 简单YAML解析(不依赖yaml库, PyYAML不可用或解析失败时使用)
     fields = {}
     mode = None  # None | 'block' | 'list'
     current_key = None

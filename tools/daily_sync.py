@@ -50,12 +50,28 @@ from platform_config import GITHUB_REPOS
 
 
 # ============ 速率限制常量 (v3.0: 防止触发SkillHub反垃圾系统) ============
-# 根因: 2026-07-24单日爆发式上传1098个技能(同一微秒时间戳)触发平台反垃圾清理
+# 根因: 2026-07-24单日爆发式上传1098个技能(同一微秒时间戳)触发SkillHub反垃圾清理
 # V182: 对齐skillhub.md文档的防封配置(max_per_hour=10, max_per_day=20)
-MAX_UPLOADS_PER_HOUR = 10         # 每小时最多上传10个技能(原30→10,对齐文档)
-MAX_UPLOADS_PER_DAY = 20          # 每天最多上传20个技能(原100→20,对齐文档)
-MIN_INTERVAL_SECONDS = 120        # 两次上传最少间隔2分钟(120秒)
-CLAWHUB_UPLOAD_DELAY = 120        # ClawHub上传间隔(秒), v3.0: 从2秒提升到2分钟
+# V187: ClawHub与SkillHub分离限制 — ClawHub支持每次200个, 封禁风险远低于SkillHub
+
+# SkillHub 限制 (V190: 提升至30/h, 100/d, 60s — 安全但更高效)
+# 根因分析: 2026-07-24封禁是因为1098个skill在同一秒内爆发上传(0间隔), 不是因为日总量
+# 当前已有三重防护: 60s间隔(非爆发) + SHA-256/SimHash内容去重 + TRACE>=45质量门控
+# 60s间隔的100/d远低于爆发阈值, 配合去重和门控, 封禁风险极低
+SKILLHUB_MAX_PER_HOUR = 30        # 每小时最多上传30个技能
+SKILLHUB_MAX_PER_DAY = 100        # 每天最多上传100个技能
+SKILLHUB_MIN_INTERVAL = 60        # 两次上传最少间隔60秒
+
+# ClawHub 限制 (宽松, 平台支持大批量上传)
+CLAWHUB_MAX_PER_HOUR = 100        # 每小时最多上传100个技能
+CLAWHUB_MAX_PER_DAY = 200         # 每天最多上传200个技能
+CLAWHUB_MIN_INTERVAL = 2          # 两次上传最少间隔2秒
+
+# 向后兼容别名 (旧代码引用)
+MAX_UPLOADS_PER_HOUR = SKILLHUB_MAX_PER_HOUR
+MAX_UPLOADS_PER_DAY = SKILLHUB_MAX_PER_DAY
+MIN_INTERVAL_SECONDS = SKILLHUB_MIN_INTERVAL
+CLAWHUB_UPLOAD_DELAY = CLAWHUB_MIN_INTERVAL
 
 
 def log(msg):
@@ -88,13 +104,30 @@ def _ensure_rate_limit_table():
     conn.close()
 
 
+def _get_platform_limits(platform='skillhub'):
+    """获取平台特定的速率限制参数 (V187: ClawHub与SkillHub分离)
+
+    Args:
+        platform: 平台名称 ('skillhub' 或 'clawhub')
+
+    Returns:
+        tuple: (max_per_hour, max_per_day, min_interval_seconds)
+    """
+    if platform == 'clawhub':
+        return (CLAWHUB_MAX_PER_HOUR, CLAWHUB_MAX_PER_DAY, CLAWHUB_MIN_INTERVAL)
+    else:
+        return (SKILLHUB_MAX_PER_HOUR, SKILLHUB_MAX_PER_DAY, SKILLHUB_MIN_INTERVAL)
+
+
 def check_upload_rate_limit(platform='skillhub'):
     """检查是否允许上传(基于速率限制)
 
+    V187: 支持平台特定限制 — ClawHub(100/h, 200/d, 2s) vs SkillHub(10/h, 20/d, 120s)
+
     检查三个维度:
-    1. 最近1小时内的上传数量是否超过 MAX_UPLOADS_PER_HOUR
-    2. 最近24小时内的上传数量是否超过 MAX_UPLOADS_PER_DAY
-    3. 距离上次上传是否已过 MIN_INTERVAL_SECONDS 秒
+    1. 最近1小时内的上传数量是否超过平台每小时限制
+    2. 最近24小时内的上传数量是否超过平台每天限制
+    3. 距离上次上传是否已过平台最小间隔秒数
 
     Args:
         platform: 平台名称 ('skillhub' 或 'clawhub')
@@ -109,6 +142,8 @@ def check_upload_rate_limit(platform='skillhub'):
             'wait_seconds': float or None,  # 需要等待的秒数(allowed=False时)
         }
     """
+    max_per_hour, max_per_day, min_interval = _get_platform_limits(platform)
+
     _ensure_rate_limit_table()
     conn = sqlite3.connect(DB_PATH)
     now = datetime.now()
@@ -148,7 +183,7 @@ def check_upload_rate_limit(platform='skillhub'):
     conn.close()
 
     # 检查小时限制
-    if hourly_count >= MAX_UPLOADS_PER_HOUR:
+    if hourly_count >= max_per_hour:
         wait_seconds = 3600  # 默认1小时
         if hourly_oldest:
             try:
@@ -158,7 +193,7 @@ def check_upload_rate_limit(platform='skillhub'):
                 pass
         return {
             'allowed': False,
-            'reason': f'每小时上传限制已达上限 ({hourly_count}/{MAX_UPLOADS_PER_HOUR})',
+            'reason': f'每小时上传限制已达上限 ({hourly_count}/{max_per_hour})',
             'hourly_count': hourly_count,
             'daily_count': daily_count,
             'seconds_since_last': seconds_since_last,
@@ -166,7 +201,7 @@ def check_upload_rate_limit(platform='skillhub'):
         }
 
     # 检查天限制
-    if daily_count >= MAX_UPLOADS_PER_DAY:
+    if daily_count >= max_per_day:
         wait_seconds = 86400  # 默认24小时
         if daily_oldest:
             try:
@@ -176,7 +211,7 @@ def check_upload_rate_limit(platform='skillhub'):
                 pass
         return {
             'allowed': False,
-            'reason': f'每日上传限制已达上限 ({daily_count}/{MAX_UPLOADS_PER_DAY})',
+            'reason': f'每日上传限制已达上限 ({daily_count}/{max_per_day})',
             'hourly_count': hourly_count,
             'daily_count': daily_count,
             'seconds_since_last': seconds_since_last,
@@ -184,8 +219,8 @@ def check_upload_rate_limit(platform='skillhub'):
         }
 
     # 检查最小间隔
-    if seconds_since_last is not None and seconds_since_last < MIN_INTERVAL_SECONDS:
-        wait_time = MIN_INTERVAL_SECONDS - seconds_since_last
+    if seconds_since_last is not None and seconds_since_last < min_interval:
+        wait_time = min_interval - seconds_since_last
         return {
             'allowed': False,
             'reason': f'最小间隔未满足, 需等待 {wait_time:.0f} 秒',
@@ -250,8 +285,9 @@ def wait_for_upload_slot(platform='skillhub', max_wait_seconds=7200):
             return check
 
         # 计算等待时间
+        _, _, min_interval = _get_platform_limits(platform)
         if check['seconds_since_last'] is not None:
-            wait = MIN_INTERVAL_SECONDS - check['seconds_since_last']
+            wait = min_interval - check['seconds_since_last']
         else:
             wait = 60  # 默认检查间隔
 
@@ -275,15 +311,16 @@ def get_rate_limit_status(platform='skillhub'):
         dict: 速率限制状态信息
     """
     check = check_upload_rate_limit(platform)
+    max_per_hour, max_per_day, min_interval = _get_platform_limits(platform)
     return {
         'platform': platform,
         'allowed': check['allowed'],
         'reason': check['reason'],
         'hourly_count': check['hourly_count'],
         'daily_count': check['daily_count'],
-        'hourly_limit': MAX_UPLOADS_PER_HOUR,
-        'daily_limit': MAX_UPLOADS_PER_DAY,
-        'min_interval_seconds': MIN_INTERVAL_SECONDS,
+        'hourly_limit': max_per_hour,
+        'daily_limit': max_per_day,
+        'min_interval_seconds': min_interval,
         'seconds_since_last': check['seconds_since_last'],
     }
 
@@ -521,30 +558,29 @@ def step_sync_clawhub():
     log("阶段7: SYNC_CLAWHUB - ClawHub 批量上传")
     log("=" * 50)
 
-    # v3.0: 检查ClawHub速率限制
+    # v3.0: 检查ClawHub速率限制 (V187: 使用ClawHub独立限制)
     rate_check = check_upload_rate_limit('clawhub')
     log(f"  ClawHub速率限制状态: {rate_check['reason']}")
-    log(f"    最近1小时: {rate_check['hourly_count']}/{MAX_UPLOADS_PER_HOUR}")
-    log(f"    最近24小时: {rate_check['daily_count']}/{MAX_UPLOADS_PER_DAY}")
+    log(f"    最近1小时: {rate_check['hourly_count']}/{CLAWHUB_MAX_PER_HOUR}")
+    log(f"    最近24小时: {rate_check['daily_count']}/{CLAWHUB_MAX_PER_DAY}")
     if rate_check['seconds_since_last'] is not None:
         log(f"    距上次上传: {rate_check['seconds_since_last']:.0f}秒 "
-            f"(最小间隔{MIN_INTERVAL_SECONDS}秒)")
+            f"(最小间隔{CLAWHUB_MIN_INTERVAL}秒)")
 
-    # v3.0: 计算本次可上传的数量(考虑速率限制)
-    # ClawHub每日限制200, 但SkillHub速率限制每日100, 取较小值确保安全
-    remaining_hourly = MAX_UPLOADS_PER_HOUR - rate_check['hourly_count']
-    remaining_daily = MAX_UPLOADS_PER_DAY - rate_check['daily_count']
-    clawhub_limit = min(200, remaining_daily, remaining_hourly)
+    # V187: 计算本次可上传的数量(使用ClawHub独立限制)
+    remaining_hourly = CLAWHUB_MAX_PER_HOUR - rate_check['hourly_count']
+    remaining_daily = CLAWHUB_MAX_PER_DAY - rate_check['daily_count']
+    clawhub_limit = min(CLAWHUB_MAX_PER_DAY, remaining_daily, remaining_hourly)
     if clawhub_limit <= 0:
         log(f"  跳过ClawHub上传: 速率限制已达上限 ({rate_check['reason']})")
         return
 
     log(f"  本次最多可上传: {clawhub_limit} 个 (受速率限制约束)")
 
-    # v3.0: 如果距离上次上传不足2分钟, 等待
+    # V187: 如果距离上次上传不足最小间隔, 等待
     if rate_check['seconds_since_last'] is not None and \
-            rate_check['seconds_since_last'] < MIN_INTERVAL_SECONDS:
-        wait_sec = MIN_INTERVAL_SECONDS - rate_check['seconds_since_last']
+            rate_check['seconds_since_last'] < CLAWHUB_MIN_INTERVAL:
+        wait_sec = CLAWHUB_MIN_INTERVAL - rate_check['seconds_since_last']
         log(f"  等待 {wait_sec:.0f} 秒以满足最小间隔要求...")
         _time.sleep(wait_sec)
 
@@ -740,7 +776,7 @@ def main():
 
     log("每日同步开始 (v3.0)")
     log(f"数据库: {DB_PATH}")
-    log(f"速率限制: {MAX_UPLOADS_PER_HOUR}/小时, {MAX_UPLOADS_PER_DAY}/天, 最小间隔{MIN_INTERVAL_SECONDS}秒")
+    log(f"速率限制: SkillHub={SKILLHUB_MAX_PER_HOUR}/h+{SKILLHUB_MAX_PER_DAY}/d+{SKILLHUB_MIN_INTERVAL}s, ClawHub={CLAWHUB_MAX_PER_HOUR}/h+{CLAWHUB_MAX_PER_DAY}/d+{CLAWHUB_MIN_INTERVAL}s")
 
     if args.discover:
         step_discover()

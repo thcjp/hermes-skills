@@ -623,7 +623,11 @@ def update_db_category(slug, category):
 
 
 def add_field_to_frontmatter(content, field_name, field_value):
-    """Add a field to the frontmatter, preserving structure"""
+    """Add or update a field in the frontmatter, preserving structure.
+    
+    V48: If the field already exists, it is updated in-place instead of
+    creating a duplicate.
+    """
     if content.startswith('\ufeff'):
         bom = '\ufeff'
         content = content[1:]
@@ -650,7 +654,18 @@ def add_field_to_frontmatter(content, field_name, field_value):
         else:
             val_str = f'"{field_value}"'
 
-        # Add field at the end of frontmatter
+        # V48: Check if field already exists — update in-place instead of duplicating
+        existing_pattern = re.compile(
+            rf'^({re.escape(field_name)}):\s*(.*)$', re.MULTILINE
+        )
+        if existing_pattern.search(fm_text):
+            # Replace existing field value
+            fm_text = existing_pattern.sub(
+                f'{field_name}: {val_str}', fm_text, count=1
+            )
+            return bom + "---" + fm_text + "---" + body
+
+        # Add field at the end of frontmatter (field doesn't exist yet)
         new_fm = fm_text.rstrip() + f"\n{field_name}: {val_str}\n"
         return bom + "---" + new_fm + "---" + body
     return content
@@ -1119,6 +1134,9 @@ def main():
             'ADDED_QUICK_START': 0,
             'FIXED_IRRELEVANT_TAGS': 0,
             'ENHANCED_VALUE_PROPOSITION': 0,
+            'MISSING_PRICING_TIER': 0,
+            'MISSING_LICENSE': 0,
+            'MISSING_EDITION': 0,
         },
         'modified_files': []
     }
@@ -1258,6 +1276,55 @@ def main():
             if vp_fixed:
                 stats['fixes']['ENHANCED_VALUE_PROPOSITION'] += 1
                 fixes_applied.append('ENHANCED_VALUE_PROPOSITION')
+
+            # Re-parse after value proposition fix
+            fm, fm_text, body, full = extract_frontmatter(content)
+
+            # === V48: Fix missing/invalid pricing_tier (marketing gate: pricing合理性) ===
+            VALID_PRICING_TIERS = {"L1-入门级", "L2-标准级", "L3-专业级", "L4-企业级", "free", "paid", "freemium"}
+            pricing_val = fm.get('pricing_tier', '')
+            if not pricing_val or pricing_val.strip() not in VALID_PRICING_TIERS:
+                # Determine free vs paid from slug/name/edition
+                slug_lower = slug.lower()
+                name_lower = (fm.get('name', '') or '').lower()
+                is_free = ('free' in slug_lower or 'free' in name_lower or 
+                          'tool-free' in slug_lower or '-free' in slug_lower)
+                new_pricing = 'free' if is_free else 'L2-标准级'
+                content = add_field_to_frontmatter(content, 'pricing_tier', new_pricing)
+                fixes_applied.append('MISSING_PRICING_TIER')
+                stats['fixes']['MISSING_PRICING_TIER'] = (stats['fixes'].get('MISSING_PRICING_TIER', 0)) + 1
+
+            # === V48: Fix missing/invalid license (marketing gate: license合规) ===
+            FREE_LICENSES = {"MIT", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "GPL-3.0", "MPL-2.0", "Unlicense", "CC0-1.0"}
+            PAID_LICENSES = {"Proprietary", "Commercial", "Custom"}
+            license_val = fm.get('license', '')
+            if not license_val or license_val.strip() not in (FREE_LICENSES | PAID_LICENSES):
+                # Determine free vs paid
+                slug_lower = slug.lower()
+                is_free = ('free' in slug_lower or '-free' in slug_lower or 'tool-free' in slug_lower)
+                new_license = 'MIT' if is_free else 'Proprietary'
+                content = add_field_to_frontmatter(content, 'license', new_license)
+                fixes_applied.append('MISSING_LICENSE')
+                stats['fixes']['MISSING_LICENSE'] = (stats['fixes'].get('MISSING_LICENSE', 0)) + 1
+
+            # Re-parse after license fix
+            fm, fm_text, body, full = extract_frontmatter(content)
+
+            # === V48: Fix missing edition (marketing gate: license合规 depends on edition) ===
+            edition_val = fm.get('edition', '')
+            if not edition_val:
+                slug_lower = slug.lower()
+                if 'pro' in slug_lower or 'paid' in slug_lower or 'premium' in slug_lower:
+                    new_edition = 'pro'
+                elif 'free' in slug_lower or 'tool-free' in slug_lower:
+                    new_edition = 'free'
+                else:
+                    # Determine from license
+                    lic = fm.get('license', '').strip().strip('"').strip("'")
+                    new_edition = 'pro' if lic in PAID_LICENSES else 'free'
+                content = add_field_to_frontmatter(content, 'edition', new_edition)
+                fixes_applied.append('MISSING_EDITION')
+                stats['fixes']['MISSING_EDITION'] = (stats['fixes'].get('MISSING_EDITION', 0)) + 1
 
             # Save if modified
             if content != original:

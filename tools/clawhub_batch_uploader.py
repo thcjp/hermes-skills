@@ -4,6 +4,7 @@ ClawHub Batch Uploader
 ======================
 Batch upload skills to ClawHub using the clawhub CLI.
 v2.3: 增加DB跟踪(上传成功后更新clawhub_sync_status) + --from-db模式
+v2.8: 修复短目录名上传失败(--slug显式传递, 避免CLI回退到目录名)
 
 Usage:
     python clawhub_batch_uploader.py                    # Upload all remaining (up to daily limit)
@@ -190,10 +191,10 @@ def get_clawhub_topics(skill_dir, slug=None):
     if slug:
         slug_parts = slug.split('-')
         for part in slug_parts:
-            if len(part) > 2 and part not in ['the', 'and', 'for', 'pro', 'sk', 'free', 'paid', 'tool']:
+            if len(part) > 2 and part not in ['the', 'and', 'for', 'pro', 'sk', 'free', 'paid', 'tool', 'community', 'health', 'security', 'admin', 'api', 'blog', 'docs', 'help', 'settings', 'profile', 'search', 'about', 'login', 'register', 'auth', 'account', 'user', 'dashboard']:
                 topics.append(part)
     
-    # 去重，最多10个
+    # 去重，最多5个 (ClawHub服务器限制topics为5个)
     seen = set()
     unique = []
     for t in topics:
@@ -201,10 +202,10 @@ def get_clawhub_topics(skill_dir, slug=None):
         if t_lower not in seen and t:
             seen.add(t_lower)
             unique.append(t)
-        if len(unique) >= 10:
+        if len(unique) >= 5:
             break
     
-    return unique[:10] if unique else ["tool", "automation"]
+    return unique[:5] if unique else ["tool", "automation"]
 
 
 def get_display_name(skill_dir):
@@ -537,6 +538,7 @@ def upload_skill(skill_dir, slug, dry_run=False, skip_quality_gate=False):
         '--registry', REGISTRY,
         'publish', _quote_arg(skill_dir),
         '--changelog', _quote_arg(CHANGELOG),
+        '--slug', slug,  # v2.8: 显式传递slug, 避免CLI回退到目录名(修复短目录名如db/py/ui导致"Slug must be at least 3 characters")
     ]
     # v2.7: 仅当CLI支持时才添加营销参数
     if _CLAWHUB_SUPPORTS_CATEGORIES:
@@ -647,13 +649,57 @@ def increment_version(skill_dir):
     return None
 
 
+def scan_dir_for_skills(dir_path):
+    """扫描目录中的skill子目录, 返回 [(slug, skill_dir), ...]
+
+    用于--from-dir模式: 直接从文件系统扫描skill, 不依赖DB。
+    每个包含SKILL.md的子目录被视为一个skill。
+    slug从SKILL.md frontmatter的slug字段提取, 如果没有则用目录名。
+    """
+    root = Path(dir_path)
+    if not root.exists():
+        print(f"ERROR: 目录不存在: {dir_path}")
+        return []
+
+    results = []
+    for item in sorted(root.iterdir()):
+        if not item.is_dir():
+            continue
+        skill_md = item / "SKILL.md"
+        if not skill_md.exists():
+            continue
+
+        # 从SKILL.md提取slug
+        content = skill_md.read_text(encoding='utf-8')
+        if content.startswith('\ufeff'):
+            content = content[1:]
+
+        slug = item.name  # 默认用目录名
+        if content.startswith('---'):
+            parts = re.split(r'^---\s*$', content, maxsplit=2, flags=re.MULTILINE)
+            if len(parts) > 1:
+                fm_str = parts[1]
+                for line in fm_str.split('\n'):
+                    line = line.strip()
+                    if line.startswith('slug:'):
+                        val = line[5:].strip().strip('"\'')
+                        if val:
+                            slug = val
+                        break
+
+        results.append((slug, item))
+
+    return results
+
+
 def main():
     import argparse
-    parser = argparse.ArgumentParser(description='ClawHub Batch Uploader v2.6 (含质量门禁)')
+    parser = argparse.ArgumentParser(description='ClawHub Batch Uploader v2.7 (含质量门禁+目录扫描)')
     parser.add_argument('--limit', type=int, default=DAILY_LIMIT, help='Max skills to upload')
     parser.add_argument('--dry-run', action='store_true', help='Dry run mode')
     parser.add_argument('--resume', action='store_true', help='Resume from checkpoint')
     parser.add_argument('--from-db', action='store_true', help='从DB查询待上传skill(替代JSON)')
+    parser.add_argument('--from-dir', type=str, default=None, help='从指定目录扫描skill上传(不依赖DB)')
     parser.add_argument('--skip-quality-gate', action='store_true', help='跳过质量门禁检查(紧急场景)')
     parser.add_argument('--min-score', type=int, default=0, help='trace_llm最低分数过滤(0=不过滤)')
     # v3.0: 支持自定义上传间隔(秒), 默认2秒, daily_sync传入120(2分钟)以防止触发反垃圾系统
@@ -665,8 +711,14 @@ def main():
     dir_mapping = load_json(DIR_MAPPING_FILE)
     dir_mapping = dir_mapping['found_mapping'] if dir_mapping else {}
 
-    # v2.3: 从DB获取待上传slugs, 或从JSON获取
-    if args.from_db:
+    # v2.3: 从DB获取待上传slugs, 或从JSON获取, 或从目录扫描
+    dir_scan_map = {}  # --from-dir模式的 slug→skill_dir 映射
+    if args.from_dir:
+        scanned = scan_dir_for_skills(args.from_dir)
+        all_slugs = [s for s, _ in scanned]
+        dir_scan_map = {s: d for s, d in scanned}
+        print(f"[目录扫描模式] 从 {args.from_dir} 扫描到 {len(all_slugs)} 个skill")
+    elif args.from_db:
         all_slugs = get_pending_slugs_from_db(limit=0, min_score=args.min_score)  # 获取全部, 主循环处理limit
         print(f"[DB模式] 从数据库查询到 {len(all_slugs)} 个待上传skill")
     else:
@@ -690,8 +742,8 @@ def main():
         print(f"Resuming: {len(uploaded_today)} already uploaded today")
 
     # Also load previous results to skip already uploaded
-    # v2.4: --from-db模式跳过JSON过滤, DB是唯一数据源
-    if args.from_db:
+    # v2.4: --from-db/--from-dir模式跳过JSON过滤, DB是唯一数据源
+    if args.from_db or args.from_dir:
         prev_success = set()
         published = set()
         prev_results = None  # 修复: 初始化prev_results避免NameError
@@ -731,8 +783,11 @@ def main():
             print(f"\nRate limited! Stopping upload.")
             break
 
-        # Find skill directory
-        skill_dir = find_skill_dir(slug, dir_mapping)
+        # Find skill directory (--from-dir模式直接使用扫描结果)
+        if args.from_dir and slug in dir_scan_map:
+            skill_dir = dir_scan_map[slug]
+        else:
+            skill_dir = find_skill_dir(slug, dir_mapping)
         if not skill_dir:
             print(f"  [{i}/{len(to_upload)}] {slug} - SKIP (directory not found)")
             skip_count += 1
@@ -801,11 +856,22 @@ def main():
                         except Exception as e:
                             print(f"  [WARN] record_upload失败,速率限制计数可能不准: {e}")
                 else:
-                    print(f" FAIL: {result2.get('error', '')}")
+                    # 版本递增后重试仍失败 — 如果是VERSION_EXISTS则技能已在ClawHub上
+                    retry_err = result2.get('error', '')
+                    print(f" FAIL: {retry_err}")
+                    if not args.dry_run:
+                        if retry_err == 'VERSION_EXISTS':
+                            update_db_clawhub_status(slug, 'synced')
+                        else:
+                            update_db_clawhub_status(slug, 'failed')
                     fail_count += 1
-                    results['failed'].append({'slug': slug, 'error': result2.get('error', '')})
+                    results['failed'].append({'slug': slug, 'error': retry_err})
             else:
-                print(f" FAIL (no version field)")
+                # VERSION_EXISTS但无法递增版本(无version字段)
+                # 技能已在ClawHub上存在,标记为synced避免后续重复尝试
+                print(f" FAIL (no version field) -> marking synced (already on ClawHub)")
+                if not args.dry_run:
+                    update_db_clawhub_status(slug, 'synced')
                 fail_count += 1
                 results['failed'].append({'slug': slug, 'error': 'NO_VERSION_FIELD'})
         elif result.get('error') == 'RATE_LIMITED':
@@ -819,6 +885,14 @@ def main():
             results['skipped'].append(slug)
             if not args.dry_run:
                 update_db_clawhub_status(slug, 'not_applicable')
+        elif result.get('error') in ('RATING_GATE_BLOCKED', 'QUALITY_GATE_BLOCKED', 'INVALID_CATEGORY', 'ANTI_HALLUCINATION_BLOCKED'):
+            # 永久性失败(质量门禁/安全/分类) — 标记为failed避免后续重复尝试
+            msg = result.get('message', '')[:80]
+            print(f" FAIL: {result.get('error', '')} | {msg}")
+            if not args.dry_run:
+                update_db_clawhub_status(slug, 'failed')
+            fail_count += 1
+            results['failed'].append({'slug': slug, 'error': result.get('error', ''), 'message': msg})
         else:
             msg = result.get('message', '')[:80]
             print(f" FAIL: {result.get('error', '')} | {msg}")

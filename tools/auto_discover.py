@@ -381,6 +381,51 @@ def cmd_scan(args):
         json.dump(dedup_result, f, ensure_ascii=False, indent=2)
     print(f"\n候选列表已保存: {CANDIDATES_FILE}")
 
+    # V187: 同步更新 candidates_unified.json (auto_differentiate.py 读取的文件)
+    unified_file = DISCOVERY_DIR / "candidates_unified.json"
+    existing_candidates = []
+    existing_ids = set()
+    if unified_file.exists():
+        try:
+            with open(unified_file, 'r', encoding='utf-8') as uf:
+                unified_data = json.load(uf)
+            existing_candidates = unified_data.get('candidates', [])
+            existing_ids = {c.get('source_id', c.get('name', '')) for c in existing_candidates}
+        except Exception:
+            pass
+
+    # 转换新候选为统一格式
+    new_unified = []
+    for skill in dedup_result.get('new_skills', []):
+        sid = skill.get('source_slug', skill.get('display_name', ''))
+        if sid not in existing_ids:
+            new_unified.append({
+                'source': skill.get('source_platform', 'unknown'),
+                'source_id': sid,
+                'name': sid,
+                'description': skill.get('summary', ''),
+                'category': skill.get('category', ''),
+                'content_preview': skill.get('content', '')[:500],
+                'url': skill.get('source_url', ''),
+                'metadata': {
+                    'source_platform': skill.get('source_platform', ''),
+                    'original_slug': sid,
+                    'local_path': skill.get('local_path', ''),
+                },
+                'discovered_at': datetime.now().isoformat(),
+            })
+
+    if new_unified:
+        all_candidates = existing_candidates + new_unified
+        unified_result = {
+            'generated_at': datetime.now().isoformat(),
+            'total_count': len(all_candidates),
+            'candidates': all_candidates,
+        }
+        with open(unified_file, 'w', encoding='utf-8') as uf:
+            json.dump(unified_result, uf, ensure_ascii=False, indent=2)
+        print(f"统一候选文件已更新: {unified_file} (+{len(new_unified)} 新候选, 总计{len(all_candidates)}个)")
+
     return dedup_result
 
 def cmd_dedup(args):
@@ -475,6 +520,13 @@ def cmd_import(args):
             source_content = ''
     content_hash = hashlib.sha256(source_content.encode('utf-8')).hexdigest()[:16] if source_content else None
 
+    # V188修复: 如果候选已有本地路径(如clawhub_downloaded的本地扫描结果),直接使用
+    candidate_local_path = target.get('local_path', '')
+    has_local_skill_md = False
+    if candidate_local_path:
+        skill_md_check = Path(candidate_local_path) / 'SKILL.md'
+        has_local_skill_md = skill_md_check.exists()
+
     paid_skill_id = db_module.register_skill(
         slug=paid_slug,
         name=paid_slug,
@@ -482,18 +534,18 @@ def cmd_import(args):
         version='1.0.0',
         category=category,
         source=source_platform,
-        local_path='',  # 差异化改造后填入实际路径
+        local_path=candidate_local_path if has_local_skill_md else '',  # V188: 有本地SKILL.md则直接使用,否则留空待差异化
         source_slug=args.slug,
         source_url=source_url,
         source_author=source_author,
         source_license=source_license,
         skill_type=skill_type,
         pricing_model='per_call',
-        is_differentiated=0,
+        is_differentiated=1 if has_local_skill_md else 0,  # V188: 已有SKILL.md则标记为已差异化
         edition='paid',
         parent_slug=None,
         content_hash=content_hash,
-        workflow_state='step1_read_original',
+        workflow_state='completed' if has_local_skill_md else 'step1_read_original',
         notes=f"Imported from discovery. Source: {source_platform}"
     )
 
@@ -516,6 +568,111 @@ def cmd_import(args):
     print(f"差异化改造完成后，使用以下命令上传:")
     print(f"  python update_mechanism.py generate {paid_slug}")
     print(f"  python update_mechanism.py upload {paid_slug}")
+
+def cmd_import_all(args):
+    """批量导入所有候选skill到本地DB
+
+    V188新增: 支持一次性导入所有scan发现的候选skill, 不需要逐个import
+    """
+    if not CANDIDATES_FILE.exists():
+        print("未找到候选列表，请先执行 scan 命令")
+        return
+
+    with open(CANDIDATES_FILE, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    new_skills = data.get('new_skills', [])
+    if not new_skills:
+        print("候选列表为空，没有需要导入的skill")
+        return
+
+    print(f"开始批量导入 {len(new_skills)} 个候选skill...")
+    success_count = 0
+    fail_count = 0
+    skip_count = 0
+
+    for i, target in enumerate(new_skills, 1):
+        slug = target.get('source_slug', '')
+        if not slug:
+            skip_count += 1
+            continue
+
+        # 检查是否已存在
+        existing_slugs = get_existing_slugs()
+        if slug in existing_slugs:
+            skip_count += 1
+            continue
+
+        # 复用 cmd_import 的逻辑
+        base_slug = slug
+        display_name = target.get('display_name', base_slug)
+        source_platform = target.get('source_platform', 'unknown')
+        source_url = target.get('source_url', '')
+        source_author = target.get('source_author', '')
+        source_license = target.get('source_license', '')
+        skill_type = target.get('skill_type', 'general')
+        category = target.get('category', 'Productivity')
+
+        # V188: 使用候选的local_path(如果SKILL.md存在)
+        candidate_local_path = target.get('local_path', '')
+        has_local_skill_md = False
+        if candidate_local_path:
+            skill_md_check = Path(candidate_local_path) / 'SKILL.md'
+            has_local_skill_md = skill_md_check.exists()
+
+        # 计算content_hash
+        source_content = target.get('content', '')
+        if not source_content and candidate_local_path:
+            try:
+                source_content = Path(candidate_local_path).joinpath('SKILL.md').read_text(encoding='utf-8')
+            except Exception:
+                source_content = ''
+        content_hash = hashlib.sha256(source_content.encode('utf-8')).hexdigest()[:16] if source_content else None
+
+        try:
+            skill_id = db_module.register_skill(
+                slug=base_slug,
+                name=base_slug,
+                display_name=display_name,
+                version='1.0.0',
+                category=category,
+                source=source_platform,
+                local_path=candidate_local_path if has_local_skill_md else '',
+                source_slug=base_slug,
+                source_url=source_url,
+                source_author=source_author,
+                source_license=source_license,
+                skill_type=skill_type,
+                pricing_model='per_call',
+                is_differentiated=1 if has_local_skill_md else 0,
+                edition='paid',
+                parent_slug=None,
+                content_hash=content_hash,
+                workflow_state='completed' if has_local_skill_md else 'step1_read_original',
+                notes=f"Batch imported from discovery. Source: {source_platform}"
+            )
+
+            # 填充simhash
+            if source_content:
+                try:
+                    from content_dedup import update_simhash
+                    update_simhash(base_slug, source_content)
+                except Exception:
+                    pass  # simhash失败非阻断
+
+            success_count += 1
+            if i % 50 == 0:
+                print(f"  进度: {i}/{len(new_skills)} (成功={success_count}, 跳过={skip_count}, 失败={fail_count})")
+        except Exception as e:
+            print(f"  [FAIL] {slug}: {e}")
+            fail_count += 1
+
+    print(f"\n批量导入完成:")
+    print(f"  成功: {success_count}")
+    print(f"  跳过(已存在): {skip_count}")
+    print(f"  失败: {fail_count}")
+    print(f"  总计: {len(new_skills)}")
+
 
 def main():
     parser = argparse.ArgumentParser(
@@ -543,6 +700,9 @@ def main():
     p_import = subparsers.add_parser('import', help='导入指定skill')
     p_import.add_argument('slug', help='skill slug')
 
+    # import-all (V188新增)
+    subparsers.add_parser('import-all', help='批量导入所有候选skill')
+
     args = parser.parse_args()
 
     if args.command == 'scan':
@@ -553,6 +713,8 @@ def main():
         cmd_candidates(args)
     elif args.command == 'import':
         cmd_import(args)
+    elif args.command == 'import-all':
+        cmd_import_all(args)
     else:
         parser.print_help()
 

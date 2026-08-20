@@ -44,7 +44,7 @@ from typing import Any, Dict, List, Optional, Set, Tuple, Union
 import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent / "config"))
-from project_config import DISCOVERY_DIR, PACKAGED_SKILLS_DIR, TOOLS_DIR, PLATFORM_CONFIG, MAX_DISPLAY_NAME_LEN # V110 W5: DATA_DIR→DISCOVERY_DIR; V113: 新增TOOLS_DIR; V115 W3: Phase 1标准化; V118 W8: 新增PLATFORM_CONFIG; V118 W6修复: 新增DB_PATH; MAX_DISPLAY_NAME_LEN
+from project_config import DISCOVERY_DIR, PACKAGED_SKILLS_DIR, TOOLS_DIR, PLATFORM_CONFIG, MAX_DISPLAY_NAME_LEN, CLAWHUB_DOWNLOADED_DIR, OPENSOURCE_SKILLS_DIR, ENTERPRISE_UPLOAD_DIR
 # === End Phase 1 ===
 
 if str(TOOLS_DIR) not in _sys.path:
@@ -1068,7 +1068,7 @@ def _fetch_source_content(candidate: Dict[str, Any]) -> str:
 
     # 如果metadata中有local_path,直接读取
     if meta_path:
-        p = Path(meta_path)
+        p = _Path(meta_path)
         md = p if p.name == 'SKILL.md' and p.exists() else p / 'SKILL.md'
         if md.exists():
             try:
@@ -1271,16 +1271,14 @@ def _create_skill_on_disk(
     # PRR V146 P0-C: content_dedup不可用时阻断(fail-safe), 不允许跳过
     # 根因: 原代码content_dedup不可用时仅打印警告继续写入,近似重复内容未拦截
     try:
-        from content_dedup import find_approximate_duplicates
-        approx_dups = find_approximate_duplicates(
-            skill_md_content, exclude_slug=final_slug
-        )
-        if approx_dups:
-            closest = approx_dups[0]
+        from content_dedup import check_approximate_dedup
+        dedup_result = check_approximate_dedup(slug=final_slug, content=skill_md_content)
+        if dedup_result.get('approximate_duplicate') or dedup_result.get('exact_duplicate'):
+            existing = dedup_result.get('existing_slug', '')
+            similarity = dedup_result.get('similarity', 0)
             raise ValueError(
-                f"simhash相似度阻断: 与已有skill '{closest['slug']}' "
-                f"Hamming距离={closest['hamming_distance']} "
-                f"(相似度={closest.get('similarity', 0):.1%}) — 需进一步差异化"
+                f"simhash相似度阻断: 与已有skill '{existing}' "
+                f"(相似度={similarity:.1%}) — 需进一步差异化"
             )
     except ImportError:
         raise ValueError(
