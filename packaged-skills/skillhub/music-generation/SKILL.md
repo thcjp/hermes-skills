@@ -1,7 +1,7 @@
 ---
 slug: music-generation
 name: "music-generation"
-version: 1.0.1
+version: 1.0.2
 displayName: "音乐"
 summary: "优化提示生成AI音乐,风格控制/产出级音频。Generate AI music with optimized prompts, style control, and production-r"
 summary_zh: "优化提示生成AI音乐,风格控制/产出级音频。Generate AI music with optimized prompts, style control, and production-r"
@@ -39,7 +39,8 @@ tools:
   - write
 homepage: ""
 category: "Creative"
-homepage: "https://skillhub.cn/skill/"
+homepage: ""
+pricing_tier: "L2-标准级"
 ---
 > **核心功能**: 本技能提供、多媒体制作、化工作流与智能决策辅助等能力。
 
