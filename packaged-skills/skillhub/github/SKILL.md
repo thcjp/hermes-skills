@@ -1,7 +1,8 @@
 ---
+
 slug: github
 name: github
-version: 1.0.1
+version: 1.0.2
 displayName: GitHub开发工具
 summary: 用gh CLI操作GitHub,issue/pr/run/api一站管理。Interact with GitHub using the `gh`
   CLI。Use `gh issue`, `g
@@ -24,9 +25,12 @@ tools:
 - write
 homepage: ''
 category: Development
-homepage: "https://skillhub.cn/skill/"
+homepage: ""
+pricing_tier: "L2-标准级"
+
 ---
-> **核心功能**: 本技能提供中文交互、化工作流场景等能力。
+
+> **功能说明**: 本技能涵盖 中文交互、化工作流场景 等核心能力。
 
 # Github
 
@@ -36,21 +40,9 @@ homepage: "https://skillhub.cn/skill/"
 | 基础功能 | 支持 | 支持 |
 | Githubapi一站管理 | 不支持 | 支持 |
 | 代码静态分析与质量评分 | 不支持 | 支持 |
-| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 依赖缺陷检测与升级建议 | 不支持 | 支持 |
 | 批量代码审查与报告生成 | 不支持 | 支持 |
 | CI/CD流水线集成 | 不支持 | 支持 |
-
-## 主要能力
-- Interact with GitHub using the `gh` CLI
-- Use `gh issue`, `gh pr`, `gh
-  run`, and `gh api` for issu
-
-## 初始配置
-1. 确认运行环境满足依赖说明中的要求
-2. 在AI Agent对话中调用本技能,提供必要的输入参数
-3. 检查输出结果,根据需要进行后续处理
-
-> 详细的输入输出格式请参考下方章节说明。
 
 ## 适用范围
 | 场景 | 输入 | 输出 |
@@ -125,13 +117,6 @@ homepage: "https://skillhub.cn/skill/"
 
 中间产物模板参考: `assets/github_template`
 
-## 异常处置
-| 错误场景 | 原因 | 处理方式 |
-|:---:|:---:|:---:|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 前置条件
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
@@ -157,7 +142,7 @@ export API_KEY="${API_KEY:?请设置环境变量}"
 ## 热门问题
 ### Q1: 如何开始使用Github？
 A: 请参考使用流程和依赖说明章节，确保运行环境满足要求后调用本技能。
-## 错误处理机制
+## 异常管理机制
 | 错误场景(续)| 原因 | 处理方式 |
 |----:|:----|----:|
 | LLM响应超时或无响应 | 网络延迟或模型负载过高 | 请求重试；确认Agent平台LLM服务正常 |
@@ -235,9 +220,3 @@ A: 使用`gh webhook create --url "Webhook URL" --events "事件类型"`命令�
 | 网络通信安全 | 中 | 使用HTTPS协议，验证SSL证书 | 定期检查证书有效期 |
 | 敏感数据暴露 | 高 | 输出结果中不包含密钥、令牌等敏感信息 | 日志脱敏审查 |
 | 未授权访问 | 中 | 限制访问权限，实施认证机制 | 定期审计访问日志 |
-
-## 功能概览
-- **自动化执行**: 用gh CLI操作GitHub,issue/pr/run/api一站管理。Interact with GitHub us
-- **文件处理**: 支持多种文件格式的读取、解析和写入操作
-- **API集成**: 通过标准化接口调用外部服务并处理响应
-- **命令执行**: 在安全沙箱中执行系统命令并收集结果
