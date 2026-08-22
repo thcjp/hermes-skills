@@ -1,7 +1,8 @@
 ---
+
 slug: discord
 name: "discord"
-version: 1.0.2
+version: 1.0.3
 displayName: "Discord 全能控制"
 summary: "通过discord工具控制机器人,管理消息、表情、投票、线程、审核等Discord全功能。通过 discord 工具控制 Discord 机器人,覆盖消息收发与编辑、表情回应与统计、 贴纸发"
 summary_zh: "通过discord工具控制机器人,管理消息、表情、投票、线程、审核等Discord全功能。通过 discord 工具控制 Discord 机器人,覆盖消息收发与编辑、表情回应与统计、 贴纸发"
@@ -29,8 +30,11 @@ tools:
   - write
 homepage: ""
 category: "Communication"
-homepage: "https://skillhub.cn/skill/"
+homepage: ""
+pricing_tier: "L2-标准级"
+
 ---
+
 # Discord 全能控制
 
 ## 输入参数
@@ -39,16 +43,6 @@ homepage: "https://skillhub.cn/skill/"
 | input | string | 是 | Discord 全能控制处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
-
-## 专业版增值服务
-| 能力 | 免费版 | 付费版 |
-|:-----|:-----|:-----|
-| 基础功能 | 支持 | 支持 |
-| 多渠道消息批量发送 | 不支持 | 支持 |
-| 消息模板与变量注入 | 不支持 | 支持 |
-| 送达状态实时回调 | 不支持 | 支持 |
-| 通信记录归档与检索 | 不支持 | 支持 |
-| 消息频控与智能排队 | 不支持 | 支持 |
 
 ## 能力清单
 ### 消息管理
@@ -89,13 +83,6 @@ homepage: "https://skillhub.cn/skill/"
 ### 审核(默认关闭)
 - `timeout`:临时禁言成员(`durationMinutes`).
 - `kick` / `ban`:踢出或封禁成员。需开启 `discord.actions.moderation`.
-
-## 安装向导
-1. 确认运行环境满足依赖说明中的要求
-2. 在AI Agent对话中调用本技能,提供必要的输入参数
-3. 检查输出结果,根据需要进行后续处理
-
-> 详细的输入输出格式请参考下方章节说明。
 
 ## 操作步骤
 1. **确认权限与门控**:通过 `action: "permissions"` 检查机器人在目标频道的权限;确认所需操作组未被 `discord.actions.*` 关闭(角色、审核默认关闭).
@@ -149,18 +136,6 @@ homepage: "https://skillhub.cn/skill/"
 ```
 
 在审核日志频道形成可追溯的处置线程.
-## 异常应对
-| 错误场景 | 触发原因 | 处理方式 |
-|---:|---:|---:|
-| `Missing Access` / `50001` | 机器人缺少该频道查看或发送权限 | 先 `permissions` 核对权限位,联系服务器管理员补齐或调整频道权限覆盖 |
-| `to` 与 `channelId` 混用 | `sendMessage` 误传 `channelId` 而 `react` 误传 `to` | 严格区分:`sendMessage/sticker/poll` 用 `to`;`react/readMessages/editMessage/deleteMessage` 用 `channelId` |
-| 表情上传超 256KB | `mediaUrl` 指向的图片过大或格式不符 | 压缩为 PNG/JPG/GIF 且 ≤256KB 后重传;GIF 需确认是否为服务器 Boost 解锁的动画表情位 |
-| 贴纸上传失败 | 文件 >512KB 或非 PNG/APNG/Lottie JSON | 转换格式并压缩;Lottie JSON 需确保为合法动画描述 |
-| `Unknown Message` / `10008` | `editMessage`/`deleteMessage`/`react` 指向已删除消息 | 先 `readMessages` 确认消息存在;若已删除则跳过该操作 |
-| 投票选项数非法 | `answers` 少于 2 或多于 10 | 调整为 2~10 个选项;`durationHours` 不超过 768 |
-| 角色变更被拒 | `discord.actions.roles` 未开启或机器人角色低于目标角色 | 在配置中显式开启 `roles`;确保机器人角色在服务器层级高于被操作角色 |
-| 审核操作无权限 | `moderation` 默认关闭且机器人缺少 `KICK_MEMBERS`/`BAN_MEMBERS`/`MODERATE_MEMBERS` | 开启 `discord.actions.moderation` 并由服务器管理员授予相应权限 |
-
 ## 常见疑问
 ### Q1:为什么 `sendMessage` 报错说找不到频道,而 `readMessages` 能用?
 `sendMessage` 接收的是 `to: "channel:<id>"` 格式(带 `channel:` 前缀),`readMessages` 接收的是裸 `channelId`。两者格式不可混用,这是最常见的参数错误.
@@ -248,19 +223,6 @@ export API_KEY="${API_KEY:?请设置环境变量}"
 | 敏感数据暴露 | 高 | 输出结果中不包含密钥、令牌等敏感信息 | 日志脱敏审查 |
 | 未授权访问 | 中 | 限制访问权限，实施认证机制 | 定期审计访问日志 |
 
-## 核心特点
-- **自动化执行**: 通过discord工具控制机器人,管理消息、表情、投票、线程、审核等Discord全功能。通过 discord 工具控制
-- **文件处理**: 支持多种文件格式的读取、解析和写入操作
-- **API集成**: 通过标准化接口调用外部服务并处理响应
-- **命令执行**: 在安全沙箱中执行系统命令并收集结果
-- **信息检索**: 快速搜索和过滤目标数据
-
-## 主要功能
-- **文件处理**: 支持多种文件格式的读取、解析和写入操作
-- **API集成**: 通过标准化接口调用外部服务并处理响应
-- **命令执行**: 在安全沙箱中执行系统命令并收集结果
-- **信息检索**: 快速搜索和过滤目标数据
-
 ## 异常修复
 针对Discord 全能控制使用中可能遇到的常见问题,提供以下排查方案:
 
@@ -283,12 +245,11 @@ export API_KEY="${API_KEY:?请设置环境变量}"
 3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
 4. **逐步调试**: 缩小问题范围,隔离故障模块
 
-## 依赖说明
-
-### 运行环境
-- **Agent 平台**: 支持SKILL.md的任意AI Agent
-- **操作系统**: Windows / macOS / Linux
-
-### 可用性分类
-- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
-- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。
+## 典型场景
+- **自动化处理**: 结合定时任务或CI/CD管道,实现批量自动化处理
+- **数据同步**: 通过API实现跨平台数据同步和状态更新
+- **智能分析**: 结合大模型实现内容理解和智能决策
+- **数据提取**: 从非结构化文件中提取关键信息并结构化输出
+- **运维自动化**: 自动执行系统命令并收集结果
+- **数据查询**: 从大量数据中精准定位目标内容
+- **数据处理**: 对结构化数据进行清洗、转换和分析
