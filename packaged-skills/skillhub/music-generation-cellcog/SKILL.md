@@ -1,7 +1,8 @@
 ---
+
 slug: music-generation-cellcog
 name: music-generation-cellcog
-version: 1.0.12
+version: 1.0.13
 displayName: 音乐
 summary: CellCog驱动AI音乐生成,原创器乐与人声5秒到10分钟。AI music generation powered by CellCog。Original
   instrumental and
@@ -24,9 +25,12 @@ tools:
 - write
 homepage: ''
 category: Creative
-homepage: "https://skillhub.cn/skill/"
+homepage: ""
+pricing_tier: "L2-标准级"
+
 ---
-> **核心功能**: 本技能提供时使用、化工作流场景等能力。
+
+> **功能说明**: 本技能涵盖 时使用、化工作流场景 等核心能力。
 
 # Music Generation Cel
 
@@ -40,11 +44,6 @@ homepage: "https://skillhub.cn/skill/"
 | 自定义模型微调 | 不支持 | 支持 |
 | 商用版权授权 | 不支持 | 支持 |
 
-## 功能能力
-- AI music generation powered by CellCog
-- Original instrumental and vocal
-  tracks, 5 seconds to 10 m
-
 ## 典型场景
 | 场景 | 输入 | 输出 |
 |:-----|:-----|:-----|
@@ -53,12 +52,6 @@ homepage: "https://skillhub.cn/skill/"
 | 原创器乐与人声5秒到 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
-
-## 操作流程
-1. 确认运行环境满足依赖说明中的要求
-2. 根据适用场景选择合适的使用方式
-3. 执行操作并检查输出结果
-4. 如遇错误，参考错误处理章节
 
 ## 输入规范
 | 参数名 | 类型 | 必填 | 说明 |
@@ -86,13 +79,6 @@ homepage: "https://skillhub.cn/skill/"
 ```
 
 输出模板参考: `assets/output.json`
-
-## 异常处置
-| 错误场景 | 原因 | 处理方式 |
-|:---:|:---:|:---:|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
 
 ## 依赖与配置
 ### 运行环境
@@ -144,9 +130,6 @@ export API_KEY="${API_KEY:?请设置环境变量}"
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
 
-## 问题汇总集锦
-### Q1: 如何开始使用Music Generation Cel？
-A: 请参考使用流程和依赖说明章节，确保运行环境满足要求后调用本技能。
 ## 异常处理体系
 | 错误场景(续)| 原因 | 处理方式 |
 |----:|:----|----:|
@@ -223,12 +206,6 @@ A: 音乐生成技能生成的音乐属于原创作品，用户可以使用这�
 | 网络通信安全 | 中 | 使用HTTPS协议，验证SSL证书 | 定期检查证书有效期 |
 | 敏感数据暴露 | 高 | 输出结果中不包含密钥、令牌等敏感信息 | 日志脱敏审查 |
 | 未授权访问 | 中 | 限制访问权限，实施认证机制 | 定期审计访问日志 |
-
-## 功能特性总览
-- **自动化执行**: CellCog驱动AI音乐生成,原创器乐与人声5秒到10分钟。AI music generation powered b
-- **文件处理**: 支持多种文件格式的读取、解析和写入操作
-- **API集成**: 通过标准化接口调用外部服务并处理响应
-- **命令执行**: 在安全沙箱中执行系统命令并收集结果
 
 ## 入门教程
 1. **配置API密钥**: 在环境变量中设置对应的API Key
