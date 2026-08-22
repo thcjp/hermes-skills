@@ -1,9 +1,11 @@
 ---
+
+
 name: aws-graph-agent-free
 slug: aws-graph-agent-free
 displayName: "AWS图代理"
-version: "1.0.0"
-summary: "Bedrock Age"
+version: 1.0.4
+summary: "Bedrock Age。|-. 面向需要aws graph agent相关能力的开发场景,提供完整工作流程和配置指南. 该工具基于用户反馈进行了深度优化,提升了可操作性。Use。Use"
 description: "|-. 面向需要aws graph agent相关能力的开发场景,提供完整工作流程和配置指南. 该工具基于用户反馈进行了深度优化,提升了可操作性。Use。Use when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确技术栈的模糊需求。适用于独立开发者、企业团队和自动化工作流场景。"
 license: "MIT"
 tools:
@@ -11,9 +13,21 @@ tools:
   - Write
   - Edit
   - Bash
+tags:
+  - agentcore
+  - agent
+  - builder
+  - stategraph
+  - langgraph
+category: "Agents"
+pricing_tier: "free"
+
+
 ---
 
-> **核心功能**: 本技能提供完整工作流程和配置指南、化工作流场景等能力。
+> **功能说明**: 本技能涵盖 完整工作流程和配置指南、化工作流场景 等核心能力。
+
+
 
 # AWS图代理（AWS Graph Agent）
 
@@ -251,19 +265,6 @@ tools = gateway.register_tools([
 agent = create_agent_with_tools(tools)  # 工具自动注入 StateGraph
 ```
 调用：`agentcore invoke '{"prompt": "查询订单 #1234 并退款"}'`。代理自动调用 `search_orders`→`issue_refund`，Gateway 处理 Lambda 认证与调用。本地开发用 `mode="mock"` 返回假数据无需真实 Lambda；生产用 `mode="production"` 走网关鉴权.
-## 异常应对
-| 场景 | 原因 | 处理方式 |
-|---:|---:|---:|
-| `on-demand throughput isn't supported` | 推理配置不支持按需 | 使用 `us..-*` 推理配置文件 |
-| `Model use case details not submitted` | 未填写模型使用审批 | 在 Bedrock Console 填写  表单 |
-| `Invalid agent name` | 名称含连字符或非法字符 | 改用下划线，字母开头，1-48 字符（如 `my-agent`→`my_agent`） |
-| 记忆写入后为空 | 最终一致性延迟（约10s） | 等待 10s 后重新查询；检查日志"Memory enabled/disabled" |
-| 容器不读取 .env | 容器模式不支持 .env | 在 Dockerfile 中用 ENV 指令设置环境变量 |
-| 部署后记忆不可用 | 部署时禁用了记忆 | 重新部署不带 `--disable-memory` |
-| `list_events` 返回空 | actor_id/session_id 不匹配 | 确认 ID 匹配，payload 是列表类型 |
-| Gateway "Unknown tool" | Lambda 未去除前缀 | 从 `bedrockAgentCoreToolName` 去除 `___` 前缀 |
-| 平台不匹配警告 | ARM64 跨平台构建 | 正常现象，CodeBuild 会处理，无需操作 |
-
 ## 前置条件
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:---:|:---:|:---:|:---:|
@@ -332,13 +333,6 @@ A：Lambda 函数必须从 `bedrockAgentCoreToolName` 参数中去除 `___` 前�
 | 安全合规 | 内置安全检查 | 无安全保障 | 无安全保障 |
 | 适用场景 | Bedrock Age | 通用场景 | 通用场景 |
 
-## 能力清单
-- **自动化执行**: Bedrock Age
-- **文件处理**: 支持多种文件格式的读取、解析和写入操作
-- **API集成**: 通过标准化接口调用外部服务并处理响应
-- **命令执行**: 在安全沙箱中执行系统命令并收集结果
-- **信息检索**: 快速搜索和过滤目标数据
-
 ## 功能矩阵
 - **自动化执行**: Bedrock Age
 - **文件处理**: 支持多种文件格式的读取、解析和写入操作
@@ -374,34 +368,9 @@ A：Lambda 函数必须从 `bedrockAgentCoreToolName` 参数中去除 `___` 前�
 3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
 4. **逐步调试**: 缩小问题范围,隔离故障模块
 
-## 异常修复
-针对AWS图代理使用中可能遇到的常见问题,提供以下排查方案:
-
-| 错误类型 | 原因分析 | 解决方案 |
-|---------|---------|---------|
-| API认证失败(401) | API密钥错误或过期 | 检查密钥配置,重新生成token |
-| 接口限流(429) | 请求频率超出限制 | 降低调用频率,启用重试退避策略 |
-| 响应超时(504) | 网络延迟或服务端负载过高 | 增加超时阈值,检查网络连接 |
-| 文件不存在 | 路径错误或文件未创建 | 检查路径拼写,确认文件已生成 |
-| 文件格式不支持 | 扩展名不在支持列表中 | 转换为支持的格式后重试 |
-| 权限不足 | 当前用户无读写权限 | 检查文件权限,以管理员身份运行 |
-| 命令执行失败 | 参数错误或环境依赖缺失 | 检查命令语法,确认依赖已安装 |
-| 进程超时 | 命令执行时间过长 | 增加超时设置,优化命令参数 |
-| 网络连接失败 | DNS解析失败或防火墙拦截 | 检查网络配置,确认代理设置 |
-
 ## 使用限制说明
 - 极端边界输入可能影响输出质量,建议对异常输入做预校验
 - API凭证需妥善管理,避免硬编码到代码中,推荐使用环境变量注入
 - 生成结果受模型能力影响,不同模型输出质量可能有差异
 - 文件格式兼容性受底层库限制,部分特殊格式可能不被支持
 - 不同操作系统的命令行参数可能存在差异,需做平台适配
-
-## 依赖说明
-
-### 运行环境
-- **Agent 平台**: 支持SKILL.md的任意AI Agent
-- **操作系统**: Windows / macOS / Linux
-
-### 可用性分类
-- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
-- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。
