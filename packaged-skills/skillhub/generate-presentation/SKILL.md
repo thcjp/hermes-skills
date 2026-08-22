@@ -1,7 +1,9 @@
 ---
+
+
 slug: generate-presentation
 name: generate-presentation
-version: 1.0.1
+version: 1.0.2
 displayName: 演示文稿生成工具
 summary: 从Markdown/URL/主题生成专业HTML与PDF演示文稿。Generate professional HTML and PDF presentations
   from markdown
@@ -23,9 +25,15 @@ tools:
 - write
 homepage: ''
 category: Automation
-homepage: "https://skillhub.cn/skill/"
+homepage: ""
+pricing_tier: "L2-标准级"
+
+
 ---
-> **核心功能**: 本技能提供中文交互、、格式互转、内容提取时使用、化工作流场景等能力。
+
+> **功能说明**: 本技能涵盖 中文交互、化工作流场景 等核心能力。
+
+
 
 # Generate Presentatio
 
@@ -43,7 +51,7 @@ homepage: "https://skillhub.cn/skill/"
 - Generate professional HTML and PDF presentations from markdown content,
   URLs, or topics
 
-## 快速入门
+## 即刻上手
 1. 确认运行环境满足依赖说明中的要求
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
@@ -122,13 +130,6 @@ homepage: "https://skillhub.cn/skill/"
 ```
 
 中间产物模板参考: `assets/generate-presentation_template`
-
-## 异常恢复流程
-| 错误场景 | 原因 | 处理方式 |
-|:---:|:---:|:---:|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
 
 ## 前置条件
 ### 运行环境
@@ -224,13 +225,13 @@ A: 是的，演示文稿生成工具支持多语言，用户可以根据需要�
 | 敏感数据暴露 | 高 | 输出结果中不包含密钥、令牌等敏感信息 | 日志脱敏审查 |
 | 未授权访问 | 中 | 限制访问权限，实施认证机制 | 定期审计访问日志 |
 
-## 功能概览
+## 功能矩阵
 - **自动化执行**: 从Markdown/URL/主题生成专业HTML与PDF演示文稿。Generate professional HTML 
 - **文件处理**: 支持多种文件格式的读取、解析和写入操作
 - **API集成**: 通过标准化接口调用外部服务并处理响应
 - **命令执行**: 在安全沙箱中执行系统命令并收集结果
 
-## 错误恢复
+## 故障恢复流程
 针对演示文稿生成工具使用中可能遇到的常见问题,提供以下排查方案:
 
 | 错误类型 | 原因分析 | 解决方案 |
@@ -244,13 +245,6 @@ A: 是的，演示文稿生成工具支持多语言，用户可以根据需要�
 | 命令执行失败 | 参数错误或环境依赖缺失 | 检查命令语法,确认依赖已安装 |
 | 进程超时 | 命令执行时间过长 | 增加超时设置,优化命令参数 |
 | 网络连接失败 | DNS解析失败或防火墙拦截 | 检查网络配置,确认代理设置 |
-
-### 演示文稿生成工具通用排查步骤
-
-1. **检查输入参数**: 确认所有必填参数已提供且格式正确
-2. **查看日志输出**: 定位具体错误行和异常类型
-3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
-4. **逐步调试**: 缩小问题范围,隔离故障模块
 
 ### 演示文稿生成工具通用排查步骤
 
