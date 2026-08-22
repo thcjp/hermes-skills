@@ -1,7 +1,8 @@
 ---
+
 slug: cron-scheduler-pro
 name: cron-scheduler-pro
-version: 1.0.1
+version: 1.0.2
 displayName: 定时调度专家
 summary: '"本地优先的周期任务引擎，时区锁定、一次性任务自清理、并发安全，告别漏跑与堆积.。定时调度专家为 AI Agent 提供本地优先、无云依赖的周期任务调度能力。它把"每隔X做Y"的意图固化为可信"'
 license: MIT
@@ -24,9 +25,11 @@ tools:
 - write
 homepage: '""'
 category: '"Automation"'
-pricing_tier: L2-标准级
-homepage: "https://skillhub.cn/skill/"
+homepage: ""
+pricing_tier: "L2-标准级"
+
 ---
+
 > **功能说明**: 本技能涵盖 scheduler 等核心能力。
 # 定时调度专家
 把"每两小时检查一次收件箱"这种模糊意图，变成可信任、可审计、可预览的执行契约。本技能解决五个核心痛点：**时区漂移**（"9点"到底是哪个时区）、**任务漏跑**（调度器没跑或跑了不知道）、**一次性任务堆积**（提醒完了任务不清理）、**并发死锁**（add 后立刻 update 导致锁冲突）、**失败无感知**（任务挂了没人知道）.
@@ -38,7 +41,7 @@ homepage: "https://skillhub.cn/skill/"
 ## 存储结构
 所有数据本地存储，按职责分文件：
 ```
-~/.skill-platform/workspace/memory/cron/
+$HOME/.skill-platform/workspace/memory/cron/
 ├── jobs.json      # 任务定义（active/paused/archived）
 ├── runs.json      # 运行历史（最近100条）
 ├── stats.json     # 统计数据（成功率、平均耗时）
@@ -221,12 +224,6 @@ python3 tools/cron/next_run.py --due-only
   --max-retries 3 \
   --circuit-breaker 5
 ```
-## 异常处置
-| 序号 | 错误场景 | 原因 | 处理方式 | 优先级 |
-|---:|---:|---:|---:|---:|
-| 1 | 输入参数缺失 | 用户未提供必要参数 | 提示用户提供所需参数后执行ping命令测试网络连通性,检查防火墙和代理设置连接后重新执行命令 | P0 |
-| 2 | 执行超时 | 处理时间过长 | 检查输入数据量,分批处理 | P1 |
-| 3 | 输出格式错误 | 结果不符合预期格式 | 检查`output_format`参数配置 | P1 |
 ## 支持中心
 **Q：任务到时间了没跑？**
 A：检查四点：① 任务是否 `active`；② 时区是否正确（`next_run.py` 显示的下次时间对吗）；③ Agent 心跳是否在运行（本引擎依赖 Agent 唤醒）；④ 是否被熔断暂停（看 `stats.py`）.
@@ -240,15 +237,6 @@ A：默认按用户隔离（每人一份 jobs.json）。共享需挂载共享目
 A：从创建时刻起算。如 10:00 创建"每 2 小时"，则 12:00、14:00... 触发。若需对齐到整点，用 `--align` 参数.
 **Q：如何迁移到新机器？**
 A：复制整个 `cron/` 目录即可。时区信息在 `MEMORY.md`，一并复制.
-## 问题诊断
-| 症状 | 可能原因 | 处置 |
-|:---:|:---:|:---:|
-| 任务不触发 | 时区未锁定 | 运行 `set_timezone.py`，检查 `next_run.py` |
-| 任务触发但没执行 | Agent 心跳未运行 | 确认 Agent 在线，本引擎需 Agent 唤醒 |
-| `next_run` 时间不对 | 时区或夏令时问题 | 确认时区，检查是否 DST 切换 |
-| jobs.json 写入失败 | 文件锁未释放 | 删除 `.lock` 文件（确认无进程占用） |
-| 一次性任务堆积 | `delete_after_run` 被关闭 | 本技能强制开启，检查是否用了旧版 |
-| 连续失败无告警 | 熔断阈值过高 | 调整 `--circuit-breaker` 阈值 |
 ## 性能优化
 1. **心跳轻量化**：心跳只调 `next_run.py --due-only`（只查到期任务），不做全量扫描.
 2. **历史裁剪**：`runs.json` 默认保留 100 条，超出自动裁剪最旧.
@@ -340,23 +328,6 @@ A：复制整个 `cron/` 目录即可。时区信息在 `MEMORY.md`，一并复�
 - 本地优先架构不支持多设备间任务同步，跨机器调度需借助外部协调服务（如Redis、etcd）
 - 一次性任务的自清理机制在进程异常终止时可能残留，需配合系统级进程监控兜底
 - 并发安全依赖文件锁实现，网络文件系统（NFS/SMB）上的锁行为不可靠，建议仅在本地文件系统使用
-## 返回格式
-```json
-{
-  "success": true,
-  "data": {
-    "result": "定时调度专家处理结果",
-    "execution_time": "0.5s",
-    "metadata": {
-      "version": "1.0",
-      "processor": "cron scheduler pro"
-    }
-  },
-  "execution_log": ["解析输入参数", "执行核心处理", "格式化输出结果"],
-  "error": null
-}
-```
-# ...
 ## 性能数据
 | 操作场景 | 手动耗时 | 自动化耗时 | 效率提升 |
 |----------|---------|-----------|---------|
@@ -409,13 +380,3 @@ A2: 是的，部分功能需要配置对应平台的API Key。请在依赖说明
 ### Q3: 命令行执行失败怎么办？
 
 A3: 检查命令参数是否正确，确认运行环境支持exec能力。如遇权限问题，请参照错误处理章节排查。
-
-## 依赖说明
-
-### 运行环境
-- **Agent 平台**: 支持SKILL.md的任意AI Agent
-- **操作系统**: Windows / macOS / Linux
-
-### 可用性分类
-- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
-- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。
