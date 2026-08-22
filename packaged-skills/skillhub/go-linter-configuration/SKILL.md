@@ -1,7 +1,8 @@
 ---
+
 slug: go-linter-configuration
 name: go-linter-configuration
-version: 1.0.1
+version: 1.0.2
 displayName: Go代码检查配置工具
 summary: 配置排障golangci-lint,处理导入与类型检查问题。Configure and troubleshoot golangci-lint for
   Go projects。Handle i
@@ -23,9 +24,12 @@ tools:
 - write
 homepage: ''
 category: Automation
-homepage: "https://skillhub.cn/skill/"
+homepage: ""
+pricing_tier: "L2-标准级"
+
 ---
-> **核心功能**: 本技能提供中文交互、化工作流场景等能力。
+
+> **功能说明**: 本技能涵盖 中文交互、化工作流场景 等核心能力。
 
 # Go Linter Configurat
 
@@ -34,15 +38,17 @@ homepage: "https://skillhub.cn/skill/"
 |---|---|---|
 | 基础功能 | 支持 | 支持 |
 | 代码静态分析与质量评分 | 不支持 | 支持 |
-| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
+| 依赖缺陷检测与升级建议 | 不支持 | 支持 |
 | 批量代码审查与报告生成 | 不支持 | 支持 |
 | CI/CD流水线集成 | 不支持 | 支持 |
 | 代码复杂度可视化与重构建议 | 不支持 | 支持 |
 
-## 功能能力
-- Configure and troubleshoot golangci-lint for Go projects
-- Handle import
-  resolution issues, type-c
+## 快速入门指南
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 ## 应用场景
 | 场景 | 输入 | 输出 |
@@ -52,12 +58,6 @@ homepage: "https://skillhub.cn/skill/"
 | Linter规则调优 | 现有配置和项目需求 | 优化的Linter规则和排除项 |
 
 **不适用于**：非golangci-lint的Go代码检查工具配置
-
-## 使用方法
-1. 确认运行环境满足依赖说明中的要求
-2. 根据适用场景选择合适的使用方式
-3. 执行操作并检查输出结果
-4. 如遇错误，参考错误处理章节
 
 ## 输入参数
 | 参数名 | 类型 | 必填 | 说明 |
@@ -127,14 +127,6 @@ homepage: "https://skillhub.cn/skill/"
 export API_KEY="${API_KEY:?请设置环境变量}"
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
-## 异常恢复指南
-| 错误场景 | 原因 | 处理方式 |
-|:------|------:|:------|
-| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 请求重试；确认Agent平台LLM服务正常 |
-| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
-| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
-| 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
-
 ## 创新优势
 ### 效率提升量化分析
 | 操作步骤 | 手动耗时 | 自动化耗时 | 时间节约 | 准确率提升 |
@@ -189,7 +181,7 @@ A: 在命令行中设置环境变量API_KEY，例如：`export API_KEY="${API_KE
 2. 定期更新golangci-lint，以获取最新的安全修复和功能更新。
 3. 在处理敏感代码时，确保使用安全的代码库和版本控制系统。
 4. 使用强密码保护代码库和API Key，防止未授权访问。
-5. 定期进行代码安全审计，确保代码中没有安全漏洞。
+5. 定期进行代码合规检查，确保代码中没有安全漏洞。
 
 ### 安全风险防范
 
@@ -228,13 +220,3 @@ A: 在命令行中设置环境变量API_KEY，例如：`export API_KEY="${API_KE
 2. **查看日志输出**: 定位具体错误行和异常类型
 3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
 4. **逐步调试**: 缩小问题范围,隔离故障模块
-
-## 依赖说明
-
-### 运行环境
-- **Agent 平台**: 支持SKILL.md的任意AI Agent
-- **操作系统**: Windows / macOS / Linux
-
-### 可用性分类
-- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
-- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。
