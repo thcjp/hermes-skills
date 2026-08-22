@@ -1,7 +1,8 @@
 ---
+
 slug: excel-studio
 name: excel-studio
-version: 1.0.1
+version: 1.0.2
 displayName: Excel工作室
 summary: 专业Excel生成器,建数据表/报表/图表,办公利器。Professional Excel spreadsheet generator。Use when
   user needs to crea
@@ -22,9 +23,12 @@ tools:
 - write
 homepage: ''
 category: Automation
-homepage: "https://skillhub.cn/skill/"
+homepage: ""
+pricing_tier: "L2-标准级"
+
 ---
-> **核心功能**: 本技能提供中文交互、化集成场景等能力。
+
+> **功能说明**: 本技能涵盖 中文交互、化集成场景 等核心能力。
 
 # Excel Studio
 
@@ -37,12 +41,6 @@ homepage: "https://skillhub.cn/skill/"
 | 批量生成与风格预设 | 不支持 | 支持 |
 | 自定义模型微调 | 不支持 | 支持 |
 | 商用版权授权 | 不支持 | 支持 |
-
-## 能力清单
-- Excel Studio 结果导出 - 生成生成内容
-- Excel Studio 实时监控 - 遵循专业风格规范
-- Excel Studio 错误重试 - 支持多种变体等多种变体
-- Excel Studio 多格式支持 - 自动适配多种场景
 
 ## 快速启动
 1. 确认运行环境满足依赖说明中的要求
@@ -59,12 +57,6 @@ homepage: "https://skillhub.cn/skill/"
 | 内容生成 | 提示词与风格参数 | 生成内容与质量评分 |
 
 **不适用于**：需要人工判断的复杂决策场景
-
-## 操作流程
-1. 确认运行环境满足依赖说明中的要求
-2. 根据适用场景选择合适的使用方式
-3. 执行操作并检查输出结果
-4. 如遇错误，参考错误处理章节
 
 ## 输入规范
 | 参数名 | 类型 | 必填 | 说明 |
@@ -92,13 +84,6 @@ homepage: "https://skillhub.cn/skill/"
 ```
 
 输出模板参考: `assets/output.json`
-
-## 异常处置
-| 错误场景 | 原因 | 处理方式 |
-|:---:|:---:|:---:|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
 
 ## 前置条件
 ### 运行环境
@@ -203,19 +188,3 @@ A: 请参考错误处理章节，根据错误现象和可能原因进行排查�
 | 网络通信安全 | 中 | 使用HTTPS协议，验证SSL证书 | 定期检查证书有效期 |
 | 敏感数据暴露 | 高 | 输出结果中不包含密钥、令牌等敏感信息 | 日志脱敏审查 |
 | 未授权访问 | 中 | 限制访问权限，实施认证机制 | 定期审计访问日志 |
-
-## 功能速览
-- **自动化执行**: 专业Excel生成器,建数据表/报表/图表,办公利器。Professional Excel spreadsheet ge
-- **文件处理**: 支持多种文件格式的读取、解析和写入操作
-- **API集成**: 通过标准化接口调用外部服务并处理响应
-- **命令执行**: 在安全沙箱中执行系统命令并收集结果
-
-## 依赖说明
-
-### 运行环境
-- **Agent 平台**: 支持SKILL.md的任意AI Agent
-- **操作系统**: Windows / macOS / Linux
-
-### 可用性分类
-- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
-- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。
