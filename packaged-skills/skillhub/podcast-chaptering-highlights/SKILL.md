@@ -1,7 +1,8 @@
 ---
+
 slug: podcast-chaptering-highlights
 name: podcast-chaptering-highlights
-version: 1.0.1
+version: 1.0.2
 displayName: 播客
 summary: 从播客音频或转写生成章节/亮点/节目说明。Create chapters, highlights, and show notes from podcast
   audio or transcri
@@ -24,9 +25,14 @@ tools:
 - write
 homepage: ''
 category: Creative
-homepage: "https://skillhub.cn/skill/"
+homepage: ""
+pricing_tier: "L2-标准级"
+
 ---
-> **核心功能**: 本技能提供中文交互、时使用等能力。
+
+> **功能说明**: 本技能涵盖 中文交互、时使用 等核心能力。
+
+> **功能说明**: 本技能涵盖 化工作流场景 等核心能力。
 
 # Podcast Chaptering H
 
@@ -40,11 +46,7 @@ homepage: "https://skillhub.cn/skill/"
 | 自定义模型微调 | 不支持 | 支持 |
 | 商用版权授权 | 不支持 | 支持 |
 
-## 能力清单
-- Create chapters, highlights, and show notes from podcast audio or transcripts
-- Use when a user wa
-
-## 快速入门
+## 快速入门指南
 1. 确认运行环境满足依赖说明中的要求
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
@@ -59,12 +61,6 @@ homepage: "https://skillhub.cn/skill/"
 | 从播客音频或转写生成 | 目标数据与配置参数 | 处理结果与执行状态 |
 
 **不适用于**：需要人工判断的复杂决策场景
-
-## 使用说明
-1. 确认运行环境满足依赖说明中的要求
-2. 根据适用场景选择合适的使用方式
-3. 执行操作并检查输出结果
-4. 如遇错误，参考错误处理章节
 
 ## 参数说明
 | 参数名 | 类型 | 必填 | 说明 |
@@ -93,13 +89,6 @@ homepage: "https://skillhub.cn/skill/"
 
 输出模板参考: `assets/output.json`
 
-## 异常恢复指南
-| 错误场景 | 原因 | 处理方式 |
-|:---:|:---:|:---:|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 环境要求
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
@@ -122,17 +111,6 @@ homepage: "https://skillhub.cn/skill/"
 export API_KEY="${API_KEY:?请设置环境变量}"
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
-## 疑问解答
-### Q1: 如何开始使用Podcast Chaptering H？
-A: 请参考使用流程和依赖说明章节，确保运行环境满足要求后调用本技能。
-## 错误处理机制
-| 错误场景(续)| 原因 | 处理方式 |
-|----:|:----|----:|
-| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 请求重试；确认Agent平台LLM服务正常 |
-| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
-| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
-| 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
-
 ## 创新亮点
 ### 效率提升量化分析
 | 操作步骤 | 手动耗时 | 自动化耗时 | 时间节约 | 准确率提升 |
@@ -160,8 +138,6 @@ A: 请参考使用流程和依赖说明章节，确保运行环境满足要求�
 | 节目说明撰写 | 手动撰写节目说明耗时，内容可能不完整 | 影响用户对播客内容的理解 | 自动生成节目说明，提高效率和质量 | 时间节约30分钟/小时 |
 
 ## 常见问题FAQ
-
-### Q1: 如何开始使用Podcast Chaptering H？
 
 ### Q2: Podcast Chaptering H支持哪些音频格式？
 A: Podcast Chaptering H支持常见的音频格式，如MP3、WAV、AAC等。
