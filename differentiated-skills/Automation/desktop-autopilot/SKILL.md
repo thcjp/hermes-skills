@@ -1,7 +1,8 @@
 ---
+
 slug: desktop-autopilot
 name: desktop-autopilot
-version: 1.0.1
+version: 1.0.2
 displayName: 桌面自动驾驶
 summary: 智能桌面 GUI 自动化，视觉识别定位、智能等待、工作流编排，DPI 自适应不迷路.。桌面自动驾驶为 AI Agent 提供基于视觉的智能 GUI
   自动化能力。它不依赖固定坐标，而是通过图像
@@ -25,9 +26,11 @@ tools:
 - write
 homepage: ''
 category: Automation
-pricing_tier: free
-homepage: "https://skillhub.cn/skill/"
+homepage: ""
+pricing_tier: "L2-标准级"
+
 ---
+
 # 桌面自动驾驶
 让 AI Agent 像人一样"看着屏幕操作"，而不是盲点坐标。本技能解决五个核心痛点：**坐标漂移**（DPI 缩放、窗口移动导致固定坐标失效）、**时机不对**（元素没加载就点击）、**识别率低**（原始 locateOnScreen 效果差）、**操作不可逆**（点错了无法回退）、**流程难复用**（每次重写脚本）.
 ## 职责边界
@@ -272,7 +275,7 @@ ap.click(500, 300)  # 弹窗确认："允许点击 (500,300)? [y/n]"
 ap = Autopilot(failsafe=True)
 ```
 ### 操作日志
-所有操作自动记录到 `~/.skill-platform/autopilot/logs/`：
+所有操作自动记录到 `$HOME/.skill-platform/autopilot/logs/`：
 ```
 2026-07-18T09:00:00Z | click_image | submit.png | SUCCESS | (520, 340)
 2026-07-18T09:00:02Z | type_text | john@example.com | SUCCESS
@@ -442,19 +445,6 @@ pip install pyautogui pillow opencv-python pygetwindow pytesseract
 - 视觉识别定位受屏幕分辨率和DPI缩放影响，多显示器不同DPI环境下可能定位偏差
 - GUI自动化依赖目标应用的窗口可访问性（Accessibility API），部分自绘UI控件无法识别
 - 智能等待机制基于元素出现检测，网络应用加载完成后异步渲染的内容可能被遗漏
-## 常见疑问
-### Q1: 桌面自动驾驶支持哪些输入格式？
-支持文本输入、文件上传和API调用三种方式.
-### Q2: 使用桌面自动驾驶需要什么环境？
-需要支持SKILL.md的AI Agent平台，详见依赖说明.
-### Q3: 输出结果可以直接使用吗？
-输出结果建议人工审核后使用，确保符合具体业务需求.
-## 功能特性总览
-- **自动化执行**: 智能桌面 GUI 自动化，视觉识别定位、智能等待、工作流编排，DPI 自适应不迷路.。桌面自动驾驶为 AI Agent
-- **文件处理**: 支持多种文件格式的读取、解析和写入操作
-- **API集成**: 通过标准化接口调用外部服务并处理响应
-- **命令执行**: 在安全沙箱中执行系统命令并收集结果
-- **信息检索**: 快速搜索和过滤目标数据
 ## 性能数据
 | 操作场景 | 手动耗时 | 自动化耗时 | 效率提升 |
 |----------|---------|-----------|---------|
