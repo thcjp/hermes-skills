@@ -1,6 +1,5 @@
 ---
 
-
 slug: chart
 name: "chart"
 version: 1.0.1
@@ -30,11 +29,12 @@ tools:
   - write
 homepage: ""
 category: "Automation"
-homepage: "https://skillhub.cn/skill/"
-
+homepage: ""
+pricing_tier: "L2-标准级"
 
 ---
 
+> **功能说明**: 本技能涵盖 为清晰的可视化输出 等核心能力。
 
 # Chart — 本地图表生成引擎
 
@@ -44,16 +44,6 @@ homepage: "https://skillhub.cn/skill/"
 | input | string | 是 | 本地图表生成引擎处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
-
-## 专业版增值服务
-| 能力 | 免费版 | 付费版 |
-|:-----|:-----|:-----|
-| 基础功能 | 支持 | 支持 |
-| 本地图表生成引擎本地优先的图表生成 | 不支持 | 支持 |
-| 高清分辨率与无损输出 | 不支持 | 支持 |
-| 批量生成与风格预设 | 不支持 | 支持 |
-| 自定义模型微调 | 不支持 | 支持 |
-| 商用版权授权 | 不支持 | 支持 |
 
 ## 核心理念
 
@@ -86,8 +76,8 @@ export API_KEY="${API_KEY:?请设置环境变量}"
 
 所有数据仅落地本地：
 
-- `~/.skill-platform/workspace/memory/chart/charts.json` — 图表历史索引
-- `~/.skill-platform/workspace/memory/chart/output/` — 图表图片输出目录
+- `$HOME/.skill-platform/workspace/memory/chart/charts.json` — 图表历史索引
+- `$HOME/.skill-platform/workspace/memory/chart/output/` — 图表图片输出目录
 
 无云同步，无第三方图表API.
 ## 支持的图表类型
@@ -134,7 +124,7 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） \
 - `--labels`：以英文逗号分隔的标签序列
 - `--values`：以英文逗号分隔的数值序列，须与labels等长
 
-输出PNG文件落地到 `~/.skill-platform/workspace/memory/chart/output/`.
+输出PNG文件落地到 `$HOME/.skill-platform/workspace/memory/chart/output/`.
 ### 3. 历史图表查看
 使用 `list_charts.py` 查看历史生成记录：
 
@@ -154,14 +144,6 @@ python3 {baseDir}/（请参考skill目录中的脚本文件）
 ### 5. 多类型组合工作流
 典型组合流程：先用 `suggest_chart.py` 选型，再用 `make_chart.py` 生成，最后用 `list_charts.py` 回溯历史.
 
-## 操作流程
-1. **确认环境**：检查 `python3` 与 `matplotlib` 是否可用（`python3 -c "import matplotlib"`）.
-2. **初始化存储**：首次使用运行 `init_storage.py` 建立目录与索引.
-3. **选型**：用 `suggest_chart.py --labels ... --values ...` 获取推荐类型.
-4. **生成图表**：用 `make_chart.py --type <type> --title "..." --labels "..." --values "..."` 生成PNG.
-5. **校验输出**：检查 `output/` 目录下的图片文件，确认渲染正确.
-6. **回溯历史**：用 `list_charts.py` 查看历史记录，复用或对比.
-7. **复用产物**：将PNG嵌入报告、幻灯片或决策文档.
 ## 应用示例
 ### 示例1：柱状图对比季度销售
 
@@ -173,7 +155,7 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） \
   --values "120,180,150,210"
 ```
 
-输出文件：`~/.skill-platform/workspace/memory/chart/output/chart_20250320_001.png`
+输出文件：`$HOME/.skill-platform/workspace/memory/chart/output/chart_20250320_001.png`
 
 ### 示例2：折线图展示月度趋势
 
@@ -220,7 +202,7 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） --labels "1月,2�
 | `--labels`与`--values`长度不匹配 | 序列项数不一致 | 检查逗号分隔项数，确保两序列等长 |
 | `--type`取值非法 | 传入了非bar/line/pie/scatter的类型 | 仅支持四种类型，参考支持类型表 |
 | `--values`含非数值 | 数值序列中混入字符串 | 确保所有值为数字，移除单位与中文符号 |
-| 输出目录不可写 | `~/.skill-platform/workspace/memory/chart/output/` 权限不足 | 检查目录权限或重新运行 `init_storage.py` |
+| 输出目录不可写 | `$HOME/.skill-platform/workspace/memory/chart/output/` 权限不足 | 检查目录权限或重新运行 `init_storage.py` |
 | 标签含中文乱码 | matplotlib默认字体缺中文字形 | 配置 `matplotlib.rcParams['font.sans-serif']` 添加中文字体 |
 | `charts.json`损坏 | 索引文件被意外截断 | 删除该文件后重新运行 `init_storage.py` 重建 |
 | 标签数过多导致x轴拥挤 | 类别超过15个 | 改用横向柱状图或旋转x轴标签45度 |
@@ -233,7 +215,7 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） --labels "1月,2�
 ### Q3：如何选择图表类型？
 直接运行 `suggest_chart.py`，它会根据 `--labels` 与 `--values` 的特征给出推荐与理由。也可参考支持类型表的适用场景列.
 ### Q4：生成的图片存在哪里？
-统一落地到 `~/.skill-platform/workspace/memory/chart/output/` 目录，文件名带时间戳，便于回溯.
+统一落地到 `$HOME/.skill-platform/workspace/memory/chart/output/` 目录，文件名带时间戳，便于回溯.
 ### Q5：matplotlib默认字体不支持中文怎么办？
 通过 `matplotlib.rcParams['font.sans-serif'] = ['SimHei', 'Arial Unicode MS']` 配置中文字体，或在脚本中预设该参数.
 ### Q6：能否复用历史图表？
@@ -246,36 +228,6 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） --labels "1月,2�
 - 输出固定为PNG格式，暂不支持SVG或PDF矢量输出.
 - 中文字体需手动配置 `matplotlib.rcParams`，否则会出现乱码.
 - 所有数据与产物仅落地本地，不支持多设备同步.
-## 响应格式
-```json
-{
-  "success": true,
-  "data": {
-    "result": "本地图表生成引擎处理结果",
-    "execution_time": "0.5s",
-    "metadata": {
-      "version": "1.0",
-      "processor": "chart"
-    }
-  },
-  "execution_log": [
-    "解析输入参数",
-    "执行核心处理",
-    "格式化输出结果"
-  ],
-  "error": null
-}
-```
-
-## 故障应对方案
-| 错误现象 | 可能原因 | 诊断步骤 | 解决方案 |
-| --- | --- | --- | --- |
-| Python 3未安装或不可用 | 系统未安装Python 3或Python 3不可用 | 尝试在终端运行 `python3 --version`，如果没有输出则表明Python 3未安装。 | 安装Python 3.x，并确保在系统环境变量中添加Python 3的路径。 |
-| matplotlib未安装 | matplotlib库未安装 | 尝试在终端运行 `python3 -c "import matplotlib"`，如果出现错误则表明matplotlib未安装。 | 使用pip3安装matplotlib库：`pip3 install matplotlib`。 |
-| 输出文件损坏或缺失 | 输出文件在生成过程中损坏或被意外删除 | 检查输出目录中是否有损坏的文件或缺失的文件。 | 重新运行生成脚本来创建新的输出文件。 |
-| 图表类型推荐错误 | suggest_chart.py脚本推荐错误类型 | 运行suggest_chart.py脚本并检查输出结果。 | 如果推荐错误，检查输入数据的格式和类型，确保数据正确无误。 |
-| 图表生成失败 | make_chart.py脚本执行失败 | 检查make_chart.py脚本的输出日志。 | 根据日志中的错误信息进行相应的修复。 |
-
 ## 安全原则
 | 风险项 | 等级 | 防护措施 | 验证方法 |
 | --- | --- | --- | --- |
@@ -293,12 +245,6 @@ python3 {baseDir}/（请参考skill目录中的脚本文件） --labels "1月,2�
 | 报告制作 | 本地生成的图表可以直接嵌入报告，无需额外的转换步骤，提高了报告制作的效率，平均节省了20%的报告制作时间。 | 相比于使用其他图表生成工具，本地图表生成引擎简化了报告制作流程，提高了报告的生成效率。 |
 | 决策支持 | 图表生成引擎支持多种图表类型，能够更全面地展示数据，为决策提供了更丰富的信息，提高了决策的准确性。 | 与单一功能的图表生成工具相比，本地图表生成引擎提供了更全面的图表类型，能够满足更广泛的需求。 |
 | 跨平台兼容性 | 本地图表生成引擎支持Windows、macOS和Linux操作系统，提高了跨平台兼容性，方便用户在不同环境中使用。 | 相比于仅支持特定平台的图表生成工具，本地图表生成引擎提供了更广泛的兼容性，方便用户在不同操作系统中使用。 |
-
-## 功能介绍
-- **自动化执行**: 本地优先的图表生成引擎，支持bar/line/pie/scatter四种类型，无需联网，输出可复用于报告与幻灯片。
-- **文件处理**: 支持多种文件格式的读取、解析和写入操作
-- **API集成**: 通过标准化接口调用外部服务并处理响应
-- **命令执行**: 在安全沙箱中执行系统命令并收集结果
 
 ## 协助指南
 ### Q1: 本地图表生成引擎支持哪些输入格式？
