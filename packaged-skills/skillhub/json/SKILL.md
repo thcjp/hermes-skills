@@ -1,7 +1,8 @@
 ---
+
 slug: json
 name: "json"
-version: 1.0.1
+version: 1.0.2
 displayName: "JSON数据处理工具"
 summary: "高效处理JSON数据结构/API/序列化。Work with JSON data structures, APIs, and serialization effectively。核心能力:"
 summary_zh: "高效处理JSON数据结构/API/序列化。Work with JSON data structures, APIs, and serialization effectively。核心能力:"
@@ -34,9 +35,12 @@ tools:
   - write
 homepage: ""
 category: "Automation"
-homepage: "https://skillhub.cn/skill/"
+homepage: ""
+pricing_tier: "L2-标准级"
+
 ---
-> **核心功能**: 本技能提供化工作流与智能决策辅助等能力。
+
+> **功能说明**: 本技能涵盖 化工作流与智能决策辅助 等核心能力。
 
 # JSON
 
@@ -49,9 +53,6 @@ homepage: "https://skillhub.cn/skill/"
 | 多数据源关联查询 | 不支持 | 支持 |
 | 可视化图表自动生成 | 不支持 | 支持 |
 | 定时数据同步与增量更新 | 不支持 | 支持 |
-
-## 功能能力
-- Work with JSON data structures, APIs, and serialization effectively
 
 ## 典型场景
 | 场景 | 输入 | 输出 |
@@ -124,13 +125,6 @@ homepage: "https://skillhub.cn/skill/"
 ```
 
 中间产物模板参考: `assets/json_template`
-
-## 异常处置
-| 错误场景 | 原因 | 处理方式 |
-|:---:|:---:|:---:|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
 
 ## 运行环境
 ### 运行环境
@@ -224,20 +218,6 @@ A: 支持，付费版可以生成可视化图表，帮助用户更直观地了�
 | 网络通信安全 | 中 | 使用HTTPS协议，验证SSL证书 | 定期检查证书有效期 |
 | 敏感数据暴露 | 高 | 输出结果中不包含密钥、令牌等敏感信息 | 日志脱敏审查 |
 | 未授权访问 | 中 | 限制访问权限，实施认证机制 | 定期审计访问日志 |
-
-## 核心属性
-- **自动化执行**: 高效处理JSON数据结构/API/序列化。Work with JSON data structures, APIs, a
-- **文件处理**: 支持多种文件格式的读取、解析和写入操作
-- **API集成**: 通过标准化接口调用外部服务并处理响应
-- **命令执行**: 在安全沙箱中执行系统命令并收集结果
-- **信息检索**: 快速搜索和过滤目标数据
-
-## 功能特征
-Work with JSON data structures, APIs, a
-- **文件处理**: 支持多种文件格式的读取、解析和写入操作
-- **API集成**: 通过标准化接口调用外部服务并处理响应
-- **命令执行**: 在安全沙箱中执行系统命令并收集结果
-- **信息检索**: 快速搜索和过滤目标数据
 
 ## 故障处理体系
 针对JSON数据处理工具使用中可能遇到的常见问题,提供以下排查方案:
