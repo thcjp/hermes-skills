@@ -1,10 +1,9 @@
 ---
 
-
 name: linear-project-manager
 slug: linear-project-manager
 displayName: "Linear项目管理"
-version: 1.0.2
+version: 1.0.1
 summary: '"封装Linear项目管理API,请求参数直转响应数据,付费版独享批量与高级配置。API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.
   Use when 用户说"L"'
 summary_zh: '"封装Linear项目管理API,请求参数直转响应数据,付费版独享批量与高级配置。API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.
@@ -25,13 +24,12 @@ tags:
 - api
 - project
 category: '"Automation"'
-homepage: "https://skillhub.cn/skill/"
-
+homepage: ""
+pricing_tier: "L2-标准级"
 
 ---
 
-
-> **核心功能**: 本技能提供中文交互、化流程场景等能力。
+> **功能说明**: 本技能涵盖 中文交互、化流程场景 等核心能力。
 
 # Linear Project Manager 批量处理
 
@@ -44,11 +42,6 @@ homepage: "https://skillhub.cn/skill/"
 | 大数据集流式处理 | 不支持 | 支持 |
 | 多数据源关联查询 | 不支持 | 支持 |
 | 可视化图表自动生成 | 不支持 | 支持 |
-
-## 功能能力
-- Linear Project Manager 错误重试
-- Linear Project Manager 多格式支持
-- Linear Project Manager 扩展能力9
 
 ## 典型场景
 - 用户说"Linear Project Manager 扩展能力10" → 执行API调用
@@ -84,12 +77,6 @@ Linear项目管理验证用户身份与操作权限，加载租户配置
 }
 ```
 
-## 异常管理
-| 错误场景 | 原因 | 处理方式 |
-|---:|---:|---:|
-| 其他异常 | 内部处理异常 | 检查输入后 |
-| 其他异常 | 内部处理异常 | 检查输入后 |
-
 ## 运行环境
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
@@ -111,12 +98,6 @@ Linear项目管理验证用户身份与操作权限，加载租户配置
 export API_KEY="${API_KEY:?请设置环境变量}"
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
-## 案例展示
-
-### 示例1: 基础用法
-**输入**: 示例数据
-**输出**: 示例数据
-
 ## 能力边界
 - 需要LLM支持
 - 数据处理能力受限于本地硬件资源
