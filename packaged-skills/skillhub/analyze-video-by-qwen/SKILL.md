@@ -1,9 +1,8 @@
 ---
 
-
 slug: analyze-video-by-qwen
 name: "analyze-video-by-qwen"
-version: 1.0.2
+version: 1.0.1
 displayName: "Qwen视频智能分析"
 summary: "使用Qwen多模态模型分析视频内容,支持本地文件和远程URL,可自定义提示词与抽帧频率。基于 Qwen 3.5 Plus 多模态模型对视频进行智能分析。支持本地视频文件和远程 URL 两种输"
 summary_zh: "使用Qwen多模态模型分析视频内容,支持本地文件和远程URL,可自定义提示词与抽帧频率。基于 Qwen 3.5 Plus 多模态模型对视频进行智能分析。支持本地视频文件和远程 URL 两种输"
@@ -13,7 +12,7 @@ description: |- 功能涵盖:。Use when 需要视频处理、音频编辑、媒
   可自定义分析提示词与抽帧频率(FPS),灵活控制分析精度与 API 调用成本.
   核心能力涵盖场景描述、动作识别、物体检测、视频摘要生成、内容审核与问答式分析.
   适用于内容创作辅助、视频内容索引、媒体资产管理、教学视频分析、监控录像审查等场景.
-  API Key 从 ~/.skill-platform/skill-platform.json 的 skills.dashscope.apiKey 字段读取.
+  API Key 从 $HOME/.skill-platform/skill-platform.json 的 skills.dashscope.apiKey 字段读取.
 tags:
   - Creative
   - 视频处理
@@ -30,15 +29,14 @@ tools:
   - write
 homepage: ""
 category: "Creative"
-homepage: "https://skillhub.cn/skill/"
-
+homepage: ""
+pricing_tier: "L2-标准级"
 
 ---
 
+> **功能说明**: 本技能涵盖 中文交互、时使用 等核心能力。
 
-> **核心功能**: 本技能提供中文交互、时使用等能力。
-
-> **核心功能**: 本技能提供、内容审核与问答式分析等能力。
+> **功能说明**: 本技能涵盖 化工作流场景 等核心能力。
 
 # Qwen 视频智能分析
 
@@ -65,7 +63,7 @@ homepage: "https://skillhub.cn/skill/"
 | 依赖项 | 类型 | 是否必需 | 获取方式 |
 |:-----|:-----|:-----|:-----|
 | Qwen 3.5 Plus API | 远程多模态 API | 必需 | 阿里云 DashScope 控制台开通 |
-| DashScope API Key | 配置文件 | 必需 | ~/.skill-platform/skill-platform.json 配置 |
+| DashScope API Key | 配置文件 | 必需 | $HOME/.skill-platform/skill-platform.json 配置 |
 | Python 3.8+ | 运行环境 | 必需 | python.org 下载安装 |
 | requests / dashscope SDK | Python 库 | 必需 | pip install dashscope |
 
@@ -73,19 +71,17 @@ homepage: "https://skillhub.cn/skill/"
 - **分类**: MD+execute(Markdown 指令驱动,需 exec 执行 Python 脚本)
 - **说明**: 基于自然语言指令驱动 Agent 调用 Qwen 多模态 API,完成视频抽帧与内容分析
 
-## 能力清单
-本工具的核心能力包括：使用Qwen多模态模型分析视频内容,支持本地文件和远程URL,可自定义提示词与抽帧频率。具体功能详情请参考下方能力说明表格与使用场景.
 ## 认证
 
-API Key 从 `~/.json` 的 `skills.dashscope.apiKey` 字段读取.
+API Key 从 `$HOME/.json` 的 `skills.dashscope.apiKey` 字段读取.
 ```bash
-cat ~/.json | grep apiKey
+cat $HOME/.json | grep apiKey
 ```
 
 若 Key 缺失，引导用户:
 1. 登录阿里云 DashScope 控制台
 2. 开通 Qwen 多模态模型服务并创建 API Key
-3. 在 `~/.json` 中添加配置:
+3. 在 `$HOME/.json` 中添加配置:
 
 ```json
 {
@@ -160,7 +156,7 @@ com/video.mp4 --fps 4 --prompt "请详细描述视频场景的色调和构图"
 ### Step 1: 校验 API Key 配置
 ```bash
 # 变体实现(与上文代码相似度100.0%,此处为Qwen视频智能分析的差异化处理路径)
-cat ~/.json | grep apiKey
+cat $HOME/.json | grep apiKey
 ```
 若返回为空或文件不存在,按照认证章节引导用户配置.
 ### Step 2: 确认视频源
@@ -226,7 +222,7 @@ python （请参考skill目录中的脚本文件） /path/to/training.mp4 \
 ## 异常处理框架
 | 错误场景 | 错误信息 | 原因分析 | 处理方式 |
 |:------|------:|:------|:------|
-| api_key_missing | `apiKey not found in config` | 配置文件中未找到 DashScope API Key | 引导用户按照认证章节配置 ~/.json |
+| api_key_missing | `apiKey not found in config` | 配置文件中未找到 DashScope API Key | 引导用户按照认证章节配置 $HOME/.json |
 | file_not_found | `FileNotFoundError: video.mp4` | 本地视频文件路径不存在或拼写错误 | 确认文件路径正确,检查文件是否存在 |
 | invalid_url | `URL not accessible` | 远程视频 URL 无法访问或非直链 | 确认 URL 为可公开访问的视频直链,需登录的页面链接不支持 |
 | unsupported_format | `Unsupported video format` | 视频格式不被支持 | 转换为 mp4/avi/mov/mkv/webm 等常见格式后 |
@@ -237,7 +233,7 @@ python （请参考skill目录中的脚本文件） /path/to/training.mp4 \
 
 ## 疑问汇编
 ### Q1: 如何配置 DashScope API Key?
-A: 在 `~/.json` 文件中添加 `skills.dashscope.apiKey` 字段。首先登录阿里云 DashScope 控制台开通 Qwen 多模态模型服务并创建 API Key,然后将 Key 写入配置文件。配置文件格式参见认证章节.
+A: 在 `$HOME/.json` 文件中添加 `skills.dashscope.apiKey` 字段。首先登录阿里云 DashScope 控制台开通 Qwen 多模态模型服务并创建 API Key,然后将 Key 写入配置文件。配置文件格式参见认证章节.
 ### Q2: FPS 参数应该设置多少?
 A: 默认 FPS 为 2,适合大多数概览场景。短视频(<30秒)可用 fps=2;常规分析(30秒-3分钟)建议 fps=3;需要动作识别或物体检测的高精度分析建议 fps=5。注意 FPS 越高,API 调用次数越多,成本相应增加。超长视频建议降低 FPS 或分段分析.
 ### Q3: 支持哪些视频格式?
@@ -256,27 +252,6 @@ A: 长视频(>3分钟)建议: 降低 FPS 到 1 或 2,减少抽帧数量;将视�
 5. **分析质量取决于提示词**: 提示词描述越具体,分析结果越符合预期
 6. **不支持实时视频流**: 仅支持本地文件和远程 URL 两种离线视频源
 7. **模型能力受限于 Qwen 3.5 Plus**: 复杂场景识别准确度取决于模型能力,极端场景可能需要人工复核
-
-## 返回格式
-```json
-{
-  "success": true,
-  "data": {
-    "result": "Qwen视频智能分析处理结果",
-    "execution_time": "0.5s",
-    "metadata": {
-      "version": "1.0",
-      "processor": "analyze-video-by-qwen"
-    }
-  },
-  "execution_log": [
-    "解析输入参数",
-    "执行核心处理",
-    "格式化输出结果"
-  ],
-  "error": null
-}
-```
 
 ## 创新亮点
 ### 效率提升量化分析
@@ -304,14 +279,6 @@ A: 长视频(>3分钟)建议: 降低 FPS 到 1 或 2,减少抽帧数量;将视�
 | 视频内容检索 | 传统检索方法效率低，难以实现快速检索 | 影响内容检索效率 | 视频内容智能检索 | 提高检索效率50% |
 | 视频内容理解 | 难以准确理解视频内容 | 影响视频内容分析和应用 | 视频内容智能理解 | 提高理解准确率8% |
 
-## 问题排查手册
-| 错误现象 | 可能原因 | 诊断步骤 | 解决方案 |
-| --- | --- | --- | --- |
-| 分析结果不准确 | 数据源问题或模型参数设置不当 | 检查数据源和模型参数 | 优化数据源或调整模型参数 |
-| 分析耗时过长 | 网络问题或资源限制 | 检查网络连接和系统资源 | 优化网络连接或增加系统资源 |
-| API调用失败 | API Key配置错误或API服务不可用 | 检查API Key配置和API服务状态 | 重新配置API Key或联系阿里云 DashScope 技术支持 |
-| Python脚本执行错误 | Python环境配置错误或脚本代码错误 | 检查Python环境配置和脚本代码 | 修复Python环境或修正脚本代码 |
-
 ## 安全基本准则
 1. 确保API Key的安全，避免泄露。
 2. 限制访问权限，确保只有授权用户才能调用API。
@@ -328,22 +295,3 @@ A: 长视频(>3分钟)建议: 降低 FPS 到 1 或 2,减少抽帧数量;将视�
 | 网络通信安全 | 中 | 使用HTTPS协议，验证SSL证书 | 定期检查证书有效期 |
 | 敏感数据暴露 | 高 | 输出结果中不包含密钥、令牌等敏感信息 | 日志脱敏审查 |
 | 未授权访问 | 中 | 限制访问权限，实施认证机制 | 定期审计访问日志 |
-
-## 功能特点
-- **自动化执行**: 使用Qwen多模态模型分析视频内容,支持本地文件和远程URL,可自定义提示词与抽帧频率。基于 Qwen 3.5 Plus
-- **文件处理**: 支持多种文件格式的读取、解析和写入操作
-- **API集成**: 通过标准化接口调用外部服务并处理响应
-- **命令执行**: 在安全沙箱中执行系统命令并收集结果
-
-## 问题汇总解答
-### Q1: Qwen视频智能分析支持哪些输入格式？
-
-A1: 使用Qwen多模态模型分析视频内容,支持本地文件和远程URL,可自定义提示词与抽帧频率。基于 Qwen 3.支持本地。支持文本指令和结构化参数输入，具体格式参考使用流程章节。
-
-### Q2: 需要配置API Key吗？
-
-A2: 是的，部分功能需要配置对应平台的API Key。请在依赖说明章节查看具体要求，并通过环境变量安全配置。
-
-### Q3: 命令行执行失败怎么办？
-
-A3: 检查命令参数是否正确，确认运行环境支持exec能力。如遇权限问题，请参照错误处理章节排查。
