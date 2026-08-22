@@ -1,7 +1,8 @@
 ---
+
 slug: dlazy-audio-generate
 name: dlazy-audio-generate
-version: 1.3.4
+version: 1.3.5
 displayName: Dlazy Audio音频生成
 summary: 通过dlazy CLI调用15+音频模型,涵盖TTS/音乐/音效/语音克隆,支持管道串联。dlazy 音频生成客户端。通过 dlazy CLI 调用
   15+ 托管音频模型,涵盖文本转语音(T
@@ -27,11 +28,14 @@ tools:
 - write
 homepage: ''
 category: Creative
-homepage: "https://skillhub.cn/skill/"
----
-> **核心功能**: 本技能提供中文交互、时使用等能力。
+homepage: ""
+pricing_tier: "L2-标准级"
 
-> **核心功能**: 本技能提供客户端、、音效生成、等能力。
+---
+
+> **功能说明**: 本技能涵盖 中文交互、时使用 等核心能力。
+
+> **功能说明**: 本技能涵盖 化工作流场景 等核心能力。
 
 # Dlazy Audio Generate
 
@@ -43,16 +47,6 @@ homepage: "https://skillhub.cn/skill/"
 | input | string | 是 | Dlazy Audio音频生成处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
-
-## 专业版增值服务
-| 能力 | 免费版 | 付费版 |
-|:-----|:-----|:-----|
-| 基础功能 | 支持 | 支持 |
-| 高清分辨率与无损输出 | 不支持 | 支持 |
-| 批量生成与风格预设 | 不支持 | 支持 |
-| 自定义模型微调 | 不支持 | 支持 |
-| 商用版权授权 | 不支持 | 支持 |
-| 多版本对比与A/B优选 | 不支持 | 支持 |
 
 ## 安装与配置
 ### 运行环境
@@ -106,20 +100,13 @@ export API_KEY="${API_KEY:?请设置环境变量}"
 | `@N` | 第 N 个输出的主值(`@0` 为领先个输出 URL) |
 | `@N.<jsonpath>` | 第 N 个输出的 js
 
-## 快速熟悉
-1. 确认运行环境满足依赖说明中的要求
-2. 在AI Agent对话中调用本技能,提供必要的输入参数
-3. 检查输出结果,根据需要进行后续处理
-
-> 详细的输入输出格式请参考下方章节说明。
-
 ## 认证
 
 所有请求需 dLazy API Key。推荐设备码流程:
 ```bash
 dlazy auth login
 ```
-该命令自动保存 Key 到本地配置(`~/.dlazy/config.json` 或 `%USERPROFILE%\.dlazy\config.json`),文件权限限定为当前 OS 用户.
+该命令自动保存 Key 到本地配置(`$HOME/.dlazy/config.json` 或 `%USERPROFILE%\.dlazy\config.json`),文件权限限定为当前 OS 用户.
 手动设置:
 ```bash
 dlazy auth set YOUR_API_KEY
@@ -272,18 +259,6 @@ wav --name "voice-male" \
 **输出**: `chapter-1.mp3` 文件路径,使用克隆的主讲人音色
 
 **说明**: 通过 `@0.voice_id` 管道引用将克隆结果直接传入 TTS,无需手动复制 voice id。样本需为干净人声(无背景噪音),克隆后音色可在后续多次 TTS 调用中复用.
-## 异常修复
-| 错误场景 | 错误信息 | 原因分析 | 处理方式 |
-|:------:|--------|:-------|:------:|
-| 401 unauthorized | `code: "unauthorized", message: "API key is missing or invalid"` | Key 缺失或失效 | 引导用户访问 `dlazy.com/dashboard/organization/api-key` 获取并 `dlazy auth set` |
-| 501 missing_param | `error: required option '--prompt <prompt>' not specified` | 必填参数未提供 | 运行 `dlazy <model> -h` 查看必填参数并补全 |
-| 502 file_not_found | `Error: Image file/Video file not found: C:\path\to\file` | 本地文件路径错误 | 校验文件路径与存在性,使用绝对路径 |
-| 503 insufficient_balance | `code: "insufficient_balance"` | 账户余额不足 | 明确告知用户余额不足,引导访问 `dlazy.com/dashboard/organization/settings?tab=credits` 充值 |
-| 503 server_error | `HTTP status code error (500 server crash)` | dLazy 服务端错误 | (2s/4s/8s)，最多 3 次 |
-| 504 task_failed | `=== Generation Failed ===` | 异步任务失败,常见为 prompt 违反安全策略 | 检查 prompt 是否含敏感内容,调整后重新生成 |
-| no_stdin | `code: "no_stdin"` | 管道串联时上游无输出 | 检查上游命令是否成功,确保管道顺序正确 |
-| model_not_found | `Error: model "未指定" not found` | 模型名拼写错误 | 核对"可用音频模型"章节的模型名,运行 `dlazy -h` 查看全部模型 |
-
 ## 问答合集
 ### Q1: 如何获取并配置 dLazy API Key?
 A: 登录 dlazy.com,在 `dashboard/organization/api-key` 创建 Key。终端运行 `dlazy auth set YOUR_API_KEY` 持久化到本地配置,或通过 `DLAZY_API_KEY` 环境变量按次传入。Key 绑定 dLazy 组织,可在控制台随时轮换或吊销.
@@ -303,7 +278,7 @@ A: CLI 返回 `code: "insufficient_balance"` 时,明确告知用户余额不足,
 3. **本地文件需上传**: image/video/audio 字段的本地路径会自动上传到 dLazy 媒体存储
 4. **异步任务耗时**: 音乐与长 TTS 生成可能需要 10-60 秒等待
 5. **克隆音色绑定配套 TTS**: `elevenlabs-voice-clone` 的音色仅可用于 `elevenlabs-tts`,跨模型不通用
-6. **安全策略限制**: prompt 含敏感内容会触发 `504 task_failed`,不可通过重试绕过
+6. **安全策略限制**: prompt 含敏感内容会触发 `504 task_failed`,不可通过重试规避
 7. **生成质量取决于 prompt 描述**: 风格、情绪、乐器、音色描述越具体,结果越符合预期
 
 ## 创新亮点
@@ -360,13 +335,6 @@ A: CLI 返回 `code: "insufficient_balance"` 时,明确告知用户余额不足,
 | 敏感数据暴露 | 高 | 输出结果中不包含密钥、令牌等敏感信息 | 日志脱敏审查 |
 | 未授权访问 | 中 | 限制访问权限，实施认证机制 | 定期审计访问日志 |
 
-## 功能介绍
-- **自动化执行**: 通过dlazy CLI调用15+音频模型,涵盖TTS/音乐/音效/语音克隆,支持管道串联。dlazy 音频生成客户端。通
-- **文件处理**: 支持多种文件格式的读取、解析和写入操作
-- **API集成**: 通过标准化接口调用外部服务并处理响应
-- **命令执行**: 在安全沙箱中执行系统命令并收集结果
-- **信息检索**: 快速搜索和过滤目标数据
-
 ## 协助指南
 ### Q1: Dlazy Audio音频生成支持哪些输入格式？
 
@@ -401,13 +369,3 @@ A3: 检查命令参数是否正确，确认运行环境支持exec能力。如遇
 2. **查看日志输出**: 定位具体错误行和异常类型
 3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
 4. **逐步调试**: 缩小问题范围,隔离故障模块
-
-## 依赖说明
-
-### 运行环境
-- **Agent 平台**: 支持SKILL.md的任意AI Agent
-- **操作系统**: Windows / macOS / Linux
-
-### 可用性分类
-- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
-- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。
