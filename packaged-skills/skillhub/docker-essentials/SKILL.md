@@ -1,7 +1,8 @@
 ---
+
 slug: docker-essentials
 name: docker-essentials
-version: 1.0.1
+version: 1.0.2
 displayName: Docker核心操作指南
 summary: 涵盖容器生命周期、镜像管理、Compose、网络、数据卷、系统管理等Docker核心操作。Docker核心操作指南，覆盖容器生命周期的完整管理流程.
   包含容器调试、镜像构建与管理、Dock
@@ -27,11 +28,21 @@ tags:
 - docker-compose
 - run
 category: Development
-homepage: "https://skillhub.cn/skill/"
+homepage: ""
+pricing_tier: "L2-标准级"
+
 ---
-> **核心功能**: 本技能提供中文交互、化工作流场景等能力。
+
+> **功能说明**: 本技能涵盖 中文交互、化工作流场景 等核心能力。
 
 # Docker核心操作指南
+
+## 新手引导
+1. 确认运行环境满足依赖说明中的要求
+2. 在AI Agent对话中调用本技能,提供必要的输入参数
+3. 检查输出结果,根据需要进行后续处理
+
+> 详细的输入输出格式请参考下方章节说明。
 
 涵盖容器生命周期、镜像管理、Compose、网络、数据卷、系统管理等Docker核心操作.
 ## 请求格式
@@ -40,16 +51,6 @@ homepage: "https://skillhub.cn/skill/"
 | input | string | 是 | Docker核心操作指南处理的输入数据或指令 |
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
-
-## 付费版扩展能力
-| 能力 | 免费版 | 付费版 |
-|:-----|:-----|:-----|
-| 基础功能 | 支持 | 支持 |
-| Docker核心操作指南镜像管理 | 不支持 | 支持 |
-| Docker核心操作指南系统管理 | 不支持 | 支持 |
-| 代码静态分析与质量评分 | 不支持 | 支持 |
-| 依赖漏洞检测与升级建议 | 不支持 | 支持 |
-| 批量代码审查与报告生成 | 不支持 | 支持 |
 
 ## 环境要求
 ### 运行环境
@@ -268,13 +269,6 @@ FROM nginx:alpine
 COPY --from=builder /app/dist /usr/share/nginx/html
 ```
 
-## 使用方法
-1. 确认Docker Engine与Docker Compose已安装并运行
-2. 根据需求选择操作类型（容器管理、镜像构建、Compose编排等）
-3. 使用自然语言描述需求，Agent生成对应的Docker命令
-4. Agent执行命令并检查输出结果
-5. 如遇错误，参考错误处理章节进行排查
-
 ## 用法示例
 ### 示例1：启动一个带端口的Nginx容器
 
@@ -323,17 +317,6 @@ Agent: 执行调试命令：
 如需复制文件：
 docker cp app:/var/log/app.log ./app.log
 ```
-
-## 故障应对方案
-| 错误场景 | 原因 | 处理方式 |
-|:---:|:---:|:---:|
-| `Cannot connect to the Docker daemon` | Docker服务未启动 | 执行 `systemctl start docker`（Linux）或启动Docker Desktop（Win/Mac） |
-| `port is already allocated` | 端口被占用 | 使用 `docker ps` 查看占用端口的容器；更换映射端口或停止占用容器 |
-| `Conflict. The container name is already in use` | 容器名冲突 | 执行 `docker rm -f <name>` 删除旧容器，或使用新名称 |
-| `no space left on device` | 磁盘空间不足 | 执行 `docker system prune -a --volumes` 清理未使用资源 |
-| `image not found locally` | 镜像不存在 | 执行 `docker pull <image>` 拉取镜像，或检查镜像名拼写 |
-| `permission denied` | 用户无Docker权限 | 将用户加入docker组：`sudo usermod -aG docker $USER`，重新登录 |
-| Compose服务启动失败 | 配置文件错误 | 检查docker-compose.yml语法；执行 `docker-compose config` 验证配置 |
 
 ## 疑问解答
 ### Q1: 如何查看容器内发生了什么？
@@ -446,13 +429,3 @@ A: `docker-compose up` 在前台运行，日志直接输出到终端，Ctrl+C停
 2. **查看日志输出**: 定位具体错误行和异常类型
 3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
 4. **逐步调试**: 缩小问题范围,隔离故障模块
-
-## 依赖说明
-
-### 运行环境
-- **Agent 平台**: 支持SKILL.md的任意AI Agent
-- **操作系统**: Windows / macOS / Linux
-
-### 可用性分类
-- **分类**: MD（纯Markdown指令，通过自然语言驱动Agent完成操作）
-- **说明**: 基于Markdown的AI Skill，通过自然语言指令驱动Agent完成操作。
