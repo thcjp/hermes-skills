@@ -1,10 +1,9 @@
 ---
 
-
 name: "dashboard-analytics-tool"
 slug: dashboard-analytics-tool
 displayName: "仪表盘分析工具"
-version: 1.7.4
+version: 1.7.5
 summary: '"封装仪表盘分析API,请求参数直转响应数据,付费版独享批量与高级配置。API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.
   Use when 用户说"Dashbo"'
 summary_zh: '"封装仪表盘分析API,请求参数直转响应数据,付费版独享批量与高级配置。API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.
@@ -24,13 +23,13 @@ tags:
 - dashboard
 - analytics
 category: '"Automation"'
-homepage: "https://skillhub.cn/skill/"
-
+homepage: ""
+pricing_tier: "L2-标准级"
 
 ---
 
+> **功能说明**: 本技能涵盖 中文交互、化流程场景 等核心能力。
 
-> **核心功能**: 本技能提供中文交互、化流程场景等能力。
 
 # Dashboard Analytics Tool 智能分析
 
@@ -83,12 +82,6 @@ homepage: "https://skillhub.cn/skill/"
 }
 ```
 
-## 异常处置
-| 错误场景 | 原因 | 处理方式 |
-|---:|---:|---:|
-| 其他异常 | 内部处理异常 | 检查输入后 |
-| 其他异常 | 内部处理异常 | 检查输入后 |
-
 ## 环境要求
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent（Claude Code / Cursor / Codex / Gemini CLI等）
@@ -115,14 +108,6 @@ export API_KEY="${API_KEY:?请设置环境变量}"
 ### 示例1: 基础用法
 **输入**: 示例数据
 **输出**: 示例数据
-
-## 错误应对体系
-| 错误场景(续)| 原因 | 处理方式 |
-|:---------|---------:|:---------|
-| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 请求重试；确认Agent平台LLM服务正常 |
-| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
-| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
-| 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
 
 ## 功能边界
 - 需要LLM支持
