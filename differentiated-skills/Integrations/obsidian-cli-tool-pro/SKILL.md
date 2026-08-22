@@ -1,7 +1,8 @@
 ---
+
 slug: obsidian-cli-tool-pro
 name: obsidian-cli-tool-pro
-version: 1.0.0
+version: 1.0.1
 displayName: Obsidian CLI(专业版)
 summary: 全功能Obsidian命令行管理工具，支持模板、插件、同步、历史、开发工具与TUI交互模式。Obsidian CLI工具专业版是面向团队和高级用户的完整命令行知识管理方案，在免费版基础上解锁
 license: Proprietary
@@ -10,7 +11,7 @@ description: "'|-. 面向需要obsidian cli tool相关能力的开发场景,提�
 ## 总览
 Obsidian作为本地优先的知识管理工具，其高级功能（插件管理、版本同步、"
   when 需要代码生成、编程辅助、调试测试、开发部署时使用。不适用于无明确目标的模糊需求。适用于独立开发者、团队和自动化流程场景。。提供完整的配置选项和详细的使用说明，帮助用户快速上手并集成到现有工作流中。'
-tags:
+tags: 知识库运维,工具,自动化,知识,obsidian,sync
 - 笔记管理
 - 命令行工具
 - 知识库运维
@@ -28,10 +29,13 @@ tools:
 - grep
 homepage: ''
 category: Automation
-pricing_tier: L2-标准级
-homepage: "https://skillhub.cn/skill/"
+homepage: ""
+pricing_tier: "L2-标准级"
+
 ---
-> **核心功能**: 本技能提供了实用性等能力。
+
+> **功能说明**: 本技能涵盖 了实用性 等核心能力。
+
 全功能Obsidian命令行管理工具，覆盖文件操作、模板、插件、同步、历史、开发者工具和TUI交互模式。专业版面向需要深度自动化和团队协作的高级用户.
 ## 总览
 Obsidian作为本地优先的知识管理工具，其高级功能（插件管理、版本同步、开发调试）通常需要通过图形界面手动操作。专业版Skill将这些能力全部封装为命令行接口，让AI Agent能够执行完整的知识库运维任务，包括插件批量安装与配置、文件版本回滚、同步状态监控、开发调试截图等.
@@ -113,11 +117,6 @@ obsidian create name="周会纪要-第10周" template=会议纪要
 # ...
 obsidian template:insert name=任务清单
 ```
-## 适用边界说明
-以下场景Obsidian CLI(专业版)不适合处理：
-- 实时流数据处理
-- 小规模数据手动分析
-- 非结构化文本情感分析
 ## 使用时机
 需要数据分析、报表生成、统计洞察、数据可视化时使用。不适用于非本工具能力范围的需求.
 ## 环境初始化
