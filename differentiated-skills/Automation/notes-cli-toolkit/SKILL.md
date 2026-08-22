@@ -1,7 +1,8 @@
 ---
+
 slug: notes-cli-toolkit
 name: notes-cli-toolkit
-version: 1.0.1
+version: 1.0.2
 displayName: 笔记CLI工具箱
 summary: 解决无头批处理难、frontmatter难改、daily模板乱痛点，用notesmd-cli把笔记玩成数据库
 license: MIT
@@ -24,12 +25,12 @@ tools:
 - write
 homepage: ''
 category: Automation
-pricing_tier: free
-homepage: "https://skillhub.cn/skill/"
----
-> **核心功能**: 本技能提供中文交互、化工作流场景等能力。
+homepage: ""
+pricing_tier: "L2-标准级"
 
-> **核心功能**: 本技能提供结构化的工作流程和配置指引等能力。
+---
+
+> **功能说明**: 本技能涵盖 中文交互、化工作流场景 等核心能力。
 
 # 笔记 CLI 工具箱
 把 Obsidian vault 当作可被脚本批处理的笔记数据库。基于 `notesmd-cli` 完成无头创建、frontmatter 治理、daily note 模板化与编辑器集成.
@@ -45,9 +46,9 @@ Obsidian vault = 普通磁盘文件夹.
 `notesmd-cli` 直接操作磁盘，**Obsidian 不需要运行**，适合无头服务器与 CI.
 ## 多库发现
 Obsidian 桌面端记录 vault 列表于：
-- macOS: `~/Library/Application Support/obsidian/obsidian.json`
+- macOS: `$HOME/Library/Application Support/obsidian/obsidian.json`
 - Windows: `%APPDATA%/obsidian/obsidian.json`
-- Linux: `~/.config/obsidian/obsidian.json`
+- Linux: `$HOME/.config/obsidian/obsidian.json`
 `notesmd-cli` 从该文件解析；vault 名通常是文件夹名.
 ## 请求格式
 | 参数名 | 类型 | 必填 | 说明 |
@@ -61,20 +62,7 @@ notesmd-cli print-default --path-only
 # ...
 # 未设默认 → 读 obsidian.json，取 "open": true 条目
 ```
-多库常见（iCloud vs ~/Documents、工作 vs 个人），**不要猜，读配置**.
-## 快速入门指南
-1. 阅读## 核心能力章节了解skill功能
-2. 按## 依赖说明配置环境
-3. 执行所需能力对应的命令
-4. 参考## 错误处理
-
-| 错误码 | 场景描述 | 可能原因 | 解决方案 |
-|:-------|:---------|:---------|:---------|
-| AUTH_FAIL | 身份验证失败 | Key未设置/已过期/格式错 | 确认环境变量,重新获取Key |
-| RATE_LIMIT | 触发限流 | 请求频率超过阈值 | 降低频率,指数退避重试 |
-| TIMEOUT | 请求超时 | 网络不稳定或服务端慢 | 增加超时阈值,检查网络 |
-| INVALID_PARAM | 参数无效 | 缺失必填项或值超范围 | 检查参数表,修正后重试 |
-| SERVER_ERROR | 服务端异常 | 平台内部故障 | 等待1-2分钟后重试 |
+多库常见（iCloud vs $HOME/Documents、工作 vs 个人），**不要猜，读配置**.
 ## 无头模式与 CI 集成
 `notesmd-cli` 直接操作磁盘，**Obsidian 不需要运行**。适合服务器与 CI/CD.
 ### 示例
@@ -281,71 +269,10 @@ obsidian/daily-notes
 - 通过`input_params`参数指定操作类型(创建/查询/导出)
 **技术实现要点**：核心能力基于`input_params`参数与`output_format`配置实现,支持创建/查询/修改/删除等操作模式,通过`config_options`进行运行时配置.
 **能力覆盖范围**：本技能覆盖以下场景：解决无头批处理难、模板乱痛点、把笔记玩成数据库、Use、when、需要数据分析、报表生成、统计洞察、数据可视化时使用、不适用于实时流数、据处理等。这些关键词对应description中声明的使用场景,均已在上述能力点中提供对应的操作支持.
-## 应用场景
-### 场景1：CI 自动生成 daily 并推送(补充)
-```
-触发：GitHub Actions 每日 6 点
-执行：
-1. notesmd-cli set-default "vault" --open-type editor
-2. notesmd-cli daily（按模板生成）
-3. git add . && git commit && git push
-4. 其他设备 pull 即可看到今日 daily
-```
-# 请参考上方使用说明进行配置和调用
-result = "ready"
-```
-用户：把所有 status: draft 的笔记改成 status: published
-执行：
-1. search-content "status: draft" --paths-only → 列出 12 篇
-2. 逐个 frontmatter --edit --key status --value published
-3. 报告：更新 12 篇
-```
-# 请参考上方使用说明进行配置和调用
-result = "ready"
-```
-用户：把 30 天前的 daily 移到 Archive/
-执行：
-1. （请参考skill目录中的脚本文件） --days 30 --to "Archive/Daily/"
-2. move 每个旧 daily（自动更新链接）
-3. 报告：归档 30 篇
-```
-# 请参考上方使用说明进行配置和调用
-result = "ready"
-```
-用户：列出所有 tags 含 "project" 且 status=active 的笔记
-执行：
-1. （请参考skill目录中的脚本文件） --filter "tags~project,status=active"
-2. 输出：8 篇匹配，含路径与摘要
-```
-# 请参考上方使用说明进行配置和调用
-result = "ready"
-```
-用户：SSH 到服务器改笔记
-执行：
-1. notesmd-cli set-default "vault" --open-type editor
-2. notesmd-cli open "Projects/X" --editor
-3. $EDITOR（vim/nano）打开，改完保存
-4. Obsidian 桌面端 pull 即可同步
-```
 ## 注意事项
 - 需LLM支持,无LLM环境不可用
 - 复杂业务场景建议结合人工经验判断
 - 执行效率受模型能力与网络环境影响
-## 问答整理
-### Q1: 本技能与其他类似工具有何区别?
-A: 参考差异化对比章节,本技能在自动化程度、错误处理和安全合规方面有针对性优化。
-
-### Q2: 是否需要付费才能使用?
-A: 基础功能免费。高级能力(标注付费版专享)需要订阅,详见付费版专享能力表格。
-
-### Q3: 返回结果为空是什么原因?
-A: 检查输入是否有效,确认参数值不为空字符串。参考边界条件章节了解输入要求。
-
-### Q4: 如何反馈问题或建议?
-A: 在Agent平台对话中描述遇到的问题,附上错误信息和输入参数,便于快速定位。
-
-### Q5: 技能运行慢怎么优化?
-A: 减少输入数据量,缩短prompt长度。网络延迟较大时检查API端点区域,选择就近节点.
 ## 故障处理体系
 - 边界输入处理: 空输入返回提示信息, 超长输入自动截断
 - 降级策略: 异常时返回默认值, 确保流程不中断 - 处理方式: 按上述步骤操作并确认结果
@@ -400,12 +327,6 @@ A: 减少输入数据量,缩短prompt长度。网络延迟较大时检查API端�
 | 网络通信安全 | 通过HTTPS安全通信,验证证书有效性 |
 | 敏感数据暴露 | 输出不含敏感凭据 |
 使用前请确认已阅读依赖说明章节，确保运行环境满足安全要求。
-## 功能介绍
-- **自动化执行**: 解决无头批处理难、frontmatter难改、daily模板乱痛点，用notesmd-cli把笔记玩成数据库
-- **文件处理**: 支持多种文件格式的读取、解析和写入操作
-- **API集成**: 通过标准化接口调用外部服务并处理响应
-- **命令执行**: 在安全沙箱中执行系统命令并收集结果
-- **信息检索**: 快速搜索和过滤目标数据
 ## 量化评估
 | 操作场景 | 手动耗时 | 自动化耗时 | 效率提升 |
 |----------|---------|-----------|---------|
