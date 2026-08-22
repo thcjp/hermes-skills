@@ -1,7 +1,8 @@
 ---
+
 slug: bailian-web-search
 name: "bailian-web-search"
-version: 1.0.5
+version: 1.0.1
 displayName: "Bailian网页搜索"
 summary: "调百炼(阿里ModelStudio)API做AI优化网搜,多源精炼结果。AI-optimized web search via Bailian(Alibaba ModelStdio) API"
 summary_zh: "调百炼(阿里ModelStudio)API做AI优化网搜,多源精炼结果。AI-optimized web search via Bailian(Alibaba ModelStdio) API"
@@ -24,8 +25,11 @@ tools:
   - glob
 homepage: ""
 category: "Development"
-homepage: "https://skillhub.cn/skill/"
+homepage: ""
+pricing_tier: "L2-标准级"
+
 ---
+
 # Bailian Web Search
 
 ## 专业版增强能力
@@ -37,12 +41,7 @@ homepage: "https://skillhub.cn/skill/"
 | 可视化图表自动生成 | 不支持 | 支持 |
 | 定时数据同步与增量更新 | 不支持 | 支持 |
 
-## 功能能力
-- AI-optimized web search via Bailian(Alibaba ModelStdio) API
-- Returns
-  multisourced, concise web se
-
-## 轻松上手
+## 部署指引
 1. 确认运行环境满足依赖说明中的要求
 2. 在AI Agent对话中调用本技能,提供必要的输入参数
 3. 检查输出结果,根据需要进行后续处理
@@ -75,13 +74,6 @@ homepage: "https://skillhub.cn/skill/"
 }
 ```
 
-## 异常响应
-| 错误场景 | 原因 | 处理方式 |
-|:---:|:---:|:---:|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 安装与配置
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
@@ -104,14 +96,6 @@ homepage: "https://skillhub.cn/skill/"
 export API_KEY="${API_KEY:?请设置环境变量}"
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
-## 故障恢复
-| 错误场景2 | 原因 | 处理方式 |
-|---:|:---|---:|
-| LLM响应超时或无响应 | 网络延迟或模型负载过高 | 请求重试；确认Agent平台LLM服务正常 |
-| 输入内容格式不正确 | 用户输入不符合skill预期格式 | 检查输入是否符合skill使用说明中的格式要求，参考示例章节 |
-| 执行结果与预期不符 | 指令描述不够明确或上下文不足 | 提供更详细的指令描述，补充必要的上下文信息 |
-| 命令执行失败 | 运行环境不满足要求或权限不足 | 确认运行环境符合依赖说明中的要求；检查命令权限设置 |
-
 ## 限制条件
 - 需要API Key，无Key环境无法使用
 -
@@ -158,15 +142,6 @@ A: Bailian网页搜索的API调用频率有限制，具体限制取决于用户�
 
 ### Q5: Bailian网页搜索是否支持可视化图表自动生成？
 A: Bailian网页搜索的付费版支持可视化图表自动生成，用户可以轻松将搜索结果转换为图表，更直观地展示数据。
-
-## 问题排查手册
-| 错误现象 | 可能原因 | 诊断步骤 | 解决方案 |
-| --- | --- | --- | --- |
-| 无法连接到API | 网络连接问题 | 检查网络连接，确保API服务端可达 | 重新连接网络或联系技术支持 |
-| API请求超时 | API服务端问题 | 检查API服务端状态，确认是否正常运行 | 联系技术支持或等待服务端恢复 |
-| 返回结果为空 | 搜索关键词问题 | 检查搜索关键词，确保关键词准确无误 | 修改关键词或尝试其他关键词 |
-| 返回结果不准确 | 数据源问题 | 检查数据源质量，确保数据源准确可靠 | 优化数据源或联系技术支持 |
-| API调用受限 | 超过调用频率限制 | 检查API调用频率，确保未超过限制 | 购买更高等级的付费版或等待下次调用周期 |
 
 ## 安全建议
 1. API Key应妥善保管，避免泄露到版本控制系统。
