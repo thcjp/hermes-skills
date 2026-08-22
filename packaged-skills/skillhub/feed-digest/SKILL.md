@@ -1,7 +1,8 @@
 ---
+
 slug: feed-digest
 name: "feed-digest"
-version: 1.0.1
+version: 1.0.2
 displayName: "订阅"
 summary: "订阅源摘要助手,透明抓取与已读状态管理,资讯不漏。This skill is a straightforward feed digest helper with disclosed feed"
 summary_zh: "订阅源摘要助手,透明抓取与已读状态管理,资讯不漏。This skill is a straightforward feed digest helper with disclosed feed"
@@ -19,25 +20,14 @@ tools:
   - write
 homepage: ""
 category: "Automation"
-homepage: "https://skillhub.cn/skill/"
+homepage: ""
+pricing_tier: "L2-标准级"
+
 ---
-> **核心功能**: 本技能提供提升工作效率等能力。
+
+> **功能说明**: 本技能涵盖 提升工作效率 等核心能力。
 
 # Feed Digest
-
-## 专业版专属特性
-| 能力 | 免费版 | 付费版 |
-|---|---|---|
-| 基础功能 | 支持 | 支持 |
-| Feed Digest透明抓取 | 不支持 | 支持 |
-| Feed Digest与已读状态管理 | 不支持 | 支持 |
-| 复杂工作流可视化编排 | 不支持 | 支持 |
-| 条件分支与异常重试 | 不支持 | 支持 |
-| 定时触发与事件驱动 | 不支持 | 支持 |
-
-## 主要能力
-- This skill is a straightforward feed digest helper with disclosed feed
-  fetching and read-status c
 
 ## 快速启动
 1. 确认运行环境满足依赖说明中的要求
@@ -54,12 +44,6 @@ homepage: "https://skillhub.cn/skill/"
 | 管理操作 | 操作目标与参数 | 操作结果与状态变更 |
 
 **不适用于**：需要人工判断的复杂决策场景
-
-## 操作流程
-1. 确认运行环境满足依赖说明中的要求
-2. 根据适用场景选择合适的使用方式
-3. 执行操作并检查输出结果
-4. 如遇错误，参考错误处理章节
 
 ## 请求格式
 | 参数名 | 类型 | 必填 | 说明 |
@@ -118,13 +102,6 @@ homepage: "https://skillhub.cn/skill/"
 ```
 
 中间产物模板参考: `assets/feed-digest_template`
-
-## 异常管理
-| 错误场景 | 原因 | 处理方式 |
-|:---:|:---:|:---:|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
 
 ## 前置条件
 ### 运行环境
@@ -202,13 +179,6 @@ A: 本技能在遇到网络错误时会自动重试，默认重试次数为2次�
 
 ### Q5: 如何获取Feed Digest的输出结果？
 A: 在AI Agent对话中调用本技能后，可以直接查看输出结果，也可以通过日志文件获取详细信息。
-
-## 问题排查手册
-| 错误现象 | 可能原因 | 诊断步骤 | 解决方案 |
-|:-------|:-------|:-------|:-------|
-| 抓取失败 | 网络连接问题 | 检查网络连接，重试操作 | 确保网络连接正常，重试抓取 |
-| 摘要生成错误 | 解析规则错误 | 检查解析规则，修正错误 | 修正解析规则，重新执行摘要生成 |
-| 已读状态更新失败 | 数据库连接问题 | 检查数据库连接，重试更新 | 确保数据库连接正常，重试更新 |
 
 ## 安全保障
 1. 确保订阅源的安全性和合法性，避免抓取不安全或非法内容。
