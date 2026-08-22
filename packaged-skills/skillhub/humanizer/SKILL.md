@@ -1,14 +1,27 @@
 ---
 slug: humanizer
 name: humanizer
-version: 1.0.1
+version: 1.0.2
 displayName: 去除文本中
 summary: '去除文本中AI生成痕迹,让文字像人写的。Remove signs of AI-generated writing from text。核心能力:
   - 其他工具领域的专业化AI辅助工具 - 基'
 summary_zh: '去除文本中AI生成痕迹,让文字像人写的。Remove signs of AI-generated writing from text。核心能力:
   - 其他工具领域的专业化AI辅助工具 - 基'
 license: MIT
-description: Remove signs of AI-generated writing from text。核心能力:\n\n- 其他工具领域的专业化AI辅助工具\n\。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。
+description: Remove signs of AI-generated writing from text。核心能力:。可生成提升工作效率。Use when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意判断的任务。适用于独立开发者、企业团队和自动化工作流场景。支持中文交互，无需复杂配置即开即用。
+- 其他工具领域的专业化AI辅助工具
+\。Use when 需要AI模型调用、智能对话、Agent编排、LLM应用时使用。不适用于需要100%确定性的关键决策。适用于独立开发者、企业团队和自动化工作流场景。 
+- 
+
+- 
+
+适用场景:
+
+- 通用工具、辅助功能、扩展能力
+
+- 独立开发者与一人公司效率提升
+
+-...
   \n- \n\n- \n\n适用场景:\n\n- 通用工具、辅助功能、扩展能力\n\n- 独立开发者与一人公司效率提升\n\n- 自动化工作流与智能决策辅助。Use\
   \ when 需要提升效率、自动化流程、批量处理、工作流优化时使用。不适用于需要人工创意的环节。"
 tags:
@@ -24,9 +37,16 @@ tools:
 - write
 homepage: ''
 category: Automation
-homepage: "https://skillhub.cn/skill/"
+homepage: ""
+pricing_tier: "L2-标准级"
+
 ---
-> **核心功能**: 本技能提供化工作流场景等能力。
+
+> **功能说明**: 本技能涵盖 化工作流场景 等核心能力。
+
+> **功能说明**: 本技能涵盖 提升工作效率 等核心能力。
+
+> **功能说明**: 本技能涵盖 中文交互、时使用、化流程 等核心能力。
 
 # Humanizer
 
@@ -39,9 +59,6 @@ homepage: "https://skillhub.cn/skill/"
 | 批量任务编排与队列管理 | 不支持 | 支持 |
 | 结果导出与多格式转换 | 不支持 | 支持 |
 | 实时状态监控与异常告警 | 不支持 | 支持 |
-
-## 能力清单
-- Remove signs of AI-generated writing from text
 
 ## 适用范围
 | 场景 | 输入 | 输出 |
@@ -85,13 +102,6 @@ homepage: "https://skillhub.cn/skill/"
 
 输出模板参考: `assets/output.json`
 
-## 异常管理
-| 错误场景 | 原因 | 处理方式 |
-|:---:|:---:|:---:|
-| 配置错误 | 参数缺失或格式错误 | 检查依赖说明中的配置要求 |
-| 运行时错误 | 运行环境不满足 | 确认运行环境符合依赖说明 |
-| 网络错误 | 连接超时或不可达 | 
-
 ## 安装与配置
 ### 运行环境
 - **Agent平台**: 支持SKILL.md的任意AI Agent(Claude Code / Cursor / Codex / Gemini CLI等)
@@ -114,30 +124,6 @@ homepage: "https://skillhub.cn/skill/"
 export API_KEY="${API_KEY:?请设置环境变量}"
 ```
 配置后需重启会话或开启新终端生效。API Key应妥善保管,避免泄露到版本控制系统.
-## 案例展示
-
-**Before (AI-sounding):**
-
-> The new software update serves as a testament to the company's commitment to innovation. Moreover, it provides a seamless, intuitive, and powerful user experience—ensuring that users can accomplish their goals efficiently. It's not just an update, it's a revolution in how we think about productivity. Industry experts believe this will have a lasting impact on the entire sector, highlighting the company's pivotal role in the evolving technological landscape.
-
-**After (Humanized):**
-
-> The software update adds batch processing, keyboard shortcuts, and offline mode. Early feedback from beta testers has been positive, with most reporting faster task completion.
-
-**Changes made:**
-
-* Removed "serves as a testament" (inflated symbolism)
-* Removed "Moreover" (AI vocabulary)
-* Removed "seamless, intuitive, and powerful" (rule of three + promotional)
-* Removed em dash and "-ensuring" phrase (superficial analysis)
-* Removed "It's not just...it's..." (negative parallelism)
-* Removed "Industry experts believe" (vague attribution)
-* Removed "pivotal role" and "evolving landscape" (AI vocabulary)
-* Added specific features and concrete feedback
-
-## 问答集成汇总
-### Q1: 如何开始使用Humanizer？
-A: 请参考使用流程和依赖说明章节，确保运行环境满足要求后调用本技能。
 ## 异常处理框架
 | 错误场景(续)| 原因 | 处理方式 |
 |----:|:----|----:|
@@ -205,9 +191,3 @@ A: 可以，您可以在输出结果中查看执行状态，如果需要重新�
 | 网络通信安全 | 中 | 使用HTTPS协议，验证SSL证书 | 定期检查证书有效期 |
 | 敏感数据暴露 | 高 | 输出结果中不包含密钥、令牌等敏感信息 | 日志脱敏审查 |
 | 未授权访问 | 中 | 限制访问权限，实施认证机制 | 定期审计访问日志 |
-
-## 功能介绍
-- **自动化执行**: 去除文本中AI生成痕迹,让文字像人写的。Remove signs of AI-generated writing fro
-- **文件处理**: 支持多种文件格式的读取、解析和写入操作
-- **API集成**: 通过标准化接口调用外部服务并处理响应
-- **命令执行**: 在安全沙箱中执行系统命令并收集结果
