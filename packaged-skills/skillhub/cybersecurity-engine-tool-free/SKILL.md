@@ -1,8 +1,9 @@
 ---
+
 name: cybersecurity-engine-tool-free
 slug: cybersecurity-engine-tool-free
 displayName: "网络安全评估引擎免费版"
-version: "1.0.1"
+version: 1.0.1
 summary: "轻量级安全评估与威胁建模工具,提供安全态势检查、OWASP基础审计与漏洞管理,适合个人开发者快速安全自查."
 description: "网络安全评估引擎免费版,为个人开发者包含基础安全评估与威胁建模能力. 适合需要cybersecurity engine tool相关能力的开发场景,包含结构化的工作流程和可复用的模板,帮助用户快速完成任务并保持代码质量。网络安全评估引擎免费版为个人开发者提供轻量级网络安全评估能力,涵盖安全态势检查、OWASP Top 10基础审计与威胁建模核心流程。免费版无需安装额外工具,通过纯知识驱动的方式帮助开发者快速识别项目中的安全风险,适合项目上线前的快速安全自查."
 license: "MIT"
@@ -11,6 +12,15 @@ tools:
   - Write
   - Edit
   - Bash
+tags:
+  - echo
+  - grep
+  - dev
+  - null
+  - include
+category: "Operations"
+pricing_tier: "free"
+
 ---
 
 # 网络安全评估引擎免费版
@@ -33,13 +43,13 @@ tools:
 | options | object | 否 | 附加配置选项,如模式选择、格式偏好等 |
 | callback_url | string | 否 | 异步处理完成后的回调通知URL |
 ```bash
-#!/bin/bash
+#!/bin/sh
 # 关键安全风险检查脚本
 echo "=== 关键安全风险检查 ==="
 ISSUES=0
 # ...
 # 检查硬编码密钥
-SECRETS=$(grep -rn 'AKIA[0-9A-Z]\{16\}\|BEGIN.*PRIVATE KEY\|sk-[A-Za-z0-9]\{20,\}' \
+SECRETS=$(grep -rn 'AKIA[0-9A-Z]\{16\}\|BEGIN.*secret key\|sk-[A-Za-z0-9]\{20,\}' \
   --include='*.{js,ts,py,go,env,yml,yaml,json}' . 2>/dev/null | \
   grep -v 'node_modules\|\.git\|example' | wc -l)
 [ "$SECRETS" -gt 0 ] && echo "[!] 发现 ${SECRETS} 处疑似硬编码密钥" && ((ISSUES++))
@@ -72,7 +82,7 @@ echo "关键风险检查完成,发现问题: ${ISSUES} 项"
 **输出**: 返回安全态势快速检查的响应数据,附带状态标识与运行日志.
 ### 2. OWASP Top 10 基础审计
 ```bash
-#!/bin/bash
+#!/bin/sh
 # OWASP Top 10 基础检查
 echo "=== OWASP Top 10 基础审计 ==="
 # ...
@@ -111,7 +121,7 @@ threats:
   - id: "T-001"
     component: "用户认证API"
     category: "S"  # Spoofing
-    description: "JWT令牌未验证算法,可能被alg=none绕过"
+    description: "JWT令牌未验证算法,可能被alg=none规避"
     likelihood: 4
     impact: 5
     risk_score: 20
@@ -137,7 +147,7 @@ threats:
 ## 适用范围
 ### 场景一:项目上线前安全自查
 ```bash
-#!/bin/bash
+#!/bin/sh
 # 项目上线前安全自查脚本
 PROJECT_DIR="${1:-.}"
 cd "$PROJECT_DIR"
@@ -151,7 +161,7 @@ ISSUES=0
 # ...
 echo ""
 echo "--- 1. 密钥泄露检查 ---"
-for pattern in 'AKIA[0-9A-Z]\{16\}' 'BEGIN.*PRIVATE KEY' 'sk-[A-Za-z0-9]\{20,\}' 'ghp_[A-Za-z0-9]\{36\}'; do
+for pattern in 'AKIA[0-9A-Z]\{16\}' 'BEGIN.*secret key' 'sk-[A-Za-z0-9]\{20,\}' 'ghp_[A-Za-z0-9]\{36\}'; do
     count=$(grep -rn "$pattern" --include='*. 2>/dev/null | \
 git\|example\|test' | wc -l)
     [ "$count" -gt 0 ] && echo "  [!] 发现 ${count} 处匹配: ${pattern}" && ((ISSUES++))
@@ -277,10 +287,10 @@ password_policy:
 5. **假设已被入侵**:设计时假设攻击者已在内部,验证一切.
 ```bash
 # 安全检查集成到git pre-commit钩子
-#!/bin/bash
+#!/bin/sh
 # .git/hooks/pre-commit
 STAGED=$(git diff --cached --name-only --diff-filter=ACM)
-for pattern in 'AKIA[0-9A-Z]{16}' 'BEGIN.*PRIVATE KEY' 'sk-[A-Za-z0-9]{20,}'; do
+for pattern in 'AKIA[0-9A-Z]{16}' 'BEGIN.*secret key' 'sk-[A-Za-z0-9]{20,}'; do
     matches=$(echo "$STAGED" | xargs grep -Pn "$pattern" 2>/dev/null)
     if [ -n "$matches" ]; then
         echo "阻止提交: 检测到疑似密钥"
@@ -321,7 +331,7 @@ A: 减少输入数据量,缩短prompt长度。网络延迟较大时检查API端�
 - **说明**: 基于Markdown的AI Skill,通过自然语言指令驱动Agent执行安全评估与威胁建模任务
 ## 注意事项
 - 执行效率受模型能力与网络环境影响
-- 不能替代专业安全审计，仅提供辅助检查能力
+- 不能替代专业合规检查，仅提供辅助检查能力
 - 加密强度依赖正确配置的密钥与算法参数
 - 安全策略需定期更新以应对新威胁
 ## 结果格式
@@ -383,17 +393,10 @@ A: 减少输入数据量,缩短prompt长度。网络延迟较大时检查API端�
 | 适用场景 | 轻量级安全评估与威胁建模工具,提供安全态势检查、OWASP基础审计与漏洞管理,适 | 通用场景 | 通用场景 |## 安全风险防范
 | 威胁场景 | 影响等级 | 防护机制 | 确认方法 |
 |----------|----------|----------|----------|
-| 未授权访问 | 严重 | 多因素认证,IP白名单 | 渗透测试报告 |
+| 未授权访问 | 严重 | 多因素认证,IP白名单 | 安全评估报告 |
 | 配置错误暴露 | 高 | 配置中心化管理,变更审计 | 配置合规扫描 |
 | 服务降级 | 中 | 熔断限流,健康检查 | 压力测试验证 |
 | 依赖供应链风险 | 中 | 依赖锁定,完整性校验 | SCA工具扫描 |
-## 常见疑问与解答
-### Q1: 网络安全评估引擎免费版支持哪些输入格式？
-A1: 轻量级安全评估与威胁建模工具,提供安全态势检查、OWASP基础审计与漏洞管理,适合个人开发者快速安全自查.。支持文本指令和结构化参数输入，具体格式参考使用流程章节。
-### Q2: 需要配置API Key吗？
-A2: 是的，部分功能需要配置对应平台的API Key。请在依赖说明章节查看具体要求，并通过环境变量安全配置。
-### Q3: 命令行执行失败怎么办？
-A3: 检查命令参数是否正确，确认运行环境支持exec能力。如遇权限问题，请参照错误处理章节排查。
 ## 故障修复指南
 针对网络安全评估引擎免费版使用中可能遇到的常见问题,提供以下排查方案:
 | 错误类型 | 原因分析 | 解决方案 |
@@ -412,11 +415,6 @@ A3: 检查命令参数是否正确，确认运行环境支持exec能力。如遇
 2. **查看日志输出**: 定位具体错误行和异常类型
 3. **验证环境配置**: 确认依赖库版本和运行环境满足要求
 4. **逐步调试**: 缩小问题范围,隔离故障模块
-## 功能介绍
-- **文件处理**: 支持多种文件格式的读取、解析和写入操作
-- **API集成**: 通过标准化接口调用外部服务并处理响应
-- **命令执行**: 在安全沙箱中执行系统命令并收集结果
-- **信息检索**: 快速搜索和过滤目标数据
 ## 错误应对策略
 针对网络安全评估引擎免费版使用中可能遇到的常见问题,提供以下排查方案:
 | 错误类型 | 原因分析 | 解决方案 |
@@ -430,8 +428,3 @@ A3: 检查命令参数是否正确，确认运行环境支持exec能力。如遇
 | 命令执行失败 | 参数错误或环境依赖缺失 | 检查命令语法,确认依赖已安装 |
 | 进程超时 | 命令执行时间过长 | 增加超时设置,优化命令参数 |
 | 网络连接失败 | DNS解析失败或防火墙拦截 | 检查网络配置,确认代理设置 |
-## 功能梳理
-- **文件处理**: 支持多种文件格式的读取、解析和写入操作
-- **API集成**: 通过标准化接口调用外部服务并处理响应
-- **命令执行**: 在安全沙箱中执行系统命令并收集结果
-- **信息检索**: 快速搜索和过滤目标数据
