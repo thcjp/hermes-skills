@@ -1,10 +1,9 @@
 ---
 
-
 name: "jira-integration-skill"
 slug: jira-integration-skill
 displayName: "Jira集成技能"
-version: 1.0.3
+version: 1.0.1
 summary: '"Jira项目管理集成技能,支持工单创建、状态同步和工作流自动化。API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.
   Use when 用户说"Jira Inte"'
 summary_zh: '"Jira项目管理集成技能,支持工单创建、状态同步和工作流自动化。API封装工具。适用于需要调用外部API的场景，API请求参数→API响应数据.
@@ -25,13 +24,12 @@ tags:
 - jira
 - api
 category: '"Automation"'
-homepage: "https://skillhub.cn/skill/"
-
+homepage: ""
+pricing_tier: "L2-标准级"
 
 ---
 
-
-> **核心功能**: 本技能提供中文交互、化工作流场景等能力。
+> **功能说明**: 本技能涵盖 中文交互、化工作流场景 等核心能力。
 
 # Jira Integration Skill 智能分析
 
@@ -44,11 +42,6 @@ homepage: "https://skillhub.cn/skill/"
 | Jira集成技能状态同步 | 不支持 | 支持 |
 | 复杂工作流可视化编排 | 不支持 | 支持 |
 | 条件分支与异常重试 | 不支持 | 支持 |
-
-## 能力清单
-- Jira Integration Skill 实时监控
-- Jira Integration Skill 错误重试
-- Jira Integration Skill 多格式支持
 
 ## 应用场景
 - 用户说"Jira Integration Skill 扩展能力9" → 执行API调用
@@ -83,12 +76,6 @@ Jira集成技能验证用户身份与操作权限，加载租户配置
   "error": null
 }
 ```
-
-## 异常管理
-| 错误场景 | 原因 | 处理方式 |
-|---:|---:|---:|
-| 其他异常 | 内部处理异常 | 检查输入后 |
-| 其他异常 | 内部处理异常 | 检查输入后 |
 
 ## 依赖与配置
 ### 运行环境
@@ -277,9 +264,3 @@ A: Jira集成技能支持多租户环境，可以在配置中指定租户信息�
 | 网络通信安全 | 中 | 使用HTTPS协议，验证SSL证书 | 定期检查证书有效期 |
 | 敏感数据暴露 | 高 | 输出结果中不包含密钥、令牌等敏感信息 | 日志脱敏审查 |
 | 未授权访问 | 中 | 限制访问权限，实施认证机制 | 定期审计访问日志 |
-
-## 功能特征
-- **自动化执行**: "Jira项目管理集成技能,支持工单创建、状态同步和工作流自动化。API封装工具。适用于需要调用外部API的场景，API
-- **文件处理**: 支持多种文件格式的读取、解析和写入操作
-- **API集成**: 通过标准化接口调用外部服务并处理响应
-- **命令执行**: 在安全沙箱中执行系统命令并收集结果
